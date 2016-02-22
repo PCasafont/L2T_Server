@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.ai;
 
 import java.util.ArrayList;
@@ -53,11 +54,10 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 		
 		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
 		{
-			if (activeChar == null || !(activeChar instanceof L2Playable)
-					|| (_alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0))
+			if ((activeChar == null) || !(activeChar instanceof L2Playable) || (_alreadyBuffed.contains(activeChar.getObjectId()) && (activeChar.getAllEffects().length > 0)))
 				continue;
 			
-			final L2Playable playable = (L2Playable)activeChar;
+			final L2Playable playable = (L2Playable) activeChar;
 			
 			if (!playable.isInsideRadius(npc, 200, true, false) || playable.getActingPlayer().isCursedWeaponEquipped())
 				continue;
@@ -88,7 +88,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				}
 			}
 			
-			if (player_level > highestLevel || player_level < lowestLevel)
+			if ((player_level > highestLevel) || (player_level < lowestLevel))
 				continue;
 			
 			L2Skill skill = null;
@@ -111,7 +111,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				{
 					if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
 					{
-						if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel())
+						if ((player_level >= helperBuffItem.getLowerLevel()) && (player_level <= helperBuffItem.getUpperLevel()))
 						{
 							skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
 							if (skill.getSkillType() == L2SkillType.SUMMON)
@@ -126,10 +126,10 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 			_alreadyBuffed.add(playable.getObjectId());
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
-					if (playable.getActingPlayer() == null ||
-							!playable.getActingPlayer().isOnline())
+					if ((playable.getActingPlayer() == null) || !playable.getActingPlayer().isOnline())
 						return;
 					
 					if (playable.isInsideRadius(npc, 200, true, false))
@@ -138,7 +138,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 						return;
 					}
 					
-					_alreadyBuffed.remove((Integer)playable.getObjectId());
+					_alreadyBuffed.remove((Integer) playable.getObjectId());
 				}
 			}, 600000L);
 		}

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import l2server.gameserver.GeoData;
@@ -26,19 +27,19 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Wisp AI
- * 
+ *
  * Source:
  * 			- http://l2wiki.com/Fairy_Settlement
  */
 
 public class Wisps extends L2AttackableAIScript
 {
-	private static final int		_wisp 		= 32915;
-	private static final int		_largeWisp	= 32916;
-	private static final L2Skill 	_healSkill	= SkillTable.getInstance().getInfo(14064, 1);
-
+	private static final int _wisp = 32915;
+	private static final int _largeWisp = 32916;
+	private static final L2Skill _healSkill = SkillTable.getInstance().getInfo(14064, 1);
+	
 	public Wisps(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -57,7 +58,7 @@ public class Wisps extends L2AttackableAIScript
 			if (spawn == null)
 				continue;
 			
-			if (spawn.getNpcId() == _wisp || spawn.getNpcId() == _largeWisp)
+			if ((spawn.getNpcId() == _wisp) || (spawn.getNpcId() == _largeWisp))
 				notifySpawn(spawn.getNpc());
 		}
 	}
@@ -73,7 +74,7 @@ public class Wisps extends L2AttackableAIScript
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player.isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
+		if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player.isDead() || player.isInvul(npc) || (player.getPvpFlag() > 0) || player.isFakeDeath())
 			return super.onAggroRangeEnter(npc, player, isPet);
 		
 		npc.setTarget(player);

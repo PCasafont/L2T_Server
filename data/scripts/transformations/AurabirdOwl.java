@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class AurabirdOwl extends L2Transformation
 {
-	private static final int[] SKILLS = new int[]{884,885,887,889,892,893,895,911,932,619};
+	private static final int[] SKILLS = new int[] { 884, 885, 887, 889, 892, 893, 895, 911, 932, 619 };
 	
 	public AurabirdOwl()
 	{
@@ -17,7 +18,7 @@ public class AurabirdOwl extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 9 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 9) || getPlayer().isCursedWeaponEquipped())
 			return;
 		getPlayer().setIsFlyingMounted(true);
 		
@@ -34,7 +35,7 @@ public class AurabirdOwl extends L2Transformation
 		if (getPlayer().getLevel() >= 83)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(895, 1), false);
 		
-		int lvl = getPlayer().getLevel() -74;
+		int lvl = getPlayer().getLevel() - 74;
 		
 		if (lvl > 0)
 		{
@@ -73,7 +74,7 @@ public class AurabirdOwl extends L2Transformation
 		// Exhilarate
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(895, 1), false);
 		
-		int lvl = getPlayer().getLevel() -74;
+		int lvl = getPlayer().getLevel() - 74;
 		
 		if (lvl > 0)
 		{

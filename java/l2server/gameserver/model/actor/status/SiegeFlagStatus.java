@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.actor.status;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -28,6 +29,6 @@ public class SiegeFlagStatus extends NpcStatus
 	@Override
 	public L2SiegeFlagInstance getActiveChar()
 	{
-		return (L2SiegeFlagInstance)super.getActiveChar();
+		return (L2SiegeFlagInstance) super.getActiveChar();
 	}
 }

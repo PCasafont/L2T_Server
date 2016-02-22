@@ -7447,6 +7447,13 @@
 		<node X="2625" Y="149463" />
 		<node X="3003" Y="148080" />
 	</zone>
+	<zone type="ConditionZone" shape="NPoly" name="no_bookmark_glu_ore_fort" minZ="-5416" maxZ="-416">
+		<stat name="NoBookmark" val="true" />
+		<node X="-57784" Y="88538" />
+		<node X="-49335" Y="88648" />
+		<node X="-48981" Y="93886" />
+		<node X="-57853" Y="93471" />
+	</zone>
 	<zone type="ConditionZone" shape="NPoly" name="no_bookmark_di_gi_fort" minZ="-3620" maxZ="1380">
 		<stat name="NoBookmark" val="true" />
 		<node X="57267" Y="137306" />

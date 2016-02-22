@@ -94,7 +94,7 @@ public class Wedding implements IVoicedCommandHandler
 		else
 			activeChar.sendMessage("You have broken up as a couple.");
 		
-		final L2PcInstance partner = L2World.getInstance().getPlayer(_partnerId);		
+		final L2PcInstance partner = L2World.getInstance().getPlayer(_partnerId);
 		if (partner != null)
 		{
 			partner.setPartnerId(0);

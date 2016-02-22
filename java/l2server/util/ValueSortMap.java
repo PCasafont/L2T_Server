@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.util;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class ValueSortMap
 	 * This method returns the new LinkedHashMap sorted with values for passed Comparater. If null values exist they
 	 * will be put in the last of the returned LinkedHashMap. If there are duplicate values they will come together at
 	 * the values ordering order but ordering between same multiple values is ramdom. Passed Map will be intect.
-	 * 
+	 *
 	 * @param inMap Map to be sorted
 	 * @param comparator Values will be sorted as per passed Comparater
 	 * @return LinkedHashMap Sorted new LinkedHashMap
@@ -57,7 +58,7 @@ public class ValueSortMap
 	 * will be put in the last for true value of ascendingOrder or will be put on top of the returned LinkedHashMap for
 	 * false value of ascendingOrder. If there are duplicate values they will come together at the values ordering order
 	 * but ordering between same multiple values is ramdom. Passed Map will be intect.
-	 * 
+	 *
 	 * @param inMap Map to be sorted
 	 * @param ascendingOrder Values will be sorted as per value of ascendingOrder
 	 * @return LinkedHashMap Sorted new LinkedHashMap
@@ -72,7 +73,7 @@ public class ValueSortMap
 	 * This method returns the new LinkedHashMap sorted with values in ascending order. If null values exist they will
 	 * be put in the last of the returned LinkedHashMap. If there are duplicate values they will come together at the
 	 * values ordering order but ordering between same multiple values is ramdom. Passed Map will be intect.
-	 * 
+	 *
 	 * @param inMap Map to be sorted
 	 * @return LinkedHashMap Sorted new LinkedHashMap
 	 */
@@ -88,7 +89,7 @@ public class ValueSortMap
 	 * be put in the last for true value of ascendingOrder or will be put on top of the returned LinkedHashMap for false
 	 * value of ascendingOrder. If there are duplicate values they will come together at the values ordering order but
 	 * ordering between same multiple values is ramdom. Passed Map will be intect.
-	 * 
+	 *
 	 * @param inMap Map to be sorted
 	 * @param comparator Values will be sorted as per passed Comparater
 	 * @param ascendingOrder Values will be sorted as per value of ascendingOrder
@@ -168,7 +169,7 @@ public class ValueSortMap
 					hmNullValueMap.put(key, value); // Keep all null values in a new temp Map
 			}
 			
-			if (ascendingOrder != null && !ascendingOrder)
+			if ((ascendingOrder != null) && !ascendingOrder)
 			{
 				// As it is descending order, Add Null Values in first place of the LinkedHasMap
 				sortedMap.putAll(hmNullValueMap);
@@ -183,7 +184,7 @@ public class ValueSortMap
 				sortedMap.put(key, value);
 			}
 			
-			if (ascendingOrder == null || ascendingOrder)
+			if ((ascendingOrder == null) || ascendingOrder)
 			{
 				// Add Null Values in the last of the LinkedHasMap
 				sortedMap.putAll(hmNullValueMap);
@@ -205,7 +206,7 @@ public class ValueSortMap
 					hmNullValueMap.put(key, value); // Keep all null values in a new temp Map
 			}
 			
-			if (ascendingOrder != null && !ascendingOrder)
+			if ((ascendingOrder != null) && !ascendingOrder)
 			{
 				// As it is descending order, Add Null Values in first place of the LinkedHasMap
 				sortedMap.putAll(hmNullValueMap);
@@ -232,7 +233,7 @@ public class ValueSortMap
 				}
 			}
 			
-			if (ascendingOrder == null || ascendingOrder)
+			if ((ascendingOrder == null) || ascendingOrder)
 			{
 				// Add Null Values in the last of the LinkedHasMap
 				sortedMap.putAll(hmNullValueMap);

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network;
 
 import java.lang.reflect.Field;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 
+import l2server.Config;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
@@ -13372,11 +13374,11 @@ public final class SystemMessageId
 	 * Message: The rebel army recaptured the fortress.
 	 */
 	public static final SystemMessageId NPCS_RECAPTURED_FORTRESS;
-
+	
 	/**
-	* ID: 2291<br>
-	* Message: You can operate the machine when you participate in the party.
-	*/
+	 * ID: 2291<br>
+	 * Message: You can operate the machine when you participate in the party.
+	 */
 	public static final SystemMessageId CAN_OPERATE_MACHINE_WHEN_IN_PARTY;
 	
 	/**
@@ -13634,19 +13636,19 @@ public final class SystemMessageId
 	 * Message: $c1 is already registered on the waiting list for the non-class-limited match event.
 	 */
 	public static final SystemMessageId C1_IS_ALREADY_REGISTERED_NON_CLASS_LIMITED_EVENT_TEAMS;
-
+	
 	/**
 	 * ID: 2441<br>
 	 * Message: Only a party leader can request a team match.
 	 */
 	public static final SystemMessageId ONLY_PARTY_LEADER_CAN_REQUEST_TEAM_MATCH;
-
+	
 	/**
 	 * ID: 2442<br>
 	 * Message: The request cannot be made because the requirements have not been made. To participate in a team match you must first form a 3-member party.
 	 */
 	public static final SystemMessageId PARTY_REQUIREMENTS_NOT_MET;
-
+	
 	/**
 	 * ID: 2936<br>
 	 * Message: The disguise scroll cannot be used because it is meant for use in a different territory.
@@ -13700,7 +13702,7 @@ public final class SystemMessageId
 	 * Message: You have registered on the waiting list for the non-class-limited team match event.
 	 */
 	public static final SystemMessageId YOU_HAVE_REGISTERED_IN_A_WAITING_LIST_OF_TEAM_GAMES;
-
+	
 	/**
 	 * ID: 2409<br>
 	 * Message: The number of My Teleports slots has been increased.
@@ -13844,8 +13846,8 @@ public final class SystemMessageId
 	 * Message: The team was adjusted because the population ratio was not correct.
 	 */
 	public static final SystemMessageId TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO;
- 
- 	/**
+	
+	/**
 	 * ID: 2704<br>
 	 * Message: You cannot register because capacity has been exceeded.
 	 */
@@ -13856,10 +13858,10 @@ public final class SystemMessageId
 	 * Message: The match waiting time was extended by 1 minute.
 	 */
 	public static final SystemMessageId MATCH_WAITING_TIME_EXTENDED;
-
+	
 	/**
 	 * ID: 2706
-	 * Message: You cannot enter because you do not meet the requirements. 
+	 * Message: You cannot enter because you do not meet the requirements.
 	 */
 	public static final SystemMessageId CANNOT_ENTER_CAUSE_DONT_MATCH_REQUIREMENTS;
 	
@@ -14006,16 +14008,16 @@ public final class SystemMessageId
 	 */
 	public static final SystemMessageId CANT_CONTROL_TOO_FAR;
 	
- 	/**
+	/**
 	 * ID: 2764<br>
 	 * Message: You cannot enter because the corresponding alliance channel's maximum number of entrants has been reached.
 	 */
 	public static final SystemMessageId YOU_CANNOT_ENTER_BECAUSE_MAXIMUM_ENTRANTS;
-
+	
 	/**
-	* ID: 2765<br>
-	* Message: Only the alliance channel leader can attempt entry.
-	*/
+	 * ID: 2765<br>
+	 * Message: Only the alliance channel leader can attempt entry.
+	 */
 	public static final SystemMessageId ONLY_ALLIANCE_CHANNEL_LEADER_CAN_ENTER;
 	
 	/**
@@ -14079,9 +14081,9 @@ public final class SystemMessageId
 	public static final SystemMessageId YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD;
 	
 	/**
-	* ID: 2793<br>
-	* Message: You must have a minimum of ($s1) people to enter this Instant Zone. Your request for entry is denied
-	*/
+	 * ID: 2793<br>
+	 * Message: You must have a minimum of ($s1) people to enter this Instant Zone. Your request for entry is denied
+	 */
 	public static final SystemMessageId YOU_MUST_HAVE_MINIMUM_OF_S1_PEOPLE_TO_ENTER;
 	
 	/**
@@ -14164,13 +14166,13 @@ public final class SystemMessageId
 	
 	/**
 	 * ID: 2922<br>
-	 * Message: Block Checker will end in 5 seconds! 
+	 * Message: Block Checker will end in 5 seconds!
 	 */
 	public static final SystemMessageId BLOCK_CHECKER_ENDS_5;
 	
 	/**
 	 * ID: 2923<br>
-	 * Message: Block Checker will end in 4 seconds!! 
+	 * Message: Block Checker will end in 4 seconds!!
 	 */
 	public static final SystemMessageId BLOCK_CHECKER_ENDS_4;
 	
@@ -14182,19 +14184,19 @@ public final class SystemMessageId
 	
 	/**
 	 * ID: 2925<br>
-	 * Message: Block Checker will end in 3 seconds!!! 
+	 * Message: Block Checker will end in 3 seconds!!!
 	 */
 	public static final SystemMessageId BLOCK_CHECKER_ENDS_3;
-
+	
 	/**
 	 * ID: 2926<br>
-	 * Message: Block Checker will end in 2 seconds!!!! 
+	 * Message: Block Checker will end in 2 seconds!!!!
 	 */
 	public static final SystemMessageId BLOCK_CHECKER_ENDS_2;
-
+	
 	/**
 	 * ID: 2927<br>
-	 * Message: Block Checker will end in 1 second!!!!! 
+	 * Message: Block Checker will end in 1 second!!!!!
 	 */
 	public static final SystemMessageId BLOCK_CHECKER_ENDS_1;
 	
@@ -14465,7 +14467,7 @@ public final class SystemMessageId
 	
 	/**
 	 * ID: 3032<br>
-	 * 
+	 *
 	 * Message: In order to help Anakim, activate the sealing device of the Emperor who is possessed by the evil magical curse! Magical curse is very powerful, so we must be careful!
 	 */
 	public static final SystemMessageId IN_ORDER_HELP_ANAKIM_ACTIVATE_DEVICES;
@@ -14762,13 +14764,13 @@ public final class SystemMessageId
 	 * ID: 3255<br>
 	 * Message: Arcane Shield decreased your MP by $1 instead of HP.
 	 */
-	public static final SystemMessageId ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP; 
+	public static final SystemMessageId ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP;
 	
 	/**
-	 * ID: 3256<br> 
+	 * ID: 3256<br>
 	 * Message: MP became 0 and the Arcane Shield is disappearing.
 	 */
-	public static final SystemMessageId MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING; 
+	public static final SystemMessageId MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING;
 	
 	/**
 	 * ID: 3259<br>
@@ -14787,7 +14789,7 @@ public final class SystemMessageId
 	 * Message: You can proceed only when the inventory weight is below 80 percent and the quantity is below 90 percent.
 	 */
 	public static final SystemMessageId YOU_CAN_PROCEED_WHEN_WHEIGHT_BELOW_80_AND_QUANTITY_90;
-
+	
 	/**
 	 * ID: 3289<br>
 	 * Message: This account has already received a gift. The gift can only be given once per account.
@@ -14799,259 +14801,259 @@ public final class SystemMessageId
 	 * Message: Registration is not available because the corresponding item does not exist.
 	 */
 	public static final SystemMessageId REGISTRATION_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3362<br>
 	 * Message: Please try again after ending the previous task.
 	 */
 	public static final SystemMessageId PLEASE_TRY_AGAIN_AFTER_ENDING_THE_PREVIOUS_TASK;
-
+	
 	/**
 	 * ID: 3363<br>
 	 * Message: The item cannot be registered because requirements are not met.
 	 */
 	public static final SystemMessageId THE_ITEM_CANNOT_BE_REGISTERED_BECAUSE_REQUIREMENTS_ARE_NOT_MET;
-
+	
 	/**
 	 * ID: 3364<br>
 	 * Message: You do not have enough Adena to register the item.
 	 */
 	public static final SystemMessageId YOU_DO_NOT_HAVE_ENOUGH_ADENA_TO_REGISTER_THE_ITEM;
-
+	
 	/**
 	 * ID: 3365<br>
 	 * Message: The item has failed to be registered.
 	 */
 	public static final SystemMessageId THE_ITEM_HAS_FAILED_TO_BE_REGISTERED;
-
+	
 	/**
 	 * ID: 3366<br>
 	 * Message: Cancellation of Sale has failed because requirements are not met.
 	 */
 	public static final SystemMessageId CANCELLATION_OF_SALE_HAS_FAILED_BECAUSE_REQUIREMENTS_ARE_NOT_MET;
-
+	
 	/**
 	 * ID: 3367<br>
 	 * Message: Cancellation of Sale for the registered item has failed.
 	 */
 	public static final SystemMessageId CANCELLATION_OF_SALE_FOR_THE_REGISTERED_ITEM_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3368<br>
 	 * Message: There is no registered item or request has failed.
 	 */
 	public static final SystemMessageId THERE_IS_NO_REGISTERED_ITEM_OR_REQUEST_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3369<br>
 	 * Message: Currently, there are no registered items.
 	 */
 	public static final SystemMessageId CURRENTLY_THERE_ARE_NO_REGISTERED_ITEMS;
-
+	
 	/**
 	 * ID: 3370<br>
 	 * Message: Item Purchase is not available because the corresponding item does not exist.
 	 */
 	public static final SystemMessageId ITEM_PURCHASE_IS_NOT_AVAILABLE_BECAUSE_THE_CORRESPONDING_ITEM_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3371<br>
 	 * Message: Item Purchase has failed.
 	 */
 	public static final SystemMessageId ITEM_PURCHASE_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3372<br>
 	 * Message: The item that you searched does not exist or the request has failed.
 	 */
 	public static final SystemMessageId THE_ITEM_THAT_YOU_SEARCHED_DOES_NOT_EXIST_OR_THE_REQUEST_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3373<br>
 	 * Message: The item that you searched does not exist.
 	 */
 	public static final SystemMessageId THE_ITEM_THAT_YOU_SEARCHED_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3374<br>
 	 * Message: The search range is too wide. Please reset the range.
 	 */
 	public static final SystemMessageId THE_SEARCH_RANGE_IS_TOO_WIDE_PLEASE_RESET_THE_RANGE;
-
+	
 	/**
 	 * ID: 3430<br>
 	 * Message: Congratulations! You will now graduate from the Clan Academy and leave your current clan. As a graduate of the academy, you can immediately join a clan as a regular member without being subject to any penalties.
 	 */
 	public static final SystemMessageId YOU_WILL_NOW_GRADUATE_FROM_THE_CLAN_ACADEMY_AND_LEAVE_YOUR_CURRENT_CLAN;
-
+	
 	/**
 	 * ID: 3445<br>
 	 * Message: Looking for a player who will replace $s1.
 	 */
 	public static final SystemMessageId LOOKING_FOR_A_PLAYER_WHO_WILL_REPLACE_S1;
-
+	
 	/**
 	 * ID: 3446<br>
 	 * Message: Stopped looking for a player who will replace $s1.
 	 */
 	public static final SystemMessageId STOPPED_LOOKING_FOR_A_PLAYER_WHO_WILL_REPLACE_S1;
-
+	
 	/**
 	 * ID: 3447<br>
 	 * Message: You are not currently registered on the waiting list.
 	 */
 	public static final SystemMessageId YOU_ARE_NOT_CURRENTLY_REGISTERED_ON_THE_WAITING_LIST;
-
+	
 	/**
 	 * ID: 3448<br>
 	 * Message: It is automatically rejected because your decision to participate was not made within the time frame.
 	 */
 	public static final SystemMessageId IT_IS_AUTOMATICALLY_REJECTED_BECAUSE_YOUR_DECISION_TO_PARTICIPATE_WAS_NOT_WITHIN_THE_TIME_FRAME;
-
+	
 	/**
 	 * ID: 3449<br>
 	 * Message: The party does not exist, and you are again registered on the waiting list.
 	 */
 	public static final SystemMessageId THE_PARTY_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3450<br>
 	 * Message: The player declined to join your party.
 	 */
 	public static final SystemMessageId THE_PLAYER_DICLINED_TO_JOIN_YOUR_PARTY;
-
+	
 	/**
 	 * ID: 3451<br>
 	 * Message: Request of replacement player is not allowed in the area.
 	 */
 	public static final SystemMessageId REQUEST_OF_REPLACEMENT_PLAYER_IS_NOT_ALLOWED_IN_THE_AREA;
-
+	
 	/**
 	 * ID: 3452<br>
 	 * Message: You are registered on the waiting list.
 	 */
 	public static final SystemMessageId YOU_ARE_REGISTERED_ON_THE_WAITING_LIST;
-
+	
 	/**
 	 * ID: 3453<br>
 	 * Message: Stopped searching the party.
 	 */
 	public static final SystemMessageId STOPPED_SEARCHING_THE_PARTY;
-
+	
 	/**
 	 * ID: 3454<br>
 	 * Message: The player to be replaced does not exist, and another player is being searched for.
 	 */
 	public static final SystemMessageId THE_PLAYER_TO_BE_REPLACED_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3455<br>
 	 * Message: Registration has failed.
 	 */
 	public static final SystemMessageId REGISTRATION_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3456<br>
 	 * Message: You are already registered on the waiting list.
 	 */
 	public static final SystemMessageId YOU_ARE_ALREADY_REGISTERED_ON_THE_WAITING_LIST;
-
+	
 	/**
 	 * ID: 3457<br>
 	 * Message: Replacing player for $s1 could not be found.
 	 */
 	public static final SystemMessageId REPLACING_PLAYER_FOR_S1_COULD_NOT_BE_FOUND;
-
+	
 	/**
 	 * ID: 3458<br>
 	 * Message: All registrations in the corresponding area will be cancelled.
 	 */
 	public static final SystemMessageId ALL_REGISTRATIONS_IN_THECORRESPONDING_AREA_WILL_BE_CANCELLED;
-
+	
 	/**
 	 * ID: 3459<br>
 	 * Message: Cancellation has failed.
 	 */
 	public static final SystemMessageId CANCELLATION_HAS_FAILED;
-
+	
 	/**
 	 * ID: 3460<br>
 	 * Message: There already is a replacement player registered.
 	 */
 	public static final SystemMessageId THERE_ALREADY_IS_A_REPLACEMENT_PLAYER_REGISTERED;
-
+	
 	/**
 	 * ID: 3484<br>
 	 * Message: The item has been successfully registered.
 	 */
 	public static final SystemMessageId THE_ITEM_HAS_BEEN_SUCCESSFULLY_REGISTERED;
-
+	
 	/**
 	 * ID: 3485<br>
 	 * Message: Cancellation of Sale for the item is successful.
 	 */
 	public static final SystemMessageId CANCELLATION_OF_SALE_FOR_THE_ITEM_IS_SUCCESSFUL;
-
+	
 	/**
 	 * ID: 3486<br>
 	 * Message: The item has been successfully purchased.
 	 */
 	public static final SystemMessageId THE_ITEM_HAS_BEEN_SUCCESSFULLY_PURCHASED;
-
+	
 	/**
 	 * ID: 3487<br>
 	 * Message: The offer can be withdrawn within $s1 hour(s) $s2 minute(s).
 	 */
 	public static final SystemMessageId THE_OFFER_CAN_BE_WITHDRAWN_WITHIN_S1_HOUR_S2_MINUTE;
-
+	
 	/**
 	 * ID: 3488<br>
 	 * Message: The offer can be withdrawn within $s1 minute(s).
 	 */
 	public static final SystemMessageId THE_OFFER_CAN_BE_WITHDRAWN_WITHIN_S1_MINUTE;
-
+	
 	/**
 	 * ID: 3489<br>
 	 * Message: The search result exceeded the maximum allowed range for output. Please search by selecting detailed category.
 	 */
 	public static final SystemMessageId THE_SEARCH_RESULT_EXCEED_THE_MAXIMUM_ALLOWED_RANGE_FOR_OUTPUT;
-
+	
 	/**
 	 * ID: 3490<br>
 	 * Message: The item you registered has been sold.
 	 */
 	public static final SystemMessageId THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD;
-
+	
 	/**
 	 * ID: 3491<br>
 	 * Message: $s1 has been sold.
 	 */
 	public static final SystemMessageId S1_HAS_BEEN_SOLD;
-
+	
 	/**
 	 * ID: 3492<br>
 	 * Message: The registration period for the item you registered has expired.
 	 */
 	public static final SystemMessageId THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED;
-
+	
 	/**
 	 * ID: 3493<br>
 	 * Message: The auction house registration period has expired and the corresponding item is being forwarded.
 	 */
 	public static final SystemMessageId THE_AUCTION_HOUSE_REGISTRATION_PERIOD_HAS_EXPIRED_AND_THE_CORRESPONDING_ITEM_IS_BEING_FORWARDED;
-
+	
 	/**
 	 * ID: 3494<br>
 	 * Message: The item that is currently worn cannot be registered.
 	 */
 	public static final SystemMessageId THE_ITEM_THAT_IS_CURRENTLY_WORN_CANNOT_BE_REGISTERED;
-
+	
 	/**
 	 * ID: 3530<br>
 	 * Message: You have successfully purchased $s2 of $s1.
 	 */
 	public static final SystemMessageId YOU_HAVE_SUCCESSFULLY_PURCHASED_S2_OF_S1;
-
+	
 	/**
 	 * ID: 3573<br>
 	 * Message: Only characters over level 76 who completed 3rd class transfer may be a sponsor of academy trainee.
@@ -15069,229 +15071,229 @@ public final class SystemMessageId
 	 * Message: You cannot awaken due to weight limits. Please try awaken again after increasing the allowed weight by organizing the inventory.
 	 */
 	public static final SystemMessageId YOU_CANNOT_AWAKEN_DUE_TO_WEIGHT_LIMITS;
-
+	
 	/**
 	 * ID: 3653<br>
 	 * Message: Unable to process this request until your inventory's weight and slot count are less than 70 percent of capacity.
 	 */
 	public static final SystemMessageId INVENTORY_SIZE_WEIGHT_LESS_70_PERCENT;
-
+	
 	/**
 	 * ID: 3654<br>
 	 * Message: You cannot use Sayune while in a chaotic state.
 	 */
 	public static final SystemMessageId YOU_CANNOT_USE_SAYUNE_WHILE_IN_A_CHAOTIC_STATE;
-
+	
 	/**
 	 * ID: 3655<br>
 	 * Message: You cannot awaken while you're transformed or riding.
 	 */
 	public static final SystemMessageId YOU_CANNOT_AWAKEN_WHILE_YOURE_TRANSFORMED_OR_RIDING;
-
+	
 	/**
 	 * ID: 3656<br>
 	 * Message: You cannot discard an item while an enchantment is in progress.
 	 */
 	public static final SystemMessageId YOU_CANNOT_DISCARD_AN_ITEM_WHILE_AN_ENCHANTMENT_IS_IN_PROGRESS;
-
+	
 	/**
 	 * ID: 3657<br>
 	 * Message: (Total: $s1)
 	 */
 	public static final SystemMessageId TOTAL_S1;
-
+	
 	/**
 	 * ID: 3658<br>
 	 * Message: Changing attributes is in progress. Please try again after ending the previous task.
 	 */
 	public static final SystemMessageId CHANGING_ATTRIBUTES_IS_IN_PROGRESS;
-
+	
 	/**
 	 * ID: 3659<br>
 	 * Message: You cannot change an attribute while using a private shop or workshop.
 	 */
 	public static final SystemMessageId YOU_CANNOT_CHANGE_AN_ATTRIBUTE_WHILE_USING_A_PRIVATE_SHOP_OR_WORKSHOP;
-
+	
 	/**
 	 * ID: 3660<br>
 	 * Message: Enchantment or Attribute Enchantment is in progress. Please try again after ending the previous task.
 	 */
 	public static final SystemMessageId ENCHANTMENT_OF_ATTRIBUTE_ENCHANMENT_IS_IN_PROGRESS;
-
+	
 	/**
 	 * ID: 3661<br>
 	 * Message: Changing attributes has been failed.
 	 */
 	public static final SystemMessageId CHANGING_ATTRIBUTES_HAS_BEEN_FAILED;
-
+	
 	/**
 	 * ID: 3662<br>
 	 * Message: You cannot change attributes while exchanging.
 	 */
 	public static final SystemMessageId YOU_CANNOT_CHANGE_ATTRIBUTES_WHILE_EXCHANING;
-
+	
 	/**
 	 * ID: 3666<br>
 	 * Message: <$s1>'s <$s2> attribute is changing to <$s3> attribute. Do you really want to change?
 	 */
 	public static final SystemMessageId S1S_S2_ATTRIBUTE_IS_CHANGING_TO_S3_ATTRIBUTE_DO_YOU_REALLY_WANT_TO_CHANGE;
-
+	
 	/**
 	 * ID: 3667<br>
 	 * Message: Please choose the attribute that you want to change first.
 	 */
 	public static final SystemMessageId PLEASE_CHOOSE_THE_ATTRIBUTE_THAT_YOU_WANT_TO_CHANGE_FIRST;
-
+	
 	/**
 	 * ID: 3668<br>
 	 * Message: <$s1>'s <$s2> attribute has successfully changed to <$s3> attribute.
 	 */
 	public static final SystemMessageId S1S_S2_ATTRIBUTE_HAS_SUCCESSFULLY_CHANGED_TO_S3_ATTRIBUTE;
-
+	
 	/**
 	 * ID: 3669<br>
 	 * Message: The item for changing an attribute does not exist.
 	 */
 	public static final SystemMessageId THE_ITEM_FOR_CHANGIN_AN_ATTRIBUTE_DOES_NOT_EXIST;
-
+	
 	/**
 	 * ID: 3689<br>
 	 * Message: The mentoring relationship with $s1 has been canceled. The mentor cannot obtain another mentee for one week.
 	 */
 	public static final SystemMessageId THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED;
-
+	
 	/**
 	 * ID: 3690<br>
 	 * Message: Do you wish to make $s1 your mentor? (Class: $s2 / Level: $s3)
 	 */
 	public static final SystemMessageId DO_YOU_WISH_TO_MAKE_S1_YOUR_MENTOR_CLASS_S2_LEVEL_S3;
-
+	
 	/**
 	 * ID: 3691<br>
 	 * Message: From now on, $s1 will be your mentor.
 	 */
 	public static final SystemMessageId FROM_NOW_ON_S1_WILL_BE_YOUR_MENTOR;
-
+	
 	/**
 	 * ID: 3692<br>
 	 * Message: From now on, $s1 will be your mentee.
 	 */
 	public static final SystemMessageId FROM_NOW_ON_S1_WILL_BE_YOUR_MENTEE;
-
+	
 	/**
 	 * ID: 3693<br>
 	 * Message: A mentor can have up to 3 mentees at the same time.
 	 */
 	public static final SystemMessageId A_MENTOR_CAN_HAVE_UP_TO_3_MENTEES_AT_THE_SAME_TIME;
-
+	
 	/**
 	 * ID: 3694<br>
 	 * Message: You must awaken in order to become a mentor.
 	 */
 	public static final SystemMessageId YOU_MUST_AWAKEN_IN_ORDER_TO_BECOM_A_MENTOR;
-
+	
 	/**
 	 * ID: 3695<br>
 	 * Message: Your mentee $s1 has connected.
 	 */
 	public static final SystemMessageId YOUR_MENTEE_S1_HAS_CONNECTED;
-
+	
 	/**
 	 * ID: 3696<br>
 	 * Message: Your mentor $s1 has connected.
 	 */
 	public static final SystemMessageId YOUR_MENTOR_S1_HAS_CONNECTED;
-
+	
 	/**
 	 * ID: 3697<br>
 	 * Message: Your mentee $s1 has disconnected.
 	 */
 	public static final SystemMessageId YOUR_MENTEE_S1_HAS_DISCONNECTED;
-
+	
 	/**
 	 * ID: 3698<br>
 	 * Message: Your mentor $s1 has disconnected.
 	 */
 	public static final SystemMessageId YOUR_MENTOR_S1_HAS_DISCONNECTED;
-
+	
 	/**
 	 * ID: 3699<br>
 	 * Message: $s1 has declined becoming your mentee.
 	 */
 	public static final SystemMessageId S1_HAS_DECLINED_BECOMING_YOUR_MENTEE;
-
+	
 	/**
 	 * ID: 3700<br>
 	 * Message: You have declined $s1's mentoring offer.
 	 */
 	public static final SystemMessageId YOU_HAVE_DECLINED_S1_MENTORING_OFFER;
-
+	
 	/**
 	 * ID: 3701<br>
 	 * Message: You cannot become your own mentee.
 	 */
 	public static final SystemMessageId YOU_CANNOT_BECOME_YOUR_OWN_MENTEE;
-
+	
 	/**
 	 * ID: 3702<br>
 	 * Message: $s1 already has a mentor.
 	 */
 	public static final SystemMessageId S1_ALREADY_HAS_A_MENTOR;
-
+	
 	/**
 	 * ID: 3703<br>
 	 * Message: $s1 is above level 86 and cannot become a mentee.
 	 */
 	public static final SystemMessageId S1_IS_ABOVE_LEVEL_86_AND_CANNOT_BECOME_A_MENTEE;
-
+	
 	/**
 	 * ID: 3704<br>
 	 * Message: $s1 does not have the item needed to become a mentee.
 	 */
 	public static final SystemMessageId S1_DOES_NOT_HAVE_THE_ITEM_NEEDED_TO_BECOME_A_MENTEE;
-
+	
 	/**
 	 * ID: 3705<br>
 	 * Message: The mentee $s1 reached level 86, so the mentoring relationship was ended. After the mentee's graduation, the mentor cannot obtain another mentee for 5 days.
 	 */
 	public static final SystemMessageId THE_MENTEE_S1_REACHED_LEVEL_86_SO_THE_MENTORING_RELATIONSHIP_WAS_ENDED;
-
+	
 	/**
 	 * ID: 3706<br>
 	 * Message: You reached level 86, so the mentoring relationship with your mentor $s1 came to an end.
 	 */
 	public static final SystemMessageId YOU_REACHED_LEVEL_86_SO_THE_MENTORING_RELATIONSHIP_WITH_YOUR_MENTOR_S1_CAME_TO_AN_END;
-
+	
 	/**
 	 * ID: 3707<br>
 	 * Message: You have offered to become $s1's mentor.
 	 */
 	public static final SystemMessageId YOU_HAVE_OFFERED_TO_BECOME_S1_MENTOR;
-
+	
 	/**
 	 * ID: 3710<br>
 	 * Message: Invitation can occur only when the mentee is in main class status.
 	 */
 	public static final SystemMessageId INVITATION_CAN_OCCUR_ONLY_WHEN_THE_MENTEE_IS_IN_MAIN_CLASS_STATUS;
-
+	
 	/**
 	 * ID: 3711<br>
 	 * Message: Do you wish to end the mentoring relationship with $s1?  If the mentor's contract ends, the mentor cannot obtain another mentee for one week.
 	 */
 	public static final SystemMessageId DO_YOU_WISH_TO_END_THE_MENTORING_RELATIONSHIP_WITH_S1;
-
+	
 	/**
 	 * ID: 3713<br>
 	 * Message: You can bond with a new mentee in $s1 day(s) $s2 hour(s) $s3 minute(s).
 	 */
 	public static final SystemMessageId YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE;
-
+	
 	/**
 	 * ID: 3716<br>
 	 * Message: A character with a mentorship relationship cannot be deleted.
 	 */
 	public static final SystemMessageId A_CHARACTER_WITH_A_MENTORSHIP_RELATIONSHIP_CANNOT_BE_DELETED;
-
+	
 	/**
 	 * ID: 3717<br>
 	 * Message: $s1 already has a mentoring relationship with another character so it cannot form any more mentoring relationships.
@@ -15302,1227 +15304,1227 @@ public final class SystemMessageId
 	 * ID: 3718<br>
 	 * Message: The character's name was not entered.
 	 */
-	 public static final SystemMessageId THE_CHARACTERS_NAME_WAS_NOT_ENTERED;
+	public static final SystemMessageId THE_CHARACTERS_NAME_WAS_NOT_ENTERED;
 	
 	/**
 	 * ID: 3719<br>
 	 * Message: Do you wish to delete the selected re-play?
 	 */
-	 public static final SystemMessageId DO_YOU_WISH_TO_DELETE_THE_SELECTED_REPLAY;
+	public static final SystemMessageId DO_YOU_WISH_TO_DELETE_THE_SELECTED_REPLAY;
 	
 	/**
 	 * ID: 3720<br>
 	 * Message: $s1 Adena is need to operate the manor.
 	 */
-	 public static final SystemMessageId S1_ADENA_IS_NEED_TO_OPERATE_THE_MANOR;
+	public static final SystemMessageId S1_ADENA_IS_NEED_TO_OPERATE_THE_MANOR;
 	
 	/**
 	 * ID: 3722<br>
 	 * Message: $s1 has successfully hatched the egg.
 	 */
-	 public static final SystemMessageId S1_HAS_SUCCESSFULLY_HATCHED_THE_EGG;
+	public static final SystemMessageId S1_HAS_SUCCESSFULLY_HATCHED_THE_EGG;
 	
 	/**
 	 * ID: 3723<br>
 	 * Message: $s1 has failed to hatch the egg.
 	 */
-	 public static final SystemMessageId S1_HAS_FAILED_TO_HATCH_THE_EGG;
+	public static final SystemMessageId S1_HAS_FAILED_TO_HATCH_THE_EGG;
 	
 	/**
 	 * ID: 3724<br>
 	 * Message: $s1 has successfully hatched the egg by creating the perfect temperature for incubation.
 	 */
-	 public static final SystemMessageId S1_HAS_SUCCESSFULLY_HATCHED_THE_EGG_BY_CREATING_THE_PERFECT_TEMPERATURE_FOR_INCUBATION;
+	public static final SystemMessageId S1_HAS_SUCCESSFULLY_HATCHED_THE_EGG_BY_CREATING_THE_PERFECT_TEMPERATURE_FOR_INCUBATION;
 	
 	/**
 	 * ID: 3725<br>
 	 * Message: =====<Temperature Raising Rankings>=====
 	 */
-	 public static final SystemMessageId TEMPERATURE_RAISING_RANKINGS;
+	public static final SystemMessageId TEMPERATURE_RAISING_RANKINGS;
 	
 	/**
 	 * ID: 3726<br>
 	 * Message: Rank $1: $2 ($3.$4 degrees)
 	 */
-	 public static final SystemMessageId RANK_1_2_3;
+	public static final SystemMessageId RANK_1_2_3;
 	
 	/**
 	 * ID: 3727<br>
 	 * Message: =======================
 	 */
-	 public static final SystemMessageId EQUAL_DELIMITER;
+	public static final SystemMessageId EQUAL_DELIMITER;
 	
 	/**
 	 * ID: 3728<br>
 	 * Message: $1 receives a prize for raising the temperature most.
 	 */
-	 public static final SystemMessageId S1_RECEIVES_A_PRIZE_FOR_RAISING_THE_TEMPERATURE_MOST;
+	public static final SystemMessageId S1_RECEIVES_A_PRIZE_FOR_RAISING_THE_TEMPERATURE_MOST;
 	
 	/**
 	 * ID: 3729<br>
 	 * Message: The character and item recipe levels do not match, so it cannot be used normally.
 	 */
-	 public static final SystemMessageId THE_CHARACTER_AND_ITEM_RECIPE_LEVELS_DO_NOT_MATCH_SO_IT_CANNOT_BE_USED_NORMALLY;
+	public static final SystemMessageId THE_CHARACTER_AND_ITEM_RECIPE_LEVELS_DO_NOT_MATCH_SO_IT_CANNOT_BE_USED_NORMALLY;
 	
 	/**
 	 * ID: 3730<br>
 	 * Message: Cycle $s1 of the Ceremony of Chaos has begun.
 	 */
-	 public static final SystemMessageId CYCLE_S1_OF_THE_CEREMONY_OF_CHAOS_HAS_BEGUN;
+	public static final SystemMessageId CYCLE_S1_OF_THE_CEREMONY_OF_CHAOS_HAS_BEGUN;
 	
 	/**
 	 * ID: 3731<br>
 	 * Message: Cycle $s1 of the Ceremony of Chaos has ended.
 	 */
-	 public static final SystemMessageId CYCLE_S1_OF_THE_CEREMONY_OF_CHAOS_HAS_ENDED;
+	public static final SystemMessageId CYCLE_S1_OF_THE_CEREMONY_OF_CHAOS_HAS_ENDED;
 	
 	/**
 	 * ID: 3732<br>
 	 * Message: You are now on the waiting list. You will automatically be teleported when the tournament starts, and will be removed from the waiting list if you log out. If you cancel registration (within the last minute of entering the arena after signing up) 30 times or more or forfeit after entering the arena 30 times or more during a cycle, you become ineligible for participation in the Ceremony of Chaos until the next cycle. All the buffs except the Vitality buff will be removed once you enter the arenas.
 	 */
-	 public static final SystemMessageId YOU_ARE_NOW_ON_THE_WAITING_LIST;
+	public static final SystemMessageId YOU_ARE_NOW_ON_THE_WAITING_LIST;
 	
 	/**
 	 * ID: 3733<br>
 	 * Message: Only characters level 85 or above may participate in the tournament.
 	 */
-	 public static final SystemMessageId ONLY_CHARACTERS_LEVEL_85_OR_ABOVE_MAY_PARTICIPATE_IN_THE_TOURNAMENT;
+	public static final SystemMessageId ONLY_CHARACTERS_LEVEL_85_OR_ABOVE_MAY_PARTICIPATE_IN_THE_TOURNAMENT;
 	
 	/**
 	 * ID: 3734<br>
 	 * Message: There are too many challengers. You cannot participate now.
 	 */
-	 public static final SystemMessageId THERE_ARE_TOO_MANY_CHALLENGERS;
+	public static final SystemMessageId THERE_ARE_TOO_MANY_CHALLENGERS;
 	
 	/**
 	 * ID: 3735<br>
 	 * Message: $c1 cannot participate in the tournament due to having become the owner of $s2.
 	 */
-	 public static final SystemMessageId C1_CANNOT_PARTICIPATE_IN_THE_TOURNAMENT_DUE_TO_HAVING_BECOME_THE_OWNER_OF_S2;
+	public static final SystemMessageId C1_CANNOT_PARTICIPATE_IN_THE_TOURNAMENT_DUE_TO_HAVING_BECOME_THE_OWNER_OF_S2;
 	
 	/**
 	 * ID: 3736<br>
 	 * Message: You've been deleted from the queue. Queue registration can be done in the following time slots each hour from 20:00 - 23:40 every day: 00:00 - 00:05, 00:15 - 00:20, 00:30 - 00:35, and 00:45 - 00:50. For one week, if you cancel registration more than 30 times for 1 month or quit after entering the arena, you will no longer be eligible to participate in the Ceremony of Chaos. When you enter the area, all buffs except the Vitality buff will be deleted.
 	 */
-	 public static final SystemMessageId YOUVE_BEEN_DELETED_FROM_THE_QUEUE;
+	public static final SystemMessageId YOUVE_BEEN_DELETED_FROM_THE_QUEUE;
 	
 	/**
 	 * ID: 3737<br>
 	 * Message: You will be moved to the arena in $s1 second(s).
 	 */
-	 public static final SystemMessageId YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECONDS;
+	public static final SystemMessageId YOU_WILL_BE_MOVED_TO_THE_ARENA_IN_S1_SECONDS;
 	
 	/**
 	 * ID: 3738<br>
 	 * Message: You have proven your abilities.
 	 */
-	 public static final SystemMessageId YOU_HAVE_PROVEN_YOUR_ABILITIES;
+	public static final SystemMessageId YOU_HAVE_PROVEN_YOUR_ABILITIES;
 	
 	/**
 	 * ID: 3739<br>
 	 * Message: Show us what you can do next time!
 	 */
-	 public static final SystemMessageId SHOW_US_WHAT_YOU_CAN_DO_NEXT_TIME;
+	public static final SystemMessageId SHOW_US_WHAT_YOU_CAN_DO_NEXT_TIME;
 	
 	/**
 	 * ID: 3740<br>
 	 * Message: It has ended in a tie.
 	 */
-	 public static final SystemMessageId IT_HAS_ENDED_IN_A_TIE;
+	public static final SystemMessageId IT_HAS_ENDED_IN_A_TIE;
 	
 	/**
 	 * ID: 3741<br>
 	 * Message: You cannot chat in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_CHAT_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_CANNOT_CHAT_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3742<br>
 	 * Message: You cannot open a private store or workshop in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_OPEN_A_PRIVATE_STORE_OR_WORKSHOP_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_CANNOT_OPEN_A_PRIVATE_STORE_OR_WORKSHOP_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3743<br>
 	 * Message: The invisible effect has been cancelled.
 	 */
-	 public static final SystemMessageId THE_INVISIBLE_EFFECT_HAS_BEEN_CANCELLED;
+	public static final SystemMessageId THE_INVISIBLE_EFFECT_HAS_BEEN_CANCELLED;
 	
 	/**
 	 * ID: 3744<br>
 	 * Message: Prove your abilities.
 	 */
-	 public static final SystemMessageId PROVE_YOUR_ABILITIES;
+	public static final SystemMessageId PROVE_YOUR_ABILITIES;
 	
 	/**
 	 * ID: 3745<br>
 	 * Message: There are no allies here; everyone is an enemy.
 	 */
-	 public static final SystemMessageId THERE_ARE_NO_ALLIES_HERE_EVERYONE_IS_AN_ENEMY;
+	public static final SystemMessageId THERE_ARE_NO_ALLIES_HERE_EVERYONE_IS_AN_ENEMY;
 	
 	/**
 	 * ID: 3746<br>
 	 * Message: It will be a lonely battle, but I wish you victory.
 	 */
-	 public static final SystemMessageId IT_WILL_BE_A_LONELY_BATTLE_BUT_I_WISH_YOU_VICTORY;
+	public static final SystemMessageId IT_WILL_BE_A_LONELY_BATTLE_BUT_I_WISH_YOU_VICTORY;
 	
 	/**
 	 * ID: 3747<br>
 	 * Message: Begin match!
 	 */
-	 public static final SystemMessageId BEGIN_MATCH;
+	public static final SystemMessageId BEGIN_MATCH;
 	
 	/**
 	 * ID: 3748<br>
 	 * Message: The time of choices has come.
 	 */
-	 public static final SystemMessageId THE_TIME_OF_CHOICES_HAS_COME;
+	public static final SystemMessageId THE_TIME_OF_CHOICES_HAS_COME;
 	
 	/**
 	 * ID: 3749<br>
 	 * Message: In $s1 second(s), you will be moved to where you were before participating in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId IN_S1_SECONDS_YOU_WILL_BE_MOVED_TO_WHERE_YOU_WERE_BEFORE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId IN_S1_SECONDS_YOU_WILL_BE_MOVED_TO_WHERE_YOU_WERE_BEFORE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3750<br>
 	 * Message: Only PC's who belong to a clan that is above level 5 can summon a pet.
 	 */
-	 public static final SystemMessageId ONLY_PCS_WHO_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_SUMMON_A_PET;
+	public static final SystemMessageId ONLY_PCS_WHO_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_SUMMON_A_PET;
 	
 	/**
 	 * ID: 3751<br>
 	 * Message: Only PC's who belong to a clan that is above level 5 can obtain Clan Reputation.
 	 */
-	 public static final SystemMessageId ONLY_PCS_WHO_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_OBTAIN_CLAN_REPUTATION;
+	public static final SystemMessageId ONLY_PCS_WHO_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_OBTAIN_CLAN_REPUTATION;
 	
 	/**
 	 * ID: 3752<br>
 	 * Message: Only PC's who are above level 40, have completed second class transfer, and belong to a clan that is above level 5, can summon.
 	 */
-	 public static final SystemMessageId ONLY_PCS_WHO_ARE_ABOVE_LEVEL_40_HAVE_COMPLETED_SECOND_CLASS_TRANSFER_AND_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_SUMMON;
+	public static final SystemMessageId ONLY_PCS_WHO_ARE_ABOVE_LEVEL_40_HAVE_COMPLETED_SECOND_CLASS_TRANSFER_AND_BELONG_TO_A_CLAN_THAT_IS_ABOVE_LEVEL_5_CAN_SUMMON;
 	
 	/**
 	 * ID: 3753<br>
 	 * Message: Only PC's who are above level 40 and have completed second class transfer can obtain Individual Fame.
 	 */
-	 public static final SystemMessageId ONLY_PCS_WHO_ARE_ABOVE_LEVEL_40_AND_HAVE_COMPLETED_SECOND_CLASS_TRANSFER_CAN_OBTAIN_INDIVIDUAL_FAME;
+	public static final SystemMessageId ONLY_PCS_WHO_ARE_ABOVE_LEVEL_40_AND_HAVE_COMPLETED_SECOND_CLASS_TRANSFER_CAN_OBTAIN_INDIVIDUAL_FAME;
 	
 	/**
 	 * ID: 3754<br>
 	 * Message: $s1 second(s) to match end!
 	 */
-	 public static final SystemMessageId S1_SECONDS_TO_MATCH_END;
+	public static final SystemMessageId S1_SECONDS_TO_MATCH_END;
 	
 	/**
 	 * ID: 3755<br>
 	 * Message: $s1 second(s) to match start!
 	 */
-	 public static final SystemMessageId S1_SECONDS_TO_MATCH_START;
+	public static final SystemMessageId S1_SECONDS_TO_MATCH_START;
 	
 	/**
 	 * ID: 3756<br>
 	 * Message: Are you sure you want to quit?
 	 */
-	 public static final SystemMessageId ARE_YOU_SURE_YOU_WANT_TO_QUIT;
+	public static final SystemMessageId ARE_YOU_SURE_YOU_WANT_TO_QUIT;
 	
 	/**
 	 * ID: 3757<br>
 	 * Message: Darkness spreads contaminating even my waters' energy...
 	 */
-	 public static final SystemMessageId DARKNESS_SPREADS_CONTAMINATING_EVEN_MY_WATERS_ENERGY;
+	public static final SystemMessageId DARKNESS_SPREADS_CONTAMINATING_EVEN_MY_WATERS_ENERGY;
 	
 	/**
 	 * ID: 3758<br>
 	 * Message: Please, brave warriors help me
 	 */
-	 public static final SystemMessageId PLEASE_BRAVE_WARRIORS_HELP_ME;
+	public static final SystemMessageId PLEASE_BRAVE_WARRIORS_HELP_ME;
 	
 	/**
 	 * ID: 3759<br>
 	 * Message: I am Eva, the goddess of water.
 	 */
-	 public static final SystemMessageId I_AM_EVA_THE_GODDESS_OF_WATER;
+	public static final SystemMessageId I_AM_EVA_THE_GODDESS_OF_WATER;
 	
 	/**
 	 * ID: 3760<br>
 	 * Message: You brave few who have answered my call
 	 */
-	 public static final SystemMessageId YOU_BRAVE_FEW_WHO_HAVE_ANSWERED_MY_CALL;
+	public static final SystemMessageId YOU_BRAVE_FEW_WHO_HAVE_ANSWERED_MY_CALL;
 	
 	/**
 	 * ID: 3761<br>
 	 * Message: I desperately need your aid.
 	 */
-	 public static final SystemMessageId I_DESPERATELY_NEED_YOUR_AID;
+	public static final SystemMessageId I_DESPERATELY_NEED_YOUR_AID;
 	
 	/**
 	 * ID: 3762<br>
 	 * Message: You dare fight me? Ha - fools!
 	 */
-	 public static final SystemMessageId YOU_DARE_FIGHT_ME;
+	public static final SystemMessageId YOU_DARE_FIGHT_ME;
 	
 	/**
 	 * ID: 3763<br>
 	 * Message: I am nothing like Zariche. I will crush you into dust!
 	 */
-	 public static final SystemMessageId I_AM_NOTHING_LIKE_ZARICHE;
+	public static final SystemMessageId I_AM_NOTHING_LIKE_ZARICHE;
 	
 	/**
 	 * ID: 3764<br>
 	 * Message: You acquired $s1 Individual Fame.
 	 */
-	 public static final SystemMessageId YOU_ACQUIRED_S1_INDIVIDUAL_FAME;
+	public static final SystemMessageId YOU_ACQUIRED_S1_INDIVIDUAL_FAME;
 	
 	/**
 	 * ID: 3765<br>
 	 * Message: Current Location: $s1 / $s2 / $s3 (inside the Seed of Hellfire)
 	 */
-	 public static final SystemMessageId CURRENT_LOCATION_S1_S2_S3_INSIDE_THE_SEED_OF_HELLFIRE;
+	public static final SystemMessageId CURRENT_LOCATION_S1_S2_S3_INSIDE_THE_SEED_OF_HELLFIRE;
 	
 	/**
 	 * ID: 3766<br>
 	 * Message: You are the first to visit me in so many years. Perhaps I should treat you with the respect you deserve.
 	 */
-	 public static final SystemMessageId YOU_ARE_THE_FIRST_TO_VISIT_ME_IN_SO_MANY_YEARS;
+	public static final SystemMessageId YOU_ARE_THE_FIRST_TO_VISIT_ME_IN_SO_MANY_YEARS;
 	
 	/**
 	 * ID: 3767<br>
 	 * Message: You have already been blessed with the honor of meeting with me!
 	 */
-	 public static final SystemMessageId YOU_HAVE_ALREADY_BEEN_BLESSED_WITH_THE_HONOR_OF_MEETING_WITH_ME;
+	public static final SystemMessageId YOU_HAVE_ALREADY_BEEN_BLESSED_WITH_THE_HONOR_OF_MEETING_WITH_ME;
 	
 	/**
 	 * ID: 3768<br>
 	 * Message: Now, offer your lives and die with grace!
 	 */
-	 public static final SystemMessageId NOW_OFFER_YOUR_LIVES_AND_DIE_WITH_GRACE;
+	public static final SystemMessageId NOW_OFFER_YOUR_LIVES_AND_DIE_WITH_GRACE;
 	
 	/**
 	 * ID: 3770<br>
 	 * Message: The Clan Flag, the symbol of your clan, has been summoned.
 	 */
-	 public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_HAS_BEEN_SUMMONED;
+	public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_HAS_BEEN_SUMMONED;
 	
 	/**
 	 * ID: 3771<br>
 	 * Message: The Clan Flag, the symbol of your clan, is under attack.
 	 */
-	 public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_IS_UNDER_ATTACK;
+	public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_IS_UNDER_ATTACK;
 	
 	/**
 	 * ID: 3772<br>
 	 * Message: The Clan Flag, the symbol of your clan, has been destroyed.
 	 */
-	 public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_HAS_BEEN_DESTROYED;
+	public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_HAS_BEEN_DESTROYED;
 	
 	/**
 	 * ID: 3773<br>
 	 * Message: The Clan Flag, the symbol of your clan, is no longer.
 	 */
-	 public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_IS_NO_LONGER;
+	public static final SystemMessageId THE_CLAN_FLAG_THE_SYMBOL_OF_YOUR_CLAN_IS_NO_LONGER;
 	
 	/**
 	 * ID: 3774<br>
 	 * Message: Only characters who are a part of a clan of level 3 or above may participate.
 	 */
-	 public static final SystemMessageId ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_3_OR_ABOVE_MAY_PARTICIPATE;
+	public static final SystemMessageId ONLY_CHARACTERS_WHO_ARE_A_PART_OF_A_CLAN_OF_LEVEL_3_OR_ABOVE_MAY_PARTICIPATE;
 	
 	/**
 	 * ID: 3775<br>
 	 * Message: Only characters who have completed the 3rd Class Transfer may participate.
 	 */
-	 public static final SystemMessageId ONLY_CHARACTERS_WHO_HAVE_COMPLETED_THE_3RD_CLASS_TRANSFER_MAY_PARTICIPATE;
+	public static final SystemMessageId ONLY_CHARACTERS_WHO_HAVE_COMPLETED_THE_3RD_CLASS_TRANSFER_MAY_PARTICIPATE;
 	
 	/**
 	 * ID: 3776<br>
 	 * Message: You may not participate as you are currently participating in another PvP match.
 	 */
-	 public static final SystemMessageId YOU_MAY_NOT_PARTICIPATE_AS_YOU_ARE_CURRENTLY_PARTICIPATING_IN_ANOTHER_PVP_MATCH;
+	public static final SystemMessageId YOU_MAY_NOT_PARTICIPATE_AS_YOU_ARE_CURRENTLY_PARTICIPATING_IN_ANOTHER_PVP_MATCH;
 	
 	/**
 	 * ID: 3777<br>
 	 * Message: You are on the waiting list for the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_ARE_ON_THE_WAITING_LIST_FOR_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3778<br>
 	 * Message: You may not register as a participant.
 	 */
-	 public static final SystemMessageId YOU_MAY_NOT_REGISTER_AS_A_PARTICIPANT;
+	public static final SystemMessageId YOU_MAY_NOT_REGISTER_AS_A_PARTICIPANT;
 	
 	/**
 	 * ID: 3779<br>
 	 * Message: $c1 may not participate as $c1 is currently in a Dead state.
 	 */
-	 public static final SystemMessageId C1_MAY_NOT_PARTICIPATE_AS_C1_IS_CURRENTLY_IN_A_DEAD_STATE;
+	public static final SystemMessageId C1_MAY_NOT_PARTICIPATE_AS_C1_IS_CURRENTLY_IN_A_DEAD_STATE;
 	
 	/**
 	 * ID: 3780<br>
 	 * Message: $c1 may not participate as $c1 is currently teleporting.
 	 */
-	 public static final SystemMessageId C1_MAY_NOT_PARTICIPATE_AS_C1_IS_CURRENTLY_TELEPORTING;
+	public static final SystemMessageId C1_MAY_NOT_PARTICIPATE_AS_C1_IS_CURRENTLY_TELEPORTING;
 	
 	/**
 	 * ID: 3781<br>
 	 * Message: Registration for the Ceremony of Chaos has begun.
 	 */
-	 public static final SystemMessageId REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_BEGUN;
+	public static final SystemMessageId REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_BEGUN;
 	
 	/**
 	 * ID: 3782<br>
 	 * Message: Registration for the Ceremony of Chaos has ended.
 	 */
-	 public static final SystemMessageId REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_ENDED;
+	public static final SystemMessageId REGISTRATION_FOR_THE_CEREMONY_OF_CHAOS_HAS_ENDED;
 	
 	/**
 	 * ID: 3783<br>
 	 * Message: Would you like to cancel your registration in the Ceremony of Chaos?
 	 */
-	 public static final SystemMessageId WOULD_YOU_LIKE_TO_CANCEL_YOUR_REGISTRATION_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId WOULD_YOU_LIKE_TO_CANCEL_YOUR_REGISTRATION_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3784<br>
 	 * Message: The Ceremony of Chaos is not currently open.
 	 */
-	 public static final SystemMessageId THE_CEREMONY_OF_CHAOS_IS_NOT_CURRENTLY_OPEN;
+	public static final SystemMessageId THE_CEREMONY_OF_CHAOS_IS_NOT_CURRENTLY_OPEN;
 	
 	/**
 	 * ID: 3785<br>
 	 * Message: You cannot equip this item in the tournament.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_EQUIP_THIS_ITEM_IN_THE_TOURNAMENT;
+	public static final SystemMessageId YOU_CANNOT_EQUIP_THIS_ITEM_IN_THE_TOURNAMENT;
 	
 	/**
 	 * ID: 3786<br>
 	 * Message: You cannot use this item in the tournament.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THIS_ITEM_IN_THE_TOURNAMENT;
+	public static final SystemMessageId YOU_CANNOT_USE_THIS_ITEM_IN_THE_TOURNAMENT;
 	
 	/**
 	 * ID: 3787<br>
 	 * Message: You cannot use this skill in the tournament.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THIS_SKILL_IN_THE_TOURNAMENT;
+	public static final SystemMessageId YOU_CANNOT_USE_THIS_SKILL_IN_THE_TOURNAMENT;
 	
 	/**
 	 * ID: 3788<br>
 	 * Message: You can no longer participate in the Ceremony of Chaos as you have cancelled registration or forfeited after entering the arena 30 times or more.
 	 */
-	 public static final SystemMessageId YOU_CAN_NO_LONGER_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_AS_YOU_HAVE_CANCELLED_REGISTRATION_OR_FORFEITED_AFTER_ENTERING_THE_ARENA_30_TIMES_OR_MORE;
+	public static final SystemMessageId YOU_CAN_NO_LONGER_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_AS_YOU_HAVE_CANCELLED_REGISTRATION_OR_FORFEITED_AFTER_ENTERING_THE_ARENA_30_TIMES_OR_MORE;
 	
 	/**
 	 * ID: 3789<br>
 	 * Message: You cannot invite a friend or party while participating in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_INVITE_A_FRIEND_OR_PARTY_WHILE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_CANNOT_INVITE_A_FRIEND_OR_PARTY_WHILE_PARTICIPATING_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3790<br>
 	 * Message: You can register a Clan Mark only once every 15 minutes.
 	 */
-	 public static final SystemMessageId YOU_CAN_REGISTER_A_CLAN_MARK_ONLY_ONCE_EVERY_15_MINUTES;
+	public static final SystemMessageId YOU_CAN_REGISTER_A_CLAN_MARK_ONLY_ONCE_EVERY_15_MINUTES;
 	
 	/**
 	 * ID: 3791<br>
 	 * Message: You have obtained the first Energy of Destruction. You can obtain up to 2 of these a day, and can begin obtaining them again at 6:30am every day.
 	 */
-	 public static final SystemMessageId YOU_HAVE_OBTAINED_THE_FIRST_ENERGY_OF_DESTRUCTION;
+	public static final SystemMessageId YOU_HAVE_OBTAINED_THE_FIRST_ENERGY_OF_DESTRUCTION;
 	
 	/**
 	 * ID: 3792<br>
 	 * Message: You have obtained the second Energy of Destruction. You can obtain up to 2 of these a day, and can begin obtaining them again at 6:30am every day.
 	 */
-	 public static final SystemMessageId YOU_HAVE_OBTAINED_THE_SECOND_ENERGY_OF_DESTRUCTION;
+	public static final SystemMessageId YOU_HAVE_OBTAINED_THE_SECOND_ENERGY_OF_DESTRUCTION;
 	
 	/**
 	 * ID: 3793<br>
 	 * Message: You have been transported out of the Ceremony of Chaos as you have forfeited the match.
 	 */
-	 public static final SystemMessageId YOU_HAVE_BEEN_TRANSPORTED_OUT_OF_THE_CEREMONY_OF_CHAOS_AS_YOU_HAVE_FORFEITED_THE_MATCH;
+	public static final SystemMessageId YOU_HAVE_BEEN_TRANSPORTED_OUT_OF_THE_CEREMONY_OF_CHAOS_AS_YOU_HAVE_FORFEITED_THE_MATCH;
 	
 	/**
 	 * ID: 3794<br>
 	 * Message: You have obtained $s1 Mysterious Mark(s) during this round of the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_HAVE_OBTAINED_S1_MYSTERIOUS_MARKS_DURING_THIS_ROUND_OF_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_HAVE_OBTAINED_S1_MYSTERIOUS_MARKS_DURING_THIS_ROUND_OF_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3795<br>
 	 * Message: A victor had been named in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId A_VICTOR_HAD_BEEN_NAMED_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId A_VICTOR_HAD_BEEN_NAMED_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3796<br>
 	 * Message: Current Location: $s1 / $s2 / $s3 (inside the Ceremony of Chaos)
 	 */
-	 public static final SystemMessageId CURRENT_LOCATION_S1_S2_S3_INSIDE_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId CURRENT_LOCATION_S1_S2_S3_INSIDE_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 3797<br>
 	 * Message: You've obtained the Energy of Destruction. You can obtain up to 2 of these items a day. You can get more after 06:30 AM every day.
 	 */
-	 public static final SystemMessageId YOUVE_OBTAINED_THE_ENERGY_OF_DESTRUCTION;
+	public static final SystemMessageId YOUVE_OBTAINED_THE_ENERGY_OF_DESTRUCTION;
 	
 	/**
 	 * ID: 3798<br>
 	 * Message: Can be used only when HP is less than 100%.
 	 */
-	 public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_HP_IS_LESS_THAN_100_PERCENT;
+	public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_HP_IS_LESS_THAN_100_PERCENT;
 	
 	/**
 	 * ID: 3799<br>
 	 * Message: Can be used only when MP is less than 100%.
 	 */
-	 public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_MP_IS_LESS_THAN_100_PERCENT;
+	public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_MP_IS_LESS_THAN_100_PERCENT;
 	
 	/**
 	 * ID: 3800<br>
 	 * Message: Can be used only when CP is less than 100%.
 	 */
-	 public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_CP_IS_LESS_THAN_100_PERCENT;
+	public static final SystemMessageId CAN_BE_USED_ONLY_WHEN_CP_IS_LESS_THAN_100_PERCENT;
 	
 	/**
 	 * ID: 3801<br>
 	 * Message: I heard Dr. Chaos left for Pavel Ruins with his Golem troops.
 	 */
-	 public static final SystemMessageId I_HEARD_DR;
+	public static final SystemMessageId I_HEARD_DR;
 	
 	/**
 	 * ID: 3802<br>
 	 * Message: He arrived on the closed Isle of Souls. It seems he went there for Relics of the Giant.
 	 */
-	 public static final SystemMessageId HE_ARRIVED_ON_THE_CLOSED_ISLE_OF_SOULS;
+	public static final SystemMessageId HE_ARRIVED_ON_THE_CLOSED_ISLE_OF_SOULS;
 	
 	/**
 	 * ID: 3803<br>
 	 * Message: It seems he went there for Relics of the Giant.
 	 */
-	 public static final SystemMessageId IT_SEEMS_HE_WENT_THERE_FOR_RELICS_OF_THE_GIANT;
+	public static final SystemMessageId IT_SEEMS_HE_WENT_THERE_FOR_RELICS_OF_THE_GIANT;
 	
 	/**
 	 * ID: 3804<br>
 	 * Message: Please hurry. Go chase Dr. Chaos. We have to stop his vain ambition.
 	 */
-	 public static final SystemMessageId PLEASE_HURRY;
+	public static final SystemMessageId PLEASE_HURRY;
 	
 	/**
 	 * ID: 3805<br>
 	 * Message: There will be wind of blood and waves of blood...
 	 */
-	 public static final SystemMessageId THERE_WILL_BE_WIND_OF_BLOOD_AND_WAVES_OF_BLOOD;
+	public static final SystemMessageId THERE_WILL_BE_WIND_OF_BLOOD_AND_WAVES_OF_BLOOD;
 	
 	/**
 	 * ID: 3806<br>
 	 * Message: Lots of things disappeared and died due to the resurrection of darkness.
 	 */
-	 public static final SystemMessageId LOTS_OF_THINGS_DISAPPEARED_AND_DIED_DUE_TO_THE_RESURRECTION_OF_DARKNESS;
+	public static final SystemMessageId LOTS_OF_THINGS_DISAPPEARED_AND_DIED_DUE_TO_THE_RESURRECTION_OF_DARKNESS;
 	
 	/**
 	 * ID: 3807<br>
 	 * Message: Warrior, don't forget about the bloody past and fight against destruction.
 	 */
-	 public static final SystemMessageId WARRIOR_DONT_FORGET_ABOUT_THE_BLOODY_PAST_AND_FIGHT_AGAINST_DESTRUCTION;
+	public static final SystemMessageId WARRIOR_DONT_FORGET_ABOUT_THE_BLOODY_PAST_AND_FIGHT_AGAINST_DESTRUCTION;
 	
 	/**
 	 * ID: 3808<br>
 	 * Message: Someday, I will find you and give you new power.
 	 */
-	 public static final SystemMessageId SOMEDAY_I_WILL_FIND_YOU_AND_GIVE_YOU_NEW_POWER;
+	public static final SystemMessageId SOMEDAY_I_WILL_FIND_YOU_AND_GIVE_YOU_NEW_POWER;
 	
 	/**
 	 * ID: 3809<br>
 	 * Message: I request
 	 */
-	 public static final SystemMessageId I_REQUEST;
+	public static final SystemMessageId I_REQUEST;
 	
 	/**
 	 * ID: 3810<br>
 	 * Message: A Contestable Clan Hall War has started.
 	 */
-	 public static final SystemMessageId A_CONTESTABLE_CLAN_HALL_WAR_HAS_STARTED;
+	public static final SystemMessageId A_CONTESTABLE_CLAN_HALL_WAR_HAS_STARTED;
 	
 	/**
 	 * ID: 3811<br>
 	 * Message: Because $c1 was killed by a clan member of $s2, Clan Reputation decreased by 1.
 	 */
-	 public static final SystemMessageId BECAUSE_C1_WAS_KILLED_BY_A_CLAN_MEMBER_OF_S2_CLAN_REPUTATION_DECREASED_BY_1;
+	public static final SystemMessageId BECAUSE_C1_WAS_KILLED_BY_A_CLAN_MEMBER_OF_S2_CLAN_REPUTATION_DECREASED_BY_1;
 	
 	/**
 	 * ID: 3812<br>
 	 * Message: Because a clan member of $s1 was killed by $c2, Clan Reputation increased by 1.
 	 */
-	 public static final SystemMessageId BECAUSE_A_CLAN_MEMBER_OF_S1_WAS_KILLED_BY_C2_CLAN_REPUTATION_INCREASED_BY_1;
+	public static final SystemMessageId BECAUSE_A_CLAN_MEMBER_OF_S1_WAS_KILLED_BY_C2_CLAN_REPUTATION_INCREASED_BY_1;
 	
 	/**
 	 * ID: 3813<br>
 	 * Message: Because Clan $s1 did not fight back for 1 week, the clan war was cancelled.
 	 */
-	 public static final SystemMessageId BECAUSE_CLAN_S1_DID_NOT_FIGHT_BACK_FOR_1_WEEK_THE_CLAN_WAR_WAS_CANCELLED;
+	public static final SystemMessageId BECAUSE_CLAN_S1_DID_NOT_FIGHT_BACK_FOR_1_WEEK_THE_CLAN_WAR_WAS_CANCELLED;
 	
 	/**
 	 * ID: 3814<br>
 	 * Message: A clan war declared by Clan $s1 was cancelled.
 	 */
-	 public static final SystemMessageId A_CLAN_WAR_DECLARED_BY_CLAN_S1_WAS_CANCELLED;
+	public static final SystemMessageId A_CLAN_WAR_DECLARED_BY_CLAN_S1_WAS_CANCELLED;
 	
 	/**
 	 * ID: 3815<br>
 	 * Message: A clan member of $s1 was killed by your clan member. If your clan kills $s2 members of Clan $s1, a clan war with Clan $s1 will start.
 	 */
-	 public static final SystemMessageId A_CLAN_MEMBER_OF_S1_WAS_KILLED_BY_YOUR_CLAN_MEMBER;
+	public static final SystemMessageId A_CLAN_MEMBER_OF_S1_WAS_KILLED_BY_YOUR_CLAN_MEMBER;
 	
 	/**
 	 * ID: 3816<br>
 	 * Message: If a character dies when PK is 4 or higher, the lower the fame is, the higher the item drop rate is.
 	 */
-	 public static final SystemMessageId IF_A_CHARACTER_DIES_WHEN_PK_IS_4_OR_HIGHER_THE_LOWER_THE_FAME_IS_THE_HIGHER_THE_ITEM_DROP_RATE_IS;
+	public static final SystemMessageId IF_A_CHARACTER_DIES_WHEN_PK_IS_4_OR_HIGHER_THE_LOWER_THE_FAME_IS_THE_HIGHER_THE_ITEM_DROP_RATE_IS;
 	
 	/**
 	 * ID: 3817<br>
 	 * Message: The ownership of the Clan Hall has been returned. You can join a Contestable Clan Hall War at 09:00 PM.
 	 */
-	 public static final SystemMessageId THE_OWNERSHIP_OF_THE_CLAN_HALL_HAS_BEEN_RETURNED;
+	public static final SystemMessageId THE_OWNERSHIP_OF_THE_CLAN_HALL_HAS_BEEN_RETURNED;
 	
 	/**
 	 * ID: 3818<br>
 	 * Message: Key combinations are available only in normal mode.
 	 */
-	 public static final SystemMessageId KEY_COMBINATIONS_ARE_AVAILABLE_ONLY_IN_NORMAL_MODE;
+	public static final SystemMessageId KEY_COMBINATIONS_ARE_AVAILABLE_ONLY_IN_NORMAL_MODE;
 	
 	/**
 	 * ID: 3819<br>
 	 * Message: The key you entered cannot be used as a shortcut key.
 	 */
-	 public static final SystemMessageId THE_KEY_YOU_ENTERED_CANNOT_BE_USED_AS_A_SHORTCUT_KEY;
+	public static final SystemMessageId THE_KEY_YOU_ENTERED_CANNOT_BE_USED_AS_A_SHORTCUT_KEY;
 	
 	/**
 	 * ID: 3820<br>
 	 * Message: The key you entered is already used for another function. Click the Apply button to switch the keys.
 	 */
-	 public static final SystemMessageId THE_KEY_YOU_ENTERED_IS_ALREADY_USED_FOR_ANOTHER_FUNCTION;
+	public static final SystemMessageId THE_KEY_YOU_ENTERED_IS_ALREADY_USED_FOR_ANOTHER_FUNCTION;
 	
 	/**
 	 * ID: 3821<br>
 	 * Message: If you want fame and economic development for your clan, select a request from any of the 3 guilds, and start the <font color='#FFDF4C'>clan request<>.
-	 * 
+	 *
 	 * But only the clan leader can make a decision.
 	 */
-	 public static final SystemMessageId IF_YOU_WANT_FAME_AND_ECONOMIC_DEVELOPMENT_FOR_YOUR_CLAN_SELECT_A_REQUEST_FROM_ANY_OF_THE_3_GUILDS_AND_START_THE_CLAN_REQUEST;
+	public static final SystemMessageId IF_YOU_WANT_FAME_AND_ECONOMIC_DEVELOPMENT_FOR_YOUR_CLAN_SELECT_A_REQUEST_FROM_ANY_OF_THE_3_GUILDS_AND_START_THE_CLAN_REQUEST;
 	
 	/**
 	 * ID: 3822<br>
 	 * Message: $s1 has been accepted.
 	 */
-	 public static final SystemMessageId S1_HAS_BEEN_ACCEPTED;
+	public static final SystemMessageId S1_HAS_BEEN_ACCEPTED;
 	
 	/**
 	 * ID: 3823<br>
 	 * Message: Clans are booming with the acquisition of <font color='#FFDF4C'>individual request points<> earned through private hunts and <font color='#FFDF4C'>clan request activities<> done with your clanmates.
-	 * 
+	 *
 	 * (Redeem individual request points to increase your clan request points. Individual fame goes up with each individual request point you redeem.)
 	 */
-	 public static final SystemMessageId CLANS_ARE_BOOMING_WITH_THE_ACQUISITION_OF_INDIVIDUAL_REQUEST_POINTS_EARNED_THROUGH_PRIVATE_HUNTS_AND_CLAN_REQUEST_ACTIVITIES_DONE_WITH_YOUR_CLANMATES;
+	public static final SystemMessageId CLANS_ARE_BOOMING_WITH_THE_ACQUISITION_OF_INDIVIDUAL_REQUEST_POINTS_EARNED_THROUGH_PRIVATE_HUNTS_AND_CLAN_REQUEST_ACTIVITIES_DONE_WITH_YOUR_CLANMATES;
 	
 	/**
 	 * ID: 3824<br>
 	 * Message: Redeem individual request points.
 	 */
-	 public static final SystemMessageId REDEEM_INDIVIDUAL_REQUEST_POINTS;
+	public static final SystemMessageId REDEEM_INDIVIDUAL_REQUEST_POINTS;
 	
 	/**
 	 * ID: 3825<br>
 	 * Message: Individual request points have been redeemed.
 	 */
-	 public static final SystemMessageId INDIVIDUAL_REQUEST_POINTS_HAVE_BEEN_REDEEMED;
+	public static final SystemMessageId INDIVIDUAL_REQUEST_POINTS_HAVE_BEEN_REDEEMED;
 	
 	/**
 	 * ID: 3826<br>
 	 * Message: Clan requests are categorized into the following difficulty levels. A person can start any request alone but it is hard succeed with fewer people than it is appropriate for specific difficulty levels.
-	 * 
+	 *
 	 * Select a clan request to start.
-	 * 
+	 *
 	 * 7-person request: Party difficulty 1
 	 * 14-person request: Party difficulty 2
 	 */
-	 public static final SystemMessageId CLAN_REQUESTS_ARE_CATEGORIZED_INTO_THE_FOLLOWING_DIFFICULTY_LEVELS;
+	public static final SystemMessageId CLAN_REQUESTS_ARE_CATEGORIZED_INTO_THE_FOLLOWING_DIFFICULTY_LEVELS;
 	
 	/**
 	 * ID: 3827<br>
 	 * Message: You've received a clan request.
 	 */
-	 public static final SystemMessageId YOUVE_RECEIVED_A_CLAN_REQUEST;
+	public static final SystemMessageId YOUVE_RECEIVED_A_CLAN_REQUEST;
 	
 	/**
 	 * ID: 3828<br>
 	 * Message: Not enough Adena or fame.
 	 */
-	 public static final SystemMessageId NOT_ENOUGH_ADENA_OR_FAME;
+	public static final SystemMessageId NOT_ENOUGH_ADENA_OR_FAME;
 	
 	/**
 	 * ID: 3829<br>
 	 * Message: Change to .
 	 * Upon change, clan request points will be reset.
 	 */
-	 public static final SystemMessageId CHANGE_TO_;
+	public static final SystemMessageId CHANGE_TO_;
 	
 	/**
 	 * ID: 3830<br>
 	 * Message: It has changed to $s1.
 	 */
-	 public static final SystemMessageId IT_HAS_CHANGED_TO_S1;
+	public static final SystemMessageId IT_HAS_CHANGED_TO_S1;
 	
 	/**
 	 * ID: 3831<br>
 	 * Message: You are giving up on the request.
 	 * when you give up on it, clan request points will be reset.
 	 */
-	 public static final SystemMessageId YOU_ARE_GIVING_UP_ON_THE_REQUEST;
+	public static final SystemMessageId YOU_ARE_GIVING_UP_ON_THE_REQUEST;
 	
 	/**
 	 * ID: 3832<br>
 	 * Message: You've given up on $s1.
 	 */
-	 public static final SystemMessageId YOUVE_GIVEN_UP_ON_S1;
+	public static final SystemMessageId YOUVE_GIVEN_UP_ON_S1;
 	
 	/**
 	 * ID: 3833<br>
 	 * Message: What is a <font color='#FFDF4C'>guild quest<>? It's a simple activity you can do before working on a guild request. If you succeed in it, you will get a badge of the guild.
-	 * 
+	 *
 	 * Good luck to every guild member.
 	 */
-	 public static final SystemMessageId WHAT_IS_A_GUILD_QUEST;
+	public static final SystemMessageId WHAT_IS_A_GUILD_QUEST;
 	
 	/**
 	 * ID: 3834<br>
 	 * Message: $s1 has requested clan member summoning.
 	 */
-	 public static final SystemMessageId S1_HAS_REQUESTED_CLAN_MEMBER_SUMMONING;
+	public static final SystemMessageId S1_HAS_REQUESTED_CLAN_MEMBER_SUMMONING;
 	
 	/**
 	 * ID: 3835<br>
 	 * Message: The summoning of $s1 is starting.
 	 */
-	 public static final SystemMessageId THE_SUMMONING_OF_S1_IS_STARTING;
+	public static final SystemMessageId THE_SUMMONING_OF_S1_IS_STARTING;
 	
 	/**
 	 * ID: 3836<br>
 	 * Message: The summoning of $s1 is cancelled.
 	 */
-	 public static final SystemMessageId THE_SUMMONING_OF_S1_IS_CANCELLED;
+	public static final SystemMessageId THE_SUMMONING_OF_S1_IS_CANCELLED;
 	
 	/**
 	 * ID: 3837<br>
 	 * Message: A clan quest is starting.
 	 */
-	 public static final SystemMessageId A_CLAN_QUEST_IS_STARTING;
+	public static final SystemMessageId A_CLAN_QUEST_IS_STARTING;
 	
 	/**
 	 * ID: 3838<br>
 	 * Message: What is a <font color='#FFDF4C'>clan request<>? It's a clan activity designed to help a clan become a more solid, powerful organization. With badges of each dwarf guild you've obtained through request activities, you can increase clan level and purchase various rewards.
-	 * 
+	 *
 	 * Also, clans of level 5 or higher can obtain Clan Reputation after successfully finishing a clan request.
-	 * 
+	 *
 	 * (You can increase clan level through the Grand Master in any village.)
 	 */
-	 public static final SystemMessageId WHAT_IS_A_CLAN_REQUEST;
+	public static final SystemMessageId WHAT_IS_A_CLAN_REQUEST;
 	
 	/**
 	 * ID: 3839<br>
 	 * Message: Go to the clan request area.
 	 */
-	 public static final SystemMessageId GO_TO_THE_CLAN_REQUEST_AREA;
+	public static final SystemMessageId GO_TO_THE_CLAN_REQUEST_AREA;
 	
 	/**
 	 * ID: 3840<br>
 	 * Message: The trip to the clan request area is starting.
 	 */
-	 public static final SystemMessageId THE_TRIP_TO_THE_CLAN_REQUEST_AREA_IS_STARTING;
+	public static final SystemMessageId THE_TRIP_TO_THE_CLAN_REQUEST_AREA_IS_STARTING;
 	
 	/**
 	 * ID: 3844<br>
 	 * Message: A clan request is starting.
 	 */
-	 public static final SystemMessageId A_CLAN_REQUEST_IS_STARTING;
+	public static final SystemMessageId A_CLAN_REQUEST_IS_STARTING;
 	
 	/**
 	 * ID: 3845<br>
 	 * Message: You came out of the clan request area.
 	 */
-	 public static final SystemMessageId YOU_CAME_OUT_OF_THE_CLAN_REQUEST_AREA;
+	public static final SystemMessageId YOU_CAME_OUT_OF_THE_CLAN_REQUEST_AREA;
 	
 	/**
 	 * ID: 3846<br>
 	 * Message: You cannot use $s1.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_S1;
+	public static final SystemMessageId YOU_CANNOT_USE_S1;
 	
 	/**
 	 * ID: 3847<br>
 	 * Message: Use $s1.
 	 */
-	 public static final SystemMessageId sUSE_S1;
+	public static final SystemMessageId sUSE_S1;
 	
 	/**
 	 * ID: 3848<br>
 	 * Message: $s1 has received Kaliel's Blessing and obtained $s2.
 	 */
-	 public static final SystemMessageId S1_HAS_RECEIVED_KALIELS_BLESSING_AND_OBTAINED_S2;
+	public static final SystemMessageId S1_HAS_RECEIVED_KALIELS_BLESSING_AND_OBTAINED_S2;
 	
 	/**
 	 * ID: 3849<br>
 	 * Message: You've obtained $s1 Kaliel's Token(s).
 	 */
-	 public static final SystemMessageId YOUVE_OBTAINED_S1_KALIELS_TOKENS;
+	public static final SystemMessageId YOUVE_OBTAINED_S1_KALIELS_TOKENS;
 	
 	/**
 	 * ID: 3850<br>
 	 * Message: There is no Kaliel's Token to obtain.
 	 */
-	 public static final SystemMessageId THERE_IS_NO_KALIELS_TOKEN_TO_OBTAIN;
+	public static final SystemMessageId THERE_IS_NO_KALIELS_TOKEN_TO_OBTAIN;
 	
 	/**
 	 * ID: 3851<br>
 	 * Message: You've obtained $s1. You can obtain up to 2 of these items a day. You can get more after 06:30 AM every day.
 	 */
-	 public static final SystemMessageId YOUVE_OBTAINED_S1;
+	public static final SystemMessageId YOUVE_OBTAINED_S1;
 	
 	/**
 	 * ID: 3852<br>
 	 * Message: Click the Apply button to apply the changes.
 	 */
-	 public static final SystemMessageId CLICK_THE_APPLY_BUTTON_TO_APPLY_THE_CHANGES;
+	public static final SystemMessageId CLICK_THE_APPLY_BUTTON_TO_APPLY_THE_CHANGES;
 	
 	/**
 	 * ID: 3853<br>
 	 * Message: You cannot participate in the Ceremony of Chaos as a flying transformed object.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_AS_A_FLYING_TRANSFORMED_OBJECT;
+	public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_THE_CEREMONY_OF_CHAOS_AS_A_FLYING_TRANSFORMED_OBJECT;
 	
 	/**
 	 * ID: 3854<br>
 	 * Message: The request has failed.
 	 */
-	 public static final SystemMessageId THE_REQUEST_HAS_FAILED;
+	public static final SystemMessageId THE_REQUEST_HAS_FAILED;
 	
 	/**
 	 * ID: 3855<br>
 	 * Message: Only the clan leader can make a request.
 	 */
-	 public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_MAKE_A_REQUEST;
+	public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_MAKE_A_REQUEST;
 	
 	/**
 	 * ID: 3856<br>
 	 * Message: No request is selected.
 	 */
-	 public static final SystemMessageId NO_REQUEST_IS_SELECTED;
+	public static final SystemMessageId NO_REQUEST_IS_SELECTED;
 	
 	/**
 	 * ID: 3857<br>
 	 * Message: Clan work in progress. Please try again later.
 	 */
-	 public static final SystemMessageId CLAN_WORK_IN_PROGRESS;
+	public static final SystemMessageId CLAN_WORK_IN_PROGRESS;
 	
 	/**
 	 * ID: 3858<br>
 	 * Message: You don't belong to any clan.
 	 */
-	 public static final SystemMessageId YOU_DONT_BELONG_TO_ANY_CLAN;
+	public static final SystemMessageId YOU_DONT_BELONG_TO_ANY_CLAN;
 	
 	/**
 	 * ID: 3859<br>
 	 * Message: The request change has failed.
 	 */
-	 public static final SystemMessageId THE_REQUEST_CHANGE_HAS_FAILED;
+	public static final SystemMessageId THE_REQUEST_CHANGE_HAS_FAILED;
 	
 	/**
 	 * ID: 3860<br>
 	 * Message: Only the clan leader can change requests.
 	 */
-	 public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_CHANGE_REQUESTS;
+	public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_CHANGE_REQUESTS;
 	
 	/**
 	 * ID: 3861<br>
 	 * Message: The request $s1 is currently selected.
 	 */
-	 public static final SystemMessageId THE_REQUEST_S1_IS_CURRENTLY_SELECTED;
+	public static final SystemMessageId THE_REQUEST_S1_IS_CURRENTLY_SELECTED;
 	
 	/**
 	 * ID: 3862<br>
 	 * Message: Only the clan leader can give up on a request.
 	 */
-	 public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_GIVE_UP_ON_A_REQUEST;
+	public static final SystemMessageId ONLY_THE_CLAN_LEADER_CAN_GIVE_UP_ON_A_REQUEST;
 	
 	/**
 	 * ID: 3863<br>
 	 * Message: The request failed.
 	 */
-	 public static final SystemMessageId THE_REQUEST_FAILED;
+	public static final SystemMessageId THE_REQUEST_FAILED;
 	
 	/**
 	 * ID: 3864<br>
 	 * Message: Academy clan members cannot start a request.
 	 */
-	 public static final SystemMessageId ACADEMY_CLAN_MEMBERS_CANNOT_START_A_REQUEST;
+	public static final SystemMessageId ACADEMY_CLAN_MEMBERS_CANNOT_START_A_REQUEST;
 	
 	/**
 	 * ID: 3865<br>
 	 * Message: You've exceeded the maximum number of requests you can make a day.
 	 */
-	 public static final SystemMessageId YOUVE_EXCEEDED_THE_MAXIMUM_NUMBER_OF_REQUESTS_YOU_CAN_MAKE_A_DAY;
+	public static final SystemMessageId YOUVE_EXCEEDED_THE_MAXIMUM_NUMBER_OF_REQUESTS_YOU_CAN_MAKE_A_DAY;
 	
 	/**
 	 * ID: 3866<br>
 	 * Message: You cannot start a request because you don't have enough points.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_START_A_REQUEST_BECAUSE_YOU_DONT_HAVE_ENOUGH_POINTS;
+	public static final SystemMessageId YOU_CANNOT_START_A_REQUEST_BECAUSE_YOU_DONT_HAVE_ENOUGH_POINTS;
 	
 	/**
 	 * ID: 3867<br>
 	 * Message: Redeeming has failed.
 	 */
-	 public static final SystemMessageId REDEEMING_HAS_FAILED;
+	public static final SystemMessageId REDEEMING_HAS_FAILED;
 	
 	/**
 	 * ID: 3868<br>
 	 * Message: The goal number of request points has been reached or no more redeeming is allowed today.
 	 */
-	 public static final SystemMessageId THE_GOAL_NUMBER_OF_REQUEST_POINTS_HAS_BEEN_REACHED_OR_NO_MORE_REDEEMING_IS_ALLOWED_TODAY;
+	public static final SystemMessageId THE_GOAL_NUMBER_OF_REQUEST_POINTS_HAS_BEEN_REACHED_OR_NO_MORE_REDEEMING_IS_ALLOWED_TODAY;
 	
 	/**
 	 * ID: 3869<br>
 	 * Message: You are not a Quest Manager.
 	 */
-	 public static final SystemMessageId YOU_ARE_NOT_A_QUEST_MANAGER;
+	public static final SystemMessageId YOU_ARE_NOT_A_QUEST_MANAGER;
 	
 	/**
 	 * ID: 3870<br>
 	 * Message: You are not a Request Manager.
 	 */
-	 public static final SystemMessageId YOU_ARE_NOT_A_REQUEST_MANAGER;
+	public static final SystemMessageId YOU_ARE_NOT_A_REQUEST_MANAGER;
 	
 	/**
 	 * ID: 3871<br>
 	 * Message: Your clan is not signed up for request activities.
 	 */
-	 public static final SystemMessageId YOUR_CLAN_IS_NOT_SIGNED_UP_FOR_REQUEST_ACTIVITIES;
+	public static final SystemMessageId YOUR_CLAN_IS_NOT_SIGNED_UP_FOR_REQUEST_ACTIVITIES;
 	
 	/**
 	 * ID: 3872<br>
 	 * Message: Another request is in progress.
 	 */
-	 public static final SystemMessageId ANOTHER_REQUEST_IS_IN_PROGRESS;
+	public static final SystemMessageId ANOTHER_REQUEST_IS_IN_PROGRESS;
 	
 	/**
 	 * ID: 3873<br>
 	 * Message: The item $s2 owned by $s1's pet is destroyed.
 	 */
-	 public static final SystemMessageId THE_ITEM_S2_OWNED_BY_S1S_PET_IS_DESTROYED;
+	public static final SystemMessageId THE_ITEM_S2_OWNED_BY_S1S_PET_IS_DESTROYED;
 	
 	/**
 	 * ID: 3874<br>
 	 * Message: The item +$s2$s3 owned by $s1's pet is destroyed.
 	 */
-	 public static final SystemMessageId THE_ITEM_S2S3_OWNED_BY_S1S_PET_IS_DESTROYED;
+	public static final SystemMessageId THE_ITEM_S2S3_OWNED_BY_S1S_PET_IS_DESTROYED;
 	
 	/**
 	 * ID: 3875<br>
 	 * Message: $s2$s3 owned by $s1's pet is destroyed.
 	 */
-	 public static final SystemMessageId S2S3_OWNED_BY_S1S_PET_IS_DESTROYED;
+	public static final SystemMessageId S2S3_OWNED_BY_S1S_PET_IS_DESTROYED;
 	
 	/**
 	 * ID: 3876<br>
 	 * Message: Because $s1 died, the item $s2 is destroyed.
 	 */
-	 public static final SystemMessageId BECAUSE_S1_DIED_THE_ITEM_S2_IS_DESTROYED;
+	public static final SystemMessageId BECAUSE_S1_DIED_THE_ITEM_S2_IS_DESTROYED;
 	
 	/**
 	 * ID: 3877<br>
 	 * Message: You failed to give up on the request.
 	 */
-	 public static final SystemMessageId YOU_FAILED_TO_GIVE_UP_ON_THE_REQUEST;
+	public static final SystemMessageId YOU_FAILED_TO_GIVE_UP_ON_THE_REQUEST;
 	
 	/**
 	 * ID: 3878<br>
 	 * Message: $s1 has accepted the request.
 	 */
-	 public static final SystemMessageId S1_HAS_ACCEPTED_THE_REQUEST;
+	public static final SystemMessageId S1_HAS_ACCEPTED_THE_REQUEST;
 	
 	/**
 	 * ID: 3879<br>
 	 * Message: The number of clan request points has increased to $s1.
 	 */
-	 public static final SystemMessageId THE_NUMBER_OF_CLAN_REQUEST_POINTS_HAS_INCREASED_TO_S1;
+	public static final SystemMessageId THE_NUMBER_OF_CLAN_REQUEST_POINTS_HAS_INCREASED_TO_S1;
 	
 	/**
 	 * ID: 3880<br>
 	 * Message: A clan request/quest is in progress. Please try again later.
 	 */
-	 public static final SystemMessageId A_CLAN_REQUEST_QUEST_IS_IN_PROGRESS;
+	public static final SystemMessageId A_CLAN_REQUEST_QUEST_IS_IN_PROGRESS;
 	
 	/**
 	 * ID: 3881<br>
 	 * Message: You cannot redeem it because you don't have  points.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE__POINTS;
+	public static final SystemMessageId YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE__POINTS;
 	
 	/**
 	 * ID: 3882<br>
 	 * Message: Because $s1 died, $s2 $s3 is destroyed.
 	 */
-	 public static final SystemMessageId BECAUSE_S1_DIED_S2_S3_IS_DESTROYED;
+	public static final SystemMessageId BECAUSE_S1_DIED_S2_S3_IS_DESTROYED;
 	
 	/**
 	 * ID: 3883<br>
 	 * Message: If you cancel a declared war, you will lose 5,000 Clan Reputation. Do you want to cancel it?
 	 */
-	 public static final SystemMessageId IF_YOU_CANCEL_A_DECLARED_WAR_YOU_WILL_LOSE_5000_CLAN_REPUTATION;
+	public static final SystemMessageId IF_YOU_CANCEL_A_DECLARED_WAR_YOU_WILL_LOSE_5000_CLAN_REPUTATION;
 	
 	/**
 	 * ID: 3887<br>
 	 * Message: Waiting for the event Kaliel's Blessing to start. Until the event starts, you cannot use the item 'Kaliel's Wish'.
 	 */
-	 public static final SystemMessageId WAITING_FOR_THE_EVENT_KALIELS_BLESSING_TO_START;
+	public static final SystemMessageId WAITING_FOR_THE_EVENT_KALIELS_BLESSING_TO_START;
 	
 	/**
 	 * ID: 3888<br>
 	 * Message: The event Kaliel's Blessing is in progress.
 	 */
-	 public static final SystemMessageId THE_EVENT_KALIELS_BLESSING_IS_IN_PROGRESS;
+	public static final SystemMessageId THE_EVENT_KALIELS_BLESSING_IS_IN_PROGRESS;
 	
 	/**
 	 * ID: 3889<br>
 	 * Message: The event Kaliel's Blessing has started. For 1 hour from now, all characters of level 40 or higher who have done the 2nd class transfer will be automatically joined in the event. During this time, you cannot use the item 'Kaliel's Wish'.
 	 */
-	 public static final SystemMessageId THE_EVENT_KALIELS_BLESSING_HAS_STARTED;
+	public static final SystemMessageId THE_EVENT_KALIELS_BLESSING_HAS_STARTED;
 	
 	/**
 	 * ID: 3890<br>
 	 * Message: Except the vitality buff, all buffs including Rosy Seduction and Art of Seduction will be deleted.
 	 */
-	 public static final SystemMessageId EXCEPT_THE_VITALITY_BUFF_ALL_BUFFS_INCLUDING_ROSY_SEDUCTION_AND_ART_OF_SEDUCTION_WILL_BE_DELETED;
+	public static final SystemMessageId EXCEPT_THE_VITALITY_BUFF_ALL_BUFFS_INCLUDING_ROSY_SEDUCTION_AND_ART_OF_SEDUCTION_WILL_BE_DELETED;
 	
 	/**
 	 * ID: 3891<br>
 	 * Message: You've obtained individual request points ($s1/100).
 	 */
-	 public static final SystemMessageId YOUVE_OBTAINED_INDIVIDUAL_REQUEST_POINTS_S1_100;
+	public static final SystemMessageId YOUVE_OBTAINED_INDIVIDUAL_REQUEST_POINTS_S1_100;
 	
 	/**
 	 * ID: 3892<br>
 	 * Message: You are currently not participating in any event. Use a 'Kaliel's Wish' to join an event.
 	 * You can get 'Kaliel's Wishes' through Event NPC Jolie. You can also get up to two of them a day from hunting.
 	 */
-	 public static final SystemMessageId YOU_ARE_CURRENTLY_NOT_PARTICIPATING_IN_ANY_EVENT;
+	public static final SystemMessageId YOU_ARE_CURRENTLY_NOT_PARTICIPATING_IN_ANY_EVENT;
 	
 	/**
 	 * ID: 3893<br>
 	 * Message: You cannot receive the item $s1 because you've exceeded the limit on the quantity and weight of the inventory.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_RECEIVE_THE_ITEM_S1_BECAUSE_YOUVE_EXCEEDED_THE_LIMIT_ON_THE_QUANTITY_AND_WEIGHT_OF_THE_INVENTORY;
+	public static final SystemMessageId YOU_CANNOT_RECEIVE_THE_ITEM_S1_BECAUSE_YOUVE_EXCEEDED_THE_LIMIT_ON_THE_QUANTITY_AND_WEIGHT_OF_THE_INVENTORY;
 	
 	/**
 	 * ID: 3894<br>
 	 * Message: Level $s1 of the event Kaliel's Blessing is $s2%% completed.
 	 * (You will be automatically joined in the event for 1 hour, 30 minutes after the server opens.)
 	 */
-	 public static final SystemMessageId LEVEL_S1_OF_THE_EVENT_KALIELS_BLESSING_IS_S2_COMPLETED;
+	public static final SystemMessageId LEVEL_S1_OF_THE_EVENT_KALIELS_BLESSING_IS_S2_COMPLETED;
 	
 	/**
 	 * ID: 3895<br>
 	 * Message: You cannot go because the maximum number of participants in the clan request has been exceeded.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_GO_BECAUSE_THE_MAXIMUM_NUMBER_OF_PARTICIPANTS_IN_THE_CLAN_REQUEST_HAS_BEEN_EXCEEDED;
+	public static final SystemMessageId YOU_CANNOT_GO_BECAUSE_THE_MAXIMUM_NUMBER_OF_PARTICIPANTS_IN_THE_CLAN_REQUEST_HAS_BEEN_EXCEEDED;
 	
 	/**
 	 * ID: 3896<br>
 	 * Message: There's a new clan request! Get it from the Clan Request Manager.
 	 */
-	 public static final SystemMessageId THERES_A_NEW_CLAN_REQUEST_GET_IT_FROM_THE_CLAN_REQUEST_MANAGER;
+	public static final SystemMessageId THERES_A_NEW_CLAN_REQUEST_GET_IT_FROM_THE_CLAN_REQUEST_MANAGER;
 	
 	/**
 	 * ID: 3897<br>
 	 * Message: You will be automatically joined in the event for 1 hour, 30 minutes after the server opens. So you cannot use the item Kaliel's Wish.
 	 */
-	 public static final SystemMessageId YOU_WILL_BE_AUTOMATICALLY_JOINED_IN_THE_EVENT_FOR_1_HOUR_30_MINUTES_AFTER_THE_SERVER_OPENS;
+	public static final SystemMessageId YOU_WILL_BE_AUTOMATICALLY_JOINED_IN_THE_EVENT_FOR_1_HOUR_30_MINUTES_AFTER_THE_SERVER_OPENS;
 	
 	/**
 	 * ID: 3898<br>
 	 * Message: You cannot use the item because the effect is already applied.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_ITEM_BECAUSE_THE_EFFECT_IS_ALREADY_APPLIED;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_ITEM_BECAUSE_THE_EFFECT_IS_ALREADY_APPLIED;
 	
 	/**
 	 * ID: 3899<br>
 	 * Message: You can purchase rewards through the Clan Request Manager.
 	 */
-	 public static final SystemMessageId YOU_CAN_PURCHASE_REWARDS_THROUGH_THE_CLAN_REQUEST_MANAGER;
+	public static final SystemMessageId YOU_CAN_PURCHASE_REWARDS_THROUGH_THE_CLAN_REQUEST_MANAGER;
 	
 	/**
 	 * ID: 3900<br>
 	 * Message: Change Rank.
 	 */
-	 public static final SystemMessageId CHANGE_RANK;
+	public static final SystemMessageId CHANGE_RANK;
 	
 	/**
 	 * ID: 3901<br>
 	 * Message: Current location: Last Imperial Tomb
 	 */
-	 public static final SystemMessageId CURRENT_LOCATION_LAST_IMPERIAL_TOMB;
+	public static final SystemMessageId CURRENT_LOCATION_LAST_IMPERIAL_TOMB;
 	
 	/**
 	 * ID: 3902<br>
 	 * Message: Currently, you are restricted from adding a mentee.
 	 */
-	 public static final SystemMessageId CURRENTLY_YOU_ARE_RESTRICTED_FROM_ADDING_A_MENTEE;
+	public static final SystemMessageId CURRENTLY_YOU_ARE_RESTRICTED_FROM_ADDING_A_MENTEE;
 	
 	/**
 	 * ID: 3903<br>
 	 * Message: Adjust cloak display. Using this function could lower your computer performance.
 	 */
-	 public static final SystemMessageId ADJUST_CLOAK_DISPLAY;
+	public static final SystemMessageId ADJUST_CLOAK_DISPLAY;
 	
 	/**
 	 * ID: 3904<br>
 	 * Message: $c1 has left the command channel.
 	 */
-	 public static final SystemMessageId C1_HAS_LEFT_THE_COMMAND_CHANNEL;
+	public static final SystemMessageId C1_HAS_LEFT_THE_COMMAND_CHANNEL;
 	
 	/**
 	 * ID: 3905<br>
 	 * Message: The +$s1 augmentation on $s2 is deleted and dropped by +$s3$s4.
 	 */
-	 public static final SystemMessageId THE_S1_AUGMENTATION_ON_S2_IS_DELETED_AND_DROPPED_BY_S3S4;
+	public static final SystemMessageId THE_S1_AUGMENTATION_ON_S2_IS_DELETED_AND_DROPPED_BY_S3S4;
 	
 	/**
 	 * ID: 3906<br>
 	 * Message: The augmentation on $s1 is deleted and dropped by $s2.
 	 */
-	 public static final SystemMessageId THE_AUGMENTATION_ON_S1_IS_DELETED_AND_DROPPED_BY_S2;
+	public static final SystemMessageId THE_AUGMENTATION_ON_S1_IS_DELETED_AND_DROPPED_BY_S2;
 	
 	/**
 	 * ID: 3907<br>
 	 * Message: $s1 can no longer be a mentee.
 	 */
-	 public static final SystemMessageId S1_CAN_NO_LONGER_BE_A_MENTEE;
+	public static final SystemMessageId S1_CAN_NO_LONGER_BE_A_MENTEE;
 	
 	/**
 	 * ID: 4001<br>
 	 * Message: You can change your character's hair style.
 	 */
-	 public static final SystemMessageId YOU_CAN_CHANGE_YOUR_CHARACTERS_HAIR_STYLE;
+	public static final SystemMessageId YOU_CAN_CHANGE_YOUR_CHARACTERS_HAIR_STYLE;
 	
 	/**
 	 * ID: 4002<br>
 	 * Message: You can change your character's face.
 	 */
-	 public static final SystemMessageId YOU_CAN_CHANGE_YOUR_CHARACTERS_FACE;
+	public static final SystemMessageId YOU_CAN_CHANGE_YOUR_CHARACTERS_FACE;
 	
 	/**
 	 * ID: 4003<br>
 	 * Message: The style selected will be reset.
 	 */
-	 public static final SystemMessageId THE_STYLE_SELECTED_WILL_BE_RESET;
+	public static final SystemMessageId THE_STYLE_SELECTED_WILL_BE_RESET;
 	
 	/**
 	 * ID: 4004<br>
 	 * Message: You have purchased a new style.
 	 */
-	 public static final SystemMessageId YOU_HAVE_PURCHASED_A_NEW_STYLE;
+	public static final SystemMessageId YOU_HAVE_PURCHASED_A_NEW_STYLE;
 	
 	/**
 	 * ID: 4005<br>
 	 * Message: You have failed to purchase a new style.
 	 */
-	 public static final SystemMessageId YOU_HAVE_FAILED_TO_PURCHASE_A_NEW_STYLE;
+	public static final SystemMessageId YOU_HAVE_FAILED_TO_PURCHASE_A_NEW_STYLE;
 	
 	/**
 	 * ID: 4006<br>
 	 * Message: The style selected does not exist.
 	 */
-	 public static final SystemMessageId THE_STYLE_SELECTED_DOES_NOT_EXIST;
+	public static final SystemMessageId THE_STYLE_SELECTED_DOES_NOT_EXIST;
 	
 	/**
 	 * ID: 4007<br>
 	 * Message: Purchase failed.
 	 */
-	 public static final SystemMessageId PURCHASE_FAILED;
+	public static final SystemMessageId PURCHASE_FAILED;
 	
 	/**
 	 * ID: 4008<br>
 	 * Message: Purchasing style.
 	 */
-	 public static final SystemMessageId PURCHASING_STYLE;
+	public static final SystemMessageId PURCHASING_STYLE;
 	
 	/**
 	 * ID: 4009<br>
 	 * Message: Failed to purchase due to insufficient Adena.
 	 */
-	 public static final SystemMessageId FAILED_TO_PURCHASE_DUE_TO_INSUFFICIENT_ADENA;
+	public static final SystemMessageId FAILED_TO_PURCHASE_DUE_TO_INSUFFICIENT_ADENA;
 	
 	/**
 	 * ID: 4010<br>
 	 * Message: Item to be traded does not exist.
 	 */
-	 public static final SystemMessageId ITEM_TO_BE_TRADED_DOES_NOT_EXIST;
+	public static final SystemMessageId ITEM_TO_BE_TRADED_DOES_NOT_EXIST;
 	
 	/**
 	 * ID: 4011<br>
 	 * Message: This item has been sold out.
 	 */
-	 public static final SystemMessageId THIS_ITEM_HAS_BEEN_SOLD_OUT;
+	public static final SystemMessageId THIS_ITEM_HAS_BEEN_SOLD_OUT;
 	
 	/**
 	 * ID: 4012<br>
 	 * Message: Please try again after completing your current task.
 	 */
-	 public static final SystemMessageId PLEASE_TRY_AGAIN_AFTER_COMPLETING_YOUR_CURRENT_TASK;
+	public static final SystemMessageId PLEASE_TRY_AGAIN_AFTER_COMPLETING_YOUR_CURRENT_TASK;
 	
 	/**
 	 * ID: 4013<br>
 	 * Message: Before using the Beauty Shop
 	 */
-	 public static final SystemMessageId BEFORE_USING_THE_BEAUTY_SHOP;
+	public static final SystemMessageId BEFORE_USING_THE_BEAUTY_SHOP;
 	
 	/**
 	 * ID: 4014<br>
 	 * Message: Current appearance
 	 */
-	 public static final SystemMessageId CURRENT_APPEARANCE;
+	public static final SystemMessageId CURRENT_APPEARANCE;
 	
 	/**
 	 * ID: 4015<br>
 	 * Message: Restoring the appearance to before using the Beauty Shop
 	 */
-	 public static final SystemMessageId RESTORING_THE_APPEARANCE_TO_BEFORE_USING_THE_BEAUTY_SHOP;
+	public static final SystemMessageId RESTORING_THE_APPEARANCE_TO_BEFORE_USING_THE_BEAUTY_SHOP;
 	
 	/**
 	 * ID: 4016<br>
 	 * Message: <BROWN01>Restoration is irreversible.
 	 * Proceed?<BROWN01>
 	 */
-	 public static final SystemMessageId BROWN01RESTORATION_IS_IRREVERSIBLE;
+	public static final SystemMessageId BROWN01RESTORATION_IS_IRREVERSIBLE;
 	
 	/**
 	 * ID: 4017<br>
 	 * Message: Restoration to previous appearance complete.
 	 */
-	 public static final SystemMessageId RESTORATION_TO_PREVIOUS_APPEARANCE_COMPLETE;
+	public static final SystemMessageId RESTORATION_TO_PREVIOUS_APPEARANCE_COMPLETE;
 	
 	/**
 	 * ID: 4018<br>
 	 * Message: Failed to restore appearance to previous style.
 	 */
-	 public static final SystemMessageId FAILED_TO_RESTORE_APPEARANCE_TO_PREVIOUS_STYLE;
+	public static final SystemMessageId FAILED_TO_RESTORE_APPEARANCE_TO_PREVIOUS_STYLE;
 	
 	/**
 	 * ID: 4019<br>
 	 * Message: Leaving Beauty Shop.
 	 */
-	 public static final SystemMessageId LEAVING_BEAUTY_SHOP;
+	public static final SystemMessageId LEAVING_BEAUTY_SHOP;
 	
 	/**
 	 * ID: 4020<br>
@@ -16530,1769 +16532,1769 @@ public final class SystemMessageId
 	 * <RED02>hair accessory</RED02><BROWN01> invisible.
 	 * Proceed with purchase?<BROWN01>
 	 */
-	 public static final SystemMessageId BROWN01HAIR_STYLE_WOULD_MAKE_THE_EQUIPPED_BROWN01;
+	public static final SystemMessageId BROWN01HAIR_STYLE_WOULD_MAKE_THE_EQUIPPED_BROWN01;
 	
 	/**
 	 * ID: 4021<br>
 	 * Message: No style to purchase.
 	 */
-	 public static final SystemMessageId NO_STYLE_TO_PURCHASE;
+	public static final SystemMessageId NO_STYLE_TO_PURCHASE;
 	
 	/**
 	 * ID: 4022<br>
 	 * Message: Restoring appearance
 	 */
-	 public static final SystemMessageId RESTORING_APPEARANCE;
+	public static final SystemMessageId RESTORING_APPEARANCE;
 	
 	/**
 	 * ID: 4023<br>
 	 * Message: Failed to restore the appearance due to insufficient Adena.
 	 */
-	 public static final SystemMessageId FAILED_TO_RESTORE_THE_APPEARANCE_DUE_TO_INSUFFICIENT_ADENA;
+	public static final SystemMessageId FAILED_TO_RESTORE_THE_APPEARANCE_DUE_TO_INSUFFICIENT_ADENA;
 	
 	/**
 	 * ID: 4024<br>
 	 * Message: Requesting purchase
 	 */
-	 public static final SystemMessageId REQUESTING_PURCHASE;
+	public static final SystemMessageId REQUESTING_PURCHASE;
 	
 	/**
 	 * ID: 4025<br>
 	 * Message: No style to restore.
 	 */
-	 public static final SystemMessageId NO_STYLE_TO_RESTORE;
+	public static final SystemMessageId NO_STYLE_TO_RESTORE;
 	
 	/**
 	 * ID: 4026<br>
 	 * Message: Finishing appearance restoration.
 	 */
-	 public static final SystemMessageId FINISHING_APPEARANCE_RESTORATION;
+	public static final SystemMessageId FINISHING_APPEARANCE_RESTORATION;
 	
 	/**
 	 * ID: 4027<br>
 	 * Message: You have already purchased this style.
 	 */
-	 public static final SystemMessageId YOU_HAVE_ALREADY_PURCHASED_THIS_STYLE;
+	public static final SystemMessageId YOU_HAVE_ALREADY_PURCHASED_THIS_STYLE;
 	
 	/**
 	 * ID: 4028<br>
 	 * Message: $c1 has leveled up and obtained $s2 Clan Reputation.
 	 */
-	 public static final SystemMessageId C1_HAS_LEVELED_UP_AND_OBTAINED_S2_CLAN_REPUTATION;
+	public static final SystemMessageId C1_HAS_LEVELED_UP_AND_OBTAINED_S2_CLAN_REPUTATION;
 	
 	/**
 	 * ID: 4029<br>
 	 * Message: Crafting Critical!
 	 */
-	 public static final SystemMessageId CRAFTING_CRITICAL;
+	public static final SystemMessageId CRAFTING_CRITICAL;
 	
 	/**
 	 * ID: 4030<br>
 	 * Message: The selected target cannot be resurrected due to Clan Resurrection Lock.
 	 */
-	 public static final SystemMessageId THE_SELECTED_TARGET_CANNOT_BE_RESURRECTED_DUE_TO_CLAN_RESURRECTION_LOCK;
+	public static final SystemMessageId THE_SELECTED_TARGET_CANNOT_BE_RESURRECTED_DUE_TO_CLAN_RESURRECTION_LOCK;
 	
 	/**
 	 * ID: 4031<br>
 	 * Message: Only the clan leader or someone with rank management authority may register the clan.
 	 */
-	 public static final SystemMessageId ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_REGISTER_THE_CLAN;
+	public static final SystemMessageId ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_REGISTER_THE_CLAN;
 	
 	/**
 	 * ID: 4032<br>
 	 * Message: You may register the clan after $s1 minute(s) due to deleting the entered text.
 	 */
-	 public static final SystemMessageId YOU_MAY_REGISTER_THE_CLAN_AFTER_S1_MINUTES_DUE_TO_DELETING_THE_ENTERED_TEXT;
+	public static final SystemMessageId YOU_MAY_REGISTER_THE_CLAN_AFTER_S1_MINUTES_DUE_TO_DELETING_THE_ENTERED_TEXT;
 	
 	/**
 	 * ID: 4033<br>
 	 * Message: You can view the list of characters who have applied to the clan. Those without a clan can be entered on the waiting list.
 	 */
-	 public static final SystemMessageId YOU_CAN_VIEW_THE_LIST_OF_CHARACTERS_WHO_HAVE_APPLIED_TO_THE_CLAN;
+	public static final SystemMessageId YOU_CAN_VIEW_THE_LIST_OF_CHARACTERS_WHO_HAVE_APPLIED_TO_THE_CLAN;
 	
 	/**
 	 * ID: 4034<br>
 	 * Message: You can edit the clan information, but deleting text results in a 5-minute penalty.
 	 */
-	 public static final SystemMessageId YOU_CAN_EDIT_THE_CLAN_INFORMATION_BUT_DELETING_TEXT_RESULTS_IN_A_5MINUTE_PENALTY;
+	public static final SystemMessageId YOU_CAN_EDIT_THE_CLAN_INFORMATION_BUT_DELETING_TEXT_RESULTS_IN_A_5MINUTE_PENALTY;
 	
 	/**
 	 * ID: 4035<br>
 	 * Message: Only the clan leader or someone with rank management authority may change clan information.
 	 */
-	 public static final SystemMessageId ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_CHANGE_CLAN_INFORMATION;
+	public static final SystemMessageId ONLY_THE_CLAN_LEADER_OR_SOMEONE_WITH_RANK_MANAGEMENT_AUTHORITY_MAY_CHANGE_CLAN_INFORMATION;
 	
 	/**
 	 * ID: 4036<br>
 	 * Message: Cancelling entry applications results in a 5-minute penalty.
 	 */
-	 public static final SystemMessageId CANCELLING_ENTRY_APPLICATIONS_RESULTS_IN_A_5MINUTE_PENALTY;
+	public static final SystemMessageId CANCELLING_ENTRY_APPLICATIONS_RESULTS_IN_A_5MINUTE_PENALTY;
 	
 	/**
 	 * ID: 4037<br>
 	 * Message: Entered into list. Entries are in order of Clan Reputation, recalculated every day at 6:30 am.  You can edit the text, but if you delete the text, you cannot enter clan information for 5 minutes. Entered text will be automatically deleted after 30 days.
 	 */
-	 public static final SystemMessageId ENTERED_INTO_LIST;
+	public static final SystemMessageId ENTERED_INTO_LIST;
 	
 	/**
 	 * ID: 4038<br>
 	 * Message: You may apply for entry after $s1 minute(s) due to cancelling your application.
 	 */
-	 public static final SystemMessageId YOU_MAY_APPLY_FOR_ENTRY_AFTER_S1_MINUTES_DUE_TO_CANCELLING_YOUR_APPLICATION;
+	public static final SystemMessageId YOU_MAY_APPLY_FOR_ENTRY_AFTER_S1_MINUTES_DUE_TO_CANCELLING_YOUR_APPLICATION;
 	
 	/**
 	 * ID: 4039<br>
 	 * Message: Entry application complete. Use "Entry Application Info" to check or cancel your application. Application is automatically cancelled after 30 days; if you cancel application, you cannot apply again for 5 minutes.
 	 */
-	 public static final SystemMessageId ENTRY_APPLICATION_COMPLETE;
+	public static final SystemMessageId ENTRY_APPLICATION_COMPLETE;
 	
 	/**
 	 * ID: 4040<br>
 	 * Message: Entry application cancelled. You may apply to a new clan after 5 minutes.
 	 */
-	 public static final SystemMessageId ENTRY_APPLICATION_CANCELLED;
+	public static final SystemMessageId ENTRY_APPLICATION_CANCELLED;
 	
 	/**
 	 * ID: 4041<br>
 	 * Message: The clan you selected is no longer taking applications as it has too many applicants.
 	 */
-	 public static final SystemMessageId THE_CLAN_YOU_SELECTED_IS_NO_LONGER_TAKING_APPLICATIONS_AS_IT_HAS_TOO_MANY_APPLICANTS;
+	public static final SystemMessageId THE_CLAN_YOU_SELECTED_IS_NO_LONGER_TAKING_APPLICATIONS_AS_IT_HAS_TOO_MANY_APPLICANTS;
 	
 	/**
 	 * ID: 4042<br>
 	 * Message: $s1's clan entry application has been rejected.
 	 */
-	 public static final SystemMessageId S1S_CLAN_ENTRY_APPLICATION_HAS_BEEN_REJECTED;
+	public static final SystemMessageId S1S_CLAN_ENTRY_APPLICATION_HAS_BEEN_REJECTED;
 	
 	/**
 	 * ID: 4043<br>
 	 * Message: Entered into waiting list. Name is automatically deleted after 30 days. If "Delete from waiting list" is used, you cannot enter names into the waiting list for 5 minutes.
 	 */
-	 public static final SystemMessageId ENTERED_INTO_WAITING_LIST;
+	public static final SystemMessageId ENTERED_INTO_WAITING_LIST;
 	
 	/**
 	 * ID: 4044<br>
 	 * Message: You may enter names into the waiting list after $s1 minute(s) due to deleting from the waiting list.
 	 */
-	 public static final SystemMessageId YOU_MAY_ENTER_NAMES_INTO_THE_WAITING_LIST_AFTER_S1_MINUTES_DUE_TO_DELETING_FROM_THE_WAITING_LIST;
+	public static final SystemMessageId YOU_MAY_ENTER_NAMES_INTO_THE_WAITING_LIST_AFTER_S1_MINUTES_DUE_TO_DELETING_FROM_THE_WAITING_LIST;
 	
 	/**
 	 * ID: 4045<br>
 	 * Message: Turning on Optimization Uniform function. Please wait 3 seconds to turn it off.
 	 */
-	 public static final SystemMessageId TURNING_ON_OPTIMIZATION_UNIFORM_FUNCTION;
+	public static final SystemMessageId TURNING_ON_OPTIMIZATION_UNIFORM_FUNCTION;
 	
 	/**
 	 * ID: 4046<br>
 	 * Message: Turning off Optimization Uniform function. Please wait 3 seconds to turn it on.
 	 */
-	 public static final SystemMessageId TURNING_OFF_OPTIMIZATION_UNIFORM_FUNCTION;
+	public static final SystemMessageId TURNING_OFF_OPTIMIZATION_UNIFORM_FUNCTION;
 	
 	/**
 	 * ID: 4047<br>
 	 * Message: You cannot use this function after a dimensional teleport.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THIS_FUNCTION_AFTER_A_DIMENSIONAL_TELEPORT;
+	public static final SystemMessageId YOU_CANNOT_USE_THIS_FUNCTION_AFTER_A_DIMENSIONAL_TELEPORT;
 	
 	/**
 	 * ID: 4048<br>
 	 * Message: Free players cannot purchase through the private store.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_PURCHASE_THROUGH_THE_PRIVATE_STORE;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_PURCHASE_THROUGH_THE_PRIVATE_STORE;
 	
 	/**
 	 * ID: 4049<br>
 	 * Message: Free players cannot sell through the auction house.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_SELL_THROUGH_THE_AUCTION_HOUSE;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_SELL_THROUGH_THE_AUCTION_HOUSE;
 	
 	/**
 	 * ID: 4050<br>
 	 * Message: Free players cannot use Sell chat.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_USE_SELL_CHAT;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_USE_SELL_CHAT;
 	
 	/**
 	 * ID: 4051<br>
 	 * Message: Free players cannot Shout.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_SHOUT;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_SHOUT;
 	
 	/**
 	 * ID: 4052<br>
 	 * Message: Free players can respond to a whisper, but cannot initiate a whisper.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_A_WHISPER;
+	public static final SystemMessageId FREE_PLAYERS_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_A_WHISPER;
 	
 	/**
 	 * ID: 4053<br>
 	 * Message: Free players can create up to 2 characters. Please delete a character if you wish to make a create a new one.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_CREATE_UP_TO_2_CHARACTERS;
+	public static final SystemMessageId FREE_PLAYERS_CAN_CREATE_UP_TO_2_CHARACTERS;
 	
 	/**
 	 * ID: 4054<br>
 	 * Message: You can send mail $s1 time for the rest of today.
 	 */
-	 public static final SystemMessageId YOU_CAN_SEND_MAIL_S1_TIME_FOR_THE_REST_OF_TODAY;
+	public static final SystemMessageId YOU_CAN_SEND_MAIL_S1_TIME_FOR_THE_REST_OF_TODAY;
 	
 	/**
 	 * ID: 4055<br>
 	 * Message: You have used up the mail allowance for the day. The mail allowance resets every day at 6:30am.
 	 */
-	 public static final SystemMessageId YOU_HAVE_USED_UP_THE_MAIL_ALLOWANCE_FOR_THE_DAY;
+	public static final SystemMessageId YOU_HAVE_USED_UP_THE_MAIL_ALLOWANCE_FOR_THE_DAY;
 	
 	/**
 	 * ID: 4056<br>
 	 * Message: Free players cannot attach items or Adena onto mail.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_ATTACH_ITEMS_OR_ADENA_ONTO_MAIL;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_ATTACH_ITEMS_OR_ADENA_ONTO_MAIL;
 	
 	/**
 	 * ID: 4057<br>
 	 * Message: Free players cannot create a clan.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CANNOT_CREATE_A_CLAN;
+	public static final SystemMessageId FREE_PLAYERS_CANNOT_CREATE_A_CLAN;
 	
 	/**
 	 * ID: 4058<br>
 	 * Message: You cannot declare war if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_DECLARE_WAR_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_DECLARE_WAR_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4059<br>
 	 * Message: You cannot use the clan warehouse if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_CLAN_WAREHOUSE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_CLAN_WAREHOUSE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4060<br>
 	 * Message: You cannot participate in a clan hall war if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_CLAN_HALL_WAR_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_CLAN_HALL_WAR_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4061<br>
 	 * Message: You cannot own a clan hall if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_OWN_A_CLAN_HALL_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_OWN_A_CLAN_HALL_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4062<br>
 	 * Message: You cannot bid for a clan hall if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_BID_FOR_A_CLAN_HALL_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_BID_FOR_A_CLAN_HALL_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4063<br>
 	 * Message: You cannot participate in a fortress siege if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_FORTRESS_SIEGE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_FORTRESS_SIEGE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4064<br>
 	 * Message: You cannot create an alliance if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_CREATE_AN_ALLIANCE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_CREATE_AN_ALLIANCE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4065<br>
 	 * Message: You cannot leave an alliance if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_LEAVE_AN_ALLIANCE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_LEAVE_AN_ALLIANCE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4066<br>
 	 * Message: You cannot participate in a castle siege if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_CASTLE_SIEGE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_PARTICIPATE_IN_A_CASTLE_SIEGE_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4067<br>
 	 * Message: You cannot create an Academy if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_CREATE_AN_ACADEMY_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_CREATE_AN_ACADEMY_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4068<br>
 	 * Message: You cannot purchase clan items if your clan leader is a free player.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PURCHASE_CLAN_ITEMS_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_CANNOT_PURCHASE_CLAN_ITEMS_IF_YOUR_CLAN_LEADER_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4069<br>
 	 * Message: You have downed $s1 with a preemptive attack. You have $s2 preemptive attack chances left.
 	 */
-	 public static final SystemMessageId YOU_HAVE_DOWNED_S1_WITH_A_PREEMPTIVE_ATTACK;
+	public static final SystemMessageId YOU_HAVE_DOWNED_S1_WITH_A_PREEMPTIVE_ATTACK;
 	
 	/**
 	 * ID: 4072<br>
 	 * Message: $s1 can no longer preemptively attack another player (except players whose names are in purple or are in Chaotic state).
 	 */
-	 public static final SystemMessageId S1_CAN_NO_LONGER_PREEMPTIVELY_ATTACK_ANOTHER_PLAYER_EXCEPT_PLAYERS_WHOSE_NAMES_ARE_IN_PURPLE_OR_ARE_IN_CHAOTIC_STATE;
+	public static final SystemMessageId S1_CAN_NO_LONGER_PREEMPTIVELY_ATTACK_ANOTHER_PLAYER_EXCEPT_PLAYERS_WHOSE_NAMES_ARE_IN_PURPLE_OR_ARE_IN_CHAOTIC_STATE;
 	
 	/**
 	 * ID: 4073<br>
 	 * Message: Please select a character you can use for free.
 	 */
-	 public static final SystemMessageId PLEASE_SELECT_A_CHARACTER_YOU_CAN_USE_FOR_FREE;
+	public static final SystemMessageId PLEASE_SELECT_A_CHARACTER_YOU_CAN_USE_FOR_FREE;
 	
 	/**
 	 * ID: 4074<br>
 	 * Message: $s1 is a free player. A free player will have limited access to rights as clan leader. Will you transfer clan leadership to $s2?
 	 */
-	 public static final SystemMessageId S1_IS_A_FREE_PLAYER;
+	public static final SystemMessageId S1_IS_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4075<br>
 	 * Message: Deleting a character will give free benefits to other characters within the server. Please check for items you own on the homepage, as paid items will be deleted. Would you like to delete $s1?
 	 */
-	 public static final SystemMessageId DELETING_A_CHARACTER_WILL_GIVE_FREE_BENEFITS_TO_OTHER_CHARACTERS_WITHIN_THE_SERVER;
+	public static final SystemMessageId DELETING_A_CHARACTER_WILL_GIVE_FREE_BENEFITS_TO_OTHER_CHARACTERS_WITHIN_THE_SERVER;
 	
 	/**
 	 * ID: 4076<br>
 	 * Message: Please check for items you own in "My Character - Home" on the homepage, as paid items will be deleted. Are you sure you want to delete $s1?
 	 */
-	 public static final SystemMessageId PLEASE_CHECK_FOR_ITEMS_YOU_OWN_IN_MY_CHARACTER__HOME_ON_THE_HOMEPAGE_AS_PAID_ITEMS_WILL_BE_DELETED;
+	public static final SystemMessageId PLEASE_CHECK_FOR_ITEMS_YOU_OWN_IN_MY_CHARACTER__HOME_ON_THE_HOMEPAGE_AS_PAID_ITEMS_WILL_BE_DELETED;
 	
 	/**
 	 * ID: 4077<br>
 	 * Message: Congratulations! $s1 has reached Lv. 85. Will you now go on to unearth more exciting mysteries in the world of Aden?
 	 */
-	 public static final SystemMessageId CONGRATULATIONS_S1_HAS_REACHED_LV;
+	public static final SystemMessageId CONGRATULATIONS_S1_HAS_REACHED_LV;
 	
 	/**
 	 * ID: 4078<br>
 	 * Message: Congratulations! $s1 has reached Lv. 85. Further mysteries of Aden will be revealed to you in $s2 second(s).
 	 */
-	 public static final SystemMessageId CONGRATULATIONS_S1_HAS_REACHED_LV_;
+	public static final SystemMessageId CONGRATULATIONS_S1_HAS_REACHED_LV_;
 	
 	/**
 	 * ID: 4079<br>
 	 * Message: You cannot play a disabled character. Please select an enabled character.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_PLAY_A_DISABLED_CHARACTER;
+	public static final SystemMessageId YOU_CANNOT_PLAY_A_DISABLED_CHARACTER;
 	
 	/**
 	 * ID: 4080<br>
 	 * Message: We hope you enjoyed your free trial of Lineage II. With a play pass, you can go beyond Lv. 85  to explore an even more exciting and expansive world in Aden.
 	 */
-	 public static final SystemMessageId WE_HOPE_YOU_ENJOYED_YOUR_FREE_TRIAL_OF_LINEAGE_II;
+	public static final SystemMessageId WE_HOPE_YOU_ENJOYED_YOUR_FREE_TRIAL_OF_LINEAGE_II;
 	
 	/**
 	 * ID: 4081<br>
 	 * Message: You can run a maximum of 3 clients on the same PC.
 	 */
-	 public static final SystemMessageId YOU_CAN_RUN_A_MAXIMUM_OF_3_CLIENTS_ON_THE_SAME_PC;
+	public static final SystemMessageId YOU_CAN_RUN_A_MAXIMUM_OF_3_CLIENTS_ON_THE_SAME_PC;
 	
 	/**
 	 * ID: 4082<br>
 	 * Message: <font color='#FFDF4C'>Free Player Guide<>
 	 * If you have no characters Lv. 85 or above in a server, you can play up to 2 characters for free until Level 85 within that server. You can run up to 2 clients on a free account. Please log in with an account with a play pass or purchase a Lineage II play pass if you wish to run more than 2 accounts.
 	 */
-	 public static final SystemMessageId FREE_PLAYER_GUIDE;
+	public static final SystemMessageId FREE_PLAYER_GUIDE;
 	
 	/**
 	 * ID: 4083<br>
 	 * Message: Welcome to Lineage II!
 	 * Please select a character you can use for free, or purchase a Lineage II play pass.
 	 */
-	 public static final SystemMessageId WELCOME_TO_LINEAGE_II;
+	public static final SystemMessageId WELCOME_TO_LINEAGE_II;
 	
 	/**
 	 * ID: 4084<br>
 	 * Message: You cannot use the selected character.
 	 * Please select a character you can use for free, or purchase a Lineage II play pass.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_SELECTED_CHARACTER;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_SELECTED_CHARACTER;
 	
 	/**
 	 * ID: 4085<br>
 	 * Message: You cannot use the $s1 skill due to insufficient summon points.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_S1_SKILL_DUE_TO_INSUFFICIENT_SUMMON_POINTS;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_S1_SKILL_DUE_TO_INSUFFICIENT_SUMMON_POINTS;
 	
 	/**
 	 * ID: 4086<br>
 	 * Message: Clan introduction will be deleted 30 days after draft, which is $s1/$s2/$s3 at 6:30 am.
 	 */
-	 public static final SystemMessageId CLAN_INTRODUCTION_WILL_BE_DELETED_30_DAYS_AFTER_DRAFT_WHICH_IS_S1_S2_S3_AT_630_AM;
+	public static final SystemMessageId CLAN_INTRODUCTION_WILL_BE_DELETED_30_DAYS_AFTER_DRAFT_WHICH_IS_S1_S2_S3_AT_630_AM;
 	
 	/**
 	 * ID: 4087<br>
 	 * Message: Clan Entry Application: Deleted 30 days after application, which is $s1/$s2/$s3 at 6:30 am.
 	 */
-	 public static final SystemMessageId CLAN_ENTRY_APPLICATION_DELETED_30_DAYS_AFTER_APPLICATION_WHICH_IS_S1_S2_S3_AT_630_AM;
+	public static final SystemMessageId CLAN_ENTRY_APPLICATION_DELETED_30_DAYS_AFTER_APPLICATION_WHICH_IS_S1_S2_S3_AT_630_AM;
 	
 	/**
 	 * ID: 4088<br>
 	 * Message: Waiting List: Deleted 30 days after application, which is $s1/$s2/$s3 at 6:30 am.
 	 */
-	 public static final SystemMessageId WAITING_LIST_DELETED_30_DAYS_AFTER_APPLICATION_WHICH_IS_S1_S2_S3_AT_630_AM;
+	public static final SystemMessageId WAITING_LIST_DELETED_30_DAYS_AFTER_APPLICATION_WHICH_IS_S1_S2_S3_AT_630_AM;
 	
 	/**
 	 * ID: 4089<br>
 	 * Message: Welcome to Lineage II.
 	 * You create up to 2 characters within a server and level them up to 85 for free. The free service will end for the server when you reach Lv. 85; please use a Lineage II play pass if you wish to continue playing afterwards.
-	 * 
+	 *
 	 * Free play requirements
 	 * 1: Character Level
 	 * 2: Character XP
 	 * 3: Character Creation Date (chronological order)
 	 */
-	 public static final SystemMessageId WELCOME_TO_LINEAGE_II_;
+	public static final SystemMessageId WELCOME_TO_LINEAGE_II_;
 	
 	/**
 	 * ID: 4090<br>
 	 * Message: We are giving out passes for inactive players! Please click OK to go to the homepage for your pass. Only available for 24 hours!
 	 */
-	 public static final SystemMessageId WE_ARE_GIVING_OUT_PASSES_FOR_INACTIVE_PLAYERS_PLEASE_CLICK_OK_TO_GO_TO_THE_HOMEPAGE_FOR_YOUR_PASS;
+	public static final SystemMessageId WE_ARE_GIVING_OUT_PASSES_FOR_INACTIVE_PLAYERS_PLEASE_CLICK_OK_TO_GO_TO_THE_HOMEPAGE_FOR_YOUR_PASS;
 	
 	/**
 	 * ID: 4091<br>
 	 * Message: This quest cannot be deleted.
 	 */
-	 public static final SystemMessageId THIS_QUEST_CANNOT_BE_DELETED;
+	public static final SystemMessageId THIS_QUEST_CANNOT_BE_DELETED;
 	
 	/**
 	 * ID: 4092<br>
 	 * Message: A free player will have limited access to rights as clan leader. Will you transfer clan leadership?
 	 */
-	 public static final SystemMessageId A_FREE_PLAYER_WILL_HAVE_LIMITED_ACCESS_TO_RIGHTS_AS_CLAN_LEADER;
+	public static final SystemMessageId A_FREE_PLAYER_WILL_HAVE_LIMITED_ACCESS_TO_RIGHTS_AS_CLAN_LEADER;
 	
 	/**
 	 * ID: 4093<br>
 	 * Message: You have limited access to rights as clan leader as you are a free player.
 	 */
-	 public static final SystemMessageId YOU_HAVE_LIMITED_ACCESS_TO_RIGHTS_AS_CLAN_LEADER_AS_YOU_ARE_A_FREE_PLAYER;
+	public static final SystemMessageId YOU_HAVE_LIMITED_ACCESS_TO_RIGHTS_AS_CLAN_LEADER_AS_YOU_ARE_A_FREE_PLAYER;
 	
 	/**
 	 * ID: 4094<br>
 	 * Message: Use the system message window.
 	 */
-	 public static final SystemMessageId USE_THE_SYSTEM_MESSAGE_WINDOW;
+	public static final SystemMessageId USE_THE_SYSTEM_MESSAGE_WINDOW;
 	
 	/**
 	 * ID: 4095<br>
 	 * Message: You cannot enchant skills on existing Awakened classes before diversification.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_ENCHANT_SKILLS_ON_EXISTING_AWAKENED_CLASSES_BEFORE_DIVERSIFICATION;
+	public static final SystemMessageId YOU_CANNOT_ENCHANT_SKILLS_ON_EXISTING_AWAKENED_CLASSES_BEFORE_DIVERSIFICATION;
 	
 	/**
 	 * ID: 4096<br>
 	 * Message: You qualify for inactive player benefits. Log into the Lineage II homepage within $s1 hour(s) and $s2 minute(s) to acquire a play pass.
 	 */
-	 public static final SystemMessageId YOU_QUALIFY_FOR_INACTIVE_PLAYER_BENEFITS;
+	public static final SystemMessageId YOU_QUALIFY_FOR_INACTIVE_PLAYER_BENEFITS;
 	
 	/**
 	 * ID: 4097<br>
 	 * Message: Teleport in progress. Please try again later.
 	 */
-	 public static final SystemMessageId TELEPORT_IN_PROGRESS;
+	public static final SystemMessageId TELEPORT_IN_PROGRESS;
 	
 	/**
 	 * ID: 4098<br>
 	 * Message: You cannot summon a pet/ servitor during a teleport. Please try again later.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_SUMMON_A_PET_SERVITOR_DURING_A_TELEPORT;
+	public static final SystemMessageId YOU_CANNOT_SUMMON_A_PET_SERVITOR_DURING_A_TELEPORT;
 	
 	/**
 	 * ID: 4099<br>
 	 * Message: 100,000,000 Adena will be spent on a reset. Proceed?
 	 */
-	 public static final SystemMessageId ADENA_WILL_BE_SPENT_ON_A_RESET;
+	public static final SystemMessageId ADENA_WILL_BE_SPENT_ON_A_RESET;
 	
 	/**
 	 * ID: 4103<br>
 	 * Message: The Prophecy skill cannot be reset due to insufficient Adena.
 	 */
-	 public static final SystemMessageId THE_PROPHECY_SKILL_CANNOT_BE_RESET_DUE_TO_INSUFFICIENT_ADENA;
+	public static final SystemMessageId THE_PROPHECY_SKILL_CANNOT_BE_RESET_DUE_TO_INSUFFICIENT_ADENA;
 	
 	/**
 	 * ID: 4104<br>
 	 * Message: Free players can Shout after Lv. $s1.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_SHOUT_AFTER_LV;
+	public static final SystemMessageId FREE_PLAYERS_CAN_SHOUT_AFTER_LV;
 	
 	/**
 	 * ID: 4105<br>
 	 * Message: Free players can use Trade chat after Lv. $s1.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_USE_TRADE_CHAT_AFTER_LV;
+	public static final SystemMessageId FREE_PLAYERS_CAN_USE_TRADE_CHAT_AFTER_LV;
 	
 	/**
 	 * ID: 4106<br>
 	 * Message: Free players can use general chat after Lv. $s1.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_USE_GENERAL_CHAT_AFTER_LV;
+	public static final SystemMessageId FREE_PLAYERS_CAN_USE_GENERAL_CHAT_AFTER_LV;
 	
 	/**
 	 * ID: 4107<br>
 	 * Message: Free players can respond to a whisper, but cannot initiate a whisper until Lv. $s1.
 	 */
-	 public static final SystemMessageId FREE_PLAYERS_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_A_WHISPER_UNTIL_LV;
+	public static final SystemMessageId FREE_PLAYERS_CAN_RESPOND_TO_A_WHISPER_BUT_CANNOT_INITIATE_A_WHISPER_UNTIL_LV;
 	
 	/**
 	 * ID: 4108<br>
 	 * Message: Pet summon/ seal or riding in progress. Please try again later.
 	 */
-	 public static final SystemMessageId PET_SUMMON_SEAL_OR_RIDING_IN_PROGRESS;
+	public static final SystemMessageId PET_SUMMON_SEAL_OR_RIDING_IN_PROGRESS;
 	
 	/**
 	 * ID: 4109<br>
 	 * Message: Cannot ride while summoning / sealing pet. Please try again later.
 	 */
-	 public static final SystemMessageId CANNOT_RIDE_WHILE_SUMMONING_SEALING_PET;
+	public static final SystemMessageId CANNOT_RIDE_WHILE_SUMMONING_SEALING_PET;
 	
 	/**
 	 * ID: 4110<br>
 	 * Message: Inactive accounts will receive equipment and consumables for the first character to log in per server
 	 *  through the in-game mail. (Character must have completed the 2nd class transfer.)
 	 */
-	 public static final SystemMessageId INACTIVE_ACCOUNTS_WILL_RECEIVE_EQUIPMENT_AND_CONSUMABLES_FOR_THE_FIRST_CHARACTER_TO_LOG_IN_PER_SERVER;
+	public static final SystemMessageId INACTIVE_ACCOUNTS_WILL_RECEIVE_EQUIPMENT_AND_CONSUMABLES_FOR_THE_FIRST_CHARACTER_TO_LOG_IN_PER_SERVER;
 	
 	/**
 	 * ID: 4111<br>
 	 * Message: UI may not display properly in a resolution of 1024*768 or less.
 	 */
-	 public static final SystemMessageId UI_MAY_NOT_DISPLAY_PROPERLY_IN_A_RESOLUTION_OF_1024_768_OR_LESS;
+	public static final SystemMessageId UI_MAY_NOT_DISPLAY_PROPERLY_IN_A_RESOLUTION_OF_1024_768_OR_LESS;
 	
 	/**
 	 * ID: 4112<br>
 	 * Message: The augmentation effects on $s1 have been deleted.
 	 */
-	 public static final SystemMessageId THE_AUGMENTATION_EFFECTS_ON_S1_HAVE_BEEN_DELETED;
+	public static final SystemMessageId THE_AUGMENTATION_EFFECTS_ON_S1_HAVE_BEEN_DELETED;
 	
 	/**
 	 * ID: 4113<br>
 	 * Message: $s1 has been restored to its previous appearance, as its temporary modification has expired.
 	 */
-	 public static final SystemMessageId S1_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED;
+	public static final SystemMessageId S1_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED;
 	
 	/**
 	 * ID: 4114<br>
 	 * Message: You have dropped +$s1$s2.
 	 */
-	 public static final SystemMessageId YOU_HAVE_DROPPED_S1S2;
+	public static final SystemMessageId YOU_HAVE_DROPPED_S1S2;
 	
 	/**
 	 * ID: 4115<br>
 	 * Message: You have dropped $s1.
 	 */
-	 public static final SystemMessageId YOU_HAVE_DROPPED_S1;
+	public static final SystemMessageId YOU_HAVE_DROPPED_S1;
 	
 	/**
 	 * ID: 4116<br>
 	 * Message: The +$s1 augmentation effects on $s2 have been deleted.
 	 */
-	 public static final SystemMessageId THE_S1_AUGMENTATION_EFFECTS_ON_S2_HAVE_BEEN_DELETED;
+	public static final SystemMessageId THE_S1_AUGMENTATION_EFFECTS_ON_S2_HAVE_BEEN_DELETED;
 	
 	/**
 	 * ID: 4117<br>
 	 * Message: +$s1$s2 has been restored to its previous appearance, as its temporary modification has expired.
 	 */
-	 public static final SystemMessageId S1S2_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED;
+	public static final SystemMessageId S1S2_HAS_BEEN_RESTORED_TO_ITS_PREVIOUS_APPEARANCE_AS_ITS_TEMPORARY_MODIFICATION_HAS_EXPIRED;
 	
 	/**
 	 * ID: 4118<br>
 	 * Message: You cannot teleport as the Dimensional Space is closed.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_TELEPORT_AS_THE_DIMENSIONAL_SPACE_IS_CLOSED;
+	public static final SystemMessageId YOU_CANNOT_TELEPORT_AS_THE_DIMENSIONAL_SPACE_IS_CLOSED;
 	
 	/**
 	 * ID: 4119<br>
 	 * Message: You cannot teleport to the Dimensional Space as it is full.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_TELEPORT_TO_THE_DIMENSIONAL_SPACE_AS_IT_IS_FULL;
+	public static final SystemMessageId YOU_CANNOT_TELEPORT_TO_THE_DIMENSIONAL_SPACE_AS_IT_IS_FULL;
 	
 	/**
 	 * ID: 4120<br>
 	 * Message: You cannot teleport to the Dimensional Space while your pet or servitor is summoned.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_TELEPORT_TO_THE_DIMENSIONAL_SPACE_WHILE_YOUR_PET_OR_SERVITOR_IS_SUMMONED;
+	public static final SystemMessageId YOU_CANNOT_TELEPORT_TO_THE_DIMENSIONAL_SPACE_WHILE_YOUR_PET_OR_SERVITOR_IS_SUMMONED;
 	
 	/**
 	 * ID: 4121<br>
 	 * Message: You cannot use the Beauty Shop as the NPC server is currently not in function.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_AS_THE_NPC_SERVER_IS_CURRENTLY_NOT_IN_FUNCTION;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_AS_THE_NPC_SERVER_IS_CURRENTLY_NOT_IN_FUNCTION;
 	
 	/**
 	 * ID: 4122<br>
 	 * Message: You cannot register/cancel while using the Beauty Shop.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_REGISTER_CANCEL_WHILE_USING_THE_BEAUTY_SHOP;
+	public static final SystemMessageId YOU_CANNOT_REGISTER_CANCEL_WHILE_USING_THE_BEAUTY_SHOP;
 	
 	/**
 	 * ID: 4123<br>
 	 * Message: You cannot use the Beauty Shop while using the automatic replacement.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_USING_THE_AUTOMATIC_REPLACEMENT;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_USING_THE_AUTOMATIC_REPLACEMENT;
 	
 	/**
 	 * ID: 4124<br>
 	 * Message: You cannot run the Olympiad while using the Beauty Shop.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_RUN_THE_OLYMPIAD_WHILE_USING_THE_BEAUTY_SHOP;
+	public static final SystemMessageId YOU_CANNOT_RUN_THE_OLYMPIAD_WHILE_USING_THE_BEAUTY_SHOP;
 	
 	/**
 	 * ID: 4125<br>
 	 * Message: You have been entered on the waiting list again as the replacement player does not fit the requirements.
 	 */
-	 public static final SystemMessageId YOU_HAVE_BEEN_ENTERED_ON_THE_WAITING_LIST_AGAIN_AS_THE_REPLACEMENT_PLAYER_DOES_NOT_FIT_THE_REQUIREMENTS;
+	public static final SystemMessageId YOU_HAVE_BEEN_ENTERED_ON_THE_WAITING_LIST_AGAIN_AS_THE_REPLACEMENT_PLAYER_DOES_NOT_FIT_THE_REQUIREMENTS;
 	
 	/**
 	 * ID: 4126<br>
 	 * Message: You cannot use the Beauty Shop while registered in the Ceremony of Chaos.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_CEREMONY_OF_CHAOS;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_CEREMONY_OF_CHAOS;
 	
 	/**
 	 * ID: 4127<br>
 	 * Message: You cannot use the Beauty Shop while registered in the Olympiad.
 	 */
-	 public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_OLYMPIAD;
+	public static final SystemMessageId YOU_CANNOT_USE_THE_BEAUTY_SHOP_WHILE_REGISTERED_IN_THE_OLYMPIAD;
 	
 	/**
 	 * ID: 4128<br>
 	 * Message: Your wish has been entered successfully into the Wish Tree.
 	 */
-	 public static final SystemMessageId YOUR_WISH_HAS_BEEN_ENTERED_SUCCESSFULLY_INTO_THE_WISH_TREE;
+	public static final SystemMessageId YOUR_WISH_HAS_BEEN_ENTERED_SUCCESSFULLY_INTO_THE_WISH_TREE;
 	
 	/**
 	 * ID: 4129<br>
 	 * Message: Go to the event page to view the wish entered into the Wish Tree?
 	 */
-	 public static final SystemMessageId GO_TO_THE_EVENT_PAGE_TO_VIEW_THE_WISH_ENTERED_INTO_THE_WISH_TREE;
+	public static final SystemMessageId GO_TO_THE_EVENT_PAGE_TO_VIEW_THE_WISH_ENTERED_INTO_THE_WISH_TREE;
 	
 	/**
 	 * ID: 4130<br>
 	 * Message: Failed to enter wish. Please try again by clicking on the wish link.
 	 */
-	 public static final SystemMessageId FAILED_TO_ENTER_WISH;
+	public static final SystemMessageId FAILED_TO_ENTER_WISH;
 	
 	/**
 	 * ID: 4131<br>
 	 * Message: Inventory weight/ slot has been filled to 80%% or more. You cannot enter a wish or obtain rewards in this state. Please organize your inventory and try again.
 	 */
-	 public static final SystemMessageId INVENTORY_WEIGHT_SLOT_HAS_BEEN_FILLED_TO_80_OR_MORE;
+	public static final SystemMessageId INVENTORY_WEIGHT_SLOT_HAS_BEEN_FILLED_TO_80_OR_MORE;
 	
 	/**
 	 * ID: 4132<br>
 	 * Message: You have already been rewarded for entering a wish. You can only make 1 wish per character.
 	 */
-	 public static final SystemMessageId YOU_HAVE_ALREADY_BEEN_REWARDED_FOR_ENTERING_A_WISH;
+	public static final SystemMessageId YOU_HAVE_ALREADY_BEEN_REWARDED_FOR_ENTERING_A_WISH;
 	
 	/**
 	 * ID: 4133<br>
 	 * Message: When you log in with a new account, a new account item will be given to the first character to log into each server for 1 week.
 	 */
-	 public static final SystemMessageId WHEN_YOU_LOG_IN_WITH_A_NEW_ACCOUNT_A_NEW_ACCOUNT_ITEM_WILL_BE_GIVEN_TO_THE_FIRST_CHARACTER_TO_LOG_INTO_EACH_SERVER_FOR_1_WEEK;
+	public static final SystemMessageId WHEN_YOU_LOG_IN_WITH_A_NEW_ACCOUNT_A_NEW_ACCOUNT_ITEM_WILL_BE_GIVEN_TO_THE_FIRST_CHARACTER_TO_LOG_INTO_EACH_SERVER_FOR_1_WEEK;
 	
 	/**
 	 * ID: 4134<br>
 	 * Message: You cannot change your wish once entered. Continue?
 	 */
-	 public static final SystemMessageId YOU_CANNOT_CHANGE_YOUR_WISH_ONCE_ENTERED;
+	public static final SystemMessageId YOU_CANNOT_CHANGE_YOUR_WISH_ONCE_ENTERED;
 	
-	 /**
-	  * ID: 4244<br>
-	  * Message: Lady Luck smiles upon you!
-	  */
-	 public static final SystemMessageId LADY_LUCK_SMILES_UPON_YOU;
-	 
-	 /**
-	  * ID: 4245<br>
-	  * Message: Evaded killing blow. Lady Luck watches over you!
-	  */
-	 public static final SystemMessageId EVADED_KILLING_BLOW;
-	 
+	/**
+	 * ID: 4244<br>
+	 * Message: Lady Luck smiles upon you!
+	 */
+	public static final SystemMessageId LADY_LUCK_SMILES_UPON_YOU;
+	
+	/**
+	 * ID: 4245<br>
+	 * Message: Evaded killing blow. Lady Luck watches over you!
+	 */
+	public static final SystemMessageId EVADED_KILLING_BLOW;
+	
 	/**
 	 * ID: 4701<br>
 	 * Message: You can easily adjust performance to the factory setting.
 	 */
-	 public static final SystemMessageId YOU_CAN_EASILY_ADJUST_PERFORMANCE_TO_THE_FACTORY_SETTING;
+	public static final SystemMessageId YOU_CAN_EASILY_ADJUST_PERFORMANCE_TO_THE_FACTORY_SETTING;
 	
 	/**
 	 * ID: 4702<br>
 	 * Message: Lower the performance of the game you are not playing, to decrease load on the computer.
 	 */
-	 public static final SystemMessageId LOWER_THE_PERFORMANCE_OF_THE_GAME_YOU_ARE_NOT_PLAYING_TO_DECREASE_LOAD_ON_THE_COMPUTER;
+	public static final SystemMessageId LOWER_THE_PERFORMANCE_OF_THE_GAME_YOU_ARE_NOT_PLAYING_TO_DECREASE_LOAD_ON_THE_COMPUTER;
 	
 	/**
 	 * ID: 4703<br>
 	 * Message: Hide items dropped on the field.
 	 */
-	 public static final SystemMessageId HIDE_ITEMS_DROPPED_ON_THE_FIELD;
+	public static final SystemMessageId HIDE_ITEMS_DROPPED_ON_THE_FIELD;
 	
 	/**
 	 * ID: 4704<br>
 	 * Message: Adjust game screen to full screen. Uncheck this to switch to window mode.
 	 */
-	 public static final SystemMessageId ADJUST_GAME_SCREEN_TO_FULL_SCREEN;
+	public static final SystemMessageId ADJUST_GAME_SCREEN_TO_FULL_SCREEN;
 	
 	/**
 	 * ID: 4705<br>
 	 * Message: Adjust game resolution.
 	 */
-	 public static final SystemMessageId ADJUST_GAME_RESOLUTION;
+	public static final SystemMessageId ADJUST_GAME_RESOLUTION;
 	
 	/**
 	 * ID: 4706<br>
 	 * Message: Adjust game refresh rate.
 	 */
-	 public static final SystemMessageId ADJUST_GAME_REFRESH_RATE;
+	public static final SystemMessageId ADJUST_GAME_REFRESH_RATE;
 	
 	/**
 	 * ID: 4707<br>
 	 * Message: Adjust game screen brightness.
 	 */
-	 public static final SystemMessageId ADJUST_GAME_SCREEN_BRIGHTNESS;
+	public static final SystemMessageId ADJUST_GAME_SCREEN_BRIGHTNESS;
 	
 	/**
 	 * ID: 4708<br>
 	 * Message: Adjust texture quality. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_TEXTURE_QUALITY;
+	public static final SystemMessageId ADJUST_TEXTURE_QUALITY;
 	
 	/**
 	 * ID: 4709<br>
 	 * Message: Adjust modeling quality. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_MODELING_QUALITY;
+	public static final SystemMessageId ADJUST_MODELING_QUALITY;
 	
 	/**
 	 * ID: 4710<br>
 	 * Message: Adjust motion quality. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_MOTION_QUALITY;
+	public static final SystemMessageId ADJUST_MOTION_QUALITY;
 	
 	/**
 	 * ID: 4711<br>
 	 * Message: Adjust effect quality. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_EFFECT_QUALITY;
+	public static final SystemMessageId ADJUST_EFFECT_QUALITY;
 	
 	/**
 	 * ID: 4712<br>
 	 * Message: Adjust terrain expression range. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_TERRAIN_EXPRESSION_RANGE;
+	public static final SystemMessageId ADJUST_TERRAIN_EXPRESSION_RANGE;
 	
 	/**
 	 * ID: 4713<br>
 	 * Message: Adjust character expression range. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_CHARACTER_EXPRESSION_RANGE;
+	public static final SystemMessageId ADJUST_CHARACTER_EXPRESSION_RANGE;
 	
 	/**
 	 * ID: 4714<br>
 	 * Message: Adjust weather effect. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_WEATHER_EFFECT;
+	public static final SystemMessageId ADJUST_WEATHER_EFFECT;
 	
 	/**
 	 * ID: 4715<br>
 	 * Message: Adjust the number of characters expressed at the same time. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_THE_NUMBER_OF_CHARACTERS_EXPRESSED_AT_THE_SAME_TIME;
+	public static final SystemMessageId ADJUST_THE_NUMBER_OF_CHARACTERS_EXPRESSED_AT_THE_SAME_TIME;
 	
 	/**
 	 * ID: 4716<br>
 	 * Message: Improve the aliasing of characters and objects. If this is set too high, performance might decrease.
 	 */
-	 public static final SystemMessageId IMPROVE_THE_ALIASING_OF_CHARACTERS_AND_OBJECTS;
+	public static final SystemMessageId IMPROVE_THE_ALIASING_OF_CHARACTERS_AND_OBJECTS;
 	
 	/**
 	 * ID: 4717<br>
 	 * Message: Adjust reflection effect. If you use this function, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_REFLECTION_EFFECT;
+	public static final SystemMessageId ADJUST_REFLECTION_EFFECT;
 	
 	/**
 	 * ID: 4718<br>
 	 * Message: Adjust glow effect and HDR rendering. If you use this function, performance might decrease.
 	 */
-	 public static final SystemMessageId ADJUST_GLOW_EFFECT_AND_HDR_RENDERING;
+	public static final SystemMessageId ADJUST_GLOW_EFFECT_AND_HDR_RENDERING;
 	
 	/**
 	 * ID: 4719<br>
 	 * Message: Use improved shader effect.
 	 */
-	 public static final SystemMessageId USE_IMPROVED_SHADER_EFFECT;
+	public static final SystemMessageId USE_IMPROVED_SHADER_EFFECT;
 	
 	/**
 	 * ID: 4720<br>
 	 * Message: Display shadows of characters and objects. If you check this setting, performance might decrease.
 	 */
-	 public static final SystemMessageId DISPLAY_SHADOWS_OF_CHARACTERS_AND_OBJECTS;
+	public static final SystemMessageId DISPLAY_SHADOWS_OF_CHARACTERS_AND_OBJECTS;
 	
 	/**
 	 * ID: 4721<br>
 	 * Message: Display all background objects. If you check this setting, performance might decrease.
 	 */
-	 public static final SystemMessageId DISPLAY_ALL_BACKGROUND_OBJECTS;
+	public static final SystemMessageId DISPLAY_ALL_BACKGROUND_OBJECTS;
 	
 	/**
 	 * ID: 4722<br>
 	 * Message: Use GPU for improved performance.
 	 */
-	 public static final SystemMessageId USE_GPU_FOR_IMPROVED_PERFORMANCE;
+	public static final SystemMessageId USE_GPU_FOR_IMPROVED_PERFORMANCE;
 	
 	/**
 	 * ID: 4723<br>
 	 * Message: Lower texture and modeling quality to maintain the minimum frame rate.
 	 */
-	 public static final SystemMessageId LOWER_TEXTURE_AND_MODELING_QUALITY_TO_MAINTAIN_THE_MINIMUM_FRAME_RATE;
+	public static final SystemMessageId LOWER_TEXTURE_AND_MODELING_QUALITY_TO_MAINTAIN_THE_MINIMUM_FRAME_RATE;
 	
 	/**
 	 * ID: 4724<br>
 	 * Message: Apply out-focus effect to the background. If you check this setting, performance might decrease.
 	 */
-	 public static final SystemMessageId APPLY_OUTFOCUS_EFFECT_TO_THE_BACKGROUND;
+	public static final SystemMessageId APPLY_OUTFOCUS_EFFECT_TO_THE_BACKGROUND;
 	
 	/**
 	 * ID: 4725<br>
 	 * Message: Express objects realistically. If you check this setting, performance might decrease.
 	 */
-	 public static final SystemMessageId EXPRESS_OBJECTS_REALISTICALLY;
+	public static final SystemMessageId EXPRESS_OBJECTS_REALISTICALLY;
 	
 	/**
 	 * ID: 4726<br>
 	 * Message: Express detailed shadows of characters. If you check this setting, performance might decrease.
 	 */
-	 public static final SystemMessageId EXPRESS_DETAILED_SHADOWS_OF_CHARACTERS;
+	public static final SystemMessageId EXPRESS_DETAILED_SHADOWS_OF_CHARACTERS;
 	
 	/**
 	 * ID: 4727<br>
 	 * Message: Select a language to use in the game.
 	 */
-	 public static final SystemMessageId SELECT_A_LANGUAGE_TO_USE_IN_THE_GAME;
+	public static final SystemMessageId SELECT_A_LANGUAGE_TO_USE_IN_THE_GAME;
 	
 	/**
 	 * ID: 4728<br>
 	 * Message: Use keyboard security.
 	 */
-	 public static final SystemMessageId USE_KEYBOARD_SECURITY;
+	public static final SystemMessageId USE_KEYBOARD_SECURITY;
 	
 	/**
 	 * ID: 4729<br>
 	 * Message: Game pad control is supported.
 	 */
-	 public static final SystemMessageId GAME_PAD_CONTROL_IS_SUPPORTED;
+	public static final SystemMessageId GAME_PAD_CONTROL_IS_SUPPORTED;
 	
 	/**
 	 * ID: 4730<br>
 	 * Message: Match view point and moving direction.
 	 */
-	 public static final SystemMessageId MATCH_VIEW_POINT_AND_MOVING_DIRECTION;
+	public static final SystemMessageId MATCH_VIEW_POINT_AND_MOVING_DIRECTION;
 	
 	/**
 	 * ID: 4731<br>
 	 * Message: Right-click not to use the function for reverting to default view point.
 	 */
-	 public static final SystemMessageId RIGHTCLICK_NOT_TO_USE_THE_FUNCTION_FOR_REVERTING_TO_DEFAULT_VIEW_POINT;
+	public static final SystemMessageId RIGHTCLICK_NOT_TO_USE_THE_FUNCTION_FOR_REVERTING_TO_DEFAULT_VIEW_POINT;
 	
 	/**
 	 * ID: 4732<br>
 	 * Message: Reverse zoom-in/out of the mouse wheel.
 	 */
-	 public static final SystemMessageId REVERSE_ZOOMIN_OUT_OF_THE_MOUSE_WHEEL;
+	public static final SystemMessageId REVERSE_ZOOMIN_OUT_OF_THE_MOUSE_WHEEL;
 	
 	/**
 	 * ID: 4733<br>
 	 * Message: Right-click to open a simple menu.
 	 */
-	 public static final SystemMessageId RIGHTCLICK_TO_OPEN_A_SIMPLE_MENU;
+	public static final SystemMessageId RIGHTCLICK_TO_OPEN_A_SIMPLE_MENU;
 	
 	/**
 	 * ID: 4734<br>
 	 * Message: Mute all.
 	 */
-	 public static final SystemMessageId MUTE_ALL;
+	public static final SystemMessageId MUTE_ALL;
 	
 	/**
 	 * ID: 4735<br>
 	 * Message: Adjust volume of all sounds.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_ALL_SOUNDS;
+	public static final SystemMessageId ADJUST_VOLUME_OF_ALL_SOUNDS;
 	
 	/**
 	 * ID: 4736<br>
 	 * Message: Adjust volume of the background music.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_THE_BACKGROUND_MUSIC;
+	public static final SystemMessageId ADJUST_VOLUME_OF_THE_BACKGROUND_MUSIC;
 	
 	/**
 	 * ID: 4737<br>
 	 * Message: Adjust volume of sound effects.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_SOUND_EFFECTS;
+	public static final SystemMessageId ADJUST_VOLUME_OF_SOUND_EFFECTS;
 	
 	/**
 	 * ID: 4738<br>
 	 * Message: Adjust volume of environment sounds.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_ENVIRONMENT_SOUNDS;
+	public static final SystemMessageId ADJUST_VOLUME_OF_ENVIRONMENT_SOUNDS;
 	
 	/**
 	 * ID: 4739<br>
 	 * Message: Adjust volume of the system voice.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_THE_SYSTEM_VOICE;
+	public static final SystemMessageId ADJUST_VOLUME_OF_THE_SYSTEM_VOICE;
 	
 	/**
 	 * ID: 4740<br>
 	 * Message: Adjust volume of NPC voices.
 	 */
-	 public static final SystemMessageId ADJUST_VOLUME_OF_NPC_VOICES;
+	public static final SystemMessageId ADJUST_VOLUME_OF_NPC_VOICES;
 	
 	/**
 	 * ID: 4741<br>
 	 * Message: Listen to the tutorial voice.
 	 */
-	 public static final SystemMessageId LISTEN_TO_THE_TUTORIAL_VOICE;
+	public static final SystemMessageId LISTEN_TO_THE_TUTORIAL_VOICE;
 	
 	/**
 	 * ID: 4742<br>
 	 * Message: Display symbols appropriate for the specific chatting type in the window.
 	 */
-	 public static final SystemMessageId DISPLAY_SYMBOLS_APPROPRIATE_FOR_THE_SPECIFIC_CHATTING_TYPE_IN_THE_WINDOW;
+	public static final SystemMessageId DISPLAY_SYMBOLS_APPROPRIATE_FOR_THE_SPECIFIC_CHATTING_TYPE_IN_THE_WINDOW;
 	
 	/**
 	 * ID: 4743<br>
 	 * Message: Press the Enter key to start chatting.
 	 */
-	 public static final SystemMessageId PRESS_THE_ENTER_KEY_TO_START_CHATTING;
+	public static final SystemMessageId PRESS_THE_ENTER_KEY_TO_START_CHATTING;
 	
 	/**
 	 * ID: 4744<br>
 	 * Message: Show standard chat.
 	 */
-	 public static final SystemMessageId SHOW_STANDARD_CHAT;
+	public static final SystemMessageId SHOW_STANDARD_CHAT;
 	
 	/**
 	 * ID: 4745<br>
 	 * Message: Show trade chat.
 	 */
-	 public static final SystemMessageId SHOW_TRADE_CHAT;
+	public static final SystemMessageId SHOW_TRADE_CHAT;
 	
 	/**
 	 * ID: 4746<br>
 	 * Message: Show party chat.
 	 */
-	 public static final SystemMessageId SHOW_PARTY_CHAT;
+	public static final SystemMessageId SHOW_PARTY_CHAT;
 	
 	/**
 	 * ID: 4747<br>
 	 * Message: Show clan chat.
 	 */
-	 public static final SystemMessageId SHOW_CLAN_CHAT;
+	public static final SystemMessageId SHOW_CLAN_CHAT;
 	
 	/**
 	 * ID: 4748<br>
 	 * Message: Show alliance chat.
 	 */
-	 public static final SystemMessageId SHOW_ALLIANCE_CHAT;
+	public static final SystemMessageId SHOW_ALLIANCE_CHAT;
 	
 	/**
 	 * ID: 4749<br>
 	 * Message: Show battle chat.
 	 */
-	 public static final SystemMessageId SHOW_BATTLE_CHAT;
+	public static final SystemMessageId SHOW_BATTLE_CHAT;
 	
 	/**
 	 * ID: 4750<br>
 	 * Message: Show command chat.
 	 */
-	 public static final SystemMessageId SHOW_COMMAND_CHAT;
+	public static final SystemMessageId SHOW_COMMAND_CHAT;
 	
 	/**
 	 * ID: 4751<br>
 	 * Message: Show shouts.
 	 */
-	 public static final SystemMessageId SHOW_SHOUTS;
+	public static final SystemMessageId SHOW_SHOUTS;
 	
 	/**
 	 * ID: 4752<br>
 	 * Message: Show whispers.
 	 */
-	 public static final SystemMessageId SHOW_WHISPERS;
+	public static final SystemMessageId SHOW_WHISPERS;
 	
 	/**
 	 * ID: 4753<br>
 	 * Message: Show heroes' chat throughout the world.
 	 */
-	 public static final SystemMessageId SHOW_HEROES_CHAT_THROUGHOUT_THE_WORLD;
+	public static final SystemMessageId SHOW_HEROES_CHAT_THROUGHOUT_THE_WORLD;
 	
 	/**
 	 * ID: 4754<br>
 	 * Message: Show NPC dialogue.
 	 */
-	 public static final SystemMessageId SHOW_NPC_DIALOGUE;
+	public static final SystemMessageId SHOW_NPC_DIALOGUE;
 	
 	/**
 	 * ID: 4755<br>
 	 * Message: Show command leader's chat as a screen message.
 	 */
-	 public static final SystemMessageId SHOW_COMMAND_LEADERS_CHAT_AS_A_SCREEN_MESSAGE;
+	public static final SystemMessageId SHOW_COMMAND_LEADERS_CHAT_AS_A_SCREEN_MESSAGE;
 	
 	/**
 	 * ID: 4756<br>
 	 * Message: Show damage during a battle.
 	 */
-	 public static final SystemMessageId SHOW_DAMAGE_DURING_A_BATTLE;
+	public static final SystemMessageId SHOW_DAMAGE_DURING_A_BATTLE;
 	
 	/**
 	 * ID: 4757<br>
 	 * Message: Show messages about the consumption of consumable items.
 	 */
-	 public static final SystemMessageId SHOW_MESSAGES_ABOUT_THE_CONSUMPTION_OF_CONSUMABLE_ITEMS;
+	public static final SystemMessageId SHOW_MESSAGES_ABOUT_THE_CONSUMPTION_OF_CONSUMABLE_ITEMS;
 	
 	/**
 	 * ID: 4758<br>
 	 * Message: Show damage.
 	 */
-	 public static final SystemMessageId SHOW_DAMAGE;
+	public static final SystemMessageId SHOW_DAMAGE;
 	
 	/**
 	 * ID: 4759<br>
 	 * Message: Show consumable items' usage status.
 	 */
-	 public static final SystemMessageId SHOW_CONSUMABLE_ITEMS_USAGE_STATUS;
+	public static final SystemMessageId SHOW_CONSUMABLE_ITEMS_USAGE_STATUS;
 	
 	/**
 	 * ID: 4760<br>
 	 * Message: Alert with sound effects when there is a new message that contains keywords.
 	 */
-	 public static final SystemMessageId ALERT_WITH_SOUND_EFFECTS_WHEN_THERE_IS_A_NEW_MESSAGE_THAT_CONTAINS_KEYWORDS;
+	public static final SystemMessageId ALERT_WITH_SOUND_EFFECTS_WHEN_THERE_IS_A_NEW_MESSAGE_THAT_CONTAINS_KEYWORDS;
 	
 	/**
 	 * ID: 4761<br>
 	 * Message: Delete the entered keyword.
 	 */
-	 public static final SystemMessageId DELETE_THE_ENTERED_KEYWORD;
+	public static final SystemMessageId DELETE_THE_ENTERED_KEYWORD;
 	
 	/**
 	 * ID: 4762<br>
 	 * Message: Make rules about item acquiring during a party hunt.
 	 */
-	 public static final SystemMessageId MAKE_RULES_ABOUT_ITEM_ACQUIRING_DURING_A_PARTY_HUNT;
+	public static final SystemMessageId MAKE_RULES_ABOUT_ITEM_ACQUIRING_DURING_A_PARTY_HUNT;
 	
 	/**
 	 * ID: 4763<br>
 	 * Message: Do not receive duel requests.
 	 */
-	 public static final SystemMessageId DO_NOT_RECEIVE_DUEL_REQUESTS;
+	public static final SystemMessageId DO_NOT_RECEIVE_DUEL_REQUESTS;
 	
 	/**
 	 * ID: 4764<br>
 	 * Message: Do not receive individual trade requests.
 	 */
-	 public static final SystemMessageId DO_NOT_RECEIVE_INDIVIDUAL_TRADE_REQUESTS;
+	public static final SystemMessageId DO_NOT_RECEIVE_INDIVIDUAL_TRADE_REQUESTS;
 	
 	/**
 	 * ID: 4765<br>
 	 * Message: Do not receive party requests.
 	 */
-	 public static final SystemMessageId DO_NOT_RECEIVE_PARTY_REQUESTS;
+	public static final SystemMessageId DO_NOT_RECEIVE_PARTY_REQUESTS;
 	
 	/**
 	 * ID: 4766<br>
 	 * Message: Do not receive friend requests.
 	 */
-	 public static final SystemMessageId DO_NOT_RECEIVE_FRIEND_REQUESTS;
+	public static final SystemMessageId DO_NOT_RECEIVE_FRIEND_REQUESTS;
 	
 	/**
 	 * ID: 4767<br>
 	 * Message: Do not receive couple action requests.
 	 */
-	 public static final SystemMessageId DO_NOT_RECEIVE_COUPLE_ACTION_REQUESTS;
+	public static final SystemMessageId DO_NOT_RECEIVE_COUPLE_ACTION_REQUESTS;
 	
 	/**
 	 * ID: 4768<br>
 	 * Message: Run the automatic substitute function when you log into the game.
 	 */
-	 public static final SystemMessageId RUN_THE_AUTOMATIC_SUBSTITUTE_FUNCTION_WHEN_YOU_LOG_INTO_THE_GAME;
+	public static final SystemMessageId RUN_THE_AUTOMATIC_SUBSTITUTE_FUNCTION_WHEN_YOU_LOG_INTO_THE_GAME;
 	
 	/**
 	 * ID: 4769<br>
 	 * Message: Display party members on the radar map.
 	 */
-	 public static final SystemMessageId DISPLAY_PARTY_MEMBERS_ON_THE_RADAR_MAP;
+	public static final SystemMessageId DISPLAY_PARTY_MEMBERS_ON_THE_RADAR_MAP;
 	
 	/**
 	 * ID: 4770<br>
 	 * Message: Display quest tutorial NPCs on the radar map.
 	 */
-	 public static final SystemMessageId DISPLAY_QUEST_TUTORIAL_NPCS_ON_THE_RADAR_MAP;
+	public static final SystemMessageId DISPLAY_QUEST_TUTORIAL_NPCS_ON_THE_RADAR_MAP;
 	
 	/**
 	 * ID: 4771<br>
 	 * Message: Display monsters on the radar map.
 	 */
-	 public static final SystemMessageId DISPLAY_MONSTERS_ON_THE_RADAR_MAP;
+	public static final SystemMessageId DISPLAY_MONSTERS_ON_THE_RADAR_MAP;
 	
 	/**
 	 * ID: 4772<br>
 	 * Message: Display my current location on the radar map.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_CURRENT_LOCATION_ON_THE_RADAR_MAP;
+	public static final SystemMessageId DISPLAY_MY_CURRENT_LOCATION_ON_THE_RADAR_MAP;
 	
 	/**
 	 * ID: 4773<br>
 	 * Message: Lock the radar map so it doesn't rotate according to the character's direction.
 	 */
-	 public static final SystemMessageId LOCK_THE_RADAR_MAP_SO_IT_DOESNT_ROTATE_ACCORDING_TO_THE_CHARACTERS_DIRECTION;
+	public static final SystemMessageId LOCK_THE_RADAR_MAP_SO_IT_DOESNT_ROTATE_ACCORDING_TO_THE_CHARACTERS_DIRECTION;
 	
 	/**
 	 * ID: 4774<br>
 	 * Message: Display the name of a new location you move into.
 	 */
-	 public static final SystemMessageId DISPLAY_THE_NAME_OF_A_NEW_LOCATION_YOU_MOVE_INTO;
+	public static final SystemMessageId DISPLAY_THE_NAME_OF_A_NEW_LOCATION_YOU_MOVE_INTO;
 	
 	/**
 	 * ID: 4775<br>
 	 * Message: Show information useful for game play on the loading screen.
 	 */
-	 public static final SystemMessageId SHOW_INFORMATION_USEFUL_FOR_GAME_PLAY_ON_THE_LOADING_SCREEN;
+	public static final SystemMessageId SHOW_INFORMATION_USEFUL_FOR_GAME_PLAY_ON_THE_LOADING_SCREEN;
 	
 	/**
 	 * ID: 4776<br>
 	 * Message: Show the tutorial that teaches basic game play.
 	 */
-	 public static final SystemMessageId SHOW_THE_TUTORIAL_THAT_TEACHES_BASIC_GAME_PLAY;
+	public static final SystemMessageId SHOW_THE_TUTORIAL_THAT_TEACHES_BASIC_GAME_PLAY;
 	
 	/**
 	 * ID: 4777<br>
 	 * Message: Use the cursor made specifically for the game.
 	 */
-	 public static final SystemMessageId USE_THE_CURSOR_MADE_SPECIFICALLY_FOR_THE_GAME;
+	public static final SystemMessageId USE_THE_CURSOR_MADE_SPECIFICALLY_FOR_THE_GAME;
 	
 	/**
 	 * ID: 4778<br>
 	 * Message: Hide PC points.
 	 */
-	 public static final SystemMessageId HIDE_PC_POINTS;
+	public static final SystemMessageId HIDE_PC_POINTS;
 	
 	/**
 	 * ID: 4779<br>
 	 * Message: Display effects that show quest destinations.
 	 */
-	 public static final SystemMessageId DISPLAY_EFFECTS_THAT_SHOW_QUEST_DESTINATIONS;
+	public static final SystemMessageId DISPLAY_EFFECTS_THAT_SHOW_QUEST_DESTINATIONS;
 	
 	/**
 	 * ID: 4780<br>
 	 * Message: Select screenshot quality.
 	 */
-	 public static final SystemMessageId SELECT_SCREENSHOT_QUALITY;
+	public static final SystemMessageId SELECT_SCREENSHOT_QUALITY;
 	
 	/**
 	 * ID: 4781<br>
 	 * Message: Make inactive windows translucent.
 	 */
-	 public static final SystemMessageId MAKE_INACTIVE_WINDOWS_TRANSLUCENT;
+	public static final SystemMessageId MAKE_INACTIVE_WINDOWS_TRANSLUCENT;
 	
 	/**
 	 * ID: 4782<br>
 	 * Message: Hide my own speech balloons.
 	 */
-	 public static final SystemMessageId HIDE_MY_OWN_SPEECH_BALLOONS;
+	public static final SystemMessageId HIDE_MY_OWN_SPEECH_BALLOONS;
 	
 	/**
 	 * ID: 4783<br>
 	 * Message: Hide all speech balloons of NPCs.
 	 */
-	 public static final SystemMessageId HIDE_ALL_SPEECH_BALLOONS_OF_NPCS;
+	public static final SystemMessageId HIDE_ALL_SPEECH_BALLOONS_OF_NPCS;
 	
 	/**
 	 * ID: 4784<br>
 	 * Message: Hide all private stores.
 	 */
-	 public static final SystemMessageId HIDE_ALL_PRIVATE_STORES;
+	public static final SystemMessageId HIDE_ALL_PRIVATE_STORES;
 	
 	/**
 	 * ID: 4785<br>
 	 * Message: Hide all private workshops.
 	 */
-	 public static final SystemMessageId HIDE_ALL_PRIVATE_WORKSHOPS;
+	public static final SystemMessageId HIDE_ALL_PRIVATE_WORKSHOPS;
 	
 	/**
 	 * ID: 4786<br>
 	 * Message: Turn on or off all name information.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_NAME_INFORMATION;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_NAME_INFORMATION;
 	
 	/**
 	 * ID: 4787<br>
 	 * Message: Display my name.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_NAME;
+	public static final SystemMessageId DISPLAY_MY_NAME;
 	
 	/**
 	 * ID: 4788<br>
 	 * Message: Display names of monsters.
 	 */
-	 public static final SystemMessageId DISPLAY_NAMES_OF_MONSTERS;
+	public static final SystemMessageId DISPLAY_NAMES_OF_MONSTERS;
 	
 	/**
 	 * ID: 4789<br>
 	 * Message: Display names of other players.
 	 */
-	 public static final SystemMessageId DISPLAY_NAMES_OF_OTHER_PLAYERS;
+	public static final SystemMessageId DISPLAY_NAMES_OF_OTHER_PLAYERS;
 	
 	/**
 	 * ID: 4790<br>
 	 * Message: Display names of clans.
 	 */
-	 public static final SystemMessageId DISPLAY_NAMES_OF_CLANS;
+	public static final SystemMessageId DISPLAY_NAMES_OF_CLANS;
 	
 	/**
 	 * ID: 4791<br>
 	 * Message: Display names of party members.
 	 */
-	 public static final SystemMessageId DISPLAY_NAMES_OF_PARTY_MEMBERS;
+	public static final SystemMessageId DISPLAY_NAMES_OF_PARTY_MEMBERS;
 	
 	/**
 	 * ID: 4792<br>
 	 * Message: Display names of normal players.
 	 */
-	 public static final SystemMessageId DISPLAY_NAMES_OF_NORMAL_PLAYERS;
+	public static final SystemMessageId DISPLAY_NAMES_OF_NORMAL_PLAYERS;
 	
 	/**
 	 * ID: 4793<br>
 	 * Message: Turn on or off status of all gauges.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_STATUS_OF_ALL_GAUGES;
+	public static final SystemMessageId TURN_ON_OR_OFF_STATUS_OF_ALL_GAUGES;
 	
 	/**
 	 * ID: 4794<br>
 	 * Message: Display my gauge status.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_GAUGE_STATUS;
+	public static final SystemMessageId DISPLAY_MY_GAUGE_STATUS;
 	
 	/**
 	 * ID: 4795<br>
 	 * Message: Display gauge status of party members.
 	 */
-	 public static final SystemMessageId DISPLAY_GAUGE_STATUS_OF_PARTY_MEMBERS;
+	public static final SystemMessageId DISPLAY_GAUGE_STATUS_OF_PARTY_MEMBERS;
 	
 	/**
 	 * ID: 4796<br>
 	 * Message: Show pet and servitor gauge.
 	 */
-	 public static final SystemMessageId SHOW_PET_AND_SERVITOR_GAUGE;
+	public static final SystemMessageId SHOW_PET_AND_SERVITOR_GAUGE;
 	
 	/**
 	 * ID: 4797<br>
 	 * Message: Show party members' pet and servitor gauge.
 	 */
-	 public static final SystemMessageId SHOW_PARTY_MEMBERS_PET_AND_SERVITOR_GAUGE;
+	public static final SystemMessageId SHOW_PARTY_MEMBERS_PET_AND_SERVITOR_GAUGE;
 	
 	/**
 	 * ID: 4798<br>
 	 * Message: Show NPC gauge.
 	 */
-	 public static final SystemMessageId SHOW_NPC_GAUGE;
+	public static final SystemMessageId SHOW_NPC_GAUGE;
 	
 	/**
 	 * ID: 4800<br>
 	 * Message: Turn on or off all information about targets.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_INFORMATION_ABOUT_TARGETS;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_INFORMATION_ABOUT_TARGETS;
 	
 	/**
 	 * ID: 4801<br>
 	 * Message: Display casting bar of targeted skills.
 	 */
-	 public static final SystemMessageId DISPLAY_CASTING_BAR_OF_TARGETED_SKILLS;
+	public static final SystemMessageId DISPLAY_CASTING_BAR_OF_TARGETED_SKILLS;
 	
 	/**
 	 * ID: 4802<br>
 	 * Message: Display abnormal status of all targets.
 	 */
-	 public static final SystemMessageId DISPLAY_ABNORMAL_STATUS_OF_ALL_TARGETS;
+	public static final SystemMessageId DISPLAY_ABNORMAL_STATUS_OF_ALL_TARGETS;
 	
 	/**
 	 * ID: 4803<br>
 	 * Message: Turn on or off all my damage text.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_MY_DAMAGE_TEXT;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_MY_DAMAGE_TEXT;
 	
 	/**
 	 * ID: 4804<br>
 	 * Message: Display my HP recovery.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_HP_RECOVERY;
+	public static final SystemMessageId DISPLAY_MY_HP_RECOVERY;
 	
 	/**
 	 * ID: 4805<br>
 	 * Message: Display my Mana recovery.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_MANA_RECOVERY;
+	public static final SystemMessageId DISPLAY_MY_MANA_RECOVERY;
 	
 	/**
 	 * ID: 4806<br>
 	 * Message: Display my XP acquiring.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_XP_ACQUIRING;
+	public static final SystemMessageId DISPLAY_MY_XP_ACQUIRING;
 	
 	/**
 	 * ID: 4807<br>
 	 * Message: Display my SP acquiring.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_SP_ACQUIRING;
+	public static final SystemMessageId DISPLAY_MY_SP_ACQUIRING;
 	
 	/**
 	 * ID: 4808<br>
 	 * Message: Display my normal damage.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_NORMAL_DAMAGE;
+	public static final SystemMessageId DISPLAY_MY_NORMAL_DAMAGE;
 	
 	/**
 	 * ID: 4809<br>
 	 * Message: Display my constant damage.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_CONSTANT_DAMAGE;
+	public static final SystemMessageId DISPLAY_MY_CONSTANT_DAMAGE;
 	
 	/**
 	 * ID: 4810<br>
 	 * Message: Display my critical hits.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_CRITICAL_HITS;
+	public static final SystemMessageId DISPLAY_MY_CRITICAL_HITS;
 	
 	/**
 	 * ID: 4811<br>
 	 * Message: Display my immunity success.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_IMMUNITY_SUCCESS;
+	public static final SystemMessageId DISPLAY_MY_IMMUNITY_SUCCESS;
 	
 	/**
 	 * ID: 4812<br>
 	 * Message: Display my resistance success.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_RESISTANCE_SUCCESS;
+	public static final SystemMessageId DISPLAY_MY_RESISTANCE_SUCCESS;
 	
 	/**
 	 * ID: 4813<br>
 	 * Message: Display my blocking success.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_BLOCKING_SUCCESS;
+	public static final SystemMessageId DISPLAY_MY_BLOCKING_SUCCESS;
 	
 	/**
 	 * ID: 4814<br>
 	 * Message: Display my evasion success.
 	 */
-	 public static final SystemMessageId DISPLAY_MY_EVASION_SUCCESS;
+	public static final SystemMessageId DISPLAY_MY_EVASION_SUCCESS;
 	
 	/**
 	 * ID: 4815<br>
 	 * Message: Turn on or off all damage text of attack targets.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_ATTACK_TARGETS;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4816<br>
 	 * Message: Display normal damage of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_NORMAL_DAMAGE_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_NORMAL_DAMAGE_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4817<br>
 	 * Message: Display constant damage of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_CONSTANT_DAMAGE_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_CONSTANT_DAMAGE_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4818<br>
 	 * Message: Display critical hits of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4819<br>
 	 * Message: Display over-hits of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_OVERHITS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_OVERHITS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4820<br>
 	 * Message: Display immunity success of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4821<br>
 	 * Message: Display resistance success of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_RESISTANCE_SUCCESS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_RESISTANCE_SUCCESS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4822<br>
 	 * Message: Display blocking success of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_BLOCKING_SUCCESS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_BLOCKING_SUCCESS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4823<br>
 	 * Message: Display evasion success of attack targets.
 	 */
-	 public static final SystemMessageId DISPLAY_EVASION_SUCCESS_OF_ATTACK_TARGETS;
+	public static final SystemMessageId DISPLAY_EVASION_SUCCESS_OF_ATTACK_TARGETS;
 	
 	/**
 	 * ID: 4824<br>
 	 * Message: Turn on or off all damage text of recovery targets.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_RECOVERY_TARGETS;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_RECOVERY_TARGETS;
 	
 	/**
 	 * ID: 4825<br>
 	 * Message: Display HP recovery of recovery targets.
 	 */
-	 public static final SystemMessageId DISPLAY_HP_RECOVERY_OF_RECOVERY_TARGETS;
+	public static final SystemMessageId DISPLAY_HP_RECOVERY_OF_RECOVERY_TARGETS;
 	
 	/**
 	 * ID: 4826<br>
 	 * Message: Display Mana recovery of recovery targets.
 	 */
-	 public static final SystemMessageId DISPLAY_MANA_RECOVERY_OF_RECOVERY_TARGETS;
+	public static final SystemMessageId DISPLAY_MANA_RECOVERY_OF_RECOVERY_TARGETS;
 	
 	/**
 	 * ID: 4827<br>
 	 * Message: Display critical hits of recovery targets.
 	 */
-	 public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_RECOVERY_TARGETS;
+	public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_RECOVERY_TARGETS;
 	
 	/**
 	 * ID: 4828<br>
 	 * Message: Display immunity success of recovery targets.
 	 */
-	 public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_RECOVERY_TARGETS;
+	public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_RECOVERY_TARGETS;
 	
 	/**
 	 * ID: 4829<br>
 	 * Message: Turn on or off all damage text of pets and servitors.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_DAMAGE_TEXT_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4830<br>
 	 * Message: Display HP recovery of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_HP_RECOVERY_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_HP_RECOVERY_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4831<br>
 	 * Message: Display Mana recovery of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_MANA_RECOVERY_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_MANA_RECOVERY_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4832<br>
 	 * Message: Display XP acquiring of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_XP_ACQUIRING_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_XP_ACQUIRING_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4833<br>
 	 * Message: Display normal damage of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_NORMAL_DAMAGE_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_NORMAL_DAMAGE_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4834<br>
 	 * Message: Display constant damage of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_CONSTANT_DAMAGE_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_CONSTANT_DAMAGE_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4835<br>
 	 * Message: Display critical hits of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_CRITICAL_HITS_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4836<br>
 	 * Message: Display immunity success of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_IMMUNITY_SUCCESS_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4837<br>
 	 * Message: Display resistance success of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_RESISTANCE_SUCCESS_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_RESISTANCE_SUCCESS_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4838<br>
 	 * Message: Display evasion success of pets and servitors.
 	 */
-	 public static final SystemMessageId DISPLAY_EVASION_SUCCESS_OF_PETS_AND_SERVITORS;
+	public static final SystemMessageId DISPLAY_EVASION_SUCCESS_OF_PETS_AND_SERVITORS;
 	
 	/**
 	 * ID: 4839<br>
 	 * Message: Return all windows to their default locations.
 	 */
-	 public static final SystemMessageId RETURN_ALL_WINDOWS_TO_THEIR_DEFAULT_LOCATIONS;
+	public static final SystemMessageId RETURN_ALL_WINDOWS_TO_THEIR_DEFAULT_LOCATIONS;
 	
 	/**
 	 * ID: 4840<br>
 	 * Message: Reset the settings of the selected tab.
 	 */
-	 public static final SystemMessageId RESET_THE_SETTINGS_OF_THE_SELECTED_TAB;
+	public static final SystemMessageId RESET_THE_SETTINGS_OF_THE_SELECTED_TAB;
 	
 	/**
 	 * ID: 4841<br>
 	 * Message: Apply changes and close the window.
 	 */
-	 public static final SystemMessageId APPLY_CHANGES_AND_CLOSE_THE_WINDOW;
+	public static final SystemMessageId APPLY_CHANGES_AND_CLOSE_THE_WINDOW;
 	
 	/**
 	 * ID: 4842<br>
 	 * Message: Apply changes.
 	 */
-	 public static final SystemMessageId APPLY_CHANGES;
+	public static final SystemMessageId APPLY_CHANGES;
 	
 	/**
 	 * ID: 4843<br>
 	 * Message: Do not apply changes, and close the window.
 	 */
-	 public static final SystemMessageId DO_NOT_APPLY_CHANGES_AND_CLOSE_THE_WINDOW;
+	public static final SystemMessageId DO_NOT_APPLY_CHANGES_AND_CLOSE_THE_WINDOW;
 	
 	/**
 	 * ID: 4844<br>
 	 * Message: Turn on or off all speech balloon information.
 	 */
-	 public static final SystemMessageId TURN_ON_OR_OFF_ALL_SPEECH_BALLOON_INFORMATION;
+	public static final SystemMessageId TURN_ON_OR_OFF_ALL_SPEECH_BALLOON_INFORMATION;
 	
 	/**
 	 * ID: 4845<br>
 	 * Message: Select channel from selected tabs.
 	 */
-	 public static final SystemMessageId SELECT_CHANNEL_FROM_SELECTED_TABS;
+	public static final SystemMessageId SELECT_CHANNEL_FROM_SELECTED_TABS;
 	
 	/**
 	 * ID: 4846<br>
 	 * Message: Set selected channel's message to default.
 	 */
-	 public static final SystemMessageId SET_SELECTED_CHANNELS_MESSAGE_TO_DEFAULT;
+	public static final SystemMessageId SET_SELECTED_CHANNELS_MESSAGE_TO_DEFAULT;
 	
 	/**
 	 * ID: 4847<br>
 	 * Message: Show system messages.
 	 */
-	 public static final SystemMessageId SHOW_SYSTEM_MESSAGES;
+	public static final SystemMessageId SHOW_SYSTEM_MESSAGES;
 	
 	/**
 	 * ID: 4848<br>
 	 * Message: Make chat window translucent.
 	 */
-	 public static final SystemMessageId MAKE_CHAT_WINDOW_TRANSLUCENT;
+	public static final SystemMessageId MAKE_CHAT_WINDOW_TRANSLUCENT;
 	
 	/**
 	 * ID: 4850<br>
 	 * Message: Enter keywords for alerts.
 	 */
-	 public static final SystemMessageId ENTER_KEYWORDS_FOR_ALERTS;
+	public static final SystemMessageId ENTER_KEYWORDS_FOR_ALERTS;
 	
 	/**
 	 * ID: 4851<br>
 	 * Message: Reset all chat option settings.
 	 */
-	 public static final SystemMessageId RESET_ALL_CHAT_OPTION_SETTINGS;
+	public static final SystemMessageId RESET_ALL_CHAT_OPTION_SETTINGS;
 	
 	/**
 	 * ID: 4852<br>
 	 * Message: Close current favorite chat window.
 	 */
-	 public static final SystemMessageId CLOSE_CURRENT_FAVORITE_CHAT_WINDOW;
+	public static final SystemMessageId CLOSE_CURRENT_FAVORITE_CHAT_WINDOW;
 	
 	/**
 	 * ID: 4853<br>
 	 * Message: View character details such as level, HP, MP, etc.
 	 */
-	 public static final SystemMessageId VIEW_CHARACTER_DETAILS_SUCH_AS_LEVEL_HP_MP_ETC;
+	public static final SystemMessageId VIEW_CHARACTER_DETAILS_SUCH_AS_LEVEL_HP_MP_ETC;
 	
 	/**
 	 * ID: 4854<br>
 	 * Message: View inventory.
 	 */
-	 public static final SystemMessageId VIEW_INVENTORY;
+	public static final SystemMessageId VIEW_INVENTORY;
 	
 	/**
 	 * ID: 4855<br>
 	 * Message: Use standard emotes, social emotes, and marks.
 	 */
-	 public static final SystemMessageId USE_STANDARD_EMOTES_SOCIAL_EMOTES_AND_MARKS;
+	public static final SystemMessageId USE_STANDARD_EMOTES_SOCIAL_EMOTES_AND_MARKS;
 	
 	/**
 	 * ID: 4856<br>
 	 * Message: Learn new skills or use learned skills.
 	 */
-	 public static final SystemMessageId LEARN_NEW_SKILLS_OR_USE_LEARNED_SKILLS;
+	public static final SystemMessageId LEARN_NEW_SKILLS_OR_USE_LEARNED_SKILLS;
 	
 	/**
 	 * ID: 4857<br>
 	 * Message: View quests currently in progress.
 	 */
-	 public static final SystemMessageId VIEW_QUESTS_CURRENTLY_IN_PROGRESS;
+	public static final SystemMessageId VIEW_QUESTS_CURRENTLY_IN_PROGRESS;
 	
 	/**
 	 * ID: 4858<br>
 	 * Message: View clan-related information such as clans, clan wars, requests, etc.
 	 */
-	 public static final SystemMessageId VIEW_CLANRELATED_INFORMATION_SUCH_AS_CLANS_CLAN_WARS_REQUESTS_ETC;
+	public static final SystemMessageId VIEW_CLANRELATED_INFORMATION_SUCH_AS_CLANS_CLAN_WARS_REQUESTS_ETC;
 	
 	/**
 	 * ID: 4859<br>
 	 * Message: View Lineage II world map.
 	 */
-	 public static final SystemMessageId VIEW_LINEAGE_II_WORLD_MAP;
+	public static final SystemMessageId VIEW_LINEAGE_II_WORLD_MAP;
 	
 	/**
 	 * ID: 4860<br>
 	 * Message: View various settings.
 	 */
-	 public static final SystemMessageId VIEW_VARIOUS_SETTINGS;
+	public static final SystemMessageId VIEW_VARIOUS_SETTINGS;
 	
 	/**
 	 * ID: 4861<br>
 	 * Message: Log out and return to the Login screen.
 	 */
-	 public static final SystemMessageId LOG_OUT_AND_RETURN_TO_THE_LOGIN_SCREEN;
+	public static final SystemMessageId LOG_OUT_AND_RETURN_TO_THE_LOGIN_SCREEN;
 	
 	/**
 	 * ID: 4862<br>
 	 * Message: Completely close the game.
 	 */
-	 public static final SystemMessageId COMPLETELY_CLOSE_THE_GAME;
+	public static final SystemMessageId COMPLETELY_CLOSE_THE_GAME;
 	
 	/**
 	 * ID: 4863<br>
 	 * Message: Manage friends, block list, and mentoring.
 	 */
-	 public static final SystemMessageId MANAGE_FRIENDS_BLOCK_LIST_AND_MENTORING;
+	public static final SystemMessageId MANAGE_FRIENDS_BLOCK_LIST_AND_MENTORING;
 	
 	/**
 	 * ID: 4864<br>
 	 * Message: Look for party members.
 	 */
-	 public static final SystemMessageId LOOK_FOR_PARTY_MEMBERS;
+	public static final SystemMessageId LOOK_FOR_PARTY_MEMBERS;
 	
 	/**
 	 * ID: 4865<br>
 	 * Message: Use mail and fee billing.
 	 */
-	 public static final SystemMessageId USE_MAIL_AND_FEE_BILLING;
+	public static final SystemMessageId USE_MAIL_AND_FEE_BILLING;
 	
 	/**
 	 * ID: 4866<br>
 	 * Message: Chat with friends through Windows Live Messenger.
 	 */
-	 public static final SystemMessageId CHAT_WITH_FRIENDS_THROUGH_WINDOWS_LIVE_MESSENGER;
+	public static final SystemMessageId CHAT_WITH_FRIENDS_THROUGH_WINDOWS_LIVE_MESSENGER;
 	
 	/**
 	 * ID: 4867<br>
 	 * Message: Summon shortcut settings.
 	 */
-	 public static final SystemMessageId SUMMON_SHORTCUT_SETTINGS;
+	public static final SystemMessageId SUMMON_SHORTCUT_SETTINGS;
 	
 	/**
 	 * ID: 4868<br>
 	 * Message: Edit macros.
 	 */
-	 public static final SystemMessageId EDIT_MACROS;
+	public static final SystemMessageId EDIT_MACROS;
 	
 	/**
 	 * ID: 4869<br>
 	 * Message: View various records within the world.
 	 */
-	 public static final SystemMessageId VIEW_VARIOUS_RECORDS_WITHIN_THE_WORLD;
+	public static final SystemMessageId VIEW_VARIOUS_RECORDS_WITHIN_THE_WORLD;
 	
 	/**
 	 * ID: 4870<br>
 	 * Message: View instanced zone usage status.
 	 */
-	 public static final SystemMessageId VIEW_INSTANCED_ZONE_USAGE_STATUS;
+	public static final SystemMessageId VIEW_INSTANCED_ZONE_USAGE_STATUS;
 	
 	/**
 	 * ID: 4871<br>
 	 * Message: You can view clan information and request entry into clan.
 	 */
-	 public static final SystemMessageId YOU_CAN_VIEW_CLAN_INFORMATION_AND_REQUEST_ENTRY_INTO_CLAN;
+	public static final SystemMessageId YOU_CAN_VIEW_CLAN_INFORMATION_AND_REQUEST_ENTRY_INTO_CLAN;
 	
 	/**
 	 * ID: 4872<br>
 	 * Message: View PC points.
 	 */
-	 public static final SystemMessageId VIEW_PC_POINTS;
+	public static final SystemMessageId VIEW_PC_POINTS;
 	
 	/**
 	 * ID: 4873<br>
 	 * Message: View product inventory.
 	 */
-	 public static final SystemMessageId VIEW_PRODUCT_INVENTORY;
+	public static final SystemMessageId VIEW_PRODUCT_INVENTORY;
 	
 	/**
 	 * ID: 4874<br>
 	 * Message: Right/ left click the mouse simultaneously to move.
 	 */
-	 public static final SystemMessageId RIGHT_LEFT_CLICK_THE_MOUSE_SIMULTANEOUSLY_TO_MOVE;
+	public static final SystemMessageId RIGHT_LEFT_CLICK_THE_MOUSE_SIMULTANEOUSLY_TO_MOVE;
 	
 	/**
 	 * ID: 4878<br>
 	 * Message: Use the 1:1 inquiry service.
 	 */
-	 public static final SystemMessageId USE_THE_11_INQUIRY_SERVICE;
+	public static final SystemMessageId USE_THE_11_INQUIRY_SERVICE;
 	
 	/**
 	 * ID: 4879<br>
 	 * Message: View the guide.
 	 */
-	 public static final SystemMessageId VIEW_THE_GUIDE;
+	public static final SystemMessageId VIEW_THE_GUIDE;
 	
 	/**
 	 * ID: 4880<br>
 	 * Message: View the forums.
 	 */
-	 public static final SystemMessageId VIEW_THE_FORUMS;
+	public static final SystemMessageId VIEW_THE_FORUMS;
 	
 	/**
 	 * ID: 4881<br>
 	 * Message: Go to the Lineage II homepage.
 	 */
-	 public static final SystemMessageId GO_TO_THE_LINEAGE_II_HOMEPAGE;
+	public static final SystemMessageId GO_TO_THE_LINEAGE_II_HOMEPAGE;
 	
 	/**
 	 * ID: 4882<br>
 	 * Message: Edit the main menu.
 	 */
-	 public static final SystemMessageId EDIT_THE_MAIN_MENU;
+	public static final SystemMessageId EDIT_THE_MAIN_MENU;
 	
 	/**
 	 * ID: 4883<br>
 	 * Message: Reset the main menu settings.
 	 */
-	 public static final SystemMessageId RESET_THE_MAIN_MENU_SETTINGS;
+	public static final SystemMessageId RESET_THE_MAIN_MENU_SETTINGS;
 	
 	/**
 	 * ID: 4884<br>
 	 * Message: Re-edit the main menu. The edits made until now will not be saved.
 	 */
-	 public static final SystemMessageId REEDIT_THE_MAIN_MENU;
+	public static final SystemMessageId REEDIT_THE_MAIN_MENU;
 	
 	/**
 	 * ID: 4885<br>
 	 * Message: Finish editing and save changes.
 	 */
-	 public static final SystemMessageId FINISH_EDITING_AND_SAVE_CHANGES;
+	public static final SystemMessageId FINISH_EDITING_AND_SAVE_CHANGES;
 	
 	/**
 	 * ID: 4886<br>
 	 * Message: Finish editing without saving changes.
 	 */
-	 public static final SystemMessageId FINISH_EDITING_WITHOUT_SAVING_CHANGES;
+	public static final SystemMessageId FINISH_EDITING_WITHOUT_SAVING_CHANGES;
 	
 	/**
 	 * ID: 6093<br>
@@ -18325,94 +18327,94 @@ public final class SystemMessageId
 	public static final SystemMessageId THOMAS_D_TURKEY_DISAPPEARED;
 	
 	/**
-	* ID: 6800
-	* Message: Dark Blue, Upstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6800
+	 * Message: Dark Blue, Upstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId DARK_BLUE_UPSTAIRS_S1;
 	
 	/**
-	* ID: 6801
-	* Message: Dark Blue, Downstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6801
+	 * Message: Dark Blue, Downstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId DARK_BLUE_DOWNSTAIRS_S1;
 	
 	/**
-	* ID: 6802
-	* Message: Light Blue, Upstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6802
+	 * Message: Light Blue, Upstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId LIGHT_BLUE_UPSTAIRS_S1;
 	
 	/**
-	* ID: 6803
-	* Message: Light Blue, Downstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6803
+	 * Message: Light Blue, Downstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId LIGHT_BLUE_DOWNSTAIRS_S1;
 	
 	/**
-	* ID: 6804
-	* Message: Red, Upstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6804
+	 * Message: Red, Upstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId RED_UPSTAIRS_S1;
 	
 	/**
-	* ID: 6805
-	* Message: Red, Downstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6805
+	 * Message: Red, Downstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId RED_DOWNSTAIRS_S1;
 	
 	/**
-	* ID: 6806
-	* Message: Orange, Upstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6806
+	 * Message: Orange, Upstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId ORANGE_UPSTAIRS_S1;
 	
 	/**
-	* ID: 6807
-	* Message: Orange, Downstairs.
-	* $s1 Type Message.
-	*/
+	 * ID: 6807
+	 * Message: Orange, Downstairs.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId ORANGE_DOWNSTAIRS_S1;
 	
 	/**
-	* ID: 6808
-	* Message: Orange, Chat Box Only.
-	* $s1 Type Message.
-	*/
+	 * ID: 6808
+	 * Message: Orange, Chat Box Only.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId ORANGE_CHATBOX_S1;
 	
 	/**
-	* ID: 6809
-	* Message: Red, Chat Box Only.
-	* $s1 Type Message.
-	*/
+	 * ID: 6809
+	 * Message: Red, Chat Box Only.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId RED_CHATBOX_S1;
 	
 	/**
-	* ID: 6810
-	* Message: Dark Blue, Chat Box Only.
-	* $s1 Type Message.
-	*/
+	 * ID: 6810
+	 * Message: Dark Blue, Chat Box Only.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId DARK_BLUE_CHATBOX_S1;
 	
 	/**
-	* ID: 6811
-	* Message: Light Blue, Chat Box Only.
-	* $s1 Type Message.
-	*/
+	 * ID: 6811
+	 * Message: Light Blue, Chat Box Only.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId LIGHT_BLUE_CHATBOX_S1;
 	
 	/**
-	* ID: 6812
-	* Message: Red Chat, Game Masters.
-	* $s1 Type Message.
-	*/
+	 * ID: 6812
+	 * Message: Red Chat, Game Masters.
+	 * $s1 Type Message.
+	 */
 	public static final SystemMessageId RED_GM_CHATBOX_S1;
 	
 	/**
@@ -20807,7 +20809,7 @@ public final class SystemMessageId
 		BY_USING_HOLY_WATER_EINHASAD = new SystemMessageId(3039);
 		BY_USING_COURT_WIZARD_STAFF = new SystemMessageId(3040);
 		S1_NOT_RECEIVE_DURING_WAITING_TIME_MAIL_RETURNED = new SystemMessageId(3059);
-		SEALING_DEVICE_GLITTERS_AND_MOVES= new SystemMessageId(3060);
+		SEALING_DEVICE_GLITTERS_AND_MOVES = new SystemMessageId(3060);
 		DO_YOU_WANT_TO_PAY_S1_ADENA = new SystemMessageId(3062);
 		DO_YOU_WANT_TO_FORWARD = new SystemMessageId(3063);
 		UNREAD_MAIL = new SystemMessageId(3064);
@@ -20852,9 +20854,9 @@ public final class SystemMessageId
 		S1_SUCCESFULLY_DELETED_FROM_CONTACT_LIST = new SystemMessageId(3219);
 		CANNOT_ADD_YOUR_NAME_ON_CONTACT_LIST = new SystemMessageId(3221);
 		CONTACT_LIST_LIMIT_REACHED = new SystemMessageId(3222);
-
-		ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP = new SystemMessageId(3255); 
-	 	MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING = new SystemMessageId(3256); 
+		
+		ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP = new SystemMessageId(3255);
+		MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING = new SystemMessageId(3256);
 		YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4 = new SystemMessageId(3259);
 		YOU_HAVE_S1_MATCHES_S2_1V1_CLASS_S3_1V1_S4_TEAM = new SystemMessageId(3261);
 		YOU_CAN_PROCEED_WHEN_WHEIGHT_BELOW_80_AND_QUANTITY_90 = new SystemMessageId(3262);
@@ -21443,19 +21445,39 @@ public final class SystemMessageId
 		THOMAS_D_TURKEY_APPEARED = new SystemMessageId(6503);
 		THOMAS_D_TURKEY_DEFETED = new SystemMessageId(6504);
 		THOMAS_D_TURKEY_DISAPPEARED = new SystemMessageId(6505);
-		DARK_BLUE_UPSTAIRS_S1 = new SystemMessageId(3272);
-		DARK_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(3272);
-		LIGHT_BLUE_UPSTAIRS_S1 = new SystemMessageId(3272);
-		LIGHT_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(3272);
-		RED_UPSTAIRS_S1 = new SystemMessageId(3272);
-		RED_DOWNSTAIRS_S1 = new SystemMessageId(3272);
-		ORANGE_UPSTAIRS_S1 = new SystemMessageId(3272);
-		ORANGE_DOWNSTAIRS_S1 = new SystemMessageId(3272);
-		ORANGE_CHATBOX_S1 = new SystemMessageId(3272);
-		RED_CHATBOX_S1 = new SystemMessageId(3272);
-		DARK_BLUE_CHATBOX_S1 = new SystemMessageId(3272);
-		LIGHT_BLUE_CHATBOX_S1 = new SystemMessageId(3272);
-		RED_GM_CHATBOX_S1 = new SystemMessageId(3272);
+		
+		if (Config.isServer(Config.DREAMS))
+		{
+			DARK_BLUE_UPSTAIRS_S1 = new SystemMessageId(6800);
+			DARK_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(6801);
+			LIGHT_BLUE_UPSTAIRS_S1 = new SystemMessageId(6802);
+			LIGHT_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(6803);
+			RED_UPSTAIRS_S1 = new SystemMessageId(6804);
+			RED_DOWNSTAIRS_S1 = new SystemMessageId(6805);
+			ORANGE_UPSTAIRS_S1 = new SystemMessageId(6806);
+			ORANGE_DOWNSTAIRS_S1 = new SystemMessageId(6807);
+			ORANGE_CHATBOX_S1 = new SystemMessageId(6808);
+			RED_CHATBOX_S1 = new SystemMessageId(6809);
+			DARK_BLUE_CHATBOX_S1 = new SystemMessageId(6810);
+			LIGHT_BLUE_CHATBOX_S1 = new SystemMessageId(6811);
+			RED_GM_CHATBOX_S1 = new SystemMessageId(6812);
+		}
+		else
+		{
+			DARK_BLUE_UPSTAIRS_S1 = new SystemMessageId(1987);
+			DARK_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(1987);
+			LIGHT_BLUE_UPSTAIRS_S1 = new SystemMessageId(1987);
+			LIGHT_BLUE_DOWNSTAIRS_S1 = new SystemMessageId(1987);
+			RED_UPSTAIRS_S1 = new SystemMessageId(1987);
+			RED_DOWNSTAIRS_S1 = new SystemMessageId(1987);
+			ORANGE_UPSTAIRS_S1 = new SystemMessageId(1987);
+			ORANGE_DOWNSTAIRS_S1 = new SystemMessageId(1987);
+			ORANGE_CHATBOX_S1 = new SystemMessageId(1987);
+			RED_CHATBOX_S1 = new SystemMessageId(1987);
+			DARK_BLUE_CHATBOX_S1 = new SystemMessageId(1987);
+			LIGHT_BLUE_CHATBOX_S1 = new SystemMessageId(1987);
+			RED_GM_CHATBOX_S1 = new SystemMessageId(1987);
+		}
 		
 		buildFastLookupTable();
 	}
@@ -21499,10 +21521,10 @@ public final class SystemMessageId
 	{
 		int paramCount = 0;
 		char c1, c2;
-		for (int i = 0; i < name.length() - 1; i++)
+		for (int i = 0; i < (name.length() - 1); i++)
 		{
 			c1 = name.charAt(i);
-			if (c1 == 'C' || c1 == 'S')
+			if ((c1 == 'C') || (c1 == 'S'))
 			{
 				c2 = name.charAt(i + 1);
 				if (Character.isDigit(c2))
@@ -21512,8 +21534,7 @@ public final class SystemMessageId
 				}
 			}
 		}
-		if (name.contains("_HP_RESTORED") || name.contains("_DMG")
-				 || name.contains("_DAMAGE"))
+		if (name.contains("_HP_RESTORED") || name.contains("_DMG") || name.contains("_DAMAGE"))
 			paramCount++;
 		return paramCount;
 	}
@@ -21523,10 +21544,10 @@ public final class SystemMessageId
 		final SystemMessageId smi = getSystemMessageIdInternal(id);
 		return smi == null ? new SystemMessageId(id) : smi;
 	}
-
+	
 	private static final SystemMessageId getSystemMessageIdInternal(final int id)
 	{
-		if (id < 0 || id >= VALUES.length)
+		if ((id < 0) || (id >= VALUES.length))
 			return null;
 		
 		return VALUES[id];
@@ -21554,14 +21575,13 @@ public final class SystemMessageId
 		final int arrayLength = array.length;
 		
 		char c, c2, c3;
-		LOOP:
-		for (;index1 < arrayLength; index1++)
+		LOOP: for (; index1 < arrayLength; index1++)
 		{
 			c = array[index1];
-			if (c == '$' && index1 < arrayLength - 2)
+			if ((c == '$') && (index1 < (arrayLength - 2)))
 			{
 				c2 = array[index1 + 1];
-				if (c2 == 'c' || c2 == 's' || c2 == 'p' || c2 == 'C' || c2 == 'S' || c2 == 'P')
+				if ((c2 == 'c') || (c2 == 's') || (c2 == 'p') || (c2 == 'C') || (c2 == 'S') || (c2 == 'P'))
 				{
 					c3 = array[index1 + 2];
 					if (Character.isDigit(c3))
@@ -21631,7 +21651,7 @@ public final class SystemMessageId
 	
 	/**
 	 * You better don`t touch this!
-	 * 
+	 *
 	 * @param params
 	 */
 	public final void setParamCount(final int params)
@@ -21712,7 +21732,7 @@ public final class SystemMessageId
 	}
 	
 	/**
-	 * 
+	 *
 	 * @author Forsaiken
 	 *
 	 */
@@ -21726,7 +21746,7 @@ public final class SystemMessageId
 	}
 	
 	/**
-	 * 
+	 *
 	 * @author Forsaiken
 	 *
 	 */
@@ -21742,7 +21762,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString(final Object param)
 		{
-			return toString(new Object[]{param});
+			return toString(new Object[] { param });
 		}
 		
 		@Override
@@ -21761,7 +21781,7 @@ public final class SystemMessageId
 				{
 					builder = _builders[i];
 					paramIndex = builder.getIndex();
-					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) : builder.toString();
+					build = (paramIndex != -1) && (paramIndex < paramsLength) ? builder.toString(params[paramIndex]) : builder.toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -21792,7 +21812,7 @@ public final class SystemMessageId
 	}
 	
 	/**
-	 * 
+	 *
 	 * @author Forsaiken
 	 *
 	 */
@@ -21831,7 +21851,7 @@ public final class SystemMessageId
 	}
 	
 	/**
-	 * 
+	 *
 	 * @author Forsaiken
 	 *
 	 */
@@ -21841,7 +21861,7 @@ public final class SystemMessageId
 		
 		public BuilderObject(final int id)
 		{
-			if (id < 1 || id > 9)
+			if ((id < 1) || (id > 9))
 				throw new RuntimeException("Illegal id " + id);
 			
 			_index = id - 1;
@@ -21856,7 +21876,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString(final Object... params)
 		{
-			if (params == null || params.length == 0)
+			if ((params == null) || (params.length == 0))
 				return "null";
 			
 			return params[0].toString();
@@ -21876,7 +21896,7 @@ public final class SystemMessageId
 	}
 	
 	/**
-	 * 
+	 *
 	 * @author Forsaiken
 	 *
 	 */

@@ -3,21 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.chathandlers;
 
 import gnu.trove.TIntIntHashMap;
 
 import java.util.Collection;
 
+import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -39,10 +41,7 @@ import l2server.gameserver.stats.Stats;
  */
 public class ChatGlobal implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		25
-	};
+	private static final int[] COMMAND_IDS = { 25 };
 	
 	private TIntIntHashMap _messages = new TIntIntHashMap();
 	
@@ -50,6 +49,7 @@ public class ChatGlobal implements IChatHandler
 	{
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				synchronized (_messages)
@@ -64,6 +64,7 @@ public class ChatGlobal implements IChatHandler
 	 * Handle chat type 'global'
 	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
 		if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("global chat")))
@@ -72,9 +73,9 @@ public class ChatGlobal implements IChatHandler
 			return;
 		}
 		
-		if (activeChar.getLevel() < 95)
+		if (!Config.isServer(Config.DREAMS) && (activeChar.getLevel() < 105))
 		{
-			activeChar.sendMessage("You're not allowed to use this chat until level 95.");
+			activeChar.sendMessage("You're not allowed to use this chat until level 105.");
 			return;
 		}
 		
@@ -88,10 +89,10 @@ public class ChatGlobal implements IChatHandler
 			_messages.put(activeChar.getObjectId(), messages);
 		}
 		
-		int maxMessages = (20 + (int)activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null));
+		int maxMessages = 20 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);
 		if (messages > maxMessages)
 		{
-			activeChar.sendMessage("You can't write more than "+maxMessages+" global messages a day.");
+			activeChar.sendMessage("You can't write more than " + maxMessages + " global messages a day.");
 			return;
 		}
 		
@@ -99,7 +100,7 @@ public class ChatGlobal implements IChatHandler
 		
 		for (int i = 0; i < text.length(); i++)
 		{
-			if ((text.charAt(i) & (char)0xff00) != 0)
+			if ((text.charAt(i) & (char) 0xff00) != 0)
 				text = text.substring(0, i) + text.substring(i + 1);
 		}
 		
@@ -111,14 +112,14 @@ public class ChatGlobal implements IChatHandler
 			if (!BlockList.isBlocked(player, activeChar))
 				player.sendPacket(cs);
 		}
-
+		
 		while (text.contains("Type=") && text.contains("Title="))
 		{
 			int index1 = text.indexOf("Type=");
 			int index2 = text.indexOf("Title=") + 6;
 			text = text.substring(0, index1) + text.substring(index2);
 		}
-
+		
 		ConsoleTab.appendMessage(ConsoleFilter.GlobalChat, activeChar.getName() + ": " + text);
 	}
 	
@@ -126,6 +127,7 @@ public class ChatGlobal implements IChatHandler
 	 * Returns the chat types registered to this handler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
+	@Override
 	public int[] getChatTypeList()
 	{
 		return COMMAND_IDS;

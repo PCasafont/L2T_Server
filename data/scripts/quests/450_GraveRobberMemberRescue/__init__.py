@@ -88,7 +88,7 @@ class Quest (JQuest) :
 				st.giveItems(EVIDENCE_OF_MIGRATION,1)
 				st.playSound("ItemSound.quest_itemget")
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, L2CharPosition(npc.getX()+100, npc.getY()+100, npc.getZ(), 0))
-				npc.getSpawn().decreaseCount(npc)
+				npc.getSpawn().stopSpawn()
 				npc.deleteMe()
 				if st.getQuestItemsCount(EVIDENCE_OF_MIGRATION) == 10 :
 					st.set("cond","2")

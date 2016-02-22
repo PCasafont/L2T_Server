@@ -15,6 +15,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.network;
 
 import java.nio.ByteBuffer;

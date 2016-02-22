@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.io.BufferedOutputStream;
@@ -45,8 +46,8 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
-import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.L2GameClient.GameClientState;
+import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.gameserverpackets.AuthRequest;
 import l2server.gameserver.network.gameserverpackets.BlowFishKey;
 import l2server.gameserver.network.gameserverpackets.ChangeAccessLevel;
@@ -163,7 +164,7 @@ public class LoginServerThread extends Thread
 				{
 					lengthLo = _in.read();
 					lengthHi = _in.read();
-					length = lengthHi * 256 + lengthLo;
+					length = (lengthHi * 256) + lengthLo;
 					
 					if (lengthHi < 0)
 					{
@@ -176,14 +177,14 @@ public class LoginServerThread extends Thread
 					int receivedBytes = 0;
 					int newBytes = 0;
 					int left = length - 2;
-					while (newBytes != -1 && receivedBytes < length - 2)
+					while ((newBytes != -1) && (receivedBytes < (length - 2)))
 					{
-						newBytes =  _in.read(incoming, receivedBytes, left);
+						newBytes = _in.read(incoming, receivedBytes, left);
 						receivedBytes = receivedBytes + newBytes;
 						left -= newBytes;
 					}
 					
-					if (receivedBytes != length - 2)
+					if (receivedBytes != (length - 2))
 					{
 						Log.warning("Incomplete Packet is sent to the server, closing connection.(LS)");
 						break;
@@ -302,12 +303,18 @@ public class LoginServerThread extends Thread
 						case 0x03:
 							PlayerAuthResponse par = new PlayerAuthResponse(decrypt);
 							String account = par.getAccount();
+							String playKey1 = null;
+							if (account.contains(";"))
+							{
+								account = par.getAccount().split(";")[0];
+								playKey1 = par.getAccount().split(";")[1];
+							}
 							WaitingClient wcToRemove = null;
 							synchronized (_waitingClients)
 							{
 								for (WaitingClient wc : _waitingClients)
 								{
-									if (wc.account.equals(account))
+									if (((playKey1 == null) && wc.account.equals(account)) || (wc.session.playOkID1 == Integer.parseInt(playKey1)))
 									{
 										wcToRemove = wc;
 									}
@@ -318,22 +325,23 @@ public class LoginServerThread extends Thread
 								if (par.isAuthed())
 								{
 									if (Config.DEBUG)
-										Log.info("Login accepted player " + wcToRemove.account + " waited("
-												+ (TimeController.getGameTicks() - wcToRemove.timestamp) + "ms)");
+										Log.info("Login accepted player " + wcToRemove.account + " waited(" + (TimeController.getGameTicks() - wcToRemove.timestamp) + "ms)");
 									PlayerInGame pig = new PlayerInGame(par.getAccount());
 									sendPacket(pig);
+									wcToRemove.gameClient.setAccountName(account);
 									wcToRemove.gameClient.setState(GameClientState.AUTHED);
 									wcToRemove.gameClient.setSessionId(wcToRemove.session);
-									CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);
+									CharSelectionInfo cl = new CharSelectionInfo(account, wcToRemove.gameClient.getSessionId().playOkID1);
 									wcToRemove.gameClient.getConnection().sendPacket(cl);
 									wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
+									_accountsInGameServer.put(account, wcToRemove.gameClient);
 								}
 								else
 								{
-									Log.warning("Session key is not correct. Closing connection for account " + wcToRemove.account + ".");
+									Log.warning("Session key is not correct. Closing connection for account " + account + ".");
 									//wcToRemove.gameClient.getConnection().sendPacket(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));
 									wcToRemove.gameClient.close(new LoginFail(LoginFail.SYSTEM_ERROR_LOGIN_LATER));
-									_accountsInGameServer.remove(wcToRemove.account);
+									_accountsInGameServer.remove(account);
 								}
 								_waitingClients.remove(wcToRemove);
 							}
@@ -430,7 +438,7 @@ public class LoginServerThread extends Thread
 	{
 		if (account == null)
 			return;
-
+		
 		PlayerLogout pl = new PlayerLogout(account);
 		try
 		{
@@ -448,19 +456,9 @@ public class LoginServerThread extends Thread
 		}
 	}
 	
-	public boolean addGameServerLogin(String account, L2GameClient client)
+	public void addGameServerLogin(String account, L2GameClient client)
 	{
-		L2GameClient prevClient = _accountsInGameServer.put(account, client);
-		if (prevClient != null)
-		{
-			LogRecord record = new LogRecord(Level.WARNING, "Kicked by login");
-			record.setParameters(new Object[]{client});
-			_logAccounting.log(record);
-			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_LOGIN_WITH_ACCOUNT));
-			client.closeNow();
-		}
-		
-		return true;
+		_accountsInGameServer.put(account, client);
 	}
 	
 	public void sendAccessLevel(String account, int level)
@@ -516,14 +514,11 @@ public class LoginServerThread extends Thread
 		if (client != null)
 		{
 			LogRecord record = new LogRecord(Level.WARNING, "Kicked by login");
-			record.setParameters(new Object[]{client});
+			record.setParameters(new Object[] { client });
 			_logAccounting.log(record);
 			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_LOGIN_WITH_ACCOUNT));
 			client.closeNow();
 		}
-		
-		// Remove that account from the map, just in case
-		_accountsInGameServer.remove(account);
 	}
 	
 	private void getCharsOnServer(String account)
@@ -585,7 +580,7 @@ public class LoginServerThread extends Thread
 		synchronized (_out) //avoids tow threads writing in the mean time
 		{
 			_out.write(len & 0xff);
-			_out.write(len >> 8 & 0xff);
+			_out.write((len >> 8) & 0xff);
 			_out.write(data);
 			_out.flush();
 		}

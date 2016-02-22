@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.chathandlers;
 
 import l2server.Config;
@@ -32,15 +33,13 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ChatTell implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		2
-	};
+	private static final int[] COMMAND_IDS = { 2 };
 	
 	/**
 	 * Handle chat type 'tell'
 	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
 		if (activeChar.isChatBanned())
@@ -64,7 +63,13 @@ public class ChatTell implements IChatHandler
 		
 		receiver = L2World.getInstance().getPlayer(target);
 		
-		if (receiver != null && (!receiver.isSilenceMode() || activeChar.isGM()))
+		if (receiver == null)
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
+			return;
+		}
+		
+		if ((!receiver.isSilenceMode() || activeChar.isGM()))
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isInJail() && !activeChar.isGM())
 			{
@@ -76,11 +81,12 @@ public class ChatTell implements IChatHandler
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
 				return;
 			}
-			if ((receiver.getClient() == null || receiver.getClient().isDetached()))
+			/*
+			if (receiver.getClient() == null || receiver.getClient().isDetached())
 			{
 				activeChar.sendMessage("Player is in offline mode.");
 				return;
-			}
+			}*/
 			if (!BlockList.isBlocked(receiver, activeChar))
 			{
 				receiver.sendPacket(cs);
@@ -98,14 +104,13 @@ public class ChatTell implements IChatHandler
 			else
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_PERSON_IS_IN_MESSAGE_REFUSAL_MODE));
 		}
-		else
-			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
 	}
 	
 	/**
 	 * Returns the chat types registered to this handler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
+	@Override
 	public int[] getChatTypeList()
 	{
 		return COMMAND_IDS;

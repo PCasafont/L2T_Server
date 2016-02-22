@@ -98,7 +98,7 @@ class Quest (JQuest) :
 
    cond=st.getInt("cond")
    if npcId == 30648 and cond==0 and id == State.CREATED :
-        if (player.getClassId() in [0x0f,0x1d,0x2a,0x32]) :
+        if (player.getClassId().getId() in [0x0f,0x1d,0x2a,0x32]) :
            if player.getLevel() >= 35 :
               htmltext = "30648-03.htm"
            else :
@@ -116,7 +116,7 @@ class Quest (JQuest) :
       st.addExpAndSp(62912,4080)
       st.giveItems(7562,49)
       st.giveItems(ADENA,11464)
-      player.sendPacket(SocialAction(player.getObjectId(),3))
+      player.sendPacket(SocialAction(player,3))
       htmltext = "30648-10.htm"
       st.giveItems(MARK_OF_PILGRIM,1)
       st.takeItems(BOOK_OF_SAGE,1)

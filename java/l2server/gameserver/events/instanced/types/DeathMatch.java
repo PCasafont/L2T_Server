@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class DeathMatch extends EventInstance
 		}
 		
 		rewardPlayers(sorted);
-		Announcements.getInstance().announceToAll("The event has ended. The player " + sorted.get(0).getName() + " won with " + sorted.get(0).getEventPoints() + " kills");
+		Announcements.getInstance().announceToAll("The event has ended. The player " + sorted.get(0).getName() + " won with " + sorted.get(0).getEventPoints() + " kill points");
 		return;
 	}
 	
@@ -73,7 +74,7 @@ public class DeathMatch extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
 	{
-		if (killedPlayer == null || !isState(EventState.STARTED))
+		if ((killedPlayer == null) || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayer, _teams[0].getCoords(), false, false);
@@ -89,7 +90,7 @@ public class DeathMatch extends EventInstance
 		
 		CreatureSay cs = new CreatureSay(killerPlayer.getObjectId(), Say2.TELL, killerPlayer.getName(), "I have killed " + killedPlayer.getName() + "!");
 		killerPlayer.sendPacket(cs);
-
+		
 		killerPlayer.addEventPoints(3);
 		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
 		for (L2PcInstance assistant : assistants)

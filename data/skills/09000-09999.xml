@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<skill id="9000" levels="1" name="Player Commendation - Scroll: Enchant Armor (D-grade)">
+	<skill id="9000" levels="1" name="Player Commendation - Scroll: Enchant Weapon (D-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9001" levels="1" name="Player Commendation - Scroll: Enchant Armor (C-grade)">
+	<skill id="9001" levels="1" name="Player Commendation - Scroll: Enchant Weapon (C-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9002" levels="1" name="Player Commendation - Scroll: Enchant Armor (B-grade)">
+	<skill id="9002" levels="1" name="Player Commendation - Scroll: Enchant Weapon (B-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9003" levels="1" name="Player Commendation - Scroll: Enchant Armor (A-grade)">
+	<skill id="9003" levels="1" name="Player Commendation - Scroll: Enchant Weapon (A-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9004" levels="1" name="Player Commendation - Scroll: Enchant Armor (S-grade)">
+	<skill id="9004" levels="1" name="Player Commendation - Scroll: Enchant Weapon (S-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -411,7 +411,7 @@
 		</for>
 	</skill>
 	<skill id="9049" levels="1" name="Golden Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -428,7 +428,7 @@
 		</for>
 	</skill>
 	<skill id="9050" levels="1" name="Crystal Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -445,7 +445,7 @@
 		</for>
 	</skill>
 	<skill id="9051" levels="1" name="Blessed Golden Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -462,7 +462,7 @@
 		</for>
 	</skill>
 	<skill id="9052" levels="1" name="Blessed Crystal Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -479,7 +479,7 @@
 		</for>
 	</skill>
 	<skill id="9053" levels="1" name="Golden Spice (S-grade)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -496,7 +496,7 @@
 		</for>
 	</skill>
 	<skill id="9054" levels="1" name="Crystal Spice (S-grade)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1479,7 +1479,7 @@
 	</skill>
 	<!-- Bouquet of freesia flowers, which stand for "Innocence." -->
 	<skill id="9150" levels="1" name="Freesia Bouquet (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1492,7 +1492,7 @@
 	</skill>
 	<!-- Bouquet of baby's breath flowers, which stand for "Sorrow." -->
 	<skill id="9151" levels="1" name="Baby's Breath Bouquet (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1505,7 +1505,7 @@
 	</skill>
 	<!-- This cocktail drink was first made in London, England in 1912, as a tribute to the leading heroine in the play "Pink Lady," which was a great hit at the time. -->
 	<skill id="9152" levels="1" name="Pink Lady (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1518,7 +1518,7 @@
 	</skill>
 	<!-- This fragrant and refreshing cocktail is named after the insects of June that fly in search of nectar-filled flowers. -->
 	<skill id="9153" levels="1" name="June Bug (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1531,7 +1531,7 @@
 	</skill>
 	<!-- Highest-quality cheesecake that is fluffy, soft, and not too sweet. -->
 	<skill id="9154" levels="1" name="Soft Cheesecake (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1544,7 +1544,7 @@
 	</skill>
 	<!-- This freshly-baked baguette is soft and delicious, unlike the regular hard baguette. -->
 	<skill id="9155" levels="1" name="Freshly-Baked Baguette (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1557,7 +1557,7 @@
 	</skill>
 	<!-- Cream bread filled with soft custard made with egg yolks rather than butter cream or whipped cream. -->
 	<skill id="9156" levels="1" name="Sweet Cream Bun (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1570,7 +1570,7 @@
 	</skill>
 	<!-- Cute candy that someone would be very happy to receive as a gift. -->
 	<skill id="9157" levels="1" name="Valentine's Day Candy (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -1748,7 +1748,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="9174" levels="1" name="Scroll: 50,000 SP">
+	<skill id="9174" levels="1" name="Scroll: 5,000 SP">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1785,7 +1785,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="9180" levels="2" name="Scroll: 50,000 SP">
+	<skill id="9180" levels="2" name="Scroll: 100,000 SP">
 		<table name="#name">Scroll: 50,000 SP;Scroll: 100,000 SP</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1986,7 +1986,7 @@
 		<set name="isMagic" val="true" />
 		<set name="hitTime" val="1000" />
 	</skill>
-	<!-- Dismounts from a ridable mount. -->
+	<!-- Dismounts from a kukuru. -->
 	<skill id="9210" levels="1" name="Dismount">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2109,7 +2109,7 @@
 		<set name="castRange" val="200" />
 		<set name="effectRange" val="700" />
 	</skill>
-	<!-- Mentor's assistance. P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. Applied only when mentor is logged in. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 	<skill id="9227" levels="1" name="Mentor's Horn Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2128,7 +2128,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon who receives more than a certain amount of damage. Applied only when mentor is logged in. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon who receives more than a certain amount of damage. -->
 	<skill id="9228" levels="1" name="Mentor's Drum Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2155,7 +2155,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage effect. Applied only when mentor is logged in. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage effect. -->
 	<skill id="9229" levels="1" name="Mentor's Lute Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2173,7 +2173,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
 	<skill id="9230" levels="1" name="Mentor's Pipe Organ Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2192,7 +2192,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. Applied only when mentor is logged in. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 	<skill id="9231" levels="1" name="Mentor's Guitar Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2213,7 +2213,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. P. Accuracy + 5, P. Evasion/M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. Applied only when mentor is logged in. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- Mentor's assistance. P. Accuracy + 5, P. Evasion/M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
 	<skill id="9232" levels="1" name="Mentor's Harp Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2552,23 +2552,26 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 60 min., P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def.  + 30%. Buff remains even after death, and cannot be forcefully deleted.
-		Level 2: For 60 min., P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def.  + 30%. Buff remains even after death, and cannot be forcefully deleted.
+		Level 1: For 60 minutes, P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. Buff remains even after death, and cannot be forcefully deleted.
+		Level 2: For 60 minutes, P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%. Buff remains even after death, and cannot be forcefully deleted.
 	-->
 	<skill id="9280" levels="2" name="Horn Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- For 60 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 20%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 10%. Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. Buff remains even after death, and cannot be forcefully deleted. -->
+	<!-- 
+		Level 1: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, P. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. PC Cafes only.
+		Level 2: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 10%. Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. PC Cafes only.
+	-->
 	<skill id="9281" levels="2" name="Drum Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 60 min., Atk. Spd. + 34%, and Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage. Buff remains even after death, and cannot be forcefully deleted.
-		Level 2: For 60 min., Atk. Spd. + 35%, and Casting Spd. + 32%. Has a chance of applying 9% Vampiric Rage. Buff remains even after death, and cannot be forcefully deleted.
+		Level 1: For 60 minutes, Atk. Spd. + 34%, Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage effect. Effect remains even after death, and cannot be forcefully eliminated.
+		Level 2: For 60 minutes, Atk. Spd. + 35%, Casting Spd. + 32%. Has a chance of applying 9% Vampiric Rage effect. Effect remains even after death, and cannot be forcefully eliminated.
 	-->
 	<skill id="9282" levels="2" name="Lute Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
@@ -2576,8 +2579,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. Buff remains even after death, and cannot be forcefully deleted.
-		Level 2: For 60 min., Max HP/MP/CP + 39%, and HP Recovery Bonus + 20%. Buff remains even after death, and cannot be forcefully deleted.
+		Level 1: For 60 minutes, Max HP + 37%, Max MP + 37%, Max CP + $4, HP Recovery Bonus + 20%. Effect remains even after death, and cannot be forcefully eliminated.
+		Level 2: For 60 minutes, Max HP + 39%, Max MP + 39%, Max CP + $4, HP Recovery Bonus + 20%. Effect remains even after death, and cannot be forcefully eliminated.
 	-->
 	<skill id="9283" levels="2" name="Pipe Organ Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
@@ -2585,8 +2588,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 60 min., P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. Buff remains even after death, and cannot be forcefully deleted.
-		Level 2: For 60 min., P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. Buff remains even after death, and cannot be forcefully deleted.
+		Level 1: For 60 minutes, P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, Iss Enchanter's Enchant Skill MP Consumption - 20%. Effect remains even after death, and cannot be forcefully eliminated.
+		Level 2: For 60 minutes, P. Critical Rate + 34%, P. Critical Damage + 35%, M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, Iss Enchanter's Enchant Skill MP Consumption - 20%. Effect remains even after death, and cannot be forcefully eliminated.
 	-->
 	<skill id="9284" levels="2" name="Guitar Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
@@ -2594,8 +2597,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 60 min., P. Accuracy + 5, P. Evasion/M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. Buff remains even after death, and cannot be forcefully deleted.
-		Level 2: For 60 min., P. Accuracy + 6, P. Evasion/M. Evasion + 6, and Speed + 35. Received Critical Damage - 30%. Buff remains even after death, and cannot be forcefully deleted.
+		Level 1: For 60 minutes, P. Accuracy + 5, P. Evasion/ M. Evasion + 5, Speed + 34. Received Critical Damage - 30%. Effect remains even after death, and cannot be forcefully eliminated.
+		Level 2: For 60 minutes, P. Accuracy + 6, P. Evasion/ M. Evasion + 6, Speed + 35. Received Critical Damage - 30%. Effect remains even after death, and cannot be forcefully eliminated.
 	-->
 	<skill id="9285" levels="2" name="Harp Melody - Heavenly Cocktail">
 		<set name="target" val="TARGET_NONE" />
@@ -2844,42 +2847,42 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<skill id="9325" levels="2" name="Fire Stone">
+	<skill id="9325" levels="2" name="Fire Crystal">
 		<table name="#name">Fire Stone;Fire Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9326" levels="2" name="Water Stone">
+	<skill id="9326" levels="2" name="Water Crystal">
 		<table name="#name">Water Stone;Water Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9327" levels="2" name="Wind Stone">
+	<skill id="9327" levels="2" name="Wind Crystal">
 		<table name="#name">Wind Stone;Wind Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9328" levels="2" name="Earth Stone">
+	<skill id="9328" levels="2" name="Earth Crystal">
 		<table name="#name">Earth Stone;Earth Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9329" levels="2" name="Holy Stone">
+	<skill id="9329" levels="2" name="Holy Crystal">
 		<table name="#name">Holy Stone;Holy Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9330" levels="2" name="Dark Stone">
+	<skill id="9330" levels="2" name="Dark Crystal">
 		<table name="#name">Dark Stone;Dark Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -3093,8 +3096,8 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Recovers HP/MP by 20%, and CP by 30%. Can be used in the Olympiad.
-		Level 2: Recovers HP/MP by 30%, and CP by 30%. Can be used in the Olympiad.
+		Level 1: Recovers HP by 20% MP by 20%, and CP by 30%. Can be used in the Olympiad.
+		Level 2: Recovers HP by 30% MP by 30%, and CP by 50%. Can be used in the Olympiad.
 	-->
 	<skill id="9365" levels="2" name="Power of Eva">
 		<set name="target" val="TARGET_NONE" />
@@ -3104,8 +3107,8 @@
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<!-- 
-		Level 1: All abnormal status removed. Invincible for 5 sec. Cannot be used when immobile. Can be used in the Olympiad.
-		Level 2: All abnormal status removed. Invincible for 10 sec. Cannot be used when immobile. Can be used in the Olympiad.
+		Level 1: All abnormal status removed. Invincible for 5 seconds. Cannot be used when immobile. Can be used in the Olympiad.
+		Level 2: All abnormal status removed. Invincible for 10 seconds. Cannot be used when immobile. Can be used in the Olympiad.
 	-->
 	<skill id="9367" levels="2" name="Power of Pa'agrio">
 		<set name="target" val="TARGET_NONE" />
@@ -3156,7 +3159,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- For 2 hr., selected mentee's P. Atk. + 12% P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- For 2 hr., selected mentee's P. Atk. + 12% P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 	<skill id="9376" levels="1" name="Mentor's Knight's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -3182,7 +3185,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 2 hr., selected mentee's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Speed + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. M. Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- For 2 hr., selected mentee's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Speed + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. M. Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 	<skill id="9377" levels="1" name="Mentor's Wizard's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -3216,7 +3219,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 2 hr., selected mentee's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, and Speed + 8. The buff lasts 5 minutes if your mentor logs out. -->
+	<!-- For 2 hr., selected mentee's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, and Speed + 8. -->
 	<skill id="9378" levels="1" name="Mentor's Warrior's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -3746,9 +3749,9 @@
 		<set name="reuseDelay" val="480000" />
 	</skill>
 	<!-- 
-		Level 1: For 5 sec., Damage Reflect Resistance + 10%.
-		Level 2: For 5 sec., Damage Reflect Resistance + 15%.
-		Level 3: For 5 sec., Damage Reflect Resistance + 20%.
+		Level 1: For 5 minutes, Damage Reflect Resistance + 10%.
+		Level 2: For 5 minutes, Damage Reflect Resistance + 15%.
+		Level 3: For 5 minutes, Damage Reflect Resistance + 20%.
 	-->
 	<skill id="9456" levels="3" name="Item Skill: Damage Reflect Resistance">
 		<set name="target" val="TARGET_NONE" />
@@ -3760,7 +3763,8 @@
 	</skill>
 	<!-- Tauti's Wrath. Inflicts 27557 damage and Knocks Down nearby enemies for 3 seconds. -->
 	<skill id="9459" levels="1" name="Tauti's Wrath">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="191" />
@@ -4372,7 +4376,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- For 7 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%. Received Critical Damage - 30%, Speed - 15%.  Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. -->
+	<!-- For 7 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%. Received Critical Damage - 30%, Speed - 15%. Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. -->
 	<skill id="9546" levels="1" name="Ceremony of Chaos - Drum Melody">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4428,7 +4432,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- For 7 min., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%,  Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
+	<!-- For 7 min., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 	<skill id="9553" levels="1" name="Ceremony of Chaos - Wizard's Harmony">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4582,7 +4586,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- For 1 hr., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%,  Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
+	<!-- For 1 hr., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 	<skill id="9571" levels="1" name="Heavenly Magic Cookie">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4918,7 +4922,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 	</skill>
-	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20%, P. Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, Speed - 15%.  Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. Buff remains even after death. -->
+	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20%, P. Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, Speed - 15%. Increases Critical Damage during a standard attack if you receive more than a certain amount of damage. Buff remains even after death. -->
 	<skill id="9610" levels="1" name="Clan Association - Drum Melody">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5340,7 +5344,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- For 1 hr., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%,  Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
+	<!-- For 1 hr., M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP and Recovery Bonus + 20%. Magic Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 	<skill id="9662" levels="1" name="Heavenly Magic Cookie (Event)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6030,7 +6034,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 20%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 15%.  Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. Buff remains even after death, and cannot be forcefully deleted. -->
+	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 20%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. Buff remains even after death, and cannot be forcefully deleted. -->
 	<skill id="9758" levels="1" name="Drum Melody (Battleground)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6051,7 +6055,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- For 30 min., P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.  Buff remains even after death, and cannot be forcefully deleted. -->
+	<!-- For 30 min., P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. Buff remains even after death, and cannot be forcefully deleted. -->
 	<skill id="9761" levels="1" name="Guitar Melody (Battleground)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6223,7 +6227,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<!-- For 30 min., Speed + 15. -->
-	<skill id="9786" levels="1" name="Olympiad Adrenaline Juice">
+	<skill id="9786" levels="1" name="Adrenaline Energy Drink">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6231,7 +6235,7 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30 min., DEX + 10. -->
-	<skill id="9787" levels="1" name="Olympiad Caffeine Juice">
+	<skill id="9787" levels="1" name="Caffeine Energy Drink">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6239,7 +6243,7 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30 min., STR + 10. -->
-	<skill id="9788" levels="1" name="Olympiad Protein Juice">
+	<skill id="9788" levels="1" name="Protein Energy Drink">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6247,7 +6251,7 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30 min., INT + 10. -->
-	<skill id="9789" levels="1" name="Olympiad DHA Juice">
+	<skill id="9789" levels="1" name="DHA Energy Drink">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6255,7 +6259,7 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30 min., WIT + 10. -->
-	<skill id="9790" levels="1" name="Olympiad Omega 3 Juice">
+	<skill id="9790" levels="1" name="Omega 3 Energy Drink">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6519,7 +6523,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
-	<!-- Treasure Chest. -->
+	<!-- Treasure Chest -->
 	<skill id="9827" levels="1" name="Treasure Chest">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6964,9 +6968,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Atk. + 8%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: P. Atk. + 12%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: P. Atk. + 15%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: P. Atk. + 8%. Buff remains for 8% after the mentor has logged out.
+		Level 2: P. Atk. + 12%. Buff remains for 12% after the mentor has logged out.
+		Level 3: P. Atk. + 15%. Buff remains for 15% after the mentor has logged out.
 	-->
 	<skill id="9911" levels="3" name="Mentor's Encouragement: Might">
 		<set name="target" val="TARGET_NONE" />
@@ -6975,9 +6979,9 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: M. Atk. + 55%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: M. Atk. + 65%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: M. Atk. + 75%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: M. Atk. + 55%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: M. Atk. + 65%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: M. Atk. + 75%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9912" levels="3" name="Mentor's Encouragement: Empower">
 		<set name="target" val="TARGET_NONE" />
@@ -6986,9 +6990,9 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: P. Def. + 8%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: P. Def. + 12%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: P. Def. + 15%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: P. Def. + 8%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: P. Def. + 12%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: P. Def. + 15%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9913" levels="3" name="Mentor's Encouragement: Shield">
 		<set name="target" val="TARGET_NONE" />
@@ -6997,8 +7001,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: M. Def. + 23%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: M. Def. + 30%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: M. Def. + 23%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: M. Def. + 30%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9914" levels="2" name="Mentor's Encouragement: Magic Barrier">
 		<set name="target" val="TARGET_NONE" />
@@ -7007,12 +7011,12 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 10%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Max HP + 15%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: Max HP + 20%. Buff remains 5 min. after the mentor has logged out.
-		Level 4: Max HP + 25%. Buff remains 5 min. after the mentor has logged out.
-		Level 5: Max HP + 30%. Buff remains 5 min. after the mentor has logged out.
-		Level 6: Max HP + 35%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Max HP + 10%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Max HP + 15%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: Max HP + 20%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 4: Max HP + 25%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 5: Max HP + 30%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 6: Max HP + 35%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9915" levels="6" name="Mentor's Encouragement: Blessed Body">
 		<set name="target" val="TARGET_NONE" />
@@ -7021,12 +7025,12 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 10%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Max MP + 15%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: Max MP + 20%. Buff remains 5 min. after the mentor has logged out.
-		Level 4: Max MP + 25%. Buff remains 5 min. after the mentor has logged out.
-		Level 5: Max MP + 30%. Buff remains 5 min. after the mentor has logged out.
-		Level 6: Max MP + 35%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Max MP + 10%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Max MP + 15%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: Max MP + 20%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 4: Max MP + 25%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 5: Max MP + 30%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 6: Max MP + 35%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9916" levels="6" name="Mentor's Encouragement: Blessed Soul">
 		<set name="target" val="TARGET_NONE" />
@@ -7035,9 +7039,9 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 20%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: P. Critical Rate + 25%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: P. Critical Rate + 30%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: P. Critical Rate + 20%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: P. Critical Rate + 25%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: P. Critical Rate + 30%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9917" levels="3" name="Mentor's Encouragement: Focus">
 		<set name="target" val="TARGET_NONE" />
@@ -7046,8 +7050,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: M. Critical Rate + 1. Buff remains 5 min. after the mentor has logged out.
-		Level 2: M. Critical Rate + 2. Buff remains 5 min. after the mentor has logged out.
+		Level 1: M. Critical Rate + 1. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: M. Critical Rate + 2. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9918" levels="2" name="Mentor's Encouragement: Wild Magic">
 		<set name="target" val="TARGET_NONE" />
@@ -7056,8 +7060,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 15%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Atk. Spd. + 33%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Atk. Spd. + 15%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Atk. Spd. + 33%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9919" levels="2" name="Mentor's Encouragement: Haste">
 		<set name="target" val="TARGET_NONE" />
@@ -7066,9 +7070,9 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 15%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Casting Spd. + 23%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: Casting Spd. + 30%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Casting Spd. + 15%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Casting Spd. + 23%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: Casting Spd. + 30%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9920" levels="3" name="Mentor's Encouragement: Acumen">
 		<set name="target" val="TARGET_NONE" />
@@ -7077,10 +7081,10 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Has a chance of absorbing 6% of physical damage inflicted on enemy as HP. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Has a chance of absorbing 7% of physical damage inflicted on enemy as HP. Buff remains 5 min. after the mentor has logged out.
-		Level 3: Has a chance of absorbing 8% of physical damage inflicted on enemy as HP. Buff remains 5 min. after the mentor has logged out.
-		Level 4: Has a chance of absorbing 9% of physical damage inflicted on enemy as HP. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Has a chance of absorbing 6% of physical damage inflicted on enemy as HP. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Has a chance of absorbing 7% of physical damage inflicted on enemy as HP. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: Has a chance of absorbing 8% of physical damage inflicted on enemy as HP. Buff remains for 5 minutes after the mentor has logged out.
+		Level 4: Has a chance of absorbing 9% of physical damage inflicted on enemy as HP. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9921" levels="4" name="Mentor's Encouragement: Vampiric Rage">
 		<set name="target" val="TARGET_NONE" />
@@ -7089,8 +7093,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: P. Atk. + 5%, M. Atk. + 10%, Atk. Spd. + 5%, and Casting Spd. + 5%. P. Def. - 5%, M. Def. - 10, and P. Evasion - 2. Buff remains 5 min. after the mentor has logged out.
-		Level 2: P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. + 8%, and Casting Spd. + 8%. P. Def. - 8%, M. Def. - 10, and P. Evasion - 4. Buff remains 5 min. after the mentor has logged out.
+		Level 1: P. Atk. + 5%, M. Atk. + 10%, Atk. Spd. + 5%, and Casting Spd. + 5%. P. Def. - $s, M. Def. - 10%, and P. Evasion - 2. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. + 8%, and Casting Spd. + 8%. P. Def. - $s, M. Def. - 16%, and P. Evasion - 4. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9922" levels="2" name="Mentor's Encouragement: Berserker Spirit">
 		<set name="target" val="TARGET_NONE" />
@@ -7099,9 +7103,9 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Critical Damage + 25%. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Critical Damage + 30%. Buff remains 5 min. after the mentor has logged out.
-		Level 3: Critical Damage + 35%. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Critical Damage + 25%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Critical Damage + 30%. Buff remains for 5 minutes after the mentor has logged out.
+		Level 3: Critical Damage + 35%. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9923" levels="3" name="Mentor's Encouragement: Death Whisper">
 		<set name="target" val="TARGET_NONE" />
@@ -7110,8 +7114,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Speed + 20. Buff remains 5 min. after the mentor has logged out.
-		Level 2: Speed + 33. Buff remains 5 min. after the mentor has logged out.
+		Level 1: Speed + 20. Buff remains for 5 minutes after the mentor has logged out.
+		Level 2: Speed + 33. Buff remains for 5 minutes after the mentor has logged out.
 	-->
 	<skill id="9924" levels="2" name="Mentor's Encouragement: Wind Walk">
 		<set name="target" val="TARGET_NONE" />
@@ -7273,8 +7277,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: Earth Attribute + 60.
-		Level 2: Earth Attribute + 150.
+		Level 1: Earth Attribute + 60
+		Level 2: Earth Attribute + 150
 		Level 3: Earth Attribute Full.
 	-->
 	<skill id="9942" levels="3" name="Super Stone: Earth">
@@ -7283,8 +7287,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: Holy Attribute + 60.
-		Level 2: Holy Attribute + 150.
+		Level 1: Holy Attribute + 60
+		Level 2: Holy Attribute + 150
 		Level 3: Holy Attribute Full.
 	-->
 	<skill id="9943" levels="3" name="Super Stone: Holy">
@@ -7293,8 +7297,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: Dark Attribute + 60.
-		Level 2: Dark Attribute + 150.
+		Level 1: Dark Attribute + 60
+		Level 2: Dark Attribute + 150
 		Level 3: Dark Attribute Full.
 	-->
 	<skill id="9944" levels="3" name="Super Stone: Dark">
@@ -7338,23 +7342,9 @@
 	</skill>
 	<!-- Magic Pouch containing the letters TOGETHE. Double-click to obtain one of the letters. "R" can be obtained by chance from the RIIS Pouch. -->
 	<skill id="9950" levels="1" name="Letter Collector's Pouch: TOGETHER">
-		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="CANCEL" />
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="99" />
-		<set name="mpConsume" val="0" />
-		<set name="power" val="999" />
-		<set name="hitTime" val="1" />
-		<set name="reuseDelay" val="1" />
-		<set name="castRange" val="600" />
-		<set name="effectRange" val="1100" />
-		<set name="skillTime" val="1" />
-		<set name="skill_landing_percent" val="100" />
-		<set name="negateStats" val="BUFF" />
-		<set name="negatePower" val="99.0" />
-		<for>
-		</for>
 	</skill>
 	<!-- Magic Pouch containing the letters LINEAGE. Double-click to obtain one of the letters. "II" can be obtained by chance from the RIIS Pouch. -->
 	<skill id="9951" levels="1" name="Letter Collector's Pouch: LINEAGE II">
@@ -7417,7 +7407,7 @@
 		<set name="isMagic" val="true" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 20%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 15%.  Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
+	<!-- For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Rate + 20%, P. Atk. + 20%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
 	<skill id="9959" levels="1" name="Drum Melody (9th Anniversary)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -7588,11 +7578,28 @@
 	</skill>
 	<!-- For 30 min., Max HP/MP/CP + 30%, and M. Def. + 30%. Effect disappears when Art of Seduction is applied by the Rose Spirit. Cooldown is 5 min. -->
 	<skill id="9982" levels="1" name="Elixir: Divine Protection">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="isMagic" val="true" />
-		<set name="reuseDelay" val="300000" />
+		<set name="isPotion" val="true" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="itemConsumeCount" val="1" />
+		<for>
+			<cond addName="1" msgId="113">
+				<and>
+					<player flyMounted="False" />
+					<player olympiad="False" />
+					<player levelRange="85;105" />
+				</and>
+			</cond>
+			<abnormal duration="1800" effectType="BUFF" stackLvl="1" stackType="divine_prot_elix">
+				<addPercent stat="maxHp" val="30" />
+				<addPercent stat="maxMp" val="30" />
+				<addPercent stat="maxCp" val="30" />
+				<addPercent stat="mDef" val="30" />
+				<addPercent stat="pDef" val="30" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Return to the Wall of Argos. -->
 	<skill id="9983" levels="1" name="Scroll of Escape: Wall of Argos">

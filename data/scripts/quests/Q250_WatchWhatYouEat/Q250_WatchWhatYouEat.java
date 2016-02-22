@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q250_WatchWhatYouEat;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -33,11 +34,7 @@ public class Q250_WatchWhatYouEat extends Quest
 	// NPCs
 	private static final int _sally = 32743;
 	// Mobs - Items
-	private static final int[][] _mobs = {
-		{ 18864, 15493 },
-		{ 18865, 15494 },
-		{ 18868, 15495 }
-	};
+	private static final int[][] _mobs = { { 18864, 15493 }, { 18865, 15494 }, { 18868, 15495 } };
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -59,12 +56,12 @@ public class Q250_WatchWhatYouEat extends Quest
 			else if (event.equalsIgnoreCase("32743-end.htm"))
 			{
 				st.unset("cond");
-				st.rewardItems(57,135661);
-				st.addExpAndSp(698334,76369);
+				st.rewardItems(57, 135661);
+				st.addExpAndSp(698334, 76369);
 				st.playSound("ItemSound.quest_finish");
 				st.exitQuest(false);
 			}
-			else if (event.equalsIgnoreCase("32743-22.html") && st.getState() == State.COMPLETED)
+			else if (event.equalsIgnoreCase("32743-22.html") && (st.getState() == State.COMPLETED))
 			{
 				htmltext = "32743-23.html";
 			}
@@ -82,15 +79,15 @@ public class Q250_WatchWhatYouEat extends Quest
 		
 		if (npc.getNpcId() == _sally)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					if (player.getLevel() >= 82)
 						htmltext = "32743-01.htm";
 					else
 						htmltext = "32743-00.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") == 1)
 					{
 						htmltext = "32743-04.htm";
@@ -107,7 +104,7 @@ public class Q250_WatchWhatYouEat extends Quest
 							htmltext = "32743-06.htm";
 					}
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					htmltext = "32743-done.htm";
 					break;
 			}
@@ -121,7 +118,7 @@ public class Q250_WatchWhatYouEat extends Quest
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
 			return null;
-		if (st.getState() == State.STARTED && st.getInt("cond") == 1)
+		if ((st.getState() == State.STARTED) && (st.getInt("cond") == 1))
 		{
 			for (int mob[] : _mobs)
 			{
@@ -163,8 +160,8 @@ public class Q250_WatchWhatYouEat extends Quest
 	{
 		super(questId, name, descr);
 		
-		questItemIds = new int[]{15493,15494,15495};
-
+		questItemIds = new int[] { 15493, 15494, 15495 };
+		
 		addStartNpc(_sally);
 		addFirstTalkId(_sally);
 		addTalkId(_sally);

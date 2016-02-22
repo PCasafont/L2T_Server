@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.PetNameTable;
@@ -27,7 +28,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestChangePetName extends L2GameClientPacket
 {
-	private static final String REQUESTCHANGEPETNAME__C__89 = "[C] 89 RequestChangePetName";
 	//
 	
 	private String _name;
@@ -73,11 +73,5 @@ public final class RequestChangePetName extends L2GameClientPacket
 		
 		pet.setName(_name);
 		pet.updateAndBroadcastStatus(1);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return REQUESTCHANGEPETNAME__C__89;
 	}
 }

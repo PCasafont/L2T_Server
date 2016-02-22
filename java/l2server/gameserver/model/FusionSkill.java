@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -62,7 +62,7 @@ public final class FusionSkill
 			for (L2Effect eff : effect.getEffects())
 			{
 				if (eff instanceof EffectFusion)
-					((EffectFusion)eff).increaseEffect();
+					((EffectFusion) eff).increaseEffect();
 			}
 		}
 		else
@@ -71,7 +71,7 @@ public final class FusionSkill
 			if (force != null)
 				force.getEffects(_caster, _target, null);
 			else
-				Log.warning("Triggered skill ["+_fusionId+";"+_fusionLevel+"] not found!");
+				Log.warning("Triggered skill [" + _fusionId + ";" + _fusionLevel + "] not found!");
 		}
 		_geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
 	}
@@ -79,13 +79,14 @@ public final class FusionSkill
 	public void onCastAbort()
 	{
 		_caster.setFusionSkill(null);
+		_caster.setContinuousDebuffTargets(null);
 		L2Abnormal effect = _target.getFirstEffect(_fusionId);
 		if (effect != null)
 		{
 			for (L2Effect eff : effect.getEffects())
 			{
 				if (eff instanceof EffectFusion)
-					((EffectFusion)eff).decreaseForce();
+					((EffectFusion) eff).decreaseForce();
 			}
 		}
 		
@@ -94,6 +95,7 @@ public final class FusionSkill
 	
 	public class GeoCheckTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try

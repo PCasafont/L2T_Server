@@ -40,7 +40,7 @@ public class L2DoorInstanceAction implements IActionHandler
 			// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 			
-			StaticObject su = new StaticObject((L2DoorInstance)target, activeChar.isGM());			
+			StaticObject su = new StaticObject((L2DoorInstance)target, activeChar.isGM());
 			activeChar.sendPacket(su);
 			
 			// Send a Server->Client packet ValidateLocation to correct the L2NpcInstance position and heading on the client

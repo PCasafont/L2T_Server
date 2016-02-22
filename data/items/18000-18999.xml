@@ -11,7 +11,7 @@
 		<crystallizeReward id="17527" count="1" chance="35.627" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="0.891" /> <!-- Elcyum Crystal -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18001" type="Weapon" name="Blessed Apocalypse Shaper" icon="icon.weapon_phasian_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1520" price="174548336"
 			soulshots="1" spiritshots="1">
@@ -28,7 +28,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
 	<item id="18002" type="Weapon" name="Blessed Apocalypse Cutter" icon="icon.weapon_pasis_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1520" price="174548336"
 			soulshots="1" spiritshots="1">
@@ -43,7 +43,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Atk. when enchanted to + 4. -->
 	<item id="18003" type="Weapon" name="Blessed Apocalypse Slasher" icon="icon.weapon_volver_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1740" price="174548336"
 			soulshots="1" spiritshots="1">
@@ -58,7 +58,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18004" type="Weapon" name="Blessed Apocalypse Avenger" icon="icon.weapon_raksilion_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1740"
 			price="174548336" soulshots="1" spiritshots="1">
@@ -75,7 +75,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
 	<item id="18005" type="Weapon" name="Blessed Apocalypse Fighter" icon="icon.weapon_kirche_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1550" price="174548336"
 			soulshots="1" spiritshots="1">
@@ -92,7 +92,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Multi Attack when enchanted to + 4. -->
 	<item id="18006" type="Weapon" name="Blessed Apocalypse Stormer" icon="icon.weapon_grave_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="3723" crystalType="r" weight="2010" price="174548336"
 			soulshots="1" spiritshots="1">
@@ -109,7 +109,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power when enchanted to + 4. -->
 	<item id="18007" type="Weapon" name="Blessed Apocalypse Thrower" icon="icon.weapon_spina_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1520" price="174548336"
 			soulshots="1" spiritshots="1" reuseDelay="1500">
@@ -126,7 +126,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. when enchanted to + 4. -->
 	<item id="18008" type="Weapon" name="Blessed Apocalypse Shooter" icon="icon.weapon_medianox_i00" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1580" price="174548336"
 			soulshots="1" spiritshots="1" reuseDelay="400">
@@ -143,7 +143,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
 	<item id="18009" type="Weapon" name="Blessed Apocalypse Buster" icon="icon.weapon_imerose_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1520" price="174548336"
 			soulshots="1" spiritshots="1" isMagicWeapon="true">
@@ -158,7 +158,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
 	<item id="18010" type="Weapon" name="Blessed Apocalypse Caster" icon="icon.weapon_yuke_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1080" price="174548336"
 			soulshots="1" spiritshots="1" isMagicWeapon="true">
@@ -175,7 +175,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
 	<item id="18011" type="Weapon" name="Blessed Apocalypse Retributer" icon="icon.weapon_herencia_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="3723" crystalType="r" weight="1080"
 			price="174548336" soulshots="1" spiritshots="1" isMagicWeapon="true">
@@ -192,7 +192,7 @@
 		<crystallizeReward id="36514" count="1" chance="34.906" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="54.537" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
 	<item id="18012" type="Weapon" name="Blessed Apocalypse Dualsword" icon="icon.weapon_r_dualsword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="4654" crystalType="r" weight="1520"
 			price="218185419" soulshots="1" spiritshots="1">
@@ -207,7 +207,7 @@
 		<crystallizeReward id="36514" count="1" chance="43.635" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="68.175" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
 	<item id="18013" type="Weapon" name="Blessed Apocalypse Dual Dagger" icon="icon.weapon_r_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="4654" crystalType="r"
 			weight="2050" price="218185419" soulshots="1" spiritshots="1">
@@ -224,7 +224,7 @@
 		<crystallizeReward id="36514" count="1" chance="43.635" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="2" chance="68.175" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
 	<item id="18014" type="Weapon" name="Blessed Apocalypse Dual Blunt Weapon" icon="icon.weapon_r_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="4654" crystalType="r" weight="1740"
 			price="218185419" soulshots="1" spiritshots="1">
@@ -490,7 +490,7 @@
 		<crystallizeReward id="17527" count="1" chance="73.88" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="1.847" /> <!-- Elcyum Crystal -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18035" type="Weapon" name="Blessed Specter Shaper" icon="icon.weapon_ignicion_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1520" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13279-3" isBlessed="true">
@@ -507,7 +507,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
 	<item id="18036" type="Weapon" name="Blessed Specter Cutter" icon="icon.weapon_ninfea_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1520" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13252-3" isBlessed="true">
@@ -522,7 +522,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Atk. when enchanted to + 4. -->
 	<item id="18037" type="Weapon" name="Blessed Specter Slasher" icon="icon.weapon_skia_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1740" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13258-3" isBlessed="true">
@@ -537,7 +537,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18038" type="Weapon" name="Blessed Specter Avenger" icon="icon.weapon_ikeon_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1740" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13253-3" isBlessed="true">
@@ -554,7 +554,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
 	<item id="18039" type="Weapon" name="Blessed Specter Fighter" icon="icon.weapon_deodos_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1550" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13264-3" isBlessed="true">
@@ -571,7 +571,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Multi Attack when enchanted to + 4. -->
 	<item id="18040" type="Weapon" name="Blessed Specter Stormer" icon="icon.weapon_transgredi_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="2010" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13263-3" isBlessed="true">
@@ -588,7 +588,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power when enchanted to + 4. -->
 	<item id="18041" type="Weapon" name="Blessed Specter Thrower" icon="icon.weapon_solenas_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1520" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13289-3" reuseDelay="1500" isBlessed="true">
@@ -605,7 +605,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. when enchanted to + 4. -->
 	<item id="18042" type="Weapon" name="Blessed Specter Shooter" icon="icon.weapon_lapis_i00" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1580" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13294-3" reuseDelay="400" isBlessed="true">
@@ -622,7 +622,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
 	<item id="18043" type="Weapon" name="Blessed Specter Buster" icon="icon.weapon_zihel_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1520" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -637,7 +637,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
 	<item id="18044" type="Weapon" name="Blessed Specter Caster" icon="icon.weapon_alacer_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1080" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13300-3" isMagicWeapon="true" isBlessed="true">
@@ -654,7 +654,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
 	<item id="18045" type="Weapon" name="Blessed Specter Retributer" icon="icon.weapon_rupe_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="7825" crystalType="r95" weight="1080" price="366803000"
 			soulshots="1" spiritshots="1" enchant4Skill="13304-3" isMagicWeapon="true" isBlessed="true">
@@ -671,7 +671,7 @@
 		<crystallizeReward id="36514" count="1" chance="73.366" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="76.418" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
 	<item id="18046" type="Weapon" name="Blessed Specter Dualsword" icon="icon.weapon_r_dualsword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="9390" crystalType="r95" weight="1520"
 			price="440163600" soulshots="1" spiritshots="1" enchant4Skill="13274-3" isBlessed="true">
@@ -686,7 +686,7 @@
 		<crystallizeReward id="36514" count="1" chance="88.039" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
 	<item id="18047" type="Weapon" name="Blessed Specter Dual Dagger" icon="icon.weapon_r_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="9390" crystalType="r95"
 			weight="2050" price="440163600" soulshots="1" spiritshots="1" enchant4Skill="13287-3" isBlessed="true">
@@ -703,7 +703,7 @@
 		<crystallizeReward id="36514" count="1" chance="88.039" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="3" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
 	<item id="18048" type="Weapon" name="Blessed Specter Dual Blunt Weapon" icon="icon.weapon_r_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="9390" crystalType="r95"
 			weight="1740" price="440163600" soulshots="1" spiritshots="1" enchant4Skill="13269-3" isBlessed="true">
@@ -967,7 +967,7 @@
 		<crystallizeReward id="17527" count="3" chance="99.756" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="7.482" /> <!-- Elcyum Crystal -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18069" type="Weapon" name="Blessed Amaranthine Shaper" icon="icon.weapon_stanpid_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13282-3" isBlessed="true">
@@ -984,7 +984,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Accuracy and P. Critical Rate when enchanted to + 4. -->
 	<item id="18070" type="Weapon" name="Blessed Amaranthine Cutter" icon="icon.weapon_plenitas_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13252-3" isBlessed="true">
@@ -999,7 +999,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Atk. when enchanted to + 4. -->
 	<item id="18071" type="Weapon" name="Blessed Amaranthine Slasher" icon="icon.weapon_bauen_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13261-3" isBlessed="true">
@@ -1014,7 +1014,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage when enchanted to + 4. -->
 	<item id="18072" type="Weapon" name="Blessed Amaranthine Avenger" icon="icon.weapon_qutram_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13256-3" isBlessed="true">
@@ -1031,7 +1031,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. and P. Atk. when enchanted to + 4. -->
 	<item id="18073" type="Weapon" name="Blessed Amaranthine Fighter" icon="icon.weapon_durga_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1550" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13267-3" isBlessed="true">
@@ -1048,7 +1048,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases Multi Attack when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Multi Attack when enchanted to + 4. -->
 	<item id="18074" type="Weapon" name="Blessed Amaranthine Stormer" icon="icon.weapon_crabel_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="2010" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13263-3" isBlessed="true">
@@ -1065,7 +1065,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power when enchanted to + 4. -->
 	<item id="18075" type="Weapon" name="Blessed Amaranthine Thrower" icon="icon.weapon_castron_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13292-3" reuseDelay="1500" isBlessed="true">
@@ -1082,7 +1082,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. Increases Atk. Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases Atk. Spd. when enchanted to + 4. -->
 	<item id="18076" type="Weapon" name="Blessed Amaranthine Shooter" icon="icon.weapon_stilla_i00" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1580" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13294-3" reuseDelay="400" isBlessed="true">
@@ -1099,7 +1099,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. -->
 	<item id="18077" type="Weapon" name="Blessed Amaranthine Buster" icon="icon.weaon_serapear_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -1114,7 +1114,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. -->
 	<item id="18078" type="Weapon" name="Blessed Amaranthine Caster" icon="icon.weapon_pilia_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1080" price="808295000"
 			soulshots="1" spiritshots="1" enchant4Skill="13299-3" isMagicWeapon="true" isBlessed="true">
@@ -1131,7 +1131,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. -->
 	<item id="18079" type="Weapon" name="Blessed Amaranthine Retributer" icon="icon.weapon_shaelon_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1080" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13304-3" isMagicWeapon="true" isBlessed="true">
@@ -1148,7 +1148,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Rate and P. Atk. when enchanted to + 4. -->
 	<item id="18080" type="Weapon" name="Blessed Amaranthine Dualsword" icon="icon.weapon_r_dualsword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99" weight="1520"
 			price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13277-3" isBlessed="true">
@@ -1163,7 +1163,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Critical Damage increases P. Atk. when enchanted to + 4. -->
 	<item id="18081" type="Weapon" name="Blessed Amaranthine Dual Dagger" icon="icon.weapon_r_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="2050" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13287-3" isBlessed="true">
@@ -1180,7 +1180,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
+	<!-- Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. Increases P. Skill Power and P. Atk. when enchanted to + 4. -->
 	<item id="18082" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon" icon="icon.weapon_r_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="1740" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13272-3" isBlessed="true">

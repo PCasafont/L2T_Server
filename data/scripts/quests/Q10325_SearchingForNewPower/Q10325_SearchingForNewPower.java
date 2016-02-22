@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10325_SearchingForNewPower;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -36,6 +37,7 @@ public class Q10325_SearchingForNewPower extends Quest
 	private int _black = 32161;
 	private int _herz = 32151;
 	private int _kincaid = 32159;
+	
 	// TODO Kamael
 	
 	public Q10325_SearchingForNewPower(int questId, String name, String descr)
@@ -60,7 +62,7 @@ public class Q10325_SearchingForNewPower extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-03.htm"))
+		if ((npc.getNpcId() == _gallint) && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -83,7 +85,7 @@ public class Q10325_SearchingForNewPower extends Quest
 		
 		if (npc.getNpcId() == _gallint)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -111,31 +113,31 @@ public class Q10325_SearchingForNewPower extends Quest
 				player.setGlobalQuestFlag(GlobalQuest.STARTING, 6);
 			}
 		}
-		else if (npc.getNpcId() == _talbot && st.getInt("cond") == 2)
+		else if ((npc.getNpcId() == _talbot) && (st.getInt("cond") == 2))
 		{
 			htmltext = "32156-01.htm";
 			st.set("cond", "8");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == _cindet && st.getInt("cond") == 3)
+		else if ((npc.getNpcId() == _cindet) && (st.getInt("cond") == 3))
 		{
 			htmltext = "32148-01.htm";
 			st.set("cond", "9");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == _black && st.getInt("cond") == 4)
+		else if ((npc.getNpcId() == _black) && (st.getInt("cond") == 4))
 		{
 			htmltext = "32161-01.htm";
 			st.set("cond", "10");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == _herz && st.getInt("cond") == 5)
+		else if ((npc.getNpcId() == _herz) && (st.getInt("cond") == 5))
 		{
 			htmltext = "32151-01.htm";
 			st.set("cond", "11");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == _kincaid && st.getInt("cond") == 6)
+		else if ((npc.getNpcId() == _kincaid) && (st.getInt("cond") == 6))
 		{
 			htmltext = "32159-01.htm";
 			st.set("cond", "12");
@@ -148,9 +150,9 @@ public class Q10325_SearchingForNewPower extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 5) && player.getLevel() <= 20;
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 5) && (player.getLevel() <= 20);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Q10325_SearchingForNewPower(10325, qn, "Obtaining information about skills from the Race Master.");

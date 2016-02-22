@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
@@ -36,20 +37,18 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class Manadam implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.MANADAM
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.MANADAM };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (activeChar.isAlikeDead())
 			return;
-
+		
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		double ssMul = L2ItemInstance.CHARGED_NONE;
 		if (weaponInst != null)
@@ -80,14 +79,13 @@ public class Manadam implements ISkillHandler
 				activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
 			}
 		}
-		for (L2Character target: (L2Character[]) targets)
+		for (L2Character target : (L2Character[]) targets)
 		{
 			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
 				target = activeChar;
 			
 			boolean acted = Formulas.calcMagicSuccess(activeChar, target, skill);
-			if (target.isInvul(activeChar) || !acted
-					|| (target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar))
+			if (target.isInvul(activeChar) || !acted || ((target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar)))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MISSED_TARGET));
 			}
@@ -119,7 +117,7 @@ public class Manadam implements ISkillHandler
 				double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 				target.reduceCurrentMp(mp);
 				if (damage > 0)
-					target.stopEffectsOnDamage(true);
+					target.stopEffectsOnDamage(true, 1);
 				
 				if (target instanceof L2PcInstance)
 				{
@@ -147,7 +145,7 @@ public class Manadam implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
+			if ((effect != null) && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -158,9 +156,10 @@ public class Manadam implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

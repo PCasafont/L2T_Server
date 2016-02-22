@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.log;
 
 import java.text.SimpleDateFormat;
@@ -23,7 +24,7 @@ import l2server.util.StringUtil;
 
 /**
  * This class ...
- * 
+ *
  * @version $Revision: 1.1.4.1 $ $Date: 2005/02/06 16:14:46 $
  */
 
@@ -37,8 +38,7 @@ public class ChatLogFormatter extends Formatter
 	public String format(LogRecord record)
 	{
 		Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length()
-				+ (params != null ? 10 * params.length : 0), "[", dateFmt.format(new Date(record.getMillis())), "] ");
+		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params != null ? 10 * params.length : 0), "[", dateFmt.format(new Date(record.getMillis())), "] ");
 		
 		if (params != null)
 		{

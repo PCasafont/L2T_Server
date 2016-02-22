@@ -2914,7 +2914,7 @@
 		<skill id="8337" level="1" /> <!-- Weight Up -->
 	</item>
 	<!--
-		Forgotten Blade with limited ability enhancement. <Soul Crystal Enhancement>
+		Forgotten Blade with limited ability enhancement. <Special Option>
 		Critical increases by 84. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15313" type="Weapon" name="Player Commendation - Forgotten Blade - PC-exclusive Weapon" icon="icon.weapon_forgotten_blade_i00"
@@ -2928,7 +2928,7 @@
 		<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Basalt Battlehammer with limited ability enhancement. <Soul Crystal Enhancement>
+		Basalt Battlehammer with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15314" type="Weapon" name="Player Commendation - Basalt Battlehammer - PC-exclusive Weapon" icon="icon.weapon_basalt_battlehammer_i00"
@@ -2944,7 +2944,7 @@
 		<skill id="3013" level="3" /> <!-- Special Ability: Health -->
 	</item>
 	<!--
-		Imperial Staff with limited ability enhancement. <Soul Crystal Enhancement>
+		Imperial Staff with limited ability enhancement. <Special Option>
 		MP Recovery Rate increases. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15315" type="Weapon" name="Player Commendation - Imperial Staff - PC-exclusive Weapon" icon="icon.weapon_imperial_staff_i00"
@@ -2960,7 +2960,7 @@
 		<skill id="3576" level="1" /> <!-- Special Ability: MP Regeneration -->
 	</item>
 	<!--
-		Angel Slayer with limited ability enhancement. <Soul Crystal Enhancement>
+		Angel Slayer with limited ability enhancement. <Special Option>
 		P. Atk. Increases by 265 during a critical attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15316" type="Weapon" name="Player Commendation - Angel Slayer - PC-exclusive Weapon" icon="icon.weapon_angel_slayer_i00"
@@ -2976,7 +2976,7 @@
 		<skill id="3572" level="1" /> <!-- Special Ability: Critical Damage -->
 	</item>
 	<!--
-		Dragon Hunter Axe with limited ability enhancement. <Soul Crystal Enhancement>
+		Dragon Hunter Axe with limited ability enhancement. <Special Option>
 		HP Recovery Rate increases. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15317" type="Weapon" name="Player Commendation - Dragon Hunter Axe - PC-exclusive Weapon" icon="icon.weapon_dragon_hunter_axe_i00"
@@ -2992,7 +2992,7 @@
 		<skill id="3569" level="1" /> <!-- Special Ability: HP Regeneration -->
 	</item>
 	<!--
-		Saint Spear with limited ability enhancement. <Soul Crystal Enhancement>
+		Saint Spear with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15318" type="Weapon" name="Player Commendation - Saint Spear - PC-exclusive Weapon" icon="icon.weapon_saint_spear_i00"
@@ -3008,7 +3008,7 @@
 		<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 	</item>
 	<!--
-		Demon Splinter with limited ability enhancement. <Soul Crystal Enhancement>
+		Demon Splinter with limited ability enhancement. <Special Option>
 		Critical increases by 80. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15319" type="Weapon" name="Player Commendation - Demon Splinter - PC-exclusive Weapon" icon="icon.weapon_demon_splinter_i00"
@@ -3024,7 +3024,7 @@
 		<skill id="3565" level="1" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Heaven's Divider with limited ability enhancement. <Soul Crystal Enhancement>
+		Heaven's Divider with limited ability enhancement. <Special Option>
 		Critical increases by 84. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15320" type="Weapon" name="Player Commendation - Heaven's Divider - PC-exclusive Weapon" icon="icon.weapon_heavens_divider_i00"
@@ -3038,7 +3038,7 @@
 		<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Arcana Mace with limited ability enhancement. <Soul Crystal Enhancement>
+		Arcana Mace with limited ability enhancement. <Special Option>
 		Casting Spd. Increases by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15321" type="Weapon" name="Player Commendation - Arcana Mace - PC-exclusive Weapon" icon="icon.weapon_arcana_mace_i00"
@@ -3054,7 +3054,7 @@
 		<skill id="3047" level="2" /> <!-- Special Ability: Acumen -->
 	</item>
 	<!--
-		Draconic Bow with limited ability enhancement. <Soul Crystal Enhancement>
+		Draconic Bow with limited ability enhancement. <Special Option>
 		Critical increases by 88. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15322" type="Weapon" name="Player Commendation - Draconic Bow - PC-exclusive Weapon" icon="icon.weapon_draconic_bow_i00"
@@ -3070,7 +3070,7 @@
 		<skill id="3567" level="1" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Laevateinn with limited ability enhancement. <Soul Crystal Enhancement>
+		Laevateinn with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 7%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
@@ -3090,7 +3090,7 @@
 		<skill id="3564" level="1" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Gram with limited ability enhancement. <Soul Crystal Enhancement>
+		Gram with limited ability enhancement. <Special Option>
 		Critical increases by 84. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15324" type="Weapon" name="Player Commendation - Gram - PC-exclusive Weapon" icon="icon.weapon_gram_i01" defaultAction="equip"
@@ -3109,7 +3109,7 @@
 		<skill id="3566" level="1" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Sarunga with limited ability enhancement. <Soul Crystal Enhancement>
+		Sarunga with limited ability enhancement. <Special Option>
 		Critical increases by 88. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15325" type="Weapon" name="Player Commendation - Sarunga - PC-exclusive Weapon" icon="icon.weapon_sarnga_i00"
@@ -3513,7 +3513,7 @@
 	<!-- Vitality Belt. Can be enchanted using the Scroll: Enchant Vitality Belt. When enchanted, increases Vitality maintenance effect, and decreases Vitality maintenance cooldown. -->
 	<item id="15393" type="Armor" name="Vitality Belt - 7-day" icon="icon.event_energy_belt_i00" defaultAction="equip" armorType="light"
 			bodypart="waist" immediateEffect="1" enchantEnabled="4" isTradable="false" isDropable="false" isDestroyable="false"
-			isSellable="false" isDepositable="false" isOlyRestricted="true" time="10080">
+			isSellable="false" isDepositable="false" isOlyRestricted="true" time="720">
 	</item>
 	<!-- Vitality Belt. Can be enchanted using the Scroll: Enchant Vitality Belt. When enchanted, increases Vitality maintenance effect, and decreases Vitality maintenance cooldown. -->
 	<item id="15394" type="Armor" name="Vitality Belt - 30-day" icon="icon.event_energy_belt_i00" defaultAction="equip" armorType="light"
@@ -3561,7 +3561,7 @@
 			isSellable="false" isDepositable="false" isOlyRestricted="true">
 	</item>
 	<!--
-		Berserker Blade with limited ability enhancement. <Soul Crystal Enhancement>
+		Berserker Blade with limited ability enhancement. <Special Option>
 		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="15403" type="Weapon" name="Player Commendation - Berserker Blade - PC-exclusive Weapon" icon="icon.weapon_berserker_blade_i01"
@@ -4344,7 +4344,7 @@
 			etcitemType="scroll" weight="20" isOlyRestricted="true" handler="ItemSkills">
 		<skill id="2096" level="1" /> <!-- Soul Crystal -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Focus, or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15544" type="Weapon" name="Eternal Core Sword" icon="icon.weapon_incessantcore_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="9872" crystalType="s80" weight="1520" price="205668000" changeWeaponId="15555" soulshots="1" spiritshots="1"
@@ -4360,7 +4360,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Haste, or P. Critical Damage. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15545" type="Weapon" name="Mamba Edge" icon="icon.weapon_mambaedge_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1520" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4377,7 +4377,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, HP Regeneration, or HP Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15546" type="Weapon" name="Eversor Mace" icon="icon.weapon_expowder_mace_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1740" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4394,7 +4394,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, HP Drain, or HP Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15547" type="Weapon" name="Contristo Hammer" icon="icon.weapon_pereztear_hammer_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1740" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4411,7 +4411,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Focus, or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15548" type="Weapon" name="Lava Saw" icon="icon.weapon_lavamond_saw_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1740" price="205668000" changeWeaponId="15556" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -4427,7 +4427,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Critical Stun, or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15549" type="Weapon" name="Jade Claw" icon="icon.weapon_jademice_claw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1550" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4444,7 +4444,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15550" type="Weapon" name="Demitelum" icon="icon.weapon_ghostcleaner_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="2010" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4462,7 +4462,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Mana Up, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15551" type="Weapon" name="Sacredium" icon="icon.weapon_sacredumors_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1080" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4480,7 +4480,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Magic Hold, or Empower. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15552" type="Weapon" name="Cyclic Cane" icon="icon.weapon_psyskilt_cane_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1080" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4498,7 +4498,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Magic Hold, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15553" type="Weapon" name="Archangel Sword" icon="icon.weapon_archangel_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1520" price="205668000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4514,7 +4514,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Cheap Shot. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15554" type="Weapon" name="Recurve Thorne Bow" icon="icon.weapon_recurvethorne_bow_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1520" price="205668000" changeWeaponId="15557" soulshots="1" spiritshots="1" mpConsume="6"
@@ -4534,8 +4534,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Eternal Core Sword Conversion
-		Health, Focus, or Haste can be bestowed.
-		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="15555" type="Weapon" name="Heavenstare Rapier" icon="icon.weapon_heavenstair_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -4559,7 +4558,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Lava Saw conversion
-		Bestows one of the following three functions, Health Focus, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="15556" type="Weapon" name="Pyseal Blade" icon="icon.weapon_pyseal_blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -4583,7 +4582,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Recurvethorne Bow conversion
-		Bestows one of the following functions, Focus, Critical Slow, or Cheap Shot.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="15557" type="Weapon" name="Thorne Crossbow" icon="icon.weapon_thorne_crossbow_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -4605,7 +4604,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15558" type="Weapon" name="Periel Sword" icon="icon.weapon_periwing_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="171530000" changeWeaponId="15569" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -4621,7 +4620,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or HP Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15559" type="Weapon" name="Skull Edge" icon="icon.weapon_skulledge_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4638,7 +4637,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Regeneration, HP Drain, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15560" type="Weapon" name="Vigwik Axe" icon="icon.weapon_vigwik_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1740" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4655,7 +4654,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, HP Regeneration, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15561" type="Weapon" name="Devilish Maul" icon="icon.weapon_evildeity_maul_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immeffect="1" crystalCount="8233" crystalType="s80"
 			weight="1740" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4672,7 +4671,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15562" type="Weapon" name="Feather Eye Blade" icon="icon.weapon_feathereye_blade_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1740" price="171530000" changeWeaponId="15570" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -4688,7 +4687,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Focus, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15563" type="Weapon" name="Octo Claw" icon="icon.weapon_octoclaw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1550" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4705,7 +4704,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Health, or Guidance. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15564" type="Weapon" name="Doubletop Spear" icon="icon.weapon_doubletopa_spear_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="2010" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -4723,7 +4722,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Acumen, or MP Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15565" type="Weapon" name="Rising Star" icon="icon.weapon_cuticle_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1080" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4741,7 +4740,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Empower, or MP Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15566" type="Weapon" name="Black Visage" icon="icon.weapon_blackvisage_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1080" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4759,7 +4758,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Mana Up, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15567" type="Weapon" name="Veniplant Sword" icon="icon.weapon_veniplant_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -4775,7 +4774,7 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Slow, Cheap Shot, or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="15568" type="Weapon" name="Skull Carnium Bow" icon="icon.weapon_skullgrove_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="171530000" changeWeaponId="15571" soulshots="1" spiritshots="1" mpConsume="6"
@@ -4795,7 +4794,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Periel Sword Conversion
-		Focus, Haste, or Health can be bestowed.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack.
 	-->
 	<item id="15569" type="Weapon" name="Gemtail Rapier" icon="icon.weapon_gemtail_rapier_i00" defaultAction="equip" weaponType="rapier"
@@ -4820,9 +4819,9 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Feather Eye Blade conversion
-		Bestows one of the following three functions: Focus, Haste, or Health.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
-	<item id="15570" type="Weapon" name="Finale Blade" icon="icon.weapon_findragon    blade_i00" defaultAction="equip" weaponType="ancientsword"
+	<item id="15570" type="Weapon" name="Finale Blade" icon="icon.weapon_findragon blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1800" price="171530000" changeWeaponId="15562" soulshots="1" spiritshots="1" elementEnabled="1"
 			enchantEnabled="1">
@@ -4844,7 +4843,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Skull Carnium Bow conversion
-		Bestows one of the following functions, Critical Slow, Cheap Shot, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="15571" type="Weapon" name="Dominion Crossbow" icon="icon.weapon_rudecutter_crossbow_i00" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -5598,8 +5597,9 @@
 			immediateEffect="1" weight="60" price="26100" isStackable="true">
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 78.9. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15676" type="Weapon" name="Triumph Blade" icon="icon.weapon_tysandy_blade_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5619,8 +5619,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 82.1. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15677" type="Weapon" name="Triumph Dagger" icon="icon.weapon_tysandy_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5642,8 +5643,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 78.9. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15678" type="Weapon" name="Triumph Hammer" icon="icon.weapon_tysandy_hammer_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5665,8 +5667,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 78.9. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15679" type="Weapon" name="Triumph Crusher" icon="icon.weapon_tysandy_crusher_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5688,8 +5691,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 78.9. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15680" type="Weapon" name="Triumph Two Hand Sword" icon="icon.weapon_tysandy_two_hand_sword_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5710,8 +5714,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 75.7. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15681" type="Weapon" name="Triumph Jamadhr" icon="icon.weapon_tysandy_jamadhr_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5733,8 +5738,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. by 377. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15682" type="Weapon" name="Triumph Spear" icon="icon.weapon_tysandy_spear_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5757,8 +5763,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15683" type="Weapon" name="Triumph Staff" icon="icon.weapon_tysandy_staff_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -5780,8 +5787,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15684" type="Weapon" name="Triumph Two Hand Staff" icon="icon.weapon_tysandy_twohand_staff_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5803,8 +5811,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15685" type="Weapon" name="Triumph Magic Sword" icon="icon.weapon_tysandy_magic_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5824,8 +5833,9 @@
 		<crystallizeReward id="17526" count="1" chance="0.029" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 78.9. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15686" type="Weapon" name="Triumph Bow" icon="icon.weapon_tysandy_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1" crystalType="s80"
@@ -7751,7 +7761,7 @@
 		<Soul Crystal Enhancement>
 		Increases Max HP by 25%. Increases damage inflicted during PvP.
 	-->
-	<item id="15865" type="Weapon" name="Finale Blade - Health" icon="icon.weapon_findragon    blade_i01" defaultAction="equip"
+	<item id="15865" type="Weapon" name="Finale Blade - Health" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="1800" price="171530000" changeWeaponId="15841" soulshots="1" spiritshots="1"
 			elementEnabled="1" enchantEnabled="1">
@@ -7777,7 +7787,7 @@
 		<Soul Crystal Enhancement>
 		Increases Critical by 134. Increases damage inflicted during PvP.
 	-->
-	<item id="15866" type="Weapon" name="Finale Blade - Focus" icon="icon.weapon_findragon    blade_i01" defaultAction="equip"
+	<item id="15866" type="Weapon" name="Finale Blade - Focus" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="1800" price="171530000" changeWeaponId="15842" soulshots="1" spiritshots="1"
 			elementEnabled="1" enchantEnabled="1">
@@ -7803,7 +7813,7 @@
 		<Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP.
 	-->
-	<item id="15867" type="Weapon" name="Finale Blade - Haste" icon="icon.weapon_findragon    blade_i01" defaultAction="equip"
+	<item id="15867" type="Weapon" name="Finale Blade - Haste" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="1800" price="171530000" changeWeaponId="15843" soulshots="1" spiritshots="1"
 			elementEnabled="1" enchantEnabled="1">
@@ -8857,7 +8867,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Focus, or Haste. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15913" type="Weapon" name="Eternal Core Sword {PvP}" icon="icon.weapon_incessantcore_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="9872" crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -8875,7 +8888,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Haste, or P. Critical Damage. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15914" type="Weapon" name="Mamba Edge {PvP}" icon="icon.weapon_mambaedge_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -8896,7 +8912,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, HP Regeneration, or HP Drain. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15915" type="Weapon" name="Eversor Mace {PvP}" icon="icon.weapon_expowder_mace_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -8916,7 +8935,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15916" type="Weapon" name="Contristo Hammer {PvP}" icon="icon.weapon_vesper_retributer_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="9872" crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -8936,7 +8958,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Focus, or Haste. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15917" type="Weapon" name="Lava Saw {PvP}" icon="icon.weapon_lavamond_saw_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -8954,7 +8979,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Critical Stun, or Focus. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15918" type="Weapon" name="Jade Claw {PvP}" icon="icon.weapon_jademice_claw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1550" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -8974,7 +9002,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Haste, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15919" type="Weapon" name="Demitelum {PvP}" icon="icon.weapon_ghostcleaner_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="2010" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -8995,7 +9026,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Mana Up, or Acumen. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15920" type="Weapon" name="Sacredium {PvP}" icon="icon.weapon_vesper_caster_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1080" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9015,7 +9049,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: MP Regeneration, Magic Hold, or Empower. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15921" type="Weapon" name="Cyclic Cane {PvP}" icon="icon.weapon_psyskilt_cane_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1080" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9035,7 +9072,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15922" type="Weapon" name="Archangel Sword {PvP}" icon="icon.weapon_archangel_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="9872" crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -9054,7 +9094,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Slow, or Cheap Shot. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15923" type="Weapon" name="Recurve Thorne Bow {PvP}" icon="icon.weapon_recurvethorne_bow_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="9872"
 			crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" mpConsume="6" enchantEnabled="1" reuseDelay="1500"
@@ -9077,7 +9120,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Eternal Core Sword Conversion
-		Bestows one of the following functions: Health, Focus, or Haste. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15924" type="Weapon" name="Heavenstare Rapier {PvP}" icon="icon.weapon_heavenstair_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9103,7 +9147,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Lava Saw Conversion
-		Bestows one of the following functions: Health, Focus, or Haste. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15925" type="Weapon" name="Pyseal Blade {PvP}" icon="icon.weapon_pyseal_blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -9130,7 +9175,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Recurvethorne Bow Conversion
-		Bestows one of the following functions: Focus, Critical Slow, or Cheap Shot. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15926" type="Weapon" name="Thorne Crossbow {PvP}" icon="icon.weapon_thorne_crossbow_i00" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -9154,7 +9200,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15927" type="Weapon" name="Periel Sword {PvP}" icon="icon.weapon_periwing_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9172,7 +9221,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or HP Drain. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15928" type="Weapon" name="Skull Edge {PvP}" icon="icon.weapon_skulledge_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9193,7 +9245,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Regeneration, HP Drain, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15929" type="Weapon" name="Vigwik Axe {PvP}" icon="icon.weapon_vigwik_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9213,7 +9268,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, HP Regeneration, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15930" type="Weapon" name="Devilish Maul {PvP}" icon="icon.weapon_evildeity_maul_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9233,7 +9291,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15931" type="Weapon" name="Feather Eye Blade {PvP}" icon="icon.weapon_feathereye_blade_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="1740" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -9251,7 +9312,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Focus, or Health. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15932" type="Weapon" name="Octo Claw {PvP}" icon="icon.weapon_octoclaw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1550" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9271,7 +9335,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Health, or Guidance. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15933" type="Weapon" name="Doubletop Spear {PvP}" icon="icon.weapon_doubletopa_spear_i00" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="2010" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -9292,7 +9359,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Acumen, or MP Regeneration. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15934" type="Weapon" name="Rising Star {PvP}" icon="icon.weapon_cuticle_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1080" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9312,7 +9382,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Empower, or MP Regeneration. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15935" type="Weapon" name="Black Visage {PvP}" icon="icon.weapon_blackvisage_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1080" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false"
@@ -9332,7 +9405,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Mana Up, or Acumen. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15936" type="Weapon" name="Veniplant Sword {PvP}" icon="icon.weapon_veniplant_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="8233" crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false"
@@ -9351,7 +9427,10 @@
 		<crystallizeReward id="6577" count="1" chance="8.578" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Slow, Cheap Shot, or Focus. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack. -->
+	<!--
+		Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="15937" type="Weapon" name="Skull Carnium Bow {PvP}" icon="icon.weapon_skullgrove_bow_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="1520" price="0" soulshots="1" spiritshots="1" mpConsume="6" enchantEnabled="1" reuseDelay="1500"
@@ -9374,7 +9453,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Periel Sword Conversion
-		Bestows one of the following functions: Focus, Haste, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15938" type="Weapon" name="Gemtail Rapier {PvP}" icon="icon.weapon_gemtail_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
@@ -9400,7 +9480,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Feather Eye Blade Conversion
-		Bestows one of the following functions: Focus, Haste, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15939" type="Weapon" name="Finale Blade {PvP}" icon="icon.weapon_findragon blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
@@ -9427,7 +9508,8 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Skull Carnium Bow Conversion
-		Bestows one of the following functions: Critical Slow, Cheap Shot, or Focus. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15940" type="Weapon" name="Dominion Crossbow {PvP}" icon="icon.weapon_rudecutter_crossbow_i00" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -9452,8 +9534,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15941" type="Weapon" name="Periel Sword {PvP} - Health" icon="icon.weapon_periwing_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9474,8 +9557,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15942" type="Weapon" name="Periel Sword {PvP} - Focus" icon="icon.weapon_periwing_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9496,8 +9580,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15943" type="Weapon" name="Periel Sword {PvP} - Haste" icon="icon.weapon_periwing_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9518,8 +9603,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of enemy's enchants, or decreasing their Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15944" type="Weapon" name="Skull Edge {PvP} - HP Drain" icon="icon.weapon_skulledge_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9543,8 +9629,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15945" type="Weapon" name="Skull Edge {PvP} - Haste" icon="icon.weapon_skulledge_i01" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
@@ -9568,8 +9655,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 1,000 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15946" type="Weapon" name="Skull Edge {PvP} - Critical Damage" icon="icon.weapon_skulledge_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9593,8 +9681,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15947" type="Weapon" name="Vigwik Axe {PvP} - Health" icon="icon.weapon_vigwik_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9617,8 +9706,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15948" type="Weapon" name="Vigwik Axe {PvP} - HP Regeneration" icon="icon.weapon_vigwik_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9641,8 +9731,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15949" type="Weapon" name="Vigwik Axe {PvP} - HP Drain" icon="icon.weapon_vigwik_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9665,8 +9756,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15950" type="Weapon" name="Devilish Maul {PvP} - Health" icon="icon.weapon_evildeity_maul_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9689,8 +9781,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15951" type="Weapon" name="Devilish Maul {PvP} - HP Drain" icon="icon.weapon_evildeity_maul_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9713,8 +9806,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15952" type="Weapon" name="Devilish Maul {PvP} - HP Regeneration" icon="icon.weapon_evildeity_maul_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9737,8 +9831,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15953" type="Weapon" name="Feather Eye Blade {PvP} - Health" icon="icon.weapon_feathereye_blade_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9759,8 +9854,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15954" type="Weapon" name="Feather Eye Blade {PvP} - Focus" icon="icon.weapon_feathereye_blade_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9781,8 +9877,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. There is a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15955" type="Weapon" name="Feather Eye Blade {PvP} - Haste" icon="icon.weapon_feathereye_blade_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9803,8 +9900,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15956" type="Weapon" name="Octo Claw {PvP} - Health" icon="icon.weapon_octoclaw_i01" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="8233"
@@ -9827,8 +9925,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has about a 43% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15957" type="Weapon" name="Octo Claw {PvP} - Critical Stun" icon="icon.weapon_octoclaw_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -9850,8 +9949,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 129. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15958" type="Weapon" name="Octo Claw {PvP} - Focus" icon="icon.weapon_octoclaw_i01" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="8233"
@@ -9874,8 +9974,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Accuracy by 8. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15959" type="Weapon" name="Doubletop Spear {PvP} - Guidance" icon="icon.weapon_doubletopa_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -9898,8 +9999,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. There is a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15960" type="Weapon" name="Doubletop Spear {PvP} - Haste" icon="icon.weapon_doubletopa_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -9922,8 +10024,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15961" type="Weapon" name="Doubletop Spear {PvP} - Health" icon="icon.weapon_doubletopa_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -9946,8 +10049,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases MP Recovery Rate. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15962" type="Weapon" name="Rising Star {PvP} - MP Regeneration" icon="icon.weapon_cuticle_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -9970,8 +10074,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15963" type="Weapon" name="Rising Star {PvP} - Mana Up" icon="icon.weapon_cuticle_i01" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
@@ -9994,8 +10099,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15964" type="Weapon" name="Rising Star {PvP} - Acumen" icon="icon.weapon_cuticle_i01" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="8233"
@@ -10018,8 +10124,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases MP Recovery Rate. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15965" type="Weapon" name="Black Visage {PvP} - MP Regeneration" icon="icon.weapon_blackvisage_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10042,8 +10149,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15966" type="Weapon" name="Black Visage {PvP} - Magic Hold" icon="icon.weapon_blackvisage_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10065,8 +10173,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		M. Atk. + 167. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15967" type="Weapon" name="Black Visage {PvP} - Empower" icon="icon.weapon_blackvisage_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10089,8 +10198,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15968" type="Weapon" name="Veniplant Sword {PvP} - Acumen" icon="icon.weapon_veniplant_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10111,8 +10221,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15969" type="Weapon" name="Veniplant Sword {PvP} - Magic Hold" icon="icon.weapon_veniplant_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10132,8 +10243,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="15970" type="Weapon" name="Veniplant Sword {PvP} - Mana Up" icon="icon.weapon_veniplant_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10154,8 +10266,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 139. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15971" type="Weapon" name="Skull Carnium Bow {PvP} - Focus" icon="icon.weapon_skullgrove_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="8233"
@@ -10178,8 +10291,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 33% chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15972" type="Weapon" name="Skull Carnium Bow {PvP} - Critical Slow" icon="icon.weapon_skullgrove_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="8233"
@@ -10201,8 +10315,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has an 8% chance of decreasing MP consumption to 1 during a standard attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15973" type="Weapon" name="Skull Carnium Bow {PvP} - Cheap Shot" icon="icon.weapon_skullgrove_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="8233"
@@ -10231,9 +10346,10 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Peri El Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, party members including yourself will get increased P. Atk., M. Atk., and healing capacity by a fixed rate, and MP consumption during skill use is decreased.
+		No Soul Crystal option.
 	-->
 	<item id="15974" type="Weapon" name="Gemtail Rapier {PvP} - Health" icon="icon.weapon_gemtail_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10260,9 +10376,10 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Peri El Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, party members including yourself will get increased P. Atk., M. Atk., and healing capacity by a fixed rate, and MP consumption during skill use is decreased.
+		No Soul Crystal option.
 	-->
 	<item id="15975" type="Weapon" name="Gemtail Rapier {PvP} - Focus" icon="icon.weapon_gemtail_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10289,9 +10406,10 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Peri El Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, party members including yourself will get increased P. Atk., M. Atk., and healing capacity by a fixed rate, and MP consumption during skill use is decreased.
+		No Soul Crystal option.
 	-->
 	<item id="15976" type="Weapon" name="Gemtail Rapier {PvP} - Haste" icon="icon.weapon_gemtail_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10318,8 +10436,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Feather Eye Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Inflicts additional damage with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15977" type="Weapon" name="Finale Blade {PvP} - Health" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10346,8 +10465,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Feather Eye Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Inflicts additional damage with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15978" type="Weapon" name="Finale Blade {PvP} - Focus" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10374,8 +10494,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Feather Eye Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Inflicts additional damage with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15979" type="Weapon" name="Finale Blade {PvP} - Haste" icon="icon.weapon_findragon blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10402,8 +10523,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Skull Carnium Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 139. Increases damage inflicted during PvP. Increases Atk. Spd. of bows/crossbows with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15980" type="Weapon" name="Dominion Crossbow {PvP} - Focus" icon="icon.weapon_rudecutter_crossbow_i01" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -10430,8 +10552,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Skull Carnium Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Inflicts Slow at a 24% rate during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. of bows/crossbows with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15981" type="Weapon" name="Dominion Crossbow {PvP} - Critical Slow" icon="icon.weapon_rudecutter_crossbow_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -10457,8 +10580,9 @@
 	</item>
 	<!--
 		Kamael-exclusive weapon Skull Carnium Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 12% chance of decreasing MP consumption to 1 during a standard attack. Increases damage inflicted during PvP. Increases Atk. Spd. of bows/crossbows with a fixed rate during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15982" type="Weapon" name="Dominion Crossbow {PvP} - Cheap Shot" icon="icon.weapon_rudecutter_crossbow_i01" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -10489,8 +10613,9 @@
 		<crystallizeReward id="36513" count="3" chance="85.786" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15983" type="Weapon" name="Eternal Core Sword {PvP} - Focus" icon="icon.weapon_incessantcore_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10511,8 +10636,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15984" type="Weapon" name="Eternal Core Sword {PvP} - Haste" icon="icon.weapon_incessantcore_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10533,8 +10659,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15985" type="Weapon" name="Eternal Core Sword {PvP} - Health" icon="icon.weapon_incessantcore_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10555,8 +10682,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15986" type="Weapon" name="Mamba Edge {PvP} - Haste" icon="icon.weapon_mambaedge_i01" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -10580,8 +10708,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 1060 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15987" type="Weapon" name="Mamba Edge {PvP} - Critical Damage" icon="icon.weapon_mambaedge_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10605,8 +10734,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of enemy's enchants, or decreasing their Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15988" type="Weapon" name="Mamba Edge {PvP} - HP Drain" icon="icon.weapon_mambaedge_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10630,8 +10760,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15989" type="Weapon" name="Eversor Mace {PvP} - HP Regeneration" icon="icon.weapon_expowder_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10654,8 +10785,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15990" type="Weapon" name="Eversor Mace {PvP} - HP Drain" icon="icon.weapon_expowder_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10678,8 +10810,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15991" type="Weapon" name="Eversor Mace {PvP} - Health" icon="icon.weapon_expowder_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10702,8 +10835,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15992" type="Weapon" name="Contristo Hammer {PvP} - HP Drain" icon="icon.weapon_pereztear_hammer_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10726,8 +10860,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15993" type="Weapon" name="Contristo Hammer {PvP} - HP Regeneration" icon="icon.weapon_pereztear_hammer_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10750,8 +10885,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15994" type="Weapon" name="Contristo Hammer {PvP} - Health" icon="icon.weapon_pereztear_hammer_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10774,8 +10910,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 134. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15995" type="Weapon" name="Lava Saw {PvP} - Focus" icon="icon.weapon_lavamond_saw_i01" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -10796,8 +10933,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. There is a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15996" type="Weapon" name="Lava Saw {PvP} - Haste" icon="icon.weapon_lavamond_saw_i01" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="9872"
@@ -10818,8 +10956,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15997" type="Weapon" name="Lava Saw {PvP} - Health" icon="icon.weapon_lavamond_saw_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -10840,8 +10979,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		There is about a 43% chance of casting Stun on the target during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15998" type="Weapon" name="Jade Claw {PvP} - Critical Stun" icon="icon.weapon_jademice_claw_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -10863,8 +11003,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 129. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="15999" type="Weapon" name="Jade Claw {PvP} - Focus" icon="icon.weapon_jademice_claw_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immeffect="1" crystalCount="9872"

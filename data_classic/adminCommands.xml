@@ -171,6 +171,8 @@
 	<command name="admin_ge_leave" accessLevels="2" />
 	<command name="admin_ge_mode" accessLevels="2" />
 	<command name="admin_ge_status" accessLevels="2" />
+	<command name="admin_ghostoff" accessLevels="2" />
+	<command name="admin_ghoston" accessLevels="2" />
 	<command name="admin_give_all_skills" accessLevels="3" />
 	<command name="admin_give_item_target" accessLevels="3" confirmDlg="true" />
 	<command name="admin_give_item_to_all" accessLevels="3" confirmDlg="true" />

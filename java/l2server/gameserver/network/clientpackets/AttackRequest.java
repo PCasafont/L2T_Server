@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Object;
@@ -37,42 +38,42 @@ public final class AttackRequest extends L2GameClientPacket
 	@SuppressWarnings("unused")
 	private int _attackId;
 	
-	private static final String _C__0A_ATTACKREQUEST = "[C] 0A AttackRequest";
-	
 	@Override
 	protected void readImpl()
 	{
-		_objectId  = readD();
-		_originX  = readD();
-		_originY  = readD();
-		_originZ  = readD();
-		_attackId  = readC(); 	 // 0 for simple click   1 for shift-click
+		_objectId = readD();
+		_originX = readD();
+		_originY = readD();
+		_originZ = readD();
+		_attackId = readC(); // 0 for simple click   1 for shift-click
 	}
 	
 	@Override
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null) return;
+		if (activeChar == null)
+			return;
 		// avoid using expensive operations if not needed
-		final L2Object target;
+		L2Object target;
 		if (activeChar.getTargetId() == _objectId)
 			target = activeChar.getTarget();
 		else
 			target = L2World.getInstance().findObject(_objectId);
 		if (target == null)
-			return;
+		{
+			target = L2World.getInstance().getPlayer(_objectId);
+			if (target == null)
+				return;
+		}
 		
 		// Players can't attack objects in the other instances
 		// except from multiverse
-		if (target.getInstanceId() != activeChar.getInstanceId()
-				&& activeChar.getInstanceId() != -1)
+		if ((target.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
 			return;
 		
 		// Only GMs can directly attack invisible characters
-		if (target instanceof L2PcInstance
-				&& ((L2PcInstance)target).getAppearance().getInvisible()
-				&& !activeChar.isGM())
+		if ((target instanceof L2PcInstance) && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar.isGM())
 			return;
 		
 		if (activeChar.getTarget() != target)
@@ -81,9 +82,7 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		else
 		{
-			if ((target.getObjectId() != activeChar.getObjectId())
-					&& activeChar.getPrivateStoreType() ==0
-					&& activeChar.getActiveRequester() ==null)
+			if ((target.getObjectId() != activeChar.getObjectId()) && (activeChar.getPrivateStoreType() == 0) && (activeChar.getActiveRequester() == null))
 			{
 				//Logozo.debug("Starting ForcedAttack");
 				target.onForcedAttack(activeChar);
@@ -94,14 +93,5 @@ public final class AttackRequest extends L2GameClientPacket
 				sendPacket(ActionFailed.STATIC_PACKET);
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__0A_ATTACKREQUEST;
 	}
 }

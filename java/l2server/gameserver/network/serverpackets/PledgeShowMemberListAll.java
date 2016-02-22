@@ -3,34 +3,36 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2Clan.SubPledge;
+import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+
 //import java.util.logging.Logger;
 /**
  * sample from gracia final:
- * 
+ *
  * 5A // packet id
- * 
+ *
  * 00 00 00 00 // pledge = 1 subpledge = 0
  * D0 2D 00 00 // clan ID
  * 00 00 00 00 // pledge Id
  * 54 00 68 00 65 00 4B 00 6E 00 69 00 67 00 68 00 74 00 73 00 4F 00 66 00 47 00 6F 00 64 00 00 00 // clan name
  * 54 00 68 00 65 00 47 00 72 00 65 00 65 00 6E 00 44 00 72 00 61 00 67 00 30 00 6E 00 00 00 // clan leader
- * 
+ *
  * 9D 4F 01 00 // crest ID
  * 03 00 00 00 // level
  * 00 00 00 00 // castle id
@@ -45,9 +47,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * 00 00 00 00 // ally crest id
  * 00 00 00 00 // is at war
  * 00 00 00 00 // territory castle ID
- * 
+ *
  * 01 00 00 00 // member count
- * 
+ *
  * 51 00 75 00 65 00 65 00 70 00 68 00 00 00 // member name
  * 22 00 00 00 // member level
  * 07 00 00 00 // member class id
@@ -55,7 +57,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * 00 00 00 00 // member race
  * 00 00 00 00 // member object id (if online)
  * 00 00 00 00 // member sponsor
- * 
+ *
  *
  * format   dddSS ddddddddddSddd d (Sdddddd)
  *
@@ -63,11 +65,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PledgeShowMemberListAll extends L2GameServerPacket
 {
-	private static final String _S__68_PLEDGESHOWMEMBERLISTALL = "[S] 5a PledgeShowMemberListAll";
 	private L2Clan _clan;
 	private L2PcInstance _activeChar;
 	private L2ClanMember[] _members;
 	private int _pledgeType;
+	
 	//
 	
 	public PledgeShowMemberListAll(L2Clan clan, L2PcInstance activeChar)
@@ -80,18 +82,18 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		
 		_pledgeType = 0;
 		writePledge(0);
 		
-		for (SubPledge subPledge: _clan.getAllSubPledges())
+		for (SubPledge subPledge : _clan.getAllSubPledges())
 		{
 			_activeChar.sendPacket(new PledgeReceiveSubPledgeCreated(subPledge, _clan));
 		}
 		
 		for (L2ClanMember m : _members)
 		{
-			if (m.getPledgeType() == 0) continue;
+			if (m.getPledgeType() == 0)
+				continue;
 			_activeChar.sendPacket(new PledgeShowMemberListAdd(m));
 		}
 		
@@ -103,8 +105,6 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 	
 	void writePledge(int mainOrSubpledge)
 	{
-		writeC(0x5a);
-		
 		writeD(mainOrSubpledge);
 		writeD(_clan.getClanId());
 		writeD(Config.SERVER_ID); // server id?
@@ -125,14 +125,15 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 		writeD(_clan.getAllyId());
 		writeS(_clan.getAllyName());
 		writeD(_clan.getAllyCrestId());
-		writeD(_clan.isAtWar()? 1 : 0);// new c3
+		writeD(_clan.isAtWar() ? 1 : 0);// new c3
 		writeD(0); // Territory castle ID
 		//writeD(0); // GoD ???
 		writeD(_clan.getSubPledgeMembersCount(_pledgeType));
 		
 		for (L2ClanMember m : _members)
 		{
-			if (m.getPledgeType() != _pledgeType) continue;
+			if (m.getPledgeType() != _pledgeType)
+				continue;
 			writeS(m.getName());
 			writeD(m.getLevel());
 			writeD(m.getCurrentClass());
@@ -147,18 +148,9 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 				writeD(1); // no visible effect
 				writeD(1); //writeD(1);
 			}
-			writeD(m.isOnline() ? m.getObjectId() : 0);  // objectId=online 0=offline
+			writeD(m.isOnline() ? m.getObjectId() : 0); // objectId=online 0=offline
+			writeC(0x00); // ??? Activity?
 			writeD(m.getSponsor() != 0 ? 1 : 0);
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__68_PLEDGESHOWMEMBERLISTALL;
-	}
-	
 }

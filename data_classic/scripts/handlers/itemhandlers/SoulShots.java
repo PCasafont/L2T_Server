@@ -15,6 +15,7 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.instancemanager.MuseumStatistic;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -59,7 +60,8 @@ public class SoulShots implements IItemHandler
 			return;
 		}
 		
-		final int weaponGrade = weaponItem.getCrystalType();	
+		final int weaponGrade = weaponItem.getCrystalType();
+		int shotGrade = weaponGrade;
 		boolean gradeCheck = true;
 		
 		switch (weaponGrade)
@@ -89,12 +91,14 @@ public class SoulShots implements IItemHandler
 			case L2Item.CRYSTAL_S84:
 				if (itemId != 1467 && itemId != 22086)
 					gradeCheck = false;
+				shotGrade = L2Item.CRYSTAL_S;
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
 				if (itemId != 17754 && itemId != 22433)
 					gradeCheck = false;
+				shotGrade = L2Item.CRYSTAL_R;
 				break;
 		}
 		
@@ -192,7 +196,7 @@ public class SoulShots implements IItemHandler
 				break;
 		}
 		
-		activeChar.consumableLock.lock();
+		activeChar.soulShotLock.lock();
 		try
 		{
 			// Check if Soul shot is already active
@@ -211,11 +215,13 @@ public class SoulShots implements IItemHandler
 			}
 			
 			// Charge soul shot
-			weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);		
+			weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
+			if (shotGrade != L2Item.CRYSTAL_NONE)
+				activeChar.increaseStatistic(MuseumStatistic.get(13, shotGrade));
 		}
 		finally
 		{
-			activeChar.consumableLock.unlock();
+			activeChar.soulShotLock.unlock();
 		}
 		
 		// Send message to client

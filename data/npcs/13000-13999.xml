@@ -30,8 +30,8 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="13003" name="Life Control Tower" level="20" type="L2ControlTower" atkRange="40" hpMax="541" hpReg="2.5" mpMax="214"
-			mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="40" sp="10" pAtk="58" mAtk="24" pDef="95" mDef="77"
+	<npc id="13003" name="Life Control Tower" level="20" type="L2ControlTower" atkRange="40" hpMax="5410000" hpReg="2.5" mpMax="214"
+			mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="40" sp="10" pAtk="58" mAtk="24" pDef="9500" mDef="7700"
 			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="1" collisionRadius="7" collisionHeight="35"
 			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
 		<skill id="4416" level="19" /> <!-- Misc. -->
@@ -45,8 +45,8 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="13004" name="Flame Control Tower" level="20" type="L2FlameTower" atkRange="40" hpMax="541" hpReg="2.5" mpMax="214"
-			mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="40" sp="10" pAtk="58" mAtk="24" pDef="95" mDef="77"
+	<npc id="13004" name="Flame Control Tower" level="20" type="L2FlameTower" atkRange="40" hpMax="5410000" hpReg="2.5" mpMax="214"
+			mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="40" sp="10" pAtk="58" mAtk="24" pDef="9500" mDef="7700"
 			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="1" collisionRadius="7" collisionHeight="35"
 			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
 		<skill id="4416" level="19" /> <!-- Misc. -->
@@ -375,9 +375,10 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
 	<npc id="13031" name="Giant Pig" level="80" type="L2Monster" atkRange="40" hpMax="1073" hpReg="0.0" mpMax="2440" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" exp="9982682" sp="2395" collisionRadius="15" collisionHeight="18.3" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" canBeChampion="false">
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11" pDef="1000" mDef="1000"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" collisionRadius="15" collisionHeight="18.3"
+			canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter"
+			skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -420,9 +421,10 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
 	<npc id="13034" name="Super Huge Pig" level="80" type="L2Monster" atkRange="40" hpMax="5366" hpReg="0.0" mpMax="7320" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" exp="9982682" sp="2395" collisionRadius="29" collisionHeight="38.7" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" canBeChampion="false">
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11" pDef="1000" mDef="1000"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" collisionRadius="29" collisionHeight="38.7"
+			canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter"
+			skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -435,9 +437,10 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
 	<npc id="13035" name="Golden Pig" level="80" type="L2Monster" atkRange="40" hpMax="1073" hpReg="0.0" mpMax="2440" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" exp="9982682" sp="2395" collisionRadius="15" collisionHeight="18.3" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" canBeChampion="false">
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11" pDef="1000" mDef="1000"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="60" runSpd="160" collisionRadius="15" collisionHeight="18.3"
+			canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter"
+			skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1702,9 +1705,10 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
 	<npc id="13120" name="Giant Rat" level="80" type="L2Monster" atkRange="40" hpMax="1073" hpReg="0.0" mpMax="2440" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="20" runSpd="160" exp="9982682" sp="2395" collisionRadius="15" collisionHeight="20" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15" canBeChampion="false">
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11" pDef="1000" mDef="1000"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="20" runSpd="160" collisionRadius="15" collisionHeight="20"
+			canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced"
+			skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1747,9 +1751,10 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
 	<npc id="13123" name="Super Giant Rat" level="80" type="L2Monster" atkRange="40" hpMax="5366" hpReg="0.0" mpMax="7320" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="29" runSpd="160" exp="9982682" sp="2395" collisionRadius="19" collisionHeight="33" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15" canBeChampion="false">
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11" pDef="1000" mDef="1000"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="29" runSpd="160" collisionRadius="19" collisionHeight="33"
+			canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced"
+			skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1761,10 +1766,11 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="13124" name="Giant Rat" title="Mr. Bashful" level="80" type="L2Monster" atkRange="40" hpMax="1073" hpReg="0.0" mpMax="2440"
-			mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="1000" mDef="1000" pAtkSpd="253"
-			mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="20" runSpd="160" exp="9982682" sp="2395" collisionRadius="15" collisionHeight="20" fireRes="20"
-			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced" skillChance="15" canBeChampion="false">
+	<npc id="13124" name="Giant Rat" title="Mr. Bashful" level="80" type="L2Monster" atkRange="40" hpMax="1073" hpReg="0.0"
+			mpMax="2440" mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="9982682" sp="2395" pAtk="18" mAtk="11"
+			pDef="1000" mDef="1000" pAtkSpd="253" mAtkSpd="500" pCritRate="10" mCritRate="10" walkSpd="20" runSpd="160" collisionRadius="15"
+			collisionHeight="20" canBeChampion="false" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -4397,25 +4403,25 @@
 			pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="30" collisionHeight="13" fireRes="160" waterRes="160"
 			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="13302" name="Incarnation" level="85" type="L2Guard" atkRange="40" hpMax="8234" hpReg="10.09" mpMax="2044" mpReg="7.32"
+	<npc id="13302" name="Incarnation" level="85" type="L2Clone" atkRange="40" hpMax="8234" hpReg="10.09" mpMax="2044" mpReg="7.32"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="160" mCritRate="160" walkSpd="350" runSpd="180" collisionRadius="8.5" collisionHeight="25" targetable="false"
 			isNonTalking="true" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter"
 			soulshots="1" spiritshots="1" ssChance="100" spsChance="100">
 	</npc>
-	<npc id="13303" name="Incarnation" level="90" type="L2Guard" atkRange="40" hpMax="9439" hpReg="8.39" mpMax="2044" mpReg="6.09"
+	<npc id="13303" name="Incarnation" level="90" type="L2Clone" atkRange="40" hpMax="9439" hpReg="8.39" mpMax="2044" mpReg="6.09"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="160" mCritRate="160" walkSpd="350" runSpd="180" collisionRadius="8.5" collisionHeight="25" targetable="false"
 			isNonTalking="true" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter"
 			soulshots="1" spiritshots="1" ssChance="100" spsChance="100">
 	</npc>
-	<npc id="13304" name="Incarnation" level="95" type="L2Guard" atkRange="40" hpMax="9915" hpReg="10.71" mpMax="2555" mpReg="7.77"
+	<npc id="13304" name="Incarnation" level="95" type="L2Clone" atkRange="40" hpMax="9915" hpReg="10.71" mpMax="2555" mpReg="7.77"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="160" mCritRate="160" walkSpd="350" runSpd="180" collisionRadius="8.5" collisionHeight="25" targetable="false"
 			isNonTalking="true" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter"
 			soulshots="1" spiritshots="1" ssChance="100" spsChance="100">
 	</npc>
-	<npc id="13305" name="Incarnation" level="97" type="L2Guard" atkRange="40" hpMax="10214" hpReg="10.82" mpMax="3066" mpReg="7.85"
+	<npc id="13305" name="Incarnation" level="97" type="L2Clone" atkRange="40" hpMax="10214" hpReg="10.82" mpMax="3066" mpReg="7.85"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="160" mCritRate="160" walkSpd="350" runSpd="180" collisionRadius="8.5" collisionHeight="25" targetable="false"
 			isNonTalking="true" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter"
@@ -5200,101 +5206,101 @@
 	<npc id="13452" name="Solo Dance" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13453" name="Solo Dance" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13454" name="Solo Dance" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13455" name="Incarnation" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13456" name="Incarnation" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13457" name="Incarnation" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13458" name="Whisper of Fear" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13459" name="Whisper of Fear" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13460" name="Whisper of Fear" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13461" name="Severe Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13462" name="Severe Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13463" name="Severe Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13464" name="Yoke Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13465" name="Yoke Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13466" name="Yoke Trap" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13467" name="Decoy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13468" name="Decoy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13469" name="Decoy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13470" name="Protection Stone" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="13471" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

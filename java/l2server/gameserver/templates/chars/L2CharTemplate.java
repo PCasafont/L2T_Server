@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.chars;
 
 import l2server.gameserver.templates.StatsSet;
@@ -32,9 +33,9 @@ public class L2CharTemplate
 	public int baseMEN;
 	public int baseLUC;
 	public int baseCHA;
-	public float baseHpMax;
-	public float baseMpMax;
-	public float baseCpMax;
+	public double baseHpMax;
+	public double baseMpMax;
+	public double baseCpMax;
 	
 	public float baseHpReg;
 	public float baseMpReg;
@@ -68,16 +69,16 @@ public class L2CharTemplate
 	public double baseEarthRes;
 	public double baseHolyRes;
 	public double baseDarkRes;
-		
+	
 	//C4 Stats
 	public final int baseMpConsumeRate;
 	public final int baseHpConsumeRate;
 	
 	//Start Locs
-	public int startX;
-	public int startY;
-	public int startZ;
-	public int startRandom;
+	public final int startX;
+	public final int startY;
+	public final int startZ;
+	public final int startRandom;
 	
 	/**
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> :
@@ -107,9 +108,9 @@ public class L2CharTemplate
 		baseMEN = set.getInteger("MEN", 40);
 		baseLUC = set.getInteger("LUC", 30);
 		baseCHA = set.getInteger("CHA", 40);
-		baseHpMax = set.getFloat("hpMax", 1.0f);
-		baseCpMax = set.getFloat("cpMax", 0.0f);
-		baseMpMax = set.getFloat("mpMax", 0.0f);
+		baseHpMax = set.getDouble("hpMax", 1.0f);
+		baseCpMax = set.getDouble("cpMax", 0.0f);
+		baseMpMax = set.getDouble("mpMax", 0.0f);
 		baseHpReg = set.getFloat("hpReg", 0.0f);
 		baseMpReg = set.getFloat("mpReg", 0.0f);
 		baseCpReg = set.getFloat("cpReg", 0.0f);

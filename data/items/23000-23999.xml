@@ -1946,44 +1946,54 @@
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Transforms you into a Saber Tooth Tiger for 30 min. No effect if used while transformed. -->
-	<item id="23400" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23400" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="672" level="1" /> <!-- Transform Saber Tooth Tiger -->
 	</item>
 	<!-- Transforms you into Oel Mahum for 30 min. No effect if used while transformed. -->
-	<item id="23401" type="EtcItem" name="Transformation Scroll: Oel Mahum" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23401" type="EtcItem" name="Transformation Scroll: Oel Mahum" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="673" level="1" /> <!-- Transform Oel Mahum -->
 	</item>
 	<!-- Transforms you into a Doll Blader for 30 min. No effect if used while transformed. -->
-	<item id="23402" type="EtcItem" name="Transformation Scroll: Doll Blader" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23402" type="EtcItem" name="Transformation Scroll: Doll Blader" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="674" level="1" /> <!-- Transform Doll Blader -->
 	</item>
 	<!-- Transforms you into Zaken for 30 min. No effect if used while transformed. -->
-	<item id="23403" type="EtcItem" name="Transformation Scroll: Zaken" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23403" type="EtcItem" name="Transformation Scroll: Zaken" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="663" level="1" /> <!-- Transform Zaken -->
 	</item>
 	<!-- Transforms you into Anakim for 30 min. No effect if used while transformed. -->
-	<item id="23404" type="EtcItem" name="Transformation Scroll: Anakim" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23404" type="EtcItem" name="Transformation Scroll: Anakim" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="664" level="1" /> <!-- Transform Anakim -->
 	</item>
 	<!-- Transforms you into Venom for 30 min. No effect if used while transformed. -->
-	<item id="23405" type="EtcItem" name="Transformation Scroll: Venom" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23405" type="EtcItem" name="Transformation Scroll: Venom" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="665" level="1" /> <!-- Transform Venom -->
 	</item>
 	<!-- Transforms you into Gordon for 30 min. No effect if used while transformed. -->
-	<item id="23406" type="EtcItem" name="Transformation Scroll: Gordon" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23406" type="EtcItem" name="Transformation Scroll: Gordon" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="666" level="1" /> <!-- Transform Gordon -->
 	</item>
 	<!-- Transforms you into Ranku for 30 min. No effect if used while transformed. -->
-	<item id="23407" type="EtcItem" name="Transformation Scroll: Ranku" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23407" type="EtcItem" name="Transformation Scroll: Ranku" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="667" level="1" /> <!-- Transform Ranku -->
 	</item>
 	<!-- Transforms you into Kechi for 30 min. No effect if used while transformed. -->
-	<item id="23408" type="EtcItem" name="Transformation Scroll: Kechi" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23408" type="EtcItem" name="Transformation Scroll: Kechi" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="668" level="1" /> <!-- Transform Kechi -->
 	</item>
 	<!-- Transforms you into Demon Prince for 30 min. No effect if used while transformed. -->
-	<item id="23409" type="EtcItem" name="Transformation Scroll: Demon Prince" icon="icon.etc_trans_4f_s_b_01" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="23409" type="EtcItem" name="Transformation Scroll: Demon Prince" icon="icon.etc_trans_4f_s_b_01" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="669" level="1" /> <!-- Transform Demon Prince -->
 	</item>
 	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (R-grade) + 6, and two-handed sword/blunt/fist, dagger, crossbow + 7. P. Atk. for bows + 12. M. Atk. for all weapons + 5. When enchanted to +4 or above, P. Atk. and M. Atk. Increase greatly. Blessed weapons have greater increases than standard weapons. -->
 	<item id="23410" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)" icon="icon.scroll_of_enchant_weapon_i06" immediateEffect="1"
@@ -2347,11 +2357,6 @@
 	<!-- Santa outfit to celebrate the holiday season. -->
 	<item id="23485" type="Armor" name="Santa Outfit" icon="Branchsys3.icon1.armor_ev_santas_clothes" defaultAction="equip"
 			armorType="none" bodypart="alldress" immediateEffect="1" weight="17">
-		<cond msgId="1518">
-			<not>
-				<player races="Ertheia" />
-			</not>
-		</cond>
 	</item>
 	<!-- Appearance stone that modifies into a Santa outfit. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Santa outfit. Appearance is restored through the use of a Restoration Stone. -->
 	<item id="23486" type="EtcItem" name="Santa Outfit Appearance Stone - 14-day" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -2897,7 +2902,7 @@
 	<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 3-day. Equipping two will only give the effect of one. -->
 	<item id="23637" type="Armor" name="Blessed Antharas' Earring - 3-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
+			isDepositable="false" isOlyRestricted="true" time="4320" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 		<add stat="maxMp" val="59" />
 		<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
@@ -3767,7 +3772,7 @@
 	-->
 	<item id="23834" type="Armor" name="Talisman - Abundance - Tactics" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="2" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="2" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		P./M. Critical Rate + 8%, Received Critical Damage - 10%, and PvP skill power - 10%.
@@ -3775,7 +3780,7 @@
 	-->
 	<item id="23835" type="Armor" name="Talisman - Abundance - Morale" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="3" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="3" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		Max HP/MP/CP + 325 and HP/MP/CP Recovery Rate + 5.
@@ -3783,7 +3788,7 @@
 	-->
 	<item id="23836" type="Armor" name="Talisman - Abundance - Physique" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="4" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="4" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. 271, P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%. Received Critical Damage - 15%, and skill damage during PvP - 15%. Additionally, skill damage received during PvP is decreased.
@@ -3791,7 +3796,7 @@
 	-->
 	<item id="23837" type="Armor" name="Talisman - Hunter - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="5" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="5" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. + 271 P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, Max HP, MP, and CP + 490, and HP, MP, and CP Recovery + 7.
@@ -3799,7 +3804,7 @@
 	-->
 	<item id="23838" type="Armor" name="Talisman - Slaughterer - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="6" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="6" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. + 271, P. Evasion/M. Evasion + 7, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received Critical Damage - 15%, and skill damage during PvP - 15%.
@@ -3807,7 +3812,7 @@
 	-->
 	<item id="23839" type="Armor" name="Talisman - Conquerer - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="7" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="7" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!--
 		Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received Critical Damage - 15%, and skill damage during PvP - 15%.
@@ -3815,7 +3820,7 @@
 	-->
 	<item id="23840" type="Armor" name="Talisman - Outlaw - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="8" /> <!-- Talisman - Abundance -->
+		<skill id="21364" level="8" /> <!-- Talisman - Abundance (High-grade) - Lv. 4 -->
 	</item>
 	<!-- Has a chance of obtaining either Talisman - Abundance: War, Blessed Scroll: Enchant Weapon/ Armor (R-grade), Lucky Enchant Stone: Weapon/ Armor (R-grade), Scroll: Enchant Weapon/ Armor (R-grade), Elcyum Powder, Divine Protection Elixir, Pa'agrio's Warm Breeze Pack (1-hour), XP Rune I (Lv. 1-85) 100% Pack (1-hour), Prestige Rune 100% Pack, or XP Rune II (Lv. 1-95) 100% Pack (1-hour). -->
 	<item id="23841" type="EtcItem" name="Abundance Gift Box - War" icon="icon.etc_pi_gift_box_i03" weight="0">
@@ -4097,8 +4102,8 @@
 			isDropable="false" isSellable="false">
 	</item>
 	<!-- Equip to summon the Anakim Agathion. -->
-	<item id="23900" type="Armor" name="Agathion - Anakim" icon="BranchSys3.lcon.g_ring_of_uthanka" defaultAction="equip" bodypart="lbracelet"
-			immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" unequipSkill="3267-1">
+	<item id="23900" type="Armor" name="Agathion - Anakim" icon="BranchSys3.iconItem.g_agathion_anakim" defaultAction="equip"
+			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" unequipSkill="3267-1">
 		<skill id="21388" level="1" /> <!-- Release Agathion's Seal - Anakim -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 	</item>
@@ -4509,8 +4514,9 @@
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="23989" type="Armor" name="Agathion - Virgo - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23989" type="Armor" name="Agathion - Virgo - Stage 1" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4525,8 +4531,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="23990" type="Armor" name="Agathion - Virgo - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23990" type="Armor" name="Agathion - Virgo - Stage 2" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4542,8 +4549,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="23991" type="Armor" name="Agathion - Virgo - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23991" type="Armor" name="Agathion - Virgo - Stage 3" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4559,8 +4567,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="23992" type="Armor" name="Agathion - Virgo - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23992" type="Armor" name="Agathion - Virgo - Stage 4" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4576,8 +4585,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="23993" type="Armor" name="Agathion - Virgo - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23993" type="Armor" name="Agathion - Virgo - Stage 5" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4593,8 +4603,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="23994" type="Armor" name="Agathion - Virgo - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23994" type="Armor" name="Agathion - Virgo - Stage 6" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4610,8 +4621,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="23995" type="Armor" name="Agathion - Virgo - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23995" type="Armor" name="Agathion - Virgo - Stage 7" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4627,8 +4639,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="23996" type="Armor" name="Agathion - Virgo - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23996" type="Armor" name="Agathion - Virgo - Stage 8" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4644,8 +4657,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="23997" type="Armor" name="Agathion - Virgo - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23997" type="Armor" name="Agathion - Virgo - Stage 9" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4661,8 +4675,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="23998" type="Armor" name="Agathion - Virgo - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23998" type="Armor" name="Agathion - Virgo - Stage 10" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -4678,8 +4693,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="23999" type="Armor" name="Agathion - Virgo - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="23999" type="Armor" name="Agathion - Virgo - Stage 11" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->

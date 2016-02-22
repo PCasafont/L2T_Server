@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package events.GiftOfVitality;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -36,25 +37,7 @@ public class GiftOfVitality extends Quest
 	
 	private static final int _jack = 4306;
 	
-	private static final int[][] _spawns =
-	{
-		{  82766,  149438, -3464, 33865 },
-		{  82286,   53291, -1488, 15250 },
-		{ 147060,   25943, -2008, 18774 },
-		{ 148096,  -55466, -2728, 40541 },
-		{  87116, -141332, -1336, 52193 },
-		{  43521,  -47542,  -792, 31655 },
-		{  17203,  144949, -3024, 18166 },
-		{ 111164,  221062, -3544,  2714 },
-		{ -13869,  122063, -2984, 18270 },
-		{ -83161,  150915, -3120, 17311 },
-		{  45402,   48355, -3056, 49153 },
-		{ 115616, -177941,  -896, 30708 },
-		{ -44928, -113608,  -192, 30212 },
-		{ -84037,  243194, -3728,  8992 },
-		{-119690,   44583,   360, 29289 },
-		{  12084,   16576, -4584, 57345 }
-	};
+	private static final int[][] _spawns = { { 82766, 149438, -3464, 33865 }, { 82286, 53291, -1488, 15250 }, { 147060, 25943, -2008, 18774 }, { 148096, -55466, -2728, 40541 }, { 87116, -141332, -1336, 52193 }, { 43521, -47542, -792, 31655 }, { 17203, 144949, -3024, 18166 }, { 111164, 221062, -3544, 2714 }, { -13869, 122063, -2984, 18270 }, { -83161, 150915, -3120, 17311 }, { 45402, 48355, -3056, 49153 }, { 115616, -177941, -896, 30708 }, { -44928, -113608, -192, 30212 }, { -84037, 243194, -3728, 8992 }, { -119690, 44583, 360, 29289 }, { 12084, 16576, -4584, 57345 } };
 	
 	public GiftOfVitality(int questId, String name, String descr)
 	{
@@ -83,7 +66,7 @@ public class GiftOfVitality extends Quest
 			{
 				long remainingTime = (_reuse - System.currentTimeMillis()) / 1000;
 				int hours = (int) (remainingTime / 3600);
-				int minutes = (int) ((remainingTime%3600) / 60);
+				int minutes = (int) ((remainingTime % 3600) / 60);
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVAILABLE_AFTER_S1_S2_HOURS_S3_MINUTES);
 				sm.addSkillName(23179);
 				sm.addNumber(hours);
@@ -94,9 +77,9 @@ public class GiftOfVitality extends Quest
 			else
 			{
 				npc.setTarget(player);
-				npc.doCast(SkillTable.getInstance().getInfo(23179,1));	// Gift of Vitality
+				npc.doCast(SkillTable.getInstance().getInfo(23179, 1)); // Gift of Vitality
 				st.setState(State.STARTED);
-				st.set("reuse", String.valueOf(System.currentTimeMillis() + _hours*60*60*1000));
+				st.set("reuse", String.valueOf(System.currentTimeMillis() + (_hours * 60 * 60 * 1000)));
 				htmltext = "4306-okvitality.htm";
 			}
 		}
@@ -111,24 +94,24 @@ public class GiftOfVitality extends Quest
 				if (player.isMageClass())
 				{
 					npc.setTarget(player);
-					npc.doCast(SkillTable.getInstance().getInfo(5627,1));	// Wind Walk
-					npc.doCast(SkillTable.getInstance().getInfo(5628,1));	// Shield
-					npc.doCast(SkillTable.getInstance().getInfo(5637,1));	// Magic Barrier
-					npc.doCast(SkillTable.getInstance().getInfo(5633,1));	// Bless the Soul
-					npc.doCast(SkillTable.getInstance().getInfo(5634,1));	// Acumen
-					npc.doCast(SkillTable.getInstance().getInfo(5635,1));	// Concentration
-					npc.doCast(SkillTable.getInstance().getInfo(5636,1));	// Empower
+					npc.doCast(SkillTable.getInstance().getInfo(5627, 1)); // Wind Walk
+					npc.doCast(SkillTable.getInstance().getInfo(5628, 1)); // Shield
+					npc.doCast(SkillTable.getInstance().getInfo(5637, 1)); // Magic Barrier
+					npc.doCast(SkillTable.getInstance().getInfo(5633, 1)); // Bless the Soul
+					npc.doCast(SkillTable.getInstance().getInfo(5634, 1)); // Acumen
+					npc.doCast(SkillTable.getInstance().getInfo(5635, 1)); // Concentration
+					npc.doCast(SkillTable.getInstance().getInfo(5636, 1)); // Empower
 				}
 				else
 				{
 					npc.setTarget(player);
-					npc.doCast(SkillTable.getInstance().getInfo(5627,1));	// Wind Walk
-					npc.doCast(SkillTable.getInstance().getInfo(5628,1));	// Shield
-					npc.doCast(SkillTable.getInstance().getInfo(5637,1));	// Magic Barrier
-					npc.doCast(SkillTable.getInstance().getInfo(5629,1));	// Bless the Body
-					npc.doCast(SkillTable.getInstance().getInfo(5630,1));	// Vampiric Rage
-					npc.doCast(SkillTable.getInstance().getInfo(5631,1));	// Regeneration
-					npc.doCast(SkillTable.getInstance().getInfo(5632,1));	// Haste
+					npc.doCast(SkillTable.getInstance().getInfo(5627, 1)); // Wind Walk
+					npc.doCast(SkillTable.getInstance().getInfo(5628, 1)); // Shield
+					npc.doCast(SkillTable.getInstance().getInfo(5637, 1)); // Magic Barrier
+					npc.doCast(SkillTable.getInstance().getInfo(5629, 1)); // Bless the Body
+					npc.doCast(SkillTable.getInstance().getInfo(5630, 1)); // Vampiric Rage
+					npc.doCast(SkillTable.getInstance().getInfo(5631, 1)); // Regeneration
+					npc.doCast(SkillTable.getInstance().getInfo(5632, 1)); // Haste
 				}
 				htmltext = "4306-okbuff.htm";
 			}
@@ -146,17 +129,17 @@ public class GiftOfVitality extends Quest
 			else
 			{
 				npc.setTarget(player.getPet());
-				npc.doCast(SkillTable.getInstance().getInfo(5627,1));	// Wind Walk
-				npc.doCast(SkillTable.getInstance().getInfo(5628,1));	// Shield
-				npc.doCast(SkillTable.getInstance().getInfo(5637,1));	// Magic Barrier
-				npc.doCast(SkillTable.getInstance().getInfo(5629,1));	// Bless the Body
-				npc.doCast(SkillTable.getInstance().getInfo(5633,1));	// Bless the Soul
-				npc.doCast(SkillTable.getInstance().getInfo(5630,1));	// Vampiric Rage
-				npc.doCast(SkillTable.getInstance().getInfo(5634,1));	// Acumen
-				npc.doCast(SkillTable.getInstance().getInfo(5631,1));	// Regeneration
-				npc.doCast(SkillTable.getInstance().getInfo(5635,1));	// Concentration
-				npc.doCast(SkillTable.getInstance().getInfo(5632,1));	// Haste
-				npc.doCast(SkillTable.getInstance().getInfo(5636,1));	// Empower
+				npc.doCast(SkillTable.getInstance().getInfo(5627, 1)); // Wind Walk
+				npc.doCast(SkillTable.getInstance().getInfo(5628, 1)); // Shield
+				npc.doCast(SkillTable.getInstance().getInfo(5637, 1)); // Magic Barrier
+				npc.doCast(SkillTable.getInstance().getInfo(5629, 1)); // Bless the Body
+				npc.doCast(SkillTable.getInstance().getInfo(5633, 1)); // Bless the Soul
+				npc.doCast(SkillTable.getInstance().getInfo(5630, 1)); // Vampiric Rage
+				npc.doCast(SkillTable.getInstance().getInfo(5634, 1)); // Acumen
+				npc.doCast(SkillTable.getInstance().getInfo(5631, 1)); // Regeneration
+				npc.doCast(SkillTable.getInstance().getInfo(5635, 1)); // Concentration
+				npc.doCast(SkillTable.getInstance().getInfo(5632, 1)); // Haste
+				npc.doCast(SkillTable.getInstance().getInfo(5636, 1)); // Empower
 				htmltext = "4306-okbuff.htm";
 			}
 		}

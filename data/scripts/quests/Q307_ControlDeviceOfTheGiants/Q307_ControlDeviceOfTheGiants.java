@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q307_ControlDeviceOfTheGiants;
 
 /**
@@ -58,9 +59,9 @@ public class Q307_ControlDeviceOfTheGiants extends Quest
 				st.setState(State.STARTED);
 				st.set("cond", "1");
 				st.playSound("ItemSound.quest_accept");
-				if (st.getQuestItemsCount(CET_1_SHEET) < 1 || st.getQuestItemsCount(CET_2_SHEET) < 1 || st.getQuestItemsCount(CET_3_SHEET) < 1)
+				if ((st.getQuestItemsCount(CET_1_SHEET) < 1) || (st.getQuestItemsCount(CET_2_SHEET) < 1) || (st.getQuestItemsCount(CET_3_SHEET) < 1))
 					htmltext = "32711-04.htm";
-				else if (st.getQuestItemsCount(CET_1_SHEET) >= 1 && st.getQuestItemsCount(CET_2_SHEET) >= 1 && st.getQuestItemsCount(CET_3_SHEET) >= 1)
+				else if ((st.getQuestItemsCount(CET_1_SHEET) >= 1) && (st.getQuestItemsCount(CET_2_SHEET) >= 1) && (st.getQuestItemsCount(CET_3_SHEET) >= 1))
 					htmltext = "32711-04a.htm";
 			}
 		}
@@ -134,7 +135,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest
 					htmltext = "32711-09.htm";
 				else if (st.getInt("cond") == 1)
 				{
-					if (st.getQuestItemsCount(CET_1_SHEET) < 1 || st.getQuestItemsCount(CET_2_SHEET) < 1 || st.getQuestItemsCount(CET_3_SHEET) < 1)
+					if ((st.getQuestItemsCount(CET_1_SHEET) < 1) || (st.getQuestItemsCount(CET_2_SHEET) < 1) || (st.getQuestItemsCount(CET_3_SHEET) < 1))
 						htmltext = "32711-07.htm";
 					else
 						htmltext = "32711-08.htm";
@@ -199,7 +200,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest
 	{
 		QuestState st = player.getQuestState(getName());
 		
-		if (st != null && st.getInt("spawned") == 1)
+		if ((st != null) && (st.getInt("spawned") == 1))
 		{
 			st.playSound("ItemSound.quest_middle");
 			st.unset("spawned");

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
@@ -37,11 +40,8 @@ import l2server.util.Rnd;
 
 public class StealBuffs implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.STEAL_BUFF
-	};
-
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.STEAL_BUFF };
+	
 	// Resistance given by each buff enchant level
 	private final double ENCHANT_BENEFIT = 0.5;
 	
@@ -50,12 +50,12 @@ public class StealBuffs implements ISkillHandler
 	
 	// Level difference penalty
 	private double PER_LVL_PENALTY = 5;
-
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		dischargeShots(activeChar, skill);
@@ -64,13 +64,21 @@ public class StealBuffs implements ISkillHandler
 		L2Abnormal effect;
 		int maxNegate = skill.getMaxNegatedEffects();
 		double chance = skill.getPower();
+		boolean targetWasInOlys = false;
 		
-		for (L2Object obj: targets)
+		for (L2Object obj : targets)
 		{
 			if (!(obj instanceof L2Character))
 				continue;
 			
-			target = (L2Character)obj;
+			if (obj instanceof L2PcInstance)
+				targetWasInOlys = ((L2PcInstance) obj).isInOlympiadMode();
+			else if (obj instanceof L2SummonInstance)
+				((L2SummonInstance) obj).getOwner().isInOlympiadMode();
+			else if (obj instanceof L2PetInstance)
+				((L2PetInstance) obj).getOwner().isInOlympiadMode();
+			
+			target = (L2Character) obj;
 			
 			if (target.isDead())
 				continue;
@@ -103,7 +111,7 @@ public class StealBuffs implements ISkillHandler
 				
 				// if eff time is smaller than 5 sec, will not be stolen, just to save CPU,
 				// avoid synchronization(?) problems and NPEs
-				if (effect.getDuration() - effect.getTime() < 5)
+				if ((effect.getDuration() - effect.getTime()) < 5)
 				{
 					effects[i] = null;
 					continue;
@@ -121,14 +129,14 @@ public class StealBuffs implements ISkillHandler
 				
 				// Save original rate temporarily
 				double tempRate = chance;
-
+				
 				// Reduce land rate depending on effect's enchant level
 				if (effect.getEnchantRouteId() > 100)
 					chance -= effect.getEnchantLevel() * ENCHANT_BENEFIT;
 				if (chance < MIN_CANCEL_CHANCE)
 					chance = MIN_CANCEL_CHANCE;
 				
-				if (Rnd.get(100) < chance)	// Tenkai custom - only percentual chance to steal a buff
+				if (Rnd.get(100) < chance) // Tenkai custom - only percentual chance to steal a buff
 					toSteal.add(effect);
 				
 				// Restore original rate
@@ -159,14 +167,14 @@ public class StealBuffs implements ISkillHandler
 					
 					// Save original rate temporarily
 					double tempRate = chance;
-
+					
 					// Reduce land rate depending on effect's enchant level
 					if (effect.getLevelHash() > 100)
 						chance -= (effect.getLevelHash() % 100) * ENCHANT_BENEFIT;
 					if (chance < MIN_CANCEL_CHANCE)
 						chance = MIN_CANCEL_CHANCE;
 					
-					if (Rnd.get(100) < chance)	// Tenkai custom - only percentual chance to steal a buff
+					if (Rnd.get(100) < chance) // Tenkai custom - only percentual chance to steal a buff
 						toSteal.add(effect);
 					
 					// Restore original rate
@@ -193,7 +201,7 @@ public class StealBuffs implements ISkillHandler
 					if (effect != null)
 					{
 						effect.scheduleEffect();
-						if (effect.getShowIcon() && activeChar instanceof L2PcInstance)
+						if (effect.getShowIcon() && (activeChar instanceof L2PcInstance))
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(effect);
@@ -202,6 +210,10 @@ public class StealBuffs implements ISkillHandler
 					}
 					// Finishing stolen effect
 					eff.exit();
+					
+					// Tenkai custom - Buffs returning
+					if (eff.getEffected() instanceof L2PcInstance)
+						eff.getEffected().getActingPlayer().scheduleEffectRecovery(eff, 15, targetWasInOlys);
 				}
 				catch (RuntimeException e)
 				{
@@ -217,7 +229,7 @@ public class StealBuffs implements ISkillHandler
 		{
 			// Applying self-effects
 			effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
+			if ((effect != null) && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -225,7 +237,7 @@ public class StealBuffs implements ISkillHandler
 			skill.getEffectsSelf(activeChar);
 		}
 	}
-
+	
 	private void dischargeShots(L2Character activeChar, L2Skill skill)
 	{
 		// discharge shots
@@ -257,9 +269,10 @@ public class StealBuffs implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

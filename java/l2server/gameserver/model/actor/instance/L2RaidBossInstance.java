@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
@@ -85,16 +86,16 @@ public class L2RaidBossInstance extends L2MonsterInstance
 			{
 				for (L2PcInstance member : player.getParty().getPartyMembers())
 				{
-					RaidBossPointsManager.getInstance().addPoints(member, this.getNpcId(), (this.getLevel() / 2) + Rnd.get(-5, 5));
+					RaidBossPointsManager.getInstance().addPoints(member, getNpcId(), (getLevel() / 2) + Rnd.get(-5, 5));
 					if (member.isNoble())
-						HeroesManager.getInstance().setRBkilled(member.getObjectId(), this.getNpcId());
+						HeroesManager.getInstance().setRBkilled(member.getObjectId(), getNpcId());
 				}
 			}
 			else
 			{
-				RaidBossPointsManager.getInstance().addPoints(player, this.getNpcId(), (this.getLevel() / 2) + Rnd.get(-5, 5));
+				RaidBossPointsManager.getInstance().addPoints(player, getNpcId(), (getLevel() / 2) + Rnd.get(-5, 5));
 				if (player.isNoble())
-					HeroesManager.getInstance().setRBkilled(player.getObjectId(), this.getNpcId());
+					HeroesManager.getInstance().setRBkilled(player.getObjectId(), getNpcId());
 			}
 		}
 		
@@ -109,20 +110,22 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	/**
 	 * Spawn all minions at a regular interval Also if boss is too far from home
 	 * location at the time of this check, teleport it home
-	 * 
+	 *
 	 */
 	@Override
 	protected void startMaintenanceTask()
 	{
-		if (getTemplate().getMinionData() != null || getTemplate().getRandomMinionData() != null)
+		if ((getTemplate().getMinionData() != null) || (getTemplate().getRandomMinionData() != null))
 			getMinionList().spawnMinions();
 		
-		_maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable() {
+		_maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+		{
+			@Override
 			public void run()
 			{
 				checkAndReturnToSpawn();
 			}
-		}, 60000, getMaintenanceInterval()+Rnd.get(5000));
+		}, 60000, getMaintenanceInterval() + Rnd.get(5000));
 	}
 	
 	protected void checkAndReturnToSpawn()
@@ -162,7 +165,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	@Override
 	public float getVitalityPoints(int damage)
 	{
-		return 0;
+		return -super.getVitalityPoints(damage) / 100;
 	}
 	
 	@Override

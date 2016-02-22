@@ -5819,8 +5819,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Poison effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 67. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12852" type="Weapon" name="Naga Storm - Molar {PvP} - Focus" icon="icon.weapon_naga_storm_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5846,8 +5847,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Poison effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 200 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12853" type="Weapon" name="Naga Storm - Molar {PvP} - Critical Damage" icon="icon.weapon_naga_storm_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5873,8 +5875,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Poison effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Critical Rate increases by 37 during an attack from behind the target. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12854" type="Weapon" name="Naga Storm - Molar {PvP} - Back Blow" icon="icon.weapon_naga_storm_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5900,8 +5903,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption when using the skill.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12855" type="Weapon" name="Daimon Crystal - Wisdom {PvP} - Mana Up" icon="icon.weapon_crystal_of_deamon_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5926,8 +5930,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption when using the skill.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12856" type="Weapon" name="Daimon Crystal - Wisdom {PvP} - Acumen" icon="icon.weapon_crystal_of_deamon_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5952,8 +5957,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption upon skill use.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 50% chance of casting Mental Shield on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12857" type="Weapon" name="Daimon Crystal - Wisdom {PvP} - Magic Mental Shield" icon="icon.weapon_crystal_of_deamon_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -5977,8 +5983,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases HP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12858" type="Weapon" name="Barakiel's Axe - Mild {PvP} - Health" icon="icon.weapon_barakiel_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6004,6 +6011,7 @@
 	<!--
 		Masterwork Item that increases HP Recovery Rate.
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12859" type="Weapon" name="Barakiel's Axe - Mild {PvP} - Haste" icon="icon.weapon_barakiel_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6028,8 +6036,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases HP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12860" type="Weapon" name="Barakiel's Axe - Mild {PvP} - Focus" icon="icon.weapon_barakiel_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6053,9 +6062,10 @@
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		Masterwork Item that decreases MP consumption when using a bow.
+		Masterwork Item that decreases MP consumption and increases Accuracy when using a bow.
 		Kamael-exclusive Weapon: Shyeed's Bow Conversion
-		<Soul Crystal Enhancement>when using the P. Skills, MP consumption decreases by 12%. Increases Accuracy when using Bow/Crossbow. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of Bows/Crossbows during an attack.
+		<Special Option>when using the P. Skills, MP consumption decreases by 12%. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of Bows/Crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12861" type="Weapon" name="Screaming Vengeance - Concentration {PvP} - Cheap Shot" icon="icon.weapon_soul_shooter_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -6083,10 +6093,11 @@
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		Masterwork Item that decreases MP consumption when using a bow.
+		Masterwork Item that decreases MP consumption and increases Accuracy when using a bow.
 		Kamael-exclusive Weapon: Shyeed's Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12862" type="Weapon" name="Screaming Vengeance - Concentration {PvP} - Focus" icon="icon.weapon_soul_shooter_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -6113,10 +6124,11 @@
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		Masterwork Item that decreases MP consumption when using a bow.
+		Masterwork Item that decreases MP consumption and increases Accuracy when using a bow.
 		Kamael-exclusive Weapon: Shyeed's Bow conversion
-		<Soul Crystal Enhancement> 
+		<Special Option> 
 		Decreases cooldown by about 17%. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12863" type="Weapon" name="Screaming Vengeance - Concentration {PvP} - Quick Recovery" icon="icon.weapon_soul_shooter_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -6143,8 +6155,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12864" type="Weapon" name="Behemoth' Tuning Fork - Destruction {PvP} - Focus" icon="icon.weapon_tuning_fork_of_behemoth_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -6169,8 +6182,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12865" type="Weapon" name="Behemoth' Tuning Fork - Destruction {PvP} - Health" icon="icon.weapon_tuning_fork_of_behemoth_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -6195,8 +6209,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Decreases Max HP by 15% and P. Atk. + 32. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12866" type="Weapon" name="Behemoth' Tuning Fork - Destruction {PvP} - Anger" icon="icon.weapon_tuning_fork_of_behemoth_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -6222,8 +6237,9 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Sword of Ipos Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12867" type="Weapon" name="Durendal - Earth {PvP} - Focus" icon="icon.weapon_death_bringer_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6253,7 +6269,8 @@
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Sword of Ipos Conversion. The 
 		Atk. Spd. of 
-		<Soul Crystal Enhancement> increases by 6%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		<Special Option> increases by 6%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12868" type="Weapon" name="Durendal - Earth {PvP} - Haste" icon="icon.weapon_death_bringer_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6282,8 +6299,9 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Sword of Ipos Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12869" type="Weapon" name="Durendal - Earth {PvP} - Health" icon="icon.weapon_death_bringer_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6311,8 +6329,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption when using a bow.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 30% chance of decreasing MP consumption to 1 during a standard attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12870" type="Weapon" name="Shyeed's Bow - Concentration {PvP} - Cheap Shot" icon="icon.weapon_shyid_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2157"
@@ -6341,8 +6360,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption when using a bow.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12871" type="Weapon" name="Shyeed's Bow - Concentration {PvP} - Focus" icon="icon.weapon_shyid_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2157"
@@ -6367,8 +6387,9 @@
 	</item>
 	<!--
 		Masterwork Item that decreases MP consumption when using a bow.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Cooldown decreases by about 17%. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12872" type="Weapon" name="Shyeed's Bow - Concentration {PvP} - Quick Recovery" icon="icon.weapon_shyid_bow_i01"
 			defaultAction="equip" weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1"
@@ -6392,8 +6413,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 61. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12873" type="Weapon" name="Sword of Ipos - Earth {PvP} - Focus" icon="icon.weapon_sword_of_ipos_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
@@ -6417,6 +6439,7 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12874" type="Weapon" name="Sword of Ipos - Earth {PvP} - Haste" icon="icon.weapon_sword_of_ipos_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
@@ -6439,8 +6462,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12875" type="Weapon" name="Sword of Ipos - Earth {PvP} - Health" icon="icon.weapon_sword_of_ipos_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
@@ -6463,8 +6487,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by 11% when HP drops to 60% or below. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12876" type="Weapon" name="Sobekk's Hurricane - Landslide {PvP} - Rsk. Haste" icon="icon.weapon_sobekk_hurricane_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -6491,6 +6516,7 @@
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12877" type="Weapon" name="Sobekk's Hurricane - Landslide {PvP} - Haste" icon="icon.weapon_sobekk_hurricane_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -6516,8 +6542,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs HP 14 of the target during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12878" type="Weapon" name="Sobekk's Hurricane - Landslide {PvP} - Critical Drain" icon="icon.weapon_sobekk_hurricane_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -6543,6 +6570,7 @@
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12879" type="Weapon" name="Sirra's Blade - Landslide {PvP} - Haste" icon="icon.weapon_sirr_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6565,8 +6593,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12880" type="Weapon" name="Sirra's Blade - Landslide {PvP} - Health" icon="icon.weapon_sirr_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6589,8 +6618,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Poisons the target at the chance of 15% during the standard attack Critical. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12881" type="Weapon" name="Sirra's Blade - Landslide {PvP} - Critical Poison" icon="icon.weapon_sirr_blade_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -6614,8 +6644,9 @@
 		Masterwork Item that activates the Stun effect occasionally during an attack.
 		Kamael-exclusive Weapon: Sirra's Blade Conversion The 
 		Atk. Spd. of 
-		<Soul Crystal Enhancement> increases by 6%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		<Special Option> increases by 6%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12882" type="Weapon" name="Éclair Bijou - Landslide {PvP} - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6644,9 +6675,10 @@
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
 		Kamael-exclusive Weapon: Sirra's Blade Conversion 
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12883" type="Weapon" name="Éclair Bijou - Landslide {PvP} - Health" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6675,9 +6707,10 @@
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
 		Kamael-exclusive Weapon: Sirra's Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 15% chance of casting Poison on the target during a standard Critical Attack. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12884" type="Weapon" name="Éclair Bijou - Landslide {PvP} - Critical Poison" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120"
@@ -6704,8 +6737,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has about a 25% chance of casting Stun during a Critical Attack. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12885" type="Weapon" name="Tiphon's Spear - Landslide {PvP} - Critical Stun" icon="icon.weapon_tiphon_spear_i01"
 			defaultAction="equip" weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120"
@@ -6729,8 +6763,9 @@
 	</item>
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		The range increases. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12886" type="Weapon" name="Tiphon's Spear - Landslide {PvP} - Long Blow" icon="icon.weapon_tiphon_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;80;120" immediateEffect="1"
@@ -6755,8 +6790,9 @@
 	</item>
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		The angle of attack widens. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12887" type="Weapon" name="Tiphon's Spear - Landslide {PvP} - Wild Blow" icon="icon.weapon_tiphon_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;180" immediateEffect="1"
@@ -6782,6 +6818,7 @@
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
 		When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Atk. Spd. by 8%. Increases damage inflicted during PvP, and decreases the range of bows/crossbows occasionally during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12888" type="Weapon" name="Tallum Blade*Damascus - Landslide {PvP}" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
@@ -6803,8 +6840,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12889" type="Weapon" name="Themis' Tongue - Cleverness {PvP} - Mana Up" icon="icon.weapon_tongue_of_themis_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -6827,8 +6865,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 50% chance of casting Mental Shield on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12890" type="Weapon" name="Themis' Tongue - Cleverness {PvP} - Magic Mental Shield" icon="icon.weapon_tongue_of_themis_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -6850,8 +6889,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 20% chance of casting Focus on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12891" type="Weapon" name="Themis' Tongue - Cleverness {PvP} - Magic Focus" icon="icon.weapon_tongue_of_themis_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -6873,8 +6913,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12892" type="Weapon" name="Cabrio's Hand - Cleverness {PvP} - Conversion" icon="icon.weapon_hand_of_cabrio_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -6899,8 +6940,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12893" type="Weapon" name="Cabrio's Hand - Cleverness {PvP} - Mana Up" icon="icon.weapon_hand_of_cabrio_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -6925,8 +6967,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases MP Recovery Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 10% chance of casting Silence on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12894" type="Weapon" name="Cabrio's Hand - Cleverness {PvP} - Magic Silence" icon="icon.weapon_hand_of_cabrio_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -6951,8 +6994,9 @@
 	<!--
 		Masterwork Item that increases the Critical impact.
 		Kamael-exclusive Weapon: Heaven's Divider Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12895" type="Weapon" name="Gram - Thunder {PvP} - Haste" icon="icon.weapon_gram_i01" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
@@ -6981,8 +7025,9 @@
 	<!--
 		Masterwork Item that increases the Critical impact.
 		Kamael-exclusive Weapon: Heaven's Divider Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12896" type="Weapon" name="Gram - Thunder {PvP} - Health" icon="icon.weapon_gram_i01" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
@@ -7011,8 +7056,9 @@
 	<!--
 		Masterwork Item that increases the Critical impact.
 		Kamael-exclusive Weapon: Heaven's Divider Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 84. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12897" type="Weapon" name="Gram - Thunder {PvP} - Focus" icon="icon.weapon_gram_i01" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
@@ -7040,8 +7086,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 80. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12898" type="Weapon" name="Demon Splinter - Thunder {PvP} - Focus" icon="icon.weapon_demon_splinter_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -7067,8 +7114,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12899" type="Weapon" name="Demon Splinter - Thunder {PvP} - Health" icon="icon.weapon_demon_splinter_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -7094,8 +7142,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Inflicts Stun with about 27% chance during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12900" type="Weapon" name="Demon Splinter - Thunder {PvP} - Critical Stun" icon="icon.weapon_demon_splinter_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -7120,8 +7169,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 26% chance of decreasing MP consumption to 1 during a standard attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12901" type="Weapon" name="Draconic Bow - Earth {PvP} - Cheap Shot" icon="icon.weapon_draconic_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2052"
@@ -7150,8 +7200,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 88. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12902" type="Weapon" name="Draconic Bow - Earth {PvP} - Focus" icon="icon.weapon_draconic_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2052"
@@ -7176,8 +7227,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Inflicts Slow occasionally during a Critical Attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12903" type="Weapon" name="Draconic Bow - Earth {PvP} - Critical Slow" icon="icon.weapon_draconic_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2052"
@@ -7201,8 +7253,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12904" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Regeneration" icon="icon.weapon_dragon_hunter_axe_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -7227,8 +7280,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12905" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - Health" icon="icon.weapon_dragon_hunter_axe_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -7253,8 +7307,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Rate
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 3% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12906" type="Weapon" name="Dragon Hunter Axe - Thunder {PvP} - HP Drain" icon="icon.weapon_dragon_hunter_axe_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120"
@@ -7280,9 +7335,10 @@
 	<!--
 		Masterwork Item that increases P. Critical Rate.
 		Kamael-exclusive Weapon: Forgotten Blade Conversion 
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12907" type="Weapon" name="Laevateinn - Lightning {PvP} - Haste" icon="icon.weapon_leavatein_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7311,9 +7367,10 @@
 	<!--
 		Masterwork Item that increases P. Critical Rate.
 		Kamael-exclusive Weapon: Forgotten Blade Conversion 
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12908" type="Weapon" name="Laevateinn - Lightning {PvP} - Health" icon="icon.weapon_leavatein_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7342,9 +7399,10 @@
 	<!--
 		Masterwork Item that increases P. Critical Rate.
 		Kamael-exclusive Weapon: Forgotten Blade Conversion 
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 84. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12909" type="Weapon" name="Laevateinn - Lightning {PvP} - Focus" icon="icon.weapon_leavatein_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7372,8 +7430,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases the effect of increased Accuracy
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 3% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12910" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Drain" icon="icon.weapon_basalt_battlehammer_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -7398,8 +7457,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases the effect of increased Accuracy
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12911" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - Health" icon="icon.weapon_basalt_battlehammer_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -7424,8 +7484,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases the effect of increased Accuracy
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12912" type="Weapon" name="Basalt Battlehammer - Concentration {PvP} - HP Regeneration" icon="icon.weapon_basalt_battlehammer_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -7451,8 +7512,9 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Draconic Bow Conversion
-		<Soul Crystal Enhancement>when using the 
+		<Special Option>when using the 
 		Skill MP consumption decreases by 12%. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12913" type="Weapon" name="Sarunga - Earth {PvP} - Cheap Shot" icon="icon.weapon_sarnga_i01" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -7482,8 +7544,9 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Draconic Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 88. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12914" type="Weapon" name="Sarunga - Earth {PvP} - Focus" icon="icon.weapon_sarnga_i01" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -7512,8 +7575,9 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Draconic Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a chance of casting Slow during a Critical Attack increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12915" type="Weapon" name="Sarunga - Earth {PvP} - Critical Slow" icon="icon.weapon_sarnga_i01" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1"
@@ -7540,8 +7604,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12916" type="Weapon" name="Saint Spear - Destruction {PvP} - Health" icon="icon.weapon_saint_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -7566,8 +7631,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Accuracy by about 5. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12917" type="Weapon" name="Saint Spear - Destruction {PvP} - Guidance" icon="icon.weapon_saint_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -7592,8 +7658,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Atk.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12918" type="Weapon" name="Saint Spear - Destruction {PvP} - Haste" icon="icon.weapon_saint_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -7618,8 +7685,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12919" type="Weapon" name="Arcana Mace - Nature {PvP} - Acumen" icon="icon.weapon_arcana_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7644,8 +7712,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		MP Recovery Rate is increased. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12920" type="Weapon" name="Arcana Mace - Nature {PvP} - MP Regeneration" icon="icon.weapon_arcana_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7670,8 +7739,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12921" type="Weapon" name="Arcana Mace - Nature {PvP} - Mana Up" icon="icon.weapon_arcana_mace_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7696,8 +7766,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Accuracy.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 265 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12922" type="Weapon" name="Angel Slayer - Concentration {PvP} - Critical Damage" icon="icon.weapon_angel_slayer_i01"
 			defaultAction="equip" weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120"
@@ -7723,8 +7794,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Accuracy.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs 3% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of enemy's enchants or decreasing their Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12923" type="Weapon" name="Angel Slayer - Concentration {PvP} - HP Drain" icon="icon.weapon_angel_slayer_i01"
 			defaultAction="equip" weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120"
@@ -7750,8 +7822,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Accuracy.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12924" type="Weapon" name="Angel Slayer - Concentration {PvP} - Haste" icon="icon.weapon_angel_slayer_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7777,8 +7850,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		M. Atk. + 60. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12925" type="Weapon" name="Imperial Staff - Nature {PvP} - Empower" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
@@ -7803,8 +7877,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		MP Recovery Rate is increased. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12926" type="Weapon" name="Imperial Staff - Nature {PvP} - MP Regeneration" icon="icon.weapon_imperial_staff_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120"
@@ -7829,8 +7904,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12927" type="Weapon" name="Imperial Staff - Nature {PvP} - Magic Hold" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
@@ -7855,6 +7931,7 @@
 	<!--
 		Masterwork Item that increases P. Critical Rate
 		When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, Max HP increases by 15%. Increases Max MP by 20% and Max CP increases by 30%. Increases damage inflicted during PvP, and decreases the range of bows/crossbows occasionally during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12928" type="Weapon" name="Tallum Blade*Dark Legion's Edge - Lightning {PvP}" icon="icon.weapon_dual_sword_i00"
 			defaultAction="equip" weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120"
@@ -7876,8 +7953,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12929" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Haste" icon="icon.weapon_forgotten_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7900,8 +7978,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12930" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Health" icon="icon.weapon_forgotten_blade_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -7924,8 +8003,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Rate.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 84. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12931" type="Weapon" name="Forgotten Blade - Lightning {PvP} - Focus" icon="icon.weapon_forgotten_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -7948,8 +8028,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12932" type="Weapon" name="Heaven's Divider - Thunder {PvP} - Haste" icon="icon.weapon_heavens_divider_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
@@ -7972,8 +8053,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12933" type="Weapon" name="Heaven's Divider - Thunder {PvP} - Health" icon="icon.weapon_heavens_divider_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
@@ -7996,8 +8078,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases P. Critical Damage.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 84. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12934" type="Weapon" name="Heaven's Divider - Thunder {PvP} - Focus" icon="icon.weapon_heavens_divider_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
@@ -8021,8 +8104,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 111. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12935" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_ancient_sword_i01"
 			defaultAction="equip" weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120"
@@ -8051,8 +8135,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12936" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Health" icon="icon.weapon_dynasty_ancient_sword_i01"
 			defaultAction="equip" weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120"
@@ -8081,8 +8166,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12937" type="Weapon" name="Dynasty Ancient Sword - Great Gale {PvP} - Light Armor" icon="icon.weapon_dynasty_ancient_sword_i01"
 			defaultAction="equip" weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120"
@@ -8110,8 +8196,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 116. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12938" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8137,8 +8224,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Evasion by 5. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12939" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Evasion" icon="icon.weapon_dynasty_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8164,8 +8252,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 559 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12940" type="Weapon" name="Dynasty Knife - Great Gale {PvP} - Critical Damage" icon="icon.weapon_dynasty_dagger_i01"
 			defaultAction="equip" weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120"
@@ -8192,6 +8281,7 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases damage inflicted during PvP, and decreases the range of bows/crossbows occasionally during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12941" type="Weapon" name="Dynasty Dualsword - Earth {PvP}" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8214,9 +8304,10 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 111. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12942" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Focus" icon="icon.weapon_dynasty_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8245,9 +8336,10 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12943" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Health" icon="icon.weapon_dynasty_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8276,9 +8368,10 @@
 	<!--
 		Masterwork Item that increases Max HP.
 		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
+		No Soul Crystal option.
 	-->
 	<item id="12944" type="Weapon" name="Dynasty Rapier - Earth {PvP} - Light Armor" icon="icon.weapon_dynasty_rapier_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8306,8 +8399,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12945" type="Weapon" name="Dynasty Mace - Earth {PvP} - Mana Up" icon="icon.weapon_dynasty_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8332,8 +8426,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12946" type="Weapon" name="Dynasty Mace - Earth {PvP} - Conversion" icon="icon.weapon_dynasty_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8358,8 +8453,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12947" type="Weapon" name="Dynasty Mace - Earth {PvP} - Acumen" icon="icon.weapon_dynasty_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8384,8 +8480,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Evasion by 6.8 when HP drops to 60% or below. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12948" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Rsk. Evasion" icon="icon.weapon_dynasty_jamadhr_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -8411,8 +8508,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 106. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12949" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_jamadhr_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -8438,8 +8536,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. by about 10%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12950" type="Weapon" name="Dynasty Bagh-Nakh - Great Gale {PvP} - Haste" icon="icon.weapon_dynasty_jamadhr_i01"
 			defaultAction="equip" weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120"
@@ -8465,8 +8564,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Decreases MP consumption by 4% during a skill attack. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12951" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Cheap Shot" icon="icon.weapon_dynasty_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="3597"
@@ -8496,8 +8596,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Accuracy by 5.32. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12952" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Guidance" icon="icon.weapon_dynasty_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="3597"
@@ -8522,8 +8623,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 116. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12953" type="Weapon" name="Dynasty Bow - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="3597"
@@ -8548,8 +8650,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 111. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12954" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_twohand_sword_i01"
 			defaultAction="equip" weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -8572,8 +8675,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12955" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Health" icon="icon.weapon_dynasty_twohand_sword_i01"
 			defaultAction="equip" weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -8596,8 +8700,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12956" type="Weapon" name="Dynasty Blade - Great Gale {PvP} - Light Armor" icon="icon.weapon_dynasty_twohand_sword_i01"
 			defaultAction="equip" weaponType="bigsword" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -8620,8 +8725,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 111. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12957" type="Weapon" name="Dynasty Sword - Earth {PvP} - Focus" icon="icon.weapon_dynasty_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8644,8 +8750,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12958" type="Weapon" name="Dynasty Sword - Earth {PvP} - Health" icon="icon.weapon_dynasty_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8668,8 +8775,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12959" type="Weapon" name="Dynasty Sword - Earth {PvP} - Light Armor" icon="icon.weapon_dynasty_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8692,8 +8800,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Heal Amount.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12960" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Mana Up" icon="icon.weapon_dynasty_twohand_staff_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8718,8 +8827,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases the Heal Amount.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12961" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Conversion" icon="icon.weapon_dynasty_twohand_staff_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8744,8 +8854,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases the Heal Amount.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12962" type="Weapon" name="Dynasty Staff - Holy Spirit {PvP} - Acumen" icon="icon.weapon_dynasty_twohand_staff_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8770,8 +8881,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		One's own HP decreases by 15%. P. Atk. + 78. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12963" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Anger" icon="icon.weapon_dynasty_hammer_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8796,8 +8908,9 @@
 	</item>
 	<!--
 		Masterwork Item that has the Stun effect occasionally when hitting.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12964" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Health" icon="icon.weapon_dynasty_hammer_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -8822,8 +8935,9 @@
 	</item>
 	<!--
 		Masterwork Item that activates the Stun effect occasionally during an attack.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12965" type="Weapon" name="Dynasty Cudgel - Landslide {PvP} - Rsk. Focus" icon="icon.weapon_dynasty_hammer_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8848,8 +8962,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		One's own HP decreases by 15%. P. Atk. + 78. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12966" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Anger" icon="icon.weapon_dynasty_crusher_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8874,8 +8989,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12967" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Health" icon="icon.weapon_dynasty_crusher_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8900,8 +9016,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Atk. Spd.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 164 when HP drops to 60% or below. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12968" type="Weapon" name="Dynasty Crusher - Great Gale {PvP} - Rsk. Focus" icon="icon.weapon_dynasty_crusher_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120"
@@ -8927,8 +9044,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>when using the 
+		<Special Option>when using the 
 		Skill MP consumption decreases by 12%. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12969" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Cheap Shot" icon="icon.weapon_dynasty_crossbow_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -8958,8 +9076,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Accuracy by 5.32. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12970" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Guidance" icon="icon.weapon_dynasty_crossbow_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -8988,8 +9107,9 @@
 	<!--
 		Masterwork Item that increases Atk. Spd.
 		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 116. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12971" type="Weapon" name="Dynasty Crossbow - Great Gale {PvP} - Focus" icon="icon.weapon_dynasty_crossbow_i01"
 			defaultAction="equip" weaponType="crossbowk" bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120"
@@ -9017,8 +9137,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12972" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Acumen" icon="icon.weapon_dynasty_magic_sword_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -9041,8 +9162,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12973" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Mana Up" icon="icon.weapon_dynasty_magic_sword_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -9065,8 +9187,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max MP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max MP by 60% and decreases Max HP by 40%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="12974" type="Weapon" name="Dynasty Phantom - Nature {PvP} - Conversion" icon="icon.weapon_dynasty_magic_sword_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
@@ -9089,8 +9212,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Your own HP decreases by 15%. P. Atk. + 78 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12975" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Anger" icon="icon.weapon_dynasty_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"
@@ -9115,8 +9239,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 48% of Stun effect during a Critical Attack. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12976" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Critical Stun" icon="icon.weapon_dynasty_spear_i01"
 			defaultAction="equip" weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120"
@@ -9140,8 +9265,9 @@
 	</item>
 	<!--
 		Masterwork Item that increases Max HP.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Weight Gauge by 20%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="12977" type="Weapon" name="Dynasty Halberd - Earth {PvP} - Light Armor" icon="icon.weapon_dynasty_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1"

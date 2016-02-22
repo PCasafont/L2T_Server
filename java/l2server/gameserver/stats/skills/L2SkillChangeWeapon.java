@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.model.Elementals;
@@ -54,7 +55,7 @@ public class L2SkillChangeWeapon extends L2Skill
 		if (!(caster instanceof L2PcInstance))
 			return;
 		
-		L2PcInstance player = (L2PcInstance)caster;
+		L2PcInstance player = (L2PcInstance) caster;
 		
 		if (player.isEnchanting())
 			return;
@@ -88,7 +89,7 @@ public class L2SkillChangeWeapon extends L2Skill
 				
 				L2ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(wpn.getItem().getBodyPart());
 				InventoryUpdate iu = new InventoryUpdate();
-				for (L2ItemInstance item: unequiped)
+				for (L2ItemInstance item : unequiped)
 					iu.addModifiedItem(item);
 				
 				player.sendPacket(iu);
@@ -97,7 +98,7 @@ public class L2SkillChangeWeapon extends L2Skill
 				{
 					byte count = 0;
 					
-					for (L2ItemInstance item: unequiped)
+					for (L2ItemInstance item : unequiped)
 					{
 						if (!(item.getItem() instanceof L2Weapon))
 						{
@@ -128,6 +129,8 @@ public class L2SkillChangeWeapon extends L2Skill
 					return;
 				}
 				
+				long destroyedItemTime = wpn.getTime();
+				
 				L2ItemInstance destroyItem = player.getInventory().destroyItem("ChangeWeapon", wpn, player, null);
 				
 				if (destroyItem == null)
@@ -138,7 +141,10 @@ public class L2SkillChangeWeapon extends L2Skill
 				if (newItem == null)
 					return;
 				
-				if (elementals != null && elementals.getElement() != -1 && elementals.getValue() != -1)
+				if (destroyedItemTime != -1)
+					newItem.setTime(10080);
+				
+				if ((elementals != null) && (elementals.getElement() != -1) && (elementals.getValue() != -1))
 					newItem.setElementAttr(elementals.getElement(), elementals.getValue());
 				newItem.setEnchantLevel(enchantLevel);
 				player.getInventory().equipItem(newItem);

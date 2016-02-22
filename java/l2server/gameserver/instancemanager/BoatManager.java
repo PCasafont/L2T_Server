@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.util.Collection;
@@ -120,7 +121,8 @@ public class BoatManager
 			_docksBusy[h] = value;
 		}
 		catch (ArrayIndexOutOfBoundsException e)
-		{}
+		{
+		}
 	}
 	
 	/**
@@ -152,15 +154,15 @@ public class BoatManager
 			if (player == null)
 				continue;
 			
-			dx = (double)player.getX() - point1.x;
-			dy = (double)player.getY() - point1.y;
-			if (Math.sqrt(dx*dx + dy*dy) < Config.BOAT_BROADCAST_RADIUS)
+			dx = (double) player.getX() - point1.x;
+			dy = (double) player.getY() - point1.y;
+			if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 				player.sendPacket(packet);
 			else
 			{
-				dx = (double)player.getX() - point2.x;
-				dy = (double)player.getY() - point2.y;
-				if (Math.sqrt(dx*dx + dy*dy) < Config.BOAT_BROADCAST_RADIUS)
+				dx = (double) player.getX() - point2.x;
+				dy = (double) player.getY() - point2.y;
+				if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 					player.sendPacket(packet);
 			}
 		}
@@ -177,18 +179,18 @@ public class BoatManager
 		{
 			if (player == null)
 				continue;
-			dx = (double)player.getX() - point1.x;
-			dy = (double)player.getY() - point1.y;
-			if (Math.sqrt(dx*dx + dy*dy) < Config.BOAT_BROADCAST_RADIUS)
+			dx = (double) player.getX() - point1.x;
+			dy = (double) player.getY() - point1.y;
+			if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 			{
 				for (L2GameServerPacket p : packets)
 					player.sendPacket(p);
 			}
 			else
 			{
-				dx = (double)player.getX() - point2.x;
-				dy = (double)player.getY() - point2.y;
-				if (Math.sqrt(dx*dx + dy*dy) < Config.BOAT_BROADCAST_RADIUS)
+				dx = (double) player.getX() - point2.x;
+				dy = (double) player.getY() - point2.y;
+				if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 					for (L2GameServerPacket p : packets)
 						player.sendPacket(p);
 			}

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -31,7 +32,7 @@ public class PetDataTable
 {
 	
 	private static TIntObjectHashMap<L2PetData> _petTable;
-
+	
 	public static PetDataTable getInstance()
 	{
 		return SingletonHolder._instance;
@@ -82,7 +83,7 @@ public class PetDataTable
 							{
 								data.set_hungry_limit(p.getInt("val"));
 							}
-							//sync_level and evolve ignored 
+							//sync_level and evolve ignored
 						}
 						else if (p.getName().equals("skills"))
 						{
@@ -185,7 +186,7 @@ public class PetDataTable
 		else
 			Log.warning("Not found PetData.xml");
 		
-		Log.info(getClass().getSimpleName()+": Loaded " + _petTable.size() + " Pets.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _petTable.size() + " Pets.");
 		
 	}
 	
@@ -197,7 +198,7 @@ public class PetDataTable
 	public L2PetData getPetData(int petID)
 	{
 		if (!_petTable.contains(petID))
-			Log.info("Missing pet data for npcid: "+petID);
+			Log.info("Missing pet data for npcid: " + petID);
 		return _petTable.get(petID);
 	}
 	
@@ -205,7 +206,7 @@ public class PetDataTable
 	{
 		return _petTable.get(petID).getMinLevel();
 	}
-
+	
 	/*
 	 * Pets stuffs
 	 */
@@ -216,7 +217,7 @@ public class PetDataTable
 	
 	public static boolean isEvolvedWolf(int npcId)
 	{
-		return npcId == 16030 || npcId == 16037 || npcId == 16025 || npcId == 16041 || npcId == 16042;
+		return (npcId == 16030) || (npcId == 16037) || (npcId == 16025) || (npcId == 16041) || (npcId == 16042);
 	}
 	
 	public static boolean isSinEater(int npcId)
@@ -226,12 +227,12 @@ public class PetDataTable
 	
 	public static boolean isHatchling(int npcId)
 	{
-		return npcId > 12310 && npcId < 12314;
+		return (npcId > 12310) && (npcId < 12314);
 	}
 	
 	public static boolean isStrider(int npcId)
 	{
-		return (npcId > 12525 && npcId < 12529) || (npcId > 16037 && npcId < 16041) || npcId == 16068;
+		return ((npcId > 12525) && (npcId < 12529)) || ((npcId > 16037) && (npcId < 16041)) || (npcId == 16068);
 	}
 	
 	public static boolean isWyvern(int npcId)
@@ -241,12 +242,12 @@ public class PetDataTable
 	
 	public static boolean isBaby(int npcId)
 	{
-		return npcId > 12779 && npcId < 12783;
+		return (npcId > 12779) && (npcId < 12783);
 	}
 	
 	public static boolean isImprovedBaby(int npcId)
 	{
-		return npcId > 16033 && npcId < 16037;
+		return (npcId > 16033) && (npcId < 16037);
 	}
 	
 	public static boolean isPetFood(int itemId)
@@ -269,7 +270,7 @@ public class PetDataTable
 	
 	/**
 	 * @see L2PetData#getFood()
-	 * 
+	 *
 	 */
 	@Deprecated
 	public static int[] getFoodItemId(int npcId)
@@ -322,7 +323,7 @@ public class PetDataTable
 	public static boolean isPetItem(int itemId)
 	{
 		L2Item item = ItemTable.getInstance().getTemplate(itemId);
-		if (item != null && item.getItemType() == L2EtcItemType.PET_COLLAR)
+		if ((item != null) && (item.getItemType() == L2EtcItemType.PET_COLLAR))
 			return true;
 		return false;
 		
@@ -389,7 +390,7 @@ public class PetDataTable
 			case 16039: // red strider of star
 			case 16040: // red strider of dusk
 			case 16068: // Guardian Strider
-				return new int[] { 4422, 4423, 4424, 10308, 10309, 10310 , 14819};
+				return new int[] { 4422, 4423, 4424, 10308, 10309, 10310, 14819 };
 				
 			case 12621:// Wyvern
 				return new int[] { 8663 };
@@ -412,17 +413,17 @@ public class PetDataTable
 	
 	public static boolean isMountable(int npcId)
 	{
-		return npcId == 12526 // wind strider
-		|| npcId == 12527 // star strider
-		|| npcId == 12528 // twilight strider
-		|| npcId == 12621 // wyvern
-		|| npcId == 16037 // Great Snow Wolf
-		|| npcId == 16041 // Fenrir Wolf
-		|| npcId == 16042 // White Fenrir Wolf
-		|| npcId == 16038 // Red Wind Strider
-		|| npcId == 16039 // Red Star Strider
-		|| npcId == 16040 // Red Twilight Strider
-		|| npcId == 16068; // Guardian Strider
+		return (npcId == 12526 // wind strider
+		) || (npcId == 12527 // star strider
+		) || (npcId == 12528 // twilight strider
+		) || (npcId == 12621 // wyvern
+		) || (npcId == 16037 // Great Snow Wolf
+		) || (npcId == 16041 // Fenrir Wolf
+		) || (npcId == 16042 // White Fenrir Wolf
+		) || (npcId == 16038 // Red Wind Strider
+		) || (npcId == 16039 // Red Star Strider
+		) || (npcId == 16040 // Red Twilight Strider
+		) || (npcId == 16068); // Guardian Strider
 	}
 	
 	@SuppressWarnings("synthetic-access")

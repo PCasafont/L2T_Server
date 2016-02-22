@@ -1,0 +1,2443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- INT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27000" type="Armor" name="Party Hat - INT + Accuracy" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27001" type="Armor" name="Party Hat - WIT + Accuracy" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27002" type="Armor" name="Refined Angel Ring - STR + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27003" type="Armor" name="Refined Angel Ring - DEX + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27004" type="Armor" name="Refined Angel Ring - CON + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27005" type="Armor" name="Refined Angel Ring - MEN + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27006" type="Armor" name="Refined Angel Ring - INT + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27007" type="Armor" name="Refined Angel Ring - WIT + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27008" type="Armor" name="Refined Angel Ring - STR + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27009" type="Armor" name="Refined Angel Ring - DEX + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27010" type="Armor" name="Refined Angel Ring - CON + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27011" type="Armor" name="Refined Angel Ring - MEN + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27012" type="Armor" name="Refined Angel Ring - INT + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27013" type="Armor" name="Refined Angel Ring - WIT + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and P. Def. + 5% when equipped. -->
+	<item id="27014" type="Armor" name="Refined Angel Ring - STR + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and P. Def. + 5% when equipped. -->
+	<item id="27015" type="Armor" name="Refined Angel Ring - DEX + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and P. Def. + 5% when equipped. -->
+	<item id="27016" type="Armor" name="Refined Angel Ring - CON + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and P. Def. + 5% when equipped. -->
+	<item id="27017" type="Armor" name="Refined Angel Ring - MEN + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and P. Def. + 5% when equipped. -->
+	<item id="27018" type="Armor" name="Refined Angel Ring - INT + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and P. Def. + 5% when equipped. -->
+	<item id="27019" type="Armor" name="Refined Angel Ring - WIT + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and M. Def. + 5% when equipped. -->
+	<item id="27020" type="Armor" name="Refined Angel Ring - STR + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and M. Def. + 5% when equipped. -->
+	<item id="27021" type="Armor" name="Refined Angel Ring - DEX + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and M. Def. + 5% when equipped. -->
+	<item id="27022" type="Armor" name="Refined Angel Ring - CON + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and M. Def. + 5% when equipped. -->
+	<item id="27023" type="Armor" name="Refined Angel Ring - MEN + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and M. Def. + 5% when equipped. -->
+	<item id="27024" type="Armor" name="Refined Angel Ring - INT + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and M. Def. + 5% when equipped. -->
+	<item id="27025" type="Armor" name="Refined Angel Ring - WIT + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Evasion + 5 when equipped. -->
+	<item id="27026" type="Armor" name="Refined Angel Ring - STR + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Evasion + 5 when equipped. -->
+	<item id="27027" type="Armor" name="Refined Angel Ring - DEX + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Evasion + 5 when equipped. -->
+	<item id="27028" type="Armor" name="Refined Angel Ring - CON + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Evasion + 5 when equipped. -->
+	<item id="27029" type="Armor" name="Refined Angel Ring - MEN + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Evasion + 5 when equipped. -->
+	<item id="27030" type="Armor" name="Refined Angel Ring - INT + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Evasion + 5 when equipped. -->
+	<item id="27031" type="Armor" name="Refined Angel Ring - WIT + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27032" type="Armor" name="Refined Angel Ring - STR + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27033" type="Armor" name="Refined Angel Ring - DEX + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27034" type="Armor" name="Refined Angel Ring - CON + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27035" type="Armor" name="Refined Angel Ring - MEN + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27036" type="Armor" name="Refined Angel Ring - INT + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27037" type="Armor" name="Refined Angel Ring - WIT + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27038" type="Armor" name="Refined Angel Ring - STR + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27039" type="Armor" name="Refined Angel Ring - DEX + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27040" type="Armor" name="Refined Angel Ring - CON + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27041" type="Armor" name="Refined Angel Ring - MEN + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27042" type="Armor" name="Refined Angel Ring - INT + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27043" type="Armor" name="Refined Angel Ring - WIT + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Accuracy + 5 when equipped. -->
+	<item id="27044" type="Armor" name="Refined Angel Ring - STR + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Accuracy + 5 when equipped. -->
+	<item id="27045" type="Armor" name="Refined Angel Ring - DEX + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Accuracy + 5 when equipped. -->
+	<item id="27046" type="Armor" name="Refined Angel Ring - CON + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Accuracy + 5 when equipped. -->
+	<item id="27047" type="Armor" name="Refined Angel Ring - MEN + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27048" type="Armor" name="Refined Angel Ring - INT + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27049" type="Armor" name="Refined Angel Ring - WIT + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27050" type="Armor" name="Refined Devil Horn - STR + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27051" type="Armor" name="Refined Devil Horn - DEX + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27052" type="Armor" name="Refined Devil Horn - CON + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27053" type="Armor" name="Refined Devil Horn - MEN + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27054" type="Armor" name="Refined Devil Horn - INT + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27055" type="Armor" name="Refined Devil Horn - WIT + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27056" type="Armor" name="Refined Devil Horn - STR + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27057" type="Armor" name="Refined Devil Horn - DEX + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27058" type="Armor" name="Refined Devil Horn - CON + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27059" type="Armor" name="Refined Devil Horn - MEN + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27060" type="Armor" name="Refined Devil Horn - INT + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27061" type="Armor" name="Refined Devil Horn - WIT + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and P. Def. + 5% when equipped. -->
+	<item id="27062" type="Armor" name="Refined Devil Horn - STR + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and P. Def. + 5% when equipped. -->
+	<item id="27063" type="Armor" name="Refined Devil Horn - DEX + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and P. Def. + 5% when equipped. -->
+	<item id="27064" type="Armor" name="Refined Devil Horn - CON + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and P. Def. + 5% when equipped. -->
+	<item id="27065" type="Armor" name="Refined Devil Horn - MEN + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and P. Def. + 5% when equipped. -->
+	<item id="27066" type="Armor" name="Refined Devil Horn - INT + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and P. Def. + 5% when equipped. -->
+	<item id="27067" type="Armor" name="Refined Devil Horn - WIT + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and M. Def. + 5% when equipped. -->
+	<item id="27068" type="Armor" name="Refined Devil Horn - STR + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and M. Def. + 5% when equipped. -->
+	<item id="27069" type="Armor" name="Refined Devil Horn - DEX + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and M. Def. + 5% when equipped. -->
+	<item id="27070" type="Armor" name="Refined Devil Horn - CON + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and M. Def. + 5% when equipped. -->
+	<item id="27071" type="Armor" name="Refined Devil Horn - MEN + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and M. Def. + 5% when equipped. -->
+	<item id="27072" type="Armor" name="Refined Devil Horn - INT + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and M. Def. + 5% when equipped. -->
+	<item id="27073" type="Armor" name="Refined Devil Horn - WIT + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Evasion + 5 when equipped. -->
+	<item id="27074" type="Armor" name="Refined Devil Horn - STR + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Evasion + 5 when equipped. -->
+	<item id="27075" type="Armor" name="Refined Devil Horn - DEX + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Evasion + 5 when equipped. -->
+	<item id="27076" type="Armor" name="Refined Devil Horn - CON + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Evasion + 5 when equipped. -->
+	<item id="27077" type="Armor" name="Refined Devil Horn - MEN + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Evasion + 5 when equipped. -->
+	<item id="27078" type="Armor" name="Refined Devil Horn - INT + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Evasion + 5 when equipped. -->
+	<item id="27079" type="Armor" name="Refined Devil Horn - WIT + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27080" type="Armor" name="Refined Devil Horn - STR + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27081" type="Armor" name="Refined Devil Horn - DEX + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27082" type="Armor" name="Refined Devil Horn - CON + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27083" type="Armor" name="Refined Devil Horn - MEN + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27084" type="Armor" name="Refined Devil Horn - INT + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27085" type="Armor" name="Refined Devil Horn - WIT + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27086" type="Armor" name="Refined Devil Horn - STR + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27087" type="Armor" name="Refined Devil Horn - DEX + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27088" type="Armor" name="Refined Devil Horn - CON + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27089" type="Armor" name="Refined Devil Horn - MEN + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27090" type="Armor" name="Refined Devil Horn - INT + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27091" type="Armor" name="Refined Devil Horn - WIT + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- STR + 3 and Accuracy + 5 when equipped. -->
+	<item id="27092" type="Armor" name="Refined Devil Horn - STR + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- DEX + 3 and Accuracy + 5 when equipped. -->
+	<item id="27093" type="Armor" name="Refined Devil Horn - DEX + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3 and Accuracy + 5 when equipped. -->
+	<item id="27094" type="Armor" name="Refined Devil Horn - CON + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- MEN + 3 and Accuracy + 5 when equipped. -->
+	<item id="27095" type="Armor" name="Refined Devil Horn - MEN + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27096" type="Armor" name="Refined Devil Horn - INT + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- WIT + 3 and Accuracy + 5 when equipped. -->
+	<item id="27097" type="Armor" name="Refined Devil Horn - WIT + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27098" type="Armor" name="Rabbit Ears - LUC + Critical Rate" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27099" type="Armor" name="Rabbit Ears - CHA + Critical Rate" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27100" type="Armor" name="Rabbit Ears - LUC + Critical Damage" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27101" type="Armor" name="Rabbit Ears - CHA + Critical Damage" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27102" type="Armor" name="Rabbit Ears - LUC + P. Def." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27103" type="Armor" name="Rabbit Ears - CHA + P. Def." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27104" type="Armor" name="Rabbit Ears - LUC + M. Def." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27105" type="Armor" name="Rabbit Ears - CHA + M. Def." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27106" type="Armor" name="Rabbit Ears - LUC + Evasion" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27107" type="Armor" name="Rabbit Ears - CHA + Evasion" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27108" type="Armor" name="Rabbit Ears - LUC + P. Atk." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27109" type="Armor" name="Rabbit Ears - CHA + P. Atk." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. +10% when equipped. -->
+	<item id="27110" type="Armor" name="Rabbit Ears - LUC + M. Atk." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27111" type="Armor" name="Rabbit Ears - CHA + M. Atk." icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27112" type="Armor" name="Rabbit Ears - LUC + Accuracy" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27113" type="Armor" name="Rabbit Ears - CHA + Accuracy" icon="icon.accessory_rabbit_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27114" type="Armor" name="Raccoon Ears - LUC + Critical Rate" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27115" type="Armor" name="Raccoon Ears - CHA + Critical Rate" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27116" type="Armor" name="Raccoon Ears - LUC + Critical Damage" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27117" type="Armor" name="Raccoon Ears - CHA + Critical Damage" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27118" type="Armor" name="Raccoon Ears - LUC + P. Def." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27119" type="Armor" name="Raccoon Ears - CHA + P. Def." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27120" type="Armor" name="Raccoon Ears - LUC + M. Def." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27121" type="Armor" name="Raccoon Ears - CHA + M. Def." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27122" type="Armor" name="Raccoon Ears - LUC + Evasion" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27123" type="Armor" name="Raccoon Ears - CHA + Evasion" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27124" type="Armor" name="Raccoon Ears - LUC + P. Atk." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27125" type="Armor" name="Raccoon Ears - CHA + P. Atk." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27126" type="Armor" name="Raccoon Ears - LUC + M. Atk." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27127" type="Armor" name="Raccoon Ears - CHA + M. Atk." icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27128" type="Armor" name="Raccoon Ears - LUC + Accuracy" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27129" type="Armor" name="Raccoon Ears - CHA + Accuracy" icon="icon.accessory_racoon_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27130" type="Armor" name="Cat Ears - LUC + Critical Rate" icon="icon.accessory_cat_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27131" type="Armor" name="Cat Ears - CHA + Critical Rate" icon="icon.accessory_cat_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27132" type="Armor" name="Cat Ears - LUC + Critical Damage" icon="icon.accessory_cat_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27133" type="Armor" name="Cat Ears - CHA + Critical Damage" icon="icon.accessory_cat_ear_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27134" type="Armor" name="Cat Ears - LUC + P. Def." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27135" type="Armor" name="Cat Ears - CHA + P. Def." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27136" type="Armor" name="Cat Ears - LUC + M. Def." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27137" type="Armor" name="Cat Ears - CHA + M. Def." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27138" type="Armor" name="Cat Ears - LUC + Evasion" icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27139" type="Armor" name="Cat Ears - CHA + Evasion" icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27140" type="Armor" name="Cat Ears - LUC + P. Atk." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27141" type="Armor" name="Cat Ears - CHA + P. Atk." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27142" type="Armor" name="Cat Ears - LUC + M. Atk." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27143" type="Armor" name="Cat Ears - CHA + M. Atk." icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27144" type="Armor" name="Cat Ears - LUC + Accuracy" icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27145" type="Armor" name="Cat Ears - CHA + Accuracy" icon="icon.accessory_cat_ear_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27146" type="Armor" name="Romantic Chapeau - LUC + Critical Rate" icon="icon.accessory_romantic_chaperon_i00"
+			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27147" type="Armor" name="Romantic Chapeau - CHA + Critical Rate" icon="icon.accessory_romantic_chaperon_i00"
+			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27148" type="Armor" name="Romantic Chapeau - LUC + Critical Damage" icon="icon.accessory_romantic_chaperon_i00"
+			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27149" type="Armor" name="Romantic Chapeau - CHA + Critical Damage" icon="icon.accessory_romantic_chaperon_i00"
+			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27150" type="Armor" name="Romantic Chapeau - LUC + P. Def." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27151" type="Armor" name="Romantic Chapeau - CHA + P. Def." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27152" type="Armor" name="Romantic Chapeau - LUC + M. Def." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27153" type="Armor" name="Romantic Chapeau - CHA + M. Def." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27154" type="Armor" name="Romantic Chapeau - LUC + Evasion" icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27155" type="Armor" name="Romantic Chapeau - CHA + Evasion" icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27156" type="Armor" name="Romantic Chapeau - LUC + P. Atk." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27157" type="Armor" name="Romantic Chapeau - CHA + P. Atk." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27158" type="Armor" name="Romantic Chapeau - LUC + M. Atk." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27159" type="Armor" name="Romantic Chapeau - CHA + M. Atk." icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27160" type="Armor" name="Romantic Chapeau - LUC + Accuracy" icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27161" type="Armor" name="Romantic Chapeau - CHA + Accuracy" icon="icon.accessory_romantic_chaperon_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27162" type="Armor" name="Angel Circlet - LUC + Critical Rate" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27163" type="Armor" name="Angel Circlet - CHA + Critical Rate" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27164" type="Armor" name="Angel Circlet - LUC + Critical Damage" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27165" type="Armor" name="Angel Circlet - CHA + Critical Damage" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27166" type="Armor" name="Angel Circlet - LUC + P. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27167" type="Armor" name="Angel Circlet - CHA + P. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27168" type="Armor" name="Angel Circlet - LUC + M. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27169" type="Armor" name="Angel Circlet - CHA + M. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27170" type="Armor" name="Angel Circlet - LUC + Evasion" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27171" type="Armor" name="Angel Circlet - CHA + Evasion" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27172" type="Armor" name="Angel Circlet - LUC + P. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27173" type="Armor" name="Angel Circlet - CHA + P. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27174" type="Armor" name="Angel Circlet - LUC + M. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27175" type="Armor" name="Angel Circlet - CHA + M. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27176" type="Armor" name="Angel Circlet - LUC + Accuracy" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27177" type="Armor" name="Angel Circlet - CHA + Accuracy" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27178" type="Armor" name="Demon Circlet - LUC + Critical Rate" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27179" type="Armor" name="Demon Circlet - CHA + Critical Rate" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27180" type="Armor" name="Demon Circlet - LUC + Critical Damage" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27181" type="Armor" name="Demon Circlet - CHA + Critical Damage" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27182" type="Armor" name="Demon Circlet - LUC + P. Def." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27183" type="Armor" name="Demon Circlet - CHA + P. Def." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27184" type="Armor" name="Demon Circlet - LUC + M. Def." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27185" type="Armor" name="Demon Circlet - CHA + M. Def." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27186" type="Armor" name="Demon Circlet - LUC + Evasion" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27187" type="Armor" name="Demon Circlet - CHA + Evasion" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27188" type="Armor" name="Demon Circlet - LUC + P. Atk." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27189" type="Armor" name="Demon Circlet - CHA + P. Atk." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27190" type="Armor" name="Demon Circlet - LUC + M. Atk." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27191" type="Armor" name="Demon Circlet - CHA + M. Atk." icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27192" type="Armor" name="Demon Circlet - LUC + Accuracy" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27193" type="Armor" name="Demon Circlet - CHA + Accuracy" icon="icon.Accessary_demon_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27194" type="Armor" name="Pirate's Eyepatch - LUC + Critical Rate" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27195" type="Armor" name="Pirate's Eyepatch - CHA + Critical Rate" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27196" type="Armor" name="Pirate's Eyepatch - LUC + Critical Damage" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27197" type="Armor" name="Pirate's Eyepatch - CHA + Critical Damage" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27198" type="Armor" name="Pirate's Eyepatch - LUC + P. Def." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27199" type="Armor" name="Pirate's Eyepatch - CHA + P. Def." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27200" type="Armor" name="Pirate's Eyepatch - LUC + M. Def." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27201" type="Armor" name="Pirate's Eyepatch - CHA + M. Def." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27202" type="Armor" name="Pirate's Eyepatch - LUC + Evasion" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27203" type="Armor" name="Pirate's Eyepatch - CHA + Evasion" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27204" type="Armor" name="Pirate's Eyepatch - LUC + P. Atk." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27205" type="Armor" name="Pirate's Eyepatch - CHA + P. Atk." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27206" type="Armor" name="Pirate's Eyepatch - LUC + M. Atk." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27207" type="Armor" name="Pirate's Eyepatch - CHA + M. Atk." icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27208" type="Armor" name="Pirate's Eyepatch - LUC + Accuracy" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27209" type="Armor" name="Pirate's Eyepatch - CHA + Accuracy" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27210" type="Armor" name="Outlaw's Eyepatch - LUC + Critical Rate" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27211" type="Armor" name="Outlaw's Eyepatch - CHA + Critical Rate" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27212" type="Armor" name="Outlaw's Eyepatch - LUC + Critical Damage" icon="icon.accessory_outlaw_eyepatch_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27213" type="Armor" name="Outlaw's Eyepatch - CHA + Critical Damage" icon="icon.accessory_outlaw_eyepatch_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27214" type="Armor" name="Outlaw's Eyepatch - LUC + P. Def." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27215" type="Armor" name="Outlaw's Eyepatch - CHA + P. Def." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27216" type="Armor" name="Outlaw's Eyepatch - LUC + M. Def." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27217" type="Armor" name="Outlaw's Eyepatch - CHA + M. Def." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27218" type="Armor" name="Outlaw's Eyepatch - LUC + Evasion" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27219" type="Armor" name="Outlaw's Eyepatch - CHA + Evasion" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27220" type="Armor" name="Outlaw's Eyepatch - LUC + P. Atk." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27221" type="Armor" name="Outlaw's Eyepatch - CHA + P. Atk." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27222" type="Armor" name="Outlaw's Eyepatch - LUC + M. Atk." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27223" type="Armor" name="Outlaw's Eyepatch - CHA + M. Atk." icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27224" type="Armor" name="Outlaw's Eyepatch - LUC + Accuracy" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27225" type="Armor" name="Outlaw's Eyepatch - CHA + Accuracy" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27226" type="Armor" name="Eyepatch - LUC + Critical Rate" icon="icon.Accessary_one_eye_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27227" type="Armor" name="Eyepatch - CHA + Critical Rate" icon="icon.Accessary_one_eye_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27228" type="Armor" name="Eyepatch - LUC + Critical Damage" icon="icon.Accessary_one_eye_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27229" type="Armor" name="Eyepatch - CHA + Critical Damage" icon="icon.Accessary_one_eye_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27230" type="Armor" name="Eyepatch - LUC + P. Def." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27231" type="Armor" name="Eyepatch - CHA + P. Def." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27232" type="Armor" name="Eyepatch - LUC + M. Def." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27233" type="Armor" name="Eyepatch - CHA + M. Def." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27234" type="Armor" name="Eyepatch - LUC + Evasion" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27235" type="Armor" name="Eyepatch - CHA + Evasion" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27236" type="Armor" name="Eyepatch - LUC + P. Atk." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27237" type="Armor" name="Eyepatch - CHA + P. Atk." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27238" type="Armor" name="Eyepatch - LUC + M. Atk." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27239" type="Armor" name="Eyepatch - CHA + M. Atk." icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27240" type="Armor" name="Eyepatch - LUC + Accuracy" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27241" type="Armor" name="Eyepatch - CHA + Accuracy" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27242" type="Armor" name="Party Hat - LUC + Critical Rate" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27243" type="Armor" name="Party Hat - CHA + Critical Rate" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27244" type="Armor" name="Party Hat - LUC + Critical Damage" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27245" type="Armor" name="Party Hat - CHA + Critical Damage" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27246" type="Armor" name="Party Hat - LUC + P. Def." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27247" type="Armor" name="Party Hat - CHA + P. Def." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27248" type="Armor" name="Party Hat - LUC + M. Def." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27249" type="Armor" name="Party Hat - CHA + M. Def." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27250" type="Armor" name="Party Hat - LUC + Evasion" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27251" type="Armor" name="Party Hat - CHA + Evasion" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27252" type="Armor" name="Party Hat - LUC + P. Atk." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27253" type="Armor" name="Party Hat - CHA + P. Atk." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27254" type="Armor" name="Party Hat - LUC + M. Atk." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27255" type="Armor" name="Party Hat - CHA + M. Atk." icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27256" type="Armor" name="Party Hat - LUC + Accuracy" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27257" type="Armor" name="Party Hat - CHA + Accuracy" icon="icon.accessory_party_hat_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27258" type="Armor" name="Refined Angel Ring - LUC + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27259" type="Armor" name="Refined Angel Ring - CHA + Critical Rate" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27260" type="Armor" name="Refined Angel Ring - LUC + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27261" type="Armor" name="Refined Angel Ring - CHA + Critical Damage" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27262" type="Armor" name="Refined Angel Ring - LUC + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27263" type="Armor" name="Refined Angel Ring - CHA + P. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27264" type="Armor" name="Refined Angel Ring - LUC + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27265" type="Armor" name="Refined Angel Ring - CHA + M. Def." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27266" type="Armor" name="Refined Angel Ring - LUC + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27267" type="Armor" name="Refined Angel Ring - CHA + Evasion" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27268" type="Armor" name="Refined Angel Ring - LUC + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27269" type="Armor" name="Refined Angel Ring - CHA + P. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27270" type="Armor" name="Refined Angel Ring - LUC + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27271" type="Armor" name="Refined Angel Ring - CHA + M. Atk." icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27272" type="Armor" name="Refined Angel Ring - LUC + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27273" type="Armor" name="Refined Angel Ring - CHA + Accuracy" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27274" type="Armor" name="Refined Devil Horn - LUC + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Critical Rate + 50 when equipped. -->
+	<item id="27275" type="Armor" name="Refined Devil Horn - CHA + Critical Rate" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27276" type="Armor" name="Refined Devil Horn - LUC + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3, P. Critical Damage + 90, and M. Critical Damage + 68 when equipped. -->
+	<item id="27277" type="Armor" name="Refined Devil Horn - CHA + Critical Damage" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Def. + 5% when equipped. -->
+	<item id="27278" type="Armor" name="Refined Devil Horn - LUC + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Def. + 5% when equipped. -->
+	<item id="27279" type="Armor" name="Refined Devil Horn - CHA + P. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Def. + 5% when equipped. -->
+	<item id="27280" type="Armor" name="Refined Devil Horn - LUC + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Def. + 5% when equipped. -->
+	<item id="27281" type="Armor" name="Refined Devil Horn - CHA + M. Def." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Evasion + 5 when equipped. -->
+	<item id="27282" type="Armor" name="Refined Devil Horn - LUC + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Evasion + 5 when equipped. -->
+	<item id="27283" type="Armor" name="Refined Devil Horn - CHA + Evasion" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27284" type="Armor" name="Refined Devil Horn - LUC + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and P. Atk. + 5% when equipped. -->
+	<item id="27285" type="Armor" name="Refined Devil Horn - CHA + P. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27286" type="Armor" name="Refined Devil Horn - LUC + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and M. Atk. + 10% when equipped. -->
+	<item id="27287" type="Armor" name="Refined Devil Horn - CHA + M. Atk." icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- LUC + 3 and Accuracy + 5 when equipped. -->
+	<item id="27288" type="Armor" name="Refined Devil Horn - LUC + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CHA + 3 and Accuracy + 5 when equipped. -->
+	<item id="27289" type="Armor" name="Refined Devil Horn - CHA + Accuracy" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 3%. -->
+	<item id="27290" type="Armor" name="Pirate Captain Outfit - Low-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 5%. -->
+	<item id="27291" type="Armor" name="Pirate Captain Outfit - Low-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 3%. -->
+	<item id="27292" type="Armor" name="Pirate Captain Outfit - Low-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 3%. -->
+	<item id="27293" type="Armor" name="Pirate Captain Outfit - Low-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 3%. -->
+	<item id="27294" type="Armor" name="Pirate Captain Outfit - Low-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 5. -->
+	<item id="27295" type="Armor" name="Pirate Captain Outfit - Low-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 3%. -->
+	<item id="27296" type="Armor" name="Pirate Captain Outfit - Low-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 3%. -->
+	<item id="27297" type="Armor" name="Pirate Captain Outfit - Low-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 3%. -->
+	<item id="27298" type="Armor" name="Pirate Captain Outfit - Low-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 3%. -->
+	<item id="27299" type="Armor" name="Pirate Captain Outfit - Low-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 3. -->
+	<item id="27300" type="Armor" name="Pirate Captain Outfit - Low-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 5. -->
+	<item id="27301" type="Armor" name="Pirate Captain Outfit - Low-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 3. -->
+	<item id="27302" type="Armor" name="Pirate Captain Outfit - Low-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 3. -->
+	<item id="27303" type="Armor" name="Pirate Captain Outfit - Low-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 5%. -->
+	<item id="27304" type="Armor" name="Pirate Captain Outfit - Mid-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 7%. -->
+	<item id="27305" type="Armor" name="Pirate Captain Outfit - Mid-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 5%. -->
+	<item id="27306" type="Armor" name="Pirate Captain Outfit - Mid-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 5%. -->
+	<item id="27307" type="Armor" name="Pirate Captain Outfit - Mid-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 5%. -->
+	<item id="27308" type="Armor" name="Pirate Captain Outfit - Mid-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 7. -->
+	<item id="27309" type="Armor" name="Pirate Captain Outfit - Mid-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 7%. -->
+	<item id="27310" type="Armor" name="Pirate Captain Outfit - Mid-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 7%. -->
+	<item id="27311" type="Armor" name="Pirate Captain Outfit - Mid-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 7%. -->
+	<item id="27312" type="Armor" name="Pirate Captain Outfit - Mid-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 7%. -->
+	<item id="27313" type="Armor" name="Pirate Captain Outfit - Mid-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 7. -->
+	<item id="27314" type="Armor" name="Pirate Captain Outfit - Mid-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 8. -->
+	<item id="27315" type="Armor" name="Pirate Captain Outfit - Mid-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 4. -->
+	<item id="27316" type="Armor" name="Pirate Captain Outfit - Mid-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 4. -->
+	<item id="27317" type="Armor" name="Pirate Captain Outfit - Mid-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 10%. -->
+	<item id="27318" type="Armor" name="Pirate Captain Outfit - Top-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 15%. -->
+	<item id="27319" type="Armor" name="Pirate Captain Outfit - Top-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 10%. -->
+	<item id="27320" type="Armor" name="Pirate Captain Outfit - Top-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 10%. -->
+	<item id="27321" type="Armor" name="Pirate Captain Outfit - Top-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 10%. -->
+	<item id="27322" type="Armor" name="Pirate Captain Outfit - Top-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 15. -->
+	<item id="27323" type="Armor" name="Pirate Captain Outfit - Top-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 15%. -->
+	<item id="27324" type="Armor" name="Pirate Captain Outfit - Top-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 15%. -->
+	<item id="27325" type="Armor" name="Pirate Captain Outfit - Top-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 10%. -->
+	<item id="27326" type="Armor" name="Pirate Captain Outfit - Top-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 15%. -->
+	<item id="27327" type="Armor" name="Pirate Captain Outfit - Top-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 15. -->
+	<item id="27328" type="Armor" name="Pirate Captain Outfit - Top-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 16. -->
+	<item id="27329" type="Armor" name="Pirate Captain Outfit - Top-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 8. -->
+	<item id="27330" type="Armor" name="Pirate Captain Outfit - Top-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate Captain's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 8. -->
+	<item id="27331" type="Armor" name="Pirate Captain Outfit - Top-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_captain_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 3%. -->
+	<item id="27332" type="Armor" name="Pirate Crew Outfit - Low-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 5%. -->
+	<item id="27333" type="Armor" name="Pirate Crew Outfit - Low-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 3%. -->
+	<item id="27334" type="Armor" name="Pirate Crew Outfit - Low-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 3%. -->
+	<item id="27335" type="Armor" name="Pirate Crew Outfit - Low-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 3%. -->
+	<item id="27336" type="Armor" name="Pirate Crew Outfit - Low-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 5. -->
+	<item id="27337" type="Armor" name="Pirate Crew Outfit - Low-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 3%. -->
+	<item id="27338" type="Armor" name="Pirate Crew Outfit - Low-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 3%. -->
+	<item id="27339" type="Armor" name="Pirate Crew Outfit - Low-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 3%. -->
+	<item id="27340" type="Armor" name="Pirate Crew Outfit - Low-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 3%. -->
+	<item id="27341" type="Armor" name="Pirate Crew Outfit - Low-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 3. -->
+	<item id="27342" type="Armor" name="Pirate Crew Outfit - Low-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 5. -->
+	<item id="27343" type="Armor" name="Pirate Crew Outfit - Low-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 3. -->
+	<item id="27344" type="Armor" name="Pirate Crew Outfit - Low-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 3. -->
+	<item id="27345" type="Armor" name="Pirate Crew Outfit - Low-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 5%. -->
+	<item id="27346" type="Armor" name="Pirate Crew Outfit - Mid-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 7%. -->
+	<item id="27347" type="Armor" name="Pirate Crew Outfit - Mid-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 5%. -->
+	<item id="27348" type="Armor" name="Pirate Crew Outfit - Mid-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 5%. -->
+	<item id="27349" type="Armor" name="Pirate Crew Outfit - Mid-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 5%. -->
+	<item id="27350" type="Armor" name="Pirate Crew Outfit - Mid-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 7. -->
+	<item id="27351" type="Armor" name="Pirate Crew Outfit - Mid-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 7%. -->
+	<item id="27352" type="Armor" name="Pirate Crew Outfit - Mid-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 7%. -->
+	<item id="27353" type="Armor" name="Pirate Crew Outfit - Mid-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 7%. -->
+	<item id="27354" type="Armor" name="Pirate Crew Outfit - Mid-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 7%. -->
+	<item id="27355" type="Armor" name="Pirate Crew Outfit - Mid-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 7. -->
+	<item id="27356" type="Armor" name="Pirate Crew Outfit - Mid-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 8. -->
+	<item id="27357" type="Armor" name="Pirate Crew Outfit - Mid-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 4. -->
+	<item id="27358" type="Armor" name="Pirate Crew Outfit - Mid-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 4. -->
+	<item id="27359" type="Armor" name="Pirate Crew Outfit - Mid-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 10%. -->
+	<item id="27360" type="Armor" name="Pirate Crew Outfit - Top-grade / Debuff Reflect" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Damage Reflect Resistance + 15%. -->
+	<item id="27361" type="Armor" name="Pirate Crew Outfit - Top-grade / Damage Reflect Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Bow/Crossbow Resistance + 10%. -->
+	<item id="27362" type="Armor" name="Pirate Crew Outfit - Top-grade / Ranged Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, P. Def. + 10%. -->
+	<item id="27363" type="Armor" name="Pirate Crew Outfit - Top-grade / P. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, M. Def. + 10%. -->
+	<item id="27364" type="Armor" name="Pirate Crew Outfit - Top-grade / M. Def. Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Attribute Resistance + 15. -->
+	<item id="27365" type="Armor" name="Pirate Crew Outfit - Top-grade / Attribute Resistance" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Received Heal Amount + 15%. -->
+	<item id="27366" type="Armor" name="Pirate Crew Outfit - Top-grade / Received Heal Amount Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max HP + 15%. -->
+	<item id="27367" type="Armor" name="Pirate Crew Outfit - Top-grade / Max. HP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max MP + 10%. -->
+	<item id="27368" type="Armor" name="Pirate Crew Outfit - Top-grade / Max. MP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Max CP + 15%. -->
+	<item id="27369" type="Armor" name="Pirate Crew Outfit - Top-grade / Max CP Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Speed + 15. -->
+	<item id="27370" type="Armor" name="Pirate Crew Outfit - Top-grade / Speed Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, HP Recovery Bonus + 16. -->
+	<item id="27371" type="Armor" name="Pirate Crew Outfit - Top-grade / HP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, MP Recovery Bonus + 8. -->
+	<item id="27372" type="Armor" name="Pirate Crew Outfit - Top-grade / MP Recovery Bonus Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Pirate crew memeber's outfit. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified,  P./M. Evasion + 8. -->
+	<item id="27373" type="Armor" name="Pirate Crew Outfit - Top-grade / Evasion Increase" icon="BranchSys3.iconArmor.g_co_pirate_i00"
+			defaultAction="equip" bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 3%. -->
+	<item id="27374" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 5%. -->
+	<item id="27375" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 3%. -->
+	<item id="27376" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 3%. -->
+	<item id="27377" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 3%. -->
+	<item id="27378" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 5. -->
+	<item id="27379" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 3%. -->
+	<item id="27380" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 3%. -->
+	<item id="27381" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 3%. -->
+	<item id="27382" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 3%. -->
+	<item id="27383" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 3. -->
+	<item id="27384" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 5. -->
+	<item id="27385" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 3. -->
+	<item id="27386" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 3. -->
+	<item id="27387" type="EtcItem" name="Pirate Captain Appeareance Stone - Low-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 5%. -->
+	<item id="27388" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 7%. -->
+	<item id="27389" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 5%. -->
+	<item id="27390" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 5%. -->
+	<item id="27391" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 5%. -->
+	<item id="27392" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 7. -->
+	<item id="27393" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 7%. -->
+	<item id="27394" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 7%. -->
+	<item id="27395" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 5%. -->
+	<item id="27396" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 7%. -->
+	<item id="27397" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 7. -->
+	<item id="27398" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 8. -->
+	<item id="27399" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 4. -->
+	<item id="27400" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 4. -->
+	<item id="27401" type="EtcItem" name="Pirate Captain Appeareance Stone - Mid-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 10%. -->
+	<item id="27402" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 15%. -->
+	<item id="27403" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 10%. -->
+	<item id="27404" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 10%. -->
+	<item id="27405" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 10%. -->
+	<item id="27406" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 15. -->
+	<item id="27407" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 15%. -->
+	<item id="27408" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 15%. -->
+	<item id="27409" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 10%. -->
+	<item id="27410" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 15%. -->
+	<item id="27411" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 15. -->
+	<item id="27412" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 16. -->
+	<item id="27413" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 8. -->
+	<item id="27414" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Captain. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Captain. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 8. -->
+	<item id="27415" type="EtcItem" name="Pirate Captain Appeareance Stone - Top-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 3%. -->
+	<item id="27416" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 5%. -->
+	<item id="27417" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 3%. -->
+	<item id="27418" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 3%. -->
+	<item id="27419" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 3%. -->
+	<item id="27420" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 5. -->
+	<item id="27421" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 3%. -->
+	<item id="27422" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 3%. -->
+	<item id="27423" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 3%. -->
+	<item id="27424" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 3%. -->
+	<item id="27425" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 3. -->
+	<item id="27426" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 5. -->
+	<item id="27427" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 3. -->
+	<item id="27428" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 3. -->
+	<item id="27429" type="EtcItem" name="Pirate Crew Appeareance Stone - Low-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 5%. -->
+	<item id="27430" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 7%. -->
+	<item id="27431" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 5%. -->
+	<item id="27432" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 5%. -->
+	<item id="27433" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 5%. -->
+	<item id="27434" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 7. -->
+	<item id="27435" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 7%. -->
+	<item id="27436" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 7%. -->
+	<item id="27437" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 5%. -->
+	<item id="27438" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 7%. -->
+	<item id="27439" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 7. -->
+	<item id="27440" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 8. -->
+	<item id="27441" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 4. -->
+	<item id="27442" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 4. -->
+	<item id="27443" type="EtcItem" name="Pirate Crew Appeareance Stone - Mid-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Debuff Reflect + 10%. -->
+	<item id="27444" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Debuff Reflect" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Debuff Reflect Resistance + 15%. -->
+	<item id="27445" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Damage Reflect Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Bow/Crossbow Resistance + 10%. -->
+	<item id="27446" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Ranged Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P. Def. + 10%. -->
+	<item id="27447" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / P. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  M. Def. + 10%. -->
+	<item id="27448" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / M. Def. Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Attribute Resistance + 15. -->
+	<item id="27449" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Attribute Resistance" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Received Heal Amoun + 15%. -->
+	<item id="27450" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Received Heal Amount Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max HP + 15%. -->
+	<item id="27451" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Max. HP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max MP + 10%. -->
+	<item id="27452" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Max. MP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  Max CP + 15%. -->
+	<item id="27453" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Max CP Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified, Speed + 15. -->
+	<item id="27454" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Speed Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  HP Recovery Bonus + 16. -->
+	<item id="27455" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / HP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  MP Recovery Bonus + 8. -->
+	<item id="27456" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / MP Recovery Bonus Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of a Pirate Crew Member. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Pirate Crew Member. Appearance is restored through the use of a Restoration Stone. When modified,  P./M. Evasion + 8. -->
+	<item id="27457" type="EtcItem" name="Pirate Crew Appeareance Stone - Top-grade / Evasion Increase" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
+	</item>
+	<!-- Double-click to get one Rabbit Ears with 2 types of effects. -->
+	<item id="27458" type="EtcItem" name="Rabbit Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Raccoon Ears with 2 types of effects. -->
+	<item id="27459" type="EtcItem" name="Raccoon Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Cat Ears with 2 types of effects. -->
+	<item id="27460" type="EtcItem" name="Cat Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Romantic Chapeau with 2 types of effects. -->
+	<item id="27461" type="EtcItem" name="Romantic Chapeau Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one Angel Circlet with 2 types of effects. -->
+	<item id="27462" type="EtcItem" name="Angel Circlet Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Demon Circlet with 2 types of effects. -->
+	<item id="27463" type="EtcItem" name="Demon Circlet Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Pirate's Eyepatch with 2 types of effects. -->
+	<item id="27464" type="EtcItem" name="Pirate's Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one Outlaw's Eyepatch with 2 types of effects. -->
+	<item id="27465" type="EtcItem" name="Outlaw's Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one Eyepatch with 2 types of effects. -->
+	<item id="27466" type="EtcItem" name="Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Party Hat with 2 types of effects. -->
+	<item id="27467" type="EtcItem" name="Party Hat Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get one Refined Angel Ring with 2 types of effects. -->
+	<item id="27468" type="EtcItem" name="Refined Angel Ring Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one Refined Devil Horn with 2 types of effects. -->
+	<item id="27469" type="EtcItem" name="Refined Devil Horn Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. Has a very low chance of obtaining a Radiant Gemstone Fragment or a La Vie En Rose's Radiant Brooch. -->
+	<item id="27470" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 25% and decreases Vitality Point Consumption Speed by 7%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="27471" type="Armor" name="Vital Stone - Lv. 4" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="27472" type="Armor" name="Vital Stone - Lv. 5" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 30%. Cancels your debuffs. Effect does not stack with additional jewels of the same type. -->
+	<item id="27473" type="Armor" name="Garnet - Lv. 5" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 5,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="27474" type="Armor" name="Tanzanite - Lv. 1" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 10,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="27475" type="Armor" name="Tanzanite - Lv. 2" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 15,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="27476" type="Armor" name="Tanzanite - Lv. 3" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 30,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="27477" type="Armor" name="Tanzanite - Lv. 4" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="27478" type="Armor" name="Tanzanite - Lv. 5" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Tanzanite. -->
+	<item id="27479" type="EtcItem" name="La Vie En Rose's Tanzanite Chest" icon="icon.etc_bm_jewelbox_tanzanite" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="27480" type="Armor" name="Vital Stone - Lv. 1" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 6%. Effect does not stack with additional jewels of the same type. -->
+	<item id="27481" type="Armor" name="Vital Stone - Lv. 2" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 12%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="27482" type="Armor" name="Vital Stone - Lv. 3" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Vital Stone. -->
+	<item id="27483" type="EtcItem" name="La Vie En Rose's Vital Stone Chest" icon="icon.etc_bm_jewelbox_vital" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. Only usable when 1 or more Vitality slot is full. Cannot be used in the Olympiad. Deleted after event. -->
+	<item id="27484" type="EtcItem" name="Maphr's Wind Scroll - Event" icon="icon.freya_scroll" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 solo dungeon. Deleted after event. -->
+	<item id="27485" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 solo dungeon. Deleted after event. -->
+	<item id="27486" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 solo dungeon. Deleted after event. -->
+	<item id="27487" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 party dungeon. Deleted after event. -->
+	<item id="27488" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 party dungeon. Deleted after event. -->
+	<item id="27489" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 party dungeon. Deleted after event. -->
+	<item id="27490" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party - Event" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Antharas' Earring, Valakas' Necklace, Baium's Ring, Zaken's Earring, Queen Ant's Ring, Frintezza's Necklace, Orfen's Earring, Freya's Necklace. -->
+	<item id="27491" type="EtcItem" name="Rare Accessory Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Baium's Soul Ring, Frintezza's Soul Necklace, Blessed Antharas's Earring, Blessed Valakas's Necklace, Blessed Freya's Necklace, Queen Ant's Soul Ring, Orfen's Soul Earring, Blessed Zaken's Earring, Lilith's Soul Necklace, Lindvior's Earring, Earth Wyrm Heart Ring, Tauti's Ring. -->
+	<item id="27492" type="EtcItem" name="Greater Rare Accessory Pack - Underground" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Bottle of Freya's Soul, Bottle of Antharas' Soul, Bottle of Valakas' Soul, Bottle of Queen Ant's Soul, Bottle of Orfen's Soul, Bottle of Frintezza's Soul, Bottle of Baium's Soul. -->
+	<item id="27493" type="EtcItem" name="Soul Bottle Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Soul Crystal Coupon Stage 1-5. -->
+	<item id="27494" type="EtcItem" name="Soul Crystal Coupon Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain either a Talisman - Abudance or a Recipe: Talisman - Abundance (High-grade). -->
+	<item id="27495" type="EtcItem" name="Talisman - Abundance Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain Spirit Stone. -->
+	<item id="27496" type="EtcItem" name="Spirit Stone Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a hair accessory. -->
+	<item id="27497" type="EtcItem" name="Hair Accessory Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a pendant. -->
+	<item id="27498" type="EtcItem" name="Pendant Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27499" type="EtcItem" name="Ingredient Box - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Crystal, a Super Attribute Stone, or a Super Attribute Crystal. -->
+	<item id="27500" type="EtcItem" name="Attribute Stone Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Super Attribute Stone or a Super Crystal. -->
+	<item id="27501" type="EtcItem" name="Greater Attribute Stone Pack - Underground" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain an Enchant Scroll Pack (R-grade), a Blessed Enchant Scroll, a Giant's Enchant Scroll, a Scroll: Enchant Hair Accessory, or a Destruction Enchant Scroll. -->
+	<item id="27502" type="EtcItem" name="Enchant Scroll Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Blessed Enchant Scroll or a Destruction Enchant Scroll. -->
+	<item id="27503" type="EtcItem" name="Greater Enchant Scroll Pack - Underground" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Blessed Lucky Enchant Stone (R-grade), a Giant's Lucky Enchant Stone, or a regular Lucky Enchant Stone. -->
+	<item id="27504" type="EtcItem" name="Lucky Enchant Stone Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Blessed Lucky Enchant Stone (R-grade), Giant's Lucky Enchant Stone, regular Lucky Enchant Stone, Blessed Greater Lucky Enchant Stone, Wind Lucky Enchant Stone, regular Greater Lucky Enchant Stone. -->
+	<item id="27505" type="EtcItem" name="Greater Lucky Enchant Stone Pack - Underground" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Rare Accessory pack, Soul Crystal Coupon Pack, Talisman - Abundance Pack, Spirit Stone Pack, Hair Accessory Pack, Pendant Pack, Enchant Scroll Pack, Attribute Stone Pack, Ingredient Box, Lucky Enchant Stone Pack. -->
+	<item id="27506" type="EtcItem" name="Treasure Chest - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the foolowing: Rare Accessory Pack, Soul Bottle Pack, Greater Rare Accessory Pack, Talisman - Abundance Pack, Pendant Pack, Greater Enchant Scroll Pack, Greater Attribute Stone Pack, Greater Lucky Enchant Stone Pack. -->
+	<item id="27507" type="EtcItem" name="Hero's Treasure Chest - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the basic Talisman - Abundance. -->
+	<item id="27508" type="EtcItem" name="Talisman - Abundance Pack - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain one of the following: Rare Accessory Pack, Soul Crystal Coupon Pack, Talisman - Abundance Pack, Spirit Stone Pack, Hair Accessory Pack, Pendant Pack, Enchant Scroll Pack, Attribute Stone Pack, Ingredient Box, Lucky Enchant Stone Pack. -->
+	<item id="27509" type="EtcItem" name="Treasure Chest - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain one of the following: Rare Accessory Pack, Soul Bottle pack, Greater Rare Accessory Box, Talisman - Abundance Pack, Pendant Pack, Greater Enchant Scroll Pack, Greater Attribute Stone Pack, Greater Lucky Enchant Stone Pack. -->
+	<item id="27510" type="EtcItem" name="Hero's Treasure Chest - Underground" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Novice Adventurer's shirt. M. Def. + 11 when equipped. -->
+	<item id="27511" type="Armor" name="Novice Adventurer's Shirt" icon="icon.etc_shirts_none_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="130">
+	</item>
+	<!-- Novice Adventurer's brass-hued hair accessory. Requires 2 hair accessory slots. Critical Rate + 10 when equipped. -->
+	<item id="27512" type="Armor" name="Novice Adventurer's Circlet" icon="icon.accessory_au_karm_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Novice Adventurer's bracelet. MP + 60 and uses 3 talisman slots when equipped. -->
+	<item id="27513" type="Armor" name="Novice Adventurer's Bracelet" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1">
+	</item>
+	<!-- Support box containing a Novice Adventurer's Shirt, Circlet, and Bracelet. -->
+	<item id="27514" type="EtcItem" name="Novice Adventurer's Support Box" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- Experienced Adventurer's shirt. M. Def. + 12 and CON + 2 when equipped. -->
+	<item id="27515" type="Armor" name="Experienced Adventurer's Shirt" icon="icon.etc_shirts_c_i02" defaultAction="equip" bodypart="none"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="130">
+	</item>
+	<!-- Experienced Adventurer's silver-hued hair accessory. Requires 2 hair accessory slots. Critical Rate + 20 when equipped. -->
+	<item id="27516" type="Armor" name="Experienced Adventurer's Circlet" icon="icon.accessory_ar_karm_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Experienced Adventurer's bracelet. MP + 90 and uses 3 talisman slots when equipped. -->
+	<item id="27517" type="Armor" name="Experienced Adventurer's Bracelet" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1">
+	</item>
+	<!-- Support box containing an Experienced Adventurer's Shirt, Circlet, and Bracelet. -->
+	<item id="27518" type="EtcItem" name="Experienced Adventurer's Support Box" icon="icon.etc_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- Adventurer's shirt. INT + 2, STR + 2, Speed + 7 when equipped. -->
+	<item id="27519" type="Armor" name="Adventurer's Shirt" icon="BranchIcon.icon.shirt_of_explorer_i00" defaultAction="equip"
+			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="none" weight="130">
+	</item>
+	<!-- Adventurer's circlet. Requires 2 hair accessory slots. P. Atk. + 3%, M. Atk. + 5% when equipped. -->
+	<item id="27520" type="Armor" name="Adventurer's Circlet" icon="BranchSys.icon.br_valkyrie_cap_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Adventurer's Bracelet. STR/DEX/CON/INT/WIT/MEN + 1 and uses 3 talisman slots when equipped. -->
+	<item id="27521" type="Armor" name="Adventurer's Bracelet" icon="BranchIcon.icon.bracelet_of_explorer_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1">
+	</item>
+	<!-- Cube that can be used for 30 days. Double-click to get one of the following: Specter weapon / Seraph armor / (Blessed) Scroll: Enchant Weapon (R-grade) / (Blessed) Scroll: Enchant Armor (R-grade) / Spirit Stone / Attribute Crystal. (Can only be used once a-day) -->
+	<item id="27522" type="EtcItem" name="Support Cube - 30-day" icon="Branchsys2.icon.cube_event_i02" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Support box containing a Adventurer's Shirt, Circlet, Bracelet and Support Cube. -->
+	<item id="27523" type="EtcItem" name="Adventurer's Support Box" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Double-click to get a Talisman - Abundance (War, Tactics, Morale, or Physique.) -->
+	<item id="27524" type="EtcItem" name="Talisman - Abundance Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Take it to the Dimensional Merchant to exchange for a Requiem weapon. -->
+	<item id="27525" type="EtcItem" name="Requiem Weapon Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Take it to the Dimensional Merchant to exchange for an Immortal armor set box. -->
+	<item id="27526" type="EtcItem" name="Immortal Armor Set Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
+			crystalType="c" weight="1" isStackable="true">
+	</item>
+	<!-- Can acquire immortal heavy armor. -->
+	<item id="27527" type="EtcItem" name="Immortal Heavy Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Can acquire immortal light armor. -->
+	<item id="27528" type="EtcItem" name="Immortal Light Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Can acquire Immortal Robe Armor. -->
+	<item id="27529" type="EtcItem" name="Immortal Robe Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Pack containing Scrolls of Escape for Alligator Island/Outlaw Forest/Sea of Spores/Forsaken Plains/Fields of Massacre/Swamp of Screams/Forest of the Dead/Wall of Argos/Varka Silenos Barracks/Ketra Orc Outpost/Den of Evil/Sel Mahum Training Grounds/Plains of the Lizardmen/Field of Silence/ Field of Whispers. -->
+	<item id="27530" type="EtcItem" name="Scroll of Escape Pack" icon="icon.etc_pi_gift_box_i00" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Diana's onyx earring. Take it to Diana in the Talking Island Village. -->
+	<item id="27531" type="EtcItem" name="Diana's Earring - Quest" icon="icon.accessary_mage_earing_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Diana's sapphire ring. Take it to Diana in the Talking Island Village. -->
+	<item id="27532" type="EtcItem" name="Diana's Ring - Quest" icon="icon.accessary_ring_of_binding_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Diana's ruby necklace. Take it to Diana in the Talking Island Village. -->
+	<item id="27533" type="EtcItem" name="Diana's Necklace - Quest" icon="icon.item_normal142" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Diana's recommendation. You can participate in the Miss/Mr. event. -->
+	<item id="27534" type="EtcItem" name="Diana's Recommendation - Event" icon="icon.etc_letter_envelope_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Shiny Elemental Shirt. -->
+	<item id="27535" type="EtcItem" name="+ 8 Shiny Elemental Shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Reflect Attack T-shirt. -->
+	<item id="27536" type="EtcItem" name="+ 8 Reflect Attack T-shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Reflect Magic T-shirt. -->
+	<item id="27537" type="EtcItem" name="+ 8 Reflect Magic T-shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 7 enchanted Bloody Amaranthine weapon. -->
+	<item id="27538" type="EtcItem" name="+ 7 Bloody Amaranthine Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get 2 Lv. 4 Obsidian, Opal, Emerald, or Diamond jewels. -->
+	<item id="27539" type="EtcItem" name="Lv. 4 Jewel Bundle" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- Put this item on the character that will receive the service, and send a support ticket on support.lineage2.com. Clan leaders only! -->
+	<item id="27540" type="EtcItem" name="Clan Name Change Ticket" icon="icon.etc_exchange_ticket_i02" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Bring this to the village symbol maker to imprint a 30-day magic symbol that boosts stats (Hold, Sleep, Paralysis, Mental Attack, Poison, Bleed, Stun Resistance + 20 / Buff-canceling Attack Resistance + 20 / 5% chance of reflecting physical and magical abnormal status). All classes. -->
+	<item id="27541" type="EtcItem" name="Mysterious Abnormal State Resistance Dye - Abnormal State/ Buff Cancellation Resistance,
+			Abnormal State Reflect, 30-day" icon="BranchSys3.icon1.g_premium_dye_etc_debuff" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to learn how to ride a Wolf. -->
+	<item id="27542" type="EtcItem" name="Riding Manual: Wolf" icon="icon.etc_kamael_skill_book_i01" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27543" type="EtcItem" name="Lv. 41 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27544" type="EtcItem" name="Lv. 53 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27545" type="EtcItem" name="Lv. 63 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27546" type="EtcItem" name="Lv. 77 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27547" type="EtcItem" name="Lv. 79 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27548" type="EtcItem" name="Lv. 80 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27549" type="EtcItem" name="Lv. 81 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27550" type="EtcItem" name="Lv. 83 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get Blessed Antharas' Earring, Blessed Valakas' Necklace, Tauti's Ring, Earth Wyrm Heart Ring, Ruler's Authority, and Lindvior's Earring for 30 days. -->
+	<item id="27551" type="EtcItem" name="Rare Accessory Pack" icon="icon.etc_pi_box_belief_pack" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Item given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36, and Attribute Resistance by 15. Cannot be used in the Olympiad. -->
+	<item id="27552" type="Armor" name="Ruler's Authority - 30-day" icon="icon.belt_rulers_authority" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="440">
+	</item>
+	<!-- Can summon Griffin when equipped. -->
+	<item id="27553" type="Armor" name="Agathion - Griffin - Premium" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!-- This Blessed Griffin Egg will be of great help to you. -->
+	<item id="27554" type="EtcItem" name="Blessed Griffin Egg - 1-day" icon="BranchSys3.Icon.g_threehead_source" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Take it to the Dimensional Merchant to exchange for one of the Lv. 3 Giant Dyes: STR, DEX, CON, INT, WIT, or MEN. -->
+	<item id="27555" type="EtcItem" name="Lv. 3 Giant Dye Exchange Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
+			crystalType="c" weight="1" isStackable="true">
+	</item>
+	<!-- Take it to the Dimensional Merchant to exchange for one of the Lv. 4 Legendary Dyes: STR, DEX, CON, INT, WIT, or MEN. -->
+	<item id="27556" type="EtcItem" name="Lv. 4 Legendary Dye Exchange Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
+			crystalType="c" weight="1" isStackable="true">
+	</item>
+	<!-- Lineage II baseball uniform. -->
+	<item id="27557" type="Armor" name="Lineage II Baseball Uniform" icon="icon.london_olympic_bikini" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="1000">
+	</item>
+	<!-- Lineage II baseball cap. -->
+	<item id="27558" type="Armor" name="Lineage II Baseball Cap" icon="icon.accessory_mining_cap_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Changes the appearance of the entire armor into that of the Lineage II Baseball Uniform. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of the Lineage II Baseball Uniform. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="27559" type="EtcItem" name="Lineage II Baseball Uniform Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory to that of the Lineage II Baseball Cap. Can only be used on hair accessories that use 2 slots. -->
+	<item id="27560" type="EtcItem" name="Lineage II Baseball Cap Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Obtain an Ultimate Support Cube (30-day). Cubes cannot be dropped or exchanged. -->
+	<item id="27561" type="EtcItem" name="Ultimate Support Cube Box" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Double-click to get the following: XP Rune IV (Lv. 1-99) 100% (7-day) x1, Venir's Talisman Stage 4 x1, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Radiant Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x5, Leona's Scroll: Buffs x10, Dandy's Scroll: Passion x10. -->
+	<item id="27562" type="EtcItem" name="Noble Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c" weight="100"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get the following: XP Rune IV (Lv. 1-99) 100% (7-day) x2, Requiem Weapon Coupon x1, Immortal Armor Set Coupon x1, Lv. 3 Giant Dye Exchange Coupon x10, Venir's Talisman Stage 6 x1, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Twinkling Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x10, Leona's Scroll: Buffs x20, Dandy's Scroll: Passion x20, Mysterious Abnormal State Resistance Dye (30-day) x1, Rare Accessory Pack (30-day) x1. -->
+	<item id="27563" type="EtcItem" name="Divine Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Double-click to get the following: Ultimate Support Cube x1, Requiem Weapon Coupon x1, Immortal Armor Set Coupon x1, Lv. 4 Legendary Dye Exchange Coupon x10, Venir's Talisman Stage 8 x1, XP Rune IV (Lv. 1-99) 100% (7-day) x4, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Giant's Energy 100-unit Pack x1, Energy of Destruction 100-unit Pack x1, Blessed Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x20, Leona's Scroll: Buffs x40, Dandy's Scroll: Passion x40, Mysterious Abnormal State Resistance Dye x1, Rare Accessory Pack x1, Riding Manual: Riding Wolf x1. -->
+	<item id="27564" type="EtcItem" name="Ultimate Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a C-grade Steel weapon. -->
+	<item id="27565" type="EtcItem" name="Weapon Pack (C-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to obtain a B-grade Steel weapon. -->
+	<item id="27566" type="EtcItem" name="Weapon Pack (B-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to obtain a A-grade Steel weapon. -->
+	<item id="27567" type="EtcItem" name="Weapon Pack (A-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to obtain a S-grade Steel weapon. -->
+	<item id="27568" type="EtcItem" name="Weapon Pack (S-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to obtain a Steel Dynasty weapon. -->
+	<item id="27569" type="EtcItem" name="Dynasty Weapon Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27570" type="EtcItem" name="Weekend Login Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27571" type="EtcItem" name="Monthly Login Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27572" type="EtcItem" name="Daily Quest Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27573" type="EtcItem" name="Daily Instance Instance Zone Reward Pack" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27574" type="EtcItem" name="Daily Fishing Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27575" type="EtcItem" name="Olympiad Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27576" type="EtcItem" name="Ceremony of Chaos Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain a crafting ingredient. -->
+	<item id="27577" type="EtcItem" name="Castle Siege Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		Wrapped Pack containing XP Rune III (Lv. 1-100+) 100% (1-hour).
+	-->
+	<item id="27578" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		Wrapped Pack containing SP Rune 100% (1-hour).
+	-->
+	<item id="27579" type="EtcItem" name="SP Rune 100% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		Wrapped Pack containing Prestige Rune 100% (1-hour).
+	-->
+	<item id="27580" type="EtcItem" name="Prestige Rune 100% Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 100%. The remaining time decreases even when not playing.
+	-->
+	<item id="27581" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (30-day) - 1-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 100%. The remaining time decreases even when not playing.
+	-->
+	<item id="27582" type="EtcItem" name="SP Rune 100% - 1-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!--
+		Premium User Only
+		When carried during a hunt, Adena / item drop rate / item acquisition through Spoil + 30%.100%.
+	-->
+	<item id="27583" type="EtcItem" name="Prestige Rune 100% - 1-hour" icon="BranchSys3.lcon.g_rune_itemdrop_up" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Top-grade Spirt Stone. It's an ingredient to augment weapons, and can be used by characters Lv. 99 and above. -->
+	<item id="27584" type="EtcItem" name="Top-grade Spirt Stone" icon="icon.renewal_mineral_r99" immediateEffect="1" crystalType="c"
+			weight="2" isStackable="true">
+	</item>
+	<!-- Reward box containing various rewards. -->
+	<item id="27585" type="EtcItem" name="Special Supply Box - Standard" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Reward box containing various rewards. -->
+	<item id="27586" type="EtcItem" name="Special Supply Box - Mid-grade" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Reward box containing various rewards. -->
+	<item id="27587" type="EtcItem" name="Special Supply Box - High-grade" icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Reward box containing various rewards. -->
+	<item id="27588" type="EtcItem" name="Special Supply Box - Top-grade" icon="icon.etc_box_of_adventure_5_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- You can obtain a Daily Coin. If you are lucky, you may obtain a Special Supply Box. -->
+	<item id="27589" type="EtcItem" name="Supply Box - Standard" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- You can obtain a Daily Coin. If you are lucky, you may obtain a Special Supply Box. -->
+	<item id="27590" type="EtcItem" name="Supply Box - Mid-grade" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- You can obtain a Daily Coin. If you are lucky, you may obtain a Special Supply Box. -->
+	<item id="27591" type="EtcItem" name="Supply Box - High-grade" icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- You can obtain a Daily Coin. If you are lucky, you may obtain a Special Supply Box. -->
+	<item id="27592" type="EtcItem" name="Supply Box - Top-grade" icon="icon.etc_box_of_adventure_5_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Take it to High Priest Franco in Talking Island to exchange for various consumable items. -->
+	<item id="27593" type="EtcItem" name="Daily Coin" icon="icon.ev_festival_goldcoin" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. Only usable when 1 or more Vitality slot is full. Cannot be used in the Olympiad. -->
+	<item id="27594" type="EtcItem" name="Maphr's Wind Scroll" icon="icon.freya_scroll" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Retains Vitality for 10 min. Cooldown is 30min. Vitality item with limited usage. -->
+	<item id="27595" type="EtcItem" name="Vitality Maintaining Potion" icon="BranchSys.icon.br_vitality_potion_i00" immediateEffect="1"
+			crystalType="c" weight="36" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Requiem or Apocalypse equipment for Blessed equipment. -->
+	<item id="27596" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade)" icon="icon.bless_scroll_r2" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Specter equipment for Blessed equipment. -->
+	<item id="27597" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Amaranthine equipment for Blessed equipment. -->
+	<item id="27598" type="EtcItem" name="Scroll of Blessing: Weapon (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Immortal or Hell equipment for Blessed equipment. -->
+	<item id="27599" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Seraph equipment for Blessed equipment. -->
+	<item id="27600" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Eternal equipment for Blessed equipment. -->
+	<item id="27601" type="EtcItem" name="Scroll of Blessing: Armor (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- Get 1 of the following:  1 type of Talisman - Abundance, Seven Signs' Energy, Antharas' Earring, Talisman - Lilith, Talisman - Anakim, Baium's Soul Ring, Valakas' Necklace, Bottle of Antharas' Soul, Bottle of Valakas' Soul, Baium's Ring, Octavis' Ring, Bottle of Queen Ant's Soul, Istina's Earring, Queen Ant's Ring, Istina's Necklace, Bottle of Orfen's Soul, Octavis' Earring, Istina's Earring, Octavis' Necklace, Immortal Scroll Chapter 1, Superior Giant's Codex - Mastery Chapter 1, Superior Giant's Codex Chapter 1, Lv. 5 Legendary Dye Pack, Elcyum x2, Superior Giant's Codex - Discipline Chapter 1, Giant's Energy x10, Orfen's Earring, Elcyum Crystal x8, Tempest Stone, Gemstone (R-grade) x40, 1 of 5 Fortune Pocket - Stage 5. -->
+	<item id="27602" type="EtcItem" name="Abundance Box" icon="icon.etc_pi_gift_box_i03" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Reward chest for completing daily missions. You can obtain one of various rewards. -->
+	<item id="27603" type="EtcItem" name="Daily Mission Reward Chest" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Double-click to obtain ingredients needed for Double Crystal Enhancement of R99 weapons. -->
+	<item id="27604" type="EtcItem" name="Amaranthine Double Crystal Enhancement Box" icon="icon.etc_box_of_adventure_2_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="27605" type="EtcItem" name="NoItemName" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="27606" type="EtcItem" name="NoItemName" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="27607" type="EtcItem" name="NoItemName" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+</list>

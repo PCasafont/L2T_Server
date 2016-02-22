@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<specificSpawnList name="nursery">
+		<!-- Failed Creation -->
+		<spawn npcId="80329" x="-185469" y="146188" z="-15313" heading="52862" respawn="20" />
+		<spawn npcId="80330" x="-185158" y="146662" z="-15313" heading="9925" respawn="20" />
+		<spawn npcId="80331" x="-184607" y="146843" z="-15314" heading="73" respawn="20" />
+		<spawn npcId="80332" x="-184688" y="147471" z="-15314" heading="17405" respawn="20" />
+		<spawn npcId="80329" x="-184327" y="147804" z="-15314" heading="7771" respawn="20" />
+		<spawn npcId="80329" x="-184116" y="147735" z="-15313" heading="32096" respawn="20" />
+		<spawn npcId="80330" x="-184271" y="148377" z="-15313" heading="18572" respawn="20" />
+		<spawn npcId="80331" x="-184499" y="148325" z="-15314" heading="35106" respawn="20" />
+		<spawn npcId="80332" x="-184944" y="148664" z="-15314" heading="24356" respawn="20" />
+		<spawn npcId="80331" x="-184682" y="148967" z="-15314" heading="8959" respawn="20" />
+		<spawn npcId="80331" x="-184951" y="149399" z="-15313" heading="21333" respawn="20" />
+		<spawn npcId="80330" x="-185340" y="149066" z="-15312" heading="38337" respawn="20" />
+		<spawn npcId="80331" x="-185632" y="149337" z="-15314" heading="22953" respawn="20" />
+		<spawn npcId="80329" x="-185845" y="149605" z="-15312" heading="25715" respawn="20" />
+		<spawn npcId="80330" x="-186188" y="149121" z="-15314" heading="42542" respawn="20" />
+		<spawn npcId="80331" x="-186376" y="149352" z="-15314" heading="23509" respawn="20" />
+		<spawn npcId="80332" x="-186677" y="149395" z="-15313" heading="31287" respawn="20" />
+		<spawn npcId="80331" x="-186756" y="148988" z="-15314" heading="47152" respawn="20" />
+		<spawn npcId="80331" x="-186826" y="148593" z="-15314" heading="47322" respawn="20" />
+		<spawn npcId="80330" x="-187324" y="148841" z="-15312" heading="35699" respawn="20" />
+		<spawn npcId="80329" x="-187626" y="148420" z="-15312" heading="42196" respawn="20" />
+		<spawn npcId="80330" x="-187409" y="148388" z="-15313" heading="64944" respawn="20" />
+		<spawn npcId="80330" x="-187198" y="148030" z="-15314" heading="54706" respawn="20" />
+		<spawn npcId="80331" x="-187443" y="147759" z="-15314" heading="41485" respawn="20" />
+		<spawn npcId="80332" x="-187179" y="147649" z="-15314" heading="61418" respawn="20" />
+		<spawn npcId="80331" x="-187488" y="147181" z="-15313" heading="44377" respawn="20" />
+		<spawn npcId="80332" x="-187022" y="147143" z="-15314" heading="64687" respawn="20" />
+		<spawn npcId="80332" x="-186564" y="146951" z="-15314" heading="65221" respawn="20" />
+		<spawn npcId="80330" x="-186913" y="146643" z="-15313" heading="39728" respawn="20" />
+		<spawn npcId="80331" x="-186463" y="146362" z="-15313" heading="59660" respawn="20" />
+		<spawn npcId="80331" x="-185964" y="146853" z="-15314" heading="8162" respawn="20" />
+		<spawn npcId="80330" x="-185938" y="146424" z="-15314" heading="6291" respawn="20" />
+		<spawn npcId="80331" x="-184854" y="146377" z="-15312" heading="62855" respawn="20" />
+		<spawn npcId="80330" x="-185027" y="146994" z="-15314" heading="39201" respawn="20" />
+		<spawn npcId="80329" x="-184275" y="147355" z="-15313" heading="4381" respawn="20" />
+		<spawn npcId="80329" x="-185289" y="149546" z="-15313" heading="21709" respawn="20" />
+		<spawn npcId="80329" x="-187091" y="148616" z="-15314" heading="18027" respawn="20" />
+		<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
+	</specificSpawnList>
+	<specificSpawnList name="blood_thirst">
+		<!-- Sehkmeti -->
+		<spawn npcId="27480"  x="55741" y="-187052" z="-7954" heading="22884" respawn="20" />
+		<spawn npcId="27480"  x="55928" y="-187249" z="-7952" heading="57072" respawn="20" />
+		<spawn npcId="27480"  x="55803" y="-187493" z="-7954" heading="44187" respawn="20" />
+		<spawn npcId="27480"  x="56208" y="-187393" z="-7944" heading="2524" respawn="20" />
+		<spawn npcId="27480"  x="56521" y="-187307" z="-7952" heading="2796" respawn="20" />
+		<spawn npcId="27480"  x="56540" y="-187005" z="-7944" heading="15728" respawn="20" />
+		<spawn npcId="27480"  x="56745" y="-186927" z="-7948" heading="3792" respawn="20" />
+		<spawn npcId="27480"  x="56528" y="-186784" z="-7952" heading="26690" respawn="20" />
+		<spawn npcId="27480"  x="56375" y="-187344" z="-7952" heading="47554" respawn="20" />
+		<spawn npcId="27480"  x="56293" y="-187603" z="-7954" heading="45953" respawn="20" />
+		<spawn npcId="27480"  x="56077" y="-187716" z="-7944" heading="37795" respawn="20" />
+		<spawn npcId="27480"  x="55958" y="-187542" z="-7952" heading="22640" respawn="20" />
+		<spawn npcId="27480"  x="56485" y="-187467" z="-7954" heading="1474" respawn="20" />
+		<spawn npcId="27480"  x="56378" y="-187107" z="-7944" heading="17444" respawn="20" />
+		<spawn npcId="27480"  x="56307" y="-186800" z="-7947" heading="18754" respawn="20" />
+		<spawn npcId="27480"  x="55999" y="-186808" z="-7944" heading="33038" respawn="20" />
+		<spawn npcId="27480"  x="55730" y="-186777" z="-7952" heading="31571" respawn="20" />
+		<spawn npcId="27480"  x="55534" y="-186946" z="-7944" heading="40189" respawn="20" />
+		<spawn npcId="27480"  x="55928" y="-187012" z="-7947" heading="56927" respawn="20" />
+		<spawn npcId="27480"  x="55908" y="-186672" z="-7952" heading="22647" respawn="20" />
+		<spawn npcId="27480"  x="56682" y="-186740" z="-7952" heading="64518" respawn="20" />
+		<spawn npcId="27480"  x="56642" y="-187595" z="-7954" heading="49082" respawn="20" />
+		<spawn npcId="27480"  x="55969" y="-187405" z="-7954" heading="41508" respawn="20" />
+		<spawn npcId="27480"  x="56154" y="-187099" z="-7947" heading="25948" respawn="20" />
+		<spawn npcId="27480"  x="56401" y="-186680" z="-7944" heading="35981" respawn="20" />
+		<spawn npcId="27480"  x="56169" y="-186689" z="-7948" heading="33172" respawn="20" />
+		<spawn npcId="27480"  x="55559" y="-186746" z="-7954" heading="36046" respawn="20" />
+		<spawn npcId="27480"  x="56666" y="-187104" z="-7954" heading="59606" respawn="20" />
+		<spawn npcId="27480"  x="56177" y="-187853" z="-7944" heading="48989" respawn="20" />
+	</specificSpawnList>
+</list>

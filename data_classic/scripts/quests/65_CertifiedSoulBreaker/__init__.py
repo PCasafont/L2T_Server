@@ -121,7 +121,7 @@ class Quest (JQuest) :
         if id == State.COMPLETED :
             htmltext = Quest.getAlreadyCompletedMsg(player)
         elif npcId == Vitus :
-            if player.getClassId() not in [125,126] or player.getLevel() < 39:
+            if player.getClassId().getId() not in [125,126] or player.getLevel() < 39:
                 htmltext = "<html><body>Only Troopers or Warders are allowed to take this quest! Go away before I get angry!<br>You must be level 39 or higher to undertake this quest.</body></html>"
                 st.exitQuest(1)
             elif id == State.CREATED :
@@ -132,7 +132,7 @@ class Quest (JQuest) :
                 htmltext = "32213-05.htm"
             elif cond == 17 and st.getQuestItemsCount(Recommend) == 1 :
                 htmltext = "32213-06.htm"
-                player.sendPacket(SocialAction(player.getObjectId(),3))
+                player.sendPacket(SocialAction(player,3))
                 st.takeItems(Recommend,-1)
                 st.giveItems(certificate,1)
                 st.exitQuest(False)

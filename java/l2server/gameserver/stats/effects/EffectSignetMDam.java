@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -16,6 +16,7 @@
 /**
  * @author Forsaiken
  */
+
 package l2server.gameserver.stats.effects;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
@@ -41,6 +41,7 @@ import l2server.gameserver.stats.skills.L2SkillSignetCasttime;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.util.Point3D;
 
 public class EffectSignetMDam extends L2Effect
@@ -51,7 +52,7 @@ public class EffectSignetMDam extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -59,7 +60,7 @@ public class EffectSignetMDam extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
@@ -80,10 +81,9 @@ public class EffectSignetMDam extends L2Effect
 		int y = getEffector().getY();
 		int z = getEffector().getZ();
 		
-		if (getEffector() instanceof L2PcInstance
-				&& getSkill().getTargetType() == L2Skill.SkillTargetType.TARGET_GROUND)
+		if ((getEffector() instanceof L2PcInstance) && (getSkill().getTargetType() == L2SkillTargetType.TARGET_GROUND))
 		{
-			Point3D wordPosition = ((L2PcInstance) getEffector()).getSkillCastPosition();
+			Point3D wordPosition = getEffector().getSkillCastPosition();
 			
 			if (wordPosition != null)
 			{
@@ -101,17 +101,17 @@ public class EffectSignetMDam extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() >= getAbnormal().getTotalCount() - 2)
+		if (getAbnormal().getCount() >= (getAbnormal().getTotalCount() - 2))
 			return true; // do nothing first 2 times
 		int mpConsume = getSkill().getMpConsume();
 		
-		L2PcInstance caster = (L2PcInstance)getEffector();
+		L2PcInstance caster = (L2PcInstance) getEffector();
 		
 		double ssMul = L2ItemInstance.CHARGED_NONE;
 		
@@ -126,17 +126,17 @@ public class EffectSignetMDam extends L2Effect
 		
 		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
-			if (cha == null || cha == caster)
+			if ((cha == null) || (cha == caster))
 				continue;
 			
 			if (cha instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
+				L2PcInstance player = (L2PcInstance) cha;
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
 					continue;
 			}
 			
-			if (cha instanceof L2Attackable || cha instanceof L2Playable)
+			if ((cha instanceof L2Attackable) || (cha instanceof L2Playable))
 			{
 				if (cha.isAlikeDead())
 					continue;
@@ -176,8 +176,7 @@ public class EffectSignetMDam extends L2Effect
 				
 				if (mdam > 0)
 				{
-					if (!target.isRaid()
-							&& Formulas.calcAtkBreak(target, mdam))
+					if (!target.isRaid() && Formulas.calcAtkBreak(target, mdam))
 					{
 						target.breakAttack();
 						target.breakCast();
@@ -192,7 +191,7 @@ public class EffectSignetMDam extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override

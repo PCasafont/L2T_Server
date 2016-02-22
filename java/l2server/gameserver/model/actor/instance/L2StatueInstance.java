@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.sql.Connection;
@@ -52,7 +53,7 @@ public class L2StatueInstance extends L2Npc
 	
 	/*
 	 * To create 1 instance:
-	 * 
+	 *
 		StatsSet ss = new StatsSet();
 		ss.set("id", 0);
 		ss.set("type", "L2Npc");
@@ -147,7 +148,7 @@ public class L2StatueInstance extends L2Npc
 			{
 				con.close();
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
 				e.printStackTrace();
 			}
@@ -157,7 +158,7 @@ public class L2StatueInstance extends L2Npc
 		{
 			setXYZ(x, y, z);
 			setHeading(heading);
-	
+			
 			getTemplate().baseWalkSpd = 0;
 			getTemplate().baseRunSpd = 0;
 			

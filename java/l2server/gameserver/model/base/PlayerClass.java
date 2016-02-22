@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.base;
 
 import java.util.ArrayList;
@@ -119,8 +120,7 @@ public class PlayerClass
 	
 	public final boolean isSummoner()
 	{
-		return _id == 14 || _id == 28 || _id == 41 || _id == 96 || _id == 104
-				|| _id == 111 || _id == 146 || _id == 176 || _id == 177 || _id == 178;
+		return (_id == 14) || (_id == 28) || (_id == 41) || (_id == 96) || (_id == 104) || (_id == 111) || (_id == 146) || (_id == 176) || (_id == 177) || (_id == 178);
 	}
 	
 	public final boolean childOf(PlayerClass cl)
@@ -137,7 +137,7 @@ public class PlayerClass
 	
 	public final boolean equalsOrChildOf(PlayerClass cl)
 	{
-		return this == cl || childOf(cl);
+		return (this == cl) || childOf(cl);
 	}
 	
 	public final int level()
@@ -145,7 +145,7 @@ public class PlayerClass
 		if (_parent == null)
 			return 0;
 		
-		if (_id == 184 || _id == 185)
+		if ((_id == 184) || (_id == 185))
 			return 2;
 		
 		return 1 + _parent.level();

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.Arrays;
@@ -105,14 +106,14 @@ public final class ChanceCondition
 	}
 	
 	private final TriggerType _triggerType;
-	private final int _chance;
-	private final int _critChance;
+	private final double _chance;
+	private final double _critChance;
 	private final int _mindmg;
 	private final byte[] _elements;
 	private final int[] _activationSkills;
 	private final boolean _pvpOnly;
 	
-	private ChanceCondition(TriggerType trigger, int chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
+	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
 		_triggerType = trigger;
 		_chance = chance;
@@ -123,7 +124,7 @@ public final class ChanceCondition
 		_critChance = -1;
 	}
 	
-	private ChanceCondition(TriggerType trigger, int chance, int critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
+	private ChanceCondition(TriggerType trigger, double chance, double critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
 		_triggerType = trigger;
 		_chance = chance;
@@ -156,7 +157,7 @@ public final class ChanceCondition
 		return null;
 	}
 	
-	public static ChanceCondition parse(String chanceType, int chance, int critChance, int mindmg, String elements, String activationSkills, boolean pvpOnly)
+	public static ChanceCondition parse(String chanceType, double chance, double critChance, int mindmg, String elements, String activationSkills, boolean pvpOnly)
 	{
 		try
 		{
@@ -208,7 +209,7 @@ public final class ChanceCondition
 		if (_pvpOnly && !playable)
 			return false;
 		
-		if (_elements != null && Arrays.binarySearch(_elements, element) < 0)
+		if ((_elements != null) && (Arrays.binarySearch(_elements, element) < 0))
 			return false;
 		
 		if (_activationSkills != null)
@@ -222,13 +223,13 @@ public final class ChanceCondition
 		
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if (_mindmg > -1 && _mindmg > damage)
+		if ((_mindmg > -1) && (_mindmg > damage))
 			return false;
 		
-		if (!crit || _critChance == -1)
-			return _triggerType.check(event) && (_chance < 0 || Rnd.get(100) < _chance);
+		if (!crit || (_critChance == -1))
+			return _triggerType.check(event) && ((_chance < 0) || (Rnd.get(100) < _chance));
 		else
-			return _triggerType.check(event) && (_critChance < 0 || Rnd.get(100) < _critChance);
+			return _triggerType.check(event) && ((_critChance < 0) || (Rnd.get(100) < _critChance));
 	}
 	
 	public TriggerType getTriggerType()
@@ -239,6 +240,6 @@ public final class ChanceCondition
 	@Override
 	public String toString()
 	{
-		return "Trigger["+_chance+";"+_triggerType.toString()+"]";
+		return "Trigger[" + _chance + ";" + _triggerType.toString() + "]";
 	}
 }

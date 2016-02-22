@@ -61,7 +61,7 @@ public class ItemAuctionLink implements IBypassHandler
 				return false;
 			
 			String cmd = st.nextToken();
-			if (cmd.equalsIgnoreCase("show"))
+			if ("show".equalsIgnoreCase(cmd))
 			{
 				if (!activeChar.getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
 					return false;
@@ -83,7 +83,7 @@ public class ItemAuctionLink implements IBypassHandler
 				
 				activeChar.sendPacket(new ExItemAuctionInfoPacket(false, currentAuction, nextAuction));
 			}
-			else if (cmd.equalsIgnoreCase("cancel"))
+			else if ("cancel".equalsIgnoreCase(cmd))
 			{
 				final ItemAuction[] auctions = au.getAuctionsByBidder(activeChar.getObjectId());
 				boolean returned = false;

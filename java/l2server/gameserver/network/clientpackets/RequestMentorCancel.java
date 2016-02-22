@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -35,7 +36,6 @@ import l2server.log.Log;
 public class RequestMentorCancel extends L2GameClientPacket
 {
 	
-	private static final String _C__D0_BD_REQUESTMENTORCANCEL = "[C] D0:BD RequestMentorCancel";
 	private String _name;
 	boolean _isMentor;
 	
@@ -56,7 +56,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 			return;
 		
 		int id = CharNameTable.getInstance().getIdByName(_name);
-
+		
 		Connection con = null;
 		
 		try
@@ -70,15 +70,15 @@ public class RequestMentorCancel extends L2GameClientPacket
 				statement.setInt(2, activeChar.getObjectId());
 				statement.execute();
 				statement.close();
-
+				
 				// Mentee cancelled mentoring with mentor
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
 				sm.addString(_name);
 				activeChar.sendPacket(sm);
-
+				
 				for (L2Abnormal e : activeChar.getAllEffects())
 				{
-					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
+					if ((e.getSkill().getId() >= 9227) && (e.getSkill().getId() <= 9233))
 						e.exit();
 				}
 				activeChar.removeSkill(9379);
@@ -104,14 +104,14 @@ public class RequestMentorCancel extends L2GameClientPacket
 				statement.setInt(2, id);
 				statement.execute();
 				statement.close();
-
+				
 				// Mentor cancelled mentoring with mentee
 				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
 				sm.addString("0"); // TODO: Days
 				sm.addString("0"); // TODO: Hours
 				sm.addString("0"); // TODO: Minutes
 				activeChar.sendPacket(sm);
-
+				
 				activeChar.sendPacket(new ExMentorList(activeChar));
 				if (L2World.getInstance().getPlayer(id) != null)
 				{
@@ -122,7 +122,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 					player.sendPacket(sm);
 					for (L2Abnormal e : player.getAllEffects())
 					{
-						if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
+						if ((e.getSkill().getId() >= 9227) && (e.getSkill().getId() <= 9233))
 							e.exit();
 					}
 					player.removeSkill(9379);
@@ -140,11 +140,5 @@ public class RequestMentorCancel extends L2GameClientPacket
 			L2DatabaseFactory.close(con);
 		}
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_BD_REQUESTMENTORCANCEL;
 	}
 }

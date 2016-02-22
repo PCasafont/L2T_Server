@@ -137,7 +137,7 @@ public class ChainHeal implements ISkillHandler
 	{
 		Map<L2Character, Double> tmpTargets = new FastMap<L2Character, Double>();
 		
-		List<L2Character> sortedListToReturn = new FastList<L2Character>();
+		List<L2Character> sortedListToReturn = new HashMap<L2Character>();
 
 		if (caster.getTarget() == caster)
 			tmpTargets.put(caster, caster.getCurrentHp() / caster.getMaxHp());

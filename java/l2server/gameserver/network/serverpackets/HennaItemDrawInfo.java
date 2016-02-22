@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -19,7 +20,6 @@ import l2server.gameserver.templates.item.L2Henna;
 
 public class HennaItemDrawInfo extends L2GameServerPacket
 {
-	private static final String _S__E3_HennaItemDrawInfo = "[S] e4 HennaItemDrawInfo";
 	
 	private L2PcInstance _activeChar;
 	private L2Henna _henna;
@@ -33,7 +33,6 @@ public class HennaItemDrawInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xe4);
 		writeD(_henna.getSymbolId()); //symbol Id
 		writeD(_henna.getDyeId()); //item id of dye
 		writeQ(_henna.getAmountDyeRequire()); // total amount of dye require
@@ -47,23 +46,14 @@ public class HennaItemDrawInfo extends L2GameServerPacket
 		writeD(_activeChar.getCON()); //current CON
 		writeC(_activeChar.getCON() + _henna.getStatCON()); //equip CON
 		writeD(_activeChar.getMEN()); //current MEM
-		writeC(_activeChar.getMEN() + _henna.getStatMEM());	//equip MEM
+		writeC(_activeChar.getMEN() + _henna.getStatMEM()); //equip MEM
 		writeD(_activeChar.getDEX()); //current DEX
-		writeC(_activeChar.getDEX() + _henna.getStatDEX());	//equip DEX
+		writeC(_activeChar.getDEX() + _henna.getStatDEX()); //equip DEX
 		writeD(_activeChar.getWIT()); //current WIT
 		writeC(_activeChar.getWIT() + _henna.getStatWIT()); //equip WIT
 		writeD(_activeChar.getLUC()); //current LUC
 		writeC(_activeChar.getLUC() + _henna.getStatLUC()); //equip LUC
 		writeD(_activeChar.getCHA()); //current CHA
 		writeC(_activeChar.getCHA() + _henna.getStatCHA()); //equip CHA
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__E3_HennaItemDrawInfo;
 	}
 }

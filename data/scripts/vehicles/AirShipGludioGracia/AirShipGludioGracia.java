@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package vehicles.AirShipGludioGracia;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -29,13 +30,13 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
 
 /**
- * 
+ *
  * @author DS
  *
  */
 public class AirShipGludioGracia extends Quest implements Runnable
 {
-	private static final int[] CONTROLLERS = {32607, 32609};
+	private static final int[] CONTROLLERS = { 32607, 32609 };
 	
 	private static final int GLUDIO_DOCK_ID = 10;
 	private static final int GRACIA_DOCK_ID = 11;
@@ -43,54 +44,15 @@ public class AirShipGludioGracia extends Quest implements Runnable
 	private static final Location OUST_GLUDIO = new Location(-149379, 255246, -80);
 	private static final Location OUST_GRACIA = new Location(-186563, 243590, 2608);
 	
-	private static final VehiclePathPoint[] GLUDIO_TO_WARPGATE =
-	{
-		new VehiclePathPoint(-151202, 252556, 231),
-		new VehiclePathPoint(-160403, 256144, 222),
-		new VehiclePathPoint(-167874, 256731, -509, 0, 41035) // teleport: x,y,z,speed=0,heading
+	private static final VehiclePathPoint[] GLUDIO_TO_WARPGATE = { new VehiclePathPoint(-151202, 252556, 231), new VehiclePathPoint(-160403, 256144, 222), new VehiclePathPoint(-167874, 256731, -509, 0, 41035) // teleport: x,y,z,speed=0,heading
 	};
 	
-	private static final VehiclePathPoint[] WARPGATE_TO_GRACIA =
-	{
-		new VehiclePathPoint(-169763, 254815, 282),
-		new VehiclePathPoint(-171822, 250061, 425),
-		new VehiclePathPoint(-172595, 247737, 398),
-		new VehiclePathPoint(-174538, 246185, 39),
-		new VehiclePathPoint(-179440, 243651, 1337),
-		new VehiclePathPoint(-182601, 243957, 2739),
-		new VehiclePathPoint(-184952, 245122, 2694),
-		new VehiclePathPoint(-186936, 244563, 2617)
+	private static final VehiclePathPoint[] WARPGATE_TO_GRACIA = { new VehiclePathPoint(-169763, 254815, 282), new VehiclePathPoint(-171822, 250061, 425), new VehiclePathPoint(-172595, 247737, 398), new VehiclePathPoint(-174538, 246185, 39), new VehiclePathPoint(-179440, 243651, 1337), new VehiclePathPoint(-182601, 243957, 2739), new VehiclePathPoint(-184952, 245122, 2694), new VehiclePathPoint(-186936, 244563, 2617) };
+	
+	private static final VehiclePathPoint[] GRACIA_TO_WARPGATE = { new VehiclePathPoint(-187801, 244997, 2672), new VehiclePathPoint(-188520, 245932, 2465), new VehiclePathPoint(-189932, 245243, 1682), new VehiclePathPoint(-191192, 242969, 1523), new VehiclePathPoint(-190408, 239088, 1706), new VehiclePathPoint(-187475, 237113, 2768), new VehiclePathPoint(-184673, 238433, 2802), new VehiclePathPoint(-184524, 241119, 2816), new VehiclePathPoint(-182129, 243385, 2733), new VehiclePathPoint(-179440, 243651, 1337), new VehiclePathPoint(-174538, 246185, 39), new VehiclePathPoint(-172595, 247737, 398), new VehiclePathPoint(-171822, 250061, 425), new VehiclePathPoint(-169763, 254815, 282), new VehiclePathPoint(-168067, 256626, 343), new VehiclePathPoint(-157261, 255664, 221, 0, 64781) // teleport: x,y,z,speed=0,heading
 	};
 	
-	private static final VehiclePathPoint[] GRACIA_TO_WARPGATE =
-	{
-		new VehiclePathPoint(-187801, 244997, 2672),
-		new VehiclePathPoint(-188520, 245932, 2465),
-		new VehiclePathPoint(-189932, 245243, 1682),
-		new VehiclePathPoint(-191192, 242969, 1523),
-		new VehiclePathPoint(-190408, 239088, 1706),
-		new VehiclePathPoint(-187475, 237113, 2768),
-		new VehiclePathPoint(-184673, 238433, 2802),
-		new VehiclePathPoint(-184524, 241119, 2816),
-		new VehiclePathPoint(-182129, 243385, 2733),
-		new VehiclePathPoint(-179440, 243651, 1337),
-		new VehiclePathPoint(-174538, 246185, 39),
-		new VehiclePathPoint(-172595, 247737, 398),
-		new VehiclePathPoint(-171822, 250061, 425),
-		new VehiclePathPoint(-169763, 254815, 282),
-		new VehiclePathPoint(-168067, 256626, 343),
-		new VehiclePathPoint(-157261, 255664, 221, 0, 64781) // teleport: x,y,z,speed=0,heading
-	};
-	
-	private static final VehiclePathPoint[] WARPGATE_TO_GLUDIO =
-	{
-		new VehiclePathPoint(-153414, 255385, 221),
-		new VehiclePathPoint(-149548, 258172, 221),
-		new VehiclePathPoint(-146884, 257097, 221),
-		new VehiclePathPoint(-146672, 254239, 221),
-		new VehiclePathPoint(-147855, 252712, 206),
-		new VehiclePathPoint(-149378, 252552, 198)
-	};
+	private static final VehiclePathPoint[] WARPGATE_TO_GLUDIO = { new VehiclePathPoint(-153414, 255385, 221), new VehiclePathPoint(-149548, 258172, 221), new VehiclePathPoint(-146884, 257097, 221), new VehiclePathPoint(-146672, 254239, 221), new VehiclePathPoint(-147855, 252712, 206), new VehiclePathPoint(-149378, 252552, 198) };
 	
 	private final L2AirShipInstance _ship;
 	private int _cycle = 0;
@@ -115,7 +77,7 @@ public class AirShipGludioGracia extends Quest implements Runnable
 		}
 		if (player.isDead() || player.isFakeDeath())
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);	
+			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);
 			return null;
 		}
 		if (player.isFishing())
@@ -153,7 +115,7 @@ public class AirShipGludioGracia extends Quest implements Runnable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_HOLDING_A_FLAG);
 			return null;
 		}
-		if (player.getPet() != null || player.isMounted() || !player.getSummons().isEmpty())
+		if ((player.getPet() != null) || player.isMounted() || !player.getSummons().isEmpty())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_PET_OR_A_SERVITOR_IS_SUMMONED);
 			return null;
@@ -189,6 +151,7 @@ public class AirShipGludioGracia extends Quest implements Runnable
 		_ship.runEngine(60000);
 	}
 	
+	@Override
 	public void run()
 	{
 		try
@@ -275,8 +238,8 @@ public class AirShipGludioGracia extends Quest implements Runnable
 			{
 				for (int id : CONTROLLERS)
 				{
-					if (((L2Npc)obj).getNpcId() == id)
-						return (L2Npc)obj;
+					if (((L2Npc) obj).getNpcId() == id)
+						return (L2Npc) obj;
 				}
 			}
 		}

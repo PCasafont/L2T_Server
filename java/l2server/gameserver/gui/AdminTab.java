@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.gui;
 
 import java.awt.Dimension;
@@ -26,27 +27,26 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
 
 import l2server.gameserver.gui.playertable.PlayerTablePane;
 
 /**
  * @author Pere
  */
-@SuppressWarnings("serial")
 public class AdminTab extends JPanel
 {
+	private static final long serialVersionUID = 1L;
 	private GridBagConstraints _cons = new GridBagConstraints();
 	private GridBagLayout _layout = new GridBagLayout();
-	private JPanel _leftPanel = new JPanel();
-	private JTabbedPane _rightPanel = new JTabbedPane();
+	private JPanel _listPanel = new PlayerTablePane();
+	private JPanel _infoPanel = new JPanel();
 	
 	public AdminTab()
 	{
 		setLayout(_layout);
 		_cons.fill = GridBagConstraints.HORIZONTAL;
 		
-		_leftPanel.setLayout(_layout);
+		_infoPanel.setLayout(_layout);
 		
 		_cons.insets = new Insets(5, 5, 5, 5);
 		_cons.gridwidth = 3;
@@ -55,17 +55,15 @@ public class AdminTab extends JPanel
 		_cons.weighty = 1;
 		_cons.gridx = 0;
 		_cons.gridy = 2;
-		_leftPanel.add(new JLabel(""), _cons);
-		_leftPanel.setPreferredSize(new Dimension(235, _leftPanel.getHeight()));
-
+		_infoPanel.add(new JLabel(""), _cons);
+		_infoPanel.setPreferredSize(new Dimension(235, _infoPanel.getHeight()));
+		
 		_cons.fill = GridBagConstraints.BOTH;
 		_cons.weightx = 1;
 		_cons.weighty = 1;
-		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _leftPanel, _rightPanel);
+		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _listPanel, _infoPanel);
 		splitPane.setResizeWeight(0.3);
-		splitPane.setDividerLocation(235);
+		splitPane.setDividerLocation(535);
 		add(splitPane, _cons);
-		
-		_rightPanel.addTab("Players", new PlayerTablePane());
 	}
 }

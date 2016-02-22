@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.Collection;
@@ -44,7 +45,6 @@ import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Broadcast;
 
-
 /**
  * This class handles following admin commands:
  *   <li> invis/invisible/vis/visible = makes yourself invisible or visible
@@ -64,48 +64,9 @@ import l2server.gameserver.util.Broadcast;
  */
 public class AdminEffects implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_invis",
-		"admin_invisible",
-		"admin_vis",
-		"admin_visible",
-		"admin_invis_menu",
-		"admin_earthquake",
-		"admin_earthquake_menu",
-		"admin_bighead",
-		"admin_shrinkhead",
-		"admin_gmspeed",
-		"admin_gmspeed_menu",
-		"admin_unpara_all",
-		"admin_para_all",
-		"admin_unpara",
-		"admin_para",
-		"admin_unpara_all_menu",
-		"admin_para_all_menu",
-		"admin_unpara_menu",
-		"admin_para_menu",
-		"admin_polyself",
-		"admin_unpolyself",
-		"admin_polyself_menu",
-		"admin_unpolyself_menu",
-		"admin_clearteams",
-		"admin_setteam_close",
-		"admin_setteam",
-		"admin_social",
-		"admin_effect",
-		"admin_social_menu",
-		"admin_effect_menu",
-		"admin_abnormal",
-		"admin_abnormal_menu",
-		"admin_play_sounds",
-		"admin_play_sound",
-		"admin_atmosphere",
-		"admin_atmosphere_menu",
-		"admin_set_displayeffect",
-		"admin_set_displayeffect_menu"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_invis", "admin_invisible", "admin_vis", "admin_visible", "admin_invis_menu", "admin_earthquake", "admin_earthquake_menu", "admin_bighead", "admin_shrinkhead", "admin_gmspeed", "admin_gmspeed_menu", "admin_unpara_all", "admin_para_all", "admin_unpara", "admin_para", "admin_unpara_all_menu", "admin_para_all_menu", "admin_unpara_menu", "admin_para_menu", "admin_polyself", "admin_unpolyself", "admin_polyself_menu", "admin_unpolyself_menu", "admin_clearteams", "admin_setteam_close", "admin_setteam", "admin_social", "admin_effect", "admin_social_menu", "admin_effect_menu", "admin_abnormal", "admin_abnormal_menu", "admin_play_sounds", "admin_play_sound", "admin_atmosphere", "admin_atmosphere_menu", "admin_set_displayeffect", "admin_set_displayeffect_menu" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
@@ -352,7 +313,7 @@ public class AdminEffects implements IAdminCommandHandler
 				int val = Integer.parseInt(st.nextToken());
 				boolean sendMessage = activeChar.getFirstEffect(7029) != null;
 				activeChar.stopSkillEffects(7029);
-				if (val == 0 && sendMessage)
+				if ((val == 0) && sendMessage)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(7029));
 				}
@@ -368,7 +329,7 @@ public class AdminEffects implements IAdminCommandHandler
 			}
 			if (command.contains("_menu"))
 			{
-				command="";
+				command = "";
 				AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
 			}
 		}
@@ -475,7 +436,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				String target = null;
 				L2Object obj = activeChar.getTarget();
-				if (st.countTokens() == 3)
+				if (st.countTokens() == 2)
 				{
 					int social = Integer.parseInt(st.nextToken());
 					target = st.nextToken();
@@ -508,7 +469,7 @@ public class AdminEffects implements IAdminCommandHandler
 						}
 					}
 				}
-				else if (st.countTokens() == 2)
+				else if (st.countTokens() == 1)
 				{
 					int social = Integer.parseInt(st.nextToken());
 					if (obj == null)
@@ -557,7 +518,7 @@ public class AdminEffects implements IAdminCommandHandler
 							{
 								int radius = Integer.parseInt(target);
 								Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
-
+								
 								for (L2Object object : objs)
 								{
 									if (activeChar.isInsideRadius(object, radius, false, false))
@@ -678,12 +639,12 @@ public class AdminEffects implements IAdminCommandHandler
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;
 				}
-				if ((target instanceof L2Npc) && (action < 1 || action > 10))
+				if ((target instanceof L2Npc) && ((action < 1) || (action > 10)))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;
 				}
-				if ((target instanceof L2PcInstance) && (action < 2 || action > 34 || action == 19) && action != SocialAction.LEVEL_UP)
+				if ((target instanceof L2PcInstance) && ((action < 2) || (action > 34) || (action == 19)) && (action != SocialAction.LEVEL_UP))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;
@@ -743,6 +704,7 @@ public class AdminEffects implements IAdminCommandHandler
 		activeChar.sendMessage("Playing " + sound + ".");
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

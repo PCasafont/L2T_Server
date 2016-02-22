@@ -293,7 +293,7 @@
 			weight="650" price="1900">
 		<baseAdd stat="pDef" val="17" />
 	</item>
-	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical by 109 and Max HP by 10%. Increases the damage inflicted during PvP. -->
+	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="52" type="Weapon" name="Vesper Dualsword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1520" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -418,7 +418,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Provides one of the following: Critical Damage, Focus and Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="71" type="Weapon" name="Flamberge" icon="icon.weapon_flamberge_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="2010" price="352580" changeWeaponId="9232" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -429,7 +429,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Anger, Focus or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="72" type="Weapon" name="StormBringer" icon="icon.weapon_stormbringer_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1430" price="352580" changeWeaponId="9228" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -440,7 +440,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Back Blow, Rsk. Or Evasion. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="73" type="Weapon" name="Shamshir" icon="icon.weapon_shamshir_i00" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884" crystalType="c" weight="1420"
 			price="441940" changeWeaponId="9240" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -451,7 +451,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="74" type="Weapon" name="Katana" icon="icon.weapon_katana_i00" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884" crystalType="c" weight="1420"
 			price="441940" changeWeaponId="9244" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -462,7 +462,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus or P. Critical Damage. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="75" type="Weapon" name="Caliburs" icon="icon.weapon_caliburs_i00" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322" crystalType="c"
 			weight="1400" price="660860" changeWeaponId="9264" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -473,7 +473,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="76" type="Weapon" name="Sword of Delusion" icon="icon.weapon_sword_of_delusion_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1400" price="660860" changeWeaponId="9268" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -484,7 +484,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="77" type="Weapon" name="Tsurugi" icon="icon.weapon_tsurugi_i00" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322" crystalType="c"
 			weight="1400" price="660860" changeWeaponId="9272" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -495,7 +495,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Health, P. Critical Damage or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="78" type="Weapon" name="Great Sword" icon="icon.weapon_great_sword_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="1930" price="1336100" changeWeaponId="9308" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -506,7 +506,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="79" type="Weapon" name="Damascus Sword" icon="icon.weapon_sword_of_damascus_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="1350" price="2018280" changeWeaponId="9316" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -517,7 +517,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Poison, Haste or Anger. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="80" type="Weapon" name="Tallum Blade" icon="icon.weapon_tallum_blade_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="1330" price="14098000" changeWeaponId="9328" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -532,7 +532,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Critical Bleed or Critical Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="81" type="Weapon" name="Dragon Slayer" icon="icon.weapon_dragon_slayer_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="1840" price="20741000" changeWeaponId="9344" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -572,7 +572,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Conversion, or Magic Paralyze. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="84" type="Weapon" name="Homunkulus' Sword" icon="icon.weapon_homunkuluss_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="950" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -628,7 +628,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Health, Rsk. Focus or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="89" type="Weapon" name="Big Hammer" icon="icon.weapon_big_hammer_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1710" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -651,7 +651,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health, or Rsk. Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="91" type="Weapon" name="Heavy War Axe" icon="icon.weapon_heavy_war_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="1620" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -663,7 +663,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Regeneration, Mental Shield or Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="92" type="Weapon" name="Spirit's Staff" icon="icon.weapon_sprites_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="960" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -687,7 +687,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="94" type="Weapon" name="Bec de Corbin" icon="icon.weapon_bech_de_corbin_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="2020" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -700,7 +700,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Wide Blow, Long Blow or Critical Stun. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="95" type="Weapon" name="Poleaxe" icon="icon.weapon_poleaxe_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1322" crystalType="c"
 			weight="2010" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -713,7 +713,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="96" type="Weapon" name="Scythe" icon="icon.weapon_scythe_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="705" crystalType="c" weight="2040"
 			price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -726,7 +726,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun or Long Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="97" type="Weapon" name="Lance" icon="icon.weapon_lancia_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1346" crystalType="b"
 			weight="1920" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -739,7 +739,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Critical Stun or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="98" type="Weapon" name="Halberd" icon="icon.weapon_halbard_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1128" crystalType="a"
 			weight="1900" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -757,8 +757,8 @@
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="99" type="Weapon" name="Apprentice's Spellbook" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="650"
-			price="1920" soulshots="1" spiritshots="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			weight="650" price="1920" soulshots="1" spiritshots="1" isMagicWeapon="true">
 		<set stat="pAtk" val="9" />
 		<set stat="mAtk" val="12" />
 		<set stat="rCrit" val="8" />
@@ -991,7 +991,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: P. Critical Damage, Critical Poison or Haste.. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="131" type="Weapon" name="Spirit Sword" icon="icon.weapon_spirits_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9248" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -1002,7 +1002,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Critical Drain, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="132" type="Weapon" name="Ultimate Sword" icon="icon.weapon_sword_of_limit_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1400" price="660860" changeWeaponId="9280" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -1013,7 +1013,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Drain or Critical Poison -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="133" type="Weapon" name="Raid Sword" icon="icon.weapon_raid_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9252" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -1024,7 +1024,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Health, Focus, or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="134" type="Weapon" name="Sword of Nightmare" icon="icon.weapon_sword_of_nightmare_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1400" price="660860" changeWeaponId="9276" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -1035,7 +1035,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="135" type="Weapon" name="Samurai Long Sword" icon="icon.weapon_samurai_longsword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1380" price="942700" changeWeaponId="9292" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -1079,7 +1079,7 @@
 			handler="ExtractableItems">
 		<capsuledItem id="14095" min="1" max="1" chance="100.0" /> <!-- Agathion - Sobbing -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Focus or Back Blow -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="142" type="Weapon" name="Keshanberk" icon="icon.weapon_kshanberk_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="1370" price="1336100" changeWeaponId="9304" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -1110,7 +1110,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Empower, M. Atk. or Magic Silence. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="145" type="Weapon" name="Sword of Whispering Death" icon="icon.weapon_deathbreath_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="1322" crystalType="c" weight="920" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1145,7 +1145,7 @@
 		<crystallizeReward id="36388" count="1" chance="45.766" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Magic Weakness or Magic Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="148" type="Weapon" name="Sword of Valhalla" icon="icon.weapon_sword_of_valhalla_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="900" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1170,7 +1170,7 @@
 		<crystallizeReward id="36388" count="1" chance="45.766" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: M. Atk., Magic Paralyze or Empower. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="150" type="Weapon" name="Elemental Sword" icon="icon.weapon_elemental_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="830" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1185,7 +1185,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: M. Atk., Magic Silence or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="151" type="Weapon" name="Sword of Miracles" icon="icon.weapon_sword_of_miracle_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="840" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1280,7 +1280,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Rsk. Focus or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="160" type="Weapon" name="Battle Axe" icon="icon.weapon_battle_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1720" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -1292,7 +1292,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Rsk. Focus or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="161" type="Weapon" name="Silver Axe" icon="icon.weapon_war_pick_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1690" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -1304,7 +1304,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="162" type="Weapon" name="War Axe" icon="icon.weapon_war_axe_i00" defaultAction="equip" weaponType="blunt" bodypart="rhand"
 			randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322" crystalType="c"
 			weight="1660" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -1321,7 +1321,7 @@
 			weight="100" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
 		<capsuledItem id="13026" min="1" max="1" chance="100.0" /> <!-- Agathion - Sobbing -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Anger, or a Critical Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="164" type="Weapon" name="Elysian" icon="icon.weapon_elysian_i00" defaultAction="equip" weaponType="blunt" bodypart="rhand"
 			randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659" crystalType="a"
 			weight="1580" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -1402,7 +1402,7 @@
 			handler="ExtractableItems">
 		<capsuledItem id="14101" min="1" max="1" chance="100.0" /> <!-- Agathion - Angry Devil (Event) -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="171" type="Weapon" name="Deadman's Glory" icon="icon.weapon_deadmans_glory_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="1600" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -1425,7 +1425,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health, or Rsk. Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="173" type="Weapon" name="Skull Graver" icon="icon.weapon_skull_graver_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1640" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -1437,7 +1437,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Poison, M. Atk. or Magic Weakness. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="174" type="Weapon" name="Nirvana Axe" icon="icon.weapon_nirvana_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1150" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1449,7 +1449,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Health, Rsk. Focus or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="175" type="Weapon" name="Art of Battle Axe" icon="icon.weapon_art_of_battle_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="1570" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -1622,7 +1622,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Regeneration, Mental Shield or Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="191" type="Weapon" name="Heavy Doom Hammer" icon="icon.weapon_heavy_doom_hammer_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1020" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -1634,7 +1634,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Mana Up, or Blessed Body. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="192" type="Weapon" name="Crystal Staff" icon="icon.weapon_crystal_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1020" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -1646,7 +1646,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Magic Hold or Mental Shield. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="193" type="Weapon" name="Stick of Faith" icon="icon.weapon_stick_of_faith_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1160" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -1658,7 +1658,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Poison, Magic Weakness, or Magic Chaos. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="194" type="Weapon" name="Heavy Doom Axe" icon="icon.weapon_heavy_doom_axe_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;56;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1010" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -1670,7 +1670,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Magic Poison, or Magic Weakness. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="195" type="Weapon" name="Cursed Staff" icon="icon.weapon_cursed_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1000" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -1682,7 +1682,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Empower, Rsk. Evasion, or Blessed Body. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="196" type="Weapon" name="Stick of Eternity" icon="icon.weapon_stick_of_eternity_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1130" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1694,7 +1694,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Regeneration, Mental Shield or Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="197" type="Weapon" name="Paradia Staff" icon="icon.weapon_paradia_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1010" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1706,7 +1706,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Silence, Acumen or Magic Paralyze. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="198" type="Weapon" name="Inferno Staff" icon="icon.weapon_inferno_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1000" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1718,7 +1718,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Magic Poison, or Magic Weakness. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="199" type="Weapon" name="Pa'agrio Hammer" icon="icon.weapon_paagrio_hammer_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1010" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1730,7 +1730,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Magic Poison, or Magic Weakness. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="200" type="Weapon" name="Sage's Staff" icon="icon.weapon_sages_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1000" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1742,7 +1742,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mental Shield, Magic Hold or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="201" type="Weapon" name="Club of Nature" icon="icon.weapon_club_of_nature_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1100" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1754,7 +1754,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Magic Silence or Conversion. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="202" type="Weapon" name="Mace of Underworld" icon="icon.weapon_mace_of_underworld_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1090" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1766,7 +1766,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Magic Weakness, or Magic Chaos. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="203" type="Weapon" name="Pa'agrio Axe" icon="icon.weapon_paagrio_axe_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1471"
 			crystalType="c" weight="990" price="735540" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1778,7 +1778,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Regeneration, Mental Shield or Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="204" type="Weapon" name="Deadman's Staff" icon="icon.weapon_deadmans_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1010" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1790,7 +1790,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Mana Up or Blessed Body. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="205" type="Weapon" name="Ghoul's Staff" icon="icon.weapon_ghouls_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1000" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1802,7 +1802,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Poison, Magic Weakness, or Magic Chaos. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="206" type="Weapon" name="Demon's Staff" icon="icon.weapon_demons_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="990" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
@@ -1847,7 +1847,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Blessed Body or Poison. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="210" type="Weapon" name="Staff of Evil Spirits" icon="icon.weapon_staff_of_evil_sprit_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1"
 			crystalCount="1346" crystalType="b" weight="930" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1870,7 +1870,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Conversion, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="212" type="Weapon" name="Dasparion's Staff" icon="icon.weapon_dasparions_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="920" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1886,7 +1886,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Conversion, Magic Damage, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="213" type="Weapon" name="Branch of the Mother Tree" icon="icon.weapon_worldtrees_branch_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="1659" crystalType="a" weight="900" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -2028,7 +2028,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Bleed, Critical Poison or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="226" type="Weapon" name="Cursed Dagger" icon="icon.weapon_cursed_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705" crystalType="c"
 			weight="1040" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2040,7 +2040,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Bleed, Critical Poison or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="227" type="Weapon" name="Stiletto" icon="icon.weapon_stiletto_i00" defaultAction="equip" weaponType="dagger" bodypart="rhand"
 			randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884" crystalType="c" weight="1030"
 			price="441940" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2052,7 +2052,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Bleed, P. Critical Damage or Critical Poison. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="228" type="Weapon" name="Crystal Dagger" icon="icon.weapon_crystal_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1000" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2064,7 +2064,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Evasion, Focus, or Back Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="229" type="Weapon" name="Kris" icon="icon.weapon_kris_i00" defaultAction="equip" weaponType="dagger" bodypart="rhand"
 			randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891" crystalType="b" weight="980"
 			price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2087,7 +2087,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Evasion, Focus, or Back Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="231" type="Weapon" name="Grace Dagger" icon="icon.weapon_grace_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1020" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2099,7 +2099,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Back Blow or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="232" type="Weapon" name="Dark Elven Dagger" icon="icon.weapon_darkelven_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705" crystalType="c"
 			weight="1050" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2111,7 +2111,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Evasion, Focus, or Critical Bleed. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="233" type="Weapon" name="Dark Screamer" icon="icon.weapon_dark_screamer_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1010" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2123,7 +2123,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Bleed, P. Critical Damage or Critical Poison. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="234" type="Weapon" name="Demon's Dagger" icon="icon.weapon_demons_sword_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="970" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2135,7 +2135,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Back Blow, or Critical Bleed. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="235" type="Weapon" name="Bloody Orchid" icon="icon.weapon_bloody_orchid_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="960" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2151,7 +2151,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, P. Critical Damage, or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="236" type="Weapon" name="Soul Separator" icon="icon.weapon_soul_separator_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="950" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2226,7 +2226,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Magic Hold, Magic Silence or Mana Up. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="242" type="Weapon" name="Soulfire Dirk" icon="icon.weapon_dagger_of_magicflame_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884" crystalType="c"
 			weight="750" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
@@ -2238,7 +2238,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Mental Shield, Magic Weakness or Magic Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="243" type="Weapon" name="Twilight Knife" icon="icon.weapon_hell_knife_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891" crystalType="b"
 			weight="740" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -2403,7 +2403,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Drain, Critical Poison or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="263" type="Weapon" name="Chakram" icon="icon.weapon_chakram_i00" defaultAction="equip" weaponType="dualfist" bodypart="lrhand"
 			randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="705" crystalType="c" weight="1490"
 			price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2426,7 +2426,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Rsk. Haste or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="265" type="Weapon" name="Fisted Blade" icon="icon.weapon_fist_blade_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;40;90" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1480" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2438,7 +2438,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Drain, Critical Poison or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="266" type="Weapon" name="Great Pata" icon="icon.weapon_great_pata_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;46;90" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1460" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2450,7 +2450,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Poison, Rsk. Evasion or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="267" type="Weapon" name="Arthro Nail" icon="icon.weapon_arthro_nail_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;52;90" immediateEffect="1" crystalCount="891" crystalType="b"
 			weight="1420" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2462,7 +2462,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Critical Drain, Critical Poison or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="268" type="Weapon" name="Bellion Cestus" icon="icon.weapon_bellion_cestus_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="1390" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2474,7 +2474,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Anger. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="269" type="Weapon" name="Blood Tornado" icon="icon.weapon_blood_tornado_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="1370" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2490,7 +2490,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Guidance, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="270" type="Weapon" name="Dragon Grinder" icon="icon.weapon_dragon_grinder_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="1350" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2613,7 +2613,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Evasion, or Quick Recovery. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="281" type="Weapon" name="Crystallized Ice Bow" icon="icon.weapon_crystallized_ice_bow_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1790" price="352580" changeWeaponId="9236" soulshots="8" spiritshots="2" mpConsume="2" enchantEnabled="1"
@@ -2626,7 +2626,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Miser or Quick Recovery. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="282" type="Weapon" name="Elemental Bow" icon="icon.weapon_elemental_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="884" crystalType="c"
 			weight="1770" price="441940" changeWeaponId="9256" soulshots="8" spiritshots="2" mpConsume="3" enchantEnabled="1" reuseDelay="820">
@@ -2638,7 +2638,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Evasion or Miser. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="283" type="Weapon" name="Akat Longbow" icon="icon.weapon_akat_long_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="1740" price="660860" changeWeaponId="9288" soulshots="9" spiritshots="3" mpConsume="3" enchantEnabled="1"
@@ -2651,7 +2651,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Evasion, Critical Bleed or Miser. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="284" type="Weapon" name="Dark Elven Longbow" icon="icon.weapon_dark_elven_long_bow_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="1720" price="1336100" changeWeaponId="9312" soulshots="3" spiritshots="1" mpConsume="3" enchantEnabled="1"
@@ -2664,7 +2664,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Evasion, Miser or Cheap Shot. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="285" type="Weapon" name="Noble Elven Bow" icon="icon.weapon_noble_elven_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="884" crystalType="c"
 			weight="1760" price="441940" changeWeaponId="9260" soulshots="8" spiritshots="2" mpConsume="3" enchantEnabled="1" reuseDelay="1500">
@@ -2676,7 +2676,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Miser or Cheap Shot. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="286" type="Weapon" name="Eminence Bow" icon="icon.weapon_eminence_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1720" price="942700" changeWeaponId="9300" soulshots="10" spiritshots="3" mpConsume="3" enchantEnabled="1"
@@ -2689,7 +2689,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Quick Recovery or Cheap Shot. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="287" type="Weapon" name="Bow of Peril" icon="icon.weapon_hazard_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1346"
 			crystalType="b" weight="1700" price="2018280" changeWeaponId="9324" soulshots="3" spiritshots="1" mpConsume="4" enchantEnabled="1"
@@ -2702,7 +2702,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Light, Critical Bleed, or Mana Up. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="288" type="Weapon" name="Carnage Bow" icon="icon.weapon_carnium_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="1670" price="14098000" changeWeaponId="9336" soulshots="2" spiritshots="1" mpConsume="4" enchantEnabled="1"
@@ -2719,7 +2719,7 @@
 		<crystallizeReward id="36388" count="1" chance="35.263" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Cheap Shot, Quick Recovery, or Critical Poison. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="289" type="Weapon" name="Soul Bow" icon="icon.weapon_soul_bow_i00" defaultAction="equip" weaponType="bow" bodypart="lrhand"
 			randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1659" crystalType="a" weight="1660"
 			price="20741000" changeWeaponId="9348" soulshots="2" spiritshots="1" mpConsume="5" enchantEnabled="1" reuseDelay="820">
@@ -2834,7 +2834,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun or Long Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="298" type="Weapon" name="Orcish Glaive" icon="icon.weapon_orcish_glaive_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="2030" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2847,7 +2847,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="299" type="Weapon" name="Orcish Poleaxe" icon="icon.weapon_orcish_poleaxe_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1950" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2860,7 +2860,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="300" type="Weapon" name="Great Axe" icon="icon.weapon_great_axe_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="891" crystalType="b" weight="1940"
 			price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2873,7 +2873,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="301" type="Weapon" name="Scorpion" icon="icon.weapon_scorpion_i00" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1471" crystalType="c"
 			weight="1990" price="735540" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2886,7 +2886,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="302" type="Weapon" name="Body Slasher" icon="icon.weapon_body_slasher_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="2030" price="352580" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2899,7 +2899,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="303" type="Weapon" name="Widow Maker" icon="icon.weapon_widow_maker_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1471"
 			crystalType="c" weight="1980" price="735540" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2928,7 +2928,7 @@
 		<crystallizeReward id="36388" count="1" chance="53.269" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="31.957" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Guidance, Health, or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="305" type="Weapon" name="Tallum Glaive" icon="icon.weapon_tallum_glaive_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="1840" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2990,16 +2990,16 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<item id="310" type="Weapon" name="Relic of the Saints" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="610"
-			price="21000" soulshots="2" spiritshots="2" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			weight="610" price="21000" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="19" />
 		<set stat="mAtk" val="22" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<item id="311" type="Weapon" name="Crucifix of Blessing" icon="icon.weapon_crucifix_of_blessing_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="620"
-			price="37600" soulshots="2" spiritshots="2" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			weight="620" price="37600" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="25" />
 		<set stat="mAtk" val="28" />
 		<set stat="rCrit" val="8" />
@@ -3016,8 +3016,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="313" type="Weapon" name="Temptation of Abyss" icon="icon.weapon_temptation_of_abyss_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
-			crystalType="d" weight="610" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="582" crystalType="d" weight="610" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
 		<set stat="rCrit" val="8" />
@@ -3086,8 +3086,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="320" type="Weapon" name="Blue Crystal Skull" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2763"
-			crystalType="d" weight="1600" price="304000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2763" crystalType="d" weight="1600" price="304000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="67" />
 		<set stat="mAtk" val="66" />
 		<set stat="rCrit" val="8" />
@@ -3166,8 +3166,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="328" type="Weapon" name="Candle of Wisdom" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
-			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2452" crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
 		<set stat="rCrit" val="8" />
@@ -3206,8 +3206,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="332" type="Weapon" name="Scroll of Destruction" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
-			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2452" crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
 		<set stat="rCrit" val="8" />
@@ -3216,8 +3216,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="333" type="Weapon" name="Black Dragon Claw" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
-			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2452" crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
 		<set stat="rCrit" val="8" />
@@ -3226,8 +3226,8 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="334" type="Weapon" name="Three Eyed Crow's Feather" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
-			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2452" crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
 		<set stat="rCrit" val="8" />
@@ -3338,8 +3338,9 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="344" type="Weapon" name="Proof of Overlord" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
-			crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2160" crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1"
+			isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
 		<set stat="mAtk" val="152" />
 		<set stat="rCrit" val="8" />
@@ -3352,8 +3353,9 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="345" type="Weapon" name="Deathbringer Sword" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
-			crystalType="a" weight="4800" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="2160" crystalType="a" weight="4800" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1"
+			isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
 		<set stat="mAtk" val="152" />
 		<set stat="rCrit" val="8" />
@@ -3366,8 +3368,9 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="346" type="Weapon" name="Tears of Fallen Angel" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1765"
-			crystalType="s" weight="1600" price="35300000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			crystalCount="1765" crystalType="s" weight="1600" price="35300000" soulshots="1" spiritshots="1" enchantEnabled="1"
+			isMagicWeapon="true">
 		<set stat="pAtk" val="201" />
 		<set stat="mAtk" val="162" />
 		<set stat="rCrit" val="8" />
@@ -5643,7 +5646,7 @@
 	<!-- Magical, liquid medicine that restores MP for a certain amount of time. -->
 	<item id="726" type="EtcItem" name="Mana Potion" icon="icon.etc_potion_blue_i00" defaultAction="skill_reduce" etcitemType="potion"
 			immediateEffect="1" weight="180" price="80" isStackable="true" isOlyRestricted="true" handler="ManaPotion" useCondition="{{uc_transmode_exclude;{tt_flying}}}">
-		<skill id="10000" level="1" /> <!-- Steel Door Guild Reward Box  (Top-grade) -->
+		<skill id="46001" level="1" /> <!-- Mana Potion -->
 	</item>
 	<!-- Magical, liquid medicine that restores HP for a certain amount of time. -->
 	<item id="727" type="EtcItem" name="Healing Potion" icon="icon.item_system03" defaultAction="skill_reduce" etcitemType="potion"
@@ -5652,7 +5655,7 @@
 	<!-- Magical, liquid medicine that restores MP for a certain amount of time. -->
 	<item id="728" type="EtcItem" name="Mana Potion" icon="icon.etc_reagent_blue_i00" defaultAction="skill_reduce" etcitemType="potion"
 			immediateEffect="1" weight="180" price="2000" isStackable="true" isOlyRestricted="true" handler="ManaPotion" useCondition="{{uc_transmode_exclude;{tt_flying}}}">
-		<skill id="2005" level="1" /> <!-- Nectar -->
+		<skill id="46002" level="1" /> <!-- Greater Mana Potion -->
 	</item>
 	<!-- When enchanted, P. Atk. + 4 for A-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons. P. Atk. + 5 for two-handed swords, two-handed blunts, dualswords, and two-handed fist weapons. P. Atk. + 8 for bows. M. Atk. + 3 for all weapons. Starting at + 4, P. Atk. / M. Atk. bonus double. Enchanting is safe up to + 3. -->
 	<item id="729" type="EtcItem" name="Scroll: Enchant Weapon (A-grade)" icon="icon.etc_scroll_of_enchant_weapon_i04" defaultAction="skill_reduce"

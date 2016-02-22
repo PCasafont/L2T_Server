@@ -1066,7 +1066,7 @@
 		<table name="#power"> 1250 1406 1568 1733 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
+		<set name="skillType" val="CHARGEDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
@@ -1094,7 +1094,7 @@
 		<table name="#power"> 625 703 784 867 </table>
 		<table name="#mpConsume"> 61 63 67 70 </table>
 		<set name="target" val="TARGET_AREA" />
-		<set name="skillType" val="PDAM" />
+		<set name="skillType" val="CHARGEDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />

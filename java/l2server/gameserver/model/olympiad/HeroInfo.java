@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.olympiad;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class HeroInfo
 		public long time;
 		public String action;
 	}
-
+	
 	public static class FightInfo
 	{
 		public String opponent;
@@ -91,37 +92,37 @@ public class HeroInfo
 	{
 		return _classId;
 	}
-
+	
 	public int getVictories()
 	{
 		return _victories;
 	}
-
+	
 	public void setVictories(int victories)
 	{
 		_victories = victories;
 	}
-
+	
 	public int getDefeats()
 	{
 		return _defeats;
 	}
-
+	
 	public void setDefeats(int defeats)
 	{
 		_defeats = defeats;
 	}
-
+	
 	public int getDraws()
 	{
 		return _draws;
 	}
-
+	
 	public void setDraws(int draws)
 	{
 		_draws = draws;
 	}
-
+	
 	public int getCount()
 	{
 		return _count;
@@ -131,12 +132,12 @@ public class HeroInfo
 	{
 		_count++;
 	}
-
+	
 	public boolean getPlayed()
 	{
 		return _played;
 	}
-
+	
 	public void setPlayed(boolean played)
 	{
 		_played = played;
@@ -146,47 +147,47 @@ public class HeroInfo
 	{
 		return _clanName;
 	}
-
+	
 	public void setClanName(String clanName)
 	{
 		_clanName = clanName;
 	}
-
+	
 	public int getClanCrest()
 	{
 		return _clanCrest;
 	}
-
+	
 	public void setClanCrest(int clanCrest)
 	{
 		_clanCrest = clanCrest;
 	}
-
+	
 	public String getAllyName()
 	{
 		return _allyName;
 	}
-
+	
 	public void setAllyName(String allyName)
 	{
 		_allyName = allyName;
 	}
-
+	
 	public int getAllyCrest()
 	{
 		return _allyCrest;
 	}
-
+	
 	public void setAllyCrest(int allyCrest)
 	{
 		_allyCrest = allyCrest;
 	}
-
+	
 	public String getMessage()
 	{
 		return _message;
 	}
-
+	
 	public void setMessage(String message)
 	{
 		_message = message;

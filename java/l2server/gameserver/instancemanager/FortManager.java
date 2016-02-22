@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.io.File;
@@ -42,10 +43,11 @@ public class FortManager implements InstanceListManager
 		load();
 	}
 	
+	@Override
 	public void load()
 	{
 		Log.info("Initializing FortManager");
-
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "forts.xml");
 		XmlDocument doc = new XmlDocument(file);
 		
@@ -55,6 +57,9 @@ public class FortManager implements InstanceListManager
 				continue;
 			
 			int fortId = n.getInt("id");
+			if (Config.isServer(Config.TENKAI) && (fortId == 113))
+				continue;
+			
 			String name = n.getString("name");
 			int type = n.getInt("type");
 			int flagPoleId = n.getInt("flagPoleId");
@@ -163,7 +168,7 @@ public class FortManager implements InstanceListManager
 		for (int i = 0; i < _forts.size(); i++)
 		{
 			fort = _forts.get(i);
-			if (fort != null && fort.getFortId() == fortId)
+			if ((fort != null) && (fort.getFortId() == fortId))
 				return i;
 		}
 		return -1;
@@ -180,7 +185,7 @@ public class FortManager implements InstanceListManager
 		for (int i = 0; i < _forts.size(); i++)
 		{
 			fort = _forts.get(i);
-			if (fort != null && fort.checkIfInZone(x, y, z))
+			if ((fort != null) && fort.checkIfInZone(x, y, z))
 				return i;
 		}
 		return -1;
@@ -191,10 +196,12 @@ public class FortManager implements InstanceListManager
 		return _forts;
 	}
 	
+	@Override
 	public void updateReferences()
 	{
 	}
 	
+	@Override
 	public void activateInstances()
 	{
 		for (final Fort fort : _forts)

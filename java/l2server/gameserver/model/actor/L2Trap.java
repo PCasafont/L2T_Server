@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor;
 
 import java.util.Collection;
@@ -73,7 +74,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getKnownList()
 	 */
 	@Override
@@ -95,7 +96,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 *
 	 */
 	public void stopDecay()
@@ -104,7 +105,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#onDecay()
 	 */
 	@Override
@@ -114,7 +115,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getNpcId()
@@ -123,7 +124,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#doDie(l2server.gameserver.model.actor.L2Character)
 	 */
 	@Override
@@ -137,7 +138,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param owner
 	 */
 	@Override
@@ -149,7 +150,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param owner
 	 */
 	public synchronized void unSummon()
@@ -164,7 +165,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getActiveWeaponInstance()
 	 */
 	@Override
@@ -174,7 +175,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getActiveWeaponItem()
 	 */
 	@Override
@@ -184,7 +185,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getLevel()
 	 */
 	@Override
@@ -194,7 +195,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getTemplate()
 	 */
 	@Override
@@ -204,7 +205,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getSecondaryWeaponInstance()
 	 */
 	@Override
@@ -214,7 +215,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#getSecondaryWeaponItem()
 	 */
 	@Override
@@ -224,7 +225,7 @@ public class L2Trap extends L2Character
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.actor.L2Character#updateAbnormalEffect()
 	 */
 	@Override
@@ -278,7 +279,7 @@ public class L2Trap extends L2Character
 	 */
 	public void setDetected(L2Character detector)
 	{
-		detector.sendPacket(new NpcInfo(this, detector));
+		detector.sendPacket(new NpcInfo(this));
 	}
 	
 	/**
@@ -288,7 +289,7 @@ public class L2Trap extends L2Character
 	 */
 	protected boolean checkTarget(L2Character target)
 	{
-		return L2Skill.checkForAreaOffensiveSkills(this, target, _skill, false);
+		return getOwner().isAbleToCastOnTarget(target, null, true);
 	}
 	
 	private class TrapTask implements Runnable
@@ -303,9 +304,9 @@ public class L2Trap extends L2Character
 					if (_hasLifeTime)
 					{
 						_timeRemaining -= TICK;
-						if (_timeRemaining < _lifeTime - 15000)
+						if (_timeRemaining < (_lifeTime - 15000))
 						{
-							SocialAction sa = new SocialAction(L2Trap.this.getObjectId(), 2);
+							SocialAction sa = new SocialAction(getObjectId(), 2);
 							broadcastPacket(sa);
 						}
 						if (_timeRemaining < 0)
@@ -315,6 +316,7 @@ public class L2Trap extends L2Character
 								case TARGET_AURA:
 								case TARGET_FRONT_AURA:
 								case TARGET_BEHIND_AURA:
+								case TARGET_AROUND_CASTER:
 									trigger(L2Trap.this);
 									break;
 								default:
@@ -326,7 +328,10 @@ public class L2Trap extends L2Character
 					
 					for (L2Character target : getKnownList().getKnownCharactersInRadius(_skill.getSkillRadius()))
 					{
-						if (!checkTarget(target))
+						if (target == getOwner())
+							continue;
+						
+						if (!getOwner().isAbleToCastOnTarget(target, _skill, false))
 							continue;
 						
 						trigger(target);
@@ -351,7 +356,7 @@ public class L2Trap extends L2Character
 	public void trigger(L2Character target)
 	{
 		_isTriggered = true;
-		broadcastPacket(new NpcInfo(this, null));
+		broadcastPacket(new NpcInfo(this));
 		setTarget(target);
 		
 		if (getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null)
@@ -373,6 +378,7 @@ public class L2Trap extends L2Character
 			}
 			catch (Exception e)
 			{
+				e.printStackTrace();
 				unSummon();
 			}
 		}
@@ -391,7 +397,7 @@ public class L2Trap extends L2Character
 	public void sendInfo(L2PcInstance activeChar)
 	{
 		if (_isTriggered || canSee(activeChar))
-			activeChar.sendPacket(new NpcInfo(this, activeChar));
+			activeChar.sendPacket(new NpcInfo(this));
 	}
 	
 	@Override
@@ -399,7 +405,7 @@ public class L2Trap extends L2Character
 	{
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
-			if (player != null && (_isTriggered || canSee(player)))
+			if ((player != null) && (_isTriggered || canSee(player)))
 				player.sendPacket(mov);
 	}
 	

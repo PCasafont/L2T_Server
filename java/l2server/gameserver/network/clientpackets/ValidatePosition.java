@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -30,10 +31,11 @@ import l2server.log.Log;
 public class ValidatePosition extends L2GameClientPacket
 {
 	
-	private static final String _C__48_VALIDATEPOSITION = "[C] 48 ValidatePosition";
-	
 	/** urgent messages, execute immediately */
-	public TaskPriority getPriority() { return TaskPriority.PR_HIGH; }
+	public TaskPriority getPriority()
+	{
+		return TaskPriority.PR_HIGH;
+	}
 	
 	private int _x;
 	private int _y;
@@ -44,20 +46,18 @@ public class ValidatePosition extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_x  = readD();
-		_y  = readD();
-		_z  = readD();
-		_heading  = readD();
-		_data  = readD();
+		_x = readD();
+		_y = readD();
+		_z = readD();
+		_heading = readD();
+		_data = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null
-				|| activeChar.isTeleporting()
-				|| activeChar.inObserverMode())
+		if ((activeChar == null) || activeChar.isTeleporting() || activeChar.inObserverMode())
 			return;
 		
 		final int realX = activeChar.getX();
@@ -66,11 +66,11 @@ public class ValidatePosition extends L2GameClientPacket
 		
 		if (Config.DEVELOPER)
 		{
-			Log.fine("client pos: "+ _x + " "+ _y + " "+ _z +" head "+ _heading);
-			Log.fine("server pos: "+ realX + " "+realY+ " "+realZ +" head "+activeChar.getHeading());
+			Log.fine("client pos: " + _x + " " + _y + " " + _z + " head " + _heading);
+			Log.fine("server pos: " + realX + " " + realY + " " + realZ + " head " + activeChar.getHeading());
 		}
 		
-		if (_x == 0 && _y == 0)
+		if ((_x == 0) && (_y == 0))
 		{
 			if (realX != 0) // in this case this seems like a client error
 				return;
@@ -86,7 +86,7 @@ public class ValidatePosition extends L2GameClientPacket
 				dx = _x - activeChar.getInVehiclePosition().getX();
 				dy = _y - activeChar.getInVehiclePosition().getY();
 				dz = _z - activeChar.getInVehiclePosition().getZ();
-				diffSq = (dx*dx + dy*dy);
+				diffSq = ((dx * dx) + (dy * dy));
 				if (diffSq > 250000)
 					sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInVehiclePosition()));
 			}
@@ -108,11 +108,11 @@ public class ValidatePosition extends L2GameClientPacket
 		
 		if (activeChar.isFalling(_z))
 			return; // disable validations during fall to avoid "jumping"
-		
+			
 		dx = _x - realX;
 		dy = _y - realY;
 		dz = _z - realZ;
-		diffSq = (dx*dx + dy*dy);
+		diffSq = ((dx * dx) + (dy * dy));
 		
 		/*L2Party party = activeChar.getParty();
 		if (party != null && activeChar.getLastPartyPositionDistance(_x, _y, _z) > 150)
@@ -130,15 +130,14 @@ public class ValidatePosition extends L2GameClientPacket
 		else if (diffSq < 360000) // if too large, messes observation
 		{
 			if (Config.COORD_SYNCHRONIZE == -1) // Only Z coordinate synched to server,
-				// mainly used when no geodata but can be used also with geodata
+			// mainly used when no geodata but can be used also with geodata
 			{
-				activeChar.setXYZ(realX,realY,_z);
+				activeChar.setXYZ(realX, realY, _z);
 				return;
 			}
 			if (Config.COORD_SYNCHRONIZE == 1) // Trusting also client x,y coordinates (should not be used with geodata)
 			{
-				if (!activeChar.isMoving()
-						|| !activeChar.validateMovementHeading(_heading)) // Heading changed on client = possible obstacle
+				if (!activeChar.isMoving() || !activeChar.validateMovementHeading(_heading)) // Heading changed on client = possible obstacle
 				{
 					// character is not moving, take coordinates from client
 					if (diffSq < 2500) // 50*50 - attack won't work fluently if even small differences are corrected
@@ -157,13 +156,11 @@ public class ValidatePosition extends L2GameClientPacket
 			// when too far from server calculated true coordinate.
 			// Due to geodata/zone errors, some Z axis checks are made. (maybe a temporary solution)
 			// Important: this code part must work together with L2Character.updatePosition
-			if (Config.GEODATA > 0 && (diffSq > 250000 || Math.abs(dz) > 200))
+			if ((Config.GEODATA > 0) && ((diffSq > 40000) || (Math.abs(dz) > 100)))
 			{
 				//if ((_z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
 				
-				if (Math.abs(dz) > 200
-						&& Math.abs(dz) < 1500
-						&& Math.abs(_z - activeChar.getClientZ()) < 800 )
+				if ((Math.abs(dz) > 100) && (Math.abs(dz) < 1500) && (Math.abs(_z - activeChar.getClientZ()) < 800))
 				{
 					activeChar.setXYZ(realX, realY, _z);
 					realZ = _z;
@@ -185,12 +182,9 @@ public class ValidatePosition extends L2GameClientPacket
 		activeChar.setLastServerPosition(realX, realY, realZ);
 	}
 	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
 	@Override
-	public String getType()
+	protected boolean triggersOnActionRequest()
 	{
-		return _C__48_VALIDATEPOSITION;
+		return false;
 	}
 }

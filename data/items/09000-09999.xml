@@ -1707,7 +1707,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: StormBringer Conversion
-		Bestows one of the following functions-Critical Anger, Focus, or Light.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9228" type="Weapon" name="Soldat Estoc" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="rapier"
@@ -1794,7 +1794,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Flamberge Conversion
-		Bestows one of the following functions: P. Critical Damage, Focus, or Light.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9232" type="Weapon" name="Schlager" icon="icon.weapon_schlaeger_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
@@ -1874,7 +1874,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3498" level="1" /> <!-- Special Ability: Light -->
 	</item>
-	<!-- Kamael-exclusive Weapon: Crystallized Ice Bow\\Bestows one of the following functions: Guidance, Evasion, or Quick Recovery. -->
+	<!-- Kamael-exclusive Weapon: Crystallized Ice Bow\\Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9236" type="Weapon" name="Arbalest" icon="icon.weapon_arbalest_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1790" price="352580" changeWeaponId="281" soulshots="4" spiritshots="2" enchantEnabled="1" reuseDelay="400">
@@ -1957,7 +1957,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Shamshir
-		Bestows one of the following functions: Guidance, Back Blow, or Rsk. Evasion.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9240" type="Weapon" name="Chevalier Rapier" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="rapier"
@@ -2046,7 +2046,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Katana
-		Bestows one of the following functions-Focus, P. Critical Damage, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9244" type="Weapon" name="Chevalier Rapier" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="rapier"
@@ -2135,7 +2135,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Spirit Sword
-		Bestows one of the following functions-P. Critical Damage, Critical Poison, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9248" type="Weapon" name="Chevalier Rapier" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="rapier"
@@ -2223,7 +2223,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Raid Sword
-		Bestows one of the following functions-Focus, Critical Drain, or Critical Poison.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9252" type="Weapon" name="Chevalier Rapier" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="rapier"
@@ -2310,7 +2310,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Elemental Bow
-		Bestows one of the following functions: Guidance, Miser, or Quick Recovery.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9256" type="Weapon" name="Ballista" icon="icon.weapon_arbalest_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
@@ -2398,7 +2398,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: High Lv. Elven Bow
-		Bestows one of the following functions: Evasion, Miser, or Cheap Shot.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9260" type="Weapon" name="Ballista" icon="icon.weapon_arbalest_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
@@ -2488,7 +2488,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Caliburs
-		Bestows one of the following functions-Guidance, Focus, or P. Critical Damage.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9264" type="Weapon" name="Blinzlasher" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -2577,7 +2577,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Sword of Delusion
-		Bestows one of the following functions-Focus, Health, or Rsk. Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9268" type="Weapon" name="Blinzlasher" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -2666,7 +2666,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Tsurugi
-		Bestows one of the following functions-Focus, P. Critical Damage, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9272" type="Weapon" name="Blinzlasher" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -2755,7 +2755,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Sword of Nightmare
-		Bestows one of the following functions-Health, Focus, or Light.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9276" type="Weapon" name="Blinzlasher" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -2844,7 +2844,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Ultimate Sword
-		Bestows one of the following functions-Guidance, Critical Drain, or Health
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increases P. Atk., M. Atk., and the amount of received heal, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack
 	-->
 	<item id="9280" type="Weapon" name="Blinzlasher" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -2932,7 +2932,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Pa'agrian Sword
-		Bestows one of the following functions: Focus, Health, or Critical Drain.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9284" type="Weapon" name="Immortal Edge" icon="icon.weapon_invincible_blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
@@ -3016,7 +3016,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Akat Longbow
-		Bestows one of the following functions: Guidance, Evasion, or Miser.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9288" type="Weapon" name="Tathlum" icon="icon.weapon_taslam_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
@@ -3105,7 +3105,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Samurai Long Sword
-		Bestows one of the following functions-Focus, P. Critical Damage, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9292" type="Weapon" name="Admiral's Estoc" icon="icon.weapon_blink_slasher_i00" defaultAction="equip" weaponType="rapier"
@@ -3194,7 +3194,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Berserker Blade
-		Bestows one of the following functions: Focus, P. Critical Damage, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9296" type="Weapon" name="Saber Tooth" icon="icon.weapon_invincible_blade_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1885"
@@ -3277,7 +3277,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Eminence Bow
-		Bestows one of the following functions: Guidance, Miser, or Cheap Shot.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9300" type="Weapon" name="Sharpshooter" icon="icon.weapon_taslam_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1885"
@@ -3367,7 +3367,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Keshanberk
-		Bestows one of the following functions-Guidance, Focus, or Back Blow.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9304" type="Weapon" name="Military Fleuret" icon="icon.weapon_assult_fleuret_i00" defaultAction="equip" weaponType="rapier"
@@ -3457,7 +3457,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Great Sword
-		Bestows one of the following functions: Health, P. Critical Damage, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9308" type="Weapon" name="Innominate Victory" icon="icon.weapon_nameless_victory_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891"
@@ -3542,7 +3542,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dark Elven Longbow Conversion
-		Bestows one of the following functions: Evasion, Critical Bleed, or Miser.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9312" type="Weapon" name="Peacemaker" icon="icon.weapon_peace_maker_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="891"
@@ -3631,7 +3631,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Damascus Sword Conversion
-		Bestows one of the following functions-Focus, P. Critical Damage, or Haste.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9316" type="Weapon" name="Colichemarde" icon="icon.weapon_colichemarde_i00" defaultAction="equip" weaponType="rapier"
@@ -3720,7 +3720,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Guardian's Sword Conversion
-		Bestows one of the following functions: Critical Drain, Health, or Critical Bleed.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9320" type="Weapon" name="Dismantler" icon="icon.weapon_dismantler_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
@@ -3802,7 +3802,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Bow of Peril Conversion
-		Bestows one of the following functions: Guidance, Quick Recover, or Cheap Shot.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9324" type="Weapon" name="Hell Hound" icon="icon.weapon_hell_hound_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1346"
@@ -3887,7 +3887,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Tallum Blade Conversion
-		Bestows one of the following functions-Critical Poison, Haste, or Anger.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, P. Atk., magical power, and received healing of all party members, including yourself, are increased during a Critical Attack with a certain chance, and MP consumption during skill use is decreased
 	-->
 	<item id="9328" type="Weapon" name="White Lightning" icon="icon.weapon_lightning_blaze_i00" defaultAction="equip" weaponType="rapier"
@@ -3993,7 +3993,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Infernal Master Conversion
-		Bestows one of the following functions: Haste, P. Critical Damage, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9332" type="Weapon" name="Divine Pain" icon="icon.weapon_pain_of_godness_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
@@ -4092,7 +4092,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Carnage Bow Conversion
-		Bestows one of the following functions: Light, Critical Bleed, or Mana Up.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9336" type="Weapon" name="Doomchanter" icon="icon.weapon_doom_singer_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
@@ -4195,7 +4195,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dark Legion Conversion
-		Bestows one of the following functions-P. Critical Damage, Health, or Rsk. Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9340" type="Weapon" name="Lacerator" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
@@ -4301,7 +4301,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dragon Slayer Conversion
-		Bestows one of the following functions: Health, Critical Bleed, or Critical Drain.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9344" type="Weapon" name="Undertaker" icon="icon.weapon_death_bringer_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659"
@@ -4401,7 +4401,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Soul Bow Conversion
-		Bestows one of the following functions: Cheap Shot, Quick Recovery, or Critical Poison.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9348" type="Weapon" name="Reaper" icon="icon.weapon_soul_shooter_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659"
@@ -4505,7 +4505,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Sirra's Blade Conversion
-		Bestows one of the following functions-Haste, Health, or Critical Poison.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9352" type="Weapon" name="Éclair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
@@ -4611,7 +4611,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Sword of Ipos Conversion
-		Bestows one of the following functions: Focus, Haste, or Health.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9356" type="Weapon" name="Durendal" icon="icon.weapon_death_bringer_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
@@ -4709,7 +4709,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Shyeed's Bow Conversion
-		Bestows one of the following functions: Cheap Shot, Focus, or Quick Recover.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9360" type="Weapon" name="Screaming Vengeance" icon="icon.weapon_soul_shooter_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
@@ -4813,7 +4813,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Forgotten Blade Conversion
-		Bestows one of the following functions-Haste, Health, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9364" type="Weapon" name="Laevateinn" icon="icon.weapon_leavatein_i00" defaultAction="equip" weaponType="rapier"
@@ -4919,7 +4919,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Heaven's Divider Conversion
-		Bestows one of the following functions: Haste, Health, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9368" type="Weapon" name="Gram" icon="icon.weapon_gram_i00" defaultAction="equip" weaponType="ancientsword" bodypart="lrhand"
 			randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052" crystalType="s"
@@ -5020,7 +5020,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Draconic Bow Conversion
-		Bestows one of the following functions: Cheap Shot, Focus, or Critical Slow.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9372" type="Weapon" name="Sarunga" icon="icon.weapon_sarnga_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
@@ -5124,7 +5124,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dynasty Sword Conversion
-		Bestows one of the following functions-Focus, Health, or Light.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
 	<item id="9376" type="Weapon" name="Dynasty Rapier" icon="icon.weapon_dynasty_rapier_i00" defaultAction="equip" weaponType="rapier"
@@ -5231,7 +5231,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dynasty Blade Conversion
-		Bestows one of the following functions: Focus, Health, or Light.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9380" type="Weapon" name="Dynasty Ancient Sword" icon="icon.weapon_dynasty_ancient_sword_i00" defaultAction="equip"
 			weaponType="ancientsword" bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -5334,7 +5334,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Dynasty Bow Conversion
-		Bestows one of the following functions: Cheap Shot, Guidance, or Focus.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="9384" type="Weapon" name="Dynasty Crossbow" icon="icon.weapon_dynasty_crossbow_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
@@ -6076,7 +6076,7 @@
 		<crystallizeReward id="960" count="2" chance="95.962" /> <!-- Scroll: Enchant Armor (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="9.597" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9442" type="Weapon" name="Dynasty Sword" icon="icon.weapon_dynasty_blade_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1520" price="74946000" changeWeaponId="9376" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -6092,7 +6092,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9443" type="Weapon" name="Dynasty Blade" icon="icon.weapon_dynasty_twohand_sword_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1740" price="74946000" changeWeaponId="9380" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -6108,7 +6108,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Mana Up, or Conversion. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9444" type="Weapon" name="Dynasty Phantom" icon="icon.weapon_dynasty_magic_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1520" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" isMagicWeapon="true">
@@ -6123,7 +6123,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Cheap Shot, Guidance, or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9445" type="Weapon" name="Dynasty Bow" icon="icon.weapon_dynasty_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1520" price="74946000" changeWeaponId="9384" soulshots="1" spiritshots="1" mpConsume="6" elementEnabled="1"
@@ -6141,7 +6141,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Evasion, or P. Critical Damage. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9446" type="Weapon" name="Dynasty Knife" icon="icon.weapon_dynasty_dagger_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1520" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -6158,7 +6158,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Critical Stun, or Light. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9447" type="Weapon" name="Dynasty Halberd" icon="icon.weapon_dynasty_spear_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="2010" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -6176,7 +6176,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health, or Rsk. Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9448" type="Weapon" name="Dynasty Cudgel" icon="icon.weapon_dynasty_hammer_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1740" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -6193,7 +6193,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Conversion, or Acumen. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9449" type="Weapon" name="Dynasty Mace" icon="icon.weapon_dynasty_staff_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1080" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" isMagicWeapon="true">
@@ -6210,7 +6210,7 @@
 		<crystallizeReward id="6577" count="1" chance="3.748" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="56.22" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Evasion, Focus, or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="9450" type="Weapon" name="Dynasty Bagh-Nakh" icon="icon.weapon_dynasty_jamadhr_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="3597"
 			crystalType="s" weight="1550" price="74946000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -6947,92 +6947,110 @@
 	</item>
 	<!-- Fire attack attribute increases by 5 when bestowed on a weapon. Water defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9546" type="EtcItem" name="Fire Stone" icon="icon.etc_fire_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2329" level="1" /> <!-- Fire Stone -->
 	</item>
 	<!-- Water attack attribute increases by 5 when bestowed on a weapon. Fire defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9547" type="EtcItem" name="Water Stone" icon="icon.etc_water_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2330" level="1" /> <!-- Water Stone -->
 	</item>
 	<!-- Earth attack attribute increases by 5 when bestowed on a weapon. Wind defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9548" type="EtcItem" name="Earth Stone" icon="icon.etc_earth_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2332" level="1" /> <!-- Earth Stone -->
 	</item>
 	<!-- Wind attack attribute increases by 5 when bestowed on a weapon. Earth defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9549" type="EtcItem" name="Wind Stone" icon="icon.etc_wind_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2331" level="1" /> <!-- Wind Stone -->
 	</item>
 	<!-- Dark attack attribute increases by 5 when bestowed on a weapon. Holy defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9550" type="EtcItem" name="Dark Stone" icon="icon.etc_unholy_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2334" level="1" /> <!-- Dark Stone -->
 	</item>
 	<!-- Holy attack attribute increases by 5 when bestowed on a weapon. Dark defense attribute increases by 6 when bestowed on an armor. Attribute Stones can be used up to attribute level 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9551" type="EtcItem" name="Holy Stone" icon="icon.etc_holy_stone_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="25000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="25000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2333" level="1" /> <!-- Holy Stone -->
 	</item>
 	<!-- Fire attack attribute increases by 5 when bestowed on a weapon. Water defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9552" type="EtcItem" name="Fire Crystal" icon="icon.etc_fire_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2329" level="2" /> <!-- Fire Crystal -->
 	</item>
 	<!-- Water attack attribute increases by 5 when bestowed on a weapon. Fire defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9553" type="EtcItem" name="Water Crystal" icon="icon.etc_water_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2330" level="2" /> <!-- Water Crystal -->
 	</item>
 	<!-- Earth attack attribute increases by 5 when bestowed on a weapon. Wind defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9554" type="EtcItem" name="Earth Crystal" icon="icon.etc_earth_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2332" level="2" /> <!-- Earth Crystal -->
 	</item>
 	<!-- Wind attack attribute increases by 5 when bestowed on a weapon. Earth defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9555" type="EtcItem" name="Wind Crystal" icon="icon.etc_wind_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2331" level="2" /> <!-- Wind Crystal -->
 	</item>
 	<!-- Dark attack attribute increases by 5 when bestowed on a weapon. Holy defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9556" type="EtcItem" name="Dark Crystal" icon="icon.etc_unholy_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2334" level="2" /> <!-- Dark Crystal -->
 	</item>
 	<!-- Holy attack attribute increases by 5 when bestowed on a weapon. Dark defense attribute increases by 6 when bestowed on an armor. Attribute Crystals can be used up to attribute level 6. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
 	<item id="9557" type="EtcItem" name="Holy Crystal" icon="icon.etc_holy_crystal_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" price="100000" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" price="100000" isTradable="true" isDropable="true" isSellable="true" isDepositable="true"
+			isStackable="true" handler="EnchantAttribute">
 		<skill id="2333" level="2" /> <!-- Holy Crystal -->
 	</item>
 	<!-- Fire attack attribute increases by % when bestowed on a weapon. Water defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9558" type="EtcItem" name="Fire Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2329" level="3" /> <!-- Fire Jewel -->
 	</item>
 	<!-- Water attack attribute increases by % when bestowed on a weapon. Fire defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9559" type="EtcItem" name="Water Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2330" level="3" /> <!-- Water Jewel -->
 	</item>
 	<!-- Earth attack attribute increases by % when bestowed on a weapon. Wind defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9560" type="EtcItem" name="Earth Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2332" level="3" /> <!-- Earth Jewel -->
 	</item>
 	<!-- Wind attack attribute increases by % when bestowed on a weapon. Earth defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9561" type="EtcItem" name="Wind Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2331" level="3" /> <!-- Wind Jewel -->
 	</item>
 	<!-- Dark attack attribute increases by % when bestowed on a weapon. Holy defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9562" type="EtcItem" name="Dark Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2334" level="3" /> <!-- Dark Jewel -->
 	</item>
 	<!-- Holy attack attribute increases by % when bestowed on a weapon. Dark defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 9. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->
 	<item id="9563" type="EtcItem" name="Holy Jewel" icon="icon.etc_crystal_ball_silver_i00" defaultAction="skill_reduce" etcitemType="scrl_enchant_attr"
-			immediateEffect="1" weight="1" isStackable="true" handler="EnchantAttribute">
+			immediateEffect="1" weight="1" isTradable="true" isDropable="true" isSellable="true" isDepositable="true" isStackable="true"
+			handler="EnchantAttribute">
 		<skill id="2333" level="3" /> <!-- Holy Jewel -->
 	</item>
 	<!-- Fire attack attribute increases by % when bestowed on a weapon. Water defense attribute increases by % when bestowed on an armor. Attribute Stones can be used up to attribute level 12. Additionally, a maximum of three types of Elemental attribute can be bestowed on an armor. Opposite attributes cannot be bestowed together. -->

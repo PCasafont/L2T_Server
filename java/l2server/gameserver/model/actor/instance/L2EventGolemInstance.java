@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.events.instanced.EventTeam;
@@ -44,9 +45,8 @@ public class L2EventGolemInstance extends L2MonsterInstance
 	@Override
 	public boolean doDie(L2Character killer)
 	{
-		if (killer instanceof L2PcInstance
-				&& ((L2PcInstance)killer).getEvent() instanceof DestroyTheGolem)
-			((DestroyTheGolem)((L2PcInstance)killer).getEvent()).onGolemDestroyed((L2PcInstance)killer, getTeam());
+		if ((killer instanceof L2PcInstance) && (((L2PcInstance) killer).getEvent() instanceof DestroyTheGolem))
+			((DestroyTheGolem) ((L2PcInstance) killer).getEvent()).onGolemDestroyed((L2PcInstance) killer, getTeam());
 		return super.doDie(killer);
 	}
 	

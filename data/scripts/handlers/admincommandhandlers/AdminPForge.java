@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.math.BigInteger;
@@ -28,7 +29,6 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.network.NioNetStringBuffer;
 import l2server.util.StringUtil;
 
-
 /**
  * This class handles commands for gm to forge packets
  *
@@ -37,13 +37,9 @@ import l2server.util.StringUtil;
  */
 public class AdminPForge implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_forge",
-		"admin_forge2",
-		"admin_forge3"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_forge", "admin_forge2", "admin_forge3" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_forge"))
@@ -199,15 +195,10 @@ public class AdminPForge implements IAdminCommandHandler
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/pforge2.htm");
 		adminReply.replace("%format%", format);
 		
-		final StringBuilder replyMSG =
-			new StringBuilder(format.length() * 40);
+		final StringBuilder replyMSG = new StringBuilder(format.length() * 40);
 		
 		for (int i = 0; i < format.length(); i++)
-			StringUtil.append(replyMSG,
-					String.valueOf(format.charAt(i)),
-					" : <edit var=\"v",
-					String.valueOf(i),
-			"\" width=100><br1>");
+			StringUtil.append(replyMSG, String.valueOf(format.charAt(i)), " : <edit var=\"v", String.valueOf(i), "\" width=100><br1>");
 		adminReply.replace("%valueditors%", replyMSG.toString());
 		replyMSG.setLength(0);
 		
@@ -226,30 +217,29 @@ public class AdminPForge implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	
 	private boolean write(byte b, String string, ByteBuffer buf)
 	{
-		if ((b == 'C')||(b == 'c'))
+		if ((b == 'C') || (b == 'c'))
 		{
 			buf.put(Byte.decode(string));
 			return true;
 		}
-		else if ((b == 'D')||(b == 'd'))
+		else if ((b == 'D') || (b == 'd'))
 		{
 			buf.putInt(Integer.decode(string));
 			return true;
 		}
-		else if ((b == 'H')||(b == 'h'))
+		else if ((b == 'H') || (b == 'h'))
 		{
 			buf.putShort(Short.decode(string));
 			return true;
 		}
-		else if ((b == 'F')||(b == 'f'))
+		else if ((b == 'F') || (b == 'f'))
 		{
 			buf.putDouble(Double.parseDouble(string));
 			return true;
 		}
-		else if ((b == 'S')||(b == 's'))
+		else if ((b == 'S') || (b == 's'))
 		{
 			final int len = string.length();
 			for (int i = 0; i < len; i++)
@@ -259,7 +249,7 @@ public class AdminPForge implements IAdminCommandHandler
 			buf.putChar('\000');
 			return true;
 		}
-		else if ((b == 'B')||(b == 'b')||(b == 'X')||(b == 'x'))
+		else if ((b == 'B') || (b == 'b') || (b == 'X') || (b == 'x'))
 		{
 			buf.put(new BigInteger(string).toByteArray());
 			return true;
@@ -272,6 +262,7 @@ public class AdminPForge implements IAdminCommandHandler
 		return false;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

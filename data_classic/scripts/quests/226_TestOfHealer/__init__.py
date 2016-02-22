@@ -149,9 +149,9 @@ class Quest (JQuest) :
 
    if npcId == BANDELLOS :
      if st.getInt("cond")==0 and st.getInt("onlyone")==0 :
-        if (player.getClassId() in [0x04, 0x0f, 0x1d, 0x13]) and player.getLevel() > 38 :
+        if (player.getClassId().getId() in [0x04, 0x0f, 0x1d, 0x13]) and player.getLevel() > 38 :
           htmltext = "30473-03.htm"
-        elif player.getClassId() in [0x04, 0x0f, 0x1d, 0x13] :
+        elif player.getClassId().getId() in [0x04, 0x0f, 0x1d, 0x13] :
           htmltext = "30473-01.htm"
         else:
           htmltext = "30473-02.htm"

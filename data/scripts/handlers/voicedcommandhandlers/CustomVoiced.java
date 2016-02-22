@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.voicedcommandhandlers;
 
 import java.text.DecimalFormat;
@@ -29,6 +30,7 @@ import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
 
 public class CustomVoiced implements IVoicedCommandHandler
@@ -47,9 +49,11 @@ public class CustomVoiced implements IVoicedCommandHandler
 		"blockrequests",		// blocks all kind of requests, party, trade, clan etc
 		"blockpms",				// blocks the incoming pms
 		"refusekillinfo",		// blocks the kill info pop up
-		"disableweaponglow",	// disable the armor enchant glow
+		"disableweaponglow",	// disable the weapon enchant glow
 		"disablearmorglow",		// disable the armor enchant glow
 		"disablenicknamewings",	// disable the nickname wings
+		"hidecloak",			// hide the cloak
+		"mammon",				// shows blacksmith and merchant of mammon locations
 		"stabs",				// shows stab angle
 		"unrec",				// deletes recommendations
 		"treasure",				// opens the hidden chests event information window
@@ -58,9 +62,10 @@ public class CustomVoiced implements IVoicedCommandHandler
 	};
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public boolean useVoicedCommand(String command, L2PcInstance player, String params)
 	{
 		if (command.equalsIgnoreCase("itemid"))
@@ -155,6 +160,15 @@ public class CustomVoiced implements IVoicedCommandHandler
 			else
 				player.sendMessage("Disable Nick Wings turned OFF");
 		}
+		else if (command.equalsIgnoreCase("hidecloak"))
+		{
+			player.setCloakHidden(!player.isCloakHidden());
+			
+			if (player.isCloakHidden())
+				player.sendMessage("Your cloak has been hidden!");
+			else
+				player.sendMessage("Disable Cloak turned OFF");
+		}
 		else if (command.equalsIgnoreCase("noexp"))
 		{
 			player.setNoExp(!player.isNoExp());
@@ -173,7 +187,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 			String day = String.valueOf(currentTime.get(Calendar.DAY_OF_MONTH));
 			if (day.length() == 1)
 				day = "0" + day;
-			String month = String.valueOf(currentTime.get(Calendar.MONTH)+1); // January = 0
+			String month = String.valueOf(currentTime.get(Calendar.MONTH) + 1); // January = 0
 			if (month.length() == 1)
 				month = "0" + month;
 			String year = String.valueOf(currentTime.get(Calendar.YEAR));
@@ -250,12 +264,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 	
 	private void sendHiddenStats(L2PcInstance player)
 	{
-		String html = "<html>"
-				+ "<body>"
-				+ "<center><table><tr><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td></tr></table></center>"
-				+ "<center><table><tr><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td></tr></table></center><br><br>"
-				+ "<center><button value=\"Reload!\" width=103 height=24 action=\"bypass -h voice .myhiddenstats\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></center>"
-				+ "<center><table width=300><tr><td FIXWIDTH=150>Stat</td><td FIXWIDTH=150>Value</td</tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
+		String html = "<html>" + "<body>" + "<center><table><tr><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td></tr></table></center>" + "<center><table><tr><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td></tr></table></center><br><br>" + "<center><button value=\"Reload!\" width=103 height=24 action=\"bypass -h voice .myhiddenstats\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></center>" + "<center><table width=300><tr><td FIXWIDTH=150>Stat</td><td FIXWIDTH=150>Value</td</tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
 		
 		html += getStatHtm("Skill Mastery", player.getSkillMastery(), 0, false, "%");
 		html += getStatHtm("Shield Def", player.getShldDef(), 0, false, "");
@@ -268,9 +277,10 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Max Targets", player.calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null) - 1, 0, true, "");
 		html += getStatHtm("P. Skill Power", player.calcStat(Stats.PHYSICAL_SKILL_POWER, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("P. Crit Dmg", player.calcStat(Stats.CRITICAL_DAMAGE, 100, null, null) - 100, 0, true, "%");
-		html += getStatHtm("P. Skill Crit Dmg", player.calcStat(Stats.PSKILL_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("P. Crit Dmg Recvd", player.calcStat(Stats.CRIT_VULN, 100, null, null) - 100, 0, true, "%");
-		html += getStatHtm("P. Skill Rate", player.calcStat(Stats.PCRITICAL_RATE, 100, null, null) - 100, 0, true, "%");
+		html += getStatHtm("P. Skill Crit Rate", player.calcStat(Stats.PCRITICAL_RATE, 100, null, null) - 100, 0, true, "%");
+		html += getStatHtm("P. Skill Crit Dmg", player.calcStat(Stats.PSKILL_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
+		html += getStatHtm("Additional DEX P. Skill Rate", player.calcStat(Stats.PSKILL_CRIT_PER_DEX, 0, null, null) * (BaseStats.DEX.calcBonus(player) - 1) * 100, 0, true, "%");
 		html += getStatHtm("M. Skill Power", player.calcStat(Stats.MAGIC_SKILL_POWER, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("M. Crit Dmg", player.calcStat(Stats.MAGIC_CRIT_DMG, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("M. Crit Dmg Recvd", player.calcStat(Stats.MAGIC_CRIT_VULN, 100, null, null) - 100, 0, true, "%");
@@ -353,7 +363,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("SP Gain", player.calcStat(Stats.SP_RATE, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Drop Gain", player.calcStat(Stats.DROP_RATE, 100, null, null) - 100, 0, true, "%");
 		
-		//Weapon Proof
+		//Weapon stuff
 		html += getStatHtm("Sword Vulnerability", player.calcStat(Stats.SWORD_WPN_VULN, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Big Sword Vulnerability", player.calcStat(Stats.BIGSWORD_WPN_VULN, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Blunt Vulnerability", player.calcStat(Stats.BLUNT_WPN_VULN, 100, null, null) - 100, 0, true, "%");
@@ -365,9 +375,8 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Pole Vulnerability", player.calcStat(Stats.POLE_WPN_VULN, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Dual Vulnerability", player.calcStat(Stats.DUAL_WPN_VULN, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Fists Vulnerability", player.calcStat(Stats.DUALFIST_WPN_VULN, 100, null, null) - 100, 0, true, "%");
-
-		html += "</table><br>"
-				+ "</body></html>";
+		
+		html += "</table><br>" + "</body></html>";
 		player.sendPacket(new NpcHtmlMessage(0, html));
 	}
 	
@@ -376,13 +385,14 @@ public class CustomVoiced implements IVoicedCommandHandler
 		if (statVal == statDefault)
 			return "";
 		
-		return "<table width=300 border=0><tr><td FIXWIDTH=150>" + statName + ":</td><td FIXWIDTH=150>" + ((plusIfPositive && statVal >= 0) ? "+" : "") + new DecimalFormat("#0.##").format(statVal) + suffix + "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
+		return "<table width=300 border=0><tr><td FIXWIDTH=150>" + statName + ":</td><td FIXWIDTH=150>" + ((plusIfPositive && (statVal >= 0)) ? "+" : "") + new DecimalFormat("#0.##").format(statVal) + suffix + "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
+	@Override
 	public String[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.actionhandlers;
 
 import l2server.Config;
@@ -54,23 +55,22 @@ public class L2PcInstanceAction implements IActionHandler
 	 * @param activeChar The player that start an action on target L2PcInstance
 	 *
 	 */
+	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		activeChar.onActionRequest();
 		
 		// See description in Events.java
-		if (activeChar.getEvent() != null
-				&& !activeChar.getEvent().onAction(activeChar, target.getObjectId()))
+		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onAction(activeChar, target.getObjectId()))
 		{
-			if (!activeChar.getEvent().isState(EventState.READY)
-					&& !activeChar.getEvent().isState(EventState.STARTED))
+			if (!activeChar.getEvent().isState(EventState.READY) && !activeChar.getEvent().isState(EventState.STARTED))
 				activeChar.setEvent(null);
 			
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
+		if ((activeChar.getCaptcha() != null) && !activeChar.onActionCaptcha(false))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -84,15 +84,14 @@ public class L2PcInstanceAction implements IActionHandler
 		}
 		
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
+		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance)target).getParty())
-				&& ((L2PcInstance)target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
+		if ((activeChar != target) && ((activeChar.getParty() == null) || (activeChar.getParty() != ((L2PcInstance) target).getParty())) && ((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -111,14 +110,16 @@ public class L2PcInstanceAction implements IActionHandler
 			// The color to display in the select window is White
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 			if (target instanceof L2Character)
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character)target));
-			if (activeChar != target) activeChar.sendPacket(new ValidateLocation((L2Character)target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+			if (activeChar != target)
+				activeChar.sendPacket(new ValidateLocation((L2Character) target));
 		}
 		else if (interact)
 		{
-			if (activeChar != target) activeChar.sendPacket(new ValidateLocation((L2Character)target));
+			if (activeChar != target)
+				activeChar.sendPacket(new ValidateLocation((L2Character) target));
 			// Check if this L2PcInstance has a Private Store
-			if (((L2PcInstance)target).getPrivateStoreType() != 0)
+			if (((L2PcInstance) target).getPrivateStoreType() != 0)
 			{
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 			}
@@ -129,8 +130,7 @@ public class L2PcInstanceAction implements IActionHandler
 				{
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder  can't attack activeChars with lvl < 21
-					if ((((L2PcInstance)target).isCursedWeaponEquipped() && activeChar.getLevel() < 21)
-							|| (activeChar.isCursedWeaponEquipped() && ((L2Character)target).getLevel() < 21))
+					if ((((L2PcInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((L2Character) target).getLevel() < 21)))
 					{
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					}
@@ -163,14 +163,16 @@ public class L2PcInstanceAction implements IActionHandler
 					else
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					
-					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance && ((L2PcInstance)target).getClient() != null && ((L2PcInstance)target).getClient().isDetached() && ((L2PcInstance)target).getIsOfflineBuffer())
+					if (Config.OFFLINE_BUFFERS_ENABLE && (target instanceof L2PcInstance) && (((L2PcInstance) target).getClient() != null) && ((L2PcInstance) target).getClient().isDetached() && ((L2PcInstance) target).getIsOfflineBuffer())
 						CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, target.getObjectId());
 				}
 			}
 		}
+		
 		return true;
 	}
 	
+	@Override
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.L2PcInstance;

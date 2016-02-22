@@ -17,6 +17,7 @@ package handlers.chathandlers;
 import java.util.Collection;
 
 import l2server.Config;
+import l2server.gameserver.Server;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -66,7 +67,6 @@ public class ChatTrade implements IChatHandler
 		}
 		
 		CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-		CreatureSay csReg = new CreatureSay(activeChar, type, activeChar.getName(), "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text);
 		
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		
@@ -80,12 +80,10 @@ public class ChatTrade implements IChatHandler
 						&& player.getInstanceId() == activeChar.getInstanceId()
 						&& activeChar.getEvent() == null)
 					player.sendPacket(cs);
-				else if (player.isGM())
-					player.sendPacket(csReg);
 			}
 		}
 		else if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
-		{	
+		{
 			for (L2PcInstance player : pls)
 			{
 				if (!BlockList.isBlocked(player, activeChar))
@@ -93,18 +91,20 @@ public class ChatTrade implements IChatHandler
 			}
 		}
 		
-		if (text.contains("Type=") && text.contains("Title="))
+		if (Server.gui != null)
 		{
-			int index1 = text.indexOf("Type=");
-			int index2 = text.indexOf("Title=") + 6;
-			text = text.substring(0, index1) + text.substring(index2);
+			if (text.contains("Type=") && text.contains("Title="))
+			{
+				int index1 = text.indexOf("Type=");
+				int index2 = text.indexOf("Title=") + 6;
+				text = text.substring(0, index1) + text.substring(index2);
+			}
+			
+			if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+				text = "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text;
+			
+			ConsoleTab.appendMessage(ConsoleFilter.TradeChat, activeChar.getName() + ": " + text);
 		}
-
-		String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
-		if (!Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
-			text = "[" + nearTown + "]" + text;
-		
-		ConsoleTab.appendMessage(ConsoleFilter.TradeChat, activeChar.getName() + ": " + text, nearTown);
 	}
 	
 	/**

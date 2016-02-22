@@ -68,7 +68,7 @@ public class ClanWarsList implements IUserCommandHandler
 			_clanList = clan.getUnderAttackWars();
 		}
 		else // ID = 90
-		{			
+		{
 			// War List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_LIST));
 			_clanList = clan.getWarList();

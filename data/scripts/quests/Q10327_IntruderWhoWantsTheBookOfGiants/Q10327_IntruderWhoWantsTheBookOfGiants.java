@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10327_IntruderWhoWantsTheBookOfGiants;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -92,7 +93,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 				player.teleToLocation(-114696, 243926, -7868, false);
 				return null;
 			}
-			else if (event.equalsIgnoreCase("32972-05.htm") && st.getInt("cond") == 3)
+			else if (event.equalsIgnoreCase("32972-05.htm") && (st.getInt("cond") == 3))
 			{
 				player.sendPacket(new ExShowScreenMessage(11022201, 0, true, 7000));
 				st.unset("cond");
@@ -123,12 +124,12 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 		
 		if (npc.getNpcId() == _guard)
 		{
-			if (st.getInt("cond") < 3 && player.getInstanceId() == player.getObjectId())
+			if ((st.getInt("cond") < 3) && (player.getInstanceId() == player.getObjectId()))
 				htmltext = "33004-01.htm";
 		}
 		else if (npc.getNpcId() == _book)
 		{
-			if (st.getInt("cond") == 1 && st.getInt("giantsBookId") == npc.getObjectId())
+			if ((st.getInt("cond") == 1) && (st.getInt("giantsBookId") == npc.getObjectId()))
 			{
 				htmltext = "33126-01.htm";
 				st.set("cond", "2");
@@ -137,11 +138,12 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 				player.sendPacket(new ExShowScreenMessage(1032322, 0, true, 7000));
 				final L2Npc intruder1 = addSpawn(_intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
 				final L2Npc intruder2 = addSpawn(_intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
-				final L2GuardInstance guard = (L2GuardInstance)L2World.getInstance().findObject(st.getInt("guardId"));
+				final L2GuardInstance guard = (L2GuardInstance) L2World.getInstance().findObject(st.getInt("guardId"));
 				guard.setRunning();
 				
 				ThreadPoolManager.getInstance().executeAi(new Runnable()
 				{
+					@Override
 					public void run()
 					{
 						if (InstanceManager.getInstance().getInstance(player.getObjectId()) == null)
@@ -152,8 +154,8 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 							L2Npc moveTo = intruder1;
 							if (moveTo.isDead())
 								moveTo = intruder2;
-							int x = moveTo.getX() - 100 + Rnd.get(200);
-							int y = moveTo.getY() - 100 + Rnd.get(200);
+							int x = (moveTo.getX() - 100) + Rnd.get(200);
+							int y = (moveTo.getY() - 100) + Rnd.get(200);
 							int z = moveTo.getZ();
 							guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 						}
@@ -161,7 +163,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 						boolean allDead = true;
 						for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 						{
-							if (iNpc instanceof L2MonsterInstance && !iNpc.isDead())
+							if ((iNpc instanceof L2MonsterInstance) && !iNpc.isDead())
 								allDead = false;
 						}
 						
@@ -171,8 +173,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 							st.set("cond", "3");
 							st.playSound("ItemSound.quest_middle");
 							guard.setWalking();
-							guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-									new L2CharPosition(guard.getSpawn().getX(), guard.getSpawn().getY(), guard.getSpawn().getZ(), 0));
+							guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(guard.getSpawn().getX(), guard.getSpawn().getY(), guard.getSpawn().getZ(), 0));
 						}
 						else
 							ThreadPoolManager.getInstance().scheduleAi(this, 2000);
@@ -199,7 +200,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 		
 		if (npc.getNpcId() == _pantheon)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -226,14 +227,14 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 		if (!(npc instanceof L2GuardInstance))
 			return null;
 		
-		L2GuardInstance guard = (L2GuardInstance)npc;
+		L2GuardInstance guard = (L2GuardInstance) npc;
 		
 		for (L2Object o : targets)
 		{
 			if (!(o instanceof L2MonsterInstance))
 				continue;
 			
-			L2MonsterInstance intruder = (L2MonsterInstance)o;
+			L2MonsterInstance intruder = (L2MonsterInstance) o;
 			
 			guard.addDamageHate(intruder, 0, 100000);
 		}
@@ -244,9 +245,9 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 7) && player.getLevel() <= 20;
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 7) && (player.getLevel() <= 20);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Q10327_IntruderWhoWantsTheBookOfGiants(10327, qn, "Using skills to fight monsters. Oppotunity to obtain a no-Grade accessory.");

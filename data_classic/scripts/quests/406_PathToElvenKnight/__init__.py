@@ -26,8 +26,8 @@ class Quest (JQuest) :
     htmltext = event
     player = st.getPlayer()
     if event == "30327-05.htm" :
-       if player.getClassId() != 0x12 :
-          if player.getClassId() == 0x13 :
+       if player.getClassId().getId() != 0x12 :
+          if player.getClassId().getId() == 0x13 :
              htmltext = "30327-02a.htm"
           else:
              htmltext = "30327-02.htm"
@@ -95,7 +95,7 @@ class Quest (JQuest) :
               else:
                 st.addExpAndSp(59172, 3332)
               st.giveItems(57, 16380)
-            player.sendPacket(SocialAction(player.getObjectId(),3))
+            player.sendPacket(SocialAction(player,3))
             st.set("cond","0")
             st.exitQuest(False)
             st.playSound("ItemSound.quest_finish")

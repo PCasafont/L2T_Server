@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.base;
 
 import l2server.Config;
@@ -51,22 +52,26 @@ public final class SubClass
 		// Used for defining a sub class using default values for XP, SP and player level.
 		_class = PlayerClassTable.getInstance().getClassById(classId);
 		_classIndex = classIndex;
-		/*if (Config.isServer(Config.PVP))
+		if (Config.STARTING_LEVEL > 40)
 		{
-			_exp = Experience.LEVEL(80);
-			_level = 80;
-		}*/
+			_level = Config.STARTING_LEVEL;
+			if (_level > getMaxLevel())
+				_level = getMaxLevel();
+			_exp = Experience.getAbsoluteExp(_level);
+		}
 	}
 	
 	public SubClass()
 	{
 		// Used for specifying ALL attributes of a sub class directly,
 		// using the preset default values.
-		/*if (Config.isServer(Config.PVP))
+		if (Config.STARTING_LEVEL > 40)
 		{
-			_exp = Experience.LEVEL(80);
-			_level = 80;
-		}*/
+			_level = Config.STARTING_LEVEL;
+			if (_level > getMaxLevel())
+				_level = getMaxLevel();
+			_exp = Experience.getAbsoluteExp(_level);
+		}
 	}
 	
 	public PlayerClass getClassDefinition()
@@ -111,13 +116,12 @@ public final class SubClass
 	
 	public byte getMaxLevel()
 	{
-		return  _isDual ? Config.MAX_LEVEL : _maxLevel;
+		return _isDual ? Config.MAX_LEVEL : _maxLevel;
 	}
 	
 	public void setClassId(int classId)
 	{
 		_class = PlayerClassTable.getInstance().getClassById(classId);
-		_certificates = 0;
 	}
 	
 	public void setExp(long expValue)

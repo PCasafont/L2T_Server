@@ -44,10 +44,10 @@ public class AdventurerHelper extends Quest
 		long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 		
 		if (_curr_time > _reuse_time)
-		{	
+		{
 			st.giveItems(adventurerSupportGoods, 1);
 			q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + 86400000)); //24h
-		}	
+		}
 		
 		return "33463-"+Rnd.get(1,236)+".htm";
 	}

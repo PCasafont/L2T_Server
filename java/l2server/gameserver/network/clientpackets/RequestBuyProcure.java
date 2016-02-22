@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
@@ -32,8 +33,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Item;
 
 @Deprecated
-public class RequestBuyProcure extends L2GameClientPacket {
-	private static final String _C__C3_REQUESTBUYPROCURE = "[C] C3 RequestBuyProcure";
+public class RequestBuyProcure extends L2GameClientPacket
+{
 	
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	
@@ -46,9 +47,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 	{
 		_listId = readD();
 		int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -59,7 +58,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 			readD(); //service
 			int itemId = readD();
 			long cnt = readQ();
-			if (itemId < 1 || cnt < 1)
+			if ((itemId < 1) || (cnt < 1))
 			{
 				_items = null;
 				return;
@@ -85,7 +84,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getReputation() < 0))
 			return;
 		
 		L2Object manager = player.getTarget();
@@ -99,7 +98,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false))
 			return;
 		
-		Castle castle = ((L2ManorManagerInstance)manager).getCastle();
+		Castle castle = ((L2ManorManagerInstance) manager).getCastle();
 		int slots = 0;
 		int weight = 0;
 		
@@ -135,15 +134,15 @@ public class RequestBuyProcure extends L2GameClientPacket {
 		{
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
-			if (item == null || item.getCount() < i.getCount())
+			if ((item == null) || (item.getCount() < i.getCount()))
 				continue;
 			
-			L2ItemInstance iteme = player.getInventory().destroyItemByItemId("Manor",i.getItemId(),i.getCount(),player,manager);
+			L2ItemInstance iteme = player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
 			if (iteme == null)
 				continue;
 			
 			// Add item to Inventory and adjust update packet
-			item = player.getInventory().addItem("Manor",i.getReward(),i.getCount(),player,manager);
+			item = player.getInventory().addItem("Manor", i.getReward(), i.getCount(), player, manager);
 			if (item == null)
 				continue;
 			
@@ -200,14 +199,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 		
 		public void setReward(Castle c)
 		{
-			_reward = L2Manor.getInstance().getRewardItem(_itemId,
-					c.getCrop(_itemId,CastleManorManager.PERIOD_CURRENT).getReward());
+			_reward = L2Manor.getInstance().getRewardItem(_itemId, c.getCrop(_itemId, CastleManorManager.PERIOD_CURRENT).getReward());
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C3_REQUESTBUYPROCURE;
 	}
 }

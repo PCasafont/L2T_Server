@@ -102,9 +102,8 @@
 	<creationItem id="10650" count="5" equipped="false" /> <!-- Adventurer's Scroll of Escape -->
 	<creationItem id="13395" count="25" equipped="false" /> <!-- Scroll of Escape: Talking Island Village -->
 	<creationItem id="13401" count="25" equipped="false" /> <!-- Scroll of Escape: Town of Gludio -->
-	
-	<!-- Runes -->
-	<creationItem id="22752" count="1" equipped="false" /> <!-- Drop Rate Rune 30% (5-hour) -->
-	<creationItem id="20341" count="1" equipped="false" /> <!-- SP Rune 30% (Event) - 5-hour -->
-	<creationItem id="20335" count="1" equipped="false" /> <!-- XP Rune III (Lv. 1-100+) 30% (Event) - 5-hour -->
+	 <!-- Santa Stuff
+	<creationItem id="37534" count="1" equipped="true" />
+	<creationItem id="37535" count="1" equipped="true" />
+	<creationItem id="40312" count="1" equipped="true" /> -->
 </list>

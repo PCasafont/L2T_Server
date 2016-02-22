@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ItemInstance;
@@ -42,7 +44,7 @@ import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.DoorStatusUpdate;
-import l2server.gameserver.network.serverpackets.OnEventTrigger;
+import l2server.gameserver.network.serverpackets.EventTrigger;
 import l2server.gameserver.network.serverpackets.StaticObject;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
@@ -89,7 +91,7 @@ public class L2DoorInstance extends L2Character
 		_isTargetable = data.getInteger("targetable", 1) == 1;
 		if (getGroupName() != null)
 			DoorTable.addDoorGroup(getGroupName(), getDoorId());
-		if (data.getString("default_status","close").equals("open"))
+		if (data.getString("default_status", "close").equals("open"))
 			_open = true;
 		_closeTime = data.getInteger("close_time", -1);
 		_level = data.getInteger("level", 0);
@@ -164,7 +166,7 @@ public class L2DoorInstance extends L2Character
 		int delay = _open ? _openTime : _closeTime;
 		if (_randomTime > 0)
 			delay += Rnd.get(_randomTime);
-		ThreadPoolManager.getInstance().scheduleGeneral(new TimerOpen(), delay*1000);
+		ThreadPoolManager.getInstance().scheduleGeneral(new TimerOpen(), delay * 1000);
 	}
 	
 	@Override
@@ -185,14 +187,14 @@ public class L2DoorInstance extends L2Character
 		return (DoorStat) super.getStat();
 	}
 	
- 	@Override
- 	public L2DoorTemplate getTemplate()
- 	{
- 		return (L2DoorTemplate) super.getTemplate();
- 
- 	}
- 
- 	@Override
+	@Override
+	public L2DoorTemplate getTemplate()
+	{
+		return (L2DoorTemplate) super.getTemplate();
+		
+	}
+	
+	@Override
 	public void initCharStat()
 	{
 		setStat(new DoorStat(this));
@@ -261,8 +263,8 @@ public class L2DoorInstance extends L2Character
 	 * @param open The open to set.
 	 */
 	private void setOpen(boolean open)
- 	{
- 		_open = open;
+	{
+		_open = open;
 		if (getChildId() > 0)
 		{
 			getSiblingDoor(getChildId()).notifyChildEvent(open);
@@ -286,7 +288,7 @@ public class L2DoorInstance extends L2Character
 	
 	public int getDamage()
 	{
-		int dmg = 6 - (int) Math.ceil(getCurrentHp() / getMaxHp() * 6);
+		int dmg = 6 - (int) Math.ceil((getCurrentHp() / getMaxHp()) * 6);
 		if (dmg > 6)
 			return 6;
 		if (dmg < 0)
@@ -324,9 +326,9 @@ public class L2DoorInstance extends L2Character
 	
 	public boolean isEnemy()
 	{
-		if (getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getZone().isActive() && getIsShowHp())
+		if ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getZone().isActive() && getIsShowHp())
 			return true;
-		if (getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive() && getIsShowHp())
+		if ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getZone().isActive() && getIsShowHp())
 			return true;
 		return false;
 	}
@@ -345,20 +347,28 @@ public class L2DoorInstance extends L2Character
 			return false;
 		
 		// Attackable  only during siege by everyone (not owner)
-		boolean isCastle = (getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getZone().isActive());
-		boolean isFort = (getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive());
+		boolean isCastle = ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getZone().isActive());
+		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getZone().isActive());
+		int activeSiegeId = (getFort() != null ? getFort().getFortId() : (getCastle() != null ? getCastle().getCastleId() : 0));
 		L2PcInstance actingPlayer = attacker.getActingPlayer();
 		
-		if (isFort)
+		if (TerritoryWarManager.getInstance().isTWInProgress())
+		{
+			if (TerritoryWarManager.getInstance().isAllyField(actingPlayer, activeSiegeId))
+				return false;
+			else
+				return true;
+		}
+		else if (isFort)
 		{
 			L2Clan clan = actingPlayer.getClan();
-			if (clan != null && clan == getFort().getOwnerClan())
+			if ((clan != null) && (clan == getFort().getOwnerClan()))
 				return false;
 		}
 		else if (isCastle)
 		{
 			L2Clan clan = actingPlayer.getClan();
-			if (clan != null && clan.getClanId() == getCastle().getOwnerId())
+			if ((clan != null) && (clan.getClanId() == getCastle().getOwnerId()))
 				return false;
 		}
 		return (isCastle || isFort);
@@ -405,14 +415,14 @@ public class L2DoorInstance extends L2Character
 	public void broadcastStatusUpdate()
 	{
 		Collection<L2PcInstance> knownPlayers = getKnownList().getKnownPlayers().values();
-		if (knownPlayers == null || knownPlayers.isEmpty())
+		if ((knownPlayers == null) || knownPlayers.isEmpty())
 			return;
 		
 		StaticObject su = new StaticObject(this, false);
 		DoorStatusUpdate dsu = new DoorStatusUpdate(this);
-		OnEventTrigger oe = null;
+		EventTrigger oe = null;
 		if (getEmitter() > 0)
-			oe = new OnEventTrigger(this, getOpen());
+			oe = new EventTrigger(this, getOpen());
 		for (L2PcInstance player : knownPlayers)
 		{
 			if (player == null)
@@ -497,7 +507,7 @@ public class L2DoorInstance extends L2Character
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() +"["+ getTemplate().doorId + "]("+getObjectId()+")";
+		return getClass().getSimpleName() + "[" + getTemplate().doorId + "](" + getObjectId() + ")";
 	}
 	
 	public String getDoorName()
@@ -589,8 +599,8 @@ public class L2DoorInstance extends L2Character
 		if (!super.doDie(killer))
 			return false;
 		
-		boolean isFort = (getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress());
-		boolean isCastle = (getCastle() != null	&& getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress());
+		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getSiege().getIsInProgress());
+		boolean isCastle = ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getSiege().getIsInProgress());
 		
 		if (isFort || isCastle)
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTLE_GATE_BROKEN_DOWN));
@@ -601,7 +611,7 @@ public class L2DoorInstance extends L2Character
 	public void sendInfo(L2PcInstance activeChar)
 	{
 		if (getEmitter() > 0)
-			activeChar.sendPacket(new OnEventTrigger(this, getOpen()));
+			activeChar.sendPacket(new EventTrigger(this, getOpen()));
 		
 		activeChar.sendPacket(new StaticObject(this, activeChar.isGM()));
 	}
@@ -643,7 +653,7 @@ public class L2DoorInstance extends L2Character
 	
 	private void startAutoCloseTask()
 	{
-		if (_closeTime < 0 || isOpenableByTime())
+		if ((_closeTime < 0) || isOpenableByTime())
 			return;
 		Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)
@@ -656,6 +666,7 @@ public class L2DoorInstance extends L2Character
 	
 	private class AutoClose implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			if (getOpen())
@@ -665,6 +676,7 @@ public class L2DoorInstance extends L2Character
 	
 	private class TimerOpen implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			boolean open = getOpen();
@@ -677,7 +689,7 @@ public class L2DoorInstance extends L2Character
 			int delay = open ? _closeTime : _openTime;
 			if (_randomTime > 0)
 				delay += Rnd.get(_randomTime);
-			ThreadPoolManager.getInstance().scheduleGeneral(this, delay*1000);
+			ThreadPoolManager.getInstance().scheduleGeneral(this, delay * 1000);
 		}
 	}
 }

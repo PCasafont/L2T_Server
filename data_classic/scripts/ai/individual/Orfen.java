@@ -75,7 +75,7 @@ public class Orfen extends L2AttackableAIScript
 	private static final int RIBA_IREN = 29018;
 	
 	private static boolean _IsTeleported;
-	private static List<L2Attackable> _Minions = new FastList<L2Attackable>();
+	private static List<L2Attackable> _Minions = new HashMap<L2Attackable>();
 	private static L2BossZone _Zone;
 	
 	private static final byte ALIVE = 0;

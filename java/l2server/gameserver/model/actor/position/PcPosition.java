@@ -15,6 +15,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.model.actor.position;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -35,13 +36,13 @@ public class PcPosition extends CharPosition
 	@Override
 	public L2PcInstance getActiveObject()
 	{
-		return ((L2PcInstance)super.getActiveObject());
+		return ((L2PcInstance) super.getActiveObject());
 	}
 	
 	@Override
 	protected void badCoords()
 	{
-		getActiveObject().teleToLocation(0,0,0, false);
+		getActiveObject().teleToLocation(0, 0, 0, false);
 		getActiveObject().sendMessage("Error with your coords, Please ask a GM for help!");
 	}
 }

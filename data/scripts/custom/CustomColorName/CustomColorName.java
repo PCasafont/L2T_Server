@@ -1,3 +1,4 @@
+
 package custom.CustomColorName;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -6,10 +7,10 @@ import l2server.gameserver.model.quest.QuestState;
 
 /**
  * @author LasTravel
- * 
+ *
  */
 
-public class CustomColorName extends Quest 
+public class CustomColorName extends Quest
 {
 	public CustomColorName(int questId, String name, String descr)
 	{
@@ -25,7 +26,7 @@ public class CustomColorName extends Quest
 			st = newQuestState(player);
 		
 		if (st.getGlobalQuestVar("CustomColorName").length() > 0)
-			player.getAppearance().setNameColor(Integer.decode("0x"+st.getGlobalQuestVar("CustomColorName")));
+			player.getAppearance().setNameColor(Integer.decode("0x" + st.getGlobalQuestVar("CustomColorName")));
 		return null;
 	}
 	

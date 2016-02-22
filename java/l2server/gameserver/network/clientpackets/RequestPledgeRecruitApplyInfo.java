@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.ClanRecruitManager;
@@ -38,7 +39,7 @@ public final class RequestPledgeRecruitApplyInfo extends L2GameClientPacket
 		int info = -1;
 		if (activeChar.getClan() == null)
 			info = 0;
-		else if (activeChar.isClanLeader() && ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
+		else if (activeChar.isClanLeader() && (ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null))
 			info = 1;
 		
 		if (ClanRecruitManager.getInstance().getApplicant(activeChar.getObjectId()) != null)
@@ -47,14 +48,5 @@ public final class RequestPledgeRecruitApplyInfo extends L2GameClientPacket
 			info = 3;
 		
 		sendPacket(new ExPledgeRecruitApplyInfo(info));
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "RequestPledgeRecruitApplyInfo";
 	}
 }

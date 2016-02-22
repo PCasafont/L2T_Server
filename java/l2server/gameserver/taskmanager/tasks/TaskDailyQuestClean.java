@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager.tasks;
 
 import java.sql.Connection;
@@ -21,27 +22,23 @@ import java.util.logging.Level;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
-import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
+import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.log.Log;
 
 /**
  ** @author Gnacik
- ** 
+ **
  */
 public class TaskDailyQuestClean extends Task
 {
 	
 	private static final String NAME = "daily_quest_clean";
 	
-	private static final String[] _daily_names = {
-		"463_IMustBeaGenius",
-		"464_Oath",
-		"458_PerfectForm",
-		"461_RumbleInTheBase"
-	};
+	private static final String[] _daily_names = { "463_IMustBeaGenius", "464_Oath", "458_PerfectForm", "461_RumbleInTheBase" };
+	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
@@ -51,7 +48,7 @@ public class TaskDailyQuestClean extends Task
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
@@ -81,7 +78,7 @@ public class TaskDailyQuestClean extends Task
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.taskmanager.Task#initialize()
 	 */
 	@Override

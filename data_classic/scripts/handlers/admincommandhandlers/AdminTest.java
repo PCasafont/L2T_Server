@@ -38,6 +38,7 @@ import l2server.gameserver.bots.BotMode;
 import l2server.gameserver.bots.BotType;
 import l2server.gameserver.bots.BotsManager;
 import l2server.gameserver.bots.controllers.BotController;
+import l2server.gameserver.custom.fusion.MiniGamesManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -124,7 +125,6 @@ public class AdminTest implements IAdminCommandHandler
 		{
 			//TradeController.getInstance().reload();
 			//activeChar.sendMessage("Shops have been successfully reloaded!");
-			BotsManager.getInstance();
 		}
 		else if (command.startsWith("admin_do"))
 		{
@@ -151,6 +151,11 @@ public class AdminTest implements IAdminCommandHandler
 				}
 				else
 					activeChar.sendPacket(new ExOlympiadMode(3));
+			}
+			else if (secondaryCommand.equals("ShowEventData"))
+			{
+				activeChar.sendMessage("Participating = " + activeChar.isPlayingMiniGame());
+				activeChar.sendMessage("Kills = " + activeChar.getEventKills());
 			}
 			else if (secondaryCommand.equals("Login"))
 			{
@@ -570,7 +575,10 @@ public class AdminTest implements IAdminCommandHandler
 				
 				toonToControl.getBotController().onEnterWorld(true);
 				
-				toonToControl.getBotController().setMode(BotMode.SPAWNED_BY_GM);
+				if (toonToControl.isPlayingMiniGame())
+					toonToControl.getBotController().setMode(BotMode.PLAYING_MINI_GAME);
+				else
+					toonToControl.getBotController().setMode(BotMode.SPAWNED_BY_GM);
 				
 				if (toonToControl == activeChar)
 					activeChar.sendMessage("You are now controlled by an AI.");
@@ -622,6 +630,14 @@ public class AdminTest implements IAdminCommandHandler
 					activeChar.sendMessage("You are no longer controlled by an AI.");
 				else
 					activeChar.sendMessage(toonToControl.getName() + " is no longer controlled by an AI.");
+			}
+			else if (secondaryCommand.equals("Events"))
+			{
+				new MiniGamesManager();
+			}
+			else if (secondaryCommand.equals("Testos"))
+			{
+
 			}
 			else if (secondaryCommand.equals("PrintSkills"))
 			{
@@ -720,4 +736,5 @@ public class AdminTest implements IAdminCommandHandler
 	{
 		return ADMIN_COMMANDS;
 	}
+	
 }

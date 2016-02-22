@@ -11552,7 +11552,7 @@
 		<skill id="10267" level="6" reqSp="5000000" minLevel="99" /> <!-- Hurricane Rush -->
 		<skill id="10267" level="7" reqSp="211440000" minLevel="101" /> <!-- Hurricane Rush -->
 		<skill id="10267" level="8" reqSp="608946501" minLevel="103" /> <!-- Hurricane Rush -->
-		<skill id="10267" level="9" reqSp="1753765925" minLevel="105" /> <!-- Hurricane Rush -->			
+		<skill id="10267" level="9" reqSp="1753765925" minLevel="105" /> <!-- Hurricane Rush -->
 		<skill id="10265" level="1" reqSp="10000" minLevel="85"> <!-- Eruption -->
 			<reqSkill id="496" /> <!-- Slashing Blade -->
 			<reqSkill id="9" /> <!-- Sonic Buster -->
@@ -11654,7 +11654,9 @@
 		<skill id="10291" level="1" reqSp="10000" minLevel="85" /> <!-- Feral Bear Cry -->
 		<skill id="10292" level="1" reqSp="10000" minLevel="85" /> <!-- Feral Ogre Cry -->
 		<skill id="10293" level="1" reqSp="10000" minLevel="85" /> <!-- Feral Puma Cry -->
-		<skill id="10294" level="1" reqSp="10000" minLevel="85" /> <!-- Feral Rabbit Cry -->
+		<skill id="10294" level="1" reqSp="10000" minLevel="85"> <!-- Feral Rabbit Cry -->
+			<reqSkill id="451" /> <!-- Sonic Move -->
+		</skill>
 		<skill id="10295" level="1" reqSp="10000" minLevel="85" /> <!-- Hawk Cry -->
 		<skill id="10279" level="1" reqSp="400000" minLevel="91"> <!-- Giant Barrier -->
 			<reqSkill id="34" /> <!-- Bandage -->
@@ -11711,8 +11713,10 @@
 		<skill id="1571" level="1" reqSp="0" minLevel="85" learnFromPanel="false" autoGet="true" /> <!-- Each Class Inventory Increase -->
 		<skill id="1572" level="1" reqSp="0" minLevel="85" learnFromPanel="false" autoGet="true" /> <!-- Each Class Weight Increase -->
 		<skill id="10274" level="1" reqSp="10000" minLevel="85"> <!-- Berserker -->
-			<reqSkill id="176" />
-			<reqSkill id="297" />
+			<reqSkill id="130" /> <!-- Thrill Fight -->
+			<reqSkill id="176" /> <!-- Frenzy -->
+			<reqSkill id="297" /> <!-- Duelist Spirit -->
+			<reqSkill id="317" /> <!-- Focus Attack -->
 		</skill>
 		<skill id="10274" level="2" reqSp="250000" minLevel="90" /> <!-- Berserker -->
 		<skill id="10274" level="3" reqSp="1000000" minLevel="95" /> <!-- Berserker -->
@@ -11736,6 +11740,7 @@
 			<reqSkill id="432" /> <!-- Assassination -->
 			<reqSkill id="205" /> <!-- Sword/Blunt Weapon Mastery -->
 			<reqSkill id="216" /> <!-- Polearm Mastery -->
+			<reqSkill id="952" /> <!-- Collector's Experience -->
 		</skill>
 		<skill id="10501" level="2" reqSp="370000" minLevel="90" /> <!-- Superior Dagger Mastery -->
 		<skill id="10501" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Dagger Mastery -->
@@ -12149,7 +12154,7 @@
 		<skill id="10751" level="7" reqSp="1461471604" minLevel="105" /> <!-- Superior Bow/Crossbow Mastery -->
 		<skill id="10777" level="1" reqSp="10000" minLevel="85"> <!-- Lure Shot -->
 			<reqSkill id="511" /> <!-- Temptation -->
-		</skill>	
+		</skill>
 		<skill id="10777" level="2" reqSp="211440000" minLevel="101" /> <!-- Lure Shot -->
 		<skill id="10777" level="3" reqSp="608946501" minLevel="103" /> <!-- Lure Shot -->
 		<skill id="10777" level="4" reqSp="1753765925" minLevel="105" /> <!-- Lure Shot -->
@@ -13318,6 +13323,7 @@
 		<skill id="11526" level="5" reqSp="88099899" minLevel="101" /> <!-- Superior Sword/Blunt Weapon Mastery -->
 		<skill id="11526" level="6" reqSp="507455418" minLevel="103" /> <!-- Superior Sword/Blunt Weapon Mastery -->
 		<skill id="11526" level="7" reqSp="1461471604" minLevel="105" /> <!-- Superior Sword/Blunt Weapon Mastery -->
+		<skill id="11621" level="1" reqSp="5000000" minLevel="99" /> <!-- Blessing Barrier -->
 		<skill id="1986" level="1" reqSp="10000" minLevel="85" minDualLevel="85" /> <!-- Dual Maximum HP -->
 		<skill id="1986" level="2" reqSp="250000" minLevel="90" minDualLevel="90" /> <!-- Dual Maximum HP -->
 		<skill id="1986" level="3" reqSp="1000000" minLevel="95" minDualLevel="95" /> <!-- Dual Maximum HP -->
@@ -13516,6 +13522,7 @@
 		<skill id="11264" level="3" reqSp="1000000" minLevel="95" /> <!-- Strong Will -->
 		<skill id="11264" level="4" reqSp="4990000" minLevel="98" /> <!-- Strong Will -->
 		<skill id="11299" level="1" reqSp="400000" minLevel="91" /> <!-- Servitor Balance Life -->
+		<skill id="11299" level="2" reqSp="4980000" minLevel="97" /> <!-- Servitor Balance Life -->
 		<skill id="11272" level="1" reqSp="4980000" minLevel="97" /> <!-- Replace -->
 		<skill id="11266" level="1" reqSp="5000000" minLevel="99" /> <!-- Summon Death Gate -->
 		<skill id="11266" level="2" reqSp="211440000" minLevel="101" /> <!-- Summon Death Gate -->
@@ -14396,6 +14403,13 @@
 		<skill id="10330" level="5" reqSp="211440000" minLevel="101" /> <!-- Power Hammer Crush -->
 		<skill id="10330" level="6" reqSp="608946501" minLevel="103" /> <!-- Power Hammer Crush -->
 		<skill id="10330" level="7" reqSp="1753765925" minLevel="105" /> <!-- Power Hammer Crush -->
+		<skill id="11620" level="1" reqSp="10000" minLevel="85" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="2" reqSp="370000" minLevel="90" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="5" reqSp="88099899" minLevel="101" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="6" reqSp="507455418" minLevel="103" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="7" reqSp="1461471604" minLevel="105" /> <!-- Superior Shield Mastery -->
 	</class>
 	<class id="157" name="Tyrr Doombringer" parentId="131" pickSkillsFrom="140" level="85" baseHp="6222" hpAdd="95" hpMod="0" baseMp="2510" mpAdd="50" mpMod="0" baseCp="4324" cpAdd="65" cpMod="0">
 		<skill id="10311" level="1" reqSp="10000" minLevel="85" /> <!-- Superior Two-handed Weapon Mastery -->
@@ -14526,7 +14540,7 @@
 		<skill id="10811" level="2" reqSp="250000" minLevel="90" /> <!-- Superior Hawk Mastery -->
 		<skill id="10811" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Hawk Mastery -->
 		<skill id="10811" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Hawk Mastery -->
-		<skill id="10952" level="1" reqSp="211440000" minLevel="101" /> <!-- Survival Instinct -->		
+		<skill id="10952" level="1" reqSp="211440000" minLevel="101" /> <!-- Survival Instinct -->
 	</class>
 	<class id="163" name="Yul Moonlight Sentinel" parentId="102" pickSkillsFrom="142" level="85" baseHp="4561" hpAdd="69" hpMod="0" baseMp="2634" mpAdd="53" mpMod="0" baseCp="6088" cpAdd="91" cpMod="0">
 		<skill id="10856" level="1" reqSp="10000" minLevel="85" /> <!-- Rapid Fire Position -->
@@ -14720,6 +14734,14 @@
 		<skill id="11616" level="1" reqSp="5000000" minLevel="99" /> <!-- Protective Ditty -->
 		<skill id="19228" level="1" reqSp="211440000" minLevel="101" /> <!-- Song of Thief -->
 		<skill id="19205" level="1" reqSp="211440000" minLevel="101" /> <!-- Song of Archery -->
+		<skill id="11620" level="1" reqSp="10000" minLevel="85" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="2" reqSp="370000" minLevel="90" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="5" reqSp="88099899" minLevel="101" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="6" reqSp="507455418" minLevel="103" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="7" reqSp="1461471604" minLevel="105" /> <!-- Superior Shield Mastery -->
+		<skill id="19231" level="1" reqSp="88099899" minLevel="101" /> <!-- Song of Wisdom -->
 	</class>
 	<class id="173" name="Iss Spectral Dancer" parentId="107" pickSkillsFrom="144" level="85" baseHp="4424" hpAdd="66" hpMod="0" baseMp="3086" mpAdd="52" mpMod="0" baseCp="5128" cpAdd="77" cpMod="0">
 		<skill id="11585" level="1" reqSp="10000" minLevel="85" /> <!-- Superior Dance of Mastery -->
@@ -14747,6 +14769,7 @@
 		<skill id="11615" level="1" reqSp="5000000" minLevel="99" /> <!-- Battle Ditty -->
 		<skill id="11616" level="1" reqSp="5000000" minLevel="99" /> <!-- Protective Ditty -->
 		<skill id="19206" level="1" reqSp="211440000" minLevel="101" /> <!-- Sage's Dance -->
+		<skill id="19232" level="1" reqSp="211440000" minLevel="101" /> <!-- Crippling Dance -->
 	</class>
 	<class id="174" name="Iss Dominator" parentId="115" pickSkillsFrom="144" level="85" baseHp="4424" hpAdd="66" hpMod="0" baseMp="3086" mpAdd="52" mpMod="0" baseCp="5128" cpAdd="77" cpMod="0">
 		<skill id="11604" level="1" reqSp="10000" minLevel="85" /> <!-- Shocking Blow -->
@@ -14799,6 +14822,13 @@
 		<skill id="11617" level="1" reqSp="5000000" minLevel="99" /> <!-- Frenzied Battle Ditty -->
 		<skill id="11618" level="1" reqSp="5000000" minLevel="99" /> <!-- Frenzied Protective Ditty -->
 		<skill id="19208" level="1" reqSp="211440000" minLevel="101" /> <!-- Seal of Restriction -->
+		<skill id="11620" level="1" reqSp="10000" minLevel="85" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="2" reqSp="370000" minLevel="90" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="3" reqSp="1000000" minLevel="95" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="4" reqSp="5000000" minLevel="99" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="5" reqSp="88099899" minLevel="101" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="6" reqSp="507455418" minLevel="103" /> <!-- Superior Shield Mastery -->
+		<skill id="11620" level="7" reqSp="1461471604" minLevel="105" /> <!-- Superior Shield Mastery -->
 	</class>
 	<class id="175" name="Iss Doomcryer" parentId="116" pickSkillsFrom="144" level="85" baseHp="4424" hpAdd="66" hpMod="0" baseMp="3086" mpAdd="52" mpMod="0" baseCp="5128" cpAdd="77" cpMod="0">
 		<skill id="1244" level="7" reqSp="10000" minLevel="85" /> <!-- Freezing Flame -->
@@ -15046,9 +15076,9 @@
 	</class>
 	<class id="183" name="Ertheia Wizard" raceId="6" isMage="true" level="1" baseHp="101" hpAdd="15" hpMod="0" baseMp="40" mpAdd="7" mpMod="0" baseCp="50" cpAdd="7" cpMod="0">
 		<skill id="30040" level="1" reqSp="2" minLevel="5" /> <!-- Eminent Blunt Weapon Mastery -->
-		<skill id="30040" level="2" reqSp="6" minLevel="20" /> <!-- Eminent Blunt Weapon Mastery -->		
+		<skill id="30040" level="2" reqSp="6" minLevel="20" /> <!-- Eminent Blunt Weapon Mastery -->
 		<skill id="30041" level="1" reqSp="2" minLevel="5" /> <!-- Eminent Robe Mastery -->
-		<skill id="30041" level="2" reqSp="6" minLevel="20" /> <!-- Eminent Robe Mastery -->	
+		<skill id="30041" level="2" reqSp="6" minLevel="20" /> <!-- Eminent Robe Mastery -->
 		<skill id="30042" level="1" reqSp="6" minLevel="20" /> <!-- Eminent Quick Recovery -->
 		<skill id="30001" level="1" reqSp="0" minLevel="1" /> <!-- Hydro Attack -->
 		<skill id="30001" level="2" reqSp="6" minLevel="20" /> <!-- Hydro Attack -->
@@ -15075,7 +15105,7 @@
 		<skill id="30500" level="10" reqSp="347" minLevel="62" /> <!-- Lateral Hit -->
 		<skill id="30500" level="11" reqSp="691" minLevel="66" /> <!-- Lateral Hit -->
 		<skill id="30500" level="12" reqSp="1222" minLevel="70" /> <!-- Lateral Hit -->
-		<skill id="30500" level="13" reqSp="1996" minLevel="74" /> <!-- Lateral Hit -->		
+		<skill id="30500" level="13" reqSp="1996" minLevel="74" /> <!-- Lateral Hit -->
 		<skill id="30501" level="4" reqSp="50" minLevel="42" /> <!-- Backspin Blow -->
 		<skill id="30501" level="5" reqSp="75" minLevel="46" /> <!-- Backspin Blow -->
 		<skill id="30501" level="6" reqSp="107" minLevel="50" /> <!-- Backspin Blow -->
@@ -15360,7 +15390,7 @@
 		<skill id="30504" level="10" reqSp="660000" minLevel="93" /> <!-- Gravity Hit -->
 		<skill id="30504" level="11" reqSp="1500000" minLevel="95" /> <!-- Gravity Hit -->
 		<skill id="30504" level="12" reqSp="7470000" minLevel="97" /> <!-- Gravity Hit -->
-		<skill id="30504" level="13" reqSp="7485000" minLevel="98" /> <!-- Gravity Hit -->	
+		<skill id="30504" level="13" reqSp="7485000" minLevel="98" /> <!-- Gravity Hit -->
 		<skill id="30504" level="14" reqSp="211440000" minLevel="101" /> <!-- Gravity Hit -->
 		<skill id="30504" level="15" reqSp="608946501" minLevel="103" /> <!-- Gravity Hit -->
 		<skill id="30504" level="16" reqSp="1753765925" minLevel="105" /> <!-- Gravity Hit -->

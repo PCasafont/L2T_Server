@@ -194,6 +194,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="30" stackLvl="1" stackType="paralyze">
 				<effect type="Paralyze" val="0" />
@@ -225,6 +226,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal count="10" duration="3" stackLvl="#abnormalLvl" stackType="Poison" visualEffect="poison">
 				<effect type="DamOverTime" val="#dot" />
@@ -242,6 +244,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="120" landRate="100" stackLvl="4" stackType="pd_down">
 				<effect type="Buff" val="0" />
@@ -1032,6 +1035,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="canBeDispeled" val="false" />
 		<for>
 			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
@@ -1058,6 +1062,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="canBeDispeled" val="false" />
 		<for>
 			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
@@ -1079,6 +1084,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="1200" stackLvl="1" stackType="hit_down">
 				<effect type="Debuff" val="0" />
@@ -1349,6 +1355,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="300" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="big_head" visualEffect="bighead">
 				<effect type="BigHead" val="0" />

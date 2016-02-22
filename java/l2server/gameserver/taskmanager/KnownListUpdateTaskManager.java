@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager;
 
 import java.util.Collection;
@@ -56,6 +57,7 @@ public class KnownListUpdateTaskManager
 		{
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -71,7 +73,7 @@ public class KnownListUpdateTaskManager
 							failed = _failedRegions.contains(r); // failed on last pass
 							if (r.isActive()) // and check only if the region is active
 							{
-								updateRegion(r, (_fullUpdateTimer == FULL_UPDATE_TIMER || failed), updatePass);
+								updateRegion(r, ((_fullUpdateTimer == FULL_UPDATE_TIMER) || failed), updatePass);
 							}
 							if (failed)
 								_failedRegions.remove(r); // if all ok, remove
@@ -106,12 +108,11 @@ public class KnownListUpdateTaskManager
 			{
 				for (L2Object object : vObj) // and for all members in region
 				{
-					if (object == null || !object.isVisible())
+					if ((object == null) || !object.isVisible())
 						continue; // skip dying objects
-					
+						
 					// Some mobs need faster knownlist update
-					final boolean aggro = (Config.GUARD_ATTACK_AGGRO_MOB && object instanceof L2GuardInstance)
-					|| (object instanceof L2Attackable && ((L2Attackable)object).getEnemyClan() != null);
+					final boolean aggro = (Config.GUARD_ATTACK_AGGRO_MOB && (object instanceof L2GuardInstance)) || ((object instanceof L2Attackable) && (((L2Attackable) object).getEnemyClan() != null));
 					
 					if (forgetObjects)
 					{
@@ -120,9 +121,7 @@ public class KnownListUpdateTaskManager
 					}
 					for (L2WorldRegion regi : region.getSurroundingRegions())
 					{
-						if (object instanceof L2Playable
-								|| (aggro && regi.isActive())
-								|| fullUpdate)
+						if ((object instanceof L2Playable) || (aggro && regi.isActive()) || fullUpdate)
 						{
 							Collection<L2Object> inrObj = regi.getVisibleObjects().values();
 							// synchronized (regi.getVisibleObjects())

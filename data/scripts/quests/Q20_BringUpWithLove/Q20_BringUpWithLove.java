@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q20_BringUpWithLove;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -91,15 +92,15 @@ public class Q20_BringUpWithLove extends Quest
 		
 		if (npc.getNpcId() == _tunatun)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					if (player.getLevel() >= 82)
 						htmltext = "31537-01.htm";
 					else
 						htmltext = "31537-00.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") == 1)
 						htmltext = "31537-13.htm";
 					else if (st.getInt("cond") == 2)

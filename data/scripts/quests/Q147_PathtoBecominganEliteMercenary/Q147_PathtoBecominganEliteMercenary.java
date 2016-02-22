@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q147_PathtoBecominganEliteMercenary;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -72,15 +73,15 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 		
 		if (Util.contains(_merc, npc.getNpcId()))
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
-					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
+				case State.CREATED:
+					if ((player.getClan() != null) && (player.getClan().getHasCastle() > 0))
 						htmltext = "castle.htm";
 					else
 						htmltext = "elite-01.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") < 4)
 					{
 						htmltext = "elite-05.htm";
@@ -95,7 +96,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 						htmltext = "elite-06.htm";
 					}
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 			}

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class L2ShuttleInstance extends L2Vehicle
 	
 	public void addStop(int x, int y, int z, int time, int doorId, int outerDoorId, int oustX, int oustY, int oustZ)
 	{
-		if (getX() == 0 && getY() == 0 && getZ() == 0)
+		if ((getX() == 0) && (getY() == 0) && (getZ() == 0))
 			setXYZ(x, y, z);
 		_stops.add(new ShuttleStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ));
 	}
@@ -155,6 +156,7 @@ public class L2ShuttleInstance extends L2Vehicle
 			_current = current;
 		}
 		
+		@Override
 		public void run()
 		{
 			// oust previous players
@@ -226,7 +228,7 @@ public class L2ShuttleInstance extends L2Vehicle
 		
 		public boolean hasDoorChanged()
 		{
-			return System.currentTimeMillis() - _lastDoorChange < 1000L;
+			return (System.currentTimeMillis() - _lastDoorChange) < 1000L;
 		}
 		
 		public void moveTo()
@@ -252,7 +254,7 @@ public class L2ShuttleInstance extends L2Vehicle
 			_isDoorOpen = true;
 			_lastDoorChange = System.currentTimeMillis();
 			DoorTable.getInstance().getDoor(_outerDoorId).openMe();
-			L2ShuttleInstance.this.updateAbnormalEffect();
+			updateAbnormalEffect();
 		}
 		
 		public void closeDoor()
@@ -260,7 +262,7 @@ public class L2ShuttleInstance extends L2Vehicle
 			_isDoorOpen = false;
 			_lastDoorChange = System.currentTimeMillis();
 			DoorTable.getInstance().getDoor(_outerDoorId).closeMe();
-			L2ShuttleInstance.this.updateAbnormalEffect();
+			updateAbnormalEffect();
 		}
 	}
 }

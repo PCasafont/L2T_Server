@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public final class Calculator
 	
 	/** Table of Func object */
 	private Func[] _functions;
+	
 	/**
 	 * Constructor of Calculator (Init value : emptyFuncs).<BR><BR>
 	 */
@@ -63,7 +65,7 @@ public final class Calculator
 		if (c1 == c2)
 			return true;
 		
-		if (c1 == null || c2 == null)
+		if ((c1 == null) || (c2 == null))
 			return false;
 		
 		Func[] funcs1 = c1._functions;
@@ -78,7 +80,7 @@ public final class Calculator
 		if (funcs1.length == 0)
 			return true;
 		
-		for (int i=0; i < funcs1.length; i++)
+		for (int i = 0; i < funcs1.length; i++)
 		{
 			if (funcs1[i] != funcs2[i])
 				return false;
@@ -101,18 +103,18 @@ public final class Calculator
 	public synchronized void addFunc(Func f)
 	{
 		Func[] funcs = _functions;
-		Func[] tmp = new Func[funcs.length+1];
+		Func[] tmp = new Func[funcs.length + 1];
 		
 		final int order = f.getOrder();
 		int i;
 		
-		for (i=0; i < funcs.length && order >= funcs[i].getOrder(); i++)
+		for (i = 0; (i < funcs.length) && (order >= funcs[i].getOrder()); i++)
 			tmp[i] = funcs[i];
 		
 		tmp[i] = f;
 		
 		for (; i < funcs.length; i++)
-			tmp[i+1] = funcs[i];
+			tmp[i + 1] = funcs[i];
 		
 		_functions = tmp;
 	}
@@ -123,18 +125,18 @@ public final class Calculator
 	public synchronized void removeFunc(Func f)
 	{
 		Func[] funcs = _functions;
-		Func[] tmp = new Func[funcs.length-1];
+		Func[] tmp = new Func[funcs.length - 1];
 		
 		int i;
 		
-		for (i=0; i < funcs.length && f != funcs[i]; i++)
+		for (i = 0; (i < funcs.length) && (f != funcs[i]); i++)
 			tmp[i] = funcs[i];
 		
 		if (i == funcs.length)
 			return;
 		
 		for (i++; i < funcs.length; i++)
-			tmp[i-1] = funcs[i];
+			tmp[i - 1] = funcs[i];
 		
 		if (tmp.length == 0)
 			_functions = _emptyFuncs;
@@ -150,7 +152,7 @@ public final class Calculator
 	{
 		ArrayList<Stats> modifiedStats = new ArrayList<Stats>();
 		
-		for (Func func: _functions)
+		for (Func func : _functions)
 		{
 			if (func.funcOwner == owner)
 			{
@@ -167,7 +169,7 @@ public final class Calculator
 	 */
 	public void calc(Env env)
 	{
-		for (Func func: _functions)
+		for (Func func : _functions)
 			func.calc(env);
 	}
 	

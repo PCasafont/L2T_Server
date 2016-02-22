@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -40,7 +41,6 @@ import l2server.log.Log;
  */
 public class RequestAcquireSkillInfo extends L2GameClientPacket
 {
-	private static final String _C__6B_REQUESTAQUIRESKILLINFO = "[C] 6B RequestAcquireSkillInfo";
 	
 	private int _id;
 	private int _level;
@@ -57,16 +57,16 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (_id <= 0 || _level <= 0) // minimal sanity check
+		if ((_id <= 0) || (_level <= 0)) // minimal sanity check
 			return;
-
+		
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
 			return;
 		
 		final L2Npc trainer = activeChar.getLastFolkNPC();
-
+		
 		final L2Skill skill = SkillTable.getInstance().getInfo(_id, _level);
 		
 		boolean canteach = false;
@@ -74,8 +74,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 		if (skill == null)
 		{
 			if (Config.DEBUG)
-				Log.warning("skill id " + _id + " level " + _level
-						+ " is undefined. aquireSkillInfo failed.");
+				Log.warning("skill id " + _id + " level " + _level + " is undefined. aquireSkillInfo failed.");
 			
 			return;
 		}
@@ -89,7 +88,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				
 				for (L2TransformSkillLearn s : skillst)
 				{
-					if (s.getId() == _id && s.getLevel() == _level)
+					if ((s.getId() == _id) && (s.getLevel() == _level))
 					{
 						canteach = true;
 						itemId = s.getItemId();
@@ -99,7 +98,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				
 				if (!canteach)
 					return; // cheater
-				
+					
 				int requiredSp = 0;
 				AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), requiredSp, 0);
 				
@@ -114,7 +113,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			for (L2SkillLearn s : skills)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
+				if ((s.getId() == _id) && (s.getLevel() == _level))
 				{
 					skillToLearn = s;
 					break;
@@ -123,7 +122,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			if (skillToLearn == null)
 				return; // cheater
-			
+				
 			sendPacket(new ExAcquireSkillInfo(skillToLearn, activeChar));
 		}
 		else if (_skillType == 2)
@@ -133,7 +132,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			for (L2PledgeSkillLearn s : skills)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
+				if ((s.getId() == _id) && (s.getLevel() == _level))
 				{
 					canteach = true;
 					requiredRep = s.getRepCost();
@@ -143,7 +142,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			if (!canteach)
 				return; // cheater
-			
+				
 			AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), requiredRep, 2);
 			sendPacket(asi);
 		}
@@ -186,7 +185,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			{
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
-				if (sk == null || sk != skill)
+				if ((sk == null) || (sk != skill))
 					continue;
 				
 				canteach = true;
@@ -198,7 +197,8 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			asi.addRequirement(5, costid, costcount, 0);
 			sendPacket(asi);
 		}
-		else // Common Skills
+		else
+		// Common Skills
 		{
 			L2SkillLearn skillToLearn = null;
 			L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSkills(activeChar);
@@ -207,7 +207,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			{
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
-				if (sk == null || sk != skill)
+				if ((sk == null) || (sk != skill))
 					continue;
 				
 				skillToLearn = s;
@@ -218,16 +218,5 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			sendPacket(new ExAcquireSkillInfo(skillToLearn, activeChar));
 		}
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__6B_REQUESTAQUIRESKILLINFO;
 	}
 }

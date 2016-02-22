@@ -2368,6 +2368,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="120" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="heal_effect_down">
 				<effect type="Debuff" val="0" />

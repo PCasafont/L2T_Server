@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -38,7 +39,6 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class QuestList extends L2GameServerPacket
 {
-	private static final String _S__98_QUESTLIST = "[S] 86 QuestList";
 	private Quest[] _quests;
 	private L2PcInstance _activeChar;
 	
@@ -50,7 +50,7 @@ public class QuestList extends L2GameServerPacket
 	@Override
 	public void runImpl()
 	{
-		if (getClient() != null && getClient().getActiveChar() != null)
+		if ((getClient() != null) && (getClient().getActiveChar() != null))
 		{
 			_activeChar = getClient().getActiveChar();
 			_quests = _activeChar.getAllActiveQuests();
@@ -91,7 +91,6 @@ public class QuestList extends L2GameServerPacket
 		 * the 10th but the 6th and 9th are not to be shown at all (not completed, either).
 		 */
 		
-		writeC(0x86);
 		if (_quests != null)
 		{
 			writeH(_quests.length);
@@ -120,14 +119,5 @@ public class QuestList extends L2GameServerPacket
 		
 		for (GlobalQuest q : GlobalQuest.values())
 			writeD(_activeChar.getGlobalQuestState(q));
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__98_QUESTLIST;
 	}
 }

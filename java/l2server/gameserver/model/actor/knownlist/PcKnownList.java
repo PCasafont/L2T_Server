@@ -3,22 +3,26 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
+import l2server.Config;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.L2Vehicle;
 import l2server.gameserver.model.actor.instance.L2AirShipInstance;
+import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.DeleteObject;
 import l2server.gameserver.network.serverpackets.SpawnItem;
@@ -59,11 +63,13 @@ public class PcKnownList extends PlayableKnownList
 	@Override
 	public boolean addKnownObject(L2Object object)
 	{
+		if ((object instanceof L2GuardInstance) && ((L2GuardInstance) object).isDecayed())
+			return false;
+		
 		if (!super.addKnownObject(object))
 			return false;
 		
-		if (object.getPoly().isMorphed()
-				&& object.getPoly().getPolyType().equals("item"))
+		if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item"))
 		{
 			//if (object.getPolytype().equals("item"))
 			getActiveChar().sendPacket(new SpawnItem(object));
@@ -100,15 +106,17 @@ public class PcKnownList extends PlayableKnownList
 		
 		if (object instanceof L2AirShipInstance)
 		{
-			if (((L2AirShipInstance)object).getCaptainId() != 0
-					&& ((L2AirShipInstance)object).getCaptainId() != getActiveChar().getObjectId())
-				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance)object).getCaptainId()));
-			if (((L2AirShipInstance)object).getHelmObjectId() != 0)
-				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance)object).getHelmObjectId()));
+			if ((((L2AirShipInstance) object).getCaptainId() != 0) && (((L2AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId()))
+				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getCaptainId()));
+			if (((L2AirShipInstance) object).getHelmObjectId() != 0)
+				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getHelmObjectId()));
 		}
 		
 		// Send Server-Client Packet DeleteObject to the L2PcInstance
 		getActiveChar().sendPacket(new DeleteObject(object));
+		
+		if (Config.CHECK_KNOWN && (object instanceof L2Npc) && getActiveChar().isGM())
+			getActiveChar().sendMessage("Removed NPC: " + ((L2Npc) object).getName());
 		
 		return true;
 	}
@@ -116,7 +124,7 @@ public class PcKnownList extends PlayableKnownList
 	@Override
 	public final L2PcInstance getActiveChar()
 	{
-		return (L2PcInstance)super.getActiveChar();
+		return (L2PcInstance) super.getActiveChar();
 	}
 	
 	@Override
@@ -128,7 +136,7 @@ public class PcKnownList extends PlayableKnownList
 		if (getActiveChar().isPerformingFlyMove())
 			return 1500;
 		
-		if (object instanceof L2Summon && ((L2Summon)object).getOwner() == getActiveChar())
+		if ((object instanceof L2Summon) && (((L2Summon) object).getOwner() == getActiveChar()))
 			return 45000;
 		
 		// when knownlist grows, the distance to forget should be at least

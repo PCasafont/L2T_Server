@@ -208,7 +208,7 @@ class Quest (JQuest) :
       if id == State.CREATED and npcId == Galatea:    # start part, Galatea
          for var in STATS:
             st.set(var,"0")
-         if player.getClassId() in [0x0b, 0x1a, 0x27]:
+         if player.getClassId().getId() in [0x0b, 0x1a, 0x27]:
             if player.getLevel() > 38:  # conditions are ok, lets start
                htmltext = "30634-03.htm"
             else:

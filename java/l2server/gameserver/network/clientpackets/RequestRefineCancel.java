@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -30,7 +31,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestRefineCancel extends L2GameClientPacket
 {
-	private static final String _C__D0_2E_REQUESTREFINECANCEL = "[C] D0:2E RequestRefineCancel";
 	private int _targetItemObjId;
 	
 	@Override
@@ -57,7 +57,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		}
 		if (targetItem.getOwnerId() != activeChar.getObjectId())
 		{
-			Util.handleIllegalPlayerAction(getClient().getActiveChar(),"Warning!! Character "+getClient().getActiveChar().getName()+" of account "+getClient().getActiveChar().getAccountName()+" tryied to augment item that doesn't own.",Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(getClient().getActiveChar(), "Warning!! Character " + getClient().getActiveChar().getName() + " of account " + getClient().getActiveChar().getAccountName() + " tryied to augment item that doesn't own.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		// cannot remove augmentation from a not augmented item
@@ -106,11 +106,14 @@ public final class RequestRefineCancel extends L2GameClientPacket
 			case L2Item.CRYSTAL_R99:
 				price = 5300000;
 				break;
-				// any other item type is not augmentable
+			// any other item type is not augmentable
 			default:
 				activeChar.sendPacket(new ExVariationCancelResult(0));
 				return;
 		}
+		
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			price = (int) Math.sqrt(price);
 		
 		// try to reduce the players adena
 		if (!activeChar.reduceAdena("RequestRefineCancel", price, null, true))
@@ -142,14 +145,5 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
 		activeChar.sendPacket(iu);
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2E_REQUESTREFINECANCEL;
 	}
 }

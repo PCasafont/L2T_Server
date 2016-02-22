@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.ArrayList;
@@ -86,7 +87,7 @@ public class SimonSays extends EventInstance
 				if (participant != null)
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 			}
-			html = html.substring(0, html.length()-2) + ".";
+			html = html.substring(0, html.length() - 2) + ".";
 		}
 		return html;
 	}
@@ -100,7 +101,7 @@ public class SimonSays extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if (killedPlayerInstance == null || !isState(EventState.STARTED))
+		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);
@@ -116,7 +117,7 @@ public class SimonSays extends EventInstance
 			_actedPlayers.add(player.getObjectId());
 			player.sendPacket(new CreatureSay(0, Say2.TELL, "Instanced Events", "Ok!"));
 			
-			player.addEventPoints(_winners.size() + _teams[0].getParticipatedPlayers().size() - _actedPlayers.size());
+			player.addEventPoints((_winners.size() + _teams[0].getParticipatedPlayers().size()) - _actedPlayers.size());
 		}
 		else
 		{
@@ -208,7 +209,7 @@ public class SimonSays extends EventInstance
 		List<L2PcInstance> participants = new ArrayList<L2PcInstance>(_teams[0].getParticipatedPlayers().values());
 		for (L2PcInstance playerInstance : participants)
 		{
-			if (playerInstance != null && !_actedPlayers.contains(playerInstance.getObjectId()))
+			if ((playerInstance != null) && !_actedPlayers.contains(playerInstance.getObjectId()))
 			{
 				_someoneFailed = true;
 				removeParticipant(playerInstance.getObjectId());
@@ -217,7 +218,7 @@ public class SimonSays extends EventInstance
 			}
 		}
 		
-		if (!_someoneFailed && getParticipatedPlayersCount() > 1)
+		if (!_someoneFailed && (getParticipatedPlayersCount() > 1))
 		{
 			L2PcInstance player = _teams[0].getParticipatedPlayers().get(_actedPlayers.get(_actedPlayers.size() - 1));
 			if (player != null)
@@ -247,19 +248,20 @@ public class SimonSays extends EventInstance
 		boolean _stop = false;
 		boolean _waiting = true;
 		
+		@Override
 		public void run()
 		{
-			if (!_stop && SimonSays.this.isState(EventState.STARTED))
+			if (!_stop && isState(EventState.STARTED))
 			{
 				int delay;
 				if (_waiting)
 				{
-					SimonSays.this.simonSays();
+					simonSays();
 					delay = 15000;
 				}
 				else
 				{
-					SimonSays.this.endSimonSaysRound();
+					endSimonSaysRound();
 					delay = 5000;
 				}
 				_waiting = !_waiting;
@@ -286,7 +288,7 @@ public class SimonSays extends EventInstance
 	
 	public void startSimonSaysTask()
 	{
-		if (_simonSaysTask != null && !_simonSaysTask.isStopped())
+		if ((_simonSaysTask != null) && !_simonSaysTask.isStopped())
 			_simonSaysTask.stop();
 		_simonSaysTask = new SimonSaysTask();
 		ThreadPoolManager.getInstance().scheduleGeneral(_simonSaysTask, 30000);

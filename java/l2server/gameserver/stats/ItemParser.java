@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.lang.reflect.Constructor;
@@ -40,7 +41,7 @@ public final class ItemParser extends StatsParser
 	{
 		super(node);
 	}
-
+	
 	@Override
 	protected StatsSet getStatsSet()
 	{
@@ -54,33 +55,35 @@ public final class ItemParser extends StatsParser
 		_set = new StatsSet();
 		for (Entry<String, String> e : _node.getAttributes().entrySet())
 			_set.set(e.getKey(), e.getValue());
-
+		
 		makeItem();
 		
 		parseChildren();
 		
+		if (_node.hasAttribute("rCrit") && !_node.hasAttribute("mCritRate"))
+			_node.getAttributes().put("mCritRate", _node.getString("rCrit"));
 		parseTemplate(_node, _item);
 	}
 	
 	public void parse(ItemParser original) throws RuntimeException
 	{
 		_type = _node.getString("type", original._type);
-
+		
 		_set = new StatsSet();
 		_set.add(original._set);
 		
 		for (Entry<String, String> e : _node.getAttributes().entrySet())
 			_set.set(e.getKey(), e.getValue());
-
+		
 		makeItem();
 		
-		if (original._item.getConditions() != null && !_set.getBool("overrideCond", false))
+		if ((original._item.getConditions() != null) && !_set.getBool("overrideCond", false))
 		{
 			for (Condition cond : original._item.getConditions())
 				_item.attach(cond);
 		}
 		
-		if (original._item.getSkills() != null && !_set.getBool("overrideSkills", false))
+		if ((original._item.getSkills() != null) && !_set.getBool("overrideSkills", false))
 		{
 			for (SkillHolder sh : original._item.getSkills())
 				_item.attach(sh);
@@ -88,7 +91,7 @@ public final class ItemParser extends StatsParser
 		
 		parseChildren();
 		
-		if (original._item.getFuncs() != null && !_set.getBool("overrideStats", false))
+		if ((original._item.getFuncs() != null) && !_set.getBool("overrideStats", false))
 		{
 			for (FuncTemplate func : original._item.getFuncs())
 				_item.attach(func);
@@ -104,12 +107,12 @@ public final class ItemParser extends StatsParser
 			if (n.getName().equalsIgnoreCase("cond"))
 			{
 				Condition condition = parseCondition(n.getFirstChild(), _item);
-				if (condition != null && n.hasAttribute("msg"))
+				if ((condition != null) && n.hasAttribute("msg"))
 					condition.setMessage(n.getString("msg"));
-				else if (condition != null && n.hasAttribute("msgId"))
+				else if ((condition != null) && n.hasAttribute("msgId"))
 				{
 					condition.setMessageId(Integer.decode(getValue(n.getString("msgId"))));
-					if (n.hasAttribute("addName") && Integer.decode(getValue(n.getString("msgId"))) > 0)
+					if (n.hasAttribute("addName") && (Integer.decode(getValue(n.getString("msgId"))) > 0))
 						condition.addName();
 				}
 				_item.attach(condition);
@@ -127,7 +130,7 @@ public final class ItemParser extends StatsParser
 				double chance = n.getDouble("chance");
 				_item.attach(new L2CrystallizeReward(itemId, count, chance));
 			}
-			else if (n.getName().equalsIgnoreCase("capsuledItem") && _item instanceof L2EtcItem)
+			else if (n.getName().equalsIgnoreCase("capsuledItem") && (_item instanceof L2EtcItem))
 			{
 				int itemId = n.getInt("id");
 				int min = n.getInt("min");
@@ -138,18 +141,18 @@ public final class ItemParser extends StatsParser
 					Log.info("> Max amount < Min amount in part " + itemId + ", item " + _item);
 					continue;
 				}
-				((L2EtcItem)_item).attach(new L2ExtractableProduct(itemId, min, max, chance));
+				((L2EtcItem) _item).attach(new L2ExtractableProduct(itemId, min, max, chance));
 			}
 		}
 	}
 	
 	private void makeItem() throws RuntimeException
 	{
-		if (_item != null) 
+		if (_item != null)
 			return; // item is already created
 		try
 		{
-			Constructor<?> c = Class.forName("l2server.gameserver.templates.item.L2"+_type).getConstructor(StatsSet.class);
+			Constructor<?> c = Class.forName("l2server.gameserver.templates.item.L2" + _type).getConstructor(StatsSet.class);
 			_item = (L2Item) c.newInstance(_set);
 		}
 		catch (Exception e)

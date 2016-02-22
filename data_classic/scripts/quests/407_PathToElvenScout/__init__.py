@@ -32,7 +32,7 @@ class Quest (JQuest) :
     player = st.getPlayer()
     if event == "1" :
       st.set("id","0")
-      if player.getClassId() == 0x12 :
+      if player.getClassId().getId() == 0x12 :
         if player.getLevel() >= 18 :
           if st.getQuestItemsCount(REORIA_RECOMMENDATION)>0 :
             htmltext = "30328-04.htm"
@@ -45,7 +45,7 @@ class Quest (JQuest) :
         else :
           htmltext = "30328-03.htm"
       else:
-        if player.getClassId() == 0x16 :
+        if player.getClassId().getId() == 0x16 :
           htmltext = "30328-02a.htm"
         else:
           htmltext = "30328-02.htm"
@@ -131,7 +131,7 @@ class Quest (JQuest) :
           else:
             st.addExpAndSp(59172, 3332)
           st.giveItems(57, 16380)
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         st.set("cond","0")
         st.exitQuest(False)
         st.saveGlobalQuestVar("1ClassQuestFinished","1")

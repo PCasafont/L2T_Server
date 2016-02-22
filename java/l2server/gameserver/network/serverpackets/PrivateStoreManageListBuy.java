@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -25,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreManageListBuy extends L2ItemListPacket
 {
-	private static final String _S__D0_PRIVATESELLLISTBUY = "[S] bd PrivateStoreManageListBuy";
 	private int _objId;
 	private long _playerAdena;
 	private L2ItemInstance[] _itemList;
@@ -42,7 +42,6 @@ public class PrivateStoreManageListBuy extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xbd);
 		//section 1
 		writeD(_objId);
 		writeQ(_playerAdena);
@@ -65,14 +64,5 @@ public class PrivateStoreManageListBuy extends L2ItemListPacket
 			writeQ(item.getItem().getReferencePrice() * 2);
 			writeQ(item.getCount());
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__D0_PRIVATESELLLISTBUY;
 	}
 }

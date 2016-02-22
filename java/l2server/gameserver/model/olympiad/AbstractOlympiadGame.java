@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.olympiad;
 
 import java.util.List;
@@ -22,13 +23,14 @@ import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.HeroSkillTable;
 import l2server.gameserver.events.instanced.EventsManager;
+import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Party;
+import l2server.gameserver.model.L2Party.messageType;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.L2Party.messageType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -44,14 +46,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
 /**
- * 
+ *
  * @author godson, GodKratos, Pere, DS
  *
  */
 public abstract class AbstractOlympiadGame
 {
 	protected static final Logger _logResults = Logger.getLogger("olympiad");
-
+	
 	protected static final String POINTS = "olympiad_points";
 	protected static final String COMP_DONE = "competitions_done";
 	protected static final String COMP_WON = "competitions_won";
@@ -61,32 +63,32 @@ public abstract class AbstractOlympiadGame
 	protected static final String COMP_CLASSED = "competitions_classed";
 	protected static final String COMP_NONCLASSED = "competitions_nonclassed";
 	protected static final String COMP_TEAMS = "competitions_teams";
-
+	
 	protected long _startTime = 0;
 	protected boolean _aborted = false;
 	protected final int _gameId;
-
+	
 	protected AbstractOlympiadGame(int id)
 	{
 		_gameId = id;
 	}
-
+	
 	public final boolean isAborted()
 	{
 		return _aborted;
 	}
-
+	
 	public final int getGameId()
 	{
 		return _gameId;
 	}
-
+	
 	protected boolean makeCompetitionStart()
 	{
 		_startTime = System.currentTimeMillis();
 		return !_aborted;
 	}
-
+	
 	protected final void addPointsToParticipant(OlympiadParticipant par, int points)
 	{
 		par.nobleInfo.setPoints(par.nobleInfo.getPoints() + points);
@@ -95,7 +97,7 @@ public abstract class AbstractOlympiadGame
 		sm.addNumber(points);
 		broadcastPacketToParticipants(sm);
 	}
-
+	
 	protected final void removePointsFromParticipant(OlympiadParticipant par, int points)
 	{
 		par.nobleInfo.setPoints(par.nobleInfo.getPoints() - points);
@@ -104,7 +106,7 @@ public abstract class AbstractOlympiadGame
 		sm.addNumber(points);
 		broadcastPacketToParticipants(sm);
 	}
-
+	
 	/**
 	 * Function return null if player passed all checks
 	 * or SystemMessage with reason for broadcast to opponent(s).
@@ -114,18 +116,18 @@ public abstract class AbstractOlympiadGame
 	protected final SystemMessage checkDefaulted(OlympiadParticipant par)
 	{
 		L2PcInstance player = par.player;
-		if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached())
+		if ((player == null) || !player.isOnline() || (player.getClient() == null) || player.getClient().isDetached())
 		{
 			int playerPoints = par.nobleInfo.getPoints();
 			int points = Math.min(playerPoints / 2, Config.ALT_OLY_MAX_POINTS);
 			removePointsFromParticipant(par, points);
 			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_ENDS_THE_GAME);
 		}
-
+		
 		// safety precautions
 		if (player.inObserverMode() || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()))
 			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
-
+		
 		SystemMessage sm;
 		if (player.isDead())
 		{
@@ -155,14 +157,14 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(sm);
 			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
-
+		
 		return null;
 	}
-
+	
 	protected static final boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id)
 	{
 		final L2PcInstance player = par.player;
-		if (player == null || !player.isOnline())
+		if ((player == null) || !player.isOnline())
 			return false;
 		
 		try
@@ -195,16 +197,19 @@ public abstract class AbstractOlympiadGame
 		}
 		return true;
 	}
-
+	
 	protected static final void removals(L2PcInstance player, boolean removeParty)
 	{
 		try
 		{
 			if (player == null)
 				return;
-
+			
 			// Remove Buffs
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
+			
+			if (player.getFirstEffect(9982) != null)
+				player.getFirstEffect(9982).exit();
 			
 			// Remove Clan Skills
 			if (player.getClan() != null)
@@ -294,7 +299,7 @@ public abstract class AbstractOlympiadGame
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
-
+	
 	protected static final void cleanEffects(L2PcInstance player)
 	{
 		try
@@ -305,17 +310,19 @@ public abstract class AbstractOlympiadGame
 			player.abortAttack();
 			player.abortCast();
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-
+			
 			if (player.isDead())
 				player.setIsDead(false);
 			
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
+			if (player.getFirstEffect(9982) != null)
+				player.getFirstEffect(9982).exit();
 			player.clearSouls();
 			player.clearCharges();
 			if (player.getAgathionId() > 0)
 				player.setAgathionId(0);
 			final L2PetInstance pet = player.getPet();
-			if (pet != null && !pet.isDead())
+			if ((pet != null) && !pet.isDead())
 			{
 				pet.setTarget(null);
 				pet.abortAttack();
@@ -334,7 +341,7 @@ public abstract class AbstractOlympiadGame
 				summon.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				summon.stopAllEffectsExceptThoseThatLastThroughDeath();
 			}
-
+			
 			player.setCurrentCp(player.getMaxCp());
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
@@ -345,14 +352,14 @@ public abstract class AbstractOlympiadGame
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
-
+	
 	protected static final void playerStatusBack(L2PcInstance player)
 	{
 		try
 		{
 			if (player.isTransformed())
 				player.unTransform(true);
-
+			
 			player.setIsInOlympiadMode(false);
 			player.setIsOlympiadStart(false);
 			player.setOlympiadSide(-1);
@@ -376,37 +383,40 @@ public abstract class AbstractOlympiadGame
 					player.addSkill(skill, false);
 			}
 			player.sendSkillList();
-
+			
 			// heal again after adding clan skills
 			player.setCurrentCp(player.getMaxCp());
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
+			
+			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
+				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
 		}
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING, "portPlayersToArena()", e);
 		}
 	}
-
+	
 	protected static final void portPlayerBack(L2PcInstance player)
 	{
 		if (player == null)
 			return;
-
-		if (player.getLastX() == 0 && player.getLastY() == 0)
+		
+		if ((player.getLastX() == 0) && (player.getLastY() == 0))
 			return;
-
+		
 		player.setInstanceId(0);
 		player.teleToLocation(player.getLastX(), player.getLastY(), player.getLastZ());
 		player.setLastCords(0, 0, 0);
 	}
-
+	
 	public static final void rewardParticipant(L2PcInstance player, int[][] reward)
 	{
-		if (player == null || !player.isOnline() || reward == null)
+		if ((player == null) || !player.isOnline() || (reward == null))
 			return;
-
+		
 		try
 		{
 			SystemMessage sm;
@@ -414,13 +424,13 @@ public abstract class AbstractOlympiadGame
 			final InventoryUpdate iu = new InventoryUpdate();
 			for (int[] it : reward)
 			{
-				if (it == null || it.length != 2)
+				if ((it == null) || (it.length != 2))
 					continue;
-
+				
 				item = player.getInventory().addItem("Olympiad", it[0], it[1], player, null);
 				if (item == null)
 					continue;
-
+				
 				iu.addModifiedItem(item);
 				sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S2_S1_S);
 				sm.addItemName(it[0]);
@@ -434,54 +444,54 @@ public abstract class AbstractOlympiadGame
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
-
+	
 	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
 	{
 		broadcastPacketToParticipants(packet);
 		stadium.broadcastPacketToObservers(packet, _gameId);
 	}
-
+	
 	public abstract CompetitionType getType();
-
+	
 	public abstract String[] getPlayerNames();
-
+	
 	public abstract boolean containsParticipant(int playerId);
-
+	
 	public abstract void sendOlympiadInfo(L2Character player);
-
+	
 	public abstract void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium);
-
+	
 	protected abstract void broadcastPacketToParticipants(L2GameServerPacket packet);
-
+	
 	protected abstract boolean needBuffers();
-
+	
 	protected abstract boolean checkDefaulted();
-
+	
 	protected abstract void removals();
-
+	
 	protected abstract boolean portPlayersToArena(List<Location> spawns);
-
+	
 	protected abstract void cleanEffects();
-
+	
 	protected abstract void portPlayersBack();
-
+	
 	protected abstract void playersStatusBack();
-
+	
 	protected abstract void clearPlayers();
-
+	
 	protected abstract void handleDisconnect(L2PcInstance player);
-
+	
 	protected abstract void resetDamage();
-
+	
 	protected abstract void addDamage(L2PcInstance player, int damage);
-
+	
 	protected abstract boolean checkBattleStatus();
-
+	
 	protected abstract boolean haveWinner();
-
+	
 	protected abstract void validateWinner(L2OlympiadStadiumZone stadium);
-
+	
 	protected abstract int getDivider();
-
+	
 	protected abstract int[][] getReward();
 }

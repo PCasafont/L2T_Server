@@ -502,21 +502,21 @@
 		<set name="learnSkillId" val="19116" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Mentor's assistance. Atk. Spd. + 10%, Casting Spd. + 20%, Max HP + 20%, and MP Recovery Bonus + 10%. M. Skill MP Consumption - 5%, and decreases chance of cancellation while casting. Applied only when mentor is logged in. Lasts 5 min. after mentor logs out. -->
+	<!-- Mentor's assistance. Atk. Spd. + 10%, Casting Spd. + 20%, Max HP + 20%, and MP Recovery Bonus + 10%. M. Skill MP Consumption - 5%, and decreases chance of cancellation while casting. -->
 	<skill id="17082" levels="1" name="Mentor's Prevailing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Mentor's assistance. P. Atk. + 5%, M. Atk. + 10%, and Atk./Casting Spd. + 5%. P. Def./M. Def. - 4%, and P. Evasion - 4. Has a chance of 5% Vampiric Rage effect, and reflects 10% of received damage back to enemy. Applied only when mentor is logged in. Lasts 5 min. after mentor logs out. -->
+	<!-- Mentor's assistance. P. Atk. + 5%, M. Atk. + 10%, and Atk./Casting Spd. + 5%. P. Def./M. Def. - 4%, and P. Evasion - 4. Has a chance of 5% Vampiric Rage effect, and reflects 10% of received damage back to enemy. -->
 	<skill id="17083" levels="1" name="Mentor's Daring Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Mentor's assistance. HP Recovery Bonus + 10%, P. Accuracy + 2, P. Evasion + 2, and Speed + 10. Skill MP Consumption - 10%, and Skill Cooldown - 5%. Applied only when mentor is logged in. Lasts 5 min. after mentor logs out. -->
+	<!-- Mentor's assistance. HP Recovery Bonus + 10%, P. Accuracy + 2, P. Evasion + 2, and Speed + 10. Skill MP Consumption - 10%, and Skill Cooldown - 5%. -->
 	<skill id="17084" levels="1" name="Mentor's Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -683,7 +683,7 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- Vitality is replenished in peace zones. -->
-	<skill id="17108" levels="1" name="Winter Holiday Blessing">
+	<skill id="17108" levels="1" name="Snowman's Buff">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -717,7 +717,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="17113" levels="1" name="Wintermelon Gift">
+	<skill id="17113" levels="1" name="Winter Holiday Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -741,7 +741,7 @@
 	</skill>
 	<!-- 
 		Level 1: Increases acquired XP and SP by 20%.
-		Level 2: Acquired XP/SP + 30%.
+		Level 2: Increases acquired XP and SP by 30%.
 	-->
 	<skill id="17117" levels="2" name="Emperor's Rune">
 		<table name="#name">Rune of Bountiful Growth;Emperor's Rune</table>
@@ -770,13 +770,13 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="17121" levels="1" name="Emperor's Vitality Tonic (Large)">
+	<skill id="17121" levels="1" name="Emperor's Special Vitality Tonic (3 bars)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="17122" levels="1" name="Returning Vitality Drink">
+	<skill id="17122" levels="1" name="Returning Hero's Vitality Replenishing Juice">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -792,7 +792,7 @@
 		Level 1: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
 		Level 24: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
 	-->
-	<skill id="17124" levels="24" name="Snake's Blessing - Stage 1">
+	<skill id="17124" levels="24" name="Snake's Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Snake's Blessing - Stage 1;Snake's Blessing - Stage 2;Snake's Blessing - Stage 3;Snake's Blessing - Stage 4;Snake's Blessing - Stage 5;Snake's Blessing - Stage 6;Snake's Blessing - Stage 7;Snake's Blessing - Stage 8;Snake's Blessing - Stage 9;Snake's Blessing - Stage 10;Snake's Blessing - Stage 11;Snake's Blessing - Stage 12;Snake's Blessing - Stage 13;Snake's Blessing - Stage 14;Snake's Blessing - Stage 15;Snake's Blessing - Stage 16;Snake's Blessing - Stage 17;Snake's Blessing - Stage 18;Snake's Blessing - Stage 19;Snake's Blessing - Stage 20;Snake's Blessing - Stage 21;Snake's Blessing - Stage 22;Snake's Blessing - Stage 23;Snake's Blessing - Stage 24</table>
@@ -814,7 +814,7 @@
 		Level 1: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
 		Level 24: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
 	-->
-	<skill id="17126" levels="24" name="Snake's Blessing - Stage 1">
+	<skill id="17126" levels="24" name="Snake's Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Snake's Blessing - Stage 1;Snake's Blessing - Stage 2;Snake's Blessing - Stage 3;Snake's Blessing - Stage 4;Snake's Blessing - Stage 5;Snake's Blessing - Stage 6;Snake's Blessing - Stage 7;Snake's Blessing - Stage 8;Snake's Blessing - Stage 9;Snake's Blessing - Stage 10;Snake's Blessing - Stage 11;Snake's Blessing - Stage 12;Snake's Blessing - Stage 13;Snake's Blessing - Stage 14;Snake's Blessing - Stage 15;Snake's Blessing - Stage 16;Snake's Blessing - Stage 17;Snake's Blessing - Stage 18;Snake's Blessing - Stage 19;Snake's Blessing - Stage 20;Snake's Blessing - Stage 21;Snake's Blessing - Stage 22;Snake's Blessing - Stage 23;Snake's Blessing - Stage 24</table>
@@ -984,15 +984,15 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- Equipped weapon changes shape. Is it the sweet magic Coco emits? The effect disappears upon logout. -->
-	<skill id="17155" levels="1" name="Coco Brownie's Magic">
+	<skill id="17155" levels="1" name="Coco's Magic">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- A deliciously dark flavor surrounds you.\\nFor 2 hours, STR + 2, INT  +2, and Attribute Resistance + 20. -->
-	<skill id="17156" levels="1" name="A Real Man's Kiss">
+	<!-- A deliciously dark flavor surrounds you.\\nFor 2 hours, STR + 2, INT +2, and Attribute Resistance + 20. -->
+	<skill id="17156" levels="1" name="Decadence">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1001,7 +1001,7 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- An exhilarating thrill of sweet energy.\\nFor 2 hours, STR + 2, INT + 2, DEX + 2, and WIT + 2. -->
-	<skill id="17157" levels="1" name="A Lady's Whisper">
+	<skill id="17157" levels="1" name="Sugar Rush">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1010,7 +1010,7 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- Activating shield of self-built perfection.\\nFor 2 hours, STR + 2, INT + 2, CON + 2, and MEN + 2. -->
-	<skill id="17158" levels="1" name="Only Me">
+	<skill id="17158" levels="1" name="Forever Alone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1039,7 +1039,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- Vitality is replenished in peace zones. -->
-	<skill id="17161" levels="1" name="Real Men's Chocolate">
+	<skill id="17161" levels="1" name="Chocolate Truffle">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1048,7 +1048,7 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- Vitality is replenished in peace zones. -->
-	<skill id="17162" levels="1" name="Ladies' Chocolate">
+	<skill id="17162" levels="1" name="Candy Heart">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1057,7 +1057,7 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- Vitality is replenished in peace zones. -->
-	<skill id="17163" levels="1" name="Only Me Cookie">
+	<skill id="17163" levels="1" name="Comfort Cookie">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1103,7 +1103,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%,  and Debuff Resistance + 10%. Decreases critical damage - 30%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage while equipped with a melee weapon, bow, or crossbow. -->
+	<!-- The GM is always with you. For 1 hour, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Decreases critical damage - 30%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage while equipped with a melee weapon, bow, or crossbow. -->
 	<skill id="17170" levels="1" name="GM's Blessing - Drum Melody">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1152,7 +1152,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.Â Accuracy by 4, P.Â Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="17177" levels="1" name="GM's Blessing - Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1183,22 +1183,22 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17182" levels="1" name="Eva's Special Box">
+	<skill id="17182" levels="1" name="Eva's Special Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17183" levels="1" name="Pa'agrio's Special Box">
+	<skill id="17183" levels="1" name="Pa'agrio's Special Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17184" levels="1" name="Maphr's Special Box">
+	<skill id="17184" levels="1" name="Maphr's Special Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17185" levels="1" name="Sayha's Special Box">
+	<skill id="17185" levels="1" name="Sayha's Special Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1501,7 +1501,7 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
-	<skill id="17215" levels="11" name="Master Yogi's Force - Stage 1">
+	<skill id="17215" levels="11" name="Master Yogi's Force">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Master Yogi's Force - Stage 1;Master Yogi's Force - Stage 2;Master Yogi's Force - Stage 3;Master Yogi's Force - Stage 4;Master Yogi's Force - Stage 5;Master Yogi's Force - Stage 6;Master Yogi's Force - Stage 7;Master Yogi's Force - Stage 8;Master Yogi's Force - Stage 9;Master Yogi's Force - Stage 10;Master Yogi's Force</table>
@@ -1520,7 +1520,7 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
-	<skill id="17217" levels="11" name="Master Yogi's Force - Stage 1">
+	<skill id="17217" levels="11" name="Master Yogi's Force">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Master Yogi's Force - Stage 1;Master Yogi's Force - Stage 2;Master Yogi's Force - Stage 3;Master Yogi's Force - Stage 4;Master Yogi's Force - Stage 5;Master Yogi's Force - Stage 6;Master Yogi's Force - Stage 7;Master Yogi's Force - Stage 8;Master Yogi's Force - Stage 9;Master Yogi's Force - Stage 10;Master Yogi's Force</table>
@@ -1571,162 +1571,162 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
-	<skill id="17224" levels="1" name="Valentine Dagger Appearance Stone">
+	<skill id="17224" levels="1" name="Valentine Appearance Stone: Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17225" levels="1" name="Valentine One-handed Sword Appearance Stone">
+	<skill id="17225" levels="1" name="Valentine Appearance Stone: One-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17226" levels="1" name="Valentine Two-handed Sword Appearance Stone">
+	<skill id="17226" levels="1" name="Valentine Appearance Stone: Two-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17227" levels="1" name="Valentine One-handed Blunt Weapon Appearance Stone">
+	<skill id="17227" levels="1" name="Valentine Appearance Stone: One-handed Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17228" levels="1" name="Valentine Fist Weapon Appearance Stone">
+	<skill id="17228" levels="1" name="Valentine Appearance Stone: Fist Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17229" levels="1" name="Valentine Spear Appearance Stone">
+	<skill id="17229" levels="1" name="Valentine Appearance Stone: Spear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17230" levels="1" name="Valentine Bow Appearance Stone">
+	<skill id="17230" levels="1" name="Valentine Appearance Stone: Bow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17231" levels="1" name="Valentine Crossbow Appearance Stone">
+	<skill id="17231" levels="1" name="Valentine Appearance Stone: Crossbow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17232" levels="1" name="Valentine One-handed Magic Sword Appearance Stone">
+	<skill id="17232" levels="1" name="Valentine Appearance Stone: One-handed Magic Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17233" levels="1" name="Valentine One-handed Magic Blunt Weapon Appearance Stone">
+	<skill id="17233" levels="1" name="Valentine Appearance Stone: One-handed Magic Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17234" levels="1" name="Valentine Two-handed Magic Blunt Weapon Appearance Stone">
+	<skill id="17234" levels="1" name="Valentine Appearance Stone: Two-handed Magic Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17235" levels="1" name="Valentine Dualsword Appearance Stone">
+	<skill id="17235" levels="1" name="Valentine Appearance Stone: DualSword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17236" levels="1" name="Valentine Dual Dagger Appearance Stone">
+	<skill id="17236" levels="1" name="Valentine Appearance Stone: Dual Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17237" levels="1" name="Valentine Dual Blunt Weapon Appearance Stone">
+	<skill id="17237" levels="1" name="Valentine Appearance Stone: Dual Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17238" levels="1" name="Valentine Shield Appearance Stone">
+	<skill id="17238" levels="1" name="Valentine Appearance Stone: Shield">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17239" levels="1" name="Valentine Sigil Appearance Stone">
+	<skill id="17239" levels="1" name="Valentine Appearance Stone: Sigil">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17240" levels="1" name="Valentine Dagger Appearance Stone">
+	<skill id="17240" levels="1" name="Valentine Appearance Stone: Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17241" levels="1" name="Valentine One-handed Sword Appearance Stone">
+	<skill id="17241" levels="1" name="Valentine Appearance Stone: One-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17242" levels="1" name="Valentine Two-handed Sword Appearance Stone">
+	<skill id="17242" levels="1" name="Valentine Appearance Stone: Two-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17243" levels="1" name="Valentine One-handed Blunt Weapon Appearance Stone">
+	<skill id="17243" levels="1" name="Valentine Appearance Stone: One-handed Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17244" levels="1" name="Valentine Fist Weapon Appearance Stone">
+	<skill id="17244" levels="1" name="Valentine Appearance Stone: Fist Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17245" levels="1" name="Valentine Spear Appearance Stone">
+	<skill id="17245" levels="1" name="Valentine Appearance Stone: Spear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17246" levels="1" name="Valentine Bow Appearance Stone">
+	<skill id="17246" levels="1" name="Valentine Appearance Stone: Bow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17247" levels="1" name="Valentine Crossbow Appearance Stone">
+	<skill id="17247" levels="1" name="Valentine Appearance Stone: Crossbow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17248" levels="1" name="Valentine One-handed Magic Sword Appearance Stone">
+	<skill id="17248" levels="1" name="Valentine Appearance Stone: One-handed Magic Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17249" levels="1" name="Valentine One-handed Magic Blunt Weapon Appearance Stone">
+	<skill id="17249" levels="1" name="Valentine Appearance Stone: One-handed Magic Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17250" levels="1" name="Valentine Two-handed Magic Blunt Weapon Appearance Stone">
+	<skill id="17250" levels="1" name="Valentine Appearance Stone: Two-handed Magic Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17251" levels="1" name="Valentine Dualsword Appearance Stone">
+	<skill id="17251" levels="1" name="Valentine Appearance Stone: DualSword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17252" levels="1" name="Valentine Dual Dagger Appearance Stone">
+	<skill id="17252" levels="1" name="Valentine Appearance Stone: Dual Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17253" levels="1" name="Valentine Dual Blunt Weapon Appearance Stone">
+	<skill id="17253" levels="1" name="Valentine Appearance Stone: Dual Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17254" levels="1" name="Valentine Shield Appearance Stone">
+	<skill id="17254" levels="1" name="Valentine Appearance Stone: Shield">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17255" levels="1" name="Valentine Sigil Appearance Stone">
+	<skill id="17255" levels="1" name="Valentine Appearance Stone: Sigil">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1795,11 +1795,11 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: SP Acquisition + 10%
-		Level 2: SP Acquisition + 20%
-		Level 3: SP Acquisition + 30%
+		Level 1: SP Acquisition + 10%.
+		Level 2: SP Acquisition + 20%.
+		Level 3: SP Acquisition + 30%.
 	-->
-	<skill id="17266" levels="3" name="SP Rune 10%">
+	<skill id="17266" levels="3" name="SP Rune 30%">
 		<table name="#name">SP Rune 10%;SP Rune 20%;SP Rune 30%</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1807,24 +1807,24 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: SP Acquisition + 10%
-		Level 2: SP Acquisition + 20%
-		Level 3: SP Acquisition + 30%
+		Level 1: SP Acquisition + 10%.
+		Level 2: SP Acquisition + 20%.
+		Level 3: SP Acquisition + 30%.
 	-->
-	<skill id="17267" levels="3" name="SP Rune 10%">
+	<skill id="17267" levels="3" name="SP Rune 30%">
 		<table name="#name">SP Rune 10%;SP Rune 20%;SP Rune 30%</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="17268" levels="1" name="Master Yogi's Force Effect 2 (Free)">
+	<skill id="17268" levels="1" name="Master Yogi's Force Effect (Free)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<skill id="17269" levels="1" name="Master Yogi's Force Effect 2 (Free)">
+	<skill id="17269" levels="1" name="Master Yogi's Force Effect (Paid)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1932,7 +1932,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- For 30 min.,  Max HP/MP/CP + 30%, P. Def./ M. Def. + 30%, P. Atk. + 10%, M. Atk. +20%. Cooldown is 5min. -->
+	<!-- For 30 min., Max HP/MP/CP + 30%, P. Def./ M. Def. + 30%, P. Atk. + 10%, M. Atk. +20%. Cooldown is 5min. -->
 	<skill id="17290" levels="1" name="Player Commendation - Art of Seduction">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2058,8 +2058,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Can acquire a Territory Card in 1hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. <Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
-	<skill id="17307" levels="24" name="Real Tor's Blessing Stage 1 (Normal)">
+	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. <Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
+	<skill id="17307" levels="24" name="Real Tor's Blessing Stage 24 (Normal)">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Real Tor's Blessing Stage 1 (Normal);Real Tor's Blessing Stage 2 (Normal);Real Tor's Blessing Stage 3 (Normal);Real Tor's Blessing Stage 4 (Normal);Real Tor's Blessing Stage 5 (Normal);Real Tor's Blessing Stage 6 (Normal);Real Tor's Blessing Stage 7 (Normal);Real Tor's Blessing Stage 8 (Normal);Real Tor's Blessing Stage 9 (Normal);Real Tor's Blessing Stage 10 (Normal);Real Tor's Blessing Stage 11 (Normal);Real Tor's Blessing Stage 12 (Normal);Real Tor's Blessing Stage 13 (Normal);Real Tor's Blessing Stage 14 (Normal);Real Tor's Blessing Stage 15 (Normal);Real Tor's Blessing Stage 16 (Normal);Real Tor's Blessing Stage 17 (Normal);Real Tor's Blessing Stage 18 (Normal);Real Tor's Blessing Stage 19 (Normal);Real Tor's Blessing Stage 20 (Normal);Real Tor's Blessing Stage 21 (Normal);Real Tor's Blessing Stage 22 (Normal);Real Tor's Blessing Stage 23 (Normal);Real Tor's Blessing Stage 24 (Normal)</table>
@@ -2109,8 +2109,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Can acquire a Territory Card in 1hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. Has a chance of acquiring a different gift. <Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
-	<skill id="17313" levels="24" name="Real Tor's Blessing Stage 1 (Premium)">
+	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. Has a chance of acquiring a different gift.<Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
+	<skill id="17313" levels="24" name="Real Tor's Blessing Stage 24 (Premium)">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">Real Tor's Blessing Stage 1 (Premium);Real Tor's Blessing Stage 2 (Premium);Real Tor's Blessing Stage 3 (Premium);Real Tor's Blessing Stage 4 (Premium);Real Tor's Blessing Stage 5 (Premium);Real Tor's Blessing Stage 6 (Premium);Real Tor's Blessing Stage 7 (Premium);Real Tor's Blessing Stage 8 (Premium);Real Tor's Blessing Stage 9 (Premium);Real Tor's Blessing Stage 10 (Premium);Real Tor's Blessing Stage 11 (Premium);Real Tor's Blessing Stage 12 (Premium);Real Tor's Blessing Stage 13 (Premium);Real Tor's Blessing Stage 14 (Premium);Real Tor's Blessing Stage 15 (Premium);Real Tor's Blessing Stage 16 (Premium);Real Tor's Blessing Stage 17 (Premium);Real Tor's Blessing Stage 18 (Premium);Real Tor's Blessing Stage 19 (Premium);Real Tor's Blessing Stage 20 (Premium);Real Tor's Blessing Stage 21 (Premium);Real Tor's Blessing Stage 22 (Premium);Real Tor's Blessing Stage 23 (Premium);Real Tor's Blessing Stage 24 (Premium)</table>
@@ -4482,7 +4482,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17685" levels="1" name="Lara the Cat's Gift">
+	<skill id="17685" levels="1" name="Lara's Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4491,9 +4491,9 @@
 		Level 1: XP/SP gain + 30% when hunting, P./M. Atk. + 5%. Received damage - 5%.
 		Level 2: XP/SP gain + 30% when hunting, P./M. Atk. + 5%. Received damage - 5%. Attribute Resistance + 30.
 		Level 3: XP/SP gain + 30% when hunting, and P./M. Atk. + 5%. Received damage - 5%. Attribute Resistance + 30, Attribute Attack + 50.
-		Level 4: Lara the Cat is going crazy with buffs!
+		Level 4: Lara is going crazy with buffs!
 	-->
-	<skill id="17686" levels="4" name="Lara the Cat's Scheming Buff">
+	<skill id="17686" levels="4" name="Lara's Buff">
 		<table name="#castRange"> 900 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 </table>
 		<table name="#name">Random Buff;Whimsical Buff;Buff of Delight;Lara the Cat's Buff</table>
@@ -4505,7 +4505,7 @@
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
 	</skill>
-	<skill id="17687" levels="1" name="Lara the Cat's Gift">
+	<skill id="17687" levels="1" name="Lara's Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4514,9 +4514,9 @@
 		Level 1: XP/SP gain + 30% when hunting, P./M. Atk. + 5%. Received damage - 5%.
 		Level 2: XP/SP gain + 30% when hunting, P./M. Atk. + 5%. Received damage - 5%. Attribute Resistance + 30.
 		Level 3: XP/SP gain + 30% when hunting, and P./M. Atk. + 5%. Received damage - 5%. Attribute Resistance + 30, Attribute Attack + 50.
-		Level 4: Lara the Cat is going crazy with buffs!
+		Level 4: Lara is going crazy with buffs!
 	-->
-	<skill id="17688" levels="4" name="Lara the Cat's Scheming Buff">
+	<skill id="17688" levels="4" name="Lara's Buff">
 		<table name="#castRange"> 900 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 </table>
 		<table name="#name">Lara the Cat's Buff;Whimsical Buff;Buff of Delight;Lara the Cat's Buff</table>
@@ -4528,12 +4528,12 @@
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
 	</skill>
-	<skill id="17689" levels="1" name="Lara the Cat's Quality Secret Gift">
+	<skill id="17689" levels="1" name="Lara's Secret Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17690" levels="1" name="Lara the Cat's Secret Gift">
+	<skill id="17690" levels="1" name="Lara's Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4583,9 +4583,9 @@
 		Level 4: Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 10089.
 		Level 5: Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 13275.
 	-->
-	<skill id="17701" levels="5" name="Topaz: Spirit Hit">
+	<skill id="17701" levels="5" name="Topaz: Spiritshot">
 		<table name="#power"> 1062 3717 6903 10089 13275 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
@@ -4597,9 +4597,6 @@
 		<set name="effectRange" val="1100" />
 		<set name="ignoreImmunity" val="true" />
 		<for>
-			<cond>
-				<player olympiad="false" />
-			</cond>
 			<abnormal>
 				<effect type="AbortCast" val="0" />
 				<effect type="FixedPcDmg" val="#power" />
@@ -4607,13 +4604,13 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Restores 1500 HP.
-		Level 2: Restores 3000 HP.
-		Level 3: Restores 6000 HP.
-		Level 4: Restores 8000 HP.
-		Level 5: Restores 13000 HP.
+		Level 1: Recovers HP by 1500.
+		Level 2: Recovers HP by 3000.
+		Level 3: Recovers HP by 6000.
+		Level 4: Recovers HP by 8000.
+		Level 5: Recovers HP by 13000.
 	-->
-	<skill id="17702" levels="5" name="Emergency Recovery Jewel">
+	<skill id="17702" levels="5" name="Jewel: Quick Recovery">
 		<table name="#power"> 1500 3000 6000 8000 13000 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_STATIC" />
@@ -4628,7 +4625,7 @@
 		Level 4: Received Heal Amount + 13%.
 		Level 5: Received Heal Amount + 21%.
 	-->
-	<skill id="17703" levels="5" name="Heal Boost Jewel">
+	<skill id="17703" levels="5" name="Jewel: Heal Boost">
 		<table name="#gainHp"> 3 6 9 13 21 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -4683,19 +4680,19 @@
 		Level 4: Atk. Spd. + 138.
 		Level 5: Atk. Spd. + 258.
 	-->
-	<skill id="17706" levels="5" name="Atk. Spd. Jewel">
+	<skill id="17706" levels="5" name="Jewel: Atk. Spd. Increase">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 33.
-		Level 2: Casting Spd. + 52.
-		Level 3: Casting Spd. + 90.
-		Level 4: Casting Spd. + 166.
-		Level 5: Casting Spd. + 318.
+		Level 1: Increases Casting Spd. by 33.
+		Level 2: Increases Casting Spd. by 52.
+		Level 3: Increases Casting Spd. by 90.
+		Level 4: Increases Casting Spd. by 166.
+		Level 5: Increases Casting Spd. by 318.
 	-->
-	<skill id="17707" levels="5" name="Casting Spd. Jewel">
+	<skill id="17707" levels="5" name="Jewel: Casting Spd. Increase">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4743,7 +4740,7 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- You can obtain an item in 1 hr. 23 stages total. <Note:> If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
-	<skill id="17711" levels="24" name="10th Anniversary Blessing - Stage 1">
+	<skill id="17711" levels="24" name="10th Anniversary Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">10th Anniversary Blessing - Stage 1;10th Anniversary Blessing - Stage 2;10th Anniversary Blessing - Stage 3;10th Anniversary Blessing - Stage 4;10th Anniversary Blessing - Stage 5;10th Anniversary Blessing - Stage 6;10th Anniversary Blessing - Stage 7;10th Anniversary Blessing - Stage 8;10th Anniversary Blessing - Stage 9;10th Anniversary Blessing - Stage 10;10th Anniversary Blessing - Stage 11;10th Anniversary Blessing - Stage 12;10th Anniversary Blessing - Stage 13;10th Anniversary Blessing - Stage 14;10th Anniversary Blessing - Stage 15;10th Anniversary Blessing - Stage 16;10th Anniversary Blessing - Stage 17;10th Anniversary Blessing - Stage 18;10th Anniversary Blessing - Stage 19;10th Anniversary Blessing - Stage 20;10th Anniversary Blessing - Stage 21;10th Anniversary Blessing - Stage 22;10th Anniversary Blessing - Stage 23;10th Anniversary Blessing - Stage 24</table>
@@ -4761,8 +4758,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- You can obtain an item in 1 hr. 23 stages total. Special Blessings have a higher chance of obtaining items. <Note:> If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
-	<skill id="17713" levels="24" name="10th Anniversary Premium Blessing - Stage 1">
+	<!-- You can obtain an item in 1 hr. 23 stages total. <Note:> If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
+	<skill id="17713" levels="24" name="10th Anniversary Special Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#name">10th Anniversary Special Blessing - Stage 1;10th Anniversary Special Blessing - Stage 2;10th Anniversary Special Blessing - Stage 3;10th Anniversary Special Blessing - Stage 4;10th Anniversary Special Blessing - Stage 5;10th Anniversary Special Blessing - Stage 6;10th Anniversary Special Blessing - Stage 7;10th Anniversary Special Blessing - Stage 8;10th Anniversary Special Blessing - Stage 9;10th Anniversary Special Blessing - Stage 10;10th Anniversary Special Blessing - Stage 11;10th Anniversary Special Blessing - Stage 12;10th Anniversary Special Blessing - Stage 13;10th Anniversary Special Blessing - Stage 14;10th Anniversary Special Blessing - Stage 15;10th Anniversary Special Blessing - Stage 16;10th Anniversary Special Blessing - Stage 17;10th Anniversary Special Blessing - Stage 18;10th Anniversary Special Blessing - Stage 19;10th Anniversary Special Blessing - Stage 20;10th Anniversary Special Blessing - Stage 21;10th Anniversary Special Blessing - Stage 22;10th Anniversary Special Blessing - Stage 23;10th Anniversary Special Blessing - Stage 24</table>
@@ -4783,7 +4780,7 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- Inflicts 3186 damage to a single target. -->
-	<skill id="17715" levels="1" name="Spirit Hit Lv 1">
+	<skill id="17715" levels="1" name="Spirit Hit Lv. 1">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4793,7 +4790,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- Inflicts 3186 damage to a single target. -->
-	<skill id="17716" levels="1" name="Spirit Hit Lv 2">
+	<skill id="17716" levels="1" name="Spirit Hit Lv. 2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4803,7 +4800,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- Inflicts 3186 damage to a single target. -->
-	<skill id="17717" levels="1" name="Spirit Hit Lv 3">
+	<skill id="17717" levels="1" name="Spirit Hit Lv. 3">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5442,36 +5439,27 @@
 	<!-- 
 		Level 1: Spiritshot damage + 1%.
 		Level 2: Spiritshot damage + 3.5%.
-		Level 3: Blessed Spiritshot damage + 1%.
-		Level 4: Blessed Spiritshot damage + 3.5%.
+		Level 3: Spiritshot damage + 1%.
+		Level 4: Spiritshot damage + 3.5%.
 	-->
 	<skill id="17818" levels="4" name="Sapphire">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- 
-		Level 1: Spiritshot damage + 7.5%.
-		Level 2: Blessed Spiritshot damage + 7.5%.
-	-->
+	<!-- Spiritshot damage + 7.5%. -->
 	<skill id="17819" levels="2" name="Sapphire">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- 
-		Level 1: Spiritshot damage + 12.5%.
-		Level 2: Blessed Spiritshot damage + 12.5%.
-	-->
+	<!-- Spiritshot damage + 12.5%. -->
 	<skill id="17820" levels="2" name="Sapphire">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- 
-		Level 1: Spiritshot damage + 20%.
-		Level 2: Blessed Spiritshot damage + 20%.
-	-->
+	<!-- Spiritshot damage + 20%. -->
 	<skill id="17821" levels="2" name="Sapphire">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
@@ -5531,7 +5519,7 @@
 			<baseAdd stat="WIT" val="#dexwit" />
 		</for>
 	</skill>
-	<skill id="17826" levels="1" name="10th Anniversary Time Capsule Pack">
+	<skill id="17826" levels="1" name="10th Anniversary Time Capsule Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5551,27 +5539,27 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17830" levels="1" name="Formal Wear Appearance Stone (100-day)">
+	<skill id="17830" levels="1" name="Appearance Stone: Formal Wear (100-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17831" levels="1" name="NC Dinos Uniform Appearance Stone (100-day)">
+	<skill id="17831" levels="1" name="Appearance Stone: Formal Wear (100-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17832" levels="1" name="NC Dinos Hat Appearance Stone (100-day)">
+	<skill id="17832" levels="1" name="Appearance Stone: NC Dinos Hat (100-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17833" levels="1" name="Wedding Veil Appearance Stone (100-day)">
+	<skill id="17833" levels="1" name="Appearance Stone: Wedding Veil (100-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17834" levels="1" name="Black Phantom Mask Appearance Stone (100-day)">
+	<skill id="17834" levels="1" name="Appearance Stone: Black Phantom Mask (100-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5611,17 +5599,17 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17842" levels="1" name="5 Eternal Pack">
+	<skill id="17842" levels="1" name="+ 5 Eternal Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17843" levels="1" name="6 Eternal Pack">
+	<skill id="17843" levels="1" name="+ 6 Eternal Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17844" levels="1" name="8 Eternal Pack">
+	<skill id="17844" levels="1" name="+ 8 Eternal Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5636,17 +5624,17 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17847" levels="1" name="5 Seraph Pack">
+	<skill id="17847" levels="1" name="+ 5 Seraph Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17848" levels="1" name="6 Seraph Pack">
+	<skill id="17848" levels="1" name="+ 6 Seraph Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17849" levels="1" name="8 Seraph Pack">
+	<skill id="17849" levels="1" name="+ 8 Seraph Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5661,17 +5649,17 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17852" levels="1" name="5 Twilight Pack">
+	<skill id="17852" levels="1" name="+ 5 Twilight Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17853" levels="1" name="6 Twilight Pack">
+	<skill id="17853" levels="1" name="+ 6 Twilight Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17854" levels="1" name="8 Twilight Pack">
+	<skill id="17854" levels="1" name="+ 8 Twilight Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5696,27 +5684,27 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17859" levels="1" name="+4 Apocalypse Pack">
+	<skill id="17859" levels="1" name="+ 4 Apocalypse Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17860" levels="1" name="+5 Apocalypse Pack">
+	<skill id="17860" levels="1" name="+ 5 Apocalypse Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17861" levels="1" name="+6 Apocalypse Pack">
+	<skill id="17861" levels="1" name="+ 6 Apocalypse Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17862" levels="1" name="+7 Apocalypse Pack">
+	<skill id="17862" levels="1" name="+ 7 Apocalypse Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17863" levels="1" name="+8 Apocalypse Pack">
+	<skill id="17863" levels="1" name="+ 8 Apocalypse Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5736,27 +5724,27 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17867" levels="1" name="+4 Specter Pack">
+	<skill id="17867" levels="1" name="+ 4 Specter Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17868" levels="1" name="+5 Specter Pack">
+	<skill id="17868" levels="1" name="+ 5 Specter Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17869" levels="1" name="+6 Specter Pack">
+	<skill id="17869" levels="1" name="+ 6 Specter Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17870" levels="1" name="+7 Specter Pack">
+	<skill id="17870" levels="1" name="+ 7 Specter Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17871" levels="1" name="+8 Specter Pack">
+	<skill id="17871" levels="1" name="+ 8 Specter Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5776,27 +5764,27 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17875" levels="1" name="+4 Amaranthine Pack">
+	<skill id="17875" levels="1" name="+ 4 Amaranthine Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17876" levels="1" name="+5 Amaranthine Pack">
+	<skill id="17876" levels="1" name="+ 5 Amaranthine Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17877" levels="1" name="+6 Amaranthine Pack">
+	<skill id="17877" levels="1" name="+ 6 Amaranthine Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17878" levels="1" name="+7 Amaranthine Pack">
+	<skill id="17878" levels="1" name="+ 7 Amaranthine Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17879" levels="1" name="+8 Amaranthine Pack">
+	<skill id="17879" levels="1" name="+ 8 Amaranthine Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5819,27 +5807,27 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="17883" levels="1" name="Daily Attendance Gift">
+	<skill id="17883" levels="1" name="Daily Attendance Reward">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17884" levels="1" name="1st Week Gift Box">
+	<skill id="17884" levels="1" name="Reward: Week 1">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17885" levels="1" name="2nd Week Gift Box">
+	<skill id="17885" levels="1" name="Reward: Week 2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17886" levels="1" name="3rd Week Gift Box">
+	<skill id="17886" levels="1" name="Reward: Week 3">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="17887" levels="1" name="4th Week Gift Box">
+	<skill id="17887" levels="1" name="Reward: Week 4">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5885,7 +5873,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="hitTime" val="500" />
 	</skill>
-	<skill id="17894" levels="1" name="10th Anniversary Raid Consolation Prize">
+	<skill id="17894" levels="1" name="10th Anniversary Raid Defeat Reward">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5902,7 +5890,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Inventory Slot + 12. Deleted after event. -->
-	<skill id="17897" levels="1" name="10th Anniversary Inventory Increase">
+	<skill id="17897" levels="1" name="10th Anniversary Inventory Boost">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -6004,7 +5992,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="500" />
 	</skill>
-	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. -->
+	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance. -->
 	<skill id="17914" levels="1" name="Low-grade Love Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6012,7 +6000,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. -->
+	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance. -->
 	<skill id="17915" levels="1" name="Love Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6020,7 +6008,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. -->
+	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance. -->
 	<skill id="17916" levels="1" name="Mid-grade Love Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6028,7 +6016,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. -->
+	<!-- A strange sensation envelopes you. For 15sec., P./M./ Atk. and Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance. -->
 	<skill id="17917" levels="1" name="High-grade Love Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6058,7 +6046,7 @@
 		Level 3: Converts Major Windy Healing Potion. Intermediate Alchemy.
 		Level 4: Converts Superior Windy Healing Potion. Advanced Alchemy.
 	-->
-	<skill id="17920" levels="4" name="Windy Healing Potion">
+	<skill id="17920" levels="4" name="Superior Windy Healing Potion">
 		<table name="#name">Windy Healing Potion;Greater Windy Healing Potion;Major Windy Healing Potion;Superior Windy Healing Potion</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6071,7 +6059,7 @@
 		Level 3: Converts Major Windy Quick Healing Potion. Intermediate Alchemy.
 		Level 4: Converts Superior Windy Quick Healing Potion. Advanced Alchemy.
 	-->
-	<skill id="17921" levels="4" name="Windy Quick Healing Potion">
+	<skill id="17921" levels="4" name="Superior Windy Quick Healing Potion">
 		<table name="#name">Windy Quick Healing Potion;Greater Windy Quick Healing Potion;Major Windy Quick Healing Potion;Superior Windy Quick Healing Potion</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6083,9 +6071,10 @@
 		Level 2: Converts Love Potion. Intermediate Alchemy.
 		Level 3: Converts Mid-grade Love Potion. Intermediate Alchemy.
 		Level 4: Converts High-grade Love Potion. Advanced Alchemy.
+		Level 5: Converts Top-grade Love Potion (Party). Advanced Alchemy.
 	-->
-	<skill id="17922" levels="4" name="Low-grade Love Potion">
-		<table name="#name">Low-grade Love Potion;Love Potion;Mid-grade Love Potion;High-grade Love Potion</table>
+	<skill id="17922" levels="5" name="Top-grade Love Potion - Party">
+		<table name="#name">Low-grade Love Potion;Love Potion;Mid-grade Love Potion;High-grade Love Potion;Top-grade Love Potion - Party</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6102,7 +6091,7 @@
 		Level 2: Converts Supreme Windy Quick Healing Potion. Master Alchemy.
 		Level 3: Converts Cruel Love Potion. Master Alchemy.
 	-->
-	<skill id="17924" levels="3" name="Supreme Windy Healing Potion">
+	<skill id="17924" levels="3" name="Cruel Love Potion">
 		<table name="#name">Supreme Windy Healing Potion;Supreme Windy Quick Healing Potion;Cruel Love Potion</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6114,7 +6103,7 @@
 		Level 1: Converts Giant's Scroll: Enchant Weapon (R-grade). Elementary Alchemy.
 		Level 2: Converts Giant's Scroll: Enchant Weapon (R-grade). Intermediate Alchemy.
 	-->
-	<skill id="17925" levels="2" name="Giant's Scroll: Enchant Armor (R-grade)">
+	<skill id="17925" levels="2" name="Giant's Scroll: Enchant Weapon (R-grade)">
 		<table name="#name">Giant's Scroll: Enchant Armor (R-grade);Giant's Scroll: Enchant Weapon (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6125,7 +6114,7 @@
 		Level 1: Converts Giant's Lucky Enchant Stone: Armor (R-grade). Advanced Alchemy.
 		Level 2: Converts Giant's Lucky Enchant Stone: Weapon (R-grade). Advanced Alchemy.
 	-->
-	<skill id="17926" levels="2" name="Giant's Lucky Enchant Stone: Armor (R-grade)">
+	<skill id="17926" levels="2" name="Giant's Lucky Enchant Stone: Weapon (R-grade)">
 		<table name="#name">Giant's Lucky Enchant Stone: Armor (R-grade);Giant's Lucky Enchant Stone: Weapon (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6136,7 +6125,7 @@
 		Level 1: Converts Windy Lucky Enchant Stone: Armor (R-grade). Master Alchemy.
 		Level 2: Converts Windy Lucky Enchant Stone: Weapon (R-grade). Master Alchemy.
 	-->
-	<skill id="17927" levels="2" name="Windy Lucky Enchant Stone: Armor (R-grade)">
+	<skill id="17927" levels="2" name="Windy Lucky Enchant Stone: Weapon (R-grade)">
 		<table name="#name">Windy Lucky Enchant Stone: Armor (R-grade);Windy Lucky Enchant Stone: Weapon (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6152,7 +6141,7 @@
 		Level 5: Can convert to Lv. 1 Legendary INT Dye (Luck). Elementary Alchemy.
 		Level 6: Can convert to Lv. 1 Legendary STR Dye (Luck). Elementary Alchemy.
 	-->
-	<skill id="17928" levels="6" name="Lv. 1 Legendary MEN Dye (Luck)">
+	<skill id="17928" levels="6" name="Lv. 1 Legendary STR Dye (Luck)">
 		<table name="#name">Lv. 1 Legendary MEN Dye (Luck);Lv. 1 Legendary CON Dye (Luck);Lv. 1 Legendary WIT Dye (Luck);Lv. 1 Legendary DEX Dye (Luck);Lv. 1 Legendary INT Dye (Luck);Lv. 1 Legendary STR Dye (Luck)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6167,7 +6156,7 @@
 		Level 5: Can convert to Lv. 2 Legendary INT Dye (Luck). Intermediate Alchemy.
 		Level 6: Can convert to Lv. 2 Legendary STR Dye (Luck). Intermediate Alchemy.
 	-->
-	<skill id="17929" levels="6" name="Lv. 2 Legendary MEN Dye (Luck)">
+	<skill id="17929" levels="6" name="Lv. 2 Legendary STR Dye (Luck)">
 		<table name="#name">Lv. 2 Legendary MEN Dye (Luck);Lv. 2 Legendary CON Dye (Luck);Lv. 2 Legendary WIT Dye (Luck);Lv. 2 Legendary DEX Dye (Luck);Lv. 2 Legendary INT Dye (Luck);Lv. 2 Legendary STR Dye (Luck)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6182,7 +6171,7 @@
 		Level 5: Can convert to Lv. 3 Legendary INT Dye (Luck). Intermediate Alchemy.
 		Level 6: Can convert to Lv. 3 Legendary STR Dye (Luck). Intermediate Alchemy.
 	-->
-	<skill id="17930" levels="6" name="Lv. 3 Legendary MEN Dye (Luck)">
+	<skill id="17930" levels="6" name="Lv. 3 Legendary STR Dye (Luck)">
 		<table name="#name">Lv. 3 Legendary MEN Dye (Luck);Lv. 3 Legendary CON Dye (Luck);Lv. 3 Legendary WIT Dye (Luck);Lv. 3 Legendary DEX Dye (Luck);Lv. 3 Legendary INT Dye (Luck);Lv. 3 Legendary STR Dye (Luck)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6197,7 +6186,7 @@
 		Level 5: Can convert to Lv. 4 Legendary INT Dye (Luck). Advanced Alchemy.
 		Level 6: Can convert to Lv. 4 Legendary STR Dye (Luck). Advanced Alchemy.
 	-->
-	<skill id="17931" levels="6" name="Lv. 4 Legendary MEN Dye (Luck)">
+	<skill id="17931" levels="6" name="Lv. 4 Legendary STR Dye (Luck)">
 		<table name="#name">Lv. 4 Legendary MEN Dye (Luck);Lv. 4 Legendary CON Dye (Luck);Lv. 4 Legendary WIT Dye (Luck);Lv. 4 Legendary DEX Dye (Luck);Lv. 4 Legendary INT Dye (Luck);Lv. 4 Legendary STR Dye (Luck)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6212,7 +6201,7 @@
 		Level 5: Can convert to Lv. 1 Legendary INT Dye (Charisma). Elementary Alchemy.
 		Level 6: Can convert to Lv. 1 Legendary STR Dye (Charisma). Elementary Alchemy.
 	-->
-	<skill id="17932" levels="6" name="Lv. 1 Legendary MEN Dye (Charisma)">
+	<skill id="17932" levels="6" name="Lv. 1 Legendary STR Dye (Charisma)">
 		<table name="#name">Lv. 1 Legendary MEN Dye (Charisma);Lv. 1 Legendary CON Dye (Charisma);Lv. 1 Legendary WIT Dye (Charisma);Lv. 1 Legendary DEX Dye (Charisma);Lv. 1 Legendary INT Dye (Charisma);Lv. 1 Legendary STR Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6227,7 +6216,7 @@
 		Level 5: Can convert to Lv. 2 Legendary INT Dye (Charisma). Intermediate Alchemy.
 		Level 6: Can convert to Lv. 2 Legendary STR Dye (Charisma). Intermediate Alchemy.
 	-->
-	<skill id="17933" levels="6" name="Lv. 2 Legendary MEN Dye (Charisma)">
+	<skill id="17933" levels="6" name="Lv. 2 Legendary STR Dye (Charisma)">
 		<table name="#name">Lv. 2 Legendary MEN Dye (Charisma);Lv. 2 Legendary CON Dye (Charisma);Lv. 2 Legendary WIT Dye (Charisma);Lv. 2 Legendary DEX Dye (Charisma);Lv. 2 Legendary INT Dye (Charisma);Lv. 2 Legendary STR Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6242,7 +6231,7 @@
 		Level 5: Can convert to Lv. 3 Legendary INT Dye (Charisma). Intermediate Alchemy.
 		Level 6: Can convert to Lv. 3 Legendary STR Dye (Charisma). Intermediate Alchemy.
 	-->
-	<skill id="17934" levels="6" name="Lv. 3 Legendary MEN Dye (Charisma)">
+	<skill id="17934" levels="6" name="Lv. 3 Legendary STR Dye (Charisma)">
 		<table name="#name">Lv. 3 Legendary MEN Dye (Charisma);Lv. 3 Legendary CON Dye (Charisma);Lv. 3 Legendary WIT Dye (Charisma);Lv. 3 Legendary DEX Dye (Charisma);Lv. 3 Legendary INT Dye (Charisma);Lv. 3 Legendary STR Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6257,7 +6246,7 @@
 		Level 5: Can convert to Lv. 4 Legendary INT Dye (Charisma). Advanced Alchemy.
 		Level 6: Can convert to Lv. 4 Legendary STR Dye (Charisma). Advanced Alchemy.
 	-->
-	<skill id="17935" levels="6" name="Lv. 4 Legendary MEN Dye (Charisma)">
+	<skill id="17935" levels="6" name="Lv. 4 Legendary STR Dye (Charisma)">
 		<table name="#name">Lv. 4 Legendary MEN Dye (Charisma);Lv. 4 Legendary CON Dye (Charisma);Lv. 4 Legendary WIT Dye (Charisma);Lv. 4 Legendary DEX Dye (Charisma);Lv. 4 Legendary INT Dye (Charisma);Lv. 4 Legendary STR Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6280,7 +6269,7 @@
 		Level 13: Can convert to Lv. 5 Windy CHA Dye (Luck). Master Alchemy.
 		Level 14: Can convert to Lv. 5 Windy LUC Dye (Charisma). Master Alchemy.
 	-->
-	<skill id="17936" levels="14" name="Lv. 5 Legendary MEN Dye (Luck)">
+	<skill id="17936" levels="14" name="Lv. 5 Windy LUC Dye (Charisma)">
 		<table name="#name">Lv. 5 Legendary MEN Dye (Luck);Lv. 5 Legendary CON Dye (Luck);Lv. 5 Legendary WIT Dye (Luck);Lv. 5 Legendary DEX Dye (Luck);Lv. 5 Legendary INT Dye (Luck);Lv. 5 Legendary STR Dye (Luck);Lv. 5 Legendary MEN Dye (Charisma);Lv. 5 Legendary CON Dye (Charisma);Lv. 5 Legendary WIT Dye (Charisma);Lv. 5 Legendary DEX Dye (Charisma);Lv. 5 Legendary INT Dye (Charisma);Lv. 5 Legendary STR Dye (Charisma);Lv. 5 Windy CHA Dye (Luck);Lv. 5 Windy LUC Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6293,7 +6282,7 @@
 		Level 2: Can convert to High-grade Life Stone (R-grade). Elementary Alchemy.
 		Level 3: Can convert to Top-grade Life Stone (R-grade). Elementary Alchemy.
 	-->
-	<skill id="17937" levels="3" name="Mid-grade Life Stone (R-grade)">
+	<skill id="17937" levels="3" name="Top-grade Life Stone (R-grade)">
 		<table name="#name">Mid-grade Life Stone (R-grade);High-grade Life Stone (R-grade);Top-grade Life Stone (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6305,7 +6294,7 @@
 		Level 2: Can convert to High-grade Life Stone (R95-grade). Intermediate Alchemy.
 		Level 3: Can convert to Top-grade Life Stone (R95-grade). Intermediate Alchemy.
 	-->
-	<skill id="17938" levels="3" name="Mid-grade Life Stone (R95-grade)">
+	<skill id="17938" levels="3" name="Top-grade Life Stone (R95-grade)">
 		<table name="#name">Mid-grade Life Stone (R95-grade);High-grade Life Stone (R95-grade);Top-grade Life Stone (R95-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6317,7 +6306,7 @@
 		Level 2: Can convert to High-grade Life Stone (R99-grade). Advanced Alchemy.
 		Level 3: Can convert to Top-grade Life Stone (R99-grade). Advanced Alchemy.
 	-->
-	<skill id="17939" levels="3" name="Mid-grade Life Stone (R99-grade)">
+	<skill id="17939" levels="3" name="Top-grade Life Stone (R99-grade)">
 		<table name="#name">Mid-grade Life Stone (R99-grade);High-grade Life Stone (R99-grade);Top-grade Life Stone (R99-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6337,7 +6326,7 @@
 		Level 3: Can convert to Lv. 3 Windy CHA Dye (Luck). Intermediate Alchemy.
 		Level 4: Can convert to Lv. 4 Windy CHA Dye (Luck). Advanced Alchemy.
 	-->
-	<skill id="17941" levels="4" name="Lv. 1 Windy CHA Dye (Luck)">
+	<skill id="17941" levels="4" name="Lv. 4 Windy CHA Dye (Luck)">
 		<table name="#name">Lv. 1 Windy CHA Dye (Luck);Lv. 2 Windy CHA Dye (Luck);Lv. 3 Windy CHA Dye (Luck);Lv. 4 Windy CHA Dye (Luck)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6350,7 +6339,7 @@
 		Level 3: Can convert to Lv. 3 Windy LUC Dye (Charisma). Intermediate Alchemy.
 		Level 4: Can convert to Lv. 4 Windy LUC Dye (Charisma). Advanced Alchemy.
 	-->
-	<skill id="17942" levels="4" name="Lv. 1 Windy LUC Dye (Charisma)">
+	<skill id="17942" levels="4" name="Lv. 4 Windy LUC Dye (Charisma)">
 		<table name="#name">Lv. 1 Windy LUC Dye (Charisma);Lv. 2 Windy LUC Dye (Charisma);Lv. 3 Windy LUC Dye (Charisma);Lv. 4 Windy LUC Dye (Charisma)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />

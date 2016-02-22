@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.sql.Connection;
@@ -40,12 +41,11 @@ import l2server.log.Log;
  * d: Unknown (0 if offline)
  *
  * @author Tempy
- * 
+ *
  */
 public class FriendList extends L2GameServerPacket
 {
-	// 
-	private static final String _S__FA_FRIENDLIST = "[S] 75 FriendList";
+	//
 	private List<FriendInfo> _info;
 	private int _level = 0;
 	private int _classId = 0;
@@ -78,7 +78,7 @@ public class FriendList extends L2GameServerPacket
 			String name = CharNameTable.getInstance().getNameById(objId);
 			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
 			boolean online = false;
-			if (player1 != null && player1.isOnline())
+			if ((player1 != null) && player1.isOnline())
 				online = true;
 			if (online)
 			{
@@ -94,7 +94,6 @@ public class FriendList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x75);
 		writeD(_info.size());
 		for (FriendInfo info : _info)
 		{
@@ -113,7 +112,7 @@ public class FriendList extends L2GameServerPacket
 		int level = 0;
 		int bClassId = 0;
 		Connection con = null;
-
+		
 		try
 		{
 			// Retrieve the L2PcInstance from the characters table of the database
@@ -170,11 +169,5 @@ public class FriendList extends L2GameServerPacket
 		}
 		else
 			_level = level;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FA_FRIENDLIST;
 	}
 }

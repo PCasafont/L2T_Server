@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.idfactory;
 
 import java.util.BitSet;
@@ -47,6 +48,7 @@ public class BitSetIDFactory extends IdFactory
 	
 	protected class BitSetCapacityCheck implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			synchronized (BitSetIDFactory.this)
@@ -62,7 +64,7 @@ public class BitSetIDFactory extends IdFactory
 	{
 		super();
 		
-		synchronized(BitSetIDFactory.class)
+		synchronized (BitSetIDFactory.class)
 		{
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new BitSetCapacityCheck(), 30000, 30000);
 			initialize();
@@ -81,7 +83,7 @@ public class BitSetIDFactory extends IdFactory
 			for (int usedObjectId : extractUsedObjectIDTable())
 			{
 				int objectID = usedObjectId - FIRST_OID;
-				if (objectID < 0 || usedObjectId < FIRST_OID)
+				if ((objectID < 0) || (usedObjectId < FIRST_OID))
 				{
 					Log.warning("Object ID " + usedObjectId + " in DB is less than minimum ID of " + FIRST_OID);
 					continue;
@@ -101,7 +103,7 @@ public class BitSetIDFactory extends IdFactory
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.idfactory.IdFactory#releaseId(int)
 	 */
 	@Override
@@ -117,7 +119,7 @@ public class BitSetIDFactory extends IdFactory
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.idfactory.IdFactory#getNextId()
 	 */
 	@Override
@@ -152,7 +154,7 @@ public class BitSetIDFactory extends IdFactory
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.idfactory.IdFactory#size()
 	 */
 	@Override
@@ -162,7 +164,7 @@ public class BitSetIDFactory extends IdFactory
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected synchronized int usedIdCount()
@@ -171,17 +173,17 @@ public class BitSetIDFactory extends IdFactory
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected synchronized boolean reachingBitSetCapacity()
 	{
-		return PrimeFinder.nextPrime(usedIdCount() * 11 / 10) > _freeIds.size();
+		return PrimeFinder.nextPrime((usedIdCount() * 11) / 10) > _freeIds.size();
 	}
 	
 	protected synchronized void increaseBitSetCapacity()
 	{
-		BitSet newBitSet = new BitSet(PrimeFinder.nextPrime(usedIdCount() * 11 / 10));
+		BitSet newBitSet = new BitSet(PrimeFinder.nextPrime((usedIdCount() * 11) / 10));
 		newBitSet.or(_freeIds);
 		_freeIds = newBitSet;
 	}

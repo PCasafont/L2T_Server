@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import l2server.Config;
@@ -24,19 +25,17 @@ import l2server.gameserver.util.Util;
 
 public class RideWyvern implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"RideWyvern"
-	};
+	private static final String[] COMMANDS = { "RideWyvern" };
 	
 	private static final int[] STRIDERS = { 12526, 12527, 12528, 16038, 16039, 16040, 16068, 13197 };
 	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (target == null)
 			return false;
 		
-		L2WyvernManagerInstance npc = (L2WyvernManagerInstance)target;
+		L2WyvernManagerInstance npc = (L2WyvernManagerInstance) target;
 		if (!npc.isOwnerClan(activeChar))
 			return false;
 		
@@ -55,7 +54,7 @@ public class RideWyvern implements IBypassHandler
 		}
 		else if (Util.contains(STRIDERS, activeChar.getPet().getNpcId()))
 		{
-			if (activeChar.getInventory().getItemByItemId(1460) != null && activeChar.getInventory().getItemByItemId(1460).getCount() >= 25)
+			if ((activeChar.getInventory().getItemByItemId(1460) != null) && (activeChar.getInventory().getItemByItemId(1460).getCount() >= 25))
 			{
 				if (activeChar.getPet().getLevel() < 55)
 				{
@@ -86,6 +85,7 @@ public class RideWyvern implements IBypassHandler
 		return false;
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

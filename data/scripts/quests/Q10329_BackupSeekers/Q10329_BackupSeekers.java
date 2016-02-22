@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10329_BackupSeekers;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class Q10329_BackupSeekers extends Quest
 		
 		addEventId(_guideId, QuestEventType.ON_ARRIVED);
 		addEventId(_guideId, QuestEventType.ON_PLAYER_ARRIVED);
-
+		
 		_guideRoute1.add(new L2NpcWalkerNode(-117996, 255845, -1320, 0, "", true));
 		_guideRoute1.add(new L2NpcWalkerNode(-117753, 255781, -1304, 0, "", true));
 		_guideRoute1.add(new L2NpcWalkerNode(-117602, 255742, -1296, 0, "", true));
@@ -76,7 +77,7 @@ public class Q10329_BackupSeekers extends Quest
 		_guideRoute1.add(new L2NpcWalkerNode(-114683, 254738, -1528, 0, "", true));
 		_guideRoute1.add(new L2NpcWalkerNode(-114567, 253462, -1528, 0, "", true));
 		_guideRoute1.add(new L2NpcWalkerNode(-114367, 252764, -1544, 0, "", true));
-
+		
 		_guideRoute2.add(new L2NpcWalkerNode(-114074, 252514, -1560, 0, "", true));
 		_guideRoute2.add(new L2NpcWalkerNode(-114280, 252371, -1560, 0, "", true));
 		_guideRoute2.add(new L2NpcWalkerNode(-114395, 250846, -1760, 0, "", true));
@@ -101,7 +102,7 @@ public class Q10329_BackupSeekers extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if (npc.getNpcId() == _kakai && event.equalsIgnoreCase("30565-03.htm"))
+		if ((npc.getNpcId() == _kakai) && event.equalsIgnoreCase("30565-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -120,11 +121,12 @@ public class Q10329_BackupSeekers extends Quest
 			// Say another thing after 7.5s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId1));
 				}
 			}, 7500);
@@ -132,11 +134,12 @@ public class Q10329_BackupSeekers extends Quest
 			// And another thing after 15s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId2));
 				}
 			}, 15000);
@@ -144,6 +147,7 @@ public class Q10329_BackupSeekers extends Quest
 			// Delete in 1 min
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
@@ -155,7 +159,7 @@ public class Q10329_BackupSeekers extends Quest
 				}
 			}, 60000);
 		}
-		else if (npc.getNpcId() == _atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1)
+		else if ((npc.getNpcId() == _atran) && event.equalsIgnoreCase("33448-02.htm") && (st.getInt("cond") == 1))
 		{
 			st.unset("cond");
 			st.giveItems(906, 1);
@@ -169,9 +173,9 @@ public class Q10329_BackupSeekers extends Quest
 			// Main quests state
 			player.setGlobalQuestFlag(GlobalQuest.STARTING, 10);
 		}
-		else if (npc.getNpcId() == _apprentice && event.equalsIgnoreCase("MountKookaru"))
+		else if ((npc.getNpcId() == _apprentice) && event.equalsIgnoreCase("MountKookaru"))
 		{
-			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204,1));
+			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
 			st.set("secondRoute", "1");
 			
 			final L2Npc guide = addSpawn(_guideId, -114074, 252514, -1560, 0, false, 600000);
@@ -187,11 +191,12 @@ public class Q10329_BackupSeekers extends Quest
 			// Say another thing after 7.5s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId3));
 				}
 			}, 7500);
@@ -199,11 +204,12 @@ public class Q10329_BackupSeekers extends Quest
 			// And another thing after 15s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId4));
 				}
 			}, 15000);
@@ -211,11 +217,12 @@ public class Q10329_BackupSeekers extends Quest
 			// Say another thing after 23.5s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId5));
 				}
 			}, 23500);
@@ -223,11 +230,12 @@ public class Q10329_BackupSeekers extends Quest
 			// And another thing after 30s
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
 						return;
-
+					
 					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), _guideTalkId6));
 				}
 			}, 30000);
@@ -235,6 +243,7 @@ public class Q10329_BackupSeekers extends Quest
 			// Delete in 1 min
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
@@ -259,7 +268,7 @@ public class Q10329_BackupSeekers extends Quest
 		
 		if (npc.getNpcId() == _kakai)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -275,7 +284,7 @@ public class Q10329_BackupSeekers extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _atran && st.getInt("cond") == 1)
+		else if ((npc.getNpcId() == _atran) && (st.getInt("cond") == 1))
 			htmltext = "33448-01.htm";
 		return htmltext;
 	}
@@ -292,8 +301,7 @@ public class Q10329_BackupSeekers extends Quest
 			guideLastChatId = _guideLastChatId2;
 		}
 		
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false)
-				|| guideAI.getCurrentPos() == guideRoute.size() - 1)
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (guideRoute.size() - 1)))
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -301,7 +309,7 @@ public class Q10329_BackupSeekers extends Quest
 				return null;
 			}
 			int chatId = guideLastChatId;
-			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
+			if (guideAI.getCurrentPos() != (guideRoute.size() - 1))
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -323,17 +331,18 @@ public class Q10329_BackupSeekers extends Quest
 	{
 		List<L2NpcWalkerNode> guideRoute = _guideRoute1;
 		
-		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null)
+		if ((guideAI.getGuided() == null) || (guideAI.getGuided().getQuestState(qn) == null))
 			return null;
 		
 		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
 			guideRoute = _guideRoute2;
 		
-		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
+		if (guideAI.getCurrentPos() == (guideRoute.size() - 1))
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (!guideAI.getActor().isDecayed())
@@ -350,9 +359,9 @@ public class Q10329_BackupSeekers extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && player.getLevel() <= 20;
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && (player.getLevel() <= 20);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Q10329_BackupSeekers(10329, qn, "Going outside the village. Opportunity to obtain an accessory.");

@@ -3,22 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.multisell;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ *
  * @author DS
  *
  */
@@ -28,12 +29,13 @@ public class ListContainer
 	protected boolean _applyTaxes = false;
 	protected boolean _maintainEnchantment = false;
 	protected boolean _isChance = false;
+	protected int _timeLimit;
 	
-	protected List<Entry> _entries;
+	protected List<MultiSellEntry> _entries;
 	
 	public ListContainer()
 	{
-		_entries = new ArrayList<Entry>();
+		_entries = new ArrayList<MultiSellEntry>();
 	}
 	
 	/**
@@ -45,7 +47,7 @@ public class ListContainer
 		_listId = listId;
 	}
 	
-	public final List<Entry> getEntries()
+	public final List<MultiSellEntry> getEntries()
 	{
 		return _entries;
 	}
@@ -88,5 +90,15 @@ public class ListContainer
 	public final boolean isChance()
 	{
 		return _isChance;
+	}
+	
+	public final void setTimeLimit(final int timeLimit)
+	{
+		_timeLimit = timeLimit;
+	}
+	
+	public final int getTimeLimit()
+	{
+		return _timeLimit;
 	}
 }

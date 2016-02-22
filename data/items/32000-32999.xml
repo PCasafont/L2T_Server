@@ -7474,8 +7474,9 @@
 		<enchant stat="pDef" val="0" />
 	</item>
 	<!--
-		Crystal Dagger of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Crystal Dagger of Destiny (Fire) with limited ability enhancement. <Special Option>
 		P. Atk. + 140 during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
+		No Soul Crystal option.
 	-->
 	<item id="32995" type="Weapon" name="Crystal Dagger of Destiny (Fire) - Critical Damage" icon="icon.weapon_crystal_dagger_i01"
 			defaultAction="equip" weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalType="c" weight="100"
@@ -7490,8 +7491,9 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Samurai Long Sword of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Samurai Long Sword of Destiny (Fire) with limited ability enhancement. <Special Option>
 		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+		No Soul Crystal option.
 	-->
 	<item id="32996" type="Weapon" name="Samurai Long Sword of Destiny (Fire) - Focus" icon="icon.weapon_samurai_longsword_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="c" weight="138"
@@ -7504,9 +7506,10 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Admiral's Estoc of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Admiral's Estoc of Destiny (Fire) with limited ability enhancement. <Special Option>
 		Increases Critical by 73.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
+		No Soul Crystal option.
 	-->
 	<item id="32997" type="Weapon" name="Admiral's Estoc of Destiny (Fire) - Focus" icon="icon.weapon_blink_slasher_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="c" weight="138" soulshots="3"
@@ -7521,8 +7524,9 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Berserker Blade of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Berserker Blade of Destiny (Fire) with limited ability enhancement. <Special Option>
 		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+		No Soul Crystal option.
 	-->
 	<item id="32998" type="Weapon" name="Berserker Blade of Destiny (Fire) - Focus" icon="icon.weapon_berserker_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="c" weight="138" soulshots="3"
@@ -7535,8 +7539,9 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Saber Tooth of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Saber Tooth of Destiny (Fire) with limited ability enhancement. <Special Option>
 		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+		No Soul Crystal option.
 	-->
 	<item id="32999" type="Weapon" name="Saber Tooth of Destiny (Fire) - Focus" icon="icon.weapon_invincible_blade_i01" defaultAction="equip"
 			weaponType="ancientsword" bodypart="rhand" randomDamage="15" immediateEffect="1" crystalType="c" weight="195" soulshots="3"

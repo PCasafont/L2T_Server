@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 import java.sql.Connection;
@@ -61,14 +62,7 @@ public class Message
 	
 	public enum SendBySystem
 	{
-		PLAYER,
-		NEWS,
-		NONE,
-		ALEGRIA,
-		UNK1,
-		SYSTEM,
-		MENTORING,
-		PRESENT
+		PLAYER, NEWS, NONE, ALEGRIA, UNK1, SYSTEM, MENTORING, PRESENT
 	}
 	
 	/*
@@ -103,14 +97,14 @@ public class Message
 		_receiverId = receiverId;
 		_subject = subject;
 		_content = text;
-		_expiration = (isCod ? System.currentTimeMillis() + COD_EXPIRATION * 3600000 : System.currentTimeMillis() + EXPIRATION * 3600000);
+		_expiration = (isCod ? System.currentTimeMillis() + (COD_EXPIRATION * 3600000) : System.currentTimeMillis() + (EXPIRATION * 3600000));
 		_hasAttachments = false;
 		_unread = true;
 		_deletedBySender = false;
 		_deletedByReceiver = false;
 		_reqAdena = reqAdena;
 	}
-
+	
 	/*
 	 * This constructor used for System Mails
 	 */
@@ -119,9 +113,9 @@ public class Message
 		_messageId = IdFactory.getInstance().getNextId();
 		_senderId = -1;
 		_receiverId = receiverId;
-		_subject = subject; 
+		_subject = subject;
 		_content = content;
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
 		_reqAdena = 0;
 		_hasAttachments = false;
 		_unread = true;
@@ -130,7 +124,7 @@ public class Message
 		_sendBySystem = sendBySystem.ordinal();
 		_returned = false;
 	}
-
+	
 	/*
 	 * This constructor used for System Mails
 	 */
@@ -139,9 +133,9 @@ public class Message
 		_messageId = IdFactory.getInstance().getNextId();
 		_senderId = -1;
 		_receiverId = receiverId;
-		_subject = subject; 
+		_subject = subject;
 		_content = content;
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
 		_reqAdena = 0;
 		_hasAttachments = false;
 		_unread = true;
@@ -163,7 +157,7 @@ public class Message
 		_receiverId = msg.getSenderId();
 		_subject = "";
 		_content = "";
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		_expiration = System.currentTimeMillis() + (EXPIRATION * 3600000);
 		_unread = true;
 		_deletedBySender = true;
 		_deletedByReceiver = false;
@@ -262,7 +256,7 @@ public class Message
 	
 	public final int getExpirationSeconds()
 	{
-		return (int)(_expiration / 1000);
+		return (int) (_expiration / 1000);
 	}
 	
 	public final boolean isUnread()
@@ -312,17 +306,17 @@ public class Message
 				MailManager.getInstance().markAsDeletedByReceiverInDb(_messageId);
 		}
 	}
-
+	
 	public final int getSendBySystem()
 	{
 		return _sendBySystem;
 	}
-
+	
 	public final int getSystemMessage1()
 	{
 		return _systemMessage1;
 	}
-
+	
 	public final int getSystemMessage2()
 	{
 		return _systemMessage2;
@@ -379,7 +373,7 @@ public class Message
 	
 	public final synchronized Mail createAttachments()
 	{
-		if (_hasAttachments || _attachments != null)
+		if (_hasAttachments || (_attachments != null))
 			return null;
 		
 		int objId = _senderId;
@@ -409,6 +403,7 @@ public class Message
 			_msg = msg;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (_msg != null)

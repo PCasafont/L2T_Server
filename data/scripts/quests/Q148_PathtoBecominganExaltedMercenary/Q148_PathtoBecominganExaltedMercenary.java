@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q148_PathtoBecominganExaltedMercenary;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -70,11 +71,11 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 		
 		if (Util.contains(_merc, npc.getNpcId()))
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					QuestState _prev = player.getQuestState("147_PathtoBecominganEliteMercenary");
-					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
+					if ((player.getClan() != null) && (player.getClan().getHasCastle() > 0))
 					{
 						htmltext = "castle.htm";
 					}
@@ -84,13 +85,13 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 					}
 					else
 					{
-						if (_prev != null && _prev.getState() == State.COMPLETED)
+						if ((_prev != null) && (_prev.getState() == State.COMPLETED))
 							htmltext = "exalted-00a.htm";
 						else
 							htmltext = "exalted-00.htm";
 					}
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") < 4)
 					{
 						htmltext = "elite-04.htm";
@@ -105,7 +106,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 						htmltext = "exalted-05.htm";
 					}
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					htmltext = getAlreadyCompletedMsg(player);
 					break;
 			}

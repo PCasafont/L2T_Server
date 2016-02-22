@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -47,13 +48,12 @@ public class L2FlyMoveZone extends L2ZoneType
 		if (!(character instanceof L2PcInstance))
 			return;
 		
-		L2PcInstance player = (L2PcInstance)character;
+		L2PcInstance player = (L2PcInstance) character;
 		
-		if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85
-				|| player.getReputation() < 0 || player.isMounted() || player.isTransformed())
+		if ((PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85) || (player.getReputation() < 0) || player.isMounted() || player.isTransformed())
 			return;
 		
-		if (!player.getSummons().isEmpty() )
+		if (!player.getSummons().isEmpty())
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
 			return;
@@ -61,7 +61,7 @@ public class L2FlyMoveZone extends L2ZoneType
 		
 		player.setFlyMove(_flyMove);
 		
-		ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance)character), 10L);
+		ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance) character), 10L);
 	}
 	
 	@Override
@@ -88,6 +88,7 @@ public class L2FlyMoveZone extends L2ZoneType
 			_player = player;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (!isCharacterInZone(_player))

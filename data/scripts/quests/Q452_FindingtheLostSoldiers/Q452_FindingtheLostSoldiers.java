@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q452_FindingtheLostSoldiers;
 
 import java.util.Calendar;
@@ -85,15 +86,15 @@ public class Q452_FindingtheLostSoldiers extends Quest
 		
 		if (npc.getNpcId() == JAKAN)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					if (player.getLevel() >= 84)
 						htmltext = "32773-1.htm";
 					else
 						htmltext = "32773-0.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") == 1)
 						htmltext = "32773-4.htm";
 					else if (st.getInt("cond") == 2)
@@ -114,7 +115,7 @@ public class Q452_FindingtheLostSoldiers extends Quest
 						st.set("reDoTime", String.valueOf(reDo.getTimeInMillis()));
 					}
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					Long reDoTime = Long.parseLong(st.get("reDoTime"));
 					if (reDoTime > System.currentTimeMillis())
 						htmltext = "32773-6.htm";
@@ -141,7 +142,7 @@ public class Q452_FindingtheLostSoldiers extends Quest
 	{
 		super(questId, name, descr);
 		
-		questItemIds = new int[]{ TAG_ID };
+		questItemIds = new int[] { TAG_ID };
 		addStartNpc(JAKAN);
 		addTalkId(JAKAN);
 		for (int i : SOLDIER_CORPSES)

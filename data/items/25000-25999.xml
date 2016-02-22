@@ -3205,12 +3205,12 @@
 			isStackable="true">
 	</item>
 	<!-- Can summon Agathion - Minion Eye. -->
-	<item id="25801" type="Armor" name="Agathion - Minion Eye" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
-			defaultAction="equip" bodypart="shirt" immediateEffect="1" weight="150">
+	<item id="25801" type="Armor" name="Agathion - Minion Eye" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- Can summon Agathion - Matryoshka. -->
-	<item id="25802" type="Armor" name="Agathion - Matryoshka" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
-			defaultAction="equip" bodypart="shirt" immediateEffect="1" weight="150">
+	<item id="25802" type="Armor" name="Agathion - Matryoshka" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Leo. -->
 	<item id="25803" type="EtcItem" name="Luck Box 1 - Leo" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"

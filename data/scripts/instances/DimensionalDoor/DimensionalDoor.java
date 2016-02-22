@@ -1,8 +1,10 @@
+
 package instances.DimensionalDoor;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
@@ -14,23 +16,22 @@ import l2server.log.Log;
 
 public class DimensionalDoor extends Quest
 {
-	private static final String 	_qn 			= "DimensionalDoor";
-	private static final boolean	_debug			= false;
+	private static final String _qn = "DimensionalDoor";
+	private static final boolean _debug = false;
 	
 	//Ids
-	private static final int _npcManagerId 		= 80200;
-	private static final int _shinyCoin			= 37559;
+	private static final int _npcManagerId = 80200;
+	private static final int _shinyCoin = 37559;
 	private static final Map<Integer, Integer> _availableSkills = new HashMap<Integer, Integer>();
-	private static final int[][] _availableSkillsIds =
-	{
-		//Skill id, skill price amount
-		{1372, 5},	//Expand Inventory (Fishing skill)
-		{1371, 3}, //Expand Warehouse (Fishing skill)
-		{19222, 10}, //Dignity of the Exalted
-		{19229, 8}, //Fate of the Exalted
-		{19226, 10}, //Favor of the Exalted
-		{19224, 5}	//Blessing of the Exalted
-		//{19225, 5}	//Summon Battle Potion
+	private static final int[][] _availableSkillsIds = {
+			//Skill id, skill price amount
+	{ 1372, 5 }, //Expand Inventory (Fishing skill)
+	{ 1371, 3 }, //Expand Warehouse (Fishing skill)
+	{ 19222, 10 }, //Dignity of the Exalted
+	{ 19229, 8 }, //Fate of the Exalted
+	{ 19226, 10 }, //Favor of the Exalted
+	{ 19224, 5 } //Blessing of the Exalted
+	//{19225, 5}	//Summon Battle Potion
 	};
 	
 	public DimensionalDoor(int questId, String name, String descr)
@@ -54,7 +55,7 @@ public class DimensionalDoor extends Quest
 			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("main"))
-			return _qn + ".html";
+			return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 		else if (event.equalsIgnoreCase("learnSkills"))
 			return "learnSkills.html";
 		else if (event.startsWith("claim_"))
@@ -92,19 +93,19 @@ public class DimensionalDoor extends Quest
 		if (_debug)
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		
-		return _qn + ".html";
+		return _qn + (Config.SERVER_NAME.contains("khadia") ? "_old" : "") + ".html";
 	}
 	
 	public static int getNpcManagerId()
 	{
 		return _npcManagerId;
 	}
-
+	
 	public static int getDimensionalDoorRewardId()
 	{
 		return _shinyCoin;
 	}
-
+	
 	public static int getDimensionalDoorRewardRate()
 	{
 		return 3;

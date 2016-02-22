@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.Config;
@@ -40,15 +41,13 @@ public class Sweep implements ISkillHandler
 {
 	//private static Logger _log = Logger.getLogger(Sweep.class.getName());
 	
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.SWEEP
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.SWEEP };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (!(activeChar instanceof L2PcInstance))
@@ -56,11 +55,12 @@ public class Sweep implements ISkillHandler
 			return;
 		}
 		
-		L2PcInstance player = (L2PcInstance) activeChar;
+		final L2PcInstance player = (L2PcInstance) activeChar;
+		
 		InventoryUpdate iu = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		boolean send = false;
 		
-		for (L2Object tgt: targets)
+		for (L2Object tgt : targets)
 		{
 			if (!(tgt instanceof L2Attackable))
 				continue;
@@ -77,7 +77,7 @@ public class Sweep implements ISkillHandler
 			}
 			if (isSweeping)
 			{
-				if (items == null || items.length == 0)
+				if ((items == null) || (items.length == 0))
 					continue;
 				for (L2Attackable.RewardItem ritem : items)
 				{
@@ -119,7 +119,7 @@ public class Sweep implements ISkillHandler
 					activeChar.setCurrentHp(hp);
 					
 					StatusUpdate suhp = new StatusUpdate(activeChar);
-					suhp.addAttribute(StatusUpdate.CUR_HP, (int)hp);
+					suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
 					activeChar.sendPacket(suhp);
 					
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
@@ -135,7 +135,7 @@ public class Sweep implements ISkillHandler
 					activeChar.setCurrentMp(mp);
 					
 					StatusUpdate suhp = new StatusUpdate(activeChar);
-					suhp.addAttribute(StatusUpdate.CUR_MP, (int)mp);
+					suhp.addAttribute(StatusUpdate.CUR_MP, (int) mp);
 					activeChar.sendPacket(suhp);
 					
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_MP_RESTORED);
@@ -156,9 +156,10 @@ public class Sweep implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

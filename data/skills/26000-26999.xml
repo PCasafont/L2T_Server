@@ -254,7 +254,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="26027" levels="6" name="Elixir of CP (D-grade)">
+	<skill id="26027" levels="6" name="Elixir of CP (S-grade)">
 		<table name="#power"> 200 800 1500 2000 2500 3000 </table>
 		<table name="#minLvl"> 0 20 40 52 61 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 </table>
@@ -280,7 +280,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26028" levels="6" name="Elixir of Life (D-grade)">
+	<skill id="26028" levels="6" name="Elixir of Life (S-grade)">
 		<table name="#minLvl"> 0 20 40 52 61 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 </table>
 		<table name="#name">Elixir of Life (D-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life (B-grade);Elixir of Life (A-grade);Elixir of Life (S-grade)</table>
@@ -612,7 +612,7 @@
 		Level 6: Obtained XP + 100%.
 		Level 7: Obtained XP + 200%.
 	-->
-	<skill id="26046" levels="7" name="XP Rune III (Lv. 1-99) 10%">
+	<skill id="26046" levels="7" name="XP Rune III (Lv. 1-100+) 200%">
 		<table name="#name">XP Rune III (Lv. 1-100+) 10%;XP Rune III (Lv. 1-100+) 20%;XP Rune III (Lv. 1-100+) 30%;XP Rune III (Lv. 1-100+) 40%;XP Rune III (Lv. 1-100+) 50%;XP Rune III (Lv. 1-100+) 100%;XP Rune III (Lv. 1-100+) 200%</table>
 		<table name="#xpGain"> 10 20 30 40 50 100 200 </table>
 		<set name="name" val="#name" />
@@ -624,15 +624,15 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Obtained SP + 10%.
-		Level 2: Obtained SP + 20%.
-		Level 3: Obtained SP + 30%.
-		Level 4: Obtained SP + 40%.
-		Level 5: Obtained SP + 50%.
-		Level 6: Obtained SP + 100%.
-		Level 7: Obtained SP + 200%.
+		Level 1: SP Acquisition + 10%.
+		Level 2: SP Acquisition + 20%.
+		Level 3: SP Acquisition + 30%.
+		Level 4: SP Acquisition + 40%.
+		Level 5: SP Acquisition + 50%.
+		Level 6: SP Acquisition + 100%.
+		Level 7: SP Acquisition + 200%.
 	-->
-	<skill id="26047" levels="7" name="SP Rune 10%">
+	<skill id="26047" levels="7" name="SP Rune 200%">
 		<table name="#name">SP Rune 10%;SP Rune 20%;SP Rune 30%;SP Rune 40%;SP Rune 50%;SP Rune 100%;SP Rune 200%</table>
 		<table name="#spGain"> 10 20 30 40 50 100 200 </table>
 		<set name="name" val="#name" />
@@ -644,13 +644,13 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases your grade penalty by 1 Lv..
-		Level 2: Decreases your grade penalty by 2 Lv.s.
-		Level 3: Decreases your grade penalty by 3 Lv.s.
-		Level 4: Decreases your grade penalty by 4 Lv.s.
-		Level 5: Decreases your grade penalty by 5 Lv.s.
+		Level 1: Decreases your grade penalty by 1 levels.
+		Level 2: Decreases your grade penalty by 2 levels.
+		Level 3: Decreases your grade penalty by 3 levels.
+		Level 4: Decreases your grade penalty by 4 levels.
+		Level 5: Decreases your grade penalty by 5 levels.
 	-->
-	<skill id="26048" levels="5" name="Rune of Crystal (Lv. 1)">
+	<skill id="26048" levels="5" name="Rune of Crystal (Lv. 5)">
 		<table name="#name">Rune of Crystal (Lv. 1);Rune of Crystal (Lv. 2);Rune of Crystal (Lv. 3);Rune of Crystal (Lv. 4);Rune of Crystal (Lv. 5)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -768,7 +768,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26067" levels="5" name="Bone Quiver">
+	<skill id="26067" levels="5" name="Quiver of Light">
 		<table name="#create_item_id"> 22067 22068 22069 22070 22071 </table>
 		<table name="#name">Bone Quiver;Steel Quiver;Silver Quiver;Mithril Quiver;Quiver of Light</table>
 		<set name="name" val="#name" />
@@ -787,7 +787,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26068" levels="10" name="Blessed Spiritshot Pack (D-grade)">
+	<skill id="26068" levels="10" name="Blessed Spiritshot Large Pack (S-grade)">
 		<table name="#create_item_id"> 22072 22073 22074 22075 22076 22072 22073 22074 22075 22076 </table>
 		<table name="#create_item_count"> 5000 5000 5000 5000 5000 10000 10000 10000 10000 10000 </table>
 		<table name="#name">Blessed Spiritshot Pack (D-grade);Blessed Spiritshot Pack (C-grade);Blessed Spiritshot Pack (B-grade);Blessed Spiritshot Pack (A-grade);Blessed Spiritshot Pack (S-grade);Blessed Spiritshot Large Pack (D-grade);Blessed Spiritshot Large Pack (C-grade);Blessed Spiritshot Large Pack (B-grade);Blessed Spiritshot Large Pack (A-grade);Blessed Spiritshot Large Pack (S-grade)</table>
@@ -807,7 +807,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26069" levels="10" name="Spiritshot Pack (D-grade)">
+	<skill id="26069" levels="10" name="Spiritshot Large Pack (S-grade)">
 		<table name="#create_item_id"> 22077 22078 22079 22080 22081 22077 22078 22079 22080 22081 </table>
 		<table name="#create_item_count"> 5000 5000 5000 5000 5000 10000 10000 10000 10000 10000 </table>
 		<table name="#name">Spiritshot Pack (D-grade);Spiritshot Pack (C-grade);Spiritshot Pack (B-grade);Spiritshot Pack (A-grade);Spiritshot Pack (S-grade);Spiritshot Large Pack (D-grade);Spiritshot Large Pack (C-grade);Spiritshot Large Pack (B-grade);Spiritshot Large Pack (A-grade);Spiritshot Large Pack (S-grade)</table>
@@ -827,7 +827,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26070" levels="10" name="Soulshot Pack (D-grade)">
+	<skill id="26070" levels="10" name="Soulshot Large Pack (S-grade)">
 		<table name="#create_item_id"> 22082 22083 22084 22085 22086 22082 22083 22084 22085 22086 </table>
 		<table name="#create_item_count"> 5000 5000 5000 5000 5000 10000 10000 10000 10000 10000 </table>
 		<table name="#name">Soulshot Pack (D-grade);Soulshot Pack (C-grade);Soulshot Pack (B-grade);Soulshot Pack (A-grade);Soulshot Pack (S-grade);Soulshot Large Pack (D-grade);Soulshot Large Pack (C-grade);Soulshot Large Pack (B-grade);Soulshot Large Pack (A-grade);Soulshot Large Pack (S-grade)</table>
@@ -847,7 +847,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26071" levels="17" name="Wrapped Daisy Hairpin">
+	<skill id="26071" levels="17" name="Wrapped Artisan's Goggles">
 		<table name="#create_item_id"> 22156 22157 22158 22159 22160 22161 22162 22163 22164 22165 22166 22167 22168 22169 22170 22171 22172 </table>
 		<table name="#name">Wrapped Daisy Hairpin;Wrapped Forget-me-not Hairpin;Wrapped Outlaw's Eyepatch;Wrapped Pirate's Eyepatch;Wrapped Monocle;Wrapped Red Mask of Victory;Wrapped Red Horn of Victory;Wrapped Party Mask;Wrapped Red Party Mask;Wrapped Cat Ear;Wrapped Lady's Hairpin;Wrapped Raccoon Ear;Wrapped Rabbit Ears;Wrapped Little Angel Wings;Wrapped Fairy Antennae;Wrapped Chapeau;Wrapped Artisan's Goggles</table>
 		<set name="name" val="#name" />
@@ -866,7 +866,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26072" levels="3" name="Wrapped Pet Coupon - Buffalo">
+	<skill id="26072" levels="3" name="Wrapped Pet Coupon - Kookaburra">
 		<table name="#create_item_id"> 7583 7584 7585 </table>
 		<table name="#name">Wrapped Pet Coupon - Buffalo;Wrapped Pet Coupon - Cougar;Wrapped Pet Coupon - Kookaburra</table>
 		<set name="name" val="#name" />
@@ -885,7 +885,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="26073" levels="5" name="Bone Bolt Container">
+	<skill id="26073" levels="5" name="Bolt of Light Container">
 		<table name="#create_item_id"> 22144 22145 22146 22147 22148 </table>
 		<table name="#name">Bone Bolt Container;Steel Bolt Container;Silver Bolt Container;Mithril Bolt Container;Bolt of Light Container</table>
 		<set name="name" val="#name" />
@@ -1059,7 +1059,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="26105" levels="1" name="Angel Cat's Blessing">
+	<skill id="26105" levels="1" name="Extra Pass: Infernal Kamaloka">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1078,7 +1078,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
-	<skill id="26108" levels="1" name="NoSkillName">
+	<skill id="26108" levels="1" name="Returning Hero's Wondrous Cubic">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1179,7 +1179,8 @@
 	<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
 	<skill id="26118" levels="12" name="Healing Light">
 		<table name="#reuseDelay"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="HPMPCPHEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="100" />
@@ -1220,10 +1221,11 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Equalizes entire party's HP and restores 333 HP/second for 15 sec. -->
+	<!-- Equalizes entire party's HP and restores 333 HP/second for 15 seconds. -->
 	<skill id="26120" levels="12" name="Scale of Life">
 		<table name="#reuseDelay"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="BALANCE_LIFE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1000" />
@@ -1243,7 +1245,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. Speed is greatly decreased while transformed. Cannot use when Disparition is active. -->
+	<!-- For 15 seconds, transforms into a rock to eliminate enemy's enmity and avoid being targeted. Speed is greatly decreased while transformed. Cannot use when Disparition is active. -->
 	<skill id="26121" levels="12" name="Rocky Camouflage">
 		<table name="#reuseDelay"> 225000 210000 195000 180000 165000 150000 135000 120000 105000 90000 75000 60000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -1272,7 +1274,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. -->
+	<!-- For 30 seconds, P./M. Atk., and Atk./Casting Spd. x 2. -->
 	<skill id="26122" levels="12" name="Mad Cow">
 		<table name="#reuseDelay"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -1298,7 +1300,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Invincible for 10 sec. -->
+	<!-- Invincible for 10 seconds. -->
 	<skill id="26123" levels="12" name="Maiden's Prayer">
 		<table name="#reuseDelay"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -1342,7 +1344,8 @@
 	<!-- Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. -->
 	<skill id="26125" levels="12" name="Scorpion's Mass Exile">
 		<table name="#reuseDelay"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="65" />
@@ -1370,7 +1373,8 @@
 	<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 	<skill id="26126" levels="12" name="Mass Binding Flood">
 		<table name="#reuseDelay"> 118000 110000 102000 94000 86000 78000 70000 62000 54000 46000 38000 30000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="65" />
@@ -1395,7 +1399,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 60 sec., defends against debuffs 5 times. -->
+	<!-- For 60 seconds, defends against debuffs 5 times. -->
 	<skill id="26127" levels="12" name="Slippery Scale">
 		<table name="#reuseDelay"> 2250000 2100000 1950000 1800000 1650000 1500000 1350000 1200000 1050000 900000 750000 600000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -1423,7 +1427,8 @@
 	<!-- Summons all party members to you. -->
 	<skill id="26128" levels="12" name="Archer's Call">
 		<table name="#reuseDelay"> 6750000 6300000 5850000 5400000 4950000 4500000 4050000 3600000 3150000 2700000 2250000 1800000 </table>
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="SUMMON_FRIEND" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="15000" />
@@ -2010,10 +2015,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Drop Rate + 1%.
-		Level 2: Drop Rate + 3%.
-		Level 3: Drop Rate + 6%.
-		Level 4: Drop Rate + 10%.
+		Level 1: Monsters' item drop rate + 1%.
+		Level 2: Monsters' item drop rate + 3%.
+		Level 3: Monsters' item drop rate + 6%.
+		Level 4: Monsters' item drop rate + 10%.
 	-->
 	<skill id="26219" levels="4" name="Sayha's Rune: Luck">
 		<table name="#dropGain"> 1 3 6 10 </table>
@@ -5460,7 +5465,7 @@
 		Level 3: Master Alchemy. Transmutes Sayha's Rune: Growth Pack Lv. 3.
 		Level 4: Master Alchemy. Transmutes Sayha's Rune: Growth Pack Lv. 4.
 	-->
-	<skill id="26906" levels="4" name="Sayha's Rune: Growth Pack Lv. 1">
+	<skill id="26906" levels="4" name="Sayha's Rune: Growth Pack Lv. 4">
 		<table name="#name">Sayha's Rune: Growth Pack Lv. 1;Sayha's Rune: Growth Pack Lv. 2;Sayha's Rune: Growth Pack Lv. 3;Sayha's Rune: Growth Pack Lv. 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5474,7 +5479,7 @@
 		Level 3: Master Alchemy. Transmutes Sayha's Rune: Skill Pack Lv. 3.
 		Level 4: Master Alchemy. Transmutes Sayha's Rune: Skill Pack Lv. 4.
 	-->
-	<skill id="26907" levels="4" name="Sayha's Rune: Skill Pack Lv. 1">
+	<skill id="26907" levels="4" name="Sayha's Rune: Skill Pack Lv. 4">
 		<table name="#name">Sayha's Rune: Skill Pack Lv. 1;Sayha's Rune: Skill Pack Lv. 2;Sayha's Rune: Skill Pack Lv. 3;Sayha's Rune: Skill Pack Lv. 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5488,7 +5493,7 @@
 		Level 3: Master Alchemy. Transmutes Sayha's Rune: Luck Pack Lv. 3.
 		Level 4: Master Alchemy. Transmutes Sayha's Rune: Luck Pack Lv. 4.
 	-->
-	<skill id="26908" levels="4" name="Sayha's Rune: Luck Pack Lv. 1">
+	<skill id="26908" levels="4" name="Sayha's Rune: Luck Pack Lv. 4">
 		<table name="#name">Sayha's Rune: Luck Pack Lv. 1;Sayha's Rune: Luck Pack Lv. 2;Sayha's Rune: Luck Pack Lv. 3;Sayha's Rune: Luck Pack Lv. 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5502,7 +5507,7 @@
 		Level 3: Master Alchemy. Transmutes Sayha's Rune Pack Lv. 3.
 		Level 4: Master Alchemy. Transmutes Sayha's Rune Pack Lv. 4.
 	-->
-	<skill id="26909" levels="4" name="Sayha's Rune Pack Lv. 1">
+	<skill id="26909" levels="4" name="Sayha's Rune Pack Lv. 4">
 		<table name="#name">Sayha's Rune Pack Lv. 1;Sayha's Rune Pack Lv. 2;Sayha's Rune Pack Lv. 3;Sayha's Rune Pack Lv. 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5591,14 +5596,14 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Releases Agathion's seal. -->
-	<skill id="26925" levels="1" name="Release Agathion's Seal - Gaudi">
+	<skill id="26925" levels="1" name="Release Agathion's Seal - Minion Eye">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<!-- Releases Agathion's seal. -->
-	<skill id="26926" levels="1" name="Release Agathion's Seal - Minion Eye">
+	<skill id="26926" levels="1" name="Release Agathion's Seal - Matryoshka">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

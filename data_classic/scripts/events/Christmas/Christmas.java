@@ -38,15 +38,15 @@ public class Christmas extends Quest
 	private static final int _santaId 			= 33885;
 	private static final int _secondSantaId		= 104;
 	private static final int[] _invaderIds 		= {80198, 80199};
-	private FastList<L2Character> _invaders 		= new FastList<L2Character>();
-	private FastList<String> _rewardedPlayers	= new FastList<String>();	//IP based
+	private FastList<L2Character> _invaders 		= new HashMap<L2Character>();
+	private FastList<String> _rewardedPlayers	= new HashMap<String>();	//IP based
 	private static L2PcInstance _player			= null;
 	private static L2Npc _santa					= null;
 	private Map<Integer, invaderInfo> _attackInfo = new FastMap<Integer, invaderInfo>();
 	private static Long _nextEvent 				= 0L;
 	
 	private static final int[][] _randomRewards	=
-	{	
+	{
 		//Item Id, ammount
 		{6393,	5},	//Event - Glittering Medal
 		{5556,	10}	//Star Ornament
@@ -72,7 +72,7 @@ public class Christmas extends Quest
 		
 		//Spawn Trees
 		if (!_exChangeOnly)
-		{	
+		{
 			addSpawn(13006, 83276, 149323, -3409, 0, false, 0);
 			addSpawn(13006, 83680, 149248, -3409, 31644, false, 0);
 			addSpawn(13006, 83686, 148857, -3409, 31967, false, 0);
@@ -92,17 +92,17 @@ public class Christmas extends Quest
 			addSpawn(13006, -60010, -57188, -2042, 7845, false, 0);
 			addSpawn(13006, -59719, -57301, -2042, 16338, false, 0);
 			addSpawn(13006, -59426, -57187, -2042, 23351, false, 0);
-		}	
+		}
 		
 		addStartNpc(_santaId);
 		addTalkId(_santaId);
 		addFirstTalkId(_santaId);
 		
 		for (int mob : _invaderIds)
-		{	
+		{
 			addAttackId(mob);
 			addKillId(mob);
-		}	
+		}
 		
 		addFirstTalkId(_secondSantaId);
 		
@@ -115,7 +115,7 @@ public class Christmas extends Quest
 			startQuestTimer("start_invasion", _startInvasionEach * 3600000, null, null);
 			
 			startQuestTimer("santas_random_player_reward", _rewardRandomPlayerEach * 3600000, null, null, true);
-		}	
+		}
 	}
 	
 	private class invaderInfo
@@ -166,7 +166,7 @@ public class Christmas extends Quest
 		private void setInternalIP(String ip)
 		{
 			internalIP = ip;
-		}	
+		}
 	}
 	
 	private void deletePlayerInfo(int playerId)
@@ -203,12 +203,12 @@ public class Christmas extends Quest
 			}
 			
 			if (_info.getValue().getPlayerId() == player.getObjectId())
-			{	
+			{
 				underAttack++;
 				
 				if (underAttack > 1)
 				{
-					player.doDie(npc);	
+					player.doDie(npc);
 						
 					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getTemplate().TemplateId, "You can only attack one Snowman at once!"));
 					
@@ -319,11 +319,11 @@ public class Christmas extends Quest
 		tb.append("<html><center><font color=\"3D81A8\">Merry Christmas!</font></center><br1>Hohohoh! Hi " + player.getName() + " If you give me some Star Ornament's I can give you some gifts! Take all what you can!<br>");
 		
 		if (_exChangeOnly)
-		{	
+		{
 			tb.append("This event is currently working in exchange mode, there are no more invasions or free gifts, you can only exchange your Star Ornaments.<br>");
 		}
 		else
-		{	
+		{
 			tb.append("You can get Star Ornament while participating in the Snowman's invasion each "+_startInvasionEach+" hours.<br>");
 			
 			tb.append(getNextEventTime() + "<br>");
@@ -339,7 +339,7 @@ public class Christmas extends Quest
 
 		//GMPart
 		if (player.isGM())
-		{	
+		{
 			tb.append("<center>~~~~ For GM's Only ~~~~</center> <br1>");
 			
 			tb.append("<a action=\"bypass -h Quest Christmas start_invasion_gm\">Start new Invasion</a><br1>");
@@ -347,7 +347,7 @@ public class Christmas extends Quest
 			tb.append("<a action=\"bypass -h Quest Christmas end_invasion_gm_force\">Force Stop Invasion</a><br1>");
 			
 			tb.append("<a action=\"bypass -h Quest Christmas santas_random_player_reward_gm\">Give random reward to a player</a>");
-		}	
+		}
 	
 		tb.append("</body></html>");
 		
@@ -366,13 +366,13 @@ public class Christmas extends Quest
 		if (event.equalsIgnoreCase("santas_talks"))
 		{
 			if (_exChangeOnly)
-			{	
+			{
 				Announcements.getInstance().announceToAll("Santa's Girl: Hohoho! I need tons of Star Ornaments!!! You have only few days more for get some gifts before I go to my home! Hohoho! Hohoho!");
-			}	
+			}
 			else
-			{	
+			{
 				Announcements.getInstance().announceToAll("Santa's Girl: Hohoho! I need tons of Star Ornaments!!! Please collect them in Snowman's invasion for me!! You can found me at any Town! Hohoho! Hohoho!");
-			}	
+			}
 		}
 		else if (event.equalsIgnoreCase("teleport_to_fantasy"))
 		{
@@ -383,9 +383,9 @@ public class Christmas extends Quest
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
 			{
 				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(L2Character.ZONE_PEACE) && !pl.isFlyingMounted() && pl.getClient() != null && !pl.getClient().isDetached())
-				{	
+				{
 					if (_rewardedPlayers.contains(pl.getExternalIP()))
-					{	
+					{
 						continue;
 					}
 					
@@ -404,13 +404,13 @@ public class Christmas extends Quest
 					startQuestTimer("santas_reward_1", 5000, null, null);
 					
 					if (!event.equalsIgnoreCase("santas_random_player_reward_gm"))
-					{	
+					{
 						startQuestTimer("santas_random_player_reward", _rewardRandomPlayerEach * 3600000, null, null);
-					}	
+					}
 					else
-					{	
+					{
 						GmListTable.broadcastMessageToGMs("Christmas: Rewarding: " + _player.getName() + " IP: " + pl.getExternalIP());
-					}	
+					}
 					
 					break;
 				}
@@ -482,7 +482,7 @@ public class Christmas extends Quest
 			for (L2Character chara : _invaders)
 			{
 				if (chara == null)
-				{	
+				{
 					continue;
 				}
 				
@@ -497,13 +497,13 @@ public class Christmas extends Quest
 			
 			//Only schedule the next invasion if is not started by a GM
 			if (!event.startsWith("end_invasion_gm"))
-			{	
+			{
 				startQuestTimer("start_invasion", _startInvasionEach * 3600000, null, null);
 				
 				_nextEvent = System.currentTimeMillis() + (_startInvasionEach * 3600000);
 			}
 		}
-		return "";	
+		return "";
 	}
 	
 	private static String getNextEventTime()

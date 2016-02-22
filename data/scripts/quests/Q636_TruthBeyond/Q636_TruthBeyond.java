@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q636_TruthBeyond;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -23,7 +24,7 @@ import l2server.gameserver.model.quest.State;
 import l2server.gameserver.model.zone.L2ZoneType;
 
 /**
- * 
+ *
  * @author moved to java by DS, jython script by Polo, BiTi and DrLecter
  *
  */
@@ -79,9 +80,7 @@ public final class Q636_TruthBeyond extends Quest
 		
 		if (npc.getNpcId() == ELIAH)
 		{
-			if (st.getQuestItemsCount(VISITOR_MARK) > 0
-					|| st.getQuestItemsCount(FADED_MARK) > 0
-					|| st.getQuestItemsCount(MARK) > 0)
+			if ((st.getQuestItemsCount(VISITOR_MARK) > 0) || (st.getQuestItemsCount(FADED_MARK) > 0) || (st.getQuestItemsCount(MARK) > 0))
 			{
 				st.exitQuest(true);
 				return "31329-mark.htm";
@@ -116,8 +115,8 @@ public final class Q636_TruthBeyond extends Quest
 		// QuestState already null on enter because quest is finished
 		if (character instanceof L2PcInstance)
 		{
-			if (((L2PcInstance)character).destroyItemByItemId("Mark", VISITOR_MARK, 1, character, false))
-				((L2PcInstance)character).addItem("Mark", FADED_MARK, 1, character, true);
+			if (((L2PcInstance) character).destroyItemByItemId("Mark", VISITOR_MARK, 1, character, false))
+				((L2PcInstance) character).addItem("Mark", FADED_MARK, 1, character, true);
 		}
 		return null;
 	}

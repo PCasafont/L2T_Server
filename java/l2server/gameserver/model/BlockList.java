@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.sql.Connection;
@@ -45,7 +46,7 @@ import l2server.log.Log;
 
 /**
  * This class ...
- * 
+ *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
@@ -100,7 +101,7 @@ public class BlockList
 			while (rset.next())
 			{
 				friendId = rset.getInt("friendId");
-				if (friendId ==  ObjId)
+				if (friendId == ObjId)
 					continue;
 				list.add(friendId);
 			}
@@ -132,7 +133,8 @@ public class BlockList
 				statement.setInt(1, _owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
-			else //remove
+			else
+			//remove
 			{
 				statement = con.prepareStatement("DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
 				statement.setInt(1, _owner.getObjectId());
@@ -268,7 +270,7 @@ public class BlockList
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param ownerId object id of owner block list
 	 * @param targetId object id of potential blocked player
 	 * @return true if blocked

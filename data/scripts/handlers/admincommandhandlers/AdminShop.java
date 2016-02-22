@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
@@ -25,7 +26,6 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExBuyList;
 import l2server.gameserver.network.serverpackets.ExSellList;
 
-
 /**
  * This class handles following admin commands:
  * - gmshop = shows menu
@@ -36,12 +36,9 @@ public class AdminShop implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminShop.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_buy",
-		"admin_gmshop"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_buy", "admin_gmshop" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.startsWith("admin_buy"))
@@ -62,6 +59,7 @@ public class AdminShop implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

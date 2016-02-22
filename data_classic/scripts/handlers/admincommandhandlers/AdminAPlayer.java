@@ -34,7 +34,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 		String param = null;
 		
 		if (command.startsWith("admin_spawn_aplayer"))
-		{	
+		{
 			try
 			{
 				st.nextToken();
@@ -59,7 +59,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				// Generate param-specific party
-				List<Integer> classIds = new FastList<Integer>(); 
+				List<Integer> classIds = new HashMap<Integer>(); 
 			
 				st.nextToken(); // spawn_aparty command
 				

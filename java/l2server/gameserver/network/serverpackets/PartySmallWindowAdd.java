@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Party;
@@ -24,7 +25,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PartySmallWindowAdd extends L2GameServerPacket
 {
-	private static final String _S__64_PARTYSMALLWINDOWADD = "[S] 4f PartySmallWindowAdd";
 	
 	private final L2PcInstance _member;
 	private final int _leaderId;
@@ -40,18 +40,17 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x4f);
 		writeD(_leaderId); // c3
 		writeD(_distribution);//writeD(0x04); ?? //c3
 		writeD(_member.getObjectId());
 		writeS(_member.getName());
-		writeD((int)_member.getCurrentCp()); //c4
+		writeD((int) _member.getCurrentCp()); //c4
 		writeD(_member.getMaxCp()); //c4
-		writeD(_member.getVitalityPoints());
-		writeD((int)_member.getCurrentHp());
+		writeD((int) _member.getCurrentHp());
 		writeD(_member.getMaxVisibleHp());
 		writeD((int) _member.getCurrentMp());
 		writeD(_member.getMaxMp());
+		writeD(_member.getVitalityPoints());
 		writeC(_member.getLevel());
 		writeH(_member.getCurrentClass().getId());
 		/*writeD(_member.getVitalityPoints());
@@ -83,14 +82,5 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 			writeD(_member.getPet().getMaxMp());
 			writeC(_member.getPet().getLevel());
 		}*/
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__64_PARTYSMALLWINDOWADD;
 	}
 }

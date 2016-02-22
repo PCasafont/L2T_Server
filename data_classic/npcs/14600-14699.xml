@@ -1,7 +1,7 @@
 <list>
-	<npc id="14600" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2427.5242" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14600" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2427.5242" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -13,9 +13,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14601" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2434.398" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14601" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2434.398" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -27,9 +27,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14602" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2441.8005" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14602" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2441.8005" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -41,9 +41,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14603" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2449.732" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14603" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2449.732" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -55,9 +55,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14604" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2457.1345" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14604" name="Soulless" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2457.1345" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -69,9 +69,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14605" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2463.4795" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14605" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2463.4795" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -83,9 +83,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14606" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2470.882" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14606" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2470.882" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -97,9 +97,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14607" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2478.285" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14607" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2478.285" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -111,9 +111,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14608" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2485.1587" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14608" name="Soulless" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2485.1587" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -125,9 +125,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14609" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2491.5037" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14609" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2491.5037" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -139,9 +139,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14610" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2498.3777" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14610" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2498.3777" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -153,9 +153,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14611" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2505.2515" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14611" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2505.2515" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -167,9 +167,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14612" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2512.1252" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14612" name="Soulless" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2512.1252" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -181,9 +181,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14613" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2517.4128" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14613" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2517.4128" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -195,9 +195,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14614" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2524.2869" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14614" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2524.2869" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -209,9 +209,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14615" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2530.6318" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14615" name="Soulless" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2530.6318" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -223,9 +223,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14616" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2542.7932" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14616" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2542.7932" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -237,9 +237,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14617" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2550.7246" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14617" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2550.7246" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -251,9 +251,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14618" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2559.1848" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14618" name="Soulless" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2559.1848" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -265,9 +265,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14619" name="Nightshade" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="923.2258" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	<npc id="14619" name="Nightshade" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="923.2258" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="1" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -282,9 +282,9 @@
 		<skill id="5653" level="1" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="1" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14620" name="Nightshade" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="976.00903" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14620" name="Nightshade" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="976.00903" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -299,9 +299,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="1" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14621" name="Nightshade" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1028.7922" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14621" name="Nightshade" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1028.7922" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -316,9 +316,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="1" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14622" name="Nightshade" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1081.2555" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14622" name="Nightshade" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1081.2555" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -333,9 +333,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="2" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14623" name="Nightshade" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1133.3989" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14623" name="Nightshade" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1133.3989" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -350,9 +350,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14624" name="Nightshade" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1184.2627" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14624" name="Nightshade" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1184.2627" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -367,9 +367,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14625" name="Nightshade" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1234.1667" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14625" name="Nightshade" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1234.1667" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -384,9 +384,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14626" name="Nightshade" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1282.4714" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14626" name="Nightshade" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1282.4714" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -401,9 +401,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14627" name="Nightshade" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1328.8566" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14627" name="Nightshade" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1328.8566" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -418,9 +418,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14628" name="Nightshade" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1373.3225" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14628" name="Nightshade" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1373.3225" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -435,9 +435,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14633" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1415.2291" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14633" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1415.2291" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -452,9 +452,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14634" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1420.0276" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14634" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1420.0276" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -469,9 +469,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14635" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1425.146" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14635" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1425.146" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -486,9 +486,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14636" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1430.2643" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14636" name="Nightshade" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1430.2643" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -503,9 +503,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14637" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1435.0627" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14637" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1435.0627" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -520,9 +520,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14638" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1440.1812" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14638" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1440.1812" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -537,9 +537,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14639" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1444.9796" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14639" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1444.9796" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -554,9 +554,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14640" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1450.098" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14640" name="Nightshade" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1450.098" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -571,9 +571,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14641" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1454.2567" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14641" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1454.2567" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -588,9 +588,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14642" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1459.0552" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14642" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1459.0552" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -605,9 +605,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14643" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1463.8536" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14643" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1463.8536" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -622,9 +622,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14644" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1468.6521" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14644" name="Nightshade" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1468.6521" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -639,9 +639,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14645" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1472.8108" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14645" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1472.8108" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -656,9 +656,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14646" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1477.2893" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14646" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1477.2893" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -673,9 +673,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14647" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1482.0878" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14647" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1482.0878" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -690,9 +690,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14648" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1486.5664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14648" name="Nightshade" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1486.5664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -707,9 +707,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14649" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1490.4052" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14649" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1490.4052" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -724,9 +724,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14650" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1494.8837" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14650" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1494.8837" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -741,9 +741,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14651" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1499.3623" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14651" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1499.3623" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -758,9 +758,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14652" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1503.521" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14652" name="Nightshade" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1503.521" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -775,9 +775,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14653" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1507.3597" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14653" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1507.3597" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -792,9 +792,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14654" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1511.5184" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14654" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1511.5184" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -809,9 +809,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14655" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1515.6771" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14655" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1515.6771" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -826,9 +826,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14656" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1519.8358" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14656" name="Nightshade" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1519.8358" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -843,9 +843,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14657" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1523.0348" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14657" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1523.0348" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -860,9 +860,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14658" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1527.1935" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14658" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1527.1935" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -877,9 +877,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14659" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1531.0322" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14659" name="Nightshade" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1531.0322" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -894,9 +894,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14660" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1538.3899" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14660" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1538.3899" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -911,9 +911,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14661" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1543.1884" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14661" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1543.1884" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -928,9 +928,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14662" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1548.3068" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14662" name="Nightshade" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1548.3068" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="180.0" collisionRadius="10.0" collisionHeight="35.5">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -945,9 +945,9 @@
 		<skill id="5653" level="2" /> <!-- Nightshade - Focus -->
 		<skill id="5654" level="3" /> <!-- Nightshade - Guidance -->
 	</npc>
-	<npc id="14663" name="Mechanic Golem" level="30" type="L2Pet" baseAtkRange="40" baseHpMax="623.5841" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="95.63277" baseMAtk="63.262653" basePDef="122.288315" baseMDef="86.68701" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300">
+	<npc id="14663" name="Mechanic Golem" level="30" type="L2Pet" baseAtkRange="40" baseHpMax="623.5841" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="95.63277" baseMAtk="63.262653" basePDef="122.288315" baseMDef="86.68701" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -960,9 +960,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="3" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14664" name="Mechanic Golem" level="38" type="L2Pet" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300">
+	<npc id="14664" name="Mechanic Golem" level="38" type="L2Pet" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -975,9 +975,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="3" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14665" name="Mechanic Golem" level="45" type="L2Pet" baseAtkRange="40" baseHpMax="1222.0193" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="10" basePAtk="242.48083" baseMAtk="160.40509" basePDef="183.52646" baseMDef="130.09715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14665" name="Mechanic Golem" level="45" type="L2Pet" baseAtkRange="40" baseHpMax="1222.0193" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="10" basePAtk="242.48083" baseMAtk="160.40509" basePDef="183.52646" baseMDef="130.09715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -990,9 +990,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="4" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14666" name="Mechanic Golem" level="51" type="L2Pet" baseAtkRange="40" baseHpMax="1517.8811" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="331.49826" baseMAtk="219.29158" basePDef="211.46458" baseMDef="149.90176" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14666" name="Mechanic Golem" level="51" type="L2Pet" baseAtkRange="40" baseHpMax="1517.8811" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="331.49826" baseMAtk="219.29158" basePDef="211.46458" baseMDef="149.90176" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1005,9 +1005,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="5" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14667" name="Mechanic Golem" level="57" type="L2Pet" baseAtkRange="40" baseHpMax="1833.9283" baseHpReg="6.5" baseMpMax="948.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="16" basePAtk="437.92725" baseMAtk="289.6961" basePDef="240.71574" baseMDef="170.63715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300">
+	<npc id="14667" name="Mechanic Golem" level="57" type="L2Pet" baseAtkRange="40" baseHpMax="1833.9283" baseHpReg="6.5" baseMpMax="948.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="16" basePAtk="437.92725" baseMAtk="289.6961" basePDef="240.71574" baseMDef="170.63715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1020,9 +1020,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="5" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14668" name="Mechanic Golem" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1547.056" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14668" name="Mechanic Golem" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1547.056" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1035,9 +1035,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="6" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14669" name="Mechanic Golem" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1704.3593" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14669" name="Mechanic Golem" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1704.3593" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1050,9 +1050,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="6" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14670" name="Mechanic Golem" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1855.8899" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14670" name="Mechanic Golem" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1855.8899" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1065,9 +1065,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="7" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14671" name="Mechanic Golem" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1998.2805" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14671" name="Mechanic Golem" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1998.2805" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1080,9 +1080,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="7" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14672" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2128.164" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14672" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2128.164" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1095,9 +1095,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14673" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2135.38" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14673" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2135.38" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1110,9 +1110,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14674" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2143.0767" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14674" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2143.0767" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1125,9 +1125,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14675" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2150.7734" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14675" name="Mechanic Golem" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2150.7734" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1140,9 +1140,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14676" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2157.989" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14676" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2157.989" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1155,9 +1155,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14677" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2165.686" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14677" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2165.686" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1170,9 +1170,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="8" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14678" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2172.9016" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14678" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2172.9016" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1185,9 +1185,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14679" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2180.5986" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14679" name="Mechanic Golem" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2180.5986" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1200,9 +1200,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14680" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14680" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1215,9 +1215,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14681" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2194.0679" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14681" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2194.0679" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1230,9 +1230,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14682" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2201.2837" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14682" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2201.2837" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1245,9 +1245,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14683" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2208.4995" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14683" name="Mechanic Golem" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2208.4995" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1260,9 +1260,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="9" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14684" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2214.7532" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14684" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2214.7532" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1275,9 +1275,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14685" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2221.4878" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14685" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2221.4878" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1290,9 +1290,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14686" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2228.7034" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14686" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2228.7034" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1305,9 +1305,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14687" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2235.4382" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14687" name="Mechanic Golem" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2235.4382" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1320,9 +1320,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14688" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2241.2107" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14688" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2241.2107" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1335,9 +1335,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14689" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2247.9453" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14689" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2247.9453" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1350,9 +1350,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="10" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14690" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2254.6802" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14690" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2254.6802" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1365,9 +1365,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14691" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2260.9338" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14691" name="Mechanic Golem" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2260.9338" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1380,9 +1380,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14692" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2266.7063" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14692" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2266.7063" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1395,9 +1395,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14693" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2272.96" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14693" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2272.96" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1410,9 +1410,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14694" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2279.2136" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14694" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2279.2136" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1425,9 +1425,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14695" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2285.4673" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14695" name="Mechanic Golem" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2285.4673" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1440,9 +1440,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="11" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14696" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.2778" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14696" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.2778" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1455,9 +1455,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="12" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14697" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2296.5315" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14697" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2296.5315" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1470,9 +1470,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="12" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14698" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2302.3042" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14698" name="Mechanic Golem" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2302.3042" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1485,9 +1485,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4068" level="12" /> <!-- Mechanical Cannon -->
 	</npc>
-	<npc id="14699" name="Mechanic Golem" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2313.3682" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14699" name="Mechanic Golem" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2313.3682" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="150.0" collisionRadius="5.0" collisionHeight="19.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

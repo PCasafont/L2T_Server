@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
@@ -23,7 +24,7 @@ import l2server.gameserver.model.entity.Fort;
 /**
  * format: d (dSdd)
  * cnt:%d (fortressID:%d ownerName:%s, siegeState:%d, lastOwnedTime:%d)
- * 
+ *
  * @author  KenM
  */
 public class ExShowFortressInfo extends L2GameServerPacket
@@ -33,20 +34,13 @@ public class ExShowFortressInfo extends L2GameServerPacket
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-	@Override
-	public String getType()
-	{
-		return "[S] FE:15 ExShowFortressInfo";
-	}
 	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x15);
 		List<Fort> forts = FortManager.getInstance().getForts();
 		writeD(forts.size());
 		for (Fort fort : forts)
@@ -75,5 +69,4 @@ public class ExShowFortressInfo extends L2GameServerPacket
 			writeD(fort.getOwnedTime());
 		}
 	}
-	
 }

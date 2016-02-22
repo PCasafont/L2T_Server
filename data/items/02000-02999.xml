@@ -2385,7 +2385,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: P. Critical Damage, Health, or Rsk. Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2500" type="Weapon" name="Dark Legion's Edge" icon="icon.weapon_dark_legions_edge_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="1320" price="20741000" changeWeaponId="9340" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2410,7 +2410,7 @@
 		<baseAdd stat="accMagic" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2502" type="Weapon" name="Dwarven War Hammer" icon="icon.weapon_dwarven_warhammer_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1670" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2423,7 +2423,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Anger, Health, or Rsk. Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2503" type="Weapon" name="Yaksa Mace" icon="icon.weapon_yaksa_mace_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1640" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -2436,7 +2436,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: Focus, Critical Bleed, or Rsk. Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2504" type="Weapon" name="Meteor Shower" icon="icon.weapon_meteor_shower_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="1600" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -2897,7 +2897,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 2. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2554" type="Weapon" name="Crimson Sword*Elven Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="884" crystalType="c" weight="2360" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1" enchant4Skill="3046-2">
@@ -2928,7 +2928,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its P. Atk. Increases by 61 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2557" type="Weapon" name="Elven Sword*Elven Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="884" crystalType="c" weight="2410" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1" enchant4Skill="3042-2">
@@ -2939,7 +2939,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2558" type="Weapon" name="Sword of Revolution*Sword of Revolution" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="884" crystalType="c" weight="2360" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1" enchant4Skill="3013-1">
@@ -2950,7 +2950,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Critical Attack increases by 50. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2559" type="Weapon" name="Sword of Revolution*Elven Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1029" crystalType="c" weight="2340" price="514380" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3044-3">
@@ -2961,7 +2961,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 4%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2560" type="Weapon" name="Elven Long Sword*Elven Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1175" crystalType="c" weight="2340" price="587300" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3045-4">
@@ -2972,7 +2972,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 2. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2561" type="Weapon" name="StormBringer*StormBringer" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1471"
 			crystalType="c" weight="2330" price="735540" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3046-6">
@@ -2983,7 +2983,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its P. Atk. Increases by 49 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2562" type="Weapon" name="StormBringer*Shamshir" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1623"
 			crystalType="c" weight="2300" price="811600" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3042-7">
@@ -2994,7 +2994,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2563" type="Weapon" name="StormBringer*Katana" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1623"
 			crystalType="c" weight="2320" price="811600" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3005,7 +3005,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Critical Attack increases by 24. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2564" type="Weapon" name="StormBringer*Spirit Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1623"
 			crystalType="c" weight="2310" price="811600" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3044-7">
@@ -3016,7 +3016,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 2%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2565" type="Weapon" name="StormBringer*Raid Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1623"
 			crystalType="c" weight="2340" price="811600" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3045-7">
@@ -3027,7 +3027,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 5. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2566" type="Weapon" name="StormBringer*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="716"
 			crystalType="b" weight="2260" price="1073500" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-9">
@@ -3038,7 +3038,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its P. Atk. Increases by 166 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2567" type="Weapon" name="StormBringer*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="716" crystalType="b" weight="2240" price="1073500" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-9">
@@ -3049,7 +3049,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2568" type="Weapon" name="StormBringer*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="716" crystalType="b" weight="2230" price="1073500" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3060,7 +3060,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Critical increases by 76. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2569" type="Weapon" name="StormBringer*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="716" crystalType="b" weight="2250" price="1073500" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-9">
@@ -3071,7 +3071,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 7%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2570" type="Weapon" name="StormBringer*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="716"
 			crystalType="b" weight="2220" price="1073500" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-9">
@@ -3082,7 +3082,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2571" type="Weapon" name="StormBringer*Samurai Long sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2150" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-11">
@@ -3093,7 +3093,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 2. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2572" type="Weapon" name="Shamshir*Shamshir" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2330" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3046-8">
@@ -3104,7 +3104,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its P. Atk. Increases by 84 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2573" type="Weapon" name="Shamshir*Katana" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2310" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3042-8">
@@ -3115,7 +3115,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2574" type="Weapon" name="Shamshir*Spirit Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2280" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3126,7 +3126,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Critical increases by 40. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2575" type="Weapon" name="Shamshir*Raid Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2280" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3044-8">
@@ -3137,7 +3137,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2576" type="Weapon" name="Shamshir*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2230" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-10">
@@ -3148,7 +3148,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 146 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2577" type="Weapon" name="Shamshir*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2240" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-10">
@@ -3159,7 +3159,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2578" type="Weapon" name="Shamshir*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2200" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3170,7 +3170,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Critical increases by 65. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2579" type="Weapon" name="Shamshir*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2210" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-10">
@@ -3181,7 +3181,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 6%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2580" type="Weapon" name="Shamshir*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2220" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-10">
@@ -3192,7 +3192,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 3. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2581" type="Weapon" name="Shamshir*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="979" crystalType="b" weight="2110" price="1468880" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-12">
@@ -3203,7 +3203,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Atk. Spd. Increases by 4%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2582" type="Weapon" name="Katana*Katana" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2270" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3045-8">
@@ -3214,7 +3214,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 2. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2583" type="Weapon" name="Katana*Spirit Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2250" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3046-8">
@@ -3225,7 +3225,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 84 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2584" type="Weapon" name="Katana*Raid Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2270" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3042-8">
@@ -3236,7 +3236,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2585" type="Weapon" name="Katana*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2220" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-10">
@@ -3247,7 +3247,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 146 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2586" type="Weapon" name="Katana*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2180" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-10">
@@ -3258,7 +3258,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2587" type="Weapon" name="Katana*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2190" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3269,7 +3269,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 65. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2588" type="Weapon" name="Katana*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2170" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-10">
@@ -3280,7 +3280,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 6%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2589" type="Weapon" name="Katana*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2210" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-10">
@@ -3291,7 +3291,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 106 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2590" type="Weapon" name="Katana*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="979"
 			crystalType="b" weight="2130" price="1468880" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-12">
@@ -3302,7 +3302,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2591" type="Weapon" name="Spirit Sword*Spirit Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2240" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3313,7 +3313,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 40. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2592" type="Weapon" name="Spirit Sword*Raid Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2260" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3044-8">
@@ -3324,7 +3324,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2593" type="Weapon" name="Spirit Sword*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2240" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-10">
@@ -3335,7 +3335,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 146 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2594" type="Weapon" name="Spirit Sword*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2240" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-10">
@@ -3346,7 +3346,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2595" type="Weapon" name="Spirit Sword*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2250" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3357,7 +3357,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 65. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2596" type="Weapon" name="Spirit Sword*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2250" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-10">
@@ -3368,7 +3368,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 6%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2597" type="Weapon" name="Spirit Sword*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2220" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-10">
@@ -3379,7 +3379,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2598" type="Weapon" name="Spirit Sword*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="979" crystalType="b" weight="2110" price="1468880" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3390,7 +3390,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 4%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2599" type="Weapon" name="Raid Sword*Raid Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="2250" price="942700" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3045-8">
@@ -3401,7 +3401,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2600" type="Weapon" name="Raid Sword*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2190" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-10">
@@ -3412,7 +3412,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 146 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2601" type="Weapon" name="Raid Sword*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2170" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-10">
@@ -3423,7 +3423,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2602" type="Weapon" name="Raid Sword*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2180" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3434,7 +3434,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 65. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2603" type="Weapon" name="Raid Sword*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="803" crystalType="b" weight="2170" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-10">
@@ -3445,7 +3445,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 6%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2604" type="Weapon" name="Raid Sword*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="803"
 			crystalType="b" weight="2170" price="1204520" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-10">
@@ -3456,7 +3456,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 43. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2605" type="Weapon" name="Raid Sword*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="979" crystalType="b" weight="2130" price="1468880" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-12">
@@ -3467,7 +3467,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 127 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2606" type="Weapon" name="Caliburs*Caliburs" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-11">
@@ -3478,7 +3478,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2607" type="Weapon" name="Caliburs*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2150" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3489,7 +3489,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 54. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2608" type="Weapon" name="Caliburs*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-11">
@@ -3500,7 +3500,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 5%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2609" type="Weapon" name="Caliburs*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2170" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-11">
@@ -3511,7 +3511,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2610" type="Weapon" name="Caliburs*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2150" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-11">
@@ -3522,7 +3522,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 5%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2611" type="Weapon" name="Caliburs*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1164" crystalType="b" weight="2120" price="1745920" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-13">
@@ -3533,7 +3533,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 127 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2612" type="Weapon" name="Ultimate Sword*Ultimate Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-11">
@@ -3544,7 +3544,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2613" type="Weapon" name="Ultimate Sword*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3555,7 +3555,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 54. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2614" type="Weapon" name="Ultimate Sword*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2130" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-11">
@@ -3566,7 +3566,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 5%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2615" type="Weapon" name="Ultimate Sword*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2120" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-11">
@@ -3577,7 +3577,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 3. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2616" type="Weapon" name="Ultimate Sword*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1164" crystalType="b" weight="2100" price="1745920" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-13">
@@ -3588,7 +3588,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 4. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2617" type="Weapon" name="Sword of Delusion*Sword of Delusion" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2150" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-11">
@@ -3599,7 +3599,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 127 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2618" type="Weapon" name="Sword of Delusion*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2130" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-11">
@@ -3610,7 +3610,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2619" type="Weapon" name="Sword of Delusion*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3621,7 +3621,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, P. Atk. Increases by 133 during a Critical Attack. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2620" type="Weapon" name="Sword of Delusion*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1164" crystalType="b" weight="2110" price="1745920" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3042-13">
@@ -3632,7 +3632,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 54. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2621" type="Weapon" name="Sword of Nightmare*Sword of Nightmare" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2130" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-11">
@@ -3643,7 +3643,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 5%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2622" type="Weapon" name="Sword of Nightmare*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="891" crystalType="b" weight="2140" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-11">
@@ -3654,7 +3654,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2623" type="Weapon" name="Sword of Nightmare*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1164" crystalType="b" weight="2080" price="1745920" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-1">
@@ -3665,7 +3665,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 54. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2624" type="Weapon" name="Tsurugi*Tsurugi" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="891"
 			crystalType="b" weight="2120" price="1336100" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-11">
@@ -3676,7 +3676,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Critical increases by 52. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2625" type="Weapon" name="Tsurugi*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1164" crystalType="b" weight="2090" price="1745920" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3044-13">
@@ -3687,7 +3687,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 4%. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="2626" type="Weapon" name="Samurai Long Sword*Samurai Long Sword" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="1346" crystalType="b" weight="2080" price="2018280" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-14">

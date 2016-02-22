@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced;
 
 import l2server.gameserver.events.instanced.EventInstance.EventType;
@@ -59,55 +60,32 @@ public class EventConfig
 	
 	public boolean isAllVsAll()
 	{
-		return (_type == EventType.Survival
-				|| _type == EventType.DeathMatch
-				|| _type == EventType.KingOfTheHill
-				|| _type == EventType.CursedBattle
-				|| _type == EventType.StalkedSalkers
-				|| _type == EventType.SimonSays);
+		return ((_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.KingOfTheHill) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
 	}
 	
 	public boolean needsClosedArena()
 	{
-		return (_type == EventType.CaptureTheFlag
-				|| _type == EventType.VIP
-				|| _type == EventType.Survival
-				|| _type == EventType.TeamSurvival
-				|| _type == EventType.CursedBattle
-				|| _type == EventType.StalkedSalkers);
+		return ((_type == EventType.CaptureTheFlag) || (_type == EventType.VIP) || (_type == EventType.Survival) || (_type == EventType.TeamSurvival) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers));
 	}
 	
 	public boolean spawnsPlayersRandomly()
 	{
-		return (_type == EventType.Survival
-				|| _type == EventType.DeathMatch
-				|| _type == EventType.CursedBattle
-				|| _type == EventType.StalkedSalkers
-				|| _type == EventType.SimonSays);
+		return ((_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
 	}
 	
 	public boolean needsRandomCoords()
 	{
-		return (spawnsPlayersRandomly()
-				|| _type == EventType.LuckyChests);
+		return (spawnsPlayersRandomly() || (_type == EventType.LuckyChests));
 	}
 	
 	public boolean hasNoLevelLimits()
 	{
-		return (_type == EventType.LuckyChests
-				|| _type == EventType.StalkedSalkers
-				|| _type == EventType.SimonSays);
+		return ((_type == EventType.LuckyChests) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
 	}
 	
 	public boolean isPvp()
 	{
-		return (_type == EventType.TVT
-				|| _type == EventType.CaptureTheFlag
-				|| _type == EventType.VIP
-				|| _type == EventType.Survival
-				|| _type == EventType.DeathMatch
-				|| _type == EventType.TeamSurvival
-				|| _type == EventType.CursedBattle);
+		return ((_type == EventType.TVT) || (_type == EventType.CaptureTheFlag) || (_type == EventType.VIP) || (_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.TeamSurvival) || (_type == EventType.CursedBattle));
 	}
 	
 	public String getTeamName(int id)
@@ -152,18 +130,18 @@ public class EventConfig
 		double[] chances = new double[]
 		{
 			25.0, // TvT
-			13.0, // Capture the Flag
+			4.0, // Capture the Flag
 			0.0, // VIP TvT
 			9.0, // Survival
 			11.0, // Death Match
-			4.0, // King of the Hill
-			0.0, // Lucky Chests	//bugged
+			0.0, // King of the Hill
+			0.0, // Lucky Chests
 			18.0, // Team Survival
 			0.0, // Cursed Battle
 			0.0, // Destroy the Golem
-			2.0, // Field Domination
-			4.0, // Stalked Stalkers
-			7.0 // Simon Says
+			0.0, // Field Domination
+			2.0, // Stalked Stalkers
+			6.0 // Simon Says
 		};
 		
 		double total = 0;
@@ -193,7 +171,7 @@ public class EventConfig
 	{
 		_location = location;
 	}
-
+	
 	public void selectLocation()
 	{
 		_location = EventsManager.getInstance().getRandomLocation();
@@ -209,7 +187,7 @@ public class EventConfig
 				_location = EventsManager.getInstance().getRandomLocation();
 		}
 	}
-
+	
 	public int getMaxTeamPlayers()
 	{
 		return (isAllVsAll()) ? _location.getMaxPlayers() : _location.getMaxTeamPlayers();
@@ -217,7 +195,7 @@ public class EventConfig
 	
 	public int getMinPlayers()
 	{
-		return isAllVsAll() ? 5 : (_location.getTeamCount() * 3);
+		return isAllVsAll() ? 2 : (_location.getTeamCount() * 1);
 	}
 	
 	public EventInstance createInstance(int id)
@@ -295,7 +273,7 @@ public class EventConfig
 				
 			case CursedBattle:
 				return "Cursed Battle";
-			
+				
 			case DestroyTheGolem:
 				if (_location.getTeamCount() == 4)
 					return "Four teams Destroy the Golem";
@@ -307,7 +285,7 @@ public class EventConfig
 					return "Four teams Field Domination";
 				
 				return "Field Domination";
-			
+				
 			case StalkedSalkers:
 				return "Stalked Stalkers";
 				
@@ -318,7 +296,7 @@ public class EventConfig
 				if (_location.getTeamCount() == 4)
 					return "TvTvTvT";
 				
-				return  "Team vs Team";
+				return "Team vs Team";
 		}
 	}
 	
@@ -339,27 +317,27 @@ public class EventConfig
 			case CaptureTheFlag:
 				return 20002;
 			case VIP:
-					return 20013;
+				return 20013;
 			case Survival:
-					return 20004;
+				return 20004;
 			case DeathMatch:
-					return 20009;
+				return 20009;
 			case KingOfTheHill:
 				return 20008;
 			case LuckyChests:
-					return 20001;
+				return 20001;
 			case TeamSurvival:
-					return 20005;
+				return 20005;
 			case CursedBattle:
-					return 20003;
+				return 20003;
 			case DestroyTheGolem:
-					return 20007;
+				return 20007;
 			case FieldDomination:
-					return 20006;
+				return 20006;
 			case StalkedSalkers:
-					return 20010;
+				return 20010;
 			case SimonSays:
-					return 20011;
+				return 20011;
 		}
 		
 		return 0;

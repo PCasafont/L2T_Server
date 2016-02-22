@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.ClanTable;
@@ -25,7 +26,6 @@ import l2server.log.Log;
 
 public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 {
-	private static final String _C__51_REQUESTSURRENDERPLEDGEWAR = "[C] 51 RequestSurrenderPledgeWar";
 	
 	private String _pledgeName;
 	private L2Clan _clan;
@@ -34,7 +34,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_pledgeName  = readS();
+		_pledgeName = readS();
 	}
 	
 	@Override
@@ -55,7 +55,7 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 			return;
 		}
 		
-		Log.info("RequestSurrenderPledgeWar by "+getClient().getActiveChar().getClan().getName()+" with "+_pledgeName);
+		Log.info("RequestSurrenderPledgeWar by " + getClient().getActiveChar().getClan().getName() + " with " + _pledgeName);
 		
 		if (!_clan.isAtWarWith(clan.getClanId()))
 		{
@@ -70,11 +70,5 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 		msg = null;
 		_activeChar.deathPenalty(false, false, false, false);
 		ClanWarManager.getInstance().getWar(_clan, clan).stop();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__51_REQUESTSURRENDERPLEDGEWAR;
 	}
 }

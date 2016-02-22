@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.Elementals;
@@ -27,8 +28,6 @@ import l2server.gameserver.templates.item.L2Weapon;
 
 public class RequestExRemoveItemAttribute extends L2GameClientPacket
 {
-	private static String _C__D0_23_REQUESTEXREMOVEITEMATTRIBUTE = "[C] D0:23 RequestExRemoveItemAttribute";
-	
 	private int _objectId;
 	private long _price;
 	private byte _element;
@@ -56,7 +55,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		if (targetItem == null)
 			return;
 		
-		if (targetItem.getElementals() == null || targetItem.getElemental(_element) == null)
+		if ((targetItem.getElementals() == null) || (targetItem.getElemental(_element) == null))
 			return;
 		
 		if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))
@@ -111,7 +110,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 	
 	private long getPrice(L2ItemInstance item)
 	{
-		switch(item.getItem().getCrystalType())
+		switch (item.getItem().getCrystalType())
 		{
 			case L2Item.CRYSTAL_S:
 				if (item.getItem() instanceof L2Weapon)
@@ -134,11 +133,5 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		}
 		
 		return _price;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_23_REQUESTEXREMOVEITEMATTRIBUTE;
 	}
 }

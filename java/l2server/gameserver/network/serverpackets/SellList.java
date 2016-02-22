@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ import l2server.log.Log;
  */
 public class SellList extends L2GameServerPacket
 {
-	private static final String _S__10_SELLLIST = "[S] 06 SellList";
 	
 	private final L2PcInstance _activeChar;
 	private final L2MerchantInstance _lease;
@@ -59,10 +59,10 @@ public class SellList extends L2GameServerPacket
 		{
 			for (L2ItemInstance item : _activeChar.getInventory().getItems())
 			{
-				if (!item.isEquipped() &&														// Not equipped
-						item.isSellable() &&													// Item is sellable
-						(_activeChar.getPet() == null ||										// Pet not summoned or
-								item.getObjectId() != _activeChar.getPet().getControlObjectId()))			// Pet is summoned and not the item that summoned the pet
+				if (!item.isEquipped() && // Not equipped
+				item.isSellable() && // Item is sellable
+				((_activeChar.getPet() == null) || // Pet not summoned or
+				(item.getObjectId() != _activeChar.getPet().getControlObjectId()))) // Pet is summoned and not the item that summoned the pet
 				{
 					_selllist.add(item);
 					if (Config.DEBUG)
@@ -75,7 +75,6 @@ public class SellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x06);
 		writeQ(_money);
 		writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().NpcId);
 		writeH(_selllist.size());
@@ -90,7 +89,7 @@ public class SellList extends L2GameServerPacket
 			writeH(0x00);
 			writeQ(item.getItem().getBodyPart());
 			writeH(item.getEnchantLevel());
-			writeQ(item.getItem().getReferencePrice()/2);
+			writeQ(item.getItem().getSalePrice());
 			
 			// T1
 			writeH(item.getAttackElementType());
@@ -102,14 +101,5 @@ public class SellList extends L2GameServerPacket
 			writeH(0x00); // Enchant effect 2
 			writeH(0x00); // Enchant effect 3
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__10_SELLLIST;
 	}
 }

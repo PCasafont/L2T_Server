@@ -3,20 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
@@ -35,7 +37,7 @@ public class L2SkillDecoy extends L2Skill
 	{
 		super(set);
 		_npcId = set.getInteger("npcId", 0);
-		_summonTotalLifeTime= set.getInteger("summonTotalLifeTime", 20000);
+		_summonTotalLifeTime = set.getInteger("summonTotalLifeTime", 20000);
 	}
 	
 	@Override
@@ -52,7 +54,7 @@ public class L2SkillDecoy extends L2Skill
 		if (activeChar.inObserverMode())
 			return;
 		
-		if (activeChar.getPet() != null || activeChar.isMounted() || !activeChar.getSummons().isEmpty())
+		if ((activeChar.getPet() != null) || activeChar.isMounted() || !activeChar.getSummons().isEmpty())
 			return;
 		
 		L2NpcTemplate decoyTemplate = NpcTable.getInstance().getTemplate(_npcId);
@@ -69,8 +71,8 @@ public class L2SkillDecoy extends L2Skill
 				decoy.setHeading(activeChar.getHeading());
 				activeChar.setDecoy(decoy);
 				//L2World.getInstance().storeObject(Decoy);
-				int x = Math.round(targets[0].getX() + (float)Math.cos(angle/1000*2*Math.PI) * 30);
-				int y = Math.round(targets[0].getY() + (float)Math.sin(angle/1000*2*Math.PI) * 30);
+				int x = Math.round(targets[0].getX() + ((float) Math.cos((angle / 1000) * 2 * Math.PI) * 30));
+				int y = Math.round(targets[0].getY() + ((float) Math.sin((angle / 1000) * 2 * Math.PI) * 30));
 				int z = targets[0].getZ() + 50;
 				decoy.spawnMe(x, y, z);
 				
@@ -88,6 +90,18 @@ public class L2SkillDecoy extends L2Skill
 			activeChar.setDecoy(decoy);
 			//L2World.getInstance().storeObject(Decoy);
 			decoy.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+		}
+		
+		// self Effect
+		if (hasSelfEffects())
+		{
+			final L2Abnormal effect = activeChar.getFirstEffect(getId());
+			if ((effect != null) && effect.isSelfEffect())
+			{
+				//Replace old effect with new one.
+				effect.exit();
+			}
+			getEffectsSelf(activeChar);
 		}
 	}
 	

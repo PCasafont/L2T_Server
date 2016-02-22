@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.chars;
 
 import l2server.gameserver.templates.StatsSet;
@@ -47,7 +48,7 @@ public class L2DoorTemplate extends L2CharTemplate
 		//stats
 		doorId = set.getInteger("id");
 		name = set.getString("name");
-
+		
 		//position
 		String[] pos = set.getString("pos").split(";");
 		posX = Integer.parseInt(pos[0]);
@@ -59,7 +60,7 @@ public class L2DoorTemplate extends L2CharTemplate
 		nodeY = new int[4]; // 4 * y
 		for (int i = 0; i < 4; i++)
 		{
-			String split[] = set.getString("node"+(i+1)).split(",");
+			String split[] = set.getString("node" + (i + 1)).split(",");
 			nodeX[i] = Integer.parseInt(split[0]);
 			nodeY[i] = Integer.parseInt(split[1]);
 			

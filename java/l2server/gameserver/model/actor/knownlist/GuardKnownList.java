@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
 import l2server.Config;
@@ -40,32 +41,30 @@ public class GuardKnownList extends AttackableKnownList
 		if (object instanceof L2PcInstance)
 		{
 			// Check if the object added is a L2PcInstance that owns Karma
-			if (((L2PcInstance)object).getReputation() < 0)
+			if (((L2PcInstance) object).getReputation() < 0)
 			{
 				if (Config.DEBUG)
-					Log.fine(getActiveChar().getObjectId()+": PK "+object.getObjectId()+" entered scan range");
+					Log.fine(getActiveChar().getObjectId() + ": PK " + object.getObjectId() + " entered scan range");
 				
 				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
 				if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 			}
 		}
-		else if ((Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion())
-				&& object instanceof L2MonsterInstance)
+		else if ((Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion()) && (object instanceof L2MonsterInstance))
 		{
 			// Check if the object added is an aggressive L2MonsterInstance
-			if (((L2MonsterInstance)object).isAggressive())
+			if (((L2MonsterInstance) object).isAggressive())
 			{
 				if (Config.DEBUG)
-					Log.fine(getActiveChar().getObjectId()+": Aggressive mob "+object.getObjectId()+" entered scan range");
+					Log.fine(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() + " entered scan range");
 				
 				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
 				if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 			}
 		}
-		else if (object instanceof L2Npc && ((L2Npc)object).getClan() != null
-				&& ((L2Npc)object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))
+		else if ((object instanceof L2Npc) && (((L2Npc) object).getClan() != null) && ((L2Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))
 		{
 			if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
@@ -96,6 +95,6 @@ public class GuardKnownList extends AttackableKnownList
 	@Override
 	public final L2GuardInstance getActiveChar()
 	{
-		return (L2GuardInstance)super.getActiveChar();
+		return (L2GuardInstance) super.getActiveChar();
 	}
 }

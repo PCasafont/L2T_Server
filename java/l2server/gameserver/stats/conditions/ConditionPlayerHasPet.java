@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.conditions;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class ConditionPlayerHasPet extends Condition
 	 */
 	public ConditionPlayerHasPet(ArrayList<Integer> itemIds)
 	{
-		if (itemIds.size() == 1 && itemIds.get(0) == 0)
+		if ((itemIds.size() == 1) && (itemIds.get(0) == 0))
 			_controlItemIds = null;
 		else
 			_controlItemIds = itemIds;
@@ -49,13 +50,13 @@ public class ConditionPlayerHasPet extends Condition
 		if (!(env.player instanceof L2PcInstance))
 			return false;
 		
-		if (((L2PcInstance)env.player).getPet() == null)
+		if (((L2PcInstance) env.player).getPet() == null)
 			return false;
 		
 		if (_controlItemIds == null)
 			return true;
 		
-		final L2ItemInstance controlItem = ((L2PcInstance)env.player).getPet().getControlItem();
+		final L2ItemInstance controlItem = ((L2PcInstance) env.player).getPet().getControlItem();
 		if (controlItem == null)
 			return false;
 		

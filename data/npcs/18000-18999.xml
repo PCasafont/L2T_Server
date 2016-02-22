@@ -11535,7 +11535,7 @@
 		<skill id="4085" level="1" /> <!-- Critical Damage -->
 		<skill id="4032" level="5" /> <!-- Power Strike -->
 		<spoilDrop itemId="1871" min="1" max="21" chance="87.7846" /> <!-- Corroded Charcoal -->
-		<spoilDrop itemId="4553" min="1" max="1" chance="3.8625" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4553" min="1" max="1" chance="3.8625" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
 		<spoilDrop itemId="1908" min="1" max="1" chance="91.4423" /> <!-- Moonstone Earring Wire -->
 		<dropCategory chance="9.4771">
 			<itemDrop itemId="354" min="1" max="1" chance="0.6196" /> <!-- Chain Mail Shirt -->
@@ -11644,7 +11644,7 @@
 		<skill id="4454" level="1" /> <!-- Hold Vulnerability -->
 		<skill id="4453" level="2" /> <!-- Sleep Vulnerability -->
 		<skill id="4032" level="4" /> <!-- Power Strike -->
-		<spoilDrop itemId="4554" min="1" max="1" chance="11.5844" /> <!-- Greater STR Dye <STR + 1 DEX - 1> -->
+		<spoilDrop itemId="4554" min="1" max="1" chance="11.5844" /> <!-- Greater STR Dye [STR + 1 DEX - 1] -->
 		<spoilDrop itemId="1954" min="1" max="3" chance="76.9829" /> <!-- Karmian Stocking Design -->
 		<spoilDrop itemId="2165" min="1" max="3" chance="55.4808" /> <!-- Recipe: Necklace of Protection -->
 		<dropCategory chance="5.4451">
@@ -11732,7 +11732,7 @@
 		<skill id="4077" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="5220" min="1" max="9" chance="94.3019" /> <!-- Corroded Metal Hardener -->
 		<spoilDrop itemId="1885" min="1" max="21" chance="89.3011" /> <!-- Corroded High-grade Suede -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="26.195" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="26.195" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="13.3471">
 			<itemDrop itemId="75" min="1" max="1" chance="0.1579" /> <!-- Caliburs -->
 			<itemDrop itemId="2089" min="1" max="1" chance="14.2187" /> <!-- Caliburs Edge -->
@@ -11861,7 +11861,7 @@
 		<skill id="4065" level="4" /> <!-- Heal -->
 		<spoilDrop itemId="1865" min="1" max="123" chance="93.4946" /> <!-- Corroded Varnish -->
 		<spoilDrop itemId="1870" min="1" max="123" chance="93.4946" /> <!-- Corroded Coal -->
-		<spoilDrop itemId="4602" min="1" max="1" chance="12.8815" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
+		<spoilDrop itemId="4602" min="1" max="1" chance="12.8815" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
 		<dropCategory chance="75.7844">
 			<itemDrop itemId="854" min="1" max="1" chance="0.4653" /> <!-- Earring of Seal -->
 			<itemDrop itemId="1914" min="1" max="1" chance="29.614" /> <!-- Earring of Seal Gemstone -->
@@ -19893,6 +19893,13 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="14222" level="1" /> <!-- Acid Eruption -->
 		<spawn x="-54178" y="80957" z="-4736" heading="31670" respawn="60" randomRespawn="31670" />
+		<spawn x="-10840" y="237182" z="-3152" heading="0" respawn="60" />
+		<spawn x="-12544" y="238593" z="-3377" heading="0" respawn="60" />
+		<spawn x="-14488" y="240734" z="-3088" heading="0" respawn="60" />
+		<spawn x="-15617" y="240385" z="-3241" heading="0" respawn="60" />
+		<spawn x="-19840" y="240897" z="-2897" heading="0" respawn="60" />
+		<spawn x="-22272" y="238465" z="-2886" heading="0" respawn="60" />
+		<spawn x="-19208" y="242622" z="-3336" heading="0" respawn="60" />
 	</npc>
 	<npc id="18920" name="" level="84" type="L2Npc" atkRange="40" hpMax="6375" hpReg="8.5" mpMax="2211" mpReg="3.0" STR="79"
 			CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="2377" mAtk="1535" pDef="620" mDef="553" pAtkSpd="253" mAtkSpd="333"
@@ -20452,7 +20459,7 @@
 		<itemDrop itemId="9555" min="1" max="1" chance="0.03" /> <!-- Wind Crystal -->
 		<itemDrop itemId="17397" min="1" max="1" chance="0.003" /> <!-- Seraph Breastplate - Heavy Armor -->
 		<itemDrop itemId="17404" min="1" max="1" chance="0.003" /> <!-- Seraph Leather Leggings - Light Armor -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Shooter (60%) -->
 		<itemDrop itemId="17408" min="1" max="1" chance="0.003" /> <!-- Seraph Tunic - Robe -->
 		<itemDrop itemId="36944" min="1" max="1" chance="0.0009" /> <!-- Recipe: Greater Synthetic Cokes - Upgrade -->
 	</npc>
@@ -20499,7 +20506,7 @@
 		<itemDrop itemId="57" min="4152" max="14854" chance="69.6428" /> <!-- Adena -->
 		<itemDrop itemId="9555" min="1" max="1" chance="0.03" /> <!-- Wind Crystal -->
 		<itemDrop itemId="17408" min="1" max="1" chance="0.003" /> <!-- Seraph Tunic - Robe -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Shooter (60%) -->
 		<itemDrop itemId="17404" min="1" max="1" chance="0.003" /> <!-- Seraph Leather Leggings - Light Armor -->
 		<itemDrop itemId="17397" min="1" max="1" chance="0.003" /> <!-- Seraph Breastplate - Heavy Armor -->
 	</npc>

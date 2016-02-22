@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.itemcontainer;
 
 import java.sql.Connection;
@@ -21,13 +22,13 @@ import java.util.logging.Level;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 
 /**
- * 
+ *
  * @author DS
  *
  */
@@ -120,7 +121,7 @@ public class Mail extends ItemContainer
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id, gm_touched FROM items WHERE owner_id=? AND loc=? AND loc_data=?");
+			statement = con.prepareStatement("SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND loc=? AND loc_data=?");
 			statement.setInt(1, getOwnerId());
 			statement.setString(2, getBaseLocation().name());
 			statement.setInt(3, getMessageId());
@@ -136,7 +137,7 @@ public class Mail extends ItemContainer
 				L2World.getInstance().storeObject(item);
 				
 				// If stackable item is found just add to current quantity
-				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
+				if (item.isStackable() && (getItemByItemId(item.getItemId()) != null))
 					addItem("Restore", item, null, null);
 				else
 					addItem(item);

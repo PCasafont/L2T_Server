@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import l2server.log.Log;
 public class EventsMatchMaker
 {
 	public static EventsMatchMaker _instance = null;
-
+	
 	private MatchMakingTask _pvpTask;
 	private MatchMakingTask _specialTask;
 	public ConcurrentHashMap<Integer, EventInstance> Instances = new ConcurrentHashMap<Integer, EventInstance>();
@@ -78,6 +79,7 @@ public class EventsMatchMaker
 			_currentConfig = new EventConfig(_pvp);
 		}
 		
+		@Override
 		public void run()
 		{
 			List<Integer> toRemove = new ArrayList<Integer>();
@@ -130,29 +132,26 @@ public class EventsMatchMaker
 			// First sort the registered players
 			int[][] sorted = new int[_registeredPlayers.size()][2];
 			int i = 0;
-			for (L2PcInstance player: _registeredPlayers.values())
+			for (L2PcInstance player : _registeredPlayers.values())
 			{
-				if (player == null ||
-						(OlympiadManager.getInstance().isRegisteredInComp(player)
-						|| player.isInOlympiadMode() || player.isOlympiadStart()
-						|| player.isFlyingMounted() || player.inObserverMode()))
+				if ((player == null) || (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode()))
 					continue;
 				
 				int objId = player.getObjectId();
 				int strPoints = player.getStrenghtPoints(false);
 				// Find the index of where the current player should be put
 				int j = 0;
-				while (j < i && strPoints < sorted[j][1])
+				while ((j < i) && (strPoints < sorted[j][1]))
 					j++;
 				// Move the rest
 				for (int k = i; k > j; k--)
 				{
 					int temp1 = sorted[k][0];
 					int temp2 = sorted[k][1];
-					sorted[k][0] = sorted[k-1][0];
-					sorted[k][1] = sorted[k-1][1];
-					sorted[k-1][0] = temp1;
-					sorted[k-1][1] = temp2;
+					sorted[k][0] = sorted[k - 1][0];
+					sorted[k][1] = sorted[k - 1][1];
+					sorted[k - 1][0] = temp1;
+					sorted[k - 1][1] = temp2;
 				}
 				// And put the current player in the blank space
 				sorted[j][0] = objId;
@@ -170,11 +169,9 @@ public class EventsMatchMaker
 				group = new int[_currentConfig.getLocation().getMaxPlayers()];
 				int points = sorted[i][1];
 				int j = 0;
-				while (i + j < sorted.length && (j < _currentConfig.getMinPlayers()
-						|| (j < _currentConfig.getLocation().getMaxPlayers()
-						&& (points - sorted[i+j][1] < 15000 || _currentConfig.hasNoLevelLimits()))))
+				while (((i + j) < sorted.length) && ((j < _currentConfig.getMinPlayers()) || ((j < _currentConfig.getLocation().getMaxPlayers()) && (((points - sorted[i + j][1]) < 15000) || _currentConfig.hasNoLevelLimits()))))
 				{
-					group[j] = sorted[i+j][0];
+					group[j] = sorted[i + j][0];
 					j++;
 				}
 				
@@ -188,7 +185,7 @@ public class EventsMatchMaker
 					break;
 				}
 				
-				if ((100 * j) / minPlayers > bestFillProgress)
+				if (((100 * j) / minPlayers) > bestFillProgress)
 					bestFillProgress = (100 * j) / minPlayers;
 				
 				group = null;
@@ -231,14 +228,14 @@ public class EventsMatchMaker
 				Announcements.getInstance().announceToAll("The " + type + " event couldn't start after almost an hour waiting, shuffling configuration.");
 				Announcements.getInstance().announceToAll("The new " + type + " event will be a " + _currentConfig.getEventString() + ". Type .event to join.");
 			}
-				
+			
 			return false;
 		}
 	}
 	
 	public void onLogin(L2PcInstance playerInstance)
 	{
-		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
+		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			removeParticipant(playerInstance.getObjectId());
 			if (playerInstance.getEvent() != null)
@@ -256,7 +253,7 @@ public class EventsMatchMaker
 	
 	public void onLogout(L2PcInstance playerInstance)
 	{
-		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
+		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			if (playerInstance.getEvent() != null)
 			{
@@ -314,7 +311,7 @@ public class EventsMatchMaker
 		// Check for nullpoitner
 		if (playerInstance == null)
 			return false;
-
+		
 		if (pvp)
 			_pvpTask.getRegisteredPlayers().put(playerInstance.getObjectId(), playerInstance);
 		else
@@ -329,7 +326,7 @@ public class EventsMatchMaker
 			return;
 		
 		//LasTravel: If the event is started the player shouldn't be allowed to leave
-		if (playerInstance.getEvent() != null && playerInstance.getEvent().isState(EventState.STARTED))
+		if ((playerInstance.getEvent() != null) && playerInstance.getEvent().isState(EventState.STARTED))
 			return;
 		
 		if (removeParticipant(playerInstance.getObjectId()))
@@ -338,8 +335,7 @@ public class EventsMatchMaker
 	
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if (_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null
-				|| _specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
+		if ((_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null) || (_specialTask.getRegisteredPlayers().remove(playerObjectId) != null))
 			return true;
 		
 		EventInstance event = getParticipantEvent(playerObjectId);
@@ -352,13 +348,13 @@ public class EventsMatchMaker
 	public String getEventInfoPage(L2PcInstance player)
 	{
 		if (!player.getFloodProtectors().getEventBypass().tryPerformAction("Event Info"))
-		{	
+		{
 			return "";
 		}
 		
 		String a = null;
 		
-		if (player.getEvent() != null && player.getEvent().isState(EventState.STARTED))
+		if ((player.getEvent() != null) && player.getEvent().isState(EventState.STARTED))
 		{
 			a = HtmCache.getInstance().getHtm(null, "CommunityBoard/runningEvent.htm");
 			
@@ -386,7 +382,7 @@ public class EventsMatchMaker
 		else
 		{
 			a = a.replace("%pvpEventPlayers%", getPvPEventRegistredPlayers(player));
-		}	
+		}
 		
 		//Special Event
 		a = a.replace("%specialStartProgress%", getInstance().getSpecialTask().getFillProgress() + "%");
@@ -403,7 +399,7 @@ public class EventsMatchMaker
 		else
 		{
 			a = a.replace("%specialEventPlayers%", getSpecialEventRegistredPlayers(player));
-		}	
+		}
 		
 		//Both events
 		if (isPlayerParticipant(player.getObjectId()))
@@ -415,7 +411,7 @@ public class EventsMatchMaker
 		else
 		{
 			a = a.replace("%leaveButton%", "");
-			if (player.getLevel() < 99 || player.getOnlineTime() < 5 * 3600)
+			if ((player.getLevel() < 99) || (player.getOnlineTime() < (5 * 3600)))
 				a = a.replace("%pvpEventJoinButton%", "<font color=FF0000>You can't join a PvP event until you get stronger!</font>");
 			else
 				a = a.replace("%pvpEventJoinButton%", "<button value=\"Join Match making (PvP)\" action=\"bypass -h TenkaiEventJoin true\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
@@ -437,33 +433,33 @@ public class EventsMatchMaker
 			int e = 1;
 			
 			String c = "";
-				
+			
 			for (EventInstance event : Instances.values())
 			{
 				if (event.isState(EventState.STARTED))
 				{
 					if (d == 1)
 					{
-						c+= "<tr>";
+						c += "<tr>";
 					}
-							
-					c+= "<td><button value=\""+event.getType().toString() + " #" + e +"\" action=\"bypass -h TenkaiEventObserve " + event.getId() + "\" width=90 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
-							
+					
+					c += "<td><button value=\"" + event.getType().toString() + " #" + e + "\" action=\"bypass -h TenkaiEventObserve " + event.getId() + "\" width=90 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
+					
 					d++;
 					
 					b--;
 					
 					e++;
 					
-					if (d == 6 || b == 0)
-					{	
+					if ((d == 6) || (b == 0))
+					{
 						d = 1;
 						
-						c+= "</tr>";
-					}	
+						c += "</tr>";
+					}
 				}
 			}
-
+			
 			a = a.replace("%observeEvents%", c);
 			a += "<br><br><br><br>";
 		}
@@ -475,7 +471,7 @@ public class EventsMatchMaker
 	{
 		String a = "";
 		
-		if(_pvpTask.getRegisteredPlayers().isEmpty())
+		if (_pvpTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
@@ -501,7 +497,7 @@ public class EventsMatchMaker
 	{
 		String a = "";
 		
-		if(_specialTask.getRegisteredPlayers().isEmpty())
+		if (_specialTask.getRegisteredPlayers().isEmpty())
 		{
 			return a;
 		}
@@ -530,13 +526,13 @@ public class EventsMatchMaker
 			color = "FFFF00";
 		else if (player.getFriendList().contains(reader.getObjectId()))
 			color = "00FFFF";
-		else if (reader.getParty() != null && reader.getParty() == player.getParty())
+		else if ((reader.getParty() != null) && (reader.getParty() == player.getParty()))
 			color = "00FF00";
 		else if (reader.getClan() != null)
 		{
-			if (reader.getClanId() > 0 && reader.getClanId() == player.getClanId())
+			if ((reader.getClanId() > 0) && (reader.getClanId() == player.getClanId()))
 				color = "8888FF";
-			else if (reader.getAllyId() > 0 && reader.getAllyId() == player.getAllyId())
+			else if ((reader.getAllyId() > 0) && (reader.getAllyId() == player.getAllyId()))
 				color = "88FF88";
 			else if (reader.getClan().isAtWarWith(player.getClanId()))
 				color = "CC0000";
@@ -590,8 +586,7 @@ public class EventsMatchMaker
 	
 	public boolean isPlayerParticipant(int playerObjectId)
 	{
-		if (_pvpTask.getRegisteredPlayers().containsKey(playerObjectId)
-				|| _specialTask.getRegisteredPlayers().containsKey(playerObjectId))
+		if (_pvpTask.getRegisteredPlayers().containsKey(playerObjectId) || _specialTask.getRegisteredPlayers().containsKey(playerObjectId))
 			return true;
 		
 		for (EventInstance event : Instances.values())
@@ -656,18 +651,16 @@ public class EventsMatchMaker
 			if (registered == null)
 				continue;
 			
-			if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP())
-					&& player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
+			if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP()) && player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
 				return true;
 		}
-
+		
 		for (L2PcInstance registered : _specialTask.getRegisteredPlayers().values())
 		{
 			if (registered == null)
 				continue;
 			
-			if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP())
-					&& player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
+			if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP()) && player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
 				return true;
 		}
 		
@@ -684,7 +677,7 @@ public class EventsMatchMaker
 		}
 		return false;*/
 	}
-
+	
 	/**
 	 * @param activeChar
 	 * @param _command
@@ -711,7 +704,7 @@ public class EventsMatchMaker
 			if (Instances.get(eventId) != null)
 			{
 				Instances.get(eventId).observe(activeChar);
-			}	
+			}
 		}
 		
 		/*else if (_command.startsWith("TenkaiEventParticipation"))

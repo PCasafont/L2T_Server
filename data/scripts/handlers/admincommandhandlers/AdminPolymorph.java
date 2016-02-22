@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -26,7 +27,6 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-
 /**
  * This class handles following admin commands: polymorph
  *
@@ -34,18 +34,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminPolymorph implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_polymorph",
-		"admin_unpolymorph",
-		"admin_polymorph_menu",
-		"admin_unpolymorph_menu",
-		"admin_transform",
-		"admin_untransform",
-		"admin_transform_menu",
-		"admin_untransform_menu",
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_polymorph", "admin_unpolymorph", "admin_polymorph_menu", "admin_unpolymorph_menu", "admin_transform", "admin_untransform", "admin_transform_menu", "admin_untransform_menu", };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (activeChar.isMounted())
@@ -134,6 +125,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

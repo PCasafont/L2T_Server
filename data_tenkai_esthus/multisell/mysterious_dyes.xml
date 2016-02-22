@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23825" count="1"/> <!-- Mysterious Human Dye - Aim, Mental, Unbind, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23826" count="1"/> <!-- Mysterious Elf Dye - Blessing of Water, Delicacy, Prevision, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23827" count="1"/> <!-- Mysterious Dark Elf Dye - Sharpness, Blessing of Wind, Disparition, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23828" count="1"/> <!-- Mysterious Orc Dye - Blessing of Fire, Energetic, Savage, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23829" count="1"/> <!-- Mysterious Dwarf Dye - Dexterity, Blessing of Earth, Endurance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23830" count="1"/> <!-- Mysterious Kamael Dye - Battle Instinct, Dark Silence, Soul Protection, 7-day -->
+	</item>
+	<item>
+		<ingredient count="400000" id="57" /> <!-- Adena -->
+		<production id="23845" count="1"/> <!-- Mysterious Hunt Dye - P. Def., Speed, 1-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23901" count="1"/> <!-- Mysterious Dark Resistance Dye - Dark Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23902" count="1"/> <!-- Mysterious Holy Resistance Dye - Holy Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23903" count="1"/> <!-- Mysterious Fire Resistance Dye - Fire Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23904" count="1"/> <!-- Mysterious Water Resistance Dye - Water Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23905" count="1"/> <!-- Mysterious Wind Resistance Dye - Wind Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23906" count="1"/> <!-- Mysterious Earth Resistance Dye - Earth Resistance, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23907" count="1"/> <!-- Mysterious Abnormal State Resistance Dye - Abnormal State/ Buff Cancellation Resistance, Abnormal State Reflect, 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23909" count="1"/> <!-- Mysterious World Boss Defense Dye - P. Def., M. Def., 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23910" count="1"/> <!-- Mysterious Antharas Defense Dye - P. Def., M. Def., 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23911" count="1"/> <!-- Mysterious Valakas Defense Dye - P. Def., M. Def., 7-day -->
+	</item>
+	<item>
+		<ingredient count="1200000" id="57" /> <!-- Adena -->
+		<production id="23912" count="1"/> <!-- Mysterious Lindvior Defense Dye - P. Def., M. Def., 7-day -->
+	</item>
+</list>

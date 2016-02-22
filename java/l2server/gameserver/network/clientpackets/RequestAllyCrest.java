@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.network.serverpackets.AllyCrest;
@@ -23,9 +24,9 @@ import l2server.gameserver.network.serverpackets.AllyCrest;
  */
 public final class RequestAllyCrest extends L2GameClientPacket
 {
-	private static final String _C__88_REQUESTALLYCREST = "[C] 88 RequestAllyCrest";
 	
 	private int _crestId;
+	
 	/**
 	 * packet type id 0x88 format: cd
 	 *
@@ -41,15 +42,6 @@ public final class RequestAllyCrest extends L2GameClientPacket
 	protected void runImpl()
 	{
 		sendPacket(new AllyCrest(_crestId));
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__88_REQUESTALLYCREST;
 	}
 	
 	@Override

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -34,6 +35,9 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	private int _locationSlot;
 	private int _enchant;
 	private int _grade;
+	private boolean _isSoulEnhanced;
+	private int[] _ensoulEffectIds;
+	private int[] _ensoulSpecialEffectIds;
 	private boolean _isAugmented;
 	private long _augmentationId;
 	private int _customType1;
@@ -42,10 +46,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	
 	private byte _elemAtkType = -2;
 	private int _elemAtkPower = 0;
-	private int[] _elemDefAttr =
-	{
-			0, 0, 0, 0, 0, 0
-	};
+	private int[] _elemDefAttr = { 0, 0, 0, 0, 0, 0 };
 	private boolean _elemEnchanted = false;
 	private int _time;
 	
@@ -62,6 +63,9 @@ public class L2WarehouseItem implements ItemInstanceInfo
 		_customType1 = item.getCustomType1();
 		_customType2 = item.getCustomType2();
 		_grade = item.getItem().getItemGrade();
+		_isSoulEnhanced = item.isSoulEnhanced();
+		_ensoulEffectIds = item.getEnsoulEffectIds();
+		_ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
 		if (item.isAugmented())
 		{
 			_isAugmented = true;
@@ -88,6 +92,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * Returns the item.
 	 * @return L2Item
 	 */
+	@Override
 	public L2Item getItem()
 	{
 		return _item;
@@ -97,6 +102,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * Returns the unique objectId
 	 * @return int
 	 */
+	@Override
 	public final int getObjectId()
 	{
 		return _object;
@@ -115,6 +121,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * Returns the LocationSlot
 	 * @return int
 	 */
+	@Override
 	public final int getLocationSlot()
 	{
 		return _locationSlot;
@@ -124,6 +131,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * Returns the count
 	 * @return int
 	 */
+	@Override
 	public final long getCount()
 	{
 		return _count;
@@ -178,6 +186,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * Returns the enchant level
 	 * @return int
 	 */
+	@Override
 	public final int getEnchantLevel()
 	{
 		return _enchant;
@@ -228,11 +237,31 @@ public class L2WarehouseItem implements ItemInstanceInfo
 		return _item.getName();
 	}
 	
+	@Override
+	public boolean isSoulEnhanced()
+	{
+		return _isSoulEnhanced;
+	}
+	
+	@Override
+	public int[] getEnsoulEffectIds()
+	{
+		return _ensoulEffectIds;
+	}
+	
+	@Override
+	public int[] getEnsoulSpecialEffectIds()
+	{
+		return _ensoulSpecialEffectIds;
+	}
+	
+	@Override
 	public boolean isAugmented()
 	{
 		return _isAugmented;
 	}
 	
+	@Override
 	public long getAugmentationBonus()
 	{
 		return _augmentationId;
@@ -243,6 +272,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 * @return String
 	 * @deprecated beware to use getItemName() instead because getName() is final in L2Object and could not be overridden! Allover L2Object.getName() may return null!
 	 */
+	@Deprecated
 	public String getName()
 	{
 		return _item.getName();
@@ -258,35 +288,42 @@ public class L2WarehouseItem implements ItemInstanceInfo
 		return _customType2;
 	}
 	
+	@Override
 	public final int getMana()
 	{
 		return _mana;
 	}
 	
+	@Override
 	public byte getAttackElementType()
 	{
 		return _elemAtkType;
 	}
 	
+	@Override
 	public int getAttackElementPower()
 	{
 		return _elemAtkPower;
 	}
 	
+	@Override
 	public int getElementDefAttr(byte i)
 	{
 		return _elemDefAttr[i];
 	}
 	
+	@Override
 	public boolean isElementEnchanted()
 	{
 		return _elemEnchanted;
 	}
 	
+	@Override
 	public int getRemainingTime()
 	{
 		return _time;
 	}
+	
 	/**
 	 * Returns the name of the item
 	 * @return String
@@ -297,11 +334,13 @@ public class L2WarehouseItem implements ItemInstanceInfo
 		return _item.toString();
 	}
 	
+	@Override
 	public boolean isEquipped()
 	{
 		return false;
 	}
 	
+	@Override
 	public int getAppearance()
 	{
 		return _appearance;

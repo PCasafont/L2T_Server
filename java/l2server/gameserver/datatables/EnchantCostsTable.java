@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -30,11 +31,6 @@ import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.13.2.2.2.8 $ $Date: 2005/04/06 16:13:25 $
- */
 public class EnchantCostsTable
 {
 	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = 1;
@@ -97,7 +93,7 @@ public class EnchantCostsTable
 			return _immortalBook;
 		}
 	}
-		
+	
 	public static class EnchantSkillDetail
 	{
 		private final int _level;
@@ -199,6 +195,9 @@ public class EnchantCostsTable
 						int adena = enchantNode.getInt("adena");
 						int sp = 0;//enchantNode.getInt("sp");
 						
+						if (Config.isServer(Config.TENKAI_ESTHUS))
+							adena = (int) Math.sqrt(adena);
+						
 						for (String ls : levels)
 						{
 							int enchLvl = Integer.valueOf(ls);
@@ -211,16 +210,15 @@ public class EnchantCostsTable
 							{
 								int playerLvl = 85 + i;
 								// Hardcoded calculation of the enchant chances
-								rate[i] = (byte)(playerLvl - ((enchLvl - 1) % 10) * 5);
-								if (i - enchLvl < 3)
+								rate[i] = (byte) (playerLvl - (((enchLvl - 1) % 10) * 5));
+								if ((i - enchLvl) < 3)
 									rate[i] -= 30;
-
+								
 								if (rate[i] < 0)
 									rate[i] = 0;
 								else if (rate[i] > 100)
 									rate[i] = 100;
 							}
-							
 							
 							EnchantSkillDetail esd = new EnchantSkillDetail(enchLvl, adena, sp, rate, range);
 							addEnchantDetail(esd);
@@ -248,9 +246,9 @@ public class EnchantCostsTable
 	
 	public L2EnchantSkillLearn getSkillEnchantmentForSkill(L2Skill skill)
 	{
-		L2EnchantSkillLearn esl = this.getSkillEnchantmentBySkillId(skill.getId());
+		L2EnchantSkillLearn esl = getSkillEnchantmentBySkillId(skill.getId());
 		// there is enchantment for this skill and we have the required level of it
-		if (esl != null && skill.getLevelHash() >= esl.getBaseLevel())
+		if ((esl != null) && (skill.getLevelHash() >= esl.getBaseLevel()))
 		{
 			return esl;
 		}

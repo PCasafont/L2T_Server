@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor;
 
 import l2server.gameserver.ai.CtrlEvent;
@@ -59,7 +60,7 @@ public abstract class L2Playable extends L2Character
 	@Override
 	public PlayableKnownList getKnownList()
 	{
-		return (PlayableKnownList)super.getKnownList();
+		return (PlayableKnownList) super.getKnownList();
 	}
 	
 	@Override
@@ -71,7 +72,7 @@ public abstract class L2Playable extends L2Character
 	@Override
 	public PlayableStat getStat()
 	{
-		return (PlayableStat)super.getStat();
+		return (PlayableStat) super.getStat();
 	}
 	
 	@Override
@@ -83,7 +84,7 @@ public abstract class L2Playable extends L2Character
 	@Override
 	public PlayableStatus getStatus()
 	{
-		return (PlayableStatus)super.getStatus();
+		return (PlayableStatus) super.getStatus();
 	}
 	
 	@Override
@@ -132,7 +133,12 @@ public abstract class L2Playable extends L2Character
 				stopCharmOfLuck(null);
 		}
 		else
-			stopAllEffectsExceptThoseThatLastThroughDeath();
+		{
+			boolean canStopEffects = !(this instanceof L2PcInstance) || ((this instanceof L2PcInstance));
+			
+			if (canStopEffects)
+				stopAllEffectsExceptThoseThatLastThroughDeath();
+		}
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
@@ -149,7 +155,7 @@ public abstract class L2Playable extends L2Character
 				qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs);
 			}
 		}
-
+		
 		if (killer != null)
 		{
 			L2PcInstance player = killer.getActingPlayer();
@@ -165,29 +171,41 @@ public abstract class L2Playable extends L2Character
 	
 	public boolean checkIfPvP(L2Character target)
 	{
-		if (target == null) return false;											   // Target is null
-		if (target == this) return false;											   // Target is self
-		if (!(target instanceof L2Playable)) return false;					  // Target is not a L2PlayableInstance
-		
+		if (target == null)
+			return false; // Target is null
+		if (target == this)
+			return false; // Target is self
+		if (!(target instanceof L2Playable))
+			return false; // Target is not a L2PlayableInstance
+			
 		L2PcInstance player = null;
 		if (this instanceof L2PcInstance)
-			player = (L2PcInstance)this;
-		else if (this instanceof L2Summon && !(this instanceof L2MobSummonInstance))
-			player = ((L2Summon)this).getOwner();
+			player = (L2PcInstance) this;
+		else if ((this instanceof L2Summon) && !(this instanceof L2MobSummonInstance))
+			player = ((L2Summon) this).getOwner();
 		
-		if (player == null) return false;											   // Active player is null
-		if (player.getReputation() < 0) return false;									   // Active player has karma
-		
+		if (player == null)
+			return false; // Active player is null
+		if (player.getReputation() < 0)
+			return false; // Active player has karma
+			
 		L2PcInstance targetPlayer = null;
 		if (target instanceof L2PcInstance)
-			targetPlayer = (L2PcInstance)target;
+			targetPlayer = (L2PcInstance) target;
 		else if (target instanceof L2Summon)
-			targetPlayer = ((L2Summon)target).getOwner();
+			targetPlayer = ((L2Summon) target).getOwner();
 		
-		if (targetPlayer == null) return false;										 // Target player is null
-		if (targetPlayer == this) return false;										 // Target player is self
-		if (targetPlayer.getReputation() < 0) return false;								 // Target player has karma
-		if (targetPlayer.getPvpFlag() == 0) return false;
+		if (targetPlayer == null)
+			return false; // Target player is null
+		if (targetPlayer == this)
+			return false; // Target player is self
+		if (targetPlayer.getReputation() < 0)
+			return false; // Target player has karma
+		if (targetPlayer.getPvpFlag() == 0)
+			return false;
+		
+		if ((targetPlayer.getPvpFlag() == 0) && !player.isInSameClanWar(targetPlayer))
+			return false;
 		
 		return true;
 		/*  Even at war, there should be PvP flag
@@ -220,7 +238,7 @@ public abstract class L2Playable extends L2Character
 	{
 		return _effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
-
+	
 	public final void stopNoblesseBlessing(L2Abnormal effect)
 	{
 		if (effect == null)
@@ -259,7 +277,7 @@ public abstract class L2Playable extends L2Character
 	{
 		return _effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
 	}
-
+	
 	/**
 	 * @param blessing
 	 */

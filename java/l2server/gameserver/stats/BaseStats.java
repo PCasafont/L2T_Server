@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.io.File;
@@ -23,22 +24,15 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 /**
- * 
+ *
  * @author DS
  *
  */
 public enum BaseStats
 {
-	STR(new STR()),
-	INT(new INT()),
-	DEX(new DEX()),
-	WIT(new WIT()),
-	CON(new CON()),
-	MEN(new MEN()),
-	LUC(new LUC()),
-	CHA(new CHA());
+	STR(new STR()), INT(new INT()), DEX(new DEX()), WIT(new WIT()), CON(new CON()), MEN(new MEN()), LUC(new LUC()), CHA(new CHA());
 	
-	public static final int MAX_STAT_VALUE = 200;
+	public static final int MAX_STAT_VALUE = 300;
 	
 	private static final double[] STRbonus = new double[MAX_STAT_VALUE];
 	private static final double[] INTbonus = new double[MAX_STAT_VALUE];
@@ -88,6 +82,7 @@ public enum BaseStats
 	
 	private static final class STR implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return STRbonus[actor.getSTR() - 1];
@@ -96,6 +91,7 @@ public enum BaseStats
 	
 	private static final class INT implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return INTbonus[actor.getINT() - 1];
@@ -104,6 +100,7 @@ public enum BaseStats
 	
 	private static final class DEX implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return DEXbonus[actor.getDEX() - 1];
@@ -112,6 +109,7 @@ public enum BaseStats
 	
 	private static final class WIT implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return WITbonus[actor.getWIT() - 1];
@@ -120,6 +118,7 @@ public enum BaseStats
 	
 	private static final class CON implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return CONbonus[actor.getCON() - 1];
@@ -128,6 +127,7 @@ public enum BaseStats
 	
 	private static final class MEN implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return MENbonus[actor.getMEN() - 1];
@@ -136,6 +136,7 @@ public enum BaseStats
 	
 	private static final class LUC implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return LUCbonus[actor.getLUC() - 1];
@@ -144,6 +145,7 @@ public enum BaseStats
 	
 	private static final class CHA implements BaseStat
 	{
+		@Override
 		public final double calcBonus(L2Character actor)
 		{
 			return CHAbonus[actor.getCHA() - 1];
@@ -158,7 +160,7 @@ public enum BaseStats
 		{
 			if (!n.getName().equalsIgnoreCase("stat"))
 				continue;
-
+			
 			for (XmlNode bonusNode : n.getChildren())
 			{
 				if (!bonusNode.getName().equalsIgnoreCase("bonus"))

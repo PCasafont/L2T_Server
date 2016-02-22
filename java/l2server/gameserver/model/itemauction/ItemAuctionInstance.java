@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.itemauction;
 
 import gnu.trove.TIntObjectHashMap;
@@ -37,8 +38,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.instancemanager.ItemAuctionManager;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -252,7 +253,8 @@ public final class ItemAuctionInstance
 			
 			default:
 			{
-				Arrays.sort(auctions, new Comparator<ItemAuction>() {
+				Arrays.sort(auctions, new Comparator<ItemAuction>()
+				{
 					@Override
 					public final int compare(final ItemAuction o1, final ItemAuction o2)
 					{
@@ -263,9 +265,8 @@ public final class ItemAuctionInstance
 				// just to make sure we won`t skip any auction because of little different times
 				final long currentTime = System.currentTimeMillis();
 				
-				for (int i = 0; i < auctions.length; i++)
+				for (final ItemAuction auction : auctions)
 				{
-					final ItemAuction auction = auctions[i];
 					if (auction.getAuctionState() == ItemAuctionState.STARTED)
 					{
 						currentAuction = auction;
@@ -278,10 +279,9 @@ public final class ItemAuctionInstance
 					}
 				}
 				
-				for (int i = 0; i < auctions.length; i++)
+				for (final ItemAuction auction : auctions)
 				{
-					final ItemAuction auction = auctions[i];
-					if (auction.getStartingTime() > currentTime && currentAuction != auction)
+					if ((auction.getStartingTime() > currentTime) && (currentAuction != auction))
 					{
 						nextAuction = auction;
 						break;
@@ -299,7 +299,7 @@ public final class ItemAuctionInstance
 		_currentAuction = currentAuction;
 		_nextAuction = nextAuction;
 		
-		if (currentAuction != null && currentAuction.getAuctionState() != ItemAuctionState.FINISHED)
+		if ((currentAuction != null) && (currentAuction.getAuctionState() != ItemAuctionState.FINISHED))
 		{
 			if (currentAuction.getAuctionState() == ItemAuctionState.STARTED)
 				setStateTask(ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleAuctionTask(currentAuction), Math.max(currentAuction.getEndingTime() - System.currentTimeMillis(), 0L)));
@@ -327,7 +327,7 @@ public final class ItemAuctionInstance
 		{
 			if (auction.getAuctionState() != ItemAuctionState.CREATED)
 			{
-				final ItemAuctionBid bid = auction.getBidfor (bidderObjId);
+				final ItemAuctionBid bid = auction.getBidfor(bidderObjId);
 				if (bid != null)
 					stack.add(auction);
 			}
@@ -542,8 +542,7 @@ public final class ItemAuctionInstance
 				return null;
 			}
 			
-			if (auctionState == ItemAuctionState.FINISHED
-					&& startingTime < System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
+			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))))
 			{
 				Log.info("ItemAuctionInstance: Clearing expired auction: " + auctionId);
 				statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");

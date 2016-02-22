@@ -1,7 +1,7 @@
 <list>
-	<npc id="18001" name="Blood Queen" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4320" sp="375" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" canSeeThroughSilentMove="true" collisionRadius="14.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" clan="cave_servant_clan" clanRange="300">
+	<npc id="18001" name="Blood Queen" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4320" sp="375" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" canSeeThroughSilentMove="true" collisionRadius="14.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -23,9 +23,9 @@
 		<itemDrop itemId="912" min="1" max="1" chance="0.1972" /> <!-- Near Forest Necklace -->
 		<itemDrop itemId="1390" min="1" max="1" chance="3.4178" /> <!-- Spellbook: Regeneration -->
 	</npc>
-	<npc id="18002" name="Blood Queen" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4320" sp="375" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" canSeeThroughSilentMove="true" collisionRadius="14.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" clan="cave_servant_clan" clanRange="300">
+	<npc id="18002" name="Blood Queen" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4320" sp="375" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" canSeeThroughSilentMove="true" collisionRadius="14.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -46,9 +46,9 @@
 		<itemDrop itemId="912" min="1" max="1" chance="0.1972" /> <!-- Near Forest Necklace -->
 		<itemDrop itemId="1390" min="1" max="1" chance="3.4178" /> <!-- Spellbook: Regeneration -->
 	</npc>
-	<npc id="18003" name="Nepetir" level="1" type="L2Monster" baseAtkRange="40" baseHpMax="39.745193" baseHpReg="2.0" baseMpMax="40.0" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="29" sp="2" basePAtk="4.0" baseMAtk="5.787037" basePDef="44.444443" baseMDef="32.522514" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="23.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="9.5" collisionHeight="10.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="18003" name="Nepetir" level="1" type="L2Monster" baseAtkRange="40" baseHpMax="39.745193" baseHpReg="2.0" baseMpMax="40.0" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="29" sp="2" basePAtk="4.0" baseMAtk="5.787037" basePDef="44.444443" baseMDef="32.522514" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="23.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="9.5" collisionHeight="10.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -65,9 +65,9 @@
 		<itemDrop itemId="1868" min="1" max="1" chance="0.9797" /> <!-- Corroded Thread -->
 		<itemDrop itemId="1095" min="1" max="1" chance="1.045" /> <!-- Spellbook: Attack Aura -->
 	</npc>
-	<npc id="18004" name="Susceptor Prime" level="49" type="L2Monster" baseAtkRange="50" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="240" sp="1" basePAtk="290.4459" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="78.0" baseRunSpd="170.0" aggroRange="300" collisionRadius="45.0" collisionHeight="72.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="18004" name="Susceptor Prime" level="49" type="L2Monster" baseAtkRange="50" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="240" sp="1" basePAtk="290.4459" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="78.0" baseRunSpd="170.0" aggroRange="300" collisionRadius="45.0" collisionHeight="72.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

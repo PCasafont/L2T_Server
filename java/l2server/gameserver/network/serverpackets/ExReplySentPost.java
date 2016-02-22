@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -34,10 +35,10 @@ public class ExReplySentPost extends L2ItemListPacket
 		if (msg.hasAttachments())
 		{
 			final ItemContainer attachments = msg.getAttachments();
-			if (attachments != null && attachments.getSize() > 0)
+			if ((attachments != null) && (attachments.getSize() > 0))
 				_items = attachments.getItems();
 			else
-				Log.warning("Message "+msg.getId()+" has attachments but itemcontainer is empty ("+msg.getSenderName()+ " > " + msg.getReceiverName()+").");
+				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " + msg.getReceiverName() + ").");
 		}
 	}
 	
@@ -45,10 +46,8 @@ public class ExReplySentPost extends L2ItemListPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0xae);
 		writeD(_msg.getSendBySystem());
 		writeD(_msg.getId());
 		writeD(_msg.isLocked() ? 1 : 0);
@@ -56,7 +55,7 @@ public class ExReplySentPost extends L2ItemListPacket
 		writeS(_msg.getSubject());
 		writeS(_msg.getContent());
 		
-		if (_items != null && _items.length > 0)
+		if ((_items != null) && (_items.length > 0))
 		{
 			writeD(_items.length);
 			for (L2ItemInstance item : _items)
@@ -71,14 +70,5 @@ public class ExReplySentPost extends L2ItemListPacket
 		
 		_items = null;
 		_msg = null;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "[S] FE:AD ExReplySentPost";
 	}
 }

@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import java.util.logging.Level;
@@ -27,7 +28,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 
-
 /**
  * @authors BiTi, Sami
  *
@@ -35,15 +35,13 @@ import l2server.gameserver.util.Util;
 public class SummonFriend implements ISkillHandler
 {
 	//private static Logger _log = Logger.getLogger(SummonFriend.class.getName());
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.SUMMON_FRIEND
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.SUMMON_FRIEND };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (!(activeChar instanceof L2PcInstance))
@@ -55,7 +53,7 @@ public class SummonFriend implements ISkillHandler
 		
 		try
 		{
-			for (L2Character target: (L2Character[]) targets)
+			for (L2Character target : (L2Character[]) targets)
 			{
 				if (activeChar == target)
 					continue;
@@ -102,9 +100,10 @@ public class SummonFriend implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

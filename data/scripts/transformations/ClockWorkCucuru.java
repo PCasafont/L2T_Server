@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class ClockWorkCucuru extends L2Transformation
 {
-	private static final int[] SKILLS = {5491,839};
+	private static final int[] SKILLS = { 5491, 839 };
 	
 	public ClockWorkCucuru()
 	{
@@ -17,7 +18,7 @@ public class ClockWorkCucuru extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 137 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 137) || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 		getPlayer().setMount(13330, getPlayer().getLevel(), 4);

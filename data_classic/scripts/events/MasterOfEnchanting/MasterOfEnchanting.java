@@ -178,7 +178,7 @@ public class MasterOfEnchanting extends Quest
 			{
 				st.takeItems(_adena, _scroll_1_price);
 				st.giveItems(_master_yogi_scroll, 1);
-				htmltext = "32599-scroll-ok.htm";				
+				htmltext = "32599-scroll-ok.htm";
 			}
 			else
 				htmltext = "32599-s1-no.htm";
@@ -189,7 +189,7 @@ public class MasterOfEnchanting extends Quest
 			{
 				st.takeItems(_adena, _scroll_10_price);
 				st.giveItems(_master_yogi_scroll, 10);
-				htmltext = "32599-scroll-ok.htm";				
+				htmltext = "32599-scroll-ok.htm";
 			}
 			else
 				htmltext = "32599-s10-no.htm";
@@ -252,7 +252,7 @@ public class MasterOfEnchanting extends Quest
 					case 19:
 						st.giveItems(13990, 1);	// Grade S Weapon Chest (Event)
 						break;
-					case 20:						
+					case 20:
 						st.giveItems(_crystal_reward[Rnd.get(3)], 1);	// Red/Blue/Green Soul Crystal - Stage 14
 						break;
 					case 21:

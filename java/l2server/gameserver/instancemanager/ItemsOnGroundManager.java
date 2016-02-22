@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -108,7 +109,7 @@ public class ItemsOnGroundManager
 			{
 				item = new L2ItemInstance(result.getInt(1), result.getInt(2));
 				L2World.getInstance().storeObject(item);
-				if (item.isStackable() && result.getInt(3) > 1) //this check and..
+				if (item.isStackable() && (result.getInt(3) > 1)) //this check and..
 					item.setCount(result.getInt(3));
 				if (result.getInt(4) > 0) // this, are really necessary?
 					item.setEnchantLevel(result.getInt(4));
@@ -126,8 +127,7 @@ public class ItemsOnGroundManager
 				{
 					if (result.getLong(8) > -1)
 					{
-						if ((Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item.getItemType() != L2EtcItemType.HERB)
-								|| (Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item.getItemType() == L2EtcItemType.HERB))
+						if ((((Config.AUTODESTROY_ITEM_AFTER * 1000) > 0) && (item.getItemType() != L2EtcItemType.HERB)) || (((Config.HERB_AUTO_DESTROY_TIME * 1000) > 0) && (item.getItemType() == L2EtcItemType.HERB)))
 							ItemsAutoDestroy.getInstance().addItem(item);
 					}
 				}
@@ -160,7 +160,7 @@ public class ItemsOnGroundManager
 	
 	public void removeObject(L2ItemInstance item)
 	{
-		if (Config.SAVE_DROPPED_ITEM && _items != null)
+		if (Config.SAVE_DROPPED_ITEM && (_items != null))
 		{
 			_items.remove(item);
 		}
@@ -228,7 +228,7 @@ public class ItemsOnGroundManager
 					
 					if (CursedWeaponsManager.getInstance().isCursed(item.getItemId()))
 						continue; // Cursed Items not saved to ground, prevent double save
-					
+						
 					try
 					{
 						statement.setInt(1, item.getObjectId());

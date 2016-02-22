@@ -22,7 +22,7 @@
 	</skill>
 	<!-- Causes a scar that decreases HP. Effect 5. -->
 	<skill id="3005" levels="1" name="Bleed">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="40" />
@@ -41,7 +41,14 @@
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Increases Accuracy. -->
+	<!-- 
+		Level 1: Increases Accuracy.
+		Level 2: Increases Accuracy by 6.07.
+		Level 3: Increases Accuracy by 5.72.
+		Level 4: Increases Accuracy by 5.37.
+		Level 5: Increases Accuracy by 5.02.
+		Level 6: Increases Accuracy by 4.68.
+	-->
 	<skill id="3007" levels="6" name="Special Ability: Guidance">
 		<table name="#accCombat"> 6.88 6.07 5.72 5.37 5.02 4.68 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -53,7 +60,14 @@
 			<add stat="accCombat" val="#accCombat" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy. -->
+	<!-- 
+		Level 1: Increases Accuracy by 5.42.
+		Level 2: Increases Accuracy by 5.12.
+		Level 3: Increases Accuracy by 4.82.
+		Level 4: Increases Accuracy by 4.53.
+		Level 5: Increases Accuracy by 4.24.
+		Level 6: Increases Accuracy by 3.95.
+	-->
 	<skill id="3008" levels="6" name="Special Ability: Guidance">
 		<table name="#accCombat"> 5.42 5.12 4.82 4.53 4.24 3.95 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -65,8 +79,18 @@
 			<add stat="accCombat" val="#accCombat" />
 		</for>
 	</skill>
-	<!-- Increases Evasion. -->
-	<skill id="3009" levels="8" name="Special Ability: Evasion">
+	<!-- 
+		Level 1: Increases Evasion by 2.95.
+		Level 2: Increases Evasion by 2.82.
+		Level 3: Increases Evasion by 2.68.
+		Level 4: Increases Evasion by 2.55.
+		Level 5: Increases Evasion by 2.41.
+		Level 6: Increases Evasion by 2.28.
+		Level 7: Increases Evasion by 7.5.
+		Level 8: Increases Evasion by 5.31.
+		Level 9: Evasion + 5.31, PvP Damage + 5%
+	-->
+	<skill id="3009" levels="9" name="Special Ability: Evasion">
 		<table name="#rEvas"> 2.95 2.82 2.68 2.55 2.41 2.28 7.5 5.31 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 80 80 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -77,7 +101,14 @@
 			<add stat="rEvas" val="#rEvas" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 86.7.
+		Level 2: Increases Critical Rate by 82.2.
+		Level 3: Increases Critical Rate by 77.8.
+		Level 4: Increases Critical Rate by 73.3.
+		Level 5: Increases Critical Rate by 68.9.
+		Level 6: Increases Critical Rate by 64.5.
+	-->
 	<skill id="3010" levels="6" name="Special Ability: Focus">
 		<table name="#rCrit"> 86.7 82.2 77.8 73.3 68.9 64.5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -89,7 +120,14 @@
 			<add stat="rCrit" val="#rCrit" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 90.5.
+		Level 2: Increases Critical Rate by 85.9.
+		Level 3: Increases Critical Rate by 81.2.
+		Level 4: Increases Critical Rate by 76.6.
+		Level 5: Increases Critical Rate by 71.9.
+		Level 6: Increases Critical Rate by 67.3.
+	-->
 	<skill id="3011" levels="6" name="Special Ability: Focus">
 		<table name="#rCrit"> 90.5 85.9 81.2 76.6 71.9 67.3 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -115,9 +153,9 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases Max HP.
+		Level 1: Increases Max HP by 25%.
 		Level 2: Increases Max HP. Enables the character to attack multiple opponents.
-		Level 3: Increases Max HP. Inflicts additional damage during PvP.
+		Level 3: Increases Max HP. Inflicts additional damage during PvP by 5%.
 		Level 4: Increases Max HP. Enables the character to attack multiple opponents. Inflicts additional damage during PvP.
 		Level 5: Increases Max HP. Inflicts additional damage during PvP.
 	-->
@@ -138,7 +176,7 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases Max MP.
+		Level 1: Increases Max MP by 30%.
 		Level 2: Increases Max MP. Inflicts additional damage during PvP.
 	-->
 	<skill id="3014" levels="3" name="Special Ability: Mana Up">
@@ -158,7 +196,7 @@
 	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="3016" levels="6" name="Special Ability: Critical Stun">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -171,7 +209,14 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Critical Rate when attacking a target from behind. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 71% when attacking a target from behind.
+		Level 2: Increases Critical Rate by 67% when attacking a target from behind.
+		Level 3: Increases Critical Rate by 63% when attacking a target from behind.
+		Level 4: Increases Critical Rate by 60% when attacking a target from behind.
+		Level 5: Increases Critical Rate by 56% when attacking a target from behind.
+		Level 6: Increases Critical Rate by 53% when attacking a target from behind.
+	-->
 	<skill id="3018" levels="6" name="Special Ability: Back Blow">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#rCrit"> 71 67 63 60 56 53 </table>
@@ -185,7 +230,14 @@
 			</addPercentBase>
 		</for>
 	</skill>
-	<!-- Increases Critical Rate when attacking a target from behind. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 50% when attacking a target from behind.
+		Level 2: Increases Critical Rate by 47% when attacking a target from behind.
+		Level 3: Increases Critical Rate by 45% when attacking a target from behind.
+		Level 4: Increases Critical Rate by 42% when attacking a target from behind.
+		Level 5: Increases Critical Rate by 40% when attacking a target from behind.
+		Level 6: Increases Critical Rate by 37% when attacking a target from behind.
+	-->
 	<skill id="3019" levels="6" name="Special Ability: Back Blow">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#rCrit"> 50 47 45 42 40 37 </table>
@@ -208,7 +260,7 @@
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#abnormalLvl"> 5 5 6 6 6 7 </table>
 		<table name="#dot"> 384 384 570 570 570 768 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -229,7 +281,7 @@
 	<skill id="3021" levels="6" name="Special Ability: Critical Bleed">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#dot"> 129 129 192 192 195 264 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -246,7 +298,7 @@
 		<table name="#power"> 9.26 9.33 9.31 9.19 8.97 8.65 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#absorbPart"> 21 23 25 28 31 35 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -279,7 +331,7 @@
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#abnormalLvl"> 5 5 6 6 6 7 </table>
 		<table name="#dot"> 573 573 873 873 873 1209 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -317,7 +369,15 @@
 			<add stat="pCritDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate when in danger. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 138.7 when in danger.
+		Level 2: Increases Critical Rate by 130.9 when in danger.
+		Level 3: Increases Critical Rate by 123.1 when in danger.
+		Level 4: Increases Critical Rate by 115.4 when in danger.
+		Level 5: Increases Critical Rate by 107.7 when in danger.
+		Level 6: Increases Critical Rate by 99.9 when in danger.
+		Level 7: Increases Critical Rate by 164 when in danger. Inflicts additional damage by 5% during PvP.
+	-->
 	<skill id="3027" levels="7" name="Special Ability: Rsk. Focus">
 		<table name="#pvpBonus"> 0 0 0 0 0 0 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 80 </table>
@@ -335,7 +395,14 @@
 			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
 		</for>
 	</skill>
-	<!-- Increases Evasion when in danger. -->
+	<!-- 
+		Level 1: Increases Evasion by 7.63 when in danger.
+		Level 2: Increases Evasion by 7.29 when in danger.
+		Level 3: Increases Evasion by 6.95 when in danger.
+		Level 4: Increases Evasion by 6.6 when in danger.
+		Level 5: Increases Evasion by 6.24 when in danger.
+		Level 6: Increases Evasion by 5.87 when in danger.
+	-->
 	<skill id="3028" levels="6" name="Special Ability: Rsk. Evasion">
 		<table name="#rEvas"> 7.63 7.29 6.95 6.6 6.24 5.87 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -349,7 +416,14 @@
 			</add>
 		</for>
 	</skill>
-	<!-- Increases Evasion when in danger. -->
+	<!-- 
+		Level 1: Increases Evasion by 4.44 when in danger.
+		Level 2: Increases Evasion by 4.24 when in danger.
+		Level 3: Increases Evasion by 4.04 when in danger.
+		Level 4: Increases Evasion by 3.84 when in danger.
+		Level 5: Increases Evasion by 3.63 when in danger.
+		Level 6: Increases Evasion by 3.41 when in danger.
+	-->
 	<skill id="3029" levels="6" name="Special Ability: Rsk. Evasion">
 		<table name="#rEvas"> 4.44 4.24 4.04 3.84 3.63 3.41 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -363,7 +437,14 @@
 			</add>
 		</for>
 	</skill>
-	<!-- Increases Evasion when in danger. -->
+	<!-- 
+		Level 1: Increases Evasion by 7.63 when in danger.
+		Level 2: Increases Evasion by 7.29 when in danger.
+		Level 3: Increases Evasion by 6.95 when in danger.
+		Level 4: Increases Evasion by 6.6 when in danger.
+		Level 5: Increases Evasion by 6.24 when in danger.
+		Level 6: Increases Evasion by 5.87 when in danger.
+	-->
 	<skill id="3030" levels="6" name="Special Ability: Rsk. Evasion">
 		<table name="#rEvas"> 7.63 7.29 6.95 6.6 6.24 5.87 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -377,7 +458,14 @@
 			</add>
 		</for>
 	</skill>
-	<!-- Increases Evasion when in danger. -->
+	<!-- 
+		Level 1: Increases Evasion by 7.63 when in danger.
+		Level 2: Increases Evasion by 7.29 when in danger.
+		Level 3: Increases Evasion by 6.95 when in danger.
+		Level 4: Increases Evasion by 6.6 when in danger.
+		Level 5: Increases Evasion by 6.24 when in danger.
+		Level 6: Increases Evasion by 5.87 when in danger.
+	-->
 	<skill id="3031" levels="6" name="Special Ability: Rsk. Evasion">
 		<table name="#rEvas"> 7.63 7.29 6.95 6.6 6.24 5.87 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
@@ -405,7 +493,13 @@
 			</addPercent>
 		</for>
 	</skill>
-	<!-- Increases Atk. Spd. when in danger. -->
+	<!-- 
+		Level 1: Increases Atk. Spd. when in danger by 13%.
+		Level 2: Increases Atk. Spd. when in danger by 12%.
+		Level 4: Increases Atk. Spd. when in danger by 11%.
+		Level 5: Increases Atk. Spd. when in danger by 10%.
+		Level 6: Increases Atk. Spd. when in danger by 9%.
+	-->
 	<skill id="3033" levels="6" name="Special Ability: Rsk. Haste">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#pAtkSpd"> 13 12 12 11 10 9 </table>
@@ -419,7 +513,13 @@
 			</addPercent>
 		</for>
 	</skill>
-	<!-- Increases Atk. Spd. when in danger. -->
+	<!-- 
+		Level 1: Increases Atk. Spd. when in danger by 13%.
+		Level 2: Increases Atk. Spd. when in danger by 12%.
+		Level 4: Increases Atk. Spd. when in danger by 11%.
+		Level 5: Increases Atk. Spd. when in danger by 10%.
+		Level 6: Increases Atk. Spd. when in danger by 9%.
+	-->
 	<skill id="3034" levels="7" name="Special Ability: Rsk. Haste">
 		<table name="#pvpBonus"> 0 0 0 0 0 0 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 80 </table>
@@ -437,7 +537,14 @@
 			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
 		</for>
 	</skill>
-	<!-- Increases success rate of attacks targeting the enemy's vital parts. -->
+	<!-- 
+		Level 1: Increases success rate of attacks targeting the enemy's vital parts by 50%.
+		Level 2: Increases success rate of attacks targeting the enemy's vital parts by 48%.
+		Level 3: Increases success rate of attacks targeting the enemy's vital parts by 46%.
+		Level 4: Increases success rate of attacks targeting the enemy's vital parts by 44%.
+		Level 5: Increases success rate of attacks targeting the enemy's vital parts by 42%.
+		Level 6: Increases success rate of attacks targeting the enemy's vital parts by 40%.
+	-->
 	<skill id="3035" levels="6" name="Special Ability: Mighty Mortal">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
 		<table name="#blowRate"> 50 48 46 44 42 40 </table>
@@ -490,7 +597,7 @@
 		<table name="#magicLvl"> 46 49 52 55 58 61 70 </table>
 		<table name="#absorbPart"> 33 31 30 28 26 24 24 </table>
 		<table name="#mpConsume"> 0 0 0 12 0 0 0 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -509,7 +616,7 @@
 	<skill id="3040" levels="6" name="Special Ability: Critical Poison">
 		<table name="#abnormalLvl"> 5 5 6 6 6 7 </table>
 		<table name="#dot"> 504 504 747 747 747 1008 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -532,7 +639,7 @@
 	<skill id="3041" levels="6" name="Special Ability: Critical Poison">
 		<table name="#abnormalLvl"> 5 5 6 6 6 7 </table>
 		<table name="#dot"> 951 951 1494 1494 1494 2013 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -579,7 +686,22 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases Critical Rate.
+		Level 1: Increases Critical Rate by 53.6.
+		Level 2: Increases Critical Rate by 38.5.
+		Level 3: Increases Critical Rate by 50.4.
+		Level 4: Increases Critical Rate by 43.2.
+		Level 5: Increases Critical Rate by 36.5.
+		Level 6: Increases Critical Rate by 30.4.
+		Level 7: Increases Critical Rate by 24.8.
+		Level 8: Increases Critical Rate by 40.4.
+		Level 9: Increases Critical Rate by 76.6.
+		Level 10: Increases Critical Rate by 65.
+		Level 11: Increases Critical Rate by 54.
+		Level 12: Increases Critical Rate by 43.7.
+		Level 13: Increases Critical Rate by 52.6.
+		Level 14: Increases Critical Rate by 47.2.
+		Level 15: Increases Critical Rate by 98.7.
+		Level 16: Increases Critical Rate by 92.4.
 		Level 17: Increases Critical Rate. Inflicts additional damage during PvP.
 	-->
 	<skill id="3044" levels="20" name="Special Ability: Focus">
@@ -599,7 +721,7 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Atk. Spd.
-		Level 17: Increases Atk. Spd. Inflicts additional damage during PvP.
+		Level 17: Increases Atk. Spd. Inflicts additional damage by 5% during PvP.
 	-->
 	<skill id="3045" levels="20" name="Special Ability: Haste">
 		<table name="#pAtkSpd"> 5 4 5 4 3 3 2 4 7 6 5 4 5 4 9 8 8 9 9 10 </table>
@@ -619,6 +741,7 @@
 	<!-- 
 		Level 1: Increases Accuracy.
 		Level 17: Increases Accuracy. Inflicts additional damage during PvP.
+		Level 20: Increases Accuracy by 6.5. Inflicts additional damage by 5% during PvP.
 	-->
 	<skill id="3046" levels="20" name="Special Ability: Guidance">
 		<table name="#accCombat"> 3.9 2.8 3.7 3.1 2.6 2.2 1.8 2.9 5.7 4.8 3.9 3.2 3.8 3.4 6.5 6.5 6.5 6.5 6.5 6.5 </table>
@@ -636,7 +759,7 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases Casting Spd.
+		Level 1: Increases Casting Spd. by 15%.
 		Level 2: Increases Casting Spd. Inflicts additional damage during PvP.
 	-->
 	<skill id="3047" levels="3" name="Special Ability: Acumen">
@@ -654,8 +777,8 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases Max HP and increases Max MP.
-		Level 2: Decreases Max HP and increases Max MP. Inflicts additional damage during PvP.
+		Level 1: Decreases Max HP by 40% and increases Max MP by 60%.
+		Level 2: Decreases Max HP by 40% and increases Max MP by 60%. Inflicts additional damage by 5% during PvP.
 	-->
 	<skill id="3048" levels="3" name="Special Ability: Conversion">
 		<table name="#pvpBonus"> 0 5 5 </table>
@@ -683,7 +806,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- Increases Critical Rate by 61.6. Inflicts additional damage by 5% during PvP. -->
 	<skill id="3050" levels="2" name="Special Ability: Focus">
 		<table name="#magicLvl"> 64 70 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -697,7 +820,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- Increases Critical Rate by 67.3. Inflicts additional damage by 5% during PvP. -->
 	<skill id="3051" levels="2" name="Special Ability: Focus">
 		<table name="#magicLvl"> 67 70 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -711,10 +834,10 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- HP decreases from bleeding momentarily. Effect 7. -->
+	<!-- Causes target to bleed, momentarily reducing HP. Effect 7. -->
 	<skill id="3052" levels="2" name="Special Ability: Critical Bleed">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -727,10 +850,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- HP decreases from bleeding momentarily. Effect 7. -->
+	<!-- Causes target to bleed, momentarily reducing HP. Effect 7. -->
 	<skill id="3053" levels="2" name="Special Ability: Critical Bleed">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -744,10 +867,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- HP decreases from bleeding momentarily. Effect 7. -->
+	<!-- Causes target to bleed, momentarily reducing HP. Effect 7. -->
 	<skill id="3054" levels="2" name="Special Ability: Critical Bleed">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -761,10 +884,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- HP decreases from bleeding momentarily. Effect 7. -->
+	<!-- Causes target to bleed, momentarily reducing HP. Effect 7. -->
 	<skill id="3055" levels="2" name="Special Ability: Critical Bleed">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -780,7 +903,7 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Atk. Spd. when in danger.
-		Level 2: Increases Atk. Spd. when in danger. Inflicts additional damage during PvP.
+		Level 2: Increases Atk. Spd. by 11% when in danger. Inflicts additional damage by 5% during PvP.
 	-->
 	<skill id="3056" levels="3" name="Special Ability: Rsk. Haste">
 		<table name="#magicLvl"> 64 64 67 </table>
@@ -833,7 +956,7 @@
 	<skill id="3059" levels="2" name="Special Ability: Critical Drain">
 		<table name="#power"> 18 19 </table>
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -846,7 +969,7 @@
 	<skill id="3060" levels="2" name="Special Ability: Critical Drain">
 		<table name="#power"> 10 11 </table>
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -856,11 +979,11 @@
 		<set name="effectRange" val="1100" />
 		<set name="absorbPart" val="35" />
 	</skill>
-	<!-- HP decreases from poison momentarily. Effect 7. -->
+	<!-- Poisons a target, momentarily decreasing HP. Effect 7. -->
 	<skill id="3061" levels="3" name="Special Ability: Critical Poison">
 		<table name="#magicLvl"> 64 67 70 </table>
 		<table name="#dot"> 1209 1209 1317 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -876,10 +999,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- HP decreases from poison momentarily. Effect 7. -->
+	<!-- Poisons a target, momentarily decreasing HP. Effect 7. -->
 	<skill id="3062" levels="2" name="Special Ability: Critical Poison">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -895,7 +1018,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Critical Rate when attacking a target from behind. Inflicts additional damage during PvP. -->
+	<!-- Increases Critical Rate when attacking a target from behind. Inflicts additional damage by 5% during PvP. -->
 	<skill id="3063" levels="2" name="Special Ability: Back Blow">
 		<table name="#magicLvl"> 64 70 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -911,7 +1034,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy. Inflicts additional damage during PvP. -->
+	<!-- Increases Accuracy by 3.95. Inflicts additional damage by 5% during PvP. -->
 	<skill id="3064" levels="1" name="Special Ability: Guidance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -924,7 +1047,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy. Inflicts additional damage during PvP. -->
+	<!-- Increases Accuracy by 5.41. Inflicts additional damage by 5% during PvP. -->
 	<skill id="3065" levels="1" name="Special Ability: Guidance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -985,8 +1108,11 @@
 			<addPercent stat="pvpMagicalDmg" val="#pvpBonus" />
 		</for>
 	</skill>
-	<!-- Increases Evasion when in danger. -->
-	<skill id="3069" levels="1" name="Special Ability: Rsk. Evasion">
+	<!-- 
+		Level 1: Increases Evasion when in danger.
+		Level 2: Evasion + 6.8, PvP Damage + 5% when in danger.
+	-->
+	<skill id="3069" levels="2" name="Special Ability: Rsk.Evasion">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -997,10 +1123,10 @@
 			</add>
 		</for>
 	</skill>
-	<!-- Stunned and unable to move. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="3070" levels="4" name="Special Ability: Critical Stun">
 		<table name="#magicLvl"> 64 67 70 80 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1015,7 +1141,7 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Critical Rate when in danger.
-		Level 2: Increases Critical Rate when in danger. Inflicts additional damage during PvP.
+		Level 2: Increases Critical Rate by 130 when in danger. Inflicts additional damage by 5% during PvP.
 	-->
 	<skill id="3071" levels="2" name="Special Ability: Rsk. Focus">
 		<table name="#pvpBonus"> 0 5 </table>
@@ -1066,7 +1192,7 @@
 	<!-- Temporarily blocks the ability to use magic skills. -->
 	<skill id="3074" levels="2" name="Special Ability: Magic Silence">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1085,7 +1211,7 @@
 	<!-- Body is rigid with paralysis. -->
 	<skill id="3075" levels="2" name="Special Ability: Magic Paralyze">
 		<table name="#magicLvl"> 64 67 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1131,7 +1257,7 @@
 	<!-- Temporarily blocks the ability to use magic skills. -->
 	<skill id="3078" levels="6" name="Special Ability: Magic Silence">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1150,7 +1276,7 @@
 	<!-- Body is rigid with paralysis. -->
 	<skill id="3079" levels="6" name="Special Ability: Magic Paralyze">
 		<table name="#magicLvl"> 46 49 52 55 58 61 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1180,13 +1306,12 @@
 		Level 8: Chance: Provokes a target to attack during an normal physical attack. Power 617.
 		Level 9: Chance: Provokes a target to attack during an normal physical attack. Power 635.
 		Level 10: Chance: Provokes a target to attack during an normal physical attack. Power 659.
-		Level 13: Chance: Provokes a target to attack during a normal physical attack. Power 659.
 	-->
 	<skill id="3080" levels="15" name="Item Skill: Aggression">
 		<table name="#power"> 438 467 495 523 549 574 597 617 635 659 659 659 659 659 659 </table>
 		<table name="#chance"> 2 2 2 3 3 3 4 4 5 5 5 5 5 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1246,7 +1371,7 @@
 		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<table name="#chance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="isMagic" val="true" />
@@ -1256,10 +1381,7 @@
 		<set name="chanceType" val="ON_HIT" />
 		<set name="activationChance" val="#chance" />
 	</skill>
-	<!-- 
-		Level 1: Chance: Momentarily decreases the target's Speed during an normal physical attack. Effect 3.
-		Level 11: Chance: Momentarily decreases the target's Speed during a normal physical attack. Effect 3.
-	-->
+	<!-- Chance: Momentarily decreases the target's Speed during an normal physical attack. Effect 3. -->
 	<skill id="3083" levels="15" name="Item Skill: Slow (Attack Active)">
 		<table name="#chance"> 2 2 2 3 3 3 4 4 5 5 5 5 5 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 10 10 10 10 10 </table>
@@ -1304,10 +1426,7 @@
 		<set name="triggeredLevel" val="#triggeredLevel" />
 		<set name="saveVs" val="CON" />
 	</skill>
-	<!-- 
-		Level 1: Chance: Momentarily inflicts Hold on the target during an normal physical attack. The target cannot be affected by any additional hold attacks while the effect lasts.
-		Level 11: Chance: Momentarily inflicts Hold on the target during a normal physical attack. The target cannot be affected by any additional hold attacks while the effect lasts.
-	-->
+	<!-- Chance: Momentarily inflicts Hold on the target during an normal physical attack. The target cannot be affected by any additional hold attacks while the effect lasts. -->
 	<skill id="3086" levels="15" name="Item Skill: Hold">
 		<table name="#chance"> 2 2 2 3 3 3 4 4 5 5 5 5 5 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 10 10 10 10 10 </table>
@@ -1469,7 +1588,7 @@
 		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<table name="#chance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="isMagic" val="true" />
@@ -1686,7 +1805,7 @@
 		<table name="#power"> 438 467 495 523 549 574 597 617 635 659 659 659 659 659 659 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 5 5 5 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1722,7 +1841,7 @@
 		<table name="#power"> 219 234 248 262 275 287 299 309 318 330 330 330 330 330 330 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 5 5 5 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREDUCE" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -1748,7 +1867,7 @@
 		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="isMagic" val="true" />
@@ -2066,7 +2185,7 @@
 		<table name="#mpConsume"> 48 53 55 59 64 65 69 73 77 82 </table>
 		<table name="#power"> 41 44 47 50 53 57 59 62 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MANARECHARGE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2111,10 +2230,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Active: Increases the recharge recover rate of MP.
-		Level 11: Active: Increases the recharge recovery rate of MP.
-	-->
+	<!-- Active: Increases the recharge recover rate of MP. -->
 	<skill id="3129" levels="15" name="Item Skill: Mana Gain">
 		<table name="#mpConsume"> 48 53 55 59 64 65 69 73 77 82 82 82 82 82 82 </table>
 		<table name="#gainMp"> 25 27 30 31 32 36 37 38 39 41 41 41 41 41 41 </table>
@@ -2304,7 +2420,7 @@
 	<skill id="3137" levels="10" name="Item Skill: Duel Weakness">
 		<table name="#mpConsume"> 48 53 55 59 64 65 69 73 77 82 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2553,7 +2669,7 @@
 		<table name="#mpConsume"> 21 22 24 25 27 29 30 31 33 35 35 35 35 35 35 </table>
 		<table name="#power"> 438 467 495 523 549 574 597 617 635 659 659 659 659 659 659 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2594,7 +2710,7 @@
 		<table name="#mpConsume"> 48 53 55 59 64 65 69 73 77 82 82 82 82 82 82 </table>
 		<table name="#power"> 219 234 248 262 275 287 299 309 318 330 342 354 366 378 390 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREDUCE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2612,7 +2728,7 @@
 	<skill id="3151" levels="15" name="Item Skill: Peace">
 		<table name="#mpConsume"> 48 53 55 59 64 65 69 73 77 82 82 82 82 82 82 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREMOVE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2629,7 +2745,7 @@
 	<skill id="3152" levels="10" name="Item Skill: Trick">
 		<table name="#mpConsume"> 21 22 24 25 27 29 30 31 33 35 </table>
 		<table name="#magicLvl"> 49 52 55 58 60 62 64 66 68 70 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -2663,7 +2779,7 @@
 		<table name="#mpConsume"> 74 79 85 90 97 102 107 112 117 124 </table>
 		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2695,7 +2811,7 @@
 		<table name="#mpConsume"> 62 67 70 75 80 85 89 94 98 104 </table>
 		<table name="#power"> 68 73 79 84 90 96 101 107 112 120 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2709,11 +2825,11 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Active: Opens doors Lv. 1 with 100% chance, doors Lv. 2 with 30% chance, and chests Lv. 36 or below with 90% chance. Requires 4 Keys of a Thief.
-		Level 2: Active: Opens doors Lv. 1 with 100% chance, doors Lv. 2 with 75% chance, and chests Lv. 40 or below with 90% chance. Requires 5 Keys of a Thief.
+		Level 1: Active: Opens doors Lv. $2 with 100% chance, doors Lv. 2 with 30% chance, and chests Lv. 36 or below with 90% chance. Requires 4 Keys of a Thief.
+		Level 2: Active: Opens doors Lv. $2 with 100% chance, doors Lv. 2 with 75% chance, and chests Lv. 40 or below with 90% chance. Requires 5 Keys of a Thief.
 		Level 3: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 5% chance, and chests Lv. 44 or below with 90% chance. Requires 6 Keys of a Thief.
-		Level 4: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 30% chance, and chests below Lv. 48 with 90% chance. Requires 7 Keys of a Thief.
-		Level 5: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 75% chance, and chests below Lv. 52 with 90% chance. Requires 8 Keys of a Thief.
+		Level 4: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 30% chance, and chests Lv. 48 or below with 90% chance. Requires 7 Keys of a Thief.
+		Level 5: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 75% chance, and chests Lv. 52 or below with 90% chance. Requires 8 Keys of a Thief.
 		Level 6: Active: Opens doors Lv. 3 or below with 100% chance and chests Lv. 56 or below with 90% chance. Requires 10 Keys of a Thief.
 		Level 7: Active: Opens doors Lv. 3 or below with 100% chance and chests Lv. 60 or below with 90% chance. Requires 11 Keys of a Thief.
 		Level 8: Active: Opens doors Lv. 3 or below with 100% chance and chests Lv. 64 or below with 90% chance. Requires 13 Keys of a Thief.
@@ -2940,7 +3056,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2971,7 +3087,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3002,7 +3118,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3033,7 +3149,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3064,7 +3180,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3095,7 +3211,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3126,7 +3242,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 61 66 72 77 82 87 92 97 102 110 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3155,7 +3271,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3187,7 +3304,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3219,7 +3337,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3251,7 +3370,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3283,7 +3403,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3315,7 +3436,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3347,7 +3469,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3377,7 +3500,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3407,7 +3531,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3437,7 +3562,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3467,7 +3593,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3497,7 +3624,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3527,7 +3655,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3557,7 +3686,8 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#power"> 31 33 36 39 41 44 46 49 51 55 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3573,7 +3703,7 @@
 	<skill id="3187" levels="15" name="Item Skill: Slow (Active)">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 69 69 69 69 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3598,7 +3728,7 @@
 	<skill id="3188" levels="15" name="Item Skill: Winter (Active)">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 69 69 69 69 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3624,7 +3754,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#hitTime"> 4000 1500 1500 1500 1500 1500 1500 1500 1500 1500 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -3648,7 +3778,7 @@
 	<skill id="3190" levels="10" name="Item Skill: Hold">
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3672,7 +3802,7 @@
 	<skill id="3191" levels="10" name="Item Skill: Sleep">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3696,7 +3826,7 @@
 	<skill id="3192" levels="10" name="Item Skill: Paralyze">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3723,7 +3853,7 @@
 	<skill id="3193" levels="10" name="Item Skill: Medusa">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3749,7 +3879,7 @@
 	<skill id="3194" levels="10" name="Item Skill: Fear">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3779,7 +3909,7 @@
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 69 69 69 69 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
 		<table name="#dmg"> 123 123 150 150 150 174 174 174 189 189 189 189 189 189 189 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3810,7 +3940,7 @@
 		<table name="#dmg"> 39 39 51 51 66 66 81 81 93 102 102 102 102 102 102 </table>
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 69 69 69 69 69 </table>
 		<table name="#abnormalLvl"> 5 5 6 6 6 7 7 7 8 8 8 8 8 8 8 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -3835,7 +3965,7 @@
 	<skill id="3197" levels="10" name="Item Skill: Silence">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3859,7 +3989,7 @@
 	<skill id="3198" levels="10" name="Item Skill: Doom">
 		<table name="#mpConsume"> 42 44 48 50 54 57 60 63 65 69 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4000,7 +4130,8 @@
 		<table name="#mpConsume"> 214 305 </table>
 		<table name="#hitTime"> 20000 3500 </table>
 		<table name="#magicLvl"> 48 56 </table>
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="RECALL" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4455,10 +4586,7 @@
 			<addPercent stat="gainMp" val="1" />
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Passive: Increases P. Atk. when equipped
-		Level 2: Passive: Increases P. Atk. when equipped.
-	-->
+	<!-- Passive: Increases P. Atk. when equipped. -->
 	<skill id="3240" levels="15" name="Item Skill: Might">
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 75 75 75 75 75 </table>
 		<table name="#pAtk"> 10.26 11.22 11.94 12.94 13.55 14.44 14.85 15.92 16.68 17.84 17.84 17.84 17.84 17.84 17.84 </table>
@@ -4672,7 +4800,7 @@
 	</skill>
 	<!-- Sends mutated animals a Heart with love. -->
 	<skill id="3260" levels="1" name="Forgiveness">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
@@ -4693,7 +4821,7 @@
 	</skill>
 	<!-- Taps into the magic of the bow to fire a harmless bolt. Warning: If you use this skill against a monster, it will flag you for PvP. -->
 	<skill id="3261" levels="1" name="Forgiveness">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
@@ -4710,7 +4838,7 @@
 	</skill>
 	<!-- Continuously sends two hearts filled with love to mutated animals. -->
 	<skill id="3262" levels="1" name="Pardon">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
@@ -6429,7 +6557,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Max HP by 10%, and Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- Increases Max HP by 5%, and Critical Rate. Inflicts additional damage during PvP. -->
 	<skill id="3411" levels="1" name="Special Ability: Focus">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -6785,7 +6913,8 @@
 	</skill>
 	<!-- Greatly damage the environment exploding the power of Talisman. -->
 	<skill id="3436" levels="1" name="Blue Talisman - Self-destruction">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="75" />
@@ -7422,8 +7551,11 @@
 			<addPercent stat="regMp" val="1" />
 		</for>
 	</skill>
-	<!-- Increases Weight Gauge. -->
-	<skill id="3498" levels="1" name="Special Ability: Light">
+	<!-- 
+		Level 1: Increases Weight Gauge by 20%.
+		Level 2: Weight Gauge + 20%, PvP Damage + 5%.
+	-->
+	<skill id="3498" levels="2" name="Special Ability: Light">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -8130,7 +8262,7 @@
 		Level 1: Increases Bleed/Stun/Mental Attack Resistance, Bleed/Stun/Mental attack bonus and effectiveness of received HP recovery magic, and has a chance of restoring HP by using some of the damage inflicted upon the enemy.
 		Level 2: Increases Dark Resistance, bleed/stun/mental attacks, bleed/stun/mental attack rate, and received HP recovery. Restores some of the damage inflicted on the enemy as the user's HP.
 	-->
-	<skill id="3559" levels="2" name="Zaken's Earring">
+	<skill id="3559" levels="2" name="Blessed Zaken's Earring">
 		<table name="#darkRes"> 0 15 </table>
 		<table name="#gainHp"> 10 15 </table>
 		<table name="#stun_mental"> 20 30 </table>
@@ -8224,7 +8356,17 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 80.6. Inflicts additional damage by 5% during PvP.
+		Level 2: Increases Critical Rate by 107. Inflicts additional damage by 5% during PvP.
+		Level 3: Increases Critical Rate by 123.5. Inflicts additional damage by 5% during PvP.
+		Level 4: Increases Critical Rate by 129. Inflicts additional damage by 5% during PvP.
+		Level 6: Increases Critical Rate by 76.3. Inflicts additional damage by 5% during PvP.
+		Level 7: Increases Critical Rate by 76. Inflicts additional damage by 5% during PvP.
+		Level 8: Increases Critical Rate by 75.7. Inflicts additional damage by 5% during PvP.
+		Level 9: Increases Critical Rate by 75.5. Inflicts additional damage by 5% during PvP.
+		Level 10: Increases Critical Rate by 75.4. Inflicts additional damage by 5% during PvP.
+	-->
 	<skill id="3565" levels="10" name="Special Ability: Focus">
 		<table name="#rCrit"> 80.6 107 123.5 129 129 129 129 129 129 129 </table>
 		<table name="#magicLvl"> 75 80 84 85 86 86 86 86 86 86 </table>
@@ -8239,7 +8381,17 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 84.3. Inflicts additional damage by 5% during PvP.
+		Level 2: Increases Critical Rate by 111.5. Inflicts additional damage by 5% during PvP.
+		Level 3: Increases Critical Rate by 131.3. Inflicts additional damage by 5% during PvP.
+		Level 4: Increases Critical Rate by 134.4. Inflicts additional damage by 5% during PvP.
+		Level 6: Increases Critical Rate by 79.5. Inflicts additional damage by 5% during PvP.
+		Level 7: Increases Critical Rate by 79.2. Inflicts additional damage by 5% during PvP.
+		Level 8: Increases Critical Rate by 78.9. Inflicts additional damage by 5% during PvP.
+		Level 9: Increases Critical Rate by 78.7. Inflicts additional damage by 5% during PvP.
+		Level 10: Increases Critical Rate by 78.5. Inflicts additional damage by 5% during PvP.
+	-->
 	<skill id="3566" levels="10" name="Special Ability: Focus">
 		<table name="#rCrit"> 84.3 111.5 133.3 134.4 134.4 134.4 134.4 134.4 134.4 134.4 </table>
 		<table name="#magicLvl"> 75 80 84 85 86 86 86 86 86 86 </table>
@@ -8254,7 +8406,17 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- 
+		Level 1: Increases Critical Rate by 88.1. Inflicts additional damage by 5% during PvP.
+		Level 2: Increases Critical Rate by 116. Inflicts additional damage by 5% during PvP.
+		Level 3: Increases Critical Rate by 133.9. Inflicts additional damage by 5% during PvP.
+		Level 4: Increases Critical Rate by 139.9. Inflicts additional damage by 5% during PvP.
+		Level 6: Increases Critical Rate by 82.7. Inflicts additional damage by 5% during PvP.
+		Level 7: Increases Critical Rate by 82.3. Inflicts additional damage by 5% during PvP.
+		Level 8: Increases Critical Rate by 82.1. Inflicts additional damage by 5% during PvP.
+		Level 9: Increases Critical Rate by 81.9. Inflicts additional damage by 5% during PvP.
+		Level 10: Increases Critical Rate by 81.7. Inflicts additional damage by 5% during PvP.
+	-->
 	<skill id="3567" levels="10" name="Special Ability: Focus">
 		<table name="#rCrit"> 88.1 116 133.9 139.9 139.9 139.9 139.9 139.9 139.9 139.9 </table>
 		<table name="#magicLvl"> 75 80 84 85 86 86 86 86 86 86 </table>
@@ -8269,7 +8431,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Inflicts additional damage during PvP. -->
+	<!-- Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Increases damage by 5% during PvP. -->
 	<skill id="3568" levels="2" name="Special Ability: HP Drain">
 		<table name="#absorbDam"> 3 4 </table>
 		<table name="#magicLvl"> 75 84 </table>
@@ -8284,7 +8446,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases HP Recovery Bonus. Inflicts additional damage during PvP. -->
+	<!-- Increases HP Recovery Bonus. Increases damage by 5% during PvP. -->
 	<skill id="3569" levels="9" name="Special Ability: HP Regeneration">
 		<table name="#magicLvl"> 75 84 84 84 84 84 84 84 84 </table>
 		<table name="#regHp"> 2.04 4.92 5.15 5.18 5.18 5.18 5.18 5.18 5.18 </table>
@@ -8299,7 +8461,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Max HP, Max MP, Max CP. Inflicts additional damage during PvP. -->
+	<!-- Increases Max HP, Max MP, Max CP. Increases damage by 5% during PvP. -->
 	<skill id="3570" levels="1" name="Special Ability: Robust Health">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8314,10 +8476,10 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Stunned and unable to move. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="3571" levels="2" name="Special Ability: Critical Stun">
 		<table name="#magicLvl"> 75 84 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -8345,7 +8507,16 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy. Inflicts additional damage during PvP. -->
+	<!-- 
+		Level 1: Increases Accuracy by 5.27. Inflicts additional damage by 5% during PvP.
+		Level 2: Increases Accuracy by 5.32. Inflicts additional damage by 5% during PvP.
+		Level 3: Increases Accuracy by 7.5. Inflicts additional damage by 5% during PvP.
+		Level 4: Increases Accuracy by 7.6. Inflicts additional damage by 5% during PvP.
+		Level 5: Increases Accuracy by 7.7. Inflicts additional damage by 5% during PvP.
+		Level 6: Increases Accuracy by 7.8. Inflicts additional damage by 5% during PvP.
+		Level 7: Increases Accuracy by 7.9. Inflicts additional damage by 5% during PvP.
+		Level 8: Increases Accuracy by 8. Inflicts additional damage by 5% during PvP.
+	-->
 	<skill id="3573" levels="8" name="Special Ability: Guidance">
 		<table name="#accCombat"> 5.27 5.32 7.5 7.5 7.5 7.5 7.5 7.5 </table>
 		<table name="#magicLvl"> 75 80 84 84 84 84 84 84 </table>
@@ -8363,7 +8534,7 @@
 	<!-- Temporarily decreases Speed. Effect 3. -->
 	<skill id="3574" levels="3" name="Special Ability: Critical Slow">
 		<table name="#magicLvl"> 75 84 84 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -8394,7 +8565,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases MP Recovery Bonus. Inflicts additional damage during PvP. -->
+	<!-- Increases MP Recovery Bonus. Increases damage by 5% during PvP. -->
 	<skill id="3576" levels="9" name="Special Ability: MP Regeneration">
 		<table name="#magicLvl"> 75 84 85 86 86 86 86 86 86 </table>
 		<table name="#regMp"> 0.54 1.95 2.04 2.05 2.05 2.05 2.05 2.05 2.05 </table>
@@ -8411,7 +8582,7 @@
 	</skill>
 	<!-- Inflicted with hold and unable to move momentarily. -->
 	<skill id="3577" levels="3" name="Special Ability: Magic Hold">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -8448,7 +8619,7 @@
 	</skill>
 	<!-- Temporarily decreases P. Def. Effect 3 -->
 	<skill id="3579" levels="1" name="Decrease P. Def.">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8485,7 +8656,7 @@
 		</for>
 	</skill>
 	<skill id="3581" levels="1" name="Discord">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8536,7 +8707,7 @@
 	</skill>
 	<!-- Stunned and unable to move. -->
 	<skill id="3584" levels="1" name="Stun">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8573,7 +8744,7 @@
 	</skill>
 	<!-- Temporarily blocks opponent's ability to use physical skills. -->
 	<skill id="3586" levels="1" name="Restrain Physical Skills">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8610,7 +8781,7 @@
 	</skill>
 	<!-- Stunned and unable to move. -->
 	<skill id="3588" levels="1" name="Stun">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8650,7 +8821,7 @@
 	</skill>
 	<!-- Magic skills are blocked momentarily. -->
 	<skill id="3590" levels="1" name="Restrain Magic Skills">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8687,12 +8858,16 @@
 		</for>
 	</skill>
 	<skill id="3592" levels="1" name="Dispel">
-		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="CANCEL" />
+		<set name="target" val="TARGET_SINGLE" />
+		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
-		<set name="power" val="80" />
 		<set name="maxNegated" val="2" />
+		<for>
+			<abnormal landRate="80">
+				<effect type="Cancel" val="25" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Decreases the enemy's Speed during a critical attack. Increases Max MP, Max CP, and damage inflicted during PvP. The skill cooldown is short. Has a chance to decrease MP Consumption. -->
 	<skill id="3593" levels="1" name="Special Ability: Infinity Bow">
@@ -8714,7 +8889,7 @@
 	</skill>
 	<!-- Temporarily decreases Speed. Effect 3. -->
 	<skill id="3594" levels="1" name="Decrease Speed">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8752,7 +8927,7 @@
 		</for>
 	</skill>
 	<skill id="3596" levels="1" name="Full Recovery">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8787,7 +8962,7 @@
 		</for>
 	</skill>
 	<skill id="3598" levels="1" name="Full Recovery">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="80" />
@@ -8973,7 +9148,7 @@
 		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the skill player's death XP penalty. Increases one's own M. Def. when attacked. Decreases Critical Damage success rate.
 		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases one's own M. Def. and Critical Rate when attacked. Decreases Critical Damage success rate.
 	-->
-	<skill id="3608" levels="3" name="Apella Heavy Armor Set">
+	<skill id="3608" levels="3" name="Apella Combat Heavy Armor Set">
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
 		<table name="#name">Apella Heavy Armor Set;Improved Apella Heavy Armor Set;Apella Combat Heavy Armor Set</table>
@@ -8994,7 +9169,7 @@
 		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Evasion when attacked. Decreases received Critical Damage.
 		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Evasion and Atk. Spd. when attacked. Decreases received Critical Damage.
 	-->
-	<skill id="3609" levels="3" name="Apella Light Armor Set">
+	<skill id="3609" levels="3" name="Apella Combat Light Armor Set">
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
 		<table name="#name">Apella Light Armor Set;Improved Apella Light Armor Set;Apella Combat Light Armor Set</table>
@@ -9015,7 +9190,7 @@
 		Level 1: Increases Max CP/CP Recovery Bonus, and decreases the player's death XP penalty. Increases Speed and P. Def. when attacked.
 		Level 2: Increases Max CP/CP Recovery Bonus, and decreases MP Consumption and the player's death XP penalty. Increases Speed, P. Def., and M. Atk. when attacked.
 	-->
-	<skill id="3610" levels="3" name="Apella Robe Set">
+	<skill id="3610" levels="3" name="Apella Combat Robe Set">
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
 		<table name="#name">Apella Robe Set;Improved Apella Robe Set;Apella Combat Robe Set</table>
@@ -9224,10 +9399,7 @@
 			<addPercent stat="maxLoad" val="30" />
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and MP Recovery Bonus by enchanting set items.
-		Level 2: Increases P. Def and MP Recovery Bonus by enchanting a set item.
-	-->
+	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 	<skill id="3623" levels="3" name="Enchant Heavy Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -9247,10 +9419,7 @@
 			</add>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases M. Def. and Evasion by enchanting set items.
-		Level 2: Increases M. Def. and Evasion by enchanting a set item.
-	-->
+	<!-- Increases M. Def. and Evasion by enchanting set items. -->
 	<skill id="3624" levels="3" name="Enchant Light Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -9265,10 +9434,7 @@
 			</add>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and weight capacity by enchanting set items.
-		Level 2: Increases P. Def. and weight capacity by enchanting a set item.
-	-->
+	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 	<skill id="3625" levels="3" name="Enchant Robe (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -9283,7 +9449,7 @@
 	</skill>
 	<!-- Used when trapping a roaring Tyrannosaurus. Has no effect for other actions. Consumes 1 Trap Stone. -->
 	<skill id="3626" levels="1" name="Kabokula">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="FUSION" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -9306,7 +9472,7 @@
 	</skill>
 	<!-- Used on a quivering Tyrannosaurus. Has no effect for other actions. Consumes 1 Trap Stone. -->
 	<skill id="3627" levels="1" name="Tapirawa">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="FUSION" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -9329,7 +9495,7 @@
 	</skill>
 	<!-- Used on a struggling Tyrannosaurus. Has no effect for other actions. Consumes 1 Trap Stone. -->
 	<skill id="3628" levels="1" name="Shabonoba">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="FUSION" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -9398,7 +9564,8 @@
 	</skill>
 	<!-- Discharges cursed energy to attack nearby enemies. -->
 	<skill id="3630" levels="1" name="Void Burst">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="140" />
@@ -9409,7 +9576,7 @@
 	</skill>
 	<!-- Emits cursed energy to strike a distant enemy. -->
 	<skill id="3631" levels="1" name="Void Flow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="140" />
@@ -11730,7 +11897,7 @@
 			<add stat="maxMp" val="#maxMp" />
 		</for>
 	</skill>
-	<!-- Increases MP Recovery Bonus. -->
+	<!-- Increases Max MP. -->
 	<skill id="3853" levels="2" name="Sword of Mana Regeneration">
 		<table name="#magicLvl"> 61 70 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -12295,7 +12462,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3910" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="3910" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12305,7 +12472,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3911" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="3911" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12415,7 +12582,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3922" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="3922" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12425,7 +12592,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3923" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="3923" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12535,7 +12702,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3934" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="3934" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12545,7 +12712,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3935" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="3935" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12655,7 +12822,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3946" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="3946" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -12665,7 +12832,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="3947" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="3947" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />

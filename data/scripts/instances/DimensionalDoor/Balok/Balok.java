@@ -1,3 +1,4 @@
+
 package instances.DimensionalDoor.Balok;
 
 import instances.DimensionalDoor.DimensionalDoor;
@@ -28,50 +29,30 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  *  Balok Boss - Normal Mode
- *  
+ *
  *  Source:
  *  		- http://www.youtube.com/watch?v=H9XZAEj48tc&feature=player_embedded
  */
 
-public class Balok  extends L2AttackableAIScript
+public class Balok extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug			= false;
-	private static final String 	_qn 			= "Balok";
+	private static final boolean _debug = false;
+	private static final String _qn = "Balok";
 	
 	//Ids
-	private static final int 		_instanceTemplateId			= 167;
-	private static final int		_prisonKey					= 10015;
-	private static final int 		_minionId					= 23123;
-	private static final int 		_balokId					= 29218;
-	private static final Location	_enterCords					= new Location(153573, 142867, -12737);
-	private static final L2Skill 	_darknessDrain				= SkillTable.getInstance().getInfo(14367, 1);
-	private static final L2Skill 	_invincibilityActivation	= SkillTable.getInstance().getInfo(14190, 1);
-	private static final int[][] 	_minionSpawns				=
-	{
-		{154592, 141488, -12738, 26941},
-		{154759, 142073, -12738, 32333},
-		{154158, 143112, -12738, 43737},
-		{152963, 143102, -12738, 53988},
-		{152360, 142067, -12740, 0},
-		{152530, 141457, -12740, 7246},
-		{153571, 140878, -12738, 16756},
-		{154174, 141057, -12738, 22165}
-	};
-	private static final int[][] 	_prisonsSpawns				=
-	{
-		{154428, 140551, -12712},
-		{155061, 141204, -12704},
-		{155268, 142097, -12712},
-		{154438, 143581, -12712},
-		{152695, 143560, -12704},
-		{151819, 142063, -12712},
-		{152055, 141231, -12712},
-		{153608, 140371, -12712}
-	};
-
+	private static final int _instanceTemplateId = 167;
+	private static final int _prisonKey = 10015;
+	private static final int _minionId = 23123;
+	private static final int _balokId = 29218;
+	private static final Location _enterCords = new Location(153573, 142867, -12737);
+	private static final L2Skill _darknessDrain = SkillTable.getInstance().getInfo(14367, 1);
+	private static final L2Skill _invincibilityActivation = SkillTable.getInstance().getInfo(14190, 1);
+	private static final int[][] _minionSpawns = { { 154592, 141488, -12738, 26941 }, { 154759, 142073, -12738, 32333 }, { 154158, 143112, -12738, 43737 }, { 152963, 143102, -12738, 53988 }, { 152360, 142067, -12740, 0 }, { 152530, 141457, -12740, 7246 }, { 153571, 140878, -12738, 16756 }, { 154174, 141057, -12738, 22165 } };
+	private static final int[][] _prisonsSpawns = { { 154428, 140551, -12712 }, { 155061, 141204, -12704 }, { 155268, 142097, -12712 }, { 154438, 143581, -12712 }, { 152695, 143560, -12704 }, { 151819, 142063, -12712 }, { 152055, 141231, -12712 }, { 153608, 140371, -12712 } };
+	
 	public Balok(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
@@ -86,7 +67,6 @@ public class Balok  extends L2AttackableAIScript
 		addKillId(_minionId);
 	}
 	
-	
 	private class CrystalPrisonWorld extends InstanceWorld
 	{
 		private List<L2Npc> minionList;
@@ -96,8 +76,8 @@ public class Balok  extends L2AttackableAIScript
 		
 		private CrystalPrisonWorld()
 		{
-			minionList 			= new ArrayList<L2Npc>();
-			_rewardedPlayers 	= new ArrayList<L2PcInstance>();
+			minionList = new ArrayList<L2Npc>();
+			_rewardedPlayers = new ArrayList<L2PcInstance>();
 		}
 	}
 	
@@ -105,10 +85,10 @@ public class Balok  extends L2AttackableAIScript
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onSpellFinished: " + skill.getName());
+			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
 		
 		InstanceWorld wrld = null;
-		if (npc != null)	
+		if (npc != null)
 			wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		else if (player != null)
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
@@ -118,9 +98,9 @@ public class Balok  extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof CrystalPrisonWorld)
+		if ((wrld != null) && (wrld instanceof CrystalPrisonWorld))
 		{
-			CrystalPrisonWorld world = (CrystalPrisonWorld)wrld;
+			CrystalPrisonWorld world = (CrystalPrisonWorld) wrld;
 			if (skill == _darknessDrain)
 			{
 				if (!world.currentMinion.isDead())
@@ -129,7 +109,7 @@ public class Balok  extends L2AttackableAIScript
 		}
 		
 		return super.onSpellFinished(npc, player, skill);
-	}	
+	}
 	
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -148,18 +128,18 @@ public class Balok  extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof CrystalPrisonWorld)
+		if ((wrld != null) && (wrld instanceof CrystalPrisonWorld))
 		{
-			CrystalPrisonWorld world = (CrystalPrisonWorld)wrld;
+			CrystalPrisonWorld world = (CrystalPrisonWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
 			{
-				InstanceManager.getInstance().showVidToInstance(106, world.instanceId);	//Balok history :D
+				InstanceManager.getInstance().showVidToInstance(106, world.instanceId); //Balok history :D
 				
 				startQuestTimer("stage_1_balok_intro", ScenePlayerDataTable.getInstance().getVideoDuration(106) + 5000, null, player);
 			}
 			else if (event.equalsIgnoreCase("stage_1_balok_intro"))
 			{
-				InstanceManager.getInstance().showVidToInstance(105, world.instanceId);	//Balok intro
+				InstanceManager.getInstance().showVidToInstance(105, world.instanceId); //Balok intro
 				
 				startQuestTimer("stage_1_spawn_balok", ScenePlayerDataTable.getInstance().getVideoDuration(105) + 2000, null, player);
 			}
@@ -169,13 +149,13 @@ public class Balok  extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_last_send_minions"))
 			{
-				synchronized(world.minionList)
+				synchronized (world.minionList)
 				{
 					L2Npc minion = world.minionList.get(Rnd.get(world.minionList.size()));
 					if (minion != null)
 					{
 						minion.setIsRunning(true);
-						((L2Attackable)minion).setCanReturnToSpawnPoint(false);
+						((L2Attackable) minion).setCanReturnToSpawnPoint(false);
 						
 						world.currentMinion = minion;
 						
@@ -228,7 +208,7 @@ public class Balok  extends L2AttackableAIScript
 			CrystalPrisonWorld world = (CrystalPrisonWorld) tmpWorld;
 			if (npc == world.balok)
 			{
-				if (npc.getCurrentHp() < npc.getMaxHp() * 0.85 && world.status == 0)
+				if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.85)) && (world.status == 0))
 				{
 					world.status = 1;
 					
@@ -240,7 +220,7 @@ public class Balok  extends L2AttackableAIScript
 						_invincibilityActivation.getEffects(minion, minion);
 					}
 				}
-				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.25 && world.status == 1)
+				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) && (world.status == 1))
 				{
 					world.status = 2;
 					
@@ -249,12 +229,12 @@ public class Balok  extends L2AttackableAIScript
 					//Jail random players?
 					for (L2PcInstance instPlayer : world.balok.getKnownList().getKnownPlayers().values())
 					{
-						if (instPlayer == null || Rnd.get(100) > 40 || instPlayer.getInstanceId() != world.instanceId)
+						if ((instPlayer == null) || (Rnd.get(100) > 40) || (instPlayer.getInstanceId() != world.instanceId))
 							continue;
 						
-						int[] randomJail = _prisonsSpawns[Rnd.get(_prisonsSpawns.length)];	//Random jail
+						int[] randomJail = _prisonsSpawns[Rnd.get(_prisonsSpawns.length)]; //Random jail
 						
-						instPlayer.teleToLocation(randomJail[0], randomJail[1], randomJail[2]); 
+						instPlayer.teleToLocation(randomJail[0], randomJail[1], randomJail[2]);
 						
 						InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage("$s1, locked away in the prison.".replace("$s1", instPlayer.getName()), 5000));
 						break;
@@ -279,12 +259,12 @@ public class Balok  extends L2AttackableAIScript
 			CrystalPrisonWorld world = (CrystalPrisonWorld) tmpworld;
 			
 			if (npc == world.balok)
-			{	
+			{
 				if (player.isInParty())
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if (pMember == null || pMember.getInstanceId() != world.instanceId)
+						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
@@ -301,7 +281,7 @@ public class Balok  extends L2AttackableAIScript
 			}
 			else if (npc == world.currentMinion)
 			{
-				synchronized(world.minionList)
+				synchronized (world.minionList)
 				{
 					if (world.minionList.contains(npc))
 					{
@@ -312,7 +292,7 @@ public class Balok  extends L2AttackableAIScript
 						else
 							world.balok.getFirstEffect(_invincibilityActivation).exit();
 					}
-				}	
+				}
 			}
 		}
 		
@@ -344,20 +324,20 @@ public class Balok  extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(153573, 142867, -12737);
 				}
-			}	
+			}
 			
 			return;
 		}
 		else
 		{
 			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, _instanceTemplateId, 7, 7, 92, Config.MAX_LEVEL))
-			{	
+			{
 				return;
 			}
 			
@@ -383,7 +363,7 @@ public class Balok  extends L2AttackableAIScript
 				enterPlayer.deleteAllItemsById(_prisonKey);
 				
 				world.allowed.add(enterPlayer.getObjectId());
-					
+				
 				enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
 				enterPlayer.setInstanceId(instanceId);
 				enterPlayer.teleToLocation(_enterCords, true);

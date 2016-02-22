@@ -3072,9 +3072,8 @@
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 68.
+		<Special Option>
+		Critical + 68. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38595" type="Weapon" name="Steel Keshanberk" icon="icon.weapon_kshanberk_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1370" soulshots="0" spiritshots="0" isTradable="false"
@@ -3085,9 +3084,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Has a 42% chance of consuming 1 MP during a normal attack.
+		<Special Option>
+		Has a 42% chance of consuming 1 MP during a normal attack. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38596" type="Weapon" name="Steel Bow of Peril" icon="icon.weapon_hazard_bow_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1700" soulshots="0" spiritshots="0" isTradable="false"
@@ -3099,9 +3097,8 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Atk. Spd. + 6%. Additional damage during PvP.
+		<Special Option>
+		Atk. Spd. + 6%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38597" type="Weapon" name="Steel Tallum Blade" icon="icon.weapon_tallum_blade_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1330" soulshots="0" spiritshots="0" isTradable="false"
@@ -3112,9 +3109,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 88. Additional damage during PvP.
+		<Special Option>
+		Critical + 88. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38598" type="Weapon" name="Steel Draconic Bow" icon="icon.weapon_draconic_bow_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1650" soulshots="0" spiritshots="0" isTradable="false"
@@ -3126,9 +3122,8 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 111. Additional damage during PvP.
+		<Special Option>
+		Critical + 111. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38599" type="Weapon" name="Steel Dynasty Sword" icon="icon.weapon_dynasty_blade_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" isTradable="false"
@@ -3613,9 +3608,8 @@
 		<baseAdd stat="mDef" val="63" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 86.
+		<Special Option>
+		Critical + 86. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38692" type="Weapon" name="Steel StormBringer" icon="icon.weapon_stormbringer_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="477" soulshots="0" spiritshots="0" isTradable="false"
@@ -3626,9 +3620,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Max HP + 25%.
+		<Special Option>
+		Max HP + 25%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38693" type="Weapon" name="Steel Yaksa Mace" icon="icon.weapon_yaksa_mace_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="547" soulshots="0" spiritshots="0" isTradable="false"
@@ -3649,9 +3642,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%.
+		<Special Option>
+		Casting Spd. + 15%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38695" type="Weapon" name="Steel Mysterious Sword" icon="icon.weapon_mystery_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="477" soulshots="0" spiritshots="0"
@@ -3662,9 +3654,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment. 
-		<Soul Crystal Enhancement>
-		In a Critical attack, 34% chance of inflicting Stun.
+		<Special Option>
+		In a Critical attack, 34% chance of inflicting Stun. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38696" type="Weapon" name="Steel Body Slasher" icon="icon.weapon_body_slasher_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="677" soulshots="0" spiritshots="0" isTradable="false"
@@ -3676,9 +3667,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Max MP + 30%.
+		<Special Option>
+		Max MP + 30%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38697" type="Weapon" name="Steel Soulfire Dirk" icon="icon.weapon_dagger_of_magicflame_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="250" soulshots="0" spiritshots="0"
@@ -3690,9 +3680,8 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Accuracy + 5.
+		<Special Option>
+		Accuracy + 5. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38698" type="Weapon" name="Steel Crystallized Ice Bow" icon="icon.weapon_crystallized_ice_bow_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="597" soulshots="0" spiritshots="0"
@@ -3704,9 +3693,8 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Flamberge
-		<Soul Crystal Enhancement>
-		Critical + 86.
+		<Special Option>
+		Critical + 86. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38699" type="Weapon" name="Steel Schlager" icon="icon.weapon_schlaeger_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="15" immediateEffect="1" weight="660" soulshots="0" spiritshots="0" isTradable="false"
@@ -3718,10 +3706,9 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Stormbringer
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Critical + 86.
-		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption.
+		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38700" type="Weapon" name="Steel Soldat Estoc" icon="icon.weapon_soldat_estoc_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" weight="477" soulshots="0" spiritshots="0" isTradable="false"
@@ -3733,9 +3720,8 @@
 		<set stat="pAtkSpd" val="406" />
 	</item>
 	<!--
-		Cannot augment. Kamael only:  Convert - Crystallized Bow
-		<Soul Crystal Enhancement>
-		Accuracy + 5.
+		<Special Option>
+		Accuracy + 5. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38701" type="Weapon" name="Steel Arbalest" icon="icon.weapon_arbalest_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="597" soulshots="0" spiritshots="0" isTradable="false"
@@ -3747,9 +3733,8 @@
 		<set stat="pAtkSpd" val="303" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 86.
+		<Special Option>
+		Critical + 86. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38702" type="Weapon" name="Steel Flamberge" icon="icon.weapon_flamberge_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="670" soulshots="0" spiritshots="0" isTradable="false"
@@ -3760,9 +3745,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		When HP drops to 60% or below, Atk. Spd. + 13%.
+		<Special Option>
+		When HP drops to 60% or below, Atk. Spd. + 13%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38703" type="Weapon" name="Steel Chakram" icon="icon.weapon_chakram_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="497" soulshots="0" spiritshots="0" isTradable="false"
@@ -3774,9 +3758,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%.
+		<Special Option>
+		Casting Spd. + 15%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38704" type="Weapon" name="Steel Sword of Valhalla" icon="icon.weapon_sword_of_valhalla_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="300" soulshots="0" spiritshots="0"
@@ -3787,9 +3770,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%.
+		<Special Option>
+		Casting Spd. + 15%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38705" type="Weapon" name="Steel Spell Breaker" icon="icon.weapon_spell_breaker_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="540" soulshots="0" spiritshots="0" isTradable="false"
@@ -3810,9 +3792,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%.
+		<Special Option>
+		Casting Spd. + 15%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38707" type="Weapon" name="Steel Wizard's Tear" icon="icon.weapon_tears_of_wizard_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="450" soulshots="0" spiritshots="0" isTradable="false"
@@ -3823,9 +3804,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		In a Critical attack, 27% chance of inflicting Stun.
+		<Special Option>
+		In a Critical attack, 27% chance of inflicting Stun. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38708" type="Weapon" name="Steel Great Axe" icon="icon.weapon_great_axe_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="647" soulshots="0" spiritshots="0" isTradable="false"
@@ -3837,9 +3817,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 71.
+		<Special Option>
+		Critical + 71. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38709" type="Weapon" name="Steel Twilight Knife" icon="icon.weapon_hell_knife_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="247" soulshots="0" spiritshots="0" isTradable="false"
@@ -3851,9 +3830,8 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		In a normal Critical Attack,  41% chance of inflicting Bleed.
+		<Special Option>
+		In a normal Critical Attack,  41% chance of inflicting Bleed. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38710" type="Weapon" name="Steel Dark Elven Longbow" icon="icon.weapon_dark_elven_long_bow_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="573" soulshots="0" spiritshots="0"
@@ -3865,9 +3843,8 @@
 		<set stat="pAtkSpd" val="227" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Greatsword
-		<Soul Crystal Enhancement>
-		Critical + 68.
+		<Special Option>
+		Critical + 68. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38711" type="Weapon" name="Steel Innominate Victory" icon="icon.weapon_nameless_victory_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="15" immediateEffect="1" weight="643" soulshots="0" spiritshots="0"
@@ -3879,10 +3856,9 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Keshanberk
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Critical + 68.
-		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption.
+		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38712" type="Weapon" name="Steel Military Fleuret" icon="icon.weapon_assult_fleuret_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="40" immediateEffect="1" weight="457" soulshots="0" spiritshots="0"
@@ -3894,9 +3870,8 @@
 		<set stat="pAtkSpd" val="406" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Bow of Peril
-		<Soul Crystal Enhancement>
-		Skill MP Consumption - 12%.
+		<Special Option>
+		Skill MP Consumption - 12%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38713" type="Weapon" name="Steel Hell Hound" icon="icon.weapon_hell_hound_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="567" soulshots="0" spiritshots="0" isTradable="false"
@@ -3908,9 +3883,8 @@
 		<set stat="pAtkSpd" val="303" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 68.
+		<Special Option>
+		Critical + 68. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38714" type="Weapon" name="Steel Great Sword" icon="icon.weapon_great_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="643" soulshots="0" spiritshots="0" isTradable="false"
@@ -3921,9 +3895,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		When HP drops to 60% or below, Atk. Spd. + 10%.
+		<Special Option>
+		When HP drops to 60% or below, Atk. Spd. + 10%. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38715" type="Weapon" name="Steel Arthro Nail" icon="icon.weapon_arthro_nail_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="473" soulshots="0" spiritshots="0" isTradable="false"
@@ -3935,9 +3908,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Curing magic use, MP Consumption + 15% and M. Atk. + 153. Additional damage during PvP.
+		<Special Option>
+		Curing magic use, MP Consumption + 15% and M. Atk. + 153. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38716" type="Weapon" name="Steel Elemental Sword" icon="icon.weapon_elemental_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="277" soulshots="0" spiritshots="0"
@@ -3948,9 +3920,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment. 
-		<Soul Crystal Enhancement>
-		 Casting Spd. + 15%. Additional damage during PvP.
+		<Special Option>
+		 Casting Spd. + 15%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38717" type="Weapon" name="Steel Spiritual Eye" icon="icon.weapon_eye_of_soul_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="517" soulshots="0" spiritshots="0" isTradable="false"
@@ -3961,7 +3932,7 @@
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above,  Atk. Spd. + 8%. Additional damage during PvP. -->
+	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above,  Atk. Spd. + 8%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option. -->
 	<item id="38718" type="Weapon" name="Steel Keshanberk*Keshanberk" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="693" soulshots="0" spiritshots="0"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -3971,9 +3942,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. Additional damage during PvP.
+		<Special Option>
+		Casting Spd. + 15%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38719" type="Weapon" name="Steel Sword of Miracles" icon="icon.weapon_sword_of_miracle_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="280" soulshots="0" spiritshots="0"
@@ -3984,9 +3954,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		In a Critical attack, 25% chance of inflicting Stun.Additional damage during PvP.
+		<Special Option>
+		In a Critical attack, 25% chance of inflicting Stun.Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38720" type="Weapon" name="Steel Halberd" icon="icon.weapon_halbard_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="633" soulshots="0" spiritshots="0" isTradable="false"
@@ -3998,9 +3967,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 67. Additional damage during PvP.
+		<Special Option>
+		Critical + 67. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38721" type="Weapon" name="Steel Bloody Orchid" icon="icon.weapon_bloody_orchid_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="320" soulshots="0" spiritshots="0" isTradable="false"
@@ -4012,9 +3980,8 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		In a normal Critical Attack,  35% chance of inflicting Bleed. Additional damage during PvP.
+		<Special Option>
+		In a normal Critical Attack,  35% chance of inflicting Bleed. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38722" type="Weapon" name="Steel Carnage Bow" icon="icon.weapon_carnium_bow_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="557" soulshots="0" spiritshots="0" isTradable="false"
@@ -4026,10 +3993,9 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Tallum Blade
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Atk. Spd. + 6%. Additional damage during PvP.
-		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption.
+		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38723" type="Weapon" name="Steel White Lightning" icon="icon.weapon_lightning_blaze_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="40" immediateEffect="1" weight="443" soulshots="0" spiritshots="0"
@@ -4041,9 +4007,8 @@
 		<set stat="pAtkSpd" val="406" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Carnage Bow
-		<Soul Crystal Enhancement>
-		In a normal Critical Attack,  35% chance of inflicting Bleed. Additional damage during PvP.
+		<Special Option>
+		In a normal Critical Attack,  35% chance of inflicting Bleed. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38724" type="Weapon" name="Steel Doomchanter" icon="icon.weapon_doom_singer_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="557" soulshots="0" spiritshots="0" isTradable="false"
@@ -4055,9 +4020,8 @@
 		<set stat="pAtkSpd" val="303" />
 	</item>
 	<!--
-		Cannot augment. Kamael only:  Convert - Infernal Master
-		<Soul Crystal Enhancement>
-		Critical + 61. Additional damage during PvP.
+		<Special Option>
+		Critical + 61. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38725" type="Weapon" name="Steel Divine Pain" icon="icon.weapon_pain_of_godness_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="15" immediateEffect="1" weight="633" soulshots="0" spiritshots="0" isTradable="false"
@@ -4069,9 +4033,8 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 61. Additional damage during PvP.
+		<Special Option>
+		Critical + 61. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38726" type="Weapon" name="Steel Infernal Master" icon="icon.weapon_inferno_master_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="633" soulshots="0" spiritshots="0"
@@ -4082,9 +4045,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 61. Additional damage during PvP.
+		<Special Option>
+		Critical + 61. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38727" type="Weapon" name="Steel Blood Tornado" icon="icon.weapon_blood_tornado_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="457" soulshots="0" spiritshots="0" isTradable="false"
@@ -4096,9 +4058,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 84. Additional damage during PvP.
+		<Special Option>
+		Critical + 84. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38728" type="Weapon" name="Steel Forgotten Blade" icon="icon.weapon_forgotten_blade_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="433" soulshots="0" spiritshots="0"
@@ -4109,9 +4070,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Max HP + 25%. Additional damage during PvP.
+		<Special Option>
+		Max HP + 25%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38729" type="Weapon" name="Steel Basalt Battlehammer" icon="icon.weapon_basalt_battlehammer_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="523" soulshots="0" spiritshots="0"
@@ -4122,7 +4082,7 @@
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above, Max HP + 15%, Max MP + 20%, Max CP + 30%. Additional damage during PvP. -->
+	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above, Max HP + 15%, Max MP + 20%, Max CP + 30%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option. -->
 	<item id="38730" type="Weapon" name="Steel Tallum Blade*Dark Legion's Edge" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="693" soulshots="0" spiritshots="0"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -4132,9 +4092,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. Additional damage during PvP.
+		<Special Option>
+		Casting Spd. + 15%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38731" type="Weapon" name="Steel Arcana Mace" icon="icon.weapon_arcana_mace_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="433" soulshots="0" spiritshots="0" isTradable="false"
@@ -4146,9 +4105,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Atk. Spd. + 7%. Additional damage during PvP.
+		<Special Option>
+		Atk. Spd. + 7%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38732" type="Weapon" name="Steel Saint Spear" icon="icon.weapon_saint_spear_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="600" soulshots="0" spiritshots="0" isTradable="false"
@@ -4160,9 +4118,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Atk. Spd. + 7%. Additional damage during PvP.
+		<Special Option>
+		Atk. Spd. + 7%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38733" type="Weapon" name="Steel Angel Slayer" icon="icon.weapon_angel_slayer_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="317" soulshots="0" spiritshots="0" isTradable="false"
@@ -4174,9 +4131,8 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Heaven's Divider
-		<Soul Crystal Enhancement>
-		Critical + 84. Additional damage during PvP.
+		<Special Option>
+		Critical + 84. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38734" type="Weapon" name="Steel Gram" icon="icon.weapon_gram_i00" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			randomDamage="15" immediateEffect="1" weight="600" soulshots="0" spiritshots="0" isTradable="false" isDropable="false"
@@ -4188,10 +4144,9 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Forgotten Blade
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Critical + 84. Additional damage during PvP.
-		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption.
+		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38735" type="Weapon" name="Steel Laevateinn" icon="icon.weapon_leavatein_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" weight="433" soulshots="0" spiritshots="0" isTradable="false"
@@ -4203,9 +4158,8 @@
 		<set stat="pAtkSpd" val="406" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Draconic Bow
-		<Soul Crystal Enhancement>
-		Critical + 88. Additional damage during PvP.
+		<Special Option>
+		Critical + 88. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38736" type="Weapon" name="Steel Sarunga" icon="icon.weapon_sarnga_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="533" soulshots="0" spiritshots="0" isTradable="false"
@@ -4217,9 +4171,8 @@
 		<set stat="pAtkSpd" val="303" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 84. Additional damage during PvP.
+		<Special Option>
+		Critical + 84. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38737" type="Weapon" name="Steel Heaven's Divider" icon="icon.weapon_heavens_divider_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="460" soulshots="0" spiritshots="0"
@@ -4230,9 +4183,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 80. Additional damage during PvP.
+		<Special Option>
+		Critical + 80. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38738" type="Weapon" name="Steel Demon Splinter" icon="icon.weapon_demon_splinter_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="450" soulshots="0" spiritshots="0" isTradable="false"
@@ -4244,9 +4196,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. Additional damage during PvP.
+		<Special Option>
+		Casting Spd. + 15%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38739" type="Weapon" name="Steel Dynasty Phantom" icon="icon.weapon_dynasty_magic_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="510" soulshots="0" spiritshots="0"
@@ -4257,9 +4208,8 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Max HP + 25%. Additional damage during PvP.
+		<Special Option>
+		Max HP + 25%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38740" type="Weapon" name="Steel Dynasty Cudgel" icon="icon.weapon_dynasty_hammer_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="580" soulshots="0" spiritshots="0" isTradable="false"
@@ -4270,7 +4220,7 @@
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above, Critical + 109, Max HP + 10%. Additional damage during PvP. -->
+	<!-- Cannot augment. As with two-handed swords/blunts and fist weapons, dualswords have a greater increase in P. Atk. when enchanted than one-handed swords. When enchanted to + 4 or above, Critical + 109, Max HP + 10%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option. -->
 	<item id="38741" type="Weapon" name="Steel Dynasty Dualsword" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="510" soulshots="0" spiritshots="0" isTradable="false"
 			isDropable="false" isSellable="false">
@@ -4280,9 +4230,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		In a Critical Attack, 48% chance of inflicting Stun. Additional damage during PvP.
+		<Special Option>
+		In a Critical Attack, 48% chance of inflicting Stun. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38742" type="Weapon" name="Steel Dynasty Halberd" icon="icon.weapon_dynasty_spear_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="670" soulshots="0" spiritshots="0" isTradable="false"
@@ -4294,9 +4243,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 116. Additional damage during PvP.
+		<Special Option>
+		Critical + 116. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38743" type="Weapon" name="Steel Dynasty Knife" icon="icon.weapon_dynasty_dagger_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="510" soulshots="0" spiritshots="0" isTradable="false"
@@ -4308,9 +4256,8 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Dynasty Bow
-		<Soul Crystal Enhancement>
-		Critical + 116. Additional damage during PvP.
+		<Special Option>
+		Critical + 116. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38744" type="Weapon" name="Steel Dynasty Crossbow" icon="icon.weapon_dynasty_crossbow_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="530" soulshots="0" spiritshots="0"
@@ -4322,9 +4269,8 @@
 		<set stat="pAtkSpd" val="303" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Dysnasty Blade
-		<Soul Crystal Enhancement>
-		Critical + 111. Additional damage during PvP.
+		<Special Option>
+		Critical + 111. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38745" type="Weapon" name="Steel Dynasty Ancient Sword" icon="icon.weapon_dynasty_ancient_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="15" immediateEffect="1" weight="600" soulshots="0" spiritshots="0"
@@ -4336,10 +4282,9 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!--
-		Cannot augment. Kamael only: Convert - Dynasty Sword
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Critical + 111. Additional damage during PvP.
-		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption.
+		When enchanted to + 4 or above, has a chance during a Critical to increase entire party's P./M. Atk. and received Heal, and decrease Skill MP Consumption. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38746" type="Weapon" name="Steel Dynasty Rapier" icon="icon.weapon_dynasty_rapier_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" weight="430" soulshots="0" spiritshots="0" isTradable="false"
@@ -4351,9 +4296,8 @@
 		<set stat="pAtkSpd" val="406" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 111. Additional damage during PvP.
+		<Special Option>
+		Critical + 111. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38747" type="Weapon" name="Steel Dynasty Blade" icon="icon.weapon_dynasty_twohand_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="580" soulshots="0" spiritshots="0"
@@ -4364,9 +4308,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Atk. Spd. + 10%. Additional damage during PvP.
+		<Special Option>
+		Atk. Spd. + 10%. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38748" type="Weapon" name="Steel Dynasty Bagh-Nakh" icon="icon.weapon_dynasty_jamadhr_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="520" soulshots="0" spiritshots="0"
@@ -4378,9 +4321,8 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Critical + 116. Additional damage during PvP.
+		<Special Option>
+		Critical + 116. Additional damage during PvP. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="38749" type="Weapon" name="Steel Dynasty Bow" icon="icon.weapon_dynasty_bow_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="510" soulshots="0" spiritshots="0" isTradable="false"
@@ -4391,20 +4333,19 @@
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="293" />
 	</item>
-	<!-- Carry this to pass for the Lineage II business team. You need this to receive buffs from Kuhina. Temporary event item. -->
-	<item id="38750" type="EtcItem" name="Lara the Cat's Card Key" icon="icon.cardkey_raracat" weight="0" isTradable="false"
-			isDropable="false" isSellable="false">
+	<!-- You need this to receive buffs from Lara. Temporary event item. -->
+	<item id="38750" type="EtcItem" name="Lara's Card Key" icon="icon.cardkey_raracat" weight="0" isTradable="false" isDropable="false"
+			isSellable="false">
 	</item>
-	<!-- Kuhina's offering a prize for anyone who collects 10 or 13 of her business cards. Temporary event item. -->
-	<item id="38751" type="EtcItem" name="Lara the Cat's Business Card" icon="icon.namecard_raracat" weight="0" isTradable="false"
-			isDropable="false" isSellable="false">
+	<!-- After the event concludes, a random drawing of prizes will be given out to players that collect 12 or more of Lara's business cards. Temporary event item. -->
+	<item id="38751" type="EtcItem" name="Lara's Business Card" icon="icon.namecard_raracat" weight="0" isTradable="false" isDropable="false"
+			isSellable="false">
 	</item>
-	<!-- A gift from Kuhina! Seems a bit hastily thrown together, but hey, it's a gift. Temporary event item. -->
-	<item id="38752" type="EtcItem" name="Lara the Cat's Secret Gift" icon="icon.special_cube_i00" weight="0">
+	<!-- A gift from Lara's! Seems a bit hastily thrown together, but hey, it's a gift. Temporary event item. -->
+	<item id="38752" type="EtcItem" name="Lara's Gift" icon="icon.special_cube_i00" weight="0">
 	</item>
-	<!-- A gift from Funog! A tremendous gift awaits if you're lucky. Temporary event item. -->
-	<item id="38753" type="EtcItem" name="Lara the Cat's Quality Secret Gift" icon="BranchSys.icon.br_ghost_magicalbox_i00"
-			weight="0">
+	<!-- A gift from Lara! A tremendous gift awaits if you're lucky. Temporary event item. -->
+	<item id="38753" type="EtcItem" name="Lara's Secret Gift" icon="BranchSys.icon.br_ghost_magicalbox_i00" weight="0">
 	</item>
 	<!-- Talk to a GM to receive a Shiny Elemental Shirt + 8. -->
 	<item id="38754" type="EtcItem" name="Shiny Elemental Shirt + 8 Coupon" icon="icon.etc_lottery_card_i00" weight="0">
@@ -4443,9 +4384,9 @@
 	<!-- Double-click to obtain a My Teleport Book and  My Teleport Scroll x 10. -->
 	<item id="38764" type="EtcItem" name="My Teleport Pack" icon="icon.etc_exchange_box_i00" weight="0">
 	</item>
-	<!-- Double-click to obtain Lara the Cat's Card Key, Lara the Cat's Secret Gift x 3 and Lara the Cat's Quality Secret Gift. Temporary event item. -->
-	<item id="38765" type="EtcItem" name="Lara the Cat's Card Key Pack - Luxury" icon="icon.etc_pouch_yellow_i00" weight="0"
-			isTradable="false" isDropable="false" isSellable="false">
+	<!-- Double-click to obtain Lara's Key Card and Lara's Gift. Temporary event item. -->
+	<item id="38765" type="EtcItem" name="Lara's Key Card Pack - Luxury" icon="icon.etc_pouch_yellow_i00" weight="0" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Activates 2 jewel slots when equipped. -->
 	<item id="38766" type="Armor" name="La Vie En Rose's Brooch" icon="icon.etc_bm_brooch_lavianrose_i00" defaultAction="equip"

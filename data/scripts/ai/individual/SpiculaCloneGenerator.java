@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import java.util.HashMap;
@@ -29,17 +30,17 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Spicula Clone Generator AI
  */
 
 public class SpiculaCloneGenerator extends L2AttackableAIScript
 {
-	private static final int	_yin				= 19320;
-	private static final int	_yinFragment		= 19308;
-	private static final int	_spiculaElite		= 23303;
-	private static Map<Integer, Long>	_yinControl = new HashMap<Integer, Long>();
-
+	private static final int _yin = 19320;
+	private static final int _yinFragment = 19308;
+	private static final int _spiculaElite = 23303;
+	private static Map<Integer, Long> _yinControl = new HashMap<Integer, Long>();
+	
 	public SpiculaCloneGenerator(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -54,16 +55,16 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 			if (spawn == null)
 				continue;
 			
-			if (spawn.getNpcId() == _yin || spawn.getNpcId() == _yinFragment)
+			if ((spawn.getNpcId() == _yin) || (spawn.getNpcId() == _yinFragment))
 				notifySpawn(spawn.getNpc());
 		}
 	}
-
+	
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
 		if (npc.getNpcId() == _yin)
-		{	
+		{
 			npc.setIsInvul(true);
 		}
 		
@@ -77,12 +78,12 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	{
 		if (_yinControl.containsKey(npc.getObjectId()))
 		{
-			 if (System.currentTimeMillis() >= (_yinControl.get(npc.getObjectId()) + 180000))
-			 {
-				 _yinControl.put(npc.getObjectId(), System.currentTimeMillis());
-				 
-				 spawnSpiculas(npc, attacker);
-			 }
+			if (System.currentTimeMillis() >= (_yinControl.get(npc.getObjectId()) + 180000))
+			{
+				_yinControl.put(npc.getObjectId(), System.currentTimeMillis());
+				
+				spawnSpiculas(npc, attacker);
+			}
 		}
 		else
 		{
@@ -104,17 +105,17 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	
 	private void spawnSpiculas(L2Npc npc, L2PcInstance killer)
 	{
-		npc.broadcastPacket(new ExShowScreenMessage("$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()), 3000));	//id: 1802277
+		npc.broadcastPacket(new ExShowScreenMessage("$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()), 3000)); //id: 1802277
 		
 		for (int a = 0; a <= (npc.getNpcId() == _yinFragment ? 2 : 4); a++)
-		{	
+		{
 			L2Npc minion = addSpawn(_spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 			
 			minion.setIsRunning(true);
 			
 			minion.setTarget(killer);
 			
-			((L2MonsterInstance)minion).addDamageHate(killer, 500, 99999);
+			((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);
 			
 			minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
 		}

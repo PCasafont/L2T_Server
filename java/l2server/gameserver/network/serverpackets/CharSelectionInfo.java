@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.sql.Connection;
@@ -44,7 +45,6 @@ import l2server.log.Log;
 public class CharSelectionInfo extends L2GameServerPacket
 {
 	// d SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddddffd
-	private static final String _S__1F_CHARSELECTINFO = "[S] 09 CharSelectInfo";
 	
 	private String _loginName;
 	private int _sessionId, _activeId;
@@ -77,7 +77,6 @@ public class CharSelectionInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x09);
 		int size = (_characterPackages.length);
 		writeD(size);
 		
@@ -184,7 +183,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x00);
-
+			
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x00);
@@ -206,7 +205,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			long deleteTime = charInfoPackage.getDeleteTimer();
 			int deletedays = 0;
 			if (deleteTime > 0)
-				deletedays = (int)((deleteTime-System.currentTimeMillis())/1000);
+				deletedays = (int) ((deleteTime - System.currentTimeMillis()) / 1000);
 			writeD(deletedays); // days left before
 			// delete .. if != 0
 			// then char is inactive
@@ -215,7 +214,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 				writeD(0x01);
 			else
 				writeD(0x00); //c3 auto-select char
-			
+				
 			writeC(charInfoPackage.getEnchantEffect() > 127 ? 127 : charInfoPackage.getEnchantEffect());
 			
 			writeQ(charInfoPackage.getAugmentationId());
@@ -233,12 +232,12 @@ public class CharSelectionInfo extends L2GameServerPacket
 			
 			// High Five by Vistall:
 			writeD(charInfoPackage.getVitalityPoints());
-
-			writeD(charInfoPackage.getVitalityLevel() > 0 ? (int)Config.VITALITY_MULTIPLIER * 100 : 0); // Vitality Exp bonus
+			
+			writeD(charInfoPackage.getVitalityLevel() > 0 ? (int) Config.VITALITY_MULTIPLIER * 100 : 0); // Vitality Exp bonus
 			writeD(0x00); // Vitality Items count
 			
 			writeD(0x01); // Is activated
-
+			
 			writeH(0x00); // ???
 			writeC(charInfoPackage.isShowingHat() ? 1 : 0); // ???
 		}
@@ -261,7 +260,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			while (charList.next())// fills the package
 			{
 				charInfopackage = restoreChar(charList);
-				if ( charInfopackage != null )
+				if (charInfopackage != null)
 					characterList.add(charInfopackage);
 			}
 			
@@ -278,7 +277,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-
+		
 		return new CharSelectInfoPackage[0];
 	}
 	
@@ -366,7 +365,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 		charInfopackage.setX(chardata.getInt("x"));
 		charInfopackage.setY(chardata.getInt("y"));
 		charInfopackage.setZ(chardata.getInt("z"));
-
+		
 		// if is in subclass, load subclass exp, sp, lvl info
 		if (baseClassId != activeClassId)
 			loadCharacterSubclassInfo(charInfopackage, objectId, activeClassId);
@@ -452,7 +451,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 			rs.close();
 			statement.close();
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			Log.log(Level.WARNING, "Could not restore vitality points info: " + e.getMessage(), e);
 		}
@@ -461,11 +460,5 @@ public class CharSelectionInfo extends L2GameServerPacket
 			con.close();
 		}
 		return charInfopackage;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__1F_CHARSELECTINFO;
 	}
 }

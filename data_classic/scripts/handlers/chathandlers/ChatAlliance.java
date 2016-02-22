@@ -14,8 +14,7 @@
  */
 package handlers.chathandlers;
 
-import l2server.gameserver.gui.ConsoleTab;
-import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
+import l2server.gameserver.GmListTable;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -33,25 +32,15 @@ public class ChatAlliance implements IChatHandler
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		/*if (activeChar.isGM())
+		if (activeChar.isGM())
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			GmListTable.broadcastToGMs(cs);
 		}
-		else*/ if (activeChar.getClan() != null)
+		else if (activeChar.getClan() != null)
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			activeChar.getClan().broadcastToOnlineAllyMembers(cs);
-			
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			String allyName = activeChar.getClan().getAllyName();
-			ConsoleTab.appendMessage(ConsoleFilter.AllyChat, "[" + allyName + "] " + activeChar.getName() + ": " + text, allyName, activeChar.getName());
 		}
 	}
 	

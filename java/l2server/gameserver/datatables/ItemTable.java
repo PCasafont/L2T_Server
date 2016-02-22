@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
@@ -34,9 +35,9 @@ import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -165,7 +166,7 @@ public class ItemTable implements Reloadable
 		_armors.clear();
 		_etcItems.clear();
 		_weapons.clear();
-
+		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "items");
 		if (!dir.exists())
 		{
@@ -182,7 +183,7 @@ public class ItemTable implements Reloadable
 		File customfile = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/items.xml");
 		if (customfile.exists())
 			validFiles.add(customfile);
-
+		
 		Map<Integer, ItemParser> items = new HashMap<Integer, ItemParser>();
 		for (File f : validFiles)
 		{
@@ -221,11 +222,11 @@ public class ItemTable implements Reloadable
 			if (highest < item.getItem().getItemId())
 				highest = item.getItem().getItemId();
 			if (item.getItem() instanceof L2EtcItem)
-				_etcItems.put(item.getId(), (L2EtcItem)item.getItem());
+				_etcItems.put(item.getId(), (L2EtcItem) item.getItem());
 			else if (item.getItem() instanceof L2Armor)
-				_armors.put(item.getId(), (L2Armor)item.getItem());
+				_armors.put(item.getId(), (L2Armor) item.getItem());
 			else
-				_weapons.put(item.getId(), (L2Weapon)item.getItem());
+				_weapons.put(item.getId(), (L2Weapon) item.getItem());
 		}
 		buildFastLookupTable(highest);
 	}
@@ -291,17 +292,15 @@ public class ItemTable implements Reloadable
 		// Create and Init the L2ItemInstance corresponding to the Item Identifier
 		L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		
-		if (actor != null && actor.isGM())
-			item.setGmTouched(actor.getName());
 		if (process.equalsIgnoreCase("loot"))
 		{
 			ScheduledFuture<?> itemLootShedule;
-			if (reference instanceof L2Attackable && ((L2Attackable) reference).isRaid()) // loot privilege for raids
+			if ((reference instanceof L2Attackable) && ((L2Attackable) reference).isRaid()) // loot privilege for raids
 			{
-				L2Attackable raid = (L2Attackable)reference;
+				L2Attackable raid = (L2Attackable) reference;
 				boolean protectDrop = true;
 				if (Config.isServer(Config.TENKAI))
-					protectDrop = !(raid instanceof L2GrandBossInstance) || raid.getInstanceId() != 0;
+					protectDrop = !(raid instanceof L2GrandBossInstance) || (raid.getInstanceId() != 0);
 				
 				// if in CommandChannel and was killing a World/RaidBoss
 				if (!Config.AUTO_LOOT_RAIDS && protectDrop)
@@ -329,13 +328,12 @@ public class ItemTable implements Reloadable
 		L2World.getInstance().storeObject(item);
 		
 		// Set Item parameters
-		if (item.isStackable() && count > 1)
+		if (item.isStackable() && (count > 1))
 			item.setCount(count);
 		
 		if (Config.LOG_ITEMS && !process.equals("Reset") && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID
-					|| item.getItemId() == 4037 || item.getItemId() == 4355 || item.getItemId() == 4356)))
+			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID) || (item.getItemId() == 4037) || (item.getItemId() == 4355) || (item.getItemId() == 4356))))
 				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 		}
 		
@@ -346,14 +344,13 @@ public class ItemTable implements Reloadable
 				String referenceName = "no-reference";
 				if (reference instanceof L2Object)
 				{
-					referenceName = (((L2Object)reference).getName() != null?((L2Object)reference).getName():"no-name");
+					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
 				}
 				else if (reference instanceof String)
-					referenceName = (String)reference;
+					referenceName = (String) reference;
 				String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
 				if (Config.GMAUDIT)
-					GMAudit.auditGMAction(actor.getName(), process + " (id: " + itemId + " count: " + count + " name: " + item.getItemName()
-							+ " objId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: " + referenceName);
+					GMAudit.auditGMAction(actor.getName(), process + " (id: " + itemId + " count: " + count + " name: " + item.getItemName() + " objId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: " + referenceName);
 			}
 		}
 		
@@ -398,8 +395,7 @@ public class ItemTable implements Reloadable
 	{
 		if (Config.LOG_ITEMS && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID
-					|| item.getItemId() == 4037 || item.getItemId() == 4355 || item.getItemId() == 4356)))
+			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID) || (item.getItemId() == 4037) || (item.getItemId() == 4355) || (item.getItemId() == 4356))))
 				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 		}
 		
@@ -415,7 +411,7 @@ public class ItemTable implements Reloadable
 			
 			if (Config.LOG_ITEMS && !process.contains("Consume"))
 			{
-				if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID)))
+				if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID))))
 					L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 			}
 			
@@ -426,15 +422,13 @@ public class ItemTable implements Reloadable
 					String referenceName = "no-reference";
 					if (reference instanceof L2Object)
 					{
-						referenceName = (((L2Object)reference).getName() != null?((L2Object)reference).getName():"no-name");
+						referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
 					}
 					else if (reference instanceof String)
-						referenceName = (String)reference;
+						referenceName = (String) reference;
 					String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(actor.getName(), process + " (id: " + item.getItemId() + " count: " + item.getCount()
-								+ " itemObjId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: "
-								+ referenceName);
+						GMAudit.auditGMAction(actor.getName(), process + " (id: " + item.getItemId() + " count: " + item.getCount() + " itemObjId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: " + referenceName);
 				}
 			}
 			
@@ -463,6 +457,7 @@ public class ItemTable implements Reloadable
 		}
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		load();
@@ -471,6 +466,7 @@ public class ItemTable implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Item Templates have been reloaded";
@@ -485,6 +481,7 @@ public class ItemTable implements Reloadable
 			_item = item;
 		}
 		
+		@Override
 		public void run()
 		{
 			_item.setOwnerId(0);

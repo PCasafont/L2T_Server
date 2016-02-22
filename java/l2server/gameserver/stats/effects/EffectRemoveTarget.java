@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -27,7 +28,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author -Nemesiss-
- * 
+ *
  */
 public class EffectRemoveTarget extends L2Effect
 {
@@ -35,7 +36,7 @@ public class EffectRemoveTarget extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -43,23 +44,23 @@ public class EffectRemoveTarget extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance)getEffected()).isCastingProtected())
+		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCastingProtected())
 			return false;
 		
 		if (getEffected().isRaid())
 			return false;
 		
-		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance)getEffected()).getNpcId() == 19036)	//TODO TEMP LasTravel, don't remove
+		if ((getEffected() instanceof L2MonsterInstance) && (((L2MonsterInstance) getEffected()).getNpcId() == 19036)) //TODO TEMP LasTravel, don't remove
 			return false;
 		
-		if (getEffected() instanceof L2Playable && getEffected().isCastingNow())
-		{	
+		if ((getEffected() instanceof L2Playable) && getEffected().isCastingNow())
+		{
 			//chat what is casting, if its a self skill defined as a buff return?
 			L2Skill lastSkillCast = getEffected().getLastSkillCast();
 			if (lastSkillCast != null)
@@ -82,25 +83,25 @@ public class EffectRemoveTarget extends L2Effect
 		//getEffected().abortCast();
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		
-		if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 && getSkill().getId() != 10265)
-			((L2Playable)getEffected()).setLockedTarget(getEffected());
+		if ((getEffected() instanceof L2Playable) && (getAbnormal().getTemplate().duration > 0) && (getSkill().getId() != 10265))
+			((L2Playable) getEffected()).setLockedTarget(getEffected());
 		
 		return true;
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
 	public void onExit()
 	{
 		if (getEffected() instanceof L2Playable)
-			((L2Playable)getEffected()).setLockedTarget(null);
+			((L2Playable) getEffected()).setLockedTarget(null);
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override

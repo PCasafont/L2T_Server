@@ -60,8 +60,8 @@ public class AdminTenkai implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminTenkai.class.getName());
 	
-	private static List <SpawnInfo> _deletedSpawns = new FastList<SpawnInfo>();
-	private static List <Integer> _mobIds = new FastList<Integer>();
+	private static List <SpawnInfo> _deletedSpawns = new HashMap<SpawnInfo>();
+	private static List <Integer> _mobIds = new HashMap<Integer>();
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -326,11 +326,20 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_loc"))
 		{
+			GeoEngine.unloadGeodata((byte)19, (byte)18);
+			//GeoEngine.getInstance().loadGeodataFile((byte)18, (byte)19);
 			
-		GeoEngine.unloadGeodata((byte)25, (byte)12);
+			//GeoEngine.getInstance().unloadGeodata((byte)19, (byte)18);
+		
+			
+			/*GrandBossManager.getInstance().setBossStatus(25286, 3);
+			Quest q = QuestManager.getInstance().getQuest("Lilith");
+			if (q != null)
+				q.notifyEvent("end_lilith", null, null);
+			*/
 		_log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " + activeChar.getHeading());
 		
-		}	
+		}
 		else if (command.startsWith("admin_devdelete"))
 			handleDevDelete(activeChar);
 		else if (command.equalsIgnoreCase("admin_massdelete"))

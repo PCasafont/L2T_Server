@@ -123,12 +123,12 @@ class Quest (JQuest) :
    elif id == State.CREATED :
      st.set("cond","0")
    if npcId == 30624 and st.getInt("cond") == 0 :
-        if player.getClassId() in [0x01, 0x2d] and player.getLevel() > 38 :
-          if player.getClassId() == 0x01 :
+        if player.getClassId().getId() in [0x01, 0x2d] and player.getLevel() > 38 :
+          if player.getClassId().getId() == 0x01 :
             htmltext = "30624-03.htm"
           else:
             htmltext = "30624-04.htm"
-        elif player.getClassId() in [0x01, 0x2d] :
+        elif player.getClassId().getId() in [0x01, 0x2d] :
           htmltext = "30624-02.htm"
         else:
           htmltext = "30624-01.htm"

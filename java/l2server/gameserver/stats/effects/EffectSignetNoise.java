@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -35,7 +35,7 @@ public class EffectSignetNoise extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -43,7 +43,7 @@ public class EffectSignetNoise extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
@@ -54,29 +54,29 @@ public class EffectSignetNoise extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
+		if (getAbnormal().getCount() == (getAbnormal().getTotalCount() - 1))
 			return true; // do nothing first time
-		
+			
 		if (!(getEffector() instanceof L2PcInstance))
-			return false; 
+			return false;
 		
 		L2PcInstance caster = (L2PcInstance) getEffector();
 		
 		for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
-			if (target == null || target == caster)
+			if ((target == null) || (target == caster))
 				continue;
 			
 			if (target instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)target;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
+				L2PcInstance player = (L2PcInstance) target;
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
 					continue;
 			}
 			
@@ -97,7 +97,7 @@ public class EffectSignetNoise extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override

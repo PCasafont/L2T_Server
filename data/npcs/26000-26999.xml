@@ -2791,7 +2791,7 @@
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="26090" name="Abyssal Makkum" title="Raid Boss" level="99" type="L2GrandBoss" atkRange="40" hpMax="10000000" hpReg="200"
+	<npc id="26090" name="Abyssal Makkum" title="Raid Boss" level="99" type="L2GrandBoss" atkRange="40" hpMax="10000000" hpReg="200.0"
 			mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544" sp="2241537"
 			pAtk="400000" mAtk="200000" pDef="90000" mDef="30000" pAtkSpd="439" mAtkSpd="599" pCritRate="40" mCritRate="40" walkSpd="80"
 			runSpd="120" aggressive="true" aggroRange="2000" collisionRadius="10" collisionHeight="24" elemAtkType="3" elemAtkValue="600"
@@ -2823,161 +2823,162 @@
 	<npc id="26093" name="Mino" title="Tracker" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26094" name="Sola" title="Ill-fated Princess" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26095" name="Knife Maid" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26096" name="Ariarc" title="Fallen Angel" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26097" name="Angel of Punishment" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26098" name="Angel of Death" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26099" name="Sirra" title="Confined Princess" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26100" name="Sirra's Knight" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26101" name="Sirra's Ice Golem" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26102" name="Dark Rider" title="Betrayed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26103" name="Berserk Dragon Warrior" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26104" name="Berserk Dragon Wizard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26105" name="Veridan" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26106" name="Veridan" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26107" name="Veridan" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26108" name="Veridan" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26109" name="Veridan" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26110" name="Veridan" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26111" name="Kechi" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26112" name="Kechi" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26113" name="Kechi" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26114" name="Michaela" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26115" name="Michaela" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26116" name="Michaela" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26120" name="Michaela" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26121" name="Michaela" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26122" name="Michaela" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26123" name="Golden Pig" title="Dimensional Vagabond" level="105" type="L2Monster" atkRange="40" hpMax="1000000" hpReg="0.0" mpMax="2440"
-			mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="2000" mDef="2000" pAtkSpd="250"
-			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="" isLethalImmune="true" isDebuffImmune="true" canBeChampion="false">
+	<npc id="26123" name="Golden Pig" title="Dimensional Vagabond" level="105" type="L2Monster" atkRange="40" hpMax="1000000"
+			hpReg="0.0" mpMax="2440" mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11" pDef="2000"
+			mDef="2000" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10"
+			collisionHeight="24" isLethalImmune="true" isDebuffImmune="true" canBeChampion="false" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26124" name="Kelbim" title="Fallen Guardian of Atelia" level="104" type="L2GrandBoss" atkRange="40" hpMax="164165721"
 			hpReg="440.76" mpMax="2471403" mpReg="319.83" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="450000"
 			mAtk="250000" pDef="20000" mDef="15000" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120"
 			collisionRadius="10" collisionHeight="24" elemAtkType="5" elemAtkValue="370" fireRes="300" waterRes="300" windRes="250"
 			earthRes="250" holyRes="300" darkRes="370" aiType="fighter" skillChance="30" clan="kelbim_clan" clanRange="10000">
-		<skill id="23688" level="1" /> <!-- Fury of Kelbim -->
-		<skill id="23689" level="1" /> <!-- Kelbim Physical Protection -->
-		<skill id="23690" level="1" /> <!-- Kelbim Magic Protection -->
-		<skill id="23691" level="1" /> <!-- Kelbim Ultimate Protection -->
-		<skill id="23695" level="1" /> <!-- Stun Crash -->
-		<skill id="23697" level="1" /> <!-- Curse of Silence -->
-		<skill id="23681" level="1" /> <!-- Fatal Strike -->
+		<skill id="23688" level="1" /> <!-- Reflection Armor -->
+		<skill id="23689" level="1" /> <!-- Fury of Kelbim -->
+		<skill id="23690" level="1" /> <!-- Kelbim Physical Protection -->
+		<skill id="23691" level="1" /> <!-- Kelbim Magic Protection -->
+		<skill id="23695" level="1" /> <!-- Tornado Shackle -->
+		<skill id="23697" level="1" /> <!-- Chain Snake -->
+		<skill id="23681" level="1" /> <!-- Harpe Stone Cancel -->
 		<itemDrop itemId="46079" min="1" max="2" chance="100" /> <!-- Kelbim's Atelia Fragment -->
 	</npc>
 	<npc id="26125" name="Giant Atelia" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26126" name="Guardian Sinistra" title="Kelbim's Minion" level="103" type="L2Monster" atkRange="40" hpMax="729003"
 			hpReg="48.0" mpMax="28731" mpReg="32.56" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="111937319" sp="53729"
@@ -2994,7 +2995,7 @@
 	<npc id="26128" name="Kelbim's Clone" title="Fallen Guardian of Atelia" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26129" name="Kelbim's Guard" level="103" type="L2Monster" atkRange="80" hpMax="729003" hpReg="48.0" mpMax="28731"
 			mpReg="32.56" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="111937319" sp="53729" pAtk="2220000" mAtk="500000"
@@ -3005,36 +3006,36 @@
 	<npc id="26130" name="Atelia Safety Device" level="99" type="L2Monster" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26131" name="Isabella" title="Raid Boss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26132" name="Croa" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26133" name="Amis" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26134" name="Atelia Dark Wizard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26135" name="Geork" title="Embryo Master Artisan" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="26136" name="Burnstein" title="Embryo Commander" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

@@ -3,21 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.itemcontainer.Inventory;
+
 /**
  *
  * TODO Add support for Eval. Score
@@ -29,7 +31,6 @@ import l2server.gameserver.model.itemcontainer.Inventory;
  */
 public class GMViewCharacterInfo extends L2GameServerPacket
 {
-	private static final String _S__8F_GMVIEWCHARINFO = "[S] 95 GMViewCharacterInfo";
 	private L2PcInstance _activeChar;
 	
 	/**
@@ -44,10 +45,8 @@ public class GMViewCharacterInfo extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		float moveMultiplier = _activeChar.getMovementSpeedMultiplier();
-		int _runSpd = (int) (_activeChar.getRunSpeed() / moveMultiplier);
-		int _walkSpd = (int) (_activeChar.getWalkSpeed() / moveMultiplier);
-		
-		writeC(0x95);
+		int runSpd = (int) _activeChar.getTemplate().baseRunSpd;
+		int walkSpd = (int) _activeChar.getTemplate().baseWalkSpd;
 		
 		writeD(_activeChar.getX());
 		writeD(_activeChar.getY());
@@ -56,7 +55,7 @@ public class GMViewCharacterInfo extends L2GameServerPacket
 		writeD(_activeChar.getObjectId());
 		writeS(_activeChar.getName());
 		writeD(_activeChar.getRace().ordinal());
-		writeD(_activeChar.getAppearance().getSex()? 1 : 0);
+		writeD(_activeChar.getAppearance().getSex() ? 1 : 0);
 		writeD(_activeChar.getCurrentClass().getId());
 		writeD(_activeChar.getLevel());
 		writeQ(_activeChar.getExp());
@@ -72,7 +71,7 @@ public class GMViewCharacterInfo extends L2GameServerPacket
 		writeD(_activeChar.getMaxVisibleHp());
 		writeD((int) _activeChar.getCurrentHp());
 		writeD(_activeChar.getMaxMp());
-		writeD((int)_activeChar.getCurrentMp());
+		writeD((int) _activeChar.getCurrentMp());
 		writeQ(_activeChar.getSp());
 		writeD(_activeChar.getCurrentLoad());
 		writeD(_activeChar.getMaxLoad());
@@ -211,27 +210,27 @@ public class GMViewCharacterInfo extends L2GameServerPacket
 		writeD(_activeChar.getPvpFlag()); // 0-non-pvp  1-pvp = violett name
 		writeD(_activeChar.getReputation());
 		
-		writeD(_runSpd);
-		writeD(_walkSpd);
-		writeD(_runSpd); // swimspeed
-		writeD(_walkSpd); // swimspeed
-		writeD(_runSpd);
-		writeD(_walkSpd);
-		writeD(_runSpd);
-		writeD(_walkSpd);
+		writeD(runSpd);
+		writeD(walkSpd);
+		writeD(runSpd); // swimspeed
+		writeD(walkSpd); // swimspeed
+		writeD(runSpd);
+		writeD(walkSpd);
+		writeD(runSpd);
+		writeD(walkSpd);
 		writeF(moveMultiplier);
 		writeF(_activeChar.getAttackSpeedMultiplier()); //2.9);//
-		writeF(_activeChar.getCollisionRadius());  // scale
+		writeF(_activeChar.getCollisionRadius()); // scale
 		writeF(_activeChar.getCollisionHeight()); // y offset ??!? fem dwarf 4033
 		writeD(_activeChar.getAppearance().getHairStyle());
 		writeD(_activeChar.getAppearance().getHairColor());
 		writeD(_activeChar.getAppearance().getFace());
-		writeD(_activeChar.isGM() ? 0x01 : 0x00);	// builder level
+		writeD(_activeChar.isGM() ? 0x01 : 0x00); // builder level
 		
 		writeS(_activeChar.getTitle());
-		writeD(_activeChar.getClanId());		// pledge id
-		writeD(_activeChar.getClanCrestId());		// pledge crest id
-		writeD(_activeChar.getAllyId());		// ally id
+		writeD(_activeChar.getClanId()); // pledge id
+		writeD(_activeChar.getClanCrestId()); // pledge crest id
+		writeD(_activeChar.getAllyId()); // ally id
 		writeC(_activeChar.getMountType()); // mount type
 		writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? _activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 		writeC(_activeChar.hasDwarvenCraft() ? 1 : 0);
@@ -271,14 +270,5 @@ public class GMViewCharacterInfo extends L2GameServerPacket
 		
 		writeD(_activeChar.getFame());
 		writeD(_activeChar.getVitalityPoints());
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__8F_GMVIEWCHARINFO;
 	}
 }

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -31,7 +32,7 @@ public class EffectRelax extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
@@ -41,7 +42,7 @@ public class EffectRelax extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
@@ -57,7 +58,7 @@ public class EffectRelax extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
@@ -67,7 +68,7 @@ public class EffectRelax extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
@@ -82,7 +83,7 @@ public class EffectRelax extends L2Effect
 				return false;
 		}
 		
-		if (getEffected().getCurrentHp() + 1 > getEffected().getMaxHp())
+		if ((getEffected().getCurrentHp() + 1) > getEffected().getMaxHp())
 		{
 			if (getSkill().isToggle())
 			{

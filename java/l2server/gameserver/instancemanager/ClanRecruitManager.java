@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -109,7 +110,7 @@ public class ClanRecruitManager
 					PreparedStatement statement2 = con2.prepareStatement("SELECT char_name, classid, level, clanid FROM characters WHERE charId = ?");
 					statement2.setInt(1, applicantId);
 					ResultSet rset2 = statement2.executeQuery();
-					if (rset2.next() && rset2.getInt("clanid") == 0)
+					if (rset2.next() && (rset2.getInt("clanid") == 0))
 					{
 						ClanRecruitWaitingUser applicant = new ClanRecruitWaitingUser();
 						applicant.id = applicantId;
@@ -199,7 +200,7 @@ public class ClanRecruitManager
 		data.karma = karma;
 		data.introduction = introduction;
 		data.largeIntroduction = largeIntroduction;
-
+		
 		Connection con = null;
 		try
 		{
@@ -228,11 +229,12 @@ public class ClanRecruitManager
 		if (data == null)
 			return false;
 		
-		for (ClanRecruitWaitingUser applicant : data.applicants.values())
+		List<ClanRecruitWaitingUser> toIterate = new ArrayList<ClanRecruitWaitingUser>(data.applicants.values());
+		for (ClanRecruitWaitingUser applicant : toIterate)
 			removeApplicant(applicant.id);
 		
 		_recruitData.remove(clan.getClanId());
-
+		
 		Connection con = null;
 		try
 		{
@@ -271,14 +273,12 @@ public class ClanRecruitManager
 		
 		for (ClanRecruitData data : _recruitData.values())
 		{
-			if ((level > -1 && data.clan.getLevel() != level)
-					|| (karma > -1 && data.karma != karma))
+			if (((level > -1) && (data.clan.getLevel() != level)) || ((karma > -1) && (data.karma != karma)))
 				continue;
 			
 			if (!name.isEmpty())
 			{
-				if ((!clanName && !data.clan.getLeaderName().toLowerCase().contains(name))
-						|| (clanName && !data.clan.getName().toLowerCase().contains(name)))
+				if ((!clanName && !data.clan.getLeaderName().toLowerCase().contains(name)) || (clanName && !data.clan.getName().toLowerCase().contains(name)))
 					continue;
 			}
 			
@@ -409,8 +409,7 @@ public class ClanRecruitManager
 	
 	public boolean addWaitingUser(L2PcInstance player, int karma)
 	{
-		if (_waitingUsers.containsKey(player.getObjectId())
-				|| _allApplicants.containsKey(player.getObjectId()))
+		if (_waitingUsers.containsKey(player.getObjectId()) || _allApplicants.containsKey(player.getObjectId()))
 			return false;
 		
 		ClanRecruitWaitingUser waitingUser = new ClanRecruitWaitingUser();
@@ -450,7 +449,7 @@ public class ClanRecruitManager
 			return false;
 		
 		_waitingUsers.remove(waitingUser.id);
-
+		
 		Connection con = null;
 		try
 		{
@@ -476,18 +475,19 @@ public class ClanRecruitManager
 	{
 		return _waitingUsers.get(playerId);
 	}
+	
 	public List<ClanRecruitWaitingUser> getWaitingUsers(int minLevel, int maxLevel, int role, final int sortBy, final boolean desc, String name)
 	{
 		name = name.toLowerCase();
 		List<ClanRecruitWaitingUser> result = new ArrayList<ClanRecruitWaitingUser>();
 		for (ClanRecruitWaitingUser user : _waitingUsers.values())
 		{
-			if (user.level < minLevel || user.level > maxLevel)
+			if ((user.level < minLevel) || (user.level > maxLevel))
 				continue;
 			
 			PlayerClass pc = PlayerClassTable.getInstance().getClassById(user.classId);
 			int awakening = pc.getAwakeningClassId();
-			if (awakening == -1 && pc.getParent() != null)
+			if ((awakening == -1) && (pc.getParent() != null))
 				awakening = pc.getParent().getAwakeningClassId();
 			switch (role)
 			{

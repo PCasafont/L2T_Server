@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
 public class NewCharacterSuccess extends L2GameServerPacket
 {
 	// dddddddddddddddddddd
-	private static final String _S__23_CHARTEMPLATES = "[S] 0d CharTemplates";
 	private List<L2PcTemplate> _chars = new ArrayList<L2PcTemplate>();
 	
 	public NewCharacterSuccess()
@@ -43,7 +43,6 @@ public class NewCharacterSuccess extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x0d);
 		writeD(_chars.size());
 		
 		for (L2PcTemplate temp : _chars)
@@ -72,14 +71,5 @@ public class NewCharacterSuccess extends L2GameServerPacket
 			writeD(temp.baseMEN);
 			writeD(0x0a);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__23_CHARTEMPLATES;
 	}
 }

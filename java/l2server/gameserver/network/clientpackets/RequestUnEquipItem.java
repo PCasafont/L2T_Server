@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -31,7 +32,6 @@ import l2server.log.Log;
  */
 public class RequestUnEquipItem extends L2GameClientPacket
 {
-	private static final String _C__11_REQUESTUNEQUIPITEM = "[C] 11 RequestUnequipItem";
 	
 	// cd
 	private int _slot;
@@ -65,22 +65,21 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		// Prevent of unequiping a cursed weapon
-		if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
+		if ((_slot == L2Item.SLOT_LR_HAND) && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
 		{
 			// Message ?
 			return;
 		}
 		
 		// arrows and bolts
-		if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
+		if ((_slot == L2Item.SLOT_L_HAND) && (item.getItem() instanceof L2EtcItem))
 		{
 			// Message ?
 			return;
 		}
 		
 		// Prevent player from unequipping items in special conditions
-		if (activeChar.isStunned() || activeChar.isSleeping()
-				|| activeChar.isParalyzed() || activeChar.isAlikeDead())
+		if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead())
 		{
 			activeChar.sendMessage("Your status does not allow you to do that.");
 			return;
@@ -94,13 +93,12 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2ItemInstance[] unequiped =
-			activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
+		L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 		
 		// show the update in the inventory
 		InventoryUpdate iu = new InventoryUpdate();
 		
-		for (L2ItemInstance itm: unequiped)
+		for (L2ItemInstance itm : unequiped)
 		{
 			activeChar.checkSShotsMatch(null, itm);
 			
@@ -131,14 +129,5 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			activeChar.sendPacket(sm);
 			sm = null;
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__11_REQUESTUNEQUIPITEM;
 	}
 }

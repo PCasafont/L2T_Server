@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.ai;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	private List<L2NpcWalkerNode> _route = null;
 	private int _currentPos = 0;
 	private long _nextMoveTime = 0;
-
+	
 	private L2PcInstance _guided = null;
 	private boolean _isWaiting = false;
 	private int _waitRadius = 100;
@@ -63,7 +64,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			_task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 400);
 		}
 		else
-			Log.warning(getClass().getSimpleName()+": Missing route data! Npc: "+_actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + _actor);
 	}
 	
 	public void initializeRoute(List<L2NpcWalkerNode> route, L2PcInstance guided)
@@ -77,7 +78,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			_task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 1000, 200);
 		}
 		else
-			Log.warning(getClass().getSimpleName()+": Missing route data! Npc: "+_actor);
+			Log.warning(getClass().getSimpleName() + ": Missing route data! Npc: " + _actor);
 		
 		_guided = guided;
 	}
@@ -91,20 +92,19 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			return;
 		}
 		
-		if (System.currentTimeMillis() < _nextMoveTime || _waitingForQuestResponse)
+		if ((System.currentTimeMillis() < _nextMoveTime) || _waitingForQuestResponse)
 			return;
-
+		
 		int x = _route.get(_currentPos).getMoveX();
 		int y = _route.get(_currentPos).getMoveY();
 		int z = _route.get(_currentPos).getMoveZ();
 		
 		if (_isWaiting)
 		{
-			if (getActor().isInsideRadius(_guided, _waitRadius, false, false)
-					&& getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
+			if (getActor().isInsideRadius(_guided, _waitRadius, false, false) && (getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null))
 			{
 				_waitingForQuestResponse = true;
-				for (Quest quest: getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
+				for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
 					quest.notifyPlayerArrived(this);
 			}
 			return;
@@ -112,7 +112,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		
 		if (!getActor().isInsideRadius(x, y, z, 40, false, false))
 		{
-			if (_nextMoveTime != 0 && System.currentTimeMillis() > _nextMoveTime + 10000L)
+			if ((_nextMoveTime != 0) && (System.currentTimeMillis() > (_nextMoveTime + 10000L)))
 			{
 				int destX = _route.get(_currentPos).getMoveX();
 				int destY = _route.get(_currentPos).getMoveY();
@@ -126,7 +126,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		if (getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED) != null)
 		{
 			_waitingForQuestResponse = true;
-			for (Quest quest: getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED))
+			for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_ARRIVED))
 				quest.notifyArrived(this);
 			return;
 		}
@@ -138,7 +138,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		if (id == 0)
 			chat = _route.get(_currentPos).getChatText();
 		
-		if ((id > 0) || (chat != null && !chat.isEmpty()))
+		if ((id > 0) || ((chat != null) && !chat.isEmpty()))
 			getActor().broadcastChat(chat, id);
 		
 		//time in millis
@@ -205,11 +205,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		int dy = _guided.getY() - getActor().getY();
 		int dz = _guided.getZ() - getActor().getZ();
 		
-		double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+		double dist = Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
 		
-		int destinationX = getActor().getX() + (int)Math.round(distance * dx / dist);
-		int destinationY = getActor().getY() + (int)Math.round(distance * dy / dist);
-		int destinationZ = getActor().getZ() + (int)Math.round(distance * dz / dist);
+		int destinationX = getActor().getX() + (int) Math.round((distance * dx) / dist);
+		int destinationY = getActor().getY() + (int) Math.round((distance * dy) / dist);
+		int destinationZ = getActor().getZ() + (int) Math.round((distance * dz) / dist);
 		
 		setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(destinationX, destinationY, destinationZ, 0));
 	}
@@ -217,7 +217,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	@Override
 	public L2Npc getActor()
 	{
-		return (L2Npc)super.getActor();
+		return (L2Npc) super.getActor();
 	}
 	
 	public int getCurrentPos()

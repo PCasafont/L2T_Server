@@ -1,3 +1,4 @@
+
 package ai.individual;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -31,13 +32,13 @@ public class NecromancerOfTheValley extends L2AttackableAIScript
 			L2Character attacker = isPet ? killer.getPet() : killer;
 			
 			if (attacker == null)
-			{	
+			{
 				return super.onKill(npc, killer, isPet);
 			}
 			
-			for (int a = 22818; a < 22820; a ++)
+			for (int a = 22818; a < 22820; a++)
 			{
-				L2Attackable minion = (L2Attackable)addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
+				L2Attackable minion = (L2Attackable) addSpawn(a, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
 				
 				minion.setIsRunning(true);
 				

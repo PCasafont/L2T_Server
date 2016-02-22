@@ -216,7 +216,6 @@
 		<set name="mpConsume" val="73" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="150000" />
-		<set name="staticReuse" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<for>

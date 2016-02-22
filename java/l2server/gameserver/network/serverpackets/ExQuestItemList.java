@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -27,14 +28,13 @@ import l2server.gameserver.model.itemcontainer.PcInventory;
  * D8 FF FF FE FF 00 00 00 00 00 00 00 00 00 00 00
  * 00 00 00 00 00 00 00 00 00 00 00
  * <BR>
- * 
+ *
  * @author JIV
- * 
+ *
 
  */
 public class ExQuestItemList extends L2ItemListPacket
 {
-	private static final String _S__FE_C6_EXQUESTITEMLIST = "[S] FE:C6 ExQuestItemList";
 	
 	private ArrayList<L2ItemInstance> _items;
 	private PcInventory _inventory;
@@ -46,11 +46,8 @@ public class ExQuestItemList extends L2ItemListPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xC7);
-		
 		writeH(_items.size());
 		for (L2ItemInstance item : _items)
 			writeItem(item);
@@ -64,14 +61,4 @@ public class ExQuestItemList extends L2ItemListPacket
 		else
 			writeH(0x00);
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__FE_C6_EXQUESTITEMLIST;
-	}
-	
 }

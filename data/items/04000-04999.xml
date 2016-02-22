@@ -975,7 +975,7 @@
 	<!-- Simple game of chance! Roll 'em!! -->
 	<item id="4232" type="EtcItem" name="Dice" icon="icon.etc_dice_a_i00" defaultAction="dice" immediateEffect="1" isDestroyable="false">
 	</item>
-	<!-- Bestows one of the following functions, Rsk. Evasion, Rsk. Haste or Haste. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="4233" type="Weapon" name="Knuckle Duster" icon="icon.weapon_knuckle_dust_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1490" price="441940" soulshots="2" spiritshots="2" enchantEnabled="1">
@@ -2844,10 +2844,10 @@
 		<Soul Crystal Enhancement>
 		Decreases player's HP by 12. P. Atk. + 248 during a Critical Attack.
 	-->
-	<item id="4681" type="Weapon" name="StormBringer - Critical Anger" icon="icon.weapon_stormbringer_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
-			crystalCount="705" crystalType="c" weight="1430" price="352580" changeWeaponId="9229" soulshots="2" spiritshots="2"
-			enchantEnabled="1" oncritChance="10" oncritSkill="3025-1">
+	<item id="4681" type="Weapon" name="Not used - Not used" icon="icon.weapon_stormbringer_i01" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
+			crystalType="c" weight="1430" price="352580" changeWeaponId="9229" soulshots="2" spiritshots="2" enchantEnabled="1"
+			oncritChance="10" oncritSkill="3025-1">
 		<set stat="pAtk" val="107" />
 		<set stat="mAtk" val="61" />
 		<set stat="rCrit" val="8" />
@@ -2860,7 +2860,7 @@
 		<Soul Crystal Enhancement>
 		Increases Critical by 86.
 	-->
-	<item id="4682" type="Weapon" name="StormBringer - Focus" icon="icon.weapon_stormbringer_i01" defaultAction="equip" weaponType="sword"
+	<item id="4682" type="Weapon" name="Not used - Not used" icon="icon.weapon_stormbringer_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
 			crystalType="c" weight="1430" price="352580" changeWeaponId="9230" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="107" />
@@ -2875,10 +2875,9 @@
 		<Soul Crystal Enhancement>
 		Increases Weight Gauge by 20%.
 	-->
-	<item id="4683" type="Weapon" name="StormBringer - Light Armor" icon="icon.weapon_stormbringer_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
-			crystalCount="705" crystalType="c" weight="1430" price="352580" changeWeaponId="9231" soulshots="2" spiritshots="2"
-			enchantEnabled="1">
+	<item id="4683" type="Weapon" name="Not used - Not used" icon="icon.weapon_stormbringer_i01" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="705"
+			crystalType="c" weight="1430" price="352580" changeWeaponId="9231" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="107" />
 		<set stat="mAtk" val="61" />
 		<set stat="rCrit" val="8" />
@@ -2891,7 +2890,7 @@
 		<Soul Crystal Enhancement>
 		Increases Accuracy by 6.
 	-->
-	<item id="4684" type="Weapon" name="Shamshir - Guidance" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
+	<item id="4684" type="Weapon" name="Not used - Not used" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9241" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2906,7 +2905,7 @@
 		<Soul Crystal Enhancement>
 		Increases P. Critical Rate by 67 when attacking the target from behind.
 	-->
-	<item id="4685" type="Weapon" name="Shamshir - Back Blow" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
+	<item id="4685" type="Weapon" name="Not used - Not used" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9242" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2921,7 +2920,7 @@
 		<Soul Crystal Enhancement>
 		Increases Evasion by 7 when HP drops to 60% or below.
 	-->
-	<item id="4686" type="Weapon" name="Shamshir - Rsk. Evasion" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
+	<item id="4686" type="Weapon" name="Not used - Not used" icon="icon.weapon_shamshir_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9243" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2936,7 +2935,7 @@
 		<Soul Crystal Enhancement>
 		Increases Critical by 82.
 	-->
-	<item id="4687" type="Weapon" name="Katana - Focus" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
+	<item id="4687" type="Weapon" name="Not used - Not used" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9245" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2951,7 +2950,7 @@
 		<Soul Crystal Enhancement>
 		P. Atk. + 194 during a Critical Attack.
 	-->
-	<item id="4688" type="Weapon" name="Katana - Critical Damage" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
+	<item id="4688" type="Weapon" name="Not used - Not used" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9246" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2966,7 +2965,7 @@
 		<Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 7%.
 	-->
-	<item id="4689" type="Weapon" name="Katana - Haste" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
+	<item id="4689" type="Weapon" name="Not used - Not used" icon="icon.weapon_katana_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9247" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -2981,10 +2980,9 @@
 		<Soul Crystal Enhancement>
 		P. Atk. + 194 during a Critical Attack.
 	-->
-	<item id="4690" type="Weapon" name="Spirit Sword - Critical Damage" icon="icon.weapon_spirits_sword_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
-			crystalCount="884" crystalType="c" weight="1420" price="441940" changeWeaponId="9249" soulshots="2" spiritshots="2"
-			enchantEnabled="1">
+	<item id="4690" type="Weapon" name="Not used - Not used" icon="icon.weapon_spirits_sword_i01" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
+			crystalType="c" weight="1420" price="441940" changeWeaponId="9249" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
 		<set stat="mAtk" val="68" />
 		<set stat="rCrit" val="8" />
@@ -2997,10 +2995,10 @@
 		<Soul Crystal Enhancement>
 		Has a 15% chance of casting Poison on the target during a standard Critical Attack.
 	-->
-	<item id="4691" type="Weapon" name="Spirit Sword - Critical Poison" icon="icon.weapon_spirits_sword_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
-			crystalCount="884" crystalType="c" weight="1420" price="441940" changeWeaponId="9250" soulshots="2" spiritshots="2"
-			enchantEnabled="1" oncritChance="15" oncritSkill="3024-2">
+	<item id="4691" type="Weapon" name="Not used - Not used" icon="icon.weapon_spirits_sword_i01" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
+			crystalType="c" weight="1420" price="441940" changeWeaponId="9250" soulshots="2" spiritshots="2" enchantEnabled="1"
+			oncritChance="15" oncritSkill="3024-2">
 		<set stat="pAtk" val="122" />
 		<set stat="mAtk" val="68" />
 		<set stat="rCrit" val="8" />
@@ -3012,7 +3010,7 @@
 		<Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 7%.
 	-->
-	<item id="4692" type="Weapon" name="Spirit Sword - Haste" icon="icon.weapon_spirits_sword_i01" defaultAction="equip" weaponType="sword"
+	<item id="4692" type="Weapon" name="Not used - Not used" icon="icon.weapon_spirits_sword_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="884"
 			crystalType="c" weight="1420" price="441940" changeWeaponId="9251" soulshots="2" spiritshots="2" enchantEnabled="1">
 		<set stat="pAtk" val="122" />
@@ -3442,8 +3440,9 @@
 		<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%.
+		No Soul Crystal option.
 	-->
 	<item id="4720" type="Weapon" name="Tallum Blade - Health" icon="icon.weapon_tallum_blade_i01" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1464"
@@ -3460,8 +3459,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Evasion when HP drops to 60% or below.
+		No Soul Crystal option.
 	-->
 	<item id="4721" type="Weapon" name="Tallum Blade - Rsk. Evasion" icon="icon.weapon_tallum_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -3478,8 +3478,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd. when HP drops to 60% or below.
+		No Soul Crystal option.
 	-->
 	<item id="4722" type="Weapon" name="Tallum Blade - Rsk. Haste" icon="icon.weapon_tallum_blade_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -4052,8 +4053,9 @@
 		<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Max HP by 25%.
+		No Soul Crystal option.
 	-->
 	<item id="4756" type="Weapon" name="Meteor Shower - Health" icon="icon.weapon_meteor_shower_i01" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1464"
@@ -4072,8 +4074,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases P. Critical Rate.
+		No Soul Crystal option.
 	-->
 	<item id="4757" type="Weapon" name="Meteor Shower - Focus" icon="icon.weapon_meteor_shower_i01" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1464"
@@ -4092,8 +4095,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases P. Critical Rate during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="4758" type="Weapon" name="Meteor Shower - P. Focus" icon="icon.weapon_meteor_shower_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -4518,8 +4522,9 @@
 		<skill id="3035" level="6" /> <!-- Special Ability: Mighty Mortal -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Evasion by 2.
+		No Soul Crystal option.
 	-->
 	<item id="4783" type="Weapon" name="Bloody Orchid - Evasion" icon="icon.weapon_bloody_orchid_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -4538,8 +4543,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases P. Critical Rate.
+		No Soul Crystal option.
 	-->
 	<item id="4784" type="Weapon" name="Bloody Orchid - Focus" icon="icon.weapon_bloody_orchid_i01" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1464"
@@ -4558,8 +4564,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases P. Critical Rate when attacking the target from behind.
+		No Soul Crystal option.
 	-->
 	<item id="4785" type="Weapon" name="Bloody Orchid - Back Blow" icon="icon.weapon_bloody_orchid_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
@@ -4933,8 +4940,9 @@
 		<skill id="3034" level="6" /> <!-- Special Ability: Rsk. Haste -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Absorbs the target's HP during a Critical Attack.
+		No Soul Crystal option.
 	-->
 	<item id="4807" type="Weapon" name="Blood Tornado - Critical Drain" icon="icon.weapon_blood_tornado_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -4953,8 +4961,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Evasion when HP drops to 60% or below.
+		No Soul Crystal option.
 	-->
 	<item id="4808" type="Weapon" name="Blood Tornado - Rsk. Evasion" icon="icon.weapon_blood_tornado_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1"
@@ -4973,8 +4982,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Atk. Spd.
+		No Soul Crystal option.
 	-->
 	<item id="4809" type="Weapon" name="Blood Tornado - Haste" icon="icon.weapon_blood_tornado_i01" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="1464"
@@ -5399,8 +5409,9 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 30% chance of casting Bleed on the target during a standard Critical Attack.
+		No Soul Crystal option.
 	-->
 	<item id="4831" type="Weapon" name="Carnage Bow - Critical Bleed" icon="icon.weapon_carnium_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1464"
@@ -5419,8 +5430,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
-		Increases Max MP by 30%
+		<Special Option>
+		Increases Max MP by 30%.
+		No Soul Crystal option.
 	-->
 	<item id="4832" type="Weapon" name="Carnage Bow - Mana Up" icon="icon.weapon_carnium_bow_i01" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1464"
@@ -5439,8 +5451,9 @@
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Decreases cooldown by about 10%.
+		No Soul Crystal option.
 	-->
 	<item id="4833" type="Weapon" name="Carnage Bow - Quick Recovery" icon="icon.weapon_carnium_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="1464"

@@ -76,7 +76,7 @@ public class QueenAnt extends L2AttackableAIScript
 
 	private L2MonsterInstance _queen = null;
 	private L2MonsterInstance _larva = null;
-	private List<L2MonsterInstance> _nurses = new FastList<L2MonsterInstance>(5).shared();
+	private List<L2MonsterInstance> _nurses = new HashMap<L2MonsterInstance>(5).shared();
 
 	public QueenAnt(int questId, String name, String descr)
 	{
@@ -202,7 +202,7 @@ public class QueenAnt extends L2AttackableAIScript
 					if (nurse.getTarget() != _queen || notCasting)
 					{
 						nurse.setTarget(_queen);
-						nurse.useMagic(HEAL1.getSkill());						
+						nurse.useMagic(HEAL1.getSkill());
 					}
 					continue;
 				}
@@ -234,14 +234,14 @@ public class QueenAnt extends L2AttackableAIScript
 		else if (event.equalsIgnoreCase("kick_player"))
 		{
 			if (player != null)
-			{	
+			{
 				L2BossZone bossZone = GrandBossManager.getInstance().getZone(player);
 				
 				if (bossZone != null)
 					bossZone.removeCharacter(player);
 				
 				player.teleToLocation(TeleportWhereType.Town);
-			}	
+			}
 		}
 		return super.onAdvEvent(event, npc, player);
 	}

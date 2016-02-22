@@ -855,8 +855,8 @@
 		<skill id="4071" level="4" /> <!-- Bow/Crossbow Resistance -->
 		<skill id="5052" level="6" /> <!-- Flame Strike -->
 	</npc>
-	<npc id="35062" name="Headquarters" level="1" type="L2Npc" atkRange="40" hpMax="5000" hpReg="2.0" mpMax="49" mpReg="0.9"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="40" mDef="36" pAtkSpd="253" mAtkSpd="500"
+	<npc id="35062" name="Headquarters" level="1" type="L2Npc" atkRange="40" hpMax="50000000" hpReg="2.0" mpMax="49" mpReg="0.9"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="40000" mDef="36000" pAtkSpd="253" mAtkSpd="500"
 			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="10" collisionHeight="80" fireRes="20" waterRes="20"
 			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" canMove="false" clanRange="1000">
 		<skill id="4416" level="19" /> <!-- Misc. -->

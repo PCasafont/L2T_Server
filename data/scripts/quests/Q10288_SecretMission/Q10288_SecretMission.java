@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10288_SecretMission;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -31,7 +32,7 @@ public class Q10288_SecretMission extends Quest
 {
 	private static final String qn = "10288_SecretMission";
 	// NPC's
-	private static final int _dominic  = 31350;
+	private static final int _dominic = 31350;
 	private static final int _aquilani = 32780;
 	private static final int _greymore = 32757;
 	// Items
@@ -56,7 +57,7 @@ public class Q10288_SecretMission extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == _greymore && event.equalsIgnoreCase("32757-03.htm"))
+		else if ((npc.getNpcId() == _greymore) && event.equalsIgnoreCase("32757-03.htm"))
 		{
 			st.unset("cond");
 			st.takeItems(_letter, -1);
@@ -75,7 +76,7 @@ public class Q10288_SecretMission extends Quest
 					st.playSound("ItemSound.quest_middle");
 				}
 			}
-			else if (st.getState() == State.COMPLETED && event.equalsIgnoreCase("teleport"))
+			else if ((st.getState() == State.COMPLETED) && event.equalsIgnoreCase("teleport"))
 			{
 				player.teleToLocation(118833, -80589, -2688);
 				return null;
@@ -94,21 +95,21 @@ public class Q10288_SecretMission extends Quest
 		
 		if (npc.getNpcId() == _dominic)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					if (player.getLevel() >= 82)
 						htmltext = "31350-01.htm";
 					else
 						htmltext = "31350-00.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") == 1)
 						htmltext = "31350-06.htm";
 					else if (st.getInt("cond") == 2)
 						htmltext = "31350-07.htm";
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					htmltext = "31350-08.htm";
 					break;
 			}
@@ -124,7 +125,7 @@ public class Q10288_SecretMission extends Quest
 				htmltext = "32780-06.html";
 			}
 		}
-		else if (npc.getNpcId() == _greymore && st.getInt("cond") == 2)
+		else if ((npc.getNpcId() == _greymore) && (st.getInt("cond") == 2))
 		{
 			return "32757-01.htm";
 		}

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.multisell;
 
 import java.util.ArrayList;
@@ -33,14 +34,13 @@ public class PreparedListContainer extends ListContainer
 		
 		_applyTaxes = false;
 		_isChance = template.isChance();
+		_timeLimit = template.getTimeLimit();
 		
 		double taxRate = 0;
 		if (npc != null)
 		{
 			_npcObjectId = npc.getObjectId();
-			if (template.getApplyTaxes()
-					&& npc.getIsInTown()
-					&& npc.getCastle().getOwnerId() > 0)
+			if (template.getApplyTaxes() && npc.getIsInTown() && (npc.getCastle().getOwnerId() > 0))
 			{
 				_applyTaxes = true;
 				taxRate = npc.getCastle().getTaxRate();
@@ -59,16 +59,15 @@ public class PreparedListContainer extends ListContainer
 				items = player.getInventory().getUniqueItems(false, false, false);
 			
 			// size is not known - using ArrayList
-			_entries = new ArrayList<Entry>();
+			_entries = new ArrayList<MultiSellEntry>();
 			for (L2ItemInstance item : items)
 			{
 				// only do the matchup on equipable items that are not currently equipped
 				// so for each appropriate item, produce a set of entries for the multisell list.
-				if (!item.isEquipped()
-						&& ((item.getItem() instanceof L2Armor) || (item.getItem() instanceof L2Weapon)))
+				if (!item.isEquipped() && ((item.getItem() instanceof L2Armor) || (item.getItem() instanceof L2Weapon)))
 				{
 					// loop through the entries to see which ones we wish to include
-					for (Entry ent : template.getEntries())
+					for (MultiSellEntry ent : template.getEntries())
 					{
 						// check ingredients of this entry to see if it's an entry we'd like to include.
 						for (Ingredient ing : ent.getIngredients())
@@ -85,8 +84,8 @@ public class PreparedListContainer extends ListContainer
 		}
 		else
 		{
-			_entries = new ArrayList<Entry>(template.getEntries().size());
-			for (Entry ent : template.getEntries())
+			_entries = new ArrayList<MultiSellEntry>(template.getEntries().size());
+			for (MultiSellEntry ent : template.getEntries())
 				_entries.add(new PreparedEntry(ent, null, _applyTaxes, false, taxRate));
 		}
 	}

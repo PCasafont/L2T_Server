@@ -7,6 +7,7 @@
 	<command name="admin_addShopItem" accessLevels="2" />
 	<command name="admin_add_announcement" accessLevels="6" />
 	<command name="admin_add_attacker" accessLevels="3" />
+	<command name="admin_add_autoann" accessLevels="6" />
 	<command name="admin_add_clan_skill" accessLevels="3" />
 	<command name="admin_add_defender" accessLevels="3" />
 	<command name="admin_add_exp_sp" accessLevels="3" />
@@ -83,10 +84,12 @@
 	<command name="admin_cw_reload" accessLevels="3" />
 	<command name="admin_cw_remove" accessLevels="3" />
 	<command name="admin_daily_event" accessLevels="2" />
+	<command name="admin_debug" accessLevels="1" />
 	<command name="admin_delete" accessLevels="3" />
 	<command name="admin_delete_buffer" accessLevels="3" />
 	<command name="admin_delShopItem" accessLevels="2" />
 	<command name="admin_del_announcement" accessLevels="6" />
+	<command name="admin_del_autoann" accessLevels="6" />
 	<command name="admin_del_skill_npc" accessLevels="2" />
 	<command name="admin_destroyinstance" accessLevels="2" />
 	<command name="admin_devdelete" accessLevels="6" />
@@ -134,6 +137,12 @@
 	<command name="admin_getbuffs" accessLevels="6" />
 	<command name="admin_get_skills" accessLevels="6" />
 	<command name="admin_get_vitality" accessLevels="2" />
+	<command name="admin_ge_join" accessLevels="2" />
+	<command name="admin_ge_leave" accessLevels="2" />
+	<command name="admin_ge_mode" accessLevels="2" />
+	<command name="admin_ge_status" accessLevels="2" />
+	<command name="admin_ghostoff" accessLevels="2" />
+	<command name="admin_ghoston" accessLevels="2" />
 	<command name="admin_give_all_skills" accessLevels="3" />
 	<command name="admin_give_item_target" accessLevels="3" confirmDlg="true" />
 	<command name="admin_give_item_to_all" accessLevels="3" confirmDlg="true" />
@@ -170,13 +179,17 @@
 	<command name="admin_kill" accessLevels="6" />
 	<command name="admin_kill_menu" accessLevels="3" />
 	<command name="admin_kill_monster" accessLevels="6" />
+	<command name="admin_known" accessLevels="6" />
 	<command name="admin_listinstances" accessLevels="2" />
 	<command name="admin_list_announcements" accessLevels="6" />
+	<command name="admin_list_autoann" accessLevels="6" />
 	<command name="admin_list_fortsiege_clans" accessLevels="3" />
 	<command name="admin_list_positions" accessLevels="3" />
 	<command name="admin_list_siege_clans" accessLevels="3" />
 	<command name="admin_list_spawns" accessLevels="3" />
 	<command name="admin_loc" accessLevels="6" />
+	<command name="admin_mammon_find" accessLevels="3" />
+	<command name="admin_mammon_respawn" accessLevels="3" />
 	<command name="admin_manor" accessLevels="3" />
 	<command name="admin_manor_approve" accessLevels="3" />
 	<command name="admin_manor_disable" accessLevels="3" />
@@ -223,6 +236,7 @@
 	<command name="admin_reject_petition" accessLevels="6" />
 	<command name="admin_reload" accessLevels="2" confirmDlg="true" />
 	<command name="admin_reload_announcements" accessLevels="6" />
+	<command name="admin_reload_autoann" accessLevels="6" />
 	<command name="admin_removecastle" accessLevels="3" />
 	<command name="admin_removefort" accessLevels="3" />
 	<command name="admin_removereuse" accessLevels="6" />
@@ -295,7 +309,7 @@
 	<command name="admin_setrf" accessLevels="3" />
 	<command name="admin_setsex" accessLevels="3" />
 	<command name="admin_setsiegetime" accessLevels="3" />
-	<command name="admin_setskill" accessLevels="2" />
+	<command name="admin_setskill" accessLevels="3" />
 	<command name="admin_settcolor" accessLevels="3" />
 	<command name="admin_setteam" accessLevels="3" />
 	<command name="admin_setteam_close" accessLevels="3" />
@@ -355,7 +369,6 @@
 	<command name="admin_summon_setlvl" accessLevels="3" />
 	<command name="admin_target" accessLevels="6" />
 	<command name="admin_tele" accessLevels="6" />
-	<command name="admin_teleport" accessLevels="6" />
 	<command name="admin_teleportto" accessLevels="6" />
 	<command name="admin_teleport_character" accessLevels="3" />
 	<command name="admin_teleport_character_to_menu" accessLevels="3" />
@@ -366,6 +379,9 @@
 	<command name="admin_territory_war_end" accessLevels="3" />
 	<command name="admin_territory_war_start" accessLevels="3" />
 	<command name="admin_territory_war_time" accessLevels="3" />
+	<command name="admin_test" accessLevels="6" />
+	<command name="admin_tns_add" accessLevels="3" />
+	<command name="admin_tns_remove" accessLevels="3" />
 	<command name="admin_tracert" accessLevels="3" />
 	<command name="admin_tradeoff" accessLevels="2" />
 	<command name="admin_transform" accessLevels="6" />
@@ -403,6 +419,7 @@
 	<command name="admin_zone_visual" accessLevels="1" />
 	<command name="admin_zone_visual_clear" accessLevels="1" />
 	<command name="banchat" accessLevels="7" />
+	<command name="debug" accessLevels="2" />
 	<command name="recall" accessLevels="3" />
 	<command name="teleportto" accessLevels="6" />
 	<command name="unbanchat" accessLevels="7" />

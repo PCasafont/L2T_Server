@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -18,6 +18,7 @@
  * @author FBIagent
  *
  */
+
 package handlers.itemhandlers;
 
 import java.util.Collection;
@@ -49,17 +50,18 @@ import l2server.gameserver.util.Broadcast;
 public class SummonItems implements IItemHandler
 {
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!(playable instanceof L2PcInstance))
 			return;
 		
 		final L2PcInstance activeChar = (L2PcInstance) playable;
-
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
+		
+		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
 			return;
 		
 		if (activeChar.getIsInsideGMEvent())
@@ -76,7 +78,7 @@ public class SummonItems implements IItemHandler
 		
 		if (activeChar.getBlockCheckerArena() != -1)
 			return;
-
+		
 		if (activeChar.inObserverMode())
 			return;
 		
@@ -90,7 +92,7 @@ public class SummonItems implements IItemHandler
 		
 		final L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(item.getItemId());
 		
-		if ((activeChar.getPet() != null || activeChar.isMounted()) && sitem.isPetSummon())
+		if (((activeChar.getPet() != null) || activeChar.isMounted()) && sitem.isPetSummon())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 			return;
@@ -126,7 +128,7 @@ public class SummonItems implements IItemHandler
 					Collection<L2Character> characters = activeChar.getKnownList().getKnownCharactersInRadius(1200);
 					for (L2Character ch : characters)
 					{
-						if (ch instanceof L2XmassTreeInstance && npcTemplate.isSpecialTree())
+						if ((ch instanceof L2XmassTreeInstance) && npcTemplate.isSpecialTree())
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_SUMMON_S1_AGAIN);
 							sm.addCharName(ch);
@@ -187,6 +189,7 @@ public class SummonItems implements IItemHandler
 			_petSummon = petSummon;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -217,6 +220,7 @@ public class SummonItems implements IItemHandler
 			_item = item;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -225,9 +229,7 @@ public class SummonItems implements IItemHandler
 				_activeChar.setIsCastingNow(false);
 				
 				// check for summon item validity
-				if (_item == null
-						|| _item.getOwnerId() != _activeChar.getObjectId()
-						|| _item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
+				if ((_item == null) || (_item.getOwnerId() != _activeChar.getObjectId()) || (_item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY))
 					return;
 				
 				final L2PetInstance petSummon = L2PetInstance.spawnPet(_npcTemplate, _activeChar, _item);

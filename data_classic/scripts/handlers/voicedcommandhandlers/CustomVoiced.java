@@ -23,7 +23,6 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.events.CloneInvasion;
 import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
 import l2server.gameserver.instancemanager.DiscussionManager;
 import l2server.gameserver.model.AutoSpawnHandler;
 import l2server.gameserver.model.actor.L2Npc;
@@ -54,8 +53,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 		"stabs",			// shows stab angle
 		"unrec",			// deletes recomendations
 		"treasure",			// opens the hidden chests event information window
-		"clones",			// opens the clones event information window
-		"offlinebuffer"		// opens the offline buffer pannel
+		"clones"			// opens the clones event information window
 	};
 	
 	/**
@@ -69,14 +67,10 @@ public class CustomVoiced implements IVoicedCommandHandler
 			player.setIsItemId(true);
 			player.sendMessage("Double click on the item you want to know its itemid.");
 		}
-		else if (command.equalsIgnoreCase("offlinebuffer"))
-		{
-			CustomOfflineBuffersManager.getInstance().offlineBuffPannel(player);
-		}
 		else if (command.equalsIgnoreCase("event"))
 		{
 			if (Config.isServer(Config.TENKAI))
-				CustomCommunityBoard.getInstance().parseCmd("_bbscustom;currentEvent", player);
+				CustomCommunityBoard.parseCmd("_bbscustom;currentEvent", player);
 		}
 		else if (command.equalsIgnoreCase("remember"))
 		{

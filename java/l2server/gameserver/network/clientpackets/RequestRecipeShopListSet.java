@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
@@ -40,7 +41,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestRecipeShopListSet extends L2GameClientPacket
 {
-	private static final String _C__B2_RequestRecipeShopListSet = "[C] b2 RequestRecipeShopListSet";
 	//
 	
 	private static final int BATCH_LENGTH = 12; // length of the one item
@@ -51,15 +51,13 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
 		
 		_items = new Recipe[count];
-		for (int i = 0; i < count ; i++)
+		for (int i = 0; i < count; i++)
 		{
 			int id = readD();
 			long cost = readQ();
@@ -93,7 +91,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			return;
 		}
 		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
+		if (!Config.isServer(Config.DREAMS) && player.isInsideZone(L2Character.ZONE_NOSTORE))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_WORKSHOP_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -102,8 +100,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		
 		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 		{
-			if (!(c instanceof L2PcInstance
-					&& ((L2PcInstance)c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+			if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
 			{
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -122,18 +119,13 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			
 			if (!dwarfRecipes.contains(list) && !commonRecipes.contains(list))
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Player " + player.getName() + " of account " + player.getAccountName()
-						+ " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Player " + player.getName() + " of account " + player.getAccountName() + " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);
 				return;
 			}
 			
 			if (!i.addToList(createList))
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Character "
-						+ player.getName() + " of account "
-						+ player.getAccountName() + " tried to set price more than "
-						+ MAX_ADENA + " adena in Private Manufacture.",
-						Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to set price more than " + MAX_ADENA + " adena in Private Manufacture.", Config.DEFAULT_PUNISH);
 				return;
 			}
 		}
@@ -172,11 +164,5 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		{
 			return _recipeId;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B2_RequestRecipeShopListSet;
 	}
 }

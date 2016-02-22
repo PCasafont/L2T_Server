@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -30,7 +31,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-
 /**
  * This class handles following admin commands:
  * - handles every admin menu command
@@ -41,20 +41,9 @@ public class AdminMenu implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminMenu.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_char_manage",
-		"admin_teleport_character_to_menu",
-		"admin_recall_char_menu",
-		"admin_recall_party_menu",
-		"admin_recall_clan_menu",
-		"admin_goto_char_menu",
-		"admin_kick_menu",
-		"admin_kill_menu",
-		"admin_ban_menu",
-		"admin_unban_menu"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_char_manage", "admin_teleport_character_to_menu", "admin_recall_char_menu", "admin_recall_party_menu", "admin_recall_clan_menu", "admin_goto_char_menu", "admin_kick_menu", "admin_kill_menu", "admin_ban_menu", "admin_unban_menu" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_char_manage"))
@@ -129,7 +118,7 @@ public class AdminMenu implements IAdminCommandHandler
 					return true;
 				}
 				L2PcInstance[] members = clan.getOnlineMembers(0);
-				for (L2PcInstance member: members)
+				for (L2PcInstance member : members)
 					teleportCharacter(member, x, y, z, activeChar, "Your clan is being teleported by an Admin.");
 			}
 			catch (Exception e)
@@ -187,7 +176,7 @@ public class AdminMenu implements IAdminCommandHandler
 					return false;
 				}
 				IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);
-				ach.useAdminCommand(subCommand+command.substring(14), activeChar);
+				ach.useAdminCommand(subCommand + command.substring(14), activeChar);
 			}
 			showMainPage(activeChar);
 		}
@@ -204,13 +193,14 @@ public class AdminMenu implements IAdminCommandHandler
 					return false;
 				}
 				IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);
-				ach.useAdminCommand(subCommand+command.substring(16), activeChar);
+				ach.useAdminCommand(subCommand + command.substring(16), activeChar);
 			}
 			showMainPage(activeChar);
 		}
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
@@ -241,7 +231,7 @@ public class AdminMenu implements IAdminCommandHandler
 				filename = "charmanage.htm";
 			}
 			else if (Config.L2JMOD_CHAMPION_ENABLE && target.isChampion())
-				target.reduceCurrentHp(target.getMaxHp() * Config.L2JMOD_CHAMPION_HP + 1, activeChar, null);
+				target.reduceCurrentHp((target.getMaxHp() * Config.L2JMOD_CHAMPION_HP) + 1, activeChar, null);
 			else
 				target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, null);
 		}

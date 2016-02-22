@@ -3,20 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import l2server.Config;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
@@ -50,16 +52,17 @@ public class SpawnGroup
 				int npcId = subNode.getInt("npcId");
 				int amount = subNode.getInt("amount");
 				int respawn = subNode.getInt("respawn");
-				int randomRespawn = 0;
-				if (subNode.hasAttribute("randomRespawn"))
-					randomRespawn = subNode.getInt("randomRespawn");
-
+				int randomRespawn = subNode.getInt("randomRespawn", 0);
+				String dbName = subNode.getString("dbName", null);
+				
 				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
 				if (t == null)
 				{
 					Log.warning("Spawn group: no npc template with id " + npcId);
 					continue;
 				}
+				else if (t.Type.equals("L2Defender") && Config.isServer(Config.DREAMS))
+					continue;
 				
 				for (int i = 0; i < amount; i++)
 				{
@@ -70,15 +73,23 @@ public class SpawnGroup
 						spawn.setRandomRespawnDelay(randomRespawn);
 						spawn.startRespawn();
 						spawn.setGroup(this);
+						spawn.setDbName(dbName);
 						
 						spawn.doSpawn();
+						
 						_spawns.add(spawn);
+						
+						if (t.Type.equals("L2Monster"))
+						{
+							t.addKnownSpawn(spawn);
+						}
 					}
 					catch (Exception e)
 					{
 						e.printStackTrace();
 					}
 				}
+				
 				SearchDropManager.getInstance().addLootInfo(t, true);
 			}
 		}
@@ -88,7 +99,7 @@ public class SpawnGroup
 	{
 		return _territory.getRandomPoint();
 	}
-
+	
 	public L2Territory getTerritory()
 	{
 		return _territory;

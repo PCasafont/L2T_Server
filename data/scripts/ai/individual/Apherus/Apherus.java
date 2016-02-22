@@ -3,21 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.Apherus;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.DoorTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.BossManager;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
@@ -33,24 +34,24 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Apherus Raid Boss AI
  */
 
 public class Apherus extends L2AttackableAIScript
 {
-	private static final String		_qn						= "Apherus";
-	private static final int		_apherus				= 25775;
-	private static final int[]		_apherusDoorsNpcs 		= {33133, 33134, 33135, 33136};
-	private static final int[]		_apherusDoors 			= {26210041, 26210042, 26210043, 26210044};
-	private static final int		_apherusKey				= 17373;
-	private static final int[]		_apreusDoorGuyards		= {25776, 25777, 25778};
-	private static final int		_apherusZoneId			= 60060;
-	private static boolean 			_doorIsOpen				= false;
-	private static L2Npc			_apherusRaid			= null;
-	private static final L2Skill 	_gardenApherusRecovery	= SkillTable.getInstance().getInfo(14088, 1);
-	private static final L2Skill 	_apherusInvincibility	= SkillTable.getInstance().getInfo(14201, 1);
-
+	private static final String _qn = "Apherus";
+	private static final int _apherus = 25775;
+	private static final int[] _apherusDoorsNpcs = { 33133, 33134, 33135, 33136 };
+	private static final int[] _apherusDoors = { 26210041, 26210042, 26210043, 26210044 };
+	private static final int _apherusKey = 17373;
+	private static final int[] _apreusDoorGuyards = { 25776, 25777, 25778 };
+	private static final int _apherusZoneId = 60060;
+	private static boolean _doorIsOpen = false;
+	private static L2Npc _apherusRaid = null;
+	private static final L2Skill _gardenApherusRecovery = SkillTable.getInstance().getInfo(14088, 1);
+	private static final L2Skill _apherusInvincibility = SkillTable.getInstance().getInfo(14201, 1);
+	
 	public Apherus(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -71,7 +72,7 @@ public class Apherus extends L2AttackableAIScript
 		if (boss != null)
 			notifySpawn(boss);
 	}
-
+	
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
@@ -92,7 +93,7 @@ public class Apherus extends L2AttackableAIScript
 	{
 		if (character.isRaid())
 			character.stopSkillEffects(_gardenApherusRecovery.getId());
-		else if(character instanceof L2Playable)
+		else if (character instanceof L2Playable)
 		{
 			if (!_doorIsOpen)
 			{
@@ -115,12 +116,15 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (!_doorIsOpen && BossManager.getInstance().getBoss(_apherus) != null)
+		if (!_doorIsOpen && (BossManager.getInstance().getBoss(_apherus) != null))
 		{
 			if (!player.destroyItemByItemId(_qn, _apherusKey, 1, player, true))
 				return "apherusDoor-no.html";
 			
-			if (Rnd.get(100) > 80)
+			int random = Rnd.get(100);
+			
+			player.sendMessage("Random = " + random);
+			if (random > 67)
 			{
 				_doorIsOpen = true;
 				for (int door : _apherusDoors)
@@ -166,7 +170,7 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
 	{
-		if (!_doorIsOpen)	//cheaterzzzzzz
+		if (!_doorIsOpen) //cheaterzzzzzz
 		{
 			attacker.teleToLocation(TeleportWhereType.Town);
 			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());

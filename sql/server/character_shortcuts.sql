@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS `character_shortcuts` (
   `type` decimal(3),
   `shortcut_id` decimal(16) ,
   `level` int,
+  `levelRange` int default -1,
   `class_index` int(1) NOT NULL default '0',
   PRIMARY KEY (`charId`,`slot`,`page`,`class_index`),
   FOREIGN KEY (`charId`) REFERENCES `characters`(`charId`) ON UPDATE CASCADE ON DELETE CASCADE,

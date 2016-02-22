@@ -359,7 +359,8 @@
 	<item id="5079" type="EtcItem" name="Golden Cobol" icon="icon.etc_cobol_i04" etcitemType="crop" weight="2" price="500" isStackable="true">
 	</item>
 	<!-- Cannot be transferred between servers. -->
-	<item id="5080" type="EtcItem" name="Desert Cobol" icon="icon.etc_cobol_i05" etcitemType="crop" weight="2" isStackable="true">
+	<item id="5080" type="EtcItem" name="Desert Cobol" icon="icon.etc_exchange_ticket_i04" immediateEffect="1" isTradable="true"
+			isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
 	</item>
 	<!-- Cannot be transferred between servers. -->
 	<item id="5081" type="EtcItem" name="Sea Cobol" icon="icon.etc_cobol_i06" etcitemType="crop" weight="2" isStackable="true">
@@ -1128,7 +1129,7 @@
 	<item id="5232" type="EtcItem" name="White Cloth" icon="icon.etc_piece_of_cloth_white_i00" immediateEffect="1" isTradable="false"
 			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true">
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="5233" type="Weapon" name="Keshanberk*Keshanberk" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1128"
 			crystalType="a" weight="2080" price="14098000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-17">
@@ -1425,7 +1426,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions: P. Critical Damage, Focus or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="5286" type="Weapon" name="Berserker Blade" icon="icon.weapon_berserker_blade_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1885"
 			crystalType="c" weight="1380" price="942700" changeWeaponId="9296" soulshots="3" spiritshots="3" enchantEnabled="1">
@@ -4516,7 +4517,7 @@
 		<crystallizeReward id="36388" count="1" chance="45.766" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="27.456" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25% as well. Increases damage inflicted during PvP. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="5705" type="Weapon" name="Keshanberk*Damascus" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1485"
 			crystalType="a" weight="2080" price="18567400" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3013-3">
@@ -4531,7 +4532,7 @@
 		<crystallizeReward id="36388" count="1" chance="46.423" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="27.85" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Accuracy increases by 6. Increases damage inflicted during PvP. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="5706" type="Weapon" name="Damascus*Damascus" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="1659"
 			crystalType="a" weight="2080" price="20741000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3046-20">

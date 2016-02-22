@@ -3,22 +3,26 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.chars;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import l2server.Config;
 import l2server.gameserver.datatables.ExtraDropTable;
 import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.L2DropCategory;
@@ -106,6 +110,11 @@ public final class L2NpcTemplate extends L2CharTemplate
 	// quests, just plain quest monsters for preventing champion spawn
 	public float BaseVitalityDivider;
 	public int InteractionDistance;
+	public boolean BonusFromBaseStats;
+	
+	public int FixedAccuracy;
+	public int FixedEvasion;
+	public float HatersDamageMultiplier;
 	
 	//Skill AI
 	@SuppressWarnings("unchecked")
@@ -116,44 +125,14 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public static enum AIType
 	{
-		FIGHTER,
-		ARCHER,
-		BALANCED,
-		MAGE,
-		HEALER,
-		CORPSE
+		FIGHTER, ARCHER, BALANCED, MAGE, HEALER, CORPSE
 	}
 	
 	public static enum L2NpcRace
 	{
-		UNDEAD,
-		MAGICCREATURE,
-		BEAST,
-		ANIMAL,
-		PLANT,
-		HUMANOID,
-		SPIRIT,
-		ANGEL,
-		DEMON,
-		DRAGON,
-		GIANT,
-		BUG,
-		FAIRIE,
-		HUMAN,
-		ELVE,
-		DARKELVE,
-		ORC,
-		DWARVE,
-		OTHER,
-		NONLIVING,
-		SIEGEWEAPON,
-		DEFENDINGARMY,
-		MERCENARIE,
-		UNKNOWN,
-		KAMAEL,
-		NONE
+		UNDEAD, MAGICCREATURE, BEAST, ANIMAL, PLANT, HUMANOID, SPIRIT, ANGEL, DEMON, DRAGON, GIANT, BUG, FAIRIE, HUMAN, ELVE, DARKELVE, ORC, DWARVE, OTHER, NONLIVING, SIEGEWEAPON, DEFENDINGARMY, MERCENARIE, UNKNOWN, KAMAEL, NONE
 	}
-
+	
 	private ArrayList<L2DropData> _spoilDrop = new ArrayList<L2DropData>();
 	private ArrayList<L2DropData> _normalDrop = new ArrayList<L2DropData>();
 	private ArrayList<L2DropCategory> _multiDrop = new ArrayList<L2DropCategory>();
@@ -168,14 +147,14 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	private StatsSet _baseSet;
 	private L2NpcTemplate _baseTemplate;
-
+	
 	private List<L2Spawn> _allSpawns = new ArrayList<L2Spawn>();
 	
 	/**
 	 * Constructor of L2Character.<BR><BR>
-	 * 
+	 *
 	 * @param set The StatsSet object to transfer data to the method
-	 * 
+	 *
 	 */
 	public L2NpcTemplate(StatsSet set)
 	{
@@ -191,7 +170,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		else
 			isQuestMonster = false;
 		ServerSideTitle = set.getBool("serverSideTitle", false);
-		Level = set.getByte("level", (byte)150);
+		Level = set.getByte("level", (byte) 150);
 		RewardExp = set.getLong("exp", 0);
 		RewardSp = set.getLong("sp", 0);
 		CanSeeThroughSilentMove = set.getBool("canSeeThroughSilentMove", false);
@@ -206,7 +185,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", false);
 		Race = null;
 		int herbGroup = set.getInteger("extraDropGroup", 0);
-		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
+		if ((herbGroup > 0) && (ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null))
 		{
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
@@ -218,12 +197,21 @@ public final class L2NpcTemplate extends L2CharTemplate
 		ShowName = set.getBool("showName", true);
 		
 		// can be loaded from db
-		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? baseHpMax * 9 /(100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = (Level > 0) && (RewardExp > 0) ? ((float) baseHpMax * 9) / ((100 * RewardExp) / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", L2Npc.DEFAULT_INTERACTION_DISTANCE);
-
+		
+		boolean bonusByDefault = Config.isServer(Config.DREAMS);
+		BonusFromBaseStats = set.getBool("bonusFromBaseStats", bonusByDefault);
+		FixedAccuracy = set.getInteger("fixedAccuracy", 0);
+		FixedEvasion = set.getInteger("fixedEvasion", 0);
+		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", 0);
+		
 		_baseSet = set;
 		_baseTemplate = this;
+		
+		if (Config.isServer(Config.TENKAI_ESTHUS) && Type.equals("L2Defender"))
+			Level = 103;
 	}
 	
 	public L2NpcTemplate(StatsSet set, L2NpcTemplate baseTemplate)
@@ -253,7 +241,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", baseTemplate.RandomWalk);
 		Race = baseTemplate.Race;
 		int herbGroup = set.getInteger("extraDropGroup", baseTemplate.ExtraDropGroup);
-		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
+		if ((herbGroup > 0) && (ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null))
 		{
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
@@ -264,11 +252,17 @@ public final class L2NpcTemplate extends L2CharTemplate
 		IsNonTalking = set.getBool("isNonTalking", baseTemplate.IsNonTalking);
 		ShowName = set.getBool("showName", baseTemplate.ShowName);
 		
+		BonusFromBaseStats = set.getBool("bonusFromBaseStats", baseTemplate.BonusFromBaseStats);
+		FixedAccuracy = set.getInteger("fixedAccuracy", baseTemplate.FixedAccuracy);
+		FixedEvasion = set.getInteger("fixedEvasion", baseTemplate.FixedEvasion);
+		
+		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", baseTemplate.HatersDamageMultiplier);
+		
 		// can be loaded from db
-		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? baseHpMax * 9 /(100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = (Level > 0) && (RewardExp > 0) ? ((float) baseHpMax * 9) / ((100 * RewardExp) / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", baseTemplate.InteractionDistance);
-
+		
 		baseFire = baseTemplate.baseFire;
 		baseWater = baseTemplate.baseWater;
 		baseEarth = baseTemplate.baseEarth;
@@ -315,7 +309,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		
 		if (baseTemplate._questEvents != null)
 			_questEvents = new HashMap<QuestEventType, Quest[]>(baseTemplate._questEvents);
-
+		
 		_baseSet = set;
 		while (baseTemplate != baseTemplate._baseTemplate)
 			baseTemplate = baseTemplate._baseTemplate;
@@ -352,18 +346,18 @@ public final class L2NpcTemplate extends L2CharTemplate
 	public void addSkill(L2Skill skill)
 	{
 		if (_skills == null)
-			_skills = new HashMap<Integer, L2Skill>();
+			_skills = new LinkedHashMap<Integer, L2Skill>();
 		
 		if (!skill.isPassive())
 		{
 			addGeneralSkill(skill);
-			switch(skill.getSkillType())
+			switch (skill.getSkillType())
 			{
 				case BUFF:
 					addBuffSkill(skill);
 					break;
 				case HEAL:
-				//case HOT:
+					//case HOT:
 				case HEAL_PERCENT:
 				case HEAL_STATIC:
 				case BALANCE_LIFE:
@@ -378,28 +372,29 @@ public final class L2NpcTemplate extends L2CharTemplate
 					addRangeSkill(skill);
 					break;
 				/*case ROOT:
-					addRootSkill(skill);
-					addImmobiliseSkill(skill);
-					addRangeSkill(skill);
-					break;
+				addRootSkill(skill);
+				addImmobiliseSkill(skill);
+				addRangeSkill(skill);
+				break;
 				case SLEEP:
-					addSleepSkill(skill);
-					addImmobiliseSkill(skill);
-					break;
+				addSleepSkill(skill);
+				addImmobiliseSkill(skill);
+				break;
 				case STUN:
-					addRootSkill(skill);
-					addImmobiliseSkill(skill);
-					addRangeSkill(skill);
-					break;
+				addRootSkill(skill);
+				addImmobiliseSkill(skill);
+				addRangeSkill(skill);
+				break;
 				case PARALYZE:
-					addParalyzeSkill(skill);
-					addImmobiliseSkill(skill);
-					addRangeSkill(skill);
-					break;*/
+				addParalyzeSkill(skill);
+				addImmobiliseSkill(skill);
+				addRangeSkill(skill);
+				break;*/
 				case PDAM:
 				case MDAM:
 				case BLOW:
 				case DRAIN:
+				case CHARGEDAM:
 				case FATAL:
 				case DEATHLINK:
 				case CPDAM:
@@ -414,23 +409,23 @@ public final class L2NpcTemplate extends L2CharTemplate
 				case DOT:
 				case MDOT:
 				case BLEED:
-					addDOTSkill(skill);
-					addRangeSkill(skill);
-					break;
+				addDOTSkill(skill);
+				addRangeSkill(skill);
+				break;
 				case MUTE:
 				case FEAR:
-					addCOTSkill(skill);
-					addRangeSkill(skill);
-					break;*/
+				addCOTSkill(skill);
+				addRangeSkill(skill);
+				break;*/
 				case CANCEL:
 				case NEGATE:
 					addNegativeSkill(skill);
 					addRangeSkill(skill);
 					break;
-				default :
+				default:
 					addUniversalSkill(skill);
 					break;
-					
+			
 			}
 		}
 		
@@ -441,7 +436,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	{
 		_spawns.add(spawn);
 	}
-
+	
 	public ArrayList<L2DropData> getSpoilData()
 	{
 		return _spoilDrop;
@@ -503,10 +498,10 @@ public final class L2NpcTemplate extends L2CharTemplate
 	{
 		if (_questEvents == null)
 			_questEvents = new HashMap<Quest.QuestEventType, Quest[]>();
-			
+		
 		if (_questEvents.get(EventType) == null)
 		{
-			_questEvents.put(EventType, new Quest[]{q});
+			_questEvents.put(EventType, new Quest[] { q });
 		}
 		else
 		{
@@ -564,8 +559,8 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 * Checks if obj can be assigned to the Class represented by clazz.<br>
 	 * This is true if, and only if, obj is the same class represented by clazz,
 	 * or a subclass of it or obj implements the interface represented by clazz.
-	 * 
-	 * 
+	 *
+	 *
 	 * @param obj
 	 * @param clazz
 	 * @return
@@ -582,9 +577,9 @@ public final class L2NpcTemplate extends L2CharTemplate
 		{
 			// check if obj implements the clazz interface
 			Class<?>[] interfaces = sub.getInterfaces();
-			for (int i = 0; i < interfaces.length; i++)
+			for (Class<?> interface1 : interfaces)
 			{
-				if (clazz.getName().equals(interfaces[i].getName()))
+				if (clazz.getName().equals(interface1.getName()))
 				{
 					return true;
 				}
@@ -600,8 +595,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 				}
 				
 				sub = sub.getSuperclass();
-			}
-			while (sub != null);
+			} while (sub != null);
 		}
 		
 		return false;
@@ -708,6 +702,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		//_AIdataStatic = new L2NpcAIData(); // not needed to init object and in next line override with other reference. maybe other intention?
 		_aiData = aidata;
 	}
+	
 	//-----------------------------------------------------------------------
 	
 	public L2NpcAIData getAIData()
@@ -850,6 +845,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		aiSkills[AIST_MANA].add(skill);
 		aiSkillChecks[AIST_MANA] = true;
 	}
+	
 	public void addGeneralSkill(L2Skill skill)
 	{
 		if (aiSkills[AIST_GENERAL] == null)
@@ -860,7 +856,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public void addRangeSkill(L2Skill skill)
 	{
-		if (skill.getCastRange() <= 150 && skill.getCastRange() > 0)
+		if ((skill.getCastRange() <= 150) && (skill.getCastRange() > 0))
 		{
 			if (aiSkills[AIST_SHORT_RANGE] == null)
 				aiSkills[AIST_SHORT_RANGE] = new ArrayList<L2Skill>();
@@ -1025,7 +1021,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlTemplateId()
 	{
-		if (TemplateId == 0 || TemplateId == NpcId)
+		if ((TemplateId == 0) || (TemplateId == NpcId))
 			return "";
 		return " templateId=\"" + TemplateId + "\"";
 	}
@@ -1075,27 +1071,27 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlAttackRange()
 	{
-		return " baseAtkRange=\"" + baseAtkRange + "\"";
+		return " atkRange=\"" + baseAtkRange + "\"";
 	}
 	
 	public String getXmlMaxHp()
 	{
-		return " baseHpMax=\"" + baseHpMax + "\"";
+		return " hpMax=\"" + Math.round(baseHpMax) + "\"";
 	}
 	
 	public String getXmlMaxMp()
 	{
-		return " baseMpMax=\"" + baseMpMax + "\"";
+		return " mpMax=\"" + Math.round(baseMpMax) + "\"";
 	}
 	
 	public String getXmlHpReg()
 	{
-		return " baseHpReg=\"" + baseHpReg + "\"";
+		return " hpReg=\"" + baseHpReg + "\"";
 	}
 	
 	public String getXmlMpReg()
 	{
-		return " baseMpReg=\"" + baseMpReg + "\"";
+		return " mpReg=\"" + baseMpReg + "\"";
 	}
 	
 	public String getXmlSTR()
@@ -1144,32 +1140,42 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlPAtk()
 	{
-		return " basePAtk=\"" + basePAtk + "\"";
+		return " pAtk=\"" + Math.round(basePAtk) + "\"";
 	}
 	
 	public String getXmlPDef()
 	{
-		return " basePDef=\"" + basePDef + "\"";
+		return " pDef=\"" + Math.round(basePDef) + "\"";
 	}
 	
 	public String getXmlMAtk()
 	{
-		return " baseMAtk=\"" + baseMAtk + "\"";
+		return " mAtk=\"" + Math.round(baseMAtk) + "\"";
 	}
 	
 	public String getXmlMDef()
 	{
-		return " baseMDef=\"" + baseMDef + "\"";
+		return " mDef=\"" + Math.round(baseMDef) + "\"";
 	}
 	
-	public String getXmlAtkSpd()
+	public String getXmlPAtkSpd()
 	{
-		return " basePAtkSpd=\"" + basePAtkSpd + "\"";
+		return " pAtkSpd=\"" + basePAtkSpd + "\"";
+	}
+	
+	public String getXmlMAtkSpd()
+	{
+		return " mAtkSpd=\"" + baseMAtkSpd + "\"";
 	}
 	
 	public String getXmlCritical()
 	{
-		return " baseCritRate=\"" + baseCritRate + "\"";
+		return " pCritRate=\"" + baseCritRate + "\"";
+	}
+	
+	public String getXmlMCritical()
+	{
+		return " mCritRate=\"" + baseMCritRate + "\"";
 	}
 	
 	public String getXmlCanSeeThroughSilentMove()
@@ -1230,12 +1236,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlWalkSpd()
 	{
-		return " baseWalkSpd=\"" + baseWalkSpd + "\"";
+		return " walkSpd=\"" + Math.round(baseWalkSpd) + "\"";
 	}
 	
 	public String getXmlRunSpd()
 	{
-		return " baseRunSpd=\"" + baseRunSpd + "\"";
+		return " runSpd=\"" + Math.round(baseRunSpd) + "\"";
 	}
 	
 	public String getXmlRandomWalk()
@@ -1275,12 +1281,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlCollisionRadius()
 	{
-		return " collisionRadius=\"" + fCollisionRadius + "\"";
+		return " collisionRadius=\"" + new DecimalFormat("#.##").format(fCollisionRadius) + "\"";
 	}
 	
 	public String getXmlCollisionHeight()
 	{
-		return " collisionHeight=\"" + fCollisionHeight + "\"";
+		return " collisionHeight=\"" + new DecimalFormat("#.##").format(fCollisionHeight) + "\"";
 	}
 	
 	public String getXmlElemAtk()
@@ -1322,15 +1328,14 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return " elemAtkType=\"" + elem + "\" elemAtkValue=\"" + val + "\"";
 	}
 	
-	public String getXmlElemDef()
+	public String getXmlElemRes()
 	{
-		return " fireDef=\"" + Math.round(baseFireRes) + "\" waterDef=\"" + Math.round(baseWaterRes) + "\" windDef=\"" + Math.round(baseWindRes) + "\"" +
-				" earthDef=\"" + Math.round(baseEarthRes) + "\" holyDef=\"" + Math.round(baseHolyRes) + "\" darkDef=\"" + Math.round(baseDarkRes) + "\"";
+		return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math.round(baseWaterRes) + "\" windRes=\"" + Math.round(baseWindRes) + "\"" + " earthRes=\"" + Math.round(baseEarthRes) + "\" holyRes=\"" + Math.round(baseHolyRes) + "\" darkRes=\"" + Math.round(baseDarkRes) + "\"";
 	}
 	
 	public String getXmlAIType()
 	{
-		return " type=\"" + getAIData().getAiType().name().toLowerCase() + "\"";
+		return " aiType=\"" + getAIData().getAiType().name().toLowerCase() + "\"";
 	}
 	
 	public String getXmlSkillChance()
@@ -1419,8 +1424,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlClan()
 	{
-		if (getAIData().getClan() == null || getAIData().getClan().length() == 0
-				|| getAIData().getClan().equalsIgnoreCase("null"))
+		if ((getAIData().getClan() == null) || (getAIData().getClan().length() == 0) || getAIData().getClan().equalsIgnoreCase("null"))
 			return "";
 		return " clan=\"" + getAIData().getClan() + "\"";
 	}
@@ -1434,8 +1438,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlEnemy()
 	{
-		if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0
-				|| getAIData().getEnemyClan().equalsIgnoreCase("null"))
+		if ((getAIData().getEnemyClan() == null) || (getAIData().getEnemyClan().length() == 0) || getAIData().getEnemyClan().equalsIgnoreCase("null"))
 			return "";
 		return " enemyClan=\"" + getAIData().getEnemyClan() + "\"";
 	}
@@ -1480,6 +1483,18 @@ public final class L2NpcTemplate extends L2CharTemplate
 		if (getAIData().getMaxSocial(true) == -1)
 			return "";
 		return " maxSocial2=\"" + getAIData().getMaxSocial(true) + "\"";
+	}
+	
+	private List<L2Spawn> _knownSpawns = new ArrayList<L2Spawn>();
+	
+	public final void addKnownSpawn(final L2Spawn spawn)
+	{
+		_knownSpawns.add(spawn);
+	}
+	
+	public final List<L2Spawn> getKnownSpawns()
+	{
+		return _knownSpawns;
 	}
 	
 	public void onSpawn(L2Spawn spawn)

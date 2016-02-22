@@ -46,6 +46,6 @@ public class MagicVisor implements IItemHandler
 		
 		L2MonsterInstance mob = (L2MonsterInstance)player.getTarget();
 		
-		CustomCommunityBoard.getInstance().sendDropPage(player, mob.getNpcId(), 1, mob);
+		CustomCommunityBoard.sendDropPage(player, mob.getNpcId(), 1);
 	}
 }

@@ -974,7 +974,7 @@
 	<tele id="14040" description="Dark Elven Village" x="11088" y="15983" z="-4584" />
 	<tele id="14041" description="Dwarven Village" x="115133" y="-178164" z="-902" />
 	<tele id="14042" description="Orc Village" x="-45169" y="-112506" z="-240" />
-	<tele id="14043" description="Talking Island" x="-112311" y="256948" z="-1472" />
+	<tele id="14043" description="Talking Island" x="-84133" y="244581" z="-3730" />
 	<tele id="14044" description="Floran Village" x="17829" y="170229" z="-3508" />
 	<tele id="14045" description="Kamael Village" x="-116920" y="46544" z="368" />
 	<tele id="14050" description="Hellbound Dark Side" x="6350" y="240196" z="-1875" price="25000" />
@@ -995,7 +995,7 @@
 	<tele id="25015" description="Valley of Saints" x="65116" y="-71503" z="-3694" />
 	<tele id="25016" description="Forest of the Dead" x="47260" y="-60349" z="-3017" />
 	<tele id="25017" description="Blazing Swamp" x="159672" y="-13463" z="-2841" />
-	<tele id="25018" description="Archaic Laboratory" x="84674" y="-112191" z="-2644" />
+	<tele id="25018" description="Archaic Laboratory" x="92445" y="-109031" z="-3338" />
 	<tele id="25019" description="Pavel Ruins" x="90978" y="-132330" z="-2610" />
 	<tele id="25020" description="Hot Spring" x="149849" y="-112621" z="-2066" />
 	<tele id="25021" description="Varka Silenos Barracks" x="108121" y="-53849" z="-2509" />
@@ -1021,18 +1021,23 @@
 	<tele id="27255" description="Bloody Swampland" x="-14235" y="44686" z="-3584" />
 	<tele id="27256" description="Prison of Darkness" x="175480" y="148176" z="-11652" />
 	<tele id="27257" description="Nornil Cave" x="-86976" y="43237" z="-2688" />
-	<tele id="27258" description="Orbis Temple" x="198684" y="86704" z="-140" />
+	<tele id="27258" description="Orbis Temple" x="210157" y="50514" z="-8399" />
 	<tele id="27259" description="Seal of Shilen" x="185342" y="20276" z="-3270" />
 	<tele id="27260" description="Guillotine Fortress" x="33504" y="147235" z="-3477" />
 	<tele id="27261" description="Pagan Temple" x="-16338" y="-37325" z="-10728" />
 	<tele id="27262" description="The Cemetary" x="167391" y="20299" z="-3330" />
 	<tele id="27263" description="Raider Crossroad" x="16641" y="-132599" z="-1718" />
-	<tele id="27264" description="School of Dark Arts" x="-47136" y="57627" z="-3613" />
+	<tele id="27264" description="Atelia Fortress" x="-47731" y="60419" z="-3249" />
 	<tele id="27265" description="Ruins of Ye Sagira" x="-115047" y="237313" z="-3092" />
 	<tele id="27266" description="Ruins of Ye Sagira (Border)" x="-114654" y="227622" z="-2864" />
 	<tele id="27267" description="Ancient City of Arkan" x="207530" y="86566" z="-1000" />
 	<tele id="27268" description="Gainak" x="16506" y="-114128" z="-224" />
 	<tele id="27269" description="Seed of Hellfire" x="-147383" y="152646" z="-14048" />
+	<tele id="28300" description="Abandoned Camp" x="-49853" y="147089" z="-2784" />
+	<tele id="28301" description="Execution Grounds" x="50568" y="152408" z="-2656" />
+	<tele id="28302" description="Forbidden Gateways" x="185342" y="20276" z="-3270" />
+	<tele id="28305" description="Garden of Genesis" x="207629" y="112678" z="-2058" />
+	<tele id="28306" description="Gainak" x="16379" y="-114060" z="-226" />
 	<!-- 
 		[PARSED FROM HUNTINGZONES-E.DAT @ VALIANCE]
 	 -->

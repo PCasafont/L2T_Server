@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -29,7 +30,7 @@ public class EvasGiftBoxes extends Quest
 	// index 0: without kiss of eva
 	// index 1: with kiss of eva
 	// chance,itemId,...
-	final private static int[][] CHANCES = {{2,9692,1,9693},{100,9692,50,9693}};
+	final private static int[][] CHANCES = { { 2, 9692, 1, 9693 }, { 100, 9692, 50, 9693 } };
 	
 	final private static String qn = "EvasGiftBoxes";
 	
@@ -47,7 +48,7 @@ public class EvasGiftBoxes extends Quest
 	}
 	
 	@Override
-	public String onKill (L2Npc npc, L2PcInstance killer, boolean isPet)
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
 		if (npc.getNpcId() == GIFTBOX)
 		{
@@ -59,13 +60,13 @@ public class EvasGiftBoxes extends Quest
 				isKissOfEvaBuffed = 1;
 			for (int i = 0; i < CHANCES[isKissOfEvaBuffed].length; i += 2)
 				if (Rnd.get(100) < CHANCES[isKissOfEvaBuffed][i])
-					st.giveItems(CHANCES[isKissOfEvaBuffed][i+1],1);
+					st.giveItems(CHANCES[isKissOfEvaBuffed][i + 1], 1);
 		}
-		return super.onKill(npc,killer,isPet);
+		return super.onKill(npc, killer, isPet);
 	}
 	
 	public static void main(String[] args)
 	{
-		new EvasGiftBoxes(-1,qn,"ai");
+		new EvasGiftBoxes(-1, qn, "ai");
 	}
 }

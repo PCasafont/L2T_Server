@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.events;
 
 import java.util.Collection;
@@ -38,11 +39,22 @@ public class RankingKillInfo
 	
 	public void updateSpecificKillInfo(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
-		if (killerPlayer == null || killedPlayer == null)
+		if ((killerPlayer == null) || (killedPlayer == null))
 			return;
 		
+		//Killed
+		KillInfo map = _specificKillInfo.get(killedPlayer.getName());
+		if (map != null)
+		{
+			if (map.getKillingSpree() >= 3)
+			{
+				map.notifyDead();
+				sendRegionalMessage(killedPlayer, " was shut down by " + killerPlayer.getName() + "!");
+			}
+		}
+		
 		//Killer
-		KillInfo map = _specificKillInfo.get(killerPlayer.getName());
+		map = _specificKillInfo.get(killerPlayer.getName());
 		if (map != null) // The player have specific info
 			map.increaseKills(killerPlayer, killedPlayer.getName());
 		else
@@ -52,20 +64,9 @@ public class RankingKillInfo
 			_specificKillInfo.put(killerPlayer.getName(), info);
 		}
 		
-		//Killed
-		map = _specificKillInfo.get(killedPlayer.getName());
-		if (map != null)
-		{
-			if (map.getKillingSpree() > 0)
-			{
-				map.notifyDead();
-				sendRegionalMessage(killedPlayer, " was shut down by " + killerPlayer.getName()+"!");
-			}
-		}
-		
 		//Send the info
 		if (!killedPlayer.getIsRefusalKillInfo())
-		{	
+		{
 			NpcHtmlMessage htmlPage = new NpcHtmlMessage(0);
 			htmlPage.setHtml(getBasicKillInfo(killedPlayer, killerPlayer));
 			killedPlayer.sendPacket(htmlPage);
@@ -77,19 +78,19 @@ public class RankingKillInfo
 	@SuppressWarnings("unused")
 	private boolean checkConditions(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
-		if (killerPlayer == null || killedPlayer == null)
+		if ((killerPlayer == null) || (killedPlayer == null))
 			return false;
 		
-		if (killerPlayer.getPvpFlag() == 0 || killedPlayer.getPvpFlag() == 0)
+		if ((killerPlayer.getPvpFlag() == 0) || (killedPlayer.getPvpFlag() == 0))
 			return false;
 		
 		if (killerPlayer.getLevel() > (killedPlayer.getLevel() + 8))
 			return false;
 		
-		if ((System.currentTimeMillis() - killedPlayer.getCreateTime()) / (24 * 60 * 60 * 1000) < 5)
+		if (((System.currentTimeMillis() - killedPlayer.getCreateTime()) / (24 * 60 * 60 * 1000)) < 5)
 			return false;
 		
-		if (killerPlayer.getClan() == null || killedPlayer.getClan() == null)
+		if ((killerPlayer.getClan() == null) || (killedPlayer.getClan() == null))
 			return false;
 		
 		if (killerPlayer.getClanId() == killedPlayer.getClanId())
@@ -98,13 +99,13 @@ public class RankingKillInfo
 		if (killerPlayer.getExternalIP().equalsIgnoreCase(killedPlayer.getExternalIP()) && killerPlayer.getInternalIP().equalsIgnoreCase(killedPlayer.getInternalIP()))
 			return false;
 		
-		if (killerPlayer.getParty() != null && killedPlayer.getParty() != null && killerPlayer.getParty().getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID())
+		if ((killerPlayer.getParty() != null) && (killedPlayer.getParty() != null) && (killerPlayer.getParty().getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID()))
 			return false;
 		
-		if (killedPlayer.getPDef(killedPlayer) < 800 || killedPlayer.getMDef(killedPlayer, null) < 800 || killedPlayer.getPAtkSpd() < 500 || killedPlayer.getMAtkSpd() < 500 || killedPlayer.getPvpKills() < 10)
+		if ((killedPlayer.getPDef(killedPlayer) < 800) || (killedPlayer.getMDef(killedPlayer, null) < 800) || (killedPlayer.getPAtkSpd() < 500) || (killedPlayer.getMAtkSpd() < 500) || (killedPlayer.getPvpKills() < 10))
 			return false;
 		
-		if (killerPlayer.getClan().getHasCastle() == 0 ||  killedPlayer.getClan().getHasCastle() == 0)
+		if ((killerPlayer.getClan().getHasCastle() == 0) || (killedPlayer.getClan().getHasCastle() == 0))
 			return false;
 		
 		if (!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) || !killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()))
@@ -117,7 +118,7 @@ public class RankingKillInfo
 	{
 		/*if (killer == null || killed == null)
 			return;
-		
+
 		List<String> rewardedPlayers = new ArrayList<String>();
 		List<L2PcInstance> allPlayersToBuff = new ArrayList<L2PcInstance>();
 		L2Party party = killer.getParty();
@@ -131,14 +132,14 @@ public class RankingKillInfo
 			else
 				allPlayersToBuff.addAll(channel.getMembers());
 		}
-		
+
 		if (!allPlayersToBuff.isEmpty())
 		{
 			for (L2PcInstance pl : allPlayersToBuff)
 			{
 				if (pl == null || pl.getInstanceId() != pl.getInstanceId() || !Util.checkIfInShortRadius(1600, killer, pl, false))
 					continue;
-				
+
 				L2Abnormal currentBuff = pl.getFirstEffect(21365);
 				if (currentBuff != null)
 				{
@@ -163,7 +164,7 @@ public class RankingKillInfo
 					if (buff != null)
 						buff.getEffects(pl, pl);
 				}
-				
+
 				if (!rewardedPlayers.contains(pl.getExternalIP()))
 				{
 					rewardedPlayers.add(pl.getExternalIP());
@@ -178,7 +179,7 @@ public class RankingKillInfo
 							if (Rnd.get(100)< 10)
 								rewardId = 37586;
 						}
-						
+
 						if (rewardId != 0)
 						{
 							pl.addItem("LegendaryCard", rewardId, 1, pl, true);
@@ -200,7 +201,7 @@ public class RankingKillInfo
 		
 		private KillInfo()
 		{
-			_killerList = new HashMap<String, Integer>();	
+			_killerList = new HashMap<String, Integer>();
 		}
 		
 		private int getKillInfo(String name)
@@ -225,41 +226,26 @@ public class RankingKillInfo
 			
 			String message = null;
 			int skillLevel = 0;
-			switch(_killingSpree)
+			switch (_killingSpree)
 			{
 				case 3:
-					message = " is Dominating!";
+					message = " is on a Killing Spree!";
 					skillLevel = 1;
 					break;
-				case 6:
+				case 5:
 					message = " is on a Rampage!";
-					break;
-				case 9:
-					message = " is on a Killing Spree!";
 					skillLevel = 2;
 					break;
-				case 12:
-					message = " is on a Monster Kill!";
-					break;
-				case 15:
+				case 9:
 					message = " is Unstoppable!";
-					break;
-				case 18:
-					message = " is on an Ultra Kill!";
 					skillLevel = 3;
 					break;
-				case 21:
-					message = " is Godlike!";
-					break;
-				case 24:
-					message = " is Wicked Sick!";
+				case 15:
+					message = " is Legendary!";
 					skillLevel = 4;
 					break;
-				case 27:
-					message = " is on a Ludricrous Kill!";
-					break;
-				case 30:
-					message = " is on a Holy Shit!";
+				case 25:
+					message = " is Godlike!";
 					skillLevel = 5;
 					break;
 			}
@@ -272,7 +258,7 @@ public class RankingKillInfo
 			}
 			
 			//Region message only
-			if (message != null)	
+			if (message != null)
 				sendRegionalMessage(killerPlayer, message);
 		}
 		
@@ -290,14 +276,14 @@ public class RankingKillInfo
 	private void sendRegionalMessage(L2PcInstance player, String message)
 	{
 		if (player == null)
-			return; 
+			return;
 		
 		CreatureSay cs = new CreatureSay(-1, Say2.CRITICAL_ANNOUNCE, player.getName(), player.getName() + message);
 		int region = MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY());
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		for (L2PcInstance worldPlayer : pls)
 		{
-			if (region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY()) && worldPlayer.getEvent() == null && worldPlayer.getInstanceId() == 0)
+			if ((region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY())) && (worldPlayer.getEvent() == null) && (worldPlayer.getInstanceId() == 0))
 				worldPlayer.sendPacket(cs);
 		}
 	}
@@ -345,12 +331,12 @@ public class RankingKillInfo
 		
 		tb.append("<html><head><title>" + killer.getName() + " Basic Information</title></head><body>");
 		if (killed.getClassId() >= 148)
-			tb.append("<center><table width=256 height=180 background=\"L2UI_CT1.HtmlWnd.HtmlWnd_ClassMark_"+killed.getClassId()+"\"><tr><td FIXWIDTH=300><br><br><br><br><br><br><br></td></tr></table></center>");
+			tb.append("<center><table width=256 height=180 background=\"L2UI_CT1.HtmlWnd.HtmlWnd_ClassMark_" + killed.getClassId() + "\"><tr><td FIXWIDTH=300><br><br><br><br><br><br><br></td></tr></table></center>");
 		else
 			tb.append("<center><table width=256 height=180 background=\"L2UI_CT1.HtmlWnd.HtmlWnd_DF_TextureMansion\"><tr><td FIXWIDTH=300><br><br><br><br><br><br><br></td></tr></table></center>");
 		tb.append("<br><table width=300>");
-		tb.append("<tr><td FIXWIDTH=100><font color=886531>Ranking Position:</font></td><td>" + rankName + "</td></tr>");		
-		tb.append("<tr><td FIXWIDTH=100><font color=886531>Name [lvl]:</font></td><td><font color=FF6600>" + killer.getName() + " [" + killer.getLevel() + "]</font></td></tr>");		
+		tb.append("<tr><td FIXWIDTH=100><font color=886531>Ranking Position:</font></td><td>" + rankName + "</td></tr>");
+		tb.append("<tr><td FIXWIDTH=100><font color=886531>Name [lvl]:</font></td><td><font color=FF6600>" + killer.getName() + " [" + killer.getLevel() + "]</font></td></tr>");
 		tb.append("<tr><td><font color=772F2F><font color=886531>Current Class:</font></font></td><td><font color=FF6600>" + PlayerClassTable.getInstance().getClassNameById(killer.getClassId()) + "</font></td></tr>");
 		tb.append("<tr><td><font color=886531>Hero:</font></td><td><font color=999999>" + (killer.isHero() ? "Yes" : "No") + "</font></td></tr>");
 		

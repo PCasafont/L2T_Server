@@ -68,6 +68,7 @@
 	<enchantScroll id="22224" targetType="ARMOR" grade="d" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (A-grade) - Event -->
 	<enchantScroll id="947" targetType="WEAPON" grade="b" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 	<enchantScroll id="6571" targetType="WEAPON" grade="b" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="34627" targetType="ELEMENTAL_SHIRT" grade="none" onlyOnItem="37718"/> <!-- Enchant Scroll: Elemental Shirt -->
 	<!-- Support Items -->
 	<enchantSupportItem id="12364" targetType="WEAPON" grade="b" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Weapon (B-grade) -->
 	<enchantSupportItem id="12367" targetType="ARMOR" grade="d" maxLevel="9" extraChance="35" /> <!-- Lucky Enchant Stone: Armor (D-grade) -->
@@ -89,4 +90,10 @@
 	<enchantSupportItem id="14705" targetType="WEAPON" grade="a" maxLevel="9" extraChance="12" /> <!-- Lucky Enchant Stone: Weapon (A-grade) -->
 	<enchantSupportItem id="14708" targetType="ARMOR" grade="c" maxLevel="9" extraChance="27" /> <!-- Lucky Enchant Stone: Armor (C-grade) -->
 	<enchantSupportItem id="14711" targetType="ARMOR" grade="s" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Armor (S-grade) -->
+	<enchantSupportItem id="37566" targetType="WEAPON" grade="r" maxLevel="20" extraChance="10" /> <!-- Blessed Lucky Enchant Stone: Weapon (R-grade) -->
+	<enchantSupportItem id="37567" targetType="ARMOR" grade="r" maxLevel="20" extraChance="10" /> <!-- Blessed Lucky Enchant Stone: Armor (R-grade) -->
+	<enchantSupportItem id="38757" targetType="WEAPON" grade="r" maxLevel="20" extraChance="20" /> <!-- Blessed High-Grade Lucky Enchant Stone: Weapon (R-grade) -->
+	<enchantSupportItem id="38758" targetType="ARMOR" grade="r" maxLevel="20" extraChance="20" /> <!-- Blessed High-Grade Lucky Enchant Stone: Armor (R-grade) -->
+	<enchantSupportItem id="23783" targetType="WEAPON" grade="r" maxLevel="20" extraChance="30" /> <!-- Blessed Giant's Lucky Enchant Stone: Weapon (R-grade) -->
+	<enchantSupportItem id="23784" targetType="ARMOR" grade="r" maxLevel="20" extraChance="30" /> <!-- Blessed Giant's Lucky Enchant Stone: Armor (R-grade) -->
 </list>

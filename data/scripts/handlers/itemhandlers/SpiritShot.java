@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
@@ -36,9 +37,10 @@ import l2server.gameserver.util.Broadcast;
 public class SpiritShot implements IItemHandler
 {
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!(playable instanceof L2PcInstance))
@@ -50,9 +52,9 @@ public class SpiritShot implements IItemHandler
 		int itemId = item.getItemId();
 		
 		// Check if Spirit shot can be used
-		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
+		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0))
 		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
+			if (!activeChar.hasAutoSoulShot(item))
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SPIRITSHOTS));
 			return;
 		}
@@ -67,29 +69,29 @@ public class SpiritShot implements IItemHandler
 		switch (weaponGrade)
 		{
 			case L2Item.CRYSTAL_NONE:
-				if (itemId != 5790 && itemId != 2509)
+				if ((itemId != 5790) && (itemId != 2509))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_D:
-				if (itemId != 2510 && itemId != 22077)
+				if ((itemId != 2510) && (itemId != 22077))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_C:
-				if (itemId != 2511 && itemId != 22078)
+				if ((itemId != 2511) && (itemId != 22078))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_B:
-				if (itemId != 2512 && itemId != 22079)
+				if ((itemId != 2512) && (itemId != 22079))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_A:
-				if (itemId != 2513 && itemId != 22080)
+				if ((itemId != 2513) && (itemId != 22080))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if (itemId != 2514 && itemId != 22081)
+				if ((itemId != 2514) && (itemId != 22081))
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_R:
@@ -102,7 +104,7 @@ public class SpiritShot implements IItemHandler
 		
 		if (!gradeCheck)
 		{
-			if (!activeChar.getAutoSoulShot().contains(itemId))
+			if (!activeChar.hasAutoSoulShot(item))
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
 			
 			return;
@@ -110,13 +112,13 @@ public class SpiritShot implements IItemHandler
 		
 		int sapphireLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)
 			{
 				//Sapphire
-				switch(jewel.getItemId())
+				switch (jewel.getItemId())
 				{
 					case 38927:
 						sapphireLvl = 1;
@@ -147,43 +149,43 @@ public class SpiritShot implements IItemHandler
 				{
 					case 2509:
 					case 5790:
-						skillId=2061;
+						skillId = 2061;
 						break;
 					case 2510:
-						skillId=2155;
+						skillId = 2155;
 						break;
 					case 2511:
-						skillId=2156;
+						skillId = 2156;
 						break;
 					case 2512:
-						skillId=2157;
+						skillId = 2157;
 						break;
 					case 2513:
-						skillId=2158;
+						skillId = 2158;
 						break;
 					case 2514:
-						skillId=2159;
+						skillId = 2159;
 						break;
 					case 22077:
-						skillId=26055;
+						skillId = 26055;
 						break;
 					case 22078:
-						skillId=26056;
+						skillId = 26056;
 						break;
 					case 22079:
-						skillId=26057;
+						skillId = 26057;
 						break;
 					case 22080:
-						skillId=26058;
+						skillId = 26058;
 						break;
 					case 22081:
-						skillId=26059;
+						skillId = 26059;
 						break;
 					case 19441:
-						skillId=9194;
+						skillId = 9194;
 						break;
 					case 22434:
-						skillId=9195;
+						skillId = 9195;
 						break;
 				}
 				break;
@@ -209,7 +211,7 @@ public class SpiritShot implements IItemHandler
 				sapphireMul = 1.2;
 				break;
 		}
-
+		
 		activeChar.consumableLock.lock();
 		try
 		{
@@ -220,7 +222,7 @@ public class SpiritShot implements IItemHandler
 			// Consume Spirit shot if player has enough of them
 			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
 			{
-				if (!activeChar.disableAutoShot(itemId))
+				if (!activeChar.disableAutoShot(item))
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
 				return;
 			}

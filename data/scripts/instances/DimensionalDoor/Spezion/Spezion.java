@@ -1,3 +1,4 @@
+
 package instances.DimensionalDoor.Spezion;
 
 import instances.DimensionalDoor.DimensionalDoor;
@@ -29,9 +30,9 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  *  Spezion Boss - Normal/Extreme Mode
- *  
+ *
  *  Source:
  *  		- http://www.youtube.com/watch?v=RausqeXJ_rs&feature=player_embedded
  *  		- http://www.youtube.com/watch?v=nLVx8PPcXy8&feature=player_embedded
@@ -40,16 +41,16 @@ import ai.group_template.L2AttackableAIScript;
 public class Spezion extends L2AttackableAIScript
 {
 	//Quest
-	private static final String 	_qn 				= "Spezion";
-	private static final boolean	_debug				= false;
+	private static final String _qn = "Spezion";
+	private static final boolean _debug = false;
 	
 	//Ids
-	private static final int		_giantCannonball	= 17611;
-	private static final int		_fakeSpezion		= 25868;
-	private static final int[]		_cannonIds			= {32939, 32940, 32941, 32942};
-	private static final int[]		_allMobs			= {25779, 25780, 25781, 25782, 25867, 25872, 25873, 25874};
-	private static final Location	_enterCords			= new Location(175475, 145044, -11897);
-	private static final L2Skill 	_cannonBlast 		= SkillTable.getInstance().getInfo(14175, 1);
+	private static final int _giantCannonball = 17611;
+	private static final int _fakeSpezion = 25868;
+	private static final int[] _cannonIds = { 32939, 32940, 32941, 32942 };
+	private static final int[] _allMobs = { 25779, 25780, 25781, 25782, 25867, 25872, 25873, 25874 };
+	private static final Location _enterCords = new Location(175475, 145044, -11897);
+	private static final L2Skill _cannonBlast = SkillTable.getInstance().getInfo(14175, 1);
 	
 	public Spezion(int questId, String name, String descr)
 	{
@@ -71,7 +72,7 @@ public class Spezion extends L2AttackableAIScript
 			addKillId(a);
 			addSpawnId(a);
 		}
-	}	
+	}
 	
 	private class PrisonOfDarknessWorld extends InstanceWorld
 	{
@@ -85,10 +86,10 @@ public class Spezion extends L2AttackableAIScript
 		
 		private PrisonOfDarknessWorld()
 		{
-			isHardMode 		= false;
-			spezionGuards	= new int[3];
-			minions 		= new ArrayList<L2Npc>();
-			fakeMonsters	= new ArrayList<L2Npc>();
+			isHardMode = false;
+			spezionGuards = new int[3];
+			minions = new ArrayList<L2Npc>();
+			fakeMonsters = new ArrayList<L2Npc>();
 			rewardedPlayers = new ArrayList<L2PcInstance>();
 		}
 	}
@@ -104,13 +105,13 @@ public class Spezion extends L2AttackableAIScript
 		{
 			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) tmpworld;
 			if (Util.contains(world.spezionGuards, npc.getNpcId()))
-			{	
-				synchronized(world.minions)
+			{
+				synchronized (world.minions)
 				{
 					if (world.minions.contains(npc))
 						world.minions.remove(npc);
 				}
-			}	
+			}
 			else if (npc == world.spezionBoss)
 			{
 				int maxReward = world.isHardMode ? 20 : 10;
@@ -118,7 +119,7 @@ public class Spezion extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if (pMember == null || pMember.getInstanceId() != world.instanceId)
+						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
 							continue;
 						
 						//Reward
@@ -129,7 +130,7 @@ public class Spezion extends L2AttackableAIScript
 						}
 						else
 							pMember.sendMessage("Nice attempt, but you already got a reward!");
-					}	
+					}
 				}
 				
 				InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.isHardMode ? 196 : 159, 6, 30);
@@ -149,7 +150,7 @@ public class Spezion extends L2AttackableAIScript
 		
 		int npcId = npc.getNpcId();
 		if (npcId == DimensionalDoor.getNpcManagerId())
-			return _qn+".html";
+			return _qn + ".html";
 		else if (Util.contains(_cannonIds, npc.getNpcId()))
 		{
 			if (npc.getInstanceId() != 0)
@@ -163,10 +164,10 @@ public class Spezion extends L2AttackableAIScript
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onSpellFinished: " + skill.getName());
+			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
 		
 		InstanceWorld wrld = null;
-		if (npc != null)	
+		if (npc != null)
 			wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		else if (player != null)
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
@@ -176,9 +177,9 @@ public class Spezion extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof PrisonOfDarknessWorld)
+		if ((wrld != null) && (wrld instanceof PrisonOfDarknessWorld))
 		{
-			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld)wrld;
+			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) wrld;
 			if (Util.contains(_cannonIds, npc.getNpcId()))
 			{
 				if (skill == _cannonBlast)
@@ -190,7 +191,7 @@ public class Spezion extends L2AttackableAIScript
 					world.spezionBoss.setIsInvul(false);
 					world.spezionBoss.stopVisualEffect(VisualEffect.S_INVINCIBLE);
 					
-					if (world.isHardMode)	//Delete the fake shits
+					if (world.isHardMode) //Delete the fake shits
 					{
 						for (L2Npc fakeMonster : world.fakeMonsters)
 						{
@@ -223,9 +224,9 @@ public class Spezion extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof PrisonOfDarknessWorld)
+		if ((wrld != null) && (wrld instanceof PrisonOfDarknessWorld))
 		{
-			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld)wrld;
+			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
 			{
 				InstanceManager.getInstance().showVidToInstance(53, world.instanceId);
@@ -266,7 +267,7 @@ public class Spezion extends L2AttackableAIScript
 						{
 							L2Npc newGuard = addSpawn(b, fakeSpezion.getX(), fakeSpezion.getY(), fakeSpezion.getZ(), fakeSpezion.getHeading(), true, 0, false, world.instanceId);
 							world.fakeMonsters.add(newGuard);
-							((L2MonsterInstance)newGuard).setIsRaidMinion(true);
+							((L2MonsterInstance) newGuard).setIsRaidMinion(true);
 							newGuard.setIsRunning(true);
 							newGuard.setIsInvul(true);
 						}
@@ -275,26 +276,26 @@ public class Spezion extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_spawn_minions"))
 			{
-				if (world.spezionBoss != null && !world.spezionBoss.isDead())
+				if ((world.spezionBoss != null) && !world.spezionBoss.isDead())
 				{
 					if (world.spezionBoss.getDisplayEffect() != 2)
 					{
-						synchronized(world.minions)
+						synchronized (world.minions)
 						{
 							if (world.minions.isEmpty())
-							{	
+							{
 								for (int a = 1; a < 3; a++)
 								{
 									for (int b : world.spezionGuards)
 									{
 										L2Npc newGuard = addSpawn(b, world.spezionBoss.getX(), world.spezionBoss.getY(), world.spezionBoss.getZ(), world.spezionBoss.getHeading(), true, 0, false, world.instanceId);
 										world.minions.add(newGuard);
-										((L2MonsterInstance)newGuard).setIsRaidMinion(true);
-										newGuard.setIsRunning(true);								
-									}	
+										((L2MonsterInstance) newGuard).setIsRaidMinion(true);
+										newGuard.setIsRunning(true);
+									}
 								}
 							}
-						}	
+						}
 					}
 					
 					startQuestTimer("stage_all_spawn_minions", 5000, world.spezionBoss, null);
@@ -302,19 +303,19 @@ public class Spezion extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_spezion_back"))
 			{
-				if (world.spezionBoss != null && !world.spezionBoss.isDead())
-				{	
+				if ((world.spezionBoss != null) && !world.spezionBoss.isDead())
+				{
 					world.spezionBoss.setDisplayEffect(3);
 					world.spezionBoss.setIsInvul(true);
 					world.spezionBoss.startVisualEffect(VisualEffect.S_INVINCIBLE);
 					
 					if (world.isHardMode)
 						notifyEvent("stage_all_spawn_fake_spezions", world.spezionBoss, null);
-				}	
+				}
 			}
 			else if (event.equalsIgnoreCase("stage_all_cannon"))
 			{
-				if (world.spezionBoss == null || world.spezionBoss.isDead() || world.spezionBoss.getDisplayEffect() == 2)
+				if ((world.spezionBoss == null) || world.spezionBoss.isDead() || (world.spezionBoss.getDisplayEffect() == 2))
 					return "";
 				
 				long cannonBallCount = player.getInventory().getInventoryItemCount(_giantCannonball, 0);
@@ -325,13 +326,13 @@ public class Spezion extends L2AttackableAIScript
 				{
 					player.destroyItemByItemId(_qn, _giantCannonball, 1, npc, true);
 					player.getInventory().destroyItem(_qn, _giantCannonball, 1, player, player);
-						
+					
 					npc.setTitle("Loading Cannon");
 					npc.broadcastPacket(new NicknameChanged(npc));
 					npc.setTarget(world.spezionBoss);
 					npc.doCast(_cannonBlast);
 				}
-					
+				
 				if (_debug)
 					Log.warning(getName() + ": Range: " + Util.calculateDistance(npc.getX(), npc.getY(), world.spezionBoss.getX(), world.spezionBoss.getY()));
 			}
@@ -364,21 +365,21 @@ public class Spezion extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.deleteAllItemsById(_giantCannonball);
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(175373, 144292, -11818);
 				}
-			}	
+			}
 			
 			return;
 		}
 		else
 		{
 			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, 7, 7, 92, Config.MAX_LEVEL))
-			{	
+			{
 				return;
 			}
 			
@@ -389,7 +390,7 @@ public class Spezion extends L2AttackableAIScript
 			
 			InstanceManager.getInstance().addWorld(world);
 			
-			setupIDs((PrisonOfDarknessWorld)world, template_id);
+			setupIDs((PrisonOfDarknessWorld) world, template_id);
 			
 			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 			if (_debug)
@@ -424,17 +425,18 @@ public class Spezion extends L2AttackableAIScript
 		{
 			world.spezionId = 25779;
 			for (int a = 1; a < 4; a++)
-			{	
-				world.spezionGuards[a-1] = world.spezionId + a;
-			}	
+			{
+				world.spezionGuards[a - 1] = world.spezionId + a;
+			}
 		}
-		else //196 Extreme
+		else
+		//196 Extreme
 		{
-			world.isHardMode 	= true;
-			world.spezionId 	= 25867;
+			world.isHardMode = true;
+			world.spezionId = 25867;
 			for (int a = 1; a < 4; a++)
-			{	
-				world.spezionGuards[a-1] = world.spezionId + 4 + a ;
+			{
+				world.spezionGuards[a - 1] = world.spezionId + 4 + a;
 			}
 		}
 	}

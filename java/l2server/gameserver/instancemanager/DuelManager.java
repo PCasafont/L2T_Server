@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class DuelManager
 	{
 		for (Duel duel : _duels)
 		{
-			if (duel != null && duel.getId() == duelId)
+			if ((duel != null) && (duel.getId() == duelId))
 				return duel;
 		}
 		return null;
@@ -69,7 +70,7 @@ public class DuelManager
 	
 	public void addDuel(L2PcInstance playerA, L2PcInstance playerB, int partyDuel)
 	{
-		if (playerA == null || playerB == null)
+		if ((playerA == null) || (playerB == null))
 			return;
 		
 		// return if a player has PvPFlag
@@ -112,7 +113,7 @@ public class DuelManager
 		}
 		else
 		{
-			if (playerA.getPvpFlag() != 0 || playerB.getPvpFlag() != 0)
+			if ((playerA.getPvpFlag() != 0) || (playerB.getPvpFlag() != 0))
 			{
 				playerA.sendMessage(engagedInPvP);
 				playerB.sendMessage(engagedInPvP);
@@ -131,7 +132,7 @@ public class DuelManager
 	
 	public void doSurrender(L2PcInstance player)
 	{
-		if (player == null || !player.isInDuel())
+		if ((player == null) || !player.isInDuel())
 			return;
 		Duel duel = getDuel(player.getDuelId());
 		duel.doSurrender(player);
@@ -143,7 +144,7 @@ public class DuelManager
 	 */
 	public void onPlayerDefeat(L2PcInstance player)
 	{
-		if (player == null || !player.isInDuel())
+		if ((player == null) || !player.isInDuel())
 			return;
 		Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
@@ -157,7 +158,7 @@ public class DuelManager
 	 */
 	public void onBuff(L2PcInstance player, L2Abnormal buff)
 	{
-		if (player == null || !player.isInDuel() || buff == null)
+		if ((player == null) || !player.isInDuel() || (buff == null))
 			return;
 		Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
@@ -170,7 +171,7 @@ public class DuelManager
 	 */
 	public void onRemoveFromParty(L2PcInstance player)
 	{
-		if (player == null || !player.isInDuel())
+		if ((player == null) || !player.isInDuel())
 			return;
 		Duel duel = getDuel(player.getDuelId());
 		if (duel != null)
@@ -184,12 +185,12 @@ public class DuelManager
 	 */
 	public void broadcastToOppositTeam(L2PcInstance player, L2GameServerPacket packet)
 	{
-		if (player == null || !player.isInDuel())
+		if ((player == null) || !player.isInDuel())
 			return;
 		Duel duel = getDuel(player.getDuelId());
 		if (duel == null)
 			return;
-		if (duel.getPlayerA() == null || duel.getPlayerB() == null)
+		if ((duel.getPlayerA() == null) || (duel.getPlayerB() == null))
 			return;
 		
 		if (duel.getPlayerA() == player)
@@ -202,11 +203,11 @@ public class DuelManager
 		}
 		else if (duel.isPartyDuel())
 		{
-			if (duel.getPlayerA().getParty() != null && duel.getPlayerA().getParty().getPartyMembers().contains(player))
+			if ((duel.getPlayerA().getParty() != null) && duel.getPlayerA().getParty().getPartyMembers().contains(player))
 			{
 				duel.broadcastToTeam2(packet);
 			}
-			else if (duel.getPlayerB().getParty() != null && duel.getPlayerB().getParty().getPartyMembers().contains(player))
+			else if ((duel.getPlayerB().getParty() != null) && duel.getPlayerB().getParty().getPartyMembers().contains(player))
 			{
 				duel.broadcastToTeam1(packet);
 			}

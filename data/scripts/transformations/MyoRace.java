@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -10,7 +11,8 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public class MyoRace extends L2Transformation
 {
-	private static final int[] SKILLS = {896,897,898,899,900,5491,619};
+	private static final int[] SKILLS = { 896, 897, 898, 899, 900, 5491, 619 };
+	
 	public MyoRace()
 	{
 		// id, colRadius, colHeight
@@ -20,7 +22,7 @@ public class MyoRace extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 219 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 219) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		if (getPlayer().getPet() != null)

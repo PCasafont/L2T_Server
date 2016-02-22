@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -20,7 +21,7 @@ import l2server.gameserver.model.zone.L2ZoneType;
 
 /**
  * Zone where 'Build Headquarters' is not allowed.
- * 
+ *
  * @author Gnat
  */
 public class L2NoHqZone extends L2ZoneType

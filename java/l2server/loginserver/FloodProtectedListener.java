@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.loginserver;
 
 import java.io.IOException;
@@ -67,40 +68,47 @@ public abstract class FloodProtectedListener extends Thread
 					if (fConnection != null)
 					{
 						fConnection.connectionNumber += 1;
-						if ( (fConnection.connectionNumber > Config.FAST_CONNECTION_LIMIT
-								&& (System.currentTimeMillis() - fConnection.lastConnection) < Config.NORMAL_CONNECTION_TIME)
-								|| (System.currentTimeMillis() - fConnection.lastConnection) < Config.FAST_CONNECTION_TIME
-								|| fConnection.connectionNumber > Config.MAX_CONNECTION_PER_IP)
+						if (((fConnection.connectionNumber > Config.FAST_CONNECTION_LIMIT) && ((System.currentTimeMillis() - fConnection.lastConnection) < Config.NORMAL_CONNECTION_TIME)) || ((System.currentTimeMillis() - fConnection.lastConnection) < Config.FAST_CONNECTION_TIME) || (fConnection.connectionNumber > Config.MAX_CONNECTION_PER_IP))
 						{
 							fConnection.lastConnection = System.currentTimeMillis();
 							connection.close();
 							fConnection.connectionNumber -= 1;
-							if (!fConnection.isFlooding)Log.warning("Potential Flood from "+connection.getInetAddress().getHostAddress());
+							if (!fConnection.isFlooding)
+								Log.warning("Potential Flood from " + connection.getInetAddress().getHostAddress());
 							fConnection.isFlooding = true;
 							continue;
 						}
 						if (fConnection.isFlooding) //if connection was flooding server but now passed the check
 						{
 							fConnection.isFlooding = false;
-							Log.info(connection.getInetAddress().getHostAddress()+" is not considered as flooding anymore.");
+							Log.info(connection.getInetAddress().getHostAddress() + " is not considered as flooding anymore.");
 						}
 						fConnection.lastConnection = System.currentTimeMillis();
 					}
 					else
 					{
 						fConnection = new ForeignConnection(System.currentTimeMillis());
-						_floodProtection.put(connection.getInetAddress().getHostAddress(),fConnection);
+						_floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
 					}
 				}
 				addClient(connection);
 			}
 			catch (Exception e)
 			{
-				try { connection.close(); } catch (Exception e2) {}
-				if (this.isInterrupted())
+				try
+				{
+					connection.close();
+				}
+				catch (Exception e2)
+				{
+				}
+				if (isInterrupted())
 				{
 					// shutdown?
-					try { _serverSocket.close();}
+					try
+					{
+						_serverSocket.close();
+					}
 					catch (IOException io)
 					{
 						Log.log(Level.INFO, "", io);
@@ -144,7 +152,7 @@ public abstract class FloodProtectedListener extends Thread
 		}
 		else
 		{
-			Log.warning("Removing a flood protection for a GameServer that was not in the connection map??? :"+ip);
+			Log.warning("Removing a flood protection for a GameServer that was not in the connection map??? :" + ip);
 		}
 	}
 	

@@ -2040,7 +2040,7 @@
 	<item id="1418" type="EtcItem" name="Spellbook: Surrender to Poison" icon="icon.etc_spell_books_black_i00" immediateEffect="1"
 			weight="120" price="1250" isStackable="true">
 	</item>
-	<!-- Item needed to upgrade a clan to level 3. -->
+	<!-- Item needed to upgrade a clan to level 3. Only the Clan Leader may use it. -->
 	<item id="1419" type="EtcItem" name="Proof of Blood" icon="icon.etc_broken_crystal_red_i00" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- List of cooking ingredients from Jonas. Mandragora essence. Honey. Dionian potato. Marsh moss. Floating eye meat. -->

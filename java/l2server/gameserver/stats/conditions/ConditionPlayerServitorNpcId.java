@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.conditions;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class ConditionPlayerServitorNpcId extends Condition
 	 */
 	public ConditionPlayerServitorNpcId(ArrayList<Integer> npcIds)
 	{
-		if (npcIds.size() == 1 && npcIds.get(0) == 0)
+		if ((npcIds.size() == 1) && (npcIds.get(0) == 0))
 			_npcIds = null;
 		else
 			_npcIds = npcIds;
@@ -49,7 +50,7 @@ public class ConditionPlayerServitorNpcId extends Condition
 		if (!(env.player instanceof L2PcInstance))
 			return false;
 		
-		L2PcInstance player = (L2PcInstance)env.player;
+		L2PcInstance player = (L2PcInstance) env.player;
 		
 		if (player.getPet() == null)
 			return false;
@@ -64,6 +65,6 @@ public class ConditionPlayerServitorNpcId extends Condition
 			}
 		}
 		
-		return _npcIds == null || _npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
+		return (_npcIds == null) || _npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
 	}
 }

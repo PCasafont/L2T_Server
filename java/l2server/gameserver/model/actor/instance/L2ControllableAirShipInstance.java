@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.concurrent.Future;
@@ -53,7 +54,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public ControllableAirShipStat getStat()
 	{
-		return (ControllableAirShipStat)super.getStat();
+		return (ControllableAirShipStat) super.getStat();
 	}
 	
 	@Override
@@ -74,7 +75,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		if (_ownerId == 0)
 			return false;
 		
-		return player.getClanId() == _ownerId || player.getObjectId() == _ownerId;
+		return (player.getClanId() == _ownerId) || (player.getObjectId() == _ownerId);
 	}
 	
 	@Override
@@ -86,7 +87,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public boolean isCaptain(L2PcInstance player)
 	{
-		return _captain != null && player == _captain;
+		return (_captain != null) && (player == _captain);
 	}
 	
 	@Override
@@ -114,12 +115,12 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 			_captain = null;
 		else
 		{
-			if (_captain == null && player.getAirShip() == this)
+			if ((_captain == null) && (player.getAirShip() == this))
 			{
 				final int x = player.getInVehiclePosition().getX() - 0x16e;
 				final int y = player.getInVehiclePosition().getY();
 				final int z = player.getInVehiclePosition().getZ() - 0x6b;
-				if (x * x + y * y + z * z > 2500)
+				if (((x * x) + (y * y) + (z * z)) > 2500)
 				{
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CONTROL_TOO_FAR));
 					return false;
@@ -203,7 +204,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		else
 			_fuel = f;
 		
-		if (_fuel == 0 && old > 0)
+		if ((_fuel == 0) && (old > 0))
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_RUN_OUT));
 		else if (_fuel < LOW_FUEL)
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_SOON_RUN_OUT));
@@ -226,7 +227,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	{
 		if (player == _captain)
 			setCaptain(null); // no need to broadcast userinfo here
-		
+			
 		super.oustPlayer(player);
 	}
 	
@@ -267,7 +268,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.SEVERE, "Failed decayMe():"+e.getMessage());
+			Log.log(Level.SEVERE, "Failed decayMe():" + e.getMessage());
 		}
 	}
 	
@@ -289,6 +290,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	
 	private final class ConsumeFuelTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			int fuel = getFuel();
@@ -306,11 +308,10 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	
 	private final class CheckTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
-			if (isVisible()
-					&& isEmpty()
-					&& !isInDock())
+			if (isVisible() && isEmpty() && !isInDock())
 				// deleteMe() can't be called from CheckTask because task should not cancel itself
 				ThreadPoolManager.getInstance().executeTask(new DecayTask());
 		}
@@ -318,6 +319,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	
 	private final class DecayTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			deleteMe();

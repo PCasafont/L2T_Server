@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.util;
 
 import java.net.InetAddress;
@@ -98,8 +99,8 @@ public class IPSubnet
 	public String toString()
 	{
 		int size = 0;
-		for (int i = 0; i < _mask.length; i++)
-			size += Integer.bitCount((_mask[i] & 0xFF));
+		for (byte element : _mask)
+			size += Integer.bitCount((element & 0xFF));
 		
 		try
 		{
@@ -115,24 +116,24 @@ public class IPSubnet
 	public boolean equals(Object o)
 	{
 		if (o instanceof IPSubnet)
-			return applyMask(((IPSubnet)o).getAddress());
+			return applyMask(((IPSubnet) o).getAddress());
 		else if (o instanceof InetAddress)
-			return applyMask(((InetAddress)o).getAddress());
+			return applyMask(((InetAddress) o).getAddress());
 		
 		return false;
 	}
 	
 	private static final byte[] getMask(int n, int maxLength) throws UnknownHostException
 	{
-		if (n > (maxLength << 3) || n < 0)
+		if ((n > (maxLength << 3)) || (n < 0))
 			throw new UnknownHostException("Invalid netmask: " + n);
 		
 		final byte[] result = new byte[maxLength];
 		for (int i = 0; i < maxLength; i++)
-			result[i] = (byte)0xFF;
+			result[i] = (byte) 0xFF;
 		
 		for (int i = (maxLength << 3) - 1; i >= n; i--)
-			result[i >> 3] = (byte)(result[i >> 3] << 1);
+			result[i >> 3] = (byte) (result[i >> 3] << 1);
 		
 		return result;
 	}

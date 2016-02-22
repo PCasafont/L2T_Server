@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -29,7 +30,6 @@ import l2server.log.Log;
  */
 public final class TradeDone extends L2GameClientPacket
 {
-	private static final String _C__17_TRADEDONE = "[C] 17 TradeDone";
 	
 	private int _response;
 	
@@ -64,7 +64,7 @@ public final class TradeDone extends L2GameClientPacket
 		
 		if (_response == 1)
 		{
-			if (trade.getPartner() == null || L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null)
+			if ((trade.getPartner() == null) || (L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null))
 			{
 				// Trade partner not found, cancel trade
 				player.cancelActiveTrade();
@@ -72,7 +72,7 @@ public final class TradeDone extends L2GameClientPacket
 				return;
 			}
 			
-			if (trade.getOwner().getActiveEnchantItem() != null || trade.getPartner().getActiveEnchantItem() != null)
+			if ((trade.getOwner().getActiveEnchantItem() != null) || (trade.getPartner().getActiveEnchantItem() != null))
 				return;
 			
 			if (player.getEvent() != null)
@@ -94,7 +94,7 @@ public final class TradeDone extends L2GameClientPacket
 				return;
 			}
 			
-			if (player.getInstanceId() != trade.getPartner().getInstanceId() && player.getInstanceId() != -1)
+			if ((player.getInstanceId() != trade.getPartner().getInstanceId()) && (player.getInstanceId() != -1))
 			{
 				player.cancelActiveTrade();
 				return;
@@ -104,14 +104,5 @@ public final class TradeDone extends L2GameClientPacket
 		}
 		else
 			player.cancelActiveTrade();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__17_TRADEDONE;
 	}
 }

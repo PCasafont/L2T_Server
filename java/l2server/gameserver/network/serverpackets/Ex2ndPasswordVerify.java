@@ -12,15 +12,15 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 /**
- * 
+ *
  * @author mrTJO
  */
 public class Ex2ndPasswordVerify extends L2GameServerPacket
 {
-	private static final String _S__FE_10A_EX2NDPASSWORDVERIFYPACKET = "[S] FE:10A Ex2NDPasswordVerifyPacket";
 	
 	public static final int PASSWORD_OK = 0x00;
 	public static final int PASSWORD_WRONG = 0x01;
@@ -35,17 +35,9 @@ public class Ex2ndPasswordVerify extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0x106);
 		writeD(_mode);
 		writeD(_wrongTentatives);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_10A_EX2NDPASSWORDVERIFYPACKET;
 	}
 }

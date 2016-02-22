@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -31,7 +32,7 @@ import l2server.L2DatabaseFactory;
 public class SurveyManager
 {
 	private static SurveyManager _instance;
-
+	
 	private final String GET_CURRENT_SURVEY = "SELECT survey_id,question,description FROM survey WHERE survey_id = (SELECT MAX(survey_id) FROM survey where active = 1)";
 	private final String GET_CURRENT_SURVEY_POSSIBLE_ANSWERS = "SELECT answer_id,answer FROM survey_possible_answer WHERE survey_id = ?";
 	private final String GET_CURRENT_SURVEY_ANSWERS = "SELECT charId FROM survey_answer WHERE survey_id = ?";
@@ -71,7 +72,7 @@ public class SurveyManager
 					possibleAnswers.put(rset.getInt("answer_id"), rset.getString("answer"));
 				
 				_possibleAnswers = possibleAnswers;
-
+				
 				statement2 = con.prepareStatement(GET_CURRENT_SURVEY_ANSWERS);
 				statement2.setInt(1, _id);
 				rset2 = statement2.executeQuery();
@@ -94,17 +95,17 @@ public class SurveyManager
 			L2DatabaseFactory.close(con);
 		}
 	}
-
+	
 	public boolean isActive()
 	{
 		return _id > 0;
 	}
-
+	
 	public String getQuestion()
 	{
 		return _question;
 	}
-
+	
 	public String getDescription()
 	{
 		return _description;
@@ -112,7 +113,7 @@ public class SurveyManager
 	
 	public Integer[] getPossibleAnswerIds()
 	{
-		return (Integer[])_possibleAnswers.keySet().toArray();
+		return (Integer[]) _possibleAnswers.keySet().toArray();
 	}
 	
 	public String getPossibleAnswer(int id)

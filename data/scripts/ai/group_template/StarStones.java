@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import l2server.gameserver.model.L2Object;
@@ -25,7 +26,7 @@ import l2server.util.Rnd;
 
 public class StarStones extends L2AttackableAIScript
 {
-	private static final int[] mobs = {18684, 18685, 18686, 18687, 18688, 18689, 18690, 18691, 18692};
+	private static final int[] mobs = { 18684, 18685, 18686, 18687, 18688, 18689, 18690, 18691, 18692 };
 	private static final int RATE = 1;
 	
 	public StarStones(int questId, String name, String descr)
@@ -35,13 +36,13 @@ public class StarStones extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onSkillSee (L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (Util.contains(targets, npc) && skill.getId() == 932)
+		if (Util.contains(targets, npc) && (skill.getId() == 932))
 		{
 			int itemId = 0;
 			
-			switch(npc.getNpcId())
+			switch (npc.getNpcId())
 			{
 				case 18684:
 				case 18685:
@@ -70,9 +71,7 @@ public class StarStones extends L2AttackableAIScript
 				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED));
 				caster.addItem("StarStone", itemId, Rnd.get(RATE + 1, 2 * RATE), null, true);
 			}
-			else if ((skill.getLevelHash() == 1 && Rnd.get(100) < 15) ||
-					(skill.getLevelHash() == 2 && Rnd.get(100) < 50) ||
-					(skill.getLevelHash() == 3 && Rnd.get(100) < 75))
+			else if (((skill.getLevel() == 1) && (Rnd.get(100) < 15)) || ((skill.getLevel() == 2) && (Rnd.get(100) < 50)) || ((skill.getLevel() == 3) && (Rnd.get(100) < 75)))
 			{
 				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED));
 				caster.addItem("StarStone", itemId, Rnd.get(1, RATE), null, true);

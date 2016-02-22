@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -35,19 +36,15 @@ import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-
 public class AdminLevel implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_add_level",
-		"admin_set_level"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_add_level", "admin_set_level" };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		L2Object targetChar = activeChar.getTarget();
@@ -84,7 +81,7 @@ public class AdminLevel implements IAdminCommandHandler
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
 				
 				byte lvl = Byte.parseByte(val);
-				if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1)
+				if ((lvl >= 1) && (lvl <= (Config.MAX_LEVEL + 1)))
 				{
 					long pXp = targetPlayer.getExp();
 					long tXp = Experience.getAbsoluteExp(lvl);
@@ -114,9 +111,10 @@ public class AdminLevel implements IAdminCommandHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

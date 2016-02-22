@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager;
 
 import static l2server.gameserver.taskmanager.TaskTypes.TYPE_NONE;
@@ -30,10 +31,12 @@ import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
+import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.taskmanager.tasks.TaskCleanUp;
 import l2server.gameserver.taskmanager.tasks.TaskCustomTasks;
+import l2server.gameserver.taskmanager.tasks.TaskDailyChangeRates;
 import l2server.gameserver.taskmanager.tasks.TaskDailyQuestClean;
 import l2server.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
 import l2server.gameserver.taskmanager.tasks.TaskJython;
@@ -46,16 +49,12 @@ import l2server.log.Log;
 
 /**
  * @author Layane
- * 
+ *
  */
 public final class TaskManager
 {
 	
-	protected static final String[] SQL_STATEMENTS = {
-		"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
-		"UPDATE global_tasks SET last_activation=? WHERE id=?", "SELECT id FROM global_tasks WHERE task=?",
-		"INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"
-	};
+	protected static final String[] SQL_STATEMENTS = { "SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks", "UPDATE global_tasks SET last_activation=? WHERE id=?", "SELECT id FROM global_tasks WHERE task=?", "INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)" };
 	
 	private final HashMap<Integer, Task> _tasks = new HashMap<Integer, Task>();
 	protected final ArrayList<ExecutedTask> _currentTasks = new ArrayList<ExecutedTask>();
@@ -78,6 +77,7 @@ public final class TaskManager
 			params = new String[] { rset.getString("param1"), rset.getString("param2"), rset.getString("param3") };
 		}
 		
+		@Override
 		public void run()
 		{
 			task.onTimeElapsed(this);
@@ -103,7 +103,7 @@ public final class TaskManager
 				L2DatabaseFactory.close(con);
 			}
 			
-			if (type == TYPE_SHEDULED || type == TYPE_TIME)
+			if ((type == TYPE_SHEDULED) || (type == TYPE_TIME))
 			{
 				stopTask();
 			}
@@ -174,7 +174,12 @@ public final class TaskManager
 		registerTask(new TaskRecom());
 		registerTask(new TaskDailyQuestClean());
 		registerTask(new TaskVitalityReset());
-		registerTask(new TaskCustomTasks());
+		
+		if (Config.isServer(Config.TENKAI))
+		{
+			registerTask(new TaskDailyChangeRates());
+			registerTask(new TaskCustomTasks());
+		}
 	}
 	
 	public void registerTask(Task task)
@@ -241,7 +246,7 @@ public final class TaskManager
 		final TaskTypes type = task.getType();
 		long delay, interval;
 		
-		switch(type)
+		switch (type)
 		{
 			case TYPE_STARTUP:
 				task.run();
@@ -310,7 +315,7 @@ public final class TaskManager
 				
 				delay = min.getTimeInMillis() - System.currentTimeMillis();
 				
-				if (check.after(min) || delay < 0)
+				if (check.after(min) || (delay < 0))
 				{
 					delay += interval;
 				}

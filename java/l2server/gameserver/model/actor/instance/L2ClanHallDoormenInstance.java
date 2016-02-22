@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.Arrays;
@@ -33,7 +34,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 	private boolean _hasEvolve = false;
 	
 	// list of clan halls with evolve function, should be sorted
-	private static final int[] CH_WITH_EVOLVE = {36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57};
+	private static final int[] CH_WITH_EVOLVE = { 36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57 };
 	
 	public L2ClanHallDoormenInstance(int objectID, L2NpcTemplate template)
 	{
@@ -109,7 +110,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 			}
 			else
 			{
-				if (owner != null && owner.getLeader() != null)
+				if ((owner != null) && (owner.getLeader() != null))
 				{
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-no.htm");
 					html.replace("%leadername%", owner.getLeaderName());
@@ -160,7 +161,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 					_clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
 					if (_clanHall != null)
 						_hasEvolve = Arrays.binarySearch(CH_WITH_EVOLVE, _clanHall.getId()) >= 0;
-						
+					
 					_init = true;
 				}
 			}
@@ -171,7 +172,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 	@Override
 	protected final boolean isOwnerClan(L2PcInstance player)
 	{
-		if (player.getClan() != null && getClanHall() != null)
+		if ((player.getClan() != null) && (getClanHall() != null))
 		{
 			if (player.getClanId() == getClanHall().getOwnerId())
 				return true;

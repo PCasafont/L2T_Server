@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntIntHashMap;
@@ -218,6 +219,7 @@ public class GrandBossManager
 		{
 			if (zone == null)
 				continue;
+			
 			zone.setAllowedPlayers(zones.get(zone.getId()));
 		}
 		
@@ -289,7 +291,7 @@ public class GrandBossManager
 	public void setBossStatus(int bossId, int status)
 	{
 		_bossStatus.put(bossId, status);
-		Log.info(getClass().getSimpleName()+": Updated "+NpcTable.getInstance().getTemplate(bossId).getName()+"(" +bossId+ ") status to " +status);
+		Log.info(getClass().getSimpleName() + ": Updated " + NpcTable.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status to " + status);
 		updateDb(bossId, true);
 	}
 	
@@ -338,7 +340,7 @@ public class GrandBossManager
 					continue;
 				Integer id = zone.getId();
 				Set<Integer> list = zone.getAllowedPlayers();
-				if (list == null || list.isEmpty())
+				if ((list == null) || list.isEmpty())
 					continue;
 				for (Integer player : list)
 				{
@@ -356,7 +358,7 @@ public class GrandBossManager
 			{
 				L2GrandBossInstance boss = _bosses.get(bossId);
 				StatsSet info = _storedInfo.get(bossId);
-				if (boss == null || info == null)
+				if ((boss == null) || (info == null))
 				{
 					updateStatement1.setInt(1, _bossStatus.get(bossId));
 					updateStatement1.setInt(2, bossId);
@@ -408,7 +410,7 @@ public class GrandBossManager
 			L2GrandBossInstance boss = _bosses.get(bossId);
 			StatsSet info = _storedInfo.get(bossId);
 			
-			if (statusOnly || boss == null || info == null)
+			if (statusOnly || (boss == null) || (info == null))
 			{
 				statement = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
 				statement.setInt(1, _bossStatus.get(bossId));
@@ -480,6 +482,7 @@ public class GrandBossManager
 			case 29006:
 				return Config.CORE_INTERVAL_SPAWN * 3600000;
 			case 29014:
+			case 29022: // Zaken
 				return Config.ORFEN_INTERVAL_SPAWN * 3600000;
 			case 29068:
 				return Config.ANTHARAS_INTERVAL_SPAWN * 3600000;
@@ -491,10 +494,10 @@ public class GrandBossManager
 				return Config.LINDVIOR_INTERVAL_SPAWN * 3600000;
 			case 26124:
 				return Config.KELBIM_INTERVAL_SPAWN * 3600000;
-			case 25286:	//Anakim
-				return (int)calcReuseFromDays(0, 21, Calendar.TUESDAY, 0, 16, Calendar.SATURDAY);
-			case 25283:	//Lilith
-				return (int)calcReuseFromDays(0, 21, Calendar.THURSDAY, 0, 14, Calendar.SATURDAY);
+			case 25286: //Anakim
+				return (int) calcReuseFromDays(0, 21, Calendar.TUESDAY, 0, 16, Calendar.SATURDAY);
+			case 25283: //Lilith
+				return (int) calcReuseFromDays(0, 21, Calendar.THURSDAY, 0, 14, Calendar.SATURDAY);
 		}
 		return 0;
 	}
@@ -512,17 +515,16 @@ public class GrandBossManager
 	private long calcReuseFromDays(int day1Minute, int day1Hour, int day1Day, int day2Minute, int day2Hour, int day2Day)
 	{
 		Calendar now = Calendar.getInstance();
-		Calendar day1 = (Calendar)now.clone();
+		Calendar day1 = (Calendar) now.clone();
 		day1.set(Calendar.MINUTE, day1Minute);
 		day1.set(Calendar.HOUR_OF_DAY, day1Hour);
 		day1.set(Calendar.DAY_OF_WEEK, day1Day);
 		
-		
-		Calendar day2 = (Calendar)day1.clone();
+		Calendar day2 = (Calendar) day1.clone();
 		day2.set(Calendar.MINUTE, day2Minute);
 		day2.set(Calendar.HOUR_OF_DAY, day2Hour);
 		day2.set(Calendar.DAY_OF_WEEK, day2Day);
-
+		
 		if (now.after(day1))
 			day1.add(Calendar.WEEK_OF_MONTH, 1);
 		if (now.after(day2))
@@ -548,6 +550,7 @@ public class GrandBossManager
 			case 29006:
 				return Config.CORE_RANDOM_SPAWN * 3600000;
 			case 29014:
+			case 29022: // Zaken
 				return Config.ORFEN_RANDOM_SPAWN * 3600000;
 			case 29068:
 				return Config.ANTHARAS_RANDOM_SPAWN * 3600000;
@@ -578,7 +581,7 @@ public class GrandBossManager
 			
 			if (bossStatus == DEAD)
 			{
-				if (respawnTime <=  System.currentTimeMillis())
+				if (respawnTime <= System.currentTimeMillis())
 					return 1;
 				else
 					return respawnTime - System.currentTimeMillis();
@@ -597,7 +600,7 @@ public class GrandBossManager
 	{
 		setBossStatus(bossId, DEAD);
 		
-		long respawnTime = (long)getRespawnTime(bossId) + Rnd.get(getRandomRespawnTime(bossId));
+		long respawnTime = (long) getRespawnTime(bossId) + Rnd.get(getRandomRespawnTime(bossId));
 		
 		StatsSet info = getStatsSet(bossId);
 		info.set("respawn_time", (System.currentTimeMillis() + respawnTime));

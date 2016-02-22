@@ -3,19 +3,20 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.datatables.AugmentationData;
-import l2server.gameserver.datatables.AugmentationData.LifeStone;
+import l2server.gameserver.datatables.LifeStoneTable;
+import l2server.gameserver.datatables.LifeStoneTable.LifeStone;
 import l2server.gameserver.model.L2Augmentation;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -31,7 +32,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestRefine extends L2GameClientPacket
 {
-	private static final String _C__D0_2C_REQUESTREFINE = "[C] D0:2C RequestRefine";
 	private int _targetItemObjId;
 	private int _refinerItemObjId;
 	private int _gemStoneItemObjId;
@@ -65,20 +65,20 @@ public final class RequestRefine extends L2GameClientPacket
 		if (gemStoneItem == null)
 			return;
 		
-		if (!AugmentationData.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
 		{
-			activeChar.sendPacket(new ExVariationResult(0,0,0));
+			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
 			return;
 		}
 		
-		final LifeStone ls = AugmentationData.getInstance().getLifeStone(refinerItem.getItemId());
+		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
 		if (ls == null)
 			return;
 		
-		if (_gemStoneCount != AugmentationData.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+		if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
 		{
-			activeChar.sendPacket(new ExVariationResult(0,0,0));
+			activeChar.sendPacket(new ExVariationResult(0, 0, 0));
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUGMENTATION_FAILED_DUE_TO_INAPPROPRIATE_CONDITIONS));
 			return;
 		}
@@ -103,12 +103,12 @@ public final class RequestRefine extends L2GameClientPacket
 		if (!activeChar.destroyItem("RequestRefine", gemStoneItem, _gemStoneCount, null, false))
 			return;
 		
-		final L2Augmentation aug = AugmentationData.getInstance().generateRandomAugmentation(ls, targetItem);
+		final L2Augmentation aug = LifeStoneTable.getInstance().generateRandomAugmentation(ls, targetItem);
 		targetItem.setAugmentation(aug);
 		
 		final int stat12 = aug.getAugment1().getId();
 		final int stat34 = aug.getAugment2().getId();
-		activeChar.sendPacket(new ExVariationResult(stat12,stat34,1));
+		activeChar.sendPacket(new ExVariationResult(stat12, stat34, 1));
 		
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(targetItem);
@@ -117,14 +117,5 @@ public final class RequestRefine extends L2GameClientPacket
 		StatusUpdate su = new StatusUpdate(activeChar);
 		su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
 		activeChar.sendPacket(su);
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2C_REQUESTREFINE;
 	}
 }

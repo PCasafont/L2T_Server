@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import java.util.HashMap;
@@ -34,20 +35,20 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Harnak Underground Ruins Spawn System: Normal Mobs <-> Demonic Mobs
  */
 
 public class HarnakUndergroundRuins extends L2AttackableAIScript
 {
-	private static final int[] 				_normalMobs = {22931, 22932, 22933, 22934, 22935, 22936, 22937,22938, 23349};
-	private static Map<L2ZoneType, zoneInfo> _roomInfo 	= new HashMap<L2ZoneType, zoneInfo>(24);
+	private static final int[] _normalMobs = { 22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349 };
+	private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<L2ZoneType, zoneInfo>(24);
 	
 	public HarnakUndergroundRuins(int id, String name, String descr)
 	{
 		super(id, name, descr);
 		
-		for (int zoneId = 60028; zoneId <= 60051; zoneId ++)
+		for (int zoneId = 60028; zoneId <= 60051; zoneId++)
 		{
 			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
 			_roomInfo.put(zone, new zoneInfo());
@@ -62,12 +63,12 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 			addSpawnId(npc);
 		}
 	}
-
+	
 	private static final class zoneInfo
 	{
-		private int currentPoints 				= 0;
-		private int currentMonitorizedDamage	= 0;
-		private int zoneStage 					= 0;
+		private int currentPoints = 0;
+		private int currentMonitorizedDamage = 0;
+		private int zoneStage = 0;
 		
 		private void setZoneStage(int a)
 		{
@@ -101,9 +102,9 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 		
 		private void reset()
 		{
-			currentPoints 				= 0;
-			currentMonitorizedDamage	= 0;
-			zoneStage 					= 0;
+			currentPoints = 0;
+			currentMonitorizedDamage = 0;
+			zoneStage = 0;
 		}
 	}
 	
@@ -125,46 +126,46 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 				switch (currentInfo.getZoneStage())
 				{
 					case 0:
-						zone.broadcastPacket(new ExShowScreenMessage(1600064, 3000));	//Monitor the damage for 30 sec.
+						zone.broadcastPacket(new ExShowScreenMessage(1600064, 3000)); //Monitor the damage for 30 sec.
 						break;
-						
+					
 					case 1:
-						zone.broadcastPacket(new ExShowScreenMessage(1600065, 3000));	//25 seconds left!
+						zone.broadcastPacket(new ExShowScreenMessage(1600065, 3000)); //25 seconds left!
 						break;
-						
+					
 					case 2:
-						zone.broadcastPacket(new ExShowScreenMessage(1600067, 3000));	//20 seconds left!
+						zone.broadcastPacket(new ExShowScreenMessage(1600067, 3000)); //20 seconds left!
 						break;
-						
+					
 					case 3:
-						zone.broadcastPacket(new ExShowScreenMessage(1600068, 3000));	//15 seconds left!
+						zone.broadcastPacket(new ExShowScreenMessage(1600068, 3000)); //15 seconds left!
 						break;
-						
+					
 					case 4:
-						zone.broadcastPacket(new ExShowScreenMessage(1600069, 3000));	//10 seconds left!
+						zone.broadcastPacket(new ExShowScreenMessage(1600069, 3000)); //10 seconds left!
 						break;
-						
+					
 					case 5:
-						zone.broadcastPacket(new ExShowScreenMessage(1600070, 3000));	//5 seconds left!
+						zone.broadcastPacket(new ExShowScreenMessage(1600070, 3000)); //5 seconds left!
 						break;
-						
+					
 					case 6:
 						//Monitorize damage check
 						if (currentInfo.getCurrentMonitorizedDamage() >= 10)
 						{
 							//Success
-							zone.broadcastPacket(new ExShowScreenMessage(1600071, 3000));	//Demonic System will activate.
+							zone.broadcastPacket(new ExShowScreenMessage(1600071, 3000)); //Demonic System will activate.
 							
 							//change spawns from that zone
 							SpawnTable.getInstance().despawnSpecificTable(zone.getName().replace(" ", "_"));
 							SpawnTable.getInstance().spawnSpecificTable(zone.getName().replace(" ", "_").concat("_demonic"));
 							
 							//Zones is demonic now
-							zone.broadcastPacket(new ExSendUIEvent(0, 0, 600, 0, 1802319));	//Demonic System Activated
+							zone.broadcastPacket(new ExSendUIEvent(0, 0, 600, 0, 1802319)); //Demonic System Activated
 							
 							currentInfo.setZoneStage(7);
 							
-							ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(zone), 600000);	//10min
+							ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(zone), 600000); //10min
 						}
 						else
 						{
@@ -173,7 +174,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 							return;
 						}
 						break;
-						
+					
 					case 7:
 						currentInfo.reset();
 						
@@ -208,9 +209,9 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 				zoneInfo currentInfo = currentZone.getValue();
 				
 				int currentPoints = currentInfo.getCurrentPoints();
-				if (currentPoints == 300)	//Zone is already at max points
+				if (currentPoints == 300) //Zone is already at max points
 				{
-					if (currentInfo.getZoneStage() < 1)	//Zone is waiting for monitoring stage but not in yet
+					if (currentInfo.getZoneStage() < 1) //Zone is waiting for monitoring stage but not in yet
 						return super.onKill(npc, killer, isPet);
 					
 					//At this point this room is monitoring the damage
@@ -219,9 +220,9 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 					int calcDamage = currentDamage + 1;
 					if (calcDamage >= 10)
 						calcDamage = 10;
-
+					
 					currentInfo.setMonitorizedDamage(calcDamage);
-					currentZone.getKey().broadcastPacket(new ExSendUIEvent(5, calcDamage, 10, 1802318));	//Monitor the Damage
+					currentZone.getKey().broadcastPacket(new ExSendUIEvent(5, calcDamage, 10, 1802318)); //Monitor the Damage
 					
 					return super.onKill(npc, killer, isPet);
 				}
@@ -236,13 +237,13 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 				}
 				
 				currentInfo.setCurrentPoint(calcPoints);
-				currentZone.getKey().broadcastPacket(new ExSendUIEvent(5, calcPoints, 300, 1802322));	//Danger Increasing. Danger Increasing.
+				currentZone.getKey().broadcastPacket(new ExSendUIEvent(5, calcPoints, 300, 1802322)); //Danger Increasing. Danger Increasing.
 			}
 		}
 		
 		if (npc.getDisplayEffect() > 0)
 		{
-			L2MonsterInstance copy = (L2MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc.getZ(), 0, true, 0 , false);
+			L2MonsterInstance copy = (L2MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);
 			copy.setTarget(killer);
 			copy.addDamageHate(killer, 500, 99999);
 			copy.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
@@ -258,7 +259,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript
 		
 		return super.onSpawn(npc);
 	}
-
+	
 	@Override
 	public int getOnKillDelay(int npcId)
 	{

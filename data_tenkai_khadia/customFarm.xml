@@ -48,7 +48,7 @@
 			<itemDrop itemId="9556" min="1" max="2" chance="16.6" /> <!-- Dark Crystal -->
 			<itemDrop itemId="9557" min="1" max="2" chance="17" /> <!-- Holy Crystal -->
 		</dropCategory>
-		<dropCategory chance="70">	
+		<dropCategory chance="70">
 			<itemDrop itemId="18576" min="1" max="2" chance="10"/> <!-- Top-grade Life Stone (R99-grade) -->
 			<itemDrop itemId="18575" min="1" max="2" chance="20"/> <!-- High-grade Life Stone (R99-grade) -->
 			<itemDrop itemId="18574" min="1" max="2" chance="30"/> <!-- Mid-grade Life Stone (R99-grade) -->
@@ -65,7 +65,7 @@
 			<itemDrop itemId="9556" min="3" max="5" chance="16.6" /> <!-- Dark Crystal -->
 			<itemDrop itemId="9557" min="3" max="5" chance="17" /> <!-- Holy Crystal -->
 		</dropCategory>
-		<dropCategory chance="100">	
+		<dropCategory chance="100">
 			<itemDrop itemId="18576" min="1" max="2" chance="40"/> <!-- Top-grade Life Stone (R99-grade) -->
 			<itemDrop itemId="18575" min="1" max="2" chance="60"/> <!-- High-grade Life Stone (R99-grade) -->
 		</dropCategory>

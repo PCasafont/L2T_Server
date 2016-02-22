@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package vehicles;
 
 import java.util.logging.Level;
@@ -26,7 +27,7 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 
 /**
- * 
+ *
  * @author DS
  *
  */
@@ -35,41 +36,7 @@ public class BoatInnadrilTour implements Runnable
 	private static final Logger _log = Logger.getLogger(BoatInnadrilTour.class.getName());
 	
 	// Time: 1867s
-	private static final VehiclePathPoint[] TOUR =
-	{
-		new VehiclePathPoint(105129, 226240, -3610, 150, 800),
-		new VehiclePathPoint(90604, 238797, -3610, 150, 800),
-		new VehiclePathPoint(74853, 237943, -3610, 150, 800),
-		new VehiclePathPoint(68207, 235399, -3610, 150, 800),
-		new VehiclePathPoint(63226, 230487, -3610, 150, 800),
-		new VehiclePathPoint(61843, 224797, -3610, 150, 800),
-		new VehiclePathPoint(61822, 203066, -3610, 150, 800),
-		new VehiclePathPoint(59051, 197685, -3610, 150, 800),
-		new VehiclePathPoint(54048, 195298, -3610, 150, 800),
-		new VehiclePathPoint(41609, 195687, -3610, 150, 800),
-		new VehiclePathPoint(35821, 200284, -3610, 150, 800),
-		new VehiclePathPoint(35567, 205265, -3610, 150, 800),
-		new VehiclePathPoint(35617, 222471, -3610, 150, 800),
-		new VehiclePathPoint(37932, 226588, -3610, 150, 800),
-		new VehiclePathPoint(42932, 229394, -3610, 150, 800),
-		new VehiclePathPoint(74324, 245231, -3610, 150, 800),
-		new VehiclePathPoint(81872, 250314, -3610, 150, 800),
-		new VehiclePathPoint(101692, 249882, -3610, 150, 800),
-		new VehiclePathPoint(107907, 256073, -3610, 150, 800),
-		new VehiclePathPoint(112317, 257133, -3610, 150, 800),
-		new VehiclePathPoint(126273, 255313, -3610, 150, 800),
-		new VehiclePathPoint(128067, 250961, -3610, 150, 800),
-		new VehiclePathPoint(128520, 238249, -3610, 150, 800),
-		new VehiclePathPoint(126428, 235072, -3610, 150, 800),
-		new VehiclePathPoint(121843, 234656, -3610, 150, 800),
-		new VehiclePathPoint(120096, 234268, -3610, 150, 800),
-		new VehiclePathPoint(118572, 233046, -3610, 150, 800),
-		new VehiclePathPoint(117671, 228951, -3610, 150, 800),
-		new VehiclePathPoint(115936, 226540, -3610, 150, 800),
-		new VehiclePathPoint(113628, 226240, -3610, 150, 800),
-		new VehiclePathPoint(111300, 226240, -3610, 150, 800),
-		new VehiclePathPoint(111264, 226240, -3610, 150, 800)
-	};
+	private static final VehiclePathPoint[] TOUR = { new VehiclePathPoint(105129, 226240, -3610, 150, 800), new VehiclePathPoint(90604, 238797, -3610, 150, 800), new VehiclePathPoint(74853, 237943, -3610, 150, 800), new VehiclePathPoint(68207, 235399, -3610, 150, 800), new VehiclePathPoint(63226, 230487, -3610, 150, 800), new VehiclePathPoint(61843, 224797, -3610, 150, 800), new VehiclePathPoint(61822, 203066, -3610, 150, 800), new VehiclePathPoint(59051, 197685, -3610, 150, 800), new VehiclePathPoint(54048, 195298, -3610, 150, 800), new VehiclePathPoint(41609, 195687, -3610, 150, 800), new VehiclePathPoint(35821, 200284, -3610, 150, 800), new VehiclePathPoint(35567, 205265, -3610, 150, 800), new VehiclePathPoint(35617, 222471, -3610, 150, 800), new VehiclePathPoint(37932, 226588, -3610, 150, 800), new VehiclePathPoint(42932, 229394, -3610, 150, 800), new VehiclePathPoint(74324, 245231, -3610, 150, 800), new VehiclePathPoint(81872, 250314, -3610, 150, 800), new VehiclePathPoint(101692, 249882, -3610, 150, 800), new VehiclePathPoint(107907, 256073, -3610, 150, 800), new VehiclePathPoint(112317, 257133, -3610, 150, 800), new VehiclePathPoint(126273, 255313, -3610, 150, 800), new VehiclePathPoint(128067, 250961, -3610, 150, 800), new VehiclePathPoint(128520, 238249, -3610, 150, 800), new VehiclePathPoint(126428, 235072, -3610, 150, 800), new VehiclePathPoint(121843, 234656, -3610, 150, 800), new VehiclePathPoint(120096, 234268, -3610, 150, 800), new VehiclePathPoint(118572, 233046, -3610, 150, 800), new VehiclePathPoint(117671, 228951, -3610, 150, 800), new VehiclePathPoint(115936, 226540, -3610, 150, 800), new VehiclePathPoint(113628, 226240, -3610, 150, 800), new VehiclePathPoint(111300, 226240, -3610, 150, 800), new VehiclePathPoint(111264, 226240, -3610, 150, 800) };
 	
 	private static final VehiclePathPoint DOCK = TOUR[TOUR.length - 1];
 	
@@ -109,6 +76,7 @@ public class BoatInnadrilTour implements Runnable
 		INNADRIL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), DOCK.x, DOCK.y, DOCK.z);
 	}
 	
+	@Override
 	public void run()
 	{
 		try

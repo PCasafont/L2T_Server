@@ -1,7 +1,7 @@
 <list>
-	<npc id="35300" name="Escort" title="Innadril" level="89" type="L2Defender" baseAtkRange="40" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2499" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35300" name="Escort" title="Innadril" level="89" type="L2Defender" baseAtkRange="40" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2499" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -13,9 +13,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35301" name="Escort" title="Innadril" level="89" type="L2Defender" baseAtkRange="1100" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="276" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35301" name="Escort" title="Innadril" level="89" type="L2Defender" baseAtkRange="1100" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="276" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -27,9 +27,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35302" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35302" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -41,9 +41,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35303" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35303" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -55,9 +55,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35304" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35304" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -69,9 +69,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35305" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35305" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -83,9 +83,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35306" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35306" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -97,9 +97,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35307" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200">
+	<npc id="35307" name="Escort" title="Innadril" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;innadrile_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -111,9 +111,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35308" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600">
+	<npc id="35308" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -125,9 +125,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35309" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600">
+	<npc id="35309" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -139,9 +139,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35310" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600">
+	<npc id="35310" name="Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;innadrile_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -153,9 +153,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35311" name="Mass Gatekeeper" title="Innadril" level="75" type="L2CastleTeleporter" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false">
+	<npc id="35311" name="Mass Gatekeeper" title="Innadril" level="75" type="L2CastleTeleporter" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -167,9 +167,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35312" name="Outer Castle Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35312" name="Outer Castle Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -181,9 +181,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35313" name="Inner Castle Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35313" name="Inner Castle Gatekeeper" title="Innadril" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -195,9 +195,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35314" name="Blacksmith" title="Innadril" level="75" type="L2CastleBlacksmith" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="89" collisionRadius="7.0" collisionHeight="16.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35314" name="Blacksmith" title="Innadril" level="75" type="L2CastleBlacksmith" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="89" collisionRadius="7.0" collisionHeight="16.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -209,9 +209,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35315" name="Warehouse Keeper" title="Innadril" level="75" type="L2CastleWarehouse" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35315" name="Warehouse Keeper" title="Innadril" level="75" type="L2CastleWarehouse" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -223,9 +223,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35316" name="Chamberlain of Light" level="75" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35316" name="Chamberlain of Light" level="75" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -237,9 +237,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4416" level="15" /> <!-- Elves -->
 	</npc>
-	<npc id="35317" name="Tate" title="Wyvern Manager" level="75" type="L2CastleWyvernManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="63.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35317" name="Tate" title="Wyvern Manager" level="75" type="L2CastleWyvernManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="63.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -251,9 +251,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35318" name="Solinus" title="Mercenary Manager" level="75" type="L2MercManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="21.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35318" name="Solinus" title="Mercenary Manager" level="75" type="L2MercManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="21.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -265,9 +265,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35319" name="Manor Manager" title="Innadril" level="75" type="L2ManorManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35319" name="Manor Manager" title="Innadril" level="75" type="L2ManorManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -279,9 +279,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35320" name="Raybell" title="Herald from Innadril" level="75" type="L2SiegeNpc" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="160.0" aggroRange="300" rHand="74" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35320" name="Raybell" title="Herald from Innadril" level="75" type="L2SiegeNpc" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="10" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="160.0" aggroRange="300" rHand="74" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -293,9 +293,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35322" name="Altar of Fire" level="20" type="L2Artefact" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="44.32863" baseMAtk="30.2707" basePDef="86.87049" baseMDef="63.56806" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="34.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35322" name="Altar of Fire" level="20" type="L2Artefact" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="44.32863" baseMAtk="30.2707" basePDef="86.87049" baseMDef="63.56806" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="34.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -308,9 +308,9 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35323" name="Altar of Water" level="20" type="L2Artefact" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="44.32863" baseMAtk="30.2707" basePDef="86.87049" baseMDef="63.56806" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="34.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35323" name="Altar of Water" level="20" type="L2Artefact" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="44.32863" baseMAtk="30.2707" basePDef="86.87049" baseMDef="63.56806" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="34.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -323,9 +323,9 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35324" name="Heinz" title="Royal Guard Captain" level="81" type="L2Defender" baseAtkRange="40" baseHpMax="106417.94" baseHpReg="8.5" baseMpMax="5126.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="656" sp="1" basePAtk="3036.968" baseMAtk="691.28516" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="142" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35324" name="Heinz" title="Royal Guard Captain" level="81" type="L2Defender" baseAtkRange="40" baseHpMax="106417.94" baseHpReg="8.5" baseMpMax="5126.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="656" sp="1" basePAtk="3036.968" baseMAtk="691.28516" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="142" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -337,9 +337,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35325" name="Duke Mora Ken Abygail" level="97" type="L2Defender" baseAtkRange="40" baseHpMax="112734.0" baseHpReg="8.5" baseMpMax="5332.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="689" sp="1" basePAtk="3298.2708" baseMAtk="750.7638" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="79" collisionRadius="7.0" collisionHeight="23.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35325" name="Duke Mora Ken Abygail" level="97" type="L2Defender" baseAtkRange="40" baseHpMax="112734.0" baseHpReg="8.5" baseMpMax="5332.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="689" sp="1" basePAtk="3298.2708" baseMAtk="750.7638" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="79" collisionRadius="7.0" collisionHeight="23.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -351,9 +351,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35326" name="Royal Knight" title="Goddard" level="93" type="L2Defender" baseAtkRange="40" baseHpMax="16013.298" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="624" sp="1" basePAtk="929.9308" baseMAtk="635.0222" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" lHand="2497" collisionRadius="7.0" collisionHeight="24.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35326" name="Royal Knight" title="Goddard" level="93" type="L2Defender" baseAtkRange="40" baseHpMax="16013.298" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="624" sp="1" basePAtk="929.9308" baseMAtk="635.0222" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" lHand="2497" collisionRadius="7.0" collisionHeight="24.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -365,9 +365,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35327" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="325" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35327" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="325" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -380,9 +380,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4114" level="1" /> <!-- Aden Flame -->
 	</npc>
-	<npc id="35328" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="193" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35328" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="193" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -395,9 +395,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4115" level="1" /> <!-- Aden Heal -->
 	</npc>
-	<npc id="35329" name="Royal Guard" title="Goddard" level="77" type="L2Defender" baseAtkRange="80" baseHpMax="360.6051" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="1376" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35329" name="Royal Guard" title="Goddard" level="77" type="L2Defender" baseAtkRange="80" baseHpMax="360.6051" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="1376" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -409,9 +409,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35330" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="80" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="8.0" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35330" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="80" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="8.0" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -423,9 +423,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35331" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35331" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -437,9 +437,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35332" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35332" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -451,9 +451,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35333" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35333" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -465,9 +465,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35334" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35334" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -479,9 +479,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35335" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35335" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -493,9 +493,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35336" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="27.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35336" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="27.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -507,9 +507,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35337" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="27.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35337" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="27.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -521,9 +521,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35338" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="280" collisionRadius="8.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35338" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="280" collisionRadius="8.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -535,9 +535,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35339" name="Royal Knight" title="Goddard" level="93" type="L2Defender" baseAtkRange="40" baseHpMax="16013.298" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="624" sp="1" basePAtk="929.9308" baseMAtk="635.0222" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" lHand="2497" collisionRadius="7.0" collisionHeight="24.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35339" name="Royal Knight" title="Goddard" level="93" type="L2Defender" baseAtkRange="40" baseHpMax="16013.298" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="624" sp="1" basePAtk="929.9308" baseMAtk="635.0222" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" lHand="2497" collisionRadius="7.0" collisionHeight="24.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -549,9 +549,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35340" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="325" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35340" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="325" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -564,9 +564,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4114" level="1" /> <!-- Aden Flame -->
 	</npc>
-	<npc id="35341" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="193" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35341" name="Royal Wizard" title="Goddard" level="91" type="L2Defender" baseAtkRange="40" baseHpMax="31851.46" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="44" CON="15" DEX="13" INT="66" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="193" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="mage" skillChance="100" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -579,9 +579,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4115" level="1" /> <!-- Aden Heal -->
 	</npc>
-	<npc id="35342" name="Royal Guard" title="Goddard" level="77" type="L2Defender" baseAtkRange="80" baseHpMax="360.6051" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="1376" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35342" name="Royal Guard" title="Goddard" level="77" type="L2Defender" baseAtkRange="80" baseHpMax="360.6051" baseHpReg="8.5" baseMpMax="1574.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="593" sp="1" basePAtk="856.44055" baseMAtk="584.8379" basePDef="328.27072" baseMDef="240.21426" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="1376" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -593,9 +593,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35343" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="80" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="8.0" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35343" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="80" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="8.0" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -607,9 +607,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35344" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35344" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="8.0" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -621,9 +621,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35345" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35345" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -635,9 +635,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35346" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35346" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -649,9 +649,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35347" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35347" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="40" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -663,9 +663,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35348" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35348" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="1100" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="7.0" collisionHeight="25.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -677,9 +677,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35349" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="27.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35349" name="Escort" title="Goddard" level="75" type="L2Defender" baseAtkRange="80" baseHpMax="337.89233" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="16" collisionRadius="8.0" collisionHeight="27.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -691,9 +691,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35350" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="40" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35350" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="40" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="76" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -705,9 +705,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35351" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="1100" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="280" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200">
+	<npc id="35351" name="Escort" title="Goddard" level="89" type="L2Defender" baseAtkRange="1100" baseHpMax="15288.729" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="563" sp="1" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="280" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" clan="door_clan;godad_siege_clan" clanRange="1200" />
 		<skill id="4416" level="22" /> <!-- Defending Army -->
 		<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
 		<skill id="4409" level="11" /> <!-- MP Increase (3x) -->
@@ -719,9 +719,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35352" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600">
+	<npc id="35352" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -733,9 +733,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35353" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600">
+	<npc id="35353" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -747,9 +747,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35354" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600">
+	<npc id="35354" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clan="door_clan;godad_siege_clan" clanRange="600" />
 		<skill id="4416" level="23" /> <!-- Mercenaries -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -761,9 +761,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35355" name="Mass Gatekeeper" title="Goddard" level="75" type="L2CastleTeleporter" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false">
+	<npc id="35355" name="Mass Gatekeeper" title="Goddard" level="75" type="L2CastleTeleporter" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -775,9 +775,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35356" name="Outer Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35356" name="Outer Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -789,9 +789,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35357" name="Inner Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35357" name="Inner Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -803,9 +803,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35358" name="Inner Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35358" name="Inner Castle Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -817,9 +817,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35359" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35359" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -831,9 +831,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35360" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35360" name="Gatekeeper" title="Goddard" level="75" type="L2CastleDoormen" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -845,9 +845,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35361" name="Blacksmith" title="Goddard" level="75" type="L2CastleBlacksmith" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="89" collisionRadius="7.0" collisionHeight="16.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35361" name="Blacksmith" title="Goddard" level="75" type="L2CastleBlacksmith" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" rHand="89" collisionRadius="7.0" collisionHeight="16.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -859,9 +859,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35362" name="Warehouse Keeper" title="Goddard" level="75" type="L2CastleWarehouse" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35362" name="Warehouse Keeper" title="Goddard" level="75" type="L2CastleWarehouse" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="17.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -873,9 +873,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35363" name="Chamberlain of Light" level="75" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35363" name="Chamberlain of Light" level="75" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -887,9 +887,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4416" level="15" /> <!-- Elves -->
 	</npc>
-	<npc id="35364" name="Hadley" title="Wyvern Manager" level="75" type="L2CastleWyvernManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="62.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35364" name="Hadley" title="Wyvern Manager" level="75" type="L2CastleWyvernManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="62.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -901,9 +901,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35365" name="Rowell" title="Mercenary Manager" level="75" type="L2MercManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="62.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35365" name="Rowell" title="Mercenary Manager" level="75" type="L2MercManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="62.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -915,9 +915,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35366" name="Manor Manager" title="Goddard" level="75" type="L2ManorManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5" collisionHeight="19.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35366" name="Manor Manager" title="Goddard" level="75" type="L2ManorManager" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.5" collisionHeight="19.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -929,9 +929,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35367" name="Daven" title="Herald from Goddard" level="75" type="L2SiegeNpc" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="160.0" aggroRange="300" rHand="74" collisionRadius="8.0" collisionHeight="23.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35367" name="Daven" title="Herald from Goddard" level="75" type="L2SiegeNpc" baseAtkRange="40" baseHpMax="2676.6584" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="794.709" baseMAtk="542.6832" basePDef="319.24622" baseMDef="233.61053" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="160.0" aggroRange="300" rHand="74" collisionRadius="8.0" collisionHeight="23.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -943,9 +943,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35368" name="Bloody Lord Nurka" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="800000.0" baseHpReg="40.0" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1513" sp="1" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" rHand="72" collisionRadius="20.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35368" name="Bloody Lord Nurka" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="800000.0" baseHpReg="40.0" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1513" sp="1" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" rHand="72" collisionRadius="20.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -957,9 +957,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35369" name="Partisan Healer" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="5.0" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="800" sp="1" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35369" name="Partisan Healer" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="5.0" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="800" sp="1" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -971,9 +971,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35370" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35370" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -985,9 +985,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35371" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="1100" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35371" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="1100" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -999,9 +999,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35372" name="Partisan Soldier" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35372" name="Partisan Soldier" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1013,9 +1013,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35373" name="Partisan Wizard" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35373" name="Partisan Wizard" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1027,9 +1027,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35374" name="Partisan Archer" level="35" type="L2Monster" baseAtkRange="1100" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="287.36893" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="231" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35374" name="Partisan Archer" level="35" type="L2Monster" baseAtkRange="1100" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="287.36893" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="231" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1041,9 +1041,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35375" name="Bloody Lord Nurka" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="800000.0" baseHpReg="60.0" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1513" sp="1" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" rHand="72" collisionRadius="20.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35375" name="Bloody Lord Nurka" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="800000.0" baseHpReg="60.0" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1513" sp="1" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" rHand="72" collisionRadius="20.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1055,9 +1055,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35376" name="Partisan Healer" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="5.0" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="800" sp="1" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35376" name="Partisan Healer" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="5.0" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="800" sp="1" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1069,9 +1069,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35377" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35377" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1083,9 +1083,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35378" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="1100" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35378" name="Partisan Royal Guard" level="70" type="L2Monster" baseAtkRange="1100" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="2450" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1097,9 +1097,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35379" name="Partisan Soldier" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35379" name="Partisan Soldier" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1111,9 +1111,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35380" name="Partisan Wizard" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35380" name="Partisan Wizard" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1125,9 +1125,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35381" name="Partisan Archer" level="35" type="L2Monster" baseAtkRange="1100" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="158.03998" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="231" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clan="partisan_clan" clanRange="300">
+	<npc id="35381" name="Partisan Archer" level="35" type="L2Monster" baseAtkRange="1100" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="613" sp="1" basePAtk="158.03998" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="231" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" rHand="14" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clan="partisan_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1139,9 +1139,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35382" name="Brakel" title="Partisan Herald" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35382" name="Brakel" title="Partisan Herald" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1153,9 +1153,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35383" name="Tamutak" title="Ol Mahum Steward" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35383" name="Tamutak" title="Ol Mahum Steward" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1167,9 +1167,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35384" name="Black" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35384" name="Black" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1181,9 +1181,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35385" name="Renny" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35385" name="Renny" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1195,9 +1195,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35386" name="Boyer" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35386" name="Boyer" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1209,9 +1209,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35387" name="Baback" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35387" name="Baback" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1223,9 +1223,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35388" name="Tim" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35388" name="Tim" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1237,9 +1237,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35389" name="Loring" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35389" name="Loring" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1251,9 +1251,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35390" name="Dillon" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35390" name="Dillon" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1265,9 +1265,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35391" name="Latif" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35391" name="Latif" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1279,9 +1279,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35392" name="Bremmer" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35392" name="Bremmer" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1293,9 +1293,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35393" name="Faolan" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35393" name="Faolan" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1307,9 +1307,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35394" name="Kalis" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35394" name="Kalis" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1321,9 +1321,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35395" name="Kogan" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35395" name="Kogan" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1335,9 +1335,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35396" name="Winker" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35396" name="Winker" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1349,9 +1349,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35397" name="Merton" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35397" name="Merton" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1363,9 +1363,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35398" name="Ruben" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35398" name="Ruben" title="Clan Hall Manager" level="70" type="L2ClanHallManager" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1377,9 +1377,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="35399" name="Luce" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" canMove="false" clanRange="300">
+	<npc id="35399" name="Luce" title="Clan Hall Gatekeeper" level="70" type="L2ClanHallDoormen" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="25" sp="1" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" canMove="false" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

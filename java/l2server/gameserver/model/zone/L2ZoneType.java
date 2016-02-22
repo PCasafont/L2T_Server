@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone;
 
 import java.util.ArrayList;
@@ -22,14 +23,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
+import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Object.InstanceType;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2BoatInstance;
 import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
@@ -169,7 +171,7 @@ public abstract class L2ZoneType
 			_target = Enum.valueOf(InstanceType.class, value);
 		}
 		else
-			Log.info(getClass().getSimpleName()+": Unknown parameter - "+name+" in zone: "+getId());
+			Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
 	}
 	
 	/**
@@ -180,7 +182,7 @@ public abstract class L2ZoneType
 	private boolean isAffected(L2Character character)
 	{
 		// Check lvl
-		if (character.getLevel() < _minLvl || character.getLevel() > _maxLvl)
+		if ((character.getLevel() < _minLvl) || (character.getLevel() > _maxLvl))
 			return false;
 		
 		// check obj class
@@ -206,9 +208,9 @@ public abstract class L2ZoneType
 			{
 				boolean ok = false;
 				
-				for (int i = 0; i < _race.length; i++)
+				for (int element : _race)
 				{
-					if (((L2PcInstance) character).getRace().ordinal() == _race[i])
+					if (((L2PcInstance) character).getRace().ordinal() == element)
 					{
 						ok = true;
 						break;
@@ -224,9 +226,9 @@ public abstract class L2ZoneType
 			{
 				boolean ok = false;
 				
-				for (int i = 0; i < _class.length; i++)
+				for (int _clas : _class)
 				{
-					if (((L2PcInstance) character).getCurrentClass().getId() == _class[i])
+					if (((L2PcInstance) character).getCurrentClass().getId() == _clas)
 					{
 						ok = true;
 						break;
@@ -260,7 +262,7 @@ public abstract class L2ZoneType
 	{
 		return _zone;
 	}
-
+	
 	/**
 	 * Set the zone name.
 	 * @param name
@@ -269,7 +271,7 @@ public abstract class L2ZoneType
 	{
 		_name = name;
 	}
-
+	
 	/**
 	 * Returns zone name
 	 * @return
@@ -278,7 +280,7 @@ public abstract class L2ZoneType
 	{
 		return _name;
 	}
-
+	
 	/**
 	 * Checks if the given coordinates are within zone's plane
 	 * @param x
@@ -335,7 +337,7 @@ public abstract class L2ZoneType
 			// Was the character not yet inside this zone?
 			if (!_characterList.containsKey(character.getObjectId()))
 			{
-				ArrayList<Quest> quests = this.getQuestByEvent(Quest.QuestEventType.ON_ENTER_ZONE);
+				ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_ENTER_ZONE);
 				if (quests != null)
 				{
 					for (Quest quest : quests)
@@ -353,7 +355,7 @@ public abstract class L2ZoneType
 			// Was the character inside this zone?
 			if (_characterList.containsKey(character.getObjectId()))
 			{
-				ArrayList<Quest> quests = this.getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
+				ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
 				if (quests != null)
 				{
 					for (Quest quest : quests)
@@ -376,7 +378,7 @@ public abstract class L2ZoneType
 	{
 		if (_characterList.containsKey(character.getObjectId()))
 		{
-			ArrayList<Quest> quests = this.getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
+			ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
 			if (quests != null)
 			{
 				for (Quest quest : quests)
@@ -403,12 +405,11 @@ public abstract class L2ZoneType
 	
 	protected abstract void onExit(L2Character character);
 	
-	
 	public void onDieInside(L2Character character, L2Character killer)
 	{
 		if (_characterList.containsKey(character.getObjectId()))
 		{
-			ArrayList<Quest> quests = this.getQuestByEvent(Quest.QuestEventType.ON_DIE_ZONE);
+			ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_DIE_ZONE);
 			if (quests != null)
 			{
 				for (Quest quest : quests)
@@ -455,7 +456,7 @@ public abstract class L2ZoneType
 		
 		for (L2Character character : _characterList.values())
 		{
-			if (character != null && character instanceof L2PcInstance)
+			if ((character != null) && (character instanceof L2PcInstance))
 				character.sendPacket(packet);
 		}
 	}
@@ -474,7 +475,7 @@ public abstract class L2ZoneType
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + " ["+ _id + "]";
+		return getClass().getSimpleName() + " [" + _id + "]";
 	}
 	
 	public void visualizeZone(L2PcInstance viewer)
@@ -494,7 +495,7 @@ public abstract class L2ZoneType
 		List<L2PcInstance> players = new ArrayList<L2PcInstance>();
 		for (L2Character ch : _characterList.values())
 		{
-			if ((ch != null) && ch instanceof L2PcInstance)
+			if ((ch != null) && (ch instanceof L2PcInstance))
 			{
 				players.add(ch.getActingPlayer());
 			}
@@ -508,7 +509,7 @@ public abstract class L2ZoneType
 		List<L2Npc> npcs = new ArrayList<L2Npc>();
 		for (L2Character ch : _characterList.values())
 		{
-			if (ch == null || ch instanceof L2Playable || (!(ch instanceof L2Attackable) && !(ch instanceof L2NpcInstance)))
+			if ((ch == null) || (ch instanceof L2Playable) || (ch instanceof L2BoatInstance) || (!(ch instanceof L2Attackable) && !(ch instanceof L2NpcInstance)))
 				continue;
 			
 			npcs.add((L2Npc) ch);
@@ -522,9 +523,10 @@ public abstract class L2ZoneType
 		stopWholeZone();
 		
 		broadcastMovie(vidId);
-
+		
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				startWholeZone();
@@ -559,7 +561,7 @@ public abstract class L2ZoneType
 			
 			pl.setMovieId(vidId);
 			pl.sendPacket(new ExStartScenePlayer(vidId));
-		}	
+		}
 	}
 	
 	public void startWholeZone()
@@ -579,6 +581,7 @@ public abstract class L2ZoneType
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				broadcastPacket(packet);

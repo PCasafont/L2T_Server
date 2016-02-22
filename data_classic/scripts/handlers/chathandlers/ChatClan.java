@@ -14,8 +14,6 @@
  */
 package handlers.chathandlers;
 
-import l2server.gameserver.gui.ConsoleTab;
-import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -42,16 +40,6 @@ public class ChatClan implements IChatHandler
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
-			
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			String clanName = activeChar.getClan().getName();
-			ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text, clanName, activeChar.getName());
 		}
 	}
 	

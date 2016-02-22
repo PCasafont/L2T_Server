@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.itemcontainer;
 
 import l2server.gameserver.datatables.ItemTable;
@@ -66,7 +67,7 @@ public class PetInventory extends Inventory
 	{
 		int slots = 0;
 		
-		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != L2EtcItemType.HERB)
+		if (!(item.isStackable() && (getItemByItemId(item.getItemId()) != null)) && (item.getItemType() != L2EtcItemType.HERB))
 			slots++;
 		
 		return validateCapacity(slots);
@@ -75,14 +76,15 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return (_items.size() + slots <= _owner.getInventoryLimit());
+		return ((_items.size() + slots) <= _owner.getInventoryLimit());
 	}
 	
 	public boolean validateWeight(L2ItemInstance item, long count)
 	{
 		int weight = 0;
 		L2Item template = ItemTable.getInstance().getTemplate(item.getItemId());
-		if (template == null) return false;
+		if (template == null)
+			return false;
 		weight += count * template.getWeight();
 		return validateWeight(weight);
 	}
@@ -90,7 +92,7 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateWeight(long weight)
 	{
-		return (_totalWeight + weight <= _owner.getMaxLoad());
+		return ((_totalWeight + weight) <= _owner.getMaxLoad());
 	}
 	
 	@Override

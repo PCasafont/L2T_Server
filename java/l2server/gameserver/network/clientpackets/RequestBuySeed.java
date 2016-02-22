@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
@@ -47,7 +48,6 @@ import l2server.gameserver.util.Util;
 
 public class RequestBuySeed extends L2GameClientPacket
 {
-	private static final String _C__C4_REQUESTBUYSEED = "[C] C4 RequestBuySeed";
 	
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	
@@ -60,9 +60,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		_manorId = readD();
 		
 		int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -123,11 +121,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			
 			if (totalPrice > MAX_ADENA)
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Character "
-						+ player.getName() + " of account "
-						+ player.getAccountName() + " tried to purchase over "
-						+ MAX_ADENA + " adena worth of goods.",
-						Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
 				return;
 			}
 			
@@ -152,7 +146,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		}
 		
 		// test adena
-		if (totalPrice < 0 || player.getAdena() < totalPrice)
+		if ((totalPrice < 0) || (player.getAdena() < totalPrice))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;
@@ -228,7 +222,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		
 		public boolean updateProduction(Castle c)
 		{
-			synchronized(_seed)
+			synchronized (_seed)
 			{
 				long amount = _seed.getCanProduce();
 				if (_count > amount)
@@ -240,11 +234,5 @@ public class RequestBuySeed extends L2GameClientPacket
 				c.updateSeed(_seedId, _seed.getCanProduce(), CastleManorManager.PERIOD_CURRENT);
 			return true;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C4_REQUESTBUYSEED;
 	}
 }

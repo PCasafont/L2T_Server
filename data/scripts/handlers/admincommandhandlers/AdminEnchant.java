@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
@@ -28,7 +29,6 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 
-
 /**
  * This class handles following admin commands:
  * - enchant_armor
@@ -39,26 +39,23 @@ public class AdminEnchant implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminEnchant.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_seteh",//6
-		"admin_setec",//10
-		"admin_seteg",//9
-		"admin_setel",//11
-		"admin_seteb",//12
-		"admin_setew",//7
-		"admin_setes",//8
-		"admin_setle",//1
-		"admin_setre",//2
-		"admin_setlf",//4
-		"admin_setrf",//5
-		"admin_seten",//3
-		"admin_setun",//0
-		"admin_setba",//13
-		"admin_setbe",
-		"admin_enchant"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_seteh",//6
+	"admin_setec",//10
+	"admin_seteg",//9
+	"admin_setel",//11
+	"admin_seteb",//12
+	"admin_setew",//7
+	"admin_setes",//8
+	"admin_setle",//1
+	"admin_setre",//2
+	"admin_setlf",//4
+	"admin_setrf",//5
+	"admin_seten",//3
+	"admin_setun",//0
+	"admin_setba",//13
+	"admin_setbe", "admin_enchant" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_enchant"))
@@ -107,7 +104,7 @@ public class AdminEnchant implements IAdminCommandHandler
 					int ench = Integer.parseInt(command.substring(12));
 					
 					// check value
-					if (ench < 0 || ench > 65535)
+					if ((ench < 0) || (ench > 65535))
 						activeChar.sendMessage("You must set the enchant level to be between 0-65535.");
 					else
 						setEnchant(activeChar, ench, armorType);
@@ -156,7 +153,7 @@ public class AdminEnchant implements IAdminCommandHandler
 		
 		// only attempt to enchant if there is a weapon equipped
 		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
-		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType)
+		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
 		{
 			itemInstance = parmorInstance;
 		}
@@ -164,9 +161,6 @@ public class AdminEnchant implements IAdminCommandHandler
 		if (itemInstance != null)
 		{
 			curEnchant = itemInstance.getEnchantLevel();
-			
-			// set GM has touched this item
-			itemInstance.setGmTouched(activeChar.getName());
 			
 			// set enchant value
 			player.getInventory().unEquipItemInSlot(armorType);
@@ -191,6 +185,7 @@ public class AdminEnchant implements IAdminCommandHandler
 		AdminHelpPage.showHelpPage(activeChar, "enchant.htm");
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

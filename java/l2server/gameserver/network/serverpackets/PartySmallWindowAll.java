@@ -2,14 +2,15 @@
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with this program. If
  * not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.PartySearchManager;
@@ -18,23 +19,22 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 
 /**
- * 
- * 
+ *
+ *
  * sample 63 01 00 00 00 count
- * 
+ *
  * c1 b2 e0 4a object id 54 00 75 00 65 00 73 00 64 00 61 00 79 00 00 00 name 5a 01 00 00 hp 5a 01
  * 00 00 hp max 89 00 00 00 mp 89 00 00 00 mp max 0e 00 00 00 level 12 00 00 00 class 00 00 00 00 01
  * 00 00 00
- * 
- * 
+ *
+ *
  * format d (dSdddddddd)
- * 
- * 
+ *
+ *
  * @version $Revision: 1.6.2.1.2.5 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class PartySmallWindowAll extends L2GameServerPacket
 {
-	private static final String _S__63_PARTYSMALLWINDOWALL = "[S] 4e PartySmallWindowAll";
 	private L2Party _party;
 	private L2PcInstance _exclude;
 	private int _dist, _LeaderOID;
@@ -50,14 +50,13 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x4e);
 		writeD(_LeaderOID);
 		writeC(_dist);
 		writeC(_party.getMemberCount() - 1);
 		
 		for (L2PcInstance member : _party.getPartyMembers())
 		{
-			if (member != null && member != _exclude)
+			if ((member != null) && (member != _exclude))
 			{
 				writeD(member.getObjectId());
 				writeS(member.getName());
@@ -82,9 +81,9 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 					writeD(summon.getNpcId() + 1000000);
 					writeC(summon.getSummonType());
 					writeS(summon.getName());
-					writeD((int)summon.getCurrentHp());
+					writeD((int) summon.getCurrentHp());
 					writeD(summon.getMaxHp());
-					writeD((int)summon.getCurrentMp());
+					writeD((int) summon.getCurrentMp());
 					writeD(summon.getMaxMp());
 					writeC(summon.getLevel());
 				}
@@ -102,16 +101,5 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 				}
 			}
 		}
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__63_PARTYSMALLWINDOWALL;
 	}
 }

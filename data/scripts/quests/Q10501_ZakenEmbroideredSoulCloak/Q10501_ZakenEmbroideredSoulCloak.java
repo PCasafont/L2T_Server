@@ -1,3 +1,4 @@
+
 package quests.Q10501_ZakenEmbroideredSoulCloak;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -26,15 +27,14 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	private static final int MaxGiven = 3;
 	private static final int MinLevel = 78;
 	
-	
-	public Q10501_ZakenEmbroideredSoulCloak(int questId, String name, String descr) 
+	public Q10501_ZakenEmbroideredSoulCloak(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 		addStartNpc(OlfAdams);
 		addTalkId(OlfAdams);
 		addKillId(Zaken);
 		
-		questItemIds = new int[] {ZakenSoulFragment};
+		questItemIds = new int[] { ZakenSoulFragment };
 	}
 	
 	@Override
@@ -78,7 +78,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 			case State.STARTED:
 			{
 				final long count = st.getQuestItemsCount(ZakenSoulFragment); // How many items player has
-				if (st.getInt("cond") == 1 && count < RequiredItems)
+				if ((st.getInt("cond") == 1) && (count < RequiredItems))
 					htmltext = "32612-Zaken-03.htm"; // Still has not the required amount
 				else if (count >= RequiredItems)
 				{
@@ -94,7 +94,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 			}
 			case State.COMPLETED:
 			{
-				htmltext = getAlreadyCompletedMsg(player); // Already completed 
+				htmltext = getAlreadyCompletedMsg(player); // Already completed
 				break;
 			}
 		}
@@ -112,7 +112,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 		}
 		else
 			giveFragments(player);
-				
+		
 		return null;
 	}
 	
@@ -120,7 +120,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	{
 		final QuestState st = player.getQuestState(qn);
 		
-		if (st != null && st.getState() == State.STARTED)
+		if ((st != null) && (st.getState() == State.STARTED))
 			st.giveItems(ZakenSoulFragment, Rnd.get(MinGiven, MaxGiven));
 	}
 	
@@ -128,5 +128,5 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	{
 		new Q10501_ZakenEmbroideredSoulCloak(10501, qn, "ZakenEmbroideredSoulCloak");
 	}
-
+	
 }

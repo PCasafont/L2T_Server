@@ -16,6 +16,7 @@ package handlers.chathandlers;
 
 import java.util.Collection;
 
+import l2server.gameserver.Server;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -75,7 +76,10 @@ public class ChatHeroVoice implements IChatHandler
 				if (player != null && !BlockList.isBlocked(player, activeChar))
 					player.sendPacket(cs);
 			}
-			
+		}
+		
+		if (Server.gui != null)
+		{
 			while (text.contains("Type=") && text.contains("Title="))
 			{
 				int index1 = text.indexOf("Type=");

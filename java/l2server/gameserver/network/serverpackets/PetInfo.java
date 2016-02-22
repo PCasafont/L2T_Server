@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.Set;
@@ -30,7 +31,6 @@ public class PetInfo extends L2GameServerPacket
 {
 	//
 	
-	private static final String _S__B2_PETINFO = "[S] b2 PetInfo";
 	private L2Summon _summon;
 	private int _x, _y, _z, _heading;
 	private boolean _isSummoned;
@@ -65,13 +65,13 @@ public class PetInfo extends L2GameServerPacket
 		_val = val;
 		if (_summon instanceof L2PetInstance)
 		{
-			L2PetInstance pet = (L2PetInstance)_summon;
+			L2PetInstance pet = (L2PetInstance) _summon;
 			_curFed = pet.getCurrentFed(); // how fed it is
 			_maxFed = pet.getMaxFed(); //max fed it can be
 		}
 		else if (_summon instanceof L2SummonInstance)
 		{
-			L2SummonInstance sum = (L2SummonInstance)_summon;
+			L2SummonInstance sum = (L2SummonInstance) _summon;
 			_curFed = sum.getTimeRemaining();
 			_maxFed = sum.getTotalLifeTime();
 		}
@@ -80,7 +80,6 @@ public class PetInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xb2);
 		writeC(_summon.getSummonType());
 		writeD(_summon.getObjectId());
 		writeD(_summon.getTemplate().TemplateId + 1000000);
@@ -112,23 +111,23 @@ public class PetInfo extends L2GameServerPacket
 		writeS(_summon.getName()); // summon name
 		writeD(-1); // High Five NPCStringId
 		writeS(_summon.getTitle()); // owner name
-		writeC(_summon.getOwner() != null ? _summon.getOwner().getPvpFlag() : 0);	//0 = white,2= purpleblink, if its greater then karma = purple
-		writeD(_summon.getOwner() != null ? _summon.getOwner().getReputation() : 0);  // karma
+		writeC(_summon.getOwner() != null ? _summon.getOwner().getPvpFlag() : 0); //0 = white,2= purpleblink, if its greater then karma = purple
+		writeD(_summon.getOwner() != null ? _summon.getOwner().getReputation() : 0); // karma
 		writeD(_curFed); // how fed it is
 		writeD(_maxFed); //max fed it can be
-		writeD((int)_summon.getCurrentHp());//current hp
+		writeD((int) _summon.getCurrentHp());//current hp
 		writeD(_maxHp);// max hp
-		writeD((int)_summon.getCurrentMp());//current mp
+		writeD((int) _summon.getCurrentMp());//current mp
 		writeD(_maxMp);//max mp
 		writeQ(_summon.getStat().getSp()); //sp
 		writeC(_summon.getLevel());// lvl
 		writeQ(_summon.getStat().getExp());
 		
-		if (_summon.getExpForThisLevel()>_summon.getStat().getExp())
+		if (_summon.getExpForThisLevel() > _summon.getStat().getExp())
 			writeQ(_summon.getStat().getExp());// 0%  absolute value
 		else
 			writeQ(_summon.getExpForThisLevel());// 0%  absolute value
-		
+			
 		writeQ(_summon.getExpForNextLevel());// 100% absoulte value
 		writeD(_summon instanceof L2PetInstance ? _summon.getInventory().getTotalWeight() : 0);//weight
 		writeD(_summon.getMaxLoad());//max weight it can carry
@@ -136,9 +135,9 @@ public class PetInfo extends L2GameServerPacket
 		writeD(_summon.getPDef(null));//pdef
 		writeD(_summon.getAccuracy());//accuracy
 		writeD(_summon.getEvasionRate(null));//evasion
-		writeD(_summon.getCriticalHit(null,null));//critical
-		writeD(_summon.getMAtk(null,null));//matk
-		writeD(_summon.getMDef(null,null));//mdef
+		writeD(_summon.getCriticalHit(null, null));//critical
+		writeD(_summon.getMAtk(null, null));//matk
+		writeD(_summon.getMDef(null, null));//mdef
 		writeD(_summon.getMAccuracy()); // M. Accuracy
 		writeD(_summon.getMEvasionRate(null)); // M. Evasion
 		//Log.info(_summon.getMEvasionRate(null)); // M. Evasion
@@ -155,7 +154,7 @@ public class PetInfo extends L2GameServerPacket
 		writeC(_summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
 		
 		int form = 0;
-		if (npcId == 16041 || npcId == 16042)
+		if ((npcId == 16041) || (npcId == 16042))
 		{
 			if (_summon.getLevel() > 84)
 				form = 3;
@@ -164,7 +163,7 @@ public class PetInfo extends L2GameServerPacket
 			else if (_summon.getLevel() > 74)
 				form = 1;
 		}
-		else if (npcId == 16025 ||npcId == 16037)
+		else if ((npcId == 16025) || (npcId == 16037))
 		{
 			if (_summon.getLevel() > 69)
 				form = 3;
@@ -180,7 +179,7 @@ public class PetInfo extends L2GameServerPacket
 		
 		writeC(_summon.getOwner() != null ? _summon.getOwner().getSpentSummonPoints() : 0); // Consumed summon points
 		writeC(_summon.getOwner() != null ? _summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
-
+		
 		Set<Integer> abnormal = _summon.getAbnormalEffect();
 		if (_summon.getOwner().getAppearance().getInvisible())
 			abnormal.add(VisualEffect.STEALTH.getId());
@@ -190,14 +189,4 @@ public class PetInfo extends L2GameServerPacket
 		
 		writeC(0x06); // ???
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__B2_PETINFO;
-	}
-	
 }

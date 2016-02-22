@@ -61,7 +61,7 @@ public class NornilsPower implements ISkillHandler
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 				sm.addSkillName(skill);
 				activeChar.sendPacket(sm);
-			}			
+			}
 		}
 		else
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));

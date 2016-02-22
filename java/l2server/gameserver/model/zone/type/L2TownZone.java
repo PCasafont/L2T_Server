@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import l2server.Config;
@@ -69,7 +70,7 @@ public class L2TownZone extends L2SpawnZone
 		{
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
-			if (((L2PcInstance)character).getSiegeState() != 0 && Config.ZONE_TOWN == 1)
+			if ((((L2PcInstance) character).getSiegeState() != 0) && (Config.ZONE_TOWN == 1))
 				return;
 			
 			//((L2PcInstance)character).sendMessage("You entered "+_townName);
@@ -84,11 +85,14 @@ public class L2TownZone extends L2SpawnZone
 			//ThreadPoolManager.getInstance().scheduleGeneral(new MusicTask((L2PcInstance)character), 2000);
 		}
 		
-		if (_isPeaceZone && Config.ZONE_TOWN != 2 && (Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == _townId))
+		if (_isPeaceZone && (Config.ZONE_TOWN != 2) && ((Curfew.getInstance().getOnlyPeaceTown() == -1) || (Curfew.getInstance().getOnlyPeaceTown() == _townId)))
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 		
 		character.setInsideZone(L2Character.ZONE_TOWN, true);
+		character.setInsideZone(L2Character.ZONE_CROSS_SERVER, true);
 		
+		if (Config.isServer(Config.DREAMS))
+			character.sendMessage("You entered a cross-dimension area.");
 	}
 	
 	@Override
@@ -99,6 +103,10 @@ public class L2TownZone extends L2SpawnZone
 			character.setInsideZone(L2Character.ZONE_PEACE, false);
 		
 		character.setInsideZone(L2Character.ZONE_TOWN, false);
+		character.setInsideZone(L2Character.ZONE_CROSS_SERVER, false);
+		
+		if (Config.isServer(Config.DREAMS))
+			character.sendMessage("You left a cross-dimension area.");
 		
 		// if (character instanceof L2PcInstance)
 		//((L2PcInstance)character).sendMessage("You left "+_townName);
@@ -146,17 +154,28 @@ public class L2TownZone extends L2SpawnZone
 	@SuppressWarnings("unused")
 	private boolean isInHostileTown(L2PcInstance player)
 	{
-		switch (_townId) {
-			case 7: return player.isAtWarWithCastle(1);
-			case 8: return player.isAtWarWithCastle(2);
-			case 9: return player.isAtWarWithCastle(3);
-			case 10: return player.isAtWarWithCastle(4);
-			case 12: return player.isAtWarWithCastle(5);
-			case 15: return player.isAtWarWithCastle(6);
-			case 13: return player.isAtWarWithCastle(7);
-			case 14: return player.isAtWarWithCastle(8);
-			case 17: return player.isAtWarWithCastle(9);
-			default: return false;
+		switch (_townId)
+		{
+			case 7:
+				return player.isAtWarWithCastle(1);
+			case 8:
+				return player.isAtWarWithCastle(2);
+			case 9:
+				return player.isAtWarWithCastle(3);
+			case 10:
+				return player.isAtWarWithCastle(4);
+			case 12:
+				return player.isAtWarWithCastle(5);
+			case 15:
+				return player.isAtWarWithCastle(6);
+			case 13:
+				return player.isAtWarWithCastle(7);
+			case 14:
+				return player.isAtWarWithCastle(8);
+			case 17:
+				return player.isAtWarWithCastle(9);
+			default:
+				return false;
 		}
 	}
 	
@@ -169,6 +188,7 @@ public class L2TownZone extends L2SpawnZone
 			_player = player;
 		}
 		
+		@Override
 		public void run()
 		{
 			int rnd = Rnd.get(4) + 1;

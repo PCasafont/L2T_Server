@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events;
 
 import java.util.Calendar;
@@ -33,7 +34,7 @@ public class CloneInvasion
 			_instance = new CloneInvasion();
 		return _instance;
 	}
-
+	
 	public void start()
 	{
 		Announcements.getInstance().announceToAll("A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
@@ -46,22 +47,22 @@ public class CloneInvasion
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if (player == null || player.isGM() || player.isInStoreMode())
+			if ((player == null) || player.isGM() || player.isInStoreMode())
 				continue;
 			try
 			{
 				int pledgeClass = 0;
 				if (player.getClan() != null)
 					pledgeClass = player.getClan().getClanMember(player.getObjectId()).calculatePledgeClass(player);
-					
-				if (player.isNoble() && pledgeClass < 5)
+				
+				if (player.isNoble() && (pledgeClass < 5))
 					pledgeClass = 5;
-					
-				if (player.isHero() && pledgeClass < 8)
+				
+				if (player.isHero() && (pledgeClass < 8))
 					pledgeClass = 8;
-					
+				
 				player.setPledgeClass(pledgeClass);
-					
+				
 				StatsSet set = new StatsSet();
 				set.set("id", player.getObjectId());
 				set.set("level", player.getLevel());
@@ -89,9 +90,9 @@ public class CloneInvasion
 				set.set("runSpd", player.getRunSpeed());
 				set.set("aggressive", true);
 				set.set("aggroRange", 500);
-					
+				
 				L2NpcTemplate tmpl = new L2NpcTemplate(set);
-	
+				
 				L2NpcAIData npcAIDat = new L2NpcAIData();
 				npcAIDat.setAi(player.getActiveWeaponItem() != null ? (player.isMageClass() ? "mage" : (player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter")) : "balanced");
 				npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
@@ -103,31 +104,30 @@ public class CloneInvasion
 				npcAIDat.setClan("clones");
 				npcAIDat.setClanRange(500);
 				tmpl.setAIData(npcAIDat);
-					
+				
 				for (L2Skill skill : player.getAllSkills())
 				{
-					if (skill.isOffensive() && skill.getMagicLevel() > player.getLevel() - 5)
+					if (skill.isOffensive() && (skill.getMagicLevel() > (player.getLevel() - 5)))
 						tmpl.addSkill(skill);
 				}
-					
+				
 				L2DropData dd = new L2DropData(4357, 1500, 2500, 100);
 				dd.setCustom();
 				tmpl.addDropData(dd);
 				
-					
 				L2Spawn spawn = new L2Spawn(tmpl);
 				spawn.setX(player.getPosition().getX() + Rnd.get(100));
 				spawn.setY(player.getPosition().getY() + Rnd.get(100));
 				spawn.setZ(player.getPosition().getZ());
-					
+				
 				spawn.stopRespawn();
-				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING))
+				if ((spawn.getNpc() != null) && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING))
 				{
 					spawn.getNpc().setClonedPlayer(player);
 					spawn.doSpawn();
 				}
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
 				Log.warning("Error spawning a player clone: ");
 				e.printStackTrace();
@@ -148,7 +148,7 @@ public class CloneInvasion
 			nextStartTime.set(Calendar.MINUTE, minute);
 			nextStartTime.set(Calendar.SECOND, 0);
 			// If the date is in the past, make it the next day (Example: Checking for "1:00", when the time is 23:57.)
-			if (nextStartTime.getTimeInMillis() - 10000 < currentTime.getTimeInMillis())
+			if ((nextStartTime.getTimeInMillis() - 10000) < currentTime.getTimeInMillis())
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			_task = new StartTask(nextStartTime.getTimeInMillis());
 			ThreadPoolManager.getInstance().executeTask(_task);
@@ -174,24 +174,18 @@ public class CloneInvasion
 			time = "today";
 		else
 			time = "tomorrow";
-		time += " at " + startTime.get(Calendar.HOUR_OF_DAY)
-				+ ":" + startTime.get(Calendar.MINUTE);
+		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
 		long toStart = _task.getStartTime() - System.currentTimeMillis();
-		int hours = (int)(toStart / 3600000);
-		int minutes = (int)(toStart / 60000) % 60;
-		if (hours > 0 || minutes > 0)
+		int hours = (int) (toStart / 3600000);
+		int minutes = (int) (toStart / 60000) % 60;
+		if ((hours > 0) || (minutes > 0))
 		{
 			time += ", in ";
 			if (hours > 0)
 				time += hours + " hour" + (hours == 1 ? "" : "s") + " and ";
 			time += minutes + " minute" + (minutes == 1 ? "" : "s");
 		}
-		String html = "<html>" +
-		"<title>Event</title>" +
-		"<body>" +
-		"<center><br><tr><td>Clone Invasion</td></tr><br>" +
-		"<br>" +
-		"The next invasion will be " + time + ".<br>";
+		String html = "<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Clone Invasion</td></tr><br>" + "<br>" + "The next invasion will be " + time + ".<br>";
 		html += "</body></html>";
 		activeChar.sendPacket(new NpcHtmlMessage(0, html));
 	}
@@ -210,6 +204,7 @@ public class CloneInvasion
 			return _startTime;
 		}
 		
+		@Override
 		public void run()
 		{
 			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);

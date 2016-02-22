@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10328_RequestOfSealedEvilFragments;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -52,14 +53,14 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-04.htm"))
+		if ((npc.getNpcId() == _pantheon) && event.equalsIgnoreCase("32972-04.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.giveItems(_evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
+		else if ((npc.getNpcId() == _kakai) && (st.getInt("cond") == 1))
 		{
 			if (event.equalsIgnoreCase("30565-02.htm"))
 			{
@@ -91,7 +92,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 		
 		if (npc.getNpcId() == _pantheon)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -107,7 +108,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
+		else if ((npc.getNpcId() == _kakai) && (st.getInt("cond") == 1))
 			htmltext = "30565-01.htm";
 		return htmltext;
 	}
@@ -115,9 +116,9 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 8) && player.getLevel() <= 20;
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 8) && (player.getLevel() <= 20);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Q10328_RequestOfSealedEvilFragments(10328, qn, "Moving from the Museum to Admin Office.");

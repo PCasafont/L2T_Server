@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.olympiad;
 
 import java.util.ArrayList;
@@ -24,26 +25,27 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
 
 /**
- * 
+ *
  * @author DS
  *
  */
 public final class OlympiadAnnouncer implements Runnable
 {
 	private static final int OLY_MANAGER = 31688;
-
+	
 	private List<L2Spawn> _managers = new ArrayList<L2Spawn>();
 	private int _currentStadium = 0;
-
+	
 	public OlympiadAnnouncer()
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
+			if ((spawn != null) && (spawn.getNpcId() == OLY_MANAGER))
 				_managers.add(spawn);
 		}
 	}
-
+	
+	@Override
 	public void run()
 	{
 		OlympiadGameTask task;
@@ -51,9 +53,9 @@ public final class OlympiadAnnouncer implements Runnable
 		{
 			if (_currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
 				_currentStadium = 0;
-
+			
 			task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
-			if (task != null && task.getGame() != null && task.needAnnounce())
+			if ((task != null) && (task.getGame() != null) && task.needAnnounce())
 			{
 				int msg;
 				final String arenaId = String.valueOf(task.getGame().getGameId() + 1);
@@ -70,7 +72,7 @@ public final class OlympiadAnnouncer implements Runnable
 					default:
 						continue;
 				}
-
+				
 				L2Npc manager;
 				NpcSay packet;
 				for (L2Spawn spawn : _managers)
@@ -78,7 +80,7 @@ public final class OlympiadAnnouncer implements Runnable
 					manager = spawn.getNpc();
 					if (manager != null)
 					{
-						packet = new NpcSay(manager.getObjectId(), Say2.SHOUT, manager.getNpcId(), msg);
+						packet = new NpcSay(manager.getObjectId(), Say2.ALL_NOT_RECORDED, manager.getNpcId(), msg);
 						packet.addStringParameter(arenaId);
 						manager.broadcastPacket(packet);
 					}

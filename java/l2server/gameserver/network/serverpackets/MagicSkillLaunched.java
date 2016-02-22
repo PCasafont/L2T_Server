@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Object;
@@ -31,7 +32,6 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class MagicSkillLaunched extends L2GameServerPacket
 {
-	private static final String _S__8E_MAGICSKILLLAUNCHED = "[S] 54 MagicSkillLaunched";
 	private int _charObjId;
 	private int _skillId;
 	private int _skillLevel;
@@ -53,7 +53,7 @@ public class MagicSkillLaunched extends L2GameServerPacket
 		else
 		{
 			_numberOfTargets = 1;
-			L2Object[] objs = {cha};
+			L2Object[] objs = { cha };
 			_targets = objs;
 		}
 		_singleTargetId = 0;
@@ -71,13 +71,12 @@ public class MagicSkillLaunched extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x54);
 		writeD(0x02); // GoD ??? (if 1, party skills cannot be seen)
 		writeD(_charObjId);
 		writeD(_skillId);
 		writeD(_skillLevel);
 		writeD(_numberOfTargets); // also failed or not?
-		if (_singleTargetId != 0 || _numberOfTargets == 0)
+		if ((_singleTargetId != 0) || (_numberOfTargets == 0))
 		{
 			writeD(_singleTargetId);
 		}
@@ -87,14 +86,4 @@ public class MagicSkillLaunched extends L2GameServerPacket
 				writeD(target.getObjectId());
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__8E_MAGICSKILLLAUNCHED;
-	}
-	
 }

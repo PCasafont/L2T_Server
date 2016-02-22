@@ -13500,7 +13500,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="1" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="1" /> <!-- Panther Cancel -->
 	</npc>
 	<npc id="14800" name="Dark Panther" level="51" type="L2Pet" atkRange="40" hpMax="3087" hpReg="6.5" mpMax="994" mpReg="2.4"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="594" mAtk="282" pDef="287" mDef="269" pAtkSpd="279" mAtkSpd="333"
@@ -13517,7 +13517,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="2" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="2" /> <!-- Panther Cancel -->
 	</npc>
 	<npc id="14801" name="Dark Panther" level="60" type="L2Pet" atkRange="40" hpMax="4058" hpReg="6.5" mpMax="1328" mpReg="2.4"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="947" mAtk="479" pDef="369" mDef="346" pAtkSpd="279" mAtkSpd="333"
@@ -13534,7 +13534,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="3" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="3" /> <!-- Panther Cancel -->
 		<skill id="6096" level="1" /> <!-- Panther Fatal Claw -->
 	</npc>
 	<npc id="14802" name="Dark Panther" level="64" type="L2Pet" atkRange="40" hpMax="4495" hpReg="7.5" mpMax="1483" mpReg="2.7"
@@ -13552,7 +13552,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="4" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="4" /> <!-- Panther Cancel -->
 		<skill id="6096" level="2" /> <!-- Panther Fatal Claw -->
 	</npc>
 	<npc id="14803" name="Dark Panther" level="68" type="L2Pet" atkRange="40" hpMax="4924" hpReg="7.5" mpMax="1642" mpReg="2.7"
@@ -13570,7 +13570,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="5" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="5" /> <!-- Panther Cancel -->
 		<skill id="6096" level="3" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="1" /> <!-- Panther Cancel -->
 	</npc>
@@ -13589,7 +13589,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="6" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="6" /> <!-- Panther Cancel -->
 		<skill id="6096" level="4" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="2" /> <!-- Panther Cancel -->
 	</npc>
@@ -13608,7 +13608,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="7" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="7" /> <!-- Panther Cancel -->
 		<skill id="6096" level="5" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="3" /> <!-- Panther Cancel -->
 	</npc>
@@ -13627,7 +13627,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="8" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="8" /> <!-- Panther Cancel -->
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
@@ -13646,7 +13646,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="8" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="8" /> <!-- Panther Cancel -->
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
@@ -13665,7 +13665,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="8" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="8" /> <!-- Panther Cancel -->
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
@@ -13684,7 +13684,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="8" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="8" /> <!-- Panther Cancel -->
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
@@ -13703,7 +13703,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="9" /> <!-- Panther Cancel -->
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
@@ -13722,7 +13722,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="9" /> <!-- Panther Cancel -->
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
@@ -13741,7 +13741,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="9" /> <!-- Panther Cancel -->
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
@@ -13760,7 +13760,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="9" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="9" /> <!-- Panther Cancel -->
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
@@ -13779,7 +13779,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="10" /> <!-- Panther Cancel -->
 		<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13799,7 +13799,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="10" /> <!-- Panther Cancel -->
 		<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13819,7 +13819,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="10" /> <!-- Panther Cancel -->
 		<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13839,7 +13839,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="10" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="10" /> <!-- Panther Cancel -->
 		<skill id="6096" level="8" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13859,7 +13859,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="11" /> <!-- Panther Cancel -->
 		<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13879,7 +13879,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="11" /> <!-- Panther Cancel -->
 		<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13899,7 +13899,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="11" /> <!-- Panther Cancel -->
 		<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13919,7 +13919,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="11" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="11" /> <!-- Panther Cancel -->
 		<skill id="6096" level="9" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13939,7 +13939,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="12" /> <!-- Panther Cancel -->
 		<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13959,7 +13959,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="12" /> <!-- Panther Cancel -->
 		<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13979,7 +13979,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="12" /> <!-- Panther Cancel -->
 		<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -13999,7 +13999,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="12" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="12" /> <!-- Panther Cancel -->
 		<skill id="6096" level="10" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14019,7 +14019,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="13" /> <!-- Panther Cancel -->
 		<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14039,7 +14039,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="13" /> <!-- Panther Cancel -->
 		<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14059,7 +14059,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="13" /> <!-- Panther Cancel -->
 		<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14079,7 +14079,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="13" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="13" /> <!-- Panther Cancel -->
 		<skill id="6096" level="11" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14099,7 +14099,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="14" /> <!-- Panther Cancel -->
 		<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14119,7 +14119,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="14" /> <!-- Panther Cancel -->
 		<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14139,7 +14139,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="14" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="14" /> <!-- Panther Cancel -->
 		<skill id="6096" level="12" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14159,7 +14159,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="15" /> <!-- Panther Cancel -->
 		<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14179,7 +14179,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="15" /> <!-- Panther Cancel -->
 		<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -14199,7 +14199,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
-		<skill id="6095" level="15" /> <!-- Panther Dark Claw -->
+		<skill id="6095" level="15" /> <!-- Panther Cancel -->
 		<skill id="6096" level="13" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
@@ -15711,9 +15711,9 @@
 	</npc>
 	<npc id="14927" name="Death Gate" level="99" type="L2Monster" atkRange="40" hpMax="49955" hpReg="0.0" mpMax="3066" mpReg="0.0"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
-			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="57" collisionHeight="67.5"
-			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced"
-			skillChance="15" canMove="false" soulshots="1" spiritshots="1">
+			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="57" collisionHeight="67.5" fireRes="260"
+			waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced" skillChance="15" canMove="false"
+			soulshots="1" spiritshots="1">
 		<skill id="11291" level="1" /> <!-- Gate Vortex -->
 		<skill id="11289" level="1" /> <!-- Gate Root -->
 	</npc>
@@ -16084,93 +16084,93 @@
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2858" mAtk="684" pDef="1408" mDef="1489" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="101" />
-		<skill id="10052" level="101" />
-		<skill id="10053" level="101" />
-		<skill id="10054" level="101" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14977" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2888" mAtk="734" pDef="1458" mDef="1539" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="102" />
-		<skill id="10052" level="102" />
-		<skill id="10053" level="102" />
-		<skill id="10054" level="102" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14978" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2938" mAtk="784" pDef="1508" mDef="1589" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="103" />
-		<skill id="10052" level="103" />
-		<skill id="10053" level="103" />
-		<skill id="10054" level="103" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14979" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2988" mAtk="834" pDef="1558" mDef="1639" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="104" />
-		<skill id="10052" level="104" />
-		<skill id="10053" level="104" />
-		<skill id="10054" level="104" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14980" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3038" mAtk="884" pDef="1608" mDef="1689" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="105" />
-		<skill id="10052" level="105" />
-		<skill id="10053" level="105" />
-		<skill id="10054" level="105" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14981" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3038" mAtk="884" pDef="1608" mDef="1689" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="106" />
-		<skill id="10052" level="106" />
-		<skill id="10053" level="106" />
-		<skill id="10054" level="106" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14982" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3088" mAtk="924" pDef="1658" mDef="1739" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="107" />
-		<skill id="10052" level="107" />
-		<skill id="10053" level="107" />
-		<skill id="10054" level="107" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14983" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3138" mAtk="974" pDef="1708" mDef="1789" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10051" level="108" />
-		<skill id="10052" level="108" />
-		<skill id="10053" level="108" />
-		<skill id="10054" level="108" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14984" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3188" mAtk="1024" pDef="1758" mDef="1829" pAtkSpd="299"
 			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300"
 			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
 			spiritshots="1">
-		<skill id="10051" level="109" />
-		<skill id="10052" level="109" />
-		<skill id="10053" level="109" />
-		<skill id="10054" level="109" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14985" name="Golden Lion" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1748" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3238" mAtk="1074" pDef="1808" mDef="1879" pAtkSpd="299"
 			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="100" runSpd="180" collisionRadius="8" collisionHeight="22.5" fireRes="300"
 			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
 			spiritshots="1">
-		<skill id="10051" level="110" />
-		<skill id="10052" level="110" />
-		<skill id="10053" level="110" />
-		<skill id="10054" level="110" />
+		<skill id="10051" level="6" /> <!-- Lion Roar -->
+		<skill id="10052" level="6" /> <!-- Lion Claw -->
+		<skill id="10053" level="6" /> <!-- Lion Dash -->
+		<skill id="10054" level="6" /> <!-- Lion Flame -->
 	</npc>
 	<npc id="14986" name="Thunder Hawk" level="93" type="L2Pet" atkRange="40" hpMax="8042" hpReg="10.66" mpMax="1609" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1791" mAtk="824" pDef="1536" mDef="1543" pAtkSpd="299" mAtkSpd="398"
@@ -16212,90 +16212,90 @@
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="101" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="101" />
-		<skill id="10798" level="101" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14991" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="102" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="102" />
-		<skill id="10798" level="102" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14992" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="103" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="103" />
-		<skill id="10798" level="103" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14993" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="104" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="104" />
-		<skill id="10798" level="104" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14994" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="105" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="105" />
-		<skill id="10798" level="105" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14995" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="106" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="106" />
-		<skill id="10798" level="106" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14996" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="107" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="107" />
-		<skill id="10798" level="107" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14997" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="108" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="108" />
-		<skill id="10798" level="108" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14998" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="109" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="109" />
-		<skill id="10798" level="109" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 	<npc id="14999" name="Thunder Hawk" level="99" type="L2Pet" atkRange="40" hpMax="8741" hpReg="10.66" mpMax="1774" mpReg="4.13"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2004" mAtk="986" pDef="1737" mDef="1777" pAtkSpd="299" mAtkSpd="398"
 			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12" collisionHeight="50" fireRes="300" waterRes="300"
 			windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
-		<skill id="10794" level="110" />
+		<skill id="10794" level="8" /> <!-- Thunder Flight -->
 		<skill id="10795" level="1" /> <!-- Thunder Purity -->
-		<skill id="10797" level="110" />
-		<skill id="10798" level="110" />
+		<skill id="10797" level="8" /> <!-- Thunder Feather Blast -->
+		<skill id="10798" level="8" /> <!-- Thunder Sharp Claw -->
 	</npc>
 </list>

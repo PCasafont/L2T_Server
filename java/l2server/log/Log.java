@@ -12,7 +12,7 @@ public class Log
 	private static final Logger _log = Logger.getLogger("GameServer");
 	
 	public static final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
-
+	
 	public static boolean isLoggable(Level level)
 	{
 		return _log.isLoggable(level);
@@ -24,7 +24,7 @@ public class Log
 		
 		ConsoleTab.appendMessage(ConsoleFilter.Console, msg);
 	}
-
+	
 	public static void log(Level level, String msg, int val)
 	{
 		_log.log(level, msg, val);
@@ -49,10 +49,10 @@ public class Log
 	public static void warning(String msg)
 	{
 		_log.warning(msg);
-
+		
 		ConsoleTab.appendMessage(ConsoleFilter.Warnings, msg);
 	}
-
+	
 	//static long _t = 0;
 	public static void info(String msg)
 	{

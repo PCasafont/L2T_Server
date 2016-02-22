@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import java.util.HashMap;
@@ -29,16 +30,16 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Nornils Cave AI
  */
 
 public class NornilsCaveSystem extends L2AttackableAIScript
 {
-	private static final int 		_pointsPerKill 			= 2;
-	private static final int[]		 _mobs 					= {23275, 23273, 23272, 23268, 23269};
-	private static Map<L2ZoneType, zoneInfo> _roomInfo 	= new HashMap<L2ZoneType, zoneInfo>(3);
-
+	private static final int _pointsPerKill = 2;
+	private static final int[] _mobs = { 23275, 23273, 23272, 23268, 23269 };
+	private static Map<L2ZoneType, zoneInfo> _roomInfo = new HashMap<L2ZoneType, zoneInfo>(3);
+	
 	public NornilsCaveSystem(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -48,7 +49,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 			addKillId(a);
 		}
 		
-		for (int zoneId = 60025; zoneId <= 60027; zoneId ++)
+		for (int zoneId = 60025; zoneId <= 60027; zoneId++)
 		{
 			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
 			
@@ -58,12 +59,12 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 			SpawnTable.getInstance().spawnSpecificTable(zone.getName().toLowerCase().replace(" ", "_"));
 		}
 	}
-
+	
 	private static final class zoneInfo
 	{
 		private int currentPoints;
 		private int zoneStage;
-
+		
 		private void setZoneStage(int a)
 		{
 			zoneStage = a;
@@ -86,8 +87,8 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 		
 		private void reset()
 		{
-			currentPoints 				= 0;
-			zoneStage 					= 0;
+			currentPoints = 0;
+			zoneStage = 0;
 		}
 	}
 	
@@ -115,7 +116,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 					SpawnTable.getInstance().despawnSpecificTable(zoneName);
 					SpawnTable.getInstance().spawnSpecificTable(zoneName.concat("_manifest"));
 					
-					ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(currentZone.getKey()), 540000);	//9 mins
+					ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(currentZone.getKey()), 540000); //9 mins
 				}
 				
 				currentInfo.setCurrentPoint(calcPoints);
@@ -144,9 +145,9 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 				{
 					zone.broadcastPacket(new ExSendUIEvent(0, 0, 60, 0, 1811302));
 					
-					ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(zone), 60000);	//1 min
+					ThreadPoolManager.getInstance().scheduleGeneral(new changeZoneStage(zone), 60000); //1 min
 				}
-				else if(currentInfo.getZoneStage() == 1)
+				else if (currentInfo.getZoneStage() == 1)
 				{
 					currentInfo.reset();
 					
@@ -156,7 +157,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 					SpawnTable.getInstance().spawnSpecificTable(zoneName);
 					
 					return;
-				}	
+				}
 				currentInfo.setZoneStage(currentInfo.getZoneStage() + 1);
 			}
 			catch (Exception e)
@@ -164,7 +165,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript
 				e.printStackTrace();
 			}
 		}
-	}	
+	}
 	
 	@Override
 	public int getOnKillDelay(int npcId)

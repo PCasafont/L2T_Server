@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.io.PrintStream;
@@ -83,7 +84,7 @@ public final class SystemMessage extends L2GameServerPacket
 			return (int[]) _value;
 		}
 	}
-
+	
 	private static final byte TYPE_HP_CHANGE = 16;
 	// id 15 - unknown
 	// id 14 - unknown
@@ -150,6 +151,7 @@ public final class SystemMessage extends L2GameServerPacket
 	 * Use SystemMessage.getSystemMessage(SystemMessageId smId) where possible instead
 	 * @deprecated
 	 */
+	@Deprecated
 	private SystemMessage(final int id)
 	{
 		this(SystemMessageId.getSystemMessageId(id));
@@ -204,21 +206,21 @@ public final class SystemMessage extends L2GameServerPacket
 	{
 		if (cha instanceof L2Npc)
 		{
-			if (((L2Npc)cha).getTemplate().ServerSideName)
-				return addString(((L2Npc)cha).getTemplate().Name);
+			if (((L2Npc) cha).getTemplate().ServerSideName)
+				return addString(((L2Npc) cha).getTemplate().Name);
 			else
-				return addNpcName((L2Npc)cha);
+				return addNpcName((L2Npc) cha);
 		}
 		else if (cha instanceof L2PcInstance)
 		{
-			return addPcName((L2PcInstance)cha);
+			return addPcName((L2PcInstance) cha);
 		}
 		else if (cha instanceof L2Summon)
 		{
-			if (((L2Summon)cha).getTemplate().ServerSideName)
-				return addString(((L2Summon)cha).getTemplate().Name);
+			if (((L2Summon) cha).getTemplate().ServerSideName)
+				return addString(((L2Summon) cha).getTemplate().Name);
 			else
-				return addNpcName((L2Summon)cha);
+				return addNpcName((L2Summon) cha);
 		}
 		return addString(cha.getName());
 	}
@@ -270,7 +272,7 @@ public final class SystemMessage extends L2GameServerPacket
 	
 	public final SystemMessage addZoneName(final int x, final int y, final int z)
 	{
-		append(new SMParam(TYPE_ZONE_NAME, new int[]{x, y, z}));
+		append(new SMParam(TYPE_ZONE_NAME, new int[] { x, y, z }));
 		return this;
 	}
 	
@@ -293,7 +295,7 @@ public final class SystemMessage extends L2GameServerPacket
 	
 	public final SystemMessage addSkillName(final int id, final int lvl)
 	{
-		append(new SMParam(TYPE_SKILL_NAME, new int[]{id, lvl}));
+		append(new SMParam(TYPE_SKILL_NAME, new int[] { id, lvl }));
 		return this;
 	}
 	
@@ -329,10 +331,10 @@ public final class SystemMessage extends L2GameServerPacket
 		append(new SMParam(TYPE_INSTANCE_NAME, type));
 		return this;
 	}
-
+	
 	public final SystemMessage addHpChange(final int charId, final int causerId, final int hpChange)
 	{
-		append(new SMParam(TYPE_HP_CHANGE, new int[]{charId, causerId, hpChange}));
+		append(new SMParam(TYPE_HP_CHANGE, new int[] { charId, causerId, hpChange }));
 		return this;
 	}
 	
@@ -505,8 +507,6 @@ public final class SystemMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x62);
-		
 		writeH(_smId.getId());
 		writeC(_paramIndex);
 		
@@ -547,7 +547,7 @@ public final class SystemMessage extends L2GameServerPacket
 				{
 					final int[] array = param.getIntArrayValue();
 					writeD(array[0]); // SkillId
-					writeH((short)array[1]); // SkillLevel
+					writeH((short) array[1]); // SkillLevel
 					break;
 				}
 				
@@ -570,11 +570,5 @@ public final class SystemMessage extends L2GameServerPacket
 				}
 			}
 		}
-	}
-	
-	@Override
-	public final String getType()
-	{
-		return "[S] 0x62 SystemMessage".intern();
 	}
 }

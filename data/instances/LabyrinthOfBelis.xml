@@ -34,5 +34,5 @@
 		<spawn npcId="80314" x="-116367" y="212620" z="-8592" heading="60438" respawn="60" />
 		<spawn npcId="80314" x="-116520" y="212767" z="-8592" heading="32070" respawn="60" />
 		<spawn npcId="80314" x="-116742" y="212775" z="-8592" heading="5907" respawn="60" />
-	</spawnlist>	
+	</spawnlist>
 </instance>

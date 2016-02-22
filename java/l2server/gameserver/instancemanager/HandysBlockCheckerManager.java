@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntIntHashMap;
@@ -38,12 +39,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author BiggBoss
  */
-public final class HandysBlockCheckerManager 
+public final class HandysBlockCheckerManager
 {
 	/*
 	 * This class manage the player add/remove, team change and
 	 * event arena status, as the clearance of the participants
-	 * list or liberate the arena 
+	 * list or liberate the arena
 	 */
 	
 	// All the participants and their team classifed by arena
@@ -79,10 +80,10 @@ public final class HandysBlockCheckerManager
 		int newVotes = _arenaVotes.get(arena) + 1;
 		ArenaParticipantsHolder holder = _arenaPlayers[arena];
 		
-		if (newVotes > holder.getAllPlayers().size() / 2 && !holder.getEvent().isStarted())
+		if ((newVotes > (holder.getAllPlayers().size() / 2)) && !holder.getEvent().isStarted())
 		{
 			clearArenaVotes(arena);
-			if (holder.getBlueTeamSize() == 0 || holder.getRedTeamSize() == 0)
+			if ((holder.getBlueTeamSize() == 0) || (holder.getRedTeamSize() == 0))
 				return;
 			if (Config.HBCE_FAIR_PLAY)
 				holder.checkAndShuffle();
@@ -103,7 +104,7 @@ public final class HandysBlockCheckerManager
 	{
 		_arenaVotes.put(arena, 0);
 	}
-
+	
 	private HandysBlockCheckerManager()
 	{
 		// Initialize arena status
@@ -126,7 +127,7 @@ public final class HandysBlockCheckerManager
 	{
 		return _arenaPlayers[arena];
 	}
-		
+	
 	/**
 	 * Initializes the participants holder
 	 */
@@ -150,7 +151,7 @@ public final class HandysBlockCheckerManager
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 		
-		synchronized(holder)
+		synchronized (holder)
 		{
 			boolean isRed;
 			
@@ -164,7 +165,7 @@ public final class HandysBlockCheckerManager
 					return false;
 				}
 			}
-				
+			
 			if (player.isCursedWeaponEquipped())
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_REGISTER_PROCESSING_CURSED_WEAPON));
@@ -176,7 +177,7 @@ public final class HandysBlockCheckerManager
 				player.sendMessage("Couldnt register you due other event participation");
 				return false;
 			}
-
+			
 			if (OlympiadManager.getInstance().isRegistered(player))
 			{
 				OlympiadManager.getInstance().unRegisterNoble(player);
@@ -193,7 +194,7 @@ public final class HandysBlockCheckerManager
 				KrateiCubeManager.getInstance().removeParticipant(player);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.COLISEUM_OLYMPIAD_KRATEIS_APPLICANTS_CANNOT_PARTICIPATE));
 			}
-			*/
+			 */
 			
 			if (_registrationPenalty.contains(player.getObjectId()))
 			{
@@ -217,7 +218,7 @@ public final class HandysBlockCheckerManager
 	}
 	
 	/**
-	 * Will remove the specified player from the specified 
+	 * Will remove the specified player from the specified
 	 * team and arena and will send the needed packet to all
 	 * his team mates / enemy team mates
 	 * @param player
@@ -226,7 +227,7 @@ public final class HandysBlockCheckerManager
 	public void removePlayer(L2PcInstance player, int arenaId, int team)
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
-		synchronized(holder)
+		synchronized (holder)
 		{
 			boolean isRed = team == 0 ? true : false;
 			
@@ -234,7 +235,7 @@ public final class HandysBlockCheckerManager
 			holder.broadCastPacketToTeam(new ExCubeGameRemovePlayer(player, isRed));
 			
 			// End event if theres an empty team
-			int teamSize = isRed? holder.getRedTeamSize() : holder.getBlueTeamSize();
+			int teamSize = isRed ? holder.getRedTeamSize() : holder.getBlueTeamSize();
 			if (teamSize == 0)
 				holder.getEvent().endEventAbnormally();
 			
@@ -256,22 +257,22 @@ public final class HandysBlockCheckerManager
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arena];
 		
-		synchronized(holder)
+		synchronized (holder)
 		{
 			boolean isFromRed = holder._redPlayers.contains(player);
 			
-			if (isFromRed && holder.getBlueTeamSize() == 6)
+			if (isFromRed && (holder.getBlueTeamSize() == 6))
 			{
 				player.sendMessage("The team is full");
 				return;
 			}
-			else if (!isFromRed && holder.getRedTeamSize() == 6)
+			else if (!isFromRed && (holder.getRedTeamSize() == 6))
 			{
 				player.sendMessage("The team is full");
 				return;
 			}
 			
-			int futureTeam = isFromRed? 1 : 0;
+			int futureTeam = isFromRed ? 1 : 0;
 			holder.addPlayer(player, futureTeam);
 			
 			if (isFromRed)
@@ -298,7 +299,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public boolean arenaIsBeingUsed(int arenaId)
 	{
-		if (arenaId < 0 || arenaId > 3) 
+		if ((arenaId < 0) || (arenaId > 3))
 			return false;
 		return _arenaStatus.get(arenaId);
 	}
@@ -332,7 +333,7 @@ public final class HandysBlockCheckerManager
 		int arena = player.getBlockCheckerArena();
 		int team = getHolder(arena).getPlayerTeam(player);
 		HandysBlockCheckerManager.getInstance().removePlayer(player, arena, team);
-		if (player.getTeam() > 0 )
+		if (player.getTeam() > 0)
 		{
 			player.stopAllEffects();
 			// Remove team aura
@@ -464,26 +465,28 @@ public final class HandysBlockCheckerManager
 		{
 			int redSize = _redPlayers.size();
 			int blueSize = _bluePlayers.size();
-			if (redSize > blueSize + 1)
+			if (redSize > (blueSize + 1))
 			{
 				broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
 				int needed = redSize - (blueSize + 1);
-				for (int i = 0; i < needed+1; i++)
+				for (int i = 0; i < (needed + 1); i++)
 				{
 					L2PcInstance plr = _redPlayers.get(i);
-					if (plr == null) continue;
-					changePlayerToTeam(plr, this._arena, 1);
+					if (plr == null)
+						continue;
+					changePlayerToTeam(plr, _arena, 1);
 				}
 			}
-			else if (blueSize > redSize + 1)
+			else if (blueSize > (redSize + 1))
 			{
 				broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
 				int needed = blueSize - (redSize + 1);
-				for (int i = 0; i < needed+1; i++)
+				for (int i = 0; i < (needed + 1); i++)
 				{
 					L2PcInstance plr = _bluePlayers.get(i);
-					if (plr == null) continue;
-					changePlayerToTeam(plr, this._arena, 0);
+					if (plr == null)
+						continue;
+					changePlayerToTeam(plr, _arena, 0);
 				}
 			}
 		}
@@ -510,7 +513,7 @@ public final class HandysBlockCheckerManager
 			{
 				_registrationPenalty.remove(objectId);
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
 				e.printStackTrace();
 			}

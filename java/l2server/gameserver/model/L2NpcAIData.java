@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.model;
 
 import l2server.gameserver.templates.StatsSet;
@@ -24,8 +25,8 @@ import l2server.gameserver.templates.chars.L2NpcTemplate.AIType;
 /**
  * Author: ShanSoft
  * By L2JTW
- * 
- * 
+ *
+ *
  */
 
 // This Data is for NPC Attributes and AI relate stuffs...
@@ -159,7 +160,7 @@ public class L2NpcAIData
 	
 	public void setClan(String clan)
 	{
-		if (clan != null && !clan.equals("") && !clan.equalsIgnoreCase("null"))
+		if ((clan != null) && !clan.equals("") && !clan.equalsIgnoreCase("null"))
 			_clan = clan.intern();
 	}
 	
@@ -170,7 +171,7 @@ public class L2NpcAIData
 	
 	public void setEnemyClan(String enemyClan)
 	{
-		if (enemyClan != null && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
+		if ((enemyClan != null) && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
 			_enemyClan = enemyClan.intern();
 	}
 	
@@ -221,12 +222,12 @@ public class L2NpcAIData
 	}
 	
 	/*
-	
+
 	public void setBaseShldRate (int baseShldRate)
 	{
 		_baseShldRate = baseShldRate;
 	}
-	
+
 	public void setBaseShldDef (int baseShldDef)
 	{
 		_baseShldDef = baseShldDef;
@@ -342,12 +343,12 @@ public class L2NpcAIData
 	}
 	
 	/*
-	
+
 	public int getBaseShldRate ()
 	{
 		return _baseShldRate;
 	}
-	
+
 	public int getBaseShldDef ()
 	{
 		return _baseShldDef;

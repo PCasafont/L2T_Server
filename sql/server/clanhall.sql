@@ -58,13 +58,13 @@ INSERT IGNORE INTO `clanhall` VALUES
 ('64','Fortress of the Dead','0','0','Contestable Clan Hall','Rune','0','0','0');
 
 -- Valiance clanhalls
-INSERT INTO `clanhall` VALUES ('65', 'Emerald Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('66', 'Aquamarine Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('67', 'Crystal Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('68', 'Sapphire Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('69', 'Yellow Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('70', 'White Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('71', 'Blue Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('72', 'Brown Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('73', 'Black Barracks', '0', '500000', 'Clan Hall located in Floran', 'Floran', '0', '2', '0');
-INSERT INTO `clanhall` VALUES ('74', 'Green Barracks', '0', '500000', 'Clan Hall located in Floran', 'Floran', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('65', 'Emerald Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('66', 'Aquamarine Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('67', 'Crystal Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('68', 'Sapphire Hall', '0', '500000', 'Clan Hall located in the Gludio outskirts', 'Gludio', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('69', 'Yellow Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('70', 'White Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('71', 'Blue Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('72', 'Brown Barracks', '0', '500000', 'Clan Hall located in the Dion outskirts', 'Dion', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('73', 'Black Barracks', '0', '500000', 'Clan Hall located in Floran', 'Floran', '0', '2', '0');
+INSERT IGNORE INTO `clanhall` VALUES ('74', 'Green Barracks', '0', '500000', 'Clan Hall located in Floran', 'Floran', '0', '2', '0');

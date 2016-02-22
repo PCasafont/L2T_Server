@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.gui.playertable;
 
 import java.awt.Component;
@@ -28,9 +29,9 @@ import javax.swing.table.TableCellRenderer;
  * @author KenM
  *
  */
-@SuppressWarnings("serial")
 public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer
 {
+	private static final long serialVersionUID = 1L;
 	@SuppressWarnings("unused")
 	private PlayerTableModel _table;
 	

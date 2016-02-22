@@ -101,7 +101,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					int type = Integer.parseInt(st.nextToken());
 					printSpawn((L2Npc) target, type);
 					if (command.contains("_menu"))
-						AdminHelpPage.showHelpPage(activeChar, "spawns_debug.htm");	
+						AdminHelpPage.showHelpPage(activeChar, "spawns_debug.htm");
 				}
 				catch (Exception e)
 				{
@@ -187,7 +187,7 @@ public class AdminSpawn implements IAdminCommandHandler
 									StringUtil.append(html,"<tr><td>"+npc.getName()+"</td><td>",
 									"<a action=\"bypass -h admin_move_to "+npc.getX()+" "+npc.getY()+" "+npc.getZ()+"\">Go</a>",
 									"</td></tr>");
-									counter++;								
+									counter++;
 								}
 								else
 									skiped++;

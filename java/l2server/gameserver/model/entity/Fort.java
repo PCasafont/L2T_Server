@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 import gnu.trove.TIntIntHashMap;
@@ -31,8 +32,8 @@ import java.util.logging.Level;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.FortUpdater;
-import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.FortUpdater.UpdaterType;
+import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.ResidentialSkillTable;
@@ -173,13 +174,14 @@ public class Fort
 				_cwh = cwh;
 			}
 			
+			@Override
 			public void run()
 			{
 				try
 				{
 					if (getOwnerClan() == null)
 						return;
-					if (getOwnerClan().getWarehouse().getAdena() >= _fee || !_cwh)
+					if ((getOwnerClan().getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -252,12 +254,19 @@ public class Fort
 			loadFunctions();
 		}
 		
-		spawnNpcCommanders(); // spawn npc Commanders
-		if (getOwnerClan() != null && getFortState() == 0)
+		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
-			spawnSpecialEnvoys();
-			ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(this), 1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
-		}
+			@Override
+			public void run()
+			{
+				spawnNpcCommanders(); // spawn npc Commanders
+				if ((getOwnerClan() != null) && (getFortState() == 0))
+				{
+					spawnSpecialEnvoys();
+					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this), 1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
+				}
+			}
+		}, 10000L);
 		
 		Connection con = null;
 		try
@@ -297,6 +306,7 @@ public class Fort
 			_fortInst = pFort;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -419,7 +429,7 @@ public class Fort
 		L2Clan oldowner = getOwnerClan();
 		
 		// Remove old owner
-		if (oldowner != null && clan != null && clan != oldowner)
+		if ((oldowner != null) && (clan != null) && (clan != oldowner))
 		{
 			// Remove points from old owner
 			updateClansReputation(oldowner, true);
@@ -622,7 +632,7 @@ public class Fort
 				while (initial > (Config.FS_UPDATE_FRQ * 60000l))
 					initial -= (Config.FS_UPDATE_FRQ * 60000l);
 				initial = (Config.FS_UPDATE_FRQ * 60000l) - initial;
-				if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < Config.FS_MAX_OWN_TIME * 3600)
+				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < (Config.FS_MAX_OWN_TIME * 3600)))
 				{
 					_fortUpdater[0] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new FortUpdater(this, clan, runCount, UpdaterType.PERIODIC_UPDATE), initial, Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
 					if (Config.FS_MAX_OWN_TIME > 0)
@@ -725,7 +735,7 @@ public class Fort
 		}
 		else
 		{
-			if (lvl == 0 && lease == 0)
+			if ((lvl == 0) && (lease == 0))
 				removeFunction(type);
 			else
 			{
@@ -758,7 +768,7 @@ public class Fort
 	{
 		for (L2DoorInstance door : DoorTable.getInstance().getDoors())
 		{
-			if (door.getFort() != null && door.getFort()._fortId == _fortId)
+			if ((door.getFort() != null) && (door.getFort()._fortId == _fortId))
 				_doors.add(door);
 		}
 	}
@@ -904,7 +914,7 @@ public class Fort
 		if (_lastOwnedTime.getTimeInMillis() == 0)
 			return 0;
 		
-		return (int) ((_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000l - System.currentTimeMillis()) / 1000l);
+		return (int) (((_lastOwnedTime.getTimeInMillis() + (Config.FS_MAX_OWN_TIME * 3600000l)) - System.currentTimeMillis()) / 1000l);
 	}
 	
 	public final long getTimeTillNextFortUpdate()
@@ -941,6 +951,7 @@ public class Fort
 			_clan = clan;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -1137,7 +1148,7 @@ public class Fort
 	
 	public void giveResidentialSkills(L2PcInstance player)
 	{
-		if (_residentialSkills != null && !_residentialSkills.isEmpty())
+		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.addSkill(sk, false);
@@ -1146,7 +1157,7 @@ public class Fort
 	
 	public void removeResidentialSkills(L2PcInstance player)
 	{
-		if (_residentialSkills != null && !_residentialSkills.isEmpty())
+		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.removeSkill(sk, false, true);

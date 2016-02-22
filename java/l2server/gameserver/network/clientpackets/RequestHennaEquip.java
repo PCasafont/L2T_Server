@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -30,8 +31,8 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestHennaEquip extends L2GameClientPacket
 {
-	private static final String _C__BC_RequestHennaEquip = "[C] bc RequestHennaEquip";
 	private int _symbolId;
+	
 	// format  cd
 	
 	/**
@@ -82,9 +83,11 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		{
 			_count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
 		}
-		catch(Exception e){}
+		catch (Exception e)
+		{
+		}
 		
-		if (henna.isFourthSlot() && activeChar.getHenna(4) != null)
+		if ((activeChar.getHennaEmptySlots() == 0) || (henna.isFourthSlot() && (activeChar.getHenna(4) != null)))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
 			return;
@@ -92,8 +95,8 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		
 		if (!henna.isFourthSlot())
 		{
-			if ((activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1) || (activeChar.getHenna(4) == null && activeChar.getHennaEmptySlots() < 2))
-			{	
+			if (((activeChar.getHenna(4) != null) && (activeChar.getHennaEmptySlots() < 1)) || ((activeChar.getHenna(4) == null) && (activeChar.getHennaEmptySlots() < 2)))
+			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
 				return;
 			}
@@ -114,16 +117,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
 			if ((!activeChar.isGM()) && cheater)
-				Util.handleIllegalPlayerAction(activeChar,"Exploit attempt: Character "+activeChar.getName()+" of account "+activeChar.getAccountName()+" tryed to add a forbidden henna.",Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar.getName() + " of account " + activeChar.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__BC_RequestHennaEquip;
 	}
 }

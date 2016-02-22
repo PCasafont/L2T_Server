@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.concurrent.Future;
@@ -49,12 +50,13 @@ public class L2Fishing implements Runnable
 	private boolean _isUpperGrade;
 	private int _lureType;
 	
+	@Override
 	public void run()
 	{
 		if (_fisher == null)
 			return;
 		
-		if (_fishCurHp >= _fishMaxHp * 2)
+		if (_fishCurHp >= (_fishMaxHp * 2))
 		{
 			// The fish got away
 			_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_STOLEN_BY_FISH));
@@ -66,7 +68,8 @@ public class L2Fishing implements Runnable
 			_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_SPIT_THE_HOOK));
 			doDie(false);
 		}
-		else aiTask();
+		else
+			aiTask();
 	}
 	
 	// =========================================================
@@ -79,11 +82,13 @@ public class L2Fishing implements Runnable
 		_fishId = fish.getId();
 		_time = fish.getCombatTime() / 1000;
 		_isUpperGrade = isUpperGrade;
-		if (isUpperGrade) {
+		if (isUpperGrade)
+		{
 			_deceptiveMode = Rnd.get(100) >= 90 ? 1 : 0;
 			_lureType = 2;
 		}
-		else {
+		else
+		{
 			_deceptiveMode = 0;
 			_lureType = isNoob ? 0 : 1;
 		}
@@ -105,12 +110,13 @@ public class L2Fishing implements Runnable
 	public void changeHp(int hp, int pen)
 	{
 		_fishCurHp -= hp;
-		if (_fishCurHp < 0) _fishCurHp = 0;
+		if (_fishCurHp < 0)
+			_fishCurHp = 0;
 		
 		ExFishingHpRegen efhr = new ExFishingHpRegen(_fisher, _time, _fishCurHp, _mode, _goodUse, _anim, pen, _deceptiveMode);
 		_fisher.broadcastPacket(efhr);
 		_anim = 0;
-		if (_fishCurHp > _fishMaxHp * 2)
+		if (_fishCurHp > (_fishMaxHp * 2))
 		{
 			_fishCurHp = _fishMaxHp * 2;
 			doDie(false);
@@ -131,7 +137,8 @@ public class L2Fishing implements Runnable
 			_fishAiTask = null;
 		}
 		
-		if (_fisher == null) return;
+		if (_fisher == null)
+			return;
 		
 		if (win)
 		{
@@ -152,33 +159,40 @@ public class L2Fishing implements Runnable
 	
 	protected void aiTask()
 	{
-		if (_thinking) return;
+		if (_thinking)
+			return;
 		_thinking = true;
 		_time--;
 		
 		try
 		{
-			if (_mode == 1) {
+			if (_mode == 1)
+			{
 				if (_deceptiveMode == 0)
 					_fishCurHp += (int) _regenHp;
 			}
-			else {
+			else
+			{
 				if (_deceptiveMode == 1)
 					_fishCurHp += (int) _regenHp;
 			}
-			if (_stop == 0) {
+			if (_stop == 0)
+			{
 				_stop = 1;
 				int check = Rnd.get(100);
-				if (check >= 70) {
+				if (check >= 70)
+				{
 					_mode = _mode == 0 ? 1 : 0;
 				}
-				if (_isUpperGrade) {
+				if (_isUpperGrade)
+				{
 					check = Rnd.get(100);
 					if (check >= 90)
 						_deceptiveMode = _deceptiveMode == 0 ? 1 : 0;
 				}
 			}
-			else {
+			else
+			{
 				_stop--;
 			}
 		}
@@ -196,29 +210,34 @@ public class L2Fishing implements Runnable
 	public void useRealing(int dmg, int pen)
 	{
 		_anim = 2;
-		if (Rnd.get(100) > 90) {
+		if (Rnd.get(100) > 90)
+		{
 			_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
 			_goodUse = 0;
 			changeHp(0, pen);
 			return;
 		}
-		if (_fisher == null) return;
+		if (_fisher == null)
+			return;
 		if (_mode == 1)
 		{
-			if (_deceptiveMode == 0) {
+			if (_deceptiveMode == 0)
+			{
 				// Reeling is successful, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
 				_fisher.sendPacket(sm);
-				if (pen == 50) {
+				if (pen == 50)
+				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
 					_fisher.sendPacket(sm);
 				}
 				_goodUse = 1;
-				changeHp(dmg , pen);
+				changeHp(dmg, pen);
 			}
-			else {
+			else
+			{
 				// Reeling failed, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_REELING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
@@ -229,7 +248,8 @@ public class L2Fishing implements Runnable
 		}
 		else
 		{
-			if (_deceptiveMode == 0) {
+			if (_deceptiveMode == 0)
+			{
 				// Reeling failed, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_REELING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
@@ -237,18 +257,20 @@ public class L2Fishing implements Runnable
 				_goodUse = 2;
 				changeHp(-dmg, pen);
 			}
-			else {
+			else
+			{
 				// Reeling is successful, Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
 				_fisher.sendPacket(sm);
-				if (pen == 50) {
+				if (pen == 50)
+				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.REELING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
 					_fisher.sendPacket(sm);
 				}
 				_goodUse = 1;
-				changeHp(dmg , pen);
+				changeHp(dmg, pen);
 			}
 		}
 	}
@@ -256,21 +278,25 @@ public class L2Fishing implements Runnable
 	public void usePomping(int dmg, int pen)
 	{
 		_anim = 1;
-		if (Rnd.get(100) > 90) {
+		if (Rnd.get(100) > 90)
+		{
 			_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_ATTEMPT_TO_BRING_IT_IN));
 			_goodUse = 0;
 			changeHp(0, pen);
 			return;
 		}
-		if (_fisher == null) return;
+		if (_fisher == null)
+			return;
 		if (_mode == 0)
 		{
-			if (_deceptiveMode == 0) {
+			if (_deceptiveMode == 0)
+			{
 				// Pumping is successful. Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
 				_fisher.sendPacket(sm);
-				if (pen == 50) {
+				if (pen == 50)
+				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
 					_fisher.sendPacket(sm);
@@ -278,7 +304,8 @@ public class L2Fishing implements Runnable
 				_goodUse = 1;
 				changeHp(dmg, pen);
 			}
-			else {
+			else
+			{
 				// Pumping failed, Regained: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_PUMPING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
@@ -289,7 +316,8 @@ public class L2Fishing implements Runnable
 		}
 		else
 		{
-			if (_deceptiveMode == 0) {
+			if (_deceptiveMode == 0)
+			{
 				// Pumping failed, Regained: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FISH_RESISTED_PUMPING_S1_HP_REGAINED);
 				sm.addNumber(dmg);
@@ -297,12 +325,14 @@ public class L2Fishing implements Runnable
 				_goodUse = 2;
 				changeHp(-dmg, pen);
 			}
-			else {
+			else
+			{
 				// Pumping is successful. Damage: $s1
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESFUL_S1_DAMAGE);
 				sm.addNumber(dmg);
 				_fisher.sendPacket(sm);
-				if (pen == 50) {
+				if (pen == 50)
+				{
 					sm = SystemMessage.getSystemMessage(SystemMessageId.PUMPING_SUCCESSFUL_PENALTY_S1);
 					sm.addNumber(pen);
 					_fisher.sendPacket(sm);
@@ -315,7 +345,7 @@ public class L2Fishing implements Runnable
 	
 	private void PenaltyMonster()
 	{
-		int lvl = (int)Math.round(_fisher.getLevel()*0.1);
+		int lvl = (int) Math.round(_fisher.getLevel() * 0.1);
 		
 		int npcid;
 		
@@ -361,12 +391,12 @@ public class L2Fishing implements Runnable
 				L2Spawn spawn = new L2Spawn(temp);
 				spawn.setX(_fisher.getX());
 				spawn.setY(_fisher.getY());
-				spawn.setZ(_fisher.getZ()+20);
+				spawn.setZ(_fisher.getZ() + 20);
 				spawn.setHeading(_fisher.getHeading());
 				spawn.stopRespawn();
 				spawn.doSpawn();
-				spawn.getNpc().scheduleDespawn(3*60*1000);
-				((L2PenaltyMonsterInstance)spawn.getNpc()).setPlayerToKill(_fisher);
+				spawn.getNpc().scheduleDespawn(3 * 60 * 1000);
+				((L2PenaltyMonsterInstance) spawn.getNpc()).setPlayerToKill(_fisher);
 			}
 			catch (Exception e)
 			{

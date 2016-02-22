@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
@@ -49,8 +50,8 @@ public class L2FortBallistaInstance extends L2Npc
 		{
 			if (killer instanceof L2PcInstance)
 			{
-				L2PcInstance player = ((L2PcInstance)killer);
-				if (player.getClan() != null && player.getClan().getLevel() >= 5)
+				L2PcInstance player = ((L2PcInstance) killer);
+				if ((player.getClan() != null) && (player.getClan().getLevel() >= 5))
 				{
 					player.getClan().addReputationScore(Config.BALLISTA_POINTS, true);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BALLISTA_DESTROYED_CLAN_REPU_INCREASED));
@@ -64,7 +65,8 @@ public class L2FortBallistaInstance extends L2Npc
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if (!canTarget(player)) return;
+		if (!canTarget(player))
+			return;
 		
 		// Check if the L2PcInstance already target the L2NpcInstance
 		if (this != player.getTarget())

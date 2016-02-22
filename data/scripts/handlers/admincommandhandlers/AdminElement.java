@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -30,22 +31,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class handles following admin commands: - delete = deletes target
- * 
+ *
  * @version $Revision: 1.2.2.1.2.4 $ $Date: 2005/04/11 10:05:56 $
  */
 public class AdminElement implements IAdminCommandHandler
 {
-	private static final String[]	ADMIN_COMMANDS	=
-	{
-		"admin_setlh",
-		"admin_setlc",
-		"admin_setll",
-		"admin_setlg",
-		"admin_setlb",
-		"admin_setlw",
-		"admin_setls"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_setlh", "admin_setlc", "admin_setll", "admin_setlg", "admin_setlb", "admin_setlw", "admin_setls" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		int armorType = -1;
@@ -73,7 +66,7 @@ public class AdminElement implements IAdminCommandHandler
 				
 				byte element = Elementals.getElementId(args[1]);
 				int value = Integer.parseInt(args[2]);
-				if (element < -1 || element > 5 || value < 0 || value > 450)
+				if ((element < -1) || (element > 5) || (value < 0) || (value > 450))
 				{
 					activeChar.sendMessage("Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element> <value>[0-450]");
 					return false;
@@ -91,6 +84,7 @@ public class AdminElement implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
@@ -117,7 +111,7 @@ public class AdminElement implements IAdminCommandHandler
 		
 		// only attempt to enchant if there is a weapon equipped
 		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
-		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType)
+		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
 		{
 			itemInstance = parmorInstance;
 		}
@@ -152,12 +146,10 @@ public class AdminElement implements IAdminCommandHandler
 			player.sendPacket(iu);
 			
 			// informations
-			activeChar.sendMessage("Changed elemental power of " + player.getName() + "'s "
-					+ itemInstance.getItem().getName() + " from " + old + " to " + current + ".");
+			activeChar.sendMessage("Changed elemental power of " + player.getName() + "'s " + itemInstance.getItem().getName() + " from " + old + " to " + current + ".");
 			if (player != activeChar)
 			{
-				player.sendMessage(activeChar.getName()+" has changed the elemental power of your "
-						+ itemInstance.getItem().getName() + " from " + old + " to " + current + ".");
+				player.sendMessage(activeChar.getName() + " has changed the elemental power of your " + itemInstance.getItem().getName() + " from " + old + " to " + current + ".");
 			}
 		}
 	}

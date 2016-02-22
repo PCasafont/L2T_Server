@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
@@ -35,27 +36,19 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-	@Override
-	public String getType()
-	{
-		return "[S] FE:7D ExShowFortressMapInfo";
-	}
 	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x7e);
-		
 		writeD(_fortress.getFortId());
 		writeD(_fortress.getSiege().getIsInProgress() ? 1 : 0); // fortress siege status
 		writeD(_fortress.getFortSize()); // barracks count
 		
 		List<L2Spawn> commanders = _fortress.getCommanderSpawns();
-		if (commanders != null && commanders.size() != 0 && _fortress.getSiege().getIsInProgress())
+		if ((commanders != null) && (commanders.size() != 0) && _fortress.getSiege().getIsInProgress())
 		{
 			switch (commanders.size())
 			{
@@ -89,7 +82,7 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 		}
 		else
 		{
-			for (int i = 0; i <_fortress.getFortSize(); i++)
+			for (int i = 0; i < _fortress.getFortSize(); i++)
 			{
 				writeD(0);
 			}

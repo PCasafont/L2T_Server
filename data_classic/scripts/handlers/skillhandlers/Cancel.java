@@ -158,7 +158,7 @@ public class Cancel implements ISkillHandler
 	
 	private void generalBuffCancellation(L2Character activeChar, L2Abnormal[] effects, int maxNegate, double rate, boolean targetWasInOlys)
 	{
-		FastList<L2Abnormal> buffs = new FastList<L2Abnormal>();
+		FastList<L2Abnormal> buffs = new HashMap<L2Abnormal>();
 		
 		// Filter buff-type effects out of the effect collection
 		for (L2Abnormal effect : effects)

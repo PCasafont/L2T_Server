@@ -92,7 +92,7 @@
 	</skill>
 	<skill id="14009" levels="3" name="Electric Shock">
 		<table name="#mpConsume"> 78 78 79 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -116,7 +116,7 @@
 	</skill>
 	<skill id="14010" levels="3" name="Electric Range">
 		<table name="#mpConsume"> 78 78 79 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -132,7 +132,7 @@
 	<!-- Bleed status. -->
 	<skill id="14011" levels="3" name="Electric Staff">
 		<table name="#mpConsume"> 78 78 79 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -206,7 +206,7 @@
 		<set name="castRange" val="250" />
 		<set name="effectRange" val="750" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14017" levels="1" name="Thunder Storm">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -238,7 +238,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14020" levels="1" name="Ice Wall">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -271,7 +271,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14023" levels="1" name="Hero's Teleport">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -284,7 +284,7 @@
 	</skill>
 	<!-- Affected by the ancient hero's roar and inflicted with fear. -->
 	<skill id="14024" levels="1" name="Ancient Hero's Roar">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -305,7 +305,8 @@
 		</for>
 	</skill>
 	<skill id="14025" levels="1" name="Hero's Arrow Shaft">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -320,7 +321,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="14026" levels="1" name="Hero's Sword Energy">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -333,7 +334,8 @@
 	</skill>
 	<!-- Cannot move due to Octavis' powerful attack. -->
 	<skill id="14027" levels="1" name="Hero's Rage">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -353,7 +355,7 @@
 		</for>
 	</skill>
 	<skill id="14028" levels="1" name="Hero's Influence">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -365,7 +367,7 @@
 		<set name="effectRange" val="2500" />
 	</skill>
 	<skill id="14029" levels="1" name="Hero's Influence">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -377,7 +379,7 @@
 		<set name="effectRange" val="2500" />
 	</skill>
 	<skill id="14030" levels="1" name="Hero's Magic">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -391,7 +393,7 @@
 		<set name="elementPower" val="70" />
 	</skill>
 	<skill id="14031" levels="1" name="Hero's Magic">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -406,7 +408,8 @@
 	</skill>
 	<!-- Stun status. -->
 	<skill id="14032" levels="1" name="Red Net">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -430,7 +433,7 @@
 	</skill>
 	<!-- Hurls a powerful blow on the target. -->
 	<skill id="14033" levels="1" name="Vital Spot Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BLOW" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -448,7 +451,7 @@
 	</skill>
 	<!-- Bleed status. -->
 	<skill id="14034" levels="1" name="Waist Slash">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -498,7 +501,8 @@
 	</skill>
 	<!-- Hurls a powerful blow on nearby enemies. -->
 	<skill id="14038" levels="1" name="Power Strike">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="86" />
@@ -511,7 +515,8 @@
 	</skill>
 	<!-- Causes a shock wave and prevents nearby enemies from moving. -->
 	<skill id="14039" levels="1" name="Curse Shock">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -775,7 +780,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="14063" levels="1" name="Rush">
+	<skill id="14063" levels="1" name="Fatal Rush">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -786,7 +791,7 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<skill id="14064" levels="1" name="Wisp Heal">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HPMPHEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -822,7 +827,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- No effect. -->
-	<skill id="14067" levels="11" name="Big Blind Light">
+	<skill id="14067" levels="11" name="Blind Light">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1009,7 +1014,7 @@
 		<set name="effectRange" val="700" />
 	</skill>
 	<skill id="14085" levels="1" name="Protection">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1049,7 +1054,7 @@
 		<set name="effectRange" val="1000" />
 	</skill>
 	<skill id="14088" levels="1" name="Garden Apherus Recovery">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1282,7 +1287,7 @@
 	</skill>
 	<!-- Armor is destroyed. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
 	<skill id="14110" levels="1" name="Teredor Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1305,7 +1310,7 @@
 		</for>
 	</skill>
 	<skill id="14111" levels="1" name="Teredor Range Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1321,7 +1326,7 @@
 	<!-- Poison status. -->
 	<skill id="14112" levels="2" name="Teredor Poison">
 		<table name="#abnormalLvl"> 6 7 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1340,7 +1345,7 @@
 	</skill>
 	<!-- Poison status. -->
 	<skill id="14113" levels="1" name="Teredor Flu Infection">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="SIGNET" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1577,7 +1582,7 @@
 		<set name="effectRange" val="700" />
 	</skill>
 	<skill id="14136" levels="3" name="Dark Counter">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="85" />
@@ -1598,7 +1603,7 @@
 		<set name="effectRange" val="2500" />
 	</skill>
 	<skill id="14138" levels="3" name="Dark Avenger">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1619,7 +1624,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 	</skill>
-	<!-- Spd decreased. -->
+	<!-- Speed is decreased. -->
 	<skill id="14140" levels="3" name="Decrease Speed">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1630,7 +1635,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 	</skill>
-	<!-- Sleep Status. -->
+	<!-- Sleep status. -->
 	<skill id="14141" levels="3" name="Sleep">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1723,7 +1728,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<skill id="14150" levels="3" name="Space Wave">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="85" />
@@ -1743,7 +1748,7 @@
 		<set name="effectRange" val="1000" />
 	</skill>
 	<skill id="14152" levels="3" name="Roar of Destruction">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="85" />
@@ -1911,7 +1916,7 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<skill id="14168" levels="1" name="Throw Grenade">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1934,7 +1939,7 @@
 	</skill>
 	<!-- Speed is decreased. -->
 	<skill id="14170" levels="1" name="Grappling Web">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1954,7 +1959,7 @@
 		</for>
 	</skill>
 	<skill id="14171" levels="1" name="Steady Shot">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1999,7 +2004,7 @@
 		<set name="effectRange" val="800" />
 	</skill>
 	<skill id="14175" levels="1" name="Cannon Blast">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="100" />
@@ -2193,7 +2198,7 @@
 	</skill>
 	<!-- Transformed by the decaying darkness. -->
 	<skill id="14196" levels="1" name="Decaying Darkness">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2240,7 +2245,7 @@
 	</skill>
 	<!-- Critical P. Atk. is increased by 40%. -->
 	<skill id="14200" levels="1" name="Blessing of Garden">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2255,7 +2260,7 @@
 	</skill>
 	<!-- Invincible status. -->
 	<skill id="14201" levels="1" name="Apherus Invincibility">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -2418,7 +2423,7 @@
 	</skill>
 	<!-- Yoke status. -->
 	<skill id="14216" levels="1" name="Energy Seal">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="CONTINUOUS_DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="lvlDepend" val="1" />
@@ -2445,7 +2450,8 @@
 	</skill>
 	<!-- Istina's Mark is received. Handling Istina any further will be difficult. -->
 	<skill id="14218" levels="1" name="Istina's Mark">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -2465,7 +2471,8 @@
 		</for>
 	</skill>
 	<skill id="14219" levels="1" name="Death Blow">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2517,7 +2524,8 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="14223" levels="1" name="Acid Eruption">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2531,7 +2539,7 @@
 	</skill>
 	<!-- Energy Control -->
 	<skill id="14224" levels="1" name="Energy Control Device">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2557,7 +2565,7 @@
 		Level 7: Control Stage 7
 		Level 8: Control Stage 8
 	-->
-	<skill id="14225" levels="8" name="Control Stage 1">
+	<skill id="14225" levels="8" name="Control Stage 8">
 		<table name="#name">Control Stage 1;Control Stage 2;Control Stage 3;Control Stage 4;Control Stage 5;Control Stage 6;Control Stage 7;Control Stage 8</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2586,7 +2594,7 @@
 	</skill>
 	<!-- Energy Regeneration -->
 	<skill id="14228" levels="1" name="Energy Regeneration Stage 1">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2602,7 +2610,7 @@
 	</skill>
 	<!-- Energy Regeneration -->
 	<skill id="14229" levels="1" name="Energy Regeneration Stage 2">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2618,7 +2626,7 @@
 	</skill>
 	<!-- Energy Regeneration -->
 	<skill id="14230" levels="1" name="Energy Regeneration Stage 3">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2634,7 +2642,8 @@
 	</skill>
 	<!-- Stun status. -->
 	<skill id="14231" levels="1" name="Creation's Rage">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -2654,7 +2663,8 @@
 	</skill>
 	<!-- Speed is decreased by 50%. -->
 	<skill id="14232" levels="1" name="Yoke of Thorns">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2685,7 +2695,8 @@
 	</skill>
 	<!-- Max HP and Max MP are decreased by 50%. -->
 	<skill id="14234" levels="1" name="Mind Contamination">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2718,7 +2729,8 @@
 	</skill>
 	<!-- Looking at Taklacan with forcefulness. -->
 	<skill id="14236" levels="1" name="Ultimate Forcefulness">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -2738,7 +2750,8 @@
 	</skill>
 	<!-- Vibration spreads through the body to decrease HP continuously. -->
 	<skill id="14237" levels="1" name="Earth Vibration">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2757,7 +2770,8 @@
 	</skill>
 	<!-- Physical and magic skills are blocked. -->
 	<skill id="14238" levels="1" name="Sound Blade">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2779,7 +2793,8 @@
 	</skill>
 	<!-- Hold status. -->
 	<skill id="14239" levels="1" name="Sound Prison">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2801,7 +2816,8 @@
 	</skill>
 	<!-- Poison status. -->
 	<skill id="14240" levels="1" name="Poison Eruption">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3065,7 +3081,7 @@
 	</skill>
 	<!-- Hold status. -->
 	<skill id="14266" levels="1" name="Yoke">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3082,7 +3098,7 @@
 		</for>
 	</skill>
 	<skill id="14267" levels="2" name="Hole Punch">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -3094,7 +3110,8 @@
 	</skill>
 	<!-- Fear status. -->
 	<skill id="14268" levels="1" name="Stun and Fear">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3223,7 +3240,8 @@
 	</skill>
 	<!-- Octavis' influence. -->
 	<skill id="14279" levels="1" name="Octavis' Influence">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3238,7 +3256,7 @@
 	</skill>
 	<!-- Octavis' influence. -->
 	<skill id="14280" levels="1" name="Octavis' Influence">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3267,7 +3285,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="14282" levels="1" name="Octavis' Obedience">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3293,7 +3311,8 @@
 	</skill>
 	<!-- Octavis' arrow shaft. Throw a spear on the floor to inflict powerful attack damage. -->
 	<skill id="14285" levels="1" name="Octavis' Arrow Shaft">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3335,7 +3354,7 @@
 	<skill id="14289" levels="2" name="Manifestation of Authority">
 		<table name="#dam"> 930 1300 </table>
 		<table name="#dec"> 30 60 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="100" />
@@ -3419,7 +3438,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectRange" val="650" />
 	</skill>
-	<skill id="14299" levels="3" name="Divinity Burn">
+	<skill id="14299" levels="3" name="Darkness Burn">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3428,7 +3447,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<skill id="14300" levels="4" name="Darkness Burn">
+	<skill id="14300" levels="4" name="Divinity Burn">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3437,14 +3456,14 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<skill id="14301" levels="3" name="Divinity Burn">
+	<skill id="14301" levels="3" name="Darkness Burn">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="hitTime" val="1500" />
 	</skill>
-	<skill id="14302" levels="4" name="Darkness Burn">
+	<skill id="14302" levels="4" name="Divinity Burn">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3728,7 +3747,7 @@
 	</skill>
 	<!-- Immobilizes the enemy for 30 seconds. -->
 	<skill id="14331" levels="1" name="Feeler Yoke">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3749,7 +3768,7 @@
 	</skill>
 	<!-- Immobilizes the enemy for 30 seconds. -->
 	<skill id="14332" levels="1" name="Feeler Yoke">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3780,7 +3799,8 @@
 	</skill>
 	<!-- Creates a poison cloud. Inflicts poison near the enemy, causing loss of 2000 HP per second for 30 seconds. -->
 	<skill id="14334" levels="1" name="Poison Puddle">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -3818,7 +3838,8 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<skill id="14337" levels="1" name="Earth Wyrm Body Strike">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -3833,7 +3854,8 @@
 		<set name="elementPower" val="380" />
 	</skill>
 	<skill id="14338" levels="1" name="Earth Wyrm Body Strike">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -3848,7 +3870,8 @@
 		<set name="elementPower" val="380" />
 	</skill>
 	<skill id="14339" levels="1" name="Earth Wyrm Body Strike">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -3864,7 +3887,8 @@
 	</skill>
 	<!-- Creates a poison cloud. Inflicts poison near the enemy, causing loss of 1 HP per second for 30 seconds. -->
 	<skill id="14340" levels="1" name="Earth Wyrm Poison Cannon">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -3894,7 +3918,8 @@
 		<set name="effectRange" val="650" />
 	</skill>
 	<skill id="14342" levels="1" name="Tail Haunting">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3908,7 +3933,8 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="14343" levels="1" name="Tail Hiding">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3932,7 +3958,7 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<skill id="14345" levels="1" name="Larva Sting">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3946,7 +3972,7 @@
 		<set name="elementPower" val="380" />
 	</skill>
 	<skill id="14346" levels="1" name="Larva Sting">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3960,7 +3986,7 @@
 		<set name="elementPower" val="380" />
 	</skill>
 	<skill id="14347" levels="1" name="Larva Bite">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4133,7 +4159,7 @@
 	</skill>
 	<!-- Falls into the swamp of darkness. Incurs damage. Moving is impossible and HP is decreased. -->
 	<skill id="14366" levels="1" name="Black Vortex Swamp">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4159,7 +4185,7 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="14368" levels="1" name="Disappear into darkness">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4169,7 +4195,7 @@
 	</skill>
 	<!-- M. Def. and P. Atk. are decreased. -->
 	<skill id="14369" levels="1" name="Fear of being alone">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -4254,7 +4280,8 @@
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14378" levels="1" name="Antharas' Grinding">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4269,7 +4296,8 @@
 	</skill>
 	<!-- Burn status. -->
 	<skill id="14379" levels="1" name="Antharas' Grinding">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4284,7 +4312,8 @@
 	</skill>
 	<!-- Stunned and unable to move momentarily. -->
 	<skill id="14380" levels="1" name="Antharas Tail Strike">
-		<set name="target" val="TARGET_FRONT_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="FRONT" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4304,7 +4333,8 @@
 	</skill>
 	<!-- You have been touched by the curse of Antharas, which has temporarily decreased all your combat stats. -->
 	<skill id="14381" levels="1" name="Curse of Antharas">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4331,7 +4361,8 @@
 	</skill>
 	<!-- Stunned and unable to move momentarily. -->
 	<skill id="14382" levels="1" name="Antharas Stun">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4353,7 +4384,8 @@
 		</for>
 	</skill>
 	<skill id="14383" levels="1" name="Antharas Meteor">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -4370,7 +4402,8 @@
 	</skill>
 	<!-- Petrified and unable to move temporarily. -->
 	<skill id="14384" levels="1" name="Antharas Petrify">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4393,7 +4426,7 @@
 		</for>
 	</skill>
 	<skill id="14385" levels="1" name="Front Foot Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4405,7 +4438,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<skill id="14386" levels="1" name="Front Foot Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4418,7 +4451,8 @@
 	</skill>
 	<!-- Afflicted with Fear and moving against own will. -->
 	<skill id="14387" levels="1" name="Antharas Fear">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4438,7 +4472,8 @@
 	</skill>
 	<!-- Afflicted with Fear and moving against own will. -->
 	<skill id="14388" levels="1" name="Antharas Fear">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -4468,7 +4503,8 @@
 		</for>
 	</skill>
 	<skill id="14390" levels="1" name="Dragon Bomber Explosion">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -4492,7 +4528,7 @@
 	</skill>
 	<!-- Stun status. -->
 	<skill id="14392" levels="1" name="Tarask Splinter">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -5237,7 +5273,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<skill id="14477" levels="1" name="Sacrifice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5450,7 +5486,8 @@
 		<set name="hitTime" val="45000" />
 	</skill>
 	<skill id="14505" levels="1" name="Enraged Earth Wyrm Appearance">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5522,8 +5559,8 @@
 		<set name="hitTime" val="500" />
 	</skill>
 	<!-- Powerfully kicks the target to knock back. P. Def. and M. Def. decreased 10%. Additional 500 decrease. Evasion 4 decrease. Accumulates with every incurred attack. -->
-	<skill id="14513" levels="1" name="Kick">
-		<set name="target" val="TARGET_ONE" />
+	<skill id="14513" levels="1" name="Fierce Kick">
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="5000" />
@@ -5637,7 +5674,8 @@
 		<set name="effectRange" val="1000" />
 	</skill>
 	<skill id="14523" levels="1" name="Frantic Dance">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="80000" />
@@ -5666,7 +5704,8 @@
 		<set name="effectRange" val="2500" />
 	</skill>
 	<skill id="14526" levels="1" name="Roar of Death">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="false" />
@@ -5948,7 +5987,7 @@
 		<set name="effectRange" val="650" />
 	</skill>
 	<skill id="14556" levels="1" name="Torumba Heal">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5970,7 +6009,7 @@
 	</skill>
 	<!-- P. Def./M. Def. are decreased. -->
 	<skill id="14558" levels="1" name="Weak Moment">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6120,7 +6159,8 @@
 	</skill>
 	<!-- Cannot move due to Medusa's Head. May lead to death if not recovered quickly! -->
 	<skill id="14575" levels="1" name="Medusa's Soul">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -6447,7 +6487,7 @@
 	</skill>
 	<!-- Inflicts no-type damage on the enemy with 124 power added to M. Atk. Decreases the enemy's attacking urge against yourself. -->
 	<skill id="14609" levels="1" name="Cry of Destiny - Dark Blast">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6536,7 +6576,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="14620" levels="4" name="Aerial Yoke Resistance 4">
+	<skill id="14620" levels="4" name="Aerial Yoke Resistance 1">
 		<table name="#name">Aerial Yoke Resistance 1;Aerial Yoke Resistance 2;Aerial Yoke Resistance 3;Aerial Yoke Resistance 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6569,7 +6609,7 @@
 	</skill>
 	<!-- Shares power with the target. -->
 	<skill id="14625" levels="1" name="Release of Power">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6868,7 +6908,7 @@
 	</skill>
 	<!-- Monster attack! Power 36675. -->
 	<skill id="14658" levels="1" name="Spinning Slasher">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="36675" />
@@ -6890,7 +6930,7 @@
 	</skill>
 	<!-- Monster attack! Power 50937. -->
 	<skill id="14660" levels="1" name="Blood Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="50937" />
@@ -6902,7 +6942,7 @@
 	</skill>
 	<!-- Monster attack! Power 49414. -->
 	<skill id="14661" levels="1" name="Darkness Wave">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="49414" />
@@ -6915,7 +6955,7 @@
 	</skill>
 	<!-- Monster attack! Power 50937. -->
 	<skill id="14662" levels="1" name="Darkness Shiver">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="50937" />
@@ -6928,7 +6968,7 @@
 	</skill>
 	<!-- Monster attack! Power 45844. -->
 	<skill id="14663" levels="1" name="Guardian's Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="45844" />
@@ -6940,7 +6980,7 @@
 	</skill>
 	<!-- Monster attack! Power 50937. -->
 	<skill id="14664" levels="1" name="Destruction Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="50937" />
@@ -6963,7 +7003,7 @@
 	</skill>
 	<!-- Monster attack! Power 50937. -->
 	<skill id="14666" levels="1" name="Penetrating Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="50937" />
@@ -7023,7 +7063,7 @@
 	</skill>
 	<!-- Uses a shield to attack the selected target with 1500 power added to P. Atk. Also decreases P. Def. by 10% and physical evasion by 2. Increase incurred physical critical damage by 10%. -->
 	<skill id="14673" levels="1" name="Cry of Destiny - Shield Charge">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1500" />
@@ -7041,7 +7081,7 @@
 	</skill>
 	<!-- Drags a target to the center. -->
 	<skill id="14674" levels="1" name="Cry of Destiny - Chain Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -7158,7 +7198,7 @@
 	</skill>
 	<!-- Inflicts magic damage with 30 power on the selected target. Decreases Fire Resistance by 20. -->
 	<skill id="14685" levels="1" name="Cry of Destiny - Elemental Spike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7170,7 +7210,7 @@
 	</skill>
 	<!-- Inflicts magic damage on the enemy with 35 power. Also decreases Speed and inflicts fear. -->
 	<skill id="14686" levels="1" name="Cry of Destiny - Elemental Crash">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7196,7 +7236,7 @@
 	-->
 	<skill id="14688" levels="2" name="Cry of Destiny - Mark of Weakness">
 		<table name="#DOT"> 40 5 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7252,7 +7292,7 @@
 	</skill>
 	<!-- Attacks the target with 1400 Power added to P. Atk. -->
 	<skill id="14692" levels="1" name="Cry of Destiny - Death Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1400" />
@@ -7344,7 +7384,7 @@
 	</skill>
 	<!-- For 1 minute, increases one's own P. Atk. by 25%, M. Atk. by 50%, P. Def. by 1800, M. Def. by 1620, HP recovery speed by 300, MP recovery speed by 300%, and Buff-canceling Attack Resistance by 80%. -->
 	<skill id="14700" levels="1" name="Maximum Defense">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="700" />
@@ -7616,7 +7656,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 	<skill id="14738" levels="1" name="Olympiad - Horn Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7635,7 +7675,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's Max MP + 20%, HP recovery bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, and Speed - 15%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage. -->
 	<skill id="14739" levels="1" name="Olympiad - Drum Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7663,7 +7703,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP recovery bonus + 20%. -->
 	<skill id="14740" levels="1" name="Olympiad - Pipe Organ Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7682,7 +7722,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20. Decreases MP consumption for physical skills - 20% and magic skills - 10%. Decreases MP consumption for Iss Enchanter's enchant skills - 20%. -->
 	<skill id="14741" levels="1" name="Olympiad - Guitar Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7703,7 +7743,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34, and received Critical Damage - 30%. -->
 	<skill id="14742" levels="1" name="Olympiad - Harp Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7723,7 +7763,7 @@
 	</skill>
 	<!-- For 30 minutes, the selected target's Atk. Spd. + 34% and Casting Spd. + 31%. Applies Vampiric Rage effect + 9% with a certain probability. -->
 	<skill id="14743" levels="1" name="Olympiad - Lute Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7741,7 +7781,7 @@
 	</skill>
 	<!-- For 30 minutes, P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 	<skill id="14744" levels="1" name="Olympiad - Knight's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7760,9 +7800,9 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 30 minutes, P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%,  and Speed + 8. -->
+	<!-- For 30 minutes, P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Speed + 8. -->
 	<skill id="14745" levels="1" name="Olympiad - Warrior's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7782,9 +7822,9 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 30 minutes, M. Atk. + 40%, M. Critical Rate + 100%,  Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and for physical skills - 5%,  and Cooldown - 20%. -->
+	<!-- For 30 minutes, M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption for magic skills - 15% and for physical skills - 5%, and Cooldown - 20%. -->
 	<skill id="14746" levels="1" name="Olympiad - Wizard's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -7938,7 +7978,8 @@
 	</skill>
 	<!-- Launches a powerful attack on the target around you -->
 	<skill id="14767" levels="1" name="Siege Punch">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="60000" />
@@ -8016,7 +8057,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases P. Atk. + 23%, P. Def. + 15%, M. Atk. + 91%, and M. Def. + 30%. -->
 	<skill id="14779" levels="1" name="Master's Blessing - Horn Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8036,7 +8077,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Max MP + 20%, HP recovery bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and damage received from a critical attack - 30%. Additionally increases Critical Damage during a normal attack when receiving more than a certain amount of damage. -->
 	<skill id="14780" levels="1" name="Master's Blessing - Drum Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8064,7 +8105,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Max HP + 43%, Max MP + 43%, Max CP + 43%, and HP recovery bonus + 20%. -->
 	<skill id="14781" levels="1" name="Master's Blessing - Pipe Organ Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8084,7 +8125,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases P. Critical Rate + 38%, P. Critical Damage + 35%, and M. Critical Rate + 20. Decreases MP consumption for physical skills - 20% and magic skills - 10%. Decreases MP consumption for Iss Enchanter's enchant skills - 20%. -->
 	<skill id="14782" levels="1" name="Master's Blessing - Guitar Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8106,7 +8147,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases P. Accuracy + 8, physical and magic evasion + 8, and speed + 37. Decreases received critical damage - 30%. -->
 	<skill id="14783" levels="1" name="Master's Blessing - Harp Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8127,7 +8168,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Atk. Spd. + 37% and Casting Spd. + 34%. Applies Vampiric Rage effect + 9% with a certain probability. -->
 	<skill id="14784" levels="1" name="Master's Blessing - Lute Melody">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8146,7 +8187,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, Shield Defense + 50%. -->
 	<skill id="14785" levels="1" name="Master's Blessing - Knight's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8168,7 +8209,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, Speed + 8. -->
 	<skill id="14786" levels="1" name="Master's Blessing - Warrior's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8189,9 +8230,9 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- The GM is always with you. For 1 hour, M. Atk. + 40%, M. Critical Rate + 100%,  Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption - 15% for magic skills and - 5% for physical skills , and Cooldown - 20%. -->
+	<!-- The GM is always with you. For 1 hour, M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption - 15% for magic skills and - 5% for physical skills , and Cooldown - 20%. -->
 	<skill id="14787" levels="1" name="Master's Blessing - Wizard's Harmony">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8219,7 +8260,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Fire/Water/Wind/Earth Resistance by 30. -->
 	<skill id="14788" levels="1" name="Master's Blessing - Elemental Resistance">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8239,7 +8280,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Holy/Dark Attack Resistance by 30, and Poison/Bleed Resistance by 50%. -->
 	<skill id="14789" levels="1" name="Master's Blessing - Holy Attack Resistance">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8259,7 +8300,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Hold/Sleep/Mental Attack Resistance by 50, Buff Cancellation Resistance by 30, and Debuff Resistance by 20. -->
 	<skill id="14790" levels="1" name="Master's Blessing - Mental Attack Resistance">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -8350,7 +8391,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, M. Atk. + 40%, M. Critical Rate + 100%,  Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption -5% for magic skills and - 5% for physical skills, and Cooldown - 20%. -->
+	<!-- The GM is always with you. For 1 hour, M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Speed + 8, M. Def. + 14%, MP Recovery Bonus + 20%, MP Consumption -5% for magic skills and - 5% for physical skills, and Cooldown - 20%. -->
 	<skill id="14799" levels="1" name="Master's Blessing - Wizard's Harmony">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -8704,20 +8745,20 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14834" levels="1" name="Larva Blow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14835" levels="1" name="Dwarf Explosion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
-	<!-- Stunned and unable to move momentarily. -->
+	<!-- Momentarily stuns and paralyzes target. -->
 	<skill id="14836" levels="1" name="Nonsense">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10086,7 +10127,8 @@
 	</skill>
 	<!-- Restores all party members' HP with 66 Power. -->
 	<skill id="14972" levels="1" name="Group Heal">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10097,7 +10139,7 @@
 		<set name="skillRadius" val="1200" />
 	</skill>
 	<skill id="14973" levels="1" name="Delusion Cut">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="60000" />
@@ -10107,7 +10149,7 @@
 		<set name="effectRange" val="650" />
 	</skill>
 	<skill id="14974" levels="1" name="Delusion Judgment">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="60000" />
@@ -10117,7 +10159,7 @@
 	</skill>
 	<!-- For 5 minutes, increases Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, and MP recovery bonus by 20%, and decreases MP Consumption for magic skill by 10% and the magic cancel rate. -->
 	<skill id="14975" levels="1" name="Mysterious Combat Buff">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10141,7 +10183,7 @@
 	</skill>
 	<!-- For 5 minutes, increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8%, and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 	<skill id="14976" levels="1" name="Mysterious Speed Buff">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10152,7 +10194,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectRange" val="2500" />
 		<for>
-			<abnormal duration="300" stackLvl="10" stackType="daring_sonata, song_of_water, song_of_wind, song_of_life, dance_of_inspiration, dmg_shield">
+			<abnormal duration="300" stackLvl="10" stackType="daring_sonata, song_of_water, song_of_wind, song_of_life, dance_of_inspiration, dmg_shield, combat_aura">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="8" />
 				<addPercent stat="mAtk" val="16" />
@@ -10165,9 +10207,9 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 5 minutes, increases HP Recovery Bonus by 20%, P.Â Accuracy by 4, P.Â Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- For 5 minutes, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14977" levels="1" name="Mysterious Focus Buff">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10241,7 +10283,7 @@
 	</skill>
 	<!-- For 10 seconds, HP is absorbed by 10% every second. If untreated while inflicted with absorption, this will lead to death. -->
 	<skill id="14984" levels="1" name="HP Drain">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="CONTINUOUS_DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10278,7 +10320,8 @@
 	</skill>
 	<!-- Cannot move. -->
 	<skill id="14988" levels="1" name="Prisoner's Yoke">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -10330,7 +10373,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate. -->
 	<skill id="14993" levels="1" name="Master's Blessing - Prevailing Sonata">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -10351,7 +10394,7 @@
 	</skill>
 	<!-- The GM is always with you. For 1 hour, increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. and Casting Spd. by 8% and decreases P. Def. by 3%, M. Def. by 11% and P. Evasion by 4. Also bestows an 8% Vampiric Rage effect and a chance of reflecting 10% of the damage received. -->
 	<skill id="14994" levels="1" name="Master's Blessing - Daring Sonata">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -10359,7 +10402,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<for>
-			<abnormal duration="3600" stackLvl="10" stackType="daring_sonata, song_of_water, song_of_wind, song_of_life, dance_of_inspiration, dmg_shield">
+			<abnormal duration="3600" stackLvl="10" stackType="daring_sonata, song_of_water, song_of_wind, song_of_life, dance_of_inspiration, dmg_shield, combat_aura">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="8" />
 				<addPercent stat="mAtk" val="16" />
@@ -10369,12 +10412,13 @@
 				<subPercent stat="mDef" val="11" />
 				<sub stat="rEvas" val="4" />
 				<add stat="absorbDam" val="8" />
+				<add stat="reflectDam" val="10" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.Â Accuracy by 4, P.Â Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14995" levels="1" name="Master's Blessing - Refreshing Sonata">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -10411,7 +10455,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.Â Accuracy by 4, P.Â Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14998" levels="1" name="Master's Blessing - Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.chess;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -16,13 +17,8 @@ public class ChessEvent
 {
 	public enum ChessState
 	{
-		INACTIVATING,
-		PARTICIPATING,
-		STARTING,
-		STARTED,
-		REWARDING
+		INACTIVATING, PARTICIPATING, STARTING, STARTED, REWARDING
 	}
-	
 	
 	private static ChessEventSide[] _sides = new ChessEventSide[2];
 	
@@ -34,7 +30,7 @@ public class ChessEvent
 	
 	private static int[] _waitingPlayerSideIds = new int[8];
 	
-	public static byte turn = (byte)0;
+	public static byte turn = (byte) 0;
 	
 	public static boolean pieceMoving = false;
 	
@@ -47,9 +43,9 @@ public class ChessEvent
 	
 	public static void init()
 	{
-		_sides[0] = new ChessEventSide((byte)0);
-		_sides[1] = new ChessEventSide((byte)1);
-		turn = (byte)0;
+		_sides[0] = new ChessEventSide((byte) 0);
+		_sides[1] = new ChessEventSide((byte) 1);
+		turn = (byte) 0;
 		for (int i = 0; i < 8; i++)
 		{
 			_waitingPlayers[i][0] = null;
@@ -94,7 +90,7 @@ public class ChessEvent
 		rewardPlayer(winner);
 		stopFight(winner);
 		MagicSkillUse MSU = new MagicSkillUse(winner, winner, 2025, 1, 1, 0, 0);
-		L2Skill skill = SkillTable.getInstance().getInfo(2025,1);
+		L2Skill skill = SkillTable.getInstance().getInfo(2025, 1);
 		winner.sendPacket(MSU);
 		winner.broadcastPacket(MSU);
 		winner.useMagic(skill, false, false);
@@ -106,7 +102,7 @@ public class ChessEvent
 			return;
 		
 		/*SystemMessage systemMessage = null;
-		
+
 		PcInventory inv = player.getInventory();
 		inv.addItem("Tenkai Events", 6392, 1, player, player);
 		systemMessage = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
@@ -129,7 +125,7 @@ public class ChessEvent
 		
 		if (winner != null)
 		{
-			_sides[1-getParticipantSideId(winner.getObjectId())].defeatMe();
+			_sides[1 - getParticipantSideId(winner.getObjectId())].defeatMe();
 			_sides[getParticipantSideId(winner.getObjectId())].cleanMe();
 		}
 		else
@@ -142,7 +138,7 @@ public class ChessEvent
 		_sides[1].setCanTheKingBeKilled(false);
 		_sides[1].setHasWon(false);
 		
-		turn = (byte)0;
+		turn = (byte) 0;
 		for (int i = 0; i < 8; i++)
 			for (int j = 0; j < 8; j++)
 				_board[i][j] = null;
@@ -162,14 +158,15 @@ public class ChessEvent
 		
 		int i = 0;
 		
-		while (i < 8 && !trobat)
+		while ((i < 8) && !trobat)
 		{
-			if (_waitingPlayers[i][0] == null && _waitingPlayers[i][1] == null) trobat = true;
+			if ((_waitingPlayers[i][0] == null) && (_waitingPlayers[i][1] == null))
+				trobat = true;
 			i++;
 		}
 		
-		_waitingPlayers[i-1][sideId] = playerInstance;
-		_waitingPlayerSideIds[i-1] = sideId;
+		_waitingPlayers[i - 1][sideId] = playerInstance;
+		_waitingPlayerSideIds[i - 1] = sideId;
 		
 		return trobat;
 	}
@@ -183,9 +180,9 @@ public class ChessEvent
 		boolean trobat = false;
 		int i = 0;
 		
-		while (i < 8 && !trobat)
+		while ((i < 8) && !trobat)
 		{
-			if ((_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId()) || (_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId()))
+			if (((_waitingPlayers[i][0] != null) && (_waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())) || ((_waitingPlayers[i][1] != null) && (_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())))
 			{
 				_waitingPlayers[i][0] = null;
 				_waitingPlayers[i][1] = null;
@@ -232,13 +229,13 @@ public class ChessEvent
 		
 		int i = 0;
 		
-		while (i < 8 && target == null)
+		while ((i < 8) && (target == null))
 		{
-			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
+			if ((_waitingPlayers[i][0] != null) && (_waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId()))
 			{
 				target = _waitingPlayers[i][1];
 			}
-			else if (_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if ((_waitingPlayers[i][1] != null) && (_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId()))
 			{
 				target = _waitingPlayers[i][0];
 				side = 1;
@@ -265,14 +262,14 @@ public class ChessEvent
 		
 		int i = 0;
 		
-		while (i < 8 && target == null)
+		while ((i < 8) && (target == null))
 		{
-			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId())
+			if ((_waitingPlayers[i][0] != null) && (_waitingPlayers[i][0].getObjectId() == playerInstance.getObjectId()))
 			{
 				target = _waitingPlayers[i][1];
 				_waitingPlayers[i][1] = null;
 			}
-			else if (_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId())
+			else if ((_waitingPlayers[i][1] != null) && (_waitingPlayers[i][1].getObjectId() == playerInstance.getObjectId()))
 			{
 				target = _waitingPlayers[i][0];
 				_waitingPlayers[i][0] = null;
@@ -306,20 +303,25 @@ public class ChessEvent
 	
 	public static void onLogout(L2PcInstance playerInstance)
 	{
-		if (playerInstance != null && (isState(ChessState.STARTING) || isState(ChessState.STARTED) || isState(ChessState.PARTICIPATING)))
+		if ((playerInstance != null) && (isState(ChessState.STARTING) || isState(ChessState.STARTED) || isState(ChessState.PARTICIPATING)))
 		{
-			if (isState(ChessState.STARTED) && isPlayerParticipant(playerInstance.getObjectId())) for (L2Abnormal effect : playerInstance.getAllEffects()) if (effect != null) effect.exit();
+			if (isState(ChessState.STARTED) && isPlayerParticipant(playerInstance.getObjectId()))
+				for (L2Abnormal effect : playerInstance.getAllEffects())
+					if (effect != null)
+						effect.exit();
 			removeParticipant(playerInstance.getObjectId());
 		}
 	}
 	
 	public static synchronized void onBypass(String command, L2PcInstance playerInstance)
 	{
-		if (playerInstance == null || !isState(ChessState.PARTICIPATING)) {
+		if ((playerInstance == null) || !isState(ChessState.PARTICIPATING))
+		{
 			return;
 		}
 		
-		if (command.startsWith("wait") && getParticipantSideId(playerInstance.getObjectId()) == -1) {
+		if (command.startsWith("wait") && (getParticipantSideId(playerInstance.getObjectId()) == -1))
+		{
 			
 			int sideId = Integer.valueOf(command.substring(4));
 			
@@ -369,8 +371,7 @@ public class ChessEvent
 			
 			NpcHtmlMessage npcHtmlMessage2 = new NpcHtmlMessage(0);
 			
-			npcHtmlMessage2.setHtml("<html><head><title>Instanced Events</title></head><body>" + playerInstance.getName() + " has challenged you for a game. Do you accept?<br>" +
-					"To accept talk with the Chess Manager.</body></html>");
+			npcHtmlMessage2.setHtml("<html><head><title>Instanced Events</title></head><body>" + playerInstance.getName() + " has challenged you for a game. Do you accept?<br>" + "To accept talk with the Chess Manager.</body></html>");
 			target.sendPacket(npcHtmlMessage2);
 		}
 		else if (command.equals("accept"))
@@ -423,8 +424,9 @@ public class ChessEvent
 		return isState;
 	}
 	
-	public static byte getParticipantSideId(int playerObjectId) {
-		return (byte)(_sides[0].containsPlayer(playerObjectId) ? 0 : (_sides[1].containsPlayer(playerObjectId) ? 1 : -1));
+	public static byte getParticipantSideId(int playerObjectId)
+	{
+		return (byte) (_sides[0].containsPlayer(playerObjectId) ? 0 : (_sides[1].containsPlayer(playerObjectId) ? 1 : -1));
 	}
 	
 	public static boolean isPlayerParticipant(int playerObjectId)
@@ -439,8 +441,8 @@ public class ChessEvent
 	public static boolean isPlayerWaiting(int playerObjectId)
 	{
 		for (int i = 0; i < 8; i++)
-			if ((_waitingPlayers[i][0] != null && _waitingPlayers[i][0].getObjectId() == playerObjectId) ||
-					(_waitingPlayers[i][1] != null && _waitingPlayers[i][1].getObjectId() == playerObjectId)) return true;
+			if (((_waitingPlayers[i][0] != null) && (_waitingPlayers[i][0].getObjectId() == playerObjectId)) || ((_waitingPlayers[i][1] != null) && (_waitingPlayers[i][1].getObjectId() == playerObjectId)))
+				return true;
 		return false;
 	}
 	
@@ -448,9 +450,7 @@ public class ChessEvent
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			if (_waitingPlayerSideIds[i] != -1 &&
-					_waitingPlayers[i][_waitingPlayerSideIds[i]] != null &&
-					_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId)
+			if ((_waitingPlayerSideIds[i] != -1) && (_waitingPlayers[i][_waitingPlayerSideIds[i]] != null) && (_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId))
 			{
 				return true;
 			}
@@ -461,8 +461,8 @@ public class ChessEvent
 	public static boolean isPlayerChallenged(int playerObjectId)
 	{
 		for (int i = 0; i < 8; i++)
-			if (_waitingPlayers[i][0] != null && _waitingPlayers[i][1] != null && _waitingPlayerSideIds[i] != -1 &&
-					_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId) return true;
+			if ((_waitingPlayers[i][0] != null) && (_waitingPlayers[i][1] != null) && (_waitingPlayerSideIds[i] != -1) && (_waitingPlayers[i][_waitingPlayerSideIds[i]].getObjectId() == playerObjectId))
+				return true;
 		return false;
 	}
 	
@@ -483,11 +483,14 @@ public class ChessEvent
 	
 	public static L2ChessPieceInstance[][] getBoard(int side)
 	{
-		if (side == 0) return _board;
+		if (side == 0)
+			return _board;
 		else
 		{
 			L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
-			for (int i = 0; i < 8; i++) for (int j = 0; j < 8; j++) board[i][j] = _board[7-i][7-j];
+			for (int i = 0; i < 8; i++)
+				for (int j = 0; j < 8; j++)
+					board[i][j] = _board[7 - i][7 - j];
 			return board;
 		}
 	}

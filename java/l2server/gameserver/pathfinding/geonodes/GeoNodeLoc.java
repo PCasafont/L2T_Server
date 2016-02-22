@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.pathfinding.geonodes;
 
 import l2server.gameserver.model.L2World;
@@ -40,7 +41,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return   L2World.MAP_MIN_X  + _x * 128 + 48 ;
+		return L2World.MAP_MIN_X + (_x * 128) + 48;
 	}
 	
 	/**
@@ -49,7 +50,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return  L2World.MAP_MIN_Y + _y * 128 + 48 ;
+		return L2World.MAP_MIN_Y + (_y * 128) + 48;
 	}
 	
 	/**
@@ -87,9 +88,9 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + _x;
-		result = prime * result + _y;
-		result = prime * result + _z;
+		result = (prime * result) + _x;
+		result = (prime * result) + _y;
+		result = (prime * result) + _z;
 		return result;
 	}
 	

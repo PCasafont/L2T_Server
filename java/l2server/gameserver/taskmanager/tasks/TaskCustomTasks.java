@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager.tasks;
 
 import java.util.Calendar;
@@ -21,8 +22,8 @@ import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
-import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
+import l2server.gameserver.taskmanager.TaskTypes;
 
 public class TaskCustomTasks extends Task
 {

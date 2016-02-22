@@ -1737,13 +1737,13 @@
 		<set name="reuseDelay" val="86400000" />
 	</skill>
 	<!-- Halloween Outfit Appearance Stone without the additional skill. -->
-	<skill id="27347" levels="1" name="NoSkillName">
+	<skill id="27347" levels="1" name="Halloween Outfit Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Halloween Weapon Appearance Stone without the additional skill. -->
-	<skill id="27348" levels="1" name="NoSkillName">
+	<skill id="27348" levels="1" name="Halloween Weapon Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2341,7 +2341,7 @@
 	</skill>
 	<!-- Invincinble for 10 seconds. Cooldown 30 minutes. -->
 	<skill id="27441" levels="1" name="Cat's Eye - Invincibility">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -2357,7 +2357,13 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Damage in PvP. -->
+	<!-- 
+		Level 1: Increases Damage in PvP by 3%.
+		Level 2: Increases Damage in PvP by 5%.
+		Level 3: Increases Damage in PvP by 7%.
+		Level 4: Increases Damage in PvP by 10%.
+		Level 5: Increases Damage in PvP by 15%.
+	-->
 	<skill id="27442" levels="5" name="Amethyst">
 		<table name="#pvpDam"> 3 5 7 10 15 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -2371,7 +2377,7 @@
 	</skill>
 	<!-- Removes invincibility of target. Cooldown 30 minutes. -->
 	<skill id="27443" levels="1" name="Amethyst - Remove Invincibility">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2110" />
@@ -2382,9 +2388,6 @@
 		<set name="effectRange" val="1400" />
 		<set name="ignoreImmunity" val="true" />
 		<for>
-			<cond>
-				<player olympiad="false" />
-			</cond>
 			<abnormal>
 				<effect type="RemoveInvul" val="0" />
 			</abnormal>
@@ -2403,32 +2406,952 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="27446" levels="1" name="NoSkillName">
+	<skill id="27446" levels="1" name="Lv. 5 Legendary CHA Dye Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<skill id="27447" levels="1" name="NoSkillName">
+	<skill id="27447" levels="1" name="Lv. 5 Legendary LUC Dye Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<skill id="27448" levels="1" name="NoSkillName">
+	<skill id="27448" levels="1" name="Lv. 3 Legendary CHA Dye Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<skill id="27449" levels="1" name="NoSkillName">
+	<skill id="27449" levels="1" name="Lv. 3 Legendary LUC Dye Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27450" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27451" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27452" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27453" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27454" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27455" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27456" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27457" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27458" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27459" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27460" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27461" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27462" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27463" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27464" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27465" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27466" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27467" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27468" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27469" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27470" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27471" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27472" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27473" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27474" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27475" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27476" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27477" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27478" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27479" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27480" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27481" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27482" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27483" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27484" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27485" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27486" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27487" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27488" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27489" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27490" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27491" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27492" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27493" levels="1" name="Pirate Captain Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27494" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27495" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27496" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27497" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27498" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27499" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27500" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27501" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27502" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27503" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27504" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27505" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27506" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27507" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27508" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27509" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27510" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27511" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27512" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27513" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27514" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27515" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27516" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27517" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27518" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27519" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27520" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27521" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27522" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27523" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27524" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27525" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27526" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27527" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27528" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27529" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27530" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27531" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27532" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27533" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27534" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27535" levels="1" name="Pirate Crew Appeareance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27536" levels="1" name="Rabbit Ears Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27537" levels="1" name="Raccoon Ears Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27538" levels="1" name="Cat Ears Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27539" levels="1" name="Romantic Chapeau Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27540" levels="1" name="Angel Circlet Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27541" levels="1" name="Demon Circlet Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27542" levels="1" name="Pirate's Eyepatch Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27543" levels="1" name="Outlaw's Eyepatch Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27544" levels="1" name="Eyepatch Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27545" levels="1" name="Party Hat Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27546" levels="1" name="Refined Angel Ring Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27547" levels="1" name="Refined Devil Horn Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<!-- Cancels your debuffs. -->
+	<skill id="27548" levels="1" name="Garnet - Purge">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="180000" />
+	</skill>
+	<!-- 
+		Level 1: Creates a protection shield that absorbs 5,000 damage for 5 seconds.
+		Level 2: Creates a protection shield that absorbs 10,000 damage for 5 seconds.
+		Level 3: Creates a protection shield that absorbs 15,000 damage for 10 seconds.
+		Level 4: Creates a protection shield that absorbs 30,000 damage for 10 seconds.
+		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
+	-->
+	<skill id="27549" levels="5" name="Tanzanite - Barrier">
+		<table name="#duration"> 5 5 10 10 15 </table>
+		<table name="#damage"> 5000 10000 15000 30000 50000 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="180000" />
+		<set name="staticReuse" val="true" />
+		<set name="damageToRemove" val="#damage" />
+		<for>
+			<abnormal duration="#duration" stackLvl="1" stackType="dmg_barrier" visualEffect="invincible">
+				<effect type="Invincible" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Vitality Status Bonus EXP by 3%.
+		Level 2: Increases Vitality Status Bonus EXP by 6%.
+		Level 3: Increases Vitality Status Bonus EXP by 12%.
+		Level 4: Increases Vitality Status Bonus EXP by 25% and decreases Vitality Point Consumption Speed by 7%.
+		Level 5: Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%.
+	-->
+	<skill id="27550" levels="5" name="Vital Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="27551" levels="1" name="Shadai's Jewelry Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. -->
+	<skill id="27556" levels="1" name="Maphr's Wind Scroll">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="60000" />
+	</skill>
+	<skill id="27557" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27558" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27559" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27560" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27561" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27562" levels="1" name="Extra Pass">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27563" levels="1" name="Rare Accessory Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27564" levels="1" name="Greater Rare Accessory Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27565" levels="1" name="Soul Bottle Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27566" levels="1" name="Soul Crystal Coupon Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27567" levels="1" name="Talisman - Abundance Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27568" levels="1" name="Spirit Stone Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27569" levels="1" name="Hair Accessory Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27570" levels="1" name="Pendant Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27571" levels="1" name="Ingredient Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27572" levels="1" name="Attribute Stone Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27573" levels="1" name="Greater Attribute Stone Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27574" levels="1" name="Enchant Scroll Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27575" levels="1" name="Greater Enchant Scroll Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27576" levels="1" name="Lucky Enchant Stone Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27577" levels="1" name="Greater Lucky Enchant Stone Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27578" levels="1" name="Treasure Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27579" levels="1" name="Hero's Treasure Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- XP/SP + 100% for 1 hour. Cannot be stacked with Maphr's Wind Scroll. Buff remains after death. -->
+	<skill id="27580" levels="1" name="Wind of Bard">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="60000" />
+	</skill>
+	<skill id="27581" levels="1" name="Talisman - Abundance Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27582" levels="1" name="Treasure Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27583" levels="1" name="Hero's Treasure Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- CON + 2 -->
+	<skill id="27584" levels="1" name="Novice Adventurer's Shirt Effect">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- INT + 2, STR + 2, Speed + 7 -->
+	<skill id="27585" levels="1" name="Adventurer's Shirt Effect">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Critical Rate + 10 -->
+	<skill id="27586" levels="1" name="Novice Adventurer's Circlet - Critical Rate">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Critical Rate + 20 -->
+	<skill id="27587" levels="1" name="Experienced Adventurer's Circlet - Critical Rate">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 3%, M. Atk. + 6% -->
+	<skill id="27588" levels="1" name="Adventurer's Circlet - Critical Rate">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="27589" levels="1" name="Adventurer's Support Cube">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="-1000" />
+	</skill>
+	<skill id="27590" levels="1" name="Talisman - Abundance Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27591" levels="1" name="+ 8 Shiny Elemental Shirt Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27592" levels="1" name="+ 8 Reflect Attack T-shirt Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27593" levels="1" name="+ 8 Reflect Magic T-shirt Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27594" levels="1" name="+ 7 Bloody Amaranthine Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27595" levels="1" name="Lv. 4 Jewel Bundle">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Can mount the Riding Wolf. -->
+	<skill id="27596" levels="1" name="Riding Wolf">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<skill id="27597" levels="1" name="Summon Riding Wolf">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+	</skill>
+	<!-- Swing the bat for a home run. P. Accuracy + 1 for 5 minutes. -->
+	<skill id="27598" levels="1" name="Perfect Swing">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5500" />
+		<set name="coolTime" val="400" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Throw the ball as best as you can for a strikeout. M. Accuracy + 1 for 5 minutes. -->
+	<skill id="27599" levels="1" name="Perfect Pitch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5500" />
+		<set name="coolTime" val="400" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<skill id="27600" levels="1" name="Lineage II Baseball Uniform Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27601" levels="1" name="Lineage II Baseball Cap Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- MEN/WIT/CON/INT/DEX/STR + 1. Can equip 3 Talismans. -->
+	<skill id="27602" levels="1" name="Adventurer's Bracelet">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="27603" levels="1" name="Weekend Login Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27604" levels="1" name="Monthly Login Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27605" levels="1" name="Daily Quest Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27606" levels="1" name="Daily Instance Instance Zone Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27607" levels="1" name="Daily Fishing Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27608" levels="1" name="Olympiad Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27609" levels="1" name="Ceremony of Chaos Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27610" levels="1" name="Castle Siege Reward Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27611" levels="1" name="Lord's Special Supply Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27612" levels="1" name="Lord's Special Supply Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27613" levels="1" name="Lord's Special Supply Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27614" levels="1" name="Lord's Special Supply Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. -->
+	<skill id="27615" levels="1" name="Maphr's Wind Scroll">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="60000" />
+	</skill>
+	<!-- State in which the Vitality Stage is maintained. -->
+	<skill id="27616" levels="1" name="Vitality Maintaining Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<skill id="27617" levels="1" name="Abundance Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27618" levels="1" name="Daily Mission Reward Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27619" levels="1" name="Card Pouch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Card containing the energy of Exalted. All attribute resistance + 30. -->
+	<skill id="27620" levels="1" name="Exalted Energy Card">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 </list>

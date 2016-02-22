@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -41,7 +42,6 @@ import l2server.gameserver.instancemanager.CastleManorManager.SeedProduction;
 
 public final class BuyListSeed extends L2GameServerPacket
 {
-	private static final String _S__E8_BUYLISTSEED = "[S] e9 BuyListSeed";
 	
 	private int _manorId;
 	private List<Seed> _list = null;
@@ -52,12 +52,12 @@ public final class BuyListSeed extends L2GameServerPacket
 		_money = currentMoney;
 		_manorId = castleId;
 		
-		if (seeds != null && seeds.size() > 0)
+		if ((seeds != null) && (seeds.size() > 0))
 		{
 			_list = new ArrayList<Seed>();
 			for (SeedProduction s : seeds)
 			{
-				if (s.getCanProduce() > 0 && s.getPrice() > 0)
+				if ((s.getCanProduce() > 0) && (s.getPrice() > 0))
 					_list.add(new Seed(s.getId(), s.getCanProduce(), s.getPrice()));
 			}
 		}
@@ -66,12 +66,10 @@ public final class BuyListSeed extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xe9);
-		
 		writeQ(_money); // current money
 		writeD(_manorId); // manor id
 		
-		if (_list != null && _list.size() > 0)
+		if ((_list != null) && (_list.size() > 0))
 		{
 			writeH(_list.size()); // list length
 			for (Seed s : _list)
@@ -106,12 +104,6 @@ public final class BuyListSeed extends L2GameServerPacket
 		else
 			writeH(0x00);
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__E8_BUYLISTSEED;
 	}
 	
 	private static class Seed

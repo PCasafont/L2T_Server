@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class KingOfTheHill extends EventInstance
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				if (!KingOfTheHill.this.isState(EventState.STARTED))
@@ -41,10 +43,10 @@ public class KingOfTheHill extends EventInstance
 					if (player == null)
 						continue;
 					
-					if (highest == null || player.getZ() > highest.getZ())
+					if ((highest == null) || (player.getZ() > highest.getZ()))
 						highest = player;
 				}
-
+				
 				if (highest != null)
 					highest.addEventPoints(1);
 				ThreadPoolManager.getInstance().scheduleGeneral(this, 1000);
@@ -102,7 +104,7 @@ public class KingOfTheHill extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if (killedPlayerInstance == null || !isState(EventState.STARTED))
+		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);

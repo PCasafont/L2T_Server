@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.PlayerClassTable;
@@ -36,11 +37,10 @@ public final class RequestFlyMoveStart extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass()).getLevel() < 85
-				|| activeChar.getReputation() < 0 || activeChar.isMounted() || activeChar.isTransformed())
+		if ((activeChar == null) || (PlayerClassTable.getInstance().getClassById(activeChar.getBaseClass()).getLevel() < 85) || (activeChar.getReputation() < 0) || activeChar.isMounted() || activeChar.isTransformed())
 			return;
 		
-		if (!activeChar.getSummons().isEmpty() )
+		if (!activeChar.getSummons().isEmpty())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
 			return;
@@ -48,14 +48,4 @@ public final class RequestFlyMoveStart extends L2GameClientPacket
 		
 		activeChar.startFlyMove();
 	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "RequestFlyMoveStart";
-	}
-	
 }

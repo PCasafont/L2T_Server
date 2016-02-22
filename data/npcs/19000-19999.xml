@@ -292,10 +292,10 @@
 			darkRes="280" aiType="fighter">
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5463" level="1" /> <!-- Water Attack -->
-		<itemDrop itemId="35472" min="1" max="1" chance="60" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35472" min="1" max="1" chance="60" /> <!-- Recipe: Eternal Leather Boots (60%) -->
 		<itemDrop itemId="57" min="1" max="1" chance="40" /> <!-- Adena -->
-		<itemDrop itemId="35468" min="1" max="1" chance="20" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35477" min="1" max="1" chance="20" /> <!-- Recipe:Â Eternal Shoes (60%) -->
+		<itemDrop itemId="35468" min="1" max="1" chance="20" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35477" min="1" max="1" chance="20" /> <!-- Recipe: Eternal Shoes (60%) -->
 	</npc>
 	<npc id="19042" name="Jewel Management" level="98" type="L2Npc" atkRange="40" hpMax="13190" hpReg="11.84" mpMax="3066" mpReg="8.59"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="43000" mAtk="32250" pDef="1720" mDef="1740" pAtkSpd="253"
@@ -502,8 +502,8 @@
 	<npc id="19081" name="Earth Wyrm Heart" level="99" type="L2Monster" atkRange="40" hpMax="29536104" hpReg="100.5" mpMax="2555"
 			mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="40000" mAtk="30000"
 			pDef="1600" mDef="1650" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="60"
-			collisionHeight="67" showName="false" isDebuffImmune="true" isLethalImmune="true" fireRes="160" waterRes="160" windRes="160" earthRes="160"
-			holyRes="160" darkRes="160" aiType="balanced" skillChance="15" clan="larva_clan" clanRange="600">
+			collisionHeight="67" showName="false" isLethalImmune="true" isDebuffImmune="true" fireRes="160" waterRes="160" windRes="160"
+			earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" clan="larva_clan" clanRange="600">
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
@@ -1828,8 +1828,8 @@
 		<itemDrop itemId="34903" min="1" max="1" chance="20.7709" /> <!-- Mysterious Shadow -->
 		<itemDrop itemId="36038" min="1" max="1" chance="19.2996" /> <!-- Mysterious Defense -->
 	</npc>
-	<npc id="19269" name="Clan Flag" level="90" type="L2Monster" atkRange="40" hpMax="2210418" hpReg="71.06" mpMax="2555" mpReg="51.57"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30625" mAtk="21875" pDef="1300" mDef="1250" pAtkSpd="253"
+	<npc id="19269" name="Clan Flag" level="99" type="L2Monster" atkRange="40" hpMax="22104185" hpReg="71.06" mpMax="2555" mpReg="51.57"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30625" mAtk="21875" pDef="3300" mDef="3250" pAtkSpd="253"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="15" collisionHeight="120" fireRes="300"
 			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter" canMove="false">
 	</npc>
@@ -3828,11 +3828,11 @@
 		<itemDrop itemId="9556" min="1" max="1" chance="0.003" /> <!-- Dark Crystal -->
 		<itemDrop itemId="9552" min="1" max="1" chance="0.003" /> <!-- Fire Crystal -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.0009" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Retributer (60%) -->
 		<itemDrop itemId="19448" min="1" max="1" chance="0.0009" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="19447" min="1" max="1" chance="0.0009" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
+		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Buster (60%) -->
 		<spawn x="178310" y="15841" z="-8312" heading="17330" respawn="60" />
 		<spawn x="177962" y="15817" z="-8312" heading="17345" respawn="60" />
 		<spawn x="177319" y="16184" z="-8312" heading="2639" respawn="60" />
@@ -3877,9 +3877,9 @@
 		<itemDrop itemId="35336" min="1" max="1" chance="0.03" /> <!-- Amaranthine Caster Fragment -->
 		<itemDrop itemId="17527" min="1" max="1" chance="0.03" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.003" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
+		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Caster (60%) -->
 	</npc>
 	<npc id="19457" name="Travis" title="Deceased King" level="99" type="L2Npc" atkRange="40" hpMax="274061" hpReg="31.86" mpMax="3066"
 			mpReg="23.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="11764590" sp="2823" pAtk="53240" mAtk="48180"
@@ -3903,9 +3903,9 @@
 		<itemDrop itemId="35336" min="1" max="1" chance="0.03" /> <!-- Amaranthine Caster Fragment -->
 		<itemDrop itemId="17527" min="1" max="1" chance="0.03" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.003" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
+		<itemDrop itemId="35461" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35459" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35460" min="1" max="1" chance="0.0009" /> <!-- Recipe: Amaranthine Caster (60%) -->
 	</npc>
 	<npc id="19458" name="Treasure Dealer Kaysen" level="99" type="L2Npc" atkRange="40" hpMax="27406" hpReg="15.22" mpMax="3066"
 			mpReg="10.33" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="44000" mAtk="33000" pDef="1760" mDef="1770"
@@ -4303,8 +4303,8 @@
 	</npc>
 	<npc id="19490" name="Seal Remnant" level="99" type="L2Monster" atkRange="40" hpMax="8689342" hpReg="106.81" mpMax="1811920"
 			mpReg="77.5" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="4354978" mAtk="2056913" pDef="22107" mDef="15049"
-			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="25" runSpd="1" collisionRadius="13" collisionHeight="22" canBeChampion="false"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" canMove="false">
+			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="25" runSpd="1" collisionRadius="13" collisionHeight="22"
+			canBeChampion="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" canMove="false">
 	</npc>
 	<npc id="19491" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
 			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
@@ -4326,7 +4326,6 @@
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
 			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="1" collisionRadius="10" collisionHeight="23.75" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-		<spawn x="-20867" y="237548" z="-2808" heading="17483" respawn="60" />
 	</npc>
 	<npc id="19495" name="Freed Wizard" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42" mpMax="53046" mpReg="8.29"
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
@@ -4368,12 +4367,15 @@
 			pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="19503" name="Bridget" title="Fire Slave" level="99" type="L2Npc" atkRange="40" hpMax="328873" hpReg="33.96" mpMax="68577"
-			mpReg="24.64" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
-			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="46" runSpd="160" collisionRadius="35" collisionHeight="47.5" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	<npc id="19503" name="Bridget" title="Fire Slave" level="103" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91"
+			mpMax="45970" mpReg="30.46" STR="88" CON="82" DEX="70" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="400000000"
+			mAtk="1600000" pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
+			collisionRadius="35" collisionHeight="47.5" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150"
+			darkRes="150" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
+		<spawn x="-6665" y="243902" z="-2024" heading="0" respawn="60" />
+		<spawn x="-6435" y="242885" z="-2064" heading="0" respawn="60" />
 	</npc>
 	<npc id="19504" name="Deathmoz" title="Disciplined" level="99" type="L2Npc" atkRange="40" hpMax="350796" hpReg="34.73" mpMax="73148"
 			mpReg="25.2" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="21755475" sp="52213" pAtk="2" mAtk="2" pDef="4"
@@ -4389,12 +4391,19 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 	</npc>
-	<npc id="19506" name="Flox Golem" level="99" type="L2Npc" atkRange="40" hpMax="328873" hpReg="33.96" mpMax="68577" mpReg="24.64"
-			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="20395684" sp="48949" pAtk="2" mAtk="2" pDef="4" mDef="2"
-			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="13" runSpd="60" collisionRadius="21" collisionHeight="21"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	<npc id="19506" name="Flox Golem" level="103" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91" mpMax="45970"
+			mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="4000000" mAtk="1600000"
+			pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="21"
+			collisionHeight="21" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
+		<spawn x="-3200" y="244752" z="-1848" heading="36364" respawn="60" />
+		<spawn x="-6928" y="246608" z="-1880" heading="0" respawn="60" />
+		<spawn x="-2928" y="243072" z="-1896" heading="31200" respawn="60" />
+		<spawn x="-7808" y="241520" z="-1856" heading="11812" respawn="60" />
+		<spawn x="-6912" y="241168" z="-1864" heading="14484" respawn="60" />
+		<spawn x="-5536" y="240896" z="-1880" heading="18400" respawn="60" />
+		<spawn x="-3936" y="241504" z="-1848" heading="24776" respawn="60" />
 	</npc>
 	<npc id="19507" name="Floxis" title="Disciplined" level="99" type="L2Npc" atkRange="40" hpMax="350796" hpReg="34.73" mpMax="73148"
 			mpReg="25.2" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="21755475" sp="52213" pAtk="2" mAtk="2" pDef="4"
@@ -4412,14 +4421,23 @@
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 	</npc>
-	<npc id="19509" name="Edan" level="99" type="L2Npc" atkRange="40" hpMax="328873" hpReg="33.96" mpMax="68577" mpReg="24.64"
-			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="20395684" sp="48949" pAtk="2" mAtk="2" pDef="4" mDef="2"
-			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="38" runSpd="170" collisionRadius="10" collisionHeight="34"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	<npc id="19509" name="Edan" level="103" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91" mpMax="45970" mpReg="30.46"
+			STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="4000000" mAtk="1600000" pDef="14800"
+			mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="10"
+			collisionHeight="34" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 		<skill id="4225" level="2" /> <!-- Stun Resistance -->
-		<itemDrop itemId="37889" min="1" max="1" chance="0.21291" /> <!-- Herb of Growth -->
+		<spawn x="-7321" y="245037" z="-2048" heading="12529" respawn="60" />
+		<spawn x="-7203" y="244367" z="-2056" heading="40378" respawn="60" />
+		<spawn x="-7126" y="242429" z="-2040" heading="28670" respawn="60" />
+		<spawn x="-7048" y="241981" z="-2024" heading="20326" respawn="60" />
+		<spawn x="-6375" y="242335" z="-2056" heading="23900" respawn="60" />
+		<spawn x="-7117" y="242818" z="-2056" heading="1169" respawn="60" />
+		<spawn x="-5584" y="242343" z="-2048" heading="16383" respawn="60" />
+		<spawn x="-4534" y="242438" z="-2096" heading="50165" respawn="60" />
+		<spawn x="-7676" y="242473" z="-2040" heading="5389" respawn="60" />
+		<spawn x="-8588" y="242897" z="-1856" heading="14526" respawn="60" />
 	</npc>
 	<npc id="19510" name="Belika" title="Disciplined" level="99" type="L2Npc" atkRange="40" hpMax="350796" hpReg="34.73" mpMax="73148"
 			mpReg="25.2" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="21755475" sp="52213" pAtk="2" mAtk="2" pDef="4"
@@ -4437,21 +4455,41 @@
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 		<skill id="4287" level="2" /> <!-- Hold Resistance -->
 	</npc>
-	<npc id="19512" name="Deathmoz" level="99" type="L2Npc" atkRange="40" hpMax="241172" hpReg="30.46" mpMax="50289" mpReg="22.1"
-			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="4079150" sp="9789" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
-			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="70" runSpd="155" collisionRadius="12" collisionHeight="40" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	<npc id="19512" name="Deathmoz" level="103" type="L2Monster" atkRange="40" hpMax="964696" hpReg="44.91" mpMax="45970" mpReg="30.46"
+			STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="4000000" mAtk="1600000" pDef="14800"
+			mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="12"
+			collisionHeight="40" fireRes="150" waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+		<minion npcId="23374" min="1" max="1" /> <!-- Lavi -->
+		<minion npcId="23375" min="1" max="1" /> <!-- Lavi -->
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
 		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
 		<skill id="4458" level="3" /> <!-- Spear Vulnerability -->
-		<spoilDrop itemId="19440" min="1" max="1" chance="2.159" /> <!-- Gemstone (R-grade) -->
-		<itemDrop itemId="57" min="550209" max="2280022" chance="1.00555" /> <!-- Adena -->
-		<itemDrop itemId="37791" min="1" max="1" chance="0.20392" /> <!-- Sealed Demonic Tome -->
-		<itemDrop itemId="37889" min="1" max="1" chance="0.08438" /> <!-- Herb of Growth -->
-		<itemDrop itemId="37890" min="1" max="1" chance="0.04922" /> <!-- Major Herb of Growth -->
-		<itemDrop itemId="36898" min="1" max="1" chance="0.0055" /> <!-- Recipe: Quality Leather Braid - Combination -->
+		<spawn x="-4992" y="248832" z="-1888" heading="28495" respawn="60" />
+		<spawn x="-5012" y="247888" z="-1976" heading="60400" respawn="60" />
+		<spawn x="-4635" y="248284" z="-1968" heading="37002" respawn="60" />
+		<spawn x="-5469" y="248439" z="-1952" heading="45820" respawn="60" />
+		<spawn x="-5203" y="248878" z="-1880" heading="57274" respawn="60" />
+		<spawn x="-4582" y="248307" z="-1944" heading="47512" respawn="60" />
+		<spawn x="-5484" y="247994" z="-1960" heading="16608" respawn="60" />
+		<spawn x="-4487" y="247308" z="-1920" heading="58266" respawn="60" />
+		<spawn x="-5384" y="246520" z="-2000" heading="41119" respawn="60" />
+		<spawn x="-4314" y="247930" z="-1896" heading="22876" respawn="60" />
+		<spawn x="-5518" y="246096" z="-2032" heading="50962" respawn="60" />
+		<spawn x="-5056" y="245952" z="-2040" heading="2907" respawn="60" />
+		<spawn x="-4528" y="246144" z="-2016" heading="63163" respawn="60" />
+		<spawn x="-6383" y="246170" z="-2016" heading="36031" respawn="60" />
+		<spawn x="-4669" y="245393" z="-2040" heading="54228" respawn="60" />
+		<spawn x="-5171" y="245236" z="-2080" heading="40856" respawn="60" />
+		<spawn x="-4430" y="244841" z="-2064" heading="51871" respawn="60" />
+		<spawn x="-4462" y="244387" z="-2056" heading="45184" respawn="60" />
+		<spawn x="-4080" y="245520" z="-2016" heading="0" respawn="60" />
+		<spawn x="-3821" y="243851" z="-2032" heading="29905" respawn="60" />
+		<spawn x="-3393" y="244585" z="-1952" heading="4051" respawn="60" />
+		<spawn x="-6688" y="245872" z="-2032" heading="21153" respawn="60" />
+		<spawn x="-4467" y="243710" z="-2048" heading="40961" respawn="60" />
+		<spawn x="-4085" y="243123" z="-2056" heading="10096" respawn="60" />
 	</npc>
 	<npc id="19513" name="Tanya" title="Disciplined" level="99" type="L2Npc" atkRange="40" hpMax="394646" hpReg="36.19" mpMax="82292"
 			mpReg="26.26" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="24474861" sp="58739" pAtk="2" mAtk="2" pDef="4"
@@ -4520,11 +4558,18 @@
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
 			pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="40" collisionHeight="40" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<spawn x="-27971" y="253685" z="-2184" heading="0" respawn="60" />
 	</npc>
 	<npc id="19519" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
 			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
 			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
 			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<spawn x="-6710" y="243903" z="-2032" heading="13104" respawn="60" />
+		<spawn x="-6428" y="244684" z="-2056" heading="40888" respawn="60" />
+		<spawn x="-7857" y="243440" z="-2048" heading="7356" respawn="60" />
+		<spawn x="-6463" y="242860" z="-2064" heading="0" respawn="60" />
+		<spawn x="-5616" y="243063" z="-2048" heading="33932" respawn="60" />
+		<spawn x="-5088" y="243232" z="-2040" heading="0" respawn="60" />
 	</npc>
 	<npc id="19520" name="Doom Shrieker" level="99" type="L2Npc" atkRange="40" hpMax="274060" hpReg="31.86" mpMax="57147" mpReg="23.12"
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
@@ -4709,7 +4754,7 @@
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="19574" name="Cowing" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="19574" name="Cowing" level="99" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
 			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
@@ -4782,37 +4827,37 @@
 	<npc id="19588" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19589" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19590" name="Guard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19591" name="Guard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19592" name="Elite Guard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19593" name="Bomb" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19594" name="" level="120" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" targetable="false" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-45690" y="58901" z="-2864" heading="36407" respawn="60" randomRespawn="36407" />
 		<spawn x="-45419" y="59066" z="-2864" heading="54421" respawn="60" randomRespawn="54421" />
 		<spawn x="-41637" y="50266" z="-1984" heading="47829" respawn="60" randomRespawn="47829" />
@@ -4823,46 +4868,47 @@
 	<npc id="19595" name="Atelia Castle Guardian" title="Atelia Controller" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19596" name="Fake Kelbim" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19597" name="Kelbim's Shout" level="99" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="10000" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="50000" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
-			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" targetable="false" showName="false" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="" clan="kelbim_clan" clanRange="10000">
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" targetable="false"
+			showName="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" clan="kelbim_clan"
+			clanRange="10000">
 	</npc>
 	<npc id="19598" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19599" name="Giant Atelia" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19600" name="Flower Bud" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19601" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19602" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="19603" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
 			DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40"
 			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
-			holyRes="0" darkRes="0" aiType="">
+			holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

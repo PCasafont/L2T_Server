@@ -12,9 +12,9 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.ai;
 
-import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
@@ -26,8 +26,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.L2Character.AIAccessor;
+import l2server.gameserver.model.actor.L2Summon;
 import l2server.util.Rnd;
 
 public class L2SummonAI extends L2PlayableAI implements Runnable
@@ -36,6 +36,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	
 	private volatile boolean _thinking; // to prevent recursive thinking
 	private volatile boolean _startFollow = ((L2Summon) _actor).getFollowStatus();
+	@SuppressWarnings("unused")
 	private L2Character _lastAttack = null;
 	
 	private volatile boolean _startAvoid = false;
@@ -135,6 +136,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	{
 		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
 			return;
+		
 		_thinking = true;
 		try
 		{
@@ -163,13 +165,15 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onEvtFinishCasting()
 	{
-		if (_lastAttack == null)
+		boolean shouldFollow = (_attackTarget == null) || !_attackTarget.isAutoAttackable(((L2Summon) _actor).getOwner());
+		
+		if (!_actor.isMoving() && !_actor.isAttackingNow())
+			shouldFollow = true;
+		
+		if (shouldFollow)
 			((L2Summon) _actor).setFollowStatus(_startFollow);
 		else
-		{
-			setIntention(CtrlIntention.AI_INTENTION_ATTACK, _lastAttack);
-			_lastAttack = null;
-		}
+			setIntention(CtrlIntention.AI_INTENTION_ATTACK, _attackTarget);
 	}
 	
 	@Override
@@ -191,30 +195,26 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	private void avoidAttack(L2Character attacker)
 	{
 		// trying to avoid if summon near owner
-		if (((L2Summon) _actor).getOwner() != null
-				&& ((L2Summon) _actor).getOwner() != attacker
-				&& ((L2Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
+		if ((((L2Summon) _actor).getOwner() != null) && (((L2Summon) _actor).getOwner() != attacker) && ((L2Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
 			_startAvoid = true;
 	}
 	
+	@Override
 	public void run()
 	{
 		if (_startAvoid)
 		{
 			_startAvoid = false;
 			
-			if (!_clientMoving
-					&& !_actor.isDead()
-					&& !_actor.isMovementDisabled())
+			if (!_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled())
 			{
 				final int ownerX = ((L2Summon) _actor).getOwner().getX();
 				final int ownerY = ((L2Summon) _actor).getOwner().getY();
 				final double angle = Math.toRadians(Rnd.get(-90, 90)) + Math.atan2(ownerY - _actor.getY(), ownerX - _actor.getX());
 				
-				final int targetX = ownerX + (int)(AVOID_RADIUS * Math.cos(angle));
-				final int targetY = ownerY + (int)(AVOID_RADIUS * Math.sin(angle));
-				if (Config.GEODATA == 0
-						|| GeoData.getInstance().canMoveFromToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY, _actor.getZ(), _actor.getInstanceId()))
+				final int targetX = ownerX + (int) (AVOID_RADIUS * Math.cos(angle));
+				final int targetY = ownerY + (int) (AVOID_RADIUS * Math.sin(angle));
+				if ((Config.GEODATA == 0) || GeoData.getInstance().canMoveFromToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY, _actor.getZ(), _actor.getInstanceId()))
 					moveTo(targetX, targetY, _actor.getZ());
 			}
 		}
@@ -246,10 +246,9 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if (getIntention() == AI_INTENTION_ATTACK)
-			_lastAttack = getAttackTarget();
-		else
-			_lastAttack = null;
+		if ((target instanceof L2Character) && ((L2Character) target).isAutoAttackable(((L2Summon) _actor).getOwner()))
+			_attackTarget = (L2Character) _actor.getTarget();
+		
 		super.onIntentionCast(skill, target);
 	}
 	

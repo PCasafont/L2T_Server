@@ -67,7 +67,6 @@
 	<scene id="77" name="sc_katacomb" time="34000"/>
 	<scene id="78" name="sc_necro" time="34000"/>
 	<scene id="79" name="sc_hellbound" time="40000"/>
-	<scene id="80" name="sc_honors" time="40000"/>
 	<scene id="81" name="sc_kelbim_opening" time="23000"/>
 	<scene id="99" name="sc_noble_opening" time="10000"/>
 	<scene id="100" name="sc_noble_ending" time="10000"/>

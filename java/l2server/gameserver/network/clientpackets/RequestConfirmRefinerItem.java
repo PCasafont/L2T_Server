@@ -3,19 +3,20 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.datatables.AugmentationData;
-import l2server.gameserver.datatables.AugmentationData.LifeStone;
+import l2server.gameserver.datatables.LifeStoneTable;
+import l2server.gameserver.datatables.LifeStoneTable.LifeStone;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -28,7 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestConfirmRefinerItem extends L2GameClientPacket
 {
-	private static final String _C__D0_2A_REQUESTCONFIRMREFINERITEM = "[C] D0:2A RequestConfirmRefinerItem";
 	
 	private int _targetItemObjId;
 	private int _refinerItemObjId;
@@ -41,8 +41,7 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 	}
 	
 	@Override
-	protected
-	void runImpl()
+	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
@@ -56,7 +55,7 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 		if (refinerItem == null)
 			return;
 		
-		if (!AugmentationData.getInstance().isValid(activeChar, targetItem, refinerItem))
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
@@ -64,20 +63,10 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 		
 		final int refinerItemId = refinerItem.getItem().getItemId();
 		final int grade = targetItem.getItem().getItemGrade();
-		final LifeStone ls = AugmentationData.getInstance().getLifeStone(refinerItemId);
-		final int gemStoneId = AugmentationData.getGemStoneId(grade, ls.getGrade());
-		final int gemStoneCount = AugmentationData.getGemStoneCount(grade, ls.getGrade());
+		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItemId);
+		final int gemStoneId = LifeStoneTable.getGemStoneId(grade, ls.getGrade());
+		final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
 		
 		activeChar.sendPacket(new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
 	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2A_REQUESTCONFIRMREFINERITEM;
-	}
-	
 }

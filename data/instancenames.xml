@@ -257,14 +257,9 @@
 	<instance id="255" name="Chamber of Prophecies" />
 	<instance id="256" name="Infernal Kamaloka" />
 	<instance id="257" name="Lunatic Kamaloka" />
-	<instance id="258" name="Nightmare Kamaloka" />
-	<instance id="259" name="Embryo Command Post" />
-	<instance id="260" name="Ashen Shadow Revolutionaries" />
 	<!-- Custom Instances -->
 	<instance id="500" name="Beleth Grand Boss Instance" />
 	<instance id="501" name="Conquer A Castle" />
-	<instance id="502" name="Fearon Siege" />
 	<instance id="503" name="Rescue Of The Last Giant" />
 	<instance id="504" name="Halloween Instance" />
-	<instance id="505" name="Blood Thrist" />
 </instances_list>

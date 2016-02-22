@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -26,23 +27,15 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
 
-
 /**
  * @author evill33t, GodKratos
- * 
+ *
  */
 public class AdminInstance implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_setinstance",
-		"admin_ghoston",
-		"admin_ghostoff",
-		"admin_createinstance",
-		"admin_destroyinstance",
-		"admin_listinstances"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_setinstance", "admin_ghoston", "admin_ghostoff", "admin_createinstance", "admin_destroyinstance", "admin_listinstances" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
@@ -61,7 +54,7 @@ public class AdminInstance implements IAdminCommandHandler
 				try
 				{
 					int id = Integer.parseInt(parts[1]);
-					if (InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]) && id < 300000)
+					if (InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]) && (id < 300000))
 					{
 						activeChar.sendMessage("Instance created");
 						return true;
@@ -84,8 +77,8 @@ public class AdminInstance implements IAdminCommandHandler
 			String page = "<html><body><title>Instance Panel</title><table width=300>";
 			for (Instance temp : InstanceManager.getInstance().getInstances().values())
 			{
-				if (temp.getName() != null && temp.getId() > 1)
-					page += "<tr><td><a action=\"bypass -h admin_move_to "+getStringCords(temp.getId())+"\">Name: "+temp.getName()+" id: "+temp.getId()+"</a></td></tr>";
+				if ((temp.getName() != null) && (temp.getId() > 1))
+					page += "<tr><td><a action=\"bypass -h admin_move_to " + getStringCords(temp.getId()) + "\">Name: " + temp.getName() + " id: " + temp.getId() + "</a></td></tr>";
 				else
 					activeChar.sendMessage("Id: " + temp.getId() + " Name: " + temp.getName());
 			}
@@ -106,7 +99,7 @@ public class AdminInstance implements IAdminCommandHandler
 				else
 				{
 					L2Object target = activeChar.getTarget();
-					if (target == null || target instanceof L2Summon) // Don't separate summons from masters
+					if ((target == null) || (target instanceof L2Summon)) // Don't separate summons from masters
 					{
 						activeChar.sendMessage("Incorrect target.");
 						return false;
@@ -124,7 +117,7 @@ public class AdminInstance implements IAdminCommandHandler
 							pet.teleToLocation(pet.getX(), pet.getY(), pet.getZ());
 							player.sendMessage("Admin set " + pet.getName() + "'s instance to:" + val);
 						}
-						for (L2SummonInstance summon : ((L2PcInstance)target).getSummons())
+						for (L2SummonInstance summon : ((L2PcInstance) target).getSummons())
 						{
 							summon.setInstanceId(val);
 							summon.teleToLocation(summon.getX(), summon.getY(), summon.getZ());
@@ -175,6 +168,7 @@ public class AdminInstance implements IAdminCommandHandler
 		return cords;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

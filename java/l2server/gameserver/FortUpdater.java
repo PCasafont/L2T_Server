@@ -2,12 +2,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -52,15 +52,16 @@ public class FortUpdater implements Runnable
 		_updaterType = ut;
 	}
 	
+	@Override
 	public void run()
 	{
 		try
 		{
-			switch(_updaterType)
+			switch (_updaterType)
 			{
 				case PERIODIC_UPDATE:
 					_runCount++;
-					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
+					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
 						return;
 					
 					_fort.setBloodOathReward(_fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
@@ -78,9 +79,9 @@ public class FortUpdater implements Runnable
 					_fort.saveFortVariables();
 					break;
 				case MAX_OWN_TIME:
-					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
+					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
 						return;
-					if (_fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
+					if (_fort.getOwnedTime() > (Config.FS_MAX_OWN_TIME * 3600))
 					{
 						_fort.removeOwner(true);
 						_fort.setFortState(0, 0);

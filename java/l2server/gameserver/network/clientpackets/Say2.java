@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -19,7 +20,6 @@ import java.sql.PreparedStatement;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.GmListTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.handler.ChatHandler;
 import l2server.gameserver.handler.IChatHandler;
@@ -30,7 +30,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
 /**
@@ -40,7 +39,6 @@ import l2server.log.Log;
  */
 public final class Say2 extends L2GameClientPacket
 {
-	private static final String _C__38_SAY2 = "[C] 38 Say2";
 	
 	//private static Logger _logChat = Logger.getLogger("chat");
 	
@@ -48,7 +46,7 @@ public final class Say2 extends L2GameClientPacket
 	public final static int SHOUT = 1; //!
 	public final static int TELL = 2;
 	public final static int PARTY = 3; //#
-	public final static int CLAN = 4;  //@
+	public final static int CLAN = 4; //@
 	public final static int GM = 5;
 	public final static int PETITION_PLAYER = 6; // used for petition
 	public final static int PETITION_GM = 7; //* used for petition
@@ -71,39 +69,8 @@ public final class Say2 extends L2GameClientPacket
 	public final static int UNK_2 = 24;
 	public final static int GLOBAL = 25;
 	
-	private final static String[] CHAT_NAMES =
-	{
-		"ALL",
-		"SHOUT",
-		"TELL",
-		"PARTY",
-		"CLAN",
-		"GM",
-		"PETITION_PLAYER",
-		"PETITION_GM",
-		"TRADE",
-		"ALLIANCE",
-		"ANNOUNCEMENT", //10
-		"BOAT",
-		"L2FRIEND",
-		"MSNCHAT",
-		"PARTYMATCH_ROOM",
-		"PARTYROOM_COMMANDER",
-		"PARTYROOM_ALL",
-		"HERO_VOICE",
-		"CRITICAL_ANNOUNCE",
-		"SCREEN_ANNOUNCE",
-		"BATTLEFIELD",
-		"MPCC_ROOM",
-		"ALL_NOT_RECORDED",
-		"UNK_1",
-		"UNK_2",
-		"GLOBAL"
-	};
-	
-	private static final String[] WALKER_COMMAND_LIST = { "USESKILL", "USEITEM", "BUYITEM", "SELLITEM", "SAVEITEM", "LOADITEM", "MSG", "DELAY", "LABEL", "JMP", "CALL",
-		"RETURN", "MOVETO", "NPCSEL", "NPCDLG", "DLGSEL", "CHARSTATUS", "POSOUTRANGE", "POSINRANGE", "GOHOME", "SAY", "EXIT", "PAUSE", "STRINDLG", "STRNOTINDLG", "CHANGEWAITTYPE",
-		"FORCEATTACK", "ISMEMBER", "REQUESTJOINPARTY", "REQUESTOUTPARTY", "QUITPARTY", "MEMBERSTATUS", "CHARBUFFS", "ITEMCOUNT", "FOLLOWTELEPORT" };
+	private final static String[] CHAT_NAMES = { "ALL", "SHOUT", "TELL", "PARTY", "CLAN", "GM", "PETITION_PLAYER", "PETITION_GM", "TRADE", "ALLIANCE", "ANNOUNCEMENT", //10
+	"BOAT", "L2FRIEND", "MSNCHAT", "PARTYMATCH_ROOM", "PARTYROOM_COMMANDER", "PARTYROOM_ALL", "HERO_VOICE", "CRITICAL_ANNOUNCE", "SCREEN_ANNOUNCE", "BATTLEFIELD", "MPCC_ROOM", "ALL_NOT_RECORDED", "UNK_1", "UNK_2", "GLOBAL" };
 	
 	private String _text;
 	private int _type;
@@ -127,9 +94,9 @@ public final class Say2 extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (_type < 0 || _type >= CHAT_NAMES.length)
+		if ((_type < 0) || (_type >= CHAT_NAMES.length))
 		{
-			Log.warning("Say2: Invalid type: " +_type + " Player : " + activeChar.getName() + " text: " + String.valueOf(_text));
+			Log.warning("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " + String.valueOf(_text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
@@ -149,28 +116,31 @@ public final class Say2 extends L2GameClientPacket
 		// Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
 		// April 27, 2009 - Verified on Gracia P2 & Final official client as 105
 		// Allow higher limit if player shift some item (text is longer then)
-		if (!activeChar.isGM() && ((_text.indexOf(8) >= 0 && _text.length() > 500) || (_text.indexOf(8) < 0 && _text.length() > 105)))
+		if (!activeChar.isGM() && (((_text.indexOf(8) >= 0) && (_text.length() > 500)) || ((_text.indexOf(8) < 0) && (_text.length() > 105))))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
 		}
 		
-		if (!_text.equalsIgnoreCase(".event") && activeChar.isInEvent()
-				&& (activeChar.getEvent().isType(EventType.DeathMatch)
-				|| activeChar.getEvent().isType(EventType.Survival)
-				|| activeChar.getEvent().isType(EventType.KingOfTheHill)))
+		if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") || activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") || activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
+		{
+			activeChar.sendMessage("Your right to use the chat has been revoked.");
+			return;
+		}
+		/*
+		if (activeChar.isPlayingMiniGame())
+		{
+			activeChar.sendMessage("You may not chat at this time.");
+			return;
+		}*/
+		
+		if (!_text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() && (activeChar.getEvent().isType(EventType.DeathMatch) || activeChar.getEvent().isType(EventType.Survival) || activeChar.getEvent().isType(EventType.KingOfTheHill)))
 		{
 			activeChar.sendMessage("You cannot talk during an All vs All PvP Event");
 			return;
 		}
 		
-		if (Config.L2WALKER_PROTECTION && _type == TELL && checkBot(_text))
-		{
-			Util.handleIllegalPlayerAction(activeChar, "Client Emulator Detect: Player " + activeChar.getName() + " using l2walker.", Config.DEFAULT_PUNISH);
-			return;
-		}
-		
-		if (activeChar.isCursedWeaponEquipped() && (_type == TRADE || _type == SHOUT || _type == GLOBAL))
+		if (activeChar.isCursedWeaponEquipped() && ((_type == TRADE) || (_type == SHOUT) || (_type == GLOBAL)))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
 			return;
@@ -178,7 +148,7 @@ public final class Say2 extends L2GameClientPacket
 		
 		if (activeChar.isChatBanned())
 		{
-			if (_type == ALL || _type == SHOUT || _type == TRADE || _type == HERO_VOICE || _type == GLOBAL)
+			if ((_type == ALL) || (_type == SHOUT) || (_type == TRADE) || (_type == HERO_VOICE) || (_type == GLOBAL))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;
@@ -194,14 +164,14 @@ public final class Say2 extends L2GameClientPacket
 			}
 		}
 		
-		if (_type == PETITION_PLAYER && activeChar.isGM())
+		if ((_type == PETITION_PLAYER) && activeChar.isGM())
 			_type = PETITION_GM;
 		
 		if (Config.LOG_CHAT)
 		{
-			if (_type == CLAN && activeChar.getClan() != null)
+			if ((_type == CLAN) && (activeChar.getClan() != null))
 				_target = activeChar.getClan().getName();
-			else if (_type == ALLIANCE && activeChar.getClan() != null)
+			else if ((_type == ALLIANCE) && (activeChar.getClan() != null))
 				_target = activeChar.getClan().getAllyName();
 			
 			Connection con = null;
@@ -230,16 +200,16 @@ public final class Say2 extends L2GameClientPacket
 			
 			/*LogRecord record = new LogRecord(Level.INFO, _text);
 			record.setLoggerName("chat");
-			
+
 			if (_type == TELL)
 				record.setParameters(new Object[]{CHAT_NAMES[_type], "[" + activeChar.getName() + " to "+_target+"]"});
 			else
 				record.setParameters(new Object[]{CHAT_NAMES[_type], "[" + activeChar.getName() + "]"});
-			
+
 			_logChat.log(record);*/
 		}
 		
-		if (_text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
+		if ((_text.indexOf(8) >= 0) && !parseAndPublishItem(activeChar))
 			return;
 		
 		// Say Filter implementation
@@ -249,32 +219,34 @@ public final class Say2 extends L2GameClientPacket
 		IChatHandler handler = ChatHandler.getInstance().getChatHandler(_type);
 		if (handler != null)
 		{
-			String checkText = _text.toLowerCase().replace(".", "")
-					.replace(" ", "").replace("_", "").replace("-", "");
-			if (checkText.contains("l2world") || checkText.contains("elcardia"))
-			{
-				GmListTable.broadcastMessageToGMs(activeChar.getName() + " tried to say through " + handler.getClass().getSimpleName().substring(4) + ":");
-				GmListTable.broadcastMessageToGMs("\"" + _text + "\"");
-				if (_target != null)
-					GmListTable.broadcastMessageToGMs("to " + _target);
-				GmListTable.broadcastMessageToGMs("...but it has been blocked.");
-				return;
-			}
+			// Elcardia -> Elcopia OP replacement
+			//_text = _text.replaceAll("([lLiI1][ -._]*[cCkK][ -._]*)[aA4]"
+			//		+ "([ -._]*)[rR]([ -._]*)[dD]", "$1o$2$3p");
 			
 			handler.handleChat(_type, activeChar, _target, _text);
 		}
 		else
-			Log.info("No handler registered for ChatType: "+_type+ " Player: "+getClient());
-	}
-	
-	private boolean checkBot(String text)
-	{
-		for (String botCommand : WALKER_COMMAND_LIST)
+			Log.info("No handler registered for ChatType: " + _type + " Player: " + getClient());
+		
+		/*
+		if (Config.isServer(Config.DREAMS)
+				&& (_text.contains("Ghost") || _text.contains("ghost")))
 		{
-			if (text.startsWith(botCommand))
-				return true;
-		}
-		return false;
+			final L2PcInstance ghostToon = L2World.getInstance().getPlayer("Ghost");
+
+			String message = "";
+			if (ghostToon == null)
+				message = "Ghost is not online right now. Maybe other players can assist you? if not, post on the forums.";
+			else
+				message = "Ghost is online but may be working on stuff. You can try PM'ing him. If he seems to be AFK, wait a little or post on our forums.";
+
+			final L2NpcInstance npc = Util.getNpcCloseTo(80002, activeChar);
+
+			if (npc != null)
+				activeChar.sendPacket(new CreatureSay(npc.getObjectId(), Say2.TELL, npc.getName(), message));
+			else
+				activeChar.sendPacket(new CreatureSay(0x00, Say2.TELL, NpcTable.getInstance().getTemplate(80002).getName(), message));
+		}*/
 	}
 	
 	private void checkText()
@@ -321,15 +293,6 @@ public final class Say2 extends L2GameClientPacket
 			}
 		}
 		return true;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__38_SAY2;
 	}
 	
 	@Override

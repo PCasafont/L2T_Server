@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.idfactory;
 
 import java.sql.Connection;
@@ -108,7 +109,7 @@ public class StackIDFactory extends IdFactory
 		
 		//int hole = id - _curOID;
 		int hole = id - _tempOID;
-		if (hole > N - idx)
+		if (hole > (N - idx))
 			hole = N - idx;
 		for (int i = 1; i <= hole; i++)
 		{
@@ -117,7 +118,7 @@ public class StackIDFactory extends IdFactory
 			_tempOID++;
 			//_curOID++;
 		}
-		if (hole < N - idx)
+		if (hole < (N - idx))
 			_tempOID++;
 		return N - hole;
 	}
@@ -154,6 +155,6 @@ public class StackIDFactory extends IdFactory
 	@Override
 	public int size()
 	{
-		return FREE_OBJECT_ID_SIZE - _curOID + FIRST_OID + _freeOIDStack.size();
+		return (FREE_OBJECT_ID_SIZE - _curOID) + FIRST_OID + _freeOIDStack.size();
 	}
 }

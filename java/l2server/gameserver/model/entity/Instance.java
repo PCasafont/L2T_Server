@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.entity;
 
 import gnu.trove.TIntHashSet;
@@ -40,7 +41,7 @@ import l2server.util.xml.XmlNode;
 
 /**
  * @author evill33t, GodKratos
- * 
+ *
  */
 public class Instance
 {
@@ -174,7 +175,7 @@ public class Instance
 	 */
 	public void addPlayer(int objectId)
 	{
-		synchronized(_players)
+		synchronized (_players)
 		{
 			_players.add(objectId);
 		}
@@ -186,12 +187,12 @@ public class Instance
 	 */
 	public void removePlayer(int objectId)
 	{
-		synchronized(_players)
+		synchronized (_players)
 		{
 			_players.remove(objectId);
 		}
 		
-		if (_players.isEmpty() && _emptyDestroyTime >= 0)
+		if (_players.isEmpty() && (_emptyDestroyTime >= 0))
 		{
 			_lastLeft = System.currentTimeMillis();
 			setDuration((int) (_instanceEndTime - System.currentTimeMillis() - 500));
@@ -205,11 +206,11 @@ public class Instance
 	public void ejectPlayer(int objectId)
 	{
 		L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-		if (player != null && player.getInstanceId() == this.getId())
+		if ((player != null) && (player.getInstanceId() == getId()))
 		{
 			player.setInstanceId(0);
 			player.sendMessage("You were removed from the instance");
-			if (getSpawnLoc()[0] != 0 && getSpawnLoc()[1] != 0 && getSpawnLoc()[2] != 0)
+			if ((getSpawnLoc()[0] != 0) && (getSpawnLoc()[1] != 0) && (getSpawnLoc()[2] != 0))
 				player.teleToLocation(getSpawnLoc()[0], getSpawnLoc()[1], getSpawnLoc()[2]);
 			else
 				player.teleToLocation(MapRegionTable.TeleportWhereType.Town);
@@ -239,11 +240,11 @@ public class Instance
 		if (_doors == null)
 			_doors = new ArrayList<L2DoorInstance>(2);
 		
-		for (L2DoorInstance door: _doors)
+		for (L2DoorInstance door : _doors)
 		{
 			if (door.getDoorId() == doorId)
 			{
-				Log.warning("Door ID " + doorId + " already exists in instance " + this.getId());
+				Log.warning("Door ID " + doorId + " already exists in instance " + getId());
 				return;
 			}
 		}
@@ -273,7 +274,7 @@ public class Instance
 	
 	public L2DoorInstance getDoor(int id)
 	{
-		for (L2DoorInstance temp: getDoors())
+		for (L2DoorInstance temp : getDoors())
 		{
 			if (temp.getDoorId() == id)
 				return temp;
@@ -320,7 +321,7 @@ public class Instance
 	 */
 	public void setSpawnLoc(int[] loc)
 	{
-		if (loc == null || loc.length < 3)
+		if ((loc == null) || (loc.length < 3))
 			return;
 		System.arraycopy(loc, 0, _spawnLoc, 0, 3);
 	}
@@ -355,7 +356,7 @@ public class Instance
 		if (_doors == null)
 			return;
 		
-		for (L2DoorInstance door: _doors)
+		for (L2DoorInstance door : _doors)
 		{
 			if (door != null)
 			{
@@ -412,7 +413,7 @@ public class Instance
 				if (n.hasAttribute("val"))
 				{
 					_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(n.getInt("val") * 60000), 15000);
-					_instanceEndTime = System.currentTimeMillis() + n.getLong("val") * 60000 + 15000;
+					_instanceEndTime = System.currentTimeMillis() + (n.getLong("val") * 60000) + 15000;
 				}
 			}
 			/*			else if (n.getName().equalsIgnoreCase("timeDelay"))
@@ -501,8 +502,8 @@ public class Instance
 							spawnDat.setInstanceId(getId());
 							L2Npc spawned = spawnDat.getNpc();
 							spawnDat.doSpawn();
-							if (delay >= 0 && spawned instanceof L2Attackable)
-								((L2Attackable)spawned).setOnKillDelay(delay);
+							if ((delay >= 0) && (spawned instanceof L2Attackable))
+								((L2Attackable) spawned).setOnKillDelay(delay);
 						}
 						else
 						{
@@ -536,31 +537,31 @@ public class Instance
 		int timeLeft;
 		int interval;
 		
-		if (_players.isEmpty() && _emptyDestroyTime == 0)
+		if (_players.isEmpty() && (_emptyDestroyTime == 0))
 		{
 			remaining = 0;
 			interval = 500;
 		}
-		else if (_players.isEmpty() && _emptyDestroyTime > 0)
+		else if (_players.isEmpty() && (_emptyDestroyTime > 0))
 		{
 			
-			Long emptyTimeLeft = _lastLeft + _emptyDestroyTime - System.currentTimeMillis();
+			Long emptyTimeLeft = (_lastLeft + _emptyDestroyTime) - System.currentTimeMillis();
 			if (emptyTimeLeft <= 0)
 			{
 				interval = 0;
 				remaining = 0;
 			}
-			else if (remaining > 300000 && emptyTimeLeft > 300000)
+			else if ((remaining > 300000) && (emptyTimeLeft > 300000))
 			{
 				interval = 300000;
 				remaining = remaining - 300000;
 			}
-			else if (remaining > 60000 && emptyTimeLeft > 60000)
+			else if ((remaining > 60000) && (emptyTimeLeft > 60000))
 			{
 				interval = 60000;
 				remaining = remaining - 60000;
 			}
-			else if (remaining > 30000 && emptyTimeLeft > 30000)
+			else if ((remaining > 30000) && (emptyTimeLeft > 30000))
 			{
 				interval = 30000;
 				remaining = remaining - 30000;
@@ -607,6 +608,7 @@ public class Instance
 			_players.forEach(new SendPacketToPlayerProcedure(cs));
 		
 		cancelTimer();
+		//System.out.println(_id + " (" + getName() + "): " + remaining + " " + interval);
 		if (remaining >= 10000)
 			_CheckTimeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new CheckTimeUp(remaining), interval);
 		else
@@ -621,13 +623,14 @@ public class Instance
 	
 	public class CheckTimeUp implements Runnable
 	{
-		private int	_remaining;
+		private int _remaining;
 		
 		public CheckTimeUp(int remaining)
 		{
 			_remaining = remaining;
 		}
 		
+		@Override
 		public void run()
 		{
 			doCheckTimeUp(_remaining);
@@ -636,6 +639,7 @@ public class Instance
 	
 	public class TimeUp implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			InstanceManager.getInstance().destroyInstance(getId());

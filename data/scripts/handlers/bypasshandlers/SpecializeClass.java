@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import java.util.ArrayList;
@@ -25,23 +26,31 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.PlayerClass;
+import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class SpecializeClass implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"SpecializeClass"
-	};
+	private static final String[] COMMANDS = { "SpecializeClass" };
 	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
-		if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
+		if ((target == null) || (activeChar == null) || (activeChar.getCurrentClass().getLevel() != 85))
+		{
+			activeChar.sendMessage("You must be on an awakened class to do this.");
 			return false;
+		}
 		
-		boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
+		if (activeChar.getTemporaryLevel() != 0)
+		{
+			activeChar.sendMessage("You can't do that while on a temporary level.");
+			return false;
+		}
+		
+		boolean hasDeprecatedClass = (activeChar.getClassId() >= 139) && (activeChar.getClassId() <= 145);
 		
 		if (command.length() < 16)
 		{
@@ -50,7 +59,7 @@ public class SpecializeClass implements IBypassHandler
 			List<PlayerClass> classes = new ArrayList<PlayerClass>();
 			for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
 			{
-				if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
+				if ((cl1.getLevel() == 76) && (cl1.getAwakeningClassId() == activeChar.getClassId()))
 				{
 					for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
 					{
@@ -64,12 +73,11 @@ public class SpecializeClass implements IBypassHandler
 			{
 				for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
 				{
-					if (cl.getLevel() == 85 && cl.getParent() != null)
+					if ((cl.getLevel() == 85) && (cl.getParent() != null))
 					{
 						if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
 							classes.add(cl);
-						else if (activeChar.getCurrentClass().getParent() != null
-								&& cl.getParent().getAwakeningClassId() == activeChar.getCurrentClass().getParent().getAwakeningClassId())
+						else if ((activeChar.getCurrentClass().getParent() != null) && (cl.getParent().getAwakeningClassId() == activeChar.getCurrentClass().getParent().getAwakeningClassId()))
 							classes.add(cl);
 					}
 				}
@@ -77,18 +85,23 @@ public class SpecializeClass implements IBypassHandler
 			
 			if (activeChar.getClassId() == activeChar.getBaseClass())
 			{
-				if (activeChar.isHero())
+				/*if (activeChar.isHero())
 				{
 					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're a hero!", 6000));
-					return false;		
+					return false;
 				}
 				else if (Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
-					activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad records will be reset!", 6000));
+					activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad and hero records will be reset!", 6000));*/
+				if (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
+				{
+					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're involved in the Grand Olympiads!", 6000));
+					return false;
+				}
 			}
 			
 			for (PlayerClass cl : classes)
 				buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " + cl.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
-
+			
 			html = html.replace("%classButtons%", buttons);
 			NpcHtmlMessage packet = new NpcHtmlMessage(target.getObjectId());
 			packet.setHtml(html);
@@ -100,12 +113,12 @@ public class SpecializeClass implements IBypassHandler
 		{
 			try
 			{
-				if (activeChar.getClassId() == activeChar.getBaseClass() && activeChar.isHero())
+				if ((activeChar.getClassId() == activeChar.getBaseClass()) && activeChar.isHero())
 					return false;
 				
 				int classId = Integer.parseInt(command.substring(16));
 				PlayerClass prev = activeChar.getCurrentClass();
-				if (!hasDeprecatedClass && prev.getLevel() == 85)
+				if (!hasDeprecatedClass && (prev.getLevel() == 85))
 				{
 					if (!activeChar.isSubClassActive())
 					{
@@ -119,9 +132,12 @@ public class SpecializeClass implements IBypassHandler
 					}
 				}
 				
-				if (activeChar.getClassId() == activeChar.getBaseClass()
-						&& Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
+				if (activeChar.getClassId() == activeChar.getBaseClass() && (activeChar.isHero()
+						|| Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
+				{
 					Olympiad.getInstance().removeNoble(activeChar.getObjectId());
+					HeroesManager.getInstance().removeHero(activeChar.getObjectId());
+				}
 				
 				activeChar.setClassId(classId);
 				if (!activeChar.isSubClassActive())
@@ -147,6 +163,7 @@ public class SpecializeClass implements IBypassHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

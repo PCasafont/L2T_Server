@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -26,7 +27,7 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author mkizub
- * 
+ *
  */
 public class EffectUntargetable extends L2Effect
 {
@@ -36,7 +37,7 @@ public class EffectUntargetable extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
@@ -44,7 +45,7 @@ public class EffectUntargetable extends L2Effect
 	{
 		return L2EffectType.UNTARGETABLE;
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -52,25 +53,23 @@ public class EffectUntargetable extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance)getEffected()).isCombatFlagEquipped())
+		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
 			return false;
 		
 		for (L2Character target : getEffected().getKnownList().getKnownCharacters())
 		{
-			if (target != null && target != getEffected())
+			if ((target != null) && (target != getEffected()))
 			{
-				if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null
-						&& target.getActingPlayer().getParty() != null
-						&& target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty())
+				if ((target.getActingPlayer() != null) && (getEffected().getActingPlayer() != null) && (target.getActingPlayer().getParty() != null) && (target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty()))
 					continue;
 				
-				if (target.getTarget() == getEffected() || (target.getAI() != null && target.getAI().getAttackTarget() == getEffected()))
+				if ((target.getTarget() == getEffected()) || ((target.getAI() != null) && (target.getAI().getAttackTarget() == getEffected())))
 				{
 					target.setTarget(null);
 					target.abortAttack();
@@ -79,16 +78,16 @@ public class EffectUntargetable extends L2Effect
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
 					if (target instanceof L2Attackable)
-						((L2Attackable)target).reduceHate(getEffected(), ((L2Attackable)target).getHating((getEffected())));
+						((L2Attackable) target).reduceHate(getEffected(), ((L2Attackable) target).getHating((getEffected())));
 				}
 			}
 		}
-
+		
 		return true;
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
@@ -97,7 +96,7 @@ public class EffectUntargetable extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override

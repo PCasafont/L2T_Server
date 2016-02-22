@@ -119,7 +119,7 @@ class Quest (JQuest) :
 
    if npcId == 30629 :
      if st.getInt("cond")==0 and st.getInt("onlyone")==0 :
-          if player.getClassId() in [ 0x0b, 0x1a, 0x27] :
+          if player.getClassId().getId() in [ 0x0b, 0x1a, 0x27] :
             if player.getLevel() < 39 :
               htmltext = "30629-02.htm"
             else:

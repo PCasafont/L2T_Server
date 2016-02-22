@@ -74,7 +74,7 @@ class Quest (JQuest) :
    id = st.getState()
    if npcId != KARUKIA and id != State.STARTED : return htmltext
 
-   playerClassID = player.getClassId() 
+   playerClassID = player.getClassId().getId() 
    playerLvl     = player.getLevel() 
    cond = st.getInt("cond") 
  
@@ -120,7 +120,7 @@ class Quest (JQuest) :
        else:
           st.addExpAndSp(59172, 3470)
        st.giveItems(57, 16380)
-     player.sendPacket(SocialAction(player.getObjectId(),3))
+     player.sendPacket(SocialAction(player,3))
      st.unset("cond")
      st.exitQuest(False)
      st.saveGlobalQuestVar("1ClassQuestFinished","1")
@@ -141,7 +141,7 @@ class Quest (JQuest) :
         else:
           st.addExpAndSp(29586, 1735)
         st.giveItems(57, 8190)
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         st.unset("cond") 
         st.exitQuest(False) 
         st.playSound("ItemSound.quest_finish")

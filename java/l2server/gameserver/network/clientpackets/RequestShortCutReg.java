@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2ShortCut;
@@ -25,7 +26,6 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
  */
 public final class RequestShortCutReg extends L2GameClientPacket
 {
-	private static final String _C__33_REQUESTSHORTCUTREG = "[C] 33 RequestShortCutReg";
 	
 	private int _type;
 	private int _id;
@@ -54,7 +54,7 @@ public final class RequestShortCutReg extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (_page > 10 || _page < 0)
+		if ((_page > 10) || (_page < 0))
 			return;
 		
 		switch (_type)
@@ -84,15 +84,6 @@ public final class RequestShortCutReg extends L2GameClientPacket
 				break;
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__33_REQUESTSHORTCUTREG;
 	}
 	
 	@Override

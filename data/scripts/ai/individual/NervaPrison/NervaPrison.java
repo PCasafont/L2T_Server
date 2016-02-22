@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.NervaPrison;
 
 import java.util.ArrayList;
@@ -33,9 +34,9 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Prison AI
- * 
+ *
  * Source:
  * 			- http://l2wiki.com/Raiders_Crossroads
  * 			- https://4gameforum.com/showthread.php?t=23180
@@ -43,13 +44,13 @@ import ai.group_template.L2AttackableAIScript;
 
 public class NervaPrison extends L2AttackableAIScript
 {
-	private static final String _qn			= "NervaPrison";
-	private static final int	_doorNpc	= 19459;
-	private static final int	_kaysen		= 19458;
-	private static final int	_nervaKey	= 36665;
-	private static final int	_kaiser		= 23329;
+	private static final String _qn = "NervaPrison";
+	private static final int _doorNpc = 19459;
+	private static final int _kaysen = 19458;
+	private static final int _nervaKey = 36665;
+	private static final int _kaiser = 23329;
 	private static final Map<L2ZoneType, List<L2DoorInstance>> _prisons = new HashMap<L2ZoneType, List<L2DoorInstance>>();
-
+	
 	public NervaPrison(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -73,9 +74,9 @@ public class NervaPrison extends L2AttackableAIScript
 			_prisons.put(zone, doors);
 		}
 	}
-
+	
 	@Override
-	public String onTalk(L2Npc npc,L2PcInstance player)
+	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		if (npc.getNpcId() == _doorNpc)
 		{
@@ -89,9 +90,9 @@ public class NervaPrison extends L2AttackableAIScript
 					for (L2DoorInstance door : currentZone.getValue())
 					{
 						if (door.getOpen())
-							return super.onFirstTalk(npc, player);	//Cheating
+							return super.onFirstTalk(npc, player); //Cheating
 					}
-						
+					
 					for (L2DoorInstance door : currentZone.getValue())
 					{
 						door.openMe();
@@ -115,7 +116,7 @@ public class NervaPrison extends L2AttackableAIScript
 					for (L2DoorInstance door : currentZone.getValue())
 					{
 						if (!door.getOpen())
-							return super.onFirstTalk(npc, player);	//Cheating
+							return super.onFirstTalk(npc, player); //Cheating
 					}
 					
 					for (L2DoorInstance door : currentZone.getValue())
@@ -126,8 +127,8 @@ public class NervaPrison extends L2AttackableAIScript
 			}
 			
 			npc.deleteMe();
-				
-			L2MonsterInstance kaiser = (L2MonsterInstance) addSpawn(_kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, false);	//3min
+			
+			L2MonsterInstance kaiser = (L2MonsterInstance) addSpawn(_kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, false); //3min
 			kaiser.setTarget(player);
 			kaiser.addDamageHate(player, 500, 99999);
 			kaiser.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);

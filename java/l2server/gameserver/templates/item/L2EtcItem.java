@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 import l2server.gameserver.model.L2ExtractableProduct;
@@ -23,7 +24,7 @@ import l2server.gameserver.templates.StatsSet;
  *
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:30:10 $
  */
-public final class L2EtcItem  extends L2Item
+public final class L2EtcItem extends L2Item
 {
 	// private final String[] _skill;
 	private String _handler;
@@ -64,10 +65,10 @@ public final class L2EtcItem  extends L2Item
 		
 		if (isQuestItem())
 			_type2 = L2Item.TYPE2_QUEST;
-		else if (getItemId() == PcInventory.ADENA_ID || getItemId() == PcInventory.ANCIENT_ADENA_ID)
+		else if ((getItemId() == PcInventory.ADENA_ID) || (getItemId() == PcInventory.ANCIENT_ADENA_ID))
 			_type2 = L2Item.TYPE2_MONEY;
 		
-		_handler = set.getString("handler", null);  // ! null !
+		_handler = set.getString("handler", null); // ! null !
 		_sharedReuseGroup = set.getInteger("sharedReuseGroup", -1);
 		_isBlessed = set.getBool("blessed", false);
 	}
@@ -76,7 +77,7 @@ public final class L2EtcItem  extends L2Item
 	{
 		if (_extractableItems == null)
 		{
-			_extractableItems = new L2ExtractableProduct[]{product};
+			_extractableItems = new L2ExtractableProduct[] { product };
 		}
 		else
 		{
@@ -128,7 +129,7 @@ public final class L2EtcItem  extends L2Item
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public int getSharedReuseGroup()
@@ -137,7 +138,7 @@ public final class L2EtcItem  extends L2Item
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -145,7 +146,7 @@ public final class L2EtcItem  extends L2Item
 	{
 		return _isBlessed;
 	}
-
+	
 	/**
 	 * @return the _extractable_items
 	 */

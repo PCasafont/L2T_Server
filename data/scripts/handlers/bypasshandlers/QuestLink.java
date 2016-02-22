@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import java.util.ArrayList;
@@ -33,11 +34,9 @@ import l2server.util.StringUtil;
 
 public class QuestLink implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Quest"
-	};
-
+	private static final String[] COMMANDS = { "Quest" };
+	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (target == null)
@@ -61,28 +60,20 @@ public class QuestLink implements IBypassHandler
 	
 	/**
 	 * Open a choose quest window on client with all quests available of the L2NpcInstance.<BR><BR>
-	 * 
+	 *
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li><BR><BR>
-	 * 
+	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param quests The table containing quests of the L2NpcInstance
-	 * 
+	 *
 	 */
 	public static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Quest[] quests)
 	{
-		final StringBuilder sb = StringUtil.startAppend(150,
-				"<html><body>"
-		);
+		final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
 		for (Quest q : quests)
 		{
-			StringUtil.append(sb,
-					"<a action=\"bypass -h npc_",
-					String.valueOf(npc.getObjectId()),
-					"_Quest ",
-					q.getName(),
-					"\">"
-			);
+			StringUtil.append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q.getName(), "\">");
 			if (q.getQuestIntId() < 10000)
 			{
 				StringUtil.append(sb, "[", q.getDescr());
@@ -90,7 +81,7 @@ public class QuestLink implements IBypassHandler
 				QuestState qs = player.getQuestState(q.getScriptName());
 				if (qs != null)
 				{
-					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
+					if ((qs.getState() == State.STARTED) && (qs.getInt("cond") > 0))
 						sb.append(" (In Progress)");
 					else if (qs.getState() == State.COMPLETED)
 						sb.append(" (Done)");
@@ -103,7 +94,7 @@ public class QuestLink implements IBypassHandler
 				QuestState qs = player.getQuestState(q.getScriptName());
 				if (qs != null)
 				{
-					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
+					if ((qs.getState() == State.STARTED) && (qs.getInt("cond") > 0))
 						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "02</fstring>]</font>");
 					else if (qs.getState() == State.COMPLETED)
 						sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "03</fstring>]</font>");
@@ -128,15 +119,15 @@ public class QuestLink implements IBypassHandler
 	
 	/**
 	 * Open a quest window on client with the text of the L2NpcInstance.<BR><BR>
-	 * 
+	 *
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the text of the quest state in the folder data/scripts/quests/questId/stateId.htm </li>
 	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
 	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR><BR>
-	 * 
+	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param questId The Identifier of the quest to display the message
-	 * 
+	 *
 	 */
 	public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
 	{
@@ -149,7 +140,7 @@ public class QuestLink implements IBypassHandler
 		
 		if (q != null)
 		{
-			if ((q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000) && (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
+			if (((q.getQuestIntId() >= 1) && (q.getQuestIntId() < 20000)) && ((player.getWeightPenalty() >= 3) || !player.isInventoryUnder90(true)))
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT));
 				return;
@@ -157,7 +148,7 @@ public class QuestLink implements IBypassHandler
 			
 			if (qs == null)
 			{
-				if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000)
+				if ((q.getQuestIntId() >= 1) && (q.getQuestIntId() < 20000))
 				{
 					if (player.getAllActiveQuests().length > 40) // if too many ongoing quests, don't show window and send message
 					{
@@ -168,7 +159,7 @@ public class QuestLink implements IBypassHandler
 				// check for start point
 				Quest[] qlst = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 				
-				if (qlst != null && qlst.length > 0)
+				if ((qlst != null) && (qlst.length > 0))
 				{
 					for (Quest temp : qlst)
 					{
@@ -183,7 +174,7 @@ public class QuestLink implements IBypassHandler
 		}
 		else
 			content = Quest.getNoQuestMsg(player); // no quests found
-		
+			
 		if (qs != null)
 		{
 			// If the quest is alreday started, no need to show a window
@@ -218,9 +209,9 @@ public class QuestLink implements IBypassHandler
 	
 	/**
 	 * Collect awaiting quests/start points and display a QuestChooseWindow (if several available) or QuestWindow.<BR><BR>
-	 * 
+	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
-	 * 
+	 *
 	 */
 	public static void showQuestWindow(L2PcInstance player, L2Npc npc)
 	{
@@ -236,8 +227,7 @@ public class QuestLink implements IBypassHandler
 		{
 			for (QuestState x : awaits)
 			{
-				if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest().getQuestIntId() < 20000)
-						&& x.getState() != State.COMPLETED)
+				if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest().getQuestIntId() < 20000) && (x.getState() != State.COMPLETED))
 					options.add(x.getQuest());
 			}
 		}
@@ -246,15 +236,12 @@ public class QuestLink implements IBypassHandler
 		{
 			for (Quest x : starts)
 			{
-				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000)
-						&& (player.getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName()).getState() != State.COMPLETED)
-						&& x.canStart(player))
+				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && ((player.getQuestState(x.getScriptName()) == null) || (player.getQuestState(x.getScriptName()).getState() != State.COMPLETED)) && x.canStart(player))
 					options.add(x);
 			}
 			for (Quest x : starts)
 			{
-				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000)
-						&& (player.getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName()).getState() != State.COMPLETED))
+				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && ((player.getQuestState(x.getScriptName()) == null) || (player.getQuestState(x.getScriptName()).getState() != State.COMPLETED)))
 					options.add(x);
 			}
 			for (Quest x : starts)
@@ -287,6 +274,7 @@ public class QuestLink implements IBypassHandler
 		}
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

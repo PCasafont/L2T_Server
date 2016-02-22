@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.gui.playertable;
 
 import java.awt.Dimension;
@@ -41,17 +42,19 @@ import l2server.log.Log;
  * @author KenM
  *
  */
-@SuppressWarnings("serial")
 public class PlayerTablePane extends JPanel
 {
+	private static final long serialVersionUID = 1L;
+	
 	public class ButtonListeners implements ActionListener
 	{
+		@Override
 		public void actionPerformed(ActionEvent evt)
 		{
 			//String cmd = evt.getActionCommand();
 		}
 	}
-				
+	
 	private GridBagLayout _layout = new GridBagLayout();
 	
 	//Npc Table
@@ -69,14 +72,14 @@ public class PlayerTablePane extends JPanel
 		
 		JPanel smallPane = new JPanel();
 		smallPane.setLayout(_layout);
-
-		/*ButtonListeners buttonListeners = new ButtonListeners();
 		
+		/*ButtonListeners buttonListeners = new ButtonListeners();
+
 		JButton analyze = new JButton("Check Targeting");
 		analyze.addActionListener(buttonListeners);
 		analyze.setActionCommand("CheckTargeting");
 		smallPane.add(analyze, cons);
-		
+
 		cons.weightx = 0.5;
 		cons.weighty = 0.1;
 		cons.gridx = 0;
@@ -105,6 +108,7 @@ public class PlayerTablePane extends JPanel
 		
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				updateTable();
@@ -123,6 +127,7 @@ public class PlayerTablePane extends JPanel
 	{
 		SwingUtilities.invokeLater(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				if (_playerTableModel.updateData())
@@ -148,7 +153,7 @@ public class PlayerTablePane extends JPanel
 	
 	public void updateCurrentPlayer(boolean forced)
 	{
-		if (!forced && _currentSelectedPlayer == _playerTable.getSelectedRow())
+		if (!forced && (_currentSelectedPlayer == _playerTable.getSelectedRow()))
 			return;
 		else
 			_currentSelectedPlayer = _playerTable.getSelectedRow();
@@ -158,12 +163,13 @@ public class PlayerTablePane extends JPanel
 	
 	public void setTableSelectByMouseEvent(MouseEvent e)
 	{
-		int rowNumber = _playerTable.rowAtPoint( e.getPoint() );
-		_playerTable.getSelectionModel().setSelectionInterval( rowNumber, rowNumber );
+		int rowNumber = _playerTable.rowAtPoint(e.getPoint());
+		_playerTable.getSelectionModel().setSelectionInterval(rowNumber, rowNumber);
 	}
 	
 	public class PlayerSelectionListener implements ListSelectionListener
 	{
+		@Override
 		public void valueChanged(ListSelectionEvent e)
 		{
 			PlayerTablePane view = PlayerTablePane.this;

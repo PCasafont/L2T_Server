@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.multisell;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
@@ -21,18 +22,18 @@ import java.util.ArrayList;
 import l2server.gameserver.model.L2ItemInstance;
 
 /**
- * 
+ *
  * @author DS
  *
  */
-public class PreparedEntry extends Entry
+public class PreparedEntry extends MultiSellEntry
 {
 	private long _taxAmount = 0;
 	
-	public PreparedEntry(Entry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
+	public PreparedEntry(MultiSellEntry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
 	{
 		_entryId = template.getEntryId() * 100000;
-		if (maintainEnchantment && item != null)
+		if (maintainEnchantment && (item != null))
 			_entryId += item.getEnchantLevel();
 		
 		ItemInfo info = null;
@@ -55,9 +56,7 @@ public class PreparedEntry extends Entry
 				
 				continue; // do not yet add this adena amount to the list as non-taxIngredient adena might be entered later (order not guaranteed)
 			}
-			else if (maintainEnchantment
-					&& item != null
-					&& ing.isArmorOrWeapon())
+			else if (maintainEnchantment && (item != null) && ing.isArmorOrWeapon())
 			{
 				info = new ItemInfo(item);
 				final Ingredient newIngredient = ing.clone();

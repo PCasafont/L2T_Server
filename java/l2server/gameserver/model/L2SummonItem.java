@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 /**
@@ -21,9 +22,9 @@ package l2server.gameserver.model;
 public class L2SummonItem
 {
 	private final int _itemId;
-	private final int  _npcId;
-	private final byte  _type;
-	private final int  _despawnDelay;
+	private final int _npcId;
+	private final byte _type;
+	private final int _despawnDelay;
 	
 	public L2SummonItem(int itemId, int npcId, byte type, int despawnDelay)
 	{
@@ -50,7 +51,7 @@ public class L2SummonItem
 	
 	public boolean isPetSummon()
 	{
-		return _type == 1 || _type == 2;
+		return (_type == 1) || (_type == 2);
 	}
 	
 	public int getDespawnDelay()

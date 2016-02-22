@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.util.Collection;
@@ -95,8 +96,8 @@ public class Shutdown extends Thread
 		}
 		
 		if (text != null)
-			Log.warning(text);
-		Log.warning(MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+			Log.info(text);
+		Log.info(MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 		
 		if (_shutdownMode > 0)
 		{
@@ -139,8 +140,7 @@ public class Shutdown extends Thread
 	 */
 	public void abort(L2PcInstance activeChar)
 	{
-		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. "
-				+ MODE_TEXT[_shutdownMode] + " has been stopped!");
+		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_task != null)
 		{
 			_task.abort();
@@ -197,7 +197,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.log(Level.WARNING, "Error saving offline shops.",t);
+			Log.log(Level.WARNING, "Error saving offline shops.", t);
 		}
 		
 		try
@@ -207,7 +207,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.log(Level.WARNING, "Error saving offline buffers.",t);
+			Log.log(Level.WARNING, "Error saving offline buffers.", t);
 		}
 		
 		try
@@ -217,7 +217,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.warning("Something went wrong while disconnecting players: "+t.getMessage());
+			Log.warning("Something went wrong while disconnecting players: " + t.getMessage());
 			t.printStackTrace();
 		}
 		
@@ -228,7 +228,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.warning("Something went wrong while stopping GameTimeController: "+t.getMessage());
+			Log.warning("Something went wrong while stopping GameTimeController: " + t.getMessage());
 			t.printStackTrace();
 		}
 		
@@ -241,7 +241,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.warning("Something went wrong while shutting down Login Server connection: "+t.getMessage());
+			Log.warning("Something went wrong while shutting down Login Server connection: " + t.getMessage());
 			t.printStackTrace();
 		}
 		
@@ -255,7 +255,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.warning("Something went wrong while shutting down selector thread: "+t.getMessage());
+			Log.warning("Something went wrong while shutting down selector thread: " + t.getMessage());
 			t.printStackTrace();
 		}
 		
@@ -266,7 +266,7 @@ public class Shutdown extends Thread
 		}
 		catch (Throwable t)
 		{
-			Log.warning("Something went wrong while shutting down DB connection: "+t.getMessage());
+			Log.warning("Something went wrong while shutting down DB connection: " + t.getMessage());
 			t.printStackTrace();
 		}
 		
@@ -298,12 +298,12 @@ public class Shutdown extends Thread
 			case GM_RESTART:
 				Log.info("GM restart received. Restarting NOW!");
 				break;
-				
+		
 		}
 		
 		/*if (Config.ACTIVATE_POSITION_RECORDER)
 			Universe.getInstance().implode(true);*/
-
+		
 		SpawnDataManager.getInstance().saveDbSpawnData();
 		Log.info("SpawnDataManager: All spawn dynamic data saved");
 		GrandBossManager.getInstance().cleanUp();
@@ -345,7 +345,7 @@ public class Shutdown extends Thread
 			Log.info("ItemsOnGroundManager: All items on ground saved!!");
 		}
 		
-		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)			
+		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
 			DamageManager.getInstance().saveData();
 		
 		if (Config.ENABLE_CUSTOM_LOTTERY)
@@ -370,7 +370,7 @@ public class Shutdown extends Thread
 				try
 				{
 					L2GameClient client = player.getClient();
-					if (client != null && !client.isDetached())
+					if ((client != null) && !client.isDetached())
 					{
 						client.close(ServerClose.STATIC_PACKET);
 						client.setActiveChar(null);
@@ -379,7 +379,7 @@ public class Shutdown extends Thread
 				}
 				catch (Throwable t)
 				{
-					Log.log(Level.WARNING, "Failed to log out char "+player, t);
+					Log.log(Level.WARNING, "Failed to log out char " + player, t);
 				}
 			}
 			
@@ -395,7 +395,7 @@ public class Shutdown extends Thread
 				}
 				catch (Throwable t)
 				{
-					Log.log(Level.WARNING, "Failed to store char "+player, t);
+					Log.log(Level.WARNING, "Failed to store char " + player, t);
 				}
 			}
 		}

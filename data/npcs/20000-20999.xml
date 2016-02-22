@@ -6599,7 +6599,7 @@
 		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
 		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 		<spoilDrop itemId="1914" min="1" max="1" chance="25.7308" /> <!-- Earring of Seal Gemstone -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="1.0178" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="1.0178" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<spoilDrop itemId="1539" min="1" max="3" chance="50.8898" /> <!-- Major Healing Potion -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1812" max="3683" chance="100" /> <!-- Adena -->
@@ -6951,7 +6951,7 @@
 			<itemDrop itemId="4041" min="1" max="1" chance="0.4763" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4040" min="1" max="1" chance="1.0954" /> <!-- Corroded Mold Lubricant -->
 			<itemDrop itemId="2170" min="1" max="1" chance="1.2918" /> <!-- Recipe: Nassen's Earring -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.1217" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.1217" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="3014" min="1" max="1" chance="1.5299" /> <!-- Recipe: Full Plate Boots -->
 			<itemDrop itemId="4188" min="1" max="1" chance="0.0631" /> <!-- Recipe: Twilight Knife -->
 			<itemDrop itemId="8725" min="1" max="1" chance="1.5214" /> <!-- Life Stone - Lv. 52 -->
@@ -9461,7 +9461,7 @@
 		<skill id="4077" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="1872" min="1" max="7" chance="83.9007" /> <!-- Corroded Animal Bone Fragment -->
 		<spoilDrop itemId="2206" min="1" max="1" chance="6.6412" /> <!-- Recipe: Reinforced Mithril Shirt -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="1.4383" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="1.4383" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1014" max="2049" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -11077,7 +11077,7 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<spoilDrop itemId="2092" min="1" max="1" chance="0.9934" /> <!-- Homunkulus' Sword Blade -->
 		<spoilDrop itemId="2353" min="1" max="1" chance="0.2974" /> <!-- Recipe: Samurai Long Sword -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.4051" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.4051" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="722" max="1466" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -11140,8 +11140,8 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.5276" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.2638" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.2953" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4604" min="1" max="1" chance="0.0755" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0755" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4604" min="1" max="1" chance="0.0755" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0755" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="3014" min="1" max="1" chance="0.9485" /> <!-- Recipe: Full Plate Boots -->
 			<itemDrop itemId="2359" min="1" max="1" chance="0.0554" /> <!-- Recipe: Eminence Bow -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.9432" /> <!-- Life Stone - Lv. 52 -->
@@ -11217,7 +11217,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
-		<spoilDrop itemId="4599" min="1" max="1" chance="0.5751" /> <!-- Greater WIT Dye <Wit + 2 Int - 2> -->
+		<spoilDrop itemId="4599" min="1" max="1" chance="0.5751" /> <!-- Greater WIT Dye [Wit + 2 Int - 2] -->
 		<spoilDrop itemId="1873" min="1" max="1" chance="69.0175" /> <!-- Corroded Silver Nugget -->
 		<spoilDrop itemId="1806" min="1" max="1" chance="0.3451" /> <!-- Recipe: Soulshot (B-grade) -->
 		<dropCategory chance="70">
@@ -11270,7 +11270,7 @@
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 		<spoilDrop itemId="3955" min="1" max="1" chance="0.3548" /> <!-- Recipe: Blessed Spiritshot (B-grade) -->
 		<spoilDrop itemId="2117" min="1" max="1" chance="0.8346" /> <!-- Ghoul's Staff Head -->
-		<spoilDrop itemId="4592" min="1" max="1" chance="0.5913" /> <!-- Greater CON Dye <Con + 2 DEX - 2> -->
+		<spoilDrop itemId="4592" min="1" max="1" chance="0.5913" /> <!-- Greater CON Dye [Con + 2 DEX - 2] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="701" max="1428" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -13225,7 +13225,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<spoilDrop itemId="1874" min="1" max="1" chance="5.7718" /> <!-- Corroded Oriharukon Ore -->
-		<spoilDrop itemId="4472" min="1" max="1" chance="0.4947" /> <!-- CON Dye <Con + 1 DEX - 1> -->
+		<spoilDrop itemId="4472" min="1" max="1" chance="0.4947" /> <!-- CON Dye [Con + 1 DEX - 1] -->
 		<spoilDrop itemId="1869" min="1" max="1" chance="86.5765" /> <!-- Corroded Iron Ore -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="349" max="705" chance="100" /> <!-- Adena -->
@@ -22593,7 +22593,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<spoilDrop itemId="2055" min="1" max="1" chance="0.8505" /> <!-- Glaive Edge -->
 		<spoilDrop itemId="3954" min="1" max="1" chance="0.3429" /> <!-- Recipe: Blessed Spiritshot (C-grade) -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.5878" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.5878" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="414" max="837" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -22999,7 +22999,7 @@
 		<skill id="4284" level="5" /> <!-- Bleed Resistance -->
 		<spoilDrop itemId="1865" min="1" max="3" chance="57.2525" /> <!-- Corroded Varnish -->
 		<spoilDrop itemId="3954" min="1" max="1" chance="0.3817" /> <!-- Recipe: Blessed Spiritshot (C-grade) -->
-		<spoilDrop itemId="4470" min="1" max="1" chance="0.6543" /> <!-- STR Dye <STR + 1 DEX - 1> -->
+		<spoilDrop itemId="4470" min="1" max="1" chance="0.6543" /> <!-- STR Dye [STR + 1 DEX - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="461" max="932" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -23746,7 +23746,7 @@
 		<skill id="5620" level="6" /> <!-- Melee Attack Vulnerability -->
 		<spoilDrop itemId="1867" min="1" max="3" chance="83.6382" /> <!-- Corroded Animal Skin -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="27.8794" /> <!-- Major Healing Potion -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.2788" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.2788" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="497" max="1009" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -23771,7 +23771,7 @@
 			<itemDrop itemId="5550" min="1" max="1" chance="0.3814" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="4043" min="1" max="1" chance="0.9536" /> <!-- Asofe -->
 			<itemDrop itemId="4122" min="1" max="1" chance="1.2715" /> <!-- Recipe: Corroded Maestro Holder -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0636" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0636" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="4123" min="1" max="1" chance="1.2715" /> <!-- Recipe: Corroded Maestro Anvil Lock -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.7947" /> <!-- Life Stone - Lv. 52 -->
 			<itemDrop itemId="8735" min="1" max="1" chance="0.1987" /> <!-- Mid-grade Life Stone - Lv. 52 -->
@@ -23861,7 +23861,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="5620" level="6" /> <!-- Melee Attack Vulnerability -->
-		<spoilDrop itemId="4598" min="1" max="1" chance="0.4711" /> <!-- Greater MEN Dye <Men + 2 Wit - 2> -->
+		<spoilDrop itemId="4598" min="1" max="1" chance="0.4711" /> <!-- Greater MEN Dye [Men + 2 Wit - 2] -->
 		<spoilDrop itemId="1806" min="1" max="1" chance="0.2826" /> <!-- Recipe: Soulshot (B-grade) -->
 		<spoilDrop itemId="1870" min="1" max="3" chance="70.6598" /> <!-- Corroded Coal -->
 		<dropCategory chance="70">
@@ -23955,7 +23955,7 @@
 		<skill id="5620" level="6" /> <!-- Melee Attack Vulnerability -->
 		<spoilDrop itemId="2119" min="1" max="1" chance="1.2928" /> <!-- Crystal Dagger Blade -->
 		<spoilDrop itemId="4145" min="1" max="1" chance="1.2443" /> <!-- Recipe: Avadon Leather Armor -->
-		<spoilDrop itemId="4591" min="1" max="1" chance="0.9457" /> <!-- Greater CON Dye <Con + 2 Str - 2> -->
+		<spoilDrop itemId="4591" min="1" max="1" chance="0.9457" /> <!-- Greater CON Dye [Con + 2 Str - 2] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1121" max="2284" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -25159,7 +25159,7 @@
 			<itemDrop itemId="1894" min="1" max="1" chance="1.0871" /> <!-- Corroded Quality Leather -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.5164" /> <!-- Corroded Enria -->
 			<itemDrop itemId="2234" min="1" max="1" chance="0.4618" /> <!-- Recipe: Divine Stockings -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0689" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0689" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="2356" min="1" max="1" chance="0.0505" /> <!-- Recipe: Demon's Staff -->
 			<itemDrop itemId="6669" min="1" max="1" chance="7.2055" /> <!-- Deluxe Chest Key - Grade 5 -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.8607" /> <!-- Life Stone - Lv. 52 -->
@@ -25313,7 +25313,7 @@
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="19.9596" /> <!-- Corroded Stone of Purity -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="66.5319" /> <!-- Major Healing Potion -->
-		<spoilDrop itemId="4609" min="1" max="1" chance="0.6653" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+		<spoilDrop itemId="4609" min="1" max="1" chance="0.6653" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1189" max="2403" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -25341,7 +25341,7 @@
 			<itemDrop itemId="1876" min="1" max="1" chance="6.1908" /> <!-- Corroded Mithril Ore -->
 			<itemDrop itemId="1895" min="1" max="1" chance="8.844" /> <!-- Corroded Metallic Fiber -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.5159" /> <!-- Corroded Enria -->
-			<itemDrop itemId="4608" min="1" max="1" chance="0.0688" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
+			<itemDrop itemId="4608" min="1" max="1" chance="0.0688" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
 			<itemDrop itemId="3017" min="1" max="1" chance="0.8646" /> <!-- Recipe: Divine Gloves -->
 			<itemDrop itemId="5155" min="1" max="1" chance="0.0619" /> <!-- Recipe: Soulshot Compressed Package (B-grade) -->
 			<itemDrop itemId="3017" min="1" max="1" chance="0.8646" /> <!-- Recipe: Divine Gloves -->
@@ -25573,7 +25573,7 @@
 		<skill id="4001" level="5" /> <!-- Gust -->
 		<spoilDrop itemId="2120" min="1" max="1" chance="2.3008" /> <!-- Great Pata Blade -->
 		<spoilDrop itemId="4146" min="1" max="1" chance="3.0703" /> <!-- Recipe: Tunic of Zubei -->
-		<spoilDrop itemId="4590" min="1" max="1" chance="1.5966" /> <!-- Greater STR Dye <STR + 2 DEX - 2> -->
+		<spoilDrop itemId="4590" min="1" max="1" chance="1.5966" /> <!-- Greater STR Dye [STR + 2 DEX - 2] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1893" max="3856" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -25906,7 +25906,7 @@
 		<skill id="4073" level="4" /> <!-- Stun -->
 		<spoilDrop itemId="2323" min="1" max="1" chance="0.4611" /> <!-- Recipe: Elemental Bow -->
 		<spoilDrop itemId="2322" min="1" max="1" chance="0.4611" /> <!-- Recipe: Soulfire Dirk -->
-		<spoilDrop itemId="4553" min="1" max="1" chance="0.5293" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4553" min="1" max="1" chance="0.5293" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="521" max="1068" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -26713,7 +26713,7 @@
 			<itemDrop itemId="4039" min="1" max="1" chance="22.5835" /> <!-- Corroded Mold Glue -->
 			<itemDrop itemId="4041" min="1" max="1" chance="5.8913" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4044" min="1" max="1" chance="22.5835" /> <!-- Corroded Thons -->
-			<itemDrop itemId="4614" min="1" max="1" chance="0.9345" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
+			<itemDrop itemId="4614" min="1" max="1" chance="0.9345" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
 			<itemDrop itemId="4402" min="1" max="1" chance="1.355" /> <!-- Blue Dimensional Stone -->
 			<itemDrop itemId="4999" min="1" max="1" chance="8.4267" /> <!-- Recipe: Sealed Doom Boots (60%) -->
 			<itemDrop itemId="8728" min="1" max="1" chance="11.2917" /> <!-- Life Stone - Lv. 61 -->
@@ -26754,7 +26754,7 @@
 			<itemDrop itemId="1876" min="1" max="1" chance="6.8443" /> <!-- Corroded Mithril Ore -->
 			<itemDrop itemId="1895" min="1" max="1" chance="9.7775" /> <!-- Corroded Metallic Fiber -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.5704" /> <!-- Corroded Enria -->
-			<itemDrop itemId="4623" min="1" max="1" chance="0.0472" /> <!-- Greater WIT Dye <Wit + 4 Int - 4> -->
+			<itemDrop itemId="4623" min="1" max="1" chance="0.0472" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
 			<itemDrop itemId="5276" min="1" max="1" chance="0.0456" /> <!-- Recipe: Greater Spiritshot Compressed Package (A-grade) -->
 			<itemDrop itemId="8729" min="1" max="1" chance="0.4563" /> <!-- Life Stone - Lv. 64 -->
 			<itemDrop itemId="8739" min="1" max="1" chance="0.1141" /> <!-- Mid-grade Life Stone - Lv. 64 -->
@@ -26981,7 +26981,7 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="9.9549" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="4.9774" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.6492" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4615" min="1" max="1" chance="0.103" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4615" min="1" max="1" chance="0.103" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="4402" min="1" max="1" chance="0.1493" /> <!-- Blue Dimensional Stone -->
 			<itemDrop itemId="5334" min="1" max="1" chance="0.147" /> <!-- Recipe: Sealed Tallum Leather Armor(60%) -->
 			<itemDrop itemId="8730" min="1" max="1" chance="0.8296" /> <!-- Life Stone - Lv. 67 -->
@@ -27337,7 +27337,7 @@
 		<skill id="4065" level="4" /> <!-- Heal -->
 		<spoilDrop itemId="2313" min="1" max="1" chance="0.5351" /> <!-- Recipe: Orcish Glaive -->
 		<spoilDrop itemId="2212" min="1" max="1" chance="4.392" /> <!-- Recipe: Plated Leather Gaiters -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.7002" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.7002" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="485" max="984" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -27865,7 +27865,7 @@
 			<itemDrop itemId="1894" min="1" max="1" chance="1.1601" /> <!-- Corroded Quality Leather -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.5511" /> <!-- Corroded Enria -->
 			<itemDrop itemId="4124" min="1" max="1" chance="1.4695" /> <!-- Recipe: Corroded Craftsman Mold -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0735" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0735" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="2353" min="1" max="1" chance="0.0539" /> <!-- Recipe: Samurai Long Sword -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.9184" /> <!-- Life Stone - Lv. 52 -->
 			<itemDrop itemId="8735" min="1" max="1" chance="0.2296" /> <!-- Mid-grade Life Stone - Lv. 52 -->
@@ -27927,7 +27927,7 @@
 		<skill id="4085" level="1" /> <!-- Critical Damage -->
 		<spoilDrop itemId="2103" min="1" max="1" chance="0.9533" /> <!-- Sage's Staff Head -->
 		<spoilDrop itemId="2358" min="1" max="1" chance="0.2759" /> <!-- Recipe: Great Pata -->
-		<spoilDrop itemId="4602" min="1" max="1" chance="0.3758" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
+		<spoilDrop itemId="4602" min="1" max="1" chance="0.3758" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="672" max="1357" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -27941,7 +27941,7 @@
 			<itemDrop itemId="1876" min="1" max="1" chance="2.8579" /> <!-- Corroded Mithril Ore -->
 			<itemDrop itemId="1895" min="1" max="1" chance="4.0828" /> <!-- Corroded Metallic Fiber -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.2382" /> <!-- Corroded Enria -->
-			<itemDrop itemId="4606" min="1" max="1" chance="0.0318" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4606" min="1" max="1" chance="0.0318" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="3017" min="1" max="1" chance="0.3992" /> <!-- Recipe: Divine Gloves -->
 			<itemDrop itemId="5155" min="1" max="1" chance="0.0286" /> <!-- Recipe: Soulshot Compressed Package (B-grade) -->
 			<itemDrop itemId="3015" min="1" max="1" chance="0.3992" /> <!-- Recipe: Drake Leather Gloves -->
@@ -28447,7 +28447,7 @@
 		<skill id="4073" level="5" /> <!-- Stun -->
 		<spoilDrop itemId="4049" min="1" max="1" chance="18.8177" /> <!-- Adamantite Earring Gemstone -->
 		<spoilDrop itemId="4195" min="1" max="1" chance="0.2739" /> <!-- Recipe: Art of Battle Axe -->
-		<spoilDrop itemId="4613" min="1" max="1" chance="0.4948" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
+		<spoilDrop itemId="4613" min="1" max="1" chance="0.4948" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1417" max="2887" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -28558,7 +28558,7 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="3.1306" /> <!-- Corroded Steel -->
 			<itemDrop itemId="5550" min="1" max="1" chance="0.4174" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.0435" /> <!-- Asofe -->
-			<itemDrop itemId="4615" min="1" max="1" chance="0.0432" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4615" min="1" max="1" chance="0.0432" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="4998" min="1" max="1" chance="0.3894" /> <!-- Recipe: Sealed Blue Wolf Gloves (60%) -->
 			<itemDrop itemId="4173" min="1" max="1" chance="0.3894" /> <!-- Recipe: Sealed Blue Wolf Gloves -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5218" /> <!-- Life Stone - Lv. 61 -->
@@ -28619,7 +28619,7 @@
 			<itemDrop itemId="4039" min="1" max="1" chance="20.3795" /> <!-- Corroded Mold Glue -->
 			<itemDrop itemId="4041" min="1" max="1" chance="5.3164" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4044" min="1" max="1" chance="20.3795" /> <!-- Corroded Thons -->
-			<itemDrop itemId="4624" min="1" max="1" chance="0.8433" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4624" min="1" max="1" chance="0.8433" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="5276" min="1" max="1" chance="0.8152" /> <!-- Recipe: Greater Spiritshot Compressed Package (A-grade) -->
 			<itemDrop itemId="8729" min="1" max="1" chance="8.1518" /> <!-- Life Stone - Lv. 64 -->
 			<itemDrop itemId="8739" min="1" max="1" chance="2.038" /> <!-- Mid-grade Life Stone - Lv. 64 -->
@@ -29225,7 +29225,7 @@
 			<itemDrop itemId="1894" min="1" max="1" chance="1.0171" /> <!-- Corroded Quality Leather -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.4831" /> <!-- Corroded Enria -->
 			<itemDrop itemId="2234" min="1" max="1" chance="0.432" /> <!-- Recipe: Divine Stockings -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0644" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0644" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="2356" min="1" max="1" chance="0.0473" /> <!-- Recipe: Demon's Staff -->
 			<itemDrop itemId="6669" min="1" max="1" chance="6.7413" /> <!-- Deluxe Chest Key - Grade 5 -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.8052" /> <!-- Life Stone - Lv. 52 -->
@@ -29354,7 +29354,7 @@
 		<skill id="4073" level="5" /> <!-- Stun -->
 		<spoilDrop itemId="1977" min="1" max="1" chance="2.778" /> <!-- Compound Armor Temper -->
 		<spoilDrop itemId="1884" min="1" max="3" chance="57.7821" /> <!-- Corroded Cord -->
-		<spoilDrop itemId="4606" min="1" max="1" chance="0.4173" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+		<spoilDrop itemId="4606" min="1" max="1" chance="0.4173" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="746" max="1507" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -29370,8 +29370,8 @@
 			<itemDrop itemId="1874" min="1" max="1" chance="3.0618" /> <!-- Corroded Oriharukon Ore -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.5309" /> <!-- Asofe -->
 			<itemDrop itemId="4039" min="1" max="1" chance="1.5309" /> <!-- Corroded Mold Glue -->
-			<itemDrop itemId="4607" min="1" max="1" chance="0.1021" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.1021" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="1" chance="0.1021" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.1021" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="3955" min="1" max="1" chance="0.0919" /> <!-- Recipe: Blessed Spiritshot (B-grade) -->
 			<itemDrop itemId="5280" min="1" max="1" chance="0.0919" /> <!-- Recipe: Greater Blessed Spiritshot Compressed Package (B-grade) -->
 			<itemDrop itemId="8725" min="1" max="1" chance="1.2758" /> <!-- Life Stone - Lv. 52 -->
@@ -29397,7 +29397,7 @@
 		<skill id="4073" level="5" /> <!-- Stun -->
 		<spoilDrop itemId="1988" min="1" max="1" chance="3.7181" /> <!-- Divine Tunic Fabric -->
 		<spoilDrop itemId="4141" min="1" max="1" chance="0.9303" /> <!-- Recipe: Avadon Breastplate -->
-		<spoilDrop itemId="4604" min="1" max="1" chance="0.43" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
+		<spoilDrop itemId="4604" min="1" max="1" chance="0.43" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="766" max="1556" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -29523,7 +29523,7 @@
 		<skill id="4073" level="5" /> <!-- Stun -->
 		<spoilDrop itemId="4057" min="1" max="1" chance="6.0231" /> <!-- Zubei's Gaiter Material -->
 		<spoilDrop itemId="4198" min="1" max="1" chance="0.1644" /> <!-- Recipe: Bellion Cestus -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.7177" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.7177" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="851" max="1734" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -29586,7 +29586,7 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="3.1363" /> <!-- Corroded Steel -->
 			<itemDrop itemId="5550" min="1" max="1" chance="0.4182" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.0454" /> <!-- Asofe -->
-			<itemDrop itemId="4616" min="1" max="1" chance="0.0433" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
+			<itemDrop itemId="4616" min="1" max="1" chance="0.0433" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
 			<itemDrop itemId="4168" min="1" max="1" chance="0.3901" /> <!-- Recipe: Sealed Doom Gloves -->
 			<itemDrop itemId="4164" min="1" max="1" chance="0.2077" /> <!-- Recipe: Stockings of Doom -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5227" /> <!-- Life Stone - Lv. 61 -->
@@ -29636,7 +29636,7 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="3.1363" /> <!-- Corroded Steel -->
 			<itemDrop itemId="5550" min="1" max="1" chance="0.4182" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.0454" /> <!-- Asofe -->
-			<itemDrop itemId="4616" min="1" max="1" chance="0.0433" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
+			<itemDrop itemId="4616" min="1" max="1" chance="0.0433" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
 			<itemDrop itemId="4168" min="1" max="1" chance="0.3901" /> <!-- Recipe: Sealed Doom Gloves -->
 			<itemDrop itemId="4164" min="1" max="1" chance="0.2077" /> <!-- Recipe: Stockings of Doom -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5227" /> <!-- Life Stone - Lv. 61 -->
@@ -29850,7 +29850,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<spoilDrop itemId="4042" min="1" max="1" chance="2.5482" /> <!-- Corroded Enria -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="33.9759" /> <!-- Major Healing Potion -->
-		<spoilDrop itemId="4602" min="1" max="1" chance="0.3398" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
+		<spoilDrop itemId="4602" min="1" max="1" chance="0.3398" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="605" max="1229" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -30570,7 +30570,7 @@
 			<itemDrop itemId="4041" min="1" max="1" chance="0.4895" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4040" min="1" max="1" chance="1.1259" /> <!-- Corroded Mold Lubricant -->
 			<itemDrop itemId="2354" min="1" max="1" chance="0.0918" /> <!-- Recipe: Deadman's Staff -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.1251" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.1251" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="2358" min="1" max="1" chance="0.0918" /> <!-- Recipe: Great Pata -->
 			<itemDrop itemId="8725" min="1" max="1" chance="1.5637" /> <!-- Life Stone - Lv. 52 -->
 			<itemDrop itemId="8735" min="1" max="1" chance="0.3909" /> <!-- Mid-grade Life Stone - Lv. 52 -->
@@ -31081,7 +31081,7 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<spoilDrop itemId="1874" min="1" max="1" chance="25.0765" /> <!-- Corroded Oriharukon Ore -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="25.0765" /> <!-- Corroded Stone of Purity -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.8359" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.8359" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1488" max="3024" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -31106,7 +31106,7 @@
 			<itemDrop itemId="1889" min="1" max="1" chance="1.8185" /> <!-- Corroded Synthetic Braid -->
 			<itemDrop itemId="4044" min="1" max="1" chance="0.9092" /> <!-- Corroded Thons -->
 			<itemDrop itemId="2355" min="1" max="1" chance="0.0445" /> <!-- Recipe: Ghoul's Staff -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0606" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0606" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="3019" min="1" max="1" chance="0.7274" /> <!-- Recipe: Full Plate Shield -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.7577" /> <!-- Life Stone - Lv. 52 -->
 			<itemDrop itemId="8735" min="1" max="1" chance="0.1894" /> <!-- Mid-grade Life Stone - Lv. 52 -->
@@ -31900,7 +31900,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<spoilDrop itemId="5220" min="1" max="1" chance="5.8852" /> <!-- Corroded Metal Hardener -->
 		<spoilDrop itemId="1885" min="1" max="1" chance="12.2609" /> <!-- Corroded High-grade Suede -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.8407" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.8407" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="582" max="1182" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -32024,7 +32024,7 @@
 		<skill id="4032" level="6" /> <!-- Power Strike -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="34.4772" /> <!-- Corroded Stone of Purity -->
 		<spoilDrop itemId="1986" min="1" max="1" chance="5.4648" /> <!-- Full Plate Armor Temper -->
-		<spoilDrop itemId="4613" min="1" max="1" chance="0.7133" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
+		<spoilDrop itemId="4613" min="1" max="1" chance="0.7133" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="2049" max="4156" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -32038,7 +32038,7 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.5707" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.2853" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.2981" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4618" min="1" max="1" chance="0.0473" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4618" min="1" max="1" chance="0.0473" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="4999" min="1" max="1" chance="0.4264" /> <!-- Recipe: Sealed Doom Boots (60%) -->
 			<itemDrop itemId="4163" min="1" max="1" chance="0.227" /> <!-- Recipe: Blue Wolf Stockings -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5713" /> <!-- Life Stone - Lv. 61 -->
@@ -33123,7 +33123,7 @@
 			<itemDrop itemId="5220" min="1" max="1" chance="2.1933" /> <!-- Corroded Metal Hardener -->
 			<itemDrop itemId="1885" min="1" max="1" chance="4.5694" /> <!-- Corroded High-grade Suede -->
 			<itemDrop itemId="2206" min="1" max="1" chance="1.4468" /> <!-- Recipe: Reinforced Mithril Shirt -->
-			<itemDrop itemId="4556" min="1" max="1" chance="0.2193" /> <!-- Greater CON Dye <Con + 1 DEX - 1> -->
+			<itemDrop itemId="4556" min="1" max="1" chance="0.2193" /> <!-- Greater CON Dye [Con + 1 DEX - 1] -->
 			<itemDrop itemId="5274" min="1" max="1" chance="0.1829" /> <!-- Recipe: Greater Spiritshot Compressed Package (C-grade) -->
 		</dropCategory>
 		<spawn x="83775" y="244694" z="-7296" heading="0" respawn="94" />
@@ -33168,7 +33168,7 @@
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
 		<spoilDrop itemId="2161" min="1" max="1" chance="15.3276" /> <!-- Recipe: Aquastone Ring -->
 		<spoilDrop itemId="2047" min="1" max="1" chance="1.3879" /> <!-- Claymore Blade -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.9021" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.9021" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="636" max="1285" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -33232,7 +33232,7 @@
 			<itemDrop itemId="1889" min="1" max="1" chance="2.1439" /> <!-- Corroded Synthetic Braid -->
 			<itemDrop itemId="2998" min="1" max="1" chance="2.4179" /> <!-- Recipe: Chain Shield -->
 			<itemDrop itemId="737" min="1" max="1" chance="3.2158" /> <!-- Scroll of Resurrection -->
-			<itemDrop itemId="4557" min="1" max="1" chance="0.1286" /> <!-- Greater DEX Dye <Dex + 1 Str - 1> -->
+			<itemDrop itemId="4557" min="1" max="1" chance="0.1286" /> <!-- Greater DEX Dye [Dex + 1 Str - 1] -->
 			<itemDrop itemId="3033" min="1" max="1" chance="0.1072" /> <!-- Recipe: Spiritshot (C-grade) -->
 			<itemDrop itemId="3954" min="1" max="1" chance="0.1072" /> <!-- Recipe: Blessed Spiritshot (C-grade) -->
 			<itemDrop itemId="6668" min="1" max="1" chance="11.4849" /> <!-- Deluxe Chest Key - Grade 4 -->
@@ -33765,7 +33765,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<spoilDrop itemId="2160" min="1" max="1" chance="13.2104" /> <!-- Recipe: Moonstone Earring -->
 		<spoilDrop itemId="1953" min="1" max="1" chance="6.5586" /> <!-- Sage's Rag Lining -->
-		<spoilDrop itemId="4470" min="1" max="1" chance="1.1701" /> <!-- STR Dye <STR + 1 DEX - 1> -->
+		<spoilDrop itemId="4470" min="1" max="1" chance="1.1701" /> <!-- STR Dye [STR + 1 DEX - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="830" max="1660" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -34360,7 +34360,7 @@
 			<itemDrop itemId="1879" min="1" max="1" chance="6.7829" /> <!-- Corroded Cokes -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.7132" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4040" min="1" max="1" chance="0.814" /> <!-- Corroded Mold Lubricant -->
-			<itemDrop itemId="4619" min="1" max="1" chance="0.0561" /> <!-- Greater INT Dye <Int + 4 Men - 4> -->
+			<itemDrop itemId="4619" min="1" max="1" chance="0.0561" /> <!-- Greater INT Dye [Int + 4 Men - 4] -->
 			<itemDrop itemId="4401" min="1" max="1" chance="0.0814" /> <!-- Green Dimensional Stone -->
 			<itemDrop itemId="4167" min="1" max="1" chance="0.5062" /> <!-- Recipe: Sealed Blue Wolf Boots -->
 			<itemDrop itemId="6670" min="1" max="1" chance="6.7829" /> <!-- Deluxe Chest Key - Grade 6 -->
@@ -34402,8 +34402,8 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="38.4494" /> <!-- Corroded Stone of Purity -->
-		<spoilDrop itemId="4617" min="1" max="1" chance="0.7955" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-		<spoilDrop itemId="4613" min="1" max="1" chance="0.7955" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
+		<spoilDrop itemId="4617" min="1" max="1" chance="0.7955" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+		<spoilDrop itemId="4613" min="1" max="1" chance="0.7955" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="2285" max="4635" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -34417,7 +34417,7 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.6008" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.3004" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.3" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4620" min="1" max="1" chance="0.0476" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
+			<itemDrop itemId="4620" min="1" max="1" chance="0.0476" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5751" /> <!-- Life Stone - Lv. 61 -->
 			<itemDrop itemId="8738" min="1" max="1" chance="0.1438" /> <!-- Mid-grade Life Stone - Lv. 61 -->
 			<itemDrop itemId="8748" min="1" max="1" chance="0.0144" /> <!-- High-grade Life Stone - Lv. 61 -->
@@ -34478,7 +34478,7 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.6008" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.3004" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.3" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4620" min="1" max="1" chance="0.0476" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
+			<itemDrop itemId="4620" min="1" max="1" chance="0.0476" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
 			<itemDrop itemId="8728" min="1" max="1" chance="0.5751" /> <!-- Life Stone - Lv. 61 -->
 			<itemDrop itemId="8738" min="1" max="1" chance="0.1438" /> <!-- Mid-grade Life Stone - Lv. 61 -->
 			<itemDrop itemId="8748" min="1" max="1" chance="0.0144" /> <!-- High-grade Life Stone - Lv. 61 -->
@@ -34769,7 +34769,7 @@
 		<skill id="4032" level="6" /> <!-- Power Strike -->
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
-		<spoilDrop itemId="4620" min="1" max="1" chance="0.8386" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
+		<spoilDrop itemId="4620" min="1" max="1" chance="0.8386" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
 		<spoilDrop itemId="4105" min="1" max="1" chance="3.479" /> <!-- Heavy War Axe Head -->
 		<spoilDrop itemId="4077" min="1" max="1" chance="27.3487" /> <!-- Doom Shield Fragment -->
 		<dropCategory chance="70">
@@ -35097,7 +35097,7 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="4.6197" /> <!-- Corroded Steel -->
 			<itemDrop itemId="5550" min="1" max="1" chance="0.616" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.5399" /> <!-- Asofe -->
-			<itemDrop itemId="4616" min="1" max="1" chance="0.0637" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
+			<itemDrop itemId="4616" min="1" max="1" chance="0.0637" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
 			<itemDrop itemId="4402" min="1" max="1" chance="0.0924" /> <!-- Blue Dimensional Stone -->
 			<itemDrop itemId="8316" min="1" max="1" chance="0.0171" /> <!-- Recipe: Flaming Dragon Skull (60%) -->
 			<itemDrop itemId="8730" min="1" max="1" chance="0.5133" /> <!-- Life Stone - Lv. 67 -->
@@ -35158,7 +35158,7 @@
 			<itemDrop itemId="1874" min="1" max="1" chance="3.0531" /> <!-- Corroded Oriharukon Ore -->
 			<itemDrop itemId="4043" min="1" max="1" chance="1.5265" /> <!-- Asofe -->
 			<itemDrop itemId="4039" min="1" max="1" chance="1.5265" /> <!-- Corroded Mold Glue -->
-			<itemDrop itemId="4617" min="1" max="1" chance="0.0632" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
+			<itemDrop itemId="4617" min="1" max="1" chance="0.0632" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
 			<itemDrop itemId="5276" min="1" max="1" chance="0.0611" /> <!-- Recipe: Greater Spiritshot Compressed Package (A-grade) -->
 			<itemDrop itemId="8730" min="1" max="1" chance="0.5088" /> <!-- Life Stone - Lv. 67 -->
 			<itemDrop itemId="8740" min="1" max="1" chance="0.1272" /> <!-- Mid-grade Life Stone - Lv. 67 -->
@@ -36346,7 +36346,7 @@
 		<skill id="4067" level="5" /> <!-- Blow -->
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.3273" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.3273" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="32.7301" /> <!-- Major Healing Potion -->
 		<spoilDrop itemId="1914" min="1" max="1" chance="8.2745" /> <!-- Earring of Seal Gemstone -->
 		<dropCategory chance="70">
@@ -36427,7 +36427,7 @@
 		<skill id="4047" level="5" /> <!-- Hold -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
-		<spoilDrop itemId="4603" min="1" max="1" chance="0.2922" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+		<spoilDrop itemId="4603" min="1" max="1" chance="0.2922" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="29.2227" /> <!-- Major Healing Potion -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="1.1435" /> <!-- Corroded Mold Hardener -->
 		<dropCategory chance="70">
@@ -36447,8 +36447,8 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.5709" /> <!-- Corroded Coarse Bone Powder -->
 			<itemDrop itemId="1875" min="1" max="1" chance="2.2855" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.2981" /> <!-- Corroded Mold Hardener -->
-			<itemDrop itemId="4601" min="1" max="1" chance="0.0762" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4609" min="1" max="1" chance="0.0762" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4601" min="1" max="1" chance="0.0762" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4609" min="1" max="1" chance="0.0762" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="2355" min="1" max="1" chance="0.0559" /> <!-- Recipe: Ghoul's Staff -->
 			<itemDrop itemId="8725" min="1" max="1" chance="0.9523" /> <!-- Life Stone - Lv. 52 -->
 			<itemDrop itemId="8735" min="1" max="1" chance="0.2381" /> <!-- Mid-grade Life Stone - Lv. 52 -->
@@ -36536,7 +36536,7 @@
 			<itemDrop itemId="1876" min="1" max="1" chance="6.1908" /> <!-- Corroded Mithril Ore -->
 			<itemDrop itemId="1895" min="1" max="1" chance="8.844" /> <!-- Corroded Metallic Fiber -->
 			<itemDrop itemId="4042" min="1" max="1" chance="0.5159" /> <!-- Corroded Enria -->
-			<itemDrop itemId="4608" min="1" max="1" chance="0.0688" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
+			<itemDrop itemId="4608" min="1" max="1" chance="0.0688" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
 			<itemDrop itemId="3017" min="1" max="1" chance="0.8646" /> <!-- Recipe: Divine Gloves -->
 			<itemDrop itemId="5155" min="1" max="1" chance="0.0619" /> <!-- Recipe: Soulshot Compressed Package (B-grade) -->
 			<itemDrop itemId="3017" min="1" max="1" chance="0.8646" /> <!-- Recipe: Divine Gloves -->
@@ -36820,7 +36820,7 @@
 		<skill id="4438" level="2" /> <!-- Greater Sleep Resistance -->
 		<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.8784" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.8784" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<spoilDrop itemId="1956" min="1" max="1" chance="17.4488" /> <!-- Square Shield Fragment -->
 		<spoilDrop itemId="1805" min="1" max="1" chance="0.5124" /> <!-- Recipe: Soulshot (C-grade) -->
 		<dropCategory chance="70">
@@ -38377,7 +38377,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4073" level="4" /> <!-- Stun -->
-		<spoilDrop itemId="4480" min="1" max="1" chance="0.5103" /> <!-- WIT Dye <Wit + 1 Men - 1> -->
+		<spoilDrop itemId="4480" min="1" max="1" chance="0.5103" /> <!-- WIT Dye [Wit + 1 Men - 1] -->
 		<spoilDrop itemId="2054" min="1" max="1" chance="0.7601" /> <!-- Light Crossbow Shaft -->
 		<spoilDrop itemId="1805" min="1" max="1" chance="0.2977" /> <!-- Recipe: Soulshot (C-grade) -->
 		<dropCategory chance="70">
@@ -38514,7 +38514,7 @@
 		<skill id="4065" level="4" /> <!-- Heal -->
 		<spoilDrop itemId="1970" min="1" max="1" chance="3.6908" /> <!-- Robe of Seal Fabric -->
 		<spoilDrop itemId="5550" min="1" max="1" chance="2.2037" /> <!-- Corroded Reinforced Metal Plate -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.5509" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.5509" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="653" max="1328" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -38560,7 +38560,7 @@
 		<skill id="4032" level="5" /> <!-- Power Strike -->
 		<spoilDrop itemId="2233" min="1" max="1" chance="1.2171" /> <!-- Recipe: Divine Tunic -->
 		<spoilDrop itemId="2109" min="1" max="1" chance="0.7302" /> <!-- Akat Longbow Shaft -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.2894" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.2894" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="515" max="1047" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -38790,7 +38790,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<spoilDrop itemId="1868" min="1" max="3" chance="89.7692" /> <!-- Corroded Thread -->
 		<spoilDrop itemId="1876" min="1" max="1" chance="17.9538" /> <!-- Corroded Mithril Ore -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.1995" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.1995" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="355" max="722" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -39312,7 +39312,7 @@
 		<skill id="4073" level="6" /> <!-- Stun -->
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
-		<spoilDrop itemId="4613" min="1" max="1" chance="0.2805" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
+		<spoilDrop itemId="4613" min="1" max="1" chance="0.2805" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
 		<spoilDrop itemId="4049" min="1" max="1" chance="10.6679" /> <!-- Adamantite Earring Gemstone -->
 		<spoilDrop itemId="1869" min="1" max="5" chance="67.7943" /> <!-- Corroded Iron Ore -->
 		<dropCategory chance="70">
@@ -39943,7 +39943,7 @@
 			<itemDrop itemId="4039" min="1" max="1" chance="2.9664" /> <!-- Corroded Mold Glue -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.7739" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4044" min="1" max="1" chance="2.9664" /> <!-- Corroded Thons -->
-			<itemDrop itemId="4617" min="1" max="1" chance="0.1227" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
+			<itemDrop itemId="4617" min="1" max="1" chance="0.1227" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
 			<itemDrop itemId="6037" min="1" max="3" chance="88.9932" /> <!-- Scroll: Cancel Sleep -->
 			<itemDrop itemId="8731" min="1" max="1" chance="0.824" /> <!-- Life Stone - Lv. 70 -->
 			<itemDrop itemId="8741" min="1" max="1" chance="0.206" /> <!-- Mid-grade Life Stone - Lv. 70 -->
@@ -40403,7 +40403,7 @@
 			<itemDrop itemId="1875" min="1" max="1" chance="4.9805" /> <!-- Corroded Stone of Purity -->
 			<itemDrop itemId="4041" min="1" max="1" chance="0.6496" /> <!-- Corroded Mold Hardener -->
 			<itemDrop itemId="4982" min="1" max="1" chance="0.3717" /> <!-- Recipe: Blue Wolf Gaiters (60%) -->
-			<itemDrop itemId="4624" min="1" max="1" chance="0.103" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4624" min="1" max="1" chance="0.103" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="8314" min="1" max="1" chance="0.0408" /> <!-- Recipe: Spiritual Eye (60%) -->
 			<itemDrop itemId="8731" min="1" max="1" chance="0.6917" /> <!-- Life Stone - Lv. 70 -->
 			<itemDrop itemId="8741" min="1" max="1" chance="0.1729" /> <!-- Mid-grade Life Stone - Lv. 70 -->
@@ -41295,7 +41295,7 @@
 			<itemDrop itemId="1885" min="1" max="1" chance="17.0526" /> <!-- Corroded High-grade Suede -->
 			<itemDrop itemId="5550" min="1" max="1" chance="2.7284" /> <!-- Corroded Reinforced Metal Plate -->
 			<itemDrop itemId="5549" min="1" max="1" chance="20.4631" /> <!-- Corroded Metallic Thread -->
-			<itemDrop itemId="4556" min="1" max="1" chance="0.8185" /> <!-- Greater CON Dye <Con + 1 DEX - 1> -->
+			<itemDrop itemId="4556" min="1" max="1" chance="0.8185" /> <!-- Greater CON Dye [Con + 1 DEX - 1] -->
 			<itemDrop itemId="3021" min="1" max="1" chance="0.713" /> <!-- Recipe: Dwarven War Hammer -->
 			<itemDrop itemId="8723" min="1" max="1" chance="8.1852" /> <!-- Life Stone - Lv. 46 -->
 			<itemDrop itemId="8733" min="1" max="1" chance="2.0463" /> <!-- Mid-grade Life Stone - Lv. 46 -->
@@ -41598,7 +41598,7 @@
 		<skill id="4001" level="5" /> <!-- Gust -->
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.3371" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.3371" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="33.7056" /> <!-- Major Healing Potion -->
 		<spoilDrop itemId="1915" min="1" max="1" chance="13.3634" /> <!-- Ring of Ages Gemstone -->
 		<dropCategory chance="70">

@@ -1,3 +1,4 @@
+
 package ai.individual.AltarOfSouls;
 
 import java.util.HashMap;
@@ -15,10 +16,10 @@ import l2server.gameserver.model.quest.Quest;
 
 public class AltarOfSouls extends Quest
 {
-	private static final String _qn	= "AltarOfSouls";
+	private static final String _qn = "AltarOfSouls";
 	private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
-	private static final int[] _raidIds = {25944, 25943, 25942};
-	private static final int[] _stoneIds = {38572, 38573, 38574};
+	private static final int[] _raidIds = { 25944, 25943, 25942 };
+	private static final int[] _stoneIds = { 38572, 38573, 38574 };
 	private static final int _altarOfSoulsId = 33920;
 	
 	public AltarOfSouls(int questId, String name, String descr)
@@ -31,7 +32,7 @@ public class AltarOfSouls extends Quest
 		
 		for (int i : _raidIds)
 		{
-			addKillId(i);		
+			addKillId(i);
 			_spawnInfo.put(i, false);
 		}
 	}
@@ -55,20 +56,20 @@ public class AltarOfSouls extends Quest
 				stoneId = _stoneIds[1];
 			else
 				stoneId = _stoneIds[2];
-						
-			if (stoneId == 0)	//Cheating?
+			
+			if (stoneId == 0) //Cheating?
 				return null;
 			
-			synchronized(_spawnInfo)
+			synchronized (_spawnInfo)
 			{
 				if (!_spawnInfo.get(bossId))
 				{
 					if (!player.destroyItemByItemId(_qn, stoneId, 1, player, true))
-						return stoneId+"-no.html";
+						return stoneId + "-no.html";
 					
 					_spawnInfo.put(bossId, true); //Boss is spawned
 					
-					L2Attackable boss = (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0, true);	
+					L2Attackable boss = (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0, true);
 					boss.setIsRunning(true);
 					boss.setTarget(player);
 					boss.addDamageHate(player, 9999, 9999);
@@ -83,7 +84,7 @@ public class AltarOfSouls extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		synchronized(_spawnInfo)
+		synchronized (_spawnInfo)
 		{
 			_spawnInfo.put(npc.getNpcId(), false);
 		}

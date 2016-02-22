@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import java.text.DateFormat;
@@ -31,11 +32,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class Loto implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"Loto"
-	};
-
+	private static final String[] COMMANDS = { "Loto" };
+	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (target == null)
@@ -65,16 +64,16 @@ public class Loto implements IBypassHandler
 	
 	/**
 	 * Open a Loto window on client with the text of the L2NpcInstance.<BR><BR>
-	 * 
+	 *
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the text of the selected HTML file in function of the npcId and of the page number </li>
 	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
 	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR>
-	 * 
+	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param npc L2Npc loto instance
 	 * @param val The number of the page of the L2NpcInstance to display
-	 * 
+	 *
 	 */
 	// 0 - first buy lottery ticket window
 	// 1-20 - buttons
@@ -95,7 +94,7 @@ public class Loto implements IBypassHandler
 			filename = (npc.getHtmlPath(npcId, 1));
 			html.setFile(player.getHtmlPrefix(), filename);
 		}
-		else if (val >= 1 && val <= 21) // 1-20 - buttons, 21 - second buy lottery ticket window
+		else if ((val >= 1) && (val <= 21)) // 1-20 - buttons, 21 - second buy lottery ticket window
 		{
 			if (!Lottery.getInstance().isStarted())
 			{
@@ -131,7 +130,7 @@ public class Loto implements IBypassHandler
 			}
 			
 			//if not rearched limit 5 and not unseted value
-			if (count < 5 && found == 0 && val <= 20)
+			if ((count < 5) && (found == 0) && (val <= 20))
 				for (int i = 0; i < 5; i++)
 					if (player.getLoto(i) == 0)
 					{
@@ -237,7 +236,7 @@ public class Loto implements IBypassHandler
 			{
 				if (item == null)
 					continue;
-				if (item.getItemId() == 4442 && item.getCustomType1() < lotonumber)
+				if ((item.getItemId() == 4442) && (item.getCustomType1() < lotonumber))
 				{
 					message = message + "<a action=\"bypass -h npc_%objectId%_Loto " + item.getObjectId() + "\">" + item.getCustomType1() + " Event Number ";
 					int[] numbers = Lottery.getInstance().decodeNumbers(item.getEnchantLevel(), item.getCustomType2());
@@ -248,7 +247,7 @@ public class Loto implements IBypassHandler
 					long[] check = Lottery.getInstance().checkTicket(item);
 					if (check[0] > 0)
 					{
-						switch ((int)check[0])
+						switch ((int) check[0])
 						{
 							case 1:
 								message += "- 1st Prize";
@@ -283,7 +282,7 @@ public class Loto implements IBypassHandler
 		{
 			int lotonumber = Lottery.getInstance().getId();
 			L2ItemInstance item = player.getInventory().getItemByObjectId(val);
-			if (item == null || item.getItemId() != 4442 || item.getCustomType1() >= lotonumber)
+			if ((item == null) || (item.getItemId() != 4442) || (item.getCustomType1() >= lotonumber))
 				return;
 			long[] check = Lottery.getInstance().checkTicket(item);
 			
@@ -312,6 +311,7 @@ public class Loto implements IBypassHandler
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

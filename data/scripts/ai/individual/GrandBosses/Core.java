@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.GrandBosses;
 
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -27,20 +28,20 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Core AI (Based on DrLecter & Emperorc work)
  */
 
 public class Core extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug 	= false;
-
+	private static final boolean _debug = false;
+	
 	//Id's
 	private static final int _coreId = 29006;
 	
 	//Vars
-	private static long		_LastAction;
+	private static long _LastAction;
 	private static boolean _alreadyAttacked = false;
 	
 	public Core(int id, String name, String descr)
@@ -58,7 +59,7 @@ public class Core extends L2AttackableAIScript
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("unlock_core"))
 		{
@@ -90,7 +91,7 @@ public class Core extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onAttack (L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		if (_debug)
 			Log.warning(getName() + ": onAttack: " + npc.getName());

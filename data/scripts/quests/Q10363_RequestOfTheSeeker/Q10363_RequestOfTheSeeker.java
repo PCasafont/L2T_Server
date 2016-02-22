@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10363_RequestOfTheSeeker;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -33,7 +34,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 	// NPC
 	private int _nagel = 33450;
 	private int _celin = 33451;
-	private int[] _bodies = {32961, 32962, 32963, 32964};
+	private int[] _bodies = { 32961, 32962, 32963, 32964 };
 	
 	public Q10363_RequestOfTheSeeker(int questId, String name, String descr)
 	{
@@ -54,13 +55,13 @@ public class Q10363_RequestOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if (npc.getNpcId() == _nagel && event.equalsIgnoreCase("33450-03.htm"))
+		if ((npc.getNpcId() == _nagel) && event.equalsIgnoreCase("33450-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == _celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
+		else if ((npc.getNpcId() == _celin) && event.equalsIgnoreCase("33451-03.htm") && (st.getInt("cond") == 7))
 		{
 			st.unset("cond");
 			st.giveItems(1060, 100);
@@ -86,7 +87,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 		
 		if (npc.getNpcId() == _nagel)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -111,7 +112,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _celin && st.getInt("cond") == 7)
+		else if ((npc.getNpcId() == _celin) && (st.getInt("cond") == 7))
 			htmltext = "33451-01.htm";
 		return htmltext;
 	}
@@ -125,6 +126,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				if (actionId == 13)
@@ -139,8 +141,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 						}
 					}
 					
-					if (isCorpse && st.getInt("cond") >= 1 && st.getInt("cond") <= 5
-							&& npc.canInteract(player))
+					if (isCorpse && (st.getInt("cond") >= 1) && (st.getInt("cond") <= 5) && npc.canInteract(player))
 					{
 						// TODO: Show according screen message
 						st.set("cond", String.valueOf(st.getInt("cond") + 1));
@@ -159,7 +160,6 @@ public class Q10363_RequestOfTheSeeker extends Quest
 				}
 			}
 		}, 2000L);
-			
 		
 		return null;
 	}
@@ -167,9 +167,9 @@ public class Q10363_RequestOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getLevel() >= 12 && player.getLevel() <= 20 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
+		return (player.getLevel() >= 12) && (player.getLevel() <= 20) && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Q10363_RequestOfTheSeeker(10363, qn, "Eliminating monsters in the Ye Sagira Ruins. Opportunity to obtain no-Grade armor.");

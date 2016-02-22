@@ -2,14 +2,15 @@
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with this program. If
  * not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.util;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -23,7 +24,7 @@ import l2server.util.StringUtil;
 
 /**
  * Flood protector implementation.
- * 
+ *
  * @author fordfrog
  */
 public final class FloodProtectorAction
@@ -61,7 +62,7 @@ public final class FloodProtectorAction
 	
 	/**
 	 * Creates new instance of FloodProtectorAction.
-	 * 
+	 *
 	 * @param player
 	 *			player for which flood protection is being created
 	 * @param config
@@ -76,17 +77,17 @@ public final class FloodProtectorAction
 	
 	/**
 	 * Checks whether the request is flood protected or not.
-	 * 
+	 *
 	 * @param command
 	 *			command issued or short command description
-	 * 
+	 *
 	 * @return true if action is allowed, otherwise false
 	 */
 	public synchronized boolean tryPerformAction(final String command)
 	{
 		final int curTick = TimeController.getGameTicks();
 		
-		if (curTick < _nextGameTick || _punishmentInProgress)
+		if ((curTick < _nextGameTick) || _punishmentInProgress)
 		{
 			if (_config.LOG_FLOODING && !_logged && Log.isLoggable(Level.WARNING))
 			{
@@ -96,7 +97,7 @@ public final class FloodProtectorAction
 			
 			_count.incrementAndGet();
 			
-			if (!_punishmentInProgress && _config.PUNISHMENT_LIMIT > 0 && _count.get() >= _config.PUNISHMENT_LIMIT && _config.PUNISHMENT_TYPE != null)
+			if (!_punishmentInProgress && (_config.PUNISHMENT_LIMIT > 0) && (_count.get() >= _config.PUNISHMENT_LIMIT) && (_config.PUNISHMENT_TYPE != null))
 			{
 				_punishmentInProgress = true;
 				
@@ -208,11 +209,11 @@ public final class FloodProtectorAction
 				if (_client.getActiveChar() != null)
 				{
 					StringUtil.append(output, _client.getActiveChar().getName());
-					StringUtil.append(output, "(", String.valueOf(_client.getActiveChar().getObjectId()),") ");
+					StringUtil.append(output, "(", String.valueOf(_client.getActiveChar().getObjectId()), ") ");
 				}
 			case AUTHED:
 				if (_client.getAccountName() != null)
-					StringUtil.append(output, _client.getAccountName()," ");
+					StringUtil.append(output, _client.getAccountName(), " ");
 			case CONNECTED:
 				if (address != null)
 					StringUtil.append(output, address);

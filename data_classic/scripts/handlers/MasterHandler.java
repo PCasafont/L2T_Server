@@ -55,6 +55,7 @@ import handlers.admincommandhandlers.AdminEnchant;
 import handlers.admincommandhandlers.AdminExpSp;
 import handlers.admincommandhandlers.AdminFightCalculator;
 import handlers.admincommandhandlers.AdminFortSiege;
+import handlers.admincommandhandlers.AdminGeoEditor;
 import handlers.admincommandhandlers.AdminGeodata;
 import handlers.admincommandhandlers.AdminGm;
 import handlers.admincommandhandlers.AdminGmChat;
@@ -103,6 +104,7 @@ import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.BuyShadowItem;
 import handlers.bypasshandlers.CPRecovery;
 import handlers.bypasshandlers.Certificate;
+import handlers.bypasshandlers.ChangeName;
 import handlers.bypasshandlers.ChatLink;
 import handlers.bypasshandlers.ClanWarehouse;
 import handlers.bypasshandlers.CustomBypass;
@@ -110,6 +112,7 @@ import handlers.bypasshandlers.Delevel;
 import handlers.bypasshandlers.DrawHenna;
 import handlers.bypasshandlers.FishSkillList;
 import handlers.bypasshandlers.FortSiege;
+import handlers.bypasshandlers.Fusion;
 import handlers.bypasshandlers.Hi5EventLetters;
 import handlers.bypasshandlers.ItemAuctionLink;
 import handlers.bypasshandlers.Link;
@@ -257,6 +260,8 @@ import handlers.usercommandhandlers.Mount;
 import handlers.usercommandhandlers.OlympiadStat;
 import handlers.usercommandhandlers.PartyInfo;
 import handlers.usercommandhandlers.Time;
+import handlers.voicedcommandhandlers.Banking;
+import handlers.voicedcommandhandlers.ChatAdmin;
 import handlers.voicedcommandhandlers.CustomVoiced;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Sell;
@@ -331,6 +336,7 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminFightCalculator());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminFortSiege());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGeodata());
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGeoEditor());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGm());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGmChat());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGraciaSeeds());
@@ -383,6 +389,7 @@ public class MasterHandler
 		BypassHandler.getInstance().registerBypassHandler(new Buy());
 		BypassHandler.getInstance().registerBypassHandler(new BuyShadowItem());
 		BypassHandler.getInstance().registerBypassHandler(new Certificate());
+		BypassHandler.getInstance().registerBypassHandler(new ChangeName());
 		BypassHandler.getInstance().registerBypassHandler(new ChatLink());
 		BypassHandler.getInstance().registerBypassHandler(new ClanWarehouse());
 		BypassHandler.getInstance().registerBypassHandler(new CPRecovery());
@@ -419,6 +426,9 @@ public class MasterHandler
 		BypassHandler.getInstance().registerBypassHandler(new Hi5EventLetters());
 		BypassHandler.getInstance().registerBypassHandler(new CustomBypass());
 		BypassHandler.getInstance().registerBypassHandler(new ShowAuction());
+		
+		if (Config.isServer(Config.FUSION) || Config.isServer(Config.RAMPAGE))
+			BypassHandler.getInstance().registerBypassHandler(new Fusion());
 		
 		Log.config("Loaded " + BypassHandler.getInstance().size() + "  BypassHandlers");
 	}
@@ -567,6 +577,10 @@ public class MasterHandler
 	{
 		if (Config.L2JMOD_ALLOW_WEDDING)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Wedding());
+		if (Config.BANKING_SYSTEM_ENABLED)
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Banking());
+		if (Config.L2JMOD_CHAT_ADMIN)
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new ChatAdmin());
 		if (Config.L2JMOD_DEBUG_VOICE_COMMAND)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Debug());
 

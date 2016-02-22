@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class LilimKnightStrong extends L2Transformation
 {
-	private static final int[] SKILLS = {568,569,570,571,5491,619};
+	private static final int[] SKILLS = { 568, 569, 570, 571, 5491, 619 };
+	
 	public LilimKnightStrong()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class LilimKnightStrong extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 207 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 207) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

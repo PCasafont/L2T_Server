@@ -1,24 +1,25 @@
 /*
  * $Header: IllegalPlayerAction.java, 21/10/2005 23:32:02 luisantonioa Exp $
- * 
+ *
  * $Author: luisantonioa $ $Date: 21/10/2005 23:32:02 $ $Revision: 1 $ $Log:
  * IllegalPlayerAction.java,v $ Revision 1 21/10/2005 23:32:02 luisantonioa
  * Added copyright notice
- * 
- * 
+ *
+ *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.util;
 
 import java.util.logging.Level;
@@ -26,12 +27,11 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import l2server.Config;
-import l2server.gameserver.GmListTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class ...
- * 
+ *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 public final class IllegalPlayerAction implements Runnable
@@ -70,17 +70,18 @@ public final class IllegalPlayerAction implements Runnable
 		}
 	}
 	
+	@Override
 	public void run()
 	{
+		if (_actor.isGM())
+			return;
+		
 		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + _message);
 		record.setLoggerName("audit");
-		record.setParameters(new Object[]
-										{
-				_actor, _punishment
-										});
+		record.setParameters(new Object[] { _actor, _punishment });
 		_logAudit.log(record);
 		
-		GmListTable.broadcastMessageToGMs(_message);
+		Broadcast.toGameMasters(_message);
 		
 		switch (_punishment)
 		{

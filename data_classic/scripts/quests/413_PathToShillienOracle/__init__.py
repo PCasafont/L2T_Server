@@ -28,7 +28,7 @@ class Quest (JQuest) :
  def onEvent (self,event,st) :
     htmltext = event
     level = st.getPlayer().getLevel()
-    classId = st.getPlayer().getClassId()
+    classId = st.getPlayer().getClassId().getId()
     if event == "1" :
         st.set("id","0")
         htmltext = "30330-06.htm"
@@ -102,7 +102,7 @@ class Quest (JQuest) :
             st.exitQuest(False)
             st.saveGlobalQuestVar("1ClassQuestFinished","1")
             st.playSound("ItemSound.quest_finish")
-            player.sendPacket(SocialAction(player.getObjectId(),3))
+            player.sendPacket(SocialAction(player,3))
    elif npcId == 30377 and st.getInt("cond") :
         if st.getQuestItemsCount(SIDRAS_LETTER1) == 1 :
           htmltext = "30377-01.htm"

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.loginserver;
 
 import java.io.BufferedOutputStream;
@@ -67,7 +68,7 @@ public class GameServerThread extends Thread
 	@Override
 	public void run()
 	{
-		_connectionIPAddress   = _connection.getInetAddress().getHostAddress();
+		_connectionIPAddress = _connection.getInetAddress().getHostAddress();
 		if (GameServerThread.isBannedGameserverIP(_connectionIPAddress))
 		{
 			Log.info("GameServerRegistration: IP Address " + _connectionIPAddress + " is on Banned IP list.");
@@ -89,9 +90,9 @@ public class GameServerThread extends Thread
 			{
 				lengthLo = _in.read();
 				lengthHi = _in.read();
-				length= lengthHi*256 + lengthLo;
+				length = (lengthHi * 256) + lengthLo;
 				
-				if (lengthHi < 0 || _connection.isClosed())
+				if ((lengthHi < 0) || _connection.isClosed())
 				{
 					Log.finer("LoginServerThread: Login terminated the connection.");
 					break;
@@ -102,14 +103,14 @@ public class GameServerThread extends Thread
 				int receivedBytes = 0;
 				int newBytes = 0;
 				int left = length - 2;
-				while (newBytes != -1 && receivedBytes < length - 2)
+				while ((newBytes != -1) && (receivedBytes < (length - 2)))
 				{
-					newBytes =  _in.read(data, receivedBytes, left);
+					newBytes = _in.read(data, receivedBytes, left);
 					receivedBytes = receivedBytes + newBytes;
 					left -= newBytes;
 				}
 				
-				if (receivedBytes != length-2)
+				if (receivedBytes != (length - 2))
 				{
 					Log.warning("Incomplete Packet is sent to the server, closing connection.(LS)");
 					break;
@@ -126,7 +127,7 @@ public class GameServerThread extends Thread
 				
 				if (Config.DEBUG)
 				{
-					Log.warning("[C]\n"+Util.printData(data));
+					Log.warning("[C]\n" + Util.printData(data));
 				}
 				
 				L2JGameServerPacketHandler.handlePacket(data, this);
@@ -134,8 +135,8 @@ public class GameServerThread extends Thread
 		}
 		catch (IOException e)
 		{
-			String serverName = (getServerId() != -1 ? "["+getServerId()+"] "+GameServerTable.getInstance().getServerNameById(getServerId()) : "("+_connectionIPAddress+")");
-			String msg = "GameServer "+serverName+": Connection lost: "+e.getMessage();
+			String serverName = (getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) : "(" + _connectionIPAddress + ")");
+			String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
 			Log.info(msg);
 		}
 		finally
@@ -143,7 +144,7 @@ public class GameServerThread extends Thread
 			if (isAuthed())
 			{
 				_gsi.setDown();
-				Log.info("Server ["+getServerId()+"] "+GameServerTable.getInstance().getServerNameById(getServerId())+" is now set as disconnected");
+				Log.info("Server [" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) + " is now set as disconnected");
 			}
 			L2LoginServer.getInstance().getGameServerListener().removeGameServer(this);
 			L2LoginServer.getInstance().getGameServerListener().removeFloodProtection(_connectionIp);
@@ -157,7 +158,7 @@ public class GameServerThread extends Thread
 	
 	public int getPlayerCount()
 	{
-		double multiplier = 2.0 - ((float)(System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
+		double multiplier = 2.0 - (((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001);
 		/*if (multiplier > 2.5f)
 			multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
@@ -166,7 +167,7 @@ public class GameServerThread extends Thread
 		if (_gsi.getId() == 28)
 			multiplier = 2;
 		
-		return (int)Math.round(_accountsOnGameServer.size() * multiplier + Rnd.get(1));
+		return (int) Math.round((_accountsOnGameServer.size() * multiplier) + Rnd.get(1));
 		//return _accountsOnGameServer.size() * multiplier;
 	}
 	
@@ -227,7 +228,7 @@ public class GameServerThread extends Thread
 		_privateKey = (RSAPrivateKey) pair.getPrivate();
 		_publicKey = (RSAPublicKey) pair.getPublic();
 		_blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
-		setName(getClass().getSimpleName()+"-"+getId()+"@"+_connectionIp);
+		setName(getClass().getSimpleName() + "-" + getId() + "@" + _connectionIp);
 		start();
 	}
 	
@@ -243,22 +244,22 @@ public class GameServerThread extends Thread
 			NewCrypt.appendChecksum(data);
 			if (Config.DEBUG)
 			{
-				Log.finest("[S] "+sl.getClass().getSimpleName()+":\n"+Util.printData(data));
+				Log.finest("[S] " + sl.getClass().getSimpleName() + ":\n" + Util.printData(data));
 			}
 			data = _blowfish.crypt(data);
 			
-			int len = data.length+2;
-			synchronized(_out)
+			int len = data.length + 2;
+			synchronized (_out)
 			{
 				_out.write(len & 0xff);
-				_out.write(len >> 8 &0xff);
+				_out.write((len >> 8) & 0xff);
 				_out.write(data);
 				_out.flush();
 			}
 		}
 		catch (IOException e)
 		{
-			Log.severe("IOException while sending packet "+sl.getClass().getSimpleName());
+			Log.severe("IOException while sending packet " + sl.getClass().getSimpleName());
 		}
 	}
 	
@@ -279,7 +280,7 @@ public class GameServerThread extends Thread
 	 */
 	public void setGameHosts(String[] hosts)
 	{
-		Log.info("Updated Gameserver ["+getServerId()+"] "+GameServerTable.getInstance().getServerNameById(getServerId())+" IP's:");
+		Log.info("Updated Gameserver [" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) + " IP's:");
 		
 		_gsi.clearServerAddresses();
 		for (int i = 0; i < hosts.length; i += 2)
@@ -290,7 +291,7 @@ public class GameServerThread extends Thread
 			}
 			catch (Exception e)
 			{
-				Log.warning("Couldn't resolve hostname \""+e+"\"");
+				Log.warning("Couldn't resolve hostname \"" + e + "\"");
 			}
 		}
 		

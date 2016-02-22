@@ -12,16 +12,16 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 /**
- * 
+ *
  * @author mrTJO
  */
 public class Ex2ndPasswordAck extends L2GameServerPacket
 {
 	
-	private static final String _S__FE_10B_EX2NDPASSWORDACKPACKET = "[S] FE:10B Ex2NDPasswordAckPacket";
 	int _response;
 	
 	public static int SUCCESS = 0x00;
@@ -33,21 +33,13 @@ public class Ex2ndPasswordAck extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0x107);
 		writeC(0x00);
 		if (_response == WRONG_PATTERN)
 			writeD(0x01);
 		else
 			writeD(0x00);
 		writeD(0x00);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_10B_EX2NDPASSWORDACKPACKET;
 	}
 }

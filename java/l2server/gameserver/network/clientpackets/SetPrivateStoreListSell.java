@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
@@ -35,7 +36,6 @@ import l2server.gameserver.util.Util;
  */
 public class SetPrivateStoreListSell extends L2GameClientPacket
 {
-	private static final String _C__74_SETPRIVATESTORELISTSELL = "[C] 74 SetPrivateStoreListSell";
 	
 	private static final int BATCH_LENGTH = 20; // length of the one item
 	
@@ -47,7 +47,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 	{
 		_packageSale = (readD() == 1);
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if ((count < 1) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -59,7 +59,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 			long cnt = readQ();
 			long price = readQ();
 			
-			if (itemId < 1 || cnt < 1 || price < 0)
+			if ((itemId < 1) || (cnt < 1) || (price < 0))
 			{
 				_items = null;
 				return;
@@ -115,8 +115,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 		
 		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 		{
-			if (!(c instanceof L2PcInstance
-					&& ((L2PcInstance)c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+			if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
 			{
 				player.sendPacket(new PrivateStoreManageListSell(player, _packageSale));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
@@ -186,11 +185,5 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 		{
 			return _count * _price;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__74_SETPRIVATESTORELISTSELL;
 	}
 }

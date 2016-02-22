@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package teleports.Warpgate;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -25,10 +26,7 @@ public class Warpgate extends Quest
 {
 	private static final int ZONE = 40101;
 	
-	private static final int[] WARPGATES =
-	{
-		32314, 32315, 32316, 32317, 32318, 32319, 33900
-	};
+	private static final int[] WARPGATES = { 32314, 32315, 32316, 32317, 32318, 32319, 33900 };
 	
 	private static final boolean canEnter(L2PcInstance player)
 	{
@@ -43,7 +41,7 @@ public class Warpgate extends Quest
 	
 	@Override
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{	
+	{
 		return npc.getNpcId() + ".html";
 	}
 	
@@ -54,7 +52,7 @@ public class Warpgate extends Quest
 			return "warpgate-no.html";
 		
 		player.teleToLocation(-28930, 256438, -2194, true);
-
+		
 		return null;
 	}
 	
@@ -63,10 +61,10 @@ public class Warpgate extends Quest
 	{
 		if (character instanceof L2PcInstance)
 		{
-			if (!canEnter((L2PcInstance)character) && !character.isGM())
-			{	
+			if (!canEnter((L2PcInstance) character) && !character.isGM())
+			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character), 1000);
-			}	
+			}
 		}
 		return null;
 	}

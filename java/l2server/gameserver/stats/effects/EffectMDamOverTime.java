@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
@@ -20,8 +21,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.skills.L2AbnormalType;
@@ -33,7 +34,7 @@ public class EffectMDamOverTime extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -50,7 +51,7 @@ public class EffectMDamOverTime extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
@@ -68,13 +69,13 @@ public class EffectMDamOverTime extends L2Effect
 		}
 		
 		boolean mcrit = Formulas.calcMCrit(getEffector().getMCriticalHit(getEffected(), getSkill()));
-		double damage = Formulas.calcMagicDam(getEffector(), getEffected(), getSkill(), (byte)0, ssMul, mcrit);
+		double damage = Formulas.calcMagicDam(getEffector(), getEffected(), getSkill(), (byte) 0, ssMul, mcrit);
 		return dealDamage(damage);
 	}
 	
 	private boolean dealDamage(double damage)
 	{
-		if (damage >= getEffected().getCurrentHp() - 1)
+		if (damage >= (getEffected().getCurrentHp() - 1))
 		{
 			if (getSkill().isToggle())
 			{
@@ -94,7 +95,7 @@ public class EffectMDamOverTime extends L2Effect
 		}
 		
 		// Exile
-		boolean dmgSelf = getSkill().getId() == 11273 || getSkill().getId() == 11296;
+		boolean dmgSelf = (getSkill().getId() == 11273) || (getSkill().getId() == 11296);
 		
 		getEffected().reduceCurrentHpByDOT(damage, dmgSelf ? getEffected() : getEffector(), getSkill());
 		
@@ -113,8 +114,7 @@ public class EffectMDamOverTime extends L2Effect
 			getEffector().sendPacket(suhp);
 		}
 		
-		if (getEffector() instanceof L2PcInstance
-				&& getSkill().getId() == 11260) // Mark of Void
+		if ((getEffector() instanceof L2PcInstance) && (getSkill().getId() == 11260)) // Mark of Void
 		{
 			double heal = damage * (getEffected().getActingPlayer() == null ? 0.5 : 0.75);
 			double hp = getEffector().getCurrentHp();
@@ -127,7 +127,7 @@ public class EffectMDamOverTime extends L2Effect
 			mp += heal;
 			if (mp > maxmp)
 				mp = maxmp;
-
+			
 			getEffector().setCurrentHp(hp);
 			getEffector().setCurrentMp(mp);
 			StatusUpdate su = new StatusUpdate(getEffector());
@@ -135,7 +135,7 @@ public class EffectMDamOverTime extends L2Effect
 			su.addAttribute(StatusUpdate.CUR_MP, (int) mp);
 			getEffector().sendPacket(su);
 			
-			for (L2SummonInstance summon : ((L2PcInstance)getEffector()).getSummons())
+			for (L2SummonInstance summon : ((L2PcInstance) getEffector()).getSummons())
 			{
 				if (summon == null)
 					continue;
@@ -149,7 +149,7 @@ public class EffectMDamOverTime extends L2Effect
 				mp += heal;
 				if (mp > maxmp)
 					mp = maxmp;
-
+				
 				summon.setCurrentHp(hp);
 				summon.setCurrentMp(mp);
 				su = new StatusUpdate(summon);

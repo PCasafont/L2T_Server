@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.util;
 
 import java.io.BufferedInputStream;
@@ -33,6 +34,8 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,6 +45,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
@@ -67,7 +71,7 @@ public final class Util
 			Log.warning("- " + file.getAbsolutePath());
 			return null;
 		}
-
+		
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(false);
 		factory.setIgnoringComments(true);
@@ -88,6 +92,7 @@ public final class Util
 	
 	public static void handleIllegalPlayerAction(L2PcInstance actor, String message, int punishment)
 	{
+		Broadcast.toGameMasters(message);
 		ThreadPoolManager.getInstance().scheduleGeneral(new IllegalPlayerAction(actor, message, punishment), 5000);
 	}
 	
@@ -171,19 +176,19 @@ public final class Util
 		if (includeZAxis)
 		{
 			double dz = z1 - z2;
-			return Math.sqrt(dx * dx + dy * dy + dz * dz);
+			return Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
 		}
 		else
-			return Math.sqrt(dx * dx + dy * dy);
+			return Math.sqrt((dx * dx) + (dy * dy));
 	}
 	
 	/**
-	* @param includeZAxis - if true, includes also the Z axis in the calculation
-	* @return the distance between the two objects
-	*/
+	 * @param includeZAxis - if true, includes also the Z axis in the calculation
+	 * @return the distance between the two objects
+	 */
 	public static double calculateDistance(L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if (obj1 == null || obj2 == null)
+		if ((obj1 == null) || (obj2 == null))
 			return 1000000;
 		
 		return calculateDistance(obj1.getX(), obj1.getY(), obj1.getZ(), obj2.getX(), obj2.getY(), obj2.getZ(), includeZAxis);
@@ -199,7 +204,7 @@ public final class Util
 	{
 		str = str.trim();
 		
-		if (str.length() > 0 && Character.isLetter(str.charAt(0)))
+		if ((str.length() > 0) && Character.isLetter(str.charAt(0)))
 			return str.substring(0, 1).toUpperCase() + str.substring(1);
 		
 		return str;
@@ -231,17 +236,17 @@ public final class Util
 	}
 	
 	/**
-	* @return {@code true} if the two objects are within specified range between each other, {@code false} otherwise
-	*/
+	 * @return {@code true} if the two objects are within specified range between each other, {@code false} otherwise
+	 */
 	public static boolean checkIfInRange(int range, L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if (obj1 == null || obj2 == null)
+		if ((obj1 == null) || (obj2 == null))
 			return false;
 		if (obj1.getInstanceId() != obj2.getInstanceId())
 			return false;
 		if (range == -1)
 			return true; // not limited
-		
+			
 		int rad = 0;
 		if (obj1 instanceof L2Character)
 			rad += ((L2Character) obj1).getTemplate().collisionRadius;
@@ -254,15 +259,15 @@ public final class Util
 		if (includeZAxis)
 		{
 			double dz = obj1.getZ() - obj2.getZ();
-			double d = dx * dx + dy * dy + dz * dz;
+			double d = (dx * dx) + (dy * dy) + (dz * dz);
 			
-			return d <= range * range + 2 * range * rad + rad * rad;
+			return d <= ((range * range) + (2 * range * rad) + (rad * rad));
 		}
 		else
 		{
-			double d = dx * dx + dy * dy;
+			double d = (dx * dx) + (dy * dy);
 			
-			return d <= range * range + 2 * range * rad + rad * rad;
+			return d <= ((range * range) + (2 * range * rad) + (rad * rad));
 		}
 	}
 	
@@ -276,47 +281,47 @@ public final class Util
 		if (includeZAxis)
 		{
 			final double dz = (double) z1 - z2;
-			d = dx * dx + dy * dy + dz * dz;
+			d = (dx * dx) + (dy * dy) + (dz * dz);
 		}
 		else
 		{
-			d = dx * dx + dy * dy;
+			d = (dx * dx) + (dy * dy);
 		}
 		
-		return d <= (double) range * range;
+		return d <= ((double) range * range);
 	}
 	
 	/**
-	*  Checks if object is within short (sqrt(int.max_value)) radius, not using collisionRadius.
-	*  Faster calculation than checkIfInRange if distance is short and collisionRadius isn't needed.
-	*  Not for long distance checks (potential teleports, far away castles etc).
-	* @param range - the maximum range between the two objects
-	* @param includeZAxis - if true, check also Z axis (3-dimensional check), otherwise only 2D
-	* @return {@code true} if objects are within specified range between each other, {@code false} otherwise	 
-	* */
+	 *  Checks if object is within short (sqrt(int.max_value)) radius, not using collisionRadius.
+	 *  Faster calculation than checkIfInRange if distance is short and collisionRadius isn't needed.
+	 *  Not for long distance checks (potential teleports, far away castles etc).
+	 * @param range - the maximum range between the two objects
+	 * @param includeZAxis - if true, check also Z axis (3-dimensional check), otherwise only 2D
+	 * @return {@code true} if objects are within specified range between each other, {@code false} otherwise
+	 * */
 	public static boolean checkIfInShortRadius(int radius, L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if (obj1 == null || obj2 == null)
+		if ((obj1 == null) || (obj2 == null))
 			return false;
 		if (radius == -1)
 			return true; // not limited
-		
+			
 		int dx = obj1.getX() - obj2.getX();
 		int dy = obj1.getY() - obj2.getY();
 		
 		if (includeZAxis)
 		{
 			int dz = obj1.getZ() - obj2.getZ();
-			return dx * dx + dy * dy + dz * dz <= radius * radius;
+			return ((dx * dx) + (dy * dy) + (dz * dz)) <= (radius * radius);
 		}
 		else
-			return dx * dx + dy * dy <= radius * radius;
+			return ((dx * dx) + (dy * dy)) <= (radius * radius);
 	}
 	
 	/**
-	* @param str - the String to count
-	* @return the number of "words" in a given string.
-	*/
+	 * @param str - the String to count
+	 * @return the number of "words" in a given string.
+	 */
 	public static int countWords(String str)
 	{
 		return str.trim().split("\\s+").length;
@@ -327,7 +332,7 @@ public final class Util
 	 * @param strArray - an array of strings to concatenate
 	 * @param strDelim - the delimiter to put between the strings
 	 * @return a delimited string for a given array of string elements.
- 	 */
+	 */
 	public static String implodeString(String[] strArray, String strDelim)
 	{
 		String result = "";
@@ -365,7 +370,7 @@ public final class Util
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param text - the text to check
 	 * @return {@code true} if {@code text} contains only numbers, {@code false} otherwise
 	 */
@@ -383,7 +388,7 @@ public final class Util
 	 */
 	public static boolean isAlphaNumeric(String text)
 	{
-		if (text == null || text.isEmpty())
+		if ((text == null) || text.isEmpty())
 			return false;
 		for (char c : text.toCharArray())
 			if (!Character.isLetterOrDigit(c))
@@ -392,11 +397,11 @@ public final class Util
 	}
 	
 	/**
-	* Format the specified digit using the digit grouping symbol "," (comma).
-	* For example, 123456789 becomes 123,456,789.
-	* @param amount - the amount of adena
-	* @return the formatted adena amount
-	*/
+	 * Format the specified digit using the digit grouping symbol "," (comma).
+	 * For example, 123456789 becomes 123,456,789.
+	 * @param amount - the amount of adena
+	 * @return the formatted adena amount
+	 */
 	public static String formatAdena(long amount)
 	{
 		String s = "";
@@ -450,18 +455,18 @@ public final class Util
 		String nString = "";
 		long number = Math.round(d * base);
 		int digitsShown = -1;
-		boolean stringBegan = false; 
+		boolean stringBegan = false;
 		for (long divider = base * 100; divider > 0; divider /= 10)
 		{
-			if ((number / divider) % 10 > 0 || stringBegan)
+			if ((((number / divider) % 10) > 0) || stringBegan)
 			{
 				nString += (number / divider) % 10;
 				stringBegan = true;
-				if ((number / divider) % 10 > 0 && digitsShown == -1)
+				if ((((number / divider) % 10) > 0) && (digitsShown == -1))
 					digitsShown = 0;
 			}
 			
-			if (number % divider == 0 && divider * minDigitsAfterPoint <= base || digitsShown >= maxdigits - 1)
+			if ((((number % divider) == 0) && ((divider * minDigitsAfterPoint) <= base)) || (digitsShown >= (maxdigits - 1)))
 				break;
 			
 			if (divider == base)
@@ -542,9 +547,9 @@ public final class Util
 		final Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
 		for (L2Object obj : objs)
 		{
-			if ((obj != null) && ((obj instanceof L2Playable && playable) || obj instanceof L2PetInstance || obj instanceof L2SummonInstance))
+			if ((obj != null) && (((obj instanceof L2Playable) && playable) || (obj instanceof L2PetInstance) || (obj instanceof L2SummonInstance)))
 			{
-				if (obj instanceof L2PcInstance && !invisible && obj.getActingPlayer().getAppearance().getInvisible())
+				if ((obj instanceof L2PcInstance) && !invisible && obj.getActingPlayer().getAppearance().getInvisible())
 				{
 					continue;
 				}
@@ -564,7 +569,7 @@ public final class Util
 		return count;
 	}
 	
-private static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("[EEEE d MMMMMMM yyyy] @ k:m:s: ");
+	private static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("[EEEE d MMMMMMM yyyy] @ k:m:s: ");
 	
 	public static void logToFile(String string, String filename, boolean append)
 	{
@@ -595,5 +600,56 @@ private static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("[EEE
 	public final static String getCurrentDate()
 	{
 		return DATE_FORMATER.format(System.currentTimeMillis());
+	}
+	
+	public static void hashFiles(final File dir, List<File> hash)
+	{
+		if (!dir.isDirectory())
+			return;
+		
+		File[] files = dir.listFiles();
+		for (File f : files)
+		{
+			if (f.getName().endsWith(".xml"))
+				hash.add(f);
+		}
+	}
+	
+	public static void hashFiles(final File dir, Map<Integer, File> hash)
+	{
+		if (!dir.isDirectory())
+			return;
+		
+		File[] files = dir.listFiles();
+		for (File f : files)
+		{
+			try
+			{
+				if (f.getName().endsWith(".xml"))
+					hash.put(Integer.parseInt(f.getName().replaceAll(".xml", "")), f);
+			}
+			catch (Exception e)
+			{
+			}
+		}
+	}
+	
+	public static final L2NpcInstance getNpcCloseTo(final int npcId, final L2PcInstance activeChar)
+	{
+		Collection<L2Character> knownCharacters = activeChar.getKnownList().getKnownCharactersInRadius(900);
+		for (L2Character character : knownCharacters)
+		{
+			if (!(character instanceof L2NpcInstance))
+				continue;
+			
+			final L2NpcInstance npc = (L2NpcInstance) character;
+			
+			if (npcId != npc.getNpcId())
+				continue;
+			
+			return npc;
+		}
+		
+		return null;
 	}
 }

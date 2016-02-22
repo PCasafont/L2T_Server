@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
@@ -21,7 +22,6 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 
-
 /**
  * @author Pere
  *
@@ -29,18 +29,16 @@ import l2server.gameserver.util.Util;
 public class GoToFriend implements ISkillHandler
 {
 	//private static Logger _log = Logger.getLogger(SummonFriend.class.getName());
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.GO_TO_FRIEND
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.GO_TO_FRIEND };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
-		for (L2Character target: (L2Character[]) targets)
+		for (L2Character target : (L2Character[]) targets)
 		{
 			if (activeChar == target)
 				continue;
@@ -54,9 +52,10 @@ public class GoToFriend implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

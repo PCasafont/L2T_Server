@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.Summons;
 
 import java.util.concurrent.ScheduledFuture;
@@ -25,14 +26,14 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- * 
+ *
  * Shadow Snare (skill id: 11058) AI
  */
 
 public class ShadowSnare extends L2AttackableAIScript
 {
-	private static final int[]		_whisperOfFearIds 	= {13323, 13324, 13325};
-	private static final L2Skill 	_shadowSnareZone	= SkillTable.getInstance().getInfo(11059, 1);
+	private static final int[] _whisperOfFearIds = { 13323, 13324, 13325 };
+	private static final L2Skill _shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
 	
 	public ShadowSnare(int id, String name, String descr)
 	{
@@ -41,7 +42,7 @@ public class ShadowSnare extends L2AttackableAIScript
 		for (int i : _whisperOfFearIds)
 			addSpawnId(i);
 	}
-
+	
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
@@ -61,7 +62,7 @@ public class ShadowSnare extends L2AttackableAIScript
 		
 		protected ShadowSnareAI(L2Npc npc)
 		{
-			_whisperOfFear	= npc;
+			_whisperOfFear = npc;
 		}
 		
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -69,9 +70,10 @@ public class ShadowSnare extends L2AttackableAIScript
 			_schedule = schedule;
 		}
 		
+		@Override
 		public void run()
 		{
-			if (_whisperOfFear == null || _whisperOfFear.isDead() || _whisperOfFear.isDecayed() || _whisperOfFear.getOwner().isAlikeDead())
+			if ((_whisperOfFear == null) || _whisperOfFear.isDead() || _whisperOfFear.isDecayed() || _whisperOfFear.getOwner().isAlikeDead())
 			{
 				if (_schedule != null)
 				{

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package instances.DimensionalDoor.NornilsCave;
 
 import instances.DimensionalDoor.DimensionalDoor;
@@ -35,7 +36,7 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  *  Source: -https://www.youtube.com/watch?v=3BFgaYv3ibQ
  *  		-http://l2wiki.com/Nornils_Garden
  *  		-http://boards.lineage2.com/showthread.php?t=247492
@@ -43,38 +44,20 @@ import ai.group_template.L2AttackableAIScript;
 
 public class NornilsCave extends L2AttackableAIScript
 {
-	private static final String 	_qn 			= "NornilsCave";
+	private static final String _qn = "NornilsCave";
 	
 	//Config
-	private static final boolean	_debug			= false;
+	private static final boolean _debug = false;
 	
 	//Ids
-	private static final int _instanceTemplateId	= 231;
-	private static final int _bozId 				= 19298;
-	private static final int _spiculaZeroId			= 25901;
-	private static final int[] _doorIds 			= {16200014, 16200015, 16200016, 16200201};
-	private static final int[] _caveMobs 			= {19300, 19301, 19302, 19303, 19304};
-	private static final int[][][] _bozSpawns 		= 
-	{
-		{
-			{-114849, 87180, -12686, 0}
-		},
-		{
-
-			{-115202, 87421, -12792, 40807},
-			{-115689, 87421, -12792, 57124},
-			{-115692, 86938, -12792, 8798},
-			{-115209, 86937, -12792, 25130}
-		},
-		{
-			{-117340, 87179, -12697, 0}
-		},
-		{
-			{-119541, 86658, -12601, 15849},
-			{-119543, 87706, -12600, 49027}
-		}
-	};
+	private static final int _instanceTemplateId = 231;
+	private static final int _bozId = 19298;
+	private static final int _spiculaZeroId = 25901;
+	private static final int[] _doorIds = { 16200014, 16200015, 16200016, 16200201 };
+	private static final int[] _caveMobs = { 19300, 19301, 19302, 19303, 19304 };
+	private static final int[][][] _bozSpawns = { { { -114849, 87180, -12686, 0 } }, {
 	
+	{ -115202, 87421, -12792, 40807 }, { -115689, 87421, -12792, 57124 }, { -115692, 86938, -12792, 8798 }, { -115209, 86937, -12792, 25130 } }, { { -117340, 87179, -12697, 0 } }, { { -119541, 86658, -12601, 15849 }, { -119543, 87706, -12600, 49027 } } };
 	
 	private class NornilsCaveWorld extends InstanceWorld
 	{
@@ -116,7 +99,7 @@ public class NornilsCave extends L2AttackableAIScript
 			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		InstanceWorld wrld = null;
-		if (npc != null)	
+		if (npc != null)
 			wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		else if (player != null)
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
@@ -126,9 +109,9 @@ public class NornilsCave extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof NornilsCaveWorld)
+		if ((wrld != null) && (wrld instanceof NornilsCaveWorld))
 		{
-			NornilsCaveWorld world = (NornilsCaveWorld)wrld;
+			NornilsCaveWorld world = (NornilsCaveWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
 			{
 				world.status = 1;
@@ -142,7 +125,7 @@ public class NornilsCave extends L2AttackableAIScript
 					boz.setIsParalyzed(true);
 					boz.setIsInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
-				}	
+				}
 			}
 			else if (event.equalsIgnoreCase("stage_all_spicula_spawns"))
 			{
@@ -152,20 +135,20 @@ public class NornilsCave extends L2AttackableAIScript
 						npc.setIsInvul(true);
 					
 					if (world._roomMobs.size() < 20)
-					{	
+					{
 						for (int i = 0; i < Rnd.get(5, 8); i++)
 						{
 							L2Npc roomMob = addSpawn(_caveMobs[Rnd.get(_caveMobs.length)], npc.getX() + Rnd.get(50), npc.getY() + Rnd.get(50), npc.getZ(), npc.getHeading(), false, 0, true, world.instanceId);
 							world._roomMobs.add(roomMob);
 						}
-					}	
+					}
 					
 					int nextTime = 30000;
 					if (world.status == 2)
 						nextTime = 80000;
 					
 					startQuestTimer("stage_all_spicula_spawns", nextTime, npc, null);
-				}	
+				}
 			}
 			else if (event.equalsIgnoreCase("stage_2_start"))
 			{
@@ -189,7 +172,7 @@ public class NornilsCave extends L2AttackableAIScript
 					notifyEvent("stage_all_spicula_spawns", boz, null);
 				}
 			}
-			else if(event.equalsIgnoreCase("stage_4_start"))
+			else if (event.equalsIgnoreCase("stage_4_start"))
 			{
 				addSpawn(_spiculaZeroId, -119994, 87179, -12601, 64277, false, 0, false, world.instanceId);
 				for (int[] i : _bozSpawns[3])
@@ -199,7 +182,7 @@ public class NornilsCave extends L2AttackableAIScript
 					boz.setIsParalyzed(true);
 					boz.setIsInvul(true);
 					notifyEvent("stage_all_spicula_spawns", boz, null);
-				}	
+				}
 			}
 		}
 		
@@ -215,7 +198,7 @@ public class NornilsCave extends L2AttackableAIScript
 			}
 		}
 		return "";
-	}	
+	}
 	
 	@Override
 	public final String onTalk(L2Npc npc, L2PcInstance player)
@@ -225,7 +208,7 @@ public class NornilsCave extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
 			return _qn + ".html";
-	
+		
 		return super.onTalk(npc, player);
 	}
 	
@@ -238,14 +221,14 @@ public class NornilsCave extends L2AttackableAIScript
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof NornilsCaveWorld)
 		{
-			NornilsCaveWorld world = (NornilsCaveWorld)tmpWorld;
+			NornilsCaveWorld world = (NornilsCaveWorld) tmpWorld;
 			if (npc.getNpcId() == _spiculaZeroId)
 			{
 				if (!world._firstBossAttack)
 				{
 					world._firstBossAttack = true;
 					InstanceManager.getInstance().getInstance(world.instanceId).getDoor(_doorIds[3]).closeMe();
-				}	
+				}
 			}
 		}
 		return "";
@@ -260,10 +243,10 @@ public class NornilsCave extends L2AttackableAIScript
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof NornilsCaveWorld)
 		{
-			NornilsCaveWorld world = (NornilsCaveWorld)tmpworld;
+			NornilsCaveWorld world = (NornilsCaveWorld) tmpworld;
 			if (Util.contains(_caveMobs, npc.getNpcId()))
 			{
-				synchronized(world._roomMobs)
+				synchronized (world._roomMobs)
 				{
 					if (world._roomMobs.contains(npc))
 						world._roomMobs.remove(npc);
@@ -281,7 +264,7 @@ public class NornilsCave extends L2AttackableAIScript
 				if (activityTimer != null)
 					activityTimer.cancel();
 				
-				synchronized(world._bozMobs)
+				synchronized (world._bozMobs)
 				{
 					if (world._bozMobs.contains(npc))
 						world._bozMobs.remove(npc);
@@ -297,7 +280,7 @@ public class NornilsCave extends L2AttackableAIScript
 							
 							notifyEvent("stage_2_start", npc, null);
 						}
-						else if(world.status == 2)
+						else if (world.status == 2)
 						{
 							world.status = 3;
 							
@@ -324,13 +307,13 @@ public class NornilsCave extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if (pMember == null || pMember.getInstanceId() != world.instanceId)
+						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
 						{
 							world.rewardedPlayers.add(pMember);
-							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),  Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 10 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
+							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 10 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
 							pMember.sendMessage("Nice attempt, but you already got a reward!");
@@ -356,8 +339,8 @@ public class NornilsCave extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-111818, 87871, -13020, 867, true);
@@ -394,12 +377,12 @@ public class NornilsCave extends L2AttackableAIScript
 				enterPlayer.setInstanceId(instanceId);
 				enterPlayer.teleToLocation(-111818, 87871, -13020, 867, true);
 			}
-
+			
 			startQuestTimer("stage_1_start", 1000, null, player);
 			
 			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
-		}		
+		}
 	}
 	
 	@Override

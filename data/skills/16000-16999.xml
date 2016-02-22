@@ -39,7 +39,8 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<skill id="16006" levels="1" name="Presentation">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -296,15 +297,16 @@
 	</skill>
 	<!-- Takes hold of Tauti and throws him up. Uses falling damage to inflict tremendous harm. -->
 	<skill id="16037" levels="1" name="Tauti Leap Attack">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="power" val="100" />
 		<set name="hitTime" val="6000" />
 		<set name="coolTime" val="500" />
-		<set name="castRange" val="2000" />
-		<set name="effectRange" val="2500" />
+		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="500" />
 		<set name="staticHitTime" val="true" />
 		<set name="canBeReflected" val="false" />
@@ -819,7 +821,8 @@
 	</skill>
 	<!-- Powerful magical attack on target and nearby enemies. -->
 	<skill id="16102" levels="1" name="Dark Storm">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -996,7 +999,7 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- Damage + 20% toward normal monsters. -->
-	<skill id="16117" levels="1" name="Amplify Damage">
+	<skill id="16117" levels="1" name="Amplify Damage - Stage 1">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1006,7 +1009,7 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- Damage + 30% toward normal monsters. -->
-	<skill id="16118" levels="1" name="Amplify Damage">
+	<skill id="16118" levels="1" name="Amplify Damage - Stage 2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1039,7 +1042,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Inflicts Sleep on nearby enemies for 30 sec. -->
+	<!-- Inflicts Sleep on nearby enemies for 30 seconds. -->
 	<skill id="16121" levels="5" name="Sleeping Cloud">
 		<table name="#mpConsume"> 107 122 138 154 160 </table>
 		<set name="target" val="TARGET_NONE" />
@@ -1136,11 +1139,11 @@
 		<set name="effectRange" val="950" />
 	</skill>
 	<!-- 
-		Level 1: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%,  M. Atk. + 10%. Atk. Spd./ Casting Spd. -  3%.
-		Level 2: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 10%, M. Atk. + 21%. Atk. Spd./ Casting Spd. -  5%.
-		Level 3: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 15%, M. Atk. + 32%. Atk. Spd./ Casting Spd. -  5%.
-		Level 4: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%, M. Atk. + 10%. Atk. Spd./ Casting Spd. -  10%.
-		Level 5: Kefensis has an effect on your terrible thirst, heightening your senses. Atk. Spd./ Casting Spd. -  15%.
+		Level 1: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%, M. Atk. + 10%. Atk. Spd./ Casting Spd. - 3%.
+		Level 2: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 10%, M. Atk. + 21%. Atk. Spd./ Casting Spd. - 5%.
+		Level 3: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 15%, M. Atk. + 32%. Atk. Spd./ Casting Spd. - 5%.
+		Level 4: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%, M. Atk. + 10%. Atk. Spd./ Casting Spd. - 10%.
+		Level 5: Kefensis has an effect on your terrible thirst, heightening your senses. Atk. Spd./ Casting Spd. - 15%.
 	-->
 	<skill id="16129" levels="5" name="Desert Thirst">
 		<set name="target" val="TARGET_NONE" />
@@ -1215,7 +1218,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Hero's powers give you x  2 the rewards. Disappears upon death or expiration. -->
+	<!-- Hero's powers give you x 2 the rewards. Disappears upon death or expiration. -->
 	<skill id="16136" levels="1" name="Reward x 2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1224,7 +1227,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Hero's powers give you x  4 the rewards. Disappears upon death or expiration. -->
+	<!-- Hero's powers give you x 4 the rewards. Disappears upon death or expiration. -->
 	<skill id="16137" levels="1" name="Reward x 4">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1233,7 +1236,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Hero's powers give you x  8 the rewards. Disappears upon death or expiration. -->
+	<!-- Hero's powers give you x 8 the rewards. Disappears upon death or expiration. -->
 	<skill id="16138" levels="1" name="Reward x 8">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1242,7 +1245,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Hero's powers give you x  16 the rewards. Disappears upon death or expiration. -->
+	<!-- Hero's powers give you x 16 the rewards. Disappears upon death or expiration. -->
 	<skill id="16139" levels="1" name="Reward x 16">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1251,7 +1254,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Hero's powers give you x  32 the rewards. Disappears upon death or expiration. -->
+	<!-- Hero's powers give you x 32 the rewards. Disappears upon death or expiration. -->
 	<skill id="16140" levels="1" name="Reward x 32">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1327,7 +1330,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Compelled to move due to Fear. -->
+	<!-- Inflicted with Fear and moving against own will momentarily. -->
 	<skill id="16148" levels="5" name="Fear">
 		<table name="#mpConsume"> 81 84 87 90 94 </table>
 		<set name="target" val="TARGET_NONE" />
@@ -1341,11 +1344,11 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: HP cut due to Poison. 11 power.
-		Level 2: HP cut due to Poison. 12 power.
-		Level 3: HP cut due to Poison. 13 power.
-		Level 4: HP cut due to Poison. 14 power.
-		Level 5: HP cut due to Poison. 15 power.
+		Level 1: Poisons a target, momentarily decreasing HP. Effect 11.
+		Level 2: Poisons a target, momentarily decreasing HP. Effect 12.
+		Level 3: Poisons a target, momentarily decreasing HP. Effect 13.
+		Level 4: Poisons a target, momentarily decreasing HP. Effect 14.
+		Level 5: Poisons a target, momentarily decreasing HP. Effect 15.
 	-->
 	<skill id="16149" levels="5" name="Poison">
 		<table name="#mpConsume"> 80 88 100 108 120 </table>
@@ -1360,11 +1363,11 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: Speed momentarily decreased. 9 power.
-		Level 2: Speed momentarily decreased. 10 power.
-		Level 3: Speed momentarily decreased. 11 power.
+		Level 1: Speed decreases momentarily. Effect 9.
+		Level 2: Speed decreases momentarily. Effect 10.
+		Level 3: Speed decreases momentarily. Effect 11.
 	-->
-	<skill id="16150" levels="5" name="Slow">
+	<skill id="16150" levels="5" name="Decrease Speed">
 		<table name="#mpConsume"> 137 154 160 160 160 </table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1450,11 +1453,11 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: HP decreases from bleeding momentarily. Effect 1.
-		Level 2: HP decreases from bleeding momentarily. Effect 2.
-		Level 3: HP decreases from bleeding momentarily. Effect 3.
-		Level 4: HP decreases from bleeding momentarily. Effect 4.
-		Level 5: HP decreases from bleeding momentarily. Effect 5.
+		Level 1: Causes target to bleed, momentarily reducing HP. Effect 1.
+		Level 2: Causes target to bleed, momentarily reducing HP. Effect 2.
+		Level 3: Causes target to bleed, momentarily reducing HP. Effect 3.
+		Level 4: Causes target to bleed, momentarily reducing HP. Effect 4.
+		Level 5: Causes target to bleed, momentarily reducing HP. Effect 5.
 	-->
 	<skill id="16157" levels="5" name="Bleed">
 		<table name="#mpConsume"> 65 70 75 80 85 </table>
@@ -1559,8 +1562,8 @@
 	</skill>
 	<!-- 
 		Level 1: For some time, P. Evasion + 10, M. Evasion + 10, Evasion Rate against P. Skills + 10%.
-		Level 2: For 3 min., P. Evasion + 20, M. Evasion + 20, Evasion Rate against P. Skills + 20%.
-		Level 3: For 3 min., P. Evasion + 40, M. Evasion + 40, Evasion Rate against P. Skills + 40%.
+		Level 2: For 3 minutes, P. Evasion + 20, M. Evasion + 20, Evasion Rate against P. Skills + 20%.
+		Level 3: For 3 minutes, P. Evasion + 40, M. Evasion + 40, Evasion Rate against P. Skills + 40%.
 	-->
 	<skill id="16166" levels="3" name="Escape Death">
 		<table name="#reuseDelay"> 5000 120000 120000 </table>
@@ -1575,7 +1578,7 @@
 		Level 1: P./M. Evasion strengthened.
 		Level 2: P./M. Evasion very much strengthened.
 	-->
-	<skill id="16167" levels="2" name="Increase Evasion 1">
+	<skill id="16167" levels="2" name="Increase Evasion 2">
 		<table name="#name">Increase Evasion 1;Increase Evasion 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1698,7 +1701,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="16182" levels="6" name="Decrease SP">
+	<skill id="16182" levels="6" name="Reward x 32">
 		<table name="#name">Decrease SP;Reward x 2;Reward x 4;Reward x 8;Reward x 16;Reward x 32</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1916,7 +1919,7 @@
 	</skill>
 	<skill id="16202" levels="5" name="Fatal Strike">
 		<table name="#power"> 100000 120000 140000 160000 160000 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -1929,7 +1932,7 @@
 	</skill>
 	<skill id="16203" levels="4" name="Fatal Shot">
 		<table name="#power"> 100000 120000 140000 160000 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -1942,7 +1945,7 @@
 	</skill>
 	<skill id="16204" levels="4" name="Fatal Slasher">
 		<table name="#power"> 100000 120000 140000 160000 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -1953,7 +1956,8 @@
 	</skill>
 	<skill id="16205" levels="5" name="Burst Shot">
 		<table name="#power"> 100000 120000 140000 160000 160000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -1967,7 +1971,7 @@
 	<skill id="16206" levels="4" name="Holy Spike">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1983,7 +1987,7 @@
 	<skill id="16207" levels="4" name="Dark Spike">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1999,7 +2003,7 @@
 	<skill id="16208" levels="4" name="Fire Spike">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2015,7 +2019,7 @@
 	<skill id="16209" levels="4" name="Water Spike">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2031,7 +2035,7 @@
 	<skill id="16210" levels="5" name="Wind Spike">
 		<table name="#power"> 550 650 750 850 850 </table>
 		<table name="#elementPower"> 100 150 200 300 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2047,7 +2051,7 @@
 	<skill id="16211" levels="4" name="Earth Spike">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2063,7 +2067,8 @@
 	<skill id="16212" levels="4" name="Holy Buster">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2080,7 +2085,8 @@
 	<skill id="16213" levels="4" name="Dark Buster">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2097,7 +2103,8 @@
 	<skill id="16214" levels="4" name="Fire Buster">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2114,7 +2121,8 @@
 	<skill id="16215" levels="4" name="Water Buster">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2131,7 +2139,8 @@
 	<skill id="16216" levels="5" name="Wind Buster">
 		<table name="#power"> 550 650 750 850 850 </table>
 		<table name="#elementPower"> 100 150 200 300 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2148,7 +2157,8 @@
 	<skill id="16217" levels="4" name="Earth Buster">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2165,7 +2175,8 @@
 	<skill id="16218" levels="4" name="Holy Blast">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2180,10 +2191,11 @@
 		<set name="element" val="4" />
 		<set name="elementPower" val="#elementPower" />
 	</skill>
-	<skill id="16219" levels="4" name="Dark Blast">
+	<skill id="16219" levels="4" name="Unholy Blast">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2201,7 +2213,8 @@
 	<skill id="16220" levels="4" name="Fire Blast">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2219,7 +2232,8 @@
 	<skill id="16221" levels="4" name="Water Blast">
 		<table name="#power"> 550 650 750 850 </table>
 		<table name="#elementPower"> 100 150 200 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2237,7 +2251,8 @@
 	<skill id="16222" levels="5" name="Wind Blast">
 		<table name="#power"> 550 650 750 850 850 </table>
 		<table name="#elementPower"> 100 150 200 300 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2255,7 +2270,8 @@
 	<skill id="16223" levels="5" name="Earth Blast">
 		<table name="#power"> 550 650 750 850 850 </table>
 		<table name="#elementPower"> 100 150 200 300 300 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2271,14 +2287,15 @@
 		<set name="elementPower" val="#elementPower" />
 	</skill>
 	<!-- 
-		Level 1: Poisoned. HP momentarily decreases. Power 11.
-		Level 2: Poisoned. HP momentarily decreases. Power 12.
-		Level 3: Poisoned. HP momentarily decreases. Power 13.
-		Level 4: Poisoned. HP momentarily decreases. Power 14.
+		Level 1: Poisons a target, momentarily decreasing HP. Effect 11.
+		Level 2: Poisons a target, momentarily decreasing HP. Effect 12.
+		Level 3: Poisons a target, momentarily decreasing HP. Effect 13.
+		Level 4: Poisons a target, momentarily decreasing HP. Effect 14.
 	-->
 	<skill id="16224" levels="4" name="Mass Poison">
 		<table name="#dot"> 11000 12000 13000 14000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2301,14 +2318,15 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Bleeding. HP momentarily decreases. Power 11.
-		Level 2: Bleeding. HP momentarily decreases. Power 12.
-		Level 3: Bleeding. HP momentarily decreases. Power 13.
-		Level 4: Bleeding. HP momentarily decreases. Power 14.
+		Level 1: Causes target to bleed, momentarily reducing HP. Effect 11.
+		Level 2: Causes target to bleed, momentarily reducing HP. Effect 12.
+		Level 3: Causes target to bleed, momentarily reducing HP. Effect 13.
+		Level 4: Causes target to bleed, momentarily reducing HP. Effect 14.
 	-->
 	<skill id="16225" levels="4" name="Mass Bleed">
 		<table name="#dot"> 11000 12000 13000 14000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2330,7 +2348,7 @@
 		</for>
 	</skill>
 	<skill id="16226" levels="1" name="Battle Recovery">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2353,9 +2371,10 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Attacks nearby enemies and stuns them for 10 sec. -->
+	<!-- Attacks nearby enemies and stuns them for 10 seconds. -->
 	<skill id="16228" levels="5" name="Wide Stun">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2376,9 +2395,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Casts Hold on target and nearby enemies for 10 sec. -->
+	<!-- Casts Hold on target and nearby enemies for 10 seconds. -->
 	<skill id="16229" levels="4" name="Mass Hold">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2400,9 +2420,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Casts Sleep on target and nearby enemies for 10 sec. -->
+	<!-- Casts Sleep on target and nearby enemies for 10 seconds. -->
 	<skill id="16230" levels="4" name="Sleeping Cloud">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2424,9 +2445,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Throws nearby enemies into the air and binds them for 10 sec. -->
+	<!-- Throws nearby enemies into the air and binds them for 10 seconds. -->
 	<skill id="16231" levels="5" name="Mass Airbind">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2450,7 +2472,8 @@
 	</skill>
 	<!-- Pulls nearby enemies to you. -->
 	<skill id="16232" levels="4" name="Mass Chain Smash">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2472,9 +2495,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Moving against your will due to Fear. -->
+	<!-- Inflicted with Fear and moving against own will momentarily. -->
 	<skill id="16233" levels="5" name="Mass Fear">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2511,7 +2535,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- No longer able to receive Raid Blessing. -->
-	<skill id="16235" levels="1" name="Blessed with Raid Blessing">
+	<skill id="16235" levels="1" name="Raid Blessing">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2521,487 +2545,487 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- Laum the monster is an Enhanced Mahum created from a common Mahum creature. Disciple Lavidos has kidnapped the creature and infused it with the power of darkness, resulting in a bigger and stronger Mahum type. Now Laum is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16236" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16236" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Minorta the monster is an enhancement from a minotaur created for fun by Hardin's disciple. Disciple Lavidos has kidnapped the creature and infused it with the power of darkness, resulting in a bigger and stronger Minotaur. Amused by his success after Laum's creation, Lavidos has even created a circle of minions for Minotaur. Now Minotaur is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16237" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16237" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Sarga the monster is an enhancement from a minotaur created for fun by Hardin's disciple. Disciple Lavidos has kidnapped the creature and infused it with the power of darkness, resulting in a bigger and stronger Minotaur with greater intellect. Amused by his success after Laum's creation, Lavidos has even created a circle of minions for Sarga. Now Sarga is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16238" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16238" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Hogliff the monster is an enhancement from a minotaur created for fun by Hardin's disciple. Disciple Lavidos has kidnapped the creature and infused it with the power of darkness, resulting in a bigger and stronger Minotaur. Amused by his success after Laum's creation, Lavidos has even created a circle of minions for Hogliff. Now Hogliff is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16239" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16239" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Artarot the monster is an enhancement from a minotaur created for fun by Hardin's disciple. Disciple Lavidos has kidnapped the creature and infused it with the power of darkness, resulting in a bigger and stronger Minotaur with greater intellect. Amused by his success after Laum's creation, Lavidos has even created a circle of minions for Artarot. Now Artarot is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16240" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16240" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Excited by his success in enhancing Mahum and Minotaur, Disciple Lavidos began creating his own monsters, and successfully created the Centaur by merging an orc with a Dark Pegasus with the power of darkness. Centaur brings around minions ranging up to tens of thousands, and is on an indiscriminate killing rampage in Gludio to activate the magic circle made of monsters. -->
-	<skill id="16241" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16241" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen, from which rose Gagia the Bloody Earth Dragon. Borne of the essence of Shilen's blood, Gagia has the greatest resemblance to a true Earth Dragon among all of Shilen's offspring, and has an insatiable thirst for blood that spurs an instinctive attack on all living things in sight. -->
-	<skill id="16242" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16242" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen, from which rose Fardune the demon. Borne of the essence of Shilen's blood, Fardune has a close resemblance to Shilen's children, and has an insatiable thirst for blood. His first action upon waking was to gather up monsters in the Bloody Swampland and Altar of Evil areas and rule over the strong ones while slaughtering the rest to drink their blood. -->
-	<skill id="16243" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16243" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen, from which rose Harsia the demon. Borne of the essence of Shilen's blood, Harsia has a close resemblance to Shilen's children, and has an insatiable thirst for blood. Her first action upon waking was to gather up monsters in the Bloody Swampland and Altar of Evil areas and rule over the strong ones while slaughtering the rest to drink their blood. -->
-	<skill id="16244" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16244" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen, from which rose Bedukel the demon. Borne of the essence of Shilen's blood, Bedukel has a close resemblance to Shilen's children, and has an insatiable thirst for blood. His first action upon waking was to gather up monsters in the Bloody Swampland and Altar of Evil areas and rule over the strong ones while slaughtering the rest to drink their blood. -->
-	<skill id="16245" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16245" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen, from which rose Bloody Witch Rumilla. Borne of the essence of Shilen's blood, Rudmilla has a close resemblance to Shilen's children, and has an insatiable thirst for blood. Her first action upon waking was to gather up monsters in the Bloody Swampland and Altar of Evil areas and rule over the strong ones while slaughtering the rest to drink their blood. -->
-	<skill id="16246" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16246" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- The release of Punishment, the 6th Seal, renewed activity at the Altar of Shilen. Having come into the material world through the blood flowing in the Altar of Blood, Shilen's Priest Sasia carries out the goddess' orders to watch the newly-created demons and guard a point in the great magic circle of living monsters. Sasia commands a circle of small dragons, given as gifts from Shilen's dragons. -->
-	<skill id="16247" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16247" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- One of the 3 Hell Weapons created by the 5 Hell Lords of Avarice, Earth Terakan is a voracious eater of souls, regardless of alliance. Though originally of no color or attribute, it absorbed a part of Antharas' soul and was reborn with the power of the earth. Earth Terakan can be summoned through Apparition Stones made of fake souls. -->
-	<skill id="16248" levels="1" name="Raid Boss (Lv. 88)">
+	<skill id="16248" levels="1" name="88Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turahot has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turahot retains the tribe's aggression and stamina. -->
-	<skill id="16249" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16249" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turation has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turation retains the tribe's aggression and stamina. -->
-	<skill id="16250" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16250" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turation has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turamathia retains the tribe's aggression and stamina. -->
-	<skill id="16251" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16251" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Due to their tradition of carrying dead enemy parts as marks of victory, the great tribe of Amden Orcs have been cursed by Shilen's Disciples, whose influence was amplified by the victory relics' link with death. Controlled by Disciple Nemis, Turation has come to the Turek Orc Campsite to be a part of the magic circle created by monsters. Though cursed, Turabait retains the tribe's aggression and stamina. -->
-	<skill id="16252" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16252" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Disciple Nemis revealed the construction of a magic circle to Demon Triol, asking for more monsters to fill the circle. Triol smiled in amusement to see some of the proud Amden Orcs under control of darkness, and took Pa'agrio's form to control a number of Nermion, specialized wizard warrior class within the ranks of Nerva Orc, to be used for Nemis' cause. -->
-	<skill id="16253" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16253" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Disciple Nemis revealed the construction of a magic circle to Demon Triol, asking for more monsters to fill the circle. Triol smiled in amusement to see some of the proud Amden Orcs under control of darkness, and took Pa'agrio's form to control a number of Nergatt, specialized physical warrior class within the ranks of Nerva Orc, to be used for Nemis' cause. -->
-	<skill id="16254" levels="1" name="Raid Boss (Lv. 92)">
+	<skill id="16254" levels="1" name="92Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Tarstan was a sculpture in Orbis Temple, among the many that stylized male beauty. Ekidna, the disciple who symbolizes Shilen's masculine beauty, enslaved Tarstan and set him loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Tarstan is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16255" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16255" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Abelsnif was a sculpture in Orbis Temple, among the many that stylized male beauty. Ekidna, the disciple who symbolizes Shilen's masculine beauty, enslaved Abelsnif and set him loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Abelsnif is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16256" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16256" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Kimesis was a sculpture in Orbis Temple, among the many that stylized male beauty. Ekidna, the disciple who symbolizes Shilen's masculine beauty, enslaved Kimesis and set him loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Kimesis is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16257" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16257" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Kathargon was a sculpture in Orbis Temple, among the many that stylized male beauty. Ekidna, the disciple who symbolizes Shilen's masculine beauty, enslaved Kathargon and set him loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Kathargon is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16258" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16258" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Pantasaus was a sculpture in Orbis Temple when Ekidna, the disciple who symbolizes Shilen's masculine beauty, mistook her for a sculpture of male beauty and set her loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Pantasaus is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16259" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16259" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Ixignon was a sculpture in Orbis Temple, among the many that stylized male beauty. Ekidna, the disciple who symbolizes Shilen's masculine beauty, enslaved Ixignon and set him loose in Fairy Settlement, where he had snuck in under the guise of a beautiful Elf. Now a cursed puppet with glowing red eyes shedding tears of blood, Ixignon is a part of the magic circle of monsters, creating havoc in Magmeld. -->
-	<skill id="16260" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16260" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A clone of Harp created by Embryo, whom Disciple Nemis tricked under the guise of Etis van Etina. With Nemis bestowing the power of darkness from the sidelines, the clone is more powerful than Harp. It is currently partaking in the monster magic circle with members of Embryo and their other creations. -->
-	<skill id="16261" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16261" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A clone of Isadora created by Embryo, whom Disciple Nemis tricked under the guise of Etis van Etina. With Nemis bestowing the power of darkness from the sidelines, the clone is more powerful than Isadora. It is currently partaking in the monster magic circle with members of Embryo and their other creations. -->
-	<skill id="16262" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16262" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A clone of Maliss created by Embryo, whom Disciple Nemis tricked under the guise of Etis van Etina. With Nemis bestowing the power of darkness from the sidelines, the clone is more powerful than Maliss. It is currently partaking in the monster magic circle with members of Embryo and their other creations. -->
-	<skill id="16263" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16263" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A weapon for the Embryo, Garron was tricked by Disciple Nemis, then disguised as Etis van Etina, into believing that the dying Mother Tree is the key to unlocking the power of the Seal of Punishment. Along with other clones created by Embryo, Garron now partakes in the monster magic circle. -->
-	<skill id="16264" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16264" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A weapon for the Embryo, Nigel was tricked by Disciple Nemis, then disguised as Etis van Etina, into believing that the dying Mother Tree is the key to unlocking the power of the Seal of Punishment. Along with other clones created by Embryo, Nigel now partakes in the monster magic circle. -->
-	<skill id="16265" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16265" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A weapon for the Embryo, Dabos was tricked by Disciple Nemis, then disguised as Etis van Etina, into believing that the dying Mother Tree is the key to unlocking the power of the Seal of Punishment. Along with other clones created by Embryo, Dabos now partakes in the monster magic circle. -->
-	<skill id="16266" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16266" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- One of the 3 Hell Weapons created by the 5 Hell Lords of Avarice, Wind Cassius is a voracious eater of souls, regardless of alliance. Though originally of no color or attribute, it absorbed a part of Lindvior's soul and was reborn with the power of wind. Wind Cassius can be summoned through Apparition Stones made of fake souls. -->
-	<skill id="16267" levels="1" name="Raid Boss (Lv. 93)">
+	<skill id="16267" levels="1" name="93Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- An enhanced monster created by Disciple Lavidos using Enhanced Mahum, Radium was sent to the Garden of Beasts with 4 Tayga bosses to take a part in the monster magic circle. -->
-	<skill id="16268" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16268" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A race of enhanced monsters created by DIsciple Lavidos using Kel Mahum, axe-wielding Typheron is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
-	<skill id="16269" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16269" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A race of enhanced monsters created by DIsciple Lavidos using Kel Mahum, staff-wielding Timarga is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
-	<skill id="16270" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16270" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A race of enhanced monsters created by DIsciple Lavidos using Kel Mahum, sword-wielding Tycepton is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
-	<skill id="16271" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16271" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A race of enhanced monsters created by DIsciple Lavidos using Kel Mahum, staff-wielding Tiverga is one of the 4 bosses of the Tayga, and takes a part in the monster magic circle with the other Tayga bosses and Enhanced Mahum. -->
-	<skill id="16272" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16272" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- An enhanced monster created by Disciple Lavidos using Enhanced Mahum, Supercium was sent to the Garden of Beasts with 4 Tayga bosses to take a part in the monster magic circle. -->
-	<skill id="16273" levels="1" name="Raid Boss (Lv. 94)">
+	<skill id="16273" levels="1" name="94Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Garamor sent Gariott the herald to keep an eye on Cruma Marshlands, a point belonging to the magic circle of monsters. Gariott, who has a giant tail, has been helping Garamor's minions find bodies to inhabit. -->
-	<skill id="16274" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16274" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A mechanical minion for Shilen's Disciple Garamor, Varvacion has landed in the material world by devouring the resentful soul and stealing the body of a peasant revolutionary in Dion. -->
-	<skill id="16275" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16275" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A mechanical minion for Shilen's Disciple Garamor, Varmoni has landed in the material world by devouring the resentful soul and stealing the body of a peasant revolutionary in Dion. Varmoni has a dedicated circle of android minions. -->
-	<skill id="16276" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16276" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A mechanical minion for Shilen's Disciple Garamor, Varvinos has landed in the material world by devouring the resentful soul and stealing the body of a peasant revolutionary in Dion. Varvinos can command a large number of minions. -->
-	<skill id="16277" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16277" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A mechanical minion for Shilen's Disciple Garamor, Varmonia has landed in the material world by devouring the resentful soul and stealing the body of a peasant revolutionary in Dion. Varmonia can command a large number of minions. -->
-	<skill id="16278" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16278" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A mechanical minion for Shilen's Disciple Garamor, Varkaron has landed in the material world by devouring the resentful soul and stealing the body of a peasant revolutionary in Dion. Varkaron can command an infinite number of minions. -->
-	<skill id="16279" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16279" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having found the hidden Lachik Dwelling, Disciple Lavidos gained hold of the minds of some of the Lachikios, and turned them into Magikus. The Magikus now stand with the Centaur created by Lavidos at the reed fields, playing a part in the magic circle made of monsters. -->
-	<skill id="16280" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16280" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Kerfaus was one of the 4 Centaurs created by Disciple Lavidos to be named as bosses of the new race. With other creatures controlled by Lavidos, Kerfaus takes a part in the monster magic circle. -->
-	<skill id="16281" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16281" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Milinaus was one of the 4 Centaurs created by Disciple Lavidos to be named as bosses of the new race. With other creatures controlled by Lavidos, Milinaus takes a part in the monster magic circle. -->
-	<skill id="16282" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16282" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Sarkaus was one of the 4 Centaurs created by Disciple Lavidos to be named as bosses of the new race. With other creatures controlled by Lavidos, Sarkaus takes a part in the monster magic circle. -->
-	<skill id="16283" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16283" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Shimeus was one of the 4 Centaurs created by Disciple Lavidos to be named as bosses of the new race. With other creatures controlled by Lavidos, Shimeus takes a part in the monster magic circle. -->
-	<skill id="16284" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16284" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having found the hidden Lachik Dwelling, Disciple Lavidos gained hold of the minds of some of the Lachikios, and turned them into Kinigos. The Kinigos now stand with the Centaur created by Lavidos at the reed fields, playing a part in the magic circle made of monsters. -->
-	<skill id="16285" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16285" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Zetahl is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Zetahl resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16286" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16286" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Tabris is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Tabris resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16287" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16287" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Stelos is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelos resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16288" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16288" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Ravolas is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Ravolas resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16289" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16289" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Stelo Soma is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Stelo Soma resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16290" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16290" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Dephracor is one of the Half-Devil Avataria given from Triol, who was impressed with Shilen's Disciples' success in controlling some of the proud Amden Orcs. Dephracor resides in an area between the Brekka Orc Hideout and Gorgon Garden, and play a part in creating the monster magic circle. -->
-	<skill id="16291" levels="1" name="Raid Boss (Lv. 97)">
+	<skill id="16291" levels="1" name="97Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Tiera the angel became a fallen angel, and proceeded to descend upon the Valley of Saints with other fallen angels. It is said that upon this descent, bodies of angels that had been guarding the heavens above rained down from the sky. -->
-	<skill id="16292" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16292" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Goblier the angel awoke to darkness. As a full-fledged demon, Goblier opened Hell's Gate to summon demons unto the world to claim them as minions, and proceeded to descend upon the Valley of Saints with other fallen angels. It is said that upon this descent, bodies of angels that had been guarding the heavens above rained down from the sky. -->
-	<skill id="16293" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16293" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Cherkia the angel awoke to darkness. As a full-fledged demon, Cherkia opened Hell's Gate to summon demons unto the world to claim them as minions, and proceeded to descend upon the Valley of Saints with other fallen angels. It is said that upon this descent, bodies of angels that had been guarding the heavens above rained down from the sky. -->
-	<skill id="16294" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16294" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Harthemon the angel awoke to darkness. As a full-fledged demon, Harthemon opened Hell's Gate to summon demons unto the world to claim them as minions, and proceeded to descend upon the Valley of Saints with other fallen angels. It is said that upon this descent, bodies of angels that had been guarding the heavens above rained down from the sky. -->
-	<skill id="16295" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16295" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Sarboth the angel awoke to darkness. As a full-fledged demon, Sarboth opened Hell's Gate to summon demons unto the world to claim them as minions, and proceeded to descend upon the Valley of Saints with other fallen angels. During the descent, Sarboth lost both legs in a battle with angels guarding the gateway between the heavenly sphere and the material world, and has since then been merged with a chair made from Hell. -->
-	<skill id="16296" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16296" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Having fallen prey to Disciple Lamia's whispers, Eloule the archangel spread darkness among the Pentominos, the wings of angels, to retain their loyalty, and proceeded to descend upon the Valley of Saints with other fallen angels. -->
-	<skill id="16297" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16297" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Spicula into puppets called Vengeful Eligos, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16298" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16298" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Spicula into puppets called Vengeful Agarez, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16299" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16299" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Weiss into puppets called Vengeful Lerazia, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16300" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16300" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Krakia into puppets called Vengeful Oretross, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16301" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16301" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Bamonti into puppets called Vengeful Edaire, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16302" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16302" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Weiss into puppets called Vengeful Agonia, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
-	<skill id="16303" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16303" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A wizard of Aden buried in the Cemetary, Afjak was forcefully awakened by Shilen's Disciple Lavidos as Dark Messenger Afjak. -->
-	<skill id="16304" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16304" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A knight of Aden buried in the Cemetary, Feilnor was forcefully awakened by Shilen's Disciple Lavidos as a Dusk Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
-	<skill id="16305" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16305" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A wizard of Aden buried in the Cemetary, Amormio was forcefully awakened by Shilen's Disciple Lavidos as a Chaos Wizard, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
-	<skill id="16306" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16306" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A knight of Aden buried in the Cemetary, Lahav was forcefully awakened by Shilen's Disciple Lavidos as an Insolence Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
-	<skill id="16307" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16307" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- A priest of Aden buried in the Cemetary, Borhunt was forcefully awakened by Shilen's Disciple Lavidos as a Death Priest, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
-	<skill id="16308" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16308" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Once a famous knight of Aden, Zeruel was forcefully awakened from the Cemetary by Shilen's Disciple Lavidos as a Destruction Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
-	<skill id="16309" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16309" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Weary from the battle with the gods, Light Dragon Auracia continues to sleep - but the dragon's power was taken by Shilen's Disciples and forcefully infused into a small dinosaur in Primeval Isle, which grew tremendous in size and power, becoming the Megaloprepis of today. In order to complete the giant magic circle, Shilen's Disciples placed Megaloprepis at the Immortal Plateau as Auracia's Herald, along with the heralds of the other dragons. -->
-	<skill id="16310" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16310" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- To aid the resurrection of its mother Shilen, Antharas accepted her Disciples' plea and sent its herald Komabor to the Immortal Plateau to complete the monster magic circle. Komabor commands a circle of Minos, otherwise known as Dragon Fragments, and possesses earth-attribute powers as great as those of Antharas. -->
-	<skill id="16311" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16311" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- To aid the resurrection of its mother Shilen, Skellrus accepted her Disciples' plea and sent its herald Iskios to the Immortal Plateau to complete the monster magic circle. Iskios commands a circle of Minos, otherwise known as Dragon Fragments, and possesses dark-attribute powers as great as those of Skellrus. -->
-	<skill id="16312" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16312" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- To aid the resurrection of its mother Shilen, Valakas accepted her Disciples' plea and sent its herald Potigia to the Immortal Plateau to complete the monster magic circle. Potigia commands a circle of Minos, otherwise known as Dragon Fragments, and possesses fire-attribute powers as great as those of Valakas. -->
-	<skill id="16313" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16313" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- To aid the resurrection of its mother Shilen, Lindvior accepted her Disciples' plea and sent its herald Numa to the Immortal Plateau to complete the monster magic circle. Numa commands a circle of Minos, otherwise known as Dragon Fragments, and possesses wind-attribute powers as great as those of Lindvior. -->
-	<skill id="16314" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16314" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- To aid the resurrection of its mother Shilen, Fafurion accepted her Disciples' plea and sent its herald Aquarion to the Immortal Plateau to complete the monster magic circle. Unlike other dragons' heralds, Aquarion is able to summon countless Nephos from the water, and possesses water-attribute powers as great as those of Fafurion. -->
-	<skill id="16315" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16315" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- One of the 3 Hell Weapons created by the 5 Hell Lords of Avarice, Flaming Ladar is a voracious eater of souls, regardless of alliance. Though originally of no color or attribute, it absorbed a part of Valakas' soul and was reborn with the power of fire. Flaming Ladar can be summoned through Apparition Stones made of fake souls. -->
-	<skill id="16316" levels="1" name="Raid Boss (Lv. 98)">
+	<skill id="16316" levels="1" name="98Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3263,7 +3287,7 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="16346" levels="1" name="Deadly Fear">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="5" />
@@ -3276,7 +3300,7 @@
 	</skill>
 	<!-- Momentarily decreases Atk. Spd., Casting Spd., and Speed. -->
 	<skill id="16347" levels="3" name="Breeze Shell">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="5" />
@@ -3431,8 +3455,8 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Resistance to Pull. -->
-	<skill id="16364" levels="1" name="Dimensional Warp Pull">
+	<!-- Resistance to Pull/Danger Zone. -->
+	<skill id="16364" levels="1" name="Dimensional Warp Pull/Danger Zone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3934,10 +3958,10 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- 
-		Level 1: P./M./ Atk. - 10%, and P./M. Critical Rate - 30.
-		Level 2: P./M./ Atk. - 15%, and P./M. Critical Rate - 40.
-		Level 3: P./M./ Atk. - 20%, and P./M. Critical Rate - 50.
-		Level 4: P./M./ Atk. - 25%, and P./M. Critical Rate - 60.
+		Level 1: P. Atk - 10%, M. Atk. - 10%, and P. Critical Rate - 30, M. Critical Rate - 30.
+		Level 2: P. Atk - 15%, M. Atk. - 15%, and P. Critical Rate - 40, M. Critical Rate - 40.
+		Level 3: P. Atk - 20%, M. Atk. - 20%, and P. Critical Rate - 50, M. Critical Rate - 50.
+		Level 4: P. Atk - 25%, M. Atk. - 25%, and P. Critical Rate - 60, M. Critical Rate - 60.
 	-->
 	<skill id="16415" levels="4" name="Dimensional Dark Forces">
 		<set name="target" val="TARGET_NONE" />
@@ -3973,14 +3997,14 @@
 		Level 3: Strong Seduction Resistance.
 		Level 5: Very strong Seduction Resistance.
 		Level 7: Extremely strong Seduction Resistance.
-		Level 9: Ultimate Seduction Resistance.
+		Level 10: Ultimate Seduction Resistance.
 	-->
 	<skill id="16418" levels="10" name="Seduction Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- For 2 hr., STR + 3, INT + 3, Speed + 7. Can obtain item after 2 hr. Must be alive with space in the inventory to receive item. -->
+	<!-- For 2 hr., STR + 3, INT + 7, Speed + 2. Can obtain item after $s6 hr. Must be alive with space in the inventory to receive item. -->
 	<skill id="16419" levels="2" name="Stocking Fairy's Blessing">
 		<table name="#hitTime"> 1000 0 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -4017,7 +4041,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 2 hr., DEX + 3, WIT + 3, Max HP/MP + 2014. Can obtain item after 2 hr. Must be alive with space in the inventory to receive item. -->
+	<!-- For 2 hr., DEX + 3, WIT + 3, Max HP/MP + 2013. Can obtain item after 2 hr. Must be alive with space in the inventory to receive item. -->
 	<skill id="16421" levels="2" name="Snowman Fairy's Blessing">
 		<table name="#hitTime"> 1000 0 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -4665,7 +4689,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Part of the  Spicula was affected by the darkness of Nemis and was reborn as Vengeful Eligos. Currently aiming for Gludio from another dimension in order to carry out Nemis' will. -->
+	<!-- Part of the Spicula was affected by the darkness of Nemis and was reborn as Vengeful Eligos. Currently aiming for Gludio from another dimension in order to carry out Nemis' will. -->
 	<skill id="16498" levels="1" name="99Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4783,7 +4807,7 @@
 		Level 1: One of the seven disciples of Embryo. Received the power of the Seal of Calamity froM Etis van Etina, and is in control of the Atelia Fortress. Materializes the power of the Seal of Calamity. Currently, in charge of turning the Atelia obtained from the Garden of Spirits into Dark Atelia.
 		Level 2: With the transfer of the Garden of Spirits, the Queen of Spirits of the Wind Realm has been awakened. She used to be very intelligent and detached, but her instinct is all that is left. She considers anyone who gets near the Garden of Spirits as a threat, including the Ertheia.
 	-->
-	<skill id="16517" levels="2" name="Kelbim">
+	<skill id="16517" levels="2" name="Isabella">
 		<table name="#name">Kelbim;Isabella</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5040,7 +5064,7 @@
 		Level 2: The weapons of the soldiers on the 2nd floor haven't been repared because of Master Artisan Geork's death, decreasing their HP by 15%. The effect disappears when Master Artisan Geork respawns.
 		Level 3: The morale of the soldiers on the 3rd and 4th floors has dropped because of Commander Burnstein's disappearance, decreasing their Max HP by 15%. The effect disappears when Commander Burnstein respawns.
 	-->
-	<skill id="16542" levels="3" name="Supply Blockade">
+	<skill id="16542" levels="3" name="Indiscipline">
 		<table name="#name">Supply Blockade;Poor Equipment;Indiscipline</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5062,5 +5086,451 @@
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Geork swings his hammer, dealing physical damage to enemies around and knocking them back. -->
+	<skill id="16545" levels="1" name="Geork's Hammer">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="10000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Banished from battle for 60 minutes by Geork. -->
+	<skill id="16546" levels="1" name="Banished Captive">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="78" />
+	</skill>
+	<!-- 
+		Level 1: Has slight resistance to Danger Zone.
+		Level 3: Has strong resistance to Danger Zone.
+		Level 5: Has very strong resistance to Danger Zone.
+		Level 7: Has extremely strong resistance to Danger Zone.
+		Level 10: Has ultimate resistance to Danger Zone.
+	-->
+	<skill id="16547" levels="10" name="Danger Zone Attack Resistance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="16548" levels="1" name="Eternal Blizzard">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="7000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Frozen solid and unable to move. -->
+	<skill id="16549" levels="1" name="Freeze - Eternal Ice">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Inflicts ranged physical damage and knocks them back for 2 seconds. -->
+	<skill id="16550" levels="1" name="Zellaka's Quake">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+	</skill>
+	<skill id="16551" levels="1" name="Ice Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="19" />
+		<set name="hitTime" val="1080" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Freeze the opponent along with the damage from your first. -->
+	<skill id="16552" levels="1" name="Ice Fist">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="19" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Freeze enemies in front of you with your breath. -->
+	<skill id="16553" levels="1" name="Ice Breath">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Inflicts damage and stuns enemies around. -->
+	<skill id="16554" levels="1" name="Spinning Slash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="13" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<!-- Tries to inflict a powerful vital spot attack. -->
+	<skill id="16555" levels="1" name="Kelbim Deadly Blow">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="33" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Makes the target show their back and inflicts damage. -->
+	<skill id="16556" levels="1" name="Kelbim Bluff">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="35" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Inflicts great damage to enemies within range and makes them bleed. -->
+	<skill id="16557" levels="1" name="Dancing Blade">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+	</skill>
+	<!-- Increases success rate of vital spot attacks. -->
+	<skill id="16558" levels="1" name="Kelbim Mortality">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="mpConsume" val="27" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="150000" />
+	</skill>
+	<!-- Make an attack with a shield, stunning the target. -->
+	<skill id="16559" levels="1" name="Dragonclaw Shield Stun">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Increases P. Def. -->
+	<skill id="16560" levels="1" name="Dragonclaw Ultimate Defense">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="900000" />
+	</skill>
+	<!-- Creates a whirlwind, inflicting wind damage on the enemy. -->
+	<skill id="16561" levels="1" name="Dragonclaw Hurricane">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="34" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Frightens the enemy and causes him to flee. -->
+	<skill id="16562" levels="1" name="Dragonclaw Curse Fear">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="35" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Attacks the enemy with great power. -->
+	<skill id="16563" levels="1" name="Dragonclaw Iron Punch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1604" />
+		<set name="coolTime" val="296" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Hurls an iron-fist, stunning the enemy. -->
+	<skill id="16564" levels="1" name="Dragonclaw Soul Breaker">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="35" />
+		<set name="hitTime" val="1360" />
+		<set name="coolTime" val="440" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Detonate holy energy to inflict damage on nearby enemies. -->
+	<skill id="16565" levels="1" name="Dragonclaw Divine Flash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="57" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+	</skill>
+	<!-- Restores the target's HP very fast. -->
+	<skill id="16566" levels="1" name="Dragonclaw Battle Heal">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="25" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Ignites nearby enemies. -->
+	<skill id="16567" levels="1" name="Dragonclaw Blaze Quake">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="50" />
+		<set name="hitTime" val="4000" />
+	</skill>
+	<!-- Attacks the enemy with great power. -->
+	<skill id="16568" levels="1" name="Dragonclaw Power Smash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="19" />
+		<set name="hitTime" val="1080" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Attacks long-range enemies. -->
+	<skill id="16569" levels="1" name="Dragonclaw Power Shot">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="17" />
+		<set name="hitTime" val="3200" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+		<set name="castRange" val="700" />
+		<set name="effectRange" val="1200" />
+	</skill>
+	<!-- Ignites flames on your body, inflicting fire damage on the enemy. -->
+	<skill id="16570" levels="1" name="Dragonclaw Blaze">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="18" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="750" />
+		<set name="effectRange" val="1250" />
+	</skill>
+	<!-- P. Def. is decreased. -->
+	<skill id="16571" levels="1" name="Decrease P. Def.">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="600000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Unable to move due to Seal Archangel's wrath. -->
+	<skill id="16572" levels="1" name="Seal Archangel's Wrath">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Petrified and unable to move temporarily. -->
+	<skill id="16573" levels="1" name="Kelbim Petrify">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- 
+		Level 1: P./M. Def. + 15%.
+		Level 2: P./M. Def. + 30%.
+		Level 3: P./M. Def. + 50%.
+		Level 4: P./M. Def. + 70%.
+	-->
+	<skill id="16574" levels="4" name="Shield of Infinity">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="240000" />
+	</skill>
+	<skill id="16575" levels="1" name="Eternal Blizzard">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Frozen solid and unable to move. -->
+	<skill id="16576" levels="1" name="Freeze - Eternal Ice">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Tricks the enemy. Make the enemy show their back and stun them for 9 seconds. -->
+	<skill id="16577" levels="1" name="Dragonclaw Bluff">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Inflicts damage to enemies around and stuns them. -->
+	<skill id="16578" levels="1" name="Dragonclaw Crush">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Stirs up a vortex connecting to the dimension of Fire and inflicts Fire damage on the enemy for 30 seconds. Decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. -->
+	<skill id="16579" levels="1" name="Dragonclaw Vortex">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="6000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Provokes nearby enemies to attack. -->
+	<skill id="16580" levels="1" name="Dragonclaw Aggression Aura">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="50" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="40000" />
+	</skill>
+	<!-- 
+		Level 1: Turns aggressive due to hunger.
+		Level 2: Increases the size of your body and increases P. Atk.
+		Level 3: Increases the size of your body and increases P. Atk. and Atk. Spd.
+	-->
+	<skill id="16581" levels="3" name="Growth Accelerator">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Typhoon summons his guardians. -->
+	<skill id="16582" levels="1" name="Let the Dogs Out!">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
+	</skill>
+	<!-- Pounces on the enemy and knocks them out. -->
+	<skill id="16583" levels="1" name="Pounce">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="660" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="7000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Inflicted with Fear and moving against own will momentarily. -->
+	<skill id="16584" levels="1" name="Mass Fear">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Bombards enemies around the target. -->
+	<skill id="16585" levels="1" name="Dragonclaw Cannon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="2500" />
+		<set name="effectRange" val="3000" />
+	</skill>
+	<!-- Deal a powerful attack on the enemy. -->
+	<skill id="16586" levels="1" name="Dragonclaw Siege Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="100" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Attacks the target with great power, knocking them back. -->
+	<skill id="16587" levels="1" name="Dragonclaw Siege Punch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="100" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- On fire due to the explosion. Received Damage + 50%. -->
+	<skill id="16588" levels="1" name="Time Bomb Explosion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<skill id="16589" levels="1" name="Teleport">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
 	</skill>
 </list>

@@ -26,7 +26,7 @@ class Quest (JQuest) :
  def onEvent (self,event,st) :
     htmltext = event
     level = st.getPlayer().getLevel()
-    classId = st.getPlayer().getClassId()
+    classId = st.getPlayer().getClassId().getId()
     if event == "1" :
         st.set("id","0")
         if level >= 18 and classId == 0x19 and st.getQuestItemsCount(LEAF_OF_ORACLE) == 0 :
@@ -106,7 +106,7 @@ class Quest (JQuest) :
             st.exitQuest(False)
             st.saveGlobalQuestVar("1ClassQuestFinished","1")
             st.playSound("ItemSound.quest_finish")
-            player.sendPacket(SocialAction(player.getObjectId(),3))
+            player.sendPacket(SocialAction(player,3))
           else:
             htmltext = "30293-07.htm"
    elif npcId == 30424 and st.getInt("cond") and st.getQuestItemsCount(CRYSTAL_MEDALLION) :

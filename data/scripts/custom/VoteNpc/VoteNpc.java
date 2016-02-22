@@ -3,66 +3,56 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.VoteNpc;
 
-import java.io.File;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.instancemanager.AntiBotsManager;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 /**
  * @author LasTravel
  */
 public class VoteNpc extends Quest
 {
-	private static final boolean 	_debug 			= false;
-	private static final String 	_qn 			= "VoteNpc";
-	private static final int 		_voteNpcId		= 80215;
-	private static final String 	SELECT_VOTE_IP 	= "SELECT * from "+Config.WEB_DB_NAME+".server_voted_ips WHERE ip = ?";
-	private static Map<Integer, Rewards>	_voteRewards = new HashMap<Integer, Rewards>();
+	private static final boolean _debug = false;
+	private static final String _qn = "VoteNpc";
+	private static final int _voteNpcId = 40004;
+	@SuppressWarnings("unused")
+	private static final String SELECT_VOTE_IP = "SELECT * from " + Config.WEB_DB_NAME + ".server_voted_ips WHERE ip = ?";
+	//private static Map<Integer, Rewards> _voteRewards = new HashMap<Integer, Rewards>();
 	
 	public VoteNpc(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 		
-		addFirstTalkId(_voteNpcId);
 		addTalkId(_voteNpcId);
 		addStartNpc(_voteNpcId);
 		
-		load();
+		//load();
 	}
 	
-	private void load()
+	/*private void load()
 	{
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/custom/VoteNpc/voteRewards.xml");
 		if (!file.exists())
@@ -105,7 +95,7 @@ public class VoteNpc extends Quest
 							else if (rewardId == 19229)
 								rewardIcon = "icon.skill19222";
 							else
-								rewardIcon = "icon.skill"+rewardId;
+								rewardIcon = "icon.skill" + rewardId;
 							
 							maxSkillLevel = SkillTable.getInstance().getMaxLevel(rewardId);
 						}
@@ -156,37 +146,99 @@ public class VoteNpc extends Quest
 		{
 			return _rewardId;
 		}
+		
 		private long getAmount()
 		{
 			return _amount;
 		}
+		
 		private String getDescription()
 		{
 			return _description;
 		}
+		
 		private String getName()
 		{
 			return _rewardName;
 		}
+		
 		private String getIcon()
 		{
 			return _rewardIcon;
 		}
-	}
+	}*/
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (_debug)
-			System.out.println(getName() +": onFirstTalk: " + player.getName());
-		return "main.html";
+		return super.onTalk(npc, player);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (_debug)
-			System.out.println(getName() +": onAdvEvent: " + event);
+		/*if (!_debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
+		{
+			player.sendMessage("You can't claim items right now!");
+			return "";
+		}*/
+		
+		long currentTime = System.currentTimeMillis();
+		
+		long accountReuse = 0;
+		long ipReuse = 0;
+		//long hwIdReuse = 0;
+		
+		String accountValue = loadGlobalQuestVar(player.getAccountName());
+		String externalIpValue = loadGlobalQuestVar(player.getExternalIP());
+		//String hwIdValue = loadGlobalQuestVar(player.getHWID().substring(10));
+		
+		if (!accountValue.equalsIgnoreCase(""))
+			accountReuse = Long.parseLong(accountValue);
+		
+		if (!externalIpValue.equalsIgnoreCase(""))
+			ipReuse = Long.parseLong(externalIpValue);
+		
+		//if (!hwIdValue.equalsIgnoreCase(""))
+		//	hwIdReuse = Long.parseLong(hwIdValue);
+		
+		long reuse = Collections.max(Arrays.asList(accountReuse, ipReuse));//, hwIdReuse));
+		if (currentTime > reuse)
+		{
+			if (canGetReward(player))
+			{
+				if (!_debug)
+				{
+					String varReuse = Long.toString(System.currentTimeMillis() + (12 * 3600000));
+					saveGlobalQuestVar(player.getAccountName(), varReuse);
+					saveGlobalQuestVar(player.getExternalIP(), varReuse);
+					//saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
+				}
+				
+				player.addItem(_qn, 4356, 70, npc, true);
+				
+				Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward", "VoteSystem", true);
+				
+				return "thanks.html";
+			}
+			else
+			{
+				player.sendMessage("It looks like you didn't vote!");
+				return "";
+			}
+		}
+		else
+		{
+			//Calc the left time
+			long _remaining_time = (reuse - currentTime) / 1000;
+			int hours = (int) _remaining_time / 3600;
+			int minutes = ((int) _remaining_time % 3600) / 60;
+			String reuseString = "<font color=\"LEVEL\">Come back again in: " + hours + "Hours " + minutes + "minutes</font>";
+			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/reuse.html").replace("%reuse%", reuseString);
+		}
+		
+		/*if (_debug)
+			System.out.println(getName() + ": onAdvEvent: " + event);
 		
 		if (event.startsWith("show_rewards_"))
 		{
@@ -206,14 +258,14 @@ public class VoteNpc extends Quest
 			StringBuilder sb = new StringBuilder();
 			
 			if (maxPages > 0)
-				sb.append("<center>"+CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "-h Quest VoteNpc show_rewards_", " ")+"</center>");
+				sb.append("<center>" + CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "-h Quest VoteNpc show_rewards_", " ") + "</center>");
 			
 			sb.append("<table>");
 			
 			Object[] data = _voteRewards.values().toArray();
 			for (int i = pageStart; i < pageEnd; i++)
 			{
-				Rewards reward = (Rewards)data[i];
+				Rewards reward = (Rewards) data[i];
 				if (reward == null)
 					continue;
 				
@@ -225,14 +277,14 @@ public class VoteNpc extends Quest
 				{
 					int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(reward.getRewardId()), reward.getMaxSkillLevel());
 					if (skillLevelToLearn != -1)
-						rewardName = rewardName+"(Lv. "+skillLevelToLearn+")";
+						rewardName = rewardName + "(Lv. " + skillLevelToLearn + ")";
 					else
 						continue;
 				}
 				else
-					rewardName = rewardName+"("+reward.getAmount()+")";
+					rewardName = rewardName + "(" + reward.getAmount() + ")";
 				
-				sb.append("<tr><td width=40><img src="+reward.getIcon()+" width=32 height=32></td><td><table><tr><td><a action=\"bypass -h Quest VoteNpc claim_"+reward.getRewardId()+"\"><font color=00FFFF>"+rewardName+"</font></a></td></tr><tr><td FIXWIDTH=280><font color=ae9977>"+reward.getDescription()+"</font></td></tr></table></td></tr>");
+				sb.append("<tr><td width=40><img src=" + reward.getIcon() + " width=32 height=32></td><td><table><tr><td><a action=\"bypass -h Quest VoteNpc claim_" + reward.getRewardId() + "\"><font color=00FFFF>" + rewardName + "</font></a></td></tr><tr><td FIXWIDTH=280><font color=ae9977>" + reward.getDescription() + "</font></td></tr></table></td></tr>");
 				sb.append("<tr><td><br></td></tr>");
 			}
 			sb.append("</table>");
@@ -241,10 +293,10 @@ public class VoteNpc extends Quest
 		}
 		else if (event.startsWith("claim_"))
 		{
-			if (!_debug && (player.getHWID() == null || player.getHWID().equalsIgnoreCase("")))
+			if (!_debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 			{
 				player.sendMessage("You can't claim items right now!");
-				return"";
+				return "";
 			}
 			
 			long currentTime = System.currentTimeMillis();
@@ -265,7 +317,7 @@ public class VoteNpc extends Quest
 			
 			if (!hwIdValue.equalsIgnoreCase(""))
 				hwIdReuse = Long.parseLong(hwIdValue);
-
+			
 			long reuse = Collections.max(Arrays.asList(accountReuse, ipReuse, hwIdReuse));
 			if (currentTime > reuse)
 			{
@@ -286,7 +338,7 @@ public class VoteNpc extends Quest
 						saveGlobalQuestVar(player.getExternalIP(), varReuse);
 						saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
 					}
-	
+					
 					if (reward.isItem())
 						player.addItem(_qn, rewardId, reward.getAmount(), npc, true);
 					else
@@ -300,7 +352,7 @@ public class VoteNpc extends Quest
 						}
 					}
 					
-					Util.logToFile(player.getName() + "("+player.getExternalIP()+") received " + reward.getName()+"("+reward.getAmount()+")", "VoteSystem", true);
+					Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received " + reward.getName() + "(" + reward.getAmount() + ")", "VoteSystem", true);
 					
 					return "thanks.html";
 				}
@@ -313,13 +365,14 @@ public class VoteNpc extends Quest
 				long _remaining_time = (reuse - currentTime) / 1000;
 				int hours = (int) _remaining_time / 3600;
 				int minutes = ((int) _remaining_time % 3600) / 60;
-				String reuseString = "<font color=\"LEVEL\">Come back again in: " +hours+ "Hours " + minutes+"minutes</font>";
+				String reuseString = "<font color=\"LEVEL\">Come back again in: " + hours + "Hours " + minutes + "minutes</font>";
 				return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/reuse.html").replace("%reuse%", reuseString);
-			}	
+			}
 		}
-		return super.onAdvEvent(event, npc, player);
+		return super.onAdvEvent(event, npc, player);*/
 	}
 	
+	@SuppressWarnings("unused")
 	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel)
 	{
 		int skillLevelToLearn = -1;
@@ -342,11 +395,47 @@ public class VoteNpc extends Quest
 		if (_debug)
 			return true;
 		
-		Connection con = null;
+		String result = "";
+		
+		HttpURLConnection connection = null;
+		try
+		{
+			URL url = new URL("http://l2topzone.com/api.php?API_KEY=e659e120d32c1780e566c98590737045&SERVER_ID=12059&IP=" + player.getClient().getConnectionAddress().getHostAddress());
+			connection = (HttpURLConnection) url.openConnection();
+			connection.setInstanceFollowRedirects(false);
+			
+			InputStream is = connection.getInputStream();
+			BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+			
+			String line;
+			StringBuffer response = new StringBuffer();
+			while ((line = rd.readLine()) != null)
+			{
+				response.append(line);
+				response.append('\r');
+			}
+			result = response.toString();
+			
+			is.close();
+			rd.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if (connection != null)
+				connection.disconnect();
+		}
+		
+		return (result != null) && result.contains("TRUE");
+		
+		/*Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-			
+
 			PreparedStatement stm = con.prepareStatement(SELECT_VOTE_IP);
 			//We will get the proper player external IP, the antibots already check if the player use a ping tool and store his real ip
 			stm.setString(1, Config.ANTI_BOTS_ENABLED ? AntiBotsManager.getInstance().getProperPlayerIP(player.getExternalIP()) : player.getExternalIP());
@@ -369,7 +458,8 @@ public class VoteNpc extends Quest
 		{
 			L2DatabaseFactory.close(con);
 		}
-		return false;
+
+		return false;*/
 	}
 	
 	public static void main(String[] args)

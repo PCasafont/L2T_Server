@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.StringTokenizer;
@@ -21,6 +22,7 @@ import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.communitybbs.CommunityBoard;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
+import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.handler.AdminCommandHandler;
@@ -56,7 +58,6 @@ import l2server.log.Log;
  */
 public final class RequestBypassToServer extends L2GameClientPacket
 {
-	private static final String _C__23_REQUESTBYPASSTOSERVER = "[C] 23 RequestBypassToServer";
 	
 	// S
 	private String _command;
@@ -79,7 +80,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 		
 		if (_command.isEmpty())
 		{
-			Log.info(activeChar.getName()+" send empty requestbypass");
+			Log.info(activeChar.getName() + " send empty requestbypass");
 			activeChar.logout();
 			return;
 		}
@@ -94,7 +95,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				
 				if (ach == null)
 				{
-					if ( activeChar.isGM() )
+					if (activeChar.isGM())
 						activeChar.sendMessage("The command " + command.substring(6) + " does not exist!");
 					
 					Log.warning("No handler registered for admin command '" + command + "'");
@@ -112,18 +113,18 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					activeChar.setAdminConfirmCmd(_command);
 					ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1);
-					dlg.addString("Are you sure you want execute command "+_command.substring(6)+" ?");
+					dlg.addString("Are you sure you want execute command " + _command.substring(6) + " ?");
 					activeChar.sendPacket(dlg);
 				}
 				else
 				{
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
+						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target"));
 					
 					ach.useAdminCommand(_command, activeChar);
 				}
 			}
-			else if (_command.equals("come_here") && ( activeChar.isGM()))
+			else if (_command.equals("come_here") && (activeChar.isGM()))
 			{
 				comeHere(activeChar);
 			}
@@ -142,12 +143,14 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
 					
-					if (object instanceof L2Npc && endOfId > 0 && activeChar.isInsideRadius(object, ((L2Npc)object).getTemplate().InteractionDistance, false, false))
-						((L2Npc)object).onBypassFeedback(activeChar, _command.substring(endOfId+1));
+					if ((object instanceof L2Npc) && (endOfId > 0) && activeChar.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false))
+						((L2Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				}
-				catch (NumberFormatException nfe) {}
+				catch (NumberFormatException nfe)
+				{
+				}
 			}
 			else if (_command.startsWith("summon_"))
 			{
@@ -164,12 +167,14 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
 					
-					if (object instanceof L2MerchantSummonInstance && endOfId > 0 && activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
-						((L2MerchantSummonInstance)object).onBypassFeedback(activeChar, _command.substring(endOfId+1));
+					if ((object instanceof L2MerchantSummonInstance) && (endOfId > 0) && activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
+						((L2MerchantSummonInstance) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				}
-				catch (NumberFormatException nfe) {}
+				catch (NumberFormatException nfe)
+				{
+				}
 			}
 			// Navigate through Manor windows
 			else if (_command.startsWith("manor_menu_select"))
@@ -209,14 +214,15 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			else if (_command.startsWith("_match"))
 			{
 				L2PcInstance player = getClient().getActiveChar();
-				if (player == null) return;
+				if (player == null)
+					return;
 				
-				String params = _command.substring(_command.indexOf("?")+1);
+				String params = _command.substring(_command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heroid = HeroesManager.getInstance().getHeroByClass(heroclass);
-				if ( heroid > 0)
+				if (heroid > 0)
 				{
 					HeroesManager.getInstance().showHeroFights(player, heroclass, heroid, heropage);
 				}
@@ -224,14 +230,15 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			else if (_command.startsWith("_diary"))
 			{
 				L2PcInstance player = getClient().getActiveChar();
-				if (player == null) return;
+				if (player == null)
+					return;
 				
-				String params = _command.substring(_command.indexOf("?")+1);
+				String params = _command.substring(_command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heroid = HeroesManager.getInstance().getHeroByClass(heroclass);
-				if ( heroid > 0)
+				if (heroid > 0)
 				{
 					HeroesManager.getInstance().showHeroDiary(player, heroclass, heroid, heropage);
 				}
@@ -243,13 +250,19 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					if (!(summon instanceof L2MobSummonInstance))
 						continue;
 					
-					L2MobSummonInstance mobSummon = (L2MobSummonInstance)summon;
+					L2MobSummonInstance mobSummon = (L2MobSummonInstance) summon;
 					mobSummon.onBypass(activeChar, _command.substring(10));
 				}
 			}
 			else if (_command.startsWith("InstancedEvent"))
 			{
 				EventsManager.getInstance().handleBypass(activeChar, _command);
+			}
+			else if (_command.startsWith("WatchDrops"))
+			{
+				IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(_command);
+				if (handler != null)
+					handler.useBypass(_command, activeChar, null);
 			}
 			else if (_command.startsWith("Captcha"))
 			{
@@ -264,7 +277,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 				else
 				{
-					if (activeChar.getBotLevel() % 5 < 4)
+					if ((activeChar.getBotLevel() % 5) < 4)
 					{
 						activeChar.increaseBotLevel();
 						activeChar.captcha("");
@@ -274,15 +287,38 @@ public final class RequestBypassToServer extends L2GameClientPacket
 						activeChar.logout(false);
 				}
 			}
+			else if (_command.startsWith("NickName"))
+			{
+				String text = "";
+				if (_command.length() > 9)
+					text = _command.substring(9);
+				if (CharNameTable.getInstance().doesCharNameExist(text))
+				{
+					activeChar.sendPacket(new NpcHtmlMessage(0, "<html><body><center>" + "This name already exists!<br>" + "Choose another one:<br>" + "<edit var=text width=130 height=11 length=26><br>" + "<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" + "</center></body></html>"));
+				}
+				else if (!CharacterCreate.isValidName(text))
+				{
+					activeChar.sendPacket(new NpcHtmlMessage(0, "<html><body><center>" + "Invalid name!<br>" + "Choose another one:<br>" + "<edit var=text width=130 height=11 length=26><br>" + "<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" + "</center></body></html>"));
+				}
+				else
+				{
+					activeChar.setName(text);
+					activeChar.store();
+					CharNameTable.getInstance().addName(activeChar);
+					activeChar.sendMessage("Name changed!");
+					activeChar.broadcastUserInfo();
+					activeChar.setMovieId(0);
+					activeChar.sendPacket(new NpcHtmlMessage(0, "<html><body></body></html>"));
+					activeChar.startCaptchaTask();
+				}
+			}
 			else if (_command.startsWith("Survey"))
 			{
 				if (_command.length() > 6)
 				{
 					if (_command.equals("SurveyInfo"))
 					{
-						String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getDescription() +
-								"<br><button value=\"Back\" action=\"bypass -h Survey\" width=60 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
-								"</body></html>";
+						String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getDescription() + "<br><button value=\"Back\" action=\"bypass -h Survey\" width=60 height=20 fore=\"L2UI_ct1.button_df\"><br>" + "</body></html>";
 						activeChar.sendPacket(new NpcHtmlMessage(0, html));
 					}
 					else if (_command.startsWith("SurveyAnswer"))
@@ -296,13 +332,10 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 				else
 				{
-					String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getQuestion() +
-							" <button value=\"More Info\" action=\"bypass -h SurveyInfo\" width=70 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
-							"<table width=260>";
+					String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getQuestion() + " <button value=\"More Info\" action=\"bypass -h SurveyInfo\" width=70 height=20 fore=\"L2UI_ct1.button_df\"><br>" + "<table width=260>";
 					for (int answerId : SurveyManager.getInstance().getPossibleAnswerIds())
 					{
-						html += "<tr><td><button value=\"" + SurveyManager.getInstance().getPossibleAnswer(answerId) +
-								"\" action=\"bypass -h SurveyAnswer " + answerId + "\" width=250 height=25 fore=\"L2UI_ct1.button_df\"></td></tr>";
+						html += "<tr><td><button value=\"" + SurveyManager.getInstance().getPossibleAnswer(answerId) + "\" action=\"bypass -h SurveyAnswer " + answerId + "\" width=250 height=25 fore=\"L2UI_ct1.button_df\"></td></tr>";
 					}
 					html += "</table></body></html>";
 					activeChar.sendPacket(new NpcHtmlMessage(0, html));
@@ -314,9 +347,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					final int arenaId = Integer.parseInt(_command.substring(38));
 					final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId - 1);
-					if (nextArena != null && nextArena.getGame() != null && !activeChar.isInOlympiadMode()
-							&& !OlympiadManager.getInstance().isRegistered(activeChar)
-							&& (activeChar.inObserverMode() || activeChar.getOlympiadGameId() == -1))
+					if ((nextArena != null) && (nextArena.getGame() != null) && !activeChar.isInOlympiadMode() && !OlympiadManager.getInstance().isRegistered(activeChar) && (activeChar.inObserverMode() || (activeChar.getOlympiadGameId() == -1)))
 						activeChar.enterOlympiadObserverMode(nextArena.getZone().getSpawns().get(8), nextArena.getGame().getGameId());
 				}
 			}
@@ -330,24 +361,24 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				if (handler != null)
 					handler.useBypass(_command, activeChar, null);
 				else
-					Log.log(Level.WARNING, getClient()+" sent not handled RequestBypassToServer: ["+_command+"]");
+					Log.log(Level.WARNING, getClient() + " sent not handled RequestBypassToServer: [" + _command + "]");
 			}
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, getClient()+" sent bad RequestBypassToServer: \""+_command+"\"", e);
+			Log.log(Level.WARNING, getClient() + " sent bad RequestBypassToServer: \"" + _command + "\"", e);
 			if (activeChar.isGM())
 			{
 				StringBuilder sb = new StringBuilder(200);
 				sb.append("<html><body>");
-				sb.append("Bypass error: "+e+"<br1>");
-				sb.append("Bypass command: "+_command+"<br1>");
+				sb.append("Bypass error: " + e + "<br1>");
+				sb.append("Bypass command: " + _command + "<br1>");
 				sb.append("StackTrace:<br1>");
 				for (StackTraceElement ste : e.getStackTrace())
-					sb.append(ste.toString()+"<br1>");
+					sb.append(ste.toString() + "<br1>");
 				sb.append("</body></html>");
 				// item html
-				NpcHtmlMessage msg = new NpcHtmlMessage(0,12807);
+				NpcHtmlMessage msg = new NpcHtmlMessage(0, 12807);
 				msg.setHtml(sb.toString());
 				msg.disableValidation();
 				activeChar.sendPacket(msg);
@@ -361,21 +392,13 @@ public final class RequestBypassToServer extends L2GameClientPacket
 	private static void comeHere(L2PcInstance activeChar)
 	{
 		L2Object obj = activeChar.getTarget();
-		if (obj == null) return;
+		if (obj == null)
+			return;
 		if (obj instanceof L2Npc)
 		{
 			L2Npc temp = (L2Npc) obj;
 			temp.setTarget(activeChar);
-			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(activeChar.getX(),activeChar.getY(), activeChar.getZ(), 0 ));
+			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__23_REQUESTBYPASSTOSERVER;
 	}
 }

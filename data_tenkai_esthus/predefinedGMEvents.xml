@@ -1,0 +1,10 @@
+﻿<list>
+	<currency itemId="57"/> <!-- Adena -->
+	<subEvent eventName="CreatureInvasion" startBypass="start_invasion" endBypass="end_event" />
+	<event name="1vs1" description="Little PvP Event" location="Giran Arena" arenaZones="giran_pvp_battle," peaceZones="giran_pvp_peace1,giran_pvp_peace2,giran_pvp_peace3,giran_pvp_peace4"
+		arenaSigns="22220001,22220002" spawnTeamOne="73431,142320,-3766,26168" spawnBufferTeamOne="73388,142351,-3776,54887" spawnTeamTwo="72556,143199,-3766,56822" 
+		spawnBufferTeamTwo="72595,143171,-3776,25973" eventSpawn="73818,142636,-3766,64595" /> <!-- up to < 5vs5 because of size -->
+	<event name="5vs5" description="Little PvP Event" location="Aden Coliseum" arenaZones="colosseum_battle1,colosseum_battle2,colosseum_battle3" peaceZones="colosseum_peace1,colosseum_peace2"
+		arenaSignSpawnOne="151983,46571,-3414,32412" arenaSignSpawnTwo="147016,46871,-3414,65160" spawnTeamOne="148313,46709,-3418,0" spawnBufferTeamOne="148435,46705,-3418,31796" spawnTeamTwo="150626,46734,-3418,32215" 
+		spawnBufferTeamTwo="150506,46734,-3418,0" eventSpawn="146462,46708,-3442,7805" doors="24190002,24190003" /> <!-- > 5vs5 -->
+</list>

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -34,11 +35,11 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 	{
 		_page = page;
 		List<ClanRecruitData> list = ClanRecruitManager.getInstance().getRecruitData(level, karma, clanName, name, sortBy, desc);
-		_pageCount = (list.size() - 1) / 12 + 1;
-
+		_pageCount = ((list.size() - 1) / 12) + 1;
+		
 		_data = new ArrayList<ClanRecruitData>();
 		int index = (page - 1) * 12;
-		while (index < page * 12 && index < list.size())
+		while ((index < (page * 12)) && (index < list.size()))
 		{
 			_data.add(list.get(index));
 			index++;
@@ -46,10 +47,8 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x141);
 		writeD(_page);
 		writeD(_pageCount);
 		writeD(_data.size());
@@ -59,7 +58,7 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 			writeD(data.clan.getClanId());
 			writeD(data.clan.getAllyId());
 		}
-
+		
 		for (ClanRecruitData data : _data)
 		{
 			writeD(data.clan.getCrestId());
@@ -71,11 +70,5 @@ public class ExPledgeRecruitBoardSearch extends L2GameServerPacket
 			writeD(data.karma);
 			writeS(data.introduction);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "ExPledgeRecruitBoardSearch";
 	}
 }

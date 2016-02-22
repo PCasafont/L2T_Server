@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.BufferedReader;
@@ -29,12 +30,14 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.entity.Fort;
@@ -53,11 +56,7 @@ public class MapRegionTable
 	
 	public static enum TeleportWhereType
 	{
-		Castle,
-		ClanHall,
-		SiegeFlag,
-		Town,
-		Fortress
+		Castle, ClanHall, SiegeFlag, Town, Fortress
 	}
 	
 	public static MapRegionTable getInstance()
@@ -76,7 +75,7 @@ public class MapRegionTable
 			String line = null;
 			while ((line = lnr.readLine()) != null)
 			{
-				if (line.trim().length() == 0 || line.startsWith("#"))
+				if ((line.trim().length() == 0) || line.startsWith("#"))
 					continue;
 				
 				if (line.indexOf("#") > 0)
@@ -491,7 +490,7 @@ public class MapRegionTable
 			default:
 				nearestTown = "Aden";
 				break;
-				
+		
 		}
 		
 		return nearestTown;
@@ -513,9 +512,7 @@ public class MapRegionTable
 			Fort fort = null;
 			ClanHall clanhall = null;
 			
-			if (player.getClan() != null
-					&& !player.isFlyingMounted()
-					&& !player.isFlying()) // flying players in gracia cant use teleports to aden continent
+			if ((player.getClan() != null) && !player.isFlyingMounted() && !player.isFlying()) // flying players in gracia cant use teleports to aden continent
 			{
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.ClanHall)
@@ -525,7 +522,7 @@ public class MapRegionTable
 					if (clanhall != null)
 					{
 						L2ClanHallZone zone = clanhall.getZone();
-						if (zone != null && !player.isFlyingMounted())
+						if ((zone != null) && !player.isFlyingMounted())
 							return zone.getSpawnLoc();
 					}
 				}
@@ -539,11 +536,11 @@ public class MapRegionTable
 					if (castle == null)
 					{
 						castle = CastleManager.getInstance().getCastle(player);
-						if (!(castle != null && castle.getSiege().getIsInProgress() && castle.getSiege().getDefenderClan(player.getClan()) != null))
+						if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().getDefenderClan(player.getClan()) != null)))
 							castle = null;
 					}
 					
-					if (castle != null && castle.getCastleId() > 0)
+					if ((castle != null) && (castle.getCastleId() > 0))
 						return castle.getCastleZone().getSpawnLoc();
 				}
 				
@@ -556,11 +553,11 @@ public class MapRegionTable
 					if (fort == null)
 					{
 						fort = FortManager.getInstance().getFort(player);
-						if (!(fort != null && fort.getSiege().getIsInProgress() && fort.getOwnerClan() == player.getClan()))
+						if (!((fort != null) && fort.getSiege().getIsInProgress() && (fort.getOwnerClan() == player.getClan())))
 							fort = null;
 					}
 					
-					if (fort != null && fort.getFortId() > 0)
+					if ((fort != null) && (fort.getFortId() > 0))
 						return fort.getFortZone().getSpawnLoc();
 				}
 				
@@ -569,13 +566,17 @@ public class MapRegionTable
 				{
 					castle = CastleManager.getInstance().getCastle(player);
 					fort = FortManager.getInstance().getFort(player);
+					
+					L2SiegeFlagInstance tw_flag = TerritoryWarManager.getInstance().getFlagForClan(player.getClan());
+					if (tw_flag != null)
+						return new Location(tw_flag.getX(), tw_flag.getY(), tw_flag.getZ());
 					if (castle != null)
 					{
 						if (castle.getSiege().getIsInProgress())
 						{
 							// Check if player's clan is attacker
 							List<L2Npc> flags = castle.getSiege().getFlag(player.getClan());
-							if (flags != null && !flags.isEmpty())
+							if ((flags != null) && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
 								L2Npc flag = flags.get(0);
@@ -590,7 +591,7 @@ public class MapRegionTable
 						{
 							// Check if player's clan is attacker
 							List<L2Npc> flags = fort.getSiege().getFlag(player.getClan());
-							if (flags != null && !flags.isEmpty())
+							if ((flags != null) && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
 								L2Npc flag = flags.get(0);
@@ -629,12 +630,11 @@ public class MapRegionTable
 				if (inst != null)
 				{
 					coord = inst.getSpawnLoc();
-					if (coord[0] != 0 && coord[1] != 0 && coord[2] != 0)
+					if ((coord[0] != 0) && (coord[1] != 0) && (coord[2] != 0))
 						return new Location(coord[0], coord[1], coord[2]);
 				}
 			}
-			if (MonsterInvasion.getInstance().getAttackedTown() != -1
-					&& TownManager.getClosestTown(activeChar).getTownId() == MonsterInvasion.getInstance().getAttackedTown())
+			if ((MonsterInvasion.getInstance().getAttackedTown() != -1) && (TownManager.getClosestTown(activeChar).getTownId() == MonsterInvasion.getInstance().getAttackedTown()))
 				return TownManager.getClosestTown(activeChar).getChaoticSpawnLoc();
 		}
 		

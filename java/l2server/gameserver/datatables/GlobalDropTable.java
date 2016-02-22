@@ -1,3 +1,4 @@
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntIntHashMap;
@@ -172,6 +173,7 @@ public class GlobalDropTable implements Reloadable
 		ReloadableManager.getInstance().register("globaldrops", this);
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		_globalDropCategories.clear();
@@ -187,7 +189,7 @@ public class GlobalDropTable implements Reloadable
 					if (d.getName().equalsIgnoreCase("globalDrop"))
 					{
 						String description = d.getString("description");
-						int chance = (int)(d.getFloat("chance") * 1000.0f);
+						int chance = (int) (d.getFloat("chance") * 1000.0f);
 						int minAmount = d.getInt("minAmount", 1);
 						int maxAmount = d.getInt("maxAmount", 1);
 						int mobId = d.getInt("mobId", 0);
@@ -195,7 +197,7 @@ public class GlobalDropTable implements Reloadable
 						int maxLevel = d.getInt("maxLevel", 100);
 						boolean raidOnly = d.getBool("raidOnly", false);
 						int maxDailyCount = d.getInt("maxDailyCount", 0);
-
+						
 						GlobalDropCategory drop = new GlobalDropCategory(description, chance, minAmount, maxAmount, mobId, minLevel, maxLevel, raidOnly, maxDailyCount);
 						for (XmlNode propertyNode : d.getChildren())
 						{
@@ -226,6 +228,7 @@ public class GlobalDropTable implements Reloadable
 		
 		_resetSchedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				for (GlobalDropCategory cat : _globalDropCategories)
@@ -236,6 +239,7 @@ public class GlobalDropTable implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Global Drops reloaded";

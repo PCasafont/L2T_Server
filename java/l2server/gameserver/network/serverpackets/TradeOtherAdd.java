@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.TradeList;
@@ -24,7 +25,6 @@ import l2server.gameserver.model.TradeList;
  */
 public final class TradeOtherAdd extends L2GameServerPacket
 {
-	private static final String _S__31_TRADEOTHERADD = "[S] 1b TradeOtherAdd";
 	private TradeList.TradeItem _item;
 	
 	public TradeOtherAdd(TradeList.TradeItem item)
@@ -35,8 +35,6 @@ public final class TradeOtherAdd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x1b);
-		
 		writeH(1); // item count
 		writeH(0);
 		writeD(_item.getObjectId());
@@ -54,7 +52,7 @@ public final class TradeOtherAdd extends L2GameServerPacket
 		// T1
 		writeH(_item.getAttackElementType());
 		writeH(_item.getAttackElementPower());
-
+		
 		writeH(0x00); // If will be > 0 you will see only fire attribute
 		
 		for (byte i = 0; i < 6; i++)
@@ -63,14 +61,5 @@ public final class TradeOtherAdd extends L2GameServerPacket
 		writeH(0x00); // Enchant effect 1
 		writeH(0x00); // Enchant effect 2
 		writeH(0x00); // Enchant effect 3
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__31_TRADEOTHERADD;
 	}
 }

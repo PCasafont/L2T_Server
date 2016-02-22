@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
@@ -36,9 +37,10 @@ import l2server.gameserver.util.Broadcast;
 public class BeastSoulShot implements IItemHandler
 {
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (playable == null)
@@ -79,20 +81,20 @@ public class BeastSoulShot implements IItemHandler
 		if (!(shotCount > shotConsumption))
 		{
 			// Not enough Soulshots to use.
-			if (!summoner.disableAutoShot(itemId))
+			if (!summoner.disableAutoShot(item))
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET));
 			return;
 		}
 		
 		int rubyLvl = 0;
 		PcInventory playerInventory = summoner.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)
 			{
 				//Ruby
-				switch(jewel.getItemId())
+				switch (jewel.getItemId())
 				{
 					case 38855:
 						rubyLvl = 1;
@@ -176,7 +178,7 @@ public class BeastSoulShot implements IItemHandler
 		// If the player doesn't have enough beast soulshot remaining, remove any auto soulshot task.
 		if (!summoner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
 		{
-			if (!summoner.disableAutoShot(itemId))
+			if (!summoner.disableAutoShot(item))
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET));
 			return;
 		}

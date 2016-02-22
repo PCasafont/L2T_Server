@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.io.File;
@@ -44,7 +45,7 @@ public class FarmZoneManager
 	{
 		private String _name;
 		private Set<L2NpcTemplate> _mobs = new HashSet<L2NpcTemplate>();
-	
+		
 		public FarmZone(String name)
 		{
 			_name = name;
@@ -117,7 +118,7 @@ public class FarmZoneManager
 									mobInstance.deleteMe();
 									if (mobInstance.getSpawn() != null)
 										mobInstance.getSpawn().stopRespawn();
-									
+
 									float expScore = temp.RewardExp / mobFarmCost * (10000.0f - (99 - temp.Level) * 1000.0f);
 									System.out.println("\tId: " + temp.NpcId + "\tLvl: " + temp.Level + "(" + (100.0f - (99 - temp.Level) * 10.0f) + "%)"
 											+ "\tExpScore: " + expScore + "\tExp: " + temp.RewardExp
@@ -165,7 +166,7 @@ public class FarmZoneManager
 							
 							for (L2DropData dd : dropsToRemove)
 								npc.getDropData().remove(dd);
-
+							
 							for (L2DropCategory dc : npc.getMultiDropData())
 							{
 								dropsToRemove.clear();
@@ -197,7 +198,7 @@ public class FarmZoneManager
 							int maxLvl = Integer.parseInt(levelRange[1]);
 							for (L2NpcTemplate mob : NpcTable.getInstance().getAllTemplates())
 							{
-								if (mob.Type.equals("L2Monster") && mob.Level >= minLvl && mob.Level <= maxLvl)
+								if (mob.Type.equals("L2Monster") && (mob.Level >= minLvl) && (mob.Level <= maxLvl))
 									mobs.add(mob);
 							}
 						}
@@ -206,10 +207,12 @@ public class FarmZoneManager
 							Log.warning("There's a farm customization without any monster group specified!");
 							continue;
 						}
-
+						
 						float hpMultiplier = farmNode.getFloat("hpMultiplier", 1.0f);
 						float atkMultiplier = farmNode.getFloat("atkMultiplier", 1.0f);
 						float defMultiplier = farmNode.getFloat("defMultiplier", 1.0f);
+						int level = farmNode.getInt("overrideLevels", 0);
+						boolean overrideDrops = farmNode.getBool("overrideDrops", false);
 						
 						float baseMobFarmCost = 0.0f;
 						if (farmNode.hasAttribute("adjustDropsPerMob"))
@@ -223,7 +226,7 @@ public class FarmZoneManager
 									L2Spawn spawn = new L2Spawn(baseMobTemplate);
 									spawn.doSpawn();
 									L2Npc baseMob = spawn.getNpc();
-									baseMobFarmCost = baseMob.getMaxHp() * (float)(baseMob.getPDef(null) + baseMob.getMDef(null, null));
+									baseMobFarmCost = baseMob.getMaxHp() * (float) (baseMob.getPDef(null) + baseMob.getMDef(null, null));
 									baseMob.deleteMe();
 									if (baseMob.getSpawn() != null)
 										baseMob.getSpawn().stopRespawn();
@@ -236,18 +239,19 @@ public class FarmZoneManager
 						}
 						
 						List<L2DropData> drops = new ArrayList<L2DropData>();
+						List<L2DropData> spoilDrops = new ArrayList<L2DropData>();
 						List<L2DropCategory> dropCategories = new ArrayList<L2DropCategory>();
 						for (XmlNode dropNode : farmNode.getChildren())
 						{
-							if (dropNode.getName().equalsIgnoreCase("itemDrop"))
+							if (dropNode.getName().equalsIgnoreCase("itemDrop") || dropNode.getName().equalsIgnoreCase("spoilDrop"))
 							{
 								int itemId = dropNode.getInt("itemId");
 								int min = dropNode.getInt("min");
 								int max = dropNode.getInt("max");
 								float chance = dropNode.getFloat("chance");
-										
+								
 								L2DropData dd = new L2DropData(itemId, min, max, chance);
-
+								
 								L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
 								if (item == null)
 								{
@@ -255,13 +259,16 @@ public class FarmZoneManager
 									continue;
 								}
 								
-								drops.add(dd);
+								if (dropNode.getName().equalsIgnoreCase("itemDrop"))
+									drops.add(dd);
+								else
+									spoilDrops.add(dd);
 							}
 							else if (dropNode.getName().equalsIgnoreCase("dropCategory"))
 							{
 								float chance = dropNode.getFloat("chance");
 								L2DropCategory dc = new L2DropCategory(chance);
-
+								
 								for (XmlNode dropCategoryNode : dropNode.getChildren())
 								{
 									if (dropCategoryNode.getName().equalsIgnoreCase("itemDrop"))
@@ -297,7 +304,7 @@ public class FarmZoneManager
 									L2Spawn spawn = new L2Spawn(mob);
 									spawn.doSpawn();
 									L2Npc mobInstance = spawn.getNpc();
-									float mobFarmCost = mobInstance.getMaxHp() * (float)(mobInstance.getPDef(null) + mobInstance.getMDef(null, null));
+									float mobFarmCost = mobInstance.getMaxHp() * (float) (mobInstance.getPDef(null) + mobInstance.getMDef(null, null));
 									dropMultiplier = mobFarmCost / baseMobFarmCost;
 									mobInstance.deleteMe();
 									if (mobInstance.getSpawn() != null)
@@ -315,26 +322,36 @@ public class FarmZoneManager
 							mob.basePDef *= defMultiplier;
 							mob.baseMDef *= defMultiplier;
 							
+							if (level > 0)
+								mob.Level = (byte) level;
+							
+							if (overrideDrops)
+							{
+								mob.getMultiDropData().clear();
+								mob.getDropData().clear();
+								mob.getSpoilData().clear();
+							}
+							
 							for (L2DropData drop : drops)
 							{
 								int min = drop.getMinDrop();
 								int max = drop.getMaxDrop();
 								float chance = drop.getChance() * dropMultiplier;
-								if ((min >= 100 && chance > 100.0f) || (min * dropMultiplier >= 10 && chance < 50.0f))
+								if (((min >= 10) && (chance > 100.0f)) || (((min * dropMultiplier) >= 5) && ((chance / dropMultiplier) <= 100.01f)))
 								{
 									min = Math.round(min * dropMultiplier);
 									max = Math.round(max * dropMultiplier);
 									chance /= dropMultiplier;
 								}
 								
-								while (chance > 100.0f)
+								while (chance > 100.01f)
 								{
 									min *= 2;
 									max *= 2;
 									chance /= 2.0f;
 								}
 								
-								while (chance < 50.0f && min > 1)
+								while ((chance < 50.0f) && (min > 1))
 								{
 									min /= 2;
 									max /= 2;
@@ -342,6 +359,35 @@ public class FarmZoneManager
 								}
 								
 								mob.addDropData(new L2DropData(drop.getItemId(), min, max, chance));
+							}
+							
+							for (L2DropData drop : spoilDrops)
+							{
+								int min = drop.getMinDrop();
+								int max = drop.getMaxDrop();
+								float chance = drop.getChance() * dropMultiplier;
+								if (((min >= 10) && (chance > 100.0f)) || (((min * dropMultiplier) >= 5) && ((chance / dropMultiplier) <= 100.01f)))
+								{
+									min = Math.round(min * dropMultiplier);
+									max = Math.round(max * dropMultiplier);
+									chance /= dropMultiplier;
+								}
+								
+								while (chance > 100.01f)
+								{
+									min *= 2;
+									max *= 2;
+									chance /= 2.0f;
+								}
+								
+								while ((chance < 50.0f) && (min > 1))
+								{
+									min /= 2;
+									max /= 2;
+									chance *= 2.0f;
+								}
+								
+								mob.addSpoilData(new L2DropData(drop.getItemId(), min, max, chance));
 							}
 							
 							for (L2DropCategory dropCategory : dropCategories)

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
@@ -46,7 +47,6 @@ import l2server.gameserver.model.L2Manor;
 
 public class ExShowCropInfo extends L2GameServerPacket
 {
-	private static final String _S__FE_1C_EXSHOWSEEDINFO = "[S] FE:24 ExShowCropInfo";
 	private List<CropProcure> _crops;
 	private int _manorId;
 	
@@ -57,10 +57,9 @@ public class ExShowCropInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
-	{
-		writeC(0xFE);	 // Id
-		writeH(0x24);	 // SubId
+	protected final void writeImpl()
+	{ // Id
+		writeH(0x24); // SubId
 		writeC(0);
 		writeD(_manorId); // Manor ID
 		writeD(0);
@@ -72,22 +71,16 @@ public class ExShowCropInfo extends L2GameServerPacket
 		writeD(_crops.size());
 		for (CropProcure crop : _crops)
 		{
-			writeD(crop.getId());		  // Crop id
-			writeQ(crop.getAmount());	  // Buy residual
+			writeD(crop.getId()); // Crop id
+			writeQ(crop.getAmount()); // Buy residual
 			writeQ(crop.getStartAmount()); // Buy
-			writeQ(crop.getPrice());	   // Buy price
-			writeC(crop.getReward());	  // Reward
+			writeQ(crop.getPrice()); // Buy price
+			writeC(crop.getReward()); // Reward
 			writeD(L2Manor.getInstance().getSeedLevelByCrop(crop.getId())); // Seed Level
 			writeC(1); // rewrad 1 Type
-			writeD(L2Manor.getInstance().getRewardItem(crop.getId(),1));	// Rewrad 1 Type Item Id
+			writeD(L2Manor.getInstance().getRewardItem(crop.getId(), 1)); // Rewrad 1 Type Item Id
 			writeC(1); // rewrad 2 Type
-			writeD(L2Manor.getInstance().getRewardItem(crop.getId(),2));	// Rewrad 2 Type Item Id
+			writeD(L2Manor.getInstance().getRewardItem(crop.getId(), 2)); // Rewrad 2 Type Item Id
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_1C_EXSHOWSEEDINFO;
 	}
 }

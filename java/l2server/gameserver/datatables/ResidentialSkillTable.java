@@ -1,3 +1,4 @@
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -52,7 +53,7 @@ public class ResidentialSkillTable
 						L2Skill sk = SkillTable.getInstance().getInfo(skillId, skillLvl);
 						if (sk == null)
 						{
-							Log.warning("ResidentialSkillTable: SkillTable has returned null for ID/level: " +skillId+"/"+skillLvl);
+							Log.warning("ResidentialSkillTable: SkillTable has returned null for ID/level: " + skillId + "/" + skillLvl);
 							continue;
 						}
 						
@@ -64,7 +65,7 @@ public class ResidentialSkillTable
 						}
 						else
 							_list.get(entityId).add(sk);
-					}	
+					}
 				}
 			}
 		}

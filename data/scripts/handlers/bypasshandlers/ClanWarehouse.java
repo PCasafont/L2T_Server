@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import l2server.Config;
@@ -25,20 +26,16 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
+import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.WareHouseDepositList;
 import l2server.gameserver.network.serverpackets.WareHouseWithdrawalList;
-import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 
 public class ClanWarehouse implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"withdrawc",
-		"withdrawsortedc",
-		"depositc"
-	};
+	private static final String[] COMMANDS = { "withdrawc", "withdrawsortedc", "depositc" };
 	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (!(target instanceof L2WarehouseInstance) && !(target instanceof L2ClanHallManagerInstance))
@@ -93,7 +90,7 @@ public class ClanWarehouse implements IBypassHandler
 				activeChar.tempInventoryDisable();
 				
 				if (Config.DEBUG)
-					_log.fine("Source: L2WarehouseInstance.java; Player: "+activeChar.getName()+"; Command: showDepositWindowClan; Message: Showing items to deposit.");
+					_log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() + "; Command: showDepositWindowClan; Message: Showing items to deposit.");
 				
 				activeChar.sendPacket(new WareHouseDepositList(activeChar, WareHouseDepositList.CLAN));
 				return true;
@@ -132,9 +129,10 @@ public class ClanWarehouse implements IBypassHandler
 			player.sendPacket(new WareHouseWithdrawalList(player, WareHouseWithdrawalList.CLAN));
 		
 		if (Config.DEBUG)
-			_log.fine("Source: L2WarehouseInstance.java; Player: "+player.getName()+"; Command: showRetrieveWindowClan; Message: Showing stored items.");
+			_log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() + "; Command: showRetrieveWindowClan; Message: Showing stored items.");
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

@@ -3,20 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
 import l2server.gameserver.model.actor.L2Attackable;
@@ -38,7 +40,6 @@ import l2server.gameserver.model.entity.Fort;
  */
 public class Die extends L2GameServerPacket
 {
-	private static final String _S__0B_DIE = "[S] 00 Die";
 	private int _charObjId;
 	private boolean _canTeleport;
 	private boolean _sweepable;
@@ -53,16 +54,15 @@ public class Die extends L2GameServerPacket
 	{
 		_activeChar = cha;
 		
-		_canTeleport = !((cha instanceof L2PcInstance && ((L2PcInstance)cha).isInEvent())
-				|| cha.isPendingRevive()) || (cha.getX() == 0 && cha.getY() == 0);
+		_canTeleport = !(((cha instanceof L2PcInstance) && ((L2PcInstance) cha).isPlayingEvent()) || cha.isPendingRevive()) || ((cha.getX() == 0) && (cha.getY() == 0));
 		
 		_charObjId = cha.getObjectId();
 		
 		if (cha instanceof L2Attackable)
-			_sweepable = ((L2Attackable)cha).isSweepActive();
-		else if (cha instanceof L2PcInstance) 
+			_sweepable = ((L2Attackable) cha).isSweepActive();
+		else if (cha instanceof L2PcInstance)
 		{
-			L2PcInstance player = (L2PcInstance)cha;
+			L2PcInstance player = (L2PcInstance) cha;
 			_allowFixedRess = player.getAccessLevel().allowFixedRes();
 			_clan = player.getClan();
 			
@@ -70,15 +70,13 @@ public class Die extends L2GameServerPacket
 				_canTeleport = false;
 		}
 		
-		if (cha.getX() == 0 && cha.getY() == 0)
+		if ((cha.getX() == 0) && (cha.getY() == 0))
 			cha.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x00);
-		
 		writeD(_charObjId);
 		// NOTE:
 		// 6d 00 00 00 00 - to nearest village
@@ -88,8 +86,8 @@ public class Die extends L2GameServerPacket
 		// sweepable
 		// 6d 04 00 00 00 - FIXED
 		
-		writeD(_canTeleport ? 0x01 : 0);												   // 6d 00 00 00 00 - to nearest village
-		if (_canTeleport && _clan != null)
+		writeD(_canTeleport ? 0x01 : 0); // 6d 00 00 00 00 - to nearest village
+		if (_canTeleport && (_clan != null))
 		{
 			boolean isInCastleDefense = false;
 			boolean isInFortDefense = false;
@@ -97,40 +95,40 @@ public class Die extends L2GameServerPacket
 			L2SiegeClan siegeClan = null;
 			Castle castle = CastleManager.getInstance().getCastle(_activeChar);
 			Fort fort = FortManager.getInstance().getFort(_activeChar);
-			if (castle != null && castle.getSiege().getIsInProgress())
+			if ((castle != null) && castle.getSiege().getIsInProgress())
 			{
 				//siege in progress
 				siegeClan = castle.getSiege().getAttackerClan(_clan);
-				if (siegeClan == null && castle.getSiege().checkIsDefender(_clan)){
+				if ((siegeClan == null) && castle.getSiege().checkIsDefender(_clan))
+				{
 					isInCastleDefense = true;
 				}
 			}
-			else if (fort != null && fort.getSiege().getIsInProgress())
+			else if ((fort != null) && fort.getSiege().getIsInProgress())
 			{
 				//siege in progress
 				siegeClan = fort.getSiege().getAttackerClan(_clan);
-				if (siegeClan == null && fort.getSiege().checkIsDefender(_clan)){
+				if ((siegeClan == null) && fort.getSiege().checkIsDefender(_clan))
+				{
 					isInFortDefense = true;
 				}
 			}
 			
-			writeD(_clan.getHasHideout() > 0 ? 0x01 : 0x00);			// 6d 01 00 00 00 - to hide away
-			writeD(_clan.getHasCastle() > 0  ||
-					isInCastleDefense? 0x01 : 0x00);			 		// 6d 02 00 00 00 - to castle
-			writeD((siegeClan != null && !isInCastleDefense && !isInFortDefense
-							&& !siegeClan.getFlag().isEmpty()) ? 0x01 : 0x00);	   // 6d 03 00 00 00 - to siege HQ
-			writeD(_sweepable ? 0x01 : 0x00);							   // sweepable  (blue glow)
-			writeD(_allowFixedRess ? 0x01: 0x00);				  // 6d 04 00 00 00 - to FIXED
-			writeD(_clan.getHasFort() > 0  || isInFortDefense? 0x01 : 0x00);	// 6d 05 00 00 00 - to fortress
+			writeD(_clan.getHasHideout() > 0 ? 0x01 : 0x00); // 6d 01 00 00 00 - to hide away
+			writeD((_clan.getHasCastle() > 0) || isInCastleDefense ? 0x01 : 0x00); // 6d 02 00 00 00 - to castle
+			writeD((TerritoryWarManager.getInstance().getFlagForClan(_clan) != null) || ((siegeClan != null) && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty()) ? 0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
+			writeD(_sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
+			writeD(_allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
+			writeD((_clan.getHasFort() > 0) || isInFortDefense ? 0x01 : 0x00); // 6d 05 00 00 00 - to fortress
 		}
 		else
 		{
-			writeD(0x00);											   // 6d 01 00 00 00 - to hide away
-			writeD(0x00);											   // 6d 02 00 00 00 - to castle
-			writeD(0x00);											   // 6d 03 00 00 00 - to siege HQ
-			writeD(_sweepable ? 0x01 : 0x00);							   // sweepable  (blue glow)
-			writeD(_allowFixedRess ? 0x01: 0x00);				  // 6d 04 00 00 00 - to FIXED
-			writeD(0x00);	// 6d 05 00 00 00 - to fortress
+			writeD(0x00); // 6d 01 00 00 00 - to hide away
+			writeD(0x00); // 6d 02 00 00 00 - to castle
+			writeD(0x00); // 6d 03 00 00 00 - to siege HQ
+			writeD(_sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
+			writeD(_allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
+			writeD(0x00); // 6d 05 00 00 00 - to fortress
 		}
 		//TODO: protocol 152
 		/*
@@ -138,14 +136,5 @@ public class Die extends L2GameServerPacket
 		writeD(0); //agathion ress button
 		writeD(0); //additional free space
 		 */
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__0B_DIE;
 	}
 }

@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -16,7 +17,7 @@ public class VanguardDarkAvenger extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 313 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 313) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -41,7 +42,7 @@ public class VanguardDarkAvenger extends L2Transformation
 		// Switch Stance
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(838, 1), false);
 		// Set allowed skills
-		getPlayer().setTransformAllowedSkills(new int[]{18,28,65,86,144,283,815,817,838,956,958,401});
+		getPlayer().setTransformAllowedSkills(new int[] { 18, 28, 65, 86, 144, 283, 815, 817, 838, 956, 958, 401 });
 	}
 	
 	@Override

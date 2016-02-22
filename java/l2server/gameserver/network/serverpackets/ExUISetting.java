@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
@@ -39,11 +40,6 @@ public class ExUISetting extends L2GameServerPacket
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-	@Override
-	public String getType()
-	{
-		return null;
-	}
 	
 	private void calcSize()
 	{
@@ -69,11 +65,11 @@ public class ExUISetting extends L2GameServerPacket
 				size = size + catElList2.size();
 			}
 			category++;
-			size = size+4;
+			size = size + 4;
 			if (_uiSettings.getKeys().containsKey(i))
 			{
 				List<ActionKey> keyElList = _uiSettings.getKeys().get(i);
-				size = size + (keyElList.size()*20);
+				size = size + (keyElList.size() * 20);
 			}
 		}
 		buffsize = size;
@@ -84,11 +80,8 @@ public class ExUISetting extends L2GameServerPacket
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0x71);
-		
 		writeD(buffsize);
 		writeD(categories);
 		

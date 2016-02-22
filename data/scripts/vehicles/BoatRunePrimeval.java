@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package vehicles;
 
 import java.util.logging.Level;
@@ -26,7 +27,7 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 
 /**
- * 
+ *
  * @author DS
  *
  */
@@ -35,39 +36,12 @@ public class BoatRunePrimeval implements Runnable
 	private static final Logger _log = Logger.getLogger(BoatRunePrimeval.class.getName());
 	
 	// Time: 239s
-	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL =
-	{
-		new VehiclePathPoint(32750, -39300, -3610, 180, 800),
-		new VehiclePathPoint(27440, -39328, -3610, 250, 1000),
-		new VehiclePathPoint(19616, -39360, -3610, 270, 1000),
-		new VehiclePathPoint(3840, -38528, -3610, 270, 1000),
-		new VehiclePathPoint(1664, -37120, -3610, 270, 1000),
-		new VehiclePathPoint(896, -34560, -3610, 180, 1800),
-		new VehiclePathPoint(832, -31104, -3610, 180, 180),
-		new VehiclePathPoint(2240, -29132, -3610, 150, 1800),
-		new VehiclePathPoint(4160, -27828, -3610, 150, 1800),
-		new VehiclePathPoint(5888, -27279, -3610, 150, 1800),
-		new VehiclePathPoint(7000, -27279, -3610, 150, 1800),
-		new VehiclePathPoint(10342, -27279, -3610, 150, 1800)
-	};
+	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL = { new VehiclePathPoint(32750, -39300, -3610, 180, 800), new VehiclePathPoint(27440, -39328, -3610, 250, 1000), new VehiclePathPoint(19616, -39360, -3610, 270, 1000), new VehiclePathPoint(3840, -38528, -3610, 270, 1000), new VehiclePathPoint(1664, -37120, -3610, 270, 1000), new VehiclePathPoint(896, -34560, -3610, 180, 1800), new VehiclePathPoint(832, -31104, -3610, 180, 180), new VehiclePathPoint(2240, -29132, -3610, 150, 1800), new VehiclePathPoint(4160, -27828, -3610, 150, 1800), new VehiclePathPoint(5888, -27279, -3610, 150, 1800), new VehiclePathPoint(7000, -27279, -3610, 150, 1800), new VehiclePathPoint(10342, -27279, -3610, 150, 1800) };
 	
 	// Time: 221s
-	private static final VehiclePathPoint[] PRIMEVAL_TO_RUNE =
-	{
-		new VehiclePathPoint(15528, -27279, -3610, 180, 800),
-		new VehiclePathPoint(22304, -29664, -3610, 290, 800),
-		new VehiclePathPoint(33824, -26880, -3610, 290, 800),
-		new VehiclePathPoint(38848, -21792, -3610, 240, 1200),
-		new VehiclePathPoint(43424, -22080, -3610, 180, 1800),
-		new VehiclePathPoint(44320, -25152, -3610, 180, 1800),
-		new VehiclePathPoint(40576, -31616, -3610, 250, 800),
-		new VehiclePathPoint(36819, -35315, -3610, 220, 800)
-	};
+	private static final VehiclePathPoint[] PRIMEVAL_TO_RUNE = { new VehiclePathPoint(15528, -27279, -3610, 180, 800), new VehiclePathPoint(22304, -29664, -3610, 290, 800), new VehiclePathPoint(33824, -26880, -3610, 290, 800), new VehiclePathPoint(38848, -21792, -3610, 240, 1200), new VehiclePathPoint(43424, -22080, -3610, 180, 1800), new VehiclePathPoint(44320, -25152, -3610, 180, 1800), new VehiclePathPoint(40576, -31616, -3610, 250, 800), new VehiclePathPoint(36819, -35315, -3610, 220, 800) };
 	
-	private static final VehiclePathPoint[] RUNE_DOCK =
-	{
-		new VehiclePathPoint(34381, -37680, -3610, 220, 800)
-	};
+	private static final VehiclePathPoint[] RUNE_DOCK = { new VehiclePathPoint(34381, -37680, -3610, 220, 800) };
 	
 	private static final VehiclePathPoint PRIMEVAL_DOCK = RUNE_TO_PRIMEVAL[RUNE_TO_PRIMEVAL.length - 1];
 	
@@ -102,6 +76,7 @@ public class BoatRunePrimeval implements Runnable
 		PRIMEVAL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), PRIMEVAL_DOCK.x, PRIMEVAL_DOCK.y, PRIMEVAL_DOCK.z);
 	}
 	
+	@Override
 	public void run()
 	{
 		try
@@ -111,7 +86,7 @@ public class BoatRunePrimeval implements Runnable
 				case 0:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(RUNE_DOCK[0], PRIMEVAL_DOCK, LEAVING_RUNE, RUNE_SOUND);
-					_boat.payForRide(8925, 1,  34513, -38009, -3640);
+					_boat.payForRide(8925, 1, 34513, -38009, -3640);
 					_boat.executePath(RUNE_TO_PRIMEVAL);
 					break;
 				case 1:

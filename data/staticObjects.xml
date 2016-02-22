@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list>	
+<list>
 	<object name="darkelf_village_001" id="20180001" x="15258" y="15631" z="-4366" type="0" texture="town_map_darkelf_t00" mapX="1" mapY="1" />
 	<object name="darkelf_village_002" id="20180002" x="7557" y="18055" z="-4366" type="0" texture="town_map_darkelf_t00" mapX="1" mapY="1" />
 	<object name="dwarven_village_001" id="23120001" x="115462" y="-177295" z="-880" type="0" texture="town_map_dwarf_t00" mapX="1" mapY="1" />

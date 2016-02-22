@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.Summons;
 
 import java.util.Collection;
@@ -28,18 +29,18 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- * 
+ *
  * Clan Flag AI
- *  
+ *
  * Source:
  *  		- http://www.lineage2.com/en/game/patch-notes/tauti/clans/
  */
 
 public class ClanFlag extends L2AttackableAIScript
 {
-	private static final int		_clanFlagId	= 19269;
-	private static final L2Skill 	_clanRising	= SkillTable.getInstance().getInfo(15095, 1);
-	private static final L2Skill 	_clanCurse	= SkillTable.getInstance().getInfo(15096, 1);
+	private static final int _clanFlagId = 19269;
+	private static final L2Skill _clanRising = SkillTable.getInstance().getInfo(15095, 1);
+	private static final L2Skill _clanCurse = SkillTable.getInstance().getInfo(15096, 1);
 	
 	public ClanFlag(int id, String name, String descr)
 	{
@@ -47,7 +48,7 @@ public class ClanFlag extends L2AttackableAIScript
 		
 		addSpawnId(_clanFlagId);
 	}
-
+	
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
@@ -67,7 +68,7 @@ public class ClanFlag extends L2AttackableAIScript
 		
 		protected ClanFlagAI(L2Npc npc)
 		{
-			_clanFlag	= npc;
+			_clanFlag = npc;
 		}
 		
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -75,9 +76,10 @@ public class ClanFlag extends L2AttackableAIScript
 			_schedule = schedule;
 		}
 		
+		@Override
 		public void run()
 		{
-			if (_clanFlag == null || _clanFlag.isDead() || _clanFlag.isDecayed())
+			if ((_clanFlag == null) || _clanFlag.isDead() || _clanFlag.isDecayed())
 			{
 				if (_schedule != null)
 				{
@@ -86,18 +88,17 @@ public class ClanFlag extends L2AttackableAIScript
 				}
 			}
 			
-			Collection<L2PcInstance> _players = _clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			_clanFlag.setTitle(_clanFlag.getOwner().getClan().getName());
 			
-			for (L2PcInstance player : _players)
-			{
+			Collection<L2PcInstance> players = _clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			for (L2PcInstance player : players)
 				doAction(player, _clanFlag);
-			}
 		}
 	}
 	
 	private void doAction(L2PcInstance target, L2Npc npc)
 	{
-		if (target == null || npc == null || npc.getOwner() == null)
+		if ((target == null) || (npc == null) || (npc.getOwner() == null))
 			return;
 		
 		if (npc.isDead() || target.isDead())

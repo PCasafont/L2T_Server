@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import java.util.logging.Logger;
@@ -32,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Rnd;
 
-
 /**
  * @author  l3x
  */
@@ -40,22 +40,20 @@ public class Sow implements ISkillHandler
 {
 	private static Logger _log = Logger.getLogger(Sow.class.getName());
 	
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.SOW
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.SOW };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (!(activeChar instanceof L2PcInstance))
 			return;
 		
 		final L2Object[] targetList = skill.getTargetList(activeChar);
-		if (targetList == null || targetList.length == 0)
+		if ((targetList == null) || (targetList.length == 0))
 			return;
 		
 		if (Config.DEBUG)
@@ -63,15 +61,13 @@ public class Sow implements ISkillHandler
 		
 		L2MonsterInstance target;
 		
-		for (L2Object tgt: targetList)
+		for (L2Object tgt : targetList)
 		{
 			if (!(tgt instanceof L2MonsterInstance))
 				continue;
 			
 			target = (L2MonsterInstance) tgt;
-			if (target.isDead()
-					|| target.isSeeded()
-					|| target.getSeederId() != activeChar.getObjectId())
+			if (target.isDead() || target.isSeeded() || (target.getSeederId() != activeChar.getObjectId()))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				continue;
@@ -95,7 +91,7 @@ public class Sow implements ISkillHandler
 			if (calcSuccess(activeChar, target, seedId))
 			{
 				activeChar.sendPacket(new PlaySound("Itemsound.quest_itemget"));
-				target.setSeeded((L2PcInstance)activeChar);
+				target.setSeeded((L2PcInstance) activeChar);
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_SUCCESSFULLY_SOWN);
 			}
 			else
@@ -142,9 +138,10 @@ public class Sow implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

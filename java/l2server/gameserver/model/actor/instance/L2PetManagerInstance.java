@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
@@ -64,7 +65,7 @@ public class L2PetManagerInstance extends L2MerchantInstance
 		String filename = "petmanager/" + getNpcId() + ".htm";
 		
 		L2Summon summon = player.getPet();
-		if (getNpcId() == 36478 && (summon != null || !player.getSummons().isEmpty()))
+		if ((getNpcId() == 36478) && ((summon != null) || !player.getSummons().isEmpty()))
 			filename = "petmanager/restore-unsummonpet.htm";
 		
 		NpcHtmlMessage html = new NpcHtmlMessage(1);
@@ -104,8 +105,8 @@ public class L2PetManagerInstance extends L2MerchantInstance
 			boolean ok = false;
 			switch (val)
 			{
-				//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
-				//To ignore evolve just put value 0 where do you like example: evolve(player, 0, 9882, 55);
+			//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
+			//To ignore evolve just put value 0 where do you like example: evolve(player, 0, 9882, 55);
 				case 1:
 					ok = Evolve.doEvolve(player, this, 2375, 9882, 55);
 					break;
@@ -137,7 +138,7 @@ public class L2PetManagerInstance extends L2MerchantInstance
 			boolean ok = false;
 			switch (val)
 			{
-				//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
+			//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
 				case 1:
 					ok = Evolve.doRestore(player, this, 10307, 9882, 55);
 					break;

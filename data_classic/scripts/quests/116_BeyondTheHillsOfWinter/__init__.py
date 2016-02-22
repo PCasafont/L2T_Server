@@ -42,7 +42,7 @@ class Quest (JQuest) :
 		if not st : return
 		id = st.getState()
 		cond = st.getInt("cond")
-		if st.getPlayer().getClassId() not in [0x35, 0x36, 0x37, 0x38, 0x39, 0x75, 0x76] :
+		if st.getPlayer().getClassId().getId() not in [0x35, 0x36, 0x37, 0x38, 0x39, 0x75, 0x76] :
 			htmltext = "30535-00.htm"
 		elif event == "30535-02.htm" :
 			st.set("cond","1")

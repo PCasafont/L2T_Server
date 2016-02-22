@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
@@ -45,6 +46,7 @@ public class L2GuardInstance extends L2Attackable
 	
 	public class ReturnTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			if (isDecayed() && !getSpawn().isRespawnEnabled())
@@ -71,14 +73,13 @@ public class L2GuardInstance extends L2Attackable
 		super(objectId, template);
 		setInstanceType(InstanceType.L2GuardInstance);
 		
-		if (canReturnToSpawnPoint())
-			ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new ReturnTask(), RETURN_INTERVAL + Rnd.nextInt(60000), RETURN_INTERVAL);
+		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new ReturnTask(), RETURN_INTERVAL + Rnd.nextInt(60000), RETURN_INTERVAL);
 	}
 	
 	@Override
 	public final GuardKnownList getKnownList()
 	{
-		return (GuardKnownList)super.getKnownList();
+		return (GuardKnownList) super.getKnownList();
 	}
 	
 	@Override
@@ -121,9 +122,9 @@ public class L2GuardInstance extends L2Attackable
 		super.onSpawn();
 		
 		// check the region where this mob is, do not activate the AI if region is inactive.
-		L2WorldRegion region = L2World.getInstance().getRegion(getX(),getY());
-		if (region != null && !region.isActive())
-			((L2AttackableAI)getAI()).stopAITask();
+		L2WorldRegion region = L2World.getInstance().getRegion(getX(), getY());
+		if ((region != null) && !region.isActive())
+			((L2AttackableAI) getAI()).stopAITask();
 	}
 	
 	/**
@@ -174,12 +175,14 @@ public class L2GuardInstance extends L2Attackable
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if (!canTarget(player)) return;
+		if (!canTarget(player))
+			return;
 		
 		// Check if the L2PcInstance already target the L2GuardInstance
 		if (getObjectId() != player.getTargetId())
 		{
-			if (Config.DEBUG) Log.fine(player.getObjectId()+": Targetted guard "+getObjectId());
+			if (Config.DEBUG)
+				Log.fine(player.getObjectId() + ": Targetted guard " + getObjectId());
 			
 			// Set the target of the L2PcInstance player
 			player.setTarget(this);
@@ -197,7 +200,8 @@ public class L2GuardInstance extends L2Attackable
 			// Check if the L2PcInstance is in the _aggroList of the L2GuardInstance
 			if (containsTarget(player) || isAutoAttackable(player))
 			{
-				if (Config.DEBUG) Log.fine(player.getObjectId()+": Attacked guard "+getObjectId());
+				if (Config.DEBUG)
+					Log.fine(player.getObjectId() + ": Attacked guard " + getObjectId());
 				
 				// Set the L2PcInstance Intention to AI_INTENTION_ATTACK
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
@@ -214,15 +218,15 @@ public class L2GuardInstance extends L2Attackable
 				{
 					// Send a Server->Client packet SocialAction to the all L2PcInstance on the _knownPlayer of the L2NpcInstance
 					// to display a social action of the L2GuardInstance on their client
-					SocialAction sa = new SocialAction(this.getObjectId(), Rnd.nextInt(8));
+					SocialAction sa = new SocialAction(getObjectId(), Rnd.nextInt(8));
 					broadcastPacket(sa);
 					
 					// Open a chat window on client with the text of the L2GuardInstance
 					Quest[] qlsa = getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
-					if ( (qlsa != null) && qlsa.length > 0)
+					if ((qlsa != null) && (qlsa.length > 0))
 						player.setLastQuestNpcObject(getObjectId());
 					Quest[] qlst = getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
-					if ( (qlst != null) && qlst.length == 1)
+					if ((qlst != null) && (qlst.length == 1))
 						qlst[0].notifyFirstTalk(this, player);
 					else
 						showChatWindow(player, 0);
@@ -231,24 +235,5 @@ public class L2GuardInstance extends L2Attackable
 		}
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-	}
-	
-	@Override
-	public L2PcInstance getActingPlayer()
-	{
-		//LasTravel, instance case, if the instance guard kill the mob we should return the instance owner as acting player
-		//We should do this better btw
-		if (getOwner() == null && getInstanceId() != 0)
-		{
-			for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-			{
-				if (player == null || player.getInstanceId() != getInstanceId())
-					continue;
-				
-				return player;
-			}
-		}
-		
-		return getOwner();
 	}
 }

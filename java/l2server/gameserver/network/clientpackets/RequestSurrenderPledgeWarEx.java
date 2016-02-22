@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.Collection;
@@ -27,13 +28,12 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * 
+ *
  * @author Erlandys
  */
 public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 {
-	private static final String _C__D095_REQUESTSURRENDERPLEDGEWAREX = "[C] D0:95 RequestSurrenderPledgeWarEx";
-
+	
 	private String _pledgeName;
 	
 	@Override
@@ -46,9 +46,11 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null) return;
+		if (player == null)
+			return;
 		L2Clan playerClan = player.getClan();
-		if (playerClan == null) return;
+		if (playerClan == null)
+			return;
 		
 		L2Clan clan = ClanTable.getInstance().getClanByName(_pledgeName);
 		
@@ -73,7 +75,7 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 		}
 		
 		// Check if player who does the request has the correct rights to do it
-		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR )
+		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
@@ -85,13 +87,7 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 		war.stop();
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		for (L2PcInstance cha : pls)
-			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
+			if ((cha.getClan() == player.getClan()) || (cha.getClan() == clan))
 				cha.broadcastUserInfo();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D095_REQUESTSURRENDERPLEDGEWAREX;
 	}
 }

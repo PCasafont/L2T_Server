@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.instancemanager.CastleManorManager;
@@ -61,8 +62,12 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
 				{
 					val = Integer.parseInt(command.substring(5));
 				}
-				catch (IndexOutOfBoundsException ioobe){}
-				catch (NumberFormatException nfe){}
+				catch (IndexOutOfBoundsException ioobe)
+				{
+				}
+				catch (NumberFormatException nfe)
+				{
+				}
 				showChatWindow(player, val);
 				return;
 			}
@@ -91,7 +96,7 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
 		{
 			if (condition == COND_BUSY_BECAUSE_OF_SIEGE)
 				filename = "castleblacksmith/castleblacksmith-busy.htm"; // Busy because of siege
-			else if (condition == COND_OWNER)									  // Clan owns castle
+			else if (condition == COND_OWNER) // Clan owns castle
 			{
 				if (val == 0)
 					filename = "castleblacksmith/castleblacksmith.htm";
@@ -113,15 +118,15 @@ public class L2CastleBlacksmithInstance extends L2NpcInstance
 		if (player.isGM())
 			return COND_OWNER;
 		
-		if (getCastle() != null && getCastle().getCastleId() > 0)
+		if ((getCastle() != null) && (getCastle().getCastleId() > 0))
 		{
 			if (player.getClan() != null)
 			{
 				if (getCastle().getZone().isActive())
-					return COND_BUSY_BECAUSE_OF_SIEGE;				  // Busy because of siege
-				else if (getCastle().getOwnerId() == player.getClanId() // Clan owns castle
-						&& (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == L2Clan.CP_CS_MANOR_ADMIN)					   // Leader of clan
-					return COND_OWNER;								  // Owner
+					return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
+				else if ((getCastle().getOwnerId() == player.getClanId() // Clan owns castle
+				) && ((player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == L2Clan.CP_CS_MANOR_ADMIN)) // Leader of clan
+					return COND_OWNER; // Owner
 			}
 		}
 		

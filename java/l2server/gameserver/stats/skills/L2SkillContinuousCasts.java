@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -30,16 +31,20 @@ import l2server.util.Point3D;
 
 public class L2SkillContinuousCasts extends L2Skill
 {
-	private int _skillId;
-	private int _skillLvl;
-	private int _castAmount;
+	private final int _skillId;
+	private final int _skillLvl;
+	private final int _skillEnchantRoute;
+	private final int _skillEnchantLvl;
+	private final int _castAmount;
 	
 	public L2SkillContinuousCasts(StatsSet set)
 	{
 		super(set);
-
+		
 		_skillId = set.getInteger("castId", 0);
 		_skillLvl = set.getInteger("castLvl", 0);
+		_skillEnchantRoute = set.getInteger("castEnchantRoute", 0);
+		_skillEnchantLvl = set.getInteger("castEnchantLvl", 0);
 		_castAmount = set.getInteger("castAmount", 0);
 	}
 	
@@ -62,6 +67,7 @@ public class L2SkillContinuousCasts extends L2Skill
 			_position = position;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (!cast(_activeChar, _position))
@@ -76,8 +82,7 @@ public class L2SkillContinuousCasts extends L2Skill
 	
 	public boolean cast(L2Character activeChar, Point3D position)
 	{
-		if (activeChar.isAlikeDead() || !activeChar.isCastingNow()
-				|| activeChar.getLastSkillCast() != this)
+		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || (activeChar.getLastSkillCast() != this))
 			return false;
 		
 		L2Object[] targets = getTargetList(activeChar, false, activeChar);
@@ -87,7 +92,7 @@ public class L2SkillContinuousCasts extends L2Skill
 			if (!(targetObj instanceof L2Character))
 				continue;
 			
-			L2Character target = (L2Character)targetObj;
+			L2Character target = (L2Character) targetObj;
 			if (target.isDead())
 				continue;
 			
@@ -103,7 +108,7 @@ public class L2SkillContinuousCasts extends L2Skill
 					if (e.getSkill().getId() == _skillId)
 					{
 						int maxLevel = SkillTable.getInstance().getMaxLevel(e.getSkill().getId());
-						if (e.getSkill().getLevelHash() < maxLevel)
+						if (e.getSkill().getLevel() < maxLevel)
 							level = e.getSkill().getLevel() + 1;
 						else
 							level = maxLevel;
@@ -111,15 +116,25 @@ public class L2SkillContinuousCasts extends L2Skill
 				}
 			}
 			
-			L2Skill skillToCast = SkillTable.getInstance().getInfo(_skillId, level);
+			L2Skill skillToCast = SkillTable.getInstance().getInfo(_skillId, level, _skillEnchantRoute, _skillEnchantLvl);
+			//System.out.println(targetObj + " " + level);
 			if (!skillToCast.checkCondition(activeChar, target, false))
+			{
+				activeChar.sendMessage("Can't reach " + target);
+				continue;
+			}
+			
+			if ((activeChar instanceof L2PcInstance) && !((L2PcInstance) activeChar).checkPvpSkill(target, skillToCast))
 				continue;
 			
 			L2Object[] subTargets = skillToCast.getTargetList(activeChar, false, target);
 			if (subTargets.length == 0)
+			{
+				activeChar.sendMessage("No target found");
 				continue;
+			}
 			
-			L2Character firstTarget = (L2Character)subTargets[0];
+			L2Character firstTarget = (L2Character) subTargets[0];
 			ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(skillToCast.getSkillType());
 			activeChar.broadcastPacket(new MagicSkillUse(activeChar, firstTarget, skillToCast.getDisplayId(), skillToCast.getLevelHash(), 0, 0, 0));
 			
@@ -130,12 +145,12 @@ public class L2SkillContinuousCasts extends L2Skill
 			else
 				skillToCast.useSkill(activeChar, subTargets);
 		}
-
-		activeChar.broadcastPacket(new MagicSkillLaunched(activeChar, getDisplayId(), getLevelHash(), new L2Character[]{activeChar}));
-			
+		
+		activeChar.broadcastPacket(new MagicSkillLaunched(activeChar, getDisplayId(), getLevelHash(), new L2Character[] { activeChar }));
+		
 		if (activeChar instanceof L2PcInstance)
-			((L2PcInstance)activeChar).rechargeAutoSoulShot(false, true, false);
-
+			((L2PcInstance) activeChar).rechargeAutoSoulShot(false, true, false);
+		
 		return true;
 	}
 }

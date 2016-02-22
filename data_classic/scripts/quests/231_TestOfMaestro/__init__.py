@@ -107,9 +107,9 @@ class Quest (JQuest) :
        htmltext = Quest.getAlreadyCompletedMsg(player)
 
      elif progress==0 :
-        if player.getClassId() == 0x38 and player.getLevel() > 38 :
+        if player.getClassId().getId() == 0x38 and player.getLevel() > 38 :
           htmltext = "30531-03.htm"
-        elif player.getClassId() == 0x38 :
+        elif player.getClassId().getId() == 0x38 :
           htmltext = "30531-01.htm"
           st.exitQuest(1)
         else:

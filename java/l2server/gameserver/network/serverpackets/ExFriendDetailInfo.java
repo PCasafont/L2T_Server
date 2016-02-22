@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.sql.Connection;
@@ -31,7 +32,6 @@ import l2server.log.Log;
  */
 public class ExFriendDetailInfo extends L2GameServerPacket
 {
-	private static final String _S__FE_ExFriendDetailInfo_0XEB = "[S] 83 ExFriendDetailInfo";
 	
 	private L2PcInstance _player;
 	int _friendObjId;
@@ -55,7 +55,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		_player = activeChar;
 		_friendObjId = CharNameTable.getInstance().getIdByName(charName);
 		_name = charName;
-		_isOnline = L2World.getInstance().getPlayer(_friendObjId) != null && L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
+		_isOnline = (L2World.getInstance().getPlayer(_friendObjId) != null) && L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
 		_memo = activeChar.getFriendMemo(_friendObjId);
 		if (_isOnline == 1)
 		{
@@ -76,14 +76,14 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		else
 			offlineFriendInfo(_friendObjId);
 	}
-
+	
 	private void offlineFriendInfo(int objId)
 	{
 		long createDate = 0;
 		int level = 0;
 		int bClassId = 0;
 		Connection con = null;
-
+		
 		try
 		{
 			// Retrieve the L2PcInstance from the characters table of the database
@@ -129,7 +129,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				
 				while (rset.next())
 					_level = (rset.getByte("level"));
-
+				
 				statement.execute();
 				rset.close();
 				statement.close();
@@ -185,11 +185,8 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xEC);
-		
 		writeD(_player.getObjectId()); // Character ID
 		writeS(_name); // Name
 		writeD(_isOnline); // Online
@@ -204,13 +201,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		writeS(_allyName); // Alliance name
 		writeC(_createdMonth); // Creation month
 		writeC(_createdDay); // Creation day
-		writeD(_isOnline == 1 ? -1 : (int)(System.currentTimeMillis() - _lastLogin) / 1000);
+		writeD(_isOnline == 1 ? -1 : (int) (System.currentTimeMillis() - _lastLogin) / 1000);
 		writeS(_memo); // Memo
-	}
-
-	@Override
-	public String getType()
-	{
-		return _S__FE_ExFriendDetailInfo_0XEB;
 	}
 }

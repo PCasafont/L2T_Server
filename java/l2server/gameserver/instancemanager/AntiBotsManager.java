@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.io.BufferedReader;
@@ -78,17 +79,17 @@ public class AntiBotsManager
 		{
 			_isRunning = b;
 		}
-
+		
 		private void updateLastSeenAt()
 		{
 			_lastSeenAt = System.currentTimeMillis();
 		}
-
+		
 		private String getFilePath()
 		{
 			return _filePath;
 		}
-
+		
 		private boolean isRunning()
 		{
 			return _isRunning;
@@ -99,7 +100,7 @@ public class AntiBotsManager
 			return _productName;
 		}
 	}
-		
+	
 	public class ClientInfo
 	{
 		private final ArrayList<ClientProcess> _processes = new ArrayList<ClientProcess>();
@@ -161,12 +162,12 @@ public class AntiBotsManager
 		
 		private final void updateProcesses(final String[] processes)
 		{
-			for (int i = 0; i < processes.length; i++)
+			for (String processe : processes)
 			{
-				if (processes[i].equals(""))
+				if (processe.equals(""))
 					continue;
-	
-				final String[] processData = processes[i].split("\\|", -1);
+				
+				final String[] processData = processe.split("\\|", -1);
 				if (processData.length < 4)
 				{
 					//System.out.println(processes[i]);
@@ -208,7 +209,7 @@ public class AntiBotsManager
 				
 				process.updateLastSeenAt();
 			}
-	
+			
 			// Go through known processes and check the ones that are no longer running.
 			for (ClientProcess process : _processes)
 			{
@@ -264,7 +265,7 @@ public class AntiBotsManager
 			return false;
 		}
 	}
-
+	
 	private class PlayerBanTrace
 	{
 		private final long _banTime;
@@ -319,10 +320,10 @@ public class AntiBotsManager
 	//Trace the users by his forum IP AKA users using ping tools
 	private static final Map<String, String> _conflictiveUserIps = new HashMap<String, String>();
 	
-	private static final String SELECT_AUTH_DATA_FOR_IP = "SELECT localIp, hardwareId, windowsUser, version, processes, lastUpdateTime FROM "+Config.LOGIN_DB_NAME+".auth_info WHERE userIp = ? ORDER BY lastUpdateTime ASC";
-	private static final String SELECT_AUTH_DATA_FOR_HWID = "SELECT userIp, localIp, windowsUser, version, processes, lastUpdateTime FROM "+Config.LOGIN_DB_NAME+".auth_info WHERE hardwareId = ? ORDER BY lastUpdateTime ASC";
+	private static final String SELECT_AUTH_DATA_FOR_IP = "SELECT localIp, hardwareId, windowsUser, version, processes, lastUpdateTime FROM " + Config.LOGIN_DB_NAME + ".auth_info WHERE userIp = ? ORDER BY lastUpdateTime ASC";
+	private static final String SELECT_AUTH_DATA_FOR_HWID = "SELECT userIp, localIp, windowsUser, version, processes, lastUpdateTime FROM " + Config.LOGIN_DB_NAME + ".auth_info WHERE hardwareId = ? ORDER BY lastUpdateTime ASC";
 	
-	private static final String SELECT_FORUM_IP_FOR_ACCOUNT_NAME = "SELECT ip_address from "+Config.FORUM_DB_NAME+".sessions where member_name IN (SELECT members_display_name from "+Config.FORUM_DB_NAME+".members WHERE name IN (SELECT forum FROM "+Config.WEB_DB_NAME+".accounts WHERE game = ?));";
+	private static final String SELECT_FORUM_IP_FOR_ACCOUNT_NAME = "SELECT ip_address from " + Config.FORUM_DB_NAME + ".core_sessions where member_name IN (" + "SELECT name from " + Config.FORUM_DB_NAME + ".core_members WHERE name IN (" + "SELECT forum FROM " + Config.WEB_DB_NAME + ".accounts WHERE game = ?));";
 	private static final String WEBSITE_URL = "http://antibots.l2tenkai.com/AB-CHECK.html";
 	
 	private static final String _latestVersion = "2.0.1";
@@ -333,23 +334,15 @@ public class AntiBotsManager
 	public static final ArrayList<PlayerBanTrace> _pendingBans = new ArrayList<PlayerBanTrace>();
 	public static final ArrayList<String> _hardwareBans = new ArrayList<String>();
 	
-	private static final String[] PROHIBITED_PROCESSES_NAMES =
-	{
-		"l2tower",	//http://www.forum.l2tower.eu
-		"zranger",	//http://zranger.net
-		"z-ranger",
-		"l2net",
-		"l2divine",	//http://www.l2divine.com
-		"l2ph",		//http://l2ph.coderx.ru/arhive
-		"l2packethack",
-		"hlapex",
-		"ntracker",	//http://www.l2tracker.net
-		"l2walker",	//http://www.towalker.com
-		"adrenaline",	//http://l2bot.eu/
-		"l2control",	//http://www.l2control.com/
-		"la2robot",
-		"la2util",
-		"autoit"	//https://www.autoitscript.com
+	private static final String[] PROHIBITED_PROCESSES_NAMES = { "l2tower", //http://www.forum.l2tower.eu
+	"zranger", //http://zranger.net
+	"z-ranger", "l2net", "l2divine", //http://www.l2divine.com
+	"l2ph", //http://l2ph.coderx.ru/arhive
+	"l2packethack", "hlapex", "ntracker", //http://www.l2tracker.net
+	"l2walker", //http://www.towalker.com
+	"adrenaline", //http://l2bot.eu/
+	"l2control", //http://www.l2control.com/
+	"la2robot", "la2util", "autoit" //https://www.autoitscript.com
 	};
 	
 	public AntiBotsManager()
@@ -366,16 +359,17 @@ public class AntiBotsManager
 	{
 		public AntibotsTask()
 		{
-
+			
 		}
 		
+		@Override
 		public void run()
 		{
 			boolean isWebReachable = getWebResponse();
 			if (!isWebReachable)
 			{
 				_failedWebHitTimes++;
-				Log.info("AntiBotsManager: Couldn't hit on our website ("+_failedWebHitTimes+" times in a row). Aborting any check on this execution. ("+Util.getCurrentDate()+")");
+				Log.info("AntiBotsManager: Couldn't hit on our website (" + _failedWebHitTimes + " times in a row). Aborting any check on this execution. (" + Util.getCurrentDate() + ")");
 				return;
 			}
 			
@@ -390,7 +384,7 @@ public class AntiBotsManager
 				final L2GameClient playerClient = player.getClient();
 				if (playerClient == null)
 					continue;
-
+				
 				if (playerClient.isDetached())
 					continue;
 				
@@ -399,24 +393,24 @@ public class AntiBotsManager
 				if (foundHardware.size() == 0)
 				{
 					GmListTable.broadcastMessageToGMs("===============================");
-					GmListTable.broadcastMessageToGMs(player.getName() + " ["+ipAddress+"] did not send any antibots data yet...");
+					GmListTable.broadcastMessageToGMs(player.getName() + " [" + ipAddress + "] did not send any antibots data yet...");
 					
 					long minutes = TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - player.getLastAccess());
 					if (minutes <= 5)
 					{
-						GmListTable.broadcastMessageToGMs("But " + player.getName() + " just logged " + minutes +" minutes ago, let's see on the next check!");
+						GmListTable.broadcastMessageToGMs("But " + player.getName() + " just logged " + minutes + " minutes ago, let's see on the next check!");
 						continue;
 					}
 					
 					removeConflictiveIp(player.getExternalIP());
 					
-					GmListTable.broadcastMessageToGMs("Checking forum ip for: " + player.getName()+".");
-						
+					GmListTable.broadcastMessageToGMs("Checking forum ip for: " + player.getName() + ".");
+					
 					//check forum
 					String forumIpAddress = getForumPlayerIp(player.getAccountName());
 					if (forumIpAddress != null)
-					{	
-						GmListTable.broadcastMessageToGMs("Found his forum IP: "+forumIpAddress+"!");
+					{
+						GmListTable.broadcastMessageToGMs("Found his forum IP: " + forumIpAddress + "!");
 						foundHardware = getClientsInfoByIp(forumIpAddress);
 						//if we get any result we add the ip?
 						if (foundHardware.size() != 0)
@@ -436,11 +430,12 @@ public class AntiBotsManager
 					if (!removeConflictiveIp(player.getExternalIP()))
 					{
 						sendAntiBotMessage(player);
-	
+						
 						if (Config.ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED)
 						{
 							ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 							{
+								@Override
 								public void run()
 								{
 									GmListTable.broadcastMessageToGMs(player.getName() + " has been kicked. His system was outdated.");
@@ -452,7 +447,7 @@ public class AntiBotsManager
 					}
 					continue;
 				}
-
+				
 				boolean hasRecentlySentData = false;
 				// Go through each of the PCs found for this player...
 				String hardwareId = "";
@@ -461,7 +456,7 @@ public class AntiBotsManager
 					if (clientInfo == null)
 						continue;
 					
-					if (player.getClient() != null && player.getClient().getHWId() != null)
+					if ((player.getClient() != null) && (player.getClient().getHWId() != null))
 						hardwareId = player.getClient().getHWId();
 					
 					// If the hardwareId is unknown, for now, we only get the hardware that last gave us informations coming from this toon IP.
@@ -471,10 +466,10 @@ public class AntiBotsManager
 						player.getClient().setHWId(hardwareId);
 					}
 					
-					if (clientInfo.getVersion() != null && !clientInfo.getVersion().equals(_latestVersion))
+					if ((clientInfo.getVersion() != null) && !clientInfo.getVersion().equals(_latestVersion))
 						GmListTable.broadcastMessageToGMs(player.getName() + " is running on Client[" + clientInfo.getVersion() + "], latest is " + _latestVersion + ".");
 					
-					if (clientInfo.getLastUpdateTime() + 600000 < System.currentTimeMillis())
+					if ((clientInfo.getLastUpdateTime() + 600000) < System.currentTimeMillis())
 						continue;
 					else
 						hasRecentlySentData = true;
@@ -494,37 +489,37 @@ public class AntiBotsManager
 					/*if (illegalProcesses.size() != 0)
 					{
 						final String accountName = player.getClient().getAccountName();
-						
+
 						if (isHardwareInPendingBanList(clientInfo.getHardwareId()) && isAccountInPendingBanList(accountName))
 							continue;
-						
+
 						int randomDelay = Rnd.get(1, 5);
 						int minBannedHours = 48;
-						
+
 						GmListTable.broadcastMessageToGMs("Scheduling ban for Account[" + accountName + "] in " + randomDelay + " minutes, " + player.getName() + " was found using...:");
-						
+
 						// Log to file...
 						Util.logToFile("Scheduling ban for Account[" + accountName + "], Hardware[" + clientInfo.getHardwareId() + "] in " + randomDelay + " minutes, " + player.getName() + " was found using...:", "Antibots", true);
-						
+
 						//Check how many times he has been banned
 						int timesBanned = getBannedTimes(clientInfo.getHardwareId());
 						if (timesBanned == 1)
 							minBannedHours = 3;
 						else if (timesBanned >= 3)	//3 times max
 							minBannedHours = -1;
-						
+
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.HACKING_TOOL));
-						
+
 						for (ClientProcess process : illegalProcesses)
 						{
 							GmListTable.broadcastMessageToGMs("- Product Name:" + process.getProductName() + ", File Exe: " + process.getFileName() + ", File Path: " + process.getFilePath());
-							
+
 							// Log to file...
 							Util.logToFile("- Product Name:" + process.getProductName() + ", File Exe: " + process.getFileName() + ", File Path: " + process.getFilePath(), "Antibots", true);
 						}
-						
+
 						Util.logToFile("He/She has been banned already " + timesBanned + " times.", "Antibots", true);
-						
+
 						addToPendingBanLists(
 							randomDelay * 1000 * 60,
 							minBannedHours, // break for the character...
@@ -541,7 +536,7 @@ public class AntiBotsManager
 					if (!removeConflictiveIp(player.getExternalIP()))
 					{
 						sendAntiBotMessage(player);
-					
+						
 						if (Config.ANTI_BOTS_KICK_IF_NO_DATA_RECEIVED)
 						{
 							GmListTable.broadcastMessageToGMs(player.getName() + " did not provide any client info for over 10 minutes.");
@@ -562,11 +557,11 @@ public class AntiBotsManager
 				{
 					if (playerBanTrace.getBanTime() > currentTime)
 						continue;
-					
+
 					toBan = playerBanTrace;
 					break;
 				}
-				
+
 				if (toBan != null)
 					banPlayer(toBan);
 			}*/
@@ -582,12 +577,12 @@ public class AntiBotsManager
 		System.out.println("sending to " + player.getName());
 		if (player.getName().equalsIgnoreCase("AceKilla") || player.getName().equalsIgnoreCase("Elerni"))
 			return;
-		
+
 		NpcHtmlMessage htmlMsg = new NpcHtmlMessage(0);
 		String antiBotInfo = HtmCache.getInstance().getHtm(null, "AntiBot.html");
 		if (antiBotInfo != null)
 			htmlMsg.setHtml(antiBotInfo);
-		
+
 		player.sendPacket(htmlMsg);*/
 	}
 	
@@ -617,10 +612,10 @@ public class AntiBotsManager
 					{
 						date = dateInfo;
 						bannedTimes++;
-					}	
-				}	
+					}
+				}
 			}
-			readFile.close();	
+			readFile.close();
 		}
 		catch (Exception e)
 		{
@@ -639,7 +634,7 @@ public class AntiBotsManager
 			PreparedStatement statement;
 			
 			ResultSet rs = null;
-			statement = con.prepareStatement(SELECT_FORUM_IP_FOR_ACCOUNT_NAME);	//Maybe check time too (last_visit)
+			statement = con.prepareStatement(SELECT_FORUM_IP_FOR_ACCOUNT_NAME); //Maybe check time too (last_visit)
 			statement.setString(1, accountName);
 			rs = statement.executeQuery();
 			
@@ -682,18 +677,18 @@ public class AntiBotsManager
 			PreparedStatement statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 			
 			statement.setString(1, playerBanTrace.getAccountName());
-			statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ? System.currentTimeMillis() / 1000 + playerBanTrace.getCharacterBanDuration() * 3600 : -1);
+			statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ? (System.currentTimeMillis() / 1000) + (playerBanTrace.getCharacterBanDuration() * 3600) : -1);
 			statement.setString(3, "Anti Bots");
 			statement.setString(4, playerBanTrace.getReason());
 			statement.execute();
 			statement.close();
 			
-			if (hardwareId != null && hardwareId.length() > 0)
+			if ((hardwareId != null) && (hardwareId.length() > 0))
 			{
 				statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 				
 				statement.setString(1, hardwareId);
-				statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ? System.currentTimeMillis() / 1000 + playerBanTrace.getHardwareBanDuration() * 3600 : -1);
+				statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ? (System.currentTimeMillis() / 1000) + (playerBanTrace.getHardwareBanDuration() * 3600) : -1);
 				statement.setString(3, "Anti Bots");
 				statement.setString(4, playerBanTrace.getReason());
 				statement.execute();
@@ -727,7 +722,7 @@ public class AntiBotsManager
 				
 				final String playerHardwareId = playerClient.getHWId();
 				
-				if (hardwareId == null || playerHardwareId == null)
+				if ((hardwareId == null) || (playerHardwareId == null))
 					continue;
 				else if (!playerHardwareId.equals(hardwareId))
 					continue;
@@ -771,11 +766,9 @@ public class AntiBotsManager
 		if (filePath.contains("lineage ii dreams"))
 			return false;
 		
-		for (int y = 0; y < PROHIBITED_PROCESSES_NAMES.length; y++)
+		for (String element : PROHIBITED_PROCESSES_NAMES)
 		{
-			if (productName.contains(PROHIBITED_PROCESSES_NAMES[y])
-					|| fileExeName.contains(PROHIBITED_PROCESSES_NAMES[y])
-					|| filePath.contains(PROHIBITED_PROCESSES_NAMES[y]))
+			if (productName.contains(element) || fileExeName.contains(element) || filePath.contains(element))
 				return true;
 		}
 		
@@ -819,9 +812,9 @@ public class AntiBotsManager
 				final String version = rs.getString("version");
 				
 				// Check if this client received any update...
-				if (clientInfo.getVersion() != null && !clientInfo.getVersion().equals(version))
+				if ((clientInfo.getVersion() != null) && !clientInfo.getVersion().equals(version))
 					clientInfo.setVersion(rs.getString("version"));
-
+				
 				// Set the time at which the client last sent us info...
 				clientInfo.setLastUpdateTime(lastUpdateTime);
 				
@@ -945,16 +938,16 @@ public class AntiBotsManager
 		try
 		{
 			url = new URL(WEBSITE_URL);
-			connection = (HttpURLConnection)url.openConnection();
+			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestProperty("User-Agent", "AB-CHECK");
-  			connection.setInstanceFollowRedirects(false);
-  			
+			connection.setInstanceFollowRedirects(false);
+			
 			InputStream is = connection.getInputStream();
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-		  
+			
 			String line;
-			StringBuffer response = new StringBuffer(); 
-			while((line = rd.readLine()) != null)
+			StringBuffer response = new StringBuffer();
+			while ((line = rd.readLine()) != null)
 			{
 				response.append(line);
 				response.append('\r');
@@ -972,10 +965,10 @@ public class AntiBotsManager
 		finally
 		{
 			if (connection != null)
-				connection.disconnect(); 
+				connection.disconnect();
 		}
 		
-		return result != null && result.contains("Website is available!");
+		return (result != null) && result.contains("Website is available!");
 	}
 	
 	private static AntiBotsManager _instance;
@@ -987,10 +980,10 @@ public class AntiBotsManager
 		
 		return _instance;
 	}
-
+	
 	private void addConflictiveIp(String fakeIp, String realIp)
 	{
-		synchronized(_conflictiveUserIps)
+		synchronized (_conflictiveUserIps)
 		{
 			_conflictiveUserIps.put(fakeIp, realIp);
 		}
@@ -998,7 +991,7 @@ public class AntiBotsManager
 	
 	private boolean removeConflictiveIp(String ip)
 	{
-		synchronized(_conflictiveUserIps)
+		synchronized (_conflictiveUserIps)
 		{
 			if (_conflictiveUserIps.containsKey(ip))
 				return _conflictiveUserIps.remove(ip) != null;
@@ -1009,11 +1002,11 @@ public class AntiBotsManager
 	
 	public String getProperPlayerIP(String ip)
 	{
-		synchronized(_conflictiveUserIps)
+		synchronized (_conflictiveUserIps)
 		{
 			if (_conflictiveUserIps.containsKey(ip))
 			{
-			//	System.out.println(ip + " " + _conflictiveUserIps.get(ip));
+				//	System.out.println(ip + " " + _conflictiveUserIps.get(ip));
 				return _conflictiveUserIps.get(ip);
 			}
 		}

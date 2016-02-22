@@ -1,7 +1,9 @@
+
 package l2server.gameserver.events.instanced;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import l2server.gameserver.datatables.SpawnTable;
@@ -23,7 +25,7 @@ public class EventTeam
 	/** The points of the team<br> */
 	private short _points;
 	/** Name and instance of all participated players in HashMap<br> */
-	private Map<Integer, L2PcInstance> _participatedPlayers = new HashMap<Integer, L2PcInstance>();
+	private Map<Integer, L2PcInstance> _participatedPlayers = new LinkedHashMap<Integer, L2PcInstance>();
 	
 	private int _flagId = 44004;
 	private L2Spawn _flagSpawn;
@@ -207,8 +209,7 @@ public class EventTeam
 		ArrayList<L2PcInstance> toIterate = new ArrayList<L2PcInstance>(_participatedPlayers.values());
 		for (L2PcInstance player : toIterate)
 		{
-			if (!player.isOnline() || player.getClient() == null
-					|| player.getEvent() == null)
+			if (!player.isOnline() || (player.getClient() == null) || (player.getEvent() == null))
 				_participatedPlayers.remove(player.getObjectId());
 			if (!player.isDead())
 				alivePlayerCount++;
@@ -258,9 +259,9 @@ public class EventTeam
 	
 	public void setFlagSpawn(L2Spawn spawn)
 	{
-		if (_flagSpawn != null && _flagSpawn.getNpc() != null)
+		if ((_flagSpawn != null) && (_flagSpawn.getNpc() != null))
 		{
-			((L2EventFlagInstance)_flagSpawn.getNpc()).shouldBeDeleted();
+			((L2EventFlagInstance) _flagSpawn.getNpc()).shouldBeDeleted();
 			_flagSpawn.getNpc().deleteMe();
 			_flagSpawn.stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(_flagSpawn, false);
@@ -296,7 +297,7 @@ public class EventTeam
 	
 	public void setGolemSpawn(L2Spawn spawn)
 	{
-		if (_golemSpawn != null && _golemSpawn.getNpc() != null)
+		if ((_golemSpawn != null) && (_golemSpawn.getNpc() != null))
 			_golemSpawn.getNpc().deleteMe();
 		_golemSpawn = spawn;
 	}

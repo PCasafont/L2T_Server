@@ -98,9 +98,9 @@ class Quest (JQuest) :
    elif id == State.CREATED :
      st.set("cond","0")
      if npcId == NPC[3]:
-          if player.getClassId() in [ 0x07, 0x16, 0x23, 0x36] :
+          if player.getClassId().getId() in [ 0x07, 0x16, 0x23, 0x36] :
            if player.getLevel() > 38 :
-            if player.getClassId() == 0x36 :
+            if player.getClassId().getId() == 0x36 :
               htmltext = "30690-04.htm"
             else:
               htmltext = "30690-03.htm"
@@ -126,7 +126,7 @@ class Quest (JQuest) :
          st.playSound("ItemSound.quest_finish")
          st.takeItems(ALANKELLS_RECOMMEND,1)
          st.giveItems(MARK_OF_SEARCHER,1)
-         st.getPlayer().sendPacket(SocialAction(st.getPlayer().getObjectId(),3))
+         st.getPlayer().sendPacket(SocialAction(st.getPlayer(),3))
      elif npcId == NPC[0] :
       if cond==1 :
         htmltext = "30291-01.htm"

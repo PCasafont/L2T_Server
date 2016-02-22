@@ -1,146 +1,146 @@
 <list>
-	<npc id="36609" name="Proclaimer" title="Gludio" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36609" name="Proclaimer" title="Gludio" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36610" name="Proclaimer" title="Dion" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36610" name="Proclaimer" title="Dion" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36611" name="Proclaimer" title="Giran" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36611" name="Proclaimer" title="Giran" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36612" name="Proclaimer" title="Oren" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36612" name="Proclaimer" title="Oren" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36613" name="Proclaimer" title="Aden" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36613" name="Proclaimer" title="Aden" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36614" name="Proclaimer" title="Innadril" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36614" name="Proclaimer" title="Innadril" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36615" name="Proclaimer" title="Goddard" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36615" name="Proclaimer" title="Goddard" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36616" name="Proclaimer" title="Rune" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36616" name="Proclaimer" title="Rune" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36617" name="Proclaimer" title="Schuttgart" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36617" name="Proclaimer" title="Schuttgart" level="99" type="L2Npc" baseAtkRange="40" baseHpMax="9236.745" baseHpReg="12.22" baseMpMax="2921.578" baseMpReg="4.64" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="299" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36653" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36653" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36654" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36654" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36655" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36655" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36656" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36656" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36657" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36657" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36658" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36658" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36659" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36659" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36660" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36660" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36661" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36661" name="Chamberlain of Darkness" level="99" type="L2CastleChamberlain" baseAtkRange="40" baseHpMax="9348.701" baseHpReg="8.5" baseMpMax="1507.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="40.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36664" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36664" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36665" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36665" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36666" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36666" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36667" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36667" name="Herald of Light" level="120" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36668" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36668" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36669" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36669" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36670" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36670" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36671" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36671" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36672" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36672" name="Herald of Light" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="8.5" collisionHeight="23.5">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36673" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36673" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36674" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36674" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36675" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36675" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36676" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36676" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36677" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36677" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36678" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36678" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36679" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36679" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36680" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36680" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
-	<npc id="36681" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
-			aiType="fighter">
+	<npc id="36681" name="Herald of Darkness" level="75" type="L2Npc" baseAtkRange="40" baseHpMax="2962.256" baseHpReg="8.2" baseMpMax="1184.9025" baseMpReg="5.95" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" basePAtk="1.0" baseMAtk="1.0" basePDef="1.0" baseMDef="1.0" basePAtkSpd="250" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="34.0">
+		<elementals fireDef="0" waterDef="0" windDef="0" earthDef="0" holyDef="0" darkDef="0" />
+		<ai type="fighter" />
 	</npc>
 </list>

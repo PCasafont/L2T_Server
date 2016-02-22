@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlEvent;
@@ -39,7 +40,7 @@ public class EffectSignetAntiSummon extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -47,7 +48,7 @@ public class EffectSignetAntiSummon extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
@@ -61,15 +62,15 @@ public class EffectSignetAntiSummon extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
+		if (getAbnormal().getCount() == (getAbnormal().getTotalCount() - 1))
 			return true; // do nothing first time
-		
+			
 		int mpConsume = getSkill().getMpConsume();
 		
 		L2PcInstance caster = (L2PcInstance) getEffector();
@@ -81,8 +82,8 @@ public class EffectSignetAntiSummon extends L2Effect
 			
 			if (cha instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
+				L2PcInstance player = (L2PcInstance) cha;
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
 					continue;
 			}
 			
@@ -92,11 +93,11 @@ public class EffectSignetAntiSummon extends L2Effect
 				{
 					L2PcInstance owner = null;
 					if (cha instanceof L2Summon)
-						owner = ((L2Summon)cha).getOwner();
+						owner = ((L2Summon) cha).getOwner();
 					else
-						owner = (L2PcInstance)cha;
+						owner = (L2PcInstance) cha;
 					
-					if (owner != null && (owner.getPet() != null || !owner.getSummons().isEmpty()))
+					if ((owner != null) && ((owner.getPet() != null) || !owner.getSummons().isEmpty()))
 					{
 						if (mpConsume > getEffector().getCurrentMp())
 						{
@@ -119,7 +120,7 @@ public class EffectSignetAntiSummon extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override

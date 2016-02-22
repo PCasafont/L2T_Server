@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package vehicles;
 
 import java.util.concurrent.Future;
@@ -154,7 +155,7 @@ public abstract class AirShipController extends Quest
 			}
 			else if (player.isDead() || player.isFakeDeath())
 			{
-				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);	
+				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);
 				return null;
 			}
 			else if (player.isFishing())
@@ -192,7 +193,7 @@ public abstract class AirShipController extends Quest
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_HOLDING_A_FLAG);
 				return null;
 			}
-			else if (player.getPet() != null || player.isMounted() || !player.getSummons().isEmpty())
+			else if ((player.getPet() != null) || player.isMounted() || !player.getSummons().isEmpty())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_PET_OR_A_SERVITOR_IS_SUMMONED);
 				return null;
@@ -210,7 +211,7 @@ public abstract class AirShipController extends Quest
 		}
 		else if (event.equalsIgnoreCase("register"))
 		{
-			if (player.getClan() == null || player.getClan().getLevel() < 5)
+			if ((player.getClan() == null) || (player.getClan().getLevel() < 5))
 			{
 				player.sendPacket(SM_NEED_CLANLVL5);
 				return null;
@@ -307,7 +308,7 @@ public abstract class AirShipController extends Quest
 		L2ScriptZone zone = ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class);
 		if (zone == null)
 		{
-			_log.log(Level.WARNING, getName()+": Invalid zone "+_dockZone+", controller disabled");
+			_log.log(Level.WARNING, getName() + ": Invalid zone " + _dockZone + ", controller disabled");
 			_isBusy = true;
 			return;
 		}
@@ -317,7 +318,7 @@ public abstract class AirShipController extends Quest
 		{
 			if (_arrivalPath.length == 0)
 			{
-				_log.log(Level.WARNING, getName()+": Zero arrival path length.");
+				_log.log(Level.WARNING, getName() + ": Zero arrival path length.");
 				_arrivalPath = null;
 			}
 			else
@@ -325,7 +326,7 @@ public abstract class AirShipController extends Quest
 				p = _arrivalPath[_arrivalPath.length - 1];
 				if (!zone.isInsideZone(p.x, p.y, p.z))
 				{
-					_log.log(Level.WARNING, getName()+": Arrival path finish point ("+p.x+","+p.y+","+p.z+") not in zone "+_dockZone);
+					_log.log(Level.WARNING, getName() + ": Arrival path finish point (" + p.x + "," + p.y + "," + p.z + ") not in zone " + _dockZone);
 					_arrivalPath = null;
 				}
 			}
@@ -334,7 +335,7 @@ public abstract class AirShipController extends Quest
 		{
 			if (!ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class).isInsideZone(_shipSpawnX, _shipSpawnY, _shipSpawnZ))
 			{
-				_log.log(Level.WARNING, getName()+": Arrival path is null and spawn point not in zone "+_dockZone+", controller disabled");
+				_log.log(Level.WARNING, getName() + ": Arrival path is null and spawn point not in zone " + _dockZone + ", controller disabled");
 				_isBusy = true;
 				return;
 			}
@@ -344,7 +345,7 @@ public abstract class AirShipController extends Quest
 		{
 			if (_departPath.length == 0)
 			{
-				_log.log(Level.WARNING, getName()+": Zero depart path length.");
+				_log.log(Level.WARNING, getName() + ": Zero depart path length.");
 				_departPath = null;
 			}
 			else
@@ -352,7 +353,7 @@ public abstract class AirShipController extends Quest
 				p = _departPath[_departPath.length - 1];
 				if (zone.isInsideZone(p.x, p.y, p.z))
 				{
-					_log.log(Level.WARNING, getName()+": Departure path finish point ("+p.x+","+p.y+","+p.z+") in zone "+_dockZone);
+					_log.log(Level.WARNING, getName() + ": Departure path finish point (" + p.x + "," + p.y + "," + p.z + ") in zone " + _dockZone);
 					_departPath = null;
 				}
 			}
@@ -361,11 +362,11 @@ public abstract class AirShipController extends Quest
 		if (_teleportsTable != null)
 		{
 			if (_fuelTable == null)
-				_log.log(Level.WARNING, getName()+": Fuel consumption not defined.");
+				_log.log(Level.WARNING, getName() + ": Fuel consumption not defined.");
 			else
 			{
 				if (_teleportsTable.length != _fuelTable.length)
-					_log.log(Level.WARNING, getName()+": Fuel consumption not match teleport list.");
+					_log.log(Level.WARNING, getName() + ": Fuel consumption not match teleport list.");
 				else
 					AirShipManager.getInstance().registerAirShipTeleportList(_dockZone, _locationId, _teleportsTable, _fuelTable);
 			}
@@ -374,6 +375,7 @@ public abstract class AirShipController extends Quest
 	
 	private final class DecayTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			if (_dockedShip != null)
@@ -383,11 +385,10 @@ public abstract class AirShipController extends Quest
 	
 	private final class DepartTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
-			if (_dockedShip != null
-					&& _dockedShip.isInDock()
-					&& !_dockedShip.isMoving())
+			if ((_dockedShip != null) && _dockedShip.isInDock() && !_dockedShip.isMoving())
 			{
 				if (_departPath != null)
 					_dockedShip.executePath(_departPath);

@@ -421,6 +421,7 @@
 		<set name="mpConsume" val="73" />
 		<set name="power" val="100" />
 		<set name="aggroPoints" val="100" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="360" stackLvl="2" stackType="turn_stone">
 				<effect type="Petrification" val="0" />

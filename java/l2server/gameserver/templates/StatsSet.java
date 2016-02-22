@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates;
 
 import java.util.HashMap;
@@ -47,7 +48,7 @@ public final class StatsSet
 	 */
 	public void add(StatsSet newSet)
 	{
-		Map<String, Object> newMap  = newSet.getSet();
+		Map<String, Object> newMap = newSet.getSet();
 		for (Entry<String, Object> entry : newMap.entrySet())
 		{
 			_set.put(entry.getKey(), entry.getValue());
@@ -59,17 +60,20 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return boolean : value associated to the key
 	 */
-	public boolean getBool  (String name)
+	public boolean getBool(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Boolean value required, but not specified");
+			throw new IllegalArgumentException("Boolean value required for \"" + name + "\", but not specified");
 		if (val instanceof Boolean)
-			return ((Boolean)val).booleanValue();
-		try {
-			return Boolean.parseBoolean((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Boolean value required, but found: "+val);
+			return ((Boolean) val).booleanValue();
+		try
+		{
+			return Boolean.parseBoolean((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Boolean value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -80,17 +84,20 @@ public final class StatsSet
 	 * @param deflt : boolean designating the default value if value associated with the key is null
 	 * @return boolean : value of the key
 	 */
-	public boolean getBool  (String name, boolean deflt)
+	public boolean getBool(String name, boolean deflt)
 	{
 		Object val = _set.get(name);
 		if (val == null)
 			return deflt;
 		if (val instanceof Boolean)
-			return ((Boolean)val).booleanValue();
-		try {
-			return Boolean.parseBoolean((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Boolean value required, but found: "+val);
+			return ((Boolean) val).booleanValue();
+		try
+		{
+			return Boolean.parseBoolean((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Boolean value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -101,17 +108,20 @@ public final class StatsSet
 	 * @param deflt : byte designating the default value if value associated with the key is null
 	 * @return byte : value associated to the key
 	 */
-	public byte	 getByte(String name, byte deflt)
+	public byte getByte(String name, byte deflt)
 	{
 		Object val = _set.get(name);
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).byteValue();
-		try {
-			return Byte.parseByte((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Byte value required, but found: "+val);
+			return ((Number) val).byteValue();
+		try
+		{
+			return Byte.parseByte((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Byte value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -120,17 +130,20 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return byte : value associated to the key
 	 */
-	public byte	 getByte(String name)
+	public byte getByte(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Byte value required, but not specified");
+			throw new IllegalArgumentException("Byte value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).byteValue();
-		try {
-			return Byte.parseByte((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Byte value required, but found: "+val);
+			return ((Number) val).byteValue();
+		try
+		{
+			return Byte.parseByte((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Byte value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -141,17 +154,20 @@ public final class StatsSet
 	 * @param deflt : short designating the default value if value associated with the key is null
 	 * @return short : value associated to the key
 	 */
-	public short	 getShort(String name, short deflt)
+	public short getShort(String name, short deflt)
 	{
 		Object val = _set.get(name);
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).shortValue();
-		try {
-			return Short.parseShort((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Short value required, but found: "+val);
+			return ((Number) val).shortValue();
+		try
+		{
+			return Short.parseShort((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Short value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -160,17 +176,20 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return short : value associated to the key
 	 */
-	public short	 getShort(String name)
+	public short getShort(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Short value required, but not specified");
+			throw new IllegalArgumentException("Short value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).shortValue();
-		try {
-			return Short.parseShort((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Short value required, but found: "+val);
+			return ((Number) val).shortValue();
+		try
+		{
+			return Short.parseShort((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Short value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -179,17 +198,20 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return int : value associated to the key
 	 */
-	public int	 getInteger(String name)
+	public int getInteger(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Integer value required, but not specified");
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).intValue();
-		try {
-			return Integer.parseInt((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Integer value required, but found: "+val);
+			return ((Number) val).intValue();
+		try
+		{
+			return Integer.parseInt((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -200,17 +222,20 @@ public final class StatsSet
 	 * @param deflt : int designating the default value if value associated with the key is null
 	 * @return int : value associated to the key
 	 */
-	public int	 getInteger(String name, int deflt)
+	public int getInteger(String name, int deflt)
 	{
 		Object val = _set.get(name);
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).intValue();
-		try {
-			return Integer.parseInt((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Integer value required, but found: "+val);
+			return ((Number) val).intValue();
+		try
+		{
+			return Integer.parseInt((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -220,24 +245,28 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return int[] : value associated to the key
 	 */
-	public int[]	 getIntegerArray(String name)
+	public int[] getIntegerArray(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Integer value required, but not specified");
-		if (val instanceof Number){
-			int[] result = {((Number)val).intValue()};
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but not specified");
+		if (val instanceof Number)
+		{
+			int[] result = { ((Number) val).intValue() };
 			return result;
 		}
 		int c = 0;
-		String[] vals = ((String)val).split(";");
+		String[] vals = ((String) val).split(";");
 		int[] result = new int[vals.length];
-		for (String v: vals)
+		for (String v : vals)
 		{
-			try {
+			try
+			{
 				result[c++] = Integer.parseInt(v);
-			} catch (Exception e) {
-				throw new IllegalArgumentException("Integer value required, but found: "+val);
+			}
+			catch (Exception e)
+			{
+				throw new IllegalArgumentException("Integer value required for \"" + name + "\", but found: " + val);
 			}
 		}
 		return result;
@@ -252,13 +281,16 @@ public final class StatsSet
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Integer value required, but not specified");
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).longValue();
-		try {
-			return Long.parseLong((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Integer value required, but found: "+val);
+			return ((Number) val).longValue();
+		try
+		{
+			return Long.parseLong((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Integer value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -275,11 +307,14 @@ public final class StatsSet
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).longValue();
-		try {
-			return Long.parseLong((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Long value required, but found: "+val);
+			return ((Number) val).longValue();
+		try
+		{
+			return Long.parseLong((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Long value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -288,17 +323,20 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return float : value associated to the key
 	 */
-	public float  getFloat(String name)
+	public float getFloat(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Float value required, but not specified");
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).floatValue();
-		try {
-			return (float)Double.parseDouble((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Float value required, but found: "+val);
+			return ((Number) val).floatValue();
+		try
+		{
+			return (float) Double.parseDouble((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -315,11 +353,14 @@ public final class StatsSet
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).floatValue();
-		try {
-			return (float)Double.parseDouble((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Float value required, but found: "+val);
+			return ((Number) val).floatValue();
+		try
+		{
+			return (float) Double.parseDouble((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -332,13 +373,16 @@ public final class StatsSet
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Float value required, but not specified");
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but not specified");
 		if (val instanceof Number)
-			return ((Number)val).doubleValue();
-		try {
-			return Double.parseDouble((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Float value required, but found: "+val);
+			return ((Number) val).doubleValue();
+		try
+		{
+			return Double.parseDouble((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -355,11 +399,14 @@ public final class StatsSet
 		if (val == null)
 			return deflt;
 		if (val instanceof Number)
-			return ((Number)val).doubleValue();
-		try {
-			return Double.parseDouble((String)val);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Float value required, but found: "+val);
+			return ((Number) val).doubleValue();
+		try
+		{
+			return Double.parseDouble((String) val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Float value required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -368,11 +415,11 @@ public final class StatsSet
 	 * @param name : String designating the key in the set
 	 * @return String : value associated to the key
 	 */
-	public String  getString(String name)
+	public String getString(String name)
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("String value required, but not specified");
+			throw new IllegalArgumentException("String value required for \"" + name + "\", but not specified");
 		return String.valueOf(val);
 	}
 	
@@ -383,7 +430,7 @@ public final class StatsSet
 	 * @param deflt : String designating the default value if value associated with the key is null
 	 * @return String : value associated to the key
 	 */
-	public String  getString(String name, String deflt)
+	public String getString(String name, String deflt)
 	{
 		Object val = _set.get(name);
 		if (val == null)
@@ -403,13 +450,16 @@ public final class StatsSet
 	{
 		Object val = _set.get(name);
 		if (val == null)
-			throw new IllegalArgumentException("Enum value of type "+enumClass.getName()+" required, but not specified");
+			throw new IllegalArgumentException("Enum value of type " + enumClass.getName() + " required for \"" + name + "\", but not specified");
 		if (enumClass.isInstance(val))
-			return (T)val;
-		try {
+			return (T) val;
+		try
+		{
 			return Enum.valueOf(enumClass, String.valueOf(val));
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Enum value of type "+enumClass.getName()+" required, but found: "+val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Enum value of type " + enumClass.getName() + " required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -428,11 +478,14 @@ public final class StatsSet
 		if (val == null)
 			return deflt;
 		if (enumClass.isInstance(val))
-			return (T)val;
-		try {
+			return (T) val;
+		try
+		{
 			return Enum.valueOf(enumClass, String.valueOf(val));
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Enum value of type "+enumClass.getName()+"required, but found: "+val);
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Enum value of type " + enumClass.getName() + "required for \"" + name + "\", but found: " + val);
 		}
 	}
 	
@@ -469,16 +522,16 @@ public final class StatsSet
 	/**
 	 * Safe version of "set". Expected values are within [min, max[<br>
 	 * Add the int hold in param "value" for the key "name".
-	 * 
+	 *
 	 * @param name : String designating the key in the set
 	 * @param value : int corresponding to the value associated with the key
 	 */
 	public void safeSet(String name, int value, int min, int max, String reference)
 	{
-		assert !((min <= max && (value < min || value >= max)));
-		if (min <= max && (value < min || value >= max))
+		assert !(((min <= max) && ((value < min) || (value >= max))));
+		if ((min <= max) && ((value < min) || (value >= max)))
 		{
-			Log.log(Level.SEVERE, "Incorrect value: "+value+"for: "+name+ "Ref: "+ reference);
+			Log.log(Level.SEVERE, "Incorrect value: " + value + "for: " + name + "Ref: " + reference);
 		}
 		
 		set(name, value);

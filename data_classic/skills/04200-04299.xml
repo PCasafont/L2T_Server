@@ -650,6 +650,7 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="skillRadius" val="200" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="60" landRate="100" stackLvl="1" stackType="reuse_delay_up">
 				<effect type="Debuff" val="0" />
@@ -714,6 +715,7 @@
 		<set name="castRange" val="2000" />
 		<set name="effectRange" val="2500" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal count="1200" duration="3" stackLvl="9" stackType="poison" visualEffect="poison">
 				<effect type="DamOverTime" val="294" />
@@ -959,6 +961,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="1200" stackLvl="99" stackType="speed_down">
 				<effect type="Debuff" val="0" />

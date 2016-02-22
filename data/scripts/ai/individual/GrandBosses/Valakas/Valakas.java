@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.GrandBosses.Valakas;
 
 import java.util.ArrayList;
@@ -56,79 +57,56 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Valakas AI (Based on Kerberos work)
  */
 
 public class Valakas extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug 	= false;
-	private static final String		_qn		= "Valakas";
-
+	private static final boolean _debug = false;
+	private static final String _qn = "Valakas";
+	
 	//Id's
-	private static final int		_valakasRecoveryId			= 4691;
-	private static final int		_lavasaurusAlpha			= 29029;
-	private static final int		_valakasId					= 29028;
-	private static final int[]		_gatekeepersOfFireDragons 	= {31384, 31686, 31687};
-	private static final int		_klein						= 31540;
-	private static final int		_heartOfVolkano				= 31385;
-	private static final int		_teleportCubic				= 31759;
-	private static final L2BossZone	_bossZone 					= GrandBossManager.getInstance().getZone(212852, -114842, -1632);
+	private static final int _valakasRecoveryId = 4691;
+	private static final int _lavasaurusAlpha = 29029;
+	private static final int _valakasId = 29028;
+	private static final int[] _gatekeepersOfFireDragons = { 31384, 31686, 31687 };
+	private static final int _klein = 31540;
+	private static final int _heartOfVolkano = 31385;
+	private static final int _teleportCubic = 31759;
+	private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(212852, -114842, -1632);
 	
 	//Skills
-	private static final SkillHolder VALAKAS_LAVA_SKIN 			= new SkillHolder(4680, 1);
-	private static final SkillHolder[] VALAKAS_REGULAR_SKILLS 	=
-	{
-		new SkillHolder(4681, 1), // Valakas Trample
-		new SkillHolder(4682, 1), // Valakas Trample
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
+	private static final SkillHolder VALAKAS_LAVA_SKIN = new SkillHolder(4680, 1);
+	private static final SkillHolder[] VALAKAS_REGULAR_SKILLS = { new SkillHolder(4681, 1), // Valakas Trample
+	new SkillHolder(4682, 1), // Valakas Trample
+	new SkillHolder(4683, 1), // Valakas Dragon Breath
+	new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
 	};
 	
-	private static final SkillHolder[] VALAKAS_LOWHP_SKILLS 	=
-	{
-		new SkillHolder(4681, 1), // Valakas Trample
-		new SkillHolder(4682, 1), // Valakas Trample
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
-		new SkillHolder(4690, 1), // Valakas Meteor Storm
+	private static final SkillHolder[] VALAKAS_LOWHP_SKILLS = { new SkillHolder(4681, 1), // Valakas Trample
+	new SkillHolder(4682, 1), // Valakas Trample
+	new SkillHolder(4683, 1), // Valakas Dragon Breath
+	new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
+	new SkillHolder(4690, 1), // Valakas Meteor Storm
 	};
 	
-	private static final SkillHolder[] VALAKAS_AOE_SKILLS		=
-	{
-		new SkillHolder(4683, 1), // Valakas Dragon Breath
-		new SkillHolder(4684, 1), // Valakas Dragon Breath
-		new SkillHolder(4685, 1), // Valakas Tail Stomp
-		new SkillHolder(4686, 1), // Valakas Tail Stomp
-		new SkillHolder(4688, 1), // Valakas Stun
-		new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
-		new SkillHolder(4690, 1), // Valakas Meteor Storm
+	private static final SkillHolder[] VALAKAS_AOE_SKILLS = { new SkillHolder(4683, 1), // Valakas Dragon Breath
+	new SkillHolder(4684, 1), // Valakas Dragon Breath
+	new SkillHolder(4685, 1), // Valakas Tail Stomp
+	new SkillHolder(4686, 1), // Valakas Tail Stomp
+	new SkillHolder(4688, 1), // Valakas Stun
+	new SkillHolder(4689, 1), // Valakas Fear TODO: has two levels only level one is used.
+	new SkillHolder(4690, 1), // Valakas Meteor Storm
 	};
-		
+	
 	//Others
-	private L2Playable 		_actualVictim; 
-	private static L2Npc	_valakasBoss;
-	private static long		_LastAction;
-
-	private static final Location _teleportCubicLocs	[] =
-	{
-		new Location(214880, -116144, -1644),
-		new Location(213696, -116592, -1644),
-		new Location(212112, -116688, -1644),
-		new Location(211184, -115472, -1664),
-		new Location(210336, -114592, -1644),
-		new Location(211360, -113904, -1644),
-		new Location(213152, -112352, -1644),
-		new Location(214032, -113232, -1644),
-		new Location(214752, -114592, -1644),
-		new Location(209824, -115568, -1421),
-		new Location(210528, -112192, -1403),
-		new Location(213120, -111136, -1408),
-		new Location(215184, -111504, -1392),
-		new Location(215456, -117328, -1392),
-		new Location(213200, -118160, -1424)
-	};
+	private L2Playable _actualVictim;
+	private static L2Npc _valakasBoss;
+	private static long _LastAction;
+	
+	private static final Location _teleportCubicLocs[] = { new Location(214880, -116144, -1644), new Location(213696, -116592, -1644), new Location(212112, -116688, -1644), new Location(211184, -115472, -1664), new Location(210336, -114592, -1644), new Location(211360, -113904, -1644), new Location(213152, -112352, -1644), new Location(214032, -113232, -1644), new Location(214752, -114592, -1644), new Location(209824, -115568, -1421), new Location(210528, -112192, -1403), new Location(213120, -111136, -1408), new Location(215184, -111504, -1392), new Location(215456, -117328, -1392), new Location(213200, -118160, -1424) };
 	
 	public Valakas(int id, String name, String descr)
 	{
@@ -178,10 +156,10 @@ public class Valakas extends L2AttackableAIScript
 			else
 			{
 				if (!_debug)
-				{	
-					if (vallyStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+				{
+					if ((vallyStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
 						return null;
-					else if (vallyStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					else if ((vallyStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
 						return null;
 					else if (vallyStatus == GrandBossManager.getInstance().FIGHTING)
 						return "31385-03.html";
@@ -200,7 +178,7 @@ public class Valakas extends L2AttackableAIScript
 			if (_debug)
 				allPlayers.add(player);
 			else
-				allPlayers.addAll(Config.VALAKAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+				allPlayers.addAll(Config.VALAKAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			
 			for (L2PcInstance enterPlayer : allPlayers)
 			{
@@ -227,7 +205,7 @@ public class Valakas extends L2AttackableAIScript
 		{
 			DoorTable.getInstance().getDoor(25140006).openMe();
 		}
-		else if(npc.getNpcId() == _klein)
+		else if (npc.getNpcId() == _klein)
 		{
 			int playerCount = _bossZone.getPlayersInside().size();
 			if (playerCount < 50)
@@ -248,7 +226,7 @@ public class Valakas extends L2AttackableAIScript
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("unlock_valakas"))
 		{
@@ -268,7 +246,7 @@ public class Valakas extends L2AttackableAIScript
 			_valakasBoss.setIsInvul(true);
 			_valakasBoss.disableCoreAI(true);
 			
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance)_valakasBoss);
+			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) _valakasBoss);
 			GrandBossManager.getInstance().setBossStatus(_valakasId, GrandBossManager.getInstance().FIGHTING);
 			
 			_LastAction = System.currentTimeMillis();
@@ -289,7 +267,7 @@ public class Valakas extends L2AttackableAIScript
 			_bossZone.sendDelayedPacketToZone(15430, new SpecialCamera(_valakasBoss.getObjectId(), 700, 150, 30, 0, 10000, -10, 60, 1, 0));
 			_bossZone.sendDelayedPacketToZone(16830, new SpecialCamera(_valakasBoss.getObjectId(), 1200, 150, 20, 2900, 10000, -10, 30, 1, 0));
 			_bossZone.sendDelayedPacketToZone(23530, new SpecialCamera(_valakasBoss.getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
-
+			
 			startQuestTimer("valakas_last_spawn_task", 26000, null, null);
 		}
 		else if (event.equalsIgnoreCase("valakas_last_spawn_task"))
@@ -325,7 +303,7 @@ public class Valakas extends L2AttackableAIScript
 					_actualVictim = getRandomTarget();
 				
 				if (_debug)
-					Log.warning(getName() +": " + (_actualVictim != null ? _actualVictim.getName() : " victim is null!"));
+					Log.warning(getName() + ": " + (_actualVictim != null ? _actualVictim.getName() : " victim is null!"));
 				
 				// If result is still null, Valakas will roam. Don't go deeper in skill AI.
 				if (_actualVictim == null)
@@ -341,12 +319,12 @@ public class Valakas extends L2AttackableAIScript
 						
 						if (GeoData.getInstance().canMoveFromToTarget(x, y, z, posX, posY, z, _valakasBoss.getInstanceId()))
 							_valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(posX, posY, z, 0));
-					}	
+					}
 				}
 				else
-				{	
+				{
 					final L2Skill skill = getRandomSkill().getSkill();
-						
+					
 					// Cast the skill or follow the target.
 					if (Util.checkIfInRange((skill.getCastRange() < 600) ? 600 : skill.getCastRange(), _valakasBoss, _actualVictim, true))
 					{
@@ -361,7 +339,7 @@ public class Valakas extends L2AttackableAIScript
 						_valakasBoss.setIsCastingNow(false);
 					}
 				}
-			}	
+			}
 		}
 		else if (event.equalsIgnoreCase("check_activity_task"))
 		{
@@ -370,7 +348,7 @@ public class Valakas extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("valakas_recovery_task"))
 		{
-			if (_valakasBoss != null && !_valakasBoss.isDead())
+			if ((_valakasBoss != null) && !_valakasBoss.isDead())
 			{
 				L2Abnormal valakasRecovery = _valakasBoss.getFirstEffect(_valakasRecoveryId);
 				if (valakasRecovery == null)
@@ -413,13 +391,13 @@ public class Valakas extends L2AttackableAIScript
 			notifyEvent("cancel_timers", null, null);
 			
 			_bossZone.oustAllPlayers();
-
+			
 			if (_valakasBoss != null)
 				_valakasBoss.deleteMe();
 			
 			for (L2Npc raidMobs : _bossZone.getNpcsInside())
 			{
-				raidMobs.getSpawn().stopRespawn();		
+				raidMobs.getSpawn().stopRespawn();
 				raidMobs.deleteMe();
 			}
 			
@@ -430,7 +408,7 @@ public class Valakas extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onAttack (L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		if (_debug)
 			Log.warning(getName() + ": onAttack: " + npc.getName());
@@ -443,14 +421,14 @@ public class Valakas extends L2AttackableAIScript
 				_bossZone.oustAllPlayers();
 			
 			//Anti BUGGERS
-			if (!_bossZone.isInsideZone(attacker))	//Character attacking out of zone
+			if (!_bossZone.isInsideZone(attacker)) //Character attacking out of zone
 			{
 				attacker.doDie(null);
 				if (_debug)
 					Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 			}
 			
-			if (!_bossZone.isInsideZone(npc))	//Npc moved out of the zone 
+			if (!_bossZone.isInsideZone(npc)) //Npc moved out of the zone
 			{
 				int[] randPoint = _bossZone.getZone().getRandomPoint();
 				npc.teleToLocation(randPoint[0], randPoint[1], randPoint[2]);
@@ -497,11 +475,12 @@ public class Valakas extends L2AttackableAIScript
 			// Start the zone when the cameras ends
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					_bossZone.startWholeZone();
 				}
-			}, 17000);			
+			}, 17000);
 			
 			startQuestTimer("unlock_valakas", GrandBossManager.getInstance().getUnlockTime(_valakasId), null, null);
 			startQuestTimer("end_valakas", 900000, null, null);
@@ -532,15 +511,14 @@ public class Valakas extends L2AttackableAIScript
 		List<L2Playable> result = new ArrayList<L2Playable>();
 		for (L2Character obj : _valakasBoss.getKnownList().getKnownCharacters())
 		{
-			if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance || obj.getZ() > _valakasBoss.getZ() + 200)
+			if ((obj == null) || (obj instanceof L2PetInstance) || (obj instanceof L2SummonInstance) || (obj.getZ() > (_valakasBoss.getZ() + 200)))
 				continue;
-			else if (!obj.isDead() && obj instanceof L2Playable)
+			else if (!obj.isDead() && (obj instanceof L2Playable))
 				result.add((L2Playable) obj);
 		}
 		
 		return (result.isEmpty()) ? null : result.get(Rnd.get(result.size()));
 	}
-	
 	
 	@Override
 	public final String onEnterZone(L2Character character, L2ZoneType zone)
@@ -548,7 +526,7 @@ public class Valakas extends L2AttackableAIScript
 		if (character instanceof L2PcInstance)
 		{
 			if (GrandBossManager.getInstance().getBossStatus(_valakasId) == GrandBossManager.getInstance().WAITING)
-				character.sendPacket(new ExSendUIEvent(0, 0, (int)(TimeUnit.MILLISECONDS.toSeconds((_LastAction + Config.VALAKAS_WAIT_TIME * 60000) - System.currentTimeMillis())) , 0, "Valakas is coming..."));
+				character.sendPacket(new ExSendUIEvent(0, 0, (int) (TimeUnit.MILLISECONDS.toSeconds((_LastAction + (Config.VALAKAS_WAIT_TIME * 60000)) - System.currentTimeMillis())), 0, "Valakas is coming..."));
 		}
 		return null;
 	}

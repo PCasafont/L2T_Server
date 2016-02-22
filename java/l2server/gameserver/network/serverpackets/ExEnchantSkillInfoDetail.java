@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -21,7 +22,7 @@ import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * 
+ *
  * @author KenM
  */
 public class ExEnchantSkillInfoDetail extends L2GameServerPacket
@@ -59,7 +60,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 		}
 		
 		if (esd == null)
-			throw new IllegalArgumentException("Skill "+skillId + " dont have enchant data for level "+skillLvl);
+			throw new IllegalArgumentException("Skill " + skillId + " dont have enchant data for level " + skillLvl);
 		
 		_chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
 		_sp = esd.getSpCost();
@@ -71,18 +72,19 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			_multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
 		else if (type == TYPE_UNTRAIN_ENCHANT)
 			_sp = (int) (0.8 * _sp);
-		_adenacount = esd.getAdenaCost() * _multi;
+		_adenacount = Config.isServer(Config.DREAMS) && (type == TYPE_IMMORTAL_ENCHANT) ? 0 : esd.getAdenaCost() * _multi;
+		
 		_type = type;
 		_skillId = skillId;
 		_skillLvl = skillLvl;
-		_skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
+		_skillEnch = (skillEnchRoute * 1000) + skillEnchLvl;
 		
 		_reqCount = 1;
 		switch (type)
 		{
 			case TYPE_NORMAL_ENCHANT:
 				_bookId = esd.getRange().getNormalBook();
-				if (skillEnchLvl % 10 > 1)
+				if ((skillEnchLvl % 10) > 1)
 					_reqCount = 0;
 				break;
 			case TYPE_SAFE_ENCHANT:
@@ -101,28 +103,20 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 				return;
 		}
 		
-		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
+		if ((type != TYPE_SAFE_ENCHANT) && !Config.ES_SP_BOOK_NEEDED)
 			_reqCount = 0;
 	}
 	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-	@Override
-	public String getType()
-	{
-		return "[S] FE:5E ExEnchantSkillInfoDetail";
-	}
 	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x5f);
-		
 		writeD(_type);
 		writeD(_skillId);
 		writeH(_skillLvl);
@@ -135,5 +129,4 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 		writeD(_bookId); // ItemId Required
 		writeD(_reqCount);
 	}
-	
 }

@@ -79,7 +79,7 @@ class Quest (JQuest) :
                htmltext = Quest.getAlreadyCompletedMsg(player)
 
         elif npcId == Sione :
-            if player.getClassId() != 124 or player.getLevel() < 18:
+            if player.getClassId().getId() != 124 or player.getLevel() < 18:
                 htmltext = "32195-00.htm"
                 st.exitQuest(1)
             elif id == State.CREATED :

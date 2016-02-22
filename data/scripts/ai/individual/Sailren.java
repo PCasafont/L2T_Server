@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import java.util.ArrayList;
@@ -48,17 +49,15 @@ public class Sailren extends L2AttackableAIScript
 	private static final int VELO = 22223;
 	private static final int PTERO = 22199;
 	private static final int TREX = 22217;
-
+	
 	private static final int GUARD1 = 22196; // Velociraptor
 	private static final int GUARD2 = 22199; // Pterosaur
 	private static final int GUARD3 = 22217; // Tyrannosaurus
-
 	
-	//Locations		
+	//Locations
 	private static final int SAILREN_X = 27333;
 	private static final int SAILREN_Y = -6835;
 	private static final int SAILREN_Z = -1970;
-	
 	
 	private static final int MOBS_X = 27213;
 	private static final int MOBS_Y = -6539;
@@ -67,23 +66,22 @@ public class Sailren extends L2AttackableAIScript
 	private static final int SPAWN_X = 27190;
 	private static final int SPAWN_Y = -7163;
 	private static final int SPAWN_Z = -1968;
-		
-	//requirements 
+	
+	//requirements
 	private static final int REQUIRED_ITEM = 8784;
 	private static final int MIN_PLAYERS = 2;
 	private static final int MAX_PLAYERS = 9;
 	private static final int MIN_LEVEL = 70;
 	
 	//SAILREN Status Tracking :
-	private static final byte DORMANT = 0;		//SAILREN is spawned and no one has entered yet. Entry is unlocked
-	private static final byte FIGHTING = 1; 	//SAILREN is engaged in battle, annihilating his foes. Entry is locked
-	private static final byte DEAD = 2;			//SAILREN has been killed. Entry is locked
+	private static final byte DORMANT = 0; //SAILREN is spawned and no one has entered yet. Entry is unlocked
+	private static final byte FIGHTING = 1; //SAILREN is engaged in battle, annihilating his foes. Entry is locked
+	private static final byte DEAD = 2; //SAILREN has been killed. Entry is locked
 	
 	private L2BossZone _Zone = null;
 	
 	private List<L2PcInstance> _playersInside = new ArrayList<L2PcInstance>();
 	private ArrayList<Integer> _allowedPlayers = new ArrayList<Integer>();
-	
 	
 	// Task
 	protected ScheduledFuture<?> _activityCheckTask = null;
@@ -92,21 +90,12 @@ public class Sailren extends L2AttackableAIScript
 	
 	private List<L2Npc> velos;
 	
-	private static int[] MOBS = 
-	{
-		SAILREN,
-		GUARD1,
-		GUARD2,
-		GUARD3,
-		22198,
-		22223,
-		22218
-	};
+	private static int[] MOBS = { SAILREN, GUARD1, GUARD2, GUARD3, 22198, 22223, 22218 };
 	
 	public Sailren(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-
+		
 		addStartNpc(MANAGER);
 		addTalkId(MANAGER);
 		addTalkId(CUBE);
@@ -124,15 +113,15 @@ public class Sailren extends L2AttackableAIScript
 			if (temp > 0)
 				startQuestTimer("SAILREN_unlock", temp, null, null);
 			else
-				GrandBossManager.getInstance().setBossStatus(SAILREN,DORMANT);
+				GrandBossManager.getInstance().setBossStatus(SAILREN, DORMANT);
 		}
 		else if (status != DORMANT)
-			GrandBossManager.getInstance().setBossStatus(SAILREN,DORMANT);
+			GrandBossManager.getInstance().setBossStatus(SAILREN, DORMANT);
 		
 	}
 	
 	private boolean checkConditions(L2PcInstance player)
-	{		
+	{
 		if (player.getInventory().getItemByItemId(REQUIRED_ITEM) == null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_REQUIRED_ITEMS);
@@ -154,7 +143,7 @@ public class Sailren extends L2AttackableAIScript
 			player.sendPacket(sm);
 			return false;
 		}
-		else if (party.getMemberCount() < MIN_PLAYERS || party.getMemberCount() > MAX_PLAYERS)
+		else if ((party.getMemberCount() < MIN_PLAYERS) || (party.getMemberCount() > MAX_PLAYERS))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			player.sendPacket(sm);
@@ -188,7 +177,7 @@ public class Sailren extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onAdvEvent (String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("start"))
 		{
@@ -207,9 +196,9 @@ public class Sailren extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("spawn"))
 		{
-			L2GrandBossInstance Sailren = (L2GrandBossInstance)addSpawn(SAILREN, SAILREN_X, SAILREN_Y, SAILREN_Z, 27306, false, 0);
+			L2GrandBossInstance Sailren = (L2GrandBossInstance) addSpawn(SAILREN, SAILREN_X, SAILREN_Y, SAILREN_Z, 27306, false, 0);
 			GrandBossManager.getInstance().addBoss(Sailren);
-		
+			
 			_Zone.broadcastPacket(new SpecialCamera(Sailren.getObjectId(), 300, 275, 0, 1200, 10000));
 			_Zone.broadcastPacket(new MagicSkillUse(Sailren, Sailren, 5090, 1, 10000, 0, 0));
 			
@@ -223,29 +212,29 @@ public class Sailren extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("Sailren_unlock"))
 		{
-			GrandBossManager.getInstance().setBossStatus(SAILREN,DORMANT);
+			GrandBossManager.getInstance().setBossStatus(SAILREN, DORMANT);
 		}
 		
 		return null;
 	}
 	
 	@Override
-	public String onAttack (L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		_LastAction = System.currentTimeMillis();
 		
 		return null;
 	}
 	
-
 	private class CheckActivity implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			long temp = (System.currentTimeMillis() - _LastAction);
 			if (temp > INACTIVITYTIME)
 			{
-				GrandBossManager.getInstance().setBossStatus(SAILREN,DORMANT);
+				GrandBossManager.getInstance().setBossStatus(SAILREN, DORMANT);
 				_activityCheckTask.cancel(false);
 				_allowedPlayers.clear();
 				_playersInside.clear();
@@ -254,7 +243,7 @@ public class Sailren extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onTalk (L2Npc npc, L2PcInstance player)
+	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = "";
 		if (npc.getNpcId() == MANAGER)
@@ -277,7 +266,7 @@ public class Sailren extends L2AttackableAIScript
 					}
 					
 					_Zone.setAllowedPlayers(_allowedPlayers);
-
+					
 					for (L2PcInstance member : player.getParty().getPartyMembers())
 					{
 						if (member != null)
@@ -314,27 +303,28 @@ public class Sailren extends L2AttackableAIScript
 		
 		return htmltext;
 	}
-
+	
 	@Override
-	public String onKill (L2Npc npc, L2PcInstance killer, boolean isPet)
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
 		if (npc.getNpcId() == SAILREN)
 		{
 			_activityCheckTask.cancel(false);
-			GrandBossManager.getInstance().setBossStatus(SAILREN,DEAD);
-			long respawnTime = (long)Config.SAILREN_INTERVAL_SPAWN + Rnd.get(Config.SAILREN_RANDOM_SPAWN);
+			GrandBossManager.getInstance().setBossStatus(SAILREN, DEAD);
+			long respawnTime = (long) Config.SAILREN_INTERVAL_SPAWN + Rnd.get(Config.SAILREN_RANDOM_SPAWN);
 			startQuestTimer("Sailren_unlock", respawnTime, npc, null);
 			// also save the respawn time so that the info is maintained past reboots
 			StatsSet info = GrandBossManager.getInstance().getStatsSet(SAILREN);
-			info.set("respawn_time",(System.currentTimeMillis()) + respawnTime);
-			GrandBossManager.getInstance().setStatsSet(SAILREN,info);
+			info.set("respawn_time", (System.currentTimeMillis()) + respawnTime);
+			GrandBossManager.getInstance().setStatsSet(SAILREN, info);
 			L2Npc cube = addSpawn(CUBE, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
 			startQuestTimer("despawn", 300000, cube, null);
 			
 		}
 		else if (npc.getNpcId() == VELO)
 		{
-			if (velos == null) return "";
+			if (velos == null)
+				return "";
 			velos.remove(npc);
 			L2PcInstance target = (L2PcInstance) npc.getTarget();
 			npc.deleteMe();
@@ -348,9 +338,9 @@ public class Sailren extends L2AttackableAIScript
 				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
 		}
-		else if (npc.getNpcId() == PTERO && npc.getTarget() instanceof L2PcInstance)
+		else if ((npc.getNpcId() == PTERO) && (npc.getTarget() instanceof L2PcInstance))
 		{
-			L2PcInstance target = (L2PcInstance)npc.getTarget();
+			L2PcInstance target = (L2PcInstance) npc.getTarget();
 			npc.deleteMe();
 			L2Npc temp = this.addSpawn(TREX, MOBS_X, MOBS_Y, MOBS_Z, 0, false, 0);
 			temp.setTarget(target);
@@ -362,12 +352,12 @@ public class Sailren extends L2AttackableAIScript
 			npc.deleteMe();
 			this.startQuestTimer("spawn", 300000, null, null);
 		}
-
+		
 		return null;
 	}
-
-    public static void main(String[] args)
-    {
-    	new Sailren(-1,"Sailren","ai");
-    }
+	
+	public static void main(String[] args)
+	{
+		new Sailren(-1, "Sailren", "ai");
+	}
 }

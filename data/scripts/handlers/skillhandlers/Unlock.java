@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -32,16 +33,13 @@ import l2server.util.Rnd;
 
 public class Unlock implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.UNLOCK,
-		L2SkillType.UNLOCK_SPECIAL
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.UNLOCK, L2SkillType.UNLOCK_SPECIAL };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		L2Object[] targetList = skill.getTargetList(activeChar);
@@ -49,7 +47,7 @@ public class Unlock implements ISkillHandler
 		if (targetList == null)
 			return;
 		
-		for (L2Object target: targets)
+		for (L2Object target : targets)
 		{
 			if (target instanceof L2DoorInstance)
 			{
@@ -82,8 +80,7 @@ public class Unlock implements ISkillHandler
 					}
 				}
 				
-				if ((!door.isOpenableBySkill() && skill.getSkillType() != L2SkillType.UNLOCK_SPECIAL)
-						|| door.getFort() != null)
+				if ((!door.isOpenableBySkill() && (skill.getSkillType() != L2SkillType.UNLOCK_SPECIAL)) || (door.getFort() != null))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_UNLOCK_DOOR));
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -94,7 +91,7 @@ public class Unlock implements ISkillHandler
 				{
 					door.openMe();
 					//if (skill.getAfterEffectId() == 0)
-						//door.onOpen();
+					//door.onOpen();
 				}
 				else
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_UNLOCK_DOOR));
@@ -102,9 +99,7 @@ public class Unlock implements ISkillHandler
 			else if (target instanceof L2ChestInstance)
 			{
 				L2ChestInstance chest = (L2ChestInstance) target;
-				if (chest.getCurrentHp() <= 0
-						|| chest.isInteracted()
-						|| activeChar.getInstanceId() != chest.getInstanceId())
+				if ((chest.getCurrentHp() <= 0) || chest.isInteracted() || (activeChar.getInstanceId() != chest.getInstanceId()))
 				{
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
@@ -137,7 +132,7 @@ public class Unlock implements ISkillHandler
 		if (skill.getSkillType() == L2SkillType.UNLOCK_SPECIAL)
 			return Rnd.get(100) < skill.getPower();
 		
-		switch (skill.getLevelHash())
+		switch (skill.getLevel())
 		{
 			case 0:
 				return false;
@@ -157,33 +152,33 @@ public class Unlock implements ISkillHandler
 		int chance = 0;
 		if (chest.getLevel() > 60)
 		{
-			if (skill.getLevelHash() < 10)
+			if (skill.getLevel() < 10)
 				return false;
 			
-			chance = (skill.getLevelHash() - 10) * 5 + 30;
+			chance = ((skill.getLevel() - 10) * 5) + 30;
 		}
 		else if (chest.getLevel() > 40)
 		{
-			if (skill.getLevelHash() < 6)
+			if (skill.getLevel() < 6)
 				return false;
 			
-			chance = (skill.getLevelHash() - 6) * 5 + 10;
+			chance = ((skill.getLevel() - 6) * 5) + 10;
 		}
 		else if (chest.getLevel() > 30)
 		{
-			if (skill.getLevelHash() < 3)
+			if (skill.getLevel() < 3)
 				return false;
-			if (skill.getLevelHash() > 12)
+			if (skill.getLevel() > 12)
 				return true;
 			
-			chance = (skill.getLevelHash() - 3) * 5 + 30;
+			chance = ((skill.getLevel() - 3) * 5) + 30;
 		}
 		else
 		{
-			if (skill.getLevelHash() > 10)
+			if (skill.getLevel() > 10)
 				return true;
 			
-			chance = skill.getLevelHash() * 5 + 35;
+			chance = (skill.getLevel() * 5) + 35;
 		}
 		
 		chance = Math.min(chance, 50);
@@ -202,9 +197,10 @@ public class Unlock implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

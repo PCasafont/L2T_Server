@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -128,7 +129,6 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	// d S
 	// d is usually 0, S is the html text starting with <html> and ending with </html>
 	//
-	private static final String _S__1B_NPCHTMLMESSAGE = "[S] 19 NpcHtmlMessage";
 	
 	private int _npcObjId;
 	private String _html;
@@ -137,7 +137,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	private boolean _validate = true;
 	
 	/**
-	 * 
+	 *
 	 * @param npcObjId
 	 * @param text
 	 * @param itemId
@@ -196,8 +196,8 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 		
 		if (content == null)
 		{
-			setHtml("<html><body>My Text is missing:<br>"+path+"</body></html>");
-			Log.warning("missing html page "+path);
+			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
+			Log.warning("missing html page " + path);
 			return false;
 		}
 		
@@ -221,17 +221,17 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 		{
 			int start = _html.indexOf("\"bypass ", i);
 			int finish = _html.indexOf("\"", start + 1);
-			if (start < 0 || finish < 0)
+			if ((start < 0) || (finish < 0))
 				break;
 			
-			if (_html.substring(start+8, start+10).equals("-h"))
+			if (_html.substring(start + 8, start + 10).equals("-h"))
 				start += 11;
 			else
 				start += 8;
 			
 			i = finish;
 			int finish2 = _html.indexOf("$", start);
-			if (finish2 < finish && finish2 > 0)
+			if ((finish2 < finish) && (finish2 > 0))
 				activeChar.addBypass2(_html.substring(start, finish2).trim());
 			else
 				activeChar.addBypass(_html.substring(start, finish).trim());
@@ -241,21 +241,9 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x19);
-		
 		writeD(_npcObjId);
 		writeS(_html);
 		writeD(_itemId);
 		writeD(_isFirstTalk ? 0x00 : 0x01);
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__1B_NPCHTMLMESSAGE;
-	}
-	
 }

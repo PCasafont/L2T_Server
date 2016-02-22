@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.logging.Level;
@@ -38,9 +39,8 @@ import l2server.log.Log;
  */
 public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 {
-	private static final String _C__D0_11_REQUESTEXSETPLEDGECRESTLARGE = "[C] D0:11 RequestExSetPledgeCrestLarge";
 	static Logger _log = Logger.getLogger(RequestExSetPledgeCrestLarge.class.getName());
-
+	
 	private int _partId;
 	private int _length;
 	private byte[] _data;
@@ -74,7 +74,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 		if (clan == null)
 			return;
 		
-		if (_length < 0)
+		if (_length <= 0)
 		{
 			activeChar.sendMessage("File transfer error.");
 			return;
@@ -89,7 +89,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 		int largeCrestId = -1;
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
 		{
-			if (_length == 0 || _data == null)
+			if ((_length == 0) || (_data == null))
 			{
 				if (clan.getLargeCrestId() == 0)
 					return;
@@ -100,7 +100,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			}
 			else
 			{
-				if (!activeChar.isGM() && clan.getHasCastle() == 0 && clan.getHasHideout() == 0)
+				if (!activeChar.isGM() && (clan.getHasCastle() == 0) && (clan.getHasHideout() == 0))
 				{
 					activeChar.sendMessage("Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
 					return;
@@ -131,19 +131,9 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			}
 		}
 		
-		if (updated && largeCrestId != -1)
+		if (updated && (largeCrestId != -1))
 		{
 			clan.changeLargeCrest(largeCrestId);
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_11_REQUESTEXSETPLEDGECRESTLARGE;
-	}
-	
 }

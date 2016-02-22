@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -43,6 +44,7 @@ public class CoupleManager
 	{
 		return SingletonHolder._instance;
 	}
+	
 	// =========================================================
 	
 	// =========================================================
@@ -104,9 +106,9 @@ public class CoupleManager
 	
 	public void createCouple(L2PcInstance player1, L2PcInstance player2)
 	{
-		if (player1 != null && player2 != null)
+		if ((player1 != null) && (player2 != null))
 		{
-			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0)
+			if ((player1.getPartnerId() == 0) && (player2.getPartnerId() == 0))
 			{
 				int _player1id = player1.getObjectId();
 				int _player2id = player2.getObjectId();
@@ -153,7 +155,7 @@ public class CoupleManager
 		int i = 0;
 		for (Couple temp : getCouples())
 		{
-			if (temp != null && temp.getId() == coupleId)
+			if ((temp != null) && (temp.getId() == coupleId))
 				return i;
 			i++;
 		}

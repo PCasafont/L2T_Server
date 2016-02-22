@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
 import java.util.Collection;
@@ -41,9 +42,7 @@ public class ObjectKnownList
 			return false;
 		
 		// Instance -1 is for GMs that can see everything on all instances
-		if (getActiveObject().getInstanceId() != -1
-				&& (object.getInstanceId() != getActiveObject().getInstanceId())
-				&& (object.getInstanceId() != getActiveObject().getObjectId()))
+		if ((getActiveObject().getInstanceId() != -1) && (object.getInstanceId() != getActiveObject().getInstanceId()) && (object.getInstanceId() != getActiveObject().getObjectId()))
 			return false;
 		
 		// Check if already know object
@@ -62,7 +61,7 @@ public class ObjectKnownList
 		if (object == null)
 			return false;
 		
-		return getActiveObject() == object || getKnownObjects().containsKey(object.getObjectId());
+		return (getActiveObject() == object) || getKnownObjects().containsKey(object.getObjectId());
 	}
 	
 	/** Remove all L2Object from _knownObjects */
@@ -129,8 +128,10 @@ public class ObjectKnownList
 						//synchronized (regi.getVisiblePlayable())
 						{
 							for (L2Object _object : vPls)
+							{
 								if (_object != getActiveObject())
 									addKnownObject(_object);
+							}
 						}
 					}
 				}
@@ -162,8 +163,7 @@ public class ObjectKnownList
 						continue;
 					
 					// Remove all objects invisible or too far
-					if (!object.isVisible()
-							|| !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
+					if (!object.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
 					{
 						oIter.remove();
 						removeKnownObject(object, true);

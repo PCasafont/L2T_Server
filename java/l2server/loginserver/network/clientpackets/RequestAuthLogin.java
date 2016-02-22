@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.loginserver.network.clientpackets;
 
 import java.net.InetAddress;
@@ -22,17 +23,17 @@ import javax.crypto.Cipher;
 
 import l2server.Config;
 import l2server.log.Log;
+import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.HackingException;
 import l2server.loginserver.LoginController;
-import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.LoginController.AuthLoginResult;
 import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.serverpackets.AccountKicked;
-import l2server.loginserver.network.serverpackets.LoginOk;
-import l2server.loginserver.network.serverpackets.ServerList;
 import l2server.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import l2server.loginserver.network.serverpackets.LoginOk;
+import l2server.loginserver.network.serverpackets.ServerList;
 
 /**
  * Format: x
@@ -41,7 +42,6 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
  */
 public class RequestAuthLogin extends L2LoginClientPacket
 {
-	
 	private byte[] _raw = new byte[256];
 	
 	private String _user;
@@ -98,7 +98,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		}
 		catch (GeneralSecurityException e)
 		{
-			Log.log(Level.INFO, "" , e);
+			Log.log(Level.INFO, "", e);
 			return;
 		}
 		
@@ -128,7 +128,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					else
 					{
 						int time = 0;
-						while (getClient().getCharsOnServ() == null && time < 10)
+						while ((getClient().getCharsOnServ() == null) && (time < 10))
 						{
 							try
 							{
@@ -178,8 +178,8 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		catch (HackingException e)
 		{
 			InetAddress address = getClient().getConnection().getInetAddress();
-			lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN*1000);
-			Log.info("Banned ("+address+") for "+Config.LOGIN_BLOCK_AFTER_BAN+" seconds, due to "+e.getConnects()+" incorrect login attempts.");
+			lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
+			Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " + e.getConnects() + " incorrect login attempts.");
 		}
 	}
 }

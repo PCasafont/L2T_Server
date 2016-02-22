@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -27,9 +28,9 @@ import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.multisell.Entry;
 import l2server.gameserver.model.multisell.Ingredient;
 import l2server.gameserver.model.multisell.ListContainer;
+import l2server.gameserver.model.multisell.MultiSellEntry;
 import l2server.gameserver.model.multisell.PreparedListContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MultiSellList;
@@ -46,7 +47,7 @@ public class MultiSell implements Reloadable
 	public static final int PC_BANG_POINTS = -100;
 	public static final int CLAN_REPUTATION = -200;
 	public static final int FAME = -300;
-	public static final int RAID_POINTS	= -500;
+	public static final int RAID_POINTS = -500;
 	
 	private final Map<String, ListContainer> _entries = new HashMap<String, ListContainer>();
 	private int _nextId = 1;
@@ -63,6 +64,7 @@ public class MultiSell implements Reloadable
 		ReloadableManager.getInstance().register("multisell", this);
 	}
 	
+	@Override
 	public final boolean reload()
 	{
 		_entries.clear();
@@ -71,6 +73,7 @@ public class MultiSell implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "All Multisells have been reloaded";
@@ -113,8 +116,7 @@ public class MultiSell implements Reloadable
 			// send list at least once even if size = 0
 			player.sendPacket(new MultiSellList(list, index));
 			index += PAGE_SIZE;
-		}
-		while (index < list.getEntries().size());
+		} while (index < list.getEntries().size());
 		
 		player.setMultiSell(list);
 	}
@@ -164,24 +166,24 @@ public class MultiSell implements Reloadable
 		{
 			case CLAN_REPUTATION:
 				// Tenkai custom - Only the clan leader can shop for clan reputation (to avoid abuse)
-				if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
+				if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
 				{
 					player.sendMessage("This item can only be acquired by a clan's leader.");
 					return false;
 				}
 				
-				player.getClan().takeReputationScore((int)amount, true);
+				player.getClan().takeReputationScore((int) amount, true);
 				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.S1_DEDUCTED_FROM_CLAN_REP);
 				smsg.addItemNumber(amount);
 				player.sendPacket(smsg);
 				return true;
 			case FAME:
-				player.setFame(player.getFame() - (int)amount);
+				player.setFame(player.getFame() - (int) amount);
 				player.sendPacket(new UserInfo(player));
 				return true;
 			case RAID_POINTS:
 				Map<Integer, Integer> points = RaidBossPointsManager.getInstance().getList(player);
-				points.put(0, points.get(0) - (int)amount);
+				points.put(0, points.get(0) - (int) amount);
 				RaidBossPointsManager.getInstance().updatePointsInDB(player, 0, points.get(0));
 				player.sendPacket(new UserInfo(player));
 				return true;
@@ -194,15 +196,15 @@ public class MultiSell implements Reloadable
 		switch (id)
 		{
 			case CLAN_REPUTATION:
-				player.getClan().addReputationScore((int)amount, true);
+				player.getClan().addReputationScore((int) amount, true);
 				break;
 			case FAME:
-				player.setFame((int)(player.getFame() + amount));
+				player.setFame((int) (player.getFame() + amount));
 				player.sendPacket(new UserInfo(player));
 				break;
 			case RAID_POINTS:
 				Map<Integer, Integer> points = RaidBossPointsManager.getInstance().getList(player);
-				points.put(0, points.get(0) + (int)amount);
+				points.put(0, points.get(0) + (int) amount);
 				RaidBossPointsManager.getInstance().updatePointsInDB(player, 0, points.get(0));
 				player.sendPacket(new UserInfo(player));
 				break;
@@ -234,6 +236,26 @@ public class MultiSell implements Reloadable
 				ListContainer list = parseDocument(doc);
 				list.setListId(_nextId++);
 				_entries.put(name, list);
+				
+				if (name.equals("app_stones"))
+				{
+					long total = 0;
+					for (MultiSellEntry entry : list.getEntries())
+					{
+						if (entry.getIngredients().get(0).getItemId() == 4037)
+							total += entry.getIngredients().get(0).getItemCount();
+					}
+					
+					for (MultiSellEntry entry : list.getEntries())
+					{
+						if (entry.getIngredients().get(0).getItemId() != 4037)
+							continue;
+						
+						int hatId = entry.getProducts().get(0).getItemId();
+						long price = entry.getIngredients().get(0).getItemCount();
+						System.out.println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" + (((10000 * price) / total) / 100.0) + "\" /> <!-- " + ItemTable.getInstance().getTemplate(hatId).getName() + " -->");
+					}
+				}
 			}
 			catch (Exception e)
 			{
@@ -256,19 +278,20 @@ public class MultiSell implements Reloadable
 				list.setApplyTaxes(n.getBool("applyTaxes", false));
 				list.setMaintainEnchantment(n.getBool("maintainEnchantment", false));
 				list.setIsChance(n.getBool("isChance", false));
+				list.setTimeLimit(n.getInt("timeLimit", 0));
 				
 				for (XmlNode d : n.getChildren())
 				{
 					if (d.getName().equalsIgnoreCase("item"))
 					{
-						Entry e = parseEntry(d, entryId++);
+						MultiSellEntry e = parseEntry(d, entryId++);
 						list.getEntries().add(e);
 					}
 				}
 			}
 			else if (n.getName().equalsIgnoreCase("item"))
 			{
-				Entry e = parseEntry(n, entryId++);
+				MultiSellEntry e = parseEntry(n, entryId++);
 				list.getEntries().add(e);
 			}
 		}
@@ -276,9 +299,9 @@ public class MultiSell implements Reloadable
 		return list;
 	}
 	
-	private final Entry parseEntry(XmlNode node, int entryId)
+	private final MultiSellEntry parseEntry(XmlNode node, int entryId)
 	{
-		final Entry entry = new Entry(entryId);
+		final MultiSellEntry entry = new MultiSellEntry(entryId);
 		
 		for (XmlNode n : node.getChildren())
 		{
@@ -328,19 +351,17 @@ public class MultiSell implements Reloadable
 	{
 		for (ListContainer list : _entries.values())
 		{
-			for (Entry ent : list.getEntries())
+			for (MultiSellEntry ent : list.getEntries())
 			{
 				for (Ingredient ing : ent.getIngredients())
 				{
 					if (!verifyIngredient(ing))
-						Log.warning("[MultiSell] can't find ingredient with itemId: "
-								+ ing.getItemId() + " in list: " + list.getListId());
+						Log.warning("[MultiSell] can't find ingredient with itemId: " + ing.getItemId() + " in list: " + list.getListId());
 				}
 				for (Ingredient ing : ent.getProducts())
 				{
 					if (!verifyIngredient(ing))
-						Log.warning("[MultiSell] can't find product with itemId: "
-								+ ing.getItemId() + " in list: " + list.getListId());
+						Log.warning("[MultiSell] can't find product with itemId: " + ing.getItemId() + " in list: " + list.getListId());
 				}
 			}
 		}

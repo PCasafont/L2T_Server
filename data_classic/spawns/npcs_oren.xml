@@ -63,7 +63,7 @@
 	<!-- [NPC_t22_19_030917_03] -->
 	<spawn npcId="30623" x="79610" y="56717" z="-1510" heading="24576" respawn="60" /> <!-- Kaien -->
 	<!-- [NPC_t22_19_030917_04] -->
-	<spawn npcId="30178" x="79091" y="53646" z="-1554" heading="0" respawn="60" /> <!-- Zenkin -->
+	<spawn npcId="30178" x="79088" y="53695" z="-1540" heading="0" respawn="60" /> <!-- Zenkin -->
 	<spawn npcId="30179" x="79088" y="53597" z="-1542" heading="0" respawn="60" /> <!-- Raudia -->
 	<!-- [NPC_t22_19_030917_05] -->
 	<spawn npcId="30180" x="79451" y="54973" z="-1541" heading="0" respawn="60" /> <!-- Sara -->
@@ -177,6 +177,12 @@
 	</group>
 	<!-- [t21_18_qmob_031130] -->
 	<spawn npcId="27166" x="64144" y="31680" z="-3760" heading="0" respawn="180" /> <!-- Abyssal Jewel 2 -->
+	<!-- [orphen_t21_18_001];[orphen_t21_18_002] -->
+	<spawn npcId="29014" respawn="172800" randomRespawn="72000"> <!-- Orfen -->
+		<randomCoord x="55024" y="17368" z="-5412" heading="0" chance="40" />
+		<randomCoord x="53504" y="21248" z="-5496" heading="0" chance="30" />
+		<randomCoord x="53248" y="24576" z="-5272" heading="0" chance="30" />
+	</spawn>
 	<!-- [orphen_t21_18_001_01] -->
 	<spawn npcId="29018" x="43656" y="17560" z="-4352" heading="0" respawn="60" /> <!-- Riba Iren -->
 	<spawn npcId="29018" x="43444" y="17332" z="-4352" heading="0" respawn="60" /> <!-- Riba Iren -->

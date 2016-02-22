@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.model.L2Object;
@@ -40,9 +41,9 @@ public class L2SkillMount extends L2Skill
 		if (!(caster instanceof L2PcInstance))
 			return;
 		
-		L2PcInstance activePlayer = (L2PcInstance)caster;
-
-		if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
+		L2PcInstance activePlayer = (L2PcInstance) caster;
+		
+		if ((activePlayer.getEvent() != null) && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
 			return;
 		
 		if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount"))
@@ -70,7 +71,7 @@ public class L2SkillMount extends L2Skill
 			return;
 		}
 		
-		if (activePlayer.getPet() != null || activePlayer.isMounted())
+		if ((activePlayer.getPet() != null) || activePlayer.isMounted())
 		{
 			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 			return;

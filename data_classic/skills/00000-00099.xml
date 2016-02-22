@@ -377,7 +377,7 @@
 		<table name="#mpConsume"> 46 47 49 50 52 53 55 56 58 59 59 61 62 64 65 67 69 70 71 73 73 75 76 77 79 80 81 83 84 85 86 88 89 90 </table>
 		<table name="#power"> 111 118 124 132 139 147 155 163 172 181 190 199 209 219 229 240 251 262 273 284 296 308 320 332 344 357 369 382 394 407 420 432 445 457 </table>
 		<set name="target" val="TARGET_FRONT_AREA" />
-		<set name="skillType" val="PDAM" />
+		<set name="skillType" val="CHARGEDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />

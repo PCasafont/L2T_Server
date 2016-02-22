@@ -3,21 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.Env;
+import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
@@ -33,9 +35,9 @@ public class EffectManaHealOverTime extends L2Effect
 	{
 		super(env, effect);
 	}
-
+	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
 	 */
 	@Override
@@ -43,7 +45,7 @@ public class EffectManaHealOverTime extends L2Effect
 	{
 		return true;
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -51,14 +53,16 @@ public class EffectManaHealOverTime extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime()
 	{
-		if (getEffected().isDead() || (getEffected() instanceof L2PcInstance
-				&& ((L2PcInstance)getEffected()).getCurrentClass().getId() == 146))
+		if (getEffected().isDead() || ((getEffected() instanceof L2PcInstance) && (((L2PcInstance) getEffected()).getCurrentClass().getId() == 146)))
+			return false;
+		
+		if (getEffected().calcStat(Stats.MANA_SHIELD_PERCENT, 0, getEffected(), null) > 0)
 			return false;
 		
 		double mp = getEffected().getCurrentMp();

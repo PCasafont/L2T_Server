@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import java.util.Collection;
@@ -45,7 +46,7 @@ public class GiantScouts extends L2AttackableAIScript
 		
 		if (GeoData.getInstance().canSeeTarget(npc, target))
 		{
-			if (!npc.isInCombat() && npc.getTarget() == null)
+			if (!npc.isInCombat() && (npc.getTarget() == null))
 				npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.SHOUT, npc.getName(), "Oh Giants, an intruder has been discovered."));
 			
 			npc.setTarget(target);
@@ -62,7 +63,7 @@ public class GiantScouts extends L2AttackableAIScript
 					if (obj instanceof L2MonsterInstance)
 					{
 						L2MonsterInstance monster = (L2MonsterInstance) obj;
-						if (( npc.getClan() != null && monster.getClan() != null) && monster.getClan().equals(npc.getClan()) && GeoData.getInstance().canSeeTarget(npc, monster))
+						if (((npc.getClan() != null) && (monster.getClan() != null)) && monster.getClan().equals(npc.getClan()) && GeoData.getInstance().canSeeTarget(npc, monster))
 						{
 							monster.setTarget(target);
 							monster.setRunning();

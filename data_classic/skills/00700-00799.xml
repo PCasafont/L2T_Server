@@ -1534,7 +1534,7 @@
 	<!-- Attacks the enemy with 4500 Power added to P. Atk. and penetrates the target with destructive energy. Momentum Stage 2 Recharge needed. Requires a fist weapon. Over-hit and Critical are possible. -->
 	<skill id="776" levels="1" name="Force of Destruction">
 		<set name="target" val="TARGET_ONE" />
-		<set name="skillType" val="PDAM" />
+		<set name="skillType" val="CHARGEDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="81" />
 		<set name="lvlDepend" val="1" />

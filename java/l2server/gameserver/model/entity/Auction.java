@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 //import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
@@ -60,10 +61,7 @@ public class Auction
 	
 	private Map<Integer, Bidder> _bidders = new HashMap<Integer, Bidder>();
 	
-	private static final String[] ItemTypeName =
-	{
-		"ClanHall"
-	};
+	private static final String[] ItemTypeName = { "ClanHall" };
 	
 	public static enum ItemTypeEnum
 	{
@@ -72,7 +70,7 @@ public class Auction
 	
 	public static class Bidder
 	{
-		private String _name;  //TODO replace with objid
+		private String _name; //TODO replace with objid
 		private String _clanName;
 		private long _bid;
 		private Calendar _timeBid;
@@ -124,6 +122,7 @@ public class Auction
 		{
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -187,6 +186,14 @@ public class Auction
 				_startingBid = rs.getLong("startingBid");
 				if (Config.CH_BID_PRICE_DIVIDER > 0)
 					_startingBid /= Config.CH_BID_PRICE_DIVIDER;
+				
+				if (!Config.isServer(Config.DREAMS))
+				{
+					if (Config.CH_BID_ITEMID == 57)
+						_startingBid *= Config.RATE_DROP_ITEMS_ID.get(57);
+					else
+						_startingBid /= 2000000;
+				}
 			}
 			statement.close();
 			loadBid();
@@ -250,7 +257,7 @@ public class Auction
 		long taskDelay = 0;
 		if (_endDate <= currentTime)
 		{
-			_endDate = currentTime + 7 * 24 * 60 * 60 * 1000;
+			_endDate = currentTime + (7 * 24 * 60 * 60 * 1000);
 			saveAuctionDate();
 		}
 		else
@@ -293,7 +300,7 @@ public class Auction
 		long requiredAdena = bid;
 		if (getHighestBidderName().equals(bidder.getClan().getLeaderName()))
 			requiredAdena = bid - getHighestBidderMaxBid();
-		if ((getHighestBidderId() > 0 && bid > getHighestBidderMaxBid()) || (getHighestBidderId() == 0 && bid >= getStartingBid()))
+		if (((getHighestBidderId() > 0) && (bid > getHighestBidderMaxBid())) || ((getHighestBidderId() == 0) && (bid >= getStartingBid())))
 		{
 			if (takeItem(bidder, requiredAdena))
 			{
@@ -311,7 +318,7 @@ public class Auction
 	{
 		if (penalty)
 			quantity *= 0.9; //take 10% tax fee if needed
-		
+			
 		// avoid overflow on return
 		L2Clan clan = ClanTable.getInstance().getClanByName(clanName);
 		if (clan == null)
@@ -326,8 +333,7 @@ public class Auction
 	/** Take Item in WHC */
 	private boolean takeItem(L2PcInstance bidder, long quantity)
 	{
-		if (bidder.getClan() != null && bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null
-				&& bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity)
+		if ((bidder.getClan() != null) && (bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null) && (bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity))
 		{
 			bidder.getClan().getWarehouse().destroyItemByItemId("Buy", Config.CH_BID_ITEMID, quantity, bidder, bidder);
 			return true;
@@ -463,12 +469,12 @@ public class Auction
 	{
 		if (ClanHallManager.getInstance().loaded())
 		{
-			if (_highestBidderId == 0 && _sellerId == 0)
+			if ((_highestBidderId == 0) && (_sellerId == 0))
 			{
 				startAutoTask();
 				return;
 			}
-			if (_highestBidderId == 0 && _sellerId > 0)
+			if ((_highestBidderId == 0) && (_sellerId > 0))
 			{
 				/** If seller haven't sell ClanHall, auction removed,
 				 *  THIS MUST BE CONFIRMED */

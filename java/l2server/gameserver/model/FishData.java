@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 public class FishData
@@ -86,37 +87,44 @@ public class FishData
 	{
 		return _hp;
 	}
+	
 	public int getHpRegen()
 	{
 		return _hpRegen;
 	}
+	
 	public int getType()
 	{
 		return _type;
 	}
+	
 	public int getGroup()
 	{
 		return _group;
 	}
+	
 	public int getFishGuts()
 	{
 		return _fishGuts;
 	}
+	
 	public int getGutsCheckTime()
 	{
 		return _gutsCheckTime;
 	}
+	
 	public int getWaitTime()
 	{
 		return _waitTime;
 	}
+	
 	public int getCombatTime()
 	{
 		return _combatTime;
 	}
+	
 	public void setType(int type)
 	{
 		_type = type;
 	}
 }
-

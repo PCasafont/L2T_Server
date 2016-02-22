@@ -105,7 +105,7 @@ class Quest (JQuest) :
    cond=st.getInt("cond")
    if id == State.CREATED :
      if npcId == 30644 :
-        if player.getClassId() in [0x01,0x13,0x20,0x2d,0x2f] :
+        if player.getClassId().ordinal() in [0x01,0x13,0x20,0x2d,0x2f] :
            if player.getLevel() >= 35 :
               htmltext = "30644-03.htm"
            else :

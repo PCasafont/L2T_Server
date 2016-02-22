@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -25,7 +26,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import l2server.Config;
 import l2server.gameserver.InstanceListManager;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
+import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.entity.Castle;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
@@ -54,14 +55,12 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	{
 	}
 	
-	public MerchantPriceConfig getMerchantPriceConfig(L2MerchantInstance npc)
+	public MerchantPriceConfig getMerchantPriceConfig(L2Character cha)
 	{
 		for (MerchantPriceConfig mpc : _mpcs.values())
 		{
-			if (npc.getWorldRegion() != null && npc.getWorldRegion().containsZone(mpc.getZoneId()))
-			{
+			if ((cha.getWorldRegion() != null) && cha.getWorldRegion().containsZone(mpc.getZoneId()))
 				return mpc;
-			}
 		}
 		return _defaultMpc;
 	}
@@ -129,7 +128,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 				throw new IllegalStateException("Must define the priceConfig 'baseTax'");
 			else
 				baseTax = n.getInt("baseTax");
-
+			
 			int castleId = n.getInt("castleId", -1);
 			int zoneId = n.getInt("zoneId", -1);
 			
@@ -138,11 +137,12 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		return null;
 	}
 	
+	@Override
 	public void load()
 	{
 		try
 		{
-			this.loadXML();
+			loadXML();
 			Log.info("MerchantPriceConfigTable: Loaded " + _mpcs.size() + " merchant price configs.");
 		}
 		catch (Exception e)
@@ -151,6 +151,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		}
 	}
 	
+	@Override
 	public void updateReferences()
 	{
 		for (final MerchantPriceConfig mpc : _mpcs.values())
@@ -159,12 +160,13 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		}
 	}
 	
+	@Override
 	public void activateInstances()
 	{
 	}
 	
 	/**
-	 * 
+	 *
 	 *
 	 * @author  KenM
 	 */
@@ -241,17 +243,17 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		
 		public double getCastleTaxRate()
 		{
-			return this.hasCastle() ? this.getCastle().getTaxRate() : 0.0;
+			return hasCastle() ? getCastle().getTaxRate() : 0.0;
 		}
 		
 		public int getTotalTax()
 		{
-			return this.hasCastle() ? (getCastle().getTaxPercent() + getBaseTax()) : getBaseTax();
+			return hasCastle() ? (getCastle().getTaxPercent() + getBaseTax()) : getBaseTax();
 		}
 		
 		public double getTotalTaxRate()
 		{
-			return this.getTotalTax() / 100.0;
+			return getTotalTax() / 100.0;
 		}
 		
 		public void updateReferences()

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -54,7 +55,7 @@ public class PledgeSkillTree
 	private void load()
 	{
 		_skillTree.clear();
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skillTrees/pledgeSkillTree.xml");
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/pledgeSkillTree.xml");
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
@@ -102,7 +103,7 @@ public class PledgeSkillTree
 							L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill == null)
 							{
-								Log.severe("[PledgeSkillTree] Skill "+skillId+" not exist, skipping");
+								Log.severe("[PledgeSkillTree] Skill " + skillId + " not exist, skipping");
 								continue;
 							}
 							
@@ -125,7 +126,7 @@ public class PledgeSkillTree
 			// the _skillTree for this class is undefined, so we give an empty list
 			
 			Log.warning("No clan skills defined!");
-			return new L2PledgeSkillLearn[]{};
+			return new L2PledgeSkillLearn[] {};
 		}
 		
 		L2Skill[] oldSkills = cha.getClan().getAllSkills();
@@ -136,13 +137,13 @@ public class PledgeSkillTree
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
+				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
+						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
 						{
 							// this is the next level of a skill that we know
 							result.add(temp);
@@ -150,7 +151,7 @@ public class PledgeSkillTree
 					}
 				}
 				
-				if (!knownSkill && temp.getLevel() == 1)
+				if (!knownSkill && (temp.getLevel() == 1))
 				{
 					// this is a new skill
 					result.add(temp);

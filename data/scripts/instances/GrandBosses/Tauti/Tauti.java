@@ -1,3 +1,4 @@
+
 package instances.GrandBosses.Tauti;
 
 import java.util.ArrayList;
@@ -26,9 +27,9 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  *  Tauti Boss - Normal/Extreme Mode
- *  
+ *
  *  Source:
  *  		- http://www.lineage2.com/en/game/patch-notes/tauti/tauti-seed-of-hellfire/tauti.php
  *  		- http://www.youtube.com/watch?v=pwuveKuGCdQ&feature=plcp
@@ -42,50 +43,27 @@ import ai.group_template.L2AttackableAIScript;
 public class Tauti extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug			= false;
-	private static final String		_qn 			= "Tauti";
+	private static final boolean _debug = false;
+	private static final String _qn = "Tauti";
 	
 	//Id's
-	private static final int	_fakeLeapTauti	= 29239;
-	private static final int	_zahakId		= 19287;
-	private static final int[]	_allMobs		= {29234, 29237, 29237, 29233, 29236, 19266};
-	private static final int[]	_enterNpcs		= {33671, 33669};	//Aku, Sizrak
-	private static final int[] 	_templates		= {218, 219};
+	private static final int _fakeLeapTauti = 29239;
+	private static final int _zahakId = 19287;
+	private static final int[] _allMobs = { 29234, 29237, 29237, 29233, 29236, 19266 };
+	private static final int[] _enterNpcs = { 33671, 33669, 80001 }; //Aku, Sizrak
+	private static final int[] _templates = { 218, 219 };
 	
 	//Skills
-	private static final L2Skill _leapAtkUp 		= SkillTable.getInstance().getInfo(16036, 1);
-	private static final L2Skill _leapAtkDown 		= SkillTable.getInstance().getInfo(16037, 1);
+	private static final L2Skill _leapAtkUp = SkillTable.getInstance().getInfo(16036, 1);
+	private static final L2Skill _leapAtkDown = SkillTable.getInstance().getInfo(16037, 1);
 	
 	//Cords
-	private static final Location[] _enterCords = 
-	{
-		new Location(-149190, 210051, -10202),
-		new Location(-149187, 209811, -10202),
-		new Location(-148795, 209815, -10202),
-		new Location(-148789, 210081, -10202),
-		new Location(-148995, 209877, -10202)
-	};
+	private static final Location[] _enterCords = { new Location(-149190, 210051, -10202), new Location(-149187, 209811, -10202), new Location(-148795, 209815, -10202), new Location(-148789, 210081, -10202), new Location(-148995, 209877, -10202) };
 	
 	//Spawns
-	private static final int[][] _zahakExtremeCords =
-	{
-		{-147580, 213653, -10056, 53698},
-		{-148034, 213214, -10056, 61229},
-		{-148038, 212574, -10056, 4019},
-		{-147589, 212110, -10056, 12426},
-		{-146941, 212114, -10056, 20521},
-		{-146488, 212574, -10056, 28677},
-		{-146490, 213216, -10056, 36842},
-		{-146944, 213668, -10056, 44997}
-	};
-
-	private static final int[][] _zahakEasyeCords =
-	{
-		{-147580, 213653, -10056, 53698},
-		{-148038, 212574, -10056, 4019},
-		{-146941, 212114, -10056, 20521},
-		{-146490, 213216, -10056, 36842}
-	};
+	private static final int[][] _zahakExtremeCords = { { -147580, 213653, -10056, 53698 }, { -148034, 213214, -10056, 61229 }, { -148038, 212574, -10056, 4019 }, { -147589, 212110, -10056, 12426 }, { -146941, 212114, -10056, 20521 }, { -146488, 212574, -10056, 28677 }, { -146490, 213216, -10056, 36842 }, { -146944, 213668, -10056, 44997 } };
+	
+	private static final int[][] _zahakEasyeCords = { { -147580, 213653, -10056, 53698 }, { -148038, 212574, -10056, 4019 }, { -146941, 212114, -10056, 20521 }, { -146490, 213216, -10056, 36842 } };
 	
 	private class TautiWorld extends InstanceWorld
 	{
@@ -97,8 +75,8 @@ public class Tauti extends L2AttackableAIScript
 		
 		public TautiWorld()
 		{
-			_fakeTautis 		= new ArrayList<L2Npc>();
-			isHardMode			= false;
+			_fakeTautis = new ArrayList<L2Npc>();
+			isHardMode = false;
 		}
 	}
 	
@@ -107,7 +85,7 @@ public class Tauti extends L2AttackableAIScript
 		super(questId, name, descr);
 		
 		for (int id : _allMobs)
-		{	
+		{
 			addAttackId(id);
 			addKillId(id);
 			addSpellFinishedId(id);
@@ -126,7 +104,7 @@ public class Tauti extends L2AttackableAIScript
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onSpellFinished: " + skill.getName());
+			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
 		
 		InstanceWorld wrld = null;
 		if (npc != null)
@@ -139,21 +117,21 @@ public class Tauti extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof TautiWorld)
+		if ((wrld != null) && (wrld instanceof TautiWorld))
 		{
-			TautiWorld world = (TautiWorld)wrld;
+			TautiWorld world = (TautiWorld) wrld;
 			if (npc.getNpcId() == world.TautiId)
-			{	
-				switch(skill.getId())
+			{
+				switch (skill.getId())
 				{
 					case 15200: //Tauti Ultra Whirlwind
 						if (!world.isHardMode)
-							InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801783, 0 , true, 5000)); //You rat-like creatures! Taste my attack!
+							InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801783, 0, true, 5000)); //You rat-like creatures! Taste my attack!
 						break;
-						
+					
 					case 15202: //Tauti Ultra Typhoon
 						if (!world.isHardMode)
-							InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801784, 0 , true, 5000)); //Do you think you are safe outside? Feel my strength!
+							InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801784, 0, true, 5000)); //Do you think you are safe outside? Feel my strength!
 						break;
 				}
 			}
@@ -183,34 +161,34 @@ public class Tauti extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof TautiWorld)
+		if ((wrld != null) && (wrld instanceof TautiWorld))
 		{
-			TautiWorld world = (TautiWorld)wrld;
+			TautiWorld world = (TautiWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_doors"))
 			{
 				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors())
-				{	
+				{
 					door.openMe();
 				}
-				startQuestTimer("stage_1_intro", _debug ? 60000 : 5*60000, null, player);
+				startQuestTimer("stage_1_intro", _debug ? 60000 : 5 * 60000, null, player);
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro"))
 			{
 				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors())
-				{	
+				{
 					door.closeMe();
-				}	
+				}
 				
 				//kick buggers
 				ArrayList<Integer> allowedPlayers = new ArrayList<Integer>(world.allowed);
 				for (int objId : allowedPlayers)
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
+					if ((pl != null) && pl.isOnline() && (pl.getInstanceId() == world.instanceId))
 					{
 						if (pl.getY() < 210980)
 						{
-							world.allowed.remove((Integer)pl.getObjectId());
+							world.allowed.remove((Integer) pl.getObjectId());
 							pl.logout(true);
 						}
 					}
@@ -277,7 +255,7 @@ public class Tauti extends L2AttackableAIScript
 			else if (event.equalsIgnoreCase("stage_all_leap_attack_down"))
 			{
 				if (world.status < 3)
-				{	
+				{
 					world.Tauti.setTarget(world.Tauti);
 					world.Tauti.doCast(_leapAtkDown);
 				}
@@ -285,7 +263,7 @@ public class Tauti extends L2AttackableAIScript
 			else if (event.equalsIgnoreCase("stage_2_spawn_axe"))
 			{
 				world.Tauti = addSpawn(world.TautiAxeId, -147265, 212902, -10056, 49314, false, 0, false, world.instanceId);
-				world.Tauti.setCurrentHp(world.Tauti.getMaxHp()/3);
+				world.Tauti.setCurrentHp(world.Tauti.getMaxHp() / 3);
 				world.Tauti.setIsRunning(true);
 			}
 			else if (event.equalsIgnoreCase("stage_last_finish"))
@@ -307,7 +285,7 @@ public class Tauti extends L2AttackableAIScript
 			}
 		}
 		
-		if (npc != null && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if ((npc != null) && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -332,10 +310,10 @@ public class Tauti extends L2AttackableAIScript
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof TautiWorld)
 		{
-			final TautiWorld world = (TautiWorld)tmpWorld;
+			final TautiWorld world = (TautiWorld) tmpWorld;
 			if (npc.getNpcId() == world.TautiId)
 			{
-				if (((world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.70) || (world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)))
+				if ((((world.status == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.70))) || ((world.status == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))))
 				{
 					world.status++;
 					
@@ -344,14 +322,14 @@ public class Tauti extends L2AttackableAIScript
 						L2Npc minion = addSpawn(_zahakId, loc[0], loc[1], loc[2], loc[3], false, 0, false, world.instanceId);
 						minion.setIsInvul(true);
 						minion.setIsImmobilized(true);
-						minion.broadcastPacket(new NpcSay(minion.getObjectId(), 0, minion.getNpcId(), 1801650));	//Lord Tauti, receive my Petra and be strengthened. Then, defeat these feeble wretches
+						minion.broadcastPacket(new NpcSay(minion.getObjectId(), 0, minion.getNpcId(), 1801650)); //Lord Tauti, receive my Petra and be strengthened. Then, defeat these feeble wretches
 					}
-
-					InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801649, 0 , true, 5000)); //Jahak is infusing its Petra to Tauti.
+					
+					InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1801649, 0, true, 5000)); //Jahak is infusing its Petra to Tauti.
 					
 					startQuestTimer("stage_all_unspawn_zahaks", 20000, npc, null);
 				}
-				else if (world.status == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.10) //10%
+				else if ((world.status == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.10))) //10%
 				{
 					world.status = 3;
 					
@@ -394,7 +372,7 @@ public class Tauti extends L2AttackableAIScript
 			Log.warning(getName() + ": onTalk: " + player.getName());
 		
 		int npcId = npc.getNpcId();
-		if (npcId == _enterNpcs[1])
+		if ((npcId == _enterNpcs[1]) || (npcId == _enterNpcs[2]))
 			return "Easy.html";
 		else if (npcId == _enterNpcs[0])
 			return "Hard.html";
@@ -406,15 +384,16 @@ public class Tauti extends L2AttackableAIScript
 	{
 		if (template_id == 219) //extreme mode
 		{
-			world.TautiId 		= 29234;
-			world.TautiAxeId	= 29237;
-			world.isHardMode	= true;
+			world.TautiId = 29234;
+			world.TautiAxeId = 29237;
+			world.isHardMode = true;
 			
 		}
-		else //218
+		else
+		//218
 		{
-			world.TautiId 		= 29233;
-			world.TautiAxeId	= 29236;
+			world.TautiId = 29233;
+			world.TautiAxeId = 29236;
 		}
 	}
 	
@@ -431,22 +410,22 @@ public class Tauti extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-147250, 211617, -10043);
 				}
-			}	
+			}
 			return;
 		}
 		else
 		{
-			int minPlayers = template_id == 218 ? Config.TAUTI_MIN_PLAYERS : Config.TAUTI_MIN_PLAYERS * 2;
+			int minPlayers = template_id == 218 ? Config.TAUTI_MIN_PLAYERS / 2 : Config.TAUTI_MIN_PLAYERS;
 			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, minPlayers, 35, 92, Config.MAX_LEVEL))
-			{	
+			{
 				return;
-			}	
+			}
 			
 			final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
 			world = new TautiWorld();
@@ -456,7 +435,7 @@ public class Tauti extends L2AttackableAIScript
 			
 			InstanceManager.getInstance().addWorld(world);
 			
-			setupIDs((TautiWorld)world, template_id);
+			setupIDs((TautiWorld) world, template_id);
 			
 			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 			if (_debug)
@@ -478,7 +457,7 @@ public class Tauti extends L2AttackableAIScript
 			
 			startQuestTimer("stage_1_open_doors", 5000, null, player);
 			
-			Log.fine(getName() + ": ["+template_id+"] instance started: " + instanceId + " created by player: " + player.getName());
+			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

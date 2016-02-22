@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.communitybbs.BB;
 
 import java.sql.Connection;
@@ -42,13 +43,15 @@ public class Post
 		public int postForumId;
 		public String postTxt;
 	}
+	
 	private List<CPost> _post;
+	
 	/**
 	 * @param restore
 	 * @param t
 	 */
 	//public enum ConstructorType {REPLY, CREATE };
-	public Post(String _PostOwner,int _PostOwnerID,long date,int tid,int _PostForumID,String txt)
+	public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
 	{
 		_post = new ArrayList<CPost>();
 		CPost cp = new CPost();
@@ -63,6 +66,7 @@ public class Post
 		insertindb(cp);
 		
 	}
+	
 	public void insertindb(CPost cp)
 	{
 		Connection con = null;
@@ -90,6 +94,7 @@ public class Post
 		}
 		
 	}
+	
 	public Post(Topic t)
 	{
 		_post = new ArrayList<CPost>();
@@ -108,6 +113,7 @@ public class Post
 		}
 		return null;
 	}
+	
 	public void deleteme(Topic t)
 	{
 		PostBBSManager.getInstance().delPostByTopic(t);
@@ -130,6 +136,7 @@ public class Post
 			L2DatabaseFactory.close(con);
 		}
 	}
+	
 	/**
 	 * @param t
 	 */
@@ -160,13 +167,14 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/"+t.getID()+" : " + e.getMessage(), e);
+			Log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
 		}
 		finally
 		{
 			L2DatabaseFactory.close(con);
 		}
 	}
+	
 	/**
 	 * @param i
 	 */

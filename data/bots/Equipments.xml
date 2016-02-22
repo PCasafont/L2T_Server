@@ -1,441 +1,1609 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list>
-	<jewelSets>
-		<set id="1">
-			<part id="8191"/> <!-- Frintezza's Necklace -->
-			<part id="6656"/> <!-- Antharas' Earring -->
-			<part id="21712"/> <!-- Blessed Zaken's Earring -->
-			<part id="35570"/> <!-- Tauti's Ring -->
-			<part id="6658"/> <!-- Baium's Ring -->
-		</set>
-	</jewelSets>
-	<randomSetItems>
-		<set id="1">
-			<part id="38591" /> <!-- Tiat's Belt -->
-			<part id="19455" /> <!-- Istina's Bracelet -->
-			<part id="19456" /> <!-- Istina's Shirt -->
-			<part id="38768" /> <!-- La Vie En Rose's Brilliant Brooch -->
-		</set>
-		<set id="2">
-			<part id="38592" /> <!-- Ekimus' Belt -->
-			<part id="19461" /> <!-- Octavis's Bracelet -->
-			<part id="19462" /> <!-- Octavis's Shirt -->
-			<part id="38768" /> <!-- La Vie En Rose's Brilliant Brooch -->
-		</set>
-	</randomSetItems>
-	<talismanSetItems>
-		<set id="1">
-			<part id="39572" /> <!-- Talisman - Insanity -->
-			<part id="23835" /> <!-- Talisman - Abundance - Morale -->
-			<part id="39646" /> <!-- Venir's Talisman - Stage 13 -->
-		</set>
-	</talismanSetItems>
-	<abilitySkills>
-		<!-- Mage -->
-		<set id="1">
-			<part id="19154" level="4" /> <!-- Noble Empower -->
-			<part id="19157" level="2" /> <!-- Noble Wild Magic -->
-			<part id="19175" level="2" /> <!-- Noble Life -->
-			<part id="19166" level="2" /> <!-- Noble Robe Attack -->
-			<part id="19160" level="2" /> <!-- Noble Magic Death -->
-			<part id="19165" level="4" /> <!-- Noble Robe Defense -->
-		</set>
-		<!-- Fighter -->
-		<set id="2">
-			<part id="19171" level="4" /> <!-- Noble Condition -->
-			<part id="19170" level="2" /> <!-- Noble Blessing -->
-			<part id="19139" level="4" /> <!-- Noble Might -->
-			<part id="19143" level="2" /> <!-- Noble Focus -->
-			<part id="19145" level="2" /> <!-- Noble Death Whisper -->
-			<part id="19150" level="2" /> <!-- Noble Light Armor Attack -->
-		</set>
-		<!-- Tank -->
-		<set id="3">
-			<part id="19171" level="4" /> <!-- Noble Condition -->
-			<part id="19170" level="2" /> <!-- Noble Blessing -->
-			<part id="19122" level="4" /> <!-- Noble Blessed Body -->
-			<part id="19121" level="4" /> <!-- Noble Magic Barrier -->
-			<part id="19134" level="4" /> <!-- Noble Heavy Armor Defense -->
-		</set>
-	</abilitySkills>
-	<broochesSetItems>
-		<!-- Mage Brooches -->
-		<set id="1">
-			<part id="38927" /> <!-- Sapphire - Lv. 1 -->
-			<part id="38870" /> <!-- Obsidian - Lv. 1 -->
-			<part id="38880" /> <!-- Emerald - Lv. 1 -->
-			<part id="38890" /> <!-- Diamond - Lv. 1 -->
-		</set>
-		<!-- Fighter Brooches -->
-		<set id="2">
-			<part id="38855" /> <!-- Ruby - Lv. 1 -->
-			<part id="38870" /> <!-- Obsidian - Lv. 1 -->
-			<part id="38880" /> <!-- Emerald - Lv. 1 -->
-			<part id="38895" /> <!-- Pearl - Lv. 1 -->
-		</set>
-	</broochesSetItems>
-	<hatSetItems>
-		<set id="1">
-			<part id="35801"/> <!-- Romantic Chapeau - INT -->
-			<part id="35802"/> <!-- Romantic Chapeau - WIT -->
-			<part id="35807"/> <!-- Romantic Chapeau - M. Atk. -->
-			<part id="35813"/> <!-- Angel Circlet - INT -->
-			<part id="35814"/> <!-- Angel Circlet - WIT -->
-			<part id="35818"/> <!-- Angel Circlet - M. Atk. -->
-			<part id="35824"/> <!-- Demon Circlet - INT -->
-			<part id="35825"/> <!-- Demon Circlet - WIT -->
-			<part id="35871"/> <!-- Party Hat - INT -->
-			<part id="35872"/> <!-- Party Hat - WIT -->
-			<part id="35877"/> <!-- Party Hat - M. Atk. -->
-			<part id="35883"/> <!-- Refined Angel Ring - INT -->
-			<part id="35884"/> <!-- Refined Angel Ring - WIT -->
-			<part id="35888"/> <!-- Refined Angel Ring - M. Atk. -->
-			<part id="35894"/> <!-- Refined Devil Horn - INT -->
-			<part id="35895"/> <!-- Refined Devil Horn - WIT -->
-			<part id="35919"/> <!-- Draco's Hat - INT (Event) -->
-			<part id="35920"/> <!-- Draco's Hat - WIT (Event) -->
-			<part id="35927"/> <!-- Draco's Hat - M. Atk. (Event) -->
-		</set>
-		<set id="2">
-			<part id="35797"/> <!-- Romantic Chapeau - STR -->
-			<part id="35798"/> <!-- Romantic Chapeau - DEX -->
-			<part id="35799"/> <!-- Romantic Chapeau - CON -->
-			<part id="35806"/> <!-- Romantic Chapeau - P. Atk. -->
-			<part id="35809"/> <!-- Angel Circlet - STR -->
-			<part id="35810"/> <!-- Angel Circlet - DEX -->
-			<part id="35811"/> <!-- Angel Circlet - CON -->
-			<part id="35817"/> <!-- Angel Circlet - P. Atk. -->
-			<part id="35820"/> <!-- Demon Circlet - STR -->
-			<part id="35821"/> <!-- Demon Circlet - DEX -->
-			<part id="35822"/> <!-- Demon Circlet - CON -->
-			<part id="35867"/> <!-- Party Hat - STR -->
-			<part id="35868"/> <!-- Party Hat - DEX -->
-			<part id="35869"/> <!-- Party Hat - CON -->
-			<part id="35876"/> <!-- Party Hat - P. Atk. -->
-			<part id="35879"/> <!-- Refined Angel Ring - STR -->
-			<part id="35880"/> <!-- Refined Angel Ring - DEX -->
-			<part id="35881"/> <!-- Refined Angel Ring - CON -->
-			<part id="35887"/> <!-- Refined Angel Ring - P. Atk. -->
-			<part id="35890"/> <!-- Refined Devil Horn - STR -->
-			<part id="35891"/> <!-- Refined Devil Horn - DEX -->
-			<part id="35892"/> <!-- Refined Devil Horn - CON -->
-			<part id="35915"/> <!-- Draco's Hat - STR (Event) -->
-			<part id="35916"/> <!-- Draco's Hat - DEX (Event) -->
-			<part id="35917"/> <!-- Draco's Hat - CON (Event) -->
-			<part id="35926"/> <!-- Draco's Hat - P. Atk. (Event) -->
-		</set>
-	</hatSetItems>
-	<weaponSets>
-		<!-- Dualswords -->
-		<set id="1">
-			<part id="35184"/> <!-- Dark Amaranthine Dualsword - Haste + Damage Up -->
-			<part id="35185"/> <!-- Dark Amaranthine Dualsword - Damage Up + Health -->
-			<part id="35186"/> <!-- Dark Amaranthine Dualsword - Health + Haste -->
-		</set>
-		<!-- Dagger -->
-		<set id="2">
-			<part id="35151"/> <!-- Dark Amaranthine Shaper - Guidance + Haste -->
-			<part id="35152"/> <!-- Dark Amaranthine Shaper - Haste + Focus -->
-			<part id="35153"/> <!-- Dark Amaranthine Shaper - Focus + Guidance -->
-		</set>
-		<!-- Dual Dagger -->
-		<set id="3">
-			<part id="35187"/> <!-- Dark Amaranthine Dual Dagger - Damage Up + Focus -->
-			<part id="35188"/> <!-- Dark Amaranthine Dual Dagger - Focus + Guidance -->
-			<part id="35189"/> <!-- Dark Amaranthine Dual Dagger - Guidance + Damage Up -->
-		</set>
-		<!-- Bows -->
-		<set id="4">
-			<part id="35169"/> <!-- Dark Amaranthine Thrower - Damage Up + Focus -->
-			<part id="35170"/> <!-- Dark Amaranthine Thrower - Focus + Long Blow -->
-			<part id="35171"/> <!-- Dark Amaranthine Thrower - Long Blow + Damage Up -->
-		</set>
-		<!-- Crossbow -->
-		<set id="5">
-			<part id="35172"/> <!-- Dark Amaranthine Shooter - Focus + Critical Slow -->
-			<part id="35173"/> <!-- Dark Amaranthine Shooter - Critical Slow + Haste -->
-			<part id="35174"/> <!-- Dark Amaranthine Shooter - Haste + Focus -->
-		</set>
-		<!-- Dual Blunt -->
-		<set id="6">
-			<part id="35190"/> <!-- Dark Amaranthine Dual Blunt Weapon - Focus + Guidance -->
-			<part id="35191"/> <!-- Dark Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
-			<part id="35192"/> <!-- Dark Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
-		</set>
-		<!-- Fists -->
-		<set id="7">
-			<part id="35163"/> <!-- Dark Amaranthine Fighter - Focus + Damage -->
-			<part id="35164"/> <!-- Dark Amaranthine Fighter - Damage Up + Haste -->
-			<part id="35165"/> <!-- Dark Amaranthine Fighter - Haste + Focus -->
-		</set>
-		<!-- Big Sword -->
-		<set id="8">
-			<part id="35157"/> <!-- Dark Amaranthine Slasher - Focus + Damage -->
-			<part id="35158"/> <!-- Dark Amaranthine Slasher - Damage Up + Haste -->
-			<part id="35159"/> <!-- Dark Amaranthine Slasher - Haste + Focus -->
-		</set>
-		<!-- Spear -->
-		<set id="9">
-			<part id="35166"/> <!-- Dark Amaranthine Stormer - HP Drain + Guidance -->
-			<part id="35167"/> <!-- Dark Amaranthine Stormer - Guidance + Damage Up -->
-			<part id="35168"/> <!-- Dark Amaranthine Stormer - Damage Up + HP Drain -->
-		</set>
-		<!-- Blunt Two Hands (Magic) -->
-		<set id="10">
-			<part id="35178"/> <!-- Dark Amaranthine Caster - Empower + Acumen -->
-			<part id="35179"/> <!-- Dark Amaranthine Caster - Acumen + Magic Hold -->
-			<part id="35180"/> <!-- Dark Amaranthine Caster - Magic Hold + Empower -->
-		</set>
-		<!-- Blunt (Fighter) -->
-		<set id="11">
-			<part id="35160"/> <!-- Dark Amaranthine Avenger - Haste + Critical Damage -->
-			<part id="35161"/> <!-- Dark Amaranthine Avenger - Critical Damage + Focus -->
-			<part id="35162"/> <!-- Dark Amaranthine Avenger - Focus + Haste -->
-		</set>
-		<!-- Sword (Magic) -->
-		<set id="12">
-			<part id="35175"/> <!-- Dark Amaranthine Buster - Acumen + Magic Hold -->
-			<part id="35176"/> <!-- Dark Amaranthine Buster - Magic Hold + Mana Up -->
-			<part id="35177"/> <!-- Dark Amaranthine Buster - Mana Up + Acumen -->
-		</set>
-		<!-- Sword (Fighter) -->
-		<set id="13">
-			<part id="35154"/> <!-- Dark Amaranthine Cutter - Haste + Focus -->
-			<part id="35155"/> <!-- Dark Amaranthine Cutter - Focus + Health -->
-			<part id="35156"/> <!-- Dark Amaranthine Cutter - Health + Haste -->
-		</set>
-	</weaponSets>
-	<armorSets>
-		<!-- Heavy Sets -->
-		<set id="1">
-			<part id="35033"/> <!-- Bloody Eternal Helmet - Attack Type / Heavy -->
-			<part id="35034"/> <!-- Bloody Eternal Breastplate - Attack Type / Heavy -->
-			<part id="35035"/> <!-- Bloody Eternal Gaiters - Attack Type / Heavy -->
-			<part id="35036"/> <!-- Bloody Eternal Gauntlets - Attack Type / Heavy -->
-			<part id="35037"/> <!-- Bloody Eternal Boots - Attack Type / Heavy -->
-			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
-		</set>
-		<set id="2">
-			<part id="35002"/> <!-- Dark Eternal Helmet - Attack Type / Heavy -->
-			<part id="35003"/> <!-- Dark Eternal Breastplate - Attack Type / Heavy -->
-			<part id="35004"/> <!-- Dark Eternal Gaiters - Attack Type / Heavy -->
-			<part id="35005"/> <!-- Dark Eternal Gauntlets - Attack Type / Heavy -->
-			<part id="35006"/> <!-- Dark Eternal Boots - Attack Type / Heavy -->
-			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
-		</set>
-		<set id="3">
-			<part id="19698"/> <!-- Blessed Eternal Helmet - Attack Type / Heavy -->
-			<part id="19699"/> <!-- Blessed Eternal Breastplate - Attack Type / Heavy -->
-			<part id="19700"/> <!-- Blessed Eternal Gaiters - Attack Type / Heavy -->
-			<part id="19701"/> <!-- Blessed Eternal Gauntlets - Attack Type / Heavy -->
-			<part id="19702"/> <!-- Blessed Eternal Boots - Attack Type / Heavy -->
-			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
-		</set>
-		<set id="4">
-			<part id="35048"/> <!-- Bloody Eternal Helmet - Defense Type / Heavy -->
-			<part id="35049"/> <!-- Bloody Eternal Breastplate - Defense Type / Heavy -->
-			<part id="35050"/> <!-- Bloody Eternal Gaiters - Defense Type / Heavy -->
-			<part id="35051"/> <!-- Bloody Eternal Gauntlets - Defense Type / Heavy -->
-			<part id="35052"/> <!-- Bloody Eternal Boots - Defense Type / Heavy -->
-			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
-		</set>
-		<set id="5">
-			<part id="35018"/> <!-- Dark Eternal Helmet - Defense Type / Heavy -->
-			<part id="35019"/> <!-- Dark Eternal Breastplate - Defense Type / Heavy -->
-			<part id="35020"/> <!-- Dark Eternal Gaiters - Defense Type / Heavy -->
-			<part id="35021"/> <!-- Dark Eternal Gauntlets - Defense Type / Heavy -->
-			<part id="35022"/> <!-- Dark Eternal Boots - Defense Type / Heavy -->
-			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
-		</set>
-		<set id="6">
-			<part id="19906"/> <!-- Blessed Eternal Helmet - Defense Type / Heavy -->
-			<part id="19907"/> <!-- Blessed Eternal Breastplate - Defense Type / Heavy -->
-			<part id="19908"/> <!-- Blessed Eternal Gaiters - Defense Type / Heavy -->
-			<part id="19909"/> <!-- Blessed Eternal Gauntlets - Defense Type / Heavy -->
-			<part id="19910"/> <!-- Blessed Eternal Boots - Defense Type / Heavy -->
-			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
-		</set>
-		<!-- Light Sets -->
-		<set id="7">
-			<part id="35038"/> <!-- Bloody Eternal Leather Helmet - Assassin Type / Light -->
-			<part id="35039"/> <!-- Bloody Eternal Leather Armor - Assassin Type / Light -->
-			<part id="35040"/> <!-- Bloody Eternal Leather Leggings - Assassin Type / Light -->
-			<part id="35041"/> <!-- Bloody Eternal Leather Gloves - Assassin Type / Light -->
-			<part id="35042"/> <!-- Bloody Eternal Leather Boots - Assassin Type / Light -->
-		</set>
-		<set id="8">
-			<part id="35008"/> <!-- Dark Eternal Leather Helmet - Assassin Type / Light -->
-			<part id="35009"/> <!-- Dark Eternal Leather Armor - Assassin Type / Light -->
-			<part id="35010"/> <!-- Dark Eternal Leather Leggings - Assassin Type / Light -->
-			<part id="35011"/> <!-- Dark Eternal Leather Gloves - Assassin Type / Light -->
-			<part id="35012"/> <!-- Dark Eternal Leather Boots - Assassin Type / Light -->
-		</set>
-		<set id="9">
-			<part id="19704"/> <!-- Blessed Eternal Leather Helmet - Assassin Type / Light -->
-			<part id="19705"/> <!-- Blessed Eternal Leather Armor - Assassin Type / Light -->
-			<part id="19706"/> <!-- Blessed Eternal Leather Leggings - Assassin Type / Light -->
-			<part id="19707"/> <!-- Blessed Eternal Leather Gloves - Assassin Type / Light -->
-			<part id="19708"/> <!-- Blessed Eternal Leather Boots - Assassin Type / Light -->
-		</set>
-		<set id="10">
-			<part id="35053"/> <!-- Bloody Eternal Leather Helmet - Enchant Type / Light -->
-			<part id="35054"/> <!-- Bloody Eternal Leather Armor - Enchant Type / Light -->
-			<part id="35055"/> <!-- Bloody Eternal Leather Leggings - Enchant Type / Light -->
-			<part id="35056"/> <!-- Bloody Eternal Leather Gloves - Enchant Type / Light -->
-			<part id="35057"/> <!-- Bloody Eternal Leather Boots - Enchant Type / Light -->
-		</set>
-		<set id="11">
-			<part id="35023"/> <!-- Dark Eternal Leather Helmet - Enchant Type / Light -->
-			<part id="35024"/> <!-- Dark Eternal Leather Armor - Enchant Type / Light -->
-			<part id="35025"/> <!-- Dark Eternal Leather Leggings - Enchant Type / Light -->
-			<part id="35026"/> <!-- Dark Eternal Leather Gloves - Enchant Type / Light -->
-			<part id="35027"/> <!-- Dark Eternal Leather Boots - Enchant Type / Light -->
-		</set>
-		<set id="12">
-			<part id="19912"/> <!-- Blessed Eternal Leather Helmet - Enchant Type / Light -->
-			<part id="19913"/> <!-- Blessed Eternal Leather Armor - Enchant Type / Light -->
-			<part id="19914"/> <!-- Blessed Eternal Leather Leggings - Enchant Type / Light -->
-			<part id="19915"/> <!-- Blessed Eternal Leather Gloves - Enchant Type / Light -->
-			<part id="19916"/> <!-- Blessed Eternal Leather Boots - Enchant Type / Light -->
-		</set>
-		<!-- Robe Sets -->
-		<set id="13">
-			<part id="35043"/> <!-- Bloody Eternal Circlet - Magic Type / Robe -->
-			<part id="35044"/> <!-- Bloody Eternal Tunic - Magic Type / Robe -->
-			<part id="35045"/> <!-- Bloody Eternal Stockings - Magic Type / Robe -->
-			<part id="35046"/> <!-- Bloody Eternal Gloves - Magic Type / Robe -->
-			<part id="35047"/> <!-- Bloody Eternal Shoes - Magic Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-		<set id="14">
-			<part id="35013"/> <!-- Dark Eternal Circlet - Magic Type / Robe -->
-			<part id="35014"/> <!-- Dark Eternal Tunic - Magic Type / Robe -->
-			<part id="35015"/> <!-- Dark Eternal Stockings - Magic Type / Robe -->
-			<part id="35016"/> <!-- Dark Eternal Gloves - Magic Type / Robe -->
-			<part id="35017"/> <!-- Dark Eternal Shoes - Magic Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-		<set id="15">
-			<part id="19709"/> <!-- Blessed Eternal Circlet - Magic Type / Robe -->
-			<part id="19710"/> <!-- Blessed Eternal Tunic - Magic Type / Robe -->
-			<part id="19711"/> <!-- Blessed Eternal Stockings - Magic Type / Robe -->
-			<part id="19712"/> <!-- Blessed Eternal Gloves - Magic Type / Robe -->
-			<part id="19713"/> <!-- Blessed Eternal Shoes - Magic Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-		<set id="16">
-			<part id="35058"/> <!-- Bloody Eternal Circlet - Recovery Type / Robe -->
-			<part id="35059"/> <!-- Bloody Eternal Tunic - Recovery Type / Robe -->
-			<part id="35060"/> <!-- Bloody Eternal Stockings - Recovery Type / Robe -->
-			<part id="35061"/> <!-- Bloody Eternal Gloves - Recovery Type / Robe -->
-			<part id="35062"/> <!-- Bloody Eternal Shoes - Recovery Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-		<set id="17">
-			<part id="35028"/> <!-- Dark Eternal Circlet - Recovery Type / Robe -->
-			<part id="35029"/> <!-- Dark Eternal Tunic - Recovery Type / Robe -->
-			<part id="35030"/> <!-- Dark Eternal Stockings - Recovery Type / Robe -->
-			<part id="35031"/> <!-- Dark Eternal Gloves - Recovery Type / Robe -->
-			<part id="35032"/> <!-- Dark Eternal Shoes - Recovery Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-		<set id="18">
-			<part id="19917"/> <!-- Blessed Eternal Circlet - Recovery Type / Robe -->
-			<part id="19918"/> <!-- Blessed Eternal Tunic - Recovery Type / Robe -->
-			<part id="19919"/> <!-- Blessed Eternal Stockings - Recovery Type / Robe -->
-			<part id="19920"/> <!-- Blessed Eternal Gloves - Recovery Type / Robe -->
-			<part id="19921"/> <!-- Blessed Eternal Shoes - Recovery Type / Robe -->
-			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
-		</set>
-	</armorSets>
-	<classItems>
-		<class id="139">	<!-- Sigel Knight -->
-			<presetAbilities id="3" /> <!-- Tank -->
-			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
-			<brooches id="2"/> <!-- Figther Brooches -->
-			<hat id="2" /> <!-- Figther Hats -->
-			<weapon id="11"/> <!-- Amaranthine Avenger -->
-			<weapon id="13"/> <!-- Amaranthine Cutter -->
-			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
-			<armorSet id="5"/> <!-- Dark Eternal - Defense Type / Heavy -->
-		</class>
-		<class id="140">	<!-- Tyrr Warrior -->
-			<presetAbilities id="2" /> <!-- Fighter -->
-			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
-			<brooches id="2"/> <!-- Figther Brooches -->
-			<hat id="2" /> <!-- Figther Hats -->
-			<weapon id="8"/> <!-- Amaranthine Slasher -->
-			<!-- Tyrr Duelist -->
-			<weapon id="1" classId="152"/> <!-- Amaranthine Dualsword -->
-			<!-- Tyrr DreadNought -->
-			<weapon id="9" classId="153"/> <!-- Amaranthine Stormer -->
-			<!-- Tyrr Grand Khauatari -->
-			<weapon id="7" classId="155"/> <!-- Amaranthine Fighter -->
-			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-		</class>
-		<class id="141">	<!-- Othell Rogue -->
-			<presetAbilities id="2" /> <!-- Fighter -->
-			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
-			<brooches id="2"/> <!-- Figther Brooches -->
-			<hat id="2" /> <!-- Figther Hats -->
-			<weapon id="2"/> <!-- Amaranthine Shaper -->
-			<weapon id="3"/> <!-- Amaranthine Dual Dagger -->
-			<armorSet id="8" /> <!-- Dark Eternal Leather - Assassin Type / Light -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-		</class>
-		<class id="142">	<!-- Yul Archer -->
-			<presetAbilities id="2" /> <!-- Fighter -->
-			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
-			<brooches id="2"/> <!-- Figther Brooches -->
-			<hat id="2" /> <!-- Figther Hats -->
-			<weapon id="4"/> <!--  Amaranthine Thrower -->
-			<weapon id="5"/> <!--  Amaranthine Shooter -->
-			<armorSet id="8" /> <!-- Dark Eternal Leather - Assassin Type / Light -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-		</class>
-		<class id="143">	<!-- Feoh Wizard -->
-			<presetAbilities id="1" /> <!-- Mage -->
-			<dye id="268" count="3"/> <!-- Lv. 5 Legendary INT Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
-			<brooches id="1"/> <!-- Mage Brooches -->
-			<hat id="1" /> <!-- Mage Hats -->
-			<weapon id="12"/> <!-- Amaranthine Buster -->
-			<weapon id="10"/> <!-- Amaranthine Caster -->
-			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
-		</class>
-		<class id="144">	<!-- Iss Enchante -->
-			<presetAbilities id="1" /> <!-- Mage -->
-			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
-			<brooches id="1"/> <!-- Mage Brooches -->
-			<hat id="1" /> <!-- Mage Hats -->
-			<weapon id="1"/> <!-- Amaranthine Dualsword -->
-			<weapon id="6"/> <!-- Amaranthine Dual Blunt Weapon -->
-			<weapon id="10"/> <!-- Amaranthine Caster -->
-			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
-		</class>
-		<class id="145">	<!-- Wynn Summoner -->
-			<presetAbilities id="1" /> <!-- Mage -->
-			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
-			<brooches id="1"/> <!-- Mage Brooches -->
-			<hat id="1" /> <!-- Mage Hats -->
-			<weapon id="4"/> <!-- Amaranthine Thrower -->
-			<weapon id="12"/> <!-- Amaranthine Buster -->
-			<weapon id="10"/> <!-- Amaranthine Caster -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
-		</class>
-		<class id="146">	<!-- Aeore Healer -->
-			<presetAbilities id="1" /> <!-- Mage -->
-			<dye id="268" count="3"/> <!-- Lv. 5 Legendary INT Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
-			<brooches id="1"/> <!-- Mage Brooches -->
-			<hat id="1" /> <!-- Mage Hats -->
-			<weapon id="10"/> <!-- Amaranthine Caster -->
-			<weapon id="12"/> <!-- Amaranthine Buster -->
-			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
-			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
-			<armorSet id="17" /> <!-- Dark Eternal Circlet - Recovery Type / Robe -->
-		</class>
-	</classItems>	
+	<Sets type="HEAVY">
+		<Set grade="S80_GRADE">
+			<item id="15606" />  <!-- Moirai Helmet -->
+			<item id="15609" />  <!-- Moirai Breastplate -->
+			<item id="15612" />  <!-- Moirai Gaiters -->
+			<item id="15615" />  <!-- Moirai Gauntlets -->
+			<item id="15618" />  <!-- Moirai Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13137" />  <!-- Vesper Helmet -->
+			<item id="13432" />  <!-- Vesper Breastplate -->
+			<item id="13438" />  <!-- Vesper Gaiters -->
+			<item id="13439" />  <!-- Vesper Gauntlets -->
+			<item id="13440" />  <!-- Vesper Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13140" />  <!-- Vesper Noble Helmet -->
+			<item id="13435" />  <!-- Vesper Noble Breastplate -->
+			<item id="13448" />  <!-- Vesper Noble Gaiters -->
+			<item id="13449" />  <!-- Vesper Noble Gauntlets -->
+			<item id="13450" />  <!-- Vesper Noble Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15589" />  <!-- Vorpal Helmet -->
+			<item id="15592" />  <!-- Vorpal Breastplate -->
+			<item id="15595" />  <!-- Vorpal Gaiters -->
+			<item id="15598" />  <!-- Vorpal Gauntlets -->
+			<item id="15601" />  <!-- Vorpal Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15572" />  <!-- Elegia Helmet -->
+			<item id="15575" />  <!-- Elegia Breastplate -->
+			<item id="15578" />  <!-- Elegia Gaiters -->
+			<item id="15581" />  <!-- Elegia Gauntlets -->
+			<item id="15584" />  <!-- Elegia Boots -->
+		</Set>
+	</Sets>
+	<Sets type="LIGHT">
+		<Set grade="S80_GRADE">
+			<item id="15607" />  <!-- Moirai Leather Helmet -->
+			<item id="15610" />  <!-- Moirai Leather Breastplate -->
+			<item id="15613" />  <!-- Moirai Leather Leggings -->
+			<item id="15616" />  <!-- Moirai Leather Gloves -->
+			<item id="15619" />  <!-- Moirai Leather Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13138" />  <!-- Vesper Leather Helmet -->
+			<item id="13433" />  <!-- Vesper Leather Breastplate -->
+			<item id="13441" />  <!-- Vesper Leather Leggings -->
+			<item id="13442" />  <!-- Vesper Leather Gloves -->
+			<item id="13443" />  <!-- Vesper Leather Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13141" />  <!-- Vesper Noble Leather Helmet -->
+			<item id="13436" />  <!-- Vesper Noble Leather Breastplate -->
+			<item id="13451" />  <!-- Vesper Noble Leather Leggings -->
+			<item id="13452" />  <!-- Vesper Noble Leather Gloves -->
+			<item id="13453" />  <!-- Vesper Noble Leather Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15590" />  <!-- Vorpal Leather Helmet -->
+			<item id="15593" />  <!-- Vorpal Leather Breastplate -->
+			<item id="15596" />  <!-- Vorpal Leather Leggings -->
+			<item id="15599" />  <!-- Vorpal Leather Gloves -->
+			<item id="15602" />  <!-- Vorpal Leather Boots -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15573" />  <!-- Elegia Leather Helmet -->
+			<item id="15576" />  <!-- Elegia Leather Breastplate -->
+			<item id="15579" />  <!-- Elegia Leather Leggings -->
+			<item id="15582" />  <!-- Elegia Leather Gloves -->
+			<item id="15585" />  <!-- Elegia Leather Boots -->
+		</Set>
+	</Sets>
+	<Sets type="ROBE">
+		<Set grade="S80_GRADE">
+			<item id="15608" />  <!-- Moirai Circlet -->
+			<item id="15611" />  <!-- Moirai Tunic -->
+			<item id="15614" />  <!-- Moirai Stockings -->
+			<item id="15617" />  <!-- Moirai Gloves -->
+			<item id="15620" />  <!-- Moirai Shoes -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13139" />  <!-- Vesper Circlet -->
+			<item id="13434" />  <!-- Vesper Tunic -->
+			<item id="13444" />  <!-- Vesper Stockings -->
+			<item id="13445" />  <!-- Vesper Gloves -->
+			<item id="13446" />  <!-- Vesper Shoes -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="13142" />  <!-- Vesper Noble Circlet -->
+			<item id="13437" />  <!-- Vesper Noble Tunic -->
+			<item id="13454" />  <!-- Vesper Noble Stockings -->
+			<item id="13455" />  <!-- Vesper Noble Gloves -->
+			<item id="13456" />  <!-- Vesper Noble Shoes -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15591" />  <!-- Vorpal Circlet -->
+			<item id="15594" />  <!-- Vorpal Tunic -->
+			<item id="15597" />  <!-- Vorpal Stockings -->
+			<item id="15600" />  <!-- Vorpal Gloves -->
+			<item id="15603" />  <!-- Vorpal Shoes -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15574" />  <!-- Elegia Circlet -->
+			<item id="15577" />  <!-- Elegia Tunic -->
+			<item id="15580" />  <!-- Elegia Stockings -->
+			<item id="15583" />  <!-- Elegia Gloves -->
+			<item id="15586" />  <!-- Elegia Shoes -->
+		</Set>
+	</Sets>
+	<Sets type="HEAVY">
+		<Set grade="R_GRADE">
+			<item id="17947" />  <!-- Bound Eternal Helmet - Heavy Armor -->
+			<item id="17948" />  <!-- Bound Eternal Breastplate - Heavy Armor -->
+			<item id="17949" />  <!-- Bound Eternal Gaiters - Heavy Armor -->
+			<item id="17950" />  <!-- Bound Eternal Gauntlets - Heavy Armor -->
+			<item id="17951" />  <!-- Bound Eternal Boots - Heavy Armor -->
+		</Set>
+	</Sets>
+	<Sets type="LIGHT">
+		<Set grade="R_GRADE">
+			<item id="17953" />  <!-- Bound Eternal Leather Helmet - Light Armor -->
+			<item id="17954" />  <!-- Bound Eternal Leather Armor - Light Armor -->
+			<item id="17955" />  <!-- Bound Eternal Leather Leggings - Light Armor -->
+			<item id="17956" />  <!-- Bound Eternal Leather Gloves - Light Armor -->
+			<item id="17957" />  <!-- Bound Eternal Leather Boots - Light Armor -->
+		</Set>
+		
+	</Sets>
+	<Sets type="ROBE">
+		<Set grade="R_GRADE">
+			<item id="17958" />  <!-- Bound Eternal Circlet - Robe -->
+			<item id="17959" />  <!-- Bound Eternal Tunic - Robe -->
+			<item id="17960" />  <!-- Bound Eternal Stockings - Robe -->
+			<item id="17961" />  <!-- Bound Eternal Gloves - Robe -->
+			<item id="17962" />  <!-- Bound Eternal Shoes - Robe -->
+		</Set>
+	</Sets>
+	<Sets type="HELMETS">
+		<Set grade="D_GRADE">
+			<item id="12009" /> <!-- Common Item - Bone Helmet -->
+			<item id="12028" /> <!-- Common Item - Bronze Helmet -->
+			<item id="12050" /> <!-- Common Item - Helmet -->
+			<item id="12064" /> <!-- Common Item - Brigandine Helmet -->
+			<item id="12079" /> <!-- Common Item - Plate Helmet -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12090" /> <!-- Common Item - Chain Hood -->
+			<item id="12106" /> <!-- Common Item - Great Helmet -->
+			<item id="12127" /> <!-- Common Item - Composite Helmet -->
+			<item id="12145" /> <!-- Common Item - Full Plate Helmet -->
+			<item id="12120" /> <!-- Common Item - Shining Circlet -->
+		</Set>
+	</Sets>
+	<Sets type="HELMETS">
+		<Set grade="D_GRADE">
+			<item id="12009" /> <!-- Common Item - Bone Helmet -->
+			<item id="12028" /> <!-- Common Item - Bronze Helmet -->
+			<item id="12050" /> <!-- Common Item - Helmet -->
+			<item id="12064" /> <!-- Common Item - Brigandine Helmet -->
+			<item id="12079" /> <!-- Common Item - Plate Helmet -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12090" /> <!-- Common Item - Chain Hood -->
+			<item id="12106" /> <!-- Common Item - Great Helmet -->
+			<item id="12127" /> <!-- Common Item - Composite Helmet -->
+			<item id="12145" /> <!-- Common Item - Full Plate Helmet -->
+			<item id="12120" /> <!-- Common Item - Shining Circlet -->
+		</Set>
+	</Sets>
+	<Sets type="SHIELDS">
+		<Set grade="D_GRADE">
+			<item id="12013" /> <!-- Common Item - Bronze Shield -->
+			<item id="12025" /> <!-- Common Item - Aspis -->
+			<item id="12051" /> <!-- Common Item - Hoplon -->
+			<item id="12063" /> <!-- Common Item - Brigandine Shield -->
+			<item id="12069" /> <!-- Common Item - Kite Shield -->
+			<item id="12073" /> <!-- Common Item - Square Shield -->
+			<item id="12078" /> <!-- Common Item - Plate Shield -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12091" /> <!-- Common Item - Eldarake -->
+			<item id="12096" /> <!-- Common Item - Chain Shield -->
+			<item id="12102" /> <!-- Common Item - Dwarven Chain Shield -->
+			<item id="12107" /> <!-- Common Item - Knight's Shield -->
+			<item id="12126" /> <!-- Common Item - Composite Shield -->
+			<item id="12129" /> <!-- Common Item - Tower Shield -->
+			<item id="12143" /> <!-- Common Item - Full Plate Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12159" /> <!-- Common Item - Zubei's Shield -->
+			<item id="12171" /> <!-- Common Item - Avadon Shield -->
+			<item id="12183" /> <!-- Common Item - Doom Shield -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12215" /> <!-- Common Item - Dark Crystal Shield -->
+			<item id="12279" /> <!-- Common Item - Shield of Nightmare -->
+		</Set>
+		<Set grade="S_GRADE">
+			<item id="12308" /> <!-- Common Item - Imperial Crusader Shield -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15621" />  <!-- Moirai Shield -->
+			<item id="13471" />  <!-- Vesper Shield -->
+			<item id="15604" />  <!-- Vorpal Shield -->
+			<item id="15587" />  <!-- Elegia Shield -->
+		</Set>
+		<Set grade="R_GRADE">
+			<item id="17850" />  <!-- Bound Immortal Shield - Heavy Armor -->
+			<item id="17884" />  <!-- Bound Twilight Shield - Heavy Armor -->
+			<item id="17918" />  <!-- Bound Seraph Shield - Heavy Armor -->
+			<item id="17952" />  <!-- Bound Eternal Shield - Heavy Armor -->
+			
+			<item id="17309" />  <!-- Immortal Shield - Heavy Armor -->
+			<item id="17343" />  <!-- Twilight Shield - Heavy Armor -->
+			<item id="17401" />  <!-- Seraph Shield - Heavy Armor -->
+			<item id="17435" />  <!-- Eternal Shield - Heavy Armor -->
+			
+			<item id="17986" />  <!-- Blessed Immortal Shield - Heavy Armor -->
+			<item id="18020" />  <!-- Blessed Twilight Shield - Heavy Armor -->
+			<item id="18054" />  <!-- Blessed Seraph Shield - Heavy Armor -->
+			<item id="18088" />  <!-- Blessed Eternal Shield - Heavy Armor -->
+		</Set>
+	</Sets>
+	<Sets type="SIGILS">
+		<Set grade="S80_GRADE">
+			<item id="15622" />  <!-- Moirai Sigil -->
+			<item id="12813" />  <!-- Vesper Sigil -->
+			<item id="15605" />  <!-- Vorpal Sigil -->
+			<item id="15588" />  <!-- Elegia Sigil -->
+		</Set>
+		<Set grade="R_GRADE">
+			<item id="17861" />  <!-- Bound Immortal Sigil - Robe -->
+			<item id="17895" />  <!-- Bound Twilight Sigil - Robe -->
+			<item id="17929" />  <!-- Bound Seraph Sigil - Robe -->
+			<item id="17963" />  <!-- Bound Eternal Sigil - Robe -->
+			
+			<item id="17320" />  <!-- Immortal Sigil - Robe -->
+			<item id="17354" />  <!-- Twilight Sigil - Robe -->
+			<item id="17412" />  <!-- Seraph Sigil - Robe -->
+			<item id="17446" />  <!-- Eternal Sigil - Robe -->
+			
+			<item id="17997" />  <!-- Blessed Immortal Sigil - Robe -->
+			<item id="18031" />  <!-- Blessed Twilight Sigil - Robe -->
+			<item id="18065" />  <!-- Blessed Seraph Sigil - Robe -->
+			<item id="18099" />  <!-- Blessed Eternal Sigil - Robe -->
+		</Set>
+	</Sets>
+	<Sets type="BOOTS">
+		<Set grade="D_GRADE">
+			<item id="12029" /> <!-- Common Item - Blue Buckskin Boots -->
+			<item id="12035" /> <!-- Common Item - Reinforced Leather Boots -->
+			<item id="12070" /> <!-- Common Item - Boots of Power -->
+			<item id="12075" /> <!-- Common Item - Salamander Skin Boots -->
+			<item id="12006" /> <!-- Common Item - Leather Boots -->
+			<item id="12053" /> <!-- Common Item - Manticore Skin Boots -->
+			<item id="12045" /> <!-- Common Item - Boots of Knowledge -->
+			<item id="12033" /> <!-- Common Item - Iron Boots -->
+			<item id="12066" /> <!-- Common Item - Elven Mithril Boots -->
+			<item id="12062" /> <!-- Common Item - Brigandine Boots -->
+			<item id="12077" /> <!-- Common Item - Plate Boots -->
+			<item id="12071" /> <!-- Common Item - Assault Boots -->
+		</Set>
+	</Sets>
+	<Sets type="GLOVES">
+		<Set grade="D_GRADE">
+			<item id="12082" /> <!-- Common Item - Sage's Worn Gloves -->
+			<item id="12076" /> <!-- Common Item - Ogre Power Gauntlet -->
+			<item id="12072" /> <!-- Common Item - Mithril Gloves -->
+			<item id="12065" /> <!-- Common Item - Elven Mithril Gloves -->
+			<item id="12061" /> <!-- Common Item - Brigandine Gauntlet -->
+			<item id="12055" /> <!-- Common Item - Manticore Skin Gloves -->
+			<item id="12037" /> <!-- Common Item - Reinforced Leather Gloves -->
+			<item id="12007" /> <!-- Common Item - Crafted Leather Gloves -->
+			<item id="12068" /> <!-- Common Item - Rip Gauntlet -->
+			<item id="12038" /> <!-- Common Item - Gauntlet -->
+			<item id="12016" /> <!-- Common Item - Leather Gauntlet -->
+			<item id="12046" /> <!-- Common Item - Gloves of Knowledge -->
+		</Set>
+	</Sets>
+	<Sets type="LIGHT">
+		<Set grade="D_GRADE">
+			<item id="12054" /> <!-- Common Item - Manticore Skin Shirt -->
+			<item id="12052" /> <!-- Common Item - Manticore Skin Gaiters -->
+			<item id="12055" /> <!-- Common Item - Manticore Skin Gloves -->
+			<item id="12053" /> <!-- Common Item - Manticore Skin Boots -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12074" /> <!-- Common Item - Salamander Skin Mail -->
+			<item id="12075" /> <!-- Common Item - Salamander Skin Boots -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12015" /> <!-- Common Item - Puma Skin Shirt -->
+			<item id="12014" /> <!-- Common Item - Puma Skin Gaiters -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12050" /> <!-- Common Item - Helmet -->
+			<item id="12036" /> <!-- Common Item - Reinforced Leather Shirt -->
+			<item id="12034" /> <!-- Common Item - Reinforced Leather Gaiters -->
+			<item id="12037" /> <!-- Common Item - Reinforced Leather Gloves -->
+			<item id="12035" /> <!-- Common Item - Reinforced Leather Boots -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12043" /> <!-- Common Item - Mithril Banded Mail -->
+			<item id="12042" /> <!-- Common Item - Mithril Banded Gaiters -->
+			<item id="12072" /> <!-- Common Item - Mithril Gloves -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12133" /> <!-- Common Item - Theca Leather Armor -->
+			<item id="12130" /> <!-- Common Item - Theca Leather Gaiters -->
+			<item id="12131" /> <!-- Common Item - Theca Leather Gloves -->
+			<item id="12132" /> <!-- Common Item - Theca Leather Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12105" /> <!-- Common Item - Plate Leather Armor -->
+			<item id="12103" /> <!-- Common Item - Plate Leather Gaiters -->
+			<item id="12104" /> <!-- Common Item - Plate Leather Gloves -->
+			<item id="12101" /> <!-- Common Item - Plate Leather Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12086" /> <!-- Common Item - Tempered Mithril Shirt -->
+			<item id="12084" /> <!-- Common Item - Tempered Mithril Gaiters -->
+			<item id="12087" /> <!-- Common Item - Reinforced Mithril Gloves -->
+			<item id="12085" /> <!-- Common Item - Tempered Mithril Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12135" /> <!-- Common Item - Drake Leather Armor -->
+			<item id="12134" /> <!-- Common Item - Drake Leather Gloves -->
+			<item id="12136" /> <!-- Common Item - Drake Leather Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12113" /> <!-- Common Item - Rind Leather Armor -->
+			<item id="12111" /> <!-- Common Item - Rind Leather Gaiters -->
+			<item id="12112" /> <!-- Common Item - Rind Leather Gloves -->
+			<item id="12114" /> <!-- Common Item - Rind Leather Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12185" /> <!-- Common Item - Doom Helmet -->
+			<item id="12186" /> <!-- Common Item - Leather Armor of Doom -->
+			<item id="12178" /> <!-- Common Item - Doom Gloves -->
+			<item id="12181" /> <!-- Common Item - Doom Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12202" /> <!-- Common Item - Blue Wolf Helmet -->
+			<item id="12194" /> <!-- Common Item - Blue Wolf Leather Armor -->
+			<item id="12199" /> <!-- Common Item - Blue Wolf Gloves -->
+			<item id="12196" /> <!-- Common Item - Blue Wolf Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12170" /> <!-- Common Item - Avadon Circlet -->
+			<item id="12165" /> <!-- Common Item - Avadon Leather Armor -->
+			<item id="12163" /> <!-- Common Item - Avadon Gloves -->
+			<item id="12168" /> <!-- Common Item - Avadon Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12160" /> <!-- Common Item - Zubei's Helmet -->
+			<item id="12151" /> <!-- Common Item - Zubei's Leather Shirt -->
+			<item id="12150" /> <!-- Common Item - Zubei's Leather Gaiters -->
+			<item id="12154" /> <!-- Common Item - Zubei's Gauntlet -->
+			<item id="12157" /> <!-- Common Item - Zubei's Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12245" /> <!-- Common Item - Tallum Helmet -->
+			<item id="12239" /> <!-- Common Item - Tallum Leather Armor -->
+			<item id="12237" /> <!-- Common Item - Tallum Gloves -->
+			<item id="12241" /> <!-- Common Item - Tallum Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12216" /> <!-- Common Item - Dark Crystal Helmet -->
+			<item id="12210" /> <!-- Common Item - Dark Crystal Leather Armor -->
+			<item id="12218" /> <!-- Common Item - Dark Crystal Leggings -->
+			<item id="12208" /> <!-- Common Item - Dark Crystal Gloves -->
+			<item id="12213" /> <!-- Common Item - Dark Crystal Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12280" /> <!-- Common Item - Helm of Nightmare -->
+			<item id="12274" /> <!-- Common Item - Nightmarish Leather Armor -->
+			<item id="12272" /> <!-- Common Item - Gauntlet of Nightmare -->
+			<item id="12277" /> <!-- Common Item - Boots of Nightmare -->
+		</Set>
+		<Set grade="S_GRADE">
+			<item id="12285" /> <!-- Common Item - Draconic Leather Helmet -->
+			<item id="12284" /> <!-- Common Item - Draconic Leather Armor -->
+			<item id="12282" /> <!-- Common Item - Draconic Leather Gloves -->
+			<item id="12283" /> <!-- Common Item - Draconic Leather Boots -->
+		</Set>
+	</Sets>
+	<Sets type="HEAVY">
+		<Set grade="D_GRADE">
+			<item id="12064" /> <!-- Common Item - Brigandine Helmet -->
+			<item id="12059" /> <!-- Common Item - Brigandine -->
+			<item id="12060" /> <!-- Common Item - Brigandine Gaiters -->
+			<item id="12061" /> <!-- Common Item - Brigandine Gauntlet -->
+			<item id="12062" /> <!-- Common Item - Brigandine Boots -->
+			<item id="12063" /> <!-- Common Item - Brigandine Shield -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12031" /> <!-- Common Item - Mithril Breastplate -->
+			<item id="12056" /> <!-- Common Item - Mithril Scale Gaiters -->
+			<item id="12072" /> <!-- Common Item - Mithril Gloves -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12024" /> <!-- Common Item - Scale Mail -->
+			<item id="12023" /> <!-- Common Item - Scale Gaiters -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12032" /> <!-- Common Item - Compound Scale Mail -->
+			<item id="12049" /> <!-- Common Item - Compound Scale Gaiters -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12030" /> <!-- Common Item - Dwarven Scale Mail -->
+			<item id="12039" /> <!-- Common Item - Dwarven Scale Gaiters -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12079" /> <!-- Common Item - Plate Helmet -->
+			<item id="12044" /> <!-- Common Item - Blast Plate -->
+			<item id="12012" /> <!-- Common Item - Iron Plate Gaiters -->
+			<item id="12077" /> <!-- Common Item - Plate Boots -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12079" /> <!-- Common Item - Plate Helmet -->
+			<item id="12081" /> <!-- Common Item - Half Plate Armor -->
+			<item id="12080" /> <!-- Common Item - Plate Gaiters -->
+			<item id="12077" /> <!-- Common Item - Plate Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12145" /> <!-- Common Item - Full Plate Helmet -->
+			<item id="12144" /> <!-- Common Item - Full Plate Armor -->
+			<item id="12141" /> <!-- Common Item - Full Plate Gauntlet -->
+			<item id="12142" /> <!-- Common Item - Full Plate Boots -->
+			<item id="12143" /> <!-- Common Item - Full Plate Shield -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12090" /> <!-- Common Item - Chain Hood -->
+			<item id="12095" /> <!-- Common Item - Chain Mail Shirt -->
+			<item id="12094" /> <!-- Common Item - Chain Gaiters -->
+			<item id="12092" /> <!-- Common Item - Chain Gloves -->
+			<item id="12093" /> <!-- Common Item - Chain Boots -->
+			<item id="12096" /> <!-- Common Item - Chain Shield -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12127" /> <!-- Common Item - Composite Helmet -->
+			<item id="12128" /> <!-- Common Item - Composite Armor -->
+			<item id="12141" /> <!-- Common Item - Full Plate Gauntlet -->
+			<item id="12125" /> <!-- Common Item - Composite Boots -->
+			<item id="12126" /> <!-- Common Item - Composite Shield -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12110" /> <!-- Common Item - Dwarven Chain Mail Shirt -->
+			<item id="12109" /> <!-- Common Item - Dwarven Chain Gaiters -->
+			<item id="12108" /> <!-- Common Item - Dwarven Chain Gloves -->
+			<item id="12088" /> <!-- Common Item - Dwarven Chain Boots -->
+			<item id="12102" /> <!-- Common Item - Dwarven Chain Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12185" /> <!-- Common Item - Doom Helmet -->
+			<item id="12184" /> <!-- Common Item - Doom Plate Armor -->
+			<item id="12177" /> <!-- Common Item - Doom Gloves -->
+			<item id="12180" /> <!-- Common Item - Doom Boots -->
+			<item id="12183" /> <!-- Common Item - Doom Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12202" /> <!-- Common Item - Blue Wolf Helmet -->
+			<item id="12204" /> <!-- Common Item - Blue Wolf Breastplate -->
+			<item id="12193" /> <!-- Common Item - Blue Wolf Gaiters -->
+			<item id="12198" /> <!-- Common Item - Blue Wolf Gloves -->
+			<item id="12195" /> <!-- Common Item - Blue Wolf Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12170" /> <!-- Common Item - Avadon Circlet -->
+			<item id="12173" /> <!-- Common Item - Avadon Breastplate -->
+			<item id="12172" /> <!-- Common Item - Avadon Plate Gaiters -->
+			<item id="12162" /> <!-- Common Item - Avadon Gloves -->
+			<item id="12167" /> <!-- Common Item - Avadon Boots -->
+			<item id="12171" /> <!-- Common Item - Avadon Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12160" /> <!-- Common Item - Zubei's Helmet -->
+			<item id="12161" /> <!-- Common Item - Zubei's Breastplate -->
+			<item id="12152" /> <!-- Common Item - Zubei's Gaiters -->
+			<item id="12153" /> <!-- Common Item - Zubei's Gauntlet -->
+			<item id="12156" /> <!-- Common Item - Zubei's Boots -->
+			<item id="12159" /> <!-- Common Item - Zubei's Shield -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12245" /> <!-- Common Item - Tallum Helmet -->
+			<item id="12244" /> <!-- Common Item - Tallum Plate Armor -->
+			<item id="12236" /> <!-- Common Item - Tallum Gloves -->
+			<item id="12240" /> <!-- Common Item - Tallum Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12216" /> <!-- Common Item - Dark Crystal Helmet -->
+			<item id="12217" /> <!-- Common Item - Dark Crystal Breastplate -->
+			<item id="12206" /> <!-- Common Item - Dark Crystal Gaiters -->
+			<item id="12207" /> <!-- Common Item - Dark Crystal Gloves -->
+			<item id="12212" /> <!-- Common Item - Dark Crystal Boots -->
+			<item id="12215" /> <!-- Common Item - Dark Crystal Shield -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12255" /> <!-- Common Item - Majestic Circlet -->
+			<item id="12256" /> <!-- Common Item - Majestic Plate Armor -->
+			<item id="12247" /> <!-- Common Item - Majestic Gauntlet -->
+			<item id="12252" /> <!-- Common Item - Majestic Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12280" /> <!-- Common Item - Helm of Nightmare -->
+			<item id="12270" /> <!-- Common Item - Armor of Nightmare -->
+			<item id="12271" /> <!-- Common Item - Gauntlet of Nightmare -->
+			<item id="12276" /> <!-- Common Item - Boots of Nightmare -->
+			<item id="12279" /> <!-- Common Item - Shield of Nightmare -->
+		</Set>
+		<Set grade="S_GRADE">
+			<item id="12309" /> <!-- Common Item - Imperial Crusader Helmet -->
+			<item id="12310" /> <!-- Common Item - Imperial Crusader Breastplate -->
+			<item id="12305" /> <!-- Common Item - Imperial Crusader Gaiters -->
+			<item id="12306" /> <!-- Common Item - Imperial Crusader Gauntlet -->
+			<item id="12307" /> <!-- Common Item - Imperial Crusader Boots -->
+			<item id="12308" /> <!-- Common Item - Imperial Crusader Shield -->
+		</Set>
+	</Sets>
+	<Sets type="ROBE">
+		<Set grade="D_GRADE">
+			<item id="12026" /> <!-- Common Item - Elven Tunic -->
+			<item id="12027" /> <!-- Common Item - Elven Stockings -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12010" /> <!-- Common Item - Cursed Tunic -->
+			<item id="12011" /> <!-- Common Item - Cursed Stockings -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12050" /> <!-- Common Item - Helmet -->
+			<item id="12047" /> <!-- Common Item - Tunic of Knowledge -->
+			<item id="12048" /> <!-- Common Item - Stockings of Knowledge -->
+			<item id="12046" /> <!-- Common Item - Gloves of Knowledge -->
+			<item id="12045" /> <!-- Common Item - Boots of Knowledge -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12057" /> <!-- Common Item - Mithril Tunic -->
+			<item id="12058" /> <!-- Common Item - Mithril Stockings -->
+			<item id="12065" /> <!-- Common Item - Elven Mithril Gloves -->
+			<item id="12066" /> <!-- Common Item - Elven Mithril Boots -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12018" /> <!-- Common Item - Mystic's Tunic -->
+			<item id="12019" /> <!-- Common Item - Mystic's Stockings -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12083" /> <!-- Common Item - Sage's Rag -->
+			<item id="12082" /> <!-- Common Item - Sage's Worn Gloves -->
+			<item id="12071" /> <!-- Common Item - Assault Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12123" /> <!-- Common Item - Demon's Tunic -->
+			<item id="12124" /> <!-- Common Item - Demon's Stockings -->
+			<item id="12122" /> <!-- Common Item - Demon's Gloves -->
+			<item id="12121" /> <!-- Common Item - Demon's Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12099" /> <!-- Common Item - Karmian Tunic -->
+			<item id="12100" /> <!-- Common Item - Karmian Stockings -->
+			<item id="12097" /> <!-- Common Item - Karmian Gloves -->
+			<item id="12098" /> <!-- Common Item - Karmian Boots -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12115" /> <!-- Common Item - Robe of Seal -->
+			<item id="12116" /> <!-- Common Item - Gloves of Seal -->
+			<item id="12089" /> <!-- Common Item - Boots of Seal -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12185" /> <!-- Common Item - Doom Helmet -->
+			<item id="12192" /> <!-- Common Item - Tunic of Doom -->
+			<item id="12205" /> <!-- Common Item - Stockings of Doom -->
+			<item id="12179" /> <!-- Common Item - Doom Gloves -->
+			<item id="12182" /> <!-- Common Item - Doom Boots -->
+			<item id="12183" /> <!-- Common Item - Doom Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12202" /> <!-- Common Item - Blue Wolf Helmet -->
+			<item id="12201" /> <!-- Common Item - Blue Wolf Tunic -->
+			<item id="12203" /> <!-- Common Item - Blue Wolf Stockings -->
+			<item id="12200" /> <!-- Common Item - Blue Wolf Gloves -->
+			<item id="12197" /> <!-- Common Item - Blue Wolf Boots -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12170" /> <!-- Common Item - Avadon Circlet -->
+			<item id="12166" /> <!-- Common Item - Avadon Robe -->
+			<item id="12164" /> <!-- Common Item - Avadon Gloves -->
+			<item id="12169" /> <!-- Common Item - Avadon Boots -->
+			<item id="12171" /> <!-- Common Item - Avadon Shield -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12160" /> <!-- Common Item - Zubei's Helmet -->
+			<item id="12175" /> <!-- Common Item - Tunic of Zubei -->
+			<item id="12176" /> <!-- Common Item - Stockings of Zubei -->
+			<item id="12155" /> <!-- Common Item - Zubei's Gauntlet -->
+			<item id="12158" /> <!-- Common Item - Zubei's Boots -->
+			<item id="12159" /> <!-- Common Item - Zubei's Shield -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12245" /> <!-- Common Item - Tallum Helmet -->
+			<item id="12243" /> <!-- Common Item - Tallum Tunic -->
+			<item id="12246" /> <!-- Common Item - Tallum Stockings -->
+			<item id="12238" /> <!-- Common Item - Tallum Gloves -->
+			<item id="12242" /> <!-- Common Item - Tallum Boots -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12216" /> <!-- Common Item - Dark Crystal Helmet -->
+			<item id="12211" /> <!-- Common Item - Dark Crystal Robe -->
+			<item id="12209" /> <!-- Common Item - Dark Crystal Gloves -->
+			<item id="12214" /> <!-- Common Item - Dark Crystal Boots -->
+			<item id="12215" /> <!-- Common Item - Dark Crystal Shield -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12280" /> <!-- Common Item - Helm of Nightmare -->
+			<item id="12275" /> <!-- Common Item - Nightmare Robe -->
+			<item id="12273" /> <!-- Common Item - Gauntlet of Nightmare -->
+			<item id="12278" /> <!-- Common Item - Boots of Nightmare -->
+			<item id="12279" /> <!-- Common Item - Shield of Nightmare -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12255" /> <!-- Common Item - Majestic Circlet -->
+			<item id="12251" /> <!-- Common Item - Majestic Robe -->
+			<item id="12249" /> <!-- Common Item - Majestic Gauntlet -->
+			<item id="12254" /> <!-- Common Item - Majestic Boots -->
+		</Set>
+		<Set grade="S_GRADE">
+			<item id="12289" /> <!-- Common Item - Major Arcana Circlet -->
+			<item id="12287" /> <!-- Common Item - Major Arcana Robe -->
+			<item id="12286" /> <!-- Common Item - Major Arcana Gloves -->
+			<item id="12288" /> <!-- Common Item - Major Arcana Boots -->
+			<item id="12308" /> <!-- Common Item - Imperial Crusader Shield -->
+		</Set>
+	</Sets>
+	<Sets type="JEWELS">
+		<Set grade="D_GRADE">
+			<item id="12321" /> <!-- Common Item - Elven Ring -->
+			<item id="12321" /> <!-- Common Item - Elven Ring -->
+			<item id="12322" /> <!-- Common Item - Elven Earring -->
+			<item id="12322" /> <!-- Common Item - Elven Earring -->
+			<item id="12320" /> <!-- Common Item - Elven Necklace -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12313" /> <!-- Common Item - Ring of Devotion -->
+			<item id="12313" /> <!-- Common Item - Ring of Devotion -->
+			<item id="12318" /> <!-- Common Item - Tiger's Eye -->
+			<item id="12318" /> <!-- Common Item - Tiger's Eye -->
+			<item id="12312" /> <!-- Common Item - Necklace of Devotion -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12316" /> <!-- Common Item - Enchanted Ring -->
+			<item id="12316" /> <!-- Common Item - Enchanted Ring -->
+			<item id="12314" /> <!-- Common Item - Enchanted Earring -->
+			<item id="12314" /> <!-- Common Item - Enchanted Earring -->
+			<item id="12315" /> <!-- Common Item - Enchanted Necklace -->
+		</Set>
+		<Set grade="D_GRADE">
+			<item id="12323" /> <!-- Common Item - Mithril Ring -->
+			<item id="12323" /> <!-- Common Item - Mithril Ring -->
+			<item id="12325" /> <!-- Common Item - Omen Beast's Eye -->
+			<item id="12325" /> <!-- Common Item - Omen Beast's Eye -->
+			<item id="12324" /> <!-- Common Item - Necklace of Darkness -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12337" /> <!-- Common Item - Ring of Binding -->
+			<item id="12337" /> <!-- Common Item - Ring of Binding -->
+			<item id="12332" /> <!-- Common Item - Earring of Binding -->
+			<item id="12332" /> <!-- Common Item - Earring of Binding -->
+			<item id="12336" /> <!-- Common Item - Necklace of Binding -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12333" /> <!-- Common Item - Ring of Ages -->
+			<item id="12333" /> <!-- Common Item - Ring of Ages -->
+			<item id="12335" /> <!-- Common Item - Nassen's Earring -->
+			<item id="12335" /> <!-- Common Item - Nassen's Earring -->
+			<item id="12334" /> <!-- Common Item - Necklace of Mermaid -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12328" /> <!-- Common Item - Aquastone Ring -->
+			<item id="12328" /> <!-- Common Item - Aquastone Ring -->
+			<item id="12326" /> <!-- Common Item - Moonstone Earring -->
+			<item id="12326" /> <!-- Common Item - Moonstone Earring -->
+			<item id="12327" /> <!-- Common Item - Aquastone Necklace -->
+		</Set>
+		<Set grade="C_GRADE">
+			<item id="12331" /> <!-- Common Item - Ring of Protection -->
+			<item id="12331" /> <!-- Common Item - Ring of Protection -->
+			<item id="12329" /> <!-- Common Item - Earring of Protection -->
+			<item id="12329" /> <!-- Common Item - Earring of Protection -->
+			<item id="12330" /> <!-- Common Item - Necklace of Protection -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12340" /> <!-- Common Item - Adamantite Ring -->
+			<item id="12340" /> <!-- Common Item - Adamantite Ring -->
+			<item id="12338" /> <!-- Common Item - Adamantite Earring -->
+			<item id="12338" /> <!-- Common Item - Adamantite Earring -->
+			<item id="12339" /> <!-- Common Item - Adamantite Necklace -->
+		</Set>
+		<Set grade="B_GRADE">
+			<item id="12343" /> <!-- Common Item - Ring of Black Ore -->
+			<item id="12343" /> <!-- Common Item - Ring of Black Ore -->
+			<item id="12341" /> <!-- Common Item - Earring of Black Ore -->
+			<item id="12341" /> <!-- Common Item - Earring of Black Ore -->
+			<item id="12342" /> <!-- Common Item - Necklace of Black Ore -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12354" /> <!-- Common Item - Majestic Ring -->
+			<item id="12354" /> <!-- Common Item - Majestic Ring -->
+			<item id="12355" /> <!-- Common Item - Majestic Earring -->
+			<item id="12355" /> <!-- Common Item - Majestic Earring -->
+			<item id="12353" /> <!-- Common Item - Majestic Necklace -->
+		</Set>
+		<Set grade="A_GRADE">
+			<item id="12348" /> <!-- Common Item - Phoenix Ring -->
+			<item id="12348" /> <!-- Common Item - Phoenix Ring -->
+			<item id="12349" /> <!-- Common Item - Phoenix Earring -->
+			<item id="12349" /> <!-- Common Item - Phoenix Earring -->
+			<item id="12347" /> <!-- Common Item - Phoenix Necklace -->
+		</Set>
+		<Set grade="S_GRADE">
+			<item id="12360" /> <!-- Common Item - Tateossian Ring -->
+			<item id="12360" /> <!-- Common Item - Tateossian Ring -->
+			<item id="12361" /> <!-- Common Item - Tateossian Earring -->
+			<item id="12361" /> <!-- Common Item - Tateossian Earring -->
+			<item id="12359" /> <!-- Common Item - Tateossian Necklace -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15723" />  <!-- Moirai Ring -->
+			<item id="15723" />  <!-- Moirai Ring -->
+			<item id="15724" />  <!-- Moirai Earring -->
+			<item id="15724" />  <!-- Moirai Earring -->
+			<item id="15725" />  <!-- Moirai Necklace -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="14165" />  <!-- Vesper Ring -->
+			<item id="14165" />  <!-- Vesper Ring -->
+			<item id="14163" />  <!-- Vesper Earring -->
+			<item id="14163" />  <!-- Vesper Earring -->
+			<item id="14164" />  <!-- Vesper Necklace -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15720" />  <!-- Vorpal Ring -->
+			<item id="15720" />  <!-- Vorpal Ring -->
+			<item id="15721" />  <!-- Vorpal Earring -->
+			<item id="15721" />  <!-- Vorpal Earring -->
+			<item id="15722" />  <!-- Vorpal Necklace -->
+		</Set>
+		<Set grade="S80_GRADE">
+			<item id="15717" />  <!-- Elegia Ring -->
+			<item id="15717" />  <!-- Elegia Ring -->
+			<item id="15718" />  <!-- Elegia Earring -->
+			<item id="15718" />  <!-- Elegia Earring -->
+			<item id="15719" />  <!-- Elegia Necklace -->
+		</Set>
+		<Set grade="R_GRADE">
+			<item id="17449" />  <!-- Eternal Ring -->
+			<item id="17449" />  <!-- Eternal Ring -->
+			<item id="17448" />  <!-- Eternal Earring -->
+			<item id="17448" />  <!-- Eternal Earring -->
+			<item id="17447" />  <!-- Eternal Necklace -->
+		</Set>
+		<Set grade="R_GRADE">
+			<item id="18102" />  <!-- Blessed Eternal Ring -->
+			<item id="18102" />  <!-- Blessed Eternal Ring -->
+			<item id="18101" />  <!-- Blessed Eternal Earring -->
+			<item id="18101" />  <!-- Blessed Eternal Earring -->
+			<item id="18100" />  <!-- Blessed Eternal Necklace -->
+		</Set>
+	</Sets>
+	<Weapons type="DUAL_SWORDS" grade="D_GRADE">
+		<item id="11658" /> <!-- Common Item - Saber*Saber -->
+		<item id="11679" /> <!-- Common Item - Saber*Knight's Sword -->
+		<item id="11680" /> <!-- Common Item - Saber*Bastard Sword -->
+		<item id="11681" /> <!-- Common Item - Saber*Spinebone Sword -->
+		<item id="11682" /> <!-- Common Item - Saber*Artisan's Sword -->
+		<item id="11684" /> <!-- Common Item - Knight's Sword*Knight's Sword -->
+		<item id="11687" /> <!-- Common Item - Bastard Sword*Knight's Sword -->
+		<item id="11688" /> <!-- Common Item - Bastard Sword*Bastard Sword -->
+		<item id="11689" /> <!-- Common Item - Bastard Sword*Spinebone Sword -->
+		<item id="11690" /> <!-- Common Item - Bastard Sword*Artisan's Sword -->
+		<item id="11694" /> <!-- Common Item - Saber*Elven Sword -->
+		<item id="11695" /> <!-- Common Item - Saber*Crimson Sword -->
+		<item id="11698" /> <!-- Common Item - Spinebone Sword*Knight's Sword -->
+		<item id="11699" /> <!-- Common Item - Spinebone Sword*Spinebone Sword -->
+		<item id="11700" /> <!-- Common Item - Spinebone Sword*Artisan's Sword -->
+		<item id="11704" /> <!-- Common Item - Artisan's Sword*Knight's Sword -->
+		<item id="11705" /> <!-- Common Item - Artisan's Sword*Artisan's Sword -->
+		<item id="11716" /> <!-- Common Item - Knight's Sword*Elven Sword -->
+		<item id="11717" /> <!-- Common Item - Knight's Sword*Crimson Sword -->
+		<item id="11718" /> <!-- Common Item - Bastard Sword*Elven Sword -->
+		<item id="11719" /> <!-- Common Item - Bastard Sword*Crimson Sword -->
+		<item id="11720" /> <!-- Common Item - Spinebone Sword*Elven Sword -->
+		<item id="11721" /> <!-- Common Item - Spinebone Sword*Crimson Sword -->
+		<item id="11722" /> <!-- Common Item - Artisan's Sword*Elven Sword -->
+		<item id="11723" /> <!-- Common Item - Artisan's Sword*Crimson Sword -->
+		<item id="20641" /> <!-- Standard Item - Knight's Sword*Elven Sword -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="C_GRADE">
+		<item id="11748" /> <!-- Common Item - Mysterious Sword -->
+		<item id="11805" /> <!-- Common Item - Sword of Whispering Death -->
+		<item id="11829" /> <!-- Common Item - Homunkulus's Sword -->
+		<item id="11778" /> <!-- Common Item - Raid Sword -->
+		<item id="11764" /> <!-- Common Item - Crystal Staff -->
+	</Weapons>
+	<Weapons type="SWORD" grade="C_GRADE">
+		<item id="11756" /> <!-- Common Item - Stormbringer -->
+		<item id="11783" /> <!-- Common Item - Shamshir -->
+		<item id="11794" /> <!-- Common Item - Katana -->
+		<item id="11789" /> <!-- Common Item - Spirit Sword -->
+		<item id="11778" /> <!-- Common Item - Raid Sword -->
+		<item id="11820" /> <!-- Common Item - Tsurugi -->
+		<item id="11815" /> <!-- Common Item - Sword of Nightmare -->
+		<item id="11821" /> <!-- Common Item - Caliburs -->
+		<item id="11801" /> <!-- Common Item - Sword of Limit -->
+		<item id="11807" /> <!-- Common Item - Sword of Delusion -->
+		<item id="11853" /> <!-- Common Item - Samurai Long Sword -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="C_GRADE">
+		<item id="11738" /> <!-- Common Item - Saber*Sword of Revolution -->
+		<item id="11739" /> <!-- Common Item - Elven Sword*Elven Sword -->
+		<item id="11740" /> <!-- Common Item - Crimson Sword*Elven Sword -->
+		<item id="11741" /> <!-- Common Item - Crimson Sword*Crimson Sword -->
+		<item id="11742" /> <!-- Common Item - Knight's Sword*Sword of Revolution -->
+		<item id="11743" /> <!-- Common Item - Bastard Sword*Sword of Revolution -->
+		<item id="11744" /> <!-- Common Item - Spinebone Sword*Sword of Revolution -->
+		<item id="11745" /> <!-- Common Item - Artisan's Sword*Sword of Revolution -->
+		<item id="11752" /> <!-- Common Item - Saber*Elven Long Sword -->
+		<item id="11769" /> <!-- Common Item - Knight's Sword*Elven Long Sword -->
+		<item id="11770" /> <!-- Common Item - Bastard Sword*Elven Long Sword -->
+		<item id="11771" /> <!-- Common Item - Spinebone Sword*Elven Long Sword -->
+		<item id="11772" /> <!-- Common Item - Elven Sword*Sword of Revolution -->
+		<item id="11773" /> <!-- Common Item - Artisan's Sword*Elven Long Sword -->
+		<item id="11774" /> <!-- Common Item - Crimson Sword*Sword of Revolution -->
+		<item id="11791" /> <!-- Common Item - Elven Sword*Elven Long Sword -->
+		<item id="11795" /> <!-- Common Item - Crimson Sword*Elven Long Sword -->
+		<item id="11796" /> <!-- Common Item - Sword of Revolution*Sword of Revolution -->
+		<item id="11797" /> <!-- Common Item - Sword of Revolution*Elven Long Sword -->
+		<item id="11798" /> <!-- Common Item - Elven Long Sword*Elven Long Sword -->
+		<item id="11831" /> <!-- Common Item - Stormbringer*Stormbringer -->
+		<item id="11834" /> <!-- Common Item - Stormbringer*Raid Sword -->
+		<item id="11835" /> <!-- Common Item - Stormbringer*Shamshir -->
+		<item id="11836" /> <!-- Common Item - Stormbringer*Spirit Sword -->
+		<item id="11837" /> <!-- Common Item - Stormbringer*Katana -->
+		<item id="11841" /> <!-- Common Item - Raid Sword*Raid Sword -->
+		<item id="11845" /> <!-- Common Item - Shamshir*Raid Sword -->
+		<item id="11846" /> <!-- Common Item - Shamshir*Shamshir -->
+		<item id="11847" /> <!-- Common Item - Shamshir*Spirit Sword -->
+		<item id="11848" /> <!-- Common Item - Shamshir*Katana -->
+		<item id="11851" /> <!-- Common Item - Spirit Sword*Raid Sword -->
+		<item id="11852" /> <!-- Common Item - Spirit Sword*Spirit Sword -->
+		<item id="11860" /> <!-- Common Item - Katana*Raid Sword -->
+		<item id="11861" /> <!-- Common Item - Katana*Spirit Sword -->
+		<item id="11862" /> <!-- Common Item - Katana*Katana -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="C_GRADE">
+		<item id="11766" /> <!-- Common Item - Flamberge -->
+		<item id="11813" /> <!-- Common Item - Pa'agrian Sword -->
+		<item id="11843" /> <!-- Common Item - Berserker Blade -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="C_GRADE">
+		<item id="11757" /> <!-- Common Item - Stick of Faith -->
+		<item id="11755" /> <!-- Common Item - Skull Graver -->
+		<item id="11750" /> <!-- Common Item - Battle Axe -->
+		<item id="11761" /> <!-- Common Item - Silver Axe -->
+		<item id="11765" /> <!-- Common Item - Big Hammer -->
+		<item id="11802" /> <!-- Common Item - Nirvana Axe -->
+		<item id="11806" /> <!-- Common Item - Mace of the Underworld -->
+		<item id="11804" /> <!-- Common Item - Club of Nature -->
+		<item id="11799" /> <!-- Common Item - Stick of Eternity -->
+		<item id="11777" /> <!-- Common Item - Dwarven War Hammer -->
+		<item id="11859" /> <!-- Common Item - Ecliptic Axe -->
+		<item id="11816" /> <!-- Common Item - War Axe -->
+		<item id="11856" /> <!-- Common Item - Yaksa Mace -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="C_GRADE">
+		<item id="11768" /> <!-- Common Item - Heavy Doom Hammer -->
+		<item id="11767" /> <!-- Common Item - Heavy Doom Axe -->
+		<item id="11793" /> <!-- Common Item - Cursed Staff -->
+		<item id="11819" /> <!-- Common Item - Inferno Staff -->
+		<item id="11828" /> <!-- Common Item - Sage's Staff -->
+		<item id="11825" /> <!-- Common Item - Paradia Staff -->
+		<item id="11824" /> <!-- Common Item - Pa'agrian Hammer -->
+		<item id="11833" /> <!-- Common Item - Pa'agrian Axe -->
+		<item id="11855" /> <!-- Common Item - Demon's Staff -->
+		<item id="11838" /> <!-- Common Item - Ghoul's Staff -->
+		<item id="11842" /> <!-- Common Item - Deadman's Staff -->
+		<item id="11840" /> <!-- Common Item - Dwarven Hammer -->
+	</Weapons>
+	<Weapons type="POLE" grade="C_GRADE">
+		<item id="11822" /> <!-- Common Item - Karik Horn -->
+		<item id="11749" /> <!-- Common Item - Body Slasher -->
+		<item id="11751" /> <!-- Common Item - Scythe -->
+		<item id="11760" /> <!-- Common Item - Orcish Glaive -->
+		<item id="11782" /> <!-- Common Item - Bec de Corbin -->
+		<item id="11826" /> <!-- Common Item - Poleaxe -->
+		<item id="11832" /> <!-- Common Item - Widow Maker -->
+		<item id="11830" /> <!-- Common Item - Scorpion -->
+		<item id="11858" /> <!-- Common Item - Orcish Poleaxe -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="C_GRADE">
+		<item id="11779" /> <!-- Common Item - Soulfire Dirk -->
+		<item id="11747" /> <!-- Common Item - Dark Elven Dagger -->
+		<item id="11762" /> <!-- Common Item - Cursed Dagger -->
+		<item id="11746" /> <!-- Common Item - Wolverine Needle -->
+		<item id="11788" /> <!-- Common Item - Stiletto -->
+		<item id="11800" /> <!-- Common Item - Grace Dagger -->
+		<item id="11863" /> <!-- Common Item - Crystal Dagger -->
+	</Weapons>
+	<Weapons type="FIST" grade="C_GRADE">
+		<item id="11763" /> <!-- Common Item - Chakram -->
+		<item id="11776" /> <!-- Common Item - Knuckle Duster -->
+		<item id="11827" /> <!-- Common Item - Fisted Blade -->
+		<item id="11839" /> <!-- Common Item - Great Pata -->
+	</Weapons>
+	<Weapons type="BOW" grade="C_GRADE">
+		<item id="11759" /> <!-- Common Item - Crystallized Ice Bow -->
+		<item id="11775" /> <!-- Common Item - Elven Bow of Nobility -->
+		<item id="11790" /> <!-- Common Item - Elemental Bow -->
+		<item id="11814" /> <!-- Common Item - Akat Long Bow -->
+		<item id="11857" /> <!-- Common Item - Eminence Bow -->
+	</Weapons>
+	<Weapons type="RAPIER" grade="C_GRADE">
+		<item id="11753" /> <!-- Common Item - Soldat Estoc -->
+		<item id="11785" /> <!-- Common Item - Chevalier Rapier -->
+		<item id="11786" /> <!-- Common Item - Chevalier Rapier -->
+		<item id="11787" /> <!-- Common Item - Chevalier Rapier -->
+		<item id="11784" /> <!-- Common Item - Chevalier Rapier -->
+		<item id="11811" /> <!-- Common Item - Blinzlasher -->
+		<item id="11812" /> <!-- Common Item - Blinzlasher -->
+		<item id="11809" /> <!-- Common Item - Blinzlasher -->
+		<item id="11808" /> <!-- Common Item - Blinzlasher -->
+		<item id="11810" /> <!-- Common Item - Blinzlasher -->
+		<item id="11854" /> <!-- Common Item - Admiral's Estoc -->
+	</Weapons>
+	<Weapons type="ANCIENT_SWORD" grade="C_GRADE">
+		<item id="11754" /> <!-- Common Item - Schlager -->
+		<item id="11818" /> <!-- Common Item - Immortal Edge -->
+		<item id="11849" /> <!-- Common Item - Saber Tooth -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="C_GRADE">
+		<item id="11758" /> <!-- Common Item - Arbalest -->
+		<item id="11781" /> <!-- Common Item - Ballista -->
+		<item id="11780" /> <!-- Common Item - Ballista -->
+		<item id="11823" /> <!-- Common Item - Tathlum -->
+		<item id="11844" /> <!-- Common Item - Sharpshooter -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="B_GRADE">
+		<item id="11900" /> <!-- Common Item - Sword of Valhalla -->
+		<item id="11943" /> <!-- Common Item - Wizard's Tear -->
+	</Weapons>
+	<Weapons type="SWORD" grade="B_GRADE">
+		<item id="11916" /> <!-- Common Item - Keshanberk -->
+		<item id="11930" /> <!-- Common Item - Sword of Damascus -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="B_GRADE">
+		<item id="11864" /> <!-- Common Item - Stormbringer*Sword of Limit -->
+		<item id="11865" /> <!-- Common Item - Stormbringer*Sword of Delusion -->
+		<item id="11866" /> <!-- Common Item - Stormbringer*Sword of Nightmare -->
+		<item id="11867" /> <!-- Common Item - Stormbringer*Tsurugi -->
+		<item id="11868" /> <!-- Common Item - Stormbringer*Caliburs -->
+		<item id="11869" /> <!-- Common Item - Raid Sword*Sword of Limit -->
+		<item id="11870" /> <!-- Common Item - Raid Sword*Sword of Delusion -->
+		<item id="11871" /> <!-- Common Item - Raid Sword*Sword of Nightmare -->
+		<item id="11872" /> <!-- Common Item - Raid Sword*Tsurugi -->
+		<item id="11873" /> <!-- Common Item - Raid Sword*Caliburs -->
+		<item id="11874" /> <!-- Common Item - Shamshir*Sword of Limit -->
+		<item id="11875" /> <!-- Common Item - Shamshir*Sword of Delusion -->
+		<item id="11876" /> <!-- Common Item - Shamshir*Sword of Nightmare -->
+		<item id="11877" /> <!-- Common Item - Shamshir*Tsurugi -->
+		<item id="11878" /> <!-- Common Item - Shamshir*Caliburs -->
+		<item id="11879" /> <!-- Common Item - Spirit Sword*Sword of Limit -->
+		<item id="11880" /> <!-- Common Item - Spirit Sword*Sword of Delusion -->
+		<item id="11881" /> <!-- Common Item - Spirit Sword*Sword of Nightmare -->
+		<item id="11882" /> <!-- Common Item - Spirit Sword*Tsurugi -->
+		<item id="11883" /> <!-- Common Item - Spirit Sword*Caliburs -->
+		<item id="11884" /> <!-- Common Item - Katana*Sword of Limit -->
+		<item id="11885" /> <!-- Common Item - Katana*Sword of Delusion -->
+		<item id="11886" /> <!-- Common Item - Katana*Sword of Nightmare -->
+		<item id="11887" /> <!-- Common Item - Katana*Tsurugi -->
+		<item id="11888" /> <!-- Common Item - Katana*Caliburs -->
+		<item id="11891" /> <!-- Common Item - Sword of Limit*Sword of Limit -->
+		<item id="11892" /> <!-- Common Item - Sword of Limit*Sword of Delusion -->
+		<item id="11893" /> <!-- Common Item - Sword of Limit*Sword of Nightmare -->
+		<item id="11894" /> <!-- Common Item - Sword of Limit*Tsurugi -->
+		<item id="11897" /> <!-- Common Item - Sword of Delusion*Sword of Delusion -->
+		<item id="11898" /> <!-- Common Item - Sword of Delusion*Sword of Nightmare -->
+		<item id="11899" /> <!-- Common Item - Sword of Delusion*Tsurugi -->
+		<item id="11901" /> <!-- Common Item - Stormbringer*Samurai Long Sword -->
+		<item id="11905" /> <!-- Common Item - Sword of Nightmare*Sword of Nightmare -->
+		<item id="11906" /> <!-- Common Item - Sword of Nightmare*Tsurugi -->
+		<item id="11909" /> <!-- Common Item - Tsurugi*Tsurugi -->
+		<item id="11910" /> <!-- Common Item - Caliburs*Sword of Limit -->
+		<item id="11911" /> <!-- Common Item - Caliburs*Sword of Delusion -->
+		<item id="11912" /> <!-- Common Item - Caliburs*Sword of Nightmare -->
+		<item id="11913" /> <!-- Common Item - Caliburs*Tsurugi -->
+		<item id="11914" /> <!-- Common Item - Caliburs*Caliburs -->
+		<item id="11920" /> <!-- Common Item - Raid Sword*Samurai Long Sword -->
+		<item id="11921" /> <!-- Common Item - Shamshir*Samurai Long Sword -->
+		<item id="11922" /> <!-- Common Item - Spirit Sword*Samurai Long Sword -->
+		<item id="11923" /> <!-- Common Item - Katana*Samurai Long Sword -->
+		<item id="11924" /> <!-- Common Item - Sword of Limit*Samurai Long Sword -->
+		<item id="11925" /> <!-- Common Item - Sword of Delusion*Samurai Long Sword -->
+		<item id="11926" /> <!-- Common Item - Sword of Nightmare*Samurai Long Sword -->
+		<item id="11927" /> <!-- Common Item - Tsurugi*Samurai Long Sword -->
+		<item id="11928" /> <!-- Common Item - Caliburs*Samurai Long Sword -->
+		<item id="11937" /> <!-- Common Item - Samurai Long Sword*Samurai Long Sword -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="B_GRADE">
+		<item id="11889" /> <!-- Common Item - Great Sword -->
+		<item id="11929" /> <!-- Common Item - Guardian Sword -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="B_GRADE">
+		<item id="11902" /> <!-- Common Item - Spell Breaker -->
+		<item id="11941" /> <!-- Common Item - Kaim Vanul's Bones -->
+		<item id="11918" /> <!-- Common Item - Heavy War Axe -->
+		<item id="11935" /> <!-- Common Item - Deadman's Glory -->
+		<item id="11938" /> <!-- Common Item - Art of Battle Axe -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="B_GRADE">
+		<item id="11908" /> <!-- Common Item - Sprite's Staff -->
+		<item id="11934" /> <!-- Common Item - Staff of Evil Spirits -->
+		<item id="11904" /> <!-- Common Item - Ice Storm Hammer -->
+		<item id="11936" /> <!-- Common Item - Star Buster -->
+	</Weapons>
+	<Weapons type="POLE" grade="B_GRADE">
+		<item id="11890" /> <!-- Common Item - Great Axe -->
+		<item id="11932" /> <!-- Common Item - Lance -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="B_GRADE">
+		<item id="11919" /> <!-- Common Item - Hell Knife -->
+		<item id="11915" /> <!-- Common Item - Kris -->
+		<item id="11939" /> <!-- Common Item - Demon Dagger -->
+	</Weapons>
+	<Weapons type="FIST" grade="B_GRADE">
+		<item id="11903" /> <!-- Common Item - Arthro Nail -->
+		<item id="11933" /> <!-- Common Item - Bellion Cestus -->
+	</Weapons>
+	<Weapons type="BOW" grade="B_GRADE">
+		<item id="11896" /> <!-- Common Item - Dark Elven Long Bow -->
+		<item id="11944" /> <!-- Common Item - Bow of Peril -->
+	</Weapons>
+	<Weapons type="RAPIER" grade="B_GRADE">
+		<item id="11907" /> <!-- Common Item - Military Fleuret -->
+		<item id="11942" /> <!-- Common Item - Colichemarde -->
+	</Weapons>
+	<Weapons type="ANCIENT_SWORD" grade="B_GRADE">
+		<item id="11895" /> <!-- Common Item - Innominate Victory -->
+		<item id="11931" /> <!-- Common Item - Dismantler -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="B_GRADE">
+		<item id="11917" /> <!-- Common Item - Peacemaker -->
+		<item id="11945" /> <!-- Common Item - Hellbound -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="A_GRADE">
+		<item id="11952" /> <!-- Common Item - Elemental Sword -->
+		<item id="11971" /> <!-- Common Item - Sword of Miracles -->
+		<item id="11990" /> <!-- Common Item - Themis' Tongue -->
+		<item id="11953" /> <!-- Common Item - Spiritual Eye -->
+		<item id="11969" /> <!-- Common Item - Flaming Dragon Skull -->
+		<item id="11991" /> <!-- Common Item - Cabrio's Hand -->
+		<item id="11946" /> <!-- Common Item - Dasparion's Staff -->
+		<item id="11970" /> <!-- Common Item - Branch of the Mother Tree -->
+		<item id="11978" /> <!-- Common Item - Daimon Crystal -->
+	</Weapons>
+	<Weapons type="SWORD" grade="A_GRADE">
+		<item id="11957" /> <!-- Common Item - Tallum Blade -->
+		<item id="11964" /> <!-- Common Item - Dark Legion -->
+		<item id="11986" /> <!-- Common Item - Sirra's Blade -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="A_GRADE">
+		<item id="11956" /> <!-- Common Item - Keshanberk*Keshanberk -->
+		<item id="11961" /> <!-- Common Item - Keshanberk*Damascus -->
+		<item id="11963" /> <!-- Common Item - Damascus*Damascus -->
+		<item id="11989" /> <!-- Common Item - Tallum Blade*Damascus -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="A_GRADE">
+		<item id="11954" /> <!-- Common Item - Inferno Master -->
+		<item id="11968" /> <!-- Common Item - Dragon Slayer -->
+		<item id="11984" /> <!-- Common Item - Sword of Ipos -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="A_GRADE">
+		<item id="11949" /> <!-- Common Item - Meteor Shower -->
+		<item id="11974" /> <!-- Common Item - Elysian -->
+		<item id="11979" /> <!-- Common Item - Barakiel's Axe -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="A_GRADE">
+		<item id="11958" /> <!-- Common Item - Destroyer Hammer -->
+		<item id="11966" /> <!-- Common Item - Doom Crusher -->
+		<item id="11981" /> <!-- Common Item - Behemoth's Tuning Fork -->
+	</Weapons>
+	<Weapons type="POLE" grade="A_GRADE">
+		<item id="11960" /> <!-- Common Item - Halberd -->
+		<item id="11976" /> <!-- Common Item - Tallum Glaive -->
+		<item id="11988" /> <!-- Common Item - Tiphon's Spear -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="A_GRADE">
+		<item id="11951" /> <!-- Common Item - Bloody Orchid -->
+		<item id="11973" /> <!-- Common Item - Soul Separator -->
+		<item id="11977" /> <!-- Common Item - Naga Storm -->
+	</Weapons>
+	<Weapons type="FIST" grade="A_GRADE">
+		<item id="11950" /> <!-- Common Item - Blood Tornado -->
+		<item id="11967" /> <!-- Common Item - Dragon Grinder -->
+		<item id="11985" /> <!-- Common Item - Sobekk's Hurricane -->
+	</Weapons>
+	<Weapons type="BOW" grade="A_GRADE">
+		<item id="11955" /> <!-- Common Item - Carnage Bow -->
+		<item id="11975" /> <!-- Common Item - Soul Bow -->
+		<item id="11983" /> <!-- Common Item - Shyeed's Bow -->
+	</Weapons>
+	<Weapons type="RAPIER" grade="A_GRADE">
+		<item id="11948" /> <!-- Common Item - White Lightning -->
+		<item id="11962" /> <!-- Common Item - Lacerator -->
+		<item id="11987" /> <!-- Common Item - Eclair Bijou -->
+	</Weapons>
+	<Weapons type="ANCIENT_SWORD" grade="A_GRADE">
+		<item id="11959" /> <!-- Common Item - Divine Pain -->
+		<item id="11965" /> <!-- Common Item - Undertaker -->
+		<item id="11982" /> <!-- Common Item - Durendal -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="A_GRADE">
+		<item id="11947" /> <!-- Common Item - Doomchanter -->
+		<item id="11972" /> <!-- Common Item - Reaper -->
+		<item id="11980" /> <!-- Common Item - Screaming Vengeance -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="S_GRADE">
+		<item id="12000" /> <!-- Common Item - Arcana Mace -->
+		<item id="12002" /> <!-- Common Item - Imperial Staff -->
+	</Weapons>
+	<Weapons type="SWORD" grade="S_GRADE">
+		<item id="12004" /> <!-- Common Item - Forgotten Blade -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="S_GRADE">
+		<item id="12003" /> <!-- Common Item - Tallum Blade*Dark Legion -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="S_GRADE">
+		<item id="12005" /> <!-- Common Item - Heaven's Divider -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="S_GRADE">
+		<item id="11997" /> <!-- Common Item - Basalt Battlehammer -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="S_GRADE">
+		<item id="11995" /> <!-- Common Item - Dragon Hunter Axe -->
+	</Weapons>
+	<Weapons type="POLE" grade="S_GRADE">
+		<item id="11999" /> <!-- Common Item - Saint Spear -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="S_GRADE">
+		<item id="12001" /> <!-- Common Item - Angel Slayer -->
+	</Weapons>
+	<Weapons type="FIST" grade="S_GRADE">
+		<item id="11993" /> <!-- Common Item - Demon Splinter -->
+	</Weapons>
+	<Weapons type="BOW" grade="S_GRADE">
+		<item id="11994" /> <!-- Common Item - Draconic Bow -->
+	</Weapons>
+	<Weapons type="RAPIER" grade="S_GRADE">
+		<item id="11996" /> <!-- Common Item - Laevateinn -->
+	</Weapons>
+	<Weapons type="ANCIENT_SWORD" grade="S_GRADE">
+		<item id="11992" /> <!-- Common Item - Gram -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="S_GRADE">
+		<item id="11998" /> <!-- Common Item - Sarnga -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="S80_GRADE">
+		<item id="14124" />  <!-- Vesper Buster - Mana Up -->
+		<item id="14125" />  <!-- Vesper Buster - Acumen -->
+		<item id="14126" />  <!-- Vesper Buster - Magic Hold -->
+		<item id="14142" />  <!-- Vesper Caster - Acumen -->
+		<item id="14143" />  <!-- Vesper Caster - MP Regeneration -->
+		<item id="14144" />  <!-- Vesper Caster - Mana Up -->
+		<item id="14145" />  <!-- Vesper Singer - Empower -->
+		<item id="14146" />  <!-- Vesper Singer - MP Regeneration -->
+		<item id="14147" />  <!-- Vesper Singer - Magic Hold -->
+		<item id="15892" />  <!-- Sacredium - Mana Up -->
+		<item id="15893" />  <!-- Sacredium - Acumen -->
+		<item id="15894" />  <!-- Sacredium - MP Regeneration -->
+		<item id="15895" />  <!-- Cyclic Cane - Magic Hold -->
+		<item id="15896" />  <!-- Cyclic Cane - Empower -->
+		<item id="15897" />  <!-- Cyclic Cane - MP Regeneration -->
+		<item id="15898" />  <!-- Archangel Sword - Magic Hold -->
+		<item id="15899" />  <!-- Archangel Sword - Mana Up -->
+		<item id="15900" />  <!-- Archangel Sword - Acumen -->
+		<item id="15850" />  <!-- Rising Star - MP Regeneration -->
+		<item id="15851" />  <!-- Rising Star - Mana Up -->
+		<item id="15852" />  <!-- Rising Star - Acumen -->
+		<item id="15853" />  <!-- Black Visage - MP Regeneration -->
+		<item id="15854" />  <!-- Black Visage - Magic Hold -->
+		<item id="15855" />  <!-- Black Visage - Empower -->
+		<item id="15856" />  <!-- Veniplant Sword - Acumen -->
+		<item id="15857" />  <!-- Veniplant Sword - Magic Hold -->
+		<item id="15858" />  <!-- Veniplant Sword - Mana Up -->
+	</Weapons>
+	<Weapons type="SWORD" grade="S80_GRADE">
+		<item id="14118" />  <!-- Vesper Cutter - Haste -->
+		<item id="14119" />  <!-- Vesper Cutter - Health -->
+		<item id="14120" />  <!-- Vesper Cutter - Focus -->
+		<item id="15871" />  <!-- Eternal Core Sword - Focus -->
+		<item id="15872" />  <!-- Eternal Core Sword - Haste -->
+		<item id="15873" />  <!-- Eternal Core Sword - Health -->
+		<item id="15829" />  <!-- Periel Sword - Health -->
+		<item id="15830" />  <!-- Periel Sword - Focus -->
+		<item id="15831" />  <!-- Periel Sword - Haste -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="S80_GRADE">
+		<item id="52" />  <!-- Vesper Dualsword -->
+		<item id="10415" />  <!-- Icarus Dualsword -->
+		<item id="16154" />  <!-- Periel Dualsword -->
+		<item id="16158" />  <!-- Eternal Core Dualsword -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="S80_GRADE">
+		<item id="14121" />  <!-- Vesper Slasher - Haste -->
+		<item id="14122" />  <!-- Vesper Slasher - Health -->
+		<item id="14123" />  <!-- Vesper Slasher - Focus -->
+		<item id="15883" />  <!-- Lava Saw - Focus -->
+		<item id="15884" />  <!-- Lava Saw - Haste -->
+		<item id="15885" />  <!-- Lava Saw - Health -->
+		<item id="15841" />  <!-- Feather Eye Blade - Health -->
+		<item id="15842" />  <!-- Feather Eye Blade - Focus -->
+		<item id="15843" />  <!-- Feather Eye Blade - Haste -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="S80_GRADE">
+		<item id="14136" />  <!-- Vesper Avenger - HP Drain -->
+		<item id="14137" />  <!-- Vesper Avenger - Health -->
+		<item id="14138" />  <!-- Vesper Avenger - HP Regeneration -->
+		<item id="15877" />  <!-- Eversor Mace - HP Regeneration -->
+		<item id="15878" />  <!-- Eversor Mace - HP Drain -->
+		<item id="15879" />  <!-- Eversor Mace - Health -->
+		<item id="15835" />  <!-- Vigwik Axe - Health -->
+		<item id="15836" />  <!-- Vigwik Axe - HP Regeneration -->
+		<item id="15837" />  <!-- Vigwik Axe - HP Drain -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="S80_GRADE">
+		<item id="14139" />  <!-- Vesper Retributer - HP Regeneration -->
+		<item id="14140" />  <!-- Vesper Retributer - Health -->
+		<item id="14141" />  <!-- Vesper Retributer - HP Drain -->
+		<item id="15880" />  <!-- Contristo Hammer - HP Drain -->
+		<item id="15881" />  <!-- Contristo Hammer - HP Regeneration -->
+		<item id="15882" />  <!-- Contristo Hammer - Health -->
+		<item id="15838" />  <!-- Devilish Maul - Health -->
+		<item id="15839" />  <!-- Devilish Maul - HP Drain -->
+		<item id="15840" />  <!-- Devilish Maul - HP Regeneration -->
+	</Weapons>
+	<Weapons type="POLE" grade="S80_GRADE">
+		<item id="14133" />  <!-- Vesper Stormer - Health -->
+		<item id="14134" />  <!-- Vesper Stormer - Guidance -->
+		<item id="14135" />  <!-- Vesper Stormer - Haste -->
+		<item id="15847" />  <!-- Doubletop Spear - Guidance -->
+		<item id="15848" />  <!-- Doubletop Spear - Haste -->
+		<item id="15849" />  <!-- Doubletop Spear - Health -->
+		<item id="15889" />  <!-- Demitelum - Haste -->
+		<item id="15890" />  <!-- Demitelum - Health -->
+		<item id="15891" />  <!-- Demitelum - Guidance -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="S80_GRADE">
+		<item id="14127" />  <!-- Vesper Shaper - Critical Damage -->
+		<item id="14128" />  <!-- Vesper Shaper - HP Drain -->
+		<item id="14129" />  <!-- Vesper Shaper - Haste -->
+		<item id="15874" />  <!-- Mamba Edge - Haste -->
+		<item id="15875" />  <!-- Mamba Edge - Critical Damage -->
+		<item id="15876" />  <!-- Mamba Edge - HP Drain -->
+		<item id="15832" />  <!-- Skull Edge - HP Drain -->
+		<item id="15833" />  <!-- Skull Edge - Haste -->
+		<item id="15834" />  <!-- Skull Edge - Critical Damage -->
+		<item id="13883" />  <!-- Icarus Dual Daggers -->
+		<item id="13884" />  <!-- Vesper Dual Daggers -->
+	</Weapons>
+	<Weapons type="FIST" grade="S80_GRADE">
+		<item id="14130" />  <!-- Vesper Fighter - Focus -->
+		<item id="14131" />  <!-- Vesper Fighter - Health -->
+		<item id="14132" />  <!-- Vesper Fighter - Critical Stun -->
+		<item id="15886" />  <!-- Jade Claw - Critical Stun -->
+		<item id="15887" />  <!-- Jade Claw - Focus -->
+		<item id="15888" />  <!-- Jade Claw - Health -->
+		<item id="15844" />  <!-- Octo Claw - Health -->
+		<item id="15845" />  <!-- Octo Claw - Critical Stun -->
+		<item id="15846" />  <!-- Octo Claw - Focus -->
+	</Weapons>
+	<Weapons type="BOW" grade="S80_GRADE">
+		<item id="14148" />  <!-- Vesper Thrower - Cheap Shot -->
+		<item id="14149" />  <!-- Vesper Thrower - Focus -->
+		<item id="14150" />  <!-- Vesper Thrower - Critical Slow -->
+		<item id="15859" />  <!-- Skull Carnium Bow - Focus -->
+		<item id="15860" />  <!-- Skull Carnium Bow - Critical Slow -->
+		<item id="15861" />  <!-- Skull Carnium Bow - Cheap Shot -->
+		<item id="15901" />  <!-- Recurve Thorne Bow - Critical Slow -->
+		<item id="15902" />  <!-- Recurve Thorne Bow - Cheap Shot -->
+		<item id="15903" />  <!-- Recurve Thorne Bow - Focus -->
+	</Weapons>
+	<Weapons type="RAPIER" grade="S80_GRADE">
+		<item id="14151" />  <!-- Vesper Pincer - Haste -->
+		<item id="14152" />  <!-- Vesper Pincer - Health -->
+		<item id="14153" />  <!-- Vesper Pincer - Focus -->
+		<item id="10461" />  <!-- Icarus Stinger - Focus -->
+		<item id="10462" />  <!-- Icarus Stinger - Health -->
+		<item id="10463" />  <!-- Icarus Stinger - Light Armor -->
+		<item id="15862" />  <!-- Gemtail Rapier - Health -->
+		<item id="15863" />  <!-- Gemtail Rapier - Focus -->
+		<item id="15864" />  <!-- Gemtail Rapier - Haste -->
+		<item id="15904" />  <!-- Heavenstare Rapier - Focus -->
+		<item id="15905" />  <!-- Heavenstare Rapier - Haste -->
+		<item id="15906" />  <!-- Heavenstare Rapier - Health -->
+	</Weapons>
+	<Weapons type="ANCIENT_SWORD" grade="S80_GRADE">
+		<item id="14157" />  <!-- Vesper Nagan - Haste -->
+		<item id="14158" />  <!-- Vesper Nagan - Health -->
+		<item id="14159" />  <!-- Vesper Nagan - Focus -->
+		<item id="10464" />  <!-- Icarus Wingblade - Focus -->
+		<item id="10465" />  <!-- Icarus Wingblade - Health -->
+		<item id="10466" />  <!-- Icarus Wingblade - Light Armor -->
+		<item id="15865" />  <!-- Finale Blade - Health -->
+		<item id="15866" />  <!-- Finale Blade - Focus -->
+		<item id="15867" />  <!-- Finale Blade - Haste -->
+		<item id="15907" />  <!-- Pyseal Blade - Focus -->
+		<item id="15908" />  <!-- Pyseal Blade - Haste -->
+		<item id="15909" />  <!-- Pyseal Blade - Health -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="S80_GRADE">
+		<item id="14154" />  <!-- Vesper Shooter - Cheap Shot -->
+		<item id="14155" />  <!-- Vesper Shooter - Focus -->
+		<item id="14156" />  <!-- Vesper Shooter - Critical Slow -->
+		<item id="10467" />  <!-- Icarus Shooter - Cheap Shot -->
+		<item id="10468" />  <!-- Icarus Shooter - Guidance -->
+		<item id="10469" />  <!-- Icarus Shooter - Focus -->
+		<item id="15868" />  <!-- Dominion Crossbow - Focus -->
+		<item id="15869" />  <!-- Dominion Crossbow - Critical Slow -->
+		<item id="15870" />  <!-- Dominion Crossbow - Cheap Shot -->
+		<item id="15910" />  <!-- Thorne Crossbow - Critical Slow -->
+		<item id="15911" />  <!-- Thorne Crossbow - Cheap Shot -->
+		<item id="15912" />  <!-- Thorne Crossbow - Focus -->
+	</Weapons>
+	<Weapons type="MAGE_WEAPON" grade="R_GRADE">
+		<item id="18980" />  <!-- Amaranthine Buster - Acumen -->
+		<item id="18981" />  <!-- Amaranthine Buster - Magic Hold -->
+		<item id="18982" />  <!-- Amaranthine Buster - Mana Up -->
+		<item id="30214" />  <!-- Amaranthine Buster - Acumen + Magic Hold -->
+		<item id="30215" />  <!-- Amaranthine Buster - Magic Hold + Mana Up -->
+		<item id="30216" />  <!-- Amaranthine Buster - Mana Up + Acumen -->
+		<item id="19064" />  <!-- Blessed Amaranthine Buster - Acumen -->
+		<item id="19065" />  <!-- Blessed Amaranthine Buster - Magic Hold -->
+		<item id="19066" />  <!-- Blessed Amaranthine Buster - Mana Up -->
+		<item id="30256" />  <!-- Blessed Amaranthine Buster - Acumen + Magic Hold -->
+		<item id="30257" />  <!-- Blessed Amaranthine Buster - Magic Hold + Mana Up -->
+		<item id="30258" />  <!-- Blessed Amaranthine Buster - Mana Up + Acumen -->
+		<item id="35133" />  <!-- Dark Amaranthine Buster - Acumen -->
+		<item id="35134" />  <!-- Dark Amaranthine Buster - Magic Hold -->
+		<item id="35135" />  <!-- Dark Amaranthine Buster - Mana Up -->
+		<item id="35175" />  <!-- Dark Amaranthine Buster - Acumen + Magic Hold -->
+		<item id="35176" />  <!-- Dark Amaranthine Buster - Magic Hold + Mana Up -->
+		<item id="35177" />  <!-- Dark Amaranthine Buster - Mana Up + Acumen -->
+		<item id="18983" />  <!-- Amaranthine Caster - Empower -->
+		<item id="18984" />  <!-- Amaranthine Caster - Acumen -->
+		<item id="18985" />  <!-- Amaranthine Caster - Magic Hold -->
+		<item id="30217" />  <!-- Amaranthine Caster - Empower + Acumen -->
+		<item id="30218" />  <!-- Amaranthine Caster - Acumen + Magic Hold -->
+		<item id="30219" />  <!-- Amaranthine Caster - Magic Hold + Empower -->
+		<item id="19067" />  <!-- Blessed Amaranthine Caster - Empower -->
+		<item id="19068" />  <!-- Blessed Amaranthine Caster - Acumen -->
+		<item id="19069" />  <!-- Blessed Amaranthine Caster - Magic Hold -->
+		<item id="30259" />  <!-- Blessed Amaranthine Caster - Empower + Acumen -->
+		<item id="35136" />  <!-- Dark Amaranthine Caster - Empower -->
+		<item id="35137" />  <!-- Dark Amaranthine Caster - Acumen -->
+		<item id="35138" />  <!-- Dark Amaranthine Caster - Magic Hold -->
+		<item id="35178" />  <!-- Dark Amaranthine Caster - Empower + Acumen -->
+		<item id="35179" />  <!-- Dark Amaranthine Caster - Acumen + Magic Hold -->
+		<item id="35180" />  <!-- Dark Amaranthine Caster - Magic Hold + Empower -->
+		<item id="18986" />  <!-- Amaranthine Retributer - MP Regeneration -->
+		<item id="18987" />  <!-- Amaranthine Retributer - Acumen -->
+		<item id="18988" />  <!-- Amaranthine Retributer - Empower -->
+		<item id="30220" />  <!-- Amaranthine Retributer - MP Regeneration + Acumen -->
+		<item id="30221" />  <!-- Amaranthine Retributer - Acumen + Empower -->
+		<item id="30222" />  <!-- Amaranthine Retributer - Empower + MP Regeneration -->
+		<item id="19070" />  <!-- Blessed Amaranthine Retributer - MP Regeneration -->
+		<item id="19071" />  <!-- Blessed Amaranthine Retributer - Acumen -->
+		<item id="19072" />  <!-- Blessed Amaranthine Retributer - Empower -->
+		<item id="30262" />  <!-- Blessed Amaranthine Retributer - MP Regeneration + Acumen -->
+		<item id="30263" />  <!-- Blessed Amaranthine Retributer - Acumen + Empower -->
+		<item id="30264" />  <!-- Blessed Amaranthine Retributer - Empower + MP Regeneration -->
+		<item id="35139" />  <!-- Dark Amaranthine Retributer - MP Regeneration -->
+		<item id="35140" />  <!-- Dark Amaranthine Retributer - Acumen -->
+		<item id="35141" />  <!-- Dark Amaranthine Retributer - Empower -->
+		<item id="35181" />  <!-- Dark Amaranthine Retributer - MP Regeneration + Acumen -->
+		<item id="35182" />  <!-- Dark Amaranthine Retributer - Acumen + Empower -->
+		<item id="35183" />  <!-- Dark Amaranthine Retributer - Empower + MP Regeneration -->
+	</Weapons>
+	<Weapons type="SWORD" grade="R_GRADE">
+		<item id="18959" />  <!-- Amaranthine Cutter - Haste -->
+		<item id="18960" />  <!-- Amaranthine Cutter - Focus -->
+		<item id="18961" />  <!-- Amaranthine Cutter - Health -->
+		<item id="30193" />  <!-- Amaranthine Cutter - Haste + Focus -->
+		<item id="30194" />  <!-- Amaranthine Cutter - Focus + Health -->
+		<item id="30195" />  <!-- Amaranthine Cutter - Health + Haste -->
+		<item id="19043" />  <!-- Blessed Amaranthine Cutter - Haste -->
+		<item id="19044" />  <!-- Blessed Amaranthine Cutter - Focus -->
+		<item id="19045" />  <!-- Blessed Amaranthine Cutter - Health -->
+		<item id="30235" />  <!-- Blessed Amaranthine Cutter - Haste + Focus -->
+		<item id="30236" />  <!-- Blessed Amaranthine Cutter - Focus + Health -->
+		<item id="30237" />  <!-- Blessed Amaranthine Cutter - Health + Haste -->
+		<item id="35112" />  <!-- Dark Amaranthine Cutter - Haste -->
+		<item id="35113" />  <!-- Dark Amaranthine Cutter - Focus -->
+		<item id="35114" />  <!-- Dark Amaranthine Cutter - Health -->
+		<item id="35154" />  <!-- Dark Amaranthine Cutter - Haste + Focus -->
+		<item id="35155" />  <!-- Dark Amaranthine Cutter - Focus + Health -->
+		<item id="35156" />  <!-- Dark Amaranthine Cutter - Health + Haste -->
+	</Weapons>
+	<Weapons type="DUAL_SWORDS" grade="R_GRADE">
+		<item id="18989" />  <!-- Amaranthine Dualsword - Haste -->
+		<item id="18990" />  <!-- Amaranthine Dualsword - Damage Up -->
+		<item id="18991" />  <!-- Amaranthine Dualsword - Health -->
+		<item id="30223" />  <!-- Amaranthine Dualsword - Haste + Damage Up -->
+		<item id="30224" />  <!-- Amaranthine Dualsword - Damage Up + Health -->
+		<item id="30225" />  <!-- Amaranthine Dualsword - Health + Haste -->
+		<item id="19073" />  <!-- Blessed Amaranthine Dualsword - Haste -->
+		<item id="19074" />  <!-- Blessed Amaranthine Dualsword - Damage Up -->
+		<item id="19075" />  <!-- Blessed Amaranthine Dualsword - Health -->
+		<item id="30265" />  <!-- Blessed Amaranthine Dualsword - Haste + Damage Up -->
+		<item id="30266" />  <!-- Blessed Amaranthine Dualsword - Damage Up + Health -->
+		<item id="30267" />  <!-- Blessed Amaranthine Dualsword - Health + Haste -->
+		<item id="35142" />  <!-- Dark Amaranthine Dualsword - Haste -->
+		<item id="35143" />  <!-- Dark Amaranthine Dualsword - Damage Up -->
+		<item id="35144" />  <!-- Dark Amaranthine Dualsword - Health -->
+		<item id="35184" />  <!-- Dark Amaranthine Dualsword - Haste + Damage Up -->
+		<item id="35185" />  <!-- Dark Amaranthine Dualsword - Damage Up + Health -->
+		<item id="35186" />  <!-- Dark Amaranthine Dualsword - Health + Haste -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_SWORD" grade="R_GRADE">
+		<item id="18962" />  <!-- Amaranthine Slasher - Focus -->
+		<item id="18963" />  <!-- Amaranthine Slasher - Damage Up -->
+		<item id="18964" />  <!-- Amaranthine Slasher - Haste -->
+		<item id="30196" />  <!-- Amaranthine Slasher - Focus + Damage -->
+		<item id="30197" />  <!-- Amaranthine Slasher - Damage Up + Haste -->
+		<item id="30198" />  <!-- Amaranthine Slasher - Haste + Focus -->
+		<item id="19046" />  <!-- Blessed Amaranthine Slasher - Focus -->
+		<item id="19047" />  <!-- Blessed Amaranthine Slasher - Damage Up -->
+		<item id="19048" />  <!-- Blessed Amaranthine Slasher - Haste -->
+		<item id="30238" />  <!-- Blessed Amaranthine Slasher - Focus + Damage -->
+		<item id="30239" />  <!-- Blessed Amaranthine Slasher - Damage Up + Haste -->
+		<item id="30240" />  <!-- Blessed Amaranthine Slasher - Haste + Focus -->
+		<item id="35115" />  <!-- Dark Amaranthine Slasher - Focus -->
+		<item id="35116" />  <!-- Dark Amaranthine Slasher - Damage Up -->
+		<item id="35117" />  <!-- Dark Amaranthine Slasher - Haste -->
+		<item id="35157" />  <!-- Dark Amaranthine Slasher - Focus + Damage -->
+		<item id="35158" />  <!-- Dark Amaranthine Slasher - Damage Up + Haste -->
+		<item id="35159" />  <!-- Dark Amaranthine Slasher - Haste + Focus -->
+	</Weapons>
+	<Weapons type="BLUNT" grade="R_GRADE">
+		<item id="18965" />  <!-- Amaranthine Avenger - Haste -->
+		<item id="18966" />  <!-- Amaranthine Avenger - Critical Damage -->
+		<item id="18967" />  <!-- Amaranthine Avenger - Focus -->
+		<item id="30199" />  <!-- Amaranthine Avenger - Haste + Critical Damage -->
+		<item id="30200" />  <!-- Amaranthine Avenger - Critical Damage + Focus -->
+		<item id="30201" />  <!-- Amaranthine Avenger - Focus + Haste -->
+		<item id="19049" />  <!-- Blessed Amaranthine Avenger - Haste -->
+		<item id="19050" />  <!-- Blessed Amaranthine Avenger - Critical Damage -->
+		<item id="19051" />  <!-- Blessed Amaranthine Avenger - Focus -->
+		<item id="30241" />  <!-- Blessed Amaranthine Avenger - Haste + Critical Damage -->
+		<item id="30242" />  <!-- Blessed Amaranthine Avenger - Critical Damage + Focus -->
+		<item id="30243" />  <!-- Blessed Amaranthine Avenger - Focus + Haste -->
+		<item id="35118" />  <!-- Dark Amaranthine Avenger - Haste -->
+		<item id="35119" />  <!-- Dark Amaranthine Avenger - Critical Damage -->
+		<item id="35120" />  <!-- Dark Amaranthine Avenger - Focus -->
+		<item id="35160" />  <!-- Dark Amaranthine Avenger - Haste + Critical Damage -->
+		<item id="35161" />  <!-- Dark Amaranthine Avenger - Critical Damage + Focus -->
+		<item id="35162" />  <!-- Dark Amaranthine Avenger - Focus + Haste -->
+	</Weapons>
+	<Weapons type="TWO_HANDED_BLUNT" grade="R_GRADE">
+		<item id="18995" />  <!-- Amaranthine Dual Blunt Weapon - Focus -->
+		<item id="18996" />  <!-- Amaranthine Dual Blunt Weapon - Guidance -->
+		<item id="18997" />  <!-- Amaranthine Dual Blunt Weapon - Damage Up -->
+		<item id="30229" />  <!-- Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<item id="30230" />  <!-- Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+		<item id="30231" />  <!-- Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+		<item id="19079" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Focus -->
+		<item id="19080" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance -->
+		<item id="19081" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Damage Up -->
+		<item id="30271" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<item id="30272" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+		<item id="30273" />  <!-- Blessed Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+		<item id="35148" />  <!-- Dark Amaranthine Dual Blunt Weapon - Focus -->
+		<item id="35149" />  <!-- Dark Amaranthine Dual Blunt Weapon - Guidance -->
+		<item id="35150" />  <!-- Dark Amaranthine Dual Blunt Weapon - Damage Up -->
+		<item id="35190" />  <!-- Dark Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<item id="35191" />  <!-- Dark Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+		<item id="35192" />  <!-- Dark Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+	</Weapons>
+	<Weapons type="POLE" grade="R_GRADE">
+		<item id="18971" />  <!-- Amaranthine Stormer - HP Drain -->
+		<item id="18972" />  <!-- Amaranthine Stormer - Guidance -->
+		<item id="18973" />  <!-- Amaranthine Stormer - Damage Up -->
+		<item id="30205" />  <!-- Amaranthine Stormer - HP Drain + Guidance -->
+		<item id="30206" />  <!-- Amaranthine Stormer - Guidance + Damage Up -->
+		<item id="30207" />  <!-- Amaranthine Stormer - Damage Up + HP Drain -->
+		<item id="19055" />  <!-- Blessed Amaranthine Stormer - HP Drain -->
+		<item id="19056" />  <!-- Blessed Amaranthine Stormer - Guidance -->
+		<item id="19057" />  <!-- Blessed Amaranthine Stormer - Damage Up -->
+		<item id="30247" />  <!-- Blessed Amaranthine Stormer - HP Drain + Guidance -->
+		<item id="30248" />  <!-- Blessed Amaranthine Stormer - Guidance + Damage Up -->
+		<item id="30249" />  <!-- Blessed Amaranthine Stormer - Damage Up + HP Drain -->
+		<item id="35124" />  <!-- Dark Amaranthine Stormer - HP Drain -->
+		<item id="35125" />  <!-- Dark Amaranthine Stormer - Guidance -->
+		<item id="35126" />  <!-- Dark Amaranthine Stormer - Damage Up -->
+		<item id="35166" />  <!-- Dark Amaranthine Stormer - HP Drain + Guidance -->
+		<item id="35167" />  <!-- Dark Amaranthine Stormer - Guidance + Damage Up -->
+		<item id="35168" />  <!-- Dark Amaranthine Stormer - Damage Up + HP Drain -->
+	</Weapons>
+	<Weapons type="DAGGER" grade="R_GRADE">
+		<item id="18956" />  <!-- Amaranthine Shaper - Guidance -->
+		<item id="18957" />  <!-- Amaranthine Shaper - Haste -->
+		<item id="18958" />  <!-- Amaranthine Shaper - Focus -->
+		<item id="30190" />  <!-- Amaranthine Shaper - Guidance + Haste -->
+		<item id="30191" />  <!-- Amaranthine Shaper - Haste + Focus -->
+		<item id="30192" />  <!-- Amaranthine Shaper - Focus + Guidance -->
+		<item id="19040" />  <!-- Blessed Amaranthine Shaper - Guidance -->
+		<item id="19041" />  <!-- Blessed Amaranthine Shaper - Haste -->
+		<item id="19042" />  <!-- Blessed Amaranthine Shaper - Focus -->
+		<item id="30232" />  <!-- Blessed Amaranthine Shaper - Guidance + Haste -->
+		<item id="30233" />  <!-- Blessed Amaranthine Shaper - Haste + Focus -->
+		<item id="30234" />  <!-- Blessed Amaranthine Shaper - Focus + Guidance -->
+		<item id="35109" />  <!-- Dark Amaranthine Shaper - Guidance -->
+		<item id="35110" />  <!-- Dark Amaranthine Shaper - Haste -->
+		<item id="35111" />  <!-- Dark Amaranthine Shaper - Focus -->
+		<item id="35151" />  <!-- Dark Amaranthine Shaper - Guidance + Haste -->
+		<item id="35152" />  <!-- Dark Amaranthine Shaper - Haste + Focus -->
+		<item id="35153" />  <!-- Dark Amaranthine Shaper - Focus + Guidance -->
+		
+		
+		<item id="18992" />  <!-- Amaranthine Dual Dagger - Damage Up -->
+		<item id="18993" />  <!-- Amaranthine Dual Dagger - Focus -->
+		<item id="18994" />  <!-- Amaranthine Dual Dagger - Guidance -->
+		<item id="30226" />  <!-- Amaranthine Dual Dagger - Damage Up + Focus -->
+		<item id="30227" />  <!-- Amaranthine Dual Dagger - Focus + Guidance -->
+		<item id="30228" />  <!-- Amaranthine Dual Dagger - Guidance + Damage Up -->
+		<item id="19076" />  <!-- Blessed Amaranthine Dual Dagger - Damage Up -->
+		<item id="19077" />  <!-- Blessed Amaranthine Dual Dagger - Focus -->
+		<item id="19078" />  <!-- Blessed Amaranthine Dual Dagger - Guidance -->
+		<item id="30268" />  <!-- Blessed Amaranthine Dual Dagger - Damage Up + Focus -->
+		<item id="30269" />  <!-- Blessed Amaranthine Dual Dagger - Focus + Guidance -->
+		<item id="30270" />  <!-- Blessed Amaranthine Dual Dagger - Guidance + Damage Up -->
+		<item id="35145" />  <!-- Dark Amaranthine Dual Dagger - Damage Up -->
+		<item id="35146" />  <!-- Dark Amaranthine Dual Dagger - Focus -->
+		<item id="35147" />  <!-- Dark Amaranthine Dual Dagger - Guidance -->
+		<item id="35187" />  <!-- Dark Amaranthine Dual Dagger - Damage Up + Focus -->
+		<item id="35188" />  <!-- Dark Amaranthine Dual Dagger - Focus + Guidance -->
+		<item id="35189" />  <!-- Dark Amaranthine Dual Dagger - Guidance + Damage Up -->
+	</Weapons>
+	<Weapons type="FIST" grade="R_GRADE">
+		<item id="18968" />  <!-- Amaranthine Fighter - Focus -->
+		<item id="18969" />  <!-- Amaranthine Fighter - Damage Up -->
+		<item id="18970" />  <!-- Amaranthine Fighter - Haste -->
+		<item id="30202" />  <!-- Amaranthine Fighter - Focus + Damage -->
+		<item id="30203" />  <!-- Amaranthine Fighter - Damage Up + Haste -->
+		<item id="30204" />  <!-- Amaranthine Fighter - Haste + Focus -->
+		<item id="19052" />  <!-- Blessed Amaranthine Fighter - Focus -->
+		<item id="19053" />  <!-- Blessed Amaranthine Fighter - Damage Up -->
+		<item id="19054" />  <!-- Blessed Amaranthine Fighter - Haste -->
+		<item id="30244" />  <!-- Blessed Amaranthine Fighter - Focus + Damage -->
+		<item id="30245" />  <!-- Blessed Amaranthine Fighter - Damage Up + Haste -->
+		<item id="30246" />  <!-- Blessed Amaranthine Fighter - Haste + Focus -->
+		<item id="35121" />  <!-- Dark Amaranthine Fighter - Focus -->
+		<item id="35122" />  <!-- Dark Amaranthine Fighter - Damage Up -->
+		<item id="35123" />  <!-- Dark Amaranthine Fighter - Haste -->
+		<item id="35163" />  <!-- Dark Amaranthine Fighter - Focus + Damage -->
+		<item id="35164" />  <!-- Dark Amaranthine Fighter - Damage Up + Haste -->
+		<item id="35165" />  <!-- Dark Amaranthine Fighter - Haste + Focus -->
+	</Weapons>
+	<Weapons type="BOW" grade="R_GRADE">
+		<item id="18974" />  <!-- Amaranthine Thrower - Damage Up -->
+		<item id="18975" />  <!-- Amaranthine Thrower - Focus -->
+		<item id="18976" />  <!-- Amaranthine Thrower - Long Blow -->
+		<item id="30208" />  <!-- Amaranthine Thrower - Damage Up + Focus -->
+		<item id="30209" />  <!-- Amaranthine Thrower - Focus + Long Blow -->
+		<item id="30210" />  <!-- Amaranthine Thrower - Long Blow + Damage Up -->
+		<item id="19058" />  <!-- Blessed Amaranthine Thrower - Damage Up -->
+		<item id="19059" />  <!-- Blessed Amaranthine Thrower - Focus -->
+		<item id="19060" />  <!-- Blessed Amaranthine Thrower - Long Blow -->
+		<item id="30250" />  <!-- Blessed Amaranthine Thrower - Damage Up + Focus -->
+		<item id="30251" />  <!-- Blessed Amaranthine Thrower - Focus + Long Blow -->
+		<item id="30252" />  <!-- Blessed Amaranthine Thrower - Long Blow + Damage Up -->
+		<item id="35127" />  <!-- Dark Amaranthine Thrower - Damage Up -->
+		<item id="35128" />  <!-- Dark Amaranthine Thrower - Focus -->
+		<item id="35129" />  <!-- Dark Amaranthine Thrower - Long Blow -->
+		<item id="35169" />  <!-- Dark Amaranthine Thrower - Damage Up + Focus -->
+		<item id="35170" />  <!-- Dark Amaranthine Thrower - Focus + Long Blow -->
+		<item id="35171" />  <!-- Dark Amaranthine Thrower - Long Blow + Damage Up -->
+	</Weapons>
+	<Weapons type="CROSSBOW" grade="R_GRADE">
+		<item id="18977" />  <!-- Amaranthine Shooter - Focus -->
+		<item id="18978" />  <!-- Amaranthine Shooter - Critical Slow -->
+		<item id="18979" />  <!-- Amaranthine Shooter - Haste -->
+		<item id="30211" />  <!-- Amaranthine Shooter - Focus + Critical Slow -->
+		<item id="30212" />  <!-- Amaranthine Shooter - Critical Slow + Haste -->
+		<item id="30213" />  <!-- Amaranthine Shooter - Haste + Focus -->
+		<item id="19061" />  <!-- Blessed Amaranthine Shooter - Focus -->
+		<item id="19062" />  <!-- Blessed Amaranthine Shooter - Critical Slow -->
+		<item id="19063" />  <!-- Blessed Amaranthine Shooter - Haste -->
+		<item id="30253" />  <!-- Blessed Amaranthine Shooter - Focus + Critical Slow -->
+		<item id="30254" />  <!-- Blessed Amaranthine Shooter - Critical Slow + Haste -->
+		<item id="30255" />  <!-- Blessed Amaranthine Shooter - Haste + Focus -->
+		<item id="35130" />  <!-- Dark Amaranthine Shooter - Focus -->
+		<item id="35131" />  <!-- Dark Amaranthine Shooter - Critical Slow -->
+		<item id="35132" />  <!-- Dark Amaranthine Shooter - Haste -->
+		<item id="35172" />  <!-- Dark Amaranthine Shooter - Focus + Critical Slow -->
+		<item id="35173" />  <!-- Dark Amaranthine Shooter - Critical Slow + Haste -->
+		<item id="35174" />  <!-- Dark Amaranthine Shooter - Haste + Focus -->
+	</Weapons>
 </list>

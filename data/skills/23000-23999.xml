@@ -247,7 +247,7 @@
 	</skill>
 	<!-- Maximum HP/MP/CP, Physical/Defense Power, Speed and Physical/Magic P. Atk. are increased, and MP consumption for skills is decreased. Effectiveness 1. -->
 	<skill id="23017" levels="1" name="Winter Holiday Festival">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="castRange" val="400" />
@@ -271,7 +271,7 @@
 	</skill>
 	<!-- Maximum HP/MP/CP, Physical/Defense Power, Speed and Physical/Magic P. Atk. are increased, and MP consumption for skills is decreased. Effectiveness 2. -->
 	<skill id="23018" levels="1" name="Stupid Turkey's Mistake">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="4000" />
@@ -298,11 +298,11 @@
 		Level 2: Challenging with "rock." Cannot move.
 		Level 3: Challenging with "paper." Cannot move.
 	-->
-	<skill id="23019" levels="3" name="Scissors">
+	<skill id="23019" levels="3" name="Paper">
 		<table name="#magicLvl"> 1 2 3 </table>
 		<table name="#name">Scissors;Rock;Paper</table>
 		<set name="name" val="#name" />
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -319,7 +319,8 @@
 	</skill>
 	<!-- Presentation of the Turkey's Attack -->
 	<skill id="23020" levels="1" name="Attack Turkey">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -329,7 +330,7 @@
 		<set name="skillRadius" val="500" />
 	</skill>
 	<!-- Presentation of the Turkey's Attack -->
-	<skill id="23021" levels="3" name="Turkey's Attack Scissors">
+	<skill id="23021" levels="3" name="Turkey's Attack Paper">
 		<table name="#name">Turkey's Attack Scissors;Turkey's Attack Rock;Turkey's Attack Paper</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -337,22 +338,22 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: First win at the rock-scissors-paper match.
-		Level 2: Second consecutive win at the rock-scissors-paper match.
-		Level 3: Third consecutive win at the rock-scissors-paper match.
-		Level 4: Fourth consecutive win at the rock-scissors-paper match.
-		Level 5: Fifth consecutive win at the rock-scissors-paper match.
-		Level 6: Sixth consecutive win at the rock-scissors-paper match.
-		Level 7: Seventh consecutive win at the rock-scissors-paper match.
-		Level 8: Eighth consecutive win at the rock-scissors-paper match.
-		Level 9: Ninth consecutive win at the rock-scissors-paper match.
-		Level 10: Tenth consecutive win at the rock-scissors-paper match.
+		Level 1: 1st win at the rock-scissors-paper match.
+		Level 2: 2nd win at the rock-scissors-paper match.
+		Level 3: 3rd win at the rock-scissors-paper match.
+		Level 4: 4th win at the rock-scissors-paper match.
+		Level 5: 5th win at the rock-scissors-paper match.
+		Level 6: 6th win at the rock-scissors-paper match.
+		Level 7: 7th win at the rock-scissors-paper match.
+		Level 8: 8th win at the rock-scissors-paper match.
+		Level 9: 9th win at the rock-scissors-paper match.
+		Level 10: 10th win at the rock-scissors-paper match.
 	-->
-	<skill id="23022" levels="10" name="First win">
+	<skill id="23022" levels="10" name="10th Consecutive Win">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<table name="#name">First win;2nd Consecutive Win;3rd Consecutive Win;4th Consecutive Win;5th Consecutive Win;6th Consecutive Win;7th Consecutive Win;8th Consecutive Win;9th Consecutive Win;10th Consecutive Win</table>
 		<set name="name" val="#name" />
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="castRange" val="500" />
@@ -2138,7 +2139,7 @@
 	</skill>
 	<!-- Increases party members' Max HP by 30%, Max MP by 30%, Max CP by 30%, P. Def. by 30%, M. Def. by 30%, Spd. by 20, and P. Atk. by 10%, and M. Atk. by 20%, and decreases MP consumption during skill use by 15% for 20 minutes. Cooldown 5 min. Consumes 10 Rose Essences during skill use. -->
 	<skill id="23168" levels="1" name="Art of Seduction">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="5000" />
@@ -2286,7 +2287,7 @@
 	</skill>
 	<!-- Vitality Lv. is maintained for 2 hours due to the effect of sealed magic of the Magic Research Institute. -->
 	<skill id="23179" levels="1" name="Blessing of Vitality">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="GIVE_VITALITY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -3783,7 +3784,7 @@
 	</skill>
 	<!-- Envelops in flames to inflict 300 fire damage every second for 10 seconds. -->
 	<skill id="23298" levels="1" name="Flame Hawk">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="83" />
@@ -3801,7 +3802,7 @@
 	</skill>
 	<!-- Envelops in a hurricane to inflict 300 wind damage every second for 10 seconds. -->
 	<skill id="23299" levels="1" name="Arrow Rain">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="83" />
@@ -3819,7 +3820,7 @@
 	</skill>
 	<!-- Envelops with a specter to inflict 300 dark damage every second for 10 seconds. -->
 	<skill id="23300" levels="1" name="Ghost Piercing">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="83" />
@@ -4191,7 +4192,7 @@
 		Level 1: Norhand is searching for Skooldie. A trace of its voice remains.
 		Level 2: Norhand is searching for Skooldie. A powerful trace of its voice remains.
 	-->
-	<skill id="23342" levels="2" name="Norhand's Trace">
+	<skill id="23342" levels="2" name="Norhand's High Trace">
 		<table name="#name">Norhand's Trace;Norhand's High Trace</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -4685,9 +4686,9 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23408" levels="3" name="Borna Destruction">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4703,9 +4704,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23409" levels="3" name="Borna Destruction (Fire)">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4721,9 +4722,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23410" levels="3" name="Borna Destruction (Water)">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4739,9 +4740,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23411" levels="3" name="Borna Destruction (Wind)">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4757,9 +4758,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23412" levels="3" name="Borna Destruction (Earth)">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4775,9 +4776,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 356 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 377 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 397 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 356 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 377 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23413" levels="3" name="Borna Destruction (4 Attributes)">
 		<table name="#mpConsume"> 125 135 146 </table>
@@ -4793,9 +4794,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23414" levels="3" name="Borna Storm">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4811,9 +4812,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23415" levels="3" name="Borna Storm (Fire)">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4829,9 +4830,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23416" levels="3" name="Borna Storm (Water)">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4847,9 +4848,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23417" levels="3" name="Borna Storm (Wind)">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4865,9 +4866,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23418" levels="3" name="Borna Storm (Earth)">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4883,9 +4884,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 238 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 252 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 265 magic damage to target and surrounding enemies with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 238 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 252 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23419" levels="3" name="Borna Storm (4 Attributes)">
 		<table name="#mpConsume"> 264 288 315 </table>
@@ -4919,8 +4920,8 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<!-- 
-		Level 1: Instantly restores MP of self and surrounding party members based on Lv., up to a max of 140.  Also restores 10 MP a sec. for 10 sec.
-		Level 2: Instantly restores MP of self and surrounding party members based on Lv., up to a max of 143.  Also restores 10 MP a sec. for 10 sec.
+		Level 1: Instantly restores MP of self and surrounding party members based on Lv., up to a max of 140. Also restores 10 MP a sec. for 10 seconds.
+		Level 2: Instantly restores MP of self and surrounding party members based on Lv., up to a max of 143. Also restores 10 MP a sec. for 10 seconds.
 	-->
 	<skill id="23421" levels="2" name="Recharge of Borna">
 		<table name="#mpConsume"> 390 397 </table>
@@ -5075,9 +5076,9 @@
 		<set name="coolTime" val="300" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23436" levels="3" name="Borna Spike">
 		<table name="#mpConsume"> 45 47 51 </table>
@@ -5093,9 +5094,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23437" levels="3" name="Borna Spike (Fire)">
 		<table name="#mpConsume"> 45 47 50 </table>
@@ -5111,9 +5112,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23438" levels="3" name="Borna Spike (Water)">
 		<table name="#mpConsume"> 45 47 60 </table>
@@ -5129,9 +5130,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23439" levels="3" name="Borna Spike (Wind)">
 		<table name="#mpConsume"> 45 47 50 </table>
@@ -5147,9 +5148,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23440" levels="3" name="Borna Spike (Earth)">
 		<table name="#mpConsume"> 45 47 50 </table>
@@ -5165,9 +5166,9 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 121 magic damage with an attribute bestowed. Over-hit.
-		Level 2: Inflicts 126 magic damage with an attribute bestowed. Over-hit.
-		Level 3: Inflicts 133 magic damage with an attribute bestowed. Over-hit.
+		Level 1: Inflicts 121 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 2: Inflicts 126 magic damage with one of the 4 attributes bestowed. Over-hit.
+		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23441" levels="3" name="Borna Spike (4 Attributes)">
 		<table name="#mpConsume"> 45 47 51 </table>
@@ -5267,15 +5268,16 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 sec., P. Def. + 4000, M. Def. + 4000, receive only up to 300 damage, and reflect 40% of received damage back to enemy. Buff Cancel Resistance + 80%.
-		Level 2: For 30 sec., P. Def. + 6000, M. Def. + 6000, receive only up to 200 damage, and reflect 60% of received damage back to enemy. Buff Cancel Resistance + 80%.
-		Level 3: For 30 sec., P. Def. + 8000, M. Def. + 8000, receive only up to 150 damage, and reflect 80% of received damage back to enemy. Buff Cancel Resistance + 80%.
+		Level 1: For 30 seconds, P. Def. + 4000, M. Def. + 4000, receive only up to 300 damage, and reflect 300 of received damage back to enemy. Buff Cancel Resistance + 40%.
+		Level 2: For 30 seconds, P. Def. + 6000, M. Def. + 6000, receive only up to 200 damage, and reflect 200 of received damage back to enemy. Buff Cancel Resistance + 60%.
+		Level 3: For 30 seconds, P. Def. + 8000, M. Def. + 8000, receive only up to 150 damage, and reflect 150 of received damage back to enemy. Buff Cancel Resistance + 80%.
 	-->
 	<skill id="23451" levels="3" name="(Final Ultimate Defense)">
 		<table name="#def"> 4000 6000 8000 </table>
 		<table name="#reflect"> 40 60 80 </table>
 		<table name="#dmgCap"> 300 200 150 </table>
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="58" />
@@ -5295,8 +5297,8 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: For 15 sec., all party's P. Def. + 5000, M. Def. + 5000, Debuff Resistance + 50%, and take 90% of damage aimed at ally.
-		Level 2: For 15 sec., all party's P. Def. + 10000, M. Def. + 10000, Debuff Resistance + 70%, and take 90% of damage aimed at ally.
+		Level 1: For 15 seconds, all party's P. Def. + 5000, M. Def. + 5000, Debuff Resistance + 50%, and take 90% of damage aimed at ally.
+		Level 2: For 15 seconds, all party's P. Def. + 10000, M. Def. + 10000, Debuff Resistance + 70%, and take 90% of damage aimed at ally.
 	-->
 	<skill id="23452" levels="3" name="(Protection of Faith)">
 		<set name="target" val="TARGET_NONE" />
@@ -5342,7 +5344,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Summons a fairy that follows target around for 1 min. and restores HP. Also has a chance of restoring HP when attacked. -->
+	<!-- Summons a fairy that follows target around for 1 minute and restores HP. Also has a chance of restoring HP when attacked. -->
 	<skill id="23456" levels="3" name="(Fairy of Life)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5356,9 +5358,9 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 15 sec., restores target's HP by 172 a sec. and increases target's HP Recovery Rate by 10%. Increases your HP Recovery skill power.
-		Level 2: For 15 sec., restores target's HP by 174 a sec. and increases target's HP Recovery Rate by 19%. Increases your HP Recovery skill power.
-		Level 3: For 15 sec., restores target's HP by 175 a sec. and increases target's HP Recovery Rate by 25%. Increases your HP Recovery skill power.
+		Level 1: For 15 seconds, restores target's HP by 172 a sec. and increases target's HP Recovery Rate by 10%. Increases your HP Recovery skill power.
+		Level 2: For 15 seconds, restores target's HP by 174 a sec. and increases target's HP Recovery Rate by 19%. Increases your HP Recovery skill power.
+		Level 3: For 15 seconds, restores target's HP by 175 a sec. and increases target's HP Recovery Rate by 25%. Increases your HP Recovery skill power.
 	-->
 	<skill id="23457" levels="3" name="(Sustain)">
 		<set name="target" val="TARGET_NONE" />
@@ -5539,8 +5541,8 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 114 physical damage to target and nearby enemies, and absorbs 25% of inflicted damage as HP. Also, for 10 sec., the target's P. Def./ M. Def./ Casting Spd./ M. Atk./ P. Critical Rate/ M. Critical Rate/ Speed + 8%, and P. Accuracy - 12.
-		Level 2: Inflicts 121 physical damage to target and nearby enemies, and absorbs 25% of inflicted damage as HP. Also, for 10 sec., the target's P. Def./ M. Def./ Casting Spd./ M. Atk./ P. Critical Rate/ M. Critical Rate/ Speed + 8%, and P. Accuracy - 12.
+		Level 1: Inflicts 114 physical damage to target and nearby enemies, and absorbs 25% of inflicted damage as HP. Also, for 10 seconds, the target's P. Def./ M. Def./ Casting Spd./ M. Atk./ P. Critical Rate/ M. Critical Rate/ Speed + 8%, and P. Accuracy - 12.
+		Level 2: Inflicts 121 physical damage to target and nearby enemies, and absorbs 25% of inflicted damage as HP. Also, for 10 seconds, the target's P. Def./ M. Def./ Casting Spd./ M. Atk./ P. Critical Rate/ M. Critical Rate/ Speed + 8%, and P. Accuracy - 12.
 	-->
 	<skill id="23472" levels="2" name="(Mass Devil's Curse)">
 		<set name="target" val="TARGET_NONE" />
@@ -5581,8 +5583,8 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: Inflicts 9711 physical damage. For 10 sec., target's P. Def./ M. Def. - 30%, and P. Evasion - 10. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical.
-		Level 2: Inflicts 11443 physical damage. For 10 sec., target's P. Def./ M. Def. - 30%, and P. Evasion - 10. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical.
+		Level 1: Inflicts 9711 physical damage. For 10 seconds, target's P. Def./ M. Def. - 30%, and P. Evasion - 10. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical.
+		Level 2: Inflicts 11443 physical damage. For 10 seconds, target's P. Def./ M. Def. - 30%, and P. Evasion - 10. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical.
 	-->
 	<skill id="23475" levels="2" name="(Crippling Attack)">
 		<set name="target" val="TARGET_NONE" />
@@ -5596,8 +5598,8 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., party members' P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
-		Level 2: For 30 min., party members' P. Atk. + 21%, P. Def. + 15%, M. Atk. + 87%, and M. Def. + 30%.
+		Level 1: For 30 minutes, party members' P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
+		Level 2: For 30 minutes, party members' P. Atk. + 21%, P. Def. + 15%, M. Atk. + 87%, and M. Def. + 30%.
 	-->
 	<skill id="23476" levels="2" name="(Horn Melody)">
 		<set name="target" val="TARGET_NONE" />
@@ -5803,7 +5805,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- For 30 min., party members' P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanters' Enchant  Skill MP Consumption - 20%. -->
+	<!-- For 30 min., party members' P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanters' Enchant Skill MP Consumption - 20%. -->
 	<skill id="23498" levels="1" name="(Guitar Melody)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5919,7 +5921,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Increases party members' HP Recovery Bonus by 20%, P.Â Accuracy by 4, P.Â Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
+	<!-- Increases party members' HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 	<skill id="23509" levels="1" name="(Refreshing Sonata)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6213,10 +6215,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- 
-		Level 1: Spin your body to inflict powerful damage and Knock Back enemies.
-		Level 2: Twist your body to inflict powerful damage and Knock Back enemies.
-	-->
+	<!-- Spin your body to inflict powerful damage and Knock Back enemies. -->
 	<skill id="23545" levels="2" name="Whirlwind">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6404,7 +6403,8 @@
 		<set name="effectRange" val="2500" />
 	</skill>
 	<skill id="23563" levels="1" name="Body Slice">
-		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="FRONT" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -6717,7 +6717,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 	</skill>
-	<!-- P. Atk. -  50%. -->
+	<!-- P. Atk. - 50%. -->
 	<skill id="23601" levels="1" name="P. Atk. Decrease">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6749,7 +6749,7 @@
 	</skill>
 	<!-- Recovers HP by 2%. -->
 	<skill id="23604" levels="1" name="Heal">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6839,7 +6839,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Crackling fire burns the enemy for 10sec. If stacked to Lv. 2 or above, an explosion adds more damage after the duration is up. -->
+	<!-- Crackling fire burns the enemy for 10 seconds. If stacked to Lv. 2 or above, an explosion adds more damage after the duration is up. -->
 	<skill id="23613" levels="3" name="Crackling Timber">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6884,9 +6884,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: Katura's darkness seeps in to inflict Silence and magic damage for 7sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
-		Level 2: Katura's darkness seeps in to inflict Silence and magic damage for 10sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
-		Level 3: Katura's darkness seeps in to inflict Silence and magic damage for 14sec. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
+		Level 1: Katura's darkness seeps in to inflict Silence and magic damage for 7 seconds. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
+		Level 2: Katura's darkness seeps in to inflict Silence and magic damage for 10 seconds. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
+		Level 3: Katura's darkness seeps in to inflict Silence and magic damage for 14 seconds. If stacked to Lv. 2 or above, Soul Burn adds more damage after the duration is up.
 	-->
 	<skill id="23619" levels="3" name="Silence Bomb">
 		<set name="target" val="TARGET_NONE" />
@@ -6910,9 +6910,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: The wrath of the earth inflicts Stun for 5sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
-		Level 2: The wrath of the earth inflicts Stun for 7sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
-		Level 3: The wrath of the earth inflicts Stun for 10sec. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
+		Level 1: The wrath of the earth inflicts Stun for 5 seconds. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
+		Level 2: The wrath of the earth inflicts Stun for 7 seconds. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
+		Level 3: The wrath of the earth inflicts Stun for 10 seconds. If stacked to Lv. 2 or above, a sweeping quake adds more damage after the duration is up.
 	-->
 	<skill id="23622" levels="3" name="Quaking Earth">
 		<set name="target" val="TARGET_NONE" />
@@ -7002,7 +7002,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- for 7sec., P. Def. and M. Def. - 50%. -->
+	<!-- For 7 sec., P. Def. and M. Def. - 50%. -->
 	<skill id="23634" levels="1" name="Dimensional Weakening">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -7204,12 +7204,12 @@
 		<set name="effectRange" val="950" />
 	</skill>
 	<!-- 
-		Level 1: Increases target's P./M. Atk. by 20%, and decreases M. Def. by 20%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds.
-		Level 2: Increases target's P./M. Atk. by 25%, and decreases M. Def. by 25%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds.
-		Level 3: Increases target's P./M. Atk. by 30%, and decreases M. Def. by 30%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds.
-		Level 4: Increases target's P./M. Atk. by 40%, and decreases M. Def. by 40%. The effects increase by 5% each time the skill level increases by 1, and the duration increases by 30 seconds.
+		Level 1: Poisoned with Atelia. Will affect battle ability if it adds up. Duration 15 seconds.
+		Level 2: Atk./Casting Spd. + 10%, P./M. Atk. - 10%. Duration 15 seconds.
+		Level 3: Atk./Casting Spd. + 20%, P./M. Atk. - 20%. Duration 15 seconds.
+		Level 4: Atk./Casting Spd. + 40%, P./M. Atk. - 40%. Duration 15 seconds.
 	-->
-	<skill id="23653" levels="4" name="Atelia Activation">
+	<skill id="23653" levels="4" name="Poisonous Atelia">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7347,7 +7347,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<skill id="23666" levels="1" name="Dark Blast">
+	<skill id="23666" levels="1" name="Darkness Blast">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7442,22 +7442,23 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
 	</skill>
-	<!-- Presentation AI. Summon NPC. -->
-	<skill id="23677" levels="1" name="Summon Friends">
+	<!-- Key for Spirits' Evil Thoughts. -->
+	<skill id="23677" levels="1" name="Spirit's Evil Thoughts">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="2000" />
 	</skill>
-	<!-- Harpe petrifies itself for defense, and recovers HP. -->
-	<skill id="23678" levels="1" name="Harpe Recovery">
+	<!-- Presentation AI. Summon NPC. -->
+	<skill id="23678" levels="1" name="Summon Friends">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="5000" />
 	</skill>
-	<skill id="23679" levels="1" name="Harpe Stone Cancel">
+	<!-- Harpe petrifies itself for defense, and recovers HP. -->
+	<skill id="23679" levels="1" name="Harpe Recovery">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7472,9 +7473,8 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<!-- Inflicts a powerful blow on a single target. -->
-	<skill id="23681" levels="1" name="Fatal Strike">
-		<set name="target" val="TARGET_ONE" />
+	<skill id="23681" levels="1" name="Harpe Stone Cancel">
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BLOW" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -7487,8 +7487,8 @@
 		<set name="blowChance" val="20" />
 		<set name="overHit" val="true" />
 	</skill>
-	<!-- Inflicts great magic damage to enemies within range. -->
-	<skill id="23682" levels="1" name="Dark Cloud">
+	<!-- Inflicts a powerful blow on a single target. -->
+	<skill id="23682" levels="1" name="Fatal Strike">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7499,8 +7499,8 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Inflicts great damage to enemies within range and makes them bleed for 10 seconds. -->
-	<skill id="23683" levels="1" name="Dancing Blade">
+	<!-- Inflicts great magic damage to enemies within range. -->
+	<skill id="23683" levels="1" name="Dark Cloud">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7509,8 +7509,8 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Inflicts Fear to enemies within range for 10 seconds. -->
-	<skill id="23684" levels="1" name="Exploration Fear">
+	<!-- Inflicts great damage to enemies within range and makes them bleed for 10 seconds. -->
+	<skill id="23684" levels="1" name="Dancing Blade">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7519,8 +7519,8 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Knocks Down enemies within range for 10 seconds. -->
-	<skill id="23685" levels="1" name="Seismic Wave">
+	<!-- Inflicts Fear to enemies within range for 10 seconds. -->
+	<skill id="23685" levels="1" name="Exploration Fear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7531,8 +7531,8 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- Decreases MP by 60% of enemies within a certain range of Kelim by, and decreases Spdd by 50% for 10 seconds. -->
-	<skill id="23686" levels="1" name="Freezing Storm">
+	<!-- Knocks Down enemies within range for 10 seconds. -->
+	<skill id="23686" levels="1" name="Seismic Wave">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7541,8 +7541,8 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Gains Damage Reflect effect. -->
-	<skill id="23687" levels="1" name="Reflection Armor">
+	<!-- Decreases MP by 60% of enemies within a certain range of Kelim by, and decreases Spdd by 50% for 10 seconds. -->
+	<skill id="23687" levels="1" name="Freezing Storm">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7550,8 +7550,8 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Increases P./M. Atk. And Atk. Spd. by 50%. -->
-	<skill id="23688" levels="1" name="Fury of Kelbim">
+	<!-- Gains Damage Reflect effect. -->
+	<skill id="23688" levels="1" name="Reflection Armor">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7568,8 +7568,8 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases P. Def. -->
-	<skill id="23689" levels="1" name="Kelbim Physical Protection">
+	<!-- Increases P./M. Atk. And Atk. Spd. by 50%. -->
+	<skill id="23689" levels="1" name="Fury of Kelbim">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7588,8 +7588,8 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases M. Def. -->
-	<skill id="23690" levels="1" name="Kelbim Magic Protection">
+	<!-- Increases P. Def. -->
+	<skill id="23690" levels="1" name="Kelbim Physical Protection">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7608,8 +7608,8 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Gains resistance to all damage. -->
-	<skill id="23691" levels="1" name="Kelbim Ultimate Protection">
+	<!-- Increases M. Def. -->
+	<skill id="23691" levels="1" name="Kelbim Magic Protection">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7627,9 +7627,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Inflicts great magic damage to enemies within range. -->
-	<skill id="23692" levels="1" name="Meteor Crash">
-		<set name="target" val="TARGET_AURA" />
+	<!-- Gains resistance to all damage. -->
+	<skill id="23692" levels="1" name="Kelbim Ultimate Protection">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="120" />
@@ -7640,9 +7641,10 @@
 		<set name="effectRange" val="1000" />
 		<set name="skillRadius" val="1200" />
 	</skill>
-	<!-- Inflicts Aerial Yoke to enemies within range for 5 seconds. -->
-	<skill id="23693" levels="1" name="Water Drop Shackle">
-		<set name="target" val="TARGET_AURA" />
+	<!-- Inflicts great magic damage to enemies within range. -->
+	<skill id="23693" levels="1" name="Meteor Crash">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="120" />
@@ -7659,9 +7661,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Inflicts great damage to enemies within range and blows them away. -->
-	<skill id="23694" levels="1" name="Tornado Shackle">
-		<set name="target" val="TARGET_AURA" />
+	<!-- Inflicts Aerial Yoke to enemies within range for 5 seconds. -->
+	<skill id="23694" levels="1" name="Water Drop Shackle">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="120" />
@@ -7677,9 +7680,9 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Inflicts great damage to a single target and stuns them for 5 seconds. -->
-	<skill id="23695" levels="1" name="Stun Crash">
-		<set name="target" val="TARGET_ONE" />
+	<!-- Inflicts great damage to enemies within range and blows them away. -->
+	<skill id="23695" levels="1" name="Tornado Shackle">
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -7695,8 +7698,8 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Pulls in enemies within range and stuns them for 10 seconds. -->
-	<skill id="23696" levels="1" name="Chain Snake">
+	<!-- Inflicts great damage to a single target and stuns them for 5 seconds. -->
+	<skill id="23696" levels="1" name="Stun Crash">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7705,9 +7708,9 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Inflicts great damage to a single target and silences them for 5 seconds. -->
-	<skill id="23697" levels="1" name="Curse of Silence">
-		<set name="target" val="TARGET_ONE" />
+	<!-- Pulls in enemies within range and stuns them for 10 seconds. -->
+	<skill id="23697" levels="1" name="Chain Snake">
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="1" />
@@ -7723,17 +7726,18 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Infllicts great damage to enemies within range and blows them away. -->
-	<skill id="23698" levels="1" name="Storm Rage">
+	<!-- Inflicts great damage to a single target and silences them for 5 seconds. -->
+	<skill id="23698" levels="1" name="Curse of Silence">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Inflicts great magic damage to enemies within range and burns them for 5 seconds. -->
-	<skill id="23699" levels="1" name="Flame Thrower">
-		<set name="target" val="TARGET_AURA" />
+	<!-- Infllicts great damage to enemies within range and blows them away. -->
+	<skill id="23699" levels="1" name="Storm Rage">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="120" />
@@ -7749,20 +7753,21 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Contaminated gas spread throughout Atelia Fortress. Inflicts continuous damage and decreases Speed and Atk. Spd. -->
-	<skill id="23700" levels="1" name="Contaminated Atelia Gas">
+	<!-- Inflicts great magic damage to enemies within range and burns them for 5 seconds. -->
+	<skill id="23700" levels="1" name="Flame Thrower">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="20" />
 	</skill>
-	<!-- Engulfed in flames. -->
-	<skill id="23701" levels="1" name="Laceration">
+	<!-- Contaminated gas spread throughout Atelia Fortress. Inflicts continuous damage and decreases Speed and Atk. Spd. -->
+	<skill id="23701" levels="1" name="Contaminated Atelia Gas">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="23702" levels="1" name="Kelbim Battle Mode">
+	<!-- Engulfed in flames. -->
+	<skill id="23702" levels="1" name="Laceration">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7780,7 +7785,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 	</skill>
-	<skill id="23705" levels="1" name="Kelbim Presentation Skill 4">
+	<skill id="23705" levels="1" name="Kelbim Battle Mode">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7788,9 +7793,9 @@
 	</skill>
 	<!-- 
 		Level 1: Deals great magic damage to a single target and decreases P./M. Atk. by 25% for 20 seconds.
-		Level 2: Inflicts magic damage to a single target and decreases P./M. Atk. by 35% for 20 seconds.
-		Level 3: Inflicts magic damage to a single target and decreases P./M. Atk. by 50% for 20 seconds.
-		Level 4: Inflicts magic damage to a single target and decreases P./M. Atk. by 60% for 20 seconds.
+		Level 2: Deals great magic damage to a single target and decreases P./M. Atk. by 35% for 20 seconds.
+		Level 3: Deals great magic damage to a single target and decreases P./M. Atk. by 50% for 20 seconds.
+		Level 4: Deals great magic damage to a single target and decreases P./M. Atk. by 60% for 20 seconds.
 	-->
 	<skill id="23706" levels="4" name="Dark Fire">
 		<set name="target" val="TARGET_NONE" />
@@ -7803,9 +7808,9 @@
 	</skill>
 	<!-- 
 		Level 1: Deals great magic damage to a single target and decreases P./M. Def. by 30% for 20 seconds.
-		Level 2: Inflicts magic damage to a single target and decreases P./M. Def. by 40% for 20 seconds.
-		Level 3: Inflicts magic damage to a single target and decreases P./M. Def. by 50% for 20 seconds.
-		Level 4: Inflicts magic damage to a single target and decreases P./M. Def. by 60% for 20 seconds.
+		Level 2: Deals great magic damage to a single target and decreases P./M. Def. by 40% for 20 seconds.
+		Level 3: Deals great magic damage to a single target and decreases P./M. Def. by 50% for 20 seconds.
+		Level 4: Deals great magic damage to a single target and decreases P./M. Def. by 60% for 20 seconds.
 	-->
 	<skill id="23707" levels="4" name="Chaos Fire">
 		<set name="target" val="TARGET_NONE" />
@@ -7818,9 +7823,9 @@
 	</skill>
 	<!-- 
 		Level 1: Deals great damage to a single target and decreases P./M. Atk. by 25% for 20 seconds.
-		Level 2: Inflicts magic damage to a single target and decreases P./M. Atk. by 35% for 20 seconds.
-		Level 3: Inflicts magic damage to a single target and decreases P./M. Atk. by 50% for 20 seconds.
-		Level 4: Inflicts magic damage to a single target and decreases P./M. Atk. by 60% for 20 seconds.
+		Level 2: Deals great damage to a single target and decreases P./M. Atk. by 35% for 20 seconds.
+		Level 3: Deals great damage to a single target and decreases P./M. Atk. by 50% for 20 seconds.
+		Level 4: Deals great damage to a single target and decreases P./M. Atk. by 60% for 20 seconds.
 	-->
 	<skill id="23708" levels="4" name="Dark Breaker">
 		<set name="target" val="TARGET_NONE" />
@@ -7834,9 +7839,9 @@
 	</skill>
 	<!-- 
 		Level 1: Deals great damage to a single target and decreases P./M. Def. by 30% for 20 seconds.
-		Level 2: Inflicts magic damage to a single target and decreases P./M. Def. by 40% for 20 seconds.
-		Level 3: Inflicts magic damage to a single target and decreases P./M. Def. by 50% for 20 seconds.
-		Level 4: Inflicts magic damage to a single target and decreases P./M. Def. by 60% for 20 seconds.
+		Level 2: Deals great damage to a single target and decreases P./M. Def. by 40% for 20 seconds.
+		Level 3: Deals great damage to a single target and decreases P./M. Def. by 50% for 20 seconds.
+		Level 4: Deals great damage to a single target and decreases P./M. Def. by 60% for 20 seconds.
 	-->
 	<skill id="23709" levels="4" name="Chaos Breaker">
 		<set name="target" val="TARGET_NONE" />
@@ -7995,7 +8000,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Strikes target and nearby enemies with a lightning bolt that inflicts non-attribute damage. Paralyzes for 5 seconds. -->
+	<!-- Strikes target and nearby enemies with a lightning bolt that inflicts non-attribute damage with 11997 Power. Paralyzes for 5 seconds. Consumes 1 Soulstone. -->
 	<skill id="23729" levels="1" name="Mass Lightning Strike">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -8380,7 +8385,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Leaves a mark that decreases target's P. Def. and  M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
+	<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
 	<skill id="23763" levels="1" name="Mark of Lumi">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -8483,5 +8488,29 @@
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="60000" />
+	</skill>
+	<!-- Teamwork achieved thanks to the clan activities. XP/SP + 8% and Vitality Consumption Speed - 3% for 3 hours. -->
+	<skill id="23774" levels="1" name="Clan Teamwork - Stage 1">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Teamwork achieved thanks to the clan activities. XP/SP + 16%, PvE Damage + 2%, and Vitality Consumption Speed - 3% for 3 hours. -->
+	<skill id="23775" levels="1" name="Clan Teamwork - Stage 2">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Teamwork achieved thanks to the clan activities. XP/SP + 24%, PvE Damage + 5%, and Vitality Consumption Speed - 5% for 3 hours. -->
+	<skill id="23776" levels="1" name="Clan Teamwork - Stage 3">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Teamwork achieved thanks to the clan activities. XP/SP + 35%, PvE Damage + 8%, Vitality Consumption Speed - 3%, and Damage Received from Raid/Boss Monsters - 8% for 3 hours. -->
+	<skill id="23777" levels="1" name="Clan Teamwork - Stage 4">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 </list>

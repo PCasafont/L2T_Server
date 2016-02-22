@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import l2server.gameserver.handler.ActionHandler;
@@ -46,10 +47,10 @@ public abstract class L2Object
 {
 	// =========================================================
 	// Data Field
-	private boolean _isVisible;				 // Object visibility
+	private boolean _isVisible; // Object visibility
 	private ObjectKnownList _knownList;
 	private String _name;
-	private int _objectId;					  // Object identifier
+	private int _objectId; // Object identifier
 	private ObjectPoly _poly;
 	private ObjectPosition _position;
 	private int _instanceId = 0;
@@ -68,115 +69,31 @@ public abstract class L2Object
 	
 	public static enum InstanceType
 	{
-		L2Object(null),
-		L2ItemInstance(L2Object),
-		L2Character(L2Object),
-		L2Npc(L2Character),
-		L2Playable(L2Character),
-		L2Summon(L2Playable),
-		L2Decoy(L2Character),
-		L2Trap(L2Character),
-		L2PcInstance(L2Playable),
-		L2NpcInstance(L2Npc),
-		L2MerchantInstance(L2NpcInstance),
-		L2WarehouseInstance(L2NpcInstance),
-		L2StaticObjectInstance(L2Character),
-		L2DoorInstance(L2Character),
-		L2NpcWalkerInstance(L2Npc),
-		L2TerrainObjectInstance(L2Npc),
-		L2EffectPointInstance(L2Npc),
+		L2Object(null), L2ItemInstance(L2Object), L2Character(L2Object), L2Npc(L2Character), L2Playable(L2Character), L2Summon(L2Playable), L2Decoy(L2Character), L2Trap(L2Character), L2PcInstance(L2Playable), L2NpcInstance(L2Npc), L2MerchantInstance(L2NpcInstance), L2WarehouseInstance(L2NpcInstance), L2StaticObjectInstance(L2Character), L2DoorInstance(L2Character), L2NpcWalkerInstance(L2Npc), L2TerrainObjectInstance(L2Npc), L2EffectPointInstance(L2Npc),
 		// Summons, Pets, Decoys and Traps
-		L2SummonInstance(L2Summon),
-		L2SiegeSummonInstance(L2SummonInstance),
-		L2MerchantSummonInstance(L2SummonInstance),
-		L2PetInstance(L2Summon),
-		L2BabyPetInstance(L2PetInstance),
-		L2DecoyInstance(L2Decoy),
-		L2TrapInstance(L2Trap),
+		L2SummonInstance(L2Summon), L2SiegeSummonInstance(L2SummonInstance), L2MerchantSummonInstance(L2SummonInstance), L2PetInstance(L2Summon), L2BabyPetInstance(L2PetInstance), L2DecoyInstance(L2Decoy), L2TrapInstance(L2Trap),
 		// Attackable
-		L2Attackable(L2Npc),
-		L2GuardInstance(L2Attackable),
-		L2QuestGuardInstance(L2GuardInstance),
-		L2MonsterInstance(L2Attackable),
-		L2ChestInstance(L2MonsterInstance),
-		L2ControllableMobInstance(L2MonsterInstance),
-		L2FeedableBeastInstance(L2MonsterInstance),
-		L2TamedBeastInstance(L2FeedableBeastInstance),
-		L2FriendlyMobInstance(L2Attackable),
-		L2PenaltyMonsterInstance(L2MonsterInstance),
-		L2RaidBossInstance(L2MonsterInstance),
-		L2GrandBossInstance(L2RaidBossInstance),
+		L2Attackable(L2Npc), L2GuardInstance(L2Attackable), L2QuestGuardInstance(L2GuardInstance), L2MonsterInstance(L2Attackable), L2ChestInstance(L2MonsterInstance), L2ControllableMobInstance(L2MonsterInstance), L2FeedableBeastInstance(L2MonsterInstance), L2TamedBeastInstance(L2FeedableBeastInstance), L2FriendlyMobInstance(L2Attackable), L2PenaltyMonsterInstance(L2MonsterInstance), L2RaidBossInstance(L2MonsterInstance), L2GrandBossInstance(L2RaidBossInstance),
 		// FlyMobs
-		L2FlyNpcInstance(L2NpcInstance),
-		L2FlyMonsterInstance(L2MonsterInstance),
-		L2FlyRaidBossInstance(L2RaidBossInstance),
-		L2FlyTerrainObjectInstance(L2Npc),
+		L2FlyNpcInstance(L2NpcInstance), L2FlyMonsterInstance(L2MonsterInstance), L2FlyRaidBossInstance(L2RaidBossInstance), L2FlyTerrainObjectInstance(L2Npc),
 		// Sepulchers
-		L2SepulcherNpcInstance(L2NpcInstance),
-		L2SepulcherMonsterInstance(L2MonsterInstance),
+		L2SepulcherNpcInstance(L2NpcInstance), L2SepulcherMonsterInstance(L2MonsterInstance),
 		// Vehicles
-		L2Vehicle(L2Character),
-		L2BoatInstance(L2Vehicle),
-		L2AirShipInstance(L2Vehicle),
-		L2ControllableAirShipInstance(L2AirShipInstance),
-		L2ShuttleInstance(L2Vehicle),
+		L2Vehicle(L2Character), L2BoatInstance(L2Vehicle), L2AirShipInstance(L2Vehicle), L2ControllableAirShipInstance(L2AirShipInstance), L2ShuttleInstance(L2Vehicle),
 		// Siege
-		L2DefenderInstance(L2Attackable),
-		L2ArtefactInstance(L2NpcInstance),
-		L2ControlTowerInstance(L2Npc),
-		L2FlameTowerInstance(L2Npc),
-		L2SiegeFlagInstance(L2Npc),
-		L2SiegeNpcInstance(L2Npc),
+		L2DefenderInstance(L2Attackable), L2ArtefactInstance(L2NpcInstance), L2ControlTowerInstance(L2Npc), L2FlameTowerInstance(L2Npc), L2SiegeFlagInstance(L2Npc), L2SiegeNpcInstance(L2Npc),
 		// Fort Siege
-		L2FortBallistaInstance(L2Npc),
-		L2FortCommanderInstance(L2DefenderInstance),
+		L2FortBallistaInstance(L2Npc), L2FortCommanderInstance(L2DefenderInstance),
 		// Castle NPCs
-		L2CastleBlacksmithInstance(L2NpcInstance),
-		L2CastleChamberlainInstance(L2MerchantInstance),
-		L2CastleMagicianInstance(L2NpcInstance),
-		L2CastleTeleporterInstance(L2Npc),
-		L2CastleWarehouseInstance(L2WarehouseInstance),
-		L2MercManagerInstance(L2MerchantInstance),
+		L2CastleBlacksmithInstance(L2NpcInstance), L2CastleChamberlainInstance(L2MerchantInstance), L2CastleMagicianInstance(L2NpcInstance), L2CastleTeleporterInstance(L2Npc), L2CastleWarehouseInstance(L2WarehouseInstance), L2MercManagerInstance(L2MerchantInstance),
 		// Fort NPCs
-		L2FortEnvoyInstance(L2Npc),
-		L2FortLogisticsInstance(L2MerchantInstance),
-		L2FortManagerInstance(L2MerchantInstance),
-		L2FortSiegeNpcInstance(L2NpcWalkerInstance),
-		L2FortSupportCaptainInstance(L2MerchantInstance),
+		L2FortEnvoyInstance(L2Npc), L2FortLogisticsInstance(L2MerchantInstance), L2FortManagerInstance(L2MerchantInstance), L2FortSiegeNpcInstance(L2NpcWalkerInstance), L2FortSupportCaptainInstance(L2MerchantInstance),
 		// City NPCs
-		L2AdventurerInstance(L2NpcInstance),
-		L2AuctioneerInstance(L2Npc),
-		L2ClanHallManagerInstance(L2MerchantInstance),
-		L2ClanTraderInstance(L2Npc),
-		L2FameManagerInstance(L2Npc),
-		L2FishermanInstance(L2MerchantInstance),
-		L2ManorManagerInstance(L2MerchantInstance),
-		L2MercenaryManagerInstance(L2Npc),
-		L2ObservationInstance(L2Npc),
-		L2OlympiadManagerInstance(L2Npc),
-		L2PetManagerInstance(L2MerchantInstance),
-		L2RaceManagerInstance(L2Npc),
-		L2SymbolMakerInstance(L2Npc),
-		L2TeleporterInstance(L2Npc),
-		L2TownPetInstance(L2Npc),
-		L2TrainerInstance(L2NpcInstance),
-		L2TransformManagerInstance(L2MerchantInstance),
-		L2VillageMasterInstance(L2NpcInstance),
-		L2WyvernManagerInstance(L2NpcInstance),
-		L2XmassTreeInstance(L2NpcInstance),
-		L2AwakeNpcInstance(L2Npc),
+		L2AdventurerInstance(L2NpcInstance), L2AuctioneerInstance(L2Npc), L2ClanHallManagerInstance(L2MerchantInstance), L2ClanTraderInstance(L2Npc), L2FameManagerInstance(L2Npc), L2FishermanInstance(L2MerchantInstance), L2ManorManagerInstance(L2MerchantInstance), L2MercenaryManagerInstance(L2Npc), L2ObservationInstance(L2Npc), L2OlympiadManagerInstance(L2Npc), L2PetManagerInstance(L2MerchantInstance), L2RaceManagerInstance(L2Npc), L2SymbolMakerInstance(L2Npc), L2TeleporterInstance(L2Npc), L2TownPetInstance(L2Npc), L2TrainerInstance(L2NpcInstance), L2TransformManagerInstance(L2MerchantInstance), L2VillageMasterInstance(L2NpcInstance), L2WyvernManagerInstance(L2NpcInstance), L2XmassTreeInstance(L2NpcInstance), L2AwakeNpcInstance(L2Npc),
 		// Doormens
-		L2DoormenInstance(L2NpcInstance),
-		L2CastleDoormenInstance(L2DoormenInstance),
-		L2FortDoormenInstance(L2DoormenInstance),
-		L2ClanHallDoormenInstance(L2DoormenInstance),
+		L2DoormenInstance(L2NpcInstance), L2CastleDoormenInstance(L2DoormenInstance), L2FortDoormenInstance(L2DoormenInstance), L2ClanHallDoormenInstance(L2DoormenInstance),
 		// Custom
-		L2ClassMasterInstance(L2NpcInstance),
-		L2NpcBufferInstance(L2Npc),
-		L2InstancedEventNpcInstance(L2Npc),
-		L2WeddingManagerInstance(L2Npc),
-		L2EventMobInstance(L2Npc),
-		L2StatueInstance(L2Npc);
+		L2ClassMasterInstance(L2NpcInstance), L2NpcBufferInstance(L2Npc), L2InstancedEventNpcInstance(L2Npc), L2WeddingManagerInstance(L2Npc), L2EventMobInstance(L2Npc), L2StatueInstance(L2Npc), L2GatekeeperInstance(L2TeleporterInstance), L2BufferInstance(L2TeleporterInstance), L2CustomMerchantInstance(L2MerchantInstance), L2WorldManagerInstance(L2MerchantInstance), L2DonationManagerInstance(L2MerchantInstance), L2MiniRaidInstance(L2RaidBossInstance), L2DeluxeChestInstance(L2MonsterInstance), L2MiniGameManagerInstance(L2MerchantInstance), L2CloneInstance(L2SummonInstance);
 		
 		private final InstanceType _parent;
 		private final long _typeL;
@@ -188,10 +105,10 @@ public abstract class L2Object
 		{
 			_parent = parent;
 			
-			final int high = this.ordinal() - (Long.SIZE - 1);
+			final int high = ordinal() - (Long.SIZE - 1);
 			if (high < 0)
 			{
-				_typeL = 1L << this.ordinal();
+				_typeL = 1L << ordinal();
 				_typeH = 0;
 			}
 			else
@@ -200,8 +117,8 @@ public abstract class L2Object
 				_typeH = 1L << high;
 			}
 			
-			if (_typeL < 0 || _typeH < 0)
-				throw new Error("Too many instance types, failed to load " + this.name());
+			if ((_typeL < 0) || (_typeH < 0))
+				throw new Error("Too many instance types, failed to load " + name());
 			
 			if (parent != null)
 			{
@@ -222,7 +139,7 @@ public abstract class L2Object
 		
 		public final boolean isType(InstanceType it)
 		{
-			return (_maskL & it._typeL) > 0 || (_maskH & it._typeH) > 0;
+			return ((_maskL & it._typeL) > 0) || ((_maskH & it._typeH) > 0);
 		}
 		
 		public final boolean isTypes(InstanceType... it)
@@ -312,9 +229,10 @@ public abstract class L2Object
 	
 	public final int getX()
 	{
-		assert getPosition().getWorldRegion() != null || _isVisible;
+		assert (getPosition().getWorldRegion() != null) || _isVisible;
 		return getPosition().getX();
 	}
+	
 	/**
 	 * @return The id of the instance zone the object is in - id 0 is global
 	 * since everything like dropped items, mobs, players can be in a instanciated area, it must be in l2object
@@ -340,7 +258,7 @@ public abstract class L2Object
 		
 		if (this instanceof L2PcInstance)
 		{
-			if (_instanceId > 0 && oldI != null)
+			if ((_instanceId > 0) && (oldI != null))
 			{
 				oldI.removePlayer(getObjectId());
 				if (oldI.isShowTimer())
@@ -362,24 +280,24 @@ public abstract class L2Object
 						sendPacket(new ExSendUIEvent(0, 0, endTime - startTime, 0, newI.getTimerText()));
 				}
 			}
-
-			if (((L2PcInstance)this).getPet() != null)
-				((L2PcInstance)this).getPet().setInstanceId(instanceId);
-			for (L2SummonInstance summon : ((L2PcInstance)this).getSummons())
+			
+			if (((L2PcInstance) this).getPet() != null)
+				((L2PcInstance) this).getPet().setInstanceId(instanceId);
+			for (L2SummonInstance summon : ((L2PcInstance) this).getSummons())
 				summon.setInstanceId(instanceId);
 		}
 		else if (this instanceof L2Npc)
 		{
-			if (_instanceId > 0 && oldI != null)
-				oldI.removeNpc(((L2Npc)this));
+			if ((_instanceId > 0) && (oldI != null))
+				oldI.removeNpc(((L2Npc) this));
 			if (instanceId > 0)
-				newI.addNpc(((L2Npc)this));
+				newI.addNpc(((L2Npc) this));
 		}
 		
 		_instanceId = instanceId;
 		
 		// If we change it for visible objects, me must clear & revalidate knownlists
-		if (_isVisible && _knownList != null)
+		if (_isVisible && (_knownList != null))
 		{
 			if (this instanceof L2PcInstance)
 			{
@@ -398,13 +316,13 @@ public abstract class L2Object
 	
 	public final int getY()
 	{
-		assert getPosition().getWorldRegion() != null || _isVisible;
+		assert (getPosition().getWorldRegion() != null) || _isVisible;
 		return getPosition().getY();
 	}
 	
 	public final int getZ()
 	{
-		assert getPosition().getWorldRegion() != null || _isVisible;
+		assert (getPosition().getWorldRegion() != null) || _isVisible;
 		return getPosition().getZ();
 	}
 	
@@ -416,7 +334,7 @@ public abstract class L2Object
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Remove the L2Object from the world</li><BR><BR>
 	 *
-	  * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packets to players</B></FONT><BR><BR>
 	 *
 	 * <B><U> Assert </U> :</B><BR><BR>
 	 * <li> _worldRegion != null <I>(L2Object is visible at the beginning)</I></li><BR><BR>
@@ -470,7 +388,7 @@ public abstract class L2Object
 	 */
 	public final void spawnMe()
 	{
-		assert getPosition().getWorldRegion() == null && getPosition().getWorldPosition().getX() != 0 && getPosition().getWorldPosition().getY() != 0 && getPosition().getWorldPosition().getZ() != 0;
+		assert (getPosition().getWorldRegion() == null) && (getPosition().getWorldPosition().getX() != 0) && (getPosition().getWorldPosition().getY() != 0) && (getPosition().getWorldPosition().getZ() != 0);
 		
 		synchronized (this)
 		{
@@ -502,18 +420,22 @@ public abstract class L2Object
 			// Set the x,y,z position of the L2Object spawn and update its _worldregion
 			_isVisible = true;
 			
-			if (x > L2World.MAP_MAX_X) x = L2World.MAP_MAX_X - 5000;
-			if (x < L2World.MAP_MIN_X) x = L2World.MAP_MIN_X + 5000;
-			if (y > L2World.MAP_MAX_Y) y = L2World.MAP_MAX_Y - 5000;
-			if (y < L2World.MAP_MIN_Y) y = L2World.MAP_MIN_Y + 5000;
+			if (x > L2World.MAP_MAX_X)
+				x = L2World.MAP_MAX_X - 5000;
+			if (x < L2World.MAP_MIN_X)
+				x = L2World.MAP_MIN_X + 5000;
+			if (y > L2World.MAP_MAX_Y)
+				y = L2World.MAP_MAX_Y - 5000;
+			if (y < L2World.MAP_MIN_Y)
+				y = L2World.MAP_MIN_Y + 5000;
 			
-			getPosition().setWorldPosition(x, y ,z);
+			getPosition().setWorldPosition(x, y, z);
 			getPosition().setWorldRegion(L2World.getInstance().getRegion(getPosition().getWorldPosition()));
 			
 		}
 		
-		L2World.getInstance().storeObject(this);
 		// Add the L2Object spawn in the _allobjects of L2World
+		L2World.getInstance().storeObject(this);
 		
 		// these can synchronize on others instancies, so they're out of
 		// synchronized, to avoid deadlocks
@@ -563,10 +485,12 @@ public abstract class L2Object
 		//return getPosition().getWorldRegion() != null && _IsVisible;
 		return getPosition().getWorldRegion() != null;
 	}
+	
 	public final void setIsVisible(boolean value)
 	{
 		_isVisible = value;
-		if (!_isVisible) getPosition().setWorldRegion(null);
+		if (!_isVisible)
+			getPosition().setWorldRegion(null);
 	}
 	
 	public ObjectKnownList getKnownList()
@@ -577,7 +501,7 @@ public abstract class L2Object
 	/**
 	 * Initializes the KnownList of the L2Object,
 	 * is overwritten in classes that require a different knownlist Type.
-	 * 
+	 *
 	 * Removes the need for instanceof checks.
 	 */
 	public void initKnownList()
@@ -594,6 +518,7 @@ public abstract class L2Object
 	{
 		return _name;
 	}
+	
 	public void setName(String value)
 	{
 		_name = value;
@@ -606,7 +531,8 @@ public abstract class L2Object
 	
 	public final ObjectPoly getPoly()
 	{
-		if (_poly == null) _poly = new ObjectPoly(this);
+		if (_poly == null)
+			_poly = new ObjectPoly(this);
 		return _poly;
 	}
 	
@@ -618,13 +544,14 @@ public abstract class L2Object
 	/**
 	 * Initializes the Position class of the L2Object,
 	 * is overwritten in classes that require a different position Type.
-	 * 
+	 *
 	 * Removes the need for instanceof checks.
 	 */
 	public void initPosition()
 	{
 		_position = new ObjectPosition(this);
 	}
+	
 	public final void setObjectPosition(ObjectPosition value)
 	{
 		_position = value;
@@ -665,7 +592,7 @@ public abstract class L2Object
 	@Override
 	public String toString()
 	{
-		return (getClass().getSimpleName() + ":"+getName()+"[" + getObjectId() + "]");
+		return (getClass().getSimpleName() + ":" + getName() + "[" + getObjectId() + "]");
 	}
 	
 	/**

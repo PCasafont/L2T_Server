@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.PartyMatchRoom;
@@ -19,7 +20,7 @@ import l2server.gameserver.model.PartyMatchRoomList;
 import l2server.gameserver.model.PartyMatchWaitingList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExPartyRoomMember;
+import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
 import l2server.gameserver.network.serverpackets.PartyMatchDetail;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
@@ -57,12 +58,12 @@ public class RequestPartyMatchList extends L2GameClientPacket
 		if (_activeChar == null)
 			return;
 		
-		if (_roomid  > 0)
+		if (_roomid > 0)
 		{
 			PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
 			if (_room != null)
 			{
-				Log.info("PartyMatchRoom #" + _room.getId() + " changed by "+_activeChar.getName());
+				Log.info("PartyMatchRoom #" + _room.getId() + " changed by " + _activeChar.getName());
 				_room.setMaxMembers(_membersmax);
 				_room.setMinLvl(_lvlmin);
 				_room.setMaxLvl(_lvlmax);
@@ -107,7 +108,7 @@ public class RequestPartyMatchList extends L2GameClientPacket
 				}
 			}
 			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-			_activeChar.sendPacket(new ExPartyRoomMember(_activeChar, _room, 1));
+			_activeChar.sendPacket(new ExPartyRoomMembers(_activeChar, _room, 1));
 			
 			_activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_CREATED));
 			
@@ -115,11 +116,5 @@ public class RequestPartyMatchList extends L2GameClientPacket
 			//_activeChar.setPartyMatching(1);
 			_activeChar.broadcastUserInfo();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] 80 RequestPartyMatchList";
 	}
 }

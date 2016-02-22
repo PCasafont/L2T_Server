@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.Collection;
@@ -55,13 +56,13 @@ public final class L2CastleTeleporterInstance extends L2Npc
 			int delay;
 			if (!getTask())
 			{
-				if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
+				if (getCastle().getSiege().getIsInProgress() && (getCastle().getSiege().getControlTowerCount() == 0))
 					delay = 480000;
 				else
 					delay = 30000;
 				
 				setTask(true);
-				ThreadPoolManager.getInstance().scheduleGeneral(new oustAllPlayers(), delay );
+				ThreadPoolManager.getInstance().scheduleGeneral(new oustAllPlayers(), delay);
 			}
 			
 			String filename = "castleteleporter/MassGK-1.htm";
@@ -80,7 +81,7 @@ public final class L2CastleTeleporterInstance extends L2Npc
 		String filename;
 		if (!getTask())
 		{
-			if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
+			if (getCastle().getSiege().getIsInProgress() && (getCastle().getSiege().getControlTowerCount() == 0))
 				filename = "castleteleporter/MassGK-2.htm";
 			else
 				filename = "castleteleporter/MassGK.htm";
@@ -101,6 +102,7 @@ public final class L2CastleTeleporterInstance extends L2Npc
 	
 	class oustAllPlayers implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try
@@ -113,7 +115,7 @@ public final class L2CastleTeleporterInstance extends L2Npc
 				{
 					for (L2PcInstance player : pls)
 					{
-						if (region == MapRegionTable.getInstance().getMapRegion(player.getX(),player.getY()))
+						if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()))
 							player.sendPacket(cs);
 					}
 				}

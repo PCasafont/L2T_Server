@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class StalkedStalkers extends EventInstance
 			{
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
 				int limit = 0;
-				while (randomStalkedPlayer.getObjectId() == playerInstance.getObjectId() && limit < 10)
+				while ((randomStalkedPlayer.getObjectId() == playerInstance.getObjectId()) && (limit < 10))
 				{
 					randomStalkedPlayer = selectRandomParticipant();
 					limit++;
@@ -116,7 +117,7 @@ public class StalkedStalkers extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if (killedPlayerInstance == null || !isState(EventState.STARTED))
+		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);
@@ -126,7 +127,7 @@ public class StalkedStalkers extends EventInstance
 		
 		L2PcInstance killerPlayerInstance = null;
 		
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance)
+		if ((killerCharacter instanceof L2PetInstance) || (killerCharacter instanceof L2SummonInstance))
 		{
 			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
 			
@@ -169,12 +170,12 @@ public class StalkedStalkers extends EventInstance
 		
 		L2PcInstance player = null;
 		String hint;
-		if (level < 0 || level == 5)
+		if ((level < 0) || (level == 5))
 			stalker.startStalkerHintsTask();
 		if (level > 0)
 		{
 			player = L2World.getInstance().getPlayer(_assignedStalkers.get(stalker.getObjectId()));
-			if (player == null || player.getEvent() != this)
+			if ((player == null) || (player.getEvent() != this))
 			{
 				_assignedStalkers.remove(stalker.getObjectId());
 				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
@@ -207,8 +208,7 @@ public class StalkedStalkers extends EventInstance
 				break;
 			case 3:
 				if (player.getActiveClass() != player.getBaseClass())
-					hint = "Hint 3: Tour target's current class is " + PlayerClassTable.getInstance().getClassNameById(player.getActiveClass()) + ", " +
-					"and its base class is " + PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()) + ".";
+					hint = "Hint 3: Tour target's current class is " + PlayerClassTable.getInstance().getClassNameById(player.getActiveClass()) + ", " + "and its base class is " + PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()) + ".";
 				else
 					hint = "Hint 3: Tour target's class is " + PlayerClassTable.getInstance().getClassNameById(player.getBaseClass()) + ".";
 				break;

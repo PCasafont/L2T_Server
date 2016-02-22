@@ -16,6 +16,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.gameserver.gui;
 
 import java.awt.Color;
@@ -55,30 +56,16 @@ import javax.swing.text.StyleContext;
  * @author Pere
  *
  */
-@SuppressWarnings("serial")
 public class ConsoleTab extends JPanel
 {
+	private static final long serialVersionUID = 1L;
 	private static final int MSG_STORAGE_LIMIT = 5000;
 	private static final int MSG_DISPLAY_LIMIT = 500;
 	
 	public enum ConsoleFilter
 	{
-		Console(null, Color.red, true),
-		Errors(Console, new Color(220, 50, 50), true),
-		Warnings(Console, new Color(220, 220, 50), true),
-		Info(Console, new Color(50, 220, 50), true),
-		Chat(null, Color.white, true),
-		Announcements(Chat, Color.cyan, true),
-		GlobalChat(Chat, new Color(255, 100, 100), true),
-		HeroChat(Chat, new Color(80, 150, 255), true),
-		ShoutChat(Chat, new Color(255, 130, 0), true, "Region"),
-		TradeChat(Chat, Color.pink, true, "Region"),
-		AllChat(Chat, Color.white, false, "Region", "Talker"),
-		AllyChat(Chat, new Color(120, 255, 120), false, "Ally Name", "Talker"),
-		ClanChat(Chat, new Color(120, 120, 255), false, "Clan Name", "Talker"),
-		PartyChat(Chat, Color.green, false, "Party Leader", "Talker"),
-		WhisperChat(Chat, Color.magenta, false, "Talker", "Listener");
-
+		Console(null, Color.red, true), Errors(Console, new Color(220, 50, 50), true), Warnings(Console, new Color(220, 220, 50), true), Info(Console, new Color(50, 220, 50), true), Chat(null, Color.white, true), Announcements(Chat, Color.cyan, true), GlobalChat(Chat, new Color(255, 100, 100), true), HeroChat(Chat, new Color(63, 137, 249), true), ShoutChat(Chat, new Color(255, 130, 0), true, "Region"), TradeChat(Chat, new Color(234, 165, 245), true, "Region"), AllChat(Chat, Color.white, false, "Region", "Talker"), AllyChat(Chat, new Color(120, 255, 120), false, "Ally Name", "Talker"), ClanChat(Chat, new Color(120, 120, 255), false, "Clan Name", "Talker"), PartyChat(Chat, Color.green, false, "Party Leader", "Talker"), WhisperChat(Chat, Color.magenta, false, "Talker", "Listener");
+		
 		public final ConsoleFilter parent;
 		public final List<ConsoleFilter> children = new ArrayList<ConsoleFilter>();
 		public final Color textColor;
@@ -133,11 +120,11 @@ public class ConsoleTab extends JPanel
 		setLayout(new GridBagLayout());
 		JPanel leftPanel = new JPanel();
 		leftPanel.setLayout(new GridBagLayout());
-
+		
 		JPanel checkBoxes = new JPanel();
 		checkBoxes.setLayout(new GridBagLayout());
 		checkBoxes.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder("Show:"), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-
+		
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.anchor = GridBagConstraints.FIRST_LINE_START;
 		cons.fill = GridBagConstraints.HORIZONTAL;
@@ -202,7 +189,7 @@ public class ConsoleTab extends JPanel
 		_textPane = new JTextPane();
 		_textPane.setBackground(new Color(30, 30, 30));
 		JScrollPane console = new JScrollPane(_textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
+		
 		cons.weightx = 1;
 		cons.weighty = 1;
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, console);
@@ -244,7 +231,7 @@ public class ConsoleTab extends JPanel
 			e.printStackTrace();
 		}
 	}
-		
+	
 	public synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra)
 	{
 		ConsoleFilterInstance fi = _filters[f.ordinal()];
@@ -265,7 +252,7 @@ public class ConsoleTab extends JPanel
 				pass = true;
 		}
 		
-		if (!pass && emptySubFields < f.subFilters.length)
+		if (!pass && (emptySubFields < f.subFilters.length))
 			return;
 		
 		msg += "\n";
@@ -273,7 +260,7 @@ public class ConsoleTab extends JPanel
 		AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 		
 		//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-		if (f == ConsoleFilter.Console || (f.parent != null && f.parent == ConsoleFilter.Console))
+		if ((f == ConsoleFilter.Console) || ((f.parent != null) && (f.parent == ConsoleFilter.Console)))
 		{
 			aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 			aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);
@@ -284,7 +271,7 @@ public class ConsoleTab extends JPanel
 			aset = sc.addAttribute(aset, StyleConstants.FontSize, 12);
 		}
 		aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
-
+		
 		Document document = _textPane.getDocument();
 		Element root = document.getDefaultRootElement();
 		while (root.getElementCount() > MSG_DISPLAY_LIMIT)
@@ -308,10 +295,11 @@ public class ConsoleTab extends JPanel
 		
 		EventQueue.invokeLater(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				Rectangle visibleRect = _textPane.getVisibleRect();
-				if (visibleRect.y + 100 > _textPane.getHeight() - visibleRect.height)
+				if ((visibleRect.y + 100) > (_textPane.getHeight() - visibleRect.height))
 				{
 					visibleRect.y = _textPane.getHeight() - visibleRect.height;
 					_textPane.scrollRectToVisible(visibleRect);
@@ -346,7 +334,7 @@ public class ConsoleTab extends JPanel
 					pass = true;
 			}
 			
-			if (!pass && emptySubFields < fi.textFields.length)
+			if (!pass && (emptySubFields < fi.textFields.length))
 				continue;
 			
 			String msg = line.text + "\n";
@@ -354,7 +342,7 @@ public class ConsoleTab extends JPanel
 			AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 			
 			//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-			if (f == ConsoleFilter.Console || (f.parent != null && f.parent == ConsoleFilter.Console))
+			if ((f == ConsoleFilter.Console) || ((f.parent != null) && (f.parent == ConsoleFilter.Console)))
 			{
 				aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 				aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);
@@ -365,7 +353,7 @@ public class ConsoleTab extends JPanel
 				aset = sc.addAttribute(aset, StyleConstants.FontSize, 12);
 			}
 			aset = sc.addAttribute(aset, StyleConstants.Alignment, StyleConstants.ALIGN_JUSTIFIED);
-	
+			
 			Document document = _textPane.getDocument();
 			Element root = document.getDefaultRootElement();
 			while (root.getElementCount() > MSG_DISPLAY_LIMIT)
@@ -388,9 +376,10 @@ public class ConsoleTab extends JPanel
 			_textPane.replaceSelection(msg);
 		}
 	}
-
+	
 	private class ConsoleActionListener implements ActionListener
 	{
+		@Override
 		public void actionPerformed(ActionEvent ae)
 		{
 			if (ae.getActionCommand().equalsIgnoreCase("newConsoleWindow"))
@@ -438,16 +427,19 @@ public class ConsoleTab extends JPanel
 	
 	private class ConsoleSubFilterListener implements DocumentListener
 	{
+		@Override
 		public void changedUpdate(DocumentEvent e)
 		{
 			reloadDoc();
 		}
-
+		
+		@Override
 		public void insertUpdate(DocumentEvent e)
 		{
 			reloadDoc();
 		}
-
+		
+		@Override
 		public void removeUpdate(DocumentEvent e)
 		{
 			reloadDoc();

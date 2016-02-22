@@ -1094,11 +1094,11 @@
 	<npc id="16108" name="Pippi" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="16109" name="Kokko" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

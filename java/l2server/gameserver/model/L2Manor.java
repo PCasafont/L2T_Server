@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.io.File;
@@ -51,7 +52,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if (!crops.contains(seed.getCrop()) && seed.getCrop() != 0 && !crops.contains(seed.getCrop()))
+			if (!crops.contains(seed.getCrop()) && (seed.getCrop() != 0) && !crops.contains(seed.getCrop()))
 			{
 				crops.add(seed.getCrop());
 			}
@@ -215,7 +216,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if (seed.getManorId() == castleId && !crops.contains(seed.getCrop()))
+			if ((seed.getManorId() == castleId) && !crops.contains(seed.getCrop()))
 			{
 				crops.add(seed.getCrop());
 			}
@@ -235,7 +236,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if (seed.getManorId() == castleId && !seedsID.contains(seed.getId()))
+			if ((seed.getManorId() == castleId) && !seedsID.contains(seed.getId()))
 			{
 				seedsID.add(seed.getId());
 			}
@@ -298,14 +299,14 @@ public class L2Manor
 		
 		public SeedData(int level, int crop, int mature)
 		{
-			this._level = level;
-			this._crop = crop;
-			this._mature = mature;
+			_level = level;
+			_crop = crop;
+			_mature = mature;
 		}
 		
 		public void setData(int id, int t1, int t2, int manorId, boolean isAlt, int lim1, int lim2)
 		{
-			this._id = id;
+			_id = id;
 			_type1 = t1;
 			_type2 = t2;
 			_manorId = manorId;
@@ -358,7 +359,7 @@ public class L2Manor
 		{
 			return _limitCrops * Config.RATE_DROP_MANOR;
 		}
-
+		
 		@Override
 		public String toString()
 		{
@@ -426,11 +427,11 @@ public class L2Manor
 					}
 				}
 			}
-			Log.info(getClass().getSimpleName()+": Loaded "+_seeds.size()+ " Seeds.");
+			Log.info(getClass().getSimpleName() + ": Loaded " + _seeds.size() + " Seeds.");
 		}
-
+		
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{

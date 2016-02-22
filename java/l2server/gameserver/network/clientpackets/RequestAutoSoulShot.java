@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -25,22 +26,21 @@ import l2server.log.Log;
 
 /**
  * This class ...
- * 
+ *
  * @version $Revision: 1.0.0.0 $ $Date: 2005/07/11 15:29:30 $
  */
 public final class RequestAutoSoulShot extends L2GameClientPacket
 {
-	private static final String _C__CF_REQUESTAUTOSOULSHOT = "[C] D0:0D RequestAutoSoulShot";
 	
 	// format cd
 	private int _itemId;
-	private int _type; // 1 = on : 0 = off;
+	private int _enabled; // 1 = on : 0 = off;
 	
 	@Override
 	protected void readImpl()
 	{
 		_itemId = readD();
-		_type = readD();
+		_enabled = readD();
 	}
 	
 	@Override
@@ -50,7 +50,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (activeChar.getPrivateStoreType() == 0 && activeChar.getActiveRequester() == null && !activeChar.isDead())
+		if ((activeChar.getPrivateStoreType() == 0) && (activeChar.getActiveRequester() == null) && !activeChar.isDead())
 		{
 			if (Config.DEBUG)
 				Log.fine("AutoSoulShot:" + _itemId);
@@ -59,7 +59,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 			if (item == null)
 				return;
 			
-			if (_type == 1)
+			if (_enabled == 1)
 			{
 				if (!activeChar.getInventory().canManipulateWithItemId(item.getItemId()))
 				{
@@ -68,10 +68,10 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				}
 				
 				// Fishingshots are not automatic on retail
-				if (_itemId < 6535 || _itemId > 6540)
+				if ((_itemId < 6535) || (_itemId > 6540))
 				{
 					// Attempt to charge first shot on activation
-					if (_itemId == 6645 || _itemId == 6646 || _itemId == 6647 || _itemId == 20332 || _itemId == 20333 || _itemId == 20334)
+					if ((_itemId == 6645) || (_itemId == 6646) || (_itemId == 6647) || (_itemId == 20332) || (_itemId == 20333) || (_itemId == 20334))
 					{
 						boolean hasSummon = false;
 						if (activeChar.getPet() != null)
@@ -92,8 +92,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 									return;
 								}
 							}
-							activeChar.addAutoSoulShot(_itemId);
-							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+							activeChar.addAutoSoulShot(item);
+							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 							
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -124,8 +124,8 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 									continue;
 								}
 							}
-							activeChar.addAutoSoulShot(_itemId);
-							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+							activeChar.addAutoSoulShot(item);
+							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 							
 							// start the auto soulshot use
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
@@ -142,21 +142,20 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					}
 					else
 					{
-						if (activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem()
-								&& item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain())
+						if ((activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem()) && (item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain()))
 						{
-							activeChar.addAutoSoulShot(_itemId);
-							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+							activeChar.addAutoSoulShot(item);
+							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 						}
 						else
 						{
-							if ((_itemId >= 2509 && _itemId <= 2514) || (_itemId >= 3947 && _itemId <= 3952) || _itemId == 5790 || (_itemId >= 22072 && _itemId <= 22081))
+							if (((_itemId >= 2509) && (_itemId <= 2514)) || ((_itemId >= 3947) && (_itemId <= 3952)) || (_itemId == 5790) || ((_itemId >= 22072) && (_itemId <= 22081)))
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
 							else
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
 							
-							activeChar.addAutoSoulShot(_itemId);
-							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+							activeChar.addAutoSoulShot(item);
+							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 						}
 						
 						// start the auto soulshot use
@@ -168,10 +167,10 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					}
 				}
 			}
-			else if (_type == 0)
+			else if (_enabled == 0)
 			{
-				activeChar.removeAutoSoulShot(_itemId);
-				activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+				activeChar.removeAutoSoulShot(item);
+				activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 				
 				// cancel the auto soulshot use
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AUTO_USE_OF_S1_CANCELLED);
@@ -179,16 +178,6 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				activeChar.sendPacket(sm);
 			}
 		}
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__CF_REQUESTAUTOSOULSHOT;
 	}
 	
 	@Override

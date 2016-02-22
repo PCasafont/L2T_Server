@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
@@ -32,20 +33,18 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class CpDam implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.CPDAM
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.CPDAM };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (activeChar.isAlikeDead())
 			return;
-
+		
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		double ssMul = L2ItemInstance.CHARGED_NONE;
 		if (weaponInst != null)
@@ -90,14 +89,13 @@ public class CpDam implements ISkillHandler
 			}
 		}
 		
-		for (L2Character target: (L2Character[]) targets)
+		for (L2Character target : (L2Character[]) targets)
 		{
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance)target).isFakeDeath())
+			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 			}
-			else if (target.isDead() || target.isInvul(activeChar)
-					|| (target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar))
+			else if (target.isDead() || target.isInvul(activeChar) || ((target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar)))
 			{
 				continue;
 			}
@@ -119,9 +117,10 @@ public class CpDam implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

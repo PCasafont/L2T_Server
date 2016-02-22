@@ -1,10 +1,10 @@
+
 package l2server.gameserver.model.entity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
@@ -54,18 +54,18 @@ public class ClanWarManager
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
-				if (ClanTable.getInstance().getClan(rset.getInt("clan1")) == null || ClanTable.getInstance().getClan(rset.getInt("clan2")) == null )
+				if ((ClanTable.getInstance().getClan(rset.getInt("clan1")) == null) || (ClanTable.getInstance().getClan(rset.getInt("clan2")) == null))
 					continue;
 				
 				WarState warstate = null;
 				
-				if (rset.getLong("delete_time") != 0 && System.currentTimeMillis() > rset.getLong("delete_time"))
+				if ((rset.getLong("delete_time") != 0) && (System.currentTimeMillis() > rset.getLong("delete_time")))
 					deleteWar(rset.getInt("clan1"), rset.getInt("clan2"));
 				else if (rset.getLong("delete_time") != 0)
 					warstate = WarState.REPOSE;
-				else if (rset.getLong("end_time") != 0 && System.currentTimeMillis() > rset.getLong("end_time"))
+				else if ((rset.getLong("end_time") != 0) && (System.currentTimeMillis() > rset.getLong("end_time")))
 					warstate = WarState.REPOSE;
-				else if (rset.getLong("end_time") != 0 && System.currentTimeMillis() < rset.getLong("end_time"))
+				else if ((rset.getLong("end_time") != 0) && (System.currentTimeMillis() < rset.getLong("end_time")))
 					warstate = WarState.STARTED;
 				else if (rset.getInt("clan1_deaths_for_war") >= 5)
 					warstate = WarState.STARTED;
@@ -78,7 +78,7 @@ public class ClanWarManager
 				{
 					for (ClanWar war : wars)
 					{
-						if (war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1")) && war.getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2")))
+						if ((war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1"))) && (war.getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2"))))
 						{
 							ClanTable.getInstance().getClan(rset.getInt("clan1")).removeWar(war);
 							ClanTable.getInstance().getClan(rset.getInt("clan2")).removeWar(war);
@@ -133,7 +133,7 @@ public class ClanWarManager
 		
 		for (ClanWar war : _wars)
 		{
-			if ((war.getClan1() == clan1 && war.getClan2() == clan2) || (war.getClan2() == clan1 && war.getClan1() == clan2))
+			if (((war.getClan1() == clan1) && (war.getClan2() == clan2)) || ((war.getClan2() == clan1) && (war.getClan1() == clan2)))
 			{
 				if (war.getState() != WarState.DECLARED)
 				{
@@ -141,9 +141,9 @@ public class ClanWarManager
 					return;
 				}
 				
-				if (war.getClan2() == clan1 && war.getClan1() == clan2)
+				if ((war.getClan2() == clan1) && (war.getClan1() == clan2))
 				{
-					if (war.getElapsedTime() >= (Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600))
+					if (war.getElapsedTime() >= (Config.PREPARE_NORMAL_WAR_PERIOD * 3600))
 					{
 						// The war is already at Blood Declaration, so it can't be accepted now.
 						clan1.broadcastMessageToOnlineMembers("War is already in Blood Declaration, so it can't be accepted now!");
@@ -156,20 +156,18 @@ public class ClanWarManager
 			}
 		}
 		
-		long start_time = 0;
+		long startTime = 0;
 		
 		Connection con = null;
 		try
 		{
-			Calendar cal = Calendar.getInstance();
-			cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + Config.PREPARE_MUTUAL_WAR_PERIOD);
-			start_time = cal.getTimeInMillis();
+			startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 			statement = con.prepareStatement("REPLACE INTO clan_wars (clan1, clan2, start_time, end_time, delete_time, clan1_score, clan2_score, clan1_war_declarator, clan2_war_declarator, clan1_deaths_for_war, clan1_shown_score, clan2_shown_score) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
 			statement.setInt(1, clanId1);
 			statement.setInt(2, clanId2);
-			statement.setLong(3, start_time);
+			statement.setLong(3, startTime);
 			statement.setLong(4, 0);
 			statement.setLong(5, 0);
 			statement.setInt(6, 0);
@@ -182,7 +180,7 @@ public class ClanWarManager
 			statement.execute();
 			statement.close();
 			
-			ClanWar war = new ClanWar(clanId1, clanId2, 0, 0, declaratorCharId, 0, 0, 0, 0, WarState.DECLARED, 0, 0, start_time, 0, 0);
+			ClanWar war = new ClanWar(clanId1, clanId2, 0, 0, declaratorCharId, 0, 0, 0, 0, WarState.DECLARED, 0, 0, startTime, 0, 0);
 			
 			_wars.add(war);
 			
@@ -209,7 +207,7 @@ public class ClanWarManager
 	
 	public void checkSurrender(L2Clan clan1, L2Clan clan2)
 	{
-	 	//TODO: To review
+		//TODO: To review
 		/*int count = 0;
 		for (L2ClanMember player : clan1.getMembers())
 		{
@@ -228,7 +226,7 @@ public class ClanWarManager
 	{
 		for (ClanWar war : _wars)
 		{
-			if ((war.getClan1() == clan1 && war.getClan2() == clan2) || (war.getClan1() == clan2 && war.getClan2() == clan1))
+			if (((war.getClan1() == clan1) && (war.getClan2() == clan2)) || ((war.getClan1() == clan2) && (war.getClan2() == clan1)))
 				return war;
 		}
 		return null;
@@ -238,7 +236,7 @@ public class ClanWarManager
 	{
 		for (ClanWar war : _wars)
 			war.saveData();
-				
+		
 		Log.log(Level.INFO, "Saved " + _wars.size() + " wars data.");
 	}
 	
@@ -251,18 +249,12 @@ public class ClanWarManager
 	{
 		public static enum WarState
 		{
-			DECLARED,
-			STARTED,
-			REPOSE
+			DECLARED, STARTED, REPOSE
 		};
 		
 		public static enum WarSituation
 		{
-			DOMINATING,
-			SUPERIOR,
-			EVENLYMATCHED,
-			INFERIOR,
-			OVERWHELMED
+			DOMINATING, SUPERIOR, EVENLYMATCHED, INFERIOR, OVERWHELMED
 		}
 		
 		private final L2Clan _clan1;
@@ -300,7 +292,7 @@ public class ClanWarManager
 			_clan1DeathsForWar = clan1DeathsForWar;
 			_clan1Score = clan1ShownScore;
 			_clan2Score = clan2ShownScore;
-			if (loserId != 0 && winnerId != 0)
+			if ((loserId != 0) && (winnerId != 0))
 			{
 				_loser = ClanTable.getInstance().getClan(loserId);
 				_winner = ClanTable.getInstance().getClan(winnerId);
@@ -315,23 +307,27 @@ public class ClanWarManager
 					scheduleStart();
 					break;
 				case STARTED:
-					scheduleStop();
+					if (!Config.isServer(Config.DREAMS))
+						scheduleStop();
 					break;
 				case REPOSE: // When war is loaded and if it's in repose state, it should be waiting for deletion from the list.
-					scheduleDelete();
+					if (!Config.isServer(Config.DREAMS))
+						scheduleDelete();
 					break;
 			}
 		}
 		
 		private void scheduleStart()
 		{
-			if (_task != null && !_task.isDone())
+			if ((_task != null) && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
+				@Override
 				public void run()
 				{
-					if (_warState == WarState.DECLARED) {
+					if (_warState == WarState.DECLARED)
+					{
 						delete();
 						_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has been stopped. Didn't accepted declaration!"); // TODO: System message.
 					}
@@ -341,10 +337,11 @@ public class ClanWarManager
 		
 		private void scheduleStop()
 		{
-			if (_task != null && !_task.isDone())
+			if ((_task != null) && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (_warState == WarState.STARTED)
@@ -355,10 +352,11 @@ public class ClanWarManager
 		
 		private void scheduleDelete()
 		{
-			if (_task != null && !_task.isDone())
+			if ((_task != null) && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (_warState == WarState.REPOSE)
@@ -367,16 +365,14 @@ public class ClanWarManager
 				}
 			}, _deleteTime - System.currentTimeMillis());
 		}
-
+		
 		public void start()
 		{
 			Connection con = null;
 			try
 			{
-				Calendar cal = Calendar.getInstance();
-				_startTime = cal.getTimeInMillis();
-				cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + Config.BATTLE_WAR_PERIOD);
-				long endTime = cal.getTimeInMillis();
+				_startTime = System.currentTimeMillis();
+				long endTime = _startTime + Config.BATTLE_WAR_PERIOD * 3600000L;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement("UPDATE clan_wars SET start_time=?, end_time=? WHERE clan1=? AND clan2=?");
@@ -394,7 +390,8 @@ public class ClanWarManager
 				_clan1.broadcastClanStatus();
 				_clan2.broadcastClanStatus();
 				
-				scheduleStop();
+				if (!Config.isServer(Config.DREAMS))
+					scheduleStop();
 			}
 			catch (Exception e)
 			{
@@ -418,10 +415,8 @@ public class ClanWarManager
 			Connection con = null;
 			try
 			{
-				Calendar cal = Calendar.getInstance();
-				_endTime = cal.getTimeInMillis();
-				cal.set(Calendar.DAY_OF_YEAR, cal.get(Calendar.DAY_OF_YEAR) + Config.EXPIRE_NORMAL_WAR_PERIOD);
-				long deleteTime = cal.getTimeInMillis();
+				_endTime = System.currentTimeMillis();
+				long deleteTime = _endTime + Config.EXPIRE_NORMAL_WAR_PERIOD * 3600000L;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement("UPDATE clan_wars SET end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
@@ -431,7 +426,7 @@ public class ClanWarManager
 				statement.setInt(4, _clan2.getClanId());
 				statement.execute();
 				statement.close();
-
+				
 				_warState = WarState.REPOSE;
 				
 				_deleteTime = deleteTime;
@@ -536,7 +531,7 @@ public class ClanWarManager
 		
 		private void calculateOutcome()
 		{
-			if (getLoser() == null || getWinner() == null)
+			if ((getLoser() == null) || (getWinner() == null))
 			{
 				if (getClan1Scores() > getClan2Scores())
 				{
@@ -551,7 +546,7 @@ public class ClanWarManager
 				else
 					setTie();
 			}
-
+			
 			if (!getTie())
 			{
 				Connection con = null;
@@ -591,11 +586,11 @@ public class ClanWarManager
 			int percent = (_score1 * 100) / maxResult;
 			if (percent >= 85)
 				_situation1 = WarSituation.DOMINATING;
-			else if (percent >= 65 && percent < 85)
+			else if ((percent >= 65) && (percent < 85))
 				_situation1 = WarSituation.SUPERIOR;
-			else if (percent >= 35 && percent < 65)
+			else if ((percent >= 35) && (percent < 65))
 				_situation1 = WarSituation.EVENLYMATCHED;
-			else if (percent >= 15 && percent < 35)
+			else if ((percent >= 15) && (percent < 35))
 				_situation1 = WarSituation.INFERIOR;
 			else
 				_situation1 = WarSituation.OVERWHELMED;
@@ -612,11 +607,11 @@ public class ClanWarManager
 			int percent = (_score2 * 100) / maxResult;
 			if (percent >= 85)
 				_situation2 = WarSituation.DOMINATING;
-			else if (percent >= 65 && percent < 85)
+			else if ((percent >= 65) && (percent < 85))
 				_situation2 = WarSituation.SUPERIOR;
-			else if (percent >= 35 && percent < 65)
+			else if ((percent >= 35) && (percent < 65))
 				_situation2 = WarSituation.EVENLYMATCHED;
-			else if (percent >= 15 && percent < 35)
+			else if ((percent >= 15) && (percent < 35))
 				_situation2 = WarSituation.INFERIOR;
 			else
 				_situation2 = WarSituation.OVERWHELMED;
@@ -626,6 +621,7 @@ public class ClanWarManager
 		{
 			return _clan1;
 		}
+		
 		public L2Clan getClan2()
 		{
 			return _clan2;
@@ -666,9 +662,9 @@ public class ClanWarManager
 			switch (_warState)
 			{
 				case DECLARED:
-					return (Config.PREPARE_MUTUAL_WAR_PERIOD * 24 * 3600) - (int)((_startTime - System.currentTimeMillis()) / 1000);
+					return (Config.PREPARE_MUTUAL_WAR_PERIOD * 3600) - (int)((_startTime - System.currentTimeMillis()) / 1000);
 				case STARTED:
-					return (Config.BATTLE_WAR_PERIOD * 24 * 3600) - (int)((_endTime - System.currentTimeMillis()) / 1000);
+					return (Config.BATTLE_WAR_PERIOD * 3600) - (int)((_endTime - System.currentTimeMillis()) / 1000);
 			}
 			return 0;
 		}
@@ -732,7 +728,7 @@ public class ClanWarManager
 		{
 			_clan2Score++;
 		}
-
+		
 		public void decreaseClan2Score()
 		{
 			_clan2Score--;

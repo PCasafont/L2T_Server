@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.stat;
 
 import l2server.Config;
@@ -35,7 +36,8 @@ public class PetStat extends SummonStat
 	
 	public boolean addExp(int value)
 	{
-		if (!super.addExp(value)) return false;
+		if (!super.addExp(value))
+			return false;
 		
 		getActiveChar().updateAndBroadcastStatus(1);
 		// The PetInfo packet wipes the PartySpelled (list of active  spells' icons).  Re-add them
@@ -47,7 +49,8 @@ public class PetStat extends SummonStat
 	@Override
 	public boolean addExpAndSp(long addToExp, long addToSp)
 	{
-		if (!super.addExpAndSp(addToExp, addToSp)) return false;
+		if (!super.addExpAndSp(addToExp, addToSp))
+			return false;
 		
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_EARNED_S1_EXP);
 		sm.addItemNumber(addToExp);
@@ -60,7 +63,8 @@ public class PetStat extends SummonStat
 	@Override
 	public final boolean addLevel(byte value)
 	{
-		if (getLevel() + value > getMaxLevel()) return false;
+		if ((getLevel() + value) > getMaxLevel())
+			return false;
 		
 		boolean levelIncreased = super.addLevel(value);
 		
@@ -96,24 +100,33 @@ public class PetStat extends SummonStat
 		catch (NullPointerException e)
 		{
 			if (getActiveChar() != null)
-				Log.warning("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:"+getActiveChar().getNpcId()+", level:"+level+" is missing data from pets_stats table!");
+				Log.warning("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getNpcId() + ", level:" + level + " is missing data from pets_stats table!");
 			throw e;
 		}
 	}
 	
 	@Override
-	public L2PetInstance getActiveChar() { return (L2PetInstance)super.getActiveChar(); }
+	public L2PetInstance getActiveChar()
+	{
+		return (L2PetInstance) super.getActiveChar();
+	}
 	
-	public final int getFeedBattle() { return getActiveChar().getPetLevelData().getPetFeedBattle(); }
+	public final int getFeedBattle()
+	{
+		return getActiveChar().getPetLevelData().getPetFeedBattle();
+	}
 	
-	public final int getFeedNormal() { return getActiveChar().getPetLevelData().getPetFeedNormal(); }
+	public final int getFeedNormal()
+	{
+		return getActiveChar().getPetLevelData().getPetFeedNormal();
+	}
 	
 	@Override
 	public void setLevel(byte value)
 	{
 		getActiveChar().setPetData(PetDataTable.getInstance().getPetLevelData(getActiveChar().getTemplate().NpcId, value));
 		if (getActiveChar().getPetLevelData() == null)
-			throw new IllegalArgumentException("No pet data for npc: "+getActiveChar().getTemplate().NpcId+" level: "+value);
+			throw new IllegalArgumentException("No pet data for npc: " + getActiveChar().getTemplate().NpcId + " level: " + value);
 		getActiveChar().stopFeed();
 		super.setLevel(value);
 		
@@ -123,13 +136,22 @@ public class PetStat extends SummonStat
 			getActiveChar().getControlItem().setEnchantLevel(getLevel());
 	}
 	
-	public final int getMaxFeed() { return getActiveChar().getPetLevelData().getPetMaxFeed(); }
+	public final int getMaxFeed()
+	{
+		return getActiveChar().getPetLevelData().getPetMaxFeed();
+	}
 	
 	@Override
-	public int getMaxVisibleHp() { return (int)calcStat(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP(), null, null); }
+	public int getMaxVisibleHp()
+	{
+		return (int) calcStat(Stats.MAX_HP, getActiveChar().getPetLevelData().getPetMaxHP(), null, null);
+	}
 	
 	@Override
-	public int getMaxMp() { return (int)calcStat(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP(), null, null); }
+	public int getMaxMp()
+	{
+		return (int) calcStat(Stats.MAX_MP, getActiveChar().getPetLevelData().getPetMaxMP(), null, null);
+	}
 	
 	@Override
 	public int getMAtk(L2Character target, L2Skill skill)
@@ -138,28 +160,35 @@ public class PetStat extends SummonStat
 		if (skill != null)
 			attack += skill.getPower();
 		
-		return (int)calcStat(Stats.MAGIC_ATTACK, attack, target, skill);
+		return (int) calcStat(Stats.MAGIC_ATTACK, attack, target, skill);
 	}
 	
 	@Override
 	public int getMDef(L2Character target, L2Skill skill)
 	{
 		double defence = getActiveChar().getPetLevelData().getPetMDef();
-		return (int)calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
+		return (int) calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
 	}
 	
 	@Override
-	public int getPAtk(L2Character target) { return (int)calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null); }
+	public int getPAtk(L2Character target)
+	{
+		return (int) calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
+	}
+	
 	@Override
-	public int getPDef(L2Character target) { return (int)calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null); }
-
+	public int getPDef(L2Character target)
+	{
+		return (int) calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
+	}
+	
 	@Override
 	public int getPAtkSpd()
 	{
 		int val = super.getPAtkSpd();
 		if (getActiveChar().isHungry())
-			val = val/2;
-		return  val;
+			val = val / 2;
+		return val;
 	}
 	
 	@Override
@@ -167,8 +196,8 @@ public class PetStat extends SummonStat
 	{
 		int val = super.getMAtkSpd();
 		if (getActiveChar().isHungry())
-			val = val/2;
-		return  val;
+			val = val / 2;
+		return val;
 	}
 	
 	@Override

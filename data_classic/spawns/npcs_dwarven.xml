@@ -110,5 +110,5 @@
 		<vertex x="176528" y="-184756" />
 		<spawn npcId="27114" respawn="180" amount="1" /> <!-- Succubus Queen -->
 	</group>
-	<spawn npcId="30540" x="115143" y="-178323" z="-911" heading="0" respawn="60" /> <!-- Wirphy -->
+	<!-- [event_dwarf_2511] -->
 </list>

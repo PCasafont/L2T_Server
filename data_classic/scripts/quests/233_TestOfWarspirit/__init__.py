@@ -132,7 +132,7 @@ class Quest (JQuest) :
       st.giveItems(57,8090)
       st.takeItems(TONARS_REMAINS2,-1)
       st.giveItems(MARK_OF_WARSPIRIT,1)
-      st.getPlayer().sendPacket(SocialAction(st.getPlayer().getObjectId(),3))
+      st.getPlayer().sendPacket(SocialAction(st.getPlayer(),3))
       st.giveItems(7562,92)
       htmltext = "30649-03.htm"
       for var in STATS:
@@ -153,7 +153,7 @@ class Quest (JQuest) :
     if id == State.CREATED:
       for var in STATS:
         st.set(var,"0")
-      if player.getClassId() == 0x32:
+      if player.getClassId().getId() == 0x32:
         if player.getLevel() > 38:
           htmltext = "30510-04.htm"
         else :

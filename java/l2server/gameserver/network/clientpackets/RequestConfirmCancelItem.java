@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -29,7 +30,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestConfirmCancelItem extends L2GameClientPacket
 {
-	private static final String _C__D0_2D_REQUESTCONFIRMCANCELITEM = "[C] D0:2D RequestConfirmCancelItem";
 	private int _objectId;
 	
 	/**
@@ -57,7 +57,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 		
 		if (item.getOwnerId() != activeChar.getObjectId())
 		{
-			Util.handleIllegalPlayerAction(getClient().getActiveChar(),"Warning!! Character "+getClient().getActiveChar().getName()+" of account "+getClient().getActiveChar().getAccountName()+" tryied to destroy augment on item that doesn't own.",Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(getClient().getActiveChar(), "Warning!! Character " + getClient().getActiveChar().getName() + " of account " + getClient().getActiveChar().getAccountName() + " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -73,7 +73,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 			return;
 		}*/
 		
-		int price=0;
+		int price = 0;
 		switch (item.getItem().getCrystalType())
 		{
 			case L2Item.CRYSTAL_C:
@@ -110,21 +110,15 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 			case L2Item.CRYSTAL_R99:
 				price = 5300000;
 				break;
-				//TODO: S84 TOP price 3.2M
-				// any other item type is not augmentable
+			//TODO: S84 TOP price 3.2M
+			// any other item type is not augmentable
 			default:
 				return;
 		}
 		
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			price = (int) Math.sqrt(price);
+		
 		activeChar.sendPacket(new ExPutItemResultForVariationCancel(item, price));
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2D_REQUESTCONFIRMCANCELITEM;
 	}
 }

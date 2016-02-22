@@ -1,7 +1,7 @@
 <list>
-	<npc id="31210" name="Race Track Gatekeeper" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="21.299999237060547"
-			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="31210" name="Race Track Gatekeeper" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="21.299999237060547">
+		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -13,9 +13,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="31211" name="Race Track Guide" level="70" type="L2Teleporter" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="18.5"
-			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="31211" name="Race Track Guide" level="70" type="L2Teleporter" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="7.0" collisionHeight="18.5">
+		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -27,9 +27,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="31225" name="Arena Manager" level="70" type="L2Warehouse" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="21.299999237060547"
-			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="31225" name="Arena Manager" level="70" type="L2Warehouse" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="21.299999237060547">
+		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -41,9 +41,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="31226" name="Arena Director" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="31226" name="Arena Director" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2444.4683" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="150" waterDef="150" windDef="150" earthDef="150" holyDef="150" darkDef="150" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

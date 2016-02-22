@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import java.util.Calendar;
@@ -39,7 +40,7 @@ public class SeedOfAnnihilation extends Quest
 	private static final int ANNIHILATION_FURNACE = 18928;
 	// Strength, Agility, Wisdom
 	private static final int[] ZONE_BUFFS = { 0, 6443, 6444, 6442 };
-	private static final int[][] ZONE_BUFFS_LIST = { {1,2,3},{1,3,2},{2,1,3},{2,3,1},{3,2,1},{3,1,2} };
+	private static final int[][] ZONE_BUFFS_LIST = { { 1, 2, 3 }, { 1, 3, 2 }, { 2, 1, 3 }, { 2, 3, 1 }, { 3, 2, 1 }, { 3, 1, 2 } };
 	
 	// 0: Bistakon, 1: Reptilikon, 2: Cokrakon
 	private SeedRegion[] _regionsData = new SeedRegion[3];
@@ -65,34 +66,25 @@ public class SeedOfAnnihilation extends Quest
 	
 	static
 	{
-		_teleportZones.put(60002, new int[]{ -213175, 182648, -10992 });
-		_teleportZones.put(60003, new int[]{ -181217, 186711, -10528 });
-		_teleportZones.put(60004, new int[]{ -180211, 182984, -15152 });
-		_teleportZones.put(60005, new int[]{ -179275, 186802, -10720 });
+		_teleportZones.put(60002, new int[] { -213175, 182648, -10992 });
+		_teleportZones.put(60003, new int[] { -181217, 186711, -10528 });
+		_teleportZones.put(60004, new int[] { -180211, 182984, -15152 });
+		_teleportZones.put(60005, new int[] { -179275, 186802, -10720 });
 	}
 	
 	public void loadSeedRegionData()
 	{
 		// Bistakon data
-		_regionsData[0] = new SeedRegion(new int[]{ 22750, 22751, 22752, 22753 },
-				new int[][]{ { 22746, 22746, 22746 }, { 22747, 22747, 22747 },
-				{ 22748, 22748, 22748 }, { 22749, 22749, 22749 } }, 60006,
-				new int[][]{ {-180450,185507,-10544,11632},{-180005,185489,-10544,11632} });
+		_regionsData[0] = new SeedRegion(new int[] { 22750, 22751, 22752, 22753 }, new int[][] { { 22746, 22746, 22746 }, { 22747, 22747, 22747 }, { 22748, 22748, 22748 }, { 22749, 22749, 22749 } }, 60006, new int[][] { { -180450, 185507, -10544, 11632 }, { -180005, 185489, -10544, 11632 } });
 		
 		// Reptilikon data
-		_regionsData[1] = new SeedRegion(new int[]{ 22757, 22758, 22759 },
-				new int[][]{ { 22754, 22755, 22756 } }, 60007,
-				new int[][]{ {-179600,186998,-10704,11632},{-179295,186444,-10704,11632} });
+		_regionsData[1] = new SeedRegion(new int[] { 22757, 22758, 22759 }, new int[][] { { 22754, 22755, 22756 } }, 60007, new int[][] { { -179600, 186998, -10704, 11632 }, { -179295, 186444, -10704, 11632 } });
 		
 		// Cokrakon data
-		_regionsData[2] = new SeedRegion(new int[]{ 22763, 22764, 22765 },
-				new int[][]{ { 22760, 22760, 22761 }, { 22760, 22760, 22762 },
-				{ 22761, 22761, 22760 }, { 22761, 22761, 22762 }, { 22762, 22762, 22760 },
-				{ 22762, 22762, 22761 } }, 60008,
-				new int[][]{ {-180971,186361,-10528,11632},{-180758,186739,-10528,11632} });
+		_regionsData[2] = new SeedRegion(new int[] { 22763, 22764, 22765 }, new int[][] { { 22760, 22760, 22761 }, { 22760, 22760, 22762 }, { 22761, 22761, 22760 }, { 22761, 22761, 22762 }, { 22762, 22762, 22760 }, { 22762, 22762, 22761 } }, 60008, new int[][] { { -180971, 186361, -10528, 11632 }, { -180758, 186739, -10528, 11632 } });
 		int buffsNow = 0;
 		String var = loadGlobalQuestVar("SeedNextStatusChange");
-		if (var.equalsIgnoreCase("") || Long.parseLong(var) < System.currentTimeMillis())
+		if (var.equalsIgnoreCase("") || (Long.parseLong(var) < System.currentTimeMillis()))
 		{
 			buffsNow = Rnd.get(ZONE_BUFFS_LIST.length);
 			saveGlobalQuestVar("SeedBuffsList", String.valueOf(buffsNow));
@@ -126,9 +118,9 @@ public class SeedOfAnnihilation extends Quest
 		loadSeedRegionData();
 		for (int i : _teleportZones.keySet())
 			addEnterZoneId(i);
-		for (int i = 0; i < _regionsData.length; i++)
-			for (int j = 0; j < _regionsData[i].elite_mob_ids.length; j++)
-				addSpawnId(_regionsData[i].elite_mob_ids[j]);
+		for (SeedRegion element : _regionsData)
+			for (int elite_mob_id : element.elite_mob_ids)
+				addSpawnId(elite_mob_id);
 		addStartNpc(32739);
 		addTalkId(32739);
 		initialMinionsSpawn();
@@ -155,13 +147,13 @@ public class SeedOfAnnihilation extends Quest
 		{
 			if (spawn == null)
 				continue;
-			for (int i = 0; i < _regionsData.length; i++)
+			for (SeedRegion element : _regionsData)
 			{
-				if (Util.contains(_regionsData[i].elite_mob_ids, spawn.getNpcId()))
+				if (Util.contains(element.elite_mob_ids, spawn.getNpcId()))
 				{
 					L2MonsterInstance mob = (L2MonsterInstance) spawn.getNpc();
 					if (mob != null)
-						spawnGroupOfMinion(mob, _regionsData[i].minion_lists[Rnd.get(_regionsData[i].minion_lists.length)]);
+						spawnGroupOfMinion(mob, element.minion_lists[Rnd.get(element.minion_lists.length)]);
 				}
 			}
 		}
@@ -169,23 +161,23 @@ public class SeedOfAnnihilation extends Quest
 	
 	private void spawnGroupOfMinion(L2MonsterInstance npc, int[] mobIds)
 	{
-		for (int i = 0; i < mobIds.length; i++)
-			addMinion(npc, mobIds[i]);
+		for (int mobId : mobIds)
+			addMinion(npc, mobId);
 	}
 	
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		for (int i = 0; i < _regionsData.length; i++)
+		for (SeedRegion element : _regionsData)
 		{
-			if (Util.contains(_regionsData[i].elite_mob_ids, npc.getNpcId()))
-				spawnGroupOfMinion((L2MonsterInstance)npc, _regionsData[i].minion_lists[Rnd.get(_regionsData[i].minion_lists.length)]);
+			if (Util.contains(element.elite_mob_ids, npc.getNpcId()))
+				spawnGroupOfMinion((L2MonsterInstance) npc, element.minion_lists[Rnd.get(element.minion_lists.length)]);
 		}
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onAdvEvent (String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("ChangeSeedsStatus"))
 		{
@@ -222,9 +214,9 @@ public class SeedOfAnnihilation extends Quest
 	}
 	
 	@Override
-	public String onKill (L2Npc npc, L2PcInstance killer, boolean isPet)
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		return super.onKill(npc,killer,isPet);
+		return super.onKill(npc, killer, isPet);
 	}
 	
 	@Override
@@ -233,13 +225,13 @@ public class SeedOfAnnihilation extends Quest
 		if (_teleportZones.containsKey(zone.getId()))
 		{
 			int[] teleLoc = _teleportZones.get(zone.getId());
-			character.teleToLocation(teleLoc[0],teleLoc[1],teleLoc[2]);
+			character.teleToLocation(teleLoc[0], teleLoc[1], teleLoc[2]);
 		}
 		return super.onEnterZone(character, zone);
 	}
 	
 	public static void main(String[] args)
 	{
-		new SeedOfAnnihilation(-1,qn,"ai");
+		new SeedOfAnnihilation(-1, qn, "ai");
 	}
 }

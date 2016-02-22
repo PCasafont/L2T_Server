@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import gnu.trove.TIntHashSet;
@@ -39,6 +40,7 @@ public final class L2EnchantSkillLearn
 	{
 		_enchantRoutes.add(route);
 	}
+	
 	/**
 	 * @return Returns the id.
 	 */
@@ -62,7 +64,7 @@ public final class L2EnchantSkillLearn
 	
 	public boolean isMaxEnchant(int route, int level)
 	{
-		if (route < 1 || !_enchantRoutes.contains(route))
+		if ((route < 1) || !_enchantRoutes.contains(route))
 		{
 			return false;
 		}
@@ -75,7 +77,7 @@ public final class L2EnchantSkillLearn
 	
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
 	{
-		if (route < 1 || !_enchantRoutes.contains(route))
+		if ((route < 1) || !_enchantRoutes.contains(route))
 			return null;
 		
 		if (level < 1)

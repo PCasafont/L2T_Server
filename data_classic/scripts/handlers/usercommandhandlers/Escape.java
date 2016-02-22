@@ -56,6 +56,12 @@ public class Escape implements IUserCommandHandler
 			return false;
 		}
 		
+		if (activeChar.isPlayingMiniGame())
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
 		if (!activeChar.canEscape() || activeChar.isCombatFlagEquipped())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);

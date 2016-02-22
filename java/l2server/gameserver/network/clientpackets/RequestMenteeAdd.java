@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.BlockList;
@@ -28,12 +29,13 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class RequestMenteeAdd extends L2GameClientPacket
 {
 	String _name;
+	
 	@Override
 	protected void readImpl()
 	{
 		_name = readS();
 	}
-
+	
 	@Override
 	protected void runImpl()
 	{
@@ -46,7 +48,7 @@ public class RequestMenteeAdd extends L2GameClientPacket
 		
 		SystemMessage sm;
 		// can't use mentee invite for locating invisible characters
-		if (mentee == null || !mentee.isOnline() || mentee.getAppearance().getInvisible())
+		if ((mentee == null) || !mentee.isOnline() || mentee.getAppearance().getInvisible())
 		{
 			//Target is not found in the game.
 			activeChar.sendPacket(SystemMessageId.THE_USER_YOU_REQUESTED_IS_NOT_IN_GAME); // TODO: Find other message not friends.
@@ -77,14 +79,6 @@ public class RequestMenteeAdd extends L2GameClientPacket
 		else if (mentee.getLevel() > 85)
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_ABOVE_LEVEL_86_AND_CANNOT_BECOME_A_MENTEE);
-			sm.addCharName(mentee);
-			activeChar.sendPacket(sm);
-			return;
-		}
-		
-		else if (mentee.getInventory().getInventoryItemCount(33800, 0) < 1)
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DOES_NOT_HAVE_THE_ITEM_NEEDED_TO_BECOME_A_MENTEE);
 			sm.addCharName(mentee);
 			activeChar.sendPacket(sm);
 			return;
@@ -131,11 +125,4 @@ public class RequestMenteeAdd extends L2GameClientPacket
 		}
 		activeChar.sendPacket(sm);
 	}
-
-	@Override
-	public String getType()
-	{
-		return "[C] D0:BF RequestMenteeAdd";
-	}
-	
 }

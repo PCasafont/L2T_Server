@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list>	
+<list>
 	<!--
 		The address on which login will listen for GameServers, use * to bind on all available IPs
 		WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
@@ -44,7 +44,7 @@
 	<config name="AcceptNewGameServer" var="ACCEPT_NEW_GAMESERVER" default="True" />
 	
 	<!-- How many times you can provide an invalid account/pass before the IP gets banned. -->
-	<config name="LoginTryBeforeBan" var="LOGIN_TRY_BEFORE_BAN" default="5" />
+	<config name="LoginTryBeforeBan" var="LOGIN_TRY_BEFORE_BAN" default="10" />
 	
 	<!-- Time you won't be able to login back again after LoginTryBeforeBan tries to login. -->
 	<config name="LoginBlockAfterBan" var="LOGIN_BLOCK_AFTER_BAN" default="600" />

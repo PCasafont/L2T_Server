@@ -1,7 +1,7 @@
 <list>
-	<npc id="29001" name="Queen Ant" level="43" type="L2GrandBoss" baseAtkRange="40" baseHpMax="60000.0" baseHpReg="50.0" baseMpMax="300.84" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="925" sp="75" basePAtk="210.04831" baseMAtk="143.43578" basePDef="186.04759" baseMDef="123.765045" basePAtkSpd="257" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="2000" collisionRadius="45.0" collisionHeight="53.0"
-			fireRes="-83" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="queen_ant_clan" clanRange="2000">
+	<npc id="29001" name="Queen Ant" level="43" type="L2GrandBoss" baseAtkRange="40" baseHpMax="60000.0" baseHpReg="50.0" baseMpMax="300.84" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="925" sp="75" basePAtk="210.04831" baseMAtk="143.43578" basePDef="186.04759" baseMDef="123.765045" basePAtkSpd="257" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="2000" collisionRadius="45.0" collisionHeight="53.0">
+		<elementals fireDef="-83" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="queen_ant_clan" clanRange="2000" />
 		<minion npcId="29003" min="5" max="5" /> <!-- Nurse Ant -->
 		<minion npcId="29005" min="7" max="7" /> <!-- Royal Guard Ant -->
 		<skill id="4416" level="12" /> <!-- Bugs -->
@@ -24,9 +24,9 @@
 		<itemDrop itemId="735" min="1" max="1" chance="5" /> <!-- Haste Potion -->
 		<itemDrop itemId="631" min="1" max="1" chance="60" /> <!-- Eldarake -->
 	</npc>
-	<npc id="29002" name="Queen Ant Larva" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="591.9395" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="84" sp="1" basePAtk="89.20967" baseMAtk="59.01367" basePDef="118.71838" baseMDef="84.15638" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="60.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="8.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="queen_ant_clan" clanRange="4500">
+	<npc id="29002" name="Queen Ant Larva" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="591.9395" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="84" sp="1" basePAtk="89.20967" baseMAtk="59.01367" basePDef="118.71838" baseMDef="84.15638" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="60.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="8.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="queen_ant_clan" clanRange="4500" />
 		<minion npcId="29003" min="2" max="2" /> <!-- Nurse Ant -->
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -39,9 +39,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29003" name="Nurse Ant" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="123" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="150.40244" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="queen_ant_clan" clanRange="300">
+	<npc id="29003" name="Nurse Ant" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="123" sp="1" basePAtk="129.32895" baseMAtk="88.31491" basePDef="150.40244" baseMDef="100.052704" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="queen_ant_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -53,9 +53,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29004" name="Escort Ant" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="137" sp="1" basePAtk="146.82587" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="queen_ant_clan" clanRange="300">
+	<npc id="29004" name="Escort Ant" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="137" sp="1" basePAtk="146.82587" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="queen_ant_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -67,9 +67,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29005" name="Royal Guard Ant" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="152" sp="1" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="queen_ant_clan" clanRange="300">
+	<npc id="29005" name="Royal Guard Ant" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="152" sp="1" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="queen_ant_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -81,9 +81,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29006" name="Core" level="50" type="L2GrandBoss" baseAtkRange="40" baseHpMax="90000.0" baseHpReg="70.0" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1250" sp="90" basePAtk="158.4783" baseMAtk="44.271873" basePDef="250.0" baseMDef="180.0" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="2000" collisionRadius="140.0" collisionHeight="75.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="curma_core_clan" clanRange="1800">
+	<npc id="29006" name="Core" level="50" type="L2GrandBoss" baseAtkRange="40" baseHpMax="90000.0" baseHpReg="70.0" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1250" sp="90" basePAtk="158.4783" baseMAtk="44.271873" basePDef="250.0" baseMDef="180.0" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="2000" collisionRadius="140.0" collisionHeight="75.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="curma_core_clan" clanRange="1800" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -104,9 +104,9 @@
 		<itemDrop itemId="437" min="1" max="1" chance="50" /> <!-- Mithril Tunic -->
 		<itemDrop itemId="470" min="1" max="1" chance="50" /> <!-- Mithril Stockings -->
 	</npc>
-	<npc id="29007" name="Death Knight" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="13" basePAtk="336.10397" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="110.0" aggressive="true" aggroRange="2100" rHand="75" collisionRadius="14.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="1500">
+	<npc id="29007" name="Death Knight" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="13" basePAtk="336.10397" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="110.0" aggressive="true" aggroRange="2100" rHand="75" collisionRadius="14.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="1500" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -120,9 +120,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29008" name="Doom Wraith" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="15" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="230.0" aggressive="true" aggroRange="1900" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" clan="curma_core_clan" clanRange="1500">
+	<npc id="29008" name="Doom Wraith" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="15" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="230.0" aggressive="true" aggroRange="1900" rHand="1472" collisionRadius="15.0" collisionHeight="45.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" clan="curma_core_clan" clanRange="1500" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -137,9 +137,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29009" name="Dicor" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="11" basePAtk="287.86505" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="1300" canSeeThroughSilentMove="true" collisionRadius="12.0" collisionHeight="26.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="800">
+	<npc id="29009" name="Dicor" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="11" basePAtk="287.86505" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="1300" canSeeThroughSilentMove="true" collisionRadius="12.0" collisionHeight="26.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="800" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -152,9 +152,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4035" level="4" /> <!-- Poison -->
 	</npc>
-	<npc id="29010" name="Validus" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1229.7867" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="11" basePAtk="248.0526" baseMAtk="169.38777" basePDef="200.40697" baseMDef="133.31738" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="1500" canSeeThroughSilentMove="true" collisionRadius="15.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="800">
+	<npc id="29010" name="Validus" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1229.7867" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="11" basePAtk="248.0526" baseMAtk="169.38777" basePDef="200.40697" baseMDef="133.31738" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="1500" canSeeThroughSilentMove="true" collisionRadius="15.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="800" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -166,9 +166,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29011" name="Susceptor" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="150.0" aggressive="true" aggroRange="1700" canSeeThroughSilentMove="true" collisionRadius="20.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="1500">
+	<npc id="29011" name="Susceptor" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="150.0" aggressive="true" aggroRange="1700" canSeeThroughSilentMove="true" collisionRadius="20.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="1500" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -181,9 +181,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4001" level="4" /> <!-- Gust -->
 	</npc>
-	<npc id="29012" name="Perum" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="210.24083" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="20.0" aggressive="true" aggroRange="1500" canSeeThroughSilentMove="true" collisionRadius="18.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="800">
+	<npc id="29012" name="Perum" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="210.24083" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="20.0" aggressive="true" aggroRange="1500" canSeeThroughSilentMove="true" collisionRadius="18.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="800" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -199,9 +199,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4001" level="4" /> <!-- Gust -->
 	</npc>
-	<npc id="29013" name="Premo" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1183.8059" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="10" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="110.0" aggressive="true" aggroRange="1300" canSeeThroughSilentMove="true" collisionRadius="21.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="curma_core_clan" clanRange="800">
+	<npc id="29013" name="Premo" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1183.8059" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="10" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="110.0" aggressive="true" aggroRange="1300" canSeeThroughSilentMove="true" collisionRadius="21.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="curma_core_clan" clanRange="800" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -213,9 +213,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29014" name="Orfen" level="50" type="L2GrandBoss" baseAtkRange="40" baseHpMax="120000.0" baseHpReg="70.0" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1250" sp="90" basePAtk="610.0" baseMAtk="208.6504" basePDef="200.23845" baseMDef="292.0" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="125.0"
-			fireRes="-83" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="orfen_clan" clanRange="2000">
+	<npc id="29014" name="Orfen" level="50" type="L2GrandBoss" baseAtkRange="40" baseHpMax="120000.0" baseHpReg="70.0" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1250" sp="90" basePAtk="610.0" baseMAtk="208.6504" basePDef="200.23845" baseMDef="292.0" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="125.0">
+		<elementals fireDef="-83" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="orfen_clan" clanRange="2000" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -236,9 +236,9 @@
 		<itemDrop itemId="735" min="1" max="1" chance="5" /> <!-- Haste Potion -->
 		<itemDrop itemId="401" min="1" max="1" chance="50" /> <!-- Drake Leather Armor -->
 	</npc>
-	<npc id="29015" name="Laikel" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1500" collisionRadius="37.0" collisionHeight="70.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="orfen_clan" clanRange="300">
+	<npc id="29015" name="Laikel" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1500" collisionRadius="37.0" collisionHeight="70.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="orfen_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -250,9 +250,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29016" name="Laikel Leos" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="226.00006" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="289" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1300" collisionRadius="37.0" collisionHeight="70.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="orfen_clan" clanRange="300">
+	<npc id="29016" name="Laikel Leos" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="226.00006" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="289" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1300" collisionRadius="37.0" collisionHeight="70.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="orfen_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -264,9 +264,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29017" name="Riba" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1100" collisionRadius="25.0" collisionHeight="80.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="orfen_clan" clanRange="300">
+	<npc id="29017" name="Riba" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="275.82706" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1100" collisionRadius="25.0" collisionHeight="80.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="orfen_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -278,9 +278,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29018" name="Riba Iren" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="290.4459" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1500" collisionRadius="25.0" collisionHeight="80.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="orfen_clan" clanRange="300">
+	<npc id="29018" name="Riba Iren" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="12" basePAtk="290.4459" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="230.0" aggressive="true" aggroRange="1500" collisionRadius="25.0" collisionHeight="80.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="orfen_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -292,9 +292,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29019" name="Antharas" level="70" type="L2GrandBoss" baseAtkRange="40" baseHpMax="4520000.0" baseHpReg="800.0" baseMpMax="747.8" baseMpReg="2.1" STR="84" CON="71" DEX="73" INT="76" WIT="70" MEN="80" exp="49000" sp="6000" basePAtk="2833.0" baseMAtk="1700.0" basePDef="4800.0" baseMDef="440.0" basePAtkSpd="206" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0"
-			fireRes="50" waterRes="50" windRes="-83" earthRes="300" holyRes="50" darkRes="50"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="29019" name="Antharas" level="70" type="L2GrandBoss" baseAtkRange="40" baseHpMax="4520000.0" baseHpReg="800.0" baseMpMax="747.8" baseMpReg="2.1" STR="84" CON="71" DEX="73" INT="76" WIT="70" MEN="80" exp="49000" sp="6000" basePAtk="2833.0" baseMAtk="1700.0" basePDef="4800.0" baseMDef="440.0" basePAtkSpd="206" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0">
+		<elementals fireDef="50" waterDef="50" windDef="-83" earthDef="300" holyDef="50" darkDef="50" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -334,9 +334,9 @@
 			<itemDrop itemId="1539" min="1" max="9" chance="25" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29020" name="Baium" level="78" type="L2GrandBoss" baseAtkRange="40" baseHpMax="4.395664E7" baseHpReg="750.0" baseMpMax="18000.0" baseMpReg="99.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="11090077" sp="2661" basePAtk="3374.18" baseMAtk="2200.0" basePDef="3300.0" baseMDef="2200.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="65.0" collisionHeight="174.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" enemyRange="300">
+	<npc id="29020" name="Baium" level="78" type="L2GrandBoss" baseAtkRange="40" baseHpMax="4.395664E7" baseHpReg="750.0" baseMpMax="18000.0" baseMpReg="99.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="11090077" sp="2661" basePAtk="3374.18" baseMAtk="2200.0" basePDef="3300.0" baseMDef="2200.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="65.0" collisionHeight="174.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" enemyRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -383,9 +383,9 @@
 			<itemDrop itemId="6658" min="1" max="1" chance="100" /> <!-- Baium's Ring -->
 		</dropCategory>
 	</npc>
-	<npc id="29021" name="Archangel" level="74" type="L2Monster" baseAtkRange="80" baseHpMax="186915.0" baseHpReg="158.0" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="6571" sp="343" basePAtk="1395.0" baseMAtk="371.0" basePDef="5108.0" baseMDef="1686.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="15.0" collisionHeight="80.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="-13"
-			aiType="balanced" skillChance="15" clan="archangel_clan" clanRange="300" enemyRange="300" dodge="-18">
+	<npc id="29021" name="Archangel" level="74" type="L2Monster" baseAtkRange="80" baseHpMax="186915.0" baseHpReg="158.0" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="6571" sp="343" basePAtk="1395.0" baseMAtk="371.0" basePDef="5108.0" baseMDef="1686.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" aggroRange="300" rHand="93" collisionRadius="15.0" collisionHeight="80.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="53" darkDef="-13" />
+		<ai type="balanced" skillChance="15" clan="archangel_clan" clanRange="300" enemyRange="300" dodge="-18" />
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -397,9 +397,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29022" name="Zaken" level="60" type="L2GrandBoss" baseAtkRange="40" baseHpMax="297252.4" baseHpReg="346.8" baseMpMax="180000.0" baseMpReg="100.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4879745" sp="101661" basePAtk="3616.0" baseMAtk="1520.0" basePDef="1981.0" baseMDef="966.39" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="42.0" baseRunSpd="190.0" aggressive="true" aggroRange="300" collisionRadius="16.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="29022" name="Zaken" level="60" type="L2GrandBoss" baseAtkRange="40" baseHpMax="297252.4" baseHpReg="346.8" baseMpMax="180000.0" baseMpReg="100.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4879745" sp="101661" basePAtk="3616.0" baseMAtk="1520.0" basePDef="1981.0" baseMDef="966.39" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="42.0" baseRunSpd="190.0" aggressive="true" aggroRange="300" collisionRadius="16.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -501,9 +501,9 @@
 			<itemDrop itemId="8922" min="1" max="1" chance="100" /> <!-- Pirate Hat -->
 		</dropCategory>
 	</npc>
-	<npc id="29023" name="Doll Blader" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.0" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="442.0" baseMAtk="302.0" basePDef="261.0" baseMDef="191.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="22.0" baseRunSpd="150.0" aggressive="true" aggroRange="300" rHand="5129" collisionRadius="6.0" collisionHeight="12.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="29023" name="Doll Blader" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.0" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="442.0" baseMAtk="302.0" basePDef="261.0" baseMDef="191.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="22.0" baseRunSpd="150.0" aggressive="true" aggroRange="300" rHand="5129" collisionRadius="6.0" collisionHeight="12.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -523,9 +523,9 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29024" name="Veil Master" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="1880.0" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="461.0" baseMAtk="315.0" basePDef="267.0" baseMDef="195.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="155.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="29024" name="Veil Master" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="1880.0" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="461.0" baseMAtk="315.0" basePDef="267.0" baseMDef="195.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="155.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -545,9 +545,9 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29025" name="Baium" level="78" type="L2Npc" baseAtkRange="40" baseHpMax="1408628.5" baseHpReg="718.0" baseMpMax="18000.0" baseMpReg="99.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1874.18" baseMAtk="1596.95" basePDef="3300.0" baseMDef="2200.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="4296" collisionRadius="65.0" collisionHeight="82.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="29025" name="Baium" level="78" type="L2Npc" baseAtkRange="40" baseHpMax="1408628.5" baseHpReg="718.0" baseMpMax="18000.0" baseMpReg="99.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1874.18" baseMAtk="1596.95" basePDef="3300.0" baseMDef="2200.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" aggressive="true" aggroRange="4296" collisionRadius="65.0" collisionHeight="82.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -559,9 +559,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29026" name="Pirate Zombie Captain" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.0" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="420.0" baseMAtk="328.0" basePDef="272.0" baseMDef="199.0" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="14.0" baseRunSpd="140.0" aggressive="true" aggroRange="300" rHand="232" collisionRadius="17.0" collisionHeight="28.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="29026" name="Pirate Zombie Captain" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.0" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="420.0" baseMAtk="328.0" basePDef="272.0" baseMDef="199.0" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="14.0" baseRunSpd="140.0" aggressive="true" aggroRange="300" rHand="232" collisionRadius="17.0" collisionHeight="28.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -578,9 +578,9 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29027" name="Pirate Zombie" level="57" type="L2Monster" baseAtkRange="40" baseHpMax="1776.0" baseHpReg="6.5" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="371.0" baseMAtk="289.0" basePDef="256.0" baseMDef="187.0" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="11.0" baseRunSpd="140.0" aggressive="true" aggroRange="300" rHand="225" collisionRadius="10.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="29027" name="Pirate Zombie" level="57" type="L2Monster" baseAtkRange="40" baseHpMax="1776.0" baseHpReg="6.5" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="371.0" baseMAtk="289.0" basePDef="256.0" baseMDef="187.0" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="11.0" baseRunSpd="140.0" aggressive="true" aggroRange="300" rHand="225" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -597,9 +597,9 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29066" name="Antharas" level="79" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5042979.0" baseHpReg="1100.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="262720918" sp="29116376" basePAtk="4900.0" baseMAtk="2550.0" basePDef="3456.0" baseMDef="862.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0"
-			fireRes="50" waterRes="50" windRes="-83" earthRes="300" holyRes="50" darkRes="50"
-			aiType="balanced" skillChance="25" clanRange="300">
+	<npc id="29066" name="Antharas" level="79" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5042979.0" baseHpReg="1100.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="262720918" sp="29116376" basePAtk="4900.0" baseMAtk="2550.0" basePDef="3456.0" baseMDef="862.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0">
+		<elementals fireDef="50" waterDef="50" windDef="-83" earthDef="300" holyDef="50" darkDef="50" />
+		<ai type="balanced" skillChance="25" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -776,9 +776,9 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29067" name="Antharas" level="79" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5621681.5" baseHpReg="1100.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="354676030" sp="39307416" basePAtk="4900.0" baseMAtk="2550.0" basePDef="3456.0" baseMDef="862.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0"
-			fireRes="50" waterRes="50" windRes="-83" earthRes="300" holyRes="50" darkRes="50"
-			aiType="balanced" skillChance="25" clanRange="300">
+	<npc id="29067" name="Antharas" level="79" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5621681.5" baseHpReg="1100.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="354676030" sp="39307416" basePAtk="4900.0" baseMAtk="2550.0" basePDef="3456.0" baseMDef="862.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="186.0" aggressive="true" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0">
+		<elementals fireDef="50" waterDef="50" windDef="-83" earthDef="300" holyDef="50" darkDef="50" />
+		<ai type="balanced" skillChance="25" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -958,9 +958,9 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5.6816685E8" baseHpReg="1830.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="141209671680" sp="33890321" basePAtk="39900.984" baseMAtk="8569.688" basePDef="8000.0" baseMDef="7000.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="279.0" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0" elemAtkType="3" elemAtkValue="600"
-			fireRes="450" waterRes="450" windRes="450" earthRes="600" holyRes="450" darkRes="450"
-			aiType="balanced" skillChance="35" clan="antharas_clan" clanRange="10000">
+	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="L2GrandBoss" baseAtkRange="40" baseHpMax="5.6816685E8" baseHpReg="1830.0" baseMpMax="1800000.0" baseMpReg="1000.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="141209671680" sp="33890321" basePAtk="39900.984" baseMAtk="8569.688" basePDef="8000.0" baseMDef="7000.0" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="279.0" aggroRange="4096" collisionRadius="300.0" collisionHeight="300.0">
+		<elementals elemAtkType="3" elemAtkValue="600" fireDef="450" waterDef="450" windDef="450" earthDef="600" holyDef="450" darkDef="450" />
+		<ai type="balanced" skillChance="35" clan="antharas_clan" clanRange="10000" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -1062,9 +1062,9 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29069" name="Behemoth Dragon" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="240898.36" baseHpReg="76.71" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="3584.569" baseMAtk="1386.66" basePDef="1071.2948" baseMDef="522.6269" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="180.0" baseRunSpd="180.0" aggressive="true" aggroRange="300" collisionRadius="63.0" collisionHeight="54.0" elemAtkType="3" elemAtkValue="300"
-			fireRes="220" waterRes="220" windRes="170" earthRes="300" holyRes="220" darkRes="220"
-			aiType="balanced" skillChance="25" clan="antharas_clan" clanRange="10000" dodge="-18">
+	<npc id="29069" name="Behemoth Dragon" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="240898.36" baseHpReg="76.71" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="3584.569" baseMAtk="1386.66" basePDef="1071.2948" baseMDef="522.6269" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="180.0" baseRunSpd="180.0" aggressive="true" aggroRange="300" collisionRadius="63.0" collisionHeight="54.0">
+		<elementals elemAtkType="3" elemAtkValue="300" fireDef="220" waterDef="220" windDef="170" earthDef="300" holyDef="220" darkDef="220" />
+		<ai type="balanced" skillChance="25" clan="antharas_clan" clanRange="10000" dodge="-18" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -1078,9 +1078,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5095" level="1" /> <!-- Antharas Strike -->
 	</npc>
-	<npc id="29070" name="Dragon Bomber" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="1115.4592" baseHpReg="8.5" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1094.1176" baseMAtk="4902.24" basePDef="357.09824" baseMDef="261.309" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="250.0" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0" elemAtkType="3" elemAtkValue="300"
-			fireRes="220" waterRes="220" windRes="170" earthRes="300" holyRes="220" darkRes="220"
-			aiType="balanced" skillChance="15" clan="antharas_clan" clanRange="10000">
+	<npc id="29070" name="Dragon Bomber" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="1115.4592" baseHpReg="8.5" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1094.1176" baseMAtk="4902.24" basePDef="357.09824" baseMDef="261.309" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="250.0" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals elemAtkType="3" elemAtkValue="300" fireDef="220" waterDef="220" windDef="170" earthDef="300" holyDef="220" darkDef="220" />
+		<ai type="balanced" skillChance="15" clan="antharas_clan" clanRange="10000" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -1094,9 +1094,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29071" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="245.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="29071" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="245.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1109,9 +1109,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29072" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="255.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="29072" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="255.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1124,9 +1124,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29073" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="247.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="29073" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="247.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1139,9 +1139,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29074" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="252.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="29074" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="252.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1154,9 +1154,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29075" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="243.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="29075" name="Dragon Bomber" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="826.8173" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="243.0" aggressive="true" aggroRange="100" collisionRadius="37.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1169,9 +1169,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29076" name="Dragon Bomber" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="1115.4592" baseHpReg="8.5" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1094.1176" baseMAtk="4902.24" basePDef="357.09824" baseMDef="261.309" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="250.0" aggroRange="200" collisionRadius="42.0" collisionHeight="34.5" elemAtkType="3" elemAtkValue="300"
-			fireRes="220" waterRes="220" windRes="170" earthRes="300" holyRes="220" darkRes="220"
-			aiType="balanced" skillChance="15" clan="antharas_clan" clanRange="10000">
+	<npc id="29076" name="Dragon Bomber" level="99" type="L2Monster" baseAtkRange="40" baseHpMax="1115.4592" baseHpReg="8.5" baseMpMax="1809.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" basePAtk="1094.1176" baseMAtk="4902.24" basePDef="357.09824" baseMDef="261.309" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="200.0" baseRunSpd="250.0" aggroRange="200" collisionRadius="42.0" collisionHeight="34.5">
+		<elementals elemAtkType="3" elemAtkValue="300" fireDef="220" waterDef="220" windDef="170" earthDef="300" holyDef="220" darkDef="220" />
+		<ai type="balanced" skillChance="15" clan="antharas_clan" clanRange="10000" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -1185,9 +1185,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5094" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29077" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29077" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1199,9 +1199,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29078" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29078" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1213,9 +1213,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29079" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29079" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1227,9 +1227,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29080" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29080" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1241,9 +1241,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29081" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29081" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1255,9 +1255,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29082" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29082" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1269,9 +1269,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29083" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29083" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1283,9 +1283,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29084" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29084" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1297,9 +1297,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29085" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29085" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1311,9 +1311,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29086" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29086" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1325,9 +1325,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29087" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29087" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1339,9 +1339,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29088" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29088" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1353,9 +1353,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29089" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29089" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1367,9 +1367,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29090" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29090" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1381,9 +1381,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29091" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29091" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1395,9 +1395,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29092" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29092" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1409,9 +1409,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29093" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29093" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1423,9 +1423,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29094" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="29094" name="" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="2802.9" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="1.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="0.10000000149011612" collisionHeight="0.10000000149011612">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

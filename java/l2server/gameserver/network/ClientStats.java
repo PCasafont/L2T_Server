@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network;
 
 import l2server.Config;
@@ -77,7 +78,7 @@ public class ClientStats
 		totalQueueSize += queueSize;
 		if (maxQueueSize < queueSize)
 			maxQueueSize = queueSize;
-		if (_queueOverflowDetected && queueSize < 2)
+		if (_queueOverflowDetected && (queueSize < 2))
 			_queueOverflowDetected = false;
 		
 		return countPacket();
@@ -91,7 +92,7 @@ public class ClientStats
 		unknownPackets++;
 		
 		final long tick = System.currentTimeMillis();
-		if (tick - _unknownPacketStartTick > 60000)
+		if ((tick - _unknownPacketStartTick) > 60000)
 		{
 			_unknownPacketStartTick = tick;
 			_unknownPacketsInMin = 1;
@@ -127,7 +128,7 @@ public class ClientStats
 		totalQueueOverflows++;
 		
 		final long tick = System.currentTimeMillis();
-		if (tick - _overflowStartTick > 60000)
+		if ((tick - _overflowStartTick) > 60000)
 		{
 			_overflowStartTick = tick;
 			_overflowsInMin = 1;
@@ -146,7 +147,7 @@ public class ClientStats
 		totalUnderflowExceptions++;
 		
 		final long tick = System.currentTimeMillis();
-		if (tick - _underflowReadStartTick > 60000)
+		if ((tick - _underflowReadStartTick) > 60000)
 		{
 			_underflowReadStartTick = tick;
 			_underflowReadsInMin = 1;
@@ -178,14 +179,12 @@ public class ClientStats
 	{
 		_totalCount++;
 		final long tick = System.currentTimeMillis();
-		if (tick - _packetCountStartTick > 1000)
+		if ((tick - _packetCountStartTick) > 1000)
 		{
 			_packetCountStartTick = tick;
 			
 			// clear flag if no more flooding during last seconds
-			if (_floodDetected
-					&& !longFloodDetected()
-					&& _packetsInSecond[_head] < Config.CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND / 2)
+			if (_floodDetected && !longFloodDetected() && (_packetsInSecond[_head] < (Config.CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND / 2)))
 				_floodDetected = false;
 			
 			// wrap head of the buffer around the tail
@@ -209,7 +208,7 @@ public class ClientStats
 				return false;
 			
 			_floodDetected = true;
-			if (tick - _floodStartTick > 60000)
+			if ((tick - _floodStartTick) > 60000)
 			{
 				_floodStartTick = tick;
 				_floodsInMin = 1;

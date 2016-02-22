@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.StringTokenizer;
@@ -28,10 +29,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 public class L2FortLogisticsInstance extends L2MerchantInstance
 {
 	private static final int BLOOD_OATH = 9910;
-	private static final int[] SUPPLY_BOX_IDS = { 35665, 35697, 35734, 35766, 35803, 35834,
-		35866, 35903, 35935, 35973, 36010, 36042, 36080, 36117, 36148, 36180, 36218, 36256,
-		36293, 36325, 36363
-	};
+	private static final int[] SUPPLY_BOX_IDS = { 35665, 35697, 35734, 35766, 35803, 35834, 35866, 35903, 35935, 35973, 36010, 36042, 36080, 36117, 36148, 36180, 36218, 36256, 36293, 36325, 36363 };
 	
 	public L2FortLogisticsInstance(int objectID, L2NpcTemplate template)
 	{
@@ -60,14 +58,18 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 			{
 				val = Integer.parseInt(par);
 			}
-			catch (IndexOutOfBoundsException ioobe){}
-			catch (NumberFormatException nfe){}
+			catch (IndexOutOfBoundsException ioobe)
+			{
+			}
+			catch (NumberFormatException nfe)
+			{
+			}
 			
 			showMessageWindow(player, val);
 		}
 		else if (actualCommand.equalsIgnoreCase("rewards"))
 		{
-			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
+			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				html.setFile(player.getHtmlPrefix(), "fortress/logistics-rewards.htm");
@@ -88,7 +90,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
-			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
+			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				int blood = getFort().getBloodOathReward();
@@ -116,7 +118,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
 		{
-			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && getFort().getFortState() == 2)
+			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && (getFort().getFortState() == 2))
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				if (player.isClanLeader())
@@ -141,7 +143,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
-			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
+			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				if (getFort().getSiege().getIsInProgress())
@@ -153,7 +155,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 					{
 						html.setFile(player.getHtmlPrefix(), "fortress/logistics-supply.htm");
 						// spawn box
-						L2NpcTemplate BoxTemplate = NpcTable.getInstance().getTemplate(SUPPLY_BOX_IDS[level-1]);
+						L2NpcTemplate BoxTemplate = NpcTable.getInstance().getTemplate(SUPPLY_BOX_IDS[level - 1]);
 						L2MonsterInstance box = new L2MonsterInstance(IdFactory.getInstance().getNextId(), BoxTemplate);
 						box.setCurrentHp(box.getMaxHp());
 						box.setCurrentMp(box.getMaxMp());

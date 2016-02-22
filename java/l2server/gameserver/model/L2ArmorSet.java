@@ -2,11 +2,11 @@
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with this program. If
  * not, see <http://www.gnu.org/licenses/>.
  */
@@ -18,7 +18,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
 
 /**
- * 
+ *
  * @author Luno
  */
 public final class L2ArmorSet
@@ -42,7 +42,7 @@ public final class L2ArmorSet
 	
 	/**
 	 * Checks if player have equiped all items from set (not checking shield)
-	 * 
+	 *
 	 * @param player
 	 *			whose inventory is being checked
 	 * @return True if player equips whole set
@@ -68,15 +68,15 @@ public final class L2ArmorSet
 		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 		
 		int count = 0;
-		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(_id))
+		if ((chestItem != null) && chestItem.getArmorItem().isArmorSetPart(_id))
 			count++;
-		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(_id))
+		if ((legsItem != null) && legsItem.getArmorItem().isArmorSetPart(_id))
 			count++;
-		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id))
+		if ((glovesItem != null) && glovesItem.getArmorItem().isArmorSetPart(_id))
 			count++;
-		if (headItem != null && headItem.getArmorItem().isArmorSetPart(_id))
+		if ((headItem != null) && headItem.getArmorItem().isArmorSetPart(_id))
 			count++;
-		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(_id))
+		if ((feetItem != null) && feetItem.getArmorItem().isArmorSetPart(_id))
 			count++;
 		
 		return count;
@@ -87,8 +87,7 @@ public final class L2ArmorSet
 		Inventory inv = player.getInventory();
 		
 		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if (shieldItem != null && shieldItem.getArmorItem() != null
-				&& shieldItem.getArmorItem().isArmorSetPart(_id))
+		if ((shieldItem != null) && (shieldItem.getArmorItem() != null) && shieldItem.getArmorItem().isArmorSetPart(_id))
 			return true;
 		
 		return false;
@@ -111,7 +110,7 @@ public final class L2ArmorSet
 	
 	/**
 	 * Returns the minimum enchant level of the set for the given player
-	 * 
+	 *
 	 * @param player
 	 * @return
 	 */
@@ -129,15 +128,15 @@ public final class L2ArmorSet
 		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 		
 		int enchant = Integer.MAX_VALUE;
-		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(_id) && chestItem.getEnchantLevel() < enchant)
+		if ((chestItem != null) && chestItem.getArmorItem().isArmorSetPart(_id) && (chestItem.getEnchantLevel() < enchant))
 			enchant = chestItem.getEnchantLevel();
-		if (legsItem != null && legsItem.getArmorItem().isArmorSetPart(_id) && legsItem.getEnchantLevel() < enchant)
+		if ((legsItem != null) && legsItem.getArmorItem().isArmorSetPart(_id) && (legsItem.getEnchantLevel() < enchant))
 			enchant = legsItem.getEnchantLevel();
-		if (glovesItem != null && glovesItem.getArmorItem().isArmorSetPart(_id) && glovesItem.getEnchantLevel() < enchant)
+		if ((glovesItem != null) && glovesItem.getArmorItem().isArmorSetPart(_id) && (glovesItem.getEnchantLevel() < enchant))
 			enchant = glovesItem.getEnchantLevel();
-		if (headItem != null && headItem.getArmorItem().isArmorSetPart(_id) && headItem.getEnchantLevel() < enchant)
+		if ((headItem != null) && headItem.getArmorItem().isArmorSetPart(_id) && (headItem.getEnchantLevel() < enchant))
 			enchant = headItem.getEnchantLevel();
-		if (feetItem != null && feetItem.getArmorItem().isArmorSetPart(_id) && feetItem.getEnchantLevel() < enchant)
+		if ((feetItem != null) && feetItem.getArmorItem().isArmorSetPart(_id) && (feetItem.getEnchantLevel() < enchant))
 			enchant = feetItem.getEnchantLevel();
 		
 		return enchant;

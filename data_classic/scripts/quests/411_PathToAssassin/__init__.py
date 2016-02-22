@@ -26,7 +26,7 @@ class Quest (JQuest) :
  def onEvent (self,event,st) :
     htmltext = event
     level = st.getPlayer().getLevel()
-    classId = st.getPlayer().getClassId();
+    classId = st.getPlayer().getClassId().getId()
     if event == "1" :
         if level >= 18 and classId == 0x1f and st.getQuestItemsCount(IRON_HEART) == 0 :
           st.set("cond","1")
@@ -91,7 +91,7 @@ class Quest (JQuest) :
             else:
               st.addExpAndSp(59172, 4252)
             st.giveItems(57, 16380)
-          player.sendPacket(SocialAction(player.getObjectId(),3))
+          player.sendPacket(SocialAction(player,3))
           st.set("cond","0")
           st.exitQuest(False)
           st.saveGlobalQuestVar("1ClassQuestFinished","1")

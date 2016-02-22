@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Object;
@@ -29,16 +30,9 @@ public final class FlyToLocation extends L2GameServerPacket
 	
 	public enum FlyType
 	{
-		THROW_UP,
-		THROW_HORIZONTAL,
-		DUMMY, // no effect
-		CHARGE,
-		KNOCK_BACK,
-		MAGIC,
-		UNK2, // Causes critical error
-		KNOCK_DOWN,
-		MOVE_HORIZONTAL,
-		DRAG;
+		THROW_UP, THROW_HORIZONTAL, DUMMY, // no effect
+		CHARGE, KNOCK_BACK, MAGIC, UNK2, // Causes critical error
+		KNOCK_DOWN, MOVE_HORIZONTAL, DRAG;
 	}
 	
 	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type)
@@ -61,19 +55,13 @@ public final class FlyToLocation extends L2GameServerPacket
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-	@Override
-	public String getType()
-	{
-		return "[S] 0xd4 FlyToLocation";
-	}
 	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xd4);
 		writeD(_chaObjId);
 		writeD(_destX);
 		writeD(_destY);
@@ -82,10 +70,8 @@ public final class FlyToLocation extends L2GameServerPacket
 		writeD(_chaY);
 		writeD(_chaZ);
 		writeD(_type.ordinal());
-		writeD(0x00); // GoD ???
-		writeD(0x00); // GoD ???
-		//writeD((int)Math.round(Util.calculateDistance(_destX, _destY, _destZ, _chaX, _chaY, _chaZ, true))); // GoD ???
-		writeD(333); // GoD ???
+		writeD(0x00); // flySpeed?
+		writeD(0x00); // flyDelay?
+		writeD(333); // animationSpeed?
 	}
-	
 }

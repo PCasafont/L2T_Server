@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.Map;
@@ -38,21 +39,18 @@ public final class ExShowBeautyList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
 			return;
 		
-		writeC(0xfe);
-		writeH(0x135);
-		
 		writeQ(_adena);
 		writeQ(_tickets);
 		
 		writeD(_isFace ? 1 : 0);
-
+		
 		Map<Integer, BeautyInfo> styles = null;
 		if (!_isFace)
 			styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
@@ -69,21 +67,12 @@ public final class ExShowBeautyList extends L2GameServerPacket
 		
 		writeD(0);
 		/*writeD(styles.size()); // For now ignore the already bought ones
-		
+
 		for (int id : styles.keySet())
 		{
 			writeD(id);
 			writeD(1);
 			writeD(101);
 		}*/
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "ExShowBeautyList";
 	}
 }

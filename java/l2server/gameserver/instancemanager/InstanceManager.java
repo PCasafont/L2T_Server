@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.io.File;
@@ -19,6 +20,7 @@ import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -44,6 +46,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
@@ -51,7 +54,7 @@ import l2server.util.xml.XmlNode;
 
 /**
  * @author evill33t, GodKratos
- * 
+ *
  */
 public class InstanceManager
 {
@@ -61,7 +64,7 @@ public class InstanceManager
 	
 	// InstanceId Names
 	private final static Map<Integer, String> _instanceIdNames = new HashMap<Integer, String>();
-	private Map<Integer,Map<Integer,Long>> _playerInstanceTimes = new HashMap<Integer, Map<Integer,Long>>();
+	private Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new HashMap<Integer, Map<Integer, Long>>();
 	
 	private static final String ADD_INSTANCE_TIME = "INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
 	private static final String RESTORE_INSTANCE_TIMES = "SELECT instanceId,time FROM character_instance_time WHERE charId=?";
@@ -76,7 +79,7 @@ public class InstanceManager
 		return -1;
 	}
 	
-	public Map<Integer,Long> getAllInstanceTimes(int playerObjId)
+	public Map<Integer, Long> getAllInstanceTimes(int playerObjId)
 	{
 		if (!_playerInstanceTimes.containsKey(playerObjId))
 			restoreInstanceTimes(playerObjId);
@@ -101,8 +104,14 @@ public class InstanceManager
 			statement.close();
 			_playerInstanceTimes.get(playerObjId).put(id, time);
 		}
-		catch (Exception e) { Log.log(Level.WARNING, "Could not insert character instance time data: "+ e.getMessage(), e); }
-		finally { L2DatabaseFactory.close(con); }
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Could not insert character instance time data: " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 	}
 	
 	public void deleteInstanceTime(int playerObjId, int id)
@@ -119,8 +128,14 @@ public class InstanceManager
 			statement.close();
 			_playerInstanceTimes.get(playerObjId).remove(id);
 		}
-		catch (Exception e) { Log.log(Level.WARNING, "Could not delete character instance time data: "+ e.getMessage(), e); }
-		finally { L2DatabaseFactory.close(con); }
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 	}
 	
 	public void restoreInstanceTimes(int playerObjId)
@@ -151,7 +166,7 @@ public class InstanceManager
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, "Could not delete character instance time data: "+ e.getMessage(), e);
+			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
 		}
 		finally
 		{
@@ -215,6 +230,7 @@ public class InstanceManager
 			if (temp.allowed.contains(player.getObjectId()))
 				return temp;
 		}
+		
 		return null;
 	}
 	
@@ -350,6 +366,7 @@ public class InstanceManager
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				startWholeInstance(instId);
@@ -364,25 +381,25 @@ public class InstanceManager
 	{
 		for (L2Npc mobs : getInstance(instId).getNpcs())
 		{
-			if (mobs == null || !(mobs instanceof L2Attackable))
+			if ((mobs == null) || !(mobs instanceof L2Attackable))
 				continue;
 			
-			mobs.setTarget(null);		
-			mobs.abortAttack();		
-			mobs.abortCast();			
-			mobs.disableAllSkills();			
-			mobs.stopMove(null);			
+			mobs.setTarget(null);
+			mobs.abortAttack();
+			mobs.abortCast();
+			mobs.disableAllSkills();
+			mobs.stopMove(null);
 			mobs.setIsInvul(true);
 			mobs.setIsImmobilized(true);
 		}
-
+		
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
+			if ((pl != null) && (pl.getInstanceId() == instId) && !pl.isGM())
 			{
-				pl.setIsImmobilized(true);				
-				pl.setTarget(null);				
-				pl.disableAllSkills();	
+				pl.setIsImmobilized(true);
+				pl.setTarget(null);
+				pl.disableAllSkills();
 				pl.setIsInvul(true);
 				pl.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
@@ -397,9 +414,9 @@ public class InstanceManager
 	{
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if (pl != null && pl.getInstanceId() == instId)
+			if ((pl != null) && (pl.getInstanceId() == instId))
 			{
-				pl.setMovieId(vidId);	
+				pl.setMovieId(vidId);
 				pl.sendPacket(new ExStartScenePlayer(vidId));
 			}
 		}
@@ -415,7 +432,7 @@ public class InstanceManager
 			return;
 		for (L2Npc mobs : inst.getNpcs())
 		{
-			if (mobs == null || !(mobs instanceof L2Attackable))	
+			if ((mobs == null) || !(mobs instanceof L2Attackable))
 				continue;
 			
 			mobs.setIsInvul(false);
@@ -425,7 +442,7 @@ public class InstanceManager
 		
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
+			if ((pl != null) && (pl.getInstanceId() == instId) && !pl.isGM())
 			{
 				pl.enableAllSkills();
 				pl.setIsInvul(false);
@@ -442,7 +459,7 @@ public class InstanceManager
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
-			if (player != null && player.isOnline() && player.getInstanceId() == instanceId)
+			if ((player != null) && player.isOnline() && (player.getInstanceId() == instanceId))
 				player.sendPacket(packet);
 		}
 	}
@@ -456,13 +473,14 @@ public class InstanceManager
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				sendPacket(instanceId, packet);
 			}
-		}, delaySec*1000);
+		}, delaySec * 1000);
 	}
-
+	
 	/**
 	 * @param player
 	 * @param delaySec
@@ -473,12 +491,13 @@ public class InstanceManager
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
-				if (player != null && player.getInstanceId() == instanceId)
+				if ((player != null) && (player.getInstanceId() == instanceId))
 					player.sendPacket(packet);
 			}
-		}, delaySec*1000);
+		}, delaySec * 1000);
 	}
 	
 	/**
@@ -490,7 +509,7 @@ public class InstanceManager
 		List<L2PcInstance> _instancePlayers = new ArrayList<L2PcInstance>();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
-			if (player != null && player.getInstanceId() == instanceId)
+			if ((player != null) && (player.getInstanceId() == instanceId))
 				_instancePlayers.add(player);
 		}
 		return _instancePlayers;
@@ -503,14 +522,14 @@ public class InstanceManager
 	private long calcInstanceReuse(boolean isHard)
 	{
 		Calendar now = Calendar.getInstance();
-		Calendar reenterPointWed = (Calendar)now.clone();
+		Calendar reenterPointWed = (Calendar) now.clone();
 		reenterPointWed.set(Calendar.MINUTE, 30);
 		reenterPointWed.set(Calendar.HOUR_OF_DAY, 6);
 		reenterPointWed.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
 		
-		Calendar reenterPointSat = (Calendar)reenterPointWed.clone();
+		Calendar reenterPointSat = (Calendar) reenterPointWed.clone();
 		reenterPointSat.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-
+		
 		if (now.after(reenterPointWed))
 			reenterPointWed.add(Calendar.WEEK_OF_MONTH, 1);
 		if (now.after(reenterPointSat))
@@ -528,19 +547,20 @@ public class InstanceManager
 	 */
 	public void despawnAll(int instId)
 	{
-		if (getInstance(instId) == null || getInstance(instId).getNpcs() == null)
+		if ((getInstance(instId) == null) || (getInstance(instId).getNpcs() == null))
 			return;
+		
 		for (L2Npc npc : getInstance(instId).getNpcs())
 		{
 			if (npc == null)
 				continue;
 			
 			L2Spawn spawn = npc.getSpawn();
-			if (spawn != null && spawn.getNpc() != null)
+			if ((spawn != null) && (spawn.getNpc() != null))
 				spawn.stopRespawn();
 			
 			npc.deleteMe();
-		}	
+		}
 	}
 	
 	/**
@@ -634,8 +654,8 @@ public class InstanceManager
 			if (players.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
 				return false;
 			
-		//	if (players.getHWID().equalsIgnoreCase(player.getHWID()) && players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
-			//	return false;	
+			//	if (players.getHWID().equalsIgnoreCase(player.getHWID()) && players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
+			//	return false;
 		}
 		return true;
 	}
@@ -658,7 +678,7 @@ public class InstanceManager
 		L2Party party = null;
 		L2CommandChannel cChannel = null;
 		
-		if (minPlayers == 1 && maxPlayers == 1)
+		if ((minPlayers == 1) && (maxPlayers == 1))
 			allPlayers.add(player);
 		else if (minPlayers > 1)
 		{
@@ -675,7 +695,7 @@ public class InstanceManager
 				if (minPlayers <= Config.MAX_MEMBERS_IN_PARTY)
 				{
 					if (party.getLeader() != player)
-					{	
+					{
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 						return false;
 					}
@@ -687,12 +707,12 @@ public class InstanceManager
 					}
 					else
 						allPlayers.addAll(party.getPartyMembers());
-				}	
+				}
 			}
 			
-			if (minPlayers > Config.MAX_MEMBERS_IN_PARTY || cChannel != null)
+			if ((minPlayers > Config.MAX_MEMBERS_IN_PARTY) || (cChannel != null))
 			{
-				if (minPlayers > Config.MAX_MEMBERS_IN_PARTY)	//Need command channel yes or yes
+				if (minPlayers > Config.MAX_MEMBERS_IN_PARTY) //Need command channel yes or yes
 				{
 					if (cChannel == null)
 					{
@@ -731,7 +751,7 @@ public class InstanceManager
 			if (enterPlayer.isInDuel())
 				return false;
 			
-			if (enterPlayer.getLevel() < minLevel || enterPlayer.getLevel() > maxLevel)
+			if ((enterPlayer.getLevel() < minLevel) || (enterPlayer.getLevel() > maxLevel))
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(enterPlayer);
@@ -740,6 +760,7 @@ public class InstanceManager
 					party.broadcastToPartyMembers(sm);
 				else
 					enterPlayer.sendPacket(sm);
+				
 				return false;
 			}
 			
@@ -752,6 +773,7 @@ public class InstanceManager
 					party.broadcastToPartyMembers(sm);
 				else
 					enterPlayer.sendPacket(sm);
+				
 				return false;
 			}
 			
@@ -765,9 +787,20 @@ public class InstanceManager
 					party.broadcastToPartyMembers(sm);
 				else
 					enterPlayer.sendPacket(sm);
+				
+				SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE d MMMMMMM kk:mm:ss");
+				
+				player.sendMessage("Right now, it is " + dateFormat.format(System.currentTimeMillis()));
+				player.sendMessage("You will be able to re-enter at " + dateFormat.format(reentertime));
+				
 				return false;
 			}
 		}
+		
+		Broadcast.toGameMasters(player.getName() + " is entering Instance[" + templateId + "] with:");
+		
+		for (L2PcInstance enterPlayer : allPlayers)
+			Broadcast.toGameMasters("- " + enterPlayer.getName());
 		
 		return true;
 	}

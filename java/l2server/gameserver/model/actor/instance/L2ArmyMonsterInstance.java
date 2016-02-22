@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -63,7 +64,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 			}
 			ThreadPoolManager.getInstance().scheduleGeneral(_mt2, 1000L);
 		}
-		else if (_movesDone == 2 && _isTheLastMob)
+		else if ((_movesDone == 2) && _isTheLastMob)
 			MonsterInvasion.getInstance().startInvasionFight();
 		broadcastPacket(new ValidateLocation(this));
 	}
@@ -81,9 +82,10 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 			_z = z;
 		}
 		
+		@Override
 		public void run()
 		{
-			if (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO && ((Math.abs(getX() - (_x)) > 5) || (Math.abs(getY() - (_y)) > 5)))
+			if ((getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO) && ((Math.abs(getX() - (_x)) > 5) || (Math.abs(getY() - (_y)) > 5)))
 			{
 				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(_x, _y, _z, 0));
 			}
@@ -98,6 +100,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 	
 	class CommanderPatienceTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			MonsterInvasion.getInstance().startInvasionFight();
@@ -148,8 +151,8 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 		}
 		else if (attacker instanceof L2PcInstance)
 		{
-			SkillTable.getInstance().getInfo(1069,1).getEffects(attacker,attacker);
-			whisp((L2PcInstance)attacker, "Not now! Don't you see that we are marching?");
+			SkillTable.getInstance().getInfo(1069, 1).getEffects(attacker, attacker);
+			whisp((L2PcInstance) attacker, "Not now! Don't you see that we are marching?");
 		}
 	}
 	
@@ -168,6 +171,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 		if (isInvul())
 			return 0;
 		
-		else return 2000;
+		else
+			return 2000;
 	}
 }

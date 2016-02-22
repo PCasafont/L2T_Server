@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class ShinyPlatform extends L2Transformation
 {
-	private static final int[] SKILLS = {5491,839};
+	private static final int[] SKILLS = { 5491, 839 };
 	
 	public ShinyPlatform()
 	{
@@ -17,7 +18,7 @@ public class ShinyPlatform extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 20004 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 20004) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

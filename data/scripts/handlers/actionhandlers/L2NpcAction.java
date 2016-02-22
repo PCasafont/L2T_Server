@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.actionhandlers;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -58,31 +59,32 @@ public class L2NpcAction implements IActionHandler
 	 * @param activeChar The L2PcInstance that start an action on the L2Npc
 	 *
 	 */
+	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
-		if (!((L2Npc)target).canTarget(activeChar))
+		if (!((L2Npc) target).canTarget(activeChar))
 			return false;
 		
-		if (activeChar.getEvent() != null && activeChar.getEvent().isState(EventState.READY))
+		if ((activeChar.getEvent() != null) && activeChar.getEvent().isState(EventState.READY))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
 		// Chests event
-		if (((L2Npc)target).getNpcId() == 50101 && !activeChar.isInsideRadius(target, 400, true, true))
+		if ((((L2Npc) target).getNpcId() == 50101) && !activeChar.isInsideRadius(target, 400, true, true))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
+		if ((activeChar.getCaptcha() != null) && !activeChar.onActionCaptcha(false))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		activeChar.setLastFolkNPC((L2Npc)target);
+		activeChar.setLastFolkNPC((L2Npc) target);
 		
 		// Check if the L2PcInstance already target the L2Npc
 		if (target != activeChar.getTarget())
@@ -93,23 +95,23 @@ public class L2NpcAction implements IActionHandler
 			// Check if the activeChar is attackable (without a forced attack)
 			if (target.isAutoAttackable(activeChar))
 			{
-				((L2Npc)target).getAI(); //wake up ai
+				((L2Npc) target).getAI(); //wake up ai
 				// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
 				// The activeChar.getLevel() - getLevel() permit to display the correct color in the select window
-				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character)target).getLevel());
+				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel());
 				activeChar.sendPacket(my);
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character)target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 				
 				// Send a Server->Client packet StatusUpdate of the L2Npc to the L2PcInstance to update its HP bar
 				StatusUpdate su = new StatusUpdate(target);
-				su.addAttribute(StatusUpdate.CUR_HP, (int) ((L2Character)target).getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, ((L2Character)target).getMaxHp());
+				su.addAttribute(StatusUpdate.CUR_HP, (int) ((L2Character) target).getCurrentHp());
+				su.addAttribute(StatusUpdate.MAX_HP, ((L2Character) target).getMaxHp());
 				activeChar.sendPacket(su);
 				
 				//TODO Temp fix for bugging paralysis bugs on monsters
-				for (L2Abnormal e : ((L2Npc)target).getAllEffects())
+				for (L2Abnormal e : ((L2Npc) target).getAllEffects())
 				{
-					if (e.getTime() > e.getDuration() && e.getDuration() != -1)	//Not if duration is defined with -1 (perm effect)
+					if ((e.getTime() > e.getDuration()) && (e.getDuration() != -1)) //Not if duration is defined with -1 (perm effect)
 						e.exit();
 				}
 			}
@@ -118,17 +120,17 @@ public class L2NpcAction implements IActionHandler
 				// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
 				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), 0);
 				activeChar.sendPacket(my);
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character)target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 			}
 			
 			// Send a Server->Client packet ValidateLocation to correct the L2Npc position and heading on the client
-			activeChar.sendPacket(new ValidateLocation((L2Character)target));
+			activeChar.sendPacket(new ValidateLocation((L2Character) target));
 		}
 		else if (interact)
 		{
-			activeChar.sendPacket(new ValidateLocation((L2Character)target));
+			activeChar.sendPacket(new ValidateLocation((L2Character) target));
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
-			if (target.isAutoAttackable(activeChar) && !((L2Character)target).isAlikeDead())
+			if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead())
 			{
 				// Check the height difference
 				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
@@ -146,31 +148,31 @@ public class L2NpcAction implements IActionHandler
 			else if (!target.isAutoAttackable(activeChar))
 			{
 				// Calculate the distance between the L2PcInstance and the L2Npc
-				if (!((L2Npc)target).canInteract(activeChar))
+				if (!((L2Npc) target).canInteract(activeChar))
 				{
 					// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
 				else
 				{
-					if (((L2Npc)target).hasRandomAnimation())
-						((L2Npc)target).onRandomAnimation(Rnd.get(8));
+					if (((L2Npc) target).hasRandomAnimation())
+						((L2Npc) target).onRandomAnimation(Rnd.get(8));
 					
 					// Tenkai custom - instant action on touching certain NPC instead of html stuff etc.
-					if (((L2Npc)target).getNpcId() == 50101)
-					{	
-						HiddenChests.getInstance().tryOpenChest(activeChar, (L2Npc)target);
+					if (((L2Npc) target).getNpcId() == 50101)
+					{
+						HiddenChests.getInstance().tryOpenChest(activeChar, (L2Npc) target);
 						return true;
 					}
-						
-					Quest[] qlsa = ((L2Npc)target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
-					if ((qlsa != null) && qlsa.length > 0)
+					
+					Quest[] qlsa = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
+					if ((qlsa != null) && (qlsa.length > 0))
 						activeChar.setLastQuestNpcObject(target.getObjectId());
-					Quest[] qlst = ((L2Npc)target).getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
-					if ((qlst != null) && qlst.length == 1)
-						qlst[0].notifyFirstTalk((L2Npc)target, activeChar);
+					Quest[] qlst = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
+					if ((qlst != null) && (qlst.length == 1))
+						qlst[0].notifyFirstTalk((L2Npc) target, activeChar);
 					else
-						((L2Npc)target).showChatWindow(activeChar);
+						((L2Npc) target).showChatWindow(activeChar);
 					
 					GMEventManager.getInstance().onNpcTalk(target, activeChar);
 				}
@@ -178,7 +180,8 @@ public class L2NpcAction implements IActionHandler
 		}
 		return true;
 	}
-
+	
+	@Override
 	public InstanceType getInstanceType()
 	{
 		return InstanceType.L2Npc;

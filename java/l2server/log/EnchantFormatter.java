@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.log;
 
 import java.text.SimpleDateFormat;
@@ -33,9 +34,7 @@ public class EnchantFormatter extends Formatter
 	public String format(LogRecord record)
 	{
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30
-				+ record.getMessage().length()
-				+ (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
+		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
 		for (Object p : params)
 		{
 			if (p == null)
@@ -45,16 +44,14 @@ public class EnchantFormatter extends Formatter
 			
 			if (p instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)p;
-				StringUtil.append(output, "Character:", player.getName(),
-						" ["+String.valueOf(player.getObjectId())+"] Account:",
-						player.getAccountName());
-				if (player.getClient() != null && !player.getClient().isDetached())
+				L2PcInstance player = (L2PcInstance) p;
+				StringUtil.append(output, "Character:", player.getName(), " [" + String.valueOf(player.getObjectId()) + "] Account:", player.getAccountName());
+				if ((player.getClient() != null) && !player.getClient().isDetached())
 					StringUtil.append(output, " IP:", player.getClient().getConnection().getInetAddress().getHostAddress());
 			}
 			else if (p instanceof L2ItemInstance)
 			{
-				L2ItemInstance item = (L2ItemInstance)p;
+				L2ItemInstance item = (L2ItemInstance) p;
 				if (item.getEnchantLevel() > 0)
 				{
 					StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");
@@ -64,11 +61,11 @@ public class EnchantFormatter extends Formatter
 			}
 			else if (p instanceof L2Skill)
 			{
-				L2Skill skill = (L2Skill)p;
+				L2Skill skill = (L2Skill) p;
 				if (skill.getEnchantRouteId() > 0)
 					StringUtil.append(output, "+", String.valueOf(skill.getEnchantLevel()), " ");
 				
-				StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId())," ", String.valueOf(skill.getLevelHash()), ")");
+				StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId()), " ", String.valueOf(skill.getLevelHash()), ")");
 			}
 			else
 				StringUtil.append(output, p.toString());

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Clan;
@@ -24,7 +25,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 {
-	private static final String _C__D0_2C_REQUESTPLEDGEREORGANIZEMEMBER = "[C] D0:2C RequestPledgeReorganizeMember";
 	
 	private int _isMemberSelected;
 	private String _memberName;
@@ -46,43 +46,53 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (_isMemberSelected == 0)
-			return;
-		
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 			return;
 		
+		if ((_isMemberSelected == 0) && (_memberName.length() == 0))
+		{
+			activeChar.sendMessage("You did not select any member.");
+			return;
+		}
+		
 		final L2Clan clan = activeChar.getClan();
 		if (clan == null)
+		{
+			activeChar.sendMessage("You do not have a clan.");
 			return;
+		}
 		
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS)
+		{
+			activeChar.sendMessage("You do not have the rights to do this.");
 			return;
+		}
 		
 		final L2ClanMember member1 = clan.getClanMember(_memberName);
-		if (member1 == null || member1.getObjectId() == clan.getLeaderId())
+		if ((member1 == null) || (member1.getObjectId() == clan.getLeaderId()))
+		{
+			activeChar.sendMessage("The selected member could not be found.");
 			return;
-		
-		final L2ClanMember member2 = clan.getClanMember(_selectedMember);
-		if (member2 == null || member2.getObjectId() == clan.getLeaderId())
-			return;
+		}
 		
 		final int oldPledgeType = member1.getPledgeType();
 		if (oldPledgeType == _newPledgeType)
+		{
+			activeChar.sendMessage(member1.getName() + " is already in the selected squad.");
 			return;
+		}
 		
 		member1.setPledgeType(_newPledgeType);
-		member2.setPledgeType(oldPledgeType);
+		if (_selectedMember.length() != 0)
+		{
+			final L2ClanMember member2 = clan.getClanMember(_selectedMember);
+			if ((member2 == null) || (member2.getObjectId() == clan.getLeaderId()))
+				activeChar.sendMessage("You did not select the member to swap " + member1.getName() + " with.");
+			else
+				member2.setPledgeType(oldPledgeType);
+		}
+		
 		clan.broadcastClanStatus();
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2C_REQUESTPLEDGEREORGANIZEMEMBER;
 	}
 }

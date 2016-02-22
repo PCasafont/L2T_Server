@@ -1,4 +1,6 @@
+
 package handlers.admincommandhandlers;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -12,18 +14,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles all commands made for control and manage Artificial Players (APlayers).
- * 
+ *
  * @author Soul
  */
-public class AdminAPlayer implements IAdminCommandHandler 
+public class AdminAPlayer implements IAdminCommandHandler
 {
-
-	private static final String[] ADMIN_COMMANDS = 
-	{
-		"admin_spawn_aplayer",
-		"admin_spawn_aparty",
-		"admin_delete_all_aplayers"
-	};
+	
+	private static final String[] ADMIN_COMMANDS = { "admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers" };
 	
 	public static Logger _log = Logger.getLogger(AdminAPlayer.class.getName());
 	
@@ -34,7 +31,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 		String param = null;
 		
 		if (command.startsWith("admin_spawn_aplayer"))
-		{	
+		{
 			try
 			{
 				st.nextToken();
@@ -45,7 +42,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 				activeChar.sendMessage("use: //spawn_aplayer <classId | className>");
 			}
 		}
-		else if(command.equalsIgnoreCase("admin_delete_all_aplayers"))
+		else if (command.equalsIgnoreCase("admin_delete_all_aplayers"))
 		{
 			for (L2ApInstance aplayer : ArtificialPlayersManager.getInstance().getAllAPlayers())
 			{
@@ -59,8 +56,8 @@ public class AdminAPlayer implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				// Generate param-specific party
-				List<Integer> classIds = new ArrayList<Integer>(); 
-			
+				List<Integer> classIds = new ArrayList<Integer>();
+				
 				st.nextToken(); // spawn_aparty command
 				
 				while (st.hasMoreTokens())
@@ -79,7 +76,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 						if (id > 0)
 							classIds.add(id);
 						//else
-							//activeChar.sendMessage("Invalid class name: " + param);
+						//activeChar.sendMessage("Invalid class name: " + param);
 					}
 				}
 				
@@ -93,7 +90,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 				{
 					activeChar.sendMessage("Too few parameters to create a APlayer party.");
 				}
-					
+				
 			}
 			else
 			{
@@ -102,39 +99,39 @@ public class AdminAPlayer implements IAdminCommandHandler
 				activeChar.sendMessage("Random APlayer party manually created.");
 			}
 		}
-		else if(command.startsWith("admin_delete_aparty"))
+		else if (command.startsWith("admin_delete_aparty"))
 		{
 			// TODO: delete party number #XX
 		}
-		else if(command.startsWith("admin_recall_aparty"))
+		else if (command.startsWith("admin_recall_aparty"))
 		{
 			// TODO: recall party #XX to our position
 		}
-		else if(command.equals("admin_list_aparty"))
+		else if (command.equals("admin_list_aparty"))
 		{
 			// TODO: list the parties
 			/*
 			 * Aplayer party #XX
 			 * Members: [Party[n]]+
-			 * 
+			 *
 			 * Possible output:
-			 * 
+			 *
 			 * APlayer party #85
 			 * Members: Sigel, Tyrr, Iss, Feoh
-			 * 
+			 *
 			 * APlayer party #74
 			 * Members: Aeore, Iss, Yul, Yul, Feoh
 			 */
 		}
-		else if(command.equals("admin_list_aplayers"))
+		else if (command.equals("admin_list_aplayers"))
 		{
 			// TODO: list the non-party APlayers
 			/*
 			 * [#X] Name (X,Y,Z)
 			 * where X = #APlayer ID (for multiple of same name)
-			 * 
+			 *
 			 * Possible output:
-			 * 
+			 *
 			 * APlayer list (non-party)
 			 * [#3] Feoh (-2213, 55693, 1200)
 			 * [#12] Tyrr (51333, 12, -6552)
@@ -199,11 +196,11 @@ public class AdminAPlayer implements IAdminCommandHandler
 				return 0;
 		}*/
 	}
-
+	
 	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
-
+	
 }

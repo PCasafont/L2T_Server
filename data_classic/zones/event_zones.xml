@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
 	<!-- Event Zones -->
-	<zone name="Coliseum" id="80000" type="EventZone" shape="NPoly" minZ="-4415" maxZ="-2410">
+	<zone name="Coliseum" id="80000" type="TenkaiEventZone" shape="NPoly" minZ="-4415" maxZ="-2410">
 		<node X="148087" Y="47009" />
 		<node X="147860" Y="47256" />
 		<node X="147844" Y="47474" />
@@ -19,7 +19,7 @@
 		<node X="147827" Y="46187" />
 		<node X="148089" Y="46455" />
 	</zone>
-	<zone name="Emerald Square" id="80001" type="EventZone" shape="NPoly" minZ="-13640" maxZ="-10840">
+	<zone name="Emerald Square" id="80001" type="TenkaiEventZone" shape="NPoly" minZ="-13640" maxZ="-10840">
 		<node X="148960" Y="142288" />
 		<node X="149187" Y="142435" />
 		<node X="149289" Y="143018" />
@@ -57,13 +57,13 @@
 		<node X="147647" Y="142595" />
 		<node X="148905" Y="142539" />
 	</zone>
-	<zone name="Jail" id="80002" type="EventZone" shape="NPoly" minZ="-3950" maxZ="-1940">
+	<zone name="Jail" id="80002" type="TenkaiEventZone" shape="NPoly" minZ="-3950" maxZ="-1940">
 		<node X="-113580" Y="-248404" />
 		<node X="-113572" Y="-250329" />
 		<node X="-115520" Y="-250336" />
 		<node X="-115508" Y="-248403" />
 	</zone>
-	<zone name="Tower of Naia" id="80003" type="EventZone" shape="NPoly" minZ="-10300" maxZ="-8300">
+	<zone name="Tower of Naia" id="80003" type="TenkaiEventZone" shape="NPoly" minZ="-10300" maxZ="-8300">
 		<node X="14070" Y="213222" />
 		<node X="14079" Y="213063" />
 		<node X="14083" Y="213064" />
@@ -123,7 +123,7 @@
 		<node X="14110" Y="213244" />
 		<node X="14112" Y="213224" />
 	</zone>
-	<zone name="Cruma Tower" id="80004" type="EventZone" shape="NPoly" minZ="-12983" maxZ="-10983">
+	<zone name="Cruma Tower" id="80004" type="TenkaiEventZone" shape="NPoly" minZ="-12983" maxZ="-10983">
 		<node X="14776" Y="114312" />
 		<node X="15999" Y="114303" />
 		<node X="16000" Y="115200" />
@@ -137,7 +137,7 @@
 		<node X="16000" Y="113985" />
 		<node X="14768" Y="113968" />
 	</zone>
-	<zone name="Necropolis of Sacrifice" id="80005" type="EventZone" shape="NPoly" minZ="-6035" maxZ="-4035">
+	<zone name="Necropolis of Sacrifice" id="80005" type="TenkaiEventZone" shape="NPoly" minZ="-6035" maxZ="-4035">
 		<node X="-50032" Y="217360" />
 		<node X="-49993" Y="217404" />
 		<node X="-49780" Y="217407" />
@@ -174,7 +174,7 @@
 		<node X="-49694" Y="217151" />
 		<node X="-50032" Y="217152" />
 	</zone>
-	<zone name="Caron's Dungeon" id="80006" type="EventZone" shape="NPoly" minZ="-2740" maxZ="-550">
+	<zone name="Caron's Dungeon" id="80006" type="TenkaiEventZone" shape="NPoly" minZ="-2740" maxZ="-550">
 		<node X="78936" Y="-111040" />
 		<node X="79424" Y="-110688" />
 		<node X="79166" Y="-110218" />
@@ -198,7 +198,7 @@
 		<node X="78481" Y="-110370" />
 		<node X="78733" Y="-110793" />
 	</zone>
-	<zone name="Monastery of Silence" id="80007" type="EventZone" shape="NPoly" minZ="-3050" maxZ="-1884">
+	<zone name="Monastery of Silence" id="80007" type="TenkaiEventZone" shape="NPoly" minZ="-3050" maxZ="-1884">
 		<node X="126081" Y="-75276" />
 		<node X="126590" Y="-75734" />
 		<node X="126085" Y="-76232" />
@@ -222,7 +222,7 @@
 		<node X="125834" Y="-75513" />
 		<node X="126070" Y="-75287" />
 	</zone>
-	<zone name="Elven Ruins" id="80008" type="EventZone" shape="NPoly" minZ="-7700" maxZ="-5370">
+	<zone name="Elven Ruins" id="80008" type="TenkaiEventZone" shape="NPoly" minZ="-7700" maxZ="-5370">
 		<node X="44672" Y="246640" />
 		<node X="44685" Y="247073" />
 		<node X="44608" Y="247075" />
@@ -278,7 +278,7 @@
 		<node X="44761" Y="247083" />
 		<node X="44766" Y="246640" />
 	</zone>
-	<zone name="Ruins of Despair" id="80009" type="EventZone" shape="NPoly" minZ="-4700" maxZ="-2400">
+	<zone name="Ruins of Despair" id="80009" type="TenkaiEventZone" shape="NPoly" minZ="-4700" maxZ="-2400">
 		<node X="-4089" Y="144955" />
 		<node X="-5792" Y="144908" />
 		<node X="-6464" Y="145088" />
@@ -293,7 +293,7 @@
 		<node X="-2742" Y="144989" />
 		<node X="-3133" Y="145739" />
 	</zone>
-	<zone name="Steam Corridor" id="80010" type="EventZone" shape="NPoly" minZ="-13220" maxZ="-11080">
+	<zone name="Steam Corridor" id="80010" type="TenkaiEventZone" shape="NPoly" minZ="-13220" maxZ="-11080">
 		<node X="147152" Y="152976" />
 		<node X="146419" Y="152980" />
 		<node X="146437" Y="152435" />
@@ -307,7 +307,7 @@
 		<node X="145568" Y="152224" />
 		<node X="147160" Y="152224" />
 	</zone>
-	<zone name="Primeval Isle" id="80011" type="EventZone" shape="NPoly" minZ="-4850" maxZ="-2340">
+	<zone name="Primeval Isle" id="80011" type="TenkaiEventZone" shape="NPoly" minZ="-4850" maxZ="-2340">
 		<node X="9915" Y="-24708" />
 		<node X="8989" Y="-24030" />
 		<node X="6424" Y="-24263" />
@@ -327,7 +327,7 @@
 		<node X="11163" Y="-25143" />
 		<node X="10002" Y="-25082" />
 	</zone>
-	<zone name="Railroad Station" id="80012" type="EventZone" shape="NPoly" minZ="-2580" maxZ="-470">
+	<zone name="Railroad Station" id="80012" type="TenkaiEventZone" shape="NPoly" minZ="-2580" maxZ="-470">
 		<node X="113319" Y="-156850" />
 		<node X="113312" Y="-155735" />
 		<node X="113052" Y="-155466" />
@@ -345,7 +345,7 @@
 		<node X="113697" Y="-155731" />
 		<node X="113699" Y="-156790" />
 	</zone>
-	<zone name="Valley of Saints" id="80013" type="EventZone" shape="NPoly" minZ="-4790" maxZ="-2400">
+	<zone name="Valley of Saints" id="80013" type="TenkaiEventZone" shape="NPoly" minZ="-4790" maxZ="-2400">
 		<node X="81022" Y="-85095" />
 		<node X="79372" Y="-83628" />
 		<node X="77664" Y="-82870" />
@@ -357,7 +357,7 @@
 		<node X="81209" Y="-82968" />
 		<node X="81632" Y="-83537" />
 	</zone>
-	<zone name="Bandit's Stronghold" id="80014" type="EventZone" shape="NPoly" minZ="-2900" maxZ="-590">
+	<zone name="Bandit's Stronghold" id="80014" type="TenkaiEventZone" shape="NPoly" minZ="-2900" maxZ="-590">
 		<node X="80896" Y="-15073" />
 		<node X="81148" Y="-14483" />
 		<node X="82266" Y="-14668" />
@@ -383,7 +383,7 @@
 		<node X="81016" Y="-15975" />
 		<node X="80888" Y="-15827" />
 	</zone>
-	<zone name="Aden Castle" id="80015" type="EventZone" shape="NPoly" minZ="-2280" maxZ="600">
+	<zone name="Aden Castle" id="80015" type="TenkaiEventZone" shape="NPoly" minZ="-2280" maxZ="600">
 		<node X="143322" Y="14330" />
 		<node X="151626" Y="14330" />
 		<node X="151622" Y="14221" />
@@ -403,13 +403,13 @@
 		<node X="143232" Y="14224" />
 		<node X="143314" Y="14228" />
 	</zone>
-	<zone name="Anghel Waterfall" id="80016" type="EventZone" shape="NPoly" minZ="-2500" maxZ="-1000">
+	<zone name="Anghel Waterfall" id="80016" type="TenkaiEventZone" shape="NPoly" minZ="-2500" maxZ="-1000">
 		<node X="169922" Y="85297" />
 		<node X="167941" Y="85503" />
 		<node X="167918" Y="85271" />
 		<node X="169905" Y="85088" />
 	</zone>
-	<zone name="School of Dark Arts" id="80018" type="EventZone" shape="NPoly" minZ="-6450" maxZ="-4350">
+	<zone name="School of Dark Arts" id="80018" type="TenkaiEventZone" shape="NPoly" minZ="-6450" maxZ="-4350">
 		<node X="-44101" Y="46880" />
 		<node X="-44112" Y="47968" />
 		<node X="-44212" Y="47982" />
@@ -419,7 +419,7 @@
 		<node X="-44560" Y="47982" />
 		<node X="-44560" Y="46880" />
 	</zone>
-	<zone name="Blazing Swamp" id="80020" type="EventZone" shape="NPoly" minZ="-5542" maxZ="-3542">
+	<zone name="Blazing Swamp" id="80020" type="TenkaiEventZone" shape="NPoly" minZ="-5542" maxZ="-3542">
 		<node X="150713" Y="-9091" />
 		<node X="149746" Y="-9611" />
 		<node X="149476" Y="-9639" />
@@ -436,7 +436,7 @@
 		<node X="151647" Y="-8648" />
 		<node X="150802" Y="-8977" />
 	</zone>
-	<zone name="Garden of Eva" id="80022" type="EventZone" shape="NPoly" minZ="-12730" maxZ="-10610">
+	<zone name="Garden of Eva" id="80022" type="TenkaiEventZone" shape="NPoly" minZ="-12730" maxZ="-10610">
 		<node X="83392" Y="259136" />
 		<node X="83376" Y="257328" />
 		<node X="83808" Y="257323" />
@@ -446,7 +446,7 @@
 		<node X="87706" Y="254815" />
 		<node X="87696" Y="259136" />
 	</zone>
-	<zone name="Town of Goddard" id="80023" type="EventZone" shape="NPoly" minZ="-3848" maxZ="-1735">
+	<zone name="Town of Goddard" id="80023" type="TenkaiEventZone" shape="NPoly" minZ="-3848" maxZ="-1735">
 		<node X="149758" Y="-54785" />
 		<node X="149502" Y="-54771" />
 		<node X="149372" Y="-54634" />
@@ -526,7 +526,7 @@
 		<node X="149792" Y="-55200" />
 		<node X="149881" Y="-55109" />
 	</zone>
-	<zone name="Theme Park" id="80024" type="EventZone" shape="NPoly" minZ="-3400" maxZ="-1300">
+	<zone name="Theme Park" id="80024" type="TenkaiEventZone" shape="NPoly" minZ="-3400" maxZ="-1300">
 		<node X="-55466" Y="-62040" />
 		<node X="-55454" Y="-62318" />
 		<node X="-55504" Y="-62318" />
@@ -556,7 +556,7 @@
 		<node X="-55371" Y="-62318" />
 		<node X="-55356" Y="-62040" />
 	</zone>
-	<zone name="Giran Castle Town" id="80025" type="EventZone" shape="NPoly" minZ="-4400" maxZ="-2400">
+	<zone name="Giran Castle Town" id="80025" type="TenkaiEventZone" shape="NPoly" minZ="-4400" maxZ="-2400">
 		<node X="80770" Y="147550" />
 		<node X="83080" Y="147550" />
 		<node X="82160" Y="148370" />
@@ -568,7 +568,7 @@
 		<node X="83080" Y="149700" />
 		<node X="80770" Y="149700" />
 	</zone>
-	<zone name="Town of Dion" id="80026" type="EventZone" shape="NPoly" minZ="-4129" maxZ="-2025">
+	<zone name="Town of Dion" id="80026" type="TenkaiEventZone" shape="NPoly" minZ="-4129" maxZ="-2025">
 		<node X="18768" Y="142576" />
 		<node X="18898" Y="143090" />
 		<node X="18933" Y="143588" />
@@ -608,7 +608,7 @@
 		<node X="19104" Y="142500" />
 		<node X="18823" Y="142560" />
 	</zone>
-	<zone name="Execution Grounds" id="80027" type="EventZone" shape="NPoly" minZ="-4740" maxZ="-2750">
+	<zone name="Execution Grounds" id="80027" type="TenkaiEventZone" shape="NPoly" minZ="-4740" maxZ="-2750">
 		<node X="36948" Y="148424" />
 		<node X="39742" Y="148155" />
 		<node X="40740" Y="148175" />
@@ -619,7 +619,7 @@
 		<node X="38157" Y="147771" />
 		<node X="37232" Y="147920" />
 	</zone>
-	<zone name="Sea of Spores" id="80028" type="EventZone" shape="NPoly" minZ="-3500" maxZ="-1500">
+	<zone name="Sea of Spores" id="80028" type="TenkaiEventZone" shape="NPoly" minZ="-3500" maxZ="-1500">
 		<node X="51240" Y="19990" />
 		<node X="51314" Y="19682" />
 		<node X="52295" Y="20264" />
@@ -637,7 +637,7 @@
 		<node X="52959" Y="20808" />
 		<node X="52237" Y="20564" />
 	</zone>
-	<zone name="Dragon Valley" id="80029" type="EventZone" shape="NPoly" minZ="-2190" maxZ="-800">
+	<zone name="Dragon Valley" id="80029" type="TenkaiEventZone" shape="NPoly" minZ="-2190" maxZ="-800">
 		<node X="110086" Y="118698" />
 		<node X="109652" Y="118353" />
 		<node X="109722" Y="117419" />
@@ -656,7 +656,7 @@
 		<node X="110820" Y="117607" />
 		<node X="110881" Y="118113" />
 	</zone>
-	<zone name="Hot Springs Arena" id="80031" type="EventZone" shape="NPoly" minZ="-3200" maxZ="-1200">
+	<zone name="Hot Springs Arena" id="80031" type="TenkaiEventZone" shape="NPoly" minZ="-3200" maxZ="-1200">
 		<node X="153887" Y="-128202" />
 		<node X="153553" Y="-128115" />
 		<node X="153313" Y="-127863" />
@@ -670,7 +670,7 @@
 		<node X="154463" Y="-127863" />
 		<node X="154219" Y="-128115" />
 	</zone>
-	<zone name="Infinity Plataform" id="80033" type="EventZone" shape="NPoly" minZ="3279" maxZ="5424">
+	<zone name="Infinity Plataform" id="80033" type="TenkaiEventZone" shape="NPoly" minZ="3279" maxZ="5424">
 		<node X="-213749" Y="210870" />
 		<node X="-213169" Y="210316" />
 		<node X="-212834" Y="210211" />
@@ -692,7 +692,7 @@
 		<node X="-213323" Y="210145" />
 		<node X="-213884" Y="210742" />
 	</zone>
-	<zone name="Jinryong's Throne" id="80034" type="EventZone" shape="NPoly" minZ="-12973" maxZ="-10961">
+	<zone name="Jinryong's Throne" id="80034" type="TenkaiEventZone" shape="NPoly" minZ="-12973" maxZ="-10961">
 		<node X="-250150" Y="210708" />
 		<node X="-250657" Y="210703" />
 		<node X="-250735" Y="210593" />
@@ -713,13 +713,13 @@
 		<node X="-248618" Y="210510" />
 		<node X="-250002" Y="210524" />
 	</zone>
-	<zone name="Alligator Island Beach" id="80050" type="EventZone" shape="NPoly" minZ="-4387" maxZ="-2740">
+	<zone name="Alligator Island Beach" id="80050" type="TenkaiEventZone" shape="NPoly" minZ="-4387" maxZ="-2740">
 		<node X="116357" Y="194061" />
 		<node X="116628" Y="192211" />
 		<node X="112130" Y="191659" />
 		<node X="111151" Y="194285" />
 	</zone>
-	<zone name="Uninhabited Island" id="80051" type="EventZone" shape="NPoly" minZ="-4358" maxZ="-2911">
+	<zone name="Uninhabited Island" id="80051" type="TenkaiEventZone" shape="NPoly" minZ="-4358" maxZ="-2911">
 		<node X="128634" Y="159099" />
 		<node X="128871" Y="158833" />
 		<node X="128873" Y="158696" />
@@ -731,7 +731,7 @@
 		<node X="127410" Y="158257" />
 		<node X="127755" Y="158834" />
 	</zone>
-	<zone name="Shrine of Loyality Corridor" id="80052" type="EventZone" shape="NPoly" minZ="-4172" maxZ="-1973">
+	<zone name="Shrine of Loyality Corridor" id="80052" type="TenkaiEventZone" shape="NPoly" minZ="-4172" maxZ="-1973">
 		<node X="184388" Y="-62788" />
 		<node X="183952" Y="-62928" />
 		<node X="183688" Y="-63047" />
@@ -761,7 +761,7 @@
 		<node X="183696" Y="-62784" />
 		<node X="184356" Y="-62526" />
 	</zone>
-	<zone name="Dark Cloud Mansion" id="80053" type="EventZone" shape="NPoly" minZ="-4113" maxZ="-1937">
+	<zone name="Dark Cloud Mansion" id="80053" type="TenkaiEventZone" shape="NPoly" minZ="-4113" maxZ="-1937">
 		<node X="139999" Y="151135" />
 		<node X="139701" Y="150796" />
 		<node X="139774" Y="150719" />
@@ -792,7 +792,7 @@
 		<node X="139610" Y="151502" />
 		<node X="140033" Y="151156" />
 	</zone>
-	<zone name="Giants Cave Roof" id="80054" type="EventZone" shape="NPoly" minZ="-4471" maxZ="-2461">
+	<zone name="Giants Cave Roof" id="80054" type="TenkaiEventZone" shape="NPoly" minZ="-4471" maxZ="-2461">
 		<node X="172896" Y="56528" />
 		<node X="175845" Y="56585" />
 		<node X="175019" Y="55779" />
@@ -810,7 +810,7 @@
 		<node X="173677" Y="55558" />
 		<node X="173824" Y="55712" />
 	</zone>
-	<zone name="Cruma Tower Roof" id="80055" type="EventZone" shape="NPoly" minZ="3100" maxZ="5000">
+	<zone name="Cruma Tower Roof" id="80055" type="TenkaiEventZone" shape="NPoly" minZ="3100" maxZ="5000">
 		<node X="18423" Y="113483" />
 		<node X="17725" Y="113192" />
 		<node X="17027" Y="113483" />
@@ -820,19 +820,19 @@
 		<node X="18425" Y="114875" />
 		<node X="18714" Y="114176" />
 	</zone>
-	<zone name="Mining Zone Bridge" id="80056" type="EventZone" shape="NPoly" minZ="2007" maxZ="3509">
+	<zone name="Mining Zone Bridge" id="80056" type="TenkaiEventZone" shape="NPoly" minZ="2007" maxZ="3509">
 		<node X="118423" Y="-168717" />
 		<node X="118358" Y="-168516" />
 		<node X="121715" Y="-168273" />
 		<node X="121739" Y="-168476" />
 	</zone>
-	<zone name="Forgotten Temple Passage" id="80057" type="EventZone" shape="NPoly" minZ="-5816" maxZ="-3816">
+	<zone name="Forgotten Temple Passage" id="80057" type="TenkaiEventZone" shape="NPoly" minZ="-5816" maxZ="-3816">
 		<node X="-62551" Y="179971" />
 		<node X="-62736" Y="179967" />
 		<node X="-62736" Y="182340" />
 		<node X="-62550" Y="182341" />
 	</zone>
-	<zone name="Town of Oren" id="80058" type="EventZone" shape="NPoly" minZ="-2497" maxZ="-497">
+	<zone name="Town of Oren" id="80058" type="TenkaiEventZone" shape="NPoly" minZ="-2497" maxZ="-497">
 		<node X="81538" Y="53272" />
 		<node X="81857" Y="53267" />
 		<node X="81864" Y="53221" />
@@ -859,7 +859,7 @@
 		<node X="81923" Y="53764" />
 		<node X="81533" Y="53771" />
 	</zone>
-	<zone name="Town of Aden" id="80059" type="EventZone" shape="NPoly" minZ="-3206" maxZ="-1205">
+	<zone name="Town of Aden" id="80059" type="TenkaiEventZone" shape="NPoly" minZ="-3206" maxZ="-1205">
 		<node X="146336" Y="27408" />
 		<node X="146336" Y="26556" />
 		<node X="148576" Y="26576" />
@@ -868,7 +868,7 @@
 		<node X="147536" Y="27376" />
 		<node X="147462" Y="27412" />
 	</zone>
-	<zone name="Rune Walkway" id="80060" type="EventZone" shape="NPoly" minZ="-1316" maxZ="1672">
+	<zone name="Rune Walkway" id="80060" type="TenkaiEventZone" shape="NPoly" minZ="-1316" maxZ="1672">
 		<node X="36976" Y="-45104" />
 		<node X="37862" Y="-45093" />
 		<node X="38354" Y="-45221" />
@@ -892,7 +892,7 @@
 		<node X="37454" Y="-45543" />
 		<node X="36992" Y="-45552" />
 	</zone>
-	<zone name="Heine" id="80061" type="EventZone" shape="NPoly" minZ="-4680" maxZ="-2666">
+	<zone name="Heine" id="80061" type="TenkaiEventZone" shape="NPoly" minZ="-4680" maxZ="-2666">
 		<node X="111117" Y="219641" />
 		<node X="111103" Y="219365" />
 		<node X="110561" Y="219365" />

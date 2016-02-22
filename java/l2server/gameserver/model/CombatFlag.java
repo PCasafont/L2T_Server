@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import l2server.Config;
@@ -39,7 +40,7 @@ public class CombatFlag
 	// Constructor
 	public CombatFlag(int x, int y, int z, int heading, int item_id)
 	{
-		_location = new Location(x,y,z,heading);
+		_location = new Location(x, y, z, heading);
 		_itemId = item_id;
 	}
 	
@@ -49,16 +50,16 @@ public class CombatFlag
 		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", _itemId, 1, null, null);
 		// Remove it from the world because spawnme will insert it again
 		L2World.getInstance().removeObject(i);
-		i.spawnMe(_location.getX(), _location.getY(),  _location.getZ());
+		i.spawnMe(_location.getX(), _location.getY(), _location.getZ());
 		itemInstance = i;
 	}
 	
 	public synchronized void unSpawnMe()
 	{
-		if ( _player != null )
+		if (_player != null)
 			dropIt();
 		
-		if ( itemInstance != null )
+		if (itemInstance != null)
 		{
 			itemInstance.decayMe();
 		}
@@ -91,7 +92,8 @@ public class CombatFlag
 			iu.addItem(_item);
 			_player.sendPacket(iu);
 		}
-		else _player.sendPacket(new ItemList(_player, false));
+		else
+			_player.sendPacket(new ItemList(_player, false));
 		
 		// Refresh player stats
 		_player.broadcastUserInfo();

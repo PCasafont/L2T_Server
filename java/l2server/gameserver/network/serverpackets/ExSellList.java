@@ -4,15 +4,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -24,13 +25,12 @@ import l2server.gameserver.model.L2TradeList.L2TradeItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * 
+ *
  * @author ShanSoft
  *
  */
 public class ExSellList extends L2ItemListPacket
 {
-	private static final String _S__B7_ExBuySellListPacket = "[S] B7 ExBuySellListPacket";
 	
 	private List<L2TradeItem> _buyList = new ArrayList<L2TradeItem>();
 	private L2ItemInstance[] _sellList = null;
@@ -41,7 +41,7 @@ public class ExSellList extends L2ItemListPacket
 	{
 		for (L2TradeItem item : list.getItems())
 		{
-			if (item.hasLimitedStock() && item.getCurrentCount() <= 0)
+			if (item.hasLimitedStock() && (item.getCurrentCount() <= 0))
 				continue;
 			_buyList.add(item);
 		}
@@ -54,33 +54,31 @@ public class ExSellList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xB8);
-		writeD(0x01);
 		writeD(0x00); // GoD ???
 		
-		if (_sellList != null && _sellList.length > 0)
+		if ((_sellList != null) && (_sellList.length > 0))
 		{
 			writeH(_sellList.length);
 			for (L2ItemInstance item : _sellList)
 			{
 				writeItem(item);
 				
-				writeQ(item.getItem().getReferencePrice() / 2);
+				writeQ(item.getItem().getSalePrice());
 			}
 		}
 		else
 			writeH(0x00);
 		
-		if (_refundList != null && _refundList.length > 0)
+		if ((_refundList != null) && (_refundList.length > 0))
 		{
 			writeH(_refundList.length);
+			int itemIndex = 0;
 			for (L2ItemInstance item : _refundList)
 			{
 				writeItem(item);
 				
-				writeD(0); // ???
-				writeQ(item.getItem().getReferencePrice() / 2 * item.getCount());
+				writeD(itemIndex++); // Index
+				writeQ(item.getItem().getSalePrice() * item.getCount());
 			}
 		}
 		else
@@ -89,11 +87,5 @@ public class ExSellList extends L2ItemListPacket
 		writeC(_done ? 0x01 : 0x00);
 		
 		_buyList.clear();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__B7_ExBuySellListPacket;
 	}
 }

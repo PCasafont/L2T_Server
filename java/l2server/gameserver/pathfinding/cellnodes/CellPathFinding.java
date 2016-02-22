@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.pathfinding.cellnodes;
 
 import java.util.ArrayList;
@@ -104,7 +105,7 @@ public class CellPathFinding extends PathFinding
 		if (!GeoData.getInstance().hasGeo(tx, ty))
 			return null;
 		short gtz = GeoData.getInstance().getHeight(tx, ty, tz);
-		CellNodeBuffer buffer = alloc(64 + 2*Math.max(Math.abs(gx - gtx), Math.abs(gy - gty)), playable);
+		CellNodeBuffer buffer = alloc(64 + (2 * Math.max(Math.abs(gx - gtx), Math.abs(gy - gty))), playable);
 		if (buffer == null)
 			return null;
 		
@@ -126,7 +127,7 @@ public class CellPathFinding extends PathFinding
 				_debugItems.clear();
 			}
 		}
-			
+		
 		List<AbstractNodeLoc> path = null;
 		try
 		{
@@ -137,9 +138,10 @@ public class CellPathFinding extends PathFinding
 				for (CellNode n : buffer.debugPath())
 				{
 					if (n.getCost() < 0) // calculated path
-						dropDebugItem(1831, (int)(-n.getCost() * 10), n.getLoc());
-					else // known nodes
-						dropDebugItem(57, (int)(n.getCost() * 10), n.getLoc());
+						dropDebugItem(1831, (int) (-n.getCost() * 10), n.getLoc());
+					else
+						// known nodes
+						dropDebugItem(57, (int) (n.getCost() * 10), n.getLoc());
 				}
 			}
 			
@@ -161,7 +163,7 @@ public class CellPathFinding extends PathFinding
 			buffer.free();
 		}
 		
-		if (path.size() < 3 || Config.MAX_POSTFILTER_PASSES <= 0)
+		if ((path.size() < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
 		{
 			_findSuccess++;
 			return path;
@@ -189,7 +191,7 @@ public class CellPathFinding extends PathFinding
 			currentY = y;
 			currentZ = z;
 			
-			while (middlePoint.nextIndex() < path.size() - 1)
+			while (middlePoint.nextIndex() < (path.size() - 1))
 			{
 				locMiddle = middlePoint.next();
 				locEnd = path.get(middlePoint.nextIndex());
@@ -198,7 +200,7 @@ public class CellPathFinding extends PathFinding
 					middlePoint.remove();
 					remove = true;
 					if (debug)
-						dropDebugItem(735,1,locMiddle);
+						dropDebugItem(735, 1, locMiddle);
 				}
 				else
 				{
@@ -209,8 +211,8 @@ public class CellPathFinding extends PathFinding
 			}
 		}
 		// only one postfilter pass for AI
-		while (playable && remove && path.size() > 2 && pass < Config.MAX_POSTFILTER_PASSES);
-			
+		while (playable && remove && (path.size() > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
+		
 		if (debug)
 		{
 			middlePoint = path.listIterator();
@@ -225,6 +227,7 @@ public class CellPathFinding extends PathFinding
 		_postFilterElapsed += System.currentTimeMillis() - timeStamp;
 		return path;
 	}
+	
 	private List<AbstractNodeLoc> constructPath(AbstractNode node)
 	{
 		List<AbstractNodeLoc> path = new ArrayList<AbstractNodeLoc>();
@@ -234,7 +237,7 @@ public class CellPathFinding extends PathFinding
 		
 		while (node.getParent() != null)
 		{
-			if (!Config.ADVANCED_DIAGONAL_STRATEGY && node.getParent().getParent() != null)
+			if (!Config.ADVANCED_DIAGONAL_STRATEGY && (node.getParent().getParent() != null))
 			{
 				int tmpX = node.getLoc().getNodeX() - node.getParent().getParent().getLoc().getNodeX();
 				int tmpY = node.getLoc().getNodeY() - node.getParent().getParent().getLoc().getNodeY();
@@ -256,7 +259,7 @@ public class CellPathFinding extends PathFinding
 			}
 			
 			// only add a new route point if moving direction changes
-			if (directionX != previousDirectionX || directionY != previousDirectionY)
+			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
@@ -347,16 +350,11 @@ public class CellPathFinding extends PathFinding
 		public String toString()
 		{
 			final StringBuilder stat = new StringBuilder(100);
-			StringUtil.append(stat,
-					String.valueOf(mapSize), "x", String.valueOf(mapSize),
-					" num:", String.valueOf(bufs.size()), "/" ,String.valueOf(count),
-					" uses:", String.valueOf(uses), "/", String.valueOf(playableUses));
+			StringUtil.append(stat, String.valueOf(mapSize), "x", String.valueOf(mapSize), " num:", String.valueOf(bufs.size()), "/", String.valueOf(count), " uses:", String.valueOf(uses), "/", String.valueOf(playableUses));
 			if (uses > 0)
-				StringUtil.append(stat, " total/avg(ms):",
-						String.valueOf(elapsed), "/", String.format("%1.2f", (double)elapsed/uses));
+				StringUtil.append(stat, " total/avg(ms):", String.valueOf(elapsed), "/", String.format("%1.2f", (double) elapsed / uses));
 			
-			StringUtil.append(stat, " ovf:", String.valueOf(overflows), "/",
-					String.valueOf(playableOverflows));
+			StringUtil.append(stat, " ovf:", String.valueOf(overflows), "/", String.valueOf(playableOverflows));
 			
 			return stat.toString();
 		}
@@ -370,17 +368,10 @@ public class CellPathFinding extends PathFinding
 			result[i] = _allBuffers[i].toString();
 		
 		final StringBuilder stat = new StringBuilder(100);
-		StringUtil.append(stat,
-				"LOS postfilter uses:", String.valueOf(_postFilterUses),
-				"/", String.valueOf(_postFilterPlayableUses));
+		StringUtil.append(stat, "LOS postfilter uses:", String.valueOf(_postFilterUses), "/", String.valueOf(_postFilterPlayableUses));
 		if (_postFilterUses > 0)
-			StringUtil.append(stat, " total/avg(ms):",
-					String.valueOf(_postFilterElapsed), "/",
-					String.format("%1.2f", (double)_postFilterElapsed/_postFilterUses),
-					" passes total/avg:", String.valueOf(_postFilterPasses), "/",
-					String.format("%1.1f", (double)_postFilterPasses/_postFilterUses),"\r\n");
-		StringUtil.append(stat, "Pathfind success/fail:", String.valueOf(_findSuccess),
-				"/", String.valueOf(_findFails));
+			StringUtil.append(stat, " total/avg(ms):", String.valueOf(_postFilterElapsed), "/", String.format("%1.2f", (double) _postFilterElapsed / _postFilterUses), " passes total/avg:", String.valueOf(_postFilterPasses), "/", String.format("%1.1f", (double) _postFilterPasses / _postFilterUses), "\r\n");
+		StringUtil.append(stat, "Pathfind success/fail:", String.valueOf(_findSuccess), "/", String.valueOf(_findFails));
 		result[result.length - 1] = stat.toString();
 		
 		return result;

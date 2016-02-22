@@ -12,8 +12,9 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
- 
+
 import java.util.ArrayList;
 
 import l2server.gameserver.model.L2Abnormal;
@@ -23,7 +24,7 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.util.Rnd;
- 
+
 /**
  *
  * @author Kilian
@@ -35,7 +36,7 @@ public class EffectCancelDebuff extends L2Effect
 	{
 		super(env, template);
 	}
-   
+	
 	/**
 	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
@@ -47,12 +48,12 @@ public class EffectCancelDebuff extends L2Effect
 		if (!(getEffected() instanceof L2Playable))
 			return false;
 		
-		L2Playable effected = (L2Playable)getEffected();
+		L2Playable effected = (L2Playable) getEffected();
 		
-		if (effected == null || effected.isDead())
+		if ((effected == null) || effected.isDead())
 			return false;
 		
-		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance)getEffected()).getNpcId() == 19036)	//TODO TEMP LasTravel, don't remove
+		if ((getEffected() instanceof L2MonsterInstance) && (((L2MonsterInstance) getEffected()).getNpcId() == 19036)) //TODO TEMP LasTravel, don't remove
 			return false;
 		
 		L2Abnormal[] effects = effected.getAllEffects();
@@ -61,7 +62,7 @@ public class EffectCancelDebuff extends L2Effect
 		int chance = (int) getAbnormal().getLandRate();
 		if (chance < 0)
 			chance = 100;
-
+		
 		// Filter out debuffs
 		for (L2Abnormal e : effects)
 		{
@@ -74,16 +75,16 @@ public class EffectCancelDebuff extends L2Effect
 			return true;
 		
 		// Consider chance (e.g. Song of Purification)
-		if (chance < 100 && Rnd.get(100) > chance)
+		if ((chance < 100) && (Rnd.get(100) > chance))
 			return false;
-
+		
 		// Remove all debuffs if chance test succeeded
 		for (L2Abnormal e : debuffs)
 			e.exit();
-
+		
 		return true;
 	}
-   
+	
 	/**
 	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()

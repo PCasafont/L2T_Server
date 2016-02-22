@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -63,12 +64,13 @@ public class SpawnDataManager
 				dbsd.respawnTime = rset.getLong("respawn_time");
 				dbsd.currentHp = rset.getInt("current_hp");
 				dbsd.currentMp = rset.getInt("current_mp");
+				
 				_dbSpawnData.put(rset.getString("name"), dbsd);
 			}
 			
 			rset.close();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM spawn_data WHERE respawn_time < ?");
 			statement.setLong(1, System.currentTimeMillis());
 			statement.execute();
@@ -95,7 +97,7 @@ public class SpawnDataManager
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if (spawn.getDbName() != null && !spawn.getDbName().isEmpty())
+			if ((spawn.getDbName() != null) && !spawn.getDbName().isEmpty())
 				updateDbSpawnData(spawn);
 		}
 	}
@@ -103,8 +105,7 @@ public class SpawnDataManager
 	public void updateDbSpawnData(L2Spawn spawn)
 	{
 		L2Npc npc = spawn.getNpc();
-		if (spawn.getNextRespawn() == 0 && ((npc.getCurrentHp() == npc.getMaxHp() && npc.getCurrentMp() == npc.getMaxMp()))
-				|| (spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0))
+		if (((spawn.getNextRespawn() == 0) && (((npc.getCurrentHp() == npc.getMaxHp()) && (npc.getCurrentMp() == npc.getMaxMp())))) || ((spawn.getX() == 0) && (spawn.getY() == 0) && (npc.getCurrentHp() == 0)))
 			return;
 		
 		Connection con = null;
@@ -118,6 +119,7 @@ public class SpawnDataManager
 			statement.setDouble(3, npc.getCurrentHp());
 			statement.setDouble(4, npc.getCurrentMp());
 			statement.executeUpdate();
+			statement.close();
 		}
 		catch (SQLException e)
 		{

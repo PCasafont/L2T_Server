@@ -1,51 +1,51 @@
 /*
  * $Header$
- * 
+ *
  * $Author: fordfrog $ $Date$ $Revision$ $Log$
- * 
- * 
+ *
+ *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package l2server.util;
 
+package l2server.util;
 
 /**
  * String utilities optimized for the best performance.
- * 
+ *
  * <h1>How to Use It</h1> <h2>concat() or append()</h2> If concatenating strings
  * in single call, use StringUtil.concat(), otherwise use StringUtil.append()
  * and its variants. <h2>Minimum Calls</h2> Bad:
- * 
+ *
  * <pre>
  * final StringBuilder sbString = new StringBuilder();
  * StringUtil.append(sbString, &quot;text 1&quot;, String.valueOf(npcId));
  * StringUtil.append(&quot;text 2&quot;);
  * </pre>
- * 
+ *
  * Good:
- * 
+ *
  * <pre>
  * final StringBuilder sbString = new StringBuilder();
  * StringUtil.append(sbString, &quot;text 1&quot;, String.valueOf(npcId), &quot;text 2&quot;);
  * </pre>
- * 
+ *
  * Why?<br/>
  * Because the less calls you do, the less memory re-allocations have to be done
  * so the whole text fits into the memory and less array copy tasks has to be
  * performed. So if using less calls, less memory is used and string
  * concatenation is faster. <h2>Size Hints for Loops</h2> Bad:
- * 
+ *
  * <pre>
  * final StringBuilder sbString = new StringBuilder();
  * StringUtil.append(sbString, &quot;header start&quot;, someText, &quot;header end&quot;);
@@ -54,9 +54,9 @@ package l2server.util;
  * 	StringUtil.append(sbString, &quot;text 1&quot;, stringArray[i], &quot;text 2&quot;);
  * }
  * </pre>
- * 
+ *
  * Good:
- * 
+ *
  * <pre>
  * final StringBuilder sbString = StringUtil.startAppend(1300, &quot;header start&quot;, someText, &quot;header end&quot;);
  * for (int i = 0; i &lt; 50; i++)
@@ -64,7 +64,7 @@ package l2server.util;
  * 	StringUtil.append(sbString, &quot;text 1&quot;, stringArray[i], &quot;text 2&quot;);
  * }
  * </pre>
- * 
+ *
  * Why?<br/>
  * When using StringUtil.append(), memory is only allocated to fit in the
  * strings in method argument. So on each loop new memory for the string has to
@@ -77,42 +77,42 @@ package l2server.util;
  * rather than smaller.<br/>
  * In case there is no text appended before the cycle, just use <code>new
  * StringBuilder(1300)</code>. <h2>Concatenation and Constants</h2> Bad:
- * 
+ *
  * <pre>
  * StringUtil.concat(&quot;text 1 &quot;, &quot;text 2&quot;, String.valueOf(npcId));
  * </pre>
- * 
+ *
  * Good:
- * 
+ *
  * <pre>
  * StringUtil.concat(&quot;text 1 &quot; + &quot;text 2&quot;, String.valueOf(npcId));
  * </pre>
- * 
+ *
  * or
- * 
+ *
  * <pre>
  * StringUtil.concat(&quot;text 1 text 2&quot;, String.valueOf(npcId));
  * </pre>
- * 
+ *
  * Why?<br/>
  * It saves some cycles when determining size of memory that needs to be
  * allocated because less strings are passed to concat() method. But do not use
  * + for concatenation of non-constant strings, that degrades performance and
  * makes extra memory allocations needed. <h2>Concatenation and Constant
  * Variables</h2> Bad:
- * 
+ *
  * <pre>
  * String glue = &quot;some glue&quot;;
  * StringUtil.concat(&quot;text 1&quot;, glue, &quot;text 2&quot;, glue, String.valueOf(npcId));
  * </pre>
- * 
+ *
  * Good:
- * 
+ *
  * <pre>
  * final String glue = &quot;some glue&quot;;
  * StringUtil.concat(&quot;text 1&quot; + glue + &quot;text2&quot; + glue, String.valueOf(npcId));
  * </pre>
- * 
+ *
  * Why? Because when using <code>final</code> keyword, the <code>glue</code> is
  * marked as constant string and compiler treats it as a constant string so it
  * is able to create string "text1some gluetext2some glue" during the
@@ -120,7 +120,7 @@ package l2server.util;
  * time, so this cannot be used for cases like
  * <code>final String objectIdString =
  * String.valueOf(getObjectId)</code>. <h2>StringBuilder Reuse</h2> Bad:
- * 
+ *
  * <pre>
  * final StringBuilder sbString1 = new StringBuilder();
  * StringUtil.append(sbString1, &quot;text 1&quot;, String.valueOf(npcId), &quot;text 2&quot;);
@@ -128,9 +128,9 @@ package l2server.util;
  * final StringBuilder sbString2 = new StringBuilder();
  * StringUtil.append(sbString2, &quot;text 3&quot;, String.valueOf(npcId), &quot;text 4&quot;);
  * </pre>
- * 
+ *
  * Good:
- * 
+ *
  * <pre>
  * final StringBuilder sbString = new StringBuilder();
  * StringUtil.append(sbString, &quot;text 1&quot;, String.valueOf(npcId), &quot;text 2&quot;);
@@ -138,7 +138,7 @@ package l2server.util;
  * sbString.setLength(0);
  * StringUtil.append(sbString, &quot;text 3&quot;, String.valueOf(npcId), &quot;text 4&quot;);
  * </pre>
- * 
+ *
  * Why?</br> In first case, new memory has to be allocated for the second
  * string. In second case already allocated memory is reused, but only in case
  * the new string is not longer than the previously allocated string. Anyway,
@@ -155,7 +155,7 @@ package l2server.util;
  * concatenated, the difference between StringBuilder and StringBuilder gets
  * larger. In code, there are many cases, where there are concatenated 50+
  * strings so the time saving is even greater.
- * 
+ *
  * <pre>
  * Count: 2
  * StringBuilder: 1893
@@ -194,7 +194,7 @@ package l2server.util;
  * StringBuilder: 3081
  * StringBuilder with size: 2139
  * </pre>
- * 
+ *
  * @author fordfrog
  */
 public final class StringUtil
@@ -206,12 +206,12 @@ public final class StringUtil
 	
 	/**
 	 * Concatenates strings.
-	 * 
+	 *
 	 * @param strings
 	 *			strings to be concatenated
-	 * 
+	 *
 	 * @return concatenated string
-	 * 
+	 *
 	 * @see StringUtil
 	 */
 	public static String concat(final String... strings)
@@ -231,14 +231,14 @@ public final class StringUtil
 	 * Creates new string builder with size initialized to
 	 * <code>sizeHint</code>, unless total length of strings is greater than
 	 * <code>sizeHint</code>.
-	 * 
+	 *
 	 * @param sizeHint
 	 *			hint for string builder size allocation
 	 * @param strings
 	 *			strings to be appended
-	 * 
+	 *
 	 * @return created string builder
-	 * 
+	 *
 	 * @see StringUtil
 	 */
 	public static StringBuilder startAppend(final int sizeHint, final String... strings)
@@ -256,12 +256,12 @@ public final class StringUtil
 	
 	/**
 	 * Appends strings to existing string builder.
-	 * 
+	 *
 	 * @param sbString
 	 *			string builder
 	 * @param strings
 	 *			strings to be appended
-	 * 
+	 *
 	 * @see StringUtil
 	 */
 	public static void append(final StringBuilder sbString, final String... strings)
@@ -276,10 +276,10 @@ public final class StringUtil
 	
 	/**
 	 * Counts total length of all the strings.
-	 * 
+	 *
 	 * @param strings
 	 *			array of strings
-	 * 
+	 *
 	 * @return total length of all the strings
 	 */
 	private static int getLength(final String[] strings)

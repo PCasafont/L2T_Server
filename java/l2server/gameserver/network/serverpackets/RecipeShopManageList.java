@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -26,10 +27,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * dd d(dd) d(ddd)
  * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class RecipeShopManageList  extends L2GameServerPacket
+public class RecipeShopManageList extends L2GameServerPacket
 {
 	
-	private static final String _S__D8_RecipeShopManageList = "[S] de RecipeShopManageList";
 	private L2PcInstance _seller;
 	private boolean _isDwarven;
 	private L2RecipeList[] _recipes;
@@ -51,7 +51,7 @@ public class RecipeShopManageList  extends L2GameServerPacket
 			List<L2ManufactureItem> toIterate = new ArrayList<L2ManufactureItem>(list.getList());
 			for (L2ManufactureItem item : toIterate)
 			{
-				if (item.isDwarven() != _isDwarven || !seller.hasRecipeList(item.getRecipeId()))
+				if ((item.isDwarven() != _isDwarven) || !seller.hasRecipeList(item.getRecipeId()))
 					list.getList().remove(item);
 			}
 		}
@@ -60,9 +60,8 @@ public class RecipeShopManageList  extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xde);
 		writeD(_seller.getObjectId());
-		writeD((int)_seller.getAdena());
+		writeD((int) _seller.getAdena());
 		writeD(_isDwarven ? 0x00 : 0x01);
 		
 		if (_recipes == null)
@@ -77,7 +76,7 @@ public class RecipeShopManageList  extends L2GameServerPacket
 			{
 				L2RecipeList temp = _recipes[i];
 				writeD(temp.getId());
-				writeD(i+1);
+				writeD(i + 1);
 			}
 		}
 		
@@ -97,14 +96,5 @@ public class RecipeShopManageList  extends L2GameServerPacket
 				writeQ(item.getCost());
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__D8_RecipeShopManageList;
 	}
 }

@@ -156,7 +156,7 @@
 	</skill>
 	<!-- Attacks with scissors. Usable only on the crooked turkey. -->
 	<skill id="21014" levels="1" name="Scissors">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2000" />
@@ -174,7 +174,7 @@
 	</skill>
 	<!-- Challenge him with the rock. Usable only on the crooked turkey. -->
 	<skill id="21015" levels="1" name="Rock">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2000" />
@@ -192,7 +192,7 @@
 	</skill>
 	<!-- Challenge him with the paper. Usable only on the crooked turkey. -->
 	<skill id="21016" levels="1" name="Paper">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2000" />
@@ -706,7 +706,7 @@
 		<set name="reuseDelay" val="43200000" />
 	</skill>
 	<!-- Increases Dark Resistance by 30 for 5 minutes. Cooldown is 1 hour. -->
-	<skill id="21068" levels="1" name="Dark Attack Resistance">
+	<skill id="21068" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -770,7 +770,7 @@
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<!-- Increases Dark Resistance by 30 for 5 minutes. Cooldown is 1 hour. -->
-	<skill id="21076" levels="1" name="Dark Attack Resistance">
+	<skill id="21076" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1533,7 +1533,8 @@
 	</skill>
 	<!-- For 10 minutes, increases party members' Max HP by 40%, Max MP by 40%, Max CP by 40%, P. Def. by 30%, M. Def. by 30%, and Speed by 30. Cooldown is 1 hour. -->
 	<skill id="21136" levels="1" name="Golden Jack O'Lantern's Authority">
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
@@ -3212,16 +3213,16 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Def. + 9.
-		Level 2: M. Def. + 10.
-		Level 3: M. Def. + 11.
-		Level 4: M. Def. + 12, Speed + 7, CON + 2, MEN + 1.
-		Level 5: M. Def. + 13, Speed + 7, Max HP/MP + 200, STR + 1, CON + 2, INT + 1, MEN + 2.
-		Level 6: M. Def. + 14, Speed + 7, Max HP/MP + 200. Elemental Resistance + 20, STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2. Skill MP Consumption - 3%.
-		Level 7: M. Def. + 15, Speed + 7, Max HP/MP + 200. Elemental Resistance + 25, Damage Reflect Resistance increased. STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2. Skill MP Consumption - 3%.
-		Level 8: M. Def. + 16, Speed + 7, Max HP/MP + 200. Elemental Resistance + 30. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +2. Skill MP Consumption - 3%. P./ M. Skill Cooldown decreased.
-		Level 9: M. Def. + 17, Speed + 7, Max HP/MP + 200. Elemental Resistance + 35. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR +2, DEX +2, CON +3, INT +2, WIT +2, MEN +3. Skill MP Consumption - 3%. P./ M. Skill Cooldown decreased.
-		Level 10: M. Def. + 18, Speed + 7, Max HP/MP + 200. Elemental Resistance + 40. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3. Skill MP Consumption - 3%. P./ M. Skill Cooldown decreased.
+		Level 1: M. Def. + 9.0.
+		Level 2: M. Def. + 10.0.
+		Level 3: M. Def. + 11.0.
+		Level 4: M. Def. + 12.0, Speed + 7, CON + 2, MEN + 1.
+		Level 5: M. Def. + 13.0, Speed + 7, Max HP/MP + 200, STR + 200, CON + 1, INT + 2, MEN + 1.
+		Level 6: M. Def. + 14.0, Speed + 7, Max HP/MP + 200. Elemental Resistance + 200, STR + 3%, DEX + 20, CON + 2, INT + 1, WIT + 2, MEN + 2. Skill MP Consumption - 1.
+		Level 7: M. Def. + 15.0, Speed + 7, Max HP + 200, Max MP + 200. Skill MP Consumption - 3%. Elemental Resistance + 25, Damage Reflect Resistance increased. STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2.
+		Level 8: M. Def. + 16.0, Speed + 7, Max HP + 200, Max MP + 200. Skill MP Consumption - 3%. Elemental Resistance + 30. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN + 2. P./ M. Skill Cooldown decreased.
+		Level 9: M. Def. + 17.0, Speed + 7, Max HP + 200, Max MP + 200. Skill MP Consumption - 3%. Elemental Resistance + 35. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN + 3. P./ M. Skill Cooldown decreased.
+		Level 10: M. Def. + 18.0, Speed + 7, Max HP + 200, Max MP + 200. Skill MP Consumption - 3%. Elemental Resistance + 40. Damage Reflect Resistance increased, Vampiric Rage effect. Lethal Strike and Half-kill Resistance are increased. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3. P./ M. Skill Cooldown decreased.
 	-->
 	<skill id="21327" levels="10" name="Enchant Effect: Elemental Shirt">
 		<set name="target" val="TARGET_NONE" />
@@ -3283,8 +3284,8 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Active: For 30 min., has a chance of absorbing 4% of damage inflicted on enemy as HP when used.
-		Level 2: Active: For 60 min., has a chance of absorbing 6% of damage inflicted on enemy as HP when used.
+		Level 1: Active: For 30 minutes, has a chance of absorbing 4% of damage inflicted on enemy as HP when used.
+		Level 2: Active: For 60 minutes, has a chance of absorbing 6% of damage inflicted on enemy as HP when used.
 	-->
 	<skill id="21334" levels="2" name="Adenia's Vampiric Rage">
 		<set name="target" val="TARGET_NONE" />
@@ -3304,8 +3305,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Active: For 5 min., reflects 7% of received damage back to enemy.
-		Level 2: Active: For 5 min., reflects 15% of received damage back to enemy.
+		Level 1: Active: For 5 minutes, reflects 7% of received damage back to enemy.
+		Level 2: Active: For 5 minutes, reflects 15% of received damage back to enemy.
 	-->
 	<skill id="21336" levels="2" name="Adenia's Damage Reflect">
 		<set name="target" val="TARGET_NONE" />
@@ -3373,8 +3374,8 @@
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<!-- 
-		Level 1: Active: Removes all abnormal states and grants invincibility for 3 sec. Cannot use when rendered immobile. Usable in the Olympiad.
-		Level 2: Active: Removes all abnormal states and grants invincibility for 7 sec. Cannot use when rendered immobile. Usable in the Olympiad.
+		Level 1: Active: Removes all abnormal states and grants invincibility for 3 seconds. Cannot use when rendered immobile. Usable in the Olympiad.
+		Level 2: Active: Removes all abnormal states and grants invincibility for 7 seconds. Cannot use when rendered immobile. Usable in the Olympiad.
 	-->
 	<skill id="21344" levels="2" name="Adenia's Invincibility">
 		<table name="#reuseDelay"> 7200000 3600000 </table>
@@ -3388,7 +3389,7 @@
 		Level 1: Active: Teleport to town. Unusable in special places such as GM Consultation Room.
 		Level 2: Active: Teleport party members to town. Unusable in special places such as GM Consultation Room.
 	-->
-	<skill id="21345" levels="2" name="Adenia's Return">
+	<skill id="21345" levels="2" name="Adenia's Party Return">
 		<table name="#mpConsume"> 110 214 </table>
 		<table name="#name">Adenia's Return;Adenia's Party Return</table>
 		<set name="name" val="#name" />
@@ -3500,7 +3501,7 @@
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<!-- Elemental Stats + 10, Debuff Resistance + 1%. -->
-	<skill id="21358" levels="1" name="Mysterious Human Dye">
+	<skill id="21358" levels="1" name="Wondrous Human Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3515,7 +3516,7 @@
 		</for>
 	</skill>
 	<!-- Water Resistance * 20, P. Critical Rate + 10, M. Critical Rate + 10. -->
-	<skill id="21359" levels="1" name="Mysterious Elf Dye">
+	<skill id="21359" levels="1" name="Wondrous Elf Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3526,7 +3527,7 @@
 		</for>
 	</skill>
 	<!-- Wind Resistance + 20, P. Critical Damage and M. Critical Damage + 1%. -->
-	<skill id="21360" levels="1" name="Mysterious Dark Elf Dye">
+	<skill id="21360" levels="1" name="Wondrous Dark Elf Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3537,7 +3538,7 @@
 		</for>
 	</skill>
 	<!-- Fire Resistance + 20, HP, MP, and CP + 1%. -->
-	<skill id="21361" levels="1" name="Mysterious Orc Dye">
+	<skill id="21361" levels="1" name="Wondrous Orc Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3549,7 +3550,7 @@
 		</for>
 	</skill>
 	<!-- Earth Resistance + 20, Skill Cooldown - 1%. -->
-	<skill id="21362" levels="1" name="Mysterious Dwarf Dye">
+	<skill id="21362" levels="1" name="Wondrous Dwarf Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3560,7 +3561,7 @@
 		</for>
 	</skill>
 	<!-- Dark Resistance + 20, PvP Damage + 1%. -->
-	<skill id="21363" levels="1" name="Mysterious Kamael Dye">
+	<skill id="21363" levels="1" name="Wondrous Kamael Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3575,7 +3576,7 @@
 		Level 1: P. Atk. + 154, M. Atk. + 181, P./ M. Evasion + 4.
 		Level 2: 
 	-->
-	<skill id="21364" levels="12" name="Talisman - Abundance">
+	<skill id="21364" levels="12" name="Talisman - Abundance (High-grade) - Lv. 4">
 		<table name="#pAtk"> 154 0 0 0 231 231 231 0 0 0 0 0 </table>
 		<table name="#mAtk"> 181 0 0 0 271 271 271 0 0 0 0 0 </table>
 		<table name="#pmEvas"> 4 0 0 0 7 7 7 0 7 8 9 10 </table>
@@ -3617,13 +3618,7 @@
 			<add stat="mDef" val="#mDef" />
 		</for>
 	</skill>
-	<!-- 
-		Level 1: P. Atk. + 23, M. Atk. + 27, P./M. Evasion + 1, Attribute Resistance + 2, Debuff Resistance + 2%, P./M. Critical Success Rate + 1%, and Received Critical Damage - 1%, Received Skill Damage in PvP - 1%. Also, received damage in PvP - 1%.
-		Level 2: P. Atk. + 46, M. Atk. + 54, P./M. Evasion + 1, Attribute Resistance + 3, Debuff Resistance + 3%, P./M. Critical Success Rate + 3%, and Received Critical Damage - 2.6%, Received Skill Damage in PvP - 3%. Also, received damage in PvP - 3%.
-		Level 3: P. Atk. + 69, M. Atk. + 81, P./M. Evasion + 2, Attribute Resistance + 4, Debuff Resistance + 5%, P./M. Critical Success Rate + 4%, and Received Critical Damage - 3.9%, Received Skill Damage in PvP - 4%. Also, received damage in PvP - 4%.
-		Level 4: P. Atk. + 92, M. Atk. + 108, P./M. Evasion + 3, Attribute Resistance + 5, Debuff Resistance + 6%, P./M. Critical Success Rate + 5%, and Received Critical Damage - 5.2%, Received Skill Damage in PvP - 5%. Also, received damage in PvP - 5%.
-		Level 5: P. Atk. + 116, M. Atk. + 135, P./M. Evasion + 3, Attribute Resistance + 6, Debuff Resistance + 8%, P./M. Critical Success Rate + 7%, and Received Critical Damage - 6.5%, Received Skill Damage in PvP - 7%. Also, received damage in PvP - 7%.
-	-->
+	<!-- Increased effect of the Talisman - Hunter. -->
 	<skill id="21365" levels="5" name="Talisman - Hunter">
 		<table name="#attRes"> 2 3 4 5 6 </table>
 		<table name="#pAtk"> 23 46 69 92 116 </table>
@@ -3662,7 +3657,7 @@
 		</for>
 	</skill>
 	<!-- When HP is 90% or above, P. Def. + 20% and Speed + 33 in the Olympiad and the Ceremony of Chaos. -->
-	<skill id="21366" levels="1" name="Mysterious Hunt Dye">
+	<skill id="21366" levels="1" name="Wondrous Hunt Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3686,7 +3681,7 @@
 		</for>
 	</skill>
 	<!-- In a battlefield, Received Damage - 2% and Damage Reflect Resistance + 2. Skill Lv. up with each PC kill. -->
-	<skill id="21367" levels="1" name="Mysterious Slaughter Dye">
+	<skill id="21367" levels="1" name="Wondrous Slaughter Dye">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3712,50 +3707,32 @@
 		Level 4: Received Damage - 20% and Damage Reflect Resistance + 20.
 		Level 5: Received Damage - 25% and Damage Reflect Resistance + 25.
 	-->
-	<skill id="21368" levels="5" name="Mysterious Slaughter Dye">
+	<skill id="21368" levels="5" name="Wondrous Slaughter Dye">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<skill id="21369" levels="1" name="Cancel Mysterious Dye Effect">
+	<skill id="21369" levels="1" name="Cancel Wondrous Dye Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- 
-		Level 1: P. Atk. + 23, M. Atk. + 27, P./M. Evasion + 1, Attribute Resistance + 2, Debuff Resistance + 2%, Max HP/MP/CP + 40, HP/MP/CP Recovery Rate + 0.7.
-		Level 2: P. Atk. + 46, M. Atk. + 54, P./M. Evasion + 1, Attribute Resistance + 3, Debuff Resistance + 3%, Max HP/MP/CP + 80, HP/MP/CP Recovery Rate + 1.4.
-		Level 3: P. Atk. + 69, M. Atk. + 81, P./M. Evasion + 2, Attribute Resistance + 4, Debuff Resistance + 5%, Max HP/MP/CP + 120, HP/MP/CP Recovery Rate + 2.1.
-		Level 4: P. Atk. + 92, M. Atk. + 108, P./M. Evasion + 3, Attribute Resistance + 5, Debuff Resistance + 6%, Max HP/MP/CP + 160, HP/MP/CP Recovery Rate + 2.8.
-		Level 5: P. Atk. + 116, M. Atk. + 135, P./M. Evasion + 3, Attribute Resistance + 6, Debuff Resistance + 8%, Max HP/MP/CP + 200, HP/MP/CP Recovery Rate + 3.5.
-	-->
+	<!-- Increased effect of the Talisman - Slaughterer. -->
 	<skill id="21370" levels="5" name="Talisman - Slaughterer">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- 
-		Level 1: P. Atk. + 23, M. Atk. + 27, P./M. Evasion + 1, P./M. Critical Success Rate + 1%, Max HP/MP/CP + 40, HP/MP/CP Recovery Rate + 0.7, and Received Critical Damage - 1.3%, Received Skill Damage in PvP - 1%.
-		Level 2: P. Atk. + 46, M. Atk. + 54, P./M. Evasion + 1, P./M. Critical Success Rate + 3%, Max HP/MP/CP + 80, HP/MP/CP Recovery Rate + 1.4, and Received Critical Damage - 2.6%, Received Skill Damage in PvP - 3%.
-		Level 3: P. Atk. + 69, M. Atk. + 81, P./M. Evasion + 2, P./M. Critical Success Rate + 4%, Max HP/MP/CP + 120, HP/MP/CP Recovery Rate + 2.1, and Received Critical Damage - 3.9%, Received Skill Damage in PvP - 4%.
-		Level 4: P. Atk. + 92, M. Atk. + 108, P./M. Evasion + 3, P./M. Critical Success Rate + 5%, Max HP/MP/CP + 160, HP/MP/CP Recovery Rate + 2.8, and Received Critical Damage - 5.2%, Received Skill Damage in PvP - 5%.
-		Level 5: P. Atk. + 116, M. Atk. + 135, P./M. Evasion + 3, P./M. Critical Success Rate + 7%, Max HP/MP/CP + 200, HP/MP/CP Recovery Rate + 3.5, and Received Critical Damage - 6.5%, Received Skill Damage in PvP - 7%.
-	-->
+	<!-- Increased effect of the Talisman - Conquerer. -->
 	<skill id="21371" levels="5" name="Talisman - Conquerer">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- 
-		Level 1: Attribute Resistance + 2, Debuff Resistance + 2%, P./M. Critical Success Rate + 1%, Max HP/MP/CP + 40, HP/MP/CP Recovery Rate + 0.7, and Received Critical Damage - 1.3%, Received Skill Damage in Pvp - 1%.
-		Level 2: Attribute Resistance + 3, Debuff Resistance + 3%, P./M. Critical Success Rate + 3%, Max HP/MP/CP + 80, HP/MP/CP Recovery Rate + 1.4, and Received Critical Damage - 2.6%, Received Skill Damage in Pvp - 3%.
-		Level 3: Attribute Resistance + 4, Debuff Resistance + 5%, P./M. Critical Success Rate + 4%, Max HP/MP/CP + 120, HP/MP/CP Recovery Rate + 2.1, and Received Critical Damage - 3.9%, Received Skill Damage in Pvp - 4%.
-		Level 4: Attribute Resistance + 6, Debuff Resistance + 6%, P./M. Critical Success Rate + 5%, Max HP/MP/CP + 160, HP/MP/CP Recovery Rate + 2.8, and Received Critical Damage - 5.2%, Received Skill Damage in Pvp - 5%.
-		Level 5: Attribute Resistance + 6, Debuff Resistance + 8%, P./M. Critical Success Rate + 7%, Max HP/MP/CP + 200, HP/MP/CP Recovery Rate + 3.5, and Received Critical Damage - 6.5%, Received Skill Damage in Pvp - 7%.
-	-->
+	<!-- Increased effect of the Talisman - Outlaw. -->
 	<skill id="21372" levels="5" name="Talisman - Outlaw">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3787,9 +3764,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 2: Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 3: Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5 . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 1: Active Skill: P./ M. Def. + 5%, Max HP/CP + 200. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 2: Active Skill: P./ M. Def. + 15%, Max HP/CP + 300. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 3: Active Skill: P./ M. Def. + 20%, Max HP/CP + 400, Attribute Def. + 5. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
 	-->
 	<skill id="21377" levels="3" name="Adenian Tattoo: Protection">
 		<set name="target" val="TARGET_NONE" />
@@ -3799,9 +3776,9 @@
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<!-- 
-		Level 1: Active Skill: P. Atk. + 5%, M. Atk. + 10% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 2: Active Skill: P. Atk. + 7%, M. Atk. + 15%, Casting Spd. + 5% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 3: Active Skill: P. Atk. + 10%, M. Atk. + 20%, Casting Spd. + 10% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 1: Active Skill: P. Atk. + 5%, M. Atk. + 10% . Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 2: Active Skill: P. Atk. + 7%, M. Atk. + 15%, Casting Spd. + 5%. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 3: Active Skill: P. Atk. + 10%, M. Atk. + 20%, Casting Spd. + 10%. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
 	-->
 	<skill id="21378" levels="3" name="Adenian Tattoo: Valor">
 		<set name="target" val="TARGET_NONE" />
@@ -3811,9 +3788,9 @@
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<!-- 
-		Level 1: Active Skill: P./ M. Def. +  3%, P. Atk. + 3%, M. Atk. + 5% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 2: Active Skill: P./ M. Def. +  5%, P. Atk. + 5%, M. Atk. + 10% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
-		Level 3: Active Skill: P./ M. Def. +  10%, P. Atk. + 10% M. Atk. + 20% . Lasts 1 min. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 1: Active Skill: P./ M. Def. + 3%, P. Atk. + 3%, M. Atk. + 5%. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 2: Active Skill: P./ M. Def. + 5%, P. Atk. + 5%, M. Atk. + 10%. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
+		Level 3: Active Skill: P./ M. Def. + 10%, P. Atk. + 10%, M. Atk. + 20%. Lasts 1 minute. Cooldown is 1 hr. Can be used in the Olympiad.
 	-->
 	<skill id="21379" levels="3" name="Adenian Tattoo: Deviance">
 		<set name="target" val="TARGET_NONE" />
@@ -4174,396 +4151,396 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="200" />
 	</skill>
-	<skill id="21411" levels="1" name="NoSkillName">
+	<skill id="21411" levels="1" name="Halloween Outfit Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="21412" levels="1" name="NoSkillName">
+	<skill id="21412" levels="1" name="Halloween Weapon Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Mysterious potion that changes the appearance into that of a Halloween weapon and outfit for 1 hour. -->
-	<skill id="21413" levels="1" name="NoSkillName">
+	<skill id="21413" levels="1" name="Mysterious Halloween Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<!-- Decreases all Received Damage by 3%, LUC +1, and all Attribute Resistance + 10. -->
-	<skill id="21414" levels="1" name="NoSkillName">
+	<skill id="21414" levels="1" name="Halloween: Outfit">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases all Damage by 3%, LUC +1, and Attack Attribute + 30. -->
-	<skill id="21415" levels="1" name="NoSkillName">
+	<skill id="21415" levels="1" name="Halloween: Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Debuff Reflect + 3%. -->
-	<skill id="21416" levels="1" name="NoSkillName">
+	<skill id="21416" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Debuff Reflect + 5%. -->
-	<skill id="21417" levels="1" name="NoSkillName">
+	<skill id="21417" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Debuff Reflect + 10%. -->
-	<skill id="21418" levels="1" name="NoSkillName">
+	<skill id="21418" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Damage Reflect Resistance + 5. -->
-	<skill id="21419" levels="1" name="NoSkillName">
+	<skill id="21419" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Damage Reflect Resistance + 7. -->
-	<skill id="21420" levels="1" name="NoSkillName">
+	<skill id="21420" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Damage Reflect Resistance + 15. -->
-	<skill id="21421" levels="1" name="NoSkillName">
+	<skill id="21421" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Bow/Crossbow Resistance + 3%. -->
-	<skill id="21422" levels="1" name="NoSkillName">
+	<skill id="21422" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Bow/Crossbow Resistance + 5%. -->
-	<skill id="21423" levels="1" name="NoSkillName">
+	<skill id="21423" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Bow/Crossbow Resistance + 10%. -->
-	<skill id="21424" levels="1" name="NoSkillName">
+	<skill id="21424" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Visual Def. + 3%. -->
-	<skill id="21425" levels="1" name="NoSkillName">
+	<skill id="21425" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Visual Def. + 5%. -->
-	<skill id="21426" levels="1" name="NoSkillName">
+	<skill id="21426" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Visual Def. + 10%. -->
-	<skill id="21427" levels="1" name="NoSkillName">
+	<skill id="21427" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- M. Def. + 3%. -->
-	<skill id="21428" levels="1" name="NoSkillName">
+	<skill id="21428" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- M. Def. + 5%. -->
-	<skill id="21429" levels="1" name="NoSkillName">
+	<skill id="21429" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- M. Def. + 10%. -->
-	<skill id="21430" levels="1" name="NoSkillName">
+	<skill id="21430" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Attribute Resistance + 5. -->
-	<skill id="21431" levels="1" name="NoSkillName">
+	<skill id="21431" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Attribute Resistance + 7. -->
-	<skill id="21432" levels="1" name="NoSkillName">
+	<skill id="21432" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Attribute Resistance + 15. -->
-	<skill id="21433" levels="1" name="NoSkillName">
+	<skill id="21433" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Received Heal Amount + 3%. -->
-	<skill id="21434" levels="1" name="NoSkillName">
+	<skill id="21434" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Received Heal Amount + 7%. -->
-	<skill id="21435" levels="1" name="NoSkillName">
+	<skill id="21435" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Received Heal Amount + 15%. -->
-	<skill id="21436" levels="1" name="NoSkillName">
+	<skill id="21436" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. HP + 3%. -->
-	<skill id="21437" levels="1" name="NoSkillName">
+	<skill id="21437" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. HP + 7%. -->
-	<skill id="21438" levels="1" name="NoSkillName">
+	<skill id="21438" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. HP + 15%. -->
-	<skill id="21439" levels="1" name="NoSkillName">
+	<skill id="21439" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. MP + 3%. -->
-	<skill id="21440" levels="1" name="NoSkillName">
+	<skill id="21440" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. MP + 5%. -->
-	<skill id="21441" levels="1" name="NoSkillName">
+	<skill id="21441" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. MP + 10%. -->
-	<skill id="21442" levels="1" name="NoSkillName">
+	<skill id="21442" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. CP + 3%. -->
-	<skill id="21443" levels="1" name="NoSkillName">
+	<skill id="21443" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. CP + 7%. -->
-	<skill id="21444" levels="1" name="NoSkillName">
+	<skill id="21444" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. CP + 15%. -->
-	<skill id="21445" levels="1" name="NoSkillName">
+	<skill id="21445" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. Speed + 3. -->
-	<skill id="21446" levels="1" name="NoSkillName">
+	<skill id="21446" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. Speed + 7. -->
-	<skill id="21447" levels="1" name="NoSkillName">
+	<skill id="21447" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Max. Speed + 15. -->
-	<skill id="21448" levels="1" name="NoSkillName">
+	<skill id="21448" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- HP Recovery Bonus + 5. -->
-	<skill id="21449" levels="1" name="NoSkillName">
+	<skill id="21449" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- HP Recovery Bonus + 8. -->
-	<skill id="21450" levels="1" name="NoSkillName">
+	<skill id="21450" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- HP Recovery Bonus + 16. -->
-	<skill id="21451" levels="1" name="NoSkillName">
+	<skill id="21451" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- MP Recovery Bonus + 3. -->
-	<skill id="21452" levels="1" name="NoSkillName">
+	<skill id="21452" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- MP Recovery Bonus + 4. -->
-	<skill id="21453" levels="1" name="NoSkillName">
+	<skill id="21453" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- MP Recovery Bonus + 8. -->
-	<skill id="21454" levels="1" name="NoSkillName">
+	<skill id="21454" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- P./M. Evasion + 3. -->
-	<skill id="21455" levels="1" name="NoSkillName">
+	<skill id="21455" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- P./M. Evasion + 4. -->
-	<skill id="21456" levels="1" name="NoSkillName">
+	<skill id="21456" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- P./M. Evasion + 8. -->
-	<skill id="21457" levels="1" name="NoSkillName">
+	<skill id="21457" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 15. -->
-	<skill id="21458" levels="1" name="NoSkillName">
+	<skill id="21458" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 15. -->
-	<skill id="21459" levels="1" name="NoSkillName">
+	<skill id="21459" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 15. -->
-	<skill id="21460" levels="1" name="NoSkillName">
+	<skill id="21460" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 16. -->
-	<skill id="21461" levels="1" name="NoSkillName">
+	<skill id="21461" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 16. -->
-	<skill id="21462" levels="1" name="NoSkillName">
+	<skill id="21462" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 16. -->
-	<skill id="21463" levels="1" name="NoSkillName">
+	<skill id="21463" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 17. -->
-	<skill id="21464" levels="1" name="NoSkillName">
+	<skill id="21464" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 17. -->
-	<skill id="21465" levels="1" name="NoSkillName">
+	<skill id="21465" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 17. -->
-	<skill id="21466" levels="1" name="NoSkillName">
+	<skill id="21466" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 18. -->
-	<skill id="21467" levels="1" name="NoSkillName">
+	<skill id="21467" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 18. -->
-	<skill id="21468" levels="1" name="NoSkillName">
+	<skill id="21468" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 18. -->
-	<skill id="21469" levels="1" name="NoSkillName">
+	<skill id="21469" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 19. -->
-	<skill id="21470" levels="1" name="NoSkillName">
+	<skill id="21470" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 19. -->
-	<skill id="21471" levels="1" name="NoSkillName">
+	<skill id="21471" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 19. -->
-	<skill id="21472" levels="1" name="NoSkillName">
+	<skill id="21472" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Low-grade / Option 20. -->
-	<skill id="21473" levels="1" name="NoSkillName">
+	<skill id="21473" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Mid-grade / Option 20. -->
-	<skill id="21474" levels="1" name="NoSkillName">
+	<skill id="21474" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- High-grade / Option 20. -->
-	<skill id="21475" levels="1" name="NoSkillName">
+	<skill id="21475" levels="1" name="Visual Enchant Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- STR/DEX/CON/INT/WIT/MEN +2. Received damage during PvP - 5%. -->
+	<!-- STR/DEX/CON/INT/WIT/MEN + 2. Received damage during PvP - 5%. -->
 	<skill id="21476" levels="1" name="Cloak of the Chosen">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4575,7 +4552,7 @@
 		Level 3: Increases P. Atk. + 17%, M. Atk. + 17%, Skill Power + 17%, Skill Critical Rate + 17% momentarily with the power of Talisman.
 		Level 4: Increases P. Atk. + 20%, M. Atk. + 20%, Skill Power + 20%, Skill Critical Rate + 20% momentarily with the power of Talisman.
 	-->
-	<skill id="21477" levels="4" name="Power of Abundance">
+	<skill id="21477" levels="4" name="Power of Abundance - Lv. 4">
 		<table name="#allStats"> 15 16 17 20 </table>
 		<table name="#name">Power of Abundance - Lv. 1;Power of Abundance - Lv. 2;Power of Abundance - Lv. 3;Power of Abundance - Lv. 4</table>
 		<set name="name" val="#name" />
@@ -4597,6 +4574,50 @@
 				<addPercent stat="mCritRate" val="#allStats" />
 			</abnormal>
 		</for>
+	</skill>
+	<!-- Removes the Agathion's seal. -->
+	<skill id="21478" levels="1" name="Release Agathion's Seal - Griffin">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<!-- Teleport to the Town of Aden. Usable only when Agathion's Seal is released. -->
+	<skill id="21479" levels="1" name="Griffin Teleport - Town of Aden">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<!-- Teleport to the Town of Rune. Usable only when Agathion's Seal is released. -->
+	<skill id="21480" levels="1" name="Griffin Teleport - Town of Rune">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<!-- Teleport to the Town of Giran. Usable only when Agathion's Seal is released. -->
+	<skill id="21481" levels="1" name="Griffin Teleport - Town of Giran">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<skill id="21482" levels="1" name="Blessed Griffin Agathion's Egg">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2700" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="-1000" />
+	</skill>
+	<skill id="21483" levels="1" name="Blessed Griffin Egg">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="21618" levels="1" name="Ready Burst">
 		<set name="target" val="TARGET_NONE" />

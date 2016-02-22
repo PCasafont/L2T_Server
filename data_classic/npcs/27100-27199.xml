@@ -1,7 +1,7 @@
 <list>
-	<npc id="27100" name="Skeleton Mercenary" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" rHand="69" collisionRadius="10.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27100" name="Skeleton Mercenary" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" rHand="69" collisionRadius="10.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -14,9 +14,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27101" name="Dre Vanul Prince Zeruel" title="Quest Monster" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="1050.8165" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27101" name="Dre Vanul Prince Zeruel" title="Quest Monster" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="1050.8165" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -27,9 +27,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27102" name="Pako the Cat" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27102" name="Pako the Cat" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -40,9 +40,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27103" name="Racer the Unicorn" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="11.0" collisionHeight="18.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27103" name="Racer the Unicorn" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="11.0" collisionHeight="18.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -53,9 +53,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27104" name="Shadow Turen" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="955.7456" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.42535" baseMAtk="113.4007" basePDef="157.38919" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27104" name="Shadow Turen" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="955.7456" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.42535" baseMAtk="113.4007" basePDef="157.38919" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -66,9 +66,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27105" name="Mimi the Cat" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="955.7456" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.42535" baseMAtk="113.4007" basePDef="157.38919" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27105" name="Mimi the Cat" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="955.7456" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.42535" baseMAtk="113.4007" basePDef="157.38919" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -79,9 +79,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27106" name="Phantasm the Unicorn" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="13.0" collisionHeight="17.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27106" name="Phantasm the Unicorn" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="13.0" collisionHeight="17.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -92,9 +92,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27107" name="Silhouette Tilfo" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27107" name="Silhouette Tilfo" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -107,9 +107,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27108" name="Stenoa Gorgon Queen" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="120.0" aggroRange="300" rHand="127" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27108" name="Stenoa Gorgon Queen" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="120.0" aggroRange="300" rHand="127" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<minion npcId="27109" min="1" max="1" /> <!-- Handmaiden of Stenoa -->
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -121,9 +121,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27109" name="Handmaiden of Stenoa" title="Quest Monster" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27109" name="Handmaiden of Stenoa" title="Quest Monster" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -134,9 +134,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27110" name="Shyslassys" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27110" name="Shyslassys" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<minion npcId="27111" min="3" max="5" /> <!-- Cave Basilisk -->
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -148,9 +148,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27111" name="Cave Basilisk" title="Quest Monster" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="604.08417" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="54.0" aggroRange="300" collisionRadius="34.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27111" name="Cave Basilisk" title="Quest Monster" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="604.08417" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="54.0" aggroRange="300" collisionRadius="34.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -161,9 +161,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27112" name="Gorr" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.65114" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27112" name="Gorr" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.65114" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -174,9 +174,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27113" name="Baraham" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.65114" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27113" name="Baraham" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.65114" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<minion npcId="27111" min="3" max="6" /> <!-- Cave Basilisk -->
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -188,9 +188,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27114" name="Succubus Queen" title="Quest Monster" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clan="demonic_clan" clanRange="300">
+	<npc id="27114" name="Succubus Queen" title="Quest Monster" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clan="demonic_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -203,9 +203,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27115" name="Claw Of Succubus" title="Quest Monster" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="88.59461" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clan="demonic_clan" clanRange="300">
+	<npc id="27115" name="Claw Of Succubus" title="Quest Monster" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="88.59461" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clan="demonic_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -218,9 +218,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27116" name="Lava Salamander" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="64.0" baseRunSpd="96.0" randomWalk="true" aggroRange="300" collisionRadius="16.0" collisionHeight="6.699999809265137"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="elemental3_clan" clanRange="300">
+	<npc id="27116" name="Lava Salamander" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="64.0" baseRunSpd="96.0" randomWalk="true" aggroRange="300" collisionRadius="16.0" collisionHeight="6.699999809265137">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="elemental3_clan" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -231,9 +231,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27117" name="Nahir" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27117" name="Nahir" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="129.32895" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -246,9 +246,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27118" name="Black Willow" title="Quest Monster" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="604.08417" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="101.90649" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="55.0" randomWalk="true" aggroRange="300" collisionRadius="35.0" collisionHeight="80.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27118" name="Black Willow" title="Quest Monster" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="604.08417" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="101.90649" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="55.0" randomWalk="true" aggroRange="300" collisionRadius="35.0" collisionHeight="80.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -262,9 +262,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27119" name="Spirit of Sir Herod" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="797.68207" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.50371" baseMAtk="88.31491" basePDef="141.14313" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="69" collisionRadius="11.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="skeleton_clan" clanRange="300">
+	<npc id="27119" name="Spirit of Sir Herod" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="797.68207" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.50371" baseMAtk="88.31491" basePDef="141.14313" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="69" collisionRadius="11.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="skeleton_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -278,9 +278,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4037" level="2" /> <!-- Weakness -->
 	</npc>
-	<npc id="27120" name="Luelle of the Zephyr Winds" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="60.0" randomWalk="true" aggroRange="300" collisionRadius="11.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="elemental2_clan" clanRange="300">
+	<npc id="27120" name="Luelle of the Zephyr Winds" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="60.0" randomWalk="true" aggroRange="300" collisionRadius="11.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="elemental2_clan" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -292,9 +292,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4037" level="2" /> <!-- Weakness -->
 	</npc>
-	<npc id="27121" name="Actea of the Verdant Wilds" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="9.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="elemental1_clan" clanRange="300">
+	<npc id="27121" name="Actea of the Verdant Wilds" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="9.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="elemental1_clan" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -305,9 +305,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27122" name="Leto Lizardman Agent" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="797.68207" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.50371" baseMAtk="88.31491" basePDef="141.14313" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="1" collisionRadius="11.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27122" name="Leto Lizardman Agent" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="797.68207" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="133.50371" baseMAtk="88.31491" basePDef="141.14313" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="1" collisionRadius="11.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -318,9 +318,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27123" name="Leto Lizardman Captain" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="66" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27123" name="Leto Lizardman Captain" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="914.7031" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.26561" baseMAtk="106.67987" basePDef="153.23462" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="66" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -331,9 +331,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27124" name="Leto Lizardman Assassin" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="217" collisionRadius="11.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27124" name="Leto Lizardman Assassin" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="217" collisionRadius="11.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -344,9 +344,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27125" name="Leto Lizardman Sniper" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="500" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="306.3353" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="150.0" randomWalk="true" aggroRange="300" rHand="14" collisionRadius="11.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27125" name="Leto Lizardman Sniper" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="500" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="306.3353" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="150.0" randomWalk="true" aggroRange="300" rHand="14" collisionRadius="11.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -357,9 +357,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="9" /> <!-- Bow -->
 	</npc>
-	<npc id="27126" name="Leto Lizardman Wizard" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27126" name="Leto Lizardman Wizard" title="Quest Monster" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="925.85876" baseHpReg="4.5" baseMpMax="463.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.67123" baseMAtk="113.4007" basePDef="152.46753" baseMDef="111.569115" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -371,9 +371,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4002" level="3" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="27127" name="Leto Lizardman Lord" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="1063.2357" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="53.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="20.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="lizardman_clan" clanRange="300">
+	<npc id="27127" name="Leto Lizardman Lord" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="1063.2357" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="53.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="20.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -384,9 +384,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27128" name="Aruraune" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="26.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27128" name="Aruraune" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="997.7792" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="182.05373" baseMAtk="120.43155" basePDef="161.6038" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="26.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -397,9 +397,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27129" name="Ol Mahum Inspector" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="886.09973" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.845" baseMAtk="106.67987" basePDef="148.44287" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27129" name="Ol Mahum Inspector" title="Quest Monster" level="38" type="L2Monster" baseAtkRange="40" baseHpMax="886.09973" baseHpReg="4.5" baseMpMax="447.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="171.845" baseMAtk="106.67987" basePDef="148.44287" baseMDef="108.62405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -410,9 +410,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27130" name="Ol Mahum Betrayer" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="12" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27130" name="Ol Mahum Betrayer" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="12" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -423,9 +423,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27131" name="Crimson Werewolf" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="835.658" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="142.31496" baseMAtk="94.1437" basePDef="145.11049" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="31.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="23.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="werewolf_clan" clanRange="300">
+	<npc id="27131" name="Crimson Werewolf" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="835.658" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="142.31496" baseMAtk="94.1437" basePDef="145.11049" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="31.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="23.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="werewolf_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -436,9 +436,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27132" name="Krudel Lizardman" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="80" baseHpMax="835.658" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="166.08156" baseMAtk="94.1437" basePDef="145.11049" baseMDef="102.86506" basePAtkSpd="217" baseCritRate="1" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="291" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="elemental1_clan" clanRange="300">
+	<npc id="27132" name="Krudel Lizardman" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="80" baseHpMax="835.658" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="166.08156" baseMAtk="94.1437" basePDef="145.11049" baseMDef="102.86506" basePAtkSpd="217" baseCritRate="1" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="291" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="elemental1_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -449,9 +449,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="11" /> <!-- Spear -->
 	</npc>
-	<npc id="27133" name="Evil Eye Lord" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27133" name="Evil Eye Lord" title="Quest Monster" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="847.31757" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="161.50845" baseMAtk="100.26304" basePDef="144.47758" baseMDef="105.72243" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -462,9 +462,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27134" name="Tatoma" title="Quest Monster" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="orc_clan" clanRange="300">
+	<npc id="27134" name="Tatoma" title="Quest Monster" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -475,9 +475,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27135" name="Grima" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="336.10397" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="170.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27135" name="Grima" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="336.10397" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="170.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -488,9 +488,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27136" name="Succubus of Seduction" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27136" name="Succubus of Seduction" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -503,9 +503,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27137" name="Demon King" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="42630.03" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27137" name="Demon King" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="42630.03" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -518,9 +518,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27138" name="Great Demon King" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="96662.02" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="1588.4402" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="127" collisionRadius="14.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27138" name="Great Demon King" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="96662.02" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="1588.4402" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="127" collisionRadius="14.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -533,9 +533,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27139" name="Secret Keeper Tree" title="Quest Monster" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="1404.19" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="261.6955" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="12.0" baseRunSpd="12.0" randomWalk="true" aggroRange="300" collisionRadius="23.0" collisionHeight="90.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27139" name="Secret Keeper Tree" title="Quest Monster" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="1404.19" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="261.6955" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="12.0" baseRunSpd="12.0" randomWalk="true" aggroRange="300" collisionRadius="23.0" collisionHeight="90.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -548,9 +548,9 @@
 		<skill id="4277" level="5" /> <!-- Poison Resistance -->
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
 	</npc>
-	<npc id="27140" name="Breka Prefect Haka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27140" name="Breka Prefect Haka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -562,9 +562,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="27141" name="Breka Prefect Jaka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27141" name="Breka Prefect Jaka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -576,9 +576,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="27142" name="Breka Prefect Marka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27142" name="Breka Prefect Marka" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="890.479" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -590,9 +590,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="27143" name="Windsus Aleph" title="Quest Monster" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="1050.8165" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="35.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27143" name="Windsus Aleph" title="Quest Monster" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="1050.8165" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="35.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -603,9 +603,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27144" name="Tarlk Raider Athu" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27144" name="Tarlk Raider Athu" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -616,9 +616,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27145" name="Tarlk Raider Lanka" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27145" name="Tarlk Raider Lanka" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -629,9 +629,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27146" name="Tarlk Raider Triska" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27146" name="Tarlk Raider Triska" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -642,9 +642,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27147" name="Tarlk Raider Motura" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27147" name="Tarlk Raider Motura" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -655,9 +655,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27148" name="Tarlk Raider Kalath" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27148" name="Tarlk Raider Kalath" title="Quest Monster" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="15.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -668,9 +668,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27149" name="Gremlin Filcher" title="Quest Monster" level="12" type="L2Monster" baseAtkRange="40" baseHpMax="199.62321" baseHpReg="2.5" baseMpMax="124.48" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="22.996058" baseMAtk="15.703326" basePDef="66.32989" baseMDef="48.53733" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="50.0" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27149" name="Gremlin Filcher" title="Quest Monster" level="12" type="L2Monster" baseAtkRange="40" baseHpMax="199.62321" baseHpReg="2.5" baseMpMax="124.48" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="22.996058" baseMAtk="15.703326" basePDef="66.32989" baseMDef="48.53733" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="50.0" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -681,9 +681,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27150" name="Black Legion Stormtrooper" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="210.04832" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.76505" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="217" collisionRadius="11.0" collisionHeight="28.5" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27150" name="Black Legion Stormtrooper" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="210.04832" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.76505" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="217" collisionRadius="11.0" collisionHeight="28.5">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -696,9 +696,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27151" name="Delu Lizardman Headhunter" title="Quest Monster" level="28" type="L2Monster" baseAtkRange="1100" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="80.54056" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2507" collisionRadius="10.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27151" name="Delu Lizardman Headhunter" title="Quest Monster" level="28" type="L2Monster" baseAtkRange="1100" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="80.54056" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2507" collisionRadius="10.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -709,9 +709,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="9" /> <!-- Bow -->
 	</npc>
-	<npc id="27152" name="Marsh Stakato Marquess" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="130.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="15.0" collisionHeight="37.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27152" name="Marsh Stakato Marquess" title="Quest Monster" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="130.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="15.0" collisionHeight="37.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -723,9 +723,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
 	</npc>
-	<npc id="27153" name="Alexandro Sanches" title="Dark Lord" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="57.54874" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="10.24492" baseMAtk="6.99595" basePDef="47.91652" baseMDef="35.06323" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="31" earthRes="20" holyRes="20" darkRes="110"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27153" name="Alexandro Sanches" title="Dark Lord" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="57.54874" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="10.24492" baseMAtk="6.99595" basePDef="47.91652" baseMDef="35.06323" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="10.0" collisionHeight="24.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="31" earthDef="20" holyDef="20" darkDef="110" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -740,9 +740,9 @@
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 		<skill id="4281" level="1" /> <!-- Wind Attack Vulnerability -->
 	</npc>
-	<npc id="27154" name="Bonaparterius" title="Abyss King" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="63.303608" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="10.244915" baseMAtk="6.9959493" basePDef="47.916523" baseMDef="35.063232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="4" collisionRadius="10.0" collisionHeight="15.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="110"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27154" name="Bonaparterius" title="Abyss King" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="63.303608" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="10.244915" baseMAtk="6.9959493" basePDef="47.916523" baseMDef="35.063232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="4" collisionRadius="10.0" collisionHeight="15.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="110" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -755,9 +755,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27155" name="Ramsebalius" title="Evil Overlord" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="57.548737" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="11.269406" baseMAtk="6.9959493" basePDef="47.916523" baseMDef="35.063232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="2" collisionRadius="12.0" collisionHeight="21.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="110"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27155" name="Ramsebalius" title="Evil Overlord" level="3" type="L2Monster" baseAtkRange="40" baseHpMax="57.548737" baseHpReg="2.0" baseMpMax="54.64" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="11.269406" baseMAtk="6.9959493" basePDef="47.916523" baseMDef="35.063232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="2" collisionRadius="12.0" collisionHeight="21.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="110" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -770,9 +770,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27156" name="Leto Shaman Ketz" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="159" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300">
+	<npc id="27156" name="Leto Shaman Ketz" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="966.57794" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="159" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -785,9 +785,9 @@
 		<skill id="4151" level="4" /> <!-- Wind Strike -->
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 	</npc>
-	<npc id="27157" name="Leto Chief Narak" title="Quest Monster" level="41" type="L2Monster" baseAtkRange="40" baseHpMax="1109.0616" baseHpReg="5.5" baseMpMax="504.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="187.11877" baseMAtk="127.77787" basePDef="160.69002" baseMDef="117.58598" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="53.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="221" collisionRadius="20.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27157" name="Leto Chief Narak" title="Quest Monster" level="41" type="L2Monster" baseAtkRange="40" baseHpMax="1109.0616" baseHpReg="5.5" baseMpMax="504.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="187.11877" baseMAtk="127.77787" basePDef="160.69002" baseMDef="117.58598" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="53.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="221" collisionRadius="20.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -798,9 +798,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27158" name="Timak Raider Captain Kaikee" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="231.05315" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27158" name="Timak Raider Captain Kaikee" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="231.05315" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="66" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -811,9 +811,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27159" name="Timak Prefect Okun" title="Quest Monster" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1229.7867" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="272.85785" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="127" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27159" name="Timak Prefect Okun" title="Quest Monster" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1229.7867" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="272.85785" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="127" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -824,9 +824,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27160" name="Gok Magok" title="Grandis Chief" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1203.7184" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="210.04831" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="37.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27160" name="Gok Magok" title="Grandis Chief" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1203.7184" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="210.04831" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="37.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -837,9 +837,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27161" name="Taik Prefect Kakran" title="Quest Monster" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1183.8059" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="36.0" baseRunSpd="170.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27161" name="Taik Prefect Kakran" title="Quest Monster" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1183.8059" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="36.0" baseRunSpd="170.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -850,9 +850,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27162" name="Hatar Chieftain Kubel" title="Quest Monster" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="337.18866" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27162" name="Hatar Chieftain Kubel" title="Quest Monster" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="337.18866" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -863,9 +863,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27163" name="Vanor Elder Kerunos" title="Quest Monster" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="179" collisionRadius="13.0" collisionHeight="31.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27163" name="Vanor Elder Kerunos" title="Quest Monster" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="160.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="179" collisionRadius="13.0" collisionHeight="31.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -876,9 +876,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27164" name="Karul Chief Orooto" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="231.05315" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="17.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27164" name="Karul Chief Orooto" title="Quest Monster" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="1094.2894" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="231.05315" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="88" collisionRadius="17.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -889,9 +889,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27165" name="Abyssal Jewel 1" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27165" name="Abyssal Jewel 1" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -902,9 +902,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27166" name="Abyssal Jewel 2" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27166" name="Abyssal Jewel 2" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -915,9 +915,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27167" name="Abyssal Jewel 3" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27167" name="Abyssal Jewel 3" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="42531.29" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="165.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="52.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -928,9 +928,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27168" name="Jewel Guardian Mara" title="Quest Monster" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1570.8463" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="389.082" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="53"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27168" name="Jewel Guardian Mara" title="Quest Monster" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1570.8463" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="389.082" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -941,9 +941,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27169" name="Jewel Guardian Musfel" title="Quest Monster" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1570.8463" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="53"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27169" name="Jewel Guardian Musfel" title="Quest Monster" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1570.8463" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="36.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -954,9 +954,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27170" name="Jewel Guardian Pyton" title="Quest Monster" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="2011.5509" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300">
+	<npc id="27170" name="Jewel Guardian Pyton" title="Quest Monster" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="2011.5509" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="abyss_jewel_clan" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -967,9 +967,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27171" name="Ghost of Offering" title="Quest Monster" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="48.761486" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="11.0" collisionHeight="20.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="-5" earthRes="20" holyRes="-32" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27171" name="Ghost of Offering" title="Quest Monster" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="48.761486" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="11.0" collisionHeight="20.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="-5" earthDef="20" holyDef="-32" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -984,9 +984,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4281" level="1" /> <!-- Wind Attack Vulnerability -->
 	</npc>
-	<npc id="27172" name="Harit Lizardman Zealot" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27172" name="Harit Lizardman Zealot" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -997,9 +997,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27173" name="Box Of Athrea 1" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="400.4769" baseMDef="73.2629" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27173" name="Box Of Athrea 1" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="400.4769" baseMDef="73.2629" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1010,9 +1010,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27174" name="Box Of Athrea 2" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="100.119225" baseMDef="293.0516" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27174" name="Box Of Athrea 2" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="100.119225" baseMDef="293.0516" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1023,9 +1023,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27175" name="Box Of Athrea 3" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="3126.2021" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27175" name="Box Of Athrea 3" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="3126.2021" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23845" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1036,9 +1036,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27176" name="Box Of Athrea 4" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="400.4769" baseMDef="293.0516" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27176" name="Box Of Athrea 4" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="400.4769" baseMDef="293.0516" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1049,9 +1049,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27177" name="Box Of Athrea 5" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="100.119225" baseMDef="73.2629" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="27177" name="Box Of Athrea 5" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1563.1011" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="305.54907" baseMAtk="208.6504" basePDef="100.119225" baseMDef="73.2629" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggroRange="300" collisionRadius="12.0" collisionHeight="9.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="19" /> <!-- Misc. -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1062,9 +1062,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27178" name="Blitz Wyrm" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="-1" clanRange="300">
+	<npc id="27178" name="Blitz Wyrm" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="529.48004" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="-1" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1075,9 +1075,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27179" name="Grave Keymaster" title="Quest Monster" level="65" type="L2Monster" baseAtkRange="40" baseHpMax="2193.4314" baseHpReg="7.5" baseMpMax="1188.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="582.81757" baseMAtk="397.98886" basePDef="271.89032" baseMDef="198.95753" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="140.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="16.0" collisionHeight="50.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="grave_guard_clan" clanRange="300">
+	<npc id="27179" name="Grave Keymaster" title="Quest Monster" level="65" type="L2Monster" baseAtkRange="40" baseHpMax="2193.4314" baseHpReg="7.5" baseMpMax="1188.8" baseMpReg="2.7" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="582.81757" baseMAtk="397.98886" basePDef="271.89032" baseMDef="198.95753" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="140.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="16.0" collisionHeight="50.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="grave_guard_clan" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1091,9 +1091,9 @@
 		<skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
 		<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
 	</npc>
-	<npc id="27180" name="Imperial Slave" title="Quest Monster" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="5691.454" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="405.96454" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="10.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="21.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="grave_keeper_clan" clanRange="300">
+	<npc id="27180" name="Imperial Slave" title="Quest Monster" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="5691.454" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="405.96454" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="10.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="21.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="grave_keeper_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1106,9 +1106,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27181" name="Imperial Gravekeeper" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="57997.215" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" aggroRange="300" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="grave_keeper_clan" clanRange="300">
+	<npc id="27181" name="Imperial Gravekeeper" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="57997.215" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21959" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" aggroRange="300" rHand="1472" collisionRadius="15.0" collisionHeight="45.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="grave_keeper_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1121,9 +1121,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27182" name="Ark Guardian Elberoth" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="200.0" randomWalk="true" aggroRange="300" rHand="6370" collisionRadius="15.0" collisionHeight="80.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="-13"
-			aiType="fighter" skillChance="15" clanRange="100">
+	<npc id="27182" name="Ark Guardian Elberoth" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="200.0" randomWalk="true" aggroRange="300" rHand="6370" collisionRadius="15.0" collisionHeight="80.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="53" darkDef="-13" />
+		<ai type="fighter" skillChance="15" clanRange="100" />
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1137,9 +1137,9 @@
 		<skill id="4085" level="1" /> <!-- Critical Damage -->
 		<skill id="4086" level="1" /> <!-- Critical Chance -->
 	</npc>
-	<npc id="27183" name="Ark Guardian Shadowfang" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="1100" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" rHand="288" collisionRadius="13.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="-13"
-			aiType="archer" skillChance="15" clanRange="100">
+	<npc id="27183" name="Ark Guardian Shadowfang" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="1100" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" rHand="288" collisionRadius="13.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="53" darkDef="-13" />
+		<ai type="archer" skillChance="15" clanRange="100" />
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1153,9 +1153,9 @@
 		<skill id="4085" level="1" /> <!-- Critical Damage -->
 		<skill id="4086" level="1" /> <!-- Critical Chance -->
 	</npc>
-	<npc id="27184" name="Angel Killer" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="200.0" aggroRange="300" rHand="130" collisionRadius="21.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="184"
-			aiType="balanced" skillChance="15" clanRange="100">
+	<npc id="27184" name="Angel Killer" title="Quest Monster" level="60" type="L2Monster" baseAtkRange="40" baseHpMax="1933.2405" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="200.0" aggroRange="300" rHand="130" collisionRadius="21.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="184" />
+		<ai type="balanced" skillChance="15" clanRange="100" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1171,9 +1171,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27185" name="Fairy Tree of Wind" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100">
+	<npc id="27185" name="Fairy Tree of Wind" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1185,9 +1185,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 	</npc>
-	<npc id="27186" name="Fairy Tree of Star" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100">
+	<npc id="27186" name="Fairy Tree of Star" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1199,9 +1199,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 	</npc>
-	<npc id="27187" name="Twilight Fairy Tree" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100">
+	<npc id="27187" name="Twilight Fairy Tree" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1213,9 +1213,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 	</npc>
-	<npc id="27188" name="Fairy Tree of Abyss" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0"
-			fireRes="-13" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100">
+	<npc id="27188" name="Fairy Tree of Abyss" title="Quest Monster" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="388.11142" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="1.0" aggroRange="300" collisionRadius="35.0" collisionHeight="90.0">
+		<elementals fireDef="-13" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1227,9 +1227,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 	</npc>
-	<npc id="27189" name="Soul of Tree Guardian" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23843" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="7.0" collisionHeight="21.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100">
+	<npc id="27189" name="Soul of Tree Guardian" title="Quest Monster" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23843" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" aggroRange="300" collisionRadius="7.0" collisionHeight="21.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clan="q421_tree_clan" clanRange="100" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="9" /> <!-- HP Increase (1/2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1242,9 +1242,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27190" name="Ol Mahum Support Troop" title="Quest Monster" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="487.5704" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="69.75926" baseMAtk="47.63653" basePDef="105.02818" baseMDef="76.85506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="150.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="orc_clan" clanRange="200">
+	<npc id="27190" name="Ol Mahum Support Troop" title="Quest Monster" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="487.5704" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="69.75926" baseMAtk="47.63653" basePDef="105.02818" baseMDef="76.85506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="150.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="orc_clan" clanRange="200" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1256,9 +1256,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="2" /> <!-- Power Strike -->
 	</npc>
-	<npc id="27191" name="Malcom" title="Quest Monster" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="64.83203" baseMAtk="44.27187" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="159.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="100">
+	<npc id="27191" name="Malcom" title="Quest Monster" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="64.83203" baseMAtk="44.27187" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="159.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="100" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1270,9 +1270,9 @@
 		<skill id="4415" level="19" /> <!-- Dualsword -->
 		<skill id="4073" level="2" /> <!-- Stun -->
 	</npc>
-	<npc id="27192" name="Succubus Handmaiden" title="Quest Monster" level="18" type="L2Monster" baseAtkRange="40" baseHpMax="301.66623" baseHpReg="2.5" baseMpMax="174.64" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="37.82932" baseMAtk="25.83252" basePDef="81.34791" baseMDef="59.52687" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="134.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="200">
+	<npc id="27192" name="Succubus Handmaiden" title="Quest Monster" level="18" type="L2Monster" baseAtkRange="40" baseHpMax="301.66623" baseHpReg="2.5" baseMpMax="174.64" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="37.82932" baseMAtk="25.83252" basePDef="81.34791" baseMDef="59.52687" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="134.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="200" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1288,9 +1288,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27193" name="Goblin Servant" title="Quest Monster" level="12" type="L2Monster" baseAtkRange="40" baseHpMax="199.62321" baseHpReg="2.5" baseMpMax="124.48" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="22.99606" baseMAtk="15.70333" basePDef="66.32989" baseMDef="48.53733" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="16.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="200">
+	<npc id="27193" name="Goblin Servant" title="Quest Monster" level="12" type="L2Monster" baseAtkRange="40" baseHpMax="199.62321" baseHpReg="2.5" baseMpMax="124.48" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="22.99606" baseMAtk="15.70333" basePDef="66.32989" baseMDef="48.53733" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="16.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="200" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1301,9 +1301,9 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="27194" name="Julie the Ripper" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="488.16446" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="22.0" baseRunSpd="174.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="5129" lHand="5129" collisionRadius="6.0" collisionHeight="12.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-5" darkRes="184"
-			aiType="fighter" skillChance="15" clanRange="100">
+	<npc id="27194" name="Julie the Ripper" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="488.16446" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="22.0" baseRunSpd="174.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="5129" lHand="5129" collisionRadius="6.0" collisionHeight="12.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-5" darkDef="184" />
+		<ai type="fighter" skillChance="15" clanRange="100" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1319,9 +1319,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="27195" name="Noble Ant" title="Quest Monster" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57727" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="150.0" aggroRange="300" collisionRadius="20.0" collisionHeight="48.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="200">
+	<npc id="27195" name="Noble Ant" title="Quest Monster" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57727" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="150.0" aggroRange="300" collisionRadius="20.0" collisionHeight="48.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="200" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1333,9 +1333,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4279" level="1" /> <!-- Fire Vulnerability -->
 	</npc>
-	<npc id="27196" name="Bluebacked Alligator" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="488.16446" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="28.0" collisionHeight="11.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="croc_clan" clanRange="200">
+	<npc id="27196" name="Bluebacked Alligator" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="488.16446" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="28.0" collisionHeight="11.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="croc_clan" clanRange="200" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1348,9 +1348,9 @@
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 		<skill id="4073" level="4" /> <!-- Stun -->
 	</npc>
-	<npc id="27197" name="Bejeweled Alligator" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="325.44296" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="28.0" collisionHeight="11.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="croc_clan" clanRange="200">
+	<npc id="27197" name="Bejeweled Alligator" title="Quest Monster" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="325.44296" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="176.36076" baseMAtk="120.43155" basePDef="156.55035" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggressive="true" aggroRange="300" collisionRadius="28.0" collisionHeight="11.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="croc_clan" clanRange="200" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1363,9 +1363,9 @@
 		<skill id="4071" level="5" /> <!-- Bow/Crossbow Resistance -->
 		<skill id="4073" level="4" /> <!-- Stun -->
 	</npc>
-	<npc id="27199" name="Crimson Werewolf" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="26.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="werewolf_clan" clanRange="300">
+	<npc id="27199" name="Crimson Werewolf" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="40" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="26.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="werewolf_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

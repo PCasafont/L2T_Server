@@ -1,7 +1,7 @@
 <list>
-	<npc id="20200" name="Strain" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="109.141846" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20200" name="Strain" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="109.141846" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -32,9 +32,9 @@
 			<itemDrop itemId="737" min="1" max="1" chance="3.015" /> <!-- Scroll of Resurrection -->
 		</dropCategory>
 	</npc>
-	<npc id="20201" name="Ghoul" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1229" sp="69" basePAtk="116.78178" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="15.0" randomWalk="true" aggroRange="300" collisionRadius="13.0" collisionHeight="21.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20201" name="Ghoul" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1229" sp="69" basePAtk="116.78178" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="15.0" randomWalk="true" aggroRange="300" collisionRadius="13.0" collisionHeight="21.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -66,9 +66,9 @@
 			<itemDrop itemId="955" min="1" max="1" chance="0.1517" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20202" name="Corpse Tracker" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="121.208015" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="10.0" collisionHeight="33.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20202" name="Corpse Tracker" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="121.208015" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="10.0" collisionHeight="33.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -96,9 +96,9 @@
 			<itemDrop itemId="2274" min="1" max="1" chance="0.2358" /> <!-- Recipe: Skull Breaker -->
 		</dropCategory>
 	</npc>
-	<npc id="20203" name="Dion Grizzly" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="376.76398" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" ssChance="30" spsChance="30" clanRange="300">
+	<npc id="20203" name="Dion Grizzly" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="376.76398" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" ssChance="30" spsChance="30" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -124,9 +124,9 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.4119" /> <!-- Corroded Coarse Bone Powder -->
 		</dropCategory>
 	</npc>
-	<npc id="20204" name="Bloody Bee" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="762" sp="37" basePAtk="61.42538" baseMAtk="38.132336" basePDef="95.64976" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="8.0" collisionHeight="25.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20204" name="Bloody Bee" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="762" sp="37" basePAtk="61.42538" baseMAtk="38.132336" basePDef="95.64976" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="8.0" collisionHeight="25.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -156,9 +156,9 @@
 			<itemDrop itemId="956" min="1" max="1" chance="1.0901" /> <!-- Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20205" name="Dire Wolf" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="435.34436" baseHpReg="3.5" baseMpMax="245.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="772" sp="38" basePAtk="66.21656" baseMAtk="41.10666" basePDef="98.70919" baseMDef="72.2311" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="24.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="15.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="wolf_clan" clanRange="300">
+	<npc id="20205" name="Dire Wolf" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="435.34436" baseHpReg="3.5" baseMpMax="245.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="772" sp="38" basePAtk="66.21656" baseMAtk="41.10666" basePDef="98.70919" baseMDef="72.2311" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="24.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="15.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="wolf_clan" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -185,9 +185,9 @@
 			<itemDrop itemId="1341" min="20" max="39" chance="50.9653" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20206" name="Cardiff Werewolf" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="71.31523" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="31.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="23.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20206" name="Cardiff Werewolf" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="71.31523" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="31.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="23.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -214,9 +214,9 @@
 			<itemDrop itemId="2152" min="1" max="1" chance="6.0746" /> <!-- Recipe: Magic Necklace -->
 		</dropCategory>
 	</npc>
-	<npc id="20207" name="Ol Mahum Guerilla" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="975.1408" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1622" sp="82" basePAtk="69.75926" baseMAtk="47.636536" basePDef="115.531" baseMDef="76.855064" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="2" lHand="19" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20207" name="Ol Mahum Guerilla" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="975.1408" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1622" sp="82" basePAtk="69.75926" baseMAtk="47.636536" basePDef="115.531" baseMDef="76.855064" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="2" lHand="19" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -241,9 +241,9 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="4" /> <!-- Corroded Steel -->
 		</dropCategory>
 	</npc>
-	<npc id="20208" name="Ol Mahum Raider" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="1133.3928" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1706" sp="87" basePAtk="74.99121" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="10" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20208" name="Ol Mahum Raider" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="1133.3928" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1706" sp="87" basePAtk="74.99121" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="10" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -271,9 +271,9 @@
 			<itemDrop itemId="2180" min="1" max="1" chance="2.9198" /> <!-- Recipe: Scale Mail -->
 		</dropCategory>
 	</npc>
-	<npc id="20209" name="Ol Mahum Sniper" level="28" type="L2Monster" baseAtkRange="500" baseHpMax="1087.5916" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1811" sp="95" basePAtk="196.85724" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20209" name="Ol Mahum Sniper" level="28" type="L2Monster" baseAtkRange="500" baseHpMax="1087.5916" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1811" sp="95" basePAtk="196.85724" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -301,9 +301,9 @@
 			<itemDrop itemId="1341" min="20" max="79" chance="47.9617" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20210" name="Ol Mahum Lieutenant" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="1146.8583" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1909" sp="102" basePAtk="86.42002" baseMAtk="59.01367" basePDef="126.50658" baseMDef="84.15638" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="68" lHand="19" collisionRadius="13.5" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20210" name="Ol Mahum Lieutenant" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="1146.8583" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1909" sp="102" basePAtk="86.42002" baseMAtk="59.01367" basePDef="126.50658" baseMDef="84.15638" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="68" lHand="19" collisionRadius="13.5" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -331,9 +331,9 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="4" /> <!-- Corroded Steel -->
 		</dropCategory>
 	</npc>
-	<npc id="20211" name="Ol Mahum Captain" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="1208.1683" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2007" sp="110" basePAtk="101.90649" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="19" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20211" name="Ol Mahum Captain" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="1208.1683" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2007" sp="110" basePAtk="101.90649" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="19" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -368,9 +368,9 @@
 			<itemDrop itemId="1798" min="1" max="1" chance="28.169" /> <!-- Recipe: Leather Helmet -->
 		</dropCategory>
 	</npc>
-	<npc id="20212" name="Bloody Axe Turmak" title="Ol Mahum Lord" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="1473.9236" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2578" sp="151" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" lHand="19" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20212" name="Bloody Axe Turmak" title="Ol Mahum Lord" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="1473.9236" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2578" sp="151" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="69" lHand="19" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -382,9 +382,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4033" level="3" /> <!-- Aura Burn -->
 	</npc>
-	<npc id="20213" name="Porta" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="2126.4714" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3568" sp="231" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="23.0" baseRunSpd="23.0" randomWalk="true" aggroRange="300" collisionRadius="20.0" collisionHeight="31.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300">
+	<npc id="20213" name="Porta" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="2126.4714" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3568" sp="231" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="23.0" baseRunSpd="23.0" randomWalk="true" aggroRange="300" collisionRadius="20.0" collisionHeight="31.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -420,9 +420,9 @@
 			<itemDrop itemId="2147" min="1" max="1" chance="34.8838" /> <!-- Recipe: Corroded Blacksmith' frame -->
 		</dropCategory>
 	</npc>
-	<npc id="20214" name="Excuro" level="41" type="L2Monster" baseAtkRange="40" baseHpMax="2016.4756" baseHpReg="5.5" baseMpMax="504.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3749" sp="246" basePAtk="187.11877" baseMAtk="127.77787" basePDef="176.75902" baseMDef="117.58598" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="11.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20214" name="Excuro" level="41" type="L2Monster" baseAtkRange="40" baseHpMax="2016.4756" baseHpReg="5.5" baseMpMax="504.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3749" sp="246" basePAtk="187.11877" baseMAtk="127.77787" basePDef="176.75902" baseMDef="117.58598" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="11.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -457,9 +457,9 @@
 			<itemDrop itemId="2291" min="1" max="1" chance="0.4794" /> <!-- Recipe: Scallop Jamadhr -->
 		</dropCategory>
 	</npc>
-	<npc id="20215" name="Mordeo" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="2101.633" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3934" sp="262" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="14.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20215" name="Mordeo" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="2101.633" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3934" sp="262" basePAtk="218.1805" baseMAtk="135.44455" basePDef="164.88513" baseMDef="120.655785" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="14.0" collisionHeight="14.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -486,9 +486,9 @@
 			<itemDrop itemId="735" min="1" max="1" chance="37.7018" /> <!-- Haste Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20216" name="Ricenseo" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="2188.5789" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4123" sp="279" basePAtk="210.04831" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0"
-			fireRes="20" waterRes="20" windRes="-5" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20216" name="Ricenseo" level="43" type="L2Monster" baseAtkRange="40" baseHpMax="2188.5789" baseHpReg="5.5" baseMpMax="557.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4123" sp="279" basePAtk="210.04831" baseMAtk="143.43578" basePDef="169.13417" baseMDef="123.765045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0">
+		<elementals fireDef="20" waterDef="20" windDef="-5" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -533,9 +533,9 @@
 			<itemDrop itemId="2205" min="1" max="1" chance="1.9296" /> <!-- Recipe: Chain Gaiters -->
 		</dropCategory>
 	</npc>
-	<npc id="20217" name="Krator" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="2277.2585" baseHpReg="5.5" baseMpMax="584.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4317" sp="296" basePAtk="222.23112" baseMAtk="151.75505" basePDef="190.77907" baseMDef="126.91259" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="23.0" baseRunSpd="23.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="20.0" collisionHeight="31.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300">
+	<npc id="20217" name="Krator" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="2277.2585" baseHpReg="5.5" baseMpMax="584.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4317" sp="296" basePAtk="222.23112" baseMAtk="151.75505" basePDef="190.77907" baseMDef="126.91259" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="23.0" baseRunSpd="23.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="20.0" collisionHeight="31.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -582,9 +582,9 @@
 			<itemDrop itemId="1343" min="20" max="119" chance="35.9628" /> <!-- Silver Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20218" name="Premo" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="2367.6118" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5022" sp="349" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="21.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20218" name="Premo" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="2367.6118" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5022" sp="349" basePAtk="258.38812" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" collisionRadius="21.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -618,9 +618,9 @@
 			<itemDrop itemId="2508" min="1" max="7" chance="17.5499" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20219" name="Validus" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="2459.5735" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4719" sp="335" basePAtk="248.0526" baseMAtk="169.38777" basePDef="200.40697" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="15.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="torfe_clan" clanRange="300">
+	<npc id="20219" name="Validus" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="2459.5735" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4719" sp="335" basePAtk="248.0526" baseMAtk="169.38777" basePDef="200.40697" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="15.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="torfe_clan" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -654,9 +654,9 @@
 			<itemDrop itemId="2508" min="1" max="5" chance="24.6759" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20220" name="Dicor" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="2553.0725" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5081" sp="364" basePAtk="287.86505" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="26.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="-25" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20220" name="Dicor" level="47" type="L2Monster" baseAtkRange="40" baseHpMax="2553.0725" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5081" sp="364" basePAtk="287.86505" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" collisionRadius="12.0" collisionHeight="26.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="-25" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -700,9 +700,9 @@
 			<itemDrop itemId="1342" min="20" max="199" chance="29.6521" /> <!-- Steel Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20221" name="Perum" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="2648.0325" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5138" sp="376" basePAtk="275.82706" baseMAtk="188.35411" basePDef="210.24083" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="18.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300">
+	<npc id="20221" name="Perum" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="2648.0325" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5138" sp="376" basePAtk="275.82706" baseMAtk="188.35411" basePDef="210.24083" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="20.0" aggressive="true" aggroRange="300" collisionRadius="18.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="porta_clan" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -748,9 +748,9 @@
 			<itemDrop itemId="1342" min="20" max="159" chance="33.0071" /> <!-- Steel Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20222" name="Torfe" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="2744.3713" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5354" sp="396" basePAtk="319.49048" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="190.0" aggroRange="300" collisionRadius="15.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="torfe_clan" clanRange="300">
+	<npc id="20222" name="Torfe" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="2744.3713" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="5354" sp="396" basePAtk="319.49048" baseMAtk="198.33688" basePDef="195.66302" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="190.0" aggroRange="300" collisionRadius="15.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="torfe_clan" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -785,9 +785,9 @@
 			<itemDrop itemId="1539" min="1" max="3" chance="13.3851" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20223" name="Mandragora Sprout" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="48.761486" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="19.0"
-			fireRes="-34" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" ssChance="30" spsChance="30" clan="mandragora_clan" clanRange="300">
+	<npc id="20223" name="Mandragora Sprout" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="48.761486" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="80.0" aggroRange="300" collisionRadius="14.0" collisionHeight="19.0">
+		<elementals fireDef="-34" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" ssChance="30" spsChance="30" clan="mandragora_clan" clanRange="300" />
 		<skill id="4416" level="5" /> <!-- Plants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -818,9 +818,9 @@
 			<itemDrop itemId="2142" min="1" max="1" chance="7.4075" /> <!-- Recipe: Corroded Varnish of Purity -->
 		</dropCategory>
 	</npc>
-	<npc id="20224" name="Ol Mahum Ranger" level="22" type="L2Monster" baseAtkRange="500" baseHpMax="425.73166" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="678" sp="32" basePAtk="114.99468" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="13" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300">
+	<npc id="20224" name="Ol Mahum Ranger" level="22" type="L2Monster" baseAtkRange="500" baseHpMax="425.73166" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="678" sp="32" basePAtk="114.99468" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="13" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ol_mahum_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -851,9 +851,9 @@
 			<itemDrop itemId="1341" min="20" max="39" chance="55.2486" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20225" name="Giant Mist Leech" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="64.83203" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="70.0" collisionHeight="29.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="giant_leech_clan" clanRange="300">
+	<npc id="20225" name="Giant Mist Leech" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="460.96246" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="64.83203" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="110.0" aggroRange="300" collisionRadius="70.0" collisionHeight="29.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="giant_leech_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -882,9 +882,9 @@
 			<itemDrop itemId="1061" min="1" max="1" chance="16.8067" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20226" name="Gray Ant" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="487.5704" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="872" sp="44" basePAtk="69.75926" baseMAtk="47.636536" basePDef="115.531" baseMDef="76.855064" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ant_clan" clanRange="300">
+	<npc id="20226" name="Gray Ant" level="26" type="L2Monster" baseAtkRange="40" baseHpMax="487.5704" baseHpReg="3.5" baseMpMax="273.0" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="872" sp="44" basePAtk="69.75926" baseMAtk="47.636536" basePDef="115.531" baseMDef="76.855064" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ant_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -910,9 +910,9 @@
 			<itemDrop itemId="1061" min="1" max="1" chance="18.5185" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20227" name="Mist Horror Ripper" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="515.1785" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="919" sp="47" basePAtk="82.49033" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="20.0" collisionHeight="35.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20227" name="Mist Horror Ripper" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="515.1785" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="919" sp="47" basePAtk="82.49033" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="20.0" collisionHeight="35.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -943,9 +943,9 @@
 			<itemDrop itemId="1061" min="1" max="1" chance="18.9029" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20228" name="Giant Crimson Ant" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1019" sp="54" basePAtk="88.59461" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" collisionRadius="35.0" collisionHeight="17.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ant_clan" clanRange="300">
+	<npc id="20228" name="Giant Crimson Ant" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1019" sp="54" basePAtk="88.59461" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" collisionRadius="35.0" collisionHeight="17.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="ant_clan" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -976,9 +976,9 @@
 			<itemDrop itemId="1061" min="1" max="1" chance="15.2605" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20229" name="Weird Wasp" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="664.4926" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1080" sp="59" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggressive="true" aggroRange="300" collisionRadius="8.0" collisionHeight="25.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20229" name="Weird Wasp" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="664.4926" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1080" sp="59" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggressive="true" aggroRange="300" collisionRadius="8.0" collisionHeight="25.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1009,9 +1009,9 @@
 			<itemDrop itemId="1061" min="1" max="1" chance="14.3082" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20230" name="Marsh Stakato Worker" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1278" sp="71" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" collisionRadius="9.0" collisionHeight="21.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300">
+	<npc id="20230" name="Marsh Stakato Worker" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1278" sp="71" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" collisionRadius="9.0" collisionHeight="21.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1040,9 +1040,9 @@
 			<itemDrop itemId="956" min="1" max="1" chance="1.1952" /> <!-- Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20231" name="Toad Lord" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="735.3184" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1229" sp="69" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="20.0" collisionHeight="10.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20231" name="Toad Lord" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="735.3184" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1229" sp="69" basePAtk="106.16525" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="20.0" collisionHeight="10.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1070,9 +1070,9 @@
 			<itemDrop itemId="1341" min="20" max="39" chance="54.2006" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20232" name="Marsh Stakato Soldier" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1307" sp="75" basePAtk="113.490654" baseMAtk="77.499405" basePDef="142.15404" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="155.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="25.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300">
+	<npc id="20232" name="Marsh Stakato Soldier" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1307" sp="75" basePAtk="113.490654" baseMAtk="77.499405" basePDef="142.15404" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="155.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="25.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1100,9 +1100,9 @@
 			<itemDrop itemId="2154" min="1" max="1" chance="3.7842" /> <!-- Recipe: Elven Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="20233" name="Marsh Spider" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1457" sp="85" basePAtk="121.208015" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="120.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="27.0" collisionHeight="25.5"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20233" name="Marsh Spider" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1457" sp="85" basePAtk="121.208015" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="120.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="27.0" collisionHeight="25.5">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1133,9 +1133,9 @@
 			<itemDrop itemId="2286" min="1" max="1" chance="0.1648" /> <!-- Recipe: Bonebreaker -->
 		</dropCategory>
 	</npc>
-	<npc id="20234" name="Marsh Stakato Drone" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1531" sp="90" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="155.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="9.0" collisionHeight="24.0"
-			fireRes="-5" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300">
+	<npc id="20234" name="Marsh Stakato Drone" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1531" sp="90" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="155.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="9.0" collisionHeight="24.0">
+		<elementals fireDef="-5" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="stakato_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1164,9 +1164,9 @@
 			<itemDrop itemId="955" min="1" max="1" chance="0.1449" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20235" name="Shackle" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1302.1865" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2430" sp="169" basePAtk="234.89828" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20235" name="Shackle" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1302.1865" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2430" sp="169" basePAtk="234.89828" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1200,9 +1200,9 @@
 			<itemDrop itemId="2508" min="1" max="1" chance="76.9232" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20236" name="Cave Servant" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1352.7655" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2539" sp="180" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="79" lHand="945" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20236" name="Cave Servant" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1352.7655" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2539" sp="180" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="79" lHand="945" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1244,9 +1244,9 @@
 			<itemDrop itemId="2508" min="1" max="1" chance="42.1552" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20237" name="Cave Servant Archer" level="47" type="L2Monster" baseAtkRange="500" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3159" sp="226" basePAtk="639.6361" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="92.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="14" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20237" name="Cave Servant Archer" level="47" type="L2Monster" baseAtkRange="500" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3159" sp="226" basePAtk="639.6361" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="92.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="14" collisionRadius="11.0" collisionHeight="27.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1282,9 +1282,9 @@
 			<itemDrop itemId="1342" min="20" max="119" chance="32.8604" /> <!-- Steel Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20238" name="Cave Servant Warrior" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3064" sp="224" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="77" lHand="2495" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20238" name="Cave Servant Warrior" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3064" sp="224" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="77" lHand="2495" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1317,9 +1317,9 @@
 			<itemDrop itemId="2508" min="1" max="3" chance="42.1304" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20239" name="Cave Servant Captain" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3193" sp="236" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" lHand="2495" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20239" name="Cave Servant Captain" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3193" sp="236" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" lHand="2495" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1356,9 +1356,9 @@
 			<itemDrop itemId="2508" min="1" max="3" chance="42.0812" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20240" name="Royal Cave Servant" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3459" sp="264" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="150.0" randomWalk="true" aggroRange="300" rHand="946" lHand="945" collisionRadius="11.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20240" name="Royal Cave Servant" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3459" sp="264" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="150.0" randomWalk="true" aggroRange="300" rHand="946" lHand="945" collisionRadius="11.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1389,9 +1389,9 @@
 			<itemDrop itemId="2508" min="1" max="3" chance="42.16" /> <!-- Cursed Bone -->
 		</dropCategory>
 	</npc>
-	<npc id="20241" name="Hunter Gargoyle" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3596" sp="279" basePAtk="370.90753" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20241" name="Hunter Gargoyle" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3596" sp="279" basePAtk="370.90753" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1430,9 +1430,9 @@
 			<itemDrop itemId="1342" min="20" max="119" chance="37.7325" /> <!-- Steel Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20242" name="Dustwind Gargoyle" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1727.9309" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3736" sp="294" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20242" name="Dustwind Gargoyle" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1727.9309" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3736" sp="294" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1468,9 +1468,9 @@
 			<itemDrop itemId="951" min="1" max="1" chance="0.137" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20243" name="Thunder Wyrm" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="1621.7562" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3499" sp="279" basePAtk="407.75793" baseMAtk="253.13257" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="209.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20243" name="Thunder Wyrm" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="1621.7562" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3499" sp="279" basePAtk="407.75793" baseMAtk="253.13257" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="209.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1507,9 +1507,9 @@
 			<itemDrop itemId="1343" min="20" max="119" chance="35.8489" /> <!-- Silver Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20244" name="Maluk Succubus" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3630" sp="293" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300">
+	<npc id="20244" name="Maluk Succubus" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3630" sp="293" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1544,9 +1544,9 @@
 			<itemDrop itemId="4151" min="1" max="1" chance="1.1839" /> <!-- Recipe: Chain Gloves of Silence -->
 		</dropCategory>
 	</npc>
-	<npc id="20245" name="Maluk Succubus Turen" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="1724.6831" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3763" sp="309" basePAtk="446.561" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300">
+	<npc id="20245" name="Maluk Succubus Turen" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="1724.6831" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3763" sp="309" basePAtk="446.561" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="160.0" randomWalk="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1579,9 +1579,9 @@
 			<itemDrop itemId="951" min="1" max="1" chance="0.1434" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20246" name="Cave Keeper" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.6826" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4474" sp="379" basePAtk="487.18912" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20246" name="Cave Keeper" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.6826" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4474" sp="379" basePAtk="487.18912" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1612,9 +1612,9 @@
 			<itemDrop itemId="4188" min="1" max="1" chance="0.2017" /> <!-- Recipe: Twilight Knife -->
 		</dropCategory>
 	</npc>
-	<npc id="20248" name="Turak Bugbear" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="699.3408" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="88" collisionRadius="17.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="bugbear_clan" clanRange="300">
+	<npc id="20248" name="Turak Bugbear" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="699.3408" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="88" collisionRadius="17.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="bugbear_clan" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1650,9 +1650,9 @@
 			<itemDrop itemId="1832" min="1" max="1" chance="23.5294" /> <!-- Greater Antidote -->
 		</dropCategory>
 	</npc>
-	<npc id="20249" name="Turak Bugbear Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="772.4251" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1307" sp="75" basePAtk="113.490654" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" collisionRadius="17.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="bugbear_clan" clanRange="300">
+	<npc id="20249" name="Turak Bugbear Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="772.4251" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1307" sp="75" basePAtk="113.490654" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" collisionRadius="17.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="bugbear_clan" clanRange="300" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1677,9 +1677,9 @@
 			<itemDrop itemId="1880" min="1" max="1" chance="4" /> <!-- Corroded Steel -->
 		</dropCategory>
 	</npc>
-	<npc id="20250" name="Glass Jaguar" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="515.1785" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="919" sp="47" basePAtk="82.49033" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="14.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300">
+	<npc id="20250" name="Glass Jaguar" level="27" type="L2Monster" baseAtkRange="40" baseHpMax="515.1785" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="919" sp="47" basePAtk="82.49033" baseMAtk="51.209274" basePDef="108.287674" baseMDef="79.24022" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="30.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" collisionRadius="14.0" collisionHeight="14.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1708,9 +1708,9 @@
 			<itemDrop itemId="2182" min="1" max="1" chance="3.8204" /> <!-- Recipe: Scale Gaiters -->
 		</dropCategory>
 	</npc>
-	<npc id="20251" name="Delu Lizardman" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="972" sp="51" basePAtk="80.54056" baseMAtk="54.99876" basePDef="122.77505" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="1" lHand="19" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300">
+	<npc id="20251" name="Delu Lizardman" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="972" sp="51" basePAtk="80.54056" baseMAtk="54.99876" basePDef="122.77505" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="1" lHand="19" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1736,9 +1736,9 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="4.4119" /> <!-- Corroded Coarse Bone Powder -->
 		</dropCategory>
 	</npc>
-	<npc id="20252" name="Delu Lizardman Scout" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="573.42914" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1026" sp="55" basePAtk="95.06202" baseMAtk="59.01367" basePDef="115.005974" baseMDef="84.15638" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300">
+	<npc id="20252" name="Delu Lizardman Scout" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="573.42914" baseHpReg="3.5" baseMpMax="315.12" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1026" sp="55" basePAtk="95.06202" baseMAtk="59.01367" basePDef="115.005974" baseMDef="84.15638" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1766,9 +1766,9 @@
 			<itemDrop itemId="1341" min="20" max="39" chance="52.4146" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20253" name="Delu Lizardman Warrior" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="664.4926" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1080" sp="59" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="12.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300">
+	<npc id="20253" name="Delu Lizardman Warrior" level="30" type="L2Monster" baseAtkRange="40" baseHpMax="664.4926" baseHpReg="3.5" baseMpMax="329.4" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1080" sp="59" basePAtk="92.64226" baseMAtk="63.262653" basePDef="118.46427" baseMDef="86.68701" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="12.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1797,9 +1797,9 @@
 			<itemDrop itemId="2267" min="1" max="1" chance="0.341" /> <!-- Recipe: Gastraphetes -->
 		</dropCategory>
 	</npc>
-	<npc id="20254" name="Skeleton Axeman" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="972" sp="51" basePAtk="80.54056" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="86" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="skeleton_clan" clanRange="300">
+	<npc id="20254" name="Skeleton Axeman" level="28" type="L2Monster" baseAtkRange="40" baseHpMax="543.7958" baseHpReg="3.5" baseMpMax="300.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="972" sp="51" basePAtk="80.54056" baseMAtk="54.99876" basePDef="111.61368" baseMDef="81.67405" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="86" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="skeleton_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1828,9 +1828,9 @@
 			<itemDrop itemId="1881" min="1" max="1" chance="5.1948" /> <!-- Corroded Coarse Bone Powder -->
 		</dropCategory>
 	</npc>
-	<npc id="20255" name="Batur Orc" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="134.18701" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300">
+	<npc id="20255" name="Batur Orc" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="635.76434" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="134.18701" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1841,9 +1841,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="20256" name="Batur Orc Archer" level="32" type="L2Monster" baseAtkRange="500" baseHpMax="735.3184" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1464" sp="82" basePAtk="235.89919" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="13" collisionRadius="11.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300">
+	<npc id="20256" name="Batur Orc Archer" level="32" type="L2Monster" baseAtkRange="500" baseHpMax="735.3184" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1464" sp="82" basePAtk="235.89919" baseMAtk="72.49711" basePDef="125.57726" baseMDef="91.89199" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="13" collisionRadius="11.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1855,9 +1855,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4040" level="3" /> <!-- Power Shot -->
 	</npc>
-	<npc id="20257" name="Batur Orc Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1448" sp="83" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="19" collisionRadius="10.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300">
+	<npc id="20257" name="Batur Orc Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1448" sp="83" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="19" collisionRadius="10.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1869,9 +1869,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="20258" name="Batur Orc Shaman" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300">
+	<npc id="20258" name="Batur Orc Shaman" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="133.32883" baseMAtk="82.76936" basePDef="132.9486" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1895,9 +1895,9 @@
 			<itemDrop itemId="2154" min="1" max="1" chance="100" /> <!-- Recipe: Elven Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="20259" name="Batur Orc Prefect" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1629" sp="97" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="79" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300">
+	<npc id="20259" name="Batur Orc Prefect" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1629" sp="97" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="79" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1909,9 +1909,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="20260" name="Orc Hero" level="14" type="L2Monster" baseAtkRange="40" baseHpMax="253.42403" baseHpReg="2.5" baseMpMax="140.88" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="423" sp="16" basePAtk="27.246464" baseMAtk="18.605803" basePDef="71.081795" baseMDef="52.014572" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clan="orc_clan" clanRange="300">
+	<npc id="20260" name="Orc Hero" level="14" type="L2Monster" baseAtkRange="40" baseHpMax="253.42403" baseHpReg="2.5" baseMpMax="140.88" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="423" sp="16" basePAtk="27.246464" baseMAtk="18.605803" basePDef="71.081795" baseMDef="52.014572" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1922,9 +1922,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="20261" name="Orc Shaman" level="17" type="L2Monster" baseAtkRange="40" baseHpMax="282.57404" baseHpReg="2.5" baseMpMax="166.08" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="514" sp="22" basePAtk="34.897896" baseMAtk="23.83074" basePDef="86.55316" baseMDef="57.578045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" ssChance="30" spsChance="30" clan="orc_clan" clanRange="300">
+	<npc id="20261" name="Orc Shaman" level="17" type="L2Monster" baseAtkRange="40" baseHpMax="282.57404" baseHpReg="2.5" baseMpMax="166.08" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="514" sp="22" basePAtk="34.897896" baseMAtk="23.83074" basePDef="86.55316" baseMDef="57.578045" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" ssChance="30" spsChance="30" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1936,9 +1936,9 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4037" level="1" /> <!-- Weakness -->
 	</npc>
-	<npc id="20265" name="Monster Eye Searcher" level="22" type="L2Monster" baseAtkRange="40" baseHpMax="774.05756" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1258" sp="60" basePAtk="56.928062" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0"
-			fireRes="20" waterRes="20" windRes="-5" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="-1" clanRange="300">
+	<npc id="20265" name="Monster Eye Searcher" level="22" type="L2Monster" baseAtkRange="40" baseHpMax="774.05756" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1258" sp="60" basePAtk="56.928062" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0">
+		<elementals fireDef="20" waterDef="20" windDef="-5" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="-1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1969,9 +1969,9 @@
 			<itemDrop itemId="1666" min="1" max="1" chance="9.804" /> <!-- Recipe: Wooden Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20266" name="Monster Eye Gazer" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="507.05872" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="64.83203" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0"
-			fireRes="20" waterRes="20" windRes="-5" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="-1" clanRange="300">
+	<npc id="20266" name="Monster Eye Gazer" level="25" type="L2Monster" baseAtkRange="40" baseHpMax="507.05872" baseHpReg="3.5" baseMpMax="259.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="819" sp="41" basePAtk="64.83203" baseMAtk="44.271873" basePDef="101.83533" baseMDef="74.51868" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="90.0" aggroRange="300" collisionRadius="21.0" collisionHeight="43.0">
+		<elementals fireDef="20" waterDef="20" windDef="-5" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="-1" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2001,9 +2001,9 @@
 			<itemDrop itemId="1878" min="1" max="1" chance="13.0435" /> <!-- Corroded Durable Braid -->
 		</dropCategory>
 	</npc>
-	<npc id="20267" name="Breka Orc" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="699.3408" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20267" name="Breka Orc" level="31" type="L2Monster" baseAtkRange="40" baseHpMax="699.3408" baseHpReg="4.5" baseMpMax="343.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1153" sp="64" basePAtk="99.219864" baseMAtk="67.7543" basePDef="121.98819" baseMDef="89.26566" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="123" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2033,9 +2033,9 @@
 			<itemDrop itemId="1834" min="1" max="1" chance="28.9855" /> <!-- Emergency Dressing -->
 		</dropCategory>
 	</npc>
-	<npc id="20268" name="Breka Orc Archer" level="32" type="L2Monster" baseAtkRange="500" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1464" sp="82" basePAtk="235.89919" baseMAtk="72.49711" basePDef="138.135" baseMDef="91.89199" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="11.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20268" name="Breka Orc Archer" level="32" type="L2Monster" baseAtkRange="500" baseHpMax="668.4713" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1464" sp="82" basePAtk="235.89919" baseMAtk="72.49711" basePDef="138.135" baseMDef="91.89199" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="11.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2067,9 +2067,9 @@
 			<itemDrop itemId="1341" min="20" max="39" chance="50.132" /> <!-- Bone Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20269" name="Breka Orc Shaman" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="121.208015" baseMAtk="82.76936" basePDef="146.24345" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20269" name="Breka Orc Shaman" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="736.9618" baseHpReg="4.5" baseMpMax="387.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1387" sp="81" basePAtk="121.208015" baseMAtk="82.76936" basePDef="146.24345" baseMDef="97.28601" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="26.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2100,9 +2100,9 @@
 			<itemDrop itemId="956" min="1" max="1" chance="1.0417" /> <!-- Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20270" name="Breka Orc Prefect" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1629" sp="97" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="79" collisionRadius="12.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20270" name="Breka Orc Prefect" level="35" type="L2Monster" baseAtkRange="40" baseHpMax="772.73804" baseHpReg="4.5" baseMpMax="402.6" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1629" sp="97" basePAtk="142.26186" baseMAtk="88.31491" basePDef="136.72948" baseMDef="100.052704" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="79" collisionRadius="12.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2135,9 +2135,9 @@
 			<itemDrop itemId="2145" min="1" max="1" chance="2.5568" /> <!-- Recipe: Corroded Mithril Alloy -->
 		</dropCategory>
 	</npc>
-	<npc id="20271" name="Breka Orc Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1448" sp="83" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="20" collisionRadius="10.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20271" name="Breka Orc Warrior" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="702.20465" baseHpReg="4.5" baseMpMax="372.96" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1448" sp="83" basePAtk="124.83972" baseMAtk="77.499405" basePDef="129.23094" baseMDef="94.5656" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="123" lHand="20" collisionRadius="10.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2167,9 +2167,9 @@
 			<itemDrop itemId="955" min="1" max="1" chance="0.1467" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20272" name="Cave Servant" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1352.7655" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2539" sp="180" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="79" lHand="945" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20272" name="Cave Servant" level="46" type="L2Monster" baseAtkRange="40" baseHpMax="1352.7655" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2539" sp="180" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="79" lHand="945" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2210,9 +2210,9 @@
 			<itemDrop itemId="2317" min="1" max="1" chance="0.3047" /> <!-- Recipe: Bec de Corbin -->
 		</dropCategory>
 	</npc>
-	<npc id="20273" name="Cave Servant Archer" level="47" type="L2Monster" baseAtkRange="500" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2651" sp="190" basePAtk="639.6361" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="92.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20273" name="Cave Servant Archer" level="47" type="L2Monster" baseAtkRange="500" baseHpMax="1276.5363" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2651" sp="190" basePAtk="639.6361" baseMAtk="178.7041" basePDef="186.6357" baseMDef="136.5719" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="92.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="275" collisionRadius="11.0" collisionHeight="27.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="archer" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2247,9 +2247,9 @@
 			<itemDrop itemId="952" min="1" max="1" chance="0.6533" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20274" name="Cave Servant Warrior" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2765" sp="202" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="77" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20274" name="Cave Servant Warrior" level="48" type="L2Monster" baseAtkRange="40" baseHpMax="1324.0162" baseHpReg="5.5" baseMpMax="692.4" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2765" sp="202" basePAtk="303.40976" baseMAtk="188.35411" basePDef="191.12802" baseMDef="139.85919" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="77" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2278,9 +2278,9 @@
 			<itemDrop itemId="2316" min="1" max="1" chance="0.3047" /> <!-- Recipe: Katana -->
 		</dropCategory>
 	</npc>
-	<npc id="20275" name="Cave Servant Captain" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2881" sp="213" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20275" name="Cave Servant Captain" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="1372.1857" baseHpReg="5.5" baseMpMax="720.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2881" sp="213" basePAtk="290.4459" baseMAtk="198.33688" basePDef="215.22932" baseMDef="143.1777" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="140.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="73" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2311,9 +2311,9 @@
 			<itemDrop itemId="2301" min="1" max="1" chance="0.3815" /> <!-- Recipe: Battle Axe -->
 		</dropCategory>
 	</npc>
-	<npc id="20276" name="Royal Cave Servant" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3121" sp="238" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="946" lHand="945" collisionRadius="11.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20276" name="Royal Cave Servant" level="51" type="L2Monster" baseAtkRange="40" baseHpMax="1617.4575" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3121" sp="238" basePAtk="321.13208" baseMAtk="219.29158" basePDef="204.85193" baseMDef="149.90176" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="946" lHand="945" collisionRadius="11.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2344,9 +2344,9 @@
 			<itemDrop itemId="1539" min="1" max="1" chance="16.2936" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20277" name="Cave Keeper" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.6826" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4037" sp="341" basePAtk="487.18912" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300">
+	<npc id="20277" name="Cave Keeper" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="1828.6826" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4037" sp="341" basePAtk="487.18912" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggroRange="300" rHand="223" collisionRadius="17.0" collisionHeight="46.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="cave_servant_clan" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2377,9 +2377,9 @@
 			<itemDrop itemId="4189" min="1" max="1" chance="0.2017" /> <!-- Recipe: Arthro Nail -->
 		</dropCategory>
 	</npc>
-	<npc id="20279" name="Shackle" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1302.1865" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2430" sp="169" basePAtk="234.89828" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20279" name="Shackle" level="45" type="L2Monster" baseAtkRange="40" baseHpMax="1302.1865" baseHpReg="5.5" baseMpMax="610.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="2430" sp="169" basePAtk="234.89828" baseMAtk="160.40509" basePDef="177.78746" baseMDef="130.09715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="120.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="21.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2410,9 +2410,9 @@
 			<itemDrop itemId="952" min="1" max="1" chance="6.3863" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20280" name="Headless Knight" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3000" sp="226" basePAtk="305.54907" baseMAtk="208.6504" basePDef="220.26228" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="124" collisionRadius="21.0" collisionHeight="31.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="-1" clanRange="300">
+	<npc id="20280" name="Headless Knight" level="50" type="L2Monster" baseAtkRange="40" baseHpMax="1421.001" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3000" sp="226" basePAtk="305.54907" baseMAtk="208.6504" basePDef="220.26228" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="110.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="124" collisionRadius="21.0" collisionHeight="31.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="-1" clanRange="300" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2445,9 +2445,9 @@
 			<itemDrop itemId="2232" min="1" max="1" chance="0.4516" /> <!-- Recipe: Drake Leather Armor -->
 		</dropCategory>
 	</npc>
-	<npc id="20281" name="Dustwind Gargoyle" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1727.9309" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3371" sp="265" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20281" name="Dustwind Gargoyle" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="1727.9309" baseHpReg="6.5" baseMpMax="832.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3371" sp="265" basePAtk="353.7109" baseMAtk="241.5387" basePDef="214.18326" baseMDef="156.73001" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2482,9 +2482,9 @@
 			<itemDrop itemId="952" min="1" max="1" chance="1.0056" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20282" name="Thunder Wyrm" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="1621.7562" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3499" sp="279" basePAtk="407.75793" baseMAtk="253.13257" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20282" name="Thunder Wyrm" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="1621.7562" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3499" sp="279" basePAtk="407.75793" baseMAtk="253.13257" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="29.0" collisionHeight="72.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2517,9 +2517,9 @@
 			<itemDrop itemId="4143" min="1" max="1" chance="1.0571" /> <!-- Recipe: Zubei's Leather Shirt -->
 		</dropCategory>
 	</npc>
-	<npc id="20283" name="Maluk Succubus" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3630" sp="293" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300">
+	<npc id="20283" name="Maluk Succubus" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="1673.0547" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3630" sp="293" basePAtk="426.92258" baseMAtk="265.0298" basePDef="223.6362" baseMDef="163.64726" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2553,9 +2553,9 @@
 			<itemDrop itemId="4180" min="1" max="1" chance="8.0645" /> <!-- Recipe: Silver Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="20284" name="Maluk Succubus Turen" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="1724.6831" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3763" sp="309" basePAtk="446.561" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="184"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300">
+	<npc id="20284" name="Maluk Succubus Turen" level="56" type="L2Monster" baseAtkRange="40" baseHpMax="1724.6831" baseHpReg="6.5" baseMpMax="918.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3763" sp="309" basePAtk="446.561" baseMAtk="277.22116" basePDef="228.40135" baseMDef="167.1342" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="100.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="184" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="succubus_clan" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2589,9 +2589,9 @@
 			<itemDrop itemId="952" min="1" max="1" chance="0.7247" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="20285" name="Drake" level="57" type="L2Monster" baseAtkRange="40" baseHpMax="1776.5802" baseHpReg="6.5" baseMpMax="948.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3899" sp="324" basePAtk="466.65625" baseMAtk="289.6961" basePDef="233.18839" baseMDef="170.63715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="68.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="dragon_clan" clanRange="300">
+	<npc id="20285" name="Drake" level="57" type="L2Monster" baseAtkRange="40" baseHpMax="1776.5802" baseHpReg="6.5" baseMpMax="948.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3899" sp="324" basePAtk="466.65625" baseMAtk="289.6961" basePDef="233.18839" baseMDef="170.63715" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="70.0" randomWalk="true" aggressive="true" aggroRange="300" collisionRadius="35.0" collisionHeight="68.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="dragon_clan" clanRange="300" />
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2618,9 +2618,9 @@
 			<itemDrop itemId="4186" min="1" max="1" chance="0.0908" /> <!-- Recipe: Sword of Valhalla -->
 		</dropCategory>
 	</npc>
-	<npc id="20286" name="Hunter Gargoyle" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3245" sp="251" basePAtk="370.90753" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20286" name="Hunter Gargoyle" level="52" type="L2Monster" baseAtkRange="40" baseHpMax="1520.3816" baseHpReg="6.5" baseMpMax="804.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="3245" sp="251" basePAtk="370.90753" baseMAtk="230.25615" basePDef="209.50105" baseMDef="153.30379" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="100.0" aggroRange="300" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2655,9 +2655,9 @@
 			<itemDrop itemId="3017" min="1" max="1" chance="1.7072" /> <!-- Recipe: Divine Gloves -->
 		</dropCategory>
 	</npc>
-	<npc id="20287" name="Cave Maiden" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="1880.9252" baseHpReg="6.5" baseMpMax="1007.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4177" sp="357" basePAtk="508.13824" baseMAtk="315.44778" basePDef="242.81593" baseMDef="177.68216" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="68" collisionRadius="25.0" collisionHeight="65.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300">
+	<npc id="20287" name="Cave Maiden" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="1880.9252" baseHpReg="6.5" baseMpMax="1007.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="4177" sp="357" basePAtk="508.13824" baseMAtk="315.44778" basePDef="242.81593" baseMDef="177.68216" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="120.0" aggressive="true" aggroRange="300" rHand="68" collisionRadius="25.0" collisionHeight="65.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clanRange="300" />
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2701,9 +2701,9 @@
 			<itemDrop itemId="4197" min="1" max="1" chance="0.1337" /> <!-- Recipe: Demon's Dagger -->
 		</dropCategory>
 	</npc>
-	<npc id="20291" name="Enku Orc Hero" level="21" type="L2Monster" baseAtkRange="40" baseHpMax="400.73386" baseHpReg="3.5" baseMpMax="205.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="701" sp="32" basePAtk="47.919243" baseMAtk="32.722633" basePDef="89.73059" baseMDef="65.66095" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300">
+	<npc id="20291" name="Enku Orc Hero" level="21" type="L2Monster" baseAtkRange="40" baseHpMax="400.73386" baseHpReg="3.5" baseMpMax="205.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="701" sp="32" basePAtk="47.919243" baseMAtk="32.722633" basePDef="89.73059" baseMDef="65.66095" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="200" spiritshots="100" ssChance="5" spsChance="10" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2733,9 +2733,9 @@
 			<itemDrop itemId="2257" min="1" max="1" chance="0.8902" /> <!-- Recipe: Trident -->
 		</dropCategory>
 	</npc>
-	<npc id="20292" name="Enku Orc Shaman" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="95.55754" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" ssChance="30" spsChance="30" clan="orc_clan" clanRange="300">
+	<npc id="20292" name="Enku Orc Shaman" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="342.5127" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="95.55754" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" ssChance="30" spsChance="30" clan="orc_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2770,9 +2770,9 @@
 			<itemDrop itemId="734" min="1" max="1" chance="4.3432" /> <!-- Wind Walk Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="20293" name="Virud Lizardman" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="376.76398" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="291" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" ssChance="30" spsChance="30" clan="lizardman_clan" clanRange="300">
+	<npc id="20293" name="Virud Lizardman" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="376.76398" baseHpReg="2.5" baseMpMax="192.0" baseMpReg="1.2" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="588" sp="26" basePAtk="44.328625" baseMAtk="30.270704" basePDef="86.8705" baseMDef="63.568058" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="291" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" ssChance="30" spsChance="30" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2783,9 +2783,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="20294" name="Virud Lizardman Matriarch" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="435.34436" baseHpReg="3.5" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="1142" sp="56" basePAtk="60.19687" baseMAtk="41.10666" basePDef="98.70919" baseMDef="65.72169" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="56.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" lHand="19" collisionRadius="13.0" collisionHeight="37.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20294" name="Virud Lizardman Matriarch" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="435.34436" baseHpReg="3.5" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" exp="1142" sp="56" basePAtk="60.19687" baseMAtk="41.10666" basePDef="98.70919" baseMDef="65.72169" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="56.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="2" lHand="19" collisionRadius="13.0" collisionHeight="37.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2797,9 +2797,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4033" level="2" /> <!-- Aura Burn -->
 	</npc>
-	<npc id="20295" name="Virud Lizardman Warrior" level="22" type="L2Monster" baseAtkRange="40" baseHpMax="387.02878" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="678" sp="32" basePAtk="56.928062" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="12.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20295" name="Virud Lizardman Warrior" level="22" type="L2Monster" baseAtkRange="40" baseHpMax="387.02878" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="678" sp="32" basePAtk="56.928062" baseMAtk="35.340443" basePDef="92.65694" baseMDef="67.80232" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="130.0" randomWalk="true" aggressive="true" aggroRange="300" rHand="16" collisionRadius="12.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2810,9 +2810,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="20296" name="Virud Lizardman Scout" level="21" type="L2Monster" baseAtkRange="500" baseHpMax="364.3035" baseHpReg="3.5" baseMpMax="205.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="631" sp="29" basePAtk="106.47656" baseMAtk="32.722633" basePDef="98.70364" baseMDef="65.66095" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="2507" collisionRadius="10.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20296" name="Virud Lizardman Scout" level="21" type="L2Monster" baseAtkRange="500" baseHpMax="364.3035" baseHpReg="3.5" baseMpMax="205.2" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="631" sp="29" basePAtk="106.47656" baseMAtk="32.722633" basePDef="98.70364" baseMDef="65.66095" basePAtkSpd="227" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="2507" collisionRadius="10.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2823,9 +2823,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="9" /> <!-- Bow -->
 	</npc>
-	<npc id="20297" name="Virud Lizardman Shaman" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="725" sp="35" basePAtk="55.841255" baseMAtk="38.132336" basePDef="105.21473" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="10.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20297" name="Virud Lizardman Shaman" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="725" sp="35" basePAtk="55.841255" baseMAtk="38.132336" basePDef="105.21473" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="10.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2836,9 +2836,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 	</npc>
-	<npc id="20298" name="Virud Lizardman Shaman" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="725" sp="35" basePAtk="55.841255" baseMAtk="38.132336" basePDef="105.21473" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="10.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20298" name="Virud Lizardman Shaman" level="23" type="L2Monster" baseAtkRange="40" baseHpMax="410.70422" baseHpReg="3.5" baseMpMax="231.96" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="725" sp="35" basePAtk="55.841255" baseMAtk="38.132336" basePDef="105.21473" baseMDef="69.99234" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="120.0" randomWalk="true" aggroRange="300" rHand="7" collisionRadius="10.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2849,9 +2849,9 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 	</npc>
-	<npc id="20299" name="Zenta Lizardman" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="1063.2357" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1920" sp="124" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="68" collisionRadius="11.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300">
+	<npc id="20299" name="Zenta Lizardman" level="40" type="L2Monster" baseAtkRange="40" baseHpMax="1063.2357" baseHpReg="4.5" baseMpMax="478.8" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="1920" sp="124" basePAtk="176.36078" baseMAtk="120.43155" basePDef="156.55034" baseMDef="114.55675" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="140.0" randomWalk="true" aggroRange="300" rHand="68" collisionRadius="11.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="100" spiritshots="100" ssChance="10" spsChance="5" clan="lizardman_clan" clanRange="300" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

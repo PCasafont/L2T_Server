@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ThreadPoolManager;
@@ -6,8 +7,8 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.events.instanced.EventInstance;
-import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
+import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.types.CaptureTheFlag;
 import l2server.gameserver.events.instanced.types.FieldDomination;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -65,13 +66,11 @@ public class L2EventFlagInstance extends L2NpcInstance
 			}
 			else
 			{
-				if (player.getEvent() != null
-						&& (_event.isType(EventType.CaptureTheFlag) || _event.isType(EventType.FieldDomination)))
+				if ((player.getEvent() != null) && (_event.isType(EventType.CaptureTheFlag) || _event.isType(EventType.FieldDomination)))
 				{
-					if (_event.isType(EventType.CaptureTheFlag) && player.getEvent() == _event)
-						((CaptureTheFlag)player.getEvent()).onFlagTouched(player, getTeam());
-					else if (_event.isType(EventType.FieldDomination) && !player.isCastingNow() && player.getEvent() != null
-							&& player.getEvent().getParticipantTeam(player.getObjectId()).getFlagId() != getNpcId())
+					if (_event.isType(EventType.CaptureTheFlag) && (player.getEvent() == _event))
+						((CaptureTheFlag) player.getEvent()).onFlagTouched(player, getTeam());
+					else if (_event.isType(EventType.FieldDomination) && !player.isCastingNow() && (player.getEvent() != null) && (player.getEvent().getParticipantTeam(player.getObjectId()).getFlagId() != getNpcId()))
 					{
 						player.stopMove(null, false);
 						
@@ -83,7 +82,7 @@ public class L2EventFlagInstance extends L2NpcInstance
 						player.setLastSkillCast(SkillTable.getInstance().getInfo(1050, 1));
 						FlagCastFinalizer fcf = new FlagCastFinalizer(player);
 						player.setSkillCast(ThreadPoolManager.getInstance().scheduleEffect(fcf, castingMillis));
-						player.forceIsCasting(TimeController.getGameTicks() + castingMillis / TimeController.MILLIS_IN_TICK);
+						player.forceIsCasting(TimeController.getGameTicks() + (castingMillis / TimeController.MILLIS_IN_TICK));
 					}
 				}
 			}
@@ -110,6 +109,7 @@ public class L2EventFlagInstance extends L2NpcInstance
 			_player = player;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (_player.isCastingNow())
@@ -117,13 +117,12 @@ public class L2EventFlagInstance extends L2NpcInstance
 				_player.sendPacket(new MagicSkillLaunched(_player, 2046, 1));
 				_player.setIsCastingNow(false);
 				
-				if (_player.getEvent() != null && _player.getEvent() instanceof FieldDomination
-						&& !L2EventFlagInstance.this.isToDelete())
+				if ((_player.getEvent() != null) && (_player.getEvent() instanceof FieldDomination) && !isToDelete())
 				{
-					if (L2EventFlagInstance.this.getTeam() == null)
-						((FieldDomination)_player.getEvent()).convertFlag(L2EventFlagInstance.this, _player.getEvent().getParticipantTeam(_player.getObjectId()), _player);
+					if (getTeam() == null)
+						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this, _player.getEvent().getParticipantTeam(_player.getObjectId()), _player);
 					else
-						((FieldDomination)_player.getEvent()).convertFlag(L2EventFlagInstance.this, null, _player);
+						((FieldDomination) _player.getEvent()).convertFlag(L2EventFlagInstance.this, null, _player);
 				}
 			}
 		}

@@ -1,7 +1,7 @@
 <list>
-	<npc id="25100" name="Spirit of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="5.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25100" name="Spirit of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="5.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -15,9 +15,9 @@
 		<skill id="4213" level="4" /> <!-- Haste -->
 		<skill id="4782" level="4" /> <!-- Heal -->
 	</npc>
-	<npc id="25101" name="Warrior of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" collisionRadius="21.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25101" name="Warrior of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" collisionRadius="21.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -29,9 +29,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25102" name="Shacram" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="131815.92" baseHpReg="108.3564" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="667.34894" baseMAtk="142.92804" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="300" collisionRadius="42.0" collisionHeight="94.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25102" name="Shacram" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="131815.92" baseHpReg="108.3564" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="667.34894" baseMAtk="142.92804" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="300" collisionRadius="42.0" collisionHeight="94.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4827" level="1" /> <!-- Raid Boss (Lv. 45) -->
 		<skill id="4416" level="11" /> <!-- Giants -->
@@ -69,9 +69,9 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25103" name="Wizard Isirr" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="30.0" collisionHeight="63.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25103" name="Wizard Isirr" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="30.0" collisionHeight="63.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25104" min="1" max="1" /> <!-- Isirr's Escort -->
 		<minion npcId="25105" min="4" max="4" /> <!-- Isirr's Escorts -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -111,9 +111,9 @@
 			<itemDrop itemId="948" min="1" max="3" chance="82.4176" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25104" name="Isirr's Escort" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="21375.59" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="95" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25104" name="Isirr's Escort" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="21375.59" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="95" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -126,9 +126,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4722" level="5" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25105" name="Isirr's Escorts" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="10687.795" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="131" collisionRadius="11.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25105" name="Isirr's Escorts" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="10687.795" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="131" collisionRadius="11.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -140,9 +140,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25106" name="Ghost of the Well Lidia" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="40" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25106" name="Ghost of the Well Lidia" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="40" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25107" min="3" max="3" /> <!-- Lidia's Archer -->
 		<minion npcId="25108" min="2" max="2" /> <!-- Lidia's Warrior -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -183,9 +183,9 @@
 			<itemDrop itemId="6571" min="1" max="1" chance="20.4545" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25107" name="Lidia's Archer" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="1100" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="279" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25107" name="Lidia's Archer" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="1100" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="279" collisionRadius="11.0" collisionHeight="27.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="archer" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -200,9 +200,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25108" name="Lidia's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="12576.473" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25108" name="Lidia's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="12576.473" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -216,9 +216,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25109" name="Antharas Priest Cloe" title="Raid Boss" level="74" type="L2RaidBoss" baseAtkRange="40" baseHpMax="324813.9" baseHpReg="122.14275" baseMpMax="1475.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5199406" sp="852059" basePAtk="2396.9902" baseMAtk="851.8972" basePDef="943.9796" baseMDef="460.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="75.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25109" name="Antharas Priest Cloe" title="Raid Boss" level="74" type="L2RaidBoss" baseAtkRange="40" baseHpMax="324813.9" baseHpReg="122.14275" baseMpMax="1475.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5199406" sp="852059" basePAtk="2396.9902" baseMAtk="851.8972" basePDef="943.9796" baseMDef="460.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="75.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25110" min="3" max="3" /> <!-- Cloe's Servitor -->
 		<minion npcId="25111" min="1" max="1" /> <!-- Cloe's Servitor -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -253,9 +253,9 @@
 			<itemDrop itemId="6570" min="1" max="1" chance="71.4286" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25110" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="41619.855" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6239.9766" baseMAtk="5934.256" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25110" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="41619.855" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6239.9766" baseMAtk="5934.256" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -271,9 +271,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25111" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="62119.188" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="9360.199" baseMAtk="13352.66" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="30.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25111" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="62119.188" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="9360.199" baseMAtk="13352.66" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -288,9 +288,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25112" name="Beleth' Agent Meana" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="29200.252" baseHpReg="21.714039" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="111.21878" baseMAtk="7.2148776" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="53.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25112" name="Beleth' Agent Meana" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="29200.252" baseHpReg="21.714039" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="111.21878" baseMAtk="7.2148776" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="53.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25113" min="3" max="3" /> <!-- Meana's Maid -->
 		<minion npcId="25114" min="1" max="1" /> <!-- Meana's Guard Doll -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -323,9 +323,9 @@
 			<itemDrop itemId="956" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25113" name="Meana's Maid" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="4012.1616" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="273.91394" baseMAtk="46.621162" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25113" name="Meana's Maid" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="4012.1616" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="273.91394" baseMAtk="46.621162" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -341,9 +341,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25114" name="Meana's Guard Doll" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="5988.492" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="410.8812" baseMAtk="104.90221" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="15.0" collisionHeight="38.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25114" name="Meana's Guard Doll" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="5988.492" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="410.8812" baseMAtk="104.90221" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="15.0" collisionHeight="38.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -358,9 +358,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25115" name="Icarus Sample 1" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="42.0" collisionHeight="45.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25115" name="Icarus Sample 1" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="42.0" collisionHeight="45.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25116" min="3" max="3" /> <!-- Icarus Sample 2 -->
 		<minion npcId="25117" min="2" max="2" /> <!-- Icarus Sample 3 -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -409,9 +409,9 @@
 			<itemDrop itemId="952" min="21" max="63" chance="13.3779" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25116" name="Icarus Sample 2" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="1100" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="273" collisionRadius="11.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="53"
-			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25116" name="Icarus Sample 2" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="1100" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="273" collisionRadius="11.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="53" />
+		<ai type="archer" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -424,9 +424,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4755" level="3" /> <!-- Power Shot -->
 	</npc>
-	<npc id="25117" name="Icarus Sample 3" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="6824.7056" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25117" name="Icarus Sample 3" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="6824.7056" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -438,9 +438,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25118" name="Execution Grounds Watchman Guillotine" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="75543.2" baseHpReg="66.98598" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1912394" sp="144137" basePAtk="327.3913" baseMAtk="51.719986" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="96" collisionRadius="20.0" collisionHeight="58.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25118" name="Execution Grounds Watchman Guillotine" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="75543.2" baseHpReg="66.98598" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1912394" sp="144137" basePAtk="327.3913" baseMAtk="51.719986" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="96" collisionRadius="20.0" collisionHeight="58.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4833" level="1" /> <!-- Raid Boss (Lv. 35) -->
 		<skill id="4416" level="1" /> <!-- Undead -->
@@ -484,9 +484,9 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25119" name="Fairy Queen's Messenger Berun" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="115923.664" baseHpReg="73.9339" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1775596" sp="426" basePAtk="857.79694" baseMAtk="196.05673" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" aggressive="true" rHand="213" collisionRadius="42.0" collisionHeight="73.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25119" name="Fairy Queen's Messenger Berun" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="115923.664" baseHpReg="73.9339" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1775596" sp="426" basePAtk="857.79694" baseMAtk="196.05673" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" aggressive="true" rHand="213" collisionRadius="42.0" collisionHeight="73.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25120" min="3" max="3" /> <!-- Berun's Servant -->
 		<minion npcId="25121" min="1" max="1" /> <!-- Berun's Prattler -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -528,9 +528,9 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25120" name="Berun's Servant" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="15916.209" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2151.2969" baseMAtk="1280.4276" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="110.0" rHand="90" collisionRadius="14.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25120" name="Berun's Servant" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="15916.209" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2151.2969" baseMAtk="1280.4276" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="110.0" rHand="90" collisionRadius="14.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -544,9 +544,9 @@
 		<skill id="4191" level="4" /> <!-- Wind Strike -->
 		<skill id="4199" level="4" /> <!-- Decrease P. Atk. -->
 	</npc>
-	<npc id="25121" name="Berun's Prattler" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="23755.63" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3227.0261" baseMAtk="2881.0881" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="5.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25121" name="Berun's Prattler" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="23755.63" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3227.0261" baseMAtk="2881.0881" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="5.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -559,9 +559,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4170" level="4" /> <!-- Mortal Blow -->
 	</npc>
-	<npc id="25122" name="Refugee Applicant Leo" title="Raid Boss" level="56" type="L2RaidBoss" baseAtkRange="40" baseHpMax="106765.336" baseHpReg="66.084885" baseMpMax="918.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1264899" sp="303" basePAtk="643.7848" baseMAtk="100.16291" basePDef="685.20404" baseMDef="334.26" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="201" collisionRadius="22.5" collisionHeight="54.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25122" name="Refugee Applicant Leo" title="Raid Boss" level="56" type="L2RaidBoss" baseAtkRange="40" baseHpMax="106765.336" baseHpReg="66.084885" baseMpMax="918.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1264899" sp="303" basePAtk="643.7848" baseMAtk="100.16291" basePDef="685.20404" baseMDef="334.26" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="201" collisionRadius="22.5" collisionHeight="54.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25123" min="1" max="1" /> <!-- Leo's Servant -->
 		<minion npcId="25124" min="4" max="4" /> <!-- Leo's Steward -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -597,9 +597,9 @@
 			<itemDrop itemId="948" min="1" max="3" chance="53.6376" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25123" name="Leo's Servant" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="22167.658" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2441.756" baseMAtk="1496.2983" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25123" name="Leo's Servant" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="22167.658" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2441.756" baseMAtk="1496.2983" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -612,9 +612,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4727" level="5" /> <!-- Stun -->
 	</npc>
-	<npc id="25124" name="Leo's Steward" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="11083.829" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1220.878" baseMAtk="374.0746" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+	<npc id="25124" name="Leo's Steward" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="11083.829" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1220.878" baseMAtk="374.0746" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="mage" skillChance="100" clanRange="300" dodge="-18" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -626,9 +626,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25125" name="Fierce Tiger King Angel" title="Raid Boss" level="65" type="L2RaidBoss" baseAtkRange="40" baseHpMax="567110.8" baseHpReg="277.0576" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4489692" sp="1077" basePAtk="3631.0151" baseMAtk="2425.2378" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25125" name="Fierce Tiger King Angel" title="Raid Boss" level="65" type="L2RaidBoss" baseAtkRange="40" baseHpMax="567110.8" baseHpReg="277.0576" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4489692" sp="1077" basePAtk="3631.0151" baseMAtk="2425.2378" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4836" level="1" /> <!-- Raid Boss (Lv. 65) -->
 		<skill id="4416" level="3" /> <!-- Beast -->
@@ -666,9 +666,9 @@
 			<itemDrop itemId="6569" min="1" max="1" chance="10.7143" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25126" name="Longhorn Golkonda" title="Raid Boss" level="79" type="L2RaidBoss" baseAtkRange="40" baseHpMax="683800.75" baseHpReg="319.2293" baseMpMax="1641.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5390002" sp="1205333" basePAtk="5267.0464" baseMAtk="3790.295" basePDef="1011.21027" baseMDef="493.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="91" collisionRadius="42.0" collisionHeight="94.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25126" name="Longhorn Golkonda" title="Raid Boss" level="79" type="L2RaidBoss" baseAtkRange="40" baseHpMax="683800.75" baseHpReg="319.2293" baseMpMax="1641.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5390002" sp="1205333" basePAtk="5267.0464" baseMAtk="3790.295" basePDef="1011.21027" baseMDef="493.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="91" collisionRadius="42.0" collisionHeight="94.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4837" level="1" /> <!-- Raid Boss (Lv. 79) -->
 		<skill id="4416" level="11" /> <!-- Giants -->
@@ -710,9 +710,9 @@
 			<itemDrop itemId="3936" min="1" max="3" chance="84.9057" /> <!-- Blessed Scroll of Resurrection -->
 		</dropCategory>
 	</npc>
-	<npc id="25127" name="Langk Matriarch Rashkos" title="Raid Boss" level="24" type="L2RaidBoss" baseAtkRange="40" baseHpMax="45414.387" baseHpReg="44.901924" baseMpMax="245.52" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="516822" sp="124" basePAtk="136.6409" baseMAtk="17.20301" basePDef="296.12756" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="56.0" baseRunSpd="170.0" aggressive="true" rHand="124" collisionRadius="19.0" collisionHeight="57.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25127" name="Langk Matriarch Rashkos" title="Raid Boss" level="24" type="L2RaidBoss" baseAtkRange="40" baseHpMax="45414.387" baseHpReg="44.901924" baseMpMax="245.52" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="516822" sp="124" basePAtk="136.6409" baseMAtk="17.20301" basePDef="296.12756" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="56.0" baseRunSpd="170.0" aggressive="true" rHand="124" collisionRadius="19.0" collisionHeight="57.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4838" level="1" /> <!-- Raid Boss (Lv. 24) -->
 		<skill id="4416" level="6" /> <!-- Humanoids -->
@@ -742,9 +742,9 @@
 			<itemDrop itemId="955" min="1" max="3" chance="47.3684" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25128" name="Vuku Grand Priest Gharmash" title="Raid Boss" level="33" type="L2RaidBoss" baseAtkRange="40" baseHpMax="33936.543" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="386511" sp="92" basePAtk="140.55753" baseMAtk="11.194507" basePDef="387.69284" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="22.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25128" name="Vuku Grand Priest Gharmash" title="Raid Boss" level="33" type="L2RaidBoss" baseAtkRange="40" baseHpMax="33936.543" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="386511" sp="92" basePAtk="140.55753" baseMAtk="11.194507" basePDef="387.69284" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="22.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25129" min="3" max="3" /> <!-- Vuku Shaman -->
 		<minion npcId="25130" min="1" max="1" /> <!-- Gharmash's Pet Trimden -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -785,9 +785,9 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="1.6232" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25129" name="Vuku Shaman" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="4640.4414" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="346.92627" baseMAtk="73.99716" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" rHand="7" collisionRadius="9.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25129" name="Vuku Shaman" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="4640.4414" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="346.92627" baseMAtk="73.99716" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" rHand="7" collisionRadius="9.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -801,9 +801,9 @@
 		<skill id="4194" level="3" /> <!-- Aura Burn -->
 		<skill id="4203" level="3" /> <!-- Decrease Speed -->
 	</npc>
-	<npc id="25130" name="Gharmash's Pet Trimden" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="6925.7935" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="520.4024" baseMAtk="166.5009" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="27.0" collisionHeight="25.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25130" name="Gharmash's Pet Trimden" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="6925.7935" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="520.4024" baseMAtk="166.5009" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="27.0" collisionHeight="25.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -816,9 +816,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4722" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25131" name="Slaughter Lord Gato" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="84324.984" baseHpReg="53.854633" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1194883" sp="286" basePAtk="458.48044" baseMAtk="56.52768" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="71" collisionRadius="30.0" collisionHeight="57.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25131" name="Slaughter Lord Gato" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="84324.984" baseHpReg="53.854633" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1194883" sp="286" basePAtk="458.48044" baseMAtk="56.52768" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="71" collisionRadius="30.0" collisionHeight="57.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25132" min="3" max="3" /> <!-- Gato's Sniper -->
 		<minion npcId="25133" min="2" max="2" /> <!-- Gato's Troop Captain -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -857,9 +857,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25132" name="Gato's Sniper" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="1100" baseHpMax="11595.666" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="273" collisionRadius="14.0" collisionHeight="25.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25132" name="Gato's Sniper" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="1100" baseHpMax="11595.666" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="273" collisionRadius="14.0" collisionHeight="25.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -872,9 +872,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4761" level="4" /> <!-- Stun -->
 	</npc>
-	<npc id="25133" name="Gato's Troop Captain" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="8653.243" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="69" collisionRadius="14.0" collisionHeight="27.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25133" name="Gato's Troop Captain" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="8653.243" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="69" collisionRadius="14.0" collisionHeight="27.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -886,9 +886,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25134" name="Leto Chief Talkin" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="50001.855" baseHpReg="34.038776" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="406193" sp="97" basePAtk="236.34363" baseMAtk="18.662918" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="37.5" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25134" name="Leto Chief Talkin" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="50001.855" baseHpReg="34.038776" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="406193" sp="97" basePAtk="236.34363" baseMAtk="18.662918" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="37.5" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25135" min="2" max="2" /> <!-- Talkin's Priest -->
 		<minion npcId="25136" min="2" max="2" /> <!-- Talkin's Escort -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -925,9 +925,9 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25135" name="Talkin's Priest" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="10153.565" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="29.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25135" name="Talkin's Priest" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="10153.565" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="29.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -941,9 +941,9 @@
 		<skill id="4211" level="4" /> <!-- Might -->
 		<skill id="4781" level="4" /> <!-- Heal -->
 	</npc>
-	<npc id="25136" name="Talkin's Escort" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="5076.7827" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25136" name="Talkin's Escort" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="5076.7827" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -955,9 +955,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25137" name="Beleth' Seer Sephia" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25137" name="Beleth' Seer Sephia" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25138" min="3" max="3" /> <!-- Soul Drinker -->
 		<minion npcId="25139" min="1" max="1" /> <!-- Sephia's Salve -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -997,9 +997,9 @@
 			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25138" name="Soul Drinker" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="19604.83" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1541.3486" baseMAtk="619.4604" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25138" name="Soul Drinker" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="19604.83" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1541.3486" baseMAtk="619.4604" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1013,9 +1013,9 @@
 		<skill id="4191" level="5" /> <!-- Wind Strike -->
 		<skill id="4205" level="5" /> <!-- Paralysis -->
 	</npc>
-	<npc id="25139" name="Sephia's Salve" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="24.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25139" name="Sephia's Salve" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="24.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1030,9 +1030,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25140" name="Hekaton Prime" title="Raid Boss" level="83" type="L2RaidBoss" baseAtkRange="40" baseHpMax="284473.94" baseHpReg="110.823044" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5614732" sp="1265702" basePAtk="1815.5076" baseMAtk="606.30945" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="27.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25140" name="Hekaton Prime" title="Raid Boss" level="83" type="L2RaidBoss" baseAtkRange="40" baseHpMax="284473.94" baseHpReg="110.823044" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5614732" sp="1265702" basePAtk="1815.5076" baseMAtk="606.30945" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="27.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25141" min="1" max="1" /> <!-- Hekaton Cottus -->
 		<minion npcId="25142" min="4" max="4" /> <!-- Hekaton Chires -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1069,9 +1069,9 @@
 			<itemDrop itemId="6569" min="1" max="1" chance="1.3921" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25141" name="Hekaton Cottus" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="53978.89" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6982.6865" baseMAtk="9405.354" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25141" name="Hekaton Cottus" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="53978.89" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6982.6865" baseMAtk="9405.354" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1084,9 +1084,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4720" level="6" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25142" name="Hekaton Chires" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="26989.445" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3491.3433" baseMAtk="2351.3384" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25142" name="Hekaton Chires" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="26989.445" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3491.3433" baseMAtk="2351.3384" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1098,9 +1098,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25143" name="Fire of Wrath Shuriel" title="Raid Boss" level="78" type="L2RaidBoss" baseAtkRange="40" baseHpMax="338354.47" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5346496" sp="1283" basePAtk="2592.7188" baseMAtk="929.62085" basePDef="998.1018" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="30.0" baseRunSpd="170.0" aggressive="true" rHand="2500" collisionRadius="13.5" collisionHeight="36.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="15"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25143" name="Fire of Wrath Shuriel" title="Raid Boss" level="78" type="L2RaidBoss" baseAtkRange="40" baseHpMax="338354.47" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5346496" sp="1283" basePAtk="2592.7188" baseMAtk="929.62085" basePDef="998.1018" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="30.0" baseRunSpd="170.0" aggressive="true" rHand="2500" collisionRadius="13.5" collisionHeight="36.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="53" darkDef="15" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25144" min="2" max="2" /> <!-- Shuriel's Oracle -->
 		<minion npcId="25145" min="2" max="2" /> <!-- Shuriel's Paladin -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1130,9 +1130,9 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25144" name="Shuriel's Oracle" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="65696.086" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" rHand="201" collisionRadius="15.0" collisionHeight="34.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+	<npc id="25144" name="Shuriel's Oracle" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="65696.086" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" rHand="201" collisionRadius="15.0" collisionHeight="34.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="mage" skillChance="100" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1146,9 +1146,9 @@
 		<skill id="4214" level="7" /> <!-- Reflect Damage -->
 		<skill id="4210" level="7" /> <!-- Chant of Life -->
 	</npc>
-	<npc id="25145" name="Shuriel's Paladin" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="32848.043" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="147" collisionRadius="13.0" collisionHeight="32.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="15"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25145" name="Shuriel's Paladin" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="32848.043" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="147" collisionRadius="13.0" collisionHeight="32.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="53" darkDef="15" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1160,9 +1160,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25146" name="Evil Spirit Bifrons" title="Raid Boss" level="21" type="L2RaidBoss" baseAtkRange="40" baseHpMax="20605.367" baseHpReg="16.826967" baseMpMax="205.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="529271" sp="127" basePAtk="53.12758" baseMAtk="3.168605" basePDef="269.19177" baseMDef="131.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="73" collisionRadius="25.0" collisionHeight="72.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25146" name="Evil Spirit Bifrons" title="Raid Boss" level="21" type="L2RaidBoss" baseAtkRange="40" baseHpMax="20605.367" baseHpReg="16.826967" baseMpMax="205.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="529271" sp="127" basePAtk="53.12758" baseMAtk="3.168605" basePDef="269.19177" baseMDef="131.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="73" collisionRadius="25.0" collisionHeight="72.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25147" min="3" max="3" /> <!-- Assassin of Bifrons -->
 		<minion npcId="25148" min="2" max="2" /> <!-- Butcher of Bifrons -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1194,9 +1194,9 @@
 			<itemDrop itemId="6576" min="1" max="1" chance="90" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25147" name="Assassin of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="1100" baseHpMax="2885.4807" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="2507" collisionRadius="10.0" collisionHeight="22.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25147" name="Assassin of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="1100" baseHpMax="2885.4807" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="2507" collisionRadius="10.0" collisionHeight="22.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1209,9 +1209,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4778" level="2" /> <!-- Spear Attack -->
 	</npc>
-	<npc id="25148" name="Butcher of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="2152.914" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="170.0" rHand="16" collisionRadius="12.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25148" name="Butcher of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="2152.914" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="170.0" rHand="16" collisionRadius="12.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1223,9 +1223,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25149" name="Zombie Lord Crowl" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="23558.236" baseHpReg="18.438532" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="508202" sp="121" basePAtk="74.22232" baseMAtk="4.6796722" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="30.0" collisionHeight="21.25" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25149" name="Zombie Lord Crowl" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="23558.236" baseHpReg="18.438532" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="508202" sp="121" basePAtk="74.22232" baseMAtk="4.6796722" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="30.0" collisionHeight="21.25">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25150" min="3" max="3" /> <!-- Evil Spirit Archer -->
 		<minion npcId="25151" min="2" max="2" /> <!-- Evil Spirit Warrior -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1259,9 +1259,9 @@
 			<itemDrop itemId="6576" min="1" max="3" chance="100" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25150" name="Evil Spirit Archer" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="1100" baseHpMax="3269.3584" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="14" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25150" name="Evil Spirit Archer" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="1100" baseHpMax="3269.3584" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="14" collisionRadius="11.0" collisionHeight="27.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="archer" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1276,9 +1276,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25151" name="Evil Spirit Warrior" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="2439.5427" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" rHand="946" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25151" name="Evil Spirit Warrior" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="2439.5427" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" rHand="946" collisionRadius="11.0" collisionHeight="25.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1292,9 +1292,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25152" name="Flame Lord Shadar" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="75.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25152" name="Flame Lord Shadar" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="75.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25153" min="1" max="1" /> <!-- Claws of Shadar -->
 		<minion npcId="25154" min="4" max="4" /> <!-- Whip of Shadar -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1328,9 +1328,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="13.6622" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25153" name="Claws of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="7689.71" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="606.9712" baseMAtk="192.6498" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="24.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25153" name="Claws of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="7689.71" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="606.9712" baseMAtk="192.6498" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="24.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1343,9 +1343,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4731" level="3" /> <!-- Mortal Blow -->
 	</npc>
-	<npc id="25154" name="Whip of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25154" name="Whip of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1359,9 +1359,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25155" name="Shaman King Selu" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="79" collisionRadius="24.0" collisionHeight="52.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25155" name="Shaman King Selu" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="79" collisionRadius="24.0" collisionHeight="52.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25156" min="3" max="3" /> <!-- Fanatic Wizard -->
 		<minion npcId="25157" min="1" max="1" /> <!-- Fanatic Soldier -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1395,9 +1395,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="50.7042" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25156" name="Fanatic Wizard" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1096.8741" baseMAtk="426.4354" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="123" lHand="19" collisionRadius="11.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25156" name="Fanatic Wizard" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1096.8741" baseMAtk="426.4354" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="123" lHand="19" collisionRadius="11.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1411,9 +1411,9 @@
 		<skill id="4194" level="3" /> <!-- Aura Burn -->
 		<skill id="4199" level="3" /> <!-- Decrease P. Atk. -->
 	</npc>
-	<npc id="25157" name="Fanatic Soldier" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="13649.411" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1645.3524" baseMAtk="959.5216" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="80.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="20.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25157" name="Fanatic Soldier" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="13649.411" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1645.3524" baseMAtk="959.5216" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="80.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="20.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1426,9 +1426,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4719" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25158" name="King Tarlk" title="Raid Boss" level="48" type="L2RaidBoss" baseAtkRange="40" baseHpMax="210416.53" baseHpReg="169.60869" baseMpMax="692.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1721605" sp="413" basePAtk="1515.6378" baseMAtk="663.4981" basePDef="573.3841" baseMDef="279.72" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" aggressive="true" rHand="160" collisionRadius="45.0" collisionHeight="126.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25158" name="King Tarlk" title="Raid Boss" level="48" type="L2RaidBoss" baseAtkRange="40" baseHpMax="210416.53" baseHpReg="169.60869" baseMpMax="692.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1721605" sp="413" basePAtk="1515.6378" baseMAtk="663.4981" basePDef="573.3841" baseMDef="279.72" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" aggressive="true" rHand="160" collisionRadius="45.0" collisionHeight="126.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4849" level="1" /> <!-- Raid Boss (Lv. 48) -->
 		<skill id="4416" level="11" /> <!-- Giants -->
@@ -1468,9 +1468,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="27.3418" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25159" name="Paniel the Unicorn" title="Raid Boss" level="54" type="L2RaidBoss" baseAtkRange="40" baseHpMax="99463.45" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1211141" sp="290" basePAtk="578.0202" baseMAtk="87.115425" basePDef="656.6877" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="46.0" baseRunSpd="170.0" aggressive="true" collisionRadius="14.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25159" name="Paniel the Unicorn" title="Raid Boss" level="54" type="L2RaidBoss" baseAtkRange="40" baseHpMax="99463.45" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1211141" sp="290" basePAtk="578.0202" baseMAtk="87.115425" basePDef="656.6877" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="46.0" baseRunSpd="170.0" aggressive="true" collisionRadius="14.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25160" min="2" max="2" /> <!-- Rapini the Unicorn -->
 		<minion npcId="25161" min="2" max="2" /> <!-- Ririf the Unicorn -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1509,9 +1509,9 @@
 			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25160" name="Rapini the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="20570.727" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="18.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25160" name="Rapini the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="20570.727" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="18.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1525,9 +1525,9 @@
 		<skill id="4213" level="5" /> <!-- Haste -->
 		<skill id="4781" level="5" /> <!-- Heal -->
 	</npc>
-	<npc id="25161" name="Ririf the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="10285.363" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="13.0" collisionHeight="17.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25161" name="Ririf the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="10285.363" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="13.0" collisionHeight="17.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1539,9 +1539,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25162" name="Giant Marpanak" title="Raid Boss" level="82" type="L2RaidBoss" baseAtkRange="40" baseHpMax="507810.84" baseHpReg="253.24435" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5553282" sp="1249267" basePAtk="2937.0505" baseMAtk="1851.6011" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" aggressive="true" rHand="3937" collisionRadius="50.0" collisionHeight="91.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25162" name="Giant Marpanak" title="Raid Boss" level="82" type="L2RaidBoss" baseAtkRange="40" baseHpMax="507810.84" baseHpReg="253.24435" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5553282" sp="1249267" basePAtk="2937.0505" baseMAtk="1851.6011" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" aggressive="true" rHand="3937" collisionRadius="50.0" collisionHeight="91.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4851" level="1" /> <!-- Raid Boss (Lv. 60) -->
 		<skill id="4416" level="11" /> <!-- Giants -->
@@ -1579,9 +1579,9 @@
 			<itemDrop itemId="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25163" name="Roaring Skylancer" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="44.0" collisionHeight="51.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25163" name="Roaring Skylancer" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="44.0" collisionHeight="51.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4852" level="1" /> <!-- Raid Boss (Lv. 70) -->
 		<skill id="4416" level="10" /> <!-- Dragons -->
@@ -1621,9 +1621,9 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25166" name="Ikuntai" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="30807.164" baseHpReg="24.086233" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="317859" sp="76" basePAtk="138.03738" baseMAtk="16.133173" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="150" collisionRadius="15.0" collisionHeight="39.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25166" name="Ikuntai" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="30807.164" baseHpReg="24.086233" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="317859" sp="76" basePAtk="138.03738" baseMAtk="16.133173" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="150" collisionRadius="15.0" collisionHeight="39.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25167" min="2" max="2" /> <!-- Ikuntai's Servitor -->
 		<minion npcId="25168" min="2" max="2" /> <!-- Ikuntai's Pawn -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1656,9 +1656,9 @@
 			<itemDrop itemId="6387" min="60" max="180" chance="100" /> <!-- Blessed Scroll of Resurrection (Pet) -->
 		</dropCategory>
 	</npc>
-	<npc id="25167" name="Ikuntai's Servitor" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="6373.6494" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25167" name="Ikuntai's Servitor" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="6373.6494" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1674,9 +1674,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25168" name="Ikuntai's Pawn" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="3186.8247" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="299" collisionRadius="10.0" collisionHeight="28.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25168" name="Ikuntai's Pawn" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="3186.8247" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="299" collisionRadius="10.0" collisionHeight="28.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1690,9 +1690,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25169" name="Ragraman" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="76949.04" baseHpReg="71.411606" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="373715" sp="89" basePAtk="416.07297" baseMAtk="100.07089" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="72" collisionRadius="24.0" collisionHeight="52.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25169" name="Ragraman" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="76949.04" baseHpReg="71.411606" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="373715" sp="89" basePAtk="416.07297" baseMAtk="100.07089" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="72" collisionRadius="24.0" collisionHeight="52.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4854" level="1" /> <!-- Raid Boss (Lv. 30) -->
 		<skill id="4416" level="6" /> <!-- Humanoids -->
@@ -1738,9 +1738,9 @@
 			<itemDrop itemId="6575" min="1" max="1" chance="7.5188" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25170" name="Lizardmen Captain Hellion" title="Raid Boss" level="38" type="L2RaidBoss" baseAtkRange="40" baseHpMax="44645.71" baseHpReg="30.872686" baseMpMax="447.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="391521" sp="93" basePAtk="204.55421" baseMAtk="16.14769" basePDef="445.3286" baseMDef="217.24" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="223" collisionRadius="30.0" collisionHeight="63.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25170" name="Lizardmen Captain Hellion" title="Raid Boss" level="38" type="L2RaidBoss" baseAtkRange="40" baseHpMax="44645.71" baseHpReg="30.872686" baseMpMax="447.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="391521" sp="93" basePAtk="204.55421" baseMAtk="16.14769" basePDef="445.3286" baseMDef="217.24" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="223" collisionRadius="30.0" collisionHeight="63.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25171" min="3" max="3" /> <!-- Hellion's Archers -->
 		<minion npcId="25172" min="2" max="2" /> <!-- Hellion's Escort -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1774,9 +1774,9 @@
 			<itemDrop itemId="951" min="1" max="3" chance="100" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25171" name="Hellion's Archers" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="1100" baseHpMax="6076.144" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="278" collisionRadius="11.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25171" name="Hellion's Archers" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="1100" baseHpMax="6076.144" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="278" collisionRadius="11.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="archer" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1789,9 +1789,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4757" level="3" /> <!-- Power Shot -->
 	</npc>
-	<npc id="25172" name="Hellion's Escort" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="4534.2354" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="291" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25172" name="Hellion's Escort" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="4534.2354" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="291" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1803,9 +1803,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25173" name="Tiger King Karuta" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="65907.96" baseHpReg="43.34256" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="333.67447" baseMAtk="35.73201" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25173" name="Tiger King Karuta" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="65907.96" baseHpReg="43.34256" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="333.67447" baseMAtk="35.73201" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25174" min="2" max="2" /> <!-- Karuta's Follower -->
 		<minion npcId="25175" min="2" max="2" /> <!-- Karuta's Subordinate -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1840,9 +1840,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25174" name="Karuta's Follower" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="13425.482" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="127" collisionRadius="13.0" collisionHeight="31.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25174" name="Karuta's Follower" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="13425.482" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="127" collisionRadius="13.0" collisionHeight="31.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1856,9 +1856,9 @@
 		<skill id="4214" level="4" /> <!-- Reflect Damage -->
 		<skill id="4781" level="4" /> <!-- Heal -->
 	</npc>
-	<npc id="25175" name="Karuta's Subordinate" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="6712.741" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="19.0" collisionHeight="36.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25175" name="Karuta's Subordinate" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="6712.741" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="19.0" collisionHeight="36.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1870,9 +1870,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25176" name="Black Lily" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="156795.56" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="2477106" sp="327038" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="12.0" collisionHeight="30.700000762939453" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25176" name="Black Lily" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="156795.56" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="2477106" sp="327038" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="12.0" collisionHeight="30.700000762939453">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25177" min="1" max="1" /> <!-- Guardian Knight of Black Lily -->
 		<minion npcId="25178" min="4" max="4" /> <!-- Servitor of Black Lily -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1912,9 +1912,9 @@
 			<itemDrop itemId="6572" min="1" max="1" chance="9.5394" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25177" name="Guardian Knight of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="75" collisionRadius="12.0" collisionHeight="31.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25177" name="Guardian Knight of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="75" collisionRadius="12.0" collisionHeight="31.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1929,9 +1929,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25178" name="Servitor of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="14630.47" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25178" name="Servitor of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="14630.47" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1945,9 +1945,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25179" name="Giant Statue Guardian Karum" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="1100" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="180.0" aggressive="true" rHand="4028" collisionRadius="30.0" collisionHeight="66.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25179" name="Giant Statue Guardian Karum" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="1100" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="180.0" aggressive="true" rHand="4028" collisionRadius="30.0" collisionHeight="66.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25180" min="3" max="3" /> <!-- Karum's Guard -->
 		<minion npcId="25181" min="1" max="1" /> <!-- Karum's Warrior -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1980,9 +1980,9 @@
 			<itemDrop itemId="6571" min="1" max="1" chance="1.7021" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25180" name="Karum's Guard" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1996.6841" baseMAtk="872.0363" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+	<npc id="25180" name="Karum's Guard" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1996.6841" baseMAtk="872.0363" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="mage" skillChance="100" clanRange="300" dodge="-18" />
 		<skill id="4416" level="11" /> <!-- Giants -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1996,9 +1996,9 @@
 		<skill id="4193" level="5" /> <!-- Life Drain -->
 		<skill id="4198" level="5" /> <!-- Poison -->
 	</npc>
-	<npc id="25181" name="Karum's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="25153.586" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2995.101" baseMAtk="1962.1676" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="20.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25181" name="Karum's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="25153.586" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2995.101" baseMAtk="1962.1676" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="20.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2011,9 +2011,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4721" level="5" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25182" name="Demon Kuri" title="Raid Boss" level="59" type="L2RaidBoss" baseAtkRange="40" baseHpMax="117045.35" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1342137" sp="322" basePAtk="748.77527" baseMAtk="122.635475" basePDef="728.4478" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="200.0" aggressive="true" collisionRadius="50.0" collisionHeight="180.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25182" name="Demon Kuri" title="Raid Boss" level="59" type="L2RaidBoss" baseAtkRange="40" baseHpMax="117045.35" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1342137" sp="322" basePAtk="748.77527" baseMAtk="122.635475" basePDef="728.4478" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="200.0" aggressive="true" collisionRadius="50.0" collisionHeight="180.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25183" min="2" max="2" /> <!-- Kuri's Wife -->
 		<minion npcId="25184" min="2" max="2" /> <!-- Devil Blader of Chaos -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -2054,9 +2054,9 @@
 			<itemDrop itemId="729" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Weapon (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25183" name="Kuri's Wife" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="24440.213" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="14.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25183" name="Kuri's Wife" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="24440.213" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="14.0" collisionHeight="40.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-13" darkDef="189" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2072,9 +2072,9 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="25184" name="Devil Blader of Chaos" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="12220.106" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25184" name="Devil Blader of Chaos" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="12220.106" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="-32" darkDef="53" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2088,9 +2088,9 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="25185" name="Tasaba Patriarch Hellena" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="225" collisionRadius="20.0" collisionHeight="40.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25185" name="Tasaba Patriarch Hellena" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="225" collisionRadius="20.0" collisionHeight="40.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25186" min="3" max="3" /> <!-- Hellena's Sniper -->
 		<minion npcId="25187" min="2" max="2" /> <!-- Hellena's Soldier -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -2125,9 +2125,9 @@
 			<itemDrop itemId="951" min="3" max="7" chance="9.1486" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25186" name="Hellena's Sniper" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="1100" baseHpMax="5151.6387" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="272" collisionRadius="11.0" collisionHeight="30.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25186" name="Hellena's Sniper" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="1100" baseHpMax="5151.6387" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="272" collisionRadius="11.0" collisionHeight="30.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2140,9 +2140,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4761" level="3" /> <!-- Stun -->
 	</npc>
-	<npc id="25187" name="Hellena's Soldier" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25187" name="Hellena's Soldier" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2154,9 +2154,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25188" name="Apepi" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="58400.85" baseHpReg="54.285095" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="222.43756" baseMAtk="28.85951" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" aggressive="true" collisionRadius="12.0" collisionHeight="50.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25188" name="Apepi" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="58400.85" baseHpReg="54.285095" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="222.43756" baseMAtk="28.85951" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" aggressive="true" collisionRadius="12.0" collisionHeight="50.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4861" level="1" /> <!-- Raid Boss (Lv. 30) -->
 		<skill id="4416" level="3" /> <!-- Beast -->
@@ -2200,9 +2200,9 @@
 			<itemDrop itemId="6576" min="1" max="1" chance="42.2535" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25189" name="Cronos' Servitor Mumu" title="Raid Boss" level="34" type="L2RaidBoss" baseAtkRange="40" baseHpMax="35781.91" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="383723" sp="92" basePAtk="151.7428" baseMAtk="12.040612" basePDef="398.8458" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" aggressive="true" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25189" name="Cronos' Servitor Mumu" title="Raid Boss" level="34" type="L2RaidBoss" baseAtkRange="40" baseHpMax="35781.91" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="383723" sp="92" basePAtk="151.7428" baseMAtk="12.040612" basePDef="398.8458" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" aggressive="true" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25190" min="3" max="3" /> <!-- Mumu's Wizard -->
 		<minion npcId="25191" min="1" max="1" /> <!-- Mumu's Warrior -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -2229,9 +2229,9 @@
 			<itemDrop itemId="952" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25190" name="Mumu's Wizard" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="4886.123" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="374.8107" baseMAtk="79.6019" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25190" name="Mumu's Wizard" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="4886.123" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="374.8107" baseMAtk="79.6019" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2245,9 +2245,9 @@
 		<skill id="4194" level="3" /> <!-- Aura Burn -->
 		<skill id="4202" level="3" /> <!-- Hold -->
 	</npc>
-	<npc id="25191" name="Mumu's Warrior" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="9983.703" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="562.2301" baseMAtk="179.1121" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25191" name="Mumu's Warrior" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="9983.703" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="562.2301" baseMAtk="179.1121" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2260,9 +2260,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4722" level="3" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25192" name="Earth Protector Panathen" title="Raid Boss" level="43" type="L2RaidBoss" baseAtkRange="40" baseHpMax="59151.527" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="988446" sp="237" basePAtk="291.5444" baseMAtk="29.765524" basePDef="507.4025" baseMDef="247.54" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="170.0" aggressive="true" rHand="183" collisionRadius="16.0" collisionHeight="31.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25192" name="Earth Protector Panathen" title="Raid Boss" level="43" type="L2RaidBoss" baseAtkRange="40" baseHpMax="59151.527" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="988446" sp="237" basePAtk="291.5444" baseMAtk="29.765524" basePDef="507.4025" baseMDef="247.54" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="170.0" aggressive="true" rHand="183" collisionRadius="16.0" collisionHeight="31.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25193" min="1" max="1" /> <!-- Panathen's Knight -->
 		<minion npcId="25194" min="4" max="4" /> <!-- Panathen's Protectors -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -2293,9 +2293,9 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="100" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25193" name="Panathen's Knight" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="12026.248" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1088.4075" baseMAtk="433.04587" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5130" collisionRadius="26.0" collisionHeight="42.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25193" name="Panathen's Knight" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="12026.248" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1088.4075" baseMAtk="433.04587" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5130" collisionRadius="26.0" collisionHeight="42.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2308,9 +2308,9 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4721" level="4" /> <!-- Power Strike -->
 	</npc>
-	<npc id="25194" name="Panathen's Protectors" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="1100" baseHpMax="6012.804" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="544.20374" baseMAtk="108.26147" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5127" collisionRadius="20.0" collisionHeight="28.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25194" name="Panathen's Protectors" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="1100" baseHpMax="6012.804" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="544.20374" baseMAtk="108.26147" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5127" collisionRadius="20.0" collisionHeight="28.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -2322,9 +2322,9 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="25198" name="Fafurion's Herald Lokness" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="55.0" collisionHeight="80.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25198" name="Fafurion's Herald Lokness" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="55.0" collisionHeight="80.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
 		<skill id="4985" level="1" /> <!-- Raid Boss (Lv. 70) -->
 		<skill id="4416" level="10" /> <!-- Dragons -->
@@ -2361,9 +2361,9 @@
 			<itemDrop itemId="6569" min="1" max="1" chance="23.0769" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="25199" name="Water Dragon Priest Sheshark" title="Raid Boss" level="72" type="L2RaidBoss" baseAtkRange="40" baseHpMax="315989.56" baseHpReg="119.969284" baseMpMax="1410.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5140646" sp="1233" basePAtk="2280.5664" baseMAtk="813.6372" basePDef="916.0784" baseMDef="446.9" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="200.0" aggressive="true" rHand="181" collisionRadius="10.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="110"
-			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+	<npc id="25199" name="Water Dragon Priest Sheshark" title="Raid Boss" level="72" type="L2RaidBoss" baseAtkRange="40" baseHpMax="315989.56" baseHpReg="119.969284" baseMpMax="1410.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5140646" sp="1233" basePAtk="2280.5664" baseMAtk="813.6372" basePDef="916.0784" baseMDef="446.9" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="200.0" aggressive="true" rHand="181" collisionRadius="10.0" collisionHeight="29.0">
+		<elementals elemAtkType="5" elemAtkValue="20" fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="110" />
+		<ai type="balanced" skillChance="15" clanRange="300" dodge="-18" />
 		<minion npcId="25200" min="3" max="3" /> <!-- Sheshark's Family -->
 		<minion npcId="25201" min="1" max="1" /> <!-- Sheshark's Escort -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->

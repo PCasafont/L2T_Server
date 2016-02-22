@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager.tasks;
 
 import java.util.Calendar;
@@ -23,13 +24,13 @@ import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
-import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
+import l2server.gameserver.taskmanager.TaskTypes;
 import l2server.log.Log;
 
 public class TaskRaidPointsReset extends Task
 {
-	public static final	String	NAME	= "raid_points_reset";
+	public static final String NAME = "raid_points_reset";
 	
 	@Override
 	public String getName()
@@ -42,7 +43,7 @@ public class TaskRaidPointsReset extends Task
 	{
 		Calendar cal = Calendar.getInstance();
 		
-		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY)
+		if (!Config.isServer(Config.TENKAI_ESTHUS) && (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY))
 		{
 			// reward clan reputation points
 			Map<Integer, Integer> rankList = RaidBossPointsManager.getInstance().getRankList();
@@ -50,7 +51,7 @@ public class TaskRaidPointsReset extends Task
 			{
 				for (Map.Entry<Integer, Integer> entry : rankList.entrySet())
 				{
-					if (entry.getValue() <= 100 && c.isMember(entry.getKey()))
+					if ((entry.getValue() <= 100) && c.isMember(entry.getKey()))
 					{
 						int reputation = 0;
 						switch (entry.getValue())

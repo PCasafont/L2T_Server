@@ -33,7 +33,8 @@
 		</for>
 	</skill>
 	<skill id="90002" levels="1" name="Custom Trap skill">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="isMagic" val="true" />

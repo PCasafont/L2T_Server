@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -16,7 +17,7 @@ public class VanguardPaladin extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 312 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 312) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -41,7 +42,7 @@ public class VanguardPaladin extends L2Transformation
 		// Switch Stance
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(838, 1), false);
 		// Set allowed skills
-		getPlayer().setTransformAllowedSkills(new int[]{18,28,196,197,293,400,406,814,816,838,956,957});
+		getPlayer().setTransformAllowedSkills(new int[] { 18, 28, 196, 197, 293, 400, 406, 814, 816, 838, 956, 957 });
 	}
 	
 	@Override

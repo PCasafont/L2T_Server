@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.security;
 
 import java.io.UnsupportedEncodingException;
@@ -34,7 +35,7 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
 /**
- * 
+ *
  * @author mrTJO
  */
 public class SecondaryPasswordAuth
@@ -55,7 +56,7 @@ public class SecondaryPasswordAuth
 	private static final String INSERT_ATTEMPT = "INSERT INTO account_gsdata VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?";
 	
 	/**
-	 * 
+	 *
 	 */
 	public SecondaryPasswordAuth(L2GameClient activeClient)
 	{
@@ -101,13 +102,16 @@ public class SecondaryPasswordAuth
 		{
 			L2DatabaseFactory.close(con);
 		}
+		
+		if ((_password != null) && _password.equals("DISABLED"))
+			_authed = true;
 	}
 	
 	public boolean savePassword(String password)
 	{
 		if (passwordExist())
 		{
-			Log.warning("[SecondaryPasswordAuth]"+_activeClient.getAccountName()+" forced savePassword");
+			Log.warning("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced savePassword");
 			_activeClient.closeNow();
 			return false;
 		}
@@ -174,7 +178,7 @@ public class SecondaryPasswordAuth
 	{
 		if (!passwordExist())
 		{
-			Log.warning("[SecondaryPasswordAuth]"+_activeClient.getAccountName()+" forced changePassword");
+			Log.warning("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced changePassword");
 			_activeClient.closeNow();
 			return false;
 		}
@@ -231,9 +235,7 @@ public class SecondaryPasswordAuth
 			else
 			{
 				LoginServerThread.getInstance().sendTempBan(_activeClient.getAccountName(), _activeClient.getConnectionAddress().getHostAddress(), Config.SECOND_AUTH_BAN_TIME);
-				Log.warning(_activeClient.getAccountName()+" - ("+
-						_activeClient.getConnectionAddress().getHostAddress()+") has inputted the wrong password "+
-						_wrongAttempts+" times in row.");
+				Log.warning(_activeClient.getAccountName() + " - (" + _activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " + _wrongAttempts + " times in row.");
 				insertWrongAttempt(0);
 				_activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN, Config.SECOND_AUTH_MAX_ATTEMPTS));
 				return false;
@@ -291,14 +293,14 @@ public class SecondaryPasswordAuth
 		if (!Util.isDigit(password))
 			return false;
 		
-		if (password.length() < 6 || password.length() > 8)
+		if ((password.length() < 6) || (password.length() > 8))
 			return false;
 		
 		/*for (int i = 0; i < password.length()-1; i++)
 		{
 			char curCh = password.charAt(i);
 			char nxtCh = password.charAt(i+1);
-			
+
 			if (curCh+1 == nxtCh)
 				return false;
 			else if (curCh-1 == nxtCh)
@@ -306,12 +308,12 @@ public class SecondaryPasswordAuth
 			else if (curCh == nxtCh)
 				return false;
 		}
-		
+
 		for (int i = 0; i < password.length()-2; i++)
 		{
 			String toChk = password.substring(i+1);
 			StringBuffer chkEr = new StringBuffer(password.substring(i, i+2));
-			
+
 			if (toChk.contains(chkEr))
 				return false;
 			else if (toChk.contains(chkEr.reverse()))

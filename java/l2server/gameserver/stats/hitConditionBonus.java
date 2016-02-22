@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.io.File;
@@ -25,7 +26,7 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 /**
- * 
+ *
  * @author Nik
  *
  */
@@ -38,22 +39,23 @@ public class hitConditionBonus
 	private static int highBonus = 0;
 	private static int lowBonus = 0;
 	private static int darkBonus = 0;
+	
 	//private static int rainBonus = 0;
 	
 	protected static double getConditionBonus(L2Character attacker, L2Character target)
 	{
 		double mod = 100;
 		// Get high or low bonus
-		if (attacker.getZ() - target.getZ() > 50)
+		if ((attacker.getZ() - target.getZ()) > 50)
 			mod += hitConditionBonus.highBonus;
-		else if (attacker.getZ() - target.getZ() < -50)
+		else if ((attacker.getZ() - target.getZ()) < -50)
 			mod += hitConditionBonus.lowBonus;
 		
 		// Get weather bonus
 		if (TimeController.getInstance().isNowNight())
 			mod += hitConditionBonus.darkBonus;
 		//else if () No rain support yet.
-			//chance += hitConditionBonus.rainBonus;
+		//chance += hitConditionBonus.rainBonus;
 		
 		// Get side bonus
 		if (attacker.isBehindTarget())
@@ -64,7 +66,7 @@ public class hitConditionBonus
 			mod += hitConditionBonus.sideBonus;
 		
 		// If (mod / 10) is less than 0, return 0, because we cant lower more than 100%.
-		return Math.max(mod / 100, 0); 
+		return Math.max(mod / 100, 0);
 	}
 	
 	static
@@ -107,7 +109,7 @@ public class hitConditionBonus
 							else if ("dark".equals(name))
 								darkBonus = bonus;
 							//else if ("rain".equals(name))
-								//rainBonus = bonus;
+							//rainBonus = bonus;
 						}
 						
 					}
@@ -116,7 +118,7 @@ public class hitConditionBonus
 		}
 		else
 		{
-			throw new Error("[hitConditionBonus] File not found: "+file.getName());
+			throw new Error("[hitConditionBonus] File not found: " + file.getName());
 		}
 	}
 }

@@ -952,12 +952,12 @@
 		<node X="16823" Y="-111297" />
 		<node X="18541" Y="-115694" />
 	</zone>
-	<zone name="Gainak Siege Peace Zone" type="PeaceZone" shape="NPoly" minZ="-265" maxZ="-14">
+	<!-- <zone name="Gainak Siege Peace Zone" type="PeaceZone" shape="NPoly" minZ="-265" maxZ="-14">
 		<node X="16864" Y="-114259" />
 		<node X="16268" Y="-114545" />
 		<node X="15923" Y="-113874" />
 		<node X="16498" Y="-113557" />
-	</zone>
+	</zone> -->
 	<zone name="Fearon Village" type="PeaceZone" shape="NPoly" minZ="-3800" maxZ="-2000">
 		<node X="-77543" Y="251744" />
 		<node X="-76138" Y="248579" />

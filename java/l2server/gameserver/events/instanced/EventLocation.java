@@ -1,9 +1,10 @@
+
 package l2server.gameserver.events.instanced;
 
 import java.util.ArrayList;
 
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.zone.type.L2EventZone;
+import l2server.gameserver.model.zone.type.L2TenkaiEventZone;
 import l2server.util.Point3D;
 import l2server.util.xml.XmlNode;
 
@@ -19,7 +20,7 @@ public class EventLocation
 	private final int _maxTeamPlayers;
 	private final boolean _hill;
 	
-	private L2EventZone _zone = null;
+	private L2TenkaiEventZone _zone = null;
 	
 	public EventLocation(XmlNode node)
 	{
@@ -28,7 +29,7 @@ public class EventLocation
 		_globalZ = node.getInt("globalZ");
 		_maxTeamPlayers = node.getInt("maxTeamPlayers");
 		_hill = node.getBool("hill", false);
-
+		
 		_spawns = new ArrayList<Point3D>();
 		for (XmlNode subNode : node.getChildren())
 		{
@@ -85,10 +86,10 @@ public class EventLocation
 		return new Point3D(0, 0, 0);
 	}
 	
-	public L2EventZone getZone()
+	public L2TenkaiEventZone getZone()
 	{
 		if (_zone == null)
-			_zone = ZoneManager.getInstance().getZoneById(_id + L2EventZone.BASE_ID, L2EventZone.class);
+			_zone = ZoneManager.getInstance().getZoneById(_id + L2TenkaiEventZone.BASE_ID, L2TenkaiEventZone.class);
 		
 		return _zone;
 	}

@@ -2,12 +2,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -33,7 +33,7 @@ import l2server.log.Log;
 public class DeadLockDetector extends Thread
 {
 	
-	private static final int _sleepTime = Config.DEADLOCK_CHECK_INTERVAL*1000;
+	private static final int _sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
 	
 	private final ThreadMXBean tmx;
 	
@@ -56,7 +56,7 @@ public class DeadLockDetector extends Thread
 				if (ids != null)
 				{
 					deadlock = true;
-					ThreadInfo[] tis = tmx.getThreadInfo(ids,true,true);
+					ThreadInfo[] tis = tmx.getThreadInfo(ids, true, true);
 					String info = "DeadLock Found!\n";
 					for (ThreadInfo ti : tis)
 					{
@@ -67,17 +67,17 @@ public class DeadLockDetector extends Thread
 					{
 						LockInfo[] locks = ti.getLockedSynchronizers();
 						MonitorInfo[] monitors = ti.getLockedMonitors();
-						if (locks.length == 0 && monitors.length == 0)
+						if ((locks.length == 0) && (monitors.length == 0))
 						{
 							continue;
 						}
 						
 						ThreadInfo dl = ti;
 						info += "Java-level deadlock:\n";
-						info += "\t"+dl.getThreadName()+" is waiting to lock "+dl.getLockInfo().toString()+" which is held by "+dl.getLockOwnerName()+"\n";
-						while ((dl = tmx.getThreadInfo(new long[]{dl.getLockOwnerId()},true,true)[0]).getThreadId() != ti.getThreadId())
+						info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() + " which is held by " + dl.getLockOwnerName() + "\n";
+						while ((dl = tmx.getThreadInfo(new long[] { dl.getLockOwnerId() }, true, true)[0]).getThreadId() != ti.getThreadId())
 						{
-							info += "\t"+dl.getThreadName()+" is waiting to lock "+dl.getLockInfo().toString()+" which is held by "+dl.getLockOwnerName()+"\n";
+							info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() + " which is held by " + dl.getLockOwnerName() + "\n";
 						}
 					}
 					Log.warning(info);
@@ -92,9 +92,9 @@ public class DeadLockDetector extends Thread
 				}
 				Thread.sleep(_sleepTime);
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
-				Log.log(Level.WARNING,"DeadLockDetector: ",e);
+				Log.log(Level.WARNING, "DeadLockDetector: ", e);
 			}
 		}
 	}

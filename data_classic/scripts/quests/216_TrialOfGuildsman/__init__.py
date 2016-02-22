@@ -74,7 +74,7 @@ class Quest (JQuest) :
         st.takeItems(ALLTRANS_INSTRUCTIONS_ID,1)
         st.takeItems(RP_JOURNEYMAN_RING_ID,1)
         st.giveItems(MARK_OF_GUILDSMAN_ID,1)
-        st.getPlayer().sendPacket(SocialAction(st.getPlayer().getObjectId(),3))
+        st.getPlayer().sendPacket(SocialAction(st.getPlayer(),3))
     elif event == "30103_4" :
         st.addExpAndSp(51473,3338)
         st.giveItems(57,9380)
@@ -88,7 +88,7 @@ class Quest (JQuest) :
         st.takeItems(ALLTRANS_INSTRUCTIONS_ID,1)
         st.takeItems(RP_JOURNEYMAN_RING_ID,1)
         st.giveItems(MARK_OF_GUILDSMAN_ID,1)
-        st.getPlayer().sendPacket(SocialAction(st.getPlayer().getObjectId(),3))
+        st.getPlayer().sendPacket(SocialAction(st.getPlayer(),3))
     elif event == "30283_1" :
         htmltext = "30283-03.htm"
         st.giveItems(ALLTRANS_INSTRUCTIONS_ID,1)
@@ -124,7 +124,7 @@ class Quest (JQuest) :
     elif event == "30298_1" :
         htmltext = "30298-03.htm"
     elif event == "30298_2" :
-        if st.getPlayer().getClassId() == 0x36 :
+        if st.getPlayer().getClassId().getId() == 0x36 :
             htmltext = "30298-04.htm"
             st.giveItems(PINTERS_INSTRUCTIONS_ID,1)
             st.takeItems(ALLTRANS_RECOMMEND2_ID,1)
@@ -143,7 +143,7 @@ class Quest (JQuest) :
    id = st.getState()
    if npcId != 30103 and id != State.STARTED : return htmltext
    if npcId == 30103 and st.getInt("cond")==0 and st.getInt("onlyone")==0 :
-          if player.getClassId() in [0x38, 0x36] :
+          if player.getClassId().getId() in [0x38, 0x36] :
             if player.getLevel() < 35 :
               htmltext = "30103-02.htm"
               st.exitQuest(1)

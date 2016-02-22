@@ -61,7 +61,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8007" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8007" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -71,7 +71,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8008" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8008" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -181,7 +181,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8019" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8019" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -191,7 +191,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8020" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8020" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -301,7 +301,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8031" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8031" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -311,7 +311,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8032" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8032" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -421,7 +421,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8043" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8043" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -431,7 +431,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8044" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8044" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1021,7 +1021,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8103" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8103" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1031,7 +1031,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8104" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8104" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1141,7 +1141,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8115" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8115" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1151,7 +1151,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8116" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8116" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1261,7 +1261,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8127" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8127" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1271,7 +1271,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8128" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8128" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1381,7 +1381,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8139" levels="1" name="Augment Option - Holy Attack Resistance">
+	<skill id="8139" levels="1" name="Augment Option - Holy Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -1391,7 +1391,7 @@
 		</for>
 	</skill>
 	<!-- Accessory that contains special power. -->
-	<skill id="8140" levels="1" name="Augment Option - Dark Attack Resistance">
+	<skill id="8140" levels="1" name="Augment Option - Dark Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2754,7 +2754,7 @@
 	</skill>
 	<!-- Inflicts a powerful physical water attack on the enemy with the power of Talisman attached to the Sword of Fire and Water. -->
 	<skill id="8238" levels="1" name="Shalin Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="73" />
@@ -2774,11 +2774,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
-	<!-- 
-		Level 1: Delivers a powerful range attack, shocking the target. Consumes all accumulated critical hits. Requires a Stage 3 critical hit.
-		Level 2: Delivers a powerful range attack, shocking the target. Consumes all accumulated critical hits. Requires a Stage 5 critical hit.
-		Level 3: Delivers a powerful range attack, shocking the target. Consumes all accumulated critical hits. Requires a Stage 7 critical hit.
-	-->
+	<!-- Delivers a powerful range attack, shocking the target. Consumes all accumulated critical hits. Requires a Stage 3 critical hit. -->
 	<skill id="8240" levels="3" name="Obliteration Storm">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2802,7 +2798,7 @@
 	</skill>
 	<!-- Inflicts a powerful long-range water attack on the enemy. -->
 	<skill id="8242" levels="1" name="Ice Ball">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2817,7 +2813,7 @@
 	</skill>
 	<!-- Inflicts a powerful short-range water attack on the enemy. -->
 	<skill id="8243" levels="1" name="Chill Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2882,7 +2878,7 @@
 				<player olympiad="false" />
 			</cond>
 			<cond addName="1" msgId="113">
-				<player onEvent="False" />
+				<player onEvent="false" />
 			</cond>
 			<abnormal duration="3600" stackLvl="1" stackType="transform">
 				<effect type="Transformation" val="0" />
@@ -3133,7 +3129,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Removes the Agathion's seal. -->
-	<skill id="8275" levels="1" name="Release Agathion's Seal - PvP">
+	<skill id="8275" levels="1" name="Release Agathion's Seal - Knight">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3401,7 +3397,7 @@
 			<add stat="reflectDam" val="4" />
 		</for>
 	</skill>
-	<!-- Increases Critical Rate. Inflicts additional damage during PvP. -->
+	<!-- Increases Critical Rate by 109.2. Inflicts additional damage by 5% during PvP. -->
 	<skill id="8295" levels="1" name="Special Ability: Focus">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3797,20 +3793,25 @@
 	</skill>
 	<!-- Cancels the buffs of nearby enemies by with the power of Talisman. -->
 	<skill id="8331" levels="1" name="Blue Talisman - Buff Cancel">
-		<set name="target" val="TARGET_AURA" />
-		<set name="skillType" val="CANCEL" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
+		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="55" />
 		<set name="mpConsume" val="50" />
-		<set name="power" val="25" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="360000" />
 		<set name="staticReuse" val="true" />
 		<set name="skillRadius" val="150" />
-		<set name="maxNegated" val="5" />
 		<set name="staticHitTime" val="true" />
 		<set name="equipDelay" val="30000" />
+		<set name="maxNegated" val="5" />
+		<for>
+			<abnormal landRate="25">
+				<effect type="Cancel" val="25" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Steals the enemy's abnormal status using the talisman's power. -->
 	<skill id="8332" levels="1" name="Blue Talisman - Buff Steal">
@@ -3901,7 +3902,7 @@
 		</for>
 	</skill>
 	<!-- Increases HP regeneration when equipped. -->
-	<skill id="8338" levels="4" name="Low-grade Magic Rune Clip Iron Belt">
+	<skill id="8338" levels="4" name="Top-grade Magic Rune Clip Iron Belt">
 		<table name="#hp"> 0.4 1 1.4 2 </table>
 		<table name="#hpsit"> 0.3 0.75 1.05 1.5 </table>
 		<table name="#name">Low-grade Magic Rune Clip Iron Belt;Standard Magic Rune Clip Iron Belt;High-grade Magic Rune Clip Iron Belt;Top-grade Magic Rune Clip Iron Belt</table>
@@ -3918,7 +3919,7 @@
 		</for>
 	</skill>
 	<!-- Increases HP regeneration when equipped. -->
-	<skill id="8339" levels="4" name="Low-grade Magic Rune Clip Mithril Belt">
+	<skill id="8339" levels="4" name="Top-grade Magic Rune Clip Mithril Belt">
 		<table name="#hp"> 0.78 1.95 2.73 3.9 </table>
 		<table name="#hpsit"> 0.6 1.5 2.1 3 </table>
 		<table name="#name">Low-grade Magic Rune Clip Mithril Belt;Standard Magic Rune Clip Mithril Belt;High-grade Magic Rune Clip Mithril Belt;Top-grade Magic Rune Clip Mithril Belt</table>
@@ -3935,7 +3936,7 @@
 		</for>
 	</skill>
 	<!-- Increases MP regeneration when equipped. -->
-	<skill id="8340" levels="4" name="Low-grade Magic Rune Clip Iron Belt">
+	<skill id="8340" levels="4" name="Top-grade Magic Rune Clip Iron Belt">
 		<table name="#mp"> 0.14 0.35 0.49 0.7 </table>
 		<table name="#mpsit"> 0.16 0.4 0.56 0.8 </table>
 		<table name="#name">Low-grade Magic Rune Clip Iron Belt;Standard Magic Rune Clip Iron Belt;High-grade Magic Rune Clip Iron Belt;Top-grade Magic Rune Clip Iron Belt</table>
@@ -3952,7 +3953,7 @@
 		</for>
 	</skill>
 	<!-- Increases MP regeneration when equipped. -->
-	<skill id="8341" levels="4" name="Low-grade Magic Rune Clip Mithril Belt">
+	<skill id="8341" levels="4" name="Top-grade Magic Rune Clip Mithril Belt">
 		<table name="#amount"> 0.3 0.75 1.05 1.5 </table>
 		<table name="#name">Low-grade Magic Rune Clip Mithril Belt;Standard Magic Rune Clip Mithril Belt;High-grade Magic Rune Clip Mithril Belt;Top-grade Magic Rune Clip Mithril Belt</table>
 		<set name="name" val="#name" />
@@ -3968,7 +3969,7 @@
 		</for>
 	</skill>
 	<!-- Increases normal damage during PvP when equipped. -->
-	<skill id="8342" levels="4" name="Low-grade Magic Ornament Iron Belt">
+	<skill id="8342" levels="4" name="Top-grade Magic Ornament Iron Belt">
 		<table name="#pvp"> 0.6 1.5 2.1 3 </table>
 		<table name="#name">Low-grade Magic Ornament Iron Belt;Standard Magic Ornament Iron Belt;High-grade Magic Ornament Iron Belt;Top-grade Magic Ornament Iron Belt</table>
 		<set name="name" val="#name" />
@@ -3981,7 +3982,7 @@
 		</for>
 	</skill>
 	<!-- Increases skill/magic damage during PvP when equipped. -->
-	<skill id="8343" levels="4" name="Low-grade Magic Ornament Iron Belt">
+	<skill id="8343" levels="4" name="Top-grade Magic Ornament Iron Belt">
 		<table name="#pvp"> 0.6 1.5 2.1 3 </table>
 		<table name="#name">Low-grade Magic Ornament Iron Belt;Standard Magic Ornament Iron Belt;High-grade Magic Ornament Iron Belt;Top-grade Magic Ornament Iron Belt</table>
 		<set name="name" val="#name" />
@@ -3995,7 +3996,7 @@
 		</for>
 	</skill>
 	<!-- Decreases damage received during PvP when equipped. -->
-	<skill id="8344" levels="4" name="Low-grade Magic Ornament Iron Belt">
+	<skill id="8344" levels="4" name="Top-grade Magic Ornament Iron Belt">
 		<table name="#pvp"> 0.6 1.5 2.1 3 </table>
 		<table name="#name">Low-grade Magic Ornament Iron Belt;Standard Magic Ornament Iron Belt;High-grade Magic Ornament Iron Belt;Top-grade Magic Ornament Iron Belt</table>
 		<set name="name" val="#name" />
@@ -4009,7 +4010,7 @@
 		</for>
 	</skill>
 	<!-- Increases normal damage during PvP when equipped. -->
-	<skill id="8345" levels="4" name="Low-grade Magic Ornament Mithril Belt">
+	<skill id="8345" levels="4" name="Top-grade Magic Ornament Mithril Belt">
 		<table name="#pvp"> 1 2.5 3.5 5 </table>
 		<table name="#name">Low-grade Magic Ornament Mithril Belt;Standard Magic Ornament Mithril Belt;High-grade Magic Ornament Mithril Belt;Top-grade Magic Ornament Mithril Belt</table>
 		<set name="name" val="#name" />
@@ -4022,7 +4023,7 @@
 		</for>
 	</skill>
 	<!-- Increases skill/magic damage during PvP when equipped. -->
-	<skill id="8346" levels="4" name="Low-grade Magic Ornament Mithril Belt">
+	<skill id="8346" levels="4" name="Top-grade Magic Ornament Mithril Belt">
 		<table name="#pvp"> 1 2.5 3.5 5 </table>
 		<table name="#name">Low-grade Magic Ornament Mithril Belt;Standard Magic Ornament Mithril Belt;High-grade Magic Ornament Mithril Belt;Top-grade Magic Ornament Mithril Belt</table>
 		<set name="name" val="#name" />
@@ -4036,7 +4037,7 @@
 		</for>
 	</skill>
 	<!-- Decreases damage received during PvP when equipped. -->
-	<skill id="8347" levels="4" name="Low-grade Magic Ornament Mithril Belt">
+	<skill id="8347" levels="4" name="Top-grade Magic Ornament Mithril Belt">
 		<table name="#pvp"> 1.2 3 4.2 6 </table>
 		<table name="#name">Low-grade Magic Ornament Mithril Belt;Standard Magic Ornament Mithril Belt;High-grade Magic Ornament Mithril Belt;Top-grade Magic Ornament Mithril Belt</table>
 		<set name="name" val="#name" />
@@ -4053,7 +4054,7 @@
 		Level 1: Increases Bleed Resistance by 15%, effectiveness of Stun attacks by 15% and Water Resistance by 8.
 		Level 2: Increases Max CP by 5%, Bleed Resistance by 15%, effectiveness of Stun attacks by 15% and Water Resistance by 10.
 	-->
-	<skill id="8348" levels="2" name="Resistance Earring - Gludio">
+	<skill id="8348" levels="2" name="Royal Guard Earring - Gludio">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Gludio;Royal Guard Earring - Gludio</table>
 		<set name="name" val="#name" />
@@ -4070,7 +4071,7 @@
 		Level 1: Increases Poison Resistance by 15%, effectiveness of Hold attacks by 15% and Holy Resistance by 8.
 		Level 2: Increases Max CP by 5%, Poison Resistance by 15%, effectiveness of Hold attacks by 15% and Holy Resistance by 10.
 	-->
-	<skill id="8349" levels="2" name="Resistance Earring - Dion">
+	<skill id="8349" levels="2" name="Royal Guard Earring - Dion">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Dion;Royal Guard Earring - Dion</table>
 		<set name="name" val="#name" />
@@ -4087,7 +4088,7 @@
 		Level 1: Increases Paralysis Resistance by 15%, effectiveness of Bleed attacks by 15% and Wind Resistance by 8.
 		Level 2: Increases Max CP by 5%, Paralysis Resistance by 15%, effectiveness of Bleed attacks by 15% and Wind Resistance by 10.
 	-->
-	<skill id="8350" levels="2" name="Resistance Earring - Giran">
+	<skill id="8350" levels="2" name="Royal Guard Earring - Giran">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Giran;Royal Guard Earring - Giran</table>
 		<set name="name" val="#name" />
@@ -4101,10 +4102,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases Hold Resistance by 15%, effectiveness of Paralysis attacks by 15% and Dark Resistance by 8.
+		Level 1: Increases Hold Resistance by 15%, effectiveness of Paralysis attacks by s2 and Dark Resistance by 8.
 		Level 2: Increases Max CP by 5%, Hold Resistance by 15%, effectiveness of Paralysis attacks by 15% and Dark Resistance by 10.
 	-->
-	<skill id="8351" levels="2" name="Resistance Earring - Oren">
+	<skill id="8351" levels="2" name="Royal Guard Earring - Oren">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Oren;Royal Guard Earring - Oren</table>
 		<set name="name" val="#name" />
@@ -4121,7 +4122,7 @@
 		Level 1: Increases Stun Resistance by 15%, effectiveness of Mental attacks by 15% and Earth Resistance by 8.
 		Level 2: Increases Max CP by 5% and Stun Resistance by 15%, Mental Attack Bonus by 15% and Earth Resistance by 10.
 	-->
-	<skill id="8352" levels="2" name="Resistance Earring - Aden">
+	<skill id="8352" levels="2" name="Royal Guard Earring - Aden">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Aden;Royal Guard Earring - Aden</table>
 		<set name="name" val="#name" />
@@ -4138,7 +4139,7 @@
 		Level 1: Increases Stun Resistance by 15%, effectiveness of Sleep attacks by 15% and Water Resistance by 8.
 		Level 2: Increases Max CP by 5% and Stun Resistance by 15%, effectiveness of Sleep attacks by 15% and Water Resistance by 10.
 	-->
-	<skill id="8353" levels="2" name="Resistance Earring - Innadril">
+	<skill id="8353" levels="2" name="Royal Guard Earring - Innadril">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Innadril;Royal Guard Earring - Innadril</table>
 		<set name="name" val="#name" />
@@ -4155,7 +4156,7 @@
 		Level 1: Increases Sleep Resistance by 15%, effectiveness of Stun attacks by 15% and Fire Resistance by 8.
 		Level 2: Increases Max CP by 5% and Sleep Resistance by 15%, effectiveness of Stun attacks by 15% and Fire Resistance by 10.
 	-->
-	<skill id="8354" levels="2" name="Resistance Earring - Goddard">
+	<skill id="8354" levels="2" name="Royal Guard Earring - Goddard">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Goddard;Royal Guard Earring - Goddard</table>
 		<set name="name" val="#name" />
@@ -4172,7 +4173,7 @@
 		Level 1: Increases Hold Resistance by 15%, effectiveness of Poison attacks by 15% and Fire Resistance by 8.
 		Level 2: Increases Max CP by 5%, Hold Resistance by 15%, effectiveness of Poison attacks by 15% and Fire Resistance by 10.
 	-->
-	<skill id="8355" levels="2" name="Resistance Earring - Rune">
+	<skill id="8355" levels="2" name="Royal Guard Earring - Rune">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Rune;Royal Guard Earring - Rune</table>
 		<set name="name" val="#name" />
@@ -4189,7 +4190,7 @@
 		Level 1: Increases mental Attack Resistance by 15%, effectiveness of Hold attacks by 15% and Wind Resistance by 8.
 		Level 2: Increases Max CP by 5%, mental Attack Resistance by 15%, effectiveness of Hold attacks by 15% and Wind Resistance by 10.
 	-->
-	<skill id="8356" levels="2" name="Resistance Earring - Schuttgart">
+	<skill id="8356" levels="2" name="Royal Guard Earring - Schuttgart">
 		<table name="#maxCp"> 0 5 </table>
 		<table name="#name">Resistance Earring - Schuttgart;Royal Guard Earring - Schuttgart</table>
 		<set name="name" val="#name" />
@@ -4204,7 +4205,8 @@
 	</skill>
 	<!-- Einhasad's sword bestowed by Emperor Shunaiman of Elmoreden. With the pride of being chosen, he can fiercely attack the enemies on the front line. -->
 	<skill id="8357" levels="1" name="Einhasad's Strike">
-		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="FRONT" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="85" />
@@ -4246,7 +4248,7 @@
 	</skill>
 	<!-- Release a beast. -->
 	<skill id="8362" levels="1" name="Beast Training - Release">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BEAST_RELEASE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
@@ -4258,7 +4260,7 @@
 	</skill>
 	<!-- Order a beast to accompany. -->
 	<skill id="8363" levels="1" name="Beast Training - Accompany">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BEAST_ACCOMPANY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
@@ -4270,7 +4272,7 @@
 	</skill>
 	<!-- Order a beast to use special ability. -->
 	<skill id="8364" levels="1" name="Beast Training - Use Special Ability">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BEAST_SKILL" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
@@ -4399,7 +4401,7 @@
 		Level 1: Increases Earth Resistance by 12.
 		Level 2: Increases Earth Resistance by 15.
 	-->
-	<skill id="8379" levels="2" name="Protection Ring - Gludio">
+	<skill id="8379" levels="2" name="Royal Guard Ring - Gludio">
 		<table name="#earthRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Gludio;Royal Guard Ring - Gludio</table>
 		<set name="name" val="#name" />
@@ -4414,7 +4416,7 @@
 		Level 1: Increases Water Resistance by 12.
 		Level 2: Increases Water Resistance by 15.
 	-->
-	<skill id="8380" levels="2" name="Protection Ring - Dion">
+	<skill id="8380" levels="2" name="Royal Guard Ring - Dion">
 		<table name="#waterRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Dion;Royal Guard Ring - Dion</table>
 		<set name="name" val="#name" />
@@ -4429,7 +4431,7 @@
 		Level 1: Increases Fire Resistance by 12.
 		Level 2: Increases Fire Resistance by 15.
 	-->
-	<skill id="8381" levels="2" name="Protection Ring - Giran">
+	<skill id="8381" levels="2" name="Royal Guard Ring - Giran">
 		<table name="#fireRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Giran;Royal Guard Ring - Giran</table>
 		<set name="name" val="#name" />
@@ -4444,7 +4446,7 @@
 		Level 1: Increases Earth Resistance by 12.
 		Level 2: Increases Earth Resistance by 15.
 	-->
-	<skill id="8382" levels="2" name="Protection Ring - Oren">
+	<skill id="8382" levels="2" name="Royal Guard Ring - Oren">
 		<table name="#earthRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Oren;Royal Guard Ring - Oren</table>
 		<set name="name" val="#name" />
@@ -4459,7 +4461,7 @@
 		Level 1: Increases Holy Resistance by 12.
 		Level 2: Increases Holy Resistance by 15.
 	-->
-	<skill id="8383" levels="2" name="Protection Ring - Aden">
+	<skill id="8383" levels="2" name="Royal Guard Ring - Aden">
 		<table name="#holyRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Aden;Royal Guard Ring - Aden</table>
 		<set name="name" val="#name" />
@@ -4474,7 +4476,7 @@
 		Level 1: Increases Holy Resistance by 12.
 		Level 2: Increases Holy Resistance by 15.
 	-->
-	<skill id="8384" levels="2" name="Protection Ring - Innadril">
+	<skill id="8384" levels="2" name="Royal Guard Ring - Innadril">
 		<table name="#holyRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Innadril;Royal Guard Ring - Innadril</table>
 		<set name="name" val="#name" />
@@ -4489,7 +4491,7 @@
 		Level 1: Increases Dark Resistance by 12.
 		Level 2: Increases Dark Resistance by 15.
 	-->
-	<skill id="8385" levels="2" name="Protection Ring - Goddard">
+	<skill id="8385" levels="2" name="Royal Guard Ring - Goddard">
 		<table name="#darkRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Goddard;Royal Guard Ring - Goddard</table>
 		<set name="name" val="#name" />
@@ -4504,7 +4506,7 @@
 		Level 1: Increases Wind Resistance by 12.
 		Level 2: Increases Wind Resistance by 15.
 	-->
-	<skill id="8386" levels="2" name="Protection Ring - Rune">
+	<skill id="8386" levels="2" name="Royal Guard Ring - Rune">
 		<table name="#windRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Rune;Royal Guard Ring - Rune</table>
 		<set name="name" val="#name" />
@@ -4519,7 +4521,7 @@
 		Level 1: Increases Dark Resistance by 12.
 		Level 2: Increases Dark Resistance by 15.
 	-->
-	<skill id="8387" levels="2" name="Protection Ring - Schuttgart">
+	<skill id="8387" levels="2" name="Royal Guard Ring - Schuttgart">
 		<table name="#darkRes"> 12 15 </table>
 		<table name="#name">Protection Ring - Schuttgart;Royal Guard Ring - Schuttgart</table>
 		<set name="name" val="#name" />
@@ -4534,7 +4536,7 @@
 		Level 1: Increases Water Resistance by 26.
 		Level 2: Increases Water Resistance by 30.
 	-->
-	<skill id="8388" levels="2" name="Protection Necklace - Gludio">
+	<skill id="8388" levels="2" name="Royal Guard Necklace - Gludio">
 		<table name="#waterRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Gludio;Royal Guard Necklace - Gludio</table>
 		<set name="name" val="#name" />
@@ -4549,7 +4551,7 @@
 		Level 1: Increases Holy Resistance by 26.
 		Level 2: Increases Holy Resistance by 30.
 	-->
-	<skill id="8389" levels="2" name="Protection Necklace - Dion">
+	<skill id="8389" levels="2" name="Royal Guard Necklace - Dion">
 		<table name="#holyRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Dion;Royal Guard Necklace - Dion</table>
 		<set name="name" val="#name" />
@@ -4564,7 +4566,7 @@
 		Level 1: Increases Wind Resistance by 26.
 		Level 2: Increases Wind Resistance by 30.
 	-->
-	<skill id="8390" levels="2" name="Protection Necklace - Giran">
+	<skill id="8390" levels="2" name="Royal Guard Necklace - Giran">
 		<table name="#windRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Giran;Royal Guard Necklace - Giran</table>
 		<set name="name" val="#name" />
@@ -4579,7 +4581,7 @@
 		Level 1: Increases Dark Resistance by 26.
 		Level 2: Increases Dark Resistance by 30.
 	-->
-	<skill id="8391" levels="2" name="Protection Necklace - Oren">
+	<skill id="8391" levels="2" name="Royal Guard Necklace - Oren">
 		<table name="#darkRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Oren;Royal Guard Necklace - Oren</table>
 		<set name="name" val="#name" />
@@ -4594,7 +4596,7 @@
 		Level 1: Increases Earth Resistance by 26.
 		Level 2: Increases Earth Resistance by 30.
 	-->
-	<skill id="8392" levels="2" name="Protection Necklace - Aden">
+	<skill id="8392" levels="2" name="Royal Guard Necklace - Aden">
 		<table name="#earthRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Aden;Royal Guard Necklace - Aden</table>
 		<set name="name" val="#name" />
@@ -4609,7 +4611,7 @@
 		Level 1: Increases Water Resistance by 26.
 		Level 2: Increases Water Resistance by 30.
 	-->
-	<skill id="8393" levels="2" name="Protection Necklace - Innadril">
+	<skill id="8393" levels="2" name="Royal Guard Necklace - Innadril">
 		<table name="#waterRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Innadril;Royal Guard Necklace - Innadril</table>
 		<set name="name" val="#name" />
@@ -4624,7 +4626,7 @@
 		Level 1: Increases Fire Resistance by 26.
 		Level 2: Increases Fire Resistance by 30.
 	-->
-	<skill id="8394" levels="2" name="Protection Necklace - Goddard">
+	<skill id="8394" levels="2" name="Royal Guard Necklace - Goddard">
 		<table name="#fireRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Goddard;Royal Guard Necklace - Goddard</table>
 		<set name="name" val="#name" />
@@ -4639,7 +4641,7 @@
 		Level 1: Increases Fire Resistance by 26.
 		Level 2: Increases Fire Resistance by 30.
 	-->
-	<skill id="8395" levels="2" name="Protection Necklace - Rune">
+	<skill id="8395" levels="2" name="Royal Guard Necklace - Rune">
 		<table name="#fireRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Rune;Royal Guard Necklace - Rune</table>
 		<set name="name" val="#name" />
@@ -4654,7 +4656,7 @@
 		Level 1: Increases Wind Resistance by 26.
 		Level 2: Increases Wind Resistance by 30.
 	-->
-	<skill id="8396" levels="2" name="Protection Necklace - Schuttgart">
+	<skill id="8396" levels="2" name="Royal Guard Necklace - Schuttgart">
 		<table name="#windRes"> 26 30 </table>
 		<table name="#name">Protection Necklace - Schuttgart;Royal Guard Necklace - Schuttgart</table>
 		<set name="name" val="#name" />
@@ -4832,7 +4834,7 @@
 			<baseSub stat="CON" val="2" />
 			<addPercent stat="pAtk" val="6.59" />
 			<addPercent stat="pAtkSpd" val="6" />
-			<add stat="rCrit" val="17.05" />
+			<add stat="rCrit" val="171" />
 			<addPercent stat="paralysisRes" val="50" />
 			<addPercent stat="runSpd" val="3" />
 			<add stat="fireRes" val="5" />
@@ -5054,7 +5056,7 @@
 			<baseSub stat="CON" val="2" />
 			<addPercent stat="pAtk" val="6.59" />
 			<addPercent stat="pAtkSpd" val="6" />
-			<add stat="rCrit" val="17.05" />
+			<add stat="rCrit" val="171" />
 			<addPercent stat="paralysisRes" val="50" />
 			<addPercent stat="runSpd" val="3" />
 			<add stat="fireRes" val="5" />
@@ -5623,10 +5625,7 @@
 			<baseSub stat="STR" val="1" />
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and MP Recovery Bonus by enchanting set items.
-		Level 2: Increases P. Def and MP Recovery Bonus by enchanting a set item.
-	-->
+	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
 	<skill id="8461" levels="3" name="Enchant Heavy Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5646,10 +5645,7 @@
 			</add>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases M. Def. and Evasion by enchanting set items.
-		Level 2: Increases M. Def. and Evasion by enchanting a set item.
-	-->
+	<!-- Increases M. Def. and Evasion by enchanting set items. -->
 	<skill id="8462" levels="3" name="Enchant Light Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5664,10 +5660,7 @@
 			</add>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases P. Def. and weight capacity by enchanting set items.
-		Level 2: Increases P. Def. and weight capacity by enchanting a set item.
-	-->
+	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
 	<skill id="8463" levels="3" name="Enchant Robe (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -6404,7 +6397,8 @@
 	</skill>
 	<!-- Dances to stir up the illusion of Medusa. Petrifies nearby enemies for 30 seconds. Requires a dualsword. -->
 	<skill id="8550" levels="1" name="Dance of Medusa">
-		<set name="target" val="TARGET_NONE" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="53" />
@@ -6483,7 +6477,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
-	<!-- Infiltrates the battleground like a ghost.Â For 30 seconds, increases Speed by 33, Evasion by 15, vital point attack rate by 40%, physical skill Evasion Rate by 60%, and Buff-canceling Attack Resistance by 90. -->
+	<!-- Infiltrates the battleground like a ghost. For 30 seconds, increases Speed by 33, Evasion by 15, vital point attack rate by 40%, physical skill Evasion Rate by 60%, and Buff-canceling Attack Resistance by 90. -->
 	<skill id="8558" levels="1" name="Ghost Walking">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -9271,7 +9265,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 3% -->
-	<skill id="8805" levels="1" name="Dark Eternal Helmet">
+	<skill id="8805" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9283,7 +9277,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 8% -->
-	<skill id="8806" levels="1" name="Dark Eternal Breastplate">
+	<skill id="8806" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9295,7 +9289,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 5% -->
-	<skill id="8807" levels="1" name="Dark Eternal Gaiters">
+	<skill id="8807" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9307,7 +9301,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8808" levels="1" name="Dark Eternal Gauntlets">
+	<skill id="8808" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9319,7 +9313,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8809" levels="1" name="Dark Eternal Boots">
+	<skill id="8809" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9331,7 +9325,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 3% -->
-	<skill id="8810" levels="1" name="Dark Eternal Leather Helmet">
+	<skill id="8810" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9343,7 +9337,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 8% -->
-	<skill id="8811" levels="1" name="Dark Eternal Leather Armor">
+	<skill id="8811" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9355,7 +9349,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 5% -->
-	<skill id="8812" levels="1" name="Dark Eternal Leather Leggings">
+	<skill id="8812" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9367,7 +9361,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8813" levels="1" name="Dark Eternal Leather Gloves">
+	<skill id="8813" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9379,7 +9373,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8814" levels="1" name="Dark Eternal Leather Boots">
+	<skill id="8814" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9391,7 +9385,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 3% -->
-	<skill id="8815" levels="1" name="Dark Eternal Circlet">
+	<skill id="8815" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9403,7 +9397,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 8% -->
-	<skill id="8816" levels="1" name="Dark Eternal Tunic">
+	<skill id="8816" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9415,7 +9409,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 5% -->
-	<skill id="8817" levels="1" name="Dark Eternal Stockings">
+	<skill id="8817" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9427,7 +9421,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8818" levels="1" name="Dark Eternal Gloves">
+	<skill id="8818" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9439,7 +9433,7 @@
 		</for>
 	</skill>
 	<!-- Decreases PvP Damage by 2% -->
-	<skill id="8819" levels="1" name="Dark Eternal Shoes">
+	<skill id="8819" levels="1" name="PvP Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9451,7 +9445,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8820" levels="1" name="Dark Amaranthine Shaper">
+	<skill id="8820" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9465,7 +9459,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8821" levels="1" name="Dark Amaranthine Cutter">
+	<skill id="8821" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9479,7 +9473,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8822" levels="1" name="Dark Amaranthine Slasher">
+	<skill id="8822" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9493,7 +9487,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8823" levels="1" name="Dark Amaranthine Avenger">
+	<skill id="8823" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9507,7 +9501,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8824" levels="1" name="Dark Amaranthine Fighter">
+	<skill id="8824" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9521,7 +9515,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8825" levels="1" name="Dark Amaranthine Stormer">
+	<skill id="8825" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9535,7 +9529,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8826" levels="1" name="Dark Amaranthine Thrower">
+	<skill id="8826" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9549,7 +9543,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8827" levels="1" name="Dark Amaranthine Shooter">
+	<skill id="8827" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9563,7 +9557,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8828" levels="1" name="Dark Amaranthine Buster">
+	<skill id="8828" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9577,7 +9571,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8829" levels="1" name="Dark Amaranthine Caster">
+	<skill id="8829" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9591,7 +9585,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8830" levels="1" name="Dark Amaranthine Retributer">
+	<skill id="8830" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9605,7 +9599,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8831" levels="1" name="Dark Amaranthine Dualsword">
+	<skill id="8831" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9619,7 +9613,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8832" levels="1" name="Dark Amaranthine Dual Dagger">
+	<skill id="8832" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9633,7 +9627,7 @@
 		</for>
 	</skill>
 	<!-- Increases PvP Damage by 15%. -->
-	<skill id="8833" levels="1" name="Dark Amaranthine Dual Blunt Weapon">
+	<skill id="8833" levels="1" name="PvP Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9647,7 +9641,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 3%. -->
-	<skill id="8834" levels="1" name="Bloody Eternal Helmet">
+	<skill id="8834" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9661,7 +9655,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 8%. -->
-	<skill id="8835" levels="1" name="Bloody Eternal Breastplate">
+	<skill id="8835" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9675,7 +9669,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 5%. -->
-	<skill id="8836" levels="1" name="Bloody Eternal Gaiters">
+	<skill id="8836" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9689,7 +9683,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8837" levels="1" name="Bloody Eternal Gauntlets">
+	<skill id="8837" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9703,7 +9697,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8838" levels="1" name="Bloody Eternal Boots">
+	<skill id="8838" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9717,7 +9711,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 3%. -->
-	<skill id="8839" levels="1" name="Bloody Eternal Leather Helmet">
+	<skill id="8839" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9731,7 +9725,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 8%. -->
-	<skill id="8840" levels="1" name="Bloody Eternal Leather Armor">
+	<skill id="8840" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9745,7 +9739,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 5%. -->
-	<skill id="8841" levels="1" name="Bloody Eternal Leather Leggings">
+	<skill id="8841" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9759,7 +9753,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8842" levels="1" name="Bloody Eternal Leather Gloves">
+	<skill id="8842" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9773,7 +9767,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8843" levels="1" name="Bloody Eternal Leather Boots">
+	<skill id="8843" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9787,7 +9781,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 3%. -->
-	<skill id="8844" levels="1" name="Bloody Eternal Circlet">
+	<skill id="8844" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9801,7 +9795,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 8%. -->
-	<skill id="8845" levels="1" name="Bloody Eternal Tunic">
+	<skill id="8845" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9815,7 +9809,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 5%. -->
-	<skill id="8846" levels="1" name="Bloody Eternal Stockings">
+	<skill id="8846" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9829,7 +9823,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8847" levels="1" name="Bloody Eternal Gloves">
+	<skill id="8847" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9843,7 +9837,7 @@
 		</for>
 	</skill>
 	<!-- Decreases NPC Damage by 2%. -->
-	<skill id="8848" levels="1" name="Bloody Eternal Shoes">
+	<skill id="8848" levels="1" name="PvE Defense">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9857,7 +9851,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8849" levels="1" name="Bloody Amaranthine Shaper">
+	<skill id="8849" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9871,7 +9865,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8850" levels="1" name="Bloody Amaranthine Cutter">
+	<skill id="8850" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9885,7 +9879,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8851" levels="1" name="Bloody Amaranthine Slasher">
+	<skill id="8851" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9899,7 +9893,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8852" levels="1" name="Bloody Amaranthine Avenger">
+	<skill id="8852" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9913,7 +9907,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8853" levels="1" name="Bloody Amaranthine Fighter">
+	<skill id="8853" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9927,7 +9921,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8854" levels="1" name="Bloody Amaranthine Stormer">
+	<skill id="8854" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9941,7 +9935,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8855" levels="1" name="Bloody Amaranthine Thrower">
+	<skill id="8855" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9955,7 +9949,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8856" levels="1" name="Bloody Amaranthine Shooter">
+	<skill id="8856" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9969,7 +9963,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8857" levels="1" name="Bloody Amaranthine Buster">
+	<skill id="8857" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9983,7 +9977,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8858" levels="1" name="Bloody Amaranthine Caster">
+	<skill id="8858" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9997,7 +9991,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8859" levels="1" name="Bloody Amaranthine Retributer">
+	<skill id="8859" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10011,7 +10005,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8860" levels="1" name="Bloody Amaranthine Dualsword">
+	<skill id="8860" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10025,7 +10019,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8861" levels="1" name="Bloody Amaranthine Dual Dagger">
+	<skill id="8861" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10039,7 +10033,7 @@
 		</for>
 	</skill>
 	<!-- Increases NPC Damage by15%. -->
-	<skill id="8862" levels="1" name="Bloody Amaranthine Dual Blunt">
+	<skill id="8862" levels="1" name="PvE Damage Increase">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10066,11 +10060,11 @@
 		Level 2: Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 2%, Atk. Spd. And Casting Spd. by 10, P. Critical Rate by 30, and M. Critical Rate by 10 when equipped.
 		Level 3: Increases Max HP/MP/CP by 300, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 20, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, and M. Atk. by 156 when equipped.
 		Level 4: Increases Max HP/MP/CP by 400, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 30, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, M. Atk. by 156, Skill Attacks by 1%, Damage Reflect Resistance by 10, and P. Def. and M. Def. by 20 when equipped.
-		Level 5: Increases Max HP/MP/CP by 500, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 40, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 203, M. Atk. by 256, Skill Attacks by 2%, Damage Reflect Resistance by 20, and P. Def. and M. Def. by 40, and decreases MP Consumption for skills by 1%  when equipped.
-		Level 6: Increases Max HP/MP/CP by 600, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 50, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 303, M. Atk. by 356, Skill Attacks by 4%, Damage Reflect Resistance by 30, P. Def. and M. Def. by 60, and STR/INT/CON/MEN/DEX/WIT by 2, and decreases MP Consumption for skills by 3%  when equipped.
-		Level 7: Max HP/MP/CP + 800, P./M. Accuracy + 2, P./M. Evasion + 2, Vampiric Rage + 5,  Atk. Spd. + 60, Casting Spd. + 60, P. Critical Rate + 30, M. Critical Rate + 10, P. Atk. + 638, M. Atk. + 742, Skill Power + 5%, Damage Reflect Resistance + 30, P. Def. + 563, M. Def. + 368, All Stats + 2, and Fixed Damage Resistance + 10%. Skill MP Consumption - 3%, and Skill Cooldown - 3%.
+		Level 5: Increases Max HP/MP/CP by 500, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 40, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 203, M. Atk. by 256, Skill Attacks by 2%, Damage Reflect Resistance by 20, and P. Def. and M. Def. by 40, and decreases MP Consumption for skills by 1% when equipped.
+		Level 6: Increases Max HP/MP/CP by 600, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage by 3%, Atk. Spd. And Casting Spd. by 50, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 303, M. Atk. by 356, Skill Attacks by 4%, Damage Reflect Resistance by 30, P. Def. and M. Def. by 60, and STR/INT/CON/MEN/DEX/WIT by 2, and decreases MP Consumption for skills by 3% when equipped.
+		Level 7: Max HP/MP/CP + 800, P./M. Accuracy + 2, P./M. Evasion + 2, Vampiric Rage + 5, Atk. Spd. + 60, Casting Spd. + 60, P. Critical Rate + 30, M. Critical Rate + 10, P. Atk. + 638, M. Atk. + 742, Skill Power + 5%,Damage Reflect Resistance + 30, P. Def. + 563, M. Def. + 368, All Stats + 3%, and Fixed Damage Resistance + 2. Skill MP Consumption - 10%, and Skill Cooldown - 3%.
 	-->
-	<skill id="8864" levels="7" name="Talisman - Infinity">
+	<skill id="8864" levels="7" name="Talisman - Insanity">
 		<table name="#maxHPMPCP"> 100 100 300 400 500 600 800 </table>
 		<table name="#reflectRes"> 0 0 0 10 20 30 30 </table>
 		<table name="#acc"> 1 2 2 2 2 2 2 </table>
@@ -10340,7 +10334,7 @@
 		</for>
 	</skill>
 	<!-- For 2 minutes, Speed + 100 and becomes resistant to all Debuffs. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. Cooldown is 10 minutes. -->
-	<skill id="8890" levels="1" name="Protection">
+	<skill id="8890" levels="1" name="Dignity">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -10378,7 +10372,8 @@
 	</skill>
 	<!-- Immobilizes nearby enemies for 5 seconds, and once they are completely immobilized, they will be paralized for 10 seconds. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="8893" levels="1" name="Antharas' Breath">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10411,9 +10406,10 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Dissolves nearby enemies' CP. Requires 1 Dragon Blood. Cooldown is 5 min. -->
-	<skill id="8895" levels="1" name="Antharas Tail Blow">
-		<set name="target" val="TARGET_AURA" />
+	<!-- Dissolves nearby enemies' CP. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
+	<skill id="8895" levels="1" name="Antharas Lash">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="CPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10428,7 +10424,8 @@
 	</skill>
 	<!-- Immobilizes nearby enemies for 5 seconds, and once they are completely immobilized, they will be paralized for 10 seconds. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="8896" levels="1" name="Valakas' Breath">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10450,8 +10447,9 @@
 		</for>
 	</skill>
 	<!-- Dissolves nearby enemies' CP. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
-	<skill id="8897" levels="1" name="Valakas' Meteor">
-		<set name="target" val="TARGET_AURA" />
+	<skill id="8897" levels="1" name="Valakas' Bite">
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="CPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10466,7 +10464,8 @@
 	</skill>
 	<!-- Immobilizes nearby enemies for 5 seconds, and once they are completely immobilized, they will be paralized for 10 seconds. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="8898" levels="1" name="Lindvior's Breath">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10489,7 +10488,8 @@
 	</skill>
 	<!-- Dissolves nearby enemies' CP. Requires 1 Dragon Blood. Cannot be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="8899" levels="1" name="Lindvior's Wingbeat">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="CPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="36415" />
@@ -10503,7 +10503,7 @@
 		<set name="skillRadius" val="600" />
 	</skill>
 	<!-- PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, and added damage to dragons + 100%. -->
-	<skill id="8900" levels="1" name="Dragon's Sealed Power(Warrior)">
+	<skill id="8900" levels="1" name="Dragon Fighter">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10522,7 +10522,7 @@
 		</for>
 	</skill>
 	<!-- PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, and added damage to dragons + 300%. -->
-	<skill id="8901" levels="1" name="Dragon's Power (Warrior)">
+	<skill id="8901" levels="1" name="Dragon Knight">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10541,7 +10541,7 @@
 		</for>
 	</skill>
 	<!-- PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%., and added damage to dragons + 100%. -->
-	<skill id="8902" levels="1" name="Dragon's Sealed Power(Wizard)">
+	<skill id="8902" levels="1" name="Dragon Mage">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -10560,7 +10560,7 @@
 		</for>
 	</skill>
 	<!-- PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, M. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%., and added damage to dragons + 300%. -->
-	<skill id="8903" levels="1" name="Dragon's Power (Wizard)">
+	<skill id="8903" levels="1" name="Dragon Wizard">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />

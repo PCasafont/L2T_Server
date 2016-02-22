@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import gnu.trove.TIntObjectHashMap;
@@ -72,12 +73,12 @@ public class L2PetData
 	{
 		this._load = _load;
 	}
-
+	
 	public void set_hungry_limit(int _hungry_limit)
 	{
 		this._hungry_limit = _hungry_limit;
 	}
-
+	
 	public void set_food(int[] _food)
 	{
 		this._food = _food;
@@ -94,7 +95,7 @@ public class L2PetData
 	{
 		int lvl = 0;
 		for (L2PetSkillLearn temp : _skills)
-		{ 
+		{
 			if (temp.getId() != skillId)
 				continue;
 			if (temp.getLevel() == 0)

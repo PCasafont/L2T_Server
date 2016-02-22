@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
@@ -43,8 +44,8 @@ import l2server.gameserver.util.Util;
  * @author l3x
  *
  */
-public class RequestSetSeed extends L2GameClientPacket {
-	private static final String _C__D0_0A_REQUESTSETSEED = "[C] D0:0A RequestSetSeed";
+public class RequestSetSeed extends L2GameClientPacket
+{
 	//
 	
 	private static final int BATCH_LENGTH = 20; // length of the one item
@@ -61,9 +62,7 @@ public class RequestSetSeed extends L2GameClientPacket {
 	{
 		_manorId = readD();
 		int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -74,7 +73,7 @@ public class RequestSetSeed extends L2GameClientPacket {
 			int itemId = readD();
 			long sales = readQ();
 			long price = readQ();
-			if (itemId < 1 || sales < 0 || price < 0)
+			if ((itemId < 1) || (sales < 0) || (price < 0))
 			{
 				_items = null;
 				return;
@@ -91,9 +90,7 @@ public class RequestSetSeed extends L2GameClientPacket {
 		
 		L2PcInstance player = getClient().getActiveChar();
 		// check player privileges
-		if (player == null
-				|| player.getClan() == null
-				|| (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == 0)
+		if ((player == null) || (player.getClan() == null) || ((player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == 0))
 			return;
 		
 		// check castle owner
@@ -109,7 +106,7 @@ public class RequestSetSeed extends L2GameClientPacket {
 		if (!(manager instanceof L2CastleChamberlainInstance))
 			return;
 		
-		if (((L2CastleChamberlainInstance)manager).getCastle() != currentCastle)
+		if (((L2CastleChamberlainInstance) manager).getCastle() != currentCastle)
 			return;
 		
 		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false))
@@ -121,11 +118,7 @@ public class RequestSetSeed extends L2GameClientPacket {
 			SeedProduction s = i.getSeed();
 			if (s == null)
 			{
-				Util.handleIllegalPlayerAction(player, "Warning!! Character "
-						+ player.getName() + " of account "
-						+ player.getAccountName()
-						+ " tried to overflow while setting manor.",
-						Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to overflow while setting manor.", Config.DEFAULT_PUNISH);
 				return;
 			}
 			seeds.add(s);
@@ -151,16 +144,10 @@ public class RequestSetSeed extends L2GameClientPacket {
 		
 		public SeedProduction getSeed()
 		{
-			if (_sales != 0 && (MAX_ADENA / _sales) < _price)
+			if ((_sales != 0) && ((MAX_ADENA / _sales) < _price))
 				return null;
 			
 			return CastleManorManager.getInstance().getNewSeedProduction(_itemId, _sales, _price, _sales);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_0A_REQUESTSETSEED;
 	}
 }

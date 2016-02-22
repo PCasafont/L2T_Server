@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.Set;
@@ -23,6 +24,7 @@ import l2server.gameserver.model.L2Transformation;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.itemcontainer.Inventory;
+import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.stats.VisualEffect;
 
 /**
@@ -50,11 +52,9 @@ import l2server.gameserver.stats.VisualEffect;
  */
 public class ClonedPlayerInfo extends L2GameServerPacket
 {
-	
-	private static final String _S__03_CHARINFO = "[S] 31 CharInfo";
 	private L2Npc _npc;
 	private L2PcInstance _activeChar;
-	private Inventory _inv;
+	private PcInventory _inv;
 	private int _objId;
 	private int _x, _y, _z, _heading;
 	private int _mAtkSpd, _pAtkSpd;
@@ -67,7 +67,6 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 	 * Walking speed, swimming walking speed and flying walking speed
 	 */
 	private int _walkSpd;
-	private float _moveMultiplier;
 	
 	/**
 	 * @param _characters
@@ -84,15 +83,13 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		_heading = _npc.getHeading();
 		_mAtkSpd = _activeChar.getMAtkSpd();
 		_pAtkSpd = _activeChar.getPAtkSpd();
-		_moveMultiplier  = _activeChar.getMovementSpeedMultiplier();
-		_runSpd = (int)(_activeChar.getRunSpeed()/_moveMultiplier);
-		_walkSpd = (int)(_activeChar.getWalkSpeed()/_moveMultiplier);
+		_runSpd = (int) _activeChar.getTemplate().baseRunSpd;
+		_walkSpd = (int) _activeChar.getTemplate().baseWalkSpd;
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x31);
 		writeD(_x);
 		writeD(_y);
 		writeD(_z);
@@ -101,7 +98,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeS(_activeChar.getAppearance().getVisibleName());
 		writeH(_activeChar.getVisibleTemplate().race.ordinal());
 		writeC(_activeChar.getAppearance().getSex() ? 1 : 0);
-
+		
 		writeD(_activeChar.getVisibleTemplate().startingClassId);
 		
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
@@ -176,11 +173,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		
 		writeS(_activeChar.getAppearance().getVisibleTitle());
 		
-		if (!_activeChar.isCursedWeaponEquipped()
-				&& !(_activeChar.isInEvent()
-				&& (_activeChar.getEvent().getType() == EventType.DeathMatch
-				|| _activeChar.getEvent().getType() == EventType.Survival
-				|| _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
+		if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() && ((_activeChar.getEvent().getType() == EventType.DeathMatch) || (_activeChar.getEvent().getType() == EventType.Survival) || (_activeChar.getEvent().getType() == EventType.KingOfTheHill))))
 		{
 			writeD(_activeChar.getClanId());
 			writeD(_activeChar.getClanCrestId());
@@ -195,8 +188,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 			writeD(0);
 		}
 		
-		writeC(1);	// standing = 1  sitting = 0
-		writeC(_npc.isRunning() ? 1 : 0);	// running = 1   walking = 0
+		writeC(1); // standing = 1  sitting = 0
+		writeC(_npc.isRunning() ? 1 : 0); // running = 1   walking = 0
 		writeC(_npc.isInCombat() ? 1 : 0);
 		
 		if (_activeChar.isInOlympiadMode())
@@ -206,7 +199,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		
 		writeC(0);
 		
-		writeC(_activeChar.getMountType());	// 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
+		writeC(_activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
 		writeC(_activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? _activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
 		
 		writeH(_activeChar.getCubics().size());
@@ -256,15 +249,15 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		// T1
 		writeH(_activeChar.getTransformationId());
 		writeH(_activeChar.getAgathionId());
-
+		
 		//writeC(0x00);
 		writeD(0x00);
 		writeC(0x01);
-
+		
 		writeD(0x00); // GoD ???;
-		writeD((int)Math.round(_npc.getCurrentHp()));
+		writeD((int) Math.round(_npc.getCurrentHp()));
 		writeD(_npc.getMaxHp());
-		writeD((int)Math.round(_npc.getCurrentMp()));
+		writeD((int) Math.round(_npc.getCurrentMp()));
 		writeD(_npc.getMaxMp());
 		
 		writeC(_activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
@@ -275,27 +268,22 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeD(abnormals.size());
 		for (int abnormalId : abnormals)
 			writeH(abnormalId);
-
 		
 		//writeC(_inv.getMaxTalismanCount());
 		writeC(0x00);
 		writeC(_inv.getCloakStatus());
 		boolean showWings = true;
-		if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
+		if ((getWriteClient() != null) && (getWriteClient().getActiveChar() != null))
 		{
-			showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled()
-					&& (getWriteClient().getActiveChar().isInEvent());
+			showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled() && (getWriteClient().getActiveChar().isPlayingEvent());
 		}
 		
 		writeC(showWings ? _activeChar.getSpentAbilityPoints() : 0x00);
 	}
 	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
 	@Override
-	public String getType()
+	protected final Class<?> getOpCodeClass()
 	{
-		return _S__03_CHARINFO;
+		return CharInfo.class;
 	}
 }

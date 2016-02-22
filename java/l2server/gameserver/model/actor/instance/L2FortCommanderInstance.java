@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.List;
@@ -48,10 +49,10 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		if ( attacker == null || !(attacker instanceof L2PcInstance) )
+		if ((attacker == null) || !(attacker instanceof L2PcInstance))
 			return false;
 		
-		boolean isFort = (getFort() != null && getFort().getFortId() > 0  && getFort().getSiege().getIsInProgress() && !getFort().getSiege().checkIsDefender(((L2PcInstance)attacker).getClan()));
+		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getSiege().getIsInProgress() && !getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan()));
 		
 		// Attackable during siege by all except defenders
 		return (isFort);
@@ -93,7 +94,8 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	{
 		if (!isInsideRadius(getSpawn().getX(), getSpawn().getY(), 200, false))
 		{
-			if (Config.DEBUG) Log.info(getObjectId()+": moving home");
+			if (Config.DEBUG)
+				Log.info(getObjectId() + ": moving home");
 			setisReturningToSpawnPoint(true);
 			clearAggroList();
 			
@@ -101,11 +103,12 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(getSpawn().getX(), getSpawn().getY(), getSpawn().getZ(), 0));
 		}
 	}
+	
 	@Override
 	public final void addDamage(L2Character attacker, int damage, L2Skill skill)
 	{
 		L2Spawn spawn = getSpawn();
-		if (spawn != null && canTalk())
+		if ((spawn != null) && canTalk())
 		{
 			List<L2Spawn> commanders = getFort().getCommanderSpawns();
 			for (L2Spawn spawn2 : commanders)
@@ -119,7 +122,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 					{
 						if (attacker instanceof L2Summon)
 							attacker = ((L2Summon) attacker).getOwner();
-						text = "Everyone, concentrate your attacks on "+attacker.getName()+"! Show the enemy your resolve!";
+						text = "Everyone, concentrate your attacks on " + attacker.getName() + "! Show the enemy your resolve!";
 					}
 					else if (getTemplate().Title.equalsIgnoreCase("Support Unit"))
 						text = "Spirit of Fire, unleash your power! Burn the enemy!!";
@@ -143,6 +146,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 		{
 		}
 		
+		@Override
 		public void run()
 		{
 			setCanTalk(true);

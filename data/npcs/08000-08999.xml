@@ -1204,31 +1204,31 @@
 	<npc id="8619" name="Three-headed Dragon" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="8620" name="Daddy Bear" title="NightSkye" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="8621" name="Mommy Bear" title="Cheshire" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="8622" name="Baby Bear" title="Brianna" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="8623" name="Campfire" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="8624" name="Kotatz" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

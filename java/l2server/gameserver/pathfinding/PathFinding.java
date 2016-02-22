@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.pathfinding;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public abstract class PathFinding
 			return GeoPathFinding.getInstance();
 		}
 		else
-			// Cell pathfinding, calculated directly from geodata files
+		// Cell pathfinding, calculated directly from geodata files
 		{
 			return CellPathFinding.getInstance();
 		}
@@ -51,14 +52,14 @@ public abstract class PathFinding
 		// The simplest grid-based pathfinding.
 		// Drawback is not having higher cost for diagonal movement (means funny routes)
 		// Could be optimized e.g. not to calculate backwards as far as forwards.
-		
+
 		// List of Visited Nodes
 		LinkedList<AbstractNode> visited = new LinkedList<AbstractNode>();
-		
+
 		// List of Nodes to Visit
 		LinkedList<AbstractNode> to_visit = new LinkedList<AbstractNode>();
 		to_visit.add(start);
-		
+
 		int i = 0;
 		while (i < 800)
 		{
@@ -106,11 +107,11 @@ public abstract class PathFinding
 		int end_y = end.getLoc().getY();
 		//List of Visited Nodes
 		FastNodeList visited = new FastNodeList(800);//TODO! Add limit to cfg
-		
+
 		// List of Nodes to Visit
 		BinaryNodeHeap to_visit = new BinaryNodeHeap(800);
 		to_visit.add(start);
-		
+
 		int i = 0;
 		while (i < 800)//TODO! Add limit to cfg
 		{
@@ -189,7 +190,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldX(short node_x)
 	{
-		return L2World.MAP_MIN_X + node_x * 128 + 48;
+		return L2World.MAP_MIN_X + (node_x * 128) + 48;
 	}
 	
 	/**
@@ -199,7 +200,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldY(short node_y)
 	{
-		return L2World.MAP_MIN_Y + node_y * 128 + 48;
+		return L2World.MAP_MIN_Y + (node_y * 128) + 48;
 	}
 	
 	public String[] getStat()

@@ -52,13 +52,13 @@
 		</template>
 	</race>
 	<race id="4" name="Dwarf">
-		<template type="fighter" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="33" baseCritical="43" baseEvasion="33" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="50">
+		<template type="fighter" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="33" baseCritical="43" baseEvasion="33" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="150">
 			<creationItem id="10" count="1" equipped="false" /> <!-- Dagger -->
 			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
 			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
 			<creationItem id="2370" count="1" equipped="true" /> <!-- Guild Member's Club -->
 		</template>
-		<template type="mage" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="30" baseCritical="41" baseEvasion="30" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="50" />
+		<template type="mage" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="30" baseCritical="41" baseEvasion="30" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="150" />
 	</race>
 	<!-- Common creation items -->
 	<creationItem id="5588" count="1" equipped="false" /> <!-- Tutorial Guide -->

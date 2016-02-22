@@ -169,7 +169,7 @@ public class AdminZone implements IAdminCommandHandler
 	private static void getGeoRegionXY(L2PcInstance activeChar)
 	{
 		int worldX = activeChar.getX();
-		int worldY = activeChar.getY();				
+		int worldY = activeChar.getY();
 		int geoX = ((((worldX - (-327680)) >> 4) >> 11)+10);
 		int geoY = ((((worldY - (-262144)) >> 4) >> 11)+10);
 		activeChar.sendMessage("GeoRegion: "+geoX+"_"+geoY+"");

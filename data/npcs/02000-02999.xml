@@ -29,10 +29,10 @@
 			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="3" /> <!-- Beast -->
 	</npc>
-	<npc id="2502" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0" mpMax="2044" mpReg="3.0"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
-			pCritRate="40" mCritRate="40" walkSpd="110" runSpd="180" collisionRadius="15" collisionHeight="18.3" fireRes="160" waterRes="160"
-			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+	<npc id="2502" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0" mpMax="2044"
+			mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="110" runSpd="180" collisionRadius="15" collisionHeight="18.3" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<itemDrop itemId="9553" min="1" max="2" chance="17.647" /> <!-- Water Crystal -->
 		<itemDrop itemId="9556" min="2" max="2" chance="9.8039" /> <!-- Dark Crystal -->
 		<itemDrop itemId="9552" min="1" max="1" chance="5.88235" /> <!-- Fire Crystal -->
@@ -41,10 +41,10 @@
 		<itemDrop itemId="9555" min="1" max="1" chance="5.88235" /> <!-- Wind Crystal -->
 		<itemDrop itemId="9557" min="1" max="1" chance="5.8823" /> <!-- Holy Crystal -->
 	</npc>
-	<npc id="2503" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0" mpMax="2044" mpReg="3.0"
-			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
-			pCritRate="40" mCritRate="40" walkSpd="110" runSpd="180" collisionRadius="15" collisionHeight="18.3" fireRes="160" waterRes="160"
-			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+	<npc id="2503" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0" mpMax="2044"
+			mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="110" runSpd="180" collisionRadius="15" collisionHeight="18.3" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<itemDrop itemId="14679" min="1" max="1" chance="50" /> <!-- Neolithic Crystal (A-grade) -->
 		<itemDrop itemId="14680" min="1" max="1" chance="50" /> <!-- Neolithic Crystal (S-grade) -->
 	</npc>

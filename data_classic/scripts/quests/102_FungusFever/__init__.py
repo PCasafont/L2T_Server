@@ -126,7 +126,7 @@ class Quest (JQuest) :
            st.playSound("ItemSound.quest_finish")
            htmltext = "30284-06.htm"
            st.giveItems(57,6331)
-           if player.getClassId() in range(18,25) :
+           if player.getClassId().getId() in range(18,25) :
              st.giveItems(SWORD_OF_SENTINEL_ID,1)
              st.rewardItems(1835,1000)
            else:

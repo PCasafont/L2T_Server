@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -38,6 +39,7 @@ public class CastleManager implements InstanceListManager
 	{
 		return SingletonHolder._instance;
 	}
+	
 	// =========================================================
 	
 	// =========================================================
@@ -49,7 +51,7 @@ public class CastleManager implements InstanceListManager
 	private static final int _castleCirclets[] = { 0, 6838, 6835, 6839, 6837, 6840, 6834, 6836, 8182, 8183 };
 	
 	private CastleManager()
-	{	
+	{
 	}
 	
 	// =========================================================
@@ -59,6 +61,7 @@ public class CastleManager implements InstanceListManager
 	{
 		return findNearestCastleIndex(obj, Long.MAX_VALUE);
 	}
+	
 	public final int findNearestCastleIndex(L2Object obj, long maxDistance)
 	{
 		int index = getCastleIndex(obj);
@@ -94,7 +97,8 @@ public class CastleManager implements InstanceListManager
 		for (int i = 0; i < getCastles().size(); i++)
 		{
 			c = getCastles().get(i);
-			if (c == null) continue;
+			if (c == null)
+				continue;
 			distance = c.getDistance(obj);
 			if (closestDistance > distance)
 			{
@@ -159,7 +163,7 @@ public class CastleManager implements InstanceListManager
 		for (int i = 0; i < getCastles().size(); i++)
 		{
 			castle = getCastles().get(i);
-			if (castle != null && castle.getCastleId() == castleId)
+			if ((castle != null) && (castle.getCastleId() == castleId))
 				return i;
 		}
 		return -1;
@@ -176,7 +180,7 @@ public class CastleManager implements InstanceListManager
 		for (int i = 0; i < getCastles().size(); i++)
 		{
 			castle = getCastles().get(i);
-			if (castle != null && castle.checkIfInZone(x, y, z))
+			if ((castle != null) && castle.checkIfInZone(x, y, z))
 				return i;
 		}
 		return -1;
@@ -208,7 +212,7 @@ public class CastleManager implements InstanceListManager
 	
 	public int getCircletByCastleId(int castleId)
 	{
-		if (castleId > 0 && castleId < 10)
+		if ((castleId > 0) && (castleId < 10))
 			return _castleCirclets[castleId];
 		
 		return 0;
@@ -271,6 +275,7 @@ public class CastleManager implements InstanceListManager
 		}
 	}
 	
+	@Override
 	public void load()
 	{
 		Log.info("Initializing CastleManager");
@@ -305,10 +310,12 @@ public class CastleManager implements InstanceListManager
 		}
 	}
 	
+	@Override
 	public void updateReferences()
 	{
 	}
 	
+	@Override
 	public void activateInstances()
 	{
 		for (final Castle castle : _castles)

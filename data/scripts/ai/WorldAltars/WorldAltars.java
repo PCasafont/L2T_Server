@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.WorldAltars;
 
 import java.util.HashMap;
@@ -29,11 +30,11 @@ import l2server.gameserver.model.quest.Quest;
 
 public class WorldAltars extends Quest
 {
-	private static final String _qn 		= "WorldAltars";
-	private static final boolean _debug 	= false;
+	private static final String _qn = "WorldAltars";
+	private static final boolean _debug = false;
 	
-	private static final int[] _altarIds 	= {143, 144, 145, 146};
-	private static final int[] _bossIds		= {80351, 80352, 80353, 80354};
+	private static final int[] _altarIds = { 143, 144, 145, 146 };
+	private static final int[] _bossIds = { 80351, 80352, 80353, 80354 };
 	
 	public WorldAltars(int questId, String name, String descr)
 	{
@@ -61,7 +62,7 @@ public class WorldAltars extends Quest
 		if (event.startsWith("trySpawnBoss"))
 		{
 			if (!_debug)
-			{	
+			{
 				L2Party party = player.getParty();
 				if (party == null)
 				{
@@ -95,7 +96,7 @@ public class WorldAltars extends Quest
 					}
 					
 					if (pIps.containsKey(pMember.getExternalIP()))
-					{	
+					{
 						if (pIps.get(pMember.getExternalIP()).equalsIgnoreCase(pMember.getInternalIP()))
 							continue;
 					}

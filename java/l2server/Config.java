@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server;
 
 import gnu.trove.TIntArrayList;
@@ -37,6 +38,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import l2server.gameserver.util.FloodProtectorConfig;
 import l2server.log.Log;
@@ -45,10 +49,17 @@ import l2server.util.StringUtil;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 public final class Config
 {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
+	public static final int DREAMS = 0x08;
+	public static final int TENKAI_ESTHUS = 0x20;
+	
+	public static boolean IS_UNDERGROUND = false;
 	
 	//--------------------------------------------------
 	// Temporary Config File
@@ -121,7 +132,10 @@ public final class Config
 	public static boolean DECREASE_SKILL_LEVEL;
 	public static double ALT_WEIGHT_LIMIT;
 	public static int RUN_SPD_BOOST;
+	public static int DEATH_PENALTY_CHANCE;
+	public static double RESPAWN_RESTORE_CP;
 	public static double RESPAWN_RESTORE_HP;
+	public static double RESPAWN_RESTORE_MP;
 	public static boolean ALT_GAME_TIREDNESS;
 	public static boolean ENABLE_MODIFY_SKILL_DURATION;
 	public static TIntIntHashMap SKILL_DURATION_LIST;
@@ -141,7 +155,6 @@ public final class Config
 	public static int PLAYER_FAKEDEATH_UP_PROTECTION;
 	public static boolean STORE_SKILL_COOLTIME;
 	public static boolean SUBCLASS_STORE_SKILL_COOLTIME;
-	public static boolean ALT_GAME_SHIELD_BLOCKS;
 	public static int ALT_PERFECT_SHLD_BLOCK;
 	public static boolean ALLOW_CLASS_MASTERS;
 	public static boolean ALLOW_ENTIRE_TREE;
@@ -240,6 +253,7 @@ public final class Config
 	public static boolean STORE_RECIPE_SHOPLIST;
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
+	public static double MAGE_PDEF_MULTIPLIER;
 	
 	//--------------------------------------------------
 	// ClanHall Settings
@@ -418,6 +432,7 @@ public final class Config
 	// General Settings
 	//--------------------------------------------------
 	public static boolean EVERYBODY_HAS_ADMIN_RIGHTS;
+	public static boolean DISPLAY_SERVER_VERSION;
 	public static boolean SERVER_LIST_BRACKET;
 	public static int SERVER_LIST_TYPE;
 	public static int SERVER_LIST_AGE;
@@ -433,6 +448,7 @@ public final class Config
 	public static boolean GM_SKILL_RESTRICTION;
 	public static boolean GM_TRADE_RESTRICTED_ITEMS;
 	public static boolean GM_RESTART_FIGHTING;
+	public static boolean GM_ANNOUNCER_NAME;
 	public static boolean GM_GIVE_SPECIAL_SKILLS;
 	public static boolean BYPASS_VALIDATION;
 	public static boolean GAMEGUARD_ENFORCE;
@@ -451,6 +467,7 @@ public final class Config
 	public static boolean DEBUG;
 	public static boolean PACKET_HANDLER_DEBUG;
 	public static boolean DEVELOPER;
+	public static boolean ACCEPT_GEOEDITOR_CONN;
 	public static boolean ALT_DEV_NO_HANDLERS;
 	public static boolean ALT_DEV_NO_QUESTS;
 	public static boolean ALT_DEV_NO_SPAWNS;
@@ -486,6 +503,7 @@ public final class Config
 	public static int SAVE_DROPPED_ITEM_INTERVAL;
 	public static boolean CLEAR_DROPPED_ITEM_TABLE;
 	public static boolean AUTODELETE_INVALID_QUEST_DATA;
+	public static boolean PRECISE_DROP_CALCULATION;
 	public static boolean MULTIPLE_ITEM_DROP;
 	public static boolean FORCE_INVENTORY_UPDATE;
 	public static boolean LAZY_CACHE;
@@ -685,6 +703,9 @@ public final class Config
 	public static boolean L2JMOD_WEDDING_SAMESEX;
 	public static boolean L2JMOD_WEDDING_FORMALWEAR;
 	public static int L2JMOD_WEDDING_DIVORCE_COSTS;
+	public static boolean BANKING_SYSTEM_ENABLED;
+	public static int BANKING_SYSTEM_GOLDBARS;
+	public static int BANKING_SYSTEM_ADENA;
 	public static boolean L2JMOD_ENABLE_WAREHOUSESORTING_CLAN;
 	public static boolean L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE;
 	public static boolean OFFLINE_TRADE_ENABLE;
@@ -700,15 +721,24 @@ public final class Config
 	public static boolean OFFLINE_SET_NAME_COLOR;
 	public static int OFFLINE_NAME_COLOR;
 	public static boolean OFFLINE_FAME;
+	public static boolean L2JMOD_ENABLE_MANA_POTIONS_SUPPORT;
 	public static boolean L2JMOD_DISPLAY_SERVER_TIME;
 	public static boolean WELCOME_MESSAGE_ENABLED;
 	public static String WELCOME_MESSAGE_TEXT;
 	public static int WELCOME_MESSAGE_TIME;
+	public static boolean L2JMOD_ANTIFEED_ENABLE;
+	public static boolean L2JMOD_ANTIFEED_DUALBOX;
+	public static boolean L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX;
+	public static int L2JMOD_ANTIFEED_INTERVAL;
 	public static boolean ANNOUNCE_PK_PVP;
 	public static boolean ANNOUNCE_PK_PVP_NORMAL_MESSAGE;
 	public static String ANNOUNCE_PK_MSG;
 	public static String ANNOUNCE_PVP_MSG;
-	public static boolean L2WALKER_PROTECTION;
+	public static boolean L2JMOD_CHAT_ADMIN;
+	public static boolean L2JMOD_DEBUG_VOICE_COMMAND;
+	public static int L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP;
+	public static int L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP;
+	public static Map<String, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	
 	//--------------------------------------------------
 	// NPC Settings
@@ -720,6 +750,7 @@ public final class Config
 	public static boolean DEEPBLUE_DROP_RULES;
 	public static boolean DEEPBLUE_DROP_RULES_RAID;
 	public static boolean SHOW_NPC_LVL;
+	public static boolean SHOW_CREST_WITHOUT_QUEST;
 	public static boolean ENABLE_RANDOM_ENCHANT_EFFECT;
 	public static int MIN_NPC_LVL_DMG_PENALTY;
 	public static TIntFloatHashMap NPC_DMG_PENALTY;
@@ -728,6 +759,7 @@ public final class Config
 	public static int MIN_NPC_LVL_MAGIC_PENALTY;
 	public static TIntFloatHashMap NPC_SKILL_CHANCE_PENALTY;
 	public static boolean GUARD_ATTACK_AGGRO_MOB;
+	public static boolean ALLOW_WYVERN_UPGRADER;
 	public static TIntArrayList LIST_PET_RENT_NPC;
 	public static double RAID_HP_REGEN_MULTIPLIER;
 	public static double RAID_MP_REGEN_MULTIPLIER;
@@ -752,6 +784,8 @@ public final class Config
 	//--------------------------------------------------
 	public static int REPUTATION_MIN_KARMA;
 	public static int REPUTATION_MAX_KARMA;
+	public static int REPUTATION_XP_DIVIDER;
+	public static int REPUTATION_LOST_BASE;
 	public static boolean REPUTATION_DROP_GM;
 	public static boolean REPUTATION_AWARD_PK_KILL;
 	public static int REPUTATION_PK_LIMIT;
@@ -759,8 +793,8 @@ public final class Config
 	public static int[] REPUTATION_NONDROPPABLE_ITEMS;
 	public static int REPUTATION_ACQUIRED_FOR_CHAOTIC_KILL;
 	public static int REPUTATION_SAME_KILL_INTERVAL;
-	public static int REPUTATION_EXP_DIVIDER;
-	public static int REPUTATION_SP_DIVIDER;
+	public static int REPUTATION_REP_PER_EXP_MULTIPLIER;
+	public static int REPUTATION_REP_PER_SP_MULTIPLIER;
 	
 	//--------------------------------------------------
 	// Rate Settings
@@ -843,6 +877,7 @@ public final class Config
 	// Vitality Settings
 	//--------------------------------------------------
 	public static boolean ENABLE_VITALITY;
+	public static boolean ENABLE_DROP_VITALITY_HERBS;
 	public static float RATE_VITALITY_LOST;
 	public static float VITALITY_MULTIPLIER;
 	public static int STARTING_VITALITY_POINTS;
@@ -851,6 +886,7 @@ public final class Config
 	// No classification assigned to the following yet
 	//--------------------------------------------------
 	public static int MAX_ITEM_IN_PACKET;
+	public static boolean CHECK_KNOWN;
 	public static int GAME_SERVER_LOGIN_PORT;
 	public static String GAME_SERVER_LOGIN_HOST;
 	public static String[] GAME_SERVER_SUBNETS;
@@ -861,24 +897,25 @@ public final class Config
 	public static String NEW_NODE_TYPE;
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
+	
 	public static enum IdFactoryType
 	{
-		Compaction,
-		BitSet,
-		Stack
+		Compaction, BitSet, Stack
 	}
+	
 	public static IdFactoryType IDFACTORY_TYPE;
 	public static boolean BAD_ID_CHECKING;
+	
 	public static enum ObjectMapType
 	{
-		L2ObjectHashMap,
-		WorldObjectMap
+		L2ObjectHashMap, WorldObjectMap
 	}
+	
 	public static enum ObjectSetType
 	{
-		L2ObjectHashSet,
-		WorldObjectSet
+		L2ObjectHashSet, WorldObjectSet
 	}
+	
 	public static ObjectMapType MAP_TYPE;
 	public static ObjectSetType SET_TYPE;
 	public static int ENCHANT_CHANCE_WEAPON;
@@ -943,15 +980,22 @@ public final class Config
 	public static long SOD_STAGE_2_LENGTH;
 	
 	//chatfilter
-	public static ArrayList<String>	FILTER_LIST;
+	public static ArrayList<String> FILTER_LIST;
 	public static ArrayList<String> LANGUAGE_FILTER;
+	
+	// Conquerable Halls Settings
+	public static int CHS_SIEGE_LENGTH;
+	public static int CHS_CLAN_MINLEVEL;
+	public static int CHS_MAX_ATTACKERS;
+	public static int CHS_MAX_FLAGS_PER_CLAN;
+	public static int CHS_SIEGE_INTERVAL;
 	
 	// Security
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
-
+	
 	public static File DATAPACK_ROOT = new File("./");
 	public static String DATA_FOLDER = "data/";
 	public static boolean IS_CLASSIC = false;
@@ -987,7 +1031,7 @@ public final class Config
 		try
 		{
 			File f = new File("./config.cfg");
-			if(!f.exists())
+			if (!f.exists())
 			{
 				Log.warning("./config.cfg could not be found!!!");
 				failedLoadingBoot = true;
@@ -1046,10 +1090,13 @@ public final class Config
 				else
 					SERVER_NAME_MASK = DEFAULT;
 				
-				//TODO GUARRADA
-				WEB_DB_NAME = "l2"+SERVER_NAME.split("_")[0]+"_web";
-				FORUM_DB_NAME = "l2"+SERVER_NAME.split("_")[0]+"_board";
-				LOGIN_DB_NAME = "l2"+SERVER_NAME.split("_")[0]+"_common";
+				if (SERVER_NAME.contains("esthus"))
+					SERVER_NAME_MASK |= TENKAI_ESTHUS;
+				
+				//TODO data driven pls
+				WEB_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_web";
+				FORUM_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_board";
+				LOGIN_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_common";
 				
 				// Chat Filter (default)
 				try
@@ -1115,7 +1162,8 @@ public final class Config
 					is.close();
 				}
 				catch (Exception e)
-				{}
+				{
+				}
 			}
 		}
 		else if (ServerMode.serverMode == ServerMode.MODE_LOGINSERVER)
@@ -1133,7 +1181,9 @@ public final class Config
 				{
 					is.close();
 				}
-				catch(Exception e) { }
+				catch (Exception e)
+				{
+				}
 			}
 		}
 		else
@@ -1168,9 +1218,9 @@ public final class Config
 			//Create a new empty file only if it doesn't exist
 			file.createNewFile();
 			OutputStream out = new FileOutputStream(file);
-			hexSetting.setProperty("ServerID",String.valueOf(serverId));
-			hexSetting.setProperty("HexID",hexId);
-			hexSetting.store(out,"the hexID to auth into login");
+			hexSetting.setProperty("ServerID", String.valueOf(serverId));
+			hexSetting.setProperty("HexID", hexId);
+			hexSetting.store(out, "the hexID to auth into login");
 			out.close();
 		}
 		catch (Exception e)
@@ -1232,7 +1282,7 @@ public final class Config
 					Log.warning("Cannot modify non public or non static config: " + conf.fieldName);
 					continue;
 				}
-
+				
 				String value = settings.getProperty(conf.confName, conf.deflt);
 				if (field.getType() == int.class)
 				{
@@ -1305,52 +1355,30 @@ public final class Config
 	 */
 	private static void loadFloodProtectorConfigs(final L2Properties properties)
 	{
-		FLOOD_PROTECTOR_PICKUP_ITEM =
-				new FloodProtectorConfig("PickUpItemFloodProtector");
-		FLOOD_PROTECTOR_USE_ITEM =
-			new FloodProtectorConfig("UseItemFloodProtector");
-		FLOOD_PROTECTOR_ROLL_DICE =
-			new FloodProtectorConfig("RollDiceFloodProtector");
-		FLOOD_PROTECTOR_FIREWORK =
-			new FloodProtectorConfig("FireworkFloodProtector");
-		FLOOD_PROTECTOR_ITEM_PET_SUMMON =
-			new FloodProtectorConfig("ItemPetSummonFloodProtector");
-		FLOOD_PROTECTOR_HERO_VOICE =
-			new FloodProtectorConfig("HeroVoiceFloodProtector");
-		FLOOD_PROTECTOR_SHOUT_CHAT =
-			new FloodProtectorConfig("ShoutChatFloodProtector");
-		FLOOD_PROTECTOR_TRADE_CHAT =
-			new FloodProtectorConfig("TradeChatFloodProtector");
-		FLOOD_PROTECTOR_GLOBAL_CHAT =
-			new FloodProtectorConfig("GlobalChatFloodProtector");
-		FLOOD_PROTECTOR_SUBCLASS =
-			new FloodProtectorConfig("SubclassFloodProtector");
-		FLOOD_PROTECTOR_DROP_ITEM =
-			new FloodProtectorConfig("DropItemFloodProtector");
-		FLOOD_PROTECTOR_SERVER_BYPASS =
-			new FloodProtectorConfig("ServerBypassFloodProtector");
-		FLOOD_PROTECTOR_MULTISELL =
-			new FloodProtectorConfig("MultiSellFloodProtector");
-		FLOOD_PROTECTOR_TRANSACTION =
-			new FloodProtectorConfig("TransactionFloodProtector");
-		FLOOD_PROTECTOR_MANUFACTURE =
-			new FloodProtectorConfig("ManufactureFloodProtector");
-		FLOOD_PROTECTOR_MANOR =
-			new FloodProtectorConfig("ManorFloodProtector");
-		FLOOD_PROTECTOR_SENDMAIL =
-			new FloodProtectorConfig("SendMailFloodProtector");
-		FLOOD_PROTECTOR_CHARACTER_SELECT =
-			new FloodProtectorConfig("CharacterSelectFloodProtector");
-		FLOOD_PROTECTOR_ITEM_AUCTION =
-			new FloodProtectorConfig("ItemAuctionFloodProtector");
-		FLOOD_PROTECTOR_MAGICGEM =
-			new FloodProtectorConfig("MagicGemFloodProtector");
-		FLOOD_PROTECTOR_EVENTBYPASS =
-			new FloodProtectorConfig("EventBypassFloodProtector");
-		FLOOD_PROTECTOR_REPORT_BOT =
-			new FloodProtectorConfig("ReportBotFloodProtector");
+		FLOOD_PROTECTOR_PICKUP_ITEM = new FloodProtectorConfig("PickUpItemFloodProtector");
+		FLOOD_PROTECTOR_USE_ITEM = new FloodProtectorConfig("UseItemFloodProtector");
+		FLOOD_PROTECTOR_ROLL_DICE = new FloodProtectorConfig("RollDiceFloodProtector");
+		FLOOD_PROTECTOR_FIREWORK = new FloodProtectorConfig("FireworkFloodProtector");
+		FLOOD_PROTECTOR_ITEM_PET_SUMMON = new FloodProtectorConfig("ItemPetSummonFloodProtector");
+		FLOOD_PROTECTOR_HERO_VOICE = new FloodProtectorConfig("HeroVoiceFloodProtector");
+		FLOOD_PROTECTOR_SHOUT_CHAT = new FloodProtectorConfig("ShoutChatFloodProtector");
+		FLOOD_PROTECTOR_TRADE_CHAT = new FloodProtectorConfig("TradeChatFloodProtector");
+		FLOOD_PROTECTOR_GLOBAL_CHAT = new FloodProtectorConfig("GlobalChatFloodProtector");
+		FLOOD_PROTECTOR_SUBCLASS = new FloodProtectorConfig("SubclassFloodProtector");
+		FLOOD_PROTECTOR_DROP_ITEM = new FloodProtectorConfig("DropItemFloodProtector");
+		FLOOD_PROTECTOR_SERVER_BYPASS = new FloodProtectorConfig("ServerBypassFloodProtector");
+		FLOOD_PROTECTOR_MULTISELL = new FloodProtectorConfig("MultiSellFloodProtector");
+		FLOOD_PROTECTOR_TRANSACTION = new FloodProtectorConfig("TransactionFloodProtector");
+		FLOOD_PROTECTOR_MANUFACTURE = new FloodProtectorConfig("ManufactureFloodProtector");
+		FLOOD_PROTECTOR_MANOR = new FloodProtectorConfig("ManorFloodProtector");
+		FLOOD_PROTECTOR_SENDMAIL = new FloodProtectorConfig("SendMailFloodProtector");
+		FLOOD_PROTECTOR_CHARACTER_SELECT = new FloodProtectorConfig("CharacterSelectFloodProtector");
+		FLOOD_PROTECTOR_ITEM_AUCTION = new FloodProtectorConfig("ItemAuctionFloodProtector");
+		FLOOD_PROTECTOR_MAGICGEM = new FloodProtectorConfig("MagicGemFloodProtector");
+		FLOOD_PROTECTOR_EVENTBYPASS = new FloodProtectorConfig("EventBypassFloodProtector");
+		FLOOD_PROTECTOR_REPORT_BOT = new FloodProtectorConfig("ReportBotFloodProtector");
 		
-		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_PICKUP_ITEM, "PickUpItem", "10");
+		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_PICKUP_ITEM, "PickUpItem", "50");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_USE_ITEM, "UseItem", "0");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_ROLL_DICE, "RollDice", "42");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_FIREWORK, "Firework", "42");
@@ -1361,7 +1389,7 @@ public final class Config
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_GLOBAL_CHAT, "GlobalChat", "20");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_SUBCLASS, "Subclass", "20");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_DROP_ITEM, "DropItem", "10");
-		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_SERVER_BYPASS, "ServerBypass", "5");
+		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_SERVER_BYPASS, "ServerBypass", "1");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_MULTISELL, "MultiSell", "1");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_TRANSACTION, "Transaction", "10");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_MANUFACTURE, "Manufacture", "3");
@@ -1370,13 +1398,13 @@ public final class Config
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_CHARACTER_SELECT, "CharacterSelect", "30");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_ITEM_AUCTION, "ItemAuction", "9");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_MAGICGEM, "MagicGem", "20");
-		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_EVENTBYPASS, "EventBypass", "5");
+		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_EVENTBYPASS, "EventBypass", "1");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_REPORT_BOT, "ReportBot", "18000");
 	}
 	
 	/**
 	 * Loads single flood protector configuration.
-	 * 
+	 *
 	 * @param properties
 	 *			L2Properties file reader
 	 * @param config
@@ -1479,7 +1507,7 @@ public final class Config
 			String[] propSplit = prop.split(",");
 			if (propSplit.length != 2)
 				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
-		
+			
 			try
 			{
 				result.put(Integer.valueOf(propSplit[0]), Integer.valueOf(propSplit[1]));
@@ -1525,7 +1553,7 @@ public final class Config
 			String[] propSplit = prop.split(",");
 			if (propSplit.length != 2)
 				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
-		
+			
 			try
 			{
 				result.put(propSplit[0], Integer.valueOf(propSplit[1]));
@@ -1542,7 +1570,7 @@ public final class Config
 	
 	public static double[] parseDoubleArray(String value)
 	{
-		double[] array = new double[Byte.MAX_VALUE+1];
+		double[] array = new double[Byte.MAX_VALUE + 1];
 		
 		// Default value
 		for (int i = 0; i <= Byte.MAX_VALUE; i++)
@@ -1577,7 +1605,7 @@ public final class Config
 		
 		return array;
 	}
-
+	
 	/**
 	 * itemId1,itemNumber1;itemId2,itemNumber2...
 	 * to the int[n][2] = [itemId1][itemNumber1],[itemId2][itemNumber2]...
@@ -1587,7 +1615,7 @@ public final class Config
 		final String[] propertySplit = line.split(";");
 		if (propertySplit.length == 0)
 			return null;
-
+		
 		int i = 0;
 		String[] valueSplit;
 		final int[][] result = new int[propertySplit.length][];
@@ -1599,7 +1627,7 @@ public final class Config
 				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"", valueSplit[0], "\", should be itemId,itemNumber"));
 				return null;
 			}
-
+			
 			result[i] = new int[2];
 			try
 			{
@@ -1624,8 +1652,191 @@ public final class Config
 		return result;
 	}
 	
+	public static double[] MOONLAND_EXPERIENCE_RATE_MULTIPLIER = { 10.0, // Level 1
+	10.5, // Level 2
+	11.0, // Level 3
+	11.5, // Level 4
+	12.0, // Level 5
+	13.0, // Level 6
+	14.0, // Level 7
+	16.0, // Level 8
+	18.0, // Level 9
+	20.0, // Level 10
+	22.0, // Level 11
+	24.0, // Level 12
+	26.0, // Level 13
+	28.0, // Level 14
+	30.0, // Level 15
+	32.0, // Level 16
+	34.0, // Level 17
+	36.0, // Level 18
+	38.0, // Level 19
+	40.0, // Level 20
+	42.0, // Level 21
+	44.0, // Level 22
+	46.0, // Level 23
+	48.0, // Level 24
+	50.0, // Level 25
+	52.0, // Level 26
+	54.0, // Level 27
+	56.0, // Level 28
+	58.0, // Level 29
+	60.0, // Level 30
+	62.0, // Level 31
+	64.0, // Level 32
+	66.0, // Level 33
+	68.0, // Level 34
+	70.0, // Level 35
+	72.0, // Level 36
+	74.0, // Level 37
+	76.0, // Level 38
+	78.0, // Level 39
+	80.0, // Level 40
+	82.0, // Level 41
+	84.0, // Level 42
+	86.0, // Level 43
+	88.0, // Level 44
+	90.0, // Level 45
+	92.0, // Level 46
+	94.0, // Level 47
+	96.0, // Level 48
+	98.0, // Level 49
+	100.0, // Level 50
+	102.0, // Level 51
+	104.0, // Level 52
+	106.0, // Level 53
+	108.0, // Level 54
+	110.0, // Level 55
+	112.0, // Level 56
+	114.0, // Level 57
+	118.0, // Level 58
+	120.0, // Level 59
+	122.0, // Level 60
+	124.0, // Level 61
+	126.0, // Level 62
+	128.0, // Level 63
+	130.0, // Level 64
+	132.0, // Level 65
+	134.0, // Level 66
+	136.0, // Level 67
+	138.0, // Level 68
+	140.0, // Level 69
+	142.0, // Level 70
+	144.0, // Level 71
+	146.0, // Level 72
+	148.0, // Level 73
+	150.0, // Level 74
+	152.5, // Level 75
+	154.0, // Level 76
+	156.5, // Level 77
+	158.0, // Level 78
+	160.0, // Level 79
+	162.0, // Level 80
+	164.0, // Level 81
+	166.0, // Level 82
+	168.0, // Level 83
+	170.0, // Level 84
+	172.0, // Level 85
+	174.0, // Level 86
+	176.0, // Level 87
+	178.0, // Level 88
+	180.0, // Level 89
+	182.0, // Level 90
+	184.0, // Level 91
+	186.0, // Level 92
+	188.0, // Level 93
+	190.0, // Level 94
+	192.0, // Level 95
+	194.0, // Level 96
+	196.0, // Level 97
+	198.0, // Level 98
+	200.0, // Level 99
+	};
+	
+	public static void loadBuffDurationMap()
+	{
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setValidating(false);
+		factory.setIgnoringComments(true);
+		
+		File file = Config.findResource("BuffDurationList.xml");
+		if (!file.exists())
+		{
+			Log.log(Level.INFO, "The BuffDurationList.xml file is missing.");
+			return;
+		}
+		try
+		{
+			Document doc = factory.newDocumentBuilder().parse(file);
+			for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+			{
+				if ("list".equalsIgnoreCase(n.getNodeName()))
+				{
+					for (Node na = n.getFirstChild(); na != null; na = na.getNextSibling())
+					{
+						if ("skills".equalsIgnoreCase(na.getNodeName()))
+						{
+							for (Node cd = na.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								if ("skill".equalsIgnoreCase(cd.getNodeName()))
+								{
+									int skillId = 0;
+									int duration = 0;
+									Node cds = cd.getAttributes().getNamedItem("id");
+									if (cds != null)
+										skillId = Integer.parseInt(cds.getNodeValue());
+									cds = null;
+									cds = cd.getAttributes().getNamedItem("duration");
+									if (cds != null)
+										duration = Integer.parseInt(cds.getNodeValue());
+									
+									SKILL_DURATION_LIST.put(skillId, duration);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		System.out.println("Reloaded BUffs Duration " + SKILL_DURATION_LIST.size());
+	}
+	
+	public final static double getExperienceMultiplierFor(final int level)
+	{
+		if (level <= 0)
+			return 1.0;
+		
+		return MOONLAND_EXPERIENCE_RATE_MULTIPLIER[level - 1];
+	}
+	
 	public static boolean isServer(int server)
 	{
 		return (SERVER_NAME_MASK & server) > 0;
+	}
+	
+	public static final File findResource(final String path)
+	{
+		final File custom = findCustomResource(path);
+		if (custom.exists())
+			return custom;
+		
+		Log.warning("Config: Custom Path doesn't exist: " + path);
+		
+		return findNonCustomResource(path);
+	}
+	
+	public static final File findCustomResource(final String path)
+	{
+		return new File("data_" + SERVER_NAME + "/", path);
+	}
+	
+	public static final File findNonCustomResource(final String path)
+	{
+		return new File("data/", path);
 	}
 }

@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class SpiritOfNabiarov extends L2Transformation
 {
-	private static final int[] SKILLS = {5491,619,11311,11312,11313,11314,11315,11299,11310};
+	private static final int[] SKILLS = { 5491, 619, 11311, 11312, 11313, 11314, 11315, 11299, 11310 };
 	
 	public SpiritOfNabiarov()
 	{
@@ -17,7 +18,7 @@ public class SpiritOfNabiarov extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 509 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 509) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -34,23 +35,23 @@ public class SpiritOfNabiarov extends L2Transformation
 		int skillLevel = getPlayer().getSkillLevelHash(11267);
 		
 		if (skillLevel > 0)
-		{	
+		{
 			//Naviarope Strike
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(11311, skillLevel), false);
-		
+			
 			//Naviarope Flame
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(11312, skillLevel), false);
-		
+			
 			//Naviarope Explosion
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(11313, skillLevel), false);
-		
+			
 			//Corpse Blast
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(11314, skillLevel), false);
 		}
 		
 		//Mass Servitor Ultimate Defense
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(11310, 1), false);
-
+		
 		//Servitor Balance Life
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(11299, 1), false);
 		
@@ -77,16 +78,16 @@ public class SpiritOfNabiarov extends L2Transformation
 		int skillLevel = getPlayer().getSkillLevelHash(11267);
 		
 		if (skillLevel > 0)
-		{	
+		{
 			//Naviarope Strike
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(11311, skillLevel), false);
-		
+			
 			//Naviarope Flame
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(11312, skillLevel), false);
-		
+			
 			//Naviarope Explosion
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(11313, skillLevel), false);
-		
+			
 			//Corpse Blast
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(11314, skillLevel), false);
 		}

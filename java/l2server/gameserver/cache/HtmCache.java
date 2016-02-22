@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.cache;
 
 import java.io.BufferedInputStream;
@@ -56,12 +57,14 @@ public class HtmCache implements Reloadable
 		ReloadableManager.getInstance().register("htm", this);
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		reload(Config.DATAPACK_ROOT);
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance().getLoadedFiles() + " files loaded";
@@ -102,6 +105,7 @@ public class HtmCache implements Reloadable
 	
 	private static class HtmFilter implements FileFilter
 	{
+		@Override
 		public boolean accept(File file)
 		{
 			if (!file.isDirectory())
@@ -158,7 +162,7 @@ public class HtmCache implements Reloadable
 				}
 				else
 				{
-					_bytesBuffLen = _bytesBuffLen - oldContent.length() + bytes;
+					_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + bytes;
 				}
 				
 				_cache.put(hashcode, content);
@@ -201,7 +205,7 @@ public class HtmCache implements Reloadable
 	{
 		String newPath = null;
 		String content;
-		if (prefix != null && !prefix.isEmpty())
+		if ((prefix != null) && !prefix.isEmpty())
 		{
 			newPath = prefix + path;
 			content = getHtm(newPath);
@@ -231,13 +235,13 @@ public class HtmCache implements Reloadable
 	
 	public String getHtm(String path)
 	{
-		if (path == null || path.isEmpty())
+		if ((path == null) || path.isEmpty())
 			return ""; // avoid possible NPE
-		
+			
 		final int hashCode = path.hashCode();
 		String content = _cache.get(hashCode);
 		
-		if (Config.LAZY_CACHE && content == null)
+		if (Config.LAZY_CACHE && (content == null))
 			content = loadFile(new File(Config.DATAPACK_ROOT, path));
 		
 		return content;
@@ -260,7 +264,7 @@ public class HtmCache implements Reloadable
 		
 		if (file.exists() && filter.accept(file) && !file.isDirectory())
 			return true;
-
+		
 		file = new File("data_" + Config.SERVER_NAME + "/html/" + path);
 		filter = new HtmFilter();
 		

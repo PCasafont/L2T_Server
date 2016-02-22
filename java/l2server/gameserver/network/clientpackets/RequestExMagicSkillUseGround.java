@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -29,7 +30,6 @@ import l2server.util.Point3D;
  */
 public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 {
-	private static final String _C__D0_2F_REQUESTEXMAGICSKILLUSEGROUND = "[C] D0:2F RequestExMagicSkillUseGround";
 	
 	private int _x;
 	private int _y;
@@ -75,10 +75,10 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		// Check the validity of the skill
 		if (skill != null)
 		{
-			activeChar.setSkillCastPosition(new Point3D(_x , _y, _z));
+			activeChar.setSkillCastPosition(new Point3D(_x, _y, _z));
 			
 			// normally magicskilluse packet turns char client side but for these skills, it doesn't (even with correct target)
-			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), _x , _y));
+			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), _x, _y));
 			activeChar.broadcastPacket(new ValidateLocation(activeChar));
 			
 			activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
@@ -88,14 +88,5 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("No skill found with id " + _skillId + " and level " + level + " !!");
 		}
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_2F_REQUESTEXMAGICSKILLUSEGROUND;
 	}
 }

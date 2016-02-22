@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -23,7 +24,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.gameserverpackets.ServerStatus;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-
 /**
  * This class handles the admin commands that acts on the login
  *
@@ -31,20 +31,13 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
  */
 public class AdminLogin implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_server_gm_only",
-		"admin_server_all",
-		"admin_server_max_player",
-		"admin_server_list_type",
-		"admin_server_list_age",
-		"admin_server_login"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_server_gm_only", "admin_server_all", "admin_server_max_player", "admin_server_list_type", "admin_server_list_age", "admin_server_login" };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_server_gm_only"))
@@ -89,9 +82,9 @@ public class AdminLogin implements IAdminCommandHandler
 			if (tokens > 1)
 			{
 				st.nextToken();
-				String[] modes = new String[tokens-1];
+				String[] modes = new String[tokens - 1];
 				
-				for (int i = 0; i < tokens-1; i++)
+				for (int i = 0; i < (tokens - 1); i++)
 				{
 					modes[i] = st.nextToken().trim();
 				}
@@ -108,12 +101,12 @@ public class AdminLogin implements IAdminCommandHandler
 				{
 					Config.SERVER_LIST_TYPE = newType;
 					LoginServerThread.getInstance().sendServerType();
-					activeChar.sendMessage("Server Type changed to "+getServerTypeName(newType));
+					activeChar.sendMessage("Server Type changed to " + getServerTypeName(newType));
 					showMainPage(activeChar);
 				}
 				else
 				{
-					activeChar.sendMessage("Server Type is already "+getServerTypeName(newType));
+					activeChar.sendMessage("Server Type is already " + getServerTypeName(newType));
 					showMainPage(activeChar);
 				}
 			}
@@ -137,12 +130,12 @@ public class AdminLogin implements IAdminCommandHandler
 					{
 						Config.SERVER_LIST_TYPE = age;
 						LoginServerThread.getInstance().sendServerStatus(ServerStatus.SERVER_AGE, age);
-						activeChar.sendMessage("Server Age changed to "+age);
+						activeChar.sendMessage("Server Age changed to " + age);
 						showMainPage(activeChar);
 					}
 					else
 					{
-						activeChar.sendMessage("Server Age is already "+age);
+						activeChar.sendMessage("Server Age is already " + age);
 						showMainPage(activeChar);
 					}
 				}
@@ -183,12 +176,12 @@ public class AdminLogin implements IAdminCommandHandler
 		String nameType = "";
 		for (int i = 0; i < 7; i++)
 		{
-			int currentType = serverType & (int)Math.pow(2, i);
+			int currentType = serverType & (int) Math.pow(2, i);
 			
 			if (currentType > 0)
 			{
 				if (!nameType.isEmpty())
-					nameType+="+";
+					nameType += "+";
 				
 				switch (currentType)
 				{
@@ -238,9 +231,10 @@ public class AdminLogin implements IAdminCommandHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

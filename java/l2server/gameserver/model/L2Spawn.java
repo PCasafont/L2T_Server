@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.lang.reflect.Constructor;
@@ -71,7 +72,7 @@ public class L2Spawn
 	
 	/** The heading of L2NpcInstance when they are spawned */
 	private int _heading;
-
+	
 	/** The possible coords in which to spawn [x, y, z, chance] */
 	List<int[]> _randomCoords;
 	
@@ -82,10 +83,12 @@ public class L2Spawn
 	private int _randomRespawnDelay;
 	
 	private int _instanceId = 0;
+	@SuppressWarnings("unused")
+	private int _dimensionId = 0;
 	
 	/** If True a L2NpcInstance is respawned each time that another is killed */
 	private boolean _doRespawn = false;
-
+	
 	/** If it has a value, the npc data will be saved */
 	private String _dbName = null;
 	
@@ -96,6 +99,7 @@ public class L2Spawn
 	/** The task launching the function doSpawn() */
 	class SpawnTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try
@@ -117,7 +121,7 @@ public class L2Spawn
 			throw new IllegalArgumentException("Null template!");
 		
 		// Create the generic constructor of L2NpcInstance managed by this L2Spawn
-		Class<?>[] parameters = {int.class, Class.forName("l2server.gameserver.templates.chars.L2NpcTemplate")};
+		Class<?>[] parameters = { int.class, Class.forName("l2server.gameserver.templates.chars.L2NpcTemplate") };
 		
 		Class<?> instanceClass = getClassFor(template.Type, false);
 		
@@ -128,7 +132,7 @@ public class L2Spawn
 		Constructor<?> constructor = instanceClass.getConstructor(parameters);
 		
 		// Get L2NpcInstance Init parameters and its generate an Identifier
-		Object[] params = {IdFactory.getInstance().getNextId(), template};
+		Object[] params = { IdFactory.getInstance().getNextId(), template };
 		
 		// Call the constructor of the L2NpcInstance
 		// (can be a L2ArtefactInstance, L2FriendlyMobInstance, L2GuardInstance, L2MonsterInstance, L2SiegeGuardInstance, L2BoxInstance,
@@ -138,7 +142,7 @@ public class L2Spawn
 		if (!(tmp instanceof L2Npc))
 			throw new IllegalArgumentException("Trying to create a spawn of a non NPC object!");
 		
-		_npc = (L2Npc)tmp;
+		_npc = (L2Npc) tmp;
 		
 		// Link the L2NpcInstance to this L2Spawn
 		_npc.setSpawn(this);
@@ -178,14 +182,14 @@ public class L2Spawn
 			// Create a new SpawnTask to launch after the respawn Delay
 			ThreadPoolManager.getInstance().scheduleGeneral(new SpawnTask(), respawnDelay);
 			_nextRespawn = System.currentTimeMillis() + respawnDelay;
-
-			if (_dbName != null && !_dbName.isEmpty())
+			
+			if ((_dbName != null) && !_dbName.isEmpty())
 				SpawnDataManager.getInstance().updateDbSpawnData(this);
 		}
 		else
 			_npc.getTemplate().onUnSpawn(this);
 	}
-
+	
 	/**
 	 * Return true if respawn enabled
 	 */
@@ -193,7 +197,7 @@ public class L2Spawn
 	{
 		return _doRespawn;
 	}
-
+	
 	/**
 	 * Set _doRespawn to False to stop respawn in thios L2Spawn.<BR><BR>
 	 */
@@ -234,7 +238,7 @@ public class L2Spawn
 		_npc.setShowSummonAnimation(isSummonSpawn);
 		
 		boolean handled = false;
-		if (_dbName != null && !_dbName.isEmpty())
+		if ((_dbName != null) && !_dbName.isEmpty())
 		{
 			DbSpawnData dbsd = SpawnDataManager.getInstance().popDbSpawnData(_dbName);
 			if (dbsd != null)
@@ -256,10 +260,11 @@ public class L2Spawn
 						_npc.setCurrentMp(dbsd.currentMp);
 					}
 				}
+				
 				handled = true;
 			}
 		}
-
+		
 		if (!handled)
 			initializeNpc();
 		
@@ -311,7 +316,7 @@ public class L2Spawn
 			newlocx = getX();
 			newlocy = getY();
 			if (Config.GEODATA > 0)
-				newlocz = GeoData.getInstance().getSpawnHeight(newlocx, newlocy, getZ(), getZ(),this);
+				newlocz = GeoData.getInstance().getSpawnHeight(newlocx, newlocy, getZ(), getZ(), this);
 			else
 				newlocz = getZ();
 		}
@@ -343,27 +348,12 @@ public class L2Spawn
 		if (Config.L2JMOD_CHAMPION_ENABLE)
 		{
 			// Set champion on next spawn
-			if
-			(
-					_npc instanceof L2MonsterInstance
-					&& !getTemplate().isQuestMonster
-					&& getTemplate().canBeChampion
-					&& !_npc.isRaid()
-					&& !((L2MonsterInstance)_npc).isRaidMinion()
-					&& !(_npc instanceof L2ArmyMonsterInstance)
-					&& !(_npc instanceof L2ChessPieceInstance)
-					&& !(_npc instanceof L2EventGolemInstance)
-					&& getNpcId() != 44000
-					&& Config.L2JMOD_CHAMPION_FREQUENCY > 0
-					&& _npc.getLevel()>=Config.L2JMOD_CHAMP_MIN_LVL
-					&& _npc.getLevel()<=Config.L2JMOD_CHAMP_MAX_LVL
-					&& (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0)
-			)
+			if ((_npc instanceof L2MonsterInstance) && !getTemplate().isQuestMonster && getTemplate().canBeChampion && !_npc.isRaid() && !((L2MonsterInstance) _npc).isRaidMinion() && !(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) && !(_npc instanceof L2EventGolemInstance) && (getNpcId() != 44000) && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (_npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (_npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
 			{
 				int random = Rnd.get(100);
 				
 				if (random < Config.L2JMOD_CHAMPION_FREQUENCY)
-					((L2Attackable)_npc).setChampion(true);
+					((L2Attackable) _npc).setChampion(true);
 			}
 		}
 		
@@ -382,7 +372,7 @@ public class L2Spawn
 		
 		try
 		{
-			instanceClass = Class.forName("l2server.gameserver.model.actor.instance." + (custom ? "custom.": "") + templateType + "Instance");
+			instanceClass = Class.forName("l2server.gameserver.model.actor.instance." + (custom ? "custom." : "") + templateType + "Instance");
 		}
 		catch (ClassNotFoundException e)
 		{

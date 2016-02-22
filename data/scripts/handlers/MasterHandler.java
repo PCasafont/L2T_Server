@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers;
 
 import handlers.actionhandlers.L2ArtefactInstanceAction;
@@ -43,6 +44,7 @@ import handlers.admincommandhandlers.AdminChangeAccessLevel;
 import handlers.admincommandhandlers.AdminClan;
 import handlers.admincommandhandlers.AdminCreateItem;
 import handlers.admincommandhandlers.AdminCursedWeapons;
+import handlers.admincommandhandlers.AdminDebug;
 import handlers.admincommandhandlers.AdminDelete;
 import handlers.admincommandhandlers.AdminDisconnect;
 import handlers.admincommandhandlers.AdminDoorControl;
@@ -54,6 +56,7 @@ import handlers.admincommandhandlers.AdminEnchant;
 import handlers.admincommandhandlers.AdminExpSp;
 import handlers.admincommandhandlers.AdminFightCalculator;
 import handlers.admincommandhandlers.AdminFortSiege;
+import handlers.admincommandhandlers.AdminGeoEditor;
 import handlers.admincommandhandlers.AdminGeodata;
 import handlers.admincommandhandlers.AdminGm;
 import handlers.admincommandhandlers.AdminGmChat;
@@ -67,6 +70,7 @@ import handlers.admincommandhandlers.AdminKick;
 import handlers.admincommandhandlers.AdminKill;
 import handlers.admincommandhandlers.AdminLevel;
 import handlers.admincommandhandlers.AdminLogin;
+import handlers.admincommandhandlers.AdminMammon;
 import handlers.admincommandhandlers.AdminManor;
 import handlers.admincommandhandlers.AdminMenu;
 import handlers.admincommandhandlers.AdminMessages;
@@ -90,6 +94,7 @@ import handlers.admincommandhandlers.AdminSummon;
 import handlers.admincommandhandlers.AdminTarget;
 import handlers.admincommandhandlers.AdminTeleport;
 import handlers.admincommandhandlers.AdminTenkai;
+import handlers.admincommandhandlers.AdminTerritoryWar;
 import handlers.admincommandhandlers.AdminTest;
 import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVitality;
@@ -101,12 +106,14 @@ import handlers.bypasshandlers.Buy;
 import handlers.bypasshandlers.BuyShadowItem;
 import handlers.bypasshandlers.CPRecovery;
 import handlers.bypasshandlers.Certificate;
+import handlers.bypasshandlers.ChangeName;
 import handlers.bypasshandlers.ChatLink;
 import handlers.bypasshandlers.ClanWarehouse;
 import handlers.bypasshandlers.CustomBypass;
 import handlers.bypasshandlers.Delevel;
 import handlers.bypasshandlers.DrawHenna;
 import handlers.bypasshandlers.EnchantMultisell;
+import handlers.bypasshandlers.Ensoul;
 import handlers.bypasshandlers.FishSkillList;
 import handlers.bypasshandlers.FortSiege;
 import handlers.bypasshandlers.ItemAuctionLink;
@@ -114,6 +121,7 @@ import handlers.bypasshandlers.Link;
 import handlers.bypasshandlers.Loto;
 import handlers.bypasshandlers.ManorManager;
 import handlers.bypasshandlers.Multisell;
+import handlers.bypasshandlers.Noblesse;
 import handlers.bypasshandlers.Observation;
 import handlers.bypasshandlers.OlympiadManagerLink;
 import handlers.bypasshandlers.PlayerHelp;
@@ -131,6 +139,7 @@ import handlers.bypasshandlers.SupportBlessing;
 import handlers.bypasshandlers.SupportMagic;
 import handlers.bypasshandlers.Teleport;
 import handlers.bypasshandlers.TerritoryStatus;
+import handlers.bypasshandlers.TerritoryWar;
 import handlers.bypasshandlers.Transform;
 import handlers.bypasshandlers.VoiceCommand;
 import handlers.bypasshandlers.Wear;
@@ -192,7 +201,6 @@ import handlers.skillhandlers.BalanceLife;
 import handlers.skillhandlers.BallistaBomb;
 import handlers.skillhandlers.BeastSkills;
 import handlers.skillhandlers.Blow;
-import handlers.skillhandlers.Cancel;
 import handlers.skillhandlers.ChainHeal;
 import handlers.skillhandlers.ChangeHairAccessory;
 import handlers.skillhandlers.Charge;
@@ -223,6 +231,7 @@ import handlers.skillhandlers.Manadam;
 import handlers.skillhandlers.Mark;
 import handlers.skillhandlers.MaxHpDamPercent;
 import handlers.skillhandlers.Mdam;
+import handlers.skillhandlers.NornilsPower;
 import handlers.skillhandlers.Pdam;
 import handlers.skillhandlers.RefuelAirShip;
 import handlers.skillhandlers.Resurrect;
@@ -253,12 +262,14 @@ import handlers.usercommandhandlers.Mount;
 import handlers.usercommandhandlers.OlympiadStat;
 import handlers.usercommandhandlers.PartyInfo;
 import handlers.usercommandhandlers.Time;
+import handlers.voicedcommandhandlers.Banking;
+import handlers.voicedcommandhandlers.ChatAdmin;
 import handlers.voicedcommandhandlers.CustomVoiced;
+import handlers.voicedcommandhandlers.Debug;
+import handlers.voicedcommandhandlers.DreamsSell;
 import handlers.voicedcommandhandlers.Sell;
+import handlers.voicedcommandhandlers.TryOn;
 import handlers.voicedcommandhandlers.Wedding;
-
-import java.util.logging.Logger;
-
 import l2server.Config;
 import l2server.gameserver.handler.ActionHandler;
 import l2server.gameserver.handler.AdminCommandHandler;
@@ -268,6 +279,7 @@ import l2server.gameserver.handler.ItemHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.handler.UserCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
+import l2server.log.Log;
 
 /**
  *
@@ -275,8 +287,6 @@ import l2server.gameserver.handler.VoicedCommandHandler;
  */
 public class MasterHandler
 {
-	private static Logger _log = Logger.getLogger(MasterHandler.class.getName());
-	
 	private static void loadActionHandlers()
 	{
 		ActionHandler.getInstance().registerActionHandler(new L2ArtefactInstanceAction());
@@ -290,7 +300,7 @@ public class MasterHandler
 		ActionHandler.getInstance().registerActionHandler(new L2SummonAction());
 		ActionHandler.getInstance().registerActionHandler(new L2TrapAction());
 		ActionHandler.getInstance().registerActionHandler(new L2StatueInstanceAction());
-		_log.config("Loaded " + ActionHandler.getInstance().size() + "  ActionHandlers");
+		Log.config("Loaded " + ActionHandler.getInstance().size() + "  ActionHandlers");
 	}
 	
 	private static void loadActionShiftHandlers()
@@ -301,7 +311,7 @@ public class MasterHandler
 		ActionHandler.getInstance().registerActionShiftHandler(new L2PcInstanceActionShift());
 		ActionHandler.getInstance().registerActionShiftHandler(new L2StaticObjectInstanceActionShift());
 		ActionHandler.getInstance().registerActionShiftHandler(new L2SummonActionShift());
-		_log.config("Loaded " + ActionHandler.getInstance().sizeShift() + " ActionShiftHandlers");
+		Log.config("Loaded " + ActionHandler.getInstance().sizeShift() + " ActionShiftHandlers");
 	}
 	
 	private static void loadAdminHandlers()
@@ -317,6 +327,7 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminClan());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminCreateItem());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminCursedWeapons());
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDebug());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDelete());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDisconnect());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminDoorControl());
@@ -329,6 +340,7 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminFightCalculator());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminFortSiege());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGeodata());
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGeoEditor());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGm());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGmChat());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminGraciaSeeds());
@@ -341,6 +353,7 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminKill());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminLevel());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminLogin());
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMammon());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminManor());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMenu());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminMessages());
@@ -363,13 +376,14 @@ public class MasterHandler
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminSummon());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTarget());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTeleport());
+		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTerritoryWar());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTest());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminTenkai());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminUnblockIp());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminAPlayer());
-		_log.config("Loaded " + AdminCommandHandler.getInstance().size() + " AdminCommandHandlers");
+		Log.config("Loaded " + AdminCommandHandler.getInstance().size() + " AdminCommandHandlers");
 	}
 	
 	private static void loadBypassHandlers()
@@ -380,11 +394,13 @@ public class MasterHandler
 		BypassHandler.getInstance().registerBypassHandler(new Buy());
 		BypassHandler.getInstance().registerBypassHandler(new BuyShadowItem());
 		BypassHandler.getInstance().registerBypassHandler(new Certificate());
+		BypassHandler.getInstance().registerBypassHandler(new ChangeName());
 		BypassHandler.getInstance().registerBypassHandler(new ChatLink());
 		BypassHandler.getInstance().registerBypassHandler(new ClanWarehouse());
 		BypassHandler.getInstance().registerBypassHandler(new CPRecovery());
 		BypassHandler.getInstance().registerBypassHandler(new DrawHenna());
 		BypassHandler.getInstance().registerBypassHandler(new EnchantMultisell());
+		BypassHandler.getInstance().registerBypassHandler(new Ensoul());
 		BypassHandler.getInstance().registerBypassHandler(new FishSkillList());
 		BypassHandler.getInstance().registerBypassHandler(new FortSiege());
 		BypassHandler.getInstance().registerBypassHandler(new ItemAuctionLink());
@@ -392,10 +408,11 @@ public class MasterHandler
 		BypassHandler.getInstance().registerBypassHandler(new Loto());
 		BypassHandler.getInstance().registerBypassHandler(new ManorManager());
 		BypassHandler.getInstance().registerBypassHandler(new Multisell());
+		BypassHandler.getInstance().registerBypassHandler(new Noblesse());
 		BypassHandler.getInstance().registerBypassHandler(new Observation());
 		BypassHandler.getInstance().registerBypassHandler(new OlympiadManagerLink());
 		BypassHandler.getInstance().registerBypassHandler(new OlympiadManagerLink());
- 		BypassHandler.getInstance().registerBypassHandler(new QuestLink());
+		BypassHandler.getInstance().registerBypassHandler(new QuestLink());
 		BypassHandler.getInstance().registerBypassHandler(new PlayerHelp());
 		BypassHandler.getInstance().registerBypassHandler(new PrivateWarehouse());
 		BypassHandler.getInstance().registerBypassHandler(new QuestList());
@@ -410,13 +427,14 @@ public class MasterHandler
 		BypassHandler.getInstance().registerBypassHandler(new SupportMagic());
 		BypassHandler.getInstance().registerBypassHandler(new Teleport());
 		BypassHandler.getInstance().registerBypassHandler(new TerritoryStatus());
+		BypassHandler.getInstance().registerBypassHandler(new TerritoryWar());
 		BypassHandler.getInstance().registerBypassHandler(new Transform());
 		BypassHandler.getInstance().registerBypassHandler(new VoiceCommand());
 		BypassHandler.getInstance().registerBypassHandler(new Wear());
 		BypassHandler.getInstance().registerBypassHandler(new CustomBypass());
 		BypassHandler.getInstance().registerBypassHandler(new ShowAuction());
 		
-		_log.config("Loaded " + BypassHandler.getInstance().size() + "  BypassHandlers");
+		Log.config("Loaded " + BypassHandler.getInstance().size() + "  BypassHandlers");
 	}
 	
 	private static void loadChatHandlers()
@@ -435,7 +453,7 @@ public class MasterHandler
 		ChatHandler.getInstance().registerChatHandler(new ChatTell());
 		ChatHandler.getInstance().registerChatHandler(new ChatTrade());
 		ChatHandler.getInstance().registerChatHandler(new ChatGlobal());
-		_log.config("Loaded " + ChatHandler.getInstance().size() + "  ChatHandlers");
+		Log.config("Loaded " + ChatHandler.getInstance().size() + "  ChatHandlers");
 	}
 	
 	private static void loadItemHandlers()
@@ -480,7 +498,7 @@ public class MasterHandler
 		ItemHandler.getInstance().registerItemHandler(new AppearanceStone());
 		ItemHandler.getInstance().registerItemHandler(new EventItem());
 		ItemHandler.getInstance().registerItemHandler(new ChangeAttribute());
-		_log.config("Loaded " + ItemHandler.getInstance().size() + " ItemHandlers");
+		Log.config("Loaded " + ItemHandler.getInstance().size() + " ItemHandlers");
 	}
 	
 	private static void loadSkillHandlers()
@@ -508,7 +526,6 @@ public class MasterHandler
 		SkillHandler.getInstance().registerSkillHandler(new StrSiegeAssault());
 		SkillHandler.getInstance().registerSkillHandler(new SummonFriend());
 		SkillHandler.getInstance().registerSkillHandler(new Disablers());
-		SkillHandler.getInstance().registerSkillHandler(new Cancel());
 		SkillHandler.getInstance().registerSkillHandler(new ChainHeal());
 		SkillHandler.getInstance().registerSkillHandler(new StealBuffs());
 		SkillHandler.getInstance().registerSkillHandler(new BallistaBomb());
@@ -533,11 +550,12 @@ public class MasterHandler
 		SkillHandler.getInstance().registerSkillHandler(new Dummy());
 		SkillHandler.getInstance().registerSkillHandler(new Extractable());
 		SkillHandler.getInstance().registerSkillHandler(new RefuelAirShip());
+		SkillHandler.getInstance().registerSkillHandler(new NornilsPower());
 		SkillHandler.getInstance().registerSkillHandler(new ClassChange());
 		SkillHandler.getInstance().registerSkillHandler(new GoToFriend());
 		SkillHandler.getInstance().registerSkillHandler(new SwitchPosition());
 		SkillHandler.getInstance().registerSkillHandler(new ChangeHairAccessory());
-		_log.config("Loaded " + SkillHandler.getInstance().size() + " SkillHandlers");
+		Log.config("Loaded " + SkillHandler.getInstance().size() + " SkillHandlers");
 	}
 	
 	private static void loadUserHandlers()
@@ -555,17 +573,29 @@ public class MasterHandler
 		UserCommandHandler.getInstance().registerUserCommandHandler(new ChannelDelete());
 		UserCommandHandler.getInstance().registerUserCommandHandler(new ChannelListUpdate());
 		UserCommandHandler.getInstance().registerUserCommandHandler(new Birthday());
-		_log.config("Loaded " + UserCommandHandler.getInstance().size() + " UserHandlers");
+		Log.config("Loaded " + UserCommandHandler.getInstance().size() + " UserHandlers");
 	}
 	
 	private static void loadVoicedHandlers()
 	{
 		if (Config.L2JMOD_ALLOW_WEDDING)
 			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Wedding());
+		if (Config.BANKING_SYSTEM_ENABLED)
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Banking());
+		if (Config.L2JMOD_CHAT_ADMIN)
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new ChatAdmin());
+		if (Config.L2JMOD_DEBUG_VOICE_COMMAND)
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Debug());
 		
 		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new CustomVoiced());
-		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Sell());
-		_log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
+		
+		if (!Config.isServer(Config.DREAMS))
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Sell());
+		else
+			VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new DreamsSell());
+		
+		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new TryOn());
+		Log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 	
 	/**
@@ -573,7 +603,7 @@ public class MasterHandler
 	 */
 	public static void main(String[] args)
 	{
-		_log.config("Loading Handlers...");
+		Log.config("Loading Handlers...");
 		loadActionHandlers();
 		loadActionShiftHandlers();
 		loadAdminHandlers();
@@ -583,6 +613,6 @@ public class MasterHandler
 		loadSkillHandlers();
 		loadUserHandlers();
 		loadVoicedHandlers();
-		_log.config("Handlers Loaded...");
+		Log.config("Handlers Loaded...");
 	}
 }

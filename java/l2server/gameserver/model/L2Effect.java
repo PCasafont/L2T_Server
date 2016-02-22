@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -31,9 +32,7 @@ public abstract class L2Effect
 	
 	public static enum EffectState
 	{
-		CREATED,
-		ACTING,
-		FINISHING
+		CREATED, ACTING, FINISHING
 	}
 	
 	//member _effector is the instance of L2Character that cast/used the spell/skill that is
@@ -51,10 +50,10 @@ public abstract class L2Effect
 	
 	//the skill that was used.
 	private final L2Skill _skill;
-
+	
 	private L2Abnormal _abnormal;
 	private L2EffectTemplate _template;
-
+	
 	public boolean preventExitUpdate;
 	
 	/**
@@ -74,7 +73,7 @@ public abstract class L2Effect
 	/**
 	 * Special constructor to "steal" buffs. Must be implemented on
 	 * every child class that can be stolen.<br><br>
-	 * 
+	 *
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font>
 	 * <br>So you must call it explicitly
 	 * @param env
@@ -167,17 +166,17 @@ public abstract class L2Effect
 	{
 		return getSkill().getLevelHash();
 	}
-
+	
 	public L2Abnormal getAbnormal()
 	{
 		return _abnormal;
 	}
-
+	
 	public void setAbnormal(L2Abnormal abnormal)
 	{
 		_abnormal = abnormal;
 	}
-
+	
 	public L2EffectTemplate getTemplate()
 	{
 		return _template;
@@ -187,7 +186,7 @@ public abstract class L2Effect
 	{
 		return false;
 	}
-
+	
 	/**
 	 * Return true if effect itself can be stolen
 	 * @return

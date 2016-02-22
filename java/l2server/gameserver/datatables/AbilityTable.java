@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -80,7 +81,7 @@ public class AbilityTable
 	}
 	
 	private TIntObjectHashMap<Ability> _abilities = new TIntObjectHashMap<Ability>();
-
+	
 	private static AbilityTable _instance;
 	
 	public static AbilityTable getInstance()
@@ -140,7 +141,7 @@ public class AbilityTable
 	{
 		return 16;
 	}
-
+	
 	public long getAdenaCostForReset()
 	{
 		return 10000000;
@@ -166,14 +167,14 @@ public class AbilityTable
 		int hiddenSkillId = 0;
 		switch (skillId)
 		{
-			//Revelation Skills level 2
+		//Revelation Skills level 2
 			case 19124://Noble Knight Buffs
 			case 19142://Noble Warrior Buffs
 			case 19156://Noble Wizard Buffs
 			{
 				if (level == 2)
 				{
-					int[] revelationSkills = {1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997};
+					int[] revelationSkills = { 1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997 };
 					for (int id : revelationSkills)
 					{
 						if (player.getSkillLevelHash(id) != -1)
@@ -186,8 +187,8 @@ public class AbilityTable
 					}
 				}
 			}
-				
-			//Hidden skills	
+			
+			//Hidden skills
 			case 19127://Noble Guidance
 			case 19172://Noble Eagle Eye
 			case 19176://Noble Vision
@@ -203,12 +204,12 @@ public class AbilityTable
 						}
 					}
 					else
-					{	
-					
+					{
+						
 						int classId = player.getClassId();
-						if (classId > 146 && classId < 188)
+						if ((classId > 146) && (classId < 188))
 							classId = player.getCurrentClass().getParent().getAwakeningClassId();
-						switch(classId)
+						switch (classId)
 						{
 							case 139://Sigel Knight
 								hiddenSkillId = 19186;//Rampage Shield
@@ -237,7 +238,7 @@ public class AbilityTable
 						}
 						
 						//Ertheia case
-						switch(classId)
+						switch (classId)
 						{
 							case 188://Eviscerator
 								hiddenSkillId = 19187;//Blockade
@@ -246,16 +247,16 @@ public class AbilityTable
 								hiddenSkillId = 19190;//Brilliant Magic
 								break;
 						}
-					
+						
 						if (hiddenSkillId == 0)
-							Log.warning("AbilityTable: Can't locate the hidden skill id for the class "+PlayerClassTable.getInstance().getClassNameById(classId)+"("+classId+") player " + player.getName());
+							Log.warning("AbilityTable: Can't locate the hidden skill id for the class " + PlayerClassTable.getInstance().getClassNameById(classId) + "(" + classId + ") player " + player.getName());
 						else
 							player.addSkill(SkillTable.getInstance().getInfo(hiddenSkillId, 1), true);
-					}	
-						
+					}
+					
 				}
 			}
-			break;
+				break;
 		}
 		player.sendSkillList();
 	}

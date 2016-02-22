@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class L2CommandChannel
 		if (party == null)
 			return;
 		// Update the CCinfo for existing players
-		this.broadcastToChannelMembers(new ExMPCCPartyInfoUpdate(party, 1));
+		broadcastToChannelMembers(new ExMPCCPartyInfoUpdate(party, 1));
 		
 		_partys.add(party);
 		if (party.getLevel() > _channelLvl)
@@ -101,7 +102,7 @@ public class L2CommandChannel
 		else
 		{
 			// Update the CCinfo for existing players
-			this.broadcastToChannelMembers(new ExMPCCPartyInfoUpdate(party, 0));
+			broadcastToChannelMembers(new ExMPCCPartyInfoUpdate(party, 0));
 		}
 	}
 	
@@ -141,7 +142,7 @@ public class L2CommandChannel
 	 */
 	public void broadcastToChannelMembers(L2GameServerPacket gsp)
 	{
-		if (_partys != null && !_partys.isEmpty())
+		if ((_partys != null) && !_partys.isEmpty())
 		{
 			for (L2Party party : _partys)
 			{
@@ -153,7 +154,7 @@ public class L2CommandChannel
 	
 	public void broadcastCSToChannelMembers(CreatureSay gsp, L2PcInstance broadcaster)
 	{
-		if (_partys != null && !_partys.isEmpty())
+		if ((_partys != null) && !_partys.isEmpty())
 		{
 			for (L2Party party : _partys)
 			{
@@ -188,7 +189,10 @@ public class L2CommandChannel
 	 *
 	 * @return Level of CC
 	 */
-	public int getLevel() { return _channelLvl; }
+	public int getLevel()
+	{
+		return _channelLvl;
+	}
 	
 	/**
 	 * @param sets the leader of the Command Channel
@@ -214,8 +218,13 @@ public class L2CommandChannel
 	 */
 	public boolean meetRaidWarCondition(L2Object obj)
 	{
-		if (!(obj instanceof L2Character && ((L2Character)obj).isRaid()))
+		if (!((obj instanceof L2Character) && ((L2Character) obj).isRaid()))
 			return false;
 		return (getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE);
+	}
+	
+	public final boolean isInChannel(final L2Party party)
+	{
+		return _partys.contains(party);
 	}
 }

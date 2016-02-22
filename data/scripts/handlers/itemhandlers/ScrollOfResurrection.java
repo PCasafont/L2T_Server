@@ -3,17 +3,19 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
+import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.CastleManager;
@@ -37,9 +39,10 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class ScrollOfResurrection implements IItemHandler
 {
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!(playable instanceof L2PcInstance))
@@ -47,7 +50,7 @@ public class ScrollOfResurrection implements IItemHandler
 		
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		// Custom, in order to avoid blessed resurrection scroll usages
-		if (activeChar.getPvpFlag() > 0)
+		if (Config.isServer(Config.TENKAI) && (activeChar.getPvpFlag() > 0))
 		{
 			switch (item.getItemId())
 			{
@@ -61,8 +64,8 @@ public class ScrollOfResurrection implements IItemHandler
 					return;
 			}
 		}
-
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
+		
+		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -83,7 +86,7 @@ public class ScrollOfResurrection implements IItemHandler
 		// SoR Animation section
 		L2Character target = (L2Character) activeChar.getTarget();
 		
-		if (target != null && target.isDead())
+		if ((target != null) && target.isDead())
 		{
 			L2PcInstance targetPlayer = null;
 			
@@ -95,7 +98,7 @@ public class ScrollOfResurrection implements IItemHandler
 			if (target instanceof L2PetInstance)
 				targetPet = (L2PetInstance) target;
 			
-			if (targetPlayer != null || targetPet != null)
+			if ((targetPlayer != null) || (targetPet != null))
 			{
 				boolean condGood = true;
 				
@@ -107,7 +110,7 @@ public class ScrollOfResurrection implements IItemHandler
 				else
 					castle = CastleManager.getInstance().getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(), targetPet.getOwner().getZ());
 				
-				if (castle != null && castle.getSiege().getIsInProgress())
+				if ((castle != null) && castle.getSiege().getIsInProgress())
 				{
 					condGood = false;
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_BE_RESURRECTED_DURING_SIEGE));
@@ -146,9 +149,6 @@ public class ScrollOfResurrection implements IItemHandler
 				
 				if (condGood)
 				{
-					if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
-						return;
-					
 					int skillId = 0;
 					int skillLevel = 1;
 					
@@ -179,12 +179,15 @@ public class ScrollOfResurrection implements IItemHandler
 					
 					if (skillId != 0)
 					{
-						L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
-						activeChar.useMagic(skill, true, true);
+						if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
+							return;
 						
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
 						sm.addItemName(item);
 						activeChar.sendPacket(sm);
+						
+						L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
+						activeChar.useMagic(skill, true, true);
 					}
 				}
 			}

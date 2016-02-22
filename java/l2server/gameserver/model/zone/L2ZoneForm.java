@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone;
 
 import l2server.gameserver.network.serverpackets.ExServerPrimitive;
@@ -52,25 +53,26 @@ public abstract class L2ZoneForm
 		int ry = ay2 - ay1;
 		int sx = bx2 - bx1;
 		int sy = by2 - by1;
-		int rxs = rx * sy - ry * sx;
+		int rxs = (rx * sy) - (ry * sx);
 		if (rxs == 0)
 			return null;
 		
 		int abx = bx1 - ax1;
 		int aby = by1 - ay1;
-		float t = (abx * sy - aby * sx) / (float)rxs;
-		float u = (abx * ry - aby * rx) / (float)rxs;
+		float t = ((abx * sy) - (aby * sx)) / (float) rxs;
+		float u = ((abx * ry) - (aby * rx)) / (float) rxs;
 		
-		if (t > 0.0f && t < 1.0f && u > 0.0f && u < 1.0f)
+		if ((t > 0.0f) && (t < 1.0f) && (u > 0.0f) && (u < 1.0f))
 		{
-			int x = ax1 + (int)(rx * t);
-			int y = ay1 + (int)(ry * t);
-			return new int[]{x, y};
+			int x = ax1 + (int) (rx * t);
+			int y = ay1 + (int) (ry * t);
+			return new int[] { x, y };
 		}
 		
 		return null;
 	}
-
+	
 	public abstract int getCenterX();
+	
 	public abstract int getCenterY();
 }

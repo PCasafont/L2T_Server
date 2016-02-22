@@ -112,6 +112,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="canBeDispeled" val="false" />
 		<for>
 			<abnormal duration="120" landRate="100" stackLvl="99" stackType="turn_stone">
@@ -357,6 +358,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="dance_of_inspiration">
 				<effect type="Debuff" val="0" />
@@ -376,6 +378,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="dance_of_fury">
 				<effect type="Debuff" val="0" />
@@ -395,6 +398,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="dance_of_vampire">
 				<effect type="Debuff" val="0" />
@@ -414,6 +418,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="song_of_wind">
 				<effect type="Debuff" val="0" />
@@ -433,6 +438,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="song_of_water">
 				<effect type="Debuff" val="0" />
@@ -452,6 +458,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="1" stackType="song_of_vengeance">
 				<effect type="Debuff" val="0" />
@@ -472,6 +479,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="3" stackType="hit_up">
 				<effect type="Debuff" val="0" />
@@ -492,6 +500,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="3" stackType="pd_up">
 				<effect type="Debuff" val="0" />
@@ -512,6 +521,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="600" stackLvl="3" stackType="pa_up">
 				<effect type="Debuff" val="0" />
@@ -588,6 +598,7 @@
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="3600" landRate="100" stackLvl="1" stackType="watcher_gaze">
 				<effect type="Debuff" val="0" />
@@ -643,6 +654,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="aggroPoints" val="-100" />
 		<for>
 			<abnormal duration="600" stackLvl="#abnormalLvl" stackType="spa_disease_a" visualEffect="poison">
@@ -678,6 +690,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="aggroPoints" val="-100" />
 		<for>
 			<abnormal duration="600" stackLvl="#abnormalLvl" stackType="spa_disease_b" visualEffect="poison">
@@ -713,6 +726,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="aggroPoints" val="-100" />
 		<for>
 			<abnormal duration="600" stackLvl="#abnormalLvl" stackType="spa_disease_c" visualEffect="poison">
@@ -748,6 +762,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="aggroPoints" val="-100" />
 		<for>
 			<abnormal duration="600" stackLvl="#abnormalLvl" stackType="spa_disease_d" visualEffect="poison">
@@ -1193,6 +1208,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="20" stackLvl="1" stackType="turn_stone">
 				<effect type="Petrification" val="0" />

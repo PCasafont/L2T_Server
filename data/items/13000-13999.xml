@@ -1381,7 +1381,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Samurai Long Sword with limited ability enhancement. <Soul Crystal Enhancement>
+		Samurai Long Sword with limited ability enhancement. <Special Option>
 		Increases Critical by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13178" type="Weapon" name="Player Commendation - Samurai Long Sword - PC-exclusive Weapon" icon="icon.weapon_samurai_longsword_i00"
@@ -1397,7 +1397,7 @@
 		<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Deadman's Staff with limited ability enhancement. <Soul Crystal Enhancement>
+		Deadman's Staff with limited ability enhancement. <Special Option>
 		Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13179" type="Weapon" name="Player Commendation - Deadman's Staff - PC-exclusive Weapon" icon="icon.weapon_deadmans_staff_i00"
@@ -1414,7 +1414,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ghoul's Staff with limited ability enhancement. <Soul Crystal Enhancement>
+		Ghoul's Staff with limited ability enhancement. <Special Option>
 		Increases Max MP by 30%.Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13180" type="Weapon" name="Player Commendation - Ghoul's Staff - PC-exclusive Weapon" icon="icon.weapon_ghouls_staff_i00"
@@ -1432,7 +1432,7 @@
 		<skill id="3014" level="1" /> <!-- Special Ability: Mana Up -->
 	</item>
 	<!--
-		Demon's Staff with limited ability enhancement. <Soul Crystal Enhancement>
+		Demon's Staff with limited ability enhancement. <Special Option>
 		Has a 7% chance of casting Curse Weakness on the garget during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13181" type="Weapon" name="Player Commendation - Demon's Staff - PC-exclusive Weapon" icon="icon.weapon_demons_staff_i00"
@@ -1449,7 +1449,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Crystal Dagger with limited ability enhancement. <Soul Crystal Enhancement>
+		Crystal Dagger with limited ability enhancement. <Special Option>
 		P. Atk. + 140 during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13182" type="Weapon" name="Player Commendation - Crystal Dagger - PC-exclusive Weapon" icon="icon.weapon_crystal_dagger_i00"
@@ -1467,7 +1467,7 @@
 		<skill id="3043" level="4" /> <!-- Special Ability: Critical Damage -->
 	</item>
 	<!--
-		Great Pata with limited ability enhancement. <Soul Crystal Enhancement>
+		Great Pata with limited ability enhancement. <Special Option>
 		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13183" type="Weapon" name="Player Commendation - Great Pata - PC-exclusive Weapon" icon="icon.weapon_great_pata_i00"
@@ -1485,7 +1485,7 @@
 		<skill id="3034" level="4" /> <!-- Special Ability: Rsk. Haste -->
 	</item>
 	<!--
-		Eminence Bow with limited ability enhancement. <Soul Crystal Enhancement>
+		Eminence Bow with limited ability enhancement. <Special Option>
 		Has a 42% chance of consuming 1MP during a regular attack. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13184" type="Weapon" name="Player Commendation - Eminence Bow - PC-exclusive Weapon" icon="icon.weapon_eminence_bow_i00"
@@ -1502,7 +1502,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Orcish Poleaxe with limited ability enhancement. <Soul Crystal Enhancement>
+		Orcish Poleaxe with limited ability enhancement. <Special Option>
 		Widens the attack range. Expiratory. Cannot be crystallized or granted functions besides enchantment.
 	-->
 	<item id="13185" type="Weapon" name="Player Commendation - Orcish Poleaxe - PC-exclusive Weapon" icon="icon.weapon_orcish_poleaxe_i00"
@@ -1520,7 +1520,7 @@
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
 	<!--
-		Yaksa Mace with limited ability enhancement. <Soul Crystal Enhancement>
+		Yaksa Mace with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13186" type="Weapon" name="Player Commendation - Yaksa Mace - PC-exclusive Weapon" icon="icon.weapon_yaksa_mace_i00"
@@ -1550,7 +1550,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Admiral's Estoc with limited ability enhancement. <Soul Crystal Enhancement>
+		Admiral's Estoc with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 7%.
 		When enchanted to 4 or more, chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
@@ -1572,7 +1572,7 @@
 		<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Sabertooth with limited ability enhancement. <Soul Crystal Enhancement>
+		Sabertooth with limited ability enhancement. <Special Option>
 		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13189" type="Weapon" name="Player Commendation - Saber Tooth - PC-exclusive Weapon" icon="icon.weapon_invincible_blade_i00"
@@ -1593,7 +1593,7 @@
 		<skill id="3010" level="4" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Sharpshooter with limited ability enhancement. <Soul Crystal Enhancement>
+		Sharpshooter with limited ability enhancement. <Special Option>
 		Accuracy increases by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13190" type="Weapon" name="Player Commendation - Sharpshooter - PC-exclusive Weapon" icon="icon.weapon_taslam_i00"
@@ -1614,7 +1614,7 @@
 		<skill id="3008" level="4" /> <!-- Special Ability: Guidance -->
 	</item>
 	<!--
-		Ecliptic Sword with limited ability enhancement. <Soul Crystal Enhancement>
+		Ecliptic Sword with limited ability enhancement. <Special Option>
 		M. Atk. Increases by 26. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13191" type="Weapon" name="Player Commendation - Ecliptic Sword - PC-exclusive Weapon" icon="icon.weapon_sword_of_eclipse_i00"
@@ -1630,7 +1630,7 @@
 		<skill id="3076" level="4" /> <!-- Special Ability: Empower -->
 	</item>
 	<!--
-		Ecliptic Axe with limited ability enhancement. <Soul Crystal Enhancement>
+		Ecliptic Axe with limited ability enhancement. <Special Option>
 		10% chance of casting Dryad Root on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13192" type="Weapon" name="Player Commendation - Ecliptic Axe - PC-exclusive Weapon" icon="icon.weapon_eclipse_axe_i00"
@@ -1647,7 +1647,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Dwarven Hammer with limited ability enhancement. <Soul Crystal Enhancement>
+		Dwarven Hammer with limited ability enhancement. <Special Option>
 		42% chance of casting Bleed on the target during a standard Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13193" type="Weapon" name="Player Commendation - Dwarven Hammer - PC-exclusive Weapon" icon="icon.weapon_dwarven_hammer_i00"
@@ -1664,7 +1664,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Damascus Sword with limited ability enhancement. <Soul Crystal Enhancement>
+		Damascus Sword with limited ability enhancement. <Special Option>
 		Critical increases by 64. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13194" type="Weapon" name="Player Commendation - Damascus Sword - PC-exclusive Weapon" icon="icon.weapon_sword_of_damascus_i00"
@@ -1680,7 +1680,7 @@
 		<skill id="3010" level="6" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Lance with limited ability enhancement. <Soul Crystal Enhancement>
+		Lance with limited ability enhancement. <Special Option>
 		About a 25% chance of casting Stun on the target during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13195" type="Weapon" name="Player Commendation - Lance - PC-exclusive Weapon" icon="icon.weapon_lancia_i00" defaultAction="equip"
@@ -1698,7 +1698,7 @@
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
 	<!--
-		Deadman's Glory with limited ability enhancement. <Soul Crystal Enhancement>
+		Deadman's Glory with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 6%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13196" type="Weapon" name="Player Commendation - Deadman's Glory - PC-exclusive Weapon" icon="icon.weapon_deadmans_glory_i00"
@@ -1716,7 +1716,7 @@
 		<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Art of Battle Axe with limited ability enhancement. <Soul Crystal Enhancement>
+		Art of Battle Axe with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13197" type="Weapon" name="Player Commendation - Art of Battle Axe - PC-exclusive Weapon" icon="icon.weapon_art_of_battle_axe_i00"
@@ -1734,7 +1734,7 @@
 		<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 	</item>
 	<!--
-		Staff of Evil Spirits with limited ability enhancement. <Soul Crystal Enhancement>
+		Staff of Evil Spirits with limited ability enhancement. <Special Option>
 		20% chance of casting Blessed Body on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13198" type="Weapon" name="Player Commendation - Staff of Evil Spirits - PC-exclusive Weapon" icon="icon.weapon_staff_of_evil_sprit_i00"
@@ -1751,7 +1751,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Demon's Dagger with limited ability enhancement. <Soul Crystal Enhancement>
+		Demon's Dagger with limited ability enhancement. <Special Option>
 		P. Atk. Increases by 160 during a critical attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13199" type="Weapon" name="Player Commendation - Demon's Dagger - PC-exclusive Weapon" icon="icon.weapon_demons_sword_i00"
@@ -1769,7 +1769,7 @@
 		<skill id="3043" level="6" /> <!-- Special Ability: Critical Damage -->
 	</item>
 	<!--
-		Bellion Cestus with limited ability enhancement. <Soul Crystal Enhancement>
+		Bellion Cestus with limited ability enhancement. <Special Option>
 		Atk. Spd. decreases by 9% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13200" type="Weapon" name="Player Commendation - Bellion Cestus - PC-exclusive Weapon" icon="icon.weapon_bellion_cestus_i00"
@@ -1787,7 +1787,7 @@
 		<skill id="3034" level="6" /> <!-- Special Ability: Rsk. Haste -->
 	</item>
 	<!--
-		Bow of Peril with limited ability enhancement. <Soul Crystal Enhancement>
+		Bow of Peril with limited ability enhancement. <Special Option>
 		Cooldown decreases by about 13%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13201" type="Weapon" name="Player Commendation - Bow of Peril - PC-exclusive Weapon" icon="icon.weapon_hazard_bow_i00"
@@ -1816,7 +1816,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Guardian's Sword with limited ability enhancement. <Soul Crystal Enhancement>
+		Guardian's Sword with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13203" type="Weapon" name="Player Commendation - Guardian's Sword - PC-exclusive Weapon" icon="icon.weapon_guardians_sword_i00"
@@ -1832,7 +1832,7 @@
 		<skill id="3013" level="1" /> <!-- Special Ability: Health -->
 	</item>
 	<!--
-		Wizard's Tear with limited ability enhancement. <Soul Crystal Enhancement>
+		Wizard's Tear with limited ability enhancement. <Special Option>
 		Casting Spd. Increases by 15%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13204" type="Weapon" name="Player Commendation - Wizard's Tear - PC-exclusive Weapon" icon="icon.weapon_tears_of_wizard_i00"
@@ -1848,7 +1848,7 @@
 		<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 	</item>
 	<!--
-		Kaim Vanul's Bones with limited ability enhancement. <Soul Crystal Enhancement>
+		Kaim Vanul's Bones with limited ability enhancement. <Special Option>
 		Max MP increases by 30%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13205" type="Weapon" name="Player Commendation - Kaim Vanul's Bones - PC-exclusive Weapon" icon="icon.weapon_bone_of_kaim_vanul_i00"
@@ -1866,7 +1866,7 @@
 		<skill id="3014" level="1" /> <!-- Special Ability: Mana Up -->
 	</item>
 	<!--
-		Star Buster with limited ability enhancement. <Soul Crystal Enhancement>
+		Star Buster with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 6%. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13206" type="Weapon" name="Player Commendation - Star Buster - PC-exclusive Weapon" icon="icon.weapon_star_buster_i00"
@@ -1884,7 +1884,7 @@
 		<skill id="3036" level="6" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Colichemarde with limited ability enhancement. <Soul Crystal Enhancement>
+		Colichemarde with limited ability enhancement. <Special Option>
 		Critical increases by 64.
 		When enchanted to 4 or more, chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
@@ -1906,7 +1906,7 @@
 		<skill id="3010" level="6" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Dismantler with limited ability enhancement. <Soul Crystal Enhancement>
+		Dismantler with limited ability enhancement. <Special Option>
 		Absorbs 8 HP from the target during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13208" type="Weapon" name="Player Commendation - Dismantler - PC-exclusive Weapon" icon="icon.weapon_dismantler_i00"
@@ -1926,7 +1926,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Hell Hound with limited ability enhancement. <Soul Crystal Enhancement>
+		Hell Hound with limited ability enhancement. <Special Option>
 		MP consumption decreases by 12% during skill use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13209" type="Weapon" name="Player Commendation - Hell Hound - PC-exclusive Weapon" icon="icon.weapon_hell_hound_i00"
@@ -1947,7 +1947,7 @@
 		<skill id="3360" level="1" /> <!-- Special Ability: Cheap Shot -->
 	</item>
 	<!--
-		Sirra's Blade with limited ability enhancement. <Soul Crystal Enhancement>
+		Sirra's Blade with limited ability enhancement. <Special Option>
 		Max HP increases by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13210" type="Weapon" name="Player Commendation - Sirra's Blade - PC-exclusive Weapon" icon="icon.weapon_sirr_blade_i00"
@@ -1963,7 +1963,7 @@
 		<skill id="3013" level="5" /> <!-- Special Ability: Health -->
 	</item>
 	<!--
-		Sword of Ipos with limited ability enhancement. <Soul Crystal Enhancement>
+		Sword of Ipos with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13211" type="Weapon" name="Player Commendation - Sword of Ipos - PC-exclusive Weapon" icon="icon.weapon_sword_of_ipos_i00"
@@ -1979,7 +1979,7 @@
 		<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Barakiel's Axe with limited ability enhancement. <Soul Crystal Enhancement>
+		Barakiel's Axe with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13212" type="Weapon" name="Player Commendation - Barakiel's Axe - PC-exclusive Weapon" icon="icon.weapon_barakiel_axe_i00"
@@ -1997,7 +1997,7 @@
 		<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Behemoth' Tuning Fork with limited ability enhancement. <Soul Crystal Enhancement>
+		Behemoth' Tuning Fork with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13213" type="Weapon" name="Player Commendation - Behemoth' Tuning Fork - PC-exclusive Weapon" icon="icon.weapon_tuning_fork_of_behemoth_i00"
@@ -2015,7 +2015,7 @@
 		<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Naga Storm with limited ability enhancement. <Soul Crystal Enhancement>
+		Naga Storm with limited ability enhancement. <Special Option>
 		Critical increases by 67. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13214" type="Weapon" name="Player Commendation - Naga Storm - PC-exclusive Weapon" icon="icon.weapon_naga_storm_i00"
@@ -2033,7 +2033,7 @@
 		<skill id="3051" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Tiphon's Spear with limited ability enhancement. <Soul Crystal Enhancement>
+		Tiphon's Spear with limited ability enhancement. <Special Option>
 		The angle of attack widens. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13215" type="Weapon" name="Player Commendation - Tiphon's Spear - PC-exclusive Weapon" icon="icon.weapon_tiphon_spear_i00"
@@ -2051,7 +2051,7 @@
 		<skill id="3552" level="1" /> <!-- Special Ability: PvP Damage -->
 	</item>
 	<!--
-		Shyeed's Bow with limited ability enhancement. <Soul Crystal Enhancement>
+		Shyeed's Bow with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13216" type="Weapon" name="Player Commendation - Shyeed's Bow - PC-exclusive Weapon" icon="icon.weapon_shyid_bow_i00"
@@ -2069,7 +2069,7 @@
 		<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Sobekk's Hurricane with limited ability enhancement. <Soul Crystal Enhancement>
+		Sobekk's Hurricane with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 6%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13217" type="Weapon" name="Player Commendation - Sobekk's Hurricane - PC-exclusive Weapon" icon="icon.weapon_sobekk_hurricane_i00"
@@ -2087,7 +2087,7 @@
 		<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Themis' Tongue with limited ability enhancement. <Soul Crystal Enhancement>
+		Themis' Tongue with limited ability enhancement. <Special Option>
 		Max MP increases by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13218" type="Weapon" name="Player Commendation - Themis' Tongue - PC-exclusive Weapon" icon="icon.weapon_tongue_of_themis_i00"
@@ -2103,7 +2103,7 @@
 		<skill id="3014" level="3" /> <!-- Special Ability: Mana Up -->
 	</item>
 	<!--
-		Cabrio's Hand with limited ability enhancement. <Soul Crystal Enhancement>
+		Cabrio's Hand with limited ability enhancement. <Special Option>
 		Max MP increases by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13219" type="Weapon" name="Player Commendation - Cabrio's Hand - PC-exclusive Weapon" icon="icon.weapon_hand_of_cabrio_i00"
@@ -2121,7 +2121,7 @@
 		<skill id="3048" level="3" /> <!-- Special Ability: Conversion -->
 	</item>
 	<!--
-		Daimon Crystal with limited ability enhancement. <Soul Crystal Enhancement>
+		Daimon Crystal with limited ability enhancement. <Special Option>
 		Casting Spd. Increases by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13220" type="Weapon" name="Player Commendation - Daimon Crystal - PC-exclusive Weapon" icon="icon.weapon_crystal_of_deamon_i00"
@@ -2151,7 +2151,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Éclair Bijou with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou with limited ability enhancement. <Special Option>
 		Atk. Spd. Increases by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
@@ -2173,7 +2173,7 @@
 		<skill id="3068" level="3" /> <!-- Special Ability: Haste -->
 	</item>
 	<!--
-		Durendal with limited ability enhancement. <Soul Crystal Enhancement>
+		Durendal with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13223" type="Weapon" name="Player Commendation - Durendal - PC-exclusive Weapon" icon="icon.weapon_death_bringer_i00"
@@ -2194,7 +2194,7 @@
 		<skill id="3050" level="2" /> <!-- Special Ability: Focus -->
 	</item>
 	<!--
-		Screaming Vengeance with limited ability enhancement. <Soul Crystal Enhancement>
+		Screaming Vengeance with limited ability enhancement. <Special Option>
 		Critical increases by 61. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
 	<item id="13224" type="Weapon" name="Player Commendation - Screaming Vengeance - PC-exclusive Weapon" icon="icon.weapon_soul_shooter_i00"
@@ -3674,7 +3674,7 @@
 		<crystallizeReward id="960" count="5" chance="83.771" /> <!-- Scroll: Enchant Armor (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="20.944" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13457" type="Weapon" name="Vesper Cutter" icon="icon.weapon_vesper_cutter_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1520" price="143356000" changeWeaponId="13468" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -3690,7 +3690,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Focus, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13458" type="Weapon" name="Vesper Slasher" icon="icon.weapon_vesper_slasher_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1740" price="143356000" changeWeaponId="13470" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -3706,7 +3706,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, Mana Up, or Magic Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13459" type="Weapon" name="Vesper Buster" icon="icon.weapon_vesper_burster_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1520" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -3722,7 +3722,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: P. Critical Damage, HP Drain, or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13460" type="Weapon" name="Vesper Shaper" icon="icon.weapon_vesper_shaper_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1520" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -3739,7 +3739,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Critical Stun. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13461" type="Weapon" name="Vesper Fighter" icon="icon.weapon_vesper_fighter_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1550" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -3756,7 +3756,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Guidance, or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13462" type="Weapon" name="Vesper Stormer" icon="icon.weapon_vesper_stormer_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="2010" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -3774,7 +3774,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Regeneration, HP Drain, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13463" type="Weapon" name="Vesper Avenger" icon="icon.weapon_vesper_avenger_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1740" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -3791,7 +3791,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Regeneration, HP Drain, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13464" type="Weapon" name="Vesper Retributer" icon="icon.weapon_vesper_retributer_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1740" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -3808,7 +3808,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, MP Regeneration, or Mana Up. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13465" type="Weapon" name="Vesper Caster" icon="icon.weapon_vesper_caster_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1080" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -3826,7 +3826,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Empower, MP Regeneration, or Magic Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13466" type="Weapon" name="Vesper Singer" icon="icon.weapon_vesper_singer_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1080" price="143356000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -3844,7 +3844,7 @@
 		<crystallizeReward id="6577" count="1" chance="7.346" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="3" chance="73.459" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Cheap Shot, Critical Slow, or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="13467" type="Weapon" name="Vesper Thrower" icon="icon.weapon_vesper_thrower_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="7050"
 			crystalType="s80" weight="1520" price="143356000" changeWeaponId="13469" soulshots="1" spiritshots="1" mpConsume="6"
@@ -3864,7 +3864,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Vesper Cutter Conversion
-		Haste, Focus, or Health can be bestowed.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 		When enchanted to 4 or more, there's a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption per skill during a Critical Attack.
 	-->
 	<item id="13468" type="Weapon" name="Vesper Pincer" icon="icon.weapon_vesper_pincer_i00" defaultAction="equip" weaponType="rapier"
@@ -3889,7 +3889,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Vesper Thrower Conversion
-		Cheap Shot, Critical Slow, or Focus can be bestowed.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="13469" type="Weapon" name="Vesper Shooter" icon="icon.weapon_vesper_schutze_i00" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" randomDamage="10" attackRange="400" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
@@ -3913,7 +3913,7 @@
 	</item>
 	<!--
 		Kamael-exclusive Weapon: Vesper Slasher Conversion
-		Haste, Focus, or Health can be bestowed.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="13470" type="Weapon" name="Vesper Nagan" icon="icon.weapon_vesper_nagen_i00" defaultAction="equip" weaponType="ancientsword"
 			bodypart="lrhand" randomDamage="15" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="7050"
@@ -4204,7 +4204,7 @@
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Lineage Souvenir Circlet. Uses 2 hair accessory slots. -->
-	<item id="13523" type="Armor" name="Event - Lineage Souvenir Circlet" icon="icon.accessary_darkelf_high_circlet_i00" defaultAction="equip"
+	<item id="13523" type="Armor" name="Event - Lineage Souvenir Circlet" icon="icon.accessory_shining_circlet_i00" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10" price="0" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false">
 		<enchant stat="mDef" val="0" />
@@ -6351,7 +6351,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
+	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
 	<item id="13882" type="Weapon" name="Dynasty Dual Dagger" icon="icon.dual_dagger_i00" defaultAction="equip" weaponType="dualdagger"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="4219"
 			crystalType="s" weight="2150" price="87901000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" enchant4Skill="8295-1"
@@ -6379,7 +6379,7 @@
 		<crystallizeReward id="6577" count="1" chance="4.396" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="65.941" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
+	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
 	<item id="13883" type="Weapon" name="Icarus Dual Daggers" icon="icon.dual_dagger_i00" defaultAction="equip" weaponType="dualdagger"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="5845"
 			crystalType="s" weight="2100" price="121780000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"
@@ -6407,7 +6407,7 @@
 		<crystallizeReward id="6577" count="1" chance="6.09" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="2" chance="91.355" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
+	<!-- P. Atk. of Dual Daggers increases more than that of regular one-handed swords when enchanted. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. -->
 	<item id="13884" type="Weapon" name="Vesper Dual Daggers" icon="icon.dual_dagger_i00" defaultAction="equip" weaponType="dualdagger"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="8233"
 			crystalType="s80" weight="2050" price="171530000" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1"

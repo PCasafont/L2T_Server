@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.StringTokenizer;
@@ -44,20 +45,20 @@ public class L2FameManagerInstance extends L2Npc
 		if (actualCommand.equalsIgnoreCase("PK_Count"))
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(1);
-			if (player.getFame() >= 500000 && player.getCurrentClass().level() >= 2 && player.getClan() != null && player.getClan().getLevel() >= 5)
+			if ((player.getFame() >= 500000) && (player.getCurrentClass().level() >= 2) && (player.getClan() != null) && (player.getClan().getLevel() >= 5))
 			{
 				if (player.getPkKills() > 0)
 				{
-					player.setFame(player.getFame()-500000);
-					player.setPkKills(player.getPkKills()-1);
+					player.setFame(player.getFame() - 500000);
+					player.setPkKills(player.getPkKills() - 1);
 					player.sendPacket(new UserInfo(player));
-					html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-3.htm");
+					html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-3.htm");
 				}
 				else
-					html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-4.htm");
+					html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-4.htm");
 			}
 			else
-				html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-lowfame.htm");
+				html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-lowfame.htm");
 			
 			sendHtmlMessage(player, html);
 			return;
@@ -65,21 +66,21 @@ public class L2FameManagerInstance extends L2Npc
 		else if (actualCommand.equalsIgnoreCase("CRP"))
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(1);
-			if (player.getClan() != null && player.getClan().getLevel() >= 5)
+			if ((player.getClan() != null) && (player.getClan().getLevel() >= 5))
 			{
-				if (player.getFame() >= 10000 && player.getCurrentClass().level() >= 2)
+				if ((player.getFame() >= 10000) && (player.getCurrentClass().level() >= 2))
 				{
-					player.setFame(player.getFame()-10000);
+					player.setFame(player.getFame() - 10000);
 					player.sendPacket(new UserInfo(player));
 					player.getClan().addReputationScore(50, true);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ACQUIRED_50_CLAN_FAME_POINTS));
-					html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-5.htm");
+					html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-5.htm");
 				}
 				else
-					html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-lowfame.htm");
+					html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-lowfame.htm");
 			}
 			else
-				html.setFile(player.getHtmlPrefix(), "famemanager/"+getNpcId()+"-noclan.htm");
+				html.setFile(player.getHtmlPrefix(), "famemanager/" + getNpcId() + "-noclan.htm");
 			
 			sendHtmlMessage(player, html);
 			return;
@@ -98,10 +99,10 @@ public class L2FameManagerInstance extends L2Npc
 	public void showChatWindow(L2PcInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-		String filename = "famemanager/"+getNpcId()+"-lowfame.htm";
+		String filename = "famemanager/" + getNpcId() + "-lowfame.htm";
 		
 		if (player.getFame() > 0)
-			filename = "famemanager/"+getNpcId()+".htm";
+			filename = "famemanager/" + getNpcId() + ".htm";
 		
 		NpcHtmlMessage html = new NpcHtmlMessage(1);
 		html.setFile(player.getHtmlPrefix(), filename);

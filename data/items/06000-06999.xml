@@ -1670,7 +1670,7 @@
 	<item id="6363" type="EtcItem" name="Stolen Infernium Ore" icon="icon.etc_inf_ore_high_i00" immediateEffect="1" price="200"
 			isStackable="true">
 	</item>
-	<!-- Bestows one of the following functions: Haste, Health or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6364" type="Weapon" name="Forgotten Blade" icon="icon.weapon_forgotten_blade_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1300" price="42759400" changeWeaponId="9364" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -1686,7 +1686,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Drain, Health, or HP Regeneration. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6365" type="Weapon" name="Basalt Battlehammer" icon="icon.weapon_basalt_battlehammer_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="2052" crystalType="s" weight="1570" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -1704,7 +1704,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Empower, MP Regeneration, or Magic Hold. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6366" type="Weapon" name="Imperial Staff" icon="icon.weapon_imperial_staff_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="910" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" isMagicWeapon="true">
@@ -1721,7 +1721,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: P. Critical Damage, HP Drain or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6367" type="Weapon" name="Angel Slayer" icon="icon.weapon_angel_slayer_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="950" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -1755,7 +1755,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: HP Regeneration, Health, or HP Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6369" type="Weapon" name="Dragon Hunter Axe" icon="icon.weapon_dragon_hunter_axe_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1820" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -1772,7 +1772,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Guidance or Haste. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6370" type="Weapon" name="Saint Spear" icon="icon.weapon_saint_spear_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1800" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -1790,7 +1790,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health or Critical Stun. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6371" type="Weapon" name="Demon Splinter" icon="icon.weapon_demon_splinter_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1350" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1">
@@ -1807,7 +1807,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Health or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6372" type="Weapon" name="Heaven's Divider" icon="icon.weapon_heavens_divider_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1380" price="42759400" changeWeaponId="9368" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -2934,7 +2934,7 @@
 			isOlyRestricted="true" handler="EnchantScrolls">
 		<skill id="2208" level="1" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
 	</item>
-	<!-- Bestows one of the following functions: Acumen, MP Regeneration, or Mana Up. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6579" type="Weapon" name="Arcana Mace" icon="icon.weapon_arcana_mace_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2052"
 			crystalType="s" weight="1300" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" isMagicWeapon="true">
@@ -2951,7 +2951,7 @@
 		<crystallizeReward id="6577" count="1" chance="2.138" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="64.144" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- P. Atk. of dualswords increases more than one-handed type weapon when enchanted. Max HP + 15%, Max MP + 20%, Max CP + 30% when enchanted by 4 or more. Increases damage inflicted during PvP. -->
+	<!-- P. Atk. of dualswords increases more than one-handed type weapon when enchanted. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="6580" type="Weapon" name="Tallum Blade*Dark Legion's Edge" icon="icon.weapon_dual_sword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="2052" crystalType="s" weight="2080" price="42759400" soulshots="1" spiritshots="1" elementEnabled="1"
@@ -3914,7 +3914,7 @@
 	<!-- The light of a higher-level spirit is bestowed upon a pet/servitor and temporarily increases the power of M. Atk. The number of blessed spiritshots consumed can be viewed in the Pet/Servitor Information window. (Used in the master's inventory.) -->
 	<item id="6647" type="EtcItem" name="Blessed Beast Spiritshot" icon="icon.etc_blessed_beast_spirit_shot_i00" defaultAction="summon_spiritshot"
 			immediateEffect="1" weight="1" price="100" isStackable="true" handler="BeastSpiritShot">
-		<skill id="2009" level="1" /> <!-- Item - Beast Blessed Spirit Shot -->
+		<skill id="2009" level="1" /> <!-- Item - Blessed Beast Spirit Shot -->
 	</item>
 	<!-- Panpipe that is used to call a baby buffalo. The baby buffalo will take away 5 percent of the XP that its master acquires. -->
 	<item id="6648" type="EtcItem" name="Baby Buffalo Panpipe" icon="icon.etc_buffalo_panpipe_i00" defaultAction="skill_maintain"

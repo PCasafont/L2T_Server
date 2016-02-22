@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.waypoint;
 
 import java.util.ArrayList;
@@ -190,15 +191,15 @@ public class WayPointNode extends L2Object
 	{
 		int x1 = nodeA.getX(), y1 = nodeA.getY(), z1 = nodeA.getZ();
 		int x2 = nodeB.getX(), y2 = nodeB.getY(), z2 = nodeB.getZ();
-		int modX = x1 - x2 > 0 ? -1 : 1;
-		int modY = y1 - y2 > 0 ? -1 : 1;
-		int modZ = z1 - z2 > 0 ? -1 : 1;
+		int modX = (x1 - x2) > 0 ? -1 : 1;
+		int modY = (y1 - y2) > 0 ? -1 : 1;
+		int modZ = (z1 - z2) > 0 ? -1 : 1;
 		
 		int diffX = Math.abs(x1 - x2);
 		int diffY = Math.abs(y1 - y2);
 		int diffZ = Math.abs(z1 - z2);
 		
-		int distance = (int) Math.sqrt(diffX * diffX + diffY * diffY + diffZ * diffZ);
+		int distance = (int) Math.sqrt((diffX * diffX) + (diffY * diffY) + (diffZ * diffZ));
 		
 		int steps = distance / 40;
 		
@@ -206,9 +207,9 @@ public class WayPointNode extends L2Object
 		
 		for (int i = 0; i < steps; i++)
 		{
-			x1 = x1 + (modX * diffX / steps);
-			y1 = y1 + (modY * diffY / steps);
-			z1 = z1 + (modZ * diffZ / steps);
+			x1 = x1 + ((modX * diffX) / steps);
+			y1 = y1 + ((modY * diffY) / steps);
+			z1 = z1 + ((modZ * diffZ) / steps);
 			
 			lineNodes.add(WayPointNode.spawn(LINE_TYPE, _lineId, x1, y1, z1));
 		}

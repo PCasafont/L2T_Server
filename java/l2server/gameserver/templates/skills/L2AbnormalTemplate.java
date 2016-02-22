@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.skills;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import l2server.gameserver.stats.funcs.FuncTemplate;
 
 /**
  * @author mkizub
- * 
+ *
  */
 public class L2AbnormalTemplate
 {
@@ -47,9 +48,7 @@ public class L2AbnormalTemplate
 	
 	public L2EffectTemplate[] effects = {};
 	
-	public L2AbnormalTemplate(Condition pApplayCond,
-			int pCounter, int pDuration, VisualEffect[] pVisualEffect, String[] pStackType,
-			byte pStackLvl, boolean showicon, double eLandRate, L2AbnormalType eType, int eComboId)
+	public L2AbnormalTemplate(Condition pApplayCond, int pCounter, int pDuration, VisualEffect[] pVisualEffect, String[] pStackType, byte pStackLvl, boolean showicon, double eLandRate, L2AbnormalType eType, int eComboId)
 	{
 		applayCond = pApplayCond;
 		counter = pCounter;
@@ -67,7 +66,7 @@ public class L2AbnormalTemplate
 	{
 		if (effects == null)
 		{
-			effects = new L2EffectTemplate[] {effect};
+			effects = new L2EffectTemplate[] { effect };
 		}
 		else
 		{
@@ -96,7 +95,7 @@ public class L2AbnormalTemplate
 	
 	/**
 	 * Creates an L2Effect instance from an existing one and an Env object.
-	 * 
+	 *
 	 * @param env
 	 * @param stolen
 	 * @return

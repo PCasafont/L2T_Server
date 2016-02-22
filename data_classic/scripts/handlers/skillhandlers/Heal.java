@@ -185,9 +185,9 @@ public class Heal implements ISkillHandler
 			}
 			
 			if (skill.getSkillType() != L2SkillType.HEAL_STATIC)
-			{	
+			{
 				if (skill.getSkillType() != L2SkillType.OVERHEAL_STATIC)
-				{	
+				{
 					hp *= target.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) / 100;
 				
 					// Healer proficiency (since CT1)

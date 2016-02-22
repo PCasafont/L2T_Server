@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -47,13 +48,13 @@ public class ScenePlayerDataTable implements Reloadable
 				for (XmlNode d : n.getChildren())
 				{
 					if (d.getName().equalsIgnoreCase("scene"))
-					{	
+					{
 						int id = d.getInt("id");
-
+						
 						int time = d.getInt("time");
-
+						
 						_sceneDataTable.put(id, time);
-					}	
+					}
 				}
 				
 				Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
@@ -62,7 +63,7 @@ public class ScenePlayerDataTable implements Reloadable
 		
 		return false;
 	}
-
+	
 	public static ScenePlayerDataTable getInstance()
 	{
 		return SingletonHolder._instance;
@@ -87,6 +88,7 @@ public class ScenePlayerDataTable implements Reloadable
 		ReloadableManager.getInstance().register("scenes", this);
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Scene Data Table reloaded";

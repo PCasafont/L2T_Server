@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.io.BufferedReader;
@@ -32,7 +33,6 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.events.chess.ChessEvent;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.DiscussionManager;
@@ -57,43 +57,21 @@ import l2server.log.Log;
  */
 public class AdminTenkai implements IAdminCommandHandler
 {
-	private static List <SpawnInfo> _deletedSpawns = new ArrayList<SpawnInfo>();
-	private static List <Integer> _mobIds = new ArrayList<Integer>();
+	private static List<SpawnInfo> _deletedSpawns = new ArrayList<SpawnInfo>();
+	private static List<Integer> _mobIds = new ArrayList<Integer>();
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_chess_start",
-		"admin_select_daily_event",
-		"admin_start_daily_event",
-		"admin_stop_daily_event",
-		"admin_oly_ban",
-		"admin_oly_unban",
-		"admin_packet",
-		"admin_refresh_skills",
-		"admin_disable_global_chat",
-		"admin_enable_global_chat",
-		"admin_start_votations",
-		"admin_end_votations",
-		"admin_movie",
-		"admin_observe_landrates",
-		"admin_start_hh",
-		"admin_stop_hh",
-		
-		//LT commands
-		"admin_loc",
-		"admin_devdelete",
-		"admin_massdelete",
-		"admin_devspawn",
-		"admin_massspawn",
-		"admin_dump"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_chess_start", "admin_select_daily_event", "admin_start_daily_event", "admin_stop_daily_event", "admin_oly_ban", "admin_oly_unban", "admin_packet", "admin_refresh_skills", "admin_disable_global_chat", "admin_enable_global_chat", "admin_start_votations", "admin_end_votations", "admin_movie", "admin_observe_landrates", "admin_start_hh", "admin_stop_hh",
 	
+			//LT commands
+	"admin_loc", "admin_devdelete", "admin_massdelete", "admin_devspawn", "admin_massspawn", "admin_dump" };
+	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_chess_start"))
 		{
 			ChessEvent.init();
-			ChessEvent.startFight(activeChar, (L2PcInstance)activeChar.getTarget());
+			ChessEvent.startFight(activeChar, (L2PcInstance) activeChar.getTarget());
 		}
 		else if (command.equals("admin_select_daily_event"))
 		{
@@ -155,7 +133,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			}
 			else if (activeChar.getTarget() instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)activeChar.getTarget();
+				L2PcInstance player = (L2PcInstance) activeChar.getTarget();
 				if (ban)
 				{
 					Olympiad.getInstance().olyBan(player.getObjectId());
@@ -230,13 +208,13 @@ public class AdminTenkai implements IAdminCommandHandler
 					if (player == null)
 					{
 						int radius = Integer.parseInt(command.substring(21));
-						players = (L2PcInstance[])activeChar.getKnownList().getKnownPlayersInRadius(radius).toArray();
+						players = (L2PcInstance[]) activeChar.getKnownList().getKnownPlayersInRadius(radius).toArray();
 					}
 				}
 				else
-					players = (L2PcInstance[])L2World.getInstance().getAllPlayers().values().toArray();
+					players = (L2PcInstance[]) L2World.getInstance().getAllPlayers().values().toArray();
 			}
-			else if (activeChar.getTarget() != null && activeChar.getTarget().getActingPlayer() != null)
+			else if ((activeChar.getTarget() != null) && (activeChar.getTarget().getActingPlayer() != null))
 			{
 				player = activeChar.getTarget().getActingPlayer();
 			}
@@ -257,7 +235,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			}
 			else if (players != null)
 			{
-				for (L2PcInstance p: players)
+				for (L2PcInstance p : players)
 				{
 					for (L2Skill skill : p.getAllSkills())
 						p.enableSkill(skill);
@@ -306,25 +284,26 @@ public class AdminTenkai implements IAdminCommandHandler
 			
 			L2PcInstance target = null;
 			
-			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
+			if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
 			{
-				 target = (L2PcInstance) activeChar.getTarget();
-				 
-				 if (!activeChar.isLandrateObservationActive(target))
-				 {
-					 target.registerLandratesObserver(activeChar);
-					 activeChar.sendMessage("You are now observing "+target.getName()+"'s land rates.");
-				 }
-				 else
-				 {
-					 target.stopLandrateObservation(activeChar);
-					 activeChar.sendMessage("You stopped observing "+target.getName()+"'s land rate.");
-				 }
+				target = (L2PcInstance) activeChar.getTarget();
+				
+				if (!activeChar.isLandrateObservationActive(target))
+				{
+					target.registerLandratesObserver(activeChar);
+					activeChar.sendMessage("You are now observing " + target.getName() + "'s land rates.");
+				}
+				else
+				{
+					target.stopLandrateObservation(activeChar);
+					activeChar.sendMessage("You stopped observing " + target.getName() + "'s land rate.");
+				}
 			}
 		}
 		else if (command.startsWith("admin_loc"))
 		{
-			HiddenChests.getInstance().spawnChests();
+			SpawnTable.getInstance().getAllSpawns(0);
+			//HiddenChests.getInstance().spawnChests();
 			//activeChar.setHasCoCAura(true);
 			////activeChar.sendPacket(new ExCallToChangeClass(activeChar.getClassId(), false));
 			/*int id = CharNameTable.getInstance().getIdByName("trollL33t");
@@ -348,7 +327,7 @@ public class AdminTenkai implements IAdminCommandHandler
 				if (o.getValue() instanceof L2Attackable)
 				{
 					if (Util.contains(_allCreatureIds, ((L2Attackable)o.getValue()).getNpcId()))
-					{	
+					{
 						((L2Attackable)o.getValue()).deleteMe();
 					}
 				}
@@ -356,26 +335,26 @@ public class AdminTenkai implements IAdminCommandHandler
 			
 			/*System.out.println(((L2Attackable)activeChar.getTarget()).getTemplate().LHand);
 			System.out.println(((L2Attackable)activeChar.getTarget()).getTemplate().RHand);
-			
+
 			System.out.println(((L2Attackable)activeChar.getTarget()).getLeftHandItem());
 			System.out.println(((L2Attackable)activeChar.getTarget()).getRightHandItem());
-			*/
-		/*	for (Entry<Integer, L2Object> o : activeChar.getKnownList().getKnownObjects().entrySet())
-			{
-				System.out.println(o.getValue().getName());
-			}*/
+			 */
+			/*	for (Entry<Integer, L2Object> o : activeChar.getKnownList().getKnownObjects().entrySet())
+				{
+					System.out.println(o.getValue().getName());
+				}*/
 			/*StatsSet set = new StatsSet();
 			int instanceId = 10 + Olympiad.BASE_INSTANCE_ID;
 			InstanceManager.getInstance().createInstance(instanceId);
 			int natDoorId_1 = 17100001;
 			int natDoorId_2 = 17100002;
-			
+
 			Instance olyInstance = InstanceManager.getInstance().getInstance(instanceId);
 			olyInstance.addDoor(natDoorId_1, set);
 			olyInstance.addDoor(natDoorId_2, set);
-			
+
 			System.out.println(olyInstance.getDoors().size());
-			
+
 			activeChar.setInstanceId(instanceId);
 			activeChar.teleToLocation(-89539, -252827, -3319);*/
 			
@@ -389,10 +368,9 @@ public class AdminTenkai implements IAdminCommandHandler
 			//AntiBotsManager.getInstance()._clients.remove("62.83.22.144");
 			//AntiBotsManager.getInstance()._clients.remove("62.83.22.144");
 			
-			
-			//L2BossZone b = GrandBossManager.getInstance().getZone(-55505, 58781, -274); 
+			//L2BossZone b = GrandBossManager.getInstance().getZone(-55505, 58781, -274);
 			//if (b != null)
-				//b.oustAllPlayers();
+			//b.oustAllPlayers();
 			//System.out.println(Config.FORUM_DB_NAME);
 			/*L2Skill _skill = SkillTable.getInstance().getInfo(14526, 1);
 			for (Entry<Integer, L2Object> o : activeChar.getKnownList().getKnownObjects().entrySet())
@@ -400,7 +378,7 @@ public class AdminTenkai implements IAdminCommandHandler
 				if (o.getValue() instanceof L2GrandBossInstance)
 					((L2GrandBossInstance)o.getValue()).doCast(_skill);
 			}
-			*/
+			 */
 			/*L2PcInstance target = (L2PcInstance)activeChar.getTarget();
 			if (target != null)
 			{
@@ -413,7 +391,7 @@ public class AdminTenkai implements IAdminCommandHandler
 						for (Entry<Integer, L2PcInstance> b : x.getParticipatedPlayers().entrySet())
 						{
 							if (b.getValue() == null || b.getValue().getName().equalsIgnoreCase("Orcc"))
-							{	
+							{
 								target.getEvent().removeParticipant(b.getValue().getObjectId());
 								break;
 							}
@@ -423,14 +401,13 @@ public class AdminTenkai implements IAdminCommandHandler
 				}
 			}*/
 			
-			
 			//GeoEngine.getInstance().unloadGeodata((byte)19, (byte)25);///19_25
 			//int objId = CharNameTable.getInstance().getIdByName("nimbus2000");
 			//if (objId != -1)
-				//CharNameTable.getInstance().removeName(objId);
+			//CharNameTable.getInstance().removeName(objId);
 			//GrandBossManager.getInstance().setBossStatus(_kelbimId, GrandBossManager.getInstance().FIGHTING);
 			Log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " + activeChar.getHeading());
-		}	
+		}
 		else if (command.startsWith("admin_devdelete"))
 			handleDevDelete(activeChar);
 		else if (command.equalsIgnoreCase("admin_massdelete"))
@@ -465,15 +442,15 @@ public class AdminTenkai implements IAdminCommandHandler
 				int separation = Integer.parseInt(st.nextToken());
 				int width = columns * separation;
 				int height = rows * separation;
-				double heading = Util.convertHeadingToDegree(activeChar.getHeading()) * Math.PI / 180.0;
+				double heading = (Util.convertHeadingToDegree(activeChar.getHeading()) * Math.PI) / 180.0;
 				double cos = Math.cos(heading);
 				double sin = Math.sin(heading);
 				for (int i = 0; i < columns; i++)
 				{
 					for (int j = 0; j < rows; j++)
 					{
-						int x = activeChar.getX() + (int)(cos * (-(width / 2 - separation / 2) + separation * i) - sin * (-(width / 2 - separation / 2) + separation * j));
-						int y = activeChar.getY() + (int)(sin * (-(height / 2 - separation / 2) + separation * i) + cos * (-(height / 2 - separation / 2) + separation * j));
+						int x = activeChar.getX() + (int) ((cos * (-((width / 2) - (separation / 2)) + (separation * i))) - (sin * (-((width / 2) - (separation / 2)) + (separation * j))));
+						int y = activeChar.getY() + (int) ((sin * (-((height / 2) - (separation / 2)) + (separation * i))) + (cos * (-((height / 2) - (separation / 2)) + (separation * j))));
 						
 						spawnMonster(activeChar, id, 60, true, x, y, activeChar.getZ());
 					}
@@ -502,7 +479,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			Log.warning("AdminDev: Deleting: ");
 			
 			String line = null;
-
+			
 			while ((line = inputFile.readLine()) != null)
 			{
 				if (line.trim().isEmpty())
@@ -510,7 +487,7 @@ public class AdminTenkai implements IAdminCommandHandler
 					writeOutput.println();
 					continue;
 				}
-
+				
 				for (SpawnInfo deleted : _deletedSpawns)
 				{
 					if (!line.contains(deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ()))
@@ -522,7 +499,7 @@ public class AdminTenkai implements IAdminCommandHandler
 					}
 				}
 			}
-
+			
 			inputFile.close();
 			writeOutput.close();
 		}
@@ -531,24 +508,23 @@ public class AdminTenkai implements IAdminCommandHandler
 			e.printStackTrace();
 			throw new Error(e);
 		}
-	
-	
+		
 		/*for (int id : mobIds)
 			_log.warning("" + id);*/
 		
 		for (SpawnInfo parser : _deletedSpawns)
 		{
-			Log.warning(parser.getId()+","+parser.getX()+","+parser.getY()+","+parser.getZ()+",0,0,");
+			Log.warning(parser.getId() + "," + parser.getX() + "," + parser.getY() + "," + parser.getZ() + ",0,0,");
 		}
 	}
 	
 	private void handleDevMassDelete(L2PcInstance activeChar)
 	{
-		Collection<L2Object> objects =  activeChar.getKnownList().getKnownObjects().values();
-
+		Collection<L2Object> objects = activeChar.getKnownList().getKnownObjects().values();
+		
 		for (L2Object obj : objects)
 		{
-			if (obj instanceof L2MonsterInstance && GeoData.getInstance().canSeeTarget(activeChar, obj))
+			if ((obj instanceof L2MonsterInstance) && GeoData.getInstance().canSeeTarget(activeChar, obj))
 			{
 				L2Npc target = (L2Npc) obj;
 				
@@ -561,12 +537,12 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				
 				_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
-
+				
 				target.deleteMe();
 				
 				spawn.stopRespawn();
-					
-			SpawnTable.getInstance().deleteSpawn(spawn, true);
+				
+				SpawnTable.getInstance().deleteSpawn(spawn, true);
 				
 				activeChar.sendMessage("Deleted " + target.getName() + " from " + target.getObjectId() + ".");
 			}
@@ -586,11 +562,11 @@ public class AdminTenkai implements IAdminCommandHandler
 			L2Spawn spawn = target.getSpawn();
 			
 			_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
-
+			
 			target.deleteMe();
 			
 			spawn.stopRespawn();
-				
+			
 			SpawnTable.getInstance().deleteSpawn(spawn, true);
 			
 			activeChar.sendMessage("Deleted " + target.getName() + " from " + target.getObjectId() + ".");
@@ -634,7 +610,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			return _z;
 		}
 	}
-
+	
 	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent)
 	{
 		L2Object target = activeChar.getTarget();
@@ -643,7 +619,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		
 		spawnMonster(activeChar, monsterId, respawnTime, permanent, target.getX(), target.getY(), target.getZ());
 	}
-
+	
 	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent, int x, int y, int z)
 	{
 		L2NpcTemplate template1;
@@ -673,20 +649,19 @@ public class AdminTenkai implements IAdminCommandHandler
 			}
 			else
 				spawn.setInstanceId(0);
-
 			
 			SpawnTable.getInstance().addNewSpawn(spawn, permanent);
 			spawn.startRespawn();
 			spawn.doSpawn();
-					
+			
 			spawn.getNpc().setDisplayEffect(3);
-				
+			
 			if (!permanent)
 				spawn.stopRespawn();
 			
 			activeChar.sendMessage("Created " + template1.Name + " on " + spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ());
 			//<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
-			Log.warning("<spawn npcId=\""+template1.NpcId+"\"  x=\""+spawn.getX()+"\" y=\""+spawn.getY()+"\" z=\""+spawn.getZ()+"\" heading=\""+spawn.getHeading()+"\" respawn=\"20\" />");
+			Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
 			//_log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
 		}
 		catch (Exception e)
@@ -695,6 +670,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

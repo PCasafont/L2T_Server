@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.HashMap;
@@ -31,7 +32,6 @@ import l2server.gameserver.network.serverpackets.GMViewPledgeInfo;
 import l2server.gameserver.network.serverpackets.PledgeSkillList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-
 /**
  * <B>Pledge Manipulation:</B><BR>
  * <LI>With target in a character without clan:<BR>
@@ -44,11 +44,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminPledge implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_pledge"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_pledge" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		L2Object target = activeChar.getTarget();
@@ -159,7 +157,7 @@ public class AdminPledge implements IAdminCommandHandler
 			else if (action.equals("setlevel"))
 			{
 				int level = Integer.parseInt(parameter);
-				if (level >= 0 && level < 12)
+				if ((level >= 0) && (level < 12))
 				{
 					player.getClan().changeLevel(level);
 					activeChar.sendMessage("You set level " + level + " for clan " + player.getClan().getName());
@@ -192,6 +190,7 @@ public class AdminPledge implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.sql.Connection;
@@ -29,7 +30,6 @@ import l2server.log.Log;
  */
 public class L2ClanMember
 {
-	
 	private L2Clan _clan;
 	private int _objectId;
 	private String _name;
@@ -44,7 +44,7 @@ public class L2ClanMember
 	private int _apprentice;
 	private int _sponsor;
 	
-	public L2ClanMember(L2Clan clan, String name, int level, int classId, int objectId, int pledgeType, int powerGrade, String title, boolean sex)
+	public L2ClanMember(L2Clan clan, String name, int level, int classId, int objectId, int pledgeType, int powerGrade, String title, boolean sex, int raceOrdinal)
 	{
 		if (clan == null)
 			throw new IllegalArgumentException("Can not create a ClanMember with a null clan.");
@@ -59,6 +59,7 @@ public class L2ClanMember
 		_apprentice = 0;
 		_sponsor = 0;
 		_sex = sex;
+		_raceOrdinal = raceOrdinal;
 	}
 	
 	public L2ClanMember(L2Clan clan, L2PcInstance player)
@@ -71,7 +72,7 @@ public class L2ClanMember
 		_pledgeType = player.getPledgeType();
 		_powerGrade = player.getPowerGrade();
 		_title = player.getTitle();
-		_sponsor =  0;
+		_sponsor = 0;
 		_apprentice = 0;
 		_sex = player.getAppearance().getSex();
 		_raceOrdinal = player.getRace().ordinal();
@@ -98,7 +99,7 @@ public class L2ClanMember
 	
 	public void setPlayerInstance(L2PcInstance player)
 	{
-		if (player == null && _player != null)
+		if ((player == null) && (_player != null))
 		{
 			// this is here to keep the data when the player logs off
 			_name = _player.getName();
@@ -117,7 +118,7 @@ public class L2ClanMember
 		if (player != null)
 		{
 			_clan.addSkillEffects(player);
-			if (_clan.getLevel() > 3 && player.isClanLeader())
+			if ((_clan.getLevel() > 3) && player.isClanLeader())
 				SiegeManager.getInstance().addSiegeSkills(player);
 			if (player.isClanLeader())
 				_clan.setLeader(this);
@@ -133,7 +134,7 @@ public class L2ClanMember
 	
 	public boolean isOnline()
 	{
-		if (_player == null || !_player.isOnline())
+		if ((_player == null) || !_player.isOnline())
 			return false;
 		if (_player.getClient() == null)
 			return false;
@@ -191,8 +192,10 @@ public class L2ClanMember
 		return _objectId;
 	}
 	
-	public String getTitle() {
-		if (_player != null) {
+	public String getTitle()
+	{
+		if (_player != null)
+		{
 			return _player.getTitle();
 		}
 		return _title;
@@ -302,26 +305,34 @@ public class L2ClanMember
 	
 	public int getRaceOrdinal()
 	{
-		if (_player != null) return _player.getRace().ordinal();
-		else return _raceOrdinal;
+		if (_player != null)
+			return _player.getRace().ordinal();
+		else
+			return _raceOrdinal;
 	}
 	
 	public boolean getSex()
 	{
-		if (_player != null) return _player.getAppearance().getSex();
-		else return _sex;
+		if (_player != null)
+			return _player.getAppearance().getSex();
+		else
+			return _sex;
 	}
 	
 	public int getSponsor()
 	{
-		if (_player != null) return _player.getSponsor();
-		else return _sponsor;
+		if (_player != null)
+			return _player.getSponsor();
+		else
+			return _sponsor;
 	}
 	
 	public int getApprentice()
 	{
-		if (_player != null) return _player.getApprentice();
-		else return _apprentice;
+		if (_player != null)
+			return _player.getApprentice();
+		else
+			return _apprentice;
 	}
 	
 	public String getApprenticeOrSponsorName()
@@ -335,14 +346,18 @@ public class L2ClanMember
 		if (_apprentice != 0)
 		{
 			L2ClanMember apprentice = _clan.getClanMember(_apprentice);
-			if (apprentice != null) return apprentice.getName();
-			else return "Error";
+			if (apprentice != null)
+				return apprentice.getName();
+			else
+				return "Error";
 		}
 		if (_sponsor != 0)
 		{
 			L2ClanMember sponsor = _clan.getClanMember(_sponsor);
-			if (sponsor != null) return sponsor.getName();
-			else return "Error";
+			if (sponsor != null)
+				return sponsor.getName();
+			else
+				return "Error";
 		}
 		return "";
 	}

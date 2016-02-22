@@ -6672,16 +6672,17 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="27480" name="Sehkmeti" level="84" type="L2Monster" atkRange="40" hpMax="263372" hpReg="50.4" mpMax="25572"
-			mpReg="11.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="864539" sp="207" pAtk="39174" mAtk="23125" pDef="1350"
-			mDef="1300" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" aggressive="true" aggroRange="200" collisionRadius="6" collisionHeight="12" fireRes="140" waterRes="140"
-			windRes="140" earthRes="140" holyRes="140" darkRes="140" aiType="fighter">
+	<npc id="27480" name="Sehkmeti" level="84" type="L2Monster" atkRange="40" hpMax="263372" hpReg="50.4" mpMax="25572" mpReg="11.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="864539" sp="207" pAtk="39174" mAtk="23125" pDef="1350" mDef="1300"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" aggressive="true" aggroRange="200"
+			collisionRadius="6" collisionHeight="12" fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
+			aiType="fighter">
 	</npc>
-	<npc id="27481" name="Blood Thirst" title="Succubus Lord" level="99" type="L2GrandBoss" atkRange="40" hpMax="602935" hpReg="44.91" mpMax="28731"
-			mpReg="30.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="95996433" sp="46078" pAtk="1500000" mAtk="1000000"
-			pDef="9250" mDef="9000" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" aggressive="true" aggroRange="600"
-			collisionRadius="25" collisionHeight="68" elemAtkType="5" elemAtkValue="33" fireRes="140" waterRes="140" windRes="140"
-			earthRes="140" holyRes="107" darkRes="304" aiType="fighter">
+	<npc id="27481" name="Blood Thirst" title="Succubus Lord" level="99" type="L2GrandBoss" atkRange="40" hpMax="602935" hpReg="44.91"
+			mpMax="28731" mpReg="30.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="95996433" sp="46078" pAtk="1500000"
+			mAtk="1000000" pDef="9250" mDef="9000" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186"
+			aggressive="true" aggroRange="600" collisionRadius="25" collisionHeight="68" elemAtkType="5" elemAtkValue="33" fireRes="140"
+			waterRes="140" windRes="140" earthRes="140" holyRes="107" darkRes="304" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="4410" level="3" /> <!-- Extremely Weak P. Atk. -->

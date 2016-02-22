@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.sql.Connection;
@@ -76,7 +77,7 @@ public class CursedWeapon
 	private int _playerPkKills = 0;
 	protected int transformationId = 0;
 	
-	private static final int[] TRANSFORM_IDS = new int[]{3630,3631};
+	private static final int[] TRANSFORM_IDS = new int[] { 3630, 3631 };
 	
 	// =========================================================
 	// Constructor
@@ -94,10 +95,10 @@ public class CursedWeapon
 	{
 		if (_isActivated)
 		{
-			if (_player != null && _player.isOnline())
+			if ((_player != null) && _player.isOnline())
 			{
 				// Remove from player
-				Log.info(_name + " being removed online." );
+				Log.info(_name + " being removed online.");
 				
 				_player.abortAttack();
 				
@@ -112,11 +113,13 @@ public class CursedWeapon
 				
 				// Destroy
 				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
-				if (removedItem != null && !Config.FORCE_INVENTORY_UPDATE)
+				if ((removedItem != null) && !Config.FORCE_INVENTORY_UPDATE)
 				{
 					InventoryUpdate iu = new InventoryUpdate();
-					if (removedItem.getCount() == 0) iu.addRemovedItem(removedItem);
-					else iu.addModifiedItem(removedItem);
+					if (removedItem.getCount() == 0)
+						iu.addRemovedItem(removedItem);
+					else
+						iu.addModifiedItem(removedItem);
 					
 					_player.sendPacket(iu);
 				}
@@ -124,11 +127,11 @@ public class CursedWeapon
 					_player.sendPacket(new ItemList(_player, true));
 				
 				_player.broadcastUserInfo();
-			} 
+			}
 			else
 			{
 				// Remove from Db
-				Log.info(_name + " being removed offline." );
+				Log.info(_name + " being removed offline.");
 				
 				Connection con = null;
 				try
@@ -141,7 +144,7 @@ public class CursedWeapon
 					statement.setInt(2, _itemId);
 					if (statement.executeUpdate() != 1)
 					{
-						Log.warning("Error while deleting itemId "+ _itemId +" from userId "+ _playerId);
+						Log.warning("Error while deleting itemId " + _itemId + " from userId " + _playerId);
 					}
 					statement.close();
 					/* Yesod: Skill is not stored into database any more.
@@ -161,7 +164,7 @@ public class CursedWeapon
 					statement.setInt(3, _playerId);
 					if (statement.executeUpdate() != 1)
 					{
-						Log.warning("Error while updating karma & pkkills for userId "+_playerId);
+						Log.warning("Error while updating karma & pkkills for userId " + _playerId);
 					}
 					
 					statement.close();
@@ -175,7 +178,7 @@ public class CursedWeapon
 					L2DatabaseFactory.close(con);
 				}
 			}
-		} 
+		}
 		else
 		{
 			// either this cursed weapon is in the inventory of someone who has another cursed weapon equipped,
@@ -187,12 +190,15 @@ public class CursedWeapon
 				if (!Config.FORCE_INVENTORY_UPDATE)
 				{
 					InventoryUpdate iu = new InventoryUpdate();
-					if (removedItem.getCount() == 0) iu.addRemovedItem(removedItem);
-					else iu.addModifiedItem(removedItem);
+					if (removedItem.getCount() == 0)
+						iu.addRemovedItem(removedItem);
+					else
+						iu.addModifiedItem(removedItem);
 					
 					_player.sendPacket(iu);
 				}
-				else _player.sendPacket(new ItemList(_player, true));
+				else
+					_player.sendPacket(new ItemList(_player, true));
 				
 				_player.broadcastUserInfo();
 			}
@@ -201,7 +207,7 @@ public class CursedWeapon
 			{
 				_item.decayMe();
 				L2World.getInstance().removeObject(_item);
-				Log.info(_name+" item has been removed from World.");
+				Log.info(_name + " item has been removed from World.");
 			}
 		}
 		
@@ -240,6 +246,7 @@ public class CursedWeapon
 		{
 		}
 		
+		@Override
 		public void run()
 		{
 			if (System.currentTimeMillis() >= getEndTime())
@@ -251,6 +258,7 @@ public class CursedWeapon
 	{
 		dropIt(attackable, player, null, true);
 	}
+	
 	private void dropIt(L2Attackable attackable, L2PcInstance player, L2Character killer, boolean fromMonster)
 	{
 		_isActivated = false;
@@ -265,7 +273,7 @@ public class CursedWeapon
 			Earthquake eq = new Earthquake(player.getX(), player.getY(), player.getZ(), 14, 3);
 			Broadcast.toAllOnlinePlayers(packet);
 			Broadcast.toAllOnlinePlayers(eq);
-		} 
+		}
 		else
 		{
 			_item = _player.getInventory().getItemByItemId(_itemId);
@@ -303,7 +311,7 @@ public class CursedWeapon
 		
 		CursedWeapon cw = CursedWeaponsManager.getInstance().getCursedWeapon(_player.getCursedWeaponEquippedId());
 		SystemMessage msg2 = SystemMessage.getSystemMessage(SystemMessageId.S2_MINUTE_OF_USAGE_TIME_ARE_LEFT_FOR_S1);
-		int timeLeft = (int)(cw.getTimeLeft()/60000);
+		int timeLeft = (int) (cw.getTimeLeft() / 60000);
 		msg2.addItemName(_player.getCursedWeaponEquippedId());
 		msg2.addNumber(timeLeft);
 		_player.sendPacket(msg2);
@@ -316,7 +324,7 @@ public class CursedWeapon
 	 */
 	public void giveSkill()
 	{
-		int level = 1+(_nbKills/_stageKills);
+		int level = 1 + (_nbKills / _stageKills);
 		if (level > _skillMaxLevel)
 			level = _skillMaxLevel;
 		
@@ -332,7 +340,7 @@ public class CursedWeapon
 		_player.addSkill(skill, false);
 		_player.setTransformAllowedSkills(TRANSFORM_IDS);
 		if (Config.DEBUG)
-			Log.info("Player "+_player.getName() +" has been awarded with skill "+skill);
+			Log.info("Player " + _player.getName() + " has been awarded with skill " + skill);
 		_player.sendSkillList();
 	}
 	
@@ -353,6 +361,7 @@ public class CursedWeapon
 			
 			ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					TransformationManager.getInstance().transformPlayer(transformationId, _player);
@@ -377,15 +386,14 @@ public class CursedWeapon
 	public void reActivate()
 	{
 		_isActivated = true;
-		if (_endTime - System.currentTimeMillis() <= 0)
+		if ((_endTime - System.currentTimeMillis()) <= 0)
 			endOfLife();
 		else
-			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost*12000L, _durationLost*12000L);
+			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost * 12000L, _durationLost * 12000L);
 		
 	}
 	
-	public boolean checkDrop(L2Attackable attackable,
-			L2PcInstance player)
+	public boolean checkDrop(L2Attackable attackable, L2PcInstance player)
 	{
 		if (Rnd.get(100000) < _dropRate)
 		{
@@ -393,14 +401,15 @@ public class CursedWeapon
 			dropIt(attackable, player);
 			
 			// Start the Life Task
-			_endTime = System.currentTimeMillis() + _duration * 60000L;
-			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost*12000L, _durationLost*12000L);
+			_endTime = System.currentTimeMillis() + (_duration * 60000L);
+			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost * 12000L, _durationLost * 12000L);
 			
 			return true;
 		}
 		
 		return false;
 	}
+	
 	public void activate(L2PcInstance player, L2ItemInstance item)
 	{
 		// if the player is mounted, attempt to unmount first.  Only allow picking up
@@ -458,7 +467,8 @@ public class CursedWeapon
 			//iu.addItems(Arrays.asList(items));
 			_player.sendPacket(iu);
 		}
-		else _player.sendPacket(new ItemList(_player, false));
+		else
+			_player.sendPacket(new ItemList(_player, false));
 		
 		// Refresh player stats
 		_player.broadcastUserInfo();
@@ -517,7 +527,8 @@ public class CursedWeapon
 		{
 			// Remove it
 			endOfLife();
-		} else
+		}
+		else
 		{
 			// Unequip & Drop
 			dropIt(null, null, killer, false);
@@ -537,12 +548,12 @@ public class CursedWeapon
 	{
 		_nbKills++;
 		
-		if (_player != null && _player.isOnline())
+		if ((_player != null) && _player.isOnline())
 		{
 			_player.setPkKills(_nbKills);
 			_player.sendPacket(new UserInfo(_player));
 			
-			if (_nbKills % _stageKills == 0 && _nbKills <= _stageKills*(_skillMaxLevel-1))
+			if (((_nbKills % _stageKills) == 0) && (_nbKills <= (_stageKills * (_skillMaxLevel - 1))))
 			{
 				giveSkill();
 			}
@@ -552,61 +563,73 @@ public class CursedWeapon
 		saveData();
 	}
 	
-	
 	// =========================================================
 	// Setter
 	public void setDisapearChance(int disapearChance)
 	{
 		_disapearChance = disapearChance;
 	}
+	
 	public void setDropRate(int dropRate)
 	{
 		_dropRate = dropRate;
 	}
+	
 	public void setDuration(int duration)
 	{
 		_duration = duration;
 	}
+	
 	public void setDurationLost(int durationLost)
 	{
 		_durationLost = durationLost;
 	}
+	
 	public void setStageKills(int stageKills)
 	{
 		_stageKills = stageKills;
 	}
+	
 	public void setNbKills(int nbKills)
 	{
 		_nbKills = nbKills;
 	}
+	
 	public void setPlayerId(int playerId)
 	{
 		_playerId = playerId;
 	}
+	
 	public void setPlayerKarma(int playerKarma)
 	{
 		_playerKarma = playerKarma;
 	}
+	
 	public void setPlayerPkKills(int playerPkKills)
 	{
 		_playerPkKills = playerPkKills;
 	}
+	
 	public void setActivated(boolean isActivated)
 	{
 		_isActivated = isActivated;
 	}
+	
 	public void setDropped(boolean isDropped)
 	{
 		_isDropped = isDropped;
 	}
+	
 	public void setEndTime(long endTime)
 	{
 		_endTime = endTime;
 	}
+	
 	public void setPlayer(L2PcInstance player)
 	{
 		_player = player;
 	}
+	
 	public void setItem(L2ItemInstance item)
 	{
 		_item = item;
@@ -618,46 +641,57 @@ public class CursedWeapon
 	{
 		return _isActivated;
 	}
+	
 	public boolean isDropped()
 	{
 		return _isDropped;
 	}
+	
 	public long getEndTime()
 	{
 		return _endTime;
 	}
+	
 	public String getName()
 	{
 		return _name;
 	}
+	
 	public int getItemId()
 	{
 		return _itemId;
 	}
+	
 	public int getSkillId()
 	{
 		return _skillId;
 	}
+	
 	public int getPlayerId()
 	{
 		return _playerId;
 	}
+	
 	public L2PcInstance getPlayer()
 	{
 		return _player;
 	}
+	
 	public int getPlayerKarma()
 	{
 		return _playerKarma;
 	}
+	
 	public int getPlayerPkKills()
 	{
 		return _playerPkKills;
 	}
+	
 	public int getNbKills()
 	{
 		return _nbKills;
 	}
+	
 	public int getStageKills()
 	{
 		return _stageKills;
@@ -667,44 +701,51 @@ public class CursedWeapon
 	{
 		return _isActivated || _isDropped;
 	}
+	
 	public int getLevel()
 	{
-		if (_nbKills > _stageKills*_skillMaxLevel)
+		if (_nbKills > (_stageKills * _skillMaxLevel))
 		{
 			return _skillMaxLevel;
-		} else
+		}
+		else
 		{
 			return (_nbKills / _stageKills);
 		}
 	}
+	
 	public long getTimeLeft()
 	{
 		return _endTime - System.currentTimeMillis();
 	}
+	
 	public void goTo(L2PcInstance player)
 	{
-		if (player == null) return;
+		if (player == null)
+			return;
 		
-		if (_isActivated && _player != null)
+		if (_isActivated && (_player != null))
 		{
 			// Go to player holding the weapon
 			player.teleToLocation(_player.getX(), _player.getY(), _player.getZ() + 20, true);
-		} else if (_isDropped && _item != null)
+		}
+		else if (_isDropped && (_item != null))
 		{
 			// Go to item on the ground
 			player.teleToLocation(_item.getX(), _item.getY(), _item.getZ() + 20, true);
-		} else
+		}
+		else
 		{
-			player.sendMessage(_name+" isn't in the World.");
+			player.sendMessage(_name + " isn't in the World.");
 		}
 	}
 	
 	public Point3D getWorldPosition()
 	{
-		if (_isActivated && _player != null)
+		if (_isActivated && (_player != null))
 			return _player.getPosition().getWorldPosition();
 		
-		if (_isDropped && _item != null)
+		if (_isDropped && (_item != null))
 			return _item.getPosition().getWorldPosition();
 		
 		return null;

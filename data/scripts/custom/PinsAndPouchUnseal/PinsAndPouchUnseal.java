@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.PinsAndPouchUnseal;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -23,37 +24,22 @@ import l2server.util.Rnd;
 
 public class PinsAndPouchUnseal extends Quest
 {
-	private final static int[] NPCs =
-	{
-		32610,32612
-	};
+	private final static int[] NPCs = { 32610, 32612 };
 	
-	private final static int[] UNSEALPRICE = {3200,11800,26500,136600};
+	private final static int[] UNSEALPRICE = { 3200, 11800, 26500, 136600 };
 	// failed, low, mid, high, top
-	private final static int[] CHANCES = {49,78,95,99,100};
+	private final static int[] CHANCES = { 49, 78, 95, 99, 100 };
 	
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] PINS = {{13898,13902,13903,13904,13905},
-		{13899,13906,13907,13908,13909},
-		{13900,13910,13911,13912,13913},
-		{13901,13914,13915,13916,13917}
-	};
+	private final static int[][] PINS = { { 13898, 13902, 13903, 13904, 13905 }, { 13899, 13906, 13907, 13908, 13909 }, { 13900, 13910, 13911, 13912, 13913 }, { 13901, 13914, 13915, 13916, 13917 } };
 	
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] POUCHS = {{13918,13922,13923,13924,13925},
-		{13919,13926,13927,13928,13929},
-		{13920,13930,13931,13932,13933},
-		{13921,13934,13935,13936,13937}
-	};
+	private final static int[][] POUCHS = { { 13918, 13922, 13923, 13924, 13925 }, { 13919, 13926, 13927, 13928, 13929 }, { 13920, 13930, 13931, 13932, 13933 }, { 13921, 13934, 13935, 13936, 13937 } };
 	
 	// "B,C grade" is the Magic Clip
 	// "A,S grade" is the Magic Ornament
 	// sealdId, lowId, midId, highId, topId
-	private final static int[][] CLIPSORNAMENTS = {{14902,14906,14907,14908,14909},
-		{14903,14910,14911,14912,14913},
-		{14904,14914,14915,14916,14917},
-		{14905,14918,14919,14920,14921}
-	};
+	private final static int[][] CLIPSORNAMENTS = { { 14902, 14906, 14907, 14908, 14909 }, { 14903, 14910, 14911, 14912, 14913 }, { 14904, 14914, 14915, 14916, 14917 }, { 14905, 14918, 14919, 14920, 14921 } };
 	
 	public PinsAndPouchUnseal(int questId, String name, String descr)
 	{

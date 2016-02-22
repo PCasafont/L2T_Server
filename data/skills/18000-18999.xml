@@ -116,7 +116,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<!-- Use to obtain  1,600,000 XP. Can combine 2 Lv. 2 pouches. Below Lv. 85 only. -->
+	<!-- Use to obtain 1,600,000 XP. Can combine 2 Lv. 2 pouches. Below Lv. 85 only. -->
 	<skill id="18018" levels="1" name="Maphr's Pouch">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -137,7 +137,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
-	<!-- Use to obtain  80,000 XP. Can combine 2 Lv. 4 pouches. -->
+	<!-- Use to obtain 80,000 XP. Can combine 2 Lv. 4 pouches. -->
 	<skill id="18021" levels="1" name="Maphr's Pouch">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -827,7 +827,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- When hunting monsters, Vitality consumption x 2, and XP/SP gain + 100%. Remains after death. Lasts 10 min. Cooldown is 10 min. -->
-	<skill id="18126" levels="1" name="Freya's Wind Scroll">
+	<skill id="18126" levels="1" name="Freya's Frozen Scroll">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -840,7 +840,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Double-click for a random chance to obtain an item related to a Talisman. -->
-	<skill id="18128" levels="1" name="Sirr's Wish Box">
+	<skill id="18128" levels="1" name="Sirra's Wish Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -852,13 +852,13 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- When hunting monsters, Vitality consumption x 2, and XP/SP gain + 100%. Remains after death. Lasts 10 min. Cooldown is 10 min. -->
-	<skill id="18130" levels="1" name="Freya's Wind Scroll">
+	<skill id="18130" levels="1" name="Freya's Frozen Scroll">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- When enchanting  a weapon (R-grade) with a blessed enchant scroll, success rate + 20%. Only for items enchanted between + 3 and + 15. Failure drops the enchant level by 1. -->
+	<!-- When enchanting a weapon (R-grade) with a blessed enchant scroll, success rate + 20%. Only for items enchanted between + 3 and + 15. Failure drops the enchant level by 1. -->
 	<skill id="18131" levels="1" name="Freya's Lucky Enchant Stone: Weapon (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1288,7 +1288,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Shoots lasers at aliens. -->
-	<skill id="18180" levels="1" name="NoSkillName">
+	<skill id="18180" levels="1" name="Pew Pew">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1298,7 +1298,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- You feel an alien's energy with this debuff. Your head feels heavy. -->
-	<skill id="18181" levels="1" name="NoSkillName">
+	<skill id="18181" levels="1" name="Alien's Ta-da Debuff">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1307,7 +1307,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- Randomly increases one of STR, DEX, CON, INT, WIT, MEN, LUC, or CHA by 6. Effect does not stack. -->
-	<skill id="18182" levels="1" name="NoSkillName">
+	<skill id="18182" levels="1" name="Alien Nano Supplement">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1315,88 +1315,88 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., STR + 6. Effect does not stack. -->
-	<skill id="18183" levels="1" name="NoSkillName">
+	<skill id="18183" levels="1" name="Alien Nano Supplement: STR">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., DEX + 6. Effect does not stack. -->
-	<skill id="18184" levels="1" name="NoSkillName">
+	<skill id="18184" levels="1" name="Alien Nano Supplement: DEX">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., CON + 6. Effect does not stack. -->
-	<skill id="18185" levels="1" name="NoSkillName">
+	<skill id="18185" levels="1" name="Alien Nano Supplement: CON">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., INT + 6. Effect does not stack. -->
-	<skill id="18186" levels="1" name="NoSkillName">
+	<skill id="18186" levels="1" name="Alien Nano Supplement: INT">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., WIT + 6. Effect does not stack. -->
-	<skill id="18187" levels="1" name="NoSkillName">
+	<skill id="18187" levels="1" name="Alien Nano Supplement: WIT">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., MEN + 6. Effect does not stack. -->
-	<skill id="18188" levels="1" name="NoSkillName">
+	<skill id="18188" levels="1" name="Alien Nano Supplement: MEN">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., LUC + 6. Effect does not stack. -->
-	<skill id="18189" levels="1" name="NoSkillName">
+	<skill id="18189" levels="1" name="Alien Nano Supplement: LUC">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<!-- For 30min., CHA + 6. Effect does not stack. -->
-	<skill id="18190" levels="1" name="NoSkillName">
+	<skill id="18190" levels="1" name="Alien Nano Supplement: CHA">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<skill id="18191" levels="1" name="NoSkillName">
+	<skill id="18191" levels="1" name="Reward Capsule">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Party members around the user recover 10000 Vitality when this herb is obtained. -->
-	<skill id="18192" levels="1" name="NoSkillName">
+	<skill id="18192" levels="1" name="Vitality Replenishing Herb - Party">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="18193" levels="1" name="NoSkillName">
+	<skill id="18193" levels="1" name="Vitality Recovery - Party">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="18194" levels="1" name="NoSkillName">
+	<skill id="18194" levels="1" name="L2B2's Gift Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Knocks back the target. -->
-	<skill id="18195" levels="1" name="NoSkillName">
+	<skill id="18195" levels="1" name="Knock Back">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1408,7 +1408,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 6903. -->
-	<skill id="18196" levels="1" name="NoSkillName">
+	<skill id="18196" levels="1" name="Spirit Hit">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1418,75 +1418,75 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<skill id="18197" levels="1" name="NoSkillName">
+	<skill id="18197" levels="1" name="Blue Save Card (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18198" levels="1" name="NoSkillName">
+	<skill id="18198" levels="1" name="Blue Save Card (R95-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18199" levels="1" name="NoSkillName">
+	<skill id="18199" levels="1" name="Blue Save Card (R99-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18200" levels="1" name="NoSkillName">
+	<skill id="18200" levels="1" name="Red Save Card (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18201" levels="1" name="NoSkillName">
+	<skill id="18201" levels="1" name="Red Save Card (R95-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18202" levels="1" name="NoSkillName">
+	<skill id="18202" levels="1" name="Red Save Card (R99-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18203" levels="1" name="NoSkillName">
+	<skill id="18203" levels="1" name="Royal Blue Save Card (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18204" levels="1" name="NoSkillName">
+	<skill id="18204" levels="1" name="Royal Blue Save Card (R95-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18205" levels="1" name="NoSkillName">
+	<skill id="18205" levels="1" name="Royal Blue Save Card (R99-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18206" levels="1" name="NoSkillName">
+	<skill id="18206" levels="1" name="Royal Red Save Card (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18207" levels="1" name="NoSkillName">
+	<skill id="18207" levels="1" name="Royal Red Save Card (R95-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18208" levels="1" name="NoSkillName">
+	<skill id="18208" levels="1" name="Royal Red Save Card (R99-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Increases XP and SP by 100% for 1 hr. The appearace of the armor will change to NC Dinos' uniform. Cannot be stacked with Fall of the Dragon. -->
-	<skill id="18209" levels="1" name="NoSkillName">
+	<skill id="18209" levels="1" name="Dandy's Home Run Ball">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
-	<!-- A buff that the aliens used for luck when they purchased the lottery. Rumor has it that the user might see the winning numbers in a dream,  or even get an increased success rate when enchanting weapons with scrolls. Who knows if the rumors true. -->
-	<skill id="18210" levels="1" name="NoSkillName">
+	<!-- A buff that the aliens used for luck when they purchased the lottery. Rumor has it that the user might see the winning numbers in a dream, or even get an increased success rate when enchanting weapons with scrolls. Who knows if the rumors true. -->
+	<skill id="18210" levels="1" name="Alien Power">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1494,34 +1494,34 @@
 		<set name="castRange" val="1200" />
 		<set name="effectRange" val="1700" />
 	</skill>
-	<skill id="18211" levels="1" name="NoSkillName">
+	<skill id="18211" levels="1" name="Entrance Pass: Spezion (Epic)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18212" levels="1" name="NoSkillName">
+	<skill id="18212" levels="1" name="Entrance Pass: Baylor">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18213" levels="1" name="NoSkillName">
+	<skill id="18213" levels="1" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Transforms into the very fast L2B2 for 10 minutes. -->
-	<skill id="18214" levels="1" name="NoSkillName">
+	<skill id="18214" levels="1" name="Transformation Potion: L2B2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<skill id="18215" levels="1" name="NoSkillName">
+	<skill id="18215" levels="1" name="Alien's Nano Cannister">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18216" levels="1" name="NoSkillName">
+	<skill id="18216" levels="1" name="Appearance Stone: Formal Wear (30-day)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1556,7 +1556,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
-	<skill id="18220" levels="1" name="NoSkillName">
+	<skill id="18220" levels="1" name="Blazing Swamp Teleport">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1957,7 +1957,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<skill id="18351" levels="2" name="Spellbook: Favor of the Exalted Lv. 1">
+	<skill id="18351" levels="2" name="Spellbook: Favor of the Exalted Lv. 2">
 		<table name="#name">Spellbook: Favor of the Exalted Lv. 1;Spellbook: Favor of the Exalted Lv. 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1971,7 +1971,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Weight + 12800, Inventory Slot + 18, and Damage Received + 7% during PvE. -->
+	<!-- Weight + 12800, Inventory Slot + 18, and Damage Received - 7% during PvE. -->
 	<skill id="18353" levels="1" name="Special Magic Ornament Eternal Belt">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1983,7 +1983,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Weight + 12800, Inventory Slot + 18, and Damage Received + 7% during PvP. -->
+	<!-- Weight + 12800, Inventory Slot + 18, and Damage Received - 7% during PvP. -->
 	<skill id="18355" levels="1" name="Special Magic Ornament Eternal Belt">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2022,7 +2022,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- You've drank too much at the festival. Atk. Spd. - 5%, Casting Spd. - 5%, Speed - 20, and P. Atk. + 10%, M. Atk. + 10%, Skill Power + 10%,  10%, Damage Reflect Resistance + 10% for 3 hours. -->
+	<!-- You've drank too much at the festival. Atk. Spd. - 5%, Casting Spd. - 5%, Speed - 20, and P. Atk. + 10%, M. Atk. + 10%, Skill Power + 10%, 10%, Damage Reflect Resistance + 10% for 3 hours. -->
 	<skill id="18361" levels="1" name="Festival Buff - Tipsy Tipsy">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2038,10 +2038,10 @@
 	</skill>
 	<!-- 
 		Level 1: 1 star.
-		Level 2: 2 stars.
-		Level 3: 3 stars.
-		Level 4: 4 stars.
-		Level 5: 5 stars.
+		Level 2: 2 star.
+		Level 3: 3 star.
+		Level 4: 4 star.
+		Level 5: 5 star.
 	-->
 	<skill id="18363" levels="5" name="Star Rating">
 		<table name="#visualName"> starts4Empty starts3Empty starts2Empty starts1Empty starts0Empty </table>
@@ -2495,13 +2495,13 @@
 	</skill>
 	<!-- 
 		Level 1: P. Def. + 5%.
-		Level 2: P. Def. + 6% . Received Physical Critical Damage - 8%.
+		Level 2: P. Def. + 6%. Received Physical Critical Damage - 8%.
 		Level 3: P. Def. + 8%. Received Physical Critical Damage - 12%, 7% chance of reflecting physical abnormal states.
 		Level 4: P. Def. + 10%. Received Physical Critical Damage - 16%, 9% chance of reflecting physical abnormal states.
 		Level 5: P. Def. + 12%. Received Physical Critical Damage - 20%, 12% chance of reflecting physical abnormal states.
 		Level 6: P. Def. + 15%. Received Physical Critical Damage - 25%, 15% chance of reflecting physical abnormal states.
 	-->
-	<skill id="18444" levels="6" name="Reflect Attack T-shirt Enchant Effect">
+	<skill id="18444" levels="6" name="Physical Reflect Shirt Enchant Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2514,13 +2514,13 @@
 		Level 5: M. Def. + 12%. Received Magic Critical Damage - 20%, 12% chance of reflecting magical abnormal states.
 		Level 6: M. Def. + 15%. Received Magic Critical Damage - 25%, 15% chance of reflecting magical abnormal states.
 	-->
-	<skill id="18445" levels="6" name="Reflect Magic T-shirt Enchant Effect">
+	<skill id="18445" levels="6" name="Magical Reflect Shirt Enchant Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- M. Def. + 8. -->
-	<skill id="18446" levels="1" name="Reflect T-shirt Basic Effect">
+	<skill id="18446" levels="1" name="Reflect Shirt Basic Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2529,15 +2529,15 @@
 		Level 1: M. Def. + 9.
 		Level 2: M. Def. + 10.
 		Level 3: M. Def. + 11.
-		Level 4: M. Def. + 12, Speed + 7, Max HP/MP + 510. Attribute Resistance + 6. STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1
-		Level 5: M. Def. + 13, Speed + 7, Max HP/MP + 520. Attribute Resistance + 12. STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2
-		Level 6: M. Def. + 14, Speed + 7, Max HP/MP + 531. Attribute Resistance + 18. STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2
-		Level 7: M. Def. + 15, Speed + 7, Max HP/MP + 536. Attribute Resistance + 24. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3
-		Level 8: M. Def. + 16, Speed + 7, Max HP/MP + 541. Attribute Resistance + 30. STR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, MEN + 3
-		Level 9: M. Def. + 17, Speed + 7, Max HP/MP + 547. Attribute Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
-		Level 10: M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribute Resistance + 42. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
+		Level 4: M. Def. + 12, Speed + 7, Max HP + 510, Max MP + 510. Attribute Resistance + 6. STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1
+		Level 5: M. Def. + 13, Speed + 7, Max HP + 520, Max MP + 520. Attribute Resistance + 12. STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2
+		Level 6: M. Def. + 14, Speed + 7, Max HP + 531, Max MP + 531. Attribute Resistance + 18. STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2
+		Level 7: M. Def. + 15, Speed + 7, Max HP + 536, Max MP + 536. Attribute Resistance + 24. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3
+		Level 8: M. Def. + 16, Speed + 7, Max HP + 541, Max MP + 541. Attribute Resistance + 30. STR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, MEN + 3
+		Level 9: M. Def. + 17, Speed + 7, Max HP + 547, Max MP + 547. Attribute Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
+		Level 10: M. Def. + 18, Speed + 7, Max HP + 552, Max MP + 552. Attribute Resistance + 42. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
 	-->
-	<skill id="18447" levels="10" name="Reflect T-shirt Basic Effect">
+	<skill id="18447" levels="10" name="Reflect Shirt Basic Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2707,7 +2707,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
-	<skill id="18472" levels="6" name="Giveaway Number 1">
+	<skill id="18472" levels="6" name="Giveaway Number 6">
 		<table name="#name">Giveaway Number 1;Giveaway Number 2;Giveaway Number 3;Giveaway Number 4;Giveaway Number 5;Giveaway Number 6</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2948,7 +2948,300 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18564" levels="1" name="Shadai's Jewelry Box">
+	<!-- For 30 minutes, P. Atk. + 5%, M. Atk. by 20%, P. Def. by 5%, M. Def. by 5%, Atk. Spd. by 5%, Casting Spd. by 5%, Max HP/MP by 5%, and XP and SP acquired through hunting increase by 30%. -->
+	<skill id="18506" levels="1" name="Angel Cat's Energy">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="900000" />
+	</skill>
+	<!-- STR, INT, CON, DEX, WIT, MEN, LUC, CHA + 1. -->
+	<skill id="18507" levels="1" name="Perfect Charm Rune">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="18508" levels="1" name="Harp's Reward Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18509" levels="1" name="Divine Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18510" levels="1" name="Heine Treasure Chest">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18511" levels="1" name="Zodiac Agathion Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18513" levels="1" name="Summon Flame Flower">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<!-- Engraves the Seal of Ruler on the holy artifact which guards the castle. -->
+	<skill id="18514" levels="1" name="Seal Altar of Earth">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="120000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- 
+		Level 1: P./M. Def. is decreased by 10%.
+		Level 2: P./M. Def. is decreased by 30%.
+		Level 3: P./M. Def. is decreased by 50%.
+	-->
+	<skill id="18515" levels="3" name="Decrease P. Def.">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+	</skill>
+	<!-- Engraves the Seal of Ruler on the holy artifact which guards the castle. -->
+	<skill id="18516" levels="1" name="Seal Altar of Wind">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="120000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- A strange sensation envelopes you. For 15 seconds, P./M. Atk. And Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance.. -->
+	<skill id="18517" levels="1" name="Top-grade Love Potion - Party">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<!-- Throws a flare that will identify traps and targets who are hiding. -->
+	<skill id="18518" levels="1" name="Flash Grenade">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+	</skill>
+	<!-- Converts Flash Grenade. Elementary Alchemy. -->
+	<skill id="18522" levels="1" name="Flash Grenade">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Changes the appearance of a weapon to that of White Day for 1 hour. -->
+	<skill id="18523" levels="1" name="Hansel's Weapon Crafting Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Can summon a friend -->
+	<skill id="18524" levels="1" name="Gretel's Friend Summon Candy">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<!-- Double-click to get one of the following: Blessed Antharas' Earring, Blessed Valakas' Necklace, Tauti's Ring, Earth Wyrm Heart Ring, or Blessed Zaken's Earring (7-day). Cannot be used in the Olympiad. Deleted after event. -->
+	<skill id="18531" levels="1" name="Rare Accessory Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<!-- Double-click to get one of the following: Expertise Rune Pack R, R95, or R99. Deleted after event. -->
+	<skill id="18532" levels="1" name="Expertise Rune Pack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18534" levels="1" name="Scroll of Escape: Mystic Tavern">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<skill id="18535" levels="1" name="Epic Tale Pouch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18536" levels="1" name="Epic Tale Pouch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18537" levels="1" name="Epic Tale Pouch">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18538" levels="1" name="Tauti's Helmet Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18539" levels="1" name="Tauti's Breastplate Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18540" levels="1" name="Tauti's Gaiters Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18541" levels="1" name="Tauti's Gauntlets Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18542" levels="1" name="Tauti's Boots Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18543" levels="1" name="Kelbim's Leather Helmet Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18544" levels="1" name="Kelbim's Leather Armor Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18545" levels="1" name="Kelbim's Leather Leggings Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18546" levels="1" name="Kelbim's Leather Gloves Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18547" levels="1" name="Kelbim's Leather Boots Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18548" levels="1" name="Freya's Circlet Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18549" levels="1" name="Freya's Tunic Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18550" levels="1" name="Freya's Stockings Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18551" levels="1" name="Freya's Gloves Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18552" levels="1" name="Freya's Shoes Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18553" levels="1" name="Leona's Reward Box (High-grade)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18554" levels="1" name="Leona's Reward Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18555" levels="1" name="Curtiz's Reward Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Changes the appearance of your entire armor into that of Blue Dynasty. Tops and one-pieces only. -->
+	<skill id="18556" levels="1" name="Blue Dynasty Armor Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Changes the appearance of your entire armor into that of Red Zubei. Tops and one-pieces only. -->
+	<skill id="18557" levels="1" name="Zubei Armor Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Changes the appearance of your entire armor into that of the White Assassin Suit. Tops and one-pieces only. -->
+	<skill id="18558" levels="1" name="White Assassin Suit Appearance Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18559" levels="1" name="Entrance Pass: Nightmare Kamaloka">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18560" levels="1" name="Entrance Pass: Embryo Command Post">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18561" levels="1" name="Assistant Roa's Gift">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18562" levels="1" name="Entrance Pass: Crystal Caverns">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="18563" levels="4" name="Red Libra Supplies Lv. 4">
+		<table name="#name">Red Libra Supplies Lv. 1;Red Libra Supplies Lv. 2;Red Libra Supplies Lv. 3;Red Libra Supplies Lv. 4</table>
+		<set name="name" val="#name" />
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18564" levels="2" name="Shadai's Shiny Jewelry Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2963,14 +3256,22 @@
 		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
 	-->
 	<skill id="18565" levels="5" name="Tanzanite - Barrier">
+		<table name="#duration"> 5 5 10 10 15 </table>
+		<table name="#damage"> 5000 10000 15000 30000 50000 </table>
 		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
+		<set name="reuseDelay" val="180000" />
 		<set name="staticReuse" val="true" />
 		<set name="sharedReuse" val="18565-1" />
+		<set name="damageToRemove" val="#damage" />
+		<for>
+			<abnormal duration="#duration" stackLvl="1" stackType="dmg_barrier" visualEffect="invincible">
+				<effect type="Invincible" val="0" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- 
 		Level 1: Resistance to Debuffs + 3%.
@@ -3016,5 +3317,17 @@
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="18570" levels="1" name="Function Test Item">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="18579" levels="1" name="Entrance Pass: Embryo Command Post">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 </list>

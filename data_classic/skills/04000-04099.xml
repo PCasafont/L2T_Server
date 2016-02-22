@@ -1281,6 +1281,7 @@
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<set name="isPotion" val="true" />
+		<set name="saveVs" val="NULL" />
 		<set name="killByDOT" val="true" />
 		<for>
 			<abnormal duration="4200">

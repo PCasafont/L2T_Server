@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -24,6 +25,8 @@ import l2server.gameserver.handler.ItemHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.instancemanager.FortSiegeManager;
 import l2server.gameserver.model.Elementals;
+import l2server.gameserver.model.EnsoulEffect;
+import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Augmentation;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -35,11 +38,14 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.ShowCalculator;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.Stats;
+import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.item.L2Armor;
 import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
@@ -50,9 +56,6 @@ import l2server.util.Rnd;
  */
 public final class UseItem extends L2GameClientPacket
 {
-	
-	private static final String _C__14_USEITEM = "[C] 14 UseItem";
-	
 	private int _objectId;
 	private boolean _ctrlPressed;
 	private int _itemId;
@@ -62,10 +65,14 @@ public final class UseItem extends L2GameClientPacket
 	{
 		L2ItemInstance item;
 		L2PcInstance activeChar;
-		public WeaponEquipTask(L2ItemInstance it, L2PcInstance character){
+		
+		public WeaponEquipTask(L2ItemInstance it, L2PcInstance character)
+		{
 			item = it;
 			activeChar = character;
 		}
+		
+		@Override
 		public void run()
 		{
 			//If character is still engaged in strike we should not change weapon
@@ -94,7 +101,13 @@ public final class UseItem extends L2GameClientPacket
 		if (!getClient().getFloodProtectors().getUseItem().tryPerformAction("use item"))
 			return;
 		
-		if (activeChar.getPrivateStoreType() != 0)
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		if (item == null)
+			return;
+		else if (!item.isEquipable() && !getClient().getFloodProtectors().getUseItem().tryPerformAction("use item"))
+			return;
+		
+		if ((activeChar.getPrivateStoreType() != 0) && (item.getItemId() != 1373))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -115,9 +128,9 @@ public final class UseItem extends L2GameClientPacket
 		// NOTE: disabled due to deadlocks
 		// synchronized (activeChar.getInventory())
 		// 	{
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
-			return;
+		
+		if (activeChar.isGM())
+			activeChar.sendSysMessage("Using Item[" + item.getItemId() + "]");
 		
 		if (item.getItem().isVitality())
 		{
@@ -157,7 +170,7 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (activeChar.getCurrentUnbindScroll() != null)
 		{
-			if (!item.isEquipable() || !item.getName().contains("Bound") || item.getItem().getStandardItem() == -1)
+			if (!item.isEquipable() || !item.getName().contains("Bound") || (item.getItem().getStandardItem() == -1))
 			{
 				activeChar.sendMessage("This item is not bound!");
 				activeChar.setCurrentUnbindScroll(null);
@@ -173,30 +186,35 @@ public final class UseItem extends L2GameClientPacket
 			}
 			
 			int productId = item.getItem().getStandardItem();
-			if (item.getItem().getBlessedItem() != -1 && Rnd.get(100) < 10)
+			if ((item.getItem().getBlessedItem() != -1) && (Rnd.get(100) < 10))
 				productId = item.getItem().getBlessedItem();
 			
 			int enchantLevel = item.getEnchantLevel();
 			int appId = item.getAppearance();
 			
+			EnsoulEffect[] ensoulEffects = null;
 			L2Augmentation augmentation = null;
 			Elementals[] elementals = null;
+			if (item.isSoulEnhanced())
+				ensoulEffects = item.getEnsoulEffects();
 			if (item.isAugmented())
 				augmentation = item.getAugmentation();
 			if (item.getElementals() != null)
 				elementals = item.getElementals();
 			
-			if (!activeChar.destroyItem("Unbind", item.getObjectId(), 1, activeChar, true)
-					|| !activeChar.destroyItem("Unbind", activeChar.getCurrentUnbindScroll().getObjectId(), 1, activeChar, true))
+			if (!activeChar.destroyItem("Unbind", item.getObjectId(), 1, activeChar, true) || !activeChar.destroyItem("Unbind", activeChar.getCurrentUnbindScroll().getObjectId(), 1, activeChar, true))
 			{
 				activeChar.setCurrentUnbindScroll(null);
 				return;
 			}
-
+			
 			L2ItemInstance product = activeChar.addItem("Unbind", productId, 1, activeChar, true);
 			product.setEnchantLevel(enchantLevel);
-			if(appId != 0)
-				product.setAppearance(appId);
+			if (ensoulEffects != null)
+			{
+				for (int i = 0; i < ensoulEffects.length; i++)
+					product.setEnsoulEffect(i, ensoulEffects[i]);
+			}
 			if (augmentation != null)
 				product.setAugmentation(new L2Augmentation(augmentation.getAugment1(), augmentation.getAugment2()));
 			if (elementals != null)
@@ -204,13 +222,15 @@ public final class UseItem extends L2GameClientPacket
 				for (Elementals elm : elementals)
 					product.setElementAttr(elm.getElement(), elm.getValue());
 			}
+			if (appId != 0)
+				product.setAppearance(appId);
 			activeChar.setCurrentUnbindScroll(null);
 			return;
 		}
 		
 		if (activeChar.getCurrentBlessingScroll() != null)
 		{
-			if (!item.isEquipable() || item.getName().contains("Bound") || item.getName().contains("Blessed") || item.getItem().getBlessedItem() == -1)
+			if (!item.isEquipable() || item.getName().contains("Bound") || item.getName().contains("Blessed") || (item.getItem().getBlessedItem() == -1))
 			{
 				activeChar.sendMessage("This item cannot be blessed!");
 				activeChar.setCurrentBlessingScroll(null);
@@ -234,22 +254,29 @@ public final class UseItem extends L2GameClientPacket
 			int productId = item.getItem().getBlessedItem();
 			int app = item.getAppearance();
 			int enchantLevel = item.getEnchantLevel();
+			EnsoulEffect[] ensoulEffects = null;
 			L2Augmentation augmentation = null;
 			Elementals[] elementals = null;
+			if (item.isSoulEnhanced())
+				ensoulEffects = item.getEnsoulEffects();
 			if (item.isAugmented())
 				augmentation = item.getAugmentation();
 			if (item.getElementals() != null)
 				elementals = item.getElementals();
 			
-			if (!activeChar.destroyItem("Blessing", item.getObjectId(), 1, activeChar, true)
-					|| !activeChar.destroyItem("Blessing", activeChar.getCurrentBlessingScroll().getObjectId(), 1, activeChar, true))
+			if (!activeChar.destroyItem("Blessing", item.getObjectId(), 1, activeChar, true) || !activeChar.destroyItem("Blessing", activeChar.getCurrentBlessingScroll().getObjectId(), 1, activeChar, true))
 			{
 				activeChar.setCurrentBlessingScroll(null);
 				return;
 			}
-
+			
 			L2ItemInstance product = activeChar.addItem("Blessing", productId, 1, activeChar, true);
 			product.setEnchantLevel(enchantLevel);
+			if (ensoulEffects != null)
+			{
+				for (int i = 0; i < ensoulEffects.length; i++)
+					product.setEnsoulEffect(i, ensoulEffects[i]);
+			}
 			if (augmentation != null)
 				product.setAugmentation(new L2Augmentation(augmentation.getAugment1(), augmentation.getAugment2()));
 			if (elementals != null)
@@ -268,14 +295,25 @@ public final class UseItem extends L2GameClientPacket
 		{
 			L2ItemInstance stone = activeChar.getActiveAppearanceStone();
 			
-			if (stone.getName().contains("Restoration"))
+			if (stone.getName().contains("Restor"))
 			{
+				boolean isCorrectStone = (stone.getName().contains("Weapon") && (item.getItem() instanceof L2Weapon)) || (stone.getName().contains("Armor") && (item.getItem() instanceof L2Armor)) || (stone.getName().contains("Equipment"));
+				
+				@SuppressWarnings("unused")
 				int type = stone.getStoneType();
 				
-				if (item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain()
-						&& item.getItem().getType2() == type)
+				//activeChar.sendMessage("Stone Type = " + type);
+				//activeChar.sendMessage("Item Type = " + item.getItem().getType2());
+				if ((item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain()) && isCorrectStone)
 				{
-					activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true);
+					Util.logToFile(activeChar.getName() + " is removing appearance on his " + item.getName() + ".", "Appearances", "txt", true, true);
+					
+					if (!activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true))
+					{
+						activeChar.setActiveAppearanceStone(null);
+						return;
+					}
+					
 					item.setAppearance(0);
 					activeChar.sendMessage("Your " + item.getName() + "'s appearance has been restored.");
 					InventoryUpdate iu = new InventoryUpdate();
@@ -289,15 +327,17 @@ public final class UseItem extends L2GameClientPacket
 			else if (stone.getItem().getStandardItem() > 0) // The stones hold their appearance item template id in their standard item
 			{
 				L2Item template = ItemTable.getInstance().getTemplate(stone.getItem().getStandardItem());
-
-				if ((item.getItem().getItemGrade() >= template.getItemGrade()
-						&& item.getItem().canBeUsedAsApp()
-						&& (item.getItem().getBodyPart() == template.getBodyPart()
-								|| (item.getItem().getBodyPart() == L2Item.SLOT_CHEST
-										&& template.getBodyPart() == L2Item.SLOT_FULL_ARMOR))
-						&& ((item.isWeapon() && item.getItem().getItemType() == template.getItemType()) || item.isArmor())) || ((item.getItem().getBodyPart() == L2Item.SLOT_CHEST || item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR) && (template.getBodyPart() == L2Item.SLOT_ALLDRESS)))
+				
+				if ((/*item.getItem().getItemGrade() >= template.getItemGrade()
+						&&*/item.getItem().canBeUsedAsApp() && ((item.getItem().getBodyPart() == template.getBodyPart()) || ((item.getItem().getBodyPart() == L2Item.SLOT_CHEST) && (template.getBodyPart() == L2Item.SLOT_FULL_ARMOR))) && ((item.isWeapon() && (item.getItem().getItemType() == template.getItemType())) || item.isArmor())) || (((item.getItem().getBodyPart() == L2Item.SLOT_CHEST) || (item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)) && (template.getBodyPart() == L2Item.SLOT_ALLDRESS)))
 				{
-					activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true);
+					Util.logToFile(activeChar.getName() + " is applying " + stone.getName() + " on his " + item.getName() + ".", "Appearances", "txt", true, true);
+					if (!activeChar.destroyItem("Appearance", stone.getObjectId(), 1, activeChar, true))
+					{
+						activeChar.setActiveAppearanceStone(null);
+						return;
+					}
+					
 					item.setAppearance(template.getItemId());
 					activeChar.sendMessage("Your " + item.getName() + "'s appearance has been modified.");
 					InventoryUpdate iu = new InventoryUpdate();
@@ -313,24 +353,95 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 		
-		// Tenkai customization - .sell command
-		if (activeChar.isAddSellItem())
+		if (Config.isServer(Config.DREAMS))
 		{
-			IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
-			if (vch != null)
-				vch.useVoicedCommand("sell", activeChar, "addItem " + item.getObjectId());
+			if (activeChar.isAddSellItem())
+			{
+				IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
+				if (vch != null)
+					vch.useVoicedCommand("sell", activeChar, "addItem " + item.getObjectId());
+				
+				activeChar.setIsAddSellItem(false);
+				return;
+			}
+			else if (activeChar.getAddSellPrice() > -1)
+			{
+				IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
+				if (vch != null)
+					vch.useVoicedCommand("sell", activeChar, "item " + activeChar.getAddSellPrice() + " addPrice " + item.getItemId());
+				
+				activeChar.setAddSellPrice(-1);
+				return;
+			}
 			
-			activeChar.setIsAddSellItem(false);
-			return;
+			if (Config.isServer(Config.DREAMS))
+			{
+				double chanceIncrease = 0;
+				int luckyStoneType = 0;
+				
+				// Dirty FUCK IT OFF
+				switch (item.getItemId())
+				{
+					case 37566: // Blessed Lucky Enchant Stone: Weapon - R
+						chanceIncrease = 1.10;
+						luckyStoneType = 1;
+						break;
+					case 38757: // Blessed High Grade Lucky Enchant Stone: Weapon - R
+						chanceIncrease = 1.20;
+						luckyStoneType = 1;
+						break;
+					case 23783: // Blessed Giant's Lucky Enchant Stone - Weapon R
+						chanceIncrease = 1.30;
+						luckyStoneType = 1;
+						break;
+					case 37567: // Blessed Lucky Enchant Stone: Armor - R
+						chanceIncrease = 1.10;
+						luckyStoneType = 2;
+						break;
+					case 38758: // Blessed High Grade Lucky Enchant Stone: Armor - R
+						chanceIncrease = 1.20;
+						luckyStoneType = 2;
+						break;
+					case 23784: // Blessed Giant's Lucky Enchant Stone: Armor - R
+						chanceIncrease = 1.30;
+						luckyStoneType = 2;
+						break;
+					default:
+						break;
+				}
+				
+				if (chanceIncrease != 0)
+				{
+					int finalChances = (int) (66 * chanceIncrease);
+					SystemMessage s = SystemMessage.getSystemMessage(SystemMessageId.ORANGE_CHATBOX_S1);
+					s.addString("Your success chance will be increased from 66% to " + finalChances + "% on your next R-Grade " + (luckyStoneType == 1 ? "Weapon" : "Armor/Jewel") + " Enchant.");
+					activeChar.sendPacket(s);
+					
+					activeChar.setLuckyEnchantStoneId(item.getItemId());
+				}
+			}
 		}
-		else if (activeChar.getAddSellPrice() > -1)
+		else
 		{
-			IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
-			if (vch != null)
-				vch.useVoicedCommand("sell", activeChar, "addPrice " + activeChar.getAddSellPrice() + " " + item.getItemId());
-			
-			activeChar.setAddSellPrice(-1);
-			return;
+			// Tenkai customization - .sell command
+			if (activeChar.isAddSellItem())
+			{
+				IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
+				if (vch != null)
+					vch.useVoicedCommand("sell", activeChar, "addItem " + item.getObjectId());
+				
+				activeChar.setIsAddSellItem(false);
+				return;
+			}
+			else if (activeChar.getAddSellPrice() > -1)
+			{
+				IVoicedCommandHandler vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler("sell");
+				if (vch != null)
+					vch.useVoicedCommand("sell", activeChar, "addPrice " + activeChar.getAddSellPrice() + " " + item.getItemId());
+				
+				activeChar.setAddSellPrice(-1);
+				return;
+			}
 		}
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
@@ -383,22 +494,37 @@ public final class UseItem extends L2GameClientPacket
 		 * 10129	Scroll of Escape : Fortress
 		 * 10130	Blessed Scroll of Escape : Fortress
 		 */
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0)
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (activeChar.getReputation() < 0))
 		{
 			switch (_itemId)
 			{
-				case 736: case 1538: case 1829: case 1830: case 3958: case 5858:
-				case 5859: case 6663: case 6664: case 7554: case 7555: case 7556:
-				case 7557: case 7558: case 7559: case 7618: case 7619: case 10129:
+				case 736:
+				case 1538:
+				case 1829:
+				case 1830:
+				case 3958:
+				case 5858:
+				case 5859:
+				case 6663:
+				case 6664:
+				case 7554:
+				case 7555:
+				case 7556:
+				case 7557:
+				case 7558:
+				case 7559:
+				case 7618:
+				case 7619:
+				case 10129:
 				case 10130:
 					return;
 			}
 			
-			if (_itemId >= 7117 && _itemId <= 7135)
+			if ((_itemId >= 7117) && (_itemId <= 7135))
 				return;
 		}
 		
-		if (activeChar.isFishing() && (_itemId < 6535 || _itemId > 6540))
+		if (activeChar.isFishing() && ((_itemId < 6535) || (_itemId > 6540)))
 		{
 			// You cannot do anything else while fishing
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
@@ -418,12 +544,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 		
 		// No UseItem is allowed while the player is in special conditions
-		if (activeChar.isStunned()
-				|| activeChar.isSleeping()
-				|| activeChar.isParalyzed()
-				|| activeChar.isAlikeDead()
-				|| activeChar.isAfraid()
-				|| (activeChar.isCastingNow() && !(item.isPotion() || item.isElixir())))
+		if (activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead() || activeChar.isAfraid() || (activeChar.isCastingNow() && !(item.isPotion() || item.isElixir())))
 		{
 			return;
 		}
@@ -451,6 +572,61 @@ public final class UseItem extends L2GameClientPacket
 		if (!item.isEquipped() && (!item.getItem().checkCondition(activeChar, activeChar, true)))
 			return;
 		
+		if (Config.isServer(Config.DREAMS) && item.isPotion())
+		{
+			switch (item.getItemId())
+			{
+				case 726: // Mana Potion
+				case 728: // Greater Mana Potion
+				{
+					if (activeChar.calcStat(Stats.MANA_SHIELD_PERCENT, 0, activeChar, null) > 0)
+					{
+						activeChar.sendMessage("This potion canno't be used while Arcane Barrier is up.");
+						return;
+					}
+					
+					break;
+				}
+				/*
+				case 17093: // Lesser Healing Potion
+				case 726: // Mana Potion*/
+				case 1540: // Quick Healing Potion
+				case 37894: // Enhanced Warrior Quick Healing Potion
+				{
+					if (AttackStanceTaskManager.getInstance().getAttackStanceTask(activeChar))
+					{
+						activeChar.sendMessage("This potion is not useable at this time.");
+						return;
+					}
+					
+					break;
+				}
+				case 37764: // Superior CP Potion
+				case 38105: // Superior CP Potion
+				{
+					if (!activeChar.hasAwakaned())
+					{
+						activeChar.sendMessage("This potion can only be used by awakened characters.");
+						return;
+					}
+					
+					break;
+				}
+			}
+			
+			if (item.getItemId() == 728) // Greater Mana Potion
+			{
+				L2Abnormal abn = activeChar.getFirstEffect(46000);
+				
+				if (abn != null)
+					abn.exit();
+				
+				abn = activeChar.getFirstEffect(46001);
+				if (abn != null)
+					abn.exit();
+			}
+		}
+		
 		if (item.isEquipable())
 		{
 			// Don't allow hero equipment and restricted items during Olympiad
@@ -467,7 +643,7 @@ public final class UseItem extends L2GameClientPacket
 				case L2Item.SLOT_R_HAND:
 				{
 					// prevent players to equip weapon while wearing combat flag
-					if (activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem().getItemId() == 9819)
+					if ((activeChar.getActiveWeaponItem() != null) && (activeChar.getActiveWeaponItem().getItemId() == 9819))
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 						return;
@@ -508,9 +684,8 @@ public final class UseItem extends L2GameClientPacket
 					{
 						if (item.getItem() instanceof L2Weapon)
 						{
-							L2Weapon wpn = (L2Weapon)item.getItem();
-							
-							if (item.getItem().getCrystalType() < L2Item.CRYSTAL_R)
+							L2Weapon wpn = (L2Weapon) item.getItem();
+							if (!Config.isServer(Config.DREAMS) && (item.getItem().getCrystalType() < L2Item.CRYSTAL_R))
 							{
 								switch (activeChar.getRace())
 								{
@@ -532,7 +707,7 @@ public final class UseItem extends L2GameClientPacket
 									}
 								}
 							}
-							else if (isErtheiaMage && wpn.getItemType() == L2WeaponType.NONE)
+							if (isErtheiaMage && (wpn.getItemType() == L2WeaponType.NONE))
 							{
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 								return;
@@ -540,8 +715,8 @@ public final class UseItem extends L2GameClientPacket
 						}
 						else if (item.getItem() instanceof L2Armor)
 						{
-							L2Armor armor = (L2Armor)item.getItem();
-							if (isErtheiaMage && (armor.getItemType() == L2ArmorType.SHIELD || armor.getItemType() == L2ArmorType.SIGIL))
+							L2Armor armor = (L2Armor) item.getItem();
+							if (isErtheiaMage && ((armor.getItemType() == L2ArmorType.SHIELD) || (armor.getItemType() == L2ArmorType.SIGIL)))
 							{
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 								return;
@@ -563,8 +738,10 @@ public final class UseItem extends L2GameClientPacket
 				case L2Item.SLOT_FULL_ARMOR:
 				case L2Item.SLOT_LEGS:
 				{
-					if (activeChar.getRace() == Race.Kamael && item.getItem().getCrystalType() < L2Item.CRYSTAL_S
-							&& item.getItem().getItemType() == L2ArmorType.HEAVY)
+					if (Config.isServer(Config.DREAMS))
+						break;
+					
+					if ((activeChar.getRace() == Race.Kamael) && (item.getItem().getCrystalType() < L2Item.CRYSTAL_S) && (item.getItem().getItemType() == L2ArmorType.HEAVY))
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 						return;
@@ -573,7 +750,16 @@ public final class UseItem extends L2GameClientPacket
 				}
 				case L2Item.SLOT_DECO:
 				{
-					if (!item.isEquipped() && activeChar.getInventory().getMaxTalismanCount() == 0)
+					if (!item.isEquipped() && (activeChar.getInventory().getMaxTalismanCount() == 0))
+					{
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+						return;
+					}
+					break;
+				}
+				case L2Item.SLOT_BROOCH:
+				{
+					if (activeChar.getLevel() <= 85)
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 						return;
@@ -582,7 +768,13 @@ public final class UseItem extends L2GameClientPacket
 				}
 				case L2Item.SLOT_JEWELRY:
 				{
-					if (!item.isEquipped() && activeChar.getInventory().getMaxJewelryCount() == 0)
+					if (activeChar.getLevel() <= 85)
+					{
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
+						return;
+					}
+					
+					if (!item.isEquipped() && (activeChar.getInventory().getMaxJewelryCount() == 0))
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 						return;
@@ -591,17 +783,17 @@ public final class UseItem extends L2GameClientPacket
 				}
 			}
 			
-			if (activeChar.isCursedWeaponEquipped() && _itemId == 6408) // Don't allow to put formal wear
+			if (activeChar.isCursedWeaponEquipped() && (_itemId == 6408)) // Don't allow to put formal wear
 				return;
 			
 			if (activeChar.isAttackingNow())
 			{
-				ThreadPoolManager.getInstance().scheduleGeneral( new WeaponEquipTask(item,activeChar), (activeChar.getAttackEndTime()-TimeController.getGameTicks())*TimeController.MILLIS_IN_TICK);
+				ThreadPoolManager.getInstance().scheduleGeneral(new WeaponEquipTask(item, activeChar), (activeChar.getAttackEndTime() - TimeController.getGameTicks()) * TimeController.MILLIS_IN_TICK);
 				return;
 			}
 			// Equip or unEquip
 			if (FortSiegeManager.getInstance().isCombat(item.getItemId()))
-				return;	//no message
+				return; //no message
 			else if (activeChar.isCombatFlagEquipped())
 				return;
 			
@@ -609,14 +801,16 @@ public final class UseItem extends L2GameClientPacket
 		}
 		else
 		{
+			if (activeChar.isInOlympiadMode() && (_itemId == 37041))
+				return;
+			
 			L2Weapon weaponItem = activeChar.getActiveWeaponItem();
 			int itemid = item.getItemId();
 			if (itemid == 4393)
 			{
 				activeChar.sendPacket(new ShowCalculator(4393));
 			}
-			else if ((weaponItem != null && weaponItem.getItemType() == L2WeaponType.FISHINGROD)
-					&& ((itemid >= 6519 && itemid <= 6527) || (itemid >= 7610 && itemid <= 7613) || (itemid >= 7807 && itemid <= 7809) || (itemid >= 8484 && itemid <= 8486) || (itemid >= 8505 && itemid <= 8513)))
+			else if (((weaponItem != null) && (weaponItem.getItemType() == L2WeaponType.FISHINGROD)) && (((itemid >= 6519) && (itemid <= 6527)) || ((itemid >= 7610) && (itemid <= 7613)) || ((itemid >= 7807) && (itemid <= 7809)) || ((itemid >= 8484) && (itemid <= 8486)) || ((itemid >= 8505) && (itemid <= 8513))))
 			{
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				activeChar.broadcastUserInfo();
@@ -638,12 +832,6 @@ public final class UseItem extends L2GameClientPacket
 			}
 		}
 		//		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__14_USEITEM;
 	}
 	
 	@Override

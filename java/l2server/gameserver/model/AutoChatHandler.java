@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.ArrayList;
@@ -205,6 +206,7 @@ public class AutoChatHandler implements SpawnListener
 	 * If an auto chat instance is set to be "global", all instances matching the registered
 	 * NPC ID will be added to that chat instance.
 	 */
+	@Override
 	public void npcSpawned(L2Npc npc)
 	{
 		synchronized (_registeredChats)
@@ -218,7 +220,7 @@ public class AutoChatHandler implements SpawnListener
 			{
 				AutoChatInstance chatInst = _registeredChats.get(npcId);
 				
-				if (chatInst != null && chatInst.isGlobal())
+				if ((chatInst != null) && chatInst.isGlobal())
 					chatInst.addChatDefinition(npc);
 			}
 		}
@@ -538,8 +540,7 @@ public class AutoChatHandler implements SpawnListener
 				_chatTexts = chatTexts;
 				
 				if (Config.DEBUG)
-					Log.info("AutoChatHandler: Chat definition added for NPC ID " + _npcInstance.getNpcId() + " (Object ID = "
-							+ _npcInstance.getObjectId() + ").");
+					Log.info("AutoChatHandler: Chat definition added for NPC ID " + _npcInstance.getNpcId() + " (Object ID = " + _npcInstance.getObjectId() + ").");
 				
 				// If global chat isn't enabled for the parent instance,
 				// then handle the chat task locally.
@@ -630,6 +631,7 @@ public class AutoChatHandler implements SpawnListener
 				_objectId = pObjectId;
 			}
 			
+			@Override
 			public synchronized void run()
 			{
 				AutoChatInstance chatInst = _registeredChats.get(_runnerNpcId);
@@ -653,8 +655,7 @@ public class AutoChatHandler implements SpawnListener
 				}
 				
 				if (Config.DEBUG)
-					Log.info("AutoChatHandler: Running auto chat for " + chatDefinitions.length + " instances of NPC ID " + _npcId + "."
-							+ " (Global Chat = " + chatInst.isGlobal() + ")");
+					Log.info("AutoChatHandler: Running auto chat for " + chatDefinitions.length + " instances of NPC ID " + _npcId + "." + " (Global Chat = " + chatInst.isGlobal() + ")");
 				
 				for (AutoChatDefinition chatDef : chatDefinitions)
 				{
@@ -720,8 +721,7 @@ public class AutoChatHandler implements SpawnListener
 						}
 						
 						if (Config.DEBUG)
-							Log.fine("AutoChatHandler: Chat propogation for object ID " + chatNpc.getObjectId() + " (" + creatureName
-									+ ") with text '" + text + "' sent to " + nearbyPlayers.size() + " nearby players.");
+							Log.fine("AutoChatHandler: Chat propogation for object ID " + chatNpc.getObjectId() + " (" + creatureName + ") with text '" + text + "' sent to " + nearbyPlayers.size() + " nearby players.");
 					}
 					catch (Exception e)
 					{

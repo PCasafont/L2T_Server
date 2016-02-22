@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,7 +28,6 @@ import l2server.log.Log;
 public final class RequestLinkHtml extends L2GameClientPacket
 {
 	
-	private static final String REQUESTLINKHTML__C__20 = "[C] 20 RequestLinkHtml";
 	private String _link;
 	
 	@Override
@@ -46,12 +45,12 @@ public final class RequestLinkHtml extends L2GameClientPacket
 		
 		if (_link.contains("..") || !_link.contains(".htm"))
 		{
-			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '"+_link+"', skipped");
+			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + _link + "', skipped");
 			return;
 		}
 		try
 		{
-			String filename = ""+_link;
+			String filename = "" + _link;
 			NpcHtmlMessage msg = new NpcHtmlMessage(0);
 			msg.disableValidation();
 			msg.setFile(actor.getHtmlPrefix(), filename);
@@ -61,11 +60,5 @@ public final class RequestLinkHtml extends L2GameClientPacket
 		{
 			Log.log(Level.WARNING, "Bad RequestLinkHtml: ", e);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return REQUESTLINKHTML__C__20;
 	}
 }

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.GrandBosses.AntharasOpenWorld;
 
 import java.util.ArrayList;
@@ -44,33 +45,32 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Open World Antharas AI (Based on SANDMAN work)
  */
 
 public class AntharasOpenWorld extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug 	= false;
-	private static final String		_qn		= "AntharasOpenWorld";
-
+	private static final boolean _debug = false;
+	private static final String _qn = "AntharasOpenWorld";
+	
 	//Id's
-	private static final int			_maxMinions			= 30;
-	private static final int			_behemothDragon		= 29069;
-	private static final int			_taraskDragon		= 29225;
-	private static final int[]			_dragonBombers		= {29070, 29076};
-	private static final int			_antharasId			= 29068;
-	private static final int[]			_allMobIds			= {_behemothDragon, _taraskDragon, _dragonBombers[0], _dragonBombers[1], _antharasId};
-	private static final int			_heartOfWarding		= 13001;
-	private static final int			_teleportCubic		= 31859;
-	private static final L2BossZone		_bossZone 			= GrandBossManager.getInstance().getZone(179700, 113800, -7709);
+	private static final int _maxMinions = 30;
+	private static final int _behemothDragon = 29069;
+	private static final int _taraskDragon = 29225;
+	private static final int[] _dragonBombers = { 29070, 29076 };
+	private static final int _antharasId = 29068;
+	private static final int[] _allMobIds = { _behemothDragon, _taraskDragon, _dragonBombers[0], _dragonBombers[1], _antharasId };
+	private static final int _heartOfWarding = 13001;
+	private static final int _teleportCubic = 31859;
+	private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(179700, 113800, -7709);
 	
 	//Others
-	private static final List<L2Npc> 	_allMonsters 	= new ArrayList<L2Npc>();
-	private static L2Npc				_antharasBoss;
-	private static long					_LastAction;
+	private static final List<L2Npc> _allMonsters = new ArrayList<L2Npc>();
+	private static L2Npc _antharasBoss;
+	private static long _LastAction;
 	
-
 	public AntharasOpenWorld(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -111,14 +111,14 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			else
 			{
 				if (!_debug)
-				{	
-					if (anthyStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+				{
+					if ((anthyStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
 						return null;
-					else if (anthyStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					else if ((anthyStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
 						return null;
 					else if (anthyStatus == GrandBossManager.getInstance().FIGHTING)
 						return "13001-02.html";
-				}	
+				}
 			}
 			
 			if (anthyStatus == GrandBossManager.getInstance().ALIVE)
@@ -127,13 +127,13 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 				
 				_LastAction = System.currentTimeMillis();
 				
-				startQuestTimer("antharas_spawn_task_1",  Config.ANTHARAS_WAIT_TIME * 60000, null, null);
+				startQuestTimer("antharas_spawn_task_1", _debug ? 60000 : Config.ANTHARAS_WAIT_TIME * 60000, null, null);
 			}
 			
 			if (_debug)
 				allPlayers.add(player);
 			else
-				allPlayers.addAll(Config.ANTHARAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+				allPlayers.addAll(Config.ANTHARAS_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			
 			for (L2PcInstance enterPlayer : allPlayers)
 			{
@@ -156,7 +156,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("unlock_antharas"))
 		{
@@ -173,7 +173,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			
 			_allMonsters.add(_antharasBoss);
 			
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance)_antharasBoss);
+			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) _antharasBoss);
 			
 			_antharasBoss.setIsImmobilized(true);
 			
@@ -183,7 +183,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			
 			//Cameras
 			_bossZone.sendDelayedPacketToZone(16, new SpecialCamera(_antharasBoss.getObjectId(), 700, 13, -19, 0, 20000, 0, 0, 1, 0));
-			_bossZone.sendDelayedPacketToZone(3016, new SpecialCamera(_antharasBoss.getObjectId(), 700, 13, 0, 6000, 20000,0, 0, 1, 0));
+			_bossZone.sendDelayedPacketToZone(3016, new SpecialCamera(_antharasBoss.getObjectId(), 700, 13, 0, 6000, 20000, 0, 0, 1, 0));
 			_bossZone.sendDelayedPacketToZone(13016, new SpecialCamera(_antharasBoss.getObjectId(), 3700, 0, -3, 0, 10000, 0, 0, 1, 0));
 			_bossZone.sendDelayedPacketToZone(13216, new SpecialCamera(_antharasBoss.getObjectId(), 1100, 0, -3, 22000, 30000, 0, 0, 1, 0));
 			_bossZone.sendDelayedPacketToZone(24016, new SpecialCamera(_antharasBoss.getObjectId(), 1100, 0, -3, 300, 7000, 0, 0, 1, 0));
@@ -246,8 +246,8 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("spawn_minion_task"))
 		{
-			if (_antharasBoss != null && !_antharasBoss.isDead())
-			{	
+			if ((_antharasBoss != null) && !_antharasBoss.isDead())
+			{
 				List<Integer> minionsToSpawn = new ArrayList<Integer>();
 				for (int i = 1; i <= 5; i++)
 				{
@@ -267,16 +267,16 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 					boolean notFound = true;
 					int x = 175000;
 					int y = 112400;
-					int dt = (_antharasBoss.getX() - x) * (_antharasBoss.getX() - x) + (_antharasBoss.getY() - y) * (_antharasBoss.getY() - y);
+					int dt = ((_antharasBoss.getX() - x) * (_antharasBoss.getX() - x)) + ((_antharasBoss.getY() - y) * (_antharasBoss.getY() - y));
 					
-					while (tried++ < 25 && notFound)
+					while ((tried++ < 25) && notFound)
 					{
 						int rx = Rnd.get(175000, 179900);
 						int ry = Rnd.get(112400, 116000);
-						int rdt = (_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx) + (_antharasBoss.getY() - ry) * (_antharasBoss.getY() - ry);
+						int rdt = ((_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx)) + ((_antharasBoss.getY() - ry) * (_antharasBoss.getY() - ry));
 						
 						if (GeoData.getInstance().canSeeTarget(_antharasBoss.getX(), _antharasBoss.getY(), -7704, rx, ry, -7704))
-						{	
+						{
 							if (rdt < dt)
 							{
 								x = rx;
@@ -293,13 +293,13 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 					minion.setIsRunning(true);
 					_allMonsters.add(minion);
 				}
-			}	
+			}
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
-	public String onAttack (L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		if (_debug)
 			Log.warning(getName() + ": onAttack: " + npc.getName());
@@ -328,7 +328,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			
 			_bossZone.broadcastPacket(new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 			
-			addSpawn(_teleportCubic, 177615, 114941, -7709, 0, false, 600000);	//10min
+			addSpawn(_teleportCubic, 177615, 114941, -7709, 0, false, 600000); //10min
 			
 			startQuestTimer("unlock_antharas", GrandBossManager.getInstance().getUnlockTime(_antharasId), null, null);
 			
@@ -340,14 +340,14 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			int countMPHerb = Rnd.get(6, 18);
 			
 			for (int i = 0; i < countHPHerb; i++)
-			{	
-				((L2MonsterInstance)npc).dropItem(killer, 8602, 1);
+			{
+				((L2MonsterInstance) npc).dropItem(killer, 8602, 1);
 			}
 			
 			for (int i = 0; i < countMPHerb; i++)
-			{	
-				((L2MonsterInstance)npc).dropItem(killer, 8605, 1);
-			}	
+			{
+				((L2MonsterInstance) npc).dropItem(killer, 8605, 1);
+			}
 		}
 		
 		if (_allMonsters.contains(npc))
@@ -362,7 +362,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 		if (character instanceof L2PcInstance)
 		{
 			if (GrandBossManager.getInstance().getBossStatus(_antharasId) == GrandBossManager.getInstance().WAITING)
-				character.sendPacket(new ExSendUIEvent(0, 0, (int)(TimeUnit.MILLISECONDS.toSeconds((_LastAction + Config.ANTHARAS_WAIT_TIME * 60000) - System.currentTimeMillis())) , 0, "Antharas is coming..."));
+				character.sendPacket(new ExSendUIEvent(0, 0, (int) (TimeUnit.MILLISECONDS.toSeconds((_LastAction + (Config.ANTHARAS_WAIT_TIME * 60000)) - System.currentTimeMillis())), 0, "Antharas is coming..."));
 		}
 		return null;
 	}
@@ -377,7 +377,6 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 		}
 		return null;
 	}
-	
 	
 	public static void main(String[] args)
 	{

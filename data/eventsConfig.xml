@@ -1,36 +1,9 @@
 <list>
-	<prizeItem id="4358" min="2500" max="3200" chance="100" /> <!-- Bloody Pa'agrio -->
-	<prizeItem id="4358" min="1500" max="2000" chance="100" dependsOnPerformance="true" /> <!-- Bloody Pa'agrio -->
-	<prizeItem id="4356" min="1" max="1" chance="50" dependsOnPerformance="true" /> <!-- Gold Einhasad -->
-	<prizeCategory chance="70">
-		<item id="36235" min="1" max="1" chance="10" /> <!-- Istina's Necklace - 3-hour -->
-		<item id="36236" min="1" max="1" chance="10" /> <!-- Istina's Ring - 3-hour -->
-		<item id="36237" min="1" max="1" chance="10" /> <!-- Istina's Earring. 3-hour -->
-		<item id="36238" min="1" max="1" chance="10" /> <!-- Octavis' Ring - 3-hour -->
-		<item id="36239" min="1" max="1" chance="10" /> <!-- Octavis' Necklace - 3-hour -->
-		<item id="36240" min="1" max="1" chance="10" /> <!-- Octavis' Earring - 3-hour -->
-	</prizeCategory>
-	<prizeCategory chance="30">
-		<item id="36241" min="1" max="1" chance="10" /> <!-- Blessed Antharas' Earring - 3-hour -->
-		<item id="36242" min="1" max="1" chance="10" /> <!-- Blessed Valakas' Necklace - 3-hour -->
-		<item id="36243" min="1" max="1" chance="10" /> <!-- Earth Wyrm Heart Ring - 3-hour -->
-		<item id="36244" min="1" max="1" chance="10" /> <!-- Tauti's Ring - 3-hour -->
-	</prizeCategory>
-	<prizeCategory chance="10">
-		<item id="20204" min="1" max="1" chance="33" /> <!-- Queen Ant's Ring (Event) - 3-day -->
-		<item id="20207" min="1" max="1" chance="33" /> <!-- Baium's Ring - 3-day (Event) -->
-		<item id="22304" min="1" max="1" chance="34" /> <!-- Zaken's Earring (Event) - 3-day -->
-	</prizeCategory>
-	<prizeCategory chance="40">
-		<item id="20336" min="1" max="1" chance="50" /> <!-- XP Rune III (Lv. 1-100+) 50% - 5-hour -->
-		<item id="20342" min="1" max="1" chance="50" /> <!-- SP Rune 50% - 5-hour -->
-	</prizeCategory>
-	
 	<location id="0" name="Coliseum" globalZ="-3350" maxTeamPlayers="50" hill="false">
 		<spawn x="148391" y="46724" z="-3414" />
 		<spawn x="150547" y="46724" z="-3414" />
 	</location>
-	<location id="1" name="Emerald Square" globalZ="-11750" maxTeamPlayers="50" hill="false">
+	<!-- <location id="1" name="Emerald Square" globalZ="-11750" maxTeamPlayers="50" hill="false">
 		<spawn x="149210" y="144517" z="-12266" />
 		<spawn x="142473" y="143542" z="-11883" />
 	</location>
@@ -39,7 +12,7 @@
 		<spawn x="-113986" y="-248812" z="-2994" />
 		<spawn x="-115090" y="-248812" z="-2994" />
 		<spawn x="-115090" y="-249920" z="-2994" />
-	</location>
+	</location> -->
 	<location id="3" name="Tower of Naia" globalZ="-9300" maxTeamPlayers="50" hill="false">
 		<spawn x="14155" y="213145" z="-9357" />
 		<spawn x="18459" y="213145" z="-9357" />
@@ -100,11 +73,11 @@
 		<spawn x="147460" y="10550" z="-695" />
 		<spawn x="147460" y="13621" z="-1134" />
 	</location>
-	<location id="16" name="Anghel Waterfall" globalZ="-1900" maxTeamPlayers="15" hill="false">
+	<!--<location id="16" name="Anghel Waterfall" globalZ="-1900" maxTeamPlayers="15" hill="false">
 		<spawn x="169858" y="85194" z="-1990" />
 		<spawn x="167955" y="85385" z="-1992" />
 	</location>
-	<!--<location id="17" name="Tower of Insolence" globalZ="10126" maxTeamPlayers="30" hill="false">
+	<location id="17" name="Tower of Insolence" globalZ="10126" maxTeamPlayers="30" hill="false">
 		<spawn x="114045" y="15475" z="9563" />
 		<spawn x="112801" y="14177" z="10064" />
 	</location>-->
@@ -171,13 +144,13 @@
 		<spawn x="-111573" y="80650" z="-12912" />
 		<spawn x="-110468" y="79546" z="-12912" />
 		<spawn x="-110468" y="80650" z="-12912" />
-	</location>-->
+	</location>
 	<location id="31" name="Hot Springs Arena" globalZ="-2200" maxTeamPlayers="20" hill="false">
 		<spawn x="153490" y="-127530" z="-2235" />
 		<spawn x="153890" y="-127938" z="-2237" />
 		<spawn x="153890" y="-127139" z="-2237" />
 		<spawn x="154284" y="-127530" z="-2235" />
-	</location>
+	</location>-->
 	<location id="32" name="Rainbow Springs Chateau" globalZ="-1850" maxTeamPlayers="20" hill="false">
 		<spawn x="140365" y="-124085" z="-1903" />
 		<spawn x="139570" y="-123560" z="-1903" />

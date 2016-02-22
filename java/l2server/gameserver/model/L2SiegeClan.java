@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.ArrayList;
@@ -25,17 +26,14 @@ public class L2SiegeClan
 	// Instance
 	// ===============================================================
 	// Data Field
-	private int _clanId				= 0;
-	private List<L2Npc> _flag  = new ArrayList<L2Npc>();
+	private int _clanId = 0;
+	private List<L2Npc> _flag = new ArrayList<L2Npc>();
 	private int _numFlagsAdded = 0;
 	private SiegeClanType _type;
 	
 	public enum SiegeClanType
 	{
-		OWNER,
-		DEFENDER,
-		ATTACKER,
-		DEFENDER_PENDING
+		OWNER, DEFENDER, ATTACKER, DEFENDER_PENDING
 	}
 	
 	// =========================================================
@@ -62,13 +60,14 @@ public class L2SiegeClan
 	
 	public boolean removeFlag(L2Npc flag)
 	{
-		if (flag == null) return false;
+		if (flag == null)
+			return false;
 		boolean ret = getFlag().remove(flag);
 		//check if null objects or duplicates remain in the list.
 		//for some reason, this might be happening sometimes...
 		// delete false duplicates: if this flag got deleted, delete its copies too.
 		if (ret)
-			while (getFlag().remove(flag)) ;
+			while (getFlag().remove(flag));
 		
 		flag.deleteMe();
 		_numFlagsAdded--;
@@ -77,21 +76,31 @@ public class L2SiegeClan
 	
 	public void removeFlags()
 	{
-		for (L2Npc flag: getFlag())
+		for (L2Npc flag : getFlag())
 			removeFlag(flag);
 	}
 	
 	// =========================================================
 	// Property
-	public final int getClanId() { return _clanId; }
+	public final int getClanId()
+	{
+		return _clanId;
+	}
 	
 	public final List<L2Npc> getFlag()
 	{
-		if (_flag == null) _flag  = new ArrayList<L2Npc>();
+		if (_flag == null)
+			_flag = new ArrayList<L2Npc>();
 		return _flag;
 	}
 	
-	public SiegeClanType getType() { return _type; }
+	public SiegeClanType getType()
+	{
+		return _type;
+	}
 	
-	public void setType(SiegeClanType setType) { _type = setType; }
+	public void setType(SiegeClanType setType)
+	{
+		_type = setType;
+	}
 }

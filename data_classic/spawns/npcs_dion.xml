@@ -41,7 +41,7 @@
 	<!-- [NPC_t20_23_030917_05] -->
 	<spawn npcId="30609" x="17475" y="169556" z="-3493" heading="57344" respawn="60" /> <!-- Creta -->
 	<!-- [NPC_t20_23_030917_06] -->
-	<spawn npcId="30616" x="17744" y="189834" z="-2920" heading="20480" respawn="60" /> <!-- Kepra -->
+	<spawn npcId="30616" x="17744" y="189834" z="-3581" heading="20480" respawn="60" /> <!-- Kepra -->
 	<!-- [NPC_t20_23_030917_07] -->
 	<spawn npcId="30636" x="23471" y="188092" z="-3604" heading="16384" respawn="60" /> <!-- Camoniell -->
 	<!-- [20_23_NPC_01] -->
@@ -59,7 +59,7 @@
 	<!-- [20_21_NPC_01] -->
 	<spawn npcId="30483" x="17296" y="114176" z="-3439" heading="32768" respawn="60" /> <!-- Carsus -->
 	<!-- [20_21_NPC_02] -->
-	<spawn npcId="30484" x="17822" y="114737" z="-11685" heading="20717" respawn="60" /> <!-- Janssen -->
+	<spawn npcId="30484" x="17725" y="113906" z="-11671" heading="16384" respawn="60" /> <!-- Janssen -->
 	<!-- [20_21_NPC_03] -->
 	<spawn npcId="30487" x="17728" y="107703" z="-11849" heading="16384" respawn="60" /> <!-- Rombel -->
 	<!-- [20_21_NPC_04] -->
@@ -132,8 +132,8 @@
 	<spawn npcId="30065" x="19725" y="144567" z="-3088" heading="32768" respawn="60" /> <!-- Arnelle -->
 	<spawn npcId="30460" x="19472" y="144334" z="-3088" heading="8192" respawn="60" /> <!-- Cardien -->
 	<!-- [20_22_NPC_03] -->
-	<spawn npcId="30062" x="19313" y="146229" z="-3073" heading="49152" respawn="60" /> <!-- Sonia -->
-	<spawn npcId="30063" x="19223" y="146228" z="-3073" heading="49152" respawn="60" /> <!-- Lars -->
+	<spawn npcId="30062" x="19313" y="146229" z="-3069" heading="49152" respawn="60" /> <!-- Sonia -->
+	<spawn npcId="30063" x="19223" y="146228" z="-3069" heading="49152" respawn="60" /> <!-- Lars -->
 	<!-- [20_22_NPC_04] -->
 	<spawn npcId="30060" x="17999" y="144484" z="-3046" heading="6000" respawn="60" /> <!-- Sabrin -->
 	<spawn npcId="30061" x="17948" y="144560" z="-3046" heading="6000" respawn="60" /> <!-- Casey -->
@@ -231,4 +231,8 @@
 	</group>
 	<!-- [t20_21_qmob_031130] -->
 	<spawn npcId="27139" x="9209" y="127105" z="-3640" heading="0" respawn="180" /> <!-- Secret Keeper Tree -->
+	<!-- [core_cube] -->
+	<spawn npcId="29006" x="17726" y="108915" z="-6480" heading="0" respawn="216000" randomRespawn="82800" /> <!-- Core -->
+	<spawn npcId="31842" x="16502" y="110165" z="-6394" heading="0" respawn="0" /> <!-- Teleportation Cubic -->
+	<spawn npcId="31842" x="18948" y="110166" z="-6397" heading="0" respawn="0" /> <!-- Teleportation Cubic -->
 </list>

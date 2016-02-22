@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -25,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 public class GMViewItemList extends L2ItemListPacket
 {
 	//
-	private static final String _S__AD_GMVIEWITEMLIST = "[S] 9a GMViewItemList";
 	private L2ItemInstance[] _items;
 	private int _limit;
 	private String _playerName;
@@ -47,7 +47,6 @@ public class GMViewItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x9a);
 		writeS(_playerName);
 		writeD(_limit); // inventory limit
 		writeH(0x01); // show window ??
@@ -56,16 +55,6 @@ public class GMViewItemList extends L2ItemListPacket
 		for (L2ItemInstance item : _items)
 			writeItem(item);
 		
-
 		writeH(0x00);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__AD_GMVIEWITEMLIST;
 	}
 }

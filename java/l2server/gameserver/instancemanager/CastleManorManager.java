@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -193,7 +194,7 @@ public class CastleManorManager
 			// Next approve period already scheduled
 			isApproved = (_manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis());
 		else
-			isApproved = (_periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() && _manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis());
+			isApproved = ((_periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis()) && (_manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis()));
 		
 		for (Castle c : CastleManager.getInstance().getCastles())
 		{
@@ -298,6 +299,7 @@ public class CastleManorManager
 		
 		_scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				if (!isDisabled())
@@ -305,7 +307,9 @@ public class CastleManorManager
 					setUnderMaintenance(true);
 					Log.info("Manor System: Under maintenance mode started");
 					
-					_scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable() {
+					_scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+					{
+						@Override
 						public void run()
 						{
 							Log.info("Manor System: Next period started");
@@ -333,6 +337,7 @@ public class CastleManorManager
 		
 		_scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				if (!isDisabled())
@@ -348,7 +353,7 @@ public class CastleManorManager
 	public long getMillisToManorRefresh()
 	{
 		// use safe interval 120s to prevent double run
-		if (_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
+		if ((_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) < 120000)
 			setNewManorRefresh();
 		
 		Log.info("Manor System: New Schedule for manor refresh @ " + _manorRefresh.getTime());
@@ -368,7 +373,7 @@ public class CastleManorManager
 	public long getMillisToNextPeriodApprove()
 	{
 		// use safe interval 120s to prevent double run
-		if (_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
+		if ((_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) < 120000)
 			setNewPeriodApprove();
 		
 		Log.info("Manor System: New Schedule for period approve @ " + _periodApprove.getTime());
@@ -407,10 +412,10 @@ public class CastleManorManager
 				if (crop.getStartAmount() == 0)
 					continue;
 				// adding bought crops to clan warehouse
-				if (crop.getStartAmount() - crop.getAmount() > 0)
+				if ((crop.getStartAmount() - crop.getAmount()) > 0)
 				{
 					long count = crop.getStartAmount() - crop.getAmount();
-					count = count * 90 / 100;
+					count = (count * 90) / 100;
 					if (count < 1)
 					{
 						if (Rnd.nextInt(99) < 90)
@@ -462,7 +467,7 @@ public class CastleManorManager
 			
 			// Sending notification to a clan leader
 			L2PcInstance clanLeader = null;
-			clanLeader = L2World.getInstance().getPlayer(clan.getLeader().getName());
+			clanLeader = L2World.getInstance().getPlayer(clan.getLeaderName());
 			if (clanLeader != null)
 				clanLeader.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED));
 			
@@ -484,10 +489,7 @@ public class CastleManorManager
 			else if (c.getTreasury() < c.getManorCost(PERIOD_NEXT))
 			{
 				notFunc = true;
-				Log.info("Manor for castle " + c.getName()
-						+ " disabled, not enough adena in treasury: "
-						+ c.getTreasury() + ", " + c.getManorCost(PERIOD_NEXT)
-						+ " required.");
+				Log.info("Manor for castle " + c.getName() + " disabled, not enough adena in treasury: " + c.getTreasury() + ", " + c.getManorCost(PERIOD_NEXT) + " required.");
 				c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
 				c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
 			}
@@ -511,10 +513,7 @@ public class CastleManorManager
 				if (!cwh.validateCapacity(slots))
 				{
 					notFunc = true;
-					Log.info("Manor for castle " + c.getName()
-							+ " disabled, not enough free slots in clan warehouse: "
-							+ (Config.WAREHOUSE_SLOTS_CLAN - cwh.getSize())
-							+ ", but " + slots + " required.");
+					Log.info("Manor for castle " + c.getName() + " disabled, not enough free slots in clan warehouse: " + (Config.WAREHOUSE_SLOTS_CLAN - cwh.getSize()) + ", but " + slots + " required.");
 					c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
 					c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
 				}

@@ -3,43 +3,43 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
 
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import ai.group_template.L2AttackableAIScript;
 
-
 /**
  * @author LasTravel
- * 
+ *
  * Legah AI
- * 
+ *
  * Source:
  * 			- http://l2wiki.com/Land_of_Chaos
  */
 
 public class Legah extends L2AttackableAIScript
 {
-	private static final int	_legah			= 19475;
-	private static final int	_legahMinion	= 23332;	//One-armed Zombie
-
+	private static final int _legah = 19475;
+	private static final int _legahMinion = 23332; //One-armed Zombie
+	
 	public Legah(int id, String name, String descr)
 	{
 		super(id, name, descr);
 		
 		addKillId(_legah);
 	}
-
+	
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{

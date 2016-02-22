@@ -8,7 +8,7 @@
 			isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
 			allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 			
-	<accessLevel id="3" name="Event GM" nameColor="00FFFF" titleColor="00FFFF" childAccess="5;6;7"
+	<accessLevel id="3" name="Event GM" nameColor="FFF000" titleColor="FFF000" childAccess="5;6;7"
 			isGm="true" allowPeaceAttack="true" allowFixedRes="true" allowTransaction="true"
 			allowAltG="true" giveDamage="true" takeAggro="true" gainExp="true" />
 			

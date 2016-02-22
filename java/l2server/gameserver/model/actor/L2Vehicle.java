@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor;
 
 import java.util.ArrayList;
@@ -45,9 +46,9 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
 /**
- * 
+ *
  * @author DS
- * 
+ *
  */
 public abstract class L2Vehicle extends L2Character
 {
@@ -102,7 +103,7 @@ public abstract class L2Vehicle extends L2Character
 		_runState = 0;
 		_currentPath = path;
 		
-		if (_currentPath != null && _currentPath.length > 0)
+		if ((_currentPath != null) && (_currentPath.length > 0))
 		{
 			final VehiclePathPoint point = _currentPath[0];
 			if (point.moveSpeed > 0)
@@ -151,7 +152,7 @@ public abstract class L2Vehicle extends L2Character
 						
 						final double dx = point.x - getX();
 						final double dy = point.y - getY();
-						final double distance = Math.sqrt(dx*dx + dy*dy);
+						final double distance = Math.sqrt((dx * dx) + (dy * dy));
 						if (distance > 1) // vertical movement heading check
 							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.x, point.y));
 						
@@ -180,7 +181,7 @@ public abstract class L2Vehicle extends L2Character
 	@Override
 	public VehicleStat getStat()
 	{
-		return (VehicleStat)super.getStat();
+		return (VehicleStat) super.getStat();
 	}
 	
 	@Override
@@ -238,11 +239,11 @@ public abstract class L2Vehicle extends L2Character
 	
 	public boolean addPassenger(L2PcInstance player)
 	{
-		if (player == null || _passengers.contains(player))
+		if ((player == null) || _passengers.contains(player))
 			return false;
 		
 		// already in other vehicle
-		if (player.getVehicle() != null && player.getVehicle() != this)
+		if ((player.getVehicle() != null) && (player.getVehicle() != this))
 			return false;
 		
 		_passengers.add(player);
@@ -256,7 +257,8 @@ public abstract class L2Vehicle extends L2Character
 			_passengers.remove(player);
 		}
 		catch (Exception e)
-		{}
+		{
+		}
 	}
 	
 	public boolean isEmpty()
@@ -289,7 +291,7 @@ public abstract class L2Vehicle extends L2Character
 	public void payForRide(int itemId, int count, int oustX, int oustY, int oustZ)
 	{
 		final Collection<L2PcInstance> passengers = getKnownList().getKnownPlayersInRadius(1000);
-		if (passengers != null && !passengers.isEmpty())
+		if ((passengers != null) && !passengers.isEmpty())
 		{
 			L2ItemInstance ticket;
 			InventoryUpdate iu;
@@ -297,12 +299,12 @@ public abstract class L2Vehicle extends L2Character
 			{
 				if (player == null)
 					continue;
-				if (player.isInBoat() && player.getBoat() == this)
+				if (player.isInBoat() && (player.getBoat() == this))
 				{
 					if (itemId > 0)
 					{
 						ticket = player.getInventory().getItemByItemId(itemId);
-						if (ticket == null || player.getInventory().destroyItem("Boat", ticket, count, player, this) == null)
+						if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
 						{
 							player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_CORRECT_BOAT_TICKET));
 							player.teleToLocation(oustX, oustY, oustZ, true);
@@ -325,7 +327,7 @@ public abstract class L2Vehicle extends L2Character
 		
 		for (L2PcInstance player : _passengers)
 		{
-			if (player != null && player.getVehicle() == this)
+			if ((player != null) && (player.getVehicle() == this))
 			{
 				player.getPosition().setXYZ(getX(), getY(), getZ());
 				player.revalidateZone(false);
@@ -374,7 +376,7 @@ public abstract class L2Vehicle extends L2Character
 		}
 		
 		if (Config.MOVE_BASED_KNOWNLIST && updateKnownObjects)
-			this.getKnownList().findObjects();
+			getKnownList().findObjects();
 	}
 	
 	@Override
@@ -482,6 +484,7 @@ public abstract class L2Vehicle extends L2Character
 	{
 		@Override
 		public void detachAI()
-		{}
+		{
+		}
 	}
 }

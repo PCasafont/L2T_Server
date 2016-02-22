@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
@@ -36,9 +37,7 @@ import l2server.gameserver.util.Util;
  */
 public final class SetPrivateStoreListBuy extends L2GameClientPacket
 {
-	private static final String _C__91_SETPRIVATESTORELISTBUY = "[C] 91 SetPrivateStoreListBuy";
-	
-	private static final int BATCH_LENGTH = 44; // length of the one item
+	private static final int BATCH_LENGTH = 46; // length of the one item
 	
 	private Item[] _items = null;
 	
@@ -46,7 +45,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if ((count < 1) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -61,7 +60,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			long cnt = readQ();
 			long price = readQ();
 			
-			if (itemId < 1 || cnt < 1 || price < 0)
+			if ((itemId < 1) || (cnt < 1) || (price < 0))
 			{
 				_items = null;
 				return;
@@ -70,8 +69,9 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			readD(); // Unk
 			readD(); // Unk
 			readD(); // Unk
-
+			
 			readD(); // GoD ???
+			readH(); // GoD ???
 			
 			_items[i] = new Item(itemId, cnt, price);
 		}
@@ -138,8 +138,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		
 		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 		{
-			if (!(c instanceof L2PcInstance
-					&& ((L2PcInstance)c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
+			if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
 			{
 				player.sendPacket(new PrivateStoreManageListBuy(player));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
@@ -205,11 +204,5 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		{
 			return _count * _price;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__91_SETPRIVATESTORELISTBUY;
 	}
 }

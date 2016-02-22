@@ -1,146 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Avenger Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Avenger Focus. Deleted after event. -->
 	<item id="46000" type="EtcItem" name="Apocalypse Avenger Focus Capsule - Event" icon="icon.weapon_raksilion_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Fighter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Fighter Focus. Deleted after event. -->
 	<item id="46001" type="EtcItem" name="Apocalypse Fighter Focus Capsule - Event" icon="icon.weapon_kirche_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Stormer Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Stormer Damage Up. Deleted after event. -->
 	<item id="46002" type="EtcItem" name="Apocalypse Stormer Damage Up Capsule - Event" icon="icon.weapon_grave_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Thrower Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Thrower Focus. Deleted after event. -->
 	<item id="46003" type="EtcItem" name="Apocalypse Thrower Focus Capsule - Event" icon="icon.weapon_spina_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Shooter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Shooter Focus. Deleted after event. -->
 	<item id="46004" type="EtcItem" name="Apocalypse Shooter Focus Capsule - Event" icon="icon.weapon_medianox_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Buster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Buster Acumen. Deleted after event. -->
 	<item id="46005" type="EtcItem" name="Apocalypse Buster Acumen Capsule - Event" icon="icon.weapon_imerose_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Caster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Caster Acumen. Deleted after event. -->
 	<item id="46006" type="EtcItem" name="Apocalypse Caster Acumen Capsule - Event" icon="icon.weapon_yuke_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Apocalypse Retributer Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Apocalypse Retributer Acumen. Deleted after event. -->
 	<item id="46007" type="EtcItem" name="Apocalypse Retributer Acumen Capsule - Event" icon="icon.weapon_herencia_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Shaper Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Shaper Focus. Deleted after event. -->
 	<item id="46008" type="EtcItem" name="Specter Shaper Focus Capsule - Event" icon="icon.weapon_ignicion_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Cutter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Cutter Focus. Deleted after event. -->
 	<item id="46009" type="EtcItem" name="Specter Cutter Focus Capsule - Event" icon="icon.weapon_ninfea_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Slasher Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Slasher Focus. Deleted after event. -->
 	<item id="46010" type="EtcItem" name="Specter Slasher Focus Capsule - Event" icon="icon.weapon_skia_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Dualsword Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Dualsword Damage Up. Deleted after event. -->
 	<item id="46011" type="EtcItem" name="Specter Dualsword Damage Up Capsule - Event" icon="icon.weapon_r_dualsword_i21" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Dual Dagger Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Dual Dagger Focus. Deleted after event. -->
 	<item id="46012" type="EtcItem" name="Specter Dual Dagger Focus Capsule - Event" icon="icon.weapon_r_dualdagger_i21" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Dual Blunt Weapon Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Dual Blunt Weapon Damage Up. Deleted after event. -->
 	<item id="46013" type="EtcItem" name="Specter Dual Blunt Weapon Damage Up Capsule - Event" icon="icon.weapon_r_dualblunt_i21"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Avenger Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Avenger Focus. Deleted after event. -->
 	<item id="46014" type="EtcItem" name="Specter Avenger Focus Capsule - Event" icon="icon.weapon_ikeon_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Fighter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Fighter Focus. Deleted after event. -->
 	<item id="46015" type="EtcItem" name="Specter Fighter Focus Capsule - Event" icon="icon.weapon_deodos_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Stormer Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Stormer Damage Up. Deleted after event. -->
 	<item id="46016" type="EtcItem" name="Specter Stormer Damage Up Capsule - Event" icon="icon.weapon_transgredi_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Thrower Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Thrower Focus. Deleted after event. -->
 	<item id="46017" type="EtcItem" name="Specter Thrower Focus Capsule - Event" icon="icon.weapon_solenas_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Shooter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Shooter Focus. Deleted after event. -->
 	<item id="46018" type="EtcItem" name="Specter Shooter Focus Capsule - Event" icon="icon.weapon_lapis_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Buster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Buster Acumen. Deleted after event. -->
 	<item id="46019" type="EtcItem" name="Specter Buster Acumen Capsule - Event" icon="icon.weapon_zihel_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Caster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Caster Acumen. Deleted after event. -->
 	<item id="46020" type="EtcItem" name="Specter Caster Acumen Capsule - Event" icon="icon.weapon_alacer_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Specter Retributer Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Specter Retributer Acumen. Deleted after event. -->
 	<item id="46021" type="EtcItem" name="Specter Retributer Acumen Capsule - Event" icon="icon.weapon_rupe_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Shaper Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Shaper Focus. Deleted after event. -->
 	<item id="46022" type="EtcItem" name="Amaranthine Shaper Focus Capsule - Event" icon="icon.weapon_stanpid_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Cutter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Cutter Focus. Deleted after event. -->
 	<item id="46023" type="EtcItem" name="Amaranthine Cutter Focus Capsule - Event" icon="icon.weapon_plenitas_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Slasher Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Slasher Focus. Deleted after event. -->
 	<item id="46024" type="EtcItem" name="Amaranthine Slasher Focus Capsule - Event" icon="icon.weapon_bauen_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Dualsword Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Dualsword Damage Up. Deleted after event. -->
 	<item id="46025" type="EtcItem" name="Amaranthine Dualsword Damage Up Capsule - Event" icon="icon.weapon_r_dualsword_i21"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Dual Dagger Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Dual Dagger Focus. Deleted after event. -->
 	<item id="46026" type="EtcItem" name="Amaranthine Dual Dagger Focus Capsule - Event" icon="icon.weapon_r_dualdagger_i21"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Dual Blunt Weapon Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Dual Blunt Weapon Damage Up. Deleted after event. -->
 	<item id="46027" type="EtcItem" name="Amaranthine Dual Blunt Weapon Damage Up Capsule - Event" icon="icon.weapon_r_dualblunt_i21"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Avenger Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Avenger Focus. Deleted after event. -->
 	<item id="46028" type="EtcItem" name="Amaranthine Avenger Focus Capsule - Event" icon="icon.weapon_qutram_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Fighter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Fighter Focus. Deleted after event. -->
 	<item id="46029" type="EtcItem" name="Amaranthine Fighter Focus Capsule - Event" icon="icon.weapon_durga_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Stormer Damage Up. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Stormer Damage Up. Deleted after event. -->
 	<item id="46030" type="EtcItem" name="Amaranthine Stormer Damage Up Capsule - Event" icon="icon.weapon_crabel_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Thrower Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Thrower Focus. Deleted after event. -->
 	<item id="46031" type="EtcItem" name="Amaranthine Thrower Focus Capsule - Event" icon="icon.weapon_castron_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Shooter Focus. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Shooter Focus. Deleted after event. -->
 	<item id="46032" type="EtcItem" name="Amaranthine Shooter Focus Capsule - Event" icon="icon.weapon_stilla_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Buster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Buster Acumen. Deleted after event. -->
 	<item id="46033" type="EtcItem" name="Amaranthine Buster Acumen Capsule - Event" icon="icon.weaon_serapear_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Caster Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Caster Acumen. Deleted after event. -->
 	<item id="46034" type="EtcItem" name="Amaranthine Caster Acumen Capsule - Event" icon="icon.weapon_pilia_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Double-click to get a + 6 enchanted Amaranthine Retributer Acumen. -->
+	<!-- Double-click to get a + 6 enchanted 30-day Amaranthine Retributer Acumen. Deleted after event. -->
 	<item id="46035" type="EtcItem" name="Amaranthine Retributer Acumen Capsule - Event" icon="icon.weapon_shaelon_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
@@ -160,56 +160,56 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- STR + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46039" type="Weapon" name="Player Commendation Talisman - STR - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46039" type="Weapon" name="Player Commendation Talisman - STR - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- INT + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46040" type="Weapon" name="Player Commendation Talisman - INT - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46040" type="Weapon" name="Player Commendation Talisman - INT - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- DEX + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46041" type="Weapon" name="Player Commendation Talisman - DEX - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46041" type="Weapon" name="Player Commendation Talisman - DEX - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- WIT + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46042" type="Weapon" name="Player Commendation Talisman - WIT - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46042" type="Weapon" name="Player Commendation Talisman - WIT - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- CON + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46043" type="Weapon" name="Player Commendation Talisman - CON - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46043" type="Weapon" name="Player Commendation Talisman - CON - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- MEN + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46044" type="Weapon" name="Player Commendation Talisman - MEN - PC-exclusive" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46044" type="Weapon" name="Player Commendation Talisman - MEN - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Atk. Attribute + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46045" type="Weapon" name="Player Commendation Talisman - Atk. Attribute Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46045" type="Weapon" name="Player Commendation Talisman - Atk. Attribute Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Fire Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46046" type="Weapon" name="Player Commendation Talisman - Fire Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46046" type="Weapon" name="Player Commendation Talisman - Fire Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Water Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46047" type="Weapon" name="Player Commendation Talisman - Water Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46047" type="Weapon" name="Player Commendation Talisman - Water Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Wind Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46048" type="Weapon" name="Player Commendation Talisman - Wind Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46048" type="Weapon" name="Player Commendation Talisman - Wind Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Earth Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46049" type="Weapon" name="Player Commendation Talisman - Earth Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46049" type="Weapon" name="Player Commendation Talisman - Earth Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Holy Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46050" type="Weapon" name="Player Commendation Talisman - Holy Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46050" type="Weapon" name="Player Commendation Talisman - Holy Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Dark Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
-	<item id="46051" type="Weapon" name="Player Commendation Talisman - Dark Resistance Boost - PC-exclusive" icon="" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="46051" type="Weapon" name="Player Commendation Talisman - Dark Resistance Boost - PC-exclusive" icon="Icon.etc_allstat_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Soul Stone obtained from defeating Armed Veridan. When combined with Kechi's Soul Stone and Michaela's Soul Stone, it will be turned into a Dark Soul Stone. Take it to Head Priest of the Earth Daichir to be recognized for defeating  Earth Wyrm Trasken. -->
 	<item id="46052" type="EtcItem" name="Veridan's Soul Stone" icon="icon.low_star_stone_piece_i02" immediateEffect="1" crystalType="c"
@@ -244,10 +244,11 @@
 	</item>
 	<!--
 		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
-		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+		Enchantment, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46060" type="Weapon" name="Kelbim Dagger" icon="" weaponType="dagger" bodypart="rhand" crystalType="r" material="steel"
-			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46060" type="Weapon" name="Kelbim Dagger" icon="icon.weapon_kelbim_cutter_i01" weaponType="dagger" bodypart="rhand"
+			crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="647" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -258,11 +259,11 @@
 	</item>
 	<!--
 		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
-		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+		Enchantment, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46061" type="Weapon" name="Kelbim Dual Dagger" icon="" weaponType="dualdagger" bodypart="lrhand" crystalType="r"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46061" type="Weapon" name="Kelbim Dual Dagger" icon="icon.weapon_kelbim_dual_dagger_i01" weaponType="dualdagger"
+			bodypart="lrhand" crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="740" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -273,11 +274,11 @@
 	</item>
 	<!--
 		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
-		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+		Enchantment, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46062" type="Weapon" name="Kelbim Bow" icon="" weaponType="bow" bodypart="lrhand" crystalType="r" material="steel"
-			weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46062" type="Weapon" name="Kelbim Bow" icon="icon.weapon_kelbim_bow_i01" weaponType="bow" bodypart="lrhand" crystalType="r"
+			material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="1457" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -288,11 +289,11 @@
 	</item>
 	<!--
 		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
-		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+		Enchantment, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46063" type="Weapon" name="Kelbim Crossbow" icon="" weaponType="crossbow" bodypart="lrhand" crystalType="r" material="steel"
-			weight="0" soulshots="1" spiritshots="1" reuseDelay="400" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46063" type="Weapon" name="Kelbim Crossbow" icon="icon.weapon_kelbim_crossbow_i01" weaponType="crossbow" bodypart="lrhand"
+			crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="400" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="1312" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -563,7 +564,8 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Exclusive weapon of Kelbim. -->
-	<item id="46131" type="Weapon" name="Kelbim Exclusive Weapon" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46131" type="Weapon" name="Kelbim Exclusive Weapon" icon="icon.weapon_monster_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 		<set stat="pAtk" val="5" />
 		<set stat="mAtk" val="5" />
 		<set stat="pAtkSpd" val="433" />
@@ -748,16 +750,20 @@
 			isStackable="true">
 	</item>
 	<!-- Swimwear for male characters. -->
-	<item id="46179" type="Weapon" name="Male Swimwear No.1" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46179" type="Weapon" name="Male Swimwear No.1" icon="icon.london_olympic_bikini" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Swimwear for male characters. -->
-	<item id="46180" type="Weapon" name="Male Swimwear No.2" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46180" type="Weapon" name="Male Swimwear No.2" icon="icon.london_olympic_bikini" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Bikini for female characters. -->
-	<item id="46181" type="Weapon" name="Bikini No.1" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46181" type="Weapon" name="Bikini No.1" icon="icon.london_olympic_bikini" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- Bikini for female characters. -->
-	<item id="46182" type="Weapon" name="Bikini No.2" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46182" type="Weapon" name="Bikini No.2" icon="icon.london_olympic_bikini" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- A gift from Alegria for your character's birthday. Double-click to get 10 Happy Birthday Potions and a Birthday Hat. -->
 	<item id="46183" type="EtcItem" name="Joyful Birthday Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
@@ -775,8 +781,8 @@
 		2. Attribute Enchant: Fire/Water/Earth/Wind/Dark/Holy Atk. and Def. each increases by 30. 
 		3. Anakim Blessing : Acquired XP and SP + 3%.
 	-->
-	<item id="46185" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" bodypart="none" material="steel" weight="0"
-			crystal_type="none">
+	<item id="46185" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="BranchSys3.iconItem.g_agathion_anakim" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!--
 		Summons Anakim Holy Barrier, which is comprised of 5 Anakims.
@@ -786,8 +792,8 @@
 		2. Attribute Enchant: Fire/Water/Earth/Wind/Dark/Holy Atk. and Def. each increases by 30. 
 		3. Anakim Blessing : Acquired XP and SP + 3%.
 	-->
-	<item id="46186" type="Weapon" name="Agathion - Anakim Holy Barrier - 30-day" icon="" bodypart="none" material="steel" weight="0"
-			crystal_type="none">
+	<item id="46186" type="Weapon" name="Agathion - Anakim Holy Barrier - 30-day" icon="BranchSys3.iconItem.g_agathion_anakim"
+			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Anakim Holy Barrier (30-day). -->
 	<item id="46187" type="EtcItem" name="Agathion - Anakim Holy Barrier Pack - 30-day" icon="icon.event_high_oriental_park_i00"
@@ -810,29 +816,30 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Vampiric outfit. -->
-	<item id="46192" type="Weapon" name="Vampiric Outfit" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="46192" type="Weapon" name="Vampiric Outfit" icon="BranchSys3.iconArmar.g_co_vampiric_u_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Magic shirt for P. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a P. Def. effect is given. -->
-	<item id="46193" type="Weapon" name="Reflect Attack T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46193" type="Weapon" name="Physical Reflect Shirt" icon="icon.reflect_attack_shirt" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Magic shirt for M. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a M. Def. effect is given. -->
-	<item id="46194" type="Weapon" name="Reflect Magic T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46194" type="Weapon" name="Magical Reflect Shirt" icon="icon.reflect_magic_shirt" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Double-click to get 1 Shiny Elemental Shirt and 10 Elemental Shirt Enchant Scrolls. -->
-	<item id="46195" type="Weapon" name="Shiny Elemental T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46195" type="Weapon" name="Shiny Elemental Shirt Pack" icon="icon.ainharard_bac" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 	</item>
-	<!-- Double-click to get 1 Reflect Attack T-shirt and 10 Elemental Shirt Enchant Scrolls. -->
-	<item id="46196" type="Weapon" name="Reflect Attack T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<!-- Double-click to get 1 Physical Reflect Shirt and 10 Elemental Shirt Enchant Scrolls. -->
+	<item id="46196" type="Weapon" name="Physical Reflect Shirt Pack" icon="icon.reflect_attack_bac" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 	</item>
-	<!-- Double-click to get 1 Reflect Magic T-shirt and 10 Elemental Shirt Enchant Scrolls. -->
-	<item id="46197" type="Weapon" name="Reflect Magic T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<!-- Double-click to get 1 Magical Reflect Shirt and 10 Elemental Shirt Enchant Scrolls. -->
+	<item id="46197" type="Weapon" name="Magical Reflect Shirt Pack" icon="icon.reflect_magic_bac" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 	</item>
 	<!-- A shiny gold medal. Sell it at the shop for a lot of money. -->
 	<item id="46198" type="EtcItem" name="Gold Medal" icon="icon.etc_event_medal_i00" immediateEffect="1" crystalType="c" isStackable="true">
@@ -854,98 +861,111 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Halloween appearance. -->
-	<item id="46203" type="Weapon" name="Halloween Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46203" type="Weapon" name="Halloween Outfit" icon="icon.ev_wp_halloween" bodypart="alldress" crystalType="none"
+			material="steel" weight="0">
 	</item>
-	<item id="46204" type="Weapon" name="Halloween Shaper" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46204" type="Weapon" name="Halloween Shaper" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="685" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="433" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46205" type="Weapon" name="Halloween Cutter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46205" type="Weapon" name="Halloween Cutter" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="752" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="379" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46206" type="Weapon" name="Halloween Slasher" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46206" type="Weapon" name="Halloween Slasher" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="916" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46207" type="Weapon" name="Halloween Avenger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46207" type="Weapon" name="Halloween Avenger" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="752" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="379" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46208" type="Weapon" name="Halloween Fighter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46208" type="Weapon" name="Halloween Fighter" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="916" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46209" type="Weapon" name="Halloween Stormer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46209" type="Weapon" name="Halloween Stormer" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="752" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46210" type="Weapon" name="Halloween Thrower" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46210" type="Weapon" name="Halloween Thrower" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="1481" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="293" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46211" type="Weapon" name="Halloween Shooter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46211" type="Weapon" name="Halloween Shooter" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="1333" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46212" type="Weapon" name="Halloween Buster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46212" type="Weapon" name="Halloween Buster" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="602" />
 		<set stat="mAtk" val="486" />
 		<set stat="pAtkSpd" val="379" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46213" type="Weapon" name="Halloween Caster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46213" type="Weapon" name="Halloween Caster" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="pAtk" val="602" />
 		<set stat="mAtk" val="486" />
 		<set stat="pAtkSpd" val="379" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46214" type="Weapon" name="Halloween Retributer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46214" type="Weapon" name="Halloween Retributer" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="733" />
 		<set stat="mAtk" val="535" />
 		<set stat="pAtkSpd" val="325" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46215" type="Weapon" name="Halloween Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46215" type="Weapon" name="Halloween Dualsword" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="916" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46216" type="Weapon" name="Halloween Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46216" type="Weapon" name="Halloween Dual Dagger" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="752" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="433" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46217" type="Weapon" name="Halloween Dual Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46217" type="Weapon" name="Halloween Dual Blunt Weapon" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="916" />
 		<set stat="mAtk" val="414" />
 		<set stat="pAtkSpd" val="325" />
@@ -964,15 +984,15 @@
 	<item id="46220" type="EtcItem" name="Membership Card - Market Eleven - Event" icon="icon.ev_buff_11th" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get 20 Bloody or Dark Eternal Enhancement Stones. Will be deleted once the event ends. -->
+	<!-- 1st place prize for the L2 Market giveaway. Get a Bloody or Dark Eternal Enhancement Stones. Will be deleted once the event ends. -->
 	<item id="46221" type="EtcItem" name="L2 Market R99 Armor Enhancement Stone Pack - Event" icon="icon.etc_treasure_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get a + 8 Amaranthine weapon. Will be deleted once the event ends. -->
+	<!-- Get a + 8 Amaranthine weapon. Will be deleted once the event ends. -->
 	<item id="46222" type="EtcItem" name="L2 Market +8 Amaranthine Weapon Pack - Event" icon="icon.etc_treasure_box_i01" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get a Longing, Insanity, or Venir's Talisman. Will be deleted once the event ends. -->
+	<!-- 1st place prize for the L2 Market giveaway. Get a Desire, Insanity, or Venir's Talisman. Will be deleted once the event ends. -->
 	<item id="46223" type="EtcItem" name="L2 Market Seed Talisman Pack - Event" icon="icon.etc_treasure_box_i02" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
@@ -1068,17 +1088,19 @@
 	<item id="46246" type="EtcItem" name="Piero's Jackpot Box - Event" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<item id="46247" type="Weapon" name="Halloween Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46247" type="Weapon" name="Halloween Shield" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<set stat="sDef" val="546" />
 		<set stat="rShld" val="20" />
 		<baseSub stat="rEvas" val="8" />
 	</item>
-	<item id="46248" type="Weapon" name="Halloween Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46248" type="Weapon" name="Halloween Sigil" icon="icon.ev_wp_halloween" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- 11th anniversary's dual candle sword. -->
-	<item id="46249" type="Weapon" name="Dual Candle Sword - Event" icon="" weaponType="dual" bodypart="lrhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46249" type="Weapon" name="Dual Candle Sword - Event" icon="icon.ev_11th_candle" weaponType="dual" bodypart="lrhand"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="8" />
 		<set stat="mAtk" val="6" />
 		<set stat="pAtkSpd" val="200" />
@@ -1098,7 +1120,7 @@
 	<item id="46253" type="EtcItem" name="Venezia Rune Pack - 15-day" icon="icon.etc_pi_box_love_pack" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!-- For 1 hr., XP/SP gain + 100%, and changes the appearance of your armor into that of an NC Dinos uniform. Cannot be stacked with the Fall of the Dragon or XP Buff 50%. Will be deleted once the event ends. -->
+	<!-- For 1 hr., XP/SP gain + 100%, and changes the appearance of your armor into that of an NC Dinos uniform. Cannot be stacked with the Fall of the Dragon or XP Buff 50%. -->
 	<item id="46254" type="EtcItem" name="Dandy's Golden Ball" icon="icon.ev_dinos_baseball_gold" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
@@ -1122,16 +1144,18 @@
 			isStackable="true">
 	</item>
 	<!-- Dark Knight suit. -->
-	<item id="46260" type="Armor" name="Dark Knight Suit" icon="" defaultAction="equip" bodypart="alldress" crystalType="none"
-			material="steel" weight="0">
+	<item id="46260" type="Armor" name="Dark Knight Suit" icon="icon.dark_kninght" defaultAction="equip" bodypart="alldress"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Ninja outfit. -->
-	<item id="46261" type="Weapon" name="Ninja Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46261" type="Weapon" name="Ninja Outfit" icon="BranchSys3.icon1.g_co_ninja_u" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Metal suit. -->
-	<item id="46262" type="Weapon" name="Metal Suit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46262" type="Weapon" name="Metal Suit" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none" crystalType="none" material="steel"
+			weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Double-click to get 1 Freya's Frozen Scroll and 1 Freya's Art of Seduction. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
@@ -1226,8 +1250,8 @@
 			isStackable="true">
 	</item>
 	<!-- Fishing rod purchased from Santa Claus. Changes appearance to that into that of Santa Claus. Consumes 1 Fishing Shot. Will be deleted after the event. -->
-	<item id="46286" type="Weapon" name="Christmas Fishing Rod" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46286" type="Weapon" name="Christmas Fishing Rod" icon="icon.christmas_fishingrod_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="pAtkSpd" val="325" />
@@ -1250,48 +1274,48 @@
 			isStackable="true">
 	</item>
 	<!-- Event item. All Stats + 2 when equipped. Effect does not stack with additional Talismans of the same type. -->
-	<item id="46291" type="Weapon" name="Christmas Talisman - ALL STAT +2" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46291" type="Weapon" name="Christmas Talisman - ALL STAT +2" icon="icon.etc_xmas_talisman_i01" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. All Stats + 1 when equipped. Effect does not stack with additional Talismans of the same type. -->
-	<item id="46292" type="Weapon" name="Christmas Talisman - ALL STAT +1" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46292" type="Weapon" name="Christmas Talisman - ALL STAT +1" icon="icon.etc_xmas_talisman_i01" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. P. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46293" type="Weapon" name="Christmas Talisman: P. Skill Critical Damage - 1-hour" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46293" type="Weapon" name="Christmas Talisman: P. Skill Critical Damage - 1-hour" icon="icon.etc_xmas_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. M. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46294" type="Weapon" name="Christmas Talisman: M. Skill Critical Damage - 1-hour" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46294" type="Weapon" name="Christmas Talisman: M. Skill Critical Damage - 1-hour" icon="icon.etc_xmas_talisman_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. P. Atk. + 5000 and M. Def. + 5000 for 15 seconds. Cooldown is 10 min. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46295" type="Weapon" name="Christmas Talisman: Ultimate Defense - 1-hour" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46295" type="Weapon" name="Christmas Talisman: Ultimate Defense - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event Item. Defends against Debuffs 5 times for 15 seconds. Cooldown is 10 min. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46296" type="Weapon" name="Christmas Talisman: Debuff Resistance - 1-hour" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46296" type="Weapon" name="Christmas Talisman: Debuff Resistance - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. P. Atk. + 5% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46297" type="Weapon" name="Christmas Talisman: P. Atk. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46297" type="Weapon" name="Christmas Talisman: P. Atk. - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. M. Atk. + 5% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46298" type="Weapon" name="Christmas Talisman: M. Atk. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46298" type="Weapon" name="Christmas Talisman: M. Atk. - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. P. Def. + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46299" type="Weapon" name="Christmas Talisman: P. Def. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46299" type="Weapon" name="Christmas Talisman: P. Def. - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. M. Def. + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46300" type="Weapon" name="Christmas Talisman: M. Def. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46300" type="Weapon" name="Christmas Talisman: M. Def. - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Event item. All Attributes Defense + 30 when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
-	<item id="46301" type="Weapon" name="Christmas Talisman: Attribute Defense - 1-hour" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46301" type="Weapon" name="Christmas Talisman: Attribute Defense - 1-hour" icon="icon.etc_xmas_talisman_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Double-click to get a Christmas Talisman: P. Skill Critical Damage (1-hour). Will be deleted after the event. -->
 	<item id="46302" type="EtcItem" name="Christmas Talisman Pack - P. Skill Critical Damage" icon="icon.etc_box_of_adventure_4_i00"
@@ -1358,8 +1382,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46317" type="Weapon" name="Shadow Shaper" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46317" type="Weapon" name="Shadow Shaper" icon="icon.weapon_shadow_dagger" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="443" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="433" />
@@ -1371,8 +1395,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46318" type="Weapon" name="Shadow Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46318" type="Weapon" name="Shadow Cutter" icon="icon.weapon_shadow_onehand_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="526" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="379" />
@@ -1383,8 +1407,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46319" type="Weapon" name="Shadow Slasher" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46319" type="Weapon" name="Shadow Slasher" icon="icon.weapon_shadow_twohand_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="646" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="325" />
@@ -1395,8 +1419,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46320" type="Weapon" name="Shadow Fighter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46320" type="Weapon" name="Shadow Fighter" icon="icon.weapon_shadow_fist" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="646" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="325" />
@@ -1408,8 +1432,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46321" type="Weapon" name="Shadow Stormer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46321" type="Weapon" name="Shadow Stormer" icon="icon.weapon_shadow_spear" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="526" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="325" />
@@ -1421,8 +1445,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46322" type="Weapon" name="Shadow Thrower" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46322" type="Weapon" name="Shadow Thrower" icon="icon.weapon_shadow_bow" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="1031" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="293" />
@@ -1434,8 +1458,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46323" type="Weapon" name="Shadow Shooter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46323" type="Weapon" name="Shadow Shooter" icon="icon.weapon_shadow_crossbow" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="1012" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="325" />
@@ -1447,8 +1471,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46324" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
-			material="steel" weight="0">
+	<item id="46324" type="Weapon" name="Shadow Buster" icon="icon.weapon_shadow_magic_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="394" />
 		<set stat="mAtk" val="272" />
 		<set stat="pAtkSpd" val="379" />
@@ -1459,8 +1483,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46325" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			crystalType="none" material="steel" weight="0">
+	<item id="46325" type="Weapon" name="Shadow Retributer" icon="icon.weapon_shadow_magic_blunt" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="486" />
 		<set stat="mAtk" val="310" />
 		<set stat="pAtkSpd" val="325" />
@@ -1473,8 +1497,8 @@
 		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
-	<item id="46326" type="Weapon" name="Shadow Dualsword" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			crystalType="none" material="steel" weight="0">
+	<item id="46326" type="Weapon" name="Shadow Dualsword" icon="icon.weapon_shadow_dual_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="646" />
 		<set stat="mAtk" val="176" />
 		<set stat="pAtkSpd" val="325" />
@@ -1483,11 +1507,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46327" type="Weapon" name="Shadow Shaper" icon="" defaultAction="equip" weaponType="dagger" bodypart="rhand" crystalType="r99"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46327" type="Weapon" name="Shadow Shaper" icon="icon.weapon_shadow_dagger" defaultAction="equip" weaponType="dagger"
+			bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="575" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="12" />
@@ -1499,11 +1523,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46328" type="Weapon" name="Shadow Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="r99"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46328" type="Weapon" name="Shadow Cutter" icon="icon.weapon_shadow_onehand_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="658" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="8" />
@@ -1514,11 +1538,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46329" type="Weapon" name="Shadow Slasher" icon="" defaultAction="equip" weaponType="bigsword" bodypart="lrhand"
-			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
-			isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46329" type="Weapon" name="Shadow Slasher" icon="icon.weapon_shadow_twohand_sword" defaultAction="equip" weaponType="bigsword"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="800" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="8" />
@@ -1529,11 +1553,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46330" type="Weapon" name="Shadow Fighter" icon="" defaultAction="equip" weaponType="dualfist" bodypart="lrhand"
-			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
-			isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46330" type="Weapon" name="Shadow Fighter" icon="icon.weapon_shadow_fist" defaultAction="equip" weaponType="dualfist"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="800" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="6" />
@@ -1545,11 +1569,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46331" type="Weapon" name="Shadow Stormer" icon="" defaultAction="equip" weaponType="pole" bodypart="lrhand" crystalType="r99"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46331" type="Weapon" name="Shadow Stormer" icon="icon.weapon_shadow_spear" defaultAction="equip" weaponType="pole"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="658" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="8" />
@@ -1561,11 +1585,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46332" type="Weapon" name="Shadow Thrower" icon="" defaultAction="equip" weaponType="bow" bodypart="lrhand" crystalType="r99"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46332" type="Weapon" name="Shadow Thrower" icon="icon.weapon_shadow_bow" defaultAction="equip" weaponType="bow"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="1295" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="12" />
@@ -1577,11 +1601,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46333" type="Weapon" name="Shadow Shooter" icon="" defaultAction="equip" weaponType="crossbow" bodypart="lrhand"
-			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
-			isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46333" type="Weapon" name="Shadow Shooter" icon="icon.weapon_shadow_crossbow" defaultAction="equip" weaponType="crossbow"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="1166" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="12" />
@@ -1593,11 +1617,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, M. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46334" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="r99"
-			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
-			canBeUsedAsApp="false">
+	<item id="46334" type="Weapon" name="Shadow Buster" icon="icon.weapon_shadow_magic_sword" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="526" />
 		<set stat="mAtk" val="382" />
 		<set stat="rCrit" val="8" />
@@ -1608,11 +1632,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, M. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46335" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="bigblunt" bodypart="lrhand"
-			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
-			isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46335" type="Weapon" name="Shadow Retributer" icon="icon.weapon_shadow_magic_blunt" defaultAction="equip" weaponType="bigblunt"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="640" />
 		<set stat="mAtk" val="420" />
 		<set stat="rCrit" val="6" />
@@ -1625,11 +1649,11 @@
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
 		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
-		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+		Augmentation, crystallization, modification is impossible. Can bestow 1 Special Soul Crystal.
 	-->
-	<item id="46336" type="Weapon" name="Shadow Dualsword" icon="" defaultAction="equip" weaponType="dual" bodypart="lrhand"
-			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
-			isAugmentable="false" canBeUsedAsApp="false">
+	<item id="46336" type="Weapon" name="Shadow Dualsword" icon="icon.weapon_shadow_dual_sword" defaultAction="equip" weaponType="dual"
+			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
+			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
 		<set stat="pAtk" val="800" />
 		<set stat="mAtk" val="286" />
 		<set stat="rCrit" val="8" />
@@ -1642,43 +1666,43 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Sigel Knight Transformation appearance. -->
-	<item id="46338" type="Weapon" name="Sigel Knight Transformation Appearance" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46338" type="Weapon" name="Sigel Knight Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Tyrr Warrior Transformation appearance. -->
-	<item id="46339" type="Weapon" name="Tyrr Warrior Transformation Appearance" icon="" bodypart="alldress" crystalType="none"
-			material="steel" weight="0">
+	<item id="46339" type="Weapon" name="Tyrr Warrior Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="alldress"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Othell Rogue Transformation appearance. -->
-	<item id="46340" type="Weapon" name="Othell Rogue Transformation Appearance" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46340" type="Weapon" name="Othell Rogue Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Yul Archer Transformation appearance. -->
-	<item id="46341" type="Weapon" name="Yul Archer Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46341" type="Weapon" name="Yul Archer Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Feoh Wizard Transformation appearance. -->
-	<item id="46342" type="Weapon" name="Feoh Wizard Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46342" type="Weapon" name="Feoh Wizard Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Iss Enchanter Transformation appearance. -->
-	<item id="46343" type="Weapon" name="Iss Enchanter Transformation Appearance" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46343" type="Weapon" name="Iss Enchanter Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Wynn Summoner Transformation appearance. -->
-	<item id="46344" type="Weapon" name="Wynn Summoner Transformation Appearance" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46344" type="Weapon" name="Wynn Summoner Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Aeore Healer Transformation appearance. -->
-	<item id="46345" type="Weapon" name="Aeore Healer Transformation Appearance" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46345" type="Weapon" name="Aeore Healer Transformation Appearance" icon="BranchSys3.icon1.g_co_sf_u" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!--
@@ -1691,8 +1715,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy Atk. and Def. each increase by 30.
 	-->
-	<item id="46346" type="Weapon" name="Agathion - Blessed Virgo - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46346" type="Weapon" name="Agathion - Blessed Virgo - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Capricorn.
@@ -1704,8 +1728,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46347" type="Weapon" name="Agathion - Blessed Capricorn - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46347" type="Weapon" name="Agathion - Blessed Capricorn - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Libra.
@@ -1717,8 +1741,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46348" type="Weapon" name="Agathion - Blessed Libra - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46348" type="Weapon" name="Agathion - Blessed Libra - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Aries.
@@ -1730,8 +1754,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46349" type="Weapon" name="Agathion - Blessed Aries - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46349" type="Weapon" name="Agathion - Blessed Aries - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Taurus.
@@ -1743,8 +1767,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46350" type="Weapon" name="Agathion - Blessed Taurus - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46350" type="Weapon" name="Agathion - Blessed Taurus - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Leo.
@@ -1756,8 +1780,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46351" type="Weapon" name="Agathion - Blessed Leo - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46351" type="Weapon" name="Agathion - Blessed Leo - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Gemini.
@@ -1769,8 +1793,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46352" type="Weapon" name="Agathion - Blessed Gemini - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46352" type="Weapon" name="Agathion - Blessed Gemini - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Scorpio.
@@ -1782,8 +1806,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46353" type="Weapon" name="Agathion - Blessed Scorpio - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46353" type="Weapon" name="Agathion - Blessed Scorpio - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Aquarius.
@@ -1795,8 +1819,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46354" type="Weapon" name="Agathion - Blessed Aquarius - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46354" type="Weapon" name="Agathion - Blessed Aquarius - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Sagittarius.
@@ -1808,8 +1832,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46355" type="Weapon" name="Agathion - Blessed Sagittarius - 30-day" icon="" bodypart="none" crystalType="none"
-			material="steel" weight="0">
+	<item id="46355" type="Weapon" name="Agathion - Blessed Sagittarius - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!--
 		Summons Cancer.
@@ -1821,8 +1845,8 @@
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
-	<item id="46356" type="Weapon" name="Agathion - Blessed Cancer - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46356" type="Weapon" name="Agathion - Blessed Cancer - 30-day" icon="icon.agathion_magmeld_teleport" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Blessed Virgo (30-day). -->
 	<item id="46357" type="EtcItem" name="Agathion - Blessed Virgo Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
@@ -1904,159 +1928,1377 @@
 	<item id="46376" type="EtcItem" name="Shadow Weapon Coupon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<item id="46377" type="Weapon" name="Frozen One-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46377" type="Weapon" name="Frozen One-handed Sword" icon="BranchSys3.iconWeapon.g_tears_sword_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="92" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="379" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46378" type="Weapon" name="Frozen Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46378" type="Weapon" name="Frozen Dagger" icon="BranchSys3.iconWeapon.g_tears_dagger_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="80" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="433" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46379" type="Weapon" name="Frozen Two-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46379" type="Weapon" name="Frozen Two-handed Sword" icon="BranchSys3.iconWeapon.g_tears_twohand_sword_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="112" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46380" type="Weapon" name="Frozen Fist Weapon" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46380" type="Weapon" name="Frozen Fist Weapon" icon="BranchSys3.iconWeapon.g_tears_dualfist_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="112" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="325" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46381" type="Weapon" name="Frozen Spear" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46381" type="Weapon" name="Frozen Spear" icon="BranchSys3.iconWeapon.g_tears_pole_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="92" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="325" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46382" type="Weapon" name="Frozen Bow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46382" type="Weapon" name="Frozen Bow" icon="BranchSys3.iconWeapon.g_tears_bow_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="191" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="293" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46383" type="Weapon" name="Frozen Crossbow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46383" type="Weapon" name="Frozen Crossbow" icon="BranchSys3.iconWeapon.g_tears_twohand_crossbow_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="117" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="303" />
 		<baseSub stat="accCombat" val="1.5" />
 		<set stat="rCrit" val="10" />
 	</item>
-	<item id="46384" type="Weapon" name="Frozen One-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46384" type="Weapon" name="Frozen One-handed Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_blunt_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="92" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="379" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46385" type="Weapon" name="Frozen Two-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46385" type="Weapon" name="Frozen Two-handed Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_sword_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="90" />
 		<set stat="mAtk" val="79" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46386" type="Weapon" name="Frozen One-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46386" type="Weapon" name="Frozen One-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_blunt_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="92" />
 		<set stat="mAtk" val="54" />
 		<set stat="pAtkSpd" val="379" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46387" type="Weapon" name="Frozen Two-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46387" type="Weapon" name="Frozen Two-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_twohand_blunt_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="152" />
 		<set stat="mAtk" val="122" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46388" type="Weapon" name="Frozen Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46388" type="Weapon" name="Frozen Dualsword" icon="BranchSys3.iconWeapon.g_tears_dual_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="pAtk" val="107" />
 		<set stat="mAtk" val="51" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="6" />
 	</item>
-	<item id="46389" type="Weapon" name="Frozen Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46389" type="Weapon" name="Frozen Dual Dagger" icon="BranchSys3.iconWeapon.g_tears_dualdagger_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="107" />
 		<set stat="mAtk" val="181" />
 		<set stat="pAtkSpd" val="433" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<item id="46390" type="Weapon" name="Frozen Dual Blunt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46390" type="Weapon" name="Frozen Dual Blunt" icon="BranchSys3.iconWeapon.g_tears_dualblunt_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="186" />
 		<set stat="pAtkSpd" val="325" />
 		<set stat="rCrit" val="8" />
 	</item>
-	<item id="46391" type="Weapon" name="Frozen Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46391" type="Weapon" name="Frozen Shield" icon="BranchSys3.iconWeapon.g_tears_shield_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="25" />
 	</item>
-	<item id="46392" type="Weapon" name="Frozen Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	<item id="46392" type="Weapon" name="Frozen Sigil" icon="BranchSys3.iconWeapon.g_tears_sigil_i00" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<set stat="sDef" val="47" />
 		<set stat="rShld" val="20" />
 		<baseSub stat="rEvas" val="8" />
 	</item>
-	<item id="46393" type="Weapon" name="NPC Ashen Shadow Revolutionary Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46393" type="Weapon" name="NPC Ashen Shadow Revolutionary Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="7" />
 	</item>
-	<item id="46394" type="Weapon" name="NPC Ashen Shadow Revolutionary Mask" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46394" type="Weapon" name="NPC Ashen Shadow Revolutionary Mask" icon="icon.etc_party_mask_i00" bodypart="none"
+			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Item needed to craft a Shadow Weapon. Take a + 10 Shadow Weapon and 10 Shadow Ingots to Neti in Gludio to get an enhanced Shadow weapon. -->
 	<item id="46395" type="EtcItem" name="Shadow Ingot" icon="icon.etc_lump_yellow_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<item id="46396" type="Weapon" name="NPC Sigel Knight Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
-		<baseAdd stat="pDef" val="7" />
-	</item>
-	<item id="46397" type="Weapon" name="NPC Tyrr Warrior Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
-		<baseAdd stat="pDef" val="7" />
-	</item>
-	<item id="46398" type="Weapon" name="NPC Othell Rogue Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
-		<baseAdd stat="pDef" val="7" />
-	</item>
-	<item id="46399" type="Weapon" name="NPC Yul Archer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
-		<baseAdd stat="pDef" val="7" />
-	</item>
-	<item id="46400" type="Weapon" name="NPC Feoh Wizard Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
-		<baseAdd stat="pDef" val="7" />
-	</item>
-	<item id="46401" type="Weapon" name="NPC Iss Enchanter Transformation Cloak" icon="" bodypart="none" crystalType="none"
+	<item id="46396" type="Weapon" name="NPC Sigel Knight Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
 			material="steel" weight="0">
 		<baseAdd stat="pDef" val="7" />
 	</item>
-	<item id="46402" type="Weapon" name="NPC Wynn Summoner Transformation Cloak" icon="" bodypart="none" crystalType="none"
+	<item id="46397" type="Weapon" name="NPC Tyrr Warrior Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
 			material="steel" weight="0">
 		<baseAdd stat="pDef" val="7" />
 	</item>
-	<item id="46403" type="Weapon" name="NPC Aeore Healer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
-			weight="0">
+	<item id="46398" type="Weapon" name="NPC Othell Rogue Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
 		<baseAdd stat="pDef" val="7" />
 	</item>
-	<!-- Use it during your battle against Burnstein inside the Command Post, and one of the 5 Aden Vanguard members will appear randomly to support you. 30-minute. Can only be used inside the Command Post. -->
+	<item id="46399" type="Weapon" name="NPC Yul Archer Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
+	</item>
+	<item id="46400" type="Weapon" name="NPC Feoh Wizard Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
+	</item>
+	<item id="46401" type="Weapon" name="NPC Iss Enchanter Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
+	</item>
+	<item id="46402" type="Weapon" name="NPC Wynn Summoner Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
+	</item>
+	<item id="46403" type="Weapon" name="NPC Aeore Healer Transformation Cloak" icon="icon.armor_back04" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
+	</item>
+	<!-- The party leader can use it during the battle against Burnstein inside the Command Post on the 3rd floor to randomly summon one of the 5 Aden Vanguard members as reinforcement. Does not work on the 1st and 2nd floors. 30-minute. Can only be used inside the Command Post. -->
 	<item id="46404" type="EtcItem" name="Emergency Whistle - Aden Vanguard" icon="icon.etc_dragon_flute_i00" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Mr. K's gift basket. Obtain 50 My Teleport Scrolls, 1 My Teleport Book, 10 Feathers of Blessing, 5 Emperor's Vitality Tonics, 5 Emperor's Rune 2-hour Boxes, 25 Vitality Replenishing Potions. Also, randomly get one of the following: Chic Silver Chapeau/White Uniform Hat/Ribbon Hairband. -->
 	<item id="46405" type="EtcItem" name="Mr. K's Gift Basket" icon="icon.mrk_basket_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
+	</item>
+	<!-- For 30 minutes, P. Atk. + 5%, M. Atk. by 20%, P. Def. by 5%, M. Def. by 5%, Atk. Spd. by 5%, Casting Spd. by 5%, Max HP/MP by 5%, and XP and SP acquired through hunting increase by 30%. Cannot be used in the Olympiad. Cannot be applied along with event buffs such as Angel Cat's Blessing and Letter Collector's Gift. -->
+	<item id="46406" type="EtcItem" name="Angel Cat's Energy" icon="icon.skilltransform4" immediateEffect="1" weight="5" isStackable="true">
+	</item>
+	<!-- Tattered clothes are the remains of the monks you battled in the Monastery of Silence. The clothes are nothing more than rags after their years of use. Let's take them to Greymore in the Monastery of Silence. -->
+	<item id="46407" type="EtcItem" name="Tattered Monk Clothes" icon="icon.etc_leather_gray_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A torch that was requested by Blacksmith Vulcan at the Forge of the Gods, Lower Level. Collect these and take them to Vulcan. -->
+	<item id="46408" type="EtcItem" name="Torch" icon="icon.etc_torch_on_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Singsing from the Primeval Isle requested bones so that the natives can conduct research. Collect these and take them to Karakawei. -->
+	<item id="46409" type="EtcItem" name="Plain Dinosaur Bone" icon="icon.etc_piece_bone_black_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Dinosaur tissue used by magicians and Dwarven artisans for research. Collect these and take them to Dinn of Primeval Isle. -->
+	<item id="46410" type="EtcItem" name="Dinosaur Tissue" icon="icon.etc_bodypart_heart_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Ancient eggs used by magicians and Dwarven artisans for research. Collect these and take them to Dinn of Primeval Isle. -->
+	<item id="46411" type="EtcItem" name="Dinosaur Egg" icon="icon.etc_dragon_egg_i05" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Shard obtained from hunting Golems in the Pavel Ruins. Collect these and take them to Collector Gutenhagen. -->
+	<item id="46412" type="EtcItem" name="Broken Golem Shard" icon="icon.etc_plate_white_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Dinosaur fang necklace obtained for defeating the Elroki Raiders who attacked the Primeval Isle Wharf. Collect these and take them to Dinn of Primeval Isle to get a reward. -->
+	<item id="46413" type="EtcItem" name="Dinosaur Fang Necklace" icon="icon.etc_ketra_friendship_1_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- STR + 3, P. Atk. + 3% when equipped. Uses 2 hair accessory slots. Deleted after event. -->
+	<item id="46414" type="Armor" name="Sheep Hat - Physical - 7-day" icon="icon.accessory_sheep_cap_white_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- INT + 3, M. Atk. + 5% when equipped. Uses 2 hair accessory slots. Deleted after event. -->
+	<item id="46415" type="Armor" name="Sheep Hat - Magic - 7-day" icon="icon.accessory_sheep_cap_white_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- CON + 3, P./M. Def + 3% when equipped. Uses 2 hair accessory slots. Deleted after event. -->
+	<item id="46416" type="Armor" name="Sheep Hat - Defense - 7-day" icon="icon.accessory_sheep_cap_white_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Coupon received from Collector Gutenhagen in the Pavel Ruins. Exchange it for a Weapon Recipe through Gutenhagen. -->
+	<item id="46417" type="EtcItem" name="Gutenhagen's Weapon Recipe Coupon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- STR, INT, CON, DEX, WIT, MEN, LUC, CHA + 1 when placed in the inventory. Deleted after event. -->
+	<item id="46418" type="EtcItem" name="Perfect Charm - 14-day" icon="BranchSys3.lcon.g_rune_itemdrop_up" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Hat that looks like a white sheep. Uses 2 hair accessory slots. -->
+	<item id="46419" type="Armor" name="Sheep Hat" icon="icon.accessory_sheep_cap_white_i00" defaultAction="equip" bodypart="hairall"
+			immediateEffect="1" weight="10">
+	</item>
+	<!-- Bait for fishing. Catch the same items as when fishing with regular bait, and get more XP. Under Lv. 85 only. Deleted after event. -->
+	<item id="46420" type="EtcItem" name="Sheep Bait" icon="icon.etc_night_normal_lure" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch same items as when fishing with regular bait, and get more XP. Can be used by characters Lv. 85 - 94. Deleted after event. -->
+	<item id="46421" type="EtcItem" name="R Sheep Bait" icon="icon.etc_night_normal_lure" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch same items as when fishing with regular bait, and get more XP. Can be used by characters Lv. 95 - 98. Deleted after event. -->
+	<item id="46422" type="EtcItem" name="R95 Sheep Bait" icon="icon.etc_night_normal_lure" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch same items as when fishing with regular bait, and get more XP. Lv. 99 or above. Deleted after event. -->
+	<item id="46423" type="EtcItem" name="R99 Sheep Bait" icon="icon.etc_night_normal_lure" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!--
+		Hat that looks like a sheep. Uses 2 hair accessory slots.
+		<Active Skill>
+		1.Blessed Resurrection (Cooldown 60 min) 
+		2.Baa~: Can obtain 2 Sheep Bait Coupons when using the skill.(Only once a day) 
+		Deleted after event.
+	-->
+	<item id="46424" type="Armor" name="Sheep Hat - 14-day" icon="icon.accessory_sheep_cap_white_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Exchange for 30 Sheep Bait for your corresponding level through a fishing guild member. Deleted after event. -->
+	<item id="46425" type="EtcItem" name="Sheep Bait Coupon" icon="branchsys2.action5016" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- For NPC. -->
+	<item id="46426" type="Weapon" name="For NPC_Right Hand Glass" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
+			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+	</item>
+	<!-- For NPC. -->
+	<item id="46427" type="Weapon" name="For NPC_Right Hand Cup" icon="icon.weapon_iron_hammer_i00" defaultAction="equip" weaponType="blunt"
+			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+	</item>
+	<!-- For NPC. -->
+	<item id="46428" type="Weapon" name="For NPC_Right Hand Meat" icon="icon.weapon_iron_hammer_i00" defaultAction="equip" weaponType="blunt"
+			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+	</item>
+	<!-- For NPC. -->
+	<item id="46429" type="Armor" name="For NPC_Left Hand Glass" icon="icon.weapon_iron_hammer_i00" defaultAction="equip" weaponType="shield"
+			bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+	</item>
+	<!-- For NPC. -->
+	<item id="46430" type="Armor" name="For NPC_Left Hand Meat" icon="icon.weapon_iron_hammer_i00" defaultAction="equip" weaponType="shield"
+			bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+	</item>
+	<!-- Reward for killing monsters in the Blazing Swamp. Double-click to use. -->
+	<item id="46431" type="EtcItem" name="Harp's Reward Box" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Reward for defeating the pagans inside the Pagan Temple. Double-click to use. Cannot be used in the Olympiad. -->
+	<item id="46432" type="EtcItem" name="Divine Box" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Items made by angry spirits to use physical force. Collect these and take them to Karuda in the Crypts of Disgrace to receive a reward. -->
+	<item id="46433" type="EtcItem" name="Cursed Grave Goods" icon="icon.etc_totem_black_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Coupon received for helping Karuda in the Crypts of Disgrace. Exchange it for a reward through Karuda. -->
+	<item id="46434" type="EtcItem" name="Karuda's Reward Coupon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch fresh fish and whales. Has a very low chance of obtaining Wind Vitality Tonic, Heine Treasure Chest, or a Zodiac Agathion Box. Can be used by characters Lv. 85 - 89. -->
+	<item id="46435" type="EtcItem" name="Heine Special Bait (85-89)" icon="icon.etc_bm_lure_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch fresh fish and whales. Has a very low chance of obtaining Wind Vitality Tonic, Heine Treasure Chest, or a Zodiac Agathion Box. Can be used by characters Lv. 90 - 94. -->
+	<item id="46436" type="EtcItem" name="Heine Special Bait (90-94)" icon="icon.etc_bm_lure_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch fresh fish and whales. Has a very low chance of obtaining Wind Vitality Tonic, Heine Treasure Chest, or a Zodiac Agathion Box. Can be used by characters Lv. 95 - 98. -->
+	<item id="46437" type="EtcItem" name="Heine Special Bait (95-98)" icon="icon.etc_bm_lure_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Bait for fishing. Catch fresh fish and whales. Has a very low chance of obtaining Wind Vitality Tonic, Heine Treasure Chest, or a Zodiac Agathion Box. Lv. 99 or above. -->
+	<item id="46438" type="EtcItem" name="Heine Special Bait (99~)" icon="icon.etc_bm_lure_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Exchange for 1 Heine Special Bait of your choice through a fishing guild member. -->
+	<item id="46439" type="EtcItem" name="Heine Special Bait Coupon" icon="icon.etc_bm_lure_ticket" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a random item. -->
+	<item id="46440" type="EtcItem" name="Heine Treasure Chest" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a random Zodiac Agathion. -->
+	<item id="46441" type="EtcItem" name="Zodiac Agathion Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get 300 Heine Special Bait Coupons and 300 Fishing Shots. -->
+	<item id="46442" type="EtcItem" name="Heine Special Fishing Tools - 300 Pack" icon="icon.etc_bm_lure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get 3,000 Heine Special Bait Coupons, 3,000 Fishing Shots, and 1 Fishing Rod Pack (30-day). -->
+	<item id="46443" type="EtcItem" name="Heine Special Fishing Tools - 3,000 Pack" icon="icon.etc_bm_lure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46444" type="EtcItem" name="Kain's Soul Crystal - Stage 1" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46445" type="EtcItem" name="Kain's Soul Crystal - Stage 2" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46446" type="EtcItem" name="Kain's Soul Crystal - Stage 3" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46447" type="EtcItem" name="Kain's Soul Crystal - Stage 4" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46448" type="EtcItem" name="Kain's Soul Crystal - Stage 5" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46449" type="EtcItem" name="Kain's Soul Crystal - Stage 6" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46450" type="EtcItem" name="Kain's Soul Crystal - Stage 7" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46451" type="EtcItem" name="Kain's Soul Crystal - Stage 8" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46452" type="EtcItem" name="Kain's Soul Crystal - Stage 9" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46453" type="EtcItem" name="Kain's Soul Crystal - Stage 10" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46454" type="EtcItem" name="Kain's Soul Crystal - Stage 11" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46455" type="EtcItem" name="Kain's Soul Crystal - Stage 12" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46456" type="EtcItem" name="Kain's Soul Crystal - Stage 13" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46457" type="EtcItem" name="Kain's Soul Crystal - Stage 14" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46458" type="EtcItem" name="Kain's Soul Crystal - Stage 15" icon="icon.ensoul_big_p" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46459" type="EtcItem" name="Mermoden's Soul Crystal - Stage 1" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46460" type="EtcItem" name="Mermoden's Soul Crystal - Stage 2" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46461" type="EtcItem" name="Mermoden's Soul Crystal - Stage 3" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46462" type="EtcItem" name="Mermoden's Soul Crystal - Stage 4" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46463" type="EtcItem" name="Mermoden's Soul Crystal - Stage 5" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46464" type="EtcItem" name="Mermoden's Soul Crystal - Stage 6" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46465" type="EtcItem" name="Mermoden's Soul Crystal - Stage 7" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46466" type="EtcItem" name="Mermoden's Soul Crystal - Stage 8" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46467" type="EtcItem" name="Mermoden's Soul Crystal - Stage 9" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46468" type="EtcItem" name="Mermoden's Soul Crystal - Stage 10" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46469" type="EtcItem" name="Mermoden's Soul Crystal - Stage 11" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46470" type="EtcItem" name="Mermoden's Soul Crystal - Stage 12" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46471" type="EtcItem" name="Mermoden's Soul Crystal - Stage 13" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46472" type="EtcItem" name="Mermoden's Soul Crystal - Stage 14" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46473" type="EtcItem" name="Mermoden's Soul Crystal - Stage 15" icon="icon.ensoul_big_m" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46474" type="EtcItem" name="Leona's Soul Crystal - Stage 1" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46475" type="EtcItem" name="Leona's Soul Crystal - Stage 2" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46476" type="EtcItem" name="Leona's Soul Crystal - Stage 3" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46477" type="EtcItem" name="Leona's Soul Crystal - Stage 4" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46478" type="EtcItem" name="Leona's Soul Crystal - Stage 5" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46479" type="EtcItem" name="Leona's Soul Crystal - Stage 6" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46480" type="EtcItem" name="Leona's Soul Crystal - Stage 7" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46481" type="EtcItem" name="Leona's Soul Crystal - Stage 8" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46482" type="EtcItem" name="Leona's Soul Crystal - Stage 9" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46483" type="EtcItem" name="Leona's Soul Crystal - Stage 10" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46484" type="EtcItem" name="Leona's Soul Crystal - Stage 11" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46485" type="EtcItem" name="Leona's Soul Crystal - Stage 12" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46486" type="EtcItem" name="Leona's Soul Crystal - Stage 13" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46487" type="EtcItem" name="Leona's Soul Crystal - Stage 14" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46488" type="EtcItem" name="Leona's Soul Crystal - Stage 15" icon="icon.ensoul_big_pp" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46489" type="EtcItem" name="Pantheon's Soul Crystal - Stage 1" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46490" type="EtcItem" name="Pantheon's Soul Crystal - Stage 2" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46491" type="EtcItem" name="Pantheon's Soul Crystal - Stage 3" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46492" type="EtcItem" name="Pantheon's Soul Crystal - Stage 4" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46493" type="EtcItem" name="Pantheon's Soul Crystal - Stage 5" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46494" type="EtcItem" name="Pantheon's Soul Crystal - Stage 6" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46495" type="EtcItem" name="Pantheon's Soul Crystal - Stage 7" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46496" type="EtcItem" name="Pantheon's Soul Crystal - Stage 8" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46497" type="EtcItem" name="Pantheon's Soul Crystal - Stage 9" icon="icon.ensoul_big_mm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46498" type="EtcItem" name="Pantheon's Soul Crystal - Stage 10" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46499" type="EtcItem" name="Pantheon's Soul Crystal - Stage 11" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46500" type="EtcItem" name="Pantheon's Soul Crystal - Stage 12" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46501" type="EtcItem" name="Pantheon's Soul Crystal - Stage 13" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46502" type="EtcItem" name="Pantheon's Soul Crystal - Stage 14" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46503" type="EtcItem" name="Pantheon's Soul Crystal - Stage 15" icon="icon.ensoul_big_mm" immediateEffect="1"
+			weight="20" isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46504" type="EtcItem" name="Lionel's Soul Crystal - Stage 1" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46505" type="EtcItem" name="Lionel's Soul Crystal - Stage 2" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46506" type="EtcItem" name="Lionel's Soul Crystal - Stage 3" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. Can be compounded to upgrade and if it succeeds, the power of the soul sealed within the Soul Crystal will be enhanced. -->
+	<item id="46507" type="EtcItem" name="Lionel's Soul Crystal - Stage 4" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46508" type="EtcItem" name="Lionel's Soul Crystal - Stage 5" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46509" type="EtcItem" name="Lionel's Soul Crystal - Stage 6" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46510" type="EtcItem" name="Lionel's Soul Crystal - Stage 7" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46511" type="EtcItem" name="Lionel's Soul Crystal - Stage 8" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46512" type="EtcItem" name="Lionel's Soul Crystal - Stage 9" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46513" type="EtcItem" name="Lionel's Soul Crystal - Stage 10" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46514" type="EtcItem" name="Lionel's Soul Crystal - Stage 11" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46515" type="EtcItem" name="Lionel's Soul Crystal - Stage 12" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46516" type="EtcItem" name="Lionel's Soul Crystal - Stage 13" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46517" type="EtcItem" name="Lionel's Soul Crystal - Stage 14" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- Crystal containing the soul of a monster. Can bestow special abilities to weapons. -->
+	<item id="46518" type="EtcItem" name="Lionel's Soul Crystal - Stage 15" icon="icon.ensoul_big_pm" immediateEffect="1" weight="20"
+			isStackable="false">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-4 to absorb the soul. -->
+	<item id="46519" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-5 to absorb the soul. -->
+	<item id="46520" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-6 to absorb the soul. -->
+	<item id="46521" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-7 to absorb the soul. -->
+	<item id="46522" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-8 to absorb the soul. -->
+	<item id="46523" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a soul, and use a Soul Crystal Stage 1-9 to absorb the soul. -->
+	<item id="46524" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within, received from a blacksmith to get some practice with Soul Crystals. Double-click to summon a Soul and use the Practice Soul Crystal Stage 1 to absorb the Soul. -->
+	<item id="46525" type="EtcItem" name="Practice Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A Soul Crystal received from a blacksmith for practice. Use this to bestow an effect on to the Practice StormBringer you received from the blacksmith. -->
+	<item id="46526" type="EtcItem" name="Practice Soul Crystal - Stage 1" icon="icon.ensoul_big_old" immediateEffect="1" weight="20"
+			isStackable="true">
+	</item>
+	<!--
+		Can summon an Agathion - Shiny when equipped.
+		
+		<Active Skill>
+		1. Agathion Teleport: Lets you teleport to Town of Aden / Town of Rune / Talking Island Village / Town of Giran / Town of Goddard / Town of Schuttgart. (Cooldown 30 minutes)
+		
+		<Item Skill>
+		1. Chase Down: Increases Speed by 66 for 15 seconds.
+		<Item Skill>
+		2. Sneak: Protected from preemptive attacks from monsters.
+	-->
+	<item id="46527" type="Armor" name="Agathion - Shiny" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip" bodypart="shirt"
+			immediateEffect="1" weight="30">
+	</item>
+	<!-- Magic pencil with a sharp tip. Provided to and only used by Server Keepers. -->
+	<item id="46528" type="Weapon" name="Server Keeper's Magic Pencil" icon="BranchSys2.icon.g_pencil_of_servermaster" defaultAction="equip"
+			weaponType="pole" bodypart="lrhand" randomDamage="1" immediateEffect="1" weight="100" mpConsume="4">
+	</item>
+	<!-- Scholar's hat showing knowledge. Gold tassel is attached. -->
+	<item id="46529" type="Armor" name="Manor Scholar's Hat" icon="BranchSys2.icon.g_graduation_cap_gold" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. of party members are increased. A strange power changes the appearance of your weapon. Does not stack with Battle Rhapsody Dance. Cannot be used in the Olympiad. -->
+	<item id="46530" type="EtcItem" name="Top-grade Love Potion - Party" icon="icon.love_potion_party" immediateEffect="1" crystalType="c"
+			weight="2" isStackable="true">
+	</item>
+	<!-- A flash grenade that will let you identify hidden targets. -->
+	<item id="46531" type="EtcItem" name="Flash Grenade" icon="icon.etc_fairy_fire_i00" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
+	</item>
+	<!-- For NPC. -->
+	<item id="46532" type="Weapon" name="For NPC_Right Hand Ladle" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
+			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+	</item>
+	<!-- Changes the appearance of a weapon to that of White Day for 1 hour. Deleted after event. -->
+	<item id="46533" type="EtcItem" name="Hansel's Weapon Crafting Potion - Event" icon="icon.etc_whiteday_herb" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Item imbued with Gretel's magic. Can summon a friend every 30 minutes. Target a party member and double-click to use the skill. Deleted after event. -->
+	<item id="46534" type="EtcItem" name="Gretel's Friend Summon Candy - Event" icon="icon.etc_whiteday_candy" immediateEffect="1"
+			crystalType="c" weight="5" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Blessed Antharas' Earring, Blessed Valakas' Necklace, Tauti's Ring, Earth Wyrm Heart Ring, or Blessed Zaken's Earring (7-day). Cannot be used in the Olympiad. Deleted after event. -->
+	<item id="46535" type="EtcItem" name="Rare Accessory Box - 7-day" icon="icon.etc_marguene_collection_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get one of the following: Expertise Rune Pack R, R95, or R99. Deleted after event. -->
+	<item id="46536" type="EtcItem" name="Expertise Rune Pack - Event" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Crystal fragment containing the soul of one of the progatonists of the stories told in the Mystic Tavern. Take 10 of these to Settlen in the Mystic Tavern to exchange for a Mystic Soul Crystal. -->
+	<item id="46537" type="EtcItem" name="Mystic Soul Crystal Fragment" icon="icon.etc_broken_crystal_green_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<item id="46538" type="Armor" name="Tauti Breastplate - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_upbody" defaultAction="equip"
+			bodypart="chest" immediateEffect="1" crystalCount="1" crystalType="none" weight="7520">
+	</item>
+	<item id="46539" type="Armor" name="Tauti Gaiters - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_downbody" defaultAction="equip"
+			bodypart="legs" immediateEffect="1" crystalCount="1" crystalType="none" weight="3170">
+	</item>
+	<item id="46540" type="Armor" name="Tauti Gauntlets - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_gloves" defaultAction="equip"
+			bodypart="gloves" immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+	</item>
+	<item id="46541" type="Armor" name="Tauti Boots - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_shoes" defaultAction="equip"
+			bodypart="feet" immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+	</item>
+	<item id="46542" type="Armor" name="Kelbim Leather Helmet - Not In Use" icon="icon.armor_leather_helmet_i00" defaultAction="equip"
+			bodypart="head" immediateEffect="1" crystalCount="1" crystalType="none" weight="530">
+	</item>
+	<item id="46543" type="Armor" name="Kelbim Leather Armor - Light Armor" icon="icon.kelbim_light_upbody" defaultAction="equip"
+			bodypart="chest" immediateEffect="1" crystalCount="1" crystalType="none" weight="4140">
+	</item>
+	<item id="46544" type="Armor" name="Kelbim Leather Leggings - Light Armor" icon="icon.kelbim_light_downbody" defaultAction="equip"
+			bodypart="legs" immediateEffect="1" crystalCount="1" crystalType="none" weight="1320">
+	</item>
+	<item id="46545" type="Armor" name="Kelbim Leather Gloves - Light Armor" icon="icon.kelbim_light_gloves" defaultAction="equip"
+			bodypart="gloves" immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+	</item>
+	<item id="46546" type="Armor" name="Kelbim Leather Boots - Light Armor" icon="icon.kelbim_light_shoes" defaultAction="equip"
+			bodypart="feet" immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+	</item>
+	<item id="46547" type="Armor" name="Freya Circlet - Not In Use" icon="icon.armor_circlet_i00" defaultAction="equip" bodypart="head"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="530">
+	</item>
+	<item id="46548" type="Armor" name="Freya Tunic - Robe" icon="icon.freya_robe_upbody" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="1750">
+	</item>
+	<item id="46549" type="Armor" name="Freya Stockings - Robe" icon="icon.freya_robe_downbody" defaultAction="equip" bodypart="legs"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="850">
+	</item>
+	<item id="46550" type="Armor" name="Freya Gloves - Robe" icon="icon.freya_robe_gloves" defaultAction="equip" bodypart="gloves"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+	</item>
+	<item id="46551" type="Armor" name="Freya Shoes - Robe" icon="icon.freya_robe_shoes" defaultAction="equip" bodypart="feet"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+	</item>
+	<!-- Item obtained from succeeding at the Soul Crystal practice. -->
+	<item id="46552" type="EtcItem" name="Practice Soul Crystal - Stage 2" icon="icon.etc_soul_stone_i00" immediateEffect="1"
+			weight="20" isStackable="true">
+	</item>
+	<!-- Crystal fragment containing the soul of one of the progatonists of the stories told in the Mystic Tavern. Since it contains the soul of a legend within the stories, it can bestow a special Soul Crystal effect to weapons. -->
+	<item id="46553" type="EtcItem" name="Mystic Soul Crystal" icon="icon.ensoul_big_ep" immediateEffect="1" weight="20" isStackable="false">
+	</item>
+	<!-- Mystic Tavern - Item that can only be used in Tauti's dungeon. Use it near the Sealed Tablet to reduce the defense of the tablet. Deleted 1 hour after acquisition. -->
+	<item id="46554" type="EtcItem" name="Flame Flower" icon="icon.etc_flower_i01" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Mystic Tavern - Use it on the Altar of Earth in Kelbim's dungeon to seal the altar. -->
+	<item id="46555" type="EtcItem" name="Altar of Earth Sealing Stone" icon="icon.etc_black_freezing_core_i00" immediateEffect="1"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Mystic Tavern - Use it on the Altar of Wind in Kelbim's dungeon to seal the altar. -->
+	<item id="46556" type="EtcItem" name="Altar of Wind Sealing Stone" icon="icon.sealed_bluelycan_neckalce_gem" immediateEffect="1"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Item obtained from defeating the monsters in Hellbound's Phantasmal Ridge. Collect these and take them to Leona Blackbird in the Refugee Village. -->
+	<item id="46557" type="EtcItem" name="High-grade Fragment of Chaos" icon="icon.etc_debris_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Reward box received from Leona Blackbird for helping her in Hellbound. Double-click to open. -->
+	<item id="46558" type="EtcItem" name="Leona's Reward Box (High-grade)" icon="icon.etc_box_of_adventure_1_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward box received from Leona Blackbird for helping her in Hellbound. Double-click to open. -->
+	<item id="46559" type="EtcItem" name="Leona's Reward Box" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Reward box received from Captain Kurtiz for helping him with the monsters of the Nightmare Kamaloka. Double-click to open. -->
+	<item id="46560" type="EtcItem" name="Curtiz's Reward Box" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty armor. -->
+	<item id="46561" type="EtcItem" name="Blue Dynasty" icon="icon.armor_t2000_ul_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- L2 Assist App item. Red Zubei armor. -->
+	<item id="46562" type="EtcItem" name="Red Zubei" icon="icon.armor_t2000_ul_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Pouch received as reward for listening to Freya's story and enjoying your time at the epic tales pub. Double-click to use. -->
+	<item id="46563" type="EtcItem" name="Epic Tale Pouch - Not In Use" icon="icon.etc_pouch_gold_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Teleports you to the Mystic Tavern. -->
+	<item id="46564" type="EtcItem" name="Scroll of Escape: Mystic Tavern" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
+			crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- Exchange it through the blacksmiths of each village for either a Kain's Soul Crystal Stage 1 or Mermoden's Soul Crystal Stage 1. -->
+	<item id="46565" type="EtcItem" name="Soul Crystal Coupon - Stage 1" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Exchange it through the blacksmiths of each village for either a Kain's Soul Crystal Stage 2 or Mermoden's Soul Crystal Stage 2. -->
+	<item id="46566" type="EtcItem" name="Soul Crystal Coupon - Stage 2" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Exchange it through the blacksmiths of each village for either a Kain's Soul Crystal Stage 3 or Mermoden's Soul Crystal Stage 3. -->
+	<item id="46567" type="EtcItem" name="Soul Crystal Coupon - Stage 3" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Exchange it through the blacksmiths of each village for either a Kain's Soul Crystal Stage 4 or Mermoden's Soul Crystal Stage 4. -->
+	<item id="46568" type="EtcItem" name="Soul Crystal Coupon - Stage 4" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Exchange it through the blacksmiths of each village for either a Kain's Soul Crystal Stage 5 or Mermoden's Soul Crystal Stage 5. -->
+	<item id="46569" type="EtcItem" name="Soul Crystal Coupon - Stage 5" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Soul Crystal Coupon Stage 5. There's a chance that you might not get anything. -->
+	<item id="46570" type="EtcItem" name="Soul Crystal Coupon Pack - Stage 5" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- For NPC. -->
+	<item id="46571" type="Armor" name="For NPC_Left Hand Meat Plate" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
+			weaponType="shield" bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+	</item>
+	<!-- Can change the appearance of helmets into Tauti's Helmet. -->
+	<item id="46572" type="EtcItem" name="Tauti's Helmet Appearance Stone - Not In Use" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Can change the appearance of breastplates into Tauti's Breastplate. Changed items cannot be equipped by Ertheia. -->
+	<item id="46573" type="EtcItem" name="Tauti's Breastplate Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46538">
+	</item>
+	<!-- Can change the appearance of gaiters into Tauti's Gaiters. Changed items cannot be equipped by Ertheia. -->
+	<item id="46574" type="EtcItem" name="Tauti's Gaiters Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_legs" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46539">
+	</item>
+	<!-- Can change the appearance of gauntlets into Tauti's Gauntlets. Changed items cannot be equipped by Ertheia. -->
+	<item id="46575" type="EtcItem" name="Tauti's Gauntlets Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_gloves" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46540">
+	</item>
+	<!-- Can change the appearance of boots into Tauti's Boots. Changed items cannot be equipped by Ertheia. -->
+	<item id="46576" type="EtcItem" name="Tauti's Boots Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_feet" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46541">
+	</item>
+	<!-- Can change the appearance of leather helmets into Kelbim's Leather Helmet. -->
+	<item id="46577" type="EtcItem" name="Kelbim's Leather Helmet Appearance Stone - Not In Use" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Can change the appearance of leather armor into Kelbim's Leather Armor. -->
+	<item id="46578" type="EtcItem" name="Kelbim's Leather Armor Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46543">
+	</item>
+	<!-- Can change the appearance of leather leggings into Kelbim's Leather Leggings. -->
+	<item id="46579" type="EtcItem" name="Kelbim's Leather Leggings Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_legs"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46544">
+	</item>
+	<!-- Can change the appearance of leather gloves into Kelbim's Leather Gloves. -->
+	<item id="46580" type="EtcItem" name="Kelbim's Leather Gloves Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_gloves"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46545">
+	</item>
+	<!-- Can change the appearance of leather boots into Kelbim's Leather Boots. -->
+	<item id="46581" type="EtcItem" name="Kelbim's Leather Boots Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_feet"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46546">
+	</item>
+	<!-- Can change the appearance of circlets into Freya's Circlet. -->
+	<item id="46582" type="EtcItem" name="Freya's Circlet Appearance Stone - Not In Use" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Can change the appearance of tunics into Freya's Tunic. -->
+	<item id="46583" type="EtcItem" name="Freya's Tunic Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46548">
+	</item>
+	<!-- Can change the appearance of stockings into Freya's Stockings. -->
+	<item id="46584" type="EtcItem" name="Freya's Stockings Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_legs" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46549">
+	</item>
+	<!-- Can change the appearance of gloves into Freya's Gloves. -->
+	<item id="46585" type="EtcItem" name="Freya's Gloves Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_gloves" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46550">
+	</item>
+	<!-- Can change the appearance of shoes into Freya's Shoes. -->
+	<item id="46586" type="EtcItem" name="Freya's Shoes Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_feet" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46551">
+	</item>
+	<!-- Go to Settlen to exchange for a Tauti/Kelbim/Freya Outfit Appearance Stone. -->
+	<item id="46587" type="EtcItem" name="Mystic Armor Piece" icon="icon.etc_broken_crystal_silver_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Will be deleted on 3/13. -->
+	<item id="46588" type="EtcItem" name="For UI Test_Special Soul Crystal - Not In Use" icon="icon.ensoul_big_pm" immediateEffect="1"
+			weight="20" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a Soul, and use a Soul Crystal Stage 1-10 to absorb the soul. -->
+	<item id="46589" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a Soul, and use a Soul Crystal Stage 1-11 to absorb the soul. -->
+	<item id="46590" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a Soul, and use a Soul Crystal Stage 1-12 to absorb the soul. -->
+	<item id="46591" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a Soul, and use a Soul Crystal Stage 1-13 to absorb the soul. -->
+	<item id="46592" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A crystal with the soul of a monster sealed within. Double-click to summon a Soul, and use a Soul Crystal Stage 1-14 to absorb the soul. -->
+	<item id="46593" type="EtcItem" name="Sealed Soul Crystal - Not In Use" icon="icon.etc_small_bubble_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Shards of a shattered Ice Crystal. The knights and monsters of the Labyrinth have turned violent because of the effect of the Ice Crystal, and Melissa's health has deteriorated. Collect these and take them to Sayan. -->
+	<item id="46594" type="EtcItem" name="Ice Crystal Shard - Mystic Tavern - Freya" icon="icon.etc_broken_crystal_blue_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="46595" type="Armor" name="Blue Dynasty" icon="icon.armor_t91_u_i00" defaultAction="equip" bodypart="alldress"
+			immediateEffect="1" crystalCount="1" crystalType="none">
+	</item>
+	<item id="46596" type="Armor" name="Blue Dynasty" icon="icon.armor_t92_ub_i00" defaultAction="equip" bodypart="alldress"
+			immediateEffect="1" crystalCount="1" crystalType="none">
+	</item>
+	<item id="46597" type="Armor" name="Blue Dynasty" icon="icon.armor_t93_uw_i00" defaultAction="equip" bodypart="alldress"
+			immediateEffect="1" crystalCount="1" crystalType="none">
+	</item>
+	<item id="46598" type="Armor" name="Red Zubei" icon="icon.armor_t64_u_i00" defaultAction="equip" bodypart="alldress" immediateEffect="1"
+			crystalCount="1" crystalType="none">
+	</item>
+	<item id="46599" type="Armor" name="Red Zubei" icon="icon.armor_t65_u_i00" defaultAction="equip" bodypart="alldress" immediateEffect="1"
+			crystalCount="1" crystalType="none">
+	</item>
+	<item id="46600" type="Armor" name="Red Zubei" icon="icon.armor_t56_u_i00" defaultAction="equip" bodypart="alldress" immediateEffect="1"
+			crystalCount="1" crystalType="none">
+	</item>
+	<item id="46601" type="Armor" name="White Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
+			immediateEffect="1" crystalCount="1" crystalType="none">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Cloak. -->
+	<item id="46602" type="Armor" name="Blue Dynasty Cloak" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back"
+			immediateEffect="1" weight="220">
+	</item>
+	<!-- L2 Assist App item. Changes the appearance of your entire armor into that of Blue Dynasty. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
+	<item id="46603" type="EtcItem" name="Blue Dynasty Armor Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46595">
+	</item>
+	<!-- L2 Assist App item. Changes the appearance of your entire armor into that of Red Zubei. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
+	<item id="46604" type="EtcItem" name="Zubei Armor Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46598">
+	</item>
+	<!-- L2 Assist App item. Changes the appearance of your entire armor into that of the White Assassin Suit. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
+	<item id="46605" type="EtcItem" name="White Assassin Suit Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46601">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. -->
+	<item id="46606" type="Armor" name="Blue Dynasty Circlet" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. STR + 3 when equipped. -->
+	<item id="46607" type="Armor" name="Blue Dynasty Circlet - STR" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. DEX + 3 when equipped. -->
+	<item id="46608" type="Armor" name="Blue Dynasty Circlet - DEX" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. CON + 3 when equipped. -->
+	<item id="46609" type="Armor" name="Blue Dynasty Circlet - CON" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. MEN + 3 when equipped. -->
+	<item id="46610" type="Armor" name="Blue Dynasty Circlet - MEN" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. INT + 3 when equipped. -->
+	<item id="46611" type="Armor" name="Blue Dynasty Circlet - INT" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. WIT + 3 when equipped. -->
+	<item id="46612" type="Armor" name="Blue Dynasty Circlet - WIT" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. Critical Rate + 50 when equipped. -->
+	<item id="46613" type="Armor" name="Blue Dynasty Circlet - Critical Rate" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. P. Critical Damage + 90 and M. Critical Damage + 68 when equipped. -->
+	<item id="46614" type="Armor" name="Blue Dynasty Circlet - Critical Damage" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. P. Def. + 5% when equipped. -->
+	<item id="46615" type="Armor" name="Blue Dynasty Circlet - P. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. M. Def. + 5% when equipped. -->
+	<item id="46616" type="Armor" name="Blue Dynasty Circlet - M. Def." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. Evasion + 5 when equipped. -->
+	<item id="46617" type="Armor" name="Blue Dynasty Circlet - Evasion" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. P. Atk. + 5% when equipped. -->
+	<item id="46618" type="Armor" name="Blue Dynasty Circlet - P. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. M. Atk. + 10% when equipped. -->
+	<item id="46619" type="Armor" name="Blue Dynasty Circlet - M. Atk." icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. Accuracy + 5 when equipped. -->
+	<item id="46620" type="Armor" name="Blue Dynasty Circlet - Accuracy" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Can summon Shadow Blue. -->
+	<item id="46621" type="Armor" name="Shadow Blue Seal Bracelet" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="30">
+	</item>
+	<!-- Adena? No, this is Adana. Receive the Abundant Blessing buff from Miss Patch when in possession of this Adana. Lv. 85 or above. Deleted after event. -->
+	<item id="46622" type="EtcItem" name="1,000,000,000 Adana - Event" icon="icon.fairy_adena_joke" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Adena? No, this is Adana. Take it to Event Manager Miss Patch to exchange for a 30-day Armor Set (R-grade or above), or a Weapon (R-grade or above). Lv. 85 or above. Deleted after event. -->
+	<item id="46623" type="EtcItem" name="5,000,000,000 Adana - Event" icon="icon.fairy_adena_joke" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Double-click to reset cooldown to Embryo Command Post. Can only be used once a day outside of the instance zone. -->
+	<item id="46624" type="EtcItem" name="Entrance Pass: Embryo Command Post - 1-day" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Entrance Pass to Nightmare Kamaloka received from Captain Kurtiz. Double-click to reset cooldown to Nightmare Kamaloka. Can only be used once a day outside of the instance zone. -->
+	<item id="46625" type="EtcItem" name="Entrance Pass: Nightmare Kamaloka - 1-day" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Feed for military dogs to accelerate growth. -->
+	<item id="46626" type="EtcItem" name="Growth Accelerator Feed - Mystic Tavern - Kelbim" icon="icon.etc_piece_bone_white_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. LUC + 3 when equipped. -->
+	<item id="46627" type="Armor" name="Blue Dynasty Circlet - LUC" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- L2 Assist App item. Blue Dynasty Circlet. Uses 2 Hair Accessory slots. CHA + 3 when equipped. -->
+	<item id="46628" type="Armor" name="Blue Dynasty Circlet - CHA" icon="icon.Accessary_angel_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10">
+	</item>
+	<!-- Temporary practice weapon for learning about the Soul Crystal system. Very inefficient as a weapon. -->
+	<item id="46629" type="Weapon" name="Practice StormBringer" icon="icon.weapon_stormbringer_i00" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1420" soulshots="2" mpConsume="1">
+	</item>
+	<!-- Twilight Necklace. MP + 58. -->
+	<item id="46630" type="Armor" name="Twilight Necklace - 30-day" icon="icon.r2_necklace_i00" defaultAction="equip" bodypart="neck"
+			immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	</item>
+	<!-- Twilight Earring. MP + 43. -->
+	<item id="46631" type="Armor" name="Twilight Earring - 30-day" icon="icon.r2_earring_i00" defaultAction="equip" bodypart="rear;lear"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Twilight Ring. MP + 29. -->
+	<item id="46632" type="Armor" name="Twilight Ring - 30-day" icon="icon.r2_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Seraph Necklace. MP + 62. -->
+	<item id="46633" type="Armor" name="Seraph Necklace - 30-day" icon="icon.r95_necklace_i00" defaultAction="equip" bodypart="neck"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Seraph Necklace. MP + 46. -->
+	<item id="46634" type="Armor" name="Seraph Earring - 30-day" icon="icon.r95_earring_i00" defaultAction="equip" bodypart="rear;lear"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Seraph Ring. MP + 31. -->
+	<item id="46635" type="Armor" name="Seraph Ring - 30-day" icon="icon.r95_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Eternal Necklace. MP + 65. -->
+	<item id="46636" type="Armor" name="Eternal Necklace - 30-day" icon="icon.r991_necklace_i00" defaultAction="equip" bodypart="neck"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Eternal Earring. MP + 49. -->
+	<item id="46637" type="Armor" name="Eternal Earring - 30-day" icon="icon.r991_earring_i00" defaultAction="equip" bodypart="rear;lear"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Eternal Ring. MP + 33. -->
+	<item id="46638" type="Armor" name="Eternal Ring - 30-day" icon="icon.r991_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
+			immediateEffect="1" weight="150">
+	</item>
+	<!-- Roa's lost item. Exchange it for Assistant Roa's Gift when you are lucky enough to run into NPC Roa. Can only exchange 1 item per day. Deleted after event. -->
+	<item id="46639" type="EtcItem" name="Roa's Lost Item - Event" icon="icon.event_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Gift box full of Roa's love. Double-click to get a random gift from Roa. -->
+	<item id="46640" type="EtcItem" name="Assistant Roa's Gift - Event" icon="icon.etc_ev_draco_gift_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to reset cooldown to Crystal Cavern's Coral Garden, Steam Corridor, and Emerald Square. Can only be used once a day outside of the instance zone. Can enter twice each time it is used. -->
+	<item id="46641" type="EtcItem" name="Entrance Pass: Crystal Caverns" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Proof given to those who carry out the missions given by the Red Libra merchants. Use with Elder Green to change a dual class or with Elder Black to exchange for a weapon. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46642" type="EtcItem" name="Proof of Red - Event" icon="icon.event_mahum_memo" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Oil made by Grocer Pink. Collect 1320 of these and take them to Grocer Pink to receive 10 Lv.5 Giant Dyes.
+	-->
+	<item id="46643" type="EtcItem" name="Rudi - Event" icon="icon.five_vairy_potion" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Reward received from Bodyguard Blue for your help. Double-click to get one random item. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46644" type="EtcItem" name="Red Libra Supplies Lv. 1 - Event" icon="icon.event_mahum_coinbox" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Reward received from Bodyguard Blue for your help. Double-click to get one random item. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46645" type="EtcItem" name="Red Libra Supplies Lv. 2 - Event" icon="icon.event_mahum_coinbox" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Reward received from Bodyguard Blue for your help. Double-click to get one random item. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46646" type="EtcItem" name="Red Libra Supplies Lv. 3 - Event" icon="icon.event_mahum_coinbox" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Reward received from Bodyguard Blue for your help. Double-click to get one random item. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46647" type="EtcItem" name="Red Libra Supplies Lv. 4 - Event" icon="icon.event_mahum_coinbox" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Red Libra item
+		Revives all party members. Additionally, restores 100% XP. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46648" type="Armor" name="Red Libra Talisman - Resurrection - Event" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Red Libra item
+		Restores HP/MP/CP of all party members and cancels debuffs at a set rate. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46649" type="Armor" name="Red Libra Talisman - Restoration - Event" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Red Libra item
+		Cancels debuffs of all party members and makes them invincible to all debuffs for 7 seconds. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46650" type="Armor" name="Red Libra Talisman - Cancel - Event" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Red Libra item
+		Increases Speed of all party members by 70 for 10 seconds. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46651" type="Armor" name="Red Libra Talisman - Speed - Event" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Red Libra item
+		Decreases damage received by 10%. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46652" type="Armor" name="Red Libra Talisman - Resistance - Event" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="none" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46653" type="Weapon" name="Elysium Shaper - Event" icon="icon.weapon_the_dagger_of_hero_i01" defaultAction="equip"
+			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="3">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46654" type="Weapon" name="Elysium Cutter - Event" icon="icon.weapon_the_sword_of_hero_i01" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46655" type="Weapon" name="Elysium Slasher - Event" icon="icon.weapon_the_two_handed_sword_of_hero_i01" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46656" type="Weapon" name="Elysium Avenger - Event" icon="icon.weapon_the_axe_of_hero_i01" defaultAction="equip"
+			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46657" type="Weapon" name="Elysium Fighter - Event" icon="icon.weapon_the_fist_of_hero_i01" defaultAction="equip"
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="5">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46658" type="Weapon" name="Elysium Stormer - Event" icon="icon.weapon_the_pole_of_hero_i01" defaultAction="equip"
+			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="4">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46659" type="Weapon" name="Elysium Thrower - Event" icon="icon.weapon_the_bow_of_hero_i01" defaultAction="equip"
+			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="6">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46660" type="Weapon" name="Elysium Shooter - Event" icon="icon.weapon_infinity_shooter_i01" defaultAction="equip"
+			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="17">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46661" type="Weapon" name="Elysium Buster - Event" icon="icon.weapon_infinity_sword_i01" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46662" type="Weapon" name="Elysium Caster - Event" icon="icon.weapon_the_mace_of_hero_i01" defaultAction="equip"
+			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46663" type="Weapon" name="Elysium Retributer - Event" icon="icon.weapon_the_staff_of_hero_i01" defaultAction="equip"
+			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46664" type="Weapon" name="Elysium Dualsword - Event" icon="icon.weapon_r_dualsword_i01" defaultAction="equip"
+			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="8">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46665" type="Weapon" name="Elysium Dual Dagger - Event" icon="icon.weapon_r_dualdagger_i01" defaultAction="equip"
+			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="15">
+	</item>
+	<!--
+		Red Libra item
+		Weapon used all throughout Elysium. It cannot be enchanted in Aden. Cannot be used in the Olympiad. Deleted when the Red Libra merchants leave.
+	-->
+	<item id="46666" type="Weapon" name="Elysium Dual Blunt Weapon - Event" icon="icon.weapon_r_dualblunt_i01" defaultAction="equip"
+			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="18">
+	</item>
+	<item id="46667" type="EtcItem" name="Lv.5 Giant Dye Pack" icon="icon.five_vairy_potion" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Activates 5 jewel slots when equipped. Inventory Slot + 12. -->
+	<item id="46668" type="Armor" name="La Vie En Rose's Radiant Brooch" icon="icon.etc_bm_brooch_lavianrose_i03" defaultAction="equip"
+			bodypart="gloves" immediateEffect="1" weight="10">
+	</item>
+	<!-- Main ingredient for making a La Vie En Rose's Radiant Brooch. -->
+	<item id="46669" type="EtcItem" name="Radiant Brooch Fragment" icon="icon.etc_bm_brooch_lavianrose_piece" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Increases Vitality Status Bonus XP by 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46670" type="Armor" name="Vital Stone - Lv. 1" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus XP by 6%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46671" type="Armor" name="Vital Stone - Lv. 2" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus XP by 12%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46672" type="Armor" name="Vital Stone - Lv. 3" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus XP by 20% and decreases Vitality Point Consumption Speed by 7%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46673" type="Armor" name="Vital Stone - Lv. 4" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Increases Vitality Status Bonus XP by 30% and decreases Vitality Point Consumption Speed by 15%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46674" type="Armor" name="Vital Stone - Lv. 5" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46675" type="Armor" name="Garnet - Lv. 1" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 6%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46676" type="Armor" name="Garnet - Lv. 2" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 12%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46677" type="Armor" name="Garnet - Lv. 3" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 20%. Effect does not stack with additional jewels of the same type. -->
+	<item id="46678" type="Armor" name="Garnet - Lv. 4" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Resistance to Debuffs + 30%. Cancels your debuffs. Effect does not stack with additional jewels of the same type. -->
+	<item id="46679" type="Armor" name="Garnet - Lv. 5" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 5,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="46680" type="Armor" name="Tanzanite - Lv. 1" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 10,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="46681" type="Armor" name="Tanzanite - Lv. 2" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 15,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="46682" type="Armor" name="Tanzanite - Lv. 3" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 30,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="46683" type="Armor" name="Tanzanite - Lv. 4" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="46684" type="Armor" name="Tanzanite - Lv. 5" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="5">
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Vital Stone. -->
+	<item id="46685" type="EtcItem" name="La Vie En Rose's Vital Stone Chest" icon="icon.etc_bm_jewelbox_vital" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Garnet. -->
+	<item id="46686" type="EtcItem" name="La Vie En Rose's Garnet Chest" icon="icon.etc_bm_jewelbox_garnet" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Tanzanite. -->
+	<item id="46687" type="EtcItem" name="La Vie En Rose's Tanzanite Chest" icon="icon.etc_bm_jewelbox_tanzanite" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire a La Vie En Rose's Radiant Brooch. -->
+	<item id="46688" type="EtcItem" name="La Vie En Rose's Radiant Brooch Chest" icon="icon.etc_pi_box_belief_pack" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. -->
+	<item id="46689" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get 1 of the following: La Vie En Rose's Vital Stone Chest, La Vie En Rose's Garnet Chest, or La Vie En Rose's Tanzanite Chest. -->
+	<item id="46690" type="EtcItem" name="Shadai's Shiny Jewelry Box" icon="icon.etc_bm_jewelbox_shhadai" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get 1 of the following: La Vie En Rose's Vital Stone Chest, La Vie En Rose's Garnet Chest, or La Vie En Rose's Tanzanite Chest. -->
+	<item id="46691" type="EtcItem" name="Function Test Item" icon="icon.etc_bm_jewelbox_shhadai" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to reset cooldown to Embryo Command Post. Can only be used once a day outside of the instance zone. -->
+	<item id="46692" type="EtcItem" name="Entrance Pass: Embryo Command Post" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 </list>

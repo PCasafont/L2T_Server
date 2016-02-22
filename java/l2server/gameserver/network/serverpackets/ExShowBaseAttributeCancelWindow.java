@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -21,10 +22,8 @@ import l2server.gameserver.templates.item.L2Weapon;
 
 public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 {
-	private static final String		_S__FE_74_EXCSHOWBASEATTRIBUTECANCELWINDOW = "[S] FE:74 ExShowBaseAttributeCancelWindow";
-	
-	private L2ItemInstance[]		_items;
-	private long					_price;
+	private L2ItemInstance[] _items;
+	private long _price;
 	
 	public ExShowBaseAttributeCancelWindow(L2PcInstance player)
 	{
@@ -32,10 +31,8 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x75);
 		writeD(_items.length);
 		for (L2ItemInstance item : _items)
 		{
@@ -46,7 +43,7 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 	
 	private long getPrice(L2ItemInstance item)
 	{
-		switch(item.getItem().getCrystalType())
+		switch (item.getItem().getCrystalType())
 		{
 			case L2Item.CRYSTAL_S:
 				if (item.getItem() instanceof L2Weapon)
@@ -87,11 +84,5 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 		}
 		
 		return _price;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_74_EXCSHOWBASEATTRIBUTECANCELWINDOW;
 	}
 }

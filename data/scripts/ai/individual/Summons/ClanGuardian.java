@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.Summons;
 
 import java.util.Collection;
@@ -28,14 +29,14 @@ import ai.group_template.L2AttackableAIScript;
 /**
  * @author LasTravel
  * @author Pere
- * 
+ *
  * Summon Clan Guardian (skill id: 19008) AI
  */
 
 public class ClanGuardian extends L2AttackableAIScript
 {
-	private static final int		_clanGuardian			= 15053;
-	private static final L2Skill 	_clanGuardianRecovery	= SkillTable.getInstance().getInfo(19018, 1);
+	private static final int _clanGuardian = 15053;
+	private static final L2Skill _clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
 	
 	public ClanGuardian(int id, String name, String descr)
 	{
@@ -43,7 +44,7 @@ public class ClanGuardian extends L2AttackableAIScript
 		
 		addSpawnId(_clanGuardian);
 	}
-
+	
 	@Override
 	public final String onSpawn(L2Summon npc)
 	{
@@ -62,8 +63,8 @@ public class ClanGuardian extends L2AttackableAIScript
 		
 		protected ClanGuardianAI(L2Summon npc)
 		{
-			_clanGuardian	= npc;
-			_owner			= npc.getOwner();
+			_clanGuardian = npc;
+			_owner = npc.getOwner();
 		}
 		
 		public void setSchedule(ScheduledFuture<?> schedule)
@@ -71,9 +72,10 @@ public class ClanGuardian extends L2AttackableAIScript
 			_schedule = schedule;
 		}
 		
+		@Override
 		public void run()
 		{
-			if (_clanGuardian == null || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
+			if ((_clanGuardian == null) || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
 			{
 				if (_schedule != null)
 				{
@@ -87,17 +89,17 @@ public class ClanGuardian extends L2AttackableAIScript
 			for (L2PcInstance player : _players)
 			{
 				if (isValidTarget(player, _clanGuardian))
-				{	
+				{
 					_clanGuardian.setTarget(player);
 					_clanGuardian.doCast(_clanGuardianRecovery);
-				}	
+				}
 			}
 		}
 	}
 	
 	private boolean isValidTarget(L2PcInstance target, L2Summon summon)
 	{
-		if (target == null || summon == null)
+		if ((target == null) || (summon == null))
 			return false;
 		
 		if (summon.isDead() || target.isDead())
@@ -115,7 +117,7 @@ public class ClanGuardian extends L2AttackableAIScript
 		if (!summon.isInsideRadius(target, 500, true, false))
 			return false;
 		
-		if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() && target.getCurrentMp() == target.getMaxMp())
+		if ((target.getCurrentHp() == target.getMaxHp()) && (target.getCurrentCp() == target.getMaxCp()) && (target.getCurrentMp() == target.getMaxMp()))
 			return false;
 		
 		return true;

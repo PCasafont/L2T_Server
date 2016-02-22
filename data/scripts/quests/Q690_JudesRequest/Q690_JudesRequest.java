@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q690_JudesRequest;
 
 import l2server.Config;
@@ -36,15 +37,7 @@ public class Q690_JudesRequest extends Quest
 	
 	// Items
 	private static final int EVIL_WEAPON = 10327;
-	private static final int[][] REWARDS =
-	{
-		{
-			10373, 10374, 10375, 10376, 10377, 10378, 10379, 10380, 10381
-		},
-		{
-			10397, 10398, 10399, 10400, 10401, 10402, 10403, 10404, 10405
-		}
-	};
+	private static final int[][] REWARDS = { { 10373, 10374, 10375, 10376, 10377, 10378, 10379, 10380, 10381 }, { 10397, 10398, 10399, 10400, 10401, 10402, 10403, 10404, 10405 } };
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)

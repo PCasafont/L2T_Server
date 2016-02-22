@@ -12,19 +12,18 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package l2server.gameserver.network.serverpackets;
 
+package l2server.gameserver.network.serverpackets;
 
 /**
  * Format (ch)dd
  * d: window type
  * d: ban user (1)
- * 
+ *
  * @author mrTJO
  */
 public class Ex2ndPasswordCheck extends L2GameServerPacket
 {
-	private static final String _S__FE_109_EX2NDPASSWORDCHECKPACKET = "[S] FE:109 Ex2NDPasswordCheckPacket";
 	
 	public static final int PASSWORD_NEW = 0x00;
 	public static final int PASSWORD_PROMPT = 0x01;
@@ -38,17 +37,9 @@ public class Ex2ndPasswordCheck extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0x105);
 		writeD(_windowType);
 		writeD(0x00);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_109_EX2NDPASSWORDCHECKPACKET;
 	}
 }

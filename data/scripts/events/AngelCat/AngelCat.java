@@ -1,3 +1,4 @@
+
 package events.AngelCat;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -9,9 +10,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * 
+ *
  * @author LasTravel
- * 
+ *
  * Strange retail like event.
  *
  */
@@ -21,21 +22,7 @@ public class AngelCat extends Quest
 	private static final int angelCat = 4308;
 	private static final int angelCatBlessing = 35669;
 	
-	private static final int[][] _spawns =
-	{
-		{86891, -142848, -1336, 26000},
-		{43908, -47714, -792, 49999},
-		{-14081, 123829, -3120, 40959},
-		{147265, 25624, -2008, 16384},
-		{82936, 53093, -1488, 16905},
-		{111315, 219409, -3544, 49756},
-		{83673, 147992, -3400, 32767},
-		{16117, 142909, -2696, 16000},
-		{-114199, 254128, -1528, 64706},
-		{-81006, 149991, -3040, 0},
-		{117295, 76726, -2688, 49151},
-		{207625, 86977, -1024, 18048}
-	};
+	private static final int[][] _spawns = { { 86891, -142848, -1336, 26000 }, { 43908, -47714, -792, 49999 }, { -14081, 123829, -3120, 40959 }, { 147265, 25624, -2008, 16384 }, { 82936, 53093, -1488, 16905 }, { 111315, 219409, -3544, 49756 }, { 83673, 147992, -3400, 32767 }, { 16117, 142909, -2696, 16000 }, { -114199, 254128, -1528, 64706 }, { -81006, 149991, -3040, 0 }, { 117295, 76726, -2688, 49151 }, { 207625, 86977, -1024, 18048 } };
 	
 	public AngelCat(int questId, String name, String descr)
 	{
@@ -83,8 +70,8 @@ public class AngelCat extends Quest
 		}
 		
 		return super.onAdvEvent(event, npc, player);
-	}	
-
+	}
+	
 	public static void main(String[] args)
 	{
 		new AngelCat(-1, "AngelCat", "events");

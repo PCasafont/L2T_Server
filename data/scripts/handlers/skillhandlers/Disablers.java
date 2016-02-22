@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.Config;
@@ -35,6 +36,7 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.skills.L2AbnormalType;
+import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.util.Rnd;
 
@@ -44,25 +46,13 @@ import l2server.util.Rnd;
  */
 public class Disablers implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.AGGDAMAGE,
-		L2SkillType.AGGREDUCE,
-		L2SkillType.AGGREDUCE_CHAR,
-		L2SkillType.AGGREMOVE,
-		L2SkillType.FAKE_DEATH,
-		L2SkillType.NEGATE,
-		L2SkillType.CANCEL_DEBUFF,
-		L2SkillType.ERASE,
-		L2SkillType.BETRAY
-	};
-	
-	
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.AGGDAMAGE, L2SkillType.AGGREDUCE, L2SkillType.AGGREDUCE_CHAR, L2SkillType.AGGREMOVE, L2SkillType.FAKE_DEATH, L2SkillType.NEGATE, L2SkillType.CANCEL_DEBUFF, L2SkillType.ERASE, L2SkillType.BETRAY, L2SkillType.RESET };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		L2SkillType type = skill.getSkillType();
@@ -113,16 +103,22 @@ public class Disablers implements ISkillHandler
 			}
 		}
 		
-		for (L2Object obj: targets)
+		for (L2Object obj : targets)
 		{
 			if (!(obj instanceof L2Character))
 				continue;
 			L2Character target = (L2Character) obj;
-			if (target.isDead() || ((target.isInvul(activeChar) && !skill.ignoreImmunity() && type != L2SkillType.NEGATE) && !target.isParalyzed())) // bypass if target is null, dead or invul (excluding invul from Petrification)
+			if (target.isDead() || ((target.isInvul(activeChar) && !skill.ignoreImmunity() && (type != L2SkillType.NEGATE)) && !target.isParalyzed())) // bypass if target is null, dead or invul (excluding invul from Petrification)
 				continue;
-
-			if (target != activeChar && target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
+			
+			if ((target != activeChar) && (target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar))
 				continue;
+			
+			if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, activeChar, null) > 0.0)
+			{
+				target.stopEffectsOnDebuffBlock();
+				continue;
+			}
 			
 			shld = Formulas.calcShldUse(activeChar, target, skill);
 			
@@ -149,8 +145,8 @@ public class Disablers implements ISkillHandler
 				}
 				case AGGDAMAGE:
 				{
-					int aggDamage = (int)((150 * skill.getPower()) / (target.getLevel() + 7));
-					aggDamage = (int)activeChar.calcStat(Stats.AGGRESSION_PROF, aggDamage, target, skill);
+					int aggDamage = (int) ((500 * skill.getPower()) / (target.getLevel() + 7));
+					aggDamage = (int) activeChar.calcStat(Stats.AGGRESSION_PROF, aggDamage, target, skill);
 					if (target instanceof L2Attackable)
 						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, aggDamage);
 					// TODO [Nemesiss] should this have 100% chance?
@@ -183,7 +179,7 @@ public class Disablers implements ISkillHandler
 						{
 							L2Attackable targ = (L2Attackable) target;
 							targ.stopHating(activeChar);
-							if (targ.getMostHated() == null && targ.hasAI() && targ.getAI() instanceof L2AttackableAI)
+							if ((targ.getMostHated() == null) && targ.hasAI() && (targ.getAI() instanceof L2AttackableAI))
 							{
 								((L2AttackableAI) targ.getAI()).setGlobalAggro(-25);
 								targ.clearAggroList();
@@ -209,11 +205,11 @@ public class Disablers implements ISkillHandler
 				case AGGREMOVE:
 				{
 					// these skills needs to be rechecked
-					if (target instanceof L2Attackable && !target.isRaid())
+					if ((target instanceof L2Attackable) && !target.isRaid())
 					{
 						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul))
 						{
-							if (skill.getTargetType() == L2Skill.SkillTargetType.TARGET_UNDEAD)
+							if (skill.getTargetType() == L2SkillTargetType.TARGET_UNDEAD)
 							{
 								if (target.isUndead())
 									((L2Attackable) target).reduceHate(null, ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
@@ -240,10 +236,10 @@ public class Disablers implements ISkillHandler
 				case ERASE:
 				{
 					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul)
-							// doesn't affect siege golem or wild hog cannon
-							&& !(target instanceof L2SiegeSummonInstance))
+					// doesn't affect siege golem or wild hog cannon
+					&& !(target instanceof L2SiegeSummonInstance))
 					{
-						L2Summon summonPet = (L2Summon)target;
+						L2Summon summonPet = (L2Summon) target;
 						L2PcInstance summonOwner = summonPet.getOwner();
 						summonPet.unSummon(summonOwner);
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_SERVITOR_HAS_VANISHED);
@@ -261,19 +257,57 @@ public class Disablers implements ISkillHandler
 					}
 					break;
 				}
+				case RESET:
+				{
+					L2Abnormal[] effects = target.getAllEffects();
+					
+					if ((effects == null) || (effects.length == 0))
+						break;
+					
+					for (L2Abnormal e : effects)
+					{
+						if ((e == null) || !e.getSkill().isOffensive())
+							continue;
+						else if (e.getType() == L2AbnormalType.SLEEP)
+							continue;
+						
+						//LasTravel TEMP: Devil's Sway: Resets the duration of the target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm.
+						if (skill.getId() == 11095)
+						{
+							String a = e.getType().name();
+							
+							if (a == null)
+								continue;
+							
+							if (!(a.contains("PARAL") || a.contains("HOLD") || a.contains("SILENCE") || a.contains("SLEEP") || a.contains("FEAR") || a.contains("STUN") || a.contains("PETRI") || a.contains("DISARM")))
+								continue;
+						}
+						
+						e.exit();
+						Env env = new Env();
+						env.player = activeChar;
+						env.target = target;
+						env.skill = e.getSkill();
+						L2Abnormal ef = e.getTemplate().getEffect(env);
+						if (ef != null)
+							ef.scheduleEffect();
+					}
+					
+					target.broadcastAbnormalStatusUpdate();
+					
+					break;
+				}
 				case CANCEL_DEBUFF:
 				{
 					L2Abnormal[] effects = target.getAllEffects();
 					
-					if (effects == null || effects.length == 0)
+					if ((effects == null) || (effects.length == 0))
 						break;
 					
 					int count = (skill.getMaxNegatedEffects() > 0) ? 0 : -2;
 					for (L2Abnormal e : effects)
 					{
-						if (e == null
-								|| !e.getSkill().isDebuff()
-								|| !e.getSkill().canBeDispeled())
+						if ((e == null) || !e.getSkill().isDebuff() || !e.getSkill().canBeDispeled())
 							continue;
 						
 						e.exit();
@@ -304,7 +338,7 @@ public class Disablers implements ISkillHandler
 						int max = skill.getMaxNegatedEffects();
 						if (max == 0)
 							max = Integer.MAX_VALUE; //this is for RBcancells and stuff...
-						
+							
 						if (effects.length >= max)
 							effects = SortEffects(effects);
 						
@@ -323,7 +357,7 @@ public class Disablers implements ISkillHandler
 									continue;
 							}
 							
-							switch(a.getSkill().getId())
+							switch (a.getSkill().getId())
 							{
 								case 4082:
 								case 4215:
@@ -411,13 +445,14 @@ public class Disablers implements ISkillHandler
 							{
 								for (String stackType : effect.getStackType())
 								{
-									if (negateAbnormalType.equalsIgnoreCase(stackType) && skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
+									if (negateAbnormalType.equalsIgnoreCase(stackType) && (skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl()))
 										effect.exit();
 								}
 							}
 						}
 					}
-					else // all others negate type skills
+					else
+					// all others negate type skills
 					{
 						int removedBuffs = (skill.getMaxNegatedEffects() > 0) ? 0 : -2;
 						for (L2AbnormalType skillType : skill.getNegateStats())
@@ -425,15 +460,15 @@ public class Disablers implements ISkillHandler
 							if (removedBuffs > skill.getMaxNegatedEffects())
 								break;
 							
-							switch(skillType)
+							switch (skillType)
 							{
 								case BUFF:
-									int lvlmodifier = 52 + skill.getMagicLevel() * 2;
+									int lvlmodifier = 52 + (skill.getMagicLevel() * 2);
 									if (skill.getMagicLevel() == 12)
 										lvlmodifier = Config.MAX_LEVEL;
 									int landrate = 90;
 									if ((target.getLevel() - lvlmodifier) > 0)
-										landrate = 90 - 4 * (target.getLevel() - lvlmodifier);
+										landrate = 90 - (4 * (target.getLevel() - lvlmodifier));
 									
 									landrate = (int) activeChar.calcStat(Stats.CANCEL_RES, landrate, target, null);
 									
@@ -463,7 +498,7 @@ public class Disablers implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
+			if ((effect != null) && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -473,7 +508,7 @@ public class Disablers implements ISkillHandler
 	} //end void
 	
 	/**
-	 * 
+	 *
 	 * @param target
 	 * @param type
 	 * @param power
@@ -486,7 +521,7 @@ public class Disablers implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param target
 	 * @param type
 	 * @param power
@@ -504,7 +539,7 @@ public class Disablers implements ISkillHandler
 			{
 				if (skillId != 0)
 				{
-					if (skillId == e.getSkill().getId() && count < maxRemoved)
+					if ((skillId == e.getSkill().getId()) && (count < maxRemoved))
 					{
 						e.exit();
 						if (count > -1)
@@ -548,11 +583,11 @@ public class Disablers implements ISkillHandler
 		return initial;
 	}
 	
-	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

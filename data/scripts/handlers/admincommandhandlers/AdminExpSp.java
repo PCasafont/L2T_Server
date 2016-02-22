@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -25,7 +26,6 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-
 /**
  * This class handles following admin commands:
  * <li> add_exp_sp_to_character <i>shows menu for add or remove</i>
@@ -37,13 +37,9 @@ public class AdminExpSp implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminExpSp.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_add_exp_sp_to_character",
-		"admin_add_exp_sp",
-		"admin_remove_exp_sp"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_add_exp_sp_to_character", "admin_add_exp_sp", "admin_remove_exp_sp" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.startsWith("admin_add_exp_sp"))
@@ -76,6 +72,7 @@ public class AdminExpSp implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
@@ -135,7 +132,7 @@ public class AdminExpSp implements IAdminCommandHandler
 			{
 				return false;
 			}
-			if (expval != 0 || spval != 0)
+			if ((expval != 0) || (spval != 0))
 			{
 				//Common character information
 				player.sendMessage("Admin is adding you " + expval + " xp and " + spval + " sp.");
@@ -180,7 +177,7 @@ public class AdminExpSp implements IAdminCommandHandler
 			{
 				return false;
 			}
-			if (expval != 0 || spval != 0)
+			if ((expval != 0) || (spval != 0))
 			{
 				//Common character information
 				player.sendMessage("Admin is removing you " + expval + " xp and " + spval + " sp.");

@@ -100,7 +100,7 @@ class Quest (JQuest) :
       htmltext = Quest.getAlreadyCompletedMsg(player)
 
    elif st.getInt("step")==0 :
-      if player.getClassId() in [0x01,0x2f,0x13,0x20] :
+      if player.getClassId().getId() in [0x01,0x2f,0x13,0x20] :
          if player.getLevel() >= 39 :
             htmltext = "30623-03.htm"
          else:

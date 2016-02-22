@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 /**
@@ -21,11 +22,7 @@ package l2server.gameserver.templates.item;
 
 public enum L2ArmorType implements L2ItemType
 {
-	NONE("None"),
-	LIGHT("Light"),
-	HEAVY("Heavy"),
-	MAGIC("Magic"),
-	SIGIL("Sigil"),
+	NONE("None"), LIGHT("Light"), HEAVY("Heavy"), MAGIC("Magic"), SIGIL("Sigil"),
 	
 	//L2J CUSTOM
 	SHIELD("Shield");
@@ -48,6 +45,7 @@ public enum L2ArmorType implements L2ItemType
 	 * Returns the ID of the ArmorType after applying a mask.
 	 * @return int : ID of the ArmorType after mask
 	 */
+	@Override
 	public int mask()
 	{
 		return _mask;

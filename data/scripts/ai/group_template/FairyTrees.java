@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import l2server.gameserver.ai.CtrlIntention;
@@ -35,7 +36,7 @@ public class FairyTrees extends L2AttackableAIScript
 		super.addSpawnId(27189);
 	}
 	
-	public String onKill (L2NpcInstance npc, L2PcInstance killer, boolean isPet)
+	public String onKill(L2NpcInstance npc, L2PcInstance killer, boolean isPet)
 	{
 		int npcId = npc.getNpcId();
 		if (Util.contains(mobs, npcId))
@@ -50,7 +51,7 @@ public class FairyTrees extends L2AttackableAIScript
 				if (Rnd.get(1, 2) == 1)
 				{
 					L2Skill skill = SkillTable.getInstance().getInfo(4243, 1);
-					if (skill != null && originalKiller != null)
+					if ((skill != null) && (originalKiller != null))
 						skill.getEffects(newNpc, originalKiller);
 				}
 			}

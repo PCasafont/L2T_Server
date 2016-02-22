@@ -1664,7 +1664,7 @@
 	<!-- MP + 21, Poison Resistance + 40%, Poison Attack Rate + 40%, Hold Resistance + 30%, Hold attack rate + 30%, and increases Accuracy, Critical Damage, P. Atk., and Casting Spd. Only one effect is applied when two of the same ring are equipped. -->
 	<item id="22304" type="Armor" name="Baium's Ring - 3-day (Event)" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalType="s" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
+			isDepositable="false" isOlyRestricted="true" time="4320" isEpic="true">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<skill id="3561" level="1" /> <!-- Baium's Ring -->
@@ -3899,7 +3899,7 @@
 	<item id="22774" type="EtcItem" name="Drop Rate Rune 200% Pack (7-day)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. -->
+	<!-- Two-handed blunt with special powers used by the Drake Lord. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="22775" type="Weapon" name="Drake Maul" icon="BranchSys3.Icon.g_drake_maul_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" price="205668000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="532" />
@@ -3963,7 +3963,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Two-handed blunt with special powers used by the Drake Lord. Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Two-handed blunt with special powers used by the Drake Lord. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. 
+		No Soul Crystal option.
+	-->
 	<item id="22779" type="Weapon" name="Drake Maul (PvP)" icon="BranchSys3.Icon.g_drake_maul_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="532" />
@@ -3977,8 +3980,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22780" type="Weapon" name="Drake Maul (PvP) - HP Drain" icon="BranchSys3.Icon.g_drake_maul_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
@@ -3993,8 +3997,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22781" type="Weapon" name="Drake Maul (PvP) - HP Regeneration" icon="BranchSys3.Icon.g_drake_maul_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
@@ -4009,8 +4014,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22782" type="Weapon" name="Drake Maul (PvP) - Health" icon="BranchSys3.Icon.g_drake_maul_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
@@ -4026,7 +4032,7 @@
 	</item>
 	<!--
 		Masterwork Item with chance of HP absorption during an attack.
-		Bestows either Health, HP Drain, or HP Regeneration.
+		Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="22783" type="Weapon" name="Drake Maul - Evil Spirit" icon="BranchSys3.Icon.g_drake_maul_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" price="205668000" soulshots="0"
@@ -4097,7 +4103,8 @@
 	</item>
 	<!--
 		Masterwork Item with chance of HP absorption during an attack.
-		Bestows either Health, HP Drain, or HP Regeneration. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="22787" type="Weapon" name="Drake Maul - Evil Spirit (PvP)" icon="BranchSys3.Icon.g_drake_maul_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
@@ -4113,8 +4120,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Recovers 4% of standard melee physical damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22788" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Drain" icon="BranchSys3.Icon.g_drake_maul_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0"
@@ -4131,8 +4139,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22789" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - HP Regeneration" icon="BranchSys3.Icon.g_drake_maul_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0"
@@ -4149,8 +4158,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of HP absorption during an attack
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed blunt with special powers used by the Drake Lord. Max HP increases by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage when attacking.
+		No Soul Crystal option.
 	-->
 	<item id="22790" type="Weapon" name="Drake Maul - Evil Spirit (PvP) - Health" icon="BranchSys3.Icon.g_drake_maul_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0">
@@ -4164,7 +4174,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. -->
+	<!-- Two-handed magic blunt with special powers used by Freya. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="22791" type="Weapon" name="Freya's Staff" icon="BranchSys3.Icon.g_glacierin_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1080" price="205668000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="426" />
@@ -4228,7 +4238,10 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack. -->
+	<!--
+		Two-handed magic blunt with special powers used by Freya. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
+	-->
 	<item id="22795" type="Weapon" name="Freya's Staff (PvP)" icon="BranchSys3.Icon.g_glacierin_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="426" />
@@ -4242,8 +4255,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. A 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22796" type="Weapon" name="Freya's Staff (PvP) - Magic Hold" icon="BranchSys3.Icon.g_glacierin_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0">
@@ -4258,8 +4272,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22797" type="Weapon" name="Freya's Staff (PvP) - Empower" icon="BranchSys3.Icon.g_glacierin_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0">
@@ -4274,8 +4289,9 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22798" type="Weapon" name="Freya's Staff (PvP) - MP Regeneration" icon="BranchSys3.Icon.g_glacierin_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0">
@@ -4291,7 +4307,7 @@
 	</item>
 	<!--
 		Masterwork Item with chance of MP absorption.
-		Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Has a chance of recovering CP during an attack.
+		Two-handed magic blunt with special powers used by Freya. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal.
 	-->
 	<item id="22799" type="Weapon" name="Freya's Staff - Cleverness" icon="BranchSys3.Icon.g_glacierin_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" price="205668000" soulshots="0"
@@ -4361,8 +4377,8 @@
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
 	<!--
-		Masterwork Item with chance of MP absorption.
-		Two-handed magic blunt with special powers used by Freya. Bestows either MP Regeneration, Magic Hold, or Empower. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+		No Soul Crystal option.
 	-->
 	<item id="22803" type="Weapon" name="Freya's Staff - Cleverness (PvP)" icon="BranchSys3.Icon.g_glacierin_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0">
@@ -4378,8 +4394,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of MP absorption.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. A 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22804" type="Weapon" name="Freya's Staff - Cleverness (PvP) - Magic Hold" icon="BranchSys3.Icon.g_glacierin_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0"
@@ -4396,8 +4413,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of MP absorption.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. M. Atk. Increases by 177. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22805" type="Weapon" name="Freya's Staff - Cleverness (PvP) - Empower" icon="BranchSys3.Icon.g_glacierin_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0"
@@ -4414,8 +4432,9 @@
 	</item>
 	<!--
 		Masterwork Item with chance of MP absorption.
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Two-handed magic blunt with special powers used by Freya. MP Recovery Rate is raised. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+		No Soul Crystal option.
 	-->
 	<item id="22806" type="Weapon" name="Freya's Staff - Cleverness (PvP) - MP Regeneration" icon="BranchSys3.Icon.g_glacierin_i01"
 			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="0"
@@ -4430,15 +4449,17 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Fist weapon with special powers used by Spezion. Bestows either Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. and P. Atk. also increase. -->
+	<!-- Fist weapon with special powers used by Spezion. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Atk. Spd. and P. Atk. also increase. -->
 	<item id="22807" type="Weapon" name="Spezion's Claw" icon="BranchSys3.Icon.g_spacia_claw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550" price="136041000"
-			soulshots="0" spiritshots="0">
+			soulshots="1" spiritshots="1">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4449,13 +4470,16 @@
 		Fist weapon with special powers used by Spezion. Critical increases by 76. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22808" type="Weapon" name="Spezion's Claw - Focus" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="3566" level="5" /> <!-- Special Ability: Focus -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4466,13 +4490,16 @@
 		Fist weapon with special powers used by Spezion. P. Atk. Increases by 332. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22809" type="Weapon" name="Spezion's Claw - Damage Up" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4483,13 +4510,16 @@
 		Fist weapon with special powers used by Spezion. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22810" type="Weapon" name="Spezion's Claw - Haste" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4500,13 +4530,17 @@
 		Fist weapon with special powers used by Spezion. Critical increases by 78.9. P. Atk. Increases by 332. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22811" type="Weapon" name="Spezion's Claw - Focus + Damage" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="3566" level="5" /> <!-- Special Ability: Focus -->
+		<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4517,13 +4551,17 @@
 		Fist weapon with special powers used by Spezion. P. Atk. Increases by 332. Atk. Spd. Increases by about 15%. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22812" type="Weapon" name="Spezion's Claw - Damage Up + Haste" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
+		<skill id="13062" level="4" /> <!-- Special Ability: Damage Up -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
@@ -4534,19 +4572,23 @@
 		Fist weapon with special powers used by Spezion. Atk. Spd. Increases by about 15%. Critical increases by 76. Increases damage inflicted during PvP. When enchanted to + 4, Atk. Spd. and P. Atk. also increase.
 	-->
 	<item id="22813" type="Weapon" name="Spezion's Claw - Haste + Focus" icon="BranchSys3.Icon.g_spacia_claw_i01" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
-			price="136041000" soulshots="0" spiritshots="0">
+			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550"
+			price="136041000" soulshots="1" spiritshots="1" enchant4Skill="13267-3">
 		<set stat="pAtk" val="595" />
 		<set stat="mAtk" val="226" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<enchant stat="pAtk" val="0" />
+		<enchant stat="mAtk" val="0" />
+		<skill id="3564" level="3" /> <!-- Special Ability: Haste -->
+		<skill id="3566" level="5" /> <!-- Special Ability: Focus -->
 		<crystallizeReward id="36163" count="1" chance="11.338" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="19447" count="1" chance="1.36" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="42.511" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Spear used by Maliss. Bestows either HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack also increases. -->
+	<!-- Spear used by Maliss. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Multi-attack also increases. -->
 	<item id="22814" type="Weapon" name="Maliss Stormer" icon="BranchSys3.Icon.g_melisa_stormer_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2010" price="293442000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="567" />
@@ -4661,7 +4703,7 @@
 		<crystallizeReward id="36514" count="1" chance="29.346" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Dagger used by Steregos. Bestows either Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- Dagger used by Steregos. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="22821" type="Weapon" name="Steregos' Dagger" icon="BranchSys3.Icon.g_dainsleif_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" price="136041000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="496" />
@@ -4776,7 +4818,7 @@
 		<crystallizeReward id="36514" count="1" chance="29.346" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Dual blunt with special powers used by Ron. Bestows either Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, also increases P. Skill Power and P. Atk. -->
+	<!-- Dual blunt with special powers used by Ron. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, also increases P. Skill Power and P. Atk. -->
 	<item id="22828" type="Weapon" name="Ron's Dual Blunt Weapon" icon="BranchSys3.Icon.g_urukmash_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" price="352130400" soulshots="0"
 			spiritshots="0">

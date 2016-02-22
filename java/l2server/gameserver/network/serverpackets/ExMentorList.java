@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.sql.Connection;
@@ -91,7 +92,7 @@ public class ExMentorList extends L2GameServerPacket
 		
 		_player = activeChar;
 	}
-
+	
 	private void getClassIdAndLevel(PartnerInfo partnerInfo)
 	{
 		Connection con = null;
@@ -120,13 +121,12 @@ public class ExMentorList extends L2GameServerPacket
 			L2DatabaseFactory.close(con);
 		}
 	}
-
+	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0x11b);
 		writeD(_player.isMentor() ? 0x01 : (_player.isMentee() ? 0x02 : 0x00)); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+		writeD(0x00); // ???
 		writeD(_partners.size());
 		for (PartnerInfo menteeInfo : _partners)
 		{
@@ -136,11 +136,5 @@ public class ExMentorList extends L2GameServerPacket
 			writeD(menteeInfo.level);
 			writeD(menteeInfo.online ? 0x01 : 0x00);
 		}
-	}
-
-	@Override
-	public String getType()
-	{
-		return "[S] FE:120 ExMentorList";
 	}
 }

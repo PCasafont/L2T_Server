@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import gnu.trove.TIntIntHashMap;
@@ -41,7 +42,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			int level = readD();
 			_abilities.put(id, level);
 		}
-
+		
 		// Knight skills
 		count = readD();
 		for (int i = 0; i < count; i++)
@@ -50,7 +51,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			int level = readD();
 			_abilities.put(id, level);
 		}
-
+		
 		// Knight skills
 		count = readD();
 		for (int i = 0; i < count; i++)
@@ -68,7 +69,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null || player.getLevel() < 99)
+		if ((player == null) || (player.getLevel() < 99))
 			return;
 		
 		if (_totalCount != _abilities.size())
@@ -76,7 +77,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 			return;
 		}
-
+		
 		int[] counts = new int[3];
 		for (int i = 0; i < 3; i++)
 			counts[i] = 0;
@@ -90,10 +91,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int level = _abilities.get(skillId);
 			Ability ability = AbilityTable.getInstance().getAbility(skillId);
-			if (level > ability.getMaxLevel() || level > remainingPoints
-					|| counts[ability.getType() - 1] < ability.getReqPoints()
-					|| (ability.getReqSkill() > 0 && (!_abilities.containsKey(ability.getReqSkill())
-							|| _abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl())))
+			if ((level > ability.getMaxLevel()) || (level > remainingPoints) || (counts[ability.getType() - 1] < ability.getReqPoints()) || ((ability.getReqSkill() > 0) && (!_abilities.containsKey(ability.getReqSkill()) || (_abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))))
 			{
 				sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 				return;
@@ -106,14 +104,4 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		
 		sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), true));
 	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "RequestAPSkillAcquire";
-	}
-	
 }

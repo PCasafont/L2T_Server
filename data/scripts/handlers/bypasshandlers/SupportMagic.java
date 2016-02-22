@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import l2server.gameserver.datatables.HelperBuffTable;
@@ -25,12 +26,9 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class SupportMagic implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"supportmagicservitor",
-		"supportmagic"
-	};
+	private static final String[] COMMANDS = { "supportmagicservitor", "supportmagic" };
 	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (target == null)
@@ -47,16 +45,16 @@ public class SupportMagic implements IBypassHandler
 	
 	/**
 	 * Add Newbie helper buffs to L2Player according to its level.<BR><BR>
-	 * 
+	 *
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the range level in wich player must be to obtain buff </li>
 	 * <li>If player level is out of range, display a message and return </li>
 	 * <li>According to player level cast buff </li><BR><BR>
-	 * 
+	 *
 	 * <FONT COLOR=#FF0000><B> Newbie Helper Buff list is define in sql table helper_buff_list</B></FONT><BR><BR>
-	 * 
+	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
-	 * 
+	 *
 	 */
 	public static boolean makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon)
 	{
@@ -107,8 +105,7 @@ public class SupportMagic implements IBypassHandler
 		// If the player is too high level, display a message and return
 		if (player_level > highestLevel)
 		{
-			String content = "<html><body>Newbie Guide:<br>Only a <font color=\"LEVEL\">novice character of level " + highestLevel
-			+ " or less</font> can receive my support magic.<br>Your novice character is the first one that you created and raised in this world.</body></html>";
+			String content = "<html><body>Newbie Guide:<br>Only a <font color=\"LEVEL\">novice character of level " + highestLevel + " or less</font> can receive my support magic.<br>Your novice character is the first one that you created and raised in this world.</body></html>";
 			npc.insertObjectIdAndShowChatWindow(player, content);
 			return true;
 		}
@@ -141,7 +138,7 @@ public class SupportMagic implements IBypassHandler
 			{
 				if (helperBuffItem.isMagicClassBuff() == player.isMageClass())
 				{
-					if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel())
+					if ((player_level >= helperBuffItem.getLowerLevel()) && (player_level <= helperBuffItem.getUpperLevel()))
 					{
 						skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
 						if (skill.getSkillType() == L2SkillType.SUMMON)
@@ -155,6 +152,7 @@ public class SupportMagic implements IBypassHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package events.FreyaCelebration;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -43,54 +44,16 @@ public class FreyaCelebration extends Quest
 	
 	private static final int[] _skills = { 9150, 9151, 9152, 9153, 9154, 9155, 9156 };
 	
-	private static final String[] _freya_texts =
-	{
-		"It has been so long since I have felt this... I almost miss it.",
-		"I have no idea what I'm feeling right now.  Are all human emotions like this?",
-		"You humans bring me such nonsense... a gift.  I have no need of such things.",
-		"I would 'appreciate' this, however it has been far too long since I have felt appreciation for anything.",
-		" I am Freya the Ice Queen!  Feelings and emotions of Felicia are nothing but memories to me."
-	};
+	private static final String[] _freya_texts = { "It has been so long since I have felt this... I almost miss it.", "I have no idea what I'm feeling right now.  Are all human emotions like this?", "You humans bring me such nonsense... a gift.  I have no need of such things.", "I would 'appreciate' this, however it has been far too long since I have felt appreciation for anything.", " I am Freya the Ice Queen!  Feelings and emotions of Felicia are nothing but memories to me." };
 	
-	private static final int[][] _spawns = {
-		{ -119494, 44882, 360, 24576 },
-		{ -117239, 46842, 360, 49151 },
-		{ -84023, 243051, -3728, 4096 },
-		{ -84411, 244813, -3728, 57343 },
-		{ 46908, 50856, -2992, 8192 },
-		{ 45538, 48357, -3056, 18000 },
-		{ -45372, -114104, -240, 16384 },
-		{ -45278, -112766, -240, 0 },
-		{ 9929, 16324, -4568, 62999 },
-		{ 11546, 17599, -4584, 46900 },
-		{ 115096, -178370, -880, 0 },
-		{ -13727, 122117, -2984, 16384 },
-		{ -14129, 123869, -3112, 40959 },
-		{ -83156, 150994, -3120, 0 },
-		{ -81031, 150038, -3040, 0 },
-		{ 16111, 142850, -2696, 16000 },
-		{ 17275, 145000, -3032, 25000 },
-		{ 111004, 218928, -3536, 16384 },
-		{ 81755, 146487, -3528, 32768 },
-		{ 82145, 148609, -3464, 0 },
-		{ 83037, 149324, -3464, 44000 },
-		{ 81987, 53723, -1488, 0 },
-		{ 147200, 25614, -2008, 16384 },
-		{ 148557, 26806, -2200, 32768 },
-		{ 147421, -55435, -2728, 49151 },
-		{ 148206, -55786, -2776, 61439 },
-		{ 85584, -142490, -1336, 0 },
-		{ 86865, -142915, -1336, 26000 },
-		{ 43966, -47709, -792, 49999 },
-		{ 43165, -48461, -792, 17000 }
-	};
+	private static final int[][] _spawns = { { -119494, 44882, 360, 24576 }, { -117239, 46842, 360, 49151 }, { -84023, 243051, -3728, 4096 }, { -84411, 244813, -3728, 57343 }, { 46908, 50856, -2992, 8192 }, { 45538, 48357, -3056, 18000 }, { -45372, -114104, -240, 16384 }, { -45278, -112766, -240, 0 }, { 9929, 16324, -4568, 62999 }, { 11546, 17599, -4584, 46900 }, { 115096, -178370, -880, 0 }, { -13727, 122117, -2984, 16384 }, { -14129, 123869, -3112, 40959 }, { -83156, 150994, -3120, 0 }, { -81031, 150038, -3040, 0 }, { 16111, 142850, -2696, 16000 }, { 17275, 145000, -3032, 25000 }, { 111004, 218928, -3536, 16384 }, { 81755, 146487, -3528, 32768 }, { 82145, 148609, -3464, 0 }, { 83037, 149324, -3464, 44000 }, { 81987, 53723, -1488, 0 }, { 147200, 25614, -2008, 16384 }, { 148557, 26806, -2200, 32768 }, { 147421, -55435, -2728, 49151 }, { 148206, -55786, -2776, 61439 }, { 85584, -142490, -1336, 0 }, { 86865, -142915, -1336, 26000 }, { 43966, -47709, -792, 49999 }, { 43165, -48461, -792, 17000 } };
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
-		if (st == null || q == null)
+		if ((st == null) || (q == null))
 			return null;
 		
 		if (event.equalsIgnoreCase("give_potion"))

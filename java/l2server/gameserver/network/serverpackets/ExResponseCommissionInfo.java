@@ -12,37 +12,35 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
- * 
+ *
  * @author Erlandys
  */
 public class ExResponseCommissionInfo extends L2GameServerPacket
 {
-	private static final String _S__FE_F3_EXRESPONSECOMMISSIONINFO = "[S] FE:F3 ExResponseCommissionInfo";
-
+	
 	@SuppressWarnings("unused")
 	private L2PcInstance _player;
 	@SuppressWarnings("unused")
 	private L2ItemInstance _item;
 	private boolean _success;
-
+	
 	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success)
 	{
 		_player = player;
 		_item = player.getInventory().getItemByObjectId(itemOID);
 		_success = success;
 	}
-
+	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xF4);
 		writeD(_success ? 0x01 : 0x00);
 		writeD(0x00); // ItemID
 		writeD(0x00); // TODO: Price
@@ -50,11 +48,5 @@ public class ExResponseCommissionInfo extends L2GameServerPacket
 		writeD(0x00); // TODO: Duration
 		writeD(-1); // TODO: Unknown
 		writeD(0x00); // TODO: Unknown
-	}
-
-	@Override
-	public String getType()
-	{
-		return _S__FE_F3_EXRESPONSECOMMISSIONINFO;
 	}
 }

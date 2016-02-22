@@ -1,3 +1,4 @@
+
 package quests.Q10291_FireDragonDestroyer;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -54,7 +55,7 @@ public class Q10291_FireDragonDestroyer extends Quest
 		{
 			case State.CREATED:
 			{
-				if (player.getLevel() >= 83 && st.getQuestItemsCount(FloatingStone) >= 1)
+				if ((player.getLevel() >= 83) && (st.getQuestItemsCount(FloatingStone) >= 1))
 					htmltext = "31540-01.htm";
 				else if (player.getLevel() < 83)
 					htmltext = "31540-02.htm";
@@ -64,9 +65,9 @@ public class Q10291_FireDragonDestroyer extends Quest
 			}
 			case State.STARTED:
 			{
-				if (st.getInt("cond") == 1 && st.getQuestItemsCount(PoorNecklace) >= 1)
+				if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(PoorNecklace) >= 1))
 					htmltext = "31540-08.htm";
-				else if (st.getInt("cond") == 1 && st.getQuestItemsCount(PoorNecklace) == 0)
+				else if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(PoorNecklace) == 0))
 				{
 					st.giveItems(PoorNecklace, 1);
 					htmltext = "31540-09.htm";
@@ -111,7 +112,7 @@ public class Q10291_FireDragonDestroyer extends Quest
 	{
 		QuestState st = player.getQuestState(qn);
 		
-		if (st != null && st.getInt("cond") == 1)
+		if ((st != null) && (st.getInt("cond") == 1))
 		{
 			st.takeItems(PoorNecklace, 1);
 			st.giveItems(ValorNecklace, 1);

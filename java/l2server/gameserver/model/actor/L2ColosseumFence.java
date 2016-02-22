@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor;
 
 import java.awt.Rectangle;
@@ -24,8 +25,6 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExColosseumFenceInfo;
-
-
 
 /**
  * @author FBIagent

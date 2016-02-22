@@ -3,21 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import java.util.logging.Level;
 
-import l2server.Config;
+import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.Location;
@@ -44,9 +46,7 @@ public class L2SkillTeleport extends L2Skill
 		if (coords != null)
 		{
 			String[] valuesSplit = coords.split(",");
-			_loc = new Location(Integer.parseInt(valuesSplit[0]),
-					Integer.parseInt(valuesSplit[1]),
-					Integer.parseInt(valuesSplit[2]));
+			_loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]), Integer.parseInt(valuesSplit[2]));
 		}
 		else
 			_loc = null;
@@ -57,15 +57,8 @@ public class L2SkillTeleport extends L2Skill
 	{
 		if (activeChar instanceof L2PcInstance)
 		{
-			//Don't allow use blessed scroll of escape
-			if (Config.isServer(Config.TENKAI) && getName().contains("Blessed Scroll of Escape") && ((L2PcInstance)activeChar).getPvpFlag() > 0)
-			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
-			
 			// Thanks nbd
-			if (((L2PcInstance)activeChar).getEvent() != null && !((L2PcInstance)activeChar).getEvent().onEscapeUse(((L2PcInstance)activeChar).getObjectId()))
+			if ((((L2PcInstance) activeChar).getEvent() != null) && !((L2PcInstance) activeChar).getEvent().onEscapeUse(((L2PcInstance) activeChar).getObjectId()))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -77,7 +70,7 @@ public class L2SkillTeleport extends L2Skill
 				return;
 			}
 			
-			if (!((L2PcInstance)activeChar).canEscape() || ((L2PcInstance)activeChar).isCombatFlagEquipped())
+			if (!((L2PcInstance) activeChar).canEscape() || ((L2PcInstance) activeChar).isCombatFlagEquipped())
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -92,7 +85,7 @@ public class L2SkillTeleport extends L2Skill
 		
 		try
 		{
-			for (L2Character target: (L2Character[]) targets)
+			for (L2Character target : (L2Character[]) targets)
 			{
 				if (target instanceof L2PcInstance)
 				{
@@ -119,10 +112,13 @@ public class L2SkillTeleport extends L2Skill
 					
 					if (targetChar != activeChar)
 					{
-						if (targetChar.getEvent() != null && !targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
+						if ((targetChar.getEvent() != null) && !targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
 							continue;
 						
 						if (targetChar.isInOlympiadMode())
+							continue;
+						
+						if (GrandBossManager.getInstance().getZone(targetChar) != null)
 							continue;
 						
 						if (targetChar.isCombatFlagEquipped())
@@ -136,8 +132,7 @@ public class L2SkillTeleport extends L2Skill
 					{
 						// target is not player OR player is not flying or flymounted
 						// TODO: add check for gracia continent coords
-						if (!(target instanceof L2PcInstance)
-								|| !(target.isFlying() || ((L2PcInstance)target).isFlyingMounted()))
+						if (!(target instanceof L2PcInstance) || !(target.isFlying() || ((L2PcInstance) target).isFlyingMounted()))
 							loc = _loc;
 					}
 				}
@@ -155,7 +150,17 @@ public class L2SkillTeleport extends L2Skill
 				if (loc != null)
 				{
 					target.setInstanceId(0);
-					target.teleToLocation(loc, true);
+					
+					final Location tpTo = loc;
+					final L2Character chararacter = target;
+					ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+					{
+						@Override
+						public void run()
+						{
+							chararacter.teleToLocation(tpTo, true);
+						}
+					}, 400);
 				}
 			}
 		}

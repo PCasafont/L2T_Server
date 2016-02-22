@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.position;
 
 import l2server.gameserver.model.L2Object;
@@ -27,9 +28,9 @@ public class ObjectPosition
 	// =========================================================
 	// Data Field
 	private L2Object _activeObject;
-	private int _heading	= 0;
+	private int _heading = 0;
 	private Point3D _worldPosition;
-	private L2WorldRegion _worldRegion;		 // Object localization : Used for items/chars that are seen in the world
+	private L2WorldRegion _worldRegion; // Object localization : Used for items/chars that are seen in the world
 	
 	// =========================================================
 	// Constructor
@@ -54,7 +55,7 @@ public class ObjectPosition
 	{
 		assert getWorldRegion() != null;
 		
-		setWorldPosition(x, y ,z);
+		setWorldPosition(x, y, z);
 		
 		try
 		{
@@ -95,12 +96,16 @@ public class ObjectPosition
 	public final void setXYZInvisible(int x, int y, int z)
 	{
 		assert getWorldRegion() == null;
-		if (x > L2World.MAP_MAX_X) x = L2World.MAP_MAX_X - 5000;
-		if (x < L2World.MAP_MIN_X) x = L2World.MAP_MIN_X + 5000;
-		if (y > L2World.MAP_MAX_Y) y = L2World.MAP_MAX_Y - 5000;
-		if (y < L2World.MAP_MIN_Y) y = L2World.MAP_MIN_Y + 5000;
+		if (x > L2World.MAP_MAX_X)
+			x = L2World.MAP_MAX_X - 5000;
+		if (x < L2World.MAP_MIN_X)
+			x = L2World.MAP_MIN_X + 5000;
+		if (y > L2World.MAP_MAX_Y)
+			y = L2World.MAP_MAX_Y - 5000;
+		if (y < L2World.MAP_MIN_Y)
+			y = L2World.MAP_MIN_Y + 5000;
 		
-		setWorldPosition(x, y ,z);
+		setWorldPosition(x, y, z);
 		getActiveObject().setIsVisible(false);
 	}
 	
@@ -109,7 +114,8 @@ public class ObjectPosition
 	 */
 	public void updateWorldRegion()
 	{
-		if (!getActiveObject().isVisible()) return;
+		if (!getActiveObject().isVisible())
+			return;
 		
 		L2WorldRegion newRegion = L2World.getInstance().getRegion(getWorldPosition());
 		if (newRegion != getWorldRegion())
@@ -133,20 +139,48 @@ public class ObjectPosition
 		return _activeObject;
 	}
 	
-	public final int getHeading() { return _heading; }
-	public final void setHeading(int value) { _heading = value; }
+	public final int getHeading()
+	{
+		return _heading;
+	}
+	
+	public final void setHeading(int value)
+	{
+		_heading = value;
+	}
 	
 	/** Return the x position of the L2Object. */
-	public final int getX() { return getWorldPosition().getX(); }
-	public final void setX(int value) { getWorldPosition().setX(value); }
+	public final int getX()
+	{
+		return getWorldPosition().getX();
+	}
+	
+	public final void setX(int value)
+	{
+		getWorldPosition().setX(value);
+	}
 	
 	/** Return the y position of the L2Object. */
-	public final int getY() { return getWorldPosition().getY(); }
-	public final void setY(int value) { getWorldPosition().setY(value); }
+	public final int getY()
+	{
+		return getWorldPosition().getY();
+	}
+	
+	public final void setY(int value)
+	{
+		getWorldPosition().setY(value);
+	}
 	
 	/** Return the z position of the L2Object. */
-	public final int getZ() { return getWorldPosition().getZ(); }
-	public final void setZ(int value) { getWorldPosition().setZ(value); }
+	public final int getZ()
+	{
+		return getWorldPosition().getZ();
+	}
+	
+	public final void setZ(int value)
+	{
+		getWorldPosition().setZ(value);
+	}
 	
 	public final Point3D getWorldPosition()
 	{
@@ -156,21 +190,30 @@ public class ObjectPosition
 		}
 		return _worldPosition;
 	}
+	
 	public final void setWorldPosition(int x, int y, int z)
 	{
-		getWorldPosition().setXYZ(x,y,z);
+		getWorldPosition().setXYZ(x, y, z);
 	}
-	public final void setWorldPosition(Point3D newPosition) { setWorldPosition(newPosition.getX(), newPosition.getY(), newPosition.getZ()); }
 	
-	public final L2WorldRegion getWorldRegion() { return _worldRegion; }
+	public final void setWorldPosition(Point3D newPosition)
+	{
+		setWorldPosition(newPosition.getX(), newPosition.getY(), newPosition.getZ());
+	}
+	
+	public final L2WorldRegion getWorldRegion()
+	{
+		return _worldRegion;
+	}
+	
 	public void setWorldRegion(L2WorldRegion value)
 	{
-		if (_worldRegion != null && getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
+		if ((_worldRegion != null) && (getActiveObject() instanceof L2Character)) // confirm revalidation of old region's zones
 		{
 			if (value != null)
-				_worldRegion.revalidateZones((L2Character)getActiveObject());	// at world region change
+				_worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change
 			else
-				_worldRegion.removeFromZones((L2Character)getActiveObject());	// at world region change
+				_worldRegion.removeFromZones((L2Character) getActiveObject()); // at world region change
 		}
 		
 		_worldRegion = value;

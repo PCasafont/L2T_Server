@@ -26,6 +26,8 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler
@@ -59,6 +61,13 @@ public class MagicGem implements IItemHandler
 			}
 			else
 				player.sendMessage("You cannot use a Magic Gem right now.");
+		}
+		else if (Config.isServer(Config.FUSION | Config.RAMPAGE))
+		{
+			NpcHtmlMessage nhm = new NpcHtmlMessage(0, 1);
+			nhm.setFile(player.getHtmlPrefix(), "MagicGem/Index.htm");
+			player.sendPacket(nhm);
+			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
 }

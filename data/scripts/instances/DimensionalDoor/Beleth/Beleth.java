@@ -1,3 +1,4 @@
+
 package instances.DimensionalDoor.Beleth;
 
 import instances.DimensionalDoor.DimensionalDoor;
@@ -28,7 +29,7 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel (Based on Abyss script)
- * 
+ *
  *	Source:
  *			- http://www.youtube.com/watch?v=XC57OBGMqgo
  *			- http://www.youtube.com/watch?v=QYrtMywPuHI&feature=related
@@ -37,39 +38,31 @@ import ai.group_template.L2AttackableAIScript;
 public class Beleth extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug	= false;
-	private static final String		_qn		= "Beleth";
+	private static final boolean _debug = false;
+	private static final String _qn = "Beleth";
 	
 	//Id's
-	private static final int	_stoneId 			= 32470;
-	private static final int	_priestId 			= 29128;
-	private static final int	_realBelethId 		= 80216;
-	private static final int	_fakeBelethId 		= 80217;
-	private static final int	_door_1 			= 20240001;
-	private static final int	_door_2 			= 20240002;
-	private static final int	_door_3 			= 20240003;
-	private static final int	_instanceTemplateId = 500;
-	private static final int	_camera_1_id 		= 29120;
-	private static final int	_camera_2_id 		= 29121;
-	private static final int	_camera_3_id 		= 29122;
-	private static final int	_camera_4_id 		= 29123;
-	private static final int	_camera_6_id		= 29125;
+	private static final int _stoneId = 32470;
+	private static final int _priestId = 29128;
+	private static final int _realBelethId = 80216;
+	private static final int _fakeBelethId = 80217;
+	private static final int _door_1 = 20240001;
+	private static final int _door_2 = 20240002;
+	private static final int _door_3 = 20240003;
+	private static final int _instanceTemplateId = 500;
+	private static final int _camera_1_id = 29120;
+	private static final int _camera_2_id = 29121;
+	private static final int _camera_3_id = 29122;
+	private static final int _camera_4_id = 29123;
+	private static final int _camera_6_id = 29125;
 	
 	//Vars
-	private static int[]	_cloneX	= new int[32];
-	private static int[]	_cloneY	= new int[32];
-	private static int[]	_cloneH	= new int[32];
+	private static int[] _cloneX = new int[32];
+	private static int[] _cloneY = new int[32];
+	private static int[] _cloneH = new int[32];
 	
 	//Cords
-	private static final Location[] _enterCords = 
-	{
-		new Location(16311, 209100, -9360),
-		new Location(16002, 209388, -9360),
-		new Location(16572, 209655, -9360),
-		new Location(16514, 209942, -9360),
-		new Location(16364, 209348, -9360)
-	};
-	
+	private static final Location[] _enterCords = { new Location(16311, 209100, -9360), new Location(16002, 209388, -9360), new Location(16572, 209655, -9360), new Location(16514, 209942, -9360), new Location(16364, 209348, -9360) };
 	
 	public Beleth(int questId, String name, String descr)
 	{
@@ -90,27 +83,27 @@ public class Beleth extends L2AttackableAIScript
 		int outerRad;
 		for (int i = 0; i < 16; i++)
 		{
-			if (i % 2 == 0)
+			if ((i % 2) == 0)
 			{
 				innerRad = 650;
 				outerRad = 1200;
 			}
-			else 
+			else
 			{
 				innerRad = 700;
 				outerRad = 1250;
 			}
 			
 			_cloneX[i] = 16327;
-			_cloneX[i] += (int)(innerRad * Math.sin(i * Math.toRadians(angle)));
+			_cloneX[i] += (int) (innerRad * Math.sin(i * Math.toRadians(angle)));
 			_cloneY[i] = 213135;
-			_cloneY[i] += (int)(innerRad * Math.cos(i * Math.toRadians(angle)));
-			_cloneH[i] = Util.convertDegreeToClientHeading(270 - i*angle);
+			_cloneY[i] += (int) (innerRad * Math.cos(i * Math.toRadians(angle)));
+			_cloneH[i] = Util.convertDegreeToClientHeading(270 - (i * angle));
 			_cloneX[i + 16] = 16327;
-			_cloneX[i + 16] += (int)(outerRad * Math.sin(i * Math.toRadians(angle)));
+			_cloneX[i + 16] += (int) (outerRad * Math.sin(i * Math.toRadians(angle)));
 			_cloneY[i + 16] = 213135;
-			_cloneY[i + 16] += (int)(outerRad * Math.cos(i * Math.toRadians(angle)));
-			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - i*angle);
+			_cloneY[i + 16] += (int) (outerRad * Math.cos(i * Math.toRadians(angle)));
+			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - (i * angle));
 		}
 	}
 	
@@ -124,10 +117,10 @@ public class Beleth extends L2AttackableAIScript
 		private L2Npc _camera2;
 		private L2Npc _camera3;
 		private L2Npc _camera4;
-
+		
 		public belethWorld()
 		{
-			_minions		 = new ArrayList<L2Npc>();
+			_minions = new ArrayList<L2Npc>();
 			_rewardedPlayers = new ArrayList<L2PcInstance>();
 		}
 	}
@@ -138,15 +131,15 @@ public class Beleth extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onAggroRangeEnter: " + player);
 		
-		if (npc.getNpcId() == _realBelethId || npc.getNpcId() == _fakeBelethId)
+		if ((npc.getNpcId() == _realBelethId) || (npc.getNpcId() == _fakeBelethId))
 		{
 			if (isPet)
 			{
 				if (player.getPet() != null)
-				{	
+				{
 					((L2Attackable) npc).addDamageHate(player.getPet(), 0, 999);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player.getPet());
-				}	
+				}
 				else if (player.getSummons() != null)
 				{
 					for (L2SummonInstance summon : player.getSummons())
@@ -157,7 +150,7 @@ public class Beleth extends L2AttackableAIScript
 						((L2Attackable) npc).addDamageHate(summon, 0, 999);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, summon);
 					}
-				}			
+				}
 			}
 		}
 		return super.onAggroRangeEnter(npc, player, isPet);
@@ -180,14 +173,14 @@ public class Beleth extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof belethWorld)
+		if ((wrld != null) && (wrld instanceof belethWorld))
 		{
-			belethWorld world = (belethWorld)wrld;
+			belethWorld world = (belethWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_door"))
 			{
 				InstanceManager.getInstance().getInstance(world.instanceId).getDoor(_door_1).openMe();
 				
-				startQuestTimer("stage_1_intro_1", _debug ? 20000 : 5*60000, null, player);
+				startQuestTimer("stage_1_intro_1", _debug ? 20000 : 5 * 60000, null, player);
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1"))
 			{
@@ -242,7 +235,7 @@ public class Beleth extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1_8"))
 			{
-				addSpawn(_camera_6_id, 16323, 214917, -9356, 0, false, 0, false, world.instanceId);	//Camera 6
+				addSpawn(_camera_6_id, 16323, 214917, -9356, 0, false, 0, false, world.instanceId); //Camera 6
 				
 				InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera4.getObjectId(), 900, 255, 0, 0, 1500, 0, 10, 1, 0));
 				
@@ -256,17 +249,17 @@ public class Beleth extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1_10"))
 			{
-				world._belethBoss =  addSpawn(_realBelethId, 16321, 214211, -9352, 49369, false, 0, false, world.instanceId);
+				world._belethBoss = addSpawn(_realBelethId, 16321, 214211, -9352, 49369, false, 0, false, world.instanceId);
 				
 				startQuestTimer("stage_1_intro_1_11", 200, null, player);
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1_11"))
 			{
-				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(),1));
-				for (int i=0; i<6; i++)
+				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 1));
+				for (int i = 0; i < 6; i++)
 				{
-					int x = (int)(150*Math.cos(i*1.046666667)+16323);
-					int y = (int)(150*Math.sin(i*1.046666667)+213059);
+					int x = (int) ((150 * Math.cos(i * 1.046666667)) + 16323);
+					int y = (int) ((150 * Math.sin(i * 1.046666667)) + 213059);
 					
 					L2Npc minion = addSpawn(_fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
 					minion.setShowSummonAnimation(true);
@@ -283,7 +276,7 @@ public class Beleth extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1_13"))
 			{
-				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(),4));
+				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 4));
 				InstanceManager.getInstance().sendPacket(world.instanceId, new MagicSkillUse(world._belethBoss, world._belethBoss, 5531, 1, 2000, 0, 0));
 				InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._belethBoss.getObjectId(), 800, 270, 10, 3000, 6000, 0, 0, 1, 0));
 				
@@ -326,7 +319,7 @@ public class Beleth extends L2AttackableAIScript
 			{
 				InstanceManager.getInstance().sendPacket(world.instanceId, new SpecialCamera(world._camera3.getObjectId(), 40, 260, 0, 0, 4000, 0, 0, 1, 0));
 				for (L2Npc blth : world._minions)
-				{	
+				{
 					blth.spawnMe();
 					blth.setIsImmobilized(true);//3000
 				}
@@ -353,7 +346,7 @@ public class Beleth extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro_1_22"))
 			{
-				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(),3));
+				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 3));
 				
 				startQuestTimer("stage_1_intro_1_23", 4000, null, player);
 			}
@@ -476,9 +469,9 @@ public class Beleth extends L2AttackableAIScript
 			Log.warning(getName() + ": onKill: " + npc.getName());
 		
 		InstanceWorld wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (wrld != null && wrld instanceof belethWorld)
+		if ((wrld != null) && (wrld instanceof belethWorld))
 		{
-			belethWorld world = (belethWorld)wrld;
+			belethWorld world = (belethWorld) wrld;
 			if (npc.getNpcId() == _realBelethId)
 			{
 				despawnAll(world);
@@ -493,13 +486,13 @@ public class Beleth extends L2AttackableAIScript
 				world._priest.setShowSummonAnimation(true);
 				world._priest.decayMe();
 				
-				addSpawn(_stoneId, 12470, 215607, -9381, 49152, false, 0, false, world.instanceId);	//Stone
+				addSpawn(_stoneId, 12470, 215607, -9381, 49152, false, 0, false, world.instanceId); //Stone
 				
 				if (player.isInParty())
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if (pMember == null || pMember.getInstanceId() != world.instanceId)
+						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
@@ -545,7 +538,7 @@ public class Beleth extends L2AttackableAIScript
 		{
 			if (i == realbeleth)
 				npc = addSpawn(_realBelethId, _cloneX[i], _cloneY[i], -9353, _cloneH[i], false, 0, false, world.instanceId);
-			else	
+			else
 				npc = addSpawn(_fakeBelethId, _cloneX[i], _cloneY[i], -9353, _cloneH[i], false, 0, false, world.instanceId);
 			
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
@@ -577,20 +570,20 @@ public class Beleth extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(16323, 211588, -9359);
 				}
-			}	
+			}
 			
 			return;
 		}
 		else
 		{
 			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, _instanceTemplateId, 7, 7, 92, Config.MAX_LEVEL))
-			{	
+			{
 				return;
 			}
 			
@@ -622,7 +615,7 @@ public class Beleth extends L2AttackableAIScript
 			
 			startQuestTimer("stage_1_open_door", 3000, null, player);
 			
-			Log.fine(getName() + ": ["+_instanceTemplateId+"] instance started: " + instanceId + " created by player: " + player.getName());
+			Log.fine(getName() + ": [" + _instanceTemplateId + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

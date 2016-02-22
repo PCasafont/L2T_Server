@@ -1,11 +1,13 @@
+
 package l2server.gameserver;
 
 /**
  * Interface for managers of list of instances.
- * 
+ *
  * @author fordfrog
  */
-public interface InstanceListManager {
+public interface InstanceListManager
+{
 	
 	/**
 	 * Loads instances with their data from persistant format. This method

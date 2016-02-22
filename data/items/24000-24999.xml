@@ -8,8 +8,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24000" type="Armor" name="Agathion - Virgo - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24000" type="Armor" name="Agathion - Virgo - Stage 12" icon="BranchIcon.Icon.accessary_sign_agathion_april_aug_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -24,8 +25,9 @@
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24001" type="Armor" name="Agathion - Capricorn - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24001" type="Armor" name="Agathion - Capricorn - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -40,8 +42,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24002" type="Armor" name="Agathion - Capricorn - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24002" type="Armor" name="Agathion - Capricorn - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -57,8 +60,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24003" type="Armor" name="Agathion - Capricorn - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24003" type="Armor" name="Agathion - Capricorn - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -74,8 +78,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24004" type="Armor" name="Agathion - Capricorn - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24004" type="Armor" name="Agathion - Capricorn - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -91,8 +96,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24005" type="Armor" name="Agathion - Capricorn - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24005" type="Armor" name="Agathion - Capricorn - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -108,8 +114,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24006" type="Armor" name="Agathion - Capricorn - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24006" type="Armor" name="Agathion - Capricorn - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -125,8 +132,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24007" type="Armor" name="Agathion - Capricorn - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24007" type="Armor" name="Agathion - Capricorn - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -142,8 +150,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24008" type="Armor" name="Agathion - Capricorn - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24008" type="Armor" name="Agathion - Capricorn - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -159,8 +168,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24009" type="Armor" name="Agathion - Capricorn - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24009" type="Armor" name="Agathion - Capricorn - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -176,8 +186,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24010" type="Armor" name="Agathion - Capricorn - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24010" type="Armor" name="Agathion - Capricorn - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -193,8 +204,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24011" type="Armor" name="Agathion - Capricorn - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24011" type="Armor" name="Agathion - Capricorn - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -210,8 +222,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24012" type="Armor" name="Agathion - Capricorn - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24012" type="Armor" name="Agathion - Capricorn - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -226,8 +239,9 @@
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24013" type="Armor" name="Agathion - Libra - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24013" type="Armor" name="Agathion - Libra - Stage 1" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -242,8 +256,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24014" type="Armor" name="Agathion - Libra - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24014" type="Armor" name="Agathion - Libra - Stage 2" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -259,8 +274,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24015" type="Armor" name="Agathion - Libra - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24015" type="Armor" name="Agathion - Libra - Stage 3" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -276,8 +292,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24016" type="Armor" name="Agathion - Libra - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24016" type="Armor" name="Agathion - Libra - Stage 4" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -293,8 +310,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24017" type="Armor" name="Agathion - Libra - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24017" type="Armor" name="Agathion - Libra - Stage 5" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -310,8 +328,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24018" type="Armor" name="Agathion - Libra - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24018" type="Armor" name="Agathion - Libra - Stage 6" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -327,8 +346,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24019" type="Armor" name="Agathion - Libra - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24019" type="Armor" name="Agathion - Libra - Stage 7" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -344,8 +364,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24020" type="Armor" name="Agathion - Libra - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24020" type="Armor" name="Agathion - Libra - Stage 8" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -361,8 +382,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24021" type="Armor" name="Agathion - Libra - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24021" type="Armor" name="Agathion - Libra - Stage 9" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -378,8 +400,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24022" type="Armor" name="Agathion - Libra - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24022" type="Armor" name="Agathion - Libra - Stage 10" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -395,8 +418,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24023" type="Armor" name="Agathion - Libra - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24023" type="Armor" name="Agathion - Libra - Stage 11" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -412,8 +436,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24024" type="Armor" name="Agathion - Libra - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24024" type="Armor" name="Agathion - Libra - Stage 12" icon="BranchIcon.Icon.accessary_sign_agathion_april_sep_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -428,7 +453,7 @@
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 225 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24025" type="Armor" name="Agathion - Aries - Stage 1" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24025" type="Armor" name="Agathion - Aries - Stage 1" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -444,7 +469,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24026" type="Armor" name="Agathion - Aries - Stage 2" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24026" type="Armor" name="Agathion - Aries - Stage 2" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -461,7 +486,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24027" type="Armor" name="Agathion - Aries - Stage 3" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24027" type="Armor" name="Agathion - Aries - Stage 3" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -478,7 +503,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24028" type="Armor" name="Agathion - Aries - Stage 4" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24028" type="Armor" name="Agathion - Aries - Stage 4" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -495,7 +520,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24029" type="Armor" name="Agathion - Aries - Stage 5" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24029" type="Armor" name="Agathion - Aries - Stage 5" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -512,7 +537,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24030" type="Armor" name="Agathion - Aries - Stage 6" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24030" type="Armor" name="Agathion - Aries - Stage 6" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -529,7 +554,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24031" type="Armor" name="Agathion - Aries - Stage 7" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24031" type="Armor" name="Agathion - Aries - Stage 7" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -546,7 +571,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24032" type="Armor" name="Agathion - Aries - Stage 8" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24032" type="Armor" name="Agathion - Aries - Stage 8" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -563,7 +588,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24033" type="Armor" name="Agathion - Aries - Stage 9" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24033" type="Armor" name="Agathion - Aries - Stage 9" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -580,7 +605,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24034" type="Armor" name="Agathion - Aries - Stage 10" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24034" type="Armor" name="Agathion - Aries - Stage 10" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -597,7 +622,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24035" type="Armor" name="Agathion - Aries - Stage 11" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24035" type="Armor" name="Agathion - Aries - Stage 11" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -614,7 +639,7 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24036" type="Armor" name="Agathion - Aries - Stage 12" icon="icon.accessory_lbracelet_march_i00" defaultAction="equip"
+	<item id="24036" type="Armor" name="Agathion - Aries - Stage 12" icon="BranchIcon.Icon.accessory_lbracelet_march_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
@@ -630,7 +655,7 @@
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24037" type="Armor" name="Agathion - Taurus - Stage 1" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24037" type="Armor" name="Agathion - Taurus - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -647,7 +672,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24038" type="Armor" name="Agathion - Taurus - Stage 2" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24038" type="Armor" name="Agathion - Taurus - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -665,7 +690,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24039" type="Armor" name="Agathion - Taurus - Stage 3" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24039" type="Armor" name="Agathion - Taurus - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -683,7 +708,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24040" type="Armor" name="Agathion - Taurus - Stage 4" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24040" type="Armor" name="Agathion - Taurus - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -701,7 +726,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24041" type="Armor" name="Agathion - Taurus - Stage 5" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24041" type="Armor" name="Agathion - Taurus - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -719,7 +744,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24042" type="Armor" name="Agathion - Taurus - Stage 6" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24042" type="Armor" name="Agathion - Taurus - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -737,7 +762,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24043" type="Armor" name="Agathion - Taurus - Stage 7" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24043" type="Armor" name="Agathion - Taurus - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -755,7 +780,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24044" type="Armor" name="Agathion - Taurus - Stage 8" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24044" type="Armor" name="Agathion - Taurus - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -773,7 +798,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24045" type="Armor" name="Agathion - Taurus - Stage 9" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24045" type="Armor" name="Agathion - Taurus - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -791,7 +816,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24046" type="Armor" name="Agathion - Taurus - Stage 10" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24046" type="Armor" name="Agathion - Taurus - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -809,7 +834,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24047" type="Armor" name="Agathion - Taurus - Stage 11" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24047" type="Armor" name="Agathion - Taurus - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -827,7 +852,7 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24048" type="Armor" name="Agathion - Taurus - Stage 12" icon="icon.accessary_lbracelet_sign_agathion_april_i00"
+	<item id="24048" type="Armor" name="Agathion - Taurus - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_april_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
@@ -844,8 +869,9 @@
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24049" type="Armor" name="Agathion - Leo - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24049" type="Armor" name="Agathion - Leo - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -860,8 +886,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24050" type="Armor" name="Agathion - Leo - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24050" type="Armor" name="Agathion - Leo - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -877,8 +904,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24051" type="Armor" name="Agathion - Leo - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24051" type="Armor" name="Agathion - Leo - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -894,8 +922,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24052" type="Armor" name="Agathion - Leo - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24052" type="Armor" name="Agathion - Leo - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -911,8 +940,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24053" type="Armor" name="Agathion - Leo - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24053" type="Armor" name="Agathion - Leo - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -928,8 +958,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24054" type="Armor" name="Agathion - Leo - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24054" type="Armor" name="Agathion - Leo - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -945,8 +976,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24055" type="Armor" name="Agathion - Leo - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24055" type="Armor" name="Agathion - Leo - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -962,8 +994,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24056" type="Armor" name="Agathion - Leo - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24056" type="Armor" name="Agathion - Leo - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -979,8 +1012,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24057" type="Armor" name="Agathion - Leo - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24057" type="Armor" name="Agathion - Leo - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -996,8 +1030,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24058" type="Armor" name="Agathion - Leo - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24058" type="Armor" name="Agathion - Leo - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1013,8 +1048,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24059" type="Armor" name="Agathion - Leo - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24059" type="Armor" name="Agathion - Leo - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1030,8 +1066,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24060" type="Armor" name="Agathion - Leo - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24060" type="Armor" name="Agathion - Leo - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_july_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1046,8 +1083,9 @@
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 13500 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24061" type="Armor" name="Agathion - Gemini - Stage 1" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24061" type="Armor" name="Agathion - Gemini - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1062,8 +1100,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24062" type="Armor" name="Agathion - Gemini - Stage 2" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24062" type="Armor" name="Agathion - Gemini - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1079,8 +1118,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24063" type="Armor" name="Agathion - Gemini - Stage 3" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24063" type="Armor" name="Agathion - Gemini - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1096,8 +1136,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24064" type="Armor" name="Agathion - Gemini - Stage 4" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24064" type="Armor" name="Agathion - Gemini - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1113,8 +1154,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24065" type="Armor" name="Agathion - Gemini - Stage 5" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24065" type="Armor" name="Agathion - Gemini - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1130,8 +1172,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24066" type="Armor" name="Agathion - Gemini - Stage 6" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24066" type="Armor" name="Agathion - Gemini - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1147,8 +1190,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24067" type="Armor" name="Agathion - Gemini - Stage 7" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24067" type="Armor" name="Agathion - Gemini - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1164,8 +1208,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24068" type="Armor" name="Agathion - Gemini - Stage 8" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24068" type="Armor" name="Agathion - Gemini - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1181,8 +1226,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24069" type="Armor" name="Agathion - Gemini - Stage 9" icon="icon.accessary_lbracelet_sign_agathion_may_i00" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24069" type="Armor" name="Agathion - Gemini - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1198,7 +1244,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24070" type="Armor" name="Agathion - Gemini - Stage 10" icon="icon.accessary_lbracelet_sign_agathion_may_i00"
+	<item id="24070" type="Armor" name="Agathion - Gemini - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
@@ -1216,7 +1262,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24071" type="Armor" name="Agathion - Gemini - Stage 11" icon="icon.accessary_lbracelet_sign_agathion_may_i00"
+	<item id="24071" type="Armor" name="Agathion - Gemini - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
@@ -1234,7 +1280,7 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24072" type="Armor" name="Agathion - Gemini - Stage 12" icon="icon.accessary_lbracelet_sign_agathion_may_i00"
+	<item id="24072" type="Armor" name="Agathion - Gemini - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_may_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
@@ -1251,8 +1297,9 @@
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24073" type="Armor" name="Agathion - Scorpio - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24073" type="Armor" name="Agathion - Scorpio - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1267,8 +1314,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24074" type="Armor" name="Agathion - Scorpio - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24074" type="Armor" name="Agathion - Scorpio - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1284,8 +1332,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24075" type="Armor" name="Agathion - Scorpio - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24075" type="Armor" name="Agathion - Scorpio - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1301,8 +1350,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24076" type="Armor" name="Agathion - Scorpio - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24076" type="Armor" name="Agathion - Scorpio - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1318,8 +1368,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24077" type="Armor" name="Agathion - Scorpio - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24077" type="Armor" name="Agathion - Scorpio - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1335,8 +1386,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24078" type="Armor" name="Agathion - Scorpio - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24078" type="Armor" name="Agathion - Scorpio - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1352,8 +1404,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24079" type="Armor" name="Agathion - Scorpio - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24079" type="Armor" name="Agathion - Scorpio - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1369,8 +1422,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24080" type="Armor" name="Agathion - Scorpio - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24080" type="Armor" name="Agathion - Scorpio - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1386,8 +1440,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24081" type="Armor" name="Agathion - Scorpio - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24081" type="Armor" name="Agathion - Scorpio - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1403,8 +1458,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24082" type="Armor" name="Agathion - Scorpio - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24082" type="Armor" name="Agathion - Scorpio - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1420,8 +1476,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24083" type="Armor" name="Agathion - Scorpio - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24083" type="Armor" name="Agathion - Scorpio - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1437,8 +1494,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24084" type="Armor" name="Agathion - Scorpio - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24084" type="Armor" name="Agathion - Scorpio - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1453,8 +1511,9 @@
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24085" type="Armor" name="Agathion - Aquarius - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24085" type="Armor" name="Agathion - Aquarius - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1469,8 +1528,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24086" type="Armor" name="Agathion - Aquarius - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24086" type="Armor" name="Agathion - Aquarius - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1486,8 +1546,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24087" type="Armor" name="Agathion - Aquarius - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24087" type="Armor" name="Agathion - Aquarius - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1503,8 +1564,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24088" type="Armor" name="Agathion - Aquarius - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24088" type="Armor" name="Agathion - Aquarius - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1520,8 +1582,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24089" type="Armor" name="Agathion - Aquarius - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24089" type="Armor" name="Agathion - Aquarius - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1537,8 +1600,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24090" type="Armor" name="Agathion - Aquarius - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24090" type="Armor" name="Agathion - Aquarius - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1554,8 +1618,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24091" type="Armor" name="Agathion - Aquarius - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24091" type="Armor" name="Agathion - Aquarius - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1571,8 +1636,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24092" type="Armor" name="Agathion - Aquarius - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24092" type="Armor" name="Agathion - Aquarius - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1588,8 +1654,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24093" type="Armor" name="Agathion - Aquarius - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24093" type="Armor" name="Agathion - Aquarius - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1605,8 +1672,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24094" type="Armor" name="Agathion - Aquarius - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24094" type="Armor" name="Agathion - Aquarius - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1622,8 +1690,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24095" type="Armor" name="Agathion - Aquarius - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24095" type="Armor" name="Agathion - Aquarius - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1639,8 +1708,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24096" type="Armor" name="Agathion - Aquarius - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24096" type="Armor" name="Agathion - Aquarius - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1655,8 +1725,9 @@
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24097" type="Armor" name="Agathion - Pisces - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24097" type="Armor" name="Agathion - Pisces - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1671,8 +1742,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24098" type="Armor" name="Agathion - Pisces - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24098" type="Armor" name="Agathion - Pisces - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1688,8 +1760,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24099" type="Armor" name="Agathion - Pisces - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24099" type="Armor" name="Agathion - Pisces - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1705,8 +1778,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24100" type="Armor" name="Agathion - Pisces - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24100" type="Armor" name="Agathion - Pisces - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1722,8 +1796,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24101" type="Armor" name="Agathion - Pisces - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24101" type="Armor" name="Agathion - Pisces - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1739,8 +1814,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24102" type="Armor" name="Agathion - Pisces - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24102" type="Armor" name="Agathion - Pisces - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1756,8 +1832,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24103" type="Armor" name="Agathion - Pisces - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24103" type="Armor" name="Agathion - Pisces - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1773,8 +1850,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24104" type="Armor" name="Agathion - Pisces - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24104" type="Armor" name="Agathion - Pisces - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1790,8 +1868,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24105" type="Armor" name="Agathion - Pisces - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24105" type="Armor" name="Agathion - Pisces - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1807,8 +1886,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24106" type="Armor" name="Agathion - Pisces - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24106" type="Armor" name="Agathion - Pisces - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1824,8 +1904,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24107" type="Armor" name="Agathion - Pisces - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24107" type="Armor" name="Agathion - Pisces - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1841,8 +1922,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
 	-->
-	<item id="24108" type="Armor" name="Agathion - Pisces - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24108" type="Armor" name="Agathion - Pisces - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1857,8 +1939,9 @@
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6750 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24109" type="Armor" name="Agathion - Sagittarius - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24109" type="Armor" name="Agathion - Sagittarius - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1873,8 +1956,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
-	<item id="24110" type="Armor" name="Agathion - Sagittarius - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24110" type="Armor" name="Agathion - Sagittarius - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1890,8 +1974,9 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24111" type="Armor" name="Agathion - Sagittarius - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24111" type="Armor" name="Agathion - Sagittarius - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1907,8 +1992,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
 	-->
-	<item id="24112" type="Armor" name="Agathion - Sagittarius - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24112" type="Armor" name="Agathion - Sagittarius - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1924,8 +2010,9 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24113" type="Armor" name="Agathion - Sagittarius - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24113" type="Armor" name="Agathion - Sagittarius - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1941,8 +2028,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
 	-->
-	<item id="24114" type="Armor" name="Agathion - Sagittarius - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24114" type="Armor" name="Agathion - Sagittarius - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1958,8 +2046,9 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24115" type="Armor" name="Agathion - Sagittarius - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24115" type="Armor" name="Agathion - Sagittarius - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1975,8 +2064,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
 	-->
-	<item id="24116" type="Armor" name="Agathion - Sagittarius - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24116" type="Armor" name="Agathion - Sagittarius - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -1992,8 +2082,9 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24117" type="Armor" name="Agathion - Sagittarius - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24117" type="Armor" name="Agathion - Sagittarius - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -2009,8 +2100,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
 	-->
-	<item id="24118" type="Armor" name="Agathion - Sagittarius - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24118" type="Armor" name="Agathion - Sagittarius - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -2026,8 +2118,9 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24119" type="Armor" name="Agathion - Sagittarius - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24119" type="Armor" name="Agathion - Sagittarius - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -2043,8 +2136,9 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24120" type="Armor" name="Agathion - Sagittarius - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true" unequipSkill="3267-1">
+	<item id="24120" type="Armor" name="Agathion - Sagittarius - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
+			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
@@ -2059,7 +2153,7 @@
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4500 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24121" type="Armor" name="Agathion - Cancer - Stage 1" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24121" type="Armor" name="Agathion - Cancer - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2076,7 +2170,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24122" type="Armor" name="Agathion - Cancer - Stage 2" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24122" type="Armor" name="Agathion - Cancer - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2094,7 +2188,7 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24123" type="Armor" name="Agathion - Cancer - Stage 3" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24123" type="Armor" name="Agathion - Cancer - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2112,7 +2206,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24124" type="Armor" name="Agathion - Cancer - Stage 4" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24124" type="Armor" name="Agathion - Cancer - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2130,7 +2224,7 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24125" type="Armor" name="Agathion - Cancer - Stage 5" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24125" type="Armor" name="Agathion - Cancer - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2148,7 +2242,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24126" type="Armor" name="Agathion - Cancer - Stage 6" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24126" type="Armor" name="Agathion - Cancer - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2166,7 +2260,7 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24127" type="Armor" name="Agathion - Cancer - Stage 7" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24127" type="Armor" name="Agathion - Cancer - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2184,7 +2278,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24128" type="Armor" name="Agathion - Cancer - Stage 8" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24128" type="Armor" name="Agathion - Cancer - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2202,7 +2296,7 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24129" type="Armor" name="Agathion - Cancer - Stage 9" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24129" type="Armor" name="Agathion - Cancer - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2220,7 +2314,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24130" type="Armor" name="Agathion - Cancer - Stage 10" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24130" type="Armor" name="Agathion - Cancer - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2238,7 +2332,7 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24131" type="Armor" name="Agathion - Cancer - Stage 11" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24131" type="Armor" name="Agathion - Cancer - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2256,7 +2350,7 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24132" type="Armor" name="Agathion - Cancer - Stage 12" icon="icon.accessary_lbracelet_sign_agathion_june_i00"
+	<item id="24132" type="Armor" name="Agathion - Cancer - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_june_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
@@ -2267,7 +2361,7 @@
 		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
-	<item id="24133" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
+	<item id="24133" type="Armor" name="Dark Assassin Suit" icon="BranchIcon.Icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
@@ -2276,19 +2370,24 @@
 			immediateEffect="1" crystalType="c" weight="0" isStackable="true" handler="AppearanceStone" standardItem="24133">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24135" type="EtcItem" name="Dark Assassin Top" icon="icon.etc_dark_suit_upbody_i00" immediateEffect="1" weight="0">
+	<item id="24135" type="EtcItem" name="Dark Assassin Top" icon="BranchIcon.Icon.etc_dark_suit_upbody_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24136" type="EtcItem" name="Dark Assassin Pants" icon="icon.etc_dark_suit_downbody_i00" immediateEffect="1" weight="0">
+	<item id="24136" type="EtcItem" name="Dark Assassin Pants" icon="BranchIcon.Icon.etc_dark_suit_downbody_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24137" type="EtcItem" name="Dark Assassin Gloves" icon="icon.etc_dark_suit_gloves_i00" immediateEffect="1" weight="0">
+	<item id="24137" type="EtcItem" name="Dark Assassin Gloves" icon="BranchIcon.Icon.etc_dark_suit_gloves_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24138" type="EtcItem" name="Dark Assassin Boots" icon="icon.etc_dark_suit_shoes_i00" immediateEffect="1" weight="0">
+	<item id="24138" type="EtcItem" name="Dark Assassin Boots" icon="BranchIcon.Icon.etc_dark_suit_shoes_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Stars twinkle inside a star-shaped jar. Ingredient to crafting a Zodiac Agathion bracelet with a 100% success rate. -->
-	<item id="24139" type="EtcItem" name="Starlight Jar" icon="icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1" weight="0">
+	<item id="24139" type="EtcItem" name="Starlight Jar" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Summons a cute Three-headed Dragon. Cannot be exchanged, dropped, or sold. -->
 	<item id="24140" type="Armor" name="Agathion - Three-headed Dragon" icon="BranchSys2.icon.br_aga_threehead_i00" defaultAction="equip"
@@ -2620,8 +2719,8 @@
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24200" type="Armor" name="Agathion - Twinkling Capricorn - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24200" type="Armor" name="Agathion - Twinkling Capricorn - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2631,8 +2730,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24201" type="Armor" name="Agathion - Twinkling Capricorn - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24201" type="Armor" name="Agathion - Twinkling Capricorn - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2642,8 +2741,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24202" type="Armor" name="Agathion - Twinkling Capricorn - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24202" type="Armor" name="Agathion - Twinkling Capricorn - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2653,8 +2752,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24203" type="Armor" name="Agathion - Twinkling Capricorn - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24203" type="Armor" name="Agathion - Twinkling Capricorn - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2664,8 +2763,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24204" type="Armor" name="Agathion - Twinkling Capricorn - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24204" type="Armor" name="Agathion - Twinkling Capricorn - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2675,8 +2774,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24205" type="Armor" name="Agathion - Twinkling Capricorn - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24205" type="Armor" name="Agathion - Twinkling Capricorn - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2686,8 +2785,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24206" type="Armor" name="Agathion - Twinkling Capricorn - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24206" type="Armor" name="Agathion - Twinkling Capricorn - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2697,8 +2796,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24207" type="Armor" name="Agathion - Twinkling Capricorn - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24207" type="Armor" name="Agathion - Twinkling Capricorn - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2708,8 +2807,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24208" type="Armor" name="Agathion - Twinkling Capricorn - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24208" type="Armor" name="Agathion - Twinkling Capricorn - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2719,8 +2818,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24209" type="Armor" name="Agathion - Twinkling Capricorn - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24209" type="Armor" name="Agathion - Twinkling Capricorn - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2730,8 +2829,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24210" type="Armor" name="Agathion - Twinkling Capricorn - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24210" type="Armor" name="Agathion - Twinkling Capricorn - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -2741,8 +2840,8 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24211" type="Armor" name="Agathion - Twinkling Capricorn - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24211" type="Armor" name="Agathion - Twinkling Capricorn - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_dec_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -3406,8 +3505,8 @@
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24272" type="Armor" name="Agathion - Twinkling Scorpio - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24272" type="Armor" name="Agathion - Twinkling Scorpio - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3417,8 +3516,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24273" type="Armor" name="Agathion - Twinkling Scorpio - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24273" type="Armor" name="Agathion - Twinkling Scorpio - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3428,8 +3527,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24274" type="Armor" name="Agathion - Twinkling Scorpio - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24274" type="Armor" name="Agathion - Twinkling Scorpio - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3439,8 +3538,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24275" type="Armor" name="Agathion - Twinkling Scorpio - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24275" type="Armor" name="Agathion - Twinkling Scorpio - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3450,8 +3549,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24276" type="Armor" name="Agathion - Twinkling Scorpio - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24276" type="Armor" name="Agathion - Twinkling Scorpio - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3461,8 +3560,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24277" type="Armor" name="Agathion - Twinkling Scorpio - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24277" type="Armor" name="Agathion - Twinkling Scorpio - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3472,8 +3571,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24278" type="Armor" name="Agathion - Twinkling Scorpio - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24278" type="Armor" name="Agathion - Twinkling Scorpio - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3483,8 +3582,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24279" type="Armor" name="Agathion - Twinkling Scorpio - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24279" type="Armor" name="Agathion - Twinkling Scorpio - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3494,8 +3593,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24280" type="Armor" name="Agathion - Twinkling Scorpio - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24280" type="Armor" name="Agathion - Twinkling Scorpio - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3505,8 +3604,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24281" type="Armor" name="Agathion - Twinkling Scorpio - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24281" type="Armor" name="Agathion - Twinkling Scorpio - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3516,8 +3615,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24282" type="Armor" name="Agathion - Twinkling Scorpio - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24282" type="Armor" name="Agathion - Twinkling Scorpio - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -3527,8 +3626,8 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24283" type="Armor" name="Agathion - Twinkling Scorpio - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24283" type="Armor" name="Agathion - Twinkling Scorpio - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_oct_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3537,8 +3636,8 @@
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24284" type="Armor" name="Agathion - Twinkling Aquarius - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24284" type="Armor" name="Agathion - Twinkling Aquarius - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3548,8 +3647,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24285" type="Armor" name="Agathion - Twinkling Aquarius - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24285" type="Armor" name="Agathion - Twinkling Aquarius - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3559,8 +3658,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24286" type="Armor" name="Agathion - Twinkling Aquarius - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24286" type="Armor" name="Agathion - Twinkling Aquarius - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3570,8 +3669,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24287" type="Armor" name="Agathion - Twinkling Aquarius - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24287" type="Armor" name="Agathion - Twinkling Aquarius - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3581,8 +3680,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24288" type="Armor" name="Agathion - Twinkling Aquarius - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24288" type="Armor" name="Agathion - Twinkling Aquarius - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3592,8 +3691,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24289" type="Armor" name="Agathion - Twinkling Aquarius - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24289" type="Armor" name="Agathion - Twinkling Aquarius - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3603,8 +3702,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24290" type="Armor" name="Agathion - Twinkling Aquarius - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24290" type="Armor" name="Agathion - Twinkling Aquarius - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3614,8 +3713,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24291" type="Armor" name="Agathion - Twinkling Aquarius - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24291" type="Armor" name="Agathion - Twinkling Aquarius - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3625,8 +3724,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24292" type="Armor" name="Agathion - Twinkling Aquarius - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24292" type="Armor" name="Agathion - Twinkling Aquarius - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3636,8 +3735,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24293" type="Armor" name="Agathion - Twinkling Aquarius - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24293" type="Armor" name="Agathion - Twinkling Aquarius - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3647,8 +3746,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24294" type="Armor" name="Agathion - Twinkling Aquarius - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24294" type="Armor" name="Agathion - Twinkling Aquarius - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -3658,8 +3757,8 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24295" type="Armor" name="Agathion - Twinkling Aquarius - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24295" type="Armor" name="Agathion - Twinkling Aquarius - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_jan_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3668,8 +3767,8 @@
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24296" type="Armor" name="Agathion - Twinkling Pisces - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24296" type="Armor" name="Agathion - Twinkling Pisces - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3679,8 +3778,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24297" type="Armor" name="Agathion - Twinkling Pisces - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24297" type="Armor" name="Agathion - Twinkling Pisces - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3690,8 +3789,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24298" type="Armor" name="Agathion - Twinkling Pisces - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24298" type="Armor" name="Agathion - Twinkling Pisces - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3701,8 +3800,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24299" type="Armor" name="Agathion - Twinkling Pisces - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24299" type="Armor" name="Agathion - Twinkling Pisces - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3712,8 +3811,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24300" type="Armor" name="Agathion - Twinkling Pisces - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24300" type="Armor" name="Agathion - Twinkling Pisces - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3723,8 +3822,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24301" type="Armor" name="Agathion - Twinkling Pisces - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24301" type="Armor" name="Agathion - Twinkling Pisces - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3734,8 +3833,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24302" type="Armor" name="Agathion - Twinkling Pisces - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24302" type="Armor" name="Agathion - Twinkling Pisces - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3745,8 +3844,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24303" type="Armor" name="Agathion - Twinkling Pisces - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24303" type="Armor" name="Agathion - Twinkling Pisces - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3756,8 +3855,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24304" type="Armor" name="Agathion - Twinkling Pisces - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24304" type="Armor" name="Agathion - Twinkling Pisces - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3767,8 +3866,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24305" type="Armor" name="Agathion - Twinkling Pisces - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24305" type="Armor" name="Agathion - Twinkling Pisces - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3778,8 +3877,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24306" type="Armor" name="Agathion - Twinkling Pisces - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24306" type="Armor" name="Agathion - Twinkling Pisces - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -3789,8 +3888,8 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24307" type="Armor" name="Agathion - Twinkling Pisces - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24307" type="Armor" name="Agathion - Twinkling Pisces - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_feb_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3799,8 +3898,8 @@
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6750 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24308" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 1" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24308" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 1" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3810,8 +3909,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
-	<item id="24309" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 2" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24309" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 2" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3821,8 +3920,8 @@
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24310" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 3" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24310" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 3" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3832,8 +3931,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
 	-->
-	<item id="24311" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 4" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24311" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 4" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3843,8 +3942,8 @@
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24312" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 5" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24312" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 5" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3854,8 +3953,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
 	-->
-	<item id="24313" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 6" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24313" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 6" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3865,8 +3964,8 @@
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24314" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 7" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24314" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 7" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3876,8 +3975,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
 	-->
-	<item id="24315" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 8" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24315" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 8" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3887,8 +3986,8 @@
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24316" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 9" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24316" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 9" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3898,8 +3997,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
 	-->
-	<item id="24317" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 10" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24317" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 10" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3909,8 +4008,8 @@
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24318" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 11" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24318" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 11" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -3920,8 +4019,8 @@
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
 	-->
-	<item id="24319" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 12" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
-			bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+	<item id="24319" type="Armor" name="Agathion - Twinkling Sagittarius - Stage 12" icon="BranchIcon.Icon.accessary_lbracelet_sign_agathion_nov_i00"
+			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -4206,7 +4305,7 @@
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="24365" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
-			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="24365">
+			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="24364">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Gemini. -->
 	<item id="24366" type="EtcItem" name="Luck Box 1 - Gemini" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"

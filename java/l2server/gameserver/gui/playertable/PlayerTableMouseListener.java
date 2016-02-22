@@ -1,6 +1,7 @@
 /**
- * 
+ *
  */
+
 package l2server.gameserver.gui.playertable;
 
 import java.awt.event.ActionEvent;
@@ -28,7 +29,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 		itemOpenGo.setActionCommand("mark");
 		itemOpenGo.addActionListener(this);
 		_popupMenu.add(itemOpenGo);
-		
+
 		JMenuItem itemOpen = new JMenuItem("Mark Yellow (What is this for??)");
 		itemOpen.setActionCommand("yellow");
 		itemOpen.addActionListener(this);
@@ -38,6 +39,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		checkPopup(e);
@@ -47,10 +49,10 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 		}*/
 	}
 	
-	
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
+	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		/*if (e.getActionCommand().equals("yellow"))
@@ -67,6 +69,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseClicked(MouseEvent e)
 	{
 		checkPopup(e);
@@ -75,6 +78,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseEntered(MouseEvent e)
 	{
 		
@@ -83,6 +87,7 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mouseExited(MouseEvent e)
 	{
 		
@@ -91,15 +96,17 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
 	 */
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
-		 checkPopup(e);
+		checkPopup(e);
 	}
 	
-	private void checkPopup(MouseEvent e) 
+	private void checkPopup(MouseEvent e)
 	{
 		_parent.setTableSelectByMouseEvent(e);
-		if (e.isPopupTrigger()) {
+		if (e.isPopupTrigger())
+		{
 			_popupMenu.show(_parent.getPlayerTable(), e.getX(), e.getY());
 		}
 	}

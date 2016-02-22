@@ -1164,6 +1164,24 @@
 		<route id="9" string="" X="16180" Y="150387" Z="-3216" delay="0" run="false" />
 		<route id="10" string="" X="14186" Y="149947" Z="-3352" delay="20" run="false" />
 	</walker>
+	<walker npcId="36073">
+		<!-- Suspicious Merchant - Cloud Mountain -->
+		<route id="0" string="" X="-56032" Y="86017" Z="-3259" delay="30" run="false" />
+		<route id="1" string="" X="-57329" Y="86006" Z="-3640" delay="0" run="false" />
+		<route id="2" string="" X="-57470" Y="85306" Z="-3664" delay="0" run="false" />
+		<route id="3" string="" X="-58892" Y="85159" Z="-3768" delay="30" run="false" />
+		<route id="4" string="" X="-59030" Y="80150" Z="-3632" delay="0" run="false" />
+		<route id="5" string="" X="-57642" Y="77591" Z="-3512" delay="20" run="false" />
+		<route id="6" string="" X="-53971" Y="77664" Z="-3224" delay="40" run="false" />
+		<route id="7" string="" X="-53271" Y="85126" Z="-3552" delay="60" run="false" />
+		<route id="8" string="" X="-53971" Y="77664" Z="-3224" delay="40" run="false" />
+		<route id="9" string="" X="-57642" Y="77591" Z="-3512" delay="20" run="false" />
+		<route id="10" string="" X="-59030" Y="80150" Z="-3632" delay="0" run="false" />
+		<route id="11" string="" X="-58892" Y="85159" Z="-3768" delay="30" run="false" />
+		<route id="12" string="" X="-57470" Y="85306" Z="-3664" delay="0" run="false" />
+		<route id="13" string="" X="-57329" Y="86006" Z="-3640" delay="0" run="false" />
+		<route id="14" string="" X="-56032" Y="86017" Z="-3259" delay="30" run="false" />
+	</walker>
 	<walker npcId="36111">
 		<!-- Suspicious Merchant - Tanor Fortress -->
 		<route id="0" string="" X="58314" Y="136319" Z="-2000" delay="30" run="false" />

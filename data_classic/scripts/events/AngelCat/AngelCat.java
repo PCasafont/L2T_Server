@@ -83,7 +83,7 @@ public class AngelCat extends Quest
 		}
 		
 		return super.onAdvEvent(event, npc, player);
-	}	
+	}
 
 	public static void main(String[] args)
 	{

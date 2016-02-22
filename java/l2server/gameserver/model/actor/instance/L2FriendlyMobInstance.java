@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.model.actor.L2Attackable;
@@ -37,7 +38,7 @@ public class L2FriendlyMobInstance extends L2Attackable
 	@Override
 	public final FriendlyMobKnownList getKnownList()
 	{
-		return (FriendlyMobKnownList)super.getKnownList();
+		return (FriendlyMobKnownList) super.getKnownList();
 	}
 	
 	@Override
@@ -50,8 +51,8 @@ public class L2FriendlyMobInstance extends L2Attackable
 	public boolean isAutoAttackable(L2Character attacker)
 	{
 		if (attacker instanceof L2PcInstance)
-			return ((L2PcInstance)attacker).getReputation() < 0;
-			return false;
+			return ((L2PcInstance) attacker).getReputation() < 0;
+		return false;
 	}
 	
 	@Override

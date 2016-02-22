@@ -5360,6 +5360,8 @@
 			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="186" collisionRadius="10" collisionHeight="20" targetable="false"
 			showName="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="48445" y="-30210" z="-1680" heading="24212" respawn="60" />
+		<spawn x="-27809" y="254932" z="-2192" heading="24352" respawn="60" />
+		<spawn x="-27807" y="255000" z="-2192" heading="40204" respawn="60" />
 	</npc>
 	<npc id="33814" name="Workman" title="Gray Pillar" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
@@ -5820,6 +5822,10 @@
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
 			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="1" collisionRadius="9" collisionHeight="33.5" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<spawn x="-8627" y="244871" z="-1856" heading="61476" respawn="60" />
+		<spawn x="-7521" y="246034" z="-1864" heading="53864" respawn="60" />
+		<spawn x="-8547" y="245049" z="-1856" heading="59076" respawn="60" />
+		<spawn x="-7725" y="245860" z="-1864" heading="57332" respawn="60" />
 	</npc>
 	<npc id="33896" name="Agatha" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
@@ -5839,6 +5845,7 @@
 			enemyClan="makkum_clan" enemyRange="1600">
 		<skill id="4416" level="14" /> <!-- Humans -->
 		<skill id="15511" level="1" /> <!-- Laido Punch -->
+		<spawn x="-18473" y="246549" z="-840" heading="63618" respawn="60" />
 	</npc>
 	<npc id="33899" name="Leona Blackbird" title="Fire Dragon Bride" level="93" type="L2Npc" atkRange="40" hpMax="541218" hpReg="40.42"
 			mpMax="112856" mpReg="29.33" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="1" pDef="3" mDef="2"
@@ -5963,7 +5970,6 @@
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
 			pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="90" collisionHeight="38.5" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-		<!-- <spawn x="-79440" y="244015" z="-3704" heading="0" respawn="5" /> -->
 	</npc>
 	<npc id="33921" name="Allenos" title="Sergeant" level="93" type="L2Npc" atkRange="40" hpMax="10788" hpReg="10.27" mpMax="2249"
 			mpReg="7.45" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="1" pDef="3" mDef="2" pAtkSpd="299"

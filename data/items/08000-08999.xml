@@ -3304,7 +3304,7 @@
 	<!-- Echo Crystal that plays the theme music of the World Cup. It disappears after one use. -->
 	<item id="8555" type="EtcItem" name="Echo Crystal - Viva Victory Korea" icon="icon.etc_echo_crystal_i00" defaultAction="skill_reduce"
 			immediateEffect="1" weight="10" reuseDelay="20000" isStackable="true" handler="ItemSkills">
-		<skill id="2272" level="1" /> <!-- Item - Fight Song Crystal -->
+		<skill id="2272" level="1" /> <!-- Item - Theme Sound Crystal -->
 	</item>
 	<!-- Clicking the Dewdrop of Destruction causes the portrait to disappear. It is deleted upon entering the Last Imperial Tomb. -->
 	<item id="8556" type="EtcItem" name="Dewdrop of Destruction" icon="icon.etc_lesser_potion_red_i00" defaultAction="skill_reduce"
@@ -3989,7 +3989,7 @@
 			etcitemType="potion" weight="50" reuseDelay="500" isStackable="true" handler="ItemSkills">
 		<skill id="2304" level="1" /> <!-- Hair Style Change Potion -->
 	</item>
-	<!-- Bestows one of the following functions: Haste, Health, or Critical Poison. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8678" type="Weapon" name="Sirra's Blade" icon="icon.weapon_sirr_blade_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1300" price="26968400" changeWeaponId="9352" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4004,7 +4004,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Haste, or Health. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8679" type="Weapon" name="Sword of Ipos" icon="icon.weapon_sword_of_ipos_i00" defaultAction="equip" weaponType="bigsword"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;46;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1820" price="26968400" changeWeaponId="9356" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4019,7 +4019,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Health, Haste, or Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8680" type="Weapon" name="Barakiel's Axe" icon="icon.weapon_barakiel_axe_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1550" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4036,7 +4036,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, Health, or Anger. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8681" type="Weapon" name="Behemoth' Tuning Fork" icon="icon.weapon_tuning_fork_of_behemoth_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;44;120" immediateEffect="1"
 			crystalCount="2157" crystalType="a" weight="1890" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4053,7 +4053,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Focus, P. Critical Damage, or Back Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8682" type="Weapon" name="Naga Storm" icon="icon.weapon_naga_storm_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="930" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4070,7 +4070,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Wide Blow. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8683" type="Weapon" name="Tiphon's Spear" icon="icon.weapon_tiphon_spear_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1820" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4088,7 +4088,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Cheap Shot, Focus, or Quick Recovery. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8684" type="Weapon" name="Shyeed's Bow" icon="icon.weapon_shyid_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" attackRange="500" damageRange="0;0;10;0" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1640" price="26968400" changeWeaponId="9360" soulshots="2" spiritshots="1" mpConsume="5" enchantEnabled="1"
@@ -4106,7 +4106,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Rsk. Haste, Haste, or Critical Drain. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8685" type="Weapon" name="Sobekk's Hurricane" icon="icon.weapon_sobekk_hurricane_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" attackRange="40" damageRange="0;0;32;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1330" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1">
@@ -4123,7 +4123,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Mental Shield, or Magic Focus. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8686" type="Weapon" name="Themis' Tongue" icon="icon.weapon_tongue_of_themis_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="820" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -4138,7 +4138,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Conversion, Mana Up, or Magic Silence. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8687" type="Weapon" name="Cabrio's Hand" icon="icon.weapon_hand_of_cabrio_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1510" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -4155,7 +4155,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.43" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.453" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Bestows one of the following functions: Mana Up, Acumen, or Mental Shield. -->
+	<!-- Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8688" type="Weapon" name="Daimon Crystal" icon="icon.weapon_crystal_of_deamon_i00" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" randomDamage="20" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="880" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
@@ -6330,7 +6330,7 @@
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 	</item>
-	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Inflicts additional damage to target during PvP. -->
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. Can bestow 1 regular Soul Crystal and 1 Special Soul Crystal. -->
 	<item id="8938" type="Weapon" name="Tallum Blade*Damascus" icon="icon.weapon_dual_sword_i00" defaultAction="equip" weaponType="dual"
 			bodypart="lrhand" randomDamage="10" attackRange="40" damageRange="0;0;44;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1890" price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3045-17">
@@ -6604,8 +6604,9 @@
 	</item>
 	<!-- This Shadow Item contains the mirrored power of a Crucifix of Blessing. It cannot be crystallized or granted functions besides enchantment. -->
 	<item id="8981" type="Weapon" name="Shadow Item: Crucifix of Blessing" icon="icon.weapon_crucifix_of_blessing_i00" defaultAction="equip"
-			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="207"
-			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" duration="600">
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
+			weight="207" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true"
+			duration="600">
 		<set stat="pAtk" val="25" />
 		<set stat="mAtk" val="28" />
 		<set stat="rCrit" val="8" />

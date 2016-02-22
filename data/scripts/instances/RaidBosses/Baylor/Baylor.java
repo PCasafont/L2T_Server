@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package instances.RaidBosses.Baylor;
 
 import java.util.ArrayList;
@@ -40,39 +41,33 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * 	Source: -https://www.youtube.com/watch?v=huIIQ89tmgM
  * 			-http://boards.lineage2.com/showthread.php?t=265663
  */
 
 public class Baylor extends L2AttackableAIScript
 {
-	private static final boolean _debug 	= false;
-	private static final String _qn 		= "Baylor";
+	private static final boolean _debug = false;
+	private static final String _qn = "Baylor";
 	
 	//Config
-	private static final int _alarmReuse 	= 2; 
+	private static final int _alarmReuse = 2;
 	
 	//Ids
-	private static final int _prisonKey				= 10015;
-	private static final int _instanceTemplateId	= 166;
-	private static final int _alarmId 				= 18474;
-	private static final int _cameraMinionId 		= 29104;
-	private static final int _baylorId 				= 29213;
-	private static final int _cameraId 				= 29120;
-	private static final int _crystalPortal 		= 33523;
+	private static final int _prisonKey = 10015;
+	private static final int _instanceTemplateId = 166;
+	private static final int _alarmId = 18474;
+	private static final int _cameraMinionId = 29104;
+	private static final int _baylorId = 29213;
+	private static final int _cameraId = 29120;
+	private static final int _crystalPortal = 33523;
 	
-	private static final int[][] _alarmSpawns		=
-	{
-		{153571, 142858, -12744, 48779},
-		{152777, 142075, -12744, 82},
-		{153573, 141275, -12744, 16219},
-		{154359, 142075, -12744, 33274}
-	};
+	private static final int[][] _alarmSpawns = { { 153571, 142858, -12744, 48779 }, { 152777, 142075, -12744, 82 }, { 153573, 141275, -12744, 16219 }, { 154359, 142075, -12744, 33274 } };
 	
 	//Others
-	private static final L2Skill _baylorBerserk 		= SkillTable.getInstance().getInfo(5224, 1);
-	private static final L2Skill _baylorInvincibility 	= SkillTable.getInstance().getInfo(5225, 1);
+	private static final L2Skill _baylorBerserk = SkillTable.getInstance().getInfo(5224, 1);
+	private static final L2Skill _baylorInvincibility = SkillTable.getInstance().getInfo(5225, 1);
 	
 	private class BaylorWorld extends InstanceWorld
 	{
@@ -117,9 +112,9 @@ public class Baylor extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof BaylorWorld)
+		if ((wrld != null) && (wrld instanceof BaylorWorld))
 		{
-			BaylorWorld world = (BaylorWorld)wrld;
+			BaylorWorld world = (BaylorWorld) wrld;
 			
 			if (event.equalsIgnoreCase("stage_1_start"))
 			{
@@ -203,7 +198,7 @@ public class Baylor extends L2AttackableAIScript
 				if (world._baylorOne.isDead() && world._baylorTwo.isDead())
 					return "";
 				
-				if(Rnd.nextBoolean())
+				if (Rnd.nextBoolean())
 				{
 					int[] rndAlarm = _alarmSpawns[Rnd.get(_alarmSpawns.length)];
 					L2Npc alarm = addSpawn(_alarmId, rndAlarm[0], rndAlarm[1], rndAlarm[2], rndAlarm[3], false, 0, false, world.instanceId);
@@ -221,13 +216,13 @@ public class Baylor extends L2AttackableAIScript
 				
 				npc.decayMe();
 				
-				if (world._baylorOne != null && !world._baylorOne.isDead())
+				if ((world._baylorOne != null) && !world._baylorOne.isDead())
 					_baylorBerserk.getEffects(world._baylorOne, world._baylorOne);
-				if (world._baylorTwo != null && !world._baylorTwo.isDead())
+				if ((world._baylorTwo != null) && !world._baylorTwo.isDead())
 					_baylorBerserk.getEffects(world._baylorTwo, world._baylorTwo);
-			}	
+			}
 		}
-
+		
 		if (event.equalsIgnoreCase("enterToInstance"))
 		{
 			try
@@ -257,10 +252,10 @@ public class Baylor extends L2AttackableAIScript
 				if (ab != null)
 				{
 					if (attacker.isBehindTarget())
-					{	
+					{
 						if (Rnd.get(100) == 50)
 							ab.exit();
-					}	
+					}
 				}
 			}
 		}
@@ -276,7 +271,7 @@ public class Baylor extends L2AttackableAIScript
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof BaylorWorld)
 		{
-			BaylorWorld world = (BaylorWorld)tmpworld;
+			BaylorWorld world = (BaylorWorld) tmpworld;
 			if (npc.getNpcId() == _baylorId)
 			{
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getTemplate().TemplateId, 1800067));
@@ -290,7 +285,7 @@ public class Baylor extends L2AttackableAIScript
 			{
 				QuestTimer activityTimer = getQuestTimer("stage_all_alarm_check", npc, null);
 				if (activityTimer != null)
-				{	
+				{
 					activityTimer.cancel();
 					startQuestTimer("stage_all_spawn_alarm", _alarmReuse * 60000, npc, null);
 				}
@@ -306,7 +301,7 @@ public class Baylor extends L2AttackableAIScript
 			Log.warning(getName() + ": onTalk: " + player.getName());
 		
 		if (npc.getNpcId() == _crystalPortal)
-		{	
+		{
 			return "EntrancePortal.html";
 		}
 		
@@ -326,8 +321,8 @@ public class Baylor extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(153568, 142867, -12744, 49098, true);
@@ -337,7 +332,7 @@ public class Baylor extends L2AttackableAIScript
 		}
 		else
 		{
-			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, _instanceTemplateId, Config.BAYLOR_MIN_PLAYERS, 7, 99, 99))
+			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, _instanceTemplateId, Config.BAYLOR_MIN_PLAYERS, 7, 99, Config.MAX_LEVEL))
 				return;
 			
 			final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
@@ -366,12 +361,12 @@ public class Baylor extends L2AttackableAIScript
 				enterPlayer.setInstanceId(instanceId);
 				enterPlayer.teleToLocation(153568, 142867, -12744, 49098, true);
 			}
-
+			
 			startQuestTimer("stage_1_start", 60000, null, player);
 			
 			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
-		}		
+		}
 	}
 	
 	@Override
@@ -379,7 +374,7 @@ public class Baylor extends L2AttackableAIScript
 	{
 		return 0;
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new Baylor(-1, _qn, "instances/RaidBosses");

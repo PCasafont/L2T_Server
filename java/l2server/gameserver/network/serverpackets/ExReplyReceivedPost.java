@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -24,7 +25,6 @@ import l2server.log.Log;
  */
 public class ExReplyReceivedPost extends L2ItemListPacket
 {
-	private static final String _S__FE_AB_EXSHOWRECEIVEDPOST = "[S] FE:AB ExShowReceivedPost";
 	
 	private Message _msg;
 	private L2ItemInstance[] _items = null;
@@ -35,10 +35,10 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 		if (msg.hasAttachments())
 		{
 			final ItemContainer attachments = msg.getAttachments();
-			if (attachments != null && attachments.getSize() > 0)
+			if ((attachments != null) && (attachments.getSize() > 0))
 				_items = attachments.getItems();
 			else
-				Log.warning("Message "+msg.getId()+" has attachments but itemcontainer is empty ("+msg.getSenderName()+ " > " + msg.getReceiverName()+").");
+				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " + msg.getReceiverName() + ").");
 		}
 	}
 	
@@ -46,23 +46,21 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0xac);
 		writeD(_msg.getSendBySystem());
 		if (_msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
 		{
-            writeD(0x00);// unknown1
-            writeD(0x00);// unknown2
-            writeD(0x00);// unknown3
-            writeD(0x00);// unknown4
-            writeD(0x00);// unknown5
-            writeD(0x00);// unknown6
-            writeD(0x00);// unknown7
-            writeD(0x00);// unknown8
-            writeD(_msg.getSystemMessage1());
-            writeD(_msg.getSystemMessage2());
+			writeD(0x00);// unknown1
+			writeD(0x00);// unknown2
+			writeD(0x00);// unknown3
+			writeD(0x00);// unknown4
+			writeD(0x00);// unknown5
+			writeD(0x00);// unknown6
+			writeD(0x00);// unknown7
+			writeD(0x00);// unknown8
+			writeD(_msg.getSystemMessage1());
+			writeD(_msg.getSystemMessage2());
 		}
 		
 		writeD(_msg.getId());
@@ -72,7 +70,7 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 		writeS(_msg.getSubject());
 		writeS(_msg.getContent());
 		
-		if (_items != null && _items.length > 0)
+		if ((_items != null) && (_items.length > 0))
 		{
 			writeD(_items.length);
 			for (L2ItemInstance item : _items)
@@ -91,14 +89,5 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 		writeD(_msg.getReceiverId());
 		
 		_msg = null;
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__FE_AB_EXSHOWRECEIVEDPOST;
 	}
 }

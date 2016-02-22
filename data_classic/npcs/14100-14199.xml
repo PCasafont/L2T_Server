@@ -1,7 +1,7 @@
 <list>
-	<npc id="14100" name="Cursed Man" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2485.1587" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14100" name="Cursed Man" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2485.1587" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -15,9 +15,9 @@
 		<skill id="4709" level="9" /> <!-- Cursed Blow -->
 		<skill id="4708" level="9" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14101" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2491.5037" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14101" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2491.5037" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -31,9 +31,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14102" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2498.3777" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14102" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2498.3777" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -47,9 +47,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14103" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2505.2515" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14103" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2505.2515" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -63,9 +63,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14104" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2512.1252" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14104" name="Cursed Man" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2512.1252" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -79,9 +79,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14105" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2517.4128" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14105" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2517.4128" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -95,9 +95,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14106" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2524.2869" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14106" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2524.2869" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -111,9 +111,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14107" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2530.6318" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14107" name="Cursed Man" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2530.6318" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -127,9 +127,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14108" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2542.7932" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14108" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2542.7932" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -143,9 +143,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14109" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2550.7246" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14109" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2550.7246" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -159,9 +159,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14110" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2559.1848" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14110" name="Cursed Man" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2559.1848" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="160.0" collisionRadius="20.0" collisionHeight="42.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -175,9 +175,9 @@
 		<skill id="4709" level="10" /> <!-- Cursed Blow -->
 		<skill id="4708" level="10" /> <!-- Cursed Strike -->
 	</npc>
-	<npc id="14111" name="Kat the Cat" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14111" name="Kat the Cat" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -189,9 +189,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14112" name="Kat the Cat" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14112" name="Kat the Cat" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -203,9 +203,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14113" name="Kat the Cat" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300">
+	<npc id="14113" name="Kat the Cat" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -217,9 +217,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14114" name="Kat the Cat" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300">
+	<npc id="14114" name="Kat the Cat" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -231,9 +231,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14115" name="Kat the Cat" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300">
+	<npc id="14115" name="Kat the Cat" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -245,9 +245,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14116" name="Kat the Cat" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1269.4845" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="256.05975" baseMAtk="169.38777" basePDef="188.06921" baseMDef="133.31738" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14116" name="Kat the Cat" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1269.4845" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="256.05975" baseMAtk="169.38777" basePDef="188.06921" baseMDef="133.31738" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -259,9 +259,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14117" name="Kat the Cat" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14117" name="Kat the Cat" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -273,9 +273,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14118" name="Kat the Cat" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14118" name="Kat the Cat" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -287,9 +287,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14119" name="Kat the Cat" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300">
+	<npc id="14119" name="Kat the Cat" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -301,9 +301,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14120" name="Kat the Cat" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14120" name="Kat the Cat" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -315,9 +315,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14121" name="Kat the Cat" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14121" name="Kat the Cat" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -329,9 +329,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14122" name="Kat the Cat" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14122" name="Kat the Cat" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -343,9 +343,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14123" name="Kat the Cat" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14123" name="Kat the Cat" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -357,9 +357,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14124" name="Kat the Cat" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14124" name="Kat the Cat" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -371,9 +371,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14125" name="Kat the Cat" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14125" name="Kat the Cat" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -385,9 +385,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14126" name="Kat the Cat" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14126" name="Kat the Cat" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -399,9 +399,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14127" name="Kat the Cat" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14127" name="Kat the Cat" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -413,9 +413,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14128" name="Kat the Cat" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14128" name="Kat the Cat" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -427,9 +427,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14129" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14129" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -441,9 +441,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14130" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14130" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -455,9 +455,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14131" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14131" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -469,9 +469,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14132" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14132" name="Kat the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -483,9 +483,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14133" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14133" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -497,9 +497,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14134" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14134" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -511,9 +511,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14135" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14135" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -525,9 +525,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14136" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14136" name="Kat the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -539,9 +539,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14137" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14137" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -553,9 +553,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14138" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14138" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -567,9 +567,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14139" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14139" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -581,9 +581,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14140" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14140" name="Kat the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -595,9 +595,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14141" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14141" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -609,9 +609,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14142" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14142" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -623,9 +623,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14143" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14143" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -637,9 +637,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14144" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14144" name="Kat the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -651,9 +651,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14145" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14145" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -665,9 +665,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14146" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14146" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -679,9 +679,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14147" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14147" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -693,9 +693,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14148" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14148" name="Kat the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -707,9 +707,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14149" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14149" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -721,9 +721,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14150" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14150" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -735,9 +735,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14151" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14151" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -749,9 +749,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14152" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14152" name="Kat the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -763,9 +763,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14153" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14153" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -777,9 +777,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14154" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14154" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -791,9 +791,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14155" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14155" name="Kat the Cat" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -805,9 +805,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14156" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14156" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -819,9 +819,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14157" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14157" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -833,9 +833,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14158" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14158" name="Kat the Cat" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="9.0" collisionHeight="16.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -847,9 +847,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14159" name="Mew the Cat" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14159" name="Mew the Cat" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -863,9 +863,9 @@
 		<skill id="4261" level="2" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="2" /> <!-- Gust -->
 	</npc>
-	<npc id="14160" name="Mew the Cat" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14160" name="Mew the Cat" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -879,9 +879,9 @@
 		<skill id="4261" level="2" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="2" /> <!-- Gust -->
 	</npc>
-	<npc id="14161" name="Mew the Cat" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14161" name="Mew the Cat" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -895,9 +895,9 @@
 		<skill id="4261" level="3" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="3" /> <!-- Gust -->
 	</npc>
-	<npc id="14162" name="Mew the Cat" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14162" name="Mew the Cat" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -911,9 +911,9 @@
 		<skill id="4261" level="3" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="3" /> <!-- Gust -->
 	</npc>
-	<npc id="14163" name="Mew the Cat" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14163" name="Mew the Cat" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -927,9 +927,9 @@
 		<skill id="4261" level="4" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="4" /> <!-- Gust -->
 	</npc>
-	<npc id="14164" name="Mew the Cat" level="47" type="L2Pet" baseAtkRange="40" baseHpMax="1317.743" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="270.14304" baseMAtk="178.7041" basePDef="192.66031" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14164" name="Mew the Cat" level="47" type="L2Pet" baseAtkRange="40" baseHpMax="1317.743" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="270.14304" baseMAtk="178.7041" basePDef="192.66031" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -943,9 +943,9 @@
 		<skill id="4261" level="4" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="4" /> <!-- Gust -->
 	</npc>
-	<npc id="14165" name="Mew the Cat" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14165" name="Mew the Cat" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -959,9 +959,9 @@
 		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="5" /> <!-- Gust -->
 	</npc>
-	<npc id="14166" name="Mew the Cat" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14166" name="Mew the Cat" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -975,9 +975,9 @@
 		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="5" /> <!-- Gust -->
 	</npc>
-	<npc id="14167" name="Mew the Cat" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2" clanRange="300">
+	<npc id="14167" name="Mew the Cat" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" clanRange="300" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -991,9 +991,9 @@
 		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
 		<skill id="4001" level="5" /> <!-- Gust -->
 	</npc>
-	<npc id="14168" name="Mew the Cat" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14168" name="Mew the Cat" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1006,9 +1006,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14169" name="Mew the Cat" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14169" name="Mew the Cat" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1021,9 +1021,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14170" name="Mew the Cat" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14170" name="Mew the Cat" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1036,9 +1036,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14171" name="Mew the Cat" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14171" name="Mew the Cat" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1051,9 +1051,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14172" name="Mew the Cat" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14172" name="Mew the Cat" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1066,9 +1066,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14173" name="Mew the Cat" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14173" name="Mew the Cat" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1081,9 +1081,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14174" name="Mew the Cat" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14174" name="Mew the Cat" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1096,9 +1096,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14175" name="Mew the Cat" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14175" name="Mew the Cat" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1111,9 +1111,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14176" name="Mew the Cat" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14176" name="Mew the Cat" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1126,9 +1126,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14177" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14177" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1141,9 +1141,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14178" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14178" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1156,9 +1156,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14179" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14179" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1171,9 +1171,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14180" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14180" name="Mew the Cat" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1186,9 +1186,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14181" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14181" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1201,9 +1201,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14182" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14182" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1216,9 +1216,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14183" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14183" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1231,9 +1231,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14184" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14184" name="Mew the Cat" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1246,9 +1246,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14185" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14185" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1261,9 +1261,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14186" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14186" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1276,9 +1276,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14187" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14187" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1291,9 +1291,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14188" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14188" name="Mew the Cat" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1306,9 +1306,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14189" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14189" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1321,9 +1321,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14190" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14190" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1336,9 +1336,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14191" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14191" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1351,9 +1351,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14192" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14192" name="Mew the Cat" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1366,9 +1366,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14193" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14193" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1381,9 +1381,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14194" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14194" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1396,9 +1396,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14195" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14195" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1411,9 +1411,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14196" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14196" name="Mew the Cat" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1426,9 +1426,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14197" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14197" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1441,9 +1441,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14198" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14198" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1456,9 +1456,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
 	</npc>
-	<npc id="14199" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14199" name="Mew the Cat" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="15.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

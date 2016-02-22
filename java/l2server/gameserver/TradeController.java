@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.io.File;
@@ -28,8 +29,13 @@ import java.util.logging.Level;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.item.L2Armor;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.L2Weapon;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -57,10 +63,22 @@ public class TradeController implements Reloadable
 		ReloadableManager.getInstance().register("shops", this);
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		_lists.clear();
-		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "shops");
+		if (!load(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/shops/"))
+			return false;
+		
+		if (!load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/"))
+			return false;
+		
+		return true;
+	}
+	
+	public boolean load(String path)
+	{
+		File dir = new File(path);
 		for (File file : dir.listFiles())
 		{
 			if (!file.getName().endsWith(".xml"))
@@ -78,34 +96,55 @@ public class TradeController implements Reloadable
 							int id = d.getInt("id");
 							int npcId = d.getInt("npcId");
 							
+							if (_lists.containsKey(id))
+								continue;
+							
 							L2TradeList buy = new L2TradeList(id);
+							
+							L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(npcId);
+							if (npcTemplate == null)
+							{
+								if (npcId != -1)
+									Log.warning("No template found for NpcId " + npcId);
+								
+								continue;
+							}
 							
 							for (XmlNode shopNode : d.getChildren())
 							{
 								if (shopNode.getName().equalsIgnoreCase("item"))
 								{
 									int itemId = shopNode.getInt("id");
-									long price = -1;
-									if (shopNode.hasAttribute("price"))
-										price = shopNode.getLong("price");
-									int count = -1;
-									if (shopNode.hasAttribute("count"))
-										count = shopNode.getInt("count");
-									int time = 0;
-									if (shopNode.hasAttribute("time"))
-										time = shopNode.getInt("time");
 									
-									L2TradeItem item = new L2TradeItem(id, itemId);
-									if (ItemTable.getInstance().getTemplate(itemId) == null)
+									final L2Item itemTemplate = ItemTable.getInstance().getTemplate(itemId);
+									if (itemTemplate == null)
 									{
 										Log.warning("Skipping itemId: " + itemId + " on buylistId: " + id + ", missing data for that item.");
 										continue;
 									}
 									
+									if (Config.isServer(Config.DREAMS) && file.getName().equals("shops.xml"))
+									{
+										if (((itemTemplate instanceof L2Weapon) || (itemTemplate instanceof L2Armor)) && (itemTemplate.getCrystalType() >= L2Item.CRYSTAL_D) && !itemTemplate.getName().contains("Common"))
+										{
+											System.out.println("Skipping " + itemTemplate.getName() + "...");
+											continue;
+										}
+										else if (itemTemplate.getName().contains("Dice"))
+										{
+											System.out.println(itemTemplate.getName() + " removed.");
+											continue;
+										}
+									}
+									
+									L2TradeItem item = new L2TradeItem(id, itemId);
+									long price = shopNode.getLong("price", -1);
+									int count = shopNode.getInt("count", -1);
+									int time = shopNode.getInt("time", 0);
 									if (price <= -1)
 									{
-										price = ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
-										if (price == 0 && npcId != -1)
+										price = itemTemplate.getReferencePrice();
+										if ((price == 0) && (npcId != -1))
 											Log.warning("ItemId: " + itemId + " on buylistId: " + id + " has price = 0!");
 									}
 									
@@ -113,11 +152,9 @@ public class TradeController implements Reloadable
 									{
 										// debug
 										double diff = ((double) (price)) / ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
-										if (diff < 0.8 || diff > 1.2)
+										if ((diff < 0.8) || (diff > 1.2))
 										{
-											Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId + " ("
-													+ ItemTable.getInstance().getTemplate(itemId).getName() + ") diff: " + diff + " - Price: " + price
-													+ " - Reference: " + ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
+											Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId + " (" + ItemTable.getInstance().getTemplate(itemId).getName() + ") diff: " + diff + " - Price: " + price + " - Reference: " + ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
 										}
 									}
 									
@@ -127,6 +164,8 @@ public class TradeController implements Reloadable
 									item.setMaxCount(count);
 									
 									buy.addItem(item);
+									
+									itemTemplate.setSalePrice(0);
 								}
 							}
 							
@@ -142,6 +181,7 @@ public class TradeController implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Standard Shops reloaded";
@@ -236,7 +276,7 @@ public class TradeController implements Reloadable
 					for (L2TradeItem item : list.getItems())
 					{
 						long currentCount = item.getCurrentCount();
-						if (item.hasLimitedStock() && currentCount < item.getMaxCount())
+						if (item.hasLimitedStock() && (currentCount < item.getMaxCount()))
 						{
 							statement.setLong(1, currentCount);
 							statement.setInt(2, listId);

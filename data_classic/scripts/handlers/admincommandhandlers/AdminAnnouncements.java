@@ -73,6 +73,8 @@ public class AdminAnnouncements implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_announce_menu"))
 		{
+			if (Config.GM_ANNOUNCER_NAME && command.length() > 20)
+				command += " ("+activeChar.getName()+")";
 			Announcements.getInstance().handleAnnounce(command, 20);
 			AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
 		}
@@ -120,6 +122,8 @@ public class AdminAnnouncements implements IAdminCommandHandler
 		else if (command.startsWith("admin_announce"))
 		{
 			command = command.substring(15);
+			if (Config.GM_ANNOUNCER_NAME)
+				command = activeChar.getName() + ": " + command;
 			// Call method from another class
 			Announcements.getInstance().handleAnnounce(command, 0);
 		}

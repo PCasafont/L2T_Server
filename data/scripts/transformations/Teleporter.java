@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class Teleporter extends L2Transformation
 {
-	private static final int[] SKILLS = {5656,5657,5658,5491,8248};
+	private static final int[] SKILLS = { 5656, 5657, 5658, 5491, 8248 };
+	
 	public Teleporter()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class Teleporter extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 319 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 319) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -55,10 +57,10 @@ public class Teleporter extends L2Transformation
 	public void removeSkills()
 	{
 		/*
-Commented out until we figure out how to remove the skills properly.
-What happens if a player transforms at level 40, gets the level 40 version of the skill, then somehow levels up?
-Then when we untransform, the script will look for the level 41 version of the skill, right?
-Or will it still remove the level 40 skill? Needs to be tested.
+		Commented out until we figure out how to remove the skills properly.
+		What happens if a player transforms at level 40, gets the level 40 version of the skill, then somehow levels up?
+		Then when we untransform, the script will look for the level 41 version of the skill, right?
+		Or will it still remove the level 40 skill? Needs to be tested.
 		// Gatekeeper Aura Flare
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5656, getPlayer().getLevel()), false);
 		// Gatekeeper Prominence

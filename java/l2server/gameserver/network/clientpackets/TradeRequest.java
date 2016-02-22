@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -34,7 +35,6 @@ import l2server.log.Log;
  */
 public final class TradeRequest extends L2GameClientPacket
 {
-	private static final String TRADEREQUEST__C__15 = "[C] 15 TradeRequest";
 	
 	private int _objectId;
 	
@@ -71,7 +71,7 @@ public final class TradeRequest extends L2GameClientPacket
 		}
 		
 		L2Object target = L2World.getInstance().findObject(_objectId);
-		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance))
+		if ((target == null) || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -86,7 +86,7 @@ public final class TradeRequest extends L2GameClientPacket
 		L2PcInstance partner = (L2PcInstance) target;
 		
 		// cant trade with players from other instance except from multiverse
-		if (partner.getInstanceId() != player.getInstanceId() && player.getInstanceId() != -1)
+		if ((partner.getInstanceId() != player.getInstanceId()) && (player.getInstanceId() != -1))
 			return;
 		
 		if (partner.isInOlympiadMode() || player.isInOlympiadMode())
@@ -96,7 +96,7 @@ public final class TradeRequest extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0 || partner.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && ((player.getReputation() < 0) || (partner.getReputation() < 0)))
 		{
 			player.sendMessage("Chaotic players can't use Trade.");
 			return;
@@ -108,7 +108,7 @@ public final class TradeRequest extends L2GameClientPacket
 			return;
 		}
 		
-		if (player.getPrivateStoreType() != 0 || partner.getPrivateStoreType() != 0)
+		if ((player.getPrivateStoreType() != 0) || (partner.getPrivateStoreType() != 0))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -144,7 +144,7 @@ public final class TradeRequest extends L2GameClientPacket
 			player.sendMessage("Your target have the requests blocked!");
 			return;
 		}
-				
+		
 		if (BlockList.isBlocked(partner, player))
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_ADDED_YOU_TO_IGNORE_LIST);
@@ -164,11 +164,5 @@ public final class TradeRequest extends L2GameClientPacket
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REQUEST_C1_FOR_TRADE);
 		sm.addString(partner.getName());
 		player.sendPacket(sm);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return TRADEREQUEST__C__15;
 	}
 }

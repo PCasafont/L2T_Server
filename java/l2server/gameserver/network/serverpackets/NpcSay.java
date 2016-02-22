@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -26,7 +27,6 @@ import l2server.gameserver.network.NpcStringId;
 public final class NpcSay extends L2GameServerPacket
 {
 	// cddddS
-	private static final String _S__30_NPCSAY = "[S] 30 NpcSay";
 	private int _objectId;
 	private int _textType;
 	private int _npcId;
@@ -41,7 +41,7 @@ public final class NpcSay extends L2GameServerPacket
 	{
 		_objectId = objectId;
 		_textType = messageType;
-		_npcId = 1000000+npcId;
+		_npcId = 1000000 + npcId;
 		_npcString = -1;
 		_text = text;
 	}
@@ -50,7 +50,7 @@ public final class NpcSay extends L2GameServerPacket
 	{
 		_objectId = objectId;
 		_textType = messageType;
-		_npcId = 1000000+npcId;
+		_npcId = 1000000 + npcId;
 		_npcString = npcString;
 		_text = null;
 	}
@@ -59,11 +59,11 @@ public final class NpcSay extends L2GameServerPacket
 	{
 		_objectId = objectId;
 		_textType = messageType;
-		_npcId = 1000000+npcId;
+		_npcId = 1000000 + npcId;
 		_npcString = npcStringId.getId();
 		_text = null;
 	}
-
+	
 	/**
 	 * String parameter for argument S1,S2,.. in npcstring-e.dat
 	 * @param text
@@ -78,7 +78,6 @@ public final class NpcSay extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x30);
 		writeD(_objectId);
 		writeD(_textType);
 		writeD(_npcId);
@@ -93,14 +92,5 @@ public final class NpcSay extends L2GameServerPacket
 					writeS(s);
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__30_NPCSAY;
 	}
 }

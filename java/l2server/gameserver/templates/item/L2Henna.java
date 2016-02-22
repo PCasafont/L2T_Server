@@ -3,20 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import l2server.Config;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
@@ -54,7 +56,10 @@ public class L2Henna
 		symbolId = set.getInteger("symbolId");
 		dye = set.getInteger("dyeId");
 		name = set.getString("name");
-		price = set.getLong("price", 0);
+		long p = set.getLong("price", 0);
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			p = (int) Math.sqrt(p);
+		price = p;
 		STR = set.getInteger("STR", 0);
 		CON = set.getInteger("CON", 0);
 		DEX = set.getInteger("DEX", 0);
@@ -70,12 +75,12 @@ public class L2Henna
 		if (set.getString("skills", null) != null)
 		{
 			skills = new ArrayList<SkillHolder>();
-
-			String[] skillsParse = set.getString("skills").split(";");
-			for (int i = 0; i < skillsParse.length; i++)
-			{
-				String[] skInfo = skillsParse[i].split(",");
 			
+			String[] skillsParse = set.getString("skills").split(";");
+			for (String element : skillsParse)
+			{
+				String[] skInfo = element.split(",");
+				
 				SkillHolder sk = new SkillHolder(Integer.valueOf(skInfo[0]), Integer.valueOf(skInfo[1]));
 				if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE)
 					System.out.println(sk.getSkillId() + " is not done!");
@@ -120,6 +125,7 @@ public class L2Henna
 	{
 		if (isFourthSlot())
 			return 1;
+		
 		return 10;
 	}
 	

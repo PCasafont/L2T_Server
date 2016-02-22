@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.ai.CtrlEvent;
@@ -23,7 +24,6 @@ import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Skill.SkillTargetType;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
@@ -36,6 +36,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
+import l2server.gameserver.templates.skills.L2SkillBehaviorType;
+import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
@@ -48,28 +50,20 @@ public class Continuous implements ISkillHandler
 {
 	//private static Logger _log = Logger.getLogger(Continuous.class.getName());
 	
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.BUFF,
-		L2SkillType.DEBUFF,
-		L2SkillType.CONT,
-		L2SkillType.CONTINUOUS_DEBUFF,
-		L2SkillType.UNDEAD_DEFENSE,
-		L2SkillType.AGGDEBUFF,
-		L2SkillType.FUSION
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.BUFF, L2SkillType.DEBUFF, L2SkillType.CONT, L2SkillType.CONTINUOUS_DEBUFF, L2SkillType.UNDEAD_DEFENSE, L2SkillType.AGGDEBUFF, L2SkillType.FUSION };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		boolean acted = true;
 		
 		L2PcInstance player = null;
 		if (activeChar instanceof L2PcInstance)
-			player = (L2PcInstance)activeChar;
+			player = (L2PcInstance) activeChar;
 		
 		if (skill.getEffectId() != 0)
 		{
@@ -79,12 +73,12 @@ public class Continuous implements ISkillHandler
 				skill = sk;
 		}
 		
-		for (L2Object obj: targets)
+		for (L2Object obj : targets)
 		{
 			if (!(obj instanceof L2Character))
 				continue;
-				
-			L2Character target = (L2Character)obj;
+			
+			L2Character target = (L2Character) obj;
 			byte shld = 0;
 			double ssMul = L2ItemInstance.CHARGED_NONE;
 			
@@ -96,20 +90,20 @@ public class Continuous implements ISkillHandler
 			}
 			
 			// Player holding a cursed weapon can't be buffed and can't buff
-			if (skill.getSkillType() == L2SkillType.BUFF && !(activeChar instanceof L2ClanHallManagerInstance))
+			if ((skill.getSkillType() == L2SkillType.BUFF) && !(activeChar instanceof L2ClanHallManagerInstance))
 			{
 				if (target != attacker)
 				{
 					if (target instanceof L2PcInstance)
 					{
-						L2PcInstance trg = (L2PcInstance)target;
+						L2PcInstance trg = (L2PcInstance) target;
 						if (trg.isCursedWeaponEquipped())
 							continue;
 						// Avoiding block checker players get buffed from outside
 						else if (trg.getBlockCheckerArena() != -1)
 							continue;
 					}
-					else if (player != null && player.isCursedWeaponEquipped())
+					else if ((player != null) && player.isCursedWeaponEquipped())
 						continue;
 				}
 			}
@@ -162,7 +156,7 @@ public class Continuous implements ISkillHandler
 				}
 				
 				shld = Formulas.calcShldUse(attacker, target, skill);
-				acted = true;//Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss);
+				acted = true;//Formulas.calcSkillSuccess(activeChar, target, skill, shld, 1.0);
 			}
 			
 			if (acted)
@@ -190,8 +184,7 @@ public class Continuous implements ISkillHandler
 				// so the debuff can be removed after the duel
 				// (player & target must be in the same duel)
 				L2Abnormal[] effects = skill.getEffects(attacker, target, new Env(shld, ssMul));
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill.getSkillType() == L2SkillType.BUFF) && player != null
-						&& player.getDuelId() == ((L2PcInstance) target).getDuelId())
+				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || (skill.getSkillType() == L2SkillType.BUFF)) && (player != null) && (player.getDuelId() == ((L2PcInstance) target).getDuelId()))
 				{
 					DuelManager dm = DuelManager.getInstance();
 					for (L2Abnormal buff : effects)
@@ -202,15 +195,13 @@ public class Continuous implements ISkillHandler
 				}
 				
 				// Give the buff to our pets if possible
-				if (target instanceof L2PcInstance && effects.length > 0
-						&& (effects[0].canBeStolen() || skill.getTargetType() == SkillTargetType.TARGET_SELF)
-						&& !skill.isToggle() && skill.canBeSharedWithSummon())
+				if ((target instanceof L2PcInstance) && (effects.length > 0) && (effects[0].canBeShared() || (skill.getTargetType() == L2SkillTargetType.TARGET_SELF)) && !skill.isToggle() && skill.canBeSharedWithSummon())
 				{
-					for (L2SummonInstance summon : ((L2PcInstance)target).getSummons())
+					for (L2SummonInstance summon : ((L2PcInstance) target).getSummons())
 						skill.getEffects(attacker, summon, new Env(shld, ssMul));
 				}
 				
-				if (skill.getSkillType() == L2SkillType.AGGDEBUFF && effects.length > 0)
+				if ((skill.getSkillType() == L2SkillType.AGGDEBUFF) && (effects.length > 0))
 				{
 					if (target instanceof L2Attackable)
 						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, attacker, (int) skill.getPower());
@@ -223,7 +214,7 @@ public class Continuous implements ISkillHandler
 					}
 				}
 				
-				if (effects.length == 0)
+				if ((effects.length == 0) && (skill.getSkillBehavior() != L2SkillBehaviorType.FRIENDLY))
 					acted = false;
 			}
 			else
@@ -231,7 +222,7 @@ public class Continuous implements ISkillHandler
 				attacker.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
 			}
 			
-			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF && !acted)
+			if ((skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF) && !acted)
 				activeChar.abortCast();
 			
 			// Possibility of a lethal strike
@@ -242,7 +233,7 @@ public class Continuous implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
+			if ((effect != null) && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -252,9 +243,10 @@ public class Continuous implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

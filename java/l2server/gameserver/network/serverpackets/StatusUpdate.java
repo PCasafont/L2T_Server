@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -35,7 +36,6 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public final class StatusUpdate extends L2GameServerPacket
 {
-	private static final String _S__1A_STATUSUPDATE = "[S] 18 StatusUpdate";
 	//private static final int HP_MOD = 10000000;
 	
 	public static final int LEVEL = 0x01;
@@ -70,7 +70,7 @@ public final class StatusUpdate extends L2GameServerPacket
 	
 	public static final int CUR_CP = 0x21;
 	public static final int MAX_CP = 0x22;
-
+	
 	private int _objectId;
 	private int _causerId = 0;
 	private int _display = 0;
@@ -98,17 +98,7 @@ public final class StatusUpdate extends L2GameServerPacket
 	
 	public enum StatusUpdateDisplay
 	{
-		NONE,
-		NORMAL,
-		SHOW,
-		MANA,
-		UNK2,
-		UNK3,
-		UNK4,
-		UNK5,
-		UNK6,
-		UNK7,
-		DOT,
+		NONE, NORMAL, SHOW, MANA, UNK2, UNK3, UNK4, UNK5, UNK6, UNK7, DOT,
 	}
 	
 	/**
@@ -150,25 +140,15 @@ public final class StatusUpdate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x18);
 		writeD(_objectId);
 		writeD(_causerId);
 		writeC(_display);
 		writeC(_attributes.size());
 		
-		for (Attribute temp: _attributes)
+		for (Attribute temp : _attributes)
 		{
 			writeC(temp.id);
 			writeD(temp.value);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__1A_STATUSUPDATE;
 	}
 }

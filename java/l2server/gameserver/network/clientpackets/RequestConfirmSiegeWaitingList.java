@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.ClanTable;
@@ -28,7 +29,6 @@ import l2server.gameserver.network.serverpackets.SiegeDefenderList;
  */
 public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 {
-	private static final String _C__A5_RequestConfirmSiegeWaitingList = "[C] a5 RequestConfirmSiegeWaitingList";
 	//
 	
 	private int _approved;
@@ -47,19 +47,24 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null) return;
+		if (activeChar == null)
+			return;
 		
 		// Check if the player has a clan
-		if (activeChar.getClan() == null) return;
+		if (activeChar.getClan() == null)
+			return;
 		
 		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
-		if (castle == null) return;
+		if (castle == null)
+			return;
 		
 		// Check if leader of the clan who owns the castle?
-		if ((castle.getOwnerId() != activeChar.getClanId()) || (!activeChar.isClanLeader())) return;
+		if ((castle.getOwnerId() != activeChar.getClanId()) || (!activeChar.isClanLeader()))
+			return;
 		
 		L2Clan clan = ClanTable.getInstance().getClan(_clanId);
-		if (clan == null) return;
+		if (clan == null)
+			return;
 		
 		if (!castle.getSiege().getIsRegistrationOver())
 		{
@@ -80,11 +85,5 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 		//Update the defender list
 		activeChar.sendPacket(new SiegeDefenderList(castle));
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__A5_RequestConfirmSiegeWaitingList;
 	}
 }

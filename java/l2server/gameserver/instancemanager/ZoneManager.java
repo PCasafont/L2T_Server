@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -46,7 +46,7 @@ import l2server.util.xml.XmlNode;
 
 /**
  * This class manages the zones
- * 
+ *
  * @author durgus
  */
 public class ZoneManager
@@ -70,6 +70,7 @@ public class ZoneManager
 		load();
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void reload()
 	{
 		// int zoneCount = 0;
@@ -77,11 +78,11 @@ public class ZoneManager
 		// Get the world regions
 		int count = 0;
 		L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
-		for (int x = 0; x < worldRegions.length; x++)
+		for (L2WorldRegion[] worldRegion : worldRegions)
 		{
-			for (int y = 0; y < worldRegions[x].length; y++)
+			for (int y = 0; y < worldRegion.length; y++)
 			{
-				worldRegions[x][y].getZones().clear();
+				worldRegion[y].getZones().clear();
 				count++;
 			}
 		}
@@ -91,7 +92,7 @@ public class ZoneManager
 		load();
 		
 		for (L2Object o : L2World.getInstance().getAllVisibleObjects().values())
-		{ 
+		{
 			if (o instanceof L2Character)
 				((L2Character) o).revalidateZone(true);
 		}
@@ -117,12 +118,17 @@ public class ZoneManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement("SELECT x,y FROM zone_vertices WHERE id=? ORDER BY 'order' ASC ");
 			
-			final File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "zones");
+			File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "zones");
 			if (!dir.exists())
 			{
-				Log.config("Dir " + dir.getAbsolutePath() + " not exists");
+				Log.config("Dir " + dir.getAbsolutePath() + " does not exist");
 				return;
 			}
+			
+			// Override zones by any custom folder
+			File custom = new File(Config.DATAPACK_ROOT, "/data_" + Config.SERVER_NAME + "/zones");
+			if (custom.exists())
+				dir = custom;
 			
 			File[] files = dir.listFiles();
 			ArrayList<File> hash = new ArrayList<File>(files.length);
@@ -176,7 +182,7 @@ public class ZoneManager
 									Log.warning("ZoneData: Missing maxZ for zone: " + zoneId + " in file: " + f.getName());
 									continue;
 								}
-
+								
 								if (d.hasAttribute("type"))
 									zoneType = d.getString("type");
 								else
@@ -184,7 +190,7 @@ public class ZoneManager
 									Log.warning("ZoneData: Missing type for zone: " + zoneId + " in file: " + f.getName());
 									continue;
 								}
-
+								
 								if (d.hasAttribute("shape"))
 									zoneShape = d.getString("shape");
 								else
@@ -228,7 +234,7 @@ public class ZoneManager
 									}
 									
 									// does not try to load dynamic zoneId from sql
-									if (rs.size() == 0 && zoneId < 300000)
+									if ((rs.size() == 0) && (zoneId < 300000))
 									{
 										// loading from SQL
 										try
@@ -252,9 +258,9 @@ public class ZoneManager
 									
 									coords = rs.toArray(new int[rs.size()][]);
 									
-									if (coords == null || coords.length == 0)
+									if ((coords == null) || (coords.length == 0))
 									{
-										Log.warning("ZoneData: missing data for zone: " + zoneId +" in both XML and SQL, file: " + f.getName());
+										Log.warning("ZoneData: missing data for zone: " + zoneId + " in both XML and SQL, file: " + f.getName());
 										continue;
 									}
 									
@@ -315,7 +321,7 @@ public class ZoneManager
 										// A Cylinder zone requires a center point
 										// at x,y and a radius
 										final int zoneRad = d.getInt("rad");
-										if (coords.length == 1 && zoneRad > 0)
+										if ((coords.length == 1) && (zoneRad > 0))
 											temp.setZone(new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad));
 										else
 										{
@@ -344,22 +350,22 @@ public class ZoneManager
 										
 										temp.setParameter(name, val);
 									}
-									else if (cd.getName().equalsIgnoreCase("spawn") && temp instanceof L2SpawnZone)
+									else if (cd.getName().equalsIgnoreCase("spawn") && (temp instanceof L2SpawnZone))
 									{
 										int spawnX = cd.getInt("X");
 										int spawnY = cd.getInt("Y");
 										int spawnZ = cd.getInt("Z");
 										
 										if (cd.getBool("isChaotic", false))
-											((L2SpawnZone)temp).addChaoticSpawn(spawnX, spawnY, spawnZ);
+											((L2SpawnZone) temp).addChaoticSpawn(spawnX, spawnY, spawnZ);
 										else if (!cd.getBool("isPvP", false) || Config.isServer(Config.TENKAI))
-											((L2SpawnZone)temp).addSpawn(spawnX, spawnY, spawnZ);
+											((L2SpawnZone) temp).addSpawn(spawnX, spawnY, spawnZ);
 									}
 								}
 								if (checkId(zoneId))
 									Log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previous definition.");
 								
-								if (zoneName != null && !zoneName.isEmpty())
+								if ((zoneName != null) && !zoneName.isEmpty())
 									temp.setName(zoneName);
 								
 								addZone(zoneId, temp);
@@ -401,7 +407,7 @@ public class ZoneManager
 			L2DatabaseFactory.close(con);
 		}
 		
-		Log.info("Zone: loaded " + _classZones.size() + " zone classes and "+getSize()+" zones.");
+		Log.info("Zone: loaded " + _classZones.size() + " zone classes and " + getSize() + " zones.");
 	}
 	
 	public int getSize()
@@ -492,7 +498,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> T getZoneByName(String name, Class<T> type)
 	{
-		for (L2ZoneType zones :  _classZones.get(type).values())
+		for (L2ZoneType zones : _classZones.get(type).values())
 		{
 			if (zones == null)
 				continue;
@@ -501,7 +507,6 @@ public class ZoneManager
 		}
 		return null;
 	}
-	
 	
 	/**
 	 * Get zone by ID and zone class
@@ -542,7 +547,7 @@ public class ZoneManager
 	
 	/**
 	 * Returns all zones from given coordinates (plane)
-	 * 
+	 *
 	 * @param x
 	 * @param y
 	 * @return zones
@@ -581,7 +586,7 @@ public class ZoneManager
 	
 	/**
 	 * Returns zone from given coordinates
-	 * 
+	 *
 	 * @param x
 	 * @param y
 	 * @param z
@@ -607,7 +612,7 @@ public class ZoneManager
 		
 		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if (temp instanceof L2ArenaZone && temp.isCharacterInZone(character))
+			if ((temp instanceof L2ArenaZone) && temp.isCharacterInZone(character))
 				return ((L2ArenaZone) temp);
 		}
 		
@@ -621,7 +626,7 @@ public class ZoneManager
 		
 		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if (temp instanceof L2OlympiadStadiumZone && temp.isCharacterInZone(character))
+			if ((temp instanceof L2OlympiadStadiumZone) && temp.isCharacterInZone(character))
 				return ((L2OlympiadStadiumZone) temp);
 		}
 		return null;
@@ -643,7 +648,7 @@ public class ZoneManager
 			double closestdis = Double.MAX_VALUE;
 			for (T temp : (Collection<T>) _classZones.get(type).values())
 			{
-				double distance =  temp.getDistanceToZone(obj);
+				double distance = temp.getDistanceToZone(obj);
 				if (distance < closestdis)
 				{
 					closestdis = distance;

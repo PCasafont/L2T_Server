@@ -15,6 +15,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.network;
 
 import java.io.IOException;
@@ -89,9 +90,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		_bufferPool = new ArrayList<>();
 		
 		for (int i = 0; i < HELPER_BUFFER_COUNT; i++)
-		{
 			_bufferPool.add(ByteBuffer.wrap(new byte[HELPER_BUFFER_SIZE]).order(BYTE_ORDER));
-		}
 		
 		_acceptFilter = acceptFilter;
 		_packetHandler = packetHandler;
@@ -246,7 +245,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		{
 			while ((sc = ssc.accept()) != null)
 			{
-				if (_acceptFilter == null || _acceptFilter.accept(sc))
+				if ((_acceptFilter == null) || _acceptFilter.accept(sc))
 				{
 					sc.configureBlocking(false);
 					SelectionKey clientKey = sc.register(_selector, SelectionKey.OP_READ);
@@ -533,7 +532,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			hasPending = true;
 		}
 		
-		if (DIRECT_WRITE_BUFFER.remaining() > 1 && !con.hasPendingWriteBuffer())
+		if ((DIRECT_WRITE_BUFFER.remaining() > 1) && !con.hasPendingWriteBuffer())
 		{
 			final NioNetStackList<SendablePacket<T>> sendQueue = con.getSendQueue();
 			final T client = con.getClient();

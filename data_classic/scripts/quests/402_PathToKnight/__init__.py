@@ -37,7 +37,7 @@ class Quest (JQuest) :
 
  def onEvent (self,event,st) :
     htmltext = event
-    classid = st.getPlayer().getClassId()
+    classid = st.getPlayer().getClassId().getId()
     level = st.getPlayer().getLevel()
     squire = st.getQuestItemsCount(MARK_OF_ESQUIRE)
     player = st.getPlayer()
@@ -113,7 +113,7 @@ class Quest (JQuest) :
           st.exitQuest(False)
           st.saveGlobalQuestVar("1ClassQuestFinished","1")
           st.playSound("ItemSound.quest_finish")
-          player.sendPacket(SocialAction(player.getObjectId(),3))
+          player.sendPacket(SocialAction(player,3))
         else:
           htmltext = Quest.getNoQuestMsg(player)
     elif event == "30417-14.htm" :
@@ -132,7 +132,7 @@ class Quest (JQuest) :
           st.set("cond","0")
           st.exitQuest(False)
           st.playSound("ItemSound.quest_finish")
-          player.sendPacket(SocialAction(player.getObjectId(),3))
+          player.sendPacket(SocialAction(player,3))
         else:
           htmltext = Quest.getNoQuestMsg(player)
     return htmltext
@@ -181,7 +181,7 @@ class Quest (JQuest) :
            st.set("cond","0")
            st.exitQuest(False)
            st.playSound("ItemSound.quest_finish")
-           player.sendPacket(SocialAction(player.getObjectId(),3))
+           player.sendPacket(SocialAction(player,3))
    elif npcId == 30332 and cond==1 and squire :
        if not guards_mark1 and not coin1 :
           htmltext = "30332-01.htm"

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.status;
 
 import java.util.Set;
@@ -21,12 +22,12 @@ import java.util.logging.Level;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.stat.CharStat;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
+import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Formulas;
 import l2server.log.Log;
 import l2server.util.Rnd;
@@ -146,6 +147,28 @@ public class CharStatus
 		if (getActiveChar().isDead())
 			return;
 		
+		boolean isHide = (attacker instanceof L2PcInstance) && ((L2PcInstance) attacker).getAppearance().getInvisible();
+		if ((!isDOT && !isHPConsumption) || isHide)
+		{
+			getActiveChar().stopEffectsOnDamage(awake, (int) value);
+			
+			if (getActiveChar().isStunned())
+			{
+				int baseBreakChance = attacker.getLevel() > 85 ? 5 : 25; // TODO Recheck this
+				double breakChance = (baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar())));
+				
+				if (value > 2000)
+					breakChance *= 4;
+				else if (value > 1000)
+					breakChance *= 2;
+				else if (value > 500)
+					breakChance *= 1.5;
+				
+				if ((value > 100) && (Rnd.get(100) < breakChance))
+					getActiveChar().stopStunning(true);
+			}
+		}
+		
 		// invul handling
 		if (getActiveChar().isInvul(attacker))
 		{
@@ -173,21 +196,9 @@ public class CharStatus
 			if (player.isGM() && !player.getAccessLevel().canGiveDamage())
 				return;
 		}
-		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance)attacker).getAppearance().getInvisible();
-		if ((!isDOT && !isHPConsumption) || isHide)
-		{
-			getActiveChar().stopEffectsOnDamage(awake);
-			if (getActiveChar().isStunned() && Rnd.get(100) < 10)
-				getActiveChar().stopStunning(true);
-		}
-
-		if (isDOT && attacker.getActingPlayer() != null)
-		{
-			if (getActiveChar().getActingPlayer() != null)
-				value *= Formulas.pvpDamageMultiplier(attacker.getActingPlayer(), getActiveChar().getActingPlayer());
-			else if (getActiveChar() instanceof L2Attackable)
-				value *= Formulas.pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)getActiveChar());
-		}
+		
+		if (isDOT)
+			value = Formulas.calcCustomModifier(attacker, getActiveChar(), value);
 		
 		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
 		if (isDOT)
@@ -195,7 +206,7 @@ public class CharStatus
 		if (value > 0) // Reduce Hp if any, and Hp can't be negative
 			setCurrentHp(Math.max(getCurrentHp() - value, 0), true, attacker, display);
 		
-		if (getActiveChar().getCurrentHp() < 0.5 && getActiveChar().isMortal()) // Die
+		if ((getActiveChar().getCurrentHp() < 0.5) && getActiveChar().isMortal()) // Die
 		{
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();
@@ -226,7 +237,7 @@ public class CharStatus
 	 */
 	public final synchronized void startHpMpRegeneration()
 	{
-		if (_regTask == null && !getActiveChar().isDead())
+		if ((_regTask == null) && !getActiveChar().isDead())
 		{
 			if (Config.DEBUG)
 				Log.fine("HP/MP regen started");
@@ -383,20 +394,17 @@ public class CharStatus
 		
 		// Modify the current HP of the L2Character and broadcast Server->Client packet StatusUpdate
 		if (getCurrentHp() < charstat.getMaxHp())
-			setCurrentHp(getCurrentHp()
-					+ Formulas.calcHpRegen(getActiveChar()), false);
+			setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
 		
 		// Modify the current MP of the L2Character and broadcast Server->Client packet StatusUpdate
 		if (getCurrentMp() < charstat.getMaxMp())
-			setCurrentMp(getCurrentMp()
-					+ Formulas.calcMpRegen(getActiveChar()), false);
+			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
 		
 		if (!getActiveChar().isInActiveRegion())
 		{
 			// no broadcast necessary for characters that are in inactive regions.
 			// stop regeneration for characters who are filled up and in an inactive region.
-			if ((getCurrentHp() == charstat.getMaxHp())
-					&& (getCurrentMp() == charstat.getMaxMp()))
+			if ((getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
 				stopHpMpRegeneration();
 		}
 		else
@@ -406,6 +414,7 @@ public class CharStatus
 	/** Task of HP/MP regeneration */
 	class RegenTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try

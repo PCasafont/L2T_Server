@@ -41,7 +41,7 @@ public class AdminCamera implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			/*List<Point3D> positions = new FastList<Point3D>();
+			/*List<Point3D> positions = new HashMap<Point3D>();
 			for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
 			{
 				if (player == null)

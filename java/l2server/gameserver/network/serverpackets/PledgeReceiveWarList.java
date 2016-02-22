@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -25,7 +26,6 @@ import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
  */
 public class PledgeReceiveWarList extends L2GameServerPacket
 {
-	private static final String _S__FE_3E_PLEDGERECEIVEWARELIST = "[S] FE:3F PledgeReceiveWarList";
 	private L2Clan _clan;
 	@SuppressWarnings("unused")
 	private int _tab;
@@ -43,20 +43,17 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 	 * @see l2server.util.network.BaseSendablePacket.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x40);
-
 		writeD(0); // ???
 		writeD(_clan.getWars().size());
 		
 		for (ClanWar war : _clan.getWars())
 		{
 			L2Clan other = war.getClan1() != _clan ? war.getClan1() : war.getClan2();
-
+			
 			_state = 0;
-			if (war.getElapsedTime() >= Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600 && war.getState() == WarState.DECLARED)
+			if ((war.getElapsedTime() >= (Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600)) && (war.getState() == WarState.DECLARED))
 				_state = 1;
 			else if (war.getState() == WarState.STARTED)
 				_state = 2;
@@ -79,7 +76,7 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 			
 			// Needs confirmation, show only for clan which declared war or for both!
 			if (_state < 2)
-				_pkedPlayers = 5-war.getClan1DeathsForClanWar();
+				_pkedPlayers = 5 - war.getClan1DeathsForClanWar();
 			
 			writeS(other.getName());
 			writeD(_state); // 0: Declaration; 1: Blood Declaration; 2: At war; 3: Victory; 4: Defeat; 5: Tie
@@ -89,14 +86,4 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 			writeD(_pkedPlayers); // Players PK'ed by other clan.
 		}
 	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__FE_3E_PLEDGERECEIVEWARELIST;
-	}
-	
 }

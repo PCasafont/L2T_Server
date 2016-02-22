@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class DivineHealer extends L2Transformation
 {
-	private static final int[] SKILLS = {648,803,1490,698,699,700,701,702,703,5491,619};
+	private static final int[] SKILLS = { 648, 803, 1490, 698, 699, 700, 701, 702, 703, 5491, 619 };
+	
 	public DivineHealer()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class DivineHealer extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 255 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 255) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

@@ -172,9 +172,9 @@
 			mDef="905" pAtkSpd="253" mAtkSpd="1972" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="110" collisionRadius="140"
 			collisionHeight="75" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="balanced"
 			skillChance="15" clan="curma_core_clan" clanRange="4500" dodge="-18">
-		<minion npcId="29011" min="4" max="4" respawnTime="60" /> <!-- Susceptor -->
-		<minion npcId="29007" min="10" max="10" respawnTime="60" /> <!-- Death Knight -->
-		<minion npcId="29008" min="5" max="5" respawnTime="60" /> <!-- Doom Wraith -->
+		<minion npcId="29011" min="4" max="4" /> <!-- Susceptor -->
+		<minion npcId="29007" min="10" max="10" /> <!-- Death Knight -->
+		<minion npcId="29008" min="5" max="5" /> <!-- Doom Wraith -->
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -996,9 +996,9 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29028" name="Valakas" title="Fire Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1641657216" hpReg="1900.0"
+	<npc id="29028" name="Valakas" title="Fire Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305" hpReg="1900.0"
 			mpMax="2471403" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680" sp="33890321"
-			pAtk="68079" mAtk="118260" pDef="7604" mDef="4584" pAtkSpd="253" mAtkSpd="3819" pCritRate="10" mCritRate="10" walkSpd="120"
+			pAtk="68079" mAtk="118260" pDef="6904" mDef="8084" pAtkSpd="253" mAtkSpd="3819" pCritRate="10" mCritRate="10" walkSpd="120"
 			runSpd="300" aggressive="true" aggroRange="2000" extraDropGroup="29" collisionRadius="190" collisionHeight="335" elemAtkType="0"
 			elemAtkValue="370" fireRes="370" waterRes="250" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced"
 			skillChance="15" clan="valakas_clan" clanRange="300" dodge="3">
@@ -1798,9 +1798,9 @@
 			<itemDrop itemId="4121" min="3" max="9" chance="97.94" /> <!-- Bow of Peril Shaft -->
 		</dropCategory>
 		<dropCategory chance="80.6877">
-			<itemDrop itemId="4616" min="1" max="3" chance="27.2727" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="4" chance="18.1818" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="1" max="1" chance="54.5455" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="1" max="3" chance="27.2727" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="4" chance="18.1818" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="1" max="1" chance="54.5455" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 		</dropCategory>
 	</npc>
 	<npc id="29061" name="Teleportation Cubic" level="70" type="L2Teleporter" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
@@ -1947,7 +1947,7 @@
 		<skill id="5143" level="1" /> <!-- Sailren Use Blow -->
 		<skill id="5117" level="1" /> <!-- Stun -->
 		<skill id="5122" level="1" /> <!-- Sailren Use Might -->
-		<skill id="5118" level="1" /> <!-- Cancel Sailren Use -->
+		<skill id="5118" level="1" /> <!-- Cancel Sairen Use -->
 		<dropCategory chance="53.1948">
 			<itemDrop itemId="6680" min="1" max="1" chance="1.3728" /> <!-- Sealed Draconic Leather Armor -->
 			<itemDrop itemId="6707" min="3" max="9" chance="98.6272" /> <!-- Sealed Draconic Leather Armor Part -->
@@ -2327,9 +2327,9 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1641657216" hpReg="1830.0"
+	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305" hpReg="1830.0"
 			mpMax="3996001" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680" sp="33890321"
-			pAtk="56459" mAtk="81506" pDef="8262" mDef="4578" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40" walkSpd="50"
+			pAtk="56459" mAtk="81506" pDef="6962" mDef="8078" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40" walkSpd="50"
 			runSpd="186" aggressive="true" aggroRange="10000" extraDropGroup="29" collisionRadius="300" collisionHeight="300" elemAtkType="3"
 			elemAtkValue="370" fireRes="300" waterRes="300" windRes="250" earthRes="370" holyRes="300" darkRes="300" aiType="balanced"
 			skillChance="35" clan="antharas_clan" clanRange="10000">
@@ -3605,8 +3605,8 @@
 			<itemDrop itemId="2060" min="24" max="72" chance="18.6386" /> <!-- StormBringer Blade -->
 		</dropCategory>
 		<dropCategory chance="61.1027">
-			<itemDrop itemId="4589" min="4" max="12" chance="34.4262" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
-			<itemDrop itemId="4590" min="8" max="22" chance="18.3607" /> <!-- Greater STR Dye <STR + 2 DEX - 2> -->
+			<itemDrop itemId="4589" min="4" max="12" chance="34.4262" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
+			<itemDrop itemId="4590" min="8" max="22" chance="18.3607" /> <!-- Greater STR Dye [STR + 2 DEX - 2] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="47.2131" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
@@ -3678,9 +3678,9 @@
 			<itemDrop itemId="2121" min="12" max="36" chance="81.8702" /> <!-- Eminence Bow Shaft -->
 		</dropCategory>
 		<dropCategory chance="84.7075">
-			<itemDrop itemId="4607" min="5" max="15" chance="14.0187" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="46.729" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="35.0467" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="5" max="15" chance="14.0187" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="46.729" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="35.0467" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
@@ -3756,9 +3756,9 @@
 			<itemDrop itemId="4118" min="14" max="42" chance="16.6687" /> <!-- Evil Spirit Head -->
 		</dropCategory>
 		<dropCategory chance="87.4394">
-			<itemDrop itemId="4616" min="5" max="15" chance="11.4068" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="4" chance="38.0228" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="2" max="6" chance="28.5171" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="5" max="15" chance="11.4068" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="4" chance="38.0228" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="2" max="6" chance="28.5171" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="6572" min="1" max="1" chance="22.0533" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
@@ -5578,12 +5578,12 @@
 		<itemDrop itemId="38056" min="1" max="1" chance="0.5" /> <!-- Eternal Gaiters Crafting Pack - Heavy Armor -->
 		<itemDrop itemId="38055" min="1" max="1" chance="0.5" /> <!-- Eternal Breastplate Crafting Pack - Heavy Armor -->
 		<itemDrop itemId="38054" min="1" max="1" chance="0.5" /> <!-- Eternal Helmet Crafting Pack - Heavy Armor -->
-		<itemDrop itemId="35478" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35477" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Shoes (60%) -->
-		<itemDrop itemId="35476" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35475" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Stockings (60%) -->
-		<itemDrop itemId="35474" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35473" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Circlet (60%) -->
+		<itemDrop itemId="35478" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35477" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Shoes (60%) -->
+		<itemDrop itemId="35476" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35475" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Stockings (60%) -->
+		<itemDrop itemId="35474" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35473" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Circlet (60%) -->
 		<itemDrop itemId="38058" min="1" max="1" chance="0.5" /> <!-- Eternal Boots Crafting Pack - Heavy Armor -->
 		<itemDrop itemId="38059" min="1" max="1" chance="0.5" /> <!-- Eternal Shield Crafting Pack - Heavy Armor -->
 		<itemDrop itemId="38057" min="1" max="1" chance="0.5" /> <!-- Eternal Gauntlets Crafting Pack - Heavy Armor -->
@@ -5598,8 +5598,8 @@
 		<itemDrop itemId="38062" min="1" max="1" chance="0.5" /> <!-- Eternal Leather Leggings Crafting Pack - Light Armor -->
 		<itemDrop itemId="38061" min="1" max="1" chance="0.5" /> <!-- Eternal Leather Armor Crafting Pack - Light Armor -->
 		<itemDrop itemId="38060" min="1" max="1" chance="0.5" /> <!-- Eternal Leather Helmet Crafting Pack - Light Armor -->
-		<itemDrop itemId="35472" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35471" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35472" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35471" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
 		<itemDrop itemId="35349" min="1" max="1" chance="0.5" /> <!-- Eternal Circlet Ingredient -->
 		<itemDrop itemId="35348" min="1" max="1" chance="0.5" /> <!-- Eternal Leather Boot Ingredient -->
 		<itemDrop itemId="35347" min="1" max="1" chance="0.5" /> <!-- Eternal Leather Glove Ingredient -->
@@ -5614,15 +5614,15 @@
 		<itemDrop itemId="35350" min="1" max="1" chance="0.5" /> <!-- Eternal Tunic Ingredient -->
 		<itemDrop itemId="35351" min="1" max="1" chance="0.5" /> <!-- Eternal Stocking Ingredient -->
 		<itemDrop itemId="35352" min="1" max="1" chance="0.5" /> <!-- Eternal Glove Ingredient -->
-		<itemDrop itemId="35470" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35469" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35468" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35467" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35466" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35465" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35464" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35463" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35462" min="1" max="1" chance="0.5" /> <!-- Recipe:Â Eternal Helmet (60%) -->
+		<itemDrop itemId="35470" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35469" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35468" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35467" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35466" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35465" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35464" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35463" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35462" min="1" max="1" chance="0.5" /> <!-- Recipe: Eternal Helmet (60%) -->
 		<itemDrop itemId="35354" min="1" max="1" chance="0.5" /> <!-- Eternal Sigil Ingredient -->
 		<itemDrop itemId="35353" min="1" max="1" chance="0.5" /> <!-- Eternal Shoe Ingredient -->
 		<itemDrop itemId="35338" min="1" max="1" chance="0.5" /> <!-- Eternal Helmet Ingredient -->
@@ -6191,7 +6191,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16101" level="1" /> <!-- Tauti -->
 	</npc>
-	<npc id="29240" name="Lindvior" title="Wind Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="164165721" hpReg="440.76"
+	<npc id="29240" name="Lindvior" title="Wind Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305" hpReg="440.76"
 			mpMax="2471403" mpReg="319.83" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184" sp="44057417"
 			pAtk="300000" mAtk="250000" pDef="15000" mDef="12500" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40" walkSpd="120"
 			runSpd="300" aggressive="true" aggroRange="2000" rHand="8" collisionRadius="350" collisionHeight="210" elemAtkType="2"
@@ -6319,6 +6319,9 @@
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16179" level="1" /> <!-- Beleth -->
+		<spawn x="-16871" y="246130" z="-840" heading="32767" respawn="60" />
+		<spawn x="-16876" y="245929" z="-840" heading="32767" respawn="60" />
+		<spawn x="-16869" y="245732" z="-840" heading="32767" respawn="60" />
 	</npc>
 	<npc id="29245" name="Beleth" level="99" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59" mpMax="152184832" mpReg="365.43"
 			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407"
@@ -6484,216 +6487,216 @@
 	<npc id="29260" name="Maliss" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29261" name="Isadora" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29262" name="Flint" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29263" name="Harp" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29264" name="Mad Maliss" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29265" name="Mad Isadora" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29266" name="Corrupted Captain" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29267" name="Corrupted High Priest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29268" name="Crook the Mad" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29269" name="Houpon the Warden Overseer" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29270" name="Guillotine of Death" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29271" name="Pafuron" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29272" name="Krutati" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29273" name="Lindvior's Herald Numa" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29274" name="Valakas' Herald Potigia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29275" name="Antharas' Herald Komabor" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29276" name="Mino Muscle Bomber" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29277" name="Mino Dragon" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29278" name="Vengeful Agarez" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29279" name="Vengeful Oretross" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29280" name="Vengeful Eligos" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29281" name="Dark Spicula" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29282" name="Bloody Spicula" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29283" name="Vengeful Lerazia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29284" name="Vengeful Edaire" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29285" name="Vengeful Agonia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29286" name="Dark Weiss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29287" name="Bloody Weiss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
 			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
-			earthRes="0" holyRes="0" darkRes="0" aiType="">
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29288" name="Nerva Orc Nergatt" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29289" name="Amden Orc Turation" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29290" name="Nerva Chief Turakan" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
 			hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 			pAtkSpd="250" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24"
-			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29291" name="Nerva Orc Raider" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29292" name="Nerva Orc Elite" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29293" name="Theor" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29294" name="Tebird" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29295" name="Tegape" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29296" name="Nerva Orc Assassin" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29297" name="Nerva Orc Ambusher" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29298" name="Varbasion" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29299" name="Varmonia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29300" name="Varkaron" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
 			mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
-			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29301" name="Minion Monisac" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="29302" name="Minion Monishe" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
-			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 </list>

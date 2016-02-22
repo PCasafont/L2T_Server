@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class DoomWraith extends L2Transformation
 {
-	private static final int[] SKILLS = {586,587,588,589,5491,619};
+	private static final int[] SKILLS = { 586, 587, 588, 589, 5491, 619 };
+	
 	public DoomWraith()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class DoomWraith extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 2 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 2) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

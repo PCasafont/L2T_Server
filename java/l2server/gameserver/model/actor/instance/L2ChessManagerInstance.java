@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.StringTokenizer;
@@ -34,7 +35,7 @@ public class L2ChessManagerInstance extends L2NpcInstance
 		else if (command.startsWith("challenge "))
 		{
 			L2PcInstance receptor = L2World.getInstance().getPlayer(command.substring(10));
-			if (receptor != null && !receptor.isChessChallengeRequest() && receptor.getObjectId() != playerInstance.getObjectId())
+			if ((receptor != null) && !receptor.isChessChallengeRequest() && (receptor.getObjectId() != playerInstance.getObjectId()))
 			{
 				receptor.setChessChallengeRequest(true, playerInstance);
 				String confirmText = playerInstance.getName() + " has challenged you to a chess game. Do you accept?";
@@ -47,7 +48,7 @@ public class L2ChessManagerInstance extends L2NpcInstance
 				playerInstance.sendMessage("This player could not be found in the world!");
 			}
 		}
-		else if ((command.startsWith("movements") || command.startsWith("moveto") || command.startsWith("attack")) && ChessEvent.isState(ChessState.STARTED) && !ChessEvent.pieceMoving && ChessEvent.turn == side)
+		else if ((command.startsWith("movements") || command.startsWith("moveto") || command.startsWith("attack")) && ChessEvent.isState(ChessState.STARTED) && !ChessEvent.pieceMoving && (ChessEvent.turn == side))
 		{
 			StringTokenizer st = new StringTokenizer(command, "_");
 			st.nextToken();
@@ -56,7 +57,7 @@ public class L2ChessManagerInstance extends L2NpcInstance
 			
 			for (int i = 0; i < 8; i++)
 				for (int j = 0; j < 8; j++)
-					if (ChessEvent.getBoard(side)[i][j] != null && ChessEvent.getBoard(side)[i][j].getObjectId() == pieceId)
+					if ((ChessEvent.getBoard(side)[i][j] != null) && (ChessEvent.getBoard(side)[i][j].getObjectId() == pieceId))
 						piece = ChessEvent.getBoard(side)[i][j];
 			
 			if (piece != null)
@@ -88,7 +89,8 @@ public class L2ChessManagerInstance extends L2NpcInstance
 									square = "<font color=\"FF0000\"><a action=\"bypass -h npc_" + getObjectId() + "_attack_" + piece.getObjectId() + "_" + ChessEvent.getBoard(side)[i][j].getObjectId() + "_" + i + "_" + j + "\">[]</a></font>";
 								else if (piece.moveType(i, j, true) == 1)
 									square = "<font color=\"00FF00\"><a action=\"bypass -h npc_" + getObjectId() + "_moveto_" + piece.getObjectId() + "_" + i + "_" + j + "\">[]</a></font>";
-								else square = "[]";
+								else
+									square = "[]";
 								
 								board += square + "</td>";
 							}
@@ -109,14 +111,14 @@ public class L2ChessManagerInstance extends L2NpcInstance
 					
 					for (int i = 0; i < 8; i++)
 						for (int j = 0; j < 8; j++)
-							if (ChessEvent.getBoard(side)[i][j] != null && ChessEvent.getBoard(side)[i][j].getObjectId() == enemyId)
+							if ((ChessEvent.getBoard(side)[i][j] != null) && (ChessEvent.getBoard(side)[i][j].getObjectId() == enemyId))
 								enemy = ChessEvent.getBoard(side)[i][j];
 					
 					piece.move(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()), enemy);
 				}
 			}
 		}
-		else if (ChessEvent.isState(ChessState.STARTED) && ChessEvent.turn != side)
+		else if (ChessEvent.isState(ChessState.STARTED) && (ChessEvent.turn != side))
 			playerInstance.sendMessage("You must wait for your turn.");
 		else if (ChessEvent.pieceMoving)
 			playerInstance.sendMessage("You must wait for the piece to finish it's movement!");
@@ -149,12 +151,12 @@ public class L2ChessManagerInstance extends L2NpcInstance
 					
 					for (int i = 0; i < 8; i++)
 					{
-						if (ChessEvent.getWaitingPlayers()[i][0] != null && ChessEvent.getWaitingPlayers()[i][1] == null)
+						if ((ChessEvent.getWaitingPlayers()[i][0] != null) && (ChessEvent.getWaitingPlayers()[i][1] == null))
 						{
 							player = ChessEvent.getWaitingPlayers()[i][0];
 							color = "White";
 						}
-						else if (ChessEvent.getWaitingPlayers()[i][1] != null && ChessEvent.getWaitingPlayers()[i][0] == null)
+						else if ((ChessEvent.getWaitingPlayers()[i][1] != null) && (ChessEvent.getWaitingPlayers()[i][0] == null))
 						{
 							player = ChessEvent.getWaitingPlayers()[i][1];
 							color = "Black";
@@ -185,9 +187,9 @@ public class L2ChessManagerInstance extends L2NpcInstance
 					
 					for (int i = 0; i < 8; i++)
 					{
-						if (ChessEvent.getWaitingPlayers()[i][1] != null && ChessEvent.getWaitingPlayers()[i][0] != null && ChessEvent.getWaitingPlayers()[i][0].getObjectId() == playerInstance.getObjectId())
+						if ((ChessEvent.getWaitingPlayers()[i][1] != null) && (ChessEvent.getWaitingPlayers()[i][0] != null) && (ChessEvent.getWaitingPlayers()[i][0].getObjectId() == playerInstance.getObjectId()))
 							player = ChessEvent.getWaitingPlayers()[i][1];
-						else if (ChessEvent.getWaitingPlayers()[i][0] != null && ChessEvent.getWaitingPlayers()[i][1] != null && ChessEvent.getWaitingPlayers()[i][1].getObjectId() == playerInstance.getObjectId())
+						else if ((ChessEvent.getWaitingPlayers()[i][0] != null) && (ChessEvent.getWaitingPlayers()[i][1] != null) && (ChessEvent.getWaitingPlayers()[i][1].getObjectId() == playerInstance.getObjectId()))
 							player = ChessEvent.getWaitingPlayers()[i][0];
 					}
 					
@@ -216,7 +218,7 @@ public class L2ChessManagerInstance extends L2NpcInstance
 		else if (ChessEvent.isState(ChessState.STARTED))
 		{
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(getObjectId());
-			if (ChessEvent.getSide(0).getPlayer() == null || ChessEvent.getSide(0).getPlayer().isOnline() || ChessEvent.getSide(1).getPlayer() == null || ChessEvent.getSide(1).getPlayer().isOnline())
+			if ((ChessEvent.getSide(0).getPlayer() == null) || ChessEvent.getSide(0).getPlayer().isOnline() || (ChessEvent.getSide(1).getPlayer() == null) || ChessEvent.getSide(1).getPlayer().isOnline())
 			{
 				//TODO: check him to be around the board!!
 				npcHtmlMessage.setHtml("<html><head><title>Instanced Events</title></head><body>The current game has been interrupted due to some of the participants leaving.</body></html>");
@@ -247,7 +249,8 @@ public class L2ChessManagerInstance extends L2NpcInstance
 								square = "[]";
 							else if (ChessEvent.getBoard(side)[i][j].getSide().getId() == side)
 								square = "<a action=\"bypass -h npc_" + getObjectId() + "_movements_" + ChessEvent.getBoard(side)[i][j].getObjectId() + "\">[]</a>";
-							else square = "<font color=\"FF0000\">[]</font>";
+							else
+								square = "<font color=\"FF0000\">[]</font>";
 							
 							board += square + "</td>";
 						}
@@ -259,8 +262,7 @@ public class L2ChessManagerInstance extends L2NpcInstance
 			}
 			else
 			{
-				npcHtmlMessage.setHtml("<html><head><title>Instanced Events</title></head><body>There is a started game already.<br>" +
-						"<a action=\"bypass -h npc_" + getObjectId() + "_observe\">Observe Match</a></body></html>");
+				npcHtmlMessage.setHtml("<html><head><title>Instanced Events</title></head><body>There is a started game already.<br>" + "<a action=\"bypass -h npc_" + getObjectId() + "_observe\">Observe Match</a></body></html>");
 				playerInstance.sendPacket(npcHtmlMessage);
 			}
 		}

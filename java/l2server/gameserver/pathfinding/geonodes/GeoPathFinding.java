@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.pathfinding.geonodes;
 
 import java.io.BufferedReader;
@@ -80,7 +81,7 @@ public class GeoPathFinding extends PathFinding
 		
 		GeoNode start = readNode(gx, gy, gz);
 		GeoNode end = readNode(gtx, gty, gtz);
-		if (start == null || end == null)
+		if ((start == null) || (end == null))
 			return null;
 		if (Math.abs(start.getLoc().getZ() - z) > 55)
 			return null; // not correct layer
@@ -93,12 +94,12 @@ public class GeoPathFinding extends PathFinding
 		Location temp = GeoData.getInstance().moveCheck(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instanceId);
 		if ((temp.getX() != start.getLoc().getX()) || (temp.getY() != start.getLoc().getY()))
 			return null; //   cannot reach closest...
-		
+			
 		// TODO: Find closest path node around target, now only checks if final location can be reached
 		temp = GeoData.getInstance().moveCheck(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instanceId);
 		if ((temp.getX() != end.getLoc().getX()) || (temp.getY() != end.getLoc().getY()))
 			return null; //   cannot reach closest...
-		
+			
 		//return searchAStar(start, end);
 		return searchByClosest2(start, end);
 	}
@@ -156,7 +157,7 @@ public class GeoPathFinding extends PathFinding
 						n.setParent(node);
 						dx = targetX - n.getLoc().getNodeX();
 						dy = targetY - n.getLoc().getNodeY();
-						n.setCost(dx * dx + dy * dy);
+						n.setCost((dx * dx) + (dy * dy));
 						for (int index = 0; index < to_visit.size(); index++)
 						{
 							// supposed to find it quite early..
@@ -191,7 +192,7 @@ public class GeoPathFinding extends PathFinding
 			directionX = node.getLoc().getNodeX() - node.getParent().getLoc().getNodeX();
 			directionY = node.getLoc().getNodeY() - node.getParent().getLoc().getNodeY();
 			
-			if (directionX != previousDirectionX || directionY != previousDirectionY)
+			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
@@ -305,7 +306,7 @@ public class GeoPathFinding extends PathFinding
 	private GeoNode readNode(short node_x, short node_y, byte layer)
 	{
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
-		if (!this.pathNodesExist(regoffset))
+		if (!pathNodesExist(regoffset))
 			return null;
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
@@ -313,7 +314,7 @@ public class GeoPathFinding extends PathFinding
 		ByteBuffer pn = _pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx);
-		idx += layer * 10 + 1;//byte + layer*10byte
+		idx += (layer * 10) + 1;//byte + layer*10byte
 		if (nodes < layer)
 		{
 			Log.warning("SmthWrong!");
@@ -328,7 +329,7 @@ public class GeoPathFinding extends PathFinding
 		short node_x = getNodePos(gx);
 		short node_y = getNodePos(gy);
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
-		if (!this.pathNodesExist(regoffset))
+		if (!pathNodesExist(regoffset))
 			return null;
 		short nbx = getNodeBlock(node_x);
 		short nby = getNodeBlock(node_y);
@@ -402,9 +403,9 @@ public class GeoPathFinding extends PathFinding
 	
 	private void LoadPathNodeFile(byte rx, byte ry)
 	{
-		if (rx < Config.WORLD_X_MIN || rx > Config.WORLD_X_MAX || ry < Config.WORLD_Y_MIN || ry > Config.WORLD_Y_MAX)
+		if ((rx < Config.WORLD_X_MIN) || (rx > Config.WORLD_X_MAX) || (ry < Config.WORLD_Y_MIN) || (ry > Config.WORLD_Y_MAX))
 		{
-			Log.warning("Failed to Load PathNode File: invalid region " + rx +","+ ry + "\n");
+			Log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + "\n");
 			return;
 		}
 		String fname = "./data/pathnode/" + rx + "_" + ry + ".pn";
@@ -435,7 +436,7 @@ public class GeoPathFinding extends PathFinding
 			{
 				byte layer = nodes.get(index);
 				indexs.put(node++, index);
-				index += layer * 10 + 1;
+				index += (layer * 10) + 1;
 			}
 			_pathNodesIndex.put(regionoffset, indexs);
 			_pathNodes.put(regionoffset, nodes);

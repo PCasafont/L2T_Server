@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Party;
@@ -32,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestExAskJoinMPCC extends L2GameClientPacket
 {
 	//
-	private static final String _C__D0_0D_REQUESTEXASKJOINMPCC = "[C] D0:0D RequestExAskJoinMPCC";
 	private String _name;
 	
 	@Override
@@ -132,8 +132,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
 	{
 		boolean hasRight = false;
-		if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId()
-				&& requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
+		if ((requestor.getClan() != null) && (requestor.getClan().getLeaderId() == requestor.getObjectId()) && (requestor.getClan().getLevel() >= 5)) // Clanleader of lvl5 Clan or higher
 			hasRight = true;
 		else if (requestor.getInventory().getItemByItemId(8871) != null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
 			hasRight = true;
@@ -163,7 +162,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 			target.getParty().getLeader().sendPacket(sm);
 			target.getParty().getLeader().sendPacket(new ExAskJoinMPCC(requestor.getName()));
 			
-			requestor.sendMessage("You invited "+target.getName()+" to your Command Channel.");
+			requestor.sendMessage("You invited " + target.getName() + " to your Command Channel.");
 		}
 		else
 		{
@@ -171,14 +170,5 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 			sm.addString(target.getName());
 			requestor.sendPacket(sm);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_0D_REQUESTEXASKJOINMPCC;
 	}
 }

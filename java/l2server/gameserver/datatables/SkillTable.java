@@ -2,14 +2,15 @@
  * This program is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with this program. If
  * not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntIntHashMap;
@@ -32,7 +33,7 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 /**
- * 
+ *
  */
 public class SkillTable implements Reloadable
 {
@@ -55,6 +56,7 @@ public class SkillTable implements Reloadable
 		ReloadableManager.getInstance().register("skills", this);
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		load();
@@ -66,6 +68,7 @@ public class SkillTable implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "All Skills have been reloaded";
@@ -76,7 +79,7 @@ public class SkillTable implements Reloadable
 		_skills.clear();
 		_skillMaxLevel.clear();
 		_enchantable.clear();
-
+		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skills");
 		if (!dir.exists())
 		{
@@ -94,7 +97,7 @@ public class SkillTable implements Reloadable
 		File customfile = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/skills.xml");
 		if (customfile.exists())
 			validFiles.add(customfile);
-
+		
 		for (File f : validFiles)
 		{
 			XmlDocument doc = new XmlDocument(f);
@@ -118,7 +121,7 @@ public class SkillTable implements Reloadable
 										_enchantable.add(s.getId());
 										continue;
 									}
-
+									
 									// only non-enchanted skills
 									final int maxLvl = _skillMaxLevel.get(s.getId());
 									if (s.getLevelHash() > maxLvl)
@@ -138,11 +141,13 @@ public class SkillTable implements Reloadable
 		// Reloading as well FrequentSkill enumeration values
 		for (FrequentSkill sk : FrequentSkill.values())
 			sk._skill = getInfo(sk._id, sk._level);
+		
+		Log.info("SkillTable: Loaded " + _skills.size() + " skills.");
 	}
 	
 	/**
 	 * Provides the skill hash
-	 * 
+	 *
 	 * @param skill
 	 *			The L2Skill to be hashed
 	 * @return getSkillHashCode(skill.getId(), skill.getLevel())
@@ -154,7 +159,7 @@ public class SkillTable implements Reloadable
 	
 	/**
 	 * Centralized method for easier change of the hashing sys
-	 * 
+	 *
 	 * @param skillId
 	 *			The Skill Id
 	 * @param skillLevel
@@ -165,16 +170,16 @@ public class SkillTable implements Reloadable
 	{
 		return getSkillHashCode(skillId, skillLevel, 0, 0);
 	}
-
+	
 	public static long getSkillHashCode(int skillId, int skillLevel, final int enchant)
 	{
 		return getSkillHashCode(skillId, skillLevel, enchant / 1000, enchant % 1000);
 	}
-
+	
 	public static long getSkillHashCode(int skillId, int skillLevel, int skillEnchantRouteId, int skillEnchantLevel)
 	{
 		//return skillId * 1000000L + skillLevel * 10000L + skillEnchantRouteId * 100L + skillEnchantRouteLevel;
-		return ((long)skillId << 32) + ((skillEnchantRouteId * 1000 + skillEnchantLevel) << 16) + skillLevel;
+		return ((long) skillId << 32) + (((skillEnchantRouteId * 1000) + skillEnchantLevel) << 16) + skillLevel;
 	}
 	
 	public final L2Skill getInfo(final int skillId, final int level)
@@ -197,7 +202,7 @@ public class SkillTable implements Reloadable
 		// skill/level not found, fix for transformation scripts
 		final int maxLvl = _skillMaxLevel.get(skillId);
 		// requested level too high
-		if (maxLvl > 0 && level > maxLvl)
+		if ((maxLvl > 0) && (level > maxLvl))
 			return _skills.get(getSkillHashCode(skillId, maxLvl));
 		
 		String error = "No skill info found for skill id " + skillId;
@@ -249,34 +254,13 @@ public class SkillTable implements Reloadable
 	
 	/**
 	 * Enum to hold some important references to frequently used (hardcoded) skills in core
-	 * 
+	 *
 	 * @author DrHouse
 	 *
 	 */
 	public static enum FrequentSkill
 	{
-		RAID_CURSE(4215, 1),
-		RAID_CURSE2(4515, 1),
-		SEAL_OF_RULER(246, 1),
-		BUILD_HEADQUARTERS(247, 1),
-		LUCKY(194, 1),
-		DWARVEN_CRAFT(1321, 1),
-		MAESTRO_CREATE_ITEM(172, 10),
-		COMMON_CRAFT(1322, 1),
-		WYVERN_BREATH(4289, 1),
-		STRIDER_SIEGE_ASSAULT(325, 1),
-		FAKE_PETRIFICATION(4616, 1),
-		FIREWORK(5965, 1),
-		LARGE_FIREWORK(2025, 1),
-		BLESSING_OF_PROTECTION(5182, 1),
-		ARENA_CP_RECOVERY(4380, 1),
-		VOID_BURST(3630, 1),
-		VOID_FLOW(3631, 1),
-		THE_VICTOR_OF_WAR(5074, 1),
-		THE_VANQUISHED_OF_WAR(5075, 1),
-		IMPRINT_OF_LIGHT(19034, 1),
-		IMPRINT_OF_DARKNESS(19035, 1),
-		LUCKY_CLOVER(18103, 1);
+		RAID_CURSE(4215, 1), RAID_CURSE2(4515, 1), SEAL_OF_RULER(246, 1), BUILD_HEADQUARTERS(247, 1), LUCKY(194, 1), DWARVEN_CRAFT(1321, 1), MAESTRO_CREATE_ITEM(172, 10), COMMON_CRAFT(1322, 1), WYVERN_BREATH(4289, 1), STRIDER_SIEGE_ASSAULT(325, 1), FAKE_PETRIFICATION(4616, 1), FIREWORK(5965, 1), LARGE_FIREWORK(2025, 1), BLESSING_OF_PROTECTION(5182, 1), ARENA_CP_RECOVERY(4380, 1), VOID_BURST(3630, 1), VOID_FLOW(3631, 1), THE_VICTOR_OF_WAR(5074, 1), THE_VANQUISHED_OF_WAR(5075, 1), IMPRINT_OF_LIGHT(19034, 1), IMPRINT_OF_DARKNESS(19035, 1), LUCKY_CLOVER(18103, 1);
 		
 		private final int _id;
 		private final int _level;

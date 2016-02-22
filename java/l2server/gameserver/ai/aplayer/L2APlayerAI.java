@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.ai.aplayer;
 
 import java.util.concurrent.ScheduledFuture;
@@ -21,8 +22,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.ai.L2PlayerAI;
 import l2server.gameserver.datatables.EnchantItemTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ItemHandler;
 import l2server.gameserver.model.Elementals;
@@ -60,7 +61,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	public L2APlayerAI(AIAccessor accessor)
 	{
 		super(accessor);
-		_player = (L2ApInstance)_accessor.getActor();
+		_player = (L2ApInstance) _accessor.getActor();
 		_task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 5000, 1000);
 		
 		// The players always run
@@ -72,7 +73,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		
 		for (L2ItemInstance item : _player.getInventory().getItems())
 		{
-			if (item == null || !item.isEquipped())
+			if ((item == null) || !item.isEquipped())
 				continue;
 			
 			boolean hasElement = false;
@@ -80,7 +81,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			{
 				for (Elementals elem : item.getElementals())
 				{
-					if (elem != null && elem.getValue() > 0)
+					if ((elem != null) && (elem.getValue() > 0))
 					{
 						hasElement = true;
 						continue;
@@ -91,21 +92,14 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			if (hasElement)
 				continue;
 			
-			if (!(item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() || item.isCommonItem() || item.isPvp()
-					|| item.isHeroItem() || item.isTimeLimitedItem() || (item.getItemId() >= 7816 && item.getItemId() <= 7831) 
-					|| (item.getItem().getItemType() == L2WeaponType.NONE) || (item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S
-					&& item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R) || item.getItem().getBodyPart() == L2Item.SLOT_BACK ||
-					item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET || item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR ||
-					item.getItem().getBodyPart() == L2Item.SLOT_BELT || item.getItem().getBodyPart() == L2Item.SLOT_NECK ||
-					(item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 || (item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 ||
-					item.getItem().getElementals() != null || item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL))
+			if (!((item.getItem().getItemType() == L2WeaponType.FISHINGROD) || item.isShadowItem() || item.isCommonItem() || item.isPvp() || item.isHeroItem() || item.isTimeLimitedItem() || ((item.getItemId() >= 7816) && (item.getItemId() <= 7831)) || (item.getItem().getItemType() == L2WeaponType.NONE) || ((item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S) && (item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R)) || (item.getItem().getBodyPart() == L2Item.SLOT_BACK) || (item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET) || (item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR) || (item.getItem().getBodyPart() == L2Item.SLOT_BELT) || (item.getItem().getBodyPart() == L2Item.SLOT_NECK) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0) || (item.getItem().getElementals() != null) || (item.getItemType() == L2ArmorType.SHIELD) || (item.getItemType() == L2ArmorType.SIGIL)))
 			{
 				if (item.isWeapon())
-					item.setElementAttr((byte)Rnd.get(6), 300);
+					item.setElementAttr((byte) Rnd.get(6), 300);
 				else
 				{
 					for (int elem = 0; elem < 6; elem += 2)
-						item.setElementAttr((byte)(elem + Rnd.get(2)), 120);
+						item.setElementAttr((byte) (elem + Rnd.get(2)), 120);
 				}
 			}
 		}
@@ -115,14 +109,13 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	
 	private void checkGear()
 	{
-		if (_player.getActiveWeaponItem() != null
-				&& _player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D)
+		if ((_player.getActiveWeaponItem() != null) && (_player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D))
 			return;
 		
 		for (int itemId : getRandomGear())
 		{
 			L2ItemInstance item = _player.getInventory().addItem("", itemId, 1, _player, _player);
-			if (item != null && EnchantItemTable.isEnchantable(item))
+			if ((item != null) && EnchantItemTable.isEnchantable(item))
 				item.setEnchantLevel(10 + Rnd.get(5));
 		}
 		
@@ -143,7 +136,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	
 	protected L2Character decideTarget()
 	{
-		L2Character target = _player.getTarget() instanceof L2Character ? (L2Character)_player.getTarget() : null;
+		L2Character target = _player.getTarget() instanceof L2Character ? (L2Character) _player.getTarget() : null;
 		
 		if (_player.getParty() != null)
 		{
@@ -152,7 +145,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			//	_player.teleToLocation(target.getX(), target.getY(), target.getZ());
 			for (L2PcInstance member : _player.getParty().getPartyMembers())
 			{
-				if (member.isDead() && member.getClassId() == 146)
+				if (member.isDead() && (member.getClassId() == 146))
 					interactWith(member);
 			}
 		}
@@ -160,13 +153,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		//if (target == null || target.isDead())
 		//	L2World.getInstance().getPlayer("lolol");
 		
-		if (target == null || target.getDistanceSq(_player) > 2000 * 2000
-				|| !target.isVisible())
+		if ((target == null) || (target.getDistanceSq(_player) > (2000 * 2000)) || !target.isVisible())
 		{
 			for (L2Character cha : _player.getKnownList().getKnownCharacters())
 			{
-				if (!cha.isDead() && cha.isVisible()
-						&& _player.isEnemy(cha))
+				if (!cha.isDead() && cha.isVisible() && _player.isEnemy(cha))
 				{
 					target = cha;
 					break;
@@ -174,7 +165,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			}
 		}
 		
-		if (target != null && !_player.isEnemy(target))
+		if ((target != null) && !_player.isEnemy(target))
 			target = null;
 		
 		_player.setTarget(target);
@@ -185,24 +176,23 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	protected void travelTo(L2Character target)
 	{
 		Point3D direction = new Point3D(target.getX() - _player.getX(), target.getY() - _player.getY(), target.getZ() - _player.getZ());
-		double length = Math.sqrt((long)direction.getX() * (long)direction.getX() + (long)direction.getY() * (long)direction.getY());
+		double length = Math.sqrt(((long) direction.getX() * (long) direction.getX()) + ((long) direction.getY() * (long) direction.getY()));
 		double angle = Math.acos(direction.getX() / length);
 		if (direction.getY() < 0)
-			angle = Math.PI * 2 - angle;
-
-		int newX = _player.getX() + (int)(1000 * Math.cos(angle));
-		int newY = _player.getY() + (int)(1000 * Math.sin(angle));
+			angle = (Math.PI * 2) - angle;
+		
+		int newX = _player.getX() + (int) (1000 * Math.cos(angle));
+		int newY = _player.getY() + (int) (1000 * Math.sin(angle));
 		int newZ = GeoData.getInstance().getHeight(newX, newY, _player.getZ());
 		//int newX = target.getX();
 		//int newY = target.getY();
 		//int newZ = target.getZ();
 		
 		double offset = 0.1;
-		while (!GeoData.getInstance().canMoveFromToTarget(_player.getX(), _player.getY(), _player.getZ(), newX, newY, newZ, 0)
-				&& offset < Math.PI)
+		while (!GeoData.getInstance().canMoveFromToTarget(_player.getX(), _player.getY(), _player.getZ(), newX, newY, newZ, 0) && (offset < Math.PI))
 		{
-			newX = _player.getX() + (int)(1000 * Math.cos(angle + offset));
-			newY = _player.getY() + (int)(1000 * Math.sin(angle + offset));
+			newX = _player.getX() + (int) (1000 * Math.cos(angle + offset));
+			newY = _player.getY() + (int) (1000 * Math.sin(angle + offset));
 			newZ = GeoData.getInstance().getHeight(newX, newY, _player.getZ() + 50);
 			// This makes offset alternate direction and increment a bit at each loop
 			offset += offset * -2.01;
@@ -224,8 +214,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 				
 				for (L2PcInstance member : _player.getParty().getPartyMembers())
 				{
-					if ((member.getClassId() == 146 && !member.isDead())
-							|| member.isCastingNow())
+					if (((member.getClassId() == 146) && !member.isDead()) || member.isCastingNow())
 						return false;
 				}
 				if (!_player.isCastingNow())
@@ -276,7 +265,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			return;
 		}
 		
-		if (_player.getParty() != null && _player.getParty().getLeader() == _player)
+		if ((_player.getParty() != null) && (_player.getParty().getLeader() == _player))
 			_player.getParty().think();
 		
 		// If dead, make a little timer
@@ -287,9 +276,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			// If there's some nearby ally, wait
 			for (L2PcInstance player : _player.getKnownList().getKnownPlayers().values())
 			{
-				if (!_player.isInsideZone(L2Character.ZONE_TOWN)
-						&& _player.isAlly(player) && !player.isDead()
-						&& _player.isInsideRadius(player, 2000, true, false))
+				if (!_player.isInsideZone(L2Character.ZONE_TOWN) && _player.isAlly(player) && !player.isDead() && _player.isInsideRadius(player, 2000, true, false))
 					return;
 			}
 			
@@ -305,11 +292,11 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		}
 		
 		// Check if the player was disarmed and try to equip the weapon again
-		if (_player.getActiveWeaponInstance() == null && !_player.isDisarmed())
+		if ((_player.getActiveWeaponInstance() == null) && !_player.isDisarmed())
 		{
 			for (L2ItemInstance item : _player.getInventory().getItems())
 			{
-				if (item.isWeapon() && item.getItem().getCrystalType() > L2Item.CRYSTAL_D)
+				if (item.isWeapon() && (item.getItem().getCrystalType() > L2Item.CRYSTAL_D))
 				{
 					_player.useEquippableItem(item, false);
 					break;
@@ -322,26 +309,25 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		
 		// Check shots
 		L2ItemInstance item = _player.getInventory().getItemByItemId(17754);
-		if (item == null || item.getCount() < 1000)
+		if ((item == null) || (item.getCount() < 1000))
 			_player.getInventory().addItem("", 17754, 1000, _player, _player);
-		_player.addAutoSoulShot(17754);
 		item = _player.getInventory().getItemByItemId(19442);
-		if (item == null || item.getCount() < 1000)
+		if ((item == null) || (item.getCount() < 1000))
 			_player.getInventory().addItem("", 19442, 1000, _player, _player);
-		_player.addAutoSoulShot(19442);
+		_player.checkAutoShots();
 		
 		// Check spirit ores
 		item = _player.getInventory().getItemByItemId(3031);
-		if (item == null || item.getCount() < 100)
+		if ((item == null) || (item.getCount() < 100))
 			_player.getInventory().addItem("", 3031, 100, _player, _player);
-
+		
 		SkillTable.getInstance().getInfo(14779, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14780, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14781, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14782, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14783, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14784, 1).getEffects(getActor(), getActor());
-		switch (((L2PcInstance)getActor()).getClassId())
+		switch (((L2PcInstance) getActor()).getClassId())
 		{
 			case 139:
 				SkillTable.getInstance().getInfo(14785, 1).getEffects(getActor(), getActor());
@@ -364,15 +350,14 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		getActor().setCurrentHpMp(getActor().getMaxHp(), getActor().getMaxMp());
 		
 		// Artificially using the NPC heal whenever possible
-		if (getIntention() == CtrlIntention.AI_INTENTION_IDLE && !_player.isInCombat()
-				&& (_player.getPvpFlag() == 0 || _player.isInsideZone(L2Character.ZONE_PEACE)))
+		if ((getIntention() == CtrlIntention.AI_INTENTION_IDLE) && !_player.isInCombat() && ((_player.getPvpFlag() == 0) || _player.isInsideZone(L2Character.ZONE_PEACE)))
 		{
 			_player.setCurrentHp(_player.getMaxHp());
 			_player.setCurrentMp(_player.getMaxMp());
 			_player.setCurrentCp(_player.getMaxCp());
 			_player.broadcastUserInfo();
 		}
-
+		
 		if (!_player.isNoblesseBlessed())
 		{
 			_player.setTarget(_player);
@@ -422,12 +407,9 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			{
 				for (L2PcInstance member : _player.getParty().getPartyMembers())
 				{
-					if (member != _player
-							&& (_player.isInsideRadius(member, 30, false, false)
-							|| (!_player.isInsideRadius(member, 200, false, false)
-							&& _player.isInsideRadius(member, 3000, false, false))))
+					if ((member != _player) && (_player.isInsideRadius(member, 30, false, false) || (!_player.isInsideRadius(member, 200, false, false) && _player.isInsideRadius(member, 3000, false, false))))
 					{
-						setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(member.getX() + Rnd.get(100) - 50, member.getY() + Rnd.get(100) - 50, member.getZ(), 0));
+						setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition((member.getX() + Rnd.get(100)) - 50, (member.getY() + Rnd.get(100)) - 50, member.getZ(), 0));
 						return;
 					}
 				}
@@ -436,7 +418,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			{
 				L2PcInstance mostPvP = L2World.getInstance().getMostPvP(_player.isInParty(), true);
 				
-				if (mostPvP != null && _player.getPvpFlag() == 0)
+				if ((mostPvP != null) && (_player.getPvpFlag() == 0))
 					_player.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
 				return;
 			}
@@ -445,13 +427,13 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		/*if (_player.getDistanceSq(target) > 2000 * 2000)
 			travelTo(target);
 		else*/
-			interactWith(target);
+		interactWith(target);
 	}
 	
 	@Override
 	protected void onEvtAttacked(L2Character attacker)
 	{
-		if (attacker instanceof L2Attackable && !((L2Attackable) attacker).isCoreAIDisabled())
+		if ((attacker instanceof L2Attackable) && !((L2Attackable) attacker).isCoreAIDisabled())
 			clientStartAutoAttack();
 	}
 	
@@ -471,7 +453,7 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	 */
 	protected boolean hasAbnormalType(L2PcInstance player, String abnormalType)
 	{
-		if (player != null && !abnormalType.equals("none"))
+		if ((player != null) && !abnormalType.equals("none"))
 		{
 			for (L2Abnormal e : player.getAllEffects())
 			{

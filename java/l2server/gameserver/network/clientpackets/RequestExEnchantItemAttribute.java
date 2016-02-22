@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -31,8 +32,7 @@ import l2server.util.Rnd;
 
 public class RequestExEnchantItemAttribute extends L2GameClientPacket
 {
-	private static final String D0_35_REQUEST_EX_ENCHANT_ITEM_ATTRIBUTE = "[C] D0:35 RequestExEnchantItemAttribute";
-
+	
 	private int _objectId;
 	private long _count;
 	
@@ -88,7 +88,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		
 		L2ItemInstance item = player.getInventory().getItemByObjectId(itemObjId);
 		L2ItemInstance stone = player.getActiveEnchantAttrItem();
-		if (item == null || stone == null)
+		if ((item == null) || (stone == null))
 		{
 			player.setActiveEnchantAttrItem(null);
 			return;
@@ -100,15 +100,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		
 		//can't enchant rods, shadow items, adventurers', Common Items, PvP items, hero items, cloaks, bracelets, underwear (e.g. shirt), belt, necklace, earring, ring
-		if (!item.getItem().isAttributable() || item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() || item.isCommonItem() || item.isPvp()
-				|| (!item.getItem().isAttributable() && item.isHeroItem()) || item.isTimeLimitedItem() 
-				|| (item.getItem().getItemType() == L2WeaponType.NONE) || (item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S
-				&& item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R) || item.getItem().getBodyPart() == L2Item.SLOT_BACK ||
-				item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET || item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR ||
-				item.getItem().getBodyPart() == L2Item.SLOT_BELT || item.getItem().getBodyPart() == L2Item.SLOT_NECK ||
-				(item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 || (item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 ||
-				item.getItem().getElementals() != null || item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL ||
-				item.getItem().getBodyPart() == L2Item.SLOT_BROOCH)
+		if (!item.getItem().isAttributable() || (item.getItem().getItemType() == L2WeaponType.FISHINGROD) || item.isShadowItem() || item.isCommonItem() || item.isPvp() || (!item.getItem().isAttributable() && item.isHeroItem()) || item.isTimeLimitedItem() || (item.getItem().getItemType() == L2WeaponType.NONE) || ((item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S) && (item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R)) || (item.getItem().getBodyPart() == L2Item.SLOT_BACK) || (item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET) || (item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR) || (item.getItem().getBodyPart() == L2Item.SLOT_BELT) || (item.getItem().getBodyPart() == L2Item.SLOT_NECK) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0) || (item.getItem().getElementals() != null) || (item.getItemType() == L2ArmorType.SHIELD) || (item.getItemType() == L2ArmorType.SIGIL) || (item.getItem().getBodyPart() == L2Item.SLOT_BROOCH))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ELEMENTAL_ENHANCE_REQUIREMENT_NOT_SUFFICIENT));
 			player.setActiveEnchantAttrItem(null);
@@ -130,7 +122,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 			default:
 			{
 				player.setActiveEnchantAttrItem(null);
-				Util.handleIllegalPlayerAction(player, "Player "+player.getName()+" tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
 				return;
 			}
 		}
@@ -147,15 +139,14 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		int limit = getLimit(item, stoneId);
 		int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
 		
-		if ((item.isWeapon() && item.getAttackElementType() != elementToAdd && item.getAttackElementType() != -2)
-				|| (item.isArmor() && item.getElemental(elementToAdd) == null && item.getElementals() != null && item.getElementals().length >= 3))
+		if ((item.isWeapon() && (item.getAttackElementType() != elementToAdd) && (item.getAttackElementType() != -2)) || (item.isArmor() && (item.getElemental(elementToAdd) == null) && (item.getElementals() != null) && (item.getElementals().length >= 3)))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_ELEMENTAL_POWER_ALREADY_ADDED));
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
 		
-		if (item.isArmor() && item.getElementals() != null)
+		if (item.isArmor() && (item.getElementals() != null))
 		{
 			//cant add opposite element
 			for (Elementals elm : item.getElementals())
@@ -177,12 +168,12 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		
 		int maxCount = (limit - elementValue) / powerToAdd;
-		if ((limit - elementValue) % powerToAdd > 0)
+		if (((limit - elementValue) % powerToAdd) > 0)
 			maxCount++;
-			
+		
 		int succeeded = 0;
 		int failed = 0;
-		for (int i = 0; i < count && succeeded < maxCount; i++)
+		for (int i = 0; (i < count) && (succeeded < maxCount); i++)
 		{
 			boolean success = false;
 			switch (Elementals.getItemElemental(stoneId)._type)
@@ -208,7 +199,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 				failed++;
 		}
 		
-		int newPower = elementValue + powerToAdd * succeeded;
+		int newPower = elementValue + (powerToAdd * succeeded);
 		if (newPower > limit)
 		{
 			newPower = limit;
@@ -218,17 +209,17 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		if (!player.destroyItem("AttrEnchant", stone, succeeded + failed, player, true))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
-			Util.handleIllegalPlayerAction(player, "Player "+player.getName()+" tried to attribute enchant with a stone he doesn't have", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to attribute enchant with a stone he doesn't have", Config.DEFAULT_PUNISH);
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
-
+		
 		if (succeeded > 0)
 		{
 			item.setElementAttr(elementToAdd, newPower);
 			if (item.isEquipped())
 				item.updateElementAttrBonus(player);
-		
+			
 			byte realElement = item.isArmor() ? opositeElement : elementToAdd;
 			SystemMessage sm;
 			if (item.getEnchantLevel() == 0)
@@ -298,11 +289,5 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		
 		return 0;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return D0_35_REQUEST_EX_ENCHANT_ITEM_ATTRIBUTE;
 	}
 }

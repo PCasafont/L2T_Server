@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
@@ -38,7 +39,6 @@ import l2server.log.Log;
  */
 public final class SendWareHouseDepositList extends L2GameClientPacket
 {
-	private static final String _C__31_SENDWAREHOUSEDEPOSITLIST = "[C] 31 SendWareHouseDepositList";
 	
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	
@@ -48,19 +48,17 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		final int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
 		
 		_items = new WarehouseItem[count];
-		for (int i=0; i < count; i++)
+		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
 			long cnt = readQ();
-			if (objId < 1 || cnt < 0)
+			if ((objId < 1) || (cnt < 0))
 			{
 				_items = null;
 				return;
@@ -91,9 +89,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		final boolean isPrivate = warehouse instanceof PcWarehouse;
 		
 		final L2Npc manager = player.getLastFolkNPC();
-		if ((manager == null
-				|| !manager.isWarehouse()
-				|| !manager.canInteract(player)) && !player.isGM())
+		if (((manager == null) || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
 			return;
 		
 		if (!isPrivate && !player.getAccessLevel().allowTransaction())
@@ -104,12 +100,12 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		
 		if (player.getActiveEnchantItem() != null)
 		{
-			Util.handleIllegalPlayerAction(player,"Player "+player.getName()+" tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use enchant Exploit!", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (player.getReputation() < 0))
 			return;
 		
 		// Freight price from config or normal price per item slot (30)
@@ -122,7 +118,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (item == null)
 			{
-				Log.warning("Error depositing a warehouse object for char "+player.getName()+" (validity check)");
+				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
 				return;
 			}
 			
@@ -143,7 +139,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 		
 		// Check if enough adena and charge the fee
-		if (currentAdena < fee || !player.reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
+		if ((currentAdena < fee) || !player.reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;
@@ -161,7 +157,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (oldItem == null)
 			{
-				Log.warning("Error depositing a warehouse object for char "+player.getName()+" (olditem == null)");
+				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
 			
@@ -171,13 +167,13 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			final L2ItemInstance newItem = player.getInventory().transferItem(warehouse.getName(), i.getObjectId(), i.getCount(), warehouse, player, manager);
 			if (newItem == null)
 			{
-				Log.warning("Error depositing a warehouse object for char "+player.getName()+" (newitem == null)");
+				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");
 				continue;
 			}
 			
 			if (playerIU != null)
 			{
-				if (oldItem.getCount() > 0 && oldItem != newItem)
+				if ((oldItem.getCount() > 0) && (oldItem != newItem))
 					playerIU.addModifiedItem(oldItem);
 				else
 					playerIU.addRemovedItem(oldItem);
@@ -216,14 +212,5 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		{
 			return _count;
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__31_SENDWAREHOUSEDEPOSITLIST;
 	}
 }

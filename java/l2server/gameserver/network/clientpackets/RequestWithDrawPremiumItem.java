@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -27,7 +28,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 {
-	private static final String _C__D0_52_REQUESTWITHDRAWPREMIUMITEM = "[C] D0:52 RequestWithDrawPremiumItem";
 	
 	private int _itemNum;
 	private int _charId;
@@ -61,7 +61,7 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 			Util.handleIllegalPlayerAction(activeChar, "[RequestWithDrawPremiumItem] Player: " + activeChar.getName() + " try to get item with empty list!", Config.DEFAULT_PUNISH);
 			return;
 		}
-		if (activeChar.getWeightPenalty() >= 3 || !activeChar.isInventoryUnder90(false))
+		if ((activeChar.getWeightPenalty() >= 3) || !activeChar.isInventoryUnder90(false))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_RECEIVE_THE_VITAMIN_ITEM));
 			return;
@@ -81,10 +81,10 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 		
 		activeChar.addItem("PremiumItem", _item.getItemId(), _itemcount, null, true);
 		
-		if (_itemcount < _item.getCount() )
+		if (_itemcount < _item.getCount())
 		{
-			activeChar.getPremiumItemList().get(_itemNum).updateCount(_item.getCount()-_itemcount);
-			activeChar.updatePremiumItem(_itemNum, _item.getCount()-_itemcount);
+			activeChar.getPremiumItemList().get(_itemNum).updateCount(_item.getCount() - _itemcount);
+			activeChar.updatePremiumItem(_itemNum, _item.getCount() - _itemcount);
 		}
 		else
 		{
@@ -97,11 +97,4 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 		else
 			activeChar.sendPacket(new ExGetPremiumItemList(activeChar));
 	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_52_REQUESTWITHDRAWPREMIUMITEM;
-	}
-	
 }

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -24,7 +25,6 @@ import l2server.gameserver.model.actor.instance.L2StatueInstance;
  */
 public final class ServerObjectInfo extends L2GameServerPacket
 {
-	private static final String _S__92_SERVEROBJECTINFO = "[S] 92 ServerObjectInfo";
 	private L2Npc _activeChar;
 	private int _x, _y, _z, _heading;
 	private int _idTemplate;
@@ -64,7 +64,6 @@ public final class ServerObjectInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x92);
 		writeD(_activeChar.getObjectId());
 		writeD(_idTemplate);
 		writeS(_name); // name
@@ -84,7 +83,7 @@ public final class ServerObjectInfo extends L2GameServerPacket
 		
 		if (_type == 7)
 		{
-			L2StatueInstance statue = (L2StatueInstance)_activeChar;
+			L2StatueInstance statue = (L2StatueInstance) _activeChar;
 			writeD(statue.getRecordId());
 			writeD(0x00); // ???
 			writeD(statue.getSocialId());
@@ -107,14 +106,5 @@ public final class ServerObjectInfo extends L2GameServerPacket
 			writeD(statue.getHair1());
 			writeD(statue.getHair2());
 		}
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__92_SERVEROBJECTINFO;
 	}
 }

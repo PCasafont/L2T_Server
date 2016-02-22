@@ -1,5 +1,2 @@
-Welcome to L2Tenkai Khadia 10.000x
-Server NPCs are inside the Magic Gem (look for it in your inventory)
-To level and gear up, check out the level and hunting zones in the Teleporter
-Only English is allowed in hero (%), world/global (&) and shout (!) chats. You will be punished if you spam in any other language.
-You can find all the information you need in the Community Board! (ALT + B)
+Welcome to L2Tenkai Khadia!
+New command: ".tryon". Check it out!

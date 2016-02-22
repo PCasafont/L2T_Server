@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.StringTokenizer;
@@ -212,14 +213,14 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 		
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
 		
-		if (list != null && list.getNpcId() == getNpcId())
+		if ((list != null) && (list.getNpcId() == getNpcId()))
 		{
 			player.sendPacket(new ExBuyList(list, player.getAdena(), taxRate));
 			player.sendPacket(new ExSellList(player, list, taxRate, false));
 		}
 		else
 		{
-			Log.warning("possible client hacker: "+player.getName()+" attempting to buy from GM shop! < Ban him!");
+			Log.warning("possible client hacker: " + player.getName() + " attempting to buy from GM shop! < Ban him!");
 			Log.warning("buylist id:" + val);
 		}
 		
@@ -242,7 +243,7 @@ public class L2MerchantSummonInstance extends L2SummonInstance
 	private void showMessageWindow(L2PcInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-		final String filename = "merchant/"+getNpcId()+".htm";
+		final String filename = "merchant/" + getNpcId() + ".htm";
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));

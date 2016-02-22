@@ -15,6 +15,7 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.instancemanager.MuseumStatistic;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -39,7 +40,7 @@ public class BlessedSpiritShot implements IItemHandler
 	 * 
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public synchronized void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!(playable instanceof L2PcInstance))
 			return;
@@ -63,6 +64,7 @@ public class BlessedSpiritShot implements IItemHandler
 		
 		// Check for correct grade
 		final int weaponGrade = weaponItem.getCrystalType();
+		int shotGrade = weaponGrade;
 		boolean gradeCheck = true;
 		
 		switch (weaponGrade)
@@ -92,12 +94,14 @@ public class BlessedSpiritShot implements IItemHandler
 			case L2Item.CRYSTAL_S84:
 				if (itemId != 3952 && itemId != 22076)
 					gradeCheck = false;
+				shotGrade = L2Item.CRYSTAL_S;
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
 				if (itemId != 19442 && itemId != 22434)
 					gradeCheck = false;
+				shotGrade = L2Item.CRYSTAL_R;
 				break;
 		}
 		
@@ -116,24 +120,11 @@ public class BlessedSpiritShot implements IItemHandler
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)
 			{
-				//Sapphire
-				switch(jewel.getItemId())
+				// TODO: handle better :$
+				if (jewel.getName().contains("Sapphire"))
 				{
-					case 38927:
-						sapphireLvl = 1;
-						break;
-					case 38928:
-						sapphireLvl = 2;
-						break;
-					case 38929:
-						sapphireLvl = 3;
-						break;
-					case 38930:
-						sapphireLvl = 4;
-						break;
-					case 38931:
-						sapphireLvl = 5;
-						break;
+					sapphireLvl = Integer.parseInt(jewel.getName().substring(13, 14));
+					break;
 				}
 			}
 		}
@@ -210,29 +201,20 @@ public class BlessedSpiritShot implements IItemHandler
 				sapphireMul = 1.2;
 				break;
 		}
-
-		activeChar.consumableLock.lock();
-		try
+		
+		// Consume Blessed SpiritShot if player has enough of them
+		if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
 		{
-			// Check if Soul shot is already active
-			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
-				return;
-			
-			// Consume Blessed SpiritShot if player has enough of them
-			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
-			{
-				if (!activeChar.disableAutoShot(itemId))
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
-				return;
-			}
-			
-			// Charge Blessed SpiritShot
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
+			if (!activeChar.disableAutoShot(itemId))
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
+			return;
 		}
-		finally
-		{
-			activeChar.consumableLock.unlock();
-		}
+		
+		// Charge Blessed SpiritShot
+		weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
+		
+		if (shotGrade != L2Item.CRYSTAL_NONE)
+			activeChar.increaseStatistic(MuseumStatistic.get(14, shotGrade));
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));

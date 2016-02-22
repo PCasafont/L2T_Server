@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 import gnu.trove.TIntIntHashMap;
@@ -38,10 +39,12 @@ import l2server.gameserver.datatables.ResidentialSkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import l2server.gameserver.instancemanager.CastleManorManager.SeedProduction;
+import l2server.gameserver.instancemanager.FortManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager.Territory;
+import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Manor;
 import l2server.gameserver.model.L2Object;
@@ -54,9 +57,12 @@ import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.model.zone.type.L2CastleTeleportZone;
 import l2server.gameserver.model.zone.type.L2CastleZone;
 import l2server.gameserver.model.zone.type.L2SiegeZone;
+import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExCastleTendency;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 
 public class Castle
@@ -100,7 +106,7 @@ public class Castle
 	private Map<Integer, CastleFunction> _function;
 	private ArrayList<L2Skill> _residentialSkills = new ArrayList<L2Skill>();
 	private int _bloodAlliance = 0;
-
+	
 	public static final int TENDENCY_NONE = 0;
 	public static final int TENDENCY_LIGHT = 1;
 	public static final int TENDENCY_DARKNESS = 2;
@@ -194,13 +200,14 @@ public class Castle
 				_cwh = cwh;
 			}
 			
+			@Override
 			public void run()
 			{
 				try
 				{
 					if (getOwnerId() <= 0)
 						return;
-					if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee || !_cwh)
+					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -246,8 +253,7 @@ public class Castle
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "Exception: Castle.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): "
-						+ e.getMessage(), e);
+				Log.log(Level.SEVERE, "Exception: Castle.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " + e.getMessage(), e);
 			}
 			finally
 			{
@@ -281,12 +287,17 @@ public class Castle
 		if (!_artefacts.contains(target))
 			return;
 		_engrave.put(target.getObjectId(), clan.getClanId());
+		
+		//Broadcast.toGameMasters("Engraved = " + _engrave.size() + ". Arts = " + artAmount);
 		if (_engrave.size() == _artefacts.size())
 		{
 			for (L2ArtefactInstance art : _artefacts)
 			{
 				if (_engrave.get(art.getObjectId()) != clan.getClanId())
+				{
+					//Broadcast.toGameMasters("BLABLABLA");
 					return;
+				}
 			}
 			_engrave.clear();
 			setOwner(clan);
@@ -322,7 +333,7 @@ public class Castle
 				long adenTax = (long) (amount * aden.getTaxRate()); // Find out what Aden gets from the current castle instance's income
 				if (aden.getOwnerId() > 0)
 					aden.addToTreasury(adenTax); // Only bother to really add the tax to the treasury if not npc owned
-				
+					
 				amount -= adenTax; // Subtract Aden's income from current castle instance's income
 			}
 		}
@@ -345,7 +356,7 @@ public class Castle
 		}
 		else
 		{
-			if (_treasury + amount > PcInventory.MAX_ADENA)
+			if ((_treasury + amount) > PcInventory.MAX_ADENA)
 				_treasury = PcInventory.MAX_ADENA;
 			else
 				_treasury += amount;
@@ -489,7 +500,7 @@ public class Castle
 	public void setOwner(L2Clan clan)
 	{
 		// Remove old owner
-		if (getOwnerId() > 0 && (clan == null || clan.getClanId() != getOwnerId()))
+		if ((getOwnerId() > 0) && ((clan == null) || (clan.getClanId() != getOwnerId())))
 		{
 			L2Clan oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
 			if (oldOwner != null)
@@ -521,6 +532,11 @@ public class Castle
 					removeResidentialSkills(member);
 					member.sendSkillList();
 				}
+				
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.LIGHT_BLUE_CHATBOX_S1);
+				sm.addString(oldOwner.getName() + " has lost " + getName() + " Castle.");
+				
+				Broadcast.toAllOnlinePlayers(sm);
 			}
 		}
 		
@@ -533,6 +549,9 @@ public class Castle
 		
 		if (getSiege().getIsInProgress()) // If siege in progress
 			getSiege().midVictory(); // Mid victory phase of siege
+			
+		if (Config.isServer(Config.DREAMS))
+			TerritoryWarManager.getInstance().getTerritory(_castleId).setOwnerClan(clan);
 		
 		for (L2PcInstance member : clan.getOnlineMembers(0))
 		{
@@ -562,6 +581,8 @@ public class Castle
 		updateOwnerInDB(null);
 		if (getSiege().getIsInProgress())
 			getSiege().midVictory();
+		else
+			getSiege().removeSiegeClan(clan);
 		
 		for (Map.Entry<Integer, CastleFunction> fc : _function.entrySet())
 			removeFunction(fc.getKey());
@@ -573,7 +594,7 @@ public class Castle
 	{
 		int maxTax = _tendency == 2 ? 30 : 0;
 		
-		if (taxPercent < 0 || taxPercent > maxTax)
+		if ((taxPercent < 0) || (taxPercent > maxTax))
 		{
 			activeChar.sendMessage("Tax value must be between 0 and " + maxTax + ".");
 			return;
@@ -783,7 +804,7 @@ public class Castle
 		}
 		else
 		{
-			if (lvl == 0 && lease == 0)
+			if ((lvl == 0) && (lease == 0))
 				removeFunction(type);
 			else
 			{
@@ -816,7 +837,7 @@ public class Castle
 	{
 		for (L2DoorInstance door : DoorTable.getInstance().getDoors())
 		{
-			if (door.getCastle() != null && door.getCastle().getCastleId() == getCastleId())
+			if ((door.getCastle() != null) && (door.getCastle().getCastleId() == getCastleId()))
 				_doors.add(door);
 		}
 		//Logozo.info("Castle "+this+" loaded "+_doors.size()+" doors.");
@@ -856,6 +877,11 @@ public class Castle
 			// Announce to clan memebers
 			if (clan != null)
 			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.LIGHT_BLUE_DOWNSTAIRS_S1);
+				sm.addString(clan.getName() + " has taken " + getName() + " Castle!");
+				
+				Broadcast.toAllOnlinePlayers(sm);
+				
 				clan.setHasCastle(getCastleId()); // Set has castle flag for new owner
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
@@ -1072,8 +1098,7 @@ public class Castle
 				String values[] = new String[_production.size()];
 				for (SeedProduction s : _production)
 				{
-					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + ","
-					+ s.getPrice() + "," + CastleManorManager.PERIOD_CURRENT + ")";
+					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_CURRENT + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1095,8 +1120,7 @@ public class Castle
 				String values[] = new String[_productionNext.size()];
 				for (SeedProduction s : _productionNext)
 				{
-					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + ","
-					+ s.getPrice() + "," + CastleManorManager.PERIOD_NEXT + ")";
+					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + "," + s.getPrice() + "," + CastleManorManager.PERIOD_NEXT + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1146,8 +1170,7 @@ public class Castle
 				String values[] = new String[prod.size()];
 				for (SeedProduction s : prod)
 				{
-					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + ","
-					+ s.getPrice() + "," + period + ")";
+					values[count++] = "(" + getCastleId() + "," + s.getId() + "," + s.getCanProduce() + "," + s.getStartProduce() + "," + s.getPrice() + "," + period + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1185,15 +1208,14 @@ public class Castle
 			statement.setInt(1, getCastleId());
 			statement.execute();
 			statement.close();
-			if (_procure != null && _procure.size() > 0)
+			if ((_procure != null) && (_procure.size() > 0))
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
 				String values[] = new String[_procure.size()];
 				for (CropProcure cp : _procure)
 				{
-					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + ","
-					+ cp.getPrice() + "," + cp.getReward() + "," + CastleManorManager.PERIOD_CURRENT + ")";
+					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + "," + cp.getPrice() + "," + cp.getReward() + "," + CastleManorManager.PERIOD_CURRENT + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1207,15 +1229,14 @@ public class Castle
 					statement.close();
 				}
 			}
-			if (_procureNext != null && _procureNext.size() > 0)
+			if ((_procureNext != null) && (_procureNext.size() > 0))
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
 				String values[] = new String[_procureNext.size()];
 				for (CropProcure cp : _procureNext)
 				{
-					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + ","
-					+ cp.getPrice() + "," + cp.getReward() + "," + CastleManorManager.PERIOD_NEXT + ")";
+					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + "," + cp.getPrice() + "," + cp.getReward() + "," + CastleManorManager.PERIOD_NEXT + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1258,7 +1279,7 @@ public class Castle
 			List<CropProcure> proc = null;
 			proc = getCropProcure(period);
 			
-			if (proc != null && proc.size() > 0)
+			if ((proc != null) && (proc.size() > 0))
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
@@ -1266,8 +1287,7 @@ public class Castle
 				
 				for (CropProcure cp : proc)
 				{
-					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + ","
-					+ cp.getPrice() + "," + cp.getReward() + "," + period + ")";
+					values[count++] = "(" + getCastleId() + "," + cp.getId() + "," + cp.getAmount() + "," + cp.getStartAmount() + "," + cp.getPrice() + "," + cp.getReward() + "," + period + ")";
 				}
 				if (values.length > 0)
 				{
@@ -1410,19 +1430,44 @@ public class Castle
 	
 	public void giveResidentialSkills(L2PcInstance player)
 	{
-		if (_residentialSkills != null && !_residentialSkills.isEmpty())
+		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.addSkill(sk, false);
+		}
+		
+		Territory territory = TerritoryWarManager.getInstance().getTerritory(getCastleId());
+		if ((territory != null) && territory.getOwnedWardIds().contains(getCastleId() + 80))
+		{
+			for (int wardId : territory.getOwnedWardIds())
+			{
+				if (ResidentialSkillTable.getInstance().getSkills(wardId) != null)
+				{
+					for (L2Skill sk : ResidentialSkillTable.getInstance().getSkills(wardId))
+						player.addSkill(sk, false);
+				}
+			}
 		}
 	}
 	
 	public void removeResidentialSkills(L2PcInstance player)
 	{
-		if (_residentialSkills != null && !_residentialSkills.isEmpty())
+		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.removeSkill(sk, false, true);
+		}
+		
+		if (TerritoryWarManager.getInstance().getTerritory(getCastleId()) != null)
+		{
+			for (int wardId : TerritoryWarManager.getInstance().getTerritory(getCastleId()).getOwnedWardIds())
+			{
+				if (ResidentialSkillTable.getInstance().getSkills(wardId) != null)
+				{
+					for (L2Skill sk : ResidentialSkillTable.getInstance().getSkills(wardId))
+						player.removeSkill(sk, false, true);
+				}
+			}
 		}
 	}
 	
@@ -1433,7 +1478,7 @@ public class Castle
 	public void registerArtefact(L2ArtefactInstance artefact)
 	{
 		if (Config.DEBUG)
-			Log.info("ArtefactId: "+ artefact.getObjectId() + " is registered to "+getName()+" castle.");
+			Log.info("ArtefactId: " + artefact.getObjectId() + " is registered to " + getName() + " castle.");
 		_artefacts.add(artefact);
 	}
 	
@@ -1524,7 +1569,7 @@ public class Castle
 		//Manage tendency spawns
 		manageTendencyChangeSpawns();
 	}
-
+	
 	public void manageTendencyChangeSpawns()
 	{
 		if (_tendency == 0)
@@ -1532,15 +1577,15 @@ public class Castle
 		
 		if (_tendency == TENDENCY_LIGHT)
 		{
-			SpawnTable.getInstance().spawnSpecificTable(getName()+"_light_tendency");
+			SpawnTable.getInstance().spawnSpecificTable(getName() + "_light_tendency");
 			
-			SpawnTable.getInstance().despawnSpecificTable(getName()+"_darkness_tendency");
+			SpawnTable.getInstance().despawnSpecificTable(getName() + "_darkness_tendency");
 		}
 		else if (_tendency == TENDENCY_DARKNESS)
 		{
-			SpawnTable.getInstance().spawnSpecificTable(getName()+"_darkness_tendency");
+			SpawnTable.getInstance().spawnSpecificTable(getName() + "_darkness_tendency");
 			
-			SpawnTable.getInstance().despawnSpecificTable(getName()+"_light_tendency");
+			SpawnTable.getInstance().despawnSpecificTable(getName() + "_light_tendency");
 		}
 	}
 }

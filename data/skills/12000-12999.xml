@@ -2,7 +2,7 @@
 <list>
 	<!-- Inflicts a powerful blow on target. -->
 	<skill id="12000" levels="1" name="Heavy Hit">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -9030,48 +9030,48 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="12867" levels="1" name="Weapon Pouch">
+	<skill id="12867" levels="1" name="Armor Pouch">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<skill id="12868" levels="1" name="Armor Pouch">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="operateType" val="OP_ACTIVE" />
-		<set name="reuseDelay" val="2000" />
-	</skill>
-	<skill id="12869" levels="1" name="Lesser Giant's Fortune Box">
+	<skill id="12868" levels="1" name="Lesser Giant's Fortune Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- For 60 minutes, Max MP + 20%, HP recovery bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and increased P. Def. upon evading a critical attack. Decreases Speed - 15%. Also for party members who are equipped with short-range weapons, bows, or crossbows that receive more than a certain amount of damage, Critical Damage increases during a normal attack. -->
-	<skill id="12870" levels="1" name="Talking Island Homemade Cookie">
+	<skill id="12869" levels="1" name="Talking Island Homemade Cookie">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<skill id="12870" levels="1" name="Hero's Treasure Chest">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="12871" levels="1" name="Hero's Treasure Chest">
+	<skill id="12871" levels="1" name="Destruction Scroll: Enchant Weapon (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="12872" levels="1" name="Destruction Scroll: Enchant Weapon (R-grade)">
+	<skill id="12872" levels="1" name="Destruction Scroll: Enchant Armor (R-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="ENCHANT_WEAPON" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="12873" levels="1" name="Destruction Scroll: Enchant Armor (R-grade)">
+	<!-- Increases acquired XP by 100%. -->
+	<skill id="12873" levels="1" name="Rune of Destiny">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="ENCHANT_ARMOR" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Increases acquired XP by 100%. -->
-	<skill id="12874" levels="1" name="Rune of Destiny">
+	<skill id="12874" levels="1" name="Fire Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />

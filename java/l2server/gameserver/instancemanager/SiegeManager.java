@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.io.File;
@@ -88,11 +89,11 @@ public class SiegeManager
 		L2PcInstance player = (L2PcInstance) activeChar;
 		Castle castle = CastleManager.getInstance().getCastle(player);
 		
-		if (castle == null || castle.getCastleId() <= 0)
+		if ((castle == null) || (castle.getCastleId() <= 0))
 			text = "You must be on castle ground to summon this";
 		else if (!castle.getSiege().getIsInProgress())
 			text = "You can only summon this during a siege.";
-		else if (player.getClanId() != 0 && castle.getSiege().getAttackerClan(player.getClanId()) == null)
+		else if ((player.getClanId() != 0) && (castle.getSiege().getAttackerClan(player.getClanId()) == null))
 			text = "You can only summon this as a registered attacker.";
 		else
 			return true;
@@ -135,7 +136,7 @@ public class SiegeManager
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage() ,e);
+			Log.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage(), e);
 		}
 		finally
 		{
@@ -174,7 +175,7 @@ public class SiegeManager
 			
 			for (Castle castle : CastleManager.getInstance().getCastles())
 			{
-				MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId()-1] = Integer.parseInt(siegeSettings.getProperty(castle.getName() + "MaxMercenaries", Integer.toString(MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId()-1])).trim());
+				MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId() - 1] = Integer.parseInt(siegeSettings.getProperty(castle.getName() + "MaxMercenaries", Integer.toString(MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getCastleId() - 1])).trim());
 			}
 			
 		}

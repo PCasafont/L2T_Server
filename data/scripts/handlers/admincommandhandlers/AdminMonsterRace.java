@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.MonsterRace;
@@ -34,13 +35,11 @@ public class AdminMonsterRace implements IAdminCommandHandler
 {
 	//private static Logger _log = Logger.getLogger(AdminMonsterRace.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_mons"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_mons" };
 	
 	protected static int state = -1;
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equalsIgnoreCase("admin_mons"))
@@ -50,6 +49,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
@@ -66,21 +66,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 		 * 8003 to 8027
 		 */
 		
-		int[][] codes =
-		{
-				{
-					-1, 0
-				},
-				{
-					0, 15322
-				},
-				{
-					13765, -1
-				},
-				{
-					-1, 0
-				}
-		};
+		int[][] codes = { { -1, 0 }, { 0, 15322 }, { 13765, -1 }, { -1, 0 } };
 		MonsterRace race = MonsterRace.getInstance();
 		
 		if (state == -1)
@@ -125,6 +111,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			activeChar = pActiveChar;
 		}
 		
+		@Override
 		public void run()
 		{
 			//int[][] speeds1 = MonsterRace.getInstance().getSpeeds();
@@ -158,6 +145,7 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			activeChar = pActiveChar;
 		}
 		
+		@Override
 		public void run()
 		{
 			DeleteObject obj = null;

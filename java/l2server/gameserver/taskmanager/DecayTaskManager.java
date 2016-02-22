@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.taskmanager;
 
 import java.util.Iterator;
@@ -76,6 +77,7 @@ public class DecayTaskManager
 			// Do nothing
 		}
 		
+		@Override
 		public void run()
 		{
 			long current = System.currentTimeMillis();
@@ -92,8 +94,7 @@ public class DecayTaskManager
 						continue;
 					if (actor.isRaid() && !actor.isRaidMinion())
 						delay = RAID_BOSS_DECAY_TIME;
-					else if (actor instanceof L2Attackable &&
-							(((L2Attackable)actor).isSpoil() || ((L2Attackable)actor).isSeeded()))
+					else if ((actor instanceof L2Attackable) && (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded()))
 						delay = ATTACKABLE_DECAY_TIME * 2;
 					else
 						delay = ATTACKABLE_DECAY_TIME;
@@ -121,8 +122,7 @@ public class DecayTaskManager
 		Long current = System.currentTimeMillis();
 		for (L2Character actor : _decayTasks.keySet())
 		{
-			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: "
-			+ (current - _decayTasks.get(actor)) + "\r\n";
+			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " + (current - _decayTasks.get(actor)) + "\r\n";
 		}
 		
 		return ret;

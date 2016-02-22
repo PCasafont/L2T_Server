@@ -3,21 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.FortSiegeManager;
 import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
 import l2server.gameserver.model.L2Skill;
@@ -46,21 +48,42 @@ public class L2SiegeFlagInstance extends L2Npc
 		super(objectId, template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);
 		
+		if (TerritoryWarManager.getInstance().isTWInProgress())
+		{
+			_clan = player.getClan();
+			_player = player;
+			_canTalk = false;
+			if (_clan == null)
+				deleteMe();
+			if (outPost)
+			{
+				_isAdvanced = false;
+				setIsInvul(true);
+			}
+			else
+			{
+				_isAdvanced = advanced;
+				setIsInvul(false);
+			}
+			getStatus();
+			return;
+		}
+		
 		_clan = player.getClan();
 		_player = player;
 		_canTalk = true;
 		_siege = SiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
 		if (_siege == null)
 			_siege = FortSiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
-		if (_clan == null || _siege == null)
+		if ((_clan == null) || (_siege == null))
 		{
-			throw new NullPointerException(getClass().getSimpleName()+": Initialization failed.");
+			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
 		}
 		else
 		{
 			L2SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc == null)
-				throw new NullPointerException(getClass().getSimpleName()+": Cannot find siege clan.");
+				throw new NullPointerException(getClass().getSimpleName() + ": Cannot find siege clan.");
 			else
 				sc.addFlag(this);
 		}
@@ -96,12 +119,15 @@ public class L2SiegeFlagInstance extends L2Npc
 	{
 		if (!super.doDie(killer))
 			return false;
-		if (_siege != null && _clan != null)
+		if ((_siege != null) && (_clan != null))
 		{
 			L2SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
 				sc.removeFlag(this);
 		}
+		else if (_clan != null)
+			TerritoryWarManager.getInstance().removeClanFlag(_clan);
+		
 		return true;
 	}
 	
@@ -114,7 +140,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if (player == null || !canTarget(player))
+		if ((player == null) || !canTarget(player))
 			return;
 		
 		// Check if the L2PcInstance already target the L2NpcInstance
@@ -129,8 +155,8 @@ public class L2SiegeFlagInstance extends L2Npc
 			
 			// Send a Server->Client packet StatusUpdate of the L2NpcInstance to the L2PcInstance to update its HP bar
 			StatusUpdate su = new StatusUpdate(this);
-			su.addAttribute(StatusUpdate.CUR_HP, (int)getStatus().getCurrentHp() );
-			su.addAttribute(StatusUpdate.MAX_HP, getMaxHp() );
+			su.addAttribute(StatusUpdate.CUR_HP, (int) getStatus().getCurrentHp());
+			su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 			player.sendPacket(su);
 			
 			// Send a Server->Client packet ValidateLocation to correct the L2NpcInstance position and heading on the client
@@ -138,7 +164,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && Math.abs(player.getZ() - getZ()) < 100)
+			if (isAutoAttackable(player) && (Math.abs(player.getZ() - getZ()) < 100))
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			else
 			{
@@ -171,7 +197,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		super.reduceCurrentHp(damage, attacker, skill);
 		if (canTalk())
 		{
-			if (getCastle() != null && getCastle().getSiege().getIsInProgress())
+			if ((getCastle() != null) && getCastle().getSiege().getIsInProgress())
 			{
 				if (_clan != null)
 				{
@@ -181,7 +207,7 @@ public class L2SiegeFlagInstance extends L2Npc
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
 			}
-			else if (getFort() != null && getFort().getSiege().getIsInProgress())
+			else if ((getFort() != null) && getFort().getSiege().getIsInProgress())
 			{
 				if (_clan != null)
 				{
@@ -193,11 +219,15 @@ public class L2SiegeFlagInstance extends L2Npc
 			}
 		}
 	}
+	
 	private class ScheduleTalkTask implements Runnable
 	{
 		
-		public ScheduleTalkTask() {}
+		public ScheduleTalkTask()
+		{
+		}
 		
+		@Override
 		public void run()
 		{
 			setCanTalk(true);

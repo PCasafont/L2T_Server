@@ -95,7 +95,7 @@
 			<itemDrop itemId="36430" min="1" max="1" chance="14" />	<!-- Valakas Thrower (Fragment) -->
 			<itemDrop itemId="36431" min="1" max="1" chance="14" />	<!-- Valakas Buster (Fragment) -->
 			<itemDrop itemId="36432" min="1" max="1" chance="14" />	<!-- Valakas Caster (Fragment) -->
-			<itemDrop itemId="36433" min="1" max="1" chance="16" />	<!-- Valakas Retributer (Fragment) -->	
+			<itemDrop itemId="36433" min="1" max="1" chance="16" />	<!-- Valakas Retributer (Fragment) -->
 		</dropCategory>
 		<!-- Enhancement Stones -->
 		<itemDrop itemId="35569" min="2" max="3" chance="90" />	<!-- Bloody Eternal Enhancement Stone -->

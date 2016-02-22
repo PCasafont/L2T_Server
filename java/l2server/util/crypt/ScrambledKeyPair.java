@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.util.crypt;
 
 import java.math.BigInteger;
@@ -39,7 +40,7 @@ public class ScrambledKeyPair
 	{
 		byte[] scrambledMod = modulus.toByteArray();
 		
-		if (scrambledMod.length == 0x81 && scrambledMod[0] == 0x00)
+		if ((scrambledMod.length == 0x81) && (scrambledMod[0] == 0x00))
 		{
 			byte[] temp = new byte[0x80];
 			System.arraycopy(scrambledMod, 1, temp, 0, 0x80);

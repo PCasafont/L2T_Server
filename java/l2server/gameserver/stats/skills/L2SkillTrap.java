@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.datatables.NpcTable;
@@ -35,7 +36,7 @@ public class L2SkillTrap extends L2SkillSummon
 	protected L2Spawn _trapSpawn;
 	
 	/**
-	 * 
+	 *
 	 * @param set
 	 */
 	public L2SkillTrap(StatsSet set)
@@ -52,7 +53,7 @@ public class L2SkillTrap extends L2SkillSummon
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
@@ -72,7 +73,7 @@ public class L2SkillTrap extends L2SkillSummon
 		if (activeChar.isMounted())
 			return;
 		
-		if (_triggerSkillId == 0 || _triggerSkillLvl == 0)
+		if ((_triggerSkillId == 0) || (_triggerSkillLvl == 0))
 			return;
 		
 		L2Trap trap = activeChar.getTrap();

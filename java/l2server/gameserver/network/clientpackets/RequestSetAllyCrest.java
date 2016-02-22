@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.logging.Level;
@@ -22,6 +23,7 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.AllyCrest;
 import l2server.log.Log;
 
 /**
@@ -30,7 +32,6 @@ import l2server.log.Log;
  */
 public final class RequestSetAllyCrest extends L2GameClientPacket
 {
-	private static final String _C__87_REQUESTSETALLYCREST = "[C] 87 RequestSetAllyCrest";
 	static Logger _log = Logger.getLogger(RequestSetAllyCrest.class.getName());
 	
 	private int _length;
@@ -69,13 +70,13 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 		{
 			L2Clan leaderclan = ClanTable.getInstance().getClan(activeChar.getAllyId());
 			
-			if (activeChar.getClanId() != leaderclan.getClanId() || !activeChar.isClanLeader())
+			if ((activeChar.getClanId() != leaderclan.getClanId()) || !activeChar.isClanLeader())
 			{
 				return;
 			}
 			
 			boolean remove = false;
-			if (_length == 0 || _data.length == 0)
+			if ((_length == 0) || (_data.length == 0))
 				remove = true;
 			
 			int newId = 0;
@@ -89,15 +90,8 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 			}
 			
 			leaderclan.changeAllyCrest(newId, false);
+			
+			activeChar.sendPacket(new AllyCrest(newId));
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__87_REQUESTSETALLYCREST;
 	}
 }

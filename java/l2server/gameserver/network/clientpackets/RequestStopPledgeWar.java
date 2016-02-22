@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -27,7 +28,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestStopPledgeWar extends L2GameClientPacket
 {
-	private static final String _C__4F_REQUESTSTOPPLEDGEWAR = "[C] 4F RequestStopPledgeWar";
 	//
 	
 	private String _pledgeName;
@@ -58,12 +58,12 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		}
 		
 		// Check if player who does the request has the correct rights to do it
-		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR )
+		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
 		}
-				
+		
 		if (!playerClan.getClanWars().contains(clan))
 		{
 			player.sendMessage("Your clan does not have any war relation with " + clan.getName() + "'s clan.");
@@ -72,7 +72,7 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		
 		if (playerClan.getReputationScore() < Config.CANCEL_CLAN_WAR_REPUTATION_POINTS)
 		{
-			player.sendMessage("Your clan doesn't have "+Config.CANCEL_CLAN_WAR_REPUTATION_POINTS+" Reputation Points to end this war."); // TODO: System Message
+			player.sendMessage("Your clan doesn't have " + Config.CANCEL_CLAN_WAR_REPUTATION_POINTS + " Reputation Points to end this war."); // TODO: System Message
 			return;
 		}
 		
@@ -94,14 +94,8 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 			if (cha == null)
 				continue;
 			
-			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
+			if ((cha.getClan() == player.getClan()) || (cha.getClan() == clan))
 				cha.broadcastUserInfo();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__4F_REQUESTSTOPPLEDGEWAR;
 	}
 }

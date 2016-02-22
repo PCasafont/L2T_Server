@@ -52,20 +52,12 @@
 		<production count="1" id="10413" /> <!-- Dynastic Essence II -->
 	</item>
 	<item>
-		<ingredient count="9100000" id="57" /> <!-- Adena -->
-		<production count="1" id="35563" /> <!-- Giant's Energy -->
-	</item>
-	<item>
 		<ingredient count="156000" id="57" /> <!-- Adena -->
 		<production count="1" id="2133" /> <!-- Gemstone (A-grade) -->
 	</item>
 	<item>
 		<ingredient count="520000" id="57" /> <!-- Adena -->
 		<production count="1" id="2134" /> <!-- Gemstone (S-grade) -->
-	</item>
-	<item>
-		<ingredient count="1560000" id="57" /> <!-- Adena -->
-		<production count="1" id="19440" /> <!-- Gemstone (R-grade) -->
 	</item>
 	<item>
 		<ingredient count="218400" id="57" /> <!-- Adena -->

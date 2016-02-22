@@ -4477,7 +4477,8 @@
 	</item>
 	<!-- MP + 59, Bleed Resistance + 50%, Bleed Atk. Rate + 50%. Increases Heal Amount, Vampiric Rage Effect, Stun/Mental Attack Resistance + 40%, Stun/Mental Atk. Rate + 40%. Decreases physical/magic skill MP consumption. Increases Earth/Holy defense. CON + 3, MEN + 3. Increases P. Def. and M. Def. Can use Stun canceling skills. Momentarily increases Stun Resistance + 100%. Only one effect is applied when two of the same earrings are equipped. -->
 	<item id="19463" type="Armor" name="Blessed Antharas' Earring" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000" enchantEnabled="1" isEpic="true">
+			bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000" enchantEnabled="1"
+			isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 		<add stat="maxMp" val="59" />
 		<enchant stat="mDef" val="0" />
@@ -4490,7 +4491,8 @@
 	</item>
 	<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Rate + 50%, decreased P./M. Skill cooldown, Wild Magic Effect, Damage Shield effect, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Power + 5%, P. Atk. + 10%, M. Atk. + 20%, can use hold canceling skills, and momentarily increases Hold Resistance by 100%. -->
 	<item id="19464" type="Armor" name="Blessed Valakas' Necklace" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
-			bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000" enchantEnabled="1" isEpic="true">
+			bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000" enchantEnabled="1"
+			isEpic="true">
 		<baseAdd stat="mDef" val="226" />
 		<add stat="maxMp" val="79" />
 		<enchant stat="mDef" val="0" />
@@ -5962,7 +5964,7 @@
 	<!-- Can use an Unbind Scroll to change this item into a Standard item. -->
 	<item id="19618" type="Armor" name="Bound Seraph Helmet - Attack Type / Heavy" icon="icon.armor_helmet_i00" defaultAction="equip"
 			bodypart="head" immediateEffect="1" crystalCount="76" crystalType="r95" weight="530" price="3593000" isTradable="false"
-			isDropable="false" isSellable="false" blessedItem="19682">
+			isDropable="false" isSellable="false" standardItem="19554" blessedItem="19682">
 		<baseAdd stat="pDef" val="139" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />

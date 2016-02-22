@@ -119,71 +119,73 @@
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Teleports you to Alligator Island. -->
-	<item id="37025" type="EtcItem" name="Scroll of Escape: Alligator Island" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37025" type="EtcItem" name="Scroll of Escape: Alligator Island" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to Outlaw Forest. -->
-	<item id="37026" type="EtcItem" name="Scroll of Escape: Outlaw Forest" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37026" type="EtcItem" name="Scroll of Escape: Outlaw Forest" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Sea of Spores. -->
-	<item id="37027" type="EtcItem" name="Scroll of Escape: Sea of Spores" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37027" type="EtcItem" name="Scroll of Escape: Sea of Spores" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to Forsaken Plains. -->
-	<item id="37028" type="EtcItem" name="Scroll of Escape: Forsaken Plains" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37028" type="EtcItem" name="Scroll of Escape: Forsaken Plains" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Fields of Massacre. -->
-	<item id="37029" type="EtcItem" name="Scroll of Escape: Fields of Massacre" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37029" type="EtcItem" name="Scroll of Escape: Fields of Massacre" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Swamp of Screams. -->
-	<item id="37030" type="EtcItem" name="Scroll of Escape: Swamp of Screams" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37030" type="EtcItem" name="Scroll of Escape: Swamp of Screams" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Forest of the Dead. -->
-	<item id="37031" type="EtcItem" name="Scroll of Escape: Forest of the Dead" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37031" type="EtcItem" name="Scroll of Escape: Forest of the Dead" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Wall of Argos. -->
-	<item id="37032" type="EtcItem" name="Scroll of Escape: Wall of Argos" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37032" type="EtcItem" name="Scroll of Escape: Wall of Argos" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Wall of Argos. -->
-	<item id="37033" type="EtcItem" name="Scroll of Escape: Wall of Argos" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37033" type="EtcItem" name="Scroll of Escape: Wall of Argos" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to Varka Silenos Barracks. -->
-	<item id="37034" type="EtcItem" name="Scroll of Escape: Varka Silenos Barracks" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37034" type="EtcItem" name="Scroll of Escape: Varka Silenos Barracks" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to Ketra Orc Outpost. -->
-	<item id="37035" type="EtcItem" name="Scroll of Escape: Ketra Orc Outpost" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37035" type="EtcItem" name="Scroll of Escape: Ketra Orc Outpost" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Den of Evil. -->
-	<item id="37036" type="EtcItem" name="Scroll of Escape: Den of Evil" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37036" type="EtcItem" name="Scroll of Escape: Den of Evil" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to Sel Mahum Training Grounds. -->
-	<item id="37037" type="EtcItem" name="Scroll of Escape: Sel Mahum Training Grounds" icon="icon.etc_scroll_of_return_i00"
+	<item id="37037" type="EtcItem" name="Scroll of Escape: Sel Mahum Training Grounds" icon="icon.etc_scroll_of_return_i03"
 			immediateEffect="1" weight="30">
 	</item>
 	<!-- Teleports you to the Plains of the Lizardmen. -->
-	<item id="37038" type="EtcItem" name="Scroll of Escape: Plains of the Lizardmen" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37038" type="EtcItem" name="Scroll of Escape: Plains of the Lizardmen" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Field of Silence. -->
-	<item id="37039" type="EtcItem" name="Scroll of Escape: Field of Silence" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37039" type="EtcItem" name="Scroll of Escape: Field of Silence" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you to the Field of Whispers. -->
-	<item id="37040" type="EtcItem" name="Scroll of Escape: Field of Whispers" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37040" type="EtcItem" name="Scroll of Escape: Field of Whispers" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Double-click to increase Max HP/MP/CP, Defense and M. Def. by 30% for 30 min. If you receive the 'Cannibalistic Stakato Captain' from Improved Rose Spirit while this is in effect, the effect will disappear. Can be used by characters of level 85 or higher. Cannot be used in the Olympiad. Can be used in the Ceremony of Chaos. Cooldown is 5 min. -->
-	<item id="37041" type="EtcItem" name="Divine Protection Elixir" icon="icon.etc_evil_soul_core_i00" immediateEffect="1" weight="1">
+	<item id="37041" type="EtcItem" name="Divine Protection Elixir" icon="icon.etc_evil_soul_core_i00" immediateEffect="1" weight="1"
+			isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+		<skill id="9982" level="1" /> <!-- Elixir: Divine Protection -->
 	</item>
 	<!-- For Tyrr Maestros only. Recipe for making Divine Protection Elixir. Requires Create Item (Lv. 12). Success rate is 100%. -->
 	<item id="37042" type="EtcItem" name="Recipe: Divine Protection Elixir" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
@@ -195,7 +197,7 @@
 	</item>
 	<!-- Enchants a skill +1~+10 to the next grade with a success rate of 100% without consuming extra materials. -->
 	<item id="37044" type="EtcItem" name="Immortal Scroll" icon="icon.esagira_telepo_01" immediateEffect="1" weight="10" isTradable="false"
-			isDropable="false" isSellable="false">
+			isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Coin provided to true adventurers of Aden. Can be exchanged for other items through Adventurers' Guide in each village. -->
 	<item id="37045" type="EtcItem" name="Steel Door Guild Coin" icon="icon.etc_coins_gold_i00" immediateEffect="1" weight="0"
@@ -546,63 +548,63 @@
 			etcitemType="recipe" immediateEffect="1" weight="30" recipeId="4162" isStackable="true" handler="Recipes">
 	</item>
 	<!-- Teleports you close to Captain Gosta in Heine. -->
-	<item id="37112" type="EtcItem" name="Scroll of Escape: Heine" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37112" type="EtcItem" name="Scroll of Escape: Heine" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Head Blacksmith Flutter in the town of Oren. -->
-	<item id="37113" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37113" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Mouen in the town of Oren. -->
-	<item id="37114" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37114" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Paterson in the town of Aden. -->
-	<item id="37115" type="EtcItem" name="Scroll of Escape: Town of Aden" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37115" type="EtcItem" name="Scroll of Escape: Town of Aden" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Paterson in the town of Aden. -->
-	<item id="37116" type="EtcItem" name="Scroll of Escape: Town of Aden" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37116" type="EtcItem" name="Scroll of Escape: Town of Aden" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Mathias in the town of Rune. -->
-	<item id="37117" type="EtcItem" name="Scroll of Escape: Town of Rune" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37117" type="EtcItem" name="Scroll of Escape: Town of Rune" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Mathias in the town of Rune. -->
-	<item id="37118" type="EtcItem" name="Scroll of Escape: Town of Rune" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37118" type="EtcItem" name="Scroll of Escape: Town of Rune" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
-	<item id="37119" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37119" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
-	<item id="37120" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37120" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
-	<item id="37121" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37121" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Andrei in the town of Goddard. -->
-	<item id="37122" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37122" type="EtcItem" name="Scroll of Escape: Town of Goddard" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Vishotsky in the town of Schuttgart. -->
-	<item id="37123" type="EtcItem" name="Scroll of Escape: Town of Schuttgart" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37123" type="EtcItem" name="Scroll of Escape: Town of Schuttgart" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Mouen in the town of Oren. -->
-	<item id="37124" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37124" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Mouen in the town of Oren. -->
-	<item id="37125" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37125" type="EtcItem" name="Scroll of Escape: Town of Oren" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Teleports you close to Captain Gosta in Heine. -->
-	<item id="37127" type="EtcItem" name="Scroll of Escape: Heine" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="37127" type="EtcItem" name="Scroll of Escape: Heine" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- Double-click to receive 1 Bloody Amaranthine Pack, 1 Bloody Eternal Pack, 1 Istina/ Octavis Accessory Pack, 1 Top-grade Enchantment Pack, 1 Talisman - Longing, 1 Enhanced Tauti's Bracelet, 2 billion Adena, 10 Scrolls: 100,000,000 SP, 1 Hair Accessory/ Pendant Pack, 1 Returning Hero's Shirt, 1 Nurka's Belt, 1 Lv. 5 Legendary Dye Pack, and 100 Blessed Scrolls of Resurrection. -->
@@ -1780,8 +1782,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37299" type="Weapon" name="Steel Requiem Cutter (30-day)" icon="icon.weapon_estia_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="510" soulshots="1" spiritshots="1" enchantEnabled="1"
@@ -1792,8 +1795,9 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37300" type="Weapon" name="Steel Requiem Caster (30-day)" icon="icon.weapon_anatrian_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="360" soulshots="1"
@@ -1805,8 +1809,9 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37301" type="Weapon" name="Steel Requiem Buster (30-day)" icon="icon.weapon_kaynon_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="510" soulshots="1"
@@ -1817,8 +1822,9 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 288. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37302" type="Weapon" name="Steel Requiem Stormer (30-day)" icon="icon.weapon_soryu_i00" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="670" soulshots="1"
@@ -1830,8 +1836,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37303" type="Weapon" name="Steel Requiem Slasher (30-day)" icon="icon.weapon_polion_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="580" soulshots="1"
@@ -1842,8 +1849,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37304" type="Weapon" name="Steel Requiem Dualsword (30-day)" icon="icon.weapon_r_dualsword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="510" soulshots="1"
@@ -1854,8 +1862,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
-		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		<Special Option>
+		Increases Attack Spd. by 15%. Increases damage inflicted during 
+		No Soul Crystal option.
 	-->
 	<item id="37305" type="Weapon" name="Steel Requiem Fighter (30-day)" icon="icon.weapon_fantasma_i00" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="520" soulshots="1"
@@ -1867,8 +1876,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Critical by 79.5. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37306" type="Weapon" name="Steel Requiem Dual Blunt (30-day)" icon="icon.weapon_r_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="580" soulshots="1"
@@ -1880,8 +1890,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37307" type="Weapon" name="Steel Requiem Shaper (30-day)" icon="icon.weapon_aspeda_i00" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="510" soulshots="1"
@@ -1893,8 +1904,9 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 288. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37308" type="Weapon" name="Steel Requiem Dual Dagger (30-day)" icon="icon.weapon_r_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="680" soulshots="1"
@@ -1906,8 +1918,9 @@
 		<set stat="pAtkSpd" val="433" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		P. Atk. + 288. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37309" type="Weapon" name="Steel Requiem Thrower (30-day)" icon="icon.weapon_grabathus_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="510" soulshots="1" spiritshots="1"
@@ -1919,8 +1932,9 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37310" type="Weapon" name="Steel Requiem Shooter (30-day)" icon="icon.weapon_shyayaka_i00" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="530" soulshots="1"
@@ -1932,8 +1946,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Attack Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37311" type="Weapon" name="Steel Requiem Avenger (30-day)" icon="icon.weapon_batista_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="580" soulshots="1"
@@ -1945,8 +1960,9 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Increases Casting Spd. by 15%. Increases damage inflicted during PvP.
+		No Soul Crystal option.
 	-->
 	<item id="37312" type="Weapon" name="Steel Requiem Retributer (30-day)" icon="icon.weapon_grangkaz_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="360" soulshots="1"
@@ -2789,10 +2805,11 @@
 	</item>
 	<!-- Mysterious essence with the power of chaos. Take it to Hardin at the Reliquary of the Giants to change your specialized awakened class. Cannot be used by Ertheia. Can be used only by dual classes. 30-day. -->
 	<item id="37494" type="EtcItem" name="Chaos Essence (Dual Class)" icon="icon.etc_water_of_silen_i00" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isDestroyable="false" isSellable="false" isDepositable="false">
+			weight="0" isTradable="false" isDropable="false" isSellable="false" isDepositable="false">
 	</item>
 	<!-- Scales that occasionally fall off Lindvior. It has the power of Lindvior. -->
-	<item id="37495" type="EtcItem" name="Lindvior's Scale" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="2">
+	<item id="37495" type="EtcItem" name="Lindvior's Scale" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="2" isTradable="true"
+			isDropable="true" isSellable="true" isStackable="true">
 	</item>
 	<!-- Double-click to learn how to ride a Lyn Draco. -->
 	<item id="37496" type="EtcItem" name="Riding Manual: Lyn Draco" icon="icon.etc_kamael_skill_book_i01" immediateEffect="1"
@@ -3006,7 +3023,8 @@
 	</item>
 	<!-- MP + 62, Poison/Bleed/Shock/Hold/Paralysis Resistance + 20%, Poison/Bleed/Shock/Hold/Paralysis Attack Rate + 20%, Skill Cooldown - 10%, Damage Reflection + 5%, and Speed + 5. -->
 	<item id="37522" type="Armor" name="Frintezza's Soul Necklace" icon="icon.accessory_necklace_of_frintessa_i00" defaultAction="equip"
-			bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000" enchantEnabled="1" isEpic="true">
+			bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000" enchantEnabled="1"
+			isEpic="true">
 		<baseAdd stat="mDef" val="158" />
 		<add stat="maxMp" val="62" />
 		<enchant stat="mDef" val="0" />
@@ -3062,7 +3080,7 @@
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Santa Suit. -->
-	<item id="37534" type="Armor" name="Santa Suit" icon="icon.armor_ev_santas_clothes" defaultAction="equip" bodypart="none"
+	<item id="37534" type="Armor" name="Santa Suit" icon="icon.armor_ev_santas_clothes" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" weight="17">
 	</item>
 	<!-- Santa Hat. -->
@@ -3726,7 +3744,7 @@
 			immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="108" />
 	</item>
-	<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
+	<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling, Danger Zone Resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
 	<item id="37670" type="Armor" name="Earth Wyrm Heart Ring - 30-day" icon="icon.bm_ring_earthworm_heart" defaultAction="equip"
 			bodypart="rhand" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="108" />
@@ -3771,7 +3789,9 @@
 		Can change into the appearance of a Tow for 30 minutes.
 		Please note that a Tow is extremely cute.
 	-->
-	<item id="37680" type="EtcItem" name="Transformation Scroll: Makeshift Bat" icon="icon.etc_scroll_white_i00" weight="120">
+	<item id="37680" type="EtcItem" name="Transformation Scroll: Makeshift Bat" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="5856" level="1" /> <!-- Transform Tow -->
 	</item>
 	<!-- Test Item; do not open to public -->
 	<item id="37681" type="Armor" name="Theamo's Talisman - Not in Use" icon="icon.etc_talisman_i01" defaultAction="equip" bodypart="rhand"
@@ -3802,19 +3822,25 @@
 		Can change into the appearance of a Lady Tow for 30 minutes.
 		Please note that a Tow is extremely cute.
 	-->
-	<item id="37685" type="EtcItem" name="Transformation Scroll: Lady Tow" icon="icon.etc_scroll_white_i00" weight="120">
+	<item id="37685" type="EtcItem" name="Transformation Scroll: Lady Tow" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="5857" level="1" /> <!-- Transform Tow -->
 	</item>
 	<!--
 		Can change into the appearance of a Angry Tow for 30 minutes.
 		Please note that a Tow is extremely cute.
 	-->
-	<item id="37686" type="EtcItem" name="Transformation Scroll: Angry Tow" icon="icon.etc_scroll_white_i00" weight="120">
+	<item id="37686" type="EtcItem" name="Transformation Scroll: Angry Tow" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="5858" level="1" /> <!-- Transform Tow -->
 	</item>
 	<!--
 		Can change into the appearance of a Sleepy Tow for 30 minutes.
 		Please note that a Tow is extremely cute.
 	-->
-	<item id="37687" type="EtcItem" name="Transformation Scroll: Sleepy Tow" icon="icon.etc_scroll_white_i00" weight="120">
+	<item id="37687" type="EtcItem" name="Transformation Scroll: Sleepy Tow" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
+			etcitemType="scroll" immediateEffect="1" weight="120" isTradable="true" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
+			<skill id="5859" level="1" /> <!-- Transform Tow -->
 	</item>
 	<!-- Modifies the appearance of a weapon. -->
 	<item id="37688" type="Weapon" name="Valentine Dagger" icon="icon.ev_hallowinday_candy_i00" defaultAction="equip" weaponType="dagger"
@@ -4013,7 +4039,9 @@
 		It can be enchanted up to +10 using Enchant Scroll: Elemental Shirt. When enchanted to +4 or more, passive and stats are increased. When enchanted to +6 or more, various use skills are bestowed .
 	-->
 	<item id="37718" type="Armor" name="Shiny Elemental Shirt" icon="icon.ainhasard_shirt" defaultAction="equip" bodypart="shirt"
-			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
+			immediateEffect="1" weight="130" enchant4Skill="13562-4" isDropable="false" isSellable="false" enchant10Skill="13562-10;13563-5;13564-4;13565-3;13566-2;13567-1"
+			enchant1Skill="13562-1" enchant2Skill="13562-2" enchant3Skill="13562-3" enchant5Skill="13562-5" enchant6Skill="13562-6;13563-1"
+			enchant7Skill="13562-7;13563-2;13564-1" enchant8Skill="13562-8;13563-3;13564-2;13565-1" enchant9Skill="13562-9;13563-4;13564-3;13565-2;13566-1">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!--
@@ -4085,25 +4113,29 @@
 	<item id="37732" type="Armor" name="Blessed Antharas' Earring - 7-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="170" />
+		<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
+		<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
 	</item>
 	<!-- HP +625, MP +79, Sleep Resistance 50% increase, Sleep Attack Rate 50% increase, physical/magic skill cooldown decrease, Wild Magic Effect, damage shield effect, fire resistance 30 increase, Dark Resistance 20 increase, STR +3, INT +3. P. Skill Atk. 5% increase, P. Atk. 10% increase, M. Atk. 20% increase, hold resistance skill use. Hold resistance 100% increase momentarily. Cannot be used in the Olympiad. -->
 	<item id="37733" type="Armor" name="Blessed Valakas' Necklace - 7-day" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="226" />
+		<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
+		<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
 	</item>
 	<!-- Tauti's Ring. Fire/Dark Resistance 25 increase, MP 38 increase, Critical Damage 15% increase, skill attack 5% increase, damage inflicted during PvP 5% increase, paralysis/yoke/exile resistance 10 increase, damage reflect resistance 5 increase, HP drain resistance 5 increase, damage received during PvP 5% decrease. Critical 54 increase when equipped with a blunt. Only one effect is applied even when the same two rings are worn (excluding attributes/M. Def.) Cannot be used in the Olympiad. -->
 	<item id="37734" type="Armor" name="Tauti's Ring - 7-day" icon="icon.accessary_tauti_ring" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isEpic="true" isOlyRestricted="true" time="10080">
+			isDepositable="false" isOlyRestricted="true" time="10080" isEpic="true">
 		<baseAdd stat="mDef" val="108" />
 		<add stat="fireRes" val="25" />
 		<add stat="darkRes" val="25" />
 		<skill id="8870" level="1" /> <!-- Tauti's Ring -->
 	</item>
-	<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
+	<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling, Danger Zone Resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
 	<item id="37735" type="Armor" name="Earth Wyrm Heart Ring - 7-day" icon="icon.ring_earthworm_heart" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="0" crystalType="r" weight="150" isTradable="false" isDropable="false"
-			isSellable="false" isDepositable="false" isEnchantable="false" isEpic="true" isOlyRestricted="true" time="10080">
+			isSellable="false" isDepositable="false" isEnchantable="false" isOlyRestricted="true" time="10080" isEpic="true">
 		<baseAdd stat="mDef" val="108" />
 		<add stat="maxMp" val="38" />
 		<skill id="13317" level="1" /> <!-- Earth Wyrm Heart Ring -->
@@ -4116,9 +4148,11 @@
 		<baseAdd stat="mDef" val="94" />
 	</item>
 	<!-- Item is given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36 and all Attribute Resistance by 15. Cannot be used in the Olympiad. -->
-	<item id="37737" type="Armor" name="Ruler's Authority - 7-day" icon="icon.belt_rulers_authority" defaultAction="equip" bodypart="rhand"
-			immediateEffect="1" weight="440" isTradable="false" isDropable="false" isSellable="false">
+	<item id="37737" type="Armor" name="Ruler's Authority - 7-day" icon="icon.belt_rulers_authority" defaultAction="equip" bodypart="waist"
+			immediateEffect="1" crystalType="r" weight="440" enchantEnabled="1" time="10080">
 		<baseAdd stat="pDef" val="50" />
+		<enchant stat="pDef" val="0" />
+		<skill id="15145" level="1" /> <!-- Ruler's Authority -->
 	</item>
 	<!-- Soulshot for test use. To be included in the D-grade or C-grade load effect. -->
 	<item id="37738" type="EtcItem" name="Test Soulshot (D-grade) - Not in Use" icon="icon.etc_spirit_bullet_blue_i00" weight="2">
@@ -4226,7 +4260,7 @@
 	<!-- Restores 2000 CP. -->
 	<item id="37764" type="EtcItem" name="Superior CP Potion" icon="icon.etc_cp_potion_i01" defaultAction="skill_reduce" etcitemType="potion"
 			immediateEffect="1" weight="100" price="0" reuseDelay="500" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="17324" level="1" /> <!-- Superior CP Potion -->
+		<skill id="17324" level="2" /> <!-- Superior CP Potion -->
 	</item>
 	<!-- Message sent from Elikia to Leona Blackbird. -->
 	<item id="37765" type="EtcItem" name="Elikia's Letter" icon="icon.etc_letter_envelope_i00" weight="0">
@@ -4283,10 +4317,12 @@
 			weight="10" price="1400931">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Immortal or Hell equipment for Blessed equipment. -->
-	<item id="37779" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="1371850" isStackable="true">
+	<item id="37779" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="1371850"
+			isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Seraph equipment for Blessed equipment. -->
-	<item id="37780" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" weight="100" price="19162980" isStackable="true">
+	<item id="37780" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" weight="100" price="19162980"
+			isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Eternal equipment for Blessed equipment. -->
 	<item id="37781" type="EtcItem" name="Scroll of Blessing: Armor (R99-grade)" icon="icon.bless_scroll_r99" weight="100" price="42227840"
@@ -4387,7 +4423,7 @@
 	</item>
 	<!-- Bring 10 fragments to the Black of mammon to obtain a Bloody Eternal Enhancement Stone. -->
 	<item id="37801" type="EtcItem" name="Bloody Eternal Enhancement Stone Fragment" icon="icon.energy_condenser_fragment_pvp"
-			weight="0" isBlessed="true">
+			weight="0" isStackable="true" isBlessed="true">
 	</item>
 	<!-- Bring 10 fragments to the Black of mammon to obtain a Dark Eternal Enhancement Stone. -->
 	<item id="37802" type="EtcItem" name="Dark Eternal Enhancement Stone Fragment" icon="icon.energy_condenser_fragment_pve"

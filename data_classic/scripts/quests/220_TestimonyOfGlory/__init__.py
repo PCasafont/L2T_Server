@@ -197,7 +197,7 @@ class Quest (JQuest) :
      st.set("cond","0")
      st.set("id","0")
      if npcId == 30514 :
-       if player.getRace().ordinal() == 3 and player.getClassId() in [ 45, 47, 50 ] :
+       if player.getRace().ordinal() == 3 and player.getClassId().getId() in [ 45, 47, 50 ] :
          if player.getLevel() >= 37 :
            htmltext = "30514-03.htm"
          else:
@@ -424,7 +424,7 @@ class Quest (JQuest) :
        if npcId == 30571 and st.getQuestItemsCount(RITUAL_BOX) :
          htmltext = "30571-06.htm"
        elif npcId == 30565 and st.getQuestItemsCount(RITUAL_BOX) :
-         player.sendPacket(SocialAction(player.getObjectId(),3))
+         player.sendPacket(SocialAction(player,3))
          st.addExpAndSp(72411,4832)
          st.giveItems(57,13136)
          st.giveItems(7562,109)

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q10323_GoingIntoARealWar;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	private int _guideFirstChatId = 1032304;
 	private int _guideWaitChatId = 1032305;
 	private int _guideLastChatId = 1032306;
-
+	
 	private int _trainerGuard = 33021;
 	private int _teleporterGuard = 33193;
 	private int _trainingGuard = 19141;
@@ -95,7 +96,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if (npc.getNpcId() == _yibein && event.equalsIgnoreCase("33464-03.htm"))
+		if ((npc.getNpcId() == _yibein) && event.equalsIgnoreCase("33464-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -114,6 +115,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			// Delete in 1 min
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (guide.isDecayed())
@@ -127,7 +129,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			
 			st.giveItems(_key, 1);
 		}
-		else if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8)
+		else if ((npc.getNpcId() == _shannon) && event.equalsIgnoreCase("32974-02.htm") && (st.getInt("cond") == 8))
 		{
 			st.unset("cond");
 			st.takeItems(_key, -1);
@@ -174,6 +176,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 				// Show this in 5 sec
 				ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 				{
+					@Override
 					public void run()
 					{
 						st.set("cond", "5");
@@ -183,7 +186,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 					}
 				}, 5000);
 			}
-			else if (st.getInt("cond") == 4 || st.getInt("cond") == 5)
+			else if ((st.getInt("cond") == 4) || (st.getInt("cond") == 5))
 			{
 				st.set("cond", "7");
 				st.playSound("ItemSound.quest_middle");
@@ -199,7 +202,6 @@ public class Q10323_GoingIntoARealWar extends Quest
 			}
 		}
 		
-
 		return htmltext;
 	}
 	
@@ -214,7 +216,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 		
 		if (npc.getNpcId() == _yibein)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
 				case State.CREATED:
 					if (canStart(player))
@@ -230,7 +232,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7)
+		else if ((npc.getNpcId() == _holden) && (st.getInt("cond") >= 1) && (st.getInt("cond") <= 7))
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -254,14 +256,14 @@ public class Q10323_GoingIntoARealWar extends Quest
 			player.teleToLocation(-113814, 247731, -7872, false);
 			return null;
 		}
-		else if (npc.getNpcId() == _teleporterGuard && st.getInt("cond") == 8)
+		else if ((npc.getNpcId() == _teleporterGuard) && (st.getInt("cond") == 8))
 		{
 			player.teleToLocation(-110415, 252423, -1992, false);
 			player.setInstanceId(0);
 			InstanceManager.getInstance().destroyInstance(player.getObjectId());
 			return null;
 		}
-		else if (npc.getNpcId() == _shannon && st.getInt("cond") == 8)
+		else if ((npc.getNpcId() == _shannon) && (st.getInt("cond") == 8))
 			htmltext = "32974-01.htm";
 		return htmltext;
 	}
@@ -273,14 +275,14 @@ public class Q10323_GoingIntoARealWar extends Quest
 		if (st == null)
 			return null;
 		
-		if (npc.getNpcId() == _monster1 || npc.getNpcId() == _monster2)
+		if ((npc.getNpcId() == _monster1) || (npc.getNpcId() == _monster2))
 		{
 			if (st.getInt("cond") == 2)
 			{
 				boolean allDead = true;
 				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 				{
-					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
+					if ((iNpc instanceof L2MonsterInstance) && (iNpc.getObjectId() != npc.getObjectId()) && !iNpc.isDead())
 						allDead = false;
 				}
 				if (allDead)
@@ -294,7 +296,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 				boolean allDead = true;
 				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 				{
-					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
+					if ((iNpc instanceof L2MonsterInstance) && (iNpc.getObjectId() != npc.getObjectId()) && !iNpc.isDead())
 						allDead = false;
 				}
 				if (allDead)
@@ -310,8 +312,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false)
-				|| guideAI.getCurrentPos() == _guideRoute.size() - 1)
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (_guideRoute.size() - 1)))
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -319,7 +320,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 				return null;
 			}
 			int chatId = _guideLastChatId;
-			if (guideAI.getCurrentPos() != _guideRoute.size() - 1)
+			if (guideAI.getCurrentPos() != (_guideRoute.size() - 1))
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -339,11 +340,12 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == _guideRoute.size() - 1)
+		if (guideAI.getCurrentPos() == (_guideRoute.size() - 1))
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					if (!guideAI.getActor().isDecayed())
@@ -360,7 +362,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public int getOnKillDelay(int npcId)
 	{
-		if (npcId == _monster1 || npcId == _monster2)
+		if ((npcId == _monster1) || (npcId == _monster2))
 			return 0;
 		return super.getOnKillDelay(npcId);
 	}
@@ -368,7 +370,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 3) && player.getLevel() <= 20;
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 3) && (player.getLevel() <= 20);
 	}
 	
 	public static void main(String[] args)

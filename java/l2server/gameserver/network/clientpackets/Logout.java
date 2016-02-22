@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.logging.Level;
@@ -33,7 +34,6 @@ import l2server.log.Log;
  */
 public final class Logout extends L2GameClientPacket
 {
-	private static final String _C__09_LOGOUT = "[C] 09 Logout";
 	
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 	
@@ -52,7 +52,7 @@ public final class Logout extends L2GameClientPacket
 		if (player == null)
 			return;
 		
-		if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null)
+		if ((player.getActiveEnchantItem() != null) || (player.getActiveEnchantAttrItem() != null))
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -67,7 +67,8 @@ public final class Logout extends L2GameClientPacket
 		
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) && !(player.isGM() && Config.GM_RESTART_FIGHTING))
 		{
-			if (Config.DEBUG) Log.fine("Player " + player.getName() + " tried to logout while fighting");
+			if (Config.DEBUG)
+				Log.fine("Player " + player.getName() + " tried to logout while fighting");
 			
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_LOGOUT_WHILE_FIGHTING));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -78,18 +79,9 @@ public final class Logout extends L2GameClientPacket
 		player.removeFromBossZone();
 		
 		LogRecord record = new LogRecord(Level.INFO, "Disconnected");
-		record.setParameters(new Object[]{this.getClient()});
+		record.setParameters(new Object[] { getClient() });
 		_logAccounting.log(record);
 		
 		player.logout();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__09_LOGOUT;
 	}
 }

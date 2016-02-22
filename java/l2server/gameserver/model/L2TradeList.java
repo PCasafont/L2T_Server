@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.sql.Connection;
@@ -63,7 +64,7 @@ public class L2TradeList
 		_items.put(item.getItemId(), item);
 		if (item.hasLimitedStock())
 		{
-			this.setHasLimitedStockItem(true);
+			setHasLimitedStockItem(true);
 		}
 	}
 	
@@ -164,7 +165,7 @@ public class L2TradeList
 	 * @author  KenM
 	 */
 	public static class L2TradeItem
-	{		
+	{
 		private final int _listId;
 		private final int _itemId;
 		private final L2Item _template;
@@ -238,7 +239,7 @@ public class L2TradeList
 		
 		public boolean isPendingStockUpdate()
 		{
-			return System.currentTimeMillis() >= _nextRestoreTime && _currentCount.get() < _maxCount;
+			return (System.currentTimeMillis() >= _nextRestoreTime) && (_currentCount.get() < _maxCount);
 		}
 		
 		public void restoreInitialCount()
@@ -247,7 +248,7 @@ public class L2TradeList
 			_nextRestoreTime = _nextRestoreTime + getRestoreDelay();
 			
 			// consume until next update is on future
-			if (isPendingStockUpdate() && getRestoreDelay() > 0)
+			if (isPendingStockUpdate() && (getRestoreDelay() > 0))
 				_nextRestoreTime = System.currentTimeMillis() + getRestoreDelay();
 			
 			saveDataTimer();
@@ -271,7 +272,7 @@ public class L2TradeList
 		
 		public boolean hasLimitedStock()
 		{
-			return this.getMaxCount() > -1;
+			return getMaxCount() > -1;
 		}
 		
 		/**

@@ -11,8 +11,9 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual;
- 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
- 
+
 /**
  * @author theOne
  */
@@ -39,65 +40,21 @@ public class Benom extends L2AttackableAIScript
 	private L2Npc benom = null;
 	private static final int benomId = 29054;
 	private static final int dungeonGk = 35506;
- 
+	
 	private static final int ALIVE = 0;
 	private static final int DEAD = 1;
- 
+	
 	private static final int runeCastleId = 8;
- 
+	
 	private static int benomIsSpawned = 0;
 	private static int benomWalkRouteStep = 0;
- 
-	private static final String[] benomSpeak =
-	{
-		"You should have finished me when you had the chance!!!",
-		"I will crush all of you!!!",
-		"I am not finished here, come face me!!!",
-		"You cowards!!! I will torture each and everyone of you!!!"
-	};
- 
-	private static final int[] walkInterval =
-	{
-		18000, 17000, 4500, 16000, 22000, 14000, 10500, 14000, 9500, 12500, 20500, 14500, 17000, 20000, 22000, 11000, 11000, 20000, 8000, 5500, 20000, 18000, 25000, 28000, 25000, 25000, 25000, 25000, 10000, 24000, 7000, 12000, 20000
-	};
- 
-	private static final int[][] benomWalkRoutes =
-	{
-		{12565, -49739, -547},
-		{11242, -49689, -33},
-		{10751, -49702, 83},
-		{10824, -50808, 316},
-		{9084, -50786, 972},
-		{9095, -49787, 1252},
-		{8371, -49711, 1252},
-		{8423, -48545, 1252},
-		{9105, -48474, 1252},
-		{9085, -47488, 972},
-		{10858, -47527, 316},
-		{10842, -48626, 75},
-		{12171, -48464, -547},
-		{13565, -49145, -535},
-		{15653, -49159, -1059},
-		{15423, -48402, -839},
-		{15066, -47438, -419},
-		{13990, -46843, -292},
-		{13685, -47371, -163},
-		{13384, -47470, -163},
-		{14609, -48608, 346},
-		{13878, -47449, 747},
-		{12894, -49109, 980},
-		{10135, -49150, 996},
-		{12894, -49109, 980},
-		{13738, -50894, 747},
-		{14579, -49698, 347},
-		{12896, -51135, -166},
-		{12971, -52046, -292,},
-		{15140, -50781, -442,},
-		{15328, -50406, -603},
-		{15594, -49192, -1059},
-		{13175, -49153, -537}
-	};
- 
+	
+	private static final String[] benomSpeak = { "You should have finished me when you had the chance!!!", "I will crush all of you!!!", "I am not finished here, come face me!!!", "You cowards!!! I will torture each and everyone of you!!!" };
+	
+	private static final int[] walkInterval = { 18000, 17000, 4500, 16000, 22000, 14000, 10500, 14000, 9500, 12500, 20500, 14500, 17000, 20000, 22000, 11000, 11000, 20000, 8000, 5500, 20000, 18000, 25000, 28000, 25000, 25000, 25000, 25000, 10000, 24000, 7000, 12000, 20000 };
+	
+	private static final int[][] benomWalkRoutes = { { 12565, -49739, -547 }, { 11242, -49689, -33 }, { 10751, -49702, 83 }, { 10824, -50808, 316 }, { 9084, -50786, 972 }, { 9095, -49787, 1252 }, { 8371, -49711, 1252 }, { 8423, -48545, 1252 }, { 9105, -48474, 1252 }, { 9085, -47488, 972 }, { 10858, -47527, 316 }, { 10842, -48626, 75 }, { 12171, -48464, -547 }, { 13565, -49145, -535 }, { 15653, -49159, -1059 }, { 15423, -48402, -839 }, { 15066, -47438, -419 }, { 13990, -46843, -292 }, { 13685, -47371, -163 }, { 13384, -47470, -163 }, { 14609, -48608, 346 }, { 13878, -47449, 747 }, { 12894, -49109, 980 }, { 10135, -49150, 996 }, { 12894, -49109, 980 }, { 13738, -50894, 747 }, { 14579, -49698, 347 }, { 12896, -51135, -166 }, { 12971, -52046, -292, }, { 15140, -50781, -442, }, { 15328, -50406, -603 }, { 15594, -49192, -1059 }, { 13175, -49153, -537 } };
+	
 	public Benom(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
@@ -108,7 +65,7 @@ public class Benom extends L2AttackableAIScript
 		addStartNpc(dungeonGk);
 		data();
 	}
- 
+	
 	private void data()
 	{
 		int ownerId = CastleManager.getInstance().getCastleById(runeCastleId).getOwnerId();
@@ -116,50 +73,50 @@ public class Benom extends L2AttackableAIScript
 		long siegeDate = CastleManager.getInstance().getCastleById(runeCastleId).getSiegeDate().getTimeInMillis();
 		long benomRaidRoomSpawn = (siegeDate - System.currentTimeMillis()) - 86400000;
 		long benomRaidSiegeSpawn = (siegeDate - System.currentTimeMillis());
- 
+		
 		long benomRaidInit = (siegeDate - System.currentTimeMillis()) + 90000000;
 		startQuestTimer("BenomBossInit", benomRaidInit, null, null);
- 
+		
 		if (ownerId != 0)
 		{
 			if (benomRaidSiegeSpawn < 0)
 				benomRaidSiegeSpawn = 1;
- 
+			
 			if ((siegeDate - System.currentTimeMillis()) > 0)
 				startQuestTimer("BenomRaidRoomSpawn", benomRaidRoomSpawn, null, null);
- 
+			
 			if (attackerClans.size() != 0)
 				startQuestTimer("BenomRaidSiegeSpawn", benomRaidSiegeSpawn, null, null);
 		}
 	}
- 
+	
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		if (npc.getCastle().getSiege().getIsInProgress())
 			npc.showChatWindow(player, 1);
 		else
-		{	
+		{
 			if (benomIsSpawned == 1)
 				player.teleToLocation(12589, -49044, -3008);
 			else
 				player.sendMessage("Dungeon is available only 24 hours before a siege war!");
-		}	
+		}
 		return null;
 	}
- 
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		int benomStatus = GrandBossManager.getInstance().getBossStatus(benomId);
- 
+		
 		if (event.equals("BenomRaidRoomSpawn"))
 		{
-			if (benomIsSpawned == 0 && benomStatus == ALIVE)
+			if ((benomIsSpawned == 0) && (benomStatus == ALIVE))
 				benom = addSpawn(benomId, 12047, -49211, -3009, 0, false, 0);
- 
+			
 			benomIsSpawned = 1;
- 
+			
 			startQuestTimer("BenomBossDespawn", 93600000, npc, null);
 		}
 		else if (event.equals("BenomRaidSiegeSpawn"))
@@ -173,7 +130,7 @@ public class Benom extends L2AttackableAIScript
 				}
 				else if (benomIsSpawned == 1)
 					benom.teleToLocation(11025, -49152, -537);
- 
+				
 				startQuestTimer("BenomSpawnEffect", 100, npc, null);
 			}
 		}
@@ -182,7 +139,7 @@ public class Benom extends L2AttackableAIScript
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			npc.broadcastPacket(new SpecialCamera(npc.getObjectId(), 200, 0, 150, 0, 5000));
 			npc.broadcastPacket(new SocialAction(npc.getObjectId(), 3));
- 
+			
 			startQuestTimer("BenomWalk", 5000, npc, null);
 			benomWalkRouteStep = 0;
 		}
@@ -191,13 +148,13 @@ public class Benom extends L2AttackableAIScript
 			ArrayList<L2PcInstance> numPlayers = new ArrayList<L2PcInstance>();
 			for (L2PcInstance plr : npc.getKnownList().getKnownPlayers().values())
 				numPlayers.add(plr);
- 
+			
 			if (numPlayers.size() > 0)
 			{
 				L2PcInstance target = numPlayers.get(Rnd.get(numPlayers.size()));
 				((L2Attackable) npc).addDamageHate(target, 0, 999);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
- 
+				
 				startQuestTimer("Attacking", 2000, npc, player);
 			}
 			else if (numPlayers.size() == 0)
@@ -223,14 +180,14 @@ public class Benom extends L2AttackableAIScript
 					startQuestTimer("DoorOpen", 500, null, null);
 					startQuestTimer("DoorClose", 4000, null, null);
 				}
- 
+				
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
- 
+				
 				int time = walkInterval[benomWalkRouteStep];
 				int x = benomWalkRoutes[benomWalkRouteStep][0];
 				int y = benomWalkRoutes[benomWalkRouteStep][1];
 				int z = benomWalkRoutes[benomWalkRouteStep][2];
- 
+				
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 				benomWalkRouteStep++;
 				startQuestTimer("BenomWalk", time, npc, null);
@@ -240,15 +197,15 @@ public class Benom extends L2AttackableAIScript
 		{
 			if (npc.getCastle().getSiege().getIsInProgress())
 				cancelQuestTimer("Attacking", npc, player);
- 
+			
 			int x = benomWalkRoutes[benomWalkRouteStep][0];
 			int y = benomWalkRoutes[benomWalkRouteStep][1];
 			int z = benomWalkRoutes[benomWalkRouteStep][2];
- 
+			
 			npc.teleToLocation(x, y, z);
 			npc.setWalking();
 			benomWalkRouteStep = 0;
- 
+			
 			startQuestTimer("BenomWalk", 2200, npc, null);
 		}
 		else if (event.equals("Talk"))
@@ -272,10 +229,10 @@ public class Benom extends L2AttackableAIScript
 			DoorTable.getInstance().getDoor(20160005).openMe();
 		else if (event.equals("DoorClose"))
 			DoorTable.getInstance().getDoor(20160005).closeMe();
- 
+		
 		return super.onAdvEvent(event, npc, player);
 	}
- 
+	
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
@@ -287,31 +244,31 @@ public class Benom extends L2AttackableAIScript
 		}
 		else if (((L2Attackable) npc).getMostHated() == null)
 			return null;
- 
+		
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}
- 
+	
 	public String onKill(L2Npc npc, L2PcInstance player, Boolean isPet)
 	{
 		GrandBossManager.getInstance().setBossStatus(benomId, DEAD);
- 
+		
 		cancelQuestTimer("BenomWalk", npc, null);
 		cancelQuestTimer("BenomWalkFinish", npc, null);
 		cancelQuestTimer("BenomBossDespawn", npc, null);
 		cancelQuestTimer("Talk", npc, null);
 		cancelQuestTimer("Attacking", npc, null);
- 
+		
 		return super.onKill(npc, player, isPet);
 	}
- 
+	
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getNpcId(), "Who dared to pretend on our castle? Go away or you will pay with your blood for it!"));
- 
+		
 		return super.onSpawn(npc);
 	}
- 
+	
 	public static void main(String[] args)
 	{
 		new Benom(-1, "Benom", "ai");

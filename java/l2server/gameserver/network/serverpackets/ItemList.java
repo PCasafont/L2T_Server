@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -31,9 +32,9 @@ import l2server.log.Log;
  * 11 // packet ID
  * 00 00 // show window
  * 15 00 // item count
- * 
+ *
  * 04 00 // item type id
- * 
+ *
  * 48 B8 B9 40 // object id
  * 47 09 00 00 //item id
  * 0C 00 00 00 // location slot
@@ -64,9 +65,6 @@ import l2server.log.Log;
  */
 public final class ItemList extends L2ItemListPacket
 {
-	
-	private static final String _S__11_ITEMLIST = "[S] 11 ItemList";
-	
 	private PcInventory _inventory;
 	private L2ItemInstance[] _items;
 	private boolean _showWindow;
@@ -81,7 +79,7 @@ public final class ItemList extends L2ItemListPacket
 		_questItems = new ArrayList<L2ItemInstance>();
 		for (int i = 0; i < _items.length; i++)
 		{
-			if (_items[i] != null && _items[i].isQuestItem())
+			if ((_items[i] != null) && _items[i].isQuestItem())
 			{
 				_questItems.add(_items[i]); // add to questinv
 				_items[i] = null; // remove from list
@@ -93,6 +91,7 @@ public final class ItemList extends L2ItemListPacket
 		// Sort here because the client doesn't give a damn about location slots
 		Arrays.sort(_items, new Comparator<L2ItemInstance>()
 		{
+			@Override
 			public int compare(L2ItemInstance i1, L2ItemInstance i2)
 			{
 				if (i1 == null)
@@ -120,7 +119,6 @@ public final class ItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x11);
 		writeH(_showWindow ? 0x01 : 0x00);
 		
 		//int count = _items.length;
@@ -128,9 +126,9 @@ public final class ItemList extends L2ItemListPacket
 		
 		for (L2ItemInstance item : _items)
 		{
-			if (item == null || item.getItem() == null)
+			if ((item == null) || (item.getItem() == null))
 				continue;
-
+			
 			writeItem(item);
 		}
 		if (_inventory.hasInventoryBlock())
@@ -142,15 +140,6 @@ public final class ItemList extends L2ItemListPacket
 		}
 		else
 			writeH(0x00);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__11_ITEMLIST;
 	}
 	
 	@Override

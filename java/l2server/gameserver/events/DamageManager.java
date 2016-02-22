@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events;
 
 import java.sql.Connection;
@@ -29,7 +30,7 @@ import l2server.log.Log;
 public class DamageManager
 {
 	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<Integer, DamageInfo>();
-	protected static ScheduledFuture<?>	_saveTask;
+	protected static ScheduledFuture<?> _saveTask;
 	
 	public String getRankingInfo()
 	{
@@ -45,7 +46,7 @@ public class DamageManager
 			if (actualowner.equals(""))
 				actualowner = "none";
 			
-			sb.append("<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_"+info.getKey()+"_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className + "</td><td FIXWIDTH=250>" + actualrecord + "</td><td FIXWIDTH=250>" + actualowner + "</td></tr></table>");
+			sb.append("<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_" + info.getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className + "</td><td FIXWIDTH=250>" + actualrecord + "</td><td FIXWIDTH=250>" + actualowner + "</td></tr></table>");
 			sb.append("<table><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
 		}
 		return sb.toString();
@@ -154,7 +155,7 @@ public class DamageManager
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-		
+			
 			PreparedStatement statement = null;
 			for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
 			{
@@ -168,7 +169,7 @@ public class DamageManager
 				statement.setInt(5, info.getValue().getClassId());
 				statement.executeUpdate();
 				statement.close();
-			}	
+			}
 		}
 		catch (Exception e)
 		{
@@ -198,19 +199,19 @@ public class DamageManager
 			
 			int charId = info.getPlayerId();
 			String playerName = CharNameTable.getInstance().getNameById(charId);
-			if (playerName == null || info.getCurrentDamage() == 0)
+			if ((playerName == null) || (info.getCurrentDamage() == 0))
 				continue;
 			
 			if (rewardedCharIds.contains(charId))
 				continue;
 			
 			rewardedCharIds.add(charId);
-				
+			
 			Message msg = new Message(-1, charId, false, "Damage Manager", "Congratulations, you was classified on Damage Ranking, here is your reward!", 0);
-				
+			
 			Mail attachments = msg.createAttachments();
 			attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID, Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
-				
+			
 			MailManager.getInstance().sendMessage(msg);
 			//Log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
 		}
@@ -239,7 +240,7 @@ public class DamageManager
 			PreparedStatement statement = null;
 			statement = con.prepareStatement("UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, hwId=0 WHERE newdmg > 0");
 			statement.executeUpdate();
-			statement.close();		
+			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -279,6 +280,7 @@ public class DamageManager
 		
 		_saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				saveData();

@@ -3,17 +3,19 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
+import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.model.L2Skill;
@@ -47,7 +49,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 		final L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 			return;
-
+		
 		if (player.getLastCheckedAwakeningClassId() <= 0)
 			return;
 		
@@ -86,57 +88,66 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 			player.addItem("Awakening", 37494, 1, player, true); // Chaos Essence - Dual Class
 		// TODO: More items?
 		
-		for (L2Skill skill : player.getAllSkills())
+		if (!Config.isServer(Config.DREAMS))
 		{
-			int skillId = skill.getId();
-			boolean remove = true;
-			for (L2SkillLearn sl : cl.getSkills().values())
+			for (L2Skill skill : player.getAllSkills())
 			{
-				if (sl.getMinLevel() >=  85 && (sl.getId() == skillId || sl.getCostSkills().contains(skillId)))
+				int skillId = skill.getId();
+				boolean remove = true;
+				for (L2SkillLearn sl : cl.getSkills().values())
 				{
-					remove = false;
-					break;
+					if ((sl.getMinLevel() >= 85) && ((sl.getId() == skillId) || sl.getCostSkills().contains(skillId)))
+					{
+						remove = false;
+						break;
+					}
 				}
+				
+				if (remove)
+					player.removeSkill(skill, true);
 			}
-			
-			if (remove)
-				player.removeSkill(skill, true);
+		}
+		else
+		{
+			for (L2Skill sk : player.getAllSkills())
+				player.removeSkill(sk.getId());
 		}
 		
 		player.setClassId(cl.getId());
 		
-		if (!player.isSubClassActive() && previousClass.getId() == player.getBaseClass())
+		if (!player.isSubClassActive() && (previousClass.getId() == player.getBaseClass()))
 			player.setBaseClass(cl.getId());
+		
+		if (Config.isServer(Config.DREAMS))
+			player.giveSkills(true);
+		
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			player.giveAvailableSkills(true);
 		
 		// Add race skills
 		player.addRaceSkills();
-				
+		
 		// Send new skill list
 		player.sendSkillList();
 		
 		// Start animation
-		player.broadcastPacket(new SocialAction(player.getObjectId(), 20));	//All use same id since valiance
-	
-		player.broadcastUserInfo();
-		player.setIsImmobilized(true);
-		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+		if (!Config.isServer(Config.DREAMS))
 		{
-			public void run()
+			player.broadcastPacket(new SocialAction(player.getObjectId(), 20)); //All use same id since valiance
+			
+			player.broadcastUserInfo();
+			player.setIsImmobilized(true);
+			ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
-				player.setIsImmobilized(false);
-				
-				// Is this even custom?
-				//player.sendPacket(new ExShowUsmPacket(10));
-			}
-		}, 7500L);
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "RequestChangeToAwakenedClass";
+				@Override
+				public void run()
+				{
+					player.setIsImmobilized(false);
+					
+					// Is this even custom?
+					//player.sendPacket(new ExShowUsmPacket(10));
+				}
+			}, 7500L);
+		}
 	}
 }

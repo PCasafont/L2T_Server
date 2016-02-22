@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -38,7 +38,6 @@ import l2server.gameserver.datatables.AbilityTable;
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.datatables.ArmorSetsTable;
-import l2server.gameserver.datatables.AugmentationData;
 import l2server.gameserver.datatables.BeautyTable;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
@@ -48,7 +47,10 @@ import l2server.gameserver.datatables.CompoundTable;
 import l2server.gameserver.datatables.CoreMessageTable;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.EnchantCostsTable;
+import l2server.gameserver.datatables.EnchantEffectTable;
 import l2server.gameserver.datatables.EnchantHPBonusData;
+import l2server.gameserver.datatables.EnchantMultiSellTable;
+import l2server.gameserver.datatables.EnsoulDataTable;
 import l2server.gameserver.datatables.EventDroplist;
 import l2server.gameserver.datatables.ExtraDropTable;
 import l2server.gameserver.datatables.FishTable;
@@ -60,6 +62,7 @@ import l2server.gameserver.datatables.HennaTable;
 import l2server.gameserver.datatables.HeroSkillTable;
 import l2server.gameserver.datatables.ImageTable;
 import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.LifeStoneTable;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.MerchantPriceConfigTable;
 import l2server.gameserver.datatables.MultiSell;
@@ -82,10 +85,10 @@ import l2server.gameserver.datatables.SummonItemsData;
 import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.datatables.UITable;
 import l2server.gameserver.events.DamageManager;
-import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.events.LotterySystem;
 import l2server.gameserver.events.RankingKillInfo;
 import l2server.gameserver.events.instanced.EventsManager;
+import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.ChatHandler;
@@ -96,7 +99,7 @@ import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.AntiBotsManager;
-import l2server.gameserver.instancemanager.ArtificialPlayersManager;
+import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
@@ -121,6 +124,7 @@ import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.ItemAuctionManager;
 import l2server.gameserver.instancemanager.ItemsOnGroundManager;
 import l2server.gameserver.instancemanager.MailManager;
+import l2server.gameserver.instancemanager.MainTownManager;
 import l2server.gameserver.instancemanager.MentorManager;
 import l2server.gameserver.instancemanager.MercTicketManager;
 import l2server.gameserver.instancemanager.OfflineAdminCommandsManager;
@@ -129,9 +133,12 @@ import l2server.gameserver.instancemanager.PetitionManager;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.TenkaiAuctionManager;
+import l2server.gameserver.instancemanager.TerritoryWarManager;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.AutoChatHandler;
+import l2server.gameserver.model.AutoSpawnHandler;
 import l2server.gameserver.model.L2Manor;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.PartyMatchRoomList;
@@ -141,7 +148,9 @@ import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
+import l2server.gameserver.network.PacketOpcodes;
 import l2server.gameserver.pathfinding.PathFinding;
+import l2server.gameserver.script.faenor.FaenorScriptEngine;
 import l2server.gameserver.scripting.CompiledScriptCache;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.gameserver.taskmanager.AutoAnnounceTaskManager;
@@ -155,7 +164,7 @@ import l2server.util.IPv4Filter;
 
 /**
  * This class ...
- * 
+ *
  * @version $Revision: 1.29.2.15.2.19 $ $Date: 2005/04/05 19:41:23 $
  */
 public class Server
@@ -209,6 +218,10 @@ public class Server
 		new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests").mkdirs();
 		new File("log/game").mkdirs();
 		
+		if (Config.isServer(Config.DREAMS))
+			Config.loadBuffDurationMap();
+		//SkrillManager.getInstance().init();
+		
 		// load script engines
 		printSection("Engines");
 		L2ScriptEngineManager.getInstance();
@@ -221,6 +234,7 @@ public class Server
 		MapRegionTable.getInstance();
 		Announcements.getInstance();
 		GlobalVariablesManager.getInstance();
+		PacketOpcodes.init();
 		
 		printSection("Skills");
 		EnchantCostsTable.getInstance();
@@ -245,6 +259,8 @@ public class Server
 		RecipeController.getInstance();
 		ArmorSetsTable.getInstance();
 		FishTable.getInstance();
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			EnchantMultiSellTable.getInstance();
 		
 		printSection("Characters");
 		CharTemplateTable.getInstance();
@@ -267,7 +283,7 @@ public class Server
 		ClanHallManager.getInstance();
 		ClanWarManager.getInstance();
 		ClanRecruitManager.getInstance();
-
+		
 		printSection("Auction");
 		//AuctionManager.getInstance();
 		
@@ -281,7 +297,10 @@ public class Server
 		ExtraDropTable.getInstance();
 		NpcTable.getInstance();
 		GrandBossManager.getInstance();
-		FarmZoneManager.getInstance();
+		
+		if (Config.isServer(Config.TENKAI))
+			FarmZoneManager.getInstance();
+		
 		ZoneManager.getInstance();
 		FlyMoveTable.getInstance();
 		DoorTable.getInstance();
@@ -296,10 +315,12 @@ public class Server
 		GrandBossManager.getInstance().initZones();
 		FourSepulchersManager.getInstance().init();
 		EventDroplist.getInstance();
+		MainTownManager.getInstance();
 		
 		printSection("Siege");
 		SiegeManager.getInstance().getSieges();
 		FortSiegeManager.getInstance();
+		TerritoryWarManager.getInstance();
 		CastleManorManager.getInstance();
 		MercTicketManager.getInstance();
 		L2Manor.getInstance();
@@ -319,7 +340,9 @@ public class Server
 		PetitionManager.getInstance();
 		HennaTable.getInstance();
 		HelperBuffTable.getInstance();
-		AugmentationData.getInstance();
+		EnsoulDataTable.getInstance();
+		EnchantEffectTable.getInstance();
+		LifeStoneTable.getInstance();
 		CursedWeaponsManager.getInstance();
 		CoreMessageTable.getInstance();
 		ImageTable.getInstance();
@@ -336,7 +359,13 @@ public class Server
 			Log.info("Loading Server Scripts");
 			File scripts = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts.cfg");
 			if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS)
+			{
 				L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+				
+				scripts = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/scripts.cfg");
+				if (scripts.exists())
+					L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+			}
 		}
 		catch (IOException ioe)
 		{
@@ -375,14 +404,19 @@ public class Server
 		if (Config.SAVE_DROPPED_ITEM)
 			ItemsOnGroundManager.getInstance();
 		
-		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0)
+		if (((Config.AUTODESTROY_ITEM_AFTER * 1000) > 0) || ((Config.HERB_AUTO_DESTROY_TIME * 1000) > 0))
 			ItemsAutoDestroy.getInstance();
 		
 		MonsterRace.getInstance();
 		
+		AutoSpawnHandler.getInstance();
 		AutoChatHandler.getInstance();
 		
+		FaenorScriptEngine.getInstance();
+		// Init of a cursed weapon manager
+		
 		Log.info("AutoChatHandler: Loaded " + AutoChatHandler.getInstance().size() + " handlers in total.");
+		Log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
 		
 		AdminCommandHandler.getInstance();
 		ChatHandler.getInstance();
@@ -396,26 +430,30 @@ public class Server
 		
 		printSection("Others");
 		TaskManager.getInstance();
-
+		
+		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
 		MerchantPriceConfigTable.getInstance().updateReferences();
 		CastleManager.getInstance().activateInstances();
 		FortManager.getInstance().activateInstances();
 		
 		if (Config.ALLOW_MAIL)
 			MailManager.getInstance();
-
+		
+		if (Config.ACCEPT_GEOEDITOR_CONN)
+			GeoEditorListener.getInstance();
+		
 		OfflineAdminCommandsManager.getInstance();
 		GlobalDropTable.getInstance();
 		EventsManager.getInstance().start();
 		
 		if (Config.isServer(Config.TENKAI))
 		{
-			HiddenChests.getInstance().spawnChests();
+			//HiddenChests.getInstance().spawnChests();
 			//CloneInvasion.getInstance().scheduleEventStart();
 			//MonsterInvasion.getInstance().scheduleEventStart();
 			//Curfew.getInstance().scheduleEventStart();
 			//ChessEvent.start();
-		
+			
 			//LasTravel
 			CustomCommunityBoard.getInstance();
 			GMEventManager.getInstance();
@@ -436,7 +474,12 @@ public class Server
 			DamageManager.getInstance();
 		
 		if (Config.ENABLE_CUSTOM_AUCTIONS)
-			CustomAuctionManager.getInstance();
+		{
+			if (Config.isServer(Config.TENKAI))
+				TenkaiAuctionManager.getInstance();
+			else
+				CustomAuctionManager.getInstance();
+		}
 		
 		if (Config.ENABLE_CUSTOM_LOTTERY)
 			LotterySystem.getInstance();
@@ -462,11 +505,12 @@ public class Server
 		else
 			_deadDetectThread = null;
 		
+		//LameGuard.getInstance();
 		System.gc();
 		// maxMemory is the upper limit the jvm can use, totalMemory the size of
 		// the current allocation pool, freeMemory the unused memory in the
 		// allocation pool
-		long freeMem = (Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / 1048576;
+		long freeMem = ((Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory()) + Runtime.getRuntime().freeMemory()) / 1048576;
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
@@ -511,8 +555,7 @@ public class Server
 		Log.info("Server Loaded in " + ((serverLoadEnd - serverLoadStart) / 1000) + " seconds");
 		
 		AutoAnnounceTaskManager.getInstance();
-		ArtificialPlayersManager.getInstance();
-		//BotsManager.getInstance();
+		//ArtificialPlayersManager.getInstance();
 	}
 	
 	public static void main(String[] args) throws Exception
@@ -541,7 +584,7 @@ public class Server
 		
 		printSection("Database");
 		L2DatabaseFactory.getInstance();
-
+		
 		//SqlToXml.races();
 		//SqlToXml.classes();
 		//SqlToXml.shops();
@@ -560,6 +603,7 @@ public class Server
 	}
 	
 	static long _t = 0;
+	
 	public static void printSection(String s)
 	{
 		long t = System.currentTimeMillis();

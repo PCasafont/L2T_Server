@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.loginserver.network.serverpackets;
 
 import java.net.InetAddress;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import l2server.Config;
+import l2server.log.Log;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.network.L2LoginClient;
@@ -96,7 +99,7 @@ public final class ServerList extends L2LoginServerPacket
 			_ageLimit = 0;
 			_brackets = gsi.isShowingBrackets();
 			// If server GM-only - show status only to GMs
-			_status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() : client.getAccessLevel() > 0 ? gsi.getStatus() : ServerStatus.STATUS_DOWN;
+			_status = gsi.getStatus() != ServerStatus.STATUS_GM_ONLY ? gsi.getStatus() : client.getAccessLevel() >= 10 ? gsi.getStatus() : ServerStatus.STATUS_DOWN;
 			_serverId = gsi.getId();
 		}
 	}
@@ -107,10 +110,40 @@ public final class ServerList extends L2LoginServerPacket
 		_lastServer = client.getLastServer();
 		for (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values())
 		{
-			if (gsi.getId() != 62 //gsi.getStatus() != ServerStatus.STATUS_GM_ONLY
-					|| client.getAccessLevel() > 0)
-				_servers.add(new ServerData(client, gsi));
+			//if (gsi.getStatus() != ServerStatus.STATUS_GM_ONLY
+			//		|| client.getAccessLevel() > 0)
+			_servers.add(new ServerData(client, gsi));
 		}
+		
+		if (Config.DATABASE_URL.contains("Phoenix")) // TODO Config DREAMS
+		{
+			GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(31);
+			
+			GameServerInfo nextDimension = new GameServerInfo(32, gsi.getHexId(), gsi.getGameServerThread());
+			
+			try
+			{
+				nextDimension.addServerAddress("0.0.0.0/0", "178.33.134.138");
+				nextDimension.addServerAddress("127.0.0.0/8", "127.0.0.1");
+			}
+			catch (UnknownHostException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (String serverAddress : nextDimension.getServerAddresses())
+			{
+				Log.info(serverAddress);
+				//nextDimension.addServerAddress(server, addr);
+			}
+			nextDimension.setPort(7777);
+			nextDimension.setServerType(1);
+			nextDimension.setAgeLimit(10);
+			nextDimension.setStatus(gsi.getStatus()); // ServerStatus.STATUS_DOWN); // gsi.getStatus()
+			nextDimension.setAuthed(gsi.isAuthed());
+			_servers.add(new ServerData(client, nextDimension));
+		}
+		
 		_charsOnServers = client.getCharsOnServ();
 		_charsToDelete = client.getCharsWaitingDelOnServ();
 	}
@@ -134,8 +167,13 @@ public final class ServerList extends L2LoginServerPacket
 			writeC(server._ageLimit); // Age Limit 0, 15, 18
 			writeC(server._pvp ? 0x01 : 0x00);
 			writeH(1); //writeH(server._currentPlayers);
-			writeH(2); //writeH(server._maxPlayers);
+			if (server._port == 7778)
+				writeH(2); //writeH(server._maxPlayers);
+			else
+				writeH(20); //writeH(server._maxPlayers);
 			writeC(server._status == ServerStatus.STATUS_DOWN ? 0x00 : 0x01);
+			if (server._port == 7778)
+				server._serverType = 0x200;
 			writeD(server._serverType); // 1: Normal, 2: Relax, 4: Public Test, 8: No Label, 16: Character Creation Restricted, 32: Event, 64: Free, 512: New, 1024: Classic
 			writeC(server._brackets ? 0x01 : 0x00);
 		}

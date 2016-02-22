@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.form;
 
 import java.awt.Color;
@@ -44,7 +45,7 @@ public class ZoneCylinder extends L2ZoneForm
 	@Override
 	public boolean isInsideZone(int x, int y, int z)
 	{
-		if ((Math.pow(_x - x, 2) + Math.pow(_y - y, 2)) > _radS || z < _z1 || z > _z2)
+		if (((Math.pow(_x - x, 2) + Math.pow(_y - y, 2)) > _radS) || (z < _z1) || (z > _z2))
 			return false;
 		return true;
 	}
@@ -53,7 +54,7 @@ public class ZoneCylinder extends L2ZoneForm
 	public boolean intersectsRectangle(int ax1, int ax2, int ay1, int ay2)
 	{
 		// Circles point inside the rectangle?
-		if (_x > ax1 && _x < ax2 && _y > ay1 && _y < ay2)
+		if ((_x > ax1) && (_x < ax2) && (_y > ay1) && (_y < ay2))
 			return true;
 		
 		// Any point of the rectangle intersecting the Circle?
@@ -67,14 +68,14 @@ public class ZoneCylinder extends L2ZoneForm
 			return true;
 		
 		// Collision on any side of the rectangle?
-		if (_x > ax1 && _x < ax2)
+		if ((_x > ax1) && (_x < ax2))
 		{
 			if (Math.abs(_y - ay2) < _rad)
 				return true;
 			if (Math.abs(_y - ay1) < _rad)
 				return true;
 		}
-		if (_y > ay1 && _y < ay2)
+		if ((_y > ay1) && (_y < ay2))
 		{
 			if (Math.abs(_x - ax2) < _rad)
 				return true;
@@ -118,13 +119,13 @@ public class ZoneCylinder extends L2ZoneForm
 	{
 		return _y;
 	}
-
+	
 	@Override
 	public void visualizeZone(ExServerPrimitive packet, String name, int z)
 	{
-		if (z < _z1 + 100)
+		if (z < (_z1 + 100))
 			z = _z1 + 100;
-		if (z > _z2 - 100)
+		if (z > (_z2 - 100))
 			z = _z2 - 100;
 		
 		Color color = new Color(Rnd.get(2), Rnd.get(2), Rnd.get(2));
@@ -132,7 +133,7 @@ public class ZoneCylinder extends L2ZoneForm
 		packet.addPoint(name, color, true, _x, _y, z);
 		
 		int count = 32;
-		double angle = 2 * Math.PI / count;
+		double angle = (2 * Math.PI) / count;
 		for (int i = 0; i < count; i++)
 		{
 			int x1 = (int) (Math.cos(angle * i) * _rad);
@@ -153,8 +154,8 @@ public class ZoneCylinder extends L2ZoneForm
 		
 		q = Rnd.get() * 2 * Math.PI;
 		r = Math.sqrt(Rnd.get());
-		x = _rad * r * Math.cos(q) + _x;
-		y = _rad * r * Math.sin(q) + _y;
+		x = (_rad * r * Math.cos(q)) + _x;
+		y = (_rad * r * Math.sin(q)) + _y;
 		
 		return new int[] { (int) x, (int) y, GeoEngine.getInstance().getHeight((int) x, (int) y, _z1) };
 	}

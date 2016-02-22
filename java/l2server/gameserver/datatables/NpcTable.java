@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -54,7 +55,6 @@ import l2server.util.xml.XmlNode;
  */
 public class NpcTable
 {
-	
 	private TIntObjectHashMap<L2NpcTemplate> _npcs;
 	
 	public static NpcTable getInstance()
@@ -66,7 +66,7 @@ public class NpcTable
 	{
 		reloadAllNpc();
 	}
-
+	
 	// just wrapper
 	public void reloadAllNpc()
 	{
@@ -84,26 +84,20 @@ public class NpcTable
 				for (L2DropData dd : npc.getDropData())
 				{
 					L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-					if (item.isCommon()
-							|| item.getItemType() == L2EtcItemType.ARROW
-							|| item.getItemType() == L2EtcItemType.RECIPE
-							|| (item.getItemType() == L2EtcItemType.MATERIAL))
+					if (item.isCommon() || (item.getItemType() == L2EtcItemType.ARROW) || (item.getItemType() == L2EtcItemType.RECIPE) || (item.getItemType() == L2EtcItemType.MATERIAL))
 						dropsToRemove.add(dd);
 				}
 				
 				for (L2DropData dd : dropsToRemove)
 					npc.getDropData().remove(dd);
-
+				
 				for (L2DropCategory dc : npc.getMultiDropData())
 				{
 					dropsToRemove.clear();
 					for (L2DropData dd : dc.getAllDrops())
 					{
 						L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if (item.isCommon()
-								|| item.getItemType() == L2EtcItemType.ARROW
-								|| item.getItemType() == L2EtcItemType.RECIPE
-								|| (item.getItemType() == L2EtcItemType.MATERIAL))
+						if (item.isCommon() || (item.getItemType() == L2EtcItemType.ARROW) || (item.getItemType() == L2EtcItemType.RECIPE) || (item.getItemType() == L2EtcItemType.MATERIAL))
 							dropsToRemove.add(dd);
 					}
 					
@@ -188,13 +182,16 @@ public class NpcTable
 							completeSet.add(original.getBaseSet());
 							completeSet.add(set);
 							npc = new L2NpcTemplate(completeSet, original);
+							if (completeSet.getString("aiType", null) != null)
+								npc.setAIData(new L2NpcAIData(completeSet));
 						}
 						else
+						{
 							npc = new L2NpcTemplate(set);
+							if (set.getString("aiType", null) != null)
+								npc.setAIData(new L2NpcAIData(set));
+						}
 						
-						if (set.getString("aiType", null) != null)
-							npc.setAIData(new L2NpcAIData(set));
-
 						for (XmlNode propertyNode : npcNode.getChildren())
 						{
 							if (propertyNode.getName().equalsIgnoreCase("minion"))
@@ -215,7 +212,7 @@ public class NpcTable
 								//Manage here the multiple minions
 								String minions = propertyNode.getString("npcId");
 								int count = minions.split(";").length;
-
+								
 								L2RandomMinionData minionDat = new L2RandomMinionData();
 								
 								for (int a = 0; a < count; a++)
@@ -256,13 +253,13 @@ public class NpcTable
 								int min = propertyNode.getInt("min");
 								int max = propertyNode.getInt("max");
 								float chance = propertyNode.getFloat("chance");
-										
+								
 								L2DropData dd = new L2DropData(itemId, min, max, chance);
-
+								
 								L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
 								if (item == null)
 								{
-									Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId +" itemId: "+ dd.getItemId());
+									Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
 									continue;
 								}
 								
@@ -276,7 +273,7 @@ public class NpcTable
 							{
 								float chance = propertyNode.getFloat("chance");
 								L2DropCategory dc = new L2DropCategory(chance);
-	
+								
 								for (XmlNode dropCategoryNode : propertyNode.getChildren())
 								{
 									if (dropCategoryNode.getName().equalsIgnoreCase("itemDrop"))
@@ -290,20 +287,20 @@ public class NpcTable
 										L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
 										if (item == null)
 										{
-											Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId +" itemId: "+ dd.getItemId());
+											Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
 											continue;
 										}
 										
 										dc.addDropData(dd);
 									}
-								}							
+								}
 								/*if (dc.getAllDrops().size() == 1)
 								{
 									L2DropData dd = dc.getAllDrops().getFirst();
 									npc.addDropData(new L2DropData(dd.getItemId(), dd.getMinDrop(), dd.getMaxDrop(), dc.getChance()));
 								}
 								else if (!dc.getAllDrops().isEmpty())*/
-									npc.addMultiDrop(dc);
+								npc.addMultiDrop(dc);
 							}
 							
 							if (propertyNode.getName().equalsIgnoreCase("spawn"))
@@ -332,6 +329,7 @@ public class NpcTable
 						}
 						_npcs.put(npc.NpcId, npc);
 						SearchDropManager.getInstance().addLootInfo(npc, overrideDrops);
+						
 						loadedNpcs++;
 					}
 				}
@@ -356,7 +354,7 @@ public class NpcTable
 			{
 				boolean createFile = false;
 				
-				for (int j = i * 100; j < (i + 1) * 100; j++)
+				for (int j = i * 1000; j < ((i + 1) * 1000); j++)
 				{
 					if (_npcs.containsKey(j))
 					{
@@ -368,37 +366,46 @@ public class NpcTable
 				if (!createFile)
 					continue;
 				
-				String fileName = ("00000" + (i * 100)).substring(String.valueOf(i * 100).length()) + "-" + ("00000" + ((i + 1) * 100 - 1)).substring(String.valueOf((i + 1) * 100 - 1).length()) + ".xml";
+				String fileName = ("00000" + (i * 1000)).substring(String.valueOf(i * 1000).length()) + "-" + ("00000" + (((i + 1) * 1000) - 1)).substring(String.valueOf(((i + 1) * 1000) - 1).length()) + ".xml";
 				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs/" + fileName), "UTF-8"));
 				
 				out.write("<list>\r\n");
 				
-				for (int j = i * 100; j < (i + 1) * 100; j++)
+				for (int j = i * 1000; j < ((i + 1) * 1000); j++)
 				{
 					L2NpcTemplate t = _npcs.get(j);
 					
 					if (t == null)
 						continue;
 					
-					while (t.getBaseTemplate() != null && t.getBaseTemplate() != t)
+					while ((t.getBaseTemplate() != null) && (t.getBaseTemplate() != t))
 						t = t.getBaseTemplate();
 					
-					out.write("\t<npc" + t.getXmlNpcId() + t.getXmlTemplateId() + t.getXmlName() + t.getXmlServerSideName() + t.getXmlTitle() +
-							t.getXmlServerSideTitle() + t.getXmlLevel() + t.getXmlType() + t.getXmlInteractionDistance() +
-							t.getXmlAttackRange() + t.getXmlMaxHp() + t.getXmlHpReg() + t.getXmlMaxMp() + t.getXmlMpReg() +
-							t.getXmlSTR() + t.getXmlCON() + t.getXmlDEX() + t.getXmlINT() + t.getXmlWIT() + t.getXmlMEN() + t.getXmlExp() +
-							t.getXmlSp() + t.getXmlPAtk() + t.getXmlMAtk() + t.getXmlPDef() + t.getXmlMDef() + t.getXmlAtkSpd() + t.getXmlCritical() +
-							t.getXmlWalkSpd() + t.getXmlRunSpd() + t.getXmlRandomWalk() + t.getXmlAggessive() + t.getXmlAggroRange() + t.getXmlCanSeeThroughSilentMove() +
-							t.getXmlRHand() + t.getXmlLHand() + t.getXmlExtraDropGroup() + t.getXmlCollisionRadius() + t.getXmlCollisionHeight() + t.getXmlTargetable() +
-							t.getXmlShowName() + t.getXmlIsLethalImmune() + t.getXmlIsDebuffImmune() + t.getXmlCanBeChampion() + t.getXmlIsNonTalking() + ">\r\n");
+					String baseNode = "\t<npc" + t.getXmlNpcId() + t.getXmlTemplateId() + t.getXmlName() + t.getXmlServerSideName() + t.getXmlTitle() + t.getXmlServerSideTitle() + t.getXmlLevel() + t.getXmlType() + t.getXmlInteractionDistance() + t.getXmlAttackRange() + t.getXmlMaxHp() + t.getXmlHpReg() + t.getXmlMaxMp() + t.getXmlMpReg() + t.getXmlSTR() + t.getXmlCON() + t.getXmlDEX() + t.getXmlINT() + t.getXmlWIT() + t.getXmlMEN() + t.getXmlExp() + t.getXmlSp() + t.getXmlPAtk() + t.getXmlMAtk() + t.getXmlPDef() + t.getXmlMDef() + t.getXmlPAtkSpd() + t.getXmlMAtkSpd() + t.getXmlCritical() + t.getXmlMCritical() + t.getXmlWalkSpd() + t.getXmlRunSpd() + t.getXmlRandomWalk() + t.getXmlAggessive() + t.getXmlAggroRange() + t.getXmlCanSeeThroughSilentMove() + t.getXmlRHand() + t.getXmlLHand() + t.getXmlExtraDropGroup() + t.getXmlCollisionRadius() + t.getXmlCollisionHeight() + t.getXmlTargetable() + t.getXmlShowName() + t.getXmlIsLethalImmune() + t.getXmlIsDebuffImmune() + t.getXmlCanBeChampion() + t.getXmlIsNonTalking() + t.getXmlElemAtk() + t.getXmlElemRes() + t.getXmlAIType() + t.getXmlSkillChance() + t.getXmlPrimaryAttack() + t.getXmlCanMove() + t.getXmlMinRangeSkill() + t.getXmlMinRangeChance() + t.getXmlMaxRangeSkill() + t.getXmlMaxRangeChance() + t.getXmlSoulshots() + t.getXmlSpiritshots() + t.getXmlSSChance() + t.getXmlSpSChance() + t.getXmlIsChaos() + t.getXmlClan() + t.getXmlClanRange() + t.getXmlEnemy() + t.getXmlEnemyRange() + t.getXmlDodge() + t.getXmlMinSocial1() + t.getXmlMaxSocial1() + t.getXmlMinSocial2() + t.getXmlMaxSocial2() + ">\r\n";
 					
-					out.write("\t\t<elementals" + t.getXmlElemAtk() + t.getXmlElemDef() + " />\r\n");
+					int index = baseNode.indexOf(" ", 120);
+					while (index >= 120)
+					{
+						out.write(baseNode.substring(0, index));
+						baseNode = "\r\n\t\t\t" + baseNode.substring(index + 1);
+						index = baseNode.indexOf(" ", 120);
+					}
+					out.write(baseNode);
 					
-					out.write("\t\t<ai" + t.getXmlAIType() + t.getXmlSkillChance() + t.getXmlPrimaryAttack() + t.getXmlCanMove() +
-							t.getXmlMinRangeSkill() + t.getXmlMinRangeChance() + t.getXmlMaxRangeSkill() + t.getXmlMaxRangeChance() +
-							t.getXmlSoulshots() + t.getXmlSpiritshots() + t.getXmlSSChance() + t.getXmlSpSChance() + t.getXmlIsChaos() +
-							t.getXmlClan() + t.getXmlClanRange() + t.getXmlEnemy() + t.getXmlEnemyRange() + t.getXmlDodge() + 
-							t.getXmlMinSocial1() + t.getXmlMaxSocial1() + t.getXmlMinSocial2() + t.getXmlMaxSocial2() + " />\r\n");
+					if (t.getRandomMinionData() != null)
+					{
+						String mins = "";
+						
+						int count = t.getRandomMinionData().getMinionIds().size();
+						
+						for (int minionId : t.getRandomMinionData().getMinionIds())
+						{
+							mins += String.valueOf(minionId) + (count > 1 ? ";" : "");
+							
+							count--;
+						}
+						out.write("\t\t<randomMinion npcId=\"" + mins + "\" count=\"" + t.getRandomMinionData().getAmount() + "\" />\r\n");
+					}
 					
 					if (t.getMinionData() != null)
 					{
@@ -406,7 +413,7 @@ public class NpcTable
 						{
 							String comment = "";
 							L2NpcTemplate mt = getTemplate(md.getMinionId());
-							if (mt != null && mt.getName() != null)
+							if ((mt != null) && (mt.getName() != null))
 								comment = " <!-- " + mt.getName() + " -->";
 							out.write("\t\t<minion npcId=\"" + md.getMinionId() + "\" min=\"" + md.getAmountMin() + "\" max=\"" + md.getAmountMax() + "\" />" + comment + "\r\n");
 						}
@@ -419,7 +426,7 @@ public class NpcTable
 							String comment = "";
 							if (skill.getName() != null)
 								comment = " <!-- " + skill.getName() + " -->";
-							out.write("\t\t<skill id=\"" + skill.getId() + "\" level=\"" + skill.getLevelHash() + "\" />" + comment + "\r\n");
+							out.write("\t\t<skill id=\"" + skill.getId() + "\" level=\"" + skill.getLevel() + "\" />" + comment + "\r\n");
 						}
 					}
 					
@@ -430,10 +437,9 @@ public class NpcTable
 						
 						String comment = "";
 						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if (it != null && it.getName() != null)
+						if ((it != null) && (it.getName() != null))
 							comment = " <!-- " + it.getName() + " -->";
-						out.write("\t\t<spoilDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() +
-								"\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+						out.write("\t\t<spoilDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 					}
 					
 					for (L2DropData dd : t.getDropData())
@@ -443,10 +449,9 @@ public class NpcTable
 						
 						String comment = "";
 						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if (it != null && it.getName() != null)
+						if ((it != null) && (it.getName() != null))
 							comment = " <!-- " + it.getName() + " -->";
-						out.write("\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() +
-								"\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+						out.write("\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 					}
 					
 					for (L2DropCategory dc : t.getMultiDropData())
@@ -454,23 +459,21 @@ public class NpcTable
 						if (dc.isCustom())
 							continue;
 						
-						out.write("\t\t<dropCategory chance=\"" + Util.getDecimalString(dc.getChance()) + "\" >\r\n");
+						out.write("\t\t<dropCategory chance=\"" + Util.getDecimalString(dc.getChance()) + "\">\r\n");
 						for (L2DropData dd : dc.getAllDrops())
 						{
 							String comment = "";
 							L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-							if (it != null && it.getName() != null)
+							if ((it != null) && (it.getName() != null))
 								comment = " <!-- " + it.getName() + " -->";
-							out.write("\t\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() +
-									"\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
+							out.write("\t\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 						}
 						out.write("\t\t</dropCategory>\r\n");
 					}
-
+					
 					for (SpawnData s : t.getSpawns())
 					{
-						out.write("\t\t<spawn x=\"" + s.X + "\" y=\"" + s.Y + "\" z=\"" + s.Z + "\" " +
-								"heading=\"" + s.Heading + "\" respawn=\"" + s.Respawn + "\"");
+						out.write("\t\t<spawn x=\"" + s.X + "\" y=\"" + s.Y + "\" z=\"" + s.Z + "\" " + "heading=\"" + s.Heading + "\" respawn=\"" + s.Respawn + "\"");
 						if (s.RandomRespawn > 0)
 							out.write(" randomRespawn=\"" + s.RandomRespawn + "\"");
 						if (s.DbName != null)
@@ -499,8 +502,8 @@ public class NpcTable
 	public L2NpcTemplate getTemplateByName(String name)
 	{
 		for (Object npcTemplate : _npcs.getValues())
-		{	
-			if (((L2NpcTemplate)npcTemplate).Name.equalsIgnoreCase(name))
+		{
+			if (((L2NpcTemplate) npcTemplate).Name.equalsIgnoreCase(name))
 				return (L2NpcTemplate) npcTemplate;
 		}
 		
@@ -512,7 +515,7 @@ public class NpcTable
 		List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 		
 		for (Object t : _npcs.getValues())
-			list.add((L2NpcTemplate)t);
+			list.add((L2NpcTemplate) t);
 		
 		return list.toArray(new L2NpcTemplate[list.size()]);
 	}
@@ -522,8 +525,8 @@ public class NpcTable
 		List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 		
 		for (Object t : _npcs.getValues())
-		{	
-			if (((L2NpcTemplate)t).Level == lvl)
+		{
+			if (((L2NpcTemplate) t).Level == lvl)
 				list.add((L2NpcTemplate) t);
 		}
 		
@@ -535,8 +538,8 @@ public class NpcTable
 		List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 		
 		for (Object t : _npcs.getValues())
-		{	
-			if (((L2NpcTemplate)t).Level == lvl && "L2Monster".equals(((L2NpcTemplate)t).Type))
+		{
+			if ((((L2NpcTemplate) t).Level == lvl) && "L2Monster".equals(((L2NpcTemplate) t).Type))
 				list.add((L2NpcTemplate) t);
 		}
 		
@@ -548,8 +551,8 @@ public class NpcTable
 		List<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
 		
 		for (Object t : _npcs.getValues())
-		{	
-			if (((L2NpcTemplate)t).Name.startsWith(letter) && "L2Npc".equals(((L2NpcTemplate)t).Type))
+		{
+			if (((L2NpcTemplate) t).Name.startsWith(letter) && "L2Npc".equals(((L2NpcTemplate) t).Type))
 				list.add((L2NpcTemplate) t);
 		}
 		
@@ -583,10 +586,66 @@ public class NpcTable
 		return null;
 	}
 	
+	public final L2NpcTemplate[] getAllRaidBoss()
+	{
+		final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
+		
+		for (final Object t : _npcs.getValues())
+		{
+			if ("L2Raidboss".equalsIgnoreCase(((L2NpcTemplate) t).Type))
+				list.add(((L2NpcTemplate) t));
+		}
+		
+		return list.toArray(new L2NpcTemplate[list.size()]);
+	}
+	
+	public final L2NpcTemplate[] getAllMonsters()
+	{
+		final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
+		
+		for (final Object t : _npcs.getValues())
+		{
+			if ("L2Monster".equalsIgnoreCase(((L2NpcTemplate) t).Type))
+				list.add(((L2NpcTemplate) t));
+		}
+		return list.toArray(new L2NpcTemplate[list.size()]);
+	}
+	
+	public final L2NpcTemplate[] getAllNpcByType(final String type)
+	{
+		final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
+		
+		for (final Object t : _npcs.getValues())
+		{
+			if (type.equalsIgnoreCase(((L2NpcTemplate) t).Type))
+				list.add(((L2NpcTemplate) t));
+		}
+		return list.toArray(new L2NpcTemplate[list.size()]);
+	}
+	
+	public final L2NpcTemplate[] getAllMonstersBetweenLevels(final int minLevel, final int maxLevel)
+	{
+		final ArrayList<L2NpcTemplate> list = new ArrayList<L2NpcTemplate>();
+		
+		for (final Object t : _npcs.getValues())
+		{
+			if (!((L2NpcTemplate) t).Type.equals("L2Monster"))
+				continue;
+			else if ((((L2NpcTemplate) t).Level < minLevel) || (((L2NpcTemplate) t).Level > maxLevel))
+				continue;
+			else if (((L2NpcTemplate) t).getKnownSpawns().size() == 0)
+				continue;
+			
+			list.add(((L2NpcTemplate) t));
+		}
+		
+		return list.toArray(new L2NpcTemplate[list.size()]);
+	}
+	
 	//From MagicVisor
 	public DropChances calculateRewardChances(L2NpcTemplate template, L2PcInstance player, L2DropData drop, float catChance, int levelModifier, boolean isSweep, L2Npc mob)
 	{
-		float dropChance = drop.getChance() * catChance / 100.0f;
+		float dropChance = (drop.getChance() * catChance) / 100.0f;
 		int deepBlueDrop = 1;
 		
 		boolean isRaid = false;
@@ -597,33 +656,30 @@ public class NpcTable
 			isChampion = Config.L2JMOD_CHAMPION_ENABLE && mob.isChampion();
 		}
 		
-		if (Config.DEEPBLUE_DROP_RULES)
+		if (Config.DEEPBLUE_DROP_RULES && (levelModifier > 0))
 		{
-			if (levelModifier > 0)
-			{
-				deepBlueDrop = 3;
-				if (drop.getItemId() == 57)
-					deepBlueDrop *= (int)Config.RATE_DROP_ITEMS_BY_RAID;
-			}
+			deepBlueDrop = 3;
+			if (drop.getItemId() == 57)
+				deepBlueDrop *= (int) Config.RATE_DROP_ITEMS_BY_RAID;
 		}
 		
 		if (deepBlueDrop == 0)
 			deepBlueDrop = 1;
 		
 		if (Config.DEEPBLUE_DROP_RULES)
-			dropChance = ((dropChance - ((dropChance * levelModifier)/100)) / deepBlueDrop);
-
+			dropChance = ((dropChance - ((dropChance * levelModifier) / 100)) / deepBlueDrop);
+		
 		if (!drop.isCustom())
 		{
 			if (Config.RATE_DROP_ITEMS_ID.containsKey(drop.getItemId()))
 				dropChance *= Config.RATE_DROP_ITEMS_ID.get(drop.getItemId());
-			else if (isSweep)	
+			else if (isSweep)
 				dropChance *= Config.RATE_DROP_SPOIL;
 			else
 				dropChance *= isRaid ? Config.RATE_DROP_ITEMS_BY_RAID : Config.RATE_DROP_ITEMS;
 		}
-
-		dropChance = (float)player.calcStat(Stats.DROP_RATE, dropChance, null, null);
+		
+		dropChance = (float) player.calcStat(Stats.DROP_RATE, dropChance, null, null);
 		if (isChampion)
 			dropChance *= Config.L2JMOD_CHAMPION_REWARDS;
 		
@@ -657,7 +713,7 @@ public class NpcTable
 			if (dropChance > 0)
 				dropChances.max += drop.getMaxDrop();
 		}
-
+		
 		if (dropChances.min == 0)
 			dropChances.min = 1;
 		

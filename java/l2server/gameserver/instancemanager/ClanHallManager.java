@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -114,7 +115,7 @@ public class ClanHallManager
 				_freeClanHall.put(id, ch);
 				
 				Auction auc = ClanHallAuctionManager.getInstance().getAuction(id);
-				if (auc == null && lease > 0)
+				if ((auc == null) && (lease > 0))
 					ClanHallAuctionManager.getInstance().initNPC(id);
 			}
 			
@@ -213,13 +214,13 @@ public class ClanHallManager
 		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
 		{
 			zone = ch.getValue().getZone();
-			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
+			if ((zone != null) && (zone.getDistanceToZone(x, y) < maxDist))
 				return ch.getValue();
 		}
 		for (Map.Entry<Integer, ClanHall> ch : _freeClanHall.entrySet())
 		{
 			zone = ch.getValue().getZone();
-			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
+			if ((zone != null) && (zone.getDistanceToZone(x, y) < maxDist))
 				return ch.getValue();
 		}
 		return null;

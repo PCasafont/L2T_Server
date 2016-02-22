@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.util.Calendar;
@@ -34,18 +35,18 @@ public class GraciaSeedsManager
 	private int _SoDTiatKilled = 0;
 	private int _SoDState = 1;
 	private Calendar _SoDLastStateChangeDate;
-
+	
 	private GraciaSeedsManager()
 	{
-		Log.info(getClass().getSimpleName()+": Initializing");
+		Log.info(getClass().getSimpleName() + ": Initializing");
 		_SoDLastStateChangeDate = Calendar.getInstance();
 		loadData();
 		handleSodStages();
 	}
-
+	
 	public void saveData(byte seedType)
 	{
-		switch(seedType)
+		switch (seedType)
 		{
 			case SODTYPE:
 				// Seed of Destruction
@@ -80,10 +81,10 @@ public class GraciaSeedsManager
 			saveData(SODTYPE);
 		}
 	}
-
+	
 	private void handleSodStages()
 	{
-		switch(_SoDState)
+		switch (_SoDState)
 		{
 			case 1:
 				// do nothing, players should kill Tiat a few times
@@ -95,7 +96,8 @@ public class GraciaSeedsManager
 					// change to Attack state because Defend statet is not implemented
 					setSoDState(1, true);
 				else
-					ThreadPoolManager.getInstance().scheduleEffect(new Runnable(){
+					ThreadPoolManager.getInstance().scheduleEffect(new Runnable()
+					{
 						@Override
 						public void run()
 						{
@@ -105,7 +107,8 @@ public class GraciaSeedsManager
 								Log.warning("GraciaSeedManager: missing EnergySeeds Quest!");
 							else
 								esQuest.notifyEvent("StopSoDAi", null, null);
-						}}, Config.SOD_STAGE_2_LENGTH - timePast);
+						}
+					}, Config.SOD_STAGE_2_LENGTH - timePast);
 				break;
 			case 3:
 				// not implemented
@@ -115,7 +118,7 @@ public class GraciaSeedsManager
 				Log.warning("GraciaSeedManager: Unknown Seed of Destruction state(" + _SoDState + ")! ");
 		}
 	}
-
+	
 	public void increaseSoDTiatKilled()
 	{
 		if (_SoDState == 1)
@@ -154,12 +157,12 @@ public class GraciaSeedsManager
 	
 	public long getSoDTimeForNextStateChange()
 	{
-		switch(_SoDState)
+		switch (_SoDState)
 		{
 			case 1:
 				return -1;
 			case 2:
-				return (_SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH - System.currentTimeMillis());
+				return ((_SoDLastStateChangeDate.getTimeInMillis() + Config.SOD_STAGE_2_LENGTH) - System.currentTimeMillis());
 			case 3:
 				// not implemented yet
 				return -1;
@@ -183,7 +186,7 @@ public class GraciaSeedsManager
 	{
 		return SingletonHolder._instance;
 	}
-
+	
 	private static class SingletonHolder
 	{
 		protected static final GraciaSeedsManager _instance = new GraciaSeedsManager();

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -33,7 +34,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class ConfirmDlg extends L2GameServerPacket
 {
-	private static final String _S__ED_CONFIRMDLG = "[S] f3 ConfirmDlg";
 	private int _messageId;
 	
 	private int _skillLvL = 1;
@@ -87,11 +87,11 @@ public class ConfirmDlg extends L2GameServerPacket
 	public ConfirmDlg addCharName(L2Character cha)
 	{
 		if (cha instanceof L2Npc)
-			return addNpcName((L2Npc)cha);
+			return addNpcName((L2Npc) cha);
 		if (cha instanceof L2PcInstance)
-			return addPcName((L2PcInstance)cha);
+			return addPcName((L2PcInstance) cha);
 		if (cha instanceof L2Summon)
-			return addNpcName((L2Summon)cha);
+			return addNpcName((L2Summon) cha);
 		return addString(cha.getName());
 	}
 	
@@ -142,7 +142,7 @@ public class ConfirmDlg extends L2GameServerPacket
 	
 	public ConfirmDlg addZoneName(int x, int y, int z)
 	{
-		Integer[] coord = {x, y, z};
+		Integer[] coord = { x, y, z };
 		_info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
 		return this;
 	}
@@ -186,7 +186,6 @@ public class ConfirmDlg extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xf3);
 		writeD(_messageId);
 		
 		if (_info.isEmpty())
@@ -206,19 +205,19 @@ public class ConfirmDlg extends L2GameServerPacket
 				switch (data.type)
 				{
 					case TYPE_TEXT:
-						writeS((String)data.value);
+						writeS((String) data.value);
 						break;
 					case TYPE_NUMBER:
 					case TYPE_NPC_NAME:
 					case TYPE_ITEM_NAME:
-						writeD((Integer)data.value);
+						writeD((Integer) data.value);
 						break;
 					case TYPE_SKILL_NAME:
-						writeD((Integer)data.value); // Skill Id
+						writeD((Integer) data.value); // Skill Id
 						writeD(_skillLvL); // Skill lvl
 						break;
 					case TYPE_ZONE_NAME:
-						Integer[] array = (Integer[])data.value;
+						Integer[] array = (Integer[]) data.value;
 						writeD(array[0]);
 						writeD(array[1]);
 						writeD(array[2]);
@@ -230,14 +229,5 @@ public class ConfirmDlg extends L2GameServerPacket
 			if (_requesterId != 0)
 				writeD(_requesterId);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__ED_CONFIRMDLG;
 	}
 }

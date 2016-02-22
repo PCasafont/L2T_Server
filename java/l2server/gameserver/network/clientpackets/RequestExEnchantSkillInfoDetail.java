@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.EnchantCostsTable;
@@ -22,9 +23,9 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 
 /**
  * Format (ch) ddd c: (id) 0xD0 h: (subid) 0x31 d: type d: skill id d: skill lvl
- * 
+ *
  * @author -Wooden-
- * 
+ *
  */
 public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 {
@@ -44,15 +45,15 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 	
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
 	@Override
 	protected void runImpl()
 	{
-		if (_skillId <= 0 || _skillLvl <= 0 || _skillEnch <= 0) // minimal sanity check
+		if ((_skillId <= 0) || (_skillLvl <= 0) || (_skillEnch <= 0)) // minimal sanity check
 			return;
-
+		
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 			return;
@@ -60,7 +61,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		L2EnchantSkillLearn esl = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_skillId);
 		if (esl == null)
 			return;
-
+		
 		int enchRoute = _skillEnch / 1000;
 		int enchLvl = _skillEnch % 1000;
 		int reqEnchLvl = -2;
@@ -69,7 +70,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		if (curSkill == null)
 			return;
 		
-		if (_type == 0 || _type == 1 || _type == 4)
+		if ((_type == 0) || (_type == 1) || (_type == 4))
 		{
 			reqEnchLvl = enchLvl - 1; // enchant
 			if (esl.isMaxEnchant(enchRoute, curSkill.getEnchantLevel()))
@@ -79,7 +80,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 			reqEnchLvl = enchLvl + 1; // untrain
 		else if (_type == 3)
 			reqEnchLvl = enchLvl; // change route
-		
+			
 		// if reqlvl is 100,200,.. check base skill lvl enchant
 		if (reqEnchLvl == 0)
 		{
@@ -90,7 +91,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		else if (curSkill.getEnchantRouteId() != enchRoute)
 		{
 			// change route is different skill lvl but same enchant
-			if (_type == 3 && curSkill.getEnchantLevel() != enchLvl)
+			if ((_type == 3) && (curSkill.getEnchantLevel() != enchLvl))
 				return;
 		}
 		else if (reqEnchLvl != curSkill.getEnchantLevel())
@@ -100,16 +101,4 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		ExEnchantSkillInfoDetail esd = new ExEnchantSkillInfoDetail(_type, _skillId, _skillLvl, enchRoute, enchLvl, activeChar);
 		activeChar.sendPacket(esd);
 	}
-	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "[C] D0:46 RequestExEnchantSkillInfoDetail";
-	}
-	
 }

@@ -1,3 +1,4 @@
+
 package l2server.gameserver.model;
 
 import java.util.Vector;

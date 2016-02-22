@@ -83,7 +83,7 @@
 		Informations     : skill triggered on unequip item (need core support)
 	
 	enchant4_skill
-		Possible values  : skillid-skilllevel  eg. 3267-1		
+		Possible values  : skillid-skilllevel  eg. 3267-1
 		Default value    : none - not present in xml
 	
 	oncrit_skill
@@ -110,7 +110,7 @@
     	Possible values  :
     	Default value    : 0 - not present in xml
     	Information      : We probably doesn't have support for reuse in item
-    	
+    
     is_questitem
 	is_tradable
 	is_dropable
@@ -120,8 +120,8 @@
 	isOlyRestricted
     	Possible values  : true/false
     	Default value    : depends, search in files
-    	
-    	
+    
+    
 	item_skill
 		Possible values : skillid-skilllevel  eg. 3267-1
 		splitted by ;

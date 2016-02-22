@@ -1,3 +1,4 @@
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -51,7 +52,7 @@ public class CoreMessageTable
 			}
 		}
 		
-		Log.info("Message Table: Loading "+ _messages.size() +" Core Messages Sucessfully");
+		Log.info("Message Table: Loading " + _messages.size() + " Core Messages Sucessfully");
 	}
 	
 	public CoreMessage getMessage(int id)

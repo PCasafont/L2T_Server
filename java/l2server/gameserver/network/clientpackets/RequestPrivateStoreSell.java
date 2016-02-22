@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -29,7 +30,6 @@ import l2server.log.Log;
  */
 public final class RequestPrivateStoreSell extends L2GameClientPacket
 {
-	private static final String _C__96_REQUESTPRIVATESTORESELL = "[C] 96 RequestPrivateStoreSell";
 	
 	private static final int BATCH_LENGTH = 32; // length of the one item
 	
@@ -41,7 +41,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 	{
 		_storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -57,7 +57,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			long price = readQ();
 			readD(); //TODO analyse this
 			
-			if (objectId < 1 || itemId < 1 || cnt < 1 || price < 0)
+			if ((objectId < 1) || (itemId < 1) || (cnt < 1) || (price < 0))
 			{
 				_items = null;
 				return;
@@ -91,7 +91,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 		
 		L2PcInstance storePlayer = object;
 		
-		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1)
+		if ((player.getInstanceId() != storePlayer.getInstanceId()) && (player.getInstanceId() != -1))
 			return;
 		
 		if (storePlayer.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_BUY)
@@ -125,12 +125,6 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			storePlayer.broadcastUserInfo();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__96_REQUESTPRIVATESTORESELL;
 	}
 	
 	@Override

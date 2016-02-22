@@ -73,6 +73,13 @@
 		<flag itemId="9819" x="5306" y="149743" z="-2732" />
 		<flag itemId="9819" x="5299" y="149870" z="-2732" />
 	</fort>
+	<fort id="113" name="Cloud Mountain" type="1" flagPoleId="18200500">
+		<envoy npcId="36437" castleId="1" />
+		<envoy npcId="36438" castleId="4" />
+		<flag itemId="9819" x="-53354" y="91537" z="-2664" />
+		<flag itemId="9819" x="-53237" y="91537" z="-2664" />
+		<flag itemId="9819" x="-53112" y="91537" z="-2664" />
+	</fort>
 	<fort id="114" name="Tanor" type="0" flagPoleId="21220500">
 		<envoy npcId="36439" castleId="2" />
 		<envoy npcId="36440" castleId="3" />

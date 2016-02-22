@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import java.util.logging.Level;
@@ -42,15 +43,13 @@ public class Mark implements ISkillHandler
 {
 	private static final Logger _logDamage = Logger.getLogger("damage");
 	
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.MARK
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.MARK };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (activeChar.isAlikeDead())
@@ -65,24 +64,24 @@ public class Mark implements ISkillHandler
 			activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 		}
 		
-		for (L2Object obj: targets)
+		for (L2Object obj : targets)
 		{
 			if (!(obj instanceof L2Character))
 				continue;
 			
-			L2Character target = (L2Character)obj;
+			L2Character target = (L2Character) obj;
 			
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance)target).isFakeDeath())
+			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
 				target.stopFakeDeath(true);
 			else if (target.isDead())
 				continue;
 			
 			final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
 			final byte shld = Formulas.calcShldUse(activeChar, target, skill);
-
+			
 			if (mcrit)
 			{
-				int damage = (int)skill.getPower();
+				int damage = (int) skill.getPower();
 				// Manage attack or cast break of the target (calculating rate, sending message...)
 				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
 				{
@@ -94,12 +93,10 @@ public class Mark implements ISkillHandler
 				target.reduceCurrentHp(damage, activeChar, skill);
 				
 				// Logging damage
-				if (Config.LOG_GAME_DAMAGE
-						&& activeChar instanceof L2Playable
-						&& damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
+				if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
-					record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
+					record.setParameters(new Object[] { activeChar, " did damage ", damage, skill, " to ", target });
 					record.setLoggerName("mdam");
 					_logDamage.log(record);
 				}
@@ -113,7 +110,7 @@ public class Mark implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
+			if ((effect != null) && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -126,9 +123,10 @@ public class Mark implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

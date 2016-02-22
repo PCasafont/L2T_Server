@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.Collection;
@@ -56,7 +57,6 @@ import l2server.gameserver.model.L2TradeList.L2TradeItem;
  */
 public final class ExBuyList extends L2ItemListPacket
 {
-	private static final String _S__1D_BUYLIST = "[S] 07 BuyList";
 	private int _listId;
 	private Collection<L2TradeItem> _list;
 	private long _money;
@@ -73,10 +73,7 @@ public final class ExBuyList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xB8);
-		writeD(0x00);
-		writeQ(_money);		// current money
+		writeQ(_money); // current money
 		writeD(_listId);
 		writeD(0x00); // GoD ???
 		
@@ -84,7 +81,7 @@ public final class ExBuyList extends L2ItemListPacket
 		
 		for (L2TradeItem item : _list)
 		{
-			if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
+			if ((item.getCurrentCount() > 0) || !item.hasLimitedStock())
 			{
 				writeC(0x00); // mask
 				
@@ -93,27 +90,18 @@ public final class ExBuyList extends L2ItemListPacket
 				writeC(0);
 				writeQ(item.getCurrentCount() < 0 ? 0 : item.getCurrentCount());
 				writeH(item.getTemplate().getType2());
-				writeH(0x00);	// isEquipped
-				writeQ(item.getTemplate().getBodyPart());	// Body Part
-				writeH(0x00);	// Enchant
-				writeD(-1);		// Mana
-				writeD(-9999);	// Time
+				writeH(0x00); // isEquipped
+				writeQ(item.getTemplate().getBodyPart()); // Body Part
+				writeH(0x00); // Enchant
+				writeD(-1); // Mana
+				writeD(-9999); // Time
 				writeC(0x01); // ???
 				
-				if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
+				if ((item.getItemId() >= 3960) && (item.getItemId() <= 4026))// Config.RATE_SIEGE_GUARDS_PRICE-//'
 					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
 				else
 					writeQ((long) (item.getPrice() * (1 + _taxRate)));
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__1D_BUYLIST;
 	}
 }

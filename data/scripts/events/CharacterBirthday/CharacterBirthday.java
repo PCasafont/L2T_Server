@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package events.CharacterBirthday;
 
 import java.util.Calendar;
@@ -29,7 +30,7 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 
 /**
  * @author Gnacik
- * 
+ *
  */
 
 public class CharacterBirthday extends Quest
@@ -37,11 +38,7 @@ public class CharacterBirthday extends Quest
 	private static final int _npc = 32600;
 	private static boolean is_spawned = false;
 	
-	private final static int[] _gk =
-	{
-		30006,30059,30080,30134,30146,30177,30233,30256,30320,30540,
-		30576,30836,30848,30878,30899,31275,31320,31964,32163
-	};
+	private final static int[] _gk = { 30006, 30059, 30080, 30134, 30146, 30177, 30233, 30256, 30320, 30540, 30576, 30836, 30848, 30878, 30899, 31275, 31320, 31964, 32163 };
 	
 	public CharacterBirthday(int questId, String name, String descr)
 	{
@@ -90,7 +87,7 @@ public class CharacterBirthday extends Quest
 			// Update for next year
 			Calendar now = Calendar.getInstance();
 			now.setTimeInMillis(System.currentTimeMillis());
-			st.set("Birthday", String.valueOf(now.get(Calendar.YEAR)+1));
+			st.set("Birthday", String.valueOf(now.get(Calendar.YEAR) + 1));
 			
 			htmltext = "32600-ok.htm";
 		}
@@ -109,10 +106,10 @@ public class CharacterBirthday extends Quest
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-		if (st != null && player.checkBirthDay() == 0)
+		if ((st != null) && (player.checkBirthDay() == 0))
 		{
 			player.sendPacket(new PlaySound(1, "HB01", 0, 0, 0, 0, 0));
-			L2Npc spawned = st.addSpawn(32600, player.getX()+10, player.getY()+10, player.getZ()+10, 0, false, 0, true);
+			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
 			st.setState(State.STARTED);
 			st.startQuestTimer("despawn_npc", 60000, spawned);
 			is_spawned = true;

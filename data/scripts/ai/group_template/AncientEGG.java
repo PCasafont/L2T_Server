@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -37,7 +38,7 @@ public class AncientEGG extends L2AttackableAIScript
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
 	{
 		player.setTarget(player);
-		player.doCast(SkillTable.getInstance().getInfo(5088,1));
+		player.doCast(SkillTable.getInstance().getInfo(5088, 1));
 		return super.onAttack(npc, player, damage, isPet, skill);
 	}
 	

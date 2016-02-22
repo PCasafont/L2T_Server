@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -23,7 +24,6 @@ import l2server.Config;
  */
 public final class KeyPacket extends L2GameServerPacket
 {
-	private static final String _S__01_KEYPACKET = "[S] 2e KeyPacket";
 	
 	private byte[] _key;
 	private int _id;
@@ -41,9 +41,8 @@ public final class KeyPacket extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0x2e);
 		if (_id == 2)
 		{
 			writeC(_key == null ? 0x00 : 0x01);
@@ -62,14 +61,4 @@ public final class KeyPacket extends L2GameServerPacket
 		writeD(0x00); // obfuscation key
 		writeC(Config.IS_CLASSIC ? 0x01 : 0x00); // is classic
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.L2GameServerPacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__01_KEYPACKET;
-	}
-	
 }

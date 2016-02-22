@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package teleports.DimensionalToIVortex;
 
 import java.util.HashMap;
@@ -22,22 +23,21 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 
-
 /**
  * @author LasTravel
- * 
+ *
  *  Dimensional Vortex Npc teleports and Dimensional Stone Sellers
  *
  */
 public class DimensionalToIVortex extends Quest
 {
-	private static final String	_qn 					= "DimensionalToIVortex";
-	private static final int[]	_dimensionalVortexNpcs	= {30952, 30953, 30954};
-	private static final int[]	_dimensionalStoneNpcs	= {30949, 30950, 30951};
-	private static final int	_greenDimensionalStone	= 4401;
-	private static final int	_blueDimensionalStone	= 4402;
-	private static final int	_redDimensionalStone	= 4403;
-	private static Map<Integer, Location> _teleports	= new HashMap<Integer, Location>(10);
+	private static final String _qn = "DimensionalToIVortex";
+	private static final int[] _dimensionalVortexNpcs = { 30952, 30953, 30954 };
+	private static final int[] _dimensionalStoneNpcs = { 30949, 30950, 30951 };
+	private static final int _greenDimensionalStone = 4401;
+	private static final int _blueDimensionalStone = 4402;
+	private static final int _redDimensionalStone = 4403;
+	private static Map<Integer, Location> _teleports = new HashMap<Integer, Location>(10);
 	
 	public DimensionalToIVortex(int questId, String name, String descr)
 	{
@@ -112,16 +112,16 @@ public class DimensionalToIVortex extends Quest
 			
 			int stoneId = 0;
 			
-			if (teleportId >= 1 && teleportId <= 3)
-			{	
+			if ((teleportId >= 1) && (teleportId <= 3))
+			{
 				stoneId = _greenDimensionalStone;
-			}	
-			else if (teleportId >= 4  && teleportId <= 6)
-			{	
+			}
+			else if ((teleportId >= 4) && (teleportId <= 6))
+			{
 				stoneId = _blueDimensionalStone;
-			}	
+			}
 			else
-			{	
+			{
 				stoneId = _redDimensionalStone;
 			}
 			
@@ -133,7 +133,7 @@ public class DimensionalToIVortex extends Quest
 		
 		return super.onAdvEvent(event, npc, player);
 	}
-
+	
 	public static void main(String[] args)
 	{
 		new DimensionalToIVortex(-1, _qn, "teleports");

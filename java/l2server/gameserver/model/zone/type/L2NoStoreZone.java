@@ -12,15 +12,17 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
+import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
 
 /**
  * Zone where store is not allowed.
- * 
+ *
  * @author fordfrog
  */
 public class L2NoStoreZone extends L2ZoneType
@@ -33,7 +35,7 @@ public class L2NoStoreZone extends L2ZoneType
 	@Override
 	protected void onEnter(final L2Character character)
 	{
-		if (character instanceof L2PcInstance)
+		if (!Config.isServer(Config.DREAMS) && (character instanceof L2PcInstance))
 		{
 			character.setInsideZone(L2Character.ZONE_NOSTORE, true);
 		}

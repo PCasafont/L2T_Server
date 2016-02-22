@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -33,7 +34,6 @@ import l2server.gameserver.model.L2Clan;
  */
 public class PledgeInfo extends L2GameServerPacket
 {
-	private static final String _S__9C_PLEDGEINFO = "[S] 89 PledgeInfo";
 	private L2Clan _clan;
 	
 	public PledgeInfo(L2Clan clan)
@@ -44,20 +44,9 @@ public class PledgeInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x89);
 		writeD(Config.SERVER_ID); // server id?
 		writeD(_clan.getClanId());
 		writeS(_clan.getName());
 		writeS(_clan.getAllyName());
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__9C_PLEDGEINFO;
-	}
-	
 }

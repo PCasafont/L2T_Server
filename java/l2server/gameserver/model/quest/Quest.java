@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.quest;
 
 import java.sql.Connection;
@@ -87,10 +88,8 @@ public class Quest extends ManagedScript
 	// Leave this as public as a workaround.
 	public int[] questItemIds = null;
 	
-	private static final String DEFAULT_NO_QUEST_MSG =
-		"<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
-	private static final String DEFAULT_ALREADY_COMPLETED_MSG =
-		"<html><body>This quest has already been completed.</body></html>";
+	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
+	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>This quest has already been completed.</body></html>";
 	
 	/**
 	 * Return collection view of the values contains in the allEventS
@@ -147,9 +146,7 @@ public class Quest extends ManagedScript
 	
 	public static enum TrapAction
 	{
-		TRAP_TRIGGERED,
-		TRAP_DETECTED,
-		TRAP_DISARMED
+		TRAP_TRIGGERED, TRAP_DETECTED, TRAP_DISARMED
 	}
 	
 	public static enum QuestEventType
@@ -161,13 +158,12 @@ public class Quest extends ManagedScript
 		ON_KILL(true), // onKill action triggered when a mob gets killed.
 		ON_SPAWN(true), // onSpawn action triggered when an NPC is spawned or respawned.
 		ON_SKILL_SEE(true), // NPC or Mob saw a person casting a skill (regardless what the target is).
-		ON_FACTION_CALL(true),
-		ON_AGGRO_RANGE_ENTER(true), // a person came within the Npc/Mob's range
+		ON_FACTION_CALL(true), ON_AGGRO_RANGE_ENTER(true), // a person came within the Npc/Mob's range
 		ON_SPELL_FINISHED(true), // on spell finished action when npc finish casting skill
 		ON_SKILL_LEARN(false), // control the AcquireSkill dialog from quest script
 		ON_ENTER_ZONE(true), // on zone enter
 		ON_EXIT_ZONE(true), // on zone exit
-		ON_DIE_ZONE(true),	//on die zone
+		ON_DIE_ZONE(true), //on die zone
 		ON_TRAP_ACTION(true), // on zone exit
 		ON_SOCIAL_ACTION(true), // when a companion npc arrives at a point of a route
 		ON_OLYMPIAD_COMBAT(true), // on olympiad combat
@@ -297,7 +293,7 @@ public class Quest extends ManagedScript
 	{
 		List<QuestTimer> qt = getQuestTimers(name);
 		
-		if (qt == null || qt.isEmpty())
+		if ((qt == null) || qt.isEmpty())
 			return null;
 		try
 		{
@@ -552,7 +548,7 @@ public class Quest extends ManagedScript
 			return showError(player, e);
 		}
 		// if the quest returns text to display, display it.
-		if (res != null && res.length() > 0)
+		if ((res != null) && (res.length() > 0))
 			return showResult(player, res);
 		// else tell the player that
 		else
@@ -625,6 +621,7 @@ public class Quest extends ManagedScript
 			_isPet = isPet;
 		}
 		
+		@Override
 		public void run()
 		{
 			String res = null;
@@ -674,6 +671,7 @@ public class Quest extends ManagedScript
 			_isPet = isPet;
 		}
 		
+		@Override
 		public void run()
 		{
 			String res = null;
@@ -689,6 +687,7 @@ public class Quest extends ManagedScript
 			
 		}
 	}
+	
 	public final boolean notifyAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		ThreadPoolManager.getInstance().executeAi(new TmpOnAggroEnter(npc, player, isPet));
@@ -701,7 +700,7 @@ public class Quest extends ManagedScript
 		String res = null;
 		try
 		{
-			res = this.onDieZone(character, killer, zone);
+			res = onDieZone(character, killer, zone);
 		}
 		catch (Exception e)
 		{
@@ -719,7 +718,7 @@ public class Quest extends ManagedScript
 		String res = null;
 		try
 		{
-			res = this.onEnterZone(character, zone);
+			res = onEnterZone(character, zone);
 		}
 		catch (Exception e)
 		{
@@ -737,7 +736,7 @@ public class Quest extends ManagedScript
 		String res = null;
 		try
 		{
-			res = this.onExitZone(character, zone);
+			res = onExitZone(character, zone);
 		}
 		catch (Exception e)
 		{
@@ -756,7 +755,7 @@ public class Quest extends ManagedScript
 		{
 			res = onItemUse(player, item);
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			return showError(player, e);
 		}
@@ -784,7 +783,7 @@ public class Quest extends ManagedScript
 		{
 			res = onArrived(ai);
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			if (ai.getGuided() != null)
 				return showError(ai.getGuided(), e);
@@ -801,7 +800,7 @@ public class Quest extends ManagedScript
 		{
 			res = onPlayerArrived(ai);
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			if (ai.getGuided() != null)
 				return showError(ai.getGuided(), e);
@@ -818,7 +817,7 @@ public class Quest extends ManagedScript
 		{
 			res = onOlympiadCombat(player, type, hasWon);
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			return showError(player, e);
 		}
@@ -983,10 +982,10 @@ public class Quest extends ManagedScript
 	 */
 	public boolean showError(L2PcInstance player, Throwable t)
 	{
-		Log.log(Level.WARNING, this.getScriptFile().getAbsolutePath(), t);
+		Log.log(Level.WARNING, getScriptFile().getAbsolutePath(), t);
 		if (t.getMessage() == null)
 			t.printStackTrace();
-		if (player != null && player.getAccessLevel().isGm())
+		if ((player != null) && player.getAccessLevel().isGm())
 		{
 			String res = "<html><body><title>Script error</title>" + Util.getStackTrace(t) + "</body></html>";
 			return showResult(player, res);
@@ -1007,7 +1006,7 @@ public class Quest extends ManagedScript
 	 */
 	public boolean showResult(L2PcInstance player, String res)
 	{
-		if (res == null || res.isEmpty() || player == null)
+		if ((res == null) || res.isEmpty() || (player == null))
 			return true;
 		
 		if (res.endsWith(".htm") || res.endsWith(".html"))
@@ -1417,7 +1416,7 @@ public class Quest extends ManagedScript
 	public static String getNoQuestMsg(L2PcInstance player)
 	{
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
-		if (result != null && result.length() > 0)
+		if ((result != null) && (result.length() > 0))
 			return result;
 		
 		return DEFAULT_NO_QUEST_MSG;
@@ -1431,7 +1430,7 @@ public class Quest extends ManagedScript
 	public static String getAlreadyCompletedMsg(L2PcInstance player)
 	{
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "alreadycompleted.htm");
-		if (result != null && result.length() > 0)
+		if ((result != null) && (result.length() > 0))
 			return result;
 		
 		return DEFAULT_ALREADY_COMPLETED_MSG;
@@ -1554,6 +1553,7 @@ public class Quest extends ManagedScript
 	{
 		return addEventId(trapId, Quest.QuestEventType.ON_TRAP_ACTION);
 	}
+	
 	/**
 	 * Add this quest to the list of quests that the passed npc will respond to for Faction Call Events.<BR><BR>
 	 * @param talkId : ID of the NPC
@@ -1687,7 +1687,7 @@ public class Quest extends ManagedScript
 			temp = player.getQuestState(getName());
 			if ((temp != null) && (temp.get(var) != null) && (temp.get(var)).equalsIgnoreCase(value))
 				return player; // match
-			
+				
 			return null; // no match
 		}
 		
@@ -1741,7 +1741,7 @@ public class Quest extends ManagedScript
 			temp = player.getQuestState(getName());
 			if ((temp != null) && (temp.getState() == state))
 				return player; // match
-			
+				
 			return null; // no match
 		}
 		
@@ -1778,8 +1778,7 @@ public class Quest extends ManagedScript
 	public String showHtmlFile(L2PcInstance player, String fileName)
 	{
 		boolean questwindow = true;
-		if (fileName.endsWith(".html") || (player.getQuestState(_name) != null
-				&& player.getQuestState(_name).getState() >= State.STARTED))
+		if (fileName.endsWith(".html") || ((player.getQuestState(_name) != null) && (player.getQuestState(_name).getState() >= State.STARTED)))
 			questwindow = false;
 		int questId = getQuestIntId();
 		//Create handler to file linked to the quest
@@ -1820,7 +1819,6 @@ public class Quest extends ManagedScript
 	public String getHtm(String prefix, String fileName)
 	{
 		String content = HtmCache.getInstance().getHtm(prefix, Config.DATA_FOLDER + "scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + fileName);
-		
 		if (content == null)
 		{
 			content = HtmCache.getInstance().getHtm(prefix, Config.DATA_FOLDER + "scripts/quests/Q" + getName() + "/" + fileName);
@@ -1856,6 +1854,11 @@ public class Quest extends ManagedScript
 		return addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay, false);
 	}
 	
+	public L2Npc addSpawn(int npcId, int[] XYZ, int heading, boolean randomOffSet, int despawnDelay)
+	{
+		return addSpawn(npcId, XYZ[0], XYZ[1], XYZ[2], heading, randomOffSet, despawnDelay, false);
+	}
+	
 	public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
@@ -1874,7 +1877,7 @@ public class Quest extends ManagedScript
 				// the spawn code is coded such that if x=y=0, it looks into location for the spawn loc!  This will NOT work
 				// with quest spawns!  For both of the above cases, we need a fail-safe spawn.  For this, we use the
 				// default spawn location, which is at the player's loc.
-				if (x == 0 && y == 0)
+				if ((x == 0) && (y == 0))
 				{
 					Log.log(Level.SEVERE, "Failed to adjust bad coords for quest spawn! Spawn aborted!");
 					return null;
@@ -1950,7 +1953,7 @@ public class Quest extends ManagedScript
 	@Override
 	public String getScriptName()
 	{
-		return this.getName();
+		return getName();
 	}
 	
 	@Override
@@ -1974,7 +1977,7 @@ public class Quest extends ManagedScript
 	
 	public boolean unload(boolean removeFromList)
 	{
-		this.saveGlobalData();
+		saveGlobalData();
 		// cancel all pending timers before reloading.
 		// if timers ought to be restarted, the quest can take care of it
 		// with its code (example: save global data indicating what timer must

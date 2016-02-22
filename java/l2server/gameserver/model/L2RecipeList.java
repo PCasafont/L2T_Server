@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import l2server.gameserver.templates.StatsSet;
@@ -95,7 +96,7 @@ public class L2RecipeList
 	public void addRecipe(L2RecipeInstance recipe)
 	{
 		int len = _recipes.length;
-		L2RecipeInstance[] tmp = new L2RecipeInstance[len+1];
+		L2RecipeInstance[] tmp = new L2RecipeInstance[len + 1];
 		System.arraycopy(_recipes, 0, tmp, 0, len);
 		tmp[len] = recipe;
 		_recipes = tmp;
@@ -107,7 +108,7 @@ public class L2RecipeList
 	public void addStatUse(L2RecipeStatInstance statUse)
 	{
 		int len = _statUse.length;
-		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len+1];
+		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len + 1];
 		System.arraycopy(_statUse, 0, tmp, 0, len);
 		tmp[len] = statUse;
 		_statUse = tmp;
@@ -119,7 +120,7 @@ public class L2RecipeList
 	public void addAltStatChange(L2RecipeStatInstance statChange)
 	{
 		int len = _altStatChange.length;
-		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len+1];
+		L2RecipeStatInstance[] tmp = new L2RecipeStatInstance[len + 1];
 		System.arraycopy(_altStatChange, 0, tmp, 0, len);
 		tmp[len] = statChange;
 		_altStatChange = tmp;
@@ -170,10 +171,10 @@ public class L2RecipeList
 	 */
 	public boolean isConsumable()
 	{
-		return ((_itemId >= 1463 && _itemId <= 1467) // Soulshots
-				|| (_itemId >= 2509 && _itemId <= 2514) // Spiritshots
-				|| (_itemId >= 3947 && _itemId <= 3952) // Blessed Spiritshots
-				|| (_itemId >= 1341 && _itemId <= 1345) // Arrows
+		return (((_itemId >= 1463) && (_itemId <= 1467)) // Soulshots
+				|| ((_itemId >= 2509) && (_itemId <= 2514)) // Spiritshots
+				|| ((_itemId >= 3947) && (_itemId <= 3952)) // Blessed Spiritshots
+		|| ((_itemId >= 1341) && (_itemId <= 1345)) // Arrows
 		);
 	}
 	
@@ -249,4 +250,3 @@ public class L2RecipeList
 		return _altStatChange;
 	}
 }
-

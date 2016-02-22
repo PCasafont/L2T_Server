@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.bypasshandlers;
 
 import java.util.HashMap;
@@ -19,7 +20,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
+import l2server.Config;
+import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.instancemanager.MainTownManager;
+import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -27,15 +32,13 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.util.Rnd;
 
 public class Teleport implements IBypassHandler
 {
-	private static final String[] COMMANDS =
-	{
-		"teleto",
-		"pvpzone"
-	};
+	private static final String[] COMMANDS = { "teleto", "maintown", "pvpzone" };
 	
+	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		if (target == null)
@@ -44,7 +47,7 @@ public class Teleport implements IBypassHandler
 		StringTokenizer st = new StringTokenizer(command, " ");
 		st.nextToken();
 		
-		if (command.startsWith("teleto"))	// Tenkai custom - raw teleport coordinates, only check for TW ward
+		if (command.startsWith("teleto")) // Tenkai custom - raw teleport coordinates, only check for TW ward
 		{
 			if (activeChar.isCombatFlagEquipped())
 			{
@@ -70,11 +73,22 @@ public class Teleport implements IBypassHandler
 			}
 			catch (Exception e)
 			{
-				_log.warning("L2Teleporter - " + target.getName()+"("+ target.getNpcId() +") - failed to parse raw teleport coordinates from html");
+				_log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() + ") - failed to parse raw teleport coordinates from html");
 				e.printStackTrace();
 			}
 			
 			return true;
+		}
+		else if (command.startsWith("maintown"))
+		{
+			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
+			if (mainTown != null)
+			{
+				int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+				int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
+				int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
+				activeChar.teleToLocation(startX, startY, startZ);
+			}
 		}
 		else if (command.startsWith("pvpzone"))
 		{
@@ -85,12 +99,6 @@ public class Teleport implements IBypassHandler
 			{
 				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
 				return true;
-			}
-			
-			if (activeChar.getPvpFlag() > 0)
-			{
-				activeChar.sendMessage("You can't teleport while flagged!");
-				return false;
 			}
 			
 			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
@@ -136,9 +144,14 @@ public class Teleport implements IBypassHandler
 					}
 				}
 				
-				activeChar.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
+				activeChar.teleToLocation((mostPvP.getX() + Rnd.get(300)) - 150, (mostPvP.getY() + Rnd.get(300)) - 150, mostPvP.getZ());
 				activeChar.setInstanceId(0);
-				activeChar.startPvPFlag();
+				activeChar.setProtection(true);
+				if (!activeChar.isGM())
+				{
+					activeChar.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_PVP_TIME);
+					activeChar.startPvPFlag();
+				}
 			}
 			else
 				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "Sorry, I can't find anyone in flag status right now."));
@@ -148,6 +161,7 @@ public class Teleport implements IBypassHandler
 		return false;
 	}
 	
+	@Override
 	public String[] getBypassList()
 	{
 		return COMMANDS;

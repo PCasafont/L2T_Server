@@ -804,15 +804,15 @@
 	<item id="36142" type="EtcItem" name="Lv. 5 Legendary STR Dye 10-unit Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0">
 	</item>
-	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Shaper, Cutter, Slasher, Avenger, Fighter, Stormer, Thrower, and Shooter. -->
+	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Shaper, Cutter, Slasher, Avenger, Fighter, Stormer, Thrower, and Shooter. You'll also receive an ingredient that will allow you to bestow a Soul Crystal effect 2 times. -->
 	<item id="36143" type="EtcItem" name="Double Crystal Enhancement Reward: Amaranthine Box (Physical)" icon="icon.etc_jewel_box_i00"
 			immediateEffect="1" weight="0">
 	</item>
-	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Buster, Caster, and Retributer. -->
+	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Buster, Caster, and Retributer. You'll also receive an ingredient that will allow you to bestow a Soul Crystal effect 2 times. -->
 	<item id="36144" type="EtcItem" name="Double Crystal Enhancement Reward: Amaranthine Box (Magical)" icon="icon.etc_jewel_box_i00"
 			immediateEffect="1" weight="0">
 	</item>
-	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Dualsword, Dual Dagger, and Dual Blunt. -->
+	<!-- Double-click to receive one of the following: Double Crystal Amaranthine Dualsword, Dual Dagger, and Dual Blunt. You'll also receive an ingredient that will allow you to bestow a Soul Crystal effect 2 times. -->
 	<item id="36145" type="EtcItem" name="Double Crystal Enhancement Reward: Amaranthine Box (Dual Weapons)" icon="icon.etc_jewel_box_i00"
 			immediateEffect="1" weight="0">
 	</item>
@@ -868,19 +868,19 @@
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Requiem or Immortal equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36159" type="EtcItem" name="Scroll of Blessing (R1-grade)" icon="icon.bless_scroll_r1" immediateEffect="1" crystalType="r"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
+			weight="0" isStackable="true" isOlyRestricted="true" handler="BlessingScrolls">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Apocalypse or Twilight equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36160" type="EtcItem" name="Scroll of Blessing (R2-grade)" icon="icon.bless_scroll_r2" immediateEffect="1" crystalType="r"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
+			weight="0" isStackable="true" isOlyRestricted="true" handler="BlessingScrolls">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Specter or Seraph equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36161" type="EtcItem" name="Scroll of Blessing (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1" crystalType="r95"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
+			weight="0" isStackable="true" isOlyRestricted="true" handler="BlessingScrolls">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Amaranthine or Eternal equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36162" type="EtcItem" name="Scroll of Blessing (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1" crystalType="r99"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
+			weight="0" isStackable="true" isOlyRestricted="true" handler="BlessingScrolls">
 	</item>
 	<!-- P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Randomly adds between + 1 and + 3 enchant value. -->
 	<item id="36163" type="EtcItem" name="Giant's Scroll: Enchant Weapon (R-grade)" icon="icon.giant_scrl_of_ench_wp_r" immediateEffect="1"
@@ -1399,7 +1399,7 @@
 		<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
 		<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
 	</item>
-	<!-- Earth Wyrm's Heart Ring. 3-hour. Increases MP by 38, Poison Resistance by 50%, Poison Attack Rate by 50%, Knock Back/Knock Down/Pulling Resistance by 20, and Physical/Magic Attack Resistance, MP Regeneration, Critical Damage, Accuracy, Atk. Spd., Casting Spd., and Wind/Water Resistance. Can increase party members' Atk. Spd., Casting Spd., and Vampiric Rage, and use Poison Cancellation. Wearing two of these rings will give you the effect of wearing one. Cannot be used in the Olympiad. -->
+	<!-- Earth Wyrm's Heart Ring. 3-hour. Increases MP by 38, Poison Resistance by 50%, Poison Attack Rate by 50%, Knock Back/Knock Down/Pulling/Danger Zone Resistance by 20, and Physical/Magic Attack Resistance, MP Regeneration, Critical Damage, Accuracy, Atk. Spd., Casting Spd., and Wind/Water Resistance. Can increase party members' Atk. Spd., Casting Spd., and Vampiric Rage, and use Poison Cancellation. Wearing two of these rings will give you the effect of wearing one. Cannot be used in the Olympiad. -->
 	<item id="36243" type="Armor" name="Earth Wyrm Heart Ring - 3-hour" icon="icon.ring_earthworm_heart" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isOlyRestricted="true" time="180">
@@ -1453,7 +1453,8 @@
 	</item>
 	<!-- Ring containing Queen Ant's soul. MP + 31, Stun/Poison/Bleed Resistance + 25%, Stun/Poison/Bleed Attack Rate + 20%, P./M. Critical Damage + 15%, P./M. Critical Rate + 20, and P./M. Accuracy + 4. Wearing two of these rings will give you the effect of wearing one. -->
 	<item id="36254" type="Armor" name="Queen Ant's Soul Ring" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip"
-			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="212" crystalType="r" weight="150" price="46311000" enchantEnabled="1" isEpic="true">
+			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="212" crystalType="r" weight="150" price="46311000" enchantEnabled="1"
+			isEpic="true">
 		<baseAdd stat="mDef" val="79" />
 		<add stat="maxMp" val="31" />
 		<enchant stat="mDef" val="0" />
@@ -1465,7 +1466,8 @@
 	</item>
 	<!-- Earring containing Orfen's soul. MP + 46, Sleep/Paralysis/Mental Attack Resistance + 25%, Sleep/Paralysis/Mental attack rate + 25%, received Heal Amount + 10%, MP Consumption - 5% and 4% Vampiric Rage Effect. Wearing two of these earrings will give you the effect of wearing one. -->
 	<item id="36255" type="Armor" name="Orfen's Soul Earring" icon="icon.accessory_earring_of_orfen_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" crystalCount="319" crystalType="r" weight="150" price="69466000" enchantEnabled="1" isEpic="true">
+			bodypart="rear;lear" immediateEffect="1" crystalCount="319" crystalType="r" weight="150" price="69466000" enchantEnabled="1"
+			isEpic="true">
 		<baseAdd stat="mDef" val="118" />
 		<add stat="maxMp" val="46" />
 		<enchant stat="mDef" val="0" />
@@ -1534,10 +1536,11 @@
 		<skill id="9734" level="1" /> <!-- Entrance Pass: Spezion (Epic) -->
 	</item>
 	<!-- Double-click to reset cooldown to Fortuna's dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="36273" type="EtcItem" name="Entrance Pass: Fortuna" icon="icon.etc_kalie_instantzone_re" immediateEffect="1" weight="0">
+	<item id="36273" type="EtcItem" name="Entrance Pass: Fortuna" icon="icon.etc_bm_kalie_instantzone_re" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Double-click to reset cooldown to Nornil's Garden. Usable once a day outside instances while on a cooldown. -->
-	<item id="36274" type="EtcItem" name="Entrance Pass: Nornil's Garden" icon="icon.etc_kalie_instantzone_re" immediateEffect="1"
+	<item id="36274" type="EtcItem" name="Entrance Pass: Nornil's Garden" icon="icon.etc_bm_kalie_instantzone_re" immediateEffect="1"
 			weight="0" isTradable="false" isDropable="false" isSellable="false" handler="ExtraPass">
 		<skill id="9738" level="1" /> <!-- Entrance Pass: Nornil's Garden -->
 	</item>
@@ -1552,8 +1555,8 @@
 		<skill id="9739" level="1" /> <!-- Entrance Pass: Octavis -->
 	</item>
 	<!-- Double-click to reset cooldown to Baylor's dungeon. Usable once a day outside instances while on a cooldown. -->
-	<item id="36277" type="EtcItem" name="Entrance Pass: Baylor" icon="icon.etc_kalie_instantzone_re" immediateEffect="1" weight="0"
-			isTradable="false" isDropable="false" isSellable="false" handler="ItemSkills">
+	<item id="36277" type="EtcItem" name="Entrance Pass: Baylor" icon="icon.etc_bm_kalie_instantzone_re" immediateEffect="1"
+			weight="0" isTradable="false" isDropable="false" isSellable="false" handler="ItemSkills">
 		<skill id="9735" level="1" /> <!-- Entrance Pass: Baylor -->
 	</item>
 	<!-- Blood of Pagans. It reeks of evil. -->
@@ -1627,19 +1630,19 @@
 	</item>
 	<!-- Transforms an R-grade bound weapon item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36294" type="EtcItem" name="Unbind Scroll: Weapon (R-grade) - Event" icon="icon.cursed_free_r_armor" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Transforms an R95-grade bound weapon item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36295" type="EtcItem" name="Unbind Scroll: Weapon (R95-grade) - Event" icon="icon.cursed_free_r95" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Has a low chance to transform an R-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36296" type="EtcItem" name="Unbind Scroll: Armor (R-grade) - Campaign" icon="icon.cursed_free_r" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Has a low chance to transform an R95-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36297" type="EtcItem" name="Unbind Scroll: Armor (R95-grade) - Campaign" icon="icon.cursed_free_r95_armor" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange a standard Specter weapon for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36298" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade) - Campaign" icon="icon.bless_scroll_r95" immediateEffect="1"
@@ -1647,11 +1650,11 @@
 	</item>
 	<!-- Transforms an R-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36299" type="EtcItem" name="Unbind Scroll: Armor (R-grade) - Event" icon="icon.cursed_free_r" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Transforms an R95-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36300" type="EtcItem" name="Unbind Scroll: Armor (R95-grade) - Event" icon="icon.cursed_free_r95_armor" immediateEffect="1"
-			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Immortal/Hell armor for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36302" type="EtcItem" name="Scroll of Blessing: Armor (R-grade) - Campaign" icon="icon.bless_scroll_r1_armor"
@@ -2390,7 +2393,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36441" type="Weapon" name="Antharas Shaper - Standard" icon="icon.weapon_antaras_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2405,7 +2408,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36442" type="Weapon" name="Antharas Slasher - Standard" icon="icon.weapon_antaras_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2419,7 +2422,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36443" type="Weapon" name="Antharas Thrower - Standard" icon="icon.weapon_antaras_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2434,7 +2437,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36444" type="Weapon" name="Antharas Buster - Standard" icon="icon.weapon_antaras_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2448,7 +2451,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36445" type="Weapon" name="Antharas Cutter - Standard" icon="icon.weapon_antaras_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2462,7 +2465,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36446" type="Weapon" name="Antharas Stormer - Standard" icon="icon.weapon_antaras_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2010" soulshots="1" spiritshots="1"
@@ -2477,7 +2480,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36447" type="Weapon" name="Antharas Fighter - Standard" icon="icon.weapon_antaras_fist_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1550" soulshots="1" spiritshots="1"
@@ -2492,7 +2495,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36448" type="Weapon" name="Antharas Avenger - Standard" icon="icon.weapon_antaras_onehand_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2507,7 +2510,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36449" type="Weapon" name="Antharas Dual Blunt Weapon - Standard" icon="icon.weapon_antaras_dual_blunt_i01" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2522,7 +2525,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36450" type="Weapon" name="Antharas Dualsword - Standard" icon="icon.weapon_antaras_dual_sword_i01" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2536,7 +2539,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36451" type="Weapon" name="Valakas Shaper - Standard" icon="icon.weapon_valrakas_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2551,7 +2554,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36452" type="Weapon" name="Valakas Cutter - Standard" icon="icon.weapon_valrakas_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2565,7 +2568,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36453" type="Weapon" name="Valakas Slasher - Standard" icon="icon.weapon_valrakas_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2579,7 +2582,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36454" type="Weapon" name="Valakas Thrower - Standard" icon="icon.weapon_valrakas_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2594,7 +2597,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36455" type="Weapon" name="Valakas Buster - Standard" icon="icon.weapon_valrakas_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2608,7 +2611,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36456" type="Weapon" name="Valakas Caster - Standard" icon="icon.weapon_valrakas_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1" spiritshots="1"
@@ -2623,7 +2626,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36457" type="Weapon" name="Valakas Retributer - Standard" icon="icon.weapon_valrakas_twohand_magic_blunt_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1"
@@ -2639,7 +2642,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36458" type="Weapon" name="Lindvior Shaper - Standard" icon="icon.weapon_lind_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2654,7 +2657,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36459" type="Weapon" name="Lindvior Thrower - Standard" icon="icon.weapon_lind_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2669,7 +2672,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36460" type="Weapon" name="Lindvior Slasher - Standard" icon="icon.weapon_lind_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2683,7 +2686,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, P. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36461" type="Weapon" name="Lindvior Caster - Standard" icon="icon.weapon_lind_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2697,7 +2700,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36462" type="Weapon" name="Lindvior Cutter - Standard" icon="icon.weapon_lind_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2711,7 +2714,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36463" type="Weapon" name="Lindvior Shooter - Standard" icon="icon.weapon_lind_crossbow_i01" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1580" soulshots="1" spiritshots="1"
@@ -2726,7 +2729,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36464" type="Weapon" name="Lindvior Dual Dagger - Standard" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
@@ -2742,7 +2745,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36465" type="Weapon" name="Antharas Shaper - High-grade" icon="icon.weapon_antaras_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2760,7 +2763,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36466" type="Weapon" name="Antharas Slasher - High-grade" icon="icon.weapon_antaras_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2777,7 +2780,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36467" type="Weapon" name="Antharas Thrower - High-grade" icon="icon.weapon_antaras_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2795,7 +2798,7 @@
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36468" type="Weapon" name="Antharas Buster - High-grade" icon="icon.weapon_antaras_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2812,7 +2815,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36469" type="Weapon" name="Antharas Cutter - High-grade" icon="icon.weapon_antaras_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2829,7 +2832,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36470" type="Weapon" name="Antharas Stormer - High-grade" icon="icon.weapon_antaras_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2010" soulshots="1" spiritshots="1"
@@ -2847,7 +2850,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36471" type="Weapon" name="Antharas Fighter - High-grade" icon="icon.weapon_antaras_fist_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1550" soulshots="1" spiritshots="1"
@@ -2865,7 +2868,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36472" type="Weapon" name="Antharas Avenger - High-grade" icon="icon.weapon_antaras_onehand_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2883,7 +2886,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36473" type="Weapon" name="Antharas Dual Blunt Weapon - High-grade" icon="icon.weapon_antaras_dual_blunt_i01"
 			defaultAction="equip" weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1"
@@ -2901,7 +2904,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Antharas' Lash.
 		Can be upgraded to a higher grade through the Watcher of Antharas Theodric.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36474" type="Weapon" name="Antharas Dualsword - High-grade" icon="icon.weapon_antaras_dual_sword_i01" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2918,7 +2921,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36475" type="Weapon" name="Valakas Shaper - High-grade" icon="icon.weapon_valrakas_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2936,7 +2939,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36476" type="Weapon" name="Valakas Cutter - High-grade" icon="icon.weapon_valrakas_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2953,7 +2956,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36477" type="Weapon" name="Valakas Slasher - High-grade" icon="icon.weapon_valrakas_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -2970,7 +2973,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36478" type="Weapon" name="Valakas Thrower - High-grade" icon="icon.weapon_valrakas_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -2988,7 +2991,7 @@
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36479" type="Weapon" name="Valakas Buster - High-grade" icon="icon.weapon_valrakas_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3005,7 +3008,7 @@
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36480" type="Weapon" name="Valakas Caster - High-grade" icon="icon.weapon_valrakas_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1" spiritshots="1"
@@ -3023,7 +3026,7 @@
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Valakas' Bite.
 		Can be upgraded to a higher grade through Valakas Watchman Klein.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36481" type="Weapon" name="Valakas Retributer - High-grade" icon="icon.weapon_valrakas_twohand_magic_blunt_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1"
@@ -3042,7 +3045,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36482" type="Weapon" name="Lindvior Shaper - High-grade" icon="icon.weapon_lind_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3060,7 +3063,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36483" type="Weapon" name="Lindvior Thrower - High-grade" icon="icon.weapon_lind_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3078,7 +3081,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36484" type="Weapon" name="Lindvior Slasher - High-grade" icon="icon.weapon_lind_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3095,7 +3098,7 @@
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Casting Spd. + 30%, M. Critical Rate + 100, M. Skill Critical Rate + 30%, M. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36485" type="Weapon" name="Lindvior Caster - High-grade" icon="icon.weapon_lind_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3112,7 +3115,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36486" type="Weapon" name="Lindvior Cutter - High-grade" icon="icon.weapon_lind_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3129,7 +3132,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36487" type="Weapon" name="Lindvior Shooter - High-grade" icon="icon.weapon_lind_crossbow_i01" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1580" soulshots="1" spiritshots="1"
@@ -3147,7 +3150,7 @@
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 30%, Max HP/MP/CP + 30%, Atk. Spd. + 30%, P. Critical Rate + 100, P. Skill Critical Rate + 30%, P. Skill Critical Damage + 30%, damage on dragons + 100%. Use Active Skills Dignity and Lindvior's Wingbeat.
 		Can be upgraded to a higher grade through Aden's Wizard Jenna.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36488" type="Weapon" name="Lindvior Dual Dagger - High-grade" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
@@ -3164,7 +3167,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36489" type="Weapon" name="Antharas Shaper - Top-grade" icon="icon.weapon_antaras_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3182,7 +3185,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36490" type="Weapon" name="Antharas Slasher - Top-grade" icon="icon.weapon_antaras_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3199,7 +3202,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36491" type="Weapon" name="Antharas Thrower - Top-grade" icon="icon.weapon_antaras_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3217,7 +3220,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, M. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36492" type="Weapon" name="Antharas Buster - Top-grade" icon="icon.weapon_antaras_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3234,7 +3237,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36493" type="Weapon" name="Antharas Cutter - Top-grade" icon="icon.weapon_antaras_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3251,7 +3254,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36494" type="Weapon" name="Antharas Stormer - Top-grade" icon="icon.weapon_antaras_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2010" soulshots="1" spiritshots="1"
@@ -3269,7 +3272,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36495" type="Weapon" name="Antharas Fighter - Top-grade" icon="icon.weapon_antaras_fist_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1550" soulshots="1" spiritshots="1"
@@ -3287,7 +3290,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36496" type="Weapon" name="Antharas Avenger - Top-grade" icon="icon.weapon_antaras_onehand_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3305,7 +3308,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36497" type="Weapon" name="Antharas Dual Blunt Weapon - Top-grade" icon="icon.weapon_antaras_dual_blunt_i01" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3323,7 +3326,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Antharas' Lash and Antharas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36498" type="Weapon" name="Antharas Dualsword - Top-grade" icon="icon.weapon_antaras_dual_sword_i01" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3340,7 +3343,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36499" type="Weapon" name="Valakas Shaper - Top-grade" icon="icon.weapon_valrakas_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3358,7 +3361,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36500" type="Weapon" name="Valakas Cutter - Top-grade" icon="icon.weapon_valrakas_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3375,7 +3378,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36501" type="Weapon" name="Valakas Slasher - Top-grade" icon="icon.weapon_valrakas_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3392,7 +3395,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36502" type="Weapon" name="Valakas Thrower - Top-grade" icon="icon.weapon_valrakas_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3410,7 +3413,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, M. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36503" type="Weapon" name="Valakas Buster - Top-grade" icon="icon.weapon_valrakas_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3427,7 +3430,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, P. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36504" type="Weapon" name="Valakas Caster - Top-grade" icon="icon.weapon_valrakas_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1" spiritshots="1"
@@ -3445,7 +3448,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, M. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Valakas' Bite and Valakas' Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36505" type="Weapon" name="Valakas Retributer - Top-grade" icon="icon.weapon_valrakas_twohand_magic_blunt_i01"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1080" soulshots="1"
@@ -3464,7 +3467,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36506" type="Weapon" name="Lindvior Shaper - Top-grade" icon="icon.weapon_lind_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3482,7 +3485,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36507" type="Weapon" name="Lindvior Thrower - Top-grade" icon="icon.weapon_lind_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3500,7 +3503,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36508" type="Weapon" name="Lindvior Slasher - Top-grade" icon="icon.weapon_lind_twohand_sword_i01" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="1740" soulshots="1" spiritshots="1"
@@ -3517,7 +3520,7 @@
 	</item>
 	<!--
 		A weapon imbued with the wisdom of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Casting Spd. + 100%, M. Critical Rate + 500, M. Skill Critical Rate + 50%, M. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36509" type="Weapon" name="Lindvior Caster - Top-grade" icon="icon.weapon_lind_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3534,7 +3537,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36510" type="Weapon" name="Lindvior Cutter - Top-grade" icon="icon.weapon_lind_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1520" soulshots="1" spiritshots="1"
@@ -3551,7 +3554,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36511" type="Weapon" name="Lindvior Shooter - Top-grade" icon="icon.weapon_lind_crossbow_i01" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="1580" soulshots="1" spiritshots="1"
@@ -3569,7 +3572,7 @@
 	</item>
 	<!--
 		A weapon imbued with the power of the dragons. PvP Damage + 50%, Max HP/MP/CP + 100%, Atk. Spd. + 100%, P. Critical Rate + 500, P. Skill Critical Rate + 50%, P. Skill Critical Damage + 50%, damage on dragons + 300%. Use Active Skills Dignity, Lindvior's Wingbeat and Lindvior's Breath.
-		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute.
+		Its appearance cannot be changed. Cannot be crystallized, enchanted, augmented, or assigned an attribute. Can bestow 1 Special Soul Crystal.
 	-->
 	<item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
@@ -3921,27 +3924,27 @@
 	</item>
 	<!-- Restores the original appearance of R-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36598" type="EtcItem" name="Scroll: Restore Equipment (R-grade)" icon="icon.change_restore_i06" immediateEffect="1"
-			weight="0" price="5000000">
+			crystalType="r" weight="0" price="5000000" handler="AppearanceStone">
 	</item>
 	<!-- Restores the original appearance of S-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36599" type="EtcItem" name="Scroll: Restore Equipment (S-grade)" icon="icon.change_restore_i05" immediateEffect="1"
-			weight="0" price="1000000">
+			crystalType="s" weight="0" price="1000000" handler="AppearanceStone">
 	</item>
 	<!-- Restores the original appearance of A-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36600" type="EtcItem" name="Scroll: Restore Equipment (A-grade)" icon="icon.change_restore_i04" immediateEffect="1"
-			weight="0" price="500000">
+			crystalType="a" weight="0" price="500000" handler="AppearanceStone">
 	</item>
 	<!-- Restores the original appearance of B-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36601" type="EtcItem" name="Scroll: Restore Equipment (B-grade)" icon="icon.change_restore_i03" immediateEffect="1"
-			weight="0" price="100000">
+			crystalType="b" weight="0" price="100000" handler="AppearanceStone">
 	</item>
 	<!-- Restores the original appearance of C-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36602" type="EtcItem" name="Scroll: Restore Equipment (C-grade)" icon="icon.change_restore_i02" immediateEffect="1"
-			weight="0" price="50000">
+			crystalType="c" weight="0" price="50000" handler="AppearanceStone">
 	</item>
 	<!-- Restores the original appearance of D-grade equipment (only weapons and armor, no hair accessories) whose appearances have been modified. Double-click to use. -->
 	<item id="36603" type="EtcItem" name="Scroll: Restore Equipment (D-grade)" icon="icon.change_restore_i01" immediateEffect="1"
-			weight="0" price="10000">
+			crystalType="d" weight="0" price="10000" handler="AppearanceStone">
 	</item>
 	<!--
 		Item that can change a hair accessory's appearance. Works for item with the same number of slots. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double click to use. Consumes 125000 adena for a 1-slot hair accessory and 200000 adena for a 2-slot hair accessory.
@@ -5389,7 +5392,7 @@
 	<item id="36945" type="EtcItem" name="Recipe: Exquisite Synthetic Cokes - Upgrade" icon="icon.etc_recipe_violet_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" recipeId="4151" isStackable="true" handler="Recipes">
 	</item>
-	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
+	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling success rate + 40%, Pulling/Danger Zone Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="36946" type="Armor" name="Lindvior's Earring" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
@@ -5417,7 +5420,7 @@
 	</item>
 	<!-- Mysterious essence with the power of chaos. Take it to Hardin at the Reliquary of the Giants to change your specialized awakened class. Cannot be used by Ertheia. Can be used only by the main class. 30-day. -->
 	<item id="36949" type="EtcItem" name="Chaos Essence" icon="icon.etc_water_of_silen_i00" immediateEffect="1" weight="0" isTradable="false"
-			isDropable="false" isDestroyable="false" isSellable="false" isDepositable="false">
+			isDropable="false" isSellable="false" isDepositable="false">
 	</item>
 	<!-- Lineage II Living Guide written by Master Toma with great efforts. -->
 	<item id="36950" type="EtcItem" name="Toma's Living Guide" icon="icon.etc_letter_in_bottle_white_i00" immediateEffect="1"

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 import java.sql.Connection;
@@ -37,8 +38,8 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.L2SiegeClan.SiegeClanType;
+import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2ControlTowerInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -63,11 +64,7 @@ public class Siege implements Siegable
 	
 	public static enum TeleportWhoType
 	{
-		All,
-		Attacker,
-		DefenderNotOwner,
-		Owner,
-		Spectator
+		All, Attacker, DefenderNotOwner, Owner, Spectator
 	}
 	
 	public class ScheduleEndSiegeTask implements Runnable
@@ -79,6 +76,7 @@ public class Siege implements Siegable
 			_castleInst = pCastle;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (!getIsInProgress())
@@ -143,6 +141,7 @@ public class Siege implements Siegable
 			_castleInst = pCastle;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (!getIsInProgress())
@@ -154,7 +153,7 @@ public class Siege implements Siegable
 				{
 					for (L2PcInstance pc : _castleInst.getSiege().getPlayersInZone())
 					{
-						for(L2SiegeClan sc : _castleInst.getSiege().getAttackerClans())
+						for (L2SiegeClan sc : _castleInst.getSiege().getAttackerClans())
 						{
 							if (sc.getClanId() == pc.getClanId())
 								pc.getClan().addReputationScore(1, true);
@@ -183,6 +182,7 @@ public class Siege implements Siegable
 			_castleInst = pCastle;
 		}
 		
+		@Override
 		public void run()
 		{
 			_scheduledStartSiegeTask.cancel(false);
@@ -269,6 +269,7 @@ public class Siege implements Siegable
 		startAutoTask();
 	}
 	
+	@Override
 	public void endSiege()
 	{
 		if (getIsInProgress())
@@ -301,7 +302,7 @@ public class Siege implements Siegable
 						if (member != null)
 						{
 							L2PcInstance player = member.getPlayerInstance();
-							if (player != null && player.isNoble())
+							if ((player != null) && player.isNoble())
 							{
 								HeroesManager.getInstance().setCastleTaken(player.getObjectId(), getCastle().getCastleId());
 							}
@@ -325,8 +326,8 @@ public class Siege implements Siegable
 			updatePlayerSiegeStateFlags(true);
 			saveCastleSiege(); // Save castle specific data
 			clearSiegeClan(); // Clear siege clan from db
-			SpawnTable.getInstance().despawnSpecificTable(getCastle().getName()+"_control_tower"); // Remove all control tower from this castle
-			SpawnTable.getInstance().despawnSpecificTable(getCastle().getName()+"_flame_tower");
+			SpawnTable.getInstance().despawnSpecificTable(getCastle().getName() + "_control_tower"); // Remove all control tower from this castle
+			SpawnTable.getInstance().despawnSpecificTable(getCastle().getName() + "_flame_tower");
 			_siegeGuardManager.unspawnSiegeGuard(); // Remove all spawned siege guard from this castle
 			if (getCastle().getOwnerId() > 0)
 				_siegeGuardManager.removeMercs();
@@ -374,10 +375,10 @@ public class Siege implements Siegable
 		{
 			if (getCastle().getOwnerId() > 0)
 				_siegeGuardManager.removeMercs(); // Remove all merc entry from db
-			
+				
 			if (getDefenderClans().isEmpty() && // If defender doesn't exist (Pc vs Npc)
-					getAttackerClans().size() == 1 // Only 1 attacker
-			)
+			(getAttackerClans().size() == 1 // Only 1 attacker
+			))
 			{
 				L2SiegeClan sc_newowner = getAttackerClan(getCastle().getOwnerId());
 				removeAttacker(sc_newowner);
@@ -389,7 +390,7 @@ public class Siege implements Siegable
 			{
 				int allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
 				if (getDefenderClans().isEmpty()) // If defender doesn't exist (Pc vs Npc)
-					// and only an alliance attacks
+				// and only an alliance attacks
 				{
 					// The player's clan is in an alliance
 					if (allyId != 0)
@@ -452,8 +453,8 @@ public class Siege implements Siegable
 				removeDefenderFlags(); // Removes defenders' flags
 				getCastle().removeUpgrade(); // Remove all castle upgrade
 				getCastle().spawnDoor(true); // Respawn door to castle but make them weaker (50% hp)
-				SpawnTable.getInstance().despawnSpecificTable(getCastle().getName()+"_control_tower"); // Remove all control tower from this castle
-				SpawnTable.getInstance().despawnSpecificTable(getCastle().getName()+"_flame_tower");
+				SpawnTable.getInstance().despawnSpecificTable(getCastle().getName() + "_control_tower"); // Remove all control tower from this castle
+				SpawnTable.getInstance().despawnSpecificTable(getCastle().getName() + "_flame_tower");
 				_controlTowerCount = 0;//Each new siege midvictory CT are completely respawned.
 				_flameTowerCount = 0;
 				updatePlayerSiegeStateFlags(false);
@@ -464,6 +465,7 @@ public class Siege implements Siegable
 	/**
 	 * When siege starts<BR><BR>
 	 */
+	@Override
 	public void startSiege()
 	{
 		if (!getIsInProgress())
@@ -490,10 +492,10 @@ public class Siege implements Siegable
 			updatePlayerSiegeStateFlags(false);
 			teleportPlayer(Siege.TeleportWhoType.Attacker, MapRegionTable.TeleportWhereType.Town); // Teleport to the closest town
 			//teleportPlayer(Siege.TeleportWhoType.Spectator, MapRegionTable.TeleportWhereType.Town);	  // Teleport to the second closest town
-			SpawnTable.getInstance().spawnSpecificTable(getCastle().getName()+"_control_tower");
-			SpawnTable.getInstance().spawnSpecificTable(getCastle().getName()+"_flame_tower"); // Spawn control tower
-			_controlTowerCount = SpawnTable.getInstance().getSpecificSpawns(getCastle().getName()+"_control_tower").size();
-			_flameTowerCount = SpawnTable.getInstance().getSpecificSpawns(getCastle().getName()+"_flame_tower").size();;
+			SpawnTable.getInstance().spawnSpecificTable(getCastle().getName() + "_control_tower");
+			SpawnTable.getInstance().spawnSpecificTable(getCastle().getName() + "_flame_tower"); // Spawn control tower
+			_controlTowerCount = SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_control_tower").size();
+			_flameTowerCount = SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_flame_tower").size();;
 			getCastle().spawnDoor(); // Spawn door
 			spawnSiegeGuard(); // Spawn siege guard
 			MercTicketManager.getInstance().deleteTickets(getCastle().getCastleId()); // remove the tickets from the ground
@@ -510,7 +512,7 @@ public class Siege implements Siegable
 			for (L2SiegeClan sc : getAttackerClans())
 			{
 				L2Clan clan = ClanTable.getInstance().getClan(sc.getClanId());
-				if(clan.getLevel() >= 5)
+				if (clan.getLevel() >= 5)
 				{
 					clan.addReputationScore(clan.getMembersCount(), true);
 					// TODO : Clan Reputation is gained along with Individual Fame.
@@ -678,6 +680,7 @@ public class Siege implements Siegable
 	 * Return true if clan is attacker<BR><BR>
 	 * @param clan The L2Clan of the player
 	 */
+	@Override
 	public boolean checkIsAttacker(L2Clan clan)
 	{
 		return (getAttackerClan(clan) != null);
@@ -687,6 +690,7 @@ public class Siege implements Siegable
 	 * Return true if clan is defender<BR><BR>
 	 * @param clan The L2Clan of the player
 	 */
+	@Override
 	public boolean checkIsDefender(L2Clan clan)
 	{
 		return (getDefenderClan(clan) != null);
@@ -727,7 +731,7 @@ public class Siege implements Siegable
 				if (clan != null)
 					clan.checkTendency();
 			}
-
+			
 			getAttackerClans().clear();
 			
 			for (L2SiegeClan sc : getDefenderClans())
@@ -775,6 +779,7 @@ public class Siege implements Siegable
 	}
 	
 	/** Return list of L2PcInstance registered as attacker in the zone. */
+	@Override
 	public List<L2PcInstance> getAttackersInZone()
 	{
 		List<L2PcInstance> players = new ArrayList<L2PcInstance>();
@@ -905,7 +910,7 @@ public class Siege implements Siegable
 			allyId = ClanTable.getInstance().getClan(getCastle().getOwnerId()).getAllyId();
 		if (allyId != 0)
 		{
-			if (player.getClan().getAllyId() == allyId && !force)
+			if ((player.getClan().getAllyId() == allyId) && !force)
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_ATTACK_ALLIANCE_CASTLE));
 				return;
@@ -969,7 +974,7 @@ public class Siege implements Siegable
 	 */
 	public void removeSiegeClan(L2Clan clan)
 	{
-		if (clan == null || clan.getHasCastle() == getCastle().getCastleId() || !SiegeManager.getInstance().checkIsRegistered(clan, getCastle().getCastleId()))
+		if ((clan == null) || (clan.getHasCastle() == getCastle().getCastleId()) || !SiegeManager.getInstance().checkIsRegistered(clan, getCastle().getCastleId()))
 			return;
 		removeSiegeClan(clan.getClanId());
 	}
@@ -1084,7 +1089,7 @@ public class Siege implements Siegable
 		}
 		else if (getIsInProgress())
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_SIEGE_REGISTRATION_TIME2));
-		else if (player.getClan() == null || player.getClan().getLevel() < SiegeManager.getInstance().getSiegeClanMinLevel())
+		else if ((player.getClan() == null) || (player.getClan().getLevel() < SiegeManager.getInstance().getSiegeClanMinLevel()))
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_CLAN_LEVEL_5_ABOVE_MAY_SIEGE));
 		else if (player.getClan().getHasCastle() > 0)
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_THAT_OWNS_CASTLE_CANNOT_PARTICIPATE_OTHER_SIEGE));
@@ -1094,11 +1099,9 @@ public class Siege implements Siegable
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_REQUESTED_SIEGE_BATTLE));
 		else if (checkIfAlreadyRegisteredForSameDay(player.getClan()))
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.APPLICATION_DENIED_BECAUSE_ALREADY_SUBMITTED_A_REQUEST_FOR_ANOTHER_SIEGE_BATTLE));
-		else if ((typeId == ATTACKER)
-				&& (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans()))
+		else if ((typeId == ATTACKER) && (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans()))
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACKER_SIDE_FULL));
-		else if ((typeId == DEFENDER || typeId == DEFENDER_NOT_APPROWED || typeId == OWNER)
-				&& (getDefenderClans().size() + getDefenderWaitingClans().size() >= SiegeManager.getInstance().getDefenderMaxClans()))
+		else if (((typeId == DEFENDER) || (typeId == DEFENDER_NOT_APPROWED) || (typeId == OWNER)) && ((getDefenderClans().size() + getDefenderWaitingClans().size()) >= SiegeManager.getInstance().getDefenderMaxClans()))
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DEFENDER_SIDE_FULL));
 		else
 			return true;
@@ -1116,7 +1119,7 @@ public class Siege implements Siegable
 		{
 			if (siege == this)
 				continue;
-			if (siege.getSiegeDate().get(Calendar.DAY_OF_WEEK) == this.getSiegeDate().get(Calendar.DAY_OF_WEEK))
+			if (siege.getSiegeDate().get(Calendar.DAY_OF_WEEK) == getSiegeDate().get(Calendar.DAY_OF_WEEK))
 			{
 				if (siege.checkIsAttacker(clan))
 					return true;
@@ -1284,9 +1287,9 @@ public class Siege implements Siegable
 		PreparedStatement statement = null;
 		try
 		{
-			if (typeId == DEFENDER || typeId == DEFENDER_NOT_APPROWED || typeId == OWNER)
+			if ((typeId == DEFENDER) || (typeId == DEFENDER_NOT_APPROWED) || (typeId == OWNER))
 			{
-				if (getDefenderClans().size() + getDefenderWaitingClans().size() >= SiegeManager.getInstance().getDefenderMaxClans())
+				if ((getDefenderClans().size() + getDefenderWaitingClans().size()) >= SiegeManager.getInstance().getDefenderMaxClans())
 					return;
 			}
 			else
@@ -1313,7 +1316,7 @@ public class Siege implements Siegable
 				statement.execute();
 			}
 			
-			if (typeId == DEFENDER || typeId == OWNER)
+			if ((typeId == DEFENDER) || (typeId == OWNER))
 			{
 				addDefender(clan.getClanId());
 			}
@@ -1341,11 +1344,11 @@ public class Siege implements Siegable
 	{
 		while (getCastle().getSiegeDate().getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
 		{
-			if (getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY)
+			if ((getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY) && (getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY))
 				getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
 			// from CT2.3 Castle sieges are on Sunday, but if server admins allow to set day of the siege
 			// than sieges can occur on Saturdays as well
-			if (getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY && !Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
+			if ((getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) && !Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
 				getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
 			// set the next siege day to the next weekend
 			getCastle().getSiegeDate().add(Calendar.DAY_OF_MONTH, 7);
@@ -1388,7 +1391,7 @@ public class Siege implements Siegable
 				y = spawn.getY();
 				z = spawn.getZ();
 				
-				for (L2Spawn ct : SpawnTable.getInstance().getSpecificSpawns(getCastle().getName()+"_control_tower"))
+				for (L2Spawn ct : SpawnTable.getInstance().getSpecificSpawns(getCastle().getName() + "_control_tower"))
 				{
 					if (ct == null)
 						continue;
@@ -1407,6 +1410,7 @@ public class Siege implements Siegable
 		}
 	}
 	
+	@Override
 	public final L2SiegeClan getAttackerClan(L2Clan clan)
 	{
 		if (clan == null)
@@ -1414,14 +1418,16 @@ public class Siege implements Siegable
 		return getAttackerClan(clan.getClanId());
 	}
 	
+	@Override
 	public final L2SiegeClan getAttackerClan(int clanId)
 	{
 		for (L2SiegeClan sc : getAttackerClans())
-			if (sc != null && sc.getClanId() == clanId)
+			if ((sc != null) && (sc.getClanId() == clanId))
 				return sc;
 		return null;
 	}
 	
+	@Override
 	public final List<L2SiegeClan> getAttackerClans()
 	{
 		if (_isNormalSide)
@@ -1436,11 +1442,12 @@ public class Siege implements Siegable
 	
 	public final Castle getCastle()
 	{
-		if (_castle == null || _castle.length <= 0)
+		if ((_castle == null) || (_castle.length <= 0))
 			return null;
 		return _castle[0];
 	}
 	
+	@Override
 	public final L2SiegeClan getDefenderClan(L2Clan clan)
 	{
 		if (clan == null)
@@ -1448,14 +1455,16 @@ public class Siege implements Siegable
 		return getDefenderClan(clan.getClanId());
 	}
 	
+	@Override
 	public final L2SiegeClan getDefenderClan(int clanId)
 	{
 		for (L2SiegeClan sc : getDefenderClans())
-			if (sc != null && sc.getClanId() == clanId)
+			if ((sc != null) && (sc.getClanId() == clanId))
 				return sc;
 		return null;
 	}
 	
+	@Override
 	public final List<L2SiegeClan> getDefenderClans()
 	{
 		if (_isNormalSide)
@@ -1473,7 +1482,7 @@ public class Siege implements Siegable
 	public final L2SiegeClan getDefenderWaitingClan(int clanId)
 	{
 		for (L2SiegeClan sc : getDefenderWaitingClans())
-			if (sc != null && sc.getClanId() == clanId)
+			if ((sc != null) && (sc.getClanId() == clanId))
 				return sc;
 		return null;
 	}
@@ -1498,6 +1507,7 @@ public class Siege implements Siegable
 		return getCastle().getIsTimeRegistrationOver();
 	}
 	
+	@Override
 	public final Calendar getSiegeDate()
 	{
 		return getCastle().getSiegeDate();
@@ -1515,6 +1525,7 @@ public class Siege implements Siegable
 			saveSiegeDate();
 	}
 	
+	@Override
 	public List<L2Npc> getFlag(L2Clan clan)
 	{
 		if (clan != null)

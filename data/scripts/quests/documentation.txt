@@ -88,7 +88,7 @@ These functions, their triggers, and the parameters passed into the script are d
 		two registration being ignored.
 	NOTE 2: Since a Quest link isn't clicked in order to reach this, a quest state can be invalid within this
 		function.  The coder of the script may need to create a new quest state (if necessary), by using:
-		st = self.newQuestState(player)	
+		st = self.newQuestState(player)
 	NOTE 3: the returned value of onFirstTalk replaces the default html that would have otherwise been loaded 
 		from a subfolder of .../gameserver/data/html/...
 		If you wish to show the default html, within onFirstTalk do npc.showChatWindow(player) and then return ""
@@ -153,7 +153,7 @@ These functions, their triggers, and the parameters passed into the script are d
 		Registers an NPC for onFactionCall events.  
 	h) addAggroRangeEnterId(npc)
 		Registers an NPC for onAggroRangeEnter events (remember, those events aren't yet supported and will not be 
-		triggered by core yet).		
+		triggered by core yet).
 		
 13) OVERRIDABLE QUEST FUNCTIONS:
 	There exist a few functions which are automatically called by the core (and optionally manually called within

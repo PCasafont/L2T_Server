@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 		
 		for (L2Abnormal e : c.getAllEffects())
 		{
-			if (e == null || !e.getShowIcon())
+			if ((e == null) || !e.getShowIcon())
 				continue;
 			
 			switch (e.getType())
@@ -70,7 +71,7 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 	
 	public void addEffect(int skillId, int level, int comboId, int duration, int effector)
 	{
-		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
+		if ((skillId == 2031) || (skillId == 2032) || (skillId == 2037) || (skillId == 26025) || (skillId == 26026))
 			return;
 		
 		_effects.add(new Effect(skillId, level, comboId, duration, effector));
@@ -79,9 +80,6 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0xe6);
-		
 		writeD(_character.getObjectId());
 		
 		writeH(_effects.size());
@@ -90,24 +88,13 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 		{
 			writeD(temp._skillId);
 			writeD(temp._level);
-			
 			writeH(temp._comboId);
-			
 			if (temp._duration == -1)
 				writeH(-1);
 			else
-				writeH(temp._duration / 1000);
+				writeH(temp._duration / 1000 + 1);
 			
 			writeD(temp._effector);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "AbnormalStatusUpdateFromTarget";
 	}
 }

@@ -171,7 +171,7 @@ class Quest (JQuest) :
             htmltext = "30565-01.htm"
             st.exitQuest(1)
           else:
-            if player.getClassId() != 0x32 :
+            if player.getClassId().getId() != 0x32 :
               htmltext = "30565-02.htm"
               st.exitQuest(1)
             else:

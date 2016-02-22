@@ -3,19 +3,20 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.loginserver.network.clientpackets;
 
-import l2server.loginserver.network.serverpackets.ServerList;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import l2server.loginserver.network.serverpackets.ServerList;
 
 /**
  * Format: ddc
@@ -58,8 +59,8 @@ public class RequestServerList extends L2LoginClientPacket
 	{
 		if (super._buf.remaining() >= 8)
 		{
-			_skey1  = readD(); // loginOk 1
-			_skey2  = readD(); // loginOk 2
+			_skey1 = readD(); // loginOk 1
+			_skey2 = readD(); // loginOk 2
 			return true;
 		}
 		else

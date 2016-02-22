@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -32,9 +33,9 @@ import l2server.util.xml.XmlNode;
 
 /**
  * Main Table to Load Npc Walkers Routes and Chat SQL Table.<br>
- * 
+ *
  * @author Rayan RPG for L2Emu Project, JIV
- * 
+ *
  * @since 927
  *
  */
@@ -84,7 +85,7 @@ public class NpcWalkersTable
 						}
 					}
 					//_routes.put(npcId, route);
-
+					
 					try
 					{
 						L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
@@ -95,7 +96,7 @@ public class NpcWalkersTable
 						walkerSpawn.setZ(route.get(0).getMoveZ());
 						
 						SpawnTable.getInstance().addNewSpawn(walkerSpawn, false);
-
+						
 						walkerSpawn.startRespawn();
 						walkerSpawn.doSpawn();
 						
@@ -114,7 +115,7 @@ public class NpcWalkersTable
 		}
 		
 		for (Object list : _routes.getValues())
-			((ArrayList<?>)list).trimToSize();
+			((ArrayList<?>) list).trimToSize();
 		
 		Log.info("WalkerRoutesTable: Loaded " + _routes.size() + " Npc Walker Routes.");
 	}

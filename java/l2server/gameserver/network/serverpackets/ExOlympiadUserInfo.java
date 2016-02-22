@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -27,7 +28,6 @@ import l2server.gameserver.model.olympiad.OlympiadParticipant;
 public class ExOlympiadUserInfo extends L2GameServerPacket
 {
 	// chcdSddddd
-	private static final String _S__FE_29_OLYMPIADUSERINFO = "[S] FE:7A ExOlympiadUserInfo";
 	private L2PcInstance _player;
 	private OlympiadParticipant _par = null;
 	private int _curHp;
@@ -40,9 +40,9 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 		_player = player;
 		if (_player != null)
 		{
-			_curHp = (int)_player.getCurrentHp();
+			_curHp = (int) _player.getCurrentHp();
 			_maxHp = _player.getMaxVisibleHp();
-			_curCp = (int)_player.getCurrentCp();
+			_curCp = (int) _player.getCurrentCp();
 			_maxCp = _player.getMaxCp();
 		}
 		else
@@ -60,9 +60,9 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 		_player = par.player;
 		if (_player != null)
 		{
-			_curHp = (int)_player.getCurrentHp();
+			_curHp = (int) _player.getCurrentHp();
 			_maxHp = _player.getMaxVisibleHp();
-			_curCp = (int)_player.getCurrentCp();
+			_curCp = (int) _player.getCurrentCp();
 			_maxCp = _player.getMaxCp();
 		}
 		else
@@ -77,8 +77,6 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x7b);
 		if (_player != null)
 		{
 			writeC(_player.getOlympiadSide());
@@ -93,19 +91,10 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 			writeS(_par.name);
 			writeD(_par.baseClass);
 		}
-
+		
 		writeD(_curHp);
 		writeD(_maxHp);
 		writeD(_curCp);
 		writeD(_maxCp);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__FE_29_OLYMPIADUSERINFO;
 	}
 }

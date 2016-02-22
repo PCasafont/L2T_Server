@@ -48,7 +48,7 @@ class Quest (JQuest) :
             if player.getLevel() < 18 :
                 htmltext = "32197-00a.htm"
                 st.exitQuest(1)
-            elif player.getClassId() != 123 :
+            elif player.getClassId().getId() != 123 :
                 htmltext = "32197-00b.htm"
                 st.exitQuest(1)
             elif id == State.CREATED :
@@ -71,7 +71,7 @@ class Quest (JQuest) :
                     st.exitQuest(False)
                     st.saveGlobalQuestVar("1ClassQuestFinished","1")
                     st.playSound("ItemSound.quest_finish")
-                    player.sendPacket(SocialAction(player.getObjectId(),3))
+                    player.sendPacket(SocialAction(player,3))
                     htmltext = "32197-06.htm"
         elif npcId == Shubain :
             if cond == 1 :

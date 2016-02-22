@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q279_TargetOfOpportunity;
 
 import java.util.Arrays;
@@ -33,20 +34,11 @@ public final class Q279_TargetOfOpportunity extends Quest
 	
 	// NPC's
 	private static final int JERIAN = 32302;
-	private static final int[] MONSTERS =
-	{
-		22373, 22374, 22375, 22376
-	};
+	private static final int[] MONSTERS = { 22373, 22374, 22375, 22376 };
 	
 	// Items
-	private static final int[] SEAL_COMPONENTS =
-	{
-		15517, 15518, 15519, 15520
-	};
-	private static final int[] SEAL_BREAKERS =
-	{
-		15515, 15516
-	};
+	private static final int[] SEAL_COMPONENTS = { 15517, 15518, 15519, 15520 };
+	private static final int[] SEAL_BREAKERS = { 15515, 15516 };
 	
 	public Q279_TargetOfOpportunity(int questId, String name, String descr)
 	{

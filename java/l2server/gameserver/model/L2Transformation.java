@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -36,7 +37,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	private L2PcInstance _player;
 	
 	/**
-	 * 
+	 *
 	 * @param id Internal id that server will use to associate this transformation
 	 * @param graphicalId Client visible transformation id
 	 * @param collisionRadius Collision Radius of the player while transformed
@@ -52,7 +53,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param id Internal id(will be used also as client graphical id) that server will use to associate this transformation
 	 * @param collisionRadius Collision Radius of the player while transformed
 	 * @param collisionHeight  Collision Height of the player while transformed
@@ -63,7 +64,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param id Internal id(will be used also as client graphical id) that server will use to associate this transformation
 	 * Used for stances
 	 */
@@ -150,6 +151,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 		getPlayer().transform(this);
 	}
 	
+	@Override
 	public void run()
 	{
 		stop();
@@ -196,10 +198,10 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		return true;
 	}
-
+	
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName()+" [_id=" + _id + ", _graphicalId=" + _graphicalId + ", _collisionRadius=" + _collisionRadius + ", _collisionHeight=" + _collisionHeight + ", _isStance=" + _isStance + "]";
+		return getClass().getSimpleName() + " [_id=" + _id + ", _graphicalId=" + _graphicalId + ", _collisionRadius=" + _collisionRadius + ", _collisionHeight=" + _collisionHeight + ", _isStance=" + _isStance + "]";
 	}
 }

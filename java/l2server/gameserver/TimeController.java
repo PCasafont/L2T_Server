@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.util.Iterator;
@@ -34,6 +35,12 @@ public class TimeController
 {
 	public static final int TICKS_PER_SECOND = 10; // not able to change this without checking through code
 	public static final int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
+	public static final int IG_DAYS_PER_DAY = 6;
+	public static final int MILLIS_PER_IG_DAY = (1000 * 60 * 60 * 24) / IG_DAYS_PER_DAY;
+	public static final int SECONDS_PER_IG_DAY = MILLIS_PER_IG_DAY / 1000;
+	public static final int MINUTES_PER_IG_DAY = SECONDS_PER_IG_DAY / 60;
+	public static final int TICKS_PER_IG_DAY = SECONDS_PER_IG_DAY * TICKS_PER_SECOND;
+	public static final int TICKS_SUN_STATE_CHANGE = TICKS_PER_IG_DAY / 4;
 	
 	protected static int _gameTicks;
 	protected static long _gameStartTime;
@@ -158,11 +165,11 @@ public class TimeController
 					
 					if (oldTicks != _gameTicks)
 						moveObjects(); // Runs possibly too often
-					
+						
 					runtime = (System.currentTimeMillis() - _gameStartTime) - runtime;
 					
 					// calculate sleep time... time needed to next tick minus time it takes to call moveObjects()
-					sleepTime = 1 + MILLIS_IN_TICK - ((int) runtime) % MILLIS_IN_TICK;
+					sleepTime = (1 + MILLIS_IN_TICK) - (((int) runtime) % MILLIS_IN_TICK);
 					
 					//Logozo.finest("TICK: "+_gameTicks);
 					
@@ -196,6 +203,7 @@ public class TimeController
 			_ended = ended;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -222,6 +230,7 @@ public class TimeController
 		int h;
 		boolean tempIsNight;
 		
+		@Override
 		public void run()
 		{
 			h = (getGameTime() / 60) % 24; // Time in hour

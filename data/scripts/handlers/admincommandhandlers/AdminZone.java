@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
@@ -45,18 +46,13 @@ import l2server.util.StringUtil;
  */
 public class AdminZone implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_zone_check",
-		"admin_zone_reload",
-		"admin_zone_visual",
-		"admin_zone_visual_clear"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_zone_check", "admin_zone_reload", "admin_zone_visual", "admin_zone_visual_clear" };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
+	@Override
 	@SuppressWarnings("deprecation")
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -72,7 +68,7 @@ public class AdminZone implements IAdminCommandHandler
 		if (actualCommand.equalsIgnoreCase("admin_zone_check"))
 		{
 			showHtml(activeChar);
-			activeChar.sendMessage("MapRegion: x:" + MapRegionTable.getInstance().getMapRegionX(activeChar.getX()) + " y:" + MapRegionTable.getInstance().getMapRegionY(activeChar.getY()) + " ("+MapRegionTable.getInstance().getMapRegion(activeChar.getX(),activeChar.getY())+")");
+			activeChar.sendMessage("MapRegion: x:" + MapRegionTable.getInstance().getMapRegionX(activeChar.getX()) + " y:" + MapRegionTable.getInstance().getMapRegionY(activeChar.getY()) + " (" + MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY()) + ")");
 			getGeoRegionXY(activeChar);
 			activeChar.sendMessage("Closest Town: " + MapRegionTable.getInstance().getClosestTownName(activeChar));
 			
@@ -156,7 +152,7 @@ public class AdminZone implements IAdminCommandHandler
 			{
 				if (zone.getName() != null)
 				{
-					StringUtil.append(zones, zone.getName()  + (zone.getId() < 300000 ? " ("+ String.valueOf(zone.getId())+ ")<br1>" : "<br1>"));
+					StringUtil.append(zones, zone.getName() + (zone.getId() < 300000 ? " (" + String.valueOf(zone.getId()) + ")<br1>" : "<br1>"));
 				}
 				else
 					StringUtil.append(zones, String.valueOf(zone.getId()));
@@ -170,15 +166,17 @@ public class AdminZone implements IAdminCommandHandler
 	private static void getGeoRegionXY(L2PcInstance activeChar)
 	{
 		int worldX = activeChar.getX();
-		int worldY = activeChar.getY();				
-		int geoX = ((((worldX - (-327680)) >> 4) >> 11)+10);
-		int geoY = ((((worldY - (-262144)) >> 4) >> 11)+10);
-		activeChar.sendMessage("GeoRegion: "+geoX+"_"+geoY+"");
+		int worldY = activeChar.getY();
+		int geoX = ((((worldX - (-327680)) >> 4) >> 11) + 10);
+		int geoY = ((((worldY - (-262144)) >> 4) >> 11) + 10);
+		activeChar.sendMessage("GeoRegion: " + geoX + "_" + geoY + "");
 	}
+	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

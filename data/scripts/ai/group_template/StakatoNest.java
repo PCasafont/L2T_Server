@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import java.util.List;
@@ -99,7 +100,7 @@ public class StakatoNest extends L2AttackableAIScript
 	{
 		L2MonsterInstance _minion = checkMinion(npc);
 		
-		if (npc.getNpcId() == _stakato_nurse && _minion != null)
+		if ((npc.getNpcId() == _stakato_nurse) && (_minion != null))
 		{
 			Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
 			for (int i = 0; i < 3; i++)
@@ -111,12 +112,12 @@ public class StakatoNest extends L2AttackableAIScript
 		else if (npc.getNpcId() == _stakato_baby)
 		{
 			L2MonsterInstance _leader = ((L2MonsterInstance) npc).getLeader();
-			if (_leader != null && !_leader.isDead())
+			if ((_leader != null) && !_leader.isDead())
 			{
 				startQuestTimer("nurse_change", 5000, _leader, killer);
 			}
 		}
-		else if (npc.getNpcId() == _stakato_male && _minion != null)
+		else if ((npc.getNpcId() == _stakato_male) && (_minion != null))
 		{
 			Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
 			for (int i = 0; i < 3; i++)
@@ -128,7 +129,7 @@ public class StakatoNest extends L2AttackableAIScript
 		else if (npc.getNpcId() == _stakato_female)
 		{
 			L2MonsterInstance _leader = ((L2MonsterInstance) npc).getLeader();
-			if (_leader != null && !_leader.isDead())
+			if ((_leader != null) && !_leader.isDead())
 			{
 				startQuestTimer("male_change", 5000, _leader, killer);
 			}
@@ -150,7 +151,7 @@ public class StakatoNest extends L2AttackableAIScript
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (Util.contains(_cocoons, npc.getNpcId()) && Util.contains(targets, npc) && skill.getId() == _growth_accelerator)
+		if (Util.contains(_cocoons, npc.getNpcId()) && Util.contains(targets, npc) && (skill.getId() == _growth_accelerator))
 		{
 			npc.doDie(caster);
 			L2Npc _spawned = addSpawn(_stakato_chief, npc.getX(), npc.getY(), npc.getZ(), Util.calculateHeadingFrom(npc, caster), false, 0, true);
@@ -209,7 +210,7 @@ public class StakatoNest extends L2AttackableAIScript
 	
 	private void attackPlayer(L2PcInstance player, L2Npc npc)
 	{
-		if (npc != null && player != null)
+		if ((npc != null) && (player != null))
 		{
 			((L2Attackable) npc).setIsRunning(true);
 			((L2Attackable) npc).addDamageHate(player, 0, 999);

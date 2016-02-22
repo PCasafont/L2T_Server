@@ -13,22 +13,24 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
+import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MultiSell;
-import l2server.gameserver.model.multisell.Entry;
 import l2server.gameserver.model.multisell.Ingredient;
 import l2server.gameserver.model.multisell.ListContainer;
+import l2server.gameserver.model.multisell.MultiSellEntry;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.templates.item.L2Item;
 
@@ -39,7 +41,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class MultiSellList extends L2GameServerPacket
 {
-	private static final String _S__D0_MULTISELLLIST = "[S] d0 MultiSellList";
 	
 	private int _size, _index;
 	private final ListContainer _list;
@@ -60,21 +61,55 @@ public final class MultiSellList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xd0);
-		writeD(_list.getListId());	// list id
+		writeD(_list.getListId()); // list id
 		writeC(0x00);
-		writeD(1 + _index / MultiSell.PAGE_SIZE); // page started from 1
-		writeD(_finished ? 1 : 0);	// finished
-		writeD(MultiSell.PAGE_SIZE);	// size of pages
+		writeD(1 + (_index / MultiSell.PAGE_SIZE)); // page started from 1
+		writeD(_finished ? 1 : 0); // finished
+		writeD(MultiSell.PAGE_SIZE); // size of pages
 		writeD(_size); //list length
 		writeC(_list.isChance() ? 0x01 : 0x00); // Old or modern format
 		
-		Entry ent;
+		//String toLog = "";
+		MultiSellEntry ent;
 		while (_size-- > 0)
 		{
 			ent = _list.getEntries().get(_index++);
+			
+			final Ingredient product = ent.getProducts().get(0);
+			
+			if (product.getItemId() > 0)
+			{
+				L2Item productTemplate = ItemTable.getInstance().getTemplate(product.getItemId());
+				
+				if (productTemplate != null)
+					productTemplate.setSalePrice(0);
+			}
+			
+			/*
+			toLog += "\t<!-- " + productTemplate.getName() + " -->\n";
+			toLog += "\t<item>\n";
+
+			toLog += "\t\t<ingredient id=\"57\" count=\"" + productTemplate.getReferencePrice() * 1000 + "\"/><!-- Adena -->\n";
+			 */
+			/*
+			for (Ingredient i : ent.getIngredients())
+			{
+				L2Item itemTemplate = ItemTable.getInstance().getTemplate(i.getItemId());
+
+				if (itemTemplate == null)
+					continue;
+				else if (itemTemplate.getItemId() == 57)
+					continue;
+
+				//long itemCount = i.getItemId() >= 5570 && i.getItemId() <= 5574 ? i.getItemCount() / 5 : i.getItemCount();
+				//toLog += "\t\t<ingredient id=\"" + i.getItemId() + "\" count=\"" + itemCount + "\"/> <!-- " + itemTemplate.getName() + " -->\n";
+			}*/
+			/*
+			toLog += "\t\t<production id=\"" + product.getItemId() + "\" count=\"" + product.getItemCount() + "\"/>\n";
+			toLog += "\t</item>\n";
+			 */
 			writeD(ent.getEntryId());
 			writeC(ent.isStackable() ? 1 : 0);
 			writeH(0x00); // C6
@@ -88,11 +123,16 @@ public final class MultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeH(0x00); // T1
 			writeH(0x00); // T1
+			if (Config.IS_UNDERGROUND)
+			{
+				writeC(0x00);
+				writeC(0x00);
+			}
 			
 			writeH(ent.getProducts().size());
 			writeH(ent.getIngredients().size());
 			
-			for (Ingredient ing: ent.getProducts())
+			for (Ingredient ing : ent.getProducts())
 			{
 				writeD(ing.getItemId());
 				if (ing.getTemplate() != null)
@@ -116,6 +156,17 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(ing.getItemInfo().getElementPower()); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(ing.getItemInfo().getElementals()[j]);
+					if (Config.IS_UNDERGROUND)
+					{
+						int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
+						int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
+						writeC(ensoulEffects.length);
+						for (int effect : ensoulEffects)
+							writeD(effect);
+						writeC(ensoulSpecialEffects.length);
+						for (int effect : ensoulSpecialEffects)
+							writeD(effect);
+					}
 				}
 				else
 				{
@@ -126,6 +177,11 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(0x00); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(0x00);
+					if (Config.IS_UNDERGROUND)
+					{
+						writeC(0x00);
+						writeC(0x00);
+					}
 				}
 			}
 			
@@ -139,9 +195,7 @@ public final class MultiSellList extends L2GameServerPacket
 				{
 					L2Item productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
 					L2Item ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
-					getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL,
-							"Store", "WARNING: The " + productItem.getName() + "'s necessary " +
-							ingItem.getName() + " quantity is " + ing.getItemCount()));
+					getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL, "Store", "WARNING: The " + productItem.getName() + "'s necessary " + ingItem.getName() + " quantity is " + ing.getItemCount()));
 				}
 				
 				if (ing.getItemInfo() != null)
@@ -152,6 +206,17 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(ing.getItemInfo().getElementPower()); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(ing.getItemInfo().getElementals()[j]);
+					if (Config.IS_UNDERGROUND)
+					{
+						int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
+						int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
+						writeC(ensoulEffects.length);
+						for (int effect : ensoulEffects)
+							writeD(effect);
+						writeC(ensoulSpecialEffects.length);
+						for (int effect : ensoulSpecialEffects)
+							writeD(effect);
+					}
 				}
 				else
 				{
@@ -161,14 +226,13 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(0x00); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(0x00);
+					if (Config.IS_UNDERGROUND)
+					{
+						writeC(0x00);
+						writeC(0x00);
+					}
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__D0_MULTISELLLIST;
 	}
 }

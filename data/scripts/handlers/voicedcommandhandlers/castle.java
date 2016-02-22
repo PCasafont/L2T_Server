@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.voicedcommandhandlers;
 
 import l2server.gameserver.handler.IVoicedCommandHandler;
@@ -26,24 +27,20 @@ import l2server.gameserver.model.entity.Castle;
  */
 public class castle implements IVoicedCommandHandler
 {
-	private static final String[] VOICED_COMMANDS =
-	{
-		"open doors",
-		"close doors",
-		"ride wyvern"
-	};
+	private static final String[] VOICED_COMMANDS = { "open doors", "close doors", "ride wyvern" };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
 	{
 		if (command.startsWith("open doors") && params.equals("castle") && (activeChar.isClanLeader()))
 		{
 			L2DoorInstance door = (L2DoorInstance) activeChar.getTarget();
 			Castle castle = CastleManager.getInstance().getCastleById(activeChar.getClan().getHasCastle());
-			if (door == null || castle == null)
+			if ((door == null) || (castle == null))
 				return false;
 			if (castle.checkIfInZone(door.getX(), door.getY(), door.getZ()))
 			{
@@ -55,7 +52,7 @@ public class castle implements IVoicedCommandHandler
 		{
 			L2DoorInstance door = (L2DoorInstance) activeChar.getTarget();
 			Castle castle = CastleManager.getInstance().getCastleById(activeChar.getClan().getHasCastle());
-			if (door == null || castle == null)
+			if ((door == null) || (castle == null))
 				return false;
 			if (castle.checkIfInZone(door.getX(), door.getY(), door.getZ()))
 			{
@@ -65,7 +62,7 @@ public class castle implements IVoicedCommandHandler
 		}
 		else if (command.startsWith("ride wyvern") && params.equals("castle"))
 		{
-			if (activeChar.getClan().getHasCastle() > 0 && activeChar.isClanLeader())
+			if ((activeChar.getClan().getHasCastle() > 0) && activeChar.isClanLeader())
 			{
 				activeChar.mount(12621, 0, true);
 			}
@@ -74,9 +71,10 @@ public class castle implements IVoicedCommandHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
+	@Override
 	public String[] getVoicedCommandList()
 	{
 		return VOICED_COMMANDS;

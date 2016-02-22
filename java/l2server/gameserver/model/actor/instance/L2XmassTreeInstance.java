@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.Collection;
@@ -46,9 +47,10 @@ public class L2XmassTreeInstance extends L2Npc
 			_skill = skill;
 		}
 		
+		@Override
 		public void run()
 		{
-			if (_skill == null || _caster.isInsideZone(ZONE_PEACE))
+			if ((_skill == null) || _caster.isInsideZone(ZONE_PEACE))
 			{
 				_caster._aiTask.cancel(false);
 				_caster._aiTask = null;
@@ -66,13 +68,14 @@ public class L2XmassTreeInstance extends L2Npc
 		super(objectId, template);
 		setInstanceType(InstanceType.L2XmassTreeInstance);
 		if (template.NpcId == SPECIAL_TREE_ID)
-			_aiTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new XmassAI(this,SkillTable.getInstance().getInfo(2139, 1)), 3000, 3000);
+			_aiTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance().getInfo(2139, 1)), 3000, 3000);
 	}
 	
 	@Override
 	public void deleteMe()
 	{
-		if (_aiTask != null) _aiTask.cancel(true);
+		if (_aiTask != null)
+			_aiTask.cancel(true);
 		
 		super.deleteMe();
 	}

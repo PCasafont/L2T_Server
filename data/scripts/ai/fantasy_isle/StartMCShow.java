@@ -1,3 +1,4 @@
+
 package ai.fantasy_isle;
 
 import l2server.gameserver.instancemanager.QuestManager;

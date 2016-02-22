@@ -3,17 +3,19 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.ZoneVideos;
 
+import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Race;
@@ -26,19 +28,16 @@ public class ZoneVideos extends Quest
 {
 	private static final boolean _showIntroMovies = false;
 	
-	private static final int[] ZONES =
-	{
-		523400, 523402, 523403, 523404
-	};
+	private static final int[] ZONES = { 523400, 523402, 523403, 523404 };
 	
-	private static final int[] VIDEOS =
-	{
-		101, 102, 103, 78, 77
-	};
+	private static final int[] VIDEOS = { 101, 102, 103, 78, 77 };
 	
 	@Override
 	public final String onEnterWorld(L2PcInstance player)
 	{
+		if (Config.isServer(Config.DREAMS))
+			return null;
+		
 		QuestState st = player.getQuestState("ZoneVideos");
 		if (st == null)
 			st = newQuestState(player);
@@ -59,17 +58,17 @@ public class ZoneVideos extends Quest
 	{
 		if (character instanceof L2PcInstance)
 		{
-			L2PcInstance player = (L2PcInstance)character;
+			L2PcInstance player = (L2PcInstance) character;
 			QuestState st = player.getQuestState("ZoneVideos");
 			if (st == null)
 				st = newQuestState(player);
 			if (st.getGlobalQuestVar("ZoneVid" + zone.getId()).length() == 0)
 			{
 				int videoId = zone.getId() % 100;
-				if (!_showIntroMovies && videoId > 100)
+				if (!_showIntroMovies && (videoId > 100))
 					return null;
 				
-				if (videoId == 0 && player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
+				if ((videoId == 0) && (player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null)) // TODO: first quest name
 					videoId = 1;
 				player.showQuestMovie(VIDEOS[videoId]);
 				st.saveGlobalQuestVar("ZoneVid" + zone.getId(), "done");

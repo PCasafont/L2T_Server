@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.List;
@@ -28,7 +29,6 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
 
-
 /**
  * This class handles all siege commands:
  * Todo: change the class name, and neaten it up
@@ -39,19 +39,9 @@ public class AdminFortSiege implements IAdminCommandHandler
 {
 	//private static Logger _log = Logger.getLogger(AdminFortSiege.class.getName());
 	
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_fortsiege",
-		"admin_add_fortattacker",
-		"admin_list_fortsiege_clans",
-		"admin_clear_fortsiege_list",
-		"admin_spawn_fortdoors",
-		"admin_endfortsiege",
-		"admin_startfortsiege",
-		"admin_setfort",
-		"admin_removefort"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_fortsiege", "admin_add_fortattacker", "admin_list_fortsiege_clans", "admin_clear_fortsiege_list", "admin_spawn_fortdoors", "admin_endfortsiege", "admin_startfortsiege", "admin_setfort", "admin_removefort" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -66,7 +56,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			fort = FortManager.getInstance().getFortById(fortId);
 		}
 		// Get fort
-		if ((fort == null || fortId == 0))
+		if (((fort == null) || (fortId == 0)))
 			// No fort specified
 			showFortSelectPage(activeChar);
 		else
@@ -100,7 +90,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_setfort"))
 			{
-				if (player == null || player.getClan() == null)
+				if ((player == null) || (player.getClan() == null))
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 				else
 					fort.setOwner(player.getClan(), false);
@@ -136,20 +126,16 @@ public class AdminFortSiege implements IAdminCommandHandler
 		final List<Fort> forts = FortManager.getInstance().getForts();
 		final StringBuilder cList = new StringBuilder(forts.size() * 100);
 		
-		for (Fort fort : forts) {
-			if (fort != null) {
-				StringUtil.append(cList,
-						"<td fixwidth=90><a action=\"bypass -h admin_fortsiege ",
-						String.valueOf(fort.getFortId()),
-						"\">",
-						fort.getName(),
-						" id: ",
-						String.valueOf(fort.getFortId()),
-				"</a></td>");
+		for (Fort fort : forts)
+		{
+			if (fort != null)
+			{
+				StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_fortsiege ", String.valueOf(fort.getFortId()), "\">", fort.getName(), " id: ", String.valueOf(fort.getFortId()), "</a></td>");
 				i++;
 			}
 			
-			if (i > 2) {
+			if (i > 2)
+			{
 				cList.append("</tr><tr>");
 				i = 0;
 			}
@@ -168,6 +154,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

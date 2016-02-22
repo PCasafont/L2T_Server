@@ -1,3 +1,4 @@
+
 package instances.DimensionalDoor.SealOfTheEmperor;
 
 import instances.DimensionalDoor.DimensionalDoor;
@@ -26,7 +27,7 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * 	Source:
  * 			- http://l2.eogamer.com/wiki/Seven_Signs_Part_5,_Seal_of_the_Emperor
  * 			- http://www.youtube.com/watch?v=UNoLqqBgUyc
@@ -35,40 +36,39 @@ import ai.group_template.L2AttackableAIScript;
 
 public class SealOfTheEmperor extends L2AttackableAIScript
 {
-	private static final String _qn					= "SealOfTheEmperor";
+	private static final String _qn = "SealOfTheEmperor";
 	
 	//Config
-	private static final boolean	_debug			= false;
-	private static final int _reuseMinutes			= 1440;
+	private static final boolean _debug = false;
+	private static final int _reuseMinutes = 1440;
 	
 	//Ids
-	private static final int _npcManagerId 			= 80200;
-	private static final int _disciplesGK 			= 32657;
-	private static final int _instanceTemplateId	= 112;
-	private static final int _sacredSword			= 15310;
+	private static final int _npcManagerId = 80200;
+	private static final int _disciplesGK = 32657;
+	private static final int _instanceTemplateId = 112;
+	private static final int _sacredSword = 15310;
 	private static final int _courtWizardMagicStaff = 13809;
-	private static final int _elmoredenHolyWater 	= 13808;
-	private static final int _countMagican 			= 32598;
-	private static final int _sealDevice 			= 80321;
-	private static final int _anakim				= 80325;
-	private static final int _lilith				= 80322;
+	private static final int _elmoredenHolyWater = 13808;
+	private static final int _countMagican = 32598;
+	private static final int _sealDevice = 80321;
+	private static final int _anakim = 80325;
+	private static final int _lilith = 80322;
 	//private static final int _sealOfBinding 		= 13846;
-	private static final int _lilimButcher			= 80316;
-	private static final int _lilimMagnus			= 80317;
-	private static final int _lilimKnight			= 80318;
-	private static final int[] _shilensEvils		= {80319, 80320};
-	private static final int[] _roomMobs			= {_lilimButcher, _lilimMagnus, _lilimKnight, _shilensEvils[0], _shilensEvils[1]};
-	private static final int[] _anakimMinions		= {80326, 80327, 80328};
-	private static final int[] _lilithMinions 		= {80323, 80324};
-	private static final int[] _anakimChats 		= {19606, 19607, 19608,19609, 19610, 19611, 19612,  19613, 19614};
-	private static final int[] _lilitChats			= {19615, 19616, 19617, 19618};
-	private static final L2Skill _deviceSkill 		= SkillTable.getInstance().getInfo(5980, 3);
-	
+	private static final int _lilimButcher = 80316;
+	private static final int _lilimMagnus = 80317;
+	private static final int _lilimKnight = 80318;
+	private static final int[] _shilensEvils = { 80319, 80320 };
+	private static final int[] _roomMobs = { _lilimButcher, _lilimMagnus, _lilimKnight, _shilensEvils[0], _shilensEvils[1] };
+	private static final int[] _anakimMinions = { 80326, 80327, 80328 };
+	private static final int[] _lilithMinions = { 80323, 80324 };
+	private static final int[] _anakimChats = { 19606, 19607, 19608, 19609, 19610, 19611, 19612, 19613, 19614 };
+	private static final int[] _lilitChats = { 19615, 19616, 19617, 19618 };
+	private static final L2Skill _deviceSkill = SkillTable.getInstance().getInfo(5980, 3);
 	
 	public SealOfTheEmperor(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-
+		
 		addTalkId(_npcManagerId);
 		addStartNpc(_npcManagerId);
 		addTalkId(_countMagican);
@@ -95,11 +95,10 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 		
 		private SealOfTheEmperorWorld()
 		{
-			toKill		= new ArrayList<L2Npc>();
-			doneDevices	= new ArrayList<L2Npc>();
+			toKill = new ArrayList<L2Npc>();
+			doneDevices = new ArrayList<L2Npc>();
 		}
 	}
-	
 	
 	@Override
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
@@ -118,17 +117,17 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 					synchronized (world.doneDevices)
 					{
 						if (!world.doneDevices.contains(npc))
-						{	
+						{
 							world.doneDevices.add(npc);
 							
 							attacker.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SEALING_DEVICE_GLITTERS_AND_MOVES));
-						
+							
 							//attacker.addItem(_qn, _sealOfBinding, 1, npc, true);
 							
 							//Check the end
 							if (world.doneDevices.size() == 4)
 							{
-								world.status ++;
+								world.status++;
 								
 								attacker.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 8 * DimensionalDoor.getDimensionalDoorRewardRate()), attacker, true);
 								
@@ -137,26 +136,27 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 								final int worldInstid = world.instanceId;
 								ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 								{
+									@Override
 									public void run()
 									{
 										InstanceManager.getInstance().setInstanceReuse(worldInstid, _instanceTemplateId, _reuseMinutes);
 										InstanceManager.getInstance().finishInstance(worldInstid, true);
 										
 									}
-								}, ScenePlayerDataTable.getInstance().getVideoDuration(13));							
+								}, ScenePlayerDataTable.getInstance().getVideoDuration(13));
 							}
 						}
-					}	
+					}
 				}
 				else
-				{	
+				{
 					npc.setTarget(attacker);
 					npc.doCast(_deviceSkill);
 				}
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}	
+	}
 	
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -175,9 +175,9 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof SealOfTheEmperorWorld)
+		if ((wrld != null) && (wrld instanceof SealOfTheEmperorWorld))
 		{
-			SealOfTheEmperorWorld world = (SealOfTheEmperorWorld)wrld;
+			SealOfTheEmperorWorld world = (SealOfTheEmperorWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
 			{
 				world.owner = player;
@@ -188,10 +188,10 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				for (int a = _roomMobs[0]; a <= _roomMobs[3]; a++)
 				{
 					L2Npc minion = addSpawn(a, -89339, 217938, -7494, 26451, true, 0, false, world.instanceId);
-					synchronized(world.toKill)
+					synchronized (world.toKill)
 					{
 						world.toKill.add(minion);
-					}	
+					}
 				}
 			}
 			else if (event.equalsIgnoreCase("stage_2_start"))
@@ -201,11 +201,11 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				
 				//Spawn minions
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a = _roomMobs[0]; a <= _roomMobs[3]; a++)
 					{
 						L2Npc minion = addSpawn(a, -88588, 220082, -7494, 43572, true, 0, false, world.instanceId);
-						synchronized(world.toKill)
+						synchronized (world.toKill)
 						{
 							world.toKill.add(minion);
 						}
@@ -225,11 +225,11 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				
 				//Spawn minions
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a = _roomMobs[0]; a <= _roomMobs[3]; a++)
 					{
 						L2Npc minion = addSpawn(a, -87255, 220653, -7494, 15086, true, 0, false, world.instanceId);
-						synchronized(world.toKill)
+						synchronized (world.toKill)
 						{
 							world.toKill.add(minion);
 						}
@@ -242,11 +242,11 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				
 				//MINIONZ
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a = _roomMobs[0]; a <= _roomMobs[3]; a++)
 					{
 						L2Npc minion = addSpawn(a, -85191, 219237, -7494, 42242, true, 0, false, world.instanceId);
-						synchronized(world.toKill)
+						synchronized (world.toKill)
 						{
 							world.toKill.add(minion);
 						}
@@ -259,11 +259,11 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				
 				//MINIONZ
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a = _roomMobs[0]; a <= _roomMobs[4]; a++)
 					{
 						L2Npc minion = addSpawn(a, -87497, 217674, -7494, 25977, true, 0, false, world.instanceId);
-						synchronized(world.toKill)
+						synchronized (world.toKill)
 						{
 							world.toKill.add(minion);
 						}
@@ -276,9 +276,9 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_last_open_door"))
 			{
-				if (world.status == 5 || _debug)
-				{	
-					world.status ++;
+				if ((world.status == 5) || _debug)
+				{
+					world.status++;
 					
 					InstanceManager.getInstance().getInstance(world.instanceId).getDoor(17240111).openMe();
 					
@@ -286,15 +286,15 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 					world.owner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.IN_ORDER_HELP_ANAKIM_ACTIVATE_DEVICES));
 					
 					startQuestTimer("stage_last_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(12), npc, null);
-				}	
+				}
 			}
-			else if(event.equalsIgnoreCase("stage_last_spawns"))
-			{	
+			else if (event.equalsIgnoreCase("stage_last_spawns"))
+			{
 				world.bossAnakim = addSpawn(_anakim, -83179, 216479, -7504, 0, true, 0, false, world.instanceId);
 				world.bossAnakim.setIsInvul(true);
 				
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a : _anakimMinions)
 					{
 						L2Npc minion = addSpawn(a, -83179, 216479, -7504, 0, true, 0, false, world.instanceId);
@@ -305,19 +305,19 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 				world.bossLilith.setIsInvul(true);
 				
 				for (int b = 0; b <= 1; b++)
-				{	
+				{
 					for (int a : _lilithMinions)
 					{
 						L2Npc minion = addSpawn(a, -83175, 217021, -7504, 0, true, 0, false, world.instanceId);
 						minion.setIsInvul(true);
 					}
-				}	
+				}
 				
 				//Aggro both bosses
-				((L2Attackable)world.bossLilith).addDamageHate(world.bossAnakim, 99999, 99999);
+				((L2Attackable) world.bossLilith).addDamageHate(world.bossAnakim, 99999, 99999);
 				world.bossLilith.setTarget(world.bossAnakim);
 				
-				((L2Attackable)world.bossAnakim).addDamageHate(world.bossLilith, 99999, 99999);
+				((L2Attackable) world.bossAnakim).addDamageHate(world.bossLilith, 99999, 99999);
 				world.bossAnakim.setTarget(world.bossLilith);
 				
 				//Make them invul
@@ -328,7 +328,7 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 					
 					if (monster.getNpcId() == _sealDevice)
 					{
-						monster.setIsMortal(false);	//device can't die
+						monster.setIsMortal(false); //device can't die
 						monster.setIsImmobilized(true);
 						monster.getStatus().stopHpMpRegeneration();
 					}
@@ -346,7 +346,7 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 					int chatAnakim = _anakimChats[Rnd.get(_anakimChats.length)];
 					//The are some chats of anakim that should have the char name inside, bah
 					world.bossAnakim.broadcastPacket(new NpcSay(world.bossAnakim.getObjectId(), chatAnakim > 19612 ? 2 : 1, world.bossAnakim.getTemplate().TemplateId, chatAnakim));
-				
+					
 					//Chats
 					startQuestTimer("stage_last_bosses_talks", 15000, npc, null);
 				}
@@ -402,14 +402,14 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 		if (tmpworld instanceof SealOfTheEmperorWorld)
 		{
 			SealOfTheEmperorWorld world = (SealOfTheEmperorWorld) tmpworld;
-			switch(world.status)
+			switch (world.status)
 			{
 				case 0:
 				case 1:
 				case 2:
 				case 3:
 				case 4:
-					synchronized(world.toKill) 
+					synchronized (world.toKill)
 					{
 						if (world.toKill.contains(npc))
 							world.toKill.remove(npc);
@@ -417,25 +417,25 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 					
 					if (world.toKill.isEmpty())
 					{
-						world.status ++;
-						notifyEvent("stage_"+(world.status + 1)+"_start", npc, null);
+						world.status++;
+						notifyEvent("stage_" + (world.status + 1) + "_start", npc, null);
 					}
 					
-					switch(npc.getNpcId())
+					switch (npc.getNpcId())
 					{
 						case _lilimMagnus:
-							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId, 1000247));	//Lord Shilen... some day... you will accomplish... this mission...
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId, 1000247)); //Lord Shilen... some day... you will accomplish... this mission...
 							break;
-							
+						
 						case _lilimKnight:
-							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId, 1000270));	//Why are you getting in our way?
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 1, npc.getTemplate().TemplateId, 1000270)); //Why are you getting in our way?
 							break;
 					}
 					break;
 			}
 		}
 		return "";
-	}	
+	}
 	
 	private final synchronized void enterInstance(L2PcInstance player)
 	{
@@ -450,21 +450,21 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-89559, 216030, -7488, true);
 					
 					L2NpcBufferInstance.giveBasicBuffs(player);
 				}
-			}	
+			}
 			return;
 		}
 		else
 		{
 			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, _instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
-			{	
+			{
 				return;
 			}
 			
@@ -501,7 +501,7 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 			
 			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
-		}		
+		}
 	}
 	
 	public static void main(String[] args)

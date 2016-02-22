@@ -1321,14 +1321,13 @@
 	<!-- Go to Tiffany in town for a special gift. -->
 	<item id="40289" type="EtcItem" name="NC Magazine - Event" icon="icon.nc_magazine" immediateEffect="1" weight="0">
 	</item>
-	<!-- Double-click to obtain Lara the Cat's Card Key. -->
-	<item id="40290" type="EtcItem" name="Lara the Cat's Card Key Pack - Normal" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
+	<!-- Double-click to obtain Lara's Key Card. -->
+	<item id="40290" type="EtcItem" name="Lara's Key Card Pack - Normal" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Has a 7% chance of inflicting Curse Chaos on target when using a magical skill on them.
+		<Special Option>
+		Has a 7% chance of inflicting Curse Chaos on target when using a magical skill on them. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="40291" type="Weapon" name="Steel Demon's Staff - Magic Chaos" icon="icon.weapon_demons_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="990" soulshots="2" spiritshots="0" mpConsume="2">
@@ -1339,9 +1338,8 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Has a 50% chance of inflicting Mental Shield on target when using a magical skill on them.
+		<Special Option>
+		Has a 50% chance of inflicting Mental Shield on target when using a magical skill on them. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="40292" type="Weapon" name="Steel Spirit's Staff - Magic Mental Shield" icon="icon.weapon_sprites_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="960" soulshots="3" spiritshots="0" mpConsume="2">
@@ -1352,9 +1350,8 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. PvP damage increased.
+		<Special Option>
+		Casting Spd. + 15%. PvP damage increased. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="40293" type="Weapon" name="Steel Dasparion's Staff - Acumen" icon="icon.weapon_dasparions_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="920" soulshots="4" spiritshots="0" mpConsume="2">
@@ -1365,9 +1362,8 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		M. Atk. + 60. PvP damage increased.
+		<Special Option>
+		M. Atk. + 60. PvP damage increased. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="40294" type="Weapon" name="Steel Imperial Staff - Empower" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1378,9 +1374,8 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		Cannot augment.
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. PvP damage increased.
+		<Special Option>
+		Casting Spd. + 15%. PvP damage increased. Cannot augment or bestow a Soul Crystal option.
 	-->
 	<item id="40295" type="Weapon" name="Steel Dynasty Staff - Acumen" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1463,7 +1458,7 @@
 			weight="5">
 	</item>
 	<!-- Light and cozy cloak. -->
-	<item id="40312" type="Armor" name="Santa's Cloak" icon="BranchSys3.icon.g_christmas_cloak" defaultAction="equip" bodypart="none"
+	<item id="40312" type="Armor" name="Santa's Cloak" icon="BranchSys3.icon.g_christmas_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="220">
 		<baseAdd stat="pDef" val="20" />
 	</item>
@@ -1544,8 +1539,9 @@
 			weight="0">
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%. PvP damage increased.
+		<Special Option>
+		Casting Spd. + 15%. PvP damage increased. 
+		No Soul Crystal option.
 	-->
 	<item id="40332" type="Weapon" name="Mother Tree's Branch of Fortune - 90-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
@@ -1557,8 +1553,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
-		Has a 6% chance of inflicting Curse Poison on target when using a magical skill on them.
+		<Special Option>
+		Has a 6% chance of inflicting Curse Poison on target when using a magical skill on them. 
+		No Soul Crystal option.
 	-->
 	<item id="40333" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 90-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
@@ -1570,8 +1567,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
-		Casting Spd. + 15%.
+		<Special Option>
+		Casting Spd. + 15%. 
+		No Soul Crystal option.
 	-->
 	<item id="40334" type="Weapon" name="Inferno Staff of Fortune - 90-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
@@ -1590,8 +1588,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		M. Atk. + 60. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40336" type="Weapon" name="Imperial Staff of Fortune - 90-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1602,8 +1601,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40337" type="Weapon" name="Dynasty Staff of Fortune - 90-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1634,8 +1634,9 @@
 			weight="0">
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40343" type="Weapon" name="Mother Tree's Branch of Fortune - 30-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
@@ -1647,8 +1648,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 6% chance of inflicting Curse Poison on target when using a magical skill on them.
+		No Soul Crystal option.
 	-->
 	<item id="40344" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 30-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
@@ -1660,8 +1662,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%.
+		No Soul Crystal option.
 	-->
 	<item id="40345" type="Weapon" name="Inferno Staff of Fortune - 30-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
@@ -1680,8 +1683,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		M. Atk. + 60. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40347" type="Weapon" name="Imperial Staff of Fortune - 30-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1692,8 +1696,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40348" type="Weapon" name="Dynasty Staff of Fortune - 30-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1720,8 +1725,9 @@
 			weight="0">
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40353" type="Weapon" name="Mother Tree's Branch of Fortune - 10-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
@@ -1733,8 +1739,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Has a 6% chance of inflicting Curse Poison on target when using a magical skill on them.
+		No Soul Crystal option.
 	-->
 	<item id="40354" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 10-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
@@ -1746,8 +1753,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%.
+		No Soul Crystal option.
 	-->
 	<item id="40355" type="Weapon" name="Inferno Staff of Fortune - 10-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
@@ -1766,8 +1774,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		M. Atk. + 60. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40357" type="Weapon" name="Imperial Staff of Fortune - 10-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1778,8 +1787,9 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Soul Crystal Enhancement>
+		<Special Option>
 		Casting Spd. + 15%. PvP damage increased.
+		No Soul Crystal option.
 	-->
 	<item id="40358" type="Weapon" name="Dynasty Staff of Fortune - 10-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
@@ -1813,7 +1823,7 @@
 	<item id="40362" type="Armor" name="Agathion - Joon Pack (30-day)" icon="icon.pi_high_agathion_bracelet_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
-	<!-- Give some of these to Galup and you might get a special gift. You can give it to Hungry Galup in the hunting zones. Deleted after event. -->
+	<!-- Give some of these to Galup and you might get a special gift. You can give it to Hungry Galup in the hunting zones. Can be used as an ingredient for alchemy. -->
 	<item id="40363" type="EtcItem" name="Carrot" icon="icon.ev_carrot" immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- Double-click to obtain 7 - 63 carrots. -->
@@ -1831,11 +1841,11 @@
 	<item id="40367" type="EtcItem" name="Angel Cat's Blessing Pack" icon="icon.event_six_party_box_i00" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
-	<!-- Double-click for a chance to obtain a special weapon appearance stone coupon (30-day) or a special hair accessory at a lower rate. -->
+	<!-- Double-click for a chance to obtain a special weapon appearance stone (30-day) or a special hair accessory at a lower rate. -->
 	<item id="40368" type="EtcItem" name="Buff Promotion Gift Box - Event" icon="icon.etc_pi_box_love_pack" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
-	<!-- A hat for conquering the world. -->
+	<!-- A hat accessory for conquering the world. -->
 	<item id="40369" type="Armor" name="Napoleon Hat - 30-day" icon="BranchSys.icon.br_napoleonic_cap_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" weight="10">
 	</item>

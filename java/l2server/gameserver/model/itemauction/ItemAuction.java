@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.itemauction;
 
 import java.sql.Connection;
@@ -76,13 +77,13 @@ public final class ItemAuction
 		_scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		_auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		
-		final L2ItemInstance item  = _auctionItem.createNewItemInstance();
+		final L2ItemInstance item = _auctionItem.createNewItemInstance();
 		_itemInfo = new ItemInfo(item);
 		L2World.getInstance().removeObject(item);
 		
 		for (final ItemAuctionBid bid : _auctionBids)
 		{
-			if (_highestBid == null || _highestBid.getLastBid() < bid.getLastBid())
+			if ((_highestBid == null) || (_highestBid.getLastBid() < bid.getLastBid()))
 				_highestBid = bid;
 		}
 	}
@@ -276,13 +277,13 @@ public final class ItemAuction
 		
 		synchronized (_auctionBids)
 		{
-			if (_highestBid != null && newBid < _highestBid.getLastBid())
+			if ((_highestBid != null) && (newBid < _highestBid.getLastBid()))
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BID_MUST_BE_HIGHER_THAN_CURRENT_BID));
 				return;
 			}
 			
-			ItemAuctionBid bid = getBidfor (playerObjId);
+			ItemAuctionBid bid = getBidfor(playerObjId);
 			if (bid == null)
 			{
 				if (!reduceItemCount(player, newBid))
@@ -342,7 +343,7 @@ public final class ItemAuction
 			_highestBid = bid;
 		}
 		
-		if (getEndingTime() - System.currentTimeMillis() <= (1000 * 60 * 10)) // 10 minutes
+		if ((getEndingTime() - System.currentTimeMillis()) <= (1000 * 60 * 10)) // 10 minutes
 		{
 			switch (_auctionEndingExtendState)
 			{
@@ -437,7 +438,7 @@ public final class ItemAuction
 				return false;
 				
 			case FINISHED:
-				if (_startingTime < System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
+				if (_startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS)))
 					return false;
 				else
 					break;
@@ -450,7 +451,7 @@ public final class ItemAuction
 			if (_highestBid == null)
 				return false;
 			
-			final int bidIndex = getBidIndexfor (playerObjId);
+			final int bidIndex = getBidIndexfor(playerObjId);
 			if (bidIndex == -1)
 				return false;
 			
@@ -488,7 +489,7 @@ public final class ItemAuction
 		{
 			for (ItemAuctionBid bid : _auctionBids)
 			{
-				if (bid == null || !bid.isCanceled())
+				if ((bid == null) || !bid.isCanceled())
 					continue;
 				updatePlayerBid(bid, true);
 			}
@@ -512,28 +513,28 @@ public final class ItemAuction
 	
 	/**
 	 * Returns the last bid for the given player or -1 if he did not made one yet.
-	 * 
+	 *
 	 * @param player The player that made the bid
 	 * @return The last bid the player made or -1
 	 */
 	public final long getLastBid(final L2PcInstance player)
 	{
-		final ItemAuctionBid bid = getBidfor (player.getObjectId());
+		final ItemAuctionBid bid = getBidfor(player.getObjectId());
 		return bid != null ? bid.getLastBid() : -1L;
 	}
 	
-	public final ItemAuctionBid getBidfor (final int playerObjId)
+	public final ItemAuctionBid getBidfor(final int playerObjId)
 	{
-		final int index = getBidIndexfor (playerObjId);
+		final int index = getBidIndexfor(playerObjId);
 		return index != -1 ? _auctionBids.get(index) : null;
 	}
 	
-	private final int getBidIndexfor (final int playerObjId)
+	private final int getBidIndexfor(final int playerObjId)
 	{
 		for (int i = _auctionBids.size(); i-- > 0;)
 		{
 			final ItemAuctionBid bid = _auctionBids.get(i);
-			if (bid != null && bid.getPlayerObjId() == playerObjId)
+			if ((bid != null) && (bid.getPlayerObjId() == playerObjId))
 				return i;
 		}
 		return -1;

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.util.ArrayList;
@@ -43,16 +44,14 @@ public final class SkillParser extends StatsParser
 {
 	private static enum SkillEnchantBonusType
 	{
-		SET,
-		ADD,
-		SUB,
-		ADD_PERCENT
+		SET, ADD, SUB, ADD_PERCENT, SUB_PERCENT
 	}
 	
 	private static final class SkillEnchantBonusData
 	{
 		public SkillEnchantBonusType type;
 		public String[] data;
+		
 		public SkillEnchantBonusData(SkillEnchantBonusType t, String[] d)
 		{
 			type = t;
@@ -117,28 +116,25 @@ public final class SkillParser extends StatsParser
 									case SUB:
 										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) - value);
 									case ADD_PERCENT:
-										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + (value / 100.0f)));
+									case SUB_PERCENT:
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - (value / 100.0f)));
 								}
 							}
 						}
 					}
 				}
 			}
-			else
+			
+			if (table == null)
 			{
 				table = _tables.get(name);
 				level = _currentLevel;
 			}
 			
-			if (table == null)
-			{
-				table = _tables.get(name);
-				level = table.length;
-			}
-			
 			if (table.length == 0)
 				return null;
-
+			
 			if (level > table.length)
 				return table[0];
 			
@@ -164,7 +160,7 @@ public final class SkillParser extends StatsParser
 		List<String> array = new ArrayList<String>(data.countTokens());
 		while (data.hasMoreTokens())
 			array.add(data.nextToken());
-
+		
 		_tables.put(name, array.toArray(new String[array.size()]));
 		
 		if (!n.getChildren().isEmpty())
@@ -293,7 +289,7 @@ public final class SkillParser extends StatsParser
 							}
 						}
 					}
-			
+					
 					_currentLevel++;
 				}
 			}
@@ -311,7 +307,7 @@ public final class SkillParser extends StatsParser
 					StatsSet[] enchSets = levelEnchants.get(route);
 					for (int j = 0; j < enchSets.length; j++)
 					{
-						int hash = (i + 1) * 1000000 + route * 1000 + j + 1;
+						int hash = ((i + 1) * 1000000) + (route * 1000) + j + 1;
 						_skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
 					}
 				}
@@ -339,7 +335,7 @@ public final class SkillParser extends StatsParser
 							StatsSet[] enchSets = levelEnchants.get(route);
 							while (_currentEnchantLevel <= enchSets.length)
 							{
-								int hash = _currentLevel * 1000000 + route * 1000 + _currentEnchantLevel;
+								int hash = (_currentLevel * 1000000) + (route * 1000) + _currentEnchantLevel;
 								parseTemplate(n, _skills.get(hash));
 								_currentEnchantLevel++;
 							}
@@ -357,7 +353,7 @@ public final class SkillParser extends StatsParser
 		String name = n.getString("name").trim();
 		String value = n.getString("val").trim();
 		char ch = value.length() == 0 ? ' ' : value.charAt(0);
-		if (ch == '#' || ch == '-' || Character.isDigit(ch))
+		if ((ch == '#') || (ch == '-') || Character.isDigit(ch))
 		{
 			String val = getValue(value);
 			if (val != null)
@@ -382,19 +378,16 @@ public final class SkillParser extends StatsParser
 		if (n.hasAttribute("duration"))
 		{
 			duration = Integer.decode(getValue(n.getString("duration")));
-			if (Config.ENABLE_MODIFY_SKILL_DURATION)
+			if (Config.SKILL_DURATION_LIST.containsKey(template.getId()))
 			{
-				if (Config.SKILL_DURATION_LIST.containsKey(template.getId()))
-				{
-					if (template.getLevelHash() < 100)
-						duration = Config.SKILL_DURATION_LIST.get(template.getId());
-					else if ((template.getLevelHash() >= 100) && (template.getLevelHash() < 140))
-						duration += Config.SKILL_DURATION_LIST.get(template.getId());
-					else if (template.getLevelHash() > 140)
-						duration = Config.SKILL_DURATION_LIST.get(template.getId());
-					if (Config.DEBUG)
-						Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() + ") changed duration to " + duration + " seconds.");
-				}
+				if (template.getLevelHash() < 100)
+					duration = Config.SKILL_DURATION_LIST.get(template.getId());
+				else if ((template.getLevelHash() >= 100) && (template.getLevelHash() < 140))
+					duration += Config.SKILL_DURATION_LIST.get(template.getId());
+				else if (template.getLevelHash() > 140)
+					duration = Config.SKILL_DURATION_LIST.get(template.getId());
+				if (Config.DEBUG)
+					Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() + ") changed duration to " + duration + " seconds.");
 			}
 		}
 		else if (template.getBuffDuration() > 0)
@@ -421,7 +414,7 @@ public final class SkillParser extends StatsParser
 			for (int i = 0; i < abns.length; i++)
 				visualEffect[i] = VisualEffect.getByName(getValue(abns[i]));
 		}
-		String[] stackType = new String[]{};
+		String[] stackType = new String[] {};
 		if (n.hasAttribute("stackType"))
 			stackType = n.getString("stackType").split(",[ ]*");
 		
@@ -432,7 +425,7 @@ public final class SkillParser extends StatsParser
 		double landRate = -1;
 		if (n.hasAttribute("landRate"))
 			landRate = Double.parseDouble(getValue(n.getString("landRate")));
-		else if (template.getSkillType() == L2SkillType.DEBUFF && template.getPower() > 0.0)
+		else if ((template.getSkillType() == L2SkillType.DEBUFF) && (template.getPower() > 0.0))
 			landRate = template.getPower();
 		
 		L2AbnormalType type = L2AbnormalType.NONE;
@@ -478,6 +471,12 @@ public final class SkillParser extends StatsParser
 		int trigLvl = 0;
 		if (n.hasAttribute("triggeredLevel"))
 			trigLvl = Integer.parseInt(getValue(n.getString("triggeredLevel")));
+		int trigEnchRt = 0;
+		if (n.hasAttribute("triggeredEnchantRoute"))
+			trigEnchRt = Integer.parseInt(getValue(n.getString("triggeredEnchantRoute")));
+		int trigEnchLvl = 0;
+		if (n.hasAttribute("triggeredEnchantLevel"))
+			trigEnchLvl = Integer.parseInt(getValue(n.getString("triggeredEnchantLevel")));
 		
 		String chanceCond = null;
 		if (n.hasAttribute("chanceType"))
@@ -485,12 +484,12 @@ public final class SkillParser extends StatsParser
 		else if (isChanceSkillTrigger)
 			throw new NoSuchElementException(type + " requires chanceType");
 		
-		int activationChance = -1;
+		double activationChance = -1;
 		if (n.hasAttribute("activationChance"))
-			activationChance = Integer.parseInt(getValue(n.getString("activationChance")));
-		int activationCritChance = -1;
+			activationChance = Double.parseDouble(getValue(n.getString("activationChance")));
+		double activationCritChance = -1;
 		if (n.hasAttribute("activationCritChance"))
-			activationCritChance = Integer.parseInt(getValue(n.getString("activationCritChance")));
+			activationCritChance = Double.parseDouble(getValue(n.getString("activationCritChance")));
 		int activationMinDamage = -1;
 		if (n.hasAttribute("activationMinDamage"))
 			activationMinDamage = Integer.parseInt(getValue(n.getString("activationMinDamage")));
@@ -506,12 +505,11 @@ public final class SkillParser extends StatsParser
 		
 		ChanceCondition chance = ChanceCondition.parse(chanceCond, activationChance, activationCritChance, activationMinDamage, activationElements, activationSkills, pvpOnly);
 		
-		if (chance == null && isChanceSkillTrigger)
-			throw new NoSuchElementException("Invalid chance condition: " + chanceCond + " "
-					+ activationChance);
-
+		if ((chance == null) && isChanceSkillTrigger)
+			throw new NoSuchElementException("Invalid chance condition: " + chanceCond + " " + activationChance);
+		
 		Lambda lambda = getLambda(n, template);
-		lt = new L2EffectTemplate(template, applayCond, lambda, type, trigId, trigLvl, chance);
+		lt = new L2EffectTemplate(template, applayCond, lambda, type, trigId, trigLvl, trigEnchRt, trigEnchLvl, chance);
 		parseTemplate(n, lt);
 		template.attach(lt);
 	}

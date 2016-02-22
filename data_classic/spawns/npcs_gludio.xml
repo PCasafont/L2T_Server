@@ -251,6 +251,8 @@
 		<vertex x="-12124" y="190824" />
 		<spawn npcId="27100" respawn="180" amount="2" /> <!-- Skeleton Mercenary -->
 	</group>
+	<!-- [queen_ant_room] -->
+	<spawn npcId="29001" x="-21610" y="181594" z="-5734" heading="0" respawn="129600" randomRespawn="61200" /> <!-- Queen Ant -->
 	<!-- [queen_ant_guard_room] -->
 	<spawn npcId="29002" x="-21600" y="179482" z="-5846" heading="16384" respawn="60" /> <!-- Queen Ant Larva -->
 	<spawn npcId="29004" x="-21562" y="179041" z="-5846" heading="0" respawn="60" /> <!-- Escort Ant -->

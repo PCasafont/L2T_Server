@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
@@ -44,7 +45,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class RequestProcureCropList extends L2GameClientPacket
 {
-	private static final String _C__D0_09_REQUESTPROCURECROPLIST = "[C] D0:09 RequestProcureCropList";
 	
 	private static final int BATCH_LENGTH = 20; // length of the one item
 	
@@ -54,9 +54,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if (count <= 0
-				|| count > Config.MAX_ITEM_IN_PACKET
-				|| count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -68,7 +66,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			int itemId = readD();
 			int manorId = readD();
 			long cnt = readQ();
-			if (objId < 1 || itemId < 1 || manorId < 0 || cnt < 0)
+			if ((objId < 1) || (itemId < 1) || (manorId < 0) || (cnt < 0))
 			{
 				_items = null;
 				return;
@@ -98,7 +96,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, false, false))
 			return;
 		
-		int castleId = ((L2ManorManagerInstance)manager).getCastle().getCastleId();
+		int castleId = ((L2ManorManagerInstance) manager).getCastle().getCastleId();
 		
 		// Calculate summary values
 		int slots = 0;
@@ -165,14 +163,14 @@ public class RequestProcureCropList extends L2GameClientPacket
 			
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByObjectId(i.getObjectId());
-			if (item == null || item.getCount() < i.getCount())
+			if ((item == null) || (item.getCount() < i.getCount()))
 				continue;
 			
 			// try modify castle crop
 			if (!i.setCrop())
 				continue;
 			
-			if (fee > 0 && !player.reduceAdena("Manor", fee, manager, true))
+			if ((fee > 0) && !player.reduceAdena("Manor", fee, manager, true))
 				continue;
 			
 			if (!player.destroyItem("Manor", i.getObjectId(), i.getCount(), manager, true))
@@ -229,7 +227,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			if (_manorId == castleId)
 				return 0;
 			
-			return (getPrice() /100) * 5; // 5% fee for selling to other manor
+			return (getPrice() / 100) * 5; // 5% fee for selling to other manor
 		}
 		
 		public boolean getCrop()
@@ -242,7 +240,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			{
 				return false;
 			}
-			if (_crop == null || _crop.getId() == 0 || _crop.getPrice() == 0 || _count == 0)
+			if ((_crop == null) || (_crop.getId() == 0) || (_crop.getPrice() == 0) || (_count == 0))
 				return false;
 			
 			if (_count > _crop.getAmount())
@@ -257,7 +255,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		
 		public boolean setCrop()
 		{
-			synchronized(_crop)
+			synchronized (_crop)
 			{
 				long amount = _crop.getAmount();
 				if (_count > amount)
@@ -268,11 +266,5 @@ public class RequestProcureCropList extends L2GameClientPacket
 				CastleManager.getInstance().getCastleById(_manorId).updateCrop(_itemId, _crop.getAmount(), CastleManorManager.PERIOD_CURRENT);
 			return true;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_09_REQUESTPROCURECROPLIST;
 	}
 }

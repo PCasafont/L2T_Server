@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntObjectHashMap;
@@ -96,7 +97,7 @@ public class AirShipManager
 	
 	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading)
 	{
-		final L2AirShipInstance	airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), _airShipTemplate);
+		final L2AirShipInstance airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), _airShipTemplate);
 		
 		airShip.setHeading(heading);
 		airShip.setXYZInvisible(x, y, z);
@@ -173,11 +174,11 @@ public class AirShipManager
 			}
 			catch (SQLException e)
 			{
-				Log.log(Level.WARNING, getClass().getSimpleName()+": Could not add new airship license: " + e.getMessage(), e);
+				Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.WARNING, getClass().getSimpleName()+": Error while initializing: " + e.getMessage(), e);
+				Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
 			}
 			finally
 			{
@@ -189,7 +190,7 @@ public class AirShipManager
 	public boolean hasAirShip(int ownerId)
 	{
 		final L2AirShipInstance ship = _airShips.get(ownerId);
-		if (ship == null || !(ship.isVisible() || ship.isTeleporting()))
+		if ((ship == null) || !(ship.isVisible() || ship.isTeleporting()))
 			return false;
 		
 		return true;
@@ -205,7 +206,7 @@ public class AirShipManager
 	
 	public void sendAirShipTeleportList(L2PcInstance player)
 	{
-		if (player == null || !player.isInAirShip())
+		if ((player == null) || !player.isInAirShip())
 			return;
 		
 		final L2AirShipInstance ship = player.getAirShip();
@@ -226,7 +227,7 @@ public class AirShipManager
 		if (all == null)
 			return null;
 		
-		if (index < -1 || index >= all.routes.length)
+		if ((index < -1) || (index >= all.routes.length))
 			return null;
 		
 		return all.routes[index + 1];
@@ -238,7 +239,7 @@ public class AirShipManager
 		if (all == null)
 			return 0;
 		
-		if (index < -1 || index >= all.fuel.length)
+		if ((index < -1) || (index >= all.fuel.length))
 			return 0;
 		
 		return all.fuel[index + 1];
@@ -268,18 +269,18 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			Log.log(Level.WARNING, getClass().getSimpleName()+": Could not load airships table: " + e.getMessage(), e);
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, getClass().getSimpleName()+": Error while initializing: " + e.getMessage(), e);
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
 		}
 		finally
 		{
 			L2DatabaseFactory.close(con);
 		}
 		
-		Log.info(getClass().getSimpleName()+": Loaded " + _airShipsInfo.size() + " private airships");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _airShipsInfo.size() + " private airships");
 	}
 	
 	private void storeInDb(int ownerId)
@@ -301,11 +302,11 @@ public class AirShipManager
 		}
 		catch (SQLException e)
 		{
-			Log.log(Level.WARNING, getClass().getSimpleName()+": Could not update airships table: " + e.getMessage(), e);
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING, getClass().getSimpleName()+": Error while save: " + e.getMessage(), e);
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while save: " + e.getMessage(), e);
 		}
 		finally
 		{

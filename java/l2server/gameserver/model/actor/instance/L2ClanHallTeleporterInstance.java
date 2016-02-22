@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.datatables.ClanTable;
@@ -28,20 +29,20 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 {
 	private boolean _init = false;
 	private ClanHall _clanHall = null;
-
+	
 	public L2ClanHallTeleporterInstance(int objectID, L2NpcTemplate template)
 	{
 		super(objectID, template);
 		setInstanceType(InstanceType.L2ClanHallDoormenInstance);
 	}
-
+	
 	@Override
 	public void showChatWindow(L2PcInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-
+		
 		if (getClanHall() != null)
 		{
 			L2Clan owner = ClanTable.getInstance().getClan(getClanHall().getOwnerId());
@@ -52,7 +53,7 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 			}
 			else
 			{
-				if (owner != null && owner.getLeader() != null)
+				if ((owner != null) && (owner.getLeader() != null))
 				{
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-no.htm");
 					html.replace("%leadername%", owner.getLeaderName());
@@ -67,11 +68,11 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 		}
 		else
 			return;
-
+		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
 	protected final void openDoors(L2PcInstance player, String command)
 	{
@@ -86,7 +87,7 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 				summon.teleToLocation(_loc, false);
 		}
 	}
-
+	
 	@Override
 	protected final void closeDoors(L2PcInstance player, String command)
 	{
@@ -108,7 +109,7 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 				summon.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		}
 	}
-
+	
 	private final ClanHall getClanHall()
 	{
 		if (!_init)
@@ -124,11 +125,11 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 		}
 		return _clanHall;
 	}
-
+	
 	@Override
 	protected final boolean isOwnerClan(L2PcInstance player)
 	{
-		if (player.getClan() != null && getClanHall() != null)
+		if ((player.getClan() != null) && (getClanHall() != null))
 		{
 			if (player.getClanId() == getClanHall().getOwnerId())
 				return true;

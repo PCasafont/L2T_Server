@@ -1,6 +1,7 @@
 /**
- * 
+ *
  */
+
 package l2server.gameserver.gui;
 
 import java.awt.event.MouseEvent;
@@ -27,7 +28,7 @@ public class JTableButtonMouseListener implements MouseListener
 		Object value;
 		JComponent c;
 		
-		if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
+		if ((row >= _table.getRowCount()) || (row < 0) || (column >= _table.getColumnCount()) || (column < 0))
 			return;
 		
 		value = _table.getValueAt(row, column);
@@ -55,21 +56,25 @@ public class JTableButtonMouseListener implements MouseListener
 		_table = table;
 	}
 	
+	@Override
 	public void mouseEntered(MouseEvent e)
 	{
 		forwardEvent(e);
 	}
 	
+	@Override
 	public void mouseExited(MouseEvent e)
 	{
 		forwardEvent(e);
 	}
 	
+	@Override
 	public void mousePressed(MouseEvent e)
 	{
 		forwardEvent(e);
 	}
 	
+	@Override
 	public void mouseClicked(MouseEvent e)
 	{
 		if (e.getSource() instanceof JButton)
@@ -78,6 +83,7 @@ public class JTableButtonMouseListener implements MouseListener
 		}
 	}
 	
+	@Override
 	public void mouseReleased(MouseEvent e)
 	{
 		if (e.getSource() instanceof JButton)

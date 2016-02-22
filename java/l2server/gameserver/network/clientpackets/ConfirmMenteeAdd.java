@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -34,17 +35,18 @@ import l2server.log.Log;
 public class ConfirmMenteeAdd extends L2GameClientPacket
 {
 	int _response;
+	
 	@Override
 	protected void readImpl()
 	{
 		_response = readD();
 	}
-
+	
 	@Override
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if(player != null)
+		if (player != null)
 		{
 			L2PcInstance requestor = player.getActiveRequester();
 			if (requestor == null)
@@ -78,15 +80,14 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 					requestor.sendPacket(new ExMentorList(requestor));
 					player.sendPacket(new ExMentorList(player));
 					player.setMentorId(requestor.getObjectId());
-
+					
 					L2Skill s = SkillTable.getInstance().getInfo(9379, 1);
 					player.addSkill(s, false); //Dont Save Mentee skill to database
 					requestor.giveMentorBuff();
-					
 				}
 				catch (Exception e)
 				{
-					Log.log(Level.WARNING, "Could not add friend objectid: "+ e.getMessage(), e);
+					Log.log(Level.WARNING, "Could not add friend objectid: " + e.getMessage(), e);
 				}
 				finally
 				{
@@ -107,11 +108,4 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 			requestor.onTransactionResponse();
 		}
 	}
-
-	@Override
-	public String getType()
-	{
-		return "[C] D0:BC ConfirmMenteeAdd";
-	}
-	
 }

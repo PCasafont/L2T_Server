@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list>	
+<list>
 	<!--
 		Bind address for gameserver. You should not need to change it in most cases.
 		WARNING: <u><b><font color="red">Please don't change default IPs here if you don't know what are you doing!</font></b></u>
@@ -61,7 +61,7 @@
 	<config name="GameMaximumDbIdleTime" var="DATABASE_MAX_IDLE_TIME" default="0" />
 	
 	<config name="Classic" var="IS_CLASSIC" default="false" />
-
+	
 	<!--
 		-
 		Misc Player Settings
@@ -253,7 +253,7 @@
 	
 	<config name="SiegeHourListMorning" var="SIEGE_HOUR_LIST_MORNING" default="" />
 	
-	<config name="SiegeHourListAfternoon" var="SIEGE_HOUR_LIST_AFTERNOON" default="4,8" />
+	<config name="SiegeHourListAfternoon" var="SIEGE_HOUR_LIST_AFTERNOON" default="4,5,6,7,8,9" />
 	
 	<!--
 		Teleport Function price
@@ -523,11 +523,11 @@
 	<!--
 		Clan War stuff
 	-->
-	<config name="PrepareNormalWarPeriod" var="PREPARE_NORMAL_WAR_PERIOD" default="3" />
-	<config name="PrepareMutualWarPeriod" var="PREPARE_MUTUAL_WAR_PERIOD" default="7" />
-	<config name="BattleWarPeriod" var="BATTLE_WAR_PERIOD" default="21" />
-	<config name="ExpireNormalWarPeriod" var="EXPIRE_NORMAL_WAR_PERIOD" default="7" />
-	<config name="CancelClanWarRepuationPoints" var="CANCEL_CLAN_WAR_REPUTATION_POINTS" default="5000" />
+	<config name="PrepareNormalWarPeriod" var="PREPARE_NORMAL_WAR_PERIOD" default="72" />
+	<config name="PrepareMutualWarPeriod" var="PREPARE_MUTUAL_WAR_PERIOD" default="168" />
+	<config name="BattleWarPeriod" var="BATTLE_WAR_PERIOD" default="504" />
+	<config name="ExpireNormalWarPeriod" var="EXPIRE_NORMAL_WAR_PERIOD" default="168" />
+	<config name="CancelClanWarReputationPoints" var="CANCEL_CLAN_WAR_REPUTATION_POINTS" default="5000" />
 	<config name="MinClanLevelToReceiveWar" var="CLAN_WAR_MIN_CLAN_LEVEL" default="5" />
 	<config name="AltClanMembersForWar" var="ALT_CLAN_MEMBERS_FOR_WAR" default="15" />
 	
@@ -574,7 +574,15 @@
 	<!-- Run speed modifier. Example: Setting this to 5 will give players +5 to their running speed. -->
 	<config name="RunSpeedBoost" var="RUN_SPD_BOOST" default="0" />
 	
+	<!-- Chance of receiving the Death Penalty debuff when killed by a mob. -->
+	<config name="DeathPenaltyChance" var="DEATH_PENALTY_CHANCE" default="20" />
+	
+	<!-- Percent of HP, MP, and CP which is restored on character revival. -->
+	<config name="RespawnRestoreCP" var="RESPAWN_RESTORE_CP" default="0" />
+	
 	<config name="RespawnRestoreHP" var="RESPAWN_RESTORE_HP" default=".7" />
+	
+	<config name="RespawnRestoreMP" var="RESPAWN_RESTORE_MP" default=".7" />
 	
 	<!--
 		Percent of HP, MP, and CP regeneration for players.
@@ -679,15 +687,6 @@
 		Deault: False
 	-->
 	<config name="SubclassStoreSkillCooltime" var="SUBCLASS_STORE_SKILL_COOLTIME" default="False" />
-	
-	<!--
-		These are alternative rules for shields.
-		If True and they block:
-		The damage is powerAtk-shieldDef,
-		If False and they block:
-		The damage is powerAtk / (shieldDef + powerDef)
-	-->
-	<config name="AltShieldBlocks" var="ALT_GAME_SHIELD_BLOCKS" default="False" />
 	
 	<!-- This is the percentage for perfect shield block rate. -->
 	<config name="AltPerfectShieldBlockRate" var="ALT_PERFECT_SHLD_BLOCK" default="10" />
@@ -1023,7 +1022,7 @@
 		and are inside this range, you will be considered as player to reward.
 		Checks for party range to mob to calculate rewards(exp, items).
 	-->
-	<config name="AltPartyRange" var="ALT_PARTY_RANGE" default="2000" />
+	<config name="AltPartyRange" var="ALT_PARTY_RANGE" default="1600" />
 	
 	<!--
 		1. Used for adena distribution in party
@@ -1208,6 +1207,9 @@
 	-->
 	<config name="ForbiddenNames" var="FORBIDDEN_NAMES" default="annou,ammou,amnou,anmou,anou,amou" />
 	
+	<!-- PDef multiplier for mages -->
+	<config name="MagePDefMultiplier" var="MAGE_PDEF_MULTIPLIER" default="1." />
+	
 	<!--
 		-
 		MMO
@@ -1282,6 +1284,9 @@
 	-->
 	<config name="EverybodyHasAdminRights" var="EVERYBODY_HAS_ADMIN_RIGHTS" default="False" />
 	
+	<!-- Show server/DP revision when players enter the game -->
+	<config name="DisplayServerRevision" var="DISPLAY_SERVER_VERSION" default="True" />
+	
 	<!--
 		Setting for serverList
 		Displays [] in front of server name on character selection
@@ -1342,6 +1347,12 @@
 	
 	<!-- Allow GMs to restart/exit while is fighting stance -->
 	<config name="GMRestartFighting" var="GM_RESTART_FIGHTING" default="True" />
+	
+	<!--
+		Show the GM's name behind an announcement made by him
+		example: "Announce: hi [HanWik]"
+	-->
+	<config name="GMShowAnnouncerName" var="GM_ANNOUNCER_NAME" default="False" />
 	
 	<!--
 		Give special skills for every GM
@@ -1408,11 +1419,16 @@
 	
 	<config name="ServerDeveloper" var="DEVELOPER" default="False" />
 	
+	<config name="AcceptGeoeditorConn" var="ACCEPT_GEOEDITOR_CONN" default="False" />
+	
 	<!-- Don't load Handlers -->
 	<config name="AltDevNoHandlers" var="ALT_DEV_NO_HANDLERS" default="False" />
 	
 	<!-- Don't load quests. -->
 	<config name="AltDevNoQuests" var="ALT_DEV_NO_QUESTS" default="False" />
+	
+	<!-- Don't load spawntable. -->
+	<config name="AltDevNoSpawns" var="ALT_DEV_NO_SPAWNS" default="False" />
 	
 	<!--
 		-
@@ -1421,17 +1437,17 @@
 		Extreme caution should be here, set to defaults if you do not know what you are doing.
 		These could possibly hurt your servers performance or improve it depending on your server's configuration, size, and other factors.
 	-->
-	<config name="ThreadPoolSizeEffects" var="THREAD_P_EFFECTS" default="16" />
+	<config name="ThreadPoolSizeEffects" var="THREAD_P_EFFECTS" default="8" />
 	
-	<config name="ThreadPoolSizeGeneral" var="THREAD_P_GENERAL" default="16" />
+	<config name="ThreadPoolSizeGeneral" var="THREAD_P_GENERAL" default="8" />
 	
-	<config name="UrgentPacketThreadCoreSize" var="IO_PACKET_THREAD_CORE_SIZE" default="4" />
+	<config name="UrgentPacketThreadCoreSize" var="IO_PACKET_THREAD_CORE_SIZE" default="2" />
 	
-	<config name="GeneralPacketThreadCoreSize" var="GENERAL_PACKET_THREAD_CORE_SIZE" default="16" />
+	<config name="GeneralPacketThreadCoreSize" var="GENERAL_PACKET_THREAD_CORE_SIZE" default="4" />
 	
-	<config name="GeneralThreadCoreSize" var="GENERAL_THREAD_CORE_SIZE" default="16" />
+	<config name="GeneralThreadCoreSize" var="GENERAL_THREAD_CORE_SIZE" default="4" />
 	
-	<config name="AiMaxThread" var="AI_MAX_THREAD" default="32" />
+	<config name="AiMaxThread" var="AI_MAX_THREAD" default="8" />
 	
 	<!--
 		-
@@ -1587,6 +1603,9 @@
 	
 	<!-- Delete invalid quest from players. -->
 	<config name="AutoDeleteInvalidQuestData" var="AUTODELETE_INVALID_QUEST_DATA" default="False" />
+	
+	<!-- Setting False can improve server performance on high rate/population servers. -->
+	<config name="PreciseDropCalculation" var="PRECISE_DROP_CALCULATION" default="True" />
 	
 	<!-- Allow creating multiple non-stackable items at one time? -->
 	<config name="MultipleItemDrop" var="MULTIPLE_ITEM_DROP" default="True" />
@@ -2035,6 +2054,9 @@
 	
 	<config name="ShowNpcLevel" var="SHOW_NPC_LVL" default="False" />
 	
+	<!-- Show clan, alliance crests for territory NPCs without quests -->
+	<config name="ShowCrestWithoutQuest" var="SHOW_CREST_WITHOUT_QUEST" default="True" />
+	
 	<!--
 		Custom random EnchantEffect
 		All npcs with weapons get random weapon enchanted value
@@ -2074,12 +2096,28 @@
 	<config name="SkillChancePenaltyForLvLDifferences" var="NPC_SKILL_CHANCE_PENALTY" default="2.5, 3.0, 3.25, 3.5" />
 	
 	<!--
+		Do you want mobs to drop Vitality resplenishing herbs?
+		Notes:
+		Works only if EnableVitality = True
+	-->
+	<config name="EnableVitalityHerbs" var="ENABLE_DROP_VITALITY_HERBS" default="True" />
+	
+	<!--
 		-
 		Guards
 		-
 		True - Allows guards to attack aggressive mobs within range.
 	-->
 	<config name="GuardAttackAggroMob" var="GUARD_ATTACK_AGGRO_MOB" default="False" />
+	
+	<!--
+		-
+		Pets
+		-
+		This option enables or disables the Wyvern manager located in every castle
+		to train Wyverns and Striders from Hatchlings.
+	-->
+	<config name="AllowWyvernUpgrader" var="ALLOW_WYVERN_UPGRADER" default="False" />
 	
 	<!--
 		Pets that can be rented.
@@ -2317,7 +2355,7 @@
 		2.5 to 76, 2.0 to 77 and 1.5 to 78
 		XP loss is affected by clan luck in core
 	-->
-	<config name="PlayerXPPercentLost" var="PLAYER_XP_PERCENT_LOST" default="0,39-7.0;40,75-4.0;76,76-2.5;77,77-2.0;78,78-1.5" />
+	<config name="PlayerXPPercentLost" var="PLAYER_XP_PERCENT_LOST" default="0,39-7.0;40,75-4.0;76,76-2.5;77,77-2.0;78,78-1.5;79,79-1.155;80,80-0.911;81,81-0.733;82,82-0.602;83,83-0.503;84,84-0.427;85,85-0.367;86,86-0.32;87,87-0.282;88,88-0.252;89,89-0.226;90,90-0.206;91,91-0.188;92,92-0.174;93,93-0.161;94,94-0.151;95,95-0.141;96,96-0.134;97,97-0.127;98,98-0.121;99,99-0.115;100,100-0.111;101,101-0.107;102,102-0.103;103,103-0.1;104,104-0.097;105,105-0.095;106,106-0.092;107,107-0.09;108,108-0.088;109,109-0.087;110,110-0.085;111,111-0.084;112,112-0.083;113,113-0.081;114,114-0.08;115,115-0.08;116,116-0.079;117,117-0.078;118,118-0.077;119,119-0.077;120,120-0.076;121,121-0.076;122,122-0.075;123,123-0.075;124,124-0.074;125,125-0.074;126,126-0.074;127,127-0.073" />
 	
 	<!--
 		List of items affected by custom drop rate by id, used now for Adena rate too.
@@ -2354,7 +2392,7 @@
 	<!-- Min and max levels allowed for a mob to be a Champion mob. -->
 	<config name="ChampionMinLevel" var="L2JMOD_CHAMP_MIN_LVL" default="5" />
 	
-	<config name="ChampionMaxLevel" var="L2JMOD_CHAMP_MAX_LVL" default="100" />
+	<config name="ChampionMaxLevel" var="L2JMOD_CHAMP_MAX_LVL" default="200" />
 	
 	<!-- Hp multiplier for Champion mobs. -->
 	<config name="ChampionHp" var="L2JMOD_CHAMPION_HP" default="8" />
@@ -2507,6 +2545,20 @@
 	<!-- Should both teams get reward if there's a tie? -->
 	<config name="InstancedEventRewardTeamTie" var="INSTANCED_EVENT_REWARD_TEAM_TIE" default="True" />
 	
+	<!--
+		-
+		L2J Banking System
+		-
+		Enable/Disable Banking System
+	-->
+	<config name="BankingEnabled" var="BANKING_SYSTEM_ENABLED" default="False" />
+	
+	<!-- Amount of Goldbars a player gets when they use the ".deposit" command. Also the same amount they will lose with ".withdraw". -->
+	<config name="BankingGoldbarCount" var="BANKING_SYSTEM_GOLDBARS" default="1" />
+	
+	<!-- Amount of Adena a player gets when they use the ".withdraw" command. Also the same amount they will lose with ".deposit". -->
+	<config name="BankingAdenaCount" var="BANKING_SYSTEM_ADENA" default="500000000" />
+	
 	<!-- Offline Buffers -->
 	<config name="OfflineBuffersEnable" var="OFFLINE_BUFFERS_ENABLE" default="False" />
 	<config name="OfflineBuffersRestore" var="OFFLINE_BUFFERS_RESTORE" default="False" />
@@ -2556,6 +2608,16 @@
 	
 	<!--
 		-
+		Mana Drugs/Potions
+		-
+		This option will enable core support for:
+		Mana Drug (item ID 726), using skill ID 10000.
+		Mana Potion (item ID 728), using skill ID 10001.
+	-->
+	<config name="EnableManaPotionSupport" var="L2JMOD_ENABLE_MANA_POTIONS_SUPPORT" default="False" />
+	
+	<!--
+		-
 		Display Server Time
 		-
 		This option will enable displaying of the local server time for /time command.
@@ -2581,6 +2643,33 @@
 	
 	<!--
 		-
+		AntiFeed
+		-
+		This option will enable antifeed for pvp/pk/clanrep points.
+	-->
+	<config name="AntiFeedEnable" var="L2JMOD_ANTIFEED_ENABLE" default="True" />
+	
+	<!--
+		If set to True, kills from dualbox will not increase pvp/pk points
+		and clan reputation will not be transferred.
+	-->
+	<config name="AntiFeedDualbox" var="L2JMOD_ANTIFEED_DUALBOX" default="True" />
+	
+	<!--
+		If set to True, server will count disconnected (unable to determine ip address)
+		as dualbox.
+	-->
+	<config name="AntiFeedDisconnectedAsDualbox" var="L2JMOD_ANTIFEED_DISCONNECTED_AS_DUALBOX" default="True" />
+	
+	<!--
+		If character died faster than timeout - pvp/pk points for killer will not increase
+		and clan reputation will not be transferred.
+		Setting to 0 will disable this feature.
+	-->
+	<config name="AntiFeedInterval" var="L2JMOD_ANTIFEED_INTERVAL" default="120" />
+	
+	<!--
+		-
 		Pvp/pk Announce
 		-
 	-->
@@ -2603,12 +2692,48 @@
 	
 	<!--
 		-
-		Walker/Bot protection
+		Chat Moderation
 		-
-		Basic protection against L2Walker.
+		This option will enable using of the voice commands .banchat and .unbanchat
+		for players with corresponding access level (default: 7).
+		Check access_levels.sql and admin_command_access_rights for details.
 	-->
-	<config name="L2WalkerProtection" var="L2WALKER_PROTECTION" default="True" />
-
+	<config name="ChatAdmin" var="L2JMOD_CHAT_ADMIN" default="False" />
+	
+	
+	<!--
+		-
+		Debug enable/disable voice command
+		-
+		This option will enable voice command .debug allowing players
+		to turn on/off debugging on self only.
+		(admin command //debug can enable debugging on any character)
+		Use admin_command_access_rights table for defining access rights.
+	-->
+	<config name="DebugVoiceCommand" var="L2JMOD_DEBUG_VOICE_COMMAND" default="False" />
+	
+	<!--
+		-
+		Dualbox Check
+		-
+		Maximum number of players per IP address allowed to enter game.
+	-->
+	<config name="DualboxCheckMaxPlayersPerIP" var="L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP" default="0" />
+	
+	<!-- Maximum number of players per IP address allowed to participate in olympiad. -->
+	<config name="DualboxCheckMaxOlympiadParticipantsPerIP" var="L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP" default="1" />
+	
+	<!--
+		Whitelist of the addresses for dualbox checks.
+		Format: Address1,Number1;Address2,Number2...
+		Network address can be number (127.0.0.1) or symbolic (localhost) formats.
+		Additional connection number added to the global limits for this address.
+		For example, if number of TvT event participants per IP address set to the 1 (no dualbox)
+		and whitelist contains "l2jserver.com,2" then number of allowed participants from l2jserver.com
+		will be 1+2=3. Use 0 or negative value for unlimited number of connections.
+	-->
+	<config name="DualboxCheckWhitelist" var="L2JMOD_DUALBOX_CHECK_WHITELIST" default="127.0.0.1,0" />
+	
 	<!--
 		-
 		PvP Related Settings
@@ -2624,6 +2749,12 @@
 	<config name="MinKarma" var="REPUTATION_MIN_KARMA" default="240" />
 	
 	<config name="MaxKarma" var="REPUTATION_MAX_KARMA" default="10000" />
+	
+	<!-- The number to divide the xp recieved by to calculate karma lost on xp gain/loss. -->
+	<config name="XPDivider" var="REPUTATION_XP_DIVIDER" default="100" />
+	
+	<!-- The minimum karma lost if 0 karma is to be removed. -->
+	<config name="BaseKarmaLost" var="REPUTATION_LOST_BASE" default="0" />
 	
 	<!--
 		-
@@ -2664,12 +2795,12 @@
 	<!-- Interval in seconds to gain reputation for the same chaotic character kill -->
 	<config name="IntervalToGainReputationForTheSameKill" var="REPUTATION_SAME_KILL_INTERVAL" default="60" />
 	
-	<!-- Divider to the reputation recovered while acquiring exp from hunting -->
-	<config name="ReputationExpDivider" var="REPUTATION_EXP_DIVIDER" default="1" />
+	<!-- XP multiplier while hunting with negative reputation -->
+	<config name="ReputationExpMultiplier" var="REPUTATION_REP_PER_EXP_MULTIPLIER" default="100" />
 	
-	<!-- Divider to the reputation recovered while acquiring sp from hunting -->
-	<config name="ReputationSpDivider" var="REPUTATION_SP_DIVIDER" default="1" />
-	
+	<!-- SP multiplier while hunting with negative reputation -->
+	<config name="ReputationSpMultiplier" var="REPUTATION_REP_PER_SP_MULTIPLIER" default="100" />
+		
 	<!-- How much time one stays in PvP mode after hitting an innocent (in ms) -->
 	<config name="PvPVsNormalTime" var="PVP_NORMAL_TIME" default="120000" />
 	
@@ -2926,8 +3057,8 @@
 	
 	<!-- Custom Lottery System (Event) -->
 	<config name="EnableCustomLottery" var="ENABLE_CUSTOM_LOTTERY" default="false" />
-	<config name="CustomLotteryPriceItemId" var="CUSTOM_LOTTERY_PRICE_ITEM_ID" default="4357" />
-	<config name="CustomLotteryPriceAmount" var="CUSTOM_LOTTERY_PRICE_AMOUNT" default="100000" />
+	<config name="CustomLotteryPriceItemId" var="CUSTOM_LOTTERY_PRICE_ITEM_ID" default="57" />
+	<config name="CustomLotteryPriceAmount" var="CUSTOM_LOTTERY_PRICE_AMOUNT" default="1000000" />
 	<config name="CustomLotteryRewardMultplier" var="CUSTOM_LOTTERY_REWARD_MULTIPLIER" default="1" />
 	
 	<!-- Custom Damage Manager (Event) -->
@@ -2967,6 +3098,57 @@
 	<!-- Password Recovery Link -->
 	<config name="SecondAuthRecoveryLink" var="SECOND_AUTH_REC_LINK" default="http://www.example.com/l2j/charPassRec.php" />
 	
+	<!--
+		Mini Games
+		If true, the mini games will be enabled and useable.
+	-->
+	<config name="MiniGamesEnabled" var="MINI_GAMES_ENABLED" default="false" />
+	
+	<!-- If enabled, the mini games will start on their own. Otherwise, they have to be manually started. -->
+	<config name="MiniGamesEnableSchedules" var="MINI_GAMES_ENABLE_SCHEDULES" default="false" />
+	
+	<!-- If true, we display points in players title. Otherwise, "Unknown" is displayed. -->
+	<config name="MiniGamesShowTitles" var="MINI_GAMES_SHOW_TITLES" default="false" />
+	
+	<!-- If true, we'll be using Announcements chat channel to send mini games global announcements. Otherwise, SystemMessage. -->
+	<config name="MiniGamesUseAnnouncements" var="MINI_GAMES_USE_ANNOUNCEMENTS" default="true" />
+	
+	<!-- Should we enable bots? -->
+	<config name="MiniGamesEnableBots" var="MINI_GAMES_ENABLE_BOTS" default="false" />
+	
+	<!-- The ID of the NPC used as Mini Games Manager. -->
+	<config name="MiniGamesManagerId" var="MINI_GAMES_MANAGER_ID" default="0" />
+	
+	<!-- The time we wait prior opening the registrations for a new mini game after a mini game ended. In seconds. -->
+	<config name="MiniGamesInterval" var="MINI_GAMES_INTERVAL" default="300" />
+	
+	<!-- Squirrels Shield -->
+	<config name="EnableSquirrelsShield" var="SQUIRRELS_SHIELD_ENABLED" default="false" />
+	
+	<!-- If a player is not sending client data, he broke the shield (it was either killed or it's not functioning as expected) -->
+	<config name="SquirrelsShieldWarnGmsAboutBrokenShield" var="SQUIRRELS_SHIELD_WARN_GMS_ABOUT_BROKEN_SHIELD" default="true" />
+	
+	<!-- If the player did not send us any data at all, or, did not send any data for a while, should we let him know there was a connection problem? -->
+	<config name="SquirrelsShieldWarnPlayerAboutBrokenShield" var="SQUIRRELS_SHIELD_WARN_PLAYER_ABOUT_CONNECTIVITY_ISSUE" default="true" />
+	
+	<!-- Should we kick the player if the shield was broken? -->
+	<config name="SquirrelsShieldKickIfBrokenShield" var="SQUIRRELS_SHIELD_KICK_IF_NO_DATA_RECEIVED" default="true" />
+	
+	<!-- The message to send to the player, if enabled, when the shield was broken. -->
+	<config name="SquirrelsShieldBrokenShieldMessage" var="SQUIRRELS_SHIELD_CONNECTIVITY_ISSUE_MESSAGE" default="There is a connection problem between you and the server." />
+	
+	<!-- The message to send to the player when his access is revoked. -->
+	<config name="SquirrelsShieldAccessRevokedMessage" var="SQUIRRELS_SHIELD_ACCESS_REMOVAL_MESSAGE" default="Your access to the server was revoked." />
+	
+	<!-- Should we display notifications about players running an outdated client? -->
+	<config name="SquirrelsShieldWarnGmsAboutOutdatedClients" var="SQUIRRELS_SHIELD_WARN_GMS_ABOUT_OUTDATED_CLIENTS" default="true" />
+	
+	<!-- Should we apply sanction for illegal softwares found only if they are still running? -->
+	<config name="SquirrelsShieldSanctionOnlyIfToolStillRunning" var="SQUIRRELS_SHIELD_SANCTION_ONLY_IF_TOOL_STILL_RUNNING" default="false" />
+	
+	<!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
+	<config name="SquirrelsShieldBanOffendersReliedCharacters" var="SQUIRRELS_SHIELD_BAN_OFFENDERS_RELIED_CHARACTERS" default="true" />
+
 	<!-- Anti Bots -->
 	<config name="EnableAntiBots" var="ANTI_BOTS_ENABLED" default="false" />
 	
@@ -2978,4 +3160,10 @@
 	
 	<!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
 	<config name="AntiBotsBanOffendersReliedCharacters" var="ANTI_BOTS_BAN_OFFENDERS_RELIED_CHARACTERS" default="false" />
+
+	<!-- Goater's custom drop system -->
+	<config name="EnableCustomDropSystem" var="DROPSYSTEM_ENABLED" default="false" />
+
+	<!-- UNDERGROUNDER! -->
+	<config name="IsUnderground" var="IS_UNDERGROUND" default="false" />
 </list>

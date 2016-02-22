@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TLongObjectHashMap;
@@ -67,18 +68,22 @@ public class SubPledgeSkillTree
 		{
 			return skill;
 		}
+		
 		public int getClanLvl()
 		{
 			return clanLvl;
 		}
+		
 		public int getReputation()
 		{
 			return reputation;
 		}
+		
 		public int getItemId()
 		{
 			return itemId;
 		}
+		
 		public int getCount()
 		{
 			return count;
@@ -93,7 +98,7 @@ public class SubPledgeSkillTree
 	private void load()
 	{
 		_skilltree.clear();
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skillTrees/subpledgeskilltree.xml");
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/subpledgeskilltree.xml");
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
@@ -157,7 +162,7 @@ public class SubPledgeSkillTree
 							L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill == null)
 							{
-								Log.severe("[SubPledgeSkillTree] Skill "+skillId+" not exist, skipping");
+								Log.severe("[SubPledgeSkillTree] Skill " + skillId + " not exist, skipping");
 								continue;
 							}
 							
@@ -167,7 +172,7 @@ public class SubPledgeSkillTree
 				}
 			}
 		}
-		Log.info(getClass().getSimpleName()+": Loaded "+_skilltree.size()+" SubUnit Skills");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _skilltree.size() + " SubUnit Skills");
 	}
 	
 	public SubUnitSkill getSkill(long skillhash)

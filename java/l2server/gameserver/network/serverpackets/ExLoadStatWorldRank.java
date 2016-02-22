@@ -3,17 +3,17 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package l2server.gameserver.network.serverpackets;
 
+package l2server.gameserver.network.serverpackets;
 
 /**
  * @author Xavi
@@ -21,7 +21,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExLoadStatWorldRank extends L2GameServerPacket
 {
-
+	
 	private int _pid1;
 	private int _pid2;
 	
@@ -35,7 +35,7 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
 		if (getClient().getActiveChar() == null)
 			return;
@@ -43,8 +43,6 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
 		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, true);
 		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, false);
 		
-		writeC(0xfe);
-		writeH(0x101);
 		writeD(_pid1);
 		writeD(_pid2);
 		/*writeD(lastMap.size() < 100 ? lastMap.size() : 100);
@@ -91,14 +89,4 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
 			position++;
 		}*/
 	}
-
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "ExLoadStatworldRank";
-	}
-	
 }

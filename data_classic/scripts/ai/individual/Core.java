@@ -50,7 +50,7 @@ public class Core extends L2AttackableAIScript
 	
 	private static boolean _FirstAttacked;
 	
-	List<L2Attackable> Minions = new FastList<L2Attackable>();
+	List<L2Attackable> Minions = new HashMap<L2Attackable>();
 	
 	public Core(int id, String name, String descr)
 	{

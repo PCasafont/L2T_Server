@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.util.Arrays;
@@ -115,6 +116,7 @@ public class L2DropData
 	{
 		_chance = chance;
 	}
+	
 	/**
 	 * Returns the stateID.
 	 * @return String[]
@@ -157,7 +159,7 @@ public class L2DropData
 	 */
 	public boolean isQuestDrop()
 	{
-		return _questID != null && _stateID != null;
+		return (_questID != null) && (_stateID != null);
 	}
 	
 	public void setCustom()
@@ -177,8 +179,7 @@ public class L2DropData
 	@Override
 	public String toString()
 	{
-		String out = "ItemID: " + getItemId() + " Min: " + getMinDrop() +
-		" Max: " + getMaxDrop() + " Chance: " + getChance() + "%";
+		String out = "ItemID: " + getItemId() + " Min: " + getMinDrop() + " Max: " + getMaxDrop() + " Chance: " + getChance() + "%";
 		if (isQuestDrop())
 		{
 			out += " QuestID: " + getQuestID() + " StateID's: " + Arrays.toString(getStateIDs());
@@ -195,7 +196,7 @@ public class L2DropData
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + _itemId;
+		result = (prime * result) + _itemId;
 		return result;
 	}
 	

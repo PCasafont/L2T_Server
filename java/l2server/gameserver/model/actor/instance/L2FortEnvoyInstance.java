@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.StringTokenizer;
@@ -37,7 +38,7 @@ public class L2FortEnvoyInstance extends L2Npc
 		
 		String filename;
 		
-		if (!player.isClanLeader() || player.getClan() == null || getFort().getFortId() != player.getClan().getHasFort())
+		if (!player.isClanLeader() || (player.getClan() == null) || (getFort().getFortId() != player.getClan().getHasFort()))
 			filename = "fortress/envoy-noclan.htm";
 		else if (getFort().getFortState() == 0)
 			filename = "fortress/envoy.htm";
@@ -68,8 +69,12 @@ public class L2FortEnvoyInstance extends L2Npc
 			{
 				val = Integer.parseInt(par);
 			}
-			catch (IndexOutOfBoundsException ioobe){}
-			catch (NumberFormatException nfe){}
+			catch (IndexOutOfBoundsException ioobe)
+			{
+			}
+			catch (NumberFormatException nfe)
+			{
+			}
 			
 			int castleId = 0;
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -78,7 +83,7 @@ public class L2FortEnvoyInstance extends L2Npc
 				castleId = getFort().getCastleIdFromEnvoy(getNpcId());
 				if (CastleManager.getInstance().getCastleById(castleId).getOwnerId() < 1)
 				{
-					html.setHtml("<html><body>Contact is currently not possible, "+CastleManager.getInstance().getCastleById(castleId).getName()+" Castle isn't currently owned by clan.</body></html>");
+					html.setHtml("<html><body>Contact is currently not possible, " + CastleManager.getInstance().getCastleById(castleId).getName() + " Castle isn't currently owned by clan.</body></html>");
 					player.sendPacket(html);
 					return;
 				}

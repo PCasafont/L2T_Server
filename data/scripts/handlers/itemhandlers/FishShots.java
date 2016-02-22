@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
@@ -33,15 +34,13 @@ import l2server.gameserver.util.Broadcast;
  */
 public class FishShots implements IItemHandler
 {
-	private static final int[] SKILL_IDS =
-	{
-		2181, 2182, 2183, 2184, 2185, 2186
-	};
+	private static final int[] SKILL_IDS = { 2181, 2182, 2183, 2184, 2185, 2186 };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!(playable instanceof L2PcInstance))
@@ -51,7 +50,7 @@ public class FishShots implements IItemHandler
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
 		
-		if (weaponInst == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
+		if ((weaponInst == null) || (weaponItem.getItemType() != L2WeaponType.FISHINGROD))
 			return;
 		
 		if (weaponInst.getChargedFishshot())
@@ -62,8 +61,7 @@ public class FishShots implements IItemHandler
 		int grade = weaponItem.getCrystalType();
 		long count = item.getCount();
 		
-		if ((grade == L2Item.CRYSTAL_NONE && FishshotId != 6535) || (grade == L2Item.CRYSTAL_D && FishshotId != 6536) || (grade == L2Item.CRYSTAL_C && FishshotId != 6537) || (grade == L2Item.CRYSTAL_B && FishshotId != 6538)
-				|| (grade == L2Item.CRYSTAL_A && FishshotId != 6539) || (FishshotId != 6540 && grade == L2Item.CRYSTAL_S ))
+		if (((grade == L2Item.CRYSTAL_NONE) && (FishshotId != 6535)) || ((grade == L2Item.CRYSTAL_D) && (FishshotId != 6536)) || ((grade == L2Item.CRYSTAL_C) && (FishshotId != 6537)) || ((grade == L2Item.CRYSTAL_B) && (FishshotId != 6538)) || ((grade == L2Item.CRYSTAL_A) && (FishshotId != 6539)) || ((FishshotId != 6540) && (grade == L2Item.CRYSTAL_S)))
 		{
 			//1479 - This fishing shot is not fit for the fishing pole crystal.
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WRONG_FISHINGSHOT_GRADE));

@@ -1,3 +1,4 @@
+
 package quests.Q10502_FreyaEmbroideredSoulCloak;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -26,9 +27,8 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 	private static final int MinGiven = 1;
 	private static final int MaxGiven = 3;
 	private static final int MinLevel = 82;
-		
-		
-	public Q10502_FreyaEmbroideredSoulCloak(int questId, String name, String descr) 
+	
+	public Q10502_FreyaEmbroideredSoulCloak(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 		addStartNpc(OlfAdams);
@@ -36,9 +36,9 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 		addKillId(Freya);
 		addKillId(FreyaXtreme);
 		
-		questItemIds = new int[] {FreyaSoulFragment};
+		questItemIds = new int[] { FreyaSoulFragment };
 	}
-
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -78,9 +78,9 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 				break;
 			}
 			case State.STARTED:
-			{		
+			{
 				final long count = st.getQuestItemsCount(FreyaSoulFragment); // How many items player has
-				if (st.getInt("cond") == 1 && st.getQuestItemsCount(FreyaSoulFragment) < RequiredItems)
+				if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(FreyaSoulFragment) < RequiredItems))
 					htmltext = "32612-Freya-03.htm"; // Still has not the required amount
 				else if (count >= RequiredItems)
 				{
@@ -96,7 +96,7 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 			}
 			case State.COMPLETED:
 			{
-				htmltext = getAlreadyCompletedMsg(player); // Already completed 
+				htmltext = getAlreadyCompletedMsg(player); // Already completed
 				break;
 			}
 		}
@@ -114,21 +114,21 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 		}
 		else
 			giveFragments(player);
-				
+		
 		return null;
 	}
 	
 	private void giveFragments(L2PcInstance player)
 	{
 		final QuestState st = player.getQuestState(qn);
-
-		if (st != null && st.getState() == State.STARTED)
+		
+		if ((st != null) && (st.getState() == State.STARTED))
 			st.giveItems(FreyaSoulFragment, Rnd.get(MinGiven, MaxGiven));
 	}
 	
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		new Q10502_FreyaEmbroideredSoulCloak(10502, qn, "FreyaEmbroideredSoulCloak");
 	}
-
+	
 }

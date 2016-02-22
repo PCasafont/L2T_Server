@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -7,7 +8,8 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
 
 public class DivineSummoner extends L2Transformation
 {
-	private static final int[] SKILLS = {710,711,712,713,714,5779,619};
+	private static final int[] SKILLS = { 710, 711, 712, 713, 714, 5779, 619 };
+	
 	public DivineSummoner()
 	{
 		// id, colRadius, colHeight
@@ -17,7 +19,7 @@ public class DivineSummoner extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 258 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 258) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		if (getPlayer().getPet() != null)

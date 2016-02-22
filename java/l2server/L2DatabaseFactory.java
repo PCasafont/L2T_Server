@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server;
 
 import java.sql.Connection;
@@ -42,6 +43,7 @@ public class L2DatabaseFactory
 	// Data Field
 	private ProviderType _providerType;
 	private BoneCP _gameDatabase;
+	private BoneCP _webDatabase;
 	
 	private final int PARTITION_COUNT = 4;
 	
@@ -102,6 +104,35 @@ public class L2DatabaseFactory
 			if (Config.DEBUG)
 				Log.fine("Database Connection FAILED");
 		}
+		
+		// Web Database...
+		config = new BoneCPConfig();
+		
+		try
+		{
+			config.setLazyInit(true);
+			config.setPartitionCount(PARTITION_COUNT);
+			config.setMinConnectionsPerPartition(5);
+			config.setMaxConnectionsPerPartition(Math.max(10, Config.DATABASE_MAX_CONNECTIONS / PARTITION_COUNT));
+			config.setAcquireRetryAttempts(5);
+			config.setAcquireRetryDelay(3000);
+			config.setConnectionTimeout(0);
+			config.setAcquireIncrement(5);
+			config.setIdleMaxAge(Config.DATABASE_MAX_IDLE_TIME);
+			config.setStatementsCacheSize(20);
+			config.setJdbcUrl("jdbc:mysql://94.23.102.159/accounting");
+			config.setUsername("accounting_user");
+			config.setPassword("f00ky0gr4np4");
+			config.setTransactionRecoveryEnabled(true);
+			
+			_webDatabase = new BoneCP(config);
+			
+			_webDatabase.getConnection().close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.WARNING, "DatabaseFactory: Failed to connect to the Web Database!", e);
+		}
 	}
 	
 	// =========================================================
@@ -138,6 +169,17 @@ public class L2DatabaseFactory
 		}
 		
 		_gameDatabase = null;
+		
+		try
+		{
+			_webDatabase.close();
+		}
+		catch (Exception e)
+		{
+			Log.log(Level.INFO, "", e);
+		}
+		
+		_webDatabase = null;
 	}
 	
 	public final String safetyString(String... whatToCheck)
@@ -199,7 +241,25 @@ public class L2DatabaseFactory
 			}
 			catch (SQLException e)
 			{
-				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for Game Database, trying again (" + e.getMessage() + ")", e);
+				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(), e);
+			}
+		}
+		
+		return con;
+	}
+	
+	public Connection getWebConnection()
+	{
+		Connection con = null;
+		while (con == null)
+		{
+			try
+			{
+				con = _webDatabase.getConnection();
+			}
+			catch (SQLException e)
+			{
+				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 		

@@ -3,16 +3,18 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.pathfinding.cellnodes;
+
 import l2server.gameserver.GeoData;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
@@ -43,7 +45,7 @@ public class NodeLoc extends AbstractNodeLoc
 	
 	public short getNSWE()
 	{
-		return (short)(_geoHeightAndNSWE & 0x0f);
+		return (short) (_geoHeightAndNSWE & 0x0f);
 	}
 	
 	/**
@@ -70,8 +72,8 @@ public class NodeLoc extends AbstractNodeLoc
 	@Override
 	public short getZ()
 	{
-		short height = (short)(_geoHeightAndNSWE & 0x0fff0);
-		return (short)(height >> 1);
+		short height = (short) (_geoHeightAndNSWE & 0x0fff0);
+		return (short) (height >> 1);
 	}
 	
 	@Override
@@ -106,9 +108,9 @@ public class NodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + _x;
-		result = prime * result + _y;
-		result = prime * result + _geoHeightAndNSWE;
+		result = (prime * result) + _x;
+		result = (prime * result) + _y;
+		result = (prime * result) + _geoHeightAndNSWE;
 		return result;
 	}
 	

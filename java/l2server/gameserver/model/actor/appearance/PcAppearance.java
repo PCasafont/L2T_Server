@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.appearance;
 
 import l2server.gameserver.events.instanced.EventInstance.EventType;
@@ -75,11 +76,9 @@ public class PcAppearance
 	 */
 	public final String getVisibleName()
 	{
-		if (_owner.isInEvent()
-				&& (_owner.getEvent().getType() == EventType.DeathMatch
-				|| _owner.getEvent().getType() == EventType.Survival
-				|| _owner.getEvent().getType() == EventType.KingOfTheHill))
+		if (_owner.isPlayingEvent() && ((_owner.getEvent().getType() == EventType.DeathMatch) || (_owner.getEvent().getType() == EventType.Survival) || (_owner.getEvent().getType() == EventType.KingOfTheHill)))
 			return "Event Participant";
+		
 		if (_visibleName == null)
 			_visibleName = getOwner().getName();
 		return _visibleName;
@@ -99,20 +98,24 @@ public class PcAppearance
 	 */
 	public final String getVisibleTitle()
 	{
-		if (_owner.isInEvent()
-				&& (_owner.getEvent().getType() == EventType.DeathMatch
-				|| _owner.getEvent().getType() == EventType.Survival
-				|| _owner.getEvent().getType() == EventType.KingOfTheHill))
+		if (_owner.isPlayingEvent() && ((_owner.getEvent().getType() == EventType.DeathMatch) || (_owner.getEvent().getType() == EventType.Survival) || (_owner.getEvent().getType() == EventType.KingOfTheHill)))
 			return "";
+		
 		if (_owner instanceof L2ApInstance)
 		{
 			String title = "L2 Tenkai";
 			if (_owner.getParty() != null)
-				title += " #" + _owner.getParty().getLeader().getObjectId() % 100;
+				title += " #" + (_owner.getParty().getLeader().getObjectId() % 100);
 			return title;
 		}
+		
 		if (_visibleTitle == null)
 			_visibleTitle = getOwner().getTitle();
+		
+		if (_visibleTitle.equalsIgnoreCase("wtb ballance")
+				|| _visibleTitle.equalsIgnoreCase("wtb balance"))
+			return "WTB BRAIN";
+		
 		return _visibleTitle;
 	}
 	
@@ -161,7 +164,7 @@ public class PcAppearance
 	}
 	
 	/**
-	 * 
+	 *
 	 * @return true if char is female
 	 */
 	public final boolean getSex()
@@ -205,7 +208,12 @@ public class PcAppearance
 		
 		_nameColor = nameColor;
 	}
-
+	
+	public void setNameColor(int red, int green, int blue)
+	{
+		_nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
+	}
+	
 	public int getTitleColor()
 	{
 		return _titleColor;
@@ -217,6 +225,11 @@ public class PcAppearance
 			return;
 		
 		_titleColor = titleColor;
+	}
+	
+	public void setTitleColor(int red, int green, int blue)
+	{
+		_titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 	
 	/**

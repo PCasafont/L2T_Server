@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
@@ -22,12 +23,11 @@ import l2server.log.Log;
  * Format: chdd
  * d: Arena
  * d: Team
- * 
+ *
  * @author mrTJO
  */
 public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 {
-	private static final String _C__D0_5A_REQUESTEXCUBEGAMECHANGETEAM = "[C] D0:5A RequestExCubeGameChangeTeam";
 	
 	int _arena;
 	int _team;
@@ -47,7 +47,7 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(_arena))
 			return;
 		L2PcInstance player = getClient().getActiveChar();
-
+		
 		switch (_team)
 		{
 			case 0:
@@ -64,14 +64,8 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 					HandysBlockCheckerManager.getInstance().removePlayer(player, _arena, team);
 				break;
 			default:
-				Log.warning("Wrong Cube Game Team ID: "+_team);
+				Log.warning("Wrong Cube Game Team ID: " + _team);
 				break;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_5A_REQUESTEXCUBEGAMECHANGETEAM;
 	}
 }

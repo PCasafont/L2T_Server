@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.multisell;
 
 import l2server.gameserver.datatables.ItemTable;
@@ -21,7 +22,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
 
 /**
- * 
+ *
  * @author DS
  *
  */
@@ -50,7 +51,7 @@ public class Ingredient implements Cloneable
 	{
 		try
 		{
-			return (Ingredient)super.clone();
+			return (Ingredient) super.clone();
 		}
 		catch (CloneNotSupportedException e)
 		{
@@ -132,6 +133,7 @@ public class Ingredient implements Cloneable
 	{
 		return _maintainIngredient;
 	}
+	
 	public final boolean isStackable()
 	{
 		return _template == null ? true : _template.isStackable();
@@ -139,7 +141,7 @@ public class Ingredient implements Cloneable
 	
 	public final boolean isArmorOrWeapon()
 	{
-		return _template == null ? false : _template instanceof L2Armor || _template instanceof L2Weapon;
+		return _template == null ? false : (_template instanceof L2Armor) || (_template instanceof L2Weapon);
 	}
 	
 	public final int getWeight()

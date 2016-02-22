@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.gameserver.events.instanced.EventsManager;
@@ -34,25 +35,29 @@ import l2server.gameserver.templates.skills.L2SkillType;
 
 public class ClassChange implements ISkillHandler
 {
-	private static final L2SkillType[] SKILL_IDS =
-	{
-		L2SkillType.CLASS_CHANGE
-	};
+	private static final L2SkillType[] SKILL_IDS = { L2SkillType.CLASS_CHANGE };
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (!(activeChar instanceof L2PcInstance))
 			return;
 		
-		L2PcInstance player = (L2PcInstance)activeChar;
+		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if (player.isInCombat() || player.getPvpFlag() > 0) // Cannot switch or change subclasses in combat
+		if (player.isInCombat() || (player.getPvpFlag() > 0)) // Cannot switch or change subclasses in combat
 		{
 			player.sendMessage("You cannot switch your subclass while you are fighting.");
+			return;
+		}
+		
+		if (player.getTemporaryLevel() != 0)
+		{
+			player.sendMessage("You canno't switch a subclass while on a temporary level.");
 			return;
 		}
 		
@@ -62,7 +67,7 @@ public class ClassChange implements ISkillHandler
 			return;
 		}
 		
-		if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null)
+		if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || (player.getEvent() != null))
 		{
 			player.sendMessage("You cannot switch your subclass while involved in an event.");
 			return;
@@ -74,7 +79,7 @@ public class ClassChange implements ISkillHandler
 			return;
 		}
 		
-		if (player.getInstanceId() != 0 || GrandBossManager.getInstance().checkIfInZone(player))
+		if ((player.getInstanceId() != 0) || GrandBossManager.getInstance().checkIfInZone(player))
 		{
 			player.sendMessage("You cannot switch your subclass in this situation!");
 			return;
@@ -82,7 +87,7 @@ public class ClassChange implements ISkillHandler
 		
 		if (!player.getFloodProtectors().getSubclass().tryPerformAction("change subclass"))
 		{
-			_log.warning("Player "+player.getName()+" has performed a subclass change too fast");
+			_log.warning("Player " + player.getName() + " has performed a subclass change too fast");
 			return;
 		}
 		
@@ -99,9 +104,10 @@ public class ClassChange implements ISkillHandler
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_IDS;

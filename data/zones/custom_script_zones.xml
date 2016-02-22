@@ -443,242 +443,97 @@
 		<node X="213068" Y="114628" />
 		<node X="213058" Y="115891" />
 	</zone>
-	<zone name="Prison of Darkness" id="60061" type="SiegeZone" shape="Cylinder" minZ="-12123" maxZ="-11523" rad="2000">
-		<node X="177084" Y="143152" />
-	</zone>
-	<zone name="Raider's Crossroads" id="60062" type="SiegeZone" shape="Cylinder" minZ="-1303" maxZ="-703" rad="2000">
-		<node X="11744" Y="-138583" />
-	</zone>
-	<zone name="Seed of Hellfire" id="60063" type="SiegeZone" shape="Cylinder" minZ="-14192" maxZ="-13592" rad="2000">
-		<node X="-147360" Y="145894" />
-	</zone>
-	<zone name="Land of Chaos" id="60064" type="SiegeZone" shape="Cylinder" minZ="-4391" maxZ="-3791" rad="2000">
-		<node X="-20006" Y="-119060" />
-	</zone>
-	<zone name="Guillotine Fortress" id="60065" type="SiegeZone" shape="Cylinder" minZ="-3891" maxZ="-3291" rad="2000">
-		<node X="48250" Y="145242" />
-	</zone>
-	<zone name="Orbis Temple" id="60066" type="SiegeZone" shape="Cylinder" minZ="-13048" maxZ="-12448" rad="2000">
-		<node X="214304" Y="115579" />
-	</zone>
-	<zone name="Garden of Genesis" id="60067" type="SiegeZone" shape="Cylinder" minZ="-2397" maxZ="-1797" rad="2000">
-		<node X="210274" Y="111589" />
-	</zone>
-	<zone name="Seal of Shilen" id="60068" type="SiegeZone" shape="Cylinder" minZ="-3975" maxZ="-3375" rad="2000">
-		<node X="191972" Y="18448" />
-	</zone>
-	<zone name="Faeron" id="60069" type="SiegeZone" shape="Cylinder" minZ="-3772" maxZ="-3172" rad="2000">
-		<node X="-84339" Y="246090" />
-	</zone>
-	<zone name="Fairy Settlement" id="60070" type="SiegeZone" shape="Cylinder" minZ="1044" maxZ="1644" rad="2000">
-		<node X="214451" Y="70878" />
-	</zone>
-	<zone name="Wall of Argos" id="60080" type="SiegeZone" shape="Cylinder" minZ="-3700" maxZ="-3100" rad="2000">
-		<node X="177292" Y="-49839" />
-	</zone>
-	<zone name="Cruma Tower" id="60081" type="SiegeZone" shape="Cylinder" minZ="-12396" maxZ="-11796" rad="2000">
-		<node X="14551" Y="117279" />
-	</zone>
-	<zone name="Crypts of Disgrace" id="60082" type="SiegeZone" shape="Cylinder" minZ="-3779" maxZ="-3179" rad="2000">
-		<node X="44490" Y="-120206" />
-	</zone>
-	<zone name="Border Outpost" id="60083" type="SiegeZone" shape="Cylinder" minZ="-2007" maxZ="-1407" rad="2000">
-		<node X="112247" Y="-18415" />
-	</zone>
-	<zone name="Monastery of Silence" id="60084" type="SiegeZone" shape="Cylinder" minZ="-3837" maxZ="-3237" rad="2000">
-		<node X="115434" Y="-88861" />
-	</zone>
-	<zone name="Imperial Tomb" id="60085" type="SiegeZone" shape="Cylinder" minZ="-6271" maxZ="-5671" rad="2000">
-		<node X="186563" Y="-80958" />
-	</zone>
-	<zone name="Beast Farm" id="60086" type="SiegeZone" shape="Cylinder" minZ="-3004" maxZ="-2404" rad="2000">
-		<node X="52959" Y="-85964" />
-	</zone>
-	<zone name="Isle of Prayer" id="60087" type="SiegeZone" shape="Cylinder" minZ="-3921" maxZ="-3321" rad="2000">
-		<node X="156745" Y="181375" />
-	</zone>
-	<zone name="Forest of Mirrors" id="60088" type="SiegeZone" shape="Cylinder" minZ="-3772" maxZ="-3172" rad="2000">
-		<node X="158752" Y="93583" />
-	</zone>
-	<zone name="Cursed Village" id="60089" type="SiegeZone" shape="Cylinder" minZ="-3309" maxZ="-2709" rad="2000">
-		<node X="60021" Y="-42438" />
-	</zone>
-	<zone name="Ketra Orc Outpost" id="60090" type="SiegeZone" shape="Cylinder" minZ="-5023" maxZ="-4423" rad="2000">
-		<node X="144246" Y="-76246" />
-	</zone>
-	<zone name="Plunderous Plains" id="60091" type="SiegeZone" shape="Cylinder" minZ="-4052" maxZ="-3452" rad="2000">
-		<node X="127280" Y="-147752" />
-	</zone>
-	<zone name="Tower of Insolence" id="60092" type="SiegeZone" shape="Cylinder" minZ="-5440" maxZ="-4840" rad="2000">
-		<node X="118385" Y="11874" />
-	</zone>
-	<zone name="Hot Springs" id="60094" type="SiegeZone" shape="Cylinder" minZ="-1860" maxZ="-1260" rad="2000">
-		<node X="153798" Y="-114916" />
-	</zone>
-	<zone name="Garden of Eva" id="60095" type="SiegeZone" shape="Cylinder" minZ="-11072" maxZ="-10372" rad="2000">
-		<node X="83810" Y="254677" />
-	</zone>
-	<zone name="Fellmere Lake" id="60096" type="SiegeZone" shape="Cylinder" minZ="-3390" maxZ="-2790" rad="2000">
-		<node X="-53356" Y="128688" />
-	</zone>
-	<zone name="Giant's Cave" id="60097" type="SiegeZone" shape="Cylinder" minZ="-6413" maxZ="-5813" rad="2000">
-		<node X="189157" Y="61660" />
-	</zone>
-	<zone name="Archaic Laboratory" id="60098" type="SiegeZone" shape="Cylinder" minZ="-3634" maxZ="-3034" rad="2000">
-		<node X="93857" Y="-106828" />
-	</zone>
-	<zone name="Varka Silenos Barracks" id="60099" type="SiegeZone" shape="Cylinder" minZ="-2865" maxZ="-2265" rad="2000">
-		<node X="114994" Y="-40706" />
-	</zone>
-	<zone name="Devil's Isle" id="60100" type="SiegeZone" shape="Cylinder" minZ="-4036" maxZ="-3436" rad="2000">
-		<node X="49551" Y="210727" />
-	</zone>
-	<zone name="Eastern Mining Zone" id="60101" type="SiegeZone" shape="Cylinder" minZ="-3942" maxZ="-3342" rad="2000">
-		<node X="157201" Y="-219986" />
-	</zone>
-	<zone name="Windimill Hill" id="60102" type="SiegeZone" shape="Cylinder" minZ="-3713" maxZ="-3113" rad="2000">
-		<node X="-68739" Y="167400" />
-	</zone>
-	<zone name="Freya's Garden" id="60103" type="SiegeZone" shape="Cylinder" minZ="-3340" maxZ="-2340" rad="2000">
-		<node X="102724" Y="-125679" />
-	</zone>
-	<zone name="Brigand Stronghold" id="60104" type="SiegeZone" shape="Cylinder" minZ="-1801" maxZ="-801" rad="2000">
-		<node X="124746" Y="-159305" />
-	</zone>
-	<zone name="Lost Nest" id="60105" type="SiegeZone" shape="Cylinder" minZ="-3268" maxZ="-2268" rad="2000">
-		<node X="21008" Y="-11855" />
-	</zone>
-	<zone name="Lost Nest" id="60106" type="SiegeZone" shape="Cylinder" minZ="-1707" maxZ="-707" rad="2000">
-		<node X="23411" Y="-7561" />
-	</zone>
-	<zone name="Innadril Territory" id="60107" type="SiegeZone" shape="Cylinder" minZ="-4004" maxZ="-3004" rad="2000">
-		<node X="128419" Y="158096" />
-	</zone>
-	<zone name="Immportal Plateau, Southern" id="60108" type="SiegeZone" shape="Cylinder" minZ="-3836" maxZ="-2836" rad="2000">
-		<node X="23619" Y="-109643" />
-	</zone>
-	<zone name="Seed of Annihilation" id="60110" type="SiegeZone" shape="Cylinder" minZ="-16322" maxZ="-15322" rad="2000">
-		<node X="-184972" Y="186316" />
-	</zone>
-	<zone name="Valley of Saints" id="60111" type="SiegeZone" shape="Cylinder" minZ="-3216" maxZ="-2216" rad="2000">
-		<node X="91478" Y="-86166" />
-	</zone>
-	<zone name="Nornil's Cave" id="60112" type="SiegeZone" shape="Cylinder" minZ="-4978" maxZ="-3978" rad="2000">
-		<node X="-88128" Y="51203" />
-	</zone>
-	<zone name="Mithiril Mines" id="60113" type="SiegeZone" shape="Cylinder" minZ="-4068" maxZ="-3068" rad="2000">
-		<node X="181011" Y="-175080" />
-	</zone>
-	<zone name="Field of Silence" id="60114" type="SiegeZone" shape="Cylinder" minZ="-4265" maxZ="-3265" rad="2000">
-		<node X="88009" Y="183395" />
-	</zone>
-	<zone name="Swamp of Screams" id="60115" type="SiegeZone" shape="Cylinder" minZ="-3127" maxZ="-2127" rad="2000">
-		<node X="92088" Y="-52865" />
-	</zone>
-	<zone name="Ant Nest" id="60116" type="SiegeZone" shape="Cylinder" minZ="-5912" maxZ="-4912" rad="2000">
-		<node X="-25283" Y="180524" />
-	</zone>
-	<zone name="Hellbound" id="60117" type="SiegeZone" shape="Cylinder" minZ="-2502" maxZ="-1502" rad="2000">
-		<node X="25499" Y="256241" />
-	</zone>
-	<zone name="Enchanted Valley" id="60118" type="SiegeZone" shape="Cylinder" minZ="-5071" maxZ="-4071" rad="2000">
-		<node X="126345" Y="52085" />
-	</zone>
-	<zone name="Harnak Underground Ruins" id="60119" type="SiegeZone" shape="Cylinder" minZ="-14313" maxZ="-13313" rad="2000">
-		<node X="-114714" Y="180117" />
-	</zone>
-	<zone name="Elven Fortress" id="60120" type="SiegeZone" shape="Cylinder" minZ="-4790" maxZ="-3790" rad="2000">
-		<node X="21226" Y="76970" />
-	</zone>
-	<zone name="Sea of Spores" id="60121" type="SiegeZone" shape="Cylinder" minZ="-4379" maxZ="-3379" rad="2000">
-		<node X="41433" Y="22006" />
-	</zone>
-	<zone name="Chromatic Highlands" id="60122" type="SiegeZone" shape="Cylinder" minZ="-4263" maxZ="-3263" rad="2000">
-		<node X="159660" Y="155105" />
-	</zone>
-	<zone name="Partisan's Hideaway" id="60123" type="SiegeZone" shape="Cylinder" minZ="-2540" maxZ="-1540" rad="2000">
-		<node X="52722" Y="113754" />
-	</zone>
-	<zone name="Forge of the Gods, Lower Level" id="60124" type="SiegeZone" shape="Cylinder" minZ="-6804" maxZ="-5804" rad="2000">
-		<node X="185760" Y="-106103" />
-	</zone>
-	<zone name="Outlaw Forest" id="60125" type="SiegeZone" shape="Cylinder" minZ="-4220" maxZ="-3220" rad="2000">
-		<node X="95767" Y="2769" />
-	</zone>
-	<zone name="Antharas' Lair" id="60126" type="SiegeZone" shape="Cylinder" minZ="-5972" maxZ="-4972" rad="2000">
-		<node X="148948" Y="115020" />
-	</zone>
-	<zone name="Bee Hive" id="60127" type="SiegeZone" shape="Cylinder" minZ="-3865" maxZ="-2865" rad="2000">
-		<node X="20903" Y="184694" />
-	</zone>
-	<zone name="Beleth's Magic Circle" id="60128" type="SiegeZone" shape="Cylinder" minZ="-3636" maxZ="-2636" rad="2000">
-		<node X="-23639" Y="245518" />
-	</zone>
-	<zone name="Wasteland" id="60129" type="SiegeZone" shape="Cylinder" minZ="-3655" maxZ="-2655" rad="2000">
-		<node X="-28327" Y="177602" />
-	</zone>
-	<zone name="Gludio Territory" id="60130" type="SiegeZone" shape="Cylinder" minZ="-3875" maxZ="-2875" rad="2000">
-		<node X="-75919" Y="135984" />
-	</zone>
-	<zone name="Blazing Swamp" id="60131" type="SiegeZone" shape="Cylinder" minZ="-2540" maxZ="-1540" rad="2000">
-		<node X="144238" Y="-24296" />
-	</zone>
-	<zone name="Cruma Marshlands" id="60132" type="SiegeZone" shape="Cylinder" minZ="-4188" maxZ="-3188" rad="2000">
-		<node X="8330" Y="103139" />
-	</zone>
-	<zone name="Aden Territory" id="60133" type="SiegeZone" shape="Cylinder" minZ="3060" maxZ="4060" rad="2000">
-		<node X="130742" Y="59210" />
-	</zone>
-	<zone name="Forgotten Temple" id="60134" type="SiegeZone" shape="Cylinder" minZ="-5005" maxZ="-4005" rad="2000">
-		<node X="-57426" Y="188300" />
-	</zone>
-	<zone name="Grave Robber hideout" id="60135" type="SiegeZone" shape="Cylinder" minZ="-2204" maxZ="-1204" rad="2000">
-		<node X="48444" Y="-104365" />
-	</zone>
-	<zone name="Stakato Nest" id="60136" type="SiegeZone" shape="Cylinder" minZ="-4640" maxZ="-3640" rad="2000">
-		<node X="87358" Y="-43429" />
-	</zone>
-	<zone name="Misty Mountains" id="60137" type="SiegeZone" shape="Cylinder" minZ="-3994" maxZ="-2994" rad="2000">
-		<node X="-1343" Y="53723" />
-	</zone>
-	<zone name="Alligator Island" id="60138" type="SiegeZone" shape="Cylinder" minZ="-3948" maxZ="-2948" rad="2000">
-		<node X="107035" Y="168274" />
-	</zone>
-	<zone name="Windy Hill" id="60139" type="SiegeZone" shape="Cylinder" minZ="-3876" maxZ="-2876" rad="2000">
-		<node X="-81247" Y="75598" />
-	</zone>
-	<zone name="Ol Mahum Checkpoint" id="60140" type="SiegeZone" shape="Cylinder" minZ="-4140" maxZ="-3140" rad="2000">
-		<node X="-6565" Y="201759" />
-	</zone>
-	<zone name="Den of Evil" id="60141" type="SiegeZone" shape="Cylinder" minZ="-1474" maxZ="-474" rad="2000">
-		<node X="74345" Y="-101924" />
-	</zone>
-	<zone name="Bloody Swampland" id="60142" type="SiegeZone" shape="Cylinder" minZ="-4076" maxZ="-3076" rad="2000">
-		<node X="-14682" Y="43544" />
-	</zone>
-	<zone name="Talking Island" id="60143" type="SiegeZone" shape="Cylinder" minZ="-4197" maxZ="-3197" rad="2000">
-		<node X="-113172" Y="246111" />
-	</zone>
-	<zone name="Forest of Evil" id="60144" type="SiegeZone" shape="Cylinder" minZ="-3500" maxZ="-2500" rad="2000">
-		<node X="95379" Y="22834" />
-	</zone>
-	<zone name="The Pagan Temple" id="60145" type="SiegeZone" shape="Cylinder" minZ="-11232" maxZ="-10232" rad="2000">
-		<node X="-16221" Y="-36148" />
-	</zone>
-	<zone name="Whispering Woods" id="60146" type="SiegeZone" shape="Cylinder" minZ="-3443" maxZ="-2443" rad="2000">
-		<node X="-87450" Y="236191" />
-	</zone>
-	<zone name="Fields of Massacre" id="60147" type="SiegeZone" shape="Cylinder" minZ="-2771" maxZ="-1771" rad="2000">
-		<node X="178419" Y="-13643" />
-	</zone>
-	<zone name="Elven Forest" id="60148" type="SiegeZone" shape="Cylinder" minZ="-3756" maxZ="-2756" rad="2000">
-		<node X="43115" Y="69480" />
-	</zone>
-	<zone name="Field od Whispers" id="60149" type="SiegeZone" shape="Cylinder" minZ="-4260" maxZ="-3260" rad="2000">
-		<node X="89112" Y="218651" />
-	</zone>
-	<zone name="Ruins of Despair" id="60150" type="SiegeZone" shape="Cylinder" minZ="-4406" maxZ="-3406" rad="2000">
-		<node X="-17536" Y="142928" />
+	
+	<!-- Zaken zones -->
+	<zone id='120111' name='t21_24_slave1f_001m1' type='ScriptZone' shape='NPoly' minZ='-3532' maxZ='-3332'>
+		<node X='53762' Y='217601' />
+		<node X='54718' Y='217594' />
+		<node X='54718' Y='218557' />
+		<node X='53762' Y='218563' />
+	</zone>
+	<zone id='120112' name='t21_24_slave1f_002m1' type='ScriptZone' shape='NPoly' minZ='-3544' maxZ='-3344'>
+		<node X='55795' Y='217581' />
+		<node X='56771' Y='217589' />
+		<node X='56771' Y='218582' />
+		<node X='55795' Y='218574' />
+	</zone>
+	<zone id='120113' name='t21_24_slave1f_003m1' type='ScriptZone' shape='NPoly' minZ='-3532' maxZ='-3332'>
+		<node X='54778' Y='218606' />
+		<node X='55744' Y='218606' />
+		<node X='55744' Y='219593' />
+		<node X='54778' Y='219594' />
+	</zone>
+	<zone id='120114' name='t21_24_slave1f_004m1' type='ScriptZone' shape='NPoly' minZ='-3528' maxZ='-3328'>
+		<node X='53752' Y='219650' />
+		<node X='54721' Y='219650' />
+		<node X='54721' Y='220613' />
+		<node X='53752' Y='220619' />
+	</zone>
+	<zone id='120115' name='t21_24_slave1f_005m1' type='ScriptZone' shape='NPoly' minZ='-3540' maxZ='-3340'>
+		<node X='55806' Y='219650' />
+		<node X='56761' Y='219649' />
+		<node X='56761' Y='220600' />
+		<node X='55806' Y='220600' />
+	</zone>
+	<zone id='120116' name='t21_24_slave1f_006m1' type='ScriptZone' shape='NPoly' minZ='-3276' maxZ='-3076'>
+		<node X='53766' Y='217601' />
+		<node X='54722' Y='217594' />
+		<node X='54722' Y='218557' />
+		<node X='53766' Y='218563' />
+	</zone>
+	<zone id='120117' name='t21_24_slave1f_007m1' type='ScriptZone' shape='NPoly' minZ='-3288' maxZ='-3088'>
+		<node X='55799' Y='217581' />
+		<node X='56775' Y='217589' />
+		<node X='56775' Y='218582' />
+		<node X='55799' Y='218574' />
+	</zone>
+	<zone id='120118' name='t21_24_slave1f_008m1' type='ScriptZone' shape='NPoly' minZ='-3276' maxZ='-3076'>
+		<node X='54782' Y='218606' />
+		<node X='55748' Y='218606' />
+		<node X='55748' Y='219593' />
+		<node X='54782' Y='219594' />
+	</zone>
+	<zone id='120119' name='t21_24_slave1f_009m1' type='ScriptZone' shape='NPoly' minZ='-3272' maxZ='-3072'>
+		<node X='53756' Y='219650' />
+		<node X='54725' Y='219650' />
+		<node X='54725' Y='220613' />
+		<node X='53756' Y='220619' />
+	</zone>
+	<zone id='120120' name='t21_24_slave1f_010m1' type='ScriptZone' shape='NPoly' minZ='-3284' maxZ='-3084'>
+		<node X='55810' Y='219649' />
+		<node X='56765' Y='219649' />
+		<node X='56765' Y='220600' />
+		<node X='55810' Y='220600' />
+	</zone>
+	<zone id='120121' name='t21_24_slave1f_011m1' type='ScriptZone' shape='NPoly' minZ='-2992' maxZ='-2792'>
+		<node X='53766' Y='217601' />
+		<node X='54722' Y='217594' />
+		<node X='54722' Y='218557' />
+		<node X='53766' Y='218563' />
+	</zone>
+	<zone id='120122' name='t21_24_slave1f_012m1' type='ScriptZone' shape='NPoly' minZ='-3004' maxZ='-2804'>
+		<node X='55799' Y='217581' />
+		<node X='56775' Y='217589' />
+		<node X='56775' Y='218582' />
+		<node X='55799' Y='218574' />
+	</zone>
+	<zone id='120123' name='t21_24_slave1f_013m1' type='ScriptZone' shape='NPoly' minZ='-2992' maxZ='-2792'>
+		<node X='54782' Y='218606' />
+		<node X='55748' Y='218606' />
+		<node X='55748' Y='219593' />
+		<node X='54782' Y='219594' />
+	</zone>
+	<zone id='120124' name='t21_24_slave1f_014m1' type='ScriptZone' shape='NPoly' minZ='-2988' maxZ='-2788'>
+		<node X='53756' Y='219650' />
+		<node X='54725' Y='219650' />
+		<node X='54725' Y='220613' />
+		<node X='53756' Y='220619' />
+	</zone>
+	<zone id='120125' name='t21_24_slave1f_015m1' type='ScriptZone' shape='NPoly' minZ='-3000' maxZ='-2800'>
+		<node X='55810' Y='219649' />
+		<node X='56765' Y='219649' />
+		<node X='56765' Y='220600' />
+		<node X='55810' Y='220600' />
 	</zone>
 	<zone name="Gainak Siege"  id="60019" type="SiegeZone" shape="NPoly" minZ="-265" maxZ="-11">
 		<node X="14816" Y="-114416" />
@@ -698,19 +553,5 @@
 		<node X="16080" Y="-116096" />
 		<node X="15130" Y="-115345" />
 		<node X="14972" Y="-114864" />
-	</zone>
-	<zone name="Shops" id="60500" type="ScriptZone" shape="NPoly" minZ="-3570" maxZ="-3350">
-		<node X="82709" Y="147908" />
-		<node X="82712" Y="149313" />
-		<node X="81143" Y="149315" />
-		<node X="81150" Y="147910" />
-		<node X="81405" Y="148391" />
-		<node X="81401" Y="148816" />
-		<node X="81710" Y="149128" />
-		<node X="82136" Y="149126" />
-		<node X="82448" Y="148835" />
-		<node X="82443" Y="148394" />
-		<node X="82153" Y="148097" />
-		<node X="81708" Y="148092" />
 	</zone>
 </list>

@@ -1,29 +1,32 @@
 /*
  * Copyright (C) 2004-2013 L2J Server
- * 
+ *
  * This file is part of L2J Server.
- * 
+ *
  * L2J Server is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * L2J Server is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.events;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.ScheduledFuture;
@@ -53,8 +56,8 @@ public class LotterySystem
 	private static Map<Integer, List<Integer>> _allNumbers = new HashMap<Integer, List<Integer>>();
 	private static final String LOAD_LOTTERY = "SELECT `ownerId`, `numbers` FROM `lottery_data`";
 	private static final String SAVE_LOTTERY = "INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";
-	private static long			_collectedCoins 	= 0;
-	protected static ScheduledFuture<?>	_saveTask;
+	private static long _collectedCoins = 0;
+	protected static ScheduledFuture<?> _saveTask;
 	
 	public void buyNumber(L2PcInstance pl, int number)
 	{
@@ -75,7 +78,7 @@ public class LotterySystem
 			}
 		}
 		
-		if (pl.getPrivateStoreType() != 0 || pl.isInCrystallize())
+		if ((pl.getPrivateStoreType() != 0) || pl.isInCrystallize())
 		{
 			pl.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -93,8 +96,8 @@ public class LotterySystem
 		
 		//Manage few announcements
 		long totalReward = _collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
-		if (totalReward % 10000000 == 0)
-			Announcements.getInstance().announceToAll("Lottery System: The next prize already reached: " + totalReward + " Silver Shilen!");
+		if ((totalReward % 100000000) == 0)
+			Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " + NumberFormat.getNumberInstance(Locale.US).format(totalReward) + " Adena!");
 	}
 	
 	public void giveRewardsAndReset()
@@ -108,19 +111,19 @@ public class LotterySystem
 			if (entry == null)
 				continue;
 			if (entry.getValue().contains(luckyNumber))
-			{	
+			{
 				String winnerName = CharNameTable.getInstance().getNameById(entry.getKey());
 				if (winnerName != null)
 					winnerNames.add(winnerName);
-			}	
+			}
 		}
 		
 		if (winnerNames.isEmpty())
-			Announcements.getInstance().announceToAll("Lottery System: The Lottery ends with: " + _allNumbers.size() + " participants! " + luckyNumber + " was the winner number, no one win the lottery! More lucky next time!");
+			Announcements.getInstance().announceToAll("Lottery System: The Lottery ends with: " + _allNumbers.size() + " participants! " + luckyNumber + " was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
 		else
-		{	
-			long eachReward = totalCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER / winnerNames.size();
-			if (eachReward < 0)	//Afaik shouldn't happens never
+		{
+			long eachReward = (totalCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) / winnerNames.size();
+			if (eachReward < 0) //Afaik shouldn't happens never
 			{
 				Log.info("LotterySystem: Smth has been fucked on the reward calculation: " + eachReward);
 				eachReward = Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
@@ -135,13 +138,13 @@ public class LotterySystem
 				attachments.addItem("Lottery System", Config.CUSTOM_LOTTERY_PRICE_ITEM_ID, eachReward, null, null);
 				MailManager.getInstance().sendMessage(msg);
 				
-				Log.info("LotterySystem: Player: " + name + ", rewarded with: " + eachReward + " Silver Shilen!");
+				Log.info("LotterySystem: Player: " + name + ", rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 			}
 			
 			// Announce
-			Announcements.getInstance().announceToAll("Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants ("+totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT + " numbers bought)! " + luckyNumber + " is the winner number! " + winnerNames.size() + " winners has been rewarded with: " + eachReward + " Silver Shilen!");
+			Announcements.getInstance().announceToAll("Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants (" + (totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT) + " numbers bought)! " + luckyNumber + " is the winner number! " + winnerNames.size() + " winners has been rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 			
-			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " + totalCoins + " and " + winnerNames.size() + " winners ("+_allNumbers.size() + " participants), with: " + eachReward + " coins for each player!");
+			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " + totalCoins + " and " + winnerNames.size() + " winners (" + _allNumbers.size() + " participants), with: " + eachReward + " coins for each player!");
 		}
 		
 		Log.warning("Lottery System: Cleaning info...!");
@@ -158,11 +161,11 @@ public class LotterySystem
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
-		
+			
 			PreparedStatement statement = null;
 			statement = con.prepareStatement("DELETE from lottery_data");
-			statement.executeUpdate();	
-			statement.close();		
+			statement.executeUpdate();
+			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -211,6 +214,7 @@ public class LotterySystem
 		
 		_saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				saveData();
@@ -234,7 +238,7 @@ public class LotterySystem
 			{
 				if (entry == null)
 					continue;
-					
+				
 				statement = con.prepareStatement(SAVE_LOTTERY);
 				statement.setInt(1, entry.getKey());
 				
@@ -250,7 +254,7 @@ public class LotterySystem
 				statement.setString(3, numbers);
 				statement.executeUpdate();
 				statement.close();
-			}	
+			}
 		}
 		catch (Exception e)
 		{
@@ -285,12 +289,12 @@ public class LotterySystem
 			if (b == 1)
 				sb.append("<tr>");
 			
-			if (playerNumbers != null && playerNumbers.contains(i))
-				sb.append("<td><font color=LEVEL>"+i+"</font></td>");
+			if ((playerNumbers != null) && playerNumbers.contains(i))
+				sb.append("<td><font color=LEVEL>" + i + "</font></td>");
 			else
-				sb.append("<td><a action=\"bypass _bbscustom;action;buyNumber;"+i+"\">"+i+"</a></td>");
+				sb.append("<td><a action=\"bypass _bbscustom;action;buyNumber;" + i + "\">" + i + "</a></td>");
 			
-			if (b % 10 == 0)
+			if ((b % 10) == 0)
 			{
 				sb.append("</tr>");
 				sb.append("<tr></tr><tr></tr>");
@@ -300,7 +304,7 @@ public class LotterySystem
 			}
 			else
 				b++;
-		}	
+		}
 		sb.append("</table>");
 		return sb.toString();
 	}
@@ -320,7 +324,7 @@ public class LotterySystem
 	{
 		protected static final LotterySystem _instance = new LotterySystem();
 	}
-
+	
 	public NpcHtmlMessage parseLotteryPanel(L2PcInstance pl, NpcHtmlMessage htmlPage)
 	{
 		// TODO Auto-generated method stub

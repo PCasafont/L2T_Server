@@ -1,3 +1,4 @@
+
 package l2server.gameserver.gui;
 
 import java.awt.BorderLayout;
@@ -35,15 +36,15 @@ public class ServerGui
 		/*JMenuItem itemExit = new JMenuItem("Exit");
 		itemExit.setActionCommand("Exit");
 		itemExit.addActionListener(_menuListener);
-		
+
 		_fileMenu.add(itemExit);
-		
+
 		//Help
 		JMenuItem itemAbout = new JMenuItem("About");
 		itemAbout.setActionCommand("About");
 		itemAbout.addActionListener(_menuListener);
 		_helpMenu.add(itemAbout);
-		
+
 		_menuBar.add(_fileMenu);
 		_menuBar.add(_helpMenu);
 		_frame.setJMenuBar(_menuBar);*/
@@ -78,9 +79,9 @@ public class ServerGui
 	private void addListeners()
 	{
 		//Window Closing
-		/*_frame.addWindowListener(new WindowAdapter() 
+		/*_frame.addWindowListener(new WindowAdapter()
 		{
-			public void windowClosing(WindowEvent event) 
+			public void windowClosing(WindowEvent event)
 			{
 				close();
 			}

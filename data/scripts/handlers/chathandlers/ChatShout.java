@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.chathandlers;
 
 import java.util.Collection;
@@ -35,15 +36,13 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  */
 public class ChatShout implements IChatHandler
 {
-	private static final int[] COMMAND_IDS =
-	{
-		1
-	};
+	private static final int[] COMMAND_IDS = { 1 };
 	
 	/**
 	 * Handle chat type 'shout'
 	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
+	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
 		if (Config.isServer(Config.TENKAI) && activeChar.isGM())
@@ -58,7 +57,11 @@ public class ChatShout implements IChatHandler
 			return;
 		}*/
 		
-		if (DiscussionManager.getInstance().isGlobalChatDisabled())
+		/*if (activeChar.isGM())
+		{
+			type = Say2.PARTYROOM_ALL;
+		}
+		else*/if (DiscussionManager.getInstance().isGlobalChatDisabled())
 		{
 			activeChar.sendMessage("Global chat is disabled right now.");
 			return;
@@ -79,7 +82,14 @@ public class ChatShout implements IChatHandler
 			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
 			for (L2PcInstance player : pls)
 			{
-				if (activeChar.isGM() || (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) && !BlockList.isBlocked(player, activeChar) && player.getInstanceId() == activeChar.getInstanceId()) && activeChar.getEvent() == null)
+				/*
+				if (!player.isGM())
+				{
+					if (activeChar.getServerInstanceId() != player.getServerInstanceId())
+						continue;
+				}*/
+				
+				if (activeChar.isGM() || ((region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY())) && !BlockList.isBlocked(player, activeChar) && (activeChar.getEvent() == null) && (player.getInstanceId() == activeChar.getInstanceId())))
 					player.sendPacket(cs);
 				else if (player.isGM())
 					player.sendPacket(csReg);
@@ -100,7 +110,7 @@ public class ChatShout implements IChatHandler
 			int index2 = text.indexOf("Title=") + 6;
 			text = text.substring(0, index1) + text.substring(index2);
 		}
-
+		
 		String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
 		if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
 			text = "[" + nearTown + "]" + text;
@@ -113,6 +123,7 @@ public class ChatShout implements IChatHandler
 	 * Returns the chat types registered to this handler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
+	@Override
 	public int[] getChatTypeList()
 	{
 		return COMMAND_IDS;

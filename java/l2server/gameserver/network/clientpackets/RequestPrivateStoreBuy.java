@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.HashSet;
@@ -33,7 +34,6 @@ import l2server.log.Log;
  */
 public final class RequestPrivateStoreBuy extends L2GameClientPacket
 {
-	private static final String _C__79_REQUESTPRIVATESTOREBUY = "[C] 79 RequestPrivateStoreBuy";
 	
 	private static final int BATCH_LENGTH = 20; // length of the one item
 	
@@ -45,7 +45,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	{
 		_storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
 		{
 			return;
 		}
@@ -57,7 +57,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			long cnt = readQ();
 			long price = readQ();
 			
-			if (objectId < 1 || cnt < 1 || price < 0)
+			if ((objectId < 1) || (cnt < 1) || (price < 0))
 			{
 				_items = null;
 				return;
@@ -76,6 +76,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		
 		if (_items == null)
 		{
+			player.sendMessage("Couldn't find the items you are trying to buy.");
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -88,24 +89,39 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		
 		L2Object object = L2World.getInstance().getPlayer(_storePlayerId);
 		if (object == null)
+		{
+			player.sendMessage("ERR1.");
 			return;
+		}
 		
 		if (player.isCursedWeaponEquipped() || player.isInJail())
+		{
+			player.sendMessage("You can't do this while in jail or having a cursed weapon equipped.");
 			return;
+		}
 		
-		L2PcInstance storePlayer = (L2PcInstance)object;
+		L2PcInstance storePlayer = (L2PcInstance) object;
 		
-		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1)
+		if ((player.getInstanceId() != storePlayer.getInstanceId()) && (player.getInstanceId() != -1))
+		{
+			player.sendMessage("ERR2.");
 			return;
+		}
 		
-		if (!(storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL || storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL))
+		if (!((storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL) || (storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL)))
+		{
+			player.sendMessage("ERR3.");
 			return;
+		}
 		
 		storePlayer.hasBeenStoreActive();
 		
 		TradeList storeList = storePlayer.getSellList();
 		if (storeList == null)
+		{
+			player.sendMessage("ERR4.");
 			return;
+		}
 		
 		if (player.getEvent() != null)
 		{
@@ -184,12 +200,6 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 						ladena.updateDatabase();
 					}
 				}*/
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__79_REQUESTPRIVATESTOREBUY;
 	}
 	
 	/* (non-Javadoc)

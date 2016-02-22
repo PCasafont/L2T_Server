@@ -1,3 +1,4 @@
+
 package l2server.gameserver.network;
 
 import l2server.util.Rnd;

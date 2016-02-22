@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
 import java.util.ArrayList;
@@ -44,11 +45,11 @@ public class CharKnownList extends ObjectKnownList
 			return false;
 		if (object instanceof L2PcInstance)
 		{
-			getKnownPlayers().put(object.getObjectId(), (L2PcInstance)object);
+			getKnownPlayers().put(object.getObjectId(), (L2PcInstance) object);
 			getKnownRelations().put(object.getObjectId(), -1);
 		}
 		else if (object instanceof L2Summon)
-			getKnownSummons().put(object.getObjectId(), (L2Summon)object);
+			getKnownSummons().put(object.getObjectId(), (L2Summon) object);
 		
 		return true;
 	}
@@ -57,7 +58,10 @@ public class CharKnownList extends ObjectKnownList
 	 * Return True if the L2PcInstance is in _knownPlayer of the L2Character.<BR><BR>
 	 * @param player The L2PcInstance to search in _knownPlayer
 	 */
-	public final boolean knowsThePlayer(L2PcInstance player) { return getActiveChar() == player || getKnownPlayers().containsKey(player.getObjectId()); }
+	public final boolean knowsThePlayer(L2PcInstance player)
+	{
+		return (getActiveChar() == player) || getKnownPlayers().containsKey(player.getObjectId());
+	}
 	
 	/** Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attack or Cast and notify AI. */
 	@Override
@@ -116,8 +120,7 @@ public class CharKnownList extends ObjectKnownList
 					player = pIter.next();
 					if (player == null)
 						pIter.remove();
-					else if (!player.isVisible()
-							|| !Util.checkIfInShortRadius(getDistanceToForgetObject(player), getActiveObject(), player, true))
+					else if (!player.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(player), getActiveObject(), player, true))
 					{
 						pIter.remove();
 						removeKnownObject(player, true);
@@ -137,8 +140,7 @@ public class CharKnownList extends ObjectKnownList
 					summon = sIter.next();
 					if (summon == null)
 						sIter.remove();
-					else if (!summon.isVisible()
-							|| !Util.checkIfInShortRadius(getDistanceToForgetObject(summon), getActiveObject(), summon, true))
+					else if (!summon.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(summon), getActiveObject(), summon, true))
 					{
 						sIter.remove();
 						removeKnownObject(summon, true);
@@ -159,8 +161,7 @@ public class CharKnownList extends ObjectKnownList
 				object = oIter.next();
 				if (object == null)
 					oIter.remove();
-				else if (!object.isVisible()
-						|| !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
+				else if (!object.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
 				{
 					oIter.remove();
 					removeKnownObject(object, true);
@@ -179,7 +180,7 @@ public class CharKnownList extends ObjectKnownList
 	
 	public L2Character getActiveChar()
 	{
-		return (L2Character)super.getActiveObject();
+		return (L2Character) super.getActiveObject();
 	}
 	
 	public Collection<L2Character> getKnownCharacters()

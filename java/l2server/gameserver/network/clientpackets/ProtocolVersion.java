@@ -1,5 +1,7 @@
+
 package l2server.gameserver.network.clientpackets;
 
+import l2server.Config;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.KeyPacket;
 
@@ -8,17 +10,17 @@ public class ProtocolVersion extends L2GameClientPacket
 	private int _version;
 	private byte[] _data;
 	private byte[] _check;
-
+	
 	public ProtocolVersion()
 	{
 	}
-
+	
 	@Override
 	protected void readImpl()
 	{
 		if (_buf.remaining() >= 0x04)
 			_version = readD();
-
+		
 		if (_buf.remaining() == 0x104)
 		{
 			_data = new byte[0x100];
@@ -27,7 +29,7 @@ public class ProtocolVersion extends L2GameClientPacket
 			readB(_check);
 		}
 	}
-
+	
 	@Override
 	protected void runImpl()
 	{
@@ -43,21 +45,15 @@ public class ProtocolVersion extends L2GameClientPacket
 			client.closeNow();
 			return;
 		}
-		else if (_version == 24)
+		else if ((!Config.IS_UNDERGROUND && (_version == 24)) || (Config.IS_UNDERGROUND && (_version == 28)))
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);
 			client.sendPacket(pk);
 			return;
 		}
-
+		
 		client.setProtocolOk(false);
 		client.close(new KeyPacket(null));
-	}
-
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

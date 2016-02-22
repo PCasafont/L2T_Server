@@ -1408,7 +1408,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4417" level="27" /> <!-- Humanoids -->
 		<skill id="4073" level="4" /> <!-- Stun -->
-		<spoilDrop itemId="4553" min="1" max="1" chance="0.5824" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4553" min="1" max="1" chance="0.5824" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
 		<spoilDrop itemId="1908" min="1" max="1" chance="13.7871" /> <!-- Moonstone Earring Wire -->
 		<spoilDrop itemId="2163" min="1" max="1" chance="7.4282" /> <!-- Recipe: Earring of Protection -->
 		<dropCategory chance="70">
@@ -1626,7 +1626,7 @@
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 		<skill id="4065" level="4" /> <!-- Heal -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="9.6375" /> <!-- Corroded Stone of Purity -->
-		<spoilDrop itemId="4555" min="1" max="1" chance="0.5783" /> <!-- Greater CON Dye <Con + 1 Str - 1> -->
+		<spoilDrop itemId="4555" min="1" max="1" chance="0.5783" /> <!-- Greater CON Dye [Con + 1 Str - 1] -->
 		<spoilDrop itemId="1960" min="1" max="1" chance="7.9213" /> <!-- Chain Gaiter Fragment -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="572" max="1161" chance="100" /> <!-- Adena -->
@@ -1756,7 +1756,7 @@
 		<skill id="4415" level="9" /> <!-- Bow -->
 		<skill id="4417" level="27" /> <!-- Humanoids -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="1.209" /> <!-- Corroded Mold Hardener -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.4634" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.4634" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1913" min="1" max="1" chance="8.4545" /> <!-- Necklace of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="549" max="1120" chance="100" /> <!-- Adena -->
@@ -1800,7 +1800,7 @@
 		<skill id="4100" level="4" /> <!-- Prominence -->
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="2.0152" /> <!-- Corroded Mold Hardener -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.7725" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.7725" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1913" min="1" max="1" chance="14.0926" /> <!-- Necklace of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="917" max="1863" chance="100" /> <!-- Adena -->
@@ -1855,7 +1855,7 @@
 		<skill id="4100" level="4" /> <!-- Prominence -->
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="1.8481" /> <!-- Corroded Mold Hardener -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.7084" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.7084" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1913" min="1" max="1" chance="12.9237" /> <!-- Necklace of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="841" max="1709" chance="100" /> <!-- Adena -->
@@ -1910,7 +1910,7 @@
 		<skill id="4100" level="4" /> <!-- Prominence -->
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="2.0152" /> <!-- Corroded Mold Hardener -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.7725" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.7725" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1913" min="1" max="1" chance="14.0926" /> <!-- Necklace of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="917" max="1863" chance="100" /> <!-- Adena -->
@@ -1966,7 +1966,7 @@
 		<skill id="4100" level="4" /> <!-- Prominence -->
 		<skill id="4160" level="4" /> <!-- Aura Burn -->
 		<spoilDrop itemId="4041" min="1" max="1" chance="1.4198" /> <!-- Corroded Mold Hardener -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.5442" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.5442" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1913" min="1" max="1" chance="9.9284" /> <!-- Necklace of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="646" max="1313" chance="100" /> <!-- Adena -->
@@ -2068,7 +2068,7 @@
 		<skill id="4417" level="14" /> <!-- Demons -->
 		<skill id="4071" level="3" /> <!-- Bow/Crossbow Resistance -->
 		<skill id="4151" level="4" /> <!-- Wind Strike -->
-		<spoilDrop itemId="4553" min="1" max="1" chance="0.2196" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4553" min="1" max="1" chance="0.2196" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
 		<spoilDrop itemId="1908" min="1" max="1" chance="5.1995" /> <!-- Moonstone Earring Wire -->
 		<spoilDrop itemId="2163" min="1" max="1" chance="2.8014" /> <!-- Recipe: Earring of Protection -->
 		<dropCategory chance="70">
@@ -2154,7 +2154,7 @@
 		<skill id="4032" level="4" /> <!-- Power Strike -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="3.0323" /> <!-- Corroded Stone of Purity -->
 		<spoilDrop itemId="1879" min="1" max="1" chance="7.5807" /> <!-- Corroded Cokes -->
-		<spoilDrop itemId="4469" min="1" max="1" chance="0.2599" /> <!-- STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4469" min="1" max="1" chance="0.2599" /> <!-- STR Dye [STR + 1 CON - 1] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="183" max="370" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -2280,7 +2280,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4417" level="7" /> <!-- Bugs -->
 		<spoilDrop itemId="1894" min="1" max="1" chance="4.2869" /> <!-- Corroded Quality Leather -->
-		<spoilDrop itemId="4589" min="1" max="1" chance="0.4073" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
+		<spoilDrop itemId="4589" min="1" max="1" chance="0.4073" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
 		<spoilDrop itemId="1911" min="1" max="1" chance="9.0871" /> <!-- Earring of Protection Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="482" max="984" chance="100" /> <!-- Adena -->
@@ -2428,7 +2428,7 @@
 		<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
 		<skill id="4032" level="6" /> <!-- Power Strike -->
 		<spoilDrop itemId="1884" min="1" max="3" chance="55.8523" /> <!-- Corroded Cord -->
-		<spoilDrop itemId="4590" min="1" max="1" chance="0.6051" /> <!-- Greater STR Dye <STR + 2 DEX - 2> -->
+		<spoilDrop itemId="4590" min="1" max="1" chance="0.6051" /> <!-- Greater STR Dye [STR + 2 DEX - 2] -->
 		<spoilDrop itemId="1966" min="1" max="1" chance="6.6272" /> <!-- Plated Leather Armor Fragment -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="718" max="1459" chance="100" /> <!-- Adena -->
@@ -2570,7 +2570,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4417" level="7" /> <!-- Bugs -->
 		<spoilDrop itemId="1875" min="1" max="1" chance="9.2483" /> <!-- Corroded Stone of Purity -->
-		<spoilDrop itemId="4601" min="1" max="1" chance="0.3083" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
+		<spoilDrop itemId="4601" min="1" max="1" chance="0.3083" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
 		<spoilDrop itemId="1539" min="1" max="1" chance="30.8276" /> <!-- Major Healing Potion -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="549" max="1115" chance="100" /> <!-- Adena -->
@@ -2711,7 +2711,7 @@
 		<skill id="4274" level="1" /> <!-- Blunt Weapon Vulnerability -->
 		<skill id="4032" level="6" /> <!-- Power Strike -->
 		<spoilDrop itemId="1870" min="1" max="11" chance="82.0524" /> <!-- Corroded Coal -->
-		<spoilDrop itemId="4602" min="1" max="1" chance="1.094" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
+		<spoilDrop itemId="4602" min="1" max="1" chance="1.094" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
 		<spoilDrop itemId="1539" min="1" max="3" chance="54.7016" /> <!-- Major Healing Potion -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1956" max="3952" chance="100" /> <!-- Adena -->
@@ -2858,7 +2858,7 @@
 		<skill id="4471" level="7" /> <!-- Anger -->
 		<skill id="4641" level="5" /> <!-- Super Strike -->
 		<spoilDrop itemId="1864" min="1" max="25" chance="94.4873" /> <!-- Corroded Stem -->
-		<spoilDrop itemId="4603" min="1" max="1" chance="1.3648" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+		<spoilDrop itemId="4603" min="1" max="1" chance="1.3648" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 		<spoilDrop itemId="1539" min="1" max="3" chance="68.2408" /> <!-- Major Healing Potion -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="2440" max="4930" chance="100" /> <!-- Adena -->
@@ -3489,7 +3489,7 @@
 		<skill id="4105" level="4" /> <!-- Beam Cannon -->
 		<spoilDrop itemId="8308" min="1" max="1" chance="0.5333" /> <!-- Recipe: Ecliptic Axe -->
 		<spoilDrop itemId="4040" min="1" max="1" chance="6.5387" /> <!-- Corroded Mold Lubricant -->
-		<spoilDrop itemId="4604" min="1" max="1" chance="0.7265" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
+		<spoilDrop itemId="4604" min="1" max="1" chance="0.7265" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1299" max="2624" chance="100" /> <!-- Adena -->
 		</dropCategory>
@@ -4287,7 +4287,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4417" level="1" /> <!-- Animals -->
 		<spoilDrop itemId="1867" min="1" max="5" chance="70.5071" /> <!-- Corroded Animal Skin -->
-		<spoilDrop itemId="4613" min="1" max="1" chance="0.2188" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
+		<spoilDrop itemId="4613" min="1" max="1" chance="0.2188" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
 		<spoilDrop itemId="4051" min="1" max="1" chance="6.1524" /> <!-- Adamantite Necklace Chain -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="626" max="1278" chance="100" /> <!-- Adena -->
@@ -4464,7 +4464,7 @@
 		<skill id="4437" level="4" /> <!-- Greater Bleed Resistance -->
 		<skill id="4444" level="2" /> <!-- Greater Bow/Crossbow Resistance -->
 		<spoilDrop itemId="1869" min="1" max="5" chance="66.4016" /> <!-- Corroded Iron Ore -->
-		<spoilDrop itemId="4614" min="1" max="1" chance="0.2748" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
+		<spoilDrop itemId="4614" min="1" max="1" chance="0.2748" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
 		<spoilDrop itemId="8306" min="1" max="1" chance="0.1521" /> <!-- Recipe: Wizard's Tear (60%) -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="787" max="1603" chance="100" /> <!-- Adena -->
@@ -4573,7 +4573,7 @@
 		<skill id="4032" level="5" /> <!-- Power Strike -->
 		<skill id="4073" level="5" /> <!-- Stun -->
 		<spoilDrop itemId="8316" min="1" max="1" chance="0.1117" /> <!-- Recipe: Flaming Dragon Skull (60%) -->
-		<spoilDrop itemId="4615" min="1" max="1" chance="0.4162" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+		<spoilDrop itemId="4615" min="1" max="1" chance="0.4162" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 		<spoilDrop itemId="8300" min="1" max="1" chance="0.1649" /> <!-- Recipe: Infernal Master (60%) -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="1193" max="2426" chance="100" /> <!-- Adena -->
@@ -4950,7 +4950,7 @@
 		<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
 		<skill id="4379" level="5" /> <!-- Spear Resistance -->
 		<spoilDrop itemId="4039" min="1" max="1" chance="34.5184" /> <!-- Corroded Mold Glue -->
-		<spoilDrop itemId="4616" min="1" max="1" chance="1.4283" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
+		<spoilDrop itemId="4616" min="1" max="1" chance="1.4283" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
 		<spoilDrop itemId="4049" min="1" max="1" chance="54.3169" /> <!-- Adamantite Earring Gemstone -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="4084" max="8341" chance="100" /> <!-- Adena -->
@@ -5087,7 +5087,7 @@
 		<skill id="4417" level="5" /> <!-- Beast -->
 		<skill id="4379" level="5" /> <!-- Spear Resistance -->
 		<spoilDrop itemId="1895" min="1" max="7" chance="77.2457" /> <!-- Corroded Metallic Fiber -->
-		<spoilDrop itemId="4617" min="1" max="1" chance="1.4916" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
+		<spoilDrop itemId="4617" min="1" max="1" chance="1.4916" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
 		<spoilDrop itemId="4056" min="1" max="1" chance="19.5736" /> <!-- Zubei's Breastplate Part -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="4271" max="8700" chance="100" /> <!-- Adena -->
@@ -21190,7 +21190,7 @@
 		<skill id="4582" level="5" /> <!-- Poison -->
 		<skill id="4579" level="5" /> <!-- Bleed -->
 		<spoilDrop itemId="1871" min="1" max="3" chance="62.5677" /> <!-- Corroded Charcoal -->
-		<spoilDrop itemId="4553" min="1" max="1" chance="0.5005" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
+		<spoilDrop itemId="4553" min="1" max="1" chance="0.5005" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
 		<spoilDrop itemId="1908" min="1" max="1" chance="11.8499" /> <!-- Moonstone Earring Wire -->
 		<dropCategory chance="70">
 			<itemDrop itemId="57" min="505" max="1026" chance="100" /> <!-- Adena -->
@@ -23272,7 +23272,7 @@
 			<itemDrop itemId="4040" min="1" max="1" chance="4.6318" /> <!-- Corroded Mold Lubricant -->
 			<itemDrop itemId="9628" min="1" max="1" chance="1.8164" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="1.2189" /> <!-- Corroded Orichalcum -->
-			<itemDrop itemId="6867" min="1" max="1" chance="0.4313" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Gloves (60%) -->
+			<itemDrop itemId="6867" min="1" max="1" chance="0.4313" /> <!-- Recipe: Sealed Draconic Leather Gloves (60%) -->
 			<itemDrop itemId="1345" min="60" max="180" chance="25.7325" /> <!-- Arrow of Light -->
 		</dropCategory>
 	</npc>
@@ -23314,7 +23314,7 @@
 			<itemDrop itemId="9628" min="1" max="1" chance="2.9122" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="1.9543" /> <!-- Corroded Orichalcum -->
 			<itemDrop itemId="9629" min="1" max="1" chance="1.6144" /> <!-- Corroded Adamantine -->
-			<itemDrop itemId="6869" min="1" max="1" chance="0.6915" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Boots (60%) -->
+			<itemDrop itemId="6869" min="1" max="1" chance="0.6915" /> <!-- Recipe: Sealed Draconic Leather Boots (60%) -->
 		</dropCategory>
 	</npc>
 	<npc id="22528" name="Cursed Prefect" level="81" type="L2Monster" atkRange="80" hpMax="18240" hpReg="8.5" mpMax="2169" mpReg="3.0"
@@ -23948,7 +23948,7 @@
 			<itemDrop itemId="9628" min="1" max="1" chance="1.3014" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="0.8733" /> <!-- Corroded Orichalcum -->
 			<itemDrop itemId="9629" min="1" max="1" chance="0.7215" /> <!-- Corroded Adamantine -->
-			<itemDrop itemId="6867" min="1" max="1" chance="0.309" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Gloves (60%) -->
+			<itemDrop itemId="6867" min="1" max="1" chance="0.309" /> <!-- Recipe: Sealed Draconic Leather Gloves (60%) -->
 			<itemDrop itemId="1345" min="20" max="60" chance="55.3114" /> <!-- Arrow of Light -->
 		</dropCategory>
 	</npc>
@@ -23988,7 +23988,7 @@
 			<itemDrop itemId="9628" min="1" max="1" chance="2.9122" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="1.9543" /> <!-- Corroded Orichalcum -->
 			<itemDrop itemId="9629" min="1" max="1" chance="1.6144" /> <!-- Corroded Adamantine -->
-			<itemDrop itemId="6869" min="1" max="1" chance="0.6915" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Boots (60%) -->
+			<itemDrop itemId="6869" min="1" max="1" chance="0.6915" /> <!-- Recipe: Sealed Draconic Leather Boots (60%) -->
 		</dropCategory>
 	</npc>
 	<npc id="22545" name="Dark Dragoness" level="81" type="L2Monster" atkRange="40" hpMax="52034" hpReg="111.50705" mpMax="2169"
@@ -24621,7 +24621,7 @@
 			<itemDrop itemId="9628" min="1" max="1" chance="24.3185" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="16.319" /> <!-- Corroded Orichalcum -->
 			<itemDrop itemId="9629" min="1" max="1" chance="13.4809" /> <!-- Corroded Adamantine -->
-			<itemDrop itemId="6867" min="1" max="1" chance="5.7739" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Gloves (60%) -->
+			<itemDrop itemId="6867" min="1" max="1" chance="5.7739" /> <!-- Recipe: Sealed Draconic Leather Gloves (60%) -->
 			<itemDrop itemId="14052" min="4" max="12" chance="9.6894" /> <!-- Vesper Noble Enhancement Stone -->
 			<itemDrop itemId="1345" min="2700" max="8100" chance="7.6559" /> <!-- Arrow of Light -->
 		</dropCategory>
@@ -24665,7 +24665,7 @@
 			<itemDrop itemId="9628" min="1" max="1" chance="8.4401" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="5.6637" /> <!-- Corroded Orichalcum -->
 			<itemDrop itemId="9629" min="1" max="1" chance="4.6787" /> <!-- Corroded Adamantine -->
-			<itemDrop itemId="6869" min="1" max="1" chance="2.0039" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Boots (60%) -->
+			<itemDrop itemId="6869" min="1" max="1" chance="2.0039" /> <!-- Recipe: Sealed Draconic Leather Boots (60%) -->
 			<itemDrop itemId="14052" min="1" max="1" chance="26.9028" /> <!-- Vesper Noble Enhancement Stone -->
 		</dropCategory>
 	</npc>
@@ -25300,7 +25300,7 @@
 			<itemDrop itemId="4040" min="1" max="1" chance="15.5498" /> <!-- Corroded Mold Lubricant -->
 			<itemDrop itemId="9628" min="1" max="1" chance="6.0979" /> <!-- Corroded Leonard -->
 			<itemDrop itemId="9630" min="1" max="1" chance="4.092" /> <!-- Corroded Orichalcum -->
-			<itemDrop itemId="6867" min="1" max="1" chance="1.4478" /> <!-- Recipe: Sealed DraconicÂ LeatherÂ Gloves (60%) -->
+			<itemDrop itemId="6867" min="1" max="1" chance="1.4478" /> <!-- Recipe: Sealed Draconic Leather Gloves (60%) -->
 			<itemDrop itemId="1345" min="300" max="900" chance="17.2776" /> <!-- Arrow of Light -->
 		</dropCategory>
 	</npc>
@@ -42374,8 +42374,8 @@
 		<itemDrop itemId="35297" min="1" max="1" chance="0.3" /> <!-- Specter Cutter Fragment -->
 		<itemDrop itemId="35315" min="1" max="1" chance="0.3" /> <!-- Seraph Leather Legging Ingredient -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
 		<spawn x="214328" y="54616" z="-8672" heading="18478" respawn="60" />
 		<spawn x="214027" y="54681" z="-8672" heading="29577" respawn="60" />
 		<spawn x="214055" y="54544" z="-8672" heading="27651" respawn="60" />
@@ -42429,8 +42429,8 @@
 		<itemDrop itemId="35315" min="1" max="1" chance="0.07473" /> <!-- Seraph Leather Legging Ingredient -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.0055" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Cutter (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Cutter (60%) -->
 		<spawn x="215039" y="54194" z="-14880" heading="16384" respawn="60" />
 		<spawn x="214915" y="54198" z="-14880" heading="16384" respawn="60" />
 		<spawn x="214982" y="54080" z="-14880" heading="16384" respawn="60" />
@@ -42588,8 +42588,8 @@
 		<itemDrop itemId="17724" min="1" max="1" chance="0.05998" /> <!-- Orbis Ancient Hero's Shield -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.0055" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Cutter (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Cutter (60%) -->
 		<spawn x="213576" y="112104" z="-12800" heading="15592" respawn="60" />
 		<spawn x="213787" y="112192" z="-12800" heading="16824" respawn="60" />
 		<spawn x="214177" y="112318" z="-12800" heading="16416" respawn="60" />
@@ -42682,8 +42682,8 @@
 		<itemDrop itemId="57" min="4599" max="15721" chance="83.5294" /> <!-- Adena -->
 		<itemDrop itemId="35301" min="1" max="1" chance="0.075" /> <!-- Specter Stormer Fragment -->
 		<itemDrop itemId="35309" min="1" max="1" chance="0.075" /> <!-- Seraph Gaiter Ingredient -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Gaiters (60%) -->
 		<itemDrop itemId="17387" min="1" max="1" chance="0.0009" /> <!-- Specter Stormer -->
 		<spawn x="213795" y="55044" z="-8672" heading="49151" respawn="60" />
 		<spawn x="214255" y="54683" z="-8672" heading="60061" respawn="60" />
@@ -42742,8 +42742,8 @@
 		<itemDrop itemId="35301" min="1" max="1" chance="0.21253" /> <!-- Specter Stormer Fragment -->
 		<itemDrop itemId="35309" min="1" max="1" chance="0.075" /> <!-- Seraph Gaiter Ingredient -->
 		<itemDrop itemId="17724" min="1" max="1" chance="0.06959" /> <!-- Orbis Ancient Hero's Shield -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Gaiters (60%) -->
 		<itemDrop itemId="17387" min="1" max="1" chance="0.0009" /> <!-- Specter Stormer -->
 		<spawn x="216992" y="53040" z="-14984" heading="0" respawn="60" />
 		<spawn x="216999" y="52784" z="-14984" heading="0" respawn="60" />
@@ -42913,8 +42913,8 @@
 		<itemDrop itemId="35301" min="1" max="1" chance="0.11695" /> <!-- Specter Stormer Fragment -->
 		<itemDrop itemId="35309" min="1" max="1" chance="0.10024" /> <!-- Seraph Gaiter Ingredient -->
 		<itemDrop itemId="17724" min="1" max="1" chance="0.0167" /> <!-- Orbis Ancient Hero's Shield -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.003" /> <!-- Recipe: Seraph Gaiters (60%) -->
 		<itemDrop itemId="17387" min="1" max="1" chance="0.0009" /> <!-- Specter Stormer -->
 		<spawn x="213300" y="112381" z="-12800" heading="15768" respawn="60" />
 		<spawn x="213444" y="112245" z="-12800" heading="16624" respawn="60" />
@@ -42995,9 +42995,9 @@
 		<itemDrop itemId="35303" min="1" max="1" chance="0.075" /> <!-- Specter Shooter Fragment -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
 		<itemDrop itemId="35314" min="1" max="1" chance="0.03" /> <!-- Seraph Leather Armor Ingredient -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Shooter (60%) -->
 		<itemDrop itemId="17389" min="1" max="1" chance="0.0009" /> <!-- Specter Shooter -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe: Seraph Leather Armor (60%) -->
 		<spawn x="213153" y="54686" z="-14880" heading="62" respawn="60" />
 		<spawn x="214350" y="54646" z="-8672" heading="33452" respawn="60" />
 		<spawn x="216992" y="51339" z="-8584" heading="0" respawn="60" />
@@ -43039,8 +43039,8 @@
 		<itemDrop itemId="35303" min="1" max="1" chance="0.075" /> <!-- Specter Shooter Fragment -->
 		<itemDrop itemId="35314" min="1" max="1" chance="0.03" /> <!-- Seraph Leather Armor Ingredient -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe: Seraph Leather Armor (60%) -->
 		<itemDrop itemId="17389" min="1" max="1" chance="0.0009" /> <!-- Specter Shooter -->
 		<spawn x="216990" y="50483" z="-15048" heading="0" respawn="60" />
 		<spawn x="216993" y="49964" z="-15048" heading="0" respawn="60" />
@@ -43132,9 +43132,9 @@
 		<itemDrop itemId="35314" min="1" max="1" chance="0.075" /> <!-- Seraph Leather Armor Ingredient -->
 		<itemDrop itemId="17724" min="1" max="1" chance="0.03089" /> <!-- Orbis Ancient Hero's Shield -->
 		<itemDrop itemId="36554" min="1" max="1" chance="0.03" /> <!-- Armor Fragment (High-grade) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.003" /> <!-- Recipe: Specter Shooter (60%) -->
 		<itemDrop itemId="17389" min="1" max="1" chance="0.0009" /> <!-- Specter Shooter -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.0009" /> <!-- Recipe: Seraph Leather Armor (60%) -->
 		<spawn x="217625" y="114304" z="-12736" heading="16032" respawn="60" />
 		<spawn x="217242" y="114305" z="-12736" heading="15928" respawn="60" />
 		<spawn x="217104" y="114564" z="-12736" heading="0" respawn="60" />
@@ -43218,7 +43218,7 @@
 		<itemDrop itemId="35304" min="1" max="1" chance="0.3" /> <!-- Specter Buster Fragment -->
 		<itemDrop itemId="19245" min="1" max="1" chance="0.3" /> <!-- Unidentified Specter Buster Fragment -->
 		<itemDrop itemId="18190" min="1" max="1" chance="0.03" /> <!-- Unidentified Seraph Shield - Heavy Armor -->
-		<itemDrop itemId="35424" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Fighter (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Fighter (60%) -->
 		<itemDrop itemId="19382" min="1" max="1" chance="0.0055" /> <!-- Recipe: Unidentified Specter Fighter (60%) -->
 		<itemDrop itemId="18179" min="1" max="1" chance="0.003" /> <!-- Unidentified Specter Buster -->
 	</npc>
@@ -43233,7 +43233,7 @@
 		<spoilDrop itemId="36534" min="1" max="1" chance="1.083" /> <!-- Durable Braid -->
 		<itemDrop itemId="57" min="4587" max="13930" chance="71.7647" /> <!-- Adena -->
 		<itemDrop itemId="35306" min="1" max="1" chance="0.3" /> <!-- Specter Retributer Fragment -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Retributer (60%) -->
 	</npc>
 	<npc id="22922" name="Orbis' Curator" level="96" type="L2Monster" atkRange="40" hpMax="557945" hpReg="36.13" mpMax="27363"
 			mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="5586196" sp="1340" pAtk="41000" mAtk="21218"
@@ -43247,7 +43247,7 @@
 		<spoilDrop itemId="36534" min="1" max="1" chance="1.037" /> <!-- Durable Braid -->
 		<itemDrop itemId="57" min="4669" max="21624" chance="74.9131" /> <!-- Adena -->
 		<itemDrop itemId="35306" min="1" max="1" chance="0.13898" /> <!-- Specter Retributer Fragment -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Retributer (60%) -->
 	</npc>
 	<npc id="22923" name="Orbis' Curator" level="97" type="L2Monster" atkRange="40" hpMax="1231496" hpReg="37.4" mpMax="27363"
 			mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="13008782" sp="3122" pAtk="42000" mAtk="31500"
@@ -43264,7 +43264,7 @@
 		<spoilDrop itemId="36534" min="1" max="1" chance="1.629" /> <!-- Durable Braid -->
 		<itemDrop itemId="57" min="7119" max="33194" chance="69.3244" /> <!-- Adena -->
 		<itemDrop itemId="35306" min="1" max="1" chance="0.43058" /> <!-- Specter Retributer Fragment -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Retributer (60%) -->
 	</npc>
 	<npc id="22924" name="Orbis' Ancient Hero" level="96" type="L2Monster" atkRange="40" hpMax="3347670" hpReg="36.13" mpMax="27363"
 			mpReg="11.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="21113182" sp="5067" pAtk="41000" mAtk="30750"
@@ -43278,7 +43278,7 @@
 		<itemDrop itemId="57" min="9949" max="22339" chance="82.8125" /> <!-- Adena -->
 		<itemDrop itemId="35299" min="1" max="1" chance="0.3" /> <!-- Specter Avenger Fragment -->
 		<itemDrop itemId="17527" min="1" max="1" chance="0.3" /> <!-- Scroll: Enchant Armor (R-grade) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Avenger (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Avenger (60%) -->
 		<itemDrop itemId="17385" min="1" max="1" chance="0.003" /> <!-- Specter Avenger -->
 	</npc>
 	<npc id="22925" name="Orbis' Ancient Hero" level="97" type="L2Monster" atkRange="40" hpMax="3694489" hpReg="37.4" mpMax="27363"
@@ -43295,7 +43295,7 @@
 		<itemDrop itemId="57" min="13443" max="28652" chance="66.6666" /> <!-- Adena -->
 		<itemDrop itemId="9551" min="1" max="1" chance="0.75" /> <!-- Holy Stone -->
 		<itemDrop itemId="35299" min="1" max="1" chance="0.3" /> <!-- Specter Avenger Fragment -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Avenger (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Avenger (60%) -->
 		<itemDrop itemId="17385" min="1" max="1" chance="0.003" /> <!-- Specter Avenger -->
 		<spawn x="208952" y="112703" z="-12544" heading="17032" respawn="60" />
 		<spawn x="208938" y="113127" z="-12544" heading="16784" respawn="60" />
@@ -43324,7 +43324,7 @@
 		<spoilDrop itemId="36534" min="1" max="1" chance="2.11" /> <!-- Durable Braid -->
 		<itemDrop itemId="57" min="9785" max="23714" chance="69.6428" /> <!-- Adena -->
 		<itemDrop itemId="35306" min="1" max="1" chance="0.3" /> <!-- Specter Retributer Fragment -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.03" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.03" /> <!-- Recipe: Specter Retributer (60%) -->
 	</npc>
 	<npc id="22927" name="Orbis' Chief Curator" level="97" type="L2Monster" atkRange="40" hpMax="3694489" hpReg="37.4" mpMax="27363"
 			mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="33987472" sp="8157" pAtk="42000" mAtk="55755"
@@ -43340,7 +43340,7 @@
 		<itemDrop itemId="57" min="15258" max="25400" chance="85.7142" /> <!-- Adena -->
 		<itemDrop itemId="9550" min="1" max="1" chance="0.75" /> <!-- Dark Stone -->
 		<itemDrop itemId="35306" min="1" max="1" chance="0.75" /> <!-- Specter Retributer Fragment -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.0055" /> <!-- Recipe: Specter Retributer (60%) -->
 		<spawn x="220341" y="112076" z="-12544" heading="16528" respawn="60" />
 		<spawn x="219415" y="112077" z="-12544" heading="16720" respawn="60" />
 		<spawn x="219665" y="112715" z="-12544" heading="16144" respawn="60" />

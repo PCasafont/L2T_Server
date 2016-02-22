@@ -3,19 +3,23 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.Config;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -29,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestJoinSiege extends L2GameClientPacket
 {
-	private static final String _C__A4_RequestJoinSiege = "[C] a4 RequestJoinSiege";
 	//
 	
 	private int _castleId;
@@ -48,7 +51,8 @@ public final class RequestJoinSiege extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)	return;
+		if (activeChar == null)
+			return;
 		
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) != L2Clan.CP_CS_MANAGE_SIEGE)
 		{
@@ -65,9 +69,9 @@ public final class RequestJoinSiege extends L2GameClientPacket
 			return;
 		
 		//NOT FOR ERTHEIA SERVER
-		if (Config.isServer(Config.TENKAI) && !Config.IS_CLASSIC && !canRegister(activeChar))
-			return;
-
+		/*if (Config.isServer(Config.TENKAI) && !canRegister(activeChar))
+			return;*/
+		
 		if (_isJoining == 1)
 		{
 			if (System.currentTimeMillis() < clan.getDissolvingExpiryTime())
@@ -90,8 +94,6 @@ public final class RequestJoinSiege extends L2GameClientPacket
 	{
 		if (player == null)
 			return false;
-		return true;
-		/*
 		
 		//Config
 		int minClanLevel = 8;
@@ -107,22 +109,21 @@ public final class RequestJoinSiege extends L2GameClientPacket
 		int varBeCreatedDaysAgo = 0;
 		
 		List<String> ips = new ArrayList<String>();
+		
 		L2Clan clan = ClanTable.getInstance().getClan(player.getClanId());
+		
 		if (clan.getLevel() < minClanLevel)
 		{
 			player.sendMessage("Your clan should have at least level " + minClanLevel + ".");
 			return false;
 		}
+		
 		if (clan.getMembersCount() < minClanSize)
 		{
 			player.sendMessage("Your clan should have at least " + minClanSize + " members in your clan.");
 			return false;
 		}
-		if (clan.getSubPledge(-1) == null)
-		{
-			player.sendMessage("Your clan should have an academy!");
-			return false;
-		}
+		
 		if (clan.getOnlineMembersCount() < numberOfPlayersToBeChecked)
 		{
 			player.sendMessage("Your clan should have at least " + numberOfPlayersToBeChecked + " members online.");
@@ -131,38 +132,34 @@ public final class RequestJoinSiege extends L2GameClientPacket
 		
 		for (L2PcInstance member : clan.getOnlineMembers(0))
 		{
-			if (member == null || (member.getClient() == null || member.getClient().isDetached()))
+			if (member == null)
 				continue;
+			
 			if (ips.contains(member.getExternalIP()))
 			{
 				player.sendMessage("Clan Member: " + member.getName() + " detected as dual box, doesn't count as online member!");
 				continue;
 			}
-			if (((Calendar.getInstance().getTimeInMillis()-member.getCreateTime())/86400000L) > shouldBeCreatedDaysAgo)
-				varBeCreatedDaysAgo ++;
+			
+			if (((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L) > shouldBeCreatedDaysAgo)
+				varBeCreatedDaysAgo++;
 			
 			if (member.getLevel() >= shouldHaveLevel)
-				varHaveLevel ++;
+				varHaveLevel++;
 			
 			if (member.getPvpKills() >= shouldHavePvPs)
-				varHavePvPs ++;
+				varHavePvPs++;
 			
 			ips.add(member.getExternalIP());
 		}
 		
-		if (varHaveLevel < numberOfPlayersToBeChecked || varHavePvPs < numberOfPlayersToBeChecked || varBeCreatedDaysAgo < numberOfPlayersToBeChecked)
+		if ((varHaveLevel < numberOfPlayersToBeChecked) || (varHavePvPs < numberOfPlayersToBeChecked) || (varBeCreatedDaysAgo < numberOfPlayersToBeChecked))
 		{
 			player.sendMessage("Your clan looks weak to have a castle, you should train more your clan and your clan members.");
-			player.sendMessage("Info: " +varHaveLevel+"/"+numberOfPlayersToBeChecked + ", " + varHavePvPs+"/"+numberOfPlayersToBeChecked + ", " +varBeCreatedDaysAgo+"/"+numberOfPlayersToBeChecked);
+			player.sendMessage("Info: " + varHaveLevel + "/" + numberOfPlayersToBeChecked + ", " + varHavePvPs + "/" + numberOfPlayersToBeChecked + ", " + varBeCreatedDaysAgo + "/" + numberOfPlayersToBeChecked);
 			return false;
 		}
 		
-		return true;*/
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__A4_RequestJoinSiege;
+		return true;
 	}
 }

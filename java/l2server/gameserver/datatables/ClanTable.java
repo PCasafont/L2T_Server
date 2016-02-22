@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.sql.Connection;
@@ -35,6 +36,8 @@ import l2server.gameserver.instancemanager.FortSiegeManager;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
+import l2server.gameserver.model.L2PledgeSkillLearn;
+import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.FortSiege;
@@ -149,12 +152,12 @@ public class ClanTable
 	private synchronized void determineTopClansByMemberCount()
 	{
 		Comparator<L2Clan> byMemberCount = new ClanByMemberCountComparator();
-				
+		
 		ArrayList<L2Clan> sortedClans = new ArrayList<L2Clan>(_clans.values());
 		Collections.sort(sortedClans, byMemberCount);
 		
 		List<L2Clan> temp = sortedClans.subList(0, Math.min(10, sortedClans.size()));
-		for (int i = 0; i < _topClansByMemberCount.length && i < temp.size(); i++)
+		for (int i = 0; (i < _topClansByMemberCount.length) && (i < temp.size()); i++)
 			_topClansByMemberCount[i] = temp.get(i);
 	}
 	
@@ -216,13 +219,33 @@ public class ClanTable
 			return null;
 		
 		L2Clan clan = new L2Clan(IdFactory.getInstance().getNextId(), clanName);
-		L2ClanMember leader = new L2ClanMember(clan, player);
+		L2ClanMember leader = new L2ClanMember(clan, player.getName(), player.getLevel(), player.getCurrentClass().getId(), player.getObjectId(), player.getPledgeType(), player.getPowerGrade(), player.getTitle(), player.getAppearance().getSex(), player.getRace().ordinal());
 		clan.setLeader(leader);
 		leader.setPlayerInstance(player);
 		clan.store();
 		player.setClan(clan);
 		player.setPledgeClass(leader.calculatePledgeClass(player));
 		player.setClanPrivileges(L2Clan.CP_ALL);
+		
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+		{
+			clan.changeLevel(10);
+			
+			//Add the skills
+			while (PledgeSkillTree.getInstance().getAvailableSkills(player).length != 0)
+			{
+				L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(player);
+				if (skills != null)
+				{
+					for (L2PledgeSkillLearn sk : skills)
+					{
+						L2Skill s = SkillTable.getInstance().getInfo(sk.getId(), sk.getLevel());
+						if (s != null)
+							clan.addNewSkill(s);
+					}
+				}
+			}
+		}
 		
 		if (Config.DEBUG)
 			Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
@@ -244,7 +267,7 @@ public class ClanTable
 		if (player == null)
 			return false;
 		
-		if (!Util.isAlphaNumeric(clanName) || 2 > clanName.length())
+		if (!Util.isAlphaNumeric(clanName) || (2 > clanName.length()))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_NAME_INCORRECT));
 			return false;
@@ -370,7 +393,9 @@ public class ClanTable
 	
 	public void scheduleRemoveClan(final int clanId)
 	{
-		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable() {
+		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+		{
+			@Override
 			public void run()
 			{
 				if (getClan(clanId) == null)
@@ -389,7 +414,7 @@ public class ClanTable
 	{
 		for (L2Clan clan : getClans())
 		{
-			if (clan.getAllyName() != null && clan.getAllyName().equalsIgnoreCase(allyName))
+			if ((clan.getAllyName() != null) && clan.getAllyName().equalsIgnoreCase(allyName))
 			{
 				return true;
 			}
@@ -405,7 +430,7 @@ public class ClanTable
 		for (L2Clan clan : _clans.values())
 		{
 			int allyId = clan.getAllyId();
-			if (allyId != 0 && clan.getClanId() != allyId)
+			if ((allyId != 0) && (clan.getClanId() != allyId))
 			{
 				if (!_clans.containsKey(allyId))
 				{
@@ -413,7 +438,7 @@ public class ClanTable
 					clan.setAllyName(null);
 					clan.changeAllyCrest(0, true);
 					clan.updateClanInDB();
-					Log.info(getClass().getSimpleName()+": Removed alliance from clan: "+clan);
+					Log.info(getClass().getSimpleName() + ": Removed alliance from clan: " + clan);
 				}
 			}
 		}

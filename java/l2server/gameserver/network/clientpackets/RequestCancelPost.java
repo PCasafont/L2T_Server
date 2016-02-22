@@ -3,23 +3,24 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
@@ -36,7 +37,6 @@ import l2server.gameserver.util.Util;
  */
 public final class RequestCancelPost extends L2GameClientPacket
 {
-	private static final String _C__D0_6F_REQUESTCANCELPOSTATTACHMENT = "[C] D0:6F RequestCancelPostAttachment";
 	
 	private int _msgId;
 	
@@ -50,7 +50,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 	public void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+		if ((activeChar == null) || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
 			return;
 		
 		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("cancelpost"))
@@ -61,8 +61,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 			return;
 		if (msg.getSenderId() != activeChar.getObjectId())
 		{
-			Util.handleIllegalPlayerAction(activeChar,
-					"Player "+activeChar.getName()+" tried to cancel not own post!", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -109,7 +108,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 		}
 		
 		final ItemContainer attachments = msg.getAttachments();
-		if (attachments == null || attachments.getSize() == 0)
+		if ((attachments == null) || (attachments.getSize() == 0))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANT_CANCEL_RECEIVED_MAIL));
 			return;
@@ -125,22 +124,19 @@ public final class RequestCancelPost extends L2GameClientPacket
 			
 			if (item.getOwnerId() != activeChar.getObjectId())
 			{
-				Util.handleIllegalPlayerAction(activeChar,
-						"Player "+activeChar.getName()+" tried to get not own item from cancelled attachment!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to get not own item from cancelled attachment!", Config.DEFAULT_PUNISH);
 				return;
 			}
 			
 			if (!item.getLocation().equals(ItemLocation.MAIL))
 			{
-				Util.handleIllegalPlayerAction(activeChar,
-						"Player "+activeChar.getName()+" tried to get items not from mail !", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to get items not from mail !", Config.DEFAULT_PUNISH);
 				return;
 			}
 			
 			if (item.getLocationSlot() != msg.getId())
 			{
-				Util.handleIllegalPlayerAction(activeChar,
-						"Player "+activeChar.getName()+" tried to get items from different attachment!", Config.DEFAULT_PUNISH);
+				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to get items from different attachment!", Config.DEFAULT_PUNISH);
 				return;
 			}
 			
@@ -214,12 +210,6 @@ public final class RequestCancelPost extends L2GameClientPacket
 		
 		activeChar.sendPacket(new ExChangePostState(false, _msgId, Message.DELETED));
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_CANCELLED));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_6F_REQUESTCANCELPOSTATTACHMENT;
 	}
 	
 	@Override

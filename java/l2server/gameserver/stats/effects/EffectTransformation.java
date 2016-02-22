@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -26,7 +26,7 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
- * 
+ *
  * @author nBd
  */
 public class EffectTransformation extends L2Effect
@@ -41,7 +41,7 @@ public class EffectTransformation extends L2Effect
 	{
 		super(env, effect);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -49,7 +49,7 @@ public class EffectTransformation extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class EffectTransformation extends L2Effect
 		if (trg.isAlikeDead() || trg.isCursedWeaponEquipped())
 			return false;
 		
-		if (getEffector() == trg && trg.getTransformation() != null)
+		if ((getEffector() == trg) && (trg.getTransformation() != null))
 		{
 			trg.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
 			return false;
@@ -83,7 +83,7 @@ public class EffectTransformation extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override

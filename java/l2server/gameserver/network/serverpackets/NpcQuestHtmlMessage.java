@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
@@ -131,7 +132,7 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 	private int _questId = 0;
 	
 	/**
-	 * 
+	 *
 	 * @param npcObjId
 	 * @param text
 	 * @param questId
@@ -163,8 +164,8 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 		
 		if (content == null)
 		{
-			setHtml("<html><body>My Text is missing:<br>"+path+"</body></html>");
-			Log.warning("missing html page "+path);
+			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
+			Log.warning("missing html page " + path);
 			return false;
 		}
 		
@@ -184,18 +185,18 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 		
 		activeChar.clearBypass();
 		int len = _html.length();
-		for (int i=0; i<len; i++)
+		for (int i = 0; i < len; i++)
 		{
 			int start = _html.indexOf("bypass -h", i);
 			int finish = _html.indexOf("\"", start);
 			
-			if (start < 0 || finish < 0)
+			if ((start < 0) || (finish < 0))
 				break;
 			
 			start += 10;
 			i = finish;
-			int finish2 = _html.indexOf("$",start);
-			if (finish2 < finish && finish2 > 0)
+			int finish2 = _html.indexOf("$", start);
+			if ((finish2 < finish) && (finish2 > 0))
 				activeChar.addBypass2(_html.substring(start, finish2).trim());
 			else
 				activeChar.addBypass(_html.substring(start, finish).trim());
@@ -205,20 +206,8 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x8e);
 		writeD(_npcObjId);
 		writeS(_html);
 		writeD(_questId);
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "[S] FE:8D NpcQuestHtmlMessage";
-	}
-	
 }

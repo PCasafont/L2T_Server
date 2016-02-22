@@ -401,7 +401,7 @@
 	</skill>
 	<!-- Becomes knocked down from a punch and P. Def. is decreased by 20%. -->
 	<skill id="15042" levels="1" name="Tauti Push">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -423,7 +423,7 @@
 	</skill>
 	<!-- Becomes knocked down from a punch and P. Def. is decreased by 30%. -->
 	<skill id="15043" levels="1" name="Tauti Push">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -445,7 +445,8 @@
 	</skill>
 	<!-- Flying away from stun. -->
 	<skill id="15044" levels="1" name="Tauti Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -470,7 +471,8 @@
 	</skill>
 	<!-- Flying away from stun. -->
 	<skill id="15045" levels="1" name="Tauti Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -495,7 +497,8 @@
 	</skill>
 	<!-- Instantly immobilized from stun. -->
 	<skill id="15046" levels="1" name="Tauti Shock Wave">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -516,7 +519,7 @@
 	</skill>
 	<!-- Tauti runs to the front and causes knock down with damage. -->
 	<skill id="15047" levels="1" name="Tauti Rush">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -565,7 +568,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<!-- Tauti gives a roar that suggests it will change its status. This is a camera presentation skill with no real effect. But the range is very wid. -->
+	<!-- Tauti gives a roar that suggests it will change its status. This is a camera presentation skill with no real effect. But the range is very wide. -->
 	<skill id="15051" levels="1" name="Tauti Shout Maximum">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -575,7 +578,8 @@
 	</skill>
 	<!-- Absorbs the HP from the target and nearby enemies. -->
 	<skill id="15052" levels="1" name="Tauti Life Drain">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -770,7 +774,7 @@
 	</skill>
 	<!-- Powerful attack on the target. -->
 	<skill id="15071" levels="1" name="Bizarre Arrow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -781,7 +785,7 @@
 	</skill>
 	<!-- Poisoned with a poison arrow. -->
 	<skill id="15072" levels="1" name="Poison Arrow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -1023,11 +1027,14 @@
 		<set name="isClanSkill" val="true" />
 		<set name="despawnDelay" val="1800000" />
 		<set name="isSummonSpawn" val="true" />
-		<set name="randomOffset" val="false" />
+		<set name="randomOffset" val="true" />
 		<set name="minPledgeClass" val="7" />
 		<for>
 			<cond msgId="1509">
 				<player olympiad="false" />
+			</cond>
+			<cond addName="1" msgId="113">
+				<player onEvent="false" />
 			</cond>
 		</for>
 	</skill>
@@ -1052,7 +1059,7 @@
 	</skill>
 	<!-- Domain where the clan flag's curse applies. -->
 	<skill id="15096" levels="1" name="Clan Curse">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isDebuff" val="false" />
@@ -1313,7 +1320,7 @@
 	</skill>
 	<!-- Armor is destroyed. P. Def. and M. Def. are decreased by 10%. Additional 500 decease and evasion is decreased by 4. Accumulates as you receive continuous attacks. -->
 	<skill id="15124" levels="1" name="Axe Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="200" />
@@ -1333,7 +1340,8 @@
 	</skill>
 	<!-- Tauti's final attack skill when he has lost almost all of his power. -->
 	<skill id="15125" levels="1" name="Tauti Final Attack">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="83" />
@@ -1386,7 +1394,8 @@
 	</skill>
 	<!-- For test. Knight Full Buff stage 1. Increases abilities through Kyu's power. -->
 	<skill id="15129" levels="1" name="Full Buff Knight Lv. 1">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1402,7 +1411,8 @@
 	</skill>
 	<!-- For test. Knight Full Buff stage 2. Increases abilities through Kyu's power. -->
 	<skill id="15130" levels="1" name="Full Buff Knight Lv. 2">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1418,7 +1428,8 @@
 	</skill>
 	<!-- For test. Knight Full Buff stage 3. Increases abilities through Kyu's power. -->
 	<skill id="15131" levels="1" name="Full Buff Knight Lv. 3">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1434,7 +1445,8 @@
 	</skill>
 	<!-- For test. Knight Full Buff stage 4. Increases abilities through Kyu's power. -->
 	<skill id="15132" levels="1" name="Full Buff Knight Lv. 4">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1450,7 +1462,8 @@
 	</skill>
 	<!-- For test. Warrior Full Buff stage 1. Increases abilities through Kyu's power. -->
 	<skill id="15133" levels="1" name="Full Buff Warrior Lv. 1">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1466,7 +1479,8 @@
 	</skill>
 	<!-- For test. Warrior Full Buff stage 2. Increases abilities through Kyu's power. -->
 	<skill id="15134" levels="1" name="Full Buff Warrior Lv. 2">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1482,7 +1496,8 @@
 	</skill>
 	<!-- For test. Warrior Full Buff stage 3. Increases abilities through Kyu's power. -->
 	<skill id="15135" levels="1" name="Full Buff Warrior Lv. 3">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1498,7 +1513,8 @@
 	</skill>
 	<!-- For test. Warrior Full Buff stage 4. Increases abilities through Kyu's power. -->
 	<skill id="15136" levels="1" name="Full Buff Warrior Lv. 4">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1514,7 +1530,8 @@
 	</skill>
 	<!-- For test. Wizard Full Buff stage 1. Increases abilities through Kyu's power. -->
 	<skill id="15137" levels="1" name="Full Buff Wizard Lv. 1">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1530,7 +1547,8 @@
 	</skill>
 	<!-- For test. Wizard Full Buff stage 2. Increases abilities through Kyu's power. -->
 	<skill id="15138" levels="1" name="Full Buff Wizard Lv. 2">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1546,7 +1564,8 @@
 	</skill>
 	<!-- For test. Wizard Full Buff stage 3. Increases abilities through Kyu's power. -->
 	<skill id="15139" levels="1" name="Full Buff Wizard Lv. 3">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1562,7 +1581,8 @@
 	</skill>
 	<!-- For test. Wizard Full Buff stage 4. Increases abilities through Kyu's power. -->
 	<skill id="15140" levels="1" name="Full Buff Wizard Lv. 4">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1766,7 +1786,8 @@
 	</skill>
 	<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 	<skill id="15163" levels="1" name="Tauti Typhoon">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -1792,7 +1813,8 @@
 	</skill>
 	<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 	<skill id="15164" levels="1" name="Tauti Typhoon">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -1818,7 +1840,8 @@
 	</skill>
 	<!-- Cannot move due to shock. -->
 	<skill id="15165" levels="1" name="Tauti Shock Wave">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -1841,7 +1864,7 @@
 	</skill>
 	<!-- Throws forward toward the target who is holding Tauti to inflict damage and to knock down. -->
 	<skill id="15166" levels="1" name="Tauti Rush">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -1875,7 +1898,8 @@
 	</skill>
 	<!-- Pulls in all the PC's who are near Tauti. -->
 	<skill id="15168" levels="1" name="Tauti Ultimate Chain Strike">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="123" />
@@ -1912,7 +1936,7 @@
 	</skill>
 	<!-- Skill where Tauti throws crossways and receives back again. -->
 	<skill id="15171" levels="1" name="Tauti Boomerang">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="80000" />
@@ -1942,7 +1966,8 @@
 		<set name="effectRange" val="700" />
 	</skill>
 	<skill id="15174" levels="1" name="Petra Injection - Enhance HP Recovery">
-		<set name="target" val="TARGET_CLAN_MEMBER" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_AND_CLAN" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="20" />
@@ -1968,7 +1993,8 @@
 		<set name="effectRange" val="3000" />
 	</skill>
 	<skill id="15176" levels="1" name="Petra Injection - Enhance P. Def.">
-		<set name="target" val="TARGET_CLAN_MEMBER" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_AND_CLAN" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="20" />
@@ -1994,7 +2020,8 @@
 		<set name="effectRange" val="3000" />
 	</skill>
 	<skill id="15178" levels="1" name="Petra Injection - Enhance M. Def.">
-		<set name="target" val="TARGET_CLAN_MEMBER" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_AND_CLAN" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="20" />
@@ -2020,7 +2047,8 @@
 		<set name="effectRange" val="3000" />
 	</skill>
 	<skill id="15180" levels="1" name="Petra Injection - Enhance P. Atk.">
-		<set name="target" val="TARGET_CLAN_MEMBER" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_AND_CLAN" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="20" />
@@ -2065,7 +2093,8 @@
 	</skill>
 	<!-- Provokes nearby enemies into attacking you. -->
 	<skill id="15184" levels="1" name="Adolph's Superior Aggression Aura">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -2245,7 +2274,8 @@
 	</skill>
 	<!-- Being hurled away from shock. -->
 	<skill id="15200" levels="1" name="Tauti Ultra Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2259,7 +2289,8 @@
 	</skill>
 	<!-- Being hurled away from shock. -->
 	<skill id="15201" levels="1" name="Tauti Ultra Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2273,7 +2304,8 @@
 	</skill>
 	<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 	<skill id="15202" levels="1" name="Tauti Ultra Typhoon">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2291,7 +2323,8 @@
 	</skill>
 	<!-- Being flung away from shock. Attached characters are fine, but long-range characters are affected by this skill. -->
 	<skill id="15203" levels="1" name="Tauti Ultra Typhoon">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MAXHPDAMPERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2309,7 +2342,8 @@
 	</skill>
 	<!-- Becomes knocked down after receiving Tauti's ultimate attack. -->
 	<skill id="15204" levels="1" name="Tauti Omega Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2331,7 +2365,8 @@
 	</skill>
 	<!-- Becomes knocked down after receiving Tauti's ultimate attack. -->
 	<skill id="15205" levels="1" name="Tauti Omega Whirlwind">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="100" />
@@ -2366,7 +2401,7 @@
 		Level 1: Lethal Strike Resistance is weakened through the armor destruction skill.
 		Level 9: P. Def. and M. Def. are increased.
 	-->
-	<skill id="15208" levels="9" name="Weakened Chaos Shield">
+	<skill id="15208" levels="9" name="Chaos Shield">
 		<table name="#name">Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Weakened Chaos Shield;Chaos Shield</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2601,7 +2636,8 @@
 	</skill>
 	<!-- Swing your sword to launch a powerful attack on nearby enemies. -->
 	<skill id="15233" levels="1" name="Full Swing">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -2611,7 +2647,8 @@
 	</skill>
 	<!-- Shoot dark red spheres toward enemies within 120 degrees of you. Additional damage on PCs debuffed with Soul Drain. -->
 	<skill id="15234" levels="1" name="Dark Spheres">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2625,7 +2662,8 @@
 	</skill>
 	<!-- Create a strong wind around you to push back enemies. -->
 	<skill id="15235" levels="1" name="Dark Wind">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2646,7 +2684,7 @@
 	</skill>
 	<!-- Powerful attack on the target. -->
 	<skill id="15236" levels="1" name="Dark Thrust">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -2659,7 +2697,8 @@
 	</skill>
 	<!-- Inflicts strong damage upon the enemies near the target. -->
 	<skill id="15237" levels="1" name="Dark Buster">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2674,7 +2713,8 @@
 	</skill>
 	<!-- Absorb the souls of enemies within 180 degrees of you and decrease their P. Def. and M. Def. by 30%. -->
 	<skill id="15238" levels="1" name="Dark Breath">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -2951,7 +2991,8 @@
 	</skill>
 	<!-- Lindvior's Whirlwind Knockback Skill -->
 	<skill id="15268" levels="1" name="Cyclone">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1000" />
@@ -2984,7 +3025,8 @@
 	</skill>
 	<!-- Lindvior's stun -->
 	<skill id="15271" levels="1" name="Body Slam">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1200" />
@@ -3009,7 +3051,8 @@
 	</skill>
 	<!-- Lindvior's Landing Range -->
 	<skill id="15273" levels="1" name="Tail Swipe">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1200" />
@@ -3023,7 +3066,7 @@
 	</skill>
 	<!-- Long-range projectile -->
 	<skill id="15274" levels="1" name="Mighty Wind Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1200" />
@@ -3034,7 +3077,8 @@
 	</skill>
 	<!-- Lindvior's Takeoff Presentation -->
 	<skill id="15275" levels="1" name="Tornado">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="7000" />
@@ -4043,8 +4087,8 @@
 		<set name="effectRange" val="800" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%.
-		Level 2: For 30 min., P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
+		Level 1: For 30 minutes, P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%.
+		Level 2: For 30 minutes, P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
 	-->
 	<skill id="15374" levels="2" name="Clan Hall - Horn Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4056,8 +4100,8 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, Speed - 15%, and Critical Damage during a standard attack is increased after receiving a certain amount of damage.
-		Level 2: For 30 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, Speed - 10%, and Critical Damage during a standard attack is increased after receiving a certain amount of damage.
+		Level 1: For 30 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, Speed - s14, and Critical Damage during a standard attack is increased after receiving a certain amount of damage.
+		Level 2: For 30 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack - 30%, Speed - 10%, and Critical Damage during a standard attack is increased after receiving a certain amount of damage.
 	-->
 	<skill id="15375" levels="2" name="Clan Hall - Drum Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4069,8 +4113,8 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., Max HP/ MP/ CP + 37%, and HP Recovery Bonus + 20%.
-		Level 2: For 30 min., Max HP/ MP/ CP + 39%, and HP Recovery Bonus + 20%.
+		Level 1: For 30 minutes, Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP Recovery Bonus + 20%.
+		Level 2: For 30 minutes, Max HP + 39%, Max MP + 39%, Max CP + 39%, and HP Recovery Bonus + 20%.
 	-->
 	<skill id="15376" levels="2" name="Clan Hall - Pipe Organ Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4082,8 +4126,8 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. Also, P. Skill MP Consumption - 20%, M. Skill MP Consumption -10%, and the Iss Enchanter's Enchant Skill MP Consumption - 20%.
-		Level 2: For 30 min., P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. Also, P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and the Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 1: For 30 minutes, P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. Also, P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and the Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 2: For 30 minutes, P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. Also, P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and the Iss Enchanter's Enchant Skill MP Consumption - 20%.
 	-->
 	<skill id="15377" levels="2" name="Clan Hall - Guitar Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4095,8 +4139,8 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., P. Accuracy + 5, P. Evasion/ M. Evasion + 5, and Spd. + 34. Also, Received Critical Damage - 30%.
-		Level 2: For 30 min., P. Accuracy + 6, P. Evasion/ M. Evasion + 6, and Spd. + 35. Also, Received Critical Damage - 30%.
+		Level 1: For 30 minutes, P. Accuracy + 5, P. Evasion/ M. Evasion + 5, and Spd. + 34. Also, Received Critical Damage - 30%.
+		Level 2: For 30 minutes, P. Accuracy + 6, P. Evasion/ M. Evasion + 6, and Spd. + 35. Also, Received Critical Damage - 30%.
 	-->
 	<skill id="15378" levels="2" name="Clan Hall - Harp Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4108,8 +4152,8 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage effect.
-		Level 2: For 30 min., Atk. Spd. + 35%, Casting Spd. + 32%, and has a chance of applying 9% Vampiric Rage effect.
+		Level 1: For 30 minutes, Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage effect.
+		Level 2: For 30 minutes, Atk. Spd. + 35%, Casting Spd. + 32%, and has a chance of applying 9% Vampiric Rage effect.
 	-->
 	<skill id="15379" levels="2" name="Clan Hall - Lute Melody">
 		<set name="target" val="TARGET_NONE" />
@@ -4489,7 +4533,8 @@
 	</skill>
 	<!-- Ranged attack. -->
 	<skill id="15430" levels="1" name="Lindvior's Jump">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1500" />
@@ -4836,7 +4881,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<skill id="15465" levels="15" name="Vitality Reward 1 (Quest)">
+	<skill id="15465" levels="15" name="Vitality Reward 15 (Quest)">
 		<table name="#castRange"> 900 900 900 900 900 900 900 900 900 900 900 900 900 900 0 </table>
 		<table name="#effectRange"> 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 0 </table>
 		<table name="#name">Vitality Reward 1 (Quest);Vitality Reward 2 (Quest);Vitality Reward 3 (Quest);Vitality Reward 4 (Quest);Vitality Reward 5 (Quest);Vitality Reward 6 (Quest);Vitality Reward 7 (Quest);Vitality Reward 8 (Quest);Vitality Reward 9 (Quest);Vitality Reward 10 (Quest);Vitality Reward 11 (Quest);Vitality Reward 12 (Quest);Vitality Reward 13 (Quest);Vitality Reward 14 (Quest);Vitality Reward 15 (Quest)</table>
@@ -5281,7 +5326,7 @@
 	</skill>
 	<!-- Powerful attack on enemy. -->
 	<skill id="15511" levels="1" name="Laido Punch">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5349,7 +5394,7 @@
 	</skill>
 	<!-- Swings arms to attack target. -->
 	<skill id="15517" levels="1" name="Chaos Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5408,7 +5453,7 @@
 	</skill>
 	<!-- Damages enemy with dark poison and drains HP gradually. -->
 	<skill id="15522" levels="1" name="Dark Poison">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5446,7 +5491,7 @@
 	</skill>
 	<!-- Sucks blood from the enemy, continuously draining HP. -->
 	<skill id="15524" levels="1" name="Suck Blood">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5478,7 +5523,8 @@
 	</skill>
 	<!-- Powerful attack on enemies near target. -->
 	<skill id="15526" levels="1" name="Karamar Breaker">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5492,7 +5538,8 @@
 	</skill>
 	<!-- AoE M. Atk. On target's area. -->
 	<skill id="15527" levels="1" name="Chaos Breath">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5526,7 +5573,8 @@
 	</skill>
 	<!-- Afflicted with Sleep and unable to move momentarily. -->
 	<skill id="15530" levels="1" name="Slumber">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5620,7 +5668,7 @@
 	-->
 	<skill id="15537" levels="2" name="Blood Sacrifice: Decrease Speed">
 		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="#hp" />
@@ -5634,7 +5682,7 @@
 	-->
 	<skill id="15538" levels="2" name="Blood Sacrifice: Decrease Accuracy">
 		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="#hp" />
@@ -5648,7 +5696,7 @@
 	-->
 	<skill id="15539" levels="2" name="Blood Sacrifice: Decrease P. Def.">
 		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="#hp" />
@@ -5662,7 +5710,7 @@
 	-->
 	<skill id="15540" levels="2" name="Blood Sacrifice: Decrease M. Def.">
 		<table name="#hp"> 50 100 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -5706,7 +5754,7 @@
 	</skill>
 	<!-- Powerful rush attack on enemy. -->
 	<skill id="15544" levels="2" name="Rush Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5727,7 +5775,8 @@
 	</skill>
 	<!-- Powerful attack on enemies in a fan-shaped radius of you. -->
 	<skill id="15545" levels="1" name="Cubit Attack">
-		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="FRONT" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5765,7 +5814,7 @@
 	</skill>
 	<!-- Restores a part of allies' HP. -->
 	<skill id="15548" levels="1" name="Partial Healing">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5779,7 +5828,8 @@
 	</skill>
 	<!-- Decreases near enemies' Casting Spd. by 20% and Critical Damage by 30%. -->
 	<skill id="15549" levels="1" name="Soul Break">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5800,7 +5850,7 @@
 	</skill>
 	<!-- Powerful attack on enemy's vital point. Speed increases upon hit. Has a low chance of doing Half-kill. -->
 	<skill id="15550" levels="1" name="Heart Destroyer">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BLOW" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -5829,7 +5879,7 @@
 	</skill>
 	<!-- Decreases target's P. Atk. by 30%. -->
 	<skill id="15552" levels="1" name="Hell's Prison">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5847,7 +5897,7 @@
 	</skill>
 	<!-- Pulls a single enemy toward you. -->
 	<skill id="15553" levels="1" name="Chain Hit">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -5868,7 +5918,8 @@
 	</skill>
 	<!-- Powerful attack on target and nearby enemies. -->
 	<skill id="15554" levels="1" name="Broad Hit">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
@@ -5881,7 +5932,7 @@
 	</skill>
 	<!-- Hits enemy's vital point. -->
 	<skill id="15555" levels="1" name="Cunning Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BLOW" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -5940,7 +5991,8 @@
 	</skill>
 	<!-- Swings a sword to Knock Back target and nearby enemies and inflict Bleed. -->
 	<skill id="15560" levels="1" name="Hurricane Attack">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6075,7 +6127,7 @@
 	</skill>
 	<!-- Powerful attack on enemy. -->
 	<skill id="15571" levels="1" name="Master Siege Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="100" />
@@ -6107,7 +6159,8 @@
 	</skill>
 	<!-- Powerful attack and Knock Back on nearby enemies. -->
 	<skill id="15573" levels="1" name="Master Siege Punch">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="100" />
@@ -6127,7 +6180,7 @@
 	</skill>
 	<!-- Powerful attack on castle doors and walls. -->
 	<skill id="15574" levels="1" name="Master Siege Hammer">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="100" />
@@ -6226,7 +6279,8 @@
 	</skill>
 	<!-- Powerful M. Atk. On target and nearby enemies. -->
 	<skill id="15582" levels="1" name="Fearsome Bombing">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6260,7 +6314,7 @@
 	</skill>
 	<!-- Swings a spark-filled chain for a powerful M. Atk. -->
 	<skill id="15585" levels="1" name="Hateful Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6273,7 +6327,8 @@
 	</skill>
 	<!-- Swings a spark-filled chain for a powerful M. Atk. On target and nearby enemies. -->
 	<skill id="15586" levels="1" name="Chains of Hatred">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6286,7 +6341,8 @@
 	</skill>
 	<!-- Ranged attack on enemies to the front in a rectangular radius of you. -->
 	<skill id="15587" levels="1" name="High-speed Shot">
-		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="FRONT" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="11500" />
@@ -6298,7 +6354,7 @@
 	</skill>
 	<!-- Powerful M. Atk. on enemy. -->
 	<skill id="15588" levels="1" name="Soulful Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6310,7 +6366,7 @@
 	</skill>
 	<!-- Powerful P. Atk. on enemy. -->
 	<skill id="15589" levels="1" name="Painful Blow">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="16500" />
@@ -6331,7 +6387,7 @@
 	</skill>
 	<!-- Pulls target using the wind. -->
 	<skill id="15591" levels="1" name="Wind Pull">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2000" />
@@ -6404,7 +6460,7 @@
 	</skill>
 	<!-- Ranged projectile. -->
 	<skill id="15598" levels="1" name="Mighty Wind Strike">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6423,7 +6479,7 @@
 	</skill>
 	<!-- Powerful P. Atk. on enemy. -->
 	<skill id="15600" levels="1" name="Lindvior's Attack">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="1500" />
@@ -6504,7 +6560,7 @@
 	<!-- Powerful P. Atk. on enemy. -->
 	<skill id="15608" levels="7" name="Power Strike">
 		<table name="#power"> 60000 80000 100000 120000 140000 160000 180000 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6528,7 +6584,8 @@
 	<!-- Powerful attack on nearby enemies. -->
 	<skill id="15610" levels="7" name="Spinning Slasher">
 		<table name="#power"> 60000 80000 100000 120000 140000 160000 180000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6542,7 +6599,8 @@
 	<!-- Powerful attack on nearby enemies. -->
 	<skill id="15611" levels="7" name="Tornado Slasher">
 		<table name="#power"> 60000 80000 100000 120000 140000 160000 180000 </table>
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6553,7 +6611,7 @@
 		<set name="effectRange" val="1400" />
 		<set name="skillRadius" val="200" />
 	</skill>
-	<!-- Stuns for 2 sec. -->
+	<!-- Stuns for 2 seconds. -->
 	<skill id="15612" levels="7" name="Thunder Storm">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6647,7 +6705,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Attacks and Stuns target for 2 sec. -->
+	<!-- Attacks and Stuns target for 2 seconds. -->
 	<skill id="15621" levels="7" name="Stun Shot">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6728,7 +6786,8 @@
 	</skill>
 	<!-- Immobilizes target and nearby enemies. -->
 	<skill id="15630" levels="1" name="Stun Trap">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -6825,8 +6884,13 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- For 60 min., P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
-	<skill id="15642" levels="1" name="Horn Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%.
+		Level 2: For 60 minutes, P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
+		Level 3: For 60 minutes, P. Atk. + 21%, P. Def. + 15%, M. Atk. + 87%, and M. Def. + 30%.
+		Level 4: For 60 minutes, P. Atk. + 23%, P. Def. + 15%, M. Atk. + 91%, and M. Def. + 30%.
+	-->
+	<skill id="15642" levels="4" name="Horn Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6834,8 +6898,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk./ Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
-	<skill id="15643" levels="1" name="Drum Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
+		Level 2: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 10%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
+		Level 3: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 5%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
+		Level 4: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 60 minutes4. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
+	-->
+	<skill id="15643" levels="4" name="Drum Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6843,8 +6912,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
-	<skill id="15644" levels="1" name="Pipe Organ Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, Max HP + 37%, Max MP + $x3, Max CP + 37%, and HP Recovery Bonus + 20%.
+		Level 2: For 60 minutes, Max HP + 39%, Max MP + $x3, Max CP + 39%, and HP Recovery Bonus + 20%.
+		Level 3: For 60 minutes, Max HP + 41%, Max MP + $x3, Max CP + 41%, and HP Recovery Bonus + 20%.
+		Level 4: For 60 minutes, Max HP + 43%, Max MP + $x3, Max CP + 43%, and HP Recovery Bonus + 20%.
+	-->
+	<skill id="15644" levels="4" name="Pipe Organ Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6852,8 +6926,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
-	<skill id="15645" levels="1" name="Guitar Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 2: For 60 minutes, P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 3: For 60 minutes, P. Critical Rate + 36%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 4: For 60 minutes, P. Critical Rate + 38%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
+	-->
+	<skill id="15645" levels="4" name="Guitar Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6861,8 +6940,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., P. Accuracy + 5, P./M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
-	<skill id="15646" levels="1" name="Harp Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, P. Accuracy + 5, P./M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%.
+		Level 2: For 60 minutes, P. Accuracy + 6, P./M. Evasion + 6, and Speed + 35. Received Critical Damage - 30%.
+		Level 3: For 60 minutes, P. Accuracy + 7, P./M. Evasion + 7, and Speed + 36. Received Critical Damage - 30%.
+		Level 4: For 60 minutes, P. Accuracy + 8, P./M. Evasion + 8, and Speed + 37. Received Critical Damage - 30%.
+	-->
+	<skill id="15646" levels="4" name="Harp Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6870,8 +6954,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage. -->
-	<skill id="15647" levels="1" name="Lute Melody (Adventurer)">
+	<!-- 
+		Level 1: For 60 minutes, Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage.
+		Level 2: For 60 minutes, Atk. Spd. + 35%, Casting Spd. + 32%, and has a chance of applying 9% Vampiric Rage.
+		Level 3: For 60 minutes, Atk. Spd. + 36%, Casting Spd. + 33%, and has a chance of applying 9% Vampiric Rage.
+		Level 4: For 60 minutes, Atk. Spd. + 37%, Casting Spd. + 34%, and has a chance of applying 9% Vampiric Rage.
+	-->
+	<skill id="15647" levels="4" name="Lute Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7006,7 +7095,7 @@
 	</skill>
 	<!-- M. Def. - 20%. -->
 	<skill id="15662" levels="1" name="Decrease M. Def.">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />

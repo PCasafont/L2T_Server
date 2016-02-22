@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.L2Character;
@@ -26,7 +27,6 @@ import l2server.gameserver.templates.skills.L2EffectType;
  */
 public class EtcStatusUpdate extends L2GameServerPacket
 {
-	private static final String _S__F3_ETCSTATUSUPDATE = "[S] f9 EtcStatusUpdate";
 	
 	private L2PcInstance _activeChar;
 	
@@ -39,9 +39,8 @@ public class EtcStatusUpdate extends L2GameServerPacket
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
-	{
-		writeC(0xf9); // several icons to a separate line (0 = disabled)
+	protected final void writeImpl()
+	{ // several icons to a separate line (0 = disabled)
 		writeC(_activeChar.getCharges()); // 1-7 increase force, lvl
 		writeC(_activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
 		writeC((_activeChar.getMessageRefusal() || _activeChar.isChatBanned() || _activeChar.isSilenceMode()) ? 1 : 0); // 1 = block all chat
@@ -52,14 +51,5 @@ public class EtcStatusUpdate extends L2GameServerPacket
 		writeC(0x00);//writeD(_activeChar.getDeathPenaltyBuffLevel()); // 1-15 death penalty, lvl (combat ability decreased due to death)
 		writeC(_activeChar.getSouls());
 		writeC(0x00); // ???
-	}
-	
-	/**
-	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__F3_ETCSTATUSUPDATE;
 	}
 }

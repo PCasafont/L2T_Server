@@ -13,25 +13,32 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import l2server.Config;
 import l2server.gameserver.datatables.EnchantItemTable;
+import l2server.gameserver.datatables.EnchantMultiSellTable;
+import l2server.gameserver.datatables.EnchantMultiSellTable.EnchantMultiSellCategory;
+import l2server.gameserver.datatables.EnchantMultiSellTable.EnchantMultiSellEntry;
 import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.MerchantPriceConfigTable;
+import l2server.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
 import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -44,57 +51,49 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class EnchantMultiSellList extends L2GameServerPacket
 {
 	public static int ShopId = 4000000;
-	public static Map<Integer, Integer> Prices = new HashMap<Integer, Integer>();
+	public static int ItemIdMod = 100000000;
 	
-	static
-	{
-		if (Config.SERVER_NAME.contains("tarziph"))
-		{
-			Prices.put(9, 400);
-			Prices.put(10, 1200);
-			Prices.put(11, 5000);
-			Prices.put(12, 15000);
-		}
-		else
-		{
-			Prices.put(17, 1);
-			Prices.put(18, 3);
-			Prices.put(19, 10);
-			Prices.put(20, 35);
-		}
-	}
-	
-	private static final String _S__D0_MULTISELLLIST = "[S] d0 MultiSellList";
-	
-	private final List<L2ItemInstance> _mainIngredients = new ArrayList<L2ItemInstance>();
+	private final Map<Integer, List<L2ItemInstance>> _mainIngredients = new LinkedHashMap<Integer, List<L2ItemInstance>>();
+	private final MerchantPriceConfig _mpc;
 	
 	public EnchantMultiSellList(L2PcInstance player)
 	{
-		for (L2ItemInstance item : player.getInventory().getItems())
+		_mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(player);
+		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
 		{
-			if (!item.isEquipped() && EnchantItemTable.isEnchantable(item)
-					&& Prices.containsKey(item.getEnchantLevel() + 1))
-				_mainIngredients.add(item);
+			List<L2ItemInstance> mainIngredients = new ArrayList<L2ItemInstance>();
+			for (L2ItemInstance item : player.getInventory().getItems())
+			{
+				if (!item.isEquipped() && EnchantItemTable.isEnchantable(item) && category.Entries.containsKey(item.getEnchantLevel() + 1))
+					mainIngredients.add(item);
+			}
+			
+			_mainIngredients.put(category.Id, mainIngredients);
 		}
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xd0);
-		writeD(ShopId);	// list id
-		writeC(0x00);
-		writeD(0x01);		// page
-		writeD(0x01);	// finished
-		writeD(MultiSell.PAGE_SIZE);	// size of pages
-		writeD(_mainIngredients.size()); //list length
-		writeC(0x00); // Old or modern format
+		int ingredientsSize = 0;
+		for (List<L2ItemInstance> items : _mainIngredients.values())
+			ingredientsSize += items.size();
 		
-		if (!_mainIngredients.isEmpty())
+		writeD(ShopId); // list id
+		writeC(0x00);
+		writeD(0x01); // page
+		writeD(0x01); // finished
+		writeD(MultiSell.PAGE_SIZE); // size of pages
+		writeD(ingredientsSize); //list length
+		writeC(0x01); // Old or modern format
+		
+		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
 		{
-			for (L2ItemInstance item : _mainIngredients)
+			for (L2ItemInstance item : _mainIngredients.get(category.Id))
 			{
-				writeD(item.getObjectId()); // entry id
+				EnchantMultiSellEntry entry = category.Entries.get(item.getEnchantLevel() + 1);
+				
+				writeD((category.Id * ItemIdMod) + (item.getObjectId() % ItemIdMod)); // entry id
 				writeC(0x00); // stackable
 				writeH(0x00); // C6
 				writeD(0x00); // C6
@@ -107,9 +106,14 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(0x00); // T1
 				writeH(0x00); // T1
 				writeH(0x00); // T1
+				if (Config.IS_UNDERGROUND)
+				{
+					writeC(0x00);
+					writeC(0x00);
+				}
 				
-				writeH(0x01); // products list size
-				writeH(0x02); // ingredients list size
+				writeH(entry.Products.size() + 1); // products list size
+				writeH(entry.Ingredients.size() + 1); // ingredients list size
 				
 				// Product
 				writeD(item.getItemId());
@@ -126,11 +130,57 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(item.getAttackElementPower()); // T1 element power
 				for (byte j = 0; j < 6; j++)
 					writeH(item.getElementDefAttr(j));
+				if (Config.IS_UNDERGROUND)
+				{
+					int[] ensoulEffects = item.getEnsoulEffectIds();
+					int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+					writeC(ensoulEffects.length);
+					for (int effect : ensoulEffects)
+						writeD(effect);
+					writeC(ensoulSpecialEffects.length);
+					for (int effect : ensoulSpecialEffects)
+						writeD(effect);
+				}
+				
+				for (Entry<Integer, Integer> possibleProduct : entry.Products.entrySet())
+				{
+					int enchantLevel = possibleProduct.getKey();
+					int chance = possibleProduct.getValue();
+					// Product
+					writeD(item.getItemId());
+					writeQ(item.getItem().getBodyPart());
+					writeH(item.getItem().getType2());
+					writeQ(item.getCount());
+					writeH(enchantLevel); //enchant lvl
+					writeD(chance); // Chance
+					if (item.isAugmented())
+						writeQ(item.getAugmentation().getId()); // C6
+					else
+						writeQ(0x00);
+					writeH(item.getAttackElementType()); // T1 element id
+					writeH(item.getAttackElementPower()); // T1 element power
+					for (byte j = 0; j < 6; j++)
+						writeH(item.getElementDefAttr(j));
+					if (Config.IS_UNDERGROUND)
+					{
+						int[] ensoulEffects = item.getEnsoulEffectIds();
+						int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+						writeC(ensoulEffects.length);
+						for (int effect : ensoulEffects)
+							writeD(effect);
+						writeC(ensoulSpecialEffects.length);
+						for (int effect : ensoulSpecialEffects)
+							writeD(effect);
+					}
+				}
 				
 				// Main Ingredient
 				writeD(item.getItemId());
 				writeH(item.getItem().getType2());
-				writeQ(item.getCount());
+				long ingCount = item.getCount();
+				if (item.getItemId() == 57)
+					ingCount = (long) (item.getCount() * (1.0 + _mpc.getCastleTaxRate()));
+				writeQ(ingCount);
 				writeH(item.getEnchantLevel()); // enchant lvl
 				if (item.isAugmented())
 					writeQ(item.getAugmentation().getId()); // C6
@@ -140,31 +190,49 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(item.getAttackElementPower()); // T1 element power
 				for (byte j = 0; j < 6; j++)
 					writeH(item.getElementDefAttr(j));
+				if (Config.IS_UNDERGROUND)
+				{
+					int[] ensoulEffects = item.getEnsoulEffectIds();
+					int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+					writeC(ensoulEffects.length);
+					for (int effect : ensoulEffects)
+						writeD(effect);
+					writeC(ensoulSpecialEffects.length);
+					for (int effect : ensoulSpecialEffects)
+						writeD(effect);
+				}
 				
-				// Currency
-				int currencyId = Config.DONATION_COIN_ID;
-				writeD(currencyId);
-				writeH(ItemTable.getInstance().getTemplate(currencyId).getType2());
-				int price = Prices.get(item.getEnchantLevel() + 1);
-				if (!item.isWeapon())
-					price /= 5;
-				if (price == 0)
-					price = 1;
-				writeQ(price);
-				writeH(0x00); // enchant lvl
-				writeQ(0x00); // augmentation
-				writeH(0x00); // T1 element id
-				writeH(0x00); // T1 element power
-				for (byte j = 0; j < 6; j++)
-					writeH(0x00);
+				for (Entry<Integer, Long> extraIngredient : entry.Ingredients.entrySet())
+				{
+					int id = extraIngredient.getKey();
+					long count = extraIngredient.getValue();
+					writeD(id);
+					writeH(ItemTable.getInstance().getTemplate(id).getType2());
+					long price = count;
+					if (!item.isWeapon())
+						price /= 5;
+					if (price == 0)
+						price = 1;
+					writeQ(price);
+					writeH(0x00); // enchant lvl
+					writeQ(0x00); // augmentation
+					writeH(0x00); // T1 element id
+					writeH(0x00); // T1 element power
+					for (byte j = 0; j < 6; j++)
+						writeH(0x00);
+					if (Config.IS_UNDERGROUND)
+					{
+						writeC(0x00);
+						writeC(0x00);
+					}
+				}
 			}
 		}
 	}
 	
 	@Override
-	public String getType()
+	protected final Class<?> getOpCodeClass()
 	{
-		return _S__D0_MULTISELLLIST;
+		return MultiSellList.class;
 	}
-	
 }

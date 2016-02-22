@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.CastleManager;
@@ -32,7 +33,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestAnswerJoinPledge extends L2GameClientPacket
 {
-	private static final String _C__25_REQUESTANSWERJOINPLEDGE = "[C] 25 RequestAnswerJoinPledge";
 	
 	private int _answer;
 	
@@ -68,12 +68,12 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 		{
 			int pledgeType = 0;
 			if (requestor.getRequest().getRequestPacket() instanceof RequestJoinPledge)
-				pledgeType = ((RequestJoinPledge)requestor.getRequest().getRequestPacket()).getPledgeType();
+				pledgeType = ((RequestJoinPledge) requestor.getRequest().getRequestPacket()).getPledgeType();
 			else if (requestor.getRequest().getRequestPacket() instanceof RequestPledgeApplicationAccept)
-				pledgeType = ((RequestPledgeApplicationAccept)requestor.getRequest().getRequestPacket()).getPledgeType();
+				pledgeType = ((RequestPledgeApplicationAccept) requestor.getRequest().getRequestPacket()).getPledgeType();
 			else
 				return; // hax
-			
+				
 			L2Clan clan = requestor.getClan();
 			// we must double check this cause during response time conditions can be changed, i.e. another player could join clan
 			if (clan.checkClanJoinCondition(requestor, activeChar, pledgeType))
@@ -88,7 +88,7 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 				}
 				else
 					activeChar.setPowerGrade(5); // new member starts at 5, not confirmed
-				
+					
 				clan.addClanMember(activeChar);
 				activeChar.setClanPrivileges(activeChar.getClan().getRankPrivs(activeChar.getPowerGrade()));
 				
@@ -116,14 +116,5 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 		}
 		
 		activeChar.getRequest().onRequestResponse();
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__25_REQUESTANSWERJOINPLEDGE;
 	}
 }

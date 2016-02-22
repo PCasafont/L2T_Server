@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
 import java.util.Collection;
@@ -57,7 +58,7 @@ public class NpcKnownList extends CharKnownList
 		if (!super.addKnownObject(object))
 			return false;
 		
-		if (getActiveObject() instanceof L2NpcInstance && (object instanceof L2PcInstance))
+		if ((getActiveObject() instanceof L2NpcInstance) && (object instanceof L2PcInstance))
 		{
 			final L2Npc npc = (L2Npc) getActiveObject();
 			
@@ -74,15 +75,21 @@ public class NpcKnownList extends CharKnownList
 	}
 	
 	@Override
-	public L2Npc getActiveChar() { return (L2Npc)super.getActiveChar(); }
+	public L2Npc getActiveChar()
+	{
+		return (L2Npc) super.getActiveChar();
+	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object) { return getDistanceToWatchObject(object) + 200; }
+	public int getDistanceToForgetObject(L2Object object)
+	{
+		return getDistanceToWatchObject(object) + 200;
+	}
 	
 	@Override
 	public int getDistanceToWatchObject(L2Object object)
 	{
-		if (object instanceof L2NpcInstance || !(object instanceof L2Character))
+		if ((object instanceof L2NpcInstance) || !(object instanceof L2Character))
 			return 0;
 		
 		if (object instanceof L2Playable)
@@ -90,6 +97,7 @@ public class NpcKnownList extends CharKnownList
 		
 		return 500;
 	}
+	
 	//L2Master mod - support for Walking monsters aggro
 	public void startTrackingTask()
 	{

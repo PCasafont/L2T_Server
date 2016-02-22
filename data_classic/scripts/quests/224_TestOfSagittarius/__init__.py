@@ -142,7 +142,7 @@ class Quest (JQuest) :
      st.set("onlyone","0")
      st.set("step","0")
    if npcId == 30702 and step==0 and onlyone==0 :
-        if player.getClassId() in [0x07,0x16,0x23]:
+        if player.getClassId().getId() in [0x07,0x16,0x23]:
           if player.getLevel() >= 39 :
              htmltext = "30702-03.htm"
           else:

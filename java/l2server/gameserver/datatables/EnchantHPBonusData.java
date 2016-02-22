@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -110,7 +111,7 @@ public class EnchantHPBonusData
 			for (Integer itemId : itemIds)
 			{
 				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE)
+				if ((item != null) && (item.getCrystalType() != L2Item.CRYSTAL_NONE))
 				{
 					switch (item.getBodyPart())
 					{
@@ -136,7 +137,7 @@ public class EnchantHPBonusData
 			for (Integer itemId : itemIds)
 			{
 				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE)
+				if ((item != null) && (item.getCrystalType() != L2Item.CRYSTAL_NONE))
 				{
 					switch (item.getBodyPart())
 					{
@@ -156,7 +157,7 @@ public class EnchantHPBonusData
 	{
 		final Integer[] values = _armorHPBonus.get(item.getItem().getItemGradePlain());
 		
-		if (values == null || values.length == 0)
+		if ((values == null) || (values.length == 0))
 			return 0;
 		
 		if (item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)

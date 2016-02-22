@@ -1,62 +1,82 @@
+
 package l2server.gameserver.instancemanager;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Announcements;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
+import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.clientpackets.Say2;
+import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 /**
  * @author LasTravel
  * @author Pere
  */
 
-public class CustomAuctionManager implements Reloadable
+public class CustomAuctionManager
 {
 	private static final long ADDED_DURATION = 3600000L;
+	
+	private enum Currency
+	{
+		Adena(57), GoldenApiga(9143);
+		
+		private final int ItemId;
+		
+		private Currency(int itemId)
+		{
+			ItemId = itemId;
+		}
+	}
 	
 	/**
 	 * All the item auction info
 	 */
 	private class AuctionTemplate
 	{
-		private final int _id;
+		private int _id;
 		private int[] _itemId;
 		private int _count;
 		private int _repeatTime;
 		private int _randomRepeatTime;
 		private int _initialCurrencyId;
+		private int _highestCurrencyId;
 		private long _initialPrice;
 		private int _initialDuration;
-		private boolean _acceptAllCoins;
 		
-		private AuctionTemplate(int auctionId, int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, long initialPrice, int initialDuration, boolean acceptAllCoins)
+		private AuctionTemplate(int auctionId, int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, int highestCurrency, long initialPrice, int initialDuration, boolean init)
 		{
 			_id = auctionId;
 			_itemId = itemId;
@@ -64,27 +84,22 @@ public class CustomAuctionManager implements Reloadable
 			_repeatTime = repeatTime;
 			_randomRepeatTime = randomRepeatTime;
 			_initialCurrencyId = initialCurrency;
+			_highestCurrencyId = highestCurrency;
 			_initialPrice = initialPrice;
 			_initialDuration = initialDuration;
-			_acceptAllCoins = acceptAllCoins;
 			
-			initialize();
-		}
-		
-		private void overrideInfo(int[] itemId, int count, int repeatTime, int randomRepeatTime, int initialCurrency, long initialPrice, int initialDuration, boolean acceptAllCoins)
-		{
-			_itemId = itemId;
-			_count = count;
-			_repeatTime = repeatTime;
-			_randomRepeatTime = randomRepeatTime;
-			_initialCurrencyId = initialCurrency;
-			_initialPrice = initialPrice;
-			_initialDuration = initialDuration;
-			_acceptAllCoins = acceptAllCoins;
+			if (init)
+				initialize();
 		}
 		
 		private void initialize()
 		{
+			if (_repeatTime == 0)
+			{
+				System.out.println("The auction " + _id + " will not repeat.");
+				return;
+			}
+			
 			long nextAuction = 0;
 			Connection con = null;
 			try
@@ -96,7 +111,7 @@ public class CustomAuctionManager implements Reloadable
 				if (rs.next())
 				{
 					long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-					nextAuction = lastAuctionCreation + _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
+					nextAuction = (lastAuctionCreation + ((_initialDuration + _repeatTime) * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L)) - System.currentTimeMillis();
 					if (nextAuction < 0)
 						nextAuction = 0;
 				}
@@ -113,11 +128,10 @@ public class CustomAuctionManager implements Reloadable
 			
 			ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
+				@Override
 				public void run()
 				{
-					int auctionId = IdFactory.getInstance().getNextId();
-					int itemId = AuctionTemplate.this.getRandomItemId();
-					addAuction(new Auction(auctionId, itemId, AuctionTemplate.this));
+					startAuction(AuctionTemplate.this.getId());
 					
 					Connection con = null;
 					try
@@ -138,9 +152,7 @@ public class CustomAuctionManager implements Reloadable
 						L2DatabaseFactory.close(con);
 					}
 					
-					Announcements.getInstance().announceToAll("Item Auction: " + ItemTable.getInstance().getTemplate(itemId).getName() + " has been added to the Item Auction (Alt + B)!");
-					
-					ThreadPoolManager.getInstance().scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
+					ThreadPoolManager.getInstance().scheduleGeneral(this, (_repeatTime * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L));
 				}
 			}, nextAuction);
 		}
@@ -171,6 +183,11 @@ public class CustomAuctionManager implements Reloadable
 			return _initialCurrencyId;
 		}
 		
+		private int getHighestCurrencyId()
+		{
+			return _highestCurrencyId;
+		}
+		
 		private long getInitialPrice()
 		{
 			return _initialPrice;
@@ -179,11 +196,6 @@ public class CustomAuctionManager implements Reloadable
 		private int getInitialDuration()
 		{
 			return _initialDuration;
-		}
-		
-		private boolean getAcceptAllCoins()
-		{
-			return _acceptAllCoins;
 		}
 	}
 	
@@ -280,10 +292,10 @@ public class CustomAuctionManager implements Reloadable
 			int minutes = (int) ((remainingTime % 3600) / 60);
 			int seconds = (int) (remainingTime % 60);
 			
-			return hours + "h " + minutes + "m "+seconds+"s";
+			return hours + "h " + minutes + "m " + seconds + "s";
 		}
 		
-		private long getRemainingTime()
+		private Long getRemainingTime()
 		{
 			return _endAuctionTask.getDelay(TimeUnit.MILLISECONDS);
 		}
@@ -292,19 +304,22 @@ public class CustomAuctionManager implements Reloadable
 		{
 			if (_currentAuctionOwner == 0)
 				return "None";
-			return CharNameTable.getInstance().getNameById(_currentAuctionOwner);
+			
+			String result = CharNameTable.getInstance().getNameById(_currentAuctionOwner);
+			
+			return result;
 		}
 		
 		private int getCurrentOwnerId()
 		{
 			return _currentAuctionOwner;
 		}
-
+		
 		private int getCurrentCurrency()
 		{
 			return _currentCurrencyId;
 		}
-
+		
 		private long getCurrentPrice()
 		{
 			return _currentPrice;
@@ -349,269 +364,425 @@ public class CustomAuctionManager implements Reloadable
 			}
 		}
 		
+		private void endAuction()
+		{
+			_auctions.remove(_id);
+			
+			giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate().getCount(), "Congrats! You've won this bid!");
+			
+			Connection con = null;
+			try
+			{
+				con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement statement = con.prepareStatement("DELETE FROM `custom_auctions` WHERE id = ?");
+				statement.setInt(1, _id);
+				statement.execute();
+				statement.close();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+			finally
+			{
+				L2DatabaseFactory.close(con);
+			}
+			
+			String winnerName = CharNameTable.getInstance().getNameById(getCurrentOwnerId());
+			String currencyName = ItemTable.getInstance().getTemplate(getCurrentCurrency()).getName();
+			String itemName = ItemTable.getInstance().getTemplate(getItemId()).getName();
+			
+			Util.logToFile(winnerName + " won the auction for " + itemName + " by bidding " + getCurrentPrice() + " " + currencyName + ".", "Auction_Logs", "txt", true, true);
+		}
+		
 		private class CurrentAuctionEnd implements Runnable
 		{
+			@Override
 			public void run()
 			{
-				_auctions.remove(_id);
-				
-				String playerName =  CharNameTable.getInstance().getNameById(getCurrentOwnerId());
-				if (playerName != null)
-				{	
-					giveItemToPlayer(getCurrentOwnerId(), getItemId(), getTemplate().getCount(), "Congrats! You've won this bid!");
-					Util.logToFile("The player: " + CharNameTable.getInstance().getNameById(getCurrentOwnerId()) + " wins the " + ItemTable.getInstance().getTemplate(getItemId()).getName() + " bid", "Auctions", true);
-				}
-				else
-					Util.logToFile("The " + ItemTable.getInstance().getTemplate(getItemId()).getName() + " auction has ended without winner!", "Auctions", true);
-				
-				Connection con = null;
-				try
-				{
-					con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement = con.prepareStatement("DELETE FROM `custom_auctions` WHERE id = ?");
-					statement.setInt(1, _id);
-					statement.execute();
-					statement.close();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-				finally
-				{
-					L2DatabaseFactory.close(con);
-				}
+				endAuction();
 			}
 		}
 	}
 	
-	/**
-	 * Currency Types
-	 */
-	private class CurrencyInfo
+	private static Map<Integer, Auction> _auctions = new HashMap<Integer, Auction>(); //Current auctions
+	private static Map<Integer, AuctionTemplate> _auctionTemplates = new HashMap<Integer, AuctionTemplate>(); //All the auction info
+	
+	public final void startAuction(final int templateId)
 	{
-		private int _position;
-		private String _name;
-		private int _id;
+		int auctionId = IdFactory.getInstance().getNextId();
 		
-		private CurrencyInfo(int position, int id)
-		{
-			_position = position;
-			_id = id;
-			_name = ItemTable.getInstance().getTemplate(id).getName().replace(" ", "");
-		}
+		AuctionTemplate auctionTemplate = _auctionTemplates.get(templateId);
 		
-		private int getPosition()
-		{
-			return _position;
-		}
+		int itemId = auctionTemplate.getRandomItemId();
 		
-		private String getName()
-		{
-			return _name;
-		}
+		_auctions.put(auctionId, new Auction(auctionId, itemId, auctionTemplate));
 		
-		private int getId()
+		L2NpcInstance auctionManager = null;
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			return _id;
+			if (auctionManager == null)
+				auctionManager = Util.getNpcCloseTo(33782, player);
+			
+			player.sendPacket(new CreatureSay(auctionManager == null ? 0x00 : auctionManager.getObjectId(), 1, "Jolie", "I've got a new item (" + (auctionTemplate.getCount() != 0 ? auctionTemplate.getCount() + "x " : "") + ItemTable.getInstance().getTemplate(itemId).getName() + ") up for auctions!" + (auctionTemplate.getHighestCurrencyId() == 57 ? " Adenas only!" : auctionTemplate.getHighestCurrencyId() == 50009 ? " Raid Hearts only!" : "")));
 		}
 	}
 	
-	private static Map<Integer, CurrencyInfo>	_currencies			= new LinkedHashMap<Integer, CurrencyInfo>();	//Currency info
-	private static Map<Integer, Auction>		 _auctions 			= new LinkedHashMap<Integer, Auction>();		//Current auctions
-	private static Map<Integer, AuctionTemplate> _auctionTemplates 	= new HashMap<Integer, AuctionTemplate>();		//All the auction info
+	public final Auction getAuctionById(final int auctionId)
+	{
+		if (!_auctions.containsKey(auctionId))
+			return null;
+		
+		return _auctions.get(auctionId);
+	}
 	
 	/**
 	 * This is the community page, where we display all the auction item information
-	 * 
+	 *
 	 * @param playerId
 	 * @return
 	 */
-	public String getAuctionInfo(int playerId, int pageToShow)
+	public String getAuctionInfo(int playerId)
 	{
 		StringBuilder sb = new StringBuilder();
 		
-		if (!Config.ENABLE_CUSTOM_AUCTIONS || _auctions.isEmpty())
-			return sb.append("<center><table><tr><td width=200><font color=LEVEL>There are no auctions at this time!</font></td></tr></table></center>").toString();
-			
-		int maxAuctionsPerPage = 6;
-		int auctionsSize = _auctions.size();
-		int maxPages = auctionsSize / maxAuctionsPerPage;
-		if (auctionsSize > (maxAuctionsPerPage * maxPages))
-			maxPages++;
-		if (pageToShow > maxPages)
-			pageToShow = maxPages;
-		int pageStart = maxAuctionsPerPage * pageToShow;
-		int pageEnd = auctionsSize;
-		if ((pageEnd - pageStart) > maxAuctionsPerPage)
-			pageEnd = pageStart + maxAuctionsPerPage;
+		int count = 0;
+		int size = _auctions.size();
 		
-		if (maxPages > 1)
-			sb.append(CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "_bbscustom;itemAuction;", ";"));
-		
-		sb.append("<table width=700>");
-		
-		int tempCount = 0;
-		int totalCount = 0;
-		int totalEnd =  (pageEnd - pageStart);
-		
-		Object[] data = _auctions.values().toArray();
-		for (int i = pageStart; i < pageEnd; i++)
+		if (!Config.isServer(Config.DREAMS))
 		{
-			Auction currentAuctionInfo = (Auction)data[i];
-			if (currentAuctionInfo == null)
-				continue;
+			if (size == 0)
+				return sb.append("<center><table><tr><td width=200><font color=LEVEL>There are no auctions at this time!</font></td></tr></table></center>").toString();
 			
-			if (tempCount == 0)
-				sb.append("<tr><td>");
-			else
-				sb.append("<td>");
+			sb.append("<table width=700>");
 			
-			sb.append("<table height=200 background=L2UI_CH3.refinewnd_back_Pattern>");
-			sb.append("<tr><td FIXWIDTH=160></td>");
-			sb.append("<td><br><br><table border=0 cellpadding=0><tr><td FIXWIDTH=375 align=center><font color=LEVEL>" + ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId()).getName() + " ("+currentAuctionInfo.getTemplate().getCount()+")</font></td></tr></table>");
-			sb.append("<table cellpadding=0><tr><td FIXWIDTH=375>");
-			sb.append("<tr><td>Remaining Time: </td><td FIXWIDTH=375>"+currentAuctionInfo.getRemainingTimeString()+"</td></tr><tr><td>Current Owner:</td><td>"+currentAuctionInfo.getCurrentOwnerName()+"</td></tr>");
-			sb.append("<tr><td>Currency:</td><td>"+ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName()+"</td></tr>");
-			sb.append("<tr><td>Current Bid:</td><td>"+currentAuctionInfo.getCurrentPrice()+"</td></tr>");
-			
-			String options = "";
-			if (!currentAuctionInfo.getTemplate().getAcceptAllCoins())
-				options += _currencies.get(currentAuctionInfo.getTemplate().getInitialCurrencyId()).getName()+";";
-			else
+			for (Entry<Integer, Auction> currentAuction : _auctions.entrySet())
 			{
-				int currentPos = _currencies.get(currentAuctionInfo.getCurrentCurrency()).getPosition();
-				for (Entry<Integer, CurrencyInfo> b : _currencies.entrySet())
+				Auction currentAuctionInfo = currentAuction.getValue();
+				
+				if (currentAuctionInfo == null)
+					continue;
+				
+				if (count == 0)
+					sb.append("<tr><td>");
+				else
+					sb.append("<td>");
+				
+				sb.append("<table height=180 background=L2UI_CH3.refinewnd_back_Pattern><tr><td FIXWIDTH=80></td>"); //<img src=\""+currentAuctionInfio.getItemTemplate().getIcon()+"\" width=32 height=32>
+				sb.append("<td><br><table cellpadding=0><tr><td FIXWIDTH=375><font color=LEVEL>" + ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId()).getName() + " (" + currentAuctionInfo.getTemplate().getCount() + ")</font>");
+				sb.append("</td></tr><tr><td>Remaining Time: </td><td FIXWIDTH=375>" + currentAuctionInfo.getRemainingTimeString() + "</td></tr><tr><td>Current Owner:</td><td>" + currentAuctionInfo.getCurrentOwnerName() + "</td></tr>");
+				
+				String currencyName = ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName();
+				
+				long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
+				if ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice))
+					currencyName = "Dreams Coin";
+				
+				sb.append("<tr><td>Currency:</td><td>" + currencyName + "</td></tr>");
+				sb.append("<tr><td>Current Bid:</td><td>" + currentAuctionInfo.getCurrentPrice() + "</td></tr>");
+				
+				int curId = 0;
+				for (Currency cur : Currency.values())
 				{
-					if (b.getValue().getPosition() < currentPos)
-						continue;
-					options += b.getValue().getName()+";";
+					if (currentAuctionInfo.getCurrentCurrency() == cur.ItemId)
+						break;
+					
+					curId++;
 				}
 				
-				if (!options.isEmpty() && currentPos < _currencies.size())
+				String options = "";
+				for (int index = curId; index < Currency.values().length; index++)
+					options += Currency.values()[index] + ";";
+				
+				if (!options.isEmpty() && (curId < Currency.values().length))
 				{
 					options = options.substring(0, options.length() - 1);
-					sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin"+currentAuctionInfo.getId()+"\" list="+options+"></td></tr>");
+					sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuction.getKey() + "\" list=" + options + "></td></tr>");
 				}
+				
+				sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid" + currentAuction.getKey() + "\" width=100 type=number length=14></td></tr>");
+				sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;" + currentAuction.getKey() + "; $plbid" + currentAuction.getKey() + " ; $plcoin" + currentAuction.getKey() + "\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
+				sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
+				sb.append("</table><br>");
+				
+				count++;
+				size--;
+				
+				if ((count == 2) || (size == 0))
+				{
+					sb.append("</td></tr>");
+					count = 0;
+				}
+				else
+					sb.append("</td>");
 			}
 			
-			sb.append("<tr><td>Your bid:</td><td><edit var=\"plbid"+currentAuctionInfo.getId()+"\" width=100 type=number length=14></td></tr>");
-			sb.append("<tr><td></td><td><br><button action=\"bypass _bbscustom;action;bid;"+currentAuctionInfo.getId()+"; $plbid"+currentAuctionInfo.getId() + " ; $plcoin"+currentAuctionInfo.getId()+"\" value=BID! width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
-			sb.append("<tr><td></td><td></td></tr></table><br><br></td><td FIXWIDTH=80></td></tr>");
-			sb.append("</table><br>");
-			
-			tempCount ++;
-			totalCount++;
-			
-			if (tempCount == 2 || totalCount == totalEnd)
+			sb.append("</table>");
+		}
+		else
+		{
+			if (playerId != 0)
 			{
-				sb.append("</td></tr>");
-				tempCount = 0;
+				Auction currentAuctionInfo = _auctions.get(playerId);
+				
+				L2Item itemTemplate = ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId());
+				
+				String content = HtmCache.getInstance().getHtm(null, "DonationManager/Auction_Table.htm");
+				
+				int curId = 0;
+				for (Currency cur : Currency.values())
+				{
+					if (currentAuctionInfo.getCurrentCurrency() == cur.ItemId)
+						break;
+					
+					curId++;
+				}
+				
+				String options = "";
+				
+				long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
+				System.out.println("Max Adena Price = " + maxAdenaPrice);
+				System.out.println("Current Auction Price = " + currentAuctionInfo.getCurrentPrice());
+				System.out.println("Lala: " + ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)));
+				if ((currentAuctionInfo.getCurrentCurrency() == 50002) || ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)))
+				{
+					options = "Dreams Coin";
+					if (currentAuctionInfo.getTemplate().getHighestCurrencyId() == 0)
+						options += ";GoldenApiga";
+					content = content.replace("%options%", options);
+				}
+				else if (currentAuctionInfo.getCurrentCurrency() == 50009)
+				{
+					options = "Raid Heart";
+					content = content.replace("%options%", options);
+				}
+				else
+				{
+					for (int index = curId; index < Currency.values().length; index++)
+					{
+						String currencyName = Currency.values()[index].toString();
+						if (currencyName.equals("GoldenApiga") && (currentAuctionInfo.getTemplate().getHighestCurrencyId() == 57))
+							break;
+						options += currencyName + ";";
+					}
+					
+					if (!options.isEmpty() && (curId < Currency.values().length))
+					{
+						options = options.substring(0, options.length() - 1);
+						
+						content = content.replace("%options%", options);
+					}
+				}
+				
+				System.out.println(options);
+				
+				content = content.replace("%auctionId%", currentAuctionInfo.getId() + "");
+				content = content.replace("%icon%", itemTemplate.getIcon() == null ? "" : itemTemplate.getIcon());
+				content = content.replace("%itemName%", currentAuctionInfo.getTemplate().getCount() == 1 ? itemTemplate.getName() : currentAuctionInfo.getTemplate().getCount() + "x " + itemTemplate.getName());
+				content = content.replace("%timeLeft%", currentAuctionInfo.getRemainingTimeString());
+				content = content.replace("%bestBidder%", currentAuctionInfo.getCurrentOwnerName());
+				content = content.replace("%currency%", ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName());
+				
+				String priceString = "";
+				long price = currentAuctionInfo.getCurrentPrice();
+				long counter = 0;
+				while (price > 0)
+				{
+					priceString = (price % 10) + priceString;
+					price /= 10;
+					counter++;
+					if ((counter % 3) == 0)
+						priceString = "," + priceString;
+					
+				}
+				
+				if ((counter % 3) == 0)
+					priceString = priceString.substring(1);
+				
+				content = content.replace("%highestBid%", priceString + "");
+				
+				sb.append(content);
 			}
 			else
-				sb.append("</td>");
+			{
+				int displayedAuctions = 0;
+				for (Entry<Integer, Auction> currentAuction : _auctions.entrySet())
+				{
+					Auction currentAuctionInfo = currentAuction.getValue();
+					
+					if (currentAuctionInfo == null)
+						continue;
+					else if (currentAuctionInfo.getTemplate().getId() == 102)
+						continue;
+					else if (currentAuctionInfo.getCurrentOwnerName().equals("Ghost"))
+						continue;
+					
+					L2Item itemTemplate = ItemTable.getInstance().getTemplate(currentAuctionInfo.getItemId());
+					
+					String content = HtmCache.getInstance().getHtm(null, "DonationManager/Auction_Preview_Table.htm");
+					
+					content = content.replace("%auctionId%", currentAuctionInfo.getId() + "");
+					content = content.replace("%icon%", itemTemplate.getIcon() == null ? "" : itemTemplate.getIcon());
+					content = content.replace("%itemName%", currentAuctionInfo.getTemplate().getCount() == 1 ? itemTemplate.getName() : currentAuctionInfo.getTemplate().getCount() + "x " + itemTemplate.getName());
+					content = content.replace("%timeLeft%", currentAuctionInfo.getRemainingTimeString());
+					content = content.replace("%bestBidder%", currentAuctionInfo.getCurrentOwnerName());
+					content = content.replace("%currency%", ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName());
+					
+					String priceString = "";
+					long price = currentAuctionInfo.getCurrentPrice();
+					long counter = 0;
+					while (price > 0)
+					{
+						priceString = (price % 10) + priceString;
+						price /= 10;
+						counter++;
+						if ((counter % 3) == 0)
+							priceString = "," + priceString;
+						
+					}
+					
+					if ((counter % 3) == 0)
+						priceString = priceString.substring(1);
+					
+					content = content.replace("%highestBid%", priceString + "");
+					sb.append(content);
+					
+					displayedAuctions++;
+				}
+				
+				if (displayedAuctions == 0)
+					sb.append("There's no auctions right now. Check back later!");
+			}
 		}
 		
-		sb.append("</table>");
 		return sb.toString();
 	}
 	
 	/**
-	 * Load all the stuff
+	 * Load all the shit
 	 */
-	private void load()
+	public void load(boolean reload)
 	{
-		if (!Config.ENABLE_CUSTOM_AUCTIONS)
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setValidating(false);
+		factory.setIgnoringComments(true);
+		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/itemAuction.xml");
+		if (!file.exists())
 			return;
 		
-		ReloadableManager.getInstance().register("customauctions", this);
-		loadTemplates();
-
-		Connection con = null;
+		Document doc = null;
 		try
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
-			ResultSet rs = statement.executeQuery();
-
-			while (rs.next())
-			{
-				int auctionId = rs.getInt("id");
-				long remainingTime = rs.getLong("endTime") * 1000 - System.currentTimeMillis();
-				if (remainingTime < ADDED_DURATION)
-					remainingTime = ADDED_DURATION;
-				
-				AuctionTemplate template = _auctionTemplates.get(rs.getInt("templateId"));
-				if (template == null)
-				{	
-					Log.warning("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
-					continue;
-				}	
-				Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"), rs.getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
-				addAuction(auction);
-			}
-			
-			statement.close();
+			doc = factory.newDocumentBuilder().parse(file);
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
-		finally
+		
+		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
-			L2DatabaseFactory.close(con);
-		}
-	}
-	
-	private void loadTemplates()
-	{
-		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/itemAuction.xml");
-		if (!file.exists())
-			return;
-
-		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
+			if (n.getNodeName().equalsIgnoreCase("list"))
 			{
-				for (XmlNode d : n.getChildren())
+				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 				{
-					if (d.getName().equalsIgnoreCase("currency"))
+					if (d.getNodeName().equalsIgnoreCase("auction"))
 					{
-						int position = d.getInt("position");
-						int itemId = d.getInt("itemId");
-						_currencies.put(itemId, new CurrencyInfo(position, itemId));
-					}
-					else if (d.getName().equalsIgnoreCase("auction"))
-					{	
-						int auctionId = d.getInt("id");
-						String[] itemIds = d.getString("itemId").split(",");
-						int[] itemId = new int[itemIds.length];
-						for (int i = 0; i < itemId.length; i++)
-							itemId[i] = Integer.parseInt(itemIds[i]);
-						int count = d.getInt("count");
-						int repeatTime = d.getInt("repeatTime") * 3600; // It's in hours
-						int randomRepeatTime = d.getInt("randomRepeatTime") * 3600; // It's in hours
-						int initialCurrencyId = d.getInt("initialCurrencyId");
-						int initialPrice = d.getInt("initialPrice");
-						int initialDuration = d.getInt("initialDuration") * 3600; // It's in hours
-						boolean acceptAllCoins = d.getBool("acceptAllCoins", true);
-						AuctionTemplate itemAuction = _auctionTemplates.get(auctionId);
-						if (itemAuction != null)
-							itemAuction.overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId, initialPrice, initialDuration, acceptAllCoins);
+						int auctionId = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
+						
+						int count = Integer.parseInt(d.getAttributes().getNamedItem("count").getNodeValue());
+						int repeatTime = d.getAttributes().getNamedItem("repeatTime") == null ? 0 : Integer.parseInt(d.getAttributes().getNamedItem("repeatTime").getNodeValue()) * 3600; // It's in hours
+						int randomRepeatTime = d.getAttributes().getNamedItem("randomRepeatTime") == null ? 0 : Integer.parseInt(d.getAttributes().getNamedItem("randomRepeatTime").getNodeValue()) * 3600; // It's in hours
+						int initialCurrencyId = Integer.parseInt(d.getAttributes().getNamedItem("initialCurrencyId").getNodeValue());
+						int highestCurrencyId = 0;
+						
+						if (d.getAttributes().getNamedItem("highestCurrencyId") != null)
+							highestCurrencyId = Integer.parseInt(d.getAttributes().getNamedItem("highestCurrencyId").getNodeValue());
+						
+						int initialPrice = Integer.parseInt(d.getAttributes().getNamedItem("initialPrice").getNodeValue());
+						int initialDuration = Integer.parseInt(d.getAttributes().getNamedItem("initialDuration").getNodeValue()) * 3600; // It's in hours
+						
+						int[] auctionItems = null;
+						if (d.getAttributes().getNamedItem("itemId") == null)
+						{
+							List<Integer> itemIds = new ArrayList<Integer>();
+							for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
+							{
+								if (e.getNodeName().equalsIgnoreCase("item"))
+								{
+									itemIds.add(Integer.parseInt(e.getAttributes().getNamedItem("id").getNodeValue()));
+								}
+							}
+							
+							auctionItems = new int[itemIds.size()];
+							Iterator<Integer> iter = itemIds.iterator();
+							for (int i = 0; iter.hasNext(); i++)
+							{
+								auctionItems[i] = iter.next();
+							}
+							
+							System.out.println("Loaded " + auctionItems.length + " for new format auction.");
+						}
 						else
-							_auctionTemplates.put(auctionId, new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime, initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
-					}	
+						{
+							String[] itemIds = d.getAttributes().getNamedItem("itemId").getNodeValue().split(",");
+							auctionItems = new int[itemIds.length];
+							for (int i = 0; i < auctionItems.length; i++)
+								auctionItems[i] = Integer.parseInt(itemIds[i]);
+							
+							System.out.println("Loaded " + auctionItems.length + " for old format auction.");
+						}
+						
+						AuctionTemplate itemAuction = new AuctionTemplate(auctionId, auctionItems, count, repeatTime, randomRepeatTime, initialCurrencyId, highestCurrencyId, initialPrice, initialDuration, !reload);
+						_auctionTemplates.put(auctionId, itemAuction);
+					}
 				}
 			}
 		}
 		
 		Log.info("ItemAuction: Loaded: " + _auctionTemplates.size() + " auctions!");
+		
+		if (!reload)
+		{
+			Connection con = null;
+			try
+			{
+				con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement statement = con.prepareStatement("SELECT id, itemId, templateId, currencyId, currentBid, ownerId, endTime FROM `custom_auctions`");
+				ResultSet rs = statement.executeQuery();
+				
+				while (rs.next())
+				{
+					int auctionId = rs.getInt("id");
+					long remainingTime = (rs.getLong("endTime") * 1000) - System.currentTimeMillis();
+					if (remainingTime < ADDED_DURATION)
+						remainingTime = ADDED_DURATION;
+					
+					AuctionTemplate template = _auctionTemplates.get(rs.getInt("templateId"));
+					if (template == null)
+					{
+						Log.warning("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
+						continue;
+					}
+					Auction auction = new Auction(auctionId, rs.getInt("itemId"), template, rs.getInt("currencyId"), rs.getLong("currentBid"), rs.getInt("ownerId"), remainingTime);
+					_auctions.put(auctionId, auction);
+				}
+				statement.close();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+			finally
+			{
+				L2DatabaseFactory.close(con);
+			}
+		}
 	}
 	
 	/**
 	 * Called at each player bid try, we do all the checks here to deceide if it's avalid or not
-	 * 
+	 *
 	 * @param activeChar
 	 * @param bidId
 	 * @param playerBid
@@ -635,156 +806,190 @@ public class CustomAuctionManager implements Reloadable
 			return;
 		
 		//Don't allow overcome the bid if it's the same player TODO IMPORTANT DO NOT DELETE
-		if (activeChar.getObjectId() == bid.getCurrentOwnerId())
-		{	
+		if ((activeChar.getObjectId() == bid.getCurrentOwnerId()) && !activeChar.isGM())
+		{
 			activeChar.sendMessage("You can't overbid your own bid!");
 			return;
 		}
-		if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
+		if ((activeChar.getPrivateStoreType() != 0) || activeChar.isInCrystallize())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
 		}
 		
-		//Check time?
-		if (bid.getRemainingTime() < 1000)	//The end time should be > than 30 sec, just to avoid errors?
+		if (bid.getCurrentOwnerName().equals("Ghost"))
 			return;
 		
+		//Check time?
+		if (bid.getRemainingTime() < 30000) //The end time should be > than 30 sec, just to avoid errors?
+		{
+			activeChar.sendMessage("Item Auction: This bid has been ended..!");
+			return;
+		}
+		
 		int currentCurrencyId = bid.getCurrentCurrency();
-		long minBid =  bid.getCurrentPrice() + ((bid.getCurrentPrice() * 10) / 100);
+		long minBid = bid.getCurrentPrice() + ((bid.getCurrentPrice() * 10) / 100);
 		if (minBid <= bid.getCurrentPrice())
 			minBid = bid.getCurrentPrice() + 1;
 		
+		long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
+		if ((bid.getCurrentCurrency() == 57) && (bid.getCurrentPrice() > maxAdenaPrice))
+		{
+			coin = "Dreams";
+		}
+		
 		if (!coin.isEmpty())
 		{
-			CurrencyInfo playerCurrency = null;
-			for (Entry<Integer, CurrencyInfo> i : _currencies.entrySet())
+			int currencyId = 0;
+			Currency playerCurrency = null;
+			
+			if (coin.equals("Dreams"))
+				currencyId = 50002;
+			else if (coin.equals("Raid"))
+				currencyId = 50009;
+			else
 			{
-				if (i.getValue().getName().equalsIgnoreCase(coin))
-				{	
-					playerCurrency = i.getValue();
-					break;
-				}	
+				playerCurrency = Currency.valueOf(coin);
+				if (playerCurrency == null) //Possible client hax?
+					return;
+				
+				currencyId = playerCurrency.ItemId;
 			}
-			if (playerCurrency == null)
-				return;
 			
-			int currencyId = playerCurrency.getId();
-			if (!bid.getTemplate().getAcceptAllCoins() && currencyId != bid.getTemplate().getInitialCurrencyId())
-				return; //client hack?
-			
-			if (bid.getTemplate().getAcceptAllCoins() && currencyId != currentCurrencyId)//If we have a new currency..
+			if (currencyId != currentCurrencyId)//If we have a new currency..
 			{
-				if (_currencies.get(currencyId).getPosition() < _currencies.get(currentCurrencyId).getPosition())
-					return;	//client hack?
+				int highestCurrencyId = bid.getTemplate().getHighestCurrencyId();
+				
+				switch (highestCurrencyId)
+				{
+					case 57:
+					{
+						if (((currencyId != 57) && (currencyId != 50002)) || ((currencyId == 50002) && (bid.getCurrentPrice() < maxAdenaPrice)))
+						{
+							activeChar.sendMessage("You can only bid Adena for this auction.");
+							return;
+						}
+					}
+				}
+				
+				if (currencyId == 50002)
+				{
+					if (playerBid < 10000)
+					{
+						activeChar.sendMessage("Item Auction: The minimum bid for this item should be for: 10.000 Dreams Coin.");
+						return;
+					}
+				}
+				else
+				{
+					int index = 0;
+					for (Currency cur : Currency.values())
+					{
+						if (currentCurrencyId == cur.ItemId)
+							break;
+						index++;
+					}
+					
+					if ((playerCurrency.ordinal() < index) && !activeChar.isGM())
+					{
+						//activeChar.sendMessage("Ordinal " + playerCurrency.ordinal());
+						//activeChar.sendMessage("Index " + index);
+						return;
+					}
+				}
 				
 				currentCurrencyId = currencyId;
-				minBid = 1;	//?
+				minBid = 1; //?
 			}
 		}
 		
-		if (playerBid < minBid)
+		if ((playerBid < minBid) && !activeChar.isGM())
 		{
 			activeChar.sendMessage("Item Auction: The minimum bid for this item should be for: " + minBid + " " + ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName());
 			return;
 		}
-
+		
 		if (!activeChar.destroyItemByItemId("ItemAuction", currentCurrencyId, playerBid, null, true))
 			return;
 		
-		Util.logToFile("The player: " + activeChar.getName() + " did a bid("+playerBid + " " +ItemTable.getInstance().getTemplate(currentCurrencyId).getName()+") on " + ItemTable.getInstance().getTemplate(bid.getItemId()).getName(), "Auctions", true);
-		if (bid.getCurrentOwnerId() != 0)
-			Util.logToFile("The bid from: " + CharNameTable.getInstance().getNameById(bid.getCurrentOwnerId())+"("+bid.getCurrentPrice()+" "+ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName()+") has been overcome by " + activeChar.getName()+"("+String.valueOf(playerBid) + " " + ItemTable.getInstance().getTemplate(currentCurrencyId).getName()+")", "Auctions", true);
+		restoreLoserBid(bid.getCurrentOwnerId(), bid.getCurrentCurrency(), bid.getCurrentPrice());
 		
-		restoreLoserBid(bid.getCurrentOwnerId(), bid.getCurrentCurrency(), bid.getCurrentPrice(), activeChar.getName(), String.valueOf(playerBid) + " " + ItemTable.getInstance().getTemplate(currentCurrencyId).getName());
+		String oldBidderName = bid.getCurrentOwnerName();
 		
 		bid.setCurrentCurrency(currentCurrencyId);//Need do only if is not same but beh
 		bid.setOwner(activeChar.getObjectId(), playerBid);
 		
-		CustomCommunityBoard.getInstance().parseCmd("bbscustom;itemAuction;0", activeChar);
+		String message = "";
+		String itemName = ItemTable.getInstance().getTemplate(bid.getItemId()).getName();
+		String currencyName = bid.getCurrentCurrency() == 57 ? "Adenas" : "Golden Apigas";
+		
+		if (bid.getCurrentCurrency() == 50002)
+			currencyName = "Dreams Coin";
+		
+		String priceString = "";
+		long price = bid.getCurrentPrice();
+		long counter = 0;
+		while (price > 0)
+		{
+			priceString = (price % 10) + priceString;
+			price /= 10;
+			counter++;
+			if ((counter % 3) == 0)
+				priceString = "," + priceString;
+			
+		}
+		
+		if ((counter % 3) == 0)
+			priceString = priceString.substring(1);
+		
+		if (!activeChar.isGM())
+		{
+			if (oldBidderName.equals("None"))
+				message = activeChar.getName() + " placed a bid on " + itemName + " - " + priceString + " " + currencyName + ".";
+			else
+				message = activeChar.getName() + " outbided " + oldBidderName + " with a " + priceString + " " + currencyName + " bid for " + itemName + ".";
+			
+			L2NpcInstance auctionManager = null;
+			for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
+			{
+				if (auctionManager == null)
+					auctionManager = Util.getNpcCloseTo(33782, player);
+				
+				player.sendPacket(new CreatureSay(auctionManager == null ? 0x00 : auctionManager.getObjectId(), Say2.TRADE, "Jolie", message));
+			}
+		}
 	}
 	
-	private void restoreLoserBid(int playerId, int currencyId, long count, String newBidOwner, String newBidInfo)
+	private void restoreLoserBid(int playerId, int currencyId, long count)
 	{
-		giveItemToPlayer(playerId, currencyId, count, "Your bid has been overcome by " + newBidOwner + " with (" + newBidInfo + ")!");
+		giveItemToPlayer(playerId, currencyId, count, "Your bid has been overcome!");
 	}
 	
 	/**
 	 * Used for add the reward item to the player or give back the bids
-	 * 
+	 *
 	 * @param playerId
 	 * @param itemId
 	 * @param count
 	 */
 	private void giveItemToPlayer(int playerId, int itemId, long count, String text)
 	{
+		if (CharNameTable.getInstance().getNameById(playerId) == null) //Filter if the player exists, needed because we call this when an auction is ended without check if there is a winner
+			return;
+		
 		//Lets use ALWAYS the mail, it's nice because the player will notice much better that his bid has been overcome
 		Message msg = new Message(-1, playerId, false, "ItemAuction", text, 0);
-			
-		Mail attachments = msg.createAttachments();
-		attachments.addItem("ItemAuction", itemId, count, null, null);
-			
-		MailManager.getInstance().sendMessage(msg);
-	}
-	
-	public int getCurrencyId(String coin)
-	{
-		for (Entry<Integer, CurrencyInfo> i : _currencies.entrySet())
-		{
-			if (i.getValue().getName().equalsIgnoreCase(coin))
-				return i.getValue().getId();
-		}
-		return 0;
-	}
-	
-	public void addAuction(Auction auction)
-	{
-		_auctions.put(auction.getId(), auction);
 		
-		// Stupid naive sort
-		Map<Integer, Auction> auctions = new HashMap<Integer, Auction>(_auctions);
-		_auctions.clear();
-		while (!auctions.isEmpty())
-		{
-			Auction minAuction = null;
-			long minTime = Long.MAX_VALUE;
-			for (Auction temp : auctions.values())
-			{
-				if (temp.getRemainingTime() < minTime)
-				{
-					minAuction = temp;
-					minTime = temp.getRemainingTime();
-				}
-			}
-			
-			if (minAuction == null)
-			{
-				_auctions.putAll(auctions);
-				break;
-			}
-			
-			auctions.remove(minAuction.getId());
-			_auctions.put(minAuction.getId(), minAuction);
-		}
-	}
-	
-	public boolean reload()
-	{
-		loadTemplates();
-		return true;
-	}
-
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.Reloadable#getReloadMessage(boolean)
-	 */
-	public String getReloadMessage(boolean success)
-	{
-		return "Custom Auction Templates reloaded";
+		Mail attachments = msg.createAttachments();
+		
+		attachments.addItem("ItemAuction", itemId, count, null, null);
+		
+		MailManager.getInstance().sendMessage(msg);
 	}
 	
 	private CustomAuctionManager()
 	{
-		load();
+		load(false);
 	}
 	
 	public static final CustomAuctionManager getInstance()

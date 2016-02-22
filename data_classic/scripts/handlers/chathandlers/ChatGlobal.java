@@ -19,8 +19,6 @@ import gnu.trove.TIntIntHashMap;
 import java.util.Collection;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.gui.ConsoleTab;
-import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.instancemanager.DiscussionManager;
 import l2server.gameserver.model.BlockList;
@@ -28,7 +26,6 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.ExWorldChatCnt;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -71,13 +68,6 @@ public class ChatGlobal implements IChatHandler
 			return;
 		}
 		
-		
-		if (activeChar.getLevel() < 95)
-		{
-			activeChar.sendMessage("You're not allowed to use this chat until level 95.");
-			return;
-		}
-		
 		int messages = 0;
 		synchronized (_messages)
 		{
@@ -88,13 +78,11 @@ public class ChatGlobal implements IChatHandler
 			_messages.put(activeChar.getObjectId(), messages);
 		}
 		
-		if (messages > 20)
+		if (messages > 50)
 		{
-			activeChar.sendMessage("You can't write more than 20 global messages a day.");
+			activeChar.sendMessage("You can't write more than 50 global messages a day");
 			return;
 		}
-		
-		activeChar.sendPacket(new ExWorldChatCnt(20 - messages));
 		
 		for (int i = 0; i < text.length(); i++)
 		{
@@ -110,15 +98,6 @@ public class ChatGlobal implements IChatHandler
 			if (!BlockList.isBlocked(player, activeChar))
 				player.sendPacket(cs);
 		}
-
-		while (text.contains("Type=") && text.contains("Title="))
-		{
-			int index1 = text.indexOf("Type=");
-			int index2 = text.indexOf("Title=") + 6;
-			text = text.substring(0, index1) + text.substring(index2);
-		}
-
-		ConsoleTab.appendMessage(ConsoleFilter.GlobalChat, activeChar.getName() + ": " + text);
 	}
 	
 	/**

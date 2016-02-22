@@ -1,7 +1,7 @@
 <list>
-	<npc id="14500" name="Shadow" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14500" name="Shadow" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -14,9 +14,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14501" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14501" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -29,9 +29,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14502" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14502" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -44,9 +44,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14503" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14503" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -59,9 +59,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14504" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14504" name="Shadow" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -74,9 +74,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14505" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14505" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -89,9 +89,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14506" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14506" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -104,9 +104,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14507" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14507" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -119,9 +119,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14508" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14508" name="Shadow" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -134,9 +134,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14509" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14509" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -149,9 +149,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14510" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14510" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -164,9 +164,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14511" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14511" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -179,9 +179,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14512" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14512" name="Shadow" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -194,9 +194,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14513" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14513" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -209,9 +209,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14514" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14514" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -224,9 +224,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14515" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14515" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -239,9 +239,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14516" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14516" name="Shadow" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -254,9 +254,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14517" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14517" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -269,9 +269,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14518" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14518" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -284,9 +284,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14519" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14519" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -299,9 +299,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14520" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14520" name="Shadow" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -314,9 +314,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14521" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14521" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -329,9 +329,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14522" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14522" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -344,9 +344,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14523" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14523" name="Shadow" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -359,9 +359,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14524" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14524" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -374,9 +374,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14525" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14525" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -389,9 +389,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14526" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14526" name="Shadow" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="10.0" collisionHeight="30.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -404,9 +404,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4233" level="1" /> <!-- Vampiric Attack -->
 	</npc>
-	<npc id="14527" name="Silhouette" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14527" name="Silhouette" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -420,9 +420,9 @@
 		<skill id="4260" level="2" /> <!-- Steal Blood -->
 		<skill id="4002" level="2" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14528" name="Silhouette" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14528" name="Silhouette" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -436,9 +436,9 @@
 		<skill id="4260" level="2" /> <!-- Steal Blood -->
 		<skill id="4002" level="2" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14529" name="Silhouette" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14529" name="Silhouette" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -452,9 +452,9 @@
 		<skill id="4260" level="3" /> <!-- Steal Blood -->
 		<skill id="4002" level="3" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14530" name="Silhouette" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14530" name="Silhouette" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -468,9 +468,9 @@
 		<skill id="4260" level="3" /> <!-- Steal Blood -->
 		<skill id="4002" level="3" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14531" name="Silhouette" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14531" name="Silhouette" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -484,9 +484,9 @@
 		<skill id="4260" level="4" /> <!-- Steal Blood -->
 		<skill id="4002" level="4" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14532" name="Silhouette" level="47" type="L2Pet" baseAtkRange="40" baseHpMax="1317.743" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="270.14304" baseMAtk="178.7041" basePDef="192.66031" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14532" name="Silhouette" level="47" type="L2Pet" baseAtkRange="40" baseHpMax="1317.743" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="270.14304" baseMAtk="178.7041" basePDef="192.66031" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -500,9 +500,9 @@
 		<skill id="4260" level="4" /> <!-- Steal Blood -->
 		<skill id="4002" level="4" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14533" name="Silhouette" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14533" name="Silhouette" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -516,9 +516,9 @@
 		<skill id="4260" level="5" /> <!-- Steal Blood -->
 		<skill id="4002" level="5" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14534" name="Silhouette" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+	<npc id="14534" name="Silhouette" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -532,9 +532,9 @@
 		<skill id="4260" level="5" /> <!-- Steal Blood -->
 		<skill id="4002" level="5" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14535" name="Silhouette" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2" clanRange="300">
+	<npc id="14535" name="Silhouette" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" clanRange="300" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -548,9 +548,9 @@
 		<skill id="4260" level="5" /> <!-- Steal Blood -->
 		<skill id="4002" level="5" /> <!-- Blood Siphon -->
 	</npc>
-	<npc id="14536" name="Silhouette" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14536" name="Silhouette" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -563,9 +563,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="6" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14537" name="Silhouette" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14537" name="Silhouette" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -578,9 +578,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="6" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14538" name="Silhouette" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14538" name="Silhouette" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -593,9 +593,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="6" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14539" name="Silhouette" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14539" name="Silhouette" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -608,9 +608,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="6" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14540" name="Silhouette" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14540" name="Silhouette" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -623,9 +623,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="6" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14541" name="Silhouette" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14541" name="Silhouette" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -638,9 +638,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="7" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14542" name="Silhouette" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14542" name="Silhouette" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -653,9 +653,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="7" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14543" name="Silhouette" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14543" name="Silhouette" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -668,9 +668,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="7" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14544" name="Silhouette" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14544" name="Silhouette" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -683,9 +683,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="7" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14545" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14545" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -698,9 +698,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14546" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14546" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -713,9 +713,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14547" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14547" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -728,9 +728,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14548" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14548" name="Silhouette" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -743,9 +743,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14549" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14549" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -758,9 +758,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14550" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14550" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -773,9 +773,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="8" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14551" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14551" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -788,9 +788,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14552" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14552" name="Silhouette" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -803,9 +803,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14553" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14553" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -818,9 +818,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14554" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14554" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -833,9 +833,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14555" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14555" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -848,9 +848,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14556" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14556" name="Silhouette" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -863,9 +863,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="9" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14557" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14557" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -878,9 +878,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14558" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14558" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -893,9 +893,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14559" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14559" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -908,9 +908,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14560" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14560" name="Silhouette" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -923,9 +923,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14561" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14561" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -938,9 +938,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14562" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14562" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -953,9 +953,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="10" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14563" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14563" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -968,9 +968,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14564" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14564" name="Silhouette" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -983,9 +983,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14565" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14565" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -998,9 +998,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14566" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14566" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1013,9 +1013,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14567" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14567" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1028,9 +1028,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14568" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14568" name="Silhouette" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1043,9 +1043,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="11" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14569" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14569" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1058,9 +1058,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14570" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14570" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1073,9 +1073,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14571" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14571" name="Silhouette" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1088,9 +1088,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14572" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14572" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1103,9 +1103,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14573" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14573" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1118,9 +1118,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14574" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14574" name="Silhouette" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="140.0" collisionRadius="8.0" collisionHeight="23.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1133,9 +1133,9 @@
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4260" level="12" /> <!-- Steal Blood -->
 	</npc>
-	<npc id="14575" name="Soulless" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="877.2082" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="198.34592" baseMAtk="135.44453" basePDef="164.88513" baseMDef="120.65578" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14575" name="Soulless" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="877.2082" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="198.34592" baseMAtk="135.44453" basePDef="164.88513" baseMDef="120.65578" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1147,9 +1147,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14576" name="Soulless" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1026.3176" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14576" name="Soulless" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1026.3176" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1161,9 +1161,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14577" name="Soulless" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1186.0023" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23843" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14577" name="Soulless" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1186.0023" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23843" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1175,9 +1175,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14578" name="Soulless" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1353.6183" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="370.68903" baseMAtk="253.13255" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+	<npc id="14578" name="Soulless" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1353.6183" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="370.68903" baseMAtk="253.13255" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="1" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1189,9 +1189,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14579" name="Soulless" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1525.9932" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14579" name="Soulless" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1525.9932" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1203,9 +1203,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14580" name="Soulless" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1613.238" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14580" name="Soulless" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1613.238" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1217,9 +1217,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14581" name="Soulless" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1700.483" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14581" name="Soulless" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1700.483" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1231,9 +1231,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14582" name="Soulless" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1787.1992" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14582" name="Soulless" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1787.1992" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1245,9 +1245,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14583" name="Soulless" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1873.3866" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+	<npc id="14583" name="Soulless" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1873.3866" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1259,9 +1259,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14584" name="Soulless" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1957.459" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14584" name="Soulless" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1957.459" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1273,9 +1273,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14585" name="Soulless" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="2039.9451" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14585" name="Soulless" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="2039.9451" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1287,9 +1287,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14586" name="Soulless" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="2119.7876" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14586" name="Soulless" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="2119.7876" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1301,9 +1301,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14587" name="Soulless" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="2196.457" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14587" name="Soulless" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="2196.457" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1315,9 +1315,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14588" name="Soulless" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="2269.9546" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14588" name="Soulless" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="2269.9546" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1329,9 +1329,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14589" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2339.2217" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14589" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2339.2217" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1343,9 +1343,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14590" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2347.153" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14590" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2347.153" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1357,9 +1357,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14591" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2355.6133" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14591" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2355.6133" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1371,9 +1371,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14592" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2364.0732" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14592" name="Soulless" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2364.0732" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1385,9 +1385,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14593" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2372.0046" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14593" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2372.0046" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1399,9 +1399,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14594" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2380.4646" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14594" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2380.4646" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1413,9 +1413,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14595" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2388.396" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14595" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2388.396" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1427,9 +1427,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14596" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2396.8562" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14596" name="Soulless" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2396.8562" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1441,9 +1441,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14597" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2403.7302" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14597" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2403.7302" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1455,9 +1455,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14598" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2411.6614" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14598" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2411.6614" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1469,9 +1469,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14599" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2419.5928" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14599" name="Soulless" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2419.5928" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="7.0" collisionHeight="33.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="3" /> <!-- HP Medium-High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

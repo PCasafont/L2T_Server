@@ -257,9 +257,9 @@
 			<itemDrop itemId="4113" min="12" max="36" chance="87.7477" /> <!-- Great Axe Head -->
 		</dropCategory>
 		<dropCategory chance="99.4474">
-			<itemDrop itemId="4622" min="1" max="3" chance="39.1645" /> <!-- Greater MEN Dye <Men + 4 Wit - 4> -->
-			<itemDrop itemId="4623" min="2" max="4" chance="26.1097" /> <!-- Greater WIT Dye <Wit + 4 Int - 4> -->
-			<itemDrop itemId="4624" min="2" max="6" chance="19.5822" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4622" min="1" max="3" chance="39.1645" /> <!-- Greater MEN Dye [Men + 4 Wit - 4] -->
+			<itemDrop itemId="4623" min="2" max="4" chance="26.1097" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
+			<itemDrop itemId="4624" min="2" max="6" chance="19.5822" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="6572" min="1" max="1" chance="15.1436" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="113920" y="52960" z="-3735" heading="0" respawn="43200" randomRespawn="86400" dbName="Furious Thieles" />
@@ -335,9 +335,9 @@
 			<itemDrop itemId="4113" min="12" max="36" chance="87.7477" /> <!-- Great Axe Head -->
 		</dropCategory>
 		<dropCategory chance="80.0162">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="169744" y="11920" z="-2732" heading="0" respawn="43200" randomRespawn="86400" dbName="Ghost of Peasant Captain" />
@@ -416,9 +416,9 @@
 			<itemDrop itemId="4120" min="12" max="36" chance="90.1835" /> <!-- Bellion Cestus Edge -->
 		</dropCategory>
 		<dropCategory chance="78.1454">
-			<itemDrop itemId="4619" min="5" max="15" chance="10.274" /> <!-- Greater INT Dye <Int + 4 Men - 4> -->
-			<itemDrop itemId="4620" min="2" max="4" chance="34.2466" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
-			<itemDrop itemId="4621" min="2" max="6" chance="25.6849" /> <!-- Greater MEN Dye <Men + 4 Int - 4> -->
+			<itemDrop itemId="4619" min="5" max="15" chance="10.274" /> <!-- Greater INT Dye [Int + 4 Men - 4] -->
+			<itemDrop itemId="4620" min="2" max="4" chance="34.2466" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
+			<itemDrop itemId="4621" min="2" max="6" chance="25.6849" /> <!-- Greater MEN Dye [Men + 4 Int - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="29.7945" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="76787" y="245775" z="-10376" heading="0" respawn="43200" randomRespawn="86400" dbName="The 3rd Underwater Guardian" />
@@ -679,9 +679,9 @@
 			<itemDrop itemId="2121" min="3" max="9" chance="94.7543" /> <!-- Eminence Bow Shaft -->
 		</dropCategory>
 		<dropCategory chance="75.9277">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="92976" y="7920" z="-3914" heading="0" respawn="43200" randomRespawn="86400" dbName="Ketra's Commander Atis" />
@@ -756,9 +756,9 @@
 			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="74.8367">
-			<itemDrop itemId="4613" min="5" max="15" chance="10.274" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="2" max="4" chance="34.2466" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="2" max="6" chance="25.6849" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="5" max="15" chance="10.274" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="2" max="4" chance="34.2466" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="2" max="6" chance="25.6849" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="29.7945" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="54941" y="206705" z="-3728" heading="0" respawn="43200" randomRespawn="86400" dbName="Atraiban" />
@@ -1160,9 +1160,9 @@
 			<itemDrop itemId="2119" min="3" max="9" chance="94.7086" /> <!-- Crystal Dagger Blade -->
 		</dropCategory>
 		<dropCategory chance="48.1251">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="107792" y="27728" z="-3488" heading="0" respawn="43200" randomRespawn="86400" dbName="Barion" />
@@ -1249,9 +1249,9 @@
 			<itemDrop itemId="2119" min="3" max="9" chance="94.7086" /> <!-- Crystal Dagger Blade -->
 		</dropCategory>
 		<dropCategory chance="91.4185">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="116352" y="27648" z="-3319" heading="0" respawn="43200" randomRespawn="86400" dbName="Karte" />
@@ -1331,9 +1331,9 @@
 			<itemDrop itemId="4113" min="12" max="36" chance="87.7477" /> <!-- Great Axe Head -->
 		</dropCategory>
 		<dropCategory chance="89.3234">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="125520" y="27216" z="-3632" heading="0" respawn="43200" randomRespawn="86400" dbName="Verfa" />
@@ -1535,9 +1535,9 @@
 			<itemDrop itemId="2107" min="8" max="22" chance="31.1701" /> <!-- Dark Screamer Edge -->
 		</dropCategory>
 		<dropCategory chance="94.4307">
-			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="3" max="9" chance="61.8557" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="107056" y="168176" z="-3456" heading="0" respawn="43200" randomRespawn="86400" dbName="Beacon of Blue Sky" />
@@ -1739,9 +1739,9 @@
 			<itemDrop itemId="2069" min="17" max="49" chance="2.6085" /> <!-- Heavy Doom Axe Blade -->
 		</dropCategory>
 		<dropCategory chance="89.437">
-			<itemDrop itemId="4591" min="1" max="3" chance="41.9314" /> <!-- Greater CON Dye <Con + 2 Str - 2> -->
-			<itemDrop itemId="4592" min="2" max="4" chance="27.9543" /> <!-- Greater CON Dye <Con + 2 DEX - 2> -->
-			<itemDrop itemId="4593" min="2" max="6" chance="20.9657" /> <!-- Greater DEX Dye <Dex + 2 Str - 2> -->
+			<itemDrop itemId="4591" min="1" max="3" chance="41.9314" /> <!-- Greater CON Dye [Con + 2 Str - 2] -->
+			<itemDrop itemId="4592" min="2" max="4" chance="27.9543" /> <!-- Greater CON Dye [Con + 2 DEX - 2] -->
+			<itemDrop itemId="4593" min="2" max="6" chance="20.9657" /> <!-- Greater DEX Dye [Dex + 2 Str - 2] -->
 			<itemDrop itemId="951" min="3" max="7" chance="9.1486" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="97223" y="94223" z="-3712" heading="0" respawn="43200" randomRespawn="86400" dbName="Wizard of Storm Teruk" />
@@ -1818,9 +1818,9 @@
 			<itemDrop itemId="4108" min="14" max="42" chance="17.1057" /> <!-- Sword of Valhalla Blade -->
 		</dropCategory>
 		<dropCategory chance="93.1639">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="94992" y="-23168" z="-2176" heading="0" respawn="43200" randomRespawn="86400" dbName="Red Flag Captain Shaka" />
@@ -2190,8 +2190,8 @@
 			<itemDrop itemId="2060" min="4" max="12" chance="57.8861" /> <!-- StormBringer Blade -->
 		</dropCategory>
 		<dropCategory chance="97.8437">
-			<itemDrop itemId="4589" min="1" max="3" chance="49.763" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
-			<itemDrop itemId="4590" min="2" max="4" chance="33.1754" /> <!-- Greater STR Dye <STR + 2 DEX - 2> -->
+			<itemDrop itemId="4589" min="1" max="3" chance="49.763" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
+			<itemDrop itemId="4590" min="2" max="4" chance="33.1754" /> <!-- Greater STR Dye [STR + 2 DEX - 2] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="17.0616" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="88512" y="140576" z="-3483" heading="0" respawn="43200" randomRespawn="86400" dbName="Leader of Cat Gang" />
@@ -2262,9 +2262,9 @@
 			<itemDrop itemId="1916" min="240" max="720" chance="10.7031" /> <!-- Necklace of Mermaid Teardrop -->
 		</dropCategory>
 		<dropCategory chance="72.7344">
-			<itemDrop itemId="4601" min="6" max="18" chance="10.0365" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="40.146" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="30.1095" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="6" max="18" chance="10.0365" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="40.146" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="30.1095" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="19.708" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="66944" y="67504" z="-3704" heading="0" respawn="43200" randomRespawn="86400" dbName="Timak Orc Ranger Captain" />
@@ -2380,9 +2380,9 @@
 			<itemDrop itemId="4118" min="2" max="6" chance="58.3369" /> <!-- Evil Spirit Head -->
 		</dropCategory>
 		<dropCategory chance="65.0788">
-			<itemDrop itemId="4616" min="1" max="3" chance="39.1645" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="4" chance="26.1097" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="2" max="6" chance="19.5822" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="1" max="3" chance="39.1645" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="4" chance="26.1097" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="2" max="6" chance="19.5822" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="6572" min="1" max="1" chance="15.1436" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="165424" y="93776" z="-2992" heading="0" respawn="43200" randomRespawn="86400" dbName="Soulless Wild Boar" />
@@ -2600,8 +2600,8 @@
 			<itemDrop itemId="2967" min="8" max="22" chance="29.4157" /> <!-- Elven Long Sword Blade -->
 		</dropCategory>
 		<dropCategory chance="97.2548">
-			<itemDrop itemId="4589" min="2" max="6" chance="22.3881" /> <!-- Greater STR Dye <STR + 2 CON - 2> -->
-			<itemDrop itemId="4590" min="3" max="7" chance="17.9104" /> <!-- Greater STR Dye <STR + 2 DEX - 2> -->
+			<itemDrop itemId="4589" min="2" max="6" chance="22.3881" /> <!-- Greater STR Dye [STR + 2 CON - 2] -->
+			<itemDrop itemId="4590" min="3" max="7" chance="17.9104" /> <!-- Greater STR Dye [STR + 2 DEX - 2] -->
 			<itemDrop itemId="952" min="3" max="9" chance="59.7015" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="123536" y="133504" z="-3584" heading="0" respawn="43200" randomRespawn="86400" dbName="Sejarr's Servitor" />
@@ -2651,9 +2651,9 @@
 			<itemDrop itemId="2096" min="4" max="10" chance="15.4324" /> <!-- Sword of Whispering Death Blade -->
 		</dropCategory>
 		<dropCategory chance="90.7721">
-			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="3" max="9" chance="61.8557" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="64048" y="16048" z="-3536" heading="0" respawn="43200" randomRespawn="86400" dbName="Rotting Tree Repiro" />
@@ -2728,9 +2728,9 @@
 			<itemDrop itemId="2110" min="12" max="36" chance="79.5102" /> <!-- Heathen's Book Page -->
 		</dropCategory>
 		<dropCategory chance="65.0305">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="113840" y="84256" z="-2480" heading="0" respawn="43200" randomRespawn="86400" dbName="Shacram" />
@@ -3099,9 +3099,9 @@
 			<itemDrop itemId="2073" min="12" max="36" chance="73.9502" /> <!-- Chakram Edge -->
 		</dropCategory>
 		<dropCategory chance="84.1979">
-			<itemDrop itemId="4594" min="2" max="6" chance="35.1171" /> <!-- Greater DEX Dye <Dex + 2 CON - 2> -->
-			<itemDrop itemId="4595" min="3" max="7" chance="28.0936" /> <!-- Greater INT Dye <Int + 2 Men - 2> -->
-			<itemDrop itemId="4596" min="3" max="9" chance="23.4114" /> <!-- Greater INT Dye <Int + 2 Wit - 2> -->
+			<itemDrop itemId="4594" min="2" max="6" chance="35.1171" /> <!-- Greater DEX Dye [Dex + 2 CON - 2] -->
+			<itemDrop itemId="4595" min="3" max="7" chance="28.0936" /> <!-- Greater INT Dye [Int + 2 Men - 2] -->
+			<itemDrop itemId="4596" min="3" max="9" chance="23.4114" /> <!-- Greater INT Dye [Int + 2 Wit - 2] -->
 			<itemDrop itemId="952" min="21" max="63" chance="13.3779" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="125789" y="207644" z="-3752" heading="0" respawn="43200" randomRespawn="86400" dbName="Icarus Sample 1" />
@@ -3181,9 +3181,9 @@
 			<itemDrop itemId="2058" min="3" max="9" chance="27.7058" /> <!-- Atuba Mace Head -->
 		</dropCategory>
 		<dropCategory chance="72.0703">
-			<itemDrop itemId="4591" min="1" max="3" chance="45.3172" /> <!-- Greater CON Dye <Con + 2 Str - 2> -->
-			<itemDrop itemId="4592" min="2" max="4" chance="30.2115" /> <!-- Greater CON Dye <Con + 2 DEX - 2> -->
-			<itemDrop itemId="4593" min="2" max="6" chance="22.6586" /> <!-- Greater DEX Dye <Dex + 2 Str - 2> -->
+			<itemDrop itemId="4591" min="1" max="3" chance="45.3172" /> <!-- Greater CON Dye [Con + 2 Str - 2] -->
+			<itemDrop itemId="4592" min="2" max="4" chance="30.2115" /> <!-- Greater CON Dye [Con + 2 DEX - 2] -->
+			<itemDrop itemId="4593" min="2" max="6" chance="22.6586" /> <!-- Greater DEX Dye [Dex + 2 Str - 2] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
@@ -3227,9 +3227,9 @@
 			<itemDrop itemId="4108" min="14" max="42" chance="17.1057" /> <!-- Sword of Valhalla Blade -->
 		</dropCategory>
 		<dropCategory chance="75.1501">
-			<itemDrop itemId="4607" min="5" max="15" chance="14.0187" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="46.729" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="35.0467" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="5" max="15" chance="14.0187" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="46.729" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="35.0467" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="121872" y="64032" z="-3536" heading="0" respawn="43200" randomRespawn="86400" dbName="Fairy Queen's Messenger Berun" />
@@ -3303,9 +3303,9 @@
 			<itemDrop itemId="4120" min="3" max="9" chance="97.3508" /> <!-- Bellion Cestus Edge -->
 		</dropCategory>
 		<dropCategory chance="78.9418">
-			<itemDrop itemId="4616" min="2" max="4" chance="19.7287" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="6" chance="14.7965" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="3" max="7" chance="11.8372" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="2" max="4" chance="19.7287" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="6" chance="14.7965" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="3" max="7" chance="11.8372" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="948" min="1" max="3" chance="53.6376" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="86300" y="-8200" z="-3000" heading="0" respawn="43200" randomRespawn="86400" dbName="Refugee Applicant Leo" />
@@ -3586,9 +3586,9 @@
 			<itemDrop itemId="4106" min="8" max="22" chance="32.6175" /> <!-- Spirit's Staff Head -->
 		</dropCategory>
 		<dropCategory chance="89.0863">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="75488" y="-9360" z="-2720" heading="0" respawn="43200" randomRespawn="86400" dbName="Slaughter Lord Gato" />
@@ -3661,9 +3661,9 @@
 			<itemDrop itemId="2074" min="12" max="36" chance="72.2319" /> <!-- Crystallized Ice Bow Shaft -->
 		</dropCategory>
 		<dropCategory chance="82.7549">
-			<itemDrop itemId="4597" min="1" max="3" chance="45.3172" /> <!-- Greater MEN Dye <Men + 2 Int - 2> -->
-			<itemDrop itemId="4598" min="2" max="4" chance="30.2115" /> <!-- Greater MEN Dye <Men + 2 Wit - 2> -->
-			<itemDrop itemId="4599" min="2" max="6" chance="22.6586" /> <!-- Greater WIT Dye <Wit + 2 Int - 2> -->
+			<itemDrop itemId="4597" min="1" max="3" chance="45.3172" /> <!-- Greater MEN Dye [Men + 2 Int - 2] -->
+			<itemDrop itemId="4598" min="2" max="4" chance="30.2115" /> <!-- Greater MEN Dye [Men + 2 Wit - 2] -->
+			<itemDrop itemId="4599" min="2" max="6" chance="22.6586" /> <!-- Greater WIT Dye [Wit + 2 Int - 2] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="95260" y="82042" z="-3712" heading="0" respawn="43200" randomRespawn="86400" dbName="Leto Chief Talkin" />
@@ -3740,9 +3740,9 @@
 			<itemDrop itemId="4111" min="12" max="36" chance="88.8447" /> <!-- Arthro Nail Blade -->
 		</dropCategory>
 		<dropCategory chance="83.9707">
-			<itemDrop itemId="4613" min="1" max="3" chance="26.968" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="2" max="4" chance="17.9787" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="1" max="1" chance="53.936" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="1" max="3" chance="26.968" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="2" max="4" chance="17.9787" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="1" max="1" chance="53.936" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="125280" y="102576" z="-3305" heading="0" respawn="43200" randomRespawn="86400" dbName="Beleth' Seer Sephia" />
@@ -4105,9 +4105,9 @@
 			<itemDrop itemId="2053" min="12" max="36" chance="70.4951" /> <!-- Scallop Jamadhr Edge -->
 		</dropCategory>
 		<dropCategory chance="81.9617">
-			<itemDrop itemId="4594" min="1" max="3" chance="39.8482" /> <!-- Greater DEX Dye <Dex + 2 CON - 2> -->
-			<itemDrop itemId="4595" min="2" max="4" chance="26.5655" /> <!-- Greater INT Dye <Int + 2 Men - 2> -->
-			<itemDrop itemId="4596" min="2" max="6" chance="19.9241" /> <!-- Greater INT Dye <Int + 2 Wit - 2> -->
+			<itemDrop itemId="4594" min="1" max="3" chance="39.8482" /> <!-- Greater DEX Dye [Dex + 2 CON - 2] -->
+			<itemDrop itemId="4595" min="2" max="4" chance="26.5655" /> <!-- Greater INT Dye [Int + 2 Men - 2] -->
+			<itemDrop itemId="4596" min="2" max="6" chance="19.9241" /> <!-- Greater INT Dye [Int + 2 Wit - 2] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="13.6622" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="43872" y="123968" z="-2928" heading="0" respawn="43200" randomRespawn="86400" dbName="Flame Lord Shadar" />
@@ -4181,7 +4181,7 @@
 			<itemDrop itemId="2072" min="8" max="22" chance="57.4337" /> <!-- Dark Elven Dagger Edge -->
 		</dropCategory>
 		<dropCategory chance="79.974">
-			<itemDrop itemId="4600" min="3" max="9" chance="49.2958" /> <!-- Greater WIT Dye <Wit + 2 Men - 2> -->
+			<itemDrop itemId="4600" min="3" max="9" chance="49.2958" /> <!-- Greater WIT Dye [Wit + 2 Men - 2] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="50.7042" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="73520" y="66912" z="-3728" heading="0" respawn="43200" randomRespawn="86400" dbName="Shaman King Selu" />
@@ -4259,9 +4259,9 @@
 			<itemDrop itemId="5530" min="4" max="12" chance="59.5004" /> <!-- Berserker Blade Edge -->
 		</dropCategory>
 		<dropCategory chance="85.6649">
-			<itemDrop itemId="4610" min="5" max="15" chance="10.6329" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="35.443" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="26.5823" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="5" max="15" chance="10.6329" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="35.443" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="26.5823" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="27.3418" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="77104" y="5408" z="-3088" heading="0" respawn="43200" randomRespawn="86400" dbName="King Tarlk" />
@@ -4303,9 +4303,9 @@
 			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="81.3906">
-			<itemDrop itemId="4619" min="1" max="3" chance="26.968" /> <!-- Greater INT Dye <Int + 4 Men - 4> -->
-			<itemDrop itemId="4620" min="2" max="4" chance="17.9787" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
-			<itemDrop itemId="4621" min="1" max="1" chance="53.936" /> <!-- Greater MEN Dye <Men + 4 Int - 4> -->
+			<itemDrop itemId="4619" min="1" max="3" chance="26.968" /> <!-- Greater INT Dye [Int + 4 Men - 4] -->
+			<itemDrop itemId="4620" min="2" max="4" chance="17.9787" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
+			<itemDrop itemId="4621" min="1" max="1" chance="53.936" /> <!-- Greater MEN Dye [Men + 4 Int - 4] -->
 			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="124984" y="43200" z="-3625" heading="0" respawn="43200" randomRespawn="86400" dbName="Paniel the Unicorn" />
@@ -4380,9 +4380,9 @@
 			<itemDrop itemId="4121" min="12" max="36" chance="90.1537" /> <!-- Bow of Peril Shaft -->
 		</dropCategory>
 		<dropCategory chance="75.0177">
-			<itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye <Men + 4 Wit - 4> -->
-			<itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye <Wit + 4 Int - 4> -->
-			<itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye [Men + 4 Wit - 4] -->
+			<itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
+			<itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
@@ -4551,9 +4551,9 @@
 			<itemDrop itemId="2034" min="12" max="36" chance="70.2743" /> <!-- Sword of Revolution Blade -->
 		</dropCategory>
 		<dropCategory chance="71.2189">
-			<itemDrop itemId="4553" min="5" max="15" chance="13.5338" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
-			<itemDrop itemId="4554" min="2" max="4" chance="45.1128" /> <!-- Greater STR Dye <STR + 1 DEX - 1> -->
-			<itemDrop itemId="4555" min="2" max="6" chance="33.8346" /> <!-- Greater CON Dye <Con + 1 Str - 1> -->
+			<itemDrop itemId="4553" min="5" max="15" chance="13.5338" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
+			<itemDrop itemId="4554" min="2" max="4" chance="45.1128" /> <!-- Greater STR Dye [STR + 1 DEX - 1] -->
+			<itemDrop itemId="4555" min="2" max="6" chance="33.8346" /> <!-- Greater CON Dye [Con + 1 Str - 1] -->
 			<itemDrop itemId="6575" min="1" max="1" chance="7.5188" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 		<spawn x="-54464" y="170288" z="-3136" heading="0" respawn="43200" randomRespawn="86400" dbName="Ragraman" />
@@ -4663,9 +4663,9 @@
 			<itemDrop itemId="2110" min="12" max="36" chance="79.5102" /> <!-- Heathen's Book Page -->
 		</dropCategory>
 		<dropCategory chance="78.2981">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="75968" y="110784" z="-2512" heading="0" respawn="43200" randomRespawn="86400" dbName="Tiger King Karuta" />
@@ -4742,9 +4742,9 @@
 			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="91.7885">
-			<itemDrop itemId="4616" min="1" max="3" chance="24.6711" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="4" chance="16.4474" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="1" max="1" chance="49.3421" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="1" max="3" chance="24.6711" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="4" chance="16.4474" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="1" max="1" chance="49.3421" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="6572" min="1" max="1" chance="9.5394" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="92544" y="115232" z="-3200" heading="0" respawn="43200" randomRespawn="86400" dbName="Black Lily" />
@@ -4976,9 +4976,9 @@
 			<itemDrop itemId="2054" min="12" max="36" chance="71.0917" /> <!-- Light Crossbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="77.8897">
-			<itemDrop itemId="4597" min="1" max="3" chance="41.9314" /> <!-- Greater MEN Dye <Men + 2 Int - 2> -->
-			<itemDrop itemId="4598" min="2" max="4" chance="27.9543" /> <!-- Greater MEN Dye <Men + 2 Wit - 2> -->
-			<itemDrop itemId="4599" min="2" max="6" chance="20.9657" /> <!-- Greater WIT Dye <Wit + 2 Int - 2> -->
+			<itemDrop itemId="4597" min="1" max="3" chance="41.9314" /> <!-- Greater MEN Dye [Men + 2 Int - 2] -->
+			<itemDrop itemId="4598" min="2" max="4" chance="27.9543" /> <!-- Greater MEN Dye [Men + 2 Wit - 2] -->
+			<itemDrop itemId="4599" min="2" max="6" chance="20.9657" /> <!-- Greater WIT Dye [Wit + 2 Int - 2] -->
 			<itemDrop itemId="951" min="3" max="7" chance="9.1486" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="99732" y="204331" z="-3784" heading="0" respawn="43200" randomRespawn="86400" dbName="Tasaba Patriarch Hellena" />
@@ -5058,9 +5058,9 @@
 			<itemDrop itemId="2037" min="3" max="7" chance="34.1883" /> <!-- Heavy Bone Club Head -->
 		</dropCategory>
 		<dropCategory chance="78.9438">
-			<itemDrop itemId="4556" min="5" max="15" chance="8.4507" /> <!-- Greater CON Dye <Con + 1 DEX - 1> -->
-			<itemDrop itemId="4557" min="2" max="4" chance="28.169" /> <!-- Greater DEX Dye <Dex + 1 Str - 1> -->
-			<itemDrop itemId="4558" min="2" max="6" chance="21.1268" /> <!-- Greater DEX Dye <Dex + 1 CON - 1> -->
+			<itemDrop itemId="4556" min="5" max="15" chance="8.4507" /> <!-- Greater CON Dye [Con + 1 DEX - 1] -->
+			<itemDrop itemId="4557" min="2" max="4" chance="28.169" /> <!-- Greater DEX Dye [Dex + 1 Str - 1] -->
+			<itemDrop itemId="4558" min="2" max="6" chance="21.1268" /> <!-- Greater DEX Dye [Dex + 1 CON - 1] -->
 			<itemDrop itemId="6576" min="1" max="1" chance="42.2535" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 		<spawn x="127544" y="215264" z="-2960" heading="0" respawn="43200" randomRespawn="86400" dbName="Apepi" />
@@ -5728,9 +5728,9 @@
 			<itemDrop itemId="4111" min="12" max="36" chance="88.8447" /> <!-- Arthro Nail Blade -->
 		</dropCategory>
 		<dropCategory chance="82.8721">
-			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="13.1227" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="89904" y="105712" z="-3292" heading="0" respawn="43200" randomRespawn="86400" dbName="Cursed Clara" />
@@ -5888,7 +5888,7 @@
 			<itemDrop itemId="2052" min="12" max="36" chance="71.4769" /> <!-- Mithril Dagger Blade -->
 		</dropCategory>
 		<dropCategory chance="50.079">
-			<itemDrop itemId="4600" min="2" max="6" chance="65.2174" /> <!-- Greater WIT Dye <Wit + 2 Men - 2> -->
+			<itemDrop itemId="4600" min="2" max="6" chance="65.2174" /> <!-- Greater WIT Dye [Wit + 2 Men - 2] -->
 			<itemDrop itemId="952" min="15" max="45" chance="34.7826" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="43152" y="152352" z="-2848" heading="0" respawn="43200" randomRespawn="86400" dbName="Soul Collector Acheron" />
@@ -6407,9 +6407,9 @@
 			<itemDrop itemId="4110" min="8" max="22" chance="67.9384" /> <!-- Twilight Knife Edge -->
 		</dropCategory>
 		<dropCategory chance="75.8187">
-			<itemDrop itemId="4619" min="5" max="15" chance="10.274" /> <!-- Greater INT Dye <Int + 4 Men - 4> -->
-			<itemDrop itemId="4620" min="2" max="4" chance="34.2466" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
-			<itemDrop itemId="4621" min="2" max="6" chance="25.6849" /> <!-- Greater MEN Dye <Men + 4 Int - 4> -->
+			<itemDrop itemId="4619" min="5" max="15" chance="10.274" /> <!-- Greater INT Dye [Int + 4 Men - 4] -->
+			<itemDrop itemId="4620" min="2" max="4" chance="34.2466" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
+			<itemDrop itemId="4621" min="2" max="6" chance="25.6849" /> <!-- Greater MEN Dye [Men + 4 Int - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="29.7945" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="165984" y="88048" z="-2384" heading="0" respawn="43200" randomRespawn="86400" dbName="Harit Hero Tamash" />
@@ -6910,9 +6910,9 @@
 			<itemDrop itemId="4115" min="12" max="36" chance="90.1686" /> <!-- Lance Blade -->
 		</dropCategory>
 		<dropCategory chance="72.7841">
-			<itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye <Men + 4 Wit - 4> -->
-			<itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye <Wit + 4 Int - 4> -->
-			<itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye [Men + 4 Wit - 4] -->
+			<itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
+			<itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="42050" y="208107" z="-3752" heading="0" respawn="43200" randomRespawn="86400" dbName="Zaken's Butcher Krantz" />
@@ -6967,9 +6967,9 @@
 			<itemDrop itemId="2096" min="4" max="10" chance="20.3877" /> <!-- Sword of Whispering Death Blade -->
 		</dropCategory>
 		<dropCategory chance="73.7192">
-			<itemDrop itemId="4601" min="6" max="18" chance="10.0365" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="40.146" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="30.1095" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="6" max="18" chance="10.0365" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="40.146" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="30.1095" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="19.708" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="93120" y="19440" z="-3607" heading="0" respawn="43200" randomRespawn="86400" dbName="Iron Giant Totem" />
@@ -7315,9 +7315,9 @@
 			<itemDrop itemId="4121" min="12" max="36" chance="90.1537" /> <!-- Bow of Peril Shaft -->
 		</dropCategory>
 		<dropCategory chance="91.3976">
-			<itemDrop itemId="4619" min="1" max="3" chance="45.2879" /> <!-- Greater INT Dye <Int + 4 Men - 4> -->
-			<itemDrop itemId="4620" min="2" max="4" chance="30.1919" /> <!-- Greater INT Dye <Int + 4 Wit - 4> -->
-			<itemDrop itemId="4621" min="2" max="6" chance="22.644" /> <!-- Greater MEN Dye <Men + 4 Int - 4> -->
+			<itemDrop itemId="4619" min="1" max="3" chance="45.2879" /> <!-- Greater INT Dye [Int + 4 Men - 4] -->
+			<itemDrop itemId="4620" min="2" max="4" chance="30.1919" /> <!-- Greater INT Dye [Int + 4 Wit - 4] -->
+			<itemDrop itemId="4621" min="2" max="6" chance="22.644" /> <!-- Greater MEN Dye [Men + 4 Int - 4] -->
 			<itemDrop itemId="6571" min="1" max="1" chance="1.8762" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
@@ -7438,9 +7438,9 @@
 			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="80.0162">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="54651" y="180269" z="-4976" heading="0" respawn="43200" randomRespawn="86400" dbName="Lilith' Witch Marilion" />
@@ -9087,9 +9087,9 @@
 			<itemDrop itemId="2969" min="2" max="4" chance="31.5656" /> <!-- Yaksa Mace Head -->
 		</dropCategory>
 		<dropCategory chance="87.4988">
-			<itemDrop itemId="4601" min="1" max="3" chance="26.2948" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="17.5299" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="13.1474" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="26.2948" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="17.5299" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="13.1474" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="1" max="1" chance="43.0279" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
@@ -9133,9 +9133,9 @@
 			<itemDrop itemId="4114" min="3" max="9" chance="97.3552" /> <!-- Damascus Sword Blade -->
 		</dropCategory>
 		<dropCategory chance="87.439">
-			<itemDrop itemId="4613" min="1" max="3" chance="19.8356" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="1" max="1" chance="39.6713" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="1" max="1" chance="39.6713" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="1" max="3" chance="19.8356" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="1" max="1" chance="39.6713" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="1" max="1" chance="39.6713" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="6571" min="1" max="1" chance="0.8218" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
@@ -9587,9 +9587,9 @@
 			<itemDrop itemId="2039" min="12" max="36" chance="69.3723" /> <!-- Bich'Hwa Edge -->
 		</dropCategory>
 		<dropCategory chance="61.7891">
-			<itemDrop itemId="4559" min="3" max="7" chance="21.5938" /> <!-- Greater INT Dye <Int + 1 Men - 1> -->
-			<itemDrop itemId="4560" min="3" max="9" chance="17.9949" /> <!-- Greater INT Dye <Int + 1 Wit - 1> -->
-			<itemDrop itemId="4561" min="4" max="10" chance="15.4242" /> <!-- Greater MEN Dye <Men + 1 Int - 1> -->
+			<itemDrop itemId="4559" min="3" max="7" chance="21.5938" /> <!-- Greater INT Dye [Int + 1 Men - 1] -->
+			<itemDrop itemId="4560" min="3" max="9" chance="17.9949" /> <!-- Greater INT Dye [Int + 1 Wit - 1] -->
+			<itemDrop itemId="4561" min="4" max="10" chance="15.4242" /> <!-- Greater MEN Dye [Men + 1 Int - 1] -->
 			<itemDrop itemId="6387" min="12" max="36" chance="44.9871" /> <!-- Blessed Scroll of Resurrection (Pet) -->
 		</dropCategory>
 		<spawn x="-16912" y="174912" z="-3264" heading="0" respawn="43200" randomRespawn="86400" dbName="Giant Wasteland Basilisk" />
@@ -10312,8 +10312,8 @@
 	<npc id="25380" name="Icarus' Herald Kaysha" title="Raid Boss" level="21" type="L2RaidBoss" atkRange="40" hpMax="59537"
 			hpReg="16.826967" mpMax="251" mpReg="1.5" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="529271" sp="14488"
 			pAtk="143" mAtk="23" pDef="297" mDef="321" pAtkSpd="253" mAtkSpd="3819" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="190"
-			collisionRadius="10" collisionHeight="43.2" elemAtkType="5" elemAtkValue="20" fireRes="20" waterRes="20"
-			windRes="20" earthRes="20" holyRes="-13" darkRes="189" aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+			collisionRadius="10" collisionHeight="43.2" elemAtkType="5" elemAtkValue="20" fireRes="20" waterRes="20" windRes="20"
+			earthRes="20" holyRes="-13" darkRes="189" aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
 		<minion npcId="25381" min="1" max="1" /> <!-- Nightmare Flyer -->
 		<minion npcId="25382" min="4" max="4" /> <!-- Hostile Flyer -->
 		<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -10349,8 +10349,8 @@
 	<npc id="25381" name="Nightmare Flyer" title="Raid Fighter" level="19" type="L2Monster" atkRange="40" hpMax="6562" hpReg="16.294367"
 			mpMax="224" mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="233" mAtk="26" pDef="110" mDef="163"
 			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="190" collisionRadius="10" collisionHeight="42"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter"
-			skillChance="15" clanRange="300" dodge="-18">
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300"
+			dodge="-18">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -10367,8 +10367,8 @@
 	<npc id="25382" name="Hostile Flyer" title="Raid Fighter" level="19" type="L2Monster" atkRange="40" hpMax="3281" hpReg="16.294367"
 			mpMax="224" mpReg="1.2" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="117" mAtk="7" pDef="110" mDef="163"
 			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="190" collisionRadius="10" collisionHeight="33.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter"
-			skillChance="15" clanRange="300" dodge="-18">
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300"
+			dodge="-18">
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -10669,9 +10669,9 @@
 			<itemDrop itemId="2040" min="12" max="36" chance="72.1355" /> <!-- Reinforced Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="88.351">
-			<itemDrop itemId="4562" min="1" max="3" chance="38.961" /> <!-- Greater MEN Dye <Men + 1 Wit - 1> -->
-			<itemDrop itemId="4563" min="2" max="4" chance="25.974" /> <!-- Greater WIT Dye <Wit + 1 Int - 1> -->
-			<itemDrop itemId="4564" min="2" max="6" chance="19.4805" /> <!-- Greater WIT Dye <Wit + 1 Men - 1> -->
+			<itemDrop itemId="4562" min="1" max="3" chance="38.961" /> <!-- Greater MEN Dye [Men + 1 Wit - 1] -->
+			<itemDrop itemId="4563" min="2" max="4" chance="25.974" /> <!-- Greater WIT Dye [Wit + 1 Int - 1] -->
+			<itemDrop itemId="4564" min="2" max="6" chance="19.4805" /> <!-- Greater WIT Dye [Wit + 1 Men - 1] -->
 			<itemDrop itemId="955" min="3" max="7" chance="15.5845" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 		<spawn x="29928" y="107160" z="-3708" heading="0" respawn="43200" randomRespawn="86400" dbName="Queen's Royal Guard Captain" />
@@ -10787,9 +10787,9 @@
 			<itemDrop itemId="2105" min="5" max="13" chance="9.2856" /> <!-- Mace of Underworld Head -->
 		</dropCategory>
 		<dropCategory chance="94.4307">
-			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="15.4639" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="12.3711" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="10.3093" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="3" max="9" chance="61.8557" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="15000" y="119000" z="-11900" heading="0" respawn="43200" randomRespawn="86400" dbName="Archon Susceptor" />
@@ -11098,9 +11098,9 @@
 			<itemDrop itemId="4115" min="12" max="36" chance="90.1686" /> <!-- Lance Blade -->
 		</dropCategory>
 		<dropCategory chance="71.8262">
-			<itemDrop itemId="4613" min="1" max="3" chance="36.4078" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="2" max="4" chance="24.2718" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="2" max="6" chance="18.2039" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="1" max="3" chance="36.4078" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="2" max="4" chance="24.2718" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="2" max="6" chance="18.2039" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="21.1165" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="115072" y="112272" z="-3018" heading="0" respawn="43200" randomRespawn="86400" dbName="Lord Ishka" />
@@ -11245,9 +11245,9 @@
 			<itemDrop itemId="2122" min="2" max="6" chance="55.7831" /> <!-- Orcish Poleaxe Blade -->
 		</dropCategory>
 		<dropCategory chance="70.5433">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="81920" y="113136" z="-3056" heading="0" respawn="43200" randomRespawn="86400" dbName="Necrosentinel Royal Guard" />
@@ -11427,9 +11427,9 @@
 			<itemDrop itemId="2105" min="5" max="13" chance="7.3312" /> <!-- Mace of Underworld Head -->
 		</dropCategory>
 		<dropCategory chance="62.511">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="62416" y="8096" z="-3376" heading="0" respawn="43200" randomRespawn="86400" dbName="Dread Avenger Kraven" />
@@ -11485,9 +11485,9 @@
 			<itemDrop itemId="2120" min="3" max="9" chance="94.9668" /> <!-- Great Pata Blade -->
 		</dropCategory>
 		<dropCategory chance="49.9281">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="42032" y="24128" z="-4704" heading="0" respawn="43200" randomRespawn="86400" dbName="Orfen's Handmaiden" />
@@ -11566,9 +11566,9 @@
 			<itemDrop itemId="4119" min="3" max="9" chance="97.3552" /> <!-- Demon's Dagger Edge -->
 		</dropCategory>
 		<dropCategory chance="84.7004">
-			<itemDrop itemId="4622" min="1" max="3" chance="24.6711" /> <!-- Greater MEN Dye <Men + 4 Wit - 4> -->
-			<itemDrop itemId="4623" min="2" max="4" chance="16.4474" /> <!-- Greater WIT Dye <Wit + 4 Int - 4> -->
-			<itemDrop itemId="4624" min="1" max="1" chance="49.3421" /> <!-- Greater WIT Dye <Wit + 4 Men - 4> -->
+			<itemDrop itemId="4622" min="1" max="3" chance="24.6711" /> <!-- Greater MEN Dye [Men + 4 Wit - 4] -->
+			<itemDrop itemId="4623" min="2" max="4" chance="16.4474" /> <!-- Greater WIT Dye [Wit + 4 Int - 4] -->
+			<itemDrop itemId="4624" min="1" max="1" chance="49.3421" /> <!-- Greater WIT Dye [Wit + 4 Men - 4] -->
 			<itemDrop itemId="6572" min="1" max="1" chance="9.5394" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="113600" y="47120" z="-4640" heading="0" respawn="43200" randomRespawn="86400" dbName="Fairy Queen Timiniel" />
@@ -11767,9 +11767,9 @@
 			<itemDrop itemId="2108" min="12" max="36" chance="31.1578" /> <!-- Fisted Blade Piece -->
 		</dropCategory>
 		<dropCategory chance="75.2645">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="79648" y="18320" z="-5232" heading="0" respawn="43200" randomRespawn="86400" dbName="Flamestone Golem" />
@@ -11929,9 +11929,9 @@
 			<itemDrop itemId="2108" min="3" max="9" chance="93.6503" /> <!-- Fisted Blade Piece -->
 		</dropCategory>
 		<dropCategory chance="65.0305">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="67296" y="64128" z="-3723" heading="0" respawn="43200" randomRespawn="86400" dbName="Timak Orc Gosmos" />
@@ -11967,9 +11967,9 @@
 			<itemDrop itemId="2109" min="3" max="9" chance="93.917" /> <!-- Akat Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="70.0144">
-			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="13.1227" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="107000" y="92000" z="-2272" heading="0" respawn="43200" randomRespawn="86400" dbName="Thief Kelbar" />
@@ -12047,9 +12047,9 @@
 			<itemDrop itemId="2109" min="12" max="36" chance="79.423" /> <!-- Akat Longbow Shaft -->
 		</dropCategory>
 		<dropCategory chance="78.2981">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="111440" y="82912" z="-2912" heading="0" respawn="43200" randomRespawn="86400" dbName="Evil Spirit Cyrion" />
@@ -12452,9 +12452,9 @@
 			<itemDrop itemId="2120" min="3" max="9" chance="94.9668" /> <!-- Great Pata Blade -->
 		</dropCategory>
 		<dropCategory chance="85.0416">
-			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="13.1227" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="133632" y="87072" z="-3623" heading="0" respawn="43200" randomRespawn="86400" dbName="Mirror of Oblivion" />
@@ -12561,9 +12561,9 @@
 			<itemDrop itemId="4113" min="12" max="36" chance="87.7477" /> <!-- Great Axe Head -->
 		</dropCategory>
 		<dropCategory chance="83.0926">
-			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="13.1227" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="150304" y="67776" z="-3688" heading="0" respawn="43200" randomRespawn="86400" dbName="Deadman Ereve" />
@@ -12902,9 +12902,9 @@
 			<itemDrop itemId="4106" min="8" max="22" chance="32.6175" /> <!-- Spirit's Staff Head -->
 		</dropCategory>
 		<dropCategory chance="73.764">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="175712" y="29856" z="-3776" heading="0" respawn="43200" randomRespawn="86400" dbName="Grave Robber Kim" />
@@ -12973,7 +12973,7 @@
 		<dropCategory chance="92.3674">
 			<itemDrop itemId="947" min="1" max="1" chance="18.9594" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 			<itemDrop itemId="948" min="1" max="3" chance="59.2482" /> <!-- Scroll: Enchant Armor (B-grade) -->
-			<itemDrop itemId="4617" min="2" max="4" chance="21.7924" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
+			<itemDrop itemId="4617" min="2" max="4" chance="21.7924" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
 		</dropCategory>
 		<spawn x="183568" y="24560" z="-3184" heading="0" respawn="43200" randomRespawn="86400" dbName="Ghost Knight Kabed" />
 	</npc>
@@ -13133,9 +13133,9 @@
 			<itemDrop itemId="4110" min="8" max="22" chance="32.9553" /> <!-- Twilight Knife Edge -->
 		</dropCategory>
 		<dropCategory chance="71.7771">
-			<itemDrop itemId="4616" min="2" max="4" chance="19.7287" /> <!-- Greater CON Dye <Con + 4 DEX - 4> -->
-			<itemDrop itemId="4617" min="2" max="6" chance="14.7965" /> <!-- Greater DEX Dye <Dex + 4 Str - 4> -->
-			<itemDrop itemId="4618" min="3" max="7" chance="11.8372" /> <!-- Greater DEX Dye <Dex + 4 CON - 4> -->
+			<itemDrop itemId="4616" min="2" max="4" chance="19.7287" /> <!-- Greater CON Dye [Con + 4 DEX - 4] -->
+			<itemDrop itemId="4617" min="2" max="6" chance="14.7965" /> <!-- Greater DEX Dye [Dex + 4 Str - 4] -->
+			<itemDrop itemId="4618" min="3" max="7" chance="11.8372" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 			<itemDrop itemId="948" min="1" max="3" chance="53.6376" /> <!-- Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 		<spawn x="53517" y="205413" z="-3728" heading="0" respawn="43200" randomRespawn="86400" dbName="Magus Kenishee" />
@@ -13221,9 +13221,9 @@
 			<itemDrop itemId="4110" min="8" max="22" chance="32.9553" /> <!-- Twilight Knife Edge -->
 		</dropCategory>
 		<dropCategory chance="73.9907">
-			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye <Int + 3 Men - 3> -->
-			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye <Int + 3 Wit - 3> -->
-			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye <Men + 3 Int - 3> -->
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye [Int + 3 Men - 3] -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye [Int + 3 Wit - 3] -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye [Men + 3 Int - 3] -->
 			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="43160" y="220463" z="-3680" heading="0" respawn="43200" randomRespawn="86400" dbName="Zaken's Chief Mate Tillion" />
@@ -13480,9 +13480,9 @@
 			<itemDrop itemId="4106" min="8" max="22" chance="32.6175" /> <!-- Spirit's Staff Head -->
 		</dropCategory>
 		<dropCategory chance="96.1667">
-			<itemDrop itemId="4613" min="1" max="3" chance="23.5479" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="2" max="4" chance="15.6986" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="1" max="1" chance="47.0958" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="1" max="3" chance="23.5479" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="2" max="4" chance="15.6986" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="1" max="1" chance="47.0958" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="13.6577" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 		<spawn x="83174" y="254428" z="-10873" heading="0" respawn="43200" randomRespawn="86400" dbName="Eva's Spirit Niniel" />
@@ -13558,9 +13558,9 @@
 			<itemDrop itemId="4111" min="12" max="36" chance="88.8447" /> <!-- Arthro Nail Blade -->
 		</dropCategory>
 		<dropCategory chance="88.8133">
-			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye <Men + 3 Wit - 3> -->
-			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye <Wit + 3 Int - 3> -->
-			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye <Wit + 3 Men - 3> -->
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye [Men + 3 Wit - 3] -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye [Wit + 3 Int - 3] -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye [Wit + 3 Men - 3] -->
 			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 		<spawn x="88300" y="258000" z="-10200" heading="0" respawn="43200" randomRespawn="86400" dbName="Fafurion's Envoy Pingolpin" />
@@ -13620,9 +13620,9 @@
 			<itemDrop itemId="2107" min="8" max="22" chance="31.1701" /> <!-- Dark Screamer Edge -->
 		</dropCategory>
 		<dropCategory chance="72.8364">
-			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye <STR + 3 CON - 3> -->
-			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye <STR + 3 DEX - 3> -->
-			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye <Con + 3 Str - 3> -->
+			<itemDrop itemId="4601" min="1" max="3" chance="40.0972" /> <!-- Greater STR Dye [STR + 3 CON - 3] -->
+			<itemDrop itemId="4602" min="2" max="4" chance="26.7315" /> <!-- Greater STR Dye [STR + 3 DEX - 3] -->
+			<itemDrop itemId="4603" min="2" max="6" chance="20.0486" /> <!-- Greater CON Dye [Con + 3 Str - 3] -->
 			<itemDrop itemId="951" min="3" max="7" chance="13.1227" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 		<spawn x="126624" y="174448" z="-3056" heading="0" respawn="43200" randomRespawn="86400" dbName="Fafurion's Henchman Istary" />
@@ -13693,9 +13693,9 @@
 			<itemDrop itemId="2044" min="8" max="22" chance="29.3794" /> <!-- Cursed Maingauche Edge -->
 		</dropCategory>
 		<dropCategory chance="75.9788">
-			<itemDrop itemId="4553" min="1" max="3" chance="43.9024" /> <!-- Greater STR Dye <STR + 1 CON - 1> -->
-			<itemDrop itemId="4554" min="2" max="4" chance="29.2683" /> <!-- Greater STR Dye <STR + 1 DEX - 1> -->
-			<itemDrop itemId="4555" min="2" max="6" chance="21.9512" /> <!-- Greater CON Dye <Con + 1 Str - 1> -->
+			<itemDrop itemId="4553" min="1" max="3" chance="43.9024" /> <!-- Greater STR Dye [STR + 1 CON - 1] -->
+			<itemDrop itemId="4554" min="2" max="4" chance="29.2683" /> <!-- Greater STR Dye [STR + 1 DEX - 1] -->
+			<itemDrop itemId="4555" min="2" max="6" chance="21.9512" /> <!-- Greater CON Dye [Con + 1 Str - 1] -->
 			<itemDrop itemId="6575" min="1" max="1" chance="4.8781" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
 		</dropCategory>
 		<spawn x="48575" y="-106191" z="-1568" heading="0" respawn="43200" randomRespawn="86400" dbName="Grave Robber Leader Akata" />
@@ -13919,9 +13919,9 @@
 			<itemDrop itemId="8347" min="3" max="7" chance="31.1354" /> <!-- Ice Storm Hammer Head -->
 		</dropCategory>
 		<dropCategory chance="90.2035">
-			<itemDrop itemId="4613" min="1" max="3" chance="23.5479" /> <!-- Greater STR Dye <STR + 4 CON - 4> -->
-			<itemDrop itemId="4614" min="2" max="4" chance="15.6986" /> <!-- Greater STR Dye <STR + 4 DEX - 4> -->
-			<itemDrop itemId="4615" min="1" max="1" chance="47.0958" /> <!-- Greater CON Dye <Con + 4 Str - 4> -->
+			<itemDrop itemId="4613" min="1" max="3" chance="23.5479" /> <!-- Greater STR Dye [STR + 4 CON - 4] -->
+			<itemDrop itemId="4614" min="2" max="4" chance="15.6986" /> <!-- Greater STR Dye [STR + 4 DEX - 4] -->
+			<itemDrop itemId="4615" min="1" max="1" chance="47.0958" /> <!-- Greater CON Dye [Con + 4 Str - 4] -->
 			<itemDrop itemId="947" min="1" max="1" chance="13.6577" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 		</dropCategory>
 	</npc>
@@ -14002,9 +14002,9 @@
 			<itemDrop itemId="4108" min="2" max="6" chance="59.0918" /> <!-- Sword of Valhalla Blade -->
 		</dropCategory>
 		<dropCategory chance="50.3223">
-			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye <Con + 3 DEX - 3> -->
-			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye <Dex + 3 Str - 3> -->
-			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye <Dex + 3 CON - 3> -->
+			<itemDrop itemId="4604" min="2" max="6" chance="32.9154" /> <!-- Greater CON Dye [Con + 3 DEX - 3] -->
+			<itemDrop itemId="4605" min="3" max="7" chance="26.3323" /> <!-- Greater DEX Dye [Dex + 3 Str - 3] -->
+			<itemDrop itemId="4606" min="3" max="9" chance="21.9436" /> <!-- Greater DEX Dye [Dex + 3 CON - 3] -->
 			<itemDrop itemId="952" min="21" max="63" chance="18.8087" /> <!-- Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
@@ -21696,38 +21696,38 @@
 		<itemDrop itemId="35321" min="3" max="9" chance="1.743" /> <!-- Seraph Glove Ingredient -->
 		<itemDrop itemId="35322" min="4" max="12" chance="1.518" /> <!-- Seraph Shoe Ingredient -->
 		<itemDrop itemId="35323" min="4" max="12" chance="1.433" /> <!-- Seraph Sigil Ingredient -->
-		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Boots (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Boots (60%) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.3" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35450" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Retributer (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Thrower (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Retributer (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Thrower (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Shooter (60%) -->
 		<spawn x="48140" y="147362" z="-3424" heading="34653" respawn="43200" randomRespawn="86400" dbName="Houpon the Warden Overseer" />
 	</npc>
 	<npc id="25887" name="Crook the Mad" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="3533884" hpReg="78.2625"
@@ -21773,38 +21773,38 @@
 		<itemDrop itemId="35321" min="3" max="9" chance="1.817" /> <!-- Seraph Glove Ingredient -->
 		<itemDrop itemId="35322" min="4" max="12" chance="1.564" /> <!-- Seraph Shoe Ingredient -->
 		<itemDrop itemId="35323" min="4" max="12" chance="1.321" /> <!-- Seraph Sigil Ingredient -->
-		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Boots (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Boots (60%) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.3" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35450" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Retributer (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Thrower (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.075" /> <!-- Recipe:Â Specter Shooter (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Retributer (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Thrower (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="0.075" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.075" /> <!-- Recipe: Specter Shooter (60%) -->
 		<spawn x="43134" y="144696" z="-3120" heading="61361" respawn="55636" randomRespawn="73964" dbName="Crook the Mad" />
 	</npc>
 	<npc id="25888" name="Execution Grounds Watchman Guillotine" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40"
@@ -21906,37 +21906,37 @@
 		<itemDrop itemId="35311" min="1" max="1" chance="3.169" /> <!-- Seraph Boot Ingredient -->
 		<itemDrop itemId="35300" min="1" max="1" chance="3.162" /> <!-- Specter Fighter Fragment -->
 		<itemDrop itemId="35313" min="1" max="1" chance="3.15799" /> <!-- Seraph Leather Helmet Ingredient -->
-		<itemDrop itemId="35450" min="1" max="1" chance="2.435" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="2.321" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="2.314" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="2.31" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="2.298" /> <!-- Recipe:Â Specter Thrower (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="2.294" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="2.29" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="2.27599" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="2.275" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="2.258" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="2.249" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="2.248" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="2.247" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="2.247" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="2.23999" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="2.235" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="2.233" /> <!-- Recipe:Â Specter Retributer (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="2.23199" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="2.231" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="2.229" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="2.228" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35449" min="1" max="1" chance="2.22" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="2.218" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="2.217" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="2.21" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="2.205" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="2.204" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="2.203" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="2.198" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="2.185" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="2.185" /> <!-- Recipe:Â Seraph Boots (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="2.435" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="2.321" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="2.314" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="2.31" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="2.298" /> <!-- Recipe: Specter Thrower (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="2.294" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="2.29" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="2.27599" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="2.275" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="2.258" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="2.249" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="2.248" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="2.247" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="2.247" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="2.23999" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="2.235" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="2.233" /> <!-- Recipe: Specter Retributer (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="2.23199" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="2.231" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="2.229" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="2.228" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="2.22" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="2.218" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="2.217" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="2.21" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="2.205" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="2.204" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="2.203" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="2.198" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="2.185" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="2.185" /> <!-- Recipe: Seraph Boots (60%) -->
 		<itemDrop itemId="17401" min="1" max="1" chance="0.75" /> <!-- Seraph Shield - Heavy Armor -->
 		<itemDrop itemId="17406" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Boots - Light Armor -->
 		<itemDrop itemId="17403" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Armor - Light Armor -->
@@ -22064,39 +22064,39 @@
 		<skill id="15238" level="1" /> <!-- Dark Breath -->
 		<itemDrop itemId="17527" min="1" max="3" chance="17.4262" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="2.59159" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="2.23413" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="1.96604" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="1.87667" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="1.60857" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="1.51921" /> <!-- Recipe:Â Seraph Boots (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="1.42984" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35450" min="1" max="1" chance="1.34048" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="1.07238" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="1.07238" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.98302" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="0.89365" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.80428" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="0.80428" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="0.71492" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="0.62555" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="0.62555" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.62555" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35449" min="1" max="1" chance="0.53619" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.53619" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="0.53619" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="0.53619" /> <!-- Recipe:Â Specter Thrower (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="0.44682" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="0.44682" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="0.44682" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.44682" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.44682" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="0.35746" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.35746" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="2.23413" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="1.96604" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="1.87667" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="1.60857" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="1.51921" /> <!-- Recipe: Seraph Boots (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="1.42984" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="1.34048" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="1.07238" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="1.07238" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.98302" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="0.89365" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.80428" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="0.80428" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="0.71492" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="0.62555" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="0.62555" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.62555" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="0.53619" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.53619" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="0.53619" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="0.53619" /> <!-- Recipe: Specter Thrower (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="0.44682" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="0.44682" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="0.44682" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.44682" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.44682" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="0.35746" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.35746" /> <!-- Recipe: Specter Retributer (60%) -->
 		<itemDrop itemId="19512" min="1" max="1" chance="0.26809" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="0.26809" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="0.26809" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="0.26809" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="0.26809" /> <!-- Recipe: Seraph Breastplate (60%) -->
 		<itemDrop itemId="19511" min="1" max="1" chance="0.17873" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.17873" /> <!-- Recipe:Â Specter Cutter (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.17873" /> <!-- Recipe: Specter Cutter (60%) -->
 		<itemDrop itemId="19513" min="1" max="1" chance="0.08936" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
 	</npc>
 	<npc id="25902" name="Gigantic Golem" title="Raid Boss" level="96" type="L2RaidBoss" atkRange="40" hpMax="3248143" hpReg="75.975"
@@ -22117,51 +22117,51 @@
 		<itemDrop itemId="17409" min="1" max="1" chance="1.088" /> <!-- Seraph Stockings - Robe -->
 		<itemDrop itemId="17404" min="1" max="1" chance="1.048" /> <!-- Seraph Leather Leggings - Light Armor -->
 		<itemDrop itemId="17398" min="1" max="1" chance="0.997" /> <!-- Seraph Gaiters - Heavy Armor -->
-		<itemDrop itemId="35445" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35450" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Sigil (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Sigil (60%) -->
 		<itemDrop itemId="17408" min="1" max="1" chance="0.75" /> <!-- Seraph Tunic - Robe -->
-		<itemDrop itemId="35436" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Boots (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Boots (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Leather Boots (60%) -->
 		<itemDrop itemId="17403" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Armor - Light Armor -->
 		<itemDrop itemId="17397" min="1" max="1" chance="0.75" /> <!-- Seraph Breastplate - Heavy Armor -->
-		<itemDrop itemId="35446" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Earring (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="0.75" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Earring (60%) -->
 		<itemDrop itemId="17382" min="1" max="1" chance="0.3" /> <!-- Specter Shaper -->
 		<itemDrop itemId="17385" min="1" max="1" chance="0.3" /> <!-- Specter Avenger -->
-		<itemDrop itemId="35444" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Stockings (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Stockings (60%) -->
 		<itemDrop itemId="17392" min="1" max="1" chance="0.3" /> <!-- Specter Retributer -->
 		<itemDrop itemId="17387" min="1" max="1" chance="0.3" /> <!-- Specter Stormer -->
 		<itemDrop itemId="17384" min="1" max="1" chance="0.3" /> <!-- Specter Slasher -->
 		<itemDrop itemId="17389" min="1" max="1" chance="0.3" /> <!-- Specter Shooter -->
 		<itemDrop itemId="17386" min="1" max="1" chance="0.3" /> <!-- Specter Fighter -->
 		<itemDrop itemId="17391" min="1" max="1" chance="0.3" /> <!-- Specter Caster -->
-		<itemDrop itemId="35422" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Thrower (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Thrower (60%) -->
 		<itemDrop itemId="17388" min="1" max="1" chance="0.3" /> <!-- Specter Thrower -->
-		<itemDrop itemId="35420" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Shaper (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Shaper (60%) -->
 		<itemDrop itemId="17390" min="1" max="1" chance="0.3" /> <!-- Specter Buster -->
-		<itemDrop itemId="35448" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="0.3" /> <!-- Recipe: Seraph Gaiters (60%) -->
 		<itemDrop itemId="17383" min="1" max="1" chance="0.3" /> <!-- Specter Cutter -->
-		<itemDrop itemId="35423" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="0.3" /> <!-- Recipe:Â Specter Retributer (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="0.3" /> <!-- Recipe: Specter Retributer (60%) -->
 		<spawn x="-103142" y="48418" z="-1398" heading="0" respawn="55636" randomRespawn="73964" dbName="Gigantic Golem" />
 	</npc>
 	<npc id="25903" name="Gigantic Golem Subordinate" level="95" type="L2Monster" atkRange="1100" hpMax="32481" hpReg="72.26"
@@ -22358,36 +22358,36 @@
 		<itemDrop itemId="35351" min="9" max="9" chance="3.169" /> <!-- Eternal Stocking Ingredient -->
 		<itemDrop itemId="35338" min="3" max="7" chance="3.168" /> <!-- Eternal Helmet Ingredient -->
 		<itemDrop itemId="35347" min="1" max="10" chance="3.15" /> <!-- Eternal Leather Glove Ingredient -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35481" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35460" min="3" max="3" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
-		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
-		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35481" min="1" max="1" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35460" min="3" max="3" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
+		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
 		<itemDrop itemId="37076" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
 		<itemDrop itemId="37083" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Centaur's Bow -->
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
@@ -22402,7 +22402,7 @@
 		<itemDrop itemId="37077" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
 		<itemDrop itemId="37082" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
 		<itemDrop itemId="37085" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Shield -->
-		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
+		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
 		<itemDrop itemId="37086" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Shield of Corruption -->
 		<itemDrop itemId="37078" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Thesakar's Spear -->
 		<itemDrop itemId="37067" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Sword -->
@@ -22545,33 +22545,33 @@
 		<itemDrop itemId="35342" min="10" max="10" chance="3.17" /> <!-- Eternal Boot Ingredient -->
 		<itemDrop itemId="35331" min="1" max="10" chance="3.168" /> <!-- Amaranthine Fighter Fragment -->
 		<itemDrop itemId="35327" min="9" max="9" chance="3.153" /> <!-- Amaranthine Shaper Fragment -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35471" min="2" max="2" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
-		<itemDrop itemId="35477" min="2" max="3" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
-		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35481" min="2" max="2" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35471" min="2" max="2" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35477" min="2" max="3" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
+		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35481" min="2" max="2" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
 		<itemDrop itemId="37079" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<itemDrop itemId="37080" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
 		<itemDrop itemId="37084" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
@@ -22586,16 +22586,16 @@
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
 		<itemDrop itemId="37071" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
 		<itemDrop itemId="37077" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
-		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
+		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
 		<itemDrop itemId="37082" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
 		<itemDrop itemId="37069" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Octavis' Sword -->
 		<itemDrop itemId="37068" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Sword of Corruption -->
 		<itemDrop itemId="37073" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Glakias' Hammer -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
 		<itemDrop itemId="37067" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Sword -->
 		<itemDrop itemId="37083" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Centaur's Bow -->
-		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
+		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
 		<itemDrop itemId="17448" min="1" max="1" chance="0.03" /> <!-- Eternal Earring -->
 		<itemDrop itemId="17430" min="1" max="1" chance="0.03" /> <!-- Eternal Helmet - Heavy Armor -->
 		<itemDrop itemId="17435" min="1" max="1" chance="0.03" /> <!-- Eternal Shield - Heavy Armor -->
@@ -22680,36 +22680,36 @@
 		<itemDrop itemId="35349" min="1" max="10" chance="3.16" /> <!-- Eternal Circlet Ingredient -->
 		<itemDrop itemId="35328" min="1" max="10" chance="3.15799" /> <!-- Amaranthine Cutter Fragment -->
 		<itemDrop itemId="35347" min="1" max="1" chance="3.15" /> <!-- Eternal Leather Glove Ingredient -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35473" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
-		<itemDrop itemId="35462" min="1" max="1" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
-		<itemDrop itemId="35453" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35473" min="4" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35462" min="1" max="1" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
+		<itemDrop itemId="35453" min="4" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
 		<itemDrop itemId="37076" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
 		<itemDrop itemId="37071" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
@@ -22723,7 +22723,7 @@
 		<itemDrop itemId="37072" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Axe -->
 		<itemDrop itemId="37081" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
 		<itemDrop itemId="37080" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
 		<itemDrop itemId="37069" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Octavis' Sword -->
 		<itemDrop itemId="37084" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
 		<itemDrop itemId="37077" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
@@ -22815,36 +22815,36 @@
 		<itemDrop itemId="35350" min="1" max="10" chance="3.154" /> <!-- Eternal Tunic Ingredient -->
 		<itemDrop itemId="35352" min="1" max="10" chance="3.151" /> <!-- Eternal Glove Ingredient -->
 		<itemDrop itemId="35356" min="1" max="10" chance="3.15" /> <!-- Eternal Earring Gem -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35451" min="2" max="2" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
-		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35451" min="2" max="2" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
+		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
 		<itemDrop itemId="37080" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
 		<itemDrop itemId="37081" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
 		<itemDrop itemId="37079" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
@@ -22857,7 +22857,7 @@
 		<itemDrop itemId="37086" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Shield of Corruption -->
 		<itemDrop itemId="37078" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Thesakar's Spear -->
 		<itemDrop itemId="37075" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dagger -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
 		<itemDrop itemId="37067" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Sword -->
 		<itemDrop itemId="37068" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Sword of Corruption -->
@@ -22950,32 +22950,32 @@
 		<itemDrop itemId="35333" min="6" max="6" chance="3.153" /> <!-- Amaranthine Thrower Fragment -->
 		<itemDrop itemId="35334" min="1" max="10" chance="3.152" /> <!-- Amaranthine Shooter Fragment -->
 		<itemDrop itemId="35352" min="1" max="10" chance="3.15" /> <!-- Eternal Glove Ingredient -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35463" min="2" max="2" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35473" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
-		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35479" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35463" min="2" max="2" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35471" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35473" min="4" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35478" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35479" min="4" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
 		<itemDrop itemId="37086" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Shield of Corruption -->
 		<itemDrop itemId="37079" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<itemDrop itemId="37075" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dagger -->
@@ -22990,15 +22990,15 @@
 		<itemDrop itemId="37082" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
 		<itemDrop itemId="37084" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
 		<itemDrop itemId="37070" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tegaffe's Dualsword -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
 		<itemDrop itemId="37073" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Glakias' Hammer -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
 		<itemDrop itemId="37077" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
 		<itemDrop itemId="37071" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
-		<itemDrop itemId="35453" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35453" min="4" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
 		<itemDrop itemId="37076" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
-		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
+		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
 		<itemDrop itemId="37085" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Shield -->
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
 		<itemDrop itemId="17448" min="1" max="1" chance="0.03" /> <!-- Eternal Earring -->
@@ -23085,35 +23085,35 @@
 		<itemDrop itemId="35348" min="1" max="10" chance="3.15599" /> <!-- Eternal Leather Boot Ingredient -->
 		<itemDrop itemId="35344" min="1" max="10" chance="3.155" /> <!-- Eternal Leather Helmet Ingredient -->
 		<itemDrop itemId="35336" min="1" max="10" chance="3.152" /> <!-- Amaranthine Caster Fragment -->
-		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Avenger (60%) -->
-		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Helmet (60%) -->
-		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Ring (60%) -->
-		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Slasher (60%) -->
-		<itemDrop itemId="35471" min="4" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Gloves (60%) -->
-		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Circlet (60%) -->
-		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Fighter (60%) -->
-		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Retributer (60%) -->
-		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Caster (60%) -->
-		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Breastplate (60%) -->
-		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Boots (60%) -->
-		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Leggings (60%) -->
-		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Leather Armor (60%) -->
-		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shaper (60%) -->
-		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Tunic (60%) -->
-		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Helmet (60%) -->
-		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gauntlets (60%) -->
-		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Boots (60%) -->
-		<itemDrop itemId="35478" min="2" max="2" chance="0.75" /> <!-- Recipe:Â Eternal Sigil (60%) -->
-		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Earring (60%) -->
-		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Stockings (60%) -->
-		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Cutter (60%) -->
-		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Shooter (60%) -->
-		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Necklace (60%) -->
-		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shield (60%) -->
-		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Stormer (60%) -->
-		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Buster (60%) -->
-		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gloves (60%) -->
-		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Gaiters (60%) -->
+		<itemDrop itemId="35454" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Avenger (60%) -->
+		<itemDrop itemId="35468" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Helmet (60%) -->
+		<itemDrop itemId="35481" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Ring (60%) -->
+		<itemDrop itemId="35453" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Slasher (60%) -->
+		<itemDrop itemId="35471" min="4" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+		<itemDrop itemId="35473" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Circlet (60%) -->
+		<itemDrop itemId="35455" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Fighter (60%) -->
+		<itemDrop itemId="35461" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Retributer (60%) -->
+		<itemDrop itemId="35460" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Caster (60%) -->
+		<itemDrop itemId="35463" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Breastplate (60%) -->
+		<itemDrop itemId="35472" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+		<itemDrop itemId="35470" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Leggings (60%) -->
+		<itemDrop itemId="35469" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+		<itemDrop itemId="35451" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shaper (60%) -->
+		<itemDrop itemId="35474" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Tunic (60%) -->
+		<itemDrop itemId="35462" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Helmet (60%) -->
+		<itemDrop itemId="35465" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gauntlets (60%) -->
+		<itemDrop itemId="35466" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Boots (60%) -->
+		<itemDrop itemId="35478" min="2" max="2" chance="0.75" /> <!-- Recipe: Eternal Sigil (60%) -->
+		<itemDrop itemId="35480" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Earring (60%) -->
+		<itemDrop itemId="35475" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Stockings (60%) -->
+		<itemDrop itemId="35452" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Cutter (60%) -->
+		<itemDrop itemId="35458" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Shooter (60%) -->
+		<itemDrop itemId="35479" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Necklace (60%) -->
+		<itemDrop itemId="35467" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shield (60%) -->
+		<itemDrop itemId="35456" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Stormer (60%) -->
+		<itemDrop itemId="35459" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Buster (60%) -->
+		<itemDrop itemId="35476" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gloves (60%) -->
+		<itemDrop itemId="35464" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Gaiters (60%) -->
 		<itemDrop itemId="37084" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
 		<itemDrop itemId="37071" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
 		<itemDrop itemId="37085" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Theor's Shield -->
@@ -23127,11 +23127,11 @@
 		<itemDrop itemId="37079" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<itemDrop itemId="37080" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
 		<itemDrop itemId="37081" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
-		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Amaranthine Thrower (60%) -->
+		<itemDrop itemId="35457" min="1" max="4" chance="0.75" /> <!-- Recipe: Amaranthine Thrower (60%) -->
 		<itemDrop itemId="37069" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Octavis' Sword -->
 		<itemDrop itemId="37078" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Thesakar's Spear -->
 		<itemDrop itemId="37075" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Drakos' Dagger -->
-		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe:Â Eternal Shoes (60%) -->
+		<itemDrop itemId="35477" min="1" max="4" chance="0.75" /> <!-- Recipe: Eternal Shoes (60%) -->
 		<itemDrop itemId="37082" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
 		<itemDrop itemId="37074" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
 		<itemDrop itemId="37077" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
@@ -23326,37 +23326,37 @@
 		<itemDrop itemId="35312" min="1" max="1" chance="3.163" /> <!-- Seraph Shield Ingredient -->
 		<itemDrop itemId="35302" min="1" max="1" chance="3.15599" /> <!-- Specter Thrower Fragment -->
 		<itemDrop itemId="35313" min="1" max="1" chance="3.154" /> <!-- Seraph Leather Helmet Ingredient -->
-		<itemDrop itemId="35450" min="1" max="1" chance="1.751" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="1.672" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="1.67" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="1.669" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="1.661" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="1.656" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="1.65" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="1.648" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="1.636" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="1.63" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="1.628" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="1.624" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="1.62099" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="1.62099" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="1.619" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="1.618" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="1.601" /> <!-- Recipe:Â Seraph Boots (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="1.598" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="1.59" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="1.583" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="1.582" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="1.567" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="1.567" /> <!-- Recipe:Â Specter Retributer (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="1.567" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="1.564" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="1.563" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="1.55999" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35449" min="1" max="1" chance="1.557" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="1.55599" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="1.555" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="1.543" /> <!-- Recipe:Â Specter Thrower (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="1.751" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="1.672" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="1.67" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="1.669" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="1.661" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="1.656" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="1.65" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="1.648" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="1.636" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="1.63" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="1.628" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="1.624" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="1.62099" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="1.62099" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="1.619" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="1.618" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="1.601" /> <!-- Recipe: Seraph Boots (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="1.598" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="1.59" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="1.583" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="1.582" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="1.567" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="1.567" /> <!-- Recipe: Specter Retributer (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="1.567" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="1.564" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="1.563" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="1.55999" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="1.557" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="1.55599" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="1.555" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="1.543" /> <!-- Recipe: Specter Thrower (60%) -->
 		<itemDrop itemId="17391" min="1" max="1" chance="0.75" /> <!-- Specter Caster -->
 		<itemDrop itemId="17404" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Leggings - Light Armor -->
 		<itemDrop itemId="17406" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Boots - Light Armor -->
@@ -23462,37 +23462,37 @@
 		<itemDrop itemId="35320" min="1" max="1" chance="3.161" /> <!-- Seraph Stocking Ingredient -->
 		<itemDrop itemId="35297" min="1" max="1" chance="3.16" /> <!-- Specter Cutter Fragment -->
 		<itemDrop itemId="35299" min="1" max="1" chance="3.155" /> <!-- Specter Avenger Fragment -->
-		<itemDrop itemId="35450" min="1" max="1" chance="1.752" /> <!-- Recipe:Â Seraph Ring (60%) -->
-		<itemDrop itemId="35449" min="1" max="1" chance="1.676" /> <!-- Recipe:Â Seraph Earring (60%) -->
-		<itemDrop itemId="35429" min="1" max="1" chance="1.67299" /> <!-- Recipe:Â Specter Caster (60%) -->
-		<itemDrop itemId="35447" min="1" max="1" chance="1.67099" /> <!-- Recipe:Â Seraph Sigil (60%) -->
-		<itemDrop itemId="35426" min="1" max="1" chance="1.667" /> <!-- Recipe:Â Specter Thrower (60%) -->
-		<itemDrop itemId="35438" min="1" max="1" chance="1.661" /> <!-- Recipe:Â Seraph Leather Armor (60%) -->
-		<itemDrop itemId="35432" min="1" max="1" chance="1.661" /> <!-- Recipe:Â Seraph Breastplate (60%) -->
-		<itemDrop itemId="35441" min="1" max="1" chance="1.653" /> <!-- Recipe:Â Seraph Leather Boots (60%) -->
-		<itemDrop itemId="35433" min="1" max="1" chance="1.64699" /> <!-- Recipe:Â Seraph Gaiters (60%) -->
-		<itemDrop itemId="35448" min="1" max="1" chance="1.643" /> <!-- Recipe:Â Seraph Necklace (60%) -->
-		<itemDrop itemId="35442" min="1" max="1" chance="1.64" /> <!-- Recipe:Â Seraph Circlet (60%) -->
-		<itemDrop itemId="35428" min="1" max="1" chance="1.637" /> <!-- Recipe:Â Specter Buster (60%) -->
-		<itemDrop itemId="35420" min="1" max="1" chance="1.634" /> <!-- Recipe:Â Specter Shaper (60%) -->
-		<itemDrop itemId="35440" min="1" max="1" chance="1.623" /> <!-- Recipe:Â Seraph Leather Gloves (60%) -->
-		<itemDrop itemId="35422" min="1" max="1" chance="1.617" /> <!-- Recipe:Â Specter Slasher (60%) -->
-		<itemDrop itemId="35437" min="1" max="1" chance="1.609" /> <!-- Recipe:Â Seraph Leather Helmet (60%) -->
-		<itemDrop itemId="35423" min="1" max="1" chance="1.608" /> <!-- Recipe:Â Specter Avenger (60%) -->
-		<itemDrop itemId="35445" min="1" max="1" chance="1.595" /> <!-- Recipe:Â Seraph Gloves (60%) -->
-		<itemDrop itemId="35424" min="1" max="1" chance="1.595" /> <!-- Recipe:Â Specter Fighter (60%) -->
-		<itemDrop itemId="35430" min="1" max="1" chance="1.595" /> <!-- Recipe:Â Specter Retributer (60%) -->
-		<itemDrop itemId="35439" min="1" max="1" chance="1.59" /> <!-- Recipe:Â Seraph Leather Leggings (60%) -->
-		<itemDrop itemId="35427" min="1" max="1" chance="1.587" /> <!-- Recipe:Â Specter Shooter (60%) -->
-		<itemDrop itemId="35421" min="1" max="1" chance="1.576" /> <!-- Recipe:Â Specter Cutter (60%) -->
-		<itemDrop itemId="35443" min="1" max="1" chance="1.576" /> <!-- Recipe:Â Seraph Tunic (60%) -->
-		<itemDrop itemId="35444" min="1" max="1" chance="1.575" /> <!-- Recipe:Â Seraph Stockings (60%) -->
-		<itemDrop itemId="35446" min="1" max="1" chance="1.575" /> <!-- Recipe:Â Seraph Shoes (60%) -->
-		<itemDrop itemId="35431" min="1" max="1" chance="1.57099" /> <!-- Recipe:Â Seraph Helmet (60%) -->
-		<itemDrop itemId="35425" min="1" max="1" chance="1.568" /> <!-- Recipe:Â Specter Stormer (60%) -->
-		<itemDrop itemId="35436" min="1" max="1" chance="1.561" /> <!-- Recipe:Â Seraph Shield (60%) -->
-		<itemDrop itemId="35435" min="1" max="1" chance="1.552" /> <!-- Recipe:Â Seraph Boots (60%) -->
-		<itemDrop itemId="35434" min="1" max="1" chance="1.545" /> <!-- Recipe:Â Seraph Gauntlets (60%) -->
+		<itemDrop itemId="35450" min="1" max="1" chance="1.752" /> <!-- Recipe: Seraph Ring (60%) -->
+		<itemDrop itemId="35449" min="1" max="1" chance="1.676" /> <!-- Recipe: Seraph Earring (60%) -->
+		<itemDrop itemId="35429" min="1" max="1" chance="1.67299" /> <!-- Recipe: Specter Caster (60%) -->
+		<itemDrop itemId="35447" min="1" max="1" chance="1.67099" /> <!-- Recipe: Seraph Sigil (60%) -->
+		<itemDrop itemId="35426" min="1" max="1" chance="1.667" /> <!-- Recipe: Specter Thrower (60%) -->
+		<itemDrop itemId="35438" min="1" max="1" chance="1.661" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+		<itemDrop itemId="35432" min="1" max="1" chance="1.661" /> <!-- Recipe: Seraph Breastplate (60%) -->
+		<itemDrop itemId="35441" min="1" max="1" chance="1.653" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+		<itemDrop itemId="35433" min="1" max="1" chance="1.64699" /> <!-- Recipe: Seraph Gaiters (60%) -->
+		<itemDrop itemId="35448" min="1" max="1" chance="1.643" /> <!-- Recipe: Seraph Necklace (60%) -->
+		<itemDrop itemId="35442" min="1" max="1" chance="1.64" /> <!-- Recipe: Seraph Circlet (60%) -->
+		<itemDrop itemId="35428" min="1" max="1" chance="1.637" /> <!-- Recipe: Specter Buster (60%) -->
+		<itemDrop itemId="35420" min="1" max="1" chance="1.634" /> <!-- Recipe: Specter Shaper (60%) -->
+		<itemDrop itemId="35440" min="1" max="1" chance="1.623" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+		<itemDrop itemId="35422" min="1" max="1" chance="1.617" /> <!-- Recipe: Specter Slasher (60%) -->
+		<itemDrop itemId="35437" min="1" max="1" chance="1.609" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+		<itemDrop itemId="35423" min="1" max="1" chance="1.608" /> <!-- Recipe: Specter Avenger (60%) -->
+		<itemDrop itemId="35445" min="1" max="1" chance="1.595" /> <!-- Recipe: Seraph Gloves (60%) -->
+		<itemDrop itemId="35424" min="1" max="1" chance="1.595" /> <!-- Recipe: Specter Fighter (60%) -->
+		<itemDrop itemId="35430" min="1" max="1" chance="1.595" /> <!-- Recipe: Specter Retributer (60%) -->
+		<itemDrop itemId="35439" min="1" max="1" chance="1.59" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+		<itemDrop itemId="35427" min="1" max="1" chance="1.587" /> <!-- Recipe: Specter Shooter (60%) -->
+		<itemDrop itemId="35421" min="1" max="1" chance="1.576" /> <!-- Recipe: Specter Cutter (60%) -->
+		<itemDrop itemId="35443" min="1" max="1" chance="1.576" /> <!-- Recipe: Seraph Tunic (60%) -->
+		<itemDrop itemId="35444" min="1" max="1" chance="1.575" /> <!-- Recipe: Seraph Stockings (60%) -->
+		<itemDrop itemId="35446" min="1" max="1" chance="1.575" /> <!-- Recipe: Seraph Shoes (60%) -->
+		<itemDrop itemId="35431" min="1" max="1" chance="1.57099" /> <!-- Recipe: Seraph Helmet (60%) -->
+		<itemDrop itemId="35425" min="1" max="1" chance="1.568" /> <!-- Recipe: Specter Stormer (60%) -->
+		<itemDrop itemId="35436" min="1" max="1" chance="1.561" /> <!-- Recipe: Seraph Shield (60%) -->
+		<itemDrop itemId="35435" min="1" max="1" chance="1.552" /> <!-- Recipe: Seraph Boots (60%) -->
+		<itemDrop itemId="35434" min="1" max="1" chance="1.545" /> <!-- Recipe: Seraph Gauntlets (60%) -->
 		<itemDrop itemId="17407" min="1" max="1" chance="0.75" /> <!-- Seraph Circlet - Robe -->
 		<itemDrop itemId="17391" min="1" max="1" chance="0.75" /> <!-- Specter Caster -->
 		<itemDrop itemId="17406" min="1" max="1" chance="0.75" /> <!-- Seraph Leather Boots - Light Armor -->

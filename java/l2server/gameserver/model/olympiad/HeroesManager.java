@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -70,6 +70,7 @@ public class HeroesManager
 	private static final String GET_CLAN_NAME = "SELECT clan_name FROM clan_data WHERE clan_id = (SELECT clanid FROM characters WHERE charId = ?)";
 	// delete hero items
 	private static final String DELETE_ITEMS = "DELETE FROM items WHERE item_id IN (6842, 6611, 6612, 6613, 6614, 6615, 6616, 6617, 6618, 6619, 6620, 6621, 9388, 9389, 9390) AND owner_id NOT IN (SELECT charId FROM characters WHERE accesslevel > 0)";
+	private static final String DELETE_HERO = "DELETE FROM heroes WHERE charId = ?";
 	
 	private static Map<Integer, HeroInfo> _heroes = new HashMap<Integer, HeroInfo>();
 	private static Map<Integer, HeroInfo> _pastAndCurrentHeroes = new HashMap<Integer, HeroInfo>();
@@ -114,8 +115,7 @@ public class HeroesManager
 			while (rset.next())
 			{
 				int charId = rset.getInt(Olympiad.CHAR_ID);
-				HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME),
-						rset.getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
+				HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset.getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
 				
 				loadFights(hero);
 				loadDiary(hero);
@@ -168,8 +168,7 @@ public class HeroesManager
 			while (rset.next())
 			{
 				int charId = rset.getInt(Olympiad.CHAR_ID);
-				HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME),
-						rset.getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
+				HeroInfo hero = new HeroInfo(charId, rset.getString(Olympiad.CHAR_NAME), rset.getInt(Olympiad.CLASS_ID), rset.getInt(COUNT), rset.getBoolean(PLAYED));
 				
 				statement2 = con.prepareStatement(GET_CLAN_ALLY);
 				statement2.setInt(1, charId);
@@ -196,7 +195,7 @@ public class HeroesManager
 							allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
 						}
 					}
-
+					
 					hero.setClanCrest(clanCrest);
 					hero.setClanName(clanName);
 					hero.setAllyCrest(allyCrest);
@@ -299,7 +298,7 @@ public class HeroesManager
 					case ACTION_CASTLE_TAKEN:
 						Castle castle = CastleManager.getInstance().getCastleById(param);
 						if (castle != null)
-							diaryentry.action = castle.getName()+" Castle was successfuly taken";
+							diaryentry.action = castle.getName() + " Castle was successfuly taken";
 						break;
 				}
 				
@@ -364,7 +363,7 @@ public class HeroesManager
 				{
 					String name = CharNameTable.getInstance().getNameById(charTwoId);
 					String cls = PlayerClassTable.getInstance().getClassNameById(charTwoClass);
-					if (name != null && cls != null)
+					if ((name != null) && (cls != null))
 					{
 						FightInfo fight = new FightInfo();
 						fight.opponent = name;
@@ -399,7 +398,7 @@ public class HeroesManager
 				{
 					String name = CharNameTable.getInstance().getNameById(charOneId);
 					String cls = PlayerClassTable.getInstance().getClassNameById(charOneClass);
-					if (name != null && cls != null)
+					if ((name != null) && (cls != null))
 					{
 						FightInfo fight = new FightInfo();
 						fight.opponent = name;
@@ -560,7 +559,7 @@ public class HeroesManager
 			List<FightInfo> list = hero.getFights();
 			
 			NpcHtmlMessage FightReply = new NpcHtmlMessage(5);
-			final String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(),"olympiad/herohistory.htm");
+			final String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "olympiad/herohistory.htm");
 			if (htmContent != null)
 			{
 				FightReply.setHtml(htmContent);
@@ -661,7 +660,7 @@ public class HeroesManager
 					
 					for (L2ItemInstance item : player.getInventory().getAvailableItems(false, false))
 					{
-						if (item != null && item.isHeroItem())
+						if ((item != null) && item.isHeroItem())
 						{
 							player.destroyItem("Hero", item, null, true);
 							InventoryUpdate iu = new InventoryUpdate();
@@ -692,7 +691,7 @@ public class HeroesManager
 			OlympiadNobleInfo heroNobleInfo = newHeroes.get(classId);
 			int charId = heroNobleInfo.getId();
 			
-			if (_pastAndCurrentHeroes != null && _pastAndCurrentHeroes.containsKey(charId))
+			if ((_pastAndCurrentHeroes != null) && _pastAndCurrentHeroes.containsKey(charId))
 			{
 				HeroInfo oldHero = _pastAndCurrentHeroes.get(charId);
 				oldHero.increaseCount();
@@ -715,7 +714,7 @@ public class HeroesManager
 		heroes.clear();
 		
 		updateHeroes(false);
-
+		
 		for (HeroInfo hero : _heroes.values())
 		{
 			// Set Gained hero and reload data
@@ -895,7 +894,7 @@ public class HeroesManager
 	public void setRBkilled(int charId, int npcId)
 	{
 		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-		if (_heroes.containsKey(charId) && template != null)
+		if (_heroes.containsKey(charId) && (template != null))
 		{
 			DiaryEntry diaryentry = new DiaryEntry();
 			diaryentry.time = System.currentTimeMillis();
@@ -909,7 +908,7 @@ public class HeroesManager
 	public void setCastleTaken(int charId, int castleId)
 	{
 		Castle castle = CastleManager.getInstance().getCastleById(castleId);
-		if (_heroes.containsKey(charId) && castle != null)
+		if (_heroes.containsKey(charId) && (castle != null))
 		{
 			DiaryEntry diaryentry = new DiaryEntry();
 			diaryentry.time = System.currentTimeMillis();
@@ -1005,13 +1004,36 @@ public class HeroesManager
 		}
 	}
 	
+	public void removeHero(int heroId)
+	{
+		Connection con = null;
+		
+		_heroes.remove(heroId);
+		try
+		{
+			con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(DELETE_HERO);
+			statement.setInt(1, heroId);
+			statement.execute();
+			statement.close();
+		}
+		catch (SQLException e)
+		{
+			Log.log(Level.WARNING, "", e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
+	}
+	
 	/**
 	 * Saving task for {@link HeroesManager}<BR>
 	 * Save all hero messages to DB.
 	 */
 	public void shutdown()
 	{
-		for (int charId: _heroes.keySet())
+		for (int charId : _heroes.keySet())
 			saveHeroMessage(charId);
 	}
 	

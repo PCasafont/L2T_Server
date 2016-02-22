@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -33,14 +34,16 @@ import l2server.log.Log;
 /**
  * @author Kerberos
  * JIV update 24.8.10
- * 
+ *
  */
 
 public class RaidBossPointsManager
 {
 	private HashMap<Integer, Map<Integer, Integer>> _list;
 	
-	private final Comparator<Map.Entry<Integer, Integer>> _comparator = new Comparator<Map.Entry<Integer, Integer>>(){
+	private final Comparator<Map.Entry<Integer, Integer>> _comparator = new Comparator<Map.Entry<Integer, Integer>>()
+	{
+		@Override
 		public int compare(Map.Entry<Integer, Integer> entry, Map.Entry<Integer, Integer> entry1)
 		{
 			return entry.getValue().equals(entry1.getValue()) ? 0 : entry.getValue() < entry1.getValue() ? 1 : -1;
@@ -83,7 +86,7 @@ public class RaidBossPointsManager
 			}
 			rset.close();
 			statement.close();
-			Log.info(getClass().getSimpleName()+": Loaded "+_list.size()+" Characters Raid Points.");
+			Log.info(getClass().getSimpleName() + ": Loaded " + _list.size() + " Characters Raid Points.");
 		}
 		catch (SQLException e)
 		{
@@ -123,6 +126,7 @@ public class RaidBossPointsManager
 	{
 		if (player == null)
 			return;
+		
 		int ownerId = player.getObjectId();
 		Map<Integer, Integer> tmpPoint = _list.get(ownerId);
 		if (tmpPoint == null)
@@ -150,7 +154,7 @@ public class RaidBossPointsManager
 		Map<Integer, Integer> tmpPoint;
 		tmpPoint = _list.get(ownerId);
 		
-		if (tmpPoint == null || tmpPoint.isEmpty())
+		if ((tmpPoint == null) || tmpPoint.isEmpty())
 			return 0;
 		
 		return tmpPoint.get(0);

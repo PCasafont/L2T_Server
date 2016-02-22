@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.RevelationSkills;
 
 import java.util.ArrayList;
@@ -38,11 +39,11 @@ public class RevelationSkills extends Quest
 {
 	private static final String _qn = "RevelationSkills";
 	
-	private static final int _monkOfChaos 				= 33880;
-	private static final int _chaoticPomander 			= 37374;
-	private static final int _chaosPomanderDualClass 	= 37375;
-	private static final Long _resetPrice 				= 100000000L;
-	private static final int[] revelationSkills 		= {1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997};
+	private static final int _monkOfChaos = 33880;
+	private static final int _chaoticPomander = 37374;
+	private static final int _chaosPomanderDualClass = 37375;
+	private static final long _resetPrice = 100000000L;
+	private static final int[] revelationSkills = { 1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997 };
 	
 	public RevelationSkills(int questId, String name, String descr)
 	{
@@ -50,6 +51,18 @@ public class RevelationSkills extends Quest
 		
 		addStartNpc(_monkOfChaos);
 		addTalkId(_monkOfChaos);
+		
+		if (Config.isServer(Config.DREAMS))
+		{
+			addStartNpc(80000);
+			addTalkId(80000);
+		}
+		
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+		{
+			addStartNpc(40005);
+			addTalkId(40005);
+		}
 	}
 	
 	@Override
@@ -68,8 +81,8 @@ public class RevelationSkills extends Quest
 						continue;
 					
 					skillInfo = SkillTable.getInstance().getInfo(id, 1);
-					if (skillInfo != null && skillInfo.getSkillType() != L2SkillType.NOTDONE)
-						skillList += "<tr><td><a action=\"bypass -h Quest RevelationSkills "+skillInfo.getId()+"\">"+skillInfo.getName()+"</a></td></tr>";	
+					if ((skillInfo != null) && (skillInfo.getSkillType() != L2SkillType.NOTDONE))
+						skillList += "<tr><td><a action=\"bypass -h Quest RevelationSkills " + skillInfo.getId() + "\">" + skillInfo.getName() + "</a></td></tr>";
 				}
 				skillList += "</table>";
 				
@@ -88,9 +101,9 @@ public class RevelationSkills extends Quest
 			}
 			
 			/*long promanderCount = player.getInventory().getInventoryItemCount(chaoticPomander, 0);
-			
+
 			long promanderDualClassCount = player.getInventory().getInventoryItemCount(chaosPomanderDualClass, 0);
-			
+
 			if (promanderCount > 0)
 			{
 				player.destroyItemByItemId(qn, chaoticPomander, 1, npc, true);
@@ -102,15 +115,15 @@ public class RevelationSkills extends Quest
 			else
 			{
 				player.sendMessage("You don't have chaos promander!");
-				
+
 				return "";
 			}
 			player.broadcastPacket(new InventoryUpdate());
-			*/
+			 */
 			
 			//Anti exploit
 			if (getRevelationCount(player) < 2)
-			{	
+			{
 				L2Skill newSkill = SkillTable.getInstance().getInfo(skillId, 1);
 				
 				//Msg
@@ -123,7 +136,7 @@ public class RevelationSkills extends Quest
 				player.sendSkillList();
 				
 				notifyEvent("show_skills", npc, player);
-			}	
+			}
 		}
 		else if (event.equalsIgnoreCase("reset_revelation"))
 		{
@@ -145,7 +158,7 @@ public class RevelationSkills extends Quest
 					player.destroyItemByItemId(_qn, _chaoticPomander, 1, npc, true);
 				else if (promanderDualClassCount > 0)
 					player.destroyItemByItemId(_qn, _chaosPomanderDualClass, 1, npc, true);
-			}	
+			}
 			else
 				player.sendMessage("You don't have enough adena!");
 		}
@@ -155,7 +168,7 @@ public class RevelationSkills extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (player.getCurrentClass().getLevel() < 85 && player.getCurrentClass().getParent() == null)
+		if ((player.getCurrentClass().getLevel() < 85) && (player.getCurrentClass().getParent() == null))
 			return "no.html";
 		
 		return "main.html";
@@ -164,7 +177,7 @@ public class RevelationSkills extends Quest
 	private int getRevelationCount(L2PcInstance player)
 	{
 		int skillCount = 0;
-
+		
 		List<Integer> haveSkills = new ArrayList<Integer>();
 		for (L2Skill skill : player.getAllSkills())
 		{
@@ -174,7 +187,7 @@ public class RevelationSkills extends Quest
 			if (Util.contains(revelationSkills, skill.getId()))
 			{
 				haveSkills.add(skill.getId());
-				skillCount ++;
+				skillCount++;
 			}
 		}
 		return skillCount;

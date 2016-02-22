@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import java.util.Collection;
@@ -22,8 +23,8 @@ import java.util.concurrent.Future;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.L2ZoneType;
@@ -95,7 +96,7 @@ public class L2EffectZone extends L2ZoneType
 			{
 				String[] skillSplit = skill.split("-");
 				if (skillSplit.length != 2)
-					Log.warning(StringUtil.concat(getClass().getSimpleName()+": invalid config property -> skillsIdLvl \"", skill, "\""));
+					Log.warning(StringUtil.concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skill, "\""));
 				else
 				{
 					try
@@ -106,7 +107,7 @@ public class L2EffectZone extends L2ZoneType
 					{
 						if (!skill.isEmpty())
 						{
-							Log.warning(StringUtil.concat(getClass().getSimpleName()+": invalid config property -> skillsIdLvl \"", skillSplit[0], "\"", skillSplit[1]));
+							Log.warning(StringUtil.concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skillSplit[0], "\"", skillSplit[1]));
 						}
 					}
 				}
@@ -127,7 +128,7 @@ public class L2EffectZone extends L2ZoneType
 		{
 			if (_task == null)
 			{
-				synchronized(this)
+				synchronized (this)
 				{
 					if (_task == null)
 						_task = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new ApplySkill(), _initialDelay, _reuse);
@@ -158,7 +159,7 @@ public class L2EffectZone extends L2ZoneType
 					character.sendPacket(new EtcStatusUpdate((L2PcInstance) character));
 			}
 		}
-		if (_characterList.isEmpty() && _task != null)
+		if (_characterList.isEmpty() && (_task != null))
 		{
 			_task.cancel(true);
 			_task = null;
@@ -189,7 +190,7 @@ public class L2EffectZone extends L2ZoneType
 		}
 		if (_skills == null)
 		{
-			synchronized(this)
+			synchronized (this)
 			{
 				if (_skills == null)
 					_skills = new HashMap<Integer, Integer>(3);
@@ -218,7 +219,7 @@ public class L2EffectZone extends L2ZoneType
 	
 	public int getSkillLevel(int skillId)
 	{
-		if (_skills == null || !_skills.containsKey(skillId))
+		if ((_skills == null) || !_skills.containsKey(skillId))
 			return 0;
 		else
 			return _skills.get(skillId);
@@ -237,13 +238,14 @@ public class L2EffectZone extends L2ZoneType
 				throw new IllegalStateException("No skills defined.");
 		}
 		
+		@Override
 		public void run()
 		{
 			if (isEnabled())
 			{
-				for (L2Character temp : L2EffectZone.this.getCharacterList())
+				for (L2Character temp : getCharacterList())
 				{
-					if (temp != null && !temp.isDead() && (!temp.isGM() || !temp.isInvul()))	// Tenkai custom - ignore invul GMs
+					if ((temp != null) && !temp.isDead() && (!temp.isGM() || !temp.isInvul())) // Tenkai custom - ignore invul GMs
 					{
 						if (Rnd.get(100) < getChance())
 						{

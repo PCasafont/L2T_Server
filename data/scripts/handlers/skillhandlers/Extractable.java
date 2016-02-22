@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.skillhandlers;
 
 import l2server.Config;
@@ -26,7 +27,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
 /**
@@ -35,14 +35,11 @@ import l2server.util.Rnd;
 public class Extractable implements ISkillHandler
 {
 	//FIXME: Remove this once skill reuse will be global for main/subclass.
-	private static final int[] protectedSkillIds = { 323, 324, 419, 519, 520, 620, 1324, 1387, 11316 };
+	//private static final int[] protectedSkillIds = { 323, 324, 419, 519, 520, 620, 1324, 1387, 11316 };
 	
-	private static final L2SkillType[] SKILL_TYPES =
-	{
-		L2SkillType.EXTRACTABLE,
-		L2SkillType.EXTRACTABLE_FISH
-	};
+	private static final L2SkillType[] SKILL_TYPES = { L2SkillType.EXTRACTABLE, L2SkillType.EXTRACTABLE_FISH };
 	
+	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
 		if (!(activeChar instanceof L2PcInstance))
@@ -104,12 +101,13 @@ public class Extractable implements ISkillHandler
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
 		//FIXME: remove this once skill reuse will be global for main/subclass.
+		/*
 		if (!skill.getName().equals("Check Item") && player.isSubClassActive() && (skill.getReuseDelay() > 0) && !Util.contains(protectedSkillIds, skill.getId()))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIN_CLASS_SKILL_ONLY));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addSkillName(skill));
 			return;
-		}
+		}*/
 		
 		if (createItemID[0] <= 0)
 		{
@@ -164,6 +162,7 @@ public class Extractable implements ISkillHandler
 		}
 	}
 	
+	@Override
 	public L2SkillType[] getSkillIds()
 	{
 		return SKILL_TYPES;

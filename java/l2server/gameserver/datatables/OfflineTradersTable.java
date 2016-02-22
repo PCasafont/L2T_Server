@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.sql.Connection;
@@ -69,13 +70,12 @@ public class OfflineTradersTable
 			PreparedStatement stm_prices = con.prepareStatement(SAVE_PRICES);
 			
 			//StringBuilder items = StringBuilder.newInstance();
-			boolean checkInactiveStores = Config.isServer(Config.TENKAI) && System.currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis() > 36000000;
+			boolean checkInactiveStores = Config.isServer(Config.TENKAI) && ((System.currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis()) > 36000000);
 			for (L2PcInstance pc : L2World.getInstance().getAllPlayers().values())
 			{
 				try
 				{
-					if ((pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE) && (pc.getClient() == null || pc.getClient().isDetached())
-							&& (!checkInactiveStores || pc.hadStoreActivity()))
+					if ((pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE) && ((pc.getClient() == null) || pc.getClient().isDetached()) && (!checkInactiveStores || pc.hadStoreActivity()))
 					{
 						stm.setInt(1, pc.getObjectId()); //Char Id
 						stm.setLong(2, pc.getOfflineStartTime());
@@ -139,7 +139,7 @@ public class OfflineTradersTable
 									stm_items.setLong(4, 0);
 									stm_items.executeUpdate();
 									stm_items.clearParameters();
-
+									
 									for (L2Item priceItem : i.getPriceItems().keySet())
 									{
 										long count = i.getPriceItems().get(priceItem);
@@ -169,7 +169,7 @@ public class OfflineTradersTable
 		}
 		catch (Exception e)
 		{
-			Log.log(Level.WARNING,"OfflineTradersTable[storeTradeItems()]: Error while saving offline traders: " + e,e);
+			Log.log(Level.WARNING, "OfflineTradersTable[storeTradeItems()]: Error while saving offline traders: " + e, e);
 		}
 		finally
 		{
@@ -300,7 +300,7 @@ public class OfflineTradersTable
 						}
 						catch (Exception e)
 						{
-							Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error loading trader: "+player,e);
+							Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error loading trader: " + player, e);
 							if (player != null)
 							{
 								player.deleteMe();
@@ -318,7 +318,7 @@ public class OfflineTradersTable
 				}
 				catch (Exception e)
 				{
-					Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error while loading offline traders: ",e);
+					Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error while loading offline traders: ", e);
 					e.printStackTrace();
 				}
 				finally
@@ -327,7 +327,7 @@ public class OfflineTradersTable
 				}
 				
 				finishTime = System.nanoTime();
-				Log.info("Asynch restoring of "+nTraders+" offline traders took "+(finishTime - startTime) / 1000000+" ms");
+				Log.info("Asynch restoring of " + nTraders + " offline traders took " + ((finishTime - startTime) / 1000000) + " ms");
 			}
 		});
 		restoreThread.setPriority(Thread.MIN_PRIORITY);

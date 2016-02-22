@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 
+import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -67,7 +69,7 @@ public class L2BossZone extends L2ZoneType
 			_playerId = playerId;
 			_allowedEntryTime = allowedEntryTime;
 		}
-
+		
 		private boolean isEntryAllowed()
 		{
 			return _allowedEntryTime > System.currentTimeMillis();
@@ -91,6 +93,7 @@ public class L2BossZone extends L2ZoneType
 		
 		private class KickTask implements Runnable
 		{
+			@Override
 			public void run()
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(_playerId);
@@ -121,7 +124,7 @@ public class L2BossZone extends L2ZoneType
 	 * any one of the following: 1) A player logs out while in a zone
 	 * (Expiration gets set to logoutTime + _timeInvade) 2) An external source
 	 * (such as a quest or AI of NPC) set up the player for entry.
-	 * 
+	 *
 	 * There exists one more case in which the player will be allowed to enter.
 	 * That is if the server recently rebooted (boot-up time more recent than
 	 * currentTime - _timeInvade) AND the player was in the zone prior to reboot.
@@ -136,34 +139,34 @@ public class L2BossZone extends L2ZoneType
 			
 			L2PcInstance player = null;
 			if (character instanceof L2PcInstance)
-				player = (L2PcInstance)character;
+				player = (L2PcInstance) character;
 			else
 			{
 				if (character instanceof L2Summon)
 				{
-					player = ((L2Summon)character).getOwner();
+					player = ((L2Summon) character).getOwner();
 					if (!isInsideZone(player))
 						kickPlayerFromEpicZone(player);
 					return;
 				}
 			}
-				
+			
 			if (player == null)
 				return;
 			
 			//GM's and instance players are not checked
-			if (player.isGM() || player.getInstanceId() != 0)
+			if (player.isGM() || (player.getInstanceId() != 0))
 				return;
-	
+			
 			PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
-			if (playerEntry == null || !playerEntry.isEntryAllowed())	//Illegal entry
+			if ((playerEntry == null) || !playerEntry.isEntryAllowed()) //Illegal entry
 			{
 				kickPlayerFromEpicZone(player);
 				return;
 			}
 			
 			player.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
-		}	
+		}
 	}
 	
 	@Override
@@ -188,7 +191,7 @@ public class L2BossZone extends L2ZoneType
 			}
 		}
 		
-		if (character instanceof L2Attackable && character.isRaid() && !character.isDead())
+		if ((character instanceof L2Attackable) && character.isRaid() && !character.isDead())
 			((L2Attackable) character).returnHome();
 	}
 	
@@ -212,7 +215,7 @@ public class L2BossZone extends L2ZoneType
 	 * Some GrandBosses send all players in zone to a specific part of the zone,
 	 * rather than just removing them all. If this is the case, this command should
 	 * be used. If this is no the case, then use oustAllPlayers().
-	 * 
+	 *
 	 * @param x
 	 * @param y
 	 * @param z
@@ -275,14 +278,14 @@ public class L2BossZone extends L2ZoneType
 	 */
 	public void allowPlayerEntry(L2PcInstance player, int durationInSec)
 	{
-		if (player == null || player.isGM())
+		if ((player == null) || player.isGM())
 			return;
 		
 		PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
 		if (playerEntry == null)
-			_playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + durationInSec * 1000));
+			_playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + (durationInSec * 1000)));
 		else
-			playerEntry.setAllowedEntryTime(System.currentTimeMillis() + durationInSec * 1000);
+			playerEntry.setAllowedEntryTime(System.currentTimeMillis() + (durationInSec * 1000));
 	}
 	
 	public void removePlayer(L2PcInstance player)
@@ -302,7 +305,7 @@ public class L2BossZone extends L2ZoneType
 		
 		if (character instanceof L2PcInstance)
 		{
-			L2PcInstance player = (L2PcInstance)character;
+			L2PcInstance player = (L2PcInstance) character;
 			PlayerEntry entryPlayer = _playerEntries.get(player.getObjectId());
 			if (entryPlayer == null)
 				return;
@@ -319,7 +322,7 @@ public class L2BossZone extends L2ZoneType
 		
 		if (character instanceof L2PcInstance)
 		{
-			L2PcInstance player = (L2PcInstance)character;
+			L2PcInstance player = (L2PcInstance) character;
 			PlayerEntry entryPlayer = _playerEntries.get(player.getObjectId());
 			if (entryPlayer == null)
 				return;
@@ -334,7 +337,7 @@ public class L2BossZone extends L2ZoneType
 			return;
 		
 		chara.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
-			
+		
 		if (_exitLocation != null)
 			chara.teleToLocation(_exitLocation, true);
 		else
@@ -343,11 +346,14 @@ public class L2BossZone extends L2ZoneType
 	
 	public void kickDualBoxes()
 	{
+		if (Config.isServer(Config.DREAMS))
+			return;
+		
 		List<L2PcInstance> toBeKicked = new ArrayList<L2PcInstance>();
 		Map<String, String> allPlayerIps = new HashMap<String, String>();
 		for (L2PcInstance player : getPlayersInside())
 		{
-			if (player == null || !player.isOnline())
+			if ((player == null) || !player.isOnline())
 				continue;
 			if (allPlayerIps.containsKey(player.getExternalIP()))
 			{
@@ -367,6 +373,7 @@ public class L2BossZone extends L2ZoneType
 				player.sendPacket(new ExShowScreenMessage("You will be removed from the zone in 60 seconds because of dual box!", 5000));
 				ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 				{
+					@Override
 					public void run()
 					{
 						kickPlayerFromEpicZone(player);

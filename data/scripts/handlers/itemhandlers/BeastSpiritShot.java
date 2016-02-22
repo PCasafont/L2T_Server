@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
@@ -34,9 +35,10 @@ import l2server.gameserver.util.Broadcast;
 public class BeastSpiritShot implements IItemHandler
 {
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
+	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (playable == null)
@@ -71,14 +73,14 @@ public class BeastSpiritShot implements IItemHandler
 		}
 		
 		int itemId = item.getItemId();
-		boolean isBlessed = (itemId == 6647 || itemId == 20334);
+		boolean isBlessed = ((itemId == 6647) || (itemId == 20334));
 		short shotConsumption = summon.getSpiritShotsPerHit();
 		
 		long shotCount = item.getCount();
 		if (!(shotCount > shotConsumption))
 		{
 			// Not enough SpiritShots to use.
-			if (!summoner.disableAutoShot(itemId))
+			if (!summoner.disableAutoShot(item))
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITHOTS_FOR_PET));
 			return;
 		}
@@ -114,7 +116,7 @@ public class BeastSpiritShot implements IItemHandler
 		
 		if (!summoner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
 		{
-			if (!summoner.disableAutoShot(itemId))
+			if (!summoner.disableAutoShot(item))
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITHOTS_FOR_PET));
 			return;
 		}

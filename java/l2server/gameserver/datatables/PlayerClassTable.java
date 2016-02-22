@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -165,7 +166,7 @@ public class PlayerClassTable implements Reloadable
 						}
 						
 						// Remove low level skills
-						if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
+						if ((cl.getLevel() == 85) && (cl.getRace() != Race.Ertheia))
 						{
 							Set<Integer> toRemove = new HashSet<Integer>();
 							for (long hash : cl.getSkills().keySet())
@@ -197,7 +198,7 @@ public class PlayerClassTable implements Reloadable
 								for (int reqSkillId : sl.getCostSkills())
 								{
 									long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
-									if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash))
+									if ((cl.getParent() != null) && cl.getParent().getSkills().containsKey(reqHash))
 									{
 										L2SkillLearn rsl;
 										if (!cl.getSkills().containsKey(reqHash))
@@ -273,7 +274,8 @@ public class PlayerClassTable implements Reloadable
 			}
 		}
 	}
-
+	
+	@Override
 	public boolean reload()
 	{
 		load();
@@ -288,6 +290,7 @@ public class PlayerClassTable implements Reloadable
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Player Classes reloaded";
@@ -326,7 +329,7 @@ public class PlayerClassTable implements Reloadable
 			return _minSkillLevels.get(hash);
 		return 0;
 	}
-
+	
 	public final List<Integer> getAvailableSubclasses(L2PcInstance player, int baseClassId)
 	{
 		if (player.getLevel() < 76)
@@ -372,12 +375,12 @@ public class PlayerClassTable implements Reloadable
 			if (Config.MAX_SUBCLASS <= 3)
 			{
 				if (player.getAppearance().getSex())
-					subclasses.remove((Integer)129); // Female Soul Breaker
+					subclasses.remove((Integer) 129); // Female Soul Breaker
 				else
-					subclasses.remove((Integer)128); // Male Soul Breaker
+					subclasses.remove((Integer) 128); // Male Soul Breaker
 			}
 			if (player.getTotalSubClasses() < 2)
-				subclasses.remove((Integer)135); // Inspector
+				subclasses.remove((Integer) 135); // Inspector
 		}
 		
 		if (player.getRace() == Race.Ertheia)
@@ -387,9 +390,7 @@ public class PlayerClassTable implements Reloadable
 			{
 				for (PlayerClass cl : _classes.values())
 				{
-					if (cl.getLevel() == 85 && cl.getParent() != null
-							&& cl.getParent().getParent() != null
-							&& cl.getParent().getParent().getId() == subId)
+					if ((cl.getLevel() == 85) && (cl.getParent() != null) && (cl.getParent().getParent() != null) && (cl.getParent().getParent().getId() == subId))
 					{
 						awakened.add(cl.getId());
 						break;
@@ -408,7 +409,7 @@ public class PlayerClassTable implements Reloadable
 		List<Integer> list = new ArrayList<Integer>();
 		for (PlayerClass cl : _classes.values())
 		{
-			if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level))
+			if (((race == null) || (cl.getRace() == race)) && ((level == 0) || (cl.getLevel() == level)))
 				list.add(cl.getId());
 		}
 		
@@ -418,7 +419,7 @@ public class PlayerClassTable implements Reloadable
 	public final int getAwakening(int classId)
 	{
 		PlayerClass pc = _classes.get(classId);
-		if (pc.getLevel() < 40 || pc.getRace() == Race.Ertheia)
+		if ((pc.getLevel() < 40) || (pc.getRace() == Race.Ertheia))
 			return -1;
 		
 		int awakeningId = -1;
@@ -430,10 +431,10 @@ public class PlayerClassTable implements Reloadable
 			PlayerClass supportPc;
 			int i = 1;
 			int sec = 0;
-			while (awakeningId == -1 && sec < 150)
+			while ((awakeningId == -1) && (sec < 150))
 			{
 				supportPc = _classes.get(classId + i);
-				if (supportPc != null && supportPc.getParent() != null && pc.getId() == supportPc.getParent().getId())
+				if ((supportPc != null) && (supportPc.getParent() != null) && (pc.getId() == supportPc.getParent().getId()))
 				{
 					if (supportPc.getAwakeningClassId() != -1)
 					{

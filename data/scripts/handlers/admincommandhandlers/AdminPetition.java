@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
@@ -29,16 +30,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class AdminPetition implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_view_petitions",
-		"admin_view_petition",
-		"admin_accept_petition",
-		"admin_reject_petition",
-		"admin_reset_petitions",
-		"admin_force_peti"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_view_petitions", "admin_view_petition", "admin_accept_petition", "admin_reject_petition", "admin_reset_petitions", "admin_force_peti" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		int petitionId = -1;
@@ -93,7 +87,7 @@ public class AdminPetition implements IAdminCommandHandler
 			try
 			{
 				L2Object targetChar = activeChar.getTarget();
-				if (targetChar == null || !(targetChar instanceof L2PcInstance))
+				if ((targetChar == null) || !(targetChar instanceof L2PcInstance))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return false;
@@ -114,6 +108,7 @@ public class AdminPetition implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

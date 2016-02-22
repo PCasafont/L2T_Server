@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class FlyingFinalForm extends L2Transformation
 {
-	private static final int[] SKILLS = {932,950,951,953,1544,1545,619};
+	private static final int[] SKILLS = { 932, 950, 951, 953, 1544, 1545, 619 };
+	
 	public FlyingFinalForm()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class FlyingFinalForm extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 260 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 260) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		getPlayer().setIsFlyingMounted(true);
@@ -31,7 +33,7 @@ public class FlyingFinalForm extends L2Transformation
 		// Soul Sucking
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(1545, 1), false);
 		
-		int lvl = getPlayer().getLevel() -78;
+		int lvl = getPlayer().getLevel() - 78;
 		
 		if (lvl > 0)
 		{
@@ -63,7 +65,7 @@ public class FlyingFinalForm extends L2Transformation
 		// Soul Sucking
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(1545, 1), false);
 		
-		int lvl = getPlayer().getLevel() -78;
+		int lvl = getPlayer().getLevel() - 78;
 		
 		if (lvl > 0)
 		{

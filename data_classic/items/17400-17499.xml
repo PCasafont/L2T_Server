@@ -9,8 +9,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="1070" />
-		<set name="boundItem" val="17917" />
-		<set name="blessedItem" val="18053" />
 		<for>
 			<baseAdd stat="pDef" val="94" />
 			<enchant stat="pDef" val="0" />
@@ -26,8 +24,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="1130" />
-		<set name="boundItem" val="17918" />
-		<set name="blessedItem" val="18054" />
 		<for>
 			<baseSub stat="rEvas" val="8" />
 			<baseSub stat="mEvasRate" val="8" />

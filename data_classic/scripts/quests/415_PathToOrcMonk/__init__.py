@@ -44,8 +44,8 @@ class Quest (JQuest) :
     htmltext = event
     player = st.getPlayer()
     if event == "30587_1" :
-          if player.getClassId() != 0x2c :
-            if player.getClassId() == 0x2f :
+          if player.getClassId().getId() != 0x2c :
+            if player.getClassId().getId() == 0x2f :
               htmltext = "30587-02a.htm"
               st.exitQuest(1)
             else:
@@ -95,7 +95,7 @@ class Quest (JQuest) :
           else:
             st.addExpAndSp(29586, 1934)
           st.giveItems(57, 8190)
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         st.set("cond","0")
         st.set("onlyone","1")
         st.exitQuest(False)
@@ -187,7 +187,7 @@ class Quest (JQuest) :
         else:
              st.addExpAndSp(59172, 3868)
         st.giveItems(57, 16380)
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         st.set("cond","0")
         st.set("onlyone","1")
         st.exitQuest(False)

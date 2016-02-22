@@ -19,9 +19,6 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import l2server.Config;
-import l2server.gameserver.datatables.MapRegionTable;
-import l2server.gameserver.gui.ConsoleTab;
-import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
@@ -82,7 +79,6 @@ public class ChatAll implements IChatHandler
 				vcd_used = false;
 			}
 		}
-		
 		if (!vcd_used)
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getAppearance().getVisibleName(), text);
@@ -98,16 +94,6 @@ public class ChatAll implements IChatHandler
 			}
 			
 			activeChar.sendPacket(cs);
-			
-			while (text.contains("Type=") && text.contains("Title="))
-			{
-				int index1 = text.indexOf("Type=");
-				int index2 = text.indexOf("Title=") + 6;
-				text = text.substring(0, index1) + text.substring(index2);
-			}
-			
-			String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
-			ConsoleTab.appendMessage(ConsoleFilter.AllChat, "[Somewhere near " + nearTown + "] " + activeChar.getName() + ": " + text, nearTown, activeChar.getName());
 		}
 	}
 	

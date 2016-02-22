@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -38,8 +39,6 @@ import l2server.util.Rnd;
  */
 public final class RequestCrystallizeItem extends L2GameClientPacket
 {
-	private static final String _C__72_REQUESTDCRYSTALLIZEITEM = "[C] 72 RequestCrystallizeItem";
-	
 	
 	private int _objectId;
 	private long _count;
@@ -77,7 +76,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
+		if ((activeChar.getPrivateStoreType() != 0) || activeChar.isInCrystallize())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -88,8 +87,8 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CRYSTALLIZE_LEVEL_TOO_LOW));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			if (activeChar.getRace() != Race.Dwarf && activeChar.getCurrentClass().getId() != 117 && activeChar.getCurrentClass().getId() != 55)
-				Log.info("Player "+activeChar.getClient()+" used crystalize with classid: "+activeChar.getCurrentClass().getId());
+			if ((activeChar.getRace() != Race.Dwarf) && (activeChar.getCurrentClass().getId() != 117) && (activeChar.getCurrentClass().getId() != 55))
+				Log.info("Player " + activeChar.getClient() + " used crystalize with classid: " + activeChar.getCurrentClass().getId());
 			return;
 		}
 		
@@ -111,13 +110,10 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		}
 		
 		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
-		if (itemToRemove == null
-				|| itemToRemove.isShadowItem()
-				|| itemToRemove.isTimeLimitedItem())
+		if ((itemToRemove == null) || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
 			return;
 		
-		if (!itemToRemove.getItem().isCrystallizable()
-				|| (itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE))
+		if (!itemToRemove.getItem().isCrystallizable() || (itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE))
 		{
 			Log.warning(activeChar.getName() + " (" + activeChar.getObjectId() + ") tried to crystallize " + itemToRemove.getItem().getItemId());
 			return;
@@ -180,7 +176,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		{
 			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance item: unequiped)
+			for (L2ItemInstance item : unequiped)
 				iu.addModifiedItem(item);
 			activeChar.sendPacket(iu);
 			
@@ -221,11 +217,11 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		sm.addItemNumber(crystalAmount);
 		activeChar.sendPacket(sm);
 		
-		if (Config.ENABLE_CRYSTALLIZE_REWARDS && itemToRemove.getItem().getCrystallizeRewards() != null)
+		if (Config.ENABLE_CRYSTALLIZE_REWARDS && (itemToRemove.getItem().getCrystallizeRewards() != null))
 		{
 			for (L2CrystallizeReward reward : itemToRemove.getItem().getCrystallizeRewards())
 			{
-				if (reward.getChance() * 1000 > Rnd.get(100000))
+				if ((reward.getChance() * 1000) > Rnd.get(100000))
 					activeChar.addItem("Crystallize", reward.getItemId(), reward.getCount(), activeChar, true);
 			}
 		}
@@ -236,16 +232,5 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		world.removeObject(removedItem);
 		
 		activeChar.setInCrystallize(false);
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__72_REQUESTDCRYSTALLIZEITEM;
 	}
 }

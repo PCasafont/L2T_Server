@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import gnu.trove.TIntObjectHashMap;
@@ -48,6 +49,7 @@ public class TeleportLocationTable implements Reloadable
 		ReloadableManager.getInstance().register("teleports", this);
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		_teleports = new TIntObjectHashMap<L2TeleportLocation>();
@@ -73,6 +75,8 @@ public class TeleportLocationTable implements Reloadable
 						teleport.setLocZ(d.getInt("z"));
 						
 						teleport.setPrice(d.getInt("price", 0));
+						if (Config.isServer(Config.TENKAI_ESTHUS))
+							teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
 						teleport.setIsForNoble(d.getBool("fornoble", false));
 						teleport.setItemId(d.getInt("itemId", 57));
 						
@@ -87,6 +91,7 @@ public class TeleportLocationTable implements Reloadable
 		return success;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		if (success)

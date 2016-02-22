@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q637_ThroughOnceMore;
 
 import l2server.Config;
@@ -22,7 +23,7 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 
 /**
- * 
+ *
  * @author moved to java by DS, jython script by BiTi! and DrLecter
  *
  */
@@ -48,7 +49,7 @@ public final class Q637_ThroughOnceMore extends Quest
 		for (int id : MOBS)
 			addKillId(id);
 		
-		questItemIds = new int[]{NECRO_HEART};
+		questItemIds = new int[] { NECRO_HEART };
 	}
 	
 	@Override
@@ -100,13 +101,12 @@ public final class Q637_ThroughOnceMore extends Quest
 		}
 		else if (id == State.STARTED)
 		{
-			if (Integer.parseInt(st.get("cond")) == 2
-					&& st.getQuestItemsCount(NECRO_HEART) == 10)
+			if ((Integer.parseInt(st.get("cond")) == 2) && (st.getQuestItemsCount(NECRO_HEART) == 10))
 			{
 				st.takeItems(NECRO_HEART, 10);
 				st.takeItems(FADED_MARK, 1);
 				st.giveItems(MARK, 1);
-				st.giveItems(8273,10);
+				st.giveItems(8273, 10);
 				st.exitQuest(true);
 				st.playSound("ItemSound.quest_finish");
 				return "32010-05.htm";
@@ -122,21 +122,21 @@ public final class Q637_ThroughOnceMore extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		final QuestState st = player.getQuestState(QN);
-		if (st != null && st.getState() == State.STARTED)
+		if ((st != null) && (st.getState() == State.STARTED))
 		{
 			final long count = st.getQuestItemsCount(NECRO_HEART);
 			if (count < 10)
 			{
-				int chance = (int)(Config.RATE_QUEST_DROP * DROP_CHANCE);
+				int chance = (int) (Config.RATE_QUEST_DROP * DROP_CHANCE);
 				int numItems = chance / 100;
 				chance = chance % 100;
 				if (st.getRandom(100) < chance)
 					numItems++;
 				if (numItems > 0)
 				{
-					if (count + numItems >= 10)
+					if ((count + numItems) >= 10)
 					{
-						numItems = 10 - (int)count;
+						numItems = 10 - (int) count;
 						st.playSound("ItemSound.quest_middle");
 						st.set("cond", "2");
 					}

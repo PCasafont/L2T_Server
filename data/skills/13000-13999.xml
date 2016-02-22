@@ -12,7 +12,7 @@
 		Level 1: Increases P. Def. by 5.57%.
 		Level 2: Increases P. Def. by 5.57%, Max HP + 531.
 		Level 3: Increases P. Def. by 5.57%, Max HP + 531, increases P. Atk by 5.57%.
-		Level 4: Increases P. Def. by 5.57%, Max HP + 531, increases P. Atk by 5.57%, Sleep/Hold Resistance by 70%, STR+ 2, DEX-2.
+		Level 4: Increases P. Def. by 5.57%, Max HP + 531, increases P. Atk by 5.57%, Sleep/Hold Resistance by 70%, STR + 2, DEX- 2.
 	-->
 	<skill id="13001" levels="4" name="Vesper Heavy Armor Set">
 		<table name="#maxHp"> 0 531 531 531 </table>
@@ -35,8 +35,8 @@
 	<!-- 
 		Level 1: Increases P. Def. by 5.57%.
 		Level 2: P. Def. + 5.57%, Max HP + 540, Accuracy + 4.
-		Level 3: P. Def. + 5.57%, Max HP + 540, Accuracy + 4, Speed + 5.57%, and P. Atk + 5.57%
-		Level 4: P. Def. + 5.57%, Max HP + 540, Accuracy + 4, Speed + 5.57%, P. Atk + 5.57%, Sleep/Hold Resistance + 70%, and M. Def. + 1%. Can wear cloak. STR+ 2, DEX-2
+		Level 3: P. Def. + 5.57%, Max HP + 540, Accuracy + 4, Speed + 5.57%, and P. Atk + 5.
+		Level 4: P. Def. + 5.57%, Max HP + 540, Accuracy + 4, Speed + 5.57%, P. Atk + 5, Sleep/Hold Resistance + 70%, and M. Def. + 1%. Can wear cloak. STR + 2, DEX - 2.
 	-->
 	<skill id="13002" levels="4" name="Vesper Noble Heavy Armor Set">
 		<table name="#maxHp"> 0 540 540 540 </table>
@@ -65,9 +65,9 @@
 	</skill>
 	<!-- 
 		Level 1: Increases MP Recovery Rate by 5%.
-		Level 2: Increases MP Recovery Rate by 5%, Max MP + 347
+		Level 2: Increases MP Recovery Rate by 5%, Max MP + 347.
 		Level 3: Increases MP Recovery Rate by 5%, Max MP + 347, P. Atk by 5.57%.
-		Level 4: Increases MP Recovery Rate by 5%, Max MP + 347, P. Atk by 5.57%, P. Atk Speed by 5%. STR+ 1, CON-2, DEX+ 1.
+		Level 4: Increases MP Recovery Rate by 5%, Max MP + 347, P. Atk by 5.57%, P. Atk Speed by 5%. STR + 1, CON - 2, DEX + 1.
 	-->
 	<skill id="13003" levels="4" name="Vesper Light Armor Set">
 		<table name="#maxMp"> 0 347 347 347 </table>
@@ -92,7 +92,7 @@
 		Level 1: Increases MP Recovery Rate by 5%.
 		Level 2: Increases MP Recovery Rate by 5%, Max MP + 354, Evasion + 3.
 		Level 3: Increases MP Recovery Rate by 5%, Max MP + 354, Evasion + 3, P. Atk by 5.57%, Critical Damage + 172.
-		Level 4: Increases MP Recovery Rate by 5%, Max MP + 354, Evasion + 3, P. Atk by 5.57%, Critical Damage + 172, P. Atk Speed by 5%, Paralysis Resistance by 50%. Can wear cloak. STR+ 1, CON-2, DEX+ 1.
+		Level 4: Increases MP Recovery Rate b y5%, Max MP + 354, Evasion + 3, P. Atk by 5.57%, Critical Damage + 172, P. Atk Speed by 5%, Paralysis Resistance by 50%. Can wear cloak. STR + 1, CON - 2, DEX + 1.
 	-->
 	<skill id="13004" levels="4" name="Vesper Noble Light Armor Set">
 		<table name="#maxMp"> 0 354 354 354 </table>
@@ -124,7 +124,7 @@
 		Level 1: Increases MP Recovery Rate by 5.57%.
 		Level 2: Increases MP Recovery Rate by 5.57%, and M. Atk. by 8.47%.
 		Level 3: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd. by 15%.
-		Level 4: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd. by 15%, Stun Resistance by 50%. Decreases magic-cancelling damage by 30. INT+ 1, MEN-2, WIT+ 1.
+		Level 4: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd. by 15%, Stun Resistance by 50%. Decreases magic-cancelling damage by 30. INT + 1, MEN - 2, WIT + 1.
 	-->
 	<skill id="13005" levels="4" name="Vesper Robe Set">
 		<table name="#mAtk"> 0 8.47 8.47 8.47 </table>
@@ -151,7 +151,7 @@
 		Level 1: Increases MP Recovery Rate by 5.57%.
 		Level 2: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, and decreases magic-cancelling damage by 30.
 		Level 3: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd by 15%, Speed + 7. Decreases magic-cancelling damage by 30.
-		Level 4: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd by 15%, Speed + 7, Stun Resistance by 50%. Decreases magic-cancelling damage by 30, Magic Skill MP Consumption 3%. Can wear cloak. INT+ 1, MEN-2, WIT+ 1
+		Level 4: Increases MP Recovery Rate by 5.57%, M. Atk. by 8.47%, Casting Spd by 15%, Speed + 7, Stun Resistance by 50%. Decreases magic-cancelling damage by 30, Magic Skill MP Consumption 3%. Can wear cloak. INT + 1, MEN - 2, WIT + 1.
 	-->
 	<skill id="13006" levels="4" name="Vesper Noble Robe Set">
 		<table name="#mAtk"> 0 8.47 8.47 8.47 </table>
@@ -219,7 +219,7 @@
 		Level 1: Increases M. Def. by 2%.
 		Level 2: Increases M. Def. by 2%, P. Atk by 4.26%.
 		Level 3: Increases M. Def. by 2%, P. Atk by 4.26%, P. Atk Spd 4%.
-		Level 4: Increases M. Def. by 2%, P. Atk by 4.26%, P. Atk Spd 4%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. STR+ 2, CON-2
+		Level 4: Increases M. Def. by 2%, P. Atk by 4.26%, P. Atk Spd 4%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. STR + 2, CON - 2
 	-->
 	<skill id="13013" levels="4" name="Moirai Heavy Armor Set">
 		<table name="#pAtk"> 0 4.26 4.26 4.26 </table>
@@ -249,7 +249,7 @@
 		Level 1: Increases Speed by 3%.
 		Level 2: Increases Speed by 3%, P. Atk by 4.26%.
 		Level 3: Increases Speed by 3%, P. Atk by 4.26%, P. Atk Spd by 4%.
-		Level 4: Increases Speed by 3%, P. Atk by 4.26%, P. Atk Spd by 4%, Hold Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. DEX+ 2, CON-2
+		Level 4: Increases Speed by 3%, P. Atk by 4.26%, P. Atk Spd by 4%, Hold Resistance by 50%, Fire/Water/Wind/Earth Resistance + 3. Can wear cloak. DEX + 2, CON - 2
 	-->
 	<skill id="13014" levels="4" name="Moirai Light Armor Set">
 		<table name="#pAtk"> 0 4.26 4.26 4.26 </table>
@@ -279,7 +279,7 @@
 		Level 1: Increases Casting Spd. by 5%.
 		Level 2: Increases Casting Spd. by 5%, Magic by 8.11%.
 		Level 3: Increases Casting Spd. by 15%, Magic by 8.11%.
-		Level 4: Increases Casting Spd. by 15%, Magic by 8.11%, Paralysis Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5 . Can wear cloak. WIT+ 2, MEN-2
+		Level 4: Increases Casting Spd. by 15%, Magic by 8.11%, Paralysis Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. WIT+ 2, MEN - 2
 	-->
 	<skill id="13015" levels="4" name="Moirai Robe Set">
 		<table name="#mAtkSpd"> 5 5 15 15 </table>
@@ -307,8 +307,8 @@
 	<!-- 
 		Level 1: Increases P. Def. by 8.47%.
 		Level 2: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7.
-		Level 3: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7., P. Atk by 5.57%, Accuracy + 4.
-		Level 4: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7., P. Atk by 5.57%, Accuracy + 4, M. Def. by 2%, Bleeding/Hold/Sleep Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. CON+2. STR-2
+		Level 3: Increases P. Def. by 8.47%., Max HP + 541, Speed + 7, P. Atk by 5.57%, Accuracy + 4.
+		Level 4: Increases P. Def. by 8.47%, Max HP + 541, Speed + 7, P. Atk by 5.57%, Accuracy + 4, M. Def. by 2%, Bleeding/Hold/Sleep Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. CON + 2.. STR - 2
 	-->
 	<skill id="13016" levels="4" name="Vorpal Heavy Armor Set">
 		<table name="#maxHp"> 0 541 541 541 </table>
@@ -345,7 +345,7 @@
 		Level 1: Increases P. Def. by 5.57%.
 		Level 2: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%.
 		Level 3: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%, P. Atk by 5.57%, Atk Spd by 5%.
-		Level 4: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%, P. Atk by 5.57%, Atk Spd by 5%, Critical Damage + 182, Stun Resistance 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. STR+ 1, DEX+ 2, CON-3
+		Level 4: Increases P. Def. by 5.57%., Max.MP + 360, Speed by 3%, P. Atk by 5.57%, Atk Spd by 5%, Critical Damage + 182, Stun Resistance 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. STR + 1, DEX + 2, CON - 3
 	-->
 	<skill id="13017" levels="4" name="Vorpal Leather Armor Set">
 		<table name="#maxMp"> 0 360 360 360 </table>
@@ -383,7 +383,7 @@
 		Level 1: Increases Speed by 7.
 		Level 2: Increases speed by 7, Max MP + 92, M. Atk. + 8.7%, and MP Recovery Rate + 5%.
 		Level 3: Increases Speed by 7, Max MP + 92, casting Spd by 15%, M. Atk. by 8.7%, MP recovery speed by 5%.
-		Level 4: Increases Speed by 7, Max MP + 92, casting Spd by 15%, M. Atk. by 8.7%, MP recovery speed by 5%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. WIT+ 2, MEN-1, INT-1
+		Level 4: Increases Speed by 7, Max MP + 92, casting Spd by 15%, M. Atk. by 8.7%, MP recovery speed by 5%, Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. WIT + 2, MEN - 1, INT - 1
 	-->
 	<skill id="13018" levels="4" name="Vorpal Robe Set">
 		<table name="#maxMp"> 0 92 92 92 </table>
@@ -418,7 +418,7 @@
 		Level 1: Increases Max HP by 550.
 		Level 2: Increases Max HP by 550, P. Atk by 6.59%.
 		Level 3: Increases Max HP by 550, P. Atk by 6.59%, Critical Rate + 12.74, M. Def. by 2%.
-		Level 4: Increases Max HP by 550, P. Atk by 6.59%, Critical Rate + 12.74, M. Def. by 2%, Bleeding/Hold/Sleep Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5, restores HP by using some of the damage inflicted upon the enemy with a certain probability. Can wear cloak. STR+ 3, CON-2
+		Level 4: Increases Max HP by 550, P. Atk by 6.59%, Critical Rate + 12.74, M. Def. by 2%, Bleeding/Hold/Sleep Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5, restores HP by using some of the damage inflicted upon the enemy with a certain probability. Can wear cloak. STR + 3, CON - 2
 	-->
 	<skill id="13019" levels="4" name="Elegia Heavy Armor Set">
 		<table name="#pAtk"> 0 6.59 6.59 5.9 </table>
@@ -452,9 +452,9 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Speed by 3%.
-		Level 2: Increases Speed by 3%, P. Atk by 6.59%.
+		Level 2: Increases M. Def. by 3%, P. Atk by 6.59%.
 		Level 3: Increases Speed by 3%, P. Atk by 6.59%, Critical Rate + 17.05.
-		Level 4: Increases Speed by 3%, P. Atk by 6.59%, Critical Rate + 17.05, P. Atk Spd by 6%, Paralysis Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. STR+ 1, DEX+ 2, CON-2
+		Level 4: Increases Speed by 3%, P. Atk by 6.59%, Critical Rate + 17.05, P. Atk Spd by 6%, Paralysis Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Can wear cloak. STR + 1, DEX + 2, CON - 2
 	-->
 	<skill id="13020" levels="4" name="Elegia Leather Armor Set">
 		<table name="#pAtk"> 0 6.59 6.59 6.59 </table>
@@ -487,7 +487,7 @@
 		Level 1: Increases Speed by 7.
 		Level 2: Increases Speed by 7, Magic by 10%, Max MP + 97.
 		Level 3: Increases Speed by 7, Magic by 10%, Max MP + 97, Casting Spd. by 15%, MP Recovery Bonus by 5%.
-		Level 4: Increases Speed by 7, Magic by 10%, Max MP + 97, Casting Spd. by 15%, MP Recovery Bonus by 5%., Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Decreases Magic Skill MP Consumption by 3% . Can wear cloak. WIT+ 2, INT+ 1, MEN-2
+		Level 4: Increases Speed by 7, Magic by 10%, Max MP + 97, Casting Spd. by 15%, MP Recovery Bonus by 5%., Stun Resistance by 50%, Fire/Water/Wind/Earth Resistance + 5. Decreases Magic Skill MP Consumption by 3%. Can wear cloak. WIT + 2, INT + 1, MEN - 2
 	-->
 	<skill id="13021" levels="4" name="Elegia Robe Set">
 		<table name="#mAtk"> 0 10 10 10 </table>
@@ -587,7 +587,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases Dark Resistance by 5. -->
-	<skill id="13033" levels="1" name="Dark Attack Resistance">
+	<skill id="13033" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -623,7 +623,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases Dark Resistance by 10. -->
-	<skill id="13039" levels="1" name="Dark Attack Resistance">
+	<skill id="13039" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -659,7 +659,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases Dark Resistance by 15. -->
-	<skill id="13045" levels="1" name="Dark Attack Resistance">
+	<skill id="13045" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -695,7 +695,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases Dark Resistance by 20. -->
-	<skill id="13051" levels="1" name="Dark Attack Resistance">
+	<skill id="13051" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -731,7 +731,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Increases Dark Resistance by 25. -->
-	<skill id="13057" levels="1" name="Dark Attack Resistance">
+	<skill id="13057" levels="1" name="Dark Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -754,7 +754,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Increases bow/crossbow range. Inflicts additional damage during PvP. -->
+	<!-- Increases bow/crossbow range by 100. Increases damage by 5% during PvP. -->
 	<skill id="13061" levels="1" name="Special Ability: Long Blow">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -803,7 +803,7 @@
 		Level 3: CON + 1 and HP + 463. Chance of receiving a critical attack - 3.3%. Stun Resistance + 5. M. Def. + 38.
 		Level 4: CON + 1 and HP + 463. Chance of receiving a critical attack - 3.3%. Stun Resistance + 5. M. Def. + 38. P. Def. + 7% and additional + 77. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13064" levels="4" name="Set Effect - Immortal Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13064" levels="4" name="Set Effect - Immortal Heavy Armor 5 Piece (Defense Type)">
 		<table name="#critDamEvas"> 0 3.3 3.3 3.3 </table>
 		<table name="#stunVuln"> 0 5 5 5 </table>
 		<table name="#mDef"> 0 0 38 38 </table>
@@ -831,11 +831,11 @@
 	</skill>
 	<!-- 
 		Level 1: STR + 1
-		Level 2: STR + 1, Critical damage + 209, Hold Resistance + 5.
+		Level 2: STR + 1, Critical damage + 2099, Hold Resistance + 5.
 		Level 3: STR + 1, Critical damage + 209, Hold Resistance + 5, HP + 463.
 		Level 4: STR + 1, Critical damage + 209, Hold Resistance + 5. P. Atk. + 155, P. Def. + 7%. HP + 463, resistance to 4 attributes + 10.
 	-->
-	<skill id="13065" levels="4" name="Set Effect - Immortal Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13065" levels="4" name="Set Effect - Immortal Heavy Armor 5 Piece (Attack Type)">
 		<table name="#cAtkAdd"> 0 209 209 209 </table>
 		<table name="#rootVuln"> 0 5 5 5 </table>
 		<table name="#maxHp"> 0 0 463 463 </table>
@@ -861,12 +861,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: CON + 2, STR -1, HP + 487.
-		Level 2: CON + 2, STR -1, HP + 487. MP + 202, Stun Resistance + 7.
-		Level 3: CON + 2, STR -1, HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44.
-		Level 4: CON + 2, STR -1, HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44. P. Def. + 7% and additional + 87, resistance to 4 attributes + 10.
+		Level 1: CON + 2, STR - 1, HP + 487.
+		Level 2: CON + 2, STR - 1, HP + 487. MP + 202, Stun Resistance + 7.
+		Level 3: CON + 2, STR - 1, HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44.
+		Level 4: CON + 2, STR - 1, HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44. P. Def. + 7% and additional + 87, resistance to 4 attributes + 10.
 	-->
-	<skill id="13066" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13066" levels="4" name="Set Effect - Twilight Heavy Armor 5 Piece (Defense Type)">
 		<table name="#stunVuln"> 0 7 7 7 </table>
 		<table name="#maxMp"> 0 202 202 202 </table>
 		<table name="#mDef"> 0 0 44 44 </table>
@@ -894,12 +894,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 2, CON -1
-		Level 2: STR + 2, CON -1, Critical damage + 242, Hold Resistance + 7.
-		Level 3: STR + 2, CON -1, Critical damage + 242, Hold Resistance + 7. MP - 4% upon skill use.
-		Level 4: STR + 2, CON -1, Critical damage + 242, Hold Resistance + 7. P. Atk. + 180, P. Def. + 7%, MP - 4% upon skill use. Resistance to 4 attributes + 10.
+		Level 1: STR + 2, CON - 1
+		Level 2: STR + 2, CON - 1, Critical damage + 242, Hold Resistance + 7.
+		Level 3: STR + 2, CON - 1, Critical damage + 242, Hold Resistance + 7. MP - 4% upon skill use.
+		Level 4: STR + 2, CON - 1, Critical damage + 242, Hold Resistance + 7. P. Atk. + 180, P. Def. + 7%, MP - 4% upon skill use. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13067" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13067" levels="4" name="Set Effect - Twilight Heavy Armor 5 Piece (Attack Type)">
 		<table name="#cAtkAdd"> 0 242 242 242 </table>
 		<table name="#rootVuln"> 0 7 7 7 </table>
 		<table name="#pAtk"> 0 0 0 180 </table>
@@ -928,12 +928,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: CON + 3, STR -2, HP 511.
-		Level 2: CON + 3, STR -2, HP + 511. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10.
-		Level 3: CON + 3, STR -2, HP + 511. Chance of receiving a critical attack - 3.3%. Damage upon critical attack - 281. Stun Resistance + 10. M. Def. + 50.
-		Level 4: CON + 3, STR -2, HP + 511. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10. Damage upon critical attack - 281. M. Def. + 50. P. Def. + 7% and additional + 96. Resistance to 4 attributes + 15.
+		Level 1: CON + 3, STR - 2, HP + 511.
+		Level 2: CON + 3, STR - 2, HP + 511. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10.
+		Level 3: CON + 3, STR - 2, HP + 511. Chance of receiving a critical attack - 3.3%. Damage upon critical attack - 281. Stun Resistance + 10. M. Def. + 50.
+		Level 4: CON + 3, STR - 2, HP + 511. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10. Damage upon critical attack - 281. M. Def. + 50. P. Def. + 7% and additional + 96. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13068" levels="4" name="Set Effect - Seraph Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13068" levels="4" name="Set Effect - Seraph Heavy Armor 5 Piece (Defense Type)">
 		<table name="#critDamEvas"> 0 3.3 3.3 3.3 </table>
 		<table name="#critAddVuln"> 0 0 281 281 </table>
 		<table name="#stunVuln"> 0 10 10 10 </table>
@@ -963,12 +963,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 3, CON -2
-		Level 2: STR + 3, CON -2, Critical damage + 281, Hold Resistance + 10.
-		Level 3: STR + 3, CON -2, Critical damage + 281, Hold Resistance + 10. HP + 511. Skill Power + 6%.
-		Level 4: STR + 3, CON -2, Critical damage + 281, Hold Resistance + 10. P. Atk. + 214, P. Def. + 7%, HP + 511. Skill Power+ 6%. Resistance to 4 attributes + 15.
+		Level 1: STR + 3, CON - 2
+		Level 2: STR + 3, CON - 2, Critical damage + 281, Hold Resistance + 10.
+		Level 3: STR + 3, CON - 2, Critical damage + 281, Hold Resistance + 10. HP + 511. Absorbs 6% of inflicted damage as HP.
+		Level 4: STR + 3, CON - 2, Critical damage + 281, Hold Resistance + 10. P. Atk. + 214, P. Def. + 7%, HP + 511. Absorbs 6% of inflicted damage as HP with a certain probability. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13069" levels="4" name="Set Effect - Seraph Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13069" levels="4" name="Set Effect - Seraph Heavy Armor 5 Piece (Attack Type)">
 		<table name="#maxHp"> 0 0 511 511 </table>
 		<table name="#cAtkAdd"> 0 281 281 281 </table>
 		<table name="#rootVuln"> 0 10 10 10 </table>
@@ -997,12 +997,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: CON + 3, STR -1, HP + 521.
-		Level 2: CON + 3, STR -1, HP + 521. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10.
-		Level 3: CON + 3, STR -1, HP + 521. Chance of receiving a critical attack - 3.3%. Received heal amount + 108. Stun Resistance + 10. M. Def. + 54.
-		Level 4: CON + 3, STR -1, HP + 521. Chance of receiving a critical attack - 3.3%. Received heal amount + 108. Stun Resistance + 10. M. Def. + 54. P. Def. + 7% and additional + 103. Resistance to 4 attributes + 15.
+		Level 1: CON + 3, STR - 1, HP + 521.
+		Level 2: CON + 3, STR - 1, HP + 521. Chance of receiving a critical attack - 3.3%. Stun Resistance + 10.
+		Level 3: STR + 3, CON - 1, HP + 521, Chance of receiving a critical attack - 3.3%. Received heal amount + 108. Stun Resistance + 10. M. Def. + 10.
+		Level 4: STR + 3, CON - 1, HP + 521, Chance of receiving a critical attack - 3.3%. Received heal amount + 108. Stun Resistance + 10. M. Def. + 54. P. Def. + 7% and additional + 103. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13070" levels="4" name="Set Effect - Eternal Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13070" levels="4" name="Set Effect - Eternal Heavy Armor 5 Piece (Defense Type)">
 		<table name="#critDamEvas"> 0 3.3 3.3 3.3 </table>
 		<table name="#stunVuln"> 0 10 10 10 </table>
 		<table name="#pDefmul"> 0 0 0 7 </table>
@@ -1032,12 +1032,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 3, CON -1
-		Level 2: STR + 3, CON -1, Critical damage + 298, Hold Resistance + 10.
-		Level 3: STR + 3, CON -1, Critical damage + 298, Hold Resistance + 10. HP + 521. Absorbs 2% of inflicted damage as HP.
-		Level 4: STR + 3, CON -1, Critical damage + 298, Hold Resistance + 10. P. Atk. + 246, P. Def. + 7%, HP + 521. Absorbs 2% of inflicted damage as HP with a certain probability. Resistance to 4 attributes + 15.
+		Level 1: STR + 3, CON - 1
+		Level 2: STR + 3, CON - 1, Critical damage + 298, Hold Resistance + 10.
+		Level 3: STR + 3, CON - 1, Critical damage + 298, Hold Resistance + 10. HP + 521. Absorbs 2% of inflicted damage as HP.
+		Level 4: STR + 3, CON - 1, Critical damage + 298, Hold Resistance + 10. P. Atk. + 246, P. Def. + 7%, HP + 521. Absorbs 2% of inflicted damage as HP with a certain probability. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13071" levels="4" name="Set Effect - Eternal Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13071" levels="4" name="Set Effect - Eternal Heavy Armor 5 Piece (Attack Type)">
 		<table name="#cAtkAdd"> 0 298 298 298 </table>
 		<table name="#rootVuln"> 0 10 10 10 </table>
 		<table name="#maxHp"> 0 0 521 521 </table>
@@ -1066,12 +1066,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: CON + 4, STR -2, HP + 536.
-		Level 2: CON + 4, STR -2, HP + 536. Chance of receiving a critical attack - 3.3%. Stun Resistance + 15.
-		Level 3: CON + 4, STR -2, HP + 536. Chance of receiving a critical attack - 3.3%. Reflect 20% of damage to attacker. Stun Resistance + 15. M. Def. + 58.
-		Level 4: CON + 4, STR -2, Atk. Spd. + 5%. HP + 536. Chance of receiving a critical attack - 3.3%. Reflect 20% of damage to attacker. Stun Resistance + 15. M. Def. + 58. P. Def. + 7% and additional + 108. Resistance to 4 attributes + 20.
+		Level 1: CON + 4, STR - 2, HP + 536.
+		Level 2: CON + 4, STR - 2, HP + 536. Chance of receiving a critical attack - 3.3%. Stun Resistance + 15.
+		Level 3: STR + 4, CON - 2, HP + 536, Chance of receiving a critical attack - 3.3%. Reflect 20% of damage to attacker. Stun Resistance + 15. M. Def. + 58.
+		Level 4: CON + 4, STR - 2, Chance of receiving a critical attack - 5%. Reflect 536 of damage to attacker. Stun Resistance + 3.3%. M. Def. + 20%. P. Def. + 15 and additional + 58. Resistance to 7% attributes + 108.
 	-->
-	<skill id="13072" levels="4" name="Set Effect - R99 Rare Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13072" levels="4" name="Set Effect - R99 Rare Heavy Armor 5 Piece (Defense Type)">
 		<table name="#name">Set Effect - R99 Rare Heavy Armor 2 Piece (Defense Type);Set Effect - R99 Rare Heavy Armor 3 Piece (Defense Type);Set Effect - R99 Rare Heavy Armor 4 Piece (Defense Type);Set Effect - R99 Rare Heavy Armor 5 Piece (Defense Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1079,12 +1079,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: STR + 4, CON -2, Atk. Spd. + 3%.
-		Level 2: STR + 4, CON -2, Atk. Spd. + 3%. Critical damage + 325, Hold Resistance + 15.
-		Level 3: STR + 4, CON -2, Atk. Spd. + 2.98%. Critical damage + 325, Hold Resistance + 15. HP + 536. Increased success rate for stun/knock back skills.
-		Level 4: STR + 4, CON -2, Atk. Spd. + 8%. Critical damage + 325, Hold Resistance + 15. P. Atk. + 255, P. Def. + 7%. HP + 536. Increased success rate for stun/knock back skills. Resistance to 4 attributes + 20.
+		Level 1: STR + 4, CON - 2, Atk. Spd. + 3%.
+		Level 2: STR + 4, CON - 2, Atk. Spd. + 3%. Critical damage + 325, Hold Resistance + 15.
+		Level 3: STR + 4, CON - 2, Atk. Spd. + 2.98%. Critical damage + 325, Hold Resistance + 15. HP + 536. Increased success rate for stun/knock back skills.
+		Level 4: STR + 4, CON - 2, Atk. Spd. + 8%. Critical damage + 325, Hold Resistance + 15. P. Atk. + 255, P. Def. + 7%. HP + 536. Increased success rate for stun/knock back skills. Resistance to 4 attributes + 20.
 	-->
-	<skill id="13073" levels="4" name="Set Effect - R99 Rare Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13073" levels="4" name="Set Effect - R99 Rare Heavy Armor 5 Piece (Attack Type)">
 		<table name="#name">Set Effect - R99 Rare Heavy Armor 2 Piece (Attack Type);Set Effect - R99 Rare Heavy Armor 3 Piece (Attack Type);Set Effect - R99 Rare Heavy Armor 4 Piece (Attack Type);Set Effect - R99 Rare Heavy Armor 5 Piece (Attack Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1095,9 +1095,9 @@
 		Level 1: DEX + 1
 		Level 2: DEX + 1, Evasion + 2.3, Sleep Resistance + 5.
 		Level 3: DEX + 1, Evasion + 2.3, Sleep Resistance + 5. Decreases MP - 4% upon P. Skill use.
-		Level 4: DEX + 1, Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 5. Consumes - 4% MP upon P. Skill use. Critical rate + 3.3%. Resistance to 4 attributes + 10.
+		Level 4: DEX + 1, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 5. Consumes -4% MP upon P. Skill use. Critical rate + 3.3%. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13074" levels="4" name="Set Effect - Immortal Light Armor 2 Piece (Assassin Type)">
+	<skill id="13074" levels="4" name="Set Effect - Immortal Light Armor 5 Piece (Assassin Type)">
 		<table name="#rEvas"> 0 2.3 2.3 2.3 </table>
 		<table name="#sleepVuln"> 0 5 5 5 </table>
 		<table name="#MpConsume"> 100 100 4 4 </table>
@@ -1129,11 +1129,11 @@
 	</skill>
 	<!-- 
 		Level 1: STR + 1, P. Atk. + 155.
-		Level 2: STR + 1, P. Atk. + 155. Hold Resistance + 5. Skill MP Consumption -4%.
-		Level 3: STR + 1, P. Atk. + 155. Hold Resistance + 5. HP + 463 and skill MP Consumption - 4%.
-		Level 4: STR + 1, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, and additional + 155. Hold Resistance + 5. HP + 463. Resistance to 4 attributes + 10 and skill MP Consumption - 4%.
+		Level 2: STR + 1, P. Atk. + 155, Hold Resistance + 5. Skill MP Consumption - 4%.
+		Level 3: STR + 1, P. Atk. + 155, Hold Resistance + 5, HP + 463 and skill MP Consumption - 4%.
+		Level 4: STR + 1, Atk. Spd + 3%, P. Atk. + 7% received heal amount + 155, and additional + 7%. Hold Resistance + 5. HP + 463. Resistance to 4 attributes + 10 and skill MP Consumption - 4%.
 	-->
-	<skill id="13075" levels="4" name="Set Effect - Immortal Light Armor 2 Piece (Enchant Type)">
+	<skill id="13075" levels="4" name="Set Effect - Immortal Light Armor 5 Piece (Enchant Type)">
 		<table name="#rootVuln"> 0 5 5 5 </table>
 		<table name="#MpConsume"> 0 4 4 4 </table>
 		<table name="#maxHp"> 0 463 463 463 </table>
@@ -1163,12 +1163,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: DEX + 2, STR -1
+		Level 1: DEX + 2, STR - 1
 		Level 2: DEX + 2, STR -1, Evasion + 2.3, Sleep Resistance + 7.
 		Level 3: DEX + 2, STR -1, Evasion + 2.3, Sleep Resistance + 7, P. Atk. + 180.
-		Level 4: DEX + 2, STR -1. Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 7. P. Atk. + 180. Critical rate + 3.3%. Resistance to 4 attributes + 10.
+		Level 4: DEX + 2, STR -1, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 7, P. Atk. + 180, Critical Rate + 3.3%. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13076" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Assassin Type)">
+	<skill id="13076" levels="4" name="Set Effect - Twilight Light Armor 5 Piece (Assassin Type)">
 		<table name="#rEvas"> 0 2.3 2.3 2.3 </table>
 		<table name="#sleepVuln"> 0 7 7 7 </table>
 		<table name="#pAtkAdd"> 0 0 180 180 </table>
@@ -1198,12 +1198,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 2, CON -1, P. Atk. + 180.
-		Level 2: STR + 2, CON -1, P. Atk. + 180. Hold Resistance + 7. Skill MP Consumption -10%.
-		Level 3: STR + 2, CON -1, P. Atk. + 180. Hold Resistance + 7. HP + 487/ Skill MP Consumption -10%.
-		Level 4: STR + 2, CON - 1, Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, and additional + 155. Hold Resistance + 7, HP + 487, Critical Damage + 242, Resistance to 4 attributes + 10, and Skill MP Consumption - 4%.
+		Level 1: STR + 2, CON - 1, P. Atk. + 180.
+		Level 2: STR + 2, CON - 1, P. Atk. + 180, Hold Resistance + 7. Skill MP Consumption - 10%.
+		Level 3: STR + 2, CON - 1, P. Atk. + 180, Hold Resistance + 7, HP + 487. Skill MP Consumption + 10%.
+		Level 4: STR + 2, CON - 1, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, and additional + 180. Hold Resistance + 7, HP + 487, Critical Damage + 242, Resistance to 4 attributes + 10, and Skill MP Consumption - 10%.
 	-->
-	<skill id="13077" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Enchant Type)">
+	<skill id="13077" levels="4" name="Set Effect - Twilight Light Armor 5 Piece (Enchant Type)">
 		<table name="#rootVuln"> 0 7 7 7 </table>
 		<table name="#MpConsume"> 0 10 10 10 </table>
 		<table name="#maxHp"> 0 0 487 487 </table>
@@ -1238,10 +1238,10 @@
 	<!-- 
 		Level 1: DEX + 3, STR -2
 		Level 2: DEX + 3, STR -2, Evasion + 2.3, Sleep Resistance + 10.
-		Level 3: DEX + 3, STR -2, Evasion + 2.3, Sleep Resistance + 10. Consumes 4% MP upon P. Skill use. Skill Power + 6%.
-		Level 4: DEX + 3, STR -2, Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 10. Consumes 4% MP upon P. Skill use. Skill Power + 6%. Critical rate + 3.3%. Resistance to 4 attributes + 15.
+		Level 3: DEX + 3, STR - 2, Evasion + 2.3, Sleep Resistance + 10. Consumes - 4% MP upon P. Skill use. Skill Power + 6%.
+		Level 4: DEX + 3, STR -2, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 10. Consumes - 4% MP upon P. Skill use. Skill Power + 6%, Critical rate + 3.3%. Resistance to 3 attributes + 15.
 	-->
-	<skill id="13078" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Assassin Type)">
+	<skill id="13078" levels="4" name="Set Effect - Seraph Light Armor 5 Piece (Assassin Type)">
 		<table name="#rEvas"> 0 2.3 2.3 2.3 </table>
 		<table name="#sleepVuln"> 0 10 10 10 </table>
 		<table name="#MpConsume"> 0 0 4 4 </table>
@@ -1272,12 +1272,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 3, CON -2, P. Atk. + 214.
-		Level 2: STR + 3, CON -2, P. Atk. + 214. Hold Resistance + 10. Skill MP Consumption -4%.
-		Level 3: STR + 3, CON -2, P. Atk. + 214. Hold Resistance + 10. HP + 511. Mental Attack Bonus + 20 and skill MP Consumption - 4%.
-		Level 4: STR + 3, CON - 2, Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, and additional + 217. Hold Resistance + 7, HP + 511, and Resistance to 4 attributes + 15. Mental Attack Bonus + 20, and Skill MP Consumption - 4%.
+		Level 1: STR + 3, CON - 2, P. Atk. + 214.
+		Level 2: STR + 3, CON - 2, P. Atk. + 214, Hold Resistance + 10. Skill MP Consumption - 4%.
+		Level 3: STR + 3, CON - 2, P. Atk. + 214, Hold Resistance + 10, HP + 511. Mental Attack Bonus + 20 and skill MP Consumption - 4%.
+		Level 4: STR + 3, CON - 2, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, and additional + 214. Hold Resistance + 10, HP + 511, and Resistance to 4 attributes + 15. Mental Attack Bonus + 20, an Skill MP Consumption - 4%.
 	-->
-	<skill id="13079" levels="4" name="Set Effect - Seraph Light Armor 2 Piece (Enchant Type)">
+	<skill id="13079" levels="4" name="Set Effect - Seraph Light Armor 5 Piece (Enchant Type)">
 		<table name="#rootVuln"> 0 10 10 10 </table>
 		<table name="#mpConsume"> 0 4 4 4 </table>
 		<table name="#derangementProf"> 0 0 20 20 </table>
@@ -1312,10 +1312,10 @@
 	<!-- 
 		Level 1: DEX + 3, STR -1
 		Level 2: DEX + 3, STR -1, Evasion + 2.3, Sleep Resistance + 10.
-		Level 3: DEX + 3, STR -1, Evasion + 2.3, Sleep Resistance + 10. Consumes 4% MP upon P. Skill use. Absorbs 1% of incurred damage as HP with a certain probability.
-		Level 4: DEX + 3, STR -1, Atk. Spd. + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 10. Consumes 4% MP upon P. Skill use. Absorbs 1% of incurred damage as HP with a certain probability. Critical rate + 3.3%. Resistance to 4 attributes + 15.
+		Level 3: DEX + 3, STR -1, Evasion + 2.3, Sleep Resistance + 10. Consumes - 4% MP upon P. Skill use. Absorbs 1% of incurred damage as HP with a certain possibility.
+		Level 4: DEX + 3, STR -1, Atk. Spd + 3%, P. Atk. + 7%, received heal amount + 7%, Evasion + 2.3, Sleep Resistance + 10. Consumes -4% MP upon P. Skill use. Absorbs 1% of incurred damage as HP with a certain possibility. Critical rate + 3.3%, Resistance to 4 attributes + 15.
 	-->
-	<skill id="13080" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Assassin Type)">
+	<skill id="13080" levels="4" name="Set Effect - Eternal Light Armor 5 Piece (Assassin Type)">
 		<table name="#rEvas"> 0 2.3 2.3 2.3 </table>
 		<table name="#sleepVuln"> 0 10 10 10 </table>
 		<table name="#absorbDam"> 0 0 1 1 </table>
@@ -1349,12 +1349,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: STR + 3, CON -1, P. Atk. + 246.
-		Level 2: STR + 3, CON -1, P. Atk. + 246. Hold Resistance + 10. Skill MP Consumption -4%.
-		Level 3: STR + 3, CON -1, P. Atk. + 246. Hold Resistance + 10. Skill Power + 6%. HP + 521. Skill MP Consumption - 4%.
-		Level 4: STR + 3, CON -1, Atk. Spd. + 3%, P. Atk. + 7% and additional + 246, and received heal amount + 7%. Hold Resistance + 10. Skill Power + 6%, HP + 521. Resistance to 4 attributes + 15. Skill MP Consumption - 4%.
+		Level 1: STR + 3, CON - 1, P. Atk. + 246.
+		Level 2: STR + 3, CON - 1, P. Atk. + 246, Hold Resistance + 10. Skill MP Consumption - 4%.
+		Level 3: STR + 3, CON - 1, P. Atk. + 246, Hold Resistance + 10, Skill Power + 6%, HP + 521. Skill MP Consumption - 4%.
+		Level 4: STR + 3, CON - 1, Atk. Spd + 3%, P. Atk. + 7%, and additional + 7%, and received heal amount + 246. Hold Resistance + 10, Skill Power + 6%, HP + 521. Resistance to 4 attributes + 15. Skill MP Consumption - 4%.
 	-->
-	<skill id="13081" levels="4" name="Set Effect - Eternal Light Armor 2 Piece (Enchant Type)">
+	<skill id="13081" levels="4" name="Set Effect - Eternal Light Armor 5 Piece (Enchant Type)">
 		<table name="#rootVuln"> 0 10 10 10 </table>
 		<table name="#mpConsume"> 0 4 4 4 </table>
 		<table name="#maxHp"> 0 0 521 521 </table>
@@ -1389,12 +1389,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: DEX + 4, STR -2. Atk. Spd. + 3%.
-		Level 2: DEX + 4, STR -2, Atk. Spd. + 3%, Evasion + 2.3, Sleep Resistance + 15.
-		Level 3: DEX + 4, STR -2, Atk. Spd. + 3%, Evasion + 2.3, Sleep Resistance + 15. Consumes 4% MP upon skill use. Critical damage + 325.
-		Level 4: DEX + 4, STR -2, Atk. Spd. + 13%, P. Atk. + 7%. Evasion + 2.3, Sleep Resistance + 15. Consumes 4% MP upon skill use. Critical damage + 325, Critical rate + 3.3%. Resistance to 4 attributes + 20.
+		Level 1: DEX + 4, STR -2, Atk. Spd. + 3%.
+		Level 2: DEX + 4, STR -2, Atk. Spd + 3%, Evasion + 2.3, Sleep Resistance + 15.
+		Level 3: DEX + 4, STR -2, Atk. Spd + 3%, Evasion + 2.3, Sleep Resistance + 15. Consumes - 4% MP upon skill use. Critical damage + 325.
+		Level 4: DEX + 4, STR -2, Atk. Spd + 13%, P. Atk. + 7%, Evasion + 2.3, Sleep Resistance + 15. Consumes - 4% MP upon skill use. Critical damage + 325, Critical rate + 3.3%. Resistance to 4 attributes + 20.
 	-->
-	<skill id="13082" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Assassin Type)">
+	<skill id="13082" levels="4" name="Set Effect - R99 Rare Light Armor 5 Piece (Assassin Type)">
 		<table name="#name">Set Effect - R99 Rare Light Armor 2 Piece (Assassin Type);Set Effect - R99 Rare Light Armor 3 Piece (Assassin Type);Set Effect - R99 Rare Light Armor 4 Piece (Assassin Type);Set Effect - R99 Rare Light Armor 5 Piece (Assassin Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1402,12 +1402,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: STR + 4, CON -2, P. Atk. + 255.
-		Level 2: STR + 4, CON -2, P. Atk. + 255. Casting time of beneficial magic + 10%. Hold Resistance + 15.
-		Level 3: STR + 4, CON -2, P. Atk. + 255. Casting time of beneficial magic + 10%. Hold Resistance + 15. Atk. Spd. + 3%. HP + 536.
-		Level 4: STR + 4, CON -2, Atk. Spd + 10%, P. Def. + 7% and additional + 255. Casting time of beneficial magic + 10%. Hold Resistance + 15. Atk. Spd. + 3%. HP + 536. MP Consumption upon skill use - 4%. Resistance to 4 attributes + 20.
+		Level 1: STR + 4, CON - 2, P. Atk. + 255.
+		Level 2: STR + 4, CON - 2, P. Atk. + 255. Casting time of beneficial magic + 10%. Hold Resistance + 15.
+		Level 3: STR + 4, CON - 2, P. Atk. + 255. Casting time of beneficial magic + 10%, Hold Resistance + 15, Atk. Spd + 3%, HP + 536.
+		Level 4: STR + 4, CON - 2, Atk. Spd + 10%, P. Atk. + 7%, and additional + 255. Casting time of beneficial magic + 10%. Hold Resistance + 15, Atk. Spd + 3%, HP + 536. MP Consumption upon skill use - 4%. Resistance to 4% attributes + 20.
 	-->
-	<skill id="13083" levels="4" name="Set Effect - R99 Rare Light Armor 2 Piece (Enchant Type)">
+	<skill id="13083" levels="4" name="Set Effect - R99 Rare Light Armor 5 Piece (Enchant Type)">
 		<table name="#name">Set Effect - R99 Rare Light Armor 2 Piece (Enchant Type);Set Effect - R99 Rare Light Armor 3 Piece (Enchant Type);Set Effect - R99 Rare Light Armor 4 Piece (Enchant Type);Set Effect - R99 Rare Light Armor 5 Piece (Enchant Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1415,12 +1415,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: INT + 1. Casting Spd. + 3%.
-		Level 2: INT + 1, Casting Spd. + 3%. MP + 185. Sleep Resistance + 5.
-		Level 3: INT + 1, Casting Spd. + 3%. MP + 185. Sleep Resistance + 5. MP recovery + 0.6.
-		Level 4: INT + 1, Casting Spd. + 15%. M. Atk. + 15%, received heal amount + 10%, MP + 185. Sleep Resistance + 5. MP Recovery + 0.6. M. Critical Rate + 3%. Resistance to 4 attributes + 10.
+		Level 1: INT + 1, Casting Spd. + 3%.
+		Level 2: INT + 1, Casting Spd. + 3%, MP + 185, Sleep Resistance + 5.
+		Level 3: INT + 1, Casting Spd. + 3%, MP + 185, Sleep Resistance + 5. MP recovery + 0.6.
+		Level 4: INT + 1, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 185. Sleep Resistance + 5, MP Recovery + 0.6. M. Critical Rate + 3%. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13084" levels="4" name="Set Effect - Immortal Robe 2 Piece (Magic Type)">
+	<skill id="13084" levels="4" name="Set Effect - Immortal Robe 5 Piece (Magic Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 185 185 185 </table>
 		<table name="#sleepVuln"> 0 5 5 5 </table>
@@ -1450,12 +1450,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: WIT + 1. Casting Spd. + 3%.
-		Level 2: WIT + 1, Casting Spd. + 3%, MP + 185, and Stun Resistance + 5.
-		Level 3: WIT + 1, Casting Spd. + 3%, MP + 185, Stun Resistance + 5, and MP recovery + 0.6.
-		Level 4: WIT + 1, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 185, Stun Resistance + 5, MP recovery + 0.6, Heal amount + 65, and Resistance to 4 attributes + 10.
+		Level 1: WIT + 1, Casting Spd. + 3%.
+		Level 2: WIT + 1, Casting Spd. + 3%, MP + 185, Stun Resistance + 5.
+		Level 3: WIT + 1, Casting Spd. + 3%, MP + 185, Stun Resistance + 5, MP Recovery + 0.6.
+		Level 4: WIT + 1, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 185, Stun Resistance + 5, MP Recovery + 0.6, Heal amount + 65, and Resistance to 4 attributes + 10.
 	-->
-	<skill id="13085" levels="4" name="Set Effect - Immortal Robe 2 Piece (Recovery Type)">
+	<skill id="13085" levels="4" name="Set Effect - Immortal Robe 5 Piece (Recovery Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 185 185 185 </table>
 		<table name="#stunVuln"> 0 5 5 5 </table>
@@ -1482,12 +1482,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: INT + 2. MEN -1. Casting Spd. + 3%.
-		Level 2: INT + 2, MEN -1. Casting Spd. + 3%. MP + 202. Sleep Resistance + 7.
-		Level 3: INT + 2, MEN -1. Casting Spd. + 3%. MP + 202. Sleep Resistance + 7. M. Atk. + 184.
-		Level 4: INT + 2, MEN - 1. Casting Spd. + 15%. M. Atk. + 15%, Received heal amount + 10%, MP + 202. Sleep Resistance + 7. M. Critical Rate + 3%. Resistance to 4 attributes + 10.
+		Level 1: INT + 2, MEN -1, Casting Spd. + 3%.
+		Level 2: INT + 2, MEN -1, Casting Spd. + 3%, MP + 202, Sleep Resistance + 7.
+		Level 3: INT + 2, MEN -1, Casting Spd. + 3%, MP + 202, Sleep Resistance + 7. M. Atk. + 184.
+		Level 4: INT + 2, MEN -1, Casting Spd. + 15%, M. Atk. + 15%, and additional + 184, and received heal amount + 10%. MP + 202, Sleep Resistance + 7, M. Critical Rate + 3%. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13086" levels="4" name="Set Effect - Twilight Robe 2 Piece (Magic Type)">
+	<skill id="13086" levels="4" name="Set Effect - Twilight Robe 5 Piece (Magic Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 202 202 202 </table>
 		<table name="#sleepVuln"> 0 7 7 7 </table>
@@ -1517,12 +1517,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: WIT+ 2. MEN -1. Casting Spd. + 3%.
-		Level 2: WIT+ 2, MEN -1. Casting Spd. + 3%. MP + 202. Stun Resistance + 7.
-		Level 3: WIT+ 2, MEN -1. Casting Spd. + 3%. MP + 202. Stun Resistance + 7. MP recovery + 0.7.
-		Level 4: WIT + 2, MEN -1. Casting Spd. + 15%. M. Atk. + 15%. received heal amount + 10%. Received heal amount + 10%. MP + 202. Stun Resistance + 7. MP recovery + 0.7. Heal amount + 85. Resistance to 4 attributes + 10.
+		Level 1: WIT + 2, MEN -1, Casting Spd. + 3%.
+		Level 2: WIT + 2, MEN -1, Casting Spd. + 3%, MP + 202, Stun Resistance + 7.
+		Level 3: WIT + 2, MEN -1, Casting Spd. + 3%, MP + 202, Stun Resistance + 7, MP Recovery + 0.7.
+		Level 4: WIT + 2, MEN -1, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 202, Stun Resistance + 7, MP Recovery + 0.7, Heal amount + 85. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13087" levels="4" name="Set Effect - Twilight Robe 2 Piece (Recovery Type)">
+	<skill id="13087" levels="4" name="Set Effect - Twilight Robe 5 Piece (Recovery Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 202 202 202 </table>
 		<table name="#stunVuln"> 0 7 7 7 </table>
@@ -1550,12 +1550,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: INT + 3. MEN -2. Casting Spd. + 3%.
-		Level 2: INT + 3, MEN -2. Casting Spd. + 3%. MP 221. Sleep Resistance + 10.
-		Level 3: INT + 3, MEN -2. Casting Spd. + 3%. MP + 221. Sleep Resistance + 10. M. Atk. + 222. Increases Magic Cancel Resistance.
-		Level 4: INT + 3, MEN - 2. Casting Spd. + 15%. M. Atk. + 15%, Received heal amount + 10%, MP + 221. Sleep Resistance + 10. Magic cancel on attributes increased. M. Critical Rate + 3%. Resistance to 4 attributes + 15.
+		Level 1: INT + 3, MEN -2, Casting Spd. + 3%.
+		Level 2: INT + 3, MEN -2, Casting Spd. + 3%, MP + 221, Sleep Resistance + 10.
+		Level 3: INT + 3, MEN -2, Casting Spd. + 3%, MP + 221, Sleep Resistance + 10, M. Atk. + 222. Increases Magic Cancel Resistance.
+		Level 4: INT + 3, MEN -2, Casting Spd. + 15%, M. Atk. + 15% and additional + 222, received heal amount + 10%, MP + 221, Sleep Resistance + 10. Magic cancel on attributes increased. M. Critical Rate + 3%. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13088" levels="4" name="Set Effect - Seraph Robe 2 Piece (Magic Type)">
+	<skill id="13088" levels="4" name="Set Effect - Seraph Robe 5 Piece (Magic Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 221 221 221 </table>
 		<table name="#sleepRes"> 0 10 10 10 </table>
@@ -1587,12 +1587,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: WIT+ 3. MEN -2. Casting Spd. + 3%.
-		Level 2: WIT+ 3, MEN -2. Casting Spd. + 3%. MP 221. Stun Resistance + 10.
-		Level 3: WIT+ 3, MEN -2. Casting Spd. + 3%. MP + 221. Stun Resistance + 10. MP recovery + 0.8. M. Critical Rate + 3%.
-		Level 4: WIT + 3, MEN -2. Casting Spd. + 15%. M. Atk. + 15%, received heal amount + 10%, MP + 221. Stun Resistance + 10. MP recovery + 0.8. M. Critical Rate + 3%. Heal amount + 89. Resistance to 4 attributes + 15.
+		Level 1: WIT + 3, MEN -2, Casting Spd. + 3%.
+		Level 2: WIT + 3, MEN -2, Casting Spd. + 3%, MP + 221, Stun Resistance + 10.
+		Level 3: WIT + 3, MEN -2, Casting Spd. + 3%, MP + 221, Stun Resistance + 10, MP Recovery + 0.8. M. Critical Rate + 3%.
+		Level 4: WIT + 3, MEN -2, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 221, Stun Resistance + 10, MP Recovery + 0.8, M. Critical Rate + 3%, Heal amount + 89. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13089" levels="4" name="Set Effect - Seraph Robe 2 Piece (Recovery Type)">
+	<skill id="13089" levels="4" name="Set Effect - Seraph Robe 5 Piece (Recovery Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#stunVuln"> 0 10 10 10 </table>
 		<table name="#regMp"> 0 0 0.8 0.8 </table>
@@ -1624,12 +1624,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: INT + 3. MEN -1. Casting Spd. + 3%.
-		Level 2: INT + 3, MEN -1. Casting Spd. + 3%. MP + 228. Sleep Resistance + 10.
-		Level 3: INT + 3, MEN -1. Casting Spd. + 3%. MP + 228. Sleep Resistance + 10. M. Atk. + 256. Increases damage during M. Critical by 297.
-		Level 4: INT + 3, MEN - 1. Casting Spd. + 15%. M. Atk. + 15%, Received heal amount + 10%, MP + 228. Sleep Resistance + 10. M. Critical damage + 297. M. Critical Rate + 3%. Resistance to 4 attributes + 15.
+		Level 1: INT + 3, MEN -1, Casting Spd. + 3%.
+		Level 2: INT + 3, MEN -1, Casting Spd. + 3%, MP + 228, Sleep Resistance + 10.
+		Level 3: INT + 3, MEN -1, Casting Spd. + 3%, MP + 228, Sleep Resistance + 10, M. Atk. + 256. Increases damage during M. Critical by 297.
+		Level 4: INT + 3, MEN -1, Casting Spd. + 15%, M. Atk. + 15% and additional + 256, received heal amount + 10%, MP + 228, Sleep Resistance + 10, M. Critical Damage + 297, M. Critical Rate + 3%. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13090" levels="4" name="Set Effect - Eternal Robe 2 Piece (Magic Type)">
+	<skill id="13090" levels="4" name="Set Effect - Eternal Robe 5 Piece (Magic Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 228 228 228 </table>
 		<table name="#sleepVuln"> 0 10 10 10 </table>
@@ -1661,12 +1661,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: WIT+ 3. MEN -1. Casting Spd. + 3%.
-		Level 2: WIT+ 3, MEN -1. Casting Spd. + 3%. MP + 228. Stun Resistance + 10.
-		Level 3: WIT+ 3, MEN -1. Casting Spd. + 3%. MP + 228. Stun Resistance + 10. Mental attack bonus + 15. MP recovery + 0.9.
-		Level 4: WIT + 3, MEN -1. Casting Spd. + 15%. M. Atk. + 15%. received heal amount + 10%. MP + 228. Stun Resistance + 10. MP recovery + 0.9. Mental Attack Bonus + 15. Heal amount + 108. Resistance to 4 attributes + 15.
+		Level 1: WIT + 3, MEN -1, Casting Spd. + 3%.
+		Level 2: WIT + 3, MEN -1, Casting Spd. + 3%, MP + 228, Stun Resistance + 10.
+		Level 3: WIT + 3, MEN -1, Casting Spd. + 3%, MP + 228, Stun Resistance + 10. Mental Attack Bonus + 15, MP Recovery + 0.9.
+		Level 4: WIT + 3, MEN -1, Casting Spd. + 15%, M. Atk. + 15%, received heal amount + 10%, MP + 228, Stun Resistance + 10, MP Recovery + 0.9. Mental Attack Bonus + 15, Heal amount + 108. Resistance to 4 attributes + 15.
 	-->
-	<skill id="13091" levels="4" name="Set Effect - Eternal Robe 2 Piece (Recovery Type)">
+	<skill id="13091" levels="4" name="Set Effect - Eternal Robe 5 Piece (Recovery Type)">
 		<table name="#mAtkSpd"> 3 3 3 15 </table>
 		<table name="#maxMp"> 0 228 228 228 </table>
 		<table name="#stunVuln"> 0 10 10 10 </table>
@@ -1698,12 +1698,12 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: INT + 4. MEN -2. Casting Spd. + 15%.
-		Level 2: INT + 4, MEN -2. Casting Spd. + 15%. MP 239. Sleep Resistance + 15.
-		Level 3: INT + 4, MEN -2. Casting Spd. + 15%. MP + 239. Sleep Resistance + 15. M. Atk. + 267. Mental Attack Bonus + 20.
-		Level 4: INT + 4, MEN -2. Casting Spd. + 25%. M. Atk. + 15% and additional + 267. MP + 239. Sleep Resistance + 15. Mental Attack Bonus + 20. M. Critical Rate + 3%. Resistance to 4 attributes + 20.
+		Level 1: INT + 4, MEN -2, Casting Spd. + 15%.
+		Level 2: INT + 4, MEN -2, Casting Spd. + 15%, MP + 239, Sleep Resistance + 15.
+		Level 3: INT + 4, MEN -2, Casting Spd. + 15%, MP + 239, Sleep Resistance + 15, M. Atk. + 267, Mental Attack Bonus + 20.
+		Level 4: INT + 4, MEN -2, Casting Spd. + 25%, M. Atk. + 15% and additional + 267. MP + 239, Sleep Resistance + 15. Mental Attack Bonus + 20, M. Critical Rate + 3%. Resistance to 4 attributes + 20.
 	-->
-	<skill id="13092" levels="4" name="Set Effect - R99 Rare Robe 2 Piece (Magic Type)">
+	<skill id="13092" levels="4" name="Set Effect - R99 Rare Robe 5 Piece (Magic Type)">
 		<table name="#name">Set Effect - R99 Rare Robe 2 Piece (Magic Type);Set Effect - R99 Rare Robe 3 Piece (Magic Type);Set Effect - R99 Rare Robe 4 Piece (Magic Type);Set Effect - R99 Rare Robe 5 Piece (Magic Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1711,117 +1711,117 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: WIT+ 4. MEN -2. Casting Spd. + 15%.
-		Level 2: WIT+ 4, MEN -2. Casting Spd. + 15%. MP 239. Stun Resistance + 15.
-		Level 3: WIT + 4, MEN -2. Casting Spd. + 15%. MP 239. Stun Resistance + 15. MP recovery 1. M. Atk. + 267.
-		Level 4: WIT + 4, MEN -2. Casting Spd. + 25%. M. Atk. + 15% and additional + 267. MP + 239. Stun Resistance + 15. MP recovery + 1. Heal amount + 111. Resistance to 4 attributes + 20.
+		Level 1: WIT + 4, MEN -2, Casting Spd. + 15%.
+		Level 2: WIT + 4, MEN -2, Casting Spd. + 15%, MP + 239, Stun Resistance + 15.
+		Level 3: WIT + 4, MEN -2, Casting Spd. + 15%, MP + 239, Stun Resistance + 15, MP Recovery + 1, M. Atk. + 267.
+		Level 4: WIT + 4, MEN -2, Casting Spd. + 25%, M. Atk. + 15% and additional 267, MP + 239, Stun Resistance + 15, MP Recovery + 1, Heal amount + 111. Resistance to 4 attributes + 20.
 	-->
-	<skill id="13093" levels="4" name="Set Effect - R99 Rare Robe 2 Piece (Recovery Type)">
+	<skill id="13093" levels="4" name="Set Effect - R99 Rare Robe 5 Piece (Recovery Type)">
 		<table name="#name">Set Effect - R99 Rare Robe 2 Piece (Recovery Type);Set Effect - R99 Rare Robe 3 Piece (Recovery Type);Set Effect - R99 Rare Robe 4 Piece (Recovery Type);Set Effect - R99 Rare Robe 5 Piece (Recovery Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13094" levels="4" name="R1 2 set">
+	<skill id="13094" levels="4" name="R1 5 set">
 		<table name="#name">R1 2 set;R1 3 set;R1 4 set;R1 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13095" levels="4" name="R1 2 set">
+	<skill id="13095" levels="4" name="R1 5 set">
 		<table name="#name">R1 2 set;R1 3 set;R1 4 set;R1 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13096" levels="4" name="R1 2 set">
+	<skill id="13096" levels="4" name="R1 5 set">
 		<table name="#name">R1 2 set;R1 3 set;R1 4 set;R1 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13097" levels="4" name="R2 2 set">
+	<skill id="13097" levels="4" name="R2 5 set">
 		<table name="#name">R2 2 set;R2 3 set;R2 4 set;R2 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13098" levels="4" name="R2 2 set">
+	<skill id="13098" levels="4" name="R2 5 set">
 		<table name="#name">R2 2 set;R2 3 set;R2 4 set;R2 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13099" levels="4" name="R2 2 set">
+	<skill id="13099" levels="4" name="R2 5 set">
 		<table name="#name">R2 2 set;R2 3 set;R2 4 set;R2 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13100" levels="4" name="R3 2 set">
+	<skill id="13100" levels="4" name="R3 5 set">
 		<table name="#name">R3 2 set;R3 3 set;R3 4 set;R3 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13101" levels="4" name="R3 2 set">
+	<skill id="13101" levels="4" name="R3 5 set">
 		<table name="#name">R3 2 set;R3 3 set;R3 4 set;R3 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13102" levels="4" name="R3 2 set">
+	<skill id="13102" levels="4" name="R3 5 set">
 		<table name="#name">R3 2 set;R3 3 set;R3 4 set;R3 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13103" levels="4" name="R4 2 set">
+	<skill id="13103" levels="4" name="R4 5 set">
 		<table name="#name">R4 2 set;R4 3 set;R4 4 set;R4 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13104" levels="4" name="R4 2 set">
+	<skill id="13104" levels="4" name="R4 5 set">
 		<table name="#name">R4 2 set;R4 3 set;R4 4 set;R4 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13105" levels="4" name="R4 2 set">
+	<skill id="13105" levels="4" name="R4 5 set">
 		<table name="#name">R4 2 set;R4 3 set;R4 4 set;R4 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13106" levels="4" name="R5 2 set">
+	<skill id="13106" levels="4" name="R5 5 set">
 		<table name="#name">R5 2 set;R5 3 set;R5 4 set;R5 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13107" levels="4" name="R5 2 set">
+	<skill id="13107" levels="4" name="R5 5 set">
 		<table name="#name">R5 2 set;R5 3 set;R5 4 set;R5 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="13108" levels="4" name="R5 2 set">
+	<skill id="13108" levels="4" name="R5 5 set">
 		<table name="#name">R5 2 set;R5 3 set;R5 4 set;R5 5 set</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1954,12 +1954,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: CON + 2, STR -1, Atk. Spd. + 15%. HP + 487.
-		Level 2: CON + 2, STR -1, Atk. Spd. + 15%. HP + 487. MP + 202, Stun Resistance + 7.
-		Level 3: CON + 2, STR -1, Atk. Spd. + 15%. MP + 202. HP + 487. Stun Resistance + 7. M. Def. + 44.
-		Level 4: CON + 2, STR -1, P. Atk. + 6%. Atk. Spd. + 15%. HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44. P. Def. + 87, resistance to 4 attributes + 10.
+		Level 1: CON + 2, STR - 1, Atk. Spd. + 15%. HP + 487.
+		Level 2: CON + 2, STR - 1, Atk. Spd. + 15%. HP + 487. MP + 202, Stun Resistance + 7.
+		Level 3: CON + 2, STR - 1, Atk. Spd. + 15%. MP + 202. HP + 487. Stun Resistance + 7. M. Def. + 44.
+		Level 4: CON + 2, STR - 1, P. Atk. + 6%. Atk. Spd. + 15%. HP + 487. MP + 202, Stun Resistance + 7. M. Def. + 44. P. Def. + 87, resistance to 4 attributes + 10.
 	-->
-	<skill id="13129" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Defense Type)">
+	<skill id="13129" levels="4" name="Set Effect - Twilight Heavy Armor 5 Piece (Defense Type)">
 		<table name="#name">Set Effect - Twilight Heavy Armor 2 Piece (Defense Type);Set Effect - Twilight Heavy Armor 3 Piece (Defense Type);Set Effect - Twilight Heavy Armor 4 Piece (Defense Type);Set Effect - Twilight Heavy Armor 5 Piece (Defense Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1967,12 +1967,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: STR + 2, CON -1, Atk. Spd. + 18%.
-		Level 2: STR + 2, CON -1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7.
-		Level 3: STR + 2, CON -1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7. MP Consumption -4% upon skill use.
-		Level 4: STR + 2, CON -1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7. P. Atk. + 180. P. Atk. + 6% and MP Consumption - 4% upon skill use. Resistance to 4 attributes + 10.
+		Level 1: STR + 2, CON - 1, Atk. Spd. + 18%.
+		Level 2: STR + 2, CON - 1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7.
+		Level 3: STR + 2, CON - 1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7. MP Consumption - 4% upon skill use.
+		Level 4: STR + 2, CON - 1, Atk. Spd. + 18%. Critical damage + 242, Hold Resistance + 7. P. Atk. + 180. P. Atk. + 6% and MP Consumption - 4% upon skill use. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13130" levels="4" name="Set Effect - Twilight Heavy Armor 2 Piece (Attack Type)">
+	<skill id="13130" levels="4" name="Set Effect - Twilight Heavy Armor 5 Piece (Attack Type)">
 		<table name="#name">Set Effect - Twilight Heavy Armor 2 Piece (Attack Type);Set Effect - Twilight Heavy Armor 3 Piece (Attack Type);Set Effect - Twilight Heavy Armor 4 Piece (Attack Type);Set Effect - Twilight Heavy Armor 5 Piece (Attack Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1980,12 +1980,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: DEX + 2, STR -1. Atk. Spd. + 18%.
-		Level 2: DEX + 2, STR -1, Atk. Spd. + 18%, Evasion + 2.3, Sleep Resistance + 7.
-		Level 3: DEX + 2, STR -1, Atk. Spd. + 18%, Evasion + 2.3, Sleep Resistance + 7. P. Atk. + 180.
-		Level 4: DEX + 2, STR -1. Atk. Spd. + 18%, Evasion + 2.3, Sleep Resistance + 7. P. Atk. + 6% and additionally + 180. Critical rate + 3.3%. Resistance to 4 attributes + 10.
+		Level 1: DEX + 2, STR -1, Atk. Spd. + 18%.
+		Level 2: DEX + 2, STR - 1. Atk. Spd. + 18%.
+		Level 3: DEX + 2, STR - 1, Atk. Spd. + 18%, Evasion + 2.3, Sleep Resistance + 7. P. Atk. + 180.
+		Level 4: DEX + 2, STR - 1. Atk. Spd. + 18%, Evasion + 2.3, Sleep Resistance + 7. P. Atk. + 6% and additionally + 180. Critical rate + 3.3%. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13131" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Assassin Type)">
+	<skill id="13131" levels="4" name="Set Effect - Twilight Light Armor 5 Piece (Assassin Type)">
 		<table name="#name">Set Effect - Twilight Light Armor 2 Piece (Assassin Type);Set Effect - Twilight Light Armor 3 Piece (Assassin Type);Set Effect - Twilight Light Armor 4 Piece (Assassin Type);Set Effect - Twilight Light Armor 5 Piece (Assassin Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -1993,12 +1993,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: STR + 2, CON -1, P. Atk. 180. P. Atk. Spd. + 15%.
-		Level 2: STR + 2, CON -1, P. Atk. + 180. P. Atk. Spd. + 15%. Hold Resistance + 7. Skill MP Consumption -10%.
-		Level 3: STR + 2, CON -1, P. Atk. + 180. P. Atk. Spd. + 15%. Hold Resistance + 7. HP + 487/ Skill MP Consumption -10%.
-		Level 4: STR + 2, CON -1, P. Atk. + 180. P. Atk. Spd. + 6%. Hold Resistance + 7. HP + 487. Critical damage + 242. Resistance to 4 attributes + 10. Skill MP Consumption -10%.
+		Level 1: STR + 2, CON - 1, P. Atk. + 180. P. Atk. Spd. + 15%.
+		Level 2: STR + 2, CON - 1, P. Atk. + 180. P. Atk. Spd. + 15%. Hold Resistance + 7. Skill MP Consumption - 10%.
+		Level 3: STR + 2, CON - 1, P. Atk. + 180. P. Atk. Spd. + 15%. Hold Resistance + 7. HP + 487/ Skill MP Consumption - 10%.
+		Level 4: STR + 2, CON - 1, P. Atk. + 180. P. Atk. + 6%, P. Atk. Spd. + 15%. Hold Resistance + 7. HP + 487. Critical damage + 242. Resistance to 4 attributes + 10. Skill MP Consumption - 10%.
 	-->
-	<skill id="13132" levels="4" name="Set Effect - Twilight Light Armor 2 Piece (Enchant Type)">
+	<skill id="13132" levels="4" name="Set Effect - Twilight Light Armor 5 Piece (Enchant Type)">
 		<table name="#name">Set Effect - Twilight Light Armor 2 Piece (Enchant Type);Set Effect - Twilight Light Armor 3 Piece (Enchant Type);Set Effect - Twilight Light Armor 4 Piece (Enchant Type);Set Effect - Twilight Light Armor 5 Piece (Enchant Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2006,12 +2006,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: INT + 2. MEN -1. Casting Spd. + 25%.
-		Level 2: INT + 2, MEN -1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7.
-		Level 3: INT + 2, MEN -1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7. M. Atk. + 184.
-		Level 4: INT + 2, MEN -1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7. M. Atk. + 40% and additionally + 184. M. Critical Rate + 40. Resistance to 4 attributes + 10.
+		Level 1: INT + 2. MEN - 1. Casting Spd. + 25%.
+		Level 2: INT + 2, MEN - 1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7.
+		Level 3: INT + 2, MEN - 1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7. M. Atk. + 184.
+		Level 4: INT + 2, MEN - 1. Casting Spd. + 25%. MP + 202. Sleep Resistance + 7. M. Atk. + 40% and additionally + 184. M. Critical Rate + 40. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13133" levels="4" name="Set Effect - Twilight Robe 2 Piece (Magic Type)">
+	<skill id="13133" levels="4" name="Set Effect - Twilight Robe 5 Piece (Magic Type)">
 		<table name="#name">Set Effect - Twilight Robe 2 Piece (Magic Type);Set Effect - Twilight Robe 3 Piece (Magic Type);Set Effect - Twilight Robe 4 Piece (Magic Type);Set Effect - Twilight Robe 5 Piece (Magic Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2019,12 +2019,12 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: WIT+ 2. MEN -1. Casting Spd. + 25%.
-		Level 2: WIT+ 2, MEN -1. Casting Spd. + 25%. MP + 202. Stun Resistance + 7.
-		Level 3: WIT+ 2, MEN -1. Casting Spd. + 25%. MP + 202. Stun Resistance + 7. MP recovery + 0.7.
-		Level 4: WIT + 2, MEN -1. Casting Spd. + 25%. MP + 202. M. Atk. + 40%. Stun Resistance + 7. MP recovery + 0.7. Heal amount + 85. Resistance to 4 attributes + 10.
+		Level 1: WIT+ 2. MEN - 1. Casting Spd. + 25%.
+		Level 2: WIT+ 2, MEN - 1. Casting Spd. + 25%. MP + 202. Stun Resistance + 7.
+		Level 3: WIT+ 2, MEN - 1. Casting Spd. + 25%. MP + 202. Stun Resistance + 7. MP recovery + 0.7.
+		Level 4: WIT + 2, MEN - 1. Casting Spd. + 25%. MP + 202. M. Atk. + 40%. Stun Resistance + 7. MP recovery + 0.7. Heal amount + 85. Resistance to 4 attributes + 10.
 	-->
-	<skill id="13134" levels="4" name="Set Effect - Twilight Robe 2 Piece (Recovery Type)">
+	<skill id="13134" levels="4" name="Set Effect - Twilight Robe 5 Piece (Recovery Type)">
 		<table name="#name">Set Effect - Twilight Robe 2 Piece (Recovery Type);Set Effect - Twilight Robe 3 Piece (Recovery Type);Set Effect - Twilight Robe 4 Piece (Recovery Type);Set Effect - Twilight Robe 5 Piece (Recovery Type)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -2931,6 +2931,7 @@
 		<for>
 			<addPercent stat="pvpPhysDef" val="0.6" />
 			<addPercent stat="pvpMagicalDef" val="0.6" />
+			<addPercent stat="pvpPhysSkillsDef" val="0.6" />
 		</for>
 	</skill>
 	<!-- Decreases damage received during PvP when equipped. -->
@@ -2942,6 +2943,7 @@
 		<for>
 			<addPercent stat="pvpPhysDef" val="1.5" />
 			<addPercent stat="pvpMagicalDef" val="1.5" />
+			<addPercent stat="pvpPhysSkillsDef" val="1.5" />
 		</for>
 	</skill>
 	<!-- Decreases damage received during PvP when equipped. -->
@@ -2953,6 +2955,7 @@
 		<for>
 			<addPercent stat="pvpPhysDef" val="2.1" />
 			<addPercent stat="pvpMagicalDef" val="2.1" />
+			<addPercent stat="pvpPhysSkillsDef" val="2.1" />
 		</for>
 	</skill>
 	<!-- Decreases damage received during PvP when equipped. -->
@@ -2964,6 +2967,7 @@
 		<for>
 			<addPercent stat="pvpPhysDef" val="6" />
 			<addPercent stat="pvpMagicalDef" val="6" />
+			<addPercent stat="pvpPhysSkillsDef" val="6" />
 		</for>
 	</skill>
 	<!-- Increases Max HP by 301. -->
@@ -3050,7 +3054,7 @@
 	</skill>
 	<!-- Accuracy + 3 and P. Critical Damage + 338. -->
 	<skill id="13253" levels="3" name="One-handed Blunt Special Ability">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
@@ -3088,7 +3092,7 @@
 	</skill>
 	<!-- P. Atk. + 96. -->
 	<skill id="13258" levels="3" name="Two-handed Sword Special Ability">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
@@ -3247,7 +3251,7 @@
 	</skill>
 	<!-- P. Critical Damage + 844. -->
 	<skill id="13279" levels="3" name="Dagger Special Ability">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
@@ -3589,7 +3593,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Wind/Water Resistance, Physical/Mental/Poison Resistance, Knock Back/Knock Down/Pulling Resistance, poison attack bonus, Critical Damage, Accuracy/Atk. Spd./Casting Spd./and MP recovery speed. -->
+	<!-- Increases Wind/Water Resistance, Physical/Mental/Poison Resistance, Knock Back/Knock Down/Pulling/Danger Zone Resistance, poison attack bonus, Critical Damage, Accuracy/Atk. Spd./Casting Spd./and MP recovery speed. -->
 	<skill id="13317" levels="1" name="Earth Wyrm Heart Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3614,7 +3618,8 @@
 	</skill>
 	<!-- Increases all party members' Atk. Spd./Casting Spd. by 5% for 5 minutes. In addition, 2% vampiric rate applies with a certain probability. -->
 	<skill id="13318" levels="1" name="Earth Wyrm Heart Ring">
-		<set name="target" val="TARGET_PARTY" />
+		<set name="target" val="TARGET_FRIENDS" />
+		<set name="targetDirection" val="PARTY_ALL" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3815,9 +3820,9 @@
 	<!-- 
 		Level 1: Set item is enchanted. P. Def. + 93, and MP Recovery Bonus + 32 when standing/ sitting.
 		Level 2: Increase P. Def. + 93 and MP recovery bonus + 32 in sit/stand/run status, and decrease physical skill MP consumption - 7% by enchanting a set item.
-		Level 3: Increase P. Def. + 93 MP recovery bonus + 32 in sit/stand/run status, additional P. Def. + 11%. P. Skill MP consumption - 7%, and chance of reflecting a debuff by enchanting a set item.
+		Level 3: Increase P. Def. + 93 MP recovery bonus + 3322 in sit/stand/run status, additional P. Def. + 11%. P. Skill MP consumption - 7%, and chance of reflecting a debuff by enchanting a set item.
 	-->
-	<skill id="13339" levels="3" name="Enchant Heavy Armor Set + 6 (R-grade)">
+	<skill id="13339" levels="3" name="Enchant Heavy Armor Set + 8 (R-grade)">
 		<table name="#PhysicalMpConsumeRate"> 0 7 7 </table>
 		<table name="#pDef"> 0 0 11 </table>
 		<table name="#debuffReflect"> 0 0 5 </table>
@@ -3835,11 +3840,11 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Set item is enchanted. M. Def. + 55, P. Evasion + 2, and Debuff Resistance + 10%. MP Recovery Bonus + 8 when standing/ sitting.
+		Level 1: Set item is enchanted. M. Def. + 55, P. Evasion + 2, and Debuff Resistance + 8. MP Recovery Bonus + 10% when standing/ sitting.
 		Level 2: Increase M. Def. + 55, P. Evasion + 2, MP recovery bonus + 8 in sit/stand status, debuff resistance + 10%, skill mastery effect + 14%, and chance of restoring 4% of damage as HP by enchanting a set item.
 		Level 3: Increase M. Def. + 55, P. Evasion + 2, Speed + 7, MP recovery bonus + 8 in sit/stand status, debuff resistance + 10%, skill mastery effect + 14%, decrease skill Cooldown by 10%, and chance of restoring 4% of damage as HP by enchanting a set item.
 	-->
-	<skill id="13340" levels="3" name="Enchant Light Armor Set + 6 (R-grade)">
+	<skill id="13340" levels="3" name="Enchant Light Armor Set + 8 (R-grade)">
 		<table name="#skillMastery"> 0 14 14 </table>
 		<table name="#absorbDam"> 1 4 4 </table>
 		<table name="#runSpd"> 0 0 7 </table>
@@ -3864,11 +3869,11 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Set item is enchanted. P. Def. + 60, Weight Limit + 30%, and Skill Cooldown - 3%. MP Recovery Bonus + 8 when standing/ sitting.
+		Level 1: Set item is enchanted. P. Def. + 60, Weight Limit + 8, and Skill Cooldown - 30%. MP Recovery Bonus + 3% when standing/ sitting.
 		Level 2: Set item is enchanted. Max HP + 4890, P. Def. + 60, MP Recovery Bonus + 8 when standing/sitting, Weight Limit + 30%, and Skill Cooldown - 3%.
-		Level 3: Set item is enchanted. Max HP + 4890, P. Def. + 60, MP Recovery Bonus + 8 when standing/sitting, Debuff Resistance + 11%, Weight Limit + 30%, Skill Cooldown - 3%, and Magic Cancel Rate - 53.8%.
+		Level 3: Set item is enchanted. Max HP + 4890, P. Def. + 60, MP Recovery Bonus + 8 when standing/sitting, Debuff Resistance + 11%, Weight Limit + 30%, Skill Cooldown - 3%, and Magic Cancel Rate - 53%.
 	-->
-	<skill id="13341" levels="3" name="Enchant Robe Set + 6 (R-grade)">
+	<skill id="13341" levels="3" name="Enchant Robe Set + 8 (R-grade)">
 		<table name="#maxHp"> 0 4890 4890 </table>
 		<table name="#debuffRes"> 0 0 11 </table>
 		<table name="#cancel"> 0 0 53.8 </table>
@@ -4806,7 +4811,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Dark Resistance + 12. -->
-	<skill id="13452" levels="1" name="Dark Attack Resistance Ring">
+	<skill id="13452" levels="1" name="Dark Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4857,7 +4862,7 @@
 		</for>
 	</skill>
 	<!-- Holy Resistance + 15. -->
-	<skill id="13459" levels="1" name="Top-grade Holy Attack Resistance Ring">
+	<skill id="13459" levels="1" name="Top-grade Holy Resistance Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4866,7 +4871,7 @@
 		</for>
 	</skill>
 	<!-- Dark Resistance + 15. -->
-	<skill id="13460" levels="1" name="Top-grade Dark Attack Resistance Ring">
+	<skill id="13460" levels="1" name="Top-grade Dark Resistance Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -5271,7 +5276,7 @@
 	</skill>
 	<!-- For 5 sec., locks target's P. Skill/ M. Skill. PvP Only. -->
 	<skill id="13520" levels="1" name="Giant's Silence">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="99" />
@@ -5293,7 +5298,7 @@
 	</skill>
 	<!-- Sleeps target for 5 sec. PvP Only. -->
 	<skill id="13521" levels="1" name="Giant's Sleep">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5316,7 +5321,7 @@
 	</skill>
 	<!-- For 10 sec., decreases target's Atk. Spd./ Casting Spd. by 50%. -->
 	<skill id="13522" levels="1" name="Giant's Winter">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5337,7 +5342,7 @@
 	</skill>
 	<!-- For 10 sec., increases target's Received Critical Damage and Critical Rate by 90%. -->
 	<skill id="13523" levels="1" name="Giant's Critical Weakness">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5356,7 +5361,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack/Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
+	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack success rate + 40%, Pull/Danger Zone Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
 	<skill id="13524" levels="1" name="Lindvior's Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5378,7 +5383,7 @@
 			<add stat="reflectDebuffs" val="10" />
 		</for>
 	</skill>
-	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack/Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
+	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack success rate + 40%, Pull/Danger Zone Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
 	<skill id="13525" levels="1" name="Blessed Lindvior's Earring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5497,7 +5502,7 @@
 		<for>
 			<addPercent stat="mAtkSpd" val="3" />
 			<add stat="mCritRate" val="10" />
-			<addPercentBase stat="mCritRate" val="115" />
+			<addPercent stat="mCritAtk" val="15" />
 		</for>
 	</skill>
 	<!-- M. Def. + 3%, M. Skill MP Consumption - 5%, Vampiric Rage + 5%. Wearing two of the items will only give the effect of one. -->
@@ -5713,13 +5718,13 @@
 		Level 1: M. Def. + 9.
 		Level 2: M. Def. + 10.
 		Level 3: M. Def. + 11.
-		Level 4: M. Def. + 12. Spd. + 7. Max HP + 510. Max MP + 510. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 6. STR +1, DEX + 1, CON +1, INT +1, WIT +1, MEN +1.
-		Level 5: M. Def. + 13. Spd. + 7. Max HP + 520. Max MP + 520. Skill MP consumption - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 12. STR +2, DEX +2, CON +2, INT +2, WIT +2, MEN +2.
-		Level 6: M. Def. + 14. Spd. + 7. Max HP + 531. Max MP + 531. Skill MP consumption - 3%. Reflect damage resistance + 5. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 18. STR +3, DEX +3, CON +2, INT +3, WIT +3, MEN +2.
-		Level 7: M. Def. + 15. Spd. + 7. Max HP + 536. Max MP + 536. Skill MP consumption - 3%. Reflect damage resistance + 5. hcance of restoring 5% of damage to the enemy as HP. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 24. STR +3, DEX +3, CON +3, INT +3, WIT +3, MEN +3.
-		Level 8: M. Def. + 16. Spd. + 7. Max HP + 541. Max MP + 541. Skill MP consumption - 3%. Reflect damage resistance + 5. Chance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 30. STR +4, DEX +4, CON +3, INT +4, WIT +4, MEN +3.
-		Level 9: M. Def. + 17. Spd. + 7. Max HP + 547. Max MP + 547. Skill MP consumption - 3%. Reflect damage resistance + 5. Chance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Received damage - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 36. STR +4, DEX +4, CON +4, INT +4, WIT +4, MEN +4.
-		Level 10: M. Def. + 18. Spd. + 7. Max HP + 552. Max MP + 552. Skill MP consumption - 3%. Reflect damage resistance + 5. Chance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Received damage - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 36. STR +4, DEX +4, CON +4, INT +4, WIT +4, MEN +4.
+		Level 4: M. Def. + 12, Speed + 7, Max HP + 510, Max MP + 510. Attribute Resistance + 6. STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1
+		Level 5: M. Def. + 13. Spd. + 7. Max HP + 520. Max MP + 520. Skill MP consumption - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 12. STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2.
+		Level 6: M. Def. + 14. Spd. + 7 Max HP + 531. Max MP + 531. Skill MP consumption - 3%. Reflect damage resistance + 5. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 18. STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2.
+		Level 7: M. Def. + 15. Spd. + 7. Max HP + 536. Max MP + 536. Skill MP consumption - 3%. Reflect damage resistance + 5. hcance of restoring 5% of damage to the enemy as HP. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 24. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3.
+		Level 8: M. Def. + 16. Spd. + 7. Max HP + 541. Max MP + 541. Skill MP consumption - 3%. Reflect damage resistance + 5. hcance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 30. STR + 4, DEX + 4, CON + 3, INT + 4, WIT + $14, MEN + 3.
+		Level 9: M. Def. + 17. Spd. + 7. Max HP + 547. Max MP + 547. Skill MP consumption - 3%. Reflect damage resistance + 5. hcance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Received damage - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + $15, MEN + 4.
+		Level 10: M. Def. + 18. Spd. + 7. Max HP + 552. Max MP + 552. Skill MP consumption - 3%. Reflect damage resistance + 5. hcance of restoring 5% of damage to the enemy as HP. Skill Cooldown - 3%. Received damage - 3%. Water, Fire, Wind, Earth, Holy, and Dark Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + $15, MEN + 4.
 	-->
 	<skill id="13562" levels="10" name="Enchant Effect: Shiny Elemental Shirt">
 		<table name="#mDef"> 9 10 11 12 13 14 15 16 17 18 </table>
@@ -5767,11 +5772,11 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 30 minutes.
-		Level 2: Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 29 minutes.
-		Level 3: Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 28 minutes.
-		Level 4: Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 27 minutes.
-		Level 5: Increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 25 minutes.
+		Level 1: For 60 seconds, increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 30 minutes minutes.
+		Level 2: For 60 seconds, increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 29 minutes minutes.
+		Level 3: For 60 seconds, increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 28 minutes minutes.
+		Level 4: For 60 seconds, increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 27 minutes minutes.
+		Level 5: For 60 seconds, increases P. Atk + 10%, M. Atk. + 20%, Atk. Spd. + 10%, Casting Spd. + 10%. Decreases P. Def. and M. Def. by 10%. Cooldown is 25 minutes minutes.
 	-->
 	<skill id="13563" levels="5" name="Einhasad's Wrath">
 		<table name="#reuseDelay"> 1800000 1740000 1680000 1620000 1500000 </table>
@@ -5795,10 +5800,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Invincible for 5 sec. Cooldown is 30 min.
-		Level 2: Invincible for 5 sec. Cooldown is 28 min.
-		Level 3: Invincible for 5 sec. Cooldown is 26 min.
-		Level 4: Invincible for 5 sec. Cooldown is 25 min.
+		Level 1: Invincible for 5 seconds. Cooldown is 30 minutes.
+		Level 2: Invincible for 5 seconds. Cooldown is 28 minutes.
+		Level 3: Invincible for 5 seconds. Cooldown is 26 minutes.
+		Level 4: Invincible for 5 seconds. Cooldown is 25 minutes.
 	-->
 	<skill id="13564" levels="4" name="Einhasad's Protection">
 		<table name="#reuseDelay"> 1800000 1680000 1560000 1500000 </table>
@@ -5914,7 +5919,7 @@
 		Level 2: Increase P. Def. + 971, HP recovery + 6, dark/holy resistance + 10, and damage reflect resistance + 6.
 		Level 3: Increases M. Def. + 736, P. Def. + 1126, MP recovery + 4, HP recovery + 8, all attribute resistance + 10, and damage reflect resistance + 14.
 	-->
-	<skill id="13569" levels="3" name="Talisman - Lilith">
+	<skill id="13569" levels="3" name="Talisman - Seven Signs">
 		<table name="#mDef"> 552 0 736 </table>
 		<table name="#mpRec"> 3 0 4 </table>
 		<table name="#hpRec"> 0 6 8 </table>
@@ -6069,7 +6074,7 @@
 			<baseAdd stat="WIT" val="3" />
 		</for>
 	</skill>
-	<!-- You can equip 5 Talismans.  STR + 3. Max HP + 531. -->
+	<!-- You can equip 5 Talismans. STR + 3. Max HP + 531. -->
 	<skill id="13588" levels="1" name="Aria's Bracelet: STR">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -6079,7 +6084,7 @@
 			<baseAdd stat="STR" val="3" />
 		</for>
 	</skill>
-	<!-- You can equip 5 Talismans.  INT + 3. Max HP + 531. -->
+	<!-- You can equip 5 Talismans. INT + 3. Max HP + 531. -->
 	<skill id="13589" levels="1" name="Aria's Bracelet: INT">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -6542,7 +6547,7 @@
 		</for>
 	</skill>
 	<!-- 5 Jewels can be equipped. -->
-	<skill id="13659" levels="1" name="Top-grade Brooch">
+	<skill id="13659" levels="1" name="La Vie En Rose's Radiant Brooch">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -6625,7 +6630,7 @@
 	</skill>
 	<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 	<skill id="13667" levels="1" name="Orichalcum Arrow - Additional Hit">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -6646,7 +6651,7 @@
 	</skill>
 	<!-- Ignores 30% of target's P. Def. at a set rate, and inflicts additional damage. -->
 	<skill id="13669" levels="1" name="Orichalcum Bolt - Additional Hit">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="power" val="20000" />
@@ -6790,7 +6795,7 @@
 		<set name="staticHitTime" val="true" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<player olympiad="true" />
 			</cond>
 			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
 				<addPercent stat="pAtk" val="20" />
@@ -6813,7 +6818,7 @@
 		<set name="staticHitTime" val="true" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<player olympiad="true" />
 			</cond>
 			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
 				<addPercent stat="pAtkSpd" val="20" />
@@ -6827,16 +6832,17 @@
 	</skill>
 	<!-- Cancels hiding, invincibility, Talisman buffs of enemies within range, and prevents them from obtaining those effects for 9 seconds. Cooldown is 90 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13693" levels="1" name="Talisman - Battle: Support">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="90000" />
-		<set name="skillRadius" val="3000" />
+		<set name="skillRadius" val="10000" />
 		<set name="staticHitTime" val="true" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<player olympiad="true" />
 			</cond>
 			<abnormal duration="9" stackLvl="1" stackType="talisman_battle_support">
 				<effect type="RemoveInvul" val="0" />
@@ -6893,16 +6899,16 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<!-- 
-		Level 1: For 30 min., Damage Reflect Resistance + 3%.
-		Level 2: For 30 min., Damage Reflect Resistance + 4%.
-		Level 3: For 30 min., Damage Reflect Resistance + 5%.
-		Level 4: For 30 min., Damage Reflect Resistance + 8%.
-		Level 5: For 30 min., Damage Reflect Resistance + 9%.
-		Level 6: For 30 min., Damage Reflect Resistance + 10%.
-		Level 8: For 30 min., Damage Reflect Resistance + 13%.
-		Level 9: For 30 min., Damage Reflect Resistance + 15%.
-		Level 11: For 30 min., Damage Reflect Resistance + 17%.
-		Level 12: For 30 min., Damage Reflect Resistance + 20%.
+		Level 1: For 30 minutes, Damage Reflect Resistance + 3%.
+		Level 2: For 30 minutes, Damage Reflect Resistance + 4%.
+		Level 3: For 30 minutes, Damage Reflect Resistance + 5%.
+		Level 4: For 30 minutes, Damage Reflect Resistance + 8%.
+		Level 5: For 30 minutes, Damage Reflect Resistance + 9%.
+		Level 6: For 30 minutes, Damage Reflect Resistance + 10%.
+		Level 8: For 30 minutes, Damage Reflect Resistance + 13%.
+		Level 9: For 30 minutes, Damage Reflect Resistance + 15%.
+		Level 11: For 30 minutes, Damage Reflect Resistance + 17%.
+		Level 12: For 30 minutes, Damage Reflect Resistance + 20%.
 	-->
 	<skill id="13700" levels="12" name="Item Skill: Damage Reflect Resistance">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -6915,18 +6921,18 @@
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., the enemy cannot target you.
-		Level 2: For 4 sec., the enemy cannot target you.
-		Level 3: For 5 sec., the enemy cannot target you.
-		Level 4: For 3 sec., the enemy cannot target you.
-		Level 5: For 4 sec., the enemy cannot target you.
-		Level 6: For 5 sec., the enemy cannot target you.
-		Level 7: For 4 sec., the enemy cannot target you.
-		Level 8: For 5 sec., the enemy cannot target you.
-		Level 9: For 6 sec., the enemy cannot target you.
-		Level 10: For 4 sec., the enemy cannot target you.
-		Level 11: For 5 sec., the enemy cannot target you.
-		Level 12: For 6 sec., the enemy cannot target you.
+		Level 1: For 3 seconds, the enemy cannot target you.
+		Level 2: For 4 seconds, the enemy cannot target you.
+		Level 3: For 5 seconds, the enemy cannot target you.
+		Level 4: For 3 seconds, the enemy cannot target you.
+		Level 5: For 4 seconds, the enemy cannot target you.
+		Level 6: For 5 seconds, the enemy cannot target you.
+		Level 7: For 4 seconds, the enemy cannot target you.
+		Level 8: For 5 seconds, the enemy cannot target you.
+		Level 9: For 6 seconds, the enemy cannot target you.
+		Level 10: For 4 seconds, the enemy cannot target you.
+		Level 11: For 5 seconds, the enemy cannot target you.
+		Level 12: For 6 seconds, the enemy cannot target you.
 	-->
 	<skill id="13701" levels="12" name="Item Skill: Disable Target">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -6938,18 +6944,18 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<!-- 
-		Level 1: Becomes invincible for 3 sec.
-		Level 2: Becomes invincible for 4 sec.
-		Level 3: Becomes invincible for 5 sec.
-		Level 4: Becomes invincible for 3 sec.
-		Level 5: Becomes invincible for 4 sec.
-		Level 6: Becomes invincible for 5 sec.
-		Level 7: Becomes invincible for 4 sec.
-		Level 8: Becomes invincible for 5 sec.
-		Level 9: Becomes invincible for 6 sec.
-		Level 10: Becomes invincible for 4 sec.
-		Level 11: Becomes invincible for 5 sec.
-		Level 12: Becomes invincible for 6 sec.
+		Level 1: Becomes invincible for 3 seconds.
+		Level 2: Becomes invincible for 4 seconds.
+		Level 3: Becomes invincible for 5 seconds.
+		Level 4: Becomes invincible for 3 seconds.
+		Level 5: Becomes invincible for 4 seconds.
+		Level 6: Becomes invincible for 5 seconds.
+		Level 7: Becomes invincible for 4 seconds.
+		Level 8: Becomes invincible for 5 seconds.
+		Level 9: Becomes invincible for 6 seconds.
+		Level 10: Becomes invincible for 4 seconds.
+		Level 11: Becomes invincible for 5 seconds.
+		Level 12: Becomes invincible for 6 seconds.
 	-->
 	<skill id="13702" levels="12" name="Item Skill: Invincibility">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7099,18 +7105,18 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Aerial Yoke on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Aerial Yoke on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Aerial Yoke on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Aerial Yoke on target and nearby enemies.
 	-->
 	<skill id="13708" levels="12" name="Item Skill: Aerial Yoke">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7125,18 +7131,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Fear on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Fear on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Fear on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Fear on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Fear on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Fear on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Fear on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Fear on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Fear on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Fear on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Fear on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Fear on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Fear on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Fear on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Fear on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Fear on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Fear on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Fear on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Fear on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Fear on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Fear on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Fear on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Fear on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Fear on target and nearby enemies.
 	-->
 	<skill id="13709" levels="12" name="Item Skill: Fear">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7151,18 +7157,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Hold on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Hold on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Hold on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Hold on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Hold on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Hold on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Hold on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Hold on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Hold on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Hold on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Hold on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Hold on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Hold on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Hold on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Hold on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Hold on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Hold on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Hold on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Hold on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Hold on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Hold on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Hold on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Hold on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Hold on target and nearby enemies.
 	-->
 	<skill id="13710" levels="12" name="Item Skill: Hold">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7177,18 +7183,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Knock Down on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Knock Down on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Knock Down on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Knock Down on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Knock Down on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Knock Down on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Knock Down on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Knock Down on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Knock Down on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Knock Down on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Knock Down on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Knock Down on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Knock Down on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Knock Down on target and nearby enemies.
 	-->
 	<skill id="13711" levels="12" name="Item Skill: Knock Down">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7203,18 +7209,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Paralysis on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Paralysis on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Paralysis on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Paralysis on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Paralysis on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Paralysis on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Paralysis on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Paralysis on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Paralysis on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Paralysis on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Paralysis on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Paralysis on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Paralysis on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Paralysis on target and nearby enemies.
 	-->
 	<skill id="13712" levels="12" name="Item Skill: Paralyze">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7229,18 +7235,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Silence on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Silence on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Silence on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Silence on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Silence on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Silence on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Silence on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Silence on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Silence on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Silence on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Silence on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Silence on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Silence on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Silence on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Silence on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Silence on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Silence on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Silence on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Silence on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Silence on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Silence on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Silence on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Silence on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Silence on target and nearby enemies.
 	-->
 	<skill id="13713" levels="12" name="Item Skill: Silence">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7255,18 +7261,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Sleep on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Sleep on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Sleep on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Sleep on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Sleep on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Sleep on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Sleep on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Sleep on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Sleep on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Sleep on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Sleep on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Sleep on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Sleep on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Sleep on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Sleep on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Sleep on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Sleep on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Sleep on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Sleep on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Sleep on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Sleep on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Sleep on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Sleep on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Sleep on target and nearby enemies.
 	-->
 	<skill id="13714" levels="12" name="Item Skill: Sleep">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7281,18 +7287,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 10 sec., decreases the Speed of target and nearby enemies by 30.
-		Level 2: For 10 sec., decreases the Speed of target and nearby enemies by 40.
-		Level 3: For 10 sec., decreases the Speed of target and nearby enemies by 50.
-		Level 4: For 10 sec., decreases the Speed of target and nearby enemies by 40.
-		Level 5: For 10 sec., decreases the Speed of target and nearby enemies by 50.
-		Level 6: For 10 sec., decreases the Speed of target and nearby enemies by 60.
-		Level 7: For 10 sec., decreases the Speed of target and nearby enemies by 50.
-		Level 8: For 10 sec., decreases the Speed of target and nearby enemies by 60.
-		Level 9: For 10 sec., decreases the Speed of target and nearby enemies by 70.
-		Level 10: For 10 sec., decreases the Speed of target and nearby enemies by 60.
-		Level 11: For 10 sec., decreases the Speed of target and nearby enemies by 70.
-		Level 12: For 10 sec., decreases the Speed of target and nearby enemies by 80.
+		Level 1: For 10 seconds, decreases the Speed of target and nearby enemies by 30.
+		Level 2: For 10 seconds, decreases the Speed of target and nearby enemies by 40.
+		Level 3: For 10 seconds, decreases the Speed of target and nearby enemies by 50.
+		Level 4: For 10 seconds, decreases the Speed of target and nearby enemies by 40.
+		Level 5: For 10 seconds, decreases the Speed of target and nearby enemies by 50.
+		Level 6: For 10 seconds, decreases the Speed of target and nearby enemies by 60.
+		Level 7: For 10 seconds, decreases the Speed of target and nearby enemies by 50.
+		Level 8: For 10 seconds, decreases the Speed of target and nearby enemies by 60.
+		Level 9: For 10 seconds, decreases the Speed of target and nearby enemies by 70.
+		Level 10: For 10 seconds, decreases the Speed of target and nearby enemies by 60.
+		Level 11: For 10 seconds, decreases the Speed of target and nearby enemies by 70.
+		Level 12: For 10 seconds, decreases the Speed of target and nearby enemies by 80.
 	-->
 	<skill id="13715" levels="12" name="Item Skill: Slow">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7307,18 +7313,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Stun on target and nearby enemies.
-		Level 2: For 4 sec., inflicts Stun on target and nearby enemies.
-		Level 3: For 5 sec., inflicts Stun on target and nearby enemies.
-		Level 4: For 3 sec., inflicts Stun on target and nearby enemies.
-		Level 5: For 4 sec., inflicts Stun on target and nearby enemies.
-		Level 6: For 5 sec., inflicts Stun on target and nearby enemies.
-		Level 7: For 3 sec., inflicts Stun on target and nearby enemies.
-		Level 8: For 4 sec., inflicts Stun on target and nearby enemies.
-		Level 9: For 5 sec., inflicts Stun on target and nearby enemies.
-		Level 10: For 3 sec., inflicts Stun on target and nearby enemies.
-		Level 11: For 4 sec., inflicts Stun on target and nearby enemies.
-		Level 12: For 5 sec., inflicts Stun on target and nearby enemies.
+		Level 1: For 3 seconds, inflicts Stun on target and nearby enemies.
+		Level 2: For 4 seconds, inflicts Stun on target and nearby enemies.
+		Level 3: For 5 seconds, inflicts Stun on target and nearby enemies.
+		Level 4: For 3 seconds, inflicts Stun on target and nearby enemies.
+		Level 5: For 4 seconds, inflicts Stun on target and nearby enemies.
+		Level 6: For 5 seconds, inflicts Stun on target and nearby enemies.
+		Level 7: For 3 seconds, inflicts Stun on target and nearby enemies.
+		Level 8: For 4 seconds, inflicts Stun on target and nearby enemies.
+		Level 9: For 5 seconds, inflicts Stun on target and nearby enemies.
+		Level 10: For 3 seconds, inflicts Stun on target and nearby enemies.
+		Level 11: For 4 seconds, inflicts Stun on target and nearby enemies.
+		Level 12: For 5 seconds, inflicts Stun on target and nearby enemies.
 	-->
 	<skill id="13716" levels="12" name="Item Skill: Stun">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7346,18 +7352,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Aerial Yoke on target.
-		Level 2: For 4 sec., inflicts Aerial Yoke on target.
-		Level 3: For 5 sec., inflicts Aerial Yoke on target.
-		Level 4: For 3 sec., inflicts Aerial Yoke on target.
-		Level 5: For 4 sec., inflicts Aerial Yoke on target.
-		Level 6: For 5 sec., inflicts Aerial Yoke on target.
-		Level 7: For 3 sec., inflicts Aerial Yoke on target.
-		Level 8: For 4 sec., inflicts Aerial Yoke on target.
-		Level 9: For 5 sec., inflicts Aerial Yoke on target.
-		Level 10: For 3 sec., inflicts Aerial Yoke on target.
-		Level 11: For 4 sec., inflicts Aerial Yoke on target.
-		Level 12: For 5 sec., inflicts Aerial Yoke on target.
+		Level 1: For 3 seconds, inflicts Aerial Yoke on target.
+		Level 2: For 4 seconds, inflicts Aerial Yoke on target.
+		Level 3: For 5 seconds, inflicts Aerial Yoke on target.
+		Level 4: For 3 seconds, inflicts Aerial Yoke on target.
+		Level 5: For 4 seconds, inflicts Aerial Yoke on target.
+		Level 6: For 5 seconds, inflicts Aerial Yoke on target.
+		Level 7: For 3 seconds, inflicts Aerial Yoke on target.
+		Level 8: For 4 seconds, inflicts Aerial Yoke on target.
+		Level 9: For 5 seconds, inflicts Aerial Yoke on target.
+		Level 10: For 3 seconds, inflicts Aerial Yoke on target.
+		Level 11: For 4 seconds, inflicts Aerial Yoke on target.
+		Level 12: For 5 seconds, inflicts Aerial Yoke on target.
 	-->
 	<skill id="13718" levels="12" name="Item Skill: Aerial Yoke">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7372,18 +7378,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Fear on target.
-		Level 2: For 4 sec., inflicts Fear on target.
-		Level 3: For 5 sec., inflicts Fear on target.
-		Level 4: For 3 sec., inflicts Fear on target.
-		Level 5: For 4 sec., inflicts Fear on target.
-		Level 6: For 5 sec., inflicts Fear on target.
-		Level 7: For 3 sec., inflicts Fear on target.
-		Level 8: For 4 sec., inflicts Fear on target.
-		Level 9: For 5 sec., inflicts Fear on target.
-		Level 10: For 3 sec., inflicts Fear on target.
-		Level 11: For 4 sec., inflicts Fear on target.
-		Level 12: For 5 sec., inflicts Fear on target.
+		Level 1: For 3 seconds, inflicts Fear on target.
+		Level 2: For 4 seconds, inflicts Fear on target.
+		Level 3: For 5 seconds, inflicts Fear on target.
+		Level 4: For 3 seconds, inflicts Fear on target.
+		Level 5: For 4 seconds, inflicts Fear on target.
+		Level 6: For 5 seconds, inflicts Fear on target.
+		Level 7: For 3 seconds, inflicts Fear on target.
+		Level 8: For 4 seconds, inflicts Fear on target.
+		Level 9: For 5 seconds, inflicts Fear on target.
+		Level 10: For 3 seconds, inflicts Fear on target.
+		Level 11: For 4 seconds, inflicts Fear on target.
+		Level 12: For 5 seconds, inflicts Fear on target.
 	-->
 	<skill id="13719" levels="12" name="Item Skill: Fear">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7398,18 +7404,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Silence on target.
-		Level 2: For 4 sec., inflicts Silence on target.
-		Level 3: For 5 sec., inflicts Silence on target.
-		Level 4: For 3 sec., inflicts Silence on target.
-		Level 5: For 4 sec., inflicts Silence on target.
-		Level 6: For 5 sec., inflicts Silence on target.
-		Level 7: For 3 sec., inflicts Silence on target.
-		Level 8: For 4 sec., inflicts Silence on target.
-		Level 9: For 5 sec., inflicts Silence on target.
-		Level 10: For 3 sec., inflicts Silence on target.
-		Level 11: For 4 sec., inflicts Silence on target.
-		Level 12: For 5 sec., inflicts Silence on target.
+		Level 1: For 3 seconds, inflicts Silence on target.
+		Level 2: For 4 seconds, inflicts Silence on target.
+		Level 3: For 5 seconds, inflicts Silence on target.
+		Level 4: For 3 seconds, inflicts Silence on target.
+		Level 5: For 4 seconds, inflicts Silence on target.
+		Level 6: For 5 seconds, inflicts Silence on target.
+		Level 7: For 3 seconds, inflicts Silence on target.
+		Level 8: For 4 seconds, inflicts Silence on target.
+		Level 9: For 5 seconds, inflicts Silence on target.
+		Level 10: For 3 seconds, inflicts Silence on target.
+		Level 11: For 4 seconds, inflicts Silence on target.
+		Level 12: For 5 seconds, inflicts Silence on target.
 	-->
 	<skill id="13720" levels="12" name="Item Skill: Silence">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7424,18 +7430,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Sleep on target.
-		Level 2: For 4 sec., inflicts Sleep on target.
-		Level 3: For 5 sec., inflicts Sleep on target.
-		Level 4: For 3 sec., inflicts Sleep on target.
-		Level 5: For 4 sec., inflicts Sleep on target.
-		Level 6: For 5 sec., inflicts Sleep on target.
-		Level 7: For 3 sec., inflicts Sleep on target.
-		Level 8: For 4 sec., inflicts Sleep on target.
-		Level 9: For 5 sec., inflicts Sleep on target.
-		Level 10: For 3 sec., inflicts Sleep on target.
-		Level 11: For 4 sec., inflicts Sleep on target.
-		Level 12: For 5 sec., inflicts Sleep on target.
+		Level 1: For 3 seconds, inflicts Sleep on target.
+		Level 2: For 4 seconds, inflicts Sleep on target.
+		Level 3: For 5 seconds, inflicts Sleep on target.
+		Level 4: For 3 seconds, inflicts Sleep on target.
+		Level 5: For 4 seconds, inflicts Sleep on target.
+		Level 6: For 5 seconds, inflicts Sleep on target.
+		Level 7: For 3 seconds, inflicts Sleep on target.
+		Level 8: For 4 seconds, inflicts Sleep on target.
+		Level 9: For 5 seconds, inflicts Sleep on target.
+		Level 10: For 3 seconds, inflicts Sleep on target.
+		Level 11: For 4 seconds, inflicts Sleep on target.
+		Level 12: For 5 seconds, inflicts Sleep on target.
 	-->
 	<skill id="13721" levels="12" name="Item Skill: Sleep">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7450,18 +7456,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 10 sec., decreases the Speed of target by 30.
-		Level 2: For 10 sec., decreases the Speed of target by 40.
-		Level 3: For 10 sec., decreases the Speed of target by 50.
-		Level 4: For 10 sec., decreases the Speed of target by 40.
-		Level 5: For 10 sec., decreases the Speed of target by 50.
-		Level 6: For 10 sec., decreases the Speed of target by 60.
-		Level 7: For 10 sec., decreases the Speed of target by 50.
-		Level 8: For 10 sec., decreases the Speed of target by 60.
-		Level 9: For 10 sec., decreases the Speed of target by 70.
-		Level 10: For 10 sec., decreases the Speed of target by 60.
-		Level 11: For 10 sec., decreases the Speed of target by 70.
-		Level 12: For 10 sec., decreases the Speed of target by 80.
+		Level 1: For 10 seconds, decreases the Speed of target by 30.
+		Level 2: For 10 seconds, decreases the Speed of target by 40.
+		Level 3: For 10 seconds, decreases the Speed of target by 50.
+		Level 4: For 10 seconds, decreases the Speed of target by 40.
+		Level 5: For 10 seconds, decreases the Speed of target by 50.
+		Level 6: For 10 seconds, decreases the Speed of target by 60.
+		Level 7: For 10 seconds, decreases the Speed of target by 50.
+		Level 8: For 10 seconds, decreases the Speed of target by 60.
+		Level 9: For 10 seconds, decreases the Speed of target by 70.
+		Level 10: For 10 seconds, decreases the Speed of target by 60.
+		Level 11: For 10 seconds, decreases the Speed of target by 70.
+		Level 12: For 10 seconds, decreases the Speed of target by 80.
 	-->
 	<skill id="13722" levels="12" name="Item Skill: Slow">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7476,18 +7482,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Stun on target.
-		Level 2: For 4 sec., inflicts Stun on target.
-		Level 3: For 5 sec., inflicts Stun on target.
-		Level 4: For 3 sec., inflicts Stun on target.
-		Level 5: For 4 sec., inflicts Stun on target.
-		Level 6: For 5 sec., inflicts Stun on target.
-		Level 7: For 3 sec., inflicts Stun on target.
-		Level 8: For 4 sec., inflicts Stun on target.
-		Level 9: For 5 sec., inflicts Stun on target.
-		Level 10: For 3 sec., inflicts Stun on target.
-		Level 11: For 4 sec., inflicts Stun on target.
-		Level 12: For 5 sec., inflicts Stun on target.
+		Level 1: For 3 seconds, inflicts Stun on target.
+		Level 2: For 4 seconds, inflicts Stun on target.
+		Level 3: For 5 seconds, inflicts Stun on target.
+		Level 4: For 3 seconds, inflicts Stun on target.
+		Level 5: For 4 seconds, inflicts Stun on target.
+		Level 6: For 5 seconds, inflicts Stun on target.
+		Level 7: For 3 seconds, inflicts Stun on target.
+		Level 8: For 4 seconds, inflicts Stun on target.
+		Level 9: For 5 seconds, inflicts Stun on target.
+		Level 10: For 3 seconds, inflicts Stun on target.
+		Level 11: For 4 seconds, inflicts Stun on target.
+		Level 12: For 5 seconds, inflicts Stun on target.
 	-->
 	<skill id="13723" levels="12" name="Item Skill: Stun">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7502,18 +7508,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Hold on target.
-		Level 2: For 4 sec., inflicts Hold on target.
-		Level 3: For 5 sec., inflicts Hold on target.
-		Level 4: For 3 sec., inflicts Hold on target.
-		Level 5: For 4 sec., inflicts Hold on target.
-		Level 6: For 5 sec., inflicts Hold on target.
-		Level 7: For 3 sec., inflicts Hold on target.
-		Level 8: For 4 sec., inflicts Hold on target.
-		Level 9: For 5 sec., inflicts Hold on target.
-		Level 10: For 3 sec., inflicts Hold on target.
-		Level 11: For 4 sec., inflicts Hold on target.
-		Level 12: For 5 sec., inflicts Hold on target.
+		Level 1: For 3 seconds, inflicts Hold on target.
+		Level 2: For 4 seconds, inflicts Hold on target.
+		Level 3: For 5 seconds, inflicts Hold on target.
+		Level 4: For 3 seconds, inflicts Hold on target.
+		Level 5: For 4 seconds, inflicts Hold on target.
+		Level 6: For 5 seconds, inflicts Hold on target.
+		Level 7: For 3 seconds, inflicts Hold on target.
+		Level 8: For 4 seconds, inflicts Hold on target.
+		Level 9: For 5 seconds, inflicts Hold on target.
+		Level 10: For 3 seconds, inflicts Hold on target.
+		Level 11: For 4 seconds, inflicts Hold on target.
+		Level 12: For 5 seconds, inflicts Hold on target.
 	-->
 	<skill id="13724" levels="12" name="Item Skill: Hold">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7528,18 +7534,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Knock Down on target.
-		Level 2: For 4 sec., inflicts Knock Down on target.
-		Level 3: For 5 sec., inflicts Knock Down on target.
-		Level 4: For 3 sec., inflicts Knock Down on target.
-		Level 5: For 4 sec., inflicts Knock Down on target.
-		Level 6: For 5 sec., inflicts Knock Down on target.
-		Level 7: For 3 sec., inflicts Knock Down on target.
-		Level 8: For 4 sec., inflicts Knock Down on target.
-		Level 9: For 5 sec., inflicts Knock Down on target.
-		Level 10: For 3 sec., inflicts Knock Down on target.
-		Level 11: For 4 sec., inflicts Knock Down on target.
-		Level 12: For 5 sec., inflicts Knock Down on target.
+		Level 1: For 3 seconds, inflicts Knock Down on target.
+		Level 2: For 4 seconds, inflicts Knock Down on target.
+		Level 3: For 5 seconds, inflicts Knock Down on target.
+		Level 4: For 3 seconds, inflicts Knock Down on target.
+		Level 5: For 4 seconds, inflicts Knock Down on target.
+		Level 6: For 5 seconds, inflicts Knock Down on target.
+		Level 7: For 3 seconds, inflicts Knock Down on target.
+		Level 8: For 4 seconds, inflicts Knock Down on target.
+		Level 9: For 5 seconds, inflicts Knock Down on target.
+		Level 10: For 3 seconds, inflicts Knock Down on target.
+		Level 11: For 4 seconds, inflicts Knock Down on target.
+		Level 12: For 5 seconds, inflicts Knock Down on target.
 	-->
 	<skill id="13725" levels="12" name="Item Skill: Knock Down">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -7554,18 +7560,18 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- 
-		Level 1: For 3 sec., inflicts Paralysis on target.
-		Level 2: For 4 sec., inflicts Paralysis on target.
-		Level 3: For 5 sec., inflicts Paralysis on target.
-		Level 4: For 3 sec., inflicts Paralysis on target.
-		Level 5: For 4 sec., inflicts Paralysis on target.
-		Level 6: For 5 sec., inflicts Paralysis on target.
-		Level 7: For 3 sec., inflicts Paralysis on target.
-		Level 8: For 4 sec., inflicts Paralysis on target.
-		Level 9: For 5 sec., inflicts Paralysis on target.
-		Level 10: For 3 sec., inflicts Paralysis on target.
-		Level 11: For 4 sec., inflicts Paralysis on target.
-		Level 12: For 5 sec., inflicts Paralysis on target.
+		Level 1: For 3 seconds, inflicts Paralysis on target.
+		Level 2: For 4 seconds, inflicts Paralysis on target.
+		Level 3: For 5 seconds, inflicts Paralysis on target.
+		Level 4: For 3 seconds, inflicts Paralysis on target.
+		Level 5: For 4 seconds, inflicts Paralysis on target.
+		Level 6: For 5 seconds, inflicts Paralysis on target.
+		Level 7: For 3 seconds, inflicts Paralysis on target.
+		Level 8: For 4 seconds, inflicts Paralysis on target.
+		Level 9: For 5 seconds, inflicts Paralysis on target.
+		Level 10: For 3 seconds, inflicts Paralysis on target.
+		Level 11: For 4 seconds, inflicts Paralysis on target.
+		Level 12: For 5 seconds, inflicts Paralysis on target.
 	-->
 	<skill id="13726" levels="12" name="Item Skill: Paralyze">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
@@ -8832,7 +8838,7 @@
 		Level 1: All Stats + 1 with the power of Talisman.
 		Level 2: All Stats + 2 with the power of Talisman.
 	-->
-	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (High)">
+	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
 		<table name="#name">Christmas Talisman - ALL STAT (Low);Christmas Talisman - ALL STAT (High)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -9209,6 +9215,1058 @@
 			<addPercent stat="pvePhysSkillsDmg" val="10" />
 			<addPercent stat="pveMagicalDmg" val="10" />
 		</for>
+	</skill>
+	<!-- Allows the use of Blessed Resurrection. Cooldown is 12 hours. -->
+	<skill id="13848" levels="1" name="Blessed Resurrection">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="3600000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Can obtain 2 Sheep Bait Coupons when using the skill.(Only once a day) -->
+	<skill id="13849" levels="1" name="Baa~">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="-1000" />
+	</skill>
+	<!-- STR + 3, P. Atk. + 3% -->
+	<skill id="13850" levels="1" name="Sheep Hat - Physical">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- INT + 3, M. Atk. + 5% -->
+	<skill id="13851" levels="1" name="Sheep Hat - Magic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- CON + 3, P./M. Def. + 3% -->
+	<skill id="13852" levels="1" name="Sheep Hat - Defense">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Teleport to the Talking Island Village. -->
+	<skill id="13853" levels="1" name="Agathion Teleport: Talking Island Village">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<!-- Teleport to the Town of Goddard. -->
+	<skill id="13854" levels="1" name="Agathion Teleport: Town of Goddard">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<!-- Teleport to the Town of Schuttgart. -->
+	<skill id="13855" levels="1" name="Agathion Teleport: Town of Schuttgart">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="1800000" />
+	</skill>
+	<!-- 
+		Level 1: P. Atk. + 2%
+		Level 2: P. Atk. + 3%
+		Level 3: P. Atk. + 4%, PvP Damage + 5%
+		Level 4: P. Atk. + 5%, PvP Damage + 5%
+		Level 5: P. Atk. + 6%, PvP Damage + 5%
+		Level 6: P. Atk. + 7%, PvP Damage + 5%
+		Level 7: P. Atk. + 8%, PvP Damage + 5%
+		Level 8: P. Atk. + 9%, PvP Damage + 5%
+		Level 9: P. Atk. + 10%, PvP Damage + 5%
+		Level 10: P. Atk. + 11%, PvP Damage + 5%
+		Level 11: P. Atk. + 12%, PvP Damage + 5%
+		Level 12: P. Atk. + 13%, PvP Damage + 5%
+		Level 13: P. Atk. + 14%, PvP Damage + 5%
+		Level 14: P. Atk. + 15%, PvP Damage + 5%
+		Level 15: P. Atk. + 16%, PvP Damage + 5%
+	-->
+	<skill id="13856" levels="15" name="Might">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 11%
+		Level 2: Atk. Spd. + 12%
+		Level 3: Atk. Spd. + 13%, PvP Damage + 5%
+		Level 4: Atk. Spd. + 14%, PvP Damage + 5%
+		Level 5: Atk. Spd. + 15%, PvP Damage + 5%
+		Level 6: Atk. Spd. + 16%, PvP Damage + 5%
+		Level 7: Atk. Spd. + 17%, PvP Damage + 5%
+		Level 8: Atk. Spd. + 18%, PvP Damage + 5%
+		Level 9: Atk. Spd. + 19%, PvP Damage + 5%
+		Level 10: Atk. Spd. + 20%, PvP Damage + 5%
+		Level 11: Atk. Spd. + 21%, PvP Damage + 5%
+		Level 12: Atk. Spd. + 22%, PvP Damage + 5%
+		Level 13: Atk. Spd. + 23%, PvP Damage + 5%
+		Level 14: Atk. Spd. + 24%, PvP Damage + 5%
+		Level 15: Atk. Spd. + 25%, PvP Damage + 5%
+	-->
+	<skill id="13857" levels="15" name="Fury">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Rate + 58
+		Level 2: P. Critical Rate + 64
+		Level 3: P. Critical Rate + 70, PvP Damage + 5%
+		Level 4: P. Critical Rate + 76, PvP Damage + 5%
+		Level 5: P. Critical Rate + 82, PvP Damage + 5%
+		Level 6: P. Critical Rate + 88, PvP Damage + 5%
+		Level 7: P. Critical Rate + 94, PvP Damage + 5%
+		Level 8: P. Critical Rate + 100, PvP Damage + 5%
+		Level 9: P. Critical Rate + 106, PvP Damage + 5%
+		Level 10: P. Critical Rate + 112, PvP Damage + 5%
+		Level 11: P. Critical Rate + 118, PvP Damage + 5%
+		Level 12: P. Critical Rate + 124, PvP Damage + 5%
+		Level 13: P. Critical Rate + 130, PvP Damage + 5%
+		Level 14: P. Critical Rate + 136, PvP Damage + 5%
+		Level 15: P. Critical Rate + 142, PvP Damage + 5%
+	-->
+	<skill id="13858" levels="15" name="Focus">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Damage + 3%
+		Level 2: P. Critical Damage + 4%
+		Level 3: P. Critical Damage + 5%, PvP Damage + 5%
+		Level 4: P. Critical Damage + 6%, PvP Damage + 5%
+		Level 5: P. Critical Damage + 7%, PvP Damage + 5%
+		Level 6: P. Critical Damage + 8%, PvP Damage + 5%
+		Level 7: P. Critical Damage + 9%, PvP Damage + 5%
+		Level 8: P. Critical Damage + 10%, PvP Damage + 5%
+		Level 9: P. Critical Damage + 11%, PvP Damage + 5%
+		Level 10: P. Critical Damage + 12%, PvP Damage + 5%
+		Level 11: P. Critical Damage + 13%, PvP Damage + 5%
+		Level 12: P. Critical Damage + 14%, PvP Damage + 5%
+		Level 13: P. Critical Damage + 15%, PvP Damage + 5%
+		Level 14: P. Critical Damage + 16%, PvP Damage + 5%
+		Level 15: P. Critical Damage + 17%, PvP Damage + 5%
+	-->
+	<skill id="13859" levels="15" name="Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Skill Critical Rate + 6%
+		Level 2: P. Skill Critical Rate + 7%
+		Level 3: P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 4: P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 5: P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 6: P. Skill Critical Rate + 11%, PvP Damage + 5%
+		Level 7: P. Skill Critical Rate + 12%, PvP Damage + 5%
+		Level 8: P. Skill Critical Rate + 13%, PvP Damage + 5%
+		Level 9: P. Skill Critical Rate + 14%, PvP Damage + 5%
+		Level 10: P. Skill Critical Rate + 15%, PvP Damage + 5%
+		Level 11: P. Skill Critical Rate + 16%, PvP Damage + 5%
+		Level 12: P. Skill Critical Rate + 17%, PvP Damage + 5%
+		Level 13: P. Skill Critical Rate + 18%, PvP Damage + 5%
+		Level 14: P. Skill Critical Rate + 19%, PvP Damage + 5%
+		Level 15: P. Skill Critical Rate + 20%, PvP Damage + 5%
+	-->
+	<skill id="13860" levels="15" name="Hunter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Skill Critical Damage + 6%
+		Level 2: P. Skill Critical Damage + 7%
+		Level 3: P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 4: P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 5: P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 6: P. Skill Critical Damage + 11%, PvP Damage + 5%
+		Level 7: P. Skill Critical Damage + 12%, PvP Damage + 5%
+		Level 8: P. Skill Critical Damage + 13%, PvP Damage + 5%
+		Level 9: P. Skill Critical Damage + 14%, PvP Damage + 5%
+		Level 10: P. Skill Critical Damage + 15%, PvP Damage + 5%
+		Level 11: P. Skill Critical Damage + 16%, PvP Damage + 5%
+		Level 12: P. Skill Critical Damage + 17%, PvP Damage + 5%
+		Level 13: P. Skill Critical Damage + 18%, PvP Damage + 5%
+		Level 14: P. Skill Critical Damage + 19%, PvP Damage + 5%
+		Level 15: P. Skill Critical Damage + 20%, PvP Damage + 5%
+	-->
+	<skill id="13861" levels="15" name="Fire">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max HP + 21%
+		Level 2: Max HP + 22%
+		Level 3: Max HP + 23%, PvP Damage + 5%
+		Level 4: Max HP + 24%, PvP Damage + 5%
+		Level 5: Max HP + 25%, PvP Damage + 5%
+		Level 6: Max HP + 26%, PvP Damage + 5%
+		Level 7: Max HP + 27%, PvP Damage + 5%
+		Level 8: Max HP + 28%, PvP Damage + 5%
+		Level 9: Max HP + 29%, PvP Damage + 5%
+		Level 10: Max HP + 30%, PvP Damage + 5%
+		Level 11: Max HP + 31%, PvP Damage + 5%
+		Level 12: Max HP + 32%, PvP Damage + 5%
+		Level 13: Max HP + 33%, PvP Damage + 5%
+		Level 14: Max HP + 34%, PvP Damage + 5%
+		Level 15: Max HP + 35%, PvP Damage + 5%
+	-->
+	<skill id="13862" levels="15" name="Body">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: M. Atk. + 2%
+		Level 2: M. Atk. + 3%
+		Level 3: M. Atk. + 4%, PvP Damage + 5%
+		Level 4: M. Atk. + 5%, PvP Damage + 5%
+		Level 5: M. Atk. + 6%, PvP Damage + 5%
+		Level 6: M. Atk. + 7%, PvP Damage + 5%
+		Level 7: M. Atk. + 8%, PvP Damage + 5%
+		Level 8: M. Atk. + 9%, PvP Damage + 5%
+		Level 9: M. Atk. + 10%, PvP Damage + 5%
+		Level 10: M. Atk. + 11%, PvP Damage + 5%
+		Level 11: M. Atk. + 12%, PvP Damage + 5%
+		Level 12: M. Atk. + 13%, PvP Damage + 5%
+		Level 13: M. Atk. + 14%, PvP Damage + 5%
+		Level 14: M. Atk. + 15%, PvP Damage + 5%
+		Level 15: M. Atk. + 16%, PvP Damage + 5%
+	-->
+	<skill id="13863" levels="15" name="Empower">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Casting Spd. + 11%
+		Level 2: Casting Spd. + 12%
+		Level 3: Casting Spd. + 13%, PvP Damage + 5%
+		Level 4: Casting Spd. + 14%, PvP Damage + 5%
+		Level 5: Casting Spd. + 15%, PvP Damage + 5%
+		Level 6: Casting Spd. + 16%, PvP Damage + 5%
+		Level 7: Casting Spd. + 17%, PvP Damage + 5%
+		Level 8: Casting Spd. + 18%, PvP Damage + 5%
+		Level 9: Casting Spd. + 19%, PvP Damage + 5%
+		Level 10: Casting Spd. + 20%, PvP Damage + 5%
+		Level 11: Casting Spd. + 21%, PvP Damage + 5%
+		Level 12: Casting Spd. + 22%, PvP Damage + 5%
+		Level 13: Casting Spd. + 23%, PvP Damage + 5%
+		Level 14: Casting Spd. + 24%, PvP Damage + 5%
+		Level 15: Casting Spd. + 25%, PvP Damage + 5%
+	-->
+	<skill id="13864" levels="15" name="Acumen">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: M. Critical Rate + 21%
+		Level 2: M. Critical Rate + 22%
+		Level 3: M. Critical Rate + 23%, PvP Damage + 5%
+		Level 4: M. Critical Rate + 24%, PvP Damage + 5%
+		Level 5: M. Critical Rate + 25%, PvP Damage + 5%
+		Level 6: M. Critical Rate + 26%, PvP Damage + 5%
+		Level 7: M. Critical Rate + 27%, PvP Damage + 5%
+		Level 8: M. Critical Rate + 28%, PvP Damage + 5%
+		Level 9: M. Critical Rate + 29%, PvP Damage + 5%
+		Level 10: M. Critical Rate + 30%, PvP Damage + 5%
+		Level 11: M. Critical Rate + 31%, PvP Damage + 5%
+		Level 12: M. Critical Rate + 32%, PvP Damage + 5%
+		Level 13: M. Critical Rate + 33%, PvP Damage + 5%
+		Level 14: M. Critical Rate + 34%, PvP Damage + 5%
+		Level 15: M. Critical Rate + 35%, PvP Damage + 5%
+	-->
+	<skill id="13865" levels="15" name="Wild">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: M. Critical Damage + 3%
+		Level 2: M. Critical Damage + 4%
+		Level 3: M. Critical Damage + 5%, PvP Damage + 5%
+		Level 4: M. Critical Damage + 6%, PvP Damage + 5%
+		Level 5: M. Critical Damage + 7%, PvP Damage + 5%
+		Level 6: M. Critical Damage + 8%, PvP Damage + 5%
+		Level 7: M. Critical Damage + 9%, PvP Damage + 5%
+		Level 8: M. Critical Damage + 10%, PvP Damage + 5%
+		Level 9: M. Critical Damage + 11%, PvP Damage + 5%
+		Level 10: M. Critical Damage + 12%, PvP Damage + 5%
+		Level 11: M. Critical Damage + 13%, PvP Damage + 5%
+		Level 12: M. Critical Damage + 14%, PvP Damage + 5%
+		Level 13: M. Critical Damage + 15%, PvP Damage + 5%
+		Level 14: M. Critical Damage + 16%, PvP Damage + 5%
+		Level 15: M. Critical Damage + 17%, PvP Damage + 5%
+	-->
+	<skill id="13866" levels="15" name="Mystic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 26%
+		Level 2: Max MP + 27%
+		Level 3: Max MP + 28%, PvP Damage + 5%
+		Level 4: Max MP + 29%, PvP Damage + 5%
+		Level 5: Max MP + 30%, PvP Damage + 5%
+		Level 6: Max MP + 31%, PvP Damage + 5%
+		Level 7: Max MP + 32%, PvP Damage + 5%
+		Level 8: Max MP + 33%, PvP Damage + 5%
+		Level 9: Max MP + 34%, PvP Damage + 5%
+		Level 10: Max MP + 35%, PvP Damage + 5%
+		Level 11: Max MP + 36%, PvP Damage + 5%
+		Level 12: Max MP + 37%, PvP Damage + 5%
+		Level 13: Max MP + 38%, PvP Damage + 5%
+		Level 14: Max MP + 39%, PvP Damage + 5%
+		Level 15: Max MP + 40%, PvP Damage + 5%
+	-->
+	<skill id="13867" levels="15" name="Soul">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 5%, P. Critical Rate + 26
+		Level 2: Atk. Spd. + 5%, P. Critical Rate + 29
+		Level 3: Atk. Spd. + 6%, P. Critical Rate + 32, PvP Damage + 5%
+		Level 4: Atk. Spd. + 6%, P. Critical Rate + 34, PvP Damage + 5%
+		Level 5: Atk. Spd. + 7%, P. Critical Rate + 37, PvP Damage + 5%
+		Level 6: Atk. Spd. + 7%, P. Critical Rate + 40, PvP Damage + 5%
+		Level 7: Atk. Spd. + 8%, P. Critical Rate + 42, PvP Damage + 5%
+		Level 8: Atk. Spd. + 8%, P. Critical Rate + 45, PvP Damage + 5%
+		Level 9: Atk. Spd. + 9%, P. Critical Rate + 48, PvP Damage + 5%
+		Level 10: Atk. Spd. + 9%, P. Critical Rate + 50, PvP Damage + 5%
+		Level 11: Atk. Spd. + 10%, P. Critical Rate + 53, PvP Damage + 5%
+		Level 12: Atk. Spd. + 10%, P. Critical Rate + 56, PvP Damage + 5%
+		Level 13: Atk. Spd. + 11%, P. Critical Rate + 59, PvP Damage + 5%
+		Level 14: Atk. Spd. + 11%, P. Critical Rate + 61, PvP Damage + 5%
+		Level 15: Atk. Spd. + 12%, P. Critical Rate + 64, PvP Damage + 5%
+	-->
+	<skill id="13868" levels="15" name="Speed Focus">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 5%, P. Critical Damage + 1%
+		Level 2: Atk. Spd. + 5%, P. Critical Damage + 2%
+		Level 3: Atk. Spd. + 6%, P. Critical Damage + 2%, PvP Damage + 5%
+		Level 4: Atk. Spd. + 6%, P. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: Atk. Spd. + 7%, P. Critical Damage + 3%, PvP Damage + 5%
+		Level 6: Atk. Spd. + 7%, P. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: Atk. Spd. + 8%, P. Critical Damage + 4%, PvP Damage + 5%
+		Level 8: Atk. Spd. + 8%, P. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: Atk. Spd. + 9%, P. Critical Damage + 5%, PvP Damage + 5%
+		Level 10: Atk. Spd. + 9%, P. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: Atk. Spd. + 10%, P. Critical Damage + 6%, PvP Damage + 5%
+		Level 12: Atk. Spd. + 10%, P. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: Atk. Spd. + 11%, P. Critical Damage + 7%, PvP Damage + 5%
+		Level 14: Atk. Spd. + 11%, P. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: Atk. Spd. + 12%, P. Critical Damage + 8%, PvP Damage + 5%
+	-->
+	<skill id="13869" levels="15" name="Speed Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 5%, P. Skill Critical Rate + 3%
+		Level 2: Atk. Spd. + 5%, P. Skill Critical Rate + 4%
+		Level 3: Atk. Spd. + 6%, P. Skill Critical Rate + 4%, PvP Damage + 5%
+		Level 4: Atk. Spd. + 6%, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 5: Atk. Spd. + 7%, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 6: Atk. Spd. + 7%, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 7: Atk. Spd. + 8%, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 8: Atk. Spd. + 8%, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 9: Atk. Spd. + 9%, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 10: Atk. Spd. + 9%, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 11: Atk. Spd. + 10%, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 12: Atk. Spd. + 10%, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 13: Atk. Spd. + 11%, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 14: Atk. Spd. + 11%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 15: Atk. Spd. + 12%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+	-->
+	<skill id="13870" levels="15" name="Speed Hunter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 5%, P. Skill Critical Damage + 3%
+		Level 2: Atk. Spd. + 5%, P. Skill Critical Damage + 4%
+		Level 3: Atk. Spd. + 6%, P. Skill Critical Damage + 4%, PvP Damage + 5%
+		Level 4: Atk. Spd. + 6%, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 5: Atk. Spd. + 7%, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 6: Atk. Spd. + 7%, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 7: Atk. Spd. + 8%, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 8: Atk. Spd. + 8%, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 9: Atk. Spd. + 9%, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 10: Atk. Spd. + 9%, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 11: Atk. Spd. + 10%, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 12: Atk. Spd. + 10%, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 13: Atk. Spd. + 11%, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 14: Atk. Spd. + 11%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 15: Atk. Spd. + 12%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+	-->
+	<skill id="13871" levels="15" name="Speed Fire">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. + 5%, Max HP + 10%
+		Level 2: Atk. Spd. + 5%, Max HP + 11%
+		Level 3: Atk. Spd. + 6%, Max HP + 11%, PvP Damage + 5%
+		Level 4: Atk. Spd. + 6%, Max HP + 12%, PvP Damage + 5%
+		Level 5: Atk. Spd. + 7%, Max HP + 12%, PvP Damage + 5%
+		Level 6: Atk. Spd. + 7%, Max HP + 13%, PvP Damage + 5%
+		Level 7: Atk. Spd. + 8%, Max HP + 13%, PvP Damage + 5%
+		Level 8: Atk. Spd. + 8%, Max HP + 14%, PvP Damage + 5%
+		Level 9: Atk. Spd. + 9%, Max HP + 14%, PvP Damage + 5%
+		Level 10: Atk. Spd. + 9%, Max HP + 15%, PvP Damage + 5%
+		Level 11: Atk. Spd. + 10%, Max HP + 15%, PvP Damage + 5%
+		Level 12: Atk. Spd. + 10%, Max HP + 16%, PvP Damage + 5%
+		Level 13: Atk. Spd. + 11%, Max HP + 16%, PvP Damage + 5%
+		Level 14: Atk. Spd. + 11%, Max HP + 17%, PvP Damage + 5%
+		Level 15: Atk. Spd. + 12%, Max HP + 17%, PvP Damage + 5%
+	-->
+	<skill id="13872" levels="15" name="Speed Body">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Rate + 26 , P. Critical Damage + 1%
+		Level 2: P. Critical Rate + 29 , P. Critical Damage + 2%
+		Level 3: P. Critical Rate + 32 , P. Critical Damage + 2%, PvP Damage + 5%
+		Level 4: P. Critical Rate + 34 , P. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: P. Critical Rate + 37 , P. Critical Damage + 3%, PvP Damage + 5%
+		Level 6: P. Critical Rate + 40 , P. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: P. Critical Rate + 42 , P. Critical Damage + 4%, PvP Damage + 5%
+		Level 8: P. Critical Rate + 45 , P. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: P. Critical Rate + 48 , P. Critical Damage + 5%, PvP Damage + 5%
+		Level 10: P. Critical Rate + 50 , P. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: P. Critical Rate + 53 , P. Critical Damage + 6%, PvP Damage + 5%
+		Level 12: P. Critical Rate + 56 , P. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: P. Critical Rate + 59 , P. Critical Damage + 7%, PvP Damage + 5%
+		Level 14: P. Critical Rate + 61 , P. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: P. Critical Rate + 64 , P. Critical Damage + 8%, PvP Damage + 5%
+	-->
+	<skill id="13873" levels="15" name="Critical Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Rate + 26, P. Skill Critical Rate + 3%
+		Level 2: P. Critical Rate + 29, P. Skill Critical Rate + 4%
+		Level 3: P. Critical Rate + 32, P. Skill Critical Rate + 4%, PvP Damage + 5%
+		Level 4: P. Critical Rate + 34, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 5: P. Critical Rate + 37, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 6: P. Critical Rate + 40, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 7: P. Critical Rate + 42, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 8: P. Critical Rate + 45, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 9: P. Critical Rate + 48, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 10: P. Critical Rate + 50, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 11: P. Critical Rate + 53, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 12: P. Critical Rate + 56, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 13: P. Critical Rate + 59, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 14: P. Critical Rate + 61, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 15: P. Critical Rate + 64, P. Skill Critical Rate + 10%, PvP Damage + 5%
+	-->
+	<skill id="13874" levels="15" name="Critical Hunter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Rate + 26, P. Skill Critical Damage + 3%
+		Level 2: P. Critical Rate + 29, P. Skill Critical Damage + 4%
+		Level 3: P. Critical Rate + 32, P. Skill Critical Damage + 4%, PvP Damage + 5%
+		Level 4: P. Critical Rate + 34, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 5: P. Critical Rate + 37, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 6: P. Critical Rate + 40, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 7: P. Critical Rate + 42, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 8: P. Critical Rate + 45, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 9: P. Critical Rate + 48, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 10: P. Critical Rate + 50, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 11: P. Critical Rate + 53, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 12: P. Critical Rate + 56, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 13: P. Critical Rate + 59, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 14: P. Critical Rate + 61, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 15: P. Critical Rate + 64, P. Skill Critical Damage + 10%, PvP Damage + 5%
+	-->
+	<skill id="13875" levels="15" name="Critical Fire">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: P. Critical Rate + 26, Max HP + 10%
+		Level 2: P. Critical Rate + 29, Max HP + 11%
+		Level 3: P. Critical Rate + 32, Max HP + 11%, PvP Damage + 5%
+		Level 4: P. Critical Rate + 34, Max HP + 12%, PvP Damage + 5%
+		Level 5: P. Critical Rate + 37, Max HP + 12%, PvP Damage + 5%
+		Level 6: P. Critical Rate + 40, Max HP + 13%, PvP Damage + 5%
+		Level 7: P. Critical Rate + 42, Max HP + 13%, PvP Damage + 5%
+		Level 8: P. Critical Rate + 45, Max HP + 14%, PvP Damage + 5%
+		Level 9: P. Critical Rate + 48, Max HP + 14%, PvP Damage + 5%
+		Level 10: P. Critical Rate + 50, Max HP + 15%, PvP Damage + 5%
+		Level 11: P. Critical Rate + 53, Max HP + 15%, PvP Damage + 5%
+		Level 12: P. Critical Rate + 56, Max HP + 16%, PvP Damage + 5%
+		Level 13: P. Critical Rate + 59, Max HP + 16%, PvP Damage + 5%
+		Level 14: P. Critical Rate + 61, Max HP + 17%, PvP Damage + 5%
+		Level 15: P. Critical Rate + 64, Max HP + 17%, PvP Damage + 5%
+	-->
+	<skill id="13876" levels="15" name="Critical Body">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Casting Spd. + 5%, M. Critical Rate + 10%
+		Level 2: Casting Spd. + 5%, M. Critical Rate + 11%
+		Level 3: Casting Spd. + 6%, M. Critical Rate + 11%, PvP Damage + 5%
+		Level 4: Casting Spd. + 6%, M. Critical Rate + 12%, PvP Damage + 5%
+		Level 5: Casting Spd. + 7%, M. Critical Rate + 12%, PvP Damage + 5%
+		Level 6: Casting Spd. + 7%, M. Critical Rate + 13%, PvP Damage + 5%
+		Level 7: Casting Spd. + 8%, M. Critical Rate + 13%, PvP Damage + 5%
+		Level 8: Casting Spd. + 8%, M. Critical Rate + 14%, PvP Damage + 5%
+		Level 9: Casting Spd. + 9%, M. Critical Rate + 14%, PvP Damage + 5%
+		Level 10: Casting Spd. + 9%, M. Critical Rate + 15%, PvP Damage + 5%
+		Level 11: Casting Spd. + 10%, M. Critical Rate + 15%, PvP Damage + 5%
+		Level 12: Casting Spd. + 10%, M. Critical Rate + 16%, PvP Damage + 5%
+		Level 13: Casting Spd. + 11%, M. Critical Rate + 16%, PvP Damage + 5%
+		Level 14: Casting Spd. + 11%, M. Critical Rate + 17%, PvP Damage + 5%
+		Level 15: Casting Spd. + 12%, M. Critical Rate + 17%, PvP Damage + 5%
+	-->
+	<skill id="13877" levels="15" name="Acumen Wild">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Casting Spd. + 5%, M. Critical Damage + 1%
+		Level 2: Casting Spd. + 5%, M. Critical Damage + 2%
+		Level 3: Casting Spd. + 6%, M. Critical Damage + 2%, PvP Damage + 5%
+		Level 4: Casting Spd. + 6%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: Casting Spd. + 7%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 6: Casting Spd. + 7%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: Casting Spd. + 8%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 8: Casting Spd. + 8%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: Casting Spd. + 9%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 10: Casting Spd. + 9%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: Casting Spd. + 10%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 12: Casting Spd. + 10%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: Casting Spd. + 11%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 14: Casting Spd. + 11%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: Casting Spd. + 12%, M. Critical Damage + 8%, PvP Damage + 5%
+	-->
+	<skill id="13878" levels="15" name="Acumen Mystic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Casting Spd. + 5%, Max MP + 13%
+		Level 2: Casting Spd. + 5%, Max MP + 14%
+		Level 3: Casting Spd. + 6%, Max MP + 14%, PvP Damage + 5%
+		Level 4: Casting Spd. + 6%, Max MP + 15%, PvP Damage + 5%
+		Level 5: Casting Spd. + 7%, Max MP + 15%, PvP Damage + 5%
+		Level 6: Casting Spd. + 7%, Max MP + 16%, PvP Damage + 5%
+		Level 7: Casting Spd. + 8%, Max MP + 16%, PvP Damage + 5%
+		Level 8: Casting Spd. + 8%, Max MP + 17%, PvP Damage + 5%
+		Level 9: Casting Spd. + 9%, Max MP + 17%, PvP Damage + 5%
+		Level 10: Casting Spd. + 9%, Max MP + 18%, PvP Damage + 5%
+		Level 11: Casting Spd. + 10%, Max MP + 18%, PvP Damage + 5%
+		Level 12: Casting Spd. + 10%, Max MP + 19%, PvP Damage + 5%
+		Level 13: Casting Spd. + 11%, Max MP + 19%, PvP Damage + 5%
+		Level 14: Casting Spd. + 11%, Max MP + 20%, PvP Damage + 5%
+		Level 15: Casting Spd. + 12%, Max MP + 20%, PvP Damage + 5%
+	-->
+	<skill id="13879" levels="15" name="Acumen Soul">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: M. Critical Rate + 10%, M. Critical Damage + 1%
+		Level 2: M. Critical Rate + 10%, M. Critical Damage + 2%
+		Level 3: M. Critical Rate + 11%, M. Critical Damage + 2%, PvP Damage + 5%
+		Level 4: M. Critical Rate + 11%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: M. Critical Rate + 12%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 6: M. Critical Rate + 12%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: M. Critical Rate + 13%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 8: M. Critical Rate + 13%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: M. Critical Rate + 14%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 10: M. Critical Rate + 14%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: M. Critical Rate + 15%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 12: M. Critical Rate + 15%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: M. Critical Rate + 16%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 14: M. Critical Rate + 16%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: M. Critical Rate + 17%, M. Critical Damage + 8%, PvP Damage + 5%
+	-->
+	<skill id="13880" levels="15" name="Wid. Mystic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: M. Critical Rate + 10%, Max MP + 13%
+		Level 2: M. Critical Rate + 10%, Max MP + 14%
+		Level 3: M. Critical Rate + 11%, Max MP + 14%, PvP Damage + 5%
+		Level 4: M. Critical Rate + 11%, Max MP + 15%, PvP Damage + 5%
+		Level 5: M. Critical Rate + 12%, Max MP + 15%, PvP Damage + 5%
+		Level 6: M. Critical Rate + 12%, Max MP + 16%, PvP Damage + 5%
+		Level 7: M. Critical Rate + 13%, Max MP + 16%, PvP Damage + 5%
+		Level 8: M. Critical Rate + 13%, Max MP + 17%, PvP Damage + 5%
+		Level 9: M. Critical Rate + 14%, Max MP + 17%, PvP Damage + 5%
+		Level 10: M. Critical Rate + 14%, Max MP + 18%, PvP Damage + 5%
+		Level 11: M. Critical Rate + 15%, Max MP + 18%, PvP Damage + 5%
+		Level 12: M. Critical Rate + 15%, Max MP + 19%, PvP Damage + 5%
+		Level 13: M. Critical Rate + 16%, Max MP + 19%, PvP Damage + 5%
+		Level 14: M. Critical Rate + 16%, Max MP + 20%, PvP Damage + 5%
+		Level 15: M. Critical Rate + 17%, Max MP + 20%, PvP Damage + 5%
+	-->
+	<skill id="13881" levels="15" name="Wid. Soul">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max HP + 10%, Casting Spd. + 5%
+		Level 2: Max HP + 11%, Casting Spd. + 5%
+		Level 3: Max HP + 11%, Casting Spd. + 6%, PvP Damage + 5%
+		Level 4: Max HP + 12%, Casting Spd. + 6%, PvP Damage + 5%
+		Level 5: Max HP + 12%, Casting Spd. + 7%, PvP Damage + 5%
+		Level 6: Max HP + 13%, Casting Spd. + 7%, PvP Damage + 5%
+		Level 7: Max HP + 13%, Casting Spd. + 8%, PvP Damage + 5%
+		Level 8: Max HP + 14%, Casting Spd. + 8%, PvP Damage + 5%
+		Level 9: Max HP + 14%, Casting Spd. + 9%, PvP Damage + 5%
+		Level 10: Max HP + 15%, Casting Spd. + 9%, PvP Damage + 5%
+		Level 11: Max HP + 15%, Casting Spd. + 10%, PvP Damage + 5%
+		Level 12: Max HP + 16%, Casting Spd. + 10%, PvP Damage + 5%
+		Level 13: Max HP + 16%, Casting Spd. + 11%, PvP Damage + 5%
+		Level 14: Max HP + 17%, Casting Spd. + 11%, PvP Damage + 5%
+		Level 15: Max HP + 17%, Casting Spd. + 12%, PvP Damage + 5%
+	-->
+	<skill id="13882" levels="15" name="HP Acumen">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max HP + 10%, M. Critical Rate + 10%
+		Level 2: Max HP + 11%, M. Critical Rate + 10%
+		Level 3: Max HP + 11%, M. Critical Rate + 11%, PvP Damage + 5%
+		Level 4: Max HP + 12%, M. Critical Rate + 11%, PvP Damage + 5%
+		Level 5: Max HP + 12%, M. Critical Rate + 12%, PvP Damage + 5%
+		Level 6: Max HP + 13%, M. Critical Rate + 12%, PvP Damage + 5%
+		Level 7: Max HP + 13%, M. Critical Rate + 13%, PvP Damage + 5%
+		Level 8: Max HP + 14%, M. Critical Rate + 13%, PvP Damage + 5%
+		Level 9: Max HP + 14%, M. Critical Rate + 14%, PvP Damage + 5%
+		Level 10: Max HP + 15%, M. Critical Rate + 14%, PvP Damage + 5%
+		Level 11: Max HP + 15%, M. Critical Rate + 15%, PvP Damage + 5%
+		Level 12: Max HP + 16%, M. Critical Rate + 15%, PvP Damage + 5%
+		Level 13: Max HP + 16%, M. Critical Rate + 16%, PvP Damage + 5%
+		Level 14: Max HP + 17%, M. Critical Rate + 16%, PvP Damage + 5%
+		Level 15: Max HP + 17%, M. Critical Rate + 17%, PvP Damage + 5%
+	-->
+	<skill id="13883" levels="15" name="HP Wild">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max HP + 10%, M. Critical Damage + 1%
+		Level 2: Max HP + 11%, M. Critical Damage + 2%
+		Level 3: Max HP + 11%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 4: Max HP + 12%, M. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: Max HP + 12%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 6: Max HP + 13%, M. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: Max HP + 13%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 8: Max HP + 14%, M. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: Max HP + 14%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 10: Max HP + 15%, M. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: Max HP + 15%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 12: Max HP + 16%, M. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: Max HP + 16%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 14: Max HP + 17%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: Max HP + 17%, M. Critical Damage + 9%, PvP Damage + 5%
+	-->
+	<skill id="13884" levels="15" name="HP Mystic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max HP + 10%, Max MP + 13%
+		Level 2: Max HP + 11%, Max MP + 13%
+		Level 3: Max HP + 11%, Max MP + 14%, PvP Damage + 5%
+		Level 4: Max HP + 12%, Max MP + 14%, PvP Damage + 5%
+		Level 5: Max HP + 12%, Max MP + 15%, PvP Damage + 5%
+		Level 6: Max HP + 13%, Max MP + 15%, PvP Damage + 5%
+		Level 7: Max HP + 13%, Max MP + 16%, PvP Damage + 5%
+		Level 8: Max HP + 14%, Max MP + 16%, PvP Damage + 5%
+		Level 9: Max HP + 14%, Max MP + 17%, PvP Damage + 5%
+		Level 10: Max HP + 15%, Max MP + 17%, PvP Damage + 5%
+		Level 11: Max HP + 15%, Max MP + 18%, PvP Damage + 5%
+		Level 12: Max HP + 16%, Max MP + 18%, PvP Damage + 5%
+		Level 13: Max HP + 16%, Max MP + 19%, PvP Damage + 5%
+		Level 14: Max HP + 17%, Max MP + 19%, PvP Damage + 5%
+		Level 15: Max HP + 17%, Max MP + 20%, PvP Damage + 5%
+	-->
+	<skill id="13885" levels="15" name="HP Soul">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 13%, Atk. Spd. + 5%
+		Level 2: Max MP + 13%, Atk. Spd. + 6%
+		Level 3: Max MP + 14%, Atk. Spd. + 6%, PvP Damage + 5%
+		Level 4: Max MP + 14%, Atk. Spd. + 7%, PvP Damage + 5%
+		Level 5: Max MP + 15%, Atk. Spd. + 7%, PvP Damage + 5%
+		Level 6: Max MP + 15%, Atk. Spd. + 8%, PvP Damage + 5%
+		Level 7: Max MP + 16%, Atk. Spd. + 8%, PvP Damage + 5%
+		Level 8: Max MP + 16%, Atk. Spd. + 9%, PvP Damage + 5%
+		Level 9: Max MP + 17%, Atk. Spd. + 9%, PvP Damage + 5%
+		Level 10: Max MP + 17%, Atk. Spd. + 10%, PvP Damage + 5%
+		Level 11: Max MP + 18%, Atk. Spd. + 10%, PvP Damage + 5%
+		Level 12: Max MP + 18%, Atk. Spd. + 11%, PvP Damage + 5%
+		Level 13: Max MP + 19%, Atk. Spd. + 11%, PvP Damage + 5%
+		Level 14: Max MP + 19%, Atk. Spd. + 12%, PvP Damage + 5%
+		Level 15: Max MP + 20%, Atk. Spd. + 12%, PvP Damage + 5%
+	-->
+	<skill id="13886" levels="15" name="MP Fury">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 13%, P. Critical Rate + 26
+		Level 2: Max MP + 13%, P. Critical Rate + 29
+		Level 3: Max MP + 14%, P. Critical Rate + 32, PvP Damage + 5%
+		Level 4: Max MP + 14%, P. Critical Rate + 34, PvP Damage + 5%
+		Level 5: Max MP + 15%, P. Critical Rate + 37, PvP Damage + 5%
+		Level 6: Max MP + 15%, P. Critical Rate + 40, PvP Damage + 5%
+		Level 7: Max MP + 16%, P. Critical Rate + 42, PvP Damage + 5%
+		Level 8: Max MP + 16%, P. Critical Rate + 45, PvP Damage + 5%
+		Level 9: Max MP + 17%, P. Critical Rate + 48, PvP Damage + 5%
+		Level 10: Max MP + 17%, P. Critical Rate + 50, PvP Damage + 5%
+		Level 11: Max MP + 18%, P. Critical Rate + 53, PvP Damage + 5%
+		Level 12: Max MP + 18%, P. Critical Rate + 56, PvP Damage + 5%
+		Level 13: Max MP + 19%, P. Critical Rate + 59, PvP Damage + 5%
+		Level 14: Max MP + 19%, P. Critical Rate + 61, PvP Damage + 5%
+		Level 15: Max MP + 20%, P. Critical Rate + 64, PvP Damage + 5%
+	-->
+	<skill id="13887" levels="15" name="MP Focus">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 13%, P. Critical Damage + 1%
+		Level 2: Max MP + 13%, P. Critical Damage + 2%
+		Level 3: Max MP + 14%, P. Critical Damage + 2%, PvP Damage + 5%
+		Level 4: Max MP + 14%, P. Critical Damage + 3%, PvP Damage + 5%
+		Level 5: Max MP + 15%, P. Critical Damage + 3%, PvP Damage + 5%
+		Level 6: Max MP + 15%, P. Critical Damage + 4%, PvP Damage + 5%
+		Level 7: Max MP + 16%, P. Critical Damage + 4%, PvP Damage + 5%
+		Level 8: Max MP + 16%, P. Critical Damage + 5%, PvP Damage + 5%
+		Level 9: Max MP + 17%, P. Critical Damage + 5%, PvP Damage + 5%
+		Level 10: Max MP + 17%, P. Critical Damage + 6%, PvP Damage + 5%
+		Level 11: Max MP + 18%, P. Critical Damage + 6%, PvP Damage + 5%
+		Level 12: Max MP + 18%, P. Critical Damage + 7%, PvP Damage + 5%
+		Level 13: Max MP + 19%, P. Critical Damage + 7%, PvP Damage + 5%
+		Level 14: Max MP + 19%, P. Critical Damage + 8%, PvP Damage + 5%
+		Level 15: Max MP + 20%, P. Critical Damage + 8%, PvP Damage + 5%
+	-->
+	<skill id="13888" levels="15" name="MP Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 13%, P. Skill Critical Rate + 3%
+		Level 2: Max MP + 13%, P. Skill Critical Rate + 4%
+		Level 3: Max MP + 14%, P. Skill Critical Rate + 4%, PvP Damage + 5%
+		Level 4: Max MP + 14%, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 5: Max MP + 15%, P. Skill Critical Rate + 5%, PvP Damage + 5%
+		Level 6: Max MP + 15%, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 7: Max MP + 16%, P. Skill Critical Rate + 6%, PvP Damage + 5%
+		Level 8: Max MP + 16%, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 9: Max MP + 17%, P. Skill Critical Rate + 7%, PvP Damage + 5%
+		Level 10: Max MP + 17%, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 11: Max MP + 18%, P. Skill Critical Rate + 8%, PvP Damage + 5%
+		Level 12: Max MP + 18%, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 13: Max MP + 19%, P. Skill Critical Rate + 9%, PvP Damage + 5%
+		Level 14: Max MP + 19%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 15: Max MP + 20%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+	-->
+	<skill id="13889" levels="15" name="MP Hunter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Max MP + 13%, P. Skill Critical Damage + 3%
+		Level 2: Max MP + 13%, P. Skill Critical Damage + 4%
+		Level 3: Max MP + 14%, P. Skill Critical Damage + 4%, PvP Damage + 5%
+		Level 4: Max MP + 14%, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 5: Max MP + 15%, P. Skill Critical Damage + 5%, PvP Damage + 5%
+		Level 6: Max MP + 15%, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 7: Max MP + 16%, P. Skill Critical Damage + 6%, PvP Damage + 5%
+		Level 8: Max MP + 16%, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 9: Max MP + 17%, P. Skill Critical Damage + 7%, PvP Damage + 5%
+		Level 10: Max MP + 17%, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 11: Max MP + 18%, P. Skill Critical Damage + 8%, PvP Damage + 5%
+		Level 12: Max MP + 18%, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 13: Max MP + 19%, P. Skill Critical Damage + 9%, PvP Damage + 5%
+		Level 14: Max MP + 19%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 15: Max MP + 20%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+	-->
+	<skill id="13890" levels="15" name="MP Fire">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Chance to decrease Speed and increase PvP Damage during a critical attack. -->
+	<skill id="13891" levels="1" name="Critical Slow">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Chance to stun and increase PvP Damage during a critical attack. -->
+	<skill id="13892" levels="1" name="Critical Stun">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Chance to activate a Dryad Root and increase PvP Damage when using a magic skill. -->
+	<skill id="13893" levels="1" name="Magic Hold">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Chance to activate Focus when using a magic skill.
+		Level 2: Chance to activate Focus and increase PvP Damage when using a magic skill.
+	-->
+	<skill id="13894" levels="2" name="Magic Focus">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Chance to activate Blessed Body when using a magic skill. -->
+	<skill id="13895" levels="1" name="Magic Blessed Body">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Chance to activate Regeneration when using a magic skill. -->
+	<skill id="13896" levels="1" name="Magic Regeneration">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Chance to activate Mental Shield when using a magic skill.
+		Level 2: Chance to activate Mental Shield and increase PvP Damage when using a magic skill.
+	-->
+	<skill id="13897" levels="2" name="Magic Mental Shield">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 5% -->
+	<skill id="13898" levels="2" name="Tyrr">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- M. Atk. + 5% -->
+	<skill id="13899" levels="2" name="Feoh">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Max HP + 15% -->
+	<skill id="13900" levels="2" name="Sigel">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Mounts the Shadow Blue. -->
+	<skill id="13901" levels="1" name="Shadow Blue">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<!-- Atk. Spd. +1% -->
+	<skill id="13902" levels="1" name="Fury (Practice)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Casting Spd. +1% -->
+	<skill id="13903" levels="1" name="Acumen (Practice)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Special buff prepared by Roa. Go find Roa during special events. For 1 hour, XP/SP + 10%. -->
+	<skill id="13904" levels="1" name="Roa's Assistance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Resurrects all dead party members and restores 100% of the XP lost. -->
+	<skill id="13905" levels="1" name="Red Libra Talisman - Resurrection">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
+	<skill id="13906" levels="1" name="Red Libra Talisman - Restoration">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="600000" />
+	</skill>
+	<!-- Cancels all party members' debuffs and makes them immune to debuffs for 7 seconds. -->
+	<skill id="13907" levels="1" name="Red Libra Talisman - Cancel">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="100000" />
+	</skill>
+	<!-- Party's Speed + 70 for 10 seconds. -->
+	<skill id="13908" levels="1" name="Red Libra Talisman - Speed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="100000" />
+	</skill>
+	<!-- Received Damage - 10%. -->
+	<skill id="13909" levels="1" name="Red Libra Talisman - Resistance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13910" levels="1" name="Elysium Shaper">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13911" levels="1" name="Elysium Cutter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13912" levels="1" name="Elysium Slasher">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13913" levels="1" name="Elysium Avenger">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13914" levels="1" name="Elysium Fighter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13915" levels="1" name="Elysium Stormer">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13916" levels="1" name="Elysium Thrower">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13917" levels="1" name="Elysium Shooter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- M. Atk. + 6%, Casting Spd. + 15%, M. Critical Rate + 25%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13918" levels="1" name="Elysium Buster">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- M. Atk. + 6%, Casting Spd. + 15%, M. Critical Rate + 25%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13919" levels="1" name="Elysium Caster">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, M. Atk. + 6%, Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Rate + 82, M. Critical Rate + 25%, P. Critical Damage + 7%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13920" levels="1" name="Elysium Retributer">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13921" levels="1" name="Elysium Dualsword">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13922" levels="1" name="Elysium Dual Dagger">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<skill id="13923" levels="1" name="Elysium Dual Blunt Weapon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Expands inventory. -->
 	<skill id="13924" levels="1" name="La Vie En Rose's Radiant Brooch">

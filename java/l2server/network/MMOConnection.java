@@ -15,6 +15,7 @@
  *
  * http://www.gnu.org/copyleft/gpl.html
  */
+
 package l2server.network;
 
 import java.io.IOException;
@@ -224,10 +225,7 @@ public class MMOConnection<T extends MMOClient<?>>
 	public final void close(final SendablePacket<T> sp)
 	{
 		
-		close(new SendablePacket[]
-		{
-			sp
-		});
+		close(new SendablePacket[] { sp });
 	}
 	
 	public final void close(final SendablePacket<T>[] closeList)

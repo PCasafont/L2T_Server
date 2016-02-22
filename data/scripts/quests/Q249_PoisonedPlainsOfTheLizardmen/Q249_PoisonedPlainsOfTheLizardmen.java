@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q249_PoisonedPlainsOfTheLizardmen;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -49,7 +50,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if (npc.getNpcId() == _johnny && event.equalsIgnoreCase("32744-03.htm"))
+		else if ((npc.getNpcId() == _johnny) && event.equalsIgnoreCase("32744-03.htm"))
 		{
 			st.unset("cond");
 			st.giveItems(57, 83056);
@@ -70,19 +71,19 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 		
 		if (npc.getNpcId() == _mouen)
 		{
-			switch(st.getState())
+			switch (st.getState())
 			{
-				case State.CREATED :
+				case State.CREATED:
 					if (player.getLevel() >= 82)
 						htmltext = "30196-01.htm";
 					else
 						htmltext = "30196-00.htm";
 					break;
-				case State.STARTED :
+				case State.STARTED:
 					if (st.getInt("cond") == 1)
 						htmltext = "30196-04.htm";
 					break;
-				case State.COMPLETED :
+				case State.COMPLETED:
 					htmltext = "30196-05.htm";
 					break;
 			}

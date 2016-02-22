@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.log;
 
 import java.text.SimpleDateFormat;
@@ -32,9 +33,7 @@ public class AccountingFormatter extends Formatter
 	public String format(LogRecord record)
 	{
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30
-				+ record.getMessage().length()
-				+ (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
+		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
 		for (Object p : params)
 		{
 			if (p == null)
@@ -44,7 +43,7 @@ public class AccountingFormatter extends Formatter
 			
 			if (p instanceof L2GameClient)
 			{
-				final L2GameClient client = (L2GameClient)p;
+				final L2GameClient client = (L2GameClient) p;
 				String address = null;
 				try
 				{
@@ -62,11 +61,11 @@ public class AccountingFormatter extends Formatter
 						if (client.getActiveChar() != null)
 						{
 							StringUtil.append(output, client.getActiveChar().getName());
-							StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()),") ");
+							StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()), ") ");
 						}
 					case AUTHED:
 						if (client.getAccountName() != null)
-							StringUtil.append(output, client.getAccountName()," ");
+							StringUtil.append(output, client.getAccountName(), " ");
 					case CONNECTED:
 						if (address != null)
 							StringUtil.append(output, address);
@@ -77,9 +76,9 @@ public class AccountingFormatter extends Formatter
 			}
 			else if (p instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)p;
+				L2PcInstance player = (L2PcInstance) p;
 				StringUtil.append(output, player.getName());
-				StringUtil.append(output, "(", String.valueOf(player.getObjectId()),")");
+				StringUtil.append(output, "(", String.valueOf(player.getObjectId()), ")");
 			}
 			else
 				StringUtil.append(output, p.toString());

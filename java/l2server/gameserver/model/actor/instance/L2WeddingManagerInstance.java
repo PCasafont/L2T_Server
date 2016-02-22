@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
@@ -71,7 +72,7 @@ public class L2WeddingManagerInstance extends L2Npc
 			L2PcInstance ptarget = L2World.getInstance().getPlayer(player.getPartnerId());
 			
 			// Is partner online?
-			if (ptarget == null || !ptarget.isOnline())
+			if ((ptarget == null) || !ptarget.isOnline())
 			{
 				filename = "mods/Wedding_notfound.htm";
 				sendHtmlMessage(player, filename, replace);
@@ -104,7 +105,7 @@ public class L2WeddingManagerInstance extends L2Npc
 					}
 					
 					// Check and reduce wedding price
-					if (player.getAdena() < Config.L2JMOD_WEDDING_PRICE || ptarget.getAdena() < Config.L2JMOD_WEDDING_PRICE)
+					if ((player.getAdena() < Config.L2JMOD_WEDDING_PRICE) || (ptarget.getAdena() < Config.L2JMOD_WEDDING_PRICE))
 					{
 						filename = "mods/Wedding_adena.htm";
 						replace = String.valueOf(Config.L2JMOD_WEDDING_PRICE);
@@ -223,7 +224,7 @@ public class L2WeddingManagerInstance extends L2Npc
 	/**
 	 * Are both partners wearing formal wear? If Formal Wear check is disabled,
 	 * returns True in any case.<BR>
-	 * 
+	 *
 	 * @param p1 L2PcInstance
 	 * @param p2 L2PcInstance
 	 * @return boolean
@@ -235,7 +236,7 @@ public class L2WeddingManagerInstance extends L2Npc
 			L2ItemInstance fw1 = p1.getChestArmorInstance();
 			L2ItemInstance fw2 = p2.getChestArmorInstance();
 			
-			if (fw1 == null || fw2 == null || fw1.getItemId() != 6408 || fw2.getItemId() != 6408)
+			if ((fw1 == null) || (fw2 == null) || (fw1.getItemId() != 6408) || (fw2.getItemId() != 6408))
 				return false;
 			else
 				return true;

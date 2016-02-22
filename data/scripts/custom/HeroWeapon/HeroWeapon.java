@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.HeroWeapon;
 
 import l2server.gameserver.model.actor.L2Npc;
@@ -22,15 +23,9 @@ import l2server.gameserver.util.Util;
 
 public class HeroWeapon extends Quest
 {
-	private final static int[] npcIds =
-	{
-		31690,31769,31770,31771,31772
-	};
+	private final static int[] npcIds = { 31690, 31769, 31770, 31771, 31772 };
 	
-	private final static int[] weaponIds =
-	{
-		30392,30393,30394,30395,30396,30397,30398,30399,30400,30401,30402,30403,30404,30405
-	};
+	private final static int[] weaponIds = { 30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405 };
 	
 	public HeroWeapon(int questId, String name, String descr)
 	{

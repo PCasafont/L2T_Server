@@ -1,3 +1,4 @@
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -13,7 +14,6 @@ import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.GMAudit;
-import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
 /**
@@ -79,14 +79,14 @@ public class OfflineAdminCommandsManager
 		if (ach == null)
 		{
 			Log.warning("No handler registered for admin command '" + commandName + "' (website)");
-			Util.logToFile(commandName + " command doesn't exists!", "OfflineAdminCommands", true);
+			saveCommandExecution(date);
 			return;
 		}
 		
 		if (!AdminCommandAccessRights.getInstance().hasAccess(commandName, AccessLevels.getInstance().getAccessLevel(accessLevel)))
 		{
 			Log.warning("Character " + author + " tried to use admin command " + commandName + " from the website, but have no access to it!");
-			Util.logToFile("Character " + author + " tried to use admin command " + commandName + " from the website, but have no access to it!", "OfflineAdminCommands", true);
+			saveCommandExecution(date);
 			return;
 		}
 		
@@ -99,8 +99,31 @@ public class OfflineAdminCommandsManager
 		_dummy.setName(author);
 		ach.useAdminCommand(command, _dummy);
 		_dummy.setName("OffDummy");
+		saveCommandExecution(date);
+	}
+	
+	private void saveCommandExecution(int date)
+	{
+		Connection con = null;
 		
-		Util.logToFile(commandName + " command has been executed successfully by " + author, "OfflineAdminCommands", true);
+		try
+		{
+			// Retrieve the L2PcInstance from the characters table of the database
+			con = L2DatabaseFactory.getInstance().getConnection();
+			
+			PreparedStatement statement = con.prepareStatement("UPDATE offline_admin_commands SET executed = 1 WHERE date = ?");
+			statement.setInt(1, date);
+			statement.execute();
+			statement.close();
+		}
+		catch (Exception e)
+		{
+			Log.severe("Could not set offline admin command status to executed: " + e);
+		}
+		finally
+		{
+			L2DatabaseFactory.close(con);
+		}
 	}
 	
 	public class CheckCommandsTask implements Runnable

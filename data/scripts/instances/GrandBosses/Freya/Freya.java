@@ -1,3 +1,4 @@
+
 package instances.GrandBosses.Freya;
 
 import java.util.ArrayList;
@@ -34,9 +35,9 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * Freya Boss - Normal/Extreme mode
- * 
+ *
  * Source:
  * 			- http://www.youtube.com/watch?v=cEDD0aLDx8E
  * 			- http://www.youtube.com/watch?v=I-NelQQANA8&feature=related
@@ -47,73 +48,37 @@ import ai.group_template.L2AttackableAIScript;
  */
 
 public class Freya extends L2AttackableAIScript
-{	
+{
 	//Quest
-	private static final boolean	_debug 		= false;
-	private static final String		_qn 		= "Freya";
+	private static final boolean _debug = false;
+	private static final String _qn = "Freya";
 	
 	//Id's
 	@SuppressWarnings("unused")
-	private static final int	_glacier		= 18853;
-	private static final int	_frozenCore		= 15470;
-	private static final int	_dummy			= 18932;
-	private static final int	_jiniaId		= 32781;
-	private static final int	_jiniaInnerId	= 18850;
-	private static final int	_kegorInnerId	= 18851;
-	private static final int	_sirraId		= 32762;
-	private static final int[]	_templates 		= {139, 144};
-	private static final int[]	_all_mobs 		= {29177, 29178, 29179, 29180, 18854, 18855, 18856, 25699, 25700};
-	private static final int[]	_roomEffects 	= {23140202, 23140204, 23140206, 23140208, 23140212, 23140214, 23140216};
+	private static final int _glacier = 18853;
+	private static final int _frozenCore = 15470;
+	private static final int _dummy = 18932;
+	private static final int _jiniaId = !Config.isServer(Config.DREAMS) ? 32781 : 80001;
+	private static final int _jiniaInnerId = 18850;
+	private static final int _kegorInnerId = 18851;
+	private static final int _sirraId = 32762;
+	private static final int[] _templates = { 139, 144 };
+	private static final int[] _all_mobs = { 29177, 29178, 29179, 29180, 18854, 18855, 18856, 25699, 25700 };
+	private static final int[] _roomEffects = { 23140202, 23140204, 23140206, 23140208, 23140212, 23140214, 23140216 };
 	
 	//Cords
-	private static final Location[] _playerEnter = 
-	{
-		new Location(114185, -112435, -11210),
-		new Location(114183, -112280, -11210),
-		new Location(114024, -112435, -11210),
-		new Location(114024, -112278, -11210),
-		new Location(113865, -112435, -11210),
-		new Location(113865, -112276, -11210)
-	};
+	private static final Location[] _playerEnter = { new Location(114185, -112435, -11210), new Location(114183, -112280, -11210), new Location(114024, -112435, -11210), new Location(114024, -112278, -11210), new Location(113865, -112435, -11210), new Location(113865, -112276, -11210) };
 	
 	//Spawns
-	private static final int[][] _iceKnightAroundRoom = 
-	{
-		{113845,-116091,-11168,8264},
-		{113381,-115622,-11168,8264},
-		{113380,-113978,-11168,-8224},
-		{113845,-113518,-11168,-8224},
-		{115591,-113516,-11168,-24504},
-		{116053,-113981,-11168,-24504},
-		{116061,-115611,-11168,24804},
-		{115597,-116080,-11168,24804},
-		{112942,-115480,-10960,52},
-		{112940,-115146,-10960,52},
-		{112945,-114453,-10960,52},
-		{112945,-114123,-10960,52},
-		{116497,-114117,-10960,32724},
-		{116499,-114454,-10960,32724},
-		{116501,-115145,-10960,32724},
-		{116502,-115473,-10960,32724}
-	};
+	private static final int[][] _iceKnightAroundRoom = { { 113845, -116091, -11168, 8264 }, { 113381, -115622, -11168, 8264 }, { 113380, -113978, -11168, -8224 }, { 113845, -113518, -11168, -8224 }, { 115591, -113516, -11168, -24504 }, { 116053, -113981, -11168, -24504 }, { 116061, -115611, -11168, 24804 }, { 115597, -116080, -11168, 24804 }, { 112942, -115480, -10960, 52 }, { 112940, -115146, -10960, 52 }, { 112945, -114453, -10960, 52 }, { 112945, -114123, -10960, 52 }, { 116497, -114117, -10960, 32724 }, { 116499, -114454, -10960, 32724 }, { 116501, -115145, -10960, 32724 }, { 116502, -115473, -10960, 32724 } };
 	
-	private static final int[][] _iceBreathingCenterRoom = 
-	{
-		{114713,-115109,-11202,16456},
-		{114008,-115080,-11202,3568},
-		{114422,-115508,-11202,12400},
-		{115023,-115508,-11202,20016},
-		{115459,-115079,-11202,27936},
-		{114176,-114576,-11202,16456},
-		{115264,-114576,-11202,3568}
-	};
-	
+	private static final int[][] _iceBreathingCenterRoom = { { 114713, -115109, -11202, 16456 }, { 114008, -115080, -11202, 3568 }, { 114422, -115508, -11202, 12400 }, { 115023, -115508, -11202, 20016 }, { 115459, -115079, -11202, 27936 }, { 114176, -114576, -11202, 16456 }, { 115264, -114576, -11202, 3568 } };
 	
 	private class FreyaWorld extends InstanceWorld
-	{		
+	{
 		private int FirstFreyaId;
-		private int LastFreyaId;	
-		private int GlakiasId;	
+		private int LastFreyaId;
+		private int GlakiasId;
 		private int IceKnightId;
 		private int ArchBreathId;
 		private ArrayList<L2Npc> AllMobs;
@@ -125,11 +90,11 @@ public class Freya extends L2AttackableAIScript
 		
 		public FreyaWorld()
 		{
-			AllMobs 		= new ArrayList<L2Npc>();
-			Monuments 		= new ArrayList<L2Npc>();
+			AllMobs = new ArrayList<L2Npc>();
+			Monuments = new ArrayList<L2Npc>();
 		}
 	}
-
+	
 	public Freya(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
@@ -149,7 +114,7 @@ public class Freya extends L2AttackableAIScript
 			addSpellFinishedId(mob);
 		}
 	}
-
+	
 	@Override
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
@@ -160,21 +125,21 @@ public class Freya extends L2AttackableAIScript
 		if (npc != null)
 			wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		else if (player != null)
-			wrld = InstanceManager.getInstance().getPlayerWorld(player);	
+			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		else
 		{
 			Log.warning(getName() + ": onSpellFinished: Unable to get world.");
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof FreyaWorld)
+		if ((wrld != null) && (wrld instanceof FreyaWorld))
 		{
-			FreyaWorld world = (FreyaWorld)wrld;
-			if (npc.getNpcId() == world.FirstFreyaId || npc.getNpcId() == world.LastFreyaId)
+			FreyaWorld world = (FreyaWorld) wrld;
+			if ((npc.getNpcId() == world.FirstFreyaId) || (npc.getNpcId() == world.LastFreyaId))
 			{
-				switch(skill.getId())
+				switch (skill.getId())
 				{
-					case 6277:	//Summon Spirits
+					case 6277: //Summon Spirits
 						int radius = 100;
 						
 						for (int i = 0; i < 10; i++)
@@ -188,8 +153,8 @@ public class Freya extends L2AttackableAIScript
 							world.AllMobs.add(minion);
 						}
 						break;
-						
-					case 6697:	//Eternal Blizzard
+					
+					case 6697: //Eternal Blizzard
 					case 6274:
 					case 6275:
 					case 6276:
@@ -201,20 +166,20 @@ public class Freya extends L2AttackableAIScript
 				{
 					if (Rnd.get(100) < 10)
 					{
-						int sound = Rnd.get(1,14);
+						int sound = Rnd.get(1, 14);
 						InstanceManager.getInstance().sendPacket(world.instanceId, new PlaySound(sound >= 10 ? "SystemMsg_e.freya_voice_" : "SystemMsg_e.freya_voice_0" + sound));
 					}
 				}
 			}
 		}
-	return super.onSpellFinished(npc, player, skill);
+		return super.onSpellFinished(npc, player, skill);
 	}
 	
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		InstanceWorld wrld = null;
 		if (npc != null)
@@ -227,9 +192,9 @@ public class Freya extends L2AttackableAIScript
 			return null;
 		}
 		
-		if (wrld != null && wrld instanceof FreyaWorld)
+		if ((wrld != null) && (wrld instanceof FreyaWorld))
 		{
-			FreyaWorld world = (FreyaWorld)wrld;
+			FreyaWorld world = (FreyaWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_opendoor"))
 			{
 				if (world.status != 0)
@@ -239,7 +204,7 @@ public class Freya extends L2AttackableAIScript
 				
 				InstanceManager.getInstance().getInstance(world.instanceId).getDoor(23140101).openMe();
 				
-				startQuestTimer("stage_1_intro", _debug ? 10000 : 5*60000, npc, null);
+				startQuestTimer("stage_1_intro", _debug ? 10000 : 5 * 60000, npc, null);
 			}
 			else if (event.equalsIgnoreCase("stage_1_intro"))
 			{
@@ -250,13 +215,13 @@ public class Freya extends L2AttackableAIScript
 				for (int objId : allowedPlayers)
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
+					if ((pl != null) && pl.isOnline() && (pl.getInstanceId() == world.instanceId))
 					{
-						if (pl.getY() > -113290 && pl.getZ() < -10990)
+						if ((pl.getY() > -113290) && (pl.getZ() < -10990))
 						{
-							world.allowed.remove((Integer)pl.getObjectId());
+							world.allowed.remove((Integer) pl.getObjectId());
 							pl.logout(true);
-						}	
+						}
 					}
 				}
 				
@@ -270,9 +235,9 @@ public class Freya extends L2AttackableAIScript
 				
 				spawnMonuments(world);
 				
-				world.Freya = addSpawn(world.FirstFreyaId, 114720, -117085, -11088, 15956, false, 0, false , world.instanceId);
+				world.Freya = addSpawn(world.FirstFreyaId, 114720, -117085, -11088, 15956, false, 0, false, world.instanceId);
 				
-				world.dummy = addSpawn(_dummy, 114707, -114797, -11199, 0, false, 0, false , world.instanceId);
+				world.dummy = addSpawn(_dummy, 114707, -114797, -11199, 0, false, 0, false, world.instanceId);
 				
 				world.AllMobs.add(world.dummy);
 				
@@ -308,7 +273,7 @@ public class Freya extends L2AttackableAIScript
 			{
 				world.status = 4;
 				
-				world.Freya = addSpawn(world.FirstFreyaId, 114723, -117502, -10672, 15956, false, 0, false , world.instanceId);
+				world.Freya = addSpawn(world.FirstFreyaId, 114723, -117502, -10672, 15956, false, 0, false, world.instanceId);
 				world.Freya.setIsImmobilized(true);
 				world.Freya.setIsInvul(true);
 				world.Freya.disableCoreAI(true);
@@ -339,21 +304,21 @@ public class Freya extends L2AttackableAIScript
 			else if (event.equalsIgnoreCase("stage_2_spawnbreaths"))
 			{
 				for (L2Npc knight : world.AllMobs)
-				{	
+				{
 					knight.getSpawn().stopRespawn();
-				}	
+				}
 				spawnMobs(world, world.ArchBreathId);
 			}
 			else if (event.equalsIgnoreCase("stage_2_glakiasmovie"))
 			{
 				InstanceManager.getInstance().showVidToInstance(23, world.instanceId);
 				
-				startQuestTimer("stage_2_glakiasspawn", 7000+1000, npc, null);
+				startQuestTimer("stage_2_glakiasspawn", 7000 + 1000, npc, null);
 			}
 			else if (event.equalsIgnoreCase("stage_2_glakiasspawn"))
-			{	
+			{
 				addSpawn(world.GlakiasId, 114707, -114799, -11199, 15956, false, 0, false, world.instanceId);
-			}	
+			}
 			else if (event.equalsIgnoreCase("stage_2_pause"))
 			{
 				despawnAll(world);
@@ -390,9 +355,9 @@ public class Freya extends L2AttackableAIScript
 				
 				//Start room tempest effects
 				for (int id : _roomEffects)
-				{	
+				{
 					InstanceManager.getInstance().sendPacket(world.instanceId, new EventTrigger(id, true));
-				}	
+				}
 			}
 			else if (event.equalsIgnoreCase("stage_3_spawnmonuments"))
 			{
@@ -414,17 +379,17 @@ public class Freya extends L2AttackableAIScript
 			{
 				if (!world.Monuments.isEmpty())
 				{
-					if (world.status <  6 && world.Monuments.contains(npc))
+					if ((world.status < 6) && world.Monuments.contains(npc))
 						return null;
-
-					if (world.status == 6 && world.Monuments.contains(npc))
+					
+					if ((world.status == 6) && world.Monuments.contains(npc))
 						npc.setDisplayEffect(2);
-
-					int playerId = world.allowed.get(world.allowed.size()-1);
+					
+					int playerId = world.allowed.get(world.allowed.size() - 1);
 					L2PcInstance victim = L2World.getInstance().getPlayer(playerId);
-					if (victim != null && victim.isOnline() && victim.getInstanceId() == world.instanceId && !npc.isImmobilized())
+					if ((victim != null) && victim.isOnline() && (victim.getInstanceId() == world.instanceId) && !npc.isImmobilized())
 					{
-						((L2Attackable)npc).addDamageHate(victim, 0, 99999);
+						((L2Attackable) npc).addDamageHate(victim, 0, 99999);
 						
 						npc.setIsRunning(true);
 						npc.setTarget(victim);
@@ -435,16 +400,16 @@ public class Freya extends L2AttackableAIScript
 				}
 				else
 				{
-					if (npc.getNpcId() == world.GlakiasId || npc.getNpcId() == world.ArchBreathId)
+					if ((npc.getNpcId() == world.GlakiasId) || (npc.getNpcId() == world.ArchBreathId))
 						npc.deleteMe();
 				}
 			}
 			else if (event.equalsIgnoreCase("stage_4_spawns"))
 			{
-				world.jiniaInner = (L2GuardInstance) addSpawn(18850, 114727,-114700,-11200,-16260, false, 0, false, world.instanceId);
+				world.jiniaInner = (L2GuardInstance) addSpawn(18850, 114727, -114700, -11200, -16260, false, 0, false, world.instanceId);
 				world.jiniaInner.setCanReturnToSpawnPoint(false);
 				
-				world.kegorInner = (L2GuardInstance) addSpawn(18851, 114690,-114700,-11200,-16260, false, 0, false, world.instanceId);
+				world.kegorInner = (L2GuardInstance) addSpawn(18851, 114690, -114700, -11200, -16260, false, 0, false, world.instanceId);
 				world.kegorInner.setCanReturnToSpawnPoint(false);
 				
 				startQuestTimer("stage_4_buffs", 5000, npc, null);
@@ -457,8 +422,8 @@ public class Freya extends L2AttackableAIScript
 				world.jiniaInner.setIsInvul(true);
 				world.kegorInner.setIsInvul(true);
 				
-				world.jiniaInner.doCast(SkillTable.getInstance().getInfo(6288,1));
-				world.kegorInner.doCast(SkillTable.getInstance().getInfo(6289,1));
+				world.jiniaInner.doCast(SkillTable.getInstance().getInfo(6288, 1));
+				world.kegorInner.doCast(SkillTable.getInstance().getInfo(6289, 1));
 				
 				startQuestTimer("stage_4_attack", 6000, npc, null);
 			}
@@ -469,24 +434,24 @@ public class Freya extends L2AttackableAIScript
 				
 				//Kegor
 				world.kegorInner.setTarget(world.Freya);
-				((L2Attackable)world.kegorInner).addDamageHate(world.Freya, 500, 99999);
+				((L2Attackable) world.kegorInner).addDamageHate(world.Freya, 500, 99999);
 				world.kegorInner.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.Freya, null);
 				
 				//Jinia
 				world.jiniaInner.setTarget(world.Freya);
-				((L2Attackable)world.jiniaInner).addDamageHate(world.Freya, 500, 99999);
+				((L2Attackable) world.jiniaInner).addDamageHate(world.Freya, 500, 99999);
 				world.jiniaInner.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.Freya, null);
 				
 				world.jiniaInner.setIsRunning(true);
 				world.kegorInner.setIsRunning(true);
 			}
 			else if (event.equalsIgnoreCase("stage_4_finalscene"))
-			{	
+			{
 				InstanceManager.getInstance().showVidToInstance(20, world.instanceId);
 			}
 		}
 		
-		if (npc.getNpcId() == _jiniaId && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if ((npc.getNpcId() == _jiniaId) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -511,20 +476,20 @@ public class Freya extends L2AttackableAIScript
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof FreyaWorld)
 		{
-			final FreyaWorld world = (FreyaWorld)tmpWorld;
+			final FreyaWorld world = (FreyaWorld) tmpWorld;
 			
-			if (world.status == 2 && npc.getNpcId() == world.FirstFreyaId)
+			if ((world.status == 2) && (npc.getNpcId() == world.FirstFreyaId))
 			{
 				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
 				{
 					world.status = 3;
-							
+					
 					startQuestTimer("stage_1_finalmovie", 1000, npc, attacker);
 				}
 			}
-			else if (world.status == 6 && npc.getNpcId() == world.LastFreyaId)
+			else if ((world.status == 6) && (npc.getNpcId() == world.LastFreyaId))
 			{
-				if (npc.getCurrentHp() < npc.getMaxHp() * 0.3)
+				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
 				{
 					world.status = 7;
 					
@@ -533,9 +498,9 @@ public class Freya extends L2AttackableAIScript
 					startQuestTimer("stage_4_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(18), npc, null);
 				}
 			}
-			else if (npc.getNpcId() == world.IceKnightId && npc.getDisplayEffect() == 1)
+			else if ((npc.getNpcId() == world.IceKnightId) && (npc.getDisplayEffect() == 1))
 			{
-				if (npc.getCurrentHp() < npc.getMaxHp() * 0.3)
+				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
 					npc.setDisplayEffect(2);
 			}
 		}
@@ -567,10 +532,10 @@ public class Freya extends L2AttackableAIScript
 				
 				//Stop room tempest effects
 				for (int id : _roomEffects)
-				{	
+				{
 					InstanceManager.getInstance().sendPacket(world.instanceId, new EventTrigger(id, false));
-				}	
-			}	
+				}
+			}
 		}
 		return super.onKill(npc, player, isPet);
 	}
@@ -582,7 +547,7 @@ public class Freya extends L2AttackableAIScript
 			Log.warning(getName() + ": onFirstTalk: " + player);
 		
 		int npcid = npc.getNpcId();
-		if (npcid == _jiniaInnerId || npcid == _kegorInnerId)
+		if ((npcid == _jiniaInnerId) || (npcid == _kegorInnerId))
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		else if (npcid == _sirraId)
 			return "Sirra.html";
@@ -604,21 +569,21 @@ public class Freya extends L2AttackableAIScript
 	
 	private void setupIDs(FreyaWorld world, int template_id)
 	{
-		if (template_id == 144)	//EPIC
+		if (template_id == 144) //EPIC
 		{
-			world.FirstFreyaId	= 29177;
-			world.LastFreyaId	= 29180;
-			world.GlakiasId		= 25700;
-			world.IceKnightId	= 18856;
-			world.ArchBreathId	= 18854;
+			world.FirstFreyaId = 29177;
+			world.LastFreyaId = 29180;
+			world.GlakiasId = 25700;
+			world.IceKnightId = 18856;
+			world.ArchBreathId = 18854;
 		}
 		else
 		{
-			world.FirstFreyaId	= 29177;
-			world.LastFreyaId	= 29179;
-			world.GlakiasId		= 25699;
-			world.IceKnightId	= 18855;
-			world.ArchBreathId	= 18854;
+			world.FirstFreyaId = 29177;
+			world.LastFreyaId = 29179;
+			world.GlakiasId = 25699;
+			world.IceKnightId = 18855;
+			world.ArchBreathId = 18854;
 		}
 	}
 	
@@ -635,20 +600,24 @@ public class Freya extends L2AttackableAIScript
 			
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
-			{	
-				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
+			{
+				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(114711, -113701, -11199, true);
 				}
-			}	
+			}
 			return;
 		}
 		else
 		{
-			int minPlayers = template_id == 144 ? Config.FREYA_MIN_PLAYERS * 2 : Config.FREYA_MIN_PLAYERS;
-			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, minPlayers, 35, 77, 93))
-			{	
+			//int minPlayers = template_id == 144 ? Config.FREYA_MIN_PLAYERS * 2 : Config.FREYA_MIN_PLAYERS;
+			int minPlayers = Config.FREYA_MIN_PLAYERS;
+			int maxLvl = 93;
+			if (Config.isServer(Config.TENKAI_ESTHUS))
+				maxLvl = Config.MAX_LEVEL;
+			if (!_debug && !InstanceManager.getInstance().checkInstanceConditions(player, template_id, minPlayers, 35, 77, maxLvl))
+			{
 				return;
 			}
 			
@@ -660,7 +629,7 @@ public class Freya extends L2AttackableAIScript
 			
 			InstanceManager.getInstance().addWorld(world);
 			
-			setupIDs((FreyaWorld)world, template_id);
+			setupIDs((FreyaWorld) world, template_id);
 			
 			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
 			if (_debug)
@@ -679,13 +648,13 @@ public class Freya extends L2AttackableAIScript
 				enterPlayer.getInventory().addItem(_qn, _frozenCore, 3, enterPlayer, enterPlayer);
 				
 				world.allowed.add(enterPlayer.getObjectId());
-		
+				
 				enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
 				enterPlayer.setInstanceId(instanceId);
 				enterPlayer.teleToLocation(_playerEnter[Rnd.get(0, _playerEnter.length - 1)], true);
 			}
 			
-			Log.fine(getName() + ": ["+template_id+"] instance started: " + instanceId + " created by player: " + player.getName());
+			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

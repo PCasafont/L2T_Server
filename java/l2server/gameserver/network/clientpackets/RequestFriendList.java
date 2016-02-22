@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.CharNameTable;
@@ -31,7 +32,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestFriendList extends L2GameClientPacket
 {
 	//
-	private static final String _C__60_REQUESTFRIENDLIST = "[C] 60 RequestFriendList";
 	
 	@Override
 	protected void readImpl()
@@ -63,7 +63,7 @@ public final class RequestFriendList extends L2GameClientPacket
 			
 			friend = L2World.getInstance().getPlayer(friendName);
 			
-			if (friend == null || !friend.isOnline())
+			if ((friend == null) || !friend.isOnline())
 			{
 				// (Currently: Offline)
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_OFFLINE);
@@ -86,11 +86,5 @@ public final class RequestFriendList extends L2GameClientPacket
 			for (int objId : activeChar.getFriendList())
 				activeChar.sendPacket(new FriendPacket(true, objId, activeChar));
 		activeChar.sendPacket(new BlockListPacket(activeChar));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__60_REQUESTFRIENDLIST;
 	}
 }

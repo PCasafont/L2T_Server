@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
@@ -24,7 +25,7 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author mkizub
- * 
+ *
  */
 public class EffectFakeDeath extends L2Effect
 {
@@ -34,7 +35,7 @@ public class EffectFakeDeath extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
@@ -44,21 +45,21 @@ public class EffectFakeDeath extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2PcInstance && !((L2PcInstance)getEffected()).isCombatFlagEquipped())
-		{	
+		if ((getEffected() instanceof L2PcInstance) && !((L2PcInstance) getEffected()).isCombatFlagEquipped())
+		{
 			getEffected().startFakeDeath();
-		}	
+		}
 		return true;
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
@@ -68,13 +69,13 @@ public class EffectFakeDeath extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime()
 	{
-		if (getEffected().isDead() || ((L2PcInstance)getEffected()).isCombatFlagEquipped())
+		if (getEffected().isDead() || ((L2PcInstance) getEffected()).isCombatFlagEquipped())
 			return false;
 		
 		double manaDam = calc();

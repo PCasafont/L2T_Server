@@ -123,7 +123,7 @@ public class L2NpcActionShift implements IActionHandler
 			
 			if (((L2Npc)target).getSpawn() != null)
 			{
-				html.replace("%spawn%", ((L2Npc)target).getSpawn().getX()+" "+((L2Npc)target).getSpawn().getY()+" "+((L2Npc)target).getSpawn().getZ()+" " + ((L2Npc)target).getSpawn().getHeading());
+				html.replace("%spawn%", ((L2Npc)target).getSpawn().getX()+" "+((L2Npc)target).getSpawn().getY()+" "+((L2Npc)target).getSpawn().getZ());
 				html.replace("%loc2d%", String.valueOf((int)Math.sqrt(((L2Character)target).getPlanDistanceSq(((L2Npc)target).getSpawn().getX(), ((L2Npc)target).getSpawn().getY()))));
 				html.replace("%loc3d%", String.valueOf((int)Math.sqrt(((L2Character)target).getDistanceSq(((L2Npc)target).getSpawn().getX(), ((L2Npc)target).getSpawn().getY(), ((L2Npc)target).getSpawn().getZ()))));
 				html.replace("%resp%",  String.valueOf(((L2Npc)target).getSpawn().getRespawnDelay() / 1000));

@@ -1,3 +1,4 @@
+
 package retail.AdventurerHelper;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -8,9 +9,9 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.util.Rnd;
 
 /**
- * 
+ *
  * @author LasTravel
- * 
+ *
  * Source: http://l2wiki.com/Adventurer_Helpers
  *
  */
@@ -33,30 +34,30 @@ public class AdventurerHelper extends Quest
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
 		
-		if (st == null || q == null)
+		if ((st == null) || (q == null))
 		{
 			q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-
+		
 		long _curr_time = System.currentTimeMillis();
 		String value = q.loadGlobalQuestVar(player.getAccountName());
 		long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 		
 		if (_curr_time > _reuse_time)
-		{	
+		{
 			st.giveItems(adventurerSupportGoods, 1);
 			q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + 86400000)); //24h
-		}	
+		}
 		
-		return "33463-"+Rnd.get(1,236)+".htm";
+		return "33463-" + Rnd.get(1, 236) + ".htm";
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("showRandom"))
-			return "33463-"+Rnd.get(1,236)+".htm";
+			return "33463-" + Rnd.get(1, 236) + ".htm";
 		
 		return super.onAdvEvent(event, npc, player);
 	}

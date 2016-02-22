@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ItemInstance;
@@ -35,7 +36,7 @@ public class Attack extends L2GameServerPacket
 	public static final int HITFLAG_CRIT = 0x20;
 	public static final int HITFLAG_SHLD = 0x40;
 	public static final int HITFLAG_MISS = 0x80;
-	*/
+	 */
 	public static final int HITFLAG_MISS = 0x01;
 	public static final int HITFLAG_SHLD = 0x02;
 	public static final int HITFLAG_CRIT = 0x04;
@@ -65,14 +66,13 @@ public class Attack extends L2GameServerPacket
 				_ssGrade = Attack.this._ssGrade;
 			}
 			// dirty fix for lags on olympiad
-			if (shld > 0 && !(target instanceof L2PcInstance && ((L2PcInstance)target).isInOlympiadMode()))
+			if ((shld > 0) && !((target instanceof L2PcInstance) && ((L2PcInstance) target).isInOlympiadMode()))
 				_flags |= HITFLAG_SHLD;
 			//			if (shld > 0)
 			//				_flags |= HITFLAG_SHLD;
 		}
 	}
 	
-	private static final String _S__06_ATTACK = "[S] 33 Attack";
 	private final int _attackerObjId;
 	private final int _targetObjId;
 	public final double soulshotCharge;
@@ -136,8 +136,6 @@ public class Attack extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x33);
-		
 		writeD(_attackerObjId);
 		writeD(_targetObjId);
 		writeD(0); // ???
@@ -164,14 +162,5 @@ public class Attack extends L2GameServerPacket
 		writeD(_tx);
 		writeD(_ty);
 		writeD(_tz);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__06_ATTACK;
 	}
 }

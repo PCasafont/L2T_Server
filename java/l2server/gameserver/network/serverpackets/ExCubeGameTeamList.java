@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import java.util.List;
@@ -32,12 +33,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * 		d: player object id
  * 		S: player name
  * ]
- * 
+ *
  * @author mrTJO
  */
 public class ExCubeGameTeamList extends L2GameServerPacket
 {
-	private static final String _S__FE_97_00_EXCUBEGAMETEAMLIST = "[S] FE:97:00 ExCubeGameTeamList";
 	
 	// Players Lists
 	List<L2PcInstance> _bluePlayers;
@@ -47,9 +47,9 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	int _roomNumber;
 	
 	/**
-	 * 
+	 *
 	 * Show Minigame Waiting List to Player
-	 * 
+	 *
 	 * @param redPlayers Red Players List
 	 * @param bluePlayers Blue Players List
 	 * @param roomNumber Arena/Room ID
@@ -65,12 +65,8 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xfe);
-		writeH(0x97);
-		writeD(0x00);
-		
 		writeD(_roomNumber);
 		writeD(0xffffffff);
 		
@@ -87,14 +83,4 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 			writeS(player.getName());
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__FE_97_00_EXCUBEGAMETEAMLIST;
-	}
-	
 }

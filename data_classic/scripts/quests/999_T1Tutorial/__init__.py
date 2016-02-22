@@ -87,10 +87,10 @@ class Quest (JQuest) :
     player = st.getPlayer()
     if qs != None :
        Ex = int(qs.get("Ex"))
-       classId = int(st.getPlayer().getClassId())
+       classId = int(st.getPlayer().getClassId().getId())
        if event == "TimerEx_NewbieHelper" :
           if Ex == 0 :
-             if player.getCurrentClass().isMage() :
+             if player.getClassId().isMage() :
                 st.playTutorialVoice("tutorial_voice_009b")
              else :
                 st.playTutorialVoice("tutorial_voice_009a")
@@ -120,13 +120,13 @@ class Quest (JQuest) :
              st.takeItems(item,1)
              if Ex <= 3 :
                 qs.set("Ex","4")
-             if st.getPlayer().getClassId() == classId1 :
+             if st.getPlayer().getClassId().getId() == classId1 :
                 st.giveItems(gift1,count1)
                 if gift1 == SPIRITSHOT_NOVICE :
                    st.playTutorialVoice("tutorial_voice_027")
                 else:
                    st.playTutorialVoice("tutorial_voice_026")
-             elif st.getPlayer().getClassId() == classId2 :
+             elif st.getPlayer().getClassId().getId() == classId2 :
                 if gift2:
                    st.giveItems(gift2,count2)
                    st.playTutorialVoice("tutorial_voice_026")

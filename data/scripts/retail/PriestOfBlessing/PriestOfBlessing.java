@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package retail.PriestOfBlessing;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -37,32 +38,14 @@ public class PriestOfBlessing extends Quest
 	private static final int _priest = 32783;
 	// Prices
 	private static final int _price_voice = 100000;
-	// 
+	//
 	private static final int _nevit_voice = 17094;
-	// 
+	//
 	private static final int[] _prices_hourglass = { 4000, 30000, 110000, 310000, 970000, 2160000, 5000000 };
 	//
-	private static final int[][] _hourglasses = {
-		{ 17095, 17096, 17097, 17098, 17099 },
-		{ 17100, 17101, 17102, 17103, 17104 },
-		{ 17105, 17106, 17107, 17108, 17109 },
-		{ 17110, 17111, 17112, 17113, 17114 },
-		{ 17115, 17116, 17117, 17118, 17119 },
-		{ 17120, 17121, 17122, 17123, 17124 },
-		{ 17125, 17126, 17127, 17128, 17129 }
-	};
+	private static final int[][] _hourglasses = { { 17095, 17096, 17097, 17098, 17099 }, { 17100, 17101, 17102, 17103, 17104 }, { 17105, 17106, 17107, 17108, 17109 }, { 17110, 17111, 17112, 17113, 17114 }, { 17115, 17116, 17117, 17118, 17119 }, { 17120, 17121, 17122, 17123, 17124 }, { 17125, 17126, 17127, 17128, 17129 } };
 	// Spawns
-	private static final int[][] _spawns = {
-		{ -83112, 150922, -3120, 2280 },
-		{ -13931, 121938, -2984, 30212 },
-		{ 87127, -141330, -1336, 49153 },
-		{ 43520, -47590, -792, 43738 },
-		{ 148060, -55314, -2728, 40961 },
-		{ 82433, 53285, -1488, 22942 },
-		{ 111171, 221053, -3544, 2058 },
-		{ 15907, 142901, -2688, 14324 }
-	};
-	
+	private static final int[][] _spawns = { { -83112, 150922, -3120, 2280 }, { -13931, 121938, -2984, 30212 }, { 87127, -141330, -1336, 49153 }, { 43520, -47590, -792, 43738 }, { 148060, -55314, -2728, 40961 }, { 82433, 53285, -1488, 22942 }, { 111171, 221053, -3544, 2058 }, { 15907, 142901, -2688, 14324 } };
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -71,14 +54,14 @@ public class PriestOfBlessing extends Quest
 		
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
-		if (st == null || q == null)
+		if ((st == null) || (q == null))
 			return null;
 		
 		if (event.equalsIgnoreCase("buy_voice"))
 		{
 			if (st.getQuestItemsCount(57) >= _price_voice)
 			{
-				String value = q.loadGlobalQuestVar(player.getAccountName()+"_voice");
+				String value = q.loadGlobalQuestVar(player.getAccountName() + "_voice");
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
 				
 				if (System.currentTimeMillis() > _reuse_time)
@@ -86,7 +69,7 @@ public class PriestOfBlessing extends Quest
 					st.setState(State.STARTED);
 					st.takeItems(57, _price_voice);
 					st.giveItems(_nevit_voice, 1);
-					q.saveGlobalQuestVar(player.getAccountName()+"_voice", Long.toString(System.currentTimeMillis() + (20 * 3600000)));
+					q.saveGlobalQuestVar(player.getAccountName() + "_voice", Long.toString(System.currentTimeMillis() + (20 * 3600000)));
 				}
 				else
 				{
@@ -111,18 +94,18 @@ public class PriestOfBlessing extends Quest
 			
 			if (st.getQuestItemsCount(57) >= _price_hourglass)
 			{
-				String value = q.loadGlobalQuestVar(player.getAccountName()+"_hg_"+_index);
+				String value = q.loadGlobalQuestVar(player.getAccountName() + "_hg_" + _index);
 				long _reuse_time = value == "" ? 0 : Long.parseLong(value);
-								
+				
 				if (System.currentTimeMillis() > _reuse_time)
 				{
 					int[] _hg = _hourglasses[_index];
-					int _nevit_hourglass = _hg[Rnd.get(0,_hg.length-1)];
-
+					int _nevit_hourglass = _hg[Rnd.get(0, _hg.length - 1)];
+					
 					st.setState(State.STARTED);
 					st.takeItems(57, _price_hourglass);
 					st.giveItems(_nevit_hourglass, 1);
-					q.saveGlobalQuestVar(player.getAccountName()+"_hg_"+_index, Long.toString(System.currentTimeMillis() + (20 * 3600000)));
+					q.saveGlobalQuestVar(player.getAccountName() + "_hg_" + _index, Long.toString(System.currentTimeMillis() + (20 * 3600000)));
 				}
 				else
 				{

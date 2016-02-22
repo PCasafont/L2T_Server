@@ -13,15 +13,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.util;
 
 import java.io.Serializable;
@@ -98,7 +99,7 @@ public class Point3D implements Serializable
 			boolean ret;
 			synchronized (point3D)
 			{
-				ret = point3D._x == _x && point3D._y == _y && point3D._z == _z;
+				ret = (point3D._x == _x) && (point3D._y == _y) && (point3D._z == _z);
 			}
 			return ret;
 		}
@@ -107,7 +108,7 @@ public class Point3D implements Serializable
 	
 	public synchronized boolean equals(int pX, int pY, int pZ)
 	{
-		return _x == pX && _y == pY && _z == pZ;
+		return (_x == pX) && (_y == pY) && (_z == pZ);
 	}
 	
 	public synchronized long distanceSquaredTo(Point3D point)
@@ -135,10 +136,9 @@ public class Point3D implements Serializable
 		return (dx * dx) + (dy * dy);
 	}
 	
-	public static boolean distanceLessThan(Point3D point1, Point3D point2,
-			double distance)
+	public static boolean distanceLessThan(Point3D point1, Point3D point2, double distance)
 	{
-		return distanceSquared(point1, point2) < distance * distance;
+		return distanceSquared(point1, point2) < (distance * distance);
 	}
 	
 	public int getX()

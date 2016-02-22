@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -27,8 +28,6 @@ import l2server.log.Log;
  */
 public final class CannotMoveAnymore extends L2GameClientPacket
 {
-	private static final String _C__36_STOPMOVE = "[C] 36 CannotMoveAnymore";
-	
 	
 	private int _x;
 	private int _y;
@@ -52,14 +51,11 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 			return;
 		
 		if (Config.DEBUG)
-			Log.fine("client: x:" + _x + " y:" + _y + " z:" + _z
-					+ " server x:" + player.getX() + " y:" + player.getY()
-					+ " z:" + player.getZ());
+			Log.fine("client: x:" + _x + " y:" + _y + " z:" + _z + " server x:" + player.getX() + " y:" + player.getY() + " z:" + player.getZ());
 		
 		if (player.getAI() != null)
 		{
-			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED,
-					new L2CharPosition(_x, _y, _z, _heading));
+			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(_x, _y, _z, _heading));
 		}
 		/*if (player.getParty() != null)
 		{
@@ -79,16 +75,5 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		// _heading);
 		// getClient().getActiveChar().sendPacket(sr);
 		// getClient().getActiveChar().broadcastPacket(sr);
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__36_STOPMOVE;
 	}
 }

@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class Anakim extends L2Transformation
 {
-	private static final int[] SKILLS = new int[]{720,721,722,723,724,5491,619};
+	private static final int[] SKILLS = new int[] { 720, 721, 722, 723, 724, 5491, 619 };
 	
 	public Anakim()
 	{
@@ -17,7 +18,7 @@ public class Anakim extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 306 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 306) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

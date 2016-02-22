@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.io.File;
@@ -75,7 +76,7 @@ public class RecipeController
 		
 		try
 		{
-			this.loadFromXML();
+			loadFromXML();
 			Log.info("RecipeController: Loaded " + _lists.size() + " recipes.");
 		}
 		catch (Exception e)
@@ -149,14 +150,13 @@ public class RecipeController
 		
 		if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
 		{
-			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName()
-					+ " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
 		RecipeItemMaker maker;
 		
-		if (Config.ALT_GAME_CREATION && (maker = _activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
+		if (Config.ALT_GAME_CREATION && ((maker = _activeMakers.get(manufacturer.getObjectId())) != null)) // check if busy
 		{
 			player.sendMessage("Manufacturer is busy, please try later.");
 			return;
@@ -193,8 +193,7 @@ public class RecipeController
 		
 		if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
 		{
-			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName()
-					+ " sent a false recipe id.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent a false recipe id.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -226,6 +225,10 @@ public class RecipeController
 	private void loadFromXML() throws SAXException, IOException, ParserConfigurationException
 	{
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + RECIPES_FILE);
+		File customFile = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/recipes.xml");
+		if (customFile.exists())
+			file = customFile;
+		
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
@@ -461,6 +464,7 @@ public class RecipeController
 			_isValid = true;
 		}
 		
+		@Override
 		public void run()
 		{
 			if (!Config.IS_CRAFTING_ENABLED)
@@ -470,7 +474,7 @@ public class RecipeController
 				return;
 			}
 			
-			if (_player == null || _target == null)
+			if ((_player == null) || (_target == null))
 			{
 				Log.warning("player or target == null (disconnected?), aborting" + _target + _player);
 				abort();
@@ -484,7 +488,7 @@ public class RecipeController
 				return;
 			}
 			
-			if (Config.ALT_GAME_CREATION && _activeMakers.get(_player.getObjectId()) == null)
+			if (Config.ALT_GAME_CREATION && (_activeMakers.get(_player.getObjectId()) == null))
 			{
 				if (_target != _player)
 				{
@@ -513,8 +517,7 @@ public class RecipeController
 				if (!_items.isEmpty())
 				{
 					// divided by RATE_CONSUMABLES_COST to remove craft time increase on higher consumables rates
-					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * TimeController.TICKS_PER_SECOND / Config.RATE_CONSUMABLE_COST)
-					* TimeController.MILLIS_IN_TICK;
+					_delay = (int) ((Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * TimeController.TICKS_PER_SECOND) / Config.RATE_CONSUMABLE_COST) * TimeController.MILLIS_IN_TICK;
 					
 					// This packet won't show crafting (client-side change in the Create Item skill)
 					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
@@ -552,7 +555,7 @@ public class RecipeController
 				calculateStatUse(false, true);
 			
 			// first take adena for manufacture
-			if ((_target != _player) && _price > 0) // customer must pay for services
+			if ((_target != _player) && (_price > 0)) // customer must pay for services
 			{
 				// attempt to pay for item
 				L2ItemInstance adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
@@ -566,7 +569,7 @@ public class RecipeController
 			}
 			
 			//Calculate the chance with the LUC stat
-			int chance = (int) (_recipeList.getSuccessRate() + (_player.getLUC() * 0.2));
+			int chance = (int) (_recipeList.getSuccessRate() + ((_player.getLUC() - 20) * 0.2));
 			if ((_items = listItems(true)) == null) // this line actually takes materials from inventory
 			{ // handle possible cheaters here
 				// (they click craft then try to get rid of items in order to get free craft)
@@ -629,7 +632,7 @@ public class RecipeController
 		private void grabSomeItems()
 		{
 			int grabItems = _itemGrab;
-			while (grabItems > 0 && !_items.isEmpty())
+			while ((grabItems > 0) && !_items.isEmpty())
 			{
 				TempItem item = _items.get(0);
 				
@@ -702,7 +705,7 @@ public class RecipeController
 							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
 						}
 						else
-							// no rest - report no hp
+						// no rest - report no hp
 						{
 							_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_HP));
 							abort();
@@ -723,7 +726,7 @@ public class RecipeController
 							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
 						}
 						else
-							// no rest - report no mana
+						// no rest - report no mana
 						{
 							_target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_MP));
 							abort();
@@ -792,7 +795,7 @@ public class RecipeController
 						sm.addItemNumber(tmp.getQuantity());
 						_target.sendPacket(sm);
 					}
-					else 
+					else
 					{
 						sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
 						sm.addItemName(tmp.getItemId());
@@ -883,7 +886,7 @@ public class RecipeController
 			L2Item template = ItemTable.getInstance().getTemplate(itemId);
 			
 			// check that the current recipe has a rare production or not
-			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK))
+			if ((rareProdId != -1) && ((rareProdId == itemId) || Config.CRAFT_MASTERWORK))
 			{
 				if (Rnd.get(100) < _recipeList.getRarity())
 				{
@@ -981,9 +984,7 @@ public class RecipeController
 				// you can use ALT_GAME_CREATION_XP_RATE/SP to
 				// modify XP/SP gained (default = 1)
 				
-				_player.addExpAndSp((int) _player.calcStat(Stats.EXP_RATE, _exp * Config.ALT_GAME_CREATION_XP_RATE
-						* Config.ALT_GAME_CREATION_SPEED, null, null), (int) _player.calcStat(Stats.SP_RATE, _sp
-								* Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
+				_player.addExpAndSp((int) _player.calcStat(Stats.EXP_RATE, _exp * Config.ALT_GAME_CREATION_XP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null), (int) _player.calcStat(Stats.SP_RATE, _sp * Config.ALT_GAME_CREATION_SP_RATE * Config.ALT_GAME_CREATION_SPEED, null, null));
 			}
 			updateMakeInfo(true); // success
 		}

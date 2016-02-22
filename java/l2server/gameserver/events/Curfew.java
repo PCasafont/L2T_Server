@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events;
 
 import java.util.Calendar;
@@ -18,10 +19,10 @@ import l2server.util.Rnd;
 public class Curfew
 {
 	public static Curfew _instance = null;
-
+	
 	private CurfewTask _ctask;
 	private StartTask _task;
-
+	
 	private int _eventTown = 9;
 	private String eventTownName = "Giran";
 	public long curfewEnd = 0;
@@ -32,7 +33,7 @@ public class Curfew
 			_instance = new Curfew();
 		return _instance;
 	}
-
+	
 	public void initialize()
 	{
 		_eventTown = Rnd.get(19) + 1;
@@ -43,12 +44,12 @@ public class Curfew
 		
 		eventTownName = MapRegionTable.getInstance().getTownName(_eventTown);
 	}
-
+	
 	public void start()
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if (!(player.isInsideZone(L2Character.ZONE_PEACE) && TownManager.getClosestTown(player).getTownId() == _eventTown))
+			if (!(player.isInsideZone(L2Character.ZONE_PEACE) && (TownManager.getClosestTown(player).getTownId() == _eventTown)))
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 		}
 		
@@ -60,19 +61,19 @@ public class Curfew
 		
 		int minutes = Rnd.get(30) + 30;
 		
-		curfewEnd = System.currentTimeMillis() + 60000L * minutes;
+		curfewEnd = System.currentTimeMillis() + (60000L * minutes);
 		scheduleCurfew();
 		
 		Announcements.getInstance().announceToAll("The entire world has become a hell during " + minutes + " minutes!");
 		Announcements.getInstance().announceToAll("You will be safe from the assassins only at " + eventTownName + "!");
 	}
-
+	
 	private void stop()
 	{
 		_eventTown = -1;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) && !(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING)))
+			if ((player != null) && !player.isInsideZone(L2Character.ZONE_PEACE) && !(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING)))
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 		}
 		
@@ -93,6 +94,7 @@ public class Curfew
 			_startTime = startTime;
 		}
 		
+		@Override
 		public void run()
 		{
 			int delay = Math.round((_startTime - System.currentTimeMillis()) / 1000);
@@ -156,24 +158,18 @@ public class Curfew
 			time = "today";
 		else
 			time = "tomorrow";
-		time += " at " + startTime.get(Calendar.HOUR_OF_DAY)
-				+ ":" + startTime.get(Calendar.MINUTE);
+		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
 		long toStart = _task.getStartTime() - System.currentTimeMillis();
-		int hours = (int)(toStart / 3600000);
-		int minutes = (int)(toStart / 60000) % 60;
-		if (hours > 0 || minutes > 0)
+		int hours = (int) (toStart / 3600000);
+		int minutes = (int) (toStart / 60000) % 60;
+		if ((hours > 0) || (minutes > 0))
 		{
 			time += ", in ";
 			if (hours > 0)
 				time += hours + " hour" + (hours == 1 ? "" : "s") + " and ";
 			time += minutes + " minute" + (minutes == 1 ? "" : "s");
 		}
-		String html = "<html>" +
-		"<title>Event</title>" +
-		"<body>" +
-		"<center><br><tr><td>Curfew</td></tr><br>" +
-		"<br>" +
-		"The next curfew will be " + time + ".<br>";
+		String html = "<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Curfew</td></tr><br>" + "<br>" + "The next curfew will be " + time + ".<br>";
 		html += "</body></html>";
 		activeChar.sendPacket(new NpcHtmlMessage(0, html));
 	}
@@ -192,6 +188,7 @@ public class Curfew
 			return _startTime;
 		}
 		
+		@Override
 		public void run()
 		{
 			int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);

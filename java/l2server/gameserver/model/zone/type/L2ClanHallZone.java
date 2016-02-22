@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import l2server.gameserver.datatables.MapRegionTable;
@@ -66,12 +67,12 @@ public class L2ClanHallZone extends L2SpawnZone
 			
 			// Send decoration packet
 			AgitDecoInfo deco = new AgitDecoInfo(clanHall);
-			((L2PcInstance)character).sendPacket(deco);
+			((L2PcInstance) character).sendPacket(deco);
 		}
-		else if (character instanceof L2Attackable && ((L2Attackable)character).getMostHated() != null)
+		else if ((character instanceof L2Attackable) && (((L2Attackable) character).getMostHated() != null))
 		{
-			((L2Attackable)character).escape("Do you want to kidnap me in this dirty clan hall? No, thanks :)");
-			((L2Attackable)character).getMostHated().reduceCurrentHp(100000, character, null);
+			((L2Attackable) character).escape("Do you want to kidnap me in this dirty clan hall? No, thanks :)");
+			((L2Attackable) character).getMostHated().reduceCurrentHp(100000, character, null);
 		}
 	}
 	

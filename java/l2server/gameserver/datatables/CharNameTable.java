@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.sql.Connection;
@@ -84,7 +85,7 @@ public class CharNameTable
 	
 	public final int getIdByName(String name)
 	{
-		if (name == null || name.isEmpty())
+		if ((name == null) || name.isEmpty())
 			return -1;
 		
 		Iterator<Entry<Integer, String>> it = _chars.entrySet().iterator();
@@ -173,7 +174,7 @@ public class CharNameTable
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (name != null && !name.isEmpty())
+		if ((name != null) && !name.isEmpty())
 		{
 			_chars.put(id, name);
 			_accessLevels.put(id, accessLevel);
@@ -220,6 +221,7 @@ public class CharNameTable
 	public int accountCharNumber(String account)
 	{
 		Connection con = null;
+		
 		int number = 0;
 		
 		try
@@ -278,7 +280,7 @@ public class CharNameTable
 		{
 			L2DatabaseFactory.close(con);
 		}
-		Log.info(getClass().getSimpleName()+": Loaded "+_chars.size()+" char names.");
+		Log.info(getClass().getSimpleName() + ": Loaded " + _chars.size() + " char names.");
 	}
 	
 	public boolean setCharNameConditions(L2PcInstance player, String name)
@@ -294,12 +296,12 @@ public class CharNameTable
 				}
 			}
 		}
-		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || (name.length() < 1) || (name.length() > 16) || getIdByName(name) > 0)
+		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || (name.length() < 1) || (name.length() > 16) || (getIdByName(name) > 0))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHARACTER_NAME_INVALID_RENAME_CHARACTER));
 			return false;
 		}
-
+		
 		return true;
 	}
 	

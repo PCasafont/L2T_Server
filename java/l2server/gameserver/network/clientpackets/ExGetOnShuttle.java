@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Object;
@@ -43,7 +44,7 @@ public class ExGetOnShuttle extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null || !player.canGetOnOffShuttle())
+		if ((player == null) || !player.canGetOnOffShuttle())
 			return;
 		
 		L2Object obj = L2World.getInstance().findObject(_shuttleId);
@@ -53,7 +54,7 @@ public class ExGetOnShuttle extends L2GameClientPacket
 			return;
 		}
 		
-		L2ShuttleInstance shuttle = (L2ShuttleInstance)obj;
+		L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
 		if (shuttle.isClosed())
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
@@ -61,14 +62,5 @@ public class ExGetOnShuttle extends L2GameClientPacket
 		}
 		
 		shuttle.addPassenger(player, _posX, _posY, _posZ);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "ExGetOnShuttle";
 	}
 }

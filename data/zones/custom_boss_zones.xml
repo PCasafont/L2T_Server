@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
 	<!-- Boss Zones -->
+	<zone name="Zaken Boss" id="12000" type="BossZone" shape="NPoly" minZ="-4815" maxZ="-315">
+		<stat name="EnabledByDefault" val="false" />
+		<stat name="InvadeTime" val="1800000" />
+		<node X="50797" Y="213515" />
+		<node X="57617" Y="213510" />
+		<node X="57669" Y="221683" />
+		<node X="50773" Y="221632" />
+    </zone>
 	<zone name="Antharas Boss" id="12001" type="BossZone" shape="NPoly" minZ="-8380" maxZ="-4880">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="173469" Y="110431" />
 		<node X="188081" Y="110284" />
 		<node X="188132" Y="119249" />
 		<node X="173386" Y="119391" />
 	</zone>
 	<zone name="Baium Boss" id="12002" type="BossZone" shape="NPoly" minZ="10061" maxZ="11061">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="111022" Y="16177" />
 		<node X="114510" Y="12623" />
 		<node X="118142" Y="15790" />
 		<node X="114773" Y="19589" />
 	</zone>
 	<zone name="Anakim" id="12003" type="BossZone" shape="NPoly" minZ="-5500" maxZ="-4600">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="183904" Y="-13884" />
 		<node X="186265" Y="-13884" />
 		<node X="186245" Y="-11263" />
@@ -25,7 +33,7 @@
 	<!-- Forge of the Gods/Hall of Flames -->
 	<zone name="Fire 1" id="12004" type="BossZone" shape="NPoly" minZ="-3326" maxZ="-1326">
 		<stat name="EnabledByDefault" val="false" />
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="183373" Y="-117179" />
 		<node X="184098" Y="-116718" />
 		<node X="184137" Y="-115290" />
@@ -36,7 +44,7 @@
 	</zone>
 	<zone name="Fire 2" id="12005" type="BossZone" shape="NPoly" minZ="-2208" maxZ="792">
 		<stat name="EnabledByDefault" val="false" />
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="183432" Y="-117590" />
 		<node X="196325" Y="-119107" />
 		<node X="196377" Y="-103657" />
@@ -76,7 +84,7 @@
 		<node X="172174" Y="-75213" />
 	</zone>
 	<zone name="Valakas Boss" id="12010" type="BossZone" shape="NPoly" minZ="-2572" maxZ="5428">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="196866" Y="-130845" />
 		<node X="229289" Y="-130860" />
 		<node X="229176" Y="-98508" />
@@ -112,7 +120,7 @@
 	</zone>
 	<zone id="12014" name="Altar of Sacrifice" type="BossZone" shape="Cuboid" minZ="-10730" maxZ="-10290">
 		<stat name="EnabledByDefault" val="false" />
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="-18176" Y="-54972" />
 		<node X="-14614" Y="-51620" />
 	</zone>
@@ -121,7 +129,7 @@
 		<node X="27456" Y="-6696" />
 	</zone>
 	<zone name="Lindvior Boss" id="12020" type="BossZone" shape="NPoly" minZ="-5000" maxZ="16500">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="47606" Y="-29198" />
 		<node X="49094" Y="-28849" />
 		<node X="49372" Y="-28545" />
@@ -136,21 +144,21 @@
 		<node X="47313" Y="-29489" />
 	</zone>
 	<zone name="Pre Anakim" id="12021" type="BossZone" shape="NPoly" minZ="-4950" maxZ="-4420">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="172102" Y="-18083" />
 		<node X="183504" Y="-18105" />
 		<node X="183544" Y="-6702" />
 		<node X="171976" Y="-6743" />
 	</zone>
 	<zone name="Lilith" id="12022" type="BossZone" shape="NPoly" minZ="-5500" maxZ="-4600">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="183904" Y="-10883" />
 		<node X="186245" Y="-10903" />
 		<node X="186265" Y="-8223" />
 		<node X="183924" Y="-8203" />
 	</zone>
 	<zone name="Pre Lilith" id="12023" type="BossZone" shape="NPoly" minZ="-5000" maxZ="-4300">
-		<stat name="InvadeTime" val="600000" />
+		<stat name="InvadeTime" val="1800000" />
 		<node X="-19545" Y="12943" />
 		<node X="-7704" Y="12732" />
 		<node X="-7726" Y="24753" />

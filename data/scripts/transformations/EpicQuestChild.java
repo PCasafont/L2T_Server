@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -17,7 +18,7 @@ public class EpicQuestChild extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 112 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 112) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

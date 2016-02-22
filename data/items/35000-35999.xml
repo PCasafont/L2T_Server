@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
+	<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. Can bestow 1 Special Soul Crystal. -->
 	<item id="35000" type="Weapon" name="Tauti's Two-handed Axe" icon="icon.weapon_tauti_two_hand_pole_i01" defaultAction="equip"
 			weaponType="pole" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1300"
-			soulshots="0" spiritshots="0" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
+			soulshots="0" spiritshots="0" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
 		<set stat="pAtk" val="629" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="8" />
@@ -17,10 +17,10 @@
 		<crystallizeReward id="36514" count="3" chance="70.131" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="93.919" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
+	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. Can bestow 1 Special Soul Crystal. -->
 	<item id="35001" type="Weapon" name="Tauti's Dual Axe" icon="icon.weapon_tauti_dual_axe_i01" defaultAction="equip" weaponType="dualblunt"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1700" soulshots="1"
-			spiritshots="1" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
+			spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
 		<set stat="pAtk" val="776" />
 		<set stat="mAtk" val="278" />
 		<set stat="rCrit" val="8" />
@@ -1588,7 +1588,7 @@
 		<crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35095" type="Weapon" name="Dark Amaranthine Shaper" icon="icon.weapon_R99_dagger_pvp_i10" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13282-3" isBlessed="true">
@@ -1606,7 +1606,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
 	<item id="35096" type="Weapon" name="Dark Amaranthine Cutter" icon="icon.weapon_R99_onehand_sword_pvp_i10" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13252-3" isBlessed="true">
@@ -1622,7 +1622,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Atk. additionally increases. -->
 	<item id="35097" type="Weapon" name="Dark Amaranthine Slasher" icon="icon.weapon_R99_twohand_sword_pvp_i10" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1740" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13261-3" isBlessed="true">
@@ -1638,7 +1638,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35098" type="Weapon" name="Dark Amaranthine Avenger" icon="icon.weapon_R99_onehand_blunt_pvp_i10" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13256-3" isBlessed="true">
@@ -1656,7 +1656,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
 	<item id="35099" type="Weapon" name="Dark Amaranthine Fighter" icon="icon.weapon_R99_fist_pvp_i10" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1550" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13267-3" isBlessed="true">
@@ -1674,7 +1674,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Multi-attack additionally increases. -->
 	<item id="35100" type="Weapon" name="Dark Amaranthine Stormer" icon="icon.weapon_R99_spear_pvp_i10" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="2010"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13263-3" isBlessed="true">
@@ -1692,7 +1692,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Skill Power increases. -->
 	<item id="35101" type="Weapon" name="Dark Amaranthine Thrower" icon="icon.weapon_R99_bow_pvp_i10" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13292-3" reuseDelay="1500" isBlessed="true">
@@ -1710,7 +1710,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Atk. Spd. Increases. -->
 	<item id="35102" type="Weapon" name="Dark Amaranthine Shooter" icon="icon.weapon_R99_crossbow_pvp_i10" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1580" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13294-3" reuseDelay="400"
@@ -1729,7 +1729,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
 	<item id="35103" type="Weapon" name="Dark Amaranthine Buster" icon="icon.weapon_R99_onehand_magic_sword_pvp_i10" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -1745,7 +1745,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
 	<item id="35104" type="Weapon" name="Dark Amaranthine Caster" icon="icon.weapon_R99_onehand_magic_blunt_pvp_i10" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1080"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13299-3" isMagicWeapon="true" isBlessed="true">
@@ -1763,7 +1763,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
 	<item id="35105" type="Weapon" name="Dark Amaranthine Retributer" icon="icon.weapon_R99_twohand_magic_blunt_pvp_i10" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1080" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13304-3" isMagicWeapon="true"
@@ -1782,7 +1782,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
 	<item id="35106" type="Weapon" name="Dark Amaranthine Dualsword" icon="icon.weapon_R99_dual_sword_pvp_i10" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99" weight="1520"
 			price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13277-3" isBlessed="true">
@@ -1798,7 +1798,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
 	<item id="35107" type="Weapon" name="Dark Amaranthine Dual Dagger" icon="icon.weapon_R99_dual_dagger_pvp_i10" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="2050" price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13287-3" isBlessed="true">
@@ -1816,7 +1816,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
 	<item id="35108" type="Weapon" name="Dark Amaranthine Dual Blunt Weapon" icon="icon.weapon_R99_dual_blunt_pvp_i10" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="1740" price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13272-3" isBlessed="true">
@@ -3728,7 +3728,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35193" type="Weapon" name="Bloody Amaranthine Shaper" icon="icon.weapon_R99_dagger_pve_i00" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13282-3" isBlessed="true">
@@ -3746,7 +3746,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
 	<item id="35194" type="Weapon" name="Bloody Amaranthine Cutter" icon="icon.weapon_R99_onehand_sword_pve_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13252-3" isBlessed="true">
@@ -3762,7 +3762,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Atk. additionally increases. -->
 	<item id="35195" type="Weapon" name="Bloody Amaranthine Slasher" icon="icon.weapon_R99_twohand_sword_pve_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1740" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13261-3" isBlessed="true">
@@ -3778,7 +3778,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35196" type="Weapon" name="Bloody Amaranthine Avenger" icon="icon.weapon_R99_onehand_blunt_pve_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13256-3" isBlessed="true">
@@ -3796,7 +3796,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
 	<item id="35197" type="Weapon" name="Bloody Amaranthine Fighter" icon="icon.weapon_R99_fist_pve_i00" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1550" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13267-3" isBlessed="true">
@@ -3814,7 +3814,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Multi-attack additionally increases. -->
 	<item id="35198" type="Weapon" name="Bloody Amaranthine Stormer" icon="icon.weapon_R99_spear_pve_i00" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="2010"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13263-3" isBlessed="true">
@@ -3832,7 +3832,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal.When enchanted to + 4, P. Skill Power increases. -->
 	<item id="35199" type="Weapon" name="Bloody Amaranthine Thrower" icon="icon.weapon_R99_bow_pve_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13292-3" reuseDelay="1500" isBlessed="true">
@@ -3850,7 +3850,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Atk. Spd. Increases. -->
 	<item id="35200" type="Weapon" name="Bloody Amaranthine Shooter" icon="icon.weapon_R99_crossbow_pve_i00" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1580" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13294-3" reuseDelay="400" isBlessed="true">
@@ -3868,7 +3868,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
 	<item id="35201" type="Weapon" name="Bloody Amaranthine Buster" icon="icon.weapon_R99_onehand_magic_sword_pve_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -3884,7 +3884,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
 	<item id="35202" type="Weapon" name="Bloody Amaranthine Caster" icon="icon.weapon_R99_onehand_magic_blunt_pve_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1080"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13299-3" isMagicWeapon="true" isBlessed="true">
@@ -3902,7 +3902,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
 	<item id="35203" type="Weapon" name="Bloody Amaranthine Retributer" icon="icon.weapon_R99_twohand_magic_blunt_pve_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1080" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13304-3" isMagicWeapon="true" isBlessed="true">
@@ -3920,7 +3920,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
 	<item id="35204" type="Weapon" name="Bloody Amaranthine Dualsword" icon="icon.weapon_R99_dual_sword_pve_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99" weight="1520"
 			price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13277-3" isBlessed="true">
@@ -3936,7 +3936,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
 	<item id="35205" type="Weapon" name="Bloody Amaranthine Dual Dagger" icon="icon.weapon_R99_dual_dagger_pve_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="2050" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13287-3" isBlessed="true">
@@ -3954,7 +3954,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Can bestow 2 regular Soul Crystals and 1 Special Soul Crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
 	<item id="35206" type="Weapon" name="Bloody Amaranthine Dual Blunt Weapon" icon="icon.weapon_R99_dual_blunt_pve_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="1740" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13272-3" isBlessed="true">
@@ -5858,7 +5858,7 @@
 	</item>
 	<!-- Bottle containing Tauti's Soul. Tauti's Soul can be bestowed on Tauti's Bracelet. -->
 	<item id="35295" type="EtcItem" name="Bottle of Tauti's Soul" icon="icon.etc_fruit_juice_glass_bottle_i08" immediateEffect="1"
-			weight="60" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
+			weight="60" isTradable="true" isDropable="true" isSellable="true" isStackable="true">
 	</item>
 	<!-- Main ingredient for making a Specter Shaper. -->
 	<item id="35296" type="EtcItem" name="Specter Shaper Fragment" icon="icon.etc_vesper_shaper_piece_i00" etcitemType="material"
@@ -7442,7 +7442,7 @@
 	<item id="35652" type="EtcItem" name="Summon Scroll: Bratty Angma" icon="icon.etc_scroll_white_i00" immediateEffect="1"
 			weight="0">
 	</item>
-	<!-- Item that can summon a combat-type Bratty Angma. Can be used at levels 95 - 99. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
+	<!-- Item that can summon a combat-type Bratty Angma. Can be used above leve 95. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
 	<item id="35653" type="EtcItem" name="Summon Scroll: Bratty Angma" icon="icon.etc_scroll_white_i00" immediateEffect="1"
 			weight="0">
 	</item>
@@ -7499,7 +7499,7 @@
 			weight="0">
 	</item>
 	<!-- It seems to have broken away from a part of Tauti. It contains Tauti's strength. -->
-	<item id="35667" type="EtcItem" name="Tauti's Fragment" icon="icon.etc_tauti_piece" immediateEffect="1" weight="0">
+	<item id="35667" type="EtcItem" name="Tauti's Fragment" icon="icon.etc_tauti_piece" immediateEffect="1" weight="0" isStackable="true">
 	</item>
 	<!-- Core containing the energy of powerful evil creatures. If you use the twisted energy correctly, you may be able to awaken the hidden power. -->
 	<item id="35668" type="EtcItem" name="Core of Twisted Magic" icon="icon.etc_fruit_juice_glass_bottle_i07" immediateEffect="1"
@@ -9247,7 +9247,7 @@
 			defaultAction="equip" bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			duration="60">
 	</item>
-	<!-- Pouch acquired by those who fought bravely in the Ceremony of Chaos but failed to win. Double-click to acquire a Spirit Stone and a soul crystal fragment. You may acquire more than one, or you may acquire none. -->
+	<!-- Pouch acquired by those who fought bravely in the Ceremony of Chaos but failed to win. Double-click to acquire a Spirit Stone and Scroll: Enchant Weapon (R-grade). You may acquire more than one, or you may acquire none. -->
 	<item id="35982" type="EtcItem" name="Ruler's Consideration" icon="icon.etc_pouch_yellow_i00" immediateEffect="1" weight="100"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>

@@ -1,6 +1,7 @@
 /**
- * 
+ *
  */
+
 package handlers.itemhandlers;
 
 import java.util.logging.Logger;
@@ -29,10 +30,10 @@ public class EventItem implements IItemHandler
 		if (!(playable instanceof L2PcInstance))
 			return;
 		
-		final L2PcInstance activeChar = (L2PcInstance)playable;
+		final L2PcInstance activeChar = (L2PcInstance) playable;
 		
 		final int itemId = item.getItemId();
-		switch(itemId)
+		switch (itemId)
 		{
 			case 13787: // Handy's Block Checker Bond
 				useBlockCheckerItem(activeChar, item);
@@ -41,7 +42,7 @@ public class EventItem implements IItemHandler
 				useBlockCheckerItem(activeChar, item);
 				break;
 			default:
-				_log.warning("EventItemHandler: Item with id: "+itemId+" is not handled");
+				_log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
 		}
 	}
 	
@@ -55,7 +56,6 @@ public class EventItem implements IItemHandler
 			castor.sendPacket(msg);
 			return;
 		}
-		
 		
 		final L2Skill sk = item.getEtcItem().getSkills()[0].getSkill();
 		if (sk == null)
@@ -73,11 +73,11 @@ public class EventItem implements IItemHandler
 			for (final L2PcInstance pc : block.getKnownList().getKnownPlayersInRadius(sk.getEffectRange()))
 			{
 				final int enemyTeam = holder.getPlayerTeam(pc);
-				if (enemyTeam != -1 && enemyTeam != team)
+				if ((enemyTeam != -1) && (enemyTeam != team))
 					sk.getEffects(castor, pc);
 			}
 		}
 		else
-			_log.warning("Char: "+castor.getName()+"["+castor.getObjectId()+"] has unknown block checker arena");
+			_log.warning("Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
 	}
 }

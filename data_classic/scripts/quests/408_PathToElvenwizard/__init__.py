@@ -35,8 +35,8 @@ class Quest (JQuest) :
     player = st.getPlayer()
     if event == "1" :
         st.set("id","0")
-        if player.getClassId() != 0x19 :
-          if player.getClassId() == 0x1a :
+        if player.getClassId().getId() != 0x19 :
+          if player.getClassId().getId() == 0x1a :
             htmltext = "30414-02a.htm"
           else:
             htmltext = "30414-03.htm"
@@ -171,7 +171,7 @@ class Quest (JQuest) :
         st.exitQuest(False)
         st.saveGlobalQuestVar("1ClassQuestFinished","1")
         st.playSound("ItemSound.quest_finish")
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         if st.getQuestItemsCount(ETERNITY_DIAMOND) == 0 :
           st.giveItems(ETERNITY_DIAMOND,1)
         htmltext = "30414-24.htm"

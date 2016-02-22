@@ -1,7 +1,7 @@
 <list>
-	<npc id="14800" name="Dark Panther" level="51" type="L2Pet" baseAtkRange="40" baseHpMax="1517.8811" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="331.49826" baseMAtk="219.29158" basePDef="211.46458" baseMDef="149.90176" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+	<npc id="14800" name="Dark Panther" level="51" type="L2Pet" baseAtkRange="40" baseHpMax="1517.8811" baseHpReg="6.5" baseMpMax="775.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="331.49826" baseMAtk="219.29158" basePDef="211.46458" baseMDef="149.90176" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -14,9 +14,9 @@
 		<skill id="4121" level="6" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="6095" level="2" /> <!-- Panther Dark Claw -->
 	</npc>
-	<npc id="14801" name="Dark Panther" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1995.6456" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="18" basePAtk="496.8834" baseMAtk="328.6966" basePDef="255.64426" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300">
+	<npc id="14801" name="Dark Panther" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1995.6456" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="18" basePAtk="496.8834" baseMAtk="328.6966" basePDef="255.64426" baseMDef="181.21959" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -30,9 +30,9 @@
 		<skill id="6095" level="3" /> <!-- Panther Dark Claw -->
 		<skill id="6096" level="1" /> <!-- Panther Fatal Claw -->
 	</npc>
-	<npc id="14802" name="Dark Panther" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1625.9481" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+	<npc id="14802" name="Dark Panther" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1625.9481" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="4" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -46,9 +46,9 @@
 		<skill id="6095" level="4" /> <!-- Panther Dark Claw -->
 		<skill id="6096" level="2" /> <!-- Panther Fatal Claw -->
 	</npc>
-	<npc id="14803" name="Dark Panther" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1780.8462" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14803" name="Dark Panther" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1780.8462" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -63,9 +63,9 @@
 		<skill id="6096" level="3" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="1" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14804" name="Dark Panther" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1928.5284" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14804" name="Dark Panther" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1928.5284" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -80,9 +80,9 @@
 		<skill id="6096" level="4" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="2" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14805" name="Dark Panther" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="2065.1467" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14805" name="Dark Panther" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="2065.1467" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -97,9 +97,9 @@
 		<skill id="6096" level="5" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="3" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14806" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2128.164" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14806" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2128.164" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -114,9 +114,9 @@
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14807" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2135.38" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14807" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2135.38" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -131,9 +131,9 @@
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14808" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2143.0767" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14808" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2143.0767" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -148,9 +148,9 @@
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14809" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2150.7734" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14809" name="Dark Panther" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="2150.7734" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -165,9 +165,9 @@
 		<skill id="6096" level="6" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="4" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14810" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2157.989" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14810" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2157.989" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -182,9 +182,9 @@
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14811" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2165.686" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14811" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2165.686" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -199,9 +199,9 @@
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14812" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2172.9016" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14812" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2172.9016" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -216,9 +216,9 @@
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14813" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2180.5986" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14813" name="Dark Panther" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="2180.5986" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -233,9 +233,9 @@
 		<skill id="6096" level="7" /> <!-- Panther Fatal Claw -->
 		<skill id="6094" level="5" /> <!-- Panther Cancel -->
 	</npc>
-	<npc id="14814" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14814" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -251,9 +251,9 @@
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14815" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2194.0679" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14815" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2194.0679" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -269,9 +269,9 @@
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14816" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2201.2837" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14816" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2201.2837" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -287,9 +287,9 @@
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14817" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2208.4995" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14817" name="Dark Panther" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2208.4995" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -305,9 +305,9 @@
 		<skill id="6094" level="6" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14818" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2214.7532" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14818" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2214.7532" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -323,9 +323,9 @@
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14819" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2221.4878" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14819" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2221.4878" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -341,9 +341,9 @@
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14820" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2228.7034" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14820" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2228.7034" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -359,9 +359,9 @@
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14821" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2235.4382" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14821" name="Dark Panther" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2235.4382" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -377,9 +377,9 @@
 		<skill id="6094" level="7" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14822" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2241.2107" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14822" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2241.2107" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -395,9 +395,9 @@
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14823" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2247.9453" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14823" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2247.9453" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -413,9 +413,9 @@
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14824" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2254.6802" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14824" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2254.6802" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -431,9 +431,9 @@
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14825" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2260.9338" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14825" name="Dark Panther" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2260.9338" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -449,9 +449,9 @@
 		<skill id="6094" level="8" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14826" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2266.7063" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14826" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2266.7063" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -467,9 +467,9 @@
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14827" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2272.96" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14827" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2272.96" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -485,9 +485,9 @@
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14828" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2279.2136" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14828" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2279.2136" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -503,9 +503,9 @@
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14829" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2285.4673" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14829" name="Dark Panther" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2285.4673" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -521,9 +521,9 @@
 		<skill id="6094" level="9" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14830" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.2778" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14830" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.2778" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -539,9 +539,9 @@
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14831" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2296.5315" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14831" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2296.5315" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -557,9 +557,9 @@
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14832" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2302.3042" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14832" name="Dark Panther" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2302.3042" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -575,9 +575,9 @@
 		<skill id="6094" level="10" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14833" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2313.3682" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14833" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2313.3682" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -593,9 +593,9 @@
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14834" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2320.584" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14834" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2320.584" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -611,9 +611,9 @@
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14835" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2328.2808" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+	<npc id="14835" name="Dark Panther" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2328.2808" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="25.0" baseRunSpd="150.0" collisionRadius="7.0" collisionHeight="13.0">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="fighter" skillChance="15" soulshots="5" spiritshots="2" />
 		<skill id="4416" level="4" /> <!-- Animals -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -629,9 +629,9 @@
 		<skill id="6094" level="11" /> <!-- Panther Cancel -->
 		<skill id="6093" level="1" /> <!-- Panther Hide -->
 	</npc>
-	<npc id="14836" name="Feline King" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14836" name="Feline King" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -646,9 +646,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14837" name="Magnus the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14837" name="Magnus the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -663,9 +663,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14838" name="Spectral Lord" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="12.5" collisionHeight="33.5"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14838" name="Spectral Lord" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="2186.8523" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="12.5" collisionHeight="33.5">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -680,9 +680,9 @@
 		<skill id="5141" level="1" /> <!-- Dicing Death -->
 		<skill id="5140" level="1" /> <!-- Dark Curse -->
 	</npc>
-	<npc id="14839" name="Swoop Cannon" level="68" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
-			aiType="balanced" skillChance="15">
+	<npc id="14839" name="Swoop Cannon" level="68" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="6.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="20" waterDef="20" windDef="20" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -694,9 +694,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14840" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
-			aiType="balanced" skillChance="15">
+	<npc id="14840" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="40" waterDef="40" windDef="40" earthDef="40" holyDef="40" darkDef="40" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -708,9 +708,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14841" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
-			aiType="balanced" skillChance="15">
+	<npc id="14841" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="50" waterDef="50" windDef="50" earthDef="50" holyDef="50" darkDef="50" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -722,9 +722,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14842" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
-			aiType="balanced" skillChance="15">
+	<npc id="14842" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.475" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="60" waterDef="60" windDef="60" earthDef="60" holyDef="60" darkDef="60" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -736,9 +736,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14843" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
-			aiType="balanced" skillChance="15">
+	<npc id="14843" name="Swoop Cannon" level="78" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="70" waterDef="70" windDef="70" earthDef="70" holyDef="70" darkDef="70" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -750,9 +750,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14844" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
-			aiType="balanced" skillChance="15">
+	<npc id="14844" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="80" waterDef="80" windDef="80" earthDef="80" holyDef="80" darkDef="80" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -764,9 +764,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14845" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
-			aiType="balanced" skillChance="15">
+	<npc id="14845" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="12.823113" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="85" waterDef="85" windDef="85" earthDef="85" holyDef="85" darkDef="85" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -778,9 +778,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14846" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
-			aiType="balanced" skillChance="15">
+	<npc id="14846" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="90" waterDef="90" windDef="90" earthDef="90" holyDef="90" darkDef="90" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -792,9 +792,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14847" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
-			aiType="balanced" skillChance="15">
+	<npc id="14847" name="Swoop Cannon" level="79" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="95" waterDef="95" windDef="95" earthDef="95" holyDef="95" darkDef="95" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -806,9 +806,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14848" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15">
+	<npc id="14848" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.370673" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -820,9 +820,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14849" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
-			aiType="balanced" skillChance="15">
+	<npc id="14849" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="102" waterDef="102" windDef="102" earthDef="102" holyDef="102" darkDef="102" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -834,9 +834,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14850" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
-			aiType="balanced" skillChance="15">
+	<npc id="14850" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="104" waterDef="104" windDef="104" earthDef="104" holyDef="104" darkDef="104" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -848,9 +848,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14851" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
-			aiType="balanced" skillChance="15">
+	<npc id="14851" name="Swoop Cannon" level="80" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="13.835387" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="106" waterDef="106" windDef="106" earthDef="106" holyDef="106" darkDef="106" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -862,9 +862,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14852" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
-			aiType="balanced" skillChance="15">
+	<npc id="14852" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="109" waterDef="109" windDef="109" earthDef="109" holyDef="109" darkDef="109" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -876,9 +876,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14853" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
-			aiType="balanced" skillChance="15">
+	<npc id="14853" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="111" waterDef="111" windDef="111" earthDef="111" holyDef="111" darkDef="111" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -890,9 +890,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14854" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
-			aiType="balanced" skillChance="15">
+	<npc id="14854" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.379687" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="113" waterDef="113" windDef="113" earthDef="113" holyDef="113" darkDef="113" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -904,9 +904,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14855" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
-			aiType="balanced" skillChance="15">
+	<npc id="14855" name="Swoop Cannon" level="81" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="115" waterDef="115" windDef="115" earthDef="115" holyDef="115" darkDef="115" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -918,9 +918,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14856" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
-			aiType="balanced" skillChance="15">
+	<npc id="14856" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="118" waterDef="118" windDef="118" earthDef="118" holyDef="118" darkDef="118" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -932,9 +932,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14857" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
-			aiType="balanced" skillChance="15">
+	<npc id="14857" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="14.923988" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="120" waterDef="120" windDef="120" earthDef="120" holyDef="120" darkDef="120" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -946,9 +946,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14858" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
-			aiType="balanced" skillChance="15">
+	<npc id="14858" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="122" waterDef="122" windDef="122" earthDef="122" holyDef="122" darkDef="122" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -960,9 +960,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14859" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
-			aiType="balanced" skillChance="15">
+	<npc id="14859" name="Swoop Cannon" level="82" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="124" waterDef="124" windDef="124" earthDef="124" holyDef="124" darkDef="124" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -974,9 +974,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14860" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
-			aiType="balanced" skillChance="15">
+	<npc id="14860" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.376703" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="127" waterDef="127" windDef="127" earthDef="127" holyDef="127" darkDef="127" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -988,9 +988,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14861" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
-			aiType="balanced" skillChance="15">
+	<npc id="14861" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="129" waterDef="129" windDef="129" earthDef="129" holyDef="129" darkDef="129" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1002,9 +1002,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14862" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
-			aiType="balanced" skillChance="15">
+	<npc id="14862" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="131" waterDef="131" windDef="131" earthDef="131" holyDef="131" darkDef="131" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1016,9 +1016,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14863" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
-			aiType="balanced" skillChance="15">
+	<npc id="14863" name="Swoop Cannon" level="83" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="133" waterDef="133" windDef="133" earthDef="133" holyDef="133" darkDef="133" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1030,9 +1030,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14864" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
-			aiType="balanced" skillChance="15">
+	<npc id="14864" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="15.91784" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="136" waterDef="136" windDef="136" earthDef="136" holyDef="136" darkDef="136" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1044,9 +1044,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14865" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
-			aiType="balanced" skillChance="15">
+	<npc id="14865" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="138" waterDef="138" windDef="138" earthDef="138" holyDef="138" darkDef="138" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1058,9 +1058,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14866" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
-			aiType="balanced" skillChance="15">
+	<npc id="14866" name="Swoop Cannon" level="84" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="140" waterDef="140" windDef="140" earthDef="140" holyDef="140" darkDef="140" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1072,9 +1072,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14867" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
-			aiType="balanced" skillChance="15">
+	<npc id="14867" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="143" waterDef="143" windDef="143" earthDef="143" holyDef="143" darkDef="143" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1086,9 +1086,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14868" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
-			aiType="balanced" skillChance="15">
+	<npc id="14868" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="16.45892" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="145" waterDef="145" windDef="145" earthDef="145" holyDef="145" darkDef="145" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1100,9 +1100,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14869" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="17.0" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5"
-			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
-			aiType="balanced" skillChance="15">
+	<npc id="14869" name="Swoop Cannon" level="85" type="L2SiegeSummon" baseAtkRange="80" baseHpMax="50000.0" baseHpReg="8.5" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="17.0" baseMAtk="265.0298" basePDef="837.0" baseMDef="674.0" basePAtkSpd="150" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="40.0" collisionRadius="45.0" collisionHeight="47.5">
+		<elementals fireDef="147" waterDef="147" windDef="147" earthDef="147" holyDef="147" darkDef="147" />
+		<ai type="balanced" skillChance="15" />
 		<skill id="4416" level="21" /> <!-- Siege Weapons -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1114,9 +1114,9 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 	</npc>
-	<npc id="14870" name="Divine Beast" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="180.0" collisionRadius="23.0" collisionHeight="15.5"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14870" name="Divine Beast" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="180.0" collisionRadius="23.0" collisionHeight="15.5">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4408" level="6" /> <!-- HP Very High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1128,9 +1128,9 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="14871" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2196.4731" baseHpReg="8.5" baseMpMax="1687.8134" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="901.3748" baseMAtk="615.52216" basePDef="342.91013" baseMDef="250.92676" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14871" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2196.4731" baseHpReg="8.5" baseMpMax="1687.8134" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="901.3748" baseMAtk="615.52216" basePDef="342.91013" baseMDef="250.92676" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1145,9 +1145,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14872" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2205.613" baseHpReg="8.5" baseMpMax="1700.8267" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="907.9911" baseMAtk="620.0402" basePDef="344.44528" baseMDef="252.05011" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14872" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2205.613" baseHpReg="8.5" baseMpMax="1700.8267" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="907.9911" baseMAtk="620.0402" basePDef="344.44528" baseMDef="252.05011" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1162,9 +1162,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14873" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2215.234" baseHpReg="8.5" baseMpMax="1713.84" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="914.6074" baseMAtk="624.5583" basePDef="345.9804" baseMDef="253.17345" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14873" name="Feline King" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2215.234" baseHpReg="8.5" baseMpMax="1713.84" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="914.6074" baseMAtk="624.5583" basePDef="345.9804" baseMDef="253.17345" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1179,9 +1179,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14874" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2224.855" baseHpReg="8.5" baseMpMax="1726.8534" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="921.2237" baseMAtk="629.07635" basePDef="347.51556" baseMDef="254.2968" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14874" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2224.855" baseHpReg="8.5" baseMpMax="1726.8534" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="921.2237" baseMAtk="629.07635" basePDef="347.51556" baseMDef="254.2968" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1196,9 +1196,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14875" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2233.995" baseHpReg="8.5" baseMpMax="1739.8667" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.83997" baseMAtk="633.5944" basePDef="349.0507" baseMDef="255.42015" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14875" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2233.995" baseHpReg="8.5" baseMpMax="1739.8667" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.83997" baseMAtk="633.5944" basePDef="349.0507" baseMDef="255.42015" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1213,9 +1213,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14876" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2243.616" baseHpReg="8.5" baseMpMax="1752.88" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="934.4563" baseMAtk="638.1125" basePDef="350.58585" baseMDef="256.5435" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14876" name="Feline King" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2243.616" baseHpReg="8.5" baseMpMax="1752.88" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="934.4563" baseMAtk="638.1125" basePDef="350.58585" baseMDef="256.5435" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1230,9 +1230,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14877" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2252.756" baseHpReg="8.5" baseMpMax="1765.8933" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="941.0726" baseMAtk="642.63055" basePDef="352.12097" baseMDef="257.66684" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14877" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2252.756" baseHpReg="8.5" baseMpMax="1765.8933" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="941.0726" baseMAtk="642.63055" basePDef="352.12097" baseMDef="257.66684" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1247,9 +1247,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14878" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2262.377" baseHpReg="8.5" baseMpMax="1778.9066" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="947.68884" baseMAtk="647.1486" basePDef="353.6561" baseMDef="258.7902" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14878" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2262.377" baseHpReg="8.5" baseMpMax="1778.9066" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="947.68884" baseMAtk="647.1486" basePDef="353.6561" baseMDef="258.7902" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1264,9 +1264,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14879" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2271.998" baseHpReg="8.5" baseMpMax="1791.92" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="954.3051" baseMAtk="651.6667" basePDef="355.19125" baseMDef="259.91354" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14879" name="Feline King" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2271.998" baseHpReg="8.5" baseMpMax="1791.92" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="954.3051" baseMAtk="651.6667" basePDef="355.19125" baseMDef="259.91354" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1281,9 +1281,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14880" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2281.138" baseHpReg="8.5" baseMpMax="1804.9333" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="960.92145" baseMAtk="656.18475" basePDef="356.72638" baseMDef="261.0369" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14880" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2281.138" baseHpReg="8.5" baseMpMax="1804.9333" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="960.92145" baseMAtk="656.18475" basePDef="356.72638" baseMDef="261.0369" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1298,9 +1298,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14881" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.7588" baseHpReg="8.5" baseMpMax="1817.9467" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="967.5377" baseMAtk="660.7028" basePDef="358.26154" baseMDef="262.16025" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14881" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.7588" baseHpReg="8.5" baseMpMax="1817.9467" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="967.5377" baseMAtk="660.7028" basePDef="358.26154" baseMDef="262.16025" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1315,9 +1315,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14882" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2299.899" baseHpReg="8.5" baseMpMax="1830.96" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="974.154" baseMAtk="665.2209" basePDef="359.79666" baseMDef="263.28357" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14882" name="Feline King" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2299.899" baseHpReg="8.5" baseMpMax="1830.96" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="974.154" baseMAtk="665.2209" basePDef="359.79666" baseMDef="263.28357" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1332,9 +1332,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14883" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2309.5198" baseHpReg="8.5" baseMpMax="1843.9734" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="980.7703" baseMAtk="669.73895" basePDef="361.33182" baseMDef="264.40692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14883" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2309.5198" baseHpReg="8.5" baseMpMax="1843.9734" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="980.7703" baseMAtk="669.73895" basePDef="361.33182" baseMDef="264.40692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1349,9 +1349,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14884" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2319.1409" baseHpReg="8.5" baseMpMax="1856.9867" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="987.3866" baseMAtk="674.257" basePDef="362.86694" baseMDef="265.53027" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14884" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2319.1409" baseHpReg="8.5" baseMpMax="1856.9867" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="987.3866" baseMAtk="674.257" basePDef="362.86694" baseMDef="265.53027" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1366,9 +1366,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14885" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2328.2808" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14885" name="Feline King" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2328.2808" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="6.0" collisionHeight="16.00550079345703">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="fighter" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1383,9 +1383,9 @@
 		<skill id="5136" level="1" /> <!-- Spin Slash -->
 		<skill id="5137" level="1" /> <!-- Grip of the Cat -->
 	</npc>
-	<npc id="14886" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2196.4731" baseHpReg="8.5" baseMpMax="1687.8134" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="901.3748" baseMAtk="615.52216" basePDef="342.91013" baseMDef="250.92676" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14886" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2196.4731" baseHpReg="8.5" baseMpMax="1687.8134" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="901.3748" baseMAtk="615.52216" basePDef="342.91013" baseMDef="250.92676" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1400,9 +1400,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14887" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2205.613" baseHpReg="8.5" baseMpMax="1700.8267" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="907.9911" baseMAtk="620.0402" basePDef="344.44528" baseMDef="252.05011" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14887" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2205.613" baseHpReg="8.5" baseMpMax="1700.8267" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="907.9911" baseMAtk="620.0402" basePDef="344.44528" baseMDef="252.05011" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1417,9 +1417,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14888" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2215.234" baseHpReg="8.5" baseMpMax="1713.84" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="914.6074" baseMAtk="624.5583" basePDef="345.9804" baseMDef="253.17345" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14888" name="Magnus the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="2215.234" baseHpReg="8.5" baseMpMax="1713.84" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="914.6074" baseMAtk="624.5583" basePDef="345.9804" baseMDef="253.17345" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1434,9 +1434,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14889" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2224.855" baseHpReg="8.5" baseMpMax="1726.8534" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="921.2237" baseMAtk="629.07635" basePDef="347.51556" baseMDef="254.2968" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14889" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2224.855" baseHpReg="8.5" baseMpMax="1726.8534" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="921.2237" baseMAtk="629.07635" basePDef="347.51556" baseMDef="254.2968" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1451,9 +1451,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14890" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2233.995" baseHpReg="8.5" baseMpMax="1739.8667" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.83997" baseMAtk="633.5944" basePDef="349.0507" baseMDef="255.42015" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14890" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2233.995" baseHpReg="8.5" baseMpMax="1739.8667" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.83997" baseMAtk="633.5944" basePDef="349.0507" baseMDef="255.42015" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1468,9 +1468,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14891" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2243.616" baseHpReg="8.5" baseMpMax="1752.88" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="934.4563" baseMAtk="638.1125" basePDef="350.58585" baseMDef="256.5435" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14891" name="Magnus the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="2243.616" baseHpReg="8.5" baseMpMax="1752.88" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="934.4563" baseMAtk="638.1125" basePDef="350.58585" baseMDef="256.5435" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1485,9 +1485,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14892" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2252.756" baseHpReg="8.5" baseMpMax="1765.8933" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="941.0726" baseMAtk="642.63055" basePDef="352.12097" baseMDef="257.66684" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14892" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2252.756" baseHpReg="8.5" baseMpMax="1765.8933" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="941.0726" baseMAtk="642.63055" basePDef="352.12097" baseMDef="257.66684" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1502,9 +1502,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14893" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2262.377" baseHpReg="8.5" baseMpMax="1778.9066" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="947.68884" baseMAtk="647.1486" basePDef="353.6561" baseMDef="258.7902" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14893" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2262.377" baseHpReg="8.5" baseMpMax="1778.9066" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="947.68884" baseMAtk="647.1486" basePDef="353.6561" baseMDef="258.7902" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1519,9 +1519,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14894" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2271.998" baseHpReg="8.5" baseMpMax="1791.92" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="954.3051" baseMAtk="651.6667" basePDef="355.19125" baseMDef="259.91354" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14894" name="Magnus the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="2271.998" baseHpReg="8.5" baseMpMax="1791.92" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="954.3051" baseMAtk="651.6667" basePDef="355.19125" baseMDef="259.91354" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1536,9 +1536,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14895" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2281.138" baseHpReg="8.5" baseMpMax="1804.9333" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="960.92145" baseMAtk="656.18475" basePDef="356.72638" baseMDef="261.0369" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14895" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2281.138" baseHpReg="8.5" baseMpMax="1804.9333" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="960.92145" baseMAtk="656.18475" basePDef="356.72638" baseMDef="261.0369" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1553,9 +1553,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14896" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.7588" baseHpReg="8.5" baseMpMax="1817.9467" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="967.5377" baseMAtk="660.7028" basePDef="358.26154" baseMDef="262.16025" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14896" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2290.7588" baseHpReg="8.5" baseMpMax="1817.9467" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="967.5377" baseMAtk="660.7028" basePDef="358.26154" baseMDef="262.16025" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1570,9 +1570,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14897" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2299.899" baseHpReg="8.5" baseMpMax="1830.96" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="974.154" baseMAtk="665.2209" basePDef="359.79666" baseMDef="263.28357" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14897" name="Magnus the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="2299.899" baseHpReg="8.5" baseMpMax="1830.96" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="974.154" baseMAtk="665.2209" basePDef="359.79666" baseMDef="263.28357" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1587,9 +1587,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14898" name="Magnus the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2309.5198" baseHpReg="8.5" baseMpMax="1843.9734" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="980.7703" baseMAtk="669.73895" basePDef="361.33182" baseMDef="264.40692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14898" name="Magnus the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2309.5198" baseHpReg="8.5" baseMpMax="1843.9734" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="980.7703" baseMAtk="669.73895" basePDef="361.33182" baseMDef="264.40692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
@@ -1604,9 +1604,9 @@
 		<skill id="5139" level="1" /> <!-- Tidal Wave -->
 		<skill id="7000" level="1" /> <!-- NPC Default -->
 	</npc>
-	<npc id="14899" name="Magnus the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2319.1409" baseHpReg="8.5" baseMpMax="1856.9867" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="987.3866" baseMAtk="674.257" basePDef="362.86694" baseMDef="265.53027" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0"
-			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
-			aiType="balanced" skillChance="15" soulshots="2" spiritshots="2">
+	<npc id="14899" name="Magnus the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="2319.1409" baseHpReg="8.5" baseMpMax="1856.9867" baseMpReg="6.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="987.3866" baseMAtk="674.257" basePDef="362.86694" baseMDef="265.53027" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="160.0" baseRunSpd="180.0" collisionRadius="13.5" collisionHeight="17.0">
+		<elementals fireDef="100" waterDef="100" windDef="100" earthDef="100" holyDef="100" darkDef="100" />
+		<ai type="balanced" skillChance="15" soulshots="2" spiritshots="2" />
 		<skill id="4416" level="7" /> <!-- Spirits -->
 		<skill id="4408" level="4" /> <!-- HP High -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

@@ -1571,70 +1571,80 @@
 			immediateEffect="1" weight="1000">
 	</item>
 	<!-- Lv. 1 Windy CHA Dye (CHA + 1). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39381" type="EtcItem" name="Lv. 1 Windy CHA Dye - CHA + 1" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39381" type="EtcItem" name="Lv. 1 Windy CHA Dye - CHA + 1" icon="icon.lv1_wind_dye_cha" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy CHA Dye (CHA + 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39382" type="EtcItem" name="Lv. 2 Windy CHA Dye - CHA + 2" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39382" type="EtcItem" name="Lv. 2 Windy CHA Dye - CHA + 2" icon="icon.lv2_wind_dye_cha" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy CHA Dye (CHA + 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39383" type="EtcItem" name="Lv. 3 Windy CHA Dye - CHA + 3" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39383" type="EtcItem" name="Lv. 3 Windy CHA Dye - CHA + 3" icon="icon.lv3_wind_dye_cha" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy CHA Dye (CHA + 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39384" type="EtcItem" name="Lv. 4 Windy CHA Dye - CHA + 4" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39384" type="EtcItem" name="Lv. 4 Windy CHA Dye - CHA + 4" icon="icon.lv4_wind_dye_cha" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy CHA Dye (CHA + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39385" type="EtcItem" name="Lv. 5 Windy CHA Dye - CHA + 5" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39385" type="EtcItem" name="Lv. 5 Windy CHA Dye - CHA + 5" icon="icon.lv5_wind_dye_cha" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy LUC Dye (LUC + 1). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39386" type="EtcItem" name="Lv. 1 Windy LUC Dye - LUC + 1" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39386" type="EtcItem" name="Lv. 1 Windy LUC Dye - LUC + 1" icon="icon.lv1_wind_dye_luc" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy LUC Dye (LUC + 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39387" type="EtcItem" name="Lv. 2 Windy LUC Dye - LUC + 2" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39387" type="EtcItem" name="Lv. 2 Windy LUC Dye - LUC + 2" icon="icon.lv2_wind_dye_luc" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy LUC Dye (LUC + 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39388" type="EtcItem" name="Lv. 3 Windy LUC Dye - LUC + 3" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39388" type="EtcItem" name="Lv. 3 Windy LUC Dye - LUC + 3" icon="icon.lv3_wind_dye_luc" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy LUC Dye (LUC + 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39389" type="EtcItem" name="Lv. 4 Windy LUC Dye - LUC + 4" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39389" type="EtcItem" name="Lv. 4 Windy LUC Dye - LUC + 4" icon="icon.lv4_wind_dye_luc" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Windy LUC Dye (LUC + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39390" type="EtcItem" name="Lv. 5 Windy LUC Dye - LUC + 5" immediateEffect="1" weight="150" isStackable="true">
+	<item id="39390" type="EtcItem" name="Lv. 5 Windy LUC Dye - LUC + 5" icon="icon.lv5_wind_dye_luc" immediateEffect="1" weight="150"
+			isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary STR Dye (Charisma) (STR + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39391" type="EtcItem" name="Lv. 1 Legendary STR Dye (Charisma) - STR + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39391" type="EtcItem" name="Lv. 1 Legendary STR Dye (Charisma) - STR + 3 CHA + 1" icon="icon.lv1_unique_dye_str_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary DEX Dye (Charisma) (DEX + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39392" type="EtcItem" name="Lv. 1 Legendary DEX Dye (Charisma) - DEX + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39392" type="EtcItem" name="Lv. 1 Legendary DEX Dye (Charisma) - DEX + 3 CHA + 1" icon="icon.lv1_unique_dye_dex_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary CON Dye (Charisma) (CON + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39393" type="EtcItem" name="Lv. 1 Legendary CON Dye (Charisma) - CON + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39393" type="EtcItem" name="Lv. 1 Legendary CON Dye (Charisma) - CON + 3 CHA + 1" icon="icon.lv1_unique_dye_con_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary INT Dye (Charisma) (INT + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39394" type="EtcItem" name="Lv. 1 Legendary INT Dye (Charisma) - INT + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39394" type="EtcItem" name="Lv. 1 Legendary INT Dye (Charisma) - INT + 3 CHA + 1" icon="icon.lv1_unique_dye_int_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary WIT Dye (Charisma) (WIT + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39395" type="EtcItem" name="Lv. 1 Legendary WIT Dye (Charisma) - WIT + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39395" type="EtcItem" name="Lv. 1 Legendary WIT Dye (Charisma) - WIT + 3 CHA + 1" icon="icon.lv1_unique_dye_wit_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 1 Legendary MEN Dye (Charisma) (MEN + 3 CHA + 1). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39396" type="EtcItem" name="Lv. 1 Legendary MEN Dye (Charisma) - MEN + 3 CHA + 1" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39396" type="EtcItem" name="Lv. 1 Legendary MEN Dye (Charisma) - MEN + 3 CHA + 1" icon="icon.lv1_unique_dye_men_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 2 Legendary STR Dye (Charisma) (STR + 4 CHA + 2). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39397" type="EtcItem" name="Lv. 2 Legendary STR Dye (Charisma) - STR + 4 CHA + 2" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39397" type="EtcItem" name="Lv. 2 Legendary STR Dye (Charisma) - STR + 4 CHA + 2" icon="icon.lv2_unique_dye_str_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 2 Legendary DEX Dye (Charisma) (DEX + 4 CHA + 2). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39398" type="EtcItem" name="Lv. 2 Legendary DEX Dye (Charisma) - DEX + 4 CHA + 2" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39398" type="EtcItem" name="Lv. 2 Legendary DEX Dye (Charisma) - DEX + 4 CHA + 2" icon="icon.lv2_unique_dye_dex_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 2 Legendary CON Dye (Charisma) (CON + 4 CHA + 2). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
-	<item id="39399" type="EtcItem" name="Lv. 2 Legendary CON Dye (Charisma) - CON + 4 CHA + 2" immediateEffect="1" weight="150"
-			isStackable="true">
+	<item id="39399" type="EtcItem" name="Lv. 2 Legendary CON Dye (Charisma) - CON + 4 CHA + 2" icon="icon.lv2_unique_dye_con_cha"
+			immediateEffect="1" weight="150" isStackable="true">
 	</item>
 	<!-- Lv. 2 Legendary INT Dye (Charisma) (INT + 4 CHA + 2). Collect and take 10 units of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
 	<item id="39400" type="EtcItem" name="Lv. 2 Legendary INT Dye (Charisma) - INT + 4 CHA + 2" icon="icon.lv2_unique_dye_int_cha"
@@ -1939,18 +1949,18 @@
 	<item id="39475" type="EtcItem" name="Supreme Windy Quick Healing Potion" icon="icon.etc_potion_gold_i00" immediateEffect="1"
 			crystalType="c" weight="20">
 	</item>
-	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. -->
+	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. Cannot be stacked with Battle Rhapsody Dance. -->
 	<item id="39476" type="EtcItem" name="Low-grade Love Potion" icon="icon.love_potion" immediateEffect="1" crystalType="c"
 			weight="2">
 	</item>
-	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. -->
+	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. Cannot be stacked with Battle Rhapsody Dance. -->
 	<item id="39477" type="EtcItem" name="Love Potion" icon="icon.love_potion" immediateEffect="1" crystalType="c" weight="2">
 	</item>
-	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. -->
+	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. Cannot be stacked with Battle Rhapsody Dance. -->
 	<item id="39478" type="EtcItem" name="Mid-grade Love Potion" icon="icon.love_potion" immediateEffect="1" crystalType="c"
 			weight="2">
 	</item>
-	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. -->
+	<!-- For 15 sec., P./M. Atk. and Atk./Casting Spd. are increased. A strange power changes the appearance of your weapon. Cannot be used in the Olympiad. Cannot be stacked with Battle Rhapsody Dance. -->
 	<item id="39479" type="EtcItem" name="High-grade Love Potion" icon="icon.love_potion" immediateEffect="1" crystalType="c"
 			weight="2">
 	</item>
@@ -2300,29 +2310,29 @@
 	<!-- P. Skill Critical Damage + 10%. -->
 	<item id="39568" type="Armor" name="Talisman - Wind: P. Critical Damage - Passive" icon="icon.r85_talisman_ca_up_passive"
 			defaultAction="equip" bodypart="deco1" immediateEffect="1" weight="150" duration="10080">
-		<skill id="17973" level="1" /> <!-- Talisman - Wind: P. Critical Damage -->
+		<skill id="17973" level="1" />
 	</item>
 	<!-- M. Skill Critical Damage + 10%. -->
 	<item id="39569" type="Armor" name="Talisman - Wind: M. Critical Damage - Passive" icon="icon.r_talisman_mc_up_passive"
 			defaultAction="equip" bodypart="deco1" immediateEffect="1" weight="150" duration="10080">
-		<skill id="17974" level="1" /> <!-- Talisman - Wind: M. Critical Damage -->
+		<skill id="17974" level="1" />
 	</item>
 	<!-- For 15 sec., P./M. Def. are maximized. Cooldown is 20 min. -->
 	<item id="39570" type="Armor" name="Talisman - Wind: Defense" icon="icon.r85_talisman_pd_up_active" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" duration="10080">
-		<skill id="17975" level="1" /> <!-- Talisman - Wind: Defense -->
+		<skill id="17975" level="1" />
 	</item>
 	<!-- For 15 sec., Debuff Resistance is increased. Cooldown is 20 min. -->
 	<item id="39571" type="Armor" name="Talisman - Wind: Debuff Resistance" icon="icon.r85_talisman_md_up_active" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" duration="10080">
-		<skill id="17976" level="1" /> <!-- Talisman - Wind: Debuff Resistance -->
+		<skill id="17976" level="1" />
 	</item>
 	<!-- Max HP/MP/CP + 800, P./M. Accuracy + 2, P./M. Evasion + 2, Atk./Casting Spd. + 60, P. Critical Rate + 30, M. Critical Rate + 10, P. Atk. + 638, M. Atk. + 742, Skill Power + 5%, Damage Reflect Resistance + 30, P. Def. + 563, M. Def. + 368, Fixed Damage Resistance + 10%, Vampiric Rage + 5, STR/INT/CON/MEN/DEX/WIT/CHA/LUC + 2. Skill MP Consumption - 3%, Skill Cooldown - 3%. -->
 	<item id="39572" type="Armor" name="Talisman - Insanity" icon="icon.accessory_punishment_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="7" /> <!-- Talisman - Insanity -->
-		<skill id="17978" level="1" /> <!-- Equip Talisman - Insanity -->
+		<skill id="17978" level="1" />
 	</item>
 	<!-- Double-click to obtain a Talisman - Insanity. Cannot be exchanged, dropped, or sold in a private store once open. Lv. 85 or above. -->
 	<item id="39573" type="EtcItem" name="Sealed Talisman - Insanity" icon="icon.accessory_punishment_talisman_i01" immediateEffect="1"
@@ -2857,143 +2867,143 @@
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="rCrit" val="12" />
 	</item>
-	<!-- Use to obtain 400000 XP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 1 Pockets. Under Lv. 85 only. -->
+	<!-- Use to obtain 400000 XP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 1 Pockets. Under Lv. 85 only. Cannot be used by Chaotic characters. -->
 	<item id="39629" type="EtcItem" name="Fortune Pocket - Stage 1" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
-	<!-- Use to obtain 1600000 XP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 2 Pockets. Under Lv. 85 only. -->
+	<!-- Use to obtain 1600000 XP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 2 Pockets. Under Lv. 85 only. Cannot be used by Chaotic characters. -->
 	<item id="39630" type="EtcItem" name="Fortune Pocket - Stage 2" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
-	<!-- Use to obtain 6400000 XP, plus a little something else. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 3 Pockets. Under Lv. 85 only. -->
+	<!-- Use to obtain 6400000 XP, plus a little something else. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 3 Pockets. Under Lv. 85 only. Cannot be used by Chaotic characters. -->
 	<item id="39631" type="EtcItem" name="Fortune Pocket - Stage 3" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
-	<!-- Use to obtain 80000 SP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 4 Pockets. Lv. 85 or above. -->
+	<!-- Use to obtain 80000 SP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 4 Pockets. Lv. 85 or above. Cannot be used by Chaotic characters. -->
 	<item id="39632" type="EtcItem" name="Fortune Pocket - Stage 4" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
-	<!-- Use to obtain 256000 SP, plus a little something else. Lv. 85 or above. -->
+	<!-- Use to obtain 256000 SP, plus a little something else. Lv. 85 or above. Cannot be used by Chaotic characters. -->
 	<item id="39633" type="EtcItem" name="Fortune Pocket - Stage 5" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- MEN + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39634" type="Armor" name="Venir's Talisman - Stage 1" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39634" type="Armor" name="Venir's Talisman - Stage 1" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" price="1000000">
 		<skill id="18024" level="1" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39635" type="Armor" name="Venir's Talisman - Stage 2" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39635" type="Armor" name="Venir's Talisman - Stage 2" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="2" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39636" type="Armor" name="Venir's Talisman - Stage 3" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39636" type="Armor" name="Venir's Talisman - Stage 3" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="3" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39637" type="Armor" name="Venir's Talisman - Stage 4" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39637" type="Armor" name="Venir's Talisman - Stage 4" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="4" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39638" type="Armor" name="Venir's Talisman - Stage 5" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39638" type="Armor" name="Venir's Talisman - Stage 5" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="5" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39639" type="Armor" name="Venir's Talisman - Stage 6" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39639" type="Armor" name="Venir's Talisman - Stage 6" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="6" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39640" type="Armor" name="Venir's Talisman - Stage 7" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39640" type="Armor" name="Venir's Talisman - Stage 7" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="7" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39641" type="Armor" name="Venir's Talisman - Stage 8" icon="icon.etc_all_stat_talisman_i00" defaultAction="equip"
+	<item id="39641" type="Armor" name="Venir's Talisman - Stage 8" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="8" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN + 2, WIT/CON/INT/DEX/STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39642" type="Armor" name="Venir's Talisman - Stage 9" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39642" type="Armor" name="Venir's Talisman - Stage 9" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="9" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT + 2, CON/INT/DEX/STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39643" type="Armor" name="Venir's Talisman - Stage 10" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39643" type="Armor" name="Venir's Talisman - Stage 10" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="10" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON + 2, INT/DEX/STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39644" type="Armor" name="Venir's Talisman - Stage 11" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39644" type="Armor" name="Venir's Talisman - Stage 11" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="11" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT + 2, DEX/STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39645" type="Armor" name="Venir's Talisman - Stage 12" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39645" type="Armor" name="Venir's Talisman - Stage 12" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="12" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX + 2, STR/LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39646" type="Armor" name="Venir's Talisman - Stage 13" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39646" type="Armor" name="Venir's Talisman - Stage 13" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="13" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR+ 2, LUC/CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39647" type="Armor" name="Venir's Talisman - Stage 14" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39647" type="Armor" name="Venir's Talisman - Stage 14" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="14" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC + 2, CHA + 1. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39648" type="Armor" name="Venir's Talisman - Stage 15" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39648" type="Armor" name="Venir's Talisman - Stage 15" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="15" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39649" type="Armor" name="Venir's Talisman - Stage 16" icon="icon.etc_all_stat_talisman_i01" defaultAction="equip"
+	<item id="39649" type="Armor" name="Venir's Talisman - Stage 16" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="16" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN + 3, WIT/CON/INT/DEX/STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39650" type="Armor" name="Venir's Talisman - Stage 17" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39650" type="Armor" name="Venir's Talisman - Stage 17" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="17" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT + 3, CON/INT/DEX/STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39651" type="Armor" name="Venir's Talisman - Stage 18" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39651" type="Armor" name="Venir's Talisman - Stage 18" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="18" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON + 3, INT/DEX/STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39652" type="Armor" name="Venir's Talisman - Stage 19" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39652" type="Armor" name="Venir's Talisman - Stage 19" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="19" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT + 3, DEX/STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39653" type="Armor" name="Venir's Talisman - Stage 20" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39653" type="Armor" name="Venir's Talisman - Stage 20" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="20" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX + 3, STR/LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39654" type="Armor" name="Venir's Talisman - Stage 21" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39654" type="Armor" name="Venir's Talisman - Stage 21" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="21" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR + 3, LUC/CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39655" type="Armor" name="Venir's Talisman - Stage 22" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39655" type="Armor" name="Venir's Talisman - Stage 22" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="22" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC + 3, CHA + 2. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39656" type="Armor" name="Venir's Talisman - Stage 23" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39656" type="Armor" name="Venir's Talisman - Stage 23" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="23" /> <!-- Venir's Talisman -->
 	</item>
 	<!-- MEN/WIT/CON/INT/DEX/STR/LUC/CHA + 3. Equipping 2 or more Venir's Talismans gives the effect of the highest-level talisman. -->
-	<item id="39657" type="Armor" name="Venir's Talisman - Stage 24" icon="icon.etc_all_stat_talisman_i02" defaultAction="equip"
+	<item id="39657" type="Armor" name="Venir's Talisman - Stage 24" icon="BranchIcon.Icon.etc_allstat_talisman_i02" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="24" /> <!-- Venir's Talisman -->
 	</item>

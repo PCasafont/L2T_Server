@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.io.File;
@@ -22,29 +23,21 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-
 /**
  * @author Layanere
- * 
+ *
  */
 public class AdminCache implements IAdminCommandHandler
 {
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_cache_htm_rebuild",
-		"admin_cache_htm_reload",
-		"admin_cache_reload_path",
-		"admin_cache_reload_file",
-		"admin_cache_crest_rebuild",
-		"admin_cache_crest_reload",
-		"admin_cache_crest_fix"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_cache_htm_rebuild", "admin_cache_htm_reload", "admin_cache_reload_path", "admin_cache_reload_file", "admin_cache_crest_rebuild", "admin_cache_crest_reload", "admin_cache_crest_fix" };
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		

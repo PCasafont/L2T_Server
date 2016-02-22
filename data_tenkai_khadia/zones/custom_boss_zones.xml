@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+	<!-- Boss Zones -->
+	<zone name="Antharas Boss" id="12001" type="BossZone" shape="NPoly" minZ="-8380" maxZ="-4880">
+		<stat name="InvadeTime" val="600000" />
+		<node X="173469" Y="110431" />
+		<node X="188081" Y="110284" />
+		<node X="188132" Y="119249" />
+		<node X="173386" Y="119391" />
+	</zone>
+	<zone name="Baium Boss" id="12002" type="BossZone" shape="NPoly" minZ="10061" maxZ="11061">
+		<stat name="InvadeTime" val="600000" />
+		<node X="111022" Y="16177" />
+		<node X="114510" Y="12623" />
+		<node X="118142" Y="15790" />
+		<node X="114773" Y="19589" />
+	</zone>
+	<zone name="Anakim" id="12003" type="BossZone" shape="NPoly" minZ="-5500" maxZ="-4600">
+		<stat name="InvadeTime" val="600000" />
+		<node X="183904" Y="-13884" />
+		<node X="186265" Y="-13884" />
+		<node X="186245" Y="-11263" />
+		<node X="183944" Y="-11283" />
+	</zone>
+	<!-- Forge of the Gods/Hall of Flames -->
+	<zone name="Fire 1" id="12004" type="BossZone" shape="NPoly" minZ="-3326" maxZ="-1326">
+		<stat name="EnabledByDefault" val="false" />
+		<stat name="InvadeTime" val="600000" />
+		<node X="183373" Y="-117179" />
+		<node X="184098" Y="-116718" />
+		<node X="184137" Y="-115290" />
+		<node X="183970" Y="-115002" />
+		<node X="183673" Y="-114982" />
+		<node X="182400" Y="-115593" />
+		<node X="182338" Y="-116737" />
+	</zone>
+	<zone name="Fire 2" id="12005" type="BossZone" shape="NPoly" minZ="-2208" maxZ="792">
+		<stat name="EnabledByDefault" val="false" />
+		<stat name="InvadeTime" val="600000" />
+		<node X="183432" Y="-117590" />
+		<node X="196325" Y="-119107" />
+		<node X="196377" Y="-103657" />
+		<node X="187161" Y="-103538" />
+	</zone>
+	<!-- Imperial Tomb/4 Sepulchers -->
+	<zone name="Royal Rush 1" id="12006" type="BossZone" shape="NPoly" minZ="-7263" maxZ="-7063">
+		<!-- TEMP FIX Until Four Sepulcher Town zone is done -->
+		<stat name="oustLoc" val="170122,-88274,-2921" />
+		<node X="181198" Y="-86516" />
+		<node X="192394" Y="-86521" />
+		<node X="192391" Y="-84626" />
+		<node X="181193" Y="-84622" />
+	</zone>
+	<zone name="Royal Rush 2" id="12007" type="BossZone" shape="NPoly" minZ="-7263" maxZ="-7063">
+		<!-- TEMP FIX Until Four Sepulcher Town zone is done -->
+		<stat name="oustLoc" val="170122,-88274,-2921" />
+		<node X="179511" Y="-89903" />
+		<node X="190707" Y="-89908" />
+		<node X="190704" Y="-88013" />
+		<node X="179506" Y="-88009" />
+	</zone>
+	<zone name="Royal Rush 3" id="12008" type="BossZone" shape="NPoly" minZ="-7263" maxZ="-7063">
+		<!-- TEMP FIX Until Four Sepulcher Town zone is done -->
+		<stat name="oustLoc" val="170122,-88274,-2921" />
+		<node X="174498" Y="-82751" />
+		<node X="176622" Y="-82751" />
+		<node X="176616" Y="-71304" />
+		<node X="174489" Y="-71303" />
+	</zone>
+	<zone name="Royal Rush 4" id="12009" type="BossZone" shape="NPoly" minZ="-7263" maxZ="-7063">
+		<!-- TEMP FIX Until Four Sepulcher Town zone is done -->
+		<stat name="oustLoc" val="170122,-88274,-2921" />
+		<node X="172183" Y="-86660" />
+		<node X="174307" Y="-86661" />
+		<node X="174301" Y="-75214" />
+		<node X="172174" Y="-75213" />
+	</zone>
+	<zone name="Valakas Boss" id="12010" type="BossZone" shape="NPoly" minZ="-2572" maxZ="5428">
+		<stat name="InvadeTime" val="600000" />
+		<node X="196866" Y="-130845" />
+		<node X="229289" Y="-130860" />
+		<node X="229176" Y="-98508" />
+		<node X="196880" Y="-98498" />
+	</zone>
+	<zone name="Queen Ant Boss" id="12012" type="BossZone" shape="NPoly" minZ="-5947" maxZ="-5547">
+		<stat name="EnabledByDefault" val="false" />
+		<node X="-21490" Y="178613" />
+		<node X="-22258" Y="178961" />
+		<node X="-22890" Y="182205" />
+		<node X="-22770" Y="183129" />
+		<node X="-21594" Y="183945" />
+		<node X="-20570" Y="183381" />
+		<node X="-20310" Y="182673" />
+		<node X="-20762" Y="179129" />
+	</zone>
+	<zone name="Orfen Boss" id="12013" type="BossZone" shape="NPoly" minZ="-5796" maxZ="-3796">
+		<stat name="EnabledByDefault" val="false" />
+		<node X="43976" Y="24664" />
+		<node X="43284" Y="18952" />
+		<node X="42476" Y="18164" />
+		<node X="42480" Y="16448" />
+		<node X="43084" Y="15944" />
+		<node X="45140" Y="15816" />
+		<node X="48800" Y="15112" />
+		<node X="56556" Y="12040" />
+		<node X="59068" Y="14288" />
+		<node X="61064" Y="18492" />
+		<node X="60380" Y="23672" />
+		<node X="58724" Y="27412" />
+		<node X="55696" Y="28496" />
+		<node X="43976" Y="24664" />
+	</zone>
+	<zone id="12014" name="Altar of Sacrifice" type="BossZone" shape="Cuboid" minZ="-10730" maxZ="-10290">
+		<stat name="EnabledByDefault" val="false" />
+		<stat name="InvadeTime" val="600000" />
+		<node X="-18176" Y="-54972" />
+		<node X="-14614" Y="-51620" />
+	</zone>
+	<zone id="12016" name="Sailren's Nest" type="BossZone" shape="Cylinder" minZ="-2000" maxZ="-200" rad="1650">
+		<stat name="oustLoc" val="10468,-24569,-3645" />
+		<node X="27456" Y="-6696" />
+	</zone>
+	<zone name="Lindvior Boss" id="12020" type="BossZone" shape="NPoly" minZ="-5000" maxZ="16500">
+		<stat name="InvadeTime" val="600000" />
+		<node X="47606" Y="-29198" />
+		<node X="49094" Y="-28849" />
+		<node X="49372" Y="-28545" />
+		<node X="49782" Y="-27183" />
+		<node X="48485" Y="-23938" />
+		<node X="45464" Y="-22461" />
+		<node X="42121" Y="-23785" />
+		<node X="40629" Y="-26974" />
+		<node X="41930" Y="-30261" />
+		<node X="45078" Y="-31752" />
+		<node X="46898" Y="-31227" />
+		<node X="47313" Y="-29489" />
+	</zone>
+	<zone name="Pre Anakim" id="12021" type="BossZone" shape="NPoly" minZ="-4950" maxZ="-4420">
+		<stat name="InvadeTime" val="600000" />
+		<node X="172102" Y="-18083" />
+		<node X="183504" Y="-18105" />
+		<node X="183544" Y="-6702" />
+		<node X="171976" Y="-6743" />
+	</zone>
+	<zone name="Lilith" id="12022" type="BossZone" shape="NPoly" minZ="-5500" maxZ="-4600">
+		<stat name="InvadeTime" val="600000" />
+		<node X="183904" Y="-10883" />
+		<node X="186245" Y="-10903" />
+		<node X="186265" Y="-8223" />
+		<node X="183924" Y="-8203" />
+	</zone>
+	<zone name="Pre Lilith" id="12023" type="BossZone" shape="NPoly" minZ="-5000" maxZ="-4300">
+		<stat name="InvadeTime" val="600000" />
+		<node X="-19545" Y="12943" />
+		<node X="-7704" Y="12732" />
+		<node X="-7726" Y="24753" />
+		<node X="-19865" Y="24305" />
+	</zone>
+	<zone name="Kelbim" id="12030" type="BossZone" shape="NPoly" minZ="-300" maxZ="500">
+		<stat name="InvadeTime" val="600000" />
+		<node X="-56813" Y="61745" />
+		<node X="-53966" Y="61657" />
+		<node X="-53336" Y="60303" />
+		<node X="-53291" Y="59933" />
+		<node X="-54151" Y="57985" />
+		<node X="-56364" Y="57986" />
+		<node X="-57612" Y="58114" />
+		<node X="-58114" Y="58770" />
+		<node X="-58113" Y="59355" />
+		<node X="-58058" Y="59760" />
+		<node X="-57430" Y="62356" />
+	</zone>
+</list>

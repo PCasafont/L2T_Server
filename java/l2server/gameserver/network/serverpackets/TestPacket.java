@@ -1,3 +1,4 @@
+
 package l2server.gameserver.network.serverpackets;
 
 import java.nio.ByteBuffer;
@@ -12,12 +13,12 @@ public class TestPacket extends L2GameServerPacket
 	
 	public void writeChar(int x)
 	{
-		_buffer.put((byte)x);
+		_buffer.put((byte) x);
 	}
 	
 	public void writeShort(int x)
 	{
-		_buffer.putShort((short)x);
+		_buffer.putShort((short) x);
 	}
 	
 	public void writeInt(int x)
@@ -31,14 +32,5 @@ public class TestPacket extends L2GameServerPacket
 		_buffer.flip();
 		while (_buffer.position() < _buffer.limit())
 			writeC(_buffer.get());
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "TestPacket";
 	}
 }

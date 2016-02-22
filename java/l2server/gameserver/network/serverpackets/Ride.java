@@ -3,22 +3,22 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public final class Ride extends L2GameServerPacket
 {
-	private static final String _S__8c_Ride = "[S] 8c Ride";
 	public static final int ACTION_MOUNT = 1;
 	public static final int ACTION_DISMOUNT = 0;
 	private final int _id;
@@ -59,7 +59,7 @@ public final class Ride extends L2GameServerPacket
 			case 16042: // White Fenrir Wolf
 				_rideType = 3;
 				break;
-			case 32:	// Jet Bike
+			case 32: // Jet Bike
 			case 13130: // Light Purple Maned Horse
 			case 13146: // Tawny-Maned Lion
 			case 13147: // Steam Sledge
@@ -72,12 +72,12 @@ public final class Ride extends L2GameServerPacket
 			case 13312: // Warrior Horse
 			case 13330: // ClockWork Cucuru
 			case 13313: // Rusty Steel Horse
-			case 162:	//BlackBear?
-			case 159:	//TamePrincessAnt?
-			case 161:	//HalloweenWitchsBroomstick?
-			case 13340:	//Kukurin
-			case 13390:	//Lyn draco
-			case 13391:	//Air Bike
+			case 162: //BlackBear?
+			case 159: //TamePrincessAnt?
+			case 161: //HalloweenWitchsBroomstick?
+			case 13340: //Kukurin
+			case 13390: //Lyn draco
+			case 13391: //Air Bike
 				_rideType = 4;
 				break;
 			default:
@@ -99,7 +99,6 @@ public final class Ride extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x8c);
 		writeD(_id);
 		writeD(_bRide);
 		writeD(_rideType);
@@ -107,14 +106,5 @@ public final class Ride extends L2GameServerPacket
 		writeD(_x);
 		writeD(_y);
 		writeD(_z);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__8c_Ride;
 	}
 }

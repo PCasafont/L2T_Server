@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
@@ -29,7 +30,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class RequestGiveNickName extends L2GameClientPacket
 {
-	private static final String _C__55_REQUESTGIVENICKNAME = "[C] 55 RequestGiveNickName";
 	static Logger _log = Logger.getLogger(RequestGiveNickName.class.getName());
 	
 	private String _target;
@@ -39,7 +39,7 @@ public class RequestGiveNickName extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_target = readS();
-		_title  = readS();
+		_title = readS();
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class RequestGiveNickName extends L2GameClientPacket
 		L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 			return;
-		
+
 		// Noblesse can bestow a title to themselves
 		if (activeChar.isNoble() && _target.matches(activeChar.getName()))
 		{
@@ -87,14 +87,5 @@ public class RequestGiveNickName extends L2GameClientPacket
 			else
 				activeChar.sendMessage("Target does not belong to your clan");
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__55_REQUESTGIVENICKNAME;
 	}
 }

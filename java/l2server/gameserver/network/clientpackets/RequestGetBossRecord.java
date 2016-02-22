@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.Map;
@@ -28,7 +29,6 @@ import l2server.log.Log;
  */
 public class RequestGetBossRecord extends L2GameClientPacket
 {
-	private static final String _C__D0_18_REQUESTGETBOSSRECORD = "[C] D0:18 RequestGetBossRecord";
 	private int _bossId;
 	
 	@Override
@@ -49,7 +49,7 @@ public class RequestGetBossRecord extends L2GameClientPacket
 		
 		if (_bossId != 0)
 		{
-			Log.info("C5: RequestGetBossRecord: d: "+_bossId+" ActiveChar: "+activeChar); // should be always 0, log it if isnt 0 for furture research
+			Log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " + activeChar); // should be always 0, log it if isnt 0 for furture research
 		}
 		
 		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
@@ -59,15 +59,6 @@ public class RequestGetBossRecord extends L2GameClientPacket
 		
 		// trigger packet
 		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
-	}
-	
-	/**
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_18_REQUESTGETBOSSRECORD;
 	}
 	
 	@Override

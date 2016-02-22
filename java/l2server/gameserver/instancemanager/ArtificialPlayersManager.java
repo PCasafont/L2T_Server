@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -66,6 +67,7 @@ public class ArtificialPlayersManager implements Reloadable
 		return SingletonHolder._instance;
 	}
 	
+	@Override
 	public boolean reload()
 	{
 		_players.clear();
@@ -82,11 +84,11 @@ public class ArtificialPlayersManager implements Reloadable
 			{
 				int charId = rset.getInt("charId");
 				
-				L2ApInstance player = (L2ApInstance)L2World.getInstance().getPlayer(charId);
+				L2ApInstance player = (L2ApInstance) L2World.getInstance().getPlayer(charId);
 				
-				if (player == null || !player.isOnline())
+				if ((player == null) || !player.isOnline())
 				{
-					player = (L2ApInstance)L2PcInstance.load(charId);
+					player = (L2ApInstance) L2PcInstance.load(charId);
 					//player.setOnlineStatus(true, false);
 					//player.spawnMe();
 				}
@@ -122,6 +124,7 @@ public class ArtificialPlayersManager implements Reloadable
 		
 		_pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
 		{
+			@Override
 			public void run()
 			{
 				for (L2Party party : _partiesSent)
@@ -138,10 +141,7 @@ public class ArtificialPlayersManager implements Reloadable
 				Map<Integer, Integer> allies = new HashMap<Integer, Integer>();
 				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 				{
-					if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE)
-							|| player.isInsideZone(L2Character.ZONE_SIEGE)
-							|| player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND)
-							|| player.getInstanceId() != 0)
+					if ((player.getPvpFlag() == 0) || player.isInsideZone(L2Character.ZONE_PEACE) || player.isInsideZone(L2Character.ZONE_SIEGE) || player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || (player.getInstanceId() != 0))
 						continue;
 					
 					pvpers++;
@@ -153,7 +153,7 @@ public class ArtificialPlayersManager implements Reloadable
 					else
 						allies.put(player.getAllyId(), allies.get(player.getAllyId()) + 1);
 				}
-
+				
 				int biggestAlly = 0;
 				int smallestAlly = 100;
 				for (int members : allies.values())
@@ -164,9 +164,9 @@ public class ArtificialPlayersManager implements Reloadable
 						smallestAlly = members;
 				}
 				
-				if (biggestAlly - smallestAlly > 5)
+				if ((biggestAlly - smallestAlly) > 5)
 				{
-					while (_partiesSent.size() * 7 < biggestAlly)
+					while ((_partiesSent.size() * 7) < biggestAlly)
 					{
 						L2Party party = createRandomParty();
 						for (L2PcInstance member : party.getPartyMembers())
@@ -191,7 +191,7 @@ public class ArtificialPlayersManager implements Reloadable
 						_partiesSent.add(party);
 					}
 				}
-				else if (_partiesSent.size() > 0 && pvpers > 20)
+				else if ((_partiesSent.size() > 0) && (pvpers > 20))
 				{
 					L2Party party = _partiesSent.remove(0);
 					for (L2PcInstance member : party.getPartyMembers())
@@ -210,7 +210,7 @@ public class ArtificialPlayersManager implements Reloadable
 	 */
 	public L2ApInstance createChar(int classId)
 	{
-		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
+		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate((Rnd.get(6) * 2) + Rnd.get(2));
 		PlayerClass cl = PlayerClassTable.getInstance().getClassById(classId);
 		switch (cl.getParent().getAwakeningClassId())
 		{
@@ -218,8 +218,8 @@ public class ArtificialPlayersManager implements Reloadable
 			case 141:
 			case 145:
 			case 146:
-				while (template != null && template.race == Race.Kamael)
-					template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
+				while ((template != null) && (template.race == Race.Kamael))
+					template = CharTemplateTable.getInstance().getTemplate((Rnd.get(6) * 2) + Rnd.get(2));
 				break;
 		}
 		
@@ -233,7 +233,7 @@ public class ArtificialPlayersManager implements Reloadable
 			return null;
 		
 		int objectId = IdFactory.getInstance().getNextId();
-		L2PcInstance newChar = L2PcInstance.create(objectId, template, "!", name, (byte)Rnd.get(5), (byte)Rnd.get(4), (byte)Rnd.get(3), Rnd.get(2) == 0, classId);
+		L2PcInstance newChar = L2PcInstance.create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3), Rnd.get(2) == 0, classId);
 		
 		newChar.setCurrentHp(newChar.getMaxHp());
 		newChar.setCurrentCp(newChar.getMaxCp());
@@ -245,8 +245,8 @@ public class ArtificialPlayersManager implements Reloadable
 		newChar.setXYZInvisible(-114535 + Rnd.get(219), 259818 + Rnd.get(227), -1203);
 		
 		newChar.setTitle("");
-				
-		newChar.getStat().addLevel((byte)104);
+		
+		newChar.getStat().addLevel((byte) 104);
 		
 		for (PcTemplateItem ia : template.getItems())
 		{
@@ -262,7 +262,7 @@ public class ArtificialPlayersManager implements Reloadable
 				newChar.getInventory().equipItem(item);
 		}
 		
-		for (int itemId : new int[]{1})
+		for (int itemId : new int[] { 1 })
 		{
 			L2ItemInstance item = newChar.getInventory().addItem("Init", itemId, 1, newChar, null);
 			
@@ -276,7 +276,7 @@ public class ArtificialPlayersManager implements Reloadable
 		newChar.giveAvailableSkills(true);
 		newChar.store();
 		
-		L2ApInstance player = (L2ApInstance)L2PcInstance.load(objectId);
+		L2ApInstance player = (L2ApInstance) L2PcInstance.load(objectId);
 		
 		if (player == null)
 			return null;
@@ -308,7 +308,7 @@ public class ArtificialPlayersManager implements Reloadable
 			if (classCombination.contains(player.getClassId()))
 			{
 				members.add(player);
-				classCombination.remove((Integer)player.getClassId());
+				classCombination.remove((Integer) player.getClassId());
 			}
 		}
 		
@@ -398,7 +398,7 @@ public class ArtificialPlayersManager implements Reloadable
 	{
 		protected static final ArtificialPlayersManager _instance = new ArtificialPlayersManager();
 	}
-
+	
 	@Override
 	public String getReloadMessage(boolean success)
 	{

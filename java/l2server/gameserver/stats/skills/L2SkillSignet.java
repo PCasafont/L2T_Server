@@ -3,12 +3,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,6 +28,7 @@ import l2server.gameserver.model.actor.instance.L2EffectPointInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.util.Point3D;
 
 public final class L2SkillSignet extends L2Skill
@@ -51,7 +52,7 @@ public final class L2SkillSignet extends L2Skill
 			return;
 		
 		L2NpcTemplate template = NpcTable.getInstance().getTemplate(_effectNpcId);
-		L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(),  template,  caster);
+		L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, caster);
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());
 		effectPoint.setCurrentMp(effectPoint.getMaxMp());
 		//L2World.getInstance().storeObject(effectPoint);
@@ -60,9 +61,9 @@ public final class L2SkillSignet extends L2Skill
 		int y = caster.getY();
 		int z = caster.getZ();
 		
-		if (caster instanceof L2PcInstance && getTargetType() == L2Skill.SkillTargetType.TARGET_GROUND)
+		if ((caster instanceof L2PcInstance) && (getTargetType() == L2SkillTargetType.TARGET_GROUND))
 		{
-			Point3D wordPosition = ((L2PcInstance)caster).getSkillCastPosition();
+			Point3D wordPosition = caster.getSkillCastPosition();
 			
 			if (wordPosition != null)
 			{

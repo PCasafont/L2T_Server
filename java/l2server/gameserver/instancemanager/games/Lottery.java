@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager.games;
 
 import java.sql.Connection;
@@ -35,7 +36,6 @@ public class Lottery
 {
 	public static final long SECOND = 1000;
 	public static final long MINUTE = 60000;
-	
 	
 	private static final String INSERT_LOTTERY = "INSERT INTO games(id, idnr, enddate, prize, newprize) VALUES (?, ?, ?, ?, ?)";
 	private static final String UPDATE_PRICE = "UPDATE games SET prize=?, newprize=? WHERE id = 1 AND idnr = ?";
@@ -124,6 +124,7 @@ public class Lottery
 			// Do nothing
 		}
 		
+		@Override
 		public void run()
 		{
 			Connection con = null;
@@ -148,7 +149,7 @@ public class Lottery
 						_prize = rset.getLong("prize");
 						_enddate = rset.getLong("enddate");
 						
-						if (_enddate <= System.currentTimeMillis() + 2 * MINUTE)
+						if (_enddate <= (System.currentTimeMillis() + (2 * MINUTE)))
 						{
 							(new finishLottery()).run();
 							rset.close();
@@ -161,10 +162,10 @@ public class Lottery
 							_isStarted = true;
 							ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 							
-							if (_enddate > System.currentTimeMillis() + 12 * MINUTE)
+							if (_enddate > (System.currentTimeMillis() + (12 * MINUTE)))
 							{
 								_isSellingTickets = true;
-								ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
+								ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - (10 * MINUTE));
 							}
 							rset.close();
 							statement.close();
@@ -208,7 +209,7 @@ public class Lottery
 				_enddate = finishtime.getTimeInMillis();
 			}
 			
-			ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
+			ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - (10 * MINUTE));
 			ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 			
 			try
@@ -241,6 +242,7 @@ public class Lottery
 			// Do nothing
 		}
 		
+		@Override
 		public void run()
 		{
 			if (Config.DEBUG)
@@ -258,6 +260,7 @@ public class Lottery
 			// Do nothing
 		}
 		
+		@Override
 		public void run()
 		{
 			if (Config.DEBUG)
@@ -319,7 +322,7 @@ public class Lottery
 					int curenchant = rset.getInt("enchant_level") & enchant;
 					int curtype2 = rset.getInt("custom_type2") & type2;
 					
-					if (curenchant == 0 && curtype2 == 0)
+					if ((curenchant == 0) && (curtype2 == 0))
 						continue;
 					
 					int count = 0;
@@ -328,12 +331,12 @@ public class Lottery
 					{
 						int val = curenchant / 2;
 						
-						if (val != (double) curenchant / 2)
+						if (val != ((double) curenchant / 2))
 							count++;
 						
 						int val2 = curtype2 / 2;
 						
-						if (val2 != (double) curtype2 / 2)
+						if (val2 != ((double) curtype2 / 2))
 							count++;
 						
 						curenchant = val;
@@ -367,13 +370,13 @@ public class Lottery
 			long prize3 = 0;
 			
 			if (count1 > 0)
-				prize1 = (long) ((getPrize() - prize4) * Config.ALT_LOTTERY_5_NUMBER_RATE / count1);
+				prize1 = (long) (((getPrize() - prize4) * Config.ALT_LOTTERY_5_NUMBER_RATE) / count1);
 			
 			if (count2 > 0)
-				prize2 = (long) ((getPrize() - prize4) * Config.ALT_LOTTERY_4_NUMBER_RATE / count2);
+				prize2 = (long) (((getPrize() - prize4) * Config.ALT_LOTTERY_4_NUMBER_RATE) / count2);
 			
 			if (count3 > 0)
-				prize3 = (long) ((getPrize() - prize4) * Config.ALT_LOTTERY_3_NUMBER_RATE / count3);
+				prize3 = (long) (((getPrize() - prize4) * Config.ALT_LOTTERY_3_NUMBER_RATE) / count3);
 			
 			if (Config.DEBUG)
 			{
@@ -446,7 +449,7 @@ public class Lottery
 		while (enchant > 0)
 		{
 			int val = enchant / 2;
-			if (val != (double) enchant / 2)
+			if (val != ((double) enchant / 2))
 			{
 				res[id++] = nr;
 			}
@@ -459,7 +462,7 @@ public class Lottery
 		while (type2 > 0)
 		{
 			int val = type2 / 2;
-			if (val != (double) type2 / 2)
+			if (val != ((double) type2 / 2))
 			{
 				res[id++] = nr;
 			}
@@ -494,7 +497,7 @@ public class Lottery
 				int curenchant = rset.getInt("number1") & enchant;
 				int curtype2 = rset.getInt("number2") & type2;
 				
-				if (curenchant == 0 && curtype2 == 0)
+				if ((curenchant == 0) && (curtype2 == 0))
 				{
 					rset.close();
 					statement.close();
@@ -506,10 +509,10 @@ public class Lottery
 				for (int i = 1; i <= 16; i++)
 				{
 					int val = curenchant / 2;
-					if (val != (double) curenchant / 2)
+					if (val != ((double) curenchant / 2))
 						count++;
 					int val2 = curtype2 / 2;
-					if (val2 != (double) curtype2 / 2)
+					if (val2 != ((double) curtype2 / 2))
 						count++;
 					curenchant = val;
 					curtype2 = val2;

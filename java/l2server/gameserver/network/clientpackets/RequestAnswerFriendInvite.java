@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -38,13 +39,13 @@ import l2server.log.Log;
  */
 public final class RequestAnswerFriendInvite extends L2GameClientPacket
 {
-	private static final String _C__5F_REQUESTANSWERFRIENDINVITE = "[C] 5F RequestAnswerFriendInvite";
 	
 	private int _response;
 	
 	@Override
 	protected void readImpl()
 	{
+		readC(); // Unknown, usually 1
 		_response = readD();
 	}
 	
@@ -59,11 +60,6 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket
 				return;
 			
 			if (_response == 1)
-			{
-				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_INVITE_A_FRIEND);
-				requestor.sendPacket(msg);
-			}	
-			else
 			{
 				Connection con = null;
 				try
@@ -98,25 +94,21 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket
 				}
 				catch (Exception e)
 				{
-					Log.log(Level.WARNING, "Could not add friend objectid: "+ e.getMessage(), e);
+					Log.log(Level.WARNING, "Could not add friend objectid: " + e.getMessage(), e);
 				}
 				finally
 				{
 					L2DatabaseFactory.close(con);
 				}
 			}
+			else
+			{
+				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_INVITE_A_FRIEND);
+				requestor.sendPacket(msg);
+			}
 			
 			player.setActiveRequester(null);
 			requestor.onTransactionResponse();
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__5F_REQUESTANSWERFRIENDINVITE;
 	}
 }

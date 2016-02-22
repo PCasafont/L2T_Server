@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.PartyMatchRoom;
@@ -20,8 +21,8 @@ import l2server.gameserver.model.PartyMatchWaitingList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ExPartyRoomMember;
-import l2server.gameserver.network.serverpackets.ListPartyWating;
+import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
+import l2server.gameserver.network.serverpackets.ListPartyWaiting;
 import l2server.gameserver.network.serverpackets.PartyMatchDetail;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -33,16 +34,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestPartyMatchConfig extends L2GameClientPacket
 {
-	private static final String _C__7F_REQUESTPARTYMATCHCONFIG = "[C] 7F RequestPartyMatchConfig";
 	
 	private int _auto, _loc, _lvl;
 	
 	@Override
 	protected void readImpl()
 	{
-		_auto = readD();	//
-		_loc = readD();		// Location
-		_lvl = readD();		// my level
+		_auto = readD(); //
+		_loc = readD(); // Location
+		_lvl = readD(); // my level
 	}
 	
 	@Override
@@ -53,7 +53,7 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
 		if (_activeChar == null)
 			return;
 		
-		if ( !_activeChar.isInPartyMatchRoom() && _activeChar.getParty() != null && _activeChar.getParty().getLeader() != _activeChar)
+		if (!_activeChar.isInPartyMatchRoom() && (_activeChar.getParty() != null) && (_activeChar.getParty().getLeader() != _activeChar))
 		{
 			_activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_VIEW_PARTY_ROOMS));
 			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -64,15 +64,15 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
 		{
 			// If Player is in Room show him room, not list
 			PartyMatchRoomList _list = PartyMatchRoomList.getInstance();
-			if (_list==null)
+			if (_list == null)
 				return;
 			
 			PartyMatchRoom _room = _list.getPlayerRoom(_activeChar);
 			if (_room == null)
 				return;
 			
-			_activeChar.sendPacket(new PartyMatchDetail(_activeChar,_room));
-			_activeChar.sendPacket(new ExPartyRoomMember(_activeChar, _room, 2));
+			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
+			_activeChar.sendPacket(new ExPartyRoomMembers(_activeChar, _room, 2));
 			
 			_activeChar.setPartyRoom(_room.getId());
 			//_activeChar.setPartyMatching(1);
@@ -84,15 +84,9 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
 			PartyMatchWaitingList.getInstance().addPlayer(_activeChar);
 			
 			// Send Room list
-			ListPartyWating matchList = new ListPartyWating(_activeChar,_auto,_loc,_lvl);
+			ListPartyWaiting matchList = new ListPartyWaiting(_activeChar, _auto, _loc, _lvl);
 			
 			_activeChar.sendPacket(matchList);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__7F_REQUESTPARTYMATCHCONFIG;
 	}
 }

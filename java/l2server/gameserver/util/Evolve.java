@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.util;
 
 import java.sql.Connection;
@@ -42,7 +43,7 @@ public final class Evolve
 {
 	public static final boolean doEvolve(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
-		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
+		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
 			return false;
 		
 		L2PetInstance pet = player.getPet();
@@ -70,7 +71,7 @@ public final class Evolve
 		
 		int oldnpcID = olditem.getNpcId();
 		
-		if (pet.getStat().getLevel() < petminlvl || pet.getNpcId() != oldnpcID)
+		if ((pet.getStat().getLevel() < petminlvl) || (pet.getNpcId() != oldnpcID))
 			return false;
 		
 		L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(itemIdgive);
@@ -133,7 +134,7 @@ public final class Evolve
 	
 	public static final boolean doRestore(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
-		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
+		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
 			return false;
 		
 		L2ItemInstance item = player.getInventory().getItemByItemId(itemIdtake);
@@ -243,6 +244,7 @@ public final class Evolve
 			_petSummon = petSummon;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -270,6 +272,7 @@ public final class Evolve
 			_petSummon = petSummon;
 		}
 		
+		@Override
 		public void run()
 		{
 			try

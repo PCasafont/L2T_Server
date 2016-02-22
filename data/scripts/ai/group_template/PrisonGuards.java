@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.group_template;
 
 import java.util.HashMap;
@@ -28,13 +29,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
 
-
 public class PrisonGuards extends L2AttackableAIScript
 {
 	final private static int GUARD1 = 18367;
 	final private static int GUARD2 = 18368;
 	final private static int STAMP = 10013;
-	final private static String[] GUARDVARS = {"1st","2nd","3rd","4th"};
+	final private static String[] GUARDVARS = { "1st", "2nd", "3rd", "4th" };
 	final private static String qn = "IOPRace";
 	
 	private final static int silence = 4098;
@@ -43,30 +43,30 @@ public class PrisonGuards extends L2AttackableAIScript
 	
 	private boolean _firstAttacked = false;
 	
-	private Map<L2Npc,Integer> _guards = new HashMap<L2Npc, Integer>();
+	private Map<L2Npc, Integer> _guards = new HashMap<L2Npc, Integer>();
 	
 	public PrisonGuards(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		int[] mob = {GUARD1, GUARD2};
+		int[] mob = { GUARD1, GUARD2 };
 		registerMobs(mob);
 		
 		// place 1
-		_guards.put(addSpawn(GUARD2,160704,184704,-3704,49152,false,0),0);
-		_guards.put(addSpawn(GUARD2,160384,184704,-3704,49152,false,0),0);
-		_guards.put(addSpawn(GUARD1,160528,185216,-3704,49152,false,0),0);
+		_guards.put(addSpawn(GUARD2, 160704, 184704, -3704, 49152, false, 0), 0);
+		_guards.put(addSpawn(GUARD2, 160384, 184704, -3704, 49152, false, 0), 0);
+		_guards.put(addSpawn(GUARD1, 160528, 185216, -3704, 49152, false, 0), 0);
 		// place 2
-		_guards.put(addSpawn(GUARD2,135120,171856,-3704,49152,false,0),1);
-		_guards.put(addSpawn(GUARD2,134768,171856,-3704,49152,false,0),1);
-		_guards.put(addSpawn(GUARD1,134928,172432,-3704,49152,false,0),1);
+		_guards.put(addSpawn(GUARD2, 135120, 171856, -3704, 49152, false, 0), 1);
+		_guards.put(addSpawn(GUARD2, 134768, 171856, -3704, 49152, false, 0), 1);
+		_guards.put(addSpawn(GUARD1, 134928, 172432, -3704, 49152, false, 0), 1);
 		// place 3
-		_guards.put(addSpawn(GUARD2,146880,151504,-2872,49152,false,0),2);
-		_guards.put(addSpawn(GUARD2,146366,151506,-2872,49152,false,0),2);
-		_guards.put(addSpawn(GUARD1,146592,151888,-2872,49152,false,0),2);
+		_guards.put(addSpawn(GUARD2, 146880, 151504, -2872, 49152, false, 0), 2);
+		_guards.put(addSpawn(GUARD2, 146366, 151506, -2872, 49152, false, 0), 2);
+		_guards.put(addSpawn(GUARD1, 146592, 151888, -2872, 49152, false, 0), 2);
 		// place 4
-		_guards.put(addSpawn(GUARD2,155840,160448,-3352,0,false,0),3);
-		_guards.put(addSpawn(GUARD2,155840,159936,-3352,0,false,0),3);
-		_guards.put(addSpawn(GUARD1,155578,160177,-3352,0,false,0),3);
+		_guards.put(addSpawn(GUARD2, 155840, 160448, -3352, 0, false, 0), 3);
+		_guards.put(addSpawn(GUARD2, 155840, 159936, -3352, 0, false, 0), 3);
+		_guards.put(addSpawn(GUARD1, 155578, 160177, -3352, 0, false, 0), 3);
 		
 		for (L2Npc npc : _guards.keySet())
 		{
@@ -100,7 +100,7 @@ public class PrisonGuards extends L2AttackableAIScript
 		{
 			if (npc.getNpcId() == GUARD2)
 			{
-				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
+				if ((npc.getX() != npc.getSpawn().getX()) || (npc.getY() != npc.getSpawn().getY()))
 				{
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
 					npc.setIsImmobilized(true);
@@ -122,7 +122,7 @@ public class PrisonGuards extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == GUARD2)
 		{
-			if (_firstAttacked && caster.getFirstEffect(eventTimer) == null)
+			if (_firstAttacked && (caster.getFirstEffect(eventTimer) == null))
 			{
 				if (caster.getFirstEffect(silence) == null)
 					castDebuff(npc, caster, silence, isPet, false, true);
@@ -154,7 +154,7 @@ public class PrisonGuards extends L2AttackableAIScript
 			}
 			else
 			{
-				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
+				if ((npc.getX() != npc.getSpawn().getX()) || (npc.getY() != npc.getSpawn().getY()))
 				{
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
 					npc.setIsImmobilized(true);
@@ -201,9 +201,9 @@ public class PrisonGuards extends L2AttackableAIScript
 			((L2Attackable) npc).addDamageHate(attacker, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
-		else if (npc.getNpcId() == GUARD1 && Rnd.get(100) < 5)
+		else if ((npc.getNpcId() == GUARD1) && (Rnd.get(100) < 5))
 		{
-			if (player.getQuestState(qn) != null && player.getQuestState(qn).getInt(GUARDVARS[_guards.get(npc)]) != 1)
+			if ((player.getQuestState(qn) != null) && (player.getQuestState(qn).getInt(GUARDVARS[_guards.get(npc)]) != 1))
 			{
 				player.getQuestState(qn).set(GUARDVARS[_guards.get(npc)], "1");
 				player.getQuestState(qn).giveItems(STAMP, 1);

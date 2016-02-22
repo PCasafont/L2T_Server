@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.entity;
 
 import java.sql.Connection;
@@ -148,13 +149,14 @@ public class ClanHall
 				_cwh = cwh;
 			}
 			
+			@Override
 			public void run()
 			{
 				try
 				{
 					if (_isFree)
 						return;
-					if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee || !_cwh)
+					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -200,8 +202,7 @@ public class ClanHall
 			}
 			catch (Exception e)
 			{
-				Log.log(Level.SEVERE, "Exception: ClanHall.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): "
-						+ e.getMessage(), e);
+				Log.log(Level.SEVERE, "Exception: ClanHall.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " + e.getMessage(), e);
 			}
 			finally
 			{
@@ -210,8 +211,7 @@ public class ClanHall
 		}
 	}
 	
-	public ClanHall(int clanHallId, String name, int ownerId, long lease, String desc, String location, long paidUntil, int Grade,
-			boolean paid)
+	public ClanHall(int clanHallId, String name, int ownerId, long lease, String desc, String location, long paidUntil, int Grade, boolean paid)
 	{
 		_clanHallId = clanHallId;
 		_name = name;
@@ -350,7 +350,7 @@ public class ClanHall
 	public void setOwner(L2Clan clan)
 	{
 		// Verify that this ClanHall is Free and Clan isn't null
-		if (_ownerId > 0 || clan == null)
+		if ((_ownerId > 0) || (clan == null))
 			return;
 		_ownerId = clan.getClanId();
 		_isFree = false;
@@ -364,7 +364,7 @@ public class ClanHall
 	/** Open or Close Door */
 	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open)
 	{
-		if (activeChar != null && activeChar.getClanId() == getOwnerId())
+		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
 			openCloseDoor(doorId, open);
 	}
 	
@@ -386,7 +386,7 @@ public class ClanHall
 	
 	public void openCloseDoors(L2PcInstance activeChar, boolean open)
 	{
-		if (activeChar != null && activeChar.getClanId() == getOwnerId())
+		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
 			openCloseDoors(open);
 	}
 	
@@ -478,7 +478,7 @@ public class ClanHall
 			_functions.put(type, new ClanHallFunction(type, lvl, lease, 0, rate, 0, false));
 		else
 		{
-			if (lvl == 0 && lease == 0)
+			if ((lvl == 0) && (lease == 0))
 				removeFunction(type);
 			else
 			{
@@ -536,7 +536,7 @@ public class ClanHall
 			ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _paidUntil - currentTime);
 		else if (!_paid && !forced)
 		{
-			if (System.currentTimeMillis() + (1000 * 60 * 60 * 24) <= _paidUntil + _chRate)
+			if ((System.currentTimeMillis() + (1000 * 60 * 60 * 24)) <= (_paidUntil + _chRate))
 				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), System.currentTimeMillis() + (1000 * 60 * 60 * 24));
 			else
 				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), (_paidUntil + _chRate) - System.currentTimeMillis());
@@ -552,6 +552,7 @@ public class ClanHall
 		{
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -568,8 +569,7 @@ public class ClanHall
 				}
 				
 				L2Clan Clan = ClanTable.getInstance().getClan(getOwnerId());
-				if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null
-						&& ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease())
+				if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null) && (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease()))
 				{
 					if (_paidUntil != 0)
 					{
@@ -588,7 +588,7 @@ public class ClanHall
 				else
 				{
 					_paid = false;
-					if (_time > _paidUntil + _chRate)
+					if (_time > (_paidUntil + _chRate))
 					{
 						if (ClanHallManager.getInstance().loaded())
 						{
@@ -605,7 +605,7 @@ public class ClanHall
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
 						sm.addItemNumber(getLease());
 						Clan.broadcastToOnlineMembers(sm);
-						if (_time + (1000 * 60 * 60 * 24) <= _paidUntil + _chRate)
+						if ((_time + (1000 * 60 * 60 * 24)) <= (_paidUntil + _chRate))
 							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _time + (1000 * 60 * 60 * 24));
 						else
 							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), (_paidUntil + _chRate) - _time);

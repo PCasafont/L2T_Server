@@ -522,7 +522,7 @@
 		Level 1: Obtained XP + 30%.
 		Level 2: Obtained XP + 50%.
 	-->
-	<skill id="22039" levels="2" name="XP Rune III (Lv. 1-99) 30%">
+	<skill id="22039" levels="2" name="XP Rune III (Lv. 1-100+) 50%">
 		<table name="#xpGain"> 30 50 </table>
 		<table name="#name">XP Rune III (Lv. 1-100+) 30%;XP Rune III (Lv. 1-100+) 50%</table>
 		<set name="name" val="#name" />
@@ -534,10 +534,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Obtained SP + 30%.
-		Level 2: Obtained SP + 50%.
+		Level 1: SP Acquisition + 30%.
+		Level 2: SP Acquisition + 50%.
 	-->
-	<skill id="22040" levels="2" name="SP Rune 30%">
+	<skill id="22040" levels="2" name="SP Rune 50%">
 		<table name="#spGain"> 30 50 </table>
 		<table name="#name">SP Rune 30%;SP Rune 50%</table>
 		<set name="name" val="#name" />
@@ -549,10 +549,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases your grade penalty by 3 Lv.s.
-		Level 2: Decreases your grade penalty by 5 Lv.s.
+		Level 1: Decreases your grade penalty by 3 levels.
+		Level 2: Decreases your grade penalty by 5 levels.
 	-->
-	<skill id="22041" levels="2" name="Rune of Crystal (Lv. 3)">
+	<skill id="22041" levels="2" name="Rune of Crystal (Lv. 5)">
 		<table name="#name">Rune of Crystal (Lv. 3);Rune of Crystal (Lv. 5)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -573,7 +573,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="22043" levels="6" name="Elixir of CP (D-grade)">
+	<skill id="22043" levels="6" name="Elixir of CP (S-grade)">
 		<table name="#power"> 200 800 1500 2000 2500 3000 </table>
 		<table name="#minLvl"> 0 20 40 52 61 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 </table>
@@ -598,7 +598,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="22044" levels="7" name="Elixir of Life (D-grade)">
+	<skill id="22044" levels="7" name="Elixir of Life (Novice)">
 		<table name="#minLvl"> 0 20 40 52 61 76 85 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 99 </table>
 		<table name="#name">Elixir of Life (D-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life (B-grade);Elixir of Life (A-grade);Elixir of Life (S-grade);Elixir of Life (Novice)</table>
@@ -759,7 +759,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="22053" levels="19" name="Scroll of Escape: Talking Island Village">
+	<skill id="22053" levels="19" name="Scroll of Escape: Town of Schuttgart">
 		<table name="#teleCoords">
 			-114380,259946,-1203
 			46934,51467,-2977
@@ -3462,7 +3462,7 @@
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="22418" levels="1" name="Root of Evolution">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -3795,7 +3795,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- For 1 hour, with the  help from the Leaf of Appreciation, increases Max MP by 20%, MP Recovery Bonus by 20%, HP recovery bonus by 20%, the chance of prominent damage occurring through magic damage by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP consumption needed for skill use by 5%. -->
+	<!-- For 1 hour, with the help from the Leaf of Appreciation, increases Max MP by 20%, MP Recovery Bonus by 20%, HP recovery bonus by 20%, the chance of prominent damage occurring through magic damage by 2, the power of critical attacks by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP consumption needed for skill use by 5%. -->
 	<skill id="22480" levels="1" name="Leaf of Appreciation">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4439,7 +4439,7 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<skill id="22603" levels="2" name="Expand Inventory Lv. 1">
+	<skill id="22603" levels="2" name="Expand Inventory Lv. 2">
 		<table name="#name">Expand Inventory Lv. 1;Expand Inventory Lv. 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -4447,7 +4447,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1500" />
 	</skill>
-	<skill id="22604" levels="2" name="Expand Warehouse Lv. 1">
+	<skill id="22604" levels="2" name="Expand Warehouse Lv. 2">
 		<table name="#name">Expand Warehouse Lv. 1;Expand Warehouse Lv. 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -4501,7 +4501,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Obtained XP + 50%. -->
-	<skill id="22614" levels="5" name="XP Rune III (Lv. 1-99) 50%">
+	<skill id="22614" levels="5" name="XP Rune III (Lv. 1-100+) 50%">
 		<table name="#name">XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-100+) 50%</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -4528,32 +4528,32 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<skill id="22618" levels="1" name="STR Symbol - Dye Pack (R-grade)">
+	<skill id="22618" levels="1" name="STR Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22619" levels="1" name="DEX Symbol - Dye Pack (R-grade)">
+	<skill id="22619" levels="1" name="DEX Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22620" levels="1" name="CON Symbol - Dye Pack (R-grade)">
+	<skill id="22620" levels="1" name="CON Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22621" levels="1" name="INT Symbol - Dye Pack (R-grade)">
+	<skill id="22621" levels="1" name="INT Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22622" levels="1" name="WIT Symbol - Dye Pack (R-grade)">
+	<skill id="22622" levels="1" name="WIT Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22623" levels="1" name="MEN Symbol - Dye Pack (R-grade)">
+	<skill id="22623" levels="1" name="MEN Dye Pack (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4589,17 +4589,17 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- For 2 hr., P. Atk. + 20%, M. Atk. + 85%, and Speed + 20. -->
-	<skill id="22630" levels="1" name="Exorcist Energy">
+	<skill id="22630" levels="1" name="Ghost Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<!-- 
-		Level 1: Change into the Beach Swimsuit. For 1 hr., Atk./Casting Spd. + 5%, Speed + 5, and Max HP/MP + 5%. Cooldown is 1 hr.
-		Level 2: Change into the Alluring Swimsuit. For 1 hr., Atk./Casting Spd. + 10%, Speed + 10, and Max HP/MP + 10%. Cooldown is 1 hr.
+		Level 1: Change into the Beach Swimsuit. For 1 hr., Atk. Spd. + 5%, Casting Spd. + 5%, Speed + 4, and Max HP/MP + 5%. Cooldown is 1 hr.
+		Level 2: Change into the Alluring Swimsuit. For 1 hr., Atk. Spd. + 10%, Casting Spd. + 10%, Speed + 10, and Max HP/MP + 10%%. Cooldown is 1 hr.
 	-->
-	<skill id="22631" levels="2" name="Sweet Red Bean Slushie">
+	<skill id="22631" levels="2" name="Fantastic Summer Slushie">
 		<table name="#name">Sweet Summer Slushie;Fantastic Summer Slushie</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -4643,22 +4643,22 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22639" levels="1" name="Traditional Taiwanese Top Appearance Stone">
+	<skill id="22639" levels="1" name="Tribal Warrior Top Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22640" levels="1" name="Traditional Taiwanese Pants Appearance Stone">
+	<skill id="22640" levels="1" name="Tribal Warrior Pants Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22641" levels="1" name="Traditional Taiwanese Gloves Appearance Stone">
+	<skill id="22641" levels="1" name="Tribal Warrior Gloves Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22642" levels="1" name="Traditional Taiwanese Shoes Appearance Stone">
+	<skill id="22642" levels="1" name="Tribal Warrior Shoes Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4668,7 +4668,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22644" levels="1" name="Traditional Taiwanese Hair Accessory Appearance Stone">
+	<skill id="22644" levels="1" name="Tribal Warrior Hair Accessory Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5055,7 +5055,8 @@
 	</skill>
 	<!-- Has a 5% chance of Stunning all enemies within 400 grids for 3 sec. -->
 	<skill id="22701" levels="1" name="Harp's Sealed Rune of Power_Trigger">
-		<set name="target" val="TARGET_AURA" />
+		<set name="target" val="TARGET_AROUND_CASTER" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="skillRadius" val="400" />
@@ -5070,7 +5071,8 @@
 	</skill>
 	<!-- Decreases M. Def. of target and all enemies within 400 grids by 20% for 10 sec. -->
 	<skill id="22702" levels="1" name="Harp's Sealed Rune of Magic_Trigger_Decrease Defense">
-		<set name="target" val="TARGET_AREA" />
+		<set name="target" val="TARGET_AROUND_TARGET" />
+		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5108,7 +5110,7 @@
 	</skill>
 	<!-- Rune is activated, inflicting a brand and additional damage. -->
 	<skill id="22704" levels="1" name="Flynt's Sealed Rune of Destruction_Trigger">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="coolTime" val="30000" />
@@ -5393,7 +5395,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- For 60 min., Max MP + 20%, HP Recovery Bonus + 20%,  M. Critical Rate + 2, Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and increases P. Def. when receiving a critical attack. Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
+	<!-- For 60 min., Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and increases P. Def. when receiving a critical attack. Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
 	<skill id="22745" levels="1" name="Fantasy Homemade Cookie">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5491,7 +5493,7 @@
 		<set name="effectRange" val="1100" />
 	</skill>
 	<!-- CON + 1, MEN + 1, WIT + 1. -->
-	<skill id="22757" levels="1" name="Transform: Traditional Taiwanese Costume">
+	<skill id="22757" levels="1" name="Transform: Tribal Warrior Costume">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5853,7 +5855,7 @@
 	</skill>
 	<!-- 
 		Level 1: Can use Invisibility when whole set is equipped.
-		Level 6: For 3 min., you're invisible and safe from unprovoked monsters. Speed - 10%. Final stage.
+		Level 6: For 3 minutes, you're invisible and safe from unprovoked monsters. Speed - 10%. Final stage.
 	-->
 	<skill id="22820" levels="6" name="Ninja Set - Active">
 		<set name="target" val="TARGET_NONE" />
@@ -6088,7 +6090,7 @@
 		Level 1: You can feel the heat of the campfire more closely when seated. HP Recovery Rate + 300%, CP Recovery Rate + 300%, and MP Recovery Rate + 300%.
 		Level 2: You can feel the warmth of the campfire. HP Recovery Rate + 80%, CP Recovery Rate + 60%, and MP Recovery Rate + 40%. P. Skill MP Consumption - 20%, and M. Skill MP Consumption - 10%.
 	-->
-	<skill id="22859" levels="2" name="Roaring Campfire's Heat">
+	<skill id="22859" levels="2" name="Roaring Campfire's Warmth">
 		<table name="#name">Roaring Campfire's Heat;Roaring Campfire's Warmth</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -6319,22 +6321,22 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22904" levels="1" name="Traditional Taiwanese Top Appearance Stone">
+	<skill id="22904" levels="1" name="Tribal Warrior Top Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22905" levels="1" name="Traditional Taiwanese Pants Appearance Stone">
+	<skill id="22905" levels="1" name="Tribal Warrior Pants Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22906" levels="1" name="Traditional Taiwanese Gloves Appearance Stone">
+	<skill id="22906" levels="1" name="Tribal Warrior Gloves Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22907" levels="1" name="Traditional Taiwanese Shoes Appearance Stone">
+	<skill id="22907" levels="1" name="Tribal Warrior Shoes Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6381,7 +6383,7 @@
 	</skill>
 	<!-- 
 		Level 1: Can use Hide when Top, Pants, Gloves, and Shoes are all modified.
-		Level 4: For 30 sec., you're invisible and safe from unprovoked monsters. Effect cancelled if you attack. Speed - 10%. Cooldown is 1 hr. Final stage of Ninja's Hide.
+		Level 4: For 30 seconds, you're invisible and safe from unprovoked monsters. Effect cancelled if you attack. Speed - 10%. Cooldown is 1 hr. Final stage of Ninja's Hide.
 	-->
 	<skill id="22916" levels="4" name="Ninja's Hide">
 		<set name="target" val="TARGET_NONE" />

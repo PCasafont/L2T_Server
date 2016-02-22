@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model;
 
 import java.sql.Connection;
@@ -47,7 +48,7 @@ public class L2ContactList
 	private final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
 	private final String QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
-		
+	
 	public L2ContactList(L2PcInstance player)
 	{
 		activeChar = player;
@@ -74,7 +75,7 @@ public class L2ContactList
 			{
 				contactId = rset.getInt(1);
 				contactName = CharNameTable.getInstance().getNameById(contactId);
-				if (contactName == null || contactName == activeChar.getName() || contactId == activeChar.getObjectId())
+				if ((contactName == null) || (contactName == activeChar.getName()) || (contactId == activeChar.getObjectId()))
 					continue;
 				
 				_contacts.add(contactName);

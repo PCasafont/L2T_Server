@@ -12,6 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package quests.Q692_HowtoOpposeEvil;
 
 import gnu.trove.TIntObjectHashMap;
@@ -23,7 +24,7 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 
 /**
- * 
+ *
  * @author Gigiikun
  *
  */
@@ -39,53 +40,53 @@ public final class Q692_HowtoOpposeEvil extends Quest
 	static
 	{
 		// Seed of Infinity
-		_questMobs.put(22509, new Integer[]{13863,500});
-		_questMobs.put(22510, new Integer[]{13863,500});
-		_questMobs.put(22511, new Integer[]{13863,500});
-		_questMobs.put(22512, new Integer[]{13863,500});
-		_questMobs.put(22513, new Integer[]{13863,500});
-		_questMobs.put(22514, new Integer[]{13863,500});
-		_questMobs.put(22515, new Integer[]{13863,500});
+		_questMobs.put(22509, new Integer[] { 13863, 500 });
+		_questMobs.put(22510, new Integer[] { 13863, 500 });
+		_questMobs.put(22511, new Integer[] { 13863, 500 });
+		_questMobs.put(22512, new Integer[] { 13863, 500 });
+		_questMobs.put(22513, new Integer[] { 13863, 500 });
+		_questMobs.put(22514, new Integer[] { 13863, 500 });
+		_questMobs.put(22515, new Integer[] { 13863, 500 });
 		// Seed of Destruction
-		_questMobs.put(22537, new Integer[]{13865,250});
-		_questMobs.put(22538, new Integer[]{13865,250});
-		_questMobs.put(22539, new Integer[]{13865,250});
-		_questMobs.put(22540, new Integer[]{13865,250});
-		_questMobs.put(22541, new Integer[]{13865,250});
-		_questMobs.put(22542, new Integer[]{13865,250});
-		_questMobs.put(22543, new Integer[]{13865,250});
-		_questMobs.put(22544, new Integer[]{13865,250});
-		_questMobs.put(22546, new Integer[]{13865,250});
-		_questMobs.put(22547, new Integer[]{13865,250});
-		_questMobs.put(22548, new Integer[]{13865,250});
-		_questMobs.put(22549, new Integer[]{13865,250});
-		_questMobs.put(22550, new Integer[]{13865,250});
-		_questMobs.put(22551, new Integer[]{13865,250});
-		_questMobs.put(22552, new Integer[]{13865,250});
-		_questMobs.put(22593, new Integer[]{13865,250});
-		_questMobs.put(22596, new Integer[]{13865,250});
-		_questMobs.put(22597, new Integer[]{13865,250});
+		_questMobs.put(22537, new Integer[] { 13865, 250 });
+		_questMobs.put(22538, new Integer[] { 13865, 250 });
+		_questMobs.put(22539, new Integer[] { 13865, 250 });
+		_questMobs.put(22540, new Integer[] { 13865, 250 });
+		_questMobs.put(22541, new Integer[] { 13865, 250 });
+		_questMobs.put(22542, new Integer[] { 13865, 250 });
+		_questMobs.put(22543, new Integer[] { 13865, 250 });
+		_questMobs.put(22544, new Integer[] { 13865, 250 });
+		_questMobs.put(22546, new Integer[] { 13865, 250 });
+		_questMobs.put(22547, new Integer[] { 13865, 250 });
+		_questMobs.put(22548, new Integer[] { 13865, 250 });
+		_questMobs.put(22549, new Integer[] { 13865, 250 });
+		_questMobs.put(22550, new Integer[] { 13865, 250 });
+		_questMobs.put(22551, new Integer[] { 13865, 250 });
+		_questMobs.put(22552, new Integer[] { 13865, 250 });
+		_questMobs.put(22593, new Integer[] { 13865, 250 });
+		_questMobs.put(22596, new Integer[] { 13865, 250 });
+		_questMobs.put(22597, new Integer[] { 13865, 250 });
 		// Seed of Annihilation
-		_questMobs.put(22746, new Integer[]{15536,125});
-		_questMobs.put(22747, new Integer[]{15536,125});
-		_questMobs.put(22748, new Integer[]{15536,125});
-		_questMobs.put(22749, new Integer[]{15536,125});
-		_questMobs.put(22750, new Integer[]{15536,125});
-		_questMobs.put(22751, new Integer[]{15536,125});
-		_questMobs.put(22752, new Integer[]{15536,125});
-		_questMobs.put(22753, new Integer[]{15536,125});
-		_questMobs.put(22754, new Integer[]{15536,125});
-		_questMobs.put(22755, new Integer[]{15536,125});
-		_questMobs.put(22756, new Integer[]{15536,125});
-		_questMobs.put(22757, new Integer[]{15536,125});
-		_questMobs.put(22758, new Integer[]{15536,125});
-		_questMobs.put(22759, new Integer[]{15536,125});
-		_questMobs.put(22760, new Integer[]{15536,125});
-		_questMobs.put(22761, new Integer[]{15536,125});
-		_questMobs.put(22762, new Integer[]{15536,125});
-		_questMobs.put(22763, new Integer[]{15536,125});
-		_questMobs.put(22764, new Integer[]{15536,125});
-		_questMobs.put(22765, new Integer[]{15536,125});
+		_questMobs.put(22746, new Integer[] { 15536, 125 });
+		_questMobs.put(22747, new Integer[] { 15536, 125 });
+		_questMobs.put(22748, new Integer[] { 15536, 125 });
+		_questMobs.put(22749, new Integer[] { 15536, 125 });
+		_questMobs.put(22750, new Integer[] { 15536, 125 });
+		_questMobs.put(22751, new Integer[] { 15536, 125 });
+		_questMobs.put(22752, new Integer[] { 15536, 125 });
+		_questMobs.put(22753, new Integer[] { 15536, 125 });
+		_questMobs.put(22754, new Integer[] { 15536, 125 });
+		_questMobs.put(22755, new Integer[] { 15536, 125 });
+		_questMobs.put(22756, new Integer[] { 15536, 125 });
+		_questMobs.put(22757, new Integer[] { 15536, 125 });
+		_questMobs.put(22758, new Integer[] { 15536, 125 });
+		_questMobs.put(22759, new Integer[] { 15536, 125 });
+		_questMobs.put(22760, new Integer[] { 15536, 125 });
+		_questMobs.put(22761, new Integer[] { 15536, 125 });
+		_questMobs.put(22762, new Integer[] { 15536, 125 });
+		_questMobs.put(22763, new Integer[] { 15536, 125 });
+		_questMobs.put(22764, new Integer[] { 15536, 125 });
+		_questMobs.put(22765, new Integer[] { 15536, 125 });
 	}
 	
 	private final boolean giveReward(QuestState st, int itemId, int minCount, int rewardItemId, long rewardCount)
@@ -103,7 +104,7 @@ public final class Q692_HowtoOpposeEvil extends Quest
 		}
 		return false;
 	}
-
+	
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -113,12 +114,12 @@ public final class Q692_HowtoOpposeEvil extends Quest
 			return "";
 		if (event.equalsIgnoreCase("32549-03.htm"))
 		{
-			st.set("cond","1");
+			st.set("cond", "1");
 			st.setState(State.STARTED);
 			st.playSound("ItemSound.quest_accept");
 		}
 		else if (event.equalsIgnoreCase("32550-04.htm"))
-			st.set("cond","3");
+			st.set("cond", "3");
 		else if (event.equalsIgnoreCase("32550-07.htm"))
 		{
 			if (!giveReward(st, 13863, 5, 13796, 1))
@@ -173,11 +174,11 @@ public final class Q692_HowtoOpposeEvil extends Quest
 		{
 			if (npc.getNpcId() == DILIOS)
 			{
-				if (cond == 1 && st.getQuestItemsCount(LEKONS_CERTIFICATE) >= 1)
+				if ((cond == 1) && (st.getQuestItemsCount(LEKONS_CERTIFICATE) >= 1))
 				{
 					st.takeItems(LEKONS_CERTIFICATE, 1);
 					htmltext = "32549-04.htm";
-					st.set("cond","2");
+					st.set("cond", "2");
 				}
 				else if (cond == 2)
 					htmltext = "32549-05.htm";
@@ -201,11 +202,11 @@ public final class Q692_HowtoOpposeEvil extends Quest
 	@Override
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player,"3");
+		L2PcInstance partyMember = getRandomPartyMember(player, "3");
 		if (partyMember == null)
 			return null;
 		final QuestState st = partyMember.getQuestState(QN);
-		if (st != null && _questMobs.containsKey(npc.getNpcId()))
+		if ((st != null) && _questMobs.containsKey(npc.getNpcId()))
 		{
 			int chance = (int) (_questMobs.get(npc.getNpcId())[1] * Config.RATE_QUEST_DROP);
 			int numItems = chance / 1000;
@@ -214,7 +215,7 @@ public final class Q692_HowtoOpposeEvil extends Quest
 				numItems++;
 			if (numItems > 0)
 			{
-				st.giveItems(_questMobs.get(npc.getNpcId())[0],numItems);
+				st.giveItems(_questMobs.get(npc.getNpcId())[0], numItems);
 				st.playSound("ItemSound.quest_itemget");
 			}
 		}

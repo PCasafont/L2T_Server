@@ -3,24 +3,25 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.ai.aplayer;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Skill.SkillTargetType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Character.AIAccessor;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
@@ -37,7 +38,7 @@ public class L2AHealerAI extends L2APlayerAI
 	@Override
 	protected int[] getRandomGear()
 	{
-		return new int[]{30262, 19917, 19918, 19919, 19920, 19921, 19464, 19463, 19458, 17623, 35570, 34860, 19462, 19454, 35802, 30317};
+		return new int[] { 30262, 19917, 19918, 19919, 19920, 19921, 19464, 19463, 19458, 17623, 35570, 34860, 19462, 19454, 35802, 30317 };
 	}
 	
 	@Override
@@ -49,8 +50,7 @@ public class L2AHealerAI extends L2APlayerAI
 			{
 				for (L2Skill skill : _player.getAllSkills())
 				{
-					if (skill.getSkillType() != L2SkillType.RESURRECT
-							|| skill.getTargetType() != SkillTargetType.TARGET_ONE)
+					if ((skill.getSkillType() != L2SkillType.RESURRECT) || (skill.getTargetType() != L2SkillTargetType.TARGET_ONE))
 						continue;
 					
 					if (_player.useMagic(skill, true, false))
@@ -70,9 +70,9 @@ public class L2AHealerAI extends L2APlayerAI
 		{
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (!skill.isOffensive() || skill.getTargetType() != SkillTargetType.TARGET_ONE)
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 					continue;
-				
+
 				if (_player.useMagic(skill, true, false))
 					break;
 			}
@@ -100,7 +100,7 @@ public class L2AHealerAI extends L2APlayerAI
 		
 		for (L2PcInstance member : _player.getParty().getPartyMembers())
 		{
-			if (_player.getDistanceSq(member) > 1500 * 1500)
+			if (_player.getDistanceSq(member) > (1500 * 1500))
 				continue;
 			
 			if (member.isDead())
@@ -109,14 +109,14 @@ public class L2AHealerAI extends L2APlayerAI
 				continue;
 			}
 			
-			int health = (int)((member.getCurrentHp() * 100) / member.getMaxHp());
+			int health = (int) ((member.getCurrentHp() * 100) / member.getMaxHp());
 			if (health < leastHealth)
 			{
 				leastHealth = health;
 				mostHarmed = member;
 			}
 			
-			health = (int)(((member.getCurrentHp() + member.getCurrentCp()) * 100) / (member.getMaxHp() + member.getMaxCp()));
+			health = (int) (((member.getCurrentHp() + member.getCurrentCp()) * 100) / (member.getMaxHp() + member.getMaxCp()));
 			if (health < leastHealth)
 			{
 				leastHealth = health;
@@ -126,9 +126,7 @@ public class L2AHealerAI extends L2APlayerAI
 			int debuffs = 0;
 			for (L2Abnormal e : member.getAllEffects())
 			{
-				if (e != null
-						&& e.getSkill().isDebuff()
-						&& e.getSkill().canBeDispeled())
+				if ((e != null) && e.getSkill().isDebuff() && e.getSkill().canBeDispeled())
 					debuffs++;
 			}
 			
@@ -161,8 +159,7 @@ public class L2AHealerAI extends L2APlayerAI
 		if (memberCount == 0)
 			return;
 		
-		if (mostDebuffed != null && (maxDebuffs > 2
-				|| mostDebuffed.isMovementDisabled() || mostDebuffed.isOutOfControl()))
+		if ((mostDebuffed != null) && ((maxDebuffs > 2) || mostDebuffed.isMovementDisabled() || mostDebuffed.isOutOfControl()))
 		{
 			_player.setTarget(mostDebuffed);
 			
@@ -179,23 +176,16 @@ public class L2AHealerAI extends L2APlayerAI
 		int meanHealth = totalHealth / memberCount;
 		
 		//Log.info(leastHealth + " " + meanHealth);
-
-		if (meanHealth < 85 || leastHealth < 70)
+		
+		if ((meanHealth < 85) || (leastHealth < 70))
 		{
 			_player.setTarget(mostHarmed);
 			
-			if (meanHealth < leastHealth + 25 || meanHealth < 65)
+			if ((meanHealth < (leastHealth + 25)) || (meanHealth < 65))
 			{
 				for (L2Skill skill : _player.getAllSkills())
 				{
-					if ((skill.getSkillType() != L2SkillType.HEAL
-							&& skill.getSkillType() != L2SkillType.HEAL_STATIC
-							&& skill.getSkillType() != L2SkillType.HEAL_PERCENT
-							&& skill.getSkillType() != L2SkillType.CHAIN_HEAL
-							&& skill.getSkillType() != L2SkillType.OVERHEAL)
-							|| (skill.getTargetType() != SkillTargetType.TARGET_PARTY
-							&& skill.getTargetType() != SkillTargetType.TARGET_PARTY_NOTME
-							&& skill.getTargetType() != SkillTargetType.TARGET_PARTY_CLAN))
+					if (((skill.getSkillType() != L2SkillType.HEAL) && (skill.getSkillType() != L2SkillType.HEAL_STATIC) && (skill.getSkillType() != L2SkillType.HEAL_PERCENT) && (skill.getSkillType() != L2SkillType.CHAIN_HEAL) && (skill.getSkillType() != L2SkillType.OVERHEAL)) || ((skill.getTargetType() != L2SkillTargetType.TARGET_PARTY) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_NOTME) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_CLAN)))
 						continue;
 					
 					if (_player.useMagic(skill, true, false))
@@ -207,15 +197,7 @@ public class L2AHealerAI extends L2APlayerAI
 			{
 				for (L2Skill skill : _player.getAllSkills())
 				{
-					if ((skill.getSkillType() != L2SkillType.HEAL
-							&& skill.getSkillType() != L2SkillType.HEAL_STATIC
-							&& skill.getSkillType() != L2SkillType.HEAL_PERCENT
-							&& skill.getSkillType() != L2SkillType.CHAIN_HEAL
-							&& skill.getSkillType() != L2SkillType.OVERHEAL)
-							|| (skill.getTargetType() != SkillTargetType.TARGET_ONE
-							&& (skill.getTargetType() != SkillTargetType.TARGET_SELF || mostHarmed != _player)
-							&& (skill.getTargetType() != SkillTargetType.TARGET_PARTY_OTHER || mostHarmed == _player)
-							&& skill.getTargetType() != SkillTargetType.TARGET_PARTY_MEMBER))
+					if (((skill.getSkillType() != L2SkillType.HEAL) && (skill.getSkillType() != L2SkillType.HEAL_STATIC) && (skill.getSkillType() != L2SkillType.HEAL_PERCENT) && (skill.getSkillType() != L2SkillType.CHAIN_HEAL) && (skill.getSkillType() != L2SkillType.OVERHEAL)) || ((skill.getTargetType() != L2SkillTargetType.TARGET_ONE) && ((skill.getTargetType() != L2SkillTargetType.TARGET_SELF) || (mostHarmed != _player)) && ((skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER) || (mostHarmed == _player)) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)))
 						continue;
 					
 					if (_player.useMagic(skill, true, false))
@@ -224,7 +206,7 @@ public class L2AHealerAI extends L2APlayerAI
 			}
 		}
 	}
-
+	
 	/*private boolean isHealingSkill(L2Skill skill)
 	{
 		switch(skill.getSkillType())

@@ -49,7 +49,7 @@ class Quest (JQuest) :
     htmltext = event
     player = st.getPlayer()
     if event == "30379_2" :
-          if player.getClassId() == 0x00 :
+          if player.getClassId().getId() == 0x00 :
             if player.getLevel() >= 18 :
               if st.getQuestItemsCount(BEZIQUES_RECOMMENDATION)>0 :
                 htmltext = "30379-04.htm"
@@ -59,7 +59,7 @@ class Quest (JQuest) :
             else :
               htmltext = "30379-03.htm"
           else:
-            if player.getClassId() == 0x07 :
+            if player.getClassId().getId() == 0x07 :
               htmltext = "30379-02a.htm"
             else:
               htmltext = "30379-02.htm"
@@ -114,7 +114,7 @@ class Quest (JQuest) :
           st.exitQuest(False)
           st.saveGlobalQuestVar("1ClassQuestFinished","1")
           st.playSound("ItemSound.quest_finish")
-          player.sendPacket(SocialAction(player.getObjectId(),3))
+          player.sendPacket(SocialAction(player,3))
         elif st.getQuestItemsCount(HORSESHOE_OF_LIGHT) == 0 and st.getQuestItemsCount(BEZIQUES_LETTER)>0 :
           htmltext = "30379-07.htm"
         elif st.getQuestItemsCount(HORSESHOE_OF_LIGHT)>0 :

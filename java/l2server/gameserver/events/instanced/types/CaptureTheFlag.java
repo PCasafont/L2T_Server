@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.List;
@@ -54,7 +55,7 @@ public class CaptureTheFlag extends EventInstance
 			if (_teams[0].getPoints() == _teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
+				if ((_teams[0].getParticipatedPlayerCount() == 0) || (_teams[1].getParticipatedPlayerCount() == 0))
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -88,22 +89,22 @@ public class CaptureTheFlag extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
+			if ((_teams[0].getPoints() > _teams[1].getPoints()) && (_teams[0].getPoints() > _teams[2].getPoints()) && (_teams[0].getPoints() > _teams[3].getPoints()))
 			{
 				rewardTeams(0);
 				team = _teams[0];
 			}
-			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
+			else if ((_teams[1].getPoints() > _teams[0].getPoints()) && (_teams[1].getPoints() > _teams[2].getPoints()) && (_teams[1].getPoints() > _teams[3].getPoints()))
 			{
 				rewardTeams(1);
 				team = _teams[1];
 			}
-			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
+			else if ((_teams[2].getPoints() > _teams[0].getPoints()) && (_teams[2].getPoints() > _teams[1].getPoints()) && (_teams[2].getPoints() > _teams[3].getPoints()))
 			{
 				rewardTeams(2);
 				team = _teams[2];
 			}
-			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
+			else if ((_teams[3].getPoints() > _teams[0].getPoints()) && (_teams[3].getPoints() > _teams[1].getPoints()) && (_teams[3].getPoints() > _teams[2].getPoints()))
 			{
 				rewardTeams(3);
 				team = _teams[3];
@@ -146,7 +147,7 @@ public class CaptureTheFlag extends EventInstance
 		if (playerTeam == null)
 			return;
 		
-		if (team == playerTeam && player.getCtfFlag() != null)
+		if ((team == playerTeam) && (player.getCtfFlag() != null))
 		{
 			spawnFlag(player.getCtfFlag());
 			player.setCtfFlag(null);
@@ -154,10 +155,10 @@ public class CaptureTheFlag extends EventInstance
 			setImportant(player, false);
 			playerTeam.increasePoints();
 			sendToAllParticipants("The " + playerTeam.getName() + " team has captured a flag!");
-
+			
 			player.addEventPoints(20);
 		}
-		else if (team != playerTeam && player.getCtfFlag() == null)
+		else if ((team != playerTeam) && (player.getCtfFlag() == null))
 		{
 			unspawnFlag(team);
 			player.setCtfFlag(team);
@@ -170,7 +171,7 @@ public class CaptureTheFlag extends EventInstance
 				if (character != null)
 					character.sendPacket(cs);
 			}
-
+			
 			player.addEventPoints(10);
 		}
 	}
@@ -179,7 +180,7 @@ public class CaptureTheFlag extends EventInstance
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
 	{
 		spawnFlags();
-		if (killedPlayer == null || !isState(EventState.STARTED))
+		if ((killedPlayer == null) || !isState(EventState.STARTED))
 			return;
 		
 		byte killedTeamId = getParticipantTeamId(killedPlayer.getObjectId());
@@ -191,7 +192,7 @@ public class CaptureTheFlag extends EventInstance
 		{
 			spawnFlag(killedPlayer.getCtfFlag());
 			killedPlayer.setCtfFlag(null);
-			if (killerCharacter != null && getParticipantTeam(killerCharacter.getObjectId()) != null)
+			if ((killerCharacter != null) && (getParticipantTeam(killerCharacter.getObjectId()) != null))
 				sendToAllParticipants(killedPlayer.getName() + ", the " + getParticipantTeam(killerCharacter.getObjectId()).getName() + " team's flag possessor, has lost the flag.");
 			
 			killValue = 4;
@@ -250,7 +251,7 @@ public class CaptureTheFlag extends EventInstance
 			
 			team.setFlagSpawn(flagSpawn);
 			
-			int heading = (int)Math.round(Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI * 32768);
+			int heading = (int) Math.round((Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI) * 32768);
 			if (heading < 0)
 				heading = 65535 + heading;
 			
@@ -264,13 +265,13 @@ public class CaptureTheFlag extends EventInstance
 			
 			flagSpawn.stopRespawn();
 			flagSpawn.doSpawn();
-			L2EventFlagInstance flag = (L2EventFlagInstance)flagSpawn.getNpc();
+			L2EventFlagInstance flag = (L2EventFlagInstance) flagSpawn.getNpc();
 			flag.setEvent(this);
 			flag.setTeam(team);
 			flag.setTitle(team.getName());
 			flag.updateAbnormalEffect();
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			Log.warning("CTF Engine[spawnFlag(" + team.getName() + ")]: exception:");
 			e.printStackTrace();
@@ -281,7 +282,7 @@ public class CaptureTheFlag extends EventInstance
 	{
 		if (team.getFlagSpawn() != null)
 		{
-			((L2EventFlagInstance)team.getFlagSpawn().getNpc()).shouldBeDeleted();
+			((L2EventFlagInstance) team.getFlagSpawn().getNpc()).shouldBeDeleted();
 			team.getFlagSpawn().getNpc().deleteMe();
 			team.getFlagSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(team.getFlagSpawn(), false);

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.CharNameTable;
@@ -24,7 +25,6 @@ import l2server.log.Log;
 
 public final class RequestBlock extends L2GameClientPacket
 {
-	private static final String _C__A0_REQUESTBLOCK = "[C] A0 RequestBlock";
 	
 	private final static int BLOCK = 0;
 	private final static int UNBLOCK = 1;
@@ -40,7 +40,7 @@ public final class RequestBlock extends L2GameClientPacket
 	{
 		_type = readD(); //0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 		
-		if (_type == BLOCK || _type == UNBLOCK)
+		if ((_type == BLOCK) || (_type == UNBLOCK))
 		{
 			_name = readS();
 		}
@@ -97,11 +97,5 @@ public final class RequestBlock extends L2GameClientPacket
 			default:
 				Log.info("Unknown 0x0a block type: " + _type);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__A0_REQUESTBLOCK;
 	}
 }

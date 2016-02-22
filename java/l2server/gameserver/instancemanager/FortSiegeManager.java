@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -66,11 +67,11 @@ public class FortSiegeManager
 		L2PcInstance player = (L2PcInstance) activeChar;
 		Fort fort = FortManager.getInstance().getFort(player);
 		
-		if (fort == null || fort.getFortId() <= 0)
+		if ((fort == null) || (fort.getFortId() <= 0))
 			text = "You must be on fort ground to summon this";
 		else if (!fort.getSiege().getIsInProgress())
 			text = "You can only summon this during a siege.";
-		else if (player.getClanId() != 0 && fort.getSiege().getAttackerClan(player.getClanId()) == null)
+		else if ((player.getClanId() != 0) && (fort.getSiege().getAttackerClan(player.getClanId()) == null))
 			text = "You can only summon this as a registered attacker.";
 		else
 			return true;
@@ -185,7 +186,7 @@ public class FortSiegeManager
 		// here check if is siege is attacker
 		Fort fort = FortManager.getInstance().getFort(player);
 		
-		if (fort == null || fort.getFortId() <= 0)
+		if ((fort == null) || (fort.getFortId() <= 0))
 		{
 			player.sendPacket(sm);
 			return false;

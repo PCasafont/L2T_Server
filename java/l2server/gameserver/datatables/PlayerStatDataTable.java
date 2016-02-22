@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -38,7 +39,7 @@ public class PlayerStatDataTable
 			CP = cp;
 		}
 	}
-
+	
 	private final Map<Integer, PlayerStatData> _regenData = new HashMap<Integer, PlayerStatData>();
 	private final Map<Integer, Map<Integer, PlayerStatData>> _classMaxData = new HashMap<Integer, Map<Integer, PlayerStatData>>();
 	
@@ -75,7 +76,7 @@ public class PlayerStatDataTable
 		}
 		
 		Log.info("PlayerStatData: Loaded regen data for " + _regenData.size() + " levels.");
-
+		
 		_classMaxData.clear();
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
 		doc = new XmlDocument(file);

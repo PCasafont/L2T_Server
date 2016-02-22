@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,7 @@ import l2server.gameserver.model.L2Transformation;
 
 public class SiegeGolemSpirit extends L2Transformation
 {
-	private static final int[] SKILLS = {15573, 15574, 15570, 15571, 5491, 619};
+	private static final int[] SKILLS = { 15573, 15574, 15570, 15571, 5491, 619 };
 	
 	public SiegeGolemSpirit()
 	{
@@ -17,7 +18,7 @@ public class SiegeGolemSpirit extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 148 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 148) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -27,7 +28,7 @@ public class SiegeGolemSpirit extends L2Transformation
 	{
 		for (int i : SKILLS)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(i, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
 	

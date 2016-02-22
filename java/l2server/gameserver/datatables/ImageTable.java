@@ -1,3 +1,4 @@
+
 package l2server.gameserver.datatables;
 
 import gov.nasa.worldwind.formats.dds.DDSConverter;
@@ -16,7 +17,6 @@ import l2server.log.Log;
  */
 public class ImageTable
 {
-	
 	private static ImageTable _instance;
 	
 	private static Map<Integer, PledgeCrest> _images = new HashMap<Integer, PledgeCrest>();
@@ -45,12 +45,17 @@ public class ImageTable
 			{
 				if (!image.getName().substring(image.getName().length() - 3).equalsIgnoreCase("png"))
 					continue;
-				id = Integer.valueOf(image.getName().substring(0, image.getName().length() - 4));
+				
+				String imgName = image.getName();
+				if (imgName.contains("_"))
+					imgName = imgName.substring(imgName.indexOf("_") + 1);
+				
+				id = Integer.valueOf(imgName.substring(0, imgName.length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
 				_images.put(id, new PledgeCrest(id, array));
 			}
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			Log.warning("Image table: error loading image id " + id + ": " + e);
 			e.printStackTrace();
@@ -71,7 +76,7 @@ public class ImageTable
 				_images.put(id, new PledgeCrest(id, array));
 			}
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			Log.warning("Image table: error loading image id " + id + ": " + e);
 			e.printStackTrace();

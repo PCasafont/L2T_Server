@@ -34,7 +34,7 @@ class Quest (JQuest) :
     player = st.getPlayer()
     if event == "1" :
       st.set("id","0")
-      if player.getClassId() == 0x0a :
+      if player.getClassId().getId() == 0x0a :
         if player.getLevel() >= 18 :
           if st.getQuestItemsCount(BEAD_OF_SEASON) :
             htmltext = "30391-03.htm"
@@ -46,7 +46,7 @@ class Quest (JQuest) :
         else:
             htmltext = "30391-02.htm"
       else:
-        if player.getClassId() == 0x0b :
+        if player.getClassId().getId() == 0x0b :
           htmltext = "30391-02a.htm"
         else:
           htmltext = "30391-01.htm"
@@ -213,7 +213,7 @@ class Quest (JQuest) :
         st.set("cond","0")
         st.exitQuest(False)
         st.saveGlobalQuestVar("1ClassQuestFinished","1")
-        player.sendPacket(SocialAction(player.getObjectId(),3))
+        player.sendPacket(SocialAction(player,3))
         st.playSound("ItemSound.quest_finish")
         if st.getQuestItemsCount(BEAD_OF_SEASON) == 0 :
           st.giveItems(BEAD_OF_SEASON,1)

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -38,7 +39,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestSendFriendMsg extends L2GameClientPacket
 {
-	private static final String _C__CC_REQUESTSENDMSG = "[C] CC RequestSendMsg";
 	//private static Logger _logChat = Logger.getLogger("chat");
 	
 	private String _message;
@@ -58,14 +58,11 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (_message == null
-				|| _message.isEmpty()
-				|| _message.length() > 300)
+		if ((_message == null) || _message.isEmpty() || (_message.length() > 300))
 			return;
 		
 		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
-		if (targetPlayer == null
-				|| !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
+		if ((targetPlayer == null) || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
 			return;
@@ -99,16 +96,10 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			/*LogRecord record = new LogRecord(Level.INFO, _message);
 			record.setLoggerName("chat");
 			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ _reciever +"]"});
-			
+
 			_logChat.log(record);*/
 		}
 		
 		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__CC_REQUESTSENDMSG;
 	}
 }

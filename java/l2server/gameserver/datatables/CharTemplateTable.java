@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -21,7 +22,6 @@ import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2PcTemplate;
@@ -30,7 +30,7 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 /**
- * 
+ *
  * @author Unknown, Forsaiken
  *
  */
@@ -102,7 +102,7 @@ public final class CharTemplateTable implements Reloadable
 								set.set("mAtkSpd", raceNode.getInt("baseMAtkSpd"));
 								set.set("pCritRate", raceNode.getInt("baseCritical") / 10);
 								set.set("runSpd", raceNode.getInt("baseMoveSpd"));
-								set.set("walkSpd", 0);
+								set.set("walkSpd", (raceNode.getInt("baseMoveSpd") * 70) / 100);
 								set.set("shldDef", 0);
 								set.set("shldRate", 0);
 								set.set("atkRange", 40);
@@ -134,13 +134,13 @@ public final class CharTemplateTable implements Reloadable
 									}
 								}
 								
-								_templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
+								_templates[(ct.race.ordinal() * 2) + (ct.isMage ? 1 : 0)] = ct;
 								count++;
 							}
 							else if (raceNode.getName().equalsIgnoreCase("skill"))
 							{
 								_templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								_templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
+								_templates[(raceId * 2) + 1].addSkill(raceNode.getInt("id"));
 							}
 						}
 					}
@@ -166,19 +166,20 @@ public final class CharTemplateTable implements Reloadable
 		}
 		Log.info("CharTemplateTable: Loaded " + count + " Character Templates.");
 	}
-
+	
+	@Override
 	public boolean reload()
 	{
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			PlayerClass cl = player.getCurrentClass();
-			player.setTemplate(_templates[cl.getRace().ordinal() * 2 + (cl.isMage() ? 1 : 0)]);
+			player.setTemplate(_templates[(player.getRace().ordinal() * 2) + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;
 	}
 	
+	@Override
 	public String getReloadMessage(boolean success)
 	{
 		return "Character templates reloaded";

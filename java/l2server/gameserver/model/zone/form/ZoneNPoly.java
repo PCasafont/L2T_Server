@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.form;
 
 import java.awt.Color;
@@ -61,13 +62,13 @@ public class ZoneNPoly extends L2ZoneForm
 	@Override
 	public boolean isInsideZone(int x, int y, int z)
 	{
-		if (z < _z1 || z > _z2)
+		if ((z < _z1) || (z > _z2))
 			return false;
 		
 		boolean inside = false;
 		for (int i = 0, j = _x.length - 1; i < _x.length; j = i++)
 		{
-			if ((((_y[i] <= y) && (y < _y[j])) || ((_y[j] <= y) && (y < _y[i]))) && (x < (_x[j] - _x[i]) * (y - _y[i]) / (_y[j] - _y[i]) + _x[i]))
+			if ((((_y[i] <= y) && (y < _y[j])) || ((_y[j] <= y) && (y < _y[i]))) && (x < ((((_x[j] - _x[i]) * (y - _y[i])) / (_y[j] - _y[i])) + _x[i])))
 			{
 				inside = !inside;
 			}
@@ -81,7 +82,7 @@ public class ZoneNPoly extends L2ZoneForm
 		int tX, tY, uX, uY;
 		
 		// First check if a point of the polygon lies inside the rectangle
-		if (_x[0] > ax1 && _x[0] < ax2 && _y[0] > ay1 && _y[0] < ay2)
+		if ((_x[0] > ax1) && (_x[0] < ax2) && (_y[0] > ay1) && (_y[0] < ay2))
 			return true;
 		
 		// Or a point of the rectangle inside the polygon
@@ -117,21 +118,17 @@ public class ZoneNPoly extends L2ZoneForm
 	public double getDistanceToZone(int x, int y)
 	{
 		double test, shortestDist;
-		double u = ((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1]) + (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) /
-		(Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
-		if (u > 0 && u < 1)
-			shortestDist = Math.pow((_x[0] + u * (_x[_x.length - 1] - _x[0])) - x, 2) +
-			Math.pow((_y[0] + u * (_y[_y.length - 1] - _y[0])) - y, 2);
+		double u = (((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1])) + ((y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1]))) / (Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
+		if ((u > 0) && (u < 1))
+			shortestDist = Math.pow((_x[0] + (u * (_x[_x.length - 1] - _x[0]))) - x, 2) + Math.pow((_y[0] + (u * (_y[_y.length - 1] - _y[0]))) - y, 2);
 		else
 			shortestDist = Math.pow(_x[0] - x, 2) + Math.pow(_y[0] - y, 2);
 		
 		for (int i = 1; i < _y.length; i++)
 		{
-			u = ((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1]) + (y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1])) /
-			(Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
-			if (u > 0 && u < 1)
-				test = Math.pow((_x[i] + u * (_x[i - 1] - _x[i])) - x, 2) +
-				Math.pow((_y[i] + u * (_y[i - 1] - _y[i])) - y, 2);
+			u = (((x - _x[_x.length - 1]) * (_x[0] - _x[_x.length - 1])) + ((y - _y[_y.length - 1]) * (_y[0] - _y[_y.length - 1]))) / (Math.pow(_x[0] - _x[_x.length - 1], 2) + Math.pow(_y[0] - _y[_y.length - 1], 2));
+			if ((u > 0) && (u < 1))
+				test = Math.pow((_x[i] + (u * (_x[i - 1] - _x[i]))) - x, 2) + Math.pow((_y[i] + (u * (_y[i - 1] - _y[i]))) - y, 2);
 			else
 				test = Math.pow(_x[i] - x, 2) + Math.pow(_y[i] - y, 2);
 			if (test < shortestDist)
@@ -156,25 +153,25 @@ public class ZoneNPoly extends L2ZoneForm
 	{
 		return _z2;
 	}
-
+	
 	@Override
 	public int getCenterX()
 	{
-		return _minX + (_maxX - _minX) / 2;
+		return _minX + ((_maxX - _minX) / 2);
 	}
 	
 	@Override
 	public int getCenterY()
 	{
-		return _minY + (_maxY - _minY) / 2;
+		return _minY + ((_maxY - _minY) / 2);
 	}
 	
 	@Override
 	public void visualizeZone(ExServerPrimitive packet, String name, int z)
 	{
-		if (z < _z1 + 100)
+		if (z < (_z1 + 100))
 			z = _z1 + 100;
-		if (z > _z2 - 20)
+		if (z > (_z2 - 20))
 			z = _z2 - 20;
 		
 		Color color = new Color(Rnd.get(2), Rnd.get(2), Rnd.get(2));
@@ -186,7 +183,7 @@ public class ZoneNPoly extends L2ZoneForm
 			// ending point to first one
 			if (nextIndex == _x.length)
 				nextIndex = 0;
-
+			
 			packet.addLine(color, _x[i], _y[i], z, _x[nextIndex], _y[nextIndex], z);
 			packet.addLine(color, _x[i], _y[i], _z1, _x[nextIndex], _y[nextIndex], _z1);
 			packet.addLine(color, _x[i], _y[i], _z2, _x[nextIndex], _y[nextIndex], _z2);
@@ -198,26 +195,26 @@ public class ZoneNPoly extends L2ZoneForm
 		packet.setXYZ(avgX / _x.length, avgY / _y.length, z);
 		packet.addPoint(name, color, true, avgX / _x.length, avgY / _y.length, z);
 		
-		int centerX = _minX + (_maxX - _minX) / 2;
-		int centerY = _minY + (_maxY - _minY) / 2;
-		int radius = (int)Math.sqrt((_maxX - _minX) * (_maxX - _minX) + (_maxY - _minY) * (_maxY - _minY));
+		int centerX = _minX + ((_maxX - _minX) / 2);
+		int centerY = _minY + ((_maxY - _minY) / 2);
+		int radius = (int) Math.sqrt(((_maxX - _minX) * (_maxX - _minX)) + ((_maxY - _minY) * (_maxY - _minY)));
 		int count = 500;//Math.min(Math.max((_maxX - _minX) / 50, 5), 100);
 		int angle = Rnd.get(180);
-		double dirX = Math.cos(angle * Math.PI / 180.0);
-		double dirY = Math.sin(angle * Math.PI / 180.0);
-		int baseX = centerX - (int)(dirX * radius);
-		int baseY = centerY - (int)(dirY * radius);
+		double dirX = Math.cos((angle * Math.PI) / 180.0);
+		double dirY = Math.sin((angle * Math.PI) / 180.0);
+		int baseX = centerX - (int) (dirX * radius);
+		int baseY = centerY - (int) (dirY * radius);
 		//packet.addPoint("CENTER", Color.red, true, centerX, centerY, z);
 		//packet.addPoint("BASE", Color.red, true, baseX, baseY, z);
 		for (int i = 0; i < count; i++)
 		{
 			boolean found = false;
-			int curX = baseX + (int)((2 * radius * dirX * i) / count);
-			int curY = baseY + (int)((2 * radius * dirY * i) / count);
-			int minX0 = curX + (int)(radius * -dirY);
-			int minY0 = curY + (int)(radius * dirX);
-			int maxX0 = curX + (int)(radius * dirY);
-			int maxY0 = curY + (int)(radius * -dirX);
+			int curX = baseX + (int) ((2 * radius * dirX * i) / count);
+			int curY = baseY + (int) ((2 * radius * dirY * i) / count);
+			int minX0 = curX + (int) (radius * -dirY);
+			int minY0 = curY + (int) (radius * dirX);
+			int maxX0 = curX + (int) (radius * dirY);
+			int maxY0 = curY + (int) (radius * -dirX);
 			int minX = minX0;
 			int minY = minY0;
 			int maxX = maxX0;
@@ -236,7 +233,7 @@ public class ZoneNPoly extends L2ZoneForm
 				{
 					int dx = intersec[0] - curX;
 					int dy = intersec[1] - curY;
-					int dot = (int)(dx * dirY - dy * dirX);
+					int dot = (int) ((dx * dirY) - (dy * dirX));
 					if (dot < minDot)
 					{
 						minX = intersec[0];
@@ -267,7 +264,7 @@ public class ZoneNPoly extends L2ZoneForm
 		y = Rnd.get(_minY, _maxY);
 		
 		int antiBlocker = 0;
-		while (!isInsideZone(x, y, getHighZ()) && antiBlocker < 1000)
+		while (!isInsideZone(x, y, getHighZ()) && (antiBlocker < 1000))
 		{
 			x = Rnd.get(_minX, _maxX);
 			y = Rnd.get(_minY, _maxY);

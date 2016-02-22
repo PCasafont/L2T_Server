@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46327" count="1" /> <!-- Shadow Shaper -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46328" count="1" /> <!-- Shadow Cutter -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46329" count="1" /> <!-- Shadow Slasher -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46330" count="1" /> <!-- Shadow Fighter -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46331" count="1" /> <!-- Shadow Stormer -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46332" count="1" /> <!-- Shadow Thrower -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46333" count="1" /> <!-- Shadow Shooter -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46334" count="1" /> <!-- Shadow Buster -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46335" count="1" /> <!-- Shadow Retributer -->
+	</item>
+	<item>
+		<ingredient id="57" count="150000000" /> <!-- Adena -->
+		<production id="46336" count="1" /> <!-- Shadow Dualsword -->
+	</item>
+</list>

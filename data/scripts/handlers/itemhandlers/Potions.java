@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.itemhandlers;
 
 import java.util.Map;
@@ -21,14 +22,14 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * 
+ *
  * temp handler
  * here u can found items that yet cannot be unhardcoded due to missing better core support
  *
@@ -48,8 +49,8 @@ public class Potions extends ItemSkills
 			activeChar = ((L2PetInstance) playable).getOwner();
 		else
 			return;
-
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
+		
+		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -66,7 +67,7 @@ public class Potions extends ItemSkills
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param activeChar
 	 * @param magicId
 	 * @param level
@@ -82,8 +83,7 @@ public class Potions extends ItemSkills
 			if (!skill.checkCondition(activeChar, activeChar, false))
 				return false;
 			// Return false if potion is in reuse so it is not destroyed from inventory
-			if (activeChar.isSkillDisabled(skill.getId())
-					|| activeChar.isAllSkillsDisabled())
+			if (activeChar.isSkillDisabled(skill.getId()) || activeChar.isAllSkillsDisabled())
 			{
 				displayReuse(activeChar, skill);
 				return false;
@@ -95,9 +95,9 @@ public class Potions extends ItemSkills
 			
 			if (activeChar instanceof L2PcInstance)
 			{
-				L2PcInstance player = (L2PcInstance)activeChar;
+				L2PcInstance player = (L2PcInstance) activeChar;
 				// Only for Heal potions
-				if (magicId == 2031 || magicId == 2032 || magicId == 2037)
+				if ((magicId == 2031) || (magicId == 2032) || (magicId == 2037))
 					player.shortBuffStatusUpdate(magicId, level, 15);
 				
 				if (!(player.isSitting() && !skill.isPotion()))
@@ -107,7 +107,7 @@ public class Potions extends ItemSkills
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1);
 				sm.addString(skill.getName());
-				((L2PetInstance)(activeChar)).getOwner().sendPacket(sm);
+				((L2PetInstance) (activeChar)).getOwner().sendPacket(sm);
 				return true;
 			}
 		}
@@ -123,12 +123,12 @@ public class Potions extends ItemSkills
 		final Map<Integer, TimeStamp> timeStamp = player.getReuseTimeStamp();
 		SystemMessage sm = null;
 		
-		if (timeStamp != null && timeStamp.containsKey(skill.getId()))
+		if ((timeStamp != null) && timeStamp.containsKey(skill.getId()))
 		{
-			final int remainingTime = (int)(player.getReuseTimeStamp().get(skill.getId()).getRemaining()/1000);
-			final int hours = remainingTime/3600;
-			final int minutes = (remainingTime%3600)/60;
-			final int seconds = (remainingTime%60);
+			final int remainingTime = (int) (player.getReuseTimeStamp().get(skill.getId()).getRemaining() / 1000);
+			final int hours = remainingTime / 3600;
+			final int minutes = (remainingTime % 3600) / 60;
+			final int seconds = (remainingTime % 60);
 			if (hours > 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);

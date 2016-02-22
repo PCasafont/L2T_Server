@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.scripting;
 
 import java.io.BufferedReader;
@@ -36,14 +37,14 @@ import l2server.log.Log;
 
 /**
  * Cache of Compiled Scripts
- * 
+ *
  * @author  KenM
  */
 public class CompiledScriptCache implements Serializable
 {
 	private static final long serialVersionUID = 2L;
 	
-	private Map<String, CompiledScriptHolder>  _compiledScripts = new HashMap<String, CompiledScriptHolder>();
+	private Map<String, CompiledScriptHolder> _compiledScripts = new HashMap<String, CompiledScriptHolder>();
 	private transient boolean _modified = false;
 	
 	public CompiledScript loadCompiledScript(ScriptEngine engine, File file) throws FileNotFoundException, ScriptException
@@ -52,11 +53,11 @@ public class CompiledScriptCache implements Serializable
 		String relativeName = file.getPath().substring(len);
 		
 		CompiledScriptHolder csh = _compiledScripts.get(relativeName);
-		if (csh != null && csh.matches(file))
+		if ((csh != null) && csh.matches(file))
 		{
 			if (Config.DEBUG)
 			{
-				Log.fine("Reusing cached compiled script: "+file);
+				Log.fine("Reusing cached compiled script: " + file);
 			}
 			return csh.getCompiledScript();
 		}
@@ -64,7 +65,7 @@ public class CompiledScriptCache implements Serializable
 		{
 			if (Config.DEBUG)
 			{
-				Log.info("Compiling script: "+file);
+				Log.info("Compiling script: " + file);
 			}
 			Compilable eng = (Compilable) engine;
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));

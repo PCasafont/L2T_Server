@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.knownlist;
 
 import java.util.Collection;
@@ -44,7 +45,7 @@ public class AttackableKnownList extends NpcKnownList
 		final Collection<L2PcInstance> known = getKnownPlayers().values();
 		
 		//FIXME: This is a temporary solution && support for Walking Manager
-		if (getActiveChar().hasAI() && (known == null || known.isEmpty()))
+		if (getActiveChar().hasAI() && ((known == null) || known.isEmpty()))
 			getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 		
 		return true;
@@ -53,7 +54,7 @@ public class AttackableKnownList extends NpcKnownList
 	@Override
 	public L2Attackable getActiveChar()
 	{
-		return (L2Attackable)super.getActiveChar();
+		return (L2Attackable) super.getActiveChar();
 	}
 	
 	@Override
@@ -68,10 +69,7 @@ public class AttackableKnownList extends NpcKnownList
 	@Override
 	public int getDistanceToWatchObject(L2Object object)
 	{
-		if ((object instanceof L2NpcInstance
-					&& (((L2NpcInstance)object).getClan() == null
-							|| !((L2NpcInstance)object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())))
-				|| !(object instanceof L2Character))
+		if (((object instanceof L2NpcInstance) && ((((L2NpcInstance) object).getClan() == null) || !((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))) || !(object instanceof L2Character))
 			return 0;
 		
 		if (object instanceof L2Playable)

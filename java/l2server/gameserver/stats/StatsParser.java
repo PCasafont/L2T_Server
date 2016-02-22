@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats;
 
 import java.util.ArrayList;
@@ -20,8 +21,8 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.stats.conditions.Condition;
@@ -29,6 +30,7 @@ import l2server.gameserver.stats.conditions.ConditionChangeWeapon;
 import l2server.gameserver.stats.conditions.ConditionForceBuff;
 import l2server.gameserver.stats.conditions.ConditionGameChance;
 import l2server.gameserver.stats.conditions.ConditionGameTime;
+import l2server.gameserver.stats.conditions.ConditionGameTime.CheckGameTime;
 import l2server.gameserver.stats.conditions.ConditionLogicAnd;
 import l2server.gameserver.stats.conditions.ConditionLogicNot;
 import l2server.gameserver.stats.conditions.ConditionLogicOr;
@@ -92,7 +94,6 @@ import l2server.gameserver.stats.conditions.ConditionTargetUsesWeaponKind;
 import l2server.gameserver.stats.conditions.ConditionUsingItemType;
 import l2server.gameserver.stats.conditions.ConditionUsingSkill;
 import l2server.gameserver.stats.conditions.ConditionWithSkill;
-import l2server.gameserver.stats.conditions.ConditionGameTime.CheckGameTime;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.stats.funcs.Lambda;
 import l2server.gameserver.stats.funcs.LambdaCalc;
@@ -145,14 +146,14 @@ public abstract class StatsParser
 				else if (firstNode.hasAttribute("msgId"))
 				{
 					condition.setMessageId(Integer.decode(getValue(firstNode.getString("msgId"))));
-					if (firstNode.hasAttribute("addName") && Integer.decode(getValue(firstNode.getString("msgId"))) > 0)
+					if (firstNode.hasAttribute("addName") && (Integer.decode(getValue(firstNode.getString("msgId"))) > 0))
 						condition.addName();
 				}
 				
 				if (template instanceof L2Skill)
-					((L2Skill)template).attach(condition, false);
+					((L2Skill) template).attach(condition, false);
 				else if (template instanceof L2Item)
-					((L2Item)template).attach(condition);
+					((L2Item) template).attach(condition);
 			}
 		}
 		for (XmlNode n : node.getChildren())
@@ -181,7 +182,7 @@ public abstract class StatsParser
 				attachFunc(n, template, "SubPercentBase");
 			else if (nodeType.equalsIgnoreCase("mul"))
 				attachFunc(n, template, "Mul");
-			else if (nodeType.equalsIgnoreCase("mulBase"))
+			else if (nodeType.equalsIgnoreCase("baseMul"))
 				attachFunc(n, template, "BaseMul");
 			else if (nodeType.equalsIgnoreCase("set"))
 				attachFunc(n, template, "Set");
@@ -195,13 +196,13 @@ public abstract class StatsParser
 			{
 				if (!(this instanceof SkillParser) && !(template instanceof L2Skill))
 					throw new RuntimeException("Abnormals in something that's not a skill");
-				((SkillParser)this).attachAbnormal(n, (L2Skill)template);
+				((SkillParser) this).attachAbnormal(n, (L2Skill) template);
 			}
 			else if (nodeType.equalsIgnoreCase("effect"))
 			{
 				if (!(this instanceof SkillParser) && !(template instanceof L2AbnormalTemplate))
 					throw new RuntimeException("Effects in something that's not an abnormal");
-				((SkillParser)this).attachEffect(n, (L2AbnormalTemplate)template);
+				((SkillParser) this).attachEffect(n, (L2AbnormalTemplate) template);
 			}
 		}
 	}
@@ -212,9 +213,12 @@ public abstract class StatsParser
 		Lambda lambda = getLambda(n, template);
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
 		FuncTemplate ft = new FuncTemplate(applayCond, name, stat, lambda);
-		if (template instanceof L2Item) ((L2Item) template).attach(ft);
-		else if (template instanceof L2Skill) ((L2Skill) template).attach(ft);
-		else if (template instanceof L2AbnormalTemplate) ((L2AbnormalTemplate) template).attach(ft);
+		if (template instanceof L2Item)
+			((L2Item) template).attach(ft);
+		else if (template instanceof L2Skill)
+			((L2Skill) template).attach(ft);
+		else if (template instanceof L2AbnormalTemplate)
+			((L2AbnormalTemplate) template).attach(ft);
 	}
 	
 	protected void attachLambdaFunc(XmlNode n, Object template, LambdaCalc calc)
@@ -225,19 +229,27 @@ public abstract class StatsParser
 		name = sb.toString();
 		Lambda lambda = getLambda(n, template);
 		FuncTemplate ft = new FuncTemplate(null, name, null, lambda);
-		calc.addFunc(ft.getFunc(new Env(), calc));
+		calc.addFunc(ft.getFunc(calc));
 	}
 	
 	protected Condition parseCondition(XmlNode n, Object template)
 	{
-		if (n == null) return null;
-		if (n.getName().equalsIgnoreCase("and")) return parseLogicAnd(n, template);
-		if (n.getName().equalsIgnoreCase("or")) return parseLogicOr(n, template);
-		if (n.getName().equalsIgnoreCase("not")) return parseLogicNot(n, template);
-		if (n.getName().equalsIgnoreCase("player")) return parsePlayerCondition(n, template);
-		if (n.getName().equalsIgnoreCase("target")) return parseTargetCondition(n, template);
-		if (n.getName().equalsIgnoreCase("using")) return parseUsingCondition(n);
-		if (n.getName().equalsIgnoreCase("game")) return parseGameCondition(n);
+		if (n == null)
+			return null;
+		if (n.getName().equalsIgnoreCase("and"))
+			return parseLogicAnd(n, template);
+		if (n.getName().equalsIgnoreCase("or"))
+			return parseLogicOr(n, template);
+		if (n.getName().equalsIgnoreCase("not"))
+			return parseLogicNot(n, template);
+		if (n.getName().equalsIgnoreCase("player"))
+			return parsePlayerCondition(n, template);
+		if (n.getName().equalsIgnoreCase("target"))
+			return parseTargetCondition(n, template);
+		if (n.getName().equalsIgnoreCase("using"))
+			return parseUsingCondition(n);
+		if (n.getName().equalsIgnoreCase("game"))
+			return parseGameCondition(n);
 		return null;
 	}
 	
@@ -247,7 +259,7 @@ public abstract class StatsParser
 		for (XmlNode n : node.getChildren())
 			cond.add(parseCondition(n, template));
 		
-		if (cond.conditions == null || cond.conditions.length == 0)
+		if ((cond.conditions == null) || (cond.conditions.length == 0))
 			Log.severe("Empty <and> condition in " + _name);
 		return cond;
 	}
@@ -258,7 +270,7 @@ public abstract class StatsParser
 		for (XmlNode n : node.getChildren())
 			cond.add(parseCondition(n, template));
 		
-		if (cond.conditions == null || cond.conditions.length == 0)
+		if ((cond.conditions == null) || (cond.conditions.length == 0))
 			Log.severe("Empty <or> condition in " + _name);
 		return cond;
 	}
@@ -364,7 +376,7 @@ public abstract class StatsParser
 			}
 			else if (a.getKey().equalsIgnoreCase("hp"))
 			{
-				int hp = (int)Float.parseFloat(getValue(a.getValue()));
+				int hp = (int) Float.parseFloat(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHp(hp));
 			}
 			else if (a.getKey().equalsIgnoreCase("mp"))
@@ -620,10 +632,11 @@ public abstract class StatsParser
 			}
 		}
 		
-		if (forces[0] + forces[1] > 0)
+		if ((forces[0] + forces[1]) > 0)
 			cond = joinAnd(cond, new ConditionForceBuff(forces));
 		
-		if (cond == null) Log.severe("Unrecognized <player> condition in " + _name);
+		if (cond == null)
+			Log.severe("Unrecognized <player> condition in " + _name);
 		return cond;
 	}
 	
@@ -781,7 +794,7 @@ public abstract class StatsParser
 				{
 					type = Enum.valueOf(InstanceType.class, valuesSplit[j]);
 					if (type == null)
-						throw new IllegalArgumentException("Instance type not recognized: "+valuesSplit[j]);
+						throw new IllegalArgumentException("Instance type not recognized: " + valuesSplit[j]);
 					types[j] = type;
 				}
 				
@@ -816,7 +829,7 @@ public abstract class StatsParser
 						mask |= L2WeaponType.CROSSBOWK.mask();
 					
 					if (old == mask)
-						Log.info("[parseUsingCondition=\"kind\"] Unknown item type name: "+item);
+						Log.info("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
 				}
 				cond = joinAnd(cond, new ConditionUsingItemType(mask));
 			}
@@ -831,7 +844,8 @@ public abstract class StatsParser
 				int id = Integer.parseInt(st.nextToken().trim());
 				int slot = Integer.parseInt(st.nextToken().trim());
 				int enchant = 0;
-				if (st.hasMoreTokens()) enchant = Integer.parseInt(st.nextToken().trim());
+				if (st.hasMoreTokens())
+					enchant = Integer.parseInt(st.nextToken().trim());
 				cond = joinAnd(cond, new ConditionSlotItemId(slot, id, enchant));
 			}
 			else if (a.getKey().equalsIgnoreCase("weaponChange"))
@@ -840,7 +854,8 @@ public abstract class StatsParser
 				cond = joinAnd(cond, new ConditionChangeWeapon(val));
 			}
 		}
-		if (cond == null) Log.severe("Unrecognized <using> condition in " + _name);
+		if (cond == null)
+			Log.severe("Unrecognized <using> condition in " + _name);
 		return cond;
 	}
 	
@@ -865,7 +880,8 @@ public abstract class StatsParser
 				cond = joinAnd(cond, new ConditionGameChance(val));
 			}
 		}
-		if (cond == null) Log.severe("Unrecognized <game> condition in " + _name);
+		if (cond == null)
+			Log.severe("Unrecognized <game> condition in " + _name);
 		return cond;
 	}
 	
@@ -901,7 +917,7 @@ public abstract class StatsParser
 		}
 		LambdaCalc calc = new LambdaCalc();
 		node = node.getFirstChild();
-		if (node == null || !"val".equals(node.getName()))
+		if ((node == null) || !"val".equals(node.getName()))
 			throw new IllegalArgumentException("Value not specified");
 		
 		for (XmlNode n : node.getChildren())
@@ -917,7 +933,8 @@ public abstract class StatsParser
 	
 	protected Condition joinAnd(Condition cond, Condition c)
 	{
-		if (cond == null) return c;
+		if (cond == null)
+			return c;
 		if (cond instanceof ConditionLogicAnd)
 		{
 			((ConditionLogicAnd) cond).add(c);

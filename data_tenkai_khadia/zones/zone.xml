@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+	<!-- Monster Race Track -->
+	<zone name="dion_monster_race1" type="DerbyTrackZone" shape="NPoly" minZ="-3652" maxZ="-3452">
+		<!-- [20_23] -->
+		<node X="11714" Y="181568" />
+		<node X="14406" Y="181571" />
+		<node X="14405" Y="182673" />
+		<node X="11714" Y="182673" />
+	</zone>
+	<zone name="dion_monster_race2" type="DerbyTrackZone" shape="NPoly" minZ="-3610" maxZ="-3410">
+		<!-- [20_23] -->
+		<node X="13309" Y="181324" />
+		<node X="14061" Y="181324" />
+		<node X="14061" Y="181610" />
+		<node X="13309" Y="181610" />
+	</zone>
+	<zone name="dion_monster_race3" type="DerbyTrackZone" shape="NPoly" minZ="-3608" maxZ="-3408">
+		<!-- [20_23] -->
+		<node X="13559" Y="182641" />
+		<node X="14073" Y="182640" />
+		<node X="14073" Y="182919" />
+		<node X="13560" Y="182918" />
+	</zone>
+	<zone name="dion_monster_race4" type="DerbyTrackZone" shape="NPoly" minZ="-3612" maxZ="-3412">
+		<!-- [20_23] -->
+		<node X="12196" Y="182662" />
+		<node X="12447" Y="182663" />
+		<node X="12447" Y="182766" />
+		<node X="12197" Y="182766" />
+	</zone>
+	<zone name="dion_monster_race5" type="DerbyTrackZone" shape="NPoly" minZ="-3624" maxZ="-3424">
+		<!-- [20_23] -->
+		<node X="11706" Y="182774" />
+		<node X="13194" Y="182769" />
+		<node X="13194" Y="183006" />
+		<node X="11701" Y="183017" />
+	</zone>
+	<zone name="dion_monster_race6" type="DerbyTrackZone" shape="NPoly" minZ="-3616" maxZ="-3416">
+		<!-- [20_23] -->
+		<node X="11701" Y="184017" />
+		<node X="13188" Y="184011" />
+		<node X="13194" Y="184265" />
+		<node X="11701" Y="184260" />
+	</zone>
+	<zone name="dion_monster_race7" type="DerbyTrackZone" shape="NPoly" minZ="-3620" maxZ="-3420">
+		<!-- [20_23] -->
+		<node X="11697" Y="183013" />
+		<node X="11945" Y="183019" />
+		<node X="11940" Y="184015" />
+		<node X="11697" Y="184015" />
+	</zone>
+	<zone name="dion_monster_race8" type="DerbyTrackZone" shape="NPoly" minZ="-3624" maxZ="-3424">
+		<!-- [20_23] -->
+		<node X="12945" Y="183013" />
+		<node X="13193" Y="183008" />
+		<node X="13193" Y="184009" />
+		<node X="12945" Y="184009" />
+	</zone>
+	<zone name="Seed of Annihilation 1" id="60006" type="EffectZone" shape="NPoly" minZ="-10700" maxZ="-10100">
+		<stat name="maxDynamicSkillCount" val="1" />
+		<stat name="showDangerIcon" val="false" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="3000" />
+		<node X="-180000" Y="183000" />
+		<node X="-178300" Y="184666" />
+		<node X="-173000" Y="184666" />
+		<node X="-173000" Y="174500" />
+		<node X="-187350" Y="174500" />
+		<node X="-187350" Y="184666" />
+		<node X="-182000" Y="184666" />
+		<node X="-180500" Y="183000" />
+	</zone>
+	<zone name="Seed of Annihilation 2" id="60007" type="EffectZone" shape="NPoly" minZ="-15900" maxZ="-14950">
+		<stat name="maxDynamicSkillCount" val="1" />
+		<stat name="showDangerIcon" val="false" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="3000" />
+		<node X="-180000" Y="182500" />
+		<node X="-178800" Y="183500" />
+		<node X="-176500" Y="183500" />
+		<node X="-176500" Y="187000" />
+		<node X="-173000" Y="187000" />
+		<node X="-173000" Y="175000" />
+		<node X="-187500" Y="175000" />
+		<node X="-187500" Y="187600" />
+		<node X="-183500" Y="187600" />
+		<node X="-183500" Y="183500" />
+		<node X="-181000" Y="183500" />
+		<node X="-180500" Y="182500" />
+	</zone>
+	<zone name="Seed of Annihilation 3" id="60008" type="EffectZone" shape="NPoly" minZ="-12850" maxZ="-10800">
+		<stat name="maxDynamicSkillCount" val="1" />
+		<stat name="showDangerIcon" val="false" />
+		<stat name="initialDelay" val="1000" />
+		<stat name="reuse" val="3000" />
+		<node X="-212800" Y="182800" />
+		<node X="-211000" Y="185000" />
+		<node X="-205000" Y="185000" />
+		<node X="-205000" Y="172000" />
+		<node X="-221000" Y="172000" />
+		<node X="-221000" Y="187000" />
+		<node X="-216000" Y="187000" />
+		<node X="-213500" Y="182800" />
+	</zone>
+	<!-- (vertices, min Z & Max Z are estimated) -->
+	<zone name="Den of Evil 1" type="EffectZone" shape="Cylinder" minZ="-2300" maxZ="-2100" rad="750">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="74313" Y="-116888" />
+	</zone>
+	<zone name="Den of Evil 2" type="EffectZone" shape="Cylinder" minZ="-2400" maxZ="-2200" rad="850">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="63170" Y="-106621" />
+	</zone>
+	<zone name="Den of Evil 3" type="EffectZone" shape="Cylinder" minZ="-1200" maxZ="-1000" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="68030" Y="-107150" />
+	</zone>
+	<zone name="Den of Evil 4" type="EffectZone" shape="Cylinder" minZ="-3100" maxZ="-2900" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="62351" Y="-117376" />
+	</zone>
+	<zone name="Den of Evil 5" type="EffectZone" shape="Cylinder" minZ="-2200" maxZ="-2000" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="68100" Y="-116006" />
+	</zone>
+	<zone name="Den of Evil 6" type="EffectZone" shape="Cylinder" minZ="-2600" maxZ="-2400" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="69911" Y="-118790" />
+	</zone>
+	<zone name="Den of Evil 7" type="EffectZone" shape="Cylinder" minZ="-3000" maxZ="-2800" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="67520" Y="-122211" />
+	</zone>
+	<zone name="Den of Evil 8" type="EffectZone" shape="Cylinder" minZ="-3100" maxZ="-2900" rad="1500">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="74325" Y="-121296" />
+	</zone>
+	<zone name="Den of Evil 9" type="EffectZone" shape="Cylinder" minZ="-3100" maxZ="-2850" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="70788" Y="-125554" />
+	</zone>
+	<zone name="Den of Evil 10" type="EffectZone" shape="Cylinder" minZ="-3200" maxZ="-3000" rad="1200">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="76155" Y="-127355" />
+	</zone>
+	<zone name="Den of Evil 11" type="EffectZone" shape="Cylinder" minZ="-3400" maxZ="-3200" rad="750">
+		<stat name="reuse" val="9000" />
+		<stat name="targetClass" val="L2Character" />
+		<node X="71543" Y="-128820" />
+	</zone>
+	
+	<!-- Store Zones -->
+	<zone name="Trade: Sell" id="81000" type="PeaceZone" shape="NPoly" minZ="-2100" maxZ="-1900">
+		<node X="-60871" Y="-56898" />
+		<node X="-60828" Y="-57040" />
+		<node X="-60765" Y="-57110" />
+		<node X="-60664" Y="-57149" />
+		<node X="-60536" Y="-57145" />
+		<node X="-60497" Y="-57265" />
+		<node X="-60414" Y="-57344" />
+		<node X="-60569" Y="-57497" />
+		<node X="-60602" Y="-57637" />
+		<node X="-60458" Y="-57776" />
+		<node X="-60321" Y="-57747" />
+		<node X="-60161" Y="-57589" />
+		<node X="-60109" Y="-57660" />
+		<node X="-60043" Y="-57702" />
+		<node X="-59964" Y="-57716" />
+		<node X="-59973" Y="-57884" />
+		<node X="-59920" Y="-57953" />
+		<node X="-59857" Y="-58010" />
+		<node X="-59710" Y="-58054" />
+		<node X="-59572" Y="-58007" />
+		<node X="-59500" Y="-57930" />
+		<node X="-59466" Y="-57837" />
+		<node X="-59469" Y="-57716" />
+		<node X="-59349" Y="-57676" />
+		<node X="-59269" Y="-57589" />
+		<node X="-59117" Y="-57746" />
+		<node X="-58976" Y="-57775" />
+		<node X="-58834" Y="-57633" />
+		<node X="-58862" Y="-57510" />
+		<node X="-59023" Y="-57340" />
+		<node X="-58937" Y="-57263" />
+		<node X="-58897" Y="-57146" />
+		<node X="-58772" Y="-57149" />
+		<node X="-58670" Y="-57102" />
+		<node X="-58604" Y="-57034" />
+		<node X="-58560" Y="-56887" />
+		<node X="-58612" Y="-56752" />
+		<node X="-58681" Y="-56677" />
+		<node X="-58781" Y="-56644" />
+		<node X="-58905" Y="-56645" />
+		<node X="-58947" Y="-56511" />
+		<node X="-59035" Y="-56441" />
+		<node X="-58866" Y="-56290" />
+		<node X="-58838" Y="-56145" />
+		<node X="-58986" Y="-56014" />
+		<node X="-59111" Y="-56042" />
+		<node X="-59275" Y="-56188" />
+		<node X="-59367" Y="-56108" />
+		<node X="-59474" Y="-56075" />
+		<node X="-59465" Y="-55951" />
+		<node X="-59506" Y="-55854" />
+		<node X="-59581" Y="-55785" />
+		<node X="-59727" Y="-55741" />
+		<node X="-59874" Y="-55796" />
+		<node X="-59938" Y="-55860" />
+		<node X="-59974" Y="-55955" />
+		<node X="-59970" Y="-56080" />
+		<node X="-60092" Y="-56118" />
+		<node X="-60167" Y="-56190" />
+		<node X="-60328" Y="-56042" />
+		<node X="-60470" Y="-56018" />
+		<node X="-60604" Y="-56162" />
+		<node X="-60572" Y="-56295" />
+		<node X="-60423" Y="-56457" />
+		<node X="-60506" Y="-56527" />
+		<node X="-60539" Y="-56655" />
+		<node X="-60667" Y="-56643" />
+		<node X="-60763" Y="-56682" />
+		<node X="-60831" Y="-56756" />
+		<node X="-60871" Y="-56898" />
+		<node X="-60517" Y="-56895" />
+		<node X="-60500" Y="-57003" />
+		<node X="-60455" Y="-57081" />
+		<node X="-60392" Y="-57157" />
+		<node X="-60307" Y="-57220" />
+		<node X="-60157" Y="-57254" />
+		<node X="-59984" Y="-57171" />
+		<node X="-60078" Y="-57347" />
+		<node X="-60049" Y="-57474" />
+		<node X="-59973" Y="-57586" />
+		<node X="-59853" Y="-57668" />
+		<node X="-59726" Y="-57691" />
+		<node X="-59619" Y="-57676" />
+		<node X="-59500" Y="-57616" />
+		<node X="-59426" Y="-57535" />
+		<node X="-59381" Y="-57442" />
+		<node X="-59360" Y="-57340" />
+		<node X="-59446" Y="-57165" />
+		<node X="-59268" Y="-57255" />
+		<node X="-59104" Y="-57204" />
+		<node X="-58984" Y="-57093" />
+		<node X="-58942" Y="-57002" />
+		<node X="-58928" Y="-56895" />
+		<node X="-58948" Y="-56779" />
+		<node X="-59022" Y="-56653" />
+		<node X="-59142" Y="-56569" />
+		<node X="-59292" Y="-56536" />
+		<node X="-59445" Y="-56625" />
+		<node X="-59358" Y="-56452" />
+		<node X="-59389" Y="-56330" />
+		<node X="-59442" Y="-56237" />
+		<node X="-59513" Y="-56162" />
+		<node X="-59610" Y="-56117" />
+		<node X="-59723" Y="-56101" />
+		<node X="-59828" Y="-56118" />
+		<node X="-59924" Y="-56161" />
+		<node X="-60011" Y="-56259" />
+		<node X="-60058" Y="-56348" />
+		<node X="-60080" Y="-56461" />
+		<node X="-59993" Y="-56620" />
+		<node X="-60148" Y="-56540" />
+		<node X="-60269" Y="-56562" />
+		<node X="-60393" Y="-56631" />
+		<node X="-60471" Y="-56722" />
+		<node X="-60505" Y="-56814" />
+		<node X="-60517" Y="-56895" />
+	</zone>
+	<zone name="Trade: Buy" id="81001" type="PeaceZone" shape="NPoly" minZ="-2100" maxZ="-1900">
+		<node X="-59993" Y="-56620" />
+		<node X="-60148" Y="-56540" />
+		<node X="-60269" Y="-56562" />
+		<node X="-60393" Y="-56631" />
+		<node X="-60471" Y="-56722" />
+		<node X="-60505" Y="-56814" />
+		<node X="-60517" Y="-56895" />
+		<node X="-60500" Y="-57003" />
+		<node X="-60455" Y="-57081" />
+		<node X="-60392" Y="-57157" />
+		<node X="-60307" Y="-57220" />
+		<node X="-60157" Y="-57254" />
+		<node X="-59984" Y="-57171" />
+		<node X="-60077" Y="-57031" />
+		<node X="-60103" Y="-56897" />
+		<node X="-60076" Y="-56759" />
+	</zone>
+	<zone name="Trade: Craft" id="81002" type="PeaceZone" shape="NPoly" minZ="-2100" maxZ="-1900">
+		<node X="-59993" Y="-56620" />
+		<node X="-59984" Y="-57171" />
+		<node X="-60078" Y="-57347" />
+		<node X="-60049" Y="-57474" />
+		<node X="-59973" Y="-57586" />
+		<node X="-59853" Y="-57668" />
+		<node X="-59726" Y="-57691" />
+		<node X="-59619" Y="-57676" />
+		<node X="-59500" Y="-57616" />
+		<node X="-59426" Y="-57535" />
+		<node X="-59381" Y="-57442" />
+		<node X="-59360" Y="-57340" />
+		<node X="-59446" Y="-57165" />
+		<node X="-59588" Y="-57255" />
+		<node X="-59728" Y="-57278" />
+		<node X="-59867" Y="-57243" />
+		<node X="-59984" Y="-57171" />
+		<node X="-59993" Y="-56620" />
+		<node X="-59863" Y="-56534" />
+		<node X="-59717" Y="-56510" />
+		<node X="-59576" Y="-56545" />
+		<node X="-59445" Y="-56625" />
+		<node X="-59358" Y="-56452" />
+		<node X="-59389" Y="-56330" />
+		<node X="-59442" Y="-56237" />
+		<node X="-59513" Y="-56162" />
+		<node X="-59610" Y="-56117" />
+		<node X="-59723" Y="-56101" />
+		<node X="-59828" Y="-56118" />
+		<node X="-59924" Y="-56161" />
+		<node X="-60011" Y="-56259" />
+		<node X="-60058" Y="-56348" />
+		<node X="-60080" Y="-56461" />
+	</zone>
+</list>

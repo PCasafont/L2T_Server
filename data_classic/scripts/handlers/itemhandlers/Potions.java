@@ -37,7 +37,7 @@ public class Potions extends ItemSkills
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance)
 	 */
-	public void useItem(L2Playable playable, L2ItemInstance item)
+	public synchronized void useItem(L2Playable playable, L2ItemInstance item)
 	{
 		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
 		
@@ -59,17 +59,9 @@ public class Potions extends ItemSkills
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 			return;
 		}
-
-		activeChar.consumableLock.lock();
-		try
-		{
-			usePotion(activeChar, 2005, 1);
-			playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
-		}
-		finally
-		{
-			activeChar.consumableLock.unlock();
-		}
+		
+		usePotion(activeChar, 2005, 1);
+		playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
 	}
 	
 	/**
@@ -81,6 +73,7 @@ public class Potions extends ItemSkills
 	 */
 	public boolean usePotion(L2Playable activeChar, int magicId, int level)
 	{
+		
 		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
 		
 		if (skill != null)

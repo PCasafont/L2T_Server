@@ -132,7 +132,7 @@ class Quest (JQuest) :
         if Config.DISABLE_TUTORIAL :
             return
         st = player.getQuestState(qn)
-        classId = int(st.getPlayer().getClassId())
+        classId = int(st.getPlayer().getClassId().getId())
         string = event[0:2]
         htmltext = ""
 

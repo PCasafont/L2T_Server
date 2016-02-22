@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.zone.type;
 
 import java.util.Collection;
@@ -99,13 +100,13 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (_task == null && (_damageHPPerSec != 0 || _damageMPPerSec != 0))
+		if ((_task == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
 		{
 			L2PcInstance player = character.getActingPlayer();
 			if (getCastle() != null) // Castle zone
-				if (!(getCastle().getSiege().getIsInProgress() && player != null && player.getSiegeState() != 2)) // Siege and no defender
+				if (!(getCastle().getSiege().getIsInProgress() && (player != null) && (player.getSiegeState() != 2))) // Siege and no defender
 					return;
-			synchronized(this)
+			synchronized (this)
 			{
 				if (_task == null)
 					_task = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new ApplyDamage(this), _startTask, _reuseTask);
@@ -116,7 +117,7 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (_characterList.isEmpty() && _task != null)
+		if (_characterList.isEmpty() && (_task != null))
 		{
 			stopTask();
 		}
@@ -148,7 +149,7 @@ public class L2DamageZone extends L2ZoneType
 	
 	private Castle getCastle()
 	{
-		if (_castleId > 0 &&_castle == null)
+		if ((_castleId > 0) && (_castle == null))
 			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		
 		return _castle;
@@ -165,6 +166,7 @@ public class L2DamageZone extends L2ZoneType
 			_castle = zone.getCastle();
 		}
 		
+		@Override
 		public void run()
 		{
 			boolean siege = false;
@@ -185,13 +187,13 @@ public class L2DamageZone extends L2ZoneType
 			
 			for (L2Character temp : _dmgZone.getCharacterList())
 			{
-				if (temp != null && !temp.isDead())
+				if ((temp != null) && !temp.isDead())
 				{
 					if (siege)
 					{
 						// during siege defenders not affected
 						final L2PcInstance player = temp.getActingPlayer();
-						if (player != null && player.isInSiege() && player.getSiegeState() == 2)
+						if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
 							continue;
 					}
 					

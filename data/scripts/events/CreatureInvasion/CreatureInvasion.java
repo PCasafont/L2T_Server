@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package events.CreatureInvasion;
 
 import java.io.File;
@@ -46,24 +47,24 @@ import l2server.util.xml.XmlNode;
  */
 public class CreatureInvasion extends Quest
 {
-	private static final boolean _debug 			= false;
-	private static final String	_qn					= "CreatureInvasion";
+	private static final boolean _debug = false;
+	private static final String _qn = "CreatureInvasion";
 	
-	private static final int	_invasionDuration	= 15;	//Minutes
-	private static final int[]	_weakCreatures		= {13031, 13120};
-	private static final int[]	_hardCreatures		= {13123, 13034};
-	private static final int[]	_strangeCreatures	= {13035, 13124};
-	private static final int[]	_bowSkillIds 		= {3260, 3262};
-	private static final int 	_bowId 				= 9141;
-	private static final int	_bossId				= 26123;
-	private static final int[] _allCreatureIds 		= {_weakCreatures[0], _weakCreatures[1], _hardCreatures[0], _hardCreatures[1], _strangeCreatures[0], _strangeCreatures[1]};
-	private static Map<Integer, AttackInfo> _attackInfo		= new HashMap<Integer, AttackInfo>();
-	private static Map<String, String> _rewardedIps 		= new HashMap<String, String>();
+	private static final int _invasionDuration = 15; //Minutes
+	private static final int[] _weakCreatures = { 13031, 13120 };
+	private static final int[] _hardCreatures = { 13123, 13034 };
+	private static final int[] _strangeCreatures = { 13035, 13124 };
+	private static final int[] _bowSkillIds = { 3260, 3262 };
+	private static final int _bowId = 9141;
+	private static final int _bossId = 26123;
+	private static final int[] _allCreatureIds = { _weakCreatures[0], _weakCreatures[1], _hardCreatures[0], _hardCreatures[1], _strangeCreatures[0], _strangeCreatures[1] };
+	private static Map<Integer, AttackInfo> _attackInfo = new HashMap<Integer, AttackInfo>();
+	private static Map<String, String> _rewardedIps = new HashMap<String, String>();
 	private static Map<String, List<DropChances>> _dropInfo = new HashMap<String, List<DropChances>>();
-	private static ArrayList<L2Npc> _allCreatures 			= new ArrayList<L2Npc>();
+	private static ArrayList<L2Npc> _allCreatures = new ArrayList<L2Npc>();
 	private static boolean _isEventStarted;
 	private static BossAttackInfo _bossAttackInfo;
-
+	
 	public CreatureInvasion(int id, String name, String descr)
 	{
 		super(id, name, descr);
@@ -112,7 +113,7 @@ public class CreatureInvasion extends Quest
 				}
 			}
 		}
-		Log.info(getName() +": Loaded " + _dropInfo.size() + " drop categories!");
+		Log.info(getName() + ": Loaded " + _dropInfo.size() + " drop categories!");
 	}
 	
 	private class DropChances
@@ -170,7 +171,7 @@ public class CreatureInvasion extends Quest
 		
 		private void addDamage(int playerId, long damage)
 		{
-			synchronized(_registredDamages)
+			synchronized (_registredDamages)
 			{
 				if (!_registredDamages.containsKey(playerId))
 					_registredDamages.put(playerId, damage);
@@ -181,11 +182,11 @@ public class CreatureInvasion extends Quest
 		
 		private void giveRewards()
 		{
-			synchronized(_registredDamages)
+			synchronized (_registredDamages)
 			{
 				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 				{
-					if (player == null || player.getInstanceId() != 0 || player.isInStoreMode() || !player.isInsideRadius(_boss, 3000, false, false) || _registredDamages.get(player.getObjectId()) == null || _registredDamages.get(player.getObjectId()) < 1000)
+					if ((player == null) || (player.getInstanceId() != 0) || player.isInStoreMode() || !player.isInsideRadius(_boss, 3000, false, false) || (_registredDamages.get(player.getObjectId()) == null) || (_registredDamages.get(player.getObjectId()) < 1000))
 						continue;
 					
 					if (_rewardedIps.containsKey(player.getExternalIP()) && _rewardedIps.get(player.getExternalIP()).equalsIgnoreCase(player.getInternalIP()))
@@ -193,17 +194,17 @@ public class CreatureInvasion extends Quest
 					
 					_rewardedIps.put(player.getExternalIP(), player.getInternalIP());
 					
-					for (DropChances i  : _dropInfo.get("boss"))
+					for (DropChances i : _dropInfo.get("boss"))
 					{
 						if (Rnd.get(100) < i.getChance())
 						{
 							long amount = Rnd.get(i.getMinAmount(), i.getMaxAmount());
 							player.addItem(getName(), i.getItemId(), amount, player, true);
-							_boss.broadcastChat(player.getName() + " received " + amount + " " + ItemTable.getInstance().getTemplate(i.getItemId()).getName()+"!", 0);
+							_boss.broadcastChat(player.getName() + " received " + amount + " " + ItemTable.getInstance().getTemplate(i.getItemId()).getName() + "!", 0);
 						}
 					}
 				}
-				Log.info(getName() +": Rewarded: " + _rewardedIps.size() + " players!");
+				Log.info(getName() + ": Rewarded: " + _rewardedIps.size() + " players!");
 			}
 		}
 	}
@@ -247,21 +248,21 @@ public class CreatureInvasion extends Quest
 		{
 			return _internalIP;
 		}
-
+		
 		private void updateInfo(int playerId, String externalIP, String internalIP)
 		{
 			_playerId = playerId;
 			_externalIP = externalIP;
 			_internalIP = internalIP;
 			setAttackedTime();
-		}	
+		}
 	}
 	
 	@Override
-	public String onAdvEvent (String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("start_invasion"))
 		{
@@ -272,7 +273,7 @@ public class CreatureInvasion extends Quest
 				Announcements.getInstance().announceToAll("The Creature Invasion has started!");
 				for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
 				{
-					if (pl == null || pl.getInstanceId() != 0 || pl.getEvent() != null || pl.getIsInsideGMEvent() || pl.inObserverMode() ||pl.isInOlympiadMode() || pl.isInStoreMode() || GrandBossManager.getInstance().getZone(pl) != null)
+					if ((pl == null) || (pl.getInstanceId() != 0) || (pl.getEvent() != null) || pl.getIsInsideGMEvent() || pl.inObserverMode() || pl.isInOlympiadMode() || pl.isInStoreMode() || (GrandBossManager.getInstance().getZone(pl) != null))
 						continue;
 					
 					for (int i = 0; i <= Rnd.get(1, 2); i++)
@@ -282,7 +283,7 @@ public class CreatureInvasion extends Quest
 			}
 			else
 				notifyEvent("end_event", null, null);
-				
+			
 		}
 		else if (event.equalsIgnoreCase("spawn_boss"))
 		{
@@ -304,7 +305,7 @@ public class CreatureInvasion extends Quest
 				if (_bossAttackInfo != null)
 					_bossAttackInfo.deleteBoss();
 				
-				synchronized(_allCreatures)
+				synchronized (_allCreatures)
 				{
 					for (L2Npc creature : _allCreatures)
 					{
@@ -319,7 +320,7 @@ public class CreatureInvasion extends Quest
 				_attackInfo.clear();
 				_allCreatures.clear();
 				_rewardedIps.clear();
-			
+				
 				Announcements.getInstance().announceToAll("The Creature Invasion has been ended!");
 			}
 		}
@@ -354,44 +355,44 @@ public class CreatureInvasion extends Quest
 		
 		if (Util.contains(_allCreatureIds, npc.getNpcId()))
 		{
-			synchronized(_attackInfo)
+			synchronized (_attackInfo)
 			{
 				AttackInfo attackInfo = _attackInfo.get(npc.getObjectId());
 				
 				int sameIPs = 0;
 				int underAttack = 0;
-			
-				for (Map.Entry<Integer, AttackInfo> _info: _attackInfo.entrySet())
+				
+				for (Map.Entry<Integer, AttackInfo> _info : _attackInfo.entrySet())
 				{
 					if (_info == null)
 						continue;
-						
+					
 					AttackInfo i = _info.getValue();
 					if (i == null)
 						continue;
-						
-					if (System.currentTimeMillis() < i.getAttackedTime() + 7000)
-					{	
+					
+					if (System.currentTimeMillis() < (i.getAttackedTime() + 7000))
+					{
 						if (i.getPlayerId() == player.getObjectId())
-							underAttack ++;
-							
+							underAttack++;
+						
 						if ((i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP().equalsIgnoreCase(player.getInternalIP())))
-							sameIPs ++;
-							
-						if (underAttack > 1  || sameIPs > 1)
+							sameIPs++;
+						
+						if ((underAttack > 1) || (sameIPs > 1))
 						{
 							player.doDie(npc);
-								
+							
 							if (underAttack > 1)
 								player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " you cant attack more than one mob at same time!"));
-								
+							
 							if (sameIPs > 1)
 								player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " dualbox is not allowed here!"));
 							return "";
-						}	
+						}
 					}
 				}
-					
+				
 				if (attackInfo == null)
 				{
 					attackInfo = new AttackInfo(player.getObjectId(), player.getExternalIP(), player.getInternalIP());
@@ -405,7 +406,7 @@ public class CreatureInvasion extends Quest
 					{
 						//The attacker is not same
 						//If the last attacked stored info +10 seconds is bigger than the current time, this mob is currently attacked by someone
-						if (attackInfo.getAttackedTime() + 7000 > System.currentTimeMillis())
+						if ((attackInfo.getAttackedTime() + 7000) > System.currentTimeMillis())
 						{
 							player.doDie(null);
 							player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " don't attack mobs from other players!"));
@@ -440,29 +441,29 @@ public class CreatureInvasion extends Quest
 		
 		if (!_isEventStarted)
 		{
-			Log.warning(killer.getName() +": is killing creatures out of the event...!");
+			Log.warning(killer.getName() + ": is killing creatures out of the event...!");
 			return "";
 		}
 		
 		if (Util.contains(_allCreatureIds, npc.getNpcId()))
 		{
-			synchronized(_attackInfo)
+			synchronized (_attackInfo)
 			{
-				AttackInfo info = _attackInfo.get(npc.getObjectId());	//Get the attack info
+				AttackInfo info = _attackInfo.get(npc.getObjectId()); //Get the attack info
 				if (info != null)
-					_attackInfo.remove(npc.getObjectId());	//Delete the stored info for this npc
-				
+					_attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
+					
 				spawnCreature(killer.getX(), killer.getY(), killer.getZ());
 				
 				//TODO Reward the player based on his playerLevel
 				if (isValidAttack(killer, killer.getLastSkillCast(), npc))
 				{
 					String dropType = "newPlayer";
-					if (killer.getOnlineTime() > 10 * 3600)
+					if (killer.getOnlineTime() > (10 * 3600))
 						dropType = "oldPlayer";
 					
 					int a = 0;
-					for (DropChances i  : _dropInfo.get(dropType))
+					for (DropChances i : _dropInfo.get(dropType))
 					{
 						int dropChance = i.getChance();
 						long maxAmount = i.getMaxAmount();
@@ -502,7 +503,7 @@ public class CreatureInvasion extends Quest
 			return;
 		
 		L2Npc creature = addSpawn(getCreatureId(), x, y, z + 5, 0, true, 0);
-		synchronized(_allCreatures)
+		synchronized (_allCreatures)
 		{
 			_allCreatures.add(creature);
 		}
@@ -514,15 +515,15 @@ public class CreatureInvasion extends Quest
 			return false;
 		
 		L2Weapon playerWeapon = player.getActiveWeaponItem();
-		if (playerWeapon == null || playerWeapon.getItemId() != _bowId)
+		if ((playerWeapon == null) || (playerWeapon.getItemId() != _bowId))
 		{
 			player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " You should use the Redemption Bow!"));
 			return false;
 		}
 		
-		if (skill == null || !Util.contains(_bowSkillIds, skill.getId()))
+		if ((skill == null) || !Util.contains(_bowSkillIds, skill.getId()))
 		{
-			if (skill != null && skill.hasEffects())
+			if ((skill != null) && skill.hasEffects())
 			{
 				L2Abnormal abn = npc.getFirstEffect(skill.getId());
 				if (abn != null)
@@ -541,7 +542,7 @@ public class CreatureInvasion extends Quest
 		if (rnd > 10)
 			return _weakCreatures[Rnd.get(_weakCreatures.length)];
 		else if (rnd > 3)
-			return _hardCreatures[Rnd.get(_hardCreatures.length)]; 
+			return _hardCreatures[Rnd.get(_hardCreatures.length)];
 		else
 			return _strangeCreatures[Rnd.get(_strangeCreatures.length)];
 	}

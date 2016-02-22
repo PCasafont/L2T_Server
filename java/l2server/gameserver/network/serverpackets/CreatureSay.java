@@ -3,16 +3,18 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
+
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
@@ -24,7 +26,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class CreatureSay extends L2GameServerPacket
 {
 	// ddSS
-	private static final String _S__4A_CREATURESAY = "[S] 4A CreatureSay";
 	private int _objectId;
 	private int _textType;
 	private String _charName = null;
@@ -43,14 +44,14 @@ public final class CreatureSay extends L2GameServerPacket
 		_charName = charName;
 		_text = text;
 	}
-
+	
 	public CreatureSay(L2Character activeChar, int messageType, String charName, String text)
 	{
 		_objectId = activeChar.getObjectId();
 		_textType = messageType;
 		_charName = charName;
 		_text = text;
-		_level = (byte)activeChar.getLevel();
+		_level = (byte) activeChar.getLevel();
 	}
 	
 	public CreatureSay(int objectId, int messageType, int charId, int msgId)
@@ -64,7 +65,6 @@ public final class CreatureSay extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x4a);
 		writeD(_objectId);
 		writeD(_textType);
 		if (_charName != null)
@@ -84,14 +84,5 @@ public final class CreatureSay extends L2GameServerPacket
 		L2PcInstance _pci = getClient().getActiveChar();
 		if (_pci != null)
 			_pci.broadcastSnoop(_textType, _charName, _text);
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__4A_CREATURESAY;
 	}
 }

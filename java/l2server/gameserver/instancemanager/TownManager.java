@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import l2server.gameserver.datatables.MapRegionTable;
@@ -24,23 +25,26 @@ import l2server.gameserver.model.zone.type.L2TownZone;
 
 public class TownManager
 {
-	//
-	
-	// =========================================================
-	// Property - Public
-	
 	public final static L2TownZone getClosestTown(L2Object activeObject)
 	{
-		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance)
+		if ((Curfew.getInstance().getOnlyPeaceTown() != -1) && (activeObject instanceof L2PcInstance))
 		{
-			L2PcInstance player = (L2PcInstance)activeObject;
+			L2PcInstance player = (L2PcInstance) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
-			if (!(castle != null && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
-			{
+			if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
 				return getTown(Curfew.getInstance().getOnlyPeaceTown());
-			}
 		}
-		switch (MapRegionTable.getInstance().getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY()))
+		
+		if ((MainTownManager.getInstance().getCurrentMainTown() != null) && (activeObject instanceof L2PcInstance))
+		{
+			L2PcInstance player = (L2PcInstance) activeObject;
+			Castle castle = CastleManager.getInstance().findNearestCastle(player);
+			if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
+				return getTown(MainTownManager.getInstance().getCurrentMainTown().getTownId());
+		}
+		
+		int mapRegion = MapRegionTable.getInstance().getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY());
+		switch (mapRegion)
 		{
 			case 0:
 				return getTown(2); // TI
@@ -164,43 +168,43 @@ public class TownManager
 			case 16:
 				return 9; // Schuttgart
 				/*
-			case 17:
+				case 17:
 				return getTown(16); // Floran
-			case 18:
+				case 18:
 				return getTown(19); //Primeval Isle
-			case 19:
+				case 19:
 				return getTown(20); //Kamael Village
-			case 20:
+				case 20:
 				return getTown(21); //South of Wastelands Camp
-			case 21:
+				case 21:
 				return getTown(22); //Fantasy Island
-			case 22:
+				case 22:
 				return 7; //Neutral Zone
-			case 23:
+				case 23:
 				return getTown(24);//Coliseum
-			case 24:
+				case 24:
 				return getTown(25);//GM Consultation service
-			case 25:
+				case 25:
 				return getTown(26);//Dimensional Gap
-			case 26:
+				case 26:
 				return getTown(27);//Cemetery of the Empire
-			case 27:
+				case 27:
 				return getTown(28);//inside the Steel Citadel
-			case 28:
+				case 28:
 				return getTown(29);//Steel Citadel Resistance
-			case 29:
+				case 29:
 				return getTown(30);//Inside Kamaloka
-			case 30:
+				case 30:
 				return getTown(31);//Inside Nia Kamaloka
-			case 31:
+				case 31:
 				return getTown(32);//Inside Rim Kamaloka
-			case 32:
+				case 32:
 				return getTown(33);//near the Keucereus clan association location
-			case 33:
+				case 33:
 				return getTown(34);//inside the Seed of Infinity
-			case 34:
+				case 34:
 				return getTown(35);//outside the Seed of Infinity
-			case 35:
+				case 35:
 				return getTown(36);//inside Aerial Cleft
 				 */
 		}
@@ -210,10 +214,10 @@ public class TownManager
 	public final static boolean townHasCastleInSiege(int townId)
 	{
 		//int[] castleidarray = {0,0,0,0,0,0,0,1,2,3,4,0,5,0,0,6,0};
-		int[] castleidarray = {0,0,0,0,0,0,0,1,2,3,4,0,5,7,8,6,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-		int castleIndex= castleidarray[townId] ;
+		int[] castleidarray = { 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 0, 5, 7, 8, 6, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		int castleIndex = castleidarray[townId];
 		
-		if ( castleIndex > 0 )
+		if (castleIndex > 0)
 		{
 			Castle castle = CastleManager.getInstance().getCastles().get(CastleManager.getInstance().getCastleIndex(castleIndex));
 			if (castle != null)
@@ -224,9 +228,9 @@ public class TownManager
 	
 	public final static boolean townHasCastleInSiege(int x, int y)
 	{
-		int curtown= (MapRegionTable.getInstance().getMapRegion(x, y));
+		int curtown = (MapRegionTable.getInstance().getMapRegion(x, y));
 		//int[] castleidarray = {0,0,0,0,0,1,0,2,3,4,5,0,0,6,0,0,0,0};
-		int[] castleidarray = {0,0,0,0,0,1,0,2,3,4,5,0,0,6,8,7,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		int[] castleidarray = { 0, 0, 0, 0, 0, 1, 0, 2, 3, 4, 5, 0, 0, 6, 8, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		//find an instance of the castle for this town.
 		int castleIndex = castleidarray[curtown];
 		if (castleIndex > 0)

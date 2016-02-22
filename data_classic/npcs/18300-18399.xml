@@ -1,7 +1,7 @@
 <list>
-	<npc id="18342" name="Gremlin" level="1" type="L2Monster" baseAtkRange="40" baseHpMax="41.02817" baseHpReg="2.0" baseMpMax="40.0" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="29" sp="2" basePAtk="4.1291203" baseMAtk="5.787037" basePDef="45.879116" baseMDef="32.522514" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="50.0" aggroRange="300" collisionRadius="10.0" collisionHeight="15.0"
-			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
-			aiType="fighter" skillChance="15" clanRange="300">
+	<npc id="18342" name="Gremlin" level="1" type="L2Monster" baseAtkRange="40" baseHpMax="41.02817" baseHpReg="2.0" baseMpMax="40.0" baseMpReg="0.9" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="10" exp="29" sp="2" basePAtk="4.1291203" baseMAtk="5.787037" basePDef="45.879116" baseMDef="32.522514" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="20.0" baseRunSpd="50.0" aggroRange="300" collisionRadius="10.0" collisionHeight="15.0">
+		<elementals fireDef="20" waterDef="20" windDef="53" earthDef="20" holyDef="20" darkDef="20" />
+		<ai type="fighter" skillChance="15" clanRange="300" />
 		<skill id="4416" level="13" /> <!-- Fairies -->
 		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->

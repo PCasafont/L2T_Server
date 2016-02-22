@@ -12,28 +12,19 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 /**
- * 
+ *
  * @author Erlandys
  */
 public class ExShowCommission extends L2GameServerPacket
 {
 	
-	private static final String _S__FE_F1_EXSHOWCOMMISSION = "[S] FE:F1 ExShowCommission";
-
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xFE);
-		writeH(0xF2);
 		writeD(0x01); // Just for showing window...
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _S__FE_F1_EXSHOWCOMMISSION;
 	}
 }

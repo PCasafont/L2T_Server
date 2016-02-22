@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.HashMap;
@@ -60,6 +61,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 	
 	private class RemoveWearItemsTask implements Runnable
 	{
+		@Override
 		public void run()
 		{
 			try
@@ -85,7 +87,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 			_count = 0;
 		if (_count > 100)
 			return; // prevent too long lists
-		
+			
 		// Create _items table that will contain all ItemID to Wear
 		_items = new int[_count];
 		
@@ -114,18 +116,18 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// If Alternate rule Karma punishment is set to true, forbid Wear to player with Karma
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && _activeChar.getReputation() < 0)
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (_activeChar.getReputation() < 0))
 			return;
 		
 		// Check current target of the player and the INTERACTION_DISTANCE
 		L2Object target = _activeChar.getTarget();
-		if (!_activeChar.isGM() && (target == null // No target (ie GM Shop)
-				|| !(target instanceof L2MerchantInstance || target instanceof L2MercManagerInstance) // Target not a merchant and not mercmanager
-				|| !_activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false) // Distance is too far
+		if (!_activeChar.isGM() && ((target == null // No target (ie GM Shop)
+				) || !((target instanceof L2MerchantInstance) || (target instanceof L2MercManagerInstance)) // Target not a merchant and not mercmanager
+		|| !_activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false) // Distance is too far
 		))
 			return;
 		
-		if (_count < 1 || _listId >= 4000000)
+		if ((_count < 1) || (_listId >= 4000000))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -179,19 +181,19 @@ public final class RequestPreviewItem extends L2GameClientPacket
 			int slot = Inventory.getPaperdollIndex(template.getBodyPart());
 			if (slot < 0)
 				continue;
-						
+			
 			if (template instanceof L2Weapon)
 			{
 				if (_activeChar.getRace().ordinal() == 5)
 					if (template.getItemType() == L2WeaponType.NONE)
 						continue;
-				else if (template.getItemType() == L2WeaponType.RAPIER || template.getItemType() == L2WeaponType.CROSSBOWK || template.getItemType() == L2WeaponType.ANCIENTSWORD)
-					continue;
+					else if ((template.getItemType() == L2WeaponType.RAPIER) || (template.getItemType() == L2WeaponType.CROSSBOWK) || (template.getItemType() == L2WeaponType.ANCIENTSWORD))
+						continue;
 			}
 			else if (template instanceof L2Armor)
 			{
 				if (_activeChar.getRace().ordinal() == 5)
-					if (template.getItemType() == L2ArmorType.HEAVY || template.getItemType() == L2ArmorType.MAGIC)
+					if ((template.getItemType() == L2ArmorType.HEAVY) || (template.getItemType() == L2ArmorType.MAGIC))
 						continue;
 			}
 			
@@ -210,28 +212,19 @@ public final class RequestPreviewItem extends L2GameClientPacket
 				return;
 			}
 		}
-
+		
 		// Charge buyer and add tax to castle treasury if not owned by npc clan because a Try On is not Free
 		if ((totalPrice < 0) || !_activeChar.reduceAdena("Wear", totalPrice, _activeChar.getLastFolkNPC(), true))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;
 		}
-
+		
 		if (!_item_list.isEmpty())
 		{
 			_activeChar.sendPacket(new ShopPreviewInfo(_item_list));
 			// Schedule task
 			ThreadPoolManager.getInstance().scheduleGeneral(new RemoveWearItemsTask(), Config.WEAR_DELAY * 1000);
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return "[C] C7 RequestPreviewItem".intern();
 	}
 }

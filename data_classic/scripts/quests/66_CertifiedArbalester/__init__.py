@@ -105,7 +105,7 @@ class Quest (JQuest) :
             htmltext = Quest.getAlreadyCompletedMsg(player)
 
         elif npcId == Rindy :
-            if player.getClassId() != 126 or player.getLevel() < 39:
+            if player.getClassId().getId() != 126 or player.getLevel() < 39:
                 htmltext = "<html><body>Only Warders of level 39 and above are allowed to take this quest! Go away before I get angry!</body></html>"
                 st.exitQuest(1)
             elif id == State.CREATED :

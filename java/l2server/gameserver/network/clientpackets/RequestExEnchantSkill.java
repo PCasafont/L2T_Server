@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -20,8 +21,8 @@ import java.sql.PreparedStatement;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.EnchantCostsTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ShortCut;
@@ -48,7 +49,6 @@ import l2server.util.Rnd;
  */
 public final class RequestExEnchantSkill extends L2GameClientPacket
 {
-	private static final String _C__D0_07_REQUESTEXENCHANTSKILL = "[C] D0:07 RequestExEnchantSkill";
 	
 	private int _type;
 	private int _skillId;
@@ -70,10 +70,9 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (_skillId <= 0 || _skillLvl <= 0
-				|| _type < 0 || _type > 4) // minimal sanity check
+		if ((_skillId <= 0) || (_skillLvl <= 0) || (_type < 0) || (_type > 4)) // minimal sanity check
 			return;
-
+		
 		L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 			return;
@@ -95,7 +94,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILL_ENCHANT_ATTACKING_TRANSFORMED_BOAT);
 			return;
 		}
-
+		
 		int enchantRoute = _skillEnchant / 1000;
 		int enchantLevel = _skillEnchant % 1000;
 		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, enchantRoute, enchantLevel);
@@ -114,43 +113,42 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		int currentEnchantRoute = currentSkill.getEnchantRouteId();
 		int currentEnchantLevel = currentSkill.getEnchantLevel();
 		// do u have this skill enchanted?
-		if (_type == 3 && (currentEnchantRoute < 1 || currentEnchantLevel < 1
-				|| currentLevel != _skillLvl || currentEnchantLevel < enchantLevel - 1))
+		if ((_type == 3) && ((currentEnchantRoute < 1) || (currentEnchantLevel < 1) || (currentLevel != _skillLvl) || (currentEnchantLevel < (enchantLevel - 1))))
 			return;
-
+		
 		EnchantSkillDetail esd = s.getEnchantSkillDetail(enchantRoute, enchantLevel);
 		int costMultiplier = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
 		int reqItemId = esd.getRange().getNormalBook();
 		switch (_type)
 		{
-		case 1:
-			costMultiplier = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
-			reqItemId = esd.getRange().getSafeBook();
-			break;
-		case 2:
-			reqItemId = esd.getRange().getUntrainBook();
-			break;
-		case 3:
-			reqItemId = esd.getRange().getChangeBook();
-			break;
-		case 4:
-			costMultiplier = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
-			reqItemId = esd.getRange().getImmortalBook();
-			break;
+			case 1:
+				costMultiplier = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
+				reqItemId = esd.getRange().getSafeBook();
+				break;
+			case 2:
+				reqItemId = esd.getRange().getUntrainBook();
+				break;
+			case 3:
+				reqItemId = esd.getRange().getChangeBook();
+				break;
+			case 4:
+				costMultiplier = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
+				reqItemId = esd.getRange().getImmortalBook();
+				break;
 		}
 		
 		int requiredSp = esd.getSpCost() * costMultiplier;
-		int requireditems = esd.getAdenaCost() * costMultiplier;
+		int requireditems = Config.isServer(Config.DREAMS) && (_type == 4) ? 0 : esd.getAdenaCost() * costMultiplier;
 		int rate = esd.getRate(player);
 		
-		if (player.getSp() >= requiredSp || _type == 2)
+		if ((player.getSp() >= requiredSp) || (_type == 2))
 		{
 			// only first lvl requires book
-			boolean firstLevel = enchantLevel % 10 == 1; // 101, 201, 301 ...
+			boolean firstLevel = (enchantLevel % 10) == 1; // 101, 201, 301 ...
 			L2ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
 			
-			boolean useBook = _type == 1 || (Config.ES_SP_BOOK_NEEDED && (_type != 0 || firstLevel));
-			if (useBook && spb == null)// Haven't spellbook
+			boolean useBook = (_type == 1) || (Config.ES_SP_BOOK_NEEDED && ((_type != 0) || firstLevel));
+			if (useBook && (spb == null))// Haven't spellbook
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL));
 				return;
@@ -163,7 +161,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			}
 			
 			boolean check = true;
-			if (_type != 2 && requiredSp > 0)
+			if ((_type != 2) && (requiredSp > 0))
 				check &= player.getStat().removeExpAndSp(0, requiredSp, false);
 			
 			if (useBook)
@@ -176,7 +174,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL));
 				return;
 			}
-
+			
 			if (_type == 3)
 			{
 				int levelPenalty = Rnd.get(Math.min(4, currentEnchantLevel));
@@ -213,9 +211,9 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			}
 			if (_type == 2)
 			{
-				player.getStat().addSp((int)(requiredSp * 0.8));
+				player.getStat().addSp((int) (requiredSp * 0.8));
 				logSkillEnchant(player, skill, spb, rate);
-
+				
 				player.addSkill(skill, true);
 				player.sendPacket(ExEnchantSkillResult.valueOf(true));
 				
@@ -235,7 +233,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 					player.sendPacket(sm);
 				}
 			}
-			else if (_type == 4 || Rnd.get(100) <= rate)
+			else if ((_type == 4) || (Rnd.get(100) <= rate))
 			{
 				logSkillEnchant(player, skill, spb, rate);
 				
@@ -252,9 +250,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			}
 			else if (_type == 0)
 			{
-				skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl,
-						esd.getRange().getStartLevel() > 0 ? enchantRoute : 0,
-						esd.getRange().getStartLevel());
+				skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl, esd.getRange().getStartLevel() > 0 ? enchantRoute : 0, esd.getRange().getStartLevel());
 				player.addSkill(skill, true);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_FAILED_TO_ENCHANT_THE_SKILL_S1));
 				
@@ -267,7 +263,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				player.sendPacket(sm);
 				player.sendPacket(ExEnchantSkillResult.valueOf(false));
 			}
-
+			
 			currentSkill = player.getKnownSkill(_skillId);
 			player.sendPacket(new UserInfo(player));
 			player.sendSkillList();
@@ -290,7 +286,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		
 		for (L2ShortCut sc : allShortCuts)
 		{
-			if (sc.getId() == _skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
+			if ((sc != null) && (sc.getId() == _skillId) && (sc.getType() == L2ShortCut.TYPE_SKILL))
 			{
 				L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), player.getSkillLevelHash(_skillId), 1);
 				player.sendPacket(new ShortCutRegister(newsc));
@@ -326,14 +322,5 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				L2DatabaseFactory.close(con);
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.BasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__D0_07_REQUESTEXENCHANTSKILL;
 	}
 }

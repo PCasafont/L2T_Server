@@ -1,3 +1,4 @@
+
 package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -6,7 +7,8 @@ import l2server.gameserver.model.L2Transformation;
 
 public class InfernoDrakeNormal extends L2Transformation
 {
-	private static final int[] SKILLS = {619,5491,576,577,578,579};
+	private static final int[] SKILLS = { 619, 5491, 576, 577, 578, 579 };
+	
 	public InfernoDrakeNormal()
 	{
 		// id, colRadius, colHeight
@@ -16,7 +18,7 @@ public class InfernoDrakeNormal extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if (getPlayer().getTransformationId() != 214 || getPlayer().isCursedWeaponEquipped())
+		if ((getPlayer().getTransformationId() != 214) || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

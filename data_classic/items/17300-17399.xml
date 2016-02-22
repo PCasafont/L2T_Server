@@ -1901,8 +1901,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="530" />
-		<set name="boundItem" val="17913" />
-		<set name="blessedItem" val="18049" />
 		<for>
 			<baseAdd stat="pDef" val="141" />
 			<enchant stat="pDef" val="0" />
@@ -1920,8 +1918,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="7520" />
-		<set name="boundItem" val="17914" />
-		<set name="blessedItem" val="18050" />
 		<for>
 			<baseAdd stat="pDef" val="377" />
 			<enchant stat="pDef" val="0" />
@@ -1939,8 +1935,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="3170" />
-		<set name="boundItem" val="17915" />
-		<set name="blessedItem" val="18051" />
 		<for>
 			<baseAdd stat="pDef" val="235" />
 			<enchant stat="pDef" val="0" />
@@ -1957,8 +1951,6 @@
 		<set name="crystal_count" val="1" />
 		<set name="crystal_type" val="r95" />
 		<set name="weight" val="510" />
-		<set name="boundItem" val="17916" />
-		<set name="blessedItem" val="18052" />
 		<for>
 			<baseAdd stat="pDef" val="94" />
 			<enchant stat="pDef" val="0" />

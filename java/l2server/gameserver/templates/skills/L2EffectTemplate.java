@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.skills;
 
 import java.lang.reflect.Constructor;
@@ -28,7 +29,7 @@ import l2server.log.Log;
 
 /**
  * @author mkizub
- * 
+ *
  */
 public class L2EffectTemplate
 {
@@ -45,9 +46,11 @@ public class L2EffectTemplate
 	
 	public final int triggeredId;
 	public final int triggeredLevel;
+	public final int triggeredEnchantRoute;
+	public final int triggeredEnchantLevel;
 	public final ChanceCondition chanceCondition;
 	
-	public L2EffectTemplate(L2AbnormalTemplate pAbnormal, Condition pApplayCond, Lambda pLambda, String func, int trigId, int trigLvl, ChanceCondition chanceCond)
+	public L2EffectTemplate(L2AbnormalTemplate pAbnormal, Condition pApplayCond, Lambda pLambda, String func, int trigId, int trigLvl, int trigEnchRt, int trigEnchLvl, ChanceCondition chanceCond)
 	{
 		abnormal = pAbnormal;
 		
@@ -57,6 +60,8 @@ public class L2EffectTemplate
 		
 		triggeredId = trigId;
 		triggeredLevel = trigLvl;
+		triggeredEnchantRoute = trigEnchRt;
+		triggeredEnchantLevel = trigEnchLvl;
 		chanceCondition = chanceCond;
 		
 		try
@@ -104,7 +109,7 @@ public class L2EffectTemplate
 	
 	/**
 	 * Creates an L2Effect instance from an existing one and an Env object.
-	 * 
+	 *
 	 * @param env
 	 * @param stolen
 	 * @return
@@ -115,8 +120,7 @@ public class L2EffectTemplate
 		Constructor<?> stolenCons;
 		try
 		{
-			func = Class.forName("l2server.gameserver.stats.effects.Effect"
-					+ stolen.getTemplate().funcName);
+			func = Class.forName("l2server.gameserver.stats.effects.Effect" + stolen.getTemplate().funcName);
 		}
 		catch (ClassNotFoundException e)
 		{
@@ -132,7 +136,7 @@ public class L2EffectTemplate
 		}
 		try
 		{
-			L2Effect effect = (L2Effect)stolenCons.newInstance(env, stolen);
+			L2Effect effect = (L2Effect) stolenCons.newInstance(env, stolen);
 			// if (_applayCond != null)
 			// effect.setCondition(_applayCond);
 			return effect;

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list enabled="true">
+	<zone id='26000' type='CustomCastleZone' shape='NPoly' minZ='-2020' maxZ='-1000'>
+		<stat name='name' val='Platform Gateway I' />
+		<node X="209897" Y="117476" />
+		<node X="209721" Y="117208" />
+		<node X="209680" Y="115797" />
+		<node X="209758" Y="115703" />
+		<node X="209761" Y="115575" />
+		<node X="209672" Y="115480" />
+		<node X="209540" Y="115474" />
+		<node X="209443" Y="115557" />
+		<node X="207811" Y="115555" />
+		<node X="207808" Y="115726" />
+		<node X="209453" Y="115718" />
+		<node X="209526" Y="115787" />
+		<node X="209523" Y="117163" />
+		<node X="209269" Y="117476" />
+	</zone>
+	<zone id='26001' type='CustomCastleZone' shape='NPoly' minZ='-1800' maxZ='-1000'>
+		<stat name='name' val='Platform Gateway II' />
+		<node X="206051" Y="119454" />
+		<node X="205972" Y="119526" />
+		<node X="205845" Y="119525" />
+		<node X="205756" Y="119438" />
+		<node X="205755" Y="119313" />
+		<node X="205844" Y="119223" />
+		<node X="205972" Y="119220" />
+		<node X="206053" Y="119299" />
+		<node X="207491" Y="119299" />
+		<node X="207714" Y="118919" />
+		<node X="207662" Y="119796" />
+		<node X="207498" Y="119455" />
+		<node X="206212" Y="119446" />
+	</zone>
+	<zone id='26002' type='CustomCastleZone' shape='NPoly' minZ='-1800' maxZ='-1000'>
+		<stat name='name' val='Platform Gateway III' />
+		<node X="209684" Y="122933" />
+		<node X="209759" Y="123015" />
+		<node X="209762" Y="123144" />
+		<node X="209669" Y="123233" />
+		<node X="209540" Y="123234" />
+		<node X="209457" Y="123146" />
+		<node X="209456" Y="123021" />
+		<node X="209527" Y="122935" />
+		<node X="209531" Y="121514" />
+		<node X="209199" Y="121267" />
+		<node X="209987" Y="121319" />
+		<node X="209694" Y="121492" />
+		<node X="209689" Y="122928" />
+	</zone>
+	<zone id='26003' type='CustomCastleZone' shape='NPoly' minZ='-1725' maxZ='-850'>
+		<stat name='name' val='Platform Gateway IV' />
+		<node X="211504" Y="119784" />
+		<node X="211504" Y="118894" />
+		<node X="211855" Y="119276" />
+		<node X="213526" Y="119284" />
+		<node X="213522" Y="119156" />
+		<node X="213612" Y="119033" />
+		<node X="213620" Y="117699" />
+		<node X="213203" Y="117403" />
+		<node X="214334" Y="117403" />
+		<node X="213777" Y="117735" />
+		<node X="213765" Y="118996" />
+		<node X="213855" Y="119151" />
+		<node X="213861" Y="119276" />
+		<node X="215662" Y="119274" />
+		<node X="215905" Y="118967" />
+		<node X="215853" Y="119859" />
+		<node X="215674" Y="119451" />
+		<node X="214211" Y="119434" />
+		<node X="213925" Y="119436" />
+		<node X="213761" Y="119536" />
+		<node X="213618" Y="119531" />
+		<node X="213470" Y="119440" />
+		<node X="211742" Y="119433" />
+	</zone>
+	<zone id='26004' type='CustomCastleZone' shape='NPoly' minZ='-2050' maxZ='-1700'>
+		<stat name='name' val='Platform Gateway V' />
+		<node X="217733" Y="122763" />
+		<node X="217731" Y="121474" />
+		<node X="217458" Y="121246" />
+		<node X="218158" Y="121298" />
+		<node X="217887" Y="121494" />
+		<node X="217888" Y="122759" />
+	</zone>
+	<zone id='26005' type='CustomCastleZone' shape='NPoly' minZ='-2150' maxZ='-1700'>
+		<stat name='name' val='Platform Gateway VI' />
+		<node X="221320" Y="119423" />
+		<node X="219945" Y="119422" />
+		<node X="219695" Y="119682" />
+		<node X="219747" Y="118952" />
+		<node X="220009" Y="119264" />
+		<node X="221317" Y="119273" />
+	</zone>
+	<zone id='26006' type='CustomCastleZone' shape='NPoly' minZ='-1750' maxZ='-850'>
+		<stat name='name' val='Platform Gateway VII' />
+		<node X="218189" Y="117455" />
+		<node X="217542" Y="117414" />
+		<node X="217709" Y="117226" />
+		<node X="217711" Y="115723" />
+		<node X="217708" Y="115434" />
+		<node X="217597" Y="115424" />
+		<node X="217475" Y="115336" />
+		<node X="216077" Y="115336" />
+		<node X="215839" Y="115528" />
+		<node X="215888" Y="115026" />
+		<node X="216071" Y="115174" />
+		<node X="217450" Y="115183" />
+		<node X="217583" Y="115094" />
+		<node X="217703" Y="115090" />
+		<node X="217712" Y="113280" />
+		<node X="217419" Y="113052" />
+		<node X="218203" Y="113105" />
+		<node X="217868" Y="113294" />
+		<node X="217870" Y="114778" />
+		<node X="217867" Y="115028" />
+		<node X="218067" Y="115099" />
+		<node X="218063" Y="115442" />
+		<node X="217871" Y="115483" />
+		<node X="217863" Y="117213" />
+	</zone>
+	<zone id='26007' type='CustomCastleZone' shape='NPoly' minZ='-2100' maxZ='-1200'>
+		<stat name='name' val='Platform Gateway VIII' />
+		<node X="221411" Y="112949" />
+		<node X="221417" Y="111304" />
+		<node X="221339" Y="111225" />
+		<node X="219923" Y="111228" />
+		<node X="219679" Y="111416" />
+		<node X="219731" Y="110825" />
+		<node X="219949" Y="111072" />
+		<node X="221337" Y="111079" />
+		<node X="221421" Y="110989" />
+		<node X="221554" Y="110990" />
+		<node X="221647" Y="111084" />
+		<node X="221648" Y="111220" />
+		<node X="221563" Y="111301" />
+		<node X="221560" Y="112951" />
+	</zone>
+	<zone id='26008' type='CustomCastleZone' shape='NPoly' minZ='-1700' maxZ='-1200'>
+		<stat name='name' val='Platform Gateway IX' />
+		<node X="217854" Y="107595" />
+		<node X="217931" Y="107510" />
+		<node X="217929" Y="107393" />
+		<node X="217842" Y="107302" />
+		<node X="217714" Y="107300" />
+		<node X="217623" Y="107384" />
+		<node X="217623" Y="107520" />
+		<node X="217699" Y="107601" />
+		<node X="217698" Y="109004" />
+		<node X="217447" Y="109261" />
+		<node X="218192" Y="109209" />
+		<node X="217855" Y="109036" />
+		<node X="217851" Y="108281" />
+		<node X="217859" Y="107758" />
+	</zone>
+	<zone id='26009' type='CustomCastleZone' shape='NPoly' minZ='-2100' maxZ='-1200'>
+		<stat name='name' val='Platform Gateway X' />
+		<node X="214021" Y="109355" />
+		<node X="214020" Y="111009" />
+		<node X="213934" Y="111092" />
+		<node X="213930" Y="111222" />
+		<node X="214021" Y="111321" />
+		<node X="214161" Y="111321" />
+		<node X="214243" Y="111238" />
+		<node X="215661" Y="111238" />
+		<node X="215837" Y="111393" />
+		<node X="215889" Y="110849" />
+		<node X="215681" Y="111076" />
+		<node X="214262" Y="111088" />
+		<node X="214171" Y="111010" />
+		<node X="214169" Y="109349" />
+	</zone>
+	<zone id='26010' type='CustomCastleZone' shape='NPoly' minZ='-1400' maxZ='-750'>
+		<stat name='name' val='Fountain of Genesis Platform' />
+		<node X="219705" Y="109236" />
+		<node X="219711" Y="113080" />
+		<node X="215862" Y="113081" />
+		<node X="215862" Y="109238" />
+	</zone>
+	<zone id='26011' type='CustomCastleZone' shape='NPoly' minZ='-950' maxZ='-850'>
+		<stat name='name' val='Platform of Apherus' />
+		<node X="215868" Y="114365" />
+		<node X="215867" Y="116167" />
+		<node X="214602" Y="117427" />
+		<node X="212800" Y="117431" />
+		<node X="211538" Y="116165" />
+		<node X="211531" Y="114372" />
+		<node X="212798" Y="113101" />
+		<node X="214592" Y="113097" />
+	</zone>
+	<zone id='26012' type='CustomCastleZone' shape='NPoly' minZ='-1800' maxZ='-1100'>
+		<stat name='name' val='Platform of Genesis Goddess' />
+		<node X="219719" Y="117431" />
+		<node X="219722" Y="121271" />
+		<node X="215887" Y="121277" />
+		<node X="215883" Y="117438" />
+	</zone>
+	<zone id='26013' type='CustomCastleZone' shape='NPoly' minZ='-1400' maxZ='-700'>
+		<stat name='name' val='Platform of Genesis Angel' />
+		<node X="211530" Y="117450" />
+		<node X="211531" Y="121292" />
+		<node X="207693" Y="121298" />
+		<node X="207686" Y="117453" />
+	</zone>
+</list>

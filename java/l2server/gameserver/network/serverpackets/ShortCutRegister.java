@@ -3,18 +3,20 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ShortCut;
+
 /**
  *
  *
@@ -36,7 +38,6 @@ import l2server.gameserver.model.L2ShortCut;
  */
 public final class ShortCutRegister extends L2GameServerPacket
 {
-	private static final String _S__56_SHORTCUTREGISTER = "[S] 44 ShortCutRegister";
 	
 	private L2ShortCut _shortcut;
 	
@@ -56,19 +57,17 @@ public final class ShortCutRegister extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x44);
-		
 		writeD(_shortcut.getType());
-		writeD(_shortcut.getSlot() + _shortcut.getPage() * 12); // C4 Client
-		switch(_shortcut.getType())
+		writeD(_shortcut.getSlot() + (_shortcut.getPage() * 12)); // C4 Client
+		switch (_shortcut.getType())
 		{
 			case L2ShortCut.TYPE_ITEM: //1
 				writeD(_shortcut.getId());
 				writeD(_shortcut.getCharacterType());
 				writeD(_shortcut.getSharedReuseGroup());
-				writeD(0x00);  // unknown
-				writeD(0x00);  // unknown
-				writeQ(0x00);  // item augment id
+				writeD(0x00); // unknown
+				writeD(0x00); // unknown
+				writeQ(0x00); // item augment id
 				break;
 			case L2ShortCut.TYPE_SKILL: //2
 				writeD(_shortcut.getId());
@@ -77,35 +76,26 @@ public final class ShortCutRegister extends L2GameServerPacket
 				writeC(0x00); // C5
 				writeD(_shortcut.getCharacterType());
 				break;
-				/** these are same as default case, no need to duplicate, enable if packet get changed
-				 */
-				/*	case L2ShortCut.TYPE_ACTION: //3
-				 *		writeD(_shortcut.getId());
-				 *		writeD(_shortcut.getUserCommand());
-				 *		break;
-				 *	case L2ShortCut.TYPE_MACRO: //4
-				 *		writeD(_shortcut.getId());
-				 *		writeD(_shortcut.getUserCommand());
-				 *		break;
-				 *	case L2ShortCut.TYPE_RECIPE: //5
-				 *		writeD(_shortcut.getId());
-				 *		writeD(_shortcut.getUserCommand());
-				 *		break;
-				 */
+			/** these are same as default case, no need to duplicate, enable if packet get changed
+			 */
+			/*	case L2ShortCut.TYPE_ACTION: //3
+			 *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
+			 *		break;
+			 *	case L2ShortCut.TYPE_MACRO: //4
+			 *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
+			 *		break;
+			 *	case L2ShortCut.TYPE_RECIPE: //5
+			 *		writeD(_shortcut.getId());
+			 *		writeD(_shortcut.getUserCommand());
+			 *		break;
+			 */
 			default:
 			{
 				writeD(_shortcut.getId());
 				writeD(_shortcut.getCharacterType());
 			}
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.serverpackets.ServerBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _S__56_SHORTCUTREGISTER;
 	}
 }

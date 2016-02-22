@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.sql.Connection;
@@ -107,9 +108,7 @@ public class MailManager
 		final int objectId = player.getObjectId();
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getReceiverId() == objectId
-					&& msg.isUnread())
+			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
 				return true;
 		}
 		return false;
@@ -120,10 +119,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getReceiverId() == objectId
-					&& !msg.isDeletedByReceiver()
-					&& msg.isUnread())
+			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver() && msg.isUnread())
 				size++;
 		}
 		return size;
@@ -134,9 +130,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getReceiverId() == objectId
-					&& !msg.isDeletedByReceiver())
+			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 				size++;
 		}
 		return size;
@@ -147,9 +141,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getSenderId() == objectId
-					&& !msg.isDeletedBySender())
+			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 				size++;
 		}
 		return size;
@@ -160,9 +152,7 @@ public class MailManager
 		List<Message> inbox = new ArrayList<Message>();
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getReceiverId() == objectId
-					&& !msg.isDeletedByReceiver())
+			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
 				inbox.add(msg);
 		}
 		return inbox;
@@ -173,9 +163,7 @@ public class MailManager
 		List<Message> outbox = new ArrayList<Message>();
 		for (Message msg : _messages.values())
 		{
-			if (msg != null
-					&& msg.getSenderId() == objectId
-					&& !msg.isDeletedBySender())
+			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
 				outbox.add(msg);
 		}
 		return outbox;
@@ -219,6 +207,7 @@ public class MailManager
 			_msgId = msgId;
 		}
 		
+		@Override
 		public void run()
 		{
 			final Message msg = getMessage(_msgId);

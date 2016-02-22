@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.util.logging.Logger;
@@ -35,7 +36,6 @@ import l2server.gameserver.network.serverpackets.GmViewQuestInfo;
  */
 public final class RequestGMCommand extends L2GameClientPacket
 {
-	private static final String _C__6E_REQUESTGMCOMMAND = "[C] 6e RequestGMCommand";
 	static Logger _log = Logger.getLogger(RequestGMCommand.class.getName());
 	
 	private String _targetName;
@@ -45,7 +45,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_targetName = readS();
-		_command	= readD();
+		_command = readD();
 		//_unknown  = readD();
 	}
 	
@@ -61,7 +61,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 		{
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 			{
-				if (pl != null && pl.getName().equalsIgnoreCase(_targetName))
+				if ((pl != null) && pl.getName().equalsIgnoreCase(_targetName))
 				{
 					player = pl;
 					break;
@@ -72,12 +72,12 @@ public final class RequestGMCommand extends L2GameClientPacket
 		L2Clan clan = ClanTable.getInstance().getClanByName(_targetName);
 		
 		// player name was incorrect?
-		if (player == null && (clan == null || _command != 6))
+		if ((player == null) && ((clan == null) || (_command != 6)))
 		{
 			return;
 		}
 		
-		switch(_command)
+		switch (_command)
 		{
 			case 1: // player status
 			{
@@ -88,7 +88,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 			case 2: // player clan
 			{
 				if (player.getClan() != null)
-					sendPacket(new GMViewPledgeInfo(player.getClan(),player));
+					sendPacket(new GMViewPledgeInfo(player.getClan(), player));
 				break;
 			}
 			case 3: // player skills
@@ -119,14 +119,5 @@ public final class RequestGMCommand extends L2GameClientPacket
 			}
 			
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__6E_REQUESTGMCOMMAND;
 	}
 }

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.quest;
 
 import gnu.trove.TIntIntHashMap;
@@ -297,7 +298,7 @@ public final class QuestState
 		// always exist (i.e. it can never be skipped).  So if cond is 2, we can still safely
 		// assume no steps have been skipped.
 		// Finally, more than 31 steps CANNOT be supported in any way with skipping.
-		if (cond < 3 || cond > 31)
+		if ((cond < 3) || (cond > 31))
 		{
 			unset("__compltdStateFlags");
 		}
@@ -359,7 +360,7 @@ public final class QuestState
 		
 		if (completedStateFlags == 0)
 		{
-			completedStateFlags = (int)Math.pow(2, cond) - 1 | 0x80000001;
+			completedStateFlags = ((int) Math.pow(2, cond) - 1) | 0x80000001;
 			set("__compltdStateFlags", String.valueOf(completedStateFlags));
 		}
 		
@@ -368,7 +369,7 @@ public final class QuestState
 		getPlayer().sendPacket(ql);
 		
 		int questId = getQuest().getQuestIntId();
-		if (questId > 0 && questId < 19999 && cond > 0)
+		if ((questId > 0) && (questId < 19999) && (cond > 0))
 			getPlayer().sendPacket(new ExShowQuestMark(questId, cond));
 	}
 	
@@ -512,7 +513,7 @@ public final class QuestState
 			return 0;
 		
 		final String variable = _vars.get(var);
-		if (variable == null || variable.length() == 0)
+		if ((variable == null) || (variable.length() == 0))
 			return 0;
 		
 		int varint = 0;
@@ -536,10 +537,10 @@ public final class QuestState
 	 */
 	public void addNotifyOfDeath(L2Character character)
 	{
-		if (character == null || !(character instanceof L2PcInstance))
+		if ((character == null) || !(character instanceof L2PcInstance))
 			return;
 		
-		((L2PcInstance)character).addNotifyQuestOfDeath(this);
+		((L2PcInstance) character).addNotifyQuestOfDeath(this);
 	}
 	
 	/**
@@ -552,7 +553,7 @@ public final class QuestState
 		long count = 0;
 		
 		for (L2ItemInstance item : getPlayer().getInventory().getItems())
-			if (item != null && item.getItemId() == itemId)
+			if ((item != null) && (item.getItemId() == itemId))
 				count += item.getCount();
 		
 		return count;
@@ -693,7 +694,7 @@ public final class QuestState
 			return;
 		
 		// If item for reward is adena (ID=57), modify count with rate for quest reward if rates available
-		if (itemId == 57 && !(enchantlevel > 0))
+		if ((itemId == 57) && !(enchantlevel > 0))
 		{
 			count = (long) (count * Config.RATE_QUEST_REWARD_ADENA);
 		}
@@ -705,7 +706,7 @@ public final class QuestState
 			return;
 		
 		// set enchant level for item if that item is not adena
-		if (enchantlevel > 0 && itemId != 57)
+		if ((enchantlevel > 0) && (itemId != 57))
 			item.setEnchantLevel(enchantlevel);
 		
 		// If item for reward is gold, send message of gold reward to client
@@ -750,7 +751,7 @@ public final class QuestState
 			return;
 		
 		// set enchant level for item if that item is not adena
-		if (attributeId >= 0 && attributeLevel > 0)
+		if ((attributeId >= 0) && (attributeLevel > 0))
 		{
 			item.setElementAttr(attributeId, attributeLevel);
 			if (item.isEquipped())
@@ -810,7 +811,7 @@ public final class QuestState
 		dropChance *= Config.RATE_QUEST_DROP / ((getPlayer().getParty() != null) ? getPlayer().getParty().getMemberCount() : 1);
 		long currentCount = getQuestItemsCount(itemId);
 		
-		if (neededCount > 0 && currentCount >= neededCount)
+		if ((neededCount > 0) && (currentCount >= neededCount))
 			return true;
 		
 		if (currentCount >= neededCount)
@@ -836,7 +837,7 @@ public final class QuestState
 		if (itemCount > 0)
 		{
 			// if over neededCount, just fill the gap
-			if (neededCount > 0 && currentCount + itemCount > neededCount)
+			if ((neededCount > 0) && ((currentCount + itemCount) > neededCount))
 				itemCount = neededCount - currentCount;
 			
 			// Inventory slot check
@@ -847,10 +848,10 @@ public final class QuestState
 			getPlayer().addItem("Quest", itemId, itemCount, getPlayer().getTarget(), true);
 			
 			if (sound)
-				playSound((currentCount + itemCount < neededCount) ? "Itemsound.quest_itemget" : "Itemsound.quest_middle");
+				playSound(((currentCount + itemCount) < neededCount) ? "Itemsound.quest_itemget" : "Itemsound.quest_middle");
 		}
 		
-		return (neededCount > 0 && currentCount + itemCount >= neededCount);
+		return ((neededCount > 0) && ((currentCount + itemCount) >= neededCount));
 	}
 	
 	//TODO: More radar functions need to be added when the radar class is complete.
@@ -888,7 +889,7 @@ public final class QuestState
 			return;
 		
 		// Tests on count value in order not to have negative value
-		if (count < 0 || count > item.getCount())
+		if ((count < 0) || (count > item.getCount()))
 			count = item.getCount();
 		
 		// Destroy the quantity of items wanted
@@ -896,7 +897,7 @@ public final class QuestState
 		{
 			L2ItemInstance[] unequiped = getPlayer().getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm: unequiped)
+			for (L2ItemInstance itm : unequiped)
 				iu.addModifiedItem(itm);
 			getPlayer().sendPacket(iu);
 			getPlayer().broadcastUserInfo();
@@ -1103,8 +1104,8 @@ public final class QuestState
 		int[] itemIdList = getQuest().getRegisteredItemIds();
 		if (itemIdList != null)
 		{
-			for (int i = 0; i < itemIdList.length; i++)
-				takeItems(itemIdList[i], -1);
+			for (int element : itemIdList)
+				takeItems(element, -1);
 		}
 		
 		// If quest is repeatable, delete quest from list of quest of the player and from database (quest CAN be created again => repeatable)

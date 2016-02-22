@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -38,7 +39,6 @@ import l2server.log.Log;
  */
 public final class RequestJoinParty extends L2GameClientPacket
 {
-	private static final String _C__29_REQUESTJOINPARTY = "[C] 29 RequestJoinParty";
 	
 	private String _name;
 	private int _itemDistribution;
@@ -67,7 +67,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			return;
 		}
 		
-		if (target.getAppearance().getInvisible() && !requestor.isGM())
+		if (Config.isServer(Config.TENKAI) && target.getAppearance().getInvisible() && !requestor.isGM())
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return;
@@ -83,11 +83,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 		if ((requestor.getIsInsideGMEvent() && !target.getIsInsideGMEvent()) || (!requestor.getIsInsideGMEvent() && target.getIsInsideGMEvent()))
 			return;
 		
-		if ((requestor.isInEvent() && requestor.getEvent() == target.getEvent()
-				&& requestor.getEvent().getConfig().isAllVsAll()))
+		if (!requestor.isGM())
 		{
-			requestor.sendMessage("You cannot make parties on this event!");
-			return;
+			if (((requestor.isPlayingEvent() && (requestor.getEvent() == target.getEvent()) && requestor.getEvent().getConfig().isAllVsAll())))
+			{
+				requestor.sendMessage("You cannot make parties on this event!");
+				return;
+			}
 		}
 		
 		if (target.isInParty() && !requestor.isGM())
@@ -123,12 +125,12 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.sendMessage("Player is in Jail");
 			return;
 		}
-		
+		/*
 		if (target.getClient() == null || target.getClient().isDetached())
 		{
 			requestor.sendMessage("Player is in offline mode.");
 			return;
-		}
+		}*/
 		
 		if (target instanceof L2ApInstance)
 		{
@@ -138,9 +140,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 		
 		if (target.isInOlympiadMode() || requestor.isInOlympiadMode())
 		{
-			if (target.isInOlympiadMode() != requestor.isInOlympiadMode()
-					|| target.getOlympiadGameId() != requestor.getOlympiadGameId()
-					|| target.getOlympiadSide() != requestor.getOlympiadSide())
+			if ((target.isInOlympiadMode() != requestor.isInOlympiadMode()) || (target.getOlympiadGameId() != requestor.getOlympiadGameId()) || (target.getOlympiadSide() != requestor.getOlympiadSide()))
 				return;
 		}
 		
@@ -148,11 +148,12 @@ public final class RequestJoinParty extends L2GameClientPacket
 		info.addCharName(target);
 		requestor.sendPacket(info);
 		
-		if (!requestor.isInParty())	 //Asker has no party
+		if (!requestor.isInParty()) //Asker has no party
 		{
 			createNewParty(target, requestor);
 		}
-		else							//Asker is in party
+		else
+		//Asker is in party
 		{
 			addTargetToParty(target, requestor);
 		}
@@ -184,7 +185,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_LEADER_CAN_INVITE));
 			return;
 		}
-		if (party.getMemberCount() >= 7)
+		if (party.getMemberCount() >= Config.MAX_MEMBERS_IN_PARTY)
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_FULL));
 			return;
@@ -203,7 +204,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			party.setPendingInvitation(true);
 			
 			if (Config.DEBUG)
-				Log.fine("sent out a party invitation to:"+target.getName());
+				Log.fine("sent out a party invitation to:" + target.getName());
 			
 		}
 		else
@@ -233,7 +234,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 				requestor.setParty(new L2Party(requestor, _itemDistribution));
 				target.joinParty(requestor.getParty());
 			}
-			else if (target.getParty().getMemberCount() < 7)
+			else if (target.getParty().getMemberCount() < Config.MAX_MEMBERS_IN_PARTY)
 				requestor.joinParty(target.getParty());
 			
 			return;
@@ -248,7 +249,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.getParty().setPendingInvitation(true);
 			
 			if (Config.DEBUG)
-				Log.fine("sent out a party invitation to:"+target.getName());
+				Log.fine("sent out a party invitation to:" + target.getName());
 			
 		}
 		else
@@ -258,14 +259,5 @@ public final class RequestJoinParty extends L2GameClientPacket
 			if (Config.DEBUG)
 				Log.warning(requestor.getName() + " already received a party invitation");
 		}
-	}
-	
-	/* (non-Javadoc)
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__29_REQUESTJOINPARTY;
 	}
 }

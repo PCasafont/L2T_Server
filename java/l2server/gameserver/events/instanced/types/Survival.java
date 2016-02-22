@@ -1,3 +1,4 @@
+
 package l2server.gameserver.events.instanced.types;
 
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class Survival extends EventInstance
 					alive++;
 				}
 			}
-			html = html.substring(0, html.length()-2) + ".";
+			html = html.substring(0, html.length() - 2) + ".";
 		}
 		
 		if (alive <= 1)
@@ -88,7 +89,7 @@ public class Survival extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if (killedPlayerInstance == null || !isState(EventState.STARTED))
+		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
 			return;
 		
 		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
@@ -99,7 +100,7 @@ public class Survival extends EventInstance
 		killedPlayerInstance.sendMessage("You have been killed and disqualified from the event.");
 		_winners.add(0, killedPlayerInstance);
 		new EventTeleporter(killedPlayerInstance, new Point3D(0, 0, 0), false, true);
-
+		
 		killerPlayer.addEventPoints(3);
 		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
 		for (L2PcInstance assistant : assistants)

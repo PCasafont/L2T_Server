@@ -1,3 +1,4 @@
+
 package dragonvalley.DragonVortex;
 
 import l2server.gameserver.instancemanager.QuestManager;
@@ -14,12 +15,12 @@ import l2server.util.Rnd;
 
 public class DragonVortex extends Quest
 {
-	private static final boolean Debug 			= false;
+	private static final boolean Debug = false;
 	
-	private static L2Npc raid 					= null;
-	private static final int dragonVortex 		= 32871;
-	private static final int largeDragonBone 	= 17248;
-	private static final int[] bosses 			= { 25718, 25719, 25720, 25721, 25722, 25723, 25724 };
+	private static L2Npc raid = null;
+	private static final int dragonVortex = 32871;
+	private static final int largeDragonBone = 17248;
+	private static final int[] bosses = { 25718, 25719, 25720, 25721, 25722, 25723, 25724 };
 	
 	public DragonVortex(int questId, String name, String descr)
 	{
@@ -65,7 +66,7 @@ public class DragonVortex extends Quest
 		
 		if (event.equalsIgnoreCase("spawn_boss"))
 		{
-			if (raid != null && !raid.isDead())
+			if ((raid != null) && !raid.isDead())
 				return "32871-3.htm";
 			
 			if (st.getQuestItemsCount(largeDragonBone) > 0)
@@ -79,8 +80,8 @@ public class DragonVortex extends Quest
 		}
 		
 		return super.onAdvEvent(event, npc, player);
-	}	
-
+	}
+	
 	public static void main(String[] args)
 	{
 		new DragonVortex(-1, "DragonVortex", "dragonvalley");

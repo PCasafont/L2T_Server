@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Andromeda -->
+	<npc id="50007">
+		<spawn x="84629" y="148797" z="-3403" heading="64171" respawn="10000" />
+	</npc>
+	<!-- Raiders annoying army -->
+	<npc id="19322" overrideSpawns="true">
+	</npc>
+	<npc id="19323" overrideSpawns="true">
+	</npc>
+	<!-- Nerva Orc Merchants are not welcome here -->
+	<npc id="23320" overrideSpawns="true">
+	</npc>
+</list>

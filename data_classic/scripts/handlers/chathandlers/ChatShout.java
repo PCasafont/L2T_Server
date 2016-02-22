@@ -18,6 +18,7 @@ import java.util.Collection;
 
 import l2server.Config;
 import l2server.gameserver.Announcements;
+import l2server.gameserver.Server;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -46,7 +47,7 @@ public class ChatShout implements IChatHandler
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (activeChar.isGM())
+		if (Config.isServer(Config.TENKAI) && activeChar.isGM())
 		{
 			Announcements.getInstance().handleAnnounce(activeChar.getName() + ": " + text, 0);
 			return;
@@ -95,19 +96,21 @@ public class ChatShout implements IChatHandler
 			}
 		}
 		
-		while (text.contains("Type=") && text.contains("Title="))
+		if (Server.gui != null)
 		{
-			int index1 = text.indexOf("Type=");
-			int index2 = text.indexOf("Title=") + 6;
-			text = text.substring(0, index1) + text.substring(index2);
+			while (text.contains("Type=") && text.contains("Title="))
+			{
+				int index1 = text.indexOf("Type=");
+				int index2 = text.indexOf("Title=") + 6;
+				text = text.substring(0, index1) + text.substring(index2);
+			}
+			
+			if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
+				text = "[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text;
+			
+			if (!activeChar.isGM())
+				ConsoleTab.appendMessage(ConsoleFilter.ShoutChat, activeChar.getName() + ": " + text);
 		}
-
-		String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
-		if (!Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global"))
-			text = "[" + nearTown + "]" + text;
-		
-		if (!activeChar.isGM())
-			ConsoleTab.appendMessage(ConsoleFilter.ShoutChat, activeChar.getName() + ": " + text, nearTown);
 	}
 	
 	/**

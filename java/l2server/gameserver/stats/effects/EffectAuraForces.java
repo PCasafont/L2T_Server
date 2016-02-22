@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -30,12 +31,12 @@ public class EffectAuraForces extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public boolean onStart()
 	{
 		// Just do check on start if its not force and party solidarity, but its AURA
-		if (getSkill().getId() != 1955 && getSkill().getName().contains("Aura"))
+		if ((getSkill().getId() != 1955) && getSkill().getName().contains("Aura"))
 		{
 			// Do check for players party if party exists give members (and you too) the force, if member is in range
 			if (getEffector().getParty() != null)
@@ -48,8 +49,8 @@ public class EffectAuraForces extends L2Effect
 					int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 					
 					SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), member);
-
-					if (member.getActiveForcesCount() + 1 <= 7)
+					
+					if ((member.getActiveForcesCount() + 1) <= 7)
 						member.setActiveForcesCount(member.getActiveForcesCount() + 1);
 					else
 						member.setActiveForcesCount(7);
@@ -57,11 +58,7 @@ public class EffectAuraForces extends L2Effect
 					int aurasCount = member.getActiveForcesCount();
 					if (aurasCount > 3)
 					{
-						int level = 1;
-						if (aurasCount > 5)
-							level = 3;
-						else if (aurasCount > 4)
-							level = 2;
+						int level = Math.max(aurasCount - 4, 1);
 						SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), member);
 					}
 					member.updateEffectIcons();
@@ -71,8 +68,8 @@ public class EffectAuraForces extends L2Effect
 			{
 				int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 				SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), getEffector());
-
-				if (getEffector().getActingPlayer().getActiveForcesCount() + 1 <= 7)
+				
+				if ((getEffector().getActingPlayer().getActiveForcesCount() + 1) <= 7)
 					getEffector().getActingPlayer().setActiveForcesCount(getEffector().getActingPlayer().getActiveForcesCount() + 1);
 				else
 					getEffector().getActingPlayer().setActiveForcesCount(7);
@@ -80,11 +77,7 @@ public class EffectAuraForces extends L2Effect
 				int aurasCount = getEffector().getActingPlayer().getActiveForcesCount();
 				if (aurasCount > 3)
 				{
-					int level = 1;
-					if (aurasCount > 5)
-						level = 3;
-					else if (aurasCount > 4)
-						level = 2;
+					int level = Math.max(aurasCount - 4, 1);
 					SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), getEffector().getActingPlayer());
 				}
 				getEffector().getActingPlayer().updateEffectIcons();
@@ -93,12 +86,12 @@ public class EffectAuraForces extends L2Effect
 		getEffector().updateEffectIcons();
 		return super.onStart();
 	}
-
+	
 	@Override
 	public void onExit()
 	{
 		// Do the simple check just like in onStart
-		if (getSkill().getId() != 1955 && getSkill().getName().contains("Aura"))
+		if ((getSkill().getId() != 1955) && getSkill().getName().contains("Aura"))
 		{
 			if (getEffector().getParty() != null)
 			{
@@ -119,7 +112,7 @@ public class EffectAuraForces extends L2Effect
 							member.removeEffect(effect);
 					}
 					
-					if (member.getActiveForcesCount() - 1 >= 0)
+					if ((member.getActiveForcesCount() - 1) >= 0)
 						member.setActiveForcesCount(member.getActiveForcesCount() - 1);
 					else
 						member.setActiveForcesCount(0);
@@ -127,12 +120,8 @@ public class EffectAuraForces extends L2Effect
 					int aurasCount = member.getActiveForcesCount();
 					if (aurasCount > 3)
 					{
-						int level = 1;
-						if (aurasCount > 5)
-							level = 3;
-						else if (aurasCount > 4)
-							level = 2;
-						if (abn == null || abn.getLevelHash() != level)
+						int level = Math.max(aurasCount - 4, 1);
+						if ((abn == null) || (abn.getLevelHash() != level))
 							SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), member);
 					}
 					else
@@ -151,7 +140,7 @@ public class EffectAuraForces extends L2Effect
 				if (ab != null)
 					ab.exit();
 				
-				if (getEffected().getActingPlayer().getActiveForcesCount() - 1 >= 0)
+				if ((getEffected().getActingPlayer().getActiveForcesCount() - 1) >= 0)
 					getEffected().getActingPlayer().setActiveForcesCount(getEffected().getActingPlayer().getActiveForcesCount() - 1);
 				else
 					getEffected().getActingPlayer().setActiveForcesCount(0);
@@ -159,12 +148,8 @@ public class EffectAuraForces extends L2Effect
 				int aurasCount = getEffected().getActingPlayer().getActiveForcesCount();
 				if (aurasCount > 3)
 				{
-					int level = 1;
-					if (aurasCount > 5)
-						level = 3;
-					else if (aurasCount > 4)
-						level = 2;
-					if (abn == null || abn.getLevelHash() != level)
+					int level = Math.max(aurasCount - 4, 1);
+					if ((abn == null) || (abn.getLevelHash() != level))
 						SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), getEffected().getActingPlayer());
 				}
 				else if (abn != null)
@@ -175,7 +160,7 @@ public class EffectAuraForces extends L2Effect
 		{
 			L2Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
 			
-			if (getEffected().getActingPlayer().getActiveForcesCount() - 1 >= 0)
+			if ((getEffected().getActingPlayer().getActiveForcesCount() - 1) >= 0)
 				getEffected().getActingPlayer().setActiveForcesCount(getEffected().getActingPlayer().getActiveForcesCount() - 1);
 			else
 				getEffected().getActingPlayer().setActiveForcesCount(0);
@@ -183,12 +168,8 @@ public class EffectAuraForces extends L2Effect
 			int aurasCount = getEffected().getActingPlayer().getActiveForcesCount();
 			if (aurasCount > 3)
 			{
-				int level = 1;
-				if (aurasCount > 5)
-					level = 3;
-				else if (aurasCount > 4)
-					level = 2;
-				if (abn == null || abn.getLevelHash() != level)
+				int level = Math.max(aurasCount - 4, 1);
+				if ((abn == null) || (abn.getLevel() != level))
 					SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), getEffected().getActingPlayer());
 			}
 			else if (abn != null)
@@ -196,9 +177,9 @@ public class EffectAuraForces extends L2Effect
 		}
 		super.onExit();
 	}
-
+	
 	/**
-	 * 
+	 *
 	 * @see L2Abnormal.gameserver.model.L2Effect#onActionTime()
 	 */
 	@Override
@@ -209,26 +190,26 @@ public class EffectAuraForces extends L2Effect
 			super.onExit();
 			return false;
 		}
-
+		
 		// Do check if this skill is Force or Solidarity just do check for range things
-		if (getSkill().getId() == 1955 || getSkill().getName().contains("Force"))
+		if ((getSkill().getId() == 1955) || getSkill().getName().contains("Force"))
 		{
-			if (getEffector() == null || (getEffected().getParty() == null && getEffected() != getEffector()))
+			if ((getEffector() == null) || ((getEffected().getParty() == null) && (getEffected() != getEffector())))
 				return false;
-
+			
 			if (getEffected().getParty() != null)
 				if (!getEffected().getParty().getPartyMembers().contains(getEffector()))
 					return false;
-
+			
 			if (!Util.checkIfInRange(getSkill().getSkillRadius(), getEffector(), getEffected(), false))
 				return false;
-
+			
 			return true;
 		}
 		else
 		{
 			double base = calc();
-			double consume = (getEffected().getLevel() - 1) / 7.5 * base * getAbnormal().getDuration();
+			double consume = ((getEffected().getLevel() - 1) / 7.5) * base * getAbnormal().getDuration();
 			
 			if (consume > getEffected().getCurrentMp())
 			{
@@ -237,8 +218,8 @@ public class EffectAuraForces extends L2Effect
 			}
 			
 			getEffected().reduceCurrentMp(consume);
-
-			// Then for player who have Aura (the effector) finishes the time (onActionTime), must be check for all party if all of them have Force. 
+			
+			// Then for player who have Aura (the effector) finishes the time (onActionTime), must be check for all party if all of them have Force.
 			if (getEffector().getParty() != null)
 			{
 				for (L2PcInstance member : getEffector().getParty().getPartyMembers())
@@ -251,18 +232,14 @@ public class EffectAuraForces extends L2Effect
 					if (member.getFirstEffect(newSkillId) == null)
 					{
 						SkillTable.getInstance().getInfo(newSkillId, 1).getEffects(getEffector(), member);
-						if (member.getActiveForcesCount() + 1 <= 7)
+						if ((member.getActiveForcesCount() + 1) <= 7)
 							member.setActiveForcesCount(member.getActiveForcesCount() + 1);
 						else
 							member.setActiveForcesCount(7);
 						int aurasCount = member.getActiveForcesCount();
 						if (aurasCount > 3)
 						{
-							int level = 1;
-							if (aurasCount > 5)
-								level = 3;
-							else if (aurasCount > 4)
-								level = 2;
+							int level = Math.max(aurasCount - 4, 1);
 							SkillTable.getInstance().getInfo(1955, level).getEffects(getEffector(), member);
 						}
 						member.updateEffectIcons();

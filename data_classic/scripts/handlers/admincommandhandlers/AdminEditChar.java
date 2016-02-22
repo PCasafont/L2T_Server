@@ -31,12 +31,12 @@ import java.util.logging.Logger;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.custom.fusion.ClientInfo;
+import l2server.gameserver.custom.fusion.ClientInfo.Process;
+import l2server.gameserver.custom.fusion.SquirrelShield;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.AntiBotsManager;
-import l2server.gameserver.instancemanager.AntiBotsManager.ClientInfo;
-import l2server.gameserver.instancemanager.AntiBotsManager.ClientProcess;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Summon;
@@ -56,6 +56,7 @@ import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.util.Util;
+import l2server.log.Log;
 import l2server.util.StringUtil;
 
 
@@ -261,6 +262,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.setPkKills(pk);
 					player.broadcastUserInfo();
 					player.sendPacket(new UserInfo(player));
+					//player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PK count to " + pk);
 					activeChar.sendMessage(player.getName()+"'s PK count changed to "+pk);
 				}
@@ -287,6 +289,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.setPvpKills(pvp);
 					player.broadcastUserInfo();
 					player.sendPacket(new UserInfo(player));
+					//player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PVP count to " + pvp);
 					activeChar.sendMessage(player.getName()+"'s PVP count changed to "+pvp);
 				}
@@ -313,6 +316,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.setFame(fame);
 					player.broadcastUserInfo();
 					player.sendPacket(new UserInfo(player));
+					//player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your Reputation points to " +fame);
 					activeChar.sendMessage(player.getName()+"'s Fame changed to "+fame);
 				}
@@ -352,6 +356,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.setRecomHave(recVal);
 					player.broadcastUserInfo();
 					player.sendPacket(new UserInfo(player));
+					//player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendPacket(new ExVoteSystemInfo(player));
 					player.sendMessage("A GM changed your Recommend points to " +recVal);
 					activeChar.sendMessage(player.getName()+"'s Recommend changed to "+recVal);
@@ -863,13 +868,13 @@ public class AdminEditChar implements IAdminCommandHandler
 	
 	private void showHardwareInfo(L2PcInstance activeChar, final String hardwareId)
 	{
-		if (!Config.ANTI_BOTS_ENABLED)
+		if (!Config.SQUIRRELS_SHIELD_ENABLED)
 		{
-			activeChar.sendMessage("Anti Bots isn't enabled...");
+			activeChar.sendMessage("Squirrels Shield isn't enabled...");
 			return;
 		}
 		
-		final ClientInfo hardwareInfo = AntiBotsManager.getInstance().getClientInfoByHardwareId(hardwareId);
+		final ClientInfo hardwareInfo = SquirrelShield.getInstance().getClientInfoByHardwareId(hardwareId);
 		
 		if (hardwareInfo == null)
 		{
@@ -881,18 +886,14 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/hwinfo.htm");
-		adminReply.replace("%ip%", hardwareInfo.getIp());
 		adminReply.replace("%hwid%", hardwareInfo._hardwareId);
 		adminReply.replace("%windowsUser%", hardwareInfo.getWindowsUser());
 		
 		if (hardwareInfo.getVersion() != null)
 			adminReply.replace("%version%", hardwareInfo._version);
-		else
-			adminReply.replace("Version: %version%<br1>", "");
 		
 		adminReply.replace("%lastUpdate%", dateFormatter.format(hardwareInfo._lastUpdateTime));
 		adminReply.replace("%currentTime%", dateFormatter.format(System.currentTimeMillis()));
-		adminReply.replace("%refresh%", "<a action=\"bypass -h admin_lookup_hw "+hardwareInfo._hardwareId+"\">Refresh</a>");
 		
 		String processes = "";
 		
@@ -904,7 +905,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		sb.append("<table bgcolor=131210 width=300>");
 		sb.append("<tr>");
 		sb.append("<td>");
-		sb.append("[+] <font color=%s>%s</a></font>");
+		sb.append("[+] <font color=%s><a action=\"bypass\" width=32 height=10\">%s</a></font>");
 		sb.append("</td>");
 		sb.append("</tr>");
 		sb.append("<tr>");
@@ -916,11 +917,11 @@ public class AdminEditChar implements IAdminCommandHandler
 		sb.append("</table>");
 		sb.append("<br>");
 
-		ClientProcess[] clientInfo = hardwareInfo.getProcesses().toArray(new ClientProcess[hardwareInfo.getProcesses().size()]);
-		Arrays.sort(clientInfo, new Comparator<ClientProcess>()
+		Process[] clientInfo = hardwareInfo.getProcesses().toArray(new Process[hardwareInfo.getProcesses().size()]);
+		Arrays.sort(clientInfo, new Comparator<Process>()
 		{
 			@Override
-			public final int compare(final ClientProcess p1, final ClientProcess p2)
+			public final int compare(final Process p1, final Process p2)
 			{
 				final String o1 = p1.ProductName;
 				final String o2 = p2.ProductName;
@@ -938,7 +939,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		String lastProcessName = "";
 		String lastDuplicateName = "";
-		for (ClientProcess process : clientInfo)
+		for (Process process : clientInfo)
 		{
 			String displayName = (process.ProductName.equals("") ? process.FileName : process.ProductName).replace("?", "");
 			
@@ -959,7 +960,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			
 			processes += String.format(
 				sb.toString(),
-				AntiBotsManager.getInstance().isIllegalProcess(process) ? "cc7416" : "FFFFFF", // Red if illegal, otherwise white.
+				SquirrelShield.getInstance().isIllegalProcess(process) ? "cc7416" : "FFFFFF", // Red if illegal, otherwise white.
 				displayName, // Friendly name of the application
 				new SimpleDateFormat("d, k:m:s").format(process.FirstSeenAt), // Time at which we've first seen the process.
 				new SimpleDateFormat("d, k:m:s").format(process.LastSeenAt), // Time at which we've last seen it running.
@@ -969,8 +970,10 @@ public class AdminEditChar implements IAdminCommandHandler
 		}
 		
 		adminReply.replace("%processes%", processes);
-		//Log.info(processes);
+		Log.info(processes);
 		activeChar.sendPacket(adminReply);
+		
+		Log.info(processes);
 	}
 	
 	/**
@@ -1062,9 +1065,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		String pcsHtm = "";
 		
-		if (Config.ANTI_BOTS_ENABLED)
+		if (Config.SQUIRRELS_SHIELD_ENABLED)
 		{
-			List<ClientInfo> pcsWithSameIp = AntiBotsManager.getInstance().getClientsInfoByIp(ip);
+			List<ClientInfo> pcsWithSameIp = SquirrelShield.getInstance().getClientsInfoByIp(ip);
 			
 			for (ClientInfo ci : pcsWithSameIp)
 				pcsHtm += "- <a action=\"bypass -h admin_lookup_hw "+ci._hardwareId+"\">" + ci.getWindowsUser() + "</a> (..." + ci._hardwareId.substring(ci._hardwareId.length() - 1, ci._hardwareId.length()) + ")<br1>";
@@ -1160,6 +1163,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		player.broadcastPacket(new CharInfo(player));
 		player.sendPacket(new UserInfo(player));
+		//player.broadcastPacket(new ExBrExtraUserInfo(player));
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.decayMe();
 		player.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
@@ -1556,18 +1560,6 @@ public class AdminEditChar implements IAdminCommandHandler
 		html.replace("%ai%", target.hasAI() ? String.valueOf(target.getAI().getIntention().name()) : "NULL");
 		html.replace("%hp%", (int)target.getStatus().getCurrentHp()+"/"+target.getStat().getMaxHp());
 		html.replace("%mp%", (int)target.getStatus().getCurrentMp()+"/"+target.getStat().getMaxMp());
-		html.replace("%pAtk%", String.valueOf(target.getPAtk(target)));
-		html.replace("%mAtk%", String.valueOf(target.getMAtk(target, null)));
-		html.replace("%pDef%", String.valueOf(target.getPDef(target)));
-		html.replace("%mDef%", String.valueOf(target.getMDef(target, null)));
-		html.replace("%pCrit%", String.valueOf(target.getCriticalHit(target, null)));
-		html.replace("%mCrit%", String.valueOf(target.getMCriticalHit(target, null)));
-		html.replace("%pAtkSpd%", String.valueOf(target.getPAtkSpd()));
-		html.replace("%mAtkSpd%", String.valueOf(target.getMAtkSpd()));
-		html.replace("%pAcc%", String.valueOf(target.getAccuracy()));
-		html.replace("%mAcc%", String.valueOf(target.getMAccuracy()));
-		html.replace("%pEvas%", String.valueOf(target.getEvasionRate(target)));
-		html.replace("%mEvas%", String.valueOf(target.getMEvasionRate(target)));
 		html.replace("%karma%", Integer.toString(target.getReputation()));
 		html.replace("%undead%", target.isUndead() ? "yes" : "no");
 		if (target instanceof L2PetInstance)

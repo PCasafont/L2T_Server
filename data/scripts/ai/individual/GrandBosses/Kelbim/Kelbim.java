@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.individual.GrandBosses.Kelbim;
 
 import java.util.ArrayList;
@@ -39,9 +40,9 @@ import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
- * 
+ *
  * 	Kelbim AI
- * 
+ *
  *  Source:
  *  		- https://www.youtube.com/watch?v=qVkk2BJoGoU
  */
@@ -49,39 +50,39 @@ import ai.group_template.L2AttackableAIScript;
 public class Kelbim extends L2AttackableAIScript
 {
 	//Quest
-	private static final boolean	_debug 	= false;
-	private static final String		_qn		= "Kelbim";
+	private static final boolean _debug = false;
+	private static final String _qn = "Kelbim";
 	
 	//Ids
-	private static final int	_npcEnterId 		= 34052;
-	private static final int	_teleDevice			= 34053;
-	private static final int	_kelbimShout 		= 19597;
-	private static final int 	_kelbimId 			= 26124;
-	private static final int	_guardianSinistra 	= 26126;
-	private static final int	_guardianDestra		= 26127;
-	private static final int[]	_kelbimGuardians	= {_guardianSinistra, _guardianDestra};
-	private static final int	_kelbimGuard 		= 26129;
-	private static final int	_kelbimAltar 		= 26130;
-	private static final int[] _kelbimMinions 		= {_guardianSinistra, _guardianDestra, _kelbimGuard};
-	private static final int[] _allMobs 			= {_kelbimId, _kelbimMinions[0], _kelbimMinions[1], _kelbimMinions[2], _kelbimAltar};
-	private static final L2BossZone	_bossZone 		= GrandBossManager.getInstance().getZone(-55505, 58781, -274);
-	private static final Location _enterCords		= new Location(-55386, 58939, -274);
+	private static final int _npcEnterId = 34052;
+	private static final int _teleDevice = 34053;
+	private static final int _kelbimShout = 19597;
+	private static final int _kelbimId = 26124;
+	private static final int _guardianSinistra = 26126;
+	private static final int _guardianDestra = 26127;
+	private static final int[] _kelbimGuardians = { _guardianSinistra, _guardianDestra };
+	private static final int _kelbimGuard = 26129;
+	private static final int _kelbimAltar = 26130;
+	private static final int[] _kelbimMinions = { _guardianSinistra, _guardianDestra, _kelbimGuard };
+	private static final int[] _allMobs = { _kelbimId, _kelbimMinions[0], _kelbimMinions[1], _kelbimMinions[2], _kelbimAltar };
+	private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(-55505, 58781, -274);
+	private static final Location _enterCords = new Location(-55386, 58939, -274);
 	
 	//Skills
-	private static final L2Skill _meteorCrash 		= SkillTable.getInstance().getInfo(23692, 1);
-	private static final L2Skill _waterDrop 		= SkillTable.getInstance().getInfo(23693, 1);
-	private static final L2Skill _tornadoShackle 	= SkillTable.getInstance().getInfo(23694, 1);
-	private static final L2Skill _flameThrower 		= SkillTable.getInstance().getInfo(23699, 1);
-	private static final L2Skill[] _areaSkills 		= {_meteorCrash, _waterDrop, _tornadoShackle, _flameThrower};
+	private static final L2Skill _meteorCrash = SkillTable.getInstance().getInfo(23692, 1);
+	private static final L2Skill _waterDrop = SkillTable.getInstance().getInfo(23693, 1);
+	private static final L2Skill _tornadoShackle = SkillTable.getInstance().getInfo(23694, 1);
+	private static final L2Skill _flameThrower = SkillTable.getInstance().getInfo(23699, 1);
+	private static final L2Skill[] _areaSkills = { _meteorCrash, _waterDrop, _tornadoShackle, _flameThrower };
 	
 	//Vars
 	private static L2Npc _kelbimBoss;
-	private static long	_lastAction;
+	private static long _lastAction;
 	private static int _bossStage;
 	private static ArrayList<L2Npc> _minions = new ArrayList<L2Npc>();
 	
 	public Kelbim(int id, String name, String descr)
-	{ 
+	{
 		super(id, name, descr);
 		
 		addTalkId(_npcEnterId);
@@ -136,14 +137,14 @@ public class Kelbim extends L2AttackableAIScript
 			else
 			{
 				if (!_debug)
-				{	
-					if (kelbimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+				{
+					if ((kelbimStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
-					else if (kelbimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					else if ((kelbimStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
 					else if (kelbimStatus == GrandBossManager.getInstance().FIGHTING)
 						return null;
-				}	
+				}
 			}
 			
 			if (kelbimStatus == GrandBossManager.getInstance().ALIVE)
@@ -156,7 +157,7 @@ public class Kelbim extends L2AttackableAIScript
 			if (_debug)
 				allPlayers.add(player);
 			else
-				allPlayers.addAll(Config.KELBIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
+				allPlayers.addAll(Config.KELBIM_MIN_PLAYERS > Config.MAX_MEMBERS_IN_PARTY || player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			
 			for (L2PcInstance enterPlayer : allPlayers)
 			{
@@ -175,7 +176,7 @@ public class Kelbim extends L2AttackableAIScript
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (_debug)
-			Log.warning(getName() +  ": onAdvEvent: " + event);
+			Log.warning(getName() + ": onAdvEvent: " + event);
 		
 		if (event.equalsIgnoreCase("unlock_kelbim"))
 		{
@@ -204,7 +205,7 @@ public class Kelbim extends L2AttackableAIScript
 		else if (event.equalsIgnoreCase("stage_1_kelbim_spawn"))
 		{
 			_kelbimBoss = addSpawn(_kelbimId, -56340, 60801, -269, 54262, false, 0);
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance)_kelbimBoss);
+			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) _kelbimBoss);
 			
 			_lastAction = System.currentTimeMillis();
 			
@@ -218,23 +219,23 @@ public class Kelbim extends L2AttackableAIScript
 			{
 				L2Npc minion = addSpawn(_kelbimGuard, _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
 				minion.setIsRunning(true);
-				((L2Attackable)minion).setIsRaidMinion(true);
-					
+				((L2Attackable) minion).setIsRaidMinion(true);
+				
 				_minions.add(minion);
 			}
-				
+			
 			for (int i = 0; i < Rnd.get((_bossStage * 2) / 2, (_bossStage * 2)); i++)
 			{
 				L2Npc minion = addSpawn(_kelbimGuardians[Rnd.get(_kelbimGuardians.length)], _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
 				minion.setIsRunning(true);
-				((L2Attackable)minion).setIsRaidMinion(true);
-					
+				((L2Attackable) minion).setIsRaidMinion(true);
+				
 				_minions.add(minion);
 			}
 		}
 		else if (event.equalsIgnoreCase("stage_all_random_area_attack"))
 		{
-			if (_bossStage > 0 && _bossStage < 7)
+			if ((_bossStage > 0) && (_bossStage < 7))
 			{
 				if (_kelbimBoss.isInCombat())
 				{
@@ -289,7 +290,7 @@ public class Kelbim extends L2AttackableAIScript
 					if (minion == null)
 						continue;
 					
-					minion.deleteMe();	
+					minion.deleteMe();
 				}
 			}
 			
@@ -302,7 +303,7 @@ public class Kelbim extends L2AttackableAIScript
 	}
 	
 	@Override
-	public String onAttack (L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		if (_debug)
 			Log.warning(getName() + ": onAttack: " + npc.getName());
@@ -311,31 +312,31 @@ public class Kelbim extends L2AttackableAIScript
 		{
 			_lastAction = System.currentTimeMillis();
 			
-			if (_bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.80)
+			if ((_bossStage == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.80)))
 			{
 				_bossStage = 2;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if (_bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.60)
+			else if ((_bossStage == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.60)))
 			{
 				_bossStage = 3;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if (_bossStage == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.40)
+			else if ((_bossStage == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.40)))
 			{
 				_bossStage = 4;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if (_bossStage == 4 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)
+			else if ((_bossStage == 4) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))
 			{
 				_bossStage = 5;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if (_bossStage == 5 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
+			else if ((_bossStage == 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
 			{
 				_bossStage = 6;
 				

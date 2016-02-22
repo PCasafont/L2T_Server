@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package custom.SquadSkills;
 
 import java.io.File;
@@ -25,8 +26,8 @@ import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2Clan.SubPledge;
+import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
@@ -37,32 +38,32 @@ import l2server.util.xml.XmlNode;
 
 /**
  * @author LasTravel
- * 
+ *
  * Noob way to learn squad skills, we're tired about the issues caused by the retail system
- * 
+ *
  * All the script looks a bit bad, ugly and whatever you want, but works fine.
  */
 
 public class SquadSkills extends Quest
 {
-	private static final String 			_qn 					= "SquadSkills";
+	private static final String _qn = "SquadSkills";
 	
-	private static final int[]				_courtWizzards 			= {35648, 35649, 35650, 35651, 35652, 35653, 35654,35655, 35656};
-	private static final int[]				_supportUnitCaptain		= {36382, 36360, 36344, 36322, 36308, 36290, 36275, 36253, 36237, 36215, 36199, 36177, 36163, 36145, 36132, 36114, 36099, 36077, 36061, 36039, 36025, 36007, 35992, 35970, 35954, 35932, 35918, 35900, 35885, 35863, 35849, 35831, 35818, 35800, 35785, 35763, 35749, 35731, 35716, 35694, 35680, 35662};
-	private static final List<SkillInfo> 	_skillInfo 				= new ArrayList<SkillInfo>();
+	private static final int[] _courtWizzards = { 35648, 35649, 35650, 35651, 35652, 35653, 35654, 35655, 35656 };
+	private static final int[] _supportUnitCaptain = { 36382, 36360, 36344, 36322, 36308, 36290, 36275, 36253, 36237, 36215, 36199, 36177, 36163, 36145, 36132, 36114, 36099, 36077, 36061, 36039, 36025, 36007, 35992, 35970, 35954, 35932, 35918, 35900, 35885, 35863, 35849, 35831, 35818, 35800, 35785, 35763, 35749, 35731, 35716, 35694, 35680, 35662 };
+	private static final List<SkillInfo> _skillInfo = new ArrayList<SkillInfo>();
 	
 	public SquadSkills(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 		
 		for (int i : _courtWizzards)
-		{	
+		{
 			addStartNpc(i);
 			addTalkId(i);
 		}
 		
 		for (int i : _supportUnitCaptain)
-		{	
+		{
 			addStartNpc(i);
 			addTalkId(i);
 		}
@@ -91,7 +92,7 @@ public class SquadSkills extends Quest
 						int count = d.getInt("count");
 						
 						_skillInfo.add(new SkillInfo(id, level, clanLevel, reputation, itemId, count));
-					}	
+					}
 				}
 			}
 		}
@@ -108,12 +109,12 @@ public class SquadSkills extends Quest
 		
 		private SkillInfo(int skillId, int level, int clanLevel, int reputation, int itemId, int count)
 		{
-			_skillId 	= skillId;
-			_level		= level;
-			_clanLevel	= clanLevel;
+			_skillId = skillId;
+			_level = level;
+			_clanLevel = clanLevel;
 			_reputation = reputation;
-			_itemId 	= itemId;
-			_count 		= count;
+			_itemId = itemId;
+			_count = count;
 		}
 		
 		private int getSkillid()
@@ -152,31 +153,31 @@ public class SquadSkills extends Quest
 	{
 		L2Clan playerClan = player.getClan();
 		
-		if (playerClan == null || !player.isClanLeader() || playerClan.getLeaderId() != player.getObjectId())
+		if ((playerClan == null) || !player.isClanLeader() || (playerClan.getLeaderId() != player.getObjectId()))
 			return null;
 		
-		if (event.equalsIgnoreCase("show_subPledges"))	//show all the available subPledges for learn skills
+		if (event.equalsIgnoreCase("show_subPledges")) //show all the available subPledges for learn skills
 		{
 			String pledgeInfo = "<table width=300>";
 			
 			//Add the main clan
-			pledgeInfo += "<tr><td><a action=\"bypass -h Quest "+_qn+" show_available_skills_0\">"+playerClan.getName() + " (Main Clan)</a></td></tr>";
+			pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " show_available_skills_0\">" + playerClan.getName() + " (Main Clan)</a></td></tr>";
 			
 			//SubPledges
 			SubPledge[] subPledges = playerClan.getAllSubPledges();
 			
 			for (SubPledge pledge : subPledges)
 			{
-				if (pledge == null || pledge.getId() == L2Clan.SUBUNIT_ACADEMY)	//Don't show academy
+				if ((pledge == null) || (pledge.getId() == L2Clan.SUBUNIT_ACADEMY)) //Don't show academy
 					continue;
-				pledgeInfo += "<tr><td><a action=\"bypass -h Quest "+_qn+" show_available_skills_"+pledge.getId()+"\">"+pledge.getName()+"</a></td></tr>";
+				pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " show_available_skills_" + pledge.getId() + "\">" + pledge.getName() + "</a></td></tr>";
 			}
 			
 			pledgeInfo += "</table>";
 			
 			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/SquadSkills/subPledgeList.html").replace("%subPledgeList%", pledgeInfo);
 		}
-		else if (event.startsWith("show_available_skills_"))	//Show available skills for that pledge
+		else if (event.startsWith("show_available_skills_")) //Show available skills for that pledge
 		{
 			int pledgeType = Integer.valueOf(event.replace("show_available_skills_", ""));
 			
@@ -192,12 +193,12 @@ public class SquadSkills extends Quest
 				{
 					if (toLearn == null)
 						continue;
-					skillInfo += "<tr><td><a action=\"bypass -h Quest "+_qn+" try_learn_skill_"+toLearn.getKey()+"_"+toLearn.getValue()+"_"+pledgeType+"\">"+SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: "+toLearn.getValue()+")</a></td></tr>";
+					skillInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " try_learn_skill_" + toLearn.getKey() + "_" + toLearn.getValue() + "_" + pledgeType + "\">" + SkillTable.getInstance().getInfo(toLearn.getKey(), 1).getName() + " (Level: " + toLearn.getValue() + ")</a></td></tr>";
 				}
 			}
 			skillInfo += "</table>";
 			
-			skillInfo += "<br><br> <a action=\"bypass -h Quest "+_qn+" show_subPledges\">Back</a>";
+			skillInfo += "<br><br> <a action=\"bypass -h Quest " + _qn + " show_subPledges\">Back</a>";
 			
 			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/SquadSkills/skillList.html").replace("%skillList%", skillInfo);
 		}
@@ -212,9 +213,9 @@ public class SquadSkills extends Quest
 			//Be sure it's a valid skill
 			Map<Integer, Integer> skillToLearn = getAvailableLearnSkills(playerClan, pledgeType);
 			
-			if (skillToLearn.get(skillId) == null || skillToLearn.get(skillId) != level)
-				return null;	//cheating
-			
+			if ((skillToLearn.get(skillId) == null) || (skillToLearn.get(skillId) != level))
+				return null; //cheating
+				
 			L2Skill newSkill = SkillTable.getInstance().getInfo(skillId, level);
 			
 			if (newSkill == null)
@@ -224,7 +225,7 @@ public class SquadSkills extends Quest
 			
 			for (SkillInfo skill : _skillInfo)
 			{
-				if (skill.getSkillid() == skillId && skill.getSkillLevel() == level)
+				if ((skill.getSkillid() == skillId) && (skill.getSkillLevel() == level))
 				{
 					info = skill;
 					
@@ -255,7 +256,7 @@ public class SquadSkills extends Quest
 			
 			playerClan.addNewSkill(newSkill, pledgeType);
 			
-			notifyEvent("show_available_skills_"+pledgeType , npc, player);
+			notifyEvent("show_available_skills_" + pledgeType, npc, player);
 		}
 		
 		return super.onAdvEvent(event, npc, player);
@@ -265,13 +266,13 @@ public class SquadSkills extends Quest
 	{
 		Map<Integer, Integer> availableSkills = new HashMap<Integer, Integer>();
 		
-		Map<Integer, Integer> pledgeSkills	= new HashMap<Integer, Integer>();
+		Map<Integer, Integer> pledgeSkills = new HashMap<Integer, Integer>();
 		
 		if (pledgeType == 0)
- 		{
- 			for (Entry<Integer, L2Skill> skill : clan.getMainClanSubSkills().entrySet())
- 				pledgeSkills.put(skill.getKey(), skill.getValue().getLevelHash());
- 		}
+		{
+			for (Entry<Integer, L2Skill> skill : clan.getMainClanSubSkills().entrySet())
+				pledgeSkills.put(skill.getKey(), skill.getValue().getLevelHash());
+		}
 		else
 		{
 			for (L2Skill skill : clan.getSubPledge(pledgeType).getSkills())
@@ -286,14 +287,14 @@ public class SquadSkills extends Quest
 			if (skillInfo.getClanLevel() > clan.getLevel())
 				continue;
 			
-			if (pledgeSkills.get(skillInfo.getSkillid()) == null)	//Don't have this skill at any level
+			if (pledgeSkills.get(skillInfo.getSkillid()) == null) //Don't have this skill at any level
 			{
 				if (skillInfo.getSkillLevel() == 1)
 					availableSkills.put(skillInfo.getSkillid(), skillInfo.getSkillLevel());
 			}
 			else
 			{
-				int currentLevel =  pledgeSkills.get(skillInfo.getSkillid());
+				int currentLevel = pledgeSkills.get(skillInfo.getSkillid());
 				if (currentLevel == 3)
 					continue;
 				availableSkills.put(skillInfo.getSkillid(), currentLevel + 1);

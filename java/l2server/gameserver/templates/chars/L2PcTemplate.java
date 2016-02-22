@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.chars;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class L2PcTemplate extends L2CharTemplate
 	
 	public final double fCollisionHeightFemale;
 	public final double fCollisionRadiusFemale;
-
+	
 	private List<PcTemplateItem> _items = new ArrayList<PcTemplateItem>();
 	private List<Integer> _skillIds = new ArrayList<Integer>();
 	
@@ -49,7 +50,7 @@ public class L2PcTemplate extends L2CharTemplate
 	
 	public int getId()
 	{
-		return race.ordinal() * 2 + (isMage ? 1 : 0);
+		return (race.ordinal() * 2) + (isMage ? 1 : 0);
 	}
 	
 	/**
@@ -58,7 +59,7 @@ public class L2PcTemplate extends L2CharTemplate
 	 */
 	public void addItem(int itemId, int amount, boolean equipped)
 	{
-		if (amount == 1 || !equipped)
+		if ((amount == 1) || !equipped)
 			_items.add(new PcTemplateItem(itemId, amount, equipped));
 		else
 		{

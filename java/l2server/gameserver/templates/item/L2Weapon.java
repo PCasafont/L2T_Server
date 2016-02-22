@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 import java.util.ArrayList;
@@ -98,7 +99,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			
-			if (info != null && info.length == 2)
+			if ((info != null) && (info.length == 2))
 			{
 				int id = 0;
 				int level = 0;
@@ -110,9 +111,9 @@ public final class L2Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", this.toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", toString()));
 				}
-				if (id > 0 && level > 0)
+				if ((id > 0) && (level > 0))
 					_enchant4Skill = new SkillHolder(id, level);
 			}
 		}
@@ -122,7 +123,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncastChance", null);
-			if (info != null && info.length == 2)
+			if ((info != null) && (info.length == 2))
 			{
 				int id = 0;
 				int level = 0;
@@ -137,9 +138,9 @@ public final class L2Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncast skills! item ", this.toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncast skills! item ", toString()));
 				}
-				if (id > 0 && level > 0 && chance > 0)
+				if ((id > 0) && (level > 0) && (chance > 0))
 				{
 					_skillsOnCast = new SkillHolder(id, level);
 					if (infochance != null)
@@ -153,7 +154,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncritChance", null);
-			if (info != null && info.length == 2)
+			if ((info != null) && (info.length == 2))
 			{
 				int id = 0;
 				int level = 0;
@@ -168,9 +169,9 @@ public final class L2Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", this.toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", toString()));
 				}
-				if (id > 0 && level > 0 && chance > 0)
+				if ((id > 0) && (level > 0) && (chance > 0))
 				{
 					_skillsOnCrit = new SkillHolder(id, level);
 					if (infochance != null)
@@ -246,7 +247,7 @@ public final class L2Weapon extends L2Item
 	{
 		return _reuseDelay;
 	}
-
+	
 	/**
 	 * Returns the MP consumption with the weapon
 	 * @return int
@@ -255,7 +256,7 @@ public final class L2Weapon extends L2Item
 	{
 		return _mpConsume;
 	}
-
+	
 	/**
 	 * Returns skill that player get when has equiped weapon +4  or more  (for duals SA)
 	 * @return
@@ -283,21 +284,17 @@ public final class L2Weapon extends L2Item
 	 * @return Func[] : array of functions
 	 */
 	@Override
-	public Func[] getStatFuncs(L2ItemInstance instance, L2Character player)
+	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if (_funcTemplates == null || _funcTemplates.length == 0)
+		if ((_funcTemplates == null) || (_funcTemplates.length == 0))
 			return _emptyFunctionSet;
 		
 		ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
 		
-		Env env = new Env();
-		env.player = player;
-		env.item = instance;
 		Func f;
-		
 		for (FuncTemplate t : _funcTemplates)
 		{
-			f = t.getFunc(env, instance);
+			f = t.getFunc(instance);
 			if (f != null)
 				funcs.add(f);
 		}
@@ -314,7 +311,7 @@ public final class L2Weapon extends L2Item
 	 */
 	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, boolean crit)
 	{
-		if (_skillsOnCrit == null || !crit)
+		if ((_skillsOnCrit == null) || !crit)
 			return _emptyEffectSet;
 		List<L2Abnormal> effects = new ArrayList<L2Abnormal>();
 		
@@ -353,11 +350,11 @@ public final class L2Weapon extends L2Item
 			return _emptyEffectSet;
 		if (trigger.isOffensive() != _skillsOnCast.getSkill().isOffensive())
 			return _emptyEffectSet; // Trigger only same type of skill
-		if (trigger.isToggle() && _skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
+		if (trigger.isToggle() && (_skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF))
 			return _emptyEffectSet; // No buffing with toggle skills
-		if (!trigger.isMagic() && _skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
+		if (!trigger.isMagic() && (_skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF))
 			return _emptyEffectSet; // No buffing with not magic skills
-		
+			
 		if (_skillsOnCastCondition != null)
 		{
 			Env env = new Env();

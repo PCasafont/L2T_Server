@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.templates.item;
 
 import java.util.ArrayList;
@@ -117,10 +118,7 @@ public abstract class L2Item
 	public static final int CRYSTAL_R95 = 0x09;
 	public static final int CRYSTAL_R99 = 0x0a;
 	
-	private static final int[] crystalItemId =
-	{
-		0, 1458, 1459, 1460, 1461, 1462, 1462, 1462, 17371, 17371, 17371
-	};
+	private static final int[] crystalItemId = { 0, 1458, 1459, 1460, 1461, 1462, 1462, 1462, 17371, 17371, 17371 };
 	/*private static final int[] crystalEnchantBonusArmor =
 	{
 		0, 11, 6, 11, 19, 25, 25, 25, 35, 35, 35
@@ -178,7 +176,6 @@ public abstract class L2Item
 	
 	protected static final Func[] _emptyFunctionSet = new Func[0];
 	protected static final L2Abnormal[] _emptyEffectSet = new L2Abnormal[0];
-	
 	
 	/**
 	 * Constructor of the L2Item that fill class variables.<BR><BR>
@@ -242,19 +239,17 @@ public abstract class L2Item
 				cond.add(new ConditionPetType(GROWN_WOLF));
 			if (equip_condition.contains("item_equip_pet_group"))
 				cond.add(new ConditionPetType(ALL_PET));
-
-			if (equip_condition.contains("all_wolf_group") || equip_condition.contains("hatchling_group") || equip_condition.contains("strider") ||
-					equip_condition.contains("baby_pet_group") || equip_condition.contains("upgrade_baby_pet_group") || equip_condition.contains("grown_up_wolf_group") ||
-					equip_condition.contains("item_equip_pet_group"))
+			
+			if (equip_condition.contains("all_wolf_group") || equip_condition.contains("hatchling_group") || equip_condition.contains("strider") || equip_condition.contains("baby_pet_group") || equip_condition.contains("upgrade_baby_pet_group") || equip_condition.contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group"))
 				_isForPet = true;
 			
 			if (cond.conditions.length > 0)
 				attach(cond);
 		}
 		
-		_common = (_itemId >= 12006 && _itemId <= 12361);
+		_common = ((_itemId >= 12006) && (_itemId <= 12361));
 		_heroItem = set.getBool("isHeroItem", false);
-		_pvpItem = (_itemId >= 10667 && _itemId <= 10835) || (_itemId >= 12852 && _itemId <= 12977) || (_itemId >= 14363 && _itemId <= 14525) || _itemId == 14528 || _itemId == 14529 || _itemId == 14558 || (_itemId >=15913 && _itemId <= 16024) || (_itemId >=16134 && _itemId <= 16147) || _itemId == 16149 || _itemId == 16151 || _itemId == 16153 || _itemId == 16155 || _itemId == 16157 || _itemId == 16159 || (_itemId >=16168 && _itemId <= 16176) || (_itemId >=16179 && _itemId <= 16220);
+		_pvpItem = ((_itemId >= 10667) && (_itemId <= 10835)) || ((_itemId >= 12852) && (_itemId <= 12977)) || ((_itemId >= 14363) && (_itemId <= 14525)) || (_itemId == 14528) || (_itemId == 14529) || (_itemId == 14558) || ((_itemId >= 15913) && (_itemId <= 16024)) || ((_itemId >= 16134) && (_itemId <= 16147)) || (_itemId == 16149) || (_itemId == 16151) || (_itemId == 16153) || (_itemId == 16155) || (_itemId == 16157) || (_itemId == 16159) || ((_itemId >= 16168) && (_itemId <= 16176)) || ((_itemId >= 16179) && (_itemId <= 16220));
 	}
 	
 	/**
@@ -324,7 +319,7 @@ public abstract class L2Item
 	 */
 	public final boolean isCrystallizable()
 	{
-		return _crystalType != L2Item.CRYSTAL_NONE && _crystalCount > 0;
+		return (_crystalType != L2Item.CRYSTAL_NONE) && (_crystalCount > 0);
 	}
 	
 	/**
@@ -496,6 +491,7 @@ public abstract class L2Item
 	{
 		return _bodyPart;
 	}
+	
 	/**
 	 * Returns the type 1 of the item
 	 * @return int
@@ -525,7 +521,7 @@ public abstract class L2Item
 	
 	public boolean isEquipable()
 	{
-		return this.getBodyPart() != 0 && !(this.getItemType() instanceof L2EtcItemType);
+		return (getBodyPart() != 0) && !(getItemType() instanceof L2EtcItemType);
 	}
 	
 	/**
@@ -537,7 +533,21 @@ public abstract class L2Item
 		if (_referencePrice == 0)
 			return 2;
 		
-		return (isConsumable() ? (int)(_referencePrice * Config.RATE_CONSUMABLE_COST) : _referencePrice);
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+			return (int) Math.sqrt(_referencePrice);
+		return (isConsumable() ? (int) (_referencePrice * Config.RATE_CONSUMABLE_COST) : _referencePrice);
+	}
+	
+	private int _salePrice;
+	
+	public final void setSalePrice(final int price)
+	{
+		_salePrice = price;
+	}
+	
+	public final int getSalePrice()
+	{
+		return _salePrice;
 	}
 	
 	/**
@@ -612,39 +622,33 @@ public abstract class L2Item
 		return _pvpItem;
 	}
 	
-	public boolean isPotion() 
-	{ 
+	public boolean isPotion()
+	{
 		return (getItemType() == L2EtcItemType.POTION);
 	}
-
-	public boolean isElixir() 
-	{ 
+	
+	public boolean isElixir()
+	{
 		return (getItemType() == L2EtcItemType.ELIXIR);
 	}
-
+	
 	/**
 	 * Returns array of Func objects containing the list of functions used by the item
 	 * @param instance : L2ItemInstance pointing out the item
 	 * @param player : L2Character pointing out the player
 	 * @return Func[] : array of functions
 	 */
-	public Func[] getStatFuncs(L2ItemInstance instance, L2Character player)
+	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if (_funcTemplates == null || _funcTemplates.length == 0)
+		if ((_funcTemplates == null) || (_funcTemplates.length == 0))
 			return _emptyFunctionSet;
 		
 		ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
 		
-		Env env = new Env();
-		env.player = player;
-		env.target = player;
-		env.item = instance;
-		
 		Func f;
-		
 		for (FuncTemplate t : _funcTemplates)
 		{
-			f = t.getFunc(env, this); // skill is owner
+			f = t.getFunc(this); // skill is owner
 			if (f != null)
 				funcs.add(f);
 		}
@@ -663,7 +667,7 @@ public abstract class L2Item
 	 */
 	public L2Abnormal[] getEffects(L2ItemInstance instance, L2Character player)
 	{
-		if (_effectTemplates == null || _effectTemplates.length == 0)
+		if ((_effectTemplates == null) || (_effectTemplates.length == 0))
 			return _emptyEffectSet;
 		
 		ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>();
@@ -698,18 +702,18 @@ public abstract class L2Item
 	 * @param caster : L2Character pointing out the caster
 	 * @param target : L2Character pointing out the target
 	 * @return L2Effect[] : array of effects generated by the skill
-	 
+
 	public L2Effect[] getSkillEffects(L2Character caster, L2Character target)
 	{
 		if (_skills == null)
 			return _emptyEffectSet;
 		List<L2Effect> effects = new ArrayList<L2Effect>();
-		
+
 		for (L2Skill skill : _skills)
 		{
 			if (!skill.checkCondition(caster, target, true))
 				continue; // Skill condition not met
-				
+
 			if (target.getFirstEffect(skill.getId()) != null)
 				target.removeEffect(target.getFirstEffect(skill.getId()));
 			for (L2Effect e : skill.getEffects(caster, target))
@@ -724,7 +728,7 @@ public abstract class L2Item
 	{
 		if (_skillHolder == null)
 		{
-			_skillHolder = new SkillHolder[]{skill};
+			_skillHolder = new SkillHolder[] { skill };
 		}
 		else
 		{
@@ -747,7 +751,7 @@ public abstract class L2Item
 	 */
 	public void attach(FuncTemplate f)
 	{
-		switch(f.stat)
+		switch (f.stat)
 		{
 			case FIRE_RES:
 			case FIRE_POWER:
@@ -799,10 +803,7 @@ public abstract class L2Item
 	{
 		if (_effectTemplates == null)
 		{
-			_effectTemplates = new L2AbnormalTemplate[]
-												  {
-					effect
-												  };
+			_effectTemplates = new L2AbnormalTemplate[] { effect };
 		}
 		else
 		{
@@ -830,13 +831,13 @@ public abstract class L2Item
 	}
 	
 	/**
-	* Method to retrive skills linked to this item
-	*
-	* armor and weapon: passive skills
-	* etcitem: skills used on item use <-- ???
-	*
-	* @return Skills linked to this item as SkillHolder[]
-	*/
+	 * Method to retrive skills linked to this item
+	 *
+	 * armor and weapon: passive skills
+	 * etcitem: skills used on item use <-- ???
+	 *
+	 * @return Skills linked to this item as SkillHolder[]
+	 */
 	public final SkillHolder[] getSkills()
 	{
 		return _skillHolder;
@@ -853,7 +854,7 @@ public abstract class L2Item
 		Env env = new Env();
 		env.player = activeChar;
 		if (target instanceof L2Character)
-			env.target = (L2Character)target;
+			env.target = (L2Character) target;
 		
 		for (Condition preCondition : _preConditions)
 		{
@@ -876,7 +877,7 @@ public abstract class L2Item
 					{
 						activeChar.sendMessage(msg);
 					}
-					else if (msgId !=0)
+					else if (msgId != 0)
 					{
 						SystemMessage sm = SystemMessage.getSystemMessage(msgId);
 						if (preCondition.isAddName())
@@ -892,14 +893,14 @@ public abstract class L2Item
 	
 	public boolean isConditionAttached()
 	{
-		return _preConditions != null && !_preConditions.isEmpty();
+		return (_preConditions != null) && !_preConditions.isEmpty();
 	}
 	
 	public void attach(L2CrystallizeReward reward)
 	{
 		if (_crystallizeRewards == null)
 		{
-			_crystallizeRewards = new L2CrystallizeReward[]{reward};
+			_crystallizeRewards = new L2CrystallizeReward[] { reward };
 		}
 		else
 		{
@@ -920,7 +921,7 @@ public abstract class L2Item
 	{
 		return _questItem;
 	}
-
+	
 	/**
 	 * Returns the name of the item
 	 * @return String
@@ -928,9 +929,9 @@ public abstract class L2Item
 	@Override
 	public String toString()
 	{
-		return _name+"("+_itemId+")";
+		return _name + "(" + _itemId + ")";
 	}
-
+	
 	/**
 	 * @return the _ex_immediate_effect
 	 */
@@ -938,7 +939,7 @@ public abstract class L2Item
 	{
 		return _ex_immediate_effect;
 	}
-
+	
 	/**
 	 * @return the _default_action
 	 */
@@ -946,7 +947,7 @@ public abstract class L2Item
 	{
 		return _defaultAction;
 	}
-
+	
 	/**
 	 * @return is for pet?
 	 */
@@ -954,7 +955,7 @@ public abstract class L2Item
 	{
 		return _isForPet;
 	}
-
+	
 	/**
 	 * @return body part name
 	 */
@@ -962,7 +963,7 @@ public abstract class L2Item
 	{
 		return _bodyPartName;
 	}
-
+	
 	/**
 	 * Get the icon link in client files.<BR> Usable in HTML windows.
 	 * @return the _icon
@@ -1010,5 +1011,22 @@ public abstract class L2Item
 	public boolean isEpic()
 	{
 		return _isEpic;
+	}
+	
+	public int getShotTypeIndex()
+	{
+		switch (getDefaultAction())
+		{
+			case soulshot:
+				return 0;
+			case spiritshot:
+				return 1;
+			case summon_soulshot:
+				return 2;
+			case summon_spiritshot:
+				return 3;
+		}
+		
+		return -1;
 	}
 }

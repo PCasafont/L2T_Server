@@ -1,3 +1,4 @@
+
 package ai.group_template;
 
 import l2server.gameserver.datatables.SkillTable;
@@ -20,23 +21,23 @@ import l2server.gameserver.util.Util;
 
 public class GuillotineFortress extends L2AttackableAIScript
 {
-	private static final int[]		_npcIds 		= {23199, 23200, 23201, 23245, 23244, 23243, 23202, 23203, 23204, 23205, 23206, 23207, 23208, 23209, 23212, 23242};
-	private static final L2Skill	_chaosShield	= SkillTable.getInstance().getInfo(15090, 1);
-
+	private static final int[] _npcIds = { 23199, 23200, 23201, 23245, 23244, 23243, 23202, 23203, 23204, 23205, 23206, 23207, 23208, 23209, 23212, 23242 };
+	private static final L2Skill _chaosShield = SkillTable.getInstance().getInfo(15090, 1);
+	
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
 	{
-		L2Abnormal chaosShield = npc.getFirstEffect(15090);	//Chaos Shield
+		L2Abnormal chaosShield = npc.getFirstEffect(15090); //Chaos Shield
 		
 		if (chaosShield != null)
 		{
-			if (npc.getCurrentHp() < npc.getMaxHp() * 0.85 || skill != null && skill.getId() == 10258)
+			if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.85)) || ((skill != null) && (skill.getId() == 10258)))
 			{
 				chaosShield.exit();
 				
 				for (L2Character attacker : npc.getAttackByList())
 				{
-					if (attacker == null || !(attacker instanceof L2PcInstance) || !attacker.isInsideRadius(npc, 1600, false, false))
+					if ((attacker == null) || !(attacker instanceof L2PcInstance) || !attacker.isInsideRadius(npc, 1600, false, false))
 					{
 						continue;
 					}
@@ -71,14 +72,14 @@ public class GuillotineFortress extends L2AttackableAIScript
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
 			if (spawn == null)
-			{	
+			{
 				continue;
 			}
 			
 			if (Util.contains(_npcIds, spawn.getNpcId()))
-			{	
+			{
 				notifySpawn(spawn.getNpc());
-			}	
+			}
 		}
 	}
 	

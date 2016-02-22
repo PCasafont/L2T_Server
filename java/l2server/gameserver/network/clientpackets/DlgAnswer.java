@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
@@ -29,7 +30,6 @@ import l2server.log.Log;
  */
 public final class DlgAnswer extends L2GameClientPacket
 {
-	private static final String _C__C5_DLGANSWER = "[C] C5 DlgAnswer";
 	
 	private int _messageId;
 	private int _answer;
@@ -51,11 +51,10 @@ public final class DlgAnswer extends L2GameClientPacket
 			return;
 		
 		if (Config.DEBUG)
-			Log.fine(getType()+": Answer accepted. Message ID "+_messageId+", answer "+_answer+", Requester ID "+_requesterId);
-		if (_messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId()
-				|| _messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
+			Log.fine(getType() + ": Answer accepted. Message ID " + _messageId + ", answer " + _answer + ", Requester ID " + _requesterId);
+		if ((_messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId()) || (_messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId()))
 			activeChar.reviveAnswer(_answer);
-		else if (_messageId==SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId())
+		else if (_messageId == SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId())
 			activeChar.teleportAnswer(_answer, _requesterId);
 		else if (_messageId == SystemMessageId.S1.getId())
 		{
@@ -78,7 +77,7 @@ public final class DlgAnswer extends L2GameClientPacket
 				if (AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
 				{
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
+						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target"));
 					ach.useAdminCommand(_command, activeChar);
 				}
 			}
@@ -87,11 +86,5 @@ public final class DlgAnswer extends L2GameClientPacket
 			activeChar.gatesAnswer(_answer, 1);
 		else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE.getId())
 			activeChar.gatesAnswer(_answer, 0);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C5_DLGANSWER;
 	}
 }

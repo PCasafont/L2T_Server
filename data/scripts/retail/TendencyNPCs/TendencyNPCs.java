@@ -1,3 +1,4 @@
+
 package retail.TendencyNPCs;
 
 import l2server.gameserver.datatables.ClanTable;
@@ -16,19 +17,19 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author LasTravel
- * 
+ *
  * NOTE: Pere please don't kill me.
  */
 
-public class TendencyNPCs  extends Quest
+public class TendencyNPCs extends Quest
 {
-	private static final L2Skill blessingOfLight 	= SkillTable.getInstance().getInfo(19036, 1);
+	private static final L2Skill blessingOfLight = SkillTable.getInstance().getInfo(19036, 1);
 	
 	public TendencyNPCs(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 		
-		for (int id = 36600; id <= 36617; id ++)
+		for (int id = 36600; id <= 36617; id++)
 		{
 			addFirstTalkId(id);
 			
@@ -52,57 +53,57 @@ public class TendencyNPCs  extends Quest
 		
 		NpcHtmlMessage html = new NpcHtmlMessage(0);
 		
-		Castle castle = npc.getCastle();	//Castle zone from the npc
+		Castle castle = npc.getCastle(); //Castle zone from the npc
 		
-		L2Clan clanOwner = ClanTable.getInstance().getClan(castle.getOwnerId());	//Owner of this castle
+		L2Clan clanOwner = ClanTable.getInstance().getClan(castle.getOwnerId()); //Owner of this castle
 		
-		L2Clan playerClan = player.getClan();	//Get the player clan
+		L2Clan playerClan = player.getClan(); //Get the player clan
 		
 		Castle playerCastle = null;
 		
-		if (playerClan != null && CastleManager.getInstance().getCastleByOwner(playerClan) != null)
-		{	
+		if ((playerClan != null) && (CastleManager.getInstance().getCastleByOwner(playerClan) != null))
+		{
 			playerCastle = CastleManager.getInstance().getCastleByOwner(playerClan);
 		}
 		
 		int playerTendency = playerCastle != null ? playerCastle.getTendency() : 0;
-				
+		
 		String htmlText = "";
 		
-		if (npc.getNpcId() >= 36609 && npc.getNpcId() <= 36617)
+		if ((npc.getNpcId() >= 36609) && (npc.getNpcId() <= 36617))
 		{
-			if (playerTendency == Castle.TENDENCY_LIGHT || playerTendency == Castle.TENDENCY_NONE)
-			{	
+			if ((playerTendency == Castle.TENDENCY_LIGHT) || (playerTendency == Castle.TENDENCY_NONE))
+			{
 				player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getNpcId(), 1300172));
 				
 				htmlText = "proclaimer.htm";
 			}
 			else
-			{	
+			{
 				htmlText = "proclaimer-no.htm";
-			}	
+			}
 		}
 		else
 		{
-			if (playerTendency == Castle.TENDENCY_DARKNESS || playerTendency == Castle.TENDENCY_NONE)
-			{	
+			if ((playerTendency == Castle.TENDENCY_DARKNESS) || (playerTendency == Castle.TENDENCY_NONE))
+			{
 				player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getNpcId(), 1300171));
 				
 				htmlText = "revolutionary.htm";
 			}
 			else
-			{	
+			{
 				htmlText = "revolutionary-no.htm";
-			}	
-		}	
+			}
+		}
 		
 		String content = getHtm(player.getHtmlPrefix(), htmlText);
 		
 		html.setHtml(content);
 		
-		html.replace("%clanName%", clanOwner != null ? clanOwner.getName() : "Deffenders");
+		html.replace("%clanName%", clanOwner != null ? clanOwner.getName() : "None");
 		
-		html.replace("%clanLeader%", clanOwner != null ? clanOwner.getLeaderName() : "Tenkai");
+		html.replace("%clanLeader%", clanOwner != null ? clanOwner.getLeaderName() : "None");
 		
 		html.replace("%castleName%", castle.getName());
 		
@@ -112,12 +113,12 @@ public class TendencyNPCs  extends Quest
 		
 		return super.onFirstTalk(npc, player);
 	}
-
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("receiveBlessing"))
-		{	
+		{
 			blessingOfLight.getEffects(player, player);
 		}
 		

@@ -215,10 +215,22 @@ public class AdminTeleport implements IAdminCommandHandler
 			}
 			
 			// Tenkai custom - if no player can be found, try to find NPC with that name
-			L2Spawn spawn = SpawnTable.getInstance().findFirst(targetName);
-			if (spawn != null && spawn.getNpc() != null)
+			
+			int targetObjId = 0;
+			for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 			{
-				activeChar.teleToLocation(spawn.getNpc().getX(), spawn.getNpc().getY(), spawn.getNpc().getZ());
+				if (spawn.getTemplate().getName().equalsIgnoreCase(targetName) && spawn.getNpc() != null)
+				{
+					targetObjId = spawn.getNpc().getObjectId();
+					break;
+				}
+			}
+			
+			if (targetObjId != 0)
+			{
+				L2Object targetObj = L2World.getInstance().findObject(targetObjId);
+				if (targetObj instanceof L2Npc)
+					activeChar.teleToLocation(targetObj.getX(), targetObj.getY(), targetObj.getZ());
 				return true;
 			}
 			

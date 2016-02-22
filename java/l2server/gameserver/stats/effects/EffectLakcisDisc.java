@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
@@ -29,7 +30,7 @@ public class EffectLakcisDisc extends L2Effect
 	{
 		super(env, template);
 	}
-
+	
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
@@ -37,7 +38,7 @@ public class EffectLakcisDisc extends L2Effect
 	}
 	
 	/**
-	 * 
+	 *
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
@@ -46,7 +47,7 @@ public class EffectLakcisDisc extends L2Effect
 		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance))
 			return false;
 		
-		L2PcInstance player = (L2PcInstance)getEffected();
+		L2PcInstance player = (L2PcInstance) getEffected();
 		
 		double amount = calc();
 		for (L2Character target : player.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
@@ -56,9 +57,7 @@ public class EffectLakcisDisc extends L2Effect
 			else if (target.getActingPlayer() != null)
 			{
 				L2PcInstance targetPlayer = target.getActingPlayer();
-				if ((targetPlayer.isInParty() && targetPlayer.getParty() == player.getParty())
-						|| (target.getActingPlayer().getClanId() != 0 && target.getActingPlayer().getClanId() == player.getClanId())
-						|| (target.getActingPlayer().getAllyId() != 0 && target.getActingPlayer().getAllyId() == player.getAllyId()))
+				if ((targetPlayer.isInParty() && (targetPlayer.getParty() == player.getParty())) || ((target.getActingPlayer().getClanId() != 0) && (target.getActingPlayer().getClanId() == player.getClanId())) || ((target.getActingPlayer().getAllyId() != 0) && (target.getActingPlayer().getAllyId() == player.getAllyId())))
 				{
 					double hp = target.getCurrentHp();
 					double maxhp = target.getMaxHp();
@@ -68,7 +67,7 @@ public class EffectLakcisDisc extends L2Effect
 					
 					target.setCurrentHp(hp);
 					StatusUpdate suhp = new StatusUpdate(target, getEffector(), StatusUpdateDisplay.NORMAL);
-					suhp.addAttribute(StatusUpdate.CUR_HP, (int)hp);
+					suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
 					target.sendPacket(suhp);
 				}
 			}

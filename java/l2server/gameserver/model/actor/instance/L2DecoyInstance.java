@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.model.actor.instance;
 
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class L2DecoyInstance extends L2Attackable
 	private int _timeRemaining;
 	private Future<?> _decoyLifeTask;
 	private List<Future<?>> _skillSpam = new ArrayList<Future<?>>();
+	
 	public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
 	{
 		super(objectId, template);
@@ -54,7 +56,7 @@ public class L2DecoyInstance extends L2Attackable
 		setInstanceType(InstanceType.L2DecoyInstance);
 		if (skill != null)
 		{
-			_totalLifeTime = ((L2SkillDecoy)skill).getTotalLifeTime();
+			_totalLifeTime = ((L2SkillDecoy) skill).getTotalLifeTime();
 		}
 		else
 		{
@@ -71,7 +73,7 @@ public class L2DecoyInstance extends L2Attackable
 					_skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SkillSpam(this, SkillTable.getInstance().getInfo(s.getId(), s.getLevelHash())), 2000, 5000));
 			}
 		}
-		if (getName().equalsIgnoreCase("Clone Attack") && getNpcId() >= 13319 && getNpcId() <= 13322)
+		if (getName().equalsIgnoreCase("Clone Attack") && (getNpcId() >= 13319) && (getNpcId() <= 13322))
 			_skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SkillSpam(this, null), 100, 100));
 	}
 	
@@ -98,7 +100,7 @@ public class L2DecoyInstance extends L2Attackable
 			{
 				if (_ai == null)
 				{
-					if (getNpcId() >= 13319 && getNpcId() <= 13322)
+					if ((getNpcId() >= 13319) && (getNpcId() <= 13322))
 						_ai = new L2AttackableAI(new L2Attackable.AIAccessor());
 					else
 						_ai = new L2CharacterAI(new L2Character.AIAccessor());
@@ -126,7 +128,7 @@ public class L2DecoyInstance extends L2Attackable
 	@Override
 	public final DecoyStat getStat()
 	{
-		return (DecoyStat)super.getStat();
+		return (DecoyStat) super.getStat();
 	}
 	
 	@Override
@@ -147,6 +149,7 @@ public class L2DecoyInstance extends L2Attackable
 			_decoy = Decoy;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -178,6 +181,7 @@ public class L2DecoyInstance extends L2Attackable
 			_skill = Hate;
 		}
 		
+		@Override
 		public void run()
 		{
 			try
@@ -189,7 +193,7 @@ public class L2DecoyInstance extends L2Attackable
 				}
 				else if (_activeChar.getOwner().getTarget() instanceof L2Character)
 				{
-					L2Character target = (L2Character)_activeChar.getOwner().getTarget();
+					L2Character target = (L2Character) _activeChar.getOwner().getTarget();
 					_activeChar.addDamageHate(target, 1, 1);
 					//_activeChar.doAttack(target);
 					_activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
@@ -221,7 +225,7 @@ public class L2DecoyInstance extends L2Attackable
 	public void onSpawn()
 	{
 		super.onSpawn();
-		this.getOwner().sendPacket(new CharInfo(this));
+		getOwner().sendPacket(new CharInfo(this));
 	}
 	
 	@Override

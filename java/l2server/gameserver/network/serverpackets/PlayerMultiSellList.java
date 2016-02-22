@@ -13,18 +13,20 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.serverpackets;
 
 import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
+import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.TradeList.TradeItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -38,8 +40,6 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class PlayerMultiSellList extends L2GameServerPacket
 {
-	private static final String _S__D0_MULTISELLLIST = "[S] d0 MultiSellList";
-	
 	private L2PcInstance _player;
 	
 	public PlayerMultiSellList(L2PcInstance player)
@@ -48,14 +48,13 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	protected final void writeImpl()
 	{
-		writeC(0xd0);
-		writeD(_player.getObjectId());	// list id
+		writeD(_player.getObjectId()); // list id
 		writeC(0x00);
 		writeD(1); // page started from 1
-		writeD(1);	// finished
-		writeD(PAGE_SIZE);	// size of pages
+		writeD(1); // finished
+		writeD(PAGE_SIZE); // size of pages
 		writeD(_player.getCustomSellList().getItemCount()); //list length
 		writeC(0x00); // Old or modern format
 		
@@ -81,6 +80,11 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeH(0x00); // T1
 			writeH(0x00); // T1
+			if (Config.IS_UNDERGROUND)
+			{
+				writeC(0x00);
+				writeC(0x00);
+			}
 			
 			writeH(1);
 			writeH(item.getPriceItems().size());
@@ -95,12 +99,23 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeQ(0x00); // augment id
 			writeH(item.getAttackElementType()); // attack element
 			writeH(item.getAttackElementPower()); //element power
-			writeH(item.getElementDefAttr((byte)0)); // fire
-			writeH(item.getElementDefAttr((byte)1)); // water
-			writeH(item.getElementDefAttr((byte)2)); // wind
-			writeH(item.getElementDefAttr((byte)3)); // earth
-			writeH(item.getElementDefAttr((byte)4)); // holy
-			writeH(item.getElementDefAttr((byte)5)); // dark
+			writeH(item.getElementDefAttr((byte) 0)); // fire
+			writeH(item.getElementDefAttr((byte) 1)); // water
+			writeH(item.getElementDefAttr((byte) 2)); // wind
+			writeH(item.getElementDefAttr((byte) 3)); // earth
+			writeH(item.getElementDefAttr((byte) 4)); // holy
+			writeH(item.getElementDefAttr((byte) 5)); // dark
+			if (Config.IS_UNDERGROUND)
+			{
+				int[] ensoulEffects = item.getEnsoulEffectIds();
+				int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+				writeC(ensoulEffects.length);
+				for (int effect : ensoulEffects)
+					writeD(effect);
+				writeC(ensoulSpecialEffects.length);
+				for (int effect : ensoulSpecialEffects)
+					writeD(effect);
+			}
 			
 			for (L2Item priceItem : item.getPriceItems().keySet())
 			{
@@ -117,18 +132,23 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 				writeH(0x00); // earth
 				writeH(0x00); // holy
 				writeH(0x00); // dark
+				if (Config.IS_UNDERGROUND)
+				{
+					writeC(0x00);
+					writeC(0x00);
+				}
 			}
 			
 			i++;
 		}
 		
-		if (_player.getClient() != null && _player.getClient().isDetached() && _player.getCustomSellList() != null && _player.getCustomSellList().getItemCount() == 0)
+		if ((_player.getClient() != null) && _player.getClient().isDetached() && (_player.getCustomSellList() != null) && (_player.getCustomSellList().getItemCount() == 0))
 			_player.logout();
 	}
 	
 	@Override
-	public String getType()
+	protected final Class<?> getOpCodeClass()
 	{
-		return _S__D0_MULTISELLLIST;
+		return MultiSellList.class;
 	}
 }

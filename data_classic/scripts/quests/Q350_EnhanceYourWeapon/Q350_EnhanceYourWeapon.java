@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import javax.xml.parsers.deleteme;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
@@ -133,7 +133,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 	{
 		try
 		{
-			deleteme factory = deleteme.newInstance();
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setValidating(false);
 			factory.setIgnoringComments(true);
 			
@@ -146,15 +146,15 @@ public class Q350_EnhanceYourWeapon extends Quest
 			
 			Document doc = factory.newDocumentBuilder().parse(file);
 			Node first = doc.getFirstChild();
-			if (first != null && "list".equalsIgnoreCase(first.getName()))
+			if (first != null && "list".equalsIgnoreCase(first.getNodeName()))
 			{
-				for (XmlNode n : first.getChildren())
+				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
 				{
-					if (n.getName().equalsIgnoreCase("crystal"))
+					if ("crystal".equalsIgnoreCase(n.getNodeName()))
 					{
-						for (XmlNode d : n.getChildren())
+						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 						{
-							if (d.getName().equalsIgnoreCase("item"))
+							if ("item".equalsIgnoreCase(d.getNodeName()))
 							{
 								NamedNodeMap attrs = d.getAttributes();
 								Node att = attrs.getNamedItem("itemId");
@@ -163,7 +163,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 									Log.severe("[EnhanceYourWeapon] Missing itemId in Crystal List, skipping");
 									continue;
 								}
-								int itemId = replaceMe.getInt("itemId");
+								int itemId = Integer.parseInt(attrs.getNamedItem("itemId").getNodeValue());
 								
 								att = attrs.getNamedItem("level");
 								if (att == null)
@@ -171,7 +171,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 									Log.severe("[EnhanceYourWeapon] Missing level in Crystal List itemId: "+itemId+", skipping");
 									continue;
 								}
-								int level = replaceMe.getInt("level");
+								int level = Integer.parseInt(attrs.getNamedItem("level").getNodeValue());
 								
 								att = attrs.getNamedItem("leveledItemId");
 								if (att == null)
@@ -179,17 +179,17 @@ public class Q350_EnhanceYourWeapon extends Quest
 									Log.severe("[EnhanceYourWeapon] Missing leveledItemId in Crystal List itemId: "+itemId+", skipping");
 									continue;
 								}
-								int leveledItemId = replaceMe.getInt("leveledItemId");
+								int leveledItemId = Integer.parseInt(attrs.getNamedItem("leveledItemId").getNodeValue());
 								
 								_soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
 							}
 						}
 					}
-					else if (n.getName().equalsIgnoreCase("npc"))
+					else if ("npc".equalsIgnoreCase(n.getNodeName()))
 					{
-						for (XmlNode d : n.getChildren())
+						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 						{
-							if (d.getName().equalsIgnoreCase("item"))
+							if ("item".equalsIgnoreCase(d.getNodeName()))
 							{
 								NamedNodeMap attrs = d.getAttributes();
 								Node att = attrs.getNamedItem("npcId");
@@ -198,31 +198,31 @@ public class Q350_EnhanceYourWeapon extends Quest
 									Log.severe("[EnhanceYourWeapon] Missing npcId in NPC List, skipping");
 									continue;
 								}
-								int npcId = Integer.parseInt(att;
+								int npcId = Integer.parseInt(att.getNodeValue());
 								
 								FastMap<Integer, LevelingInfo> temp = new FastMap<Integer, LevelingInfo>();
 								
-								for (XmlNode cd : d.getChildren())
+								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 								{
 									boolean isSkillNeeded = false;
 									int chance = 5;
 									AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
 									
-									if (cd.getName().equalsIgnoreCase("detail"))
+									if ("detail".equalsIgnoreCase(cd.getNodeName()))
 									{
 										attrs = cd.getAttributes();
 										
 										att = attrs.getNamedItem("absorbType");
 										if (att != null)
-											absorbType = Enum.valueOf(AbsorbCrystalType.class, att;
+											absorbType = Enum.valueOf(AbsorbCrystalType.class, att.getNodeValue());
 										
 										att = attrs.getNamedItem("chance");
 										if (att != null)
-											chance = Integer.parseInt(att;
+											chance = Integer.parseInt(att.getNodeValue());
 										
 										att = attrs.getNamedItem("skill");
 										if (att != null)
-											isSkillNeeded = Boolean.parseBoolean(att;
+											isSkillNeeded = Boolean.parseBoolean(att.getNodeValue());
 										
 										Node att1 = attrs.getNamedItem("maxLevel");
 										Node att2 = attrs.getNamedItem("levelList");
@@ -234,13 +234,13 @@ public class Q350_EnhanceYourWeapon extends Quest
 										LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
 										if (att1 != null)
 										{
-											int maxLevel = Integer.parseInt(att1;
+											int maxLevel = Integer.parseInt(att1.getNodeValue());
 											for(int i = 0; i <= maxLevel; i++)
 												temp.put(i, info);
 										}
 										else
 										{
-											StringTokenizer st = new StringTokenizer(att2, ",");
+											StringTokenizer st = new StringTokenizer(att2.getNodeValue(), ",");
 											int tokenCount = st.countTokens();
 											for (int i=0; i < tokenCount; i++)
 											{

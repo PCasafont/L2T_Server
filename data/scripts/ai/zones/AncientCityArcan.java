@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package ai.zones;
 
 import l2server.gameserver.datatables.SpawnTable;
@@ -27,18 +28,18 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * @author LasTravel
- * 
+ *
  * Source:
  * 			- http://l2wiki.com/Ancient_City_Arcan
  */
 
 public class AncientCityArcan extends Quest
 {
-	private static final int		_blueEffectId		= 262001;
-	private static final int		_redEffectId		= 262003;
-	private static int				_currentEffect		= _blueEffectId;
-	private static final int		_ancientCityArcanId = 60010;
-	private static final L2ZoneType _ancientCityZone	= ZoneManager.getInstance().getZoneById(_ancientCityArcanId);
+	private static final int _blueEffectId = 262001;
+	private static final int _redEffectId = 262003;
+	private static int _currentEffect = _blueEffectId;
+	private static final int _ancientCityArcanId = 60010;
+	private static final L2ZoneType _ancientCityZone = ZoneManager.getInstance().getZoneById(_ancientCityArcanId);
 	
 	public AncientCityArcan(int questId, String name, String descr)
 	{

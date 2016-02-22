@@ -17,9 +17,10 @@ package handlers.actionhandlers;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.custom.fusion.MiniGamesManager;
+import l2server.gameserver.custom.fusion.minigames.MiniGame;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
@@ -69,6 +70,16 @@ public class L2PcInstanceAction implements IActionHandler
 			
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
+		}
+		
+		if (Config.MINI_GAMES_ENABLED)
+		{
+			final MiniGame miniGame = MiniGamesManager.getCurrentMiniGame();
+			if (miniGame != null && !miniGame.onTarget(activeChar, target))
+			{
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				return false;
+			}
 		}
 		
 		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
@@ -171,9 +182,6 @@ public class L2PcInstanceAction implements IActionHandler
 					}
 					else
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
-					
-					if (target instanceof L2PcInstance && ((L2PcInstance)target).getClient().isDetached() && ((L2PcInstance)target).getIsOfflineBuffer())
-						CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, target.getObjectId());
 				}
 			}
 		}

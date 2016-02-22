@@ -65,8 +65,8 @@ public class Halloween  extends Quest
 	private static int round 		= 0;
 	
 	//Others
-	private static List<L2Npc> allMinions 	= new FastList<L2Npc>();
-	private static List<L2Npc> townBuffers	= new FastList<L2Npc>();
+	private static List<L2Npc> allMinions 	= new HashMap<L2Npc>();
+	private static List<L2Npc> townBuffers	= new HashMap<L2Npc>();
 	private static final L2Skill blessingOfHalloween = SkillTable.getInstance().getInfo(21129, 1);
 
 	
@@ -245,7 +245,7 @@ public class Halloween  extends Quest
 			L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, round);
 			
 			if (round < 20)
-			{	
+			{
 				for (int i = 0; i < 60; i++)
 				{
 					int x = (int) (600 * Math.cos(i * 0.618));
@@ -437,7 +437,7 @@ public class Halloween  extends Quest
 		{
 			player.setInstanceId(0);
 			
-			player.teleToLocation(82731, 148655, -3464, true);	
+			player.teleToLocation(82731, 148655, -3464, true);
 		}
 		
 		return "";
@@ -447,9 +447,9 @@ public class Halloween  extends Quest
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
 		if (npc == null || attacker == null)
-		{	
+		{
 			return null;
-		}	
+		}
 
 		if (Debug)
 			Log.warning(getName() + ": onAttack: " + npc.getName());

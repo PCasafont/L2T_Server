@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class ItemsAutoDestroy
 		long curtime = System.currentTimeMillis();
 		for (L2ItemInstance item : _items)
 		{
-			if (item == null || item.getDropTime() == 0 || item.getLocation() != L2ItemInstance.ItemLocation.VOID)
+			if ((item == null) || (item.getDropTime() == 0) || (item.getLocation() != L2ItemInstance.ItemLocation.VOID))
 				_items.remove(item);
 			else
 			{
@@ -74,12 +75,12 @@ public class ItemsAutoDestroy
 						_items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM)
 							ItemsOnGroundManager.getInstance().removeObject(item);
-						}
+					}
 				}
-
+				
 				if (item.getItemType() == L2EtcItemType.HERB)
 				{
-					if ((curtime - item.getDropTime()) > Config.HERB_AUTO_DESTROY_TIME * 1000)
+					if ((curtime - item.getDropTime()) > (Config.HERB_AUTO_DESTROY_TIME * 1000))
 					{
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 						L2World.getInstance().removeObject(item);

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.network.clientpackets;
 
 import java.sql.Connection;
@@ -21,9 +22,9 @@ import java.util.logging.Logger;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.EnchantItemTable;
-import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.EnchantItemTable.EnchantScroll;
 import l2server.gameserver.datatables.EnchantItemTable.EnchantSupportItem;
+import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
@@ -44,8 +45,6 @@ public final class RequestEnchantItem extends L2GameClientPacket
 {
 	protected static final Logger _logEnchant = Logger.getLogger("enchant");
 	
-	private static final String _C__58_REQUESTENCHANTITEM = "[C] 58 RequestEnchantItem";
-	
 	private int _objectId = 0;
 	private int _supportId;
 	
@@ -61,7 +60,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 		
-		if (activeChar == null || _objectId == 0)
+		if ((activeChar == null) || (_objectId == 0))
 			return;
 		
 		if (!activeChar.isOnline() || getClient().isDetached())
@@ -81,7 +80,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
 		
-		if (item == null || scroll == null)
+		if ((item == null) || (scroll == null))
 		{
 			activeChar.setActiveEnchantItem(null);
 			return;
@@ -116,7 +115,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		}
 		
 		// fast auto-enchant cheat check
-		if (activeChar.getActiveEnchantTimestamp() == 0 || System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp() < 2000)
+		if ((activeChar.getActiveEnchantTimestamp() == 0) || ((System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp()) < 1000))
 		{
 			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
 			activeChar.setActiveEnchantItem(null);
@@ -152,14 +151,56 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		synchronized (item)
 		{
 			float chance = scrollTemplate.getChance(item, supportTemplate);
-			int rnd = Rnd.get(10000);
-			boolean success = rnd < chance * 100.0f;
+			
+			if (Config.isServer(Config.DREAMS))
+			{
+				int luckyStoneId = activeChar.getLuckyEnchantStoneId();
+				if ((luckyStoneId != 0) && (chance != 1000))
+				{
+					if (activeChar.getInventory().destroyItemByItemId("LuckyStone", luckyStoneId, 1, activeChar, activeChar) == null)
+						activeChar.setLuckyEnchantStoneId(0);
+					else
+					{
+						double chanceIncrease = 0;
+						switch (luckyStoneId)
+						{
+							case 37566: // Blessed Lucky Enchant Stone: Weapon - R
+								chanceIncrease = 1.10;
+								break;
+							case 38757: // Blessed High Grade Lucky Enchant Stone: Weapon - R
+								chanceIncrease = 1.20;
+								break;
+							case 23783: // Blessed Giant's Lucky Enchant Stone - Weapon R
+								chanceIncrease = 1.30;
+								break;
+							case 37567: // Blessed Lucky Enchant Stone: Weapon - R
+								chanceIncrease = 1.10;
+								break;
+							case 38758: // Blessed High Grade Lucky Enchant Stone: Armor - R
+								chanceIncrease = 1.20;
+								break;
+							case 23784: // Blessed Giant's Lucky Enchant Stone: Armor - R
+								chanceIncrease = 1.30;
+								break;
+							default:
+								break;
+						}
+						
+						if (chanceIncrease != 0)
+						{
+							chance *= chanceIncrease;
+							activeChar.setLuckyEnchantStoneId(0);
+						}
+					}
+				}
+			}
+			
+			int rnd = Rnd.get(100);
+			boolean success = rnd < chance;
 			
 			// last validation check
 			L2Item it = item.getItem();
-			if (item.getOwnerId() != activeChar.getObjectId()
-					|| !EnchantItemTable.isEnchantable(item)
-					|| chance < 0)
+			if ((item.getOwnerId() != activeChar.getObjectId()) || !EnchantItemTable.isEnchantable(item) || (chance < 0))
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 				activeChar.setActiveEnchantItem(null);
@@ -168,25 +209,44 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			}
 			
 			//LUC second chance
-			rnd = Rnd.get(10000);
-			if (!success && ((item.getEnchantLevel() < 10 && rnd < activeChar.getLUC()) || (item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2)))
+			if (!Config.isServer(Config.DREAMS))
 			{
-				//System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
-				success = true;
-				
-				//LUC animation
-				L2Skill skill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
-				if (skill != null)
-				{	
-					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LADY_LUCK_SMILES_UPON_YOU));
-					activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
+				rnd = Rnd.get(10000);
+				if (!success && (((item.getEnchantLevel() < 10) && (rnd < activeChar.getLUC())) || ((item.getEnchantLevel() >= 10) && (rnd < (activeChar.getLUC() / 2)))))
+				{
+					//System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
+					success = true;
+					
+					//LUC animation
+					L2Skill skill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
+					if (skill != null)
+					{
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LADY_LUCK_SMILES_UPON_YOU));
+						activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevel(), skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
+					}
 				}
 			}
 			
+			if (Config.isServer(Config.DREAMS) && (chance != 1000))
+			{
+				activeChar.sendMessage("To succeed, you must roll between 0 to " + (int) (chance - 1) + ". Success rate: " + (int) chance + "%.");
+				
+				activeChar.sendMessage("Dice Roll: " + rnd + ". " + (success ? "Success!" : "Enchant failed."));
+				
+				/*
+				Broadcast.toGameMasters(activeChar.getName() + " is enchanting " + item.getName() + " (+" + item.getEnchantLevel() + ")...:");
+				Broadcast.toGameMasters(activeChar.getName() + ": To succeed, you must roll between 0 to " + (int) (chance - 1) + ". Success rate: " + (int) chance + "%.");
+				Broadcast.toGameMasters(activeChar.getName() + ": Dice Roll: " + rnd  + ". " + (success ? "Success!" : "Enchant failed."));
+				 */
+			}
 			if (success)
 			{
 				// success
-				item.setEnchantLevel(item.getEnchantLevel() + 1);
+				int newEnchantLevel = item.getEnchantLevel() + 1;
+				if (Config.isServer(Config.TENKAI_ESTHUS) && (newEnchantLevel < 16))
+					newEnchantLevel = 16;
+				
+				item.setEnchantLevel(newEnchantLevel);
 				item.updateDatabase();
 				activeChar.sendPacket(new EnchantResult(0, 0, 0, item.getEnchantLevel()));
 				
@@ -202,7 +262,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						statement.setInt(3, item.getObjectId());
 						statement.setInt(4, scroll.getItemId());
 						statement.setInt(5, support == null ? 0 : support.getObjectId());
-						statement.setInt(6, (int)chance);
+						statement.setInt(6, (int) chance);
 						statement.setLong(7, System.currentTimeMillis());
 						statement.execute();
 						statement.close();
@@ -220,7 +280,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				// announce the success
 				int minEnchantAnnounce = item.isArmor() ? 6 : 7;
 				int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
-				if (item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce)
+				if (!Config.isServer(Config.TENKAI_ESTHUS) && ((item.getEnchantLevel() == minEnchantAnnounce) || (item.getEnchantLevel() == maxEnchantAnnounce)))
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);
 					sm.addCharName(activeChar);
@@ -233,12 +293,12 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevelHash(), skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
 				}
 				
-				if (it instanceof L2Armor && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
+				if ((it instanceof L2Armor) && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
 				{
 					for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++)
 					{
-						L2Skill enchantSkill = ((L2Armor)it).getEnchantSkill(enchant);
-						if (enchantSkill != null && item.getEnchantLevel() == enchant)
+						L2Skill enchantSkill = ((L2Armor) it).getEnchantSkill(enchant);
+						if ((enchantSkill != null) && (item.getEnchantLevel() == enchant))
 						{
 							// add skills bestowed from +X armor
 							activeChar.addSkill(enchantSkill, false);
@@ -267,7 +327,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 							statement.setInt(3, item.getObjectId());
 							statement.setInt(4, scroll.getItemId());
 							statement.setInt(5, support == null ? 0 : support.getObjectId());
-							statement.setInt(6, (int)chance);
+							statement.setInt(6, (int) chance);
 							statement.setLong(7, System.currentTimeMillis());
 							statement.execute();
 							statement.close();
@@ -331,7 +391,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								statement.setInt(3, item.getObjectId());
 								statement.setInt(4, scroll.getItemId());
 								statement.setInt(5, support == null ? 0 : support.getObjectId());
-								statement.setInt(6, (int)chance);
+								statement.setInt(6, (int) chance);
 								statement.setLong(7, System.currentTimeMillis());
 								statement.execute();
 								statement.close();
@@ -350,7 +410,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					{
 						// enchant failed, destroy item
 						int crystalId = item.getItem().getCrystalItemId();
-						int count = item.getCrystalCount() - (item.getItem().getCrystalCount() + 1) / 2;
+						int count = item.getCrystalCount() - ((item.getItem().getCrystalCount() + 1) / 2);
 						if (count < 1)
 							count = 1;
 						
@@ -374,7 +434,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 									statement.setInt(3, item.getObjectId());
 									statement.setInt(4, scroll.getItemId());
 									statement.setInt(5, support == null ? 0 : support.getObjectId());
-									statement.setInt(6, (int)chance);
+									statement.setInt(6, (int) chance);
 									statement.setLong(7, System.currentTimeMillis());
 									statement.execute();
 									statement.close();
@@ -437,7 +497,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								statement.setInt(3, item.getObjectId());
 								statement.setInt(4, scroll.getItemId());
 								statement.setInt(5, support == null ? 0 : support.getObjectId());
-								statement.setInt(6, (int)chance);
+								statement.setInt(6, (int) chance);
 								statement.setLong(7, System.currentTimeMillis());
 								statement.execute();
 								statement.close();
@@ -466,16 +526,5 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			activeChar.setActiveEnchantTimestamp(0);
 			activeChar.setIsEnchanting(false);
 		}
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see l2server.gameserver.clientpackets.ClientBasePacket#getType()
-	 */
-	@Override
-	public String getType()
-	{
-		return _C__58_REQUESTENCHANTITEM;
 	}
 }

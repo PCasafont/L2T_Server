@@ -91,7 +91,7 @@
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2009" levels="1" name="Item - Beast Blessed Spirit Shot">
+	<skill id="2009" levels="1" name="Item - Blessed Beast Spirit Shot">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -711,14 +711,14 @@
 		<set name="effectRange" val="400" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<skill id="2066" levels="1" name="Item - Fight Song Crystal">
+	<skill id="2066" levels="1" name="Item - Theme Sound Crystal">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="isPotion" val="true" />
 	</skill>
-	<skill id="2067" levels="1" name="Item - Fight Song Crystal">
+	<skill id="2067" levels="1" name="Item - Theme Sound Crystal">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -760,7 +760,7 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="isPotion" val="true" />
 	</skill>
-	<skill id="2073" levels="1" name="Item - Fight Song Crystal">
+	<skill id="2073" levels="1" name="Item - Theme Sound Crystal">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -769,7 +769,7 @@
 	</skill>
 	<!-- Misdirects enemy attacks and decreases your Speed. -->
 	<skill id="2074" levels="1" name="Potion of Critical Escape">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
@@ -789,7 +789,7 @@
 		</for>
 	</skill>
 	<skill id="2075" levels="1" name="Scroll: Decrease Hate">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
@@ -1121,7 +1121,7 @@
 		</for>
 	</skill>
 	<skill id="2096" levels="1" name="Soul Crystal">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="26" />
@@ -1134,7 +1134,7 @@
 	</skill>
 	<skill id="2097" levels="3" name="Sowing">
 		<table name="#mpConsume"> 4 6 8 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="SOW" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
@@ -1720,7 +1720,7 @@
 	</skill>
 	<!-- Holiday tree effect. Increases HP Recovery Rate and MP Recovery Bonus. -->
 	<skill id="2139" levels="1" name="Special Tree Recovery Bonus">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -1893,7 +1893,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="2166" levels="2" name="CP Potion">
+	<skill id="2166" levels="2" name="Greater CP Potion">
 		<table name="#power"> 50 200 </table>
 		<table name="#name">CP Potion;Greater CP Potion</table>
 		<set name="name" val="#name" />
@@ -1927,14 +1927,7 @@
 			</cond>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 1.
-		Level 2: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 2.
-		Level 3: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 3.
-		Level 4: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 4.
-		Level 5: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 5.
-		Level 6: Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 6.
-	-->
+	<!-- Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 1. -->
 	<skill id="2168" levels="6" name="Lucky Charm">
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -1953,11 +1946,8 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- 
-		Level 1: Increases Casting Spd. Effect 2.
-		Level 2: Increases Casting Spd. Effect 3.
-	-->
-	<skill id="2169" levels="2" name="Magic Haste Potion">
+	<!-- Increases Casting Spd. Effect 2. -->
+	<skill id="2169" levels="2" name="Greater Magic Haste Potion">
 		<table name="#mAtkSpd"> 23 30 </table>
 		<table name="#abnormalLvl"> 2 3 </table>
 		<table name="#name">Magic Haste Potion;Greater Magic Haste Potion</table>
@@ -1980,7 +1970,7 @@
 		</for>
 	</skill>
 	<skill id="2170" levels="1" name="Scroll: Cancel Sleep">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="NEGATE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -2179,7 +2169,7 @@
 		<set name="isPotion" val="true" />
 	</skill>
 	<skill id="2188" levels="1" name="Golden Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BEAST_FEED" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="6643" />
@@ -2191,7 +2181,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="2189" levels="1" name="Crystal Spice">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BEAST_FEED" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeId" val="6644" />
@@ -2202,7 +2192,7 @@
 		<set name="effectRange" val="400" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<skill id="2190" levels="9" name="Small Green Nimble Fish">
+	<skill id="2190" levels="9" name="Large Green Fat Fish">
 		<table name="#extractableItems">
 			6908,6,27.6;6913,1,16.56
 			6908,6,28.2;6911,2,21.15
@@ -2230,7 +2220,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2191" levels="9" name="Small Jade Nimble Fish">
+	<skill id="2191" levels="9" name="Large Jade Fat Fish">
 		<table name="#extractableItems">
 			6908,12,19;6913,1,22.8;6920,8,30.4
 			6908,8,47.2;6911,2,44.25
@@ -2258,7 +2248,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2192" levels="9" name="Small Blue Nimble Fish">
+	<skill id="2192" levels="9" name="Large Blue Fat Fish">
 		<table name="#extractableItems">
 			6908,12,26.3332;6913,2,18.0572;6920,16,21.0667
 			6908,16,32;6911,4,30
@@ -2286,7 +2276,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2193" levels="9" name="Small Yellow Nimble Fish">
+	<skill id="2193" levels="9" name="Large Yellow Fat Fish">
 		<table name="#extractableItems">
 			6904,1,2.1216;6908,14,15.1544;6909,4,14.144;6913,2,10.608;6920,16,14.1441
 			6904,1,2.1456;6908,20,10.2172;6909,2,17.1648;6911,4,13.4101;6921,4,14.3042
@@ -2314,7 +2304,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2194" levels="9" name="Small Orange Nimble Fish">
+	<skill id="2194" levels="9" name="Large Orange Fat Fish">
 		<table name="#extractableItems">
 			6904,1,2.9856;6908,28,10.6628;6909,4,19.904;6913,2,14.928;6920,16,19.9039
 			6904,1,3.048;6908,20,14.5144;6909,4,12.192;6911,8,9.5252;6921,8,10.16
@@ -2342,7 +2332,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2195" levels="9" name="Small Purple Nimble Fish">
+	<skill id="2195" levels="9" name="Large Purple Fat Fish">
 		<table name="#extractableItems">
 			7698,1,7;6910,2,18.6666;6914,2,17.5
 			7686,1,7.144;6910,2,14.288;6912,8,19.8445
@@ -2370,7 +2360,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2196" levels="9" name="Small Red Nimble Fish">
+	<skill id="2196" levels="9" name="Large Red Fat Fish">
 		<table name="#extractableItems">
 			7685,1,6.1296;7698,1,6.1296;6907,1,6.1296;6910,2,16.3456;6914,2,15.3241
 			7686,1,7.806;6905,1,7.806;6910,2,15.612;6912,8,21.6833
@@ -2398,7 +2388,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2197" levels="9" name="Small White Nimble Fish">
+	<skill id="2197" levels="9" name="Large White Fat Fish">
 		<table name="#extractableItems">
 			7685,1,8.3856;7698,1,8.3856;6907,1,8.3856;6910,4,11.1808;6914,4,10.4818
 			7686,1,10.686;6905,1,10.686;6910,2,21.372;6912,8,23.7468
@@ -2426,7 +2416,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2198" levels="9" name="Small Black Nimble Fish">
+	<skill id="2198" levels="9" name="Large Black Fat Fish">
 		<table name="#extractableItems">
 			7685,1,9.9888;7698,1,9.9888;6907,1,9.9888;6910,4,13.3184;6914,4,12.4858
 			7686,1,12.738;6905,1,12.738;6910,4,12.738;6912,16,14.1534
@@ -2454,7 +2444,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2199" levels="3" name="Small Green Treasure Chest">
+	<skill id="2199" levels="3" name="Large Green Treasure Chest">
 		<table name="#extractableItems">
 			6908,12,30.6;7609,8,48.96
 			6908,12,41.6;7609,16,33.28
@@ -2476,7 +2466,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2200" levels="3" name="Small Jade Treasure Chest">
+	<skill id="2200" levels="3" name="Large Jade Treasure Chest">
 		<table name="#extractableItems">
 			6908,24,28.5;7609,26,26.0572
 			6908,24,31.5;7609,26,28.8
@@ -2498,7 +2488,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2201" levels="3" name="Small Blue Treasure Chest">
+	<skill id="2201" levels="3" name="Large Blue Treasure Chest">
 		<table name="#extractableItems">
 			6908,24,39.5;7609,26,36.1144
 			6904,1,5.028;6908,28,17.957;6909,8,16.76;7609,30,16.76
@@ -2520,7 +2510,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2202" levels="3" name="Small Yellow Treasure Chest">
+	<skill id="2202" levels="3" name="Large Yellow Treasure Chest">
 		<table name="#extractableItems">
 			6904,1,5.424;6908,28,19.3714;6909,8,18.0799;7609,30,18.08
 			6904,1,6.816;6908,28,24.3428;6909,8,22.7199;7609,30,22.72
@@ -2542,7 +2532,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2203" levels="3" name="Small Orange Treasure Chest">
+	<skill id="2203" levels="3" name="Large Orange Treasure Chest">
 		<table name="#extractableItems">
 			6904,1,7.788;6908,56,13.9072;6909,14,11.5376;7609,60,12.98
 			6910,3,50.688
@@ -2564,7 +2554,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2204" levels="3" name="Small Purple Treasure Chest">
+	<skill id="2204" levels="3" name="Large Purple Treasure Chest">
 		<table name="#extractableItems">
 			6910,3,58.24
 			6910,3,69.76
@@ -2586,7 +2576,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2205" levels="3" name="Small Red Treasure Chest">
+	<skill id="2205" levels="3" name="Large Red Treasure Chest">
 		<table name="#extractableItems">
 			6910,3,84.864
 			6910,3,89.728
@@ -2608,7 +2598,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2206" levels="3" name="Small White Treasure Chest">
+	<skill id="2206" levels="3" name="Large White Treasure Chest">
 		<table name="#extractableItems">
 			6910,6,58.048
 			6910,6,61.536
@@ -2630,7 +2620,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2207" levels="3" name="Small Black Treasure Chest">
+	<skill id="2207" levels="3" name="Large Black Treasure Chest">
 		<table name="#extractableItems">
 			6910,6,69.312
 			6910,6,76.896
@@ -2677,7 +2667,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2213" levels="22" name="Scroll of Escape: Talking Island Village">
+	<skill id="2213" levels="22" name="Scroll of Escape: Kamael Village">
 		<table name="#teleCoords">
 			-114380,259946,-1203
 			46915,51441,-2976
@@ -2712,7 +2702,7 @@
 		<set name="staticHitTime" val="true" />
 		<set name="teleCoords" val="#teleCoords" />
 	</skill>
-	<skill id="2214" levels="10" name="Scroll of Escape: Talking Island Village">
+	<skill id="2214" levels="10" name="Scroll of Escape: Town of Giran">
 		<table name="#teleCoords">
 			-114380,259946,-1203
 			46915,51441,-2976
@@ -2736,7 +2726,7 @@
 		<set name="staticHitTime" val="true" />
 		<set name="teleCoords" val="#teleCoords" />
 	</skill>
-	<skill id="2215" levels="4" name="Chest Caught with Wind Bait">
+	<skill id="2215" levels="4" name="Chest Caught with Flaming Bait">
 		<table name="#extractableItems">
 			57,100000,8;3456,1,10;3454,1,5.5;3455,1,5.5;3448,1,17.6;3449,1,17;3446,1,18;3468,1,18.4
 			57,100000,7.5;3456,1,6;3454,1,7;3455,1,7.4;3448,1,10;3449,1,22;3446,1,19.6;3468,1,20.4
@@ -2759,7 +2749,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2216" levels="4" name="Special Fish 1">
+	<skill id="2216" levels="4" name="Special Fish 4">
 		<table name="#name">Special Fish 1;Special Fish 2;Special Fish 3;Special Fish 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
@@ -2776,7 +2766,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2217" levels="5" name="Looted Goods - White Cargo Box">
+	<skill id="2217" levels="5" name="Looted Goods - Purple Document Box">
 		<table name="#extractableItems">
 			6697,1,9;6693,1,9;6694,1,9;6696,1,9;7579,1,9;6690,1,9;6688,1,9;6691,1,9;6689,1,9;6695,1,9;57,330000,10
 			6706,1,8.5;6710,1,8.5;6714,1,8.5;6703,1,8.5;6704,1,8.5;6708,1,8.5;6709,1,8.5;6712,1,8.5;6713,1,8.5;6705,1,8.5;13099,1,8.5;57,292000,15
@@ -2800,7 +2790,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2218" levels="3" name="Booty - Yellow Pouch">
+	<skill id="2218" levels="3" name="Booty - Grey Pouch">
 		<table name="#extractableItems">
 			1882,3,20;1876,6,16;1879,3,12;1881,1,12;1880,4,10;1874,1,10;1875,3,10;1877,3,10
 			4039,4,20;4043,4,20;4044,4,20;4040,2,15;4042,2,15;4041,1,10
@@ -2822,7 +2812,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2219" levels="2" name="Looted Goods - Brown Pouch">
+	<skill id="2219" levels="2" name="Looted Goods - Grey Pouch">
 		<table name="#extractableItems">
 			1882,20,18;1876,20,16;1879,20,10;1881,20,10;1880,20,5;1874,20,10;1875,20,10;1877,20,11;57,150000,10
 			4039,4,20;4043,4,20;4044,4,20;4040,4,10;4042,4,10;4041,4,10;57,160000,10
@@ -2843,7 +2833,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2220" levels="9" name="Small Green Nimble Fish (Novice)">
+	<skill id="2220" levels="9" name="Large Green Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6908,3,55.2
 			6908,3,56.8
@@ -2871,7 +2861,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2221" levels="9" name="Small Jade Nimble Fish (Novice)">
+	<skill id="2221" levels="9" name="Large Jade Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6908,6,57.2
 			6908,6,66.8
@@ -2899,7 +2889,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2222" levels="9" name="Small Blue Nimble Fish (Novice)">
+	<skill id="2222" levels="9" name="Large Blue Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6908,6,65.2
 			6908,6,65.2
@@ -2927,7 +2917,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2223" levels="9" name="Small Yellow Nimble Fish (Novice)">
+	<skill id="2223" levels="9" name="Large Yellow Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6904,1,1.768;6908,6,29.4664;6909,2,17.6798
 			6904,1,1.792;6908,6,29.8664;6909,2,17.9198
@@ -2955,7 +2945,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2224" levels="9" name="Small Orange Nimble Fish (Novice)">
+	<skill id="2224" levels="9" name="Large Orange Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6904,1,2.488;6908,8,33.1732;6909,2,24.88
 			6904,1,2.544;6908,16,16.96;6909,2,25.44
@@ -2983,7 +2973,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2225" levels="9" name="Small Purple Nimble Fish (Novice)">
+	<skill id="2225" levels="9" name="Large Purple Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6910,1,42.048
 			6910,1,42.912
@@ -3011,7 +3001,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2226" levels="9" name="Small Red Nimble Fish (Novice)">
+	<skill id="2226" levels="9" name="Large Red Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6910,2,30.672
 			6910,2,31.248
@@ -3039,7 +3029,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2227" levels="9" name="Small White Nimble Fish (Novice)">
+	<skill id="2227" levels="9" name="Large White Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6910,2,41.952
 			6910,2,42.768
@@ -3067,7 +3057,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2228" levels="9" name="Small Black Nimble Fish (Novice)">
+	<skill id="2228" levels="9" name="Large Black Fat Fish (Novice)">
 		<table name="#extractableItems">
 			6910,2,49.968
 			6910,2,67.968
@@ -3095,10 +3085,10 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2229" levels="8" name="Deluxe Chest Key - Grade 1">
+	<skill id="2229" levels="8" name="Deluxe Chest Key - Grade 8">
 		<table name="#name">Deluxe Chest Key - Grade 1;Deluxe Chest Key - Grade 2;Deluxe Chest Key - Grade 3;Deluxe Chest Key - Grade 4;Deluxe Chest Key - Grade 5;Deluxe Chest Key - Grade 6;Deluxe Chest Key - Grade 7;Deluxe Chest Key - Grade 8</table>
 		<set name="name" val="#name" />
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DELUXE_KEY_UNLOCK" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -3113,7 +3103,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2230" levels="1" name="Item - Fight Song Crystal">
+	<skill id="2230" levels="1" name="Item - Theme Sound Crystal">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3642,7 +3632,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2261" levels="9" name="Small Green Nimble Fish (High-grade)">
+	<skill id="2261" levels="9" name="Large Green Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6913,1,11.04;6911,2,18.4;8353,2,27.6
 			6913,1,11.28;6911,2,18.8;8353,2,28.2
@@ -3670,7 +3660,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2262" levels="9" name="Small Jade Nimble Fish (High-grade)">
+	<skill id="2262" levels="9" name="Large Jade Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6913,1,22.8;6911,2,28.5;8359,4,19
 			6913,1,18.88;6911,2,29.5;8359,4,19.6666
@@ -3698,7 +3688,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2263" levels="9" name="Small Blue Nimble Fish (High-grade)">
+	<skill id="2263" levels="9" name="Large Blue Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6913,1,25.28;6911,4,19.75;8355,4,17.5556
 			6913,1,25.6;6911,4,20;8355,4,17.7778
@@ -3726,7 +3716,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2264" levels="9" name="Small Yellow Nimble Fish (High-grade)">
+	<skill id="2264" levels="9" name="Large Yellow Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6913,1,28.288;6911,4,29.4666;8354,2,22.1
 			6913,1,28.608;6911,4,29.7998;8354,2,22.35
@@ -3754,7 +3744,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2265" levels="9" name="Small Orange Nimble Fish (High-grade)">
+	<skill id="2265" levels="9" name="Large Orange Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6913,2,24.88;6911,8,20.7333;8357,2,19.904
 			6913,2,25.4;6911,8,21.1666;8357,2,20.32
@@ -3782,7 +3772,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2266" levels="9" name="Small Purple Nimble Fish (High-grade)">
+	<skill id="2266" levels="9" name="Large Purple Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6914,1,28;6912,8,19.4445;8358,2,29.1666
 			6914,1,21.432;6912,8,14.8833;8377,1,5.358;8358,2,22.325
@@ -3810,7 +3800,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2267" levels="9" name="Small Red Nimble Fish (High-grade)">
+	<skill id="2267" levels="9" name="Large Red Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6914,2,20.432;6912,9,18.9184;8352,4,18.2428
 			6914,2,15.612;6912,9,14.4556;8377,1,7.806;8352,4,13.9393
@@ -3838,7 +3828,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2268" levels="9" name="Small White Nimble Fish (High-grade)">
+	<skill id="2268" levels="9" name="Large White Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6914,2,20.964;6912,9,19.4112;8373,1,2.6205;8356,4,16.3781
 			6914,2,17.0976;6912,9,15.8312;8377,1,8.5488;8374,1,2.1372;8356,4,13.3575
@@ -3866,7 +3856,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2269" levels="9" name="Small Black Nimble Fish (High-grade)">
+	<skill id="2269" levels="9" name="Large Black Fat Fish (High-grade)">
 		<table name="#extractableItems">
 			6914,2,24.972;6912,9,23.1224;8373,1,3.1215;8351,4,17.3416
 			6914,4,10.1904;6912,9,18.8712;8377,1,10.1904;8374,1,2.5476;8351,4,14.1534
@@ -3894,7 +3884,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2270" levels="7" name="Adventurer's Box: C-grade Accessory (Low-grade)">
+	<skill id="2270" levels="7" name="Adventurer's Box: Cradle of Creation">
 		<table name="#extractableItems">
 			853,1,14.1723;884,1,21.3675;916,1,10.6428
 			854,1,14.1242;885,1,21.2585;917,1,10.6022
@@ -3935,7 +3925,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2272" levels="1" name="Item - Fight Song Crystal">
+	<skill id="2272" levels="1" name="Item - Theme Sound Crystal">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3967,7 +3957,7 @@
 		Level 7: Fisherman's Potion - Red. Decreases Fishing Mastery Lv., enabling you to catch red fish.
 		Level 8: Fisherman's Potion - White. Decreases Fishing Mastery Lv., enabling you to catch white fish.
 	-->
-	<skill id="2274" levels="8" name="Fisherman's Potion - Green">
+	<skill id="2274" levels="8" name="Fisherman's Potion - White">
 		<table name="#power"> 2 5 8 11 14 17 20 23 </table>
 		<table name="#active_skill_id_lvl">
 			1315,4
@@ -4045,7 +4035,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2278" levels="3" name="Herb of Life">
+	<skill id="2278" levels="3" name="Superior Herb of Life">
 		<table name="#power"> 15 25 100 </table>
 		<table name="#name">Herb of Life;Major Herb of Life;Superior Herb of Life</table>
 		<set name="name" val="#name" />
@@ -4065,7 +4055,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2279" levels="3" name="Herb of Mana">
+	<skill id="2279" levels="3" name="Superior Herb of Mana">
 		<table name="#power"> 11 18 100 </table>
 		<table name="#name">Herb of Mana;Major Herb of Mana;Superior Herb of Mana</table>
 		<set name="name" val="#name" />
@@ -4217,7 +4207,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="2286" levels="6" name="Scroll: Recovery (No-grade)">
+	<skill id="2286" levels="6" name="Scroll: Recovery (S-grade)">
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 76;85 </table>
 		<table name="#name">Scroll: Recovery (No-grade);Scroll: Recovery (D-grade);Scroll: Recovery (C-grade);Scroll: Recovery (B-grade);Scroll: Recovery (A-grade);Scroll: Recovery (S-grade)</table>
 		<set name="name" val="#name" />
@@ -4239,7 +4229,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="2287" levels="7" name="Elixir of Life (No-grade)">
+	<skill id="2287" levels="7" name="Elixir of Life (R-grade)">
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 1;84 1;84 </table>
 		<table name="#power"> 250 650 1100 1500 1900 2300 2300 </table>
 		<table name="#reuseDelay"> 600000 600000 600000 600000 600000 600000 120000 </table>
@@ -4263,7 +4253,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2288" levels="7" name="Elixir of Mind (No-grade)">
+	<skill id="2288" levels="7" name="Elixir of Mind (R-grade)">
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 1;84 1;84 </table>
 		<table name="#power"> 60 140 220 290 360 420 420 </table>
 		<table name="#reuseDelay"> 600000 600000 600000 600000 600000 600000 120000 </table>
@@ -4287,7 +4277,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2289" levels="7" name="Elixir of CP (No-grade)">
+	<skill id="2289" levels="7" name="Elixir of CP (R-grade)">
 		<table name="#levelRange"> 1;19 20;39 40;51 52;60 61;75 1;84 1;84 </table>
 		<table name="#power"> 150 350 600 800 1000 1200 1200 </table>
 		<table name="#reuseDelay"> 600000 600000 600000 600000 600000 600000 120000 </table>
@@ -4539,7 +4529,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="2306" levels="3" name="Blue Primeval Crystal">
+	<skill id="2306" levels="3" name="Red Primeval Crystal">
 		<table name="#power"> 50000 100000 200000 </table>
 		<table name="#name">Blue Primeval Crystal;Green Primeval Crystal;Red Primeval Crystal</table>
 		<set name="name" val="#name" />
@@ -4841,7 +4831,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="2322" levels="1" name="Chest Key (Event)">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="UNLOCK_SPECIAL" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -4946,42 +4936,42 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2329" levels="4" name="Fire Stone">
+	<skill id="2329" levels="4" name="Energy of Fire">
 		<table name="#name">Fire Stone;Fire Crystal;Fire Jewel;Energy of Fire</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2330" levels="4" name="Water Stone">
+	<skill id="2330" levels="4" name="Energy of Water">
 		<table name="#name">Water Stone;Water Crystal;Water Jewel;Energy of Water</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2331" levels="4" name="Wind Stone">
+	<skill id="2331" levels="4" name="Energy of Wind">
 		<table name="#name">Wind Stone;Wind Crystal;Wind Jewel;Energy of Wind</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2332" levels="4" name="Earth Stone">
+	<skill id="2332" levels="4" name="Energy of Earth">
 		<table name="#name">Earth Stone;Earth Crystal;Earth Jewel;Energy of Earth</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2333" levels="4" name="Holy Stone">
+	<skill id="2333" levels="4" name="Holy Energy">
 		<table name="#name">Holy Stone;Holy Crystal;Holy Jewel;Holy Energy</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2334" levels="4" name="Dark Stone">
+	<skill id="2334" levels="4" name="Dark Energy">
 		<table name="#name">Dark Stone;Dark Crystal;Dark Jewel;Dark Energy</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -5127,7 +5117,7 @@
 		</for>
 	</skill>
 	<skill id="2342" levels="1" name="Ballista Bomb">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BALLISTA" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -5395,7 +5385,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="2358" levels="1" name="Holy Water">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
@@ -5414,7 +5404,7 @@
 		</for>
 	</skill>
 	<skill id="2359" levels="1" name="Magic Bottle">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -5434,7 +5424,7 @@
 		</for>
 	</skill>
 	<skill id="2360" levels="1" name="Water Dragon Claw">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -5532,7 +5522,7 @@
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<skill id="2368" levels="1" name="Spirit of the Lake">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="AGGREDUCE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
@@ -5556,7 +5546,7 @@
 		</for>
 	</skill>
 	<skill id="2369" levels="1" name="Water Dragon Scale">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -5711,7 +5701,7 @@
 		</for>
 	</skill>
 	<!-- Increases Speed. Effect 2. -->
-	<skill id="2379" levels="1" name="Wind">
+	<skill id="2379" levels="1" name="Wind Walk">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9163,7 +9153,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2608" levels="3" name="Blue Crystal of Fantasy">
+	<skill id="2608" levels="3" name="Fantasy Red Crystal">
 		<table name="#power"> 50000 100000 200000 </table>
 		<table name="#name">Blue Crystal of Fantasy;Fantasy Green Crystal;Fantasy Red Crystal</table>
 		<set name="name" val="#name" />
@@ -9185,7 +9175,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2609" levels="20" name="Scroll of Escape: Talking Island Village">
+	<skill id="2609" levels="20" name="Scroll of Escape: Kamael Village">
 		<table name="#teleCoords">
 			-114380,259946,-1203
 			46934,51467,-2977
@@ -9358,7 +9348,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2630" levels="1" name="Presentation - Collect Items">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -9608,7 +9598,7 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="power" val="100" />
 	</skill>
-	<skill id="2649" levels="9" name="Scroll of Escape: Gludin Village">
+	<skill id="2649" levels="9" name="Scroll of Escape: Town of Schuttgart">
 		<table name="#teleCoords">
 			-12678,122776,-3116
 			15670,142983,-2705
@@ -12980,7 +12970,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2792" levels="2" name="Stone of Stamina">
+	<skill id="2792" levels="2" name="Greater Stone of Stamina">
 		<table name="#power"> 700 20000 </table>
 		<table name="#name">Stone of Stamina;Greater Stone of Stamina</table>
 		<set name="name" val="#name" />
@@ -12999,7 +12989,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2793" levels="2" name="Stone of Mana">
+	<skill id="2793" levels="2" name="Greater Stone of Mana">
 		<table name="#power"> 500 20000 </table>
 		<table name="#name">Stone of Mana;Greater Stone of Mana</table>
 		<set name="name" val="#name" />
@@ -13018,7 +13008,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2794" levels="2" name="Stone of Recovery">
+	<skill id="2794" levels="2" name="Greater Stone of Recovery">
 		<table name="#name">Stone of Recovery;Greater Stone of Recovery</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -14124,7 +14114,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="2860" levels="7" name="Superior Elixir of Life (No-grade)">
+	<skill id="2860" levels="7" name="Superior Elixir of Life (R-grade)">
 		<table name="#power"> 500 1300 2200 3000 3800 4600 4600 </table>
 		<table name="#minLvl"> 1 20 40 52 61 76 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 86 </table>
@@ -14151,7 +14141,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2861" levels="7" name="Superior Elixir of Mind (No-grade)">
+	<skill id="2861" levels="7" name="Superior Elixir of Mind (R-grade)">
 		<table name="#power"> 120 280 440 580 720 840 840 </table>
 		<table name="#minLvl"> 0 20 40 52 61 76 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 86 </table>
@@ -14178,7 +14168,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2862" levels="7" name="Superior Elixir of CP (No-grade)">
+	<skill id="2862" levels="7" name="Superior Elixir of CP (R-grade)">
 		<table name="#power"> 300 700 1200 1600 2000 2400 2400 </table>
 		<table name="#minLvl"> 0 20 40 52 61 76 76 </table>
 		<table name="#maxLvl"> 20 40 52 61 76 86 86 </table>
@@ -14595,7 +14585,7 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="2905" levels="1" name="Growth Accelerator">
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
@@ -14660,7 +14650,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<skill id="2914" levels="3" name="Equipment Set Pack (10-day)">
+	<skill id="2914" levels="3" name="Equipment Set Pack (90-day)">
 		<table name="#name">Equipment Set Pack (10-day);Equipment Set Pack (30-day);Equipment Set Pack (90-day)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />

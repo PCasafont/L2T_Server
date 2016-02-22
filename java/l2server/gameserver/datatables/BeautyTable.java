@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.datatables;
 
 import java.io.File;
@@ -32,7 +33,7 @@ import l2server.util.xml.XmlNode;
 
 public class BeautyTable implements Reloadable
 {
-	public class BeautyTemplate 
+	public class BeautyTemplate
 	{
 		private int _id;
 		private Map<Integer, BeautyInfo> _hairStyles = new HashMap<Integer, BeautyInfo>();
@@ -65,7 +66,7 @@ public class BeautyTable implements Reloadable
 		}
 	}
 	
-	public class BeautyInfo 
+	public class BeautyInfo
 	{
 		private int _id;
 		private int _parentId;
@@ -118,7 +119,7 @@ public class BeautyTable implements Reloadable
 			ReloadableManager.getInstance().register("beauty", this);
 		}
 	}
-
+	
 	@Override
 	public boolean reload()
 	{
@@ -137,15 +138,15 @@ public class BeautyTable implements Reloadable
 					boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
 					boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
 					if (isHairStyle || isFaceStyle || isHairColor)
-					{	
+					{
 						int id = d.getInt("id");
 						int parentId = d.getInt("parentId", 0);
 						int unk = d.getInt("unk");
 						int adenaCost = d.getInt("adenaCost");
 						int ticketCost = d.getInt("ticketCost");
-							
+						
 						BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
-							
+						
 						if (isHairStyle)
 							template.getHairStyles().put(id, info);
 						else if (isFaceStyle)
@@ -174,7 +175,7 @@ public class BeautyTable implements Reloadable
 	{
 		return _beautyTable.get(id);
 	}
-
+	
 	public static BeautyTable getInstance()
 	{
 		return SingletonHolder._instance;

@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
@@ -22,7 +23,6 @@ import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-
 /**
  * This class handles following admin commands:
  * - gm = turns gm mode off
@@ -32,11 +32,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class AdminGm implements IAdminCommandHandler
 {
 	private static Logger _log = Logger.getLogger(AdminGm.class.getName());
-	private static final String[] ADMIN_COMMANDS =
-	{
-		"admin_gm"
-	};
+	private static final String[] ADMIN_COMMANDS = { "admin_gm" };
 	
+	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		
@@ -46,6 +44,7 @@ public class AdminGm implements IAdminCommandHandler
 		return true;
 	}
 	
+	@Override
 	public String[] getAdminCommandList()
 	{
 		return ADMIN_COMMANDS;

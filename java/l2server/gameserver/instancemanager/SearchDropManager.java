@@ -3,15 +3,16 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package l2server.gameserver.instancemanager;
 
 import java.util.ArrayList;
@@ -104,7 +105,7 @@ public class SearchDropManager
 					continue;
 				itemNames.add(d.getName());
 				toReturn.add(d);
-			}	
+			}
 		}
 		return toReturn;
 	}
@@ -149,7 +150,7 @@ public class SearchDropManager
 			for (L2DropData drop : temp.getDropData())
 				drops.put(drop, 100.0f);
 		}
-
+		
 		if (!temp.getSpoilData().isEmpty())
 		{
 			for (L2DropData drop : temp.getSpoilData())
@@ -167,7 +168,7 @@ public class SearchDropManager
 			{
 				Drops d = new Drops(data.getItemId(), temp, false);
 				_allDrops.put(data.getItemId(), d);
-			}	
+			}
 		}
 		
 		for (Entry<L2DropData, Float> i : spoilDrop.entrySet())
@@ -181,7 +182,7 @@ public class SearchDropManager
 			{
 				Drops d = new Drops(data.getItemId(), temp, true);
 				_allDrops.put(data.getItemId(), d);
-			}	
+			}
 		}
 	}
 	
@@ -194,7 +195,7 @@ public class SearchDropManager
 		String spoil = isSpoil ? "spoil" : "normal";
 		
 		StringBuilder sb = new StringBuilder();
-	
+		
 		int maxMobsPerPage = 20;
 		int mobsSize = i.getDroppedBy(isSpoil).size();
 		int maxPages = mobsSize / maxMobsPerPage;
@@ -209,7 +210,7 @@ public class SearchDropManager
 		if ((pageEnd - pageStart) > maxMobsPerPage)
 			pageEnd = pageStart + maxMobsPerPage;
 		
-		sb.append((maxPages > 1 ? CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "_bbscustom;action;searchDrop;"+itemId+";"+spoil+";", ";") : ""));
+		sb.append((maxPages > 1 ? CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "_bbscustom;action;searchDrop;" + itemId + ";" + spoil + ";", ";") : ""));
 		sb.append("<br>");
 		sb.append("<table width=600>");
 		sb.append("<tr><td>Monster Name</td><td>Level</td><td>Chance</td><td>Count</td></tr>");
@@ -230,7 +231,7 @@ public class SearchDropManager
 				count = " (" + drop.min + "-" + drop.max + ")";
 			
 			String lineColor = "";
-			if (playerLevel < temp.Level + 8 && playerLevel > temp.Level - 8)
+			if ((playerLevel < (temp.Level + 8)) && (playerLevel > (temp.Level - 8)))
 				lineColor = "<font color=LEVEL>";
 			
 			String radar = "";
@@ -241,7 +242,7 @@ public class SearchDropManager
 					radar = "<a action=\"bypass " + (player.isGM() ? " -h admin_move_to " : "_bbscustom;action;showRadar; ") + spawn.getX() + " " + spawn.getY() + " " + spawn.getZ() + "\">";
 			}
 			
-			sb.append("<tr><td> " + radar + " " + lineColor +""+ temp.getName() + (radar.length() > 0 ? "</a>" : "") + "</td><td>"+temp.Level+"</td><td>"+Util.roundTo(drop.chance, 3)+"%</td><td>"+count+"" + (lineColor.length() > 0 ? "</font>" : "") +"</td></tr>");
+			sb.append("<tr><td> " + radar + " " + lineColor + "" + temp.getName() + (radar.length() > 0 ? "</a>" : "") + "</td><td>" + temp.Level + "</td><td>" + Util.roundTo(drop.chance, 3) + "%</td><td>" + count + "" + (lineColor.length() > 0 ? "</font>" : "") + "</td></tr>");
 		}
 		
 		sb.append("</table>");
@@ -263,7 +264,7 @@ public class SearchDropManager
 		sb.append("<table width=600>");
 		for (Drops d : drops)
 		{
-			sb.append("<tr><td><img src="+d.getIcon()+" width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;"+d.getItemId()+";"+spoil+";0\">"+d.getName()+"</a></td></tr>");
+			sb.append("<tr><td><img src=" + d.getIcon() + " width=32 height=32></td><td width=568><a action=\"bypass _bbscustom;action;searchDrop;" + d.getItemId() + ";" + spoil + ";0\">" + d.getName() + "</a></td></tr>");
 		}
 		sb.append("</table>");
 		return sb.toString();
@@ -284,7 +285,7 @@ public class SearchDropManager
 		}
 		
 		if (!temp.getDropData().isEmpty())
-		{	
+		{
 			for (L2DropData drop : temp.getDropData())
 			{
 				if (drop.getItemId() == itemId)
@@ -306,7 +307,6 @@ public class SearchDropManager
 		return null;
 	}
 	
-
 	public void overrideDrops(L2NpcTemplate temp)
 	{
 		for (Entry<Integer, Drops> i : _allDrops.entrySet())

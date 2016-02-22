@@ -694,6 +694,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal count="20" duration="3" landRate="100" stackLvl="#abnormalLvl" stackType="dot_mp">
 				<effect type="ManaDamOverTime" val="#damage" />
@@ -1182,6 +1183,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="NULL" />
 		<for>
 			<abnormal duration="3600" stackLvl="99" stackType="attack_time_up">
 				<effect type="Debuff" val="0" />
