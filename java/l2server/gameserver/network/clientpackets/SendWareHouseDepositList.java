@@ -48,7 +48,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -58,7 +58,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		{
 			int objId = readD();
 			long cnt = readQ();
-			if ((objId < 1) || (cnt < 0))
+			if (objId < 1 || cnt < 0)
 			{
 				_items = null;
 				return;
@@ -89,7 +89,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		final boolean isPrivate = warehouse instanceof PcWarehouse;
 		
 		final L2Npc manager = player.getLastFolkNPC();
-		if (((manager == null) || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
+		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
 			return;
 		
 		if (!isPrivate && !player.getAccessLevel().allowTransaction())
@@ -105,7 +105,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
 			return;
 		
 		// Freight price from config or normal price per item slot (30)
@@ -139,7 +139,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 		
 		// Check if enough adena and charge the fee
-		if ((currentAdena < fee) || !player.reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
+		if (currentAdena < fee || !player.reduceAdena(warehouse.getOwnerId() + "'s " + warehouse.getName(), fee, manager, false))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;
@@ -173,7 +173,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			
 			if (playerIU != null)
 			{
-				if ((oldItem.getCount() > 0) && (oldItem != newItem))
+				if (oldItem.getCount() > 0 && oldItem != newItem)
 					playerIU.addModifiedItem(oldItem);
 				else
 					playerIU.addRemovedItem(oldItem);

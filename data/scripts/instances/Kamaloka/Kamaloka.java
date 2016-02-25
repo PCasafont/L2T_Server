@@ -361,7 +361,7 @@ public class Kamaloka extends Quest
 		if (world != null)
 		{
 			// but not in kamaloka
-			if (!(world instanceof KamaWorld) || (world.templateId != templateId))
+			if (!(world instanceof KamaWorld) || world.templateId != templateId)
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
 				return;
@@ -451,7 +451,7 @@ public class Kamaloka extends Quest
 			for (int objectId : world.allowed)
 			{
 				L2PcInstance obj = L2World.getInstance().getPlayer(objectId);
-				if ((obj != null) && obj.isOnline())
+				if (obj != null && obj.isOnline())
 				{
 					InstanceManager.getInstance().setInstanceTime(objectId, world.templateId, reenter.getTimeInMillis());
 					obj.sendPacket(sm);
@@ -570,7 +570,7 @@ public class Kamaloka extends Quest
 		{
 			final L2Party party = player.getParty();
 			// only party leader can talk with escape teleporter
-			if ((party != null) && party.isLeader(player))
+			if (party != null && party.isLeader(player))
 			{
 				final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 				if (world instanceof KamaWorld)
@@ -582,7 +582,7 @@ public class Kamaloka extends Quest
 						
 						// teleports entire party away
 						for (L2PcInstance partyMember : party.getPartyMembers())
-							if ((partyMember != null) && (partyMember.getInstanceId() == world.instanceId))
+							if (partyMember != null && partyMember.getInstanceId() == world.instanceId)
 								teleportPlayer(partyMember, inst.getSpawnLoc(), 0);
 					}
 				}
@@ -624,7 +624,7 @@ public class Kamaloka extends Quest
 			if (world.firstRoom != null)
 			{
 				// is shaman killed ?
-				if ((world.shaman != 0) && (world.shaman == objectId))
+				if (world.shaman != 0 && world.shaman == objectId)
 				{
 					world.shaman = 0;
 					// stop respawn of the minions
@@ -640,7 +640,7 @@ public class Kamaloka extends Quest
 					{
 						final int skillId = FIRST_ROOM[world.index][2];
 						final int skillLvl = FIRST_ROOM[world.index][3];
-						if ((skillId != 0) && (skillLvl != 0))
+						if (skillId != 0 && skillLvl != 0)
 						{
 							final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill != null)
@@ -676,7 +676,7 @@ public class Kamaloka extends Quest
 					{
 						final int skillId = SECOND_ROOM[world.index][1];
 						final int skillLvl = SECOND_ROOM[world.index][2];
-						if ((skillId != 0) && (skillLvl != 0))
+						if (skillId != 0 && skillLvl != 0)
 						{
 							final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill != null)
@@ -689,7 +689,7 @@ public class Kamaloka extends Quest
 			}
 			
 			// miniboss spawned ?
-			if ((world.miniBoss != 0) && (world.miniBoss == objectId))
+			if (world.miniBoss != 0 && world.miniBoss == objectId)
 			{
 				world.miniBoss = 0;
 				
@@ -697,7 +697,7 @@ public class Kamaloka extends Quest
 				{
 					final int skillId = MINIBOSS[world.index][4];
 					final int skillLvl = MINIBOSS[world.index][5];
-					if ((skillId != 0) && (skillLvl != 0))
+					if (skillId != 0 && skillLvl != 0)
 					{
 						final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 						if (skill != null)
@@ -709,7 +709,7 @@ public class Kamaloka extends Quest
 			}
 			
 			// boss was killed, finish instance
-			if ((world.boss != null) && (world.boss == npc))
+			if (world.boss != null && world.boss == npc)
 			{
 				world.boss = null;
 				finishInstance(world);

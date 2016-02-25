@@ -102,13 +102,13 @@ public class L2Territory
 		double dx1 = p1._x - x;
 		double dx2 = p2._x - x;
 		
-		if ((dx1 >= 0) && (dx2 >= 0))
+		if (dx1 >= 0 && dx2 >= 0)
 			return true;
 		
-		if ((dx1 < 0) && (dx2 < 0))
+		if (dx1 < 0 && dx2 < 0)
 			return false;
 		
-		double dx0 = (dy1 * (p1._x - p2._x)) / (p1._y - p2._y);
+		double dx0 = dy1 * (p1._x - p2._x) / (p1._y - p2._y);
 		
 		return dx0 <= dx1;
 	}
@@ -125,7 +125,7 @@ public class L2Territory
 				intersect_count++;
 		}
 		
-		return (intersect_count % 2) == 1;
+		return intersect_count % 2 == 1;
 	}
 	
 	public int[] getRandomPoint()
@@ -162,8 +162,8 @@ public class L2Territory
 				{
 					double dx = p1._x - p[0];
 					double dy = p1._y - p[1];
-					double distance = Math.sqrt((dx * dx) + (dy * dy));
-					if ((curdistance == 0) || (distance < curdistance))
+					double distance = Math.sqrt(dx * dx + dy * dy);
+					if (curdistance == 0 || distance < curdistance)
 					{
 						curdistance = distance;
 						p[2] = p1._zmin + 100;

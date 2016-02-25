@@ -53,7 +53,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 	{
 		_listId = readD();
 		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 			return;
 		
 		_items = new int[count];
@@ -87,15 +87,14 @@ public final class RequestRefundItem extends L2GameClientPacket
 		}
 		
 		L2Object target = player.getTarget();
-		if (!player.isGM() && ((target == null // No target (ie GM Shop)
-				) || !((target instanceof L2MerchantInstance) || (target instanceof L2MerchantSummonInstance)) || (player.getInstanceId() != target.getInstanceId()) || !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false))) // Distance is too far
+		if (!player.isGM() && (target == null || !(target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) || player.getInstanceId() != target.getInstanceId() || !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false))) // Distance is too far
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		L2Character merchant = null;
-		if ((target instanceof L2MerchantInstance) || (target instanceof L2MerchantSummonInstance))
+		if (target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance)
 			merchant = (L2Character) target;
 		else if (!player.isGM())
 		{
@@ -155,7 +154,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		for (int i = 0; i < _items.length; i++)
 		{
 			int idx = _items[i];
-			if ((idx < 0) || (idx >= refund.length))
+			if (idx < 0 || idx >= refund.length)
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " sent invalid refund index", Config.DEFAULT_PUNISH);
 				return;
@@ -190,21 +189,21 @@ public final class RequestRefundItem extends L2GameClientPacket
 				slots++;
 		}
 		
-		if ((weight > Integer.MAX_VALUE) || (weight < 0) || !player.getInventory().validateWeight((int) weight))
+		if (weight > Integer.MAX_VALUE || weight < 0 || !player.getInventory().validateWeight((int) weight))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		if ((slots > Integer.MAX_VALUE) || (slots < 0) || !player.getInventory().validateCapacity((int) slots))
+		if (slots > Integer.MAX_VALUE || slots < 0 || !player.getInventory().validateCapacity((int) slots))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		if ((adena < 0) || !player.reduceAdena("Refund", adena, player.getLastFolkNPC(), false))
+		if (adena < 0 || !player.reduceAdena("Refund", adena, player.getLastFolkNPC(), false))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			sendPacket(ActionFailed.STATIC_PACKET);

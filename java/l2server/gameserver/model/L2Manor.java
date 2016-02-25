@@ -52,7 +52,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if (!crops.contains(seed.getCrop()) && (seed.getCrop() != 0) && !crops.contains(seed.getCrop()))
+			if (!crops.contains(seed.getCrop()) && seed.getCrop() != 0 && !crops.contains(seed.getCrop()))
 			{
 				crops.add(seed.getCrop());
 			}
@@ -113,7 +113,7 @@ public class L2Manor
 	public long getSeedBuyPrice(int seedId)
 	{
 		long buyPrice = getSeedBasicPrice(seedId);
-		return (buyPrice > 0 ? buyPrice : 1);
+		return buyPrice > 0 ? buyPrice : 1;
 	}
 	
 	public int getSeedMinLevel(int seedId)
@@ -216,7 +216,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if ((seed.getManorId() == castleId) && !crops.contains(seed.getCrop()))
+			if (seed.getManorId() == castleId && !crops.contains(seed.getCrop()))
 			{
 				crops.add(seed.getCrop());
 			}
@@ -236,7 +236,7 @@ public class L2Manor
 		
 		for (SeedData seed : _seeds.values())
 		{
-			if ((seed.getManorId() == castleId) && !seedsID.contains(seed.getId()))
+			if (seed.getManorId() == castleId && !seedsID.contains(seed.getId()))
 			{
 				seedsID.add(seed.getId());
 			}
@@ -337,7 +337,7 @@ public class L2Manor
 		
 		public int getReward(int type)
 		{
-			return (type == 1 ? _type1 : _type2);
+			return type == 1 ? _type1 : _type2;
 		}
 		
 		public int getLevel()

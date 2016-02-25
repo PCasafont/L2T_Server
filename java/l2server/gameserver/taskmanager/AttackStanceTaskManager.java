@@ -127,7 +127,7 @@ public class AttackStanceTaskManager
 						for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
 						{
 							L2Character actor = entry.getKey();
-							if ((current - entry.getValue()) > 15000)
+							if (current - entry.getValue() > 15000)
 							{
 								actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
 								if (actor instanceof L2PcInstance)

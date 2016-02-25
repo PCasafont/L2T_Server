@@ -78,7 +78,7 @@ public final class L2Augmentation
 	
 	public L2Skill getSkill()
 	{
-		if ((_effect2 != null) && (_effect2.getSkill() != null))
+		if (_effect2 != null && _effect2.getSkill() != null)
 			return _effect2.getSkill();
 		
 		if (_effect1 != null)

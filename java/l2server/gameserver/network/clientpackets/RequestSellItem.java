@@ -72,7 +72,7 @@ public final class RequestSellItem extends L2GameClientPacket
 	{
 		_listId = readD();
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -83,7 +83,7 @@ public final class RequestSellItem extends L2GameClientPacket
 			int objectId = readD();
 			int itemId = readD();
 			long cnt = readQ();
-			if ((objectId < 1) || (itemId < 1) || (cnt < 1))
+			if (objectId < 1 || itemId < 1 || cnt < 1)
 			{
 				_items = null;
 				return;
@@ -118,7 +118,7 @@ public final class RequestSellItem extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -128,13 +128,13 @@ public final class RequestSellItem extends L2GameClientPacket
 		L2Character merchant = null;
 		if (!player.isGM())
 		{
-			if ((target == null) || (!player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false)) // Distance is too far)
-					|| ((target.getInstanceId() != player.getObjectId()) && (player.getInstanceId() != target.getInstanceId())))
+			if (target == null || !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false) // Distance is too far)
+					|| target.getInstanceId() != player.getObjectId() && player.getInstanceId() != target.getInstanceId())
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-			if ((target instanceof L2MerchantInstance) || (target instanceof L2MerchantSummonInstance))
+			if (target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance)
 				merchant = (L2Character) target;
 			else
 			{
@@ -190,12 +190,12 @@ public final class RequestSellItem extends L2GameClientPacket
 		for (Item i : _items)
 		{
 			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "sell");
-			if ((item == null) || (!item.isSellable()))
+			if (item == null || !item.isSellable())
 				continue;
 			
 			long price = item.getItem().getSalePrice();
 			totalPrice += price * i.getCount();
-			if (((MAX_ADENA / i.getCount()) < price) || (totalPrice > MAX_ADENA))
+			if (MAX_ADENA / i.getCount() < price || totalPrice > MAX_ADENA)
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
 				return;

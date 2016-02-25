@@ -79,7 +79,7 @@ public class TargetPartyAnywhere implements ISkillTargetTypeHandler
 				{
 					targetList.add(partyMember);
 					
-					if ((partyMember.getPet() != null) && !partyMember.getPet().isDead())
+					if (partyMember.getPet() != null && !partyMember.getPet().isDead())
 					{
 						targetList.add(partyMember.getPet());
 					}

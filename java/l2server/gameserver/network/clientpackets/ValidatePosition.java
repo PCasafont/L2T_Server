@@ -57,7 +57,7 @@ public class ValidatePosition extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || activeChar.isTeleporting() || activeChar.inObserverMode())
+		if (activeChar == null || activeChar.isTeleporting() || activeChar.inObserverMode())
 			return;
 		
 		final int realX = activeChar.getX();
@@ -70,7 +70,7 @@ public class ValidatePosition extends L2GameClientPacket
 			Log.fine("server pos: " + realX + " " + realY + " " + realZ + " head " + activeChar.getHeading());
 		}
 		
-		if ((_x == 0) && (_y == 0))
+		if (_x == 0 && _y == 0)
 		{
 			if (realX != 0) // in this case this seems like a client error
 				return;
@@ -86,7 +86,7 @@ public class ValidatePosition extends L2GameClientPacket
 				dx = _x - activeChar.getInVehiclePosition().getX();
 				dy = _y - activeChar.getInVehiclePosition().getY();
 				dz = _z - activeChar.getInVehiclePosition().getZ();
-				diffSq = ((dx * dx) + (dy * dy));
+				diffSq = dx * dx + dy * dy;
 				if (diffSq > 250000)
 					sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInVehiclePosition()));
 			}
@@ -112,7 +112,7 @@ public class ValidatePosition extends L2GameClientPacket
 		dx = _x - realX;
 		dy = _y - realY;
 		dz = _z - realZ;
-		diffSq = ((dx * dx) + (dy * dy));
+		diffSq = dx * dx + dy * dy;
 		
 		/*L2Party party = activeChar.getParty();
 		if (party != null && activeChar.getLastPartyPositionDistance(_x, _y, _z) > 150)
@@ -156,11 +156,11 @@ public class ValidatePosition extends L2GameClientPacket
 			// when too far from server calculated true coordinate.
 			// Due to geodata/zone errors, some Z axis checks are made. (maybe a temporary solution)
 			// Important: this code part must work together with L2Character.updatePosition
-			if ((Config.GEODATA > 0) && ((diffSq > 40000) || (Math.abs(dz) > 100)))
+			if (Config.GEODATA > 0 && (diffSq > 40000 || Math.abs(dz) > 100))
 			{
 				//if ((_z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
 				
-				if ((Math.abs(dz) > 100) && (Math.abs(dz) < 1500) && (Math.abs(_z - activeChar.getClientZ()) < 800))
+				if (Math.abs(dz) > 100 && Math.abs(dz) < 1500 && Math.abs(_z - activeChar.getClientZ()) < 800)
 				{
 					activeChar.setXYZ(realX, realY, _z);
 					realZ = _z;

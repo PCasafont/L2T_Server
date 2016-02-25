@@ -45,7 +45,7 @@ public final class RequestCompoundStart extends L2GameClientPacket
 		activeChar.setCompoundItem1(null);
 		activeChar.setCompoundItem2(null);
 		
-		if ((compoundItem1 == null) || (compoundItem2 == null))
+		if (compoundItem1 == null || compoundItem2 == null)
 			return;
 		
 		Combination combination = CompoundTable.getInstance().getCombination(compoundItem1.getItemId(), compoundItem2.getItemId());

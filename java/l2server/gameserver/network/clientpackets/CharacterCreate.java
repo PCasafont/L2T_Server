@@ -82,7 +82,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		_race = readD();
 		_sex = (byte) readD();
 		_classId = readD();
-		if (Config.IS_CLASSIC && (_classId > 53))
+		if (Config.IS_CLASSIC && _classId > 53)
 		{
 			_classId = 53;
 			_name = ""; // Force invalid message when they try to create > dwarf on classic
@@ -95,9 +95,9 @@ public final class CharacterCreate extends L2GameClientPacket
 				continue;
 			
 			int startingClassId = template.startingClassId;
-			if ((_race == 5) && (_sex == 1))
+			if (_race == 5 && _sex == 1)
 				startingClassId++;
-			else if ((_race == 6) && (_sex == 0))
+			else if (_race == 6 && _sex == 0)
 				_sex = 1;
 			if (startingClassId == _classId)
 			{
@@ -127,7 +127,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		}
 		
 		// Last Verified: May 30, 2009 - Gracia Final - Players are able to create characters with names consisting of as little as 1,2,3 letter/number combinations.
-		if ((_name.length() < 1) || (_name.length() > 16))
+		if (_name.length() < 1 || _name.length() > 16)
 		{
 			if (Config.DEBUG)
 				Log.fine("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Your title cannot exceed 16 characters in length. Please try again.");
@@ -158,7 +158,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_face > 2) || (_face < 0))
+		if (_face > 2 || _face < 0)
 		{
 			Log.warning("Character Creation Failure: Character face " + _face + " is invalid. Possible client hack. " + getClient());
 			
@@ -166,7 +166,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_hairStyle < 0) || ((_sex == 0) && (_hairStyle > 4)) || ((_sex != 0) && (_hairStyle > 6)))
+		if (_hairStyle < 0 || _sex == 0 && _hairStyle > 4 || _sex != 0 && _hairStyle > 6)
 		{
 			Log.warning("Character Creation Failure: Character hair style " + _hairStyle + " is invalid. Possible client hack. " + getClient());
 			
@@ -174,7 +174,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_hairColor > 3) || (_hairColor < 0))
+		if (_hairColor > 3 || _hairColor < 0)
 		{
 			Log.warning("Character Creation Failure: Character hair color " + _hairColor + " is invalid. Possible client hack. " + getClient());
 			
@@ -190,7 +190,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		 */
 		synchronized (CharNameTable.getInstance())
 		{
-			if ((CharNameTable.getInstance().accountCharNumber(getClient().getAccountName()) >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT) && (Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0))
+			if (CharNameTable.getInstance().accountCharNumber(getClient().getAccountName()) >= Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT && Config.MAX_CHARACTERS_NUMBER_PER_ACCOUNT != 0)
 			{
 				if (Config.DEBUG)
 					Log.fine("Max number of characters reached. Creation failed.");
@@ -330,7 +330,7 @@ public final class CharacterCreate extends L2GameClientPacket
 				continue;
 			
 			newChar.addSkill(SkillTable.getInstance().getInfo(skill.getId(), skill.getLevel()), true);
-			if ((skill.getId() == 1001) || (skill.getId() == 1177) || (skill.getId() == 30001))
+			if (skill.getId() == 1001 || skill.getId() == 1177 || skill.getId() == 30001)
 			{
 				shortcut = new L2ShortCut(1, 0, 2, skill.getId(), skill.getLevel(), 1);
 				newChar.registerShortCut(shortcut);

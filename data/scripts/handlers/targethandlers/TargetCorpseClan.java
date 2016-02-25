@@ -75,10 +75,10 @@ public class TargetCorpseClan implements ISkillTargetTypeHandler
 				{
 					L2PcInstance newTarget = member.getPlayerInstance();
 					
-					if ((newTarget == null) || (newTarget == player))
+					if (newTarget == null || newTarget == player)
 						continue;
 					
-					if (player.isInDuel() && ((player.getDuelId() != newTarget.getDuelId()) || ((player.getParty() != null) && !player.getParty().isInParty(newTarget))))
+					if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() || player.getParty() != null && !player.getParty().isInParty(newTarget)))
 						continue;
 					
 					if (!newTarget.isDead())
@@ -114,7 +114,7 @@ public class TargetCorpseClan implements ISkillTargetTypeHandler
 			{
 				for (L2Object newTarget : objs)
 				{
-					if ((newTarget instanceof L2Npc) && (((L2Npc) newTarget).getFactionId() == npc.getFactionId()))
+					if (newTarget instanceof L2Npc && ((L2Npc) newTarget).getFactionId() == npc.getFactionId())
 					{
 						if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
 							continue;

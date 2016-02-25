@@ -75,7 +75,7 @@ public class L2ContactList
 			{
 				contactId = rset.getInt(1);
 				contactName = CharNameTable.getInstance().getNameById(contactId);
-				if ((contactName == null) || (contactName == activeChar.getName()) || (contactId == activeChar.getObjectId()))
+				if (contactName == null || contactName == activeChar.getName() || contactId == activeChar.getObjectId())
 					continue;
 				
 				_contacts.add(contactName);

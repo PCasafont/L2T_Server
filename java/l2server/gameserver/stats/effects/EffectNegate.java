@@ -58,7 +58,7 @@ public class EffectNegate extends L2Effect
 				{
 					for (String stackType : effect.getStackType())
 					{
-						if (negateAbnormalType.equalsIgnoreCase(stackType) && (skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl()))
+						if (negateAbnormalType.equalsIgnoreCase(stackType) && skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
 						{
 							effect.exit();
 							break;

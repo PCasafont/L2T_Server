@@ -63,12 +63,12 @@ public class TeamSurvival extends EventInstance
 			if (++i > _config.getLocation().getTeamCount())
 				break;
 			
-			if ((team.getParticipatedPlayerCount() > 0) && team.isAlive())
+			if (team.getParticipatedPlayerCount() > 0 && team.isAlive())
 			{
 				html += "Team " + team.getName() + " survivors:<br>";
 				for (L2PcInstance participant : team.getParticipatedPlayers().values())
 				{
-					if ((participant != null) && !participant.isDead())
+					if (participant != null && !participant.isDead())
 						html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 				}
 				html = html.substring(0, html.length() - 2);
@@ -91,7 +91,7 @@ public class TeamSurvival extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
+		if (killedPlayerInstance == null || !isState(EventState.STARTED))
 			return;
 		
 		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
@@ -130,7 +130,7 @@ public class TeamSurvival extends EventInstance
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
 			}
 			team.cleanMe();
-			if (((_config.getLocation().getTeamCount() != 4) && (!_teams[0].isAlive() || !_teams[1].isAlive())) || ((_config.getLocation().getTeamCount() == 4) && ((!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[2].isAlive()) || (!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[3].isAlive()) || (!_teams[0].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive()) || (!_teams[1].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive()))))
+			if (_config.getLocation().getTeamCount() != 4 && (!_teams[0].isAlive() || !_teams[1].isAlive()) || _config.getLocation().getTeamCount() == 4 && (!_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[2].isAlive() || !_teams[0].isAlive() && !_teams[1].isAlive() && !_teams[3].isAlive() || !_teams[0].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive() || !_teams[1].isAlive() && !_teams[2].isAlive() && !_teams[3].isAlive()))
 				stopFight();
 		}
 	}

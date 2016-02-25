@@ -104,7 +104,7 @@ public class AdminEnchant implements IAdminCommandHandler
 					int ench = Integer.parseInt(command.substring(12));
 					
 					// check value
-					if ((ench < 0) || (ench > 65535))
+					if (ench < 0 || ench > 65535)
 						activeChar.sendMessage("You must set the enchant level to be between 0-65535.");
 					else
 						setEnchant(activeChar, ench, armorType);
@@ -153,7 +153,7 @@ public class AdminEnchant implements IAdminCommandHandler
 		
 		// only attempt to enchant if there is a weapon equipped
 		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
-		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
+		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType)
 		{
 			itemInstance = parmorInstance;
 		}

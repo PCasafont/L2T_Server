@@ -43,7 +43,7 @@ public class EffectGrow extends L2Effect
 			L2Npc npc = (L2Npc) getEffected();
 			//TODO: Uncomment line when fix for mobs falling underground is found
 			//npc.setCollisionHeight((int) (npc.getCollisionHeight() * 1.24));
-			npc.setCollisionRadius((npc.getCollisionRadius() * 1.19));
+			npc.setCollisionRadius(npc.getCollisionRadius() * 1.19);
 			
 			getEffected().startVisualEffect(VisualEffect.GROW);
 			return true;

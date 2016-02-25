@@ -36,7 +36,7 @@ public class TargetPet implements ISkillTargetTypeHandler
 	{
 		// FIXME target = activeChar.getPet();
 		
-		if ((target != null) && !target.isDead())
+		if (target != null && !target.isDead())
 			return new L2Character[] { target };
 		
 		return null;

@@ -55,7 +55,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 				continue;
 			}
 			
-			if ((cha.getLevel() < _minlvl) || (cha.getLevel() > _maxlvl))
+			if (cha.getLevel() < _minlvl || cha.getLevel() > _maxlvl)
 				continue;
 			
 			_members.add(cha);

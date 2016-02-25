@@ -57,7 +57,7 @@ public class Q10288_SecretMission extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if ((npc.getNpcId() == _greymore) && event.equalsIgnoreCase("32757-03.htm"))
+		else if (npc.getNpcId() == _greymore && event.equalsIgnoreCase("32757-03.htm"))
 		{
 			st.unset("cond");
 			st.takeItems(_letter, -1);
@@ -76,7 +76,7 @@ public class Q10288_SecretMission extends Quest
 					st.playSound("ItemSound.quest_middle");
 				}
 			}
-			else if ((st.getState() == State.COMPLETED) && event.equalsIgnoreCase("teleport"))
+			else if (st.getState() == State.COMPLETED && event.equalsIgnoreCase("teleport"))
 			{
 				player.teleToLocation(118833, -80589, -2688);
 				return null;
@@ -125,7 +125,7 @@ public class Q10288_SecretMission extends Quest
 				htmltext = "32780-06.html";
 			}
 		}
-		else if ((npc.getNpcId() == _greymore) && (st.getInt("cond") == 2))
+		else if (npc.getNpcId() == _greymore && st.getInt("cond") == 2)
 		{
 			return "32757-01.htm";
 		}

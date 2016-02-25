@@ -45,7 +45,7 @@ public class TargetMultiface implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		
-		if ((!(target instanceof L2Attackable) && !(target instanceof L2PcInstance)))
+		if (!(target instanceof L2Attackable) && !(target instanceof L2PcInstance))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
@@ -66,7 +66,7 @@ public class TargetMultiface implements ISkillTargetTypeHandler
 				if (!Util.checkIfInRange(radius, activeChar, obj, true))
 					continue;
 				
-				if ((obj instanceof L2Attackable) && (obj != target))
+				if (obj instanceof L2Attackable && obj != target)
 					targetList.add((L2Character) obj);
 				
 				if (targetList.size() == 0)

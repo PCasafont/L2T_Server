@@ -178,7 +178,7 @@ public class MinionList
 		deleteSpawnedMinions();
 		
 		// if master has spawn and can respawn - try to reuse minions
-		if ((_reusedMinionReferences == null) && ((_master.getTemplate().getMinionData() != null) || (_master.getTemplate().getRandomMinionData() != null)) && (_master.getSpawn() != null) && _master.getSpawn().isRespawnEnabled())
+		if (_reusedMinionReferences == null && (_master.getTemplate().getMinionData() != null || _master.getTemplate().getRandomMinionData() != null) && _master.getSpawn() != null && _master.getSpawn().isRespawnEnabled())
 			_reusedMinionReferences = new ArrayList<L2MonsterInstance>();
 	}
 	
@@ -225,7 +225,7 @@ public class MinionList
 		
 		//Broadcast.toGameMasters("OnMinionDie....");
 		//Broadcast.toGameMasters(minionData + ", " + (minionData != null ? minionData.getRespawnTime() : ""));
-		if ((minionData != null) && (minionData.getRespawnTime() != 0))
+		if (minionData != null && minionData.getRespawnTime() != 0)
 		{
 			time = minionData.getRespawnTime() * 1000;
 			//Broadcast.toGameMasters("Will respawn in ...." + time);
@@ -233,9 +233,9 @@ public class MinionList
 		
 		if (Config.isServer(Config.DREAMS))
 			Broadcast.toGameMasters(minion.getName() + " will respawn in " + time);
-		if ((time > 0) && !_master.isAlikeDead() && (minionData != null))
+		if (time > 0 && !_master.isAlikeDead() && minionData != null)
 		{
-			if ((minionData.getMaxRespawn() == 0) || (++_spawnedMinions < minionData.getMaxRespawn()))
+			if (minionData.getMaxRespawn() == 0 || ++_spawnedMinions < minionData.getMaxRespawn())
 				ThreadPoolManager.getInstance().scheduleGeneral(new MinionRespawnTask(minion), time);
 		}
 	}
@@ -259,7 +259,7 @@ public class MinionList
 		
 		for (L2MonsterInstance minion : _minionReferences)
 		{
-			if ((minion != null) && !minion.isDead() && (callerIsMaster || !minion.isInCombat()))
+			if (minion != null && !minion.isDead() && (callerIsMaster || !minion.isInCombat()))
 				minion.addDamageHate(attacker, 0, aggro);
 		}
 	}
@@ -275,19 +275,19 @@ public class MinionList
 		
 		for (L2MonsterInstance minion : _minionReferences)
 		{
-			if ((minion != null) && !minion.isDead() && !minion.isMovementDisabled())
+			if (minion != null && !minion.isDead() && !minion.isMovementDisabled())
 			{
 				int newX = Rnd.get(minRadius * 2, offset * 2); // x
 				int newY = Rnd.get(newX, offset * 2); // distance
-				newY = (int) Math.sqrt((newY * newY) - (newX * newX)); // y
-				if (newX > (offset + minRadius))
-					newX = (_master.getX() + newX) - offset;
+				newY = (int) Math.sqrt(newY * newY - newX * newX); // y
+				if (newX > offset + minRadius)
+					newX = _master.getX() + newX - offset;
 				else
-					newX = (_master.getX() - newX) + minRadius;
-				if (newY > (offset + minRadius))
-					newY = (_master.getY() + newY) - offset;
+					newX = _master.getX() - newX + minRadius;
+				if (newY > offset + minRadius)
+					newY = _master.getY() + newY - offset;
 				else
-					newY = (_master.getY() - newY) + minRadius;
+					newY = _master.getY() - newY + minRadius;
 				
 				minion.teleToLocation(newX, newY, _master.getZ());
 			}
@@ -300,14 +300,14 @@ public class MinionList
 			return;
 		
 		// searching in reused minions
-		if ((_reusedMinionReferences != null) && !_reusedMinionReferences.isEmpty())
+		if (_reusedMinionReferences != null && !_reusedMinionReferences.isEmpty())
 		{
 			L2MonsterInstance minion;
 			Iterator<L2MonsterInstance> iter = _reusedMinionReferences.iterator();
 			while (iter.hasNext())
 			{
 				minion = iter.next();
-				if ((minion != null) && (minion.getNpcId() == minionId))
+				if (minion != null && minion.getNpcId() == minionId)
 				{
 					iter.remove();
 					minion.refreshID();
@@ -368,7 +368,7 @@ public class MinionList
 		if (minionTemplate == null)
 			return null;
 		
-		if (Config.isServer(Config.TENKAI_ESTHUS) && ((minionTemplate.Level + 5) < master.getLevel()))
+		if (Config.isServer(Config.TENKAI_ESTHUS) && minionTemplate.Level + 5 < master.getLevel())
 			minionTemplate.Level = (byte) master.getLevel();
 		
 		// Create and Init the Minion and generate its Identifier
@@ -398,15 +398,15 @@ public class MinionList
 		
 		int newX = Rnd.get(minRadius * 2, offset * 2); // x
 		int newY = Rnd.get(newX, offset * 2); // distance
-		newY = (int) Math.sqrt((newY * newY) - (newX * newX)); // y
-		if (newX > (offset + minRadius))
-			newX = (master.getX() + newX) - offset;
+		newY = (int) Math.sqrt(newY * newY - newX * newX); // y
+		if (newX > offset + minRadius)
+			newX = master.getX() + newX - offset;
 		else
-			newX = (master.getX() - newX) + minRadius;
-		if (newY > (offset + minRadius))
-			newY = (master.getY() + newY) - offset;
+			newX = master.getX() - newX + minRadius;
+		if (newY > offset + minRadius)
+			newY = master.getY() + newY - offset;
 		else
-			newY = (master.getY() - newY) + minRadius;
+			newY = master.getY() - newY + minRadius;
 		
 		minion.spawnMe(newX, newY, master.getZ());
 		
@@ -423,7 +423,7 @@ public class MinionList
 		int count = 0;
 		for (L2MonsterInstance minion : _minionReferences)
 		{
-			if ((minion != null) && (minion.getNpcId() == minionId))
+			if (minion != null && minion.getNpcId() == minionId)
 				count++;
 		}
 		return count;

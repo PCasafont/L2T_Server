@@ -59,7 +59,7 @@ public class ExShowSellCropList extends L2GameServerPacket
 		
 		for (CropProcure crop : crops)
 		{
-			if (_cropsItems.containsKey(crop.getId()) && (crop.getAmount() > 0))
+			if (_cropsItems.containsKey(crop.getId()) && crop.getAmount() > 0)
 			{
 				_castleCrops.put(crop.getId(), crop);
 			}

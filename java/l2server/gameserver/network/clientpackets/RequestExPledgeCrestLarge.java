@@ -49,7 +49,7 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket
 		{
 			for (int i = 0; i < data.length; i++)
 			{
-				if ((data[i] == null) || (data[i].length == 0))
+				if (data[i] == null || data[i].length == 0)
 					break;
 				
 				sendPacket(new ExPledgeCrestLarge(_crestId, i, data[i]));

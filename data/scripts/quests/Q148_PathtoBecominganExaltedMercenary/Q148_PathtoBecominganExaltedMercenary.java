@@ -75,7 +75,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 			{
 				case State.CREATED:
 					QuestState _prev = player.getQuestState("147_PathtoBecominganEliteMercenary");
-					if ((player.getClan() != null) && (player.getClan().getHasCastle() > 0))
+					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
 					{
 						htmltext = "castle.htm";
 					}
@@ -85,7 +85,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 					}
 					else
 					{
-						if ((_prev != null) && (_prev.getState() == State.COMPLETED))
+						if (_prev != null && _prev.getState() == State.COMPLETED)
 							htmltext = "exalted-00a.htm";
 						else
 							htmltext = "exalted-00.htm";

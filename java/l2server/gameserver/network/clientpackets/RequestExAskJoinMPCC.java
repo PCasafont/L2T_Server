@@ -132,7 +132,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
 	{
 		boolean hasRight = false;
-		if ((requestor.getClan() != null) && (requestor.getClan().getLeaderId() == requestor.getObjectId()) && (requestor.getClan().getLevel() >= 5)) // Clanleader of lvl5 Clan or higher
+		if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId() && requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
 			hasRight = true;
 		else if (requestor.getInventory().getItemByItemId(8871) != null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
 			hasRight = true;

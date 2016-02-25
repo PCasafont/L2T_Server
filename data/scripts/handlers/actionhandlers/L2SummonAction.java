@@ -43,13 +43,13 @@ public class L2SummonAction implements IActionHandler
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
 		}
 		
-		if ((activeChar == ((L2Summon) target).getOwner()) && !(target instanceof L2CloneInstance))
+		if (activeChar == ((L2Summon) target).getOwner() && !(target instanceof L2CloneInstance))
 		{
 			if (target instanceof L2SummonInstance)
 				activeChar.setActiveSummon((L2SummonInstance) target);
@@ -77,7 +77,7 @@ public class L2SummonAction implements IActionHandler
 			if (Config.DEBUG)
 				_log.fine("new target selected:" + target.getObjectId());
 			
-			if (((L2Summon) target).getTemplate().Targetable || (((L2Summon) target).getOwner() == activeChar))
+			if (((L2Summon) target).getTemplate().Targetable || ((L2Summon) target).getOwner() == activeChar)
 			{
 				activeChar.setTarget(target);
 				activeChar.sendPacket(new ValidateLocation((L2Character) target));

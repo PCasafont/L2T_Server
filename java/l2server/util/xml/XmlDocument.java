@@ -43,7 +43,7 @@ public class XmlDocument
 	
 	public XmlDocument(File file)
 	{
-		if ((file == null) || !file.exists())
+		if (file == null || !file.exists())
 		{
 			Log.warning("The following XML could not be loaded:");
 			Log.warning("- " + file.getAbsolutePath());

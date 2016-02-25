@@ -51,13 +51,13 @@ public class Q10361_RolesOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _lakcis) && event.equalsIgnoreCase("32977-03.htm"))
+		if (npc.getNpcId() == _lakcis && event.equalsIgnoreCase("32977-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if ((npc.getNpcId() == _chesha) && event.equalsIgnoreCase("33449-03.htm") && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(22, 1);
@@ -99,7 +99,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _chesha) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _chesha && st.getInt("cond") == 1)
 			htmltext = "33449-01.htm";
 		return htmltext;
 	}
@@ -107,7 +107,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return (player.getLevel() >= 10) && (player.getLevel() <= 20);
+		return player.getLevel() >= 10 && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

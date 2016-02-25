@@ -46,7 +46,7 @@ public class GeneralDilios extends L2AttackableAIScript
 	1800698, // Messenger, inform the brothers in Kucereus' clan outpost! Brave adventurers who have challenged the Seed of Infinity are currently infiltrating the Hall of Erosion through the defensively weak Hall of Suffering!
 	//1800699,  Messenger, inform the brothers in Kucereus' clan outpost! Sweeping the Seed of Infinity is currently complete to the Heart of the Seed. Ekimus is being directly attacked, and the Undead remaining in the Hall of Suffering are being eradicated!
 	1800700 // Messenger, inform the patrons of the Keucereus Alliance Base! The Seed of Infinity is currently secured under the flag of the Keucereus Alliance!
-	//1800702   Messenger, inform the patrons of the Keucereus Alliance Base! The resurrected Undead in the Seed of Infinity are pouring into the Hall of Suffering and the Hall of Erosion! 
+	//1800702   Messenger, inform the patrons of the Keucereus Alliance Base! The resurrected Undead in the Seed of Infinity are pouring into the Hall of Suffering and the Hall of Erosion!
 	//1800703   Messenger, inform the brothers in Kucereus' clan outpost! Ekimus is about to be revived by the resurrected Undead in Seed of Infinity. Send all reinforcements to the Heart and the Hall of Suffering!
 	};
 	
@@ -54,7 +54,7 @@ public class GeneralDilios extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 		findNpcs();
-		if ((_general == null) || _guards.isEmpty())
+		if (_general == null || _guards.isEmpty())
 			throw new NullPointerException("Cannot find npcs!");
 		startQuestTimer("command_0", 60000, null, null);
 	}

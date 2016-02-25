@@ -74,7 +74,7 @@ public class DeathMatch extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
 	{
-		if ((killedPlayer == null) || !isState(EventState.STARTED))
+		if (killedPlayer == null || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayer, _teams[0].getCoords(), false, false);

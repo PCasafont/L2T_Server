@@ -65,7 +65,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if ((_bossStage == 3) && (npc.getNpcId() == _thirdBoss))
+		if (_bossStage == 3 && npc.getNpcId() == _thirdBoss)
 		{
 			//Update the first boss to killed
 			_firstBossInstance.doDie(killer);
@@ -85,7 +85,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	{
 		if (npc.getNpcId() == _firstBoss)
 		{
-			if ((_bossStage == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+			if (_bossStage == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 			{
 				_bossStage = 1;
 				
@@ -104,7 +104,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 		}
 		else if (npc.getNpcId() == _secondBoss)
 		{
-			if ((_bossStage == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+			if (_bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 			{
 				_bossStage = 2;
 				
@@ -117,7 +117,7 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 		}
 		else if (npc.getNpcId() == _thirdBoss)
 		{
-			if ((_bossStage == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.50)))
+			if (_bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
 			{
 				_bossStage = 3;
 				

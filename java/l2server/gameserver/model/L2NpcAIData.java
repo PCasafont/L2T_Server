@@ -160,7 +160,7 @@ public class L2NpcAIData
 	
 	public void setClan(String clan)
 	{
-		if ((clan != null) && !clan.equals("") && !clan.equalsIgnoreCase("null"))
+		if (clan != null && !clan.equals("") && !clan.equalsIgnoreCase("null"))
 			_clan = clan.intern();
 	}
 	
@@ -171,7 +171,7 @@ public class L2NpcAIData
 	
 	public void setEnemyClan(String enemyClan)
 	{
-		if ((enemyClan != null) && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
+		if (enemyClan != null && !enemyClan.equals("") && !enemyClan.equalsIgnoreCase("null"))
 			_enemyClan = enemyClan.intern();
 	}
 	

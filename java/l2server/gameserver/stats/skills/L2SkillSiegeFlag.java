@@ -57,7 +57,7 @@ public class L2SkillSiegeFlag extends L2Skill
 		
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
+		if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
 			return;
 		
 		if (!checkIfOkToPlaceFlag(player, true, _isOutpost))
@@ -69,7 +69,7 @@ public class L2SkillSiegeFlag extends L2Skill
 			try
 			{
 				// Spawn a new flag
-				L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate((_isOutpost ? 36590 : 35062)), _isAdvanced, _isOutpost);
+				L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(_isOutpost ? 36590 : 35062), _isAdvanced, _isOutpost);
 				flag.setTitle(player.getClan().getName());
 				flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 				flag.setHeading(player.getHeading());
@@ -150,13 +150,13 @@ public class L2SkillSiegeFlag extends L2Skill
 		String text = "";
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if ((castle == null) || (castle.getCastleId() <= 0))
+		if (castle == null || castle.getCastleId() <= 0)
 			text = "You must be on castle ground to place a flag.";
 		else if (!castle.getSiege().getIsInProgress())
 			text = "You can only place a flag during a siege.";
 		else if (castle.getSiege().getAttackerClan(player.getClan()) == null)
 			text = "You must be an attacker to place a flag.";
-		else if ((player.getClan() == null) || !player.isClanLeader())
+		else if (player.getClan() == null || !player.isClanLeader())
 			text = "You must be a clan leader to place a flag.";
 		else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= SiegeManager.getInstance().getFlagMaxCount())
 			text = "You have already placed the maximum number of flags possible.";
@@ -185,13 +185,13 @@ public class L2SkillSiegeFlag extends L2Skill
 		String text = "";
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if ((fort == null) || (fort.getFortId() <= 0))
+		if (fort == null || fort.getFortId() <= 0)
 			text = "You must be on fort ground to place a flag.";
 		else if (!fort.getSiege().getIsInProgress())
 			text = "You can only place a flag during a siege.";
 		else if (fort.getSiege().getAttackerClan(player.getClan()) == null)
 			text = "You must be an attacker to place a flag.";
-		else if ((player.getClan() == null) || !player.isClanLeader())
+		else if (player.getClan() == null || !player.isClanLeader())
 			text = "You must be a clan leader to place a flag.";
 		else if (fort.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= Config.FS_MAX_FLAGS)
 			text = "You have already placed the maximum number of flags possible.";
@@ -217,17 +217,17 @@ public class L2SkillSiegeFlag extends L2Skill
 		Castle castle = CastleManager.getInstance().getCastle(activeChar);
 		Fort fort = FortManager.getInstance().getFort(activeChar);
 		
-		if ((castle == null) && (fort == null))
+		if (castle == null && fort == null)
 			return false;
 		
 		String text = "";
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if (((fort != null) && (fort.getFortId() == 0)) || ((castle != null) && (castle.getCastleId() == 0)))
+		if (fort != null && fort.getFortId() == 0 || castle != null && castle.getCastleId() == 0)
 			text = "You must be on fort or castle ground to construct an outpost or flag.";
-		else if (((fort != null) && !fort.getZone().isActive()) || ((castle != null) && !castle.getZone().isActive()))
+		else if (fort != null && !fort.getZone().isActive() || castle != null && !castle.getZone().isActive())
 			text = "You can only construct an outpost or flag on siege field.";
-		else if ((player.getClan() == null) || !player.isClanLeader())
+		else if (player.getClan() == null || !player.isClanLeader())
 			text = "You must be a clan leader to construct an outpost or flag.";
 		else if (player.isInsideZone(L2Character.ZONE_NOHQ))
 			text = "You cannot construct outpost or flag here.";

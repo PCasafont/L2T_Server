@@ -53,27 +53,27 @@ public class L2AWizardAI extends L2APlayerAI
 			if (_player.isInsideRadius(target, 100, true, true))
 			{
 				L2Skill skill = _player.getKnownSkill(MAGICAL_EVASION);
-				if ((skill != null) && _player.useMagic(skill, true, false))
+				if (skill != null && _player.useMagic(skill, true, false))
 					return true;
 			}
 			else if (!_player.isInsideRadius(target, 1000, true, true))
 			{
 				L2Skill skill = _player.getKnownSkill(MAGICAL_CHARGE);
-				if ((skill != null) && _player.useMagic(skill, true, false))
+				if (skill != null && _player.useMagic(skill, true, false))
 					return true;
 			}
 		}
 		
 		for (L2Character attacker : _player.getKnownList().getKnownCharactersInRadius(100))
 		{
-			if (_player.isEnemy(attacker) && attacker.isAttackingNow() && (attacker.getTarget() == _player))
+			if (_player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == _player)
 			{
 				L2Skill skill = _player.getKnownSkill(MAGICAL_CHARGE);
-				if ((skill != null) && _player.useMagic(skill, true, false))
+				if (skill != null && _player.useMagic(skill, true, false))
 					return true;
 				
 				skill = _player.getKnownSkill(MAGICAL_EVASION);
-				if ((skill != null) && _player.useMagic(skill, true, false))
+				if (skill != null && _player.useMagic(skill, true, false))
 					return true;
 			}
 		}
@@ -84,7 +84,7 @@ public class L2AWizardAI extends L2APlayerAI
 		{
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (!skill.isOffensive() || (skill.getTargetType() != L2SkillTargetType.TARGET_ONE) || (skill.getHitTime() > 5000))
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE || skill.getHitTime() > 5000)
 					continue;
 				
 				if (_player.useMagic(skill, true, false))
@@ -103,7 +103,7 @@ public class L2AWizardAI extends L2APlayerAI
 					stance = 5;
 				
 				L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + stance, skill.getLevelHash());
-				if ((magic.getPower() > 150) && (magic.getTargetType() == L2SkillTargetType.TARGET_ONE) && _player.useMagic(magic, true, false))
+				if (magic.getPower() > 150 && magic.getTargetType() == L2SkillTargetType.TARGET_ONE && _player.useMagic(magic, true, false))
 					break;
 			}
 		}

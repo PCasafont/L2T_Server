@@ -115,7 +115,7 @@ public class ClanHallManager
 				_freeClanHall.put(id, ch);
 				
 				Auction auc = ClanHallAuctionManager.getInstance().getAuction(id);
-				if ((auc == null) && (lease > 0))
+				if (auc == null && lease > 0)
 					ClanHallAuctionManager.getInstance().initNPC(id);
 			}
 			
@@ -214,13 +214,13 @@ public class ClanHallManager
 		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
 		{
 			zone = ch.getValue().getZone();
-			if ((zone != null) && (zone.getDistanceToZone(x, y) < maxDist))
+			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
 				return ch.getValue();
 		}
 		for (Map.Entry<Integer, ClanHall> ch : _freeClanHall.entrySet())
 		{
 			zone = ch.getValue().getZone();
-			if ((zone != null) && (zone.getDistanceToZone(x, y) < maxDist))
+			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
 				return ch.getValue();
 		}
 		return null;

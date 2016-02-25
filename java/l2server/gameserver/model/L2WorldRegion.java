@@ -133,7 +133,7 @@ public final class L2WorldRegion
 		
 		for (L2ZoneType e : getZones())
 		{
-			if (((e instanceof L2TownZone) && ((L2TownZone) e).isPeaceZone()) || (e instanceof L2DerbyTrackZone) || (e instanceof L2PeaceZone))
+			if (e instanceof L2TownZone && ((L2TownZone) e).isPeaceZone() || e instanceof L2DerbyTrackZone || e instanceof L2PeaceZone)
 			{
 				if (e.isInsideZone(x, up, z))
 					return false;
@@ -382,7 +382,7 @@ public final class L2WorldRegion
 			_allPlayable.put(object.getObjectId(), (L2Playable) object);
 			
 			// if this is the first player to enter the region, activate self & neighbors
-			if ((_allPlayable.size() == 1) && (!Config.GRIDS_ALWAYS_ON))
+			if (_allPlayable.size() == 1 && !Config.GRIDS_ALWAYS_ON)
 				startActivation();
 		}
 	}
@@ -398,7 +398,7 @@ public final class L2WorldRegion
 		if (object == null)
 			return;
 		
-		assert (object.getWorldRegion() == this) || (object.getWorldRegion() == null);
+		assert object.getWorldRegion() == this || object.getWorldRegion() == null;
 		
 		_visibleObjects.remove(object.getObjectId());
 		

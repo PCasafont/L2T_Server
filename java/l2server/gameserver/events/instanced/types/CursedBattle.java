@@ -106,19 +106,19 @@ public class CursedBattle extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
 	{
-		if ((killedPlayer == null) || !isState(EventState.STARTED))
+		if (killedPlayer == null || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayer, _teams[0].getCoords(), false, false);
 		
 		L2PcInstance killerPlayer = null;
 		
-		if ((killerCharacter instanceof L2PetInstance) || (killerCharacter instanceof L2SummonInstance))
+		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance)
 			killerPlayer = ((L2Summon) killerCharacter).getOwner();
 		else if (killerCharacter instanceof L2PcInstance)
 			killerPlayer = (L2PcInstance) killerCharacter;
 		
-		if ((_cursedPlayer == null) || !_cursedPlayer.isOnline() || !isPlayerParticipant(_cursedPlayer.getObjectId()))
+		if (_cursedPlayer == null || !_cursedPlayer.isOnline() || !isPlayerParticipant(_cursedPlayer.getObjectId()))
 		{
 			_cursedPlayer = killerPlayer;
 			int lvl = (int) Math.round(Math.log10(getParticipatedPlayersCount()) / Math.log10(2));
@@ -137,7 +137,7 @@ public class CursedBattle extends EventInstance
 			killedPlayer.removeSkill(9940);
 			killedPlayer.stopVisualEffect(VisualEffect.S_AIR_STUN);
 			killedPlayer.broadcastUserInfo();
-			if ((killerCharacter instanceof L2PcInstance) && (killedPlayer.getObjectId() != killerCharacter.getObjectId()))
+			if (killerCharacter instanceof L2PcInstance && killedPlayer.getObjectId() != killerCharacter.getObjectId())
 			{
 				_cursedPlayer = (L2PcInstance) killerCharacter;
 				int lvl = (int) Math.round(Math.log10(getParticipatedPlayersCount()) / Math.log10(2));

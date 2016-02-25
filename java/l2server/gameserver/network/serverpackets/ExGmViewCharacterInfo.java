@@ -62,7 +62,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putInt(relation);
 		
 		// Basic info
-		buffer.putShort((short) ((player.getName().length() * 2) + 16));
+		buffer.putShort((short) (player.getName().length() * 2 + 16));
 		buffer.putShort((short) player.getName().length());
 		for (char c : player.getName().toCharArray())
 			buffer.putShort((short) c);
@@ -104,7 +104,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		int airShipHelm = 0;
 		if (player.isInAirShip() && player.getAirShip().isCaptain(player))
 			airShipHelm = player.getAirShip().getHelmItemId();
-		buffer.put((byte) (player.isMounted() || (airShipHelm != 0) ? 0 : player.getEnchantEffect()));
+		buffer.put((byte) (player.isMounted() || airShipHelm != 0 ? 0 : player.getEnchantEffect()));
 		buffer.put((byte) player.getArmorEnchant());
 		
 		// Appearance
@@ -182,7 +182,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 			buffer.putDouble(trans.getCollisionRadius());
 			buffer.putDouble(trans.getCollisionHeight());
 		}
-		else if ((player.getMountType() != 0) && (mountNpcId != 0))
+		else if (player.getMountType() != 0 && mountNpcId != 0)
 		{
 			L2NpcTemplate mountTemplate = NpcTable.getInstance().getTemplate(mountNpcId);
 			buffer.putDouble(mountTemplate.fCollisionRadius);
@@ -206,7 +206,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		if (player.getAppearance().getInvisible() && player.isGM())
 			title = "Invisible";
 		
-		buffer.putShort((short) ((title.length() * 2) + 32));
+		buffer.putShort((short) (title.length() * 2 + 32));
 		buffer.putShort((short) title.length());
 		for (char c : title.toCharArray())
 			buffer.putShort((short) c);

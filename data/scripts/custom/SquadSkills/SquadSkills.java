@@ -153,7 +153,7 @@ public class SquadSkills extends Quest
 	{
 		L2Clan playerClan = player.getClan();
 		
-		if ((playerClan == null) || !player.isClanLeader() || (playerClan.getLeaderId() != player.getObjectId()))
+		if (playerClan == null || !player.isClanLeader() || playerClan.getLeaderId() != player.getObjectId())
 			return null;
 		
 		if (event.equalsIgnoreCase("show_subPledges")) //show all the available subPledges for learn skills
@@ -168,7 +168,7 @@ public class SquadSkills extends Quest
 			
 			for (SubPledge pledge : subPledges)
 			{
-				if ((pledge == null) || (pledge.getId() == L2Clan.SUBUNIT_ACADEMY)) //Don't show academy
+				if (pledge == null || pledge.getId() == L2Clan.SUBUNIT_ACADEMY) //Don't show academy
 					continue;
 				pledgeInfo += "<tr><td><a action=\"bypass -h Quest " + _qn + " show_available_skills_" + pledge.getId() + "\">" + pledge.getName() + "</a></td></tr>";
 			}
@@ -213,7 +213,7 @@ public class SquadSkills extends Quest
 			//Be sure it's a valid skill
 			Map<Integer, Integer> skillToLearn = getAvailableLearnSkills(playerClan, pledgeType);
 			
-			if ((skillToLearn.get(skillId) == null) || (skillToLearn.get(skillId) != level))
+			if (skillToLearn.get(skillId) == null || skillToLearn.get(skillId) != level)
 				return null; //cheating
 				
 			L2Skill newSkill = SkillTable.getInstance().getInfo(skillId, level);
@@ -225,7 +225,7 @@ public class SquadSkills extends Quest
 			
 			for (SkillInfo skill : _skillInfo)
 			{
-				if ((skill.getSkillid() == skillId) && (skill.getSkillLevel() == level))
+				if (skill.getSkillid() == skillId && skill.getSkillLevel() == level)
 				{
 					info = skill;
 					

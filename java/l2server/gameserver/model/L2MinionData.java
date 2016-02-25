@@ -119,7 +119,7 @@ public class L2MinionData
 	
 	public int getRespawnTime()
 	{
-		if ((_respawnTime > 0) && (_respawnTime < 15))
+		if (_respawnTime > 0 && _respawnTime < 15)
 			return 15;
 		
 		return _respawnTime;

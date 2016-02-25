@@ -65,7 +65,7 @@ public final class Calculator
 		if (c1 == c2)
 			return true;
 		
-		if ((c1 == null) || (c2 == null))
+		if (c1 == null || c2 == null)
 			return false;
 		
 		Func[] funcs1 = c1._functions;
@@ -108,7 +108,7 @@ public final class Calculator
 		final int order = f.getOrder();
 		int i;
 		
-		for (i = 0; (i < funcs.length) && (order >= funcs[i].getOrder()); i++)
+		for (i = 0; i < funcs.length && order >= funcs[i].getOrder(); i++)
 			tmp[i] = funcs[i];
 		
 		tmp[i] = f;
@@ -129,7 +129,7 @@ public final class Calculator
 		
 		int i;
 		
-		for (i = 0; (i < funcs.length) && (f != funcs[i]); i++)
+		for (i = 0; i < funcs.length && f != funcs[i]; i++)
 			tmp[i] = funcs[i];
 		
 		if (i == funcs.length)

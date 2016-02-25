@@ -69,7 +69,7 @@ public class SkillTreeTable
 		if (grade <= 0)
 			return 0;
 		
-		if (Config.IS_CLASSIC && (grade > 3))
+		if (Config.IS_CLASSIC && grade > 3)
 			return 100;
 		
 		// since expertise comes at same level for all classes we use paladin for now
@@ -245,17 +245,17 @@ public class SkillTreeTable
 		{
 			L2SkillLearn temp = cha.getCurrentClass().getSkills().get(skillId);
 			//Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-			if (((temp.isAutoGetSkill() && (temp.getMinLevel() <= cha.getLevel()) && (temp.getMinDualLevel() <= cha.getDualLevel())) || (temp.isLearnedFromPanel() && !temp.isTransferSkill())) && (!temp.isRemember() || cha.isRememberSkills()))
+			if ((temp.isAutoGetSkill() && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && (!temp.isRemember() || cha.isRememberSkills()))
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevel() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevel() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result.add(temp);
@@ -263,7 +263,7 @@ public class SkillTreeTable
 					}
 				}
 				
-				if (!knownSkill && ((temp.getLevel() == 1) || (temp.getId() == 248)))
+				if (!knownSkill && (temp.getLevel() == 1 || temp.getId() == 248))
 				{
 					// this is a new skill
 					result.add(temp);
@@ -293,17 +293,17 @@ public class SkillTreeTable
 		for (L2SkillLearn temp : skills)
 		{
 			//Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-			if ((temp.isAutoGetSkill() || (temp.isLearnedFromPanel() && !temp.isTransferSkill())) && (temp.getMinLevel() <= cha.getLevel()) && (temp.getMinDualLevel() <= cha.getDualLevel()))
+			if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel())
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result1.add(temp);
@@ -311,7 +311,7 @@ public class SkillTreeTable
 					}
 				}
 				
-				if (!knownSkill && (temp.getLevel() == 1))
+				if (!knownSkill && temp.getLevel() == 1)
 				{
 					// this is a new skill
 					result1.add(temp);
@@ -322,17 +322,17 @@ public class SkillTreeTable
 		for (L2SkillLearn temp : skills)
 		{
 			//Let's get all auto-get skills and all skill learn from npc, but transfer skills.
-			if ((temp.isAutoGetSkill() || (temp.isLearnedFromPanel() && !temp.isTransferSkill())) && (temp.getMinLevel() <= (cha.getLevel() - 1)) && (temp.getMinDualLevel() <= (cha.getDualLevel() - 1)))
+			if ((temp.isAutoGetSkill() || temp.isLearnedFromPanel() && !temp.isTransferSkill()) && temp.getMinLevel() <= cha.getLevel() - 1 && temp.getMinDualLevel() <= cha.getDualLevel() - 1)
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result2.add(temp);
@@ -340,7 +340,7 @@ public class SkillTreeTable
 					}
 				}
 				
-				if (!knownSkill && (temp.getLevel() == 1))
+				if (!knownSkill && temp.getLevel() == 1)
 				{
 					// this is a new skill
 					result2.add(temp);
@@ -365,7 +365,7 @@ public class SkillTreeTable
 			return new L2SkillLearn[0];
 		}
 		
-		if (cha.hasDwarvenCraft() && (_expandDwarfCraftSkillTrees != null))
+		if (cha.hasDwarvenCraft() && _expandDwarfCraftSkillTrees != null)
 		{
 			skills.addAll(_expandDwarfCraftSkillTrees);
 		}
@@ -374,17 +374,17 @@ public class SkillTreeTable
 		
 		for (L2SkillLearn temp : skills)
 		{
-			if (temp.isLearnedFromPanel() && (temp.getMinLevel() <= cha.getLevel()) && (temp.getMinDualLevel() <= cha.getDualLevel()))
+			if (temp.isLearnedFromPanel() && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel())
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result.add(temp);
@@ -392,7 +392,7 @@ public class SkillTreeTable
 					}
 				}
 				
-				if (!knownSkill && (temp.getLevel() == 1))
+				if (!knownSkill && temp.getLevel() == 1)
 				{
 					// this is a new skill
 					result.add(temp);
@@ -423,13 +423,13 @@ public class SkillTreeTable
 		{
 			boolean knownSkill = false;
 			
-			for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+			for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 			{
 				if (oldSkills[j].getId() == temp.getId())
 				{
 					knownSkill = true;
 					
-					if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+					if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 					{
 						// this is the next level of a skill that we know
 						result.add(temp);
@@ -437,7 +437,7 @@ public class SkillTreeTable
 				}
 			}
 			
-			if (!knownSkill && (temp.getLevel() == 1))
+			if (!knownSkill && temp.getLevel() == 1)
 			{
 				// this is a new skill
 				result.add(temp);
@@ -464,17 +464,17 @@ public class SkillTreeTable
 		
 		for (L2TransformSkillLearn temp : skills)
 		{
-			if ((temp.getMinLevel() <= cha.getLevel()) && ((temp.getRace() == cha.getRace().ordinal()) || (temp.getRace() == -1)))
+			if (temp.getMinLevel() <= cha.getLevel() && (temp.getRace() == cha.getRace().ordinal() || temp.getRace() == -1))
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result.add(temp);
@@ -482,7 +482,7 @@ public class SkillTreeTable
 					}
 				}
 				
-				if (!knownSkill && (temp.getLevel() == 1))
+				if (!knownSkill && temp.getLevel() == 1)
 				{
 					// this is a new skill
 					result.add(temp);
@@ -507,7 +507,7 @@ public class SkillTreeTable
 			return minLevel;
 		}
 		
-		if (cha.hasDwarvenCraft() && (_expandDwarfCraftSkillTrees != null))
+		if (cha.hasDwarvenCraft() && _expandDwarfCraftSkillTrees != null)
 		{
 			skills.addAll(_expandDwarfCraftSkillTrees);
 		}
@@ -515,7 +515,7 @@ public class SkillTreeTable
 		for (L2SkillLearn s : skills)
 		{
 			if (s.getMinLevel() > cha.getLevel())
-				if ((minLevel == 0) || (s.getMinLevel() < minLevel))
+				if (minLevel == 0 || s.getMinLevel() < minLevel)
 					minLevel = s.getMinLevel();
 		}
 		
@@ -538,8 +538,8 @@ public class SkillTreeTable
 		
 		for (L2TransformSkillLearn s : skills)
 		{
-			if ((s.getMinLevel() > cha.getLevel()) && (s.getRace() == cha.getRace().ordinal()))
-				if ((minLevel == 0) || (s.getMinLevel() < minLevel))
+			if (s.getMinLevel() > cha.getLevel() && s.getRace() == cha.getRace().ordinal())
+				if (minLevel == 0 || s.getMinLevel() < minLevel)
 					minLevel = s.getMinLevel();
 		}
 		
@@ -567,7 +567,7 @@ public class SkillTreeTable
 	{
 		for (L2SkillLearn sl : PlayerClassTable.getInstance().getClassById(cl.getId()).getSkills().values())
 		{
-			if ((sl.getId() == skillId) && (sl.getLevel() == skillLvl))
+			if (sl.getId() == skillId && sl.getLevel() == skillLvl)
 			{
 				return sl; // found skill learn
 			}
@@ -644,7 +644,7 @@ public class SkillTreeTable
 			L2SkillLearn skill = player.getCurrentClass().getSkills().get(skillId);
 			
 			// If we're looking for the missing ones only, we skip anything we already have higher or same level.
-			if (missingOnesOnly && (playerSkillLevel >= skill.getLevel()))
+			if (missingOnesOnly && playerSkillLevel >= skill.getLevel())
 				continue;
 			
 			// We should use that instead of the below code to check if a skill has already been picked up...
@@ -704,7 +704,7 @@ public class SkillTreeTable
 			else if (learnableSkill.getMinLevel() > playerLevel)
 				continue;
 			// If we already found the skill, and the found skill level is higher than the one here, fuck it
-			else if ((result != null) && (result.getLevel() > learnableSkill.getLevel()))
+			else if (result != null && result.getLevel() > learnableSkill.getLevel())
 				continue;
 			
 			result = learnableSkill;

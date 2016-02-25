@@ -225,7 +225,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 						{
 							e.printStackTrace();
 						}
-						if ((amount > 0) && ((getCastle().getTreasury() + amount) < PcInventory.MAX_ADENA))
+						if (amount > 0 && getCastle().getTreasury() + amount < PcInventory.MAX_ADENA)
 						{
 							if (player.reduceAdena("Castle", amount, this, true))
 								getCastle().addToTreasuryNoTax(amount);
@@ -254,7 +254,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 								filename = "chamberlain/chamberlain-vault-no.htm";
 							else
 							{
-								if (getCastle().addToTreasuryNoTax((-1) * amount))
+								if (getCastle().addToTreasuryNoTax(-1 * amount))
 									player.addAdena("Castle", amount, this, true);
 							}
 						}
@@ -283,7 +283,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 				{
 					if (!val.isEmpty())
 					{
-						boolean open = (Integer.parseInt(val) == 1);
+						boolean open = Integer.parseInt(val) == 1;
 						while (st.hasMoreTokens())
 						{
 							getCastle().openCloseDoor(player, Integer.parseInt(st.nextToken()), open);
@@ -570,7 +570,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 											fee = Config.CS_HPREG5_FEE;
 											break;
 									}
-									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_HP, percent, fee, Config.CS_HPREG_FEE_RATIO, (getCastle().getFunction(Castle.FUNC_RESTORE_HP) == null)))
+									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_HP, percent, fee, Config.CS_HPREG_FEE_RATIO, getCastle().getFunction(Castle.FUNC_RESTORE_HP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -619,7 +619,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 											fee = Config.CS_MPREG4_FEE;
 											break;
 									}
-									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_MP, percent, fee, Config.CS_MPREG_FEE_RATIO, (getCastle().getFunction(Castle.FUNC_RESTORE_MP) == null)))
+									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_MP, percent, fee, Config.CS_MPREG_FEE_RATIO, getCastle().getFunction(Castle.FUNC_RESTORE_MP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -668,7 +668,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 											fee = Config.CS_EXPREG4_FEE;
 											break;
 									}
-									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_EXP, percent, fee, Config.CS_EXPREG_FEE_RATIO, (getCastle().getFunction(Castle.FUNC_RESTORE_EXP) == null)))
+									if (!getCastle().updateFunctions(player, Castle.FUNC_RESTORE_EXP, percent, fee, Config.CS_EXPREG_FEE_RATIO, getCastle().getFunction(Castle.FUNC_RESTORE_EXP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -833,7 +833,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 											fee = Config.CS_TELE2_FEE;
 											break;
 									}
-									if (!getCastle().updateFunctions(player, Castle.FUNC_TELEPORT, lvl, fee, Config.CS_TELE_FEE_RATIO, (getCastle().getFunction(Castle.FUNC_TELEPORT) == null)))
+									if (!getCastle().updateFunctions(player, Castle.FUNC_TELEPORT, lvl, fee, Config.CS_TELE_FEE_RATIO, getCastle().getFunction(Castle.FUNC_TELEPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -882,7 +882,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 											fee = Config.CS_SUPPORT4_FEE;
 											break;
 									}
-									if (!getCastle().updateFunctions(player, Castle.FUNC_SUPPORT, lvl, fee, Config.CS_SUPPORT_FEE_RATIO, (getCastle().getFunction(Castle.FUNC_SUPPORT) == null)))
+									if (!getCastle().updateFunctions(player, Castle.FUNC_SUPPORT, lvl, fee, Config.CS_SUPPORT_FEE_RATIO, getCastle().getFunction(Castle.FUNC_SUPPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "chamberlain/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -1125,7 +1125,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 				
 				int tendency = getCastle().getTendency();
 				
-				if (player.isClanLeader() && (tendency != 0))
+				if (player.isClanLeader() && tendency != 0)
 				{
 					int cloakId = tendency == 1 ? 34996 : 34997;
 					
@@ -1155,12 +1155,12 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 	private NpcHtmlMessage getNextSiegeTimePage(String htmlPrefix, int now, boolean isAfternoon)
 	{
 		NpcHtmlMessage ret = new NpcHtmlMessage(1);
-		if ((now == 0) && Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
+		if (now == 0 && Config.CL_SET_SIEGE_TIME_LIST.contains("day"))
 		{
 			ret.setFile(htmlPrefix, "chamberlain/siegetime4.htm");
 			return ret;
 		}
-		if ((now < 3) && Config.CL_SET_SIEGE_TIME_LIST.contains("hour"))
+		if (now < 3 && Config.CL_SET_SIEGE_TIME_LIST.contains("hour"))
 		{
 			switch (now)
 			{
@@ -1207,7 +1207,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 			}
 			return ret;
 		}
-		if ((now < 4) && Config.CL_SET_SIEGE_TIME_LIST.contains("minute"))
+		if (now < 4 && Config.CL_SET_SIEGE_TIME_LIST.contains("minute"))
 		{
 			ret.setFile(htmlPrefix, "chamberlain/siegetime7.htm");
 			return ret;
@@ -1271,7 +1271,7 @@ public class L2CastleChamberlainInstance extends L2MerchantInstance
 		if (player.isGM())
 			return COND_OWNER;
 		
-		if ((getCastle() != null) && (getCastle().getCastleId() > 0))
+		if (getCastle() != null && getCastle().getCastleId() > 0)
 		{
 			if (player.getClan() != null)
 			{

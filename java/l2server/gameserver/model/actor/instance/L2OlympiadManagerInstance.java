@@ -42,7 +42,7 @@ public class L2OlympiadManagerInstance extends L2Npc
 		String filename = Olympiad.OLYMPIAD_HTML_PATH;
 		
 		filename += "noble_desc" + val;
-		filename += (suffix != null) ? suffix + ".htm" : ".htm";
+		filename += suffix != null ? suffix + ".htm" : ".htm";
 		
 		if (filename.equals(Olympiad.OLYMPIAD_HTML_PATH + "noble_desc0.htm"))
 		{

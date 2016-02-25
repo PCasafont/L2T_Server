@@ -43,7 +43,7 @@ public final class RequestSentPost extends L2GameClientPacket
 	public void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || !Config.ALLOW_MAIL)
+		if (activeChar == null || !Config.ALLOW_MAIL)
 			return;
 		
 		Message msg = MailManager.getInstance().getMessage(_msgId);

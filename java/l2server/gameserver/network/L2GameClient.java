@@ -131,7 +131,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{
-			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, (Config.CHAR_STORE_INTERVAL * 60000L));
+			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, Config.CHAR_STORE_INTERVAL * 60000L);
 		}
 		else
 		{
@@ -273,7 +273,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			final L2PcInstance activeChar = getActiveChar();
 			final L2PcInstance target = L2World.getInstance().getPlayer(gsp.getInvisibleCharacter());
 			
-			if ((activeChar != null) && (target != null) && !activeChar.isGM() && !activeChar.isInSameParty(target))
+			if (activeChar != null && target != null && !activeChar.isGM() && !activeChar.isInSameParty(target))
 				return;
 		}
 		
@@ -344,7 +344,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				else
 				{
 					statement = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?");
-					statement.setLong(1, System.currentTimeMillis() + (Config.DELETE_DAYS * 86400000L)); // 24*60*60*1000 = 86400000
+					statement.setLong(1, System.currentTimeMillis() + Config.DELETE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
 					statement.setInt(2, objid);
 					statement.execute();
 					statement.close();
@@ -686,7 +686,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	
 	public CharSelectInfoPackage getCharSelection(int charslot)
 	{
-		if ((_charSlotMapping == null) || (charslot < 0) || (charslot >= _charSlotMapping.length))
+		if (_charSlotMapping == null || charslot < 0 || charslot >= _charSlotMapping.length)
 			return null;
 		return _charSlotMapping[charslot];
 	}
@@ -837,7 +837,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			try
 			{
 				final L2PcInstance player = getActiveChar();
-				if ((player != null) && !isDetached())
+				if (player != null && !isDetached())
 				{
 					getActiveChar().storeZoneRestartLimitTime();
 					setDetached(true);
@@ -880,7 +880,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 						//Turn off toggles
 						for (L2Abnormal eff : player.getAllEffects())
 						{
-							if ((eff == null) || (eff.getSkill() == null))
+							if (eff == null || eff.getSkill() == null)
 								continue;
 							
 							if (eff.getSkill().isToggle())
@@ -914,14 +914,14 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private boolean offlineModeConditions(L2PcInstance player)
 	{
 		boolean canSetShop = false;
-		if (player.isInOlympiadMode() || (player.getInstanceId() != 0) || player.isInJail() || (player.getVehicle() != null) || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || (player.getEvent() != null))
+		if (player.isInOlympiadMode() || player.getInstanceId() != 0 || player.isInJail() || player.getVehicle() != null || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null)
 			return false;
 		
-		if (Config.OFFLINE_TRADE_ENABLE && ((player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL) || (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY) || (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL)))
+		if (Config.OFFLINE_TRADE_ENABLE && (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL))
 		{
 			canSetShop = true;
 		}
-		else if (Config.OFFLINE_CRAFT_ENABLE && (player.isInCraftMode() || (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE)))
+		else if (Config.OFFLINE_CRAFT_ENABLE && (player.isInCraftMode() || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE))
 		{
 			canSetShop = true;
 		}
@@ -1013,7 +1013,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			try
 			{
 				L2PcInstance player = getActiveChar();
-				if ((player != null) && player.isOnline()) // safety precaution
+				if (player != null && player.isOnline()) // safety precaution
 				{
 					saveCharToDisk();
 					if (player.getPet() != null)

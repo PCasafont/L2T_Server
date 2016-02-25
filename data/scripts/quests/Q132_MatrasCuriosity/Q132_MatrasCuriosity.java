@@ -65,7 +65,7 @@ public final class Q132_MatrasCuriosity extends Quest
 			return getNoQuestMsg(player);
 		}
 		
-		if (event.equalsIgnoreCase("32245-03.htm") && (player.getLevel() >= 76) && !st.isCompleted())
+		if (event.equalsIgnoreCase("32245-03.htm") && player.getLevel() >= 76 && !st.isCompleted())
 		{
 			if (st.getState() == State.CREATED)
 			{
@@ -80,7 +80,7 @@ public final class Q132_MatrasCuriosity extends Quest
 				htmltext = "32245-03a.htm";
 			}
 		}
-		else if (event.equalsIgnoreCase("32245-07.htm") && (st.getInt("cond") == 3) && !st.isCompleted())
+		else if (event.equalsIgnoreCase("32245-07.htm") && st.getInt("cond") == 3 && !st.isCompleted())
 		{
 			st.giveAdena(65884, true);
 			st.addExpAndSp(50541, 5094);
@@ -128,7 +128,7 @@ public final class Q132_MatrasCuriosity extends Quest
 			{
 				case 1:
 				case 2:
-					if ((st.getQuestItemsCount(BLUEPRINT_RANKU) > 0) && (st.getQuestItemsCount(BLUEPRINT_RANKU) > 0))
+					if (st.getQuestItemsCount(BLUEPRINT_RANKU) > 0 && st.getQuestItemsCount(BLUEPRINT_RANKU) > 0)
 					{
 						st.takeItems(BLUEPRINT_RANKU, -1);
 						st.takeItems(BLUEPRINT_PRINCE, -1);

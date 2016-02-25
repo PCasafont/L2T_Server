@@ -57,12 +57,12 @@ public class L2SkillLearnSkill extends L2Skill
 		if (!(activeChar instanceof L2PcInstance))
 			return;
 		
-		final L2PcInstance player = ((L2PcInstance) activeChar);
+		final L2PcInstance player = (L2PcInstance) activeChar;
 		L2Skill newSkill;
 		
 		for (int i = 0; i < _learnSkillId.length; i++)
 		{
-			if ((player.getSkillLevelHash(_learnSkillId[i]) < _learnSkillLvl[i]) && (_learnSkillId[i] != 0))
+			if (player.getSkillLevelHash(_learnSkillId[i]) < _learnSkillLvl[i] && _learnSkillId[i] != 0)
 			{
 				newSkill = SkillTable.getInstance().getInfo(_learnSkillId[i], _learnSkillLvl[i]);
 				if (newSkill != null)

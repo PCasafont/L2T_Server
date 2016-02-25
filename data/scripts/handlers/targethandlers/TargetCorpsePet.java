@@ -38,7 +38,7 @@ public class TargetCorpsePet implements ISkillTargetTypeHandler
 		if (activeChar instanceof L2PcInstance)
 		{
 			// FIXME target = activeChar.getPet();
-			if ((target != null) && target.isDead())
+			if (target != null && target.isDead())
 				return new L2Character[] { target };
 		}
 		

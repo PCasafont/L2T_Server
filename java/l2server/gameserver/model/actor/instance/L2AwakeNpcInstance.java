@@ -44,7 +44,7 @@ public final class L2AwakeNpcInstance extends L2Npc
 		
 		String mainText[] = { iHaveNothing, iHaveNothing };
 		
-		if ((npcId > 33396) && (npcId < 33405))
+		if (npcId > 33396 && npcId < 33405)
 		{
 			mainText[0] = getMainText(npcId - 33258, true);
 			mainText[1] = getMainText(npcId - 33258, false);
@@ -53,7 +53,7 @@ public final class L2AwakeNpcInstance extends L2Npc
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		if (!mainText.equals(""))
 		{
-			if ((player.getLevel() >= 85) && (player.getCurrentClass().getAwakeningClassId() != -1))
+			if (player.getLevel() >= 85 && player.getCurrentClass().getAwakeningClassId() != -1)
 				html.setHtml(mainText[0]);
 			else
 				html.setHtml(mainText[1]);

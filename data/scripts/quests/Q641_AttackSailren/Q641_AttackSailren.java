@@ -55,7 +55,7 @@ public class Q641_AttackSailren extends Quest
 	{
 		String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
-		if ((result != null) && (result.length() > 0))
+		if (result != null && result.length() > 0)
 			return result;
 		
 		return DEFAULT_NO_QUEST_MSG;
@@ -114,7 +114,7 @@ public class Q641_AttackSailren extends Quest
 			{
 				byte id = st.getState();
 				String cond = st.get("cond");
-				if ((cond == null) || (cond == "0"))
+				if (cond == null || cond == "0")
 				{
 					QuestState prevSt = player.getQuestState("126_TheNameOfEvil2");
 					if (prevSt != null)
@@ -122,7 +122,7 @@ public class Q641_AttackSailren extends Quest
 						byte prevId = prevSt.getState();
 						if (prevId != State.COMPLETED)
 							htmltext = "<html><body>You have to complete quest The Name of Evil 2 in order to begin this one!</body></html>";
-						else if ((id == State.COMPLETED) && (st.getQuestItemsCount(GAZKH) == 1))
+						else if (id == State.COMPLETED && st.getQuestItemsCount(GAZKH) == 1)
 							htmltext = "<html><body>This quest has already been completed.</body></html>";
 						else
 							
@@ -176,7 +176,7 @@ public class Q641_AttackSailren extends Quest
 					{
 						int chance = Rnd.get(100);
 						int cond = Integer.parseInt(st.get("cond"));
-						if ((cond == 1) && (DROP_CHANCE >= chance))
+						if (cond == 1 && DROP_CHANCE >= chance)
 						{
 							st.giveItems(GAZKH_FRAGMENT, 1);
 							st.playSound("ItemSound.quest_itemget");

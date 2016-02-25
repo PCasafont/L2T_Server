@@ -79,7 +79,7 @@ public class GeoEditorThread extends Thread
 				if (!isConnected())
 					_working = false;
 				
-				if ((_mode == 2) && (timer > _sendDelay))
+				if (_mode == 2 && timer > _sendDelay)
 				{
 					for (L2PcInstance gm : _gms)
 						if (!gm.getClient().getConnection().isClosed())
@@ -193,15 +193,15 @@ public class GeoEditorThread extends Thread
 	private void writeD(int value) throws IOException
 	{
 		_out.write(value & 0xff);
-		_out.write((value >> 8) & 0xff);
-		_out.write((value >> 16) & 0xff);
-		_out.write((value >> 24) & 0xff);
+		_out.write(value >> 8 & 0xff);
+		_out.write(value >> 16 & 0xff);
+		_out.write(value >> 24 & 0xff);
 	}
 	
 	private void writeH(int value) throws IOException
 	{
 		_out.write(value & 0xff);
-		_out.write((value >> 8) & 0xff);
+		_out.write(value >> 8 & 0xff);
 	}
 	
 	private void writeC(int value) throws IOException
@@ -238,7 +238,7 @@ public class GeoEditorThread extends Thread
 	
 	public boolean isSend(L2PcInstance gm)
 	{
-		if ((_mode == 1) && _gms.contains(gm))
+		if (_mode == 1 && _gms.contains(gm))
 			return true;
 		return false;
 	}

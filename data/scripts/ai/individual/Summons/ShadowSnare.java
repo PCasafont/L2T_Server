@@ -73,7 +73,7 @@ public class ShadowSnare extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_whisperOfFear == null) || _whisperOfFear.isDead() || _whisperOfFear.isDecayed() || _whisperOfFear.getOwner().isAlikeDead())
+			if (_whisperOfFear == null || _whisperOfFear.isDead() || _whisperOfFear.isDecayed() || _whisperOfFear.getOwner().isAlikeDead())
 			{
 				if (_schedule != null)
 				{

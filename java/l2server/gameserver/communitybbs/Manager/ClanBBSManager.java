@@ -43,7 +43,7 @@ public class ClanBBSManager extends BaseBBSManager
 	{
 		if (command.equals("_bbsclan"))
 		{
-			if ((activeChar.getClan() == null) || (activeChar.getClan().getLevel() < 2))
+			if (activeChar.getClan() == null || activeChar.getClan().getLevel() < 2)
 			{
 				clanlist(activeChar, 1);
 			}
@@ -162,17 +162,17 @@ public class ClanBBSManager extends BaseBBSManager
 		}
 		
 		// header
-		final StringBuilder html = StringUtil.startAppend(2000, "<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;", String.valueOf((activeChar.getClan() != null) ? activeChar.getClan().getClanId() : 0), "\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
+		final StringBuilder html = StringUtil.startAppend(2000, "<html><body><br><br><center><br1><br1><table border=0 cellspacing=0 cellpadding=0><tr><td FIXWIDTH=15>&nbsp;</td><td width=610 height=30 align=left><a action=\"bypass _bbsclan_clanlist\"> CLAN COMMUNITY </a></td></tr></table><table border=0 cellspacing=0 cellpadding=0 width=610 bgcolor=434343><tr><td height=10></td></tr><tr><td fixWIDTH=5></td><td fixWIDTH=600><a action=\"bypass _bbsclan_clanhome;", String.valueOf(activeChar.getClan() != null ? activeChar.getClan().getClanId() : 0), "\">[GO TO MY CLAN]</a>&nbsp;&nbsp;</td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table><br><table border=0 cellspacing=0 cellpadding=2 bgcolor=5A5A5A width=610><tr><td FIXWIDTH=5></td><td FIXWIDTH=200 align=center>CLAN NAME</td><td FIXWIDTH=200 align=center>CLAN LEADER</td><td FIXWIDTH=100 align=center>CLAN LEVEL</td><td FIXWIDTH=100 align=center>CLAN MEMBERS</td><td FIXWIDTH=5></td></tr></table><img src=\"L2UI.Squareblank\" width=\"1\" height=\"5\">");
 		
 		int i = 0;
 		for (L2Clan cl : ClanTable.getInstance().getClans())
 		{
-			if (i > ((index + 1) * 7))
+			if (i > (index + 1) * 7)
 			{
 				break;
 			}
 			
-			if (i++ >= ((index - 1) * 7))
+			if (i++ >= (index - 1) * 7)
 			{
 				StringUtil.append(html, "<img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><table border=0 cellspacing=0 cellpadding=0 width=610><tr> <td FIXWIDTH=5></td><td FIXWIDTH=200 align=center><a action=\"bypass _bbsclan_clanhome;", String.valueOf(cl.getClanId()), "\">", cl.getName(), "</a></td><td FIXWIDTH=200 align=center>", cl.getLeaderName(), "</td><td FIXWIDTH=100 align=center>", String.valueOf(cl.getLevel()), "</td><td FIXWIDTH=100 align=center>", String.valueOf(cl.getMembersCount()), "</td><td FIXWIDTH=5></td></tr><tr><td height=5></td></tr></table><img src=\"L2UI.SquareBlank\" width=\"610\" height=\"3\"><img src=\"L2UI.SquareGray\" width=\"610\" height=\"1\">");
 			}
@@ -192,7 +192,7 @@ public class ClanBBSManager extends BaseBBSManager
 		i = 0;
 		int nbp;
 		nbp = ClanTable.getInstance().getClans().length / 8;
-		if ((nbp * 8) != ClanTable.getInstance().getClans().length)
+		if (nbp * 8 != ClanTable.getInstance().getClans().length)
 		{
 			nbp++;
 		}
@@ -256,7 +256,7 @@ public class ClanBBSManager extends BaseBBSManager
 				/*
 				 * html.append("<tr>"); html.append("<td fixWIDTH=100 align=left>ADMINISTRATOR</td>"); html.append("<td fixWIDTH=195 align=left height=16>"+cl.getLeaderName()+"</td>"); html.append("</tr>");
 				 */
-				"<tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>ALLIANCE</td><td fixWIDTH=195 align=left height=16>", (cl.getAllyName() != null) ? cl.getAllyName() : "", "</td></tr></table></td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table>" +
+				"<tr><td height=7></td></tr><tr><td fixWIDTH=100 align=left>ALLIANCE</td><td fixWIDTH=195 align=left height=16>", cl.getAllyName() != null ? cl.getAllyName() : "", "</td></tr></table></td><td fixWIDTH=5></td></tr><tr><td height=10></td></tr></table>" +
 				// TODO: the BB for clan :)
 				// html.append("<table border=0 cellspacing=0 cellpadding=0 width=610  bgcolor=333333>");
 				"<img src=\"L2UI.squareblank\" width=\"1\" height=\"5\"><img src=\"L2UI.squaregray\" width=\"610\" height=\"1\"><br></center><br> <br></body></html>");

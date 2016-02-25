@@ -42,7 +42,7 @@ public class ObjectKnownList
 			return false;
 		
 		// Instance -1 is for GMs that can see everything on all instances
-		if ((getActiveObject().getInstanceId() != -1) && (object.getInstanceId() != getActiveObject().getInstanceId()) && (object.getInstanceId() != getActiveObject().getObjectId()))
+		if (getActiveObject().getInstanceId() != -1 && object.getInstanceId() != getActiveObject().getInstanceId() && object.getInstanceId() != getActiveObject().getObjectId())
 			return false;
 		
 		// Check if already know object
@@ -53,7 +53,7 @@ public class ObjectKnownList
 		if (!Util.checkIfInShortRadius(getDistanceToWatchObject(object), getActiveObject(), object, true))
 			return false;
 		
-		return (getKnownObjects().put(object.getObjectId(), object) == null);
+		return getKnownObjects().put(object.getObjectId(), object) == null;
 	}
 	
 	public final boolean knowsObject(L2Object object)
@@ -61,7 +61,7 @@ public class ObjectKnownList
 		if (object == null)
 			return false;
 		
-		return (getActiveObject() == object) || getKnownObjects().containsKey(object.getObjectId());
+		return getActiveObject() == object || getKnownObjects().containsKey(object.getObjectId());
 	}
 	
 	/** Remove all L2Object from _knownObjects */

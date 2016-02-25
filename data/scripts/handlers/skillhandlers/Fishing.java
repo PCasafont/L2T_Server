@@ -74,7 +74,7 @@ public class Fishing implements ISkillHandler
 			return;
 		}
 		L2Weapon weaponItem = player.getActiveWeaponItem();
-		if (((weaponItem == null) || (weaponItem.getItemType() != L2WeaponType.FISHINGROD)))
+		if (weaponItem == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
 		{
 			// Fishing poles are not installed
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISHING_POLE_NOT_EQUIPPED));
@@ -90,7 +90,7 @@ public class Fishing implements ISkillHandler
 		player.setLure(lure);
 		L2ItemInstance lure2 = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		
-		if ((lure2 == null) || (lure2.getCount() < 1)) // Not enough bait.
+		if (lure2 == null || lure2.getCount() < 1) // Not enough bait.
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_BAIT));
 			return;

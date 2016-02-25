@@ -41,7 +41,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 	{
 		_storePlayerId = readD();
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -57,7 +57,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			long price = readQ();
 			readD(); //TODO analyse this
 			
-			if ((objectId < 1) || (itemId < 1) || (cnt < 1) || (price < 0))
+			if (objectId < 1 || itemId < 1 || cnt < 1 || price < 0)
 			{
 				_items = null;
 				return;
@@ -91,7 +91,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 		
 		L2PcInstance storePlayer = object;
 		
-		if ((player.getInstanceId() != storePlayer.getInstanceId()) && (player.getInstanceId() != -1))
+		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1)
 			return;
 		
 		if (storePlayer.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_BUY)

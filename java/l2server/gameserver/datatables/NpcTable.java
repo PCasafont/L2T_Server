@@ -84,7 +84,7 @@ public class NpcTable
 				for (L2DropData dd : npc.getDropData())
 				{
 					L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-					if (item.isCommon() || (item.getItemType() == L2EtcItemType.ARROW) || (item.getItemType() == L2EtcItemType.RECIPE) || (item.getItemType() == L2EtcItemType.MATERIAL))
+					if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item.getItemType() == L2EtcItemType.RECIPE || item.getItemType() == L2EtcItemType.MATERIAL)
 						dropsToRemove.add(dd);
 				}
 				
@@ -97,7 +97,7 @@ public class NpcTable
 					for (L2DropData dd : dc.getAllDrops())
 					{
 						L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if (item.isCommon() || (item.getItemType() == L2EtcItemType.ARROW) || (item.getItemType() == L2EtcItemType.RECIPE) || (item.getItemType() == L2EtcItemType.MATERIAL))
+						if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item.getItemType() == L2EtcItemType.RECIPE || item.getItemType() == L2EtcItemType.MATERIAL)
 							dropsToRemove.add(dd);
 					}
 					
@@ -354,7 +354,7 @@ public class NpcTable
 			{
 				boolean createFile = false;
 				
-				for (int j = i * 1000; j < ((i + 1) * 1000); j++)
+				for (int j = i * 1000; j < (i + 1) * 1000; j++)
 				{
 					if (_npcs.containsKey(j))
 					{
@@ -366,19 +366,19 @@ public class NpcTable
 				if (!createFile)
 					continue;
 				
-				String fileName = ("00000" + (i * 1000)).substring(String.valueOf(i * 1000).length()) + "-" + ("00000" + (((i + 1) * 1000) - 1)).substring(String.valueOf(((i + 1) * 1000) - 1).length()) + ".xml";
+				String fileName = ("00000" + i * 1000).substring(String.valueOf(i * 1000).length()) + "-" + ("00000" + ((i + 1) * 1000 - 1)).substring(String.valueOf((i + 1) * 1000 - 1).length()) + ".xml";
 				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs/" + fileName), "UTF-8"));
 				
 				out.write("<list>\r\n");
 				
-				for (int j = i * 1000; j < ((i + 1) * 1000); j++)
+				for (int j = i * 1000; j < (i + 1) * 1000; j++)
 				{
 					L2NpcTemplate t = _npcs.get(j);
 					
 					if (t == null)
 						continue;
 					
-					while ((t.getBaseTemplate() != null) && (t.getBaseTemplate() != t))
+					while (t.getBaseTemplate() != null && t.getBaseTemplate() != t)
 						t = t.getBaseTemplate();
 					
 					String baseNode = "\t<npc" + t.getXmlNpcId() + t.getXmlTemplateId() + t.getXmlName() + t.getXmlServerSideName() + t.getXmlTitle() + t.getXmlServerSideTitle() + t.getXmlLevel() + t.getXmlType() + t.getXmlInteractionDistance() + t.getXmlAttackRange() + t.getXmlMaxHp() + t.getXmlHpReg() + t.getXmlMaxMp() + t.getXmlMpReg() + t.getXmlSTR() + t.getXmlCON() + t.getXmlDEX() + t.getXmlINT() + t.getXmlWIT() + t.getXmlMEN() + t.getXmlExp() + t.getXmlSp() + t.getXmlPAtk() + t.getXmlMAtk() + t.getXmlPDef() + t.getXmlMDef() + t.getXmlPAtkSpd() + t.getXmlMAtkSpd() + t.getXmlCritical() + t.getXmlMCritical() + t.getXmlWalkSpd() + t.getXmlRunSpd() + t.getXmlRandomWalk() + t.getXmlAggessive() + t.getXmlAggroRange() + t.getXmlCanSeeThroughSilentMove() + t.getXmlRHand() + t.getXmlLHand() + t.getXmlExtraDropGroup() + t.getXmlCollisionRadius() + t.getXmlCollisionHeight() + t.getXmlTargetable() + t.getXmlShowName() + t.getXmlIsLethalImmune() + t.getXmlIsDebuffImmune() + t.getXmlCanBeChampion() + t.getXmlIsNonTalking() + t.getXmlElemAtk() + t.getXmlElemRes() + t.getXmlAIType() + t.getXmlSkillChance() + t.getXmlPrimaryAttack() + t.getXmlCanMove() + t.getXmlMinRangeSkill() + t.getXmlMinRangeChance() + t.getXmlMaxRangeSkill() + t.getXmlMaxRangeChance() + t.getXmlSoulshots() + t.getXmlSpiritshots() + t.getXmlSSChance() + t.getXmlSpSChance() + t.getXmlIsChaos() + t.getXmlClan() + t.getXmlClanRange() + t.getXmlEnemy() + t.getXmlEnemyRange() + t.getXmlDodge() + t.getXmlMinSocial1() + t.getXmlMaxSocial1() + t.getXmlMinSocial2() + t.getXmlMaxSocial2() + ">\r\n";
@@ -413,7 +413,7 @@ public class NpcTable
 						{
 							String comment = "";
 							L2NpcTemplate mt = getTemplate(md.getMinionId());
-							if ((mt != null) && (mt.getName() != null))
+							if (mt != null && mt.getName() != null)
 								comment = " <!-- " + mt.getName() + " -->";
 							out.write("\t\t<minion npcId=\"" + md.getMinionId() + "\" min=\"" + md.getAmountMin() + "\" max=\"" + md.getAmountMax() + "\" />" + comment + "\r\n");
 						}
@@ -437,7 +437,7 @@ public class NpcTable
 						
 						String comment = "";
 						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if ((it != null) && (it.getName() != null))
+						if (it != null && it.getName() != null)
 							comment = " <!-- " + it.getName() + " -->";
 						out.write("\t\t<spoilDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 					}
@@ -449,7 +449,7 @@ public class NpcTable
 						
 						String comment = "";
 						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if ((it != null) && (it.getName() != null))
+						if (it != null && it.getName() != null)
 							comment = " <!-- " + it.getName() + " -->";
 						out.write("\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 					}
@@ -464,7 +464,7 @@ public class NpcTable
 						{
 							String comment = "";
 							L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
-							if ((it != null) && (it.getName() != null))
+							if (it != null && it.getName() != null)
 								comment = " <!-- " + it.getName() + " -->";
 							out.write("\t\t\t<itemDrop itemId=\"" + dd.getItemId() + "\" min=\"" + dd.getMinDrop() + "\" max=\"" + dd.getMaxDrop() + "\" chance=\"" + Util.getDecimalString(dd.getChance()) + "\" />" + comment + "\r\n");
 						}
@@ -539,7 +539,7 @@ public class NpcTable
 		
 		for (Object t : _npcs.getValues())
 		{
-			if ((((L2NpcTemplate) t).Level == lvl) && "L2Monster".equals(((L2NpcTemplate) t).Type))
+			if (((L2NpcTemplate) t).Level == lvl && "L2Monster".equals(((L2NpcTemplate) t).Type))
 				list.add((L2NpcTemplate) t);
 		}
 		
@@ -593,7 +593,7 @@ public class NpcTable
 		for (final Object t : _npcs.getValues())
 		{
 			if ("L2Raidboss".equalsIgnoreCase(((L2NpcTemplate) t).Type))
-				list.add(((L2NpcTemplate) t));
+				list.add((L2NpcTemplate) t);
 		}
 		
 		return list.toArray(new L2NpcTemplate[list.size()]);
@@ -606,7 +606,7 @@ public class NpcTable
 		for (final Object t : _npcs.getValues())
 		{
 			if ("L2Monster".equalsIgnoreCase(((L2NpcTemplate) t).Type))
-				list.add(((L2NpcTemplate) t));
+				list.add((L2NpcTemplate) t);
 		}
 		return list.toArray(new L2NpcTemplate[list.size()]);
 	}
@@ -618,7 +618,7 @@ public class NpcTable
 		for (final Object t : _npcs.getValues())
 		{
 			if (type.equalsIgnoreCase(((L2NpcTemplate) t).Type))
-				list.add(((L2NpcTemplate) t));
+				list.add((L2NpcTemplate) t);
 		}
 		return list.toArray(new L2NpcTemplate[list.size()]);
 	}
@@ -631,12 +631,12 @@ public class NpcTable
 		{
 			if (!((L2NpcTemplate) t).Type.equals("L2Monster"))
 				continue;
-			else if ((((L2NpcTemplate) t).Level < minLevel) || (((L2NpcTemplate) t).Level > maxLevel))
+			else if (((L2NpcTemplate) t).Level < minLevel || ((L2NpcTemplate) t).Level > maxLevel)
 				continue;
 			else if (((L2NpcTemplate) t).getKnownSpawns().size() == 0)
 				continue;
 			
-			list.add(((L2NpcTemplate) t));
+			list.add((L2NpcTemplate) t);
 		}
 		
 		return list.toArray(new L2NpcTemplate[list.size()]);
@@ -645,7 +645,7 @@ public class NpcTable
 	//From MagicVisor
 	public DropChances calculateRewardChances(L2NpcTemplate template, L2PcInstance player, L2DropData drop, float catChance, int levelModifier, boolean isSweep, L2Npc mob)
 	{
-		float dropChance = (drop.getChance() * catChance) / 100.0f;
+		float dropChance = drop.getChance() * catChance / 100.0f;
 		int deepBlueDrop = 1;
 		
 		boolean isRaid = false;
@@ -656,7 +656,7 @@ public class NpcTable
 			isChampion = Config.L2JMOD_CHAMPION_ENABLE && mob.isChampion();
 		}
 		
-		if (Config.DEEPBLUE_DROP_RULES && (levelModifier > 0))
+		if (Config.DEEPBLUE_DROP_RULES && levelModifier > 0)
 		{
 			deepBlueDrop = 3;
 			if (drop.getItemId() == 57)
@@ -667,7 +667,7 @@ public class NpcTable
 			deepBlueDrop = 1;
 		
 		if (Config.DEEPBLUE_DROP_RULES)
-			dropChance = ((dropChance - ((dropChance * levelModifier) / 100)) / deepBlueDrop);
+			dropChance = (dropChance - dropChance * levelModifier / 100) / deepBlueDrop;
 		
 		if (!drop.isCustom())
 		{

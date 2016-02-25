@@ -59,7 +59,7 @@ public class Harvester implements IItemHandler
 		
 		_target = (L2MonsterInstance) _activeChar.getTarget();
 		
-		if ((_target == null) || !_target.isDead())
+		if (_target == null || !_target.isDead())
 		{
 			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -214,7 +214,7 @@ public class AdminTenkai implements IAdminCommandHandler
 				else
 					players = (L2PcInstance[]) L2World.getInstance().getAllPlayers().values().toArray();
 			}
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget().getActingPlayer() != null))
+			else if (activeChar.getTarget() != null && activeChar.getTarget().getActingPlayer() != null)
 			{
 				player = activeChar.getTarget().getActingPlayer();
 			}
@@ -284,7 +284,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			
 			L2PcInstance target = null;
 			
-			if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
+			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
 			{
 				target = (L2PcInstance) activeChar.getTarget();
 				
@@ -442,15 +442,15 @@ public class AdminTenkai implements IAdminCommandHandler
 				int separation = Integer.parseInt(st.nextToken());
 				int width = columns * separation;
 				int height = rows * separation;
-				double heading = (Util.convertHeadingToDegree(activeChar.getHeading()) * Math.PI) / 180.0;
+				double heading = Util.convertHeadingToDegree(activeChar.getHeading()) * Math.PI / 180.0;
 				double cos = Math.cos(heading);
 				double sin = Math.sin(heading);
 				for (int i = 0; i < columns; i++)
 				{
 					for (int j = 0; j < rows; j++)
 					{
-						int x = activeChar.getX() + (int) ((cos * (-((width / 2) - (separation / 2)) + (separation * i))) - (sin * (-((width / 2) - (separation / 2)) + (separation * j))));
-						int y = activeChar.getY() + (int) ((sin * (-((height / 2) - (separation / 2)) + (separation * i))) + (cos * (-((height / 2) - (separation / 2)) + (separation * j))));
+						int x = activeChar.getX() + (int) (cos * (-(width / 2 - separation / 2) + separation * i) - sin * (-(width / 2 - separation / 2) + separation * j));
+						int y = activeChar.getY() + (int) (sin * (-(height / 2 - separation / 2) + separation * i) + cos * (-(height / 2 - separation / 2) + separation * j));
 						
 						spawnMonster(activeChar, id, 60, true, x, y, activeChar.getZ());
 					}
@@ -524,7 +524,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		
 		for (L2Object obj : objects)
 		{
-			if ((obj instanceof L2MonsterInstance) && GeoData.getInstance().canSeeTarget(activeChar, obj))
+			if (obj instanceof L2MonsterInstance && GeoData.getInstance().canSeeTarget(activeChar, obj))
 			{
 				L2Npc target = (L2Npc) obj;
 				

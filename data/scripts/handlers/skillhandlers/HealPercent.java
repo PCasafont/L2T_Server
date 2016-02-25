@@ -67,14 +67,14 @@ public class HealPercent implements ISkillHandler
 			
 			//activeChar.sendMessage("Main Target = " + activeChar.getTarget().getName());
 			
-			L2Character currentTarget = ((L2Character) activeChar.getTarget());
+			L2Character currentTarget = (L2Character) activeChar.getTarget();
 			
 			if (currentTarget instanceof L2Playable)
 				tmpTargets.put(currentTarget, 150.000);
 			else
 				currentTarget = activeChar;
 			
-			chainHp = (currentTarget.getMaxHp() * skill.getPower()) / 100.0;
+			chainHp = currentTarget.getMaxHp() * skill.getPower() / 100.0;
 			for (L2Character target : (L2Character[]) targets)
 			{
 				double hpPercent = target.getCurrentHp() / target.getMaxHp();
@@ -133,13 +133,13 @@ public class HealPercent implements ISkillHandler
 		double amount = 0;
 		double percent = skill.getPower();
 		// Healing critical, since CT2.3 Gracia Final
-		if ((skill.getCritChance() != -1) && (skill.getTargetType() != L2SkillTargetType.TARGET_SELF) && !skill.isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill)))
+		if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && !skill.isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill)))
 		{
 			activeChar.sendMessage("Healing critical!");
 			percent *= 2;
 		}
 		
-		if (Config.isServer(Config.TENKAI) && (activeChar instanceof L2PcInstance) && activeChar.isInParty() && ((skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS) || (skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME)))
+		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() && (skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME))
 		{
 			int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 			int members = 0;
@@ -163,10 +163,10 @@ public class HealPercent implements ISkillHandler
 		{
 			//1505  - sublime self sacrifice
 			//11560 - celestial aegis
-			if (((target == null) || target.isDead() || target.isInvul(activeChar)) && (skill.getId() != 1505) && (skill.getId() != 11560))
+			if ((target == null || target.isDead() || target.isInvul(activeChar)) && skill.getId() != 1505 && skill.getId() != 11560)
 				continue;
 			
-			if ((target != activeChar) && (target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar))
+			if (target != activeChar && target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
 				continue;
 			
 			if (skill.getId() == 11828)
@@ -177,18 +177,18 @@ public class HealPercent implements ISkillHandler
 			if (target != activeChar)
 			{
 				// Cursed weapon owner can't heal or be healed
-				if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
+				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
 					continue;
 				if (targetPlayer && ((L2PcInstance) target).isCursedWeaponEquipped())
 					continue;
 				
 				// Nor all vs all event player
-				if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() && !((target instanceof L2Summon) && (((L2Summon) target).getOwner() == activeChar)))
+				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() && !(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar))
 					continue;
 			}
 			
 			// Doors and flags can't be healed in any way
-			if (hp && ((target instanceof L2DoorInstance) || (target instanceof L2SiegeFlagInstance)))
+			if (hp && (target instanceof L2DoorInstance || target instanceof L2SiegeFlagInstance))
 				continue;
 			
 			// Only players have CP
@@ -197,10 +197,10 @@ public class HealPercent implements ISkillHandler
 				if (full)
 					amount = target.getMaxCp();
 				else
-					amount = (target.getMaxCp() * percent) / 100.0;
+					amount = target.getMaxCp() * percent / 100.0;
 				
 				if (skill.getId() == 10270) // Second Wind
-					amount = (target.getMaxCp() * 15.0) / 100.0;
+					amount = target.getMaxCp() * 15.0 / 100.0;
 				
 				amount = Math.min(amount, target.getMaxCp() - target.getCurrentCp());
 				target.setCurrentCp(amount + target.getCurrentCp());
@@ -215,7 +215,7 @@ public class HealPercent implements ISkillHandler
 				if (full)
 					amount = target.getMaxHp();
 				else
-					amount = (target.getMaxHp() * percent) / 100.0;
+					amount = target.getMaxHp() * percent / 100.0;
 				
 				amount = Math.min(amount, target.getMaxHp() - target.getCurrentHp());
 				
@@ -266,7 +266,7 @@ public class HealPercent implements ISkillHandler
 				if (full)
 					amount = target.getMaxMp();
 				else
-					amount = (target.getMaxMp() * percent) / 100.0;
+					amount = target.getMaxMp() * percent / 100.0;
 				
 				amount = Math.min(amount, target.getMaxMp() - target.getCurrentMp());
 				target.setCurrentMp(amount + target.getCurrentMp());

@@ -53,7 +53,7 @@ public class CompiledScriptCache implements Serializable
 		String relativeName = file.getPath().substring(len);
 		
 		CompiledScriptHolder csh = _compiledScripts.get(relativeName);
-		if ((csh != null) && csh.matches(file))
+		if (csh != null && csh.matches(file))
 		{
 			if (Config.DEBUG)
 			{

@@ -44,7 +44,7 @@ public class HandysBlockCheckerEvent extends Quest
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if ((npc == null) || (player == null))
+		if (npc == null || player == null)
 			return null;
 		
 		int npcId = npc.getNpcId();
@@ -90,7 +90,7 @@ public class HandysBlockCheckerEvent extends Quest
 				int countRed = holder.getRedTeamSize();
 				int minMembers = Config.MIN_BLOCK_CHECKER_TEAM_MEMBERS;
 				
-				if ((countBlue >= minMembers) && (countRed >= minMembers))
+				if (countBlue >= minMembers && countRed >= minMembers)
 				{
 					holder.updateEvent();
 					holder.broadCastPacketToTeam(new ExCubeGameRequestReady());

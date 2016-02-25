@@ -68,7 +68,7 @@ public class EffectSignetAntiSummon extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() == (getAbnormal().getTotalCount() - 1))
+		if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
 			return true; // do nothing first time
 			
 		int mpConsume = getSkill().getMpConsume();
@@ -83,7 +83,7 @@ public class EffectSignetAntiSummon extends L2Effect
 			if (cha instanceof L2PcInstance)
 			{
 				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
 					continue;
 			}
 			
@@ -97,7 +97,7 @@ public class EffectSignetAntiSummon extends L2Effect
 					else
 						owner = (L2PcInstance) cha;
 					
-					if ((owner != null) && ((owner.getPet() != null) || !owner.getSummons().isEmpty()))
+					if (owner != null && (owner.getPet() != null || !owner.getSummons().isEmpty()))
 					{
 						if (mpConsume > getEffector().getCurrentMp())
 						{

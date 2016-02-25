@@ -56,7 +56,7 @@ public final class ShortCutInit extends L2GameServerPacket
 				continue;
 			
 			writeD(sc.getType());
-			writeD(sc.getSlot() + (sc.getPage() * 12));
+			writeD(sc.getSlot() + sc.getPage() * 12);
 			
 			switch (sc.getType())
 			{
@@ -94,7 +94,7 @@ public final class ShortCutInit extends L2GameServerPacket
 					writeD(0x01); // C6
 			}
 			
-			if (Config.isServer(Config.DREAMS) && (getClient().getActiveChar() != null))
+			if (Config.isServer(Config.DREAMS) && getClient().getActiveChar() != null)
 				getClient().getActiveChar().sendSysMessage("Sending Shortcut - " + sc);
 		}
 	}

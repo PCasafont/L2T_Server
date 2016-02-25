@@ -110,7 +110,7 @@ public class ClanRecruitManager
 					PreparedStatement statement2 = con2.prepareStatement("SELECT char_name, classid, level, clanid FROM characters WHERE charId = ?");
 					statement2.setInt(1, applicantId);
 					ResultSet rset2 = statement2.executeQuery();
-					if (rset2.next() && (rset2.getInt("clanid") == 0))
+					if (rset2.next() && rset2.getInt("clanid") == 0)
 					{
 						ClanRecruitWaitingUser applicant = new ClanRecruitWaitingUser();
 						applicant.id = applicantId;
@@ -273,12 +273,12 @@ public class ClanRecruitManager
 		
 		for (ClanRecruitData data : _recruitData.values())
 		{
-			if (((level > -1) && (data.clan.getLevel() != level)) || ((karma > -1) && (data.karma != karma)))
+			if (level > -1 && data.clan.getLevel() != level || karma > -1 && data.karma != karma)
 				continue;
 			
 			if (!name.isEmpty())
 			{
-				if ((!clanName && !data.clan.getLeaderName().toLowerCase().contains(name)) || (clanName && !data.clan.getName().toLowerCase().contains(name)))
+				if (!clanName && !data.clan.getLeaderName().toLowerCase().contains(name) || clanName && !data.clan.getName().toLowerCase().contains(name))
 					continue;
 			}
 			
@@ -304,10 +304,10 @@ public class ClanRecruitManager
 								result = d1.clan.getLeaderName().compareTo(d2.clan.getLeaderName());
 								break;
 							case 3:
-								result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 : (d1.clan.getLevel() > d2.clan.getLevel() ? -1 : 0);
+								result = d1.clan.getLevel() < d2.clan.getLevel() ? 1 : d1.clan.getLevel() > d2.clan.getLevel() ? -1 : 0;
 								break;
 							case 5:
-								result = d1.karma < d2.karma ? 1 : (d1.karma > d2.karma ? -1 : 0);
+								result = d1.karma < d2.karma ? 1 : d1.karma > d2.karma ? -1 : 0;
 								break;
 						}
 						
@@ -482,12 +482,12 @@ public class ClanRecruitManager
 		List<ClanRecruitWaitingUser> result = new ArrayList<ClanRecruitWaitingUser>();
 		for (ClanRecruitWaitingUser user : _waitingUsers.values())
 		{
-			if ((user.level < minLevel) || (user.level > maxLevel))
+			if (user.level < minLevel || user.level > maxLevel)
 				continue;
 			
 			PlayerClass pc = PlayerClassTable.getInstance().getClassById(user.classId);
 			int awakening = pc.getAwakeningClassId();
-			if ((awakening == -1) && (pc.getParent() != null))
+			if (awakening == -1 && pc.getParent() != null)
 				awakening = pc.getParent().getAwakeningClassId();
 			switch (role)
 			{

@@ -181,7 +181,7 @@ public class Fort
 				{
 					if (getOwnerClan() == null)
 						return;
-					if ((getOwnerClan().getWarehouse().getAdena() >= _fee) || !_cwh)
+					if (getOwnerClan().getWarehouse().getAdena() >= _fee || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -260,7 +260,7 @@ public class Fort
 			public void run()
 			{
 				spawnNpcCommanders(); // spawn npc Commanders
-				if ((getOwnerClan() != null) && (getFortState() == 0))
+				if (getOwnerClan() != null && getFortState() == 0)
 				{
 					spawnSpecialEnvoys();
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleSpecialEnvoysDeSpawn(Fort.this), 1 * 60 * 60 * 1000); // Prepare 1hr task for special envoys despawn
@@ -429,7 +429,7 @@ public class Fort
 		L2Clan oldowner = getOwnerClan();
 		
 		// Remove old owner
-		if ((oldowner != null) && (clan != null) && (clan != oldowner))
+		if (oldowner != null && clan != null && clan != oldowner)
 		{
 			// Remove points from old owner
 			updateClansReputation(oldowner, true);
@@ -629,10 +629,10 @@ public class Fort
 				setOwnerClan(clan);
 				int runCount = getOwnedTime() / (Config.FS_UPDATE_FRQ * 60);
 				long initial = System.currentTimeMillis() - _lastOwnedTime.getTimeInMillis();
-				while (initial > (Config.FS_UPDATE_FRQ * 60000l))
-					initial -= (Config.FS_UPDATE_FRQ * 60000l);
-				initial = (Config.FS_UPDATE_FRQ * 60000l) - initial;
-				if ((Config.FS_MAX_OWN_TIME <= 0) || (getOwnedTime() < (Config.FS_MAX_OWN_TIME * 3600)))
+				while (initial > Config.FS_UPDATE_FRQ * 60000l)
+					initial -= Config.FS_UPDATE_FRQ * 60000l;
+				initial = Config.FS_UPDATE_FRQ * 60000l - initial;
+				if (Config.FS_MAX_OWN_TIME <= 0 || getOwnedTime() < Config.FS_MAX_OWN_TIME * 3600)
 				{
 					_fortUpdater[0] = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new FortUpdater(this, clan, runCount, UpdaterType.PERIODIC_UPDATE), initial, Config.FS_UPDATE_FRQ * 60000l); // Schedule owner tasks to start running
 					if (Config.FS_MAX_OWN_TIME > 0)
@@ -735,7 +735,7 @@ public class Fort
 		}
 		else
 		{
-			if ((lvl == 0) && (lease == 0))
+			if (lvl == 0 && lease == 0)
 				removeFunction(type);
 			else
 			{
@@ -768,7 +768,7 @@ public class Fort
 	{
 		for (L2DoorInstance door : DoorTable.getInstance().getDoors())
 		{
-			if ((door.getFort() != null) && (door.getFort()._fortId == _fortId))
+			if (door.getFort() != null && door.getFort()._fortId == _fortId)
 				_doors.add(door);
 		}
 	}
@@ -914,7 +914,7 @@ public class Fort
 		if (_lastOwnedTime.getTimeInMillis() == 0)
 			return 0;
 		
-		return (int) (((_lastOwnedTime.getTimeInMillis() + (Config.FS_MAX_OWN_TIME * 3600000l)) - System.currentTimeMillis()) / 1000l);
+		return (int) ((_lastOwnedTime.getTimeInMillis() + Config.FS_MAX_OWN_TIME * 3600000l - System.currentTimeMillis()) / 1000l);
 	}
 	
 	public final long getTimeTillNextFortUpdate()
@@ -1148,7 +1148,7 @@ public class Fort
 	
 	public void giveResidentialSkills(L2PcInstance player)
 	{
-		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
+		if (_residentialSkills != null && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.addSkill(sk, false);
@@ -1157,7 +1157,7 @@ public class Fort
 	
 	public void removeResidentialSkills(L2PcInstance player)
 	{
-		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
+		if (_residentialSkills != null && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.removeSkill(sk, false, true);

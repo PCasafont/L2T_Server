@@ -59,7 +59,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	{
 		for (MerchantPriceConfig mpc : _mpcs.values())
 		{
-			if ((cha.getWorldRegion() != null) && cha.getWorldRegion().containsZone(mpc.getZoneId()))
+			if (cha.getWorldRegion() != null && cha.getWorldRegion().containsZone(mpc.getZoneId()))
 				return mpc;
 		}
 		return _defaultMpc;
@@ -248,7 +248,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		
 		public int getTotalTax()
 		{
-			return hasCastle() ? (getCastle().getTaxPercent() + getBaseTax()) : getBaseTax();
+			return hasCastle() ? getCastle().getTaxPercent() + getBaseTax() : getBaseTax();
 		}
 		
 		public double getTotalTaxRate()

@@ -18,7 +18,7 @@ public class GolemGuardianNormal extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 211) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 211 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

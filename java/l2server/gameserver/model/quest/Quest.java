@@ -293,7 +293,7 @@ public class Quest extends ManagedScript
 	{
 		List<QuestTimer> qt = getQuestTimers(name);
 		
-		if ((qt == null) || qt.isEmpty())
+		if (qt == null || qt.isEmpty())
 			return null;
 		try
 		{
@@ -548,7 +548,7 @@ public class Quest extends ManagedScript
 			return showError(player, e);
 		}
 		// if the quest returns text to display, display it.
-		if ((res != null) && (res.length() > 0))
+		if (res != null && res.length() > 0)
 			return showResult(player, res);
 		// else tell the player that
 		else
@@ -985,7 +985,7 @@ public class Quest extends ManagedScript
 		Log.log(Level.WARNING, getScriptFile().getAbsolutePath(), t);
 		if (t.getMessage() == null)
 			t.printStackTrace();
-		if ((player != null) && player.getAccessLevel().isGm())
+		if (player != null && player.getAccessLevel().isGm())
 		{
 			String res = "<html><body><title>Script error</title>" + Util.getStackTrace(t) + "</body></html>";
 			return showResult(player, res);
@@ -1006,7 +1006,7 @@ public class Quest extends ManagedScript
 	 */
 	public boolean showResult(L2PcInstance player, String res)
 	{
-		if ((res == null) || res.isEmpty() || (player == null))
+		if (res == null || res.isEmpty() || player == null)
 			return true;
 		
 		if (res.endsWith(".htm") || res.endsWith(".html"))
@@ -1416,7 +1416,7 @@ public class Quest extends ManagedScript
 	public static String getNoQuestMsg(L2PcInstance player)
 	{
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
-		if ((result != null) && (result.length() > 0))
+		if (result != null && result.length() > 0)
 			return result;
 		
 		return DEFAULT_NO_QUEST_MSG;
@@ -1430,7 +1430,7 @@ public class Quest extends ManagedScript
 	public static String getAlreadyCompletedMsg(L2PcInstance player)
 	{
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "alreadycompleted.htm");
-		if ((result != null) && (result.length() > 0))
+		if (result != null && result.length() > 0)
 			return result;
 		
 		return DEFAULT_ALREADY_COMPLETED_MSG;
@@ -1635,7 +1635,7 @@ public class Quest extends ManagedScript
 		// NPE prevention.  If the player is null, there is nothing to return
 		if (player == null)
 			return null;
-		if ((player.getParty() == null) || (player.getParty().getPartyMembers().isEmpty()))
+		if (player.getParty() == null || player.getParty().getPartyMembers().isEmpty())
 			return player;
 		L2Party party = player.getParty();
 		return party.getPartyMembers().get(Rnd.get(party.getPartyMembers().size()));
@@ -1682,10 +1682,10 @@ public class Quest extends ManagedScript
 		QuestState temp = null;
 		L2Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if ((party == null) || (party.getPartyMembers().isEmpty()))
+		if (party == null || party.getPartyMembers().isEmpty())
 		{
 			temp = player.getQuestState(getName());
-			if ((temp != null) && (temp.get(var) != null) && (temp.get(var)).equalsIgnoreCase(value))
+			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value))
 				return player; // match
 				
 			return null; // no match
@@ -1705,7 +1705,7 @@ public class Quest extends ManagedScript
 			if (partyMember == null)
 				continue;
 			temp = partyMember.getQuestState(getName());
-			if ((temp != null) && (temp.get(var) != null) && (temp.get(var)).equalsIgnoreCase(value) && partyMember.isInsideRadius(target, 1500, true, false))
+			if (temp != null && temp.get(var) != null && temp.get(var).equalsIgnoreCase(value) && partyMember.isInsideRadius(target, 1500, true, false))
 				candidates.add(partyMember);
 		}
 		// if there was no match, return null...
@@ -1736,10 +1736,10 @@ public class Quest extends ManagedScript
 		QuestState temp = null;
 		L2Party party = player.getParty();
 		// if this player is not in a party, just check if this player instance matches the conditions itself
-		if ((party == null) || (party.getPartyMembers().isEmpty()))
+		if (party == null || party.getPartyMembers().isEmpty())
 		{
 			temp = player.getQuestState(getName());
-			if ((temp != null) && (temp.getState() == state))
+			if (temp != null && temp.getState() == state)
 				return player; // match
 				
 			return null; // no match
@@ -1759,7 +1759,7 @@ public class Quest extends ManagedScript
 			if (partyMember == null)
 				continue;
 			temp = partyMember.getQuestState(getName());
-			if ((temp != null) && (temp.getState() == state) && partyMember.isInsideRadius(target, 1500, true, false))
+			if (temp != null && temp.getState() == state && partyMember.isInsideRadius(target, 1500, true, false))
 				candidates.add(partyMember);
 		}
 		// if there was no match, return null...
@@ -1778,7 +1778,7 @@ public class Quest extends ManagedScript
 	public String showHtmlFile(L2PcInstance player, String fileName)
 	{
 		boolean questwindow = true;
-		if (fileName.endsWith(".html") || ((player.getQuestState(_name) != null) && (player.getQuestState(_name).getState() >= State.STARTED)))
+		if (fileName.endsWith(".html") || player.getQuestState(_name) != null && player.getQuestState(_name).getState() >= State.STARTED)
 			questwindow = false;
 		int questId = getQuestIntId();
 		//Create handler to file linked to the quest
@@ -1877,7 +1877,7 @@ public class Quest extends ManagedScript
 				// the spawn code is coded such that if x=y=0, it looks into location for the spawn loc!  This will NOT work
 				// with quest spawns!  For both of the above cases, we need a fail-safe spawn.  For this, we use the
 				// default spawn location, which is at the player's loc.
-				if ((x == 0) && (y == 0))
+				if (x == 0 && y == 0)
 				{
 					Log.log(Level.SEVERE, "Failed to adjust bad coords for quest spawn! Spawn aborted!");
 					return null;

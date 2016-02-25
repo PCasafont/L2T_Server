@@ -18,7 +18,7 @@ public class Rabbit extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 105) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 105 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

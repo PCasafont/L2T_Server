@@ -128,7 +128,7 @@ public class Q463_IMustBeaGenius extends Quest
 		if (st == null)
 			return null;
 		
-		if ((st.getState() == State.STARTED) && (st.getInt("cond") == 1) && Util.contains(_mobs, npc.getNpcId()))
+		if (st.getState() == State.STARTED && st.getInt("cond") == 1 && Util.contains(_mobs, npc.getNpcId()))
 		{
 			int _day_number = st.getInt("number");
 			int _number = st.getInt(String.valueOf(npc.getNpcId()));
@@ -139,7 +139,7 @@ public class Q463_IMustBeaGenius extends Quest
 				st.playSound("ItemSound.quest_itemget");
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), "Att... attack... " + player.getName() + "... Ro... rogue... " + _number + ".."));
 			}
-			else if ((_number < 0) && ((st.getQuestItemsCount(_corpse_log) + _number) > 0))
+			else if (_number < 0 && st.getQuestItemsCount(_corpse_log) + _number > 0)
 			{
 				st.takeItems(_corpse_log, Math.abs(_number));
 				st.playSound("ItemSound.quest_itemget");

@@ -18,7 +18,7 @@ public class Gordon extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 308) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 308 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

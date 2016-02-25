@@ -52,12 +52,12 @@ public final class BuyListSeed extends L2GameServerPacket
 		_money = currentMoney;
 		_manorId = castleId;
 		
-		if ((seeds != null) && (seeds.size() > 0))
+		if (seeds != null && seeds.size() > 0)
 		{
 			_list = new ArrayList<Seed>();
 			for (SeedProduction s : seeds)
 			{
-				if ((s.getCanProduce() > 0) && (s.getPrice() > 0))
+				if (s.getCanProduce() > 0 && s.getPrice() > 0)
 					_list.add(new Seed(s.getId(), s.getCanProduce(), s.getPrice()));
 			}
 		}
@@ -69,7 +69,7 @@ public final class BuyListSeed extends L2GameServerPacket
 		writeQ(_money); // current money
 		writeD(_manorId); // manor id
 		
-		if ((_list != null) && (_list.size() > 0))
+		if (_list != null && _list.size() > 0)
 		{
 			writeH(_list.size()); // list length
 			for (Seed s : _list)

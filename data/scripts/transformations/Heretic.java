@@ -18,7 +18,7 @@ public class Heretic extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 3) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 3 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

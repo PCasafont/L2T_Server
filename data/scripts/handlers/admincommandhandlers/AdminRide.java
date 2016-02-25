@@ -37,7 +37,7 @@ public class AdminRide implements IAdminCommandHandler
 		
 		if (command.startsWith("admin_ride"))
 		{
-			if (activeChar.isMounted() || (activeChar.getPet() != null))
+			if (activeChar.isMounted() || activeChar.getPet() != null)
 			{
 				activeChar.sendMessage("You already have a pet.");
 				return false;

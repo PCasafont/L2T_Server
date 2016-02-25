@@ -208,7 +208,7 @@ public class ObjectPosition
 	
 	public void setWorldRegion(L2WorldRegion value)
 	{
-		if ((_worldRegion != null) && (getActiveObject() instanceof L2Character)) // confirm revalidation of old region's zones
+		if (_worldRegion != null && getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
 		{
 			if (value != null)
 				_worldRegion.revalidateZones((L2Character) getActiveObject()); // at world region change

@@ -109,7 +109,7 @@ public class Sailren extends L2AttackableAIScript
 		int status = GrandBossManager.getInstance().getBossStatus(SAILREN);
 		if (status == DEAD)
 		{
-			long temp = (info.getLong("respawn_time") - System.currentTimeMillis());
+			long temp = info.getLong("respawn_time") - System.currentTimeMillis();
 			if (temp > 0)
 				startQuestTimer("SAILREN_unlock", temp, null, null);
 			else
@@ -143,7 +143,7 @@ public class Sailren extends L2AttackableAIScript
 			player.sendPacket(sm);
 			return false;
 		}
-		else if ((party.getMemberCount() < MIN_PLAYERS) || (party.getMemberCount() > MAX_PLAYERS))
+		else if (party.getMemberCount() < MIN_PLAYERS || party.getMemberCount() > MAX_PLAYERS)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			player.sendPacket(sm);
@@ -231,7 +231,7 @@ public class Sailren extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			long temp = (System.currentTimeMillis() - _LastAction);
+			long temp = System.currentTimeMillis() - _LastAction;
 			if (temp > INACTIVITYTIME)
 			{
 				GrandBossManager.getInstance().setBossStatus(SAILREN, DORMANT);
@@ -315,7 +315,7 @@ public class Sailren extends L2AttackableAIScript
 			startQuestTimer("Sailren_unlock", respawnTime, npc, null);
 			// also save the respawn time so that the info is maintained past reboots
 			StatsSet info = GrandBossManager.getInstance().getStatsSet(SAILREN);
-			info.set("respawn_time", (System.currentTimeMillis()) + respawnTime);
+			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
 			GrandBossManager.getInstance().setStatsSet(SAILREN, info);
 			L2Npc cube = addSpawn(CUBE, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
 			startQuestTimer("despawn", 300000, cube, null);
@@ -338,7 +338,7 @@ public class Sailren extends L2AttackableAIScript
 				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
 		}
-		else if ((npc.getNpcId() == PTERO) && (npc.getTarget() instanceof L2PcInstance))
+		else if (npc.getNpcId() == PTERO && npc.getTarget() instanceof L2PcInstance)
 		{
 			L2PcInstance target = (L2PcInstance) npc.getTarget();
 			npc.deleteMe();

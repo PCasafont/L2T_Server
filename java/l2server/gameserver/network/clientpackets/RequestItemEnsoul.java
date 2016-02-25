@@ -53,7 +53,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 			return;
 		
 		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItem);
-		if ((targetItem == null) || targetItem.isEquipped())
+		if (targetItem == null || targetItem.isEquipped())
 		{
 			activeChar.sendPacket(new ExShowScreenMessage("Please, unequip your " + targetItem.getName() + " before giving it any soul enhancement.", 5000));
 			activeChar.sendPacket(new ExEnsoulResult(false));
@@ -63,7 +63,7 @@ public class RequestItemEnsoul extends L2GameClientPacket
 		for (CrystalEffectData ced : _effectData)
 		{
 			int index = ced.order - 1;
-			if ((index < 0) || (index >= 2))
+			if (index < 0 || index >= 2)
 				break;
 			
 			if (ced.type == 2)
@@ -74,11 +74,11 @@ public class RequestItemEnsoul extends L2GameClientPacket
 				continue;
 			
 			SoulCrystal soulCrystal = EnsoulDataTable.getInstance().getCrystal(soulCrystalItem.getItemId());
-			if ((soulCrystal == null) || ((index < 2) && soulCrystal.isSpecial()) || ((index == 2) && !soulCrystal.isSpecial()))
+			if (soulCrystal == null || index < 2 && soulCrystal.isSpecial() || index == 2 && !soulCrystal.isSpecial())
 				continue;
 			
 			EnsoulEffect effect = EnsoulDataTable.getInstance().getEffect(ced.effectId);
-			if ((effect == null) || !soulCrystal.getEffects().contains(effect))
+			if (effect == null || !soulCrystal.getEffects().contains(effect))
 				continue;
 			
 			if (!activeChar.destroyItem("Ensoul", soulCrystalItem, 1, activeChar, true))

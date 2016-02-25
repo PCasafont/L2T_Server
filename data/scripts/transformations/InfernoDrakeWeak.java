@@ -18,7 +18,7 @@ public class InfernoDrakeWeak extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 215) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 215 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

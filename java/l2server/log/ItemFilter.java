@@ -42,16 +42,16 @@ public class ItemFilter implements Filter
 		{
 			//			if (record.getMessage() == null) return true;
 			String[] messageList = record.getMessage().split(":");
-			if ((messageList.length < 2) || !_excludeProcess.contains(messageList[1]))
+			if (messageList.length < 2 || !_excludeProcess.contains(messageList[1]))
 				return true;
 		}
 		if (_excludeItemType != null)
 		{
 			//			if (record.getParameters() == null || record.getParameters().length == 0 || !(record.getParameters()[0] instanceof L2ItemInstance)) return true;
-			L2ItemInstance item = ((L2ItemInstance) record.getParameters()[0]);
+			L2ItemInstance item = (L2ItemInstance) record.getParameters()[0];
 			if (!_excludeItemType.contains(item.getItemType().toString()))
 				return true;
 		}
-		return ((_excludeProcess == null) && (_excludeItemType == null));
+		return _excludeProcess == null && _excludeItemType == null;
 	}
 }

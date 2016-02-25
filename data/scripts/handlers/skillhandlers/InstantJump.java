@@ -76,10 +76,10 @@ public class InstantJump implements ISkillHandler
 		if (ph > 360)
 			ph -= 360;
 		
-		ph = (Math.PI * ph) / 180;
+		ph = Math.PI * ph / 180;
 		
-		x = (int) (px + (25 * Math.cos(ph)));
-		y = (int) (py + (25 * Math.sin(ph)));
+		x = (int) (px + 25 * Math.cos(ph));
+		y = (int) (py + 25 * Math.sin(ph));
 		z = target.getZ();
 		
 		Location loc = new Location(x, y, z);

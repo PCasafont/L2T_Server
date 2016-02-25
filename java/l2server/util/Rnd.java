@@ -50,7 +50,7 @@ public final class Rnd
 		@Override
 		public final int next(final int bits)
 		{
-			return (int) ((_seed = ((_seed * MULTIPLIER) + ADDEND) & MASK) >>> (48 - bits));
+			return (int) ((_seed = _seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 		}
 		
 		@Override
@@ -113,7 +113,7 @@ public final class Rnd
 		 */
 		public final int get(final int min, final int max)
 		{
-			return min + (int) (_random.nextDouble() * ((max - min) + 1));
+			return min + (int) (_random.nextDouble() * (max - min + 1));
 		}
 		
 		/**
@@ -127,7 +127,7 @@ public final class Rnd
 		 */
 		public final long get(final long min, final long max)
 		{
-			return min + (long) (_random.nextDouble() * ((max - min) + 1));
+			return min + (long) (_random.nextDouble() * (max - min + 1));
 		}
 		
 		/**
@@ -270,7 +270,7 @@ public final class Rnd
 			
 			final int next(final int bits)
 			{
-				return (int) ((_seed = ((_seed * MULTIPLIER) + ADDEND) & MASK) >>> (48 - bits));
+				return (int) ((_seed = _seed * MULTIPLIER + ADDEND & MASK) >>> 48 - bits);
 			}
 			
 			final void setSeed(final long seed)

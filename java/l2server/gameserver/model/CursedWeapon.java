@@ -95,7 +95,7 @@ public class CursedWeapon
 	{
 		if (_isActivated)
 		{
-			if ((_player != null) && _player.isOnline())
+			if (_player != null && _player.isOnline())
 			{
 				// Remove from player
 				Log.info(_name + " being removed online.");
@@ -113,7 +113,7 @@ public class CursedWeapon
 				
 				// Destroy
 				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
-				if ((removedItem != null) && !Config.FORCE_INVENTORY_UPDATE)
+				if (removedItem != null && !Config.FORCE_INVENTORY_UPDATE)
 				{
 					InventoryUpdate iu = new InventoryUpdate();
 					if (removedItem.getCount() == 0)
@@ -183,7 +183,7 @@ public class CursedWeapon
 		{
 			// either this cursed weapon is in the inventory of someone who has another cursed weapon equipped,
 			// OR this cursed weapon is on the ground.
-			if ((_player != null) && (_player.getInventory().getItemByItemId(_itemId) != null))
+			if (_player != null && _player.getInventory().getItemByItemId(_itemId) != null)
 			{
 				// Destroy
 				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
@@ -324,7 +324,7 @@ public class CursedWeapon
 	 */
 	public void giveSkill()
 	{
-		int level = 1 + (_nbKills / _stageKills);
+		int level = 1 + _nbKills / _stageKills;
 		if (level > _skillMaxLevel)
 			level = _skillMaxLevel;
 		
@@ -386,7 +386,7 @@ public class CursedWeapon
 	public void reActivate()
 	{
 		_isActivated = true;
-		if ((_endTime - System.currentTimeMillis()) <= 0)
+		if (_endTime - System.currentTimeMillis() <= 0)
 			endOfLife();
 		else
 			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost * 12000L, _durationLost * 12000L);
@@ -401,7 +401,7 @@ public class CursedWeapon
 			dropIt(attackable, player);
 			
 			// Start the Life Task
-			_endTime = System.currentTimeMillis() + (_duration * 60000L);
+			_endTime = System.currentTimeMillis() + _duration * 60000L;
 			_removeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new RemoveTask(), _durationLost * 12000L, _durationLost * 12000L);
 			
 			return true;
@@ -548,12 +548,12 @@ public class CursedWeapon
 	{
 		_nbKills++;
 		
-		if ((_player != null) && _player.isOnline())
+		if (_player != null && _player.isOnline())
 		{
 			_player.setPkKills(_nbKills);
 			_player.sendPacket(new UserInfo(_player));
 			
-			if (((_nbKills % _stageKills) == 0) && (_nbKills <= (_stageKills * (_skillMaxLevel - 1))))
+			if (_nbKills % _stageKills == 0 && _nbKills <= _stageKills * (_skillMaxLevel - 1))
 			{
 				giveSkill();
 			}
@@ -704,13 +704,13 @@ public class CursedWeapon
 	
 	public int getLevel()
 	{
-		if (_nbKills > (_stageKills * _skillMaxLevel))
+		if (_nbKills > _stageKills * _skillMaxLevel)
 		{
 			return _skillMaxLevel;
 		}
 		else
 		{
-			return (_nbKills / _stageKills);
+			return _nbKills / _stageKills;
 		}
 	}
 	
@@ -724,12 +724,12 @@ public class CursedWeapon
 		if (player == null)
 			return;
 		
-		if (_isActivated && (_player != null))
+		if (_isActivated && _player != null)
 		{
 			// Go to player holding the weapon
 			player.teleToLocation(_player.getX(), _player.getY(), _player.getZ() + 20, true);
 		}
-		else if (_isDropped && (_item != null))
+		else if (_isDropped && _item != null)
 		{
 			// Go to item on the ground
 			player.teleToLocation(_item.getX(), _item.getY(), _item.getZ() + 20, true);
@@ -742,10 +742,10 @@ public class CursedWeapon
 	
 	public Point3D getWorldPosition()
 	{
-		if (_isActivated && (_player != null))
+		if (_isActivated && _player != null)
 			return _player.getPosition().getWorldPosition();
 		
-		if (_isDropped && (_item != null))
+		if (_isDropped && _item != null)
 			return _item.getPosition().getWorldPosition();
 		
 		return null;

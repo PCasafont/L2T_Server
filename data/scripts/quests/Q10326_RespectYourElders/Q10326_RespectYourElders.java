@@ -78,7 +78,7 @@ public class Q10326_RespectYourElders extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _gallint) && event.equalsIgnoreCase("32980-03.htm"))
+		if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -109,7 +109,7 @@ public class Q10326_RespectYourElders extends Quest
 				}
 			}, 60000);
 		}
-		else if ((npc.getNpcId() == _pantheon) && event.equalsIgnoreCase("32972-02.htm") && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 14000);
@@ -149,7 +149,7 @@ public class Q10326_RespectYourElders extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _pantheon) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _pantheon && st.getInt("cond") == 1)
 			htmltext = "32972-01.htm";
 		return htmltext;
 	}
@@ -157,7 +157,7 @@ public class Q10326_RespectYourElders extends Quest
 	@Override
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (_guideRoute.size() - 1)))
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI.getCurrentPos() == _guideRoute.size() - 1)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -165,7 +165,7 @@ public class Q10326_RespectYourElders extends Quest
 				return null;
 			}
 			int chatId = _guideLastChatId;
-			if (guideAI.getCurrentPos() != (_guideRoute.size() - 1))
+			if (guideAI.getCurrentPos() != _guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -185,7 +185,7 @@ public class Q10326_RespectYourElders extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == (_guideRoute.size() - 1))
+		if (guideAI.getCurrentPos() == _guideRoute.size() - 1)
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -207,7 +207,7 @@ public class Q10326_RespectYourElders extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 6) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 6) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

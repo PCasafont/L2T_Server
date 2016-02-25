@@ -54,7 +54,7 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) (npc.isAttackable() ? 1 : 0));
 		buffer.putInt(0);
 		String title = npc.getTitle();
-		if (Config.SHOW_NPC_LVL && (npc instanceof L2MonsterInstance))
+		if (Config.SHOW_NPC_LVL && npc instanceof L2MonsterInstance)
 		{
 			String t = "Lv " + npc.getLevel() + (npc.getAggroRange() > 0 ? "*" : "");
 			
@@ -66,7 +66,7 @@ public final class NpcInfo extends L2GameServerPacket
 			title = t;
 		}
 		else if (Config.L2JMOD_CHAMPION_ENABLE && npc.isChampion())
-			title = (Config.L2JMOD_CHAMP_TITLE);
+			title = Config.L2JMOD_CHAMP_TITLE;
 		else if (npc.getTemplate().ServerSideTitle)
 			title = npc.getTemplate().Title;
 		if (title != null)
@@ -110,7 +110,7 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.putInt(0x00); // Weapon enchant level
 		
 		buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-		buffer.putInt(((npc.getNpcId() >= 13302) && (npc.getNpcId() <= 13305)) ? (npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01) : 0x00); // Cloned player
+		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
 		buffer.putInt(0x01); // ???
 		buffer.putInt(npc.getDisplayEffect());
 		buffer.putInt(0x00); // Transform id
@@ -179,7 +179,7 @@ public final class NpcInfo extends L2GameServerPacket
 		_abnormals = npc.getAbnormalEffect();
 		if (npc.isChampion())
 			_abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
-		if ((npc.getNpcId() >= 40000) && (npc.getNpcId() < 40006) && (npc.getInstanceId() == 0))
+		if (npc.getNpcId() >= 40000 && npc.getNpcId() < 40006 && npc.getInstanceId() == 0)
 			_abnormals.add(VisualEffect.BIG_BODY.getId());
 	}
 	
@@ -229,7 +229,7 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.putInt(0x00); // Weapon enchant level
 		
 		buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-		buffer.putInt(((npc.getNpcId() >= 13302) && (npc.getNpcId() <= 13305)) ? (npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01) : 0x00); // Cloned player
+		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
 		buffer.putInt(0x00); // ???
 		buffer.putInt(0x00);
 		buffer.putInt(0x00); // Transform id

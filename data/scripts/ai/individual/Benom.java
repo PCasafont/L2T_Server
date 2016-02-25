@@ -71,10 +71,10 @@ public class Benom extends L2AttackableAIScript
 		int ownerId = CastleManager.getInstance().getCastleById(runeCastleId).getOwnerId();
 		List<L2SiegeClan> attackerClans = CastleManager.getInstance().getCastleById(runeCastleId).getSiege().getAttackerClans();
 		long siegeDate = CastleManager.getInstance().getCastleById(runeCastleId).getSiegeDate().getTimeInMillis();
-		long benomRaidRoomSpawn = (siegeDate - System.currentTimeMillis()) - 86400000;
-		long benomRaidSiegeSpawn = (siegeDate - System.currentTimeMillis());
+		long benomRaidRoomSpawn = siegeDate - System.currentTimeMillis() - 86400000;
+		long benomRaidSiegeSpawn = siegeDate - System.currentTimeMillis();
 		
-		long benomRaidInit = (siegeDate - System.currentTimeMillis()) + 90000000;
+		long benomRaidInit = siegeDate - System.currentTimeMillis() + 90000000;
 		startQuestTimer("BenomBossInit", benomRaidInit, null, null);
 		
 		if (ownerId != 0)
@@ -82,7 +82,7 @@ public class Benom extends L2AttackableAIScript
 			if (benomRaidSiegeSpawn < 0)
 				benomRaidSiegeSpawn = 1;
 			
-			if ((siegeDate - System.currentTimeMillis()) > 0)
+			if (siegeDate - System.currentTimeMillis() > 0)
 				startQuestTimer("BenomRaidRoomSpawn", benomRaidRoomSpawn, null, null);
 			
 			if (attackerClans.size() != 0)
@@ -112,7 +112,7 @@ public class Benom extends L2AttackableAIScript
 		
 		if (event.equals("BenomRaidRoomSpawn"))
 		{
-			if ((benomIsSpawned == 0) && (benomStatus == ALIVE))
+			if (benomIsSpawned == 0 && benomStatus == ALIVE)
 				benom = addSpawn(benomId, 12047, -49211, -3009, 0, false, 0);
 			
 			benomIsSpawned = 1;

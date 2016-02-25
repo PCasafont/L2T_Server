@@ -31,13 +31,13 @@ public class GuillotineFortress extends L2AttackableAIScript
 		
 		if (chaosShield != null)
 		{
-			if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.85)) || ((skill != null) && (skill.getId() == 10258)))
+			if (npc.getCurrentHp() < npc.getMaxHp() * 0.85 || skill != null && skill.getId() == 10258)
 			{
 				chaosShield.exit();
 				
 				for (L2Character attacker : npc.getAttackByList())
 				{
-					if ((attacker == null) || !(attacker instanceof L2PcInstance) || !attacker.isInsideRadius(npc, 1600, false, false))
+					if (attacker == null || !(attacker instanceof L2PcInstance) || !attacker.isInsideRadius(npc, 1600, false, false))
 					{
 						continue;
 					}

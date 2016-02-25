@@ -159,7 +159,7 @@ public class L2DropData
 	 */
 	public boolean isQuestDrop()
 	{
-		return (_questID != null) && (_stateID != null);
+		return _questID != null && _stateID != null;
 	}
 	
 	public void setCustom()
@@ -196,7 +196,7 @@ public class L2DropData
 	{
 		final int prime = 31;
 		int result = 1;
-		result = (prime * result) + _itemId;
+		result = prime * result + _itemId;
 		return result;
 	}
 	

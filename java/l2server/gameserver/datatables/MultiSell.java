@@ -166,7 +166,7 @@ public class MultiSell implements Reloadable
 		{
 			case CLAN_REPUTATION:
 				// Tenkai custom - Only the clan leader can shop for clan reputation (to avoid abuse)
-				if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
+				if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
 				{
 					player.sendMessage("This item can only be acquired by a clan's leader.");
 					return false;
@@ -253,7 +253,7 @@ public class MultiSell implements Reloadable
 						
 						int hatId = entry.getProducts().get(0).getItemId();
 						long price = entry.getIngredients().get(0).getItemCount();
-						System.out.println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" + (((10000 * price) / total) / 100.0) + "\" /> <!-- " + ItemTable.getInstance().getTemplate(hatId).getName() + " -->");
+						System.out.println("<item id=\"" + hatId + " min=\"1\" max=\"1\" chance=\"" + 10000 * price / total / 100.0 + "\" /> <!-- " + ItemTable.getInstance().getTemplate(hatId).getName() + " -->");
 					}
 				}
 			}

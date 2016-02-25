@@ -162,7 +162,7 @@ public class GameServerRegister extends BaseGameServerRegister
 			System.out.print("| ");
 			
 			inUse = GameServerTable.getInstance().hasRegisteredGameServerOnId(e.getKey());
-			String inUseStr = (inUse ? gsInUse : gsFree);
+			String inUseStr = inUse ? gsInUse : gsFree;
 			System.out.print(inUseStr);
 			
 			for (int i = inUseStr.length(); i < gsStatusMaxLen; i++)

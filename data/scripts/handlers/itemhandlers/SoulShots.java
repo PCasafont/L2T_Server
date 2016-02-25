@@ -53,7 +53,7 @@ public class SoulShots implements IItemHandler
 		int itemId = item.getItemId();
 		
 		// Check if Soul shot can be used
-		if ((weaponInst == null) || (weaponItem == null) || (weaponItem.getSoulShotCount() == 0))
+		if (weaponInst == null || weaponItem == null || weaponItem.getSoulShotCount() == 0)
 		{
 			if (!activeChar.hasAutoSoulShot(item))
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SOULSHOTS));
@@ -66,35 +66,35 @@ public class SoulShots implements IItemHandler
 		switch (weaponGrade)
 		{
 			case L2Item.CRYSTAL_NONE:
-				if ((itemId != 5789) && (itemId != 1835))
+				if (itemId != 5789 && itemId != 1835)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_D:
-				if ((itemId != 1463) && (itemId != 22082))
+				if (itemId != 1463 && itemId != 22082)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_C:
-				if ((itemId != 1464) && (itemId != 22083))
+				if (itemId != 1464 && itemId != 22083)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_B:
-				if ((itemId != 1465) && (itemId != 22084))
+				if (itemId != 1465 && itemId != 22084)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_A:
-				if ((itemId != 1466) && (itemId != 22085))
+				if (itemId != 1466 && itemId != 22085)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if ((itemId != 1467) && (itemId != 22086))
+				if (itemId != 1467 && itemId != 22086)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
-				if ((itemId != 17754) && (itemId != 22433))
+				if (itemId != 17754 && itemId != 22433)
 					gradeCheck = false;
 				break;
 		}
@@ -108,7 +108,7 @@ public class SoulShots implements IItemHandler
 		
 		int rubyLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)

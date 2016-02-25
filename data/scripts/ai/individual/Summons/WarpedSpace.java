@@ -74,7 +74,7 @@ public class WarpedSpace extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_gravityCore == null) || _gravityCore.isDead() || _gravityCore.isDecayed() || _gravityCore.getOwner().isAlikeDead())
+			if (_gravityCore == null || _gravityCore.isDead() || _gravityCore.isDecayed() || _gravityCore.getOwner().isAlikeDead())
 			{
 				for (L2Character ch : _gravityCore.getKnownList().getKnownCharactersInRadius(175))
 				{

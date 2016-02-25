@@ -59,17 +59,17 @@ public class EffectUntargetable extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
 			return false;
 		
 		for (L2Character target : getEffected().getKnownList().getKnownCharacters())
 		{
-			if ((target != null) && (target != getEffected()))
+			if (target != null && target != getEffected())
 			{
-				if ((target.getActingPlayer() != null) && (getEffected().getActingPlayer() != null) && (target.getActingPlayer().getParty() != null) && (target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty()))
+				if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null && target.getActingPlayer().getParty() != null && target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty())
 					continue;
 				
-				if ((target.getTarget() == getEffected()) || ((target.getAI() != null) && (target.getAI().getAttackTarget() == getEffected())))
+				if (target.getTarget() == getEffected() || target.getAI() != null && target.getAI().getAttackTarget() == getEffected())
 				{
 					target.setTarget(null);
 					target.abortAttack();
@@ -78,7 +78,7 @@ public class EffectUntargetable extends L2Effect
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
 					if (target instanceof L2Attackable)
-						((L2Attackable) target).reduceHate(getEffected(), ((L2Attackable) target).getHating((getEffected())));
+						((L2Attackable) target).reduceHate(getEffected(), ((L2Attackable) target).getHating(getEffected()));
 				}
 			}
 		}

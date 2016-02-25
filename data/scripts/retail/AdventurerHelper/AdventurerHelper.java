@@ -34,7 +34,7 @@ public class AdventurerHelper extends Quest
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
 		
-		if ((st == null) || (q == null))
+		if (st == null || q == null)
 		{
 			q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);

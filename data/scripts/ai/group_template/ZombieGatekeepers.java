@@ -71,14 +71,14 @@ public class ZombieGatekeepers extends L2AttackableAIScript
 		long mark2 = FadedVisitorsMark == null ? 0 : FadedVisitorsMark.getCount();
 		long mark3 = PagansMark == null ? 0 : PagansMark.getCount();
 		
-		if ((mark1 == 0) && (mark2 == 0) && (mark3 == 0))
+		if (mark1 == 0 && mark2 == 0 && mark3 == 0)
 		{
 			((L2Attackable) npc).addDamageHate(target, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 		}
 		else
 		{
-			if ((_attackersList.get(npcObjId) == null) || !_attackersList.get(npcObjId).contains(target))
+			if (_attackersList.get(npcObjId) == null || !_attackersList.get(npcObjId).contains(target))
 				((L2Attackable) npc).getAggroList().remove(target);
 			else
 			{

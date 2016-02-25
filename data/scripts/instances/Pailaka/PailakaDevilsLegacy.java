@@ -175,7 +175,7 @@ public class PailakaDevilsLegacy extends Quest
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		// Must be here, because of player == null
-		if ((npc.getNpcId() == FOLLOWERS) && event.equals("follower_cast"))
+		if (npc.getNpcId() == FOLLOWERS && event.equals("follower_cast"))
 		{
 			if (!npc.isCastingNow() && !npc.isDead() && !_lematanNpc.isDead())
 			{
@@ -185,7 +185,7 @@ public class PailakaDevilsLegacy extends Quest
 			startQuestTimer("follower_cast", 2000 + Rnd.get(100, 1000), npc, null);
 			return null;
 		}
-		else if ((npc.getNpcId() == POWDER_KEG) && event.equalsIgnoreCase("keg_trigger"))
+		else if (npc.getNpcId() == POWDER_KEG && event.equalsIgnoreCase("keg_trigger"))
 		{
 			onAttack(npc, player, 600, false);
 		}
@@ -247,7 +247,7 @@ public class PailakaDevilsLegacy extends Quest
 		}
 		else if (event.equalsIgnoreCase("lematan_teleport"))
 		{
-			if ((npc.getNpcId() == LEMATAN) && !npc.isMovementDisabled() && !_isOnShip)
+			if (npc.getNpcId() == LEMATAN && !npc.isMovementDisabled() && !_isOnShip)
 			{
 				// Reduce Hate
 				((L2Attackable) npc).reduceHate(player, 9999);
@@ -262,7 +262,7 @@ public class PailakaDevilsLegacy extends Quest
 				_isTeleportScheduled = false;
 			return null;
 		}
-		else if ((npc.getNpcId() == LEMATAN) && event.equalsIgnoreCase("lematan_finish_teleport") && !_isOnShip)
+		else if (npc.getNpcId() == LEMATAN && event.equalsIgnoreCase("lematan_finish_teleport") && !_isOnShip)
 		{
 			// Teleport Lematan
 			npc.teleToLocation(84973, -208721, -3340);
@@ -291,7 +291,7 @@ public class PailakaDevilsLegacy extends Quest
 	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		final QuestState st = player.getQuestState(qn);
-		if ((st != null) && (npc.getNpcId() == ADVENTURER2) && (st.getState() == State.COMPLETED))
+		if (st != null && npc.getNpcId() == ADVENTURER2 && st.getState() == State.COMPLETED)
 			return "32511-03.htm";
 		else
 			return npc.getNpcId() + ".htm";
@@ -332,7 +332,7 @@ public class PailakaDevilsLegacy extends Quest
 				else
 					return "32501-01.htm";
 			case ADVENTURER1:
-				if ((player.getPet() == null) && player.getSummons().isEmpty())
+				if (player.getPet() == null && player.getSummons().isEmpty())
 				{
 					if (st.getQuestItemsCount(SWORD) > 0)
 					{
@@ -394,7 +394,7 @@ public class PailakaDevilsLegacy extends Quest
 	@Override
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if ((npc.getNpcId() == POWDER_KEG) && !npc.isDead())
+		if (npc.getNpcId() == POWDER_KEG && !npc.isDead())
 		{
 			npc.doCast(boom_skill);
 			
@@ -423,7 +423,7 @@ public class PailakaDevilsLegacy extends Quest
 			if (!npc.isDead())
 				npc.doDie(attacker);
 		}
-		else if ((npc.getNpcId() == LEMATAN) && (npc.getCurrentHp() < (npc.getMaxHp() / 2)) && !_isTeleportScheduled)
+		else if (npc.getNpcId() == LEMATAN && npc.getCurrentHp() < npc.getMaxHp() / 2 && !_isTeleportScheduled)
 		{
 			startQuestTimer("lematan_teleport", 1000, npc, attacker);
 		}
@@ -440,7 +440,7 @@ public class PailakaDevilsLegacy extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
+		if (st == null || st.getState() != State.STARTED)
 			return null;
 		
 		switch (npc.getNpcId())
@@ -460,7 +460,7 @@ public class PailakaDevilsLegacy extends Quest
 				}
 				break;
 			case LEMATAN:
-				if ((_followerslist != null) && !_followerslist.isEmpty())
+				if (_followerslist != null && !_followerslist.isEmpty())
 				{
 					for (L2Npc _follower : _followerslist)
 						_follower.deleteMe();
@@ -495,10 +495,10 @@ public class PailakaDevilsLegacy extends Quest
 	@Override
 	public String onEnterZone(L2Character character, L2ZoneType zone)
 	{
-		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{
 			InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
-			if ((world != null) && (world.templateId == INSTANCE_ID))
+			if (world != null && world.templateId == INSTANCE_ID)
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
 		}
 		return super.onEnterZone(character, zone);

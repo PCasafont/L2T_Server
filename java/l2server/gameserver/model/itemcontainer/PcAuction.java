@@ -52,6 +52,6 @@ public class PcAuction extends ItemContainer
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return ((_items.size() + slots) <= 10);
+		return _items.size() + slots <= 10;
 	}
 }

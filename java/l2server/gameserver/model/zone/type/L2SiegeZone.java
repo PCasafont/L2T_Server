@@ -95,16 +95,16 @@ public class L2SiegeZone extends L2ZoneType
 				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId) || ((L2PcInstance) character).isGM())
 				{
 					((L2PcInstance) character).setIsInSiege(true); // in siege
-					if ((_siege != null) && _siege.giveFame())
+					if (_siege != null && _siege.giveFame())
 						((L2PcInstance) character).startFameTask(_siege.getFameFrequency() * 1000, _siege.getFameAmount());
 				}
-				else if ((_siegableId > 100) && !character.isGM() && !TerritoryWarManager.getInstance().isTWInProgress())
+				else if (_siegableId > 100 && !character.isGM() && !TerritoryWarManager.getInstance().isTWInProgress())
 				{
 					((L2PcInstance) character).sendMessage("You are not registered at this siege!");
 					((L2PcInstance) character).teleToLocation(TownManager.getClosestTown(character).getSpawnLoc(), true);
 				}
 				((L2PcInstance) character).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
-				if (!Config.ALLOW_WYVERN_DURING_SIEGE && (((L2PcInstance) character).getMountType() == 2))
+				if (!Config.ALLOW_WYVERN_DURING_SIEGE && ((L2PcInstance) character).getMountType() == 2)
 				{
 					character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AREA_CANNOT_BE_ENTERED_WHILE_MOUNTED_WYVERN));
 					((L2PcInstance) character).enteredNoLanding(DISMOUNT_DELAY);
@@ -134,11 +134,11 @@ public class L2SiegeZone extends L2ZoneType
 				
 				// LasTravel, TW Flags can't go out of the siege zone
 				L2Weapon wardFlag = ((L2PcInstance) character).getActiveWeaponItem();
-				if ((wardFlag != null) && (wardFlag.getItemId() >= 13560) && (wardFlag.getItemId() <= 13568))
+				if (wardFlag != null && wardFlag.getItemId() >= 13560 && wardFlag.getItemId() <= 13568)
 				{
 					character.sendMessage("Territory Flag can't go out of the Siege Zone!");
 					
-					TerritoryWarManager.getInstance().dropCombatFlag(((L2PcInstance) character), false, true);
+					TerritoryWarManager.getInstance().dropCombatFlag((L2PcInstance) character, false, true);
 				}
 			}
 		}
@@ -148,7 +148,7 @@ public class L2SiegeZone extends L2ZoneType
 			activeChar.stopFameTask();
 			activeChar.setIsInSiege(false);
 			
-			if ((_siege instanceof FortSiege) && (activeChar.getInventory().getItemByItemId(9819) != null))
+			if (_siege instanceof FortSiege && activeChar.getInventory().getItemByItemId(9819) != null)
 			{
 				// drop combat flag
 				Fort fort = FortManager.getInstance().getFortById(_siegableId);
@@ -179,7 +179,7 @@ public class L2SiegeZone extends L2ZoneType
 		if (_isActiveSiege)
 		{
 			// debuff participants only if they die inside siege zone
-			if ((character instanceof L2PcInstance) && ((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId))
+			if (character instanceof L2PcInstance && ((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId))
 			{
 				int lvl = 1;
 				final L2Abnormal e = character.getFirstEffect(5660);
@@ -296,7 +296,7 @@ public class L2SiegeZone extends L2ZoneType
 		{
 			if (!(temp instanceof L2PcInstance))
 				continue;
-			if ((((L2PcInstance) temp).getClan() == owningClan) || ((L2PcInstance) temp).isGM())
+			if (((L2PcInstance) temp).getClan() == owningClan || ((L2PcInstance) temp).isGM())
 				continue;
 			
 			((L2PcInstance) temp).teleToLocation(MapRegionTable.TeleportWhereType.Town);

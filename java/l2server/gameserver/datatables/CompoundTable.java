@@ -125,7 +125,7 @@ public class CompoundTable implements Reloadable
 	
 	private int getHash(int item1, int item2)
 	{
-		return (Math.min(item1, item2) * 100000) + Math.max(item1, item2);
+		return Math.min(item1, item2) * 100000 + Math.max(item1, item2);
 	}
 	
 	public static CompoundTable getInstance()

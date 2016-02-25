@@ -53,7 +53,7 @@ public class LoginCrypt
 			size += 4;
 			
 			// padding
-			size += 8 - (size % 8);
+			size += 8 - size % 8;
 			NewCrypt.encXORPass(raw, offset, size, Rnd.nextInt());
 			_staticCrypt.crypt(raw, offset, size);
 			
@@ -62,7 +62,7 @@ public class LoginCrypt
 		else
 		{
 			// padding
-			size += 8 - (size % 8);
+			size += 8 - size % 8;
 			NewCrypt.appendChecksum(raw, offset, size);
 			_crypt.crypt(raw, offset, size);
 		}

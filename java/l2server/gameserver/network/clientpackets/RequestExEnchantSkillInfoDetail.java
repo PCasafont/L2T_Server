@@ -51,7 +51,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if ((_skillId <= 0) || (_skillLvl <= 0) || (_skillEnch <= 0)) // minimal sanity check
+		if (_skillId <= 0 || _skillLvl <= 0 || _skillEnch <= 0) // minimal sanity check
 			return;
 		
 		L2PcInstance activeChar = getClient().getActiveChar();
@@ -70,7 +70,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		if (curSkill == null)
 			return;
 		
-		if ((_type == 0) || (_type == 1) || (_type == 4))
+		if (_type == 0 || _type == 1 || _type == 4)
 		{
 			reqEnchLvl = enchLvl - 1; // enchant
 			if (esl.isMaxEnchant(enchRoute, curSkill.getEnchantLevel()))
@@ -91,7 +91,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		else if (curSkill.getEnchantRouteId() != enchRoute)
 		{
 			// change route is different skill lvl but same enchant
-			if ((_type == 3) && (curSkill.getEnchantLevel() != enchLvl))
+			if (_type == 3 && curSkill.getEnchantLevel() != enchLvl)
 				return;
 		}
 		else if (reqEnchLvl != curSkill.getEnchantLevel())

@@ -85,7 +85,7 @@ public final class L2MercManagerInstance extends L2MerchantInstance
 	
 	private int validateCondition(L2PcInstance player)
 	{
-		if ((getCastle() != null) && (getCastle().getCastleId() > 0))
+		if (getCastle() != null && getCastle().getCastleId() > 0)
 		{
 			if (player.getClan() != null)
 			{

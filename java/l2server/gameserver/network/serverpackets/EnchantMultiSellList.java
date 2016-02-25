@@ -93,7 +93,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 			{
 				EnchantMultiSellEntry entry = category.Entries.get(item.getEnchantLevel() + 1);
 				
-				writeD((category.Id * ItemIdMod) + (item.getObjectId() % ItemIdMod)); // entry id
+				writeD(category.Id * ItemIdMod + item.getObjectId() % ItemIdMod); // entry id
 				writeC(0x00); // stackable
 				writeH(0x00); // C6
 				writeD(0x00); // C6

@@ -58,7 +58,7 @@ public class CombatPointHeal implements ISkillHandler
 			double cp = skill.getPower();
 			cp *= target.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) / 100;
 			
-			if ((target.getCurrentCp() + cp) >= target.getMaxCp())
+			if (target.getCurrentCp() + cp >= target.getMaxCp())
 				cp = target.getMaxCp() - target.getCurrentCp();
 			
 			cp = Math.min(target.calcStat(Stats.GAIN_CP_LIMIT, target.getMaxCp(), null, null), target.getCurrentCp() + cp) - target.getCurrentCp();
@@ -84,7 +84,7 @@ public class CombatPointHeal implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

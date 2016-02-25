@@ -18,7 +18,7 @@ public class OnyxBeast extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 1) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 1 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

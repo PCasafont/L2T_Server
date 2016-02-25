@@ -221,7 +221,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 		{
 			int start = _html.indexOf("\"bypass ", i);
 			int finish = _html.indexOf("\"", start + 1);
-			if ((start < 0) || (finish < 0))
+			if (start < 0 || finish < 0)
 				break;
 			
 			if (_html.substring(start + 8, start + 10).equals("-h"))
@@ -231,7 +231,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket
 			
 			i = finish;
 			int finish2 = _html.indexOf("$", start);
-			if ((finish2 < finish) && (finish2 > 0))
+			if (finish2 < finish && finish2 > 0)
 				activeChar.addBypass2(_html.substring(start, finish2).trim());
 			else
 				activeChar.addBypass(_html.substring(start, finish).trim());

@@ -119,7 +119,7 @@ public class Spezion extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
+						if (pMember == null || pMember.getInstanceId() != world.instanceId)
 							continue;
 						
 						//Reward
@@ -177,7 +177,7 @@ public class Spezion extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof PrisonOfDarknessWorld))
+		if (wrld != null && wrld instanceof PrisonOfDarknessWorld)
 		{
 			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) wrld;
 			if (Util.contains(_cannonIds, npc.getNpcId()))
@@ -224,7 +224,7 @@ public class Spezion extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof PrisonOfDarknessWorld))
+		if (wrld != null && wrld instanceof PrisonOfDarknessWorld)
 		{
 			PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -276,7 +276,7 @@ public class Spezion extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_spawn_minions"))
 			{
-				if ((world.spezionBoss != null) && !world.spezionBoss.isDead())
+				if (world.spezionBoss != null && !world.spezionBoss.isDead())
 				{
 					if (world.spezionBoss.getDisplayEffect() != 2)
 					{
@@ -303,7 +303,7 @@ public class Spezion extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_spezion_back"))
 			{
-				if ((world.spezionBoss != null) && !world.spezionBoss.isDead())
+				if (world.spezionBoss != null && !world.spezionBoss.isDead())
 				{
 					world.spezionBoss.setDisplayEffect(3);
 					world.spezionBoss.setIsInvul(true);
@@ -315,7 +315,7 @@ public class Spezion extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_cannon"))
 			{
-				if ((world.spezionBoss == null) || world.spezionBoss.isDead() || (world.spezionBoss.getDisplayEffect() == 2))
+				if (world.spezionBoss == null || world.spezionBoss.isDead() || world.spezionBoss.getDisplayEffect() == 2)
 					return "";
 				
 				long cannonBallCount = player.getInventory().getInventoryItemCount(_giantCannonball, 0);
@@ -366,7 +366,7 @@ public class Spezion extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.deleteAllItemsById(_giantCannonball);
 					player.setInstanceId(world.instanceId);

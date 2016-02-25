@@ -108,7 +108,7 @@ public class MailManager
 		final int objectId = player.getObjectId();
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && msg.isUnread())
+			if (msg != null && msg.getReceiverId() == objectId && msg.isUnread())
 				return true;
 		}
 		return false;
@@ -119,7 +119,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver() && msg.isUnread())
+			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver() && msg.isUnread())
 				size++;
 		}
 		return size;
@@ -130,7 +130,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
+			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 				size++;
 		}
 		return size;
@@ -141,7 +141,7 @@ public class MailManager
 		int size = 0;
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
+			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 				size++;
 		}
 		return size;
@@ -152,7 +152,7 @@ public class MailManager
 		List<Message> inbox = new ArrayList<Message>();
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
+			if (msg != null && msg.getReceiverId() == objectId && !msg.isDeletedByReceiver())
 				inbox.add(msg);
 		}
 		return inbox;
@@ -163,7 +163,7 @@ public class MailManager
 		List<Message> outbox = new ArrayList<Message>();
 		for (Message msg : _messages.values())
 		{
-			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
+			if (msg != null && msg.getSenderId() == objectId && !msg.isDeletedBySender())
 				outbox.add(msg);
 		}
 		return outbox;

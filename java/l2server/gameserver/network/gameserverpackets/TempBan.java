@@ -30,7 +30,7 @@ public class TempBan extends BaseSendablePacket
 		writeC(0x0A);
 		writeS(accountName);
 		writeS(ip);
-		writeQ(System.currentTimeMillis() + (time * 60000));
+		writeQ(System.currentTimeMillis() + time * 60000);
 		if (reason != null)
 		{
 			writeC(0x01);

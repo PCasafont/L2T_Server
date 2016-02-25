@@ -91,10 +91,10 @@ public class Loto implements IBypassHandler
 		
 		if (val == 0) // 0 - first buy lottery ticket window
 		{
-			filename = (npc.getHtmlPath(npcId, 1));
+			filename = npc.getHtmlPath(npcId, 1);
 			html.setFile(player.getHtmlPrefix(), filename);
 		}
-		else if ((val >= 1) && (val <= 21)) // 1-20 - buttons, 21 - second buy lottery ticket window
+		else if (val >= 1 && val <= 21) // 1-20 - buttons, 21 - second buy lottery ticket window
 		{
 			if (!Lottery.getInstance().isStarted())
 			{
@@ -109,7 +109,7 @@ public class Loto implements IBypassHandler
 				return;
 			}
 			
-			filename = (npc.getHtmlPath(npcId, 5));
+			filename = npc.getHtmlPath(npcId, 5);
 			html.setFile(player.getHtmlPrefix(), filename);
 			
 			int count = 0;
@@ -130,7 +130,7 @@ public class Loto implements IBypassHandler
 			}
 			
 			//if not rearched limit 5 and not unseted value
-			if ((count < 5) && (found == 0) && (val <= 20))
+			if (count < 5 && found == 0 && val <= 20)
 				for (int i = 0; i < 5; i++)
 					if (player.getLoto(i) == 0)
 					{
@@ -217,17 +217,17 @@ public class Loto implements IBypassHandler
 			iu.addModifiedItem(adenaupdate);
 			player.sendPacket(iu);
 			
-			filename = (npc.getHtmlPath(npcId, 6));
+			filename = npc.getHtmlPath(npcId, 6);
 			html.setFile(player.getHtmlPrefix(), filename);
 		}
 		else if (val == 23) //23 - current lottery jackpot
 		{
-			filename = (npc.getHtmlPath(npcId, 3));
+			filename = npc.getHtmlPath(npcId, 3);
 			html.setFile(player.getHtmlPrefix(), filename);
 		}
 		else if (val == 24) // 24 - Previous winning numbers/Prize claim
 		{
-			filename = (npc.getHtmlPath(npcId, 4));
+			filename = npc.getHtmlPath(npcId, 4);
 			html.setFile(player.getHtmlPrefix(), filename);
 			
 			int lotonumber = Lottery.getInstance().getId();
@@ -236,7 +236,7 @@ public class Loto implements IBypassHandler
 			{
 				if (item == null)
 					continue;
-				if ((item.getItemId() == 4442) && (item.getCustomType1() < lotonumber))
+				if (item.getItemId() == 4442 && item.getCustomType1() < lotonumber)
 				{
 					message = message + "<a action=\"bypass -h npc_%objectId%_Loto " + item.getObjectId() + "\">" + item.getCustomType1() + " Event Number ";
 					int[] numbers = Lottery.getInstance().decodeNumbers(item.getEnchantLevel(), item.getCustomType2());
@@ -275,14 +275,14 @@ public class Loto implements IBypassHandler
 		}
 		else if (val == 25) //25 - lottery instructions
 		{
-			filename = (npc.getHtmlPath(npcId, 2));
+			filename = npc.getHtmlPath(npcId, 2);
 			html.setFile(player.getHtmlPrefix(), filename);
 		}
 		else if (val > 25) // >25 - check lottery ticket by item object id
 		{
 			int lotonumber = Lottery.getInstance().getId();
 			L2ItemInstance item = player.getInventory().getItemByObjectId(val);
-			if ((item == null) || (item.getItemId() != 4442) || (item.getCustomType1() >= lotonumber))
+			if (item == null || item.getItemId() != 4442 || item.getCustomType1() >= lotonumber)
 				return;
 			long[] check = Lottery.getInstance().checkTicket(item);
 			
@@ -300,9 +300,9 @@ public class Loto implements IBypassHandler
 		html.replace("%race%", "" + Lottery.getInstance().getId());
 		html.replace("%adena%", "" + Lottery.getInstance().getPrize());
 		html.replace("%ticket_price%", "" + Config.ALT_LOTTERY_TICKET_PRICE);
-		html.replace("%prize5%", "" + (Config.ALT_LOTTERY_5_NUMBER_RATE * 100));
-		html.replace("%prize4%", "" + (Config.ALT_LOTTERY_4_NUMBER_RATE * 100));
-		html.replace("%prize3%", "" + (Config.ALT_LOTTERY_3_NUMBER_RATE * 100));
+		html.replace("%prize5%", "" + Config.ALT_LOTTERY_5_NUMBER_RATE * 100);
+		html.replace("%prize4%", "" + Config.ALT_LOTTERY_4_NUMBER_RATE * 100);
+		html.replace("%prize3%", "" + Config.ALT_LOTTERY_3_NUMBER_RATE * 100);
 		html.replace("%prize2%", "" + Config.ALT_LOTTERY_2_AND_1_NUMBER_PRIZE);
 		html.replace("%enddate%", "" + DateFormat.getDateInstance().format(Lottery.getInstance().getEndDate()));
 		player.sendPacket(html);

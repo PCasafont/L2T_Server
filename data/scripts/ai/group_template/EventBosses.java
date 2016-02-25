@@ -106,7 +106,7 @@ public class EventBosses extends L2AttackableAIScript
 			_attackerIps.put(player, player.getExternalIP());
 		}
 		
-		if ((_bossStatus == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.15)))
+		if (_bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
 		{
 			_bossStatus = 1;
 			
@@ -114,7 +114,7 @@ public class EventBosses extends L2AttackableAIScript
 			
 			_knightFrenzy.getEffects(npc, npc);
 		}
-		else if ((_bossStatus == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+		else if (_bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 		{
 			_bossStatus = 2;
 			
@@ -129,7 +129,7 @@ public class EventBosses extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if ((npc != null) && (npc.getInstanceId() == 0))
+		if (npc != null && npc.getInstanceId() == 0)
 		{
 			for (Map.Entry<L2PcInstance, String> playerInfo : _attackerIps.entrySet())
 			{
@@ -140,7 +140,7 @@ public class EventBosses extends L2AttackableAIScript
 				
 				L2PcInstance playerToReward = playerInfo.getKey();
 				
-				if ((playerToReward == null) || !playerToReward.isOnline() || !playerToReward.isInsideRadius(npc, 4000, false, false))
+				if (playerToReward == null || !playerToReward.isOnline() || !playerToReward.isInsideRadius(npc, 4000, false, false))
 				{
 					continue;
 				}
@@ -199,7 +199,7 @@ public class EventBosses extends L2AttackableAIScript
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		if ((npc != null) && (npc.getInstanceId() == 0))
+		if (npc != null && npc.getInstanceId() == 0)
 		{
 			L2Spawn spawn = npc.getSpawn();
 			

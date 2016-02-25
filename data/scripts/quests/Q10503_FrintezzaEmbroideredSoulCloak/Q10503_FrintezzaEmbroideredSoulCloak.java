@@ -78,7 +78,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 			case State.STARTED:
 			{
 				final long count = st.getQuestItemsCount(FrintezzaSoulFragment); // How many items player has
-				if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(FrintezzaSoulFragment) < RequiredItems))
+				if (st.getInt("cond") == 1 && st.getQuestItemsCount(FrintezzaSoulFragment) < RequiredItems)
 					htmltext = "32612-Frintezza-03.htm"; // Still has not the required amount
 				else if (count >= RequiredItems)
 				{
@@ -120,7 +120,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	{
 		final QuestState st = player.getQuestState(qn);
 		
-		if ((st != null) && (st.getState() == State.STARTED))
+		if (st != null && st.getState() == State.STARTED)
 			st.giveItems(FrintezzaSoulCloak, Rnd.get(MinGiven, MaxGiven));
 	}
 	

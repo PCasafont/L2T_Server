@@ -150,7 +150,7 @@ public class Octavis extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof OctavisWorld))
+		if (wrld != null && wrld instanceof OctavisWorld)
 		{
 			if (npc.getNpcId() == _lydiaInner)
 				return "LydiaInner.html";
@@ -175,7 +175,7 @@ public class Octavis extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof OctavisWorld))
+		if (wrld != null && wrld instanceof OctavisWorld)
 		{
 			OctavisWorld world = (OctavisWorld) wrld;
 			if (npc.getNpcId() == world.firstOctavisId)
@@ -206,7 +206,7 @@ public class Octavis extends L2AttackableAIScript
 				{
 					for (L2Npc curator : world.curatorMinions)
 					{
-						if ((curator == null) || curator.isDead())
+						if (curator == null || curator.isDead())
 							continue;
 						
 						curator.disableCoreAI(true);
@@ -242,7 +242,7 @@ public class Octavis extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof OctavisWorld))
+		if (wrld != null && wrld instanceof OctavisWorld)
 		{
 			OctavisWorld world = (OctavisWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_doors"))
@@ -309,7 +309,7 @@ public class Octavis extends L2AttackableAIScript
 			else if (event.equalsIgnoreCase("stage_1_start_octavis_attack"))
 			{
 				//Cancel the task
-				if ((world.status != 1) || (world.octavisLions == null) || (world.octavisBoss == null))
+				if (world.status != 1 || world.octavisLions == null || world.octavisBoss == null)
 				{
 					QuestTimer timer = getQuestTimer("stage_1_start_octavis_attack", npc, null);
 					if (timer != null)
@@ -433,7 +433,7 @@ public class Octavis extends L2AttackableAIScript
 				}
 			}
 		}
-		if ((npc != null) && (npc.getNpcId() == _lydia) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if (npc != null && npc.getNpcId() == _lydia && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -470,22 +470,22 @@ public class Octavis extends L2AttackableAIScript
 					startQuestTimer("stage_1_start_octavis_attack", 30000, npc, null, true);
 				}
 				
-				if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.85)) && (world.octavisBoss.getDisplayEffect() == 0))
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.85 && world.octavisBoss.getDisplayEffect() == 0)
 					world.octavisBoss.setDisplayEffect(1);
-				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.75)) && (world.octavisBoss.getDisplayEffect() == 1))
+				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.75 && world.octavisBoss.getDisplayEffect() == 1)
 					world.octavisBoss.setDisplayEffect(2);
-				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.65)) && (world.octavisBoss.getDisplayEffect() == 2))
+				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.65 && world.octavisBoss.getDisplayEffect() == 2)
 					world.octavisBoss.setDisplayEffect(3);
-				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.55)) && (world.octavisBoss.getDisplayEffect() == 3))
+				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.55 && world.octavisBoss.getDisplayEffect() == 3)
 					world.octavisBoss.setDisplayEffect(4);
-				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.50)) && (world.octavisBoss.getDisplayEffect() == 4))
+				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.50 && world.octavisBoss.getDisplayEffect() == 4)
 					world.octavisBoss.setDisplayEffect(5);
 			}
 			else if (npc.getNpcId() == world.firstOctavisId)
 			{
 				if (world.status == 1)
 				{
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.15))
+					if (npc.getCurrentHp() < npc.getMaxHp() * 0.15)
 					{
 						world.status = 2;
 						
@@ -497,7 +497,7 @@ public class Octavis extends L2AttackableAIScript
 						startQuestTimer("stage_2_spawnboss", ScenePlayerDataTable.getInstance().getVideoDuration(36) + 2000, npc, null);
 					}
 					
-					if (world.octavisLions.getCurrentHp() < (world.octavisLions.getMaxHp() * 0.50))
+					if (world.octavisLions.getCurrentHp() < world.octavisLions.getMaxHp() * 0.50)
 					{
 						npc.setIsInvul(false);
 					}
@@ -518,7 +518,7 @@ public class Octavis extends L2AttackableAIScript
 					if (world.isHardMode)
 						startQuestTimer("stage_2_spawnHeros", 40000, npc, null);
 				}
-				else if ((world.status == 4) && (npc.getNpcId() == world.secondOctavisId) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.15)))
+				else if (world.status == 4 && npc.getNpcId() == world.secondOctavisId && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
 				{
 					world.status = 5;
 					
@@ -618,7 +618,7 @@ public class Octavis extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(208195, 120574, -10015);

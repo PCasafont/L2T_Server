@@ -66,7 +66,7 @@ public class AdminElement implements IAdminCommandHandler
 				
 				byte element = Elementals.getElementId(args[1]);
 				int value = Integer.parseInt(args[2]);
-				if ((element < -1) || (element > 5) || (value < 0) || (value > 450))
+				if (element < -1 || element > 5 || value < 0 || value > 450)
 				{
 					activeChar.sendMessage("Usage: //setlh/setlc/setlg/setlb/setll/setlw/setls <element> <value>[0-450]");
 					return false;
@@ -111,7 +111,7 @@ public class AdminElement implements IAdminCommandHandler
 		
 		// only attempt to enchant if there is a weapon equipped
 		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
-		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
+		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType)
 		{
 			itemInstance = parmorInstance;
 		}

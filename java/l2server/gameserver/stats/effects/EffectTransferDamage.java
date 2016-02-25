@@ -45,7 +45,7 @@ public class EffectTransferDamage extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if ((getEffected() instanceof L2Playable) && (getEffector() instanceof L2PcInstance))
+		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance)
 			((L2Playable) getEffected()).setTransferDamageTo((L2PcInstance) getEffector());
 		return true;
 	}
@@ -57,7 +57,7 @@ public class EffectTransferDamage extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if ((getEffected() instanceof L2Playable) && (getEffector() instanceof L2PcInstance))
+		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance)
 			((L2Playable) getEffected()).setTransferDamageTo(null);
 	}
 	

@@ -80,14 +80,14 @@ public class Unlock implements ISkillHandler
 					}
 				}
 				
-				if ((!door.isOpenableBySkill() && (skill.getSkillType() != L2SkillType.UNLOCK_SPECIAL)) || (door.getFort() != null))
+				if (!door.isOpenableBySkill() && skill.getSkillType() != L2SkillType.UNLOCK_SPECIAL || door.getFort() != null)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_UNLOCK_DOOR));
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 				
-				if (doorUnlock(skill) && (!door.getOpen()))
+				if (doorUnlock(skill) && !door.getOpen())
 				{
 					door.openMe();
 					//if (skill.getAfterEffectId() == 0)
@@ -99,7 +99,7 @@ public class Unlock implements ISkillHandler
 			else if (target instanceof L2ChestInstance)
 			{
 				L2ChestInstance chest = (L2ChestInstance) target;
-				if ((chest.getCurrentHp() <= 0) || chest.isInteracted() || (activeChar.getInstanceId() != chest.getInstanceId()))
+				if (chest.getCurrentHp() <= 0 || chest.isInteracted() || activeChar.getInstanceId() != chest.getInstanceId())
 				{
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
@@ -155,14 +155,14 @@ public class Unlock implements ISkillHandler
 			if (skill.getLevel() < 10)
 				return false;
 			
-			chance = ((skill.getLevel() - 10) * 5) + 30;
+			chance = (skill.getLevel() - 10) * 5 + 30;
 		}
 		else if (chest.getLevel() > 40)
 		{
 			if (skill.getLevel() < 6)
 				return false;
 			
-			chance = ((skill.getLevel() - 6) * 5) + 10;
+			chance = (skill.getLevel() - 6) * 5 + 10;
 		}
 		else if (chest.getLevel() > 30)
 		{
@@ -171,14 +171,14 @@ public class Unlock implements ISkillHandler
 			if (skill.getLevel() > 12)
 				return true;
 			
-			chance = ((skill.getLevel() - 3) * 5) + 30;
+			chance = (skill.getLevel() - 3) * 5 + 30;
 		}
 		else
 		{
 			if (skill.getLevel() > 10)
 				return true;
 			
-			chance = (skill.getLevel() * 5) + 35;
+			chance = skill.getLevel() * 5 + 35;
 		}
 		
 		chance = Math.min(chance, 50);

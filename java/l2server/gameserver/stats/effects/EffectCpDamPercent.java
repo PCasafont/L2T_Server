@@ -36,7 +36,7 @@ public class EffectCpDamPercent extends L2Effect
 		if (getEffected().isDead())
 			return false;
 		
-		double cp = (getEffected().getCurrentCp() * (100 - getAbnormal().getLandRate())) / 100;
+		double cp = getEffected().getCurrentCp() * (100 - getAbnormal().getLandRate()) / 100;
 		getEffected().setCurrentCp(cp);
 		
 		StatusUpdate sucp = new StatusUpdate(getEffected());

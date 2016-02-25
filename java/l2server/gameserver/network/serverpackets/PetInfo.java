@@ -154,7 +154,7 @@ public class PetInfo extends L2GameServerPacket
 		writeC(_summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
 		
 		int form = 0;
-		if ((npcId == 16041) || (npcId == 16042))
+		if (npcId == 16041 || npcId == 16042)
 		{
 			if (_summon.getLevel() > 84)
 				form = 3;
@@ -163,7 +163,7 @@ public class PetInfo extends L2GameServerPacket
 			else if (_summon.getLevel() > 74)
 				form = 1;
 		}
-		else if ((npcId == 16025) || (npcId == 16037))
+		else if (npcId == 16025 || npcId == 16037)
 		{
 			if (_summon.getLevel() > 69)
 				form = 3;

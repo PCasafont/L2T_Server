@@ -102,7 +102,7 @@ public final class CharTemplateTable implements Reloadable
 								set.set("mAtkSpd", raceNode.getInt("baseMAtkSpd"));
 								set.set("pCritRate", raceNode.getInt("baseCritical") / 10);
 								set.set("runSpd", raceNode.getInt("baseMoveSpd"));
-								set.set("walkSpd", (raceNode.getInt("baseMoveSpd") * 70) / 100);
+								set.set("walkSpd", raceNode.getInt("baseMoveSpd") * 70 / 100);
 								set.set("shldDef", 0);
 								set.set("shldRate", 0);
 								set.set("atkRange", 40);
@@ -134,13 +134,13 @@ public final class CharTemplateTable implements Reloadable
 									}
 								}
 								
-								_templates[(ct.race.ordinal() * 2) + (ct.isMage ? 1 : 0)] = ct;
+								_templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
 								count++;
 							}
 							else if (raceNode.getName().equalsIgnoreCase("skill"))
 							{
 								_templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								_templates[(raceId * 2) + 1].addSkill(raceNode.getInt("id"));
+								_templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
 							}
 						}
 					}
@@ -173,7 +173,7 @@ public final class CharTemplateTable implements Reloadable
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			player.setTemplate(_templates[(player.getRace().ordinal() * 2) + (player.getTemplate().isMage ? 1 : 0)]);
+			player.setTemplate(_templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;

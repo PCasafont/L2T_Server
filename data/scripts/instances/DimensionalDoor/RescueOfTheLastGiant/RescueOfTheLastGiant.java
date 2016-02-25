@@ -128,7 +128,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 		else
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof RescueOfTheLastGiantWorld))
+		if (wrld != null && wrld instanceof RescueOfTheLastGiantWorld)
 		{
 			RescueOfTheLastGiantWorld world = (RescueOfTheLastGiantWorld) wrld;
 			if (npc.getNpcId() == _dummyNpc)
@@ -172,7 +172,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof RescueOfTheLastGiantWorld))
+		if (wrld != null && wrld instanceof RescueOfTheLastGiantWorld)
 		{
 			RescueOfTheLastGiantWorld world = (RescueOfTheLastGiantWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -211,7 +211,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 				//Cast the skill to the player
 				for (L2Npc power : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
 				{
-					if ((power != null) && ((power.getNpcId() >= 80285) && (power.getNpcId() <= 80287)))
+					if (power != null && power.getNpcId() >= 80285 && power.getNpcId() <= 80287)
 					{
 						power.setTarget(world.instancedPlayer);
 						power.doCast(_powerHealSkill);
@@ -279,7 +279,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 					//Send to attack
 					for (L2Npc mobs : world.mobs)
 					{
-						if ((mobs != null) && (mobs.getNpcId() == world.specificMobClass))
+						if (mobs != null && mobs.getNpcId() == world.specificMobClass)
 							sendToAttack(world.instancedPlayer, mobs);
 					}
 				}
@@ -379,7 +379,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 			RescueOfTheLastGiantWorld world = (RescueOfTheLastGiantWorld) tmpWorld;
 			if (world.mobToAttack != 0)
 			{
-				if (!world.playerFail && (world.mobToAttack != npc.getNpcId()))
+				if (!world.playerFail && world.mobToAttack != npc.getNpcId())
 				{
 					world.playerFail = true;
 					
@@ -388,7 +388,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 					{
 						for (L2Npc mob : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
 						{
-							if ((mob != null) && !mob.isDead() && (mob.getNpcId() >= _mob8) && (mob.getNpcId() <= _mob7))
+							if (mob != null && !mob.isDead() && mob.getNpcId() >= _mob8 && mob.getNpcId() <= _mob7)
 							{
 								world.mobs.add(mob);
 								
@@ -401,7 +401,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 			
 			if (npc.getNpcId() == _bossId)
 			{
-				if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.05)) && !world.deviceSpawned) //5%
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.05 && !world.deviceSpawned) //5%
 				{
 					world.deviceSpawned = true;
 					world.instancedPlayer.sendPacket(new ExSendUIEvent(1, 0, 60, 0, 1811302));
@@ -522,7 +522,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 					//Send to attack
 					for (L2Npc mobs : world.mobs)
 					{
-						if ((mobs != null) && (mobs.getNpcId() == world.specificMobClass))
+						if (mobs != null && mobs.getNpcId() == world.specificMobClass)
 							sendToAttack(world.instancedPlayer, mobs);
 					}
 				}
@@ -581,7 +581,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 	{
 		for (L2Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs())
 		{
-			if ((mob != null) && (mob.getNpcId() == npcid))
+			if (mob != null && mob.getNpcId() == npcid)
 			{
 				if (npcstring1 != 0)
 					mob.broadcastPacket(new NpcSay(mob.getObjectId(), chatId, mob.getTemplate().TemplateId, npcstring1));
@@ -596,7 +596,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 	{
 		for (L2Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs())
 		{
-			if ((mob != null) && (mob.getNpcId() == npcid))
+			if (mob != null && mob.getNpcId() == npcid)
 			{
 				mob.setIsRunning(true);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, head));
@@ -609,7 +609,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 	
 	private static void sendToAttack(L2PcInstance player, L2Npc npc)
 	{
-		if ((player == null) || (npc == null))
+		if (player == null || npc == null)
 			return;
 		
 		npc.setIsRunning(true);
@@ -652,7 +652,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-107917, 205824, -10872, true);

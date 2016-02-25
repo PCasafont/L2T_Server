@@ -122,7 +122,7 @@ public class Certificate implements IBypassHandler
 					if (s.getLevel() > highestDualClassLevel)
 						highestDualClassLevel = s.getLevel();
 					
-					if ((dualClass == null) || (dualClass.getCertificates() != 0))
+					if (dualClass == null || dualClass.getCertificates() != 0)
 						dualClass = s;
 				}
 			}

@@ -64,7 +64,7 @@ public class EffectSignet extends L2Effect
 		else if (getSkill() instanceof L2SkillSignetCasttime)
 			_skill = SkillTable.getInstance().getInfo(((L2SkillSignetCasttime) getSkill()).effectId, getLevel());
 		_actor = (L2EffectPointInstance) getEffected();
-		_srcInArena = (getEffector().isInsideZone(L2Character.ZONE_PVP) && !getEffector().isInsideZone(L2Character.ZONE_SIEGE));
+		_srcInArena = getEffector().isInsideZone(L2Character.ZONE_PVP) && !getEffector().isInsideZone(L2Character.ZONE_SIEGE);
 		return true;
 	}
 	
@@ -102,7 +102,7 @@ public class EffectSignet extends L2Effect
 			if (cha instanceof L2PcInstance)
 			{
 				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
 					continue;
 			}
 			

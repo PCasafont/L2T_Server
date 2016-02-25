@@ -58,7 +58,7 @@ public class HerbTarget implements ISkillTargetTypeHandler
 			_aResult.add(aPlayer);
 			
 			// As well as his summon, if it's a summon and NOT a pet.
-			if ((aSummon != null) && !(aSummon instanceof L2PetInstance))
+			if (aSummon != null && !(aSummon instanceof L2PetInstance))
 				_aResult.add(aSummon);
 		}
 		else

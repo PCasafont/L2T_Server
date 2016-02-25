@@ -46,7 +46,7 @@ public final class WareHouseDepositList extends L2ItemListPacket
 		final boolean isPrivate = _whType == PRIVATE;
 		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate))
 		{
-			if ((temp != null) && temp.isDepositable(isPrivate))
+			if (temp != null && temp.isDepositable(isPrivate))
 				_items.add(temp);
 		}
 	}

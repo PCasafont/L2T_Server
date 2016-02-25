@@ -293,7 +293,7 @@ public class XmlNode
 		for (Entry<String, String> attr : _attributes.entrySet())
 			result += " " + attr.getKey() + "=\"" + attr.getValue() + "\"";
 		
-		if (!_children.isEmpty() || ((_text != null) && (_text.length() > 0)))
+		if (!_children.isEmpty() || _text != null && _text.length() > 0)
 		{
 			result += ">\r\n";
 			for (XmlNode child : _children)

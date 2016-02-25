@@ -91,11 +91,11 @@ public class CpDam implements ISkillHandler
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 			}
-			else if (target.isDead() || target.isInvul(activeChar) || ((target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar)))
+			else if (target.isDead() || target.isInvul(activeChar) || target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
 			{
 				continue;
 			}

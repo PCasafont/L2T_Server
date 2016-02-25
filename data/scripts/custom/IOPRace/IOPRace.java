@@ -48,7 +48,7 @@ public class IOPRace extends Quest
 		
 		if (player.getLevel() < 78)
 			return "32349-notavailable.htm";
-		else if ((_player != -1) && (_player == player.getObjectId()) && (st.getQuestItemsCount(STAMP) == 4))
+		else if (_player != -1 && _player == player.getObjectId() && st.getQuestItemsCount(STAMP) == 4)
 			return "32349-return.htm";
 		else if (_player != -1)
 			return "32349-notavailable.htm";

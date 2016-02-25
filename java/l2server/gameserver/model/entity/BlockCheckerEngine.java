@@ -99,7 +99,7 @@ public final class BlockCheckerEngine
 	public BlockCheckerEngine(HandysBlockCheckerManager.ArenaParticipantsHolder holder, int arena)
 	{
 		_holder = holder;
-		if ((arena > -1) && (arena < 4))
+		if (arena > -1 && arena < 4)
 			_arena = arena;
 		
 		for (L2PcInstance player : holder.getRedPlayers())
@@ -451,7 +451,7 @@ public final class BlockCheckerEngine
 					spawn.doSpawn();
 					L2BlockInstance block = (L2BlockInstance) spawn.getNpc();
 					// switch color
-					if ((random % 2) == 0)
+					if (random % 2 == 0)
 						block.setRed(true);
 					else
 						block.setRed(false);
@@ -467,7 +467,7 @@ public final class BlockCheckerEngine
 			}
 			
 			// Spawn the block carrying girl
-			if ((_round == 1) || (_round == 2))
+			if (_round == 1 || _round == 2)
 			{
 				L2NpcTemplate girl = NpcTable.getInstance().getTemplate(18676);
 				try
@@ -569,7 +569,7 @@ public final class BlockCheckerEngine
 					continue;
 				
 				// a player has it, it will be deleted later
-				if (!item.isVisible() || (item.getOwnerId() != 0))
+				if (!item.isVisible() || item.getOwnerId() != 0)
 					continue;
 				
 				item.decayMe();
@@ -675,7 +675,7 @@ public final class BlockCheckerEngine
 			for (Entry<L2PcInstance, Integer> entry : tempPoints.entrySet())
 			{
 				L2PcInstance player = entry.getKey();
-				if ((player != null) && (entry.getValue() >= 10))
+				if (player != null && entry.getValue() >= 10)
 					player.addItem("Block Checker", 13067, 2, player, true);
 			}
 		}

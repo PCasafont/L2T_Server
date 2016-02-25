@@ -335,7 +335,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			else
 				spawn.setInstanceId(0);
 			
-			if ((spawn.getNpcId() >= 44401) && (spawn.getNpcId() <= 44416))
+			if (spawn.getNpcId() >= 44401 && spawn.getNpcId() <= 44416)
 				activeChar.sendMessage("You cannot spawn a " + template1.Name + "!!! It is a chess piece!");
 			else
 			{
@@ -355,11 +355,11 @@ public class AdminSpawn implements IAdminCommandHandler
 	private void showMonsters(L2PcInstance activeChar, int level, int from)
 	{
 		L2NpcTemplate[] mobs = NpcTable.getInstance().getAllMonstersOfLevel(level);
-		final StringBuilder tb = StringUtil.startAppend(500 + (mobs.length * 80), "<html><title>Spawn Monster:</title><body><p> Level : ", Integer.toString(level), "<br>Total Npc's : ", Integer.toString(mobs.length), "<br>");
+		final StringBuilder tb = StringUtil.startAppend(500 + mobs.length * 80, "<html><title>Spawn Monster:</title><body><p> Level : ", Integer.toString(level), "<br>Total Npc's : ", Integer.toString(mobs.length), "<br>");
 		
 		// Loop
 		int i = from;
-		for (int j = 0; (i < mobs.length) && (j < 50); i++, j++)
+		for (int j = 0; i < mobs.length && j < 50; i++, j++)
 			StringUtil.append(tb, "<a action=\"bypass -h admin_spawn_monster ", Integer.toString(mobs[i].NpcId), "\">", mobs[i].Name, "</a><br1>");
 		
 		if (i == mobs.length)
@@ -373,11 +373,11 @@ public class AdminSpawn implements IAdminCommandHandler
 	private void showNpcs(L2PcInstance activeChar, String starting, int from)
 	{
 		L2NpcTemplate[] mobs = NpcTable.getInstance().getAllNpcStartingWith(starting);
-		final StringBuilder tb = StringUtil.startAppend(500 + (mobs.length * 80), "<html><title>Spawn Monster:</title><body><p> There are ", Integer.toString(mobs.length), " Npcs whose name starts with ", starting, ":<br>");
+		final StringBuilder tb = StringUtil.startAppend(500 + mobs.length * 80, "<html><title>Spawn Monster:</title><body><p> There are ", Integer.toString(mobs.length), " Npcs whose name starts with ", starting, ":<br>");
 		
 		// Loop
 		int i = from;
-		for (int j = 0; (i < mobs.length) && (j < 50); i++, j++)
+		for (int j = 0; i < mobs.length && j < 50; i++, j++)
 			StringUtil.append(tb, "<a action=\"bypass -h admin_spawn_monster ", Integer.toString(mobs[i].NpcId), "\">", mobs[i].Name, "</a><br1>");
 		
 		if (i == mobs.length)

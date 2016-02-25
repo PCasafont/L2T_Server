@@ -58,7 +58,7 @@ public class L2SkillTeleport extends L2Skill
 		if (activeChar instanceof L2PcInstance)
 		{
 			// Thanks nbd
-			if ((((L2PcInstance) activeChar).getEvent() != null) && !((L2PcInstance) activeChar).getEvent().onEscapeUse(((L2PcInstance) activeChar).getObjectId()))
+			if (((L2PcInstance) activeChar).getEvent() != null && !((L2PcInstance) activeChar).getEvent().onEscapeUse(((L2PcInstance) activeChar).getObjectId()))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -112,7 +112,7 @@ public class L2SkillTeleport extends L2Skill
 					
 					if (targetChar != activeChar)
 					{
-						if ((targetChar.getEvent() != null) && !targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
+						if (targetChar.getEvent() != null && !targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
 							continue;
 						
 						if (targetChar.isInOlympiadMode())

@@ -64,8 +64,8 @@ public final class ConditionPlayerHasCastle extends Condition
 		if (_castle == -1)
 			return clan.getHasCastle() > 0;
 		
-		if ((_castle > 10) && (clan.getHasCastle() > 0))
-			return CastleManager.getInstance().getCastleById(clan.getHasCastle()).getTendency() == (_castle % 10);
+		if (_castle > 10 && clan.getHasCastle() > 0)
+			return CastleManager.getInstance().getCastleById(clan.getHasCastle()).getTendency() == _castle % 10;
 		
 		return clan.getHasCastle() == _castle;
 	}

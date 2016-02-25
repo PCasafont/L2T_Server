@@ -18,7 +18,7 @@ public class DivineEnchanter extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 257) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 257 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

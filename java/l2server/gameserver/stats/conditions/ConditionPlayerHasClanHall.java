@@ -55,13 +55,13 @@ public final class ConditionPlayerHasClanHall extends Condition
 		
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
 		if (clan == null)
-			return ((_clanHall.size() == 1) && (_clanHall.get(0) == 0));
+			return _clanHall.size() == 1 && _clanHall.get(0) == 0;
 		
 		if (env.player.isGM())
 			return true;
 		
 		// All Clan Hall
-		if ((_clanHall.size() == 1) && (_clanHall.get(0) == -1))
+		if (_clanHall.size() == 1 && _clanHall.get(0) == -1)
 			return clan.getHasHideout() > 0;
 		
 		return _clanHall.contains(clan.getHasHideout());

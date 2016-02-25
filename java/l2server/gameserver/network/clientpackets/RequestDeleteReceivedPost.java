@@ -39,7 +39,7 @@ public final class RequestDeleteReceivedPost extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 			return;
 		
 		_msgIds = new int[count];
@@ -51,7 +51,7 @@ public final class RequestDeleteReceivedPost extends L2GameClientPacket
 	public void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || (_msgIds == null) || !Config.ALLOW_MAIL)
+		if (activeChar == null || _msgIds == null || !Config.ALLOW_MAIL)
 			return;
 		
 		if (!activeChar.isInsideZone(ZONE_PEACE))

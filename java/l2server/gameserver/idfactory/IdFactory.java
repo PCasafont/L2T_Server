@@ -173,15 +173,15 @@ public abstract class IdFactory
 			// FIXME: This query takes long when there are many clans
 			stmt.executeUpdate("UPDATE clanhall set ownerId=0, paidUntil=0, paid=0 WHERE ownerId IN (SELECT clanid FROM characters WHERE DATEDIFF(CURRENT_DATE( ) , FROM_UNIXTIME(`lastaccess`/1000)) >= 60 AND charId IN (SELECT leader_id FROM clan_data));");
 			
-			long time = System.currentTimeMillis() - (30 * 24 * 60 * 60 * 1000L);
+			long time = System.currentTimeMillis() - 30 * 24 * 60 * 60 * 1000L;
 			cleanCount += stmt.executeUpdate("DELETE FROM log_chat WHERE time <= " + time);
 			cleanCount += stmt.executeUpdate("DELETE FROM log_enchant_skills WHERE time <= " + time);
 			cleanCount += stmt.executeUpdate("DELETE FROM log_enchants WHERE time <= " + time);
 			cleanCount += stmt.executeUpdate("DELETE FROM log_items WHERE time <= " + time);
 			cleanCount += stmt.executeUpdate("DELETE FROM log_olys WHERE time <= " + time);
 			//cleanCount += stmt.executeUpdate("DELETE FROM log_damage WHERE time <= " + time);
-			cleanCount += stmt.executeUpdate("DELETE FROM gm_audit WHERE time <= " + (time / 1000));
-			Log.info("Cleaned " + cleanCount + " elements from database in " + ((System.currentTimeMillis() - cleanupStart) / 1000) + " s");
+			cleanCount += stmt.executeUpdate("DELETE FROM gm_audit WHERE time <= " + time / 1000);
+			Log.info("Cleaned " + cleanCount + " elements from database in " + (System.currentTimeMillis() - cleanupStart) / 1000 + " s");
 			stmt.close();
 		}
 		catch (SQLException e)

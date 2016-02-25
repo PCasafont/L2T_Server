@@ -182,7 +182,7 @@ public abstract class L2ZoneType
 	private boolean isAffected(L2Character character)
 	{
 		// Check lvl
-		if ((character.getLevel() < _minLvl) || (character.getLevel() > _maxLvl))
+		if (character.getLevel() < _minLvl || character.getLevel() > _maxLvl)
 			return false;
 		
 		// check obj class
@@ -456,7 +456,7 @@ public abstract class L2ZoneType
 		
 		for (L2Character character : _characterList.values())
 		{
-			if ((character != null) && (character instanceof L2PcInstance))
+			if (character != null && character instanceof L2PcInstance)
 				character.sendPacket(packet);
 		}
 	}
@@ -495,7 +495,7 @@ public abstract class L2ZoneType
 		List<L2PcInstance> players = new ArrayList<L2PcInstance>();
 		for (L2Character ch : _characterList.values())
 		{
-			if ((ch != null) && (ch instanceof L2PcInstance))
+			if (ch != null && ch instanceof L2PcInstance)
 			{
 				players.add(ch.getActingPlayer());
 			}
@@ -509,7 +509,7 @@ public abstract class L2ZoneType
 		List<L2Npc> npcs = new ArrayList<L2Npc>();
 		for (L2Character ch : _characterList.values())
 		{
-			if ((ch == null) || (ch instanceof L2Playable) || (ch instanceof L2BoatInstance) || (!(ch instanceof L2Attackable) && !(ch instanceof L2NpcInstance)))
+			if (ch == null || ch instanceof L2Playable || ch instanceof L2BoatInstance || !(ch instanceof L2Attackable) && !(ch instanceof L2NpcInstance))
 				continue;
 			
 			npcs.add((L2Npc) ch);

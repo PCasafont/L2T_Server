@@ -42,12 +42,12 @@ public class EffectReset extends L2Effect
 	public boolean onStart()
 	{
 		L2Abnormal[] effects = getEffected().getAllEffects();
-		if ((effects == null) || (effects.length == 0))
+		if (effects == null || effects.length == 0)
 			return false;
 		
 		for (L2Abnormal e : effects)
 		{
-			if ((e == null) || !e.getSkill().isOffensive())
+			if (e == null || !e.getSkill().isOffensive())
 				continue;
 			
 			// Devil's Sway: Resets the duration of the target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm.

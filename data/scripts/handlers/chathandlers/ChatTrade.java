@@ -69,12 +69,12 @@ public class ChatTrade implements IChatHandler
 		
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		
-		if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("gm") && activeChar.isGM()))
+		if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("on") || Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("gm") && activeChar.isGM())
 		{
 			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
 			for (L2PcInstance player : pls)
 			{
-				if ((region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY())) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceId() == activeChar.getInstanceId()) && (activeChar.getEvent() == null))
+				if (region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) && !BlockList.isBlocked(player, activeChar) && player.getInstanceId() == activeChar.getInstanceId() && activeChar.getEvent() == null)
 					player.sendPacket(cs);
 				else if (player.isGM())
 					player.sendPacket(csReg);

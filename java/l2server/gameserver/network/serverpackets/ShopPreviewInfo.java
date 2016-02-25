@@ -59,6 +59,6 @@ public class ShopPreviewInfo extends L2GameServerPacket
 	
 	private int getFromList(int key)
 	{
-		return ((_itemlist.get(key) != null) ? _itemlist.get(key) : 0);
+		return _itemlist.get(key) != null ? _itemlist.get(key) : 0;
 	}
 }

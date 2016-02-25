@@ -173,7 +173,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 				activeChar.sendMessage("This item doesn't exist.");
 				return false;
 			}
-			if ((numval > 10) && !template.isStackable())
+			if (numval > 10 && !template.isStackable())
 			{
 				activeChar.sendMessage("This item does not stack - Creation aborted.");
 				return false;
@@ -182,7 +182,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 			{
 				for (L2PcInstance onlinePlayer : pls)
 				{
-					if ((onlinePlayer != null) && (activeChar != onlinePlayer) && onlinePlayer.isOnline() && ((onlinePlayer.getClient() != null) && !onlinePlayer.getClient().isDetached()))
+					if (onlinePlayer != null && activeChar != onlinePlayer && onlinePlayer.isOnline() && onlinePlayer.getClient() != null && !onlinePlayer.getClient().isDetached())
 					{
 						onlinePlayer.getInventory().addItem("Admin", idval, numval, onlinePlayer, activeChar);
 						onlinePlayer.sendMessage("Admin spawned " + numval + " " + template.getName() + " in your inventory.");
@@ -209,7 +209,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 			activeChar.sendMessage("This item doesn't exist.");
 			return;
 		}
-		if ((num > 10) && !template.isStackable())
+		if (num > 10 && !template.isStackable())
 		{
 			activeChar.sendMessage("This item does not stack - Creation aborted.");
 			return;

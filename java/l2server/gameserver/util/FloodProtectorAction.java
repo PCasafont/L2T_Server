@@ -87,7 +87,7 @@ public final class FloodProtectorAction
 	{
 		final int curTick = TimeController.getGameTicks();
 		
-		if ((curTick < _nextGameTick) || _punishmentInProgress)
+		if (curTick < _nextGameTick || _punishmentInProgress)
 		{
 			if (_config.LOG_FLOODING && !_logged && Log.isLoggable(Level.WARNING))
 			{
@@ -97,7 +97,7 @@ public final class FloodProtectorAction
 			
 			_count.incrementAndGet();
 			
-			if (!_punishmentInProgress && (_config.PUNISHMENT_LIMIT > 0) && (_count.get() >= _config.PUNISHMENT_LIMIT) && (_config.PUNISHMENT_TYPE != null))
+			if (!_punishmentInProgress && _config.PUNISHMENT_LIMIT > 0 && _count.get() >= _config.PUNISHMENT_LIMIT && _config.PUNISHMENT_TYPE != null)
 			{
 				_punishmentInProgress = true;
 				

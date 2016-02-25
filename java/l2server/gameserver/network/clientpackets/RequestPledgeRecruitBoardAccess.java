@@ -42,7 +42,7 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || !activeChar.isClanLeader())
+		if (activeChar == null || !activeChar.isClanLeader())
 			return;
 		
 		switch (_action)

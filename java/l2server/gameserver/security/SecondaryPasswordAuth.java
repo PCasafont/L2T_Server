@@ -103,7 +103,7 @@ public class SecondaryPasswordAuth
 			L2DatabaseFactory.close(con);
 		}
 		
-		if ((_password != null) && _password.equals("DISABLED"))
+		if (_password != null && _password.equals("DISABLED"))
 			_authed = true;
 	}
 	
@@ -293,7 +293,7 @@ public class SecondaryPasswordAuth
 		if (!Util.isDigit(password))
 			return false;
 		
-		if ((password.length() < 6) || (password.length() > 8))
+		if (password.length() < 6 || password.length() > 8)
 			return false;
 		
 		/*for (int i = 0; i < password.length()-1; i++)

@@ -85,7 +85,7 @@ public class Mdam implements ISkillHandler
 			
 			L2Character target = (L2Character) obj;
 			
-			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 			}
@@ -99,7 +99,7 @@ public class Mdam implements ISkillHandler
 			final byte reflect = Formulas.calcSkillReflect(target, skill);
 			
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, skill, shld, ssMul, mcrit);
-			if ((target instanceof L2MonsterInstance) && Config.isServer(Config.TENKAI))
+			if (target instanceof L2MonsterInstance && Config.isServer(Config.TENKAI))
 			{
 				damage *= pveAoeNerf;
 				pveAoeNerf *= 0.5;
@@ -107,7 +107,7 @@ public class Mdam implements ISkillHandler
 			
 			if (damage != 0)
 			{
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).getAppearance().getInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 					
@@ -116,7 +116,7 @@ public class Mdam implements ISkillHandler
 				}
 			}
 			
-			if ((skill.getMaxSoulConsumeCount() > 0) && (activeChar instanceof L2PcInstance))
+			if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof L2PcInstance)
 			{
 				switch (((L2PcInstance) activeChar).getSouls())
 				{
@@ -140,7 +140,7 @@ public class Mdam implements ISkillHandler
 				}
 			}
 			
-			if ((target.getFirstEffect(L2AbnormalType.SPALLATION) != null) && !Util.checkIfInRange(130, activeChar, target, false))
+			if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util.checkIfInRange(130, activeChar, target, false))
 			{
 				activeChar.sendMessage("Your attack has been blocked.");
 				
@@ -157,7 +157,7 @@ public class Mdam implements ISkillHandler
 				if (damage > 0)
 				{
 					int dmgCap = (int) target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
-					if ((dmgCap > 0) && (damage > dmgCap))
+					if (dmgCap > 0 && damage > dmgCap)
 						damage = dmgCap;
 					
 					// Manage attack or cast break of the target (calculating rate, sending message...)
@@ -172,7 +172,7 @@ public class Mdam implements ISkillHandler
 					if (!target.isInvul(activeChar)) // Do not reflect if weapon is of type bow or target is invulnerable
 					{
 						// quick fix for no drop from raid if boss attack high-level char with damage reflection
-						if (!target.isRaid() || (activeChar.getLevel() <= (target.getLevel() + 8)))
+						if (!target.isRaid() || activeChar.getLevel() <= target.getLevel() + 8)
 						{
 							// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
 							double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
@@ -183,19 +183,19 @@ public class Mdam implements ISkillHandler
 							
 							if (reflectPercent > 0)
 							{
-								reflectedDamage = (int) ((reflectPercent / 100.) * Math.min(target.getCurrentHp(), damage));
+								reflectedDamage = (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 								
 								boolean defLimitReflects = true;
 								
-								if ((target.getFirstEffect(10021) != null) || (target.getFirstEffect(10017) != null) || (target.getSkillLevelHash(13524) != 0))
+								if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null || target.getSkillLevelHash(13524) != 0)
 									defLimitReflects = false;
 								
-								if (defLimitReflects && (reflectedDamage > target.getPDef(activeChar)))
+								if (defLimitReflects && reflectedDamage > target.getPDef(activeChar))
 									reflectedDamage = target.getPDef(activeChar);
 								
 								int totalHealth = (int) (target.getCurrentHp() + target.getCurrentCp());
 								
-								if ((totalHealth - damage) <= 0)
+								if (totalHealth - damage <= 0)
 									reflectedDamage = 0;
 								
 								//damage -= reflectedDamage;
@@ -232,7 +232,7 @@ public class Mdam implements ISkillHandler
 						target.reduceCurrentHp(damage, activeChar, skill);
 					}
 					
-					if ((damage > 1) && skill.hasEffects())
+					if (damage > 1 && skill.hasEffects())
 					{
 						if ((reflect & Formulas.SKILL_REFLECT_EFFECTS) != 0) // reflect skill effects
 						{
@@ -254,10 +254,10 @@ public class Mdam implements ISkillHandler
 						// Absorb HP from the damage inflicted
 						double absorbPercent = activeChar.getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
 						
-						if ((absorbPercent > 0) && !activeChar.isInvul(target))
+						if (absorbPercent > 0 && !activeChar.isInvul(target))
 						{
 							int maxCanAbsorb = (int) (activeChar.getMaxHp() - activeChar.getCurrentHp());
-							int absorbDamage = (int) ((absorbPercent / 100.) * damage);
+							int absorbDamage = (int) (absorbPercent / 100. * damage);
 							
 							if (absorbDamage > maxCanAbsorb)
 								absorbDamage = maxCanAbsorb; // Can't absorb more than max hp
@@ -271,7 +271,7 @@ public class Mdam implements ISkillHandler
 					}
 					
 					// Logging damage
-					if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+					if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 					{
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[] { activeChar, " did damage ", damage, skill, " to ", target });
@@ -301,7 +301,7 @@ public class Mdam implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

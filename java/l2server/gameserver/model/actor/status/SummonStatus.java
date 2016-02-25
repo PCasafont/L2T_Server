@@ -39,28 +39,28 @@ public class SummonStatus extends PlayableStatus
 	@Override
 	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
 	{
-		if ((attacker == null) || getActiveChar().isDead())
+		if (attacker == null || getActiveChar().isDead())
 			return;
 		
 		final L2PcInstance attackerPlayer = attacker.getActingPlayer();
-		if ((attackerPlayer != null) && ((getActiveChar().getOwner() == null) || (getActiveChar().getOwner().getDuelId() != attackerPlayer.getDuelId())))
+		if (attackerPlayer != null && (getActiveChar().getOwner() == null || getActiveChar().getOwner().getDuelId() != attackerPlayer.getDuelId()))
 			attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);
 		
 		if (getActiveChar().getOwner().getParty() != null)
 		{
 			final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
-			if ((caster != null) && (getActiveChar().getParty() != null) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && (getActiveChar().getOwner() != caster) && getActiveChar().getParty().getPartyMembers().contains(caster))
+			if (caster != null && getActiveChar().getParty() != null && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && getActiveChar().getOwner() != caster && getActiveChar().getParty().getPartyMembers().contains(caster))
 			{
 				int transferDmg = 0;
 				
-				transferDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null)) / 100;
+				transferDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
-				if ((transferDmg > 0) && (attacker instanceof L2Playable))
+				if (transferDmg > 0 && attacker instanceof L2Playable)
 				{
 					int membersInRange = 0;
 					for (L2PcInstance member : caster.getParty().getPartyMembers())
 					{
-						if (Util.checkIfInRange(1000, member, caster, false) && (member != caster))
+						if (Util.checkIfInRange(1000, member, caster, false) && member != caster)
 							membersInRange++;
 					}
 					if (caster.getCurrentCp() > 0)

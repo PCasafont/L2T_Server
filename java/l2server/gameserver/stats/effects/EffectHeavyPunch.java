@@ -75,7 +75,7 @@ public class EffectHeavyPunch extends L2Effect
 		
 		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier * attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
 		
-		if (Config.isServer(Config.TENKAI) && (damage > 10000) && (target.getActingPlayer() != null))
+		if (Config.isServer(Config.TENKAI) && damage > 10000 && target.getActingPlayer() != null)
 			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
 		
 		attacker.onHitTimer(target, damage, false, false, L2ItemInstance.CHARGED_SOULSHOT, (byte) 0, true);

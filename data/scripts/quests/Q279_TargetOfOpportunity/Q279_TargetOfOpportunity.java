@@ -59,7 +59,7 @@ public final class Q279_TargetOfOpportunity extends Quest
 		String htmltext = event;
 		final QuestState st = player.getQuestState(qn);
 		
-		if ((st == null) || (player.getLevel() < 82))
+		if (st == null || player.getLevel() < 82)
 		{
 			return getNoQuestMsg(player);
 		}
@@ -71,7 +71,7 @@ public final class Q279_TargetOfOpportunity extends Quest
 			st.set("progress", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (event.equalsIgnoreCase("32302-08.htm") && (st.getInt("progress") == 1) && st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
+		else if (event.equalsIgnoreCase("32302-08.htm") && st.getInt("progress") == 1 && st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
 		{
 			st.takeItems(SEAL_COMPONENTS[0], -1);
 			st.takeItems(SEAL_COMPONENTS[1], -1);
@@ -126,7 +126,7 @@ public final class Q279_TargetOfOpportunity extends Quest
 	{
 		L2PcInstance pl = getRandomPartyMember(player, "progress", "1");
 		final int idx = Arrays.binarySearch(MONSTERS, npc.getNpcId());
-		if ((pl == null) || (idx < 0))
+		if (pl == null || idx < 0)
 		{
 			return null;
 		}

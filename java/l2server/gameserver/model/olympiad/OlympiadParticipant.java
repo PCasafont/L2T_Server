@@ -47,7 +47,7 @@ public final class OlympiadParticipant
 	
 	public final void updatePlayer()
 	{
-		if ((player == null) || !player.isOnline())
+		if (player == null || !player.isOnline())
 			player = L2World.getInstance().getPlayer(objectId);
 	}
 	

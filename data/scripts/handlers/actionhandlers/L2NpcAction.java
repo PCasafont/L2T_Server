@@ -65,20 +65,20 @@ public class L2NpcAction implements IActionHandler
 		if (!((L2Npc) target).canTarget(activeChar))
 			return false;
 		
-		if ((activeChar.getEvent() != null) && activeChar.getEvent().isState(EventState.READY))
+		if (activeChar.getEvent() != null && activeChar.getEvent().isState(EventState.READY))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
 		// Chests event
-		if ((((L2Npc) target).getNpcId() == 50101) && !activeChar.isInsideRadius(target, 400, true, true))
+		if (((L2Npc) target).getNpcId() == 50101 && !activeChar.isInsideRadius(target, 400, true, true))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		if ((activeChar.getCaptcha() != null) && !activeChar.onActionCaptcha(false))
+		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -111,7 +111,7 @@ public class L2NpcAction implements IActionHandler
 				//TODO Temp fix for bugging paralysis bugs on monsters
 				for (L2Abnormal e : ((L2Npc) target).getAllEffects())
 				{
-					if ((e.getTime() > e.getDuration()) && (e.getDuration() != -1)) //Not if duration is defined with -1 (perm effect)
+					if (e.getTime() > e.getDuration() && e.getDuration() != -1) //Not if duration is defined with -1 (perm effect)
 						e.exit();
 				}
 			}
@@ -166,10 +166,10 @@ public class L2NpcAction implements IActionHandler
 					}
 					
 					Quest[] qlsa = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
-					if ((qlsa != null) && (qlsa.length > 0))
+					if (qlsa != null && qlsa.length > 0)
 						activeChar.setLastQuestNpcObject(target.getObjectId());
 					Quest[] qlst = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
-					if ((qlst != null) && (qlst.length == 1))
+					if (qlst != null && qlst.length == 1)
 						qlst[0].notifyFirstTalk((L2Npc) target, activeChar);
 					else
 						((L2Npc) target).showChatWindow(activeChar);

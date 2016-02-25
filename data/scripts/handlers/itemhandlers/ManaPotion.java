@@ -47,7 +47,7 @@ public class ManaPotion extends ItemSkillsTemplate
 			return;
 		}
 		
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -61,7 +61,7 @@ public class TendencyNPCs extends Quest
 		
 		Castle playerCastle = null;
 		
-		if ((playerClan != null) && (CastleManager.getInstance().getCastleByOwner(playerClan) != null))
+		if (playerClan != null && CastleManager.getInstance().getCastleByOwner(playerClan) != null)
 		{
 			playerCastle = CastleManager.getInstance().getCastleByOwner(playerClan);
 		}
@@ -70,9 +70,9 @@ public class TendencyNPCs extends Quest
 		
 		String htmlText = "";
 		
-		if ((npc.getNpcId() >= 36609) && (npc.getNpcId() <= 36617))
+		if (npc.getNpcId() >= 36609 && npc.getNpcId() <= 36617)
 		{
-			if ((playerTendency == Castle.TENDENCY_LIGHT) || (playerTendency == Castle.TENDENCY_NONE))
+			if (playerTendency == Castle.TENDENCY_LIGHT || playerTendency == Castle.TENDENCY_NONE)
 			{
 				player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getNpcId(), 1300172));
 				
@@ -85,7 +85,7 @@ public class TendencyNPCs extends Quest
 		}
 		else
 		{
-			if ((playerTendency == Castle.TENDENCY_DARKNESS) || (playerTendency == Castle.TENDENCY_NONE))
+			if (playerTendency == Castle.TENDENCY_DARKNESS || playerTendency == Castle.TENDENCY_NONE)
 			{
 				player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getNpcId(), 1300171));
 				

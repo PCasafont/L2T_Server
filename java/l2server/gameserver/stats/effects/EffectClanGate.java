@@ -49,7 +49,7 @@ public class EffectClanGate extends L2Effect
 			if (clan != null)
 			{
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
-				clan.broadcastToOtherOnlineMembers(msg, ((L2PcInstance) getEffected()));
+				clan.broadcastToOtherOnlineMembers(msg, (L2PcInstance) getEffected());
 			}
 		}
 		

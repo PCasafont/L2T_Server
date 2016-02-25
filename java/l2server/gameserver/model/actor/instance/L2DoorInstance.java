@@ -288,7 +288,7 @@ public class L2DoorInstance extends L2Character
 	
 	public int getDamage()
 	{
-		int dmg = 6 - (int) Math.ceil((getCurrentHp() / getMaxHp()) * 6);
+		int dmg = 6 - (int) Math.ceil(getCurrentHp() / getMaxHp() * 6);
 		if (dmg > 6)
 			return 6;
 		if (dmg < 0)
@@ -326,9 +326,9 @@ public class L2DoorInstance extends L2Character
 	
 	public boolean isEnemy()
 	{
-		if ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getZone().isActive() && getIsShowHp())
+		if (getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getZone().isActive() && getIsShowHp())
 			return true;
-		if ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getZone().isActive() && getIsShowHp())
+		if (getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive() && getIsShowHp())
 			return true;
 		return false;
 	}
@@ -347,9 +347,9 @@ public class L2DoorInstance extends L2Character
 			return false;
 		
 		// Attackable  only during siege by everyone (not owner)
-		boolean isCastle = ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getZone().isActive());
-		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getZone().isActive());
-		int activeSiegeId = (getFort() != null ? getFort().getFortId() : (getCastle() != null ? getCastle().getCastleId() : 0));
+		boolean isCastle = getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getZone().isActive();
+		boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getZone().isActive();
+		int activeSiegeId = getFort() != null ? getFort().getFortId() : getCastle() != null ? getCastle().getCastleId() : 0;
 		L2PcInstance actingPlayer = attacker.getActingPlayer();
 		
 		if (TerritoryWarManager.getInstance().isTWInProgress())
@@ -362,16 +362,16 @@ public class L2DoorInstance extends L2Character
 		else if (isFort)
 		{
 			L2Clan clan = actingPlayer.getClan();
-			if ((clan != null) && (clan == getFort().getOwnerClan()))
+			if (clan != null && clan == getFort().getOwnerClan())
 				return false;
 		}
 		else if (isCastle)
 		{
 			L2Clan clan = actingPlayer.getClan();
-			if ((clan != null) && (clan.getClanId() == getCastle().getOwnerId()))
+			if (clan != null && clan.getClanId() == getCastle().getOwnerId())
 				return false;
 		}
-		return (isCastle || isFort);
+		return isCastle || isFort;
 	}
 	
 	public boolean isAttackable(L2Character attacker)
@@ -415,7 +415,7 @@ public class L2DoorInstance extends L2Character
 	public void broadcastStatusUpdate()
 	{
 		Collection<L2PcInstance> knownPlayers = getKnownList().getKnownPlayers().values();
-		if ((knownPlayers == null) || knownPlayers.isEmpty())
+		if (knownPlayers == null || knownPlayers.isEmpty())
 			return;
 		
 		StaticObject su = new StaticObject(this, false);
@@ -599,8 +599,8 @@ public class L2DoorInstance extends L2Character
 		if (!super.doDie(killer))
 			return false;
 		
-		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getSiege().getIsInProgress());
-		boolean isCastle = ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getSiege().getIsInProgress());
+		boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress();
+		boolean isCastle = getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress();
 		
 		if (isFort || isCastle)
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTLE_GATE_BROKEN_DOWN));
@@ -653,7 +653,7 @@ public class L2DoorInstance extends L2Character
 	
 	private void startAutoCloseTask()
 	{
-		if ((_closeTime < 0) || isOpenableByTime())
+		if (_closeTime < 0 || isOpenableByTime())
 			return;
 		Future<?> oldTask = _autoCloseTask;
 		if (oldTask != null)

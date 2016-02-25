@@ -82,7 +82,7 @@ public class Wedding implements IVoicedCommandHandler
 		{
 			activeChar.sendMessage("You are now divorced.");
 			
-			AdenaAmount = (activeChar.getAdena() / 100) * Config.L2JMOD_WEDDING_DIVORCE_COSTS;
+			AdenaAmount = activeChar.getAdena() / 100 * Config.L2JMOD_WEDDING_DIVORCE_COSTS;
 			activeChar.getInventory().reduceAdena("Wedding", AdenaAmount, activeChar, null);
 			
 		}
@@ -173,7 +173,7 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("Player already engaged with someone else.");
 			return false;
 		}
-		else if ((ptarget.getAppearance().getSex() == activeChar.getAppearance().getSex()) && !Config.L2JMOD_WEDDING_SAMESEX)
+		else if (ptarget.getAppearance().getSex() == activeChar.getAppearance().getSex() && !Config.L2JMOD_WEDDING_SAMESEX)
 		{
 			activeChar.sendMessage("Gay marriage is not allowed on this server!");
 			return false;
@@ -287,13 +287,13 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("You are in the observation.");
 			return false;
 		}
-		else if ((SiegeManager.getInstance().getSiege(activeChar) != null) && SiegeManager.getInstance().getSiege(activeChar).getIsInProgress())
+		else if (SiegeManager.getInstance().getSiege(activeChar) != null && SiegeManager.getInstance().getSiege(activeChar).getIsInProgress())
 		{
 			activeChar.sendMessage("You are in a siege, you cannot go to your partner.");
 			return false;
 		}
 		// Thanks nbd
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -305,7 +305,7 @@ public class Wedding implements IVoicedCommandHandler
 		}
 		
 		final L2PcInstance partner = L2World.getInstance().getPlayer(activeChar.getPartnerId());
-		if ((partner == null) || !partner.isOnline())
+		if (partner == null || !partner.isOnline())
 		{
 			activeChar.sendMessage("Your partner is not online.");
 			return false;
@@ -347,12 +347,12 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("Your partner is in the observation.");
 			return false;
 		}
-		else if ((SiegeManager.getInstance().getSiege(partner) != null) && SiegeManager.getInstance().getSiege(partner).getIsInProgress())
+		else if (SiegeManager.getInstance().getSiege(partner) != null && SiegeManager.getInstance().getSiege(partner).getIsInProgress())
 		{
 			activeChar.sendMessage("Your partner is in a siege, you cannot go to your partner.");
 			return false;
 		}
-		if ((partner.getEvent() != null) && !partner.getEvent().onEscapeUse(partner.getObjectId()))
+		if (partner.getEvent() != null && !partner.getEvent().onEscapeUse(partner.getObjectId()))
 		{
 			activeChar.sendMessage("Your partner is in an event.");
 			return false;
@@ -360,7 +360,7 @@ public class Wedding implements IVoicedCommandHandler
 		
 		final int teleportTimer = Config.L2JMOD_WEDDING_TELEPORT_DURATION * 1000;
 		
-		activeChar.sendMessage("After " + (teleportTimer / 60000) + " min. you will be teleported to your partner.");
+		activeChar.sendMessage("After " + teleportTimer / 60000 + " min. you will be teleported to your partner.");
 		activeChar.getInventory().reduceAdena("Wedding", Config.L2JMOD_WEDDING_TELEPORT_PRICE, activeChar, null);
 		
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -377,7 +377,7 @@ public class Wedding implements IVoicedCommandHandler
 		final EscapeFinalizer ef = new EscapeFinalizer(activeChar, partner.getX(), partner.getY(), partner.getZ());
 		// continue execution later
 		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(ef, teleportTimer));
-		activeChar.forceIsCasting(TimeController.getGameTicks() + (teleportTimer / TimeController.MILLIS_IN_TICK));
+		activeChar.forceIsCasting(TimeController.getGameTicks() + teleportTimer / TimeController.MILLIS_IN_TICK);
 		
 		return true;
 	}
@@ -403,7 +403,7 @@ public class Wedding implements IVoicedCommandHandler
 			if (_activeChar.isDead())
 				return;
 			
-			if ((SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz) != null) && SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz).getIsInProgress())
+			if (SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz) != null && SiegeManager.getInstance().getSiege(_partnerx, _partnery, _partnerz).getIsInProgress())
 			{
 				_activeChar.sendMessage("Your partner is in siege, you can't go to your partner.");
 				return;

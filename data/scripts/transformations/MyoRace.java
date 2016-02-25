@@ -22,7 +22,7 @@ public class MyoRace extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 219) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 219 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		if (getPlayer().getPet() != null)

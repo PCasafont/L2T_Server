@@ -32,7 +32,7 @@ public class ConditionPlayerSurvivalEvent extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2PcInstance player = env.player.getActingPlayer();
-		if ((player == null) || !player.isPlayingEvent() || !(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival)))
+		if (player == null || !player.isPlayingEvent() || !(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival)))
 			return !_val;
 		
 		return _val;

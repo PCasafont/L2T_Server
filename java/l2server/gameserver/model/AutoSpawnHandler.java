@@ -510,7 +510,7 @@ public class AutoSpawnHandler
 				String nearestTown = MapRegionTable.getInstance().getClosestTownName(npcInst);
 				
 				if (Config.DEBUG)
-					Log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst.getNpcId() + " at " + x + ", " + y + ", " + z + " (Near " + nearestTown + ") for " + (spawnInst.getRespawnDelay() / 60000) + " minute(s).");
+					Log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst.getNpcId() + " at " + x + ", " + y + ", " + z + " (Near " + nearestTown + ") for " + spawnInst.getRespawnDelay() / 60000 + " minute(s).");
 				
 				// If there is no despawn time, do not create a despawn task.
 				if (spawnInst.getDespawnDelay() > 0)

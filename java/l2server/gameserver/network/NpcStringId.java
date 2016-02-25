@@ -25238,10 +25238,10 @@ public final class NpcStringId
 	{
 		int paramCount = 0;
 		char c1, c2;
-		for (int i = 0; i < (name.length() - 1); i++)
+		for (int i = 0; i < name.length() - 1; i++)
 		{
 			c1 = name.charAt(i);
-			if ((c1 == 'C') || (c1 == 'S'))
+			if (c1 == 'C' || c1 == 'S')
 			{
 				c2 = name.charAt(i + 1);
 				if (Character.isDigit(c2))
@@ -25262,7 +25262,7 @@ public final class NpcStringId
 	
 	private static final NpcStringId getNpcStringIdInternal(final int id)
 	{
-		if ((id < 0) || (id >= VALUES.length))
+		if (id < 0 || id >= VALUES.length)
 			return null;
 		
 		return VALUES[id];
@@ -25293,10 +25293,10 @@ public final class NpcStringId
 		LOOP: for (; index1 < arrayLength; index1++)
 		{
 			c = array[index1];
-			if ((c == '$') && (index1 < (arrayLength - 2)))
+			if (c == '$' && index1 < arrayLength - 2)
 			{
 				c2 = array[index1 + 1];
-				if ((c2 == 'c') || (c2 == 's') || (c2 == 'p') || (c2 == 'C') || (c2 == 'S') || (c2 == 'P'))
+				if (c2 == 'c' || c2 == 's' || c2 == 'p' || c2 == 'C' || c2 == 'S' || c2 == 'P')
 				{
 					c3 = array[index1 + 2];
 					if (Character.isDigit(c3))
@@ -25493,7 +25493,7 @@ public final class NpcStringId
 				{
 					builder = _builders[i];
 					paramIndex = builder.getIndex();
-					build = (paramIndex != -1) && (paramIndex < paramsLength) ? builder.toString(params[paramIndex]) : builder.toString();
+					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) : builder.toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -25573,7 +25573,7 @@ public final class NpcStringId
 		
 		public BuilderObject(final int id)
 		{
-			if ((id < 1) || (id > 9))
+			if (id < 1 || id > 9)
 				throw new RuntimeException("Illegal id " + id);
 			
 			_index = id - 1;
@@ -25588,7 +25588,7 @@ public final class NpcStringId
 		@Override
 		public final String toString(final Object... params)
 		{
-			if ((params == null) || (params.length == 0))
+			if (params == null || params.length == 0)
 				return "null";
 			
 			return params[0].toString();

@@ -128,7 +128,7 @@ public class Antharas extends L2AttackableAIScript
 		else
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof AntharasWorld))
+		if (wrld != null && wrld instanceof AntharasWorld)
 		{
 			AntharasWorld world = (AntharasWorld) wrld;
 			if (npc == world.rash)
@@ -155,7 +155,7 @@ public class Antharas extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof AntharasWorld))
+		if (wrld != null && wrld instanceof AntharasWorld)
 		{
 			AntharasWorld world = (AntharasWorld) wrld;
 			if (npc.getNpcId() == _antharasId)
@@ -182,7 +182,7 @@ public class Antharas extends L2AttackableAIScript
 							L2Skill _suicideSKill = SkillTable.getInstance().getInfo(14390, 1); //Dragon Bomber Explosion
 							for (L2Npc _npc : world.army)
 							{
-								if ((_npc == null) || _npc.isDead())
+								if (_npc == null || _npc.isDead())
 									continue;
 								
 								_npc.setIsInvul(false);
@@ -191,7 +191,7 @@ public class Antharas extends L2AttackableAIScript
 							
 							for (L2Npc _npc : world.minions)
 							{
-								if ((_npc == null) || _npc.isDead())
+								if (_npc == null || _npc.isDead())
 									continue;
 								
 								_npc.setIsInvul(false);
@@ -252,7 +252,7 @@ public class Antharas extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof AntharasWorld))
+		if (wrld != null && wrld instanceof AntharasWorld)
 		{
 			final AntharasWorld world = (AntharasWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -296,7 +296,7 @@ public class Antharas extends L2AttackableAIScript
 				//Store the Army
 				for (L2Npc _npc : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
 				{
-					if ((_npc == null) || !(_npc instanceof L2GuardInstance))
+					if (_npc == null || !(_npc instanceof L2GuardInstance))
 						continue;
 					
 					world.army.add(_npc);
@@ -363,7 +363,7 @@ public class Antharas extends L2AttackableAIScript
 				//Stop the army, looks bad if follow the boss :S
 				for (L2Npc _npc : world.army)
 				{
-					if ((_npc == null) || _npc.isDead())
+					if (_npc == null || _npc.isDead())
 						continue;
 					
 					_npc.setIsImmobilized(true);
@@ -391,7 +391,7 @@ public class Antharas extends L2AttackableAIScript
 				//Army back..
 				for (L2Npc _npc : world.army)
 				{
-					if ((_npc == null) || _npc.isDead())
+					if (_npc == null || _npc.isDead())
 						continue;
 					
 					_npc.setIsImmobilized(false);
@@ -432,7 +432,7 @@ public class Antharas extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_move_antharas"))
 			{
-				if ((world.status != 1) && (world.status <= 3))
+				if (world.status != 1 && world.status <= 3)
 				{
 					world.antharas.setIsRunning(true);
 					switch (world.status)
@@ -502,7 +502,7 @@ public class Antharas extends L2AttackableAIScript
 					L2Attackable antharas = (L2Attackable) npc;
 					antharas.clearAggroList();
 				}
-				else if ((world.status == 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))) //25%
+				else if (world.status == 5 && npc.getCurrentHp() < npc.getMaxHp() * 0.25) //25%
 				{
 					world.status = 6;
 					
@@ -520,7 +520,7 @@ public class Antharas extends L2AttackableAIScript
 					sendMessage(world, null, 17178308, 10000); //Your sacrifices will become a new rescue...
 				}
 				
-				if ((world.status == 6) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20))) //20%
+				if (world.status == 6 && npc.getCurrentHp() < npc.getMaxHp() * 0.20) //20%
 				{
 					world.status = 7;
 					
@@ -539,14 +539,14 @@ public class Antharas extends L2AttackableAIScript
 					sendMessage(world, null, 17178311, 15000); //This is the end of your desperate measures!
 				}
 				
-				if ((world.status == 7) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05))) //5%)
+				if (world.status == 7 && npc.getCurrentHp() < npc.getMaxHp() * 0.05) //5%)
 				{
 					world.status = 8;
 					
 					InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(17178331, 0, true, 5000)); //Be happy that I'm backing off today.
 				}
 				
-				if ((world.status == 8) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.03))) //3%
+				if (world.status == 8 && npc.getCurrentHp() < npc.getMaxHp() * 0.03) //3%
 				{
 					world.status = 9;
 					
@@ -637,7 +637,7 @@ public class Antharas extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(175111, 114924, -7710);

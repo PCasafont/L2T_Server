@@ -18,7 +18,7 @@ public class DragonBomberNormal extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 217) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 217 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

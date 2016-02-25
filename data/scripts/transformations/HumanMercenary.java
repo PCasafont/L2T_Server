@@ -18,7 +18,7 @@ public class HumanMercenary extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 10) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 10 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

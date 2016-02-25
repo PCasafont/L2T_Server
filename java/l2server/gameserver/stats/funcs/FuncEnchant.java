@@ -42,7 +42,7 @@ public class FuncEnchant extends Func
 	@Override
 	public void calc(Env env)
 	{
-		if ((cond != null) && !cond.test(env))
+		if (cond != null && !cond.test(env))
 			return;
 		
 		L2ItemInstance item = (L2ItemInstance) funcOwner;
@@ -62,10 +62,10 @@ public class FuncEnchant extends Func
 		
 		boolean isBlessed = item.getItem().isBlessed();
 		
-		if ((env.player != null) && (env.player instanceof L2PcInstance))
+		if (env.player != null && env.player instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) env.player;
-			if (player.isInOlympiadMode() && (Config.ALT_OLY_ENCHANT_LIMIT >= 0) && ((enchant + overenchant) > Config.ALT_OLY_ENCHANT_LIMIT))
+			if (player.isInOlympiadMode() && Config.ALT_OLY_ENCHANT_LIMIT >= 0 && enchant + overenchant > Config.ALT_OLY_ENCHANT_LIMIT)
 			{
 				if (Config.ALT_OLY_ENCHANT_LIMIT > 3)
 				{
@@ -89,16 +89,16 @@ public class FuncEnchant extends Func
 			return;
 		}
 		
-		if ((stat == Stats.MAGIC_DEFENCE) || (stat == Stats.POWER_DEFENCE))
+		if (stat == Stats.MAGIC_DEFENCE || stat == Stats.POWER_DEFENCE)
 		{
-			if ((item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R) || ((item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0))
+			if (item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R || (item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
 			{
 				int base = isBlessed ? 3 : 2;
 				int add = overenchant > 3 ? (overenchant - 3) * base : 0;
-				env.value += (base * enchant) + (base * 2 * overenchant) + add;
+				env.value += base * enchant + base * 2 * overenchant + add;
 			}
 			else
-				env.value += enchant + (3 * overenchant);
+				env.value += enchant + 3 * overenchant;
 			
 			return;
 		}
@@ -112,22 +112,22 @@ public class FuncEnchant extends Func
 					int add = overenchant > 3 ? (overenchant - 3) * base : 0;
 					add += overenchant > 6 ? (overenchant - 6) * base : 0;
 					add += overenchant > 9 ? (overenchant - 9) * base : 0;
-					env.value += (base * enchant) + (base * 2 * overenchant) + add;
+					env.value += base * enchant + base * 2 * overenchant + add;
 					break;
 				case L2Item.CRYSTAL_S:
-					env.value += (4 * enchant) + (8 * overenchant);
+					env.value += 4 * enchant + 8 * overenchant;
 					break;
 				case L2Item.CRYSTAL_A:
-					env.value += (3 * enchant) + (6 * overenchant);
+					env.value += 3 * enchant + 6 * overenchant;
 					break;
 				case L2Item.CRYSTAL_B:
-					env.value += (3 * enchant) + (6 * overenchant);
+					env.value += 3 * enchant + 6 * overenchant;
 					break;
 				case L2Item.CRYSTAL_C:
-					env.value += (3 * enchant) + (6 * overenchant);
+					env.value += 3 * enchant + 6 * overenchant;
 					break;
 				case L2Item.CRYSTAL_D:
-					env.value += (2 * enchant) + (4 * overenchant);
+					env.value += 2 * enchant + 4 * overenchant;
 					break;
 			}
 			
@@ -161,7 +161,7 @@ public class FuncEnchant extends Func
 					int add = overenchant > 3 ? (overenchant - 3) * base : 0;
 					add += overenchant > 6 ? (overenchant - 6) * base : 0;
 					add += overenchant > 9 ? (overenchant - 9) * base : 0;
-					env.value += (base * enchant) + (base * 2 * overenchant) + add;
+					env.value += base * enchant + base * 2 * overenchant + add;
 					break;
 				case L2Item.CRYSTAL_S:
 					switch (type)
@@ -169,10 +169,10 @@ public class FuncEnchant extends Func
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
-							env.value += (10 * enchant) + (20 * overenchant);
+							env.value += 10 * enchant + 20 * overenchant;
 							break;
 						default:
-							env.value += (5 * enchant) + (10 * overenchant);
+							env.value += 5 * enchant + 10 * overenchant;
 							break;
 					}
 					break;
@@ -182,10 +182,10 @@ public class FuncEnchant extends Func
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
-							env.value += (8 * enchant) + (16 * overenchant);
+							env.value += 8 * enchant + 16 * overenchant;
 							break;
 						default:
-							env.value += (4 * enchant) + (8 * overenchant);
+							env.value += 4 * enchant + 8 * overenchant;
 							break;
 					}
 					break;
@@ -196,10 +196,10 @@ public class FuncEnchant extends Func
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
-							env.value += (6 * enchant) + (12 * overenchant);
+							env.value += 6 * enchant + 12 * overenchant;
 							break;
 						default:
-							env.value += (3 * enchant) + (6 * overenchant);
+							env.value += 3 * enchant + 6 * overenchant;
 							break;
 					}
 					break;
@@ -211,11 +211,11 @@ public class FuncEnchant extends Func
 						case CROSSBOW:
 						case CROSSBOWK:
 						{
-							env.value += (4 * enchant) + (8 * overenchant);
+							env.value += 4 * enchant + 8 * overenchant;
 							break;
 						}
 						default:
-							env.value += (2 * enchant) + (4 * overenchant);
+							env.value += 2 * enchant + 4 * overenchant;
 							break;
 					}
 					break;

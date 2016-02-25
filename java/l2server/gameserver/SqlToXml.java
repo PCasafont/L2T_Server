@@ -245,7 +245,7 @@ public class SqlToXml
 						shopId += 7;
 					else if (item.getType2() == L2Item.TYPE2_ACCESSORY)
 						shopId += 14;
-					else if ((item.getType2() == L2Item.TYPE2_OTHER) || (item.getBodyPart() == L2Item.SLOT_HAIR) || (item.getBodyPart() == L2Item.SLOT_HAIR2) || (item.getBodyPart() == L2Item.SLOT_HAIRALL))
+					else if (item.getType2() == L2Item.TYPE2_OTHER || item.getBodyPart() == L2Item.SLOT_HAIR || item.getBodyPart() == L2Item.SLOT_HAIR2 || item.getBodyPart() == L2Item.SLOT_HAIRALL)
 						shopId = 21;
 					else if (item.getType2() != L2Item.TYPE2_WEAPON)
 						shopId = 22;
@@ -318,10 +318,10 @@ public class SqlToXml
 					int current = rset2.getInt("success_rate76");
 					for (int lvl = 77; lvl <= 86; lvl++)
 					{
-						if ((lvl == 86) || (rset2.getInt("success_rate" + lvl) != current))
+						if (lvl == 86 || rset2.getInt("success_rate" + lvl) != current)
 						{
 							content += "\t\t\t<rate level=\"";
-							for (int level = minLvl; level <= (lvl - 1); level++)
+							for (int level = minLvl; level <= lvl - 1; level++)
 								content += level + ",";
 							content = content.substring(0, content.length() - 1) + "\" chance=\"" + current + "\" />\r\n";
 							minLvl = lvl;
@@ -395,17 +395,17 @@ public class SqlToXml
 			
 			for (SpawnLine l1 : lines)
 			{
-				if ((l1 == null) || deleted.contains(l1))
+				if (l1 == null || deleted.contains(l1))
 					continue;
 				
 				int dist100 = 0;
 				int dist200 = 0;
 				for (SpawnLine l2 : lines)
 				{
-					if ((l2 == null) || (l2 == l1) || deleted.contains(l2))
+					if (l2 == null || l2 == l1 || deleted.contains(l2))
 						continue;
 					
-					double distance = Math.sqrt(((l2.Point.X - l1.Point.X) * (l2.Point.X - l1.Point.X)) + ((l2.Point.Y - l1.Point.Y) * (l2.Point.Y - l1.Point.Y)));
+					double distance = Math.sqrt((l2.Point.X - l1.Point.X) * (l2.Point.X - l1.Point.X) + (l2.Point.Y - l1.Point.Y) * (l2.Point.Y - l1.Point.Y));
 					
 					if (distance < 50)
 					{

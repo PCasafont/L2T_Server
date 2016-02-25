@@ -49,7 +49,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 	{
 		final L2PcInstance aPlayer = activeChar.getActingPlayer();
 		
-		if (!skill.isUseableWithoutTarget() && (target == null))
+		if (!skill.isUseableWithoutTarget() && target == null)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
@@ -58,7 +58,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 		final ArrayList<L2Character> result = new ArrayList<L2Character>();
 		
 		final L2Summon aPet = aPlayer.getPet();
-		if ((aPet != null) && !aPet.isDead())
+		if (aPet != null && !aPet.isDead())
 			result.add(aPet);
 		
 		if (skill.getTargetDirection() == L2SkillTargetDirection.SUBLIMES)
@@ -159,7 +159,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 			{
 				for (final L2Object obj : region.getVisibleObjects().values())
 				{
-					if ((obj instanceof L2TrapInstance) && activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false))
+					if (obj instanceof L2TrapInstance && activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false))
 					{
 						final L2TrapInstance dTrap = (L2TrapInstance) obj;
 						
@@ -193,7 +193,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 				{
 					if (!pTarget.isPlayingEvent())
 						return false;
-					else if ((activeChar.getTeamId() != 0) && (activeChar.getTeamId() != pTarget.getTeamId()))
+					else if (activeChar.getTeamId() != 0 && activeChar.getTeamId() != pTarget.getTeamId())
 						return false;
 					
 					return true;

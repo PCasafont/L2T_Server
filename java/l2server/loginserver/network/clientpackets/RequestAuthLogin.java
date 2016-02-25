@@ -128,7 +128,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					else
 					{
 						int time = 0;
-						while ((getClient().getCharsOnServ() == null) && (time < 10))
+						while (getClient().getCharsOnServ() == null && time < 10)
 						{
 							try
 							{

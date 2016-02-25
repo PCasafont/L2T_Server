@@ -83,7 +83,7 @@ public class BitSetIDFactory extends IdFactory
 			for (int usedObjectId : extractUsedObjectIDTable())
 			{
 				int objectID = usedObjectId - FIRST_OID;
-				if ((objectID < 0) || (usedObjectId < FIRST_OID))
+				if (objectID < 0 || usedObjectId < FIRST_OID)
 				{
 					Log.warning("Object ID " + usedObjectId + " in DB is less than minimum ID of " + FIRST_OID);
 					continue;
@@ -109,7 +109,7 @@ public class BitSetIDFactory extends IdFactory
 	@Override
 	public synchronized void releaseId(int objectID)
 	{
-		if ((objectID - FIRST_OID) > -1)
+		if (objectID - FIRST_OID > -1)
 		{
 			_freeIds.clear(objectID - FIRST_OID);
 			_freeIdCount.incrementAndGet();
@@ -169,7 +169,7 @@ public class BitSetIDFactory extends IdFactory
 	 */
 	protected synchronized int usedIdCount()
 	{
-		return (size() - FIRST_OID);
+		return size() - FIRST_OID;
 	}
 	
 	/**
@@ -178,12 +178,12 @@ public class BitSetIDFactory extends IdFactory
 	 */
 	protected synchronized boolean reachingBitSetCapacity()
 	{
-		return PrimeFinder.nextPrime((usedIdCount() * 11) / 10) > _freeIds.size();
+		return PrimeFinder.nextPrime(usedIdCount() * 11 / 10) > _freeIds.size();
 	}
 	
 	protected synchronized void increaseBitSetCapacity()
 	{
-		BitSet newBitSet = new BitSet(PrimeFinder.nextPrime((usedIdCount() * 11) / 10));
+		BitSet newBitSet = new BitSet(PrimeFinder.nextPrime(usedIdCount() * 11 / 10));
 		newBitSet.or(_freeIds);
 		_freeIds = newBitSet;
 	}

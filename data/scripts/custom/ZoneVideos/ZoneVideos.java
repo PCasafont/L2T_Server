@@ -65,10 +65,10 @@ public class ZoneVideos extends Quest
 			if (st.getGlobalQuestVar("ZoneVid" + zone.getId()).length() == 0)
 			{
 				int videoId = zone.getId() % 100;
-				if (!_showIntroMovies && (videoId > 100))
+				if (!_showIntroMovies && videoId > 100)
 					return null;
 				
-				if ((videoId == 0) && (player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null)) // TODO: first quest name
+				if (videoId == 0 && player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
 					videoId = 1;
 				player.showQuestMovie(VIDEOS[videoId]);
 				st.saveGlobalQuestVar("ZoneVid" + zone.getId(), "done");

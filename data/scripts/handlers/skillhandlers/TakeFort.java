@@ -47,7 +47,7 @@ public class TakeFort implements ISkillHandler
 			return;
 		
 		Fort fort = FortManager.getInstance().getFort(player);
-		if ((fort == null) || !player.checkIfOkToCastFlagDisplay(fort, true, skill))
+		if (fort == null || !player.checkIfOkToCastFlagDisplay(fort, true, skill))
 			return;
 		
 		try

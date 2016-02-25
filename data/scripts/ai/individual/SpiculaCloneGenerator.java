@@ -55,7 +55,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 			if (spawn == null)
 				continue;
 			
-			if ((spawn.getNpcId() == _yin) || (spawn.getNpcId() == _yinFragment))
+			if (spawn.getNpcId() == _yin || spawn.getNpcId() == _yinFragment)
 				notifySpawn(spawn.getNpc());
 		}
 	}
@@ -78,7 +78,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	{
 		if (_yinControl.containsKey(npc.getObjectId()))
 		{
-			if (System.currentTimeMillis() >= (_yinControl.get(npc.getObjectId()) + 180000))
+			if (System.currentTimeMillis() >= _yinControl.get(npc.getObjectId()) + 180000)
 			{
 				_yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 				

@@ -85,7 +85,7 @@ public class L2SkillContinuousDrain extends L2Skill
 	
 	public boolean drain(L2Character activeChar, L2Object[] targets)
 	{
-		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || (activeChar.getLastSkillCast() != this))
+		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this)
 			return false;
 		
 		if (!Util.contains(targets, activeChar.getTarget()))
@@ -96,13 +96,13 @@ public class L2SkillContinuousDrain extends L2Skill
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if (target.isAlikeDead() && (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
 				return false;
 			
-			if ((activeChar != target) && target.isInvul(activeChar))
+			if (activeChar != target && target.isInvul(activeChar))
 				return false; // No effect on invulnerable chars unless they cast it themselves.
 				
-			if (activeChar.getDistanceSq(target) > (1400 * 1400))
+			if (activeChar.getDistanceSq(target) > 1400 * 1400)
 				return false; // Too far away to continue draining
 				
 			double ssMul = L2ItemInstance.CHARGED_NONE;
@@ -127,7 +127,7 @@ public class L2SkillContinuousDrain extends L2Skill
 			//int _cp = (int)target.getCurrentCp();
 			int _hp = (int) target.getCurrentHp();
 			
-			if (!((Config.isServer(Config.TENKAI)) && (activeChar instanceof L2PcInstance) && (target instanceof L2MonsterInstance) && (((L2PcInstance) activeChar).getPvpFlag() > 0)))
+			if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
 			{
 				/*if (_cp > 0)
 				{
@@ -144,7 +144,7 @@ public class L2SkillContinuousDrain extends L2Skill
 			}
 			
 			double hpAdd = _absorbPart * _drain;
-			double hp = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
+			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar.getCurrentHp() + hpAdd;
 			
 			activeChar.setCurrentHp(hp);
 			
@@ -153,11 +153,11 @@ public class L2SkillContinuousDrain extends L2Skill
 			activeChar.sendPacket(suhp);
 			
 			// Check to see if we should damage the target
-			if ((damage > 0) && (!target.isDead() || (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)))
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
 			{
 				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 				
-				if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[] { activeChar, " did damage ", (int) damage, this, " to ", target });
@@ -169,7 +169,7 @@ public class L2SkillContinuousDrain extends L2Skill
 			}
 			
 			// Check to see if we should do the decay right after the cast
-			if (target.isDead() && (getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB) && (target instanceof L2Npc))
+			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc)
 				((L2Npc) target).endDecayTask();
 			
 			if (activeChar instanceof L2PcInstance)

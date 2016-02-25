@@ -75,7 +75,7 @@ public class ClanGuardian extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_clanGuardian == null) || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
+			if (_clanGuardian == null || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
 			{
 				if (_schedule != null)
 				{
@@ -99,7 +99,7 @@ public class ClanGuardian extends L2AttackableAIScript
 	
 	private boolean isValidTarget(L2PcInstance target, L2Summon summon)
 	{
-		if ((target == null) || (summon == null))
+		if (target == null || summon == null)
 			return false;
 		
 		if (summon.isDead() || target.isDead())
@@ -117,7 +117,7 @@ public class ClanGuardian extends L2AttackableAIScript
 		if (!summon.isInsideRadius(target, 500, true, false))
 			return false;
 		
-		if ((target.getCurrentHp() == target.getMaxHp()) && (target.getCurrentCp() == target.getMaxCp()) && (target.getCurrentMp() == target.getMaxMp()))
+		if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() && target.getCurrentMp() == target.getMaxMp())
 			return false;
 		
 		return true;

@@ -76,7 +76,7 @@ public class PcAppearance
 	 */
 	public final String getVisibleName()
 	{
-		if (_owner.isPlayingEvent() && ((_owner.getEvent().getType() == EventType.DeathMatch) || (_owner.getEvent().getType() == EventType.Survival) || (_owner.getEvent().getType() == EventType.KingOfTheHill)))
+		if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch || _owner.getEvent().getType() == EventType.Survival || _owner.getEvent().getType() == EventType.KingOfTheHill))
 			return "Event Participant";
 		
 		if (_visibleName == null)
@@ -98,22 +98,21 @@ public class PcAppearance
 	 */
 	public final String getVisibleTitle()
 	{
-		if (_owner.isPlayingEvent() && ((_owner.getEvent().getType() == EventType.DeathMatch) || (_owner.getEvent().getType() == EventType.Survival) || (_owner.getEvent().getType() == EventType.KingOfTheHill)))
+		if (_owner.isPlayingEvent() && (_owner.getEvent().getType() == EventType.DeathMatch || _owner.getEvent().getType() == EventType.Survival || _owner.getEvent().getType() == EventType.KingOfTheHill))
 			return "";
 		
 		if (_owner instanceof L2ApInstance)
 		{
 			String title = "L2 Tenkai";
 			if (_owner.getParty() != null)
-				title += " #" + (_owner.getParty().getLeader().getObjectId() % 100);
+				title += " #" + _owner.getParty().getLeader().getObjectId() % 100;
 			return title;
 		}
 		
 		if (_visibleTitle == null)
 			_visibleTitle = getOwner().getTitle();
 		
-		if (_visibleTitle.equalsIgnoreCase("wtb ballance")
-				|| _visibleTitle.equalsIgnoreCase("wtb balance"))
+		if (_visibleTitle.equalsIgnoreCase("wtb ballance") || _visibleTitle.equalsIgnoreCase("wtb balance"))
 			return "WTB BRAIN";
 		
 		return _visibleTitle;

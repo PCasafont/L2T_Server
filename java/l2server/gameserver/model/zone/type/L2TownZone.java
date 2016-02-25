@@ -70,7 +70,7 @@ public class L2TownZone extends L2SpawnZone
 		{
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
-			if ((((L2PcInstance) character).getSiegeState() != 0) && (Config.ZONE_TOWN == 1))
+			if (((L2PcInstance) character).getSiegeState() != 0 && Config.ZONE_TOWN == 1)
 				return;
 			
 			//((L2PcInstance)character).sendMessage("You entered "+_townName);
@@ -85,7 +85,7 @@ public class L2TownZone extends L2SpawnZone
 			//ThreadPoolManager.getInstance().scheduleGeneral(new MusicTask((L2PcInstance)character), 2000);
 		}
 		
-		if (_isPeaceZone && (Config.ZONE_TOWN != 2) && ((Curfew.getInstance().getOnlyPeaceTown() == -1) || (Curfew.getInstance().getOnlyPeaceTown() == _townId)))
+		if (_isPeaceZone && Config.ZONE_TOWN != 2 && (Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == _townId))
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 		
 		character.setInsideZone(L2Character.ZONE_TOWN, true);

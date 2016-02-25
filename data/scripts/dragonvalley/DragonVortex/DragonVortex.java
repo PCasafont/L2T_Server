@@ -66,7 +66,7 @@ public class DragonVortex extends Quest
 		
 		if (event.equalsIgnoreCase("spawn_boss"))
 		{
-			if ((raid != null) && !raid.isDead())
+			if (raid != null && !raid.isDead())
 				return "32871-3.htm";
 			
 			if (st.getQuestItemsCount(largeDragonBone) > 0)

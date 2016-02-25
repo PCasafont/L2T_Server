@@ -50,10 +50,10 @@ public class EffectCancelDebuff extends L2Effect
 		
 		L2Playable effected = (L2Playable) getEffected();
 		
-		if ((effected == null) || effected.isDead())
+		if (effected == null || effected.isDead())
 			return false;
 		
-		if ((getEffected() instanceof L2MonsterInstance) && (((L2MonsterInstance) getEffected()).getNpcId() == 19036)) //TODO TEMP LasTravel, don't remove
+		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
 			return false;
 		
 		L2Abnormal[] effects = effected.getAllEffects();
@@ -75,7 +75,7 @@ public class EffectCancelDebuff extends L2Effect
 			return true;
 		
 		// Consider chance (e.g. Song of Purification)
-		if ((chance < 100) && (Rnd.get(100) > chance))
+		if (chance < 100 && Rnd.get(100) > chance)
 			return false;
 		
 		// Remove all debuffs if chance test succeeded

@@ -34,7 +34,7 @@ public class ExResponseCommissionItemList extends L2ItemListPacket
 	{
 		for (L2ItemInstance item : player.getInventory().getItems())
 		{
-			if (item.isSellable() && item.isTradeable() && !item.isEquipped() && (item.getItemId() != 57) && !item.isQuestItem())
+			if (item.isSellable() && item.isTradeable() && !item.isEquipped() && item.getItemId() != 57 && !item.isQuestItem())
 				_items.add(item);
 		}
 	}

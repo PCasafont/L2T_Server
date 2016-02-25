@@ -179,7 +179,7 @@ public class SkillTable implements Reloadable
 	public static long getSkillHashCode(int skillId, int skillLevel, int skillEnchantRouteId, int skillEnchantLevel)
 	{
 		//return skillId * 1000000L + skillLevel * 10000L + skillEnchantRouteId * 100L + skillEnchantRouteLevel;
-		return ((long) skillId << 32) + (((skillEnchantRouteId * 1000) + skillEnchantLevel) << 16) + skillLevel;
+		return ((long) skillId << 32) + (skillEnchantRouteId * 1000 + skillEnchantLevel << 16) + skillLevel;
 	}
 	
 	public final L2Skill getInfo(final int skillId, final int level)
@@ -202,7 +202,7 @@ public class SkillTable implements Reloadable
 		// skill/level not found, fix for transformation scripts
 		final int maxLvl = _skillMaxLevel.get(skillId);
 		// requested level too high
-		if ((maxLvl > 0) && (level > maxLvl))
+		if (maxLvl > 0 && level > maxLvl)
 			return _skills.get(getSkillHashCode(skillId, maxLvl));
 		
 		String error = "No skill info found for skill id " + skillId;

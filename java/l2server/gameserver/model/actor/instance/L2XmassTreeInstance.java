@@ -50,7 +50,7 @@ public class L2XmassTreeInstance extends L2Npc
 		@Override
 		public void run()
 		{
-			if ((_skill == null) || _caster.isInsideZone(ZONE_PEACE))
+			if (_skill == null || _caster.isInsideZone(ZONE_PEACE))
 			{
 				_caster._aiTask.cancel(false);
 				_caster._aiTask = null;

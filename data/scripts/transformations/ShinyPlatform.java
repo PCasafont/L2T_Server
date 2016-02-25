@@ -18,7 +18,7 @@ public class ShinyPlatform extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 20004) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 20004 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

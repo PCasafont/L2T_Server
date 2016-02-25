@@ -60,32 +60,32 @@ public class EventConfig
 	
 	public boolean isAllVsAll()
 	{
-		return ((_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.KingOfTheHill) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
+		return _type == EventType.Survival || _type == EventType.DeathMatch || _type == EventType.KingOfTheHill || _type == EventType.CursedBattle || _type == EventType.StalkedSalkers || _type == EventType.SimonSays;
 	}
 	
 	public boolean needsClosedArena()
 	{
-		return ((_type == EventType.CaptureTheFlag) || (_type == EventType.VIP) || (_type == EventType.Survival) || (_type == EventType.TeamSurvival) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers));
+		return _type == EventType.CaptureTheFlag || _type == EventType.VIP || _type == EventType.Survival || _type == EventType.TeamSurvival || _type == EventType.CursedBattle || _type == EventType.StalkedSalkers;
 	}
 	
 	public boolean spawnsPlayersRandomly()
 	{
-		return ((_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.CursedBattle) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
+		return _type == EventType.Survival || _type == EventType.DeathMatch || _type == EventType.CursedBattle || _type == EventType.StalkedSalkers || _type == EventType.SimonSays;
 	}
 	
 	public boolean needsRandomCoords()
 	{
-		return (spawnsPlayersRandomly() || (_type == EventType.LuckyChests));
+		return spawnsPlayersRandomly() || _type == EventType.LuckyChests;
 	}
 	
 	public boolean hasNoLevelLimits()
 	{
-		return ((_type == EventType.LuckyChests) || (_type == EventType.StalkedSalkers) || (_type == EventType.SimonSays));
+		return _type == EventType.LuckyChests || _type == EventType.StalkedSalkers || _type == EventType.SimonSays;
 	}
 	
 	public boolean isPvp()
 	{
-		return ((_type == EventType.TVT) || (_type == EventType.CaptureTheFlag) || (_type == EventType.VIP) || (_type == EventType.Survival) || (_type == EventType.DeathMatch) || (_type == EventType.TeamSurvival) || (_type == EventType.CursedBattle));
+		return _type == EventType.TVT || _type == EventType.CaptureTheFlag || _type == EventType.VIP || _type == EventType.Survival || _type == EventType.DeathMatch || _type == EventType.TeamSurvival || _type == EventType.CursedBattle;
 	}
 	
 	public String getTeamName(int id)
@@ -127,21 +127,19 @@ public class EventConfig
 	
 	private void selectEvent()
 	{
-		double[] chances = new double[]
-		{
-			25.0, // TvT
-			4.0, // Capture the Flag
-			0.0, // VIP TvT
-			9.0, // Survival
-			11.0, // Death Match
-			0.0, // King of the Hill
-			0.0, // Lucky Chests
-			18.0, // Team Survival
-			0.0, // Cursed Battle
-			0.0, // Destroy the Golem
-			0.0, // Field Domination
-			2.0, // Stalked Stalkers
-			6.0 // Simon Says
+		double[] chances = new double[] { 25.0, // TvT
+		4.0, // Capture the Flag
+		0.0, // VIP TvT
+		9.0, // Survival
+		11.0, // Death Match
+		0.0, // King of the Hill
+		0.0, // Lucky Chests
+		18.0, // Team Survival
+		0.0, // Cursed Battle
+		0.0, // Destroy the Golem
+		0.0, // Field Domination
+		2.0, // Stalked Stalkers
+		6.0 // Simon Says
 		};
 		
 		double total = 0;
@@ -190,12 +188,12 @@ public class EventConfig
 	
 	public int getMaxTeamPlayers()
 	{
-		return (isAllVsAll()) ? _location.getMaxPlayers() : _location.getMaxTeamPlayers();
+		return isAllVsAll() ? _location.getMaxPlayers() : _location.getMaxTeamPlayers();
 	}
 	
 	public int getMinPlayers()
 	{
-		return isAllVsAll() ? 2 : (_location.getTeamCount() * 1);
+		return isAllVsAll() ? 2 : _location.getTeamCount() * 1;
 	}
 	
 	public EventInstance createInstance(int id)

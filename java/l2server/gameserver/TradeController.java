@@ -125,7 +125,7 @@ public class TradeController implements Reloadable
 									
 									if (Config.isServer(Config.DREAMS) && file.getName().equals("shops.xml"))
 									{
-										if (((itemTemplate instanceof L2Weapon) || (itemTemplate instanceof L2Armor)) && (itemTemplate.getCrystalType() >= L2Item.CRYSTAL_D) && !itemTemplate.getName().contains("Common"))
+										if ((itemTemplate instanceof L2Weapon || itemTemplate instanceof L2Armor) && itemTemplate.getCrystalType() >= L2Item.CRYSTAL_D && !itemTemplate.getName().contains("Common"))
 										{
 											System.out.println("Skipping " + itemTemplate.getName() + "...");
 											continue;
@@ -144,15 +144,15 @@ public class TradeController implements Reloadable
 									if (price <= -1)
 									{
 										price = itemTemplate.getReferencePrice();
-										if ((price == 0) && (npcId != -1))
+										if (price == 0 && npcId != -1)
 											Log.warning("ItemId: " + itemId + " on buylistId: " + id + " has price = 0!");
 									}
 									
 									if (Config.DEBUG)
 									{
 										// debug
-										double diff = ((double) (price)) / ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
-										if ((diff < 0.8) || (diff > 1.2))
+										double diff = (double) price / ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
+										if (diff < 0.8 || diff > 1.2)
 										{
 											Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId + " (" + ItemTable.getInstance().getTemplate(itemId).getName() + ") diff: " + diff + " - Price: " + price + " - Reference: " + ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
 										}
@@ -276,7 +276,7 @@ public class TradeController implements Reloadable
 					for (L2TradeItem item : list.getItems())
 					{
 						long currentCount = item.getCurrentCount();
-						if (item.hasLimitedStock() && (currentCount < item.getMaxCount()))
+						if (item.hasLimitedStock() && currentCount < item.getMaxCount())
 						{
 							statement.setLong(1, currentCount);
 							statement.setInt(2, listId);

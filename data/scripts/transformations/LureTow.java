@@ -18,7 +18,7 @@ public class LureTow extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 118) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 118 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

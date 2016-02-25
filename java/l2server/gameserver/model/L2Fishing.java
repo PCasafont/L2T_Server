@@ -56,7 +56,7 @@ public class L2Fishing implements Runnable
 		if (_fisher == null)
 			return;
 		
-		if (_fishCurHp >= (_fishMaxHp * 2))
+		if (_fishCurHp >= _fishMaxHp * 2)
 		{
 			// The fish got away
 			_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_STOLEN_BY_FISH));
@@ -116,7 +116,7 @@ public class L2Fishing implements Runnable
 		ExFishingHpRegen efhr = new ExFishingHpRegen(_fisher, _time, _fishCurHp, _mode, _goodUse, _anim, pen, _deceptiveMode);
 		_fisher.broadcastPacket(efhr);
 		_anim = 0;
-		if (_fishCurHp > (_fishMaxHp * 2))
+		if (_fishCurHp > _fishMaxHp * 2)
 		{
 			_fishCurHp = _fishMaxHp * 2;
 			doDie(false);

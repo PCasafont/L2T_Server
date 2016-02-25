@@ -41,7 +41,7 @@ public class L2ManorManagerInstance extends L2MerchantInstance
 			return;
 		}
 		
-		if (!player.isGM() && (getCastle() != null) && (getCastle().getCastleId() > 0) && (player.getClan() != null) && (getCastle().getOwnerId() == player.getClanId()) && player.isClanLeader())
+		if (!player.isGM() && getCastle() != null && getCastle().getCastleId() > 0 && player.getClan() != null && getCastle().getOwnerId() == player.getClanId() && player.isClanLeader())
 			showChatWindowByFileName(player, "manormanager/manager-lord.htm");
 		else
 			showChatWindowByFileName(player, "manormanager/manager.htm");

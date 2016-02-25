@@ -41,8 +41,8 @@ public class LoginLog
 		 * Logger.getLogger(cat); logs.put(cat, _log); }
 		 */
 		
-		String date = (new SimpleDateFormat("yy.MM.dd H:mm:ss")).format(new Date());
-		String curr = (new SimpleDateFormat("yyyy-MM-dd-")).format(new Date());
+		String date = new SimpleDateFormat("yy.MM.dd H:mm:ss").format(new Date());
+		String curr = new SimpleDateFormat("yyyy-MM-dd-").format(new Date());
 		new File("log/game").mkdirs();
 		FileWriter save = null;
 		

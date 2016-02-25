@@ -18,7 +18,7 @@ public class UnicornStrong extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 204) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 204 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

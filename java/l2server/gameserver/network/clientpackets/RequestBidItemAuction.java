@@ -50,7 +50,7 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_bid < 0) || (_bid > PcInventory.MAX_ADENA))
+		if (_bid < 0 || _bid > PcInventory.MAX_ADENA)
 			return;
 		
 		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);

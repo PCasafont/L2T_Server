@@ -64,13 +64,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_targetX == _originX) && (_targetY == _originY) && (_targetZ == _originZ))
+		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
 		{
 			activeChar.sendPacket(new StopMoveInVehicle(activeChar, _shipId));
 			return;
 		}
 		
-		if (activeChar.isAttackingNow() && (activeChar.getActiveWeaponItem() != null) && (activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW))
+		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

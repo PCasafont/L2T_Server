@@ -54,8 +54,7 @@ public class EffectRemoveTalismans extends L2Effect
 		
 		for (L2Abnormal e : getEffected().getAllEffects())
 		{
-			if (e != null && !e.getSkill().isOffensive()
-					&& e.getSkill().getName().contains("Talisman"))
+			if (e != null && !e.getSkill().isOffensive() && e.getSkill().getName().contains("Talisman"))
 			{
 				getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
 				e.exit();

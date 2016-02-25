@@ -117,7 +117,7 @@ public class Tauti extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof TautiWorld))
+		if (wrld != null && wrld instanceof TautiWorld)
 		{
 			TautiWorld world = (TautiWorld) wrld;
 			if (npc.getNpcId() == world.TautiId)
@@ -161,7 +161,7 @@ public class Tauti extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof TautiWorld))
+		if (wrld != null && wrld instanceof TautiWorld)
 		{
 			TautiWorld world = (TautiWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_doors"))
@@ -184,7 +184,7 @@ public class Tauti extends L2AttackableAIScript
 				for (int objId : allowedPlayers)
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					if ((pl != null) && pl.isOnline() && (pl.getInstanceId() == world.instanceId))
+					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
 					{
 						if (pl.getY() < 210980)
 						{
@@ -285,7 +285,7 @@ public class Tauti extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc != null) && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if (npc != null && Util.contains(_enterNpcs, npc.getNpcId()) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -313,7 +313,7 @@ public class Tauti extends L2AttackableAIScript
 			final TautiWorld world = (TautiWorld) tmpWorld;
 			if (npc.getNpcId() == world.TautiId)
 			{
-				if ((((world.status == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.70))) || ((world.status == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))))
+				if (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.70 || world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)
 				{
 					world.status++;
 					
@@ -329,7 +329,7 @@ public class Tauti extends L2AttackableAIScript
 					
 					startQuestTimer("stage_all_unspawn_zahaks", 20000, npc, null);
 				}
-				else if ((world.status == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.10))) //10%
+				else if (world.status == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.10) //10%
 				{
 					world.status = 3;
 					
@@ -372,7 +372,7 @@ public class Tauti extends L2AttackableAIScript
 			Log.warning(getName() + ": onTalk: " + player.getName());
 		
 		int npcId = npc.getNpcId();
-		if ((npcId == _enterNpcs[1]) || (npcId == _enterNpcs[2]))
+		if (npcId == _enterNpcs[1] || npcId == _enterNpcs[2])
 			return "Easy.html";
 		else if (npcId == _enterNpcs[0])
 			return "Hard.html";
@@ -411,7 +411,7 @@ public class Tauti extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-147250, 211617, -10043);

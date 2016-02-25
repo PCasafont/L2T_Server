@@ -71,7 +71,7 @@ public class Mark implements ISkillHandler
 			
 			L2Character target = (L2Character) obj;
 			
-			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 				target.stopFakeDeath(true);
 			else if (target.isDead())
 				continue;
@@ -93,7 +93,7 @@ public class Mark implements ISkillHandler
 				target.reduceCurrentHp(damage, activeChar, skill);
 				
 				// Logging damage
-				if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[] { activeChar, " did damage ", damage, skill, " to ", target });
@@ -110,7 +110,7 @@ public class Mark implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

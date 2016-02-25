@@ -52,7 +52,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 		if (_clan == null)
 			return;
 		
-		if ((_clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL) || (!player.isGM() && (_clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)))
+		if (_clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL || !player.isGM() && _clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
 			player.sendPacket(sm);
@@ -75,14 +75,14 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if ((_clan.getAllyId() == clan.getAllyId()) && (_clan.getAllyId() != 0))
+		if (_clan.getAllyId() == clan.getAllyId() && _clan.getAllyId() != 0)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_AGAINST_A_ALLIED_CLAN_NOT_WORK);
 			player.sendPacket(sm);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if ((clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL) || (!player.isGM() && (clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)))
+		if (clan.getLevel() < Config.CLAN_WAR_MIN_CLAN_LEVEL || !player.isGM() && clan.getMembersCount() < Config.ALT_CLAN_MEMBERS_FOR_WAR)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_WAR_DECLARED_IF_CLAN_LVL3_OR_15_MEMBER);
 			player.sendPacket(sm);
@@ -98,7 +98,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		else if ((_clan.getWarList().size() + _clan.getEnemiesQueue().size()) >= 30)
+		else if (_clan.getWarList().size() + _clan.getEnemiesQueue().size() >= 30)
 		{
 			player.sendMessage("You can not declare another war if you have 30 wars declared.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -121,7 +121,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		for (L2PcInstance cha : pls)
 		{
-			if ((cha.getClan() == player.getClan()) || (cha.getClan() == clan))
+			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
 				cha.broadcastUserInfo();
 		}
 	}

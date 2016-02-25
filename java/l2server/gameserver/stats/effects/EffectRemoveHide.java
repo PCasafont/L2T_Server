@@ -54,7 +54,7 @@ public class EffectRemoveHide extends L2Effect
 		
 		for (L2Abnormal e : getEffected().getAllEffects())
 		{
-			if ((e != null) && (e.getType() == L2AbnormalType.HIDE))
+			if (e != null && e.getType() == L2AbnormalType.HIDE)
 			{
 				getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
 				e.exit();

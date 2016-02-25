@@ -66,7 +66,7 @@ public class Attack extends L2GameServerPacket
 				_ssGrade = Attack.this._ssGrade;
 			}
 			// dirty fix for lags on olympiad
-			if ((shld > 0) && !((target instanceof L2PcInstance) && ((L2PcInstance) target).isInOlympiadMode()))
+			if (shld > 0 && !(target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode()))
 				_flags |= HITFLAG_SHLD;
 			//			if (shld > 0)
 			//				_flags |= HITFLAG_SHLD;

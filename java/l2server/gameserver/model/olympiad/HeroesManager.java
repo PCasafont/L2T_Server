@@ -233,7 +233,7 @@ public class HeroesManager
 		String format = String.format("%%0%dd", 2);
 		FightTime = FightTime / 1000;
 		String seconds = String.format(format, FightTime % 60);
-		String minutes = String.format(format, (FightTime % 3600) / 60);
+		String minutes = String.format(format, FightTime % 3600 / 60);
 		String time = minutes + ":" + seconds;
 		return time;
 	}
@@ -363,14 +363,14 @@ public class HeroesManager
 				{
 					String name = CharNameTable.getInstance().getNameById(charTwoId);
 					String cls = PlayerClassTable.getInstance().getClassNameById(charTwoClass);
-					if ((name != null) && (cls != null))
+					if (name != null && cls != null)
 					{
 						FightInfo fight = new FightInfo();
 						fight.opponent = name;
 						fight.opponentClass = cls;
 						
 						fight.duration = calcFightDuration(time);
-						fight.startTime = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
+						fight.startTime = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(start));
 						
 						fight.classed = classed == 1;
 						if (winner == 1)
@@ -398,14 +398,14 @@ public class HeroesManager
 				{
 					String name = CharNameTable.getInstance().getNameById(charOneId);
 					String cls = PlayerClassTable.getInstance().getClassNameById(charOneClass);
-					if ((name != null) && (cls != null))
+					if (name != null && cls != null)
 					{
 						FightInfo fight = new FightInfo();
 						fight.opponent = name;
 						fight.opponentClass = cls;
 						
 						fight.duration = calcFightDuration(time);
-						fight.startTime = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
+						fight.startTime = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(start));
 						
 						fight.classed = classed == 1;
 						if (winner == 1)
@@ -493,7 +493,7 @@ public class HeroesManager
 					final StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = ((page - 1) * perpage); i < list.size(); i++)
+					for (int i = (page - 1) * perpage; i < list.size(); i++)
 					{
 						breakat = i;
 						DiaryEntry diaryEntry = list.get(i);
@@ -506,7 +506,7 @@ public class HeroesManager
 						{
 							StringUtil.append(fList, "<table width=270>");
 						}
-						StringUtil.append(fList, "<tr><td width=270><font color=\"LEVEL\">" + (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(diaryEntry.time)) + "</font></td></tr>");
+						StringUtil.append(fList, "<tr><td width=270><font color=\"LEVEL\">" + new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date(diaryEntry.time)) + "</font></td></tr>");
 						StringUtil.append(fList, "<tr><td width=270>" + diaryEntry.action + "</td></tr>");
 						StringUtil.append(fList, "<tr><td>&nbsp;</td></tr></table>");
 						StringUtil.append(fList, "</td></tr>");
@@ -518,7 +518,7 @@ public class HeroesManager
 						}
 					}
 					
-					if (breakat < (list.size() - 1))
+					if (breakat < list.size() - 1)
 					{
 						diaryReply.replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -572,7 +572,7 @@ public class HeroesManager
 					final StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = ((page - 1) * perpage); i < list.size(); i++)
+					for (int i = (page - 1) * perpage; i < list.size(); i++)
 					{
 						breakat = i;
 						FightInfo fight = list.get(i);
@@ -597,7 +597,7 @@ public class HeroesManager
 						}
 					}
 					
-					if (breakat < (list.size() - 1))
+					if (breakat < list.size() - 1)
 					{
 						FightReply.replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -652,7 +652,7 @@ public class HeroesManager
 					for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 					{
 						L2ItemInstance equippedItem = player.getInventory().getPaperdollItem(i);
-						if ((equippedItem != null) && equippedItem.isHeroItem())
+						if (equippedItem != null && equippedItem.isHeroItem())
 						{
 							player.getInventory().unEquipItemInSlot(i);
 						}
@@ -660,7 +660,7 @@ public class HeroesManager
 					
 					for (L2ItemInstance item : player.getInventory().getAvailableItems(false, false))
 					{
-						if ((item != null) && item.isHeroItem())
+						if (item != null && item.isHeroItem())
 						{
 							player.destroyItem("Hero", item, null, true);
 							InventoryUpdate iu = new InventoryUpdate();
@@ -691,7 +691,7 @@ public class HeroesManager
 			OlympiadNobleInfo heroNobleInfo = newHeroes.get(classId);
 			int charId = heroNobleInfo.getId();
 			
-			if ((_pastAndCurrentHeroes != null) && _pastAndCurrentHeroes.containsKey(charId))
+			if (_pastAndCurrentHeroes != null && _pastAndCurrentHeroes.containsKey(charId))
 			{
 				HeroInfo oldHero = _pastAndCurrentHeroes.get(charId);
 				oldHero.increaseCount();
@@ -803,7 +803,7 @@ public class HeroesManager
 				
 				for (HeroInfo hero : _heroes.values())
 				{
-					if ((_pastAndCurrentHeroes == null) || !_pastAndCurrentHeroes.containsKey(hero.getId()))
+					if (_pastAndCurrentHeroes == null || !_pastAndCurrentHeroes.containsKey(hero.getId()))
 					{
 						statement = con.prepareStatement(INSERT_HERO);
 						statement.setInt(1, hero.getId());
@@ -894,7 +894,7 @@ public class HeroesManager
 	public void setRBkilled(int charId, int npcId)
 	{
 		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-		if (_heroes.containsKey(charId) && (template != null))
+		if (_heroes.containsKey(charId) && template != null)
 		{
 			DiaryEntry diaryentry = new DiaryEntry();
 			diaryentry.time = System.currentTimeMillis();
@@ -908,7 +908,7 @@ public class HeroesManager
 	public void setCastleTaken(int charId, int castleId)
 	{
 		Castle castle = CastleManager.getInstance().getCastleById(castleId);
-		if (_heroes.containsKey(charId) && (castle != null))
+		if (_heroes.containsKey(charId) && castle != null)
 		{
 			DiaryEntry diaryentry = new DiaryEntry();
 			diaryentry.time = System.currentTimeMillis();

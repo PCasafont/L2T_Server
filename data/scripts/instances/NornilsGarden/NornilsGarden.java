@@ -185,7 +185,7 @@ public class NornilsGarden extends Quest
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(player.getInstanceId());
 		if (inst instanceof NornilsWorld)
 		{
-			NornilsWorld world = ((NornilsWorld) inst);
+			NornilsWorld world = (NornilsWorld) inst;
 			world.allowed.remove(Integer.valueOf(player.getObjectId()));
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			player.setInstanceId(0);
@@ -198,13 +198,13 @@ public class NornilsGarden extends Quest
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null)
 		{
-			if (!(world instanceof NornilsWorld) || (world.templateId != INSTANCE_ID))
+			if (!(world instanceof NornilsWorld) || world.templateId != INSTANCE_ID)
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
 				return null;
 			}
 			// check for level difference again on reenter
-			if ((player.getLevel() > INSTANCE_LVL_MAX) || (player.getLevel() < INSTANCE_LVL_MIN))
+			if (player.getLevel() > INSTANCE_LVL_MAX || player.getLevel() < INSTANCE_LVL_MIN)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(player);
@@ -223,7 +223,7 @@ public class NornilsGarden extends Quest
 		else
 		{
 			String result = checkConditions(npc, player);
-			if (!(result.equalsIgnoreCase("ok")))
+			if (!result.equalsIgnoreCase("ok"))
 				return result;
 			
 			final int instanceId = InstanceManager.getInstance().createDynamicInstance("NornilsGarden.xml");
@@ -274,7 +274,7 @@ public class NornilsGarden extends Quest
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (inst instanceof NornilsWorld)
 		{
-			NornilsWorld world = ((NornilsWorld) inst);
+			NornilsWorld world = (NornilsWorld) inst;
 			if (npc.equals(world.first_npc) && !world.spawned_1)
 			{
 				world.spawned_1 = true;
@@ -292,7 +292,7 @@ public class NornilsGarden extends Quest
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (inst instanceof NornilsWorld)
 		{
-			NornilsWorld world = ((NornilsWorld) inst);
+			NornilsWorld world = (NornilsWorld) inst;
 			if (!world.spawned_2)
 			{
 				world.spawned_2 = true;
@@ -310,7 +310,7 @@ public class NornilsGarden extends Quest
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(cha.getInstanceId());
 		if (inst instanceof NornilsWorld)
 		{
-			NornilsWorld world = ((NornilsWorld) inst);
+			NornilsWorld world = (NornilsWorld) inst;
 			if (!world.spawned_3)
 			{
 				world.spawned_3 = true;
@@ -328,7 +328,7 @@ public class NornilsGarden extends Quest
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(cha.getInstanceId());
 		if (inst instanceof NornilsWorld)
 		{
-			NornilsWorld world = ((NornilsWorld) inst);
+			NornilsWorld world = (NornilsWorld) inst;
 			if (!world.spawned_4)
 			{
 				world.spawned_4 = true;
@@ -405,7 +405,7 @@ public class NornilsGarden extends Quest
 			if (partyMember.getRace().ordinal() == 5)
 			{
 				QuestState checkst = partyMember.getQuestState("179_IntoTheLargeCavern");
-				if ((checkst != null) && (checkst.getState() == State.STARTED))
+				if (checkst != null && checkst.getState() == State.STARTED)
 				{
 					_kamael = true;
 				}
@@ -428,7 +428,7 @@ public class NornilsGarden extends Quest
 	@Override
 	public String onEnterZone(L2Character character, L2ZoneType zone)
 	{
-		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if (tmpworld instanceof NornilsWorld)
@@ -462,7 +462,7 @@ public class NornilsGarden extends Quest
 		if (st == null)
 			return getNoQuestMsg(player);
 		
-		if ((npc.getNpcId() == _garden_guard) && event.equalsIgnoreCase("enter_instance"))
+		if (npc.getNpcId() == _garden_guard && event.equalsIgnoreCase("enter_instance"))
 		{
 			try
 			{
@@ -472,7 +472,7 @@ public class NornilsGarden extends Quest
 			{
 			}
 		}
-		else if ((npc.getNpcId() == 32258) && event.equalsIgnoreCase("exit"))
+		else if (npc.getNpcId() == 32258 && event.equalsIgnoreCase("exit"))
 		{
 			try
 			{
@@ -498,11 +498,11 @@ public class NornilsGarden extends Quest
 			else if (event.equalsIgnoreCase("check"))
 			{
 				int correct = st.getInt("correct");
-				if ((npc.getNpcId() == 32260) && (correct == 3))
+				if (npc.getNpcId() == 32260 && correct == 3)
 					openDoor(st, player, 16200014);
-				else if ((npc.getNpcId() == 32261) && (correct == 3))
+				else if (npc.getNpcId() == 32261 && correct == 3)
 					openDoor(st, player, 16200015);
-				else if ((npc.getNpcId() == 32262) && (correct == 4))
+				else if (npc.getNpcId() == 32262 && correct == 4)
 					openDoor(st, player, 16200016);
 				else
 					return npc.getNpcId() + "-00.html";
@@ -517,7 +517,7 @@ public class NornilsGarden extends Quest
 		if (Util.contains(_final_gates, npc.getNpcId()))
 		{
 			QuestState cst = player.getQuestState("179_IntoTheLargeCavern");
-			if ((cst != null) && (cst.getState() == State.STARTED))
+			if (cst != null && cst.getState() == State.STARTED)
 			{
 				return npc.getNpcId() + "-01.html";
 			}
@@ -543,13 +543,13 @@ public class NornilsGarden extends Quest
 	@Override
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if ((npc.getNpcId() == _herb_jar) && !npc.isDead())
+		if (npc.getNpcId() == _herb_jar && !npc.isDead())
 		{
 			dropHerb(npc, attacker, HP_HERBS_DROPLIST);
 			dropHerb(npc, attacker, MP_HERBS_DROPLIST);
 			npc.doDie(attacker);
 		}
-		else if ((npc.getNpcId() == 18362) && (npc.getInstanceId() > 0))
+		else if (npc.getNpcId() == 18362 && npc.getInstanceId() > 0)
 		{
 			spawn1(npc);
 		}

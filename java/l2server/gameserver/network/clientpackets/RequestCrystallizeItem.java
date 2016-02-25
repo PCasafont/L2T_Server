@@ -76,7 +76,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			return;
 		}
 		
-		if ((activeChar.getPrivateStoreType() != 0) || activeChar.isInCrystallize())
+		if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -87,7 +87,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CRYSTALLIZE_LEVEL_TOO_LOW));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			if ((activeChar.getRace() != Race.Dwarf) && (activeChar.getCurrentClass().getId() != 117) && (activeChar.getCurrentClass().getId() != 55))
+			if (activeChar.getRace() != Race.Dwarf && activeChar.getCurrentClass().getId() != 117 && activeChar.getCurrentClass().getId() != 55)
 				Log.info("Player " + activeChar.getClient() + " used crystalize with classid: " + activeChar.getCurrentClass().getId());
 			return;
 		}
@@ -110,10 +110,10 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		}
 		
 		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
-		if ((itemToRemove == null) || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
+		if (itemToRemove == null || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
 			return;
 		
-		if (!itemToRemove.getItem().isCrystallizable() || (itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE))
+		if (!itemToRemove.getItem().isCrystallizable() || itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE)
 		{
 			Log.warning(activeChar.getName() + " (" + activeChar.getObjectId() + ") tried to crystallize " + itemToRemove.getItem().getItemId());
 			return;
@@ -217,11 +217,11 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		sm.addItemNumber(crystalAmount);
 		activeChar.sendPacket(sm);
 		
-		if (Config.ENABLE_CRYSTALLIZE_REWARDS && (itemToRemove.getItem().getCrystallizeRewards() != null))
+		if (Config.ENABLE_CRYSTALLIZE_REWARDS && itemToRemove.getItem().getCrystallizeRewards() != null)
 		{
 			for (L2CrystallizeReward reward : itemToRemove.getItem().getCrystallizeRewards())
 			{
-				if ((reward.getChance() * 1000) > Rnd.get(100000))
+				if (reward.getChance() * 1000 > Rnd.get(100000))
 					activeChar.addItem("Crystallize", reward.getItemId(), reward.getCount(), activeChar, true);
 			}
 		}

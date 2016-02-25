@@ -137,7 +137,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 			
 			XmlDocument doc = new XmlDocument(file);
 			XmlNode first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getName()))
+			if (first != null && "list".equalsIgnoreCase(first.getName()))
 			{
 				for (XmlNode n : first.getChildren())
 				{
@@ -200,7 +200,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 											absorbType = Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
 										
 										if (cd.hasAttribute("chance"))
-											chance = ((cd.getInt("chance") * CHANCE_MULTIPLIER) >= 100) ? 100 : (cd.getInt("chance") * CHANCE_MULTIPLIER);
+											chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 : cd.getInt("chance") * CHANCE_MULTIPLIER;
 										//chance = cd.getInt("chance");
 										
 										if (cd.hasAttribute("skill"))
@@ -279,9 +279,9 @@ public class Q350_EnhanceYourWeapon extends Quest
 	{
 		super.onSkillSee(npc, caster, skill, targets, isPet);
 		
-		if ((skill == null) || (skill.getId() != 2096))
+		if (skill == null || skill.getId() != 2096)
 			return null;
-		else if ((caster == null) || caster.isDead())
+		else if (caster == null || caster.isDead())
 			return null;
 		if (!(npc instanceof L2Attackable) || npc.isDead() || !_npcLevelingInfos.containsKey(npc.getNpcId()))
 			return null;
@@ -300,7 +300,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if ((npc instanceof L2Attackable) && _npcLevelingInfos.containsKey(npc.getNpcId()))
+		if (npc instanceof L2Attackable && _npcLevelingInfos.containsKey(npc.getNpcId()))
 			levelSoulCrystals((L2Attackable) npc, killer);
 		
 		return null;
@@ -342,7 +342,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 			htmltext = npc.getNpcId() + "-01.htm";
 		else if (check(st))
 			htmltext = npc.getNpcId() + "-03.htm";
-		else if ((st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0) && (st.getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0) && (st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0))
+		else if (st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0)
 			htmltext = npc.getNpcId() + "-21.htm";
 		return htmltext;
 	}
@@ -372,7 +372,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 		int maxSCLevel = 0;
 		
 		//TODO: what if mob support last_hit + party?
-		if (isPartyLevelingMonster(mob.getNpcId()) && (killer.getParty() != null))
+		if (isPartyLevelingMonster(mob.getNpcId()) && killer.getParty() != null)
 		{
 			// First get the list of players who has one Soul Cry and the quest
 			for (L2PcInstance pl : killer.getParty().getPartyMembers())
@@ -385,7 +385,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 					continue;
 				
 				players.put(pl, sc);
-				if ((maxSCLevel < sc.getLevel()) && _npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
+				if (maxSCLevel < sc.getLevel() && _npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
 					maxSCLevel = sc.getLevel();
 			}
 		}
@@ -395,7 +395,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 			if (sc != null)
 			{
 				players.put(killer, sc);
-				if ((maxSCLevel < sc.getLevel()) && _npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
+				if (maxSCLevel < sc.getLevel() && _npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
 					maxSCLevel = sc.getLevel();
 			}
 		}
@@ -419,11 +419,11 @@ public class Q350_EnhanceYourWeapon extends Quest
 			// Fail if the killer isn't in the _absorbersList of this L2Attackable and mob is not boss
 			AbsorberInfo ai = mob.getAbsorbersList().get(killer.getObjectId());
 			boolean isSuccess = true;
-			if ((ai == null) || (ai._objId != killer.getObjectId()))
+			if (ai == null || ai._objId != killer.getObjectId())
 				isSuccess = false;
 			
 			// Check if the soul crystal was used when HP of this L2Attackable wasn't higher than half of it
-			if ((ai != null) && (ai._absorbedHP > (mob.getMaxHp() / 2.0)))
+			if (ai != null && ai._absorbedHP > mob.getMaxHp() / 2.0)
 				isSuccess = false;
 			
 			if (!isSuccess)
@@ -441,7 +441,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 				{
 					boolean found = false;
 					int loops = 0;
-					while (!found && (loops < 30))
+					while (!found && loops < 30)
 					{
 						L2PcInstance lucky = killer.getParty().getPartyMembers().get(Rnd.get(killer.getParty().getMemberCount()));
 						found = tryToLevelCrystal(lucky, players.get(lucky), mob);
@@ -492,7 +492,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 	private SoulCrystal getSCForPlayer(L2PcInstance player)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
+		if (st == null || st.getState() != State.STARTED)
 			return null;
 		
 		L2ItemInstance[] inv = player.getInventory().getItems();
@@ -513,7 +513,7 @@ public class Q350_EnhanceYourWeapon extends Quest
 	
 	private boolean tryToLevelCrystal(L2PcInstance player, SoulCrystal sc, L2Attackable mob)
 	{
-		if ((sc == null) || !_npcLevelingInfos.containsKey(mob.getNpcId()))
+		if (sc == null || !_npcLevelingInfos.containsKey(mob.getNpcId()))
 			return false;
 		
 		// If the crystal level is way too high for this mob, say that we can't increase it

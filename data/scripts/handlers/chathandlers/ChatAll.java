@@ -88,7 +88,7 @@ public class ChatAll implements IChatHandler
 			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 			for (L2PcInstance player : plrs)
 			{
-				if ((player != null) && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
+				if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
 					player.sendPacket(cs);
 			}
 			

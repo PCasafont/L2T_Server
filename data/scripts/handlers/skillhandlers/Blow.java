@@ -83,11 +83,11 @@ public class Blow implements ISkillHandler
 			boolean success = Formulas.calcBlowSuccess(activeChar, target, skill);
 			
 			//Blood Stab Skill can be used anywhere but doesn't have effect if you are in front
-			if ((skill.getId() == 10508) && !activeChar.isBehindTarget())
+			if (skill.getId() == 10508 && !activeChar.isBehindTarget())
 				return;
 			
 			// Tenkai customization - Blow direction feedback for .stabs command
-			if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isShowingStabs())
+			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isShowingStabs())
 			{
 				if (activeChar.isBehindTarget())
 					activeChar.sendPacket(new ExShowScreenMessage(1, 0, 5, 0, 1, 0, 0, false, 400, 0, "Backstab!"));
@@ -133,7 +133,7 @@ public class Blow implements ISkillHandler
 				}
 				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
 				double soul = L2ItemInstance.CHARGED_NONE;
-				if ((weapon != null) && ((weapon.getItemType() == L2WeaponType.DAGGER) || (weapon.getItemType() == L2WeaponType.DUALDAGGER) || (weapon.getItemType() == L2WeaponType.RAPIER)))
+				if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER || weapon.getItemType() == L2WeaponType.RAPIER))
 					soul = weapon.getChargedSoulShot();
 				byte shld = Formulas.calcShldUse(activeChar, target, skill);
 				
@@ -145,7 +145,7 @@ public class Blow implements ISkillHandler
 				
 				if (activeChar instanceof L2PcInstance)
 					((L2PcInstance) activeChar).sendSysMessage("Dam = " + damage);
-				if ((skill.getMaxSoulConsumeCount() > 0) && (activeChar instanceof L2PcInstance))
+				if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof L2PcInstance)
 				{
 					switch (((L2PcInstance) activeChar).getSouls())
 					{
@@ -176,7 +176,7 @@ public class Blow implements ISkillHandler
 					// Vicious Stance is special after C5, and only for BLOW skills
 					// Adds directly to damage
 					L2Abnormal vicious = activeChar.getFirstEffect(312);
-					if ((vicious != null) && (damage > 1))
+					if (vicious != null && damage > 1)
 					{
 						for (Func func : vicious.getStatFuncs())
 						{
@@ -197,7 +197,7 @@ public class Blow implements ISkillHandler
 				if (soul > L2ItemInstance.CHARGED_NONE)
 					weapon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
 				
-				if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[] { activeChar, " did damage ", (int) damage, skill, " to ", target });
@@ -210,11 +210,11 @@ public class Blow implements ISkillHandler
 				if (!target.isInvul(activeChar)) // Do not reflect if weapon is of type bow or target is invulnerable
 				{
 					int dmgCap = (int) target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
-					if ((dmgCap > 0) && (damage > dmgCap))
+					if (dmgCap > 0 && damage > dmgCap)
 						damage = dmgCap;
 					
 					// quick fix for no drop from raid if boss attack high-level char with damage reflection
-					if (!target.isRaid() || (activeChar.getLevel() <= (target.getLevel() + 8)))
+					if (!target.isRaid() || activeChar.getLevel() <= target.getLevel() + 8)
 					{
 						// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
 						double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
@@ -222,7 +222,7 @@ public class Blow implements ISkillHandler
 						
 						if (reflectPercent > 0)
 						{
-							reflectedDamage = (int) ((reflectPercent / 100.) * Math.min(target.getCurrentHp(), damage));
+							reflectedDamage = (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 							
 							// Half the reflected damage for bows
 							/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
@@ -235,15 +235,15 @@ public class Blow implements ISkillHandler
 							
 							boolean defLimitReflects = true;
 							
-							if ((target.getFirstEffect(10021) != null) || (target.getFirstEffect(10017) != null) || (target.getSkillLevelHash(13524) != 0))
+							if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null || target.getSkillLevelHash(13524) != 0)
 								defLimitReflects = false;
 							
-							if (defLimitReflects && (reflectedDamage > target.getPDef(activeChar)))
+							if (defLimitReflects && reflectedDamage > target.getPDef(activeChar))
 								reflectedDamage = target.getPDef(activeChar);
 							
 							int totalHealth = (int) (target.getCurrentHp() + target.getCurrentCp());
 							
-							if ((totalHealth - damage) <= 0)
+							if (totalHealth - damage <= 0)
 								reflectedDamage = 0;
 							
 							//damage -= reflectedDamage;
@@ -272,10 +272,10 @@ public class Blow implements ISkillHandler
 					// Absorb HP from the damage inflicted
 					double absorbPercent = activeChar.getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
 					
-					if ((absorbPercent > 0) && !activeChar.isInvul(target))
+					if (absorbPercent > 0 && !activeChar.isInvul(target))
 					{
 						int maxCanAbsorb = (int) (activeChar.getMaxHp() - activeChar.getCurrentHp());
-						int absorbDamage = (int) ((absorbPercent / 100.) * damage);
+						int absorbDamage = (int) (absorbPercent / 100. * damage);
 						
 						if (absorbDamage > maxCanAbsorb)
 							absorbDamage = maxCanAbsorb; // Can't absorb more than max hp
@@ -306,7 +306,7 @@ public class Blow implements ISkillHandler
 						activeChar.sendPacket(sm);
 					}
 					// Formula from Diego post, 700 from rpg tests
-					double vegdamage = ((700 * target.getPAtk(activeChar)) / activeChar.getPDef(target));
+					double vegdamage = 700 * target.getPAtk(activeChar) / activeChar.getPDef(target);
 					
 					activeChar.reduceCurrentHp(vegdamage, target, skill);
 				}
@@ -350,7 +350,7 @@ public class Blow implements ISkillHandler
 			if (skill.hasSelfEffects())
 			{
 				final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-				if ((effect != null) && effect.isSelfEffect())
+				if (effect != null && effect.isSelfEffect())
 					effect.exit();
 				skill.getEffectsSelf(activeChar);
 			}

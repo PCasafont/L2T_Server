@@ -48,7 +48,7 @@ public class ManorManager implements IBypassHandler
 	{
 		final L2Npc manager = activeChar.getLastFolkNPC();
 		final boolean isCastle = manager instanceof L2CastleChamberlainInstance;
-		if (!((manager instanceof L2ManorManagerInstance) || isCastle))
+		if (!(manager instanceof L2ManorManagerInstance || isCastle))
 			return false;
 		
 		if (!activeChar.isInsideRadius(manager, L2Npc.DEFAULT_INTERACTION_DISTANCE, true, false))
@@ -59,7 +59,7 @@ public class ManorManager implements IBypassHandler
 			final Castle castle = manager.getCastle();
 			if (isCastle)
 			{
-				if ((activeChar.getClan() == null) || (castle.getOwnerId() != activeChar.getClanId()) || ((activeChar.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) != L2Clan.CP_CS_MANOR_ADMIN))
+				if (activeChar.getClan() == null || castle.getOwnerId() != activeChar.getClanId() || (activeChar.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) != L2Clan.CP_CS_MANOR_ADMIN)
 				{
 					manager.showChatWindowByFileName(activeChar, "chamberlain/chamberlain-noprivs.htm");
 					return false;
@@ -109,13 +109,13 @@ public class ManorManager implements IBypassHandler
 					activeChar.sendPacket(new ExShowSellCropList(activeChar, castleId, castle.getCropProcure(CastleManorManager.PERIOD_CURRENT)));
 					break;
 				case 3: // Current seeds (Manor info)
-					if ((time == 1) && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
+					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
 						activeChar.sendPacket(new ExShowSeedInfo(castleId, null));
 					else
 						activeChar.sendPacket(new ExShowSeedInfo(castleId, CastleManager.getInstance().getCastleById(castleId).getSeedProduction(time)));
 					break;
 				case 4: // Current crops (Manor info)
-					if ((time == 1) && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
+					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
 						activeChar.sendPacket(new ExShowCropInfo(castleId, null));
 					else
 						activeChar.sendPacket(new ExShowCropInfo(castleId, CastleManager.getInstance().getCastleById(castleId).getCropProcure(time)));

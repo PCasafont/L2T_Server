@@ -39,7 +39,7 @@ public class ApherusLookout extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (!Config.isServer(Config.DREAMS) && (npc.getNpcId() == _apherusLookout))
+		if (!Config.isServer(Config.DREAMS) && npc.getNpcId() == _apherusLookout)
 		{
 			for (int a = 0; a < 3; a++)
 			{

@@ -44,14 +44,14 @@ public class L2ControlTowerInstance extends L2Npc
 	public boolean isAttackable()
 	{
 		// Attackable during siege by attacker only
-		return ((getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getSiege().getIsInProgress());
+		return getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress();
 	}
 	
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
 		// Attackable during siege by attacker only
-		return ((attacker != null) && (attacker instanceof L2PcInstance) && (getCastle() != null) && (getCastle().getCastleId() > 0) && getCastle().getSiege().getIsInProgress() && getCastle().getSiege().checkIsAttacker(((L2PcInstance) attacker).getClan()));
+		return attacker != null && attacker instanceof L2PcInstance && getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress() && getCastle().getSiege().checkIsAttacker(((L2PcInstance) attacker).getClan());
 	}
 	
 	@Override
@@ -87,8 +87,7 @@ public class L2ControlTowerInstance extends L2Npc
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.abs(player.getZ() - getZ()) < 100 // Less then max height difference, delete check when geo
-			) && GeoData.getInstance().canSeeTarget(player, this))
+			if (isAutoAttackable(player) && Math.abs(player.getZ() - getZ()) < 100 && GeoData.getInstance().canSeeTarget(player, this))
 			{
 				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
@@ -105,7 +104,7 @@ public class L2ControlTowerInstance extends L2Npc
 		{
 			getCastle().getSiege().killedCT(this);
 			
-			if ((_guards != null) && !_guards.isEmpty())
+			if (_guards != null && !_guards.isEmpty())
 			{
 				for (L2Spawn spawn : _guards)
 				{

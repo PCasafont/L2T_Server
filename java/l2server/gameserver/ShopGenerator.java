@@ -28,7 +28,7 @@ public class ShopGenerator
 		String result = "<?xml version='1.0' encoding='utf-8'?>\r\n<list>\r\n";
 		for (L2Item item : ItemTable.getInstance().getAllItems())
 		{
-			if ((item != null) && (item.getBodyPart() == L2Item.SLOT_UNDERWEAR) && item.getName().contains("Shirt"))
+			if (item != null && item.getBodyPart() == L2Item.SLOT_UNDERWEAR && item.getName().contains("Shirt"))
 			{
 				result += "\t<item>\r\n";
 				result += "\t\t<ingredient id=\"57\" count=\"1\"> <!-- Adena -->\r\n";

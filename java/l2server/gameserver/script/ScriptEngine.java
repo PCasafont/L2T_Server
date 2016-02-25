@@ -43,16 +43,16 @@ public class ScriptEngine
 				s = parserFactories.get(name);
 				if (s == null) // if the shape factory is not there even now
 				{
-					throw (new ParserNotCreatedException());
+					throw new ParserNotCreatedException();
 				}
 			}
 			catch (ClassNotFoundException e)
 			{
 				// We'll throw an exception to indicate that
 				// the shape could not be created
-				throw (new ParserNotCreatedException());
+				throw new ParserNotCreatedException();
 			}
 		}
-		return (s.create());
+		return s.create();
 	}
 }

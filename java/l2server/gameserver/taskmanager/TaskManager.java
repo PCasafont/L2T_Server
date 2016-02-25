@@ -103,7 +103,7 @@ public final class TaskManager
 				L2DatabaseFactory.close(con);
 			}
 			
-			if ((type == TYPE_SHEDULED) || (type == TYPE_TIME))
+			if (type == TYPE_SHEDULED || type == TYPE_TIME)
 			{
 				stopTask();
 			}
@@ -315,7 +315,7 @@ public final class TaskManager
 				
 				delay = min.getTimeInMillis() - System.currentTimeMillis();
 				
-				if (check.after(min) || (delay < 0))
+				if (check.after(min) || delay < 0)
 				{
 					delay += interval;
 				}

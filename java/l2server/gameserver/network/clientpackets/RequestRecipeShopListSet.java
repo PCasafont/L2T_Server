@@ -51,7 +51,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -100,7 +100,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		
 		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 		{
-			if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
+			if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
 			{
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				player.sendPacket(ActionFailed.STATIC_PACKET);

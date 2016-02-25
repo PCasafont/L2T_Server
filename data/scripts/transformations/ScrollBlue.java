@@ -28,7 +28,7 @@ public class ScrollBlue extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 122) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 122 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

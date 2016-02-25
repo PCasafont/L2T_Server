@@ -464,7 +464,7 @@ public class TradeList
 		
 		L2ItemInstance item = (L2ItemInstance) o;
 		
-		if (!(item.isTradeable() || (getOwner().isGM() && Config.GM_TRADE_RESTRICTED_ITEMS)) || item.isQuestItem())
+		if (!(item.isTradeable() || getOwner().isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) || item.isQuestItem())
 			return null;
 		
 		if (!getOwner().getInventory().canManipulateWithItemId(item.getItemId()))
@@ -472,16 +472,16 @@ public class TradeList
 			return null;
 		}
 		
-		if ((count <= 0) || (count > item.getCount()))
+		if (count <= 0 || count > item.getCount())
 			return null;
 		
-		if (!item.isStackable() && (count > 1))
+		if (!item.isStackable() && count > 1)
 		{
 			Log.warning(_owner.getName() + ": Attempt to add non-stackable item to TradeList with count > 1!");
 			return null;
 		}
 		
-		if ((PcInventory.MAX_ADENA / count) < price)
+		if (PcInventory.MAX_ADENA / count < price)
 		{
 			Log.warning(_owner.getName() + ": Attempt to overflow adena !");
 			return null;
@@ -526,13 +526,13 @@ public class TradeList
 		if (!item.isTradeable() || item.isQuestItem())
 			return null;
 		
-		if (!item.isStackable() && (count > 1))
+		if (!item.isStackable() && count > 1)
 		{
 			Log.warning(_owner.getName() + ": Attempt to add non-stackable item to TradeList with count > 1!");
 			return null;
 		}
 		
-		if ((PcInventory.MAX_ADENA / count) < price)
+		if (PcInventory.MAX_ADENA / count < price)
 		{
 			Log.warning(_owner.getName() + ": Attempt to overflow adena !");
 			return null;
@@ -562,7 +562,7 @@ public class TradeList
 		
 		for (TradeItem titem : _items)
 		{
-			if ((titem.getObjectId() == objectId) || (titem.getItem().getItemId() == itemId))
+			if (titem.getObjectId() == objectId || titem.getItem().getItemId() == itemId)
 			{
 				// If Partner has already confirmed this trade, invalidate the confirmation
 				if (_partner != null)
@@ -577,7 +577,7 @@ public class TradeList
 				}
 				
 				// Reduce item count or complete item
-				if ((count != -1) && (titem.getCount() > count))
+				if (count != -1 && titem.getCount() > count)
 					titem.setCount(titem.getCount() - count);
 				else
 					_items.remove(titem);
@@ -596,7 +596,7 @@ public class TradeList
 		for (TradeItem titem : _items)
 		{
 			L2ItemInstance item = _owner.getInventory().getItemByObjectId(titem.getObjectId());
-			if ((item == null) || (titem.getCount() < 1))
+			if (item == null || titem.getCount() < 1)
 				removeItem(titem.getObjectId(), -1, -1);
 			else if (item.getCount() < titem.getCount())
 				titem.setCount(item.getCount());
@@ -693,7 +693,7 @@ public class TradeList
 	private boolean validate()
 	{
 		// Check for Owner validity
-		if ((_owner == null) || (L2World.getInstance().getPlayer(_owner.getObjectId()) == null))
+		if (_owner == null || L2World.getInstance().getPlayer(_owner.getObjectId()) == null)
 		{
 			Log.warning("Invalid owner of TradeList");
 			return false;
@@ -703,7 +703,7 @@ public class TradeList
 		for (TradeItem titem : _items)
 		{
 			L2ItemInstance item = _owner.checkItemManipulation(titem.getObjectId(), titem.getCount(), "transfer");
-			if ((item == null) || (item.getCount() < 1))
+			if (item == null || item.getCount() < 1)
 			{
 				Log.warning(_owner.getName() + ": Invalid Item in TradeList");
 				return false;
@@ -730,7 +730,7 @@ public class TradeList
 			// Add changes to inventory update packets
 			if (ownerIU != null)
 			{
-				if ((oldItem.getCount() > 0) && (oldItem != newItem))
+				if (oldItem.getCount() > 0 && oldItem != newItem)
 					ownerIU.addModifiedItem(oldItem);
 				else
 					ownerIU.addRemovedItem(oldItem);
@@ -798,12 +798,12 @@ public class TradeList
 		boolean success = false;
 		
 		// check weight and slots
-		if ((!getOwner().getInventory().validateWeight(partnerList.calcItemsWeight())) || !(partnerList.getOwner().getInventory().validateWeight(calcItemsWeight())))
+		if (!getOwner().getInventory().validateWeight(partnerList.calcItemsWeight()) || !partnerList.getOwner().getInventory().validateWeight(calcItemsWeight()))
 		{
 			partnerList.getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
 			getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
 		}
-		else if ((!getOwner().getInventory().validateCapacity(partnerList.countItemsSlots(getOwner()))) || (!partnerList.getOwner().getInventory().validateCapacity(countItemsSlots(partnerList.getOwner()))))
+		else if (!getOwner().getInventory().validateCapacity(partnerList.countItemsSlots(getOwner())) || !partnerList.getOwner().getInventory().validateCapacity(countItemsSlots(partnerList.getOwner())))
 		{
 			partnerList.getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
 			getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
@@ -905,7 +905,7 @@ public class TradeList
 			}
 			
 			// check for overflow in the single item
-			if ((MAX_ADENA / item.getCount()) < item.getPrice())
+			if (MAX_ADENA / item.getCount() < item.getPrice())
 			{
 				// private store attempting to overflow - disable it
 				lock();
@@ -914,7 +914,7 @@ public class TradeList
 			
 			totalPrice += item.getCount() * item.getPrice();
 			// check for overflow of the total price
-			if ((MAX_ADENA < totalPrice) || (totalPrice < 0))
+			if (MAX_ADENA < totalPrice || totalPrice < 0)
 			{
 				// private store attempting to overflow - disable it
 				lock();
@@ -923,7 +923,7 @@ public class TradeList
 			
 			// Check if requested item is available for manipulation
 			L2ItemInstance oldItem = _owner.checkItemManipulation(item.getObjectId(), item.getCount(), "sell");
-			if ((oldItem == null) || !oldItem.isTradeable())
+			if (oldItem == null || !oldItem.isTradeable())
 			{
 				// private store sell invalid item - disable it
 				lock();
@@ -1002,7 +1002,7 @@ public class TradeList
 			removeItem(item.getObjectId(), -1, item.getCount());
 			
 			// Add changes to inventory update packets
-			if ((oldItem.getCount() > 0) && (oldItem != newItem))
+			if (oldItem.getCount() > 0 && oldItem != newItem)
 				ownerIU.addModifiedItem(oldItem);
 			else
 				ownerIU.addRemovedItem(oldItem);
@@ -1100,15 +1100,15 @@ public class TradeList
 				continue;
 			
 			// check for overflow in the single item
-			if ((MAX_ADENA / item.getCount()) < item.getPrice())
+			if (MAX_ADENA / item.getCount() < item.getPrice())
 			{
 				lock();
 				break;
 			}
 			
-			long _totalPrice = totalPrice + (item.getCount() * item.getPrice());
+			long _totalPrice = totalPrice + item.getCount() * item.getPrice();
 			// check for overflow of the total price
-			if ((MAX_ADENA < _totalPrice) || (_totalPrice < 0))
+			if (MAX_ADENA < _totalPrice || _totalPrice < 0)
 			{
 				lock();
 				break;
@@ -1154,7 +1154,7 @@ public class TradeList
 			totalPrice = _totalPrice;
 			
 			// Add changes to inventory update packets
-			if ((oldItem.getCount() > 0) && (oldItem != newItem))
+			if (oldItem.getCount() > 0 && oldItem != newItem)
 				playerIU.addModifiedItem(oldItem);
 			else
 				playerIU.addRemovedItem(oldItem);

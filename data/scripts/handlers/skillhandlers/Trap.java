@@ -38,7 +38,7 @@ public class Trap implements ISkillHandler
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
-		if ((activeChar == null) || (skill == null))
+		if (activeChar == null || skill == null)
 			return;
 		
 		switch (skill.getSkillType())

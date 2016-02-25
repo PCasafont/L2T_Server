@@ -30,7 +30,7 @@ public class L2TrapAction implements IActionHandler
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;

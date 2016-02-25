@@ -171,11 +171,10 @@ public class L2RecipeList
 	 */
 	public boolean isConsumable()
 	{
-		return (((_itemId >= 1463) && (_itemId <= 1467)) // Soulshots
-				|| ((_itemId >= 2509) && (_itemId <= 2514)) // Spiritshots
-				|| ((_itemId >= 3947) && (_itemId <= 3952)) // Blessed Spiritshots
-		|| ((_itemId >= 1341) && (_itemId <= 1345)) // Arrows
-		);
+		return _itemId >= 1463 && _itemId <= 1467 // Soulshots
+				|| _itemId >= 2509 && _itemId <= 2514 // Spiritshots
+				|| _itemId >= 3947 && _itemId <= 3952 // Blessed Spiritshots
+				|| _itemId >= 1341 && _itemId <= 1345;
 	}
 	
 	/**

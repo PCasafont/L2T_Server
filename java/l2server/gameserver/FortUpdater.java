@@ -61,7 +61,7 @@ public class FortUpdater implements Runnable
 			{
 				case PERIODIC_UPDATE:
 					_runCount++;
-					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 						return;
 					
 					_fort.setBloodOathReward(_fort.getBloodOathReward() + Config.FS_BLOOD_OATH_COUNT);
@@ -79,9 +79,9 @@ public class FortUpdater implements Runnable
 					_fort.saveFortVariables();
 					break;
 				case MAX_OWN_TIME:
-					if ((_fort.getOwnerClan() == null) || (_fort.getOwnerClan() != _clan))
+					if (_fort.getOwnerClan() == null || _fort.getOwnerClan() != _clan)
 						return;
-					if (_fort.getOwnedTime() > (Config.FS_MAX_OWN_TIME * 3600))
+					if (_fort.getOwnedTime() > Config.FS_MAX_OWN_TIME * 3600)
 					{
 						_fort.removeOwner(true);
 						_fort.setFortState(0, 0);

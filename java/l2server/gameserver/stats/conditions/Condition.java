@@ -118,7 +118,7 @@ public abstract class Condition implements ConditionListener
 	public final boolean test(Env env)
 	{
 		boolean res = testImpl(env);
-		if ((_listener != null) && (res != _result))
+		if (_listener != null && res != _result)
 		{
 			_result = res;
 			notifyChanged();

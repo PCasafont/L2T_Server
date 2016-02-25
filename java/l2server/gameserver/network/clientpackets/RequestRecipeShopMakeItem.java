@@ -55,7 +55,7 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 		
 		manufacturer.hasBeenStoreActive();
 		
-		if ((manufacturer.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
+		if (manufacturer.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1)
 			return;
 		
 		if (activeChar.getPrivateStoreType() != 0)

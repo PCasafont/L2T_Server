@@ -57,11 +57,11 @@ public class L2SkillChargeDmg extends L2Skill
 		if (caster instanceof L2PcInstance)
 		{
 			// thanks Diego Vargas of L2Guru: 70*((0.8+0.201*No.Charges) * (PATK+POWER)) / PDEF
-			modifier = 0.8 + (0.201 * (getNumCharges() + ((L2PcInstance) caster).getCharges()));
+			modifier = 0.8 + 0.201 * (getNumCharges() + ((L2PcInstance) caster).getCharges());
 		}
 		L2ItemInstance weapon = caster.getActiveWeaponInstance();
 		double soul = L2ItemInstance.CHARGED_NONE;
-		if ((weapon != null) && (weapon.getItemType() != L2WeaponType.DAGGER))
+		if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
 			soul = weapon.getChargedSoulShot();
 		
 		for (L2Character target : (L2Character[]) targets)
@@ -144,7 +144,7 @@ public class L2SkillChargeDmg extends L2Skill
 				
 				double finalDamage = damage * modifier;
 				
-				if (Config.LOG_GAME_DAMAGE && (caster instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				if (Config.LOG_GAME_DAMAGE && caster instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[] { caster, " did damage ", (int) damage, this, " to ", target });
@@ -170,7 +170,7 @@ public class L2SkillChargeDmg extends L2Skill
 						caster.sendPacket(sm);
 					}
 					// Formula from Diego post, 700 from rpg tests
-					double vegdamage = ((700 * target.getPAtk(caster)) / caster.getPDef(target));
+					double vegdamage = 700 * target.getPAtk(caster) / caster.getPDef(target);
 					caster.reduceCurrentHp(vegdamage, target, this);
 				}
 				
@@ -189,7 +189,7 @@ public class L2SkillChargeDmg extends L2Skill
 		if (hasSelfEffects())
 		{
 			L2Abnormal effect = caster.getFirstEffect(getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

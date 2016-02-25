@@ -69,7 +69,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("rewards"))
 		{
-			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
+			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				html.setFile(player.getHtmlPrefix(), "fortress/logistics-rewards.htm");
@@ -90,7 +90,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("blood"))
 		{
-			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
+			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				int blood = getFort().getBloodOathReward();
@@ -118,7 +118,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("supplylvl"))
 		{
-			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && (getFort().getFortState() == 2))
+			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && getFort().getFortState() == 2)
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				if (player.isClanLeader())
@@ -143,7 +143,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 		}
 		else if (actualCommand.equalsIgnoreCase("supply"))
 		{
-			if ((player.getClan() != null) && (getFort().getOwnerClan() != null) && (player.getClan() == getFort().getOwnerClan()) && player.isClanLeader())
+			if (player.getClan() != null && getFort().getOwnerClan() != null && player.getClan() == getFort().getOwnerClan() && player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				if (getFort().getSiege().getIsInProgress())

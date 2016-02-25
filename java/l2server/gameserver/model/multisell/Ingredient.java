@@ -141,7 +141,7 @@ public class Ingredient implements Cloneable
 	
 	public final boolean isArmorOrWeapon()
 	{
-		return _template == null ? false : (_template instanceof L2Armor) || (_template instanceof L2Weapon);
+		return _template == null ? false : _template instanceof L2Armor || _template instanceof L2Weapon;
 	}
 	
 	public final int getWeight()

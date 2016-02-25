@@ -79,12 +79,12 @@ public class AdminVitality implements IAdminCommandHandler
 					activeChar.sendMessage("Incorrect vitality level (0-4)");
 				}
 				
-				if ((level >= 0) && (level <= 4))
+				if (level >= 0 && level <= 4)
 				{
 					if (level == 0)
 						vitality = PcStat.MIN_VITALITY_POINTS;
 					else
-						vitality = (PcStat.MAX_VITALITY_POINTS / 4) * level;
+						vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
 					target.setVitalityPoints(vitality, true, false);
 					target.sendMessage("Admin set your Vitality level to " + level);
 				}

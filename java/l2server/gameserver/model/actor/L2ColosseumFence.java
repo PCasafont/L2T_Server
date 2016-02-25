@@ -51,7 +51,7 @@ public final class L2ColosseumFence extends L2Object
 		_minZ = minZ;
 		_maxZ = maxZ;
 		_state = state;
-		_bounds = new Rectangle(x - (width / 2), y - (height / 2), width, height);
+		_bounds = new Rectangle(x - width / 2, y - height / 2, width, height);
 	}
 	
 	/**
@@ -120,6 +120,6 @@ public final class L2ColosseumFence extends L2Object
 	
 	public boolean isInsideFence(int x, int y, int z)
 	{
-		return (x >= _bounds.x) && (y >= _bounds.y) && (z >= _minZ) && (z <= _maxZ) && (x <= (_bounds.x + _bounds.width)) && (y <= (_bounds.y + _bounds.width));
+		return x >= _bounds.x && y >= _bounds.y && z >= _minZ && z <= _maxZ && x <= _bounds.x + _bounds.width && y <= _bounds.y + _bounds.width;
 	}
 }

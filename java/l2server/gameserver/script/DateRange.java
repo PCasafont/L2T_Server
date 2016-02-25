@@ -58,7 +58,7 @@ public class DateRange
 	
 	public boolean isValid()
 	{
-		return (_startDate == null) || (_endDate == null);
+		return _startDate == null || _endDate == null;
 	}
 	
 	public boolean isWithinRange(Date date)

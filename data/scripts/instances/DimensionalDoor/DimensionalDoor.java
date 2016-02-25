@@ -120,7 +120,7 @@ public class DimensionalDoor extends Quest
 		else
 		{
 			if (currentPlayerLevel < maxSkillLevel)
-				skillLevelToLearn = (currentPlayerLevel + 1);
+				skillLevelToLearn = currentPlayerLevel + 1;
 		}
 		return skillLevelToLearn;
 	}

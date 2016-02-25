@@ -55,7 +55,7 @@ public class SendMacroList extends L2GameServerPacket
 		writeC(_count); // count of Macros
 		writeC(_rev == 0 ? 0 : 1); // unknown
 		
-		if ((_macro != null) && (_rev != 0))
+		if (_macro != null && _rev != 0)
 		{
 			writeD(_macro.id); // Macro ID
 			writeS(_macro.name); // Macro Name

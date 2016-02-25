@@ -156,7 +156,7 @@ public class ClanHall
 				{
 					if (_isFree)
 						return;
-					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
+					if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -350,7 +350,7 @@ public class ClanHall
 	public void setOwner(L2Clan clan)
 	{
 		// Verify that this ClanHall is Free and Clan isn't null
-		if ((_ownerId > 0) || (clan == null))
+		if (_ownerId > 0 || clan == null)
 			return;
 		_ownerId = clan.getClanId();
 		_isFree = false;
@@ -364,7 +364,7 @@ public class ClanHall
 	/** Open or Close Door */
 	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open)
 	{
-		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
+		if (activeChar != null && activeChar.getClanId() == getOwnerId())
 			openCloseDoor(doorId, open);
 	}
 	
@@ -386,7 +386,7 @@ public class ClanHall
 	
 	public void openCloseDoors(L2PcInstance activeChar, boolean open)
 	{
-		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
+		if (activeChar != null && activeChar.getClanId() == getOwnerId())
 			openCloseDoors(open);
 	}
 	
@@ -478,7 +478,7 @@ public class ClanHall
 			_functions.put(type, new ClanHallFunction(type, lvl, lease, 0, rate, 0, false));
 		else
 		{
-			if ((lvl == 0) && (lease == 0))
+			if (lvl == 0 && lease == 0)
 				removeFunction(type);
 			else
 			{
@@ -513,7 +513,7 @@ public class ClanHall
 			statement = con.prepareStatement("UPDATE clanhall SET ownerId=?, paidUntil=?, paid=? WHERE id=?");
 			statement.setInt(1, _ownerId);
 			statement.setLong(2, _paidUntil);
-			statement.setInt(3, (_paid) ? 1 : 0);
+			statement.setInt(3, _paid ? 1 : 0);
 			statement.setInt(4, _clanHallId);
 			statement.execute();
 			statement.close();
@@ -536,10 +536,10 @@ public class ClanHall
 			ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _paidUntil - currentTime);
 		else if (!_paid && !forced)
 		{
-			if ((System.currentTimeMillis() + (1000 * 60 * 60 * 24)) <= (_paidUntil + _chRate))
-				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), System.currentTimeMillis() + (1000 * 60 * 60 * 24));
+			if (System.currentTimeMillis() + 1000 * 60 * 60 * 24 <= _paidUntil + _chRate)
+				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), System.currentTimeMillis() + 1000 * 60 * 60 * 24);
 			else
-				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), (_paidUntil + _chRate) - System.currentTimeMillis());
+				ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _paidUntil + _chRate - System.currentTimeMillis());
 		}
 		else
 			ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), 0);
@@ -569,7 +569,7 @@ public class ClanHall
 				}
 				
 				L2Clan Clan = ClanTable.getInstance().getClan(getOwnerId());
-				if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null) && (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease()))
+				if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null && ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= getLease())
 				{
 					if (_paidUntil != 0)
 					{
@@ -588,7 +588,7 @@ public class ClanHall
 				else
 				{
 					_paid = false;
-					if (_time > (_paidUntil + _chRate))
+					if (_time > _paidUntil + _chRate)
 					{
 						if (ClanHallManager.getInstance().loaded())
 						{
@@ -605,10 +605,10 @@ public class ClanHall
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_FOR_YOUR_CLAN_HALL_HAS_NOT_BEEN_MADE_PLEASE_MAKE_PAYMENT_TO_YOUR_CLAN_WAREHOUSE_BY_S1_TOMORROW);
 						sm.addItemNumber(getLease());
 						Clan.broadcastToOnlineMembers(sm);
-						if ((_time + (1000 * 60 * 60 * 24)) <= (_paidUntil + _chRate))
-							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _time + (1000 * 60 * 60 * 24));
+						if (_time + 1000 * 60 * 60 * 24 <= _paidUntil + _chRate)
+							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _time + 1000 * 60 * 60 * 24);
 						else
-							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), (_paidUntil + _chRate) - _time);
+							ThreadPoolManager.getInstance().scheduleGeneral(new FeeTask(), _paidUntil + _chRate - _time);
 						
 					}
 				}

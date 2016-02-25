@@ -71,7 +71,7 @@ public final class TradeRequest extends L2GameClientPacket
 		}
 		
 		L2Object target = L2World.getInstance().findObject(_objectId);
-		if ((target == null) || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance))
+		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance))
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -86,7 +86,7 @@ public final class TradeRequest extends L2GameClientPacket
 		L2PcInstance partner = (L2PcInstance) target;
 		
 		// cant trade with players from other instance except from multiverse
-		if ((partner.getInstanceId() != player.getInstanceId()) && (player.getInstanceId() != -1))
+		if (partner.getInstanceId() != player.getInstanceId() && player.getInstanceId() != -1)
 			return;
 		
 		if (partner.isInOlympiadMode() || player.isInOlympiadMode())
@@ -96,7 +96,7 @@ public final class TradeRequest extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && ((player.getReputation() < 0) || (partner.getReputation() < 0)))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0 || partner.getReputation() < 0))
 		{
 			player.sendMessage("Chaotic players can't use Trade.");
 			return;
@@ -108,7 +108,7 @@ public final class TradeRequest extends L2GameClientPacket
 			return;
 		}
 		
-		if ((player.getPrivateStoreType() != 0) || (partner.getPrivateStoreType() != 0))
+		if (player.getPrivateStoreType() != 0 || partner.getPrivateStoreType() != 0)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;

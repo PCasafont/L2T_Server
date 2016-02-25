@@ -207,7 +207,7 @@ public class AbilityTable
 					{
 						
 						int classId = player.getClassId();
-						if ((classId > 146) && (classId < 188))
+						if (classId > 146 && classId < 188)
 							classId = player.getCurrentClass().getParent().getAwakeningClassId();
 						switch (classId)
 						{

@@ -45,7 +45,7 @@ public final class RequestPledgeRecruitApply extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || (activeChar.getClan() != null))
+		if (activeChar == null || activeChar.getClan() != null)
 			return;
 		
 		if (_enter == 1)

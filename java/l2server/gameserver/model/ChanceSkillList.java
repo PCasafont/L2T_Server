@@ -151,13 +151,13 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 		final boolean playable = target instanceof L2Playable;
 		for (Map.Entry<IChanceSkillTrigger, ChanceCondition> e : entrySet())
 		{
-			if ((e.getValue() != null) && e.getValue().trigger(event, damage, critical, element, playable, skill))
+			if (e.getValue() != null && e.getValue().trigger(event, damage, critical, element, playable, skill))
 			{
 				if (e.getKey() instanceof L2Skill)
 					makeCast((L2Skill) e.getKey(), target);
 				else if (e.getKey() instanceof EffectChanceSkillTrigger)
 				{
-					if (((event & (ChanceCondition.EVT_ON_START | ChanceCondition.EVT_ON_ACTION_TIME | ChanceCondition.EVT_ON_EXIT)) != 0) && (((EffectChanceSkillTrigger) e.getKey()).getSkill() != skill))
+					if ((event & (ChanceCondition.EVT_ON_START | ChanceCondition.EVT_ON_ACTION_TIME | ChanceCondition.EVT_ON_EXIT)) != 0 && ((EffectChanceSkillTrigger) e.getKey()).getSkill() != skill)
 						continue;
 					
 					makeCast((EffectChanceSkillTrigger) e.getKey(), target, SkillTable.getInstance().getInfo(e.getKey().getTriggeredChanceId(), 1).getTargetType());
@@ -172,7 +172,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 		{
 			if (skill.getWeaponDependancy(_owner, true) && skill.checkCondition(_owner, target, false))
 			{
-				if (skill.triggersChanceSkill() && (skill.getTriggeredChanceLevel() > -1)) //skill will trigger another skill, but only if its not chance skill
+				if (skill.triggersChanceSkill() && skill.getTriggeredChanceLevel() > -1) //skill will trigger another skill, but only if its not chance skill
 				{
 					//Auto increase trigger skills
 					int level = skill.getTriggeredChanceLevel();
@@ -192,7 +192,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 					}
 					
 					skill = SkillTable.getInstance().getInfo(skill.getTriggeredChanceId(), level);
-					if ((skill == null) || (skill.getSkillType() == L2SkillType.NOTDONE))
+					if (skill == null || skill.getSkillType() == L2SkillType.NOTDONE)
 						return;
 					
 					skill.setIsTriggered();
@@ -209,7 +209,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 				
 				L2Object[] targets = skill.getTargetList(_owner, false, target);
 				
-				if ((targets == null) || (targets.length == 0))
+				if (targets == null || targets.length == 0)
 					return;
 				
 				L2Character firstTarget = (L2Character) targets[0];
@@ -237,7 +237,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 	{
 		try
 		{
-			if ((effect == null) || !effect.triggersChanceSkill())
+			if (effect == null || !effect.triggersChanceSkill())
 				return;
 			
 			int level = effect.getTriggeredChanceLevel();
@@ -248,7 +248,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 			if (triggered == null)
 				return;
 			
-			if ((target instanceof L2PcInstance) && (triggered.getTargetType() == L2SkillTargetType.TARGET_SUMMON))
+			if (target instanceof L2PcInstance && triggered.getTargetType() == L2SkillTargetType.TARGET_SUMMON)
 			{
 				List<L2SummonInstance> summons = ((L2PcInstance) target).getSummons();
 				if (!summons.isEmpty())
@@ -280,9 +280,9 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 			}
 			
 			triggered.setIsTriggered();
-			L2Character caster = (triggered.getTargetType() == L2SkillTargetType.TARGET_SELF) ? _owner : effect.getEffector();
+			L2Character caster = triggered.getTargetType() == L2SkillTargetType.TARGET_SELF ? _owner : effect.getEffector();
 			
-			if ((caster == null) || (triggered.getSkillType() == L2SkillType.NOTDONE) || caster.isSkillDisabled(triggered))
+			if (caster == null || triggered.getSkillType() == L2SkillType.NOTDONE || caster.isSkillDisabled(triggered))
 				return;
 			
 			if (!triggered.checkCondition(_owner, target, false))
@@ -293,7 +293,7 @@ public class ChanceSkillList extends ConcurrentHashMap<IChanceSkillTrigger, Chan
 			
 			L2Object[] targets = triggered.getTargetList(caster, false, target);
 			
-			if ((targets == null) || (targets.length == 0))
+			if (targets == null || targets.length == 0)
 				return;
 			/*
 			for (L2Object obj : targets)

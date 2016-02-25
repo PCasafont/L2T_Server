@@ -71,10 +71,10 @@ public class EffectLove extends L2Effect
 	public boolean onStart()
 	{
 		// Fear skills cannot be used in event
-		if ((getEffector() instanceof L2PcInstance) && ((L2PcInstance) getEffector()).isPlayingEvent())
+		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
 			return false;
 		
-		if ((getEffected() instanceof L2NpcInstance) || (getEffected() instanceof L2DefenderInstance) || (getEffected() instanceof L2FortCommanderInstance) || (getEffected() instanceof L2SiegeFlagInstance) || (getEffected() instanceof L2SiegeSummonInstance))
+		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance || getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance || getEffected() instanceof L2SiegeSummonInstance)
 			return false;
 		
 		if (!getEffected().isInLove())

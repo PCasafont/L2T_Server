@@ -39,7 +39,7 @@ public final class RequestPledgeRecruitApplyInfo extends L2GameClientPacket
 		int info = -1;
 		if (activeChar.getClan() == null)
 			info = 0;
-		else if (activeChar.isClanLeader() && (ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null))
+		else if (activeChar.isClanLeader() && ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
 			info = 1;
 		
 		if (ClanRecruitManager.getInstance().getApplicant(activeChar.getObjectId()) != null)

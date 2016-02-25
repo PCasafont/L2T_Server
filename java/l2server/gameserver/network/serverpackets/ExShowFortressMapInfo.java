@@ -48,7 +48,7 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 		writeD(_fortress.getFortSize()); // barracks count
 		
 		List<L2Spawn> commanders = _fortress.getCommanderSpawns();
-		if ((commanders != null) && (commanders.size() != 0) && _fortress.getSiege().getIsInProgress())
+		if (commanders != null && commanders.size() != 0 && _fortress.getSiege().getIsInProgress())
 		{
 			switch (commanders.size())
 			{

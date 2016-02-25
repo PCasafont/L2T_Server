@@ -18,7 +18,7 @@ public class EnchantingStone extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 505) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 505 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

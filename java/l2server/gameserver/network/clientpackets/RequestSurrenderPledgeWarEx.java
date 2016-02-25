@@ -87,7 +87,7 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
 		war.stop();
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		for (L2PcInstance cha : pls)
-			if ((cha.getClan() == player.getClan()) || (cha.getClan() == clan))
+			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
 				cha.broadcastUserInfo();
 	}
 }

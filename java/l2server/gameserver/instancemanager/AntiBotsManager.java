@@ -456,7 +456,7 @@ public class AntiBotsManager
 					if (clientInfo == null)
 						continue;
 					
-					if ((player.getClient() != null) && (player.getClient().getHWId() != null))
+					if (player.getClient() != null && player.getClient().getHWId() != null)
 						hardwareId = player.getClient().getHWId();
 					
 					// If the hardwareId is unknown, for now, we only get the hardware that last gave us informations coming from this toon IP.
@@ -466,10 +466,10 @@ public class AntiBotsManager
 						player.getClient().setHWId(hardwareId);
 					}
 					
-					if ((clientInfo.getVersion() != null) && !clientInfo.getVersion().equals(_latestVersion))
+					if (clientInfo.getVersion() != null && !clientInfo.getVersion().equals(_latestVersion))
 						GmListTable.broadcastMessageToGMs(player.getName() + " is running on Client[" + clientInfo.getVersion() + "], latest is " + _latestVersion + ".");
 					
-					if ((clientInfo.getLastUpdateTime() + 600000) < System.currentTimeMillis())
+					if (clientInfo.getLastUpdateTime() + 600000 < System.currentTimeMillis())
 						continue;
 					else
 						hasRecentlySentData = true;
@@ -677,18 +677,18 @@ public class AntiBotsManager
 			PreparedStatement statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 			
 			statement.setString(1, playerBanTrace.getAccountName());
-			statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ? (System.currentTimeMillis() / 1000) + (playerBanTrace.getCharacterBanDuration() * 3600) : -1);
+			statement.setLong(2, playerBanTrace.getCharacterBanDuration() > 0 ? System.currentTimeMillis() / 1000 + playerBanTrace.getCharacterBanDuration() * 3600 : -1);
 			statement.setString(3, "Anti Bots");
 			statement.setString(4, playerBanTrace.getReason());
 			statement.execute();
 			statement.close();
 			
-			if ((hardwareId != null) && (hardwareId.length() > 0))
+			if (hardwareId != null && hardwareId.length() > 0)
 			{
 				statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 				
 				statement.setString(1, hardwareId);
-				statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ? (System.currentTimeMillis() / 1000) + (playerBanTrace.getHardwareBanDuration() * 3600) : -1);
+				statement.setLong(2, playerBanTrace.getHardwareBanDuration() > 0 ? System.currentTimeMillis() / 1000 + playerBanTrace.getHardwareBanDuration() * 3600 : -1);
 				statement.setString(3, "Anti Bots");
 				statement.setString(4, playerBanTrace.getReason());
 				statement.execute();
@@ -722,7 +722,7 @@ public class AntiBotsManager
 				
 				final String playerHardwareId = playerClient.getHWId();
 				
-				if ((hardwareId == null) || (playerHardwareId == null))
+				if (hardwareId == null || playerHardwareId == null)
 					continue;
 				else if (!playerHardwareId.equals(hardwareId))
 					continue;
@@ -812,7 +812,7 @@ public class AntiBotsManager
 				final String version = rs.getString("version");
 				
 				// Check if this client received any update...
-				if ((clientInfo.getVersion() != null) && !clientInfo.getVersion().equals(version))
+				if (clientInfo.getVersion() != null && !clientInfo.getVersion().equals(version))
 					clientInfo.setVersion(rs.getString("version"));
 				
 				// Set the time at which the client last sent us info...
@@ -968,7 +968,7 @@ public class AntiBotsManager
 				connection.disconnect();
 		}
 		
-		return (result != null) && result.contains("Website is available!");
+		return result != null && result.contains("Website is available!");
 	}
 	
 	private static AntiBotsManager _instance;

@@ -93,7 +93,7 @@ public class ChessEventSide
 	
 	public boolean containsPlayer(int playerObjectId)
 	{
-		if ((_player != null) && (_player.getObjectId() == playerObjectId))
+		if (_player != null && _player.getObjectId() == playerObjectId)
 			return true;
 		else
 			return false;
@@ -151,11 +151,11 @@ public class ChessEventSide
 				if (getId() == 0)
 				{
 					downY = 0;
-					if ((i == 0) || (i == 7))
+					if (i == 0 || i == 7)
 						tmpl = NpcTable.getInstance().getTemplate(44402);
-					else if ((i == 1) || (i == 6))
+					else if (i == 1 || i == 6)
 						tmpl = NpcTable.getInstance().getTemplate(44403);
-					else if ((i == 2) || (i == 5))
+					else if (i == 2 || i == 5)
 						tmpl = NpcTable.getInstance().getTemplate(44404);
 					else if (i == 3)
 						tmpl = NpcTable.getInstance().getTemplate(44405);
@@ -172,11 +172,11 @@ public class ChessEventSide
 				else
 				{
 					downY = costatCasella * 8;
-					if ((i == 8) || (i == 15))
+					if (i == 8 || i == 15)
 						tmpl = NpcTable.getInstance().getTemplate(44412);
-					else if ((i == 9) || (i == 14))
+					else if (i == 9 || i == 14)
 						tmpl = NpcTable.getInstance().getTemplate(44413);
-					else if ((i == 10) || (i == 13))
+					else if (i == 10 || i == 13)
 						tmpl = NpcTable.getInstance().getTemplate(44414);
 					else if (i == 11)
 						tmpl = NpcTable.getInstance().getTemplate(44415);
@@ -194,7 +194,7 @@ public class ChessEventSide
 				_pieceSpawns[i] = new L2Spawn(tmpl);
 				
 				_pieceSpawns[i].setX(baseX + leftX);
-				_pieceSpawns[i].setY((baseY + (i * costatCasella)) - downY);
+				_pieceSpawns[i].setY(baseY + i * costatCasella - downY);
 				_pieceSpawns[i].setZ(baseZ);
 				_pieceSpawns[i].setHeading(heading);
 				
@@ -261,7 +261,7 @@ public class ChessEventSide
 	
 	public boolean hiHaAmic(int i, int j)
 	{
-		if ((getPiece(i, j) != null) && (getPiece(i, j).getSide().getId() == getId()))
+		if (getPiece(i, j) != null && getPiece(i, j).getSide().getId() == getId())
 			return true;
 		else
 			return false;
@@ -269,7 +269,7 @@ public class ChessEventSide
 	
 	public boolean hiHaEnemic(int i, int j)
 	{
-		if ((getPiece(i, j) != null) && (getPiece(i, j).getSide().getId() != getId()))
+		if (getPiece(i, j) != null && getPiece(i, j).getSide().getId() != getId())
 			return true;
 		else
 			return false;
@@ -320,7 +320,7 @@ public class ChessEventSide
 		{
 			for (L2ChessPieceInstance piece : ChessEvent.getBoard(getId())[i])
 			{
-				if ((piece != null) && (piece.getType() != 6) && (piece.getSide().getId() != getId()) && piece.canKillTheKing())
+				if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() && piece.canKillTheKing())
 					_canTheKingBeKilled = true;
 			}
 		}

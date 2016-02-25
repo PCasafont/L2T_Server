@@ -77,13 +77,13 @@ public final class ItemParser extends StatsParser
 		
 		makeItem();
 		
-		if ((original._item.getConditions() != null) && !_set.getBool("overrideCond", false))
+		if (original._item.getConditions() != null && !_set.getBool("overrideCond", false))
 		{
 			for (Condition cond : original._item.getConditions())
 				_item.attach(cond);
 		}
 		
-		if ((original._item.getSkills() != null) && !_set.getBool("overrideSkills", false))
+		if (original._item.getSkills() != null && !_set.getBool("overrideSkills", false))
 		{
 			for (SkillHolder sh : original._item.getSkills())
 				_item.attach(sh);
@@ -91,7 +91,7 @@ public final class ItemParser extends StatsParser
 		
 		parseChildren();
 		
-		if ((original._item.getFuncs() != null) && !_set.getBool("overrideStats", false))
+		if (original._item.getFuncs() != null && !_set.getBool("overrideStats", false))
 		{
 			for (FuncTemplate func : original._item.getFuncs())
 				_item.attach(func);
@@ -107,12 +107,12 @@ public final class ItemParser extends StatsParser
 			if (n.getName().equalsIgnoreCase("cond"))
 			{
 				Condition condition = parseCondition(n.getFirstChild(), _item);
-				if ((condition != null) && n.hasAttribute("msg"))
+				if (condition != null && n.hasAttribute("msg"))
 					condition.setMessage(n.getString("msg"));
-				else if ((condition != null) && n.hasAttribute("msgId"))
+				else if (condition != null && n.hasAttribute("msgId"))
 				{
 					condition.setMessageId(Integer.decode(getValue(n.getString("msgId"))));
-					if (n.hasAttribute("addName") && (Integer.decode(getValue(n.getString("msgId"))) > 0))
+					if (n.hasAttribute("addName") && Integer.decode(getValue(n.getString("msgId"))) > 0)
 						condition.addName();
 				}
 				_item.attach(condition);
@@ -130,7 +130,7 @@ public final class ItemParser extends StatsParser
 				double chance = n.getDouble("chance");
 				_item.attach(new L2CrystallizeReward(itemId, count, chance));
 			}
-			else if (n.getName().equalsIgnoreCase("capsuledItem") && (_item instanceof L2EtcItem))
+			else if (n.getName().equalsIgnoreCase("capsuledItem") && _item instanceof L2EtcItem)
 			{
 				int itemId = n.getInt("id");
 				int min = n.getInt("min");

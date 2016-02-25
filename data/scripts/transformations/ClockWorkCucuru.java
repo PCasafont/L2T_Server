@@ -18,7 +18,7 @@ public class ClockWorkCucuru extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 137) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 137 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 		getPlayer().setMount(13330, getPlayer().getLevel(), 4);

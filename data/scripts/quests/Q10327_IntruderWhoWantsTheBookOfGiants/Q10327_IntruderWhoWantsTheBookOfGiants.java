@@ -93,7 +93,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 				player.teleToLocation(-114696, 243926, -7868, false);
 				return null;
 			}
-			else if (event.equalsIgnoreCase("32972-05.htm") && (st.getInt("cond") == 3))
+			else if (event.equalsIgnoreCase("32972-05.htm") && st.getInt("cond") == 3)
 			{
 				player.sendPacket(new ExShowScreenMessage(11022201, 0, true, 7000));
 				st.unset("cond");
@@ -124,12 +124,12 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 		
 		if (npc.getNpcId() == _guard)
 		{
-			if ((st.getInt("cond") < 3) && (player.getInstanceId() == player.getObjectId()))
+			if (st.getInt("cond") < 3 && player.getInstanceId() == player.getObjectId())
 				htmltext = "33004-01.htm";
 		}
 		else if (npc.getNpcId() == _book)
 		{
-			if ((st.getInt("cond") == 1) && (st.getInt("giantsBookId") == npc.getObjectId()))
+			if (st.getInt("cond") == 1 && st.getInt("giantsBookId") == npc.getObjectId())
 			{
 				htmltext = "33126-01.htm";
 				st.set("cond", "2");
@@ -154,8 +154,8 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 							L2Npc moveTo = intruder1;
 							if (moveTo.isDead())
 								moveTo = intruder2;
-							int x = (moveTo.getX() - 100) + Rnd.get(200);
-							int y = (moveTo.getY() - 100) + Rnd.get(200);
+							int x = moveTo.getX() - 100 + Rnd.get(200);
+							int y = moveTo.getY() - 100 + Rnd.get(200);
 							int z = moveTo.getZ();
 							guard.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 						}
@@ -163,7 +163,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 						boolean allDead = true;
 						for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 						{
-							if ((iNpc instanceof L2MonsterInstance) && !iNpc.isDead())
+							if (iNpc instanceof L2MonsterInstance && !iNpc.isDead())
 								allDead = false;
 						}
 						
@@ -245,7 +245,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 7) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 7) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

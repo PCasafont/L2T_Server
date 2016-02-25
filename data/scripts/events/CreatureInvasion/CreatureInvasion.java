@@ -186,7 +186,7 @@ public class CreatureInvasion extends Quest
 			{
 				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 				{
-					if ((player == null) || (player.getInstanceId() != 0) || player.isInStoreMode() || !player.isInsideRadius(_boss, 3000, false, false) || (_registredDamages.get(player.getObjectId()) == null) || (_registredDamages.get(player.getObjectId()) < 1000))
+					if (player == null || player.getInstanceId() != 0 || player.isInStoreMode() || !player.isInsideRadius(_boss, 3000, false, false) || _registredDamages.get(player.getObjectId()) == null || _registredDamages.get(player.getObjectId()) < 1000)
 						continue;
 					
 					if (_rewardedIps.containsKey(player.getExternalIP()) && _rewardedIps.get(player.getExternalIP()).equalsIgnoreCase(player.getInternalIP()))
@@ -273,7 +273,7 @@ public class CreatureInvasion extends Quest
 				Announcements.getInstance().announceToAll("The Creature Invasion has started!");
 				for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
 				{
-					if ((pl == null) || (pl.getInstanceId() != 0) || (pl.getEvent() != null) || pl.getIsInsideGMEvent() || pl.inObserverMode() || pl.isInOlympiadMode() || pl.isInStoreMode() || (GrandBossManager.getInstance().getZone(pl) != null))
+					if (pl == null || pl.getInstanceId() != 0 || pl.getEvent() != null || pl.getIsInsideGMEvent() || pl.inObserverMode() || pl.isInOlympiadMode() || pl.isInStoreMode() || GrandBossManager.getInstance().getZone(pl) != null)
 						continue;
 					
 					for (int i = 0; i <= Rnd.get(1, 2); i++)
@@ -371,15 +371,15 @@ public class CreatureInvasion extends Quest
 					if (i == null)
 						continue;
 					
-					if (System.currentTimeMillis() < (i.getAttackedTime() + 7000))
+					if (System.currentTimeMillis() < i.getAttackedTime() + 7000)
 					{
 						if (i.getPlayerId() == player.getObjectId())
 							underAttack++;
 						
-						if ((i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP().equalsIgnoreCase(player.getInternalIP())))
+						if (i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
 							sameIPs++;
 						
-						if ((underAttack > 1) || (sameIPs > 1))
+						if (underAttack > 1 || sameIPs > 1)
 						{
 							player.doDie(npc);
 							
@@ -406,7 +406,7 @@ public class CreatureInvasion extends Quest
 					{
 						//The attacker is not same
 						//If the last attacked stored info +10 seconds is bigger than the current time, this mob is currently attacked by someone
-						if ((attackInfo.getAttackedTime() + 7000) > System.currentTimeMillis())
+						if (attackInfo.getAttackedTime() + 7000 > System.currentTimeMillis())
 						{
 							player.doDie(null);
 							player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " don't attack mobs from other players!"));
@@ -459,7 +459,7 @@ public class CreatureInvasion extends Quest
 				if (isValidAttack(killer, killer.getLastSkillCast(), npc))
 				{
 					String dropType = "newPlayer";
-					if (killer.getOnlineTime() > (10 * 3600))
+					if (killer.getOnlineTime() > 10 * 3600)
 						dropType = "oldPlayer";
 					
 					int a = 0;
@@ -515,15 +515,15 @@ public class CreatureInvasion extends Quest
 			return false;
 		
 		L2Weapon playerWeapon = player.getActiveWeaponItem();
-		if ((playerWeapon == null) || (playerWeapon.getItemId() != _bowId))
+		if (playerWeapon == null || playerWeapon.getItemId() != _bowId)
 		{
 			player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " You should use the Redemption Bow!"));
 			return false;
 		}
 		
-		if ((skill == null) || !Util.contains(_bowSkillIds, skill.getId()))
+		if (skill == null || !Util.contains(_bowSkillIds, skill.getId()))
 		{
-			if ((skill != null) && skill.hasEffects())
+			if (skill != null && skill.hasEffects())
 			{
 				L2Abnormal abn = npc.getFirstEffect(skill.getId());
 				if (abn != null)

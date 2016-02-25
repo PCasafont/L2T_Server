@@ -79,7 +79,7 @@ public class LifeStoneTable
 			float current = 0.0f;
 			for (EnchantEffectSet set : _effects)
 			{
-				if (random < (current + set.getChance()))
+				if (random < current + set.getChance())
 					return set.getRandomEnchantEffect();
 				
 				current += set.getChance();
@@ -134,7 +134,7 @@ public class LifeStoneTable
 		public final EnchantEffect getRandomEffect(String type, int order)
 		{
 			EnchantEffectGroup[] augments = _effects.get(type);
-			if ((augments == null) || (augments[order] == null))
+			if (augments == null || augments[order] == null)
 			{
 				Log.warning("Null augment: " + type + ", " + order);
 				return null;
@@ -345,14 +345,14 @@ public class LifeStoneTable
 		if (ls == null)
 			return false;
 		
-		if (item.getItem().isEpic() && (ls.getGrade() != GRADE_ARIA))
+		if (item.getItem().isEpic() && ls.getGrade() != GRADE_ARIA)
 			return false;
 		
 		// weapons can't be augmented with accessory ls
-		if ((item.getItem() instanceof L2Weapon) && ((ls.getGrade() == GRADE_ACC) || (ls.getGrade() == GRADE_ARIA)))
+		if (item.getItem() instanceof L2Weapon && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA))
 			return false;
 		// and accessory can't be augmented with weapon ls
-		if ((item.getItem() instanceof L2Armor) && (ls.getGrade() < GRADE_ACC))
+		if (item.getItem() instanceof L2Armor && ls.getGrade() < GRADE_ACC)
 			return false;
 		// check for level of the lifestone
 		if (player.getLevel() < ls.getPlayerLevel())

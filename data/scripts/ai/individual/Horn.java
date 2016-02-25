@@ -55,7 +55,7 @@ public class Horn extends L2AttackableAIScript
 			case 19460: //Green
 				for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600))
 				{
-					if ((chara == null) || !(chara instanceof L2MonsterInstance))
+					if (chara == null || !(chara instanceof L2MonsterInstance))
 					{
 						continue;
 					}

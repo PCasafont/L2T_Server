@@ -535,7 +535,7 @@ public final class L2World
 			{
 				for (L2Object _object : vObj)
 				{
-					if ((_object == null) || _object.equals(object))
+					if (_object == null || _object.equals(object))
 						continue; // skip our own character
 					if (!_object.isVisible())
 						continue; // skip dying objects
@@ -565,7 +565,7 @@ public final class L2World
 	 */
 	public List<L2Object> getVisibleObjects(L2Object object, int radius)
 	{
-		if ((object == null) || !object.isVisible())
+		if (object == null || !object.isVisible())
 			return new ArrayList<L2Object>();
 		
 		int x = object.getX();
@@ -584,7 +584,7 @@ public final class L2World
 			{
 				for (L2Object obj : vObj)
 				{
-					if ((obj == null) || obj.equals(object))
+					if (obj == null || obj.equals(object))
 						continue; // skip our own character
 						
 					// Fix for magically stuck objects
@@ -600,7 +600,7 @@ public final class L2World
 					double dx = x1 - x;
 					double dy = y1 - y;
 					
-					if (((dx * dx) + (dy * dy)) < sqRadius)
+					if (dx * dx + dy * dy < sqRadius)
 						result.add(obj);
 				}
 			}
@@ -626,7 +626,7 @@ public final class L2World
 	 */
 	public List<L2Object> getVisibleObjects3D(L2Object object, int radius)
 	{
-		if ((object == null) || !object.isVisible())
+		if (object == null || !object.isVisible())
 			return new ArrayList<L2Object>();
 		
 		int x = object.getX();
@@ -645,7 +645,7 @@ public final class L2World
 			{
 				for (L2Object _object : vObj)
 				{
-					if ((_object == null) || _object.equals(object))
+					if (_object == null || _object.equals(object))
 						continue; // skip our own character
 						
 					int x1 = _object.getX();
@@ -656,7 +656,7 @@ public final class L2World
 					long dy = y1 - y;
 					long dz = z1 - z;
 					
-					if (((dx * dx) + (dy * dy) + (dz * dz)) < sqRadius)
+					if (dx * dx + dy * dy + dz * dz < sqRadius)
 						result.add(_object);
 				}
 			}
@@ -699,7 +699,7 @@ public final class L2World
 			{
 				for (L2Playable _object : _playables)
 				{
-					if ((_object == null) || _object.equals(object))
+					if (_object == null || _object.equals(object))
 						continue; // skip our own character
 						
 					if (!_object.isVisible()) // GM invisible is different than this...
@@ -755,7 +755,7 @@ public final class L2World
 	 */
 	private boolean validRegion(int x, int y)
 	{
-		return ((x >= 0) && (x <= REGIONS_X) && (y >= 0) && (y <= REGIONS_Y));
+		return x >= 0 && x <= REGIONS_X && y >= 0 && y <= REGIONS_Y;
 	}
 	
 	/**
@@ -823,7 +823,7 @@ public final class L2World
 		int max = -1;
 		for (L2PcInstance flagged : getAllPlayers().values())
 		{
-			if ((flagged.getPvpFlag() == 0) || flagged.isGM() || flagged.isInsideZone(L2Character.ZONE_PEACE) || flagged.isInsideZone(L2Character.ZONE_SIEGE) || flagged.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || (flagged.getInstanceId() != 0) || (GrandBossManager.getInstance().getZone(flagged) != null))
+			if (flagged.getPvpFlag() == 0 || flagged.isGM() || flagged.isInsideZone(L2Character.ZONE_PEACE) || flagged.isInsideZone(L2Character.ZONE_SIEGE) || flagged.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || flagged.getInstanceId() != 0 || GrandBossManager.getInstance().getZone(flagged) != null)
 				continue;
 			
 			boolean valid = true;
@@ -831,9 +831,9 @@ public final class L2World
 			int count = 0;
 			for (L2PcInstance pl : flagged.getKnownList().getKnownPlayers().values())
 			{
-				if ((pl.getPvpFlag() > 0) && !pl.isInsideZone(L2Character.ZONE_PEACE))
+				if (pl.getPvpFlag() > 0 && !pl.isInsideZone(L2Character.ZONE_PEACE))
 				{
-					if ((!parties && pl.isInParty()) || (!artificial && (pl instanceof L2ApInstance)))
+					if (!parties && pl.isInParty() || !artificial && pl instanceof L2ApInstance)
 					{
 						valid = false;
 						break;
@@ -843,7 +843,7 @@ public final class L2World
 				}
 			}
 			
-			if (valid && (count > max))
+			if (valid && count > max)
 			{
 				max = count;
 				mostPvP = flagged;
@@ -858,7 +858,7 @@ public final class L2World
 		List<L2PcInstance> _shops = new ArrayList<L2PcInstance>();
 		for (L2PcInstance _player : getAllPlayersArray())
 		{
-			if ((_player == null) || _player.isInJail() || !_player.isInStoreMode())
+			if (_player == null || _player.isInJail() || !_player.isInStoreMode())
 				continue;
 			
 			_shops.add(_player);
@@ -871,7 +871,7 @@ public final class L2World
 		List<L2PcInstance> _players = new ArrayList<L2PcInstance>();
 		for (L2PcInstance _player : getAllPlayersArray())
 		{
-			if ((_player == null) || _player.isInJail())
+			if (_player == null || _player.isInJail())
 				continue;
 			
 			if (_player.isInOlympiadMode() || OlympiadManager.getInstance().isRegisteredInComp(_player))

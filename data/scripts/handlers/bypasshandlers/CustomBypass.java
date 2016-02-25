@@ -48,7 +48,7 @@ public class CustomBypass implements IBypassHandler
 	@Override
 	public boolean useBypass(String command, L2PcInstance player, L2Npc target)
 	{
-		if ((target == null) || !Config.isServer(Config.TENKAI))
+		if (target == null || !Config.isServer(Config.TENKAI))
 			return false;
 		
 		if (command.startsWith("titlecolor") || command.startsWith("namecolor"))
@@ -62,13 +62,13 @@ public class CustomBypass implements IBypassHandler
 			String val = command.split(" ")[1];
 			PcInventory inv = player.getInventory();
 			
-			if (((isTitleColor && !val.equalsIgnoreCase("FFFF77")) || (!isTitleColor && !val.equalsIgnoreCase("FFFFFF"))) && ((inv.getItemByItemId(priceId) == null) || (inv.getItemByItemId(priceId).getCount() < priceAmount)))
+			if ((isTitleColor && !val.equalsIgnoreCase("FFFF77") || !isTitleColor && !val.equalsIgnoreCase("FFFFFF")) && (inv.getItemByItemId(priceId) == null || inv.getItemByItemId(priceId).getCount() < priceAmount))
 			{
 				player.sendPacket(new CreatureSay(target.getObjectId(), Say2.TELL, target.getName(), "You don't have enough " + coinName));
 				return false;
 			}
 			
-			if ((isTitleColor && !val.equalsIgnoreCase("FFFF77")) || (!isTitleColor && !val.equalsIgnoreCase("FFFFFF")))
+			if (isTitleColor && !val.equalsIgnoreCase("FFFF77") || !isTitleColor && !val.equalsIgnoreCase("FFFFFF"))
 				player.destroyItemByItemId("Change Title Color", priceId, priceAmount, player, true);
 			
 			if (isTitleColor)
@@ -109,7 +109,7 @@ public class CustomBypass implements IBypassHandler
 		else if (command.equalsIgnoreCase("removePlayerClanPenalty")) //From a player
 		{
 			L2Clan clan = player.getClan();
-			if ((clan != null) || (player.getClanJoinExpiryTime() <= 0))
+			if (clan != null || player.getClanJoinExpiryTime() <= 0)
 			{
 				player.sendMessage("SpecialServices: You don't have any penalty!");
 				return false;
@@ -123,7 +123,7 @@ public class CustomBypass implements IBypassHandler
 		}
 		else if (command.equalsIgnoreCase("changesex"))
 		{
-			if (((player.getRace() == Race.Kamael) && (player.getCurrentClass().getLevel() < 85)) || (player.getRace() == Race.Ertheia))
+			if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 || player.getRace() == Race.Ertheia)
 			{
 				player.sendMessage("Special Services: Sorry, but I can't change your sex!");
 				return false;
@@ -163,14 +163,14 @@ public class CustomBypass implements IBypassHandler
 				return false;
 			}
 			
-			if (((player.getRace() == Race.Kamael) && (player.getCurrentClass().getLevel() < 85)) || (player.getRace() == Race.Ertheia))
+			if (player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85 || player.getRace() == Race.Ertheia)
 			{
 				player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
 				return false;
 			}
 			
 			L2PcTemplate temp = CharTemplateTable.getInstance().getTemplate(templateId);
-			if ((temp == null) || ((temp.race == Race.Dwarf) && temp.isMage) || ((temp.race == Race.Ertheia) && !player.getAppearance().getSex()))
+			if (temp == null || temp.race == Race.Dwarf && temp.isMage || temp.race == Race.Ertheia && !player.getAppearance().getSex())
 			{
 				player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
 				return false;
@@ -212,7 +212,7 @@ public class CustomBypass implements IBypassHandler
 				
 				if (!isCharName)
 				{
-					if ((player.getClan() == null) || !player.isClanLeader())
+					if (player.getClan() == null || !player.isClanLeader())
 					{
 						player.sendMessage("You can't use this function!");
 						return false;
@@ -270,7 +270,7 @@ public class CustomBypass implements IBypassHandler
 		else if (command.equalsIgnoreCase("increaseclanlevel"))
 		{
 			L2Clan playerClan = player.getClan();
-			if ((playerClan == null) || !player.isClanLeader())
+			if (playerClan == null || !player.isClanLeader())
 			{
 				player.sendMessage("Special Services: You can't use this function!");
 				return false;

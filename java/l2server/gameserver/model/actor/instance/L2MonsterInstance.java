@@ -89,7 +89,7 @@ public class L2MonsterInstance extends L2Attackable
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return super.isAutoAttackable(attacker) && (getNpcId() != 50101);
+		return super.isAutoAttackable(attacker) && getNpcId() != 50101;
 	}
 	
 	/**
@@ -144,7 +144,7 @@ public class L2MonsterInstance extends L2Attackable
 	protected void startMaintenanceTask()
 	{
 		// maintenance task now used only for minions spawn
-		if ((getTemplate().getMinionData() == null) && (getTemplate().getRandomMinionData() == null))
+		if (getTemplate().getMinionData() == null && getTemplate().getRandomMinionData() == null)
 			return;
 		
 		if (_maintenanceTask == null)
@@ -171,7 +171,7 @@ public class L2MonsterInstance extends L2Attackable
 		
 		if (killer instanceof L2PcInstance)
 		{
-			if (Config.isServer(Config.TENKAI) && (Rnd.get(30) == 0) && (_knownPlayers.size() > 0) && !(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) && !(this instanceof L2ChessPieceInstance))
+			if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && _knownPlayers.size() > 0 && !(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) && !(this instanceof L2ChessPieceInstance))
 			{
 				CoreMessage cm = new CoreMessage(47001 + Rnd.get(90));
 				cm.addString(killer.getName());

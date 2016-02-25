@@ -75,7 +75,7 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 		L2Abnormal activeEffect = getEffected().getFirstEffect(_triggeredId);
 		if (activeEffect != null)
 		{
-			if ((activeEffect.getLevel() == _triggeredLevel) && (activeEffect.getEnchantRouteId() == _triggeredEnchantRoute) && (activeEffect.getEnchantLevel() == _triggeredEnchantLevel))
+			if (activeEffect.getLevel() == _triggeredLevel && activeEffect.getEnchantRouteId() == _triggeredEnchantRoute && activeEffect.getEnchantLevel() == _triggeredEnchantLevel)
 				return true;
 		}
 		
@@ -92,7 +92,7 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 			getEffected().reduceCurrentMp(manaDam);
 			
 			double hpDam = dam / 1000;
-			if (hpDam > (getEffected().getCurrentHp() - 1))
+			if (hpDam > getEffected().getCurrentHp() - 1)
 			{
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP));
 				return false;
@@ -109,7 +109,7 @@ public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTr
 	public void onExit()
 	{
 		// trigger only if effect in use and successfully ticked to the end
-		if (getAbnormal().getInUse() && (getAbnormal().getCount() == 0))
+		if (getAbnormal().getInUse() && getAbnormal().getCount() == 0)
 			getEffected().onExitChanceEffect(getSkill(), getSkill().getElement());
 		getEffected().removeChanceEffect(this);
 		super.onExit();

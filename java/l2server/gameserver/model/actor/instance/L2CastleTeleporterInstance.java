@@ -56,7 +56,7 @@ public final class L2CastleTeleporterInstance extends L2Npc
 			int delay;
 			if (!getTask())
 			{
-				if (getCastle().getSiege().getIsInProgress() && (getCastle().getSiege().getControlTowerCount() == 0))
+				if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
 					delay = 480000;
 				else
 					delay = 30000;
@@ -81,7 +81,7 @@ public final class L2CastleTeleporterInstance extends L2Npc
 		String filename;
 		if (!getTask())
 		{
-			if (getCastle().getSiege().getIsInProgress() && (getCastle().getSiege().getControlTowerCount() == 0))
+			if (getCastle().getSiege().getIsInProgress() && getCastle().getSiege().getControlTowerCount() == 0)
 				filename = "castleteleporter/MassGK-2.htm";
 			else
 				filename = "castleteleporter/MassGK.htm";

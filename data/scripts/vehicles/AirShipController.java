@@ -193,7 +193,7 @@ public abstract class AirShipController extends Quest
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_HOLDING_A_FLAG);
 				return null;
 			}
-			else if ((player.getPet() != null) || player.isMounted() || !player.getSummons().isEmpty())
+			else if (player.getPet() != null || player.isMounted() || !player.getSummons().isEmpty())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_PET_OR_A_SERVITOR_IS_SUMMONED);
 				return null;
@@ -211,7 +211,7 @@ public abstract class AirShipController extends Quest
 		}
 		else if (event.equalsIgnoreCase("register"))
 		{
-			if ((player.getClan() == null) || (player.getClan().getLevel() < 5))
+			if (player.getClan() == null || player.getClan().getLevel() < 5)
 			{
 				player.sendPacket(SM_NEED_CLANLVL5);
 				return null;
@@ -388,7 +388,7 @@ public abstract class AirShipController extends Quest
 		@Override
 		public void run()
 		{
-			if ((_dockedShip != null) && _dockedShip.isInDock() && !_dockedShip.isMoving())
+			if (_dockedShip != null && _dockedShip.isInDock() && !_dockedShip.isMoving())
 			{
 				if (_departPath != null)
 					_dockedShip.executePath(_departPath);

@@ -120,9 +120,9 @@ public class Baium extends L2AttackableAIScript
 					int maxLvl = 84;
 					if (Config.isServer(Config.TENKAI_ESTHUS))
 						maxLvl = Config.MAX_LEVEL;
-					if ((baiumStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.BAIUM_MIN_PLAYERS, 200, 76, maxLvl))
+					if (baiumStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.BAIUM_MIN_PLAYERS, 200, 76, maxLvl))
 						return null;
-					else if ((baiumStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.BAIUM_MIN_PLAYERS, 200, 76, maxLvl))
+					else if (baiumStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.BAIUM_MIN_PLAYERS, 200, 76, maxLvl))
 						return null;
 					else if (baiumStatus == GrandBossManager.getInstance().FIGHTING)
 						return "31862-01.html";
@@ -235,7 +235,7 @@ public class Baium extends L2AttackableAIScript
 			
 			for (L2PcInstance players : _bossZone.getPlayersInside())
 			{
-				if ((players == null) || !players.isHero())
+				if (players == null || !players.isHero())
 					continue;
 				
 				_bossZone.broadcastPacket(new ExShowScreenMessage("Not even the gods themselves could touch me. But you, $s1, you dare challenge me?! Ignorant mortal!".replace("$1", players.getName()), 4000));//1000521
@@ -255,7 +255,7 @@ public class Baium extends L2AttackableAIScript
 			List<L2PcInstance> insidePlayers = _bossZone.getPlayersInside();
 			L2Character target = null;
 			
-			if ((insidePlayers != null) && !insidePlayers.isEmpty())
+			if (insidePlayers != null && !insidePlayers.isEmpty())
 			{
 				for (L2Npc zoneMob : _bossZone.getNpcsInside())
 				{
@@ -269,7 +269,7 @@ public class Baium extends L2AttackableAIScript
 						else
 						{
 							//Lets use that code to take a lil look into the baiums target, if baim is attacking a minion set a random player as a target
-							if ((zoneMob == _baiumBoss) && (zoneMob.getTarget() instanceof L2MonsterInstance))
+							if (zoneMob == _baiumBoss && zoneMob.getTarget() instanceof L2MonsterInstance)
 								target = insidePlayers.get(Rnd.get(insidePlayers.size()));
 							else
 								target = _baiumBoss;

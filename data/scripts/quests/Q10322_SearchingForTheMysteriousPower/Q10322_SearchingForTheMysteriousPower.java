@@ -88,7 +88,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _shannon) && event.equalsIgnoreCase("32974-03.htm"))
+		if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -135,7 +135,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				npc.setTarget(player);
 				for (L2HelperBuff helperBuff : HelperBuffTable.getInstance().getHelperBuffTable())
 				{
-					if ((helperBuff.isMagicClassBuff() == player.isMageClass()) && (helperBuff.getLowerLevel() < 10))
+					if (helperBuff.isMagicClassBuff() == player.isMageClass() && helperBuff.getLowerLevel() < 10)
 					{
 						L2Skill skill = SkillTable.getInstance().getInfo(helperBuff.getSkillID(), helperBuff.getSkillLevel());
 						if (skill.getSkillType() == L2SkillType.SUMMON)
@@ -231,7 +231,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 2) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 2) && player.getLevel() <= 20;
 	}
 	
 	@Override
@@ -241,7 +241,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 		if (st == null)
 			return null;
 		
-		if ((st.getState() == State.STARTED) && (npc.getNpcId() == _scarecrow))
+		if (st.getState() == State.STARTED && npc.getNpcId() == _scarecrow)
 		{
 			if (st.getInt("cond") == 2)
 			{
@@ -260,7 +260,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	@Override
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (_guideRoute.size() - 2)))
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI.getCurrentPos() == _guideRoute.size() - 2)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -268,7 +268,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 				return null;
 			}
 			int chatId = _guideLastChatId;
-			if (guideAI.getCurrentPos() != (_guideRoute.size() - 2))
+			if (guideAI.getCurrentPos() != _guideRoute.size() - 2)
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -289,7 +289,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == (_guideRoute.size() - 2))
+		if (guideAI.getCurrentPos() == _guideRoute.size() - 2)
 		{
 			// Walk and delete in 1.5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()

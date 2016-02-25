@@ -92,7 +92,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 			return;
 		}
 		
-		if ((System.currentTimeMillis() < _nextMoveTime) || _waitingForQuestResponse)
+		if (System.currentTimeMillis() < _nextMoveTime || _waitingForQuestResponse)
 			return;
 		
 		int x = _route.get(_currentPos).getMoveX();
@@ -101,7 +101,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		
 		if (_isWaiting)
 		{
-			if (getActor().isInsideRadius(_guided, _waitRadius, false, false) && (getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null))
+			if (getActor().isInsideRadius(_guided, _waitRadius, false, false) && getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED) != null)
 			{
 				_waitingForQuestResponse = true;
 				for (Quest quest : getActor().getTemplate().getEventQuests(Quest.QuestEventType.ON_PLAYER_ARRIVED))
@@ -112,7 +112,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		
 		if (!getActor().isInsideRadius(x, y, z, 40, false, false))
 		{
-			if ((_nextMoveTime != 0) && (System.currentTimeMillis() > (_nextMoveTime + 10000L)))
+			if (_nextMoveTime != 0 && System.currentTimeMillis() > _nextMoveTime + 10000L)
 			{
 				int destX = _route.get(_currentPos).getMoveX();
 				int destY = _route.get(_currentPos).getMoveY();
@@ -138,7 +138,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		if (id == 0)
 			chat = _route.get(_currentPos).getChatText();
 		
-		if ((id > 0) || ((chat != null) && !chat.isEmpty()))
+		if (id > 0 || chat != null && !chat.isEmpty())
 			getActor().broadcastChat(chat, id);
 		
 		//time in millis
@@ -176,7 +176,7 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 	
 	public void walkToLocation()
 	{
-		if (_currentPos < (_route.size() - 1))
+		if (_currentPos < _route.size() - 1)
 			_currentPos++;
 		else
 			_currentPos = 0;
@@ -205,11 +205,11 @@ public class L2NpcWalkerAI extends L2CharacterAI implements Runnable
 		int dy = _guided.getY() - getActor().getY();
 		int dz = _guided.getZ() - getActor().getZ();
 		
-		double dist = Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
+		double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 		
-		int destinationX = getActor().getX() + (int) Math.round((distance * dx) / dist);
-		int destinationY = getActor().getY() + (int) Math.round((distance * dy) / dist);
-		int destinationZ = getActor().getZ() + (int) Math.round((distance * dz) / dist);
+		int destinationX = getActor().getX() + (int) Math.round(distance * dx / dist);
+		int destinationY = getActor().getY() + (int) Math.round(distance * dy / dist);
+		int destinationZ = getActor().getZ() + (int) Math.round(distance * dz / dist);
 		
 		setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(destinationX, destinationY, destinationZ, 0));
 	}

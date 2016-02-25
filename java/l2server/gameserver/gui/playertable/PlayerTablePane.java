@@ -153,7 +153,7 @@ public class PlayerTablePane extends JPanel
 	
 	public void updateCurrentPlayer(boolean forced)
 	{
-		if (!forced && (_currentSelectedPlayer == _playerTable.getSelectedRow()))
+		if (!forced && _currentSelectedPlayer == _playerTable.getSelectedRow())
 			return;
 		else
 			_currentSelectedPlayer = _playerTable.getSelectedRow();

@@ -45,7 +45,7 @@ public class ProtocolVersion extends L2GameClientPacket
 			client.closeNow();
 			return;
 		}
-		else if ((!Config.IS_UNDERGROUND && (_version == 24)) || (Config.IS_UNDERGROUND && (_version == 28)))
+		else if (!Config.IS_UNDERGROUND && _version == 24 || Config.IS_UNDERGROUND && _version == 28)
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);

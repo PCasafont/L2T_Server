@@ -60,11 +60,11 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_colorNum < 0) || (_colorNum >= COLORS.length))
+		if (_colorNum < 0 || _colorNum >= COLORS.length)
 			return;
 		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjectId);
-		if ((item == null) || (item.getEtcItem() == null) || (item.getEtcItem().getHandlerName() == null) || !item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
+		if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null || !item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
 			return;
 		
 		if (activeChar.destroyItem("Consume", item, 1, null, true))

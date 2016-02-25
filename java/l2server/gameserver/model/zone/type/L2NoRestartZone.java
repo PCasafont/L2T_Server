@@ -77,7 +77,7 @@ public class L2NoRestartZone extends L2ZoneType
 			character.setInsideZone(L2Character.ZONE_NORESTART, true);
 			L2PcInstance player = (L2PcInstance) character;
 			
-			if ((player.getZoneRestartLimitTime() > 0) && (player.getZoneRestartLimitTime() < System.currentTimeMillis()))
+			if (player.getZoneRestartLimitTime() > 0 && player.getZoneRestartLimitTime() < System.currentTimeMillis())
 			{
 				ThreadPoolManager.getInstance().scheduleGeneral(new TeleportTask(player), 2000);
 			}

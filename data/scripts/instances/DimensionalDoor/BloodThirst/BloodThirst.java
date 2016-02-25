@@ -75,7 +75,7 @@ public class BloodThirst extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof BloodThirstWorld))
+		if (wrld != null && wrld instanceof BloodThirstWorld)
 		{
 			BloodThirstWorld world = (BloodThirstWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -169,7 +169,7 @@ public class BloodThirst extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(56164, -185809, -7944);

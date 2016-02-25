@@ -35,7 +35,7 @@ public class ExReplySentPost extends L2ItemListPacket
 		if (msg.hasAttachments())
 		{
 			final ItemContainer attachments = msg.getAttachments();
-			if ((attachments != null) && (attachments.getSize() > 0))
+			if (attachments != null && attachments.getSize() > 0)
 				_items = attachments.getItems();
 			else
 				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " + msg.getReceiverName() + ").");
@@ -55,7 +55,7 @@ public class ExReplySentPost extends L2ItemListPacket
 		writeS(_msg.getSubject());
 		writeS(_msg.getContent());
 		
-		if ((_items != null) && (_items.length > 0))
+		if (_items != null && _items.length > 0)
 		{
 			writeD(_items.length);
 			for (L2ItemInstance item : _items)

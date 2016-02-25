@@ -52,7 +52,7 @@ public final class Logout extends L2GameClientPacket
 		if (player == null)
 			return;
 		
-		if ((player.getActiveEnchantItem() != null) || (player.getActiveEnchantAttrItem() != null))
+		if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null)
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -39,7 +39,7 @@ public class RefuelAirShip implements ISkillHandler
 			return;
 		
 		final L2AirShipInstance ship = ((L2PcInstance) activeChar).getAirShip();
-		if ((ship == null) || !(ship instanceof L2ControllableAirShipInstance) || (ship.getFuel() >= ship.getMaxFuel()))
+		if (ship == null || !(ship instanceof L2ControllableAirShipInstance) || ship.getFuel() >= ship.getMaxFuel())
 			return;
 		
 		ship.setFuel(ship.getFuel() + (int) skill.getPower());

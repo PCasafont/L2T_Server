@@ -54,7 +54,7 @@ public class RideWyvern implements IBypassHandler
 		}
 		else if (Util.contains(STRIDERS, activeChar.getPet().getNpcId()))
 		{
-			if ((activeChar.getInventory().getItemByItemId(1460) != null) && (activeChar.getInventory().getItemByItemId(1460).getCount() >= 25))
+			if (activeChar.getInventory().getItemByItemId(1460) != null && activeChar.getInventory().getItemByItemId(1460).getCount() >= 25)
 			{
 				if (activeChar.getPet().getLevel() < 55)
 				{

@@ -82,7 +82,7 @@ public class L2SkillContinuousCasts extends L2Skill
 	
 	public boolean cast(L2Character activeChar, Point3D position)
 	{
-		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || (activeChar.getLastSkillCast() != this))
+		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this)
 			return false;
 		
 		L2Object[] targets = getTargetList(activeChar, false, activeChar);
@@ -124,7 +124,7 @@ public class L2SkillContinuousCasts extends L2Skill
 				continue;
 			}
 			
-			if ((activeChar instanceof L2PcInstance) && !((L2PcInstance) activeChar).checkPvpSkill(target, skillToCast))
+			if (activeChar instanceof L2PcInstance && !((L2PcInstance) activeChar).checkPvpSkill(target, skillToCast))
 				continue;
 			
 			L2Object[] subTargets = skillToCast.getTargetList(activeChar, false, target);

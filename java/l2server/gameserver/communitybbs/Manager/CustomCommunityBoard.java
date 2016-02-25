@@ -257,7 +257,7 @@ public class CustomCommunityBoard
 			
 			sb.append("<tr><td>Tendency:</td><td>" + (castle.getTendency() == Castle.TENDENCY_DARKNESS ? "Darkness" : castle.getTendency() == Castle.TENDENCY_LIGHT ? "Light" : "None") + "</td></tr>");
 			
-			if ((castle.getSiege() != null) && castle.getSiege().getIsInProgress())
+			if (castle.getSiege() != null && castle.getSiege().getIsInProgress())
 				sb.append("<tr><td>Is under Siege:</td><td>Yes</td></tr>");
 			else
 				sb.append("<tr><td>Is under Siege:</td><td>No</td></tr>");
@@ -293,7 +293,7 @@ public class CustomCommunityBoard
 		Map<Object, Long> raidIds = new HashMap<Object, Long>();
 		for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values())
 		{
-			if ((raid != null) && (raid.getSpawn().getRespawnDelay() >= 3600))
+			if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600)
 				raidIds.put(raid.getNpcId(), (long) raid.getMaxHp() * (raid.getPDef(null) + raid.getMDef(null, null)));
 		}
 		
@@ -350,7 +350,7 @@ public class CustomCommunityBoard
 		for (Object id : _bossIds)
 		{
 			int bossId = (Integer) id;
-			if ((bossId == 29054) || (bossId == 29065))
+			if (bossId == 29054 || bossId == 29065)
 				continue;
 			
 			boss = NpcTable.getInstance().getTemplate(bossId);
@@ -382,14 +382,14 @@ public class CustomCommunityBoard
 				}
 				else
 				{
-					int hours = (diff / 3600) % 24;
+					int hours = diff / 3600 % 24;
 					if (hours > 0)
 					{
 						remainingTime = "around " + hours + " hour";
 						if (hours > 1)
 							remainingTime += "s";
 					}
-					else if ((diff % 3600) >= (20 * 60))
+					else if (diff % 3600 >= 20 * 60)
 						remainingTime = "less than 1 hour";
 					else
 						remainingTime = "less than 20 minutes";
@@ -402,7 +402,7 @@ public class CustomCommunityBoard
 			randomSpawnTime = GrandBossManager.getInstance().getRandomRespawnTime(boss.NpcId);
 			
 			int spawnTimeDays = spawnTime / (3600000 * 24);
-			int spawnTimeHours = (spawnTime / 3600000) % 24;
+			int spawnTimeHours = spawnTime / 3600000 % 24;
 			String spawnTime1 = spawnTimeDays + " day";
 			if (spawnTimeDays > 1)
 				spawnTime1 += "s";
@@ -410,7 +410,7 @@ public class CustomCommunityBoard
 				spawnTime1 += " and " + spawnTimeHours + " hours";
 			
 			spawnTimeDays = (spawnTime + randomSpawnTime) / (3600000 * 24);
-			spawnTimeHours = ((spawnTime + randomSpawnTime) / 3600000) % 24;
+			spawnTimeHours = (spawnTime + randomSpawnTime) / 3600000 % 24;
 			String spawnTime2 = spawnTimeDays + " days";
 			if (spawnTimeHours > 0)
 				spawnTime2 += " and " + spawnTimeHours + " hours";
@@ -445,13 +445,13 @@ public class CustomCommunityBoard
 		int maxBossesPerPage = 15;
 		int bossSize = _raidIds.size();
 		int maxPages = bossSize / maxBossesPerPage;
-		if (bossSize > (maxBossesPerPage * maxPages))
+		if (bossSize > maxBossesPerPage * maxPages)
 			maxPages++;
 		if (pageToShow > maxPages)
 			pageToShow = maxPages;
 		int pageStart = maxBossesPerPage * pageToShow;
 		int pageEnd = bossSize;
-		if ((pageEnd - pageStart) > maxBossesPerPage)
+		if (pageEnd - pageStart > maxBossesPerPage)
 			pageEnd = pageStart + maxBossesPerPage;
 		
 		sb.append("<center>" + createPages(pageToShow, maxPages, "_bbscustom;raids;", "") + "</center><br>");
@@ -490,7 +490,7 @@ public class CustomCommunityBoard
 					if (hours > 1)
 						remainingTime += "s";
 				}
-				else if ((diff % 3600) >= (20 * 60))
+				else if (diff % 3600 >= 20 * 60)
 					remainingTime = "less than 1 hour";
 				else
 					remainingTime = "less than 20 minutes";
@@ -500,7 +500,7 @@ public class CustomCommunityBoard
 			String bossIsAggro = isAggro ? "<font color=FF0000>*</font>" : "";
 			String nameString = "<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" + boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() + "\">" + npc.getName() + "</a>";
 			
-			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) + "</td>" + "<td FIXWIDTH=140>" + nameString + bossIsAggro + "</td>" + "<td FIXWIDTH=40>" + npc.Level + "</td>" + "<td FIXWIDTH=50>" + (boss.getSpawn().getRespawnDelay() / 3600000) + "-" + ((boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000) + " Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" + "<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" + npc.NpcId + ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
+			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) + "</td>" + "<td FIXWIDTH=140>" + nameString + bossIsAggro + "</td>" + "<td FIXWIDTH=40>" + npc.Level + "</td>" + "<td FIXWIDTH=50>" + boss.getSpawn().getRespawnDelay() / 3600000 + "-" + (boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000 + " Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" + "<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" + npc.NpcId + ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
 		}
 		
@@ -611,7 +611,7 @@ public class CustomCommunityBoard
 									playerId = Integer.valueOf(st.nextToken());
 								if (st.hasMoreTokens())
 									skillId = Integer.valueOf(st.nextToken());
-								if ((playerId != 0) && (skillId != 0))
+								if (playerId != 0 && skillId != 0)
 									CustomOfflineBuffersManager.getInstance().getBuffFromBuffer(activeChar, playerId, skillId);
 								
 								break;
@@ -670,7 +670,7 @@ public class CustomCommunityBoard
 						if (st.hasMoreTokens())
 							coin = st.nextToken().trim();
 						
-						if ((bidId != 0) && (bidAmount != 0))
+						if (bidId != 0 && bidAmount != 0)
 							TenkaiAuctionManager.getInstance().tryToBid(activeChar, bidId, bidAmount, coin);
 						break;
 					
@@ -785,7 +785,7 @@ public class CustomCommunityBoard
 				{
 					for (L2PcInstance zonePl : gainakSafeZone.getPlayersInside())
 					{
-						if ((zonePl == null) || gainakPlayers.contains(zonePl))
+						if (zonePl == null || gainakPlayers.contains(zonePl))
 							continue;
 						gainakPlayers.add(zonePl);
 					}
@@ -794,13 +794,13 @@ public class CustomCommunityBoard
 				int maxPlayersPerPage = 20;
 				int playersSize = gainakPlayers.size();
 				int maxPages = playersSize / maxPlayersPerPage;
-				if (playersSize > (maxPlayersPerPage * maxPages))
+				if (playersSize > maxPlayersPerPage * maxPages)
 					maxPages++;
 				if (pageToShow > maxPages)
 					pageToShow = maxPages;
 				int pageStart = maxPlayersPerPage * pageToShow;
 				int pageEnd = playersSize;
-				if ((pageEnd - pageStart) > maxPlayersPerPage)
+				if (pageEnd - pageStart > maxPlayersPerPage)
 					pageEnd = pageStart + maxPlayersPerPage;
 				
 				if (maxPages > 1)
@@ -810,7 +810,7 @@ public class CustomCommunityBoard
 				for (int i = pageStart; i < pageEnd; i++)
 				{
 					L2PcInstance player = gainakPlayers.get(i);
-					if ((player == null) || player.isGM())
+					if (player == null || player.isGM())
 						continue;
 					
 					String color = ""; //no color by default
@@ -845,7 +845,7 @@ public class CustomCommunityBoard
 		//- There are other cases where the players can detect the fake raids checking the drops with deck, on that cases we will change it for the real raid id
 		
 		//Execution Grounds Watchman Guillotine
-		if ((npcId == 25888) || (npcId == 25885))
+		if (npcId == 25888 || npcId == 25885)
 			npcId = 25892;
 		
 		//Beleth Clones
@@ -1046,13 +1046,13 @@ public class CustomCommunityBoard
 		int maxPlayersPerPage = 20;
 		int playersSize = _shops.size();
 		int maxPages = playersSize / maxPlayersPerPage;
-		if (playersSize > (maxPlayersPerPage * maxPages))
+		if (playersSize > maxPlayersPerPage * maxPages)
 			maxPages++;
 		if (pageToShow > maxPages)
 			pageToShow = maxPages;
 		int pageStart = maxPlayersPerPage * pageToShow;
 		int pageEnd = playersSize;
-		if ((pageEnd - pageStart) > maxPlayersPerPage)
+		if (pageEnd - pageStart > maxPlayersPerPage)
 			pageEnd = pageStart + maxPlayersPerPage;
 		
 		sb.append("<table width=750><tr><td FIXWIDTH=53>Show: &nbsp;<a action=\"bypass _bbscustom;buyPanel;0;0\">All</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;1\">Buy</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;2\">Sell</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;3\">Craft</a>,&nbsp; <a action=\"bypass _bbscustom;buyPanel;0;10\">Custom Sell</a></td></tr></table><center><table width=750><tr><td FIXWIDTH=50 align=center>" + (maxPages > 1 ? createPages(pageToShow, maxPages, "_bbscustom;buyPanel;", ";" + type) : "") + "</td></tr></table></center><br>");
@@ -1062,7 +1062,7 @@ public class CustomCommunityBoard
 		for (int i = pageStart; i < pageEnd; i++)
 		{
 			L2PcInstance shop = _shops.get(i);
-			if (((type == 1) && (shop.getPrivateStoreType() != 3)) || ((type == 10) && (shop.getPrivateStoreType() != 10)) || ((type == 2) && (shop.getPrivateStoreType() != 1)) || ((type == 3) && (shop.getPrivateStoreType() != 5)))
+			if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop.getPrivateStoreType() != 10 || type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5)
 				continue;
 			
 			String title = shop.getShopMessage();
@@ -1110,9 +1110,9 @@ public class CustomCommunityBoard
 		{
 			int targetObjId = 0;
 			L2Npc target = null;
-			if ((pl.getTarget() != null) && (pl.getTarget() instanceof L2Npc))
+			if (pl.getTarget() != null && pl.getTarget() instanceof L2Npc)
 				target = (L2Npc) pl.getTarget();
-			if ((target != null) && (target.getInstanceId() == pl.getObjectId()) && (target.getNpcId() == 40001))
+			if (target != null && target.getInstanceId() == pl.getObjectId() && target.getNpcId() == 40001)
 			{
 				targetObjId = ((L2Npc) pl.getTarget()).getObjectId();
 				htmlPage.replace("%backButton%", "<table width=120 align=right><tr><td align=left width=20><img src=\"L2UI.bbs_reply\" width=16 height=16></td><td align=left width=104><font color=82a0b1><a action=\"bypass -h npc_" + targetObjId + "_Chat farm_zones\"><font color=999999>Back</font></a></font></td></tr></table>");
@@ -1141,14 +1141,14 @@ public class CustomCommunityBoard
 			player.sendPacket(new ShowBoard(null, "103"));
 			
 		}
-		else if (html.length() < (8180 * 2))
+		else if (html.length() < 8180 * 2)
 		{
 			player.sendPacket(new ShowBoard(html.substring(0, 8180), "101"));
 			player.sendPacket(new ShowBoard(html.substring(8180, html.length()), "102"));
 			player.sendPacket(new ShowBoard(null, "103"));
 			
 		}
-		else if (html.length() < (8180 * 3))
+		else if (html.length() < 8180 * 3)
 		{
 			player.sendPacket(new ShowBoard(html.substring(0, 8180), "101"));
 			player.sendPacket(new ShowBoard(html.substring(8180, 8180 * 2), "102"));
@@ -1163,13 +1163,13 @@ public class CustomCommunityBoard
 	@SuppressWarnings("unused")
 	private int getPlayerCount()
 	{
-		double multiplier = 2.0 - (((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001);
+		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
 			multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
 			multiplier = 1;*/
 		
-		return (int) Math.round((L2World.getInstance().getAllPlayersCount() * multiplier) + Rnd.get(1));
+		return (int) Math.round(L2World.getInstance().getAllPlayersCount() * multiplier + Rnd.get(1));
 	}
 	
 	private String getRankingInfo(String rankingType, L2PcInstance player)
@@ -1186,25 +1186,25 @@ public class CustomCommunityBoard
 		boolean isReputation = rankingType.equalsIgnoreCase("reputation");
 		boolean isFameRanking = rankingType.equalsIgnoreCase("fame");
 		boolean isPvPRanking = rankingType.equalsIgnoreCase("pvp");
-		String whatCheckInTop = (isClanReputation || isClanWarPoints) ? player.getClan() != null ? player.getClan().getName() : "" : player.getName();
+		String whatCheckInTop = isClanReputation || isClanWarPoints ? player.getClan() != null ? player.getClan().getName() : "" : player.getName();
 		boolean playerIsInTop = false;
 		
 		Map<Object, Long> allPlayers = new HashMap<Object, Long>();
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((pl == null) || pl.isInStoreMode() || pl.isGM())
+			if (pl == null || pl.isInStoreMode() || pl.isGM())
 				continue;
 			
-			if (isClanReputation && ((pl.getClan() == null) || ((pl.getClan() != null) && allPlayers.containsKey(pl.getClan().getName()))))
+			if (isClanReputation && (pl.getClan() == null || pl.getClan() != null && allPlayers.containsKey(pl.getClan().getName())))
 				continue;
 			
-			if (isClanWarPoints && ((pl.getClan() == null) || ((pl.getClan() != null) && (pl.getClan().getWars().isEmpty() || allPlayers.containsKey(pl.getClan().getName())))))
+			if (isClanWarPoints && (pl.getClan() == null || pl.getClan() != null && (pl.getClan().getWars().isEmpty() || allPlayers.containsKey(pl.getClan().getName()))))
 				continue;
 			
-			if (isOlympiadPoints && (Olympiad.getInstance().getNobleInfo(pl.getObjectId()) == null))
+			if (isOlympiadPoints && Olympiad.getInstance().getNobleInfo(pl.getObjectId()) == null)
 				continue;
 			
-			allPlayers.put((isClanReputation || isClanWarPoints) ? pl.getClan().getName() : pl.getName(), (long) (isOlympiadPoints ? Olympiad.getInstance().getNobleInfo(pl.getObjectId()).getPoints() : isClanWarPoints ? getWarPoints(pl.getClan()) : isRaidPoints ? RaidBossPointsManager.getInstance().getPointsByOwnerId(pl.getObjectId()) : isClanReputation ? pl.getClan().getReputationScore() : isReputation ? pl.getReputation() : isFameRanking ? pl.getFame() : isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
+			allPlayers.put(isClanReputation || isClanWarPoints ? pl.getClan().getName() : pl.getName(), (long) (isOlympiadPoints ? Olympiad.getInstance().getNobleInfo(pl.getObjectId()).getPoints() : isClanWarPoints ? getWarPoints(pl.getClan()) : isRaidPoints ? RaidBossPointsManager.getInstance().getPointsByOwnerId(pl.getObjectId()) : isClanReputation ? pl.getClan().getReputationScore() : isReputation ? pl.getReputation() : isFameRanking ? pl.getFame() : isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
 		}
 		
 		allPlayers = sortByValue(allPlayers, false);

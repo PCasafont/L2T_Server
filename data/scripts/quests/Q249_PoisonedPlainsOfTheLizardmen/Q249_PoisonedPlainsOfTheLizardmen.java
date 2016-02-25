@@ -50,7 +50,7 @@ public class Q249_PoisonedPlainsOfTheLizardmen extends Quest
 				st.playSound("ItemSound.quest_accept");
 			}
 		}
-		else if ((npc.getNpcId() == _johnny) && event.equalsIgnoreCase("32744-03.htm"))
+		else if (npc.getNpcId() == _johnny && event.equalsIgnoreCase("32744-03.htm"))
 		{
 			st.unset("cond");
 			st.giveItems(57, 83056);

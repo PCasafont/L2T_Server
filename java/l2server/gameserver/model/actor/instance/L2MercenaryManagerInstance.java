@@ -41,7 +41,7 @@ public class L2MercenaryManagerInstance extends L2Npc
 	@Override
 	public void showChatWindow(L2PcInstance player)
 	{
-		if ((player.getLevel() < 40) || (player.getCurrentClass().level() < 2))
+		if (player.getLevel() < 40 || player.getCurrentClass().level() < 2)
 			super.showChatWindow(player, 2);
 		else if (TerritoryWarManager.getInstance().isTWInProgress())
 			super.showChatWindow(player, 10);

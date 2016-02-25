@@ -55,7 +55,7 @@ public class EffectTargetMe extends L2Effect
 			if (getEffected() instanceof L2SiegeSummonInstance)
 				return false;
 			
-			if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCastingProtected())
+			if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected())
 				return false;
 			
 			if (getEffected().getTarget() != getEffector())
@@ -73,7 +73,7 @@ public class EffectTargetMe extends L2Effect
 			
 			return true;
 		}
-		else if ((getEffected() instanceof L2Attackable) && !getEffected().isRaid())
+		else if (getEffected() instanceof L2Attackable && !getEffected().isRaid())
 			return true;
 		
 		return false;

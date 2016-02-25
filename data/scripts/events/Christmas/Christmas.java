@@ -122,8 +122,8 @@ public class Christmas extends Quest
 		
 		if (!_exChangeOnly)
 		{
-			_nextInvasion = System.currentTimeMillis() + (_startInvasionEach * 3600000);
-			_nextSantaReward = System.currentTimeMillis() + (_rewardRandomPlayerEach * 3600000);
+			_nextInvasion = System.currentTimeMillis() + _startInvasionEach * 3600000;
+			_nextSantaReward = System.currentTimeMillis() + _rewardRandomPlayerEach * 3600000;
 			
 			startQuestTimer("start_invasion", _startInvasionEach * 3600000, null, null);
 			startQuestTimer("santas_random_player_reward", _rewardRandomPlayerEach * 3600000, null, null);
@@ -204,13 +204,13 @@ public class Christmas extends Quest
 				if (i == null)
 					continue;
 				
-				if (System.currentTimeMillis() < (i.getAttackedTime() + 5000))
+				if (System.currentTimeMillis() < i.getAttackedTime() + 5000)
 				{
 					if (i.getPlayerId() == player.getObjectId())
 						underAttack++;
-					if ((i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP().equalsIgnoreCase(player.getInternalIP())))
+					if (i.getExternalIP().equalsIgnoreCase(player.getExternalIP()) && i.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
 						sameIPs++;
-					if ((underAttack > 1) || (sameIPs > 1))
+					if (underAttack > 1 || sameIPs > 1)
 					{
 						player.doDie(npc);
 						if (underAttack > 1)
@@ -237,7 +237,7 @@ public class Christmas extends Quest
 				{
 					//The attacker is not same
 					//If the last attacked stored info +10 seconds is bigger than the current time, this mob is currently attacked by someone
-					if ((info.getAttackedTime() + 5000) > System.currentTimeMillis())
+					if (info.getAttackedTime() + 5000 > System.currentTimeMillis())
 					{
 						player.doDie(npc);
 						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getTemplate().TemplateId, player.getName() + " don't attack mobs from other players!"));
@@ -352,7 +352,7 @@ public class Christmas extends Quest
 		else if (event.startsWith("eventEffect"))
 		{
 			int effect = Integer.valueOf(event.replace("eventEffect", "").trim());
-			if ((effect == 16419) || (effect == 16420) || (effect == 16421))
+			if (effect == 16419 || effect == 16420 || effect == 16421)
 			{
 				SkillTable.getInstance().getInfo(effect, 1).getEffects(player, player);
 			}
@@ -370,7 +370,7 @@ public class Christmas extends Quest
 			List<L2PcInstance> playerList = new ArrayList<L2PcInstance>();
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray())
 			{
-				if ((pl != null) && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(L2Character.ZONE_PEACE) && !pl.isFlyingMounted() && (pl.getClient() != null) && !pl.getClient().isDetached())
+				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(L2Character.ZONE_PEACE) && !pl.isFlyingMounted() && pl.getClient() != null && !pl.getClient().isDetached())
 				{
 					if (_rewardedPlayers.contains(pl.getExternalIP()))
 						continue;
@@ -387,8 +387,8 @@ public class Christmas extends Quest
 					_rewardedPlayers.add(_player.getExternalIP());
 					_lastSantaRewardedName = _player.getName();
 					
-					int locx = (int) (_player.getX() + (Math.pow(-1, Rnd.get(1, 2)) * 50));
-					int locy = (int) (_player.getY() + (Math.pow(-1, Rnd.get(1, 2)) * 50));
+					int locx = (int) (_player.getX() + Math.pow(-1, Rnd.get(1, 2)) * 50);
+					int locy = (int) (_player.getY() + Math.pow(-1, Rnd.get(1, 2)) * 50);
 					int heading = Util.calculateHeadingFrom(locx, locy, _player.getX(), _player.getY());
 					
 					_santa = addSpawn(_secondSantaId, locx, locy, _player.getZ(), heading, false, 30000);
@@ -398,7 +398,7 @@ public class Christmas extends Quest
 					if (!event.equalsIgnoreCase("santas_random_player_reward_gm"))
 					{
 						startQuestTimer("santas_random_player_reward", _rewardRandomPlayerEach * 3600000, null, null);
-						_nextSantaReward = System.currentTimeMillis() + (_rewardRandomPlayerEach * 3600000);
+						_nextSantaReward = System.currentTimeMillis() + _rewardRandomPlayerEach * 3600000;
 					}
 					//System.out.println("CHRISTMAS REWARDING: " + _player.getName());
 					GmListTable.broadcastMessageToGMs("Christmas: Rewarding: " + _player.getName() + " IP: " + _player.getExternalIP());
@@ -483,7 +483,7 @@ public class Christmas extends Quest
 			if (!event.startsWith("end_invasion_gm"))
 			{
 				startQuestTimer("start_invasion", _startInvasionEach * 3600000, null, null);
-				_nextInvasion = System.currentTimeMillis() + (_startInvasionEach * 3600000);
+				_nextInvasion = System.currentTimeMillis() + _startInvasionEach * 3600000;
 			}
 		}
 		return "";
@@ -493,7 +493,7 @@ public class Christmas extends Quest
 	{
 		Long remainingTime = (_nextInvasion - System.currentTimeMillis()) / 1000;
 		int hours = (int) (remainingTime / 3600);
-		int minutes = (int) ((remainingTime % 3600) / 60);
+		int minutes = (int) (remainingTime % 3600 / 60);
 		
 		if (minutes < 0)
 			return "<font color=LEVEL>Next Invasion in: Currently under invasion!</font>";
@@ -505,7 +505,7 @@ public class Christmas extends Quest
 	{
 		Long remainingTime = (_nextSantaReward - System.currentTimeMillis()) / 1000;
 		int hours = (int) (remainingTime / 3600);
-		int minutes = (int) ((remainingTime % 3600) / 60);
+		int minutes = (int) (remainingTime % 3600 / 60);
 		
 		if (minutes < 0)
 			return "<font color=LEVEL>Next Santa Reward in: Currently rewarding a player!</font>";

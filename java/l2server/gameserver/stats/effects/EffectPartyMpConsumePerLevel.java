@@ -134,7 +134,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 		
 		if (getEffector() != getEffected())
 		{
-			if ((getEffector() == null) || (getEffected().getParty() == null))
+			if (getEffector() == null || getEffected().getParty() == null)
 				return false;
 			
 			if (!getEffected().getParty().getPartyMembers().contains(getEffector()))
@@ -148,7 +148,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 		else
 		{
 			double base = calc();
-			double consume = ((getEffected().getLevel() - 1) / 7.5) * base * getAbnormal().getDuration();
+			double consume = (getEffected().getLevel() - 1) / 7.5 * base * getAbnormal().getDuration();
 			
 			if (consume > getEffected().getCurrentMp())
 			{

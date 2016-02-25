@@ -90,7 +90,7 @@ public class PostBBSManager extends BaseBBSManager
 				ind = Integer.parseInt(index);
 			}
 			
-			showPost((TopicBBSManager.getInstance().getTopicByID(idp)), ForumsBBSManager.getInstance().getForumByID(idf), activeChar, ind);
+			showPost(TopicBBSManager.getInstance().getTopicByID(idp), ForumsBBSManager.getInstance().getForumByID(idf), activeChar, ind);
 		}
 		else if (command.startsWith("_bbsposts;edit;"))
 		{
@@ -100,7 +100,7 @@ public class PostBBSManager extends BaseBBSManager
 			int idf = Integer.parseInt(st.nextToken());
 			int idt = Integer.parseInt(st.nextToken());
 			int idp = Integer.parseInt(st.nextToken());
-			showEditPost((TopicBBSManager.getInstance().getTopicByID(idt)), ForumsBBSManager.getInstance().getForumByID(idf), activeChar, idp);
+			showEditPost(TopicBBSManager.getInstance().getTopicByID(idt), ForumsBBSManager.getInstance().getForumByID(idf), activeChar, idp);
 		}
 		else
 		{
@@ -120,7 +120,7 @@ public class PostBBSManager extends BaseBBSManager
 	private void showEditPost(Topic topic, Forum forum, L2PcInstance activeChar, int idp)
 	{
 		Post p = getGPosttByTopic(topic);
-		if ((forum == null) || (topic == null) || (p == null))
+		if (forum == null || topic == null || p == null)
 		{
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center>Error, this forum, topic or post does not exit !</center><br><br></body></html>", "101");
 			activeChar.sendPacket(sb);
@@ -141,7 +141,7 @@ public class PostBBSManager extends BaseBBSManager
 	 */
 	private void showPost(Topic topic, Forum forum, L2PcInstance activeChar, int ind)
 	{
-		if ((forum == null) || (topic == null))
+		if (forum == null || topic == null)
 		{
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
 			activeChar.sendPacket(sb);

@@ -112,11 +112,11 @@ public class DimensionalToIVortex extends Quest
 			
 			int stoneId = 0;
 			
-			if ((teleportId >= 1) && (teleportId <= 3))
+			if (teleportId >= 1 && teleportId <= 3)
 			{
 				stoneId = _greenDimensionalStone;
 			}
-			else if ((teleportId >= 4) && (teleportId <= 6))
+			else if (teleportId >= 4 && teleportId <= 6)
 			{
 				stoneId = _blueDimensionalStone;
 			}

@@ -73,7 +73,7 @@ public class L2DecoyInstance extends L2Attackable
 					_skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SkillSpam(this, SkillTable.getInstance().getInfo(s.getId(), s.getLevelHash())), 2000, 5000));
 			}
 		}
-		if (getName().equalsIgnoreCase("Clone Attack") && (getNpcId() >= 13319) && (getNpcId() <= 13322))
+		if (getName().equalsIgnoreCase("Clone Attack") && getNpcId() >= 13319 && getNpcId() <= 13322)
 			_skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SkillSpam(this, null), 100, 100));
 	}
 	
@@ -100,7 +100,7 @@ public class L2DecoyInstance extends L2Attackable
 			{
 				if (_ai == null)
 				{
-					if ((getNpcId() >= 13319) && (getNpcId() <= 13322))
+					if (getNpcId() >= 13319 && getNpcId() <= 13322)
 						_ai = new L2AttackableAI(new L2Attackable.AIAccessor());
 					else
 						_ai = new L2CharacterAI(new L2Character.AIAccessor());

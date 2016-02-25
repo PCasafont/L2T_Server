@@ -92,7 +92,7 @@ public class ClanHallAuctionManager
 		for (int i = 0; i < getAuctions().size(); i++)
 		{
 			auction = getAuctions().get(i);
-			if ((auction != null) && (auction.getId() == auctionId))
+			if (auction != null && auction.getId() == auctionId)
 				return i;
 		}
 		return -1;
@@ -113,7 +113,7 @@ public class ClanHallAuctionManager
 			if (ItemInitDataId[i] == id)
 				break;
 		}
-		if ((i >= ItemInitDataId.length) || (ItemInitDataId[i] != id))
+		if (i >= ItemInitDataId.length || ItemInitDataId[i] != id)
 		{
 			Log.warning("Clan Hall auction not found for Id :" + id);
 			return;

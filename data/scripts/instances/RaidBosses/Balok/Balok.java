@@ -94,7 +94,7 @@ public class Balok extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof CrystalPrisonWorld))
+		if (wrld != null && wrld instanceof CrystalPrisonWorld)
 		{
 			CrystalPrisonWorld world = (CrystalPrisonWorld) wrld;
 			if (skill == _darknessDrain)
@@ -124,7 +124,7 @@ public class Balok extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof CrystalPrisonWorld))
+		if (wrld != null && wrld instanceof CrystalPrisonWorld)
 		{
 			CrystalPrisonWorld world = (CrystalPrisonWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -204,7 +204,7 @@ public class Balok extends L2AttackableAIScript
 			CrystalPrisonWorld world = (CrystalPrisonWorld) tmpWorld;
 			if (npc == world.balok)
 			{
-				if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.85)) && (world.status == 0))
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.85 && world.status == 0)
 				{
 					world.status = 1;
 					
@@ -216,7 +216,7 @@ public class Balok extends L2AttackableAIScript
 						_invincibilityActivation.getEffects(minion, minion);
 					}
 				}
-				else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.25)) && (world.status == 1))
+				else if (npc.getCurrentHp() < npc.getMaxHp() * 0.25 && world.status == 1)
 				{
 					world.status = 2;
 					
@@ -225,7 +225,7 @@ public class Balok extends L2AttackableAIScript
 					//Jail random players?
 					for (L2PcInstance instPlayer : world.balok.getKnownList().getKnownPlayers().values())
 					{
-						if ((instPlayer == null) || (Rnd.get(100) > 40))
+						if (instPlayer == null || Rnd.get(100) > 40)
 							continue;
 						
 						int[] randomJail = _prisonsSpawns[Rnd.get(_prisonsSpawns.length)]; //Random jail
@@ -308,7 +308,7 @@ public class Balok extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(153573, 142867, -12737);

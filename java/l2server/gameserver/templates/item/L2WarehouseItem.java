@@ -207,7 +207,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isWeapon()
 	{
-		return (_item instanceof L2Weapon);
+		return _item instanceof L2Weapon;
 	}
 	
 	/**
@@ -216,7 +216,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isArmor()
 	{
-		return (_item instanceof L2Armor);
+		return _item instanceof L2Armor;
 	}
 	
 	/**
@@ -225,7 +225,7 @@ public class L2WarehouseItem implements ItemInstanceInfo
 	 */
 	public final boolean isEtcItem()
 	{
-		return (_item instanceof L2EtcItem);
+		return _item instanceof L2EtcItem;
 	}
 	
 	/**

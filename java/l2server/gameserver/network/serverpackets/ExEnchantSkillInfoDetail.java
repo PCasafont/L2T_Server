@@ -72,19 +72,19 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			_multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
 		else if (type == TYPE_UNTRAIN_ENCHANT)
 			_sp = (int) (0.8 * _sp);
-		_adenacount = Config.isServer(Config.DREAMS) && (type == TYPE_IMMORTAL_ENCHANT) ? 0 : esd.getAdenaCost() * _multi;
+		_adenacount = Config.isServer(Config.DREAMS) && type == TYPE_IMMORTAL_ENCHANT ? 0 : esd.getAdenaCost() * _multi;
 		
 		_type = type;
 		_skillId = skillId;
 		_skillLvl = skillLvl;
-		_skillEnch = (skillEnchRoute * 1000) + skillEnchLvl;
+		_skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
 		
 		_reqCount = 1;
 		switch (type)
 		{
 			case TYPE_NORMAL_ENCHANT:
 				_bookId = esd.getRange().getNormalBook();
-				if ((skillEnchLvl % 10) > 1)
+				if (skillEnchLvl % 10 > 1)
 					_reqCount = 0;
 				break;
 			case TYPE_SAFE_ENCHANT:
@@ -103,7 +103,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 				return;
 		}
 		
-		if ((type != TYPE_SAFE_ENCHANT) && !Config.ES_SP_BOOK_NEEDED)
+		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
 			_reqCount = 0;
 	}
 	

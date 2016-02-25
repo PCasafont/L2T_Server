@@ -40,7 +40,7 @@ public class EffectDirectPcDmg extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || (getEffected().getLevel() < 85))
+		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85)
 			return false;
 		
 		double damage = calc();

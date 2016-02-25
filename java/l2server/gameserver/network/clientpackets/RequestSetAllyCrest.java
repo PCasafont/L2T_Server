@@ -70,13 +70,13 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 		{
 			L2Clan leaderclan = ClanTable.getInstance().getClan(activeChar.getAllyId());
 			
-			if ((activeChar.getClanId() != leaderclan.getClanId()) || !activeChar.isClanLeader())
+			if (activeChar.getClanId() != leaderclan.getClanId() || !activeChar.isClanLeader())
 			{
 				return;
 			}
 			
 			boolean remove = false;
-			if ((_length == 0) || (_data.length == 0))
+			if (_length == 0 || _data.length == 0)
 				remove = true;
 			
 			int newId = 0;

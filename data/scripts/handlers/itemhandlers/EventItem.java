@@ -73,7 +73,7 @@ public class EventItem implements IItemHandler
 			for (final L2PcInstance pc : block.getKnownList().getKnownPlayersInRadius(sk.getEffectRange()))
 			{
 				final int enemyTeam = holder.getPlayerTeam(pc);
-				if ((enemyTeam != -1) && (enemyTeam != team))
+				if (enemyTeam != -1 && enemyTeam != team)
 					sk.getEffects(castor, pc);
 			}
 		}

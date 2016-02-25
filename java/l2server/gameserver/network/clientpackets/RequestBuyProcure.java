@@ -47,7 +47,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 	{
 		_listId = readD();
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -58,7 +58,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 			readD(); //service
 			int itemId = readD();
 			long cnt = readQ();
-			if ((itemId < 1) || (cnt < 1))
+			if (itemId < 1 || cnt < 1)
 			{
 				_items = null;
 				return;
@@ -84,7 +84,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
 			return;
 		
 		L2Object manager = player.getTarget();
@@ -134,7 +134,7 @@ public class RequestBuyProcure extends L2GameClientPacket
 		{
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
-			if ((item == null) || (item.getCount() < i.getCount()))
+			if (item == null || item.getCount() < i.getCount())
 				continue;
 			
 			L2ItemInstance iteme = player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);

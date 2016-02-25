@@ -65,7 +65,7 @@ public class EffectDamOverTime extends L2Effect
 	
 	private boolean dealDamage(double damage)
 	{
-		if (damage >= (getEffected().getCurrentHp() - 1))
+		if (damage >= getEffected().getCurrentHp() - 1)
 		{
 			if (getSkill().isToggle())
 			{
@@ -85,7 +85,7 @@ public class EffectDamOverTime extends L2Effect
 		}
 		
 		// Exile
-		boolean dmgSelf = (getSkill().getId() == 11273) || (getSkill().getId() == 11296);
+		boolean dmgSelf = getSkill().getId() == 11273 || getSkill().getId() == 11296;
 		
 		getEffected().reduceCurrentHpByDOT(damage, dmgSelf ? getEffected() : getEffector(), getSkill());
 		
@@ -104,7 +104,7 @@ public class EffectDamOverTime extends L2Effect
 			getEffector().sendPacket(suhp);
 		}
 		
-		if ((getEffector() instanceof L2PcInstance) && (getSkill().getId() == 11260)) // Mark of Void
+		if (getEffector() instanceof L2PcInstance && getSkill().getId() == 11260) // Mark of Void
 		{
 			double heal = damage * (getEffected().getActingPlayer() == null ? 0.5 : 0.75);
 			double hp = getEffector().getCurrentHp();

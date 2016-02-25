@@ -100,7 +100,7 @@ public class PrisonGuards extends L2AttackableAIScript
 		{
 			if (npc.getNpcId() == GUARD2)
 			{
-				if ((npc.getX() != npc.getSpawn().getX()) || (npc.getY() != npc.getSpawn().getY()))
+				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
 				{
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
 					npc.setIsImmobilized(true);
@@ -122,7 +122,7 @@ public class PrisonGuards extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == GUARD2)
 		{
-			if (_firstAttacked && (caster.getFirstEffect(eventTimer) == null))
+			if (_firstAttacked && caster.getFirstEffect(eventTimer) == null)
 			{
 				if (caster.getFirstEffect(silence) == null)
 					castDebuff(npc, caster, silence, isPet, false, true);
@@ -154,7 +154,7 @@ public class PrisonGuards extends L2AttackableAIScript
 			}
 			else
 			{
-				if ((npc.getX() != npc.getSpawn().getX()) || (npc.getY() != npc.getSpawn().getY()))
+				if (npc.getX() != npc.getSpawn().getX() || npc.getY() != npc.getSpawn().getY())
 				{
 					npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false);
 					npc.setIsImmobilized(true);
@@ -201,9 +201,9 @@ public class PrisonGuards extends L2AttackableAIScript
 			((L2Attackable) npc).addDamageHate(attacker, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 		}
-		else if ((npc.getNpcId() == GUARD1) && (Rnd.get(100) < 5))
+		else if (npc.getNpcId() == GUARD1 && Rnd.get(100) < 5)
 		{
-			if ((player.getQuestState(qn) != null) && (player.getQuestState(qn).getInt(GUARDVARS[_guards.get(npc)]) != 1))
+			if (player.getQuestState(qn) != null && player.getQuestState(qn).getInt(GUARDVARS[_guards.get(npc)]) != 1)
 			{
 				player.getQuestState(qn).set(GUARDVARS[_guards.get(npc)], "1");
 				player.getQuestState(qn).giveItems(STAMP, 1);
@@ -230,7 +230,7 @@ public class PrisonGuards extends L2AttackableAIScript
 			 * 1800107 It's not easy to obtain.
 			 * 1800108 You're out of your mind coming here...
 			 */
-			int msg = (npc.getNpcId() == GUARD1 ? 1800107 : 1800108);
+			int msg = npc.getNpcId() == GUARD1 ? 1800107 : 1800108;
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), msg));
 		}
 		

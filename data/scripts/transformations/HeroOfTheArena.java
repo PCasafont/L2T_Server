@@ -18,7 +18,7 @@ public class HeroOfTheArena extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 128) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 128 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

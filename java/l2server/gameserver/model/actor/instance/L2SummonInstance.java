@@ -97,16 +97,16 @@ public class L2SummonInstance extends L2Summon
 		else if (_itemConsumeSteps == 0)
 			_nextItemConsumeTime = -1; // do not consume
 		else
-			_nextItemConsumeTime = _totalLifeTime - (_totalLifeTime / (_itemConsumeSteps + 1));
+			_nextItemConsumeTime = _totalLifeTime - _totalLifeTime / (_itemConsumeSteps + 1);
 		
 		// When no item consume is defined task only need to check when summon life time has ended.
 		// Otherwise have to destroy items from owner's inventory in order to let summon live.
 		int delay = 1000;
 		
-		if (Config.DEBUG && (_itemConsumeCount != 0))
+		if (Config.DEBUG && _itemConsumeCount != 0)
 			Log.warning("L2SummonInstance: Item Consume ID: " + _itemConsumeId + ", Count: " + _itemConsumeCount + ", Rate: " + _itemConsumeSteps + " times.");
 		if (Config.DEBUG)
-			Log.warning("L2SummonInstance: Task Delay " + (delay / 1000) + " seconds.");
+			Log.warning("L2SummonInstance: Task Delay " + delay / 1000 + " seconds.");
 		
 		_summonLifeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SummonLifetime(getOwner(), this), delay, delay);
 		
@@ -115,7 +115,7 @@ public class L2SummonInstance extends L2Summon
 		{
 			L2Abnormal[] restoreEffects = getOwner().restoreSummonBuffs();
 			// Only restore buffs if new summon is same kind as last, else clear stored buffs
-			if ((restoreEffects != null) && (getNpcId() == getOwner().getLastSummonId()))
+			if (restoreEffects != null && getNpcId() == getOwner().getLastSummonId())
 			{
 				for (L2Abnormal e : restoreEffects)
 				{
@@ -146,7 +146,7 @@ public class L2SummonInstance extends L2Summon
 	@Override
 	public final int getLevel()
 	{
-		return (getTemplate() != null ? getTemplate().Level : 0);
+		return getTemplate() != null ? getTemplate().Level : 0;
 	}
 	
 	@Override
@@ -234,12 +234,12 @@ public class L2SummonInstance extends L2Summon
 	public boolean doDie(L2Character killer)
 	{
 		// Store buffs of summon when it does while having Noblesse Blessing
-		if ((getOwner() != null) && !getOwner().isInOlympiadMode())
+		if (getOwner() != null && !getOwner().isInOlympiadMode())
 		{
 			L2Abnormal[] effects = getAllEffects();
 			for (L2Abnormal e : effects)
 			{
-				if ((e.getSkill().getId() == 1323) || (e.getSkill().getId() == 7096)) // Noblesse Blessing and Master's Blessing of Noblesse
+				if (e.getSkill().getId() == 1323 || e.getSkill().getId() == 7096) // Noblesse Blessing and Master's Blessing of Noblesse
 					getOwner().storeSummonBuffs(effects);
 			}
 		}
@@ -248,7 +248,7 @@ public class L2SummonInstance extends L2Summon
 			return false;
 		
 		// To prevent players re-summoning their dead summons endlessly
-		if ((_summonPoints > 0) && !((getOwner() != null) && getOwner().isPlayingEvent() && !getOwner().getEvent().isType(EventType.Survival) && !getOwner().getEvent().isType(EventType.TeamSurvival)))
+		if (_summonPoints > 0 && !(getOwner() != null && getOwner().isPlayingEvent() && !getOwner().getEvent().isType(EventType.Survival) && !getOwner().getEvent().isType(EventType.TeamSurvival)))
 			DecayTaskManager.getInstance().addDecayTask(this, 5000);
 		
 		if (Config.DEBUG)
@@ -321,15 +321,15 @@ public class L2SummonInstance extends L2Summon
 					_summon.decTimeRemaining(_summon.getTimeLostIdle());
 				newTimeRemaining = _summon.getTimeRemaining();
 				// check if the summon's lifetime has ran out
-				if ((maxTime > 0) && (newTimeRemaining < 0))
+				if (maxTime > 0 && newTimeRemaining < 0)
 					_summon.unSummon(_activeChar);
 				// check if it is time to consume another item
-				else if ((newTimeRemaining <= _summon.getNextItemConsumeTime()) && (oldTimeRemaining > _summon.getNextItemConsumeTime()))
+				else if (newTimeRemaining <= _summon.getNextItemConsumeTime() && oldTimeRemaining > _summon.getNextItemConsumeTime())
 				{
 					_summon.decNextItemConsumeTime(maxTime / (_summon.getItemConsumeSteps() + 1));
 					
 					// check if owner has enought itemConsume, if requested
-					if ((_summon.getItemConsumeCount() > 0) && (_summon.getItemConsumeId() != 0) && !_summon.isDead() && !_summon.destroyItemByItemId("Consume", _summon.getItemConsumeId(), _summon.getItemConsumeCount(), _activeChar, true))
+					if (_summon.getItemConsumeCount() > 0 && _summon.getItemConsumeId() != 0 && !_summon.isDead() && !_summon.destroyItemByItemId("Consume", _summon.getItemConsumeId(), _summon.getItemConsumeCount(), _activeChar, true))
 					{
 						_summon.unSummon(_activeChar);
 					}
@@ -401,7 +401,7 @@ public class L2SummonInstance extends L2Summon
 	@Override
 	public byte getAttackElement()
 	{
-		if ((getOwner() == null) || !getOwner().getCurrentClass().isSummoner())
+		if (getOwner() == null || !getOwner().getCurrentClass().isSummoner())
 			return super.getAttackElement();
 		
 		return getOwner().getAttackElement();
@@ -410,7 +410,7 @@ public class L2SummonInstance extends L2Summon
 	@Override
 	public int getAttackElementValue(byte attribute)
 	{
-		if ((getOwner() == null) || !getOwner().getCurrentClass().isSummoner() || (getOwner().getExpertiseWeaponPenalty() > 0))
+		if (getOwner() == null || !getOwner().getCurrentClass().isSummoner() || getOwner().getExpertiseWeaponPenalty() > 0)
 			return super.getAttackElementValue(attribute);
 		
 		return getOwner().getAttackElementValue(attribute);
@@ -419,7 +419,7 @@ public class L2SummonInstance extends L2Summon
 	@Override
 	public int getDefenseElementValue(byte attribute)
 	{
-		if ((getOwner() == null) || !getOwner().getCurrentClass().isSummoner())
+		if (getOwner() == null || !getOwner().getCurrentClass().isSummoner())
 			return super.getDefenseElementValue(attribute);
 		
 		return getOwner().getDefenseElementValue(attribute);
@@ -437,7 +437,7 @@ public class L2SummonInstance extends L2Summon
 	 */
 	public boolean isInOlympiadMode()
 	{
-		return (_owner != null) && _owner.isInOlympiadMode();
+		return _owner != null && _owner.isInOlympiadMode();
 	}
 	
 	public int getSummonPoints()

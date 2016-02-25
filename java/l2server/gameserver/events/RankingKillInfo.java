@@ -39,7 +39,7 @@ public class RankingKillInfo
 	
 	public void updateSpecificKillInfo(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
-		if ((killerPlayer == null) || (killedPlayer == null))
+		if (killerPlayer == null || killedPlayer == null)
 			return;
 		
 		//Killed
@@ -78,19 +78,19 @@ public class RankingKillInfo
 	@SuppressWarnings("unused")
 	private boolean checkConditions(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
-		if ((killerPlayer == null) || (killedPlayer == null))
+		if (killerPlayer == null || killedPlayer == null)
 			return false;
 		
-		if ((killerPlayer.getPvpFlag() == 0) || (killedPlayer.getPvpFlag() == 0))
+		if (killerPlayer.getPvpFlag() == 0 || killedPlayer.getPvpFlag() == 0)
 			return false;
 		
-		if (killerPlayer.getLevel() > (killedPlayer.getLevel() + 8))
+		if (killerPlayer.getLevel() > killedPlayer.getLevel() + 8)
 			return false;
 		
-		if (((System.currentTimeMillis() - killedPlayer.getCreateTime()) / (24 * 60 * 60 * 1000)) < 5)
+		if ((System.currentTimeMillis() - killedPlayer.getCreateTime()) / (24 * 60 * 60 * 1000) < 5)
 			return false;
 		
-		if ((killerPlayer.getClan() == null) || (killedPlayer.getClan() == null))
+		if (killerPlayer.getClan() == null || killedPlayer.getClan() == null)
 			return false;
 		
 		if (killerPlayer.getClanId() == killedPlayer.getClanId())
@@ -99,13 +99,13 @@ public class RankingKillInfo
 		if (killerPlayer.getExternalIP().equalsIgnoreCase(killedPlayer.getExternalIP()) && killerPlayer.getInternalIP().equalsIgnoreCase(killedPlayer.getInternalIP()))
 			return false;
 		
-		if ((killerPlayer.getParty() != null) && (killedPlayer.getParty() != null) && (killerPlayer.getParty().getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID()))
+		if (killerPlayer.getParty() != null && killedPlayer.getParty() != null && killerPlayer.getParty().getPartyLeaderOID() == killedPlayer.getParty().getPartyLeaderOID())
 			return false;
 		
-		if ((killedPlayer.getPDef(killedPlayer) < 800) || (killedPlayer.getMDef(killedPlayer, null) < 800) || (killedPlayer.getPAtkSpd() < 500) || (killedPlayer.getMAtkSpd() < 500) || (killedPlayer.getPvpKills() < 10))
+		if (killedPlayer.getPDef(killedPlayer) < 800 || killedPlayer.getMDef(killedPlayer, null) < 800 || killedPlayer.getPAtkSpd() < 500 || killedPlayer.getMAtkSpd() < 500 || killedPlayer.getPvpKills() < 10)
 			return false;
 		
-		if ((killerPlayer.getClan().getHasCastle() == 0) || (killedPlayer.getClan().getHasCastle() == 0))
+		if (killerPlayer.getClan().getHasCastle() == 0 || killedPlayer.getClan().getHasCastle() == 0)
 			return false;
 		
 		if (!killerPlayer.getClan().isAtWarWith(killedPlayer.getClan()) || !killedPlayer.getClan().isAtWarWith(killerPlayer.getClan()))
@@ -283,7 +283,7 @@ public class RankingKillInfo
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		for (L2PcInstance worldPlayer : pls)
 		{
-			if ((region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY())) && (worldPlayer.getEvent() == null) && (worldPlayer.getInstanceId() == 0))
+			if (region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY()) && worldPlayer.getEvent() == null && worldPlayer.getInstanceId() == 0)
 				worldPlayer.sendPacket(cs);
 		}
 	}
@@ -301,23 +301,23 @@ public class RankingKillInfo
 	{
 		if (points < 50)
 			return "No Grade";
-		else if ((points >= 50) && (points < 100))
+		else if (points >= 50 && points < 100)
 			return "D Grade";
-		else if ((points >= 100) && (points < 200))
+		else if (points >= 100 && points < 200)
 			return "C Grade";
-		else if ((points >= 200) && (points < 300))
+		else if (points >= 200 && points < 300)
 			return "B Grade";
-		else if ((points >= 300) && (points < 400))
+		else if (points >= 300 && points < 400)
 			return "A Grade";
-		else if ((points >= 400) && (points < 500))
+		else if (points >= 400 && points < 500)
 			return "S Grade";
-		else if ((points >= 500) && (points < 600))
+		else if (points >= 500 && points < 600)
 			return "S80 Grade";
-		else if ((points >= 600) && (points < 700))
+		else if (points >= 600 && points < 700)
 			return "R Grade";
-		else if ((points >= 700) && (points < 800))
+		else if (points >= 700 && points < 800)
 			return "R95 Grade";
-		else if ((points >= 800) && (points < 900))
+		else if (points >= 800 && points < 900)
 			return "R99 Grade";
 		return "Epic Grade";
 	}

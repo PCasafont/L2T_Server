@@ -49,7 +49,7 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
 		final L2PcInstance src = activeChar.getActingPlayer();
 		boolean isAttackingPlayer = false;
 		
-		if ((activeChar == target) || (target == null) || ((src != null) && (!isReachableTarget(activeChar, target, skill, false) || !src.isAbleToCastOnTarget(target, skill, false))))
+		if (activeChar == target || target == null || src != null && (!isReachableTarget(activeChar, target, skill, false) || !src.isAbleToCastOnTarget(target, skill, false)))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
@@ -79,7 +79,7 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
 		{
 			for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
 			{
-				if ((activeChar == obj) || (obj == target) || !(obj instanceof L2Character) || (!isAttackingPlayer && (obj instanceof L2Playable)))
+				if (activeChar == obj || obj == target || !(obj instanceof L2Character) || !isAttackingPlayer && obj instanceof L2Playable)
 					continue;
 				
 				if (!Util.checkIfInRange(skill.getSkillRadius(), obj, target, true))
@@ -147,7 +147,7 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler
 						if (!target.isFacing(activeChar, 140))
 							return true;
 					}
-					else if ((td == L2SkillTargetDirection.DEFAULT) || (td == L2SkillTargetDirection.AROUND))
+					else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND)
 						return true;
 					else if (td == L2SkillTargetDirection.PLAYER)
 					{

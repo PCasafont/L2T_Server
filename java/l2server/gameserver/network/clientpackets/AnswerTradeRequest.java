@@ -89,7 +89,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_response == 1) && !partner.isRequestExpired())
+		if (_response == 1 && !partner.isRequestExpired())
 			player.startTrade(partner);
 		else
 		{

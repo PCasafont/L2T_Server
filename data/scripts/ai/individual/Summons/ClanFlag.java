@@ -79,7 +79,7 @@ public class ClanFlag extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_clanFlag == null) || _clanFlag.isDead() || _clanFlag.isDecayed())
+			if (_clanFlag == null || _clanFlag.isDead() || _clanFlag.isDecayed())
 			{
 				if (_schedule != null)
 				{
@@ -98,7 +98,7 @@ public class ClanFlag extends L2AttackableAIScript
 	
 	private void doAction(L2PcInstance target, L2Npc npc)
 	{
-		if ((target == null) || (npc == null) || (npc.getOwner() == null))
+		if (target == null || npc == null || npc.getOwner() == null)
 			return;
 		
 		if (npc.isDead() || target.isDead())

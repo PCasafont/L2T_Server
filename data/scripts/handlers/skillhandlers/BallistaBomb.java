@@ -36,7 +36,7 @@ public class BallistaBomb implements ISkillHandler
 		
 		L2Object[] targetList = skill.getTargetList(activeChar);
 		
-		if ((targetList == null) || (targetList.length == 0))
+		if (targetList == null || targetList.length == 0)
 		{
 			return;
 		}

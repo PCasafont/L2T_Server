@@ -144,7 +144,7 @@ public class L2Party
 	public void setPendingInvitation(boolean val)
 	{
 		_pendingInvitation = val;
-		_pendingInviteTimeout = TimeController.getGameTicks() + (L2PcInstance.REQUEST_TIMEOUT * TimeController.TICKS_PER_SECOND);
+		_pendingInviteTimeout = TimeController.getGameTicks() + L2PcInstance.REQUEST_TIMEOUT * TimeController.TICKS_PER_SECOND;
 	}
 	
 	/**
@@ -248,7 +248,7 @@ public class L2Party
 	 */
 	public boolean isLeader(L2PcInstance player)
 	{
-		return (getLeader().equals(player));
+		return getLeader().equals(player);
 	}
 	
 	/**
@@ -290,7 +290,7 @@ public class L2Party
 	{
 		for (L2PcInstance member : getPartyMembers())
 		{
-			if ((member != null) && !BlockList.isBlocked(member, broadcaster))
+			if (member != null && !BlockList.isBlocked(member, broadcaster))
 				member.sendPacket(msg);
 		}
 	}
@@ -302,7 +302,7 @@ public class L2Party
 	{
 		for (L2PcInstance member : getPartyMembers())
 		{
-			if ((member != null) && !member.equals(player))
+			if (member != null && !member.equals(player))
 				member.sendPacket(msg);
 		}
 	}
@@ -415,7 +415,7 @@ public class L2Party
 			boolean isLeader = isLeader(player);
 			if (!_disbanding)
 			{
-				if ((getPartyMembers().size() == 2) || (isLeader && !Config.ALT_LEAVE_PARTY_LEADER && (type != messageType.Disconnected)))
+				if (getPartyMembers().size() == 2 || isLeader && !Config.ALT_LEAVE_PARTY_LEADER && type != messageType.Disconnected)
 				{
 					disbandParty();
 					return;
@@ -437,7 +437,7 @@ public class L2Party
 					player.abortCast();
 				
 				for (L2Character character : player.getKnownList().getKnownCharacters())
-					if ((character.getFusionSkill() != null) && (character.getFusionSkill().getTarget() == player))
+					if (character.getFusionSkill() != null && character.getFusionSkill().getTarget() == player)
 						character.abortCast();
 			}
 			catch (Exception e)
@@ -453,7 +453,7 @@ public class L2Party
 				msg.addString(player.getName());
 				broadcastToPartyMembers(msg);
 			}
-			else if ((type == messageType.Left) || (type == messageType.Disconnected))
+			else if (type == messageType.Left || type == messageType.Disconnected)
 			{
 				player.sendPacket(SystemMessageId.YOU_LEFT_PARTY);
 				msg = SystemMessage.getSystemMessage(SystemMessageId.C1_LEFT_PARTY);
@@ -477,7 +477,7 @@ public class L2Party
 				player.sendPacket(new ExCloseMPCC());
 			}
 			
-			if (isLeader && (getPartyMembers().size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == messageType.Disconnected)))
+			if (isLeader && getPartyMembers().size() > 1 && (Config.ALT_LEAVE_PARTY_LEADER || type == messageType.Disconnected))
 			{
 				msg = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_BECOME_A_PARTY_LEADER);
 				msg.addString(getLeader().getName());
@@ -548,7 +548,7 @@ public class L2Party
 	{
 		L2PcInstance player = getPlayerByName(name);
 		
-		if ((player != null) && !player.isInDuel())
+		if (player != null && !player.isInDuel())
 		{
 			if (getPartyMembers().contains(player))
 			{
@@ -823,9 +823,9 @@ public class L2Party
 		
 		double sqLevelSum = 0;
 		for (L2Playable character : validMembers)
-			sqLevelSum += (character.getLevel() * character.getLevel());
+			sqLevelSum += character.getLevel() * character.getLevel();
 		
-		final float vitalityPoints = (target.getVitalityPoints(partyDmg) * Config.RATE_PARTY_XP) / validMembers.size();
+		final float vitalityPoints = target.getVitalityPoints(partyDmg) * Config.RATE_PARTY_XP / validMembers.size();
 		final boolean useVitalityRate = target.useVitalityRate();
 		
 		// Go through the L2PcInstances and L2PetInstances (not L2SummonInstances) that must be rewarded
@@ -855,17 +855,17 @@ public class L2Party
 					for (L2SummonInstance summon : ((L2PcInstance) member).getSummons())
 						penalty = summon.getExpPenalty();
 					
-					if ((member.getLevel() + 15) <= topLvl)
+					if (member.getLevel() + 15 <= topLvl)
 						penalty = 1F;
-					else if ((member.getLevel() + 9) <= topLvl)
+					else if (member.getLevel() + 9 <= topLvl)
 						penalty = 0.7F;
 				}
 				
 				// Calculate and add the EXP and SP reward to the member
-				if (validMembers.contains(member) && (penalty < 1))
+				if (validMembers.contains(member) && penalty < 1)
 				{
 					sqLevel = member.getLevel() * member.getLevel();
-					preCalculation = (sqLevel / sqLevelSum) * (1 - penalty);
+					preCalculation = sqLevel / sqLevelSum * (1 - penalty);
 					
 					// Add the XP/SP points to the requested party member
 					if (!member.isDead())
@@ -882,7 +882,7 @@ public class L2Party
 								if (skill.getExpNeeded() <= addexp)
 									pcMember.absorbSoul(skill, target);
 							}
-							if (((pcMember.getLevel() >= target.getLevel()) && ((pcMember.getLevel() - target.getLevel()) < 11)) || ((pcMember.getLevel() < target.getLevel()) && ((target.getLevel() - pcMember.getLevel()) < 11)))
+							if (pcMember.getLevel() >= target.getLevel() && pcMember.getLevel() - target.getLevel() < 11 || pcMember.getLevel() < target.getLevel() && target.getLevel() - pcMember.getLevel() < 11)
 							{
 								if (pcMember.getReputation() < 0)
 									pcMember.updateReputationForHunting(addexp, addsp);
@@ -934,7 +934,7 @@ public class L2Party
 		{
 			for (L2Playable member : members)
 			{
-				if ((topLvl - member.getLevel()) <= Config.PARTY_XP_CUTOFF_LEVEL)
+				if (topLvl - member.getLevel() <= Config.PARTY_XP_CUTOFF_LEVEL)
 					validMembers.add(member);
 			}
 		}
@@ -944,13 +944,13 @@ public class L2Party
 			int sqLevelSum = 0;
 			for (L2Playable member : members)
 			{
-				sqLevelSum += (member.getLevel() * member.getLevel());
+				sqLevelSum += member.getLevel() * member.getLevel();
 			}
 			
 			for (L2Playable member : members)
 			{
 				int sqLevel = member.getLevel() * member.getLevel();
-				if ((sqLevel * 100) >= (sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT))
+				if (sqLevel * 100 >= sqLevelSum * Config.PARTY_XP_CUTOFF_PERCENT)
 					validMembers.add(member);
 			}
 		}
@@ -960,7 +960,7 @@ public class L2Party
 			int sqLevelSum = 0;
 			for (L2Playable member : members)
 			{
-				sqLevelSum += (member.getLevel() * member.getLevel());
+				sqLevelSum += member.getLevel() * member.getLevel();
 			}
 			
 			int i = members.size() - 1;
@@ -972,7 +972,7 @@ public class L2Party
 			for (L2Playable member : members)
 			{
 				int sqLevel = member.getLevel() * member.getLevel();
-				if (sqLevel >= (sqLevelSum * (1 - (1 / ((1 + BONUS_EXP_SP[i]) - BONUS_EXP_SP[i - 1])))))
+				if (sqLevel >= sqLevelSum * (1 - 1 / (1 + BONUS_EXP_SP[i] - BONUS_EXP_SP[i - 1])))
 					validMembers.add(member);
 			}
 		}
@@ -1089,7 +1089,7 @@ public class L2Party
 			return;
 		}
 		_changeLootAnswers.add(member.getObjectId());
-		if (_changeLootAnswers.size() >= (getMemberCount() - 1))
+		if (_changeLootAnswers.size() >= getMemberCount() - 1)
 		{
 			finishLootRequest(true);
 		}
@@ -1169,7 +1169,7 @@ public class L2Party
 			}
 		}
 		
-		if ((_target != null) && _target.isVisible() && !_target.isDead() && (leader.getDistanceSq(_target) < (2000 * 2000)) && _target.isAutoAttackable(leader) && (allies.size() > 0) && ((!playerFound && (_target instanceof L2ApInstance)) || !(_target instanceof L2ApInstance)))
+		if (_target != null && _target.isVisible() && !_target.isDead() && leader.getDistanceSq(_target) < 2000 * 2000 && _target.isAutoAttackable(leader) && allies.size() > 0 && (!playerFound && _target instanceof L2ApInstance || !(_target instanceof L2ApInstance)))
 		{
 			//_target = null;
 			return;
@@ -1192,7 +1192,7 @@ public class L2Party
 			{
 				for (L2Character enemy : enemies)
 				{
-					if ((enemy.getTarget() == healer) && (enemy.isAttackingNow() || ((enemy.getLastSkillCast() != null) && enemy.getLastSkillCast().isOffensive())) && (leader.getDistanceSq(enemy) < (2000 * 2000)))
+					if (enemy.getTarget() == healer && (enemy.isAttackingNow() || enemy.getLastSkillCast() != null && enemy.getLastSkillCast().isOffensive()) && leader.getDistanceSq(enemy) < 2000 * 2000)
 					{
 						_target = enemy;
 						return;
@@ -1255,7 +1255,7 @@ public class L2Party
 			
 			if (!(enemy instanceof L2PcInstance))
 			{
-				if ((_target == null) && enemy.isInCombat() && (enemy.getDistanceSq(leader) < closest))
+				if (_target == null && enemy.isInCombat() && enemy.getDistanceSq(leader) < closest)
 				{
 					closest = enemy.getDistanceSq(leader);
 					worstMob = enemy;
@@ -1271,25 +1271,25 @@ public class L2Party
 				continue;
 			}
 			
-			if ((pcEnemy.getClassId() == 146) && (worstEnemy.getClassId() != 146))
+			if (pcEnemy.getClassId() == 146 && worstEnemy.getClassId() != 146)
 			{
 				worstEnemy = pcEnemy;
 				continue;
 			}
 			
-			if ((pcEnemy.getClassId() == 143) && (worstEnemy.getClassId() != 143))
+			if (pcEnemy.getClassId() == 143 && worstEnemy.getClassId() != 143)
 			{
 				worstEnemy = pcEnemy;
 				continue;
 			}
 			
-			if ((pcEnemy.getClassId() == 144) && (worstEnemy.getClassId() != 144))
+			if (pcEnemy.getClassId() == 144 && worstEnemy.getClassId() != 144)
 			{
 				worstEnemy = pcEnemy;
 				continue;
 			}
 			
-			if ((pcEnemy.getClassId() == 142) && (worstEnemy.getClassId() != 142))
+			if (pcEnemy.getClassId() == 142 && worstEnemy.getClassId() != 142)
 			{
 				worstEnemy = pcEnemy;
 				continue;
@@ -1298,7 +1298,7 @@ public class L2Party
 		
 		//Log.info(worstEnemy);
 		
-		if ((worstEnemy == null) && (_target == null))
+		if (worstEnemy == null && _target == null)
 		{
 			_target = worstMob;
 			return;
@@ -1353,7 +1353,7 @@ public class L2Party
 	
 	public int tagCharacter(int charObjId, int tagId)
 	{
-		if (_taggedChars.containsKey(charObjId) && (_taggedChars.get(charObjId) == tagId))
+		if (_taggedChars.containsKey(charObjId) && _taggedChars.get(charObjId) == tagId)
 		{
 			_taggedChars.remove(charObjId);
 			return 0;
@@ -1380,7 +1380,7 @@ public class L2Party
 		for (int i = _members.size(); i-- > 0;)
 		{
 			final L2PcInstance member = _members.get(i);
-			if ((member != null) && (member == player))
+			if (member != null && member == player)
 				return i;
 		}
 		

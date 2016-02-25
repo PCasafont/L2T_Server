@@ -27,9 +27,9 @@ public class L2CastleWyvernManagerInstance extends L2WyvernManagerInstance
 	@Override
 	public final boolean isOwnerClan(L2PcInstance player)
 	{
-		if ((player.getClan() != null) && (getCastle() != null))
+		if (player.getClan() != null && getCastle() != null)
 		{
-			if ((player.getClanId() == getCastle().getOwnerId()) && player.isClanLeader())
+			if (player.getClanId() == getCastle().getOwnerId() && player.isClanLeader())
 				return true;
 		}
 		return false;

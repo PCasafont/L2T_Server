@@ -18,7 +18,7 @@ public class EvisceratorFox extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 154) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 154 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

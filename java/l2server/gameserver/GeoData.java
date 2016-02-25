@@ -101,7 +101,7 @@ public class GeoData
 	{
 		//If geo is off do simple check :]
 		//Don't allow casting on players on different dungeon lvls etc
-		return (Math.abs(target.getZ() - cha.getZ()) < 1000);
+		return Math.abs(target.getZ() - cha.getZ()) < 1000;
 	}
 	
 	public boolean canSeeTarget(L2Object cha, Point3D worldPosition)
@@ -115,7 +115,7 @@ public class GeoData
 	{
 		// If geo is off do simple check :]
 		// Don't allow casting on players on different dungeon lvls etc
-		return (Math.abs(z - tz) < 1000);
+		return Math.abs(z - tz) < 1000;
 	}
 	
 	/**
@@ -141,7 +141,7 @@ public class GeoData
 	
 	public short getHeightAndNSWE(int x, int y, int z)
 	{
-		return (short) ((z << 1) | 15);
+		return (short) (z << 1 | 15);
 	}
 	
 	/**

@@ -55,11 +55,11 @@ public class EffectKnockDown extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (((getEffected() instanceof L2Attackable) && ((L2Attackable) getEffected()).isImmobilized()) || getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() || getEffected().isRaid())
 			return false;
 		
 		//TW bug restrictions for avoid players with TW flags stuck his char into the walls, under live test
-		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
 			return false;
 		
 		// Get current position of the L2Character
@@ -71,7 +71,7 @@ public class EffectKnockDown extends L2Effect
 		double dx = getEffector().getX() - curX;
 		double dy = getEffector().getY() - curY;
 		double dz = getEffector().getZ() - curZ;
-		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000)
 		{
 			Log.info("EffectKnockDown (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
@@ -104,7 +104,7 @@ public class EffectKnockDown extends L2Effect
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z, getEffected().getInstanceId());
-			if ((destiny.getX() != _x) || (destiny.getY() != _y))
+			if (destiny.getX() != _x || destiny.getY() != _y)
 			{
 				_x = destiny.getX() + (int) (cos * 10);
 				_y = destiny.getY() + (int) (sin * 10);

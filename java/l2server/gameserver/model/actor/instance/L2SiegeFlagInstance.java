@@ -75,7 +75,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		_siege = SiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
 		if (_siege == null)
 			_siege = FortSiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
-		if ((_clan == null) || (_siege == null))
+		if (_clan == null || _siege == null)
 		{
 			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
 		}
@@ -119,7 +119,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	{
 		if (!super.doDie(killer))
 			return false;
-		if ((_siege != null) && (_clan != null))
+		if (_siege != null && _clan != null)
 		{
 			L2SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
@@ -140,7 +140,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if ((player == null) || !canTarget(player))
+		if (player == null || !canTarget(player))
 			return;
 		
 		// Check if the L2PcInstance already target the L2NpcInstance
@@ -164,7 +164,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.abs(player.getZ() - getZ()) < 100))
+			if (isAutoAttackable(player) && Math.abs(player.getZ() - getZ()) < 100)
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			else
 			{
@@ -197,7 +197,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		super.reduceCurrentHp(damage, attacker, skill);
 		if (canTalk())
 		{
-			if ((getCastle() != null) && getCastle().getSiege().getIsInProgress())
+			if (getCastle() != null && getCastle().getSiege().getIsInProgress())
 			{
 				if (_clan != null)
 				{
@@ -207,7 +207,7 @@ public class L2SiegeFlagInstance extends L2Npc
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
 			}
-			else if ((getFort() != null) && getFort().getSiege().getIsInProgress())
+			else if (getFort() != null && getFort().getSiege().getIsInProgress())
 			{
 				if (_clan != null)
 				{

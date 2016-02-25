@@ -35,31 +35,28 @@ import l2server.gameserver.stats.Stats;
 
 public class CustomVoiced implements IVoicedCommandHandler
 {
-	private static final String[] VOICED_COMMANDS =
-	{
-		"itemid",				// shows item ID of an item
-		"event",				// shows information about the event
-		"noexp",				// ignores XP/SP gain when hunting
-		"time",					// shows server current time (clock)
-		"vote",					// to vote in a poll created by an admin
-		"remember",				// allows the player to remember 3rd class skills
-		"landrates",			// shows chance of landing skills inflicted and received
-		"myhiddenstats",		// opens the hidden stats information window
-		"refusebuff",			// cannot receive buffs until restart or re-type of the command
-		"blockrequests",		// blocks all kind of requests, party, trade, clan etc
-		"blockpms",				// blocks the incoming pms
-		"refusekillinfo",		// blocks the kill info pop up
-		"disableweaponglow",	// disable the weapon enchant glow
-		"disablearmorglow",		// disable the armor enchant glow
-		"disablenicknamewings",	// disable the nickname wings
-		"hidecloak",			// hide the cloak
-		"mammon",				// shows blacksmith and merchant of mammon locations
-		"stabs",				// shows stab angle
-		"unrec",				// deletes recommendations
-		"treasure",				// opens the hidden chests event information window
-		"clones",				// opens the clones event information window
-		"offlinebuffer"
-	};
+	private static final String[] VOICED_COMMANDS = { "itemid", // shows item ID of an item
+	"event", // shows information about the event
+	"noexp", // ignores XP/SP gain when hunting
+	"time", // shows server current time (clock)
+	"vote", // to vote in a poll created by an admin
+	"remember", // allows the player to remember 3rd class skills
+	"landrates", // shows chance of landing skills inflicted and received
+	"myhiddenstats", // opens the hidden stats information window
+	"refusebuff", // cannot receive buffs until restart or re-type of the command
+	"blockrequests", // blocks all kind of requests, party, trade, clan etc
+	"blockpms", // blocks the incoming pms
+	"refusekillinfo", // blocks the kill info pop up
+	"disableweaponglow", // disable the weapon enchant glow
+	"disablearmorglow", // disable the armor enchant glow
+	"disablenicknamewings", // disable the nickname wings
+	"hidecloak", // hide the cloak
+	"mammon", // shows blacksmith and merchant of mammon locations
+	"stabs", // shows stab angle
+	"unrec", // deletes recommendations
+	"treasure", // opens the hidden chests event information window
+	"clones", // opens the clones event information window
+	"offlinebuffer" };
 	
 	/**
 	 *
@@ -385,7 +382,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 		if (statVal == statDefault)
 			return "";
 		
-		return "<table width=300 border=0><tr><td FIXWIDTH=150>" + statName + ":</td><td FIXWIDTH=150>" + ((plusIfPositive && (statVal >= 0)) ? "+" : "") + new DecimalFormat("#0.##").format(statVal) + suffix + "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
+		return "<table width=300 border=0><tr><td FIXWIDTH=150>" + statName + ":</td><td FIXWIDTH=150>" + (plusIfPositive && statVal >= 0 ? "+" : "") + new DecimalFormat("#0.##").format(statVal) + suffix + "</td></tr></table><img src=\"L2UI.Squaregray\" width=300 height=1>";
 	}
 	
 	/**

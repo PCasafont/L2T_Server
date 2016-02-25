@@ -112,7 +112,7 @@ public class Baylor extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof BaylorWorld))
+		if (wrld != null && wrld instanceof BaylorWorld)
 		{
 			BaylorWorld world = (BaylorWorld) wrld;
 			
@@ -216,9 +216,9 @@ public class Baylor extends L2AttackableAIScript
 				
 				npc.decayMe();
 				
-				if ((world._baylorOne != null) && !world._baylorOne.isDead())
+				if (world._baylorOne != null && !world._baylorOne.isDead())
 					_baylorBerserk.getEffects(world._baylorOne, world._baylorOne);
-				if ((world._baylorTwo != null) && !world._baylorTwo.isDead())
+				if (world._baylorTwo != null && !world._baylorTwo.isDead())
 					_baylorBerserk.getEffects(world._baylorTwo, world._baylorTwo);
 			}
 		}
@@ -322,7 +322,7 @@ public class Baylor extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(153568, 142867, -12744, 49098, true);

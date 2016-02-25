@@ -50,7 +50,7 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 	 */
 	private static final int hash(byte[] ip)
 	{
-		return (ip[0] & 0xFF) | ((ip[1] << 8) & 0xFF00) | ((ip[2] << 16) & 0xFF0000) | ((ip[3] << 24) & 0xFF000000);
+		return ip[0] & 0xFF | ip[1] << 8 & 0xFF00 | ip[2] << 16 & 0xFF0000 | ip[3] << 24 & 0xFF000000;
 	}
 	
 	protected static final class Flood
@@ -85,7 +85,7 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 				return false;
 			}
 			
-			if ((f.lastAccess + 1000) > current)
+			if (f.lastAccess + 1000 > current)
 			{
 				f.lastAccess = current;
 				
@@ -118,7 +118,7 @@ public class IPv4Filter implements IAcceptFilter, Runnable
 	{
 		while (true)
 		{
-			long reference = System.currentTimeMillis() - (1000 * 300);
+			long reference = System.currentTimeMillis() - 1000 * 300;
 			synchronized (_ipFloodMap)
 			{
 				Iterator<Entry<Integer, Flood>> it = _ipFloodMap.entrySet().iterator();

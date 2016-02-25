@@ -47,11 +47,11 @@ public class ExOlympiadInfoList extends L2GameServerPacket
 		writeD(0x00); // This value makes the list be repeated multiple times
 		for (OlympiadGameTask task : _tasks)
 		{
-			if ((task == null) || (task.getGame() == null))
+			if (task == null || task.getGame() == null)
 				continue;
 			writeD(task.getGame().getGameId());
 			writeD(task.getGame().getType() == CompetitionType.NON_CLASSED ? 1 : 2);
-			writeD(task.isBattleStarted() ? 2 : (task.isGameStarted() ? 1 : 0));
+			writeD(task.isBattleStarted() ? 2 : task.isGameStarted() ? 1 : 0);
 			writeS(task.getGame().getPlayerNames()[0]);
 			writeS(task.getGame().getPlayerNames()[1]);
 		}

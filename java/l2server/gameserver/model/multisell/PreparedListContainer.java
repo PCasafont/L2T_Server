@@ -40,7 +40,7 @@ public class PreparedListContainer extends ListContainer
 		if (npc != null)
 		{
 			_npcObjectId = npc.getObjectId();
-			if (template.getApplyTaxes() && npc.getIsInTown() && (npc.getCastle().getOwnerId() > 0))
+			if (template.getApplyTaxes() && npc.getIsInTown() && npc.getCastle().getOwnerId() > 0)
 			{
 				_applyTaxes = true;
 				taxRate = npc.getCastle().getTaxRate();
@@ -64,7 +64,7 @@ public class PreparedListContainer extends ListContainer
 			{
 				// only do the matchup on equipable items that are not currently equipped
 				// so for each appropriate item, produce a set of entries for the multisell list.
-				if (!item.isEquipped() && ((item.getItem() instanceof L2Armor) || (item.getItem() instanceof L2Weapon)))
+				if (!item.isEquipped() && (item.getItem() instanceof L2Armor || item.getItem() instanceof L2Weapon))
 				{
 					// loop through the entries to see which ones we wish to include
 					for (MultiSellEntry ent : template.getEntries())

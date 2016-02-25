@@ -17,7 +17,7 @@ public class VanguardShilienKnight extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 315) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 315 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();
@@ -27,7 +27,7 @@ public class VanguardShilienKnight extends L2Transformation
 	{
 		int lvl = 1;
 		if (getPlayer().getLevel() > 42)
-			lvl = (getPlayer().getLevel() - 42);
+			lvl = getPlayer().getLevel() - 42;
 		
 		// Dual Weapon Mastery
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(144, lvl), false);
@@ -53,7 +53,7 @@ public class VanguardShilienKnight extends L2Transformation
 		// Remove Boost Morale effect
 		for (L2Abnormal e : getPlayer().getAllEffects())
 		{
-			if ((e != null) && (e.getSkill().getId() == 956))
+			if (e != null && e.getSkill().getId() == 956)
 				e.exit();
 		}
 	}
@@ -62,7 +62,7 @@ public class VanguardShilienKnight extends L2Transformation
 	{
 		int lvl = 1;
 		if (getPlayer().getLevel() > 42)
-			lvl = (getPlayer().getLevel() - 42);
+			lvl = getPlayer().getLevel() - 42;
 		
 		// Dual Weapon Mastery
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(144, lvl), false);

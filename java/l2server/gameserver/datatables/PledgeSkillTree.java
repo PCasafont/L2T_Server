@@ -137,13 +137,13 @@ public class PledgeSkillTree
 			{
 				boolean knownSkill = false;
 				
-				for (int j = 0; (j < oldSkills.length) && !knownSkill; j++)
+				for (int j = 0; j < oldSkills.length && !knownSkill; j++)
 				{
 					if (oldSkills[j].getId() == temp.getId())
 					{
 						knownSkill = true;
 						
-						if (oldSkills[j].getLevelHash() == (temp.getLevel() - 1))
+						if (oldSkills[j].getLevelHash() == temp.getLevel() - 1)
 						{
 							// this is the next level of a skill that we know
 							result.add(temp);
@@ -151,7 +151,7 @@ public class PledgeSkillTree
 					}
 				}
 				
-				if (!knownSkill && (temp.getLevel() == 1))
+				if (!knownSkill && temp.getLevel() == 1)
 				{
 					// this is a new skill
 					result.add(temp);

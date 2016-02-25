@@ -124,7 +124,7 @@ public class L2PetInstance extends L2Summon
 		{
 			try
 			{
-				if ((getOwner() == null) || (getOwner().getPet() == null) || (getOwner().getPet().getObjectId() != getObjectId()))
+				if (getOwner() == null || getOwner().getPet() == null || getOwner().getPet().getObjectId() != getObjectId())
 				{
 					stopFeed();
 					return;
@@ -147,7 +147,7 @@ public class L2PetInstance extends L2Summon
 					if (getCurrentFed() == 0)
 					{
 						// Owl Monk remove PK
-						if ((getTemplate().NpcId == 16050) && (getOwner() != null))
+						if (getTemplate().NpcId == 16050 && getOwner() != null)
 						{
 							getOwner().setPkKills(Math.max(0, getOwner().getPkKills() - Rnd.get(1, 6)));
 						}
@@ -173,7 +173,7 @@ public class L2PetInstance extends L2Summon
 				{
 					setRunning();
 				}
-				if ((food != null) && isHungry())
+				if (food != null && isHungry())
 				{
 					IItemHandler handler = ItemHandler.getInstance().getItemHandler(food.getEtcItem());
 					if (handler != null)
@@ -199,7 +199,7 @@ public class L2PetInstance extends L2Summon
 							deleteMe(getOwner());
 						}
 					}
-					else if (getCurrentFed() < (0.10 * getPetLevelData().getPetMaxFeed()))
+					else if (getCurrentFed() < 0.10 * getPetLevelData().getPetMaxFeed())
 					{
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_CAN_RUN_AWAY_WHEN_HUNGER_BELOW_10_PERCENT);
 						getOwner().sendPacket(sm);
@@ -339,7 +339,7 @@ public class L2PetInstance extends L2Summon
 	{
 		for (L2ItemInstance item : getInventory().getItems())
 		{
-			if ((item.getLocation() == L2ItemInstance.ItemLocation.PET_EQUIP) && (item.getItem().getBodyPart() == L2Item.SLOT_R_HAND))
+			if (item.getLocation() == L2ItemInstance.ItemLocation.PET_EQUIP && item.getItem().getBodyPart() == L2Item.SLOT_R_HAND)
 				return item;
 		}
 		
@@ -525,7 +525,7 @@ public class L2PetInstance extends L2Summon
 				return;
 			}
 			
-			if ((target.getOwnerId() != 0) && (target.getOwnerId() != getOwner().getObjectId()) && !getOwner().isInLooterParty(target.getOwnerId()))
+			if (target.getOwnerId() != 0 && target.getOwnerId() != getOwner().getObjectId() && !getOwner().isInLooterParty(target.getOwnerId()))
 			{
 				getOwner().sendPacket(ActionFailed.STATIC_PACKET);
 				
@@ -551,7 +551,7 @@ public class L2PetInstance extends L2Summon
 				
 				return;
 			}
-			if ((target.getItemLootShedule() != null) && ((target.getOwnerId() == getOwner().getObjectId()) || getOwner().isInLooterParty(target.getOwnerId())))
+			if (target.getItemLootShedule() != null && (target.getOwnerId() == getOwner().getObjectId() || getOwner().isInLooterParty(target.getOwnerId())))
 				target.resetOwnerTimer();
 			
 			target.pickupMe(this);
@@ -631,7 +631,7 @@ public class L2PetInstance extends L2Summon
 		DecayTaskManager.getInstance().addDecayTask(this, PET_DECAY_DELAY);
 		// do not decrease exp if is in duel, arena
 		L2PcInstance owner = getOwner();
-		if ((owner != null) && !owner.isInDuel() && (!isInsideZone(ZONE_PVP) || isInsideZone(ZONE_SIEGE)))
+		if (owner != null && !owner.isInDuel() && (!isInsideZone(ZONE_PVP) || isInsideZone(ZONE_SIEGE)))
 		{
 			deathPenalty();
 		}
@@ -685,7 +685,7 @@ public class L2PetInstance extends L2Summon
 		
 		// Send inventory update packet
 		PetInventoryUpdate petIU = new PetInventoryUpdate();
-		if ((oldItem.getCount() > 0) && (oldItem != newItem))
+		if (oldItem.getCount() > 0 && oldItem != newItem)
 			petIU.addModifiedItem(oldItem);
 		else
 			petIU.addRemovedItem(oldItem);
@@ -698,7 +698,7 @@ public class L2PetInstance extends L2Summon
 			iu.addNewItem(newItem);
 			getOwner().sendPacket(iu);
 		}
-		else if ((playerOldItem != null) && newItem.isStackable())
+		else if (playerOldItem != null && newItem.isStackable())
 		{
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(newItem);
@@ -842,7 +842,7 @@ public class L2PetInstance extends L2Summon
 			L2PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getNpcId(), pet.getLevel());
 			// DS: update experience based by level
 			// Avoiding pet delevels due to exp per level values changed.
-			if ((info != null) && (exp < info.getPetMaxExp()))
+			if (info != null && exp < info.getPetMaxExp())
 				exp = info.getPetMaxExp();
 			
 			pet.getStat().setExp(exp);
@@ -915,7 +915,7 @@ public class L2PetInstance extends L2Summon
 		}
 		
 		L2ItemInstance itemInst = getControlItem();
-		if ((itemInst != null) && (itemInst.getEnchantLevel() != getStat().getLevel()))
+		if (itemInst != null && itemInst.getEnchantLevel() != getStat().getLevel())
 		{
 			itemInst.setEnchantLevel(getStat().getLevel());
 			itemInst.updateDatabase();
@@ -938,7 +938,7 @@ public class L2PetInstance extends L2Summon
 		// stop feeding task if its active
 		
 		stopFeed();
-		if (!isDead() && (getOwner().getPet() == this))
+		if (!isDead() && getOwner().getPet() == this)
 			_feedTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new FeedTask(), 10000, 10000);
 	}
 	
@@ -951,7 +951,7 @@ public class L2PetInstance extends L2Summon
 		
 		if (!isDead())
 		{
-			if ((getInventory() != null) && (owner.getPetInv() == null))
+			if (getInventory() != null && owner.getPetInv() == null)
 				getInventory().deleteMe();
 			
 			L2World.getInstance().removePet(owner.getObjectId());
@@ -966,7 +966,7 @@ public class L2PetInstance extends L2Summon
 		if (_expBeforeDeath > 0)
 		{
 			// Restore the specified % of lost experience.
-			getStat().addExp(Math.round(((_expBeforeDeath - getStat().getExp()) * restorePercent) / 100));
+			getStat().addExp(Math.round((_expBeforeDeath - getStat().getExp()) * restorePercent / 100));
 			_expBeforeDeath = 0;
 		}
 	}
@@ -976,7 +976,7 @@ public class L2PetInstance extends L2Summon
 		// TODO Need Correct Penalty
 		
 		int lvl = getStat().getLevel();
-		double percentLost = (-0.07 * lvl) + 6.5;
+		double percentLost = -0.07 * lvl + 6.5;
 		
 		long levelExp = getStat().getExpForLevel(lvl);
 		long nextLevelExp = getStat().getExpForLevel(lvl + 1);
@@ -984,11 +984,11 @@ public class L2PetInstance extends L2Summon
 		if (nextLevelExp < levelExp)
 			nextLevelExp = levelExp;
 		// Calculate the Experience loss
-		long lostExp = Math.round(((nextLevelExp - levelExp) * percentLost) / 100);
+		long lostExp = Math.round((nextLevelExp - levelExp) * percentLost / 100);
 		
 		// Get the Experience before applying penalty
 		_expBeforeDeath = getStat().getExp();
-		if (lostExp > (_expBeforeDeath - levelExp))
+		if (lostExp > _expBeforeDeath - levelExp)
 			lostExp = _expBeforeDeath - levelExp;
 		
 		// Set the new Experience value of the L2PetInstance
@@ -1052,7 +1052,7 @@ public class L2PetInstance extends L2Summon
 			return -1;
 		
 		final int lvl = getLevel();
-		return lvl > 70 ? 7 + ((lvl - 70) / 5) : lvl / 10;
+		return lvl > 70 ? 7 + (lvl - 70) / 5 : lvl / 10;
 	}
 	
 	public void updateRefOwner(L2PcInstance owner)
@@ -1085,9 +1085,9 @@ public class L2PetInstance extends L2Summon
 		int maxLoad = getMaxLoad();
 		if (maxLoad > 0)
 		{
-			int weightproc = (getCurrentLoad() * 1000) / maxLoad;
+			int weightproc = getCurrentLoad() * 1000 / maxLoad;
 			int newWeightPenalty;
-			if ((weightproc < 500) || getOwner().getDietMode())
+			if (weightproc < 500 || getOwner().getDietMode())
 			{
 				newWeightPenalty = 0;
 			}
@@ -1135,7 +1135,7 @@ public class L2PetInstance extends L2Summon
 	@Override
 	public final boolean isHungry()
 	{
-		return getCurrentFed() < ((getPetData().getHungry_limit() / 100f) * getPetLevelData().getPetMaxFeed());
+		return getCurrentFed() < getPetData().getHungry_limit() / 100f * getPetLevelData().getPetMaxFeed();
 	}
 	
 	@Override
@@ -1186,7 +1186,7 @@ public class L2PetInstance extends L2Summon
 	public void setName(String name)
 	{
 		L2ItemInstance controlItem = getControlItem();
-		if ((controlItem != null) && (controlItem.getCustomType2() == (name == null ? 1 : 0)))
+		if (controlItem != null && controlItem.getCustomType2() == (name == null ? 1 : 0))
 		{
 			// name not set yet
 			controlItem.setCustomType2(name != null ? 1 : 0);

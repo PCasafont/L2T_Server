@@ -50,7 +50,7 @@ public class Potions extends ItemSkills
 		else
 			return;
 		
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -97,7 +97,7 @@ public class Potions extends ItemSkills
 			{
 				L2PcInstance player = (L2PcInstance) activeChar;
 				// Only for Heal potions
-				if ((magicId == 2031) || (magicId == 2032) || (magicId == 2037))
+				if (magicId == 2031 || magicId == 2032 || magicId == 2037)
 					player.shortBuffStatusUpdate(magicId, level, 15);
 				
 				if (!(player.isSitting() && !skill.isPotion()))
@@ -107,7 +107,7 @@ public class Potions extends ItemSkills
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1);
 				sm.addString(skill.getName());
-				((L2PetInstance) (activeChar)).getOwner().sendPacket(sm);
+				((L2PetInstance) activeChar).getOwner().sendPacket(sm);
 				return true;
 			}
 		}
@@ -123,12 +123,12 @@ public class Potions extends ItemSkills
 		final Map<Integer, TimeStamp> timeStamp = player.getReuseTimeStamp();
 		SystemMessage sm = null;
 		
-		if ((timeStamp != null) && timeStamp.containsKey(skill.getId()))
+		if (timeStamp != null && timeStamp.containsKey(skill.getId()))
 		{
 			final int remainingTime = (int) (player.getReuseTimeStamp().get(skill.getId()).getRemaining() / 1000);
 			final int hours = remainingTime / 3600;
-			final int minutes = (remainingTime % 3600) / 60;
-			final int seconds = (remainingTime % 60);
+			final int minutes = remainingTime % 3600 / 60;
+			final int seconds = remainingTime % 60;
 			if (hours > 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);

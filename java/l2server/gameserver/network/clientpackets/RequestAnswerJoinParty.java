@@ -62,7 +62,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 		
 		if (_response == 1)
 		{
-			if (requestor.isInParty() && (requestor.getParty().getMemberCount() >= Config.MAX_MEMBERS_IN_PARTY))
+			if (requestor.isInParty() && requestor.getParty().getMemberCount() >= Config.MAX_MEMBERS_IN_PARTY)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_FULL);
 				player.sendPacket(sm);
@@ -75,7 +75,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			if (requestor.isInPartyMatchRoom() && player.isInPartyMatchRoom())
 			{
 				final PartyMatchRoomList list = PartyMatchRoomList.getInstance();
-				if ((list != null) && (list.getPlayerRoomId(requestor) == list.getPlayerRoomId(player)))
+				if (list != null && list.getPlayerRoomId(requestor) == list.getPlayerRoomId(player))
 				{
 					final PartyMatchRoom room = list.getPlayerRoom(requestor);
 					if (room != null)
@@ -118,7 +118,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			requestor.sendPacket(sm);
 			
 			//activate garbage collection if there are no other members in party (happens when we were creating new one)
-			if (requestor.isInParty() && (requestor.getParty().getMemberCount() == 1))
+			if (requestor.isInParty() && requestor.getParty().getMemberCount() == 1)
 				requestor.getParty().removePartyMember(requestor, messageType.None);
 		}
 		else
@@ -127,7 +127,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			//requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PLAYER_DECLINED));
 			
 			//activate garbage collection if there are no other members in party (happens when we were creating new one)
-			if (requestor.isInParty() && (requestor.getParty().getMemberCount() == 1))
+			if (requestor.isInParty() && requestor.getParty().getMemberCount() == 1)
 				requestor.getParty().removePartyMember(requestor, messageType.None);
 		}
 		

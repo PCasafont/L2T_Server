@@ -67,7 +67,7 @@ public class RentPet implements IBypassHandler
 	
 	public static final void tryRentPet(L2PcInstance player, int val)
 	{
-		if ((player == null) || (player.getPet() != null) || player.isMounted() || player.isRentedPet() || player.isTransformed() || player.isCursedWeaponEquipped() || !player.disarmWeapons())
+		if (player == null || player.getPet() != null || player.isMounted() || player.isRentedPet() || player.isTransformed() || player.isCursedWeaponEquipped() || !player.disarmWeapons())
 			return;
 		
 		int petId;
@@ -84,7 +84,7 @@ public class RentPet implements IBypassHandler
 		else
 			petId = 12621;
 		
-		if ((val < 1) || (val > 4))
+		if (val < 1 || val > 4)
 			return;
 		
 		price *= cost[val - 1];

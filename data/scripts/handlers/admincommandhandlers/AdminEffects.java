@@ -313,11 +313,11 @@ public class AdminEffects implements IAdminCommandHandler
 				int val = Integer.parseInt(st.nextToken());
 				boolean sendMessage = activeChar.getFirstEffect(7029) != null;
 				activeChar.stopSkillEffects(7029);
-				if ((val == 0) && sendMessage)
+				if (val == 0 && sendMessage)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(7029));
 				}
-				else if ((val >= 1) && (val <= 10))
+				else if (val >= 1 && val <= 10)
 				{
 					L2Skill gmSpeedSkill = SkillTable.getInstance().getInfo(7029, val);
 					activeChar.doSimultaneousCast(gmSpeedSkill);
@@ -639,12 +639,12 @@ public class AdminEffects implements IAdminCommandHandler
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;
 				}
-				if ((target instanceof L2Npc) && ((action < 1) || (action > 10)))
+				if (target instanceof L2Npc && (action < 1 || action > 10))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;
 				}
-				if ((target instanceof L2PcInstance) && ((action < 2) || (action > 34) || (action == 19)) && (action != SocialAction.LEVEL_UP))
+				if (target instanceof L2PcInstance && (action < 2 || action > 34 || action == 19) && action != SocialAction.LEVEL_UP)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 					return false;

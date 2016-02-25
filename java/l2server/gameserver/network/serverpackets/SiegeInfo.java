@@ -61,7 +61,7 @@ public class SiegeInfo extends L2GameServerPacket
 			return;
 		
 		writeD(_castle.getCastleId());
-		writeD(((_castle.getOwnerId() == activeChar.getClanId()) && (activeChar.isClanLeader())) ? 0x01 : 0x00);
+		writeD(_castle.getOwnerId() == activeChar.getClanId() && activeChar.isClanLeader() ? 0x01 : 0x00);
 		writeD(_castle.getOwnerId());
 		if (_castle.getOwnerId() > 0)
 		{

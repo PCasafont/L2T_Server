@@ -18,7 +18,7 @@ public class ArcherHorse extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 132) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 132 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

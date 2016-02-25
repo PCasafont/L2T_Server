@@ -89,11 +89,11 @@ public class SiegeManager
 		L2PcInstance player = (L2PcInstance) activeChar;
 		Castle castle = CastleManager.getInstance().getCastle(player);
 		
-		if ((castle == null) || (castle.getCastleId() <= 0))
+		if (castle == null || castle.getCastleId() <= 0)
 			text = "You must be on castle ground to summon this";
 		else if (!castle.getSiege().getIsInProgress())
 			text = "You can only summon this during a siege.";
-		else if ((player.getClanId() != 0) && (castle.getSiege().getAttackerClan(player.getClanId()) == null))
+		else if (player.getClanId() != 0 && castle.getSiege().getAttackerClan(player.getClanId()) == null)
 			text = "You can only summon this as a registered attacker.";
 		else
 			return true;

@@ -82,7 +82,7 @@ public class PartySearchManager
 			if (player == null)
 				continue;
 			
-			if ((player.getLevel() == level) && (player.getClassId() == classId))
+			if (player.getLevel() == level && player.getClassId() == classId)
 				return player;
 		}
 		return null;
@@ -92,7 +92,7 @@ public class PartySearchManager
 	{
 		for (L2PcInstance player : wannaToChangeThisPlayer)
 		{
-			if ((player.getLevel() == level) && (player.getClassId() == classId))
+			if (player.getLevel() == level && player.getClassId() == classId)
 				return player;
 		}
 		return null;
@@ -115,7 +115,7 @@ public class PartySearchManager
 	{
 		for (L2PcInstance player : wannaToChangeThisPlayer)
 		{
-			if ((player.getLevel() == level) && (player.getClassId() == classId))
+			if (player.getLevel() == level && player.getClassId() == classId)
 				return player;
 		}
 		return null;

@@ -139,7 +139,7 @@ public abstract class BaseGameServerRegister
 				String loc = args[++i];
 				Locale[] availableLocales = Locale.getAvailableLocales();
 				Locale l;
-				for (int j = 0; (j < availableLocales.length) && (locale == null); j++)
+				for (int j = 0; j < availableLocales.length && locale == null; j++)
 				{
 					l = availableLocales[j];
 					if (l.toString().equals(loc))

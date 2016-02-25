@@ -140,7 +140,7 @@ public class FearonSiege extends Quest
 			for (int i = 1; i <= 20; i++)
 			{
 				Map<Integer, Integer> rewards = new HashMap<Integer, Integer>();
-				rewards.put(4357, 20000 + (500 * i)); //Silver Shilen
+				rewards.put(4357, 20000 + 500 * i); //Silver Shilen
 				
 				if (i >= 5)
 					rewards.put(36513, 5 + i); //Elcyum Powder
@@ -198,7 +198,7 @@ public class FearonSiege extends Quest
 		}
 		else if (event.equalsIgnoreCase("launch_event"))
 		{
-			if (player.isGM() && (_eventStatus == 0))
+			if (player.isGM() && _eventStatus == 0)
 			{
 				_eventStatus = 1;
 				
@@ -215,10 +215,10 @@ public class FearonSiege extends Quest
 		}
 		else if (event.equalsIgnoreCase("enter_instance"))
 		{
-			if (_isEventOn && (_eventStatus == 1) && (_eventRound < 15) && (_instanceId != 0))
+			if (_isEventOn && _eventStatus == 1 && _eventRound < 15 && _instanceId != 0)
 			{
 				String playerHwid = player.getHWID();
-				if (((playerHwid != null) && !playerHwid.isEmpty() && !_hwids.contains(playerHwid)) || (_playerIds.contains(player.getObjectId()) && _hwids.contains(playerHwid)))
+				if (playerHwid != null && !playerHwid.isEmpty() && !_hwids.contains(playerHwid) || _playerIds.contains(player.getObjectId()) && _hwids.contains(playerHwid))
 				{
 					_hwids.add(playerHwid);
 					_playerIds.add(player.getObjectId());
@@ -314,7 +314,7 @@ public class FearonSiege extends Quest
 			 */
 			Collection<L2Character> chars = _protectionStone.getKnownList().getKnownCharactersInRadius(_protectionSkill.getSkillRadius());
 			
-			if ((chars != null) && !chars.isEmpty())
+			if (chars != null && !chars.isEmpty())
 			{
 				for (L2Character chara : chars)
 				{
@@ -341,15 +341,15 @@ public class FearonSiege extends Quest
 			 *
 			 * This NPC will cast non-stop a heal skill to all players around
 			 */
-			if ((_summonTreeHelper != null) && !_summonTreeHelper.isDecayed())
+			if (_summonTreeHelper != null && !_summonTreeHelper.isDecayed())
 			{
 				Collection<L2Character> chars = _summonTreeHelper.getKnownList().getKnownCharactersInRadius(_blessingOfTree.getSkillRadius());
 				
-				if ((chars != null) && !chars.isEmpty())
+				if (chars != null && !chars.isEmpty())
 				{
 					for (L2Character chara : chars)
 					{
-						if ((chara == null) || !chara.isInsideRadius(_summonTreeHelper, _blessingOfTree.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
+						if (chara == null || !chara.isInsideRadius(_summonTreeHelper, _blessingOfTree.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
 							continue;
 						
 						_blessingOfTree.getEffects(_summonTreeHelper, chara);
@@ -364,15 +364,15 @@ public class FearonSiege extends Quest
 			 *
 			 * This NPC will cast non-stop a UD skill to all players inside
 			 */
-			if ((_summonGravityCore != null) && !_summonGravityCore.isDecayed())
+			if (_summonGravityCore != null && !_summonGravityCore.isDecayed())
 			{
 				Collection<L2Character> chars = _summonGravityCore.getKnownList().getKnownCharactersInRadius(_ultimateDef.getSkillRadius());
 				
-				if ((chars != null) && !chars.isEmpty())
+				if (chars != null && !chars.isEmpty())
 				{
 					for (L2Character chara : chars)
 					{
-						if ((chara == null) || !chara.isInsideRadius(_summonGravityCore, _ultimateDef.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
+						if (chara == null || !chara.isInsideRadius(_summonGravityCore, _ultimateDef.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
 							continue;
 						
 						_ultimateDef.getEffects(_summonGravityCore, chara);
@@ -414,7 +414,7 @@ public class FearonSiege extends Quest
 			 */
 			final Collection<L2PcInstance> chars = _warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
 			
-			if ((chars != null) && !chars.isEmpty())
+			if (chars != null && !chars.isEmpty())
 			{
 				if (_warriorMageSup.getCurrentMp() < 800)
 					_warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(), "My mana power are decreasing so fast...!"));
@@ -428,7 +428,7 @@ public class FearonSiege extends Quest
 					
 					if (chara.isDead() && _warriorMageSup.isInsideRadius(chara, _resSkill.getCastRange(), false, false))
 						deadPlayers.add(chara);
-					else if (chara.getCurrentHp() < (chara.getMaxHp() * 0.80))
+					else if (chara.getCurrentHp() < chara.getMaxHp() * 0.80)
 						fuckedPlayers.add(chara);
 				}
 				
@@ -437,7 +437,7 @@ public class FearonSiege extends Quest
 				if (deadPlayers.size() > 0)
 				{
 					final L2PcInstance target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
-					if ((target != null) && target.isDead() && _warriorMageSup.isInsideRadius(target, _resSkill.getCastRange(), false, false))
+					if (target != null && target.isDead() && _warriorMageSup.isInsideRadius(target, _resSkill.getCastRange(), false, false))
 					{
 						_warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(), target.getName() + " I'll resurrect you!"));
 						
@@ -447,23 +447,23 @@ public class FearonSiege extends Quest
 						nextActionTime += _resSkill.getHitTime() + 2000;
 					}
 				}
-				else if ((fuckedCount > 0) && (fuckedCount <= 5)) //HEAL
+				else if (fuckedCount > 0 && fuckedCount <= 5) //HEAL
 				{
 					L2PcInstance target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
 					
-					if ((target != null) && (_warriorMageSup.getCurrentMp() >= _healSkill.getMpConsume()))
+					if (target != null && _warriorMageSup.getCurrentMp() >= _healSkill.getMpConsume())
 					{
 						_warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(), target.getName() + " let me give you a hand!"));
 						
 						_warriorMageSup.setTarget(target);
 						_warriorMageSup.doCast(_healSkill);
 						
-						nextActionTime += (_healSkill.getHitTime() + 3000);
+						nextActionTime += _healSkill.getHitTime() + 3000;
 					}
 				}
-				else if ((fuckedCount > 5) && (fuckedCount <= 10)) //Summon Tree of Life
+				else if (fuckedCount > 5 && fuckedCount <= 10) //Summon Tree of Life
 				{
-					if ((_summonTreeHelper == null) || (_summonTreeHelper.isDecayed() && (_warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()))) //Be sure we don't spawn more than one
+					if (_summonTreeHelper == null || _summonTreeHelper.isDecayed() && _warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()) //Be sure we don't spawn more than one
 					{
 						_warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(), "Ahhgrr! This will help us!"));
 						
@@ -486,12 +486,12 @@ public class FearonSiege extends Quest
 							}
 						}, _summonTree.getHitTime() + 1000);
 						
-						nextActionTime += (_summonTree.getHitTime() + 5000);
+						nextActionTime += _summonTree.getHitTime() + 5000;
 					}
 				}
 				else if (fuckedCount > 10) //Protective Gravity Core
 				{
-					if ((_summonGravityCore == null) || (_summonGravityCore.isDecayed() && (_warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()))) //Be sure we don't spawn more than one
+					if (_summonGravityCore == null || _summonGravityCore.isDecayed() && _warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()) //Be sure we don't spawn more than one
 					{
 						_warriorMageSup.broadcastPacket(new CreatureSay(_warriorMageSup.getObjectId(), 1, _warriorMageSup.getName(), "Desperate situations need desperate measures! Come all! Enter enter into that shield!"));
 						
@@ -514,22 +514,22 @@ public class FearonSiege extends Quest
 							}
 						}, _summonCore.getHitTime() + 1000);
 						
-						nextActionTime += (_summonCore.getHitTime() + 5000);
+						nextActionTime += _summonCore.getHitTime() + 5000;
 					}
 				}
 				else
 				//Give Buffs
 				{
 					int buffLevel = 0;
-					if (_bossMakkum.getCurrentHp() < (_bossMakkum.getMaxHp() * 0.50))
+					if (_bossMakkum.getCurrentHp() < _bossMakkum.getMaxHp() * 0.50)
 						buffLevel = 1;
-					else if (_bossMakkum.getCurrentHp() < (_bossMakkum.getMaxHp() * 0.30))
+					else if (_bossMakkum.getCurrentHp() < _bossMakkum.getMaxHp() * 0.30)
 						buffLevel = 2;
-					else if (_bossMakkum.getCurrentHp() < (_bossMakkum.getMaxHp() * 0.10))
+					else if (_bossMakkum.getCurrentHp() < _bossMakkum.getMaxHp() * 0.10)
 						buffLevel = 3;
 					
 					final L2Skill buffSkill = SkillTable.getInstance().getInfo(_fullBuffsIds[Rnd.get(_fullBuffsIds.length)] + buffLevel, 1);
-					if ((buffSkill != null) && (_warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume()))
+					if (buffSkill != null && _warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume())
 					{
 						String skillType = buffSkill.getName().split(" ")[2];
 						
@@ -546,7 +546,7 @@ public class FearonSiege extends Quest
 							{
 								for (L2PcInstance chara : chars)
 								{
-									if ((chara == null) || !chara.isInsideRadius(_warriorMageSup, 150, false, false))
+									if (chara == null || !chara.isInsideRadius(_warriorMageSup, 150, false, false))
 										continue;
 									
 									buffSkill.getEffects(_warriorMageSup, chara);
@@ -554,7 +554,7 @@ public class FearonSiege extends Quest
 							}
 						}, _buffPresentation.getHitTime() + 700);
 						
-						nextActionTime += (buffSkill.getHitTime() + 9000);
+						nextActionTime += buffSkill.getHitTime() + 9000;
 					}
 				}
 				startQuestTimer("ai_magic_sup", nextActionTime, null, null);
@@ -663,7 +663,7 @@ public class FearonSiege extends Quest
 		L2Party party = player.getParty();
 		if (party != null)
 		{
-			if ((skill.getTargetType() != L2SkillTargetType.TARGET_SELF) && (skill.getSkillType().toString().contains("HEAL") || skill.getSkillType().toString().contains("BUFF")))
+			if (skill.getTargetType() != L2SkillTargetType.TARGET_SELF && (skill.getSkillType().toString().contains("HEAL") || skill.getSkillType().toString().contains("BUFF")))
 			{
 				synchronized (_attackerParty)
 				{
@@ -882,7 +882,7 @@ public class FearonSiege extends Quest
 		
 		if (npc.getNpcId() == _makkumBossId)
 		{
-			if ((_eventStatus == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.90)))
+			if (_eventStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.90)
 			{
 				_eventStatus = 2;
 				
@@ -926,7 +926,7 @@ public class FearonSiege extends Quest
 					}
 				}, 12000);
 			}
-			else if ((_eventStatus == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.50)))
+			else if (_eventStatus == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
 			{
 				_eventStatus = 3;
 				
@@ -981,7 +981,7 @@ public class FearonSiege extends Quest
 					}
 				}, 12000);
 			}
-			else if ((_eventStatus == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.10)))
+			else if (_eventStatus == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.10)
 			{
 				_eventStatus = 4;
 				

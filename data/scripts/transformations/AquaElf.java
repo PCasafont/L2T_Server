@@ -18,7 +18,7 @@ public class AquaElf extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 125) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 125 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

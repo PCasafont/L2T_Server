@@ -71,10 +71,10 @@ public class ShortCuts
 	
 	public L2ShortCut getShortCut(int slot, int page)
 	{
-		L2ShortCut sc = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).get(slot + (page * 12));
+		L2ShortCut sc = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).get(slot + page * 12);
 		
 		// verify shortcut
-		if ((sc != null) && (sc.getType() == L2ShortCut.TYPE_ITEM))
+		if (sc != null && sc.getType() == L2ShortCut.TYPE_ITEM)
 		{
 			if (_owner.getInventory().getItemByObjectId(sc.getId()) == null)
 			{
@@ -119,7 +119,7 @@ public class ShortCuts
 			_shortCuts.get(_owner.getClassIndex()).put(_owner.getGearGradeForCurrentLevel(), new HashMap<Integer, L2ShortCut>());
 		}
 		
-		L2ShortCut oldShortCut = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + (12 * shortcut.getPage()), shortcut);
+		L2ShortCut oldShortCut = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + 12 * shortcut.getPage(), shortcut);
 		
 		registerShortCutInDb(shortcut, oldShortCut);
 	}
@@ -218,7 +218,7 @@ public class ShortCuts
 			_owner.sendSysMessage("Adding LevelRange");
 		}
 		
-		_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + (shortcut.getPage() * 12), shortcut);
+		_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + shortcut.getPage() * 12, shortcut);
 	}
 	
 	/**
@@ -226,13 +226,13 @@ public class ShortCuts
 	 */
 	public synchronized void deleteShortCut(int slot, int page)
 	{
-		if ((_shortCuts.get(_owner.getClassIndex()) == null) || (_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null))
+		if (_shortCuts.get(_owner.getClassIndex()) == null || _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null)
 			return;
 		
-		L2ShortCut old = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).remove(slot + (page * 12));
+		L2ShortCut old = _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).remove(slot + page * 12);
 		
 		_owner.sendSysMessage("Old Shortcut = " + old);
-		if ((old == null) || (_owner == null))
+		if (old == null || _owner == null)
 			return;
 		
 		deleteShortCutFromDb(old);
@@ -241,7 +241,7 @@ public class ShortCuts
 	
 	public synchronized void deleteShortCutByObjectId(int objectId)
 	{
-		if ((_shortCuts.get(_owner.getClassIndex()) == null) || (_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null))
+		if (_shortCuts.get(_owner.getClassIndex()) == null || _shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()) == null)
 			return;
 		
 		try
@@ -252,7 +252,7 @@ public class ShortCuts
 			{
 				if (shortcut == null)
 					continue;
-				if ((shortcut.getType() == L2ShortCut.TYPE_ITEM) && (shortcut.getId() == objectId))
+				if (shortcut.getType() == L2ShortCut.TYPE_ITEM && shortcut.getId() == objectId)
 				{
 					toRemove = shortcut;
 					break;
@@ -306,7 +306,7 @@ public class ShortCuts
 	
 	public void restore(final int classIndex, final int levelRange, boolean loadDefault)
 	{
-		_hasPresetForCurrentLevel = _shortCuts.containsKey(classIndex) && _shortCuts.get(classIndex).containsKey(levelRange) && (_shortCuts.get(classIndex).get(levelRange).values().size() != 0);
+		_hasPresetForCurrentLevel = _shortCuts.containsKey(classIndex) && _shortCuts.get(classIndex).containsKey(levelRange) && _shortCuts.get(classIndex).get(levelRange).values().size() != 0;
 		
 		//if (_hasPresetForCurrentLevel)
 		//	_shortCuts.get(_owner.getClassIndex()).get(_owner.getGearGradeForCurrentLevel()).clear();
@@ -380,7 +380,7 @@ public class ShortCuts
 						int level = rset.getInt("level");
 						
 						// Update shortcuts for old skill enchants
-						if (Config.isServer(Config.DREAMS) && (type == 2) && (level > 100) && (level < 1500))
+						if (Config.isServer(Config.DREAMS) && type == 2 && level > 100 && level < 1500)
 						{
 							level = _owner.getSkillLevel(id);
 							
@@ -390,7 +390,7 @@ public class ShortCuts
 						
 						L2ShortCut sc = new L2ShortCut(slot, page, type, id, level, 1);
 						
-						_shortCuts.get(classIndex).get(levelRange).put(slot + (page * 12), sc);
+						_shortCuts.get(classIndex).get(levelRange).put(slot + page * 12, sc);
 					}
 					
 					//System.out.println("Shortcuts Size = " +  _shortCuts.get(classIndex).get(levelRange).values().size());

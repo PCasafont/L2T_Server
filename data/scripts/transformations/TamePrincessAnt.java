@@ -18,7 +18,7 @@ public class TamePrincessAnt extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 20008) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 20008 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

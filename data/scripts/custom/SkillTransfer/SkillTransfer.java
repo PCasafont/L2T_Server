@@ -91,7 +91,7 @@ public class SkillTransfer extends Quest
 	@Override
 	public final String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
-		if ((player == null) || (skill == null))
+		if (player == null || skill == null)
 			return null;
 		
 		final int index = getTransferClassIndex(player);
@@ -101,7 +101,7 @@ public class SkillTransfer extends Quest
 			
 			for (int[] element : skillsList)
 			{
-				if ((skill.getId() == element[0]) && (skill.getLevel() <= element[1]))
+				if (skill.getId() == element[0] && skill.getLevel() <= element[1])
 				{
 					final int itemId = PORMANDERS[index][0];
 					if (player.getInventory().getItemByItemId(itemId) != null)
@@ -122,7 +122,7 @@ public class SkillTransfer extends Quest
 	@Override
 	public final String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
-		if ((player == null) || (skill == null))
+		if (player == null || skill == null)
 			return null;
 		
 		final int index = getTransferClassIndex(player);
@@ -155,14 +155,14 @@ public class SkillTransfer extends Quest
 		
 		if (event.equalsIgnoreCase("learn"))
 		{
-			if ((player.getLevel() < 76) || (player.getCurrentClass().level() < 3))
+			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3)
 				htmltext = "learn-lowlevel.htm";
 			else
 				onAcquireSkillList(npc, player);
 		}
 		else if (event.equalsIgnoreCase("cleanse"))
 		{
-			if ((player.getLevel() < 76) || (player.getCurrentClass().level() < 3))
+			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3)
 			{
 				htmltext = "cleanse-no.htm";
 				return htmltext;
@@ -251,7 +251,7 @@ public class SkillTransfer extends Quest
 						if (SKILL_TRANSFER_TREE[index][i][0] == s.getId())
 						{
 							// Holy Weapon allowed for Shilien Saint/Inquisitor stance
-							if ((s.getId() == 1043) && (index == 2) && player.isInStance())
+							if (s.getId() == 1043 && index == 2 && player.isInStance())
 								continue;
 							
 							count--;

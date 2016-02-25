@@ -54,7 +54,7 @@ public class TerritoryWar implements IBypassHandler
 			else if (!(target instanceof L2MercenaryManagerInstance))
 				return false;
 			
-			L2MercenaryManagerInstance mercman = ((L2MercenaryManagerInstance) target);
+			L2MercenaryManagerInstance mercman = (L2MercenaryManagerInstance) target;
 			if (actualCommand.equalsIgnoreCase("TW_Multisell"))
 			{
 				if (st.countTokens() < 1)
@@ -152,7 +152,7 @@ public class TerritoryWar implements IBypassHandler
 				int territoryId = Integer.parseInt(st.nextToken());
 				int[] reward = TerritoryWarManager.getInstance().calcReward(activeChar);
 				NpcHtmlMessage html = new NpcHtmlMessage(mercman.getObjectId());
-				if (TerritoryWarManager.getInstance().isTWInProgress() || (reward[0] == 0))
+				if (TerritoryWarManager.getInstance().isTWInProgress() || reward[0] == 0)
 					html.setFile(activeChar.getHtmlPrefix(), "mercmanager/reward-0a.htm");
 				else if (reward[0] != territoryId)
 				{
@@ -181,7 +181,7 @@ public class TerritoryWar implements IBypassHandler
 					badgeId = TerritoryWarManager.getInstance().TERRITORY_ITEM_IDS.get(territoryId);
 				int[] reward = TerritoryWarManager.getInstance().calcReward(activeChar);
 				NpcHtmlMessage html = new NpcHtmlMessage(mercman.getObjectId());
-				if (TerritoryWarManager.getInstance().isTWInProgress() || (reward[0] == 0))
+				if (TerritoryWarManager.getInstance().isTWInProgress() || reward[0] == 0)
 					html.setFile(activeChar.getHtmlPrefix(), "mercmanager/reward-0a.htm");
 				else if (reward[0] != territoryId)
 				{

@@ -163,14 +163,14 @@ public class Istina extends L2AttackableAIScript
 		else
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof IstinaWorld))
+		if (wrld != null && wrld instanceof IstinaWorld)
 		{
 			IstinaWorld world = (IstinaWorld) wrld;
 			if (npc.getNpcId() == _rumieseInnerId)
 			{
 				if (world.status == 8)
 					return "RumieseInnerBallistaLoaded.html";
-				else if ((world.status >= 5) && (world.status < 7))
+				else if (world.status >= 5 && world.status < 7)
 					return "RumieseInnerBallistaPreLoaded.html";
 			}
 		}
@@ -194,7 +194,7 @@ public class Istina extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof IstinaWorld))
+		if (wrld != null && wrld instanceof IstinaWorld)
 		{
 			IstinaWorld world = (IstinaWorld) wrld;
 			switch (skill.getId())
@@ -203,7 +203,7 @@ public class Istina extends L2AttackableAIScript
 					int casterCount = 0;
 					for (L2PcInstance players : npc.getKnownList().getKnownPlayers().values())
 					{
-						if ((players.getTarget() == npc) && (players.getLastSkillCast() == _energyControlDevice))
+						if (players.getTarget() == npc && players.getLastSkillCast() == _energyControlDevice)
 							casterCount++;
 					}
 					
@@ -220,7 +220,7 @@ public class Istina extends L2AttackableAIScript
 					}
 					else if (npc.getNpcId() == _sealingEnergy)
 					{
-						if (npc.isCastingNow() && (casterCount > 0)) //Npc should be casting
+						if (npc.isCastingNow() && casterCount > 0) //Npc should be casting
 							npc.doDie(player);
 					}
 					break;
@@ -246,7 +246,7 @@ public class Istina extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof IstinaWorld))
+		if (wrld != null && wrld instanceof IstinaWorld)
 		{
 			IstinaWorld world = (IstinaWorld) wrld;
 			if (npc.getNpcId() == world.IstinaId)
@@ -304,7 +304,7 @@ public class Istina extends L2AttackableAIScript
 	private static void istinasMarkAndDeathBlow(IstinaWorld world)
 	{
 		Collection<L2Character> players = world.Istina.getKnownList().getKnownCharacters();
-		if ((players == null) || players.isEmpty())
+		if (players == null || players.isEmpty())
 			return;
 		
 		for (L2Character player : players)
@@ -343,7 +343,7 @@ public class Istina extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof IstinaWorld))
+		if (wrld != null && wrld instanceof IstinaWorld)
 		{
 			final IstinaWorld world = (IstinaWorld) wrld;
 			if (event.equalsIgnoreCase("stage_0_open_doors"))
@@ -368,7 +368,7 @@ public class Istina extends L2AttackableAIScript
 				for (int objId : allowedPlayers)
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					if ((pl != null) && pl.isOnline() && (pl.getInstanceId() == world.instanceId))
+					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
 					{
 						if (pl.getY() < 145039)
 						{
@@ -463,7 +463,7 @@ public class Istina extends L2AttackableAIScript
 							}
 						}, delay);
 					}
-					startQuestTimer("stage_all_manifestation_of_authority", Rnd.get(68000 + delay, 68000 + (delay * 2)), world.Istina, null);
+					startQuestTimer("stage_all_manifestation_of_authority", Rnd.get(68000 + delay, 68000 + delay * 2), world.Istina, null);
 				}
 			}
 			else if (event.equalsIgnoreCase("stage_all_epic_sealing_energy_task"))
@@ -472,7 +472,7 @@ public class Istina extends L2AttackableAIScript
 				{
 					int knownPlayers = world.Istina.getKnownList().getKnownPlayers().size();
 					int knownChars = world.Istina.getKnownList().getKnownCharacters().size();
-					if ((knownPlayers > 1) && ((knownChars - knownPlayers) < 20) && world.Istina.isInCombat())
+					if (knownPlayers > 1 && knownChars - knownPlayers < 20 && world.Istina.isInCombat())
 					{
 						for (int a = 0; a < Rnd.get(1, 3); a++)
 						{
@@ -490,9 +490,9 @@ public class Istina extends L2AttackableAIScript
 				{
 					int knownPlayers = world.Istina.getKnownList().getKnownPlayers().size();
 					int knownChars = world.Istina.getKnownList().getKnownCharacters().size();
-					if ((knownPlayers > 1) && ((knownChars - knownPlayers) < 20) && world.Istina.isInCombat())
+					if (knownPlayers > 1 && knownChars - knownPlayers < 20 && world.Istina.isInCombat())
 					{
-						if (world.Istina.getCurrentHp() < (world.Istina.getMaxHp() * 0.75)) //only if have less than 75%
+						if (world.Istina.getCurrentHp() < world.Istina.getMaxHp() * 0.75) //only if have less than 75%
 						{
 							InstanceManager.getInstance().sendPacket(world.instanceId, new ExShowScreenMessage(1811144, 0, true, 2000)); //Istina calls her creatures with tremendous anger.
 							
@@ -548,7 +548,7 @@ public class Istina extends L2AttackableAIScript
 			{
 				if (world.ballistaSeconds > 0)
 				{
-					double calculation = (world.currBallistDamage / world.maxBallistDamage) * 100;
+					double calculation = world.currBallistDamage / world.maxBallistDamage * 100;
 					
 					InstanceManager.getInstance().sendPacket(world.instanceId, new ExSendUIEvent(2, world.ballistaSeconds, (int) calculation, 1811347));
 					
@@ -564,12 +564,12 @@ public class Istina extends L2AttackableAIScript
 					InstanceManager.getInstance().sendPacket(world.instanceId, new ExSendUIEventRemove());
 					
 					int time = 0;
-					double chanceToKillIstina = ((world.currBallistDamage * 100) / world.maxBallistDamage);
+					double chanceToKillIstina = world.currBallistDamage * 100 / world.maxBallistDamage;
 					
 					if (_debug)
 						Log.warning(getName() + ": Chance to kill istina: " + chanceToKillIstina);
 					
-					if ((chanceToKillIstina > 40) && (Rnd.get(101) <= chanceToKillIstina))//We want at least 40% on the ballista in order to kill istina
+					if (chanceToKillIstina > 40 && Rnd.get(101) <= chanceToKillIstina)//We want at least 40% on the ballista in order to kill istina
 					{
 						//Success, kill istina
 						world.status = 8;
@@ -630,7 +630,7 @@ public class Istina extends L2AttackableAIScript
 						{
 							int objId = world.allowed.get(Rnd.get(world.allowed.size()));
 							randomPlayer = L2World.getInstance().getPlayer(objId);
-							if ((randomPlayer != null) && (randomPlayer.getInstanceId() == world.instanceId))
+							if (randomPlayer != null && randomPlayer.getInstanceId() == world.instanceId)
 							{
 								if (_debug)
 									Log.warning(getName() + ": " + randomPlayer.getName() + " will be used as a killer!");
@@ -669,7 +669,7 @@ public class Istina extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc != null) && (npc.getNpcId() == _rumieseEnterId) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if (npc != null && npc.getNpcId() == _rumieseEnterId && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -689,7 +689,7 @@ public class Istina extends L2AttackableAIScript
 	@Override
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if ((npc == null) || (attacker == null))
+		if (npc == null || attacker == null)
 			return null;
 		
 		if (_debug)
@@ -702,7 +702,7 @@ public class Istina extends L2AttackableAIScript
 			
 			if (npc.getNpcId() == world.IstinaId)
 			{
-				if ((world.status == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.04))) //4%?
+				if (world.status == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.04) //4%?
 				{
 					world.status = 4;
 					
@@ -722,7 +722,7 @@ public class Istina extends L2AttackableAIScript
 					if (world.currBallistDamage == world.maxBallistDamage)
 						return super.onAttack(npc, attacker, damage, isPet);
 					
-					if ((world.currBallistDamage + damage) > world.maxBallistDamage)
+					if (world.currBallistDamage + damage > world.maxBallistDamage)
 						world.currBallistDamage = world.maxBallistDamage;
 					else
 						world.currBallistDamage += damage;
@@ -754,7 +754,7 @@ public class Istina extends L2AttackableAIScript
 		if (tmpWorld instanceof IstinaWorld)
 		{
 			final IstinaWorld world = (IstinaWorld) tmpWorld;
-			if ((world.zone == zoneInUse.NONE) || !(character instanceof L2Playable))
+			if (world.zone == zoneInUse.NONE || !(character instanceof L2Playable))
 				return super.onEnterZone(character, zone);
 			
 			switch (zone.getId())
@@ -824,7 +824,7 @@ public class Istina extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-177107, 146576, -11392, true);
@@ -884,7 +884,7 @@ public class Istina extends L2AttackableAIScript
 		for (int objId : world.allowed)
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.instanceId))
+			if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 			{
 				if (_ZONE_BLUE.isCharacterInZone(player))
 					notifyEnterZone(player, _ZONE_BLUE);

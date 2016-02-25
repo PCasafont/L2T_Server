@@ -40,7 +40,7 @@ public class AdminBuffs implements IAdminCommandHandler
 					{
 						for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 						{
-							if ((pl != null) && pl.getName().equalsIgnoreCase(playername))
+							if (pl != null && pl.getName().equalsIgnoreCase(playername))
 							{
 								player = pl;
 								break;
@@ -66,7 +66,7 @@ public class AdminBuffs implements IAdminCommandHandler
 					return false;
 				}
 			}
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2Character))
+			else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2Character)
 			{
 				showBuffs(activeChar, (L2Character) activeChar.getTarget(), 1);
 				return true;
@@ -126,7 +126,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				
 				for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 				{
-					if ((knownChar instanceof L2PcInstance) && !(knownChar.equals(activeChar)))
+					if (knownChar instanceof L2PcInstance && !knownChar.equals(activeChar))
 						knownChar.stopAllEffects();
 				}
 				
@@ -199,24 +199,24 @@ public class AdminBuffs implements IAdminCommandHandler
 	{
 		final L2Abnormal[] effects = target.getAllEffects();
 		
-		if ((page > ((effects.length / PAGE_LIMIT) + 1)) || (page < 1))
+		if (page > effects.length / PAGE_LIMIT + 1 || page < 1)
 			return;
 		
 		int max = effects.length / PAGE_LIMIT;
-		if (effects.length > (PAGE_LIMIT * max))
+		if (effects.length > PAGE_LIMIT * max)
 			max++;
 		
-		final StringBuilder html = StringUtil.startAppend(500 + (effects.length * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
+		final StringBuilder html = StringUtil.startAppend(500 + effects.length * 200, "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td></tr>");
 		
-		int start = ((page - 1) * PAGE_LIMIT);
-		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, effects.length);
+		int start = (page - 1) * PAGE_LIMIT;
+		int end = Math.min((page - 1) * PAGE_LIMIT + PAGE_LIMIT, effects.length);
 		
 		for (int i = start; i < end; i++)
 		{
 			L2Abnormal e = effects[i];
 			if (e != null)
 			{
-				StringUtil.append(html, "<tr><td>", e.getSkill().getName(), "</td><td>", e.getSkill().isToggle() ? "toggle" : (e.getDuration() - e.getTime()) + "s", "</td><td><button value=\"Remove\" action=\"bypass -h admin_stopbuff ", Integer.toString(target.getObjectId()), " ", String.valueOf(e.getSkill().getId()), "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
+				StringUtil.append(html, "<tr><td>", e.getSkill().getName(), "</td><td>", e.getSkill().isToggle() ? "toggle" : e.getDuration() - e.getTime() + "s", "</td><td><button value=\"Remove\" action=\"bypass -h admin_stopbuff ", Integer.toString(target.getObjectId()), " ", String.valueOf(e.getSkill().getId()), "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>");
 			}
 		}
 		
@@ -265,13 +265,13 @@ public class AdminBuffs implements IAdminCommandHandler
 		{
 		}
 		
-		if ((target != null) && (skillId > 0))
+		if (target != null && skillId > 0)
 		{
 			L2Abnormal[] effects = target.getAllEffects();
 			
 			for (L2Abnormal e : effects)
 			{
-				if ((e != null) && (e.getSkill().getId() == skillId))
+				if (e != null && e.getSkill().getId() == skillId)
 				{
 					e.exit();
 					activeChar.sendMessage("Removed " + e.getSkill().getName() + " level " + e.getSkill().getLevel() + " from " + target.getName() + " (" + objId + ")");

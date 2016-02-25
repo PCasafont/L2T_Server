@@ -46,7 +46,7 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		
-		if ((target != null) && target.isDead())
+		if (target != null && target.isDead())
 		{
 			L2PcInstance player = null;
 			
@@ -63,7 +63,7 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler
 			if (target instanceof L2PetInstance)
 				targetPet = (L2PetInstance) target;
 			
-			if ((player != null) && ((targetPlayer != null) || (targetPet != null)))
+			if (player != null && (targetPlayer != null || targetPet != null))
 			{
 				boolean condGood = true;
 				
@@ -86,12 +86,12 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler
 							{
 								boolean isAttacker = castle.getSiege().checkIsAttacker(player.getClan());
 								boolean isDefender = castle.getSiege().checkIsDefender(player.getClan());
-								boolean none = (!isAttacker && !isDefender);
+								boolean none = !isAttacker && !isDefender;
 								if (none && targetPlayer.isInsideZone(L2Character.ZONE_SIEGE))
 									condGood = false;
 								else if (isAttacker)
 									condGood = false;
-								else if (isDefender && (castle.getSiege().getControlTowerCount() == 0))
+								else if (isDefender && castle.getSiege().getControlTowerCount() == 0)
 									condGood = false;
 							}
 							

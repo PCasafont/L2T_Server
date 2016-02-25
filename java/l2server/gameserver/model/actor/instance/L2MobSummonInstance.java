@@ -49,7 +49,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if ((player == getOwner()) && (player.getTarget() == this))
+		if (player == getOwner() && player.getTarget() == this)
 		{
 			player.sendPacket(new PetStatusShow(this));
 			showMobWindow(player);
@@ -118,7 +118,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 				{
 					if (i == 0)
 						html += "<table>";
-					if ((i % 2) == 0)
+					if (i % 2 == 0)
 						html += "<tr>";
 					html += "<td><center>";
 					if (skill.getId() < 1000)
@@ -128,7 +128,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 					html += "</center></td>";
 					skills[i % 2] = skill;
 					i++;
-					if ((i % 2) == 0)
+					if (i % 2 == 0)
 					{
 						html += "</tr><tr>";
 						for (int j = 0; j < 2; j++)
@@ -137,10 +137,10 @@ public class L2MobSummonInstance extends L2SummonInstance
 					}
 				}
 			}
-			if ((i % 2) > 0)
+			if (i % 2 > 0)
 			{
 				html += "</tr><tr>";
-				for (int j = 0; j < (i % 2); j++)
+				for (int j = 0; j < i % 2; j++)
 					html += "<td><center><a action=\"bypass -h MobSummon UseSkill " + skills[j].getId() + " " + skills[j].getLevelHash() + "\">" + skills[j].getName() + "</a></center></td>";
 				html += "</tr>";
 			}
@@ -174,7 +174,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		else if (command.equals("Attack"))
 		{
 			L2Object target = getOwner().getTarget();
-			if ((target != null) && (target != this) && !isAttackingDisabled() && !isBetrayed())
+			if (target != null && target != this && !isAttackingDisabled() && !isBetrayed())
 			{
 				if (!getOwner().getAccessLevel().allowPeaceAttack() && getOwner().isInsidePeaceZone(this, target))
 				{
@@ -215,7 +215,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		else if (command.equals("Exchange"))
 		{
 			L2Object target = getOwner().getTarget();
-			if ((target != null) && (target != this))
+			if (target != null && target != this)
 			{
 				if (target instanceof L2MobSummonInstance)
 				{
@@ -311,7 +311,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 	@Override
 	public boolean useMagic(L2Skill skill, boolean forceUse, boolean dontMove)
 	{
-		if ((skill == null) || isDead())
+		if (skill == null || isDead())
 			return false;
 		
 		// Check if the skill is active
@@ -373,7 +373,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		//************************************* Check skill availability *******************************************
 		
 		// Check if this skill is enabled (e.g. reuse time)
-		if (isSkillDisabled(skill.getId()) || (isAllSkillsDisabled() && !skill.canBeUsedWhenDisabled()))
+		if (isSkillDisabled(skill.getId()) || isAllSkillsDisabled() && !skill.canBeUsedWhenDisabled())
 		{
 			if (getOwner() != null)
 			{
@@ -387,7 +387,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 		//************************************* Check Consumables *******************************************
 		
 		// Check if the summon has enough MP
-		if (getCurrentMp() < (getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill)))
+		if (getCurrentMp() < getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill))
 		{
 			// Send a System Message to the caster
 			if (getOwner() != null)
@@ -409,14 +409,14 @@ public class L2MobSummonInstance extends L2SummonInstance
 		// Check if this is offensive magic skill
 		if (skill.isOffensive())
 		{
-			if (isInsidePeaceZone(this, target) && (getOwner() != null) && (!getOwner().getAccessLevel().allowPeaceAttack()))
+			if (isInsidePeaceZone(this, target) && getOwner() != null && !getOwner().getAccessLevel().allowPeaceAttack())
 			{
 				// If summon or target is in a peace zone, send a system message TARGET_IN_PEACEZONE
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IN_PEACEZONE));
 				return false;
 			}
 			
-			if ((getOwner() != null) && getOwner().isInOlympiadMode() && !getOwner().isOlympiadStart())
+			if (getOwner() != null && getOwner().isInOlympiadMode() && !getOwner().isOlympiadStart())
 			{
 				// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -431,13 +431,13 @@ public class L2MobSummonInstance extends L2SummonInstance
 			}
 			else
 			{
-				if (!target.isAttackable() && (getOwner() != null) && (!(target instanceof L2MobSummonInstance)) && (!getOwner().getAccessLevel().allowPeaceAttack()))
+				if (!target.isAttackable() && getOwner() != null && !(target instanceof L2MobSummonInstance) && !getOwner().getAccessLevel().allowPeaceAttack())
 				{
 					return false;
 				}
 				
 				// Check if a Forced ATTACK is in progress on non-attackable target
-				if (!target.isAutoAttackable(this) && !forceUse && (skill.getTargetType() != L2SkillTargetType.TARGET_AURA) && (skill.getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA) && (skill.getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA) && (skill.getTargetType() != L2SkillTargetType.TARGET_CLAN) && (skill.getTargetType() != L2SkillTargetType.TARGET_ALLY) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY) && (skill.getTargetType() != L2SkillTargetType.TARGET_SELF))
+				if (!target.isAutoAttackable(this) && !forceUse && skill.getTargetType() != L2SkillTargetType.TARGET_AURA && skill.getTargetType() != L2SkillTargetType.TARGET_FRONT_AURA && skill.getTargetType() != L2SkillTargetType.TARGET_BEHIND_AURA && skill.getTargetType() != L2SkillTargetType.TARGET_CLAN && skill.getTargetType() != L2SkillTargetType.TARGET_ALLY && skill.getTargetType() != L2SkillTargetType.TARGET_PARTY && skill.getTargetType() != L2SkillTargetType.TARGET_SELF)
 				{
 					return false;
 				}
@@ -544,7 +544,7 @@ public class L2MobSummonInstance extends L2SummonInstance
 				if (player == getOwner())
 					continue;
 				
-				if (!player.isGM() && (getOwner() != null) && getOwner().getAppearance().getInvisible())
+				if (!player.isGM() && getOwner() != null && getOwner().getAppearance().getInvisible())
 					continue;
 				
 				player.sendPacket(new ExSummonInfo(this, player, val));

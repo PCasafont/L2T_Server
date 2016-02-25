@@ -72,8 +72,8 @@ public final class OlympiadGameTask implements Runnable
 		_doors = new ArrayList<L2DoorInstance>(2);
 		
 		StatsSet set = new StatsSet();
-		int door1Id = 17100001 + ((id % 4) * 100);
-		int door2Id = 17100002 + ((id % 4) * 100);
+		int door1Id = 17100001 + id % 4 * 100;
+		int door2Id = 17100002 + id % 4 * 100;
 		instance.addDoor(door1Id, set);
 		instance.addDoor(door2Id, set);
 		_doors.add(instance.getDoor(door1Id));
@@ -123,7 +123,7 @@ public final class OlympiadGameTask implements Runnable
 	
 	public final boolean isGameStarted()
 	{
-		return (_state.ordinal() >= GameState.GAME_STARTED.ordinal()) && (_state.ordinal() <= GameState.CLEANUP.ordinal());
+		return _state.ordinal() >= GameState.GAME_STARTED.ordinal() && _state.ordinal() <= GameState.CLEANUP.ordinal();
 	}
 	
 	public final boolean isBattleStarted()
@@ -159,7 +159,7 @@ public final class OlympiadGameTask implements Runnable
 	
 	public final void attachGame(AbstractOlympiadGame game)
 	{
-		if ((game != null) && (_state != GameState.IDLE))
+		if (game != null && _state != GameState.IDLE)
 		{
 			Log.log(Level.WARNING, "Attempt to overwrite non-finished game in state " + _state);
 			return;
@@ -267,7 +267,7 @@ public final class OlympiadGameTask implements Runnable
 				case BATTLE_IN_PROGRESS:
 				{
 					_countDown += 1000;
-					if (checkBattle() || (_countDown > Config.ALT_OLY_BATTLE))
+					if (checkBattle() || _countDown > Config.ALT_OLY_BATTLE)
 						_state = GameState.GAME_STOPPED;
 					
 					break;
@@ -333,7 +333,7 @@ public final class OlympiadGameTask implements Runnable
 	private final int getDelay(int[] times)
 	{
 		int time;
-		for (int i = 0; i < (times.length - 1); i++)
+		for (int i = 0; i < times.length - 1; i++)
 		{
 			time = times[i];
 			if (time >= _countDown)
@@ -518,7 +518,7 @@ public final class OlympiadGameTask implements Runnable
 	{
 		for (L2DoorInstance door : _doors)
 		{
-			if ((door != null) && !door.getOpen())
+			if (door != null && !door.getOpen())
 				door.openMe();
 		}
 	}
@@ -527,7 +527,7 @@ public final class OlympiadGameTask implements Runnable
 	{
 		for (L2DoorInstance door : _doors)
 		{
-			if ((door != null) && door.getOpen())
+			if (door != null && door.getOpen())
 				door.closeMe();
 		}
 	}
@@ -546,7 +546,7 @@ public final class OlympiadGameTask implements Runnable
 	{
 		for (L2Spawn spawn : _buffers)
 		{
-			if ((spawn.getNpc() != null) && spawn.getNpc().isVisible())
+			if (spawn.getNpc() != null && spawn.getNpc().isVisible())
 				spawn.getNpc().deleteMe();
 		}
 	}

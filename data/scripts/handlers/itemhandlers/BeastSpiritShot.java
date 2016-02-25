@@ -73,7 +73,7 @@ public class BeastSpiritShot implements IItemHandler
 		}
 		
 		int itemId = item.getItemId();
-		boolean isBlessed = ((itemId == 6647) || (itemId == 20334));
+		boolean isBlessed = itemId == 6647 || itemId == 20334;
 		short shotConsumption = summon.getSpiritShotsPerHit();
 		
 		long shotCount = item.getCount();

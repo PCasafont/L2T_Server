@@ -108,7 +108,7 @@ public class EffectSignetPDam extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() >= (getAbnormal().getTotalCount() - 2))
+		if (getAbnormal().getCount() >= getAbnormal().getTotalCount() - 2)
 			return true; // do nothing first 2 times
 		int mpConsume = getSkill().getMpConsume();
 		
@@ -116,24 +116,24 @@ public class EffectSignetPDam extends L2Effect
 		
 		L2ItemInstance weapon = caster.getActiveWeaponInstance();
 		double soul = L2ItemInstance.CHARGED_NONE;
-		if ((weapon != null) && (weapon.getItemType() != L2WeaponType.DAGGER))
+		if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
 			soul = weapon.getChargedSoulShot();
 		
 		ArrayList<L2Character> targets = new ArrayList<L2Character>();
 		
 		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
-			if ((cha == null) || (cha == caster))
+			if (cha == null || cha == caster)
 				continue;
 			
 			if (cha instanceof L2PcInstance)
 			{
 				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
 					continue;
 			}
 			
-			if ((cha instanceof L2Attackable) || (cha instanceof L2Playable))
+			if (cha instanceof L2Attackable || cha instanceof L2Playable)
 			{
 				if (cha.isAlikeDead())
 					continue;

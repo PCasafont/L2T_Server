@@ -47,11 +47,11 @@ public class TakeCastle implements ISkillHandler
 		
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
+		if (player.getClan() == null || player.getClan().getLeaderId() != player.getObjectId())
 			return;
 		
 		Castle castle = CastleManager.getInstance().getCastle(player);
-		if ((castle == null) || !player.checkIfOkToCastSealOfRule(castle, true, skill))
+		if (castle == null || !player.checkIfOkToCastSealOfRule(castle, true, skill))
 			return;
 		
 		try

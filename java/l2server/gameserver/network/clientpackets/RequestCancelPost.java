@@ -50,7 +50,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 	public void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
+		if (activeChar == null || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
 			return;
 		
 		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("cancelpost"))
@@ -108,7 +108,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 		}
 		
 		final ItemContainer attachments = msg.getAttachments();
-		if ((attachments == null) || (attachments.getSize() == 0))
+		if (attachments == null || attachments.getSize() == 0)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANT_CANCEL_RECEIVED_MAIL));
 			return;

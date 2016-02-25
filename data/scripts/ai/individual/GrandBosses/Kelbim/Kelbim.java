@@ -138,9 +138,9 @@ public class Kelbim extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if ((kelbimStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					if (kelbimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
-					else if ((kelbimStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					else if (kelbimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, 101, Config.KELBIM_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
 					else if (kelbimStatus == GrandBossManager.getInstance().FIGHTING)
 						return null;
@@ -215,7 +215,7 @@ public class Kelbim extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("stage_all_spawn_minions"))
 		{
-			for (int i = 0; i < Rnd.get((_bossStage * 5) / 2, (_bossStage * 5)); i++)
+			for (int i = 0; i < Rnd.get(_bossStage * 5 / 2, _bossStage * 5); i++)
 			{
 				L2Npc minion = addSpawn(_kelbimGuard, _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
 				minion.setIsRunning(true);
@@ -224,7 +224,7 @@ public class Kelbim extends L2AttackableAIScript
 				_minions.add(minion);
 			}
 			
-			for (int i = 0; i < Rnd.get((_bossStage * 2) / 2, (_bossStage * 2)); i++)
+			for (int i = 0; i < Rnd.get(_bossStage * 2 / 2, _bossStage * 2); i++)
 			{
 				L2Npc minion = addSpawn(_kelbimGuardians[Rnd.get(_kelbimGuardians.length)], _kelbimBoss.getX(), _kelbimBoss.getY(), _kelbimBoss.getZ(), 0, true, 0, true, 0);
 				minion.setIsRunning(true);
@@ -235,7 +235,7 @@ public class Kelbim extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("stage_all_random_area_attack"))
 		{
-			if ((_bossStage > 0) && (_bossStage < 7))
+			if (_bossStage > 0 && _bossStage < 7)
 			{
 				if (_kelbimBoss.isInCombat())
 				{
@@ -312,31 +312,31 @@ public class Kelbim extends L2AttackableAIScript
 		{
 			_lastAction = System.currentTimeMillis();
 			
-			if ((_bossStage == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.80)))
+			if (_bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.80)
 			{
 				_bossStage = 2;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if ((_bossStage == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.60)))
+			else if (_bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.60)
 			{
 				_bossStage = 3;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if ((_bossStage == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.40)))
+			else if (_bossStage == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.40)
 			{
 				_bossStage = 4;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if ((_bossStage == 4) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))
+			else if (_bossStage == 4 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)
 			{
 				_bossStage = 5;
 				
 				notifyEvent("stage_all_spawn_minions", null, null);
 			}
-			else if ((_bossStage == 5) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+			else if (_bossStage == 5 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 			{
 				_bossStage = 6;
 				

@@ -75,7 +75,7 @@ public class MapRegionTable
 			String line = null;
 			while ((line = lnr.readLine()) != null)
 			{
-				if ((line.trim().length() == 0) || line.startsWith("#"))
+				if (line.trim().length() == 0 || line.startsWith("#"))
 					continue;
 				
 				if (line.indexOf("#") > 0)
@@ -502,7 +502,7 @@ public class MapRegionTable
 		
 		if (activeChar instanceof L2PcInstance)
 		{
-			L2PcInstance player = ((L2PcInstance) activeChar);
+			L2PcInstance player = (L2PcInstance) activeChar;
 			
 			// If in Monster Derby Track
 			if (player.isInsideZone(L2Character.ZONE_MONSTERTRACK))
@@ -512,7 +512,7 @@ public class MapRegionTable
 			Fort fort = null;
 			ClanHall clanhall = null;
 			
-			if ((player.getClan() != null) && !player.isFlyingMounted() && !player.isFlying()) // flying players in gracia cant use teleports to aden continent
+			if (player.getClan() != null && !player.isFlyingMounted() && !player.isFlying()) // flying players in gracia cant use teleports to aden continent
 			{
 				// If teleport to clan hall
 				if (teleportWhere == TeleportWhereType.ClanHall)
@@ -522,7 +522,7 @@ public class MapRegionTable
 					if (clanhall != null)
 					{
 						L2ClanHallZone zone = clanhall.getZone();
-						if ((zone != null) && !player.isFlyingMounted())
+						if (zone != null && !player.isFlyingMounted())
 							return zone.getSpawnLoc();
 					}
 				}
@@ -536,11 +536,11 @@ public class MapRegionTable
 					if (castle == null)
 					{
 						castle = CastleManager.getInstance().getCastle(player);
-						if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().getDefenderClan(player.getClan()) != null)))
+						if (!(castle != null && castle.getSiege().getIsInProgress() && castle.getSiege().getDefenderClan(player.getClan()) != null))
 							castle = null;
 					}
 					
-					if ((castle != null) && (castle.getCastleId() > 0))
+					if (castle != null && castle.getCastleId() > 0)
 						return castle.getCastleZone().getSpawnLoc();
 				}
 				
@@ -553,11 +553,11 @@ public class MapRegionTable
 					if (fort == null)
 					{
 						fort = FortManager.getInstance().getFort(player);
-						if (!((fort != null) && fort.getSiege().getIsInProgress() && (fort.getOwnerClan() == player.getClan())))
+						if (!(fort != null && fort.getSiege().getIsInProgress() && fort.getOwnerClan() == player.getClan()))
 							fort = null;
 					}
 					
-					if ((fort != null) && (fort.getFortId() > 0))
+					if (fort != null && fort.getFortId() > 0)
 						return fort.getFortZone().getSpawnLoc();
 				}
 				
@@ -576,7 +576,7 @@ public class MapRegionTable
 						{
 							// Check if player's clan is attacker
 							List<L2Npc> flags = castle.getSiege().getFlag(player.getClan());
-							if ((flags != null) && !flags.isEmpty())
+							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
 								L2Npc flag = flags.get(0);
@@ -591,7 +591,7 @@ public class MapRegionTable
 						{
 							// Check if player's clan is attacker
 							List<L2Npc> flags = fort.getSiege().getFlag(player.getClan());
-							if ((flags != null) && !flags.isEmpty())
+							if (flags != null && !flags.isEmpty())
 							{
 								// Spawn to flag - Need more work to get player to the nearest flag
 								L2Npc flag = flags.get(0);
@@ -630,11 +630,11 @@ public class MapRegionTable
 				if (inst != null)
 				{
 					coord = inst.getSpawnLoc();
-					if ((coord[0] != 0) && (coord[1] != 0) && (coord[2] != 0))
+					if (coord[0] != 0 && coord[1] != 0 && coord[2] != 0)
 						return new Location(coord[0], coord[1], coord[2]);
 				}
 			}
-			if ((MonsterInvasion.getInstance().getAttackedTown() != -1) && (TownManager.getClosestTown(activeChar).getTownId() == MonsterInvasion.getInstance().getAttackedTown()))
+			if (MonsterInvasion.getInstance().getAttackedTown() != -1 && TownManager.getClosestTown(activeChar).getTownId() == MonsterInvasion.getInstance().getAttackedTown())
 				return TownManager.getClosestTown(activeChar).getChaoticSpawnLoc();
 		}
 		

@@ -61,7 +61,7 @@ public class GenesisStatues extends L2AttackableAIScript
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		long currentTime = System.currentTimeMillis();
-		if (!_spawns.containsKey(npc.getNpcId()) || ((_spawns.get(npc.getNpcId()) + 3600000) > currentTime))
+		if (!_spawns.containsKey(npc.getNpcId()) || _spawns.get(npc.getNpcId()) + 3600000 > currentTime)
 		{
 			//final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
 			

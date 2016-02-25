@@ -57,7 +57,7 @@ public class EffectStance extends L2Effect
 			activeChar.setElementalStance(activeChar.getElementalStance() + 10);
 			for (int stanceId : STANCE_IDS)
 			{
-				if (stanceId != ((STANCE_IDS[0] + (activeChar.getElementalStance() % 10)) - 1))
+				if (stanceId != STANCE_IDS[0] + activeChar.getElementalStance() % 10 - 1)
 				{
 					L2Skill stance = SkillTable.getInstance().getInfo(stanceId, 1);
 					stance.getEffects(activeChar, activeChar);
@@ -67,7 +67,7 @@ public class EffectStance extends L2Effect
 		else if (activeChar.getElementalStance() < 10)
 		{
 			// Set the player in the current one
-			activeChar.setElementalStance((skill.getId() - STANCE_IDS[0]) + 1);
+			activeChar.setElementalStance(skill.getId() - STANCE_IDS[0] + 1);
 			// And stop the other stances
 			for (int stanceId : STANCE_IDS)
 			{
@@ -92,7 +92,7 @@ public class EffectStance extends L2Effect
 			
 			for (int stanceId : STANCE_IDS)
 			{
-				if (((stanceId - STANCE_IDS[0]) + 1) != activeChar.getElementalStance())
+				if (stanceId - STANCE_IDS[0] + 1 != activeChar.getElementalStance())
 					activeChar.stopSkillEffects(stanceId);
 			}
 			

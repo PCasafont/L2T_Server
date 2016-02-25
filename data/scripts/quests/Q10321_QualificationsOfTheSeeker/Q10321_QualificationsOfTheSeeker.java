@@ -51,13 +51,13 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _theodore) && event.equalsIgnoreCase("32975-03.htm"))
+		if (npc.getNpcId() == _theodore && event.equalsIgnoreCase("32975-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if ((npc.getNpcId() == _shannon) && event.equalsIgnoreCase("32974-02.htm") && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 5000);
@@ -97,7 +97,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _shannon) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _shannon && st.getInt("cond") == 1)
 			htmltext = "32974-01.htm";
 		return htmltext;
 	}
@@ -105,7 +105,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 1) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 1) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

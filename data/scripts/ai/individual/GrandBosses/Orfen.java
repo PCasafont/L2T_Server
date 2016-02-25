@@ -100,7 +100,7 @@ public class Orfen extends L2AttackableAIScript
 		else if (event.equalsIgnoreCase("check_orfen_location"))
 		{
 			//Check the boss location and minion loc
-			if ((_isTeleported && (_orfenBoss.getCurrentHp() > (_orfenBoss.getMaxHp() * 0.95))) || (!_bossZone.isInsideZone(_orfenBoss) && !_isTeleported))
+			if (_isTeleported && _orfenBoss.getCurrentHp() > _orfenBoss.getMaxHp() * 0.95 || !_bossZone.isInsideZone(_orfenBoss) && !_isTeleported)
 			{
 				setSpawnPoint(Rnd.get(3) + 1);
 				_isTeleported = false;
@@ -164,12 +164,12 @@ public class Orfen extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == _orfenId)
 		{
-			if (!_isTeleported && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2)))
+			if (!_isTeleported && npc.getCurrentHp() - damage < npc.getMaxHp() / 2)
 			{
 				_isTeleported = true;
 				setSpawnPoint(0);
 			}
-			else if (npc.isInsideRadius(attacker, 1000, false, false) && !npc.isInsideRadius(attacker, 300, false, false) && (Rnd.get(10) == 0))
+			else if (npc.isInsideRadius(attacker, 1000, false, false) && !npc.isInsideRadius(attacker, 300, false, false) && Rnd.get(10) == 0)
 			{
 				attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 				
@@ -209,7 +209,7 @@ public class Orfen extends L2AttackableAIScript
 		if (npc.getNpcId() == _orfenId)
 		{
 			L2Character originalCaster = isPet ? caster.getPet() : caster;
-			if ((skill.getAggroPoints() > 0) && (Rnd.get(5) == 0) && npc.isInsideRadius(originalCaster, 1000, false, false))
+			if (skill.getAggroPoints() > 0 && Rnd.get(5) == 0 && npc.isInsideRadius(originalCaster, 1000, false, false))
 			{
 				NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), _textIds[Rnd.get(_textIds.length)]);
 				packet.addStringParameter(caster.getName().toString());

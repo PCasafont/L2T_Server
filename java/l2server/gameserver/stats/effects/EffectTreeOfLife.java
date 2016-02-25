@@ -56,23 +56,23 @@ public class EffectTreeOfLife extends L2Effect
 		
 		L2Character activeChar = getEffector();
 		
-		if ((target == null) || target.isDead() || target.isInvul(activeChar) || !Util.checkIfInRange(600, activeChar, target, true))
+		if (target == null || target.isDead() || target.isInvul(activeChar) || !Util.checkIfInRange(600, activeChar, target, true))
 			return false;
 		
 		// No healing from others for player in duels
-		if (Config.isServer(Config.TENKAI) && (target instanceof L2PcInstance) && target.getActingPlayer().isInDuel() && (target.getObjectId() != activeChar.getObjectId()))
+		if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && target.getActingPlayer().isInDuel() && target.getObjectId() != activeChar.getObjectId())
 			return false;
 		
 		if (target != activeChar)
 		{
 			// Player holding a cursed weapon can't be healed and can't heal
-			if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isCursedWeaponEquipped())
+			if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped())
 				return false;
-			else if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
+			else if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
 				return false;
 			
 			// Nor all vs all event player
-			if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll())
+			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll())
 				return false;
 		}
 		
@@ -84,16 +84,16 @@ public class EffectTreeOfLife extends L2Effect
 			hp += target.calcStat(Stats.HEAL_STATIC_BONUS, 0, null, null);
 		
 		// Heal critic, since CT2.3 Gracia Final
-		if ((getSkill().getSkillType() == L2SkillType.HEAL) && !getSkill().isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, getSkill())))
+		if (getSkill().getSkillType() == L2SkillType.HEAL && !getSkill().isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, getSkill())))
 			hp *= 3;
 		
 		// from CT2 u will receive exact HP, u can't go over it, if u have full HP and u get HP buff, u will receive 0HP restored message
 		// Soul: but from GoD onwards that "overheal" factor is converted into CP by some Areoe Healer skills
-		if ((target.getCurrentHp() + hp) >= target.getMaxHp())
+		if (target.getCurrentHp() + hp >= target.getMaxHp())
 		{
-			cp = (hp + target.getMaxHp()) - target.getCurrentHp();
+			cp = hp + target.getMaxHp() - target.getCurrentHp();
 			
-			if ((target.getCurrentCp() + cp) >= target.getMaxCp())
+			if (target.getCurrentCp() + cp >= target.getMaxCp())
 				cp = target.getMaxCp() - target.getCurrentCp();
 			
 			hp = target.getMaxHp() - target.getCurrentHp();

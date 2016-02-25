@@ -604,7 +604,7 @@ public class AdminTest implements IAdminCommandHandler
 			else if (secondaryCommand.equals("Vitality"))
 			{
 				int level = 4;
-				int vitality = (PcStat.MAX_VITALITY_POINTS / 4) * level;
+				int vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
 				
 				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 					player.setVitalityPoints(vitality, false, true);
@@ -644,7 +644,7 @@ public class AdminTest implements IAdminCommandHandler
 			{
 				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
 				{
-					if ((obj instanceof L2MonsterInstance) && !(obj instanceof L2RaidBossInstance))
+					if (obj instanceof L2MonsterInstance && !(obj instanceof L2RaidBossInstance))
 					{
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 						
@@ -718,7 +718,7 @@ public class AdminTest implements IAdminCommandHandler
 					case 1:
 					{
 						// Shows -2 0
-						earliestSpawnTime = baiumRespawnTime - (2 * 3600000);
+						earliestSpawnTime = baiumRespawnTime - 2 * 3600000;
 						latestSpawnTime = baiumRespawnTime;
 						break;
 					}
@@ -726,7 +726,7 @@ public class AdminTest implements IAdminCommandHandler
 					{
 						// Shows 0 +2
 						earliestSpawnTime = baiumRespawnTime;
-						latestSpawnTime = baiumRespawnTime + (2 * 3600000);
+						latestSpawnTime = baiumRespawnTime + 2 * 3600000;
 						break;
 					}
 				}
@@ -755,8 +755,8 @@ public class AdminTest implements IAdminCommandHandler
 				
 				int range = 50;
 				
-				float x = activeChar.getX() + (range * (float) Math.cos(headingAngle));
-				float y = activeChar.getY() + (range * (float) Math.sin(headingAngle));
+				float x = activeChar.getX() + range * (float) Math.cos(headingAngle);
+				float y = activeChar.getY() + range * (float) Math.sin(headingAngle);
 				float z = activeChar.getZ() + 1;
 				
 				@SuppressWarnings("unused")
@@ -776,8 +776,8 @@ public class AdminTest implements IAdminCommandHandler
 						continue;
 					}
 					
-					x = activeChar.getX() + (range * (float) Math.cos(headingAngle));
-					y = activeChar.getY() + (range * (float) Math.sin(headingAngle));
+					x = activeChar.getX() + range * (float) Math.cos(headingAngle);
+					y = activeChar.getY() + range * (float) Math.sin(headingAngle);
 					z = activeChar.getZ() + 1;
 					
 					spawn.setInstanceId(0);
@@ -949,7 +949,7 @@ public class AdminTest implements IAdminCommandHandler
 				
 				for (L2NpcTemplate monster : monsters)
 				{
-					if ((activeChar.getLevel() + 5) < monster.Level)
+					if (activeChar.getLevel() + 5 < monster.Level)
 						break;
 					
 					boolean canSpawn = false;
@@ -1134,7 +1134,7 @@ public class AdminTest implements IAdminCommandHandler
 						final String skillDesc = split[3];
 						
 						Log.info("// " + skillDesc);
-						Log.info("// Cooldown: " + (s.getReuseDelay() / 1000) + "s");
+						Log.info("// Cooldown: " + s.getReuseDelay() / 1000 + "s");
 					}
 					Log.info("private static final int " + varName + " = " + s.getId() + ";");
 					Log.info("");

@@ -90,9 +90,9 @@ public class GameServerThread extends Thread
 			{
 				lengthLo = _in.read();
 				lengthHi = _in.read();
-				length = (lengthHi * 256) + lengthLo;
+				length = lengthHi * 256 + lengthLo;
 				
-				if ((lengthHi < 0) || _connection.isClosed())
+				if (lengthHi < 0 || _connection.isClosed())
 				{
 					Log.finer("LoginServerThread: Login terminated the connection.");
 					break;
@@ -103,14 +103,14 @@ public class GameServerThread extends Thread
 				int receivedBytes = 0;
 				int newBytes = 0;
 				int left = length - 2;
-				while ((newBytes != -1) && (receivedBytes < (length - 2)))
+				while (newBytes != -1 && receivedBytes < length - 2)
 				{
 					newBytes = _in.read(data, receivedBytes, left);
 					receivedBytes = receivedBytes + newBytes;
 					left -= newBytes;
 				}
 				
-				if (receivedBytes != (length - 2))
+				if (receivedBytes != length - 2)
 				{
 					Log.warning("Incomplete Packet is sent to the server, closing connection.(LS)");
 					break;
@@ -135,7 +135,7 @@ public class GameServerThread extends Thread
 		}
 		catch (IOException e)
 		{
-			String serverName = (getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) : "(" + _connectionIPAddress + ")");
+			String serverName = getServerId() != -1 ? "[" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) : "(" + _connectionIPAddress + ")";
 			String msg = "GameServer " + serverName + ": Connection lost: " + e.getMessage();
 			Log.info(msg);
 		}
@@ -158,7 +158,7 @@ public class GameServerThread extends Thread
 	
 	public int getPlayerCount()
 	{
-		double multiplier = 2.0 - (((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001);
+		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
 			multiplier = 2.5f - (multiplier - 2.5f);
 		if (multiplier < 1)
@@ -167,7 +167,7 @@ public class GameServerThread extends Thread
 		if (_gsi.getId() == 28)
 			multiplier = 2;
 		
-		return (int) Math.round((_accountsOnGameServer.size() * multiplier) + Rnd.get(1));
+		return (int) Math.round(_accountsOnGameServer.size() * multiplier + Rnd.get(1));
 		//return _accountsOnGameServer.size() * multiplier;
 	}
 	
@@ -252,7 +252,7 @@ public class GameServerThread extends Thread
 			synchronized (_out)
 			{
 				_out.write(len & 0xff);
-				_out.write((len >> 8) & 0xff);
+				_out.write(len >> 8 & 0xff);
 				_out.write(data);
 				_out.flush();
 			}

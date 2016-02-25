@@ -102,7 +102,7 @@ public class SagasSuperClass extends QuestJython
 	
 	public L2Npc FindSpawn(L2PcInstance player, L2Npc npc)
 	{
-		if (_SpawnList.containsKey(npc) && (_SpawnList.get(npc) == player.getObjectId()))
+		if (_SpawnList.containsKey(npc) && _SpawnList.get(npc) == player.getObjectId())
 			return npc;
 		return null;
 	}
@@ -237,7 +237,7 @@ public class SagasSuperClass extends QuestJython
 					int Class = getClassId(player);
 					int prevClass = getPrevClass(player);
 					player.setClassId(Class);
-					if (!player.isSubClassActive() && (player.getBaseClass() == prevClass))
+					if (!player.isSubClassActive() && player.getBaseClass() == prevClass)
 						player.setBaseClass(Class);
 					player.broadcastUserInfo();
 					Cast(npc, player, 4339, 1);
@@ -482,7 +482,7 @@ public class SagasSuperClass extends QuestJython
 			else if (event.equalsIgnoreCase("Mob_2 has despawned"))
 			{
 				st.set("Quest1", String.valueOf(st.getInt("Quest1") + 1));
-				if ((st.getInt("Quest0") == 1) || (st.getInt("Quest0") == 2) || (st.getInt("Quest1") > 3))
+				if (st.getInt("Quest0") == 1 || st.getInt("Quest0") == 2 || st.getInt("Quest1") > 3)
 				{
 					st.set("Quest0", "0");
 					if (st.getInt("Quest0") == 1)
@@ -510,7 +510,7 @@ public class SagasSuperClass extends QuestJython
 		{
 			int npcId = npc.getNpcId();
 			int cond = st.getInt("cond");
-			if ((st.getState() == State.COMPLETED) && (npcId == NPC[0]))
+			if (st.getState() == State.COMPLETED && npcId == NPC[0])
 				htmltext = "<html><body>You have already completed this quest!</body></html>";
 			else if (player.getCurrentClass().getId() == getPrevClass(player))
 			{
@@ -535,10 +535,10 @@ public class SagasSuperClass extends QuestJython
 				}
 				else if (cond == 3)
 				{
-					if ((npcId == NPC[1]) && (st.getQuestItemsCount(Items[0]) != 0))
+					if (npcId == NPC[1] && st.getQuestItemsCount(Items[0]) != 0)
 					{
 						htmltext = "1-02.htm";
-						if ((Items[11] == 0) || (st.getQuestItemsCount(Items[11]) != 0))
+						if (Items[11] == 0 || st.getQuestItemsCount(Items[11]) != 0)
 							htmltext = "1-03.htm";
 					}
 				}
@@ -587,7 +587,7 @@ public class SagasSuperClass extends QuestJython
 					else if (npcId == NPC[3])
 						htmltext = "3-01.htm";
 				}
-				else if ((cond == 11) || (cond == 12))
+				else if (cond == 11 || cond == 12)
 				{
 					if (npcId == NPC[3])
 					{
@@ -649,7 +649,7 @@ public class SagasSuperClass extends QuestJython
 						if (player.getLevel() >= 76)
 						{
 							htmltext = "0-09.htm";
-							if ((getClassId(player) < 131) || (getClassId(player) > 135)) //in Kamael quests, npc wants to chat for a bit before changing class
+							if (getClassId(player) < 131 || getClassId(player) > 135) //in Kamael quests, npc wants to chat for a bit before changing class
 							{
 								st.exitQuest(false);
 								st.set("cond", "0");
@@ -659,7 +659,7 @@ public class SagasSuperClass extends QuestJython
 								int Class = getClassId(player);
 								int prevClass = getPrevClass(player);
 								player.setClassId(Class);
-								if (!player.isSubClassActive() && (player.getBaseClass() == prevClass))
+								if (!player.isSubClassActive() && player.getBaseClass() == prevClass)
 									player.setBaseClass(Class);
 								player.broadcastUserInfo();
 								Cast(npc, player, 4339, 1);
@@ -747,7 +747,7 @@ public class SagasSuperClass extends QuestJython
 		int cond = st2.getInt("cond");
 		QuestState st = player.getQuestState(qn);
 		int npcId = npc.getNpcId();
-		if ((npcId == Mob[2]) && (st == st2) && (cond == 17))
+		if (npcId == Mob[2] && st == st2 && cond == 17)
 		{
 			st.set("Quest0", String.valueOf(st.getInt("Quest0") + 1));
 			if (st.getInt("Quest0") == 1)
@@ -761,9 +761,9 @@ public class SagasSuperClass extends QuestJython
 				DeleteSpawn(st, npc);
 			}
 		}
-		else if ((npcId == Mob[1]) && (cond == 15))
+		else if (npcId == Mob[1] && cond == 15)
 		{
-			if ((st != st2) || ((st == st2) && player.isInParty()))
+			if (st != st2 || st == st2 && player.isInParty())
 			{
 				AutoChat(npc, Text[5].replace("PLAYERNAME", player.getName()));
 				cancelQuestTimer("Archon Hellisha has despawned", npc, st2.getPlayer());
@@ -777,7 +777,7 @@ public class SagasSuperClass extends QuestJython
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance player, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (_SpawnList.containsKey(npc) && (_SpawnList.get(npc) != player.getObjectId()))
+		if (_SpawnList.containsKey(npc) && _SpawnList.get(npc) != player.getObjectId())
 		{
 			L2PcInstance quest_player = (L2PcInstance) L2World.getInstance().findObject(_SpawnList.get(npc));
 			if (quest_player == null)
@@ -786,7 +786,7 @@ public class SagasSuperClass extends QuestJython
 			{
 				for (L2Object obj : targets)
 				{
-					if ((obj == quest_player) || (obj == npc))
+					if (obj == quest_player || obj == npc)
 					{
 						QuestState st2 = findRightState(npc);
 						if (st2 == null)
@@ -818,7 +818,7 @@ public class SagasSuperClass extends QuestJython
 					for (L2PcInstance player1 : party.getPartyMembers())
 					{
 						QuestState st1 = findQuest(player1);
-						if ((st1 != null) && player1.isInsideRadius(player, Config.ALT_PARTY_RANGE2, false, false))
+						if (st1 != null && player1.isInsideRadius(player, Config.ALT_PARTY_RANGE2, false, false))
 						{
 							if (st1.getInt("cond") == 15)
 								PartyQuestMembers.add(st1);
@@ -889,13 +889,13 @@ public class SagasSuperClass extends QuestJython
 				return super.onKill(npc, player, isPet);
 			}
 		}
-		if ((st != null) && (npcId != Mob[2]))
+		if (st != null && npcId != Mob[2])
 		{
 			QuestState st2 = findRightState(npc);
 			if (st2 == null)
 				return super.onKill(npc, player, isPet);
 			int cond = st.getInt("cond");
-			if ((npcId == Mob[0]) && (cond == 8))
+			if (npcId == Mob[0] && cond == 8)
 			{
 				if (!player.isInParty())
 				{
@@ -911,7 +911,7 @@ public class SagasSuperClass extends QuestJython
 				st2.set("spawned", "0");
 				DeleteSpawn(st2, npc);
 			}
-			else if ((npcId == Mob[1]) && (cond == 15))
+			else if (npcId == Mob[1] && cond == 15)
 			{
 				if (!player.isInParty())
 				{

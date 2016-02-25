@@ -49,7 +49,7 @@ public final class RequestCompoundOne extends L2GameClientPacket
 			return;
 		}
 		
-		if ((activeChar.getCompoundItem2() != null) && ((activeChar.getCompoundItem2() == compoundItem) || (activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId())))
+		if (activeChar.getCompoundItem2() != null && (activeChar.getCompoundItem2() == compoundItem || activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId()))
 		{
 			sendPacket(new ExCompoundOneFail());
 			return;

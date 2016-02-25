@@ -132,7 +132,7 @@ public class EnergySeeds extends L2AttackableAIScript
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (!Util.contains(targets, npc) || (skill.getId() != 5780))
+		if (!Util.contains(targets, npc) || skill.getId() != 5780)
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		
 		npc.deleteMe();
@@ -292,15 +292,15 @@ public class EnergySeeds extends L2AttackableAIScript
 		switch (seedType)
 		{
 			case INFINITY:
-				if ((st != null) && (st.getInt("cond") == 3))
+				if (st != null && st.getInt("cond") == 3)
 					handleQuestDrop(st, 13798);
 				break;
 			case DESTRUCTION:
-				if ((st != null) && (st.getInt("cond") == 3))
+				if (st != null && st.getInt("cond") == 3)
 					handleQuestDrop(st, 13867);
 				break;
 			case ANNIHILATION_BISTAKON:
-				if ((st != null) && (st.getInt("cond") == 3))
+				if (st != null && st.getInt("cond") == 3)
 					handleQuestDrop(st, 15535);
 				if (Rnd.get(100) < 50)
 				{
@@ -311,7 +311,7 @@ public class EnergySeeds extends L2AttackableAIScript
 				}
 				break;
 			case ANNIHILATION_REPTILIKON:
-				if ((st != null) && (st.getInt("cond") == 3))
+				if (st != null && st.getInt("cond") == 3)
 					handleQuestDrop(st, 15535);
 				if (Rnd.get(100) < 50)
 				{
@@ -322,7 +322,7 @@ public class EnergySeeds extends L2AttackableAIScript
 				}
 				break;
 			case ANNIHILATION_COKRAKON:
-				if ((st != null) && (st.getInt("cond") == 3))
+				if (st != null && st.getInt("cond") == 3)
 					handleQuestDrop(st, 15535);
 				if (Rnd.get(100) < 50)
 				{

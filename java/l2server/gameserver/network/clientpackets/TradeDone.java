@@ -64,7 +64,7 @@ public final class TradeDone extends L2GameClientPacket
 		
 		if (_response == 1)
 		{
-			if ((trade.getPartner() == null) || (L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null))
+			if (trade.getPartner() == null || L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null)
 			{
 				// Trade partner not found, cancel trade
 				player.cancelActiveTrade();
@@ -72,7 +72,7 @@ public final class TradeDone extends L2GameClientPacket
 				return;
 			}
 			
-			if ((trade.getOwner().getActiveEnchantItem() != null) || (trade.getPartner().getActiveEnchantItem() != null))
+			if (trade.getOwner().getActiveEnchantItem() != null || trade.getPartner().getActiveEnchantItem() != null)
 				return;
 			
 			if (player.getEvent() != null)
@@ -94,7 +94,7 @@ public final class TradeDone extends L2GameClientPacket
 				return;
 			}
 			
-			if ((player.getInstanceId() != trade.getPartner().getInstanceId()) && (player.getInstanceId() != -1))
+			if (player.getInstanceId() != trade.getPartner().getInstanceId() && player.getInstanceId() != -1)
 			{
 				player.cancelActiveTrade();
 				return;

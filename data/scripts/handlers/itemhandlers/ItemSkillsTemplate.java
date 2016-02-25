@@ -104,7 +104,7 @@ public class ItemSkillsTemplate implements IItemHandler
 						return;
 					}
 					
-					if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsume() > 0) && (itemSkill.isPotion() || itemSkill.isSimultaneousCast()))
+					if (itemSkill.getItemConsumeId() == 0 && itemSkill.getItemConsume() > 0 && (itemSkill.isPotion() || itemSkill.isSimultaneousCast()))
 					{
 						if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsume(), null, false))
 						{
@@ -134,15 +134,15 @@ public class ItemSkillsTemplate implements IItemHandler
 							case 25001:
 								int buffId = activeChar._shortBuffTaskSkillId;
 								// greater healing potions
-								if ((skillId == 2037) || (skillId == 26025))
+								if (skillId == 2037 || skillId == 26025)
 									activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
 								// healing potions
-								else if (((skillId == 2032) || (skillId == 26026)) && (buffId != 2037) && (buffId != 26025))
+								else if ((skillId == 2032 || skillId == 26026) && buffId != 2037 && buffId != 26025)
 									activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
 								// lesser healing potions
 								else
 								{
-									if ((buffId != 2037) && (buffId != 26025) && (buffId != 2032) && (buffId != 26026))
+									if (buffId != 2037 && buffId != 26025 && buffId != 2032 && buffId != 26026)
 										activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
 								}
 								break;
@@ -153,7 +153,7 @@ public class ItemSkillsTemplate implements IItemHandler
 					{
 						playable.doSimultaneousCast(itemSkill);
 						// Summons should be affected by herbs too, self time effect is handled at L2Effect constructor
-						if (!isPet && (item.getItemType() == L2EtcItemType.HERB))
+						if (!isPet && item.getItemType() == L2EtcItemType.HERB)
 						{
 							if (activeChar.getPet() != null)
 								activeChar.getPet().doSimultaneousCast(itemSkill);
@@ -168,7 +168,7 @@ public class ItemSkillsTemplate implements IItemHandler
 							return;
 						
 						//consume
-						if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsume() > 0))
+						if (itemSkill.getItemConsumeId() == 0 && itemSkill.getItemConsume() > 0)
 						{
 							if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsume(), null, false))
 							{
@@ -201,12 +201,12 @@ public class ItemSkillsTemplate implements IItemHandler
 		SystemMessage sm = null;
 		final Map<Integer, TimeStamp> timeStamp = player.getReuseTimeStamp();
 		
-		if ((timeStamp != null) && timeStamp.containsKey(skill.getReuseHashCode()))
+		if (timeStamp != null && timeStamp.containsKey(skill.getReuseHashCode()))
 		{
 			final long remainingTime = player.getReuseTimeStamp().get(skill.getReuseHashCode()).getRemaining();
 			final int hours = (int) (remainingTime / 3600000L);
 			final int minutes = (int) (remainingTime % 3600000L) / 60000;
-			final int seconds = (int) ((remainingTime / 1000) % 60);
+			final int seconds = (int) (remainingTime / 1000 % 60);
 			if (hours > 0)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);

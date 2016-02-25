@@ -111,12 +111,12 @@ public class CompactionIDFactory extends IdFactory
 		}
 		
 		int hole = id - _curOID;
-		if (hole > (N - idx))
+		if (hole > N - idx)
 			hole = N - idx;
 		for (int i = 1; i <= hole; i++)
 		{
 			id = tmp_obj_ids[N - i];
-			Log.info("Compacting DB object ID=" + id + " into " + (_curOID));
+			Log.info("Compacting DB object ID=" + id + " into " + _curOID);
 			for (String update : ID_UPDATES)
 			{
 				PreparedStatement ps = con.prepareStatement(update);
@@ -127,7 +127,7 @@ public class CompactionIDFactory extends IdFactory
 			}
 			_curOID++;
 		}
-		if (hole < (N - idx))
+		if (hole < N - idx)
 			_curOID++;
 		return N - hole;
 	}
@@ -156,6 +156,6 @@ public class CompactionIDFactory extends IdFactory
 	@Override
 	public int size()
 	{
-		return (_freeSize + LAST_OID) - FIRST_OID;
+		return _freeSize + LAST_OID - FIRST_OID;
 	}
 }

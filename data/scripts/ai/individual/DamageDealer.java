@@ -51,7 +51,7 @@ public class DamageDealer extends L2AttackableAIScript
 			if (attacker.isGM())
 				return "";
 			
-			if (attacker.isSubClassActive() || attacker.isTransformed() || (attacker.getClassId() < 148))
+			if (attacker.isSubClassActive() || attacker.isTransformed() || attacker.getClassId() < 148)
 			{
 				attacker.sendMessage("You don't meet the conditions to use this!");
 				return "";

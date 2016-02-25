@@ -159,7 +159,7 @@ public class L2EffectZone extends L2ZoneType
 					character.sendPacket(new EtcStatusUpdate((L2PcInstance) character));
 			}
 		}
-		if (_characterList.isEmpty() && (_task != null))
+		if (_characterList.isEmpty() && _task != null)
 		{
 			_task.cancel(true);
 			_task = null;
@@ -219,7 +219,7 @@ public class L2EffectZone extends L2ZoneType
 	
 	public int getSkillLevel(int skillId)
 	{
-		if ((_skills == null) || !_skills.containsKey(skillId))
+		if (_skills == null || !_skills.containsKey(skillId))
 			return 0;
 		else
 			return _skills.get(skillId);
@@ -245,7 +245,7 @@ public class L2EffectZone extends L2ZoneType
 			{
 				for (L2Character temp : getCharacterList())
 				{
-					if ((temp != null) && !temp.isDead() && (!temp.isGM() || !temp.isInvul())) // Tenkai custom - ignore invul GMs
+					if (temp != null && !temp.isDead() && (!temp.isGM() || !temp.isInvul())) // Tenkai custom - ignore invul GMs
 					{
 						if (Rnd.get(100) < getChance())
 						{

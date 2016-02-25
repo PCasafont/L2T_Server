@@ -113,7 +113,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 		else
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof LabyrinthOfBelisWorld))
+		if (wrld != null && wrld instanceof LabyrinthOfBelisWorld)
 		{
 			LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) wrld;
 			if (npc.getNpcId() == _generatorId)
@@ -134,7 +134,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 		else if (player != null)
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof LabyrinthOfBelisWorld))
+		if (wrld != null && wrld instanceof LabyrinthOfBelisWorld)
 		{
 			LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) wrld;
 			if (npc.getNpcId() == _combatOfficer)
@@ -186,7 +186,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof LabyrinthOfBelisWorld))
+		if (wrld != null && wrld instanceof LabyrinthOfBelisWorld)
 		{
 			LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -290,9 +290,9 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_3_guard_attack"))
 			{
-				if ((world.generator != null) && (world.walkingGuard.getDistanceSq(world.generator) >= 100))
+				if (world.generator != null && world.walkingGuard.getDistanceSq(world.generator) >= 100)
 				{
-					if ((world.status < 6) && !world.isGuardAttacked)
+					if (world.status < 6 && !world.isGuardAttacked)
 						moveTo(world.walkingGuard, world.generator.getX(), world.generator.getY(), world.generator.getZ(), world.generator.getHeading());
 					
 					startQuestTimer("stage_3_guard_attack", 3000, world.walkingGuard, null);
@@ -329,13 +329,13 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 					return "";
 				
 				//Instance fail
-				if ((world.officer == null) || world.officer.isDead())
+				if (world.officer == null || world.officer.isDead())
 				{
 					InstanceManager.getInstance().finishInstance(world.instanceId, true);
 					return "";
 				}
 				
-				if ((world.instancePlayer != null) && !world.instancePlayer.isDead())
+				if (world.instancePlayer != null && !world.instancePlayer.isDead())
 				{
 					switch (world.status)
 					{
@@ -344,7 +344,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 							if (!world.isOfficerWalking)
 							{
 								L2Object target = world.instancePlayer.getTarget();
-								if ((target == null) || !(target instanceof L2MonsterInstance) || ((target instanceof L2MonsterInstance) && ((L2MonsterInstance) target).isDead()))
+								if (target == null || !(target instanceof L2MonsterInstance) || target instanceof L2MonsterInstance && ((L2MonsterInstance) target).isDead())
 								{
 									if (world.officer.getAI().getIntention() != CtrlIntention.AI_INTENTION_FOLLOW)
 									{
@@ -422,12 +422,12 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 		if (tmpworld instanceof LabyrinthOfBelisWorld)
 		{
 			LabyrinthOfBelisWorld world = (LabyrinthOfBelisWorld) tmpworld;
-			if ((world.status == 5) && ((npc.getNpcId() == _operativeId) || (npc.getNpcId() == _handymanId)))
+			if (world.status == 5 && (npc.getNpcId() == _operativeId || npc.getNpcId() == _handymanId))
 			{
 				if (!world.isGuardAttacked)
 				{
 					world.isGuardAttacked = true;
-					if ((world.walkingGuard != null) && !world.walkingGuard.isDead())
+					if (world.walkingGuard != null && !world.walkingGuard.isDead())
 						world.walkingGuard.stopMove(null);
 				}
 			}
@@ -512,7 +512,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.deleteAllItemsById(_markOfBelis);
 					player.setInstanceId(world.instanceId);

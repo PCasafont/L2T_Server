@@ -49,7 +49,7 @@ public class ClassChange implements ISkillHandler
 		
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if (player.isInCombat() || (player.getPvpFlag() > 0)) // Cannot switch or change subclasses in combat
+		if (player.isInCombat() || player.getPvpFlag() > 0) // Cannot switch or change subclasses in combat
 		{
 			player.sendMessage("You cannot switch your subclass while you are fighting.");
 			return;
@@ -67,7 +67,7 @@ public class ClassChange implements ISkillHandler
 			return;
 		}
 		
-		if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || (player.getEvent() != null))
+		if (EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null)
 		{
 			player.sendMessage("You cannot switch your subclass while involved in an event.");
 			return;
@@ -79,7 +79,7 @@ public class ClassChange implements ISkillHandler
 			return;
 		}
 		
-		if ((player.getInstanceId() != 0) || GrandBossManager.getInstance().checkIfInZone(player))
+		if (player.getInstanceId() != 0 || GrandBossManager.getInstance().checkIfInZone(player))
 		{
 			player.sendMessage("You cannot switch your subclass in this situation!");
 			return;

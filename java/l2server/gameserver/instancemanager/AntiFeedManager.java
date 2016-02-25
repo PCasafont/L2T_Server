@@ -82,7 +82,7 @@ public class AntiFeedManager
 		if (attackerPlayer == null)
 			return false;
 		
-		if ((attackerPlayer.getClient() == null) || (targetPlayer.getClient() == null))
+		if (attackerPlayer.getClient() == null || targetPlayer.getClient() == null)
 			return false;
 		
 		//External IP check
@@ -93,7 +93,7 @@ public class AntiFeedManager
 		}
 		
 		//Level check
-		if ((attackerPlayer.getLevel() - 3) > targetPlayer.getLevel())
+		if (attackerPlayer.getLevel() - 3 > targetPlayer.getLevel())
 			return false;
 		
 		//Target defense
@@ -110,7 +110,7 @@ public class AntiFeedManager
 			return false;
 		
 		//Clan check
-		if ((attackerPlayer.getClan() != null) && (targetPlayer.getClan() != null) && (attackerPlayer.getClanId() == targetPlayer.getClanId()))
+		if (attackerPlayer.getClan() != null && targetPlayer.getClan() != null && attackerPlayer.getClanId() == targetPlayer.getClanId())
 			return false;
 		
 		return true;

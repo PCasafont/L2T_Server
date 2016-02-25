@@ -90,7 +90,7 @@ public class DeathGate extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_deathGate == null) || _deathGate.isDead() || _deathGate.isDecayed() || _deathGate.getOwner().isAlikeDead())
+			if (_deathGate == null || _deathGate.isDead() || _deathGate.isDecayed() || _deathGate.getOwner().isAlikeDead())
 			{
 				if (_schedule != null)
 				{

@@ -116,7 +116,7 @@ public abstract class AbstractOlympiadGame
 	protected final SystemMessage checkDefaulted(OlympiadParticipant par)
 	{
 		L2PcInstance player = par.player;
-		if ((player == null) || !player.isOnline() || (player.getClient() == null) || player.getClient().isDetached())
+		if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached())
 		{
 			int playerPoints = par.nobleInfo.getPoints();
 			int points = Math.min(playerPoints / 2, Config.ALT_OLY_MAX_POINTS);
@@ -164,7 +164,7 @@ public abstract class AbstractOlympiadGame
 	protected static final boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id)
 	{
 		final L2PcInstance player = par.player;
-		if ((player == null) || !player.isOnline())
+		if (player == null || !player.isOnline())
 			return false;
 		
 		try
@@ -322,7 +322,7 @@ public abstract class AbstractOlympiadGame
 			if (player.getAgathionId() > 0)
 				player.setAgathionId(0);
 			final L2PetInstance pet = player.getPet();
-			if ((pet != null) && !pet.isDead())
+			if (pet != null && !pet.isDead())
 			{
 				pet.setTarget(null);
 				pet.abortAttack();
@@ -404,7 +404,7 @@ public abstract class AbstractOlympiadGame
 		if (player == null)
 			return;
 		
-		if ((player.getLastX() == 0) && (player.getLastY() == 0))
+		if (player.getLastX() == 0 && player.getLastY() == 0)
 			return;
 		
 		player.setInstanceId(0);
@@ -414,7 +414,7 @@ public abstract class AbstractOlympiadGame
 	
 	public static final void rewardParticipant(L2PcInstance player, int[][] reward)
 	{
-		if ((player == null) || !player.isOnline() || (reward == null))
+		if (player == null || !player.isOnline() || reward == null)
 			return;
 		
 		try
@@ -424,7 +424,7 @@ public abstract class AbstractOlympiadGame
 			final InventoryUpdate iu = new InventoryUpdate();
 			for (int[] it : reward)
 			{
-				if ((it == null) || (it.length != 2))
+				if (it == null || it.length != 2)
 					continue;
 				
 				item = player.getInventory().addItem("Olympiad", it[0], it[1], player, null);

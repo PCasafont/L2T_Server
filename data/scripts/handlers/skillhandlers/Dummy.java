@@ -84,9 +84,9 @@ public class Dummy implements ISkillHandler
 			
 			final int team = holder.getPlayerTeam(activeChar);
 			final int color = block.getColorEffect();
-			if ((team == 0) && (color == 0x00))
+			if (team == 0 && color == 0x00)
 				block.changeColor(activeChar, holder, team);
-			else if ((team == 1) && (color == 0x53))
+			else if (team == 1 && color == 0x53)
 				block.changeColor(activeChar, holder, team);
 		}
 	}

@@ -40,7 +40,7 @@ public final class RequestExMPCCShowPartyMembersInfo extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = L2World.getInstance().getPlayer(_partyLeaderId);
-		if ((player != null) && (player.getParty() != null))
+		if (player != null && player.getParty() != null)
 		{
 			getClient().getActiveChar().sendPacket(new ExMPCCShowPartyMemberInfo(player.getParty()));
 			

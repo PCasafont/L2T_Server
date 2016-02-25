@@ -134,7 +134,7 @@ public class Trasken extends L2AttackableAIScript
 	{
 		for (L2Npc teredor : world._teredors)
 		{
-			if ((teredor == null) || (teredor != npc))
+			if (teredor == null || teredor != npc)
 				continue;
 			
 			teredor.stopMove(null);
@@ -181,7 +181,7 @@ public class Trasken extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof TraskenWorld))
+		if (wrld != null && wrld instanceof TraskenWorld)
 		{
 			final TraskenWorld world = (TraskenWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -330,7 +330,7 @@ public class Trasken extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc != null) && (npc.getNpcId() == _enterNpc) && Util.isDigit(event) && (Integer.valueOf(event) == _template))
+		if (npc != null && npc.getNpcId() == _enterNpc && Util.isDigit(event) && Integer.valueOf(event) == _template)
 		{
 			try
 			{
@@ -365,7 +365,7 @@ public class Trasken extends L2AttackableAIScript
 					break;
 				
 				case _earthWyrmTail:
-					if (!npc.isInvul() && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+					if (!npc.isInvul() && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 					{
 						world.isTraskenTime = true;
 						
@@ -374,12 +374,12 @@ public class Trasken extends L2AttackableAIScript
 						return "";
 					}
 					
-					if (System.currentTimeMillis() > (world.lastTailSpawned + _despawnEach))
+					if (System.currentTimeMillis() > world.lastTailSpawned + _despawnEach)
 						startQuestTimer("stage_all_raid_despawn", 1, npc, null);
 					break;
 				
 				case _earthWyrmTrasken:
-					if ((world.status == 1) && !npc.isInvul() && (npc.getCurrentHp() < (npc.getMaxHp() * 0.05)))
+					if (world.status == 1 && !npc.isInvul() && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 					{
 						world.status = 2;
 						
@@ -432,7 +432,7 @@ public class Trasken extends L2AttackableAIScript
 					if (_debug)
 						Log.warning(getName() + ": mobCount: " + world.mobCount);
 					
-					if ((world.mobCount == _tentaclesToKill) && !world.isTeredorTime)
+					if (world.mobCount == _tentaclesToKill && !world.isTeredorTime)
 					{
 						world.isTeredorTime = true;
 						//Custom Message
@@ -449,7 +449,7 @@ public class Trasken extends L2AttackableAIScript
 				case _stomachGland:
 					for (L2Npc gland : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
 					{
-						if ((gland == null) || (gland.getNpcId() != _stomachGland))
+						if (gland == null || gland.getNpcId() != _stomachGland)
 							continue;
 						
 						if (!gland.isDead())
@@ -543,7 +543,7 @@ public class Trasken extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					
 					player.setInstanceId(world.instanceId);

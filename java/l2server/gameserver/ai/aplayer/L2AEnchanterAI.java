@@ -51,10 +51,10 @@ public class L2AEnchanterAI extends L2APlayerAI
 		if (super.interactWith(target))
 			return true;
 		
-		if ((_player.getCurrentMp() > (_player.getMaxMp() * 0.7)) || (_player.getCurrentHp() < (_player.getMaxHp() * 0.5)) || (_player.getTarget() instanceof L2Playable))
+		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 || _player.getTarget() instanceof L2Playable)
 		{
 			// First, let's try to Rush
-			if ((target != null) && ((600 - _player.getDistanceSq(target)) > 100))
+			if (target != null && 600 - _player.getDistanceSq(target) > 100)
 			{
 				L2Skill skill = _player.getKnownSkill(ASSAULT_RUSH);
 				
@@ -65,7 +65,7 @@ public class L2AEnchanterAI extends L2APlayerAI
 			// Then, let's attack!
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (!skill.isOffensive() || (skill.getTargetType() != L2SkillTargetType.TARGET_ONE))
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 					continue;
 				
 				if (_player.useMagic(skill, true, false))
@@ -99,7 +99,7 @@ public class L2AEnchanterAI extends L2APlayerAI
 			if (!hasBuff)
 			{
 				L2Skill skill = _player.getKnownSkill(sonata);
-				if ((skill != null) && _player.useMagic(skill, true, false))
+				if (skill != null && _player.useMagic(skill, true, false))
 					return false;
 			}
 		}
@@ -121,12 +121,12 @@ public class L2AEnchanterAI extends L2APlayerAI
 		int totalHealth = 0;
 		for (L2PcInstance member : _player.getParty().getPartyMembers())
 		{
-			if (_player.getDistanceSq(member) > (1000 * 1000))
+			if (_player.getDistanceSq(member) > 1000 * 1000)
 				continue;
 			
 			checkBuffs(member);
 			
-			int health = (int) ((member.getCurrentHp() * 100) / member.getMaxHp());
+			int health = (int) (member.getCurrentHp() * 100 / member.getMaxHp());
 			if (health < leastHealth)
 			{
 				leastHealth = health;
@@ -139,13 +139,13 @@ public class L2AEnchanterAI extends L2APlayerAI
 		
 		int meanHealth = totalHealth / memberCount;
 		
-		if ((meanHealth < 80) || (leastHealth < 60))
+		if (meanHealth < 80 || leastHealth < 60)
 		{
 			_player.setTarget(mostHarmed);
 			
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (((skill.getSkillType() != L2SkillType.HEAL) && (skill.getSkillType() != L2SkillType.HEAL_STATIC) && (skill.getSkillType() != L2SkillType.HEAL_PERCENT) && (skill.getSkillType() != L2SkillType.CHAIN_HEAL) && (skill.getSkillType() != L2SkillType.OVERHEAL)) || ((skill.getTargetType() != L2SkillTargetType.TARGET_ONE) && ((skill.getTargetType() != L2SkillTargetType.TARGET_SELF) || (mostHarmed != _player)) && ((skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER) || (mostHarmed == _player)) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)))
+				if (skill.getSkillType() != L2SkillType.HEAL && skill.getSkillType() != L2SkillType.HEAL_STATIC && skill.getSkillType() != L2SkillType.HEAL_PERCENT && skill.getSkillType() != L2SkillType.CHAIN_HEAL && skill.getSkillType() != L2SkillType.OVERHEAL || skill.getTargetType() != L2SkillTargetType.TARGET_ONE && (skill.getTargetType() != L2SkillTargetType.TARGET_SELF || mostHarmed != _player) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_OTHER || mostHarmed == _player) && skill.getTargetType() != L2SkillTargetType.TARGET_PARTY_MEMBER)
 					continue;
 				
 				if (_player.useMagic(skill, true, false))

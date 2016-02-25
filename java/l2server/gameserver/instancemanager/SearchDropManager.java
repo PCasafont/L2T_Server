@@ -201,16 +201,16 @@ public class SearchDropManager
 		int maxPages = mobsSize / maxMobsPerPage;
 		if (maxPages > 20)
 			maxPages = 20;
-		if (mobsSize > (maxMobsPerPage * maxPages))
+		if (mobsSize > maxMobsPerPage * maxPages)
 			maxPages++;
 		if (pageToShow > maxPages)
 			pageToShow = maxPages;
 		int pageStart = maxMobsPerPage * pageToShow;
 		int pageEnd = mobsSize;
-		if ((pageEnd - pageStart) > maxMobsPerPage)
+		if (pageEnd - pageStart > maxMobsPerPage)
 			pageEnd = pageStart + maxMobsPerPage;
 		
-		sb.append((maxPages > 1 ? CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "_bbscustom;action;searchDrop;" + itemId + ";" + spoil + ";", ";") : ""));
+		sb.append(maxPages > 1 ? CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "_bbscustom;action;searchDrop;" + itemId + ";" + spoil + ";", ";") : "");
 		sb.append("<br>");
 		sb.append("<table width=600>");
 		sb.append("<tr><td>Monster Name</td><td>Level</td><td>Chance</td><td>Count</td></tr>");
@@ -231,7 +231,7 @@ public class SearchDropManager
 				count = " (" + drop.min + "-" + drop.max + ")";
 			
 			String lineColor = "";
-			if ((playerLevel < (temp.Level + 8)) && (playerLevel > (temp.Level - 8)))
+			if (playerLevel < temp.Level + 8 && playerLevel > temp.Level - 8)
 				lineColor = "<font color=LEVEL>";
 			
 			String radar = "";

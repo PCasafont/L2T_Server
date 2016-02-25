@@ -148,7 +148,7 @@ public class FaenorEventParser extends FaenorParser
 		@Override
 		public Parser create()
 		{
-			return (new FaenorEventParser());
+			return new FaenorEventParser();
 		}
 	}
 	

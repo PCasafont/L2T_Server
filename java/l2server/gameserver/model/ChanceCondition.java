@@ -209,7 +209,7 @@ public final class ChanceCondition
 		if (_pvpOnly && !playable)
 			return false;
 		
-		if ((_elements != null) && (Arrays.binarySearch(_elements, element) < 0))
+		if (_elements != null && Arrays.binarySearch(_elements, element) < 0)
 			return false;
 		
 		if (_activationSkills != null)
@@ -223,13 +223,13 @@ public final class ChanceCondition
 		
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if ((_mindmg > -1) && (_mindmg > damage))
+		if (_mindmg > -1 && _mindmg > damage)
 			return false;
 		
-		if (!crit || (_critChance == -1))
-			return _triggerType.check(event) && ((_chance < 0) || (Rnd.get(100) < _chance));
+		if (!crit || _critChance == -1)
+			return _triggerType.check(event) && (_chance < 0 || Rnd.get(100) < _chance);
 		else
-			return _triggerType.check(event) && ((_critChance < 0) || (Rnd.get(100) < _critChance));
+			return _triggerType.check(event) && (_critChance < 0 || Rnd.get(100) < _critChance);
 	}
 	
 	public TriggerType getTriggerType()

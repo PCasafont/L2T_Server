@@ -142,7 +142,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			i++;
 		}
 		
-		if ((_player.getClient() != null) && _player.getClient().isDetached() && (_player.getCustomSellList() != null) && (_player.getCustomSellList().getItemCount() == 0))
+		if (_player.getClient() != null && _player.getClient().isDetached() && _player.getCustomSellList() != null && _player.getCustomSellList().getItemCount() == 0)
 			_player.logout();
 	}
 	

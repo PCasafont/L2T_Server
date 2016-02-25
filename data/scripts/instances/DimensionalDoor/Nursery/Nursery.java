@@ -93,7 +93,7 @@ public class Nursery extends L2AttackableAIScript
 		else
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		
-		if ((wrld != null) && (wrld instanceof NurseryWorld))
+		if (wrld != null && wrld instanceof NurseryWorld)
 		{
 			NurseryWorld world = (NurseryWorld) wrld;
 			if (npc.getNpcId() == _tieId)
@@ -162,7 +162,7 @@ public class Nursery extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof NurseryWorld))
+		if (wrld != null && wrld instanceof NurseryWorld)
 		{
 			NurseryWorld world = (NurseryWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -191,7 +191,7 @@ public class Nursery extends L2AttackableAIScript
 			}
 			else if (event.equalsIgnoreCase("stage_all_screen_message"))
 			{
-				if ((world.instancePlayer != null) && (world.instancePlayer.getInstanceId() == world.instanceId))
+				if (world.instancePlayer != null && world.instancePlayer.getInstanceId() == world.instanceId)
 				{
 					world.instancePlayer.sendPacket(new ExSendUIEvent(3, (int) (System.currentTimeMillis() - world.enterTime) / 1000, world.points * 60, 1, 2409));
 					startQuestTimer("stage_all_screen_message", 1000, null, world.instancePlayer); //1sec
@@ -211,7 +211,7 @@ public class Nursery extends L2AttackableAIScript
 				
 				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs())
 				{
-					if ((iNpc == null) || (iNpc.getNpcId() == _tieId))
+					if (iNpc == null || iNpc.getNpcId() == _tieId)
 						continue;
 					
 					L2Spawn sp = iNpc.getSpawn();
@@ -227,21 +227,21 @@ public class Nursery extends L2AttackableAIScript
 					world.status = 3;
 					
 					int shinyCoins = 1 * DimensionalDoor.getDimensionalDoorRewardRate();
-					if ((world.points >= 1) && (world.points <= 800))
+					if (world.points >= 1 && world.points <= 800)
 						shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(), 4 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 801) && (world.points <= 1600))
+					else if (world.points >= 801 && world.points <= 1600)
 						shinyCoins += Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(), 5 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 1601) && (world.points <= 2000))
+					else if (world.points >= 1601 && world.points <= 2000)
 						shinyCoins += Rnd.get(5 * DimensionalDoor.getDimensionalDoorRewardRate(), 7 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 2001) && (world.points <= 2400))
+					else if (world.points >= 2001 && world.points <= 2400)
 						shinyCoins += Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 9 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 2401) && (world.points <= 2800))
+					else if (world.points >= 2401 && world.points <= 2800)
 						shinyCoins += Rnd.get(9 * DimensionalDoor.getDimensionalDoorRewardRate(), 11 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 2801) && (world.points <= 3200))
+					else if (world.points >= 2801 && world.points <= 3200)
 						shinyCoins += Rnd.get(11 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 3201) && (world.points <= 3600))
+					else if (world.points >= 3201 && world.points <= 3600)
 						shinyCoins += Rnd.get(13 * DimensionalDoor.getDimensionalDoorRewardRate(), 15 * DimensionalDoor.getDimensionalDoorRewardRate());
-					else if ((world.points >= 3601) && (world.points <= 4000))
+					else if (world.points >= 3601 && world.points <= 4000)
 						shinyCoins += Rnd.get(15 * DimensionalDoor.getDimensionalDoorRewardRate(), 17 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 4001)
 						shinyCoins += Rnd.get(17 * DimensionalDoor.getDimensionalDoorRewardRate(), 19 * DimensionalDoor.getDimensionalDoorRewardRate());
@@ -284,12 +284,12 @@ public class Nursery extends L2AttackableAIScript
 			if (world.status != 1)
 				return super.onKill(npc, player, isPet);
 			
-			if ((npc.getNpcId() >= _failedCreations[0]) && (npc.getNpcId() <= _failedCreations[3]))
+			if (npc.getNpcId() >= _failedCreations[0] && npc.getNpcId() <= _failedCreations[3])
 			{
 				world.points += Rnd.get(1, 10);
 				
 				//Maguen
-				if (!world.isMaguenSpawned && (Rnd.get(100) > 90))
+				if (!world.isMaguenSpawned && Rnd.get(100) > 90)
 				{
 					world.isMaguenSpawned = true;
 					world.instancePlayer.sendPacket(new ExShowScreenMessage(1801149, 0, true, 2000)); //Maguen appearance!!!
@@ -348,7 +348,7 @@ public class Nursery extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-185859, 147886, -15315, true);

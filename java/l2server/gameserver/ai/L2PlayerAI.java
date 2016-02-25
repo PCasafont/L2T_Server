@@ -74,7 +74,7 @@ public class L2PlayerAI extends L2PlayableAI
 		
 		// do nothing unless CAST intention
 		// however, forget interrupted actions when starting to use an offensive skill
-		if ((intention != AI_INTENTION_CAST) || ((arg0 != null) && ((L2Skill) arg0).isOffensive()))
+		if (intention != AI_INTENTION_CAST || arg0 != null && ((L2Skill) arg0).isOffensive())
 		{
 			_nextIntention = null;
 			super.changeIntention(intention, arg0, arg1);
@@ -82,7 +82,7 @@ public class L2PlayerAI extends L2PlayableAI
 		}
 		
 		// do nothing if next intention is same as current one.
-		if ((intention == _intention) && (arg0 == _intentionArg0) && (arg1 == _intentionArg1))
+		if (intention == _intention && arg0 == _intentionArg0 && arg1 == _intentionArg1)
 		{
 			super.changeIntention(intention, arg0, arg1);
 			return;
@@ -255,7 +255,7 @@ public class L2PlayerAI extends L2PlayableAI
 		if (Config.DEBUG)
 			Log.warning("L2PlayerAI: thinkCast -> Start");
 		
-		if (((_skill.getTargetType() == L2SkillTargetType.TARGET_GROUND) || (_skill.getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA)) && (_actor instanceof L2PcInstance))
+		if ((_skill.getTargetType() == L2SkillTargetType.TARGET_GROUND || _skill.getTargetType() == L2SkillTargetType.TARGET_GROUND_AREA) && _actor instanceof L2PcInstance)
 		{
 			if (maybeMoveToPosition(_actor.getSkillCastPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
@@ -268,7 +268,7 @@ public class L2PlayerAI extends L2PlayableAI
 		{
 			if (checkTargetLost(target))
 			{
-				if (_skill.isOffensive() && (getAttackTarget() != null))
+				if (_skill.isOffensive() && getAttackTarget() != null)
 				{
 					//Notify the target
 					setCastTarget(null);
@@ -277,7 +277,7 @@ public class L2PlayerAI extends L2PlayableAI
 				_actor.setIsCastingNow2(false);
 				return;
 			}
-			if ((target != null) && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
+			if (target != null && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
 			{
 				_actor.setIsCastingNow(false);
 				_actor.setIsCastingNow2(false);
@@ -285,11 +285,11 @@ public class L2PlayerAI extends L2PlayableAI
 			}
 		}
 		
-		if ((_skill.getHitTime() > 50) && !_skill.isSimultaneousCast())
+		if (_skill.getHitTime() > 50 && !_skill.isSimultaneousCast())
 			clientStopMoving(null);
 		
 		L2Object oldTarget = _actor.getTarget();
-		if ((oldTarget != null) && (target != null) && (oldTarget != target))
+		if (oldTarget != null && target != null && oldTarget != target)
 		{
 			// Replace the current target by the cast target
 			_actor.setTarget(getCastTarget());
@@ -332,7 +332,7 @@ public class L2PlayerAI extends L2PlayableAI
 	@Override
 	protected void onEvtThink()
 	{
-		if (_thinking && (getIntention() != AI_INTENTION_CAST)) // casting must always continue
+		if (_thinking && getIntention() != AI_INTENTION_CAST) // casting must always continue
 			return;
 		
 		/*

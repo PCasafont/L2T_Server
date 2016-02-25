@@ -51,7 +51,7 @@ public class RequestDispel extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if ((_skillId <= 0) || (_skillLevel <= 0))
+		if (_skillId <= 0 || _skillLevel <= 0)
 			return;
 		
 		final L2PcInstance activeChar = getClient().getActiveChar();
@@ -63,7 +63,7 @@ public class RequestDispel extends L2GameClientPacket
 			return;
 		if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff())
 			return;
-		if ((skill.getTransformId() > 0) && ((skill.getTargetType() != L2SkillTargetType.TARGET_SELF) && (skill.getTargetType() != L2SkillTargetType.TARGET_PARTY) && (skill.getSkillType() != L2SkillType.BUFF))) //LasTravel: Self/Party transformation buffs can be cancelled
+		if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && skill.getTargetType() != L2SkillTargetType.TARGET_PARTY && skill.getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
 			return;
 		if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
 			return;
@@ -72,7 +72,7 @@ public class RequestDispel extends L2GameClientPacket
 		else
 		{
 			final L2PetInstance pet = activeChar.getPet();
-			if ((pet != null) && (pet.getObjectId() == _objectId))
+			if (pet != null && pet.getObjectId() == _objectId)
 				pet.stopSkillEffects(_skillId);
 			for (L2SummonInstance summon : activeChar.getSummons())
 				summon.stopSkillEffects(_skillId);

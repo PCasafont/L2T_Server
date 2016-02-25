@@ -53,22 +53,22 @@ public class EnchantItemTable implements Reloadable
 			{
 			// weapon scrolls can enchant only weapons
 				case L2Item.TYPE2_WEAPON:
-					if ((_targetType != EnchantTargetType.WEAPON) || ((Config.ENCHANT_MAX_WEAPON > 0) && (enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON)))
+					if (_targetType != EnchantTargetType.WEAPON || Config.ENCHANT_MAX_WEAPON > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON)
 						return false;
 					break;
 				// armor scrolls can enchant only accessory and armors
 				case L2Item.TYPE2_SHIELD_ARMOR:
-					if ((_targetType != EnchantTargetType.ELEMENTAL_SHIRT) && ((_targetType != EnchantTargetType.ARMOR) || ((Config.ENCHANT_MAX_ARMOR > 0) && (enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR))))
+					if (_targetType != EnchantTargetType.ELEMENTAL_SHIRT && (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_ARMOR > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR))
 						return false;
 					break;
 				case L2Item.TYPE2_ACCESSORY:
 					if ((enchantItem.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
 					{
-						if ((_targetType != EnchantTargetType.HAIR_ACCESSORY) || ((Config.ENCHANT_MAX_JEWELRY > 0) && (enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)))
+						if (_targetType != EnchantTargetType.HAIR_ACCESSORY || Config.ENCHANT_MAX_JEWELRY > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
 							return false;
 						break;
 					}
-					if ((_targetType != EnchantTargetType.ARMOR) || ((Config.ENCHANT_MAX_JEWELRY > 0) && (enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)))
+					if (_targetType != EnchantTargetType.ARMOR || Config.ENCHANT_MAX_JEWELRY > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY)
 						return false;
 					break;
 				default:
@@ -76,14 +76,14 @@ public class EnchantItemTable implements Reloadable
 			}
 			
 			// check for crystal types
-			if ((_grade != L2Item.CRYSTAL_NONE) && (_grade != enchantItem.getItem().getItemGradePlain()))
+			if (_grade != L2Item.CRYSTAL_NONE && _grade != enchantItem.getItem().getItemGradePlain())
 				return false;
 			
 			// check for maximum enchant level
-			if ((_maxEnchantLevel != 0) && (enchantItem.getEnchantLevel() >= _maxEnchantLevel))
+			if (_maxEnchantLevel != 0 && enchantItem.getEnchantLevel() >= _maxEnchantLevel)
 				return false;
 			
-			if ((_itemId > 0) && (enchantItem.getItemId() != _itemId))
+			if (_itemId > 0 && enchantItem.getItemId() != _itemId)
 				return false;
 			
 			return true;
@@ -143,7 +143,7 @@ public class EnchantItemTable implements Reloadable
 		public final boolean isValid(L2ItemInstance enchantItem, EnchantSupportItem supportItem)
 		{
 			// blessed scrolls can't use support items
-			if ((supportItem != null) && (!supportItem.isValid(enchantItem) || (!Config.isServer(Config.DREAMS) && isBlessed())))
+			if (supportItem != null && (!supportItem.isValid(enchantItem) || !Config.isServer(Config.DREAMS) && isBlessed()))
 				return false;
 			
 			return isValid(enchantItem);
@@ -155,7 +155,7 @@ public class EnchantItemTable implements Reloadable
 				return -1;
 			
 			boolean fullBody = enchantItem.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR;
-			if ((enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX) || (fullBody && (enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX_FULL)))
+			if (enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX || fullBody && enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX_FULL)
 				return 100;
 			
 			boolean isAccessory = enchantItem.getItem().getType2() == L2Item.TYPE2_ACCESSORY;
@@ -175,7 +175,7 @@ public class EnchantItemTable implements Reloadable
 			if (_isBlessed)
 			{
 				// blessed scrolls does not use support items
-				if (!Config.isServer(Config.DREAMS) && (supportItem != null))
+				if (!Config.isServer(Config.DREAMS) && supportItem != null)
 					return -1;
 				
 				if (_targetType == EnchantTargetType.WEAPON)
@@ -323,7 +323,7 @@ public class EnchantItemTable implements Reloadable
 		if (!item.getItem().isEnchantable())
 			return false;
 		// only items in inventory and equipped can be enchanted
-		if ((item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) && (item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL))
+		if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
 			return false;
 		if (item.getName().startsWith("Common"))
 			return false;

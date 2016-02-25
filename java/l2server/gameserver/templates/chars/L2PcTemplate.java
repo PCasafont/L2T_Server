@@ -50,7 +50,7 @@ public class L2PcTemplate extends L2CharTemplate
 	
 	public int getId()
 	{
-		return (race.ordinal() * 2) + (isMage ? 1 : 0);
+		return race.ordinal() * 2 + (isMage ? 1 : 0);
 	}
 	
 	/**
@@ -59,7 +59,7 @@ public class L2PcTemplate extends L2CharTemplate
 	 */
 	public void addItem(int itemId, int amount, boolean equipped)
 	{
-		if ((amount == 1) || !equipped)
+		if (amount == 1 || !equipped)
 			_items.add(new PcTemplateItem(itemId, amount, equipped));
 		else
 		{

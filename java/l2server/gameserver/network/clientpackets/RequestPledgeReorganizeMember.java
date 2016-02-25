@@ -50,7 +50,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_isMemberSelected == 0) && (_memberName.length() == 0))
+		if (_isMemberSelected == 0 && _memberName.length() == 0)
 		{
 			activeChar.sendMessage("You did not select any member.");
 			return;
@@ -70,7 +70,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		}
 		
 		final L2ClanMember member1 = clan.getClanMember(_memberName);
-		if ((member1 == null) || (member1.getObjectId() == clan.getLeaderId()))
+		if (member1 == null || member1.getObjectId() == clan.getLeaderId())
 		{
 			activeChar.sendMessage("The selected member could not be found.");
 			return;
@@ -87,7 +87,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		if (_selectedMember.length() != 0)
 		{
 			final L2ClanMember member2 = clan.getClanMember(_selectedMember);
-			if ((member2 == null) || (member2.getObjectId() == clan.getLeaderId()))
+			if (member2 == null || member2.getObjectId() == clan.getLeaderId())
 				activeChar.sendMessage("You did not select the member to swap " + member1.getName() + " with.");
 			else
 				member2.setPledgeType(oldPledgeType);

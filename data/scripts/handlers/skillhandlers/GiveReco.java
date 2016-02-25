@@ -48,7 +48,7 @@ public class GiveReco implements ISkillHandler
 				int power = (int) skill.getPower();
 				int reco = target.getRecomHave();
 				
-				if ((reco + power) >= 255)
+				if (reco + power >= 255)
 					power = 255 - reco;
 				
 				if (power > 0)

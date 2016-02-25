@@ -54,7 +54,7 @@ public class EffectEnemyCharge extends L2Effect
 		double dx = getEffected().getX() - curX;
 		double dy = getEffected().getY() - curY;
 		double dz = getEffected().getZ() - curZ;
-		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000)
 		{
 			Log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + getEffected().getX() + "," + getEffected().getY());
@@ -72,7 +72,7 @@ public class EffectEnemyCharge extends L2Effect
 			offset = 5;
 		
 		// If no distance
-		if ((distance < 1) || ((distance - offset) <= 0))
+		if (distance < 1 || distance - offset <= 0)
 			return false;
 		
 		// Calculate movement angles needed
@@ -87,7 +87,7 @@ public class EffectEnemyCharge extends L2Effect
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance().moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z, getEffector().getInstanceId());
-			if ((destiny.getX() != _x) || (destiny.getY() != _y))
+			if (destiny.getX() != _x || destiny.getY() != _y)
 			{
 				_x = destiny.getX() - (int) (cos * 10);
 				_y = destiny.getY() - (int) (sin * 10);

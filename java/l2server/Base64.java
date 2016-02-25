@@ -241,27 +241,27 @@ public class Base64
 		// We have to shift left 24 in order to flush out the 1's that appear
 		// when Java treats a value as negative that is cast from a byte to an
 		// int.
-		int inBuff = (numSigBytes > 0 ? ((source[srcOffset] << 24) >>> 8) : 0) | (numSigBytes > 1 ? ((source[srcOffset + 1] << 24) >>> 16) : 0) | (numSigBytes > 2 ? ((source[srcOffset + 2] << 24) >>> 24) : 0);
+		int inBuff = (numSigBytes > 0 ? source[srcOffset] << 24 >>> 8 : 0) | (numSigBytes > 1 ? source[srcOffset + 1] << 24 >>> 16 : 0) | (numSigBytes > 2 ? source[srcOffset + 2] << 24 >>> 24 : 0);
 		
 		switch (numSigBytes)
 		{
 			case 3:
-				destination[destOffset] = ALPHABET[(inBuff >>> 18)];
-				destination[destOffset + 1] = ALPHABET[(inBuff >>> 12) & 0x3f];
-				destination[destOffset + 2] = ALPHABET[(inBuff >>> 6) & 0x3f];
-				destination[destOffset + 3] = ALPHABET[(inBuff) & 0x3f];
+				destination[destOffset] = ALPHABET[inBuff >>> 18];
+				destination[destOffset + 1] = ALPHABET[inBuff >>> 12 & 0x3f];
+				destination[destOffset + 2] = ALPHABET[inBuff >>> 6 & 0x3f];
+				destination[destOffset + 3] = ALPHABET[inBuff & 0x3f];
 				return destination;
 				
 			case 2:
-				destination[destOffset] = ALPHABET[(inBuff >>> 18)];
-				destination[destOffset + 1] = ALPHABET[(inBuff >>> 12) & 0x3f];
-				destination[destOffset + 2] = ALPHABET[(inBuff >>> 6) & 0x3f];
+				destination[destOffset] = ALPHABET[inBuff >>> 18];
+				destination[destOffset + 1] = ALPHABET[inBuff >>> 12 & 0x3f];
+				destination[destOffset + 2] = ALPHABET[inBuff >>> 6 & 0x3f];
 				destination[destOffset + 3] = EQUALS_SIGN;
 				return destination;
 				
 			case 1:
-				destination[destOffset] = ALPHABET[(inBuff >>> 18)];
-				destination[destOffset + 1] = ALPHABET[(inBuff >>> 12) & 0x3f];
+				destination[destOffset] = ALPHABET[inBuff >>> 18];
+				destination[destOffset + 1] = ALPHABET[inBuff >>> 12 & 0x3f];
 				destination[destOffset + 2] = EQUALS_SIGN;
 				destination[destOffset + 3] = EQUALS_SIGN;
 				return destination;
@@ -322,8 +322,8 @@ public class Base64
 		java.util.zip.GZIPOutputStream gzos = null;
 		
 		// Isolate options
-		int gzip = (options & GZIP);
-		int dontBreakLines = (options & DONT_BREAK_LINES);
+		int gzip = options & GZIP;
+		int dontBreakLines = options & DONT_BREAK_LINES;
 		
 		try
 		{
@@ -487,8 +487,8 @@ public class Base64
 	public static String encodeBytes(byte[] source, int off, int len, int options)
 	{
 		// Isolate options
-		int dontBreakLines = (options & DONT_BREAK_LINES);
-		int gzip = (options & GZIP);
+		int dontBreakLines = options & DONT_BREAK_LINES;
+		int gzip = options & GZIP;
 		
 		// Compress?
 		if (gzip == GZIP)
@@ -554,10 +554,10 @@ public class Base64
 		// Convert option to boolean in way that code likes it.
 		boolean breakLines = dontBreakLines == 0;
 		
-		int len43 = (len * 4) / 3;
-		byte[] outBuff = new byte[(len43) // Main 4:3
-				+ ((len % 3) > 0 ? 4 : 0) // Account for padding
-				+ (breakLines ? (len43 / MAX_LINE_LENGTH) : 0)]; // New lines
+		int len43 = len * 4 / 3;
+		byte[] outBuff = new byte[len43 // Main 4:3
+				+ (len % 3 > 0 ? 4 : 0) // Account for padding
+				+ (breakLines ? len43 / MAX_LINE_LENGTH : 0)]; // New lines
 		int d = 0;
 		int e = 0;
 		int len2 = len - 2;
@@ -567,7 +567,7 @@ public class Base64
 			encode3to4(source, d + off, 3, outBuff, e);
 			
 			lineLength += 4;
-			if (breakLines && (lineLength == MAX_LINE_LENGTH))
+			if (breakLines && lineLength == MAX_LINE_LENGTH)
 			{
 				outBuff[e + 4] = NEW_LINE;
 				e++;
@@ -648,7 +648,7 @@ public class Base64
 			// int outBuff = ( ( DECODABET[ source[ srcOffset ] ] << 24 ) >>> 6
 			// )
 			// | ( ( DECODABET[ source[ srcOffset + 1] ] << 24 ) >>> 12 );
-			int outBuff = ((DECODABET[source[srcOffset]] & 0xFF) << 18) | ((DECODABET[source[srcOffset + 1]] & 0xFF) << 12);
+			int outBuff = (DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12;
 			
 			destination[destOffset] = (byte) (outBuff >>> 16);
 			return 1;
@@ -662,7 +662,7 @@ public class Base64
 			// )
 			// | ( ( DECODABET[ source[ srcOffset + 1 ] ] << 24 ) >>> 12 )
 			// | ( ( DECODABET[ source[ srcOffset + 2 ] ] << 24 ) >>> 18 );
-			int outBuff = ((DECODABET[source[srcOffset]] & 0xFF) << 18) | ((DECODABET[source[srcOffset + 1]] & 0xFF) << 12) | ((DECODABET[source[srcOffset + 2]] & 0xFF) << 6);
+			int outBuff = (DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 | (DECODABET[source[srcOffset + 2]] & 0xFF) << 6;
 			
 			destination[destOffset] = (byte) (outBuff >>> 16);
 			destination[destOffset + 1] = (byte) (outBuff >>> 8);
@@ -681,11 +681,11 @@ public class Base64
 				// | ( ( DECODABET[ source[ srcOffset + 1 ] ] << 24 ) >>> 12 )
 				// | ( ( DECODABET[ source[ srcOffset + 2 ] ] << 24 ) >>> 18 )
 				// | ( ( DECODABET[ source[ srcOffset + 3 ] ] << 24 ) >>> 24 );
-				int outBuff = ((DECODABET[source[srcOffset]] & 0xFF) << 18) | ((DECODABET[source[srcOffset + 1]] & 0xFF) << 12) | ((DECODABET[source[srcOffset + 2]] & 0xFF) << 6) | ((DECODABET[source[srcOffset + 3]] & 0xFF));
+				int outBuff = (DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 | (DECODABET[source[srcOffset + 2]] & 0xFF) << 6 | DECODABET[source[srcOffset + 3]] & 0xFF;
 				
 				destination[destOffset] = (byte) (outBuff >> 16);
 				destination[destOffset + 1] = (byte) (outBuff >> 8);
-				destination[destOffset + 2] = (byte) (outBuff);
+				destination[destOffset + 2] = (byte) outBuff;
 				
 				return 3;
 			}
@@ -716,7 +716,7 @@ public class Base64
 	 */
 	public static byte[] decode(byte[] source, int off, int len)
 	{
-		int len34 = (len * 3) / 4;
+		int len34 = len * 3 / 4;
 		byte[] outBuff = new byte[len34]; // Upper limit on size of output
 		int outBuffPosn = 0;
 		
@@ -725,7 +725,7 @@ public class Base64
 		int i = 0;
 		byte sbiCrop = 0;
 		byte sbiDecode = 0;
-		for (i = off; i < (off + len); i++)
+		for (i = off; i < off + len; i++)
 		{
 			sbiCrop = (byte) (source[i] & 0x7f); // Only the low seven bits
 			sbiDecode = DECODABET[sbiCrop];
@@ -788,14 +788,13 @@ public class Base64
 		
 		// Check to see if it's gzip-compressed
 		// GZIP Magic Two-Byte Number: 0x8b1f (35615)
-		if ((bytes != null) && // In case decoding returned null
-		(bytes.length >= 2))
+		if (bytes != null && // In case decoding returned null
+		bytes.length >= 2)
 		{
 			
-			int head = (bytes[0] & 0xff) | ((bytes[1] << 8) & 0xff00);
-			if ((bytes.length >= 4) && // Don't want to get ArrayIndexOutOfBounds
-			(// exception
-			java.util.zip.GZIPInputStream.GZIP_MAGIC == head))
+			int head = bytes[0] & 0xff | bytes[1] << 8 & 0xff00;
+			if (bytes.length >= 4 && // Don't want to get ArrayIndexOutOfBounds
+			java.util.zip.GZIPInputStream.GZIP_MAGIC == head)
 			{
 				java.io.ByteArrayInputStream bais = null;
 				java.util.zip.GZIPInputStream gzis = null;
@@ -1047,7 +1046,7 @@ public class Base64
 						do
 						{
 							b = in.read();
-						} while ((b >= 0) && (DECODABET[b & 0x7f] <= WHITE_SPACE_ENC));
+						} while (b >= 0 && DECODABET[b & 0x7f] <= WHITE_SPACE_ENC);
 						
 						if (b < 0)
 							break; // Reads a -1 if end of stream
@@ -1080,7 +1079,7 @@ public class Base64
 				if ( /* !encode && */position >= numSigBytes)
 					return -1;
 				
-				if (encode && breakLines && (lineLength >= MAX_LINE_LENGTH))
+				if (encode && breakLines && lineLength >= MAX_LINE_LENGTH)
 				{
 					lineLength = 0;
 					return '\n';
@@ -1246,7 +1245,7 @@ public class Base64
 					out.write(encode3to4(b4, buffer, bufferLength));
 					
 					lineLength += 4;
-					if (breakLines && (lineLength >= MAX_LINE_LENGTH))
+					if (breakLines && lineLength >= MAX_LINE_LENGTH)
 					{
 						out.write(NEW_LINE);
 						lineLength = 0;

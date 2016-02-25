@@ -163,7 +163,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		setInstanceType(InstanceType.L2ItemInstance);
 		_itemId = itemId;
 		_item = ItemTable.getInstance().getTemplate(itemId);
-		if ((_itemId == 0) || (_item == null))
+		if (_itemId == 0 || _item == null)
 			throw new IllegalArgumentException();
 		super.setName(_item.getName());
 		setCount(1);
@@ -172,7 +172,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		_type2 = 0;
 		_dropTime = 0;
 		_mana = _item.getDuration();
-		_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + ((long) _item.getTime() * 60 * 1000);
+		_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + (long) _item.getTime() * 60 * 1000;
 		scheduleLifeTimeTask();
 	}
 	
@@ -197,7 +197,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		if (time != -1)
 			_time = time;
 		else
-			_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + ((long) _item.getTime() * 60 * 1000);
+			_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + (long) _item.getTime() * 60 * 1000;
 		
 		scheduleLifeTimeTask();
 	}
@@ -214,7 +214,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		setCount(1);
 		_loc = ItemLocation.VOID;
 		_mana = _item.getDuration();
-		_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + ((long) _item.getTime() * 60 * 1000);
+		_time = _item.getTime() == -1 ? -1 : System.currentTimeMillis() + (long) _item.getTime() * 60 * 1000;
 		scheduleLifeTimeTask();
 	}
 	
@@ -268,7 +268,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
 		
-		if (!Config.DISABLE_TUTORIAL && ((itemId == 57) || (itemId == 6353)))
+		if (!Config.DISABLE_TUTORIAL && (itemId == 57 || itemId == 6353))
 		{
 			L2PcInstance actor = player.getActingPlayer();
 			if (actor != null)
@@ -296,20 +296,20 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		
 		if (Config.LOG_ITEMS && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (getItem().isEquipable() || (getItem().getItemId() == ADENA_ID) || (_item.getItemId() == 4037) || (_item.getItemId() == 4355) || (_item.getItemId() == 4356))))
+			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (getItem().isEquipable() || getItem().getItemId() == ADENA_ID || _item.getItemId() == 4037 || _item.getItemId() == 4355 || _item.getItemId() == 4356))
 				logItem(getItemId(), getObjectId(), getCount(), owner_id, process);
 		}
 		
-		if ((creator != null) && creator.isGM())
+		if (creator != null && creator.isGM())
 		{
 			String referenceName = "no-reference";
 			if (reference instanceof L2Object)
 			{
-				referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+				referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
 			}
 			else if (reference instanceof String)
 				referenceName = (String) reference;
-			String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
+			String targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
 			if (Config.GMAUDIT)
 				GMAudit.auditGMAction(creator.getName(), process + " (obj id: " + getObjectId() + " receipt id: " + owner_id + " id: " + getItemId() + " count: " + getCount() + " name: " + getName() + ")", targetName, "L2Object referencing this action is: " + referenceName);
 		}
@@ -354,7 +354,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public void setLocation(ItemLocation loc, int loc_data)
 	{
-		if ((loc == _loc) && (loc_data == _locData))
+		if (loc == _loc && loc_data == _locData)
 			return;
 		_loc = loc;
 		_locData = loc_data;
@@ -434,7 +434,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		//long max = getItemId() == ADENA_ID ? MAX_ADENA : Integer.MAX_VALUE;
 		long max = MAX_ADENA;
 		
-		if ((count > 0) && (getCount() > (max - count)))
+		if (count > 0 && getCount() > max - count)
 			setCount(max);
 		else
 			setCount(getCount() + count);
@@ -444,9 +444,9 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		
 		_storedInDb = false;
 		
-		if (Config.LOG_ITEMS && (process != null) && !process.contains("Consume"))
+		if (Config.LOG_ITEMS && process != null && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (_item.isEquipable() || (_item.getItemId() == ADENA_ID) || (_item.getItemId() == 4037) || (_item.getItemId() == 4355) || (_item.getItemId() == 4356))))
+			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (_item.isEquipable() || _item.getItemId() == ADENA_ID || _item.getItemId() == 4037 || _item.getItemId() == 4355 || _item.getItemId() == 4356))
 				logItem(getItemId(), getObjectId(), count, creator != null ? creator.getObjectId() : 0, process + " (" + old + "->" + getCount() + ")");
 		}
 		
@@ -462,11 +462,11 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 				String referenceName = "no-reference";
 				if (reference instanceof L2Object)
 				{
-					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+					referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
 				}
 				else if (reference instanceof String)
 					referenceName = (String) reference;
-				String targetName = (creator.getTarget() != null ? creator.getTarget().getName() : "no-target");
+				String targetName = creator.getTarget() != null ? creator.getTarget().getName() : "no-target";
 				if (Config.GMAUDIT)
 					GMAudit.auditGMAction(creator.getName(), process + " (id: " + getItemId() + " objId: " + getObjectId() + " name: " + getName() + " count: " + count + ")", targetName, "L2Object referencing this action is: " + referenceName);
 			}
@@ -485,7 +485,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isEquipable()
 	{
-		return !((_item.getBodyPart() == 0) || (_item.getItemType() == L2EtcItemType.LURE));
+		return !(_item.getBodyPart() == 0 || _item.getItemType() == L2EtcItemType.LURE);
 	}
 	
 	/**
@@ -495,7 +495,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	@Override
 	public boolean isEquipped()
 	{
-		return (_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP);
+		return _loc == ItemLocation.PAPERDOLL || _loc == ItemLocation.PET_EQUIP;
 	}
 	
 	/**
@@ -505,7 +505,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	@Override
 	public int getLocationSlot()
 	{
-		assert (_loc == ItemLocation.PAPERDOLL) || (_loc == ItemLocation.PET_EQUIP) || (_loc == ItemLocation.INVENTORY) || (_loc == ItemLocation.MAIL);
+		assert _loc == ItemLocation.PAPERDOLL || _loc == ItemLocation.PET_EQUIP || _loc == ItemLocation.INVENTORY || _loc == ItemLocation.MAIL;
 		return _locData;
 	}
 	
@@ -573,7 +573,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isEtcItem()
 	{
-		return (_item instanceof L2EtcItem);
+		return _item instanceof L2EtcItem;
 	}
 	
 	/**
@@ -582,7 +582,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isWeapon()
 	{
-		return (_item instanceof L2Weapon);
+		return _item instanceof L2Weapon;
 	}
 	
 	/**
@@ -591,7 +591,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isArmor()
 	{
-		return (_item instanceof L2Armor);
+		return _item instanceof L2Armor;
 	}
 	
 	/**
@@ -694,7 +694,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isDropable()
 	{
-		if (Config.isServer(Config.DREAMS) && (getTime() != -1))
+		if (Config.isServer(Config.DREAMS) && getTime() != -1)
 			return false;
 		
 		return isAugmented() ? false : _item.isDropable();
@@ -706,7 +706,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isDestroyable()
 	{
-		if (Config.isServer(Config.DREAMS) && (getTime() != -1))
+		if (Config.isServer(Config.DREAMS) && getTime() != -1)
 			return false;
 		
 		return _item.isDestroyable();
@@ -718,7 +718,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isTradeable()
 	{
-		if (Config.isServer(Config.DREAMS) && (getTime() != -1))
+		if (Config.isServer(Config.DREAMS) && getTime() != -1)
 			return false;
 		
 		return isAugmented() ? false : _item.isTradeable();
@@ -730,7 +730,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isSellable()
 	{
-		if (Config.isServer(Config.DREAMS) && (getTime() != -1))
+		if (Config.isServer(Config.DREAMS) && getTime() != -1)
 			return false;
 		
 		return isAugmented() ? false : _item.isSellable();
@@ -742,7 +742,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isDepositable(boolean isPrivateWareHouse)
 	{
-		if (Config.isServer(Config.DREAMS) && (getTime() != -1))
+		if (Config.isServer(Config.DREAMS) && getTime() != -1)
 			return false;
 		
 		// equipped, hero and quest items
@@ -802,13 +802,13 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isAvailable(L2PcInstance player, boolean allowAdena, boolean allowNonTradeable)
 	{
-		return ((!isEquipped()) // Not equipped
-				&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
-				&& ((getItem().getType2() != L2Item.TYPE2_MONEY) || (getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)) // not money, not shield
-				&& ((player.getPet() == null) || (getObjectId() != player.getPet().getControlObjectId())) // Not Control item of currently summoned pet
-				&& (player.getActiveEnchantItem() != this) // Not momentarily used enchant scroll
-				&& (allowAdena || (getItemId() != 57)) // Not adena
-				&& ((player.getCurrentSkill() == null) || (player.getCurrentSkill().getSkill().getItemConsumeId() != getItemId())) && (!player.isCastingSimultaneouslyNow() || (player.getLastSimultaneousSkillCast() == null) || (player.getLastSimultaneousSkillCast().getItemConsumeId() != getItemId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == L2EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
+		return !isEquipped() // Not equipped
+				&& getItem().getType2() != L2Item.TYPE2_QUEST // Not Quest Item
+				&& (getItem().getType2() != L2Item.TYPE2_MONEY || getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR) // not money, not shield
+				&& (player.getPet() == null || getObjectId() != player.getPet().getControlObjectId()) // Not Control item of currently summoned pet
+				&& player.getActiveEnchantItem() != this // Not momentarily used enchant scroll
+				&& (allowAdena || getItemId() != 57) // Not adena
+				&& (player.getCurrentSkill() == null || player.getCurrentSkill().getSkill().getItemConsumeId() != getItemId()) && (!player.isCastingSimultaneouslyNow() || player.getLastSimultaneousSkillCast() == null || player.getLastSimultaneousSkillCast().getItemConsumeId() != getItemId()) && (allowNonTradeable || isTradeable() && !(getItem().getItemType() == L2EtcItemType.PET_COLLAR && player.havePetInvItems()));
 	}
 	
 	/**
@@ -1034,7 +1034,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			{
 				int effectIndex = rs.getInt(1);
 				int effectId = rs.getInt(2);
-				if ((effectIndex >= 0) && (effectIndex < _ensoulEffects.length) && (effectId > 0))
+				if (effectIndex >= 0 && effectIndex < _ensoulEffects.length && effectId > 0)
 					_ensoulEffects[effectIndex] = EnsoulDataTable.getInstance().getEffect(effectId);
 			}
 			rs.close();
@@ -1059,7 +1059,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			{
 				byte elem_type = rs.getByte(1);
 				int elem_value = rs.getInt(2);
-				if ((elem_type != -1) && (elem_value != -1))
+				if (elem_type != -1 && elem_value != -1)
 					applyAttribute(elem_type, elem_value);
 			}
 			rs.close();
@@ -1174,7 +1174,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	@Override
 	public boolean isElementEnchanted()
 	{
-		return (_elementals != null) || (getItem().getElementals() != null);
+		return _elementals != null || getItem().getElementals() != null;
 	}
 	
 	public Elementals getElemental(byte attribute)
@@ -1298,13 +1298,13 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public void clearElementAttr(byte element)
 	{
-		if ((getElemental(element) == null) && (element != -1))
+		if (getElemental(element) == null && element != -1)
 		{
 			return;
 		}
 		
 		Elementals[] array = null;
-		if ((element != -1) && (_elementals != null) && (_elementals.length > 1))
+		if (element != -1 && _elementals != null && _elementals.length > 1)
 		{
 			array = new Elementals[_elementals.length - 1];
 			int i = 0;
@@ -1386,7 +1386,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	public boolean isShadowItem()
 	{
-		return (_mana >= 0);
+		return _mana >= 0;
 	}
 	
 	/**
@@ -1424,7 +1424,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		if (!isShadowItem())
 			return;
 		
-		if ((_mana - count) >= 0)
+		if (_mana - count >= 0)
 			_mana -= count;
 		else
 			_mana = 0;
@@ -1629,7 +1629,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		{
 			if (_existsInDb)
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((getCount() == 0) && (_loc != ItemLocation.LEASE)))
+				if (_ownerId == 0 || _loc == ItemLocation.VOID || _loc == ItemLocation.REFUND || getCount() == 0 && _loc != ItemLocation.LEASE)
 				{
 					removeFromDb();
 					
@@ -1653,7 +1653,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			}
 			else
 			{
-				if ((_ownerId == 0) || (_loc == ItemLocation.VOID) || (_loc == ItemLocation.REFUND) || ((getCount() == 0) && (_loc != ItemLocation.LEASE)))
+				if (_ownerId == 0 || _loc == ItemLocation.VOID || _loc == ItemLocation.REFUND || getCount() == 0 && _loc != ItemLocation.LEASE)
 				{
 					/*
 					if (getCount() != 0)
@@ -1787,7 +1787,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		{
 			assert _itm.getPosition().getWorldRegion() == null;
 			
-			if ((Config.GEODATA > 0) && (_dropper != null))
+			if (Config.GEODATA > 0 && _dropper != null)
 			{
 				Location dropDest = GeoData.getInstance().moveCheck(_dropper.getX(), _dropper.getY(), _dropper.getZ(), _x, _y, _z, _dropper.getInstanceId());
 				_x = dropDest.getX();
@@ -1883,7 +1883,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	 */
 	private void insertIntoDb()
 	{
-		assert !_existsInDb && (getObjectId() != 0);
+		assert !_existsInDb && getObjectId() != 0;
 		
 		if (_wear)
 			return;
@@ -2013,7 +2013,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public boolean isNightLure()
 	{
-		return (((_itemId >= 8505) && (_itemId <= 8513)) || (_itemId == 8485));
+		return _itemId >= 8505 && _itemId <= 8513 || _itemId == 8485;
 	}
 	
 	public void setCountDecrease(boolean decrease)
@@ -2044,7 +2044,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public boolean isTimeLimitedItem()
 	{
-		return (_time > 0);
+		return _time > 0;
 	}
 	
 	/**
@@ -2058,7 +2058,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public final void setTime(final int time)
 	{
-		_time = System.currentTimeMillis() + ((long) time * 60 * 1000);
+		_time = System.currentTimeMillis() + (long) time * 60 * 1000;
 		
 		scheduleLifeTimeTask();
 		
@@ -2237,7 +2237,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public boolean isValuable()
 	{
-		return getItem().getItemGrade() >= L2Item.CRYSTAL_S ? true : (isAugmented() ? true : (isPvp() ? true : false));
+		return getItem().getItemGrade() >= L2Item.CRYSTAL_S ? true : isAugmented() ? true : isPvp() ? true : false;
 	}
 	
 	private boolean _isEventDrop;
@@ -2254,7 +2254,7 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public int getStoneType()
 	{
-		if (getName().contains("Weapon") || ((getItem().getStandardItem() > -1) && (ItemTable.getInstance().getTemplate(getItem().getStandardItem()) instanceof L2Weapon)))
+		if (getName().contains("Weapon") || getItem().getStandardItem() > -1 && ItemTable.getInstance().getTemplate(getItem().getStandardItem()) instanceof L2Weapon)
 			return L2Item.TYPE2_WEAPON;
 		if (getName().contains("Armor"))
 			return L2Item.TYPE2_SHIELD_ARMOR;
@@ -2265,6 +2265,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 	
 	public final boolean isTerritoryWard()
 	{
-		return (getItemId() >= 13560) && (getItemId() <= 13568);
+		return getItemId() >= 13560 && getItemId() <= 13568;
 	}
 }

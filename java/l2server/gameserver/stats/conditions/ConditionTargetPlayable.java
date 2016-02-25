@@ -31,6 +31,6 @@ public class ConditionTargetPlayable extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return (env.target instanceof L2Playable);
+		return env.target instanceof L2Playable;
 	}
 }

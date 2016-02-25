@@ -63,7 +63,7 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		
-		if ((item == null) || (scroll == null))
+		if (item == null || scroll == null)
 			return;
 		
 		// template for scroll
@@ -83,8 +83,8 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 			if (chance < 1000)
 			{
 				String chanceText = String.valueOf(chance / 10);
-				if ((chance % 10) > 0)
-					chanceText += "." + (chance % 10);
+				if (chance % 10 > 0)
+					chanceText += "." + chance % 10;
 				activeChar.sendPacket(new ExShowScreenMessage("This enchantment has a " + chanceText + "% chance to succeed", 3000));
 			}
 		}

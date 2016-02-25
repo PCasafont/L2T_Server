@@ -53,7 +53,7 @@ public class L2NpcInstance extends L2Npc
 		boolean found = false;
 		for (L2Effect effect : newEffect.getEffects())
 		{
-			if (!((effect instanceof EffectDebuff) || (effect instanceof EffectBuff)))
+			if (!(effect instanceof EffectDebuff || effect instanceof EffectBuff))
 				found = true;
 		}
 		

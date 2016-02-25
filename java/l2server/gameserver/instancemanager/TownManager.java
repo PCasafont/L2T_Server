@@ -27,19 +27,19 @@ public class TownManager
 {
 	public final static L2TownZone getClosestTown(L2Object activeObject)
 	{
-		if ((Curfew.getInstance().getOnlyPeaceTown() != -1) && (activeObject instanceof L2PcInstance))
+		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
-			if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
+			if (!(castle != null && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
 				return getTown(Curfew.getInstance().getOnlyPeaceTown());
 		}
 		
-		if ((MainTownManager.getInstance().getCurrentMainTown() != null) && (activeObject instanceof L2PcInstance))
+		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
-			if (!((castle != null) && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
+			if (!(castle != null && castle.getSiege().getIsInProgress() && (castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan()))))
 				return getTown(MainTownManager.getInstance().getCurrentMainTown().getTownId());
 		}
 		
@@ -228,7 +228,7 @@ public class TownManager
 	
 	public final static boolean townHasCastleInSiege(int x, int y)
 	{
-		int curtown = (MapRegionTable.getInstance().getMapRegion(x, y));
+		int curtown = MapRegionTable.getInstance().getMapRegion(x, y);
 		//int[] castleidarray = {0,0,0,0,0,1,0,2,3,4,5,0,0,6,0,0,0,0};
 		int[] castleidarray = { 0, 0, 0, 0, 0, 1, 0, 2, 3, 4, 5, 0, 0, 6, 8, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		//find an instance of the castle for this town.

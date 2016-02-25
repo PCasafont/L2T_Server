@@ -210,8 +210,8 @@ public class EnchantCostsTable
 							{
 								int playerLvl = 85 + i;
 								// Hardcoded calculation of the enchant chances
-								rate[i] = (byte) (playerLvl - (((enchLvl - 1) % 10) * 5));
-								if ((i - enchLvl) < 3)
+								rate[i] = (byte) (playerLvl - (enchLvl - 1) % 10 * 5);
+								if (i - enchLvl < 3)
 									rate[i] -= 30;
 								
 								if (rate[i] < 0)
@@ -248,7 +248,7 @@ public class EnchantCostsTable
 	{
 		L2EnchantSkillLearn esl = getSkillEnchantmentBySkillId(skill.getId());
 		// there is enchantment for this skill and we have the required level of it
-		if ((esl != null) && (skill.getLevelHash() >= esl.getBaseLevel()))
+		if (esl != null && skill.getLevelHash() >= esl.getBaseLevel())
 		{
 			return esl;
 		}

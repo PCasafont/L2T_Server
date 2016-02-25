@@ -51,9 +51,9 @@ public class RequestEx2ndPasswordReq extends L2GameClientPacket
 		SecondaryPasswordAuth spa = getClient().getSecondaryAuth();
 		boolean exVal = false;
 		
-		if ((_changePass == 0) && !spa.passwordExist())
+		if (_changePass == 0 && !spa.passwordExist())
 			exVal = spa.savePassword(_password);
-		else if ((_changePass == 2) && spa.passwordExist())
+		else if (_changePass == 2 && spa.passwordExist())
 			exVal = spa.changePassword(_password, _newPassword);
 		
 		if (exVal)

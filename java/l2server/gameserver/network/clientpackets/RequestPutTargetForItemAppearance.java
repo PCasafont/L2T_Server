@@ -56,7 +56,7 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 		if (item == null)
 			return;
 		
-		if (!item.getItem().canBeUsedAsApp() || (item.getTime() != -1))
+		if (!item.getItem().canBeUsedAsApp() || item.getTime() != -1)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
 			return;
@@ -77,7 +77,7 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 			default:
 			{
 				boolean isCorrectGrade = item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain();
-				boolean isCorrectType = (type == -1) || (itemType == type);
+				boolean isCorrectType = type == -1 || itemType == type;
 				if (Config.isServer(Config.DREAMS))
 					player.sendMessage(item.getItem().getItemGradePlain() + "..." + stone.getItem().getItemGradePlain());
 				

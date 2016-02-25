@@ -41,12 +41,12 @@ public class Time implements IUserCommandHandler
 			return false;
 		
 		int t = TimeController.getInstance().getGameTime();
-		String h = "" + ((t / 60) % 24);
+		String h = "" + t / 60 % 24;
 		String m;
-		if ((t % 60) < 10)
-			m = "0" + (t % 60);
+		if (t % 60 < 10)
+			m = "0" + t % 60;
 		else
-			m = "" + (t % 60);
+			m = "" + t % 60;
 		
 		SystemMessage sm;
 		if (TimeController.getInstance().isNowNight())

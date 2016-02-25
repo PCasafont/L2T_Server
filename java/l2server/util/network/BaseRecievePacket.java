@@ -34,9 +34,9 @@ public abstract class BaseRecievePacket
 	public int readD()
 	{
 		int result = _decrypt[_off++] & 0xff;
-		result |= (_decrypt[_off++] << 8) & 0xff00;
-		result |= (_decrypt[_off++] << 0x10) & 0xff0000;
-		result |= (_decrypt[_off++] << 0x18) & 0xff000000;
+		result |= _decrypt[_off++] << 8 & 0xff00;
+		result |= _decrypt[_off++] << 0x10 & 0xff0000;
+		result |= _decrypt[_off++] << 0x18 & 0xff000000;
 		return result;
 	}
 	
@@ -49,7 +49,7 @@ public abstract class BaseRecievePacket
 	public int readH()
 	{
 		int result = _decrypt[_off++] & 0xff;
-		result |= (_decrypt[_off++] << 8) & 0xff00;
+		result |= _decrypt[_off++] << 8 & 0xff00;
 		return result;
 	}
 	
@@ -78,7 +78,7 @@ public abstract class BaseRecievePacket
 		{
 			e.printStackTrace();
 		}
-		_off += (result.length() * 2) + 2;
+		_off += result.length() * 2 + 2;
 		return result;
 	}
 	

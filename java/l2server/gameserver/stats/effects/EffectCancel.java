@@ -78,7 +78,7 @@ public class EffectCancel extends L2Effect
 		ArrayList<L2Abnormal> removableBuffs = new ArrayList<L2Abnormal>();
 		for (L2Abnormal effect : effects)
 		{
-			if (effect.canBeStolen() || (effect.getEffectMask() == L2EffectType.INVINCIBLE.getMask()))
+			if (effect.canBeStolen() || effect.getEffectMask() == L2EffectType.INVINCIBLE.getMask())
 				removableBuffs.add(effect);
 		}
 		
@@ -91,13 +91,13 @@ public class EffectCancel extends L2Effect
 			int candidate = Rnd.get(removableBuffs.size());
 			
 			// More detailed .landrates feedback considering enchanted buffs
-			if ((caster instanceof L2PcInstance) && (i > minNegate) && caster.getActingPlayer().isLandRates())
+			if (caster instanceof L2PcInstance && i > minNegate && caster.getActingPlayer().isLandRates())
 			{
 				caster.sendMessage("Attempted to remove " + removableBuffs.get(candidate).getSkill().getName() + " with " + rate + "% chance.");
 			}
 			
 			// Give it a try with rate% chance
-			if ((i < minNegate) || (Rnd.get(100) < rate))
+			if (i < minNegate || Rnd.get(100) < rate)
 			{
 				L2Abnormal buff = removableBuffs.get(candidate);
 				if (buff == null)
@@ -107,10 +107,10 @@ public class EffectCancel extends L2Effect
 				buff.exit();
 				
 				// Tenkai custom: recover buffs 1 minute after they're cancelled!
-				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS) && (buff.getEffected() instanceof L2PcInstance))
+				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_ESTHUS) && buff.getEffected() instanceof L2PcInstance)
 					target.scheduleEffectRecovery(buff, 60, target.isInOlympiadMode());
 				
-				if ((caster instanceof L2PcInstance) && caster.getActingPlayer().isLandRates())
+				if (caster instanceof L2PcInstance && caster.getActingPlayer().isLandRates())
 					caster.sendMessage("Attempt to remove " + buff.getSkill().getName() + " succeeded.");
 				
 				// Remove the reference to the cancelled buffs from the collection to not try same again

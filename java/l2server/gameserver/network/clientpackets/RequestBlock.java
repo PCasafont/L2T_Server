@@ -40,7 +40,7 @@ public final class RequestBlock extends L2GameClientPacket
 	{
 		_type = readD(); //0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 		
-		if ((_type == BLOCK) || (_type == UNBLOCK))
+		if (_type == BLOCK || _type == UNBLOCK)
 		{
 			_name = readS();
 		}

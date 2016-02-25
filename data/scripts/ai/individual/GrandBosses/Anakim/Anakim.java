@@ -113,7 +113,7 @@ public class Anakim extends L2AttackableAIScript
 		
 		int npcId = npc.getNpcId();
 		
-		if ((npcId == _enterCubic) || (npcId == _anakimCubic))
+		if (npcId == _enterCubic || npcId == _anakimCubic)
 		{
 			int _anakimStatus = GrandBossManager.getInstance().getBossStatus(_anakimId);
 			
@@ -127,16 +127,16 @@ public class Anakim extends L2AttackableAIScript
 				{
 					if (!Config.isServer(Config.DREAMS))
 					{
-						if ((_anakimStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
+						if (_anakimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
 							return null;
-						else if ((_anakimStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
+						else if (_anakimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
 							return null;
 					}
 					else
 					{
-						if ((_anakimStatus == GrandBossManager.getInstance().ALIVE) && (npcId != _anakimCubic) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 87, 99))
+						if (_anakimStatus == GrandBossManager.getInstance().ALIVE && npcId != _anakimCubic && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 87, 99))
 							return null;
-						else if ((_anakimStatus == GrandBossManager.getInstance().WAITING) && (npcId != _anakimCubic) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 87, 99))
+						else if (_anakimStatus == GrandBossManager.getInstance().WAITING && npcId != _anakimCubic && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 87, 99))
 							return null;
 					}
 					if (_anakimStatus == GrandBossManager.getInstance().FIGHTING)
@@ -144,7 +144,7 @@ public class Anakim extends L2AttackableAIScript
 				}
 			}
 			
-			if ((_anakimStatus == GrandBossManager.getInstance().ALIVE) && (npcId == _enterCubic))
+			if (_anakimStatus == GrandBossManager.getInstance().ALIVE && npcId == _enterCubic)
 			{
 				GrandBossManager.getInstance().setBossStatus(_anakimId, GrandBossManager.getInstance().WAITING);
 				
@@ -158,7 +158,7 @@ public class Anakim extends L2AttackableAIScript
 				
 				startQuestTimer("check_activity_task", 60000, null, null, true);
 			}
-			else if ((_anakimStatus == GrandBossManager.getInstance().WAITING) && (npcId == _anakimCubic))
+			else if (_anakimStatus == GrandBossManager.getInstance().WAITING && npcId == _anakimCubic)
 			{
 				if (!_remnants.isEmpty())
 					return "You must kill all minions before you can engage in a fight with Anakim.";
@@ -312,9 +312,9 @@ public class Anakim extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == _remnant)
 		{
-			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.30))
+			if (npc.getCurrentHp() < npc.getMaxHp() * 0.30)
 			{
-				if (!npc.isCastingNow() && (Rnd.get(100) > 95))
+				if (!npc.isCastingNow() && Rnd.get(100) > 95)
 					npc.doCast(_remantTele);
 			}
 		}
@@ -357,7 +357,7 @@ public class Anakim extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onSpellFinished: " + npc.getName());
 		
-		if ((npc.getNpcId() == _remnant) && _preAnakimZone.isInsideZone(npc))
+		if (npc.getNpcId() == _remnant && _preAnakimZone.isInsideZone(npc))
 		{
 			if (skill == _remantTele)
 			{
@@ -373,11 +373,11 @@ public class Anakim extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onSkillSee: " + npc.getName());
 		
-		if (Util.contains(_anakimMinions, npc.getNpcId()) && (Rnd.get(2) == 1))
+		if (Util.contains(_anakimMinions, npc.getNpcId()) && Rnd.get(2) == 1)
 		{
 			if (skill.getSkillType().toString().contains("HEAL"))
 			{
-				if (!npc.isCastingNow() && (npc.getTarget() != npc) && (npc.getTarget() != caster) && (npc.getTarget() != _anakimBoss)) //Don't call minions if are healing Anakim
+				if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster && npc.getTarget() != _anakimBoss) //Don't call minions if are healing Anakim
 				{
 					((L2Attackable) npc).clearAggroList();
 					npc.setTarget(caster);

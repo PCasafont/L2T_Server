@@ -59,14 +59,14 @@ public final class L2Armor extends L2Item
 		_type = L2ArmorType.valueOf(set.getString("armorType", "none").toUpperCase());
 		
 		int _bodyPart = getBodyPart();
-		if ((_bodyPart == L2Item.SLOT_NECK) || (_bodyPart == L2Item.SLOT_HAIR) || (_bodyPart == L2Item.SLOT_HAIR2) || (_bodyPart == L2Item.SLOT_HAIRALL) || ((_bodyPart & L2Item.SLOT_L_EAR) != 0) || ((_bodyPart & L2Item.SLOT_L_FINGER) != 0) || ((_bodyPart & L2Item.SLOT_R_BRACELET) != 0) || ((_bodyPart & L2Item.SLOT_L_BRACELET) != 0) || ((_bodyPart & L2Item.SLOT_BACK) != 0) || ((_bodyPart & L2Item.SLOT_BROOCH) != 0))
+		if (_bodyPart == L2Item.SLOT_NECK || _bodyPart == L2Item.SLOT_HAIR || _bodyPart == L2Item.SLOT_HAIR2 || _bodyPart == L2Item.SLOT_HAIRALL || (_bodyPart & L2Item.SLOT_L_EAR) != 0 || (_bodyPart & L2Item.SLOT_L_FINGER) != 0 || (_bodyPart & L2Item.SLOT_R_BRACELET) != 0 || (_bodyPart & L2Item.SLOT_L_BRACELET) != 0 || (_bodyPart & L2Item.SLOT_BACK) != 0 || (_bodyPart & L2Item.SLOT_BROOCH) != 0)
 		{
 			_type1 = L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE;
 			_type2 = L2Item.TYPE2_ACCESSORY;
 		}
 		else
 		{
-			if ((_type == L2ArmorType.NONE) && (getBodyPart() == L2Item.SLOT_L_HAND)) // retail define shield as NONE
+			if (_type == L2ArmorType.NONE && getBodyPart() == L2Item.SLOT_L_HAND) // retail define shield as NONE
 				_type = L2ArmorType.SHIELD;
 			_type1 = L2Item.TYPE1_SHIELD_ARMOR;
 			_type2 = L2Item.TYPE2_SHIELD_ARMOR;
@@ -100,7 +100,7 @@ public final class L2Armor extends L2Item
 			{
 				String[] info = skill.split("-");
 				
-				if ((info != null) && (info.length == 2))
+				if (info != null && info.length == 2)
 				{
 					int id = 0;
 					int level = 0;
@@ -114,7 +114,7 @@ public final class L2Armor extends L2Item
 						// Incorrect syntax, dont add new skill
 						Log.info(StringUtil.concat("> Couldnt parse ", skill, " in armor enchant skills! item ", toString()));
 					}
-					if ((id > 0) && (level > 0))
+					if (id > 0 && level > 0)
 						_enchantSkills.put(enchant, new SkillHolder(id, level));
 				}
 			}
@@ -182,7 +182,7 @@ public final class L2Armor extends L2Item
 	@Override
 	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if ((_funcTemplates == null) || (_funcTemplates.length == 0))
+		if (_funcTemplates == null || _funcTemplates.length == 0)
 			return _emptyFunctionSet;
 		
 		ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);

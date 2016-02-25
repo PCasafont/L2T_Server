@@ -63,10 +63,10 @@ public class MonRaceInfo extends L2GameServerPacket
 			writeD(_monsters[i].getObjectId()); //npcObjectID
 			writeD(_monsters[i].getTemplate().NpcId + 1000000); //npcID
 			writeD(14107); //origin X
-			writeD(181875 + (58 * (7 - i))); //origin Y
+			writeD(181875 + 58 * (7 - i)); //origin Y
 			writeD(-3566); //origin Z
 			writeD(12080); //end X
-			writeD(181875 + (58 * (7 - i))); //end Y
+			writeD(181875 + 58 * (7 - i)); //end Y
 			writeD(-3566); //end Z
 			writeF(_monsters[i].getTemplate().fCollisionHeight); //coll. height
 			writeF(_monsters[i].getTemplate().fCollisionRadius); //coll. radius

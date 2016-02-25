@@ -32,7 +32,7 @@ public class L2ItemInstanceAction implements IActionHandler
 		// mercenary tickets can only be picked up by the castle owner.
 		final int castleId = MercTicketManager.getInstance().getTicketCastleId(((L2ItemInstance) target).getItemId());
 		
-		if ((castleId > 0) && (!activeChar.isCastleLord(castleId) || activeChar.isInParty()))
+		if (castleId > 0 && (!activeChar.isCastleLord(castleId) || activeChar.isInParty()))
 		{
 			if (activeChar.isInParty()) //do not allow owner who is in party to pick tickets up
 				activeChar.sendMessage("You cannot pickup mercenaries while in a party.");

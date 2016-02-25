@@ -36,6 +36,6 @@ public class ConditionPlayerLevelRange extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((env.player.getLevel() >= _levels[0]) && (env.player.getLevel() <= _levels[1]));
+		return env.player.getLevel() >= _levels[0] && env.player.getLevel() <= _levels[1];
 	}
 }

@@ -44,7 +44,7 @@ public class ExGetOnShuttle extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if ((player == null) || !player.canGetOnOffShuttle())
+		if (player == null || !player.canGetOnOffShuttle())
 			return;
 		
 		L2Object obj = L2World.getInstance().findObject(_shuttleId);

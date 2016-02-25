@@ -123,7 +123,7 @@ public class L2GuardInstance extends L2Attackable
 		
 		// check the region where this mob is, do not activate the AI if region is inactive.
 		L2WorldRegion region = L2World.getInstance().getRegion(getX(), getY());
-		if ((region != null) && !region.isActive())
+		if (region != null && !region.isActive())
 			((L2AttackableAI) getAI()).stopAITask();
 	}
 	
@@ -223,10 +223,10 @@ public class L2GuardInstance extends L2Attackable
 					
 					// Open a chat window on client with the text of the L2GuardInstance
 					Quest[] qlsa = getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
-					if ((qlsa != null) && (qlsa.length > 0))
+					if (qlsa != null && qlsa.length > 0)
 						player.setLastQuestNpcObject(getObjectId());
 					Quest[] qlst = getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
-					if ((qlst != null) && (qlst.length == 1))
+					if (qlst != null && qlst.length == 1)
 						qlst[0].notifyFirstTalk(this, player);
 					else
 						showChatWindow(player, 0);

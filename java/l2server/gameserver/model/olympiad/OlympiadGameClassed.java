@@ -52,7 +52,7 @@ public class OlympiadGameClassed extends OlympiadGameNormal
 	
 	protected static final OlympiadGameClassed createGame(int id, List<List<Integer>> classList)
 	{
-		if ((classList == null) || classList.isEmpty())
+		if (classList == null || classList.isEmpty())
 			return null;
 		
 		List<Integer> list;
@@ -60,7 +60,7 @@ public class OlympiadGameClassed extends OlympiadGameNormal
 		while (!classList.isEmpty())
 		{
 			list = classList.get(Rnd.nextInt(classList.size()));
-			if ((list == null) || (list.size() < 2))
+			if (list == null || list.size() < 2)
 			{
 				classList.remove(list);
 				continue;

@@ -44,7 +44,7 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		// FIXME target = activeChar.getPet();
-		if ((target == null) || !(target instanceof L2SummonInstance) || target.isDead())
+		if (target == null || !(target instanceof L2SummonInstance) || target.isDead())
 			return null;
 		
 		if (onlyFirst)
@@ -55,13 +55,13 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler
 		
 		for (L2Character obj : objs)
 		{
-			if ((obj == null) || (obj == target) || (obj == activeChar))
+			if (obj == null || obj == target || obj == activeChar)
 				continue;
 			
 			if (!Util.checkIfInRange(radius, target, obj, true))
 				continue;
 			
-			if (!((obj instanceof L2Attackable) || (obj instanceof L2Playable)))
+			if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
 				continue;
 			
 			targetList.add(obj);

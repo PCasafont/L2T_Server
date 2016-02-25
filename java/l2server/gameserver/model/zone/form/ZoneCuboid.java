@@ -62,7 +62,7 @@ public class ZoneCuboid extends L2ZoneForm
 	@Override
 	public boolean isInsideZone(int x, int y, int z)
 	{
-		if ((x < _x1) || (x > _x2) || (y < _y1) || (y > _y2) || (z < _z1) || (z > _z2))
+		if (x < _x1 || x > _x2 || y < _y1 || y > _y2 || z < _z1 || z > _z2)
 			return false;
 		return true;
 	}
@@ -71,23 +71,23 @@ public class ZoneCuboid extends L2ZoneForm
 	public boolean intersectsRectangle(int ax1, int ax2, int ay1, int ay2)
 	{
 		// Check if any point inside this rectangle
-		if (isInsideZone(ax1, ay1, (_z2 - 1)))
+		if (isInsideZone(ax1, ay1, _z2 - 1))
 			return true;
-		if (isInsideZone(ax1, ay2, (_z2 - 1)))
+		if (isInsideZone(ax1, ay2, _z2 - 1))
 			return true;
-		if (isInsideZone(ax2, ay1, (_z2 - 1)))
+		if (isInsideZone(ax2, ay1, _z2 - 1))
 			return true;
-		if (isInsideZone(ax2, ay2, (_z2 - 1)))
+		if (isInsideZone(ax2, ay2, _z2 - 1))
 			return true;
 		
 		// Check if any point from this rectangle is inside the other one
-		if ((_x1 > ax1) && (_x1 < ax2) && (_y1 > ay1) && (_y1 < ay2))
+		if (_x1 > ax1 && _x1 < ax2 && _y1 > ay1 && _y1 < ay2)
 			return true;
-		if ((_x1 > ax1) && (_x1 < ax2) && (_y2 > ay1) && (_y2 < ay2))
+		if (_x1 > ax1 && _x1 < ax2 && _y2 > ay1 && _y2 < ay2)
 			return true;
-		if ((_x2 > ax1) && (_x2 < ax2) && (_y1 > ay1) && (_y1 < ay2))
+		if (_x2 > ax1 && _x2 < ax2 && _y1 > ay1 && _y1 < ay2)
 			return true;
-		if ((_x2 > ax1) && (_x2 < ax2) && (_y2 > ay1) && (_y2 < ay2))
+		if (_x2 > ax1 && _x2 < ax2 && _y2 > ay1 && _y2 < ay2)
 			return true;
 		
 		// Horizontal lines may intersect vertical lines
@@ -152,21 +152,21 @@ public class ZoneCuboid extends L2ZoneForm
 	@Override
 	public int getCenterX()
 	{
-		return _x1 + ((_x2 - _x1) / 2);
+		return _x1 + (_x2 - _x1) / 2;
 	}
 	
 	@Override
 	public int getCenterY()
 	{
-		return _y1 + ((_y2 - _y1) / 2);
+		return _y1 + (_y2 - _y1) / 2;
 	}
 	
 	@Override
 	public void visualizeZone(ExServerPrimitive packet, String name, int z)
 	{
-		if (z < (_z1 + 100))
+		if (z < _z1 + 100)
 			z = _z1 + 100;
-		if (z > (_z2 - 20))
+		if (z > _z2 - 20)
 			z = _z2 - 20;
 		
 		Color color = new Color(Rnd.get(2), Rnd.get(2), Rnd.get(2));
@@ -193,13 +193,13 @@ public class ZoneCuboid extends L2ZoneForm
 		packet.addLine(color, _x2, _y2, _z1, _x2, _y2, _z2);
 		packet.addLine(color, _x1, _y2, _z1, _x1, _y2, _z2);
 		
-		int centerX = _x1 + ((_x2 - _x1) / 2);
-		int centerY = _y1 + ((_y2 - _y1) / 2);
-		int radius = (int) Math.sqrt(((_x2 - _x1) * (_x2 - _x1)) + ((_y2 - _y1) * (_y2 - _y1)));
+		int centerX = _x1 + (_x2 - _x1) / 2;
+		int centerY = _y1 + (_y2 - _y1) / 2;
+		int radius = (int) Math.sqrt((_x2 - _x1) * (_x2 - _x1) + (_y2 - _y1) * (_y2 - _y1));
 		int count = 500;//Math.min(Math.max((_maxX - _minX) / 50, 5), 100);
 		int angle = Rnd.get(180);
-		double dirX = Math.cos((angle * Math.PI) / 180.0);
-		double dirY = Math.sin((angle * Math.PI) / 180.0);
+		double dirX = Math.cos(angle * Math.PI / 180.0);
+		double dirY = Math.sin(angle * Math.PI / 180.0);
 		int baseX = centerX - (int) (dirX * radius);
 		int baseY = centerY - (int) (dirY * radius);
 		//packet.addPoint("CENTER", Color.red, true, centerX, centerY, z);
@@ -209,8 +209,8 @@ public class ZoneCuboid extends L2ZoneForm
 		for (int i = 0; i < count; i++)
 		{
 			boolean found = false;
-			int curX = baseX + (int) ((2 * radius * dirX * i) / count);
-			int curY = baseY + (int) ((2 * radius * dirY * i) / count);
+			int curX = baseX + (int) (2 * radius * dirX * i / count);
+			int curY = baseY + (int) (2 * radius * dirY * i / count);
 			int minX0 = curX + (int) (radius * -dirY);
 			int minY0 = curY + (int) (radius * dirX);
 			int maxX0 = curX + (int) (radius * dirY);
@@ -233,7 +233,7 @@ public class ZoneCuboid extends L2ZoneForm
 				{
 					int dx = intersec[0] - curX;
 					int dy = intersec[1] - curY;
-					int dot = (int) ((dx * dirY) - (dy * dirX));
+					int dot = (int) (dx * dirY - dy * dirX);
 					if (dot < minDot)
 					{
 						minX = intersec[0];

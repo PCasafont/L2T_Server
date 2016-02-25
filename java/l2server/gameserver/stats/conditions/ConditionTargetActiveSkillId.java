@@ -62,7 +62,7 @@ public class ConditionTargetActiveSkillId extends Condition
 			{
 				if (sk.getId() == _skillId)
 				{
-					if ((_skillLevel == -1) || (_skillLevel <= sk.getLevel()))
+					if (_skillLevel == -1 || _skillLevel <= sk.getLevel())
 						return true;
 				}
 			}

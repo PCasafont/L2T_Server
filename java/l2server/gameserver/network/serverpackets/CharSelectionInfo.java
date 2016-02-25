@@ -77,7 +77,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		int size = (_characterPackages.length);
+		int size = _characterPackages.length;
 		writeD(size);
 		
 		// Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )

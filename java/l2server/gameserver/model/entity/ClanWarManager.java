@@ -54,18 +54,18 @@ public class ClanWarManager
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
-				if ((ClanTable.getInstance().getClan(rset.getInt("clan1")) == null) || (ClanTable.getInstance().getClan(rset.getInt("clan2")) == null))
+				if (ClanTable.getInstance().getClan(rset.getInt("clan1")) == null || ClanTable.getInstance().getClan(rset.getInt("clan2")) == null)
 					continue;
 				
 				WarState warstate = null;
 				
-				if ((rset.getLong("delete_time") != 0) && (System.currentTimeMillis() > rset.getLong("delete_time")))
+				if (rset.getLong("delete_time") != 0 && System.currentTimeMillis() > rset.getLong("delete_time"))
 					deleteWar(rset.getInt("clan1"), rset.getInt("clan2"));
 				else if (rset.getLong("delete_time") != 0)
 					warstate = WarState.REPOSE;
-				else if ((rset.getLong("end_time") != 0) && (System.currentTimeMillis() > rset.getLong("end_time")))
+				else if (rset.getLong("end_time") != 0 && System.currentTimeMillis() > rset.getLong("end_time"))
 					warstate = WarState.REPOSE;
-				else if ((rset.getLong("end_time") != 0) && (System.currentTimeMillis() < rset.getLong("end_time")))
+				else if (rset.getLong("end_time") != 0 && System.currentTimeMillis() < rset.getLong("end_time"))
 					warstate = WarState.STARTED;
 				else if (rset.getInt("clan1_deaths_for_war") >= 5)
 					warstate = WarState.STARTED;
@@ -78,7 +78,7 @@ public class ClanWarManager
 				{
 					for (ClanWar war : wars)
 					{
-						if ((war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1"))) && (war.getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2"))))
+						if (war.getClan1() == ClanTable.getInstance().getClan(rset.getInt("clan1")) && war.getClan2() == ClanTable.getInstance().getClan(rset.getInt("clan2")))
 						{
 							ClanTable.getInstance().getClan(rset.getInt("clan1")).removeWar(war);
 							ClanTable.getInstance().getClan(rset.getInt("clan2")).removeWar(war);
@@ -133,7 +133,7 @@ public class ClanWarManager
 		
 		for (ClanWar war : _wars)
 		{
-			if (((war.getClan1() == clan1) && (war.getClan2() == clan2)) || ((war.getClan2() == clan1) && (war.getClan1() == clan2)))
+			if (war.getClan1() == clan1 && war.getClan2() == clan2 || war.getClan2() == clan1 && war.getClan1() == clan2)
 			{
 				if (war.getState() != WarState.DECLARED)
 				{
@@ -141,9 +141,9 @@ public class ClanWarManager
 					return;
 				}
 				
-				if ((war.getClan2() == clan1) && (war.getClan1() == clan2))
+				if (war.getClan2() == clan1 && war.getClan1() == clan2)
 				{
-					if (war.getElapsedTime() >= (Config.PREPARE_NORMAL_WAR_PERIOD * 3600))
+					if (war.getElapsedTime() >= Config.PREPARE_NORMAL_WAR_PERIOD * 3600)
 					{
 						// The war is already at Blood Declaration, so it can't be accepted now.
 						clan1.broadcastMessageToOnlineMembers("War is already in Blood Declaration, so it can't be accepted now!");
@@ -226,7 +226,7 @@ public class ClanWarManager
 	{
 		for (ClanWar war : _wars)
 		{
-			if (((war.getClan1() == clan1) && (war.getClan2() == clan2)) || ((war.getClan1() == clan2) && (war.getClan2() == clan1)))
+			if (war.getClan1() == clan1 && war.getClan2() == clan2 || war.getClan1() == clan2 && war.getClan2() == clan1)
 				return war;
 		}
 		return null;
@@ -292,7 +292,7 @@ public class ClanWarManager
 			_clan1DeathsForWar = clan1DeathsForWar;
 			_clan1Score = clan1ShownScore;
 			_clan2Score = clan2ShownScore;
-			if ((loserId != 0) && (winnerId != 0))
+			if (loserId != 0 && winnerId != 0)
 			{
 				_loser = ClanTable.getInstance().getClan(loserId);
 				_winner = ClanTable.getInstance().getClan(winnerId);
@@ -319,7 +319,7 @@ public class ClanWarManager
 		
 		private void scheduleStart()
 		{
-			if ((_task != null) && !_task.isDone())
+			if (_task != null && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
@@ -337,7 +337,7 @@ public class ClanWarManager
 		
 		private void scheduleStop()
 		{
-			if ((_task != null) && !_task.isDone())
+			if (_task != null && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
@@ -352,7 +352,7 @@ public class ClanWarManager
 		
 		private void scheduleDelete()
 		{
-			if ((_task != null) && !_task.isDone())
+			if (_task != null && !_task.isDone())
 				_task.cancel(true);
 			_task = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
 			{
@@ -575,7 +575,7 @@ public class ClanWarManager
 		
 		private void calculateOutcome()
 		{
-			if ((getLoser() == null) || (getWinner() == null))
+			if (getLoser() == null || getWinner() == null)
 			{
 				if (getClan1Scores() > getClan2Scores())
 				{
@@ -627,14 +627,14 @@ public class ClanWarManager
 				return;
 			}
 			
-			int percent = (_score1 * 100) / maxResult;
+			int percent = _score1 * 100 / maxResult;
 			if (percent >= 85)
 				_situation1 = WarSituation.DOMINATING;
-			else if ((percent >= 65) && (percent < 85))
+			else if (percent >= 65 && percent < 85)
 				_situation1 = WarSituation.SUPERIOR;
-			else if ((percent >= 35) && (percent < 65))
+			else if (percent >= 35 && percent < 65)
 				_situation1 = WarSituation.EVENLYMATCHED;
-			else if ((percent >= 15) && (percent < 35))
+			else if (percent >= 15 && percent < 35)
 				_situation1 = WarSituation.INFERIOR;
 			else
 				_situation1 = WarSituation.OVERWHELMED;
@@ -648,14 +648,14 @@ public class ClanWarManager
 				_situation2 = WarSituation.EVENLYMATCHED;
 				return;
 			}
-			int percent = (_score2 * 100) / maxResult;
+			int percent = _score2 * 100 / maxResult;
 			if (percent >= 85)
 				_situation2 = WarSituation.DOMINATING;
-			else if ((percent >= 65) && (percent < 85))
+			else if (percent >= 65 && percent < 85)
 				_situation2 = WarSituation.SUPERIOR;
-			else if ((percent >= 35) && (percent < 65))
+			else if (percent >= 35 && percent < 65)
 				_situation2 = WarSituation.EVENLYMATCHED;
-			else if ((percent >= 15) && (percent < 35))
+			else if (percent >= 15 && percent < 35)
 				_situation2 = WarSituation.INFERIOR;
 			else
 				_situation2 = WarSituation.OVERWHELMED;
@@ -706,9 +706,9 @@ public class ClanWarManager
 			switch (_warState)
 			{
 				case DECLARED:
-					return (Config.PREPARE_MUTUAL_WAR_PERIOD * 3600) - (int)((_startTime - System.currentTimeMillis()) / 1000);
+					return Config.PREPARE_MUTUAL_WAR_PERIOD * 3600 - (int) ((_startTime - System.currentTimeMillis()) / 1000);
 				case STARTED:
-					return (Config.BATTLE_WAR_PERIOD * 3600) - (int)((_endTime - System.currentTimeMillis()) / 1000);
+					return Config.BATTLE_WAR_PERIOD * 3600 - (int) ((_endTime - System.currentTimeMillis()) / 1000);
 			}
 			return 0;
 		}

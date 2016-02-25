@@ -37,7 +37,7 @@ public class OlympiadGameManager implements Runnable
 	private OlympiadGameManager()
 	{
 		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
-		if ((zones == null) || zones.isEmpty())
+		if (zones == null || zones.isEmpty())
 			throw new Error("No olympiad stadium zones defined !");
 		
 		_tasks = new OlympiadGameTask[zones.size() * 40];
@@ -46,7 +46,7 @@ public class OlympiadGameManager implements Runnable
 		{
 			for (int j = 0; j < 40; j++)
 			{
-				_tasks[(j * 4) + i] = new OlympiadGameTask(zone, (j * 4) + i);
+				_tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
 			}
 			i++;
 		}
@@ -101,7 +101,7 @@ public class OlympiadGameManager implements Runnable
 						player.sendMessage("Your match may not begin yet because there are not enough participants registered.");
 				}
 			}
-			if ((readyClassed != null) || readyNonClassed)
+			if (readyClassed != null || readyNonClassed)
 			{
 				// set up the games queue
 				for (int i = 0; i < _tasks.length; i++)
@@ -138,7 +138,7 @@ public class OlympiadGameManager implements Runnable
 					}
 					
 					// stop generating games if no more participants
-					if ((readyClassed == null) && !readyNonClassed)
+					if (readyClassed == null && !readyNonClassed)
 						break;
 				}
 			}
@@ -163,7 +163,7 @@ public class OlympiadGameManager implements Runnable
 	
 	public final OlympiadGameTask getOlympiadTask(int id)
 	{
-		if ((id < 0) || (id >= _tasks.length))
+		if (id < 0 || id >= _tasks.length)
 			return null;
 		
 		return _tasks[id];
@@ -180,7 +180,7 @@ public class OlympiadGameManager implements Runnable
 			return;
 		
 		final int id = player.getOlympiadGameId();
-		if ((id < 0) || (id >= _tasks.length))
+		if (id < 0 || id >= _tasks.length)
 			return;
 		
 		final AbstractOlympiadGame game = _tasks[id].getGame();

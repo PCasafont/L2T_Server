@@ -166,7 +166,7 @@ public class PlayerClassTable implements Reloadable
 						}
 						
 						// Remove low level skills
-						if ((cl.getLevel() == 85) && (cl.getRace() != Race.Ertheia))
+						if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
 						{
 							Set<Integer> toRemove = new HashSet<Integer>();
 							for (long hash : cl.getSkills().keySet())
@@ -198,7 +198,7 @@ public class PlayerClassTable implements Reloadable
 								for (int reqSkillId : sl.getCostSkills())
 								{
 									long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
-									if ((cl.getParent() != null) && cl.getParent().getSkills().containsKey(reqHash))
+									if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash))
 									{
 										L2SkillLearn rsl;
 										if (!cl.getSkills().containsKey(reqHash))
@@ -390,7 +390,7 @@ public class PlayerClassTable implements Reloadable
 			{
 				for (PlayerClass cl : _classes.values())
 				{
-					if ((cl.getLevel() == 85) && (cl.getParent() != null) && (cl.getParent().getParent() != null) && (cl.getParent().getParent().getId() == subId))
+					if (cl.getLevel() == 85 && cl.getParent() != null && cl.getParent().getParent() != null && cl.getParent().getParent().getId() == subId)
 					{
 						awakened.add(cl.getId());
 						break;
@@ -409,7 +409,7 @@ public class PlayerClassTable implements Reloadable
 		List<Integer> list = new ArrayList<Integer>();
 		for (PlayerClass cl : _classes.values())
 		{
-			if (((race == null) || (cl.getRace() == race)) && ((level == 0) || (cl.getLevel() == level)))
+			if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level))
 				list.add(cl.getId());
 		}
 		
@@ -419,7 +419,7 @@ public class PlayerClassTable implements Reloadable
 	public final int getAwakening(int classId)
 	{
 		PlayerClass pc = _classes.get(classId);
-		if ((pc.getLevel() < 40) || (pc.getRace() == Race.Ertheia))
+		if (pc.getLevel() < 40 || pc.getRace() == Race.Ertheia)
 			return -1;
 		
 		int awakeningId = -1;
@@ -431,10 +431,10 @@ public class PlayerClassTable implements Reloadable
 			PlayerClass supportPc;
 			int i = 1;
 			int sec = 0;
-			while ((awakeningId == -1) && (sec < 150))
+			while (awakeningId == -1 && sec < 150)
 			{
 				supportPc = _classes.get(classId + i);
-				if ((supportPc != null) && (supportPc.getParent() != null) && (pc.getId() == supportPc.getParent().getId()))
+				if (supportPc != null && supportPc.getParent() != null && pc.getId() == supportPc.getParent().getId())
 				{
 					if (supportPc.getAwakeningClassId() != -1)
 					{

@@ -79,7 +79,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 		int crestId = -1;
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
 		{
-			if ((_length == 0) || (_data.length == 0))
+			if (_length == 0 || _data.length == 0)
 			{
 				if (clan.getCrestId() == 0)
 					return;
@@ -105,7 +105,7 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 				updated = true;
 			}
 		}
-		if (updated && (crestId != -1))
+		if (updated && crestId != -1)
 		{
 			clan.changeClanCrest(crestId);
 		}

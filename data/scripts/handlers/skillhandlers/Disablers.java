@@ -108,10 +108,10 @@ public class Disablers implements ISkillHandler
 			if (!(obj instanceof L2Character))
 				continue;
 			L2Character target = (L2Character) obj;
-			if (target.isDead() || ((target.isInvul(activeChar) && !skill.ignoreImmunity() && (type != L2SkillType.NEGATE)) && !target.isParalyzed())) // bypass if target is null, dead or invul (excluding invul from Petrification)
+			if (target.isDead() || target.isInvul(activeChar) && !skill.ignoreImmunity() && type != L2SkillType.NEGATE && !target.isParalyzed()) // bypass if target is null, dead or invul (excluding invul from Petrification)
 				continue;
 			
-			if ((target != activeChar) && (target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar))
+			if (target != activeChar && target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
 				continue;
 			
 			if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, activeChar, null) > 0.0)
@@ -145,7 +145,7 @@ public class Disablers implements ISkillHandler
 				}
 				case AGGDAMAGE:
 				{
-					int aggDamage = (int) ((500 * skill.getPower()) / (target.getLevel() + 7));
+					int aggDamage = (int) (500 * skill.getPower() / (target.getLevel() + 7));
 					aggDamage = (int) activeChar.calcStat(Stats.AGGRESSION_PROF, aggDamage, target, skill);
 					if (target instanceof L2Attackable)
 						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, aggDamage);
@@ -179,7 +179,7 @@ public class Disablers implements ISkillHandler
 						{
 							L2Attackable targ = (L2Attackable) target;
 							targ.stopHating(activeChar);
-							if ((targ.getMostHated() == null) && targ.hasAI() && (targ.getAI() instanceof L2AttackableAI))
+							if (targ.getMostHated() == null && targ.hasAI() && targ.getAI() instanceof L2AttackableAI)
 							{
 								((L2AttackableAI) targ.getAI()).setGlobalAggro(-25);
 								targ.clearAggroList();
@@ -205,7 +205,7 @@ public class Disablers implements ISkillHandler
 				case AGGREMOVE:
 				{
 					// these skills needs to be rechecked
-					if ((target instanceof L2Attackable) && !target.isRaid())
+					if (target instanceof L2Attackable && !target.isRaid())
 					{
 						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul))
 						{
@@ -261,12 +261,12 @@ public class Disablers implements ISkillHandler
 				{
 					L2Abnormal[] effects = target.getAllEffects();
 					
-					if ((effects == null) || (effects.length == 0))
+					if (effects == null || effects.length == 0)
 						break;
 					
 					for (L2Abnormal e : effects)
 					{
-						if ((e == null) || !e.getSkill().isOffensive())
+						if (e == null || !e.getSkill().isOffensive())
 							continue;
 						else if (e.getType() == L2AbnormalType.SLEEP)
 							continue;
@@ -301,13 +301,13 @@ public class Disablers implements ISkillHandler
 				{
 					L2Abnormal[] effects = target.getAllEffects();
 					
-					if ((effects == null) || (effects.length == 0))
+					if (effects == null || effects.length == 0)
 						break;
 					
-					int count = (skill.getMaxNegatedEffects() > 0) ? 0 : -2;
+					int count = skill.getMaxNegatedEffects() > 0 ? 0 : -2;
 					for (L2Abnormal e : effects)
 					{
-						if ((e == null) || !e.getSkill().isDebuff() || !e.getSkill().canBeDispeled())
+						if (e == null || !e.getSkill().isDebuff() || !e.getSkill().canBeDispeled())
 							continue;
 						
 						e.exit();
@@ -380,12 +380,12 @@ public class Disablers implements ISkillHandler
 									continue;
 							}
 							
-							double rate = 1 - (count / max);
+							double rate = 1 - count / max;
 							if (rate < 0.33)
 								rate = 0.33;
 							else if (rate > 0.95)
 								rate = 0.95;
-							if (Rnd.get(1000) < (rate * 1000))
+							if (Rnd.get(1000) < rate * 1000)
 							{
 								boolean exit = false;
 								for (L2AbnormalType skillType : skill.getNegateStats())
@@ -445,7 +445,7 @@ public class Disablers implements ISkillHandler
 							{
 								for (String stackType : effect.getStackType())
 								{
-									if (negateAbnormalType.equalsIgnoreCase(stackType) && (skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl()))
+									if (negateAbnormalType.equalsIgnoreCase(stackType) && skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
 										effect.exit();
 								}
 							}
@@ -454,7 +454,7 @@ public class Disablers implements ISkillHandler
 					else
 					// all others negate type skills
 					{
-						int removedBuffs = (skill.getMaxNegatedEffects() > 0) ? 0 : -2;
+						int removedBuffs = skill.getMaxNegatedEffects() > 0 ? 0 : -2;
 						for (L2AbnormalType skillType : skill.getNegateStats())
 						{
 							if (removedBuffs > skill.getMaxNegatedEffects())
@@ -463,12 +463,12 @@ public class Disablers implements ISkillHandler
 							switch (skillType)
 							{
 								case BUFF:
-									int lvlmodifier = 52 + (skill.getMagicLevel() * 2);
+									int lvlmodifier = 52 + skill.getMagicLevel() * 2;
 									if (skill.getMagicLevel() == 12)
 										lvlmodifier = Config.MAX_LEVEL;
 									int landrate = 90;
-									if ((target.getLevel() - lvlmodifier) > 0)
-										landrate = 90 - (4 * (target.getLevel() - lvlmodifier));
+									if (target.getLevel() - lvlmodifier > 0)
+										landrate = 90 - 4 * (target.getLevel() - lvlmodifier);
 									
 									landrate = (int) activeChar.calcStat(Stats.CANCEL_RES, landrate, target, null);
 									
@@ -498,7 +498,7 @@ public class Disablers implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();
@@ -532,14 +532,14 @@ public class Disablers implements ISkillHandler
 	private int negateEffect(L2Character target, L2AbnormalType type, int skillId, int maxRemoved)
 	{
 		L2Abnormal[] effects = target.getAllEffects();
-		int count = (maxRemoved <= 0) ? -2 : 0;
+		int count = maxRemoved <= 0 ? -2 : 0;
 		for (L2Abnormal e : effects)
 		{
 			if (e.getType() == type)
 			{
 				if (skillId != 0)
 				{
-					if ((skillId == e.getSkill().getId()) && (count < maxRemoved))
+					if (skillId == e.getSkill().getId() && count < maxRemoved)
 					{
 						e.exit();
 						if (count > -1)
@@ -555,7 +555,7 @@ public class Disablers implements ISkillHandler
 			}
 		}
 		
-		return (maxRemoved <= 0) ? count + 2 : count;
+		return maxRemoved <= 0 ? count + 2 : count;
 	}
 	
 	private L2Abnormal[] SortEffects(L2Abnormal[] initial)

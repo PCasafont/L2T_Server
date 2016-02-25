@@ -90,13 +90,13 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else
 		{
-			if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
+			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
 			{
 				targetPlayer = (L2PcInstance) activeChar.getTarget();
 			}
 		}
 		
-		if ((targetPlayer != null) && targetPlayer.equals(activeChar))
+		if (targetPlayer != null && targetPlayer.equals(activeChar))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
 			return false;
@@ -110,7 +110,7 @@ public class AdminBan implements IAdminCommandHandler
 				activeChar.sendMessage("To do a permanent ban put a -1 in hours.");
 				return false;
 			}
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("You must specify a player!");
 				return false;
@@ -181,18 +181,18 @@ public class AdminBan implements IAdminCommandHandler
 				PreparedStatement statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 				
 				statement.setString(1, account);
-				statement.setLong(2, duration > 0 ? (System.currentTimeMillis() / 1000) + (duration * 3600) : -1);
+				statement.setLong(2, duration > 0 ? System.currentTimeMillis() / 1000 + duration * 3600 : -1);
 				statement.setString(3, activeChar.getName());
 				statement.setString(4, reason);
 				statement.execute();
 				statement.close();
 				
-				if ((hwId != null) && (hwId.length() > 0) && !Config.isServer(Config.TENKAI))
+				if (hwId != null && hwId.length() > 0 && !Config.isServer(Config.TENKAI))
 				{
 					statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 					
 					statement.setString(1, hwId);
-					statement.setLong(2, duration > 0 ? (System.currentTimeMillis() / 1000) + (duration * 3600) : -1);
+					statement.setLong(2, duration > 0 ? System.currentTimeMillis() / 1000 + duration * 3600 : -1);
 					statement.setString(3, activeChar.getName());
 					statement.setString(4, reason);
 					statement.execute();
@@ -253,7 +253,7 @@ public class AdminBan implements IAdminCommandHandler
 		}*/
 		else if (command.startsWith("admin_chat_ban"))
 		{
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("Usage: //chat_ban <char_name> [penalty_minutes]");
 				return false;
@@ -281,7 +281,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unban_chat"))
 		{
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("Usage: //unban_chat <char_name>");
 				return false;
@@ -333,7 +333,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unban_char"))
 		{
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("Usage: //unban_char <char_name>");
 				return false;
@@ -351,7 +351,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_jail"))
 		{
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("Usage: //jail <charname> [penalty_minutes] (if no name is given, selected target is jailed indefinitely)");
 				return false;
@@ -372,7 +372,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unjail"))
 		{
-			if ((targetPlayer == null) && player.equals(""))
+			if (targetPlayer == null && player.equals(""))
 			{
 				activeChar.sendMessage("Usage: //unjail <charname> (If no name is given target is used)");
 				return false;
@@ -399,7 +399,7 @@ public class AdminBan implements IAdminCommandHandler
 		
 		String[] command = fullCommand.split(" ");
 		
-		GMAudit.auditGMAction(activeChar.getName(), command[0], (target.equals("") ? "no-target" : target), (command.length > 2 ? command[2] : ""));
+		GMAudit.auditGMAction(activeChar.getName(), command[0], target.equals("") ? "no-target" : target, command.length > 2 ? command[2] : "");
 	}
 	
 	private void banChatOfflinePlayer(L2PcInstance activeChar, String name, int delay, boolean ban)
@@ -410,7 +410,7 @@ public class AdminBan implements IAdminCommandHandler
 		if (ban)
 		{
 			level = L2PcInstance.PunishLevel.CHAT.value();
-			value = (delay > 0 ? delay * 60000L : 60000);
+			value = delay > 0 ? delay * 60000L : 60000;
 		}
 		else
 		{
@@ -462,7 +462,7 @@ public class AdminBan implements IAdminCommandHandler
 			statement.setInt(2, -249645);
 			statement.setInt(3, -2984);
 			statement.setInt(4, L2PcInstance.PunishLevel.JAIL.value());
-			statement.setLong(5, (delay > 0 ? delay * 60000L : 0));
+			statement.setLong(5, delay > 0 ? delay * 60000L : 0);
 			statement.setString(6, name);
 			
 			statement.execute();

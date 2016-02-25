@@ -66,7 +66,7 @@ public class L2SwampZone extends L2ZoneType
 	
 	private Castle getCastle()
 	{
-		if ((_castleId > 0) && (_castle == null))
+		if (_castleId > 0 && _castle == null)
 			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		
 		return _castle;
@@ -92,7 +92,7 @@ public class L2SwampZone extends L2ZoneType
 					return;
 				
 				// defenders not affected
-				if (player.isInSiege() && (player.getSiegeState() == 2))
+				if (player.isInSiege() && player.getSiegeState() == 2)
 					return;
 			}
 		}

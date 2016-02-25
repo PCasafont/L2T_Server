@@ -81,7 +81,7 @@ public final class Say2 extends L2GameClientPacket
 	{
 		_text = readS();
 		_type = readD();
-		_target = (_type == TELL) ? readS() : null;
+		_target = _type == TELL ? readS() : null;
 	}
 	
 	@Override
@@ -94,7 +94,7 @@ public final class Say2 extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_type < 0) || (_type >= CHAT_NAMES.length))
+		if (_type < 0 || _type >= CHAT_NAMES.length)
 		{
 			Log.warning("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " + String.valueOf(_text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -116,7 +116,7 @@ public final class Say2 extends L2GameClientPacket
 		// Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
 		// April 27, 2009 - Verified on Gracia P2 & Final official client as 105
 		// Allow higher limit if player shift some item (text is longer then)
-		if (!activeChar.isGM() && (((_text.indexOf(8) >= 0) && (_text.length() > 500)) || ((_text.indexOf(8) < 0) && (_text.length() > 105))))
+		if (!activeChar.isGM() && (_text.indexOf(8) >= 0 && _text.length() > 500 || _text.indexOf(8) < 0 && _text.length() > 105))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
@@ -140,7 +140,7 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isCursedWeaponEquipped() && ((_type == TRADE) || (_type == SHOUT) || (_type == GLOBAL)))
+		if (activeChar.isCursedWeaponEquipped() && (_type == TRADE || _type == SHOUT || _type == GLOBAL))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
 			return;
@@ -148,7 +148,7 @@ public final class Say2 extends L2GameClientPacket
 		
 		if (activeChar.isChatBanned())
 		{
-			if ((_type == ALL) || (_type == SHOUT) || (_type == TRADE) || (_type == HERO_VOICE) || (_type == GLOBAL))
+			if (_type == ALL || _type == SHOUT || _type == TRADE || _type == HERO_VOICE || _type == GLOBAL)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;
@@ -164,14 +164,14 @@ public final class Say2 extends L2GameClientPacket
 			}
 		}
 		
-		if ((_type == PETITION_PLAYER) && activeChar.isGM())
+		if (_type == PETITION_PLAYER && activeChar.isGM())
 			_type = PETITION_GM;
 		
 		if (Config.LOG_CHAT)
 		{
-			if ((_type == CLAN) && (activeChar.getClan() != null))
+			if (_type == CLAN && activeChar.getClan() != null)
 				_target = activeChar.getClan().getName();
-			else if ((_type == ALLIANCE) && (activeChar.getClan() != null))
+			else if (_type == ALLIANCE && activeChar.getClan() != null)
 				_target = activeChar.getClan().getAllyName();
 			
 			Connection con = null;
@@ -209,7 +209,7 @@ public final class Say2 extends L2GameClientPacket
 			_logChat.log(record);*/
 		}
 		
-		if ((_text.indexOf(8) >= 0) && !parseAndPublishItem(activeChar))
+		if (_text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
 			return;
 		
 		// Say Filter implementation

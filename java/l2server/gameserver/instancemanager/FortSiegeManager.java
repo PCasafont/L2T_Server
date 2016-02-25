@@ -67,11 +67,11 @@ public class FortSiegeManager
 		L2PcInstance player = (L2PcInstance) activeChar;
 		Fort fort = FortManager.getInstance().getFort(player);
 		
-		if ((fort == null) || (fort.getFortId() <= 0))
+		if (fort == null || fort.getFortId() <= 0)
 			text = "You must be on fort ground to summon this";
 		else if (!fort.getSiege().getIsInProgress())
 			text = "You can only summon this during a siege.";
-		else if ((player.getClanId() != 0) && (fort.getSiege().getAttackerClan(player.getClanId()) == null))
+		else if (player.getClanId() != 0 && fort.getSiege().getAttackerClan(player.getClanId()) == null)
 			text = "You can only summon this as a registered attacker.";
 		else
 			return true;
@@ -149,7 +149,7 @@ public class FortSiegeManager
 	
 	public boolean isCombat(int itemId)
 	{
-		return (itemId == 9819);
+		return itemId == 9819;
 	}
 	
 	public boolean activateCombatFlag(L2PcInstance player, L2ItemInstance item)
@@ -186,7 +186,7 @@ public class FortSiegeManager
 		// here check if is siege is attacker
 		Fort fort = FortManager.getInstance().getFort(player);
 		
-		if ((fort == null) || (fort.getFortId() <= 0))
+		if (fort == null || fort.getFortId() <= 0)
 		{
 			player.sendPacket(sm);
 			return false;

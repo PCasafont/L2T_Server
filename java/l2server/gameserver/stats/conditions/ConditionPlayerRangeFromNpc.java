@@ -37,7 +37,7 @@ public class ConditionPlayerRangeFromNpc extends Condition
 	@Override
 	boolean testImpl(Env env)
 	{
-		if ((_npcId == 0) || (_radius == 0))
+		if (_npcId == 0 || _radius == 0)
 			return false;
 		
 		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(_radius))

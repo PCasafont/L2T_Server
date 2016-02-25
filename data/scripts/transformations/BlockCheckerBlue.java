@@ -18,7 +18,7 @@ public class BlockCheckerBlue extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 127) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 127 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

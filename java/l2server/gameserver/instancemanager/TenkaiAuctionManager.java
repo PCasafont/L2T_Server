@@ -99,7 +99,7 @@ public class TenkaiAuctionManager implements Reloadable
 				if (rs.next())
 				{
 					long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-					nextAuction = (lastAuctionCreation + (_repeatTime * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L)) - System.currentTimeMillis();
+					nextAuction = lastAuctionCreation + _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
 					if (nextAuction < 0)
 						nextAuction = 0;
 				}
@@ -144,7 +144,7 @@ public class TenkaiAuctionManager implements Reloadable
 					
 					Announcements.getInstance().announceToAll("Item Auction: " + ItemTable.getInstance().getTemplate(itemId).getName() + " has been added to the Item Auction (Alt + B)!");
 					
-					ThreadPoolManager.getInstance().scheduleGeneral(this, (_repeatTime * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L));
+					ThreadPoolManager.getInstance().scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
 				}
 			}, nextAuction);
 		}
@@ -280,10 +280,10 @@ public class TenkaiAuctionManager implements Reloadable
 		
 		private String getRemainingTimeString()
 		{
-			Long remainingTime = (_endAuctionTask.getDelay(TimeUnit.MILLISECONDS)) / 1000;
+			Long remainingTime = _endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
 			
 			int hours = (int) (remainingTime / 3600);
-			int minutes = (int) ((remainingTime % 3600) / 60);
+			int minutes = (int) (remainingTime % 3600 / 60);
 			int seconds = (int) (remainingTime % 60);
 			
 			return hours + "h " + minutes + "m " + seconds + "s";
@@ -444,13 +444,13 @@ public class TenkaiAuctionManager implements Reloadable
 		int maxAuctionsPerPage = 6;
 		int auctionsSize = _auctions.size();
 		int maxPages = auctionsSize / maxAuctionsPerPage;
-		if (auctionsSize > (maxAuctionsPerPage * maxPages))
+		if (auctionsSize > maxAuctionsPerPage * maxPages)
 			maxPages++;
 		if (pageToShow > maxPages)
 			pageToShow = maxPages;
 		int pageStart = maxAuctionsPerPage * pageToShow;
 		int pageEnd = auctionsSize;
-		if ((pageEnd - pageStart) > maxAuctionsPerPage)
+		if (pageEnd - pageStart > maxAuctionsPerPage)
 			pageEnd = pageStart + maxAuctionsPerPage;
 		
 		if (maxPages > 1)
@@ -460,7 +460,7 @@ public class TenkaiAuctionManager implements Reloadable
 		
 		int tempCount = 0;
 		int totalCount = 0;
-		int totalEnd = (pageEnd - pageStart);
+		int totalEnd = pageEnd - pageStart;
 		
 		Object[] data = _auctions.values().toArray();
 		for (int i = pageStart; i < pageEnd; i++)
@@ -496,7 +496,7 @@ public class TenkaiAuctionManager implements Reloadable
 					options += b.getValue().getName() + ";";
 				}
 				
-				if (!options.isEmpty() && (currentPos < _currencies.size()))
+				if (!options.isEmpty() && currentPos < _currencies.size())
 				{
 					options = options.substring(0, options.length() - 1);
 					sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuctionInfo.getId() + "\" list=" + options + "></td></tr>");
@@ -511,7 +511,7 @@ public class TenkaiAuctionManager implements Reloadable
 			tempCount++;
 			totalCount++;
 			
-			if ((tempCount == 2) || (totalCount == totalEnd))
+			if (tempCount == 2 || totalCount == totalEnd)
 			{
 				sb.append("</td></tr>");
 				tempCount = 0;
@@ -545,7 +545,7 @@ public class TenkaiAuctionManager implements Reloadable
 			while (rs.next())
 			{
 				int auctionId = rs.getInt("id");
-				long remainingTime = (rs.getLong("endTime") * 1000) - System.currentTimeMillis();
+				long remainingTime = rs.getLong("endTime") * 1000 - System.currentTimeMillis();
 				if (remainingTime < ADDED_DURATION)
 					remainingTime = ADDED_DURATION;
 				
@@ -651,7 +651,7 @@ public class TenkaiAuctionManager implements Reloadable
 			activeChar.sendMessage("You can't overbid your own bid!");
 			return;
 		}
-		if ((activeChar.getPrivateStoreType() != 0) || activeChar.isInCrystallize())
+		if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -662,7 +662,7 @@ public class TenkaiAuctionManager implements Reloadable
 			return;
 		
 		int currentCurrencyId = bid.getCurrentCurrency();
-		long minBid = bid.getCurrentPrice() + ((bid.getCurrentPrice() * 10) / 100);
+		long minBid = bid.getCurrentPrice() + bid.getCurrentPrice() * 10 / 100;
 		if (minBid <= bid.getCurrentPrice())
 			minBid = bid.getCurrentPrice() + 1;
 		
@@ -681,10 +681,10 @@ public class TenkaiAuctionManager implements Reloadable
 				return;
 			
 			int currencyId = playerCurrency.getId();
-			if (!bid.getTemplate().getAcceptAllCoins() && (currencyId != bid.getTemplate().getInitialCurrencyId()))
+			if (!bid.getTemplate().getAcceptAllCoins() && currencyId != bid.getTemplate().getInitialCurrencyId())
 				return; //client hack?
 				
-			if (bid.getTemplate().getAcceptAllCoins() && (currencyId != currentCurrencyId))//If we have a new currency..
+			if (bid.getTemplate().getAcceptAllCoins() && currencyId != currentCurrencyId)//If we have a new currency..
 			{
 				if (_currencies.get(currencyId).getPosition() < _currencies.get(currentCurrencyId).getPosition())
 					return; //client hack?

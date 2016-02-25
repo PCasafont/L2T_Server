@@ -67,7 +67,7 @@ public class Gordon extends L2AttackableAIScript
 		L2Npc npc = null;
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if ((spawn != null) && (spawn.getNpcId() == npcId))
+			if (spawn != null && spawn.getNpcId() == npcId)
 			{
 				npc = spawn.getNpc();
 				break;
@@ -107,13 +107,13 @@ public class Gordon extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("Start"))
 		{
-			if ((npc != null) && (_isSpawned == true))
+			if (npc != null && _isSpawned == true)
 			{
 				// check if player have Cursed Weapon and in radius
 				if (npc.getNpcId() == GORDON)
 				{
 					Collection<L2PcInstance> chars = npc.getKnownList().getKnownPlayers().values();
-					if ((chars != null) && (chars.size() > 0))
+					if (chars != null && chars.size() > 0)
 					{
 						for (L2PcInstance pc : chars)
 						{
@@ -133,7 +133,7 @@ public class Gordon extends L2AttackableAIScript
 				// end check
 				if (_isAttacked == true)
 					return super.onAdvEvent(event, npc, player);
-				if ((npc.getNpcId() == GORDON) && ((npc.getX() - 50) <= X) && ((npc.getX() + 50) >= X) && ((npc.getY() - 50) <= Y) && ((npc.getY() + 50) >= Y))
+				if (npc.getNpcId() == GORDON && npc.getX() - 50 <= X && npc.getX() + 50 >= X && npc.getY() - 50 <= Y && npc.getY() + 50 >= Y)
 				{
 					_isWalkTo++;
 					if (_isWalkTo > 55)
@@ -146,7 +146,7 @@ public class Gordon extends L2AttackableAIScript
 				}
 				
 				// Test for unblock Npc
-				if ((npc.getX() != _npcMoveX) && (npc.getY() != _npcMoveY))
+				if (npc.getX() != _npcMoveX && npc.getY() != _npcMoveY)
 				{
 					_npcMoveX = npc.getX();
 					_npcMoveY = npc.getY();
@@ -172,7 +172,7 @@ public class Gordon extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		if ((npc.getNpcId() == GORDON) && (_npcBlock == 0))
+		if (npc.getNpcId() == GORDON && _npcBlock == 0)
 		{
 			_isSpawned = true;
 			_isWalkTo = 1;

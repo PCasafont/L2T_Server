@@ -183,13 +183,13 @@ public class MainTownManager
 		_currentMainTown.spawnNpcs();
 		
 		if (GlobalVariablesManager.getInstance().isVariableStored("MTLastRotation"))
-			_nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("MTLastRotation")) + (ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
+			_nextTownTimer = Long.parseLong(GlobalVariablesManager.getInstance().getStoredVariable("MTLastRotation")) + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
 		
-		if ((_nextTownTimer - System.currentTimeMillis()) < 0)
+		if (_nextTownTimer - System.currentTimeMillis() < 0)
 		{
 			if (_nextTownTimer > 0)
 			{
-				while ((_nextTownTimer - System.currentTimeMillis()) < 0)
+				while (_nextTownTimer - System.currentTimeMillis() < 0)
 				{
 					changeMainTown();
 					_nextTownTimer += ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
@@ -214,7 +214,7 @@ public class MainTownManager
 			public void run()
 			{
 				changeMainTown();
-				_nextTownTimer = System.currentTimeMillis() + (ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
+				_nextTownTimer = System.currentTimeMillis() + ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000;
 			}
 		}, _nextTownTimer - System.currentTimeMillis(), ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
 		//}, 3600000L * 5, 3600000L * 5);
@@ -259,7 +259,7 @@ public class MainTownManager
 			MainTownInfo town = _nextTowns.get(i);
 			if (town != prevTown)
 			{
-				Date date = new Date(_nextTownTimer + (((ROTATION_INTERVAL_DAYS * i) - 1) * 24 * 3600 * 1000));
+				Date date = new Date(_nextTownTimer + (ROTATION_INTERVAL_DAYS * i - 1) * 24 * 3600 * 1000);
 				String from = "now";
 				if (prevDate != null)
 					from = new SimpleDateFormat("E MMM d").format(prevDate);
@@ -271,7 +271,7 @@ public class MainTownManager
 					break;
 				
 				prevTown = town;
-				prevDate = new Date(_nextTownTimer + (ROTATION_INTERVAL_DAYS * i * 24 * 3600 * 1000));
+				prevDate = new Date(_nextTownTimer + ROTATION_INTERVAL_DAYS * i * 24 * 3600 * 1000);
 			}
 		}
 		return info;

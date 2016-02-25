@@ -144,7 +144,7 @@ public class L2SkillChangeWeapon extends L2Skill
 				if (destroyedItemTime != -1)
 					newItem.setTime(10080);
 				
-				if ((elementals != null) && (elementals.getElement() != -1) && (elementals.getValue() != -1))
+				if (elementals != null && elementals.getElement() != -1 && elementals.getValue() != -1)
 					newItem.setElementAttr(elementals.getElement(), elementals.getValue());
 				newItem.setEnchantLevel(enchantLevel);
 				player.getInventory().equipItem(newItem);

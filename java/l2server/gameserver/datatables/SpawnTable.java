@@ -263,7 +263,7 @@ public class SpawnTable
 				
 				if (Config.isServer(Config.TENKAI_ESTHUS))
 				{
-					if (template.Type.equals("L2RaidBoss") && (template.Level <= 85))
+					if (template.Type.equals("L2RaidBoss") && template.Level <= 85)
 						continue;
 					
 					if (node.getName().endsWith("siege_guards"))
@@ -330,7 +330,7 @@ public class SpawnTable
 		{
 			for (SpawnData sp : spawn.getTemplate().getSpawns())
 			{
-				if ((sp.X == spawn.getX()) && (sp.Y == spawn.getY()) && (sp.Z == spawn.getZ()))
+				if (sp.X == spawn.getX() && sp.Y == spawn.getY() && sp.Z == spawn.getZ())
 				{
 					spawn.getTemplate().getSpawns().remove(sp);
 					break;
@@ -364,7 +364,7 @@ public class SpawnTable
 				{
 					if (teleportIndex == index)
 					{
-						if (showposition && (_npc != null))
+						if (showposition && _npc != null)
 							activeChar.teleToLocation(_npc.getX(), _npc.getY(), _npc.getZ(), true);
 						else
 							activeChar.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ(), true);
@@ -372,7 +372,7 @@ public class SpawnTable
 				}
 				else
 				{
-					if (showposition && (_npc != null))
+					if (showposition && _npc != null)
 						activeChar.sendMessage(index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + _npc.getX() + " " + _npc.getY() + " " + _npc.getZ());
 					else
 						activeChar.sendMessage(index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + spawn.getX() + " " + spawn.getY() + " " + spawn.getZ());
@@ -388,7 +388,7 @@ public class SpawnTable
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if (spawn.getTemplate().getName().equalsIgnoreCase(name) && (spawn.getNpc() != null))
+			if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null)
 				return spawn;
 		}
 		
@@ -396,7 +396,7 @@ public class SpawnTable
 		{
 			for (L2Spawn spawn : group.getSpawns())
 			{
-				if (spawn.getTemplate().getName().equalsIgnoreCase(name) && (spawn.getNpc() != null))
+				if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null)
 					return spawn;
 			}
 		}
@@ -436,7 +436,7 @@ public class SpawnTable
 	public L2Spawn getRandomMonsterSpawn()
 	{
 		L2Spawn spawn = null;
-		while ((spawn == null) || (spawn.getNpc() == null) || !(spawn.getNpc() instanceof L2MonsterInstance))
+		while (spawn == null || spawn.getNpc() == null || !(spawn.getNpc() instanceof L2MonsterInstance))
 		{
 			int randomId = Rnd.get(_spawnTable.size());
 			int i = 0;

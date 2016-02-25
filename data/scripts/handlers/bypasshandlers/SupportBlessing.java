@@ -41,7 +41,7 @@ public class SupportBlessing implements IBypassHandler
 		// Select the player
 		target.setTarget(activeChar);
 		// If the player is too high level, display a message and return
-		if ((player_level > 39) || (activeChar.getCurrentClass().level() >= 2))
+		if (player_level > 39 || activeChar.getCurrentClass().level() >= 2)
 		{
 			NpcHtmlMessage msg = new NpcHtmlMessage(target.getObjectId());
 			msg.setHtml("<html><body>Newbie Guide:<br>I'm sorry, but you are not eligible to receive the protection blessing.<br1>It can only be bestowed on <font color=\"LEVEL\">characters below level 39 who have not made a seccond transfer.</font></body></html>");

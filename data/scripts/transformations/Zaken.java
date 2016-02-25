@@ -18,7 +18,7 @@ public class Zaken extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 305) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 305 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

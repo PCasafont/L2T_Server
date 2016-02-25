@@ -57,7 +57,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if ((_id <= 0) || (_level <= 0)) // minimal sanity check
+		if (_id <= 0 || _level <= 0) // minimal sanity check
 			return;
 		
 		final L2PcInstance activeChar = getClient().getActiveChar();
@@ -88,7 +88,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 				
 				for (L2TransformSkillLearn s : skillst)
 				{
-					if ((s.getId() == _id) && (s.getLevel() == _level))
+					if (s.getId() == _id && s.getLevel() == _level)
 					{
 						canteach = true;
 						itemId = s.getItemId();
@@ -113,7 +113,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			for (L2SkillLearn s : skills)
 			{
-				if ((s.getId() == _id) && (s.getLevel() == _level))
+				if (s.getId() == _id && s.getLevel() == _level)
 				{
 					skillToLearn = s;
 					break;
@@ -132,7 +132,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			
 			for (L2PledgeSkillLearn s : skills)
 			{
-				if ((s.getId() == _id) && (s.getLevel() == _level))
+				if (s.getId() == _id && s.getLevel() == _level)
 				{
 					canteach = true;
 					requiredRep = s.getRepCost();
@@ -185,7 +185,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			{
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
-				if ((sk == null) || (sk != skill))
+				if (sk == null || sk != skill)
 					continue;
 				
 				canteach = true;
@@ -207,7 +207,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket
 			{
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
-				if ((sk == null) || (sk != skill))
+				if (sk == null || sk != skill)
 					continue;
 				
 				skillToLearn = s;

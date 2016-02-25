@@ -528,8 +528,8 @@ public final class StatsSet
 	 */
 	public void safeSet(String name, int value, int min, int max, String reference)
 	{
-		assert !(((min <= max) && ((value < min) || (value >= max))));
-		if ((min <= max) && ((value < min) || (value >= max)))
+		assert !(min <= max && (value < min || value >= max));
+		if (min <= max && (value < min || value >= max))
 		{
 			Log.log(Level.SEVERE, "Incorrect value: " + value + "for: " + name + "Ref: " + reference);
 		}

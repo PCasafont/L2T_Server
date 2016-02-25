@@ -97,10 +97,10 @@ public final class L2Radar
 		{
 			final int prime = 31;
 			int result = 1;
-			result = (prime * result) + _type;
-			result = (prime * result) + _x;
-			result = (prime * result) + _y;
-			result = (prime * result) + _z;
+			result = prime * result + _type;
+			result = prime * result + _x;
+			result = prime * result + _y;
+			result = prime * result + _z;
 			return result;
 		}
 		

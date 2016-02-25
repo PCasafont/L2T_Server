@@ -257,7 +257,7 @@ public class Auction
 		long taskDelay = 0;
 		if (_endDate <= currentTime)
 		{
-			_endDate = currentTime + (7 * 24 * 60 * 60 * 1000);
+			_endDate = currentTime + 7 * 24 * 60 * 60 * 1000;
 			saveAuctionDate();
 		}
 		else
@@ -300,7 +300,7 @@ public class Auction
 		long requiredAdena = bid;
 		if (getHighestBidderName().equals(bidder.getClan().getLeaderName()))
 			requiredAdena = bid - getHighestBidderMaxBid();
-		if (((getHighestBidderId() > 0) && (bid > getHighestBidderMaxBid())) || ((getHighestBidderId() == 0) && (bid >= getStartingBid())))
+		if (getHighestBidderId() > 0 && bid > getHighestBidderMaxBid() || getHighestBidderId() == 0 && bid >= getStartingBid())
 		{
 			if (takeItem(bidder, requiredAdena))
 			{
@@ -309,7 +309,7 @@ public class Auction
 				return;
 			}
 		}
-		if ((bid < getStartingBid()) || (bid <= getHighestBidderMaxBid()))
+		if (bid < getStartingBid() || bid <= getHighestBidderMaxBid())
 			bidder.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BID_PRICE_MUST_BE_HIGHER));
 	}
 	
@@ -333,7 +333,7 @@ public class Auction
 	/** Take Item in WHC */
 	private boolean takeItem(L2PcInstance bidder, long quantity)
 	{
-		if ((bidder.getClan() != null) && (bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null) && (bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity))
+		if (bidder.getClan() != null && bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null && bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity)
 		{
 			bidder.getClan().getWarehouse().destroyItemByItemId("Buy", Config.CH_BID_ITEMID, quantity, bidder, bidder);
 			return true;
@@ -469,12 +469,12 @@ public class Auction
 	{
 		if (ClanHallManager.getInstance().loaded())
 		{
-			if ((_highestBidderId == 0) && (_sellerId == 0))
+			if (_highestBidderId == 0 && _sellerId == 0)
 			{
 				startAutoTask();
 				return;
 			}
-			if ((_highestBidderId == 0) && (_sellerId > 0))
+			if (_highestBidderId == 0 && _sellerId > 0)
 			{
 				/** If seller haven't sell ClanHall, auction removed,
 				 *  THIS MUST BE CONFIRMED */

@@ -44,7 +44,7 @@ public class DamageFormatter extends Formatter
 			
 			if (p instanceof L2Character)
 			{
-				if ((p instanceof L2Attackable) && ((L2Attackable) p).isRaid())
+				if (p instanceof L2Attackable && ((L2Attackable) p).isRaid())
 					StringUtil.append(output, "RaidBoss ");
 				
 				StringUtil.append(output, ((L2Character) p).getName(), "(", String.valueOf(((L2Character) p).getObjectId()), ") ");

@@ -115,7 +115,7 @@ public class AirShipGludioGracia extends Quest implements Runnable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_HOLDING_A_FLAG);
 			return null;
 		}
-		if ((player.getPet() != null) || player.isMounted() || !player.getSummons().isEmpty())
+		if (player.getPet() != null || player.isMounted() || !player.getSummons().isEmpty())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_A_PET_OR_A_SERVITOR_IS_SUMMONED);
 			return null;

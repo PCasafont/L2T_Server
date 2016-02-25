@@ -51,7 +51,7 @@ public class RecipeShopManageList extends L2GameServerPacket
 			List<L2ManufactureItem> toIterate = new ArrayList<L2ManufactureItem>(list.getList());
 			for (L2ManufactureItem item : toIterate)
 			{
-				if ((item.isDwarven() != _isDwarven) || !seller.hasRecipeList(item.getRecipeId()))
+				if (item.isDwarven() != _isDwarven || !seller.hasRecipeList(item.getRecipeId()))
 					list.getList().remove(item);
 			}
 		}

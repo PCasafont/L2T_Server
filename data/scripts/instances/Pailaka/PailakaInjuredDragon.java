@@ -457,7 +457,7 @@ public class PailakaInjuredDragon extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
+		if (st == null || st.getState() != State.STARTED)
 			return null;
 		
 		/* There are lots of mobs walls, and item get is random, it could happen that you dont get the item
@@ -474,7 +474,7 @@ public class PailakaInjuredDragon extends Quest
 			case VARKA_SILENOS_FOOTMAN:
 			case VARKA_SILENOS_RECRUIT:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (Rnd.get(100) < 5))
+				if (cond == 3 && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && Rnd.get(100) < 5)
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -489,7 +489,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKA_SILENOS_WARRIOR:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (Rnd.get(100) < 10))
+				if (cond == 3 && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && Rnd.get(100) < 10)
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -504,7 +504,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKA_ELITE_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (Rnd.get(100) < 15))
+				if (cond == 3 && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && Rnd.get(100) < 15)
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -520,7 +520,7 @@ public class PailakaInjuredDragon extends Quest
 			case VARKAS_COMMANDER:
 			case VARKA_SILENOS_OFFICER:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (Rnd.get(100) < 25))
+				if (cond == 3 && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && Rnd.get(100) < 25)
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -536,7 +536,7 @@ public class PailakaInjuredDragon extends Quest
 			case VARKA_SILENOS_GREAT_MAGUS:
 			case VARKA_SILENOS_GENERAL:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (Rnd.get(100) < 5))
+				if (cond == 5 && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && Rnd.get(100) < 5)
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -551,7 +551,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKAS_PROPHET:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (Rnd.get(100) < 10))
+				if (cond == 5 && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && Rnd.get(100) < 10)
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -566,7 +566,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKA_SILENOS_HEAD_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (Rnd.get(100) < 20))
+				if (cond == 5 && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && Rnd.get(100) < 20)
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -581,7 +581,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case PROPHET_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (Rnd.get(100) < 25))
+				if (cond == 5 && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && Rnd.get(100) < 25)
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -620,8 +620,8 @@ public class PailakaInjuredDragon extends Quest
 	private final void spawnMageBehind(L2Npc npc, L2PcInstance player, int mageId)
 	{
 		final double rads = Math.toRadians(Util.convertHeadingToDegree(npc.getSpawn().getHeading()) + 180);
-		final int mageX = (int) (npc.getX() + (150 * Math.cos(rads)));
-		final int mageY = (int) (npc.getY() + (150 * Math.sin(rads)));
+		final int mageX = (int) (npc.getX() + 150 * Math.cos(rads));
+		final int mageY = (int) (npc.getY() + 150 * Math.sin(rads));
 		final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true, npc.getInstanceId());
 		mageBack.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, player, 1000);
 	}
@@ -757,7 +757,7 @@ public class PailakaInjuredDragon extends Quest
 	public final String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		final QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
+		if (st == null || st.getState() != State.STARTED)
 			return null;
 		
 		if (isPet)
@@ -792,7 +792,7 @@ public class PailakaInjuredDragon extends Quest
 				if (!_hasDoneAnimation)
 				{
 					final QuestState st = attacker.getQuestState(qn);
-					if ((st == null) || (st.getState() != State.STARTED))
+					if (st == null || st.getState() != State.STARTED)
 						return super.onAttack(npc, attacker, damage, isPet);
 					
 					startQuestTimer("latana_animation", 500, npc, attacker);
@@ -842,10 +842,10 @@ public class PailakaInjuredDragon extends Quest
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
 		}
 		 */
-		if ((character instanceof L2Playable) && !character.isDead() && !character.isTeleporting() && character.getActingPlayer().isOnline())
+		if (character instanceof L2Playable && !character.isDead() && !character.isTeleporting() && character.getActingPlayer().isOnline())
 		{
 			InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
-			if ((world != null) && (world.templateId == INSTANCE_ID))
+			if (world != null && world.templateId == INSTANCE_ID)
 			{
 				//  - If a player wants to go by a mob wall without kill it, he will be returned back to a spawn point
 				final int[] zoneTeleport = NOEXIT_ZONES.get(zone.getId());

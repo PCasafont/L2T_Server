@@ -66,7 +66,7 @@ public class Gainak extends Quest
 			
 		if (Config.isServer(Config.TENKAI))
 			return Rnd.get(120, 180); // 2 to 3 hours.
-		
+			
 		return 150;
 	}
 	
@@ -115,8 +115,8 @@ public class Gainak extends Quest
 				_gainakPeaceZone.setZoneEnabled(true);
 				_gainakSiegeZone.setIsActive(false);
 				_gainakSiegeZone.updateZoneStatusForCharactersInside();
-				_gainakPeaceZone.broadcastPacket((new EventTrigger(_siegeEffect, false)));
-				_gainakPeaceZone.broadcastPacket((new ExShowScreenMessage(1600066, 0, true, 5000)));
+				_gainakPeaceZone.broadcastPacket(new EventTrigger(_siegeEffect, false));
+				_gainakPeaceZone.broadcastPacket(new ExShowScreenMessage(1600066, 0, true, 5000));
 				
 				startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 				
@@ -133,8 +133,8 @@ public class Gainak extends Quest
 				_gainakPeaceZone.setZoneEnabled(false);
 				_gainakSiegeZone.setIsActive(true);
 				_gainakSiegeZone.updateZoneStatusForCharactersInside();
-				_gainakSiegeZone.broadcastPacket((new EventTrigger(_siegeEffect, true)));
-				_gainakSiegeZone.broadcastPacket((new ExShowScreenMessage(1600063, 0, true, 5000)));
+				_gainakSiegeZone.broadcastPacket(new EventTrigger(_siegeEffect, true));
+				_gainakSiegeZone.broadcastPacket(new ExShowScreenMessage(1600063, 0, true, 5000));
 				
 				startQuestTimer("gainak_change", getSiegeDuration() * 60000, null, null);
 				

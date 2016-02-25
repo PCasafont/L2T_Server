@@ -168,7 +168,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 					}
 					if (st.countTokens() < 1)
 						return;
-					int valbuy = Integer.parseInt(st.nextToken()) + (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl() * 100000);
+					int valbuy = Integer.parseInt(st.nextToken()) + getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE).getLvl() * 100000;
 					showBuyWindow(player, valbuy);
 				}
 				else if (val.equalsIgnoreCase("support"))
@@ -438,7 +438,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_HPREG13_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_HP, percent, fee, Config.CH_HPREG_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_HP, percent, fee, Config.CH_HPREG_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_RESTORE_HP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -492,7 +492,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_MPREG5_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_MP, percent, fee, Config.CH_MPREG_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_MP, percent, fee, Config.CH_MPREG_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_RESTORE_MP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -552,7 +552,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_EXPREG7_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_EXP, percent, fee, Config.CH_EXPREG_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_RESTORE_EXP, percent, fee, Config.CH_EXPREG_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_RESTORE_EXP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -872,7 +872,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_ITEM3_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_ITEM_CREATE, lvl, fee, Config.CH_ITEM_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_ITEM_CREATE, lvl, fee, Config.CH_ITEM_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_ITEM_CREATE) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -917,7 +917,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_TELE2_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_TELEPORT, lvl, fee, Config.CH_TELE_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_TELEPORT) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_TELEPORT, lvl, fee, Config.CH_TELE_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_TELEPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -980,7 +980,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_SUPPORT8_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_SUPPORT, lvl, fee, Config.CH_SUPPORT_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_SUPPORT) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_SUPPORT, lvl, fee, Config.CH_SUPPORT_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_SUPPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -1174,7 +1174,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_CURTAIN2_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_DECO_CURTAINS, lvl, fee, Config.CH_CURTAIN_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_DECO_CURTAINS, lvl, fee, Config.CH_CURTAIN_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_DECO_CURTAINS) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -1219,7 +1219,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 											fee = Config.CH_FRONT2_FEE;
 											break;
 									}
-									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_DECO_FRONTPLATEFORM, lvl, fee, Config.CH_FRONT_FEE_RATIO, (getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) == null)))
+									if (!getClanHall().updateFunctions(player, ClanHall.FUNC_DECO_FRONTPLATEFORM, lvl, fee, Config.CH_FRONT_FEE_RATIO, getClanHall().getFunction(ClanHall.FUNC_DECO_FRONTPLATEFORM) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "clanHallManager/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -1308,7 +1308,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 						{
 							final int mpCost = skill.getMpConsume();
 							// If Clan Hall Buff are free or current MP is greater than MP cost, the skill should be casted
-							if ((getCurrentMp() >= mpCost) || Config.CH_BUFF_FREE)
+							if (getCurrentMp() >= mpCost || Config.CH_BUFF_FREE)
 							{
 								doCast(skill);
 							}

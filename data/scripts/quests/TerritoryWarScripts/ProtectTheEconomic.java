@@ -37,6 +37,6 @@ public class ProtectTheEconomic extends TerritoryWarSuperClass
 	@Override
 	public int getTerritoryIdForThisNPCId(int npcid)
 	{
-		return 81 + ((npcid - 36513) / 6);
+		return 81 + (npcid - 36513) / 6;
 	}
 }

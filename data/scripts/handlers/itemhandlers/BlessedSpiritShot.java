@@ -52,7 +52,7 @@ public class BlessedSpiritShot implements IItemHandler
 		int itemId = item.getItemId();
 		
 		// Check if Blessed SpiritShot can be used
-		if ((weaponInst == null) || (weaponItem == null) || (weaponItem.getSpiritShotCount() == 0))
+		if (weaponInst == null || weaponItem == null || weaponItem.getSpiritShotCount() == 0)
 		{
 			if (!activeChar.hasAutoSoulShot(item))
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SPIRITSHOTS));
@@ -74,31 +74,31 @@ public class BlessedSpiritShot implements IItemHandler
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_D:
-				if ((itemId != 3948) && (itemId != 22072))
+				if (itemId != 3948 && itemId != 22072)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_C:
-				if ((itemId != 3949) && (itemId != 22073))
+				if (itemId != 3949 && itemId != 22073)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_B:
-				if ((itemId != 3950) && (itemId != 22074))
+				if (itemId != 3950 && itemId != 22074)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_A:
-				if ((itemId != 3951) && (itemId != 22075))
+				if (itemId != 3951 && itemId != 22075)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if ((itemId != 3952) && (itemId != 22076))
+				if (itemId != 3952 && itemId != 22076)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
-				if ((itemId != 19442) && (itemId != 22434))
+				if (itemId != 19442 && itemId != 22434)
 					gradeCheck = false;
 				break;
 		}
@@ -113,7 +113,7 @@ public class BlessedSpiritShot implements IItemHandler
 		
 		int sapphireLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)

@@ -156,7 +156,7 @@ public class RecipeController
 		
 		RecipeItemMaker maker;
 		
-		if (Config.ALT_GAME_CREATION && ((maker = _activeMakers.get(manufacturer.getObjectId())) != null)) // check if busy
+		if (Config.ALT_GAME_CREATION && (maker = _activeMakers.get(manufacturer.getObjectId())) != null) // check if busy
 		{
 			player.sendMessage("Manufacturer is busy, please try later.");
 			return;
@@ -200,7 +200,7 @@ public class RecipeController
 		RecipeItemMaker maker;
 		
 		// check if already busy (possible in alt mode only)
-		if (Config.ALT_GAME_CREATION && ((maker = _activeMakers.get(player.getObjectId())) != null))
+		if (Config.ALT_GAME_CREATION && (maker = _activeMakers.get(player.getObjectId())) != null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S1);
 			sm.addItemName(recipeList.getItemId());
@@ -474,7 +474,7 @@ public class RecipeController
 				return;
 			}
 			
-			if ((_player == null) || (_target == null))
+			if (_player == null || _target == null)
 			{
 				Log.warning("player or target == null (disconnected?), aborting" + _target + _player);
 				abort();
@@ -488,7 +488,7 @@ public class RecipeController
 				return;
 			}
 			
-			if (Config.ALT_GAME_CREATION && (_activeMakers.get(_player.getObjectId()) == null))
+			if (Config.ALT_GAME_CREATION && _activeMakers.get(_player.getObjectId()) == null)
 			{
 				if (_target != _player)
 				{
@@ -517,7 +517,7 @@ public class RecipeController
 				if (!_items.isEmpty())
 				{
 					// divided by RATE_CONSUMABLES_COST to remove craft time increase on higher consumables rates
-					_delay = (int) ((Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * TimeController.TICKS_PER_SECOND) / Config.RATE_CONSUMABLE_COST) * TimeController.MILLIS_IN_TICK;
+					_delay = (int) (Config.ALT_GAME_CREATION_SPEED * _player.getMReuseRate(_skill) * TimeController.TICKS_PER_SECOND / Config.RATE_CONSUMABLE_COST) * TimeController.MILLIS_IN_TICK;
 					
 					// This packet won't show crafting (client-side change in the Create Item skill)
 					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
@@ -555,7 +555,7 @@ public class RecipeController
 				calculateStatUse(false, true);
 			
 			// first take adena for manufacture
-			if ((_target != _player) && (_price > 0)) // customer must pay for services
+			if (_target != _player && _price > 0) // customer must pay for services
 			{
 				// attempt to pay for item
 				L2ItemInstance adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
@@ -569,7 +569,7 @@ public class RecipeController
 			}
 			
 			//Calculate the chance with the LUC stat
-			int chance = (int) (_recipeList.getSuccessRate() + ((_player.getLUC() - 20) * 0.2));
+			int chance = (int) (_recipeList.getSuccessRate() + (_player.getLUC() - 20) * 0.2);
 			if ((_items = listItems(true)) == null) // this line actually takes materials from inventory
 			{ // handle possible cheaters here
 				// (they click craft then try to get rid of items in order to get free craft)
@@ -632,7 +632,7 @@ public class RecipeController
 		private void grabSomeItems()
 		{
 			int grabItems = _itemGrab;
-			while ((grabItems > 0) && !_items.isEmpty())
+			while (grabItems > 0 && !_items.isEmpty())
 			{
 				TempItem item = _items.get(0);
 				
@@ -681,7 +681,7 @@ public class RecipeController
 				}
 			}
 			// determine number of creation passes needed
-			_creationPasses = (_totalItems / _itemGrab) + ((_totalItems % _itemGrab) != 0 ? 1 : 0);
+			_creationPasses = _totalItems / _itemGrab + (_totalItems % _itemGrab != 0 ? 1 : 0);
 			if (_creationPasses < 1)
 				_creationPasses = 1;
 		}
@@ -886,7 +886,7 @@ public class RecipeController
 			L2Item template = ItemTable.getInstance().getTemplate(itemId);
 			
 			// check that the current recipe has a rare production or not
-			if ((rareProdId != -1) && ((rareProdId == itemId) || Config.CRAFT_MASTERWORK))
+			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK))
 			{
 				if (Rnd.get(100) < _recipeList.getRarity())
 				{
@@ -994,7 +994,7 @@ public class RecipeController
 	{
 		L2RecipeList recipeList = getRecipeList(id);
 		
-		if ((recipeList == null) || (recipeList.getRecipes().length == 0))
+		if (recipeList == null || recipeList.getRecipes().length == 0)
 		{
 			player.sendMessage("No recipe for: " + id);
 			player.isInCraftMode(false);

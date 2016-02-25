@@ -215,7 +215,7 @@ public final class L2ScriptEngineManager
 				
 				String[] parts = line.trim().split("#");
 				
-				if ((parts.length > 0) && !parts[0].startsWith("#") && (parts[0].length() > 0))
+				if (parts.length > 0 && !parts[0].startsWith("#") && parts[0].length() > 0)
 				{
 					line = parts[0];
 					
@@ -279,7 +279,7 @@ public final class L2ScriptEngineManager
 		{
 			for (File file : dir.listFiles())
 			{
-				if (file.isDirectory() && recurseDown && (maxDepth > currentDepth))
+				if (file.isDirectory() && recurseDown && maxDepth > currentDepth)
 				{
 					if (VERBOSE_LOADING)
 					{
@@ -421,7 +421,7 @@ public final class L2ScriptEngineManager
 			}
 		}
 		
-		if ((engine instanceof Compilable) && ATTEMPT_COMPILATION)
+		if (engine instanceof Compilable && ATTEMPT_COMPILATION)
 		{
 			ScriptContext context = new SimpleScriptContext();
 			context.setAttribute("mainClass", getClassForFile(file).replace('/', '.').replace('\\', '.'), ScriptContext.ENGINE_SCOPE);
@@ -509,7 +509,7 @@ public final class L2ScriptEngineManager
 	
 	public Object eval(ScriptEngine engine, String script, ScriptContext context) throws ScriptException
 	{
-		if ((engine instanceof Compilable) && ATTEMPT_COMPILATION)
+		if (engine instanceof Compilable && ATTEMPT_COMPILATION)
 		{
 			Compilable eng = (Compilable) engine;
 			CompiledScript cs = eng.compile(script);

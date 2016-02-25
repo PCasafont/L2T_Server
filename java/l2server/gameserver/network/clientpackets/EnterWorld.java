@@ -230,7 +230,7 @@ public class EnterWorld extends L2GameClientPacket
 				activeChar.refreshOverloaded();
 			}
 			
-			if (Config.GM_STARTUP_AUTO_LIST && AdminCommandAccessRights.getInstance().hasAccess("admin_gmliston", activeChar.getAccessLevel()) && (activeChar.getAccessLevel().getLevel() != 127))
+			if (Config.GM_STARTUP_AUTO_LIST && AdminCommandAccessRights.getInstance().hasAccess("admin_gmliston", activeChar.getAccessLevel()) && activeChar.getAccessLevel().getLevel() != 127)
 				GmListTable.getInstance().addGm(activeChar, false);
 			else
 				GmListTable.getInstance().addGm(activeChar, true);
@@ -317,11 +317,11 @@ public class EnterWorld extends L2GameClientPacket
 				{
 					for (L2ClanMember member : activeChar.getClan().getMembers())
 					{
-						if ((member.getPlayerInstance() != null) && clanAdvent.checkCondition(member.getPlayerInstance(), member.getPlayerInstance(), false))
+						if (member.getPlayerInstance() != null && clanAdvent.checkCondition(member.getPlayerInstance(), member.getPlayerInstance(), false))
 							clanAdvent.getEffects(member.getPlayerInstance(), member.getPlayerInstance());
 					}
 				}
-				else if ((activeChar.getClan().getLeader() != null) && activeChar.getClan().getLeader().isOnline())
+				else if (activeChar.getClan().getLeader() != null && activeChar.getClan().getLeader().isOnline())
 					clanAdvent.getEffects(activeChar, activeChar);
 			}
 		}
@@ -363,12 +363,12 @@ public class EnterWorld extends L2GameClientPacket
 		
 		if (!Config.DISABLE_TUTORIAL)
 			loadTutorial(activeChar);
-		if (Config.isServer(Config.TENKAI) && (activeChar.getLevel() == 1))
+		if (Config.isServer(Config.TENKAI) && activeChar.getLevel() == 1)
 			CommunityBoard.getInstance().handleCommands(getClient(), Config.BBS_DEFAULT);
 		
 		for (Quest quest : QuestManager.getInstance().getAllManagedScripts())
 		{
-			if ((quest != null) && quest.getOnEnterWorld())
+			if (quest != null && quest.getOnEnterWorld())
 				quest.notifyEnterWorld(activeChar);
 		}
 		activeChar.sendPacket(new QuestList());
@@ -452,8 +452,7 @@ public class EnterWorld extends L2GameClientPacket
 		else
 			Announcements.getInstance().showAnnouncements(activeChar);
 		
-		if (!CharacterCreate.isValidName(activeChar.getName())
-				&& !activeChar.getName().contains("Khadia_Gift_"))
+		if (!CharacterCreate.isValidName(activeChar.getName()) && !activeChar.getName().contains("Khadia_Gift_"))
 		{
 			activeChar.setMovieId(1000);
 			sendPacket(new NpcHtmlMessage(0, "<html><body><center>" + "Your nickname contains illegal letters!<br>" + "Let's decide another nickname for this character:<br>" + "<edit var=text width=130 height=11 length=26><br>" + "<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" + "</center></body></html>"));
@@ -505,7 +504,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		activeChar.onPlayerEnter();
 		
-		if ((activeChar.getClan() == null) || (activeChar.isClanLeader() && (ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)))
+		if (activeChar.getClan() == null || activeChar.isClanLeader() && ClanRecruitManager.getInstance().getRecruitData(activeChar.getClanId()) != null)
 			sendPacket(new ExPledgeWaitingListAlarm());
 		
 		sendPacket(new ExAdenaInvenCount(activeChar.getAdena(), activeChar.getInventory().getSize(false)));
@@ -553,7 +552,7 @@ public class EnterWorld extends L2GameClientPacket
 		// inside siege zone
 		&& activeChar.isInsideZone(L2Character.ZONE_SIEGE)
 		// but non-participant or attacker
-		&& (!activeChar.isInSiege() || (activeChar.getSiegeState() < 2)))
+		&& (!activeChar.isInSiege() || activeChar.getSiegeState() < 2))
 			activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 		
 		if (Config.ALLOW_MAIL)
@@ -646,7 +645,7 @@ public class EnterWorld extends L2GameClientPacket
 		// Vitality information
 		//activeChar.sendPacket(new ExVitalityEffectInfo(activeChar.getVitalityPoints(), activeChar.getStat().getVitalityLevel(), activeChar.getVitalityItemsUsed()));
 		
-		if ((activeChar.getLevel() >= 85) && (activeChar.getClassId() < 139))
+		if (activeChar.getLevel() >= 85 && activeChar.getClassId() < 139)
 		{
 			PlayerClass cl = PlayerClassTable.getInstance().getClassById(activeChar.getClassId());
 			if (cl.getAwakeningClassId() != -1)
@@ -658,7 +657,7 @@ public class EnterWorld extends L2GameClientPacket
 		else if (activeChar.isMentee())
 		{
 			L2PcInstance mentor = L2World.getInstance().getPlayer(activeChar.getMentorId());
-			if ((mentor != null) && mentor.isOnline())
+			if (mentor != null && mentor.isOnline())
 				mentor.giveMentorBuff();
 		}
 		
@@ -687,7 +686,7 @@ public class EnterWorld extends L2GameClientPacket
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT timer, author, reason FROM ban_timers " + "WHERE identity = ? OR identity = ?");
 			
-			String hardwareId = ((getClient().getHWId() == null) || (getClient().getHWId().length() < 20)) ? "none" : getClient().getHWId();
+			String hardwareId = getClient().getHWId() == null || getClient().getHWId().length() < 20 ? "none" : getClient().getHWId();
 			statement.setString(1, activeChar.getAccountName());
 			statement.setString(2, hardwareId);
 			
@@ -695,14 +694,14 @@ public class EnterWorld extends L2GameClientPacket
 			if (rset.next())
 			{
 				int timer = rset.getInt("timer");
-				if ((timer < 0) || (timer > (System.currentTimeMillis() / 1000)))
+				if (timer < 0 || timer > System.currentTimeMillis() / 1000)
 				{
 					String author = rset.getString("author");
 					String reason = rset.getString("reason");
 					String expiration = "This ban ";
 					int remaining = timer - (int) (System.currentTimeMillis() / 1000);
 					if (timer > -1)
-						expiration += "expires in " + (remaining / 3600) + " hours and " + ((remaining % 3600) / 60) + " minutes.";
+						expiration += "expires in " + remaining / 3600 + " hours and " + remaining % 3600 / 60 + " minutes.";
 					else
 						expiration += "is permanent.";
 					
@@ -773,7 +772,7 @@ public class EnterWorld extends L2GameClientPacket
 				
 				int itemId = item.getItemId();
 				
-				if (((itemId >= 46538) && (itemId <= 46551)) || ((itemId >= 46595) && (itemId <= 46606)))
+				if (itemId >= 46538 && itemId <= 46551 || itemId >= 46595 && itemId <= 46606)
 					isRemovedApp = true;
 				
 				if (isRemovedApp)
@@ -786,7 +785,7 @@ public class EnterWorld extends L2GameClientPacket
 				
 				itemId = item.getAppearance();
 				
-				if (((itemId >= 46538) && (itemId <= 46551)) || ((itemId >= 46595) && (itemId <= 46606)))
+				if (itemId >= 46538 && itemId <= 46551 || itemId >= 46595 && itemId <= 46606)
 					isRemovedApp = true;
 				
 				if (isRemovedApp)
@@ -821,7 +820,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		for (Couple cl : CoupleManager.getInstance().getCouples())
 		{
-			if ((cl.getPlayer1Id() == chaid) || (cl.getPlayer2Id() == chaid))
+			if (cl.getPlayer1Id() == chaid || cl.getPlayer2Id() == chaid)
 			{
 				if (cl.getMaried())
 					cha.setMarried(true);
@@ -948,7 +947,7 @@ public class EnterWorld extends L2GameClientPacket
 				int count = rset.getInt("count");
 				
 				//Be sure these items are allowed...
-				if ((itemId != 4037) && (itemId != 4356)) //Coin of Luck, Gold Einhasad
+				if (itemId != 4037 && itemId != 4356) //Coin of Luck, Gold Einhasad
 				{
 					String itemName = String.valueOf(itemId);
 					L2Item temp = ItemTable.getInstance().getTemplate(itemId);
@@ -972,7 +971,7 @@ public class EnterWorld extends L2GameClientPacket
 				systemMessage.addNumber(count);
 				player.sendPacket(systemMessage);
 				
-				if ((itemId == 4037) || (itemId == 4356))
+				if (itemId == 4037 || itemId == 4356)
 				{
 					CreatureSay cs1 = new CreatureSay(0, Say2.TELL, "Administration", "We have just given you the coins corresponding with your last donation.");
 					player.sendPacket(cs1);

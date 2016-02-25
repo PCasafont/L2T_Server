@@ -29,7 +29,7 @@ public final class ExIsCharNameCreatable extends L2GameServerPacket
 	
 	public ExIsCharNameCreatable(String name)
 	{
-		if ((name.length() < 1) || (name.length() > 16))
+		if (name.length() < 1 || name.length() > 16)
 		{
 			_result = CharCreateFail.REASON_16_ENG_CHARS;
 			return;

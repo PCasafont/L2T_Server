@@ -39,7 +39,7 @@ public class ShiftTarget implements ISkillHandler
 			return;
 		L2Character target = (L2Character) targets[0];
 		
-		if (activeChar.isAlikeDead() || (target == null) || !(target instanceof L2PcInstance))
+		if (activeChar.isAlikeDead() || target == null || !(target instanceof L2PcInstance))
 			return;
 		
 		L2PcInstance targetPlayer = (L2PcInstance) target;
@@ -55,7 +55,7 @@ public class ShiftTarget implements ISkillHandler
 			if (!(obj instanceof L2Attackable) || obj.isDead())
 				continue;
 			
-			L2Attackable hater = ((L2Attackable) obj);
+			L2Attackable hater = (L2Attackable) obj;
 			int hating = hater.getHating(targetPlayer);
 			if (hating == 0)
 				continue;

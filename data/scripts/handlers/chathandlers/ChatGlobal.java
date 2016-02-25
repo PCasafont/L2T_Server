@@ -73,7 +73,7 @@ public class ChatGlobal implements IChatHandler
 			return;
 		}
 		
-		if (!Config.isServer(Config.DREAMS) && (activeChar.getLevel() < 105))
+		if (!Config.isServer(Config.DREAMS) && activeChar.getLevel() < 105)
 		{
 			activeChar.sendMessage("You're not allowed to use this chat until level 105.");
 			return;

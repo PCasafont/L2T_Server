@@ -217,7 +217,7 @@ public class PetDataTable
 	
 	public static boolean isEvolvedWolf(int npcId)
 	{
-		return (npcId == 16030) || (npcId == 16037) || (npcId == 16025) || (npcId == 16041) || (npcId == 16042);
+		return npcId == 16030 || npcId == 16037 || npcId == 16025 || npcId == 16041 || npcId == 16042;
 	}
 	
 	public static boolean isSinEater(int npcId)
@@ -227,12 +227,12 @@ public class PetDataTable
 	
 	public static boolean isHatchling(int npcId)
 	{
-		return (npcId > 12310) && (npcId < 12314);
+		return npcId > 12310 && npcId < 12314;
 	}
 	
 	public static boolean isStrider(int npcId)
 	{
-		return ((npcId > 12525) && (npcId < 12529)) || ((npcId > 16037) && (npcId < 16041)) || (npcId == 16068);
+		return npcId > 12525 && npcId < 12529 || npcId > 16037 && npcId < 16041 || npcId == 16068;
 	}
 	
 	public static boolean isWyvern(int npcId)
@@ -242,12 +242,12 @@ public class PetDataTable
 	
 	public static boolean isBaby(int npcId)
 	{
-		return (npcId > 12779) && (npcId < 12783);
+		return npcId > 12779 && npcId < 12783;
 	}
 	
 	public static boolean isImprovedBaby(int npcId)
 	{
-		return (npcId > 16033) && (npcId < 16037);
+		return npcId > 16033 && npcId < 16037;
 	}
 	
 	public static boolean isPetFood(int itemId)
@@ -323,7 +323,7 @@ public class PetDataTable
 	public static boolean isPetItem(int itemId)
 	{
 		L2Item item = ItemTable.getInstance().getTemplate(itemId);
-		if ((item != null) && (item.getItemType() == L2EtcItemType.PET_COLLAR))
+		if (item != null && item.getItemType() == L2EtcItemType.PET_COLLAR)
 			return true;
 		return false;
 		
@@ -413,17 +413,7 @@ public class PetDataTable
 	
 	public static boolean isMountable(int npcId)
 	{
-		return (npcId == 12526 // wind strider
-		) || (npcId == 12527 // star strider
-		) || (npcId == 12528 // twilight strider
-		) || (npcId == 12621 // wyvern
-		) || (npcId == 16037 // Great Snow Wolf
-		) || (npcId == 16041 // Fenrir Wolf
-		) || (npcId == 16042 // White Fenrir Wolf
-		) || (npcId == 16038 // Red Wind Strider
-		) || (npcId == 16039 // Red Star Strider
-		) || (npcId == 16040 // Red Twilight Strider
-		) || (npcId == 16068); // Guardian Strider
+		return npcId == 12526 || npcId == 12527 || npcId == 12528 || npcId == 12621 || npcId == 16037 || npcId == 16041 || npcId == 16042 || npcId == 16038 || npcId == 16039 || npcId == 16040 || npcId == 16068; // Guardian Strider
 	}
 	
 	@SuppressWarnings("synthetic-access")

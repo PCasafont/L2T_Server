@@ -54,7 +54,7 @@ public class L2BoatAI extends L2VehicleAI
 		if (_actor.isMoving())
 			_accessor.stopMove(pos);
 		
-		if (_clientMoving || (pos != null))
+		if (_clientMoving || pos != null)
 		{
 			_clientMoving = false;
 			_actor.broadcastPacket(new VehicleStarted(getActor(), 0));

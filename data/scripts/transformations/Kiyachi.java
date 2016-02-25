@@ -18,7 +18,7 @@ public class Kiyachi extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 310) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 310 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

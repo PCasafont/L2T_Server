@@ -112,9 +112,9 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if ((anthyStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
+					if (anthyStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
 						return null;
-					else if ((anthyStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
+					else if (anthyStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANTHARAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 85 : 95, Config.MAX_LEVEL))
 						return null;
 					else if (anthyStatus == GrandBossManager.getInstance().FIGHTING)
 						return "13001-02.html";
@@ -169,7 +169,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 			//Block all players
 			_bossZone.stopWholeZone();
 			
-			_antharasBoss = addSpawn(_antharasId, 181323, 114850, -7623, 32542, false, (120 * 2) * 60000);
+			_antharasBoss = addSpawn(_antharasId, 181323, 114850, -7623, 32542, false, 120 * 2 * 60000);
 			
 			_allMonsters.add(_antharasBoss);
 			
@@ -246,7 +246,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("spawn_minion_task"))
 		{
-			if ((_antharasBoss != null) && !_antharasBoss.isDead())
+			if (_antharasBoss != null && !_antharasBoss.isDead())
 			{
 				List<Integer> minionsToSpawn = new ArrayList<Integer>();
 				for (int i = 1; i <= 5; i++)
@@ -267,13 +267,13 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 					boolean notFound = true;
 					int x = 175000;
 					int y = 112400;
-					int dt = ((_antharasBoss.getX() - x) * (_antharasBoss.getX() - x)) + ((_antharasBoss.getY() - y) * (_antharasBoss.getY() - y));
+					int dt = (_antharasBoss.getX() - x) * (_antharasBoss.getX() - x) + (_antharasBoss.getY() - y) * (_antharasBoss.getY() - y);
 					
-					while ((tried++ < 25) && notFound)
+					while (tried++ < 25 && notFound)
 					{
 						int rx = Rnd.get(175000, 179900);
 						int ry = Rnd.get(112400, 116000);
-						int rdt = ((_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx)) + ((_antharasBoss.getY() - ry) * (_antharasBoss.getY() - ry));
+						int rdt = (_antharasBoss.getX() - rx) * (_antharasBoss.getX() - rx) + (_antharasBoss.getY() - ry) * (_antharasBoss.getY() - ry);
 						
 						if (GeoData.getInstance().canSeeTarget(_antharasBoss.getX(), _antharasBoss.getY(), -7704, rx, ry, -7704))
 						{
@@ -289,7 +289,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 						}
 					}
 					
-					L2Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, (120 * 2) * 60000);
+					L2Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, 120 * 2 * 60000);
 					minion.setIsRunning(true);
 					_allMonsters.add(minion);
 				}
@@ -362,7 +362,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 		if (character instanceof L2PcInstance)
 		{
 			if (GrandBossManager.getInstance().getBossStatus(_antharasId) == GrandBossManager.getInstance().WAITING)
-				character.sendPacket(new ExSendUIEvent(0, 0, (int) (TimeUnit.MILLISECONDS.toSeconds((_LastAction + (Config.ANTHARAS_WAIT_TIME * 60000)) - System.currentTimeMillis())), 0, "Antharas is coming..."));
+				character.sendPacket(new ExSendUIEvent(0, 0, (int) TimeUnit.MILLISECONDS.toSeconds(_LastAction + Config.ANTHARAS_WAIT_TIME * 60000 - System.currentTimeMillis()), 0, "Antharas is coming..."));
 		}
 		return null;
 	}

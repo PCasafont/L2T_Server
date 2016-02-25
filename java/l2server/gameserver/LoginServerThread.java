@@ -164,7 +164,7 @@ public class LoginServerThread extends Thread
 				{
 					lengthLo = _in.read();
 					lengthHi = _in.read();
-					length = (lengthHi * 256) + lengthLo;
+					length = lengthHi * 256 + lengthLo;
 					
 					if (lengthHi < 0)
 					{
@@ -177,14 +177,14 @@ public class LoginServerThread extends Thread
 					int receivedBytes = 0;
 					int newBytes = 0;
 					int left = length - 2;
-					while ((newBytes != -1) && (receivedBytes < (length - 2)))
+					while (newBytes != -1 && receivedBytes < length - 2)
 					{
 						newBytes = _in.read(incoming, receivedBytes, left);
 						receivedBytes = receivedBytes + newBytes;
 						left -= newBytes;
 					}
 					
-					if (receivedBytes != (length - 2))
+					if (receivedBytes != length - 2)
 					{
 						Log.warning("Incomplete Packet is sent to the server, closing connection.(LS)");
 						break;
@@ -314,7 +314,7 @@ public class LoginServerThread extends Thread
 							{
 								for (WaitingClient wc : _waitingClients)
 								{
-									if (((playKey1 == null) && wc.account.equals(account)) || (wc.session.playOkID1 == Integer.parseInt(playKey1)))
+									if (playKey1 == null && wc.account.equals(account) || wc.session.playOkID1 == Integer.parseInt(playKey1))
 									{
 										wcToRemove = wc;
 									}
@@ -580,7 +580,7 @@ public class LoginServerThread extends Thread
 		synchronized (_out) //avoids tow threads writing in the mean time
 		{
 			_out.write(len & 0xff);
-			_out.write((len >> 8) & 0xff);
+			_out.write(len >> 8 & 0xff);
 			_out.write(data);
 			_out.flush();
 		}

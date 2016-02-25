@@ -94,11 +94,11 @@ public class DecayTaskManager
 						continue;
 					if (actor.isRaid() && !actor.isRaidMinion())
 						delay = RAID_BOSS_DECAY_TIME;
-					else if ((actor instanceof L2Attackable) && (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded()))
+					else if (actor instanceof L2Attackable && (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded()))
 						delay = ATTACKABLE_DECAY_TIME * 2;
 					else
 						delay = ATTACKABLE_DECAY_TIME;
-					if ((current - next) > delay)
+					if (current - next > delay)
 					{
 						actor.onDecay();
 						it.remove();

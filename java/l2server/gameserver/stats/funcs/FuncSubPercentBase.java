@@ -40,7 +40,7 @@ public class FuncSubPercentBase extends Func
 	@Override
 	public void calc(Env env)
 	{
-		if ((cond == null) || cond.test(env))
+		if (cond == null || cond.test(env))
 			env.value -= env.baseValue * (_lambda.calc(env) / 100.0);
 	}
 }

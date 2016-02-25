@@ -55,7 +55,7 @@ public class Charge implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

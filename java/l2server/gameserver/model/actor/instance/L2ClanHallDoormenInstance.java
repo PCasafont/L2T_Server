@@ -110,7 +110,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 			}
 			else
 			{
-				if ((owner != null) && (owner.getLeader() != null))
+				if (owner != null && owner.getLeader() != null)
 				{
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-no.htm");
 					html.replace("%leadername%", owner.getLeaderName());
@@ -172,7 +172,7 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 	@Override
 	protected final boolean isOwnerClan(L2PcInstance player)
 	{
-		if ((player.getClan() != null) && (getClanHall() != null))
+		if (player.getClan() != null && getClanHall() != null)
 		{
 			if (player.getClanId() == getClanHall().getOwnerId())
 				return true;

@@ -340,7 +340,7 @@ public class GrandBossManager
 					continue;
 				Integer id = zone.getId();
 				Set<Integer> list = zone.getAllowedPlayers();
-				if ((list == null) || list.isEmpty())
+				if (list == null || list.isEmpty())
 					continue;
 				for (Integer player : list)
 				{
@@ -358,7 +358,7 @@ public class GrandBossManager
 			{
 				L2GrandBossInstance boss = _bosses.get(bossId);
 				StatsSet info = _storedInfo.get(bossId);
-				if ((boss == null) || (info == null))
+				if (boss == null || info == null)
 				{
 					updateStatement1.setInt(1, _bossStatus.get(bossId));
 					updateStatement1.setInt(2, bossId);
@@ -410,7 +410,7 @@ public class GrandBossManager
 			L2GrandBossInstance boss = _bosses.get(bossId);
 			StatsSet info = _storedInfo.get(bossId);
 			
-			if (statusOnly || (boss == null) || (info == null))
+			if (statusOnly || boss == null || info == null)
 			{
 				statement = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
 				statement.setInt(1, _bossStatus.get(bossId));
@@ -603,7 +603,7 @@ public class GrandBossManager
 		long respawnTime = (long) getRespawnTime(bossId) + Rnd.get(getRandomRespawnTime(bossId));
 		
 		StatsSet info = getStatsSet(bossId);
-		info.set("respawn_time", (System.currentTimeMillis() + respawnTime));
+		info.set("respawn_time", System.currentTimeMillis() + respawnTime);
 		setStatsSet(bossId, info);
 	}
 	
@@ -614,7 +614,7 @@ public class GrandBossManager
 	 */
 	public boolean isActive(int bossId, long lastAction)
 	{
-		Long temp = (System.currentTimeMillis() - lastAction);
+		Long temp = System.currentTimeMillis() - lastAction;
 		
 		if (temp > 900000)
 			return false;

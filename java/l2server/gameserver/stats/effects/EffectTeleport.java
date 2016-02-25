@@ -85,7 +85,7 @@ public class EffectTeleport extends L2Effect
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance().moveCheck(_actor.getX(), _actor.getY(), _actor.getZ(), x, y, z, _actor.getInstanceId());
-			if ((destiny.getX() != x) || (destiny.getY() != y))
+			if (destiny.getX() != x || destiny.getY() != y)
 			{
 				x = destiny.getX() - (int) (x1 * 10);
 				y = destiny.getY() - (int) (y1 * 10);

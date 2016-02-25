@@ -108,7 +108,7 @@ public class QueenAnt extends L2AttackableAIScript
 			L2PcInstance player = null;
 			
 			if (character instanceof L2PcInstance)
-				player = ((L2PcInstance) character);
+				player = (L2PcInstance) character;
 			if (character instanceof L2SummonInstance)
 				player = ((L2SummonInstance) character).getOwner();
 			else if (character instanceof L2PetInstance)
@@ -120,7 +120,7 @@ public class QueenAnt extends L2AttackableAIScript
 			
 			if (player != null)
 			{
-				if ((player.getLevel() > 48) && !player.isGM() && !Config.isServer(Config.TENKAI_ESTHUS))
+				if (player.getLevel() > 48 && !player.isGM() && !Config.isServer(Config.TENKAI_ESTHUS))
 				{
 					if (getQuestTimer("player_kick", null, player) == null)
 						startQuestTimer("player_kick", 3000, null, player);
@@ -179,20 +179,20 @@ public class QueenAnt extends L2AttackableAIScript
 		else if (event.equalsIgnoreCase("queen_ant_heal_process"))
 		{
 			boolean notCasting;
-			final boolean larvaNeedHeal = (_larvaAnt != null) && (_larvaAnt.getCurrentHp() < _larvaAnt.getMaxHp());
-			final boolean queenNeedHeal = (_queenAnt != null) && (_queenAnt.getCurrentHp() < _queenAnt.getMaxHp());
+			final boolean larvaNeedHeal = _larvaAnt != null && _larvaAnt.getCurrentHp() < _larvaAnt.getMaxHp();
+			final boolean queenNeedHeal = _queenAnt != null && _queenAnt.getCurrentHp() < _queenAnt.getMaxHp();
 			
 			List<L2MonsterInstance> toIterate = new ArrayList<L2MonsterInstance>(_nurses);
 			for (L2MonsterInstance nurse : toIterate)
 			{
-				if ((nurse == null) || nurse.isDead() || nurse.isCastingNow())
+				if (nurse == null || nurse.isDead() || nurse.isCastingNow())
 					continue;
 				
 				notCasting = nurse.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST;
 				
 				if (larvaNeedHeal)
 				{
-					if ((nurse.getTarget() != _larvaAnt) || notCasting)
+					if (nurse.getTarget() != _larvaAnt || notCasting)
 					{
 						nurse.setTarget(_larvaAnt);
 						nurse.useMagic(Rnd.nextBoolean() ? HEAL1.getSkill() : HEAL2.getSkill());
@@ -205,7 +205,7 @@ public class QueenAnt extends L2AttackableAIScript
 					if (nurse.getLeader() == _larvaAnt) // skip larva's minions
 						continue;
 					
-					if ((nurse.getTarget() != _queenAnt) || notCasting)
+					if (nurse.getTarget() != _queenAnt || notCasting)
 					{
 						nurse.setTarget(_queenAnt);
 						nurse.useMagic(HEAL1.getSkill());
@@ -214,7 +214,7 @@ public class QueenAnt extends L2AttackableAIScript
 				}
 				
 				// if nurse not casting - remove target
-				if (notCasting && (nurse.getTarget() != null))
+				if (notCasting && nurse.getTarget() != null)
 					nurse.setTarget(null);
 			}
 		}
@@ -280,7 +280,7 @@ public class QueenAnt extends L2AttackableAIScript
 			_larvaAnt = null;
 			_queenAnt = null;
 		}
-		else if ((_queenAnt != null) && !_queenAnt.isAlikeDead())
+		else if (_queenAnt != null && !_queenAnt.isAlikeDead())
 		{
 			if (npc.getNpcId() == _royalId)
 			{
@@ -330,10 +330,10 @@ public class QueenAnt extends L2AttackableAIScript
 	@Override
 	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isPet)
 	{
-		if ((caller == null) || (npc == null))
+		if (caller == null || npc == null)
 			return super.onFactionCall(npc, caller, attacker, isPet);
 		
-		if (!npc.isCastingNow() && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
+		if (!npc.isCastingNow() && npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST)
 		{
 			if (caller.getCurrentHp() < caller.getMaxHp())
 			{
@@ -350,7 +350,7 @@ public class QueenAnt extends L2AttackableAIScript
 		if (npc == null)
 			return null;
 		
-		if (!Config.isServer(Config.TENKAI_ESTHUS) && ((player.getLevel() - npc.getLevel()) > 8))
+		if (!Config.isServer(Config.TENKAI_ESTHUS) && player.getLevel() - npc.getLevel() > 8)
 		{
 			npc.broadcastPacket(new MagicSkillUse(npc, player, CURSE.getSkillId(), CURSE.getSkillLvl(), 300, 0, 0));
 			

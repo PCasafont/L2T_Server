@@ -55,7 +55,7 @@ public class Q10290_LandDragonConqueror extends Quest
 		{
 			case State.CREATED:
 			{
-				if ((player.getLevel() >= 83) && (st.getQuestItemsCount(PortalStone) >= 1))
+				if (player.getLevel() >= 83 && st.getQuestItemsCount(PortalStone) >= 1)
 					htmltext = "30755-01.htm";
 				else if (player.getLevel() < 83)
 					htmltext = "30755-02.htm";
@@ -65,9 +65,9 @@ public class Q10290_LandDragonConqueror extends Quest
 			}
 			case State.STARTED:
 			{
-				if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(ShabbyNecklace) >= 1))
+				if (st.getInt("cond") == 1 && st.getQuestItemsCount(ShabbyNecklace) >= 1)
 					htmltext = "30755-08.htm";
-				else if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(ShabbyNecklace) == 0))
+				else if (st.getInt("cond") == 1 && st.getQuestItemsCount(ShabbyNecklace) == 0)
 				{
 					st.giveItems(ShabbyNecklace, 1);
 					htmltext = "30755-09.htm";
@@ -112,7 +112,7 @@ public class Q10290_LandDragonConqueror extends Quest
 	{
 		QuestState st = player.getQuestState(qn);
 		
-		if ((st != null) && (st.getInt("cond") == 1))
+		if (st != null && st.getInt("cond") == 1)
 		{
 			st.takeItems(ShabbyNecklace, 1);
 			st.giveItems(MiracleNecklace, 1);

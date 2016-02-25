@@ -60,9 +60,9 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
 		for (L2Character character : _characterList.values())
 		{
-			if ((character instanceof L2PcInstance) && (character.getInstanceId() == player.getInstanceId()))
+			if (character instanceof L2PcInstance && character.getInstanceId() == player.getInstanceId())
 			{
-				if (((L2PcInstance) character).inObserverMode() || (((L2PcInstance) character).getOlympiadSide() != player.getOlympiadSide()))
+				if (((L2PcInstance) character).inObserverMode() || ((L2PcInstance) character).getOlympiadSide() != player.getOlympiadSide())
 					character.sendPacket(packet);
 			}
 		}
@@ -72,7 +72,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 	{
 		for (L2Character character : _characterList.values())
 		{
-			if ((character instanceof L2PcInstance) && ((L2PcInstance) character).inObserverMode() && ((character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) == gameId))
+			if (character instanceof L2PcInstance && ((L2PcInstance) character).inObserverMode() && character.getInstanceId() - Olympiad.BASE_INSTANCE_ID == gameId)
 				character.sendPacket(packet);
 		}
 	}
@@ -83,7 +83,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
 		
 		int instanceIndex = (character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) / 4;
-		if ((instanceIndex < 0) || (instanceIndex >= _instances.size()))
+		if (instanceIndex < 0 || instanceIndex >= _instances.size())
 			return;
 		
 		OlympiadGameTask task = _instances.get(instanceIndex);
@@ -118,7 +118,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
 		
 		int instanceIndex = (character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) / 4;
-		if ((instanceIndex < 0) || (instanceIndex >= _instances.size()))
+		if (instanceIndex < 0 || instanceIndex >= _instances.size())
 			return;
 		
 		OlympiadGameTask task = _instances.get(instanceIndex);
@@ -139,7 +139,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 	public final void updateZoneStatusForCharactersInside(int gameId)
 	{
 		int instanceIndex = gameId / 4;
-		if ((instanceIndex < 0) || (instanceIndex >= _instances.size()))
+		if (instanceIndex < 0 || instanceIndex >= _instances.size())
 			return;
 		
 		OlympiadGameTask task = _instances.get(instanceIndex);
@@ -155,7 +155,7 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		
 		for (L2Character character : _characterList.values())
 		{
-			if ((character == null) || ((character.getInstanceId() - Olympiad.BASE_INSTANCE_ID) != gameId))
+			if (character == null || character.getInstanceId() - Olympiad.BASE_INSTANCE_ID != gameId)
 				continue;
 			
 			if (battleStarted)

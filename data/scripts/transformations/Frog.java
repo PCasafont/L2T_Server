@@ -18,7 +18,7 @@ public class Frog extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 111) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 111 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

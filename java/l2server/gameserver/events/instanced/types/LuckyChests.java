@@ -53,7 +53,7 @@ public class LuckyChests extends EventInstance
 			if (_teams[0].getPoints() == _teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if ((_teams[0].getParticipatedPlayerCount() == 0) || (_teams[1].getParticipatedPlayerCount() == 0))
+				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -86,22 +86,22 @@ public class LuckyChests extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if ((_teams[0].getPoints() > _teams[1].getPoints()) && (_teams[0].getPoints() > _teams[2].getPoints()) && (_teams[0].getPoints() > _teams[3].getPoints()))
+			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(0);
 				team = _teams[0];
 			}
-			else if ((_teams[1].getPoints() > _teams[0].getPoints()) && (_teams[1].getPoints() > _teams[2].getPoints()) && (_teams[1].getPoints() > _teams[3].getPoints()))
+			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(1);
 				team = _teams[1];
 			}
-			else if ((_teams[2].getPoints() > _teams[0].getPoints()) && (_teams[2].getPoints() > _teams[1].getPoints()) && (_teams[2].getPoints() > _teams[3].getPoints()))
+			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(2);
 				team = _teams[2];
 			}
-			else if ((_teams[3].getPoints() > _teams[0].getPoints()) && (_teams[3].getPoints() > _teams[1].getPoints()) && (_teams[3].getPoints() > _teams[2].getPoints()))
+			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
 			{
 				rewardTeams(3);
 				team = _teams[3];
@@ -141,7 +141,7 @@ public class LuckyChests extends EventInstance
 	public void chestPoints(L2PcInstance playerInstance, int points)
 	{
 		EventTeam team = getParticipantTeam(playerInstance.getObjectId());
-		if (!isState(EventState.STARTED) || (team == null))
+		if (!isState(EventState.STARTED) || team == null)
 			return;
 		
 		CreatureSay cs = null;
@@ -175,7 +175,7 @@ public class LuckyChests extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
+		if (killedPlayerInstance == null || !isState(EventState.STARTED))
 			return;
 		
 		byte killedTeamId = getParticipantTeamId(killedPlayerInstance.getObjectId());
@@ -200,7 +200,7 @@ public class LuckyChests extends EventInstance
 			else
 				chestAmount = _teams[0].getParticipatedPlayerCount() * 5;
 			int i;
-			for (i = 0; (i < chestAmount) && (i < 200); i++)
+			for (i = 0; i < chestAmount && i < 200; i++)
 			{
 				_chestSpawns[i] = new L2Spawn(tmpl);
 				

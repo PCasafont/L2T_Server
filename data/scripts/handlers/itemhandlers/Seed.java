@@ -58,7 +58,7 @@ public class Seed implements IItemHandler
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (!(tgt instanceof L2MonsterInstance) || (tgt instanceof L2ChestInstance) || ((L2Character) tgt).isRaid())
+		if (!(tgt instanceof L2MonsterInstance) || tgt instanceof L2ChestInstance || ((L2Character) tgt).isRaid())
 		{
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_TARGET_IS_UNAVAILABLE_FOR_SEEDING));
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
@@ -106,6 +106,6 @@ public class Seed implements IItemHandler
 	 */
 	private boolean areaValid(int seedId, int castleId)
 	{
-		return (L2Manor.getInstance().getCastleIdForSeed(seedId) == castleId);
+		return L2Manor.getInstance().getCastleIdForSeed(seedId) == castleId;
 	}
 }

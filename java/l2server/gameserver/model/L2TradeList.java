@@ -239,7 +239,7 @@ public class L2TradeList
 		
 		public boolean isPendingStockUpdate()
 		{
-			return (System.currentTimeMillis() >= _nextRestoreTime) && (_currentCount.get() < _maxCount);
+			return System.currentTimeMillis() >= _nextRestoreTime && _currentCount.get() < _maxCount;
 		}
 		
 		public void restoreInitialCount()
@@ -248,7 +248,7 @@ public class L2TradeList
 			_nextRestoreTime = _nextRestoreTime + getRestoreDelay();
 			
 			// consume until next update is on future
-			if (isPendingStockUpdate() && (getRestoreDelay() > 0))
+			if (isPendingStockUpdate() && getRestoreDelay() > 0)
 				_nextRestoreTime = System.currentTimeMillis() + getRestoreDelay();
 			
 			saveDataTimer();

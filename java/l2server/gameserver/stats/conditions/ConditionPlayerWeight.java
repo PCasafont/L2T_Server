@@ -48,8 +48,8 @@ public class ConditionPlayerWeight extends Condition
 		{
 			if (((L2PcInstance) env.player).getMaxLoad() > 0)
 			{
-				int weightproc = (((L2PcInstance) env.player).getCurrentLoad() * 100) / ((L2PcInstance) env.player).getMaxLoad();
-				return (weightproc < _weight) || ((L2PcInstance) env.player).getDietMode();
+				int weightproc = ((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player).getMaxLoad();
+				return weightproc < _weight || ((L2PcInstance) env.player).getDietMode();
 			}
 		}
 		return true;

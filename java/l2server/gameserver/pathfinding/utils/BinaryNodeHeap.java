@@ -66,7 +66,7 @@ public class BinaryNodeHeap
 		{
 			cpos = pos;
 			dblcpos = cpos * 2;
-			if ((dblcpos + 1) <= _size)
+			if (dblcpos + 1 <= _size)
 			{
 				if (_list[cpos].getCost() >= _list[dblcpos].getCost())
 					pos = dblcpos;

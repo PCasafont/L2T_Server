@@ -55,7 +55,7 @@ public class EffectCombatPointHeal extends L2Effect
 		
 		double cp = calc();
 		
-		if ((target.getCurrentCp() + cp) > target.getMaxCp())
+		if (target.getCurrentCp() + cp > target.getMaxCp())
 			cp = target.getMaxCp() - target.getCurrentCp();
 		target.setCurrentCp(cp + target.getCurrentCp());
 		

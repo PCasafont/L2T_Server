@@ -77,7 +77,7 @@ public class TreeOfLife extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_treeOfLife == null) || _treeOfLife.isDead() || !_owner.getSummons().contains(_treeOfLife))
+			if (_treeOfLife == null || _treeOfLife.isDead() || !_owner.getSummons().contains(_treeOfLife))
 			{
 				if (_schedule != null)
 				{
@@ -92,7 +92,7 @@ public class TreeOfLife extends L2AttackableAIScript
 			{
 				for (L2PcInstance player : party.getPartyMembers())
 				{
-					if ((player == null) || !GeoData.getInstance().canSeeTarget(_treeOfLife, player))
+					if (player == null || !GeoData.getInstance().canSeeTarget(_treeOfLife, player))
 						continue;
 					
 					SkillTable.getInstance().getInfo(_blessingOfLifeId, _treeOfLife.getSkillLevelHash(_blessingOfLifeId)).getEffects(_treeOfLife, player);

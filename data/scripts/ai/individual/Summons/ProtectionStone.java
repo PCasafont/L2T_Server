@@ -81,7 +81,7 @@ public class ProtectionStone extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			if ((_protectionStone == null) || _protectionStone.isDead() || _protectionStone.isDecayed())
+			if (_protectionStone == null || _protectionStone.isDead() || _protectionStone.isDecayed())
 			{
 				if (_schedule != null)
 				{
@@ -93,7 +93,7 @@ public class ProtectionStone extends L2AttackableAIScript
 			L2Party party = _owner.getParty();
 			for (L2PcInstance player : _protectionStone.getKnownList().getKnownPlayersInRadius(250))
 			{
-				if ((player != _owner) && ((player.getParty() == null) || (player.getParty() != party)))
+				if (player != _owner && (player.getParty() == null || player.getParty() != party))
 					continue;
 				
 				L2Abnormal effect = player.getFirstEffect(11360);

@@ -56,7 +56,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 		
 		for (L2PcInstance member : _party.getPartyMembers())
 		{
-			if ((member != null) && (member != _exclude))
+			if (member != null && member != _exclude)
 			{
 				writeD(member.getObjectId());
 				writeS(member.getName());

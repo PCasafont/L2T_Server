@@ -50,7 +50,7 @@ public class FishShots implements IItemHandler
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
 		
-		if ((weaponInst == null) || (weaponItem.getItemType() != L2WeaponType.FISHINGROD))
+		if (weaponInst == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
 			return;
 		
 		if (weaponInst.getChargedFishshot())
@@ -61,7 +61,7 @@ public class FishShots implements IItemHandler
 		int grade = weaponItem.getCrystalType();
 		long count = item.getCount();
 		
-		if (((grade == L2Item.CRYSTAL_NONE) && (FishshotId != 6535)) || ((grade == L2Item.CRYSTAL_D) && (FishshotId != 6536)) || ((grade == L2Item.CRYSTAL_C) && (FishshotId != 6537)) || ((grade == L2Item.CRYSTAL_B) && (FishshotId != 6538)) || ((grade == L2Item.CRYSTAL_A) && (FishshotId != 6539)) || ((FishshotId != 6540) && (grade == L2Item.CRYSTAL_S)))
+		if (grade == L2Item.CRYSTAL_NONE && FishshotId != 6535 || grade == L2Item.CRYSTAL_D && FishshotId != 6536 || grade == L2Item.CRYSTAL_C && FishshotId != 6537 || grade == L2Item.CRYSTAL_B && FishshotId != 6538 || grade == L2Item.CRYSTAL_A && FishshotId != 6539 || FishshotId != 6540 && grade == L2Item.CRYSTAL_S)
 		{
 			//1479 - This fishing shot is not fit for the fishing pole crystal.
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WRONG_FISHINGSHOT_GRADE));

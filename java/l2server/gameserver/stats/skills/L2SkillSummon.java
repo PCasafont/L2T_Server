@@ -173,12 +173,12 @@ public class L2SkillSummon extends L2Skill
 					}
 				}*/
 				
-				if ((_summonPoints > 0) && ((player.getSpentSummonPoints() + _summonPoints) > player.getMaxSummonPoints()))
+				if (_summonPoints > 0 && player.getSpentSummonPoints() + _summonPoints > player.getMaxSummonPoints())
 				{
 					activeChar.sendMessage("You don't have enough summon points.");
 					return false;
 				}
-				else if ((player.getSpentSummonPoints() == 0) && !player.getSummons().isEmpty())
+				else if (player.getSpentSummonPoints() == 0 && !player.getSummons().isEmpty())
 				{
 					String currentSummonName = player.getSummon(0).getTemplate().getName();
 					if (!currentSummonName.equalsIgnoreCase("Tree of life") && !currentSummonName.equalsIgnoreCase("Unison of Lights"))
@@ -218,15 +218,15 @@ public class L2SkillSummon extends L2Skill
 			// TODO: make better method of calculation, dunno how its calculated on offi
 			int cubicSkillLevel = getLevel() + getEnchantLevel();
 			
-			if ((targets.length > 1) || ((targets.length == 1) && (targets[0] != activeChar))) // Not self cubic skill
+			if (targets.length > 1 || targets.length == 1 && targets[0] != activeChar) // Not self cubic skill
 			{
 				for (L2Object obj : targets)
 				{
 					if (!(obj instanceof L2PcInstance))
 						continue;
-					L2PcInstance player = ((L2PcInstance) obj);
+					L2PcInstance player = (L2PcInstance) obj;
 					int cubicMastery = player.getCubicMastery();
-					if ((cubicMastery == 0) && !player.getCubics().isEmpty())
+					if (cubicMastery == 0 && !player.getCubics().isEmpty())
 					{
 						// Player can have only 1 cubic - we shuld replace old cubic with new one
 						for (L2CubicInstance c : player.getCubics().values())
@@ -285,10 +285,10 @@ public class L2SkillSummon extends L2Skill
 			}
 		}
 		
-		if ((_summonPoints > 0) && ((activeChar.getSpentSummonPoints() + _summonPoints) > activeChar.getMaxSummonPoints()))
+		if (_summonPoints > 0 && activeChar.getSpentSummonPoints() + _summonPoints > activeChar.getMaxSummonPoints())
 			return;
 		
-		if ((activeChar.getSpentSummonPoints() == 0) && !activeChar.getSummons().isEmpty())
+		if (activeChar.getSpentSummonPoints() == 0 && !activeChar.getSummons().isEmpty())
 		{
 			if (Config.DEBUG)
 				Log.fine("player has a pet already. ignore summon skill");
@@ -311,10 +311,10 @@ public class L2SkillSummon extends L2Skill
 			if (ph > 360)
 				ph -= 360;
 			
-			ph = (Math.PI * ph) / 180;
+			ph = Math.PI * ph / 180;
 			
-			x = (int) (px + (25 * Math.cos(ph)));
-			y = (int) (py + (25 * Math.sin(ph)));
+			x = (int) (px + 25 * Math.cos(ph));
+			y = (int) (py + 25 * Math.sin(ph));
 			z = target.getZ();
 			
 			Location loc = new Location(x, y, z);
@@ -367,7 +367,7 @@ public class L2SkillSummon extends L2Skill
 			}
 			else
 			{
-				summon.getStat().setExp(Experience.getAbsoluteExp((summon.getLevel())));
+				summon.getStat().setExp(Experience.getAbsoluteExp(summon.getLevel()));
 			}
 			
 			if (!(summon instanceof L2MerchantSummonInstance) && !(summon instanceof L2CloneInstance))
@@ -392,7 +392,7 @@ public class L2SkillSummon extends L2Skill
 			{
 				summon.setTarget(summon.getOwner().getTarget());
 				
-				if ((summon.getTarget() != null) && summon.getTarget().isAutoAttackable(summon.getOwner()))
+				if (summon.getTarget() != null && summon.getTarget().isAutoAttackable(summon.getOwner()))
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, summon.getTarget());
 			}
 			
@@ -410,7 +410,7 @@ public class L2SkillSummon extends L2Skill
 		if (hasSelfEffects())
 		{
 			final L2Abnormal effect = caster.getFirstEffect(getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

@@ -50,16 +50,16 @@ public class EffectRemoveTarget extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCastingProtected())
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected())
 			return false;
 		
 		if (getEffected().isRaid())
 			return false;
 		
-		if ((getEffected() instanceof L2MonsterInstance) && (((L2MonsterInstance) getEffected()).getNpcId() == 19036)) //TODO TEMP LasTravel, don't remove
+		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
 			return false;
 		
-		if ((getEffected() instanceof L2Playable) && getEffected().isCastingNow())
+		if (getEffected() instanceof L2Playable && getEffected().isCastingNow())
 		{
 			//chat what is casting, if its a self skill defined as a buff return?
 			L2Skill lastSkillCast = getEffected().getLastSkillCast();
@@ -83,7 +83,7 @@ public class EffectRemoveTarget extends L2Effect
 		//getEffected().abortCast();
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		
-		if ((getEffected() instanceof L2Playable) && (getAbnormal().getTemplate().duration > 0) && (getSkill().getId() != 10265))
+		if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 && getSkill().getId() != 10265)
 			((L2Playable) getEffected()).setLockedTarget(getEffected());
 		
 		return true;

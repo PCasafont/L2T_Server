@@ -44,9 +44,9 @@ public class Disguise implements IItemHandler
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		
 		int regId = TerritoryWarManager.getInstance().getRegisteredTerritoryId(activeChar);
-		if ((regId > 0) && (regId == (item.getItemId() - 13596)))
+		if (regId > 0 && regId == item.getItemId() - 13596)
 		{
-			if ((activeChar.getClan() != null) && (activeChar.getClan().getHasCastle() > 0))
+			if (activeChar.getClan() != null && activeChar.getClan().getHasCastle() > 0)
 			{
 				activeChar.sendPacket(SystemMessageId.TERRITORY_OWNING_CLAN_CANNOT_USE_DISGUISE_SCROLL);
 				return;

@@ -259,7 +259,7 @@ public class Validator extends Quest
 
 		return null;
 		}
-		
+
 		private final L2Skill[] getCertSkills(L2PcInstance player)
 		{
 		ArrayList<L2Skill> tmp = null;
@@ -280,7 +280,7 @@ public class Validator extends Quest
 		ArrayList.recycle(tmp);
 		return result;
 		}
-		
+
 		private final L2ItemInstance[] getCertItems(L2PcInstance player)
 		{
 		ArrayList<L2ItemInstance> tmp = null;

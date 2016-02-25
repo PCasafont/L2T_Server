@@ -45,6 +45,6 @@ public class ConditionPlayerClassIdRestriction extends Condition
 	{
 		if (!(env.player instanceof L2PcInstance))
 			return false;
-		return (_classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId()));
+		return _classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());
 	}
 }

@@ -304,7 +304,7 @@ public class L2Trap extends L2Character
 					if (_hasLifeTime)
 					{
 						_timeRemaining -= TICK;
-						if (_timeRemaining < (_lifeTime - 15000))
+						if (_timeRemaining < _lifeTime - 15000)
 						{
 							SocialAction sa = new SocialAction(getObjectId(), 2);
 							broadcastPacket(sa);
@@ -405,7 +405,7 @@ public class L2Trap extends L2Character
 	{
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
-			if ((player != null) && (_isTriggered || canSee(player)))
+			if (player != null && (_isTriggered || canSee(player)))
 				player.sendPacket(mov);
 	}
 	

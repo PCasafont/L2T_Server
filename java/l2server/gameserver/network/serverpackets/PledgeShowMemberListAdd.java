@@ -36,7 +36,7 @@ public final class PledgeShowMemberListAdd extends L2GameServerPacket
 		_name = player.getName();
 		_lvl = player.getLevel();
 		_classId = player.getCurrentClass().getId();
-		_isOnline = (player.isOnline() ? player.getObjectId() : 0);
+		_isOnline = player.isOnline() ? player.getObjectId() : 0;
 		_pledgeType = player.getPledgeType();
 	}
 	
@@ -45,7 +45,7 @@ public final class PledgeShowMemberListAdd extends L2GameServerPacket
 		_name = cm.getName();
 		_lvl = cm.getLevel();
 		_classId = cm.getCurrentClass();
-		_isOnline = (cm.isOnline() ? cm.getObjectId() : 0);
+		_isOnline = cm.isOnline() ? cm.getObjectId() : 0;
 		_pledgeType = cm.getPledgeType();
 	}
 	

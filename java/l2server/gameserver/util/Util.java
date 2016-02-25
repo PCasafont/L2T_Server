@@ -176,10 +176,10 @@ public final class Util
 		if (includeZAxis)
 		{
 			double dz = z1 - z2;
-			return Math.sqrt((dx * dx) + (dy * dy) + (dz * dz));
+			return Math.sqrt(dx * dx + dy * dy + dz * dz);
 		}
 		else
-			return Math.sqrt((dx * dx) + (dy * dy));
+			return Math.sqrt(dx * dx + dy * dy);
 	}
 	
 	/**
@@ -188,7 +188,7 @@ public final class Util
 	 */
 	public static double calculateDistance(L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null))
+		if (obj1 == null || obj2 == null)
 			return 1000000;
 		
 		return calculateDistance(obj1.getX(), obj1.getY(), obj1.getZ(), obj2.getX(), obj2.getY(), obj2.getZ(), includeZAxis);
@@ -204,7 +204,7 @@ public final class Util
 	{
 		str = str.trim();
 		
-		if ((str.length() > 0) && Character.isLetter(str.charAt(0)))
+		if (str.length() > 0 && Character.isLetter(str.charAt(0)))
 			return str.substring(0, 1).toUpperCase() + str.substring(1);
 		
 		return str;
@@ -240,7 +240,7 @@ public final class Util
 	 */
 	public static boolean checkIfInRange(int range, L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null))
+		if (obj1 == null || obj2 == null)
 			return false;
 		if (obj1.getInstanceId() != obj2.getInstanceId())
 			return false;
@@ -259,15 +259,15 @@ public final class Util
 		if (includeZAxis)
 		{
 			double dz = obj1.getZ() - obj2.getZ();
-			double d = (dx * dx) + (dy * dy) + (dz * dz);
+			double d = dx * dx + dy * dy + dz * dz;
 			
-			return d <= ((range * range) + (2 * range * rad) + (rad * rad));
+			return d <= range * range + 2 * range * rad + rad * rad;
 		}
 		else
 		{
-			double d = (dx * dx) + (dy * dy);
+			double d = dx * dx + dy * dy;
 			
-			return d <= ((range * range) + (2 * range * rad) + (rad * rad));
+			return d <= range * range + 2 * range * rad + rad * rad;
 		}
 	}
 	
@@ -281,14 +281,14 @@ public final class Util
 		if (includeZAxis)
 		{
 			final double dz = (double) z1 - z2;
-			d = (dx * dx) + (dy * dy) + (dz * dz);
+			d = dx * dx + dy * dy + dz * dz;
 		}
 		else
 		{
-			d = (dx * dx) + (dy * dy);
+			d = dx * dx + dy * dy;
 		}
 		
-		return d <= ((double) range * range);
+		return d <= (double) range * range;
 	}
 	
 	/**
@@ -301,7 +301,7 @@ public final class Util
 	 * */
 	public static boolean checkIfInShortRadius(int radius, L2Object obj1, L2Object obj2, boolean includeZAxis)
 	{
-		if ((obj1 == null) || (obj2 == null))
+		if (obj1 == null || obj2 == null)
 			return false;
 		if (radius == -1)
 			return true; // not limited
@@ -312,10 +312,10 @@ public final class Util
 		if (includeZAxis)
 		{
 			int dz = obj1.getZ() - obj2.getZ();
-			return ((dx * dx) + (dy * dy) + (dz * dz)) <= (radius * radius);
+			return dx * dx + dy * dy + dz * dz <= radius * radius;
 		}
 		else
-			return ((dx * dx) + (dy * dy)) <= (radius * radius);
+			return dx * dx + dy * dy <= radius * radius;
 	}
 	
 	/**
@@ -366,7 +366,7 @@ public final class Util
 		
 		float exponent = (float) Math.pow(10, numPlaces);
 		
-		return (Math.round(number * exponent) / exponent);
+		return Math.round(number * exponent) / exponent;
 	}
 	
 	/**
@@ -388,7 +388,7 @@ public final class Util
 	 */
 	public static boolean isAlphaNumeric(String text)
 	{
-		if ((text == null) || text.isEmpty())
+		if (text == null || text.isEmpty())
 			return false;
 		for (char c : text.toCharArray())
 			if (!Character.isLetterOrDigit(c))
@@ -458,15 +458,15 @@ public final class Util
 		boolean stringBegan = false;
 		for (long divider = base * 100; divider > 0; divider /= 10)
 		{
-			if ((((number / divider) % 10) > 0) || stringBegan)
+			if (number / divider % 10 > 0 || stringBegan)
 			{
-				nString += (number / divider) % 10;
+				nString += number / divider % 10;
 				stringBegan = true;
-				if ((((number / divider) % 10) > 0) && (digitsShown == -1))
+				if (number / divider % 10 > 0 && digitsShown == -1)
 					digitsShown = 0;
 			}
 			
-			if ((((number % divider) == 0) && ((divider * minDigitsAfterPoint) <= base)) || (digitsShown >= (maxdigits - 1)))
+			if (number % divider == 0 && divider * minDigitsAfterPoint <= base || digitsShown >= maxdigits - 1)
 				break;
 			
 			if (divider == base)
@@ -547,15 +547,15 @@ public final class Util
 		final Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
 		for (L2Object obj : objs)
 		{
-			if ((obj != null) && (((obj instanceof L2Playable) && playable) || (obj instanceof L2PetInstance) || (obj instanceof L2SummonInstance)))
+			if (obj != null && (obj instanceof L2Playable && playable || obj instanceof L2PetInstance || obj instanceof L2SummonInstance))
 			{
-				if ((obj instanceof L2PcInstance) && !invisible && obj.getActingPlayer().getAppearance().getInvisible())
+				if (obj instanceof L2PcInstance && !invisible && obj.getActingPlayer().getAppearance().getInvisible())
 				{
 					continue;
 				}
 				
 				final L2Character cha = (L2Character) obj;
-				if (((cha.getZ() < (npc.getZ() - 100)) && (cha.getZ() > (npc.getZ() + 100))) || !(GeoData.getInstance().canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), npc.getX(), npc.getY(), npc.getZ())))
+				if (cha.getZ() < npc.getZ() - 100 && cha.getZ() > npc.getZ() + 100 || !GeoData.getInstance().canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), npc.getX(), npc.getY(), npc.getZ()))
 				{
 					continue;
 				}

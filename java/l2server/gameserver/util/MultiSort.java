@@ -103,9 +103,9 @@ public class MultiSort
 		int totalValue = 0;
 		
 		for (int currValue : getValues())
-			totalValue += (1 / currValue);
+			totalValue += 1 / currValue;
 		
-		return (getCount() / totalValue);
+		return getCount() / totalValue;
 	}
 	
 	public final List<?> getKeys()
@@ -136,7 +136,7 @@ public class MultiSort
 		if (getValues().isEmpty())
 			return -1;
 		
-		return (getTotalValue() / getCount());
+		return getTotalValue() / getCount();
 	}
 	
 	public final double getStandardDeviation()

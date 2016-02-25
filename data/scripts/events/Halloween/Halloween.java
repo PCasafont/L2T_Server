@@ -136,7 +136,7 @@ public class Halloween extends Quest
 					if (players == null)
 						continue;
 					
-					if ((players.getPrivateStoreType() != 0) || players.getClient().isDetached() || (players.getFirstEffect(blessingOfHalloween) != null))
+					if (players.getPrivateStoreType() != 0 || players.getClient().isDetached() || players.getFirstEffect(blessingOfHalloween) != null)
 						continue;
 					
 					blessingOfHalloween.getEffects(players, players);
@@ -145,7 +145,7 @@ public class Halloween extends Quest
 		}
 		else if (event.equalsIgnoreCase("launch_event"))
 		{
-			if (player.isGM() && (eventState == 0))
+			if (player.isGM() && eventState == 0)
 				notifyEvent("stage_0_prepare_event", npc, player);
 		}
 		else if (event.equalsIgnoreCase("stop_event"))
@@ -243,7 +243,7 @@ public class Halloween extends Quest
 			//Paralyze the whole instance
 			for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
 			{
-				if ((players == null) || (players.getInstanceId() != instanceId))
+				if (players == null || players.getInstanceId() != instanceId)
 					continue;
 				
 				players.stopEffects(L2EffectType.PHOENIX_BLESSING);
@@ -310,7 +310,7 @@ public class Halloween extends Quest
 		{
 			for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
 			{
-				if ((players == null) || (players.getInstanceId() != instanceId))
+				if (players == null || players.getInstanceId() != instanceId)
 					continue;
 				
 				players.doRevive();
@@ -380,9 +380,9 @@ public class Halloween extends Quest
 		
 		if (npc.getNpcId() == mountedRaidId)
 		{
-			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.50)) //50%
+			if (npc.getCurrentHp() < npc.getMaxHp() * 0.50) //50%
 			{
-				if (!npc.isInvul() && (eventState == 2))
+				if (!npc.isInvul() && eventState == 2)
 				{
 					eventState = 3;
 					
@@ -456,7 +456,7 @@ public class Halloween extends Quest
 		if (player == null)
 			return false;
 		
-		if (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isCursedWeaponEquipped() || (player.getEvent() != null))
+		if (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isCursedWeaponEquipped() || player.getEvent() != null)
 		{
 			player.sendMessage("You can't enter while in other event!");
 			return false;
@@ -476,7 +476,7 @@ public class Halloween extends Quest
 		//Ip checks
 		for (L2PcInstance players : L2World.getInstance().getAllPlayersArray())
 		{
-			if ((players == null) || ((players.getClient() != null) && players.getClient().isDetached()))
+			if (players == null || players.getClient() != null && players.getClient().isDetached())
 				continue;
 			
 			if (players.getInstanceId() == instanceId)

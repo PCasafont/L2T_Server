@@ -61,10 +61,10 @@ public class L2SkillDrain extends L2Skill
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if (target.isAlikeDead() && (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
 				continue;
 			
-			if ((activeChar != target) && target.isInvul(activeChar))
+			if (activeChar != target && target.isInvul(activeChar))
 				continue; // No effect on invulnerable chars unless they cast it themselves.
 				
 			double ssMul = L2ItemInstance.CHARGED_NONE;
@@ -107,15 +107,15 @@ public class L2SkillDrain extends L2Skill
 					drain = damage;
 			}
 			
-			double hpAdd = _absorbAbs + (_absorbPart * drain);
-			double hp = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
+			double hpAdd = _absorbAbs + _absorbPart * drain;
+			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar.getCurrentHp() + hpAdd;
 			
 			activeChar.setCurrentHp(hp);
 			
 			if (getId() == 1245)
 			{
 				int mpAdd = (int) (damage * 0.05);
-				double mp = ((activeChar.getCurrentMp() + mpAdd) > activeChar.getMaxMp() ? activeChar.getMaxMp() : (activeChar.getCurrentMp() + mpAdd));
+				double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar.getMaxMp() : activeChar.getCurrentMp() + mpAdd;
 				
 				activeChar.setCurrentMp(mp);
 				
@@ -129,7 +129,7 @@ public class L2SkillDrain extends L2Skill
 			activeChar.sendPacket(suhp);
 			
 			// Check to see if we should damage the target
-			if ((damage > 0) && (!target.isDead() || (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)))
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
 			{
 				// Manage attack or cast break of the target (calculating rate, sending message...)
 				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
@@ -140,7 +140,7 @@ public class L2SkillDrain extends L2Skill
 				
 				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 				
-				if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 				{
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[] { activeChar, " did damage ", (int) damage, this, " to ", target });
@@ -148,7 +148,7 @@ public class L2SkillDrain extends L2Skill
 					_logDamage.log(record);
 				}
 				
-				if (hasEffects() && (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
+				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
 				{
 					// ignoring vengeance-like reflections
 					if ((Formulas.calcSkillReflect(target, this) & Formulas.SKILL_REFLECT_EFFECTS) > 0)
@@ -179,7 +179,7 @@ public class L2SkillDrain extends L2Skill
 			}
 			
 			// Check to see if we should do the decay right after the cast
-			if (target.isDead() && (getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB) && (target instanceof L2Npc))
+			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc)
 			{
 				((L2Npc) target).endDecayTask();
 			}
@@ -202,7 +202,7 @@ public class L2SkillDrain extends L2Skill
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if (target.isAlikeDead() && (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
 				continue;
 			
 			boolean mcrit = Formulas.calcMCrit(activeCubic.getMCriticalHit(target, this));
@@ -212,9 +212,9 @@ public class L2SkillDrain extends L2Skill
 			if (Config.DEBUG)
 				Log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
 			
-			double hpAdd = _absorbAbs + (_absorbPart * damage);
+			double hpAdd = _absorbAbs + _absorbPart * damage;
 			L2PcInstance owner = activeCubic.getOwner();
-			double hp = ((owner.getCurrentHp() + hpAdd) > owner.getMaxHp() ? owner.getMaxHp() : (owner.getCurrentHp() + hpAdd));
+			double hp = owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;
 			
 			owner.setCurrentHp(hp);
 			
@@ -223,7 +223,7 @@ public class L2SkillDrain extends L2Skill
 			owner.sendPacket(suhp);
 			
 			// Check to see if we should damage the target
-			if ((damage > 0) && (!target.isDead() || (getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)))
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
 			{
 				target.reduceCurrentHp(damage, activeCubic.getOwner(), this);
 				

@@ -119,12 +119,12 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				else
 				{
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target"));
+						GMAudit.auditGMAction(activeChar.getName(), _command, activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 					
 					ach.useAdminCommand(_command, activeChar);
 				}
 			}
-			else if (_command.equals("come_here") && (activeChar.isGM()))
+			else if (_command.equals("come_here") && activeChar.isGM())
 			{
 				comeHere(activeChar);
 			}
@@ -143,7 +143,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
 					
-					if ((object instanceof L2Npc) && (endOfId > 0) && activeChar.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false))
+					if (object instanceof L2Npc && endOfId > 0 && activeChar.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false))
 						((L2Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -167,7 +167,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
 					
-					if ((object instanceof L2MerchantSummonInstance) && (endOfId > 0) && activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
+					if (object instanceof L2MerchantSummonInstance && endOfId > 0 && activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
 						((L2MerchantSummonInstance) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -277,7 +277,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 				else
 				{
-					if ((activeChar.getBotLevel() % 5) < 4)
+					if (activeChar.getBotLevel() % 5 < 4)
 					{
 						activeChar.increaseBotLevel();
 						activeChar.captcha("");
@@ -347,7 +347,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					final int arenaId = Integer.parseInt(_command.substring(38));
 					final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId - 1);
-					if ((nextArena != null) && (nextArena.getGame() != null) && !activeChar.isInOlympiadMode() && !OlympiadManager.getInstance().isRegistered(activeChar) && (activeChar.inObserverMode() || (activeChar.getOlympiadGameId() == -1)))
+					if (nextArena != null && nextArena.getGame() != null && !activeChar.isInOlympiadMode() && !OlympiadManager.getInstance().isRegistered(activeChar) && (activeChar.inObserverMode() || activeChar.getOlympiadGameId() == -1))
 						activeChar.enterOlympiadObserverMode(nextArena.getZone().getSpawns().get(8), nextArena.getGame().getGameId());
 				}
 			}

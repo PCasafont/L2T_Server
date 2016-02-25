@@ -50,7 +50,7 @@ public class BossManager
 	public boolean isAlive(int id)
 	{
 		L2RaidBossInstance boss = _bosses.get(id);
-		return (boss != null) && !boss.isDead();
+		return boss != null && !boss.isDead();
 	}
 	
 	@SuppressWarnings("synthetic-access")

@@ -18,7 +18,7 @@ public class Teleporter2 extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 107) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 107 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

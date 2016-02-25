@@ -88,7 +88,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if ((getClient() == null) || (getClient().getActiveChar() == null))
+		if (getClient() == null || getClient().getActiveChar() == null)
 			return;
 		
 		writeD(getClient().getActiveChar().getObjectId());

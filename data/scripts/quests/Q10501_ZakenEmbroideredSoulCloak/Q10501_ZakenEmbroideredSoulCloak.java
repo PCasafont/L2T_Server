@@ -78,7 +78,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 			case State.STARTED:
 			{
 				final long count = st.getQuestItemsCount(ZakenSoulFragment); // How many items player has
-				if ((st.getInt("cond") == 1) && (count < RequiredItems))
+				if (st.getInt("cond") == 1 && count < RequiredItems)
 					htmltext = "32612-Zaken-03.htm"; // Still has not the required amount
 				else if (count >= RequiredItems)
 				{
@@ -120,7 +120,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	{
 		final QuestState st = player.getQuestState(qn);
 		
-		if ((st != null) && (st.getState() == State.STARTED))
+		if (st != null && st.getState() == State.STARTED)
 			st.giveItems(ZakenSoulFragment, Rnd.get(MinGiven, MaxGiven));
 	}
 	

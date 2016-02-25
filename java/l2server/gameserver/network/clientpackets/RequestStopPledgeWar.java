@@ -106,7 +106,7 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 			if (cha == null)
 				continue;
 			
-			if ((cha.getClan() == player.getClan()) || (cha.getClan() == clan))
+			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
 				cha.broadcastUserInfo();
 		}
 	}

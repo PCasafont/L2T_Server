@@ -19,7 +19,7 @@ public class DivineSummoner extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 258) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 258 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		if (getPlayer().getPet() != null)

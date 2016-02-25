@@ -33,7 +33,7 @@ public class ControllableAirShipStat extends VehicleStat
 	@Override
 	public float getMoveSpeed()
 	{
-		if (getActiveChar().isInDock() || (getActiveChar().getFuel() > 0))
+		if (getActiveChar().isInDock() || getActiveChar().getFuel() > 0)
 			return super.getMoveSpeed();
 		else
 			return super.getMoveSpeed() * 0.05f;

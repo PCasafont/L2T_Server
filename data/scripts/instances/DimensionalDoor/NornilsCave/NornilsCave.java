@@ -109,7 +109,7 @@ public class NornilsCave extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof NornilsCaveWorld))
+		if (wrld != null && wrld instanceof NornilsCaveWorld)
 		{
 			NornilsCaveWorld world = (NornilsCaveWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -307,7 +307,7 @@ public class NornilsCave extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
+						if (pMember == null || pMember.getInstanceId() != world.instanceId)
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
@@ -340,7 +340,7 @@ public class NornilsCave extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-111818, 87871, -13020, 867, true);

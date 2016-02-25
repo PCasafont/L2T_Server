@@ -43,7 +43,7 @@ public class TargetUndead implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		
-		if ((target instanceof L2Npc) || (target instanceof L2SummonInstance))
+		if (target instanceof L2Npc || target instanceof L2SummonInstance)
 		{
 			if (!target.isUndead() || target.isDead())
 			{

@@ -34,7 +34,7 @@ public class CPRecovery implements IBypassHandler
 		
 		final L2Npc npc = target;
 		
-		if ((npc.getNpcId() != 31225) && (npc.getNpcId() != 31226))
+		if (npc.getNpcId() != 31225 && npc.getNpcId() != 31226)
 			return false;
 		
 		if (activeChar.isCursedWeaponEquipped())

@@ -45,11 +45,11 @@ public class L2AKnightAI extends L2APlayerAI
 		if (super.interactWith(target))
 			return true;
 		
-		if ((_player.getCurrentMp() > (_player.getMaxMp() * 0.7)) || (_player.getCurrentHp() < (_player.getMaxHp() * 0.5)) || (_player.getTarget() instanceof L2Playable))
+		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 || _player.getTarget() instanceof L2Playable)
 		{
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (!skill.isOffensive() || (skill.getTargetType() != L2SkillTargetType.TARGET_ONE))
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 					continue;
 				
 				if (_player.useMagic(skill, true, false))

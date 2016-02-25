@@ -219,27 +219,27 @@ public class AdminPForge implements IAdminCommandHandler
 	
 	private boolean write(byte b, String string, ByteBuffer buf)
 	{
-		if ((b == 'C') || (b == 'c'))
+		if (b == 'C' || b == 'c')
 		{
 			buf.put(Byte.decode(string));
 			return true;
 		}
-		else if ((b == 'D') || (b == 'd'))
+		else if (b == 'D' || b == 'd')
 		{
 			buf.putInt(Integer.decode(string));
 			return true;
 		}
-		else if ((b == 'H') || (b == 'h'))
+		else if (b == 'H' || b == 'h')
 		{
 			buf.putShort(Short.decode(string));
 			return true;
 		}
-		else if ((b == 'F') || (b == 'f'))
+		else if (b == 'F' || b == 'f')
 		{
 			buf.putDouble(Double.parseDouble(string));
 			return true;
 		}
-		else if ((b == 'S') || (b == 's'))
+		else if (b == 'S' || b == 's')
 		{
 			final int len = string.length();
 			for (int i = 0; i < len; i++)
@@ -249,12 +249,12 @@ public class AdminPForge implements IAdminCommandHandler
 			buf.putChar('\000');
 			return true;
 		}
-		else if ((b == 'B') || (b == 'b') || (b == 'X') || (b == 'x'))
+		else if (b == 'B' || b == 'b' || b == 'X' || b == 'x')
 		{
 			buf.put(new BigInteger(string).toByteArray());
 			return true;
 		}
-		else if ((b == 'Q') || (b == 'q'))
+		else if (b == 'Q' || b == 'q')
 		{
 			buf.putLong(Long.decode(string));
 			return true;

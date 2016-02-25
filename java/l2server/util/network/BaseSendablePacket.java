@@ -35,15 +35,15 @@ public abstract class BaseSendablePacket
 	protected void writeD(int value)
 	{
 		_bao.write(value & 0xff);
-		_bao.write((value >> 8) & 0xff);
-		_bao.write((value >> 16) & 0xff);
-		_bao.write((value >> 24) & 0xff);
+		_bao.write(value >> 8 & 0xff);
+		_bao.write(value >> 16 & 0xff);
+		_bao.write(value >> 24 & 0xff);
 	}
 	
 	protected void writeH(int value)
 	{
 		_bao.write(value & 0xff);
-		_bao.write((value >> 8) & 0xff);
+		_bao.write(value >> 8 & 0xff);
 	}
 	
 	protected void writeC(int value)
@@ -55,13 +55,13 @@ public abstract class BaseSendablePacket
 	{
 		long value = Double.doubleToRawLongBits(org);
 		_bao.write((int) (value & 0xff));
-		_bao.write((int) ((value >> 8) & 0xff));
-		_bao.write((int) ((value >> 16) & 0xff));
-		_bao.write((int) ((value >> 24) & 0xff));
-		_bao.write((int) ((value >> 32) & 0xff));
-		_bao.write((int) ((value >> 40) & 0xff));
-		_bao.write((int) ((value >> 48) & 0xff));
-		_bao.write((int) ((value >> 56) & 0xff));
+		_bao.write((int) (value >> 8 & 0xff));
+		_bao.write((int) (value >> 16 & 0xff));
+		_bao.write((int) (value >> 24 & 0xff));
+		_bao.write((int) (value >> 32 & 0xff));
+		_bao.write((int) (value >> 40 & 0xff));
+		_bao.write((int) (value >> 48 & 0xff));
+		_bao.write((int) (value >> 56 & 0xff));
 	}
 	
 	protected void writeS(String text)
@@ -97,13 +97,13 @@ public abstract class BaseSendablePacket
 	protected void writeQ(long value)
 	{
 		_bao.write((int) (value & 0xff));
-		_bao.write((int) ((value >> 8) & 0xff));
-		_bao.write((int) ((value >> 16) & 0xff));
-		_bao.write((int) ((value >> 24) & 0xff));
-		_bao.write((int) ((value >> 32) & 0xff));
-		_bao.write((int) ((value >> 40) & 0xff));
-		_bao.write((int) ((value >> 48) & 0xff));
-		_bao.write((int) ((value >> 56) & 0xff));
+		_bao.write((int) (value >> 8 & 0xff));
+		_bao.write((int) (value >> 16 & 0xff));
+		_bao.write((int) (value >> 24 & 0xff));
+		_bao.write((int) (value >> 32 & 0xff));
+		_bao.write((int) (value >> 40 & 0xff));
+		_bao.write((int) (value >> 48 & 0xff));
+		_bao.write((int) (value >> 56 & 0xff));
 	}
 	
 	public int getLength()

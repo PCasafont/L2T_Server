@@ -99,7 +99,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			
-			if ((info != null) && (info.length == 2))
+			if (info != null && info.length == 2)
 			{
 				int id = 0;
 				int level = 0;
@@ -113,7 +113,7 @@ public final class L2Weapon extends L2Item
 					// Incorrect syntax, dont add new skill
 					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", toString()));
 				}
-				if ((id > 0) && (level > 0))
+				if (id > 0 && level > 0)
 					_enchant4Skill = new SkillHolder(id, level);
 			}
 		}
@@ -123,7 +123,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncastChance", null);
-			if ((info != null) && (info.length == 2))
+			if (info != null && info.length == 2)
 			{
 				int id = 0;
 				int level = 0;
@@ -140,7 +140,7 @@ public final class L2Weapon extends L2Item
 					// Incorrect syntax, dont add new skill
 					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncast skills! item ", toString()));
 				}
-				if ((id > 0) && (level > 0) && (chance > 0))
+				if (id > 0 && level > 0 && chance > 0)
 				{
 					_skillsOnCast = new SkillHolder(id, level);
 					if (infochance != null)
@@ -154,7 +154,7 @@ public final class L2Weapon extends L2Item
 		{
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncritChance", null);
-			if ((info != null) && (info.length == 2))
+			if (info != null && info.length == 2)
 			{
 				int id = 0;
 				int level = 0;
@@ -171,7 +171,7 @@ public final class L2Weapon extends L2Item
 					// Incorrect syntax, dont add new skill
 					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", toString()));
 				}
-				if ((id > 0) && (level > 0) && (chance > 0))
+				if (id > 0 && level > 0 && chance > 0)
 				{
 					_skillsOnCrit = new SkillHolder(id, level);
 					if (infochance != null)
@@ -286,7 +286,7 @@ public final class L2Weapon extends L2Item
 	@Override
 	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if ((_funcTemplates == null) || (_funcTemplates.length == 0))
+		if (_funcTemplates == null || _funcTemplates.length == 0)
 			return _emptyFunctionSet;
 		
 		ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
@@ -311,7 +311,7 @@ public final class L2Weapon extends L2Item
 	 */
 	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, boolean crit)
 	{
-		if ((_skillsOnCrit == null) || !crit)
+		if (_skillsOnCrit == null || !crit)
 			return _emptyEffectSet;
 		List<L2Abnormal> effects = new ArrayList<L2Abnormal>();
 		
@@ -350,9 +350,9 @@ public final class L2Weapon extends L2Item
 			return _emptyEffectSet;
 		if (trigger.isOffensive() != _skillsOnCast.getSkill().isOffensive())
 			return _emptyEffectSet; // Trigger only same type of skill
-		if (trigger.isToggle() && (_skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF))
+		if (trigger.isToggle() && _skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
 			return _emptyEffectSet; // No buffing with toggle skills
-		if (!trigger.isMagic() && (_skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF))
+		if (!trigger.isMagic() && _skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
 			return _emptyEffectSet; // No buffing with not magic skills
 			
 		if (_skillsOnCastCondition != null)

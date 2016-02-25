@@ -40,7 +40,7 @@ public class FuncAddPercent extends Func
 	@Override
 	public void calc(Env env)
 	{
-		if ((cond == null) || cond.test(env))
-			env.value *= 1.0 + (_lambda.calc(env) / 100.0);
+		if (cond == null || cond.test(env))
+			env.value *= 1.0 + _lambda.calc(env) / 100.0;
 	}
 }

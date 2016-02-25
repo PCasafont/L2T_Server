@@ -45,12 +45,12 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 		{
 			_clanReq = TerritoryWarManager.getInstance().getRegisteredClans(castleId).size();
 			if (player.getClan() != null)
-				_isClanRegistered = (TerritoryWarManager.getInstance().getRegisteredClans(castleId).contains(player.getClan()) ? 0x01 : 0x00);
+				_isClanRegistered = TerritoryWarManager.getInstance().getRegisteredClans(castleId).contains(player.getClan()) ? 0x01 : 0x00;
 		}
 		if (TerritoryWarManager.getInstance().getRegisteredMercenaries(castleId) != null)
 		{
 			_mercReq = TerritoryWarManager.getInstance().getRegisteredMercenaries(castleId).size();
-			_isMercRegistered = (TerritoryWarManager.getInstance().getRegisteredMercenaries(castleId).contains(player.getObjectId()) ? 0x01 : 0x00);
+			_isMercRegistered = TerritoryWarManager.getInstance().getRegisteredMercenaries(castleId).contains(player.getObjectId()) ? 0x01 : 0x00;
 		}
 		_warTime = (int) (TerritoryWarManager.getInstance().getTWStartTimeInMillis() / 1000);
 	}

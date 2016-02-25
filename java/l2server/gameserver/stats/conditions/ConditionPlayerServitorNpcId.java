@@ -35,7 +35,7 @@ public class ConditionPlayerServitorNpcId extends Condition
 	 */
 	public ConditionPlayerServitorNpcId(ArrayList<Integer> npcIds)
 	{
-		if ((npcIds.size() == 1) && (npcIds.get(0) == 0))
+		if (npcIds.size() == 1 && npcIds.get(0) == 0)
 			_npcIds = null;
 		else
 			_npcIds = npcIds;
@@ -65,6 +65,6 @@ public class ConditionPlayerServitorNpcId extends Condition
 			}
 		}
 		
-		return (_npcIds == null) || _npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
+		return _npcIds == null || _npcIds.contains(player.getPet().getNpcId()) || hasInSummons;
 	}
 }

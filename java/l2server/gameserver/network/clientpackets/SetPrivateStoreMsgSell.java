@@ -43,10 +43,10 @@ public class SetPrivateStoreMsgSell extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance player = getClient().getActiveChar();
-		if ((player == null) || (player.getSellList() == null))
+		if (player == null || player.getSellList() == null)
 			return;
 		
-		if ((_storeMsg != null) && (_storeMsg.length() > MAX_MSG_LENGTH))
+		if (_storeMsg != null && _storeMsg.length() > MAX_MSG_LENGTH)
 		{
 			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to overflow private store sell message", Config.DEFAULT_PUNISH);
 			return;

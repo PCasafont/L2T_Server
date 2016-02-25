@@ -51,7 +51,7 @@ public class MovingPortal extends L2AttackableAIScript
 	{
 		if (skill.getId() == _instantTeleport.getId())
 		{
-			if (!caster.isPlayingEvent() && (npc.getOwner() == caster) && GeoData.getInstance().canSeeTarget(npc, caster) && caster.isInsideRadius(npc, _instantTeleport.getSkillRadius(), true, false))
+			if (!caster.isPlayingEvent() && npc.getOwner() == caster && GeoData.getInstance().canSeeTarget(npc, caster) && caster.isInsideRadius(npc, _instantTeleport.getSkillRadius(), true, false))
 			{
 				int x = npc.getX() + Rnd.get(-50, 50);
 				int y = npc.getY() + Rnd.get(-50, 50);

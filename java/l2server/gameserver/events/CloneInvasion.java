@@ -47,7 +47,7 @@ public class CloneInvasion
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((player == null) || player.isGM() || player.isInStoreMode())
+			if (player == null || player.isGM() || player.isInStoreMode())
 				continue;
 			try
 			{
@@ -55,10 +55,10 @@ public class CloneInvasion
 				if (player.getClan() != null)
 					pledgeClass = player.getClan().getClanMember(player.getObjectId()).calculatePledgeClass(player);
 				
-				if (player.isNoble() && (pledgeClass < 5))
+				if (player.isNoble() && pledgeClass < 5)
 					pledgeClass = 5;
 				
-				if (player.isHero() && (pledgeClass < 8))
+				if (player.isHero() && pledgeClass < 8)
 					pledgeClass = 8;
 				
 				player.setPledgeClass(pledgeClass);
@@ -94,7 +94,7 @@ public class CloneInvasion
 				L2NpcTemplate tmpl = new L2NpcTemplate(set);
 				
 				L2NpcAIData npcAIDat = new L2NpcAIData();
-				npcAIDat.setAi(player.getActiveWeaponItem() != null ? (player.isMageClass() ? "mage" : (player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter")) : "balanced");
+				npcAIDat.setAi(player.getActiveWeaponItem() != null ? player.isMageClass() ? "mage" : player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "fighter" : "balanced");
 				npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
 				npcAIDat.setCanMove(true);
 				npcAIDat.setSoulShot(10000);
@@ -107,7 +107,7 @@ public class CloneInvasion
 				
 				for (L2Skill skill : player.getAllSkills())
 				{
-					if (skill.isOffensive() && (skill.getMagicLevel() > (player.getLevel() - 5)))
+					if (skill.isOffensive() && skill.getMagicLevel() > player.getLevel() - 5)
 						tmpl.addSkill(skill);
 				}
 				
@@ -121,7 +121,7 @@ public class CloneInvasion
 				spawn.setZ(player.getPosition().getZ());
 				
 				spawn.stopRespawn();
-				if ((spawn.getNpc() != null) && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING))
+				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING))
 				{
 					spawn.getNpc().setClonedPlayer(player);
 					spawn.doSpawn();
@@ -148,7 +148,7 @@ public class CloneInvasion
 			nextStartTime.set(Calendar.MINUTE, minute);
 			nextStartTime.set(Calendar.SECOND, 0);
 			// If the date is in the past, make it the next day (Example: Checking for "1:00", when the time is 23:57.)
-			if ((nextStartTime.getTimeInMillis() - 10000) < currentTime.getTimeInMillis())
+			if (nextStartTime.getTimeInMillis() - 10000 < currentTime.getTimeInMillis())
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			_task = new StartTask(nextStartTime.getTimeInMillis());
 			ThreadPoolManager.getInstance().executeTask(_task);
@@ -178,7 +178,7 @@ public class CloneInvasion
 		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
-		if ((hours > 0) || (minutes > 0))
+		if (hours > 0 || minutes > 0)
 		{
 			time += ", in ";
 			if (hours > 0)

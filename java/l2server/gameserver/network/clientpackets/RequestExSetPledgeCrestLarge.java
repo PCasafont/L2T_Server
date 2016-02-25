@@ -89,7 +89,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 		int largeCrestId = -1;
 		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
 		{
-			if ((_length == 0) || (_data == null))
+			if (_length == 0 || _data == null)
 			{
 				if (clan.getLargeCrestId() == 0)
 					return;
@@ -100,7 +100,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			}
 			else
 			{
-				if (!activeChar.isGM() && (clan.getHasCastle() == 0) && (clan.getHasHideout() == 0))
+				if (!activeChar.isGM() && clan.getHasCastle() == 0 && clan.getHasHideout() == 0)
 				{
 					activeChar.sendMessage("Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
 					return;
@@ -131,7 +131,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 			}
 		}
 		
-		if (updated && (largeCrestId != -1))
+		if (updated && largeCrestId != -1)
 		{
 			clan.changeLargeCrest(largeCrestId);
 		}

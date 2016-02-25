@@ -245,7 +245,7 @@ public class DarkCloudMansion extends Quest
 			runStartRoom((DMCWorld) world);
 			// teleport players
 			teleto.instanceId = instanceId;
-			if (debug && (party == null))
+			if (debug && party == null)
 			{
 				world.allowed.add(player.getObjectId());
 				teleportplayer(player, teleto);
@@ -552,9 +552,9 @@ public class DarkCloudMansion extends Quest
 			thisnpc.status = temp[idx];
 			thisnpc.count = 0;
 			FifthRoom.npcList.add(thisnpc);
-			if ((temp[idx] == 1) && (Rnd.get(100) < 95))
+			if (temp[idx] == 1 && Rnd.get(100) < 95)
 				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), _spawnChat[Rnd.get(_spawnChat.length)]));
-			else if ((temp[idx] != 1) && (Rnd.get(100) < 67))
+			else if (temp[idx] != 1 && Rnd.get(100) < 67)
 				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(), _spawnChat[Rnd.get(_spawnChat.length)]));
 			idx++;
 		}
@@ -594,9 +594,9 @@ public class DarkCloudMansion extends Quest
 		for (int i = 1; i < 7; i++)
 		{
 			//if there is a non zero value in the precedent step, the sequence is ok
-			if ((order[i] == 0) && (order[i - 1] != 0))
+			if (order[i] == 0 && order[i - 1] != 0)
 			{
-				if ((npcObj.order == i) && (npcObj.status == 0))
+				if (npcObj.order == i && npcObj.status == 0)
 				{
 					order[i] = 1;
 					npcObj.status = 1;
@@ -673,7 +673,7 @@ public class DarkCloudMansion extends Quest
 		{
 			for (DMCNpc mob : FifthRoom.npcList)
 			{
-				if ((mob.count == 0) || ((mob.status == 1) && (mob.count != 2)))
+				if (mob.count == 0 || mob.status == 1 && mob.count != 2)
 				{
 					decayedSamples += 1;
 					mob.npc.decayMe();
@@ -685,7 +685,7 @@ public class DarkCloudMansion extends Quest
 		}
 		else
 		{
-			if ((FifthRoom.reset == 0) && (FifthRoom.founded == 3))
+			if (FifthRoom.reset == 0 && FifthRoom.founded == 3)
 			{
 				for (DMCNpc mob : FifthRoom.npcList)
 					mob.npc.decayMe();
@@ -727,7 +727,7 @@ public class DarkCloudMansion extends Quest
 			{
 				for (int i = 0; i < 7; i++)
 				{
-					if ((mob.order == i) && (ForthRoom.counter == i))
+					if (mob.order == i && ForthRoom.counter == i)
 					{
 						openDoor(W1 + i, world.instanceId);
 						ForthRoom.counter += 1;
@@ -759,13 +759,13 @@ public class DarkCloudMansion extends Quest
 			{
 				for (DMCNpc mob : FifthRoom.npcList)
 				{
-					if ((mob.npc == npc) || ((FifthRoom.reset == 0) && (FifthRoom.founded == 3)))
+					if (mob.npc == npc || FifthRoom.reset == 0 && FifthRoom.founded == 3)
 					{
 						mob.npc.decayMe();
 						mob.count = 2;
 					}
 				}
-				if ((FifthRoom.reset == 0) && (FifthRoom.founded == 3))
+				if (FifthRoom.reset == 0 && FifthRoom.founded == 3)
 					endInstance(world);
 			}
 			else if (event.equalsIgnoreCase("decayBelethSamples"))
@@ -872,7 +872,7 @@ public class DarkCloudMansion extends Quest
 				{
 					if (mob.npc == npc)
 					{
-						if (mob.npc.isInvul() && (Rnd.get(100) < 12))
+						if (mob.npc.isInvul() && Rnd.get(100) < 12)
 						{
 							if (debug)
 								Log.info("DarkCloudMansion: spawn room 4 guard");
@@ -912,7 +912,7 @@ public class DarkCloudMansion extends Quest
 				}
 			}
 			
-			if ((npc.getNpcId() == SOTruth) && (world.status == 10))
+			if (npc.getNpcId() == SOTruth && world.status == 10)
 			{
 				npc.showChatWindow(player);
 				QuestState st = player.getQuestState(qn);

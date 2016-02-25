@@ -95,7 +95,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 		{
 			targetObject = activeChar.getTarget();
 			
-			if ((targetObject != null) && (targetObject instanceof L2PcInstance))
+			if (targetObject != null && targetObject instanceof L2PcInstance)
 				target = (L2PcInstance) targetObject;
 		}
 		
@@ -313,7 +313,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 		{
 			if (val[2].equals("COMLETED"))
 			{
-				qs.exitQuest((val[3].equals("1")) ? true : false);
+				qs.exitQuest(val[3].equals("1") ? true : false);
 			}
 			else if (val[2].equals("DELETE"))
 			{

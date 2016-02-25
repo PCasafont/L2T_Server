@@ -63,7 +63,7 @@ public final class RequestPartyMatchDetail extends L2GameClientPacket
 		if (_room == null)
 			return;
 		
-		if ((_activeChar.getLevel() >= _room.getMinLvl()) && (_activeChar.getLevel() <= _room.getMaxLvl()))
+		if (_activeChar.getLevel() >= _room.getMinLvl() && _activeChar.getLevel() <= _room.getMaxLvl())
 		{
 			// Remove from waiting list
 			PartyMatchWaitingList.getInstance().removePlayer(_activeChar);

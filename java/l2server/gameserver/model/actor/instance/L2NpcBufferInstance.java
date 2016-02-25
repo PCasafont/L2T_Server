@@ -71,7 +71,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 		
 		if (command.startsWith("BuffMe"))
 		{
-			if (player.isInCombat() || player.isDead() || player.isInOlympiadMode() || (player.getPvpFlag() > 0) || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isPlayingEvent())
+			if (player.isInCombat() || player.isDead() || player.isInOlympiadMode() || player.getPvpFlag() > 0 || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isPlayingEvent())
 			{
 				player.sendMessage("You can't use this option now!");
 				return;
@@ -90,7 +90,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 				if (player.getLevel() < Config.MAX_LEVEL)
 				{
 					Castle castle = CastleManager.getInstance().findNearestCastle(player);
-					if ((castle != null) && (castle.getTendency() == Castle.TENDENCY_LIGHT))
+					if (castle != null && castle.getTendency() == Castle.TENDENCY_LIGHT)
 						giveBuff(player, 19036);
 				}
 				
@@ -125,7 +125,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 		}
 		else if (command.startsWith("Heal"))
 		{
-			if ((player.isInCombat() || (player.getPvpFlag() > 0)) && !player.isInsideZone(L2Character.ZONE_PEACE))
+			if ((player.isInCombat() || player.getPvpFlag() > 0) && !player.isInsideZone(L2Character.ZONE_PEACE))
 			{
 				player.sendMessage("You cannot be healed while engaged in combat.");
 				return;
@@ -149,7 +149,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
 			showChatWindow(player, 0);
 		}
-		else if (command.startsWith("Pet") && (player.getPet() == null) && player.getSummons().isEmpty())
+		else if (command.startsWith("Pet") && player.getPet() == null && player.getSummons().isEmpty())
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 		}
@@ -257,7 +257,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 			if (!player.isMageClass())
 			{
 				L2ItemInstance shield = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-				if ((shield != null) && (shield.getItem().getType1() == L2Item.TYPE1_SHIELD_ARMOR))
+				if (shield != null && shield.getItem().getType1() == L2Item.TYPE1_SHIELD_ARMOR)
 					type = 0;
 				else
 					type = 1;
@@ -268,7 +268,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 		
 		for (int buff : buffs)
 		{
-			if (((buff == 14785) && (type != 0)) || ((buff == 14786) && (type != 1)) || ((buff == 14787) && (type != 2)))
+			if (buff == 14785 && type != 0 || buff == 14786 && type != 1 || buff == 14787 && type != 2)
 				continue;
 			
 			SkillTable.getInstance().getInfo(buff, 1).getEffects(character, character);
@@ -279,7 +279,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 	@Override
 	public void showChatWindow(L2PcInstance player, int val)
 	{
-		if ((val >= 10) && (player.getPet() == null) && player.getSummons().isEmpty())
+		if (val >= 10 && player.getPet() == null && player.getSummons().isEmpty())
 			val = 0;
 		// Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -297,29 +297,29 @@ public class L2NpcBufferInstance extends L2NpcInstance
 		int type = 2; //Mage
 		
 		L2ItemInstance shield = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if (!player.isMageClass() || (player.getMaxSummonPoints() > 1))
+		if (!player.isMageClass() || player.getMaxSummonPoints() > 1)
 		{
-			if ((shield != null) && (shield.getItem().getType1() == L2Item.TYPE1_SHIELD_ARMOR))
+			if (shield != null && shield.getItem().getType1() == L2Item.TYPE1_SHIELD_ARMOR)
 				type = 0; //Knight
 			else
 				type = 1; //Warrior
 		}
 		else
 		{
-			if ((shield != null) && !shield.getName().contains("Sigil"))
+			if (shield != null && !shield.getName().contains("Sigil"))
 				type = 1;
 		}
 		
 		List<Integer> _buffIds = new ArrayList<Integer>();
 		for (int a = 14779; a <= 14790; a++)
 		{
-			if ((a == 14785) && (type != 0))
+			if (a == 14785 && type != 0)
 				continue;
 			
-			if ((a == 14786) && (type != 1))
+			if (a == 14786 && type != 1)
 				continue;
 			
-			if ((a == 14787) && (type != 2))
+			if (a == 14787 && type != 2)
 				continue;
 			
 			_buffIds.add(a);
@@ -333,7 +333,7 @@ public class L2NpcBufferInstance extends L2NpcInstance
 		if (player.getLevel() < Config.MAX_LEVEL)
 		{
 			Castle castle = CastleManager.getInstance().getCastle(player.getX(), player.getY(), player.getZ());
-			if ((castle != null) && (castle.getTendency() == Castle.TENDENCY_LIGHT))
+			if (castle != null && castle.getTendency() == Castle.TENDENCY_LIGHT)
 				_buffIds.add(19036);
 		}
 		

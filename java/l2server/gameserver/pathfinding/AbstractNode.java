@@ -53,7 +53,7 @@ public abstract class AbstractNode
 	{
 		final int prime = 31;
 		int result = 1;
-		result = (prime * result) + ((_loc == null) ? 0 : _loc.hashCode());
+		result = prime * result + (_loc == null ? 0 : _loc.hashCode());
 		return result;
 	}
 	

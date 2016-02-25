@@ -166,7 +166,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			_durationCheckTask.cancel(true);
 		
 		// clean up variables
-		if ((_owner != null) && (_owner.getTrainedBeasts() != null))
+		if (_owner != null && _owner.getTrainedBeasts() != null)
 			_owner.getTrainedBeasts().remove(this);
 		_buffTask = null;
 		_durationCheckTask = null;
@@ -196,13 +196,13 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	
 	public void castBeastSkills()
 	{
-		if ((_owner == null) || (_beastSkills == null))
+		if (_owner == null || _beastSkills == null)
 			return;
 		int delay = 100;
 		for (L2Skill skill : _beastSkills)
 		{
 			ThreadPoolManager.getInstance().scheduleGeneral(new buffCast(skill), delay);
-			delay += (100 + skill.getHitTime());
+			delay += 100 + skill.getHitTime();
 		}
 		ThreadPoolManager.getInstance().scheduleGeneral(new buffCast(null), delay);
 	}
@@ -273,7 +273,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	
 	public boolean isTooFarFromHome()
 	{
-		return !(this.isInsideRadius(_homeX, _homeY, _homeZ, MAX_DISTANCE_FROM_HOME, true, true));
+		return !this.isInsideRadius(_homeX, _homeY, _homeZ, MAX_DISTANCE_FROM_HOME, true, true);
 	}
 	
 	@Override
@@ -285,7 +285,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		stopHpMpRegeneration();
 		
 		// clean up variables
-		if ((_owner != null) && (_owner.getTrainedBeasts() != null))
+		if (_owner != null && _owner.getTrainedBeasts() != null)
 			_owner.getTrainedBeasts().remove(this);
 		setTarget(null);
 		_buffTask = null;
@@ -303,7 +303,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	public void onOwnerGotAttacked(L2Character attacker)
 	{
 		// check if the owner is no longer around...if so, despawn
-		if ((_owner == null) || !_owner.isOnline())
+		if (_owner == null || !_owner.isOnline())
 		{
 			deleteMe();
 			return;
@@ -322,7 +322,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		if (isCastingNow())
 			return;
 		
-		float HPRatio = ((float) _owner.getCurrentHp()) / _owner.getMaxHp();
+		float HPRatio = (float) _owner.getCurrentHp() / _owner.getMaxHp();
 		
 		// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
 		// use of more than one debuff at this moment is acceptable
@@ -333,7 +333,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			for (L2Skill skill : skills.values())
 			{
 				// if the skill is a debuff, check if the attacker has it already [  attacker.getEffect(L2Skill skill) ]
-				if (skill.isDebuff() && (Rnd.get(3) < 1) && ((attacker != null) && (attacker.getFirstEffect(skill) != null)))
+				if (skill.isDebuff() && Rnd.get(3) < 1 && attacker != null && attacker.getFirstEffect(skill) != null)
 				{
 					sitCastAndFollow(skill, attacker);
 				}
@@ -353,7 +353,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			for (L2Skill skill : skills.values())
 			{
 				// if the skill is a buff, check if the owner has it already [  owner.getEffect(L2Skill skill) ]
-				if ((Rnd.get(5) < chance) && ((skill.getSkillType() == L2SkillType.HEAL) || (skill.getSkillType() == L2SkillType.BALANCE_LIFE) || (skill.getSkillType() == L2SkillType.HEAL_PERCENT) || (skill.getSkillType() == L2SkillType.HEAL_STATIC) || (skill.getSkillType() == L2SkillType.COMBATPOINTHEAL) || (skill.getSkillType() == L2SkillType.MANAHEAL) || (skill.getSkillType() == L2SkillType.MANA_BY_LEVEL) || (skill.getSkillType() == L2SkillType.MANAHEAL_PERCENT) || (skill.getSkillType() == L2SkillType.MANARECHARGE)))
+				if (Rnd.get(5) < chance && (skill.getSkillType() == L2SkillType.HEAL || skill.getSkillType() == L2SkillType.BALANCE_LIFE || skill.getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.HEAL_STATIC || skill.getSkillType() == L2SkillType.COMBATPOINTHEAL || skill.getSkillType() == L2SkillType.MANAHEAL || skill.getSkillType() == L2SkillType.MANA_BY_LEVEL || skill.getSkillType() == L2SkillType.MANAHEAL_PERCENT || skill.getSkillType() == L2SkillType.MANARECHARGE))
 				{
 					sitCastAndFollow(skill, _owner);
 					return;
@@ -400,7 +400,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			if (_isFreyaBeast)
 			{
 				item = owner.getInventory().getItemByItemId(foodTypeSkillId);
-				if ((item != null) && (item.getCount() >= 1))
+				if (item != null && item.getCount() >= 1)
 				{
 					owner.destroyItem("BeastMob", item, 1, _tamedBeast, true);
 					_tamedBeast.broadcastPacket(new SocialAction(_tamedBeast.getObjectId(), 3));
@@ -420,7 +420,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 					item = owner.getInventory().getItemByItemId(6644);
 				
 				// if the owner has enough food, call the item handler (use the food and triffer all necessary actions)
-				if ((item != null) && (item.getCount() >= 1))
+				if (item != null && item.getCount() >= 1)
 				{
 					L2Object oldTarget = owner.getTarget();
 					owner.setTarget(_tamedBeast);
@@ -435,7 +435,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				{
 					// if the owner has no food, the beast immediately despawns, except when it was only
 					// newly spawned.  Newly spawned beasts can last up to 5 minutes
-					if (_tamedBeast.getRemainingTime() < (MAX_DURATION - 300000))
+					if (_tamedBeast.getRemainingTime() < MAX_DURATION - 300000)
 						_tamedBeast.setRemainingTime(-1);
 				}
 				/* There are too many conflicting reports about whether distance from home should
@@ -468,7 +468,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			L2PcInstance owner = _tamedBeast.getOwner();
 			
 			// check if the owner is no longer around...if so, despawn
-			if ((owner == null) || !owner.isOnline())
+			if (owner == null || !owner.isOnline())
 			{
 				deleteMe();
 				return;
@@ -508,7 +508,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				}
 			}
 			// if the owner has less than 60% of this beast's available buff, cast a random buff
-			if (((_numBuffs * 2) / 3) > totalBuffsOnOwner)
+			if (_numBuffs * 2 / 3 > totalBuffsOnOwner)
 			{
 				_tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}
@@ -519,7 +519,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if ((player == null) || !canTarget(player))
+		if (player == null || !canTarget(player))
 			return;
 		
 		// Check if the L2PcInstance already target the L2NpcInstance
@@ -543,7 +543,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.abs(player.getZ() - getZ()) < 100))
+			if (isAutoAttackable(player) && Math.abs(player.getZ() - getZ()) < 100)
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			else
 			{

@@ -70,7 +70,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if ((_skillId <= 0) || (_skillLvl <= 0) || (_type < 0) || (_type > 4)) // minimal sanity check
+		if (_skillId <= 0 || _skillLvl <= 0 || _type < 0 || _type > 4) // minimal sanity check
 			return;
 		
 		L2PcInstance player = getClient().getActiveChar();
@@ -113,7 +113,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		int currentEnchantRoute = currentSkill.getEnchantRouteId();
 		int currentEnchantLevel = currentSkill.getEnchantLevel();
 		// do u have this skill enchanted?
-		if ((_type == 3) && ((currentEnchantRoute < 1) || (currentEnchantLevel < 1) || (currentLevel != _skillLvl) || (currentEnchantLevel < (enchantLevel - 1))))
+		if (_type == 3 && (currentEnchantRoute < 1 || currentEnchantLevel < 1 || currentLevel != _skillLvl || currentEnchantLevel < enchantLevel - 1))
 			return;
 		
 		EnchantSkillDetail esd = s.getEnchantSkillDetail(enchantRoute, enchantLevel);
@@ -138,17 +138,17 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		}
 		
 		int requiredSp = esd.getSpCost() * costMultiplier;
-		int requireditems = Config.isServer(Config.DREAMS) && (_type == 4) ? 0 : esd.getAdenaCost() * costMultiplier;
+		int requireditems = Config.isServer(Config.DREAMS) && _type == 4 ? 0 : esd.getAdenaCost() * costMultiplier;
 		int rate = esd.getRate(player);
 		
-		if ((player.getSp() >= requiredSp) || (_type == 2))
+		if (player.getSp() >= requiredSp || _type == 2)
 		{
 			// only first lvl requires book
-			boolean firstLevel = (enchantLevel % 10) == 1; // 101, 201, 301 ...
+			boolean firstLevel = enchantLevel % 10 == 1; // 101, 201, 301 ...
 			L2ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
 			
-			boolean useBook = (_type == 1) || (Config.ES_SP_BOOK_NEEDED && ((_type != 0) || firstLevel));
-			if (useBook && (spb == null))// Haven't spellbook
+			boolean useBook = _type == 1 || Config.ES_SP_BOOK_NEEDED && (_type != 0 || firstLevel);
+			if (useBook && spb == null)// Haven't spellbook
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DONT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL));
 				return;
@@ -161,7 +161,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			}
 			
 			boolean check = true;
-			if ((_type != 2) && (requiredSp > 0))
+			if (_type != 2 && requiredSp > 0)
 				check &= player.getStat().removeExpAndSp(0, requiredSp, false);
 			
 			if (useBook)
@@ -233,7 +233,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 					player.sendPacket(sm);
 				}
 			}
-			else if ((_type == 4) || (Rnd.get(100) <= rate))
+			else if (_type == 4 || Rnd.get(100) <= rate)
 			{
 				logSkillEnchant(player, skill, spb, rate);
 				
@@ -286,7 +286,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		
 		for (L2ShortCut sc : allShortCuts)
 		{
-			if ((sc != null) && (sc.getId() == _skillId) && (sc.getType() == L2ShortCut.TYPE_SKILL))
+			if (sc != null && sc.getId() == _skillId && sc.getType() == L2ShortCut.TYPE_SKILL)
 			{
 				L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), player.getSkillLevelHash(_skillId), 1);
 				player.sendPacket(new ShortCutRegister(newsc));

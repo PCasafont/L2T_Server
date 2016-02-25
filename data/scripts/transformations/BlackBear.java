@@ -18,7 +18,7 @@ public class BlackBear extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 20009) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 20009 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

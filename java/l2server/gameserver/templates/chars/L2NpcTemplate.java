@@ -185,7 +185,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", false);
 		Race = null;
 		int herbGroup = set.getInteger("extraDropGroup", 0);
-		if ((herbGroup > 0) && (ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null))
+		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
 		{
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
@@ -197,7 +197,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		ShowName = set.getBool("showName", true);
 		
 		// can be loaded from db
-		BaseVitalityDivider = (Level > 0) && (RewardExp > 0) ? ((float) baseHpMax * 9) / ((100 * RewardExp) / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", L2Npc.DEFAULT_INTERACTION_DISTANCE);
 		
@@ -241,7 +241,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", baseTemplate.RandomWalk);
 		Race = baseTemplate.Race;
 		int herbGroup = set.getInteger("extraDropGroup", baseTemplate.ExtraDropGroup);
-		if ((herbGroup > 0) && (ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null))
+		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
 		{
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
@@ -259,7 +259,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", baseTemplate.HatersDamageMultiplier);
 		
 		// can be loaded from db
-		BaseVitalityDivider = (Level > 0) && (RewardExp > 0) ? ((float) baseHpMax * 9) / ((100 * RewardExp) / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
 		
 		InteractionDistance = set.getInteger("interactionDistance", baseTemplate.InteractionDistance);
 		
@@ -856,7 +856,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public void addRangeSkill(L2Skill skill)
 	{
-		if ((skill.getCastRange() <= 150) && (skill.getCastRange() > 0))
+		if (skill.getCastRange() <= 150 && skill.getCastRange() > 0)
 		{
 			if (aiSkills[AIST_SHORT_RANGE] == null)
 				aiSkills[AIST_SHORT_RANGE] = new ArrayList<L2Skill>();
@@ -1001,7 +1001,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public boolean isUndead()
 	{
-		return (Race == L2NpcRace.UNDEAD);
+		return Race == L2NpcRace.UNDEAD;
 	}
 	
 	public StatsSet getBaseSet()
@@ -1021,7 +1021,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlTemplateId()
 	{
-		if ((TemplateId == 0) || (TemplateId == NpcId))
+		if (TemplateId == 0 || TemplateId == NpcId)
 			return "";
 		return " templateId=\"" + TemplateId + "\"";
 	}
@@ -1424,7 +1424,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlClan()
 	{
-		if ((getAIData().getClan() == null) || (getAIData().getClan().length() == 0) || getAIData().getClan().equalsIgnoreCase("null"))
+		if (getAIData().getClan() == null || getAIData().getClan().length() == 0 || getAIData().getClan().equalsIgnoreCase("null"))
 			return "";
 		return " clan=\"" + getAIData().getClan() + "\"";
 	}
@@ -1438,7 +1438,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	
 	public String getXmlEnemy()
 	{
-		if ((getAIData().getEnemyClan() == null) || (getAIData().getEnemyClan().length() == 0) || getAIData().getEnemyClan().equalsIgnoreCase("null"))
+		if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0 || getAIData().getEnemyClan().equalsIgnoreCase("null"))
 			return "";
 		return " enemyClan=\"" + getAIData().getEnemyClan() + "\"";
 	}

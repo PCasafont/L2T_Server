@@ -51,7 +51,7 @@ public class DrChaos extends Quest
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if ((spawn != null) && (spawn.getNpcId() == npcId))
+			if (spawn != null && spawn.getNpcId() == npcId)
 			{
 				return spawn.getNpc();
 			}

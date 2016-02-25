@@ -60,7 +60,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 					result.add(aPlayer);
 				
 				final L2Summon aPet = aPlayer.getPet();
-				if ((aPet != null) && !aPet.isDead())
+				if (aPet != null && !aPet.isDead())
 					result.add(aPet);
 				
 				for (L2SummonInstance summon : aPlayer.getSummons())
@@ -95,7 +95,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 						continue;
 					
 					final L2PcInstance kTarget = obj.getActingPlayer();
-					if ((kTarget == null) || (aPlayer == kTarget))
+					if (kTarget == null || aPlayer == kTarget)
 						continue;
 					
 					else if (!aPlayer.isAbleToCastOnTarget(kTarget, skill, true))
@@ -123,7 +123,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 					}
 					else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ALL_NOTME)
 					{
-						if ((aPlayer == kTarget) || !aPlayer.isInSameParty(kTarget))
+						if (aPlayer == kTarget || !aPlayer.isInSameParty(kTarget))
 							continue;
 					}
 					else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_AND_CLAN)
@@ -161,7 +161,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 					
 					result.add(kTarget);
 					final L2Summon kPet = kTarget.getPet();
-					if ((kPet != null) && !kPet.isDead())
+					if (kPet != null && !kPet.isDead())
 						result.add(kPet);
 					
 					for (L2SummonInstance summon : kTarget.getSummons())
@@ -186,7 +186,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 					
 					if (aMonster == kMonster)
 						continue;
-					else if ((aMonster.getFactionId() == null) || (kMonster.getFactionId() == null))
+					else if (aMonster.getFactionId() == null || kMonster.getFactionId() == null)
 						continue;
 					else if (!aMonster.getFactionId().equals(kMonster.getFactionId()))
 						continue;
@@ -199,7 +199,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 		}
 		else
 		{
-			if ((target != null) && (GeoEngine.getInstance().canSeeTarget(activeChar, target) || (skill.getSkillType() == L2SkillType.SUMMON_FRIEND)))
+			if (target != null && (GeoEngine.getInstance().canSeeTarget(activeChar, target) || skill.getSkillType() == L2SkillType.SUMMON_FRIEND))
 			{
 				if (activeChar instanceof L2MonsterInstance)
 				{
@@ -209,7 +209,7 @@ public class TargetFriends implements ISkillTargetTypeHandler
 					{
 						final L2MonsterInstance mTarget = (L2MonsterInstance) target;
 						
-						if ((aMonster.getFactionId() != null) && (mTarget.getFactionId() != null) && aMonster.getFactionId().equals(mTarget.getFactionId()))
+						if (aMonster.getFactionId() != null && mTarget.getFactionId() != null && aMonster.getFactionId().equals(mTarget.getFactionId()))
 							return new L2Character[] { mTarget };
 					}
 				}
@@ -222,17 +222,17 @@ public class TargetFriends implements ISkillTargetTypeHandler
 						
 						if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ONE)
 						{
-							if ((aPlayer == tPlayer) || aPlayer.isInSameParty(tPlayer))
+							if (aPlayer == tPlayer || aPlayer.isInSameParty(tPlayer))
 								return new L2Character[] { target };
 						}
 						else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_AND_CLAN)
 						{
-							if (((aPlayer == tPlayer) || aPlayer.isInSameParty(tPlayer) || aPlayer.isInSameClan(tPlayer)))
+							if (aPlayer == tPlayer || aPlayer.isInSameParty(tPlayer) || aPlayer.isInSameClan(tPlayer))
 								return new L2Character[] { target };
 						}
 						else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ONE_NOTME)
 						{
-							if ((aPlayer != tPlayer) && aPlayer.isInSameParty(tPlayer))
+							if (aPlayer != tPlayer && aPlayer.isInSameParty(tPlayer))
 								return new L2Character[] { target };
 						}
 					}

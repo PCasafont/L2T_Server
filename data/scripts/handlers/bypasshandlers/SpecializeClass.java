@@ -38,7 +38,7 @@ public class SpecializeClass implements IBypassHandler
 	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
-		if ((target == null) || (activeChar == null) || (activeChar.getCurrentClass().getLevel() != 85))
+		if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85)
 		{
 			activeChar.sendMessage("You must be on an awakened class to do this.");
 			return false;
@@ -50,7 +50,7 @@ public class SpecializeClass implements IBypassHandler
 			return false;
 		}
 		
-		boolean hasDeprecatedClass = (activeChar.getClassId() >= 139) && (activeChar.getClassId() <= 145);
+		boolean hasDeprecatedClass = activeChar.getClassId() >= 139 && activeChar.getClassId() <= 145;
 		
 		if (command.length() < 16)
 		{
@@ -59,7 +59,7 @@ public class SpecializeClass implements IBypassHandler
 			List<PlayerClass> classes = new ArrayList<PlayerClass>();
 			for (PlayerClass cl1 : PlayerClassTable.getInstance().getAllClasses())
 			{
-				if ((cl1.getLevel() == 76) && (cl1.getAwakeningClassId() == activeChar.getClassId()))
+				if (cl1.getLevel() == 76 && cl1.getAwakeningClassId() == activeChar.getClassId())
 				{
 					for (PlayerClass cl2 : PlayerClassTable.getInstance().getAllClasses())
 					{
@@ -73,11 +73,11 @@ public class SpecializeClass implements IBypassHandler
 			{
 				for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
 				{
-					if ((cl.getLevel() == 85) && (cl.getParent() != null))
+					if (cl.getLevel() == 85 && cl.getParent() != null)
 					{
 						if (cl.getParent().getAwakeningClassId() == activeChar.getClassId())
 							classes.add(cl);
-						else if ((activeChar.getCurrentClass().getParent() != null) && (cl.getParent().getAwakeningClassId() == activeChar.getCurrentClass().getParent().getAwakeningClassId()))
+						else if (activeChar.getCurrentClass().getParent() != null && cl.getParent().getAwakeningClassId() == activeChar.getCurrentClass().getParent().getAwakeningClassId())
 							classes.add(cl);
 					}
 				}
@@ -113,12 +113,12 @@ public class SpecializeClass implements IBypassHandler
 		{
 			try
 			{
-				if ((activeChar.getClassId() == activeChar.getBaseClass()) && activeChar.isHero())
+				if (activeChar.getClassId() == activeChar.getBaseClass() && activeChar.isHero())
 					return false;
 				
 				int classId = Integer.parseInt(command.substring(16));
 				PlayerClass prev = activeChar.getCurrentClass();
-				if (!hasDeprecatedClass && (prev.getLevel() == 85))
+				if (!hasDeprecatedClass && prev.getLevel() == 85)
 				{
 					if (!activeChar.isSubClassActive())
 					{
@@ -132,8 +132,7 @@ public class SpecializeClass implements IBypassHandler
 					}
 				}
 				
-				if (activeChar.getClassId() == activeChar.getBaseClass() && (activeChar.isHero()
-						|| Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
+				if (activeChar.getClassId() == activeChar.getBaseClass() && (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
 				{
 					Olympiad.getInstance().removeNoble(activeChar.getObjectId());
 					HeroesManager.getInstance().removeHero(activeChar.getObjectId());

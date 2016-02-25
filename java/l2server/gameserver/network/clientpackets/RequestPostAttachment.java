@@ -129,7 +129,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 				continue;
 			
 			// Calculate needed slots
-			if ((msg.getSenderId() > -1) && (item.getOwnerId() != msg.getSenderId()))
+			if (msg.getSenderId() > -1 && item.getOwnerId() != msg.getSenderId())
 			{
 				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to get wrong item (ownerId != senderId) from attachment!", Config.DEFAULT_PUNISH);
 				return;
@@ -169,7 +169,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 		}
 		
 		long adena = msg.getReqAdena();
-		if ((adena > 0) && !activeChar.reduceAdena("PayMail", adena, null, true))
+		if (adena > 0 && !activeChar.reduceAdena("PayMail", adena, null, true))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_RECEIVE_NO_ADENA));
 			return;
@@ -184,7 +184,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			if (item == null)
 				continue;
 			
-			if ((msg.getSenderId() > -1) && (item.getOwnerId() != msg.getSenderId()))
+			if (msg.getSenderId() > -1 && item.getOwnerId() != msg.getSenderId())
 			{
 				Util.logToFile("- " + activeChar.getName() + " could not retrieve " + item.getName() + " [" + item.getCount() + "] - MailSenderId[" + msg.getSenderId() + "] differs from ItemOwnerId[" + item.getOwnerId() + "].", "Logs/Mails/" + activeChar.getName() + "_Retrieve_Mails", "txt", true, false);
 				

@@ -18,7 +18,7 @@ public class TinGolem extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 116) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 116 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

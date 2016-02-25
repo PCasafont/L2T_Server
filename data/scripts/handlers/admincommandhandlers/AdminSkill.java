@@ -206,7 +206,7 @@ public class AdminSkill implements IAdminCommandHandler
 		
 		int maxSkillsPerPage = 10;
 		int maxPages = skills.length / maxSkillsPerPage;
-		if (skills.length > (maxSkillsPerPage * maxPages))
+		if (skills.length > maxSkillsPerPage * maxPages)
 			maxPages++;
 		
 		if (page > maxPages)
@@ -214,11 +214,11 @@ public class AdminSkill implements IAdminCommandHandler
 		
 		int skillsStart = maxSkillsPerPage * page;
 		int skillsEnd = skills.length;
-		if ((skillsEnd - skillsStart) > maxSkillsPerPage)
+		if (skillsEnd - skillsStart > maxSkillsPerPage)
 			skillsEnd = skillsStart + maxSkillsPerPage;
 		
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-		final StringBuilder replyMSG = StringUtil.startAppend(500 + (maxPages * 50) + (((skillsEnd - skillsStart) + 1) * 50), "<html><body>" + "<table width=260><tr>" + "<td width=40><button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Character Selection Menu</center></td>" + "<td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "</tr></table>" + "<br><br>" + "<center>Editing <font color=\"LEVEL\">", player.getName(), "</font></center>" + "<br><table width=270><tr><td>Lv: ", String.valueOf(player.getLevel()), " ", player.getCurrentClass().getName(), "</td></tr></table>" + "<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>" + "<tr><td>ruin the game...</td></tr></table>" + "<br><center>Click on the skill you wish to remove:</center>" + "<br>" + "<center><table width=270><tr>");
+		final StringBuilder replyMSG = StringUtil.startAppend(500 + maxPages * 50 + (skillsEnd - skillsStart + 1) * 50, "<html><body>" + "<table width=260><tr>" + "<td width=40><button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Character Selection Menu</center></td>" + "<td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "</tr></table>" + "<br><br>" + "<center>Editing <font color=\"LEVEL\">", player.getName(), "</font></center>" + "<br><table width=270><tr><td>Lv: ", String.valueOf(player.getLevel()), " ", player.getCurrentClass().getName(), "</td></tr></table>" + "<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>" + "<tr><td>ruin the game...</td></tr></table>" + "<br><center>Click on the skill you wish to remove:</center>" + "<br>" + "<center><table width=270><tr>");
 		
 		for (int x = 0; x < maxPages; x++)
 		{
@@ -414,7 +414,7 @@ public class AdminSkill implements IAdminCommandHandler
 			showMainPage(activeChar);
 			return;
 		}
-		if ((id < 370) || (id > 391) || (level < 1) || (level > 3))
+		if (id < 370 || id > 391 || level < 1 || level > 3)
 		{
 			activeChar.sendMessage("Usage: //add_clan_skill <skill_id> <level>");
 			showMainPage(activeChar);

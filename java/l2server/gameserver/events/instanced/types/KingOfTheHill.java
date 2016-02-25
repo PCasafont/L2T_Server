@@ -43,7 +43,7 @@ public class KingOfTheHill extends EventInstance
 					if (player == null)
 						continue;
 					
-					if ((highest == null) || (player.getZ() > highest.getZ()))
+					if (highest == null || player.getZ() > highest.getZ())
 						highest = player;
 				}
 				
@@ -104,7 +104,7 @@ public class KingOfTheHill extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
+		if (killedPlayerInstance == null || !isState(EventState.STARTED))
 			return;
 		
 		new EventTeleporter(killedPlayerInstance, _teams[0].getCoords(), false, false);

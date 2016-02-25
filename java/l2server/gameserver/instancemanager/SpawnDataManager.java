@@ -97,7 +97,7 @@ public class SpawnDataManager
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if ((spawn.getDbName() != null) && !spawn.getDbName().isEmpty())
+			if (spawn.getDbName() != null && !spawn.getDbName().isEmpty())
 				updateDbSpawnData(spawn);
 		}
 	}
@@ -105,7 +105,7 @@ public class SpawnDataManager
 	public void updateDbSpawnData(L2Spawn spawn)
 	{
 		L2Npc npc = spawn.getNpc();
-		if (((spawn.getNextRespawn() == 0) && (((npc.getCurrentHp() == npc.getMaxHp()) && (npc.getCurrentMp() == npc.getMaxMp())))) || ((spawn.getX() == 0) && (spawn.getY() == 0) && (npc.getCurrentHp() == 0)))
+		if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() && npc.getCurrentMp() == npc.getMaxMp() || spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0)
 			return;
 		
 		Connection con = null;

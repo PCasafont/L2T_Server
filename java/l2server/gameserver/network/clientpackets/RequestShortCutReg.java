@@ -54,7 +54,7 @@ public final class RequestShortCutReg extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_page > 10) || (_page < 0))
+		if (_page > 10 || _page < 0)
 			return;
 		
 		switch (_type)

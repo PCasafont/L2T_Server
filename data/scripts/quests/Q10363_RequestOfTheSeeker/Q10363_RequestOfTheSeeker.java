@@ -55,13 +55,13 @@ public class Q10363_RequestOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _nagel) && event.equalsIgnoreCase("33450-03.htm"))
+		if (npc.getNpcId() == _nagel && event.equalsIgnoreCase("33450-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if ((npc.getNpcId() == _celin) && event.equalsIgnoreCase("33451-03.htm") && (st.getInt("cond") == 7))
+		else if (npc.getNpcId() == _celin && event.equalsIgnoreCase("33451-03.htm") && st.getInt("cond") == 7)
 		{
 			st.unset("cond");
 			st.giveItems(1060, 100);
@@ -112,7 +112,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _celin) && (st.getInt("cond") == 7))
+		else if (npc.getNpcId() == _celin && st.getInt("cond") == 7)
 			htmltext = "33451-01.htm";
 		return htmltext;
 	}
@@ -141,7 +141,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 						}
 					}
 					
-					if (isCorpse && (st.getInt("cond") >= 1) && (st.getInt("cond") <= 5) && npc.canInteract(player))
+					if (isCorpse && st.getInt("cond") >= 1 && st.getInt("cond") <= 5 && npc.canInteract(player))
 					{
 						// TODO: Show according screen message
 						st.set("cond", String.valueOf(st.getInt("cond") + 1));
@@ -167,7 +167,7 @@ public class Q10363_RequestOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return (player.getLevel() >= 12) && (player.getLevel() <= 20) && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
+		return player.getLevel() >= 12 && player.getLevel() <= 20 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
 	}
 	
 	public static void main(String[] args)

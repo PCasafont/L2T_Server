@@ -34,7 +34,7 @@ public class TrapKnownList extends CharKnownList
 	@Override
 	public int getDistanceToForgetObject(L2Object object)
 	{
-		if ((object == getActiveChar().getOwner()) || (object == getActiveChar().getTarget()))
+		if (object == getActiveChar().getOwner() || object == getActiveChar().getTarget())
 			return 6000;
 		
 		return 3000;

@@ -59,7 +59,7 @@ public class StrSiegeAssault implements ISkillHandler
 		Castle castle = CastleManager.getInstance().getCastle(player);
 		Fort fort = FortManager.getInstance().getFort(player);
 		
-		if ((castle == null) && (fort == null))
+		if (castle == null && fort == null)
 			return;
 		
 		if (castle != null)
@@ -81,7 +81,7 @@ public class StrSiegeAssault implements ISkillHandler
 			for (L2Character target : (L2Character[]) targets)
 			{
 				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+				if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 				{
 					target.stopFakeDeath(true);
 				}
@@ -92,10 +92,10 @@ public class StrSiegeAssault implements ISkillHandler
 				byte shld = Formulas.calcShldUse(activeChar, target, skill);
 				boolean crit = Formulas.calcCrit(activeChar.getCriticalHit(target, skill), target);
 				double soul = L2ItemInstance.CHARGED_NONE;
-				if ((weapon != null) && (weapon.getItemType() != L2WeaponType.DAGGER))
+				if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
 					soul = weapon.getChargedSoulShot();
 				
-				if (!crit && ((skill.getCondition() & L2Skill.COND_CRIT) != 0))
+				if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
 					damage = 0;
 				else
 					damage = (int) Formulas.calcPhysSkillDam(activeChar, target, skill, shld, crit, dual, soul);

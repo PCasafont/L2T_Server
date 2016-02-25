@@ -18,7 +18,7 @@ public class AurabirdOwl extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 9) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 9 || getPlayer().isCursedWeaponEquipped())
 			return;
 		getPlayer().setIsFlyingMounted(true);
 		

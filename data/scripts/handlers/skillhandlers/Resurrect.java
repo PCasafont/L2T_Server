@@ -51,7 +51,7 @@ public class Resurrect implements ISkillHandler
 		if (activeChar instanceof L2PcInstance)
 			player = (L2PcInstance) activeChar;
 		
-		if ((player != null) && player.isInOlympiadMode() && player.isOlympiadStart())
+		if (player != null && player.isInOlympiadMode() && player.isOlympiadStart())
 			return;
 		
 		L2PcInstance targetPlayer;

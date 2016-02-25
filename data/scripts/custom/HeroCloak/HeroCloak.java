@@ -56,7 +56,7 @@ public class HeroCloak extends Quest
 		else
 		{
 			int heroRank = Olympiad.getInstance().getPosition(player);
-			if ((heroRank > 0) && (heroRank <= 3))
+			if (heroRank > 0 && heroRank <= 3)
 			{
 				if (player.getInventory().getItemByItemId(GLORIOUS_CLOAK) == null)
 					st.giveItems(GLORIOUS_CLOAK, 1);

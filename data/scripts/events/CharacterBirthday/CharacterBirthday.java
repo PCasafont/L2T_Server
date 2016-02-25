@@ -106,7 +106,7 @@ public class CharacterBirthday extends Quest
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-		if ((st != null) && (player.checkBirthDay() == 0))
+		if (st != null && player.checkBirthDay() == 0)
 		{
 			player.sendPacket(new PlaySound(1, "HB01", 0, 0, 0, 0, 0));
 			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);

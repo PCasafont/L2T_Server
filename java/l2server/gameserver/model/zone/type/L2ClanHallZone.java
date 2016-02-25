@@ -69,7 +69,7 @@ public class L2ClanHallZone extends L2SpawnZone
 			AgitDecoInfo deco = new AgitDecoInfo(clanHall);
 			((L2PcInstance) character).sendPacket(deco);
 		}
-		else if ((character instanceof L2Attackable) && (((L2Attackable) character).getMostHated() != null))
+		else if (character instanceof L2Attackable && ((L2Attackable) character).getMostHated() != null)
 		{
 			((L2Attackable) character).escape("Do you want to kidnap me in this dirty clan hall? No, thanks :)");
 			((L2Attackable) character).getMostHated().reduceCurrentHp(100000, character, null);

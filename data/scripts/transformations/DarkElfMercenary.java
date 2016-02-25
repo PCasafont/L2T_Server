@@ -18,7 +18,7 @@ public class DarkElfMercenary extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 12) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 12 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

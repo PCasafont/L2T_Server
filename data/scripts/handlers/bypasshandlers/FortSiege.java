@@ -33,7 +33,7 @@ public class FortSiege implements IBypassHandler
 		if (!(target instanceof L2FortSiegeNpcInstance))
 			return false;
 		
-		if ((activeChar.getClanId() > 0) && ((activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) == L2Clan.CP_CS_MANAGE_SIEGE))
+		if (activeChar.getClanId() > 0 && (activeChar.getClanPrivileges() & L2Clan.CP_CS_MANAGE_SIEGE) == L2Clan.CP_CS_MANAGE_SIEGE)
 		{
 			/*
 			if (System.currentTimeMillis() < TerritoryWarManager.getInstance().getTWStartTimeInMillis()

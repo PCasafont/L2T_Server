@@ -33,7 +33,7 @@ public class DecoyStat extends NpcStat
 	@Override
 	public int getRunSpeed()
 	{
-		if ((getActiveChar() == null) || (getActiveChar().getOwner() == null))
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
 			return super.getRunSpeed();
 		
 		return getActiveChar().getOwner().getRunSpeed();
@@ -42,7 +42,7 @@ public class DecoyStat extends NpcStat
 	@Override
 	public int getPAtkSpd()
 	{
-		if ((getActiveChar() == null) || (getActiveChar().getOwner() == null))
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
 			return super.getPAtkSpd();
 		
 		return getActiveChar().getOwner().getPAtkSpd();
@@ -51,7 +51,7 @@ public class DecoyStat extends NpcStat
 	@Override
 	public int getMAtkSpd()
 	{
-		if ((getActiveChar() == null) || (getActiveChar().getOwner() == null))
+		if (getActiveChar() == null || getActiveChar().getOwner() == null)
 			return super.getMAtkSpd();
 		
 		return getActiveChar().getOwner().getMAtkSpd();

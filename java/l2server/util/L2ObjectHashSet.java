@@ -70,7 +70,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	{
 		int size = PRIMES[0];
 		_table = (T[]) new L2Object[size];
-		_collisions = new int[(size + 31) >> 5];
+		_collisions = new int[size + 31 >> 5];
 		if (DEBUG)
 			check();
 	}
@@ -102,7 +102,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	{
 		int size = PRIMES[0];
 		_table = (T[]) new L2Object[size];
-		_collisions = new int[(size + 31) >> 5];
+		_collisions = new int[size + 31 >> 5];
 		_count = 0;
 		if (DEBUG)
 			check();
@@ -113,7 +113,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 		if (DEBUG)
 		{
 			int cnt = 0;
-			assert _collisions.length == ((_table.length + 31) >> 5);
+			assert _collisions.length == _table.length + 31 >> 5;
 			for (T obj : _table)
 			{
 				if (obj != null)
@@ -133,22 +133,22 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 			return;
 		if (contains(obj))
 			return;
-		if (_count >= (_table.length / 2))
+		if (_count >= _table.length / 2)
 			expand();
 		final int hashcode = obj.getObjectId();
 		assert hashcode > 0;
 		int seed = hashcode;
-		int incr = 1 + (((seed >> 5) + 1) % (_table.length - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (_table.length - 1);
 		int ntry = 0;
 		int slot = -1; // keep last found slot
 		do
 		{
-			int pos = (seed % _table.length) & 0x7FFFFFFF;
+			int pos = seed % _table.length & 0x7FFFFFFF;
 			if (_table[pos] == null)
 			{
 				if (slot < 0)
 					slot = pos;
-				if ((_collisions[pos >> 5] & (1 << (pos & 31))) == 0)
+				if ((_collisions[pos >> 5] & 1 << (pos & 31)) == 0)
 				{
 					// found an empty slot without previous collisions,
 					// but use previously found slot
@@ -170,7 +170,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 				assert obj.getObjectId() != _table[pos].getObjectId();
 				// if there was no collisions at this slot, and we found a free
 				// slot previously - use found slot
-				if ((slot >= 0) && ((_collisions[pos >> 5] & (1 << (pos & 31))) == 0))
+				if (slot >= 0 && (_collisions[pos >> 5] & 1 << (pos & 31)) == 0)
 				{
 					_table[slot] = obj;
 					_count++;
@@ -205,11 +205,11 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 		int hashcode = obj.getObjectId();
 		assert hashcode > 0;
 		int seed = hashcode;
-		int incr = 1 + (((seed >> 5) + 1) % (_table.length - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (_table.length - 1);
 		int ntry = 0;
 		do
 		{
-			int pos = (seed % _table.length) & 0x7FFFFFFF;
+			int pos = seed % _table.length & 0x7FFFFFFF;
 			if (_table[pos] == obj)
 			{
 				// found the object
@@ -222,7 +222,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 				return;
 			}
 			// check for collision (if we previously deleted element)
-			if ((_table[pos] == null) && ((_collisions[pos >> 5] & (1 << (pos & 31))) == 0))
+			if (_table[pos] == null && (_collisions[pos >> 5] & 1 << (pos & 31)) == 0)
 			{
 				if (DEBUG)
 					check();
@@ -256,15 +256,15 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 		int hashcode = obj.getObjectId();
 		assert hashcode > 0;
 		int seed = hashcode;
-		int incr = 1 + (((seed >> 5) + 1) % (size - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (size - 1);
 		int ntry = 0;
 		do
 		{
-			int pos = (seed % size) & 0x7FFFFFFF;
+			int pos = seed % size & 0x7FFFFFFF;
 			if (_table[pos] == obj)
 				return true;
 			// check for collision (if we previously deleted element)
-			if ((_table[pos] == null) && ((_collisions[pos >> 5] & (1 << (pos & 31))) == 0))
+			if (_table[pos] == null && (_collisions[pos >> 5] & 1 << (pos & 31)) == 0)
 			{
 				return false;
 			}
@@ -279,7 +279,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	{
 		int newSize = getPrime(_table.length + 1);
 		L2Object[] newTable = new L2Object[newSize];
-		int[] newCollisions = new int[(newSize + 31) >> 5];
+		int[] newCollisions = new int[newSize + 31 >> 5];
 		
 		// over all old entries
 		next_entry: for (int i = 0; i < _table.length; i++)
@@ -289,11 +289,11 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 				continue;
 			final int hashcode = obj.getObjectId();
 			int seed = hashcode;
-			int incr = 1 + (((seed >> 5) + 1) % (newSize - 1));
+			int incr = 1 + ((seed >> 5) + 1) % (newSize - 1);
 			int ntry = 0;
 			do
 			{
-				int pos = (seed % newSize) & 0x7FFFFFFF;
+				int pos = seed % newSize & 0x7FFFFFFF;
 				if (newTable[pos] == null)
 				{
 					// found an empty slot without previous collisions,

@@ -35,7 +35,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 		_routes = new ArrayList<Integer>();
 		_id = id;
 		_lvl = lvl;
-		_enchant = (enchRoute * 1000) + enchLvl;
+		_enchant = enchRoute * 1000 + enchLvl;
 		
 		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(_id);
 		// do we have this skill?
@@ -51,7 +51,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				
 				// if it exists add it
 				if (esd != null)
-					_routes.add(_lvl + (((enchRoute * 1000) + enchLvl + (_maxEnchanted ? 0 : 1)) << 16));
+					_routes.add(_lvl + (enchRoute * 1000 + enchLvl + (_maxEnchanted ? 0 : 1) << 16));
 				
 				for (int route : enchantLearn.getAllRoutes())
 				{
@@ -59,7 +59,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 						continue;
 					// add other levels of all routes - same lvl as enchanted
 					// lvl
-					_routes.add(_lvl + (((route * 1000) + enchLvl) << 16));
+					_routes.add(_lvl + (route * 1000 + enchLvl << 16));
 				}
 				
 			}
@@ -69,7 +69,7 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 				for (int route : enchantLearn.getAllRoutes())
 				{
 					// add first level (+1) of all routes
-					_routes.add(_lvl + (((route * 1000) + 1) << 16));
+					_routes.add(_lvl + (route * 1000 + 1 << 16));
 				}
 			}
 		}

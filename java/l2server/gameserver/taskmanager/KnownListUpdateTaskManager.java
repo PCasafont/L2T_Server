@@ -73,7 +73,7 @@ public class KnownListUpdateTaskManager
 							failed = _failedRegions.contains(r); // failed on last pass
 							if (r.isActive()) // and check only if the region is active
 							{
-								updateRegion(r, ((_fullUpdateTimer == FULL_UPDATE_TIMER) || failed), updatePass);
+								updateRegion(r, _fullUpdateTimer == FULL_UPDATE_TIMER || failed, updatePass);
 							}
 							if (failed)
 								_failedRegions.remove(r); // if all ok, remove
@@ -108,11 +108,11 @@ public class KnownListUpdateTaskManager
 			{
 				for (L2Object object : vObj) // and for all members in region
 				{
-					if ((object == null) || !object.isVisible())
+					if (object == null || !object.isVisible())
 						continue; // skip dying objects
 						
 					// Some mobs need faster knownlist update
-					final boolean aggro = (Config.GUARD_ATTACK_AGGRO_MOB && (object instanceof L2GuardInstance)) || ((object instanceof L2Attackable) && (((L2Attackable) object).getEnemyClan() != null));
+					final boolean aggro = Config.GUARD_ATTACK_AGGRO_MOB && object instanceof L2GuardInstance || object instanceof L2Attackable && ((L2Attackable) object).getEnemyClan() != null;
 					
 					if (forgetObjects)
 					{
@@ -121,7 +121,7 @@ public class KnownListUpdateTaskManager
 					}
 					for (L2WorldRegion regi : region.getSurroundingRegions())
 					{
-						if ((object instanceof L2Playable) || (aggro && regi.isActive()) || fullUpdate)
+						if (object instanceof L2Playable || aggro && regi.isActive() || fullUpdate)
 						{
 							Collection<L2Object> inrObj = regi.getVisibleObjects().values();
 							// synchronized (regi.getVisibleObjects())

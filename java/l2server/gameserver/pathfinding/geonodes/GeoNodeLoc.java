@@ -41,7 +41,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return L2World.MAP_MIN_X + (_x * 128) + 48;
+		return L2World.MAP_MIN_X + _x * 128 + 48;
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return L2World.MAP_MIN_Y + (_y * 128) + 48;
+		return L2World.MAP_MIN_Y + _y * 128 + 48;
 	}
 	
 	/**
@@ -88,9 +88,9 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = (prime * result) + _x;
-		result = (prime * result) + _y;
-		result = (prime * result) + _z;
+		result = prime * result + _x;
+		result = prime * result + _y;
+		result = prime * result + _z;
 		return result;
 	}
 	

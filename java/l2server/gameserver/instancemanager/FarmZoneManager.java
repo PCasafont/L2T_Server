@@ -198,7 +198,7 @@ public class FarmZoneManager
 							int maxLvl = Integer.parseInt(levelRange[1]);
 							for (L2NpcTemplate mob : NpcTable.getInstance().getAllTemplates())
 							{
-								if (mob.Type.equals("L2Monster") && (mob.Level >= minLvl) && (mob.Level <= maxLvl))
+								if (mob.Type.equals("L2Monster") && mob.Level >= minLvl && mob.Level <= maxLvl)
 									mobs.add(mob);
 							}
 						}
@@ -337,7 +337,7 @@ public class FarmZoneManager
 								int min = drop.getMinDrop();
 								int max = drop.getMaxDrop();
 								float chance = drop.getChance() * dropMultiplier;
-								if (((min >= 10) && (chance > 100.0f)) || (((min * dropMultiplier) >= 5) && ((chance / dropMultiplier) <= 100.01f)))
+								if (min >= 10 && chance > 100.0f || min * dropMultiplier >= 5 && chance / dropMultiplier <= 100.01f)
 								{
 									min = Math.round(min * dropMultiplier);
 									max = Math.round(max * dropMultiplier);
@@ -351,7 +351,7 @@ public class FarmZoneManager
 									chance /= 2.0f;
 								}
 								
-								while ((chance < 50.0f) && (min > 1))
+								while (chance < 50.0f && min > 1)
 								{
 									min /= 2;
 									max /= 2;
@@ -366,7 +366,7 @@ public class FarmZoneManager
 								int min = drop.getMinDrop();
 								int max = drop.getMaxDrop();
 								float chance = drop.getChance() * dropMultiplier;
-								if (((min >= 10) && (chance > 100.0f)) || (((min * dropMultiplier) >= 5) && ((chance / dropMultiplier) <= 100.01f)))
+								if (min >= 10 && chance > 100.0f || min * dropMultiplier >= 5 && chance / dropMultiplier <= 100.01f)
 								{
 									min = Math.round(min * dropMultiplier);
 									max = Math.round(max * dropMultiplier);
@@ -380,7 +380,7 @@ public class FarmZoneManager
 									chance /= 2.0f;
 								}
 								
-								while ((chance < 50.0f) && (min > 1))
+								while (chance < 50.0f && min > 1)
 								{
 									min /= 2;
 									max /= 2;

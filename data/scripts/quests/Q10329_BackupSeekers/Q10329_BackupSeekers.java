@@ -102,7 +102,7 @@ public class Q10329_BackupSeekers extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _kakai) && event.equalsIgnoreCase("30565-03.htm"))
+		if (npc.getNpcId() == _kakai && event.equalsIgnoreCase("30565-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -159,7 +159,7 @@ public class Q10329_BackupSeekers extends Quest
 				}
 			}, 60000);
 		}
-		else if ((npc.getNpcId() == _atran) && event.equalsIgnoreCase("33448-02.htm") && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(906, 1);
@@ -173,7 +173,7 @@ public class Q10329_BackupSeekers extends Quest
 			// Main quests state
 			player.setGlobalQuestFlag(GlobalQuest.STARTING, 10);
 		}
-		else if ((npc.getNpcId() == _apprentice) && event.equalsIgnoreCase("MountKookaru"))
+		else if (npc.getNpcId() == _apprentice && event.equalsIgnoreCase("MountKookaru"))
 		{
 			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
 			st.set("secondRoute", "1");
@@ -284,7 +284,7 @@ public class Q10329_BackupSeekers extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _atran) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _atran && st.getInt("cond") == 1)
 			htmltext = "33448-01.htm";
 		return htmltext;
 	}
@@ -301,7 +301,7 @@ public class Q10329_BackupSeekers extends Quest
 			guideLastChatId = _guideLastChatId2;
 		}
 		
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (guideRoute.size() - 1)))
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -309,7 +309,7 @@ public class Q10329_BackupSeekers extends Quest
 				return null;
 			}
 			int chatId = guideLastChatId;
-			if (guideAI.getCurrentPos() != (guideRoute.size() - 1))
+			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -331,13 +331,13 @@ public class Q10329_BackupSeekers extends Quest
 	{
 		List<L2NpcWalkerNode> guideRoute = _guideRoute1;
 		
-		if ((guideAI.getGuided() == null) || (guideAI.getGuided().getQuestState(qn) == null))
+		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null)
 			return null;
 		
 		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
 			guideRoute = _guideRoute2;
 		
-		if (guideAI.getCurrentPos() == (guideRoute.size() - 1))
+		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -359,7 +359,7 @@ public class Q10329_BackupSeekers extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

@@ -105,7 +105,7 @@ public class TerritoryWarSuperClass extends Quest
 				TerritoryWard ward = TerritoryWarManager.getInstance().getTerritoryWard(caster);
 				if (ward == null)
 					return super.onSkillSee(npc, caster, skill, targets, isPet);
-				if ((caster.getSiegeSide() - 80) == ward.getOwnerCastleId())
+				if (caster.getSiegeSide() - 80 == ward.getOwnerCastleId())
 				{
 					for (TerritoryNPCSpawn wardSpawn : TerritoryWarManager.getInstance().getTerritory(ward.getOwnerCastleId()).getOwnedWard())
 					{
@@ -138,10 +138,10 @@ public class TerritoryWarSuperClass extends Quest
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet)
 	{
-		if ((npc.getCurrentHp() == npc.getMaxHp()) && Util.contains(NPC_IDS, npc.getNpcId()))
+		if (npc.getCurrentHp() == npc.getMaxHp() && Util.contains(NPC_IDS, npc.getNpcId()))
 		{
 			int territoryId = getTerritoryIdForThisNPCId(npc.getNpcId());
-			if ((territoryId >= 81) && (territoryId <= 89))
+			if (territoryId >= 81 && territoryId <= 89)
 				for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 					if (pl.getSiegeSide() == territoryId)
 					{
@@ -171,7 +171,7 @@ public class TerritoryWarSuperClass extends Quest
 		else if (Util.contains(LEADER_IDS, npc.getNpcId()))
 			TerritoryWarManager.getInstance().giveTWPoint(killer, TERRITORY_ID, 3);
 		
-		if ((killer.getSiegeSide() != TERRITORY_ID) && (TerritoryWarManager.getInstance().getTerritory(killer.getSiegeSide() - 80) != null))
+		if (killer.getSiegeSide() != TERRITORY_ID && TerritoryWarManager.getInstance().getTerritory(killer.getSiegeSide() - 80) != null)
 			TerritoryWarManager.getInstance().getTerritory(killer.getSiegeSide() - 80).getQuestDone()[0]++;
 		return super.onKill(npc, killer, isPet);
 	}
@@ -179,7 +179,7 @@ public class TerritoryWarSuperClass extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if ((npc != null) || (player != null))
+		if (npc != null || player != null)
 			return null;
 		StringTokenizer st = new StringTokenizer(event, " ");
 		event = st.nextToken(); // Get actual command
@@ -271,7 +271,7 @@ public class TerritoryWarSuperClass extends Quest
 	private void handleBecomeMercenaryQuest(L2PcInstance player, boolean catapult)
 	{
 		QuestState _state = player.getQuestState("147_PathtoBecominganEliteMercenary");
-		if ((_state != null) && (_state.getState() == State.STARTED))
+		if (_state != null && _state.getState() == State.STARTED)
 		{
 			int _cond = _state.getInt("cond");
 			if (catapult)
@@ -283,7 +283,7 @@ public class TerritoryWarSuperClass extends Quest
 			}
 			else
 			{
-				if ((_cond == 1) || (_cond == 3))
+				if (_cond == 1 || _cond == 3)
 				{
 					// Get
 					int _kills = _state.getInt("kills");
@@ -310,10 +310,10 @@ public class TerritoryWarSuperClass extends Quest
 		int cond = 0;
 		// Additional Handle for Quest
 		QuestState _sfh = player.getQuestState("176_StepsForHonor");
-		if ((_sfh != null) && (_sfh.getState() == State.STARTED))
+		if (_sfh != null && _sfh.getState() == State.STARTED)
 		{
 			cond = _sfh.getInt("cond");
-			if ((cond == 1) || (cond == 3) || (cond == 5) || (cond == 7))
+			if (cond == 1 || cond == 3 || cond == 5 || cond == 7)
 			{
 				// Get kills
 				kills = _sfh.getInt("kills");
@@ -322,22 +322,22 @@ public class TerritoryWarSuperClass extends Quest
 				// Save
 				_sfh.set("kills", String.valueOf(kills));
 				// Check
-				if ((cond == 1) && (kills >= 9))
+				if (cond == 1 && kills >= 9)
 				{
 					_sfh.set("cond", "2");
 					_sfh.set("kills", "0");
 				}
-				else if ((cond == 3) && (kills >= 18))
+				else if (cond == 3 && kills >= 18)
 				{
 					_sfh.set("cond", "4");
 					_sfh.set("kills", "0");
 				}
-				else if ((cond == 5) && (kills >= 27))
+				else if (cond == 5 && kills >= 27)
 				{
 					_sfh.set("cond", "6");
 					_sfh.set("kills", "0");
 				}
-				else if ((cond == 7) && (kills >= 36))
+				else if (cond == 7 && kills >= 36)
 				{
 					_sfh.set("cond", "8");
 					_sfh.unset("kills");
@@ -349,16 +349,16 @@ public class TerritoryWarSuperClass extends Quest
 	@Override
 	public String onDeath(L2Character killer, L2Character victim, QuestState qs)
 	{
-		if ((killer == victim) || !(victim instanceof L2PcInstance) || (victim.getLevel() < 61))
+		if (killer == victim || !(victim instanceof L2PcInstance) || victim.getLevel() < 61)
 			return "";
 		L2PcInstance actingPlayer = killer.getActingPlayer();
-		if ((actingPlayer != null) && (qs.getPlayer() != null))
+		if (actingPlayer != null && qs.getPlayer() != null)
 		{
 			if (actingPlayer.getParty() != null)
 			{
 				for (L2PcInstance pl : actingPlayer.getParty().getPartyMembers())
 				{
-					if ((pl.getSiegeSide() == qs.getPlayer().getSiegeSide()) || (pl.getSiegeSide() == 0) || !Util.checkIfInRange(2000, killer, pl, false))
+					if (pl.getSiegeSide() == qs.getPlayer().getSiegeSide() || pl.getSiegeSide() == 0 || !Util.checkIfInRange(2000, killer, pl, false))
 						continue;
 					if (pl == actingPlayer)
 					{
@@ -368,7 +368,7 @@ public class TerritoryWarSuperClass extends Quest
 					handleKillTheQuest(pl);
 				}
 			}
-			else if ((actingPlayer.getSiegeSide() != qs.getPlayer().getSiegeSide()) && (actingPlayer.getSiegeSide() > 0))
+			else if (actingPlayer.getSiegeSide() != qs.getPlayer().getSiegeSide() && actingPlayer.getSiegeSide() > 0)
 			{
 				handleKillTheQuest(actingPlayer);
 				handleStepsForHonor(actingPlayer);

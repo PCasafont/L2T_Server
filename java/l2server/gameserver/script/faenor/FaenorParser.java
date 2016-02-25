@@ -101,7 +101,7 @@ public abstract class FaenorParser extends Parser
 	
 	public static double getPercent(String percent)
 	{
-		return (Double.parseDouble(percent.split("%")[0]) / 100.0);
+		return Double.parseDouble(percent.split("%")[0]) / 100.0;
 	}
 	
 	protected static int getInt(String number)

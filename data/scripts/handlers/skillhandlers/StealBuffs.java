@@ -111,7 +111,7 @@ public class StealBuffs implements ISkillHandler
 				
 				// if eff time is smaller than 5 sec, will not be stolen, just to save CPU,
 				// avoid synchronization(?) problems and NPEs
-				if ((effect.getDuration() - effect.getTime()) < 5)
+				if (effect.getDuration() - effect.getTime() < 5)
 				{
 					effects[i] = null;
 					continue;
@@ -170,7 +170,7 @@ public class StealBuffs implements ISkillHandler
 					
 					// Reduce land rate depending on effect's enchant level
 					if (effect.getLevelHash() > 100)
-						chance -= (effect.getLevelHash() % 100) * ENCHANT_BENEFIT;
+						chance -= effect.getLevelHash() % 100 * ENCHANT_BENEFIT;
 					if (chance < MIN_CANCEL_CHANCE)
 						chance = MIN_CANCEL_CHANCE;
 					
@@ -201,7 +201,7 @@ public class StealBuffs implements ISkillHandler
 					if (effect != null)
 					{
 						effect.scheduleEffect();
-						if (effect.getShowIcon() && (activeChar instanceof L2PcInstance))
+						if (effect.getShowIcon() && activeChar instanceof L2PcInstance)
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(effect);
@@ -229,7 +229,7 @@ public class StealBuffs implements ISkillHandler
 		{
 			// Applying self-effects
 			effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

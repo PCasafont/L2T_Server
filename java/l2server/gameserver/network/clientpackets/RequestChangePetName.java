@@ -59,7 +59,7 @@ public final class RequestChangePetName extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_ALREADY_IN_USE_BY_ANOTHER_PET));
 			return;
 		}
-		else if ((_name.length() < 3) || (_name.length() > 16))
+		else if (_name.length() < 3 || _name.length() > 16)
 		{
 			// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessage.NAMING_PETNAME_UP_TO_8CHARS);
 			activeChar.sendMessage("Your pet's name can be up to 16 characters.");

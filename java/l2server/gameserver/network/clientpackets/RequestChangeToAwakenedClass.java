@@ -96,7 +96,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 				boolean remove = true;
 				for (L2SkillLearn sl : cl.getSkills().values())
 				{
-					if ((sl.getMinLevel() >= 85) && ((sl.getId() == skillId) || sl.getCostSkills().contains(skillId)))
+					if (sl.getMinLevel() >= 85 && (sl.getId() == skillId || sl.getCostSkills().contains(skillId)))
 					{
 						remove = false;
 						break;
@@ -115,7 +115,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket
 		
 		player.setClassId(cl.getId());
 		
-		if (!player.isSubClassActive() && (previousClass.getId() == player.getBaseClass()))
+		if (!player.isSubClassActive() && previousClass.getId() == player.getBaseClass())
 			player.setBaseClass(cl.getId());
 		
 		if (Config.isServer(Config.DREAMS))

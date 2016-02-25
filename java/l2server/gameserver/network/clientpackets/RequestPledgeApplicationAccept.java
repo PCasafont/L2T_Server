@@ -48,7 +48,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || !activeChar.isClanLeader())
+		if (activeChar == null || !activeChar.isClanLeader())
 			return;
 		
 		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(_applicantId);
@@ -75,7 +75,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket
 				return;
 			
 			final String pledgeName = clan.getName();
-			final String subPledgeName = (clan.getSubPledge(_pledgeType) != null ? activeChar.getClan().getSubPledge(_pledgeType).getName() : null);
+			final String subPledgeName = clan.getSubPledge(_pledgeType) != null ? activeChar.getClan().getSubPledge(_pledgeType).getName() : null;
 			target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, _pledgeType, pledgeName));
 		}
 		else

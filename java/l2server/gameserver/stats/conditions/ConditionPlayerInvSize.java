@@ -45,7 +45,7 @@ public class ConditionPlayerInvSize extends Condition
 	public boolean testImpl(Env env)
 	{
 		if (env.player instanceof L2PcInstance)
-			return ((L2PcInstance) env.player).getInventory().getSize(false) <= (((L2PcInstance) env.player).getInventoryLimit() - _size);
+			return ((L2PcInstance) env.player).getInventory().getSize(false) <= ((L2PcInstance) env.player).getInventoryLimit() - _size;
 		return true;
 	}
 }

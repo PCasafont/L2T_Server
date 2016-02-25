@@ -35,7 +35,7 @@ public class ExMenteeSearch extends L2GameServerPacket
 		_page = page;
 		_playersInPage = 64;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-			if (player.getSubClasses().isEmpty() && (player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel))
+			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
 				_mentees.add(player);
 	}
 	
@@ -50,7 +50,7 @@ public class ExMenteeSearch extends L2GameServerPacket
 			int i = 1;
 			for (L2PcInstance player : _mentees)
 			{
-				if ((i <= (_playersInPage * _page)) && (i > (_playersInPage * (_page - 1))))
+				if (i <= _playersInPage * _page && i > _playersInPage * (_page - 1))
 				{
 					writeS(player.getName());
 					writeD(player.getClassId());

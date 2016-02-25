@@ -63,11 +63,11 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if ((player != null) && !player.isAlikeDead())
+		if (player != null && !player.isAlikeDead())
 		{
 			// TODO for summons
 			boolean isPet = false;
-			if (event.endsWith("_pet") && (player.getPet() != null) && !player.getPet().isDead())
+			if (event.endsWith("_pet") && player.getPet() != null && !player.getPet().isDead())
 				isPet = true;
 			
 			if (event.startsWith("rainbow_frog"))
@@ -88,7 +88,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 				npc.doCast(skill);
 				for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(200))
 				{
-					if ((target != null) && (target instanceof L2Attackable) && (target.getAI() != null))
+					if (target != null && target instanceof L2Attackable && target.getAI() != null)
 					{
 						skill.getEffects(npc, target);
 						attackPlayer((L2Attackable) target, isPet ? player.getPet() : player);
@@ -134,7 +134,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 		{
 			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000))
 			{
-				if ((target != null) && (target instanceof L2Attackable) && (target.getAI() != null))
+				if (target != null && target instanceof L2Attackable && target.getAI() != null)
 				{
 					target.setIsRunning(true);
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(npc.getX(), npc.getY(), npc.getZ(), 0));
@@ -155,7 +155,7 @@ public class PlainsOfLizardman extends L2AttackableAIScript
 		
 		L2Skill trigger = SkillTable.getInstance().getInfo(skill_id, skill_level);
 		
-		if ((trigger != null) && playable.isInsideRadius(caster, trigger.getCastRange(), true, false) && (playable.getInstanceId() == caster.getInstanceId()))
+		if (trigger != null && playable.isInsideRadius(caster, trigger.getCastRange(), true, false) && playable.getInstanceId() == caster.getInstanceId())
 		{
 			playable.broadcastPacket(new MagicSkillUse(playable, playable, skill_id, skill_level, 0, 0, 0));
 			

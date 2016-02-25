@@ -202,7 +202,7 @@ public class Shutdown extends Thread
 		
 		try
 		{
-			if ((Config.OFFLINE_BUFFERS_ENABLE) && Config.OFFLINE_BUFFERS_RESTORE)
+			if (Config.OFFLINE_BUFFERS_ENABLE && Config.OFFLINE_BUFFERS_RESTORE)
 				CustomOfflineBuffersManager.getInstance().storeOfflineBuffers();
 		}
 		catch (Throwable t)
@@ -370,7 +370,7 @@ public class Shutdown extends Thread
 				try
 				{
 					L2GameClient client = player.getClient();
-					if ((client != null) && !client.isDetached())
+					if (client != null && !client.isDetached())
 					{
 						client.close(ServerClose.STATIC_PACKET);
 						client.setActiveChar(null);

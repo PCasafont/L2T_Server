@@ -80,7 +80,7 @@ public class PlayerAssistsManager
 	{
 		long curTime = System.currentTimeMillis();
 		Set<L2PcInstance> assistants = new HashSet<L2PcInstance>();
-		if ((killer != null) && _players.containsKey(killer.getObjectId()))
+		if (killer != null && _players.containsKey(killer.getObjectId()))
 		{
 			PlayerInfo killerInfo = _players.get(killer.getObjectId());
 			
@@ -99,7 +99,7 @@ public class PlayerAssistsManager
 				killerInfo.HelpTimers.remove(toDelete);
 		}
 		
-		if ((victim != null) && _players.containsKey(victim.getObjectId()))
+		if (victim != null && _players.containsKey(victim.getObjectId()))
 		{
 			PlayerInfo victimInfo = _players.get(victim.getObjectId());
 			

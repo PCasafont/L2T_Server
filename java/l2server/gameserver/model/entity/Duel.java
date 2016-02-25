@@ -329,7 +329,7 @@ public class Duel
 			// Party duels take place in arenas - should be no other players there
 			return false;
 		}
-		else if ((_playerA.getPvpFlag() != 0) || (_playerB.getPvpFlag() != 0))
+		else if (_playerA.getPvpFlag() != 0 || _playerB.getPvpFlag() != 0)
 		{
 			if (sendMessage)
 			{
@@ -351,7 +351,7 @@ public class Duel
 		// Save player Conditions
 		savePlayerConditions();
 		
-		if ((_playerA == null) || (_playerB == null) || _playerA.isInDuel() || _playerB.isInDuel())
+		if (_playerA == null || _playerB == null || _playerA.isInDuel() || _playerB.isInDuel())
 		{
 			// clean up
 			_playerConditions.clear();
@@ -560,13 +560,13 @@ public class Duel
 		
 		for (L2PcInstance temp : _playerA.getParty().getPartyMembers())
 		{
-			temp.teleToLocation((x + offset) - 180, y - 150, z);
+			temp.teleToLocation(x + offset - 180, y - 150, z);
 			offset += 40;
 		}
 		offset = 0;
 		for (L2PcInstance temp : _playerB.getParty().getPartyMembers())
 		{
-			temp.teleToLocation((x + offset) - 180, y + 150, z);
+			temp.teleToLocation(x + offset - 180, y + 150, z);
 			offset += 40;
 		}
 	}
@@ -580,7 +580,7 @@ public class Duel
 		if (_playerA == null)
 			return;
 		
-		if (_partyDuel && (_playerA.getParty() != null))
+		if (_partyDuel && _playerA.getParty() != null)
 		{
 			for (L2PcInstance temp : _playerA.getParty().getPartyMembers())
 				temp.sendPacket(packet);
@@ -598,7 +598,7 @@ public class Duel
 		if (_playerB == null)
 			return;
 		
-		if (_partyDuel && (_playerB.getParty() != null))
+		if (_partyDuel && _playerB.getParty() != null)
 		{
 			for (L2PcInstance temp : _playerB.getParty().getPartyMembers())
 				temp.sendPacket(packet);
@@ -613,7 +613,7 @@ public class Duel
 	 */
 	public L2PcInstance getWinner()
 	{
-		if (!getFinished() || (_playerA == null) || (_playerB == null))
+		if (!getFinished() || _playerA == null || _playerB == null)
 			return null;
 		if (_playerA.getDuelState() == DUELSTATE_WINNER)
 			return _playerA;
@@ -628,7 +628,7 @@ public class Duel
 	 */
 	public L2PcInstance getLooser()
 	{
-		if (!getFinished() || (_playerA == null) || (_playerB == null))
+		if (!getFinished() || _playerA == null || _playerB == null)
 			return null;
 		if (_playerA.getDuelState() == DUELSTATE_WINNER)
 			return _playerB;
@@ -648,7 +648,7 @@ public class Duel
 		if (looser == null)
 			return;
 		
-		if (_partyDuel && (looser.getParty() != null))
+		if (_partyDuel && looser.getParty() != null)
 		{
 			for (L2PcInstance temp : looser.getParty().getPartyMembers())
 				temp.broadcastPacket(new SocialAction(temp.getObjectId(), 7));
@@ -690,7 +690,7 @@ public class Duel
 	 */
 	public void endDuel(DuelResultEnum result)
 	{
-		if ((_playerA == null) || (_playerB == null))
+		if (_playerA == null || _playerB == null)
 		{
 			//clean up
 			_playerConditions.clear();
@@ -775,7 +775,7 @@ public class Duel
 	public DuelResultEnum checkEndDuelCondition()
 	{
 		// one of the players might leave during duel
-		if ((_playerA == null) || (_playerB == null))
+		if (_playerA == null || _playerB == null)
 			return DuelResultEnum.Canceled;
 		
 		// got a duel surrender request?
@@ -809,7 +809,7 @@ public class Duel
 		else if (!_partyDuel)
 		{
 			// Duel was interrupted e.g.: player was attacked by mobs / other players
-			if ((_playerA.getDuelState() == DUELSTATE_INTERRUPTED) || (_playerB.getDuelState() == DUELSTATE_INTERRUPTED))
+			if (_playerA.getDuelState() == DUELSTATE_INTERRUPTED || _playerB.getDuelState() == DUELSTATE_INTERRUPTED)
 				return DuelResultEnum.Canceled;
 			
 			// Are the players too far apart?
@@ -925,7 +925,7 @@ public class Duel
 		}
 		else
 		{
-			if ((player != _playerA) && (player != _playerB))
+			if (player != _playerA && player != _playerB)
 				Log.warning("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
 			
 			if (_playerA == player)
@@ -947,7 +947,7 @@ public class Duel
 		
 		// this player is leaving his party during party duel
 		// if hes either playerA or playerB cancel the duel and port the players back
-		if ((player == _playerA) || (player == _playerB))
+		if (player == _playerA || player == _playerB)
 		{
 			for (PlayerCondition pc : _playerConditions)
 			{

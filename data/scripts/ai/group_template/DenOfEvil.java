@@ -152,7 +152,7 @@ public class DenOfEvil extends L2AttackableAIScript
 		@Override
 		public void run()
 		{
-			for (int i = _skill_id; i <= (_skill_id + 4); i = i + 2)
+			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
 				// test 3 skills if some is lvl 4
 				if (_zone.getSkillLevel(i) > 3)
@@ -188,7 +188,7 @@ public class DenOfEvil extends L2AttackableAIScript
 					}
 				}
 			}
-			for (int i = _skill_id; i <= (_skill_id + 4); i = i + 2)
+			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
 				_zone.removeSkill(i);
 			}

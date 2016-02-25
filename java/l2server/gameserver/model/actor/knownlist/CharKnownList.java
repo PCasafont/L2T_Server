@@ -60,7 +60,7 @@ public class CharKnownList extends ObjectKnownList
 	 */
 	public final boolean knowsThePlayer(L2PcInstance player)
 	{
-		return (getActiveChar() == player) || getKnownPlayers().containsKey(player.getObjectId());
+		return getActiveChar() == player || getKnownPlayers().containsKey(player.getObjectId());
 	}
 	
 	/** Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attack or Cast and notify AI. */

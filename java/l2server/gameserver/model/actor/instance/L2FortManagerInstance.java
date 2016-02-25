@@ -138,14 +138,14 @@ public class L2FortManagerInstance extends L2MerchantInstance
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
 						int hour = (int) Math.floor(getFort().getTimeTillRebelArmy() / 3600);
-						int minutes = (int) (Math.floor(getFort().getTimeTillRebelArmy() - (hour * 3600)) / 60);
+						int minutes = (int) (Math.floor(getFort().getTimeTillRebelArmy() - hour * 3600) / 60);
 						html.replace("%hr%", String.valueOf(hour));
 						html.replace("%min%", String.valueOf(minutes));
 					}
 					else
 					{
 						int hour = (int) Math.floor(getFort().getOwnedTime() / 3600);
-						int minutes = (int) (Math.floor(getFort().getOwnedTime() - (hour * 3600)) / 60);
+						int minutes = (int) (Math.floor(getFort().getOwnedTime() - hour * 3600) / 60);
 						html.replace("%hr%", String.valueOf(hour));
 						html.replace("%min%", String.valueOf(minutes));
 					}
@@ -161,19 +161,19 @@ public class L2FortManagerInstance extends L2MerchantInstance
 					if (Config.FS_MAX_OWN_TIME > 0)
 					{
 						hour = (int) Math.floor(getFort().getTimeTillRebelArmy() / 3600);
-						minutes = (int) (Math.floor(getFort().getTimeTillRebelArmy() - (hour * 3600)) / 60);
+						minutes = (int) (Math.floor(getFort().getTimeTillRebelArmy() - hour * 3600) / 60);
 						html.replace("%hr%", String.valueOf(hour));
 						html.replace("%min%", String.valueOf(minutes));
 					}
 					else
 					{
 						hour = (int) Math.floor(getFort().getOwnedTime() / 3600);
-						minutes = (int) (Math.floor(getFort().getOwnedTime() - (hour * 3600)) / 60);
+						minutes = (int) (Math.floor(getFort().getOwnedTime() - hour * 3600) / 60);
 						html.replace("%hr%", String.valueOf(hour));
 						html.replace("%min%", String.valueOf(minutes));
 					}
 					hour = (int) Math.floor(getFort().getTimeTillNextFortUpdate() / 3600);
-					minutes = (int) (Math.floor(getFort().getTimeTillNextFortUpdate() - (hour * 3600)) / 60);
+					minutes = (int) (Math.floor(getFort().getTimeTillNextFortUpdate() - hour * 3600) / 60);
 					html.replace("%castle%", CastleManager.getInstance().getCastleById(getFort().getCastleId()).getName());
 					html.replace("%hr2%", String.valueOf(hour));
 					html.replace("%min2%", String.valueOf(minutes));
@@ -188,7 +188,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 				{
 					if (!val.isEmpty())
 					{
-						boolean open = (Integer.parseInt(val) == 1);
+						boolean open = Integer.parseInt(val) == 1;
 						while (st.hasMoreTokens())
 							getFort().openCloseDoor(player, Integer.parseInt(st.nextToken()), open);
 						if (open)
@@ -466,7 +466,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 											fee = Config.FS_HPREG2_FEE;
 											break;
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee, Config.FS_HPREG_FEE_RATIO, (getFort().getFunction(Fort.FUNC_RESTORE_HP) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_HP, percent, fee, Config.FS_HPREG_FEE_RATIO, getFort().getFunction(Fort.FUNC_RESTORE_HP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "fortress/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -509,7 +509,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 											fee = Config.FS_MPREG2_FEE;
 											break;
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee, Config.FS_MPREG_FEE_RATIO, (getFort().getFunction(Fort.FUNC_RESTORE_MP) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_MP, percent, fee, Config.FS_MPREG_FEE_RATIO, getFort().getFunction(Fort.FUNC_RESTORE_MP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "fortress/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -552,7 +552,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 											fee = Config.FS_EXPREG2_FEE;
 											break;
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee, Config.FS_EXPREG_FEE_RATIO, (getFort().getFunction(Fort.FUNC_RESTORE_EXP) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_RESTORE_EXP, percent, fee, Config.FS_EXPREG_FEE_RATIO, getFort().getFunction(Fort.FUNC_RESTORE_EXP) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "fortress/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -711,7 +711,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 											fee = Config.FS_TELE2_FEE;
 											break;
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_TELEPORT, lvl, fee, Config.FS_TELE_FEE_RATIO, (getFort().getFunction(Fort.FUNC_TELEPORT) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_TELEPORT, lvl, fee, Config.FS_TELE_FEE_RATIO, getFort().getFunction(Fort.FUNC_TELEPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "fortress/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -754,7 +754,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 											fee = Config.FS_SUPPORT2_FEE;
 											break;
 									}
-									if (!getFort().updateFunctions(player, Fort.FUNC_SUPPORT, lvl, fee, Config.FS_SUPPORT_FEE_RATIO, (getFort().getFunction(Fort.FUNC_SUPPORT) == null)))
+									if (!getFort().updateFunctions(player, Fort.FUNC_SUPPORT, lvl, fee, Config.FS_SUPPORT_FEE_RATIO, getFort().getFunction(Fort.FUNC_SUPPORT) == null))
 									{
 										html.setFile(player.getHtmlPrefix(), "fortress/low_adena.htm");
 										sendHtmlMessage(player, html);
@@ -925,13 +925,13 @@ public class L2FortManagerInstance extends L2MerchantInstance
 	
 	protected int validateCondition(L2PcInstance player)
 	{
-		if ((getFort() != null) && (getFort().getFortId() > 0))
+		if (getFort() != null && getFort().getFortId() > 0)
 		{
 			if (player.getClan() != null)
 			{
 				if (getFort().getZone().isActive())
 					return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
-				else if ((getFort().getOwnerClan() != null) && (getFort().getOwnerClan().getClanId() == player.getClanId())) // Clan owns fortress
+				else if (getFort().getOwnerClan() != null && getFort().getOwnerClan().getClanId() == player.getClanId()) // Clan owns fortress
 					return COND_OWNER; // Owner
 			}
 		}
@@ -947,7 +947,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 	
 	private void showVaultWindowWithdraw(L2PcInstance player, WarehouseListType itemtype, byte sortorder)
 	{
-		if (player.isClanLeader() || ((player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) == L2Clan.CP_CL_VIEW_WAREHOUSE))
+		if (player.isClanLeader() || (player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) == L2Clan.CP_CL_VIEW_WAREHOUSE)
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			player.setActiveWarehouse(player.getClan().getWarehouse());

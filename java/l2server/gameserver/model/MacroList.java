@@ -101,7 +101,7 @@ public class MacroList
 		L2ShortCut[] allShortCuts = _owner.getAllShortCuts();
 		for (L2ShortCut sc : allShortCuts)
 		{
-			if ((sc.getId() == id) && (sc.getType() == L2ShortCut.TYPE_MACRO))
+			if (sc.getId() == id && sc.getType() == L2ShortCut.TYPE_MACRO)
 				_owner.deleteShortCut(sc.getSlot(), sc.getPage());
 		}
 		
@@ -146,7 +146,7 @@ public class MacroList
 			{
 				StringUtil.append(sb, String.valueOf(cmd.type), ",", String.valueOf(cmd.d1), ",", String.valueOf(cmd.d2));
 				
-				if ((cmd.cmd != null) && (cmd.cmd.length() > 0))
+				if (cmd.cmd != null && cmd.cmd.length() > 0)
 				{
 					StringUtil.append(sb, ",", cmd.cmd);
 				}

@@ -54,7 +54,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 		
 		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
 		{
-			if ((activeChar == null) || !(activeChar instanceof L2Playable) || (_alreadyBuffed.contains(activeChar.getObjectId()) && (activeChar.getAllEffects().length > 0)))
+			if (activeChar == null || !(activeChar instanceof L2Playable) || _alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
 				continue;
 			
 			final L2Playable playable = (L2Playable) activeChar;
@@ -88,7 +88,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				}
 			}
 			
-			if ((player_level > highestLevel) || (player_level < lowestLevel))
+			if (player_level > highestLevel || player_level < lowestLevel)
 				continue;
 			
 			L2Skill skill = null;
@@ -111,7 +111,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				{
 					if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
 					{
-						if ((player_level >= helperBuffItem.getLowerLevel()) && (player_level <= helperBuffItem.getUpperLevel()))
+						if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel())
 						{
 							skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
 							if (skill.getSkillType() == L2SkillType.SUMMON)
@@ -129,7 +129,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				@Override
 				public void run()
 				{
-					if ((playable.getActingPlayer() == null) || !playable.getActingPlayer().isOnline())
+					if (playable.getActingPlayer() == null || !playable.getActingPlayer().isOnline())
 						return;
 					
 					if (playable.isInsideRadius(npc, 200, true, false))

@@ -116,9 +116,9 @@ public final class SkillParser extends StatsParser
 									case SUB:
 										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) - value);
 									case ADD_PERCENT:
-										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + (value / 100.0f)));
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
 									case SUB_PERCENT:
-										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - (value / 100.0f)));
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - value / 100.0f));
 								}
 							}
 						}
@@ -307,7 +307,7 @@ public final class SkillParser extends StatsParser
 					StatsSet[] enchSets = levelEnchants.get(route);
 					for (int j = 0; j < enchSets.length; j++)
 					{
-						int hash = ((i + 1) * 1000000) + (route * 1000) + j + 1;
+						int hash = (i + 1) * 1000000 + route * 1000 + j + 1;
 						_skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
 					}
 				}
@@ -335,7 +335,7 @@ public final class SkillParser extends StatsParser
 							StatsSet[] enchSets = levelEnchants.get(route);
 							while (_currentEnchantLevel <= enchSets.length)
 							{
-								int hash = (_currentLevel * 1000000) + (route * 1000) + _currentEnchantLevel;
+								int hash = _currentLevel * 1000000 + route * 1000 + _currentEnchantLevel;
 								parseTemplate(n, _skills.get(hash));
 								_currentEnchantLevel++;
 							}
@@ -353,7 +353,7 @@ public final class SkillParser extends StatsParser
 		String name = n.getString("name").trim();
 		String value = n.getString("val").trim();
 		char ch = value.length() == 0 ? ' ' : value.charAt(0);
-		if ((ch == '#') || (ch == '-') || Character.isDigit(ch))
+		if (ch == '#' || ch == '-' || Character.isDigit(ch))
 		{
 			String val = getValue(value);
 			if (val != null)
@@ -382,7 +382,7 @@ public final class SkillParser extends StatsParser
 			{
 				if (template.getLevelHash() < 100)
 					duration = Config.SKILL_DURATION_LIST.get(template.getId());
-				else if ((template.getLevelHash() >= 100) && (template.getLevelHash() < 140))
+				else if (template.getLevelHash() >= 100 && template.getLevelHash() < 140)
 					duration += Config.SKILL_DURATION_LIST.get(template.getId());
 				else if (template.getLevelHash() > 140)
 					duration = Config.SKILL_DURATION_LIST.get(template.getId());
@@ -425,7 +425,7 @@ public final class SkillParser extends StatsParser
 		double landRate = -1;
 		if (n.hasAttribute("landRate"))
 			landRate = Double.parseDouble(getValue(n.getString("landRate")));
-		else if ((template.getSkillType() == L2SkillType.DEBUFF) && (template.getPower() > 0.0))
+		else if (template.getSkillType() == L2SkillType.DEBUFF && template.getPower() > 0.0)
 			landRate = template.getPower();
 		
 		L2AbnormalType type = L2AbnormalType.NONE;
@@ -505,7 +505,7 @@ public final class SkillParser extends StatsParser
 		
 		ChanceCondition chance = ChanceCondition.parse(chanceCond, activationChance, activationCritChance, activationMinDamage, activationElements, activationSkills, pvpOnly);
 		
-		if ((chance == null) && isChanceSkillTrigger)
+		if (chance == null && isChanceSkillTrigger)
 			throw new NoSuchElementException("Invalid chance condition: " + chanceCond + " " + activationChance);
 		
 		Lambda lambda = getLambda(n, template);

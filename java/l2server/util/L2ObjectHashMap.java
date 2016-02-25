@@ -118,7 +118,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 				L2Object obj = _table[i];
 				if (obj == null)
 				{
-					assert (_keys[i] == 0) || (_keys[i] == 0x80000000);
+					assert _keys[i] == 0 || _keys[i] == 0x80000000;
 				}
 				else
 				{
@@ -136,17 +136,17 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 	@Override
 	public synchronized void put(T obj)
 	{
-		if (_count >= (_table.length / 2))
+		if (_count >= _table.length / 2)
 			expand();
 		final int hashcode = obj.getObjectId();
 		assert hashcode > 0;
 		int seed = hashcode;
-		int incr = 1 + (((seed >> 5) + 1) % (_table.length - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (_table.length - 1);
 		int ntry = 0;
 		int slot = -1; // keep last found slot
 		do
 		{
-			int pos = (seed % _table.length) & 0x7FFFFFFF;
+			int pos = seed % _table.length & 0x7FFFFFFF;
 			if (_table[pos] == null)
 			{
 				if (slot < 0)
@@ -174,7 +174,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 				assert obj.getObjectId() != _table[pos].getObjectId();
 				// if there was no collisions at this slot, and we found a free
 				// slot previously - use found slot
-				if ((slot >= 0) && (_keys[pos] > 0))
+				if (slot >= 0 && _keys[pos] > 0)
 				{
 					_keys[slot] |= hashcode; // preserve collision bit
 					_table[slot] = obj;
@@ -206,11 +206,11 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 		int hashcode = obj.getObjectId();
 		assert hashcode > 0;
 		int seed = hashcode;
-		int incr = 1 + (((seed >> 5) + 1) % (_table.length - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (_table.length - 1);
 		int ntry = 0;
 		do
 		{
-			int pos = (seed % _table.length) & 0x7FFFFFFF;
+			int pos = seed % _table.length & 0x7FFFFFFF;
 			if (_table[pos] == obj)
 			{
 				// found the object
@@ -224,7 +224,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 				return;
 			}
 			// check for collision (if we previously deleted element)
-			if ((_table[pos] == null) && (_keys[pos] >= 0))
+			if (_table[pos] == null && _keys[pos] >= 0)
 			{
 				if (DEBUG)
 					check();
@@ -258,15 +258,15 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 			return null;
 		}
 		int seed = id;
-		int incr = 1 + (((seed >> 5) + 1) % (size - 1));
+		int incr = 1 + ((seed >> 5) + 1) % (size - 1);
 		int ntry = 0;
 		do
 		{
-			int pos = (seed % size) & 0x7FFFFFFF;
+			int pos = seed % size & 0x7FFFFFFF;
 			if ((_keys[pos] & 0x7FFFFFFF) == id)
 				return _table[pos];
 			// check for collision (if we previously deleted element)
-			if ((_table[pos] == null) && (_keys[pos] >= 0))
+			if (_table[pos] == null && _keys[pos] >= 0)
 			{
 				return null;
 			}
@@ -301,14 +301,14 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T>
 			final int hashcode = _keys[i] & 0x7FFFFFFF;
 			assert hashcode == obj.getObjectId();
 			int seed = hashcode;
-			int incr = 1 + (((seed >> 5) + 1) % (newSize - 1));
+			int incr = 1 + ((seed >> 5) + 1) % (newSize - 1);
 			int ntry = 0;
 			do
 			{
-				int pos = (seed % newSize) & 0x7FFFFFFF;
+				int pos = seed % newSize & 0x7FFFFFFF;
 				if (newTable[pos] == null)
 				{
-					assert (newKeys[pos] == 0) && (hashcode != 0);
+					assert newKeys[pos] == 0 && hashcode != 0;
 					// found an empty slot without previous collisions,
 					// but use previously found slot
 					newKeys[pos] = hashcode;

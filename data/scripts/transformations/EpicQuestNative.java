@@ -18,7 +18,7 @@ public class EpicQuestNative extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 124) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 124 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

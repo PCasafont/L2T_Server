@@ -243,7 +243,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 			case 31467:
 				setIsInvul(false);
 				reduceCurrentHp(getMaxHp() + 1, player, null);
-				if ((player.getParty() != null) && !player.getParty().isLeader(player))
+				if (player.getParty() != null && !player.getParty().isLeader(player))
 					player = player.getParty().getLeader();
 				player.addItem("Quest", HALLS_KEY, 1, player, true);
 				break;
@@ -251,10 +251,10 @@ public class L2SepulcherNpcInstance extends L2Npc
 			default:
 			{
 				Quest[] qlsa = getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
-				if ((qlsa != null) && (qlsa.length > 0))
+				if (qlsa != null && qlsa.length > 0)
 					player.setLastQuestNpcObject(getObjectId());
 				Quest[] qlst = getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
-				if ((qlst != null) && (qlst.length == 1))
+				if (qlst != null && qlst.length == 1)
 					qlst[0].notifyFirstTalk(this, player);
 				else
 					showChatWindow(player, 0);
@@ -340,7 +340,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 						{
 							for (L2PcInstance mem : player.getParty().getPartyMembers())
 							{
-								if ((mem != null) && (mem.getInventory().getItemByItemId(HALLS_KEY) != null))
+								if (mem != null && mem.getInventory().getItemByItemId(HALLS_KEY) != null)
 									mem.destroyItemByItemId("Quest", HALLS_KEY, mem.getInventory().getItemByItemId(HALLS_KEY).getCount(), mem, true);
 							}
 						}
@@ -429,10 +429,10 @@ public class L2SepulcherNpcInstance extends L2Npc
 	
 	public void sayInShout(String msg)
 	{
-		if ((msg == null) || msg.isEmpty())
+		if (msg == null || msg.isEmpty())
 			return;// wrong usage
 		Collection<L2PcInstance> knownPlayers = L2World.getInstance().getAllPlayers().values();
-		if ((knownPlayers == null) || knownPlayers.isEmpty())
+		if (knownPlayers == null || knownPlayers.isEmpty())
 			return;
 		CreatureSay sm = new CreatureSay(0, Say2.SHOUT, getName(), msg);
 		for (L2PcInstance player : knownPlayers)

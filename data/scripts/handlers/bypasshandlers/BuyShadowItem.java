@@ -34,9 +34,9 @@ public class BuyShadowItem implements IBypassHandler
 		NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
 		if (activeChar.getLevel() < 40)
 			html.setFile(activeChar.getHtmlPrefix(), "common/shadow_item-lowlevel.htm");
-		else if ((activeChar.getLevel() >= 40) && (activeChar.getLevel() < 46))
+		else if (activeChar.getLevel() >= 40 && activeChar.getLevel() < 46)
 			html.setFile(activeChar.getHtmlPrefix(), "common/shadow_item_d.htm");
-		else if ((activeChar.getLevel() >= 46) && (activeChar.getLevel() < 52))
+		else if (activeChar.getLevel() >= 46 && activeChar.getLevel() < 52)
 			html.setFile(activeChar.getHtmlPrefix(), "common/shadow_item_c.htm");
 		else if (activeChar.getLevel() >= 52)
 			html.setFile(activeChar.getHtmlPrefix(), "common/shadow_item_b.htm");

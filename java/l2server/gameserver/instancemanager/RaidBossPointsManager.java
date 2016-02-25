@@ -154,7 +154,7 @@ public class RaidBossPointsManager
 		Map<Integer, Integer> tmpPoint;
 		tmpPoint = _list.get(ownerId);
 		
-		if ((tmpPoint == null) || tmpPoint.isEmpty())
+		if (tmpPoint == null || tmpPoint.isEmpty())
 			return 0;
 		
 		return tmpPoint.get(0);

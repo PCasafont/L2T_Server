@@ -97,7 +97,7 @@ public class L2MerchantInstance extends L2NpcInstance
 		
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
 		
-		if ((list != null) && (list.getNpcId() == getNpcId()))
+		if (list != null && list.getNpcId() == getNpcId())
 		{
 			player.sendPacket(new ExBuyList(list, player.getAdena(), taxRate));
 			player.sendPacket(new ExSellList(player, list, taxRate, false));

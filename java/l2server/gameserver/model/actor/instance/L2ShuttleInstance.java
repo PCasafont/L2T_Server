@@ -77,7 +77,7 @@ public class L2ShuttleInstance extends L2Vehicle
 	
 	public void addStop(int x, int y, int z, int time, int doorId, int outerDoorId, int oustX, int oustY, int oustZ)
 	{
-		if ((getX() == 0) && (getY() == 0) && (getZ() == 0))
+		if (getX() == 0 && getY() == 0 && getZ() == 0)
 			setXYZ(x, y, z);
 		_stops.add(new ShuttleStop(x, y, z, time, doorId, outerDoorId, oustX, oustY, oustZ));
 	}
@@ -228,7 +228,7 @@ public class L2ShuttleInstance extends L2Vehicle
 		
 		public boolean hasDoorChanged()
 		{
-			return (System.currentTimeMillis() - _lastDoorChange) < 1000L;
+			return System.currentTimeMillis() - _lastDoorChange < 1000L;
 		}
 		
 		public void moveTo()

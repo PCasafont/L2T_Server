@@ -137,7 +137,7 @@ public class ConquerACastle extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof ConquerACastleWorld))
+		if (wrld != null && wrld instanceof ConquerACastleWorld)
 		{
 			ConquerACastleWorld world = (ConquerACastleWorld) wrld;
 			if (npc.getNpcId() == _helperDwarf)
@@ -224,7 +224,7 @@ public class ConquerACastle extends L2AttackableAIScript
 				if (_debug)
 					Log.warning(getName() + ": world status: " + world.status);
 				
-				if (((world.status == 6) && (world.castleId != 9) && (world.castleId != 7)) || ((world.status == 7) && ((world.castleId == 9) || (world.castleId == 7))))
+				if (world.status == 6 && world.castleId != 9 && world.castleId != 7 || world.status == 7 && (world.castleId == 9 || world.castleId == 7))
 				{
 					world.finalBoss.stopVisualEffect(VisualEffect.HOLD_2);
 					world.finalBoss.setIsInvul(false);
@@ -280,7 +280,7 @@ public class ConquerACastle extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
+						if (pMember == null || pMember.getInstanceId() != world.instanceId)
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
@@ -329,7 +329,7 @@ public class ConquerACastle extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof ConquerACastleWorld))
+		if (wrld != null && wrld instanceof ConquerACastleWorld)
 		{
 			ConquerACastleWorld world = (ConquerACastleWorld) wrld;
 			
@@ -347,13 +347,13 @@ public class ConquerACastle extends L2AttackableAIScript
 			}
 			else if (event.startsWith("stage_all_dwarf_help"))
 			{
-				if ((player.getParty() == null) || (player.getParty().getLeader() != player))
+				if (player.getParty() == null || player.getParty().getLeader() != player)
 				{
 					player.sendMessage("Only the party leader can use this option!");
 					return "";
 				}
 				
-				if (((world.golem != null) && world.golem.isDead()) || (world.isGolemAttacking && (world.golem == null) && !world.dwarf.isCastingNow()))
+				if (world.golem != null && world.golem.isDead() || world.isGolemAttacking && world.golem == null && !world.dwarf.isCastingNow())
 					world.isGolemAttacking = false;
 				
 				if (world.isGolemAttacking)
@@ -419,7 +419,7 @@ public class ConquerACastle extends L2AttackableAIScript
 		double distSq = 1000000000;
 		for (L2DoorInstance instanceDoor : InstanceManager.getInstance().getInstance(world.instanceId).getDoors())
 		{
-			if ((instanceDoor == null) || instanceDoor.isDead() || instanceDoor.isWall() || (instanceDoor.getCastle().getCastleId() != world.castleId))
+			if (instanceDoor == null || instanceDoor.isDead() || instanceDoor.isWall() || instanceDoor.getCastle().getCastleId() != world.castleId)
 				continue;
 			
 			if (!world.golem.isInsideRadius(instanceDoor, _wildCannon.getCastRange() - 100, true, true) || !GeoData.getInstance().canSeeTarget(world.golem, instanceDoor))
@@ -482,7 +482,7 @@ public class ConquerACastle extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					ConquerACastleWorld wrld = (ConquerACastleWorld) world;
 					player.setInstanceId(world.instanceId);

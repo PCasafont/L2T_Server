@@ -95,17 +95,17 @@ public class CellPathFinding extends PathFinding
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)
 	{
-		int gx = (x - L2World.MAP_MIN_X) >> 4;
-		int gy = (y - L2World.MAP_MIN_Y) >> 4;
+		int gx = x - L2World.MAP_MIN_X >> 4;
+		int gy = y - L2World.MAP_MIN_Y >> 4;
 		if (!GeoData.getInstance().hasGeo(x, y))
 			return null;
 		short gz = GeoData.getInstance().getHeight(x, y, z);
-		int gtx = (tx - L2World.MAP_MIN_X) >> 4;
-		int gty = (ty - L2World.MAP_MIN_Y) >> 4;
+		int gtx = tx - L2World.MAP_MIN_X >> 4;
+		int gty = ty - L2World.MAP_MIN_Y >> 4;
 		if (!GeoData.getInstance().hasGeo(tx, ty))
 			return null;
 		short gtz = GeoData.getInstance().getHeight(tx, ty, tz);
-		CellNodeBuffer buffer = alloc(64 + (2 * Math.max(Math.abs(gx - gtx), Math.abs(gy - gty))), playable);
+		CellNodeBuffer buffer = alloc(64 + 2 * Math.max(Math.abs(gx - gtx), Math.abs(gy - gty)), playable);
 		if (buffer == null)
 			return null;
 		
@@ -163,7 +163,7 @@ public class CellPathFinding extends PathFinding
 			buffer.free();
 		}
 		
-		if ((path.size() < 3) || (Config.MAX_POSTFILTER_PASSES <= 0))
+		if (path.size() < 3 || Config.MAX_POSTFILTER_PASSES <= 0)
 		{
 			_findSuccess++;
 			return path;
@@ -191,7 +191,7 @@ public class CellPathFinding extends PathFinding
 			currentY = y;
 			currentZ = z;
 			
-			while (middlePoint.nextIndex() < (path.size() - 1))
+			while (middlePoint.nextIndex() < path.size() - 1)
 			{
 				locMiddle = middlePoint.next();
 				locEnd = path.get(middlePoint.nextIndex());
@@ -211,7 +211,7 @@ public class CellPathFinding extends PathFinding
 			}
 		}
 		// only one postfilter pass for AI
-		while (playable && remove && (path.size() > 2) && (pass < Config.MAX_POSTFILTER_PASSES));
+		while (playable && remove && path.size() > 2 && pass < Config.MAX_POSTFILTER_PASSES);
 		
 		if (debug)
 		{
@@ -237,7 +237,7 @@ public class CellPathFinding extends PathFinding
 		
 		while (node.getParent() != null)
 		{
-			if (!Config.ADVANCED_DIAGONAL_STRATEGY && (node.getParent().getParent() != null))
+			if (!Config.ADVANCED_DIAGONAL_STRATEGY && node.getParent().getParent() != null)
 			{
 				int tmpX = node.getLoc().getNodeX() - node.getParent().getParent().getLoc().getNodeX();
 				int tmpY = node.getLoc().getNodeY() - node.getParent().getParent().getLoc().getNodeY();
@@ -259,7 +259,7 @@ public class CellPathFinding extends PathFinding
 			}
 			
 			// only add a new route point if moving direction changes
-			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
+			if (directionX != previousDirectionX || directionY != previousDirectionY)
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;

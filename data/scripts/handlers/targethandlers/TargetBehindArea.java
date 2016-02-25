@@ -49,8 +49,8 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		
-		if ((!((target instanceof L2Attackable) || (target instanceof L2Playable))) || // Target is not L2Attackable or L2PlayableInstance
-		((skill.getCastRange() >= 0) && ((target == null) || (target == activeChar) || target.isAlikeDead()))) // target is null or self or dead/faking
+		if (!(target instanceof L2Attackable || target instanceof L2Playable) || // Target is not L2Attackable or L2PlayableInstance
+		skill.getCastRange() >= 0 && (target == null || target == activeChar || target.isAlikeDead())) // target is null or self or dead/faking
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
@@ -70,20 +70,20 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 		else
 			cha = activeChar;
 		
-		boolean effectOriginIsL2PlayableInstance = (cha instanceof L2Playable);
+		boolean effectOriginIsL2PlayableInstance = cha instanceof L2Playable;
 		
 		L2PcInstance src = activeChar.getActingPlayer();
 		
 		int radius = skill.getSkillRadius();
 		
-		boolean srcInArena = (activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE));
+		boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 		
 		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
 			for (L2Object obj : objs)
 			{
-				if (!((obj instanceof L2Attackable) || (obj instanceof L2Playable)))
+				if (!(obj instanceof L2Attackable || obj instanceof L2Playable))
 					continue;
 				
 				if (obj == cha)
@@ -91,7 +91,7 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 				
 				target = (L2Character) obj;
 				
-				if (!target.isDead() && (target != activeChar))
+				if (!target.isDead() && target != activeChar)
 				{
 					if (!Util.checkIfInRange(radius, obj, activeChar, true))
 						continue;
@@ -111,7 +111,7 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 							if (trg == src)
 								continue;
 							
-							if (((src.getParty() != null) && (trg.getParty() != null)) && (src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()))
+							if (src.getParty() != null && trg.getParty() != null && src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
 								continue;
 							
 							if (trg.isInsideZone(L2Character.ZONE_PEACE))
@@ -119,10 +119,10 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 							
 							if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
 							{
-								if ((src.getAllyId() == trg.getAllyId()) && (src.getAllyId() != 0))
+								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
 									continue;
 								
-								if ((src.getClan() != null) && (trg.getClan() != null))
+								if (src.getClan() != null && trg.getClan() != null)
 								{
 									if (src.getClan().getClanId() == trg.getClan().getClanId())
 										continue;
@@ -139,15 +139,15 @@ public class TargetBehindArea implements ISkillTargetTypeHandler
 							if (trg == src)
 								continue;
 							
-							if (((src.getParty() != null) && (trg.getParty() != null)) && (src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()))
+							if (src.getParty() != null && trg.getParty() != null && src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
 								continue;
 							
 							if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
 							{
-								if ((src.getAllyId() == trg.getAllyId()) && (src.getAllyId() != 0))
+								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
 									continue;
 								
-								if ((src.getClan() != null) && (trg.getClan() != null))
+								if (src.getClan() != null && trg.getClan() != null)
 								{
 									if (src.getClan().getClanId() == trg.getClan().getClanId())
 										continue;

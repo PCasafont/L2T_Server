@@ -55,7 +55,7 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler
 			case DRAIN:
 			case SUMMON:
 			{
-				if (DecayTaskManager.getInstance().getTasks().containsKey(target) && ((System.currentTimeMillis() - DecayTaskManager.getInstance().getTasks().get(target)) > (DecayTaskManager.ATTACKABLE_DECAY_TIME / 2)))
+				if (DecayTaskManager.getInstance().getTasks().containsKey(target) && System.currentTimeMillis() - DecayTaskManager.getInstance().getTasks().get(target) > DecayTaskManager.ATTACKABLE_DECAY_TIME / 2)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CORPSE_TOO_OLD_SKILL_NOT_USED));
 					return null;

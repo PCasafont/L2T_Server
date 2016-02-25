@@ -147,15 +147,15 @@ public class CharStatus
 		if (getActiveChar().isDead())
 			return;
 		
-		boolean isHide = (attacker instanceof L2PcInstance) && ((L2PcInstance) attacker).getAppearance().getInvisible();
-		if ((!isDOT && !isHPConsumption) || isHide)
+		boolean isHide = attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getAppearance().getInvisible();
+		if (!isDOT && !isHPConsumption || isHide)
 		{
 			getActiveChar().stopEffectsOnDamage(awake, (int) value);
 			
 			if (getActiveChar().isStunned())
 			{
 				int baseBreakChance = attacker.getLevel() > 85 ? 5 : 25; // TODO Recheck this
-				double breakChance = (baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar())));
+				double breakChance = baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar()));
 				
 				if (value > 2000)
 					breakChance *= 4;
@@ -164,7 +164,7 @@ public class CharStatus
 				else if (value > 500)
 					breakChance *= 1.5;
 				
-				if ((value > 100) && (Rnd.get(100) < breakChance))
+				if (value > 100 && Rnd.get(100) < breakChance)
 					getActiveChar().stopStunning(true);
 			}
 		}
@@ -206,7 +206,7 @@ public class CharStatus
 		if (value > 0) // Reduce Hp if any, and Hp can't be negative
 			setCurrentHp(Math.max(getCurrentHp() - value, 0), true, attacker, display);
 		
-		if ((getActiveChar().getCurrentHp() < 0.5) && getActiveChar().isMortal()) // Die
+		if (getActiveChar().getCurrentHp() < 0.5 && getActiveChar().isMortal()) // Die
 		{
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();
@@ -237,7 +237,7 @@ public class CharStatus
 	 */
 	public final synchronized void startHpMpRegeneration()
 	{
-		if ((_regTask == null) && !getActiveChar().isDead())
+		if (_regTask == null && !getActiveChar().isDead())
 		{
 			if (Config.DEBUG)
 				Log.fine("HP/MP regen started");
@@ -404,7 +404,7 @@ public class CharStatus
 		{
 			// no broadcast necessary for characters that are in inactive regions.
 			// stop regeneration for characters who are filled up and in an inactive region.
-			if ((getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
+			if (getCurrentHp() == charstat.getMaxHp() && getCurrentMp() == charstat.getMaxMp())
 				stopHpMpRegeneration();
 		}
 		else

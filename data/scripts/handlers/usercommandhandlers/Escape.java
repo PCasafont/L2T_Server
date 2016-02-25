@@ -48,7 +48,7 @@ public class Escape implements IUserCommandHandler
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
 		// Thanks nbd, such leetness
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -66,7 +66,7 @@ public class Escape implements IUserCommandHandler
 			return false;
 		}
 		
-		int unstuckTimer = (activeChar.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000);
+		int unstuckTimer = activeChar.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000;
 		
 		// Check to see if player is in jail
 		if (activeChar.isInJail())
@@ -82,7 +82,7 @@ public class Escape implements IUserCommandHandler
 			return false;
 		}
 		
-		if (!Config.isServer(Config.DREAMS) && (GrandBossManager.getInstance().getZone(activeChar) != null) && !activeChar.isGM())
+		if (!Config.isServer(Config.DREAMS) && GrandBossManager.getInstance().getZone(activeChar) != null && !activeChar.isGM())
 		{
 			activeChar.sendMessage("You may not use an escape command in a Boss Zone.");
 			return false;
@@ -90,7 +90,7 @@ public class Escape implements IUserCommandHandler
 		
 		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() || activeChar.isInOlympiadMode() || activeChar.inObserverMode())
 			return false;
-		activeChar.forceIsCasting(TimeController.getGameTicks() + (unstuckTimer / TimeController.MILLIS_IN_TICK));
+		activeChar.forceIsCasting(TimeController.getGameTicks() + unstuckTimer / TimeController.MILLIS_IN_TICK);
 		
 		L2Skill escape = SkillTable.getInstance().getInfo(2099, 1); // 5 minutes escape
 		L2Skill GM_escape = SkillTable.getInstance().getInfo(2100, 1); // 1 second escape
@@ -103,7 +103,7 @@ public class Escape implements IUserCommandHandler
 			}
 			activeChar.sendMessage("You use Escape: 1 second.");
 		}
-		else if ((Config.UNSTUCK_INTERVAL == 300) && (escape != null))
+		else if (Config.UNSTUCK_INTERVAL == 300 && escape != null)
 		{
 			activeChar.doCast(escape);
 			return true;
@@ -112,10 +112,10 @@ public class Escape implements IUserCommandHandler
 		{
 			if (Config.UNSTUCK_INTERVAL > 100)
 			{
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 60000) + " minutes.");
+				activeChar.sendMessage("You use Escape: " + unstuckTimer / 60000 + " minutes.");
 			}
 			else
-				activeChar.sendMessage("You use Escape: " + (unstuckTimer / 1000) + " seconds.");
+				activeChar.sendMessage("You use Escape: " + unstuckTimer / 1000 + " seconds.");
 		}
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		//SoE Animation section

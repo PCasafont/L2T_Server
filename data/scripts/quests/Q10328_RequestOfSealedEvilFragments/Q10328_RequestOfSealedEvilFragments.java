@@ -53,14 +53,14 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _pantheon) && event.equalsIgnoreCase("32972-04.htm"))
+		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-04.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.giveItems(_evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if ((npc.getNpcId() == _kakai) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
 		{
 			if (event.equalsIgnoreCase("30565-02.htm"))
 			{
@@ -108,7 +108,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _kakai) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _kakai && st.getInt("cond") == 1)
 			htmltext = "30565-01.htm";
 		return htmltext;
 	}
@@ -116,7 +116,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 8) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 8) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

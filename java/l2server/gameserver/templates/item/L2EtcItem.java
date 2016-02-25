@@ -65,7 +65,7 @@ public final class L2EtcItem extends L2Item
 		
 		if (isQuestItem())
 			_type2 = L2Item.TYPE2_QUEST;
-		else if ((getItemId() == PcInventory.ADENA_ID) || (getItemId() == PcInventory.ANCIENT_ADENA_ID))
+		else if (getItemId() == PcInventory.ADENA_ID || getItemId() == PcInventory.ANCIENT_ADENA_ID)
 			_type2 = L2Item.TYPE2_MONEY;
 		
 		_handler = set.getString("handler", null); // ! null !
@@ -106,7 +106,7 @@ public final class L2EtcItem extends L2Item
 	@Override
 	public final boolean isConsumable()
 	{
-		return ((getItemType() == L2EtcItemType.SHOT) || (getItemType() == L2EtcItemType.POTION)); // || (type == L2EtcItemType.SCROLL));
+		return getItemType() == L2EtcItemType.SHOT || getItemType() == L2EtcItemType.POTION; // || (type == L2EtcItemType.SCROLL));
 	}
 	
 	/**

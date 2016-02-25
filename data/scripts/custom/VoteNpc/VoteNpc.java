@@ -40,6 +40,7 @@ public class VoteNpc extends Quest
 	private static final int _voteNpcId = 40004;
 	@SuppressWarnings("unused")
 	private static final String SELECT_VOTE_IP = "SELECT * from " + Config.WEB_DB_NAME + ".server_voted_ips WHERE ip = ?";
+	
 	//private static Map<Integer, Rewards> _voteRewards = new HashMap<Integer, Rewards>();
 	
 	public VoteNpc(int questId, String name, String descr)
@@ -57,7 +58,7 @@ public class VoteNpc extends Quest
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/custom/VoteNpc/voteRewards.xml");
 		if (!file.exists())
 			return;
-		
+
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getChildren())
 		{
@@ -68,7 +69,7 @@ public class VoteNpc extends Quest
 					if (d.getName().equalsIgnoreCase("reward"))
 					{
 						boolean isItem = d.hasAttribute("itemId");
-						
+
 						int rewardId = isItem ? d.getInt("itemId") : d.getInt("skillId");
 						String rewardName = "";
 						String rewardIcon = "";
@@ -87,7 +88,7 @@ public class VoteNpc extends Quest
 							if (temp == null)
 								continue;
 							rewardName = temp.getName();
-							
+
 							if (rewardId == 1372)
 								rewardIcon = "icon.skill0332";
 							else if (rewardId == 1371)
@@ -96,13 +97,13 @@ public class VoteNpc extends Quest
 								rewardIcon = "icon.skill19222";
 							else
 								rewardIcon = "icon.skill" + rewardId;
-							
+
 							maxSkillLevel = SkillTable.getInstance().getMaxLevel(rewardId);
 						}
-						
+
 						String description = d.getString("description");
 						long count = d.getLong("amount", 1);
-						
+
 						_voteRewards.put(rewardId, new Rewards(rewardId, rewardName, rewardIcon, count, description, isItem, maxSkillLevel));
 					}
 				}
@@ -110,7 +111,7 @@ public class VoteNpc extends Quest
 		}
 		Log.info("VoteNpc: Loaded " + _voteRewards.size() + " rewards!");
 	}
-	
+
 	private class Rewards
 	{
 		private String _rewardName;
@@ -120,7 +121,7 @@ public class VoteNpc extends Quest
 		private String _rewardIcon;
 		private boolean _isItem;
 		private int _maxSkillLevel;
-		
+
 		private Rewards(int rewardId, String rewardName, String rewardIcon, long amount, String description, boolean isItem, int maxSkillLevel)
 		{
 			_rewardId = rewardId;
@@ -131,37 +132,37 @@ public class VoteNpc extends Quest
 			_isItem = isItem;
 			_maxSkillLevel = maxSkillLevel;
 		}
-		
+
 		private boolean isItem()
 		{
 			return _isItem;
 		}
-		
+
 		private int getMaxSkillLevel()
 		{
 			return _maxSkillLevel;
 		}
-		
+
 		private int getRewardId()
 		{
 			return _rewardId;
 		}
-		
+
 		private long getAmount()
 		{
 			return _amount;
 		}
-		
+
 		private String getDescription()
 		{
 			return _description;
 		}
-		
+
 		private String getName()
 		{
 			return _rewardName;
 		}
-		
+
 		private String getIcon()
 		{
 			return _rewardIcon;
@@ -209,7 +210,7 @@ public class VoteNpc extends Quest
 			{
 				if (!_debug)
 				{
-					String varReuse = Long.toString(System.currentTimeMillis() + (12 * 3600000));
+					String varReuse = Long.toString(System.currentTimeMillis() + 12 * 3600000);
 					saveGlobalQuestVar(player.getAccountName(), varReuse);
 					saveGlobalQuestVar(player.getExternalIP(), varReuse);
 					//saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
@@ -232,14 +233,14 @@ public class VoteNpc extends Quest
 			//Calc the left time
 			long _remaining_time = (reuse - currentTime) / 1000;
 			int hours = (int) _remaining_time / 3600;
-			int minutes = ((int) _remaining_time % 3600) / 60;
+			int minutes = (int) _remaining_time % 3600 / 60;
 			String reuseString = "<font color=\"LEVEL\">Come back again in: " + hours + "Hours " + minutes + "minutes</font>";
 			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/reuse.html").replace("%reuse%", reuseString);
 		}
 		
 		/*if (_debug)
 			System.out.println(getName() + ": onAdvEvent: " + event);
-		
+
 		if (event.startsWith("show_rewards_"))
 		{
 			int pageToShow = Integer.valueOf(event.split("_")[2]);
@@ -254,23 +255,23 @@ public class VoteNpc extends Quest
 			int pageEnd = bossSize;
 			if ((pageEnd - pageStart) > maxItemsPerPage)
 				pageEnd = pageStart + maxItemsPerPage;
-			
+
 			StringBuilder sb = new StringBuilder();
-			
+
 			if (maxPages > 0)
 				sb.append("<center>" + CustomCommunityBoard.getInstance().createPages(pageToShow, maxPages, "-h Quest VoteNpc show_rewards_", " ") + "</center>");
-			
+
 			sb.append("<table>");
-			
+
 			Object[] data = _voteRewards.values().toArray();
 			for (int i = pageStart; i < pageEnd; i++)
 			{
 				Rewards reward = (Rewards) data[i];
 				if (reward == null)
 					continue;
-				
+
 				String rewardName = reward.getName();
-				
+
 				//Skills case
 				//We should show the proper skill level to learn on the skill name, so if the player have the Lv. 1 we will show Lv. 2 on the skill name
 				if (!reward.isItem())
@@ -283,12 +284,12 @@ public class VoteNpc extends Quest
 				}
 				else
 					rewardName = rewardName + "(" + reward.getAmount() + ")";
-				
+
 				sb.append("<tr><td width=40><img src=" + reward.getIcon() + " width=32 height=32></td><td><table><tr><td><a action=\"bypass -h Quest VoteNpc claim_" + reward.getRewardId() + "\"><font color=00FFFF>" + rewardName + "</font></a></td></tr><tr><td FIXWIDTH=280><font color=ae9977>" + reward.getDescription() + "</font></td></tr></table></td></tr>");
 				sb.append("<tr><td><br></td></tr>");
 			}
 			sb.append("</table>");
-			
+
 			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/rewards.html").replace("%rewards%", sb.toString());
 		}
 		else if (event.startsWith("claim_"))
@@ -298,26 +299,26 @@ public class VoteNpc extends Quest
 				player.sendMessage("You can't claim items right now!");
 				return "";
 			}
-			
+
 			long currentTime = System.currentTimeMillis();
-			
+
 			long accountReuse = 0;
 			long ipReuse = 0;
 			long hwIdReuse = 0;
-			
+
 			String accountValue = loadGlobalQuestVar(player.getAccountName());
 			String externalIpValue = loadGlobalQuestVar(player.getExternalIP());
 			String hwIdValue = loadGlobalQuestVar(player.getHWID().substring(10));
-			
+
 			if (!accountValue.equalsIgnoreCase(""))
 				accountReuse = Long.parseLong(accountValue);
-			
+
 			if (!externalIpValue.equalsIgnoreCase(""))
 				ipReuse = Long.parseLong(externalIpValue);
-			
+
 			if (!hwIdValue.equalsIgnoreCase(""))
 				hwIdReuse = Long.parseLong(hwIdValue);
-			
+
 			long reuse = Collections.max(Arrays.asList(accountReuse, ipReuse, hwIdReuse));
 			if (currentTime > reuse)
 			{
@@ -328,7 +329,7 @@ public class VoteNpc extends Quest
 					Log.info("VoteNpc: null reward for id " + rewardId);
 					return "";
 				}
-				
+
 				if (canGetReward(player))
 				{
 					if (!_debug)
@@ -338,7 +339,7 @@ public class VoteNpc extends Quest
 						saveGlobalQuestVar(player.getExternalIP(), varReuse);
 						saveGlobalQuestVar(player.getHWID().substring(10), varReuse);
 					}
-					
+
 					if (reward.isItem())
 						player.addItem(_qn, rewardId, reward.getAmount(), npc, true);
 					else
@@ -351,9 +352,9 @@ public class VoteNpc extends Quest
 							player.sendSkillList();
 						}
 					}
-					
+
 					Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received " + reward.getName() + "(" + reward.getAmount() + ")", "VoteSystem", true);
-					
+
 					return "thanks.html";
 				}
 				else
@@ -382,7 +383,7 @@ public class VoteNpc extends Quest
 		else
 		{
 			if (currentPlayerLevel < maxSkillLevel)
-				skillLevelToLearn = (currentPlayerLevel + 1);
+				skillLevelToLearn = currentPlayerLevel + 1;
 		}
 		return skillLevelToLearn;
 	}
@@ -429,7 +430,7 @@ public class VoteNpc extends Quest
 				connection.disconnect();
 		}
 		
-		return (result != null) && result.contains("TRUE");
+		return result != null && result.contains("TRUE");
 		
 		/*Connection con = null;
 		try

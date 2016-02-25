@@ -72,16 +72,16 @@ public class GeoPathFinding extends PathFinding
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)
 	{
-		int gx = (x - L2World.MAP_MIN_X) >> 4;
-		int gy = (y - L2World.MAP_MIN_Y) >> 4;
+		int gx = x - L2World.MAP_MIN_X >> 4;
+		int gy = y - L2World.MAP_MIN_Y >> 4;
 		short gz = (short) z;
-		int gtx = (tx - L2World.MAP_MIN_X) >> 4;
-		int gty = (ty - L2World.MAP_MIN_Y) >> 4;
+		int gtx = tx - L2World.MAP_MIN_X >> 4;
+		int gty = ty - L2World.MAP_MIN_Y >> 4;
 		short gtz = (short) tz;
 		
 		GeoNode start = readNode(gx, gy, gz);
 		GeoNode end = readNode(gtx, gty, gtz);
-		if ((start == null) || (end == null))
+		if (start == null || end == null)
 			return null;
 		if (Math.abs(start.getLoc().getZ() - z) > 55)
 			return null; // not correct layer
@@ -92,12 +92,12 @@ public class GeoPathFinding extends PathFinding
 		
 		// TODO: Find closest path node we CAN access. Now only checks if we can not reach the closest
 		Location temp = GeoData.getInstance().moveCheck(x, y, z, start.getLoc().getX(), start.getLoc().getY(), start.getLoc().getZ(), instanceId);
-		if ((temp.getX() != start.getLoc().getX()) || (temp.getY() != start.getLoc().getY()))
+		if (temp.getX() != start.getLoc().getX() || temp.getY() != start.getLoc().getY())
 			return null; //   cannot reach closest...
 			
 		// TODO: Find closest path node around target, now only checks if final location can be reached
 		temp = GeoData.getInstance().moveCheck(tx, ty, tz, end.getLoc().getX(), end.getLoc().getY(), end.getLoc().getZ(), instanceId);
-		if ((temp.getX() != end.getLoc().getX()) || (temp.getY() != end.getLoc().getY()))
+		if (temp.getX() != end.getLoc().getX() || temp.getY() != end.getLoc().getY())
 			return null; //   cannot reach closest...
 			
 		//return searchAStar(start, end);
@@ -157,7 +157,7 @@ public class GeoPathFinding extends PathFinding
 						n.setParent(node);
 						dx = targetX - n.getLoc().getNodeX();
 						dy = targetY - n.getLoc().getNodeY();
-						n.setCost((dx * dx) + (dy * dy));
+						n.setCost(dx * dx + dy * dy);
 						for (int index = 0; index < to_visit.size(); index++)
 						{
 							// supposed to find it quite early..
@@ -192,7 +192,7 @@ public class GeoPathFinding extends PathFinding
 			directionX = node.getLoc().getNodeX() - node.getParent().getLoc().getNodeX();
 			directionY = node.getLoc().getNodeY() - node.getParent().getLoc().getNodeY();
 			
-			if ((directionX != previousDirectionX) || (directionY != previousDirectionY))
+			if (directionX != previousDirectionX || directionY != previousDirectionY)
 			{
 				previousDirectionX = directionX;
 				previousDirectionY = directionY;
@@ -314,7 +314,7 @@ public class GeoPathFinding extends PathFinding
 		ByteBuffer pn = _pathNodes.get(regoffset);
 		//reading
 		byte nodes = pn.get(idx);
-		idx += (layer * 10) + 1;//byte + layer*10byte
+		idx += layer * 10 + 1;//byte + layer*10byte
 		if (nodes < layer)
 		{
 			Log.warning("SmthWrong!");
@@ -403,7 +403,7 @@ public class GeoPathFinding extends PathFinding
 	
 	private void LoadPathNodeFile(byte rx, byte ry)
 	{
-		if ((rx < Config.WORLD_X_MIN) || (rx > Config.WORLD_X_MAX) || (ry < Config.WORLD_Y_MIN) || (ry > Config.WORLD_Y_MAX))
+		if (rx < Config.WORLD_X_MIN || rx > Config.WORLD_X_MAX || ry < Config.WORLD_Y_MIN || ry > Config.WORLD_Y_MAX)
 		{
 			Log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + "\n");
 			return;
@@ -436,7 +436,7 @@ public class GeoPathFinding extends PathFinding
 			{
 				byte layer = nodes.get(index);
 				indexs.put(node++, index);
-				index += (layer * 10) + 1;
+				index += layer * 10 + 1;
 			}
 			_pathNodesIndex.put(regionoffset, indexs);
 			_pathNodes.put(regionoffset, nodes);

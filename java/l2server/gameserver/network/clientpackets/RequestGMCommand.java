@@ -61,7 +61,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 		{
 			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 			{
-				if ((pl != null) && pl.getName().equalsIgnoreCase(_targetName))
+				if (pl != null && pl.getName().equalsIgnoreCase(_targetName))
 				{
 					player = pl;
 					break;
@@ -72,7 +72,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 		L2Clan clan = ClanTable.getInstance().getClanByName(_targetName);
 		
 		// player name was incorrect?
-		if ((player == null) && ((clan == null) || (_command != 6)))
+		if (player == null && (clan == null || _command != 6))
 		{
 			return;
 		}

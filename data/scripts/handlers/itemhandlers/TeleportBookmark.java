@@ -33,7 +33,7 @@ public class TeleportBookmark implements IItemHandler
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
-		if ((playable == null) || (item == null) || !(playable instanceof L2PcInstance))
+		if (playable == null || item == null || !(playable instanceof L2PcInstance))
 			return;
 		
 		L2PcInstance player = (L2PcInstance) playable;

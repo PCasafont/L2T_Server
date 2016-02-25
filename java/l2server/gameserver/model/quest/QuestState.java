@@ -138,7 +138,7 @@ public final class QuestState
 	 */
 	public boolean isCreated()
 	{
-		return (getState() == State.CREATED);
+		return getState() == State.CREATED;
 	}
 	
 	/**
@@ -147,7 +147,7 @@ public final class QuestState
 	 */
 	public boolean isCompleted()
 	{
-		return (getState() == State.COMPLETED);
+		return getState() == State.COMPLETED;
 	}
 	
 	/**
@@ -156,7 +156,7 @@ public final class QuestState
 	 */
 	public boolean isStarted()
 	{
-		return (getState() == State.STARTED);
+		return getState() == State.STARTED;
 	}
 	
 	/**
@@ -298,7 +298,7 @@ public final class QuestState
 		// always exist (i.e. it can never be skipped).  So if cond is 2, we can still safely
 		// assume no steps have been skipped.
 		// Finally, more than 31 steps CANNOT be supported in any way with skipping.
-		if ((cond < 3) || (cond > 31))
+		if (cond < 3 || cond > 31)
 		{
 			unset("__compltdStateFlags");
 		}
@@ -313,7 +313,7 @@ public final class QuestState
 			// in those cases, skip forward to informing the client about the change...
 			
 			// ELSE, if we just now skipped for the first time...prepare the flags!!!
-			if (cond > (old + 1))
+			if (cond > old + 1)
 			{
 				// set the most significant bit to 1 (indicates that there exist skipped states)
 				// also, ensure that the least significant bit is an 1 (the first step is never skipped, no matter
@@ -322,10 +322,10 @@ public final class QuestState
 				
 				// since no flag had been skipped until now, the least significant bits must all
 				// be set to 1, up until "old" number of bits.
-				completedStateFlags |= ((1 << old) - 1);
+				completedStateFlags |= (1 << old) - 1;
 				
 				// now, just set the bit corresponding to the passed cond to 1 (current step)
-				completedStateFlags |= (1 << (cond - 1));
+				completedStateFlags |= 1 << cond - 1;
 				set("__compltdStateFlags", String.valueOf(completedStateFlags));
 			}
 		}
@@ -335,10 +335,10 @@ public final class QuestState
 			// if this is a push back to a previous step, clear all completion flags ahead
 			if (cond < old)
 			{
-				completedStateFlags &= ((1 << cond) - 1); // note, this also unsets the flag indicating that there exist skips
+				completedStateFlags &= (1 << cond) - 1; // note, this also unsets the flag indicating that there exist skips
 				
 				//now, check if this resulted in no steps being skipped any more
-				if (completedStateFlags == ((1 << cond) - 1))
+				if (completedStateFlags == (1 << cond) - 1)
 					unset("__compltdStateFlags");
 				else
 				{
@@ -353,14 +353,14 @@ public final class QuestState
 			// state and we are done
 			else
 			{
-				completedStateFlags |= (1 << (cond - 1));
+				completedStateFlags |= 1 << cond - 1;
 				set("__compltdStateFlags", String.valueOf(completedStateFlags));
 			}
 		}
 		
 		if (completedStateFlags == 0)
 		{
-			completedStateFlags = ((int) Math.pow(2, cond) - 1) | 0x80000001;
+			completedStateFlags = (int) Math.pow(2, cond) - 1 | 0x80000001;
 			set("__compltdStateFlags", String.valueOf(completedStateFlags));
 		}
 		
@@ -369,7 +369,7 @@ public final class QuestState
 		getPlayer().sendPacket(ql);
 		
 		int questId = getQuest().getQuestIntId();
-		if ((questId > 0) && (questId < 19999) && (cond > 0))
+		if (questId > 0 && questId < 19999 && cond > 0)
 			getPlayer().sendPacket(new ExShowQuestMark(questId, cond));
 	}
 	
@@ -513,7 +513,7 @@ public final class QuestState
 			return 0;
 		
 		final String variable = _vars.get(var);
-		if ((variable == null) || (variable.length() == 0))
+		if (variable == null || variable.length() == 0)
 			return 0;
 		
 		int varint = 0;
@@ -537,7 +537,7 @@ public final class QuestState
 	 */
 	public void addNotifyOfDeath(L2Character character)
 	{
-		if ((character == null) || !(character instanceof L2PcInstance))
+		if (character == null || !(character instanceof L2PcInstance))
 			return;
 		
 		((L2PcInstance) character).addNotifyQuestOfDeath(this);
@@ -553,7 +553,7 @@ public final class QuestState
 		long count = 0;
 		
 		for (L2ItemInstance item : getPlayer().getInventory().getItems())
-			if ((item != null) && (item.getItemId() == itemId))
+			if (item != null && item.getItemId() == itemId)
 				count += item.getCount();
 		
 		return count;
@@ -694,7 +694,7 @@ public final class QuestState
 			return;
 		
 		// If item for reward is adena (ID=57), modify count with rate for quest reward if rates available
-		if ((itemId == 57) && !(enchantlevel > 0))
+		if (itemId == 57 && !(enchantlevel > 0))
 		{
 			count = (long) (count * Config.RATE_QUEST_REWARD_ADENA);
 		}
@@ -706,7 +706,7 @@ public final class QuestState
 			return;
 		
 		// set enchant level for item if that item is not adena
-		if ((enchantlevel > 0) && (itemId != 57))
+		if (enchantlevel > 0 && itemId != 57)
 			item.setEnchantLevel(enchantlevel);
 		
 		// If item for reward is gold, send message of gold reward to client
@@ -751,7 +751,7 @@ public final class QuestState
 			return;
 		
 		// set enchant level for item if that item is not adena
-		if ((attributeId >= 0) && (attributeLevel > 0))
+		if (attributeId >= 0 && attributeLevel > 0)
 		{
 			item.setElementAttr(attributeId, attributeLevel);
 			if (item.isEquipped())
@@ -808,10 +808,10 @@ public final class QuestState
 	
 	public boolean dropQuestItems(int itemId, int minCount, int maxCount, long neededCount, int dropChance, boolean sound)
 	{
-		dropChance *= Config.RATE_QUEST_DROP / ((getPlayer().getParty() != null) ? getPlayer().getParty().getMemberCount() : 1);
+		dropChance *= Config.RATE_QUEST_DROP / (getPlayer().getParty() != null ? getPlayer().getParty().getMemberCount() : 1);
 		long currentCount = getQuestItemsCount(itemId);
 		
-		if ((neededCount > 0) && (currentCount >= neededCount))
+		if (neededCount > 0 && currentCount >= neededCount)
 			return true;
 		
 		if (currentCount >= neededCount)
@@ -837,7 +837,7 @@ public final class QuestState
 		if (itemCount > 0)
 		{
 			// if over neededCount, just fill the gap
-			if ((neededCount > 0) && ((currentCount + itemCount) > neededCount))
+			if (neededCount > 0 && currentCount + itemCount > neededCount)
 				itemCount = neededCount - currentCount;
 			
 			// Inventory slot check
@@ -848,10 +848,10 @@ public final class QuestState
 			getPlayer().addItem("Quest", itemId, itemCount, getPlayer().getTarget(), true);
 			
 			if (sound)
-				playSound(((currentCount + itemCount) < neededCount) ? "Itemsound.quest_itemget" : "Itemsound.quest_middle");
+				playSound(currentCount + itemCount < neededCount ? "Itemsound.quest_itemget" : "Itemsound.quest_middle");
 		}
 		
-		return ((neededCount > 0) && ((currentCount + itemCount) >= neededCount));
+		return neededCount > 0 && currentCount + itemCount >= neededCount;
 	}
 	
 	//TODO: More radar functions need to be added when the radar class is complete.
@@ -889,7 +889,7 @@ public final class QuestState
 			return;
 		
 		// Tests on count value in order not to have negative value
-		if ((count < 0) || (count > item.getCount()))
+		if (count < 0 || count > item.getCount())
 			count = item.getCount();
 		
 		// Destroy the quantity of items wanted

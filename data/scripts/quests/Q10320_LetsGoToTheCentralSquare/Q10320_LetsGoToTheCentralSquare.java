@@ -52,7 +52,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _pantheon) && event.equalsIgnoreCase("32972-03.htm"))
+		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -61,7 +61,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 			// Reset video if it was shown before
 			st.deleteGlobalQuestVar("ZoneVid523400");
 		}
-		else if ((npc.getNpcId() == _theodore) && event.equalsIgnoreCase("32975-02.htm") && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _theodore && event.equalsIgnoreCase("32975-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 3000);
@@ -101,7 +101,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _theodore) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _theodore && st.getInt("cond") == 1)
 			htmltext = "32975-01.htm";
 		return htmltext;
 	}

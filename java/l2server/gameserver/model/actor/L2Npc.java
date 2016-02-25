@@ -352,7 +352,7 @@ public class L2Npc extends L2Character
 		boolean hasLrange = false;
 		L2NpcAIData AI = getTemplate().getAIData();
 		
-		if ((AI == null) || (AI.getLongRangeSkill() == 0))
+		if (AI == null || AI.getLongRangeSkill() == 0)
 			return null;
 		
 		switch (AI.getLongRangeSkill())
@@ -365,7 +365,7 @@ public class L2Npc extends L2Character
 				{
 					for (L2Skill sk : skills)
 					{
-						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2SkillTargetType.TARGET_SELF))
+						if (sk == null || sk.isPassive() || sk.getTargetType() == L2SkillTargetType.TARGET_SELF)
 							continue;
 						
 						if (sk.getCastRange() >= 200)
@@ -405,7 +405,7 @@ public class L2Npc extends L2Character
 			}
 		}
 		
-		return (hasLrange ? skilldata : null);
+		return hasLrange ? skilldata : null;
 	}
 	
 	public ArrayList<L2Skill> getSrangeSkill()
@@ -414,7 +414,7 @@ public class L2Npc extends L2Character
 		boolean hasSrange = false;
 		L2NpcAIData AI = getTemplate().getAIData();
 		
-		if ((AI == null) || (AI.getShortRangeSkill() == 0))
+		if (AI == null || AI.getShortRangeSkill() == 0)
 			return null;
 		
 		switch (AI.getShortRangeSkill())
@@ -427,7 +427,7 @@ public class L2Npc extends L2Character
 				{
 					for (L2Skill sk : skills)
 					{
-						if ((sk == null) || sk.isPassive() || (sk.getTargetType() == L2SkillTargetType.TARGET_SELF))
+						if (sk == null || sk.isPassive() || sk.getTargetType() == L2SkillTargetType.TARGET_SELF)
 							continue;
 						
 						if (sk.getCastRange() <= 200)
@@ -467,7 +467,7 @@ public class L2Npc extends L2Character
 			}
 		}
 		
-		return (hasSrange ? skilldata : null);
+		return hasSrange ? skilldata : null;
 	}
 	
 	/** Task launching the function onRandomAnimation() */
@@ -518,7 +518,7 @@ public class L2Npc extends L2Character
 	{
 		// Send a packet SocialAction to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
 		long now = System.currentTimeMillis();
-		if ((now - _lastSocialBroadcast) > _minimalSocialInterval)
+		if (now - _lastSocialBroadcast > _minimalSocialInterval)
 		{
 			_lastSocialBroadcast = now;
 			broadcastPacket(new SocialAction(getObjectId(), animationId));
@@ -533,18 +533,18 @@ public class L2Npc extends L2Character
 		if (!hasRandomAnimation())
 			return;
 		
-		boolean particular = (getTemplate().getAIData().getMinSocial(false) >= 0) || (getTemplate().getAIData().getMinSocial(true) >= 0);
+		boolean particular = getTemplate().getAIData().getMinSocial(false) >= 0 || getTemplate().getAIData().getMinSocial(true) >= 0;
 		boolean second = false;
 		if (particular)
 		{
-			if ((getTemplate().getAIData().getMinSocial(true) != 0) && ((getTemplate().getAIData().getMinSocial(false) == 0) || (Rnd.get(getTemplate().getAIData().getMinSocial(false) + getTemplate().getAIData().getMinSocial(true)) > getTemplate().getAIData().getMinSocial(true))))
+			if (getTemplate().getAIData().getMinSocial(true) != 0 && (getTemplate().getAIData().getMinSocial(false) == 0 || Rnd.get(getTemplate().getAIData().getMinSocial(false) + getTemplate().getAIData().getMinSocial(true)) > getTemplate().getAIData().getMinSocial(true)))
 				second = true;
 		}
 		else
 			second = Rnd.get(1) == 0;
 		
-		int minWait = particular ? getTemplate().getAIData().getMinSocial(second) : (isMob() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION);
-		int maxWait = particular ? getTemplate().getAIData().getMaxSocial(second) : (isMob() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION);
+		int minWait = particular ? getTemplate().getAIData().getMinSocial(second) : isMob() ? Config.MIN_MONSTER_ANIMATION : Config.MIN_NPC_ANIMATION;
+		int maxWait = particular ? getTemplate().getAIData().getMaxSocial(second) : isMob() ? Config.MAX_MONSTER_ANIMATION : Config.MAX_NPC_ANIMATION;
 		
 		// Calculate the delay before the next animation
 		int interval = Rnd.get(minWait, maxWait) * 1000;
@@ -559,7 +559,7 @@ public class L2Npc extends L2Character
 	 */
 	public boolean hasRandomAnimation()
 	{
-		return ((Config.MAX_NPC_ANIMATION > 0) && !getAiType().equals(AIType.CORPSE) && ((getTemplate().getAIData().getMaxSocial(false) != 0) || (getTemplate().getAIData().getMaxSocial(true) != 0)));
+		return Config.MAX_NPC_ANIMATION > 0 && !getAiType().equals(AIType.CORPSE) && (getTemplate().getAIData().getMaxSocial(false) != 0 || getTemplate().getAIData().getMaxSocial(true) != 0);
 	}
 	
 	/**
@@ -766,7 +766,7 @@ public class L2Npc extends L2Character
 	 */
 	public int getDistanceToWatchObject(L2Object object)
 	{
-		if ((object instanceof L2NpcInstance) || !(object instanceof L2Character))
+		if (object instanceof L2NpcInstance || !(object instanceof L2Character))
 			return 0;
 		
 		if (object instanceof L2Playable)
@@ -886,7 +886,7 @@ public class L2Npc extends L2Character
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
-		if (player.isLockedTarget() && (player.getLockedTarget() != this))
+		if (player.isLockedTarget() && player.getLockedTarget() != this)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -911,7 +911,7 @@ public class L2Npc extends L2Character
 			return false;
 		if (!isInsideRadius(player, getInteractionDistance(), true, false))
 			return false;
-		if ((player.getInstanceId() != getInstanceId()) && (getInstanceId() != player.getObjectId()) && (player.getInstanceId() != -1))
+		if (player.getInstanceId() != getInstanceId() && getInstanceId() != player.getObjectId() && player.getInstanceId() != -1)
 			return false;
 		
 		return true;
@@ -1018,7 +1018,7 @@ public class L2Npc extends L2Character
 	{
 		//if (canInteract(player))
 		{
-			if (isBusy() && (getBusyMessage().length() > 0))
+			if (isBusy() && getBusyMessage().length() > 0)
 			{
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				
@@ -1247,22 +1247,22 @@ public class L2Npc extends L2Character
 		}
 		if (player.getReputation() < 0)
 		{
-			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof L2MerchantInstance))
+			if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this instanceof L2MerchantInstance)
 			{
 				if (showPkDenyChatWindow(player, "merchant"))
 					return;
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && (this instanceof L2TeleporterInstance))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_GK && this instanceof L2TeleporterInstance)
 			{
 				if (showPkDenyChatWindow(player, "teleporter"))
 					return;
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (this instanceof L2WarehouseInstance))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && this instanceof L2WarehouseInstance)
 			{
 				if (showPkDenyChatWindow(player, "warehouse"))
 					return;
 			}
-			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (this instanceof L2FishermanInstance))
+			else if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && this instanceof L2FishermanInstance)
 			{
 				if (showPkDenyChatWindow(player, "fisherman"))
 					return;
@@ -1283,7 +1283,7 @@ public class L2Npc extends L2Character
 				if (player.isNoble())
 					filename = Olympiad.OLYMPIAD_HTML_PATH + "noble_main.htm";
 				else
-					filename = (getHtmlPath(npcId, val));
+					filename = getHtmlPath(npcId, val);
 				break;
 			case 31690:
 			case 31769:
@@ -1293,22 +1293,22 @@ public class L2Npc extends L2Character
 				if (player.isNoble())
 					filename = Olympiad.OLYMPIAD_HTML_PATH + "hero_main.htm";
 				else
-					filename = (getHtmlPath(npcId, val));
+					filename = getHtmlPath(npcId, val);
 				break;
 			case 36402:
 				if (player.olyBuff > 0)
-					filename = (player.olyBuff == 5 ? Olympiad.OLYMPIAD_HTML_PATH + "olympiad_buffs.htm" : Olympiad.OLYMPIAD_HTML_PATH + "olympiad_5buffs.htm");
+					filename = player.olyBuff == 5 ? Olympiad.OLYMPIAD_HTML_PATH + "olympiad_buffs.htm" : Olympiad.OLYMPIAD_HTML_PATH + "olympiad_5buffs.htm";
 				else
 					filename = Olympiad.OLYMPIAD_HTML_PATH + "olympiad_nobuffs.htm";
 				break;
 			case 30298: // Blacksmith Pinter
 				if (player.isAcademyMember())
-					filename = (getHtmlPath(npcId, "1"));
+					filename = getHtmlPath(npcId, "1");
 				else
-					filename = (getHtmlPath(npcId, "0"));
+					filename = getHtmlPath(npcId, "0");
 				break;
 			default:
-				if (((npcId >= 31093) && (npcId <= 31094)) || ((npcId >= 31172) && (npcId <= 31201)) || ((npcId >= 31239) && (npcId <= 31254)))
+				if (npcId >= 31093 && npcId <= 31094 || npcId >= 31172 && npcId <= 31201 || npcId >= 31239 && npcId <= 31254)
 					return;
 				// Get the text of the selected HTML file in function of the npcId and of the page number
 				filename = getHtmlPath(npcId, val);
@@ -1335,7 +1335,7 @@ public class L2Npc extends L2Character
 			int maxPks = 0;
 			for (L2PcInstance onlinePker : L2World.getInstance().getAllPlayers().values())
 			{
-				if (onlinePker.isOnline() && !onlinePker.isGM() && (onlinePker.getPkKills() >= maxPks))
+				if (onlinePker.isOnline() && !onlinePker.isGM() && onlinePker.getPkKills() >= maxPks)
 				{
 					maxPks = onlinePker.getPkKills();
 					pker = onlinePker.getName();
@@ -1343,7 +1343,7 @@ public class L2Npc extends L2Character
 			}
 			html.replace("%pker%", pker);
 		}
-		else if ((npcId == 40004) && val.equals("main_towns"))
+		else if (npcId == 40004 && val.equals("main_towns"))
 		{
 			html.replace("%nextTowns%", MainTownManager.getInstance().getNextTownsInfo());
 		}
@@ -1413,7 +1413,7 @@ public class L2Npc extends L2Character
 					case 1:
 					{
 						// Shows -2 0
-						earliestSpawnTime = bossRespawnTime - (2 * 3600000);
+						earliestSpawnTime = bossRespawnTime - 2 * 3600000;
 						latestSpawnTime = bossRespawnTime;
 						break;
 					}
@@ -1421,7 +1421,7 @@ public class L2Npc extends L2Character
 					{
 						// Shows 0 +2
 						earliestSpawnTime = bossRespawnTime;
-						latestSpawnTime = bossRespawnTime + (2 * 3600000);
+						latestSpawnTime = bossRespawnTime + 2 * 3600000;
 						break;
 					}
 				}
@@ -1595,12 +1595,12 @@ public class L2Npc extends L2Character
 		}
 		try
 		{
-			if ((_fusionSkill != null) || (_continuousDebuffTargets != null))
+			if (_fusionSkill != null || _continuousDebuffTargets != null)
 				abortCast();
 			
 			for (L2Character character : getKnownList().getKnownCharacters())
 			{
-				if ((character.getFusionSkill() != null) && (character.getFusionSkill().getTarget() == this))
+				if (character.getFusionSkill() != null && character.getFusionSkill().getTarget() == this)
 					character.abortCast();
 			}
 		}

@@ -43,7 +43,7 @@ public class HennaEquipList extends L2GameServerPacket
 		{
 			// Player must have at least one dye in inventory
 			// to be able to see the henna that can be applied with it.
-			if ((_player.getInventory().getItemByItemId(temp.getDyeId())) != null)
+			if (_player.getInventory().getItemByItemId(temp.getDyeId()) != null)
 			{
 				writeD(temp.getSymbolId()); //symbolId
 				writeD(temp.getDyeId()); //itemId of dye

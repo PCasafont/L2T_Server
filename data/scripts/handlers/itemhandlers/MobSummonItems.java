@@ -45,7 +45,7 @@ public class MobSummonItems implements IItemHandler
 		
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
 			return;
 		
 		if (activeChar.isMobSummonRequest())

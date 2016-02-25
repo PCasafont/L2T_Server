@@ -31,7 +31,7 @@ public class ConditionPlayerEvent extends Condition
 	public boolean testImpl(Env env)
 	{
 		final L2PcInstance player = env.player.getActingPlayer();
-		if ((player == null) || !player.isPlayingEvent())
+		if (player == null || !player.isPlayingEvent())
 			return !_val;
 		
 		return _val;

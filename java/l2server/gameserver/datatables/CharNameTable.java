@@ -85,7 +85,7 @@ public class CharNameTable
 	
 	public final int getIdByName(String name)
 	{
-		if ((name == null) || name.isEmpty())
+		if (name == null || name.isEmpty())
 			return -1;
 		
 		Iterator<Entry<Integer, String>> it = _chars.entrySet().iterator();
@@ -174,7 +174,7 @@ public class CharNameTable
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if ((name != null) && !name.isEmpty())
+		if (name != null && !name.isEmpty())
 		{
 			_chars.put(id, name);
 			_accessLevels.put(id, accessLevel);
@@ -296,7 +296,7 @@ public class CharNameTable
 				}
 			}
 		}
-		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || (name.length() < 1) || (name.length() > 16) || (getIdByName(name) > 0))
+		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || name.length() < 1 || name.length() > 16 || getIdByName(name) > 0)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHARACTER_NAME_INVALID_RENAME_CHARACTER));
 			return false;

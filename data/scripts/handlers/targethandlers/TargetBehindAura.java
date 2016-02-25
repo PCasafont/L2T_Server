@@ -48,7 +48,7 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
 		
 		int radius = skill.getSkillRadius();
 		
-		boolean srcInArena = (activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE));
+		boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 		
 		L2PcInstance src = activeChar.getActingPlayer();
 		
@@ -58,11 +58,11 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
 		{
 			for (L2Object obj : objs)
 			{
-				if ((obj instanceof L2Attackable) || (obj instanceof L2Playable))
+				if (obj instanceof L2Attackable || obj instanceof L2Playable)
 				{
 					// Don't add this target if this is a Pc->Pc pvp
 					// casting and pvp condition not met
-					if ((obj == activeChar) || (obj == src) || ((L2Character) obj).isDead())
+					if (obj == activeChar || obj == src || ((L2Character) obj).isDead())
 						continue;
 					
 					if (src != null)
@@ -83,15 +83,15 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
 							if (!src.checkPvpSkill(obj, skill))
 								continue;
 							
-							if (((src.getParty() != null) && (((L2PcInstance) obj).getParty() != null)) && (src.getParty().getPartyLeaderOID() == ((L2PcInstance) obj).getParty().getPartyLeaderOID()))
+							if (src.getParty() != null && ((L2PcInstance) obj).getParty() != null && src.getParty().getPartyLeaderOID() == ((L2PcInstance) obj).getParty().getPartyLeaderOID())
 								continue;
 							
 							if (!srcInArena && !(((L2Character) obj).isInsideZone(L2Character.ZONE_PVP) && !((L2Character) obj).isInsideZone(L2Character.ZONE_SIEGE)))
 							{
-								if ((src.getAllyId() == ((L2PcInstance) obj).getAllyId()) && (src.getAllyId() != 0))
+								if (src.getAllyId() == ((L2PcInstance) obj).getAllyId() && src.getAllyId() != 0)
 									continue;
 								
-								if ((src.getClanId() != 0) && (src.getClanId() == ((L2PcInstance) obj).getClanId()))
+								if (src.getClanId() != 0 && src.getClanId() == ((L2PcInstance) obj).getClanId())
 									continue;
 							}
 						}
@@ -105,15 +105,15 @@ public class TargetBehindAura implements ISkillTargetTypeHandler
 							if (!src.checkPvpSkill(trg, skill))
 								continue;
 							
-							if (((src.getParty() != null) && (trg.getParty() != null)) && (src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()))
+							if (src.getParty() != null && trg.getParty() != null && src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
 								continue;
 							
 							if (!srcInArena && !(((L2Character) obj).isInsideZone(L2Character.ZONE_PVP) && !((L2Character) obj).isInsideZone(L2Character.ZONE_SIEGE)))
 							{
-								if ((src.getAllyId() == trg.getAllyId()) && (src.getAllyId() != 0))
+								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
 									continue;
 								
-								if ((src.getClanId() != 0) && (src.getClanId() == trg.getClanId()))
+								if (src.getClanId() != 0 && src.getClanId() == trg.getClanId())
 									continue;
 							}
 						}

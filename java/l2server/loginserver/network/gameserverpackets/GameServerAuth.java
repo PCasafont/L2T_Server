@@ -62,8 +62,8 @@ public class GameServerAuth extends BaseRecievePacket
 		super(decrypt);
 		_server = server;
 		_desiredId = readC();
-		_acceptAlternativeId = (readC() == 0 ? false : true);
-		_hostReserved = (readC() == 0 ? false : true);
+		_acceptAlternativeId = readC() == 0 ? false : true;
+		_hostReserved = readC() == 0 ? false : true;
 		_port = readH();
 		_maxPlayers = readD();
 		int size = readD();

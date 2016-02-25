@@ -52,7 +52,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
 	{
 		if (target instanceof L2Playable)
 		{
-			if (target.getActingPlayer().getProtectionBlessing() && ((_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel()) >= 10) && (_actor.getActingPlayer().getReputation() < 0) && !(target.isInsideZone(L2Character.ZONE_PVP)))
+			if (target.getActingPlayer().getProtectionBlessing() && _actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 && _actor.getActingPlayer().getReputation() < 0 && !target.isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
@@ -61,7 +61,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
 				return;
 			}
 			
-			if (_actor.getActingPlayer().getProtectionBlessing() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !(target.isInsideZone(L2Character.ZONE_PVP)))
+			if (_actor.getActingPlayer().getProtectionBlessing() && target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel() >= 10 && target.getActingPlayer().getReputation() < 0 && !target.isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
@@ -70,14 +70,14 @@ public abstract class L2PlayableAI extends L2CharacterAI
 				return;
 			}
 			
-			if (target.getActingPlayer().isCursedWeaponEquipped() && (_actor.getActingPlayer().getLevel() <= 20))
+			if (target.getActingPlayer().isCursedWeaponEquipped() && _actor.getActingPlayer().getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
 				return;
 			}
 			
-			if (_actor.getActingPlayer().isCursedWeaponEquipped() && (target.getActingPlayer().getLevel() <= 20))
+			if (_actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
@@ -94,9 +94,9 @@ public abstract class L2PlayableAI extends L2CharacterAI
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if ((target instanceof L2Playable) && skill.isOffensive())
+		if (target instanceof L2Playable && skill.isOffensive())
 		{
-			if (target.getActingPlayer().getProtectionBlessing() && ((_actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel()) >= 10) && (_actor.getActingPlayer().getReputation() < 0) && !(((L2Playable) target).isInsideZone(L2Character.ZONE_PVP)))
+			if (target.getActingPlayer().getProtectionBlessing() && _actor.getActingPlayer().getLevel() - target.getActingPlayer().getLevel() >= 10 && _actor.getActingPlayer().getReputation() < 0 && !((L2Playable) target).isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If attacker have karma and have level >= 10 than his target and target have
 				// Newbie Protection Buff,
@@ -107,7 +107,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
 				return;
 			}
 			
-			if (_actor.getActingPlayer().getProtectionBlessing() && ((target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel()) >= 10) && (target.getActingPlayer().getReputation() < 0) && !(((L2Playable) target).isInsideZone(L2Character.ZONE_PVP)))
+			if (_actor.getActingPlayer().getProtectionBlessing() && target.getActingPlayer().getLevel() - _actor.getActingPlayer().getLevel() >= 10 && target.getActingPlayer().getReputation() < 0 && !((L2Playable) target).isInsideZone(L2Character.ZONE_PVP))
 			{
 				// If target have karma and have level >= 10 than his target and actor have
 				// Newbie Protection Buff,
@@ -118,7 +118,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
 				return;
 			}
 			
-			if (target.getActingPlayer().isCursedWeaponEquipped() && (_actor.getActingPlayer().getLevel() <= 20))
+			if (target.getActingPlayer().isCursedWeaponEquipped() && _actor.getActingPlayer().getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();
@@ -127,7 +127,7 @@ public abstract class L2PlayableAI extends L2CharacterAI
 				return;
 			}
 			
-			if (_actor.getActingPlayer().isCursedWeaponEquipped() && (target.getActingPlayer().getLevel() <= 20))
+			if (_actor.getActingPlayer().isCursedWeaponEquipped() && target.getActingPlayer().getLevel() <= 20)
 			{
 				_actor.getActingPlayer().sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				clientActionFailed();

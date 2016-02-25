@@ -18,7 +18,7 @@ public class Tow extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 117) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 117 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

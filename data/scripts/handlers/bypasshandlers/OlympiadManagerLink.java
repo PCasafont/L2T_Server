@@ -236,7 +236,7 @@ public class OlympiadManagerLink implements IBypassHandler
 					case 2:
 						// for example >> Olympiad 1_88
 						int classId = Integer.parseInt(command.substring(11));
-						if ((((classId >= 148) && (classId <= 181)) || ((classId == 188) || (classId == 189))) || ((classId >= 88) && (classId <= 118)) || ((classId >= 131) && (classId <= 134)) || (classId == 136))
+						if (classId >= 148 && classId <= 181 || classId == 188 || classId == 189 || classId >= 88 && classId <= 118 || classId >= 131 && classId <= 134 || classId == 136)
 						{
 							List<String> names = Olympiad.getInstance().getClassLeaderBoard(classId);
 							reply.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "olympiad_ranking.htm");

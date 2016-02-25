@@ -67,7 +67,7 @@ public class DeadLockDetector extends Thread
 					{
 						LockInfo[] locks = ti.getLockedSynchronizers();
 						MonitorInfo[] monitors = ti.getLockedMonitors();
-						if ((locks.length == 0) && (monitors.length == 0))
+						if (locks.length == 0 && monitors.length == 0)
 						{
 							continue;
 						}

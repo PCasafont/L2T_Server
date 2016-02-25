@@ -75,7 +75,7 @@ public final class Action extends L2GameClientPacket
 		L2Object obj;
 		if (activeChar.getTargetId() == _objectId)
 			obj = activeChar.getTarget();
-		else if (activeChar.isInAirShip() && (activeChar.getAirShip().getHelmObjectId() == _objectId))
+		else if (activeChar.isInAirShip() && activeChar.getAirShip().getHelmObjectId() == _objectId)
 			obj = activeChar.getAirShip();
 		else
 			obj = L2World.getInstance().findObject(_objectId);
@@ -99,7 +99,7 @@ public final class Action extends L2GameClientPacket
 		
 		// Players can't interact with objects in the other instances
 		// except from multiverse
-		if ((obj.getInstanceId() != activeChar.getInstanceId()) && (obj.getInstanceId() != activeChar.getObjectId()) && (activeChar.getInstanceId() != -1))
+		if (obj.getInstanceId() != activeChar.getInstanceId() && obj.getInstanceId() != activeChar.getObjectId() && activeChar.getInstanceId() != -1)
 		{
 			activeChar.sendSysMessage("ERR1");
 			getClient().sendPacket(ActionFailed.STATIC_PACKET);
@@ -107,7 +107,7 @@ public final class Action extends L2GameClientPacket
 		}
 		
 		// Only GMs can directly interact with invisible characters, but an invis char can target itself
-		if ((obj instanceof L2PcInstance) && (((L2PcInstance) obj).getAppearance().getInvisible()) && !activeChar.isGM() && (obj != activeChar))
+		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar.isGM() && obj != activeChar)
 		{
 			activeChar.sendSysMessage("ERR2");
 			getClient().sendPacket(ActionFailed.STATIC_PACKET);
@@ -130,7 +130,7 @@ public final class Action extends L2GameClientPacket
 					obj.onAction(activeChar);
 					break;
 				case 1:
-					if (!Config.isServer(Config.DREAMS) && !activeChar.isGM() && !((obj instanceof L2Npc) && Config.ALT_GAME_VIEWNPC))
+					if (!Config.isServer(Config.DREAMS) && !activeChar.isGM() && !(obj instanceof L2Npc && Config.ALT_GAME_VIEWNPC))
 						obj.onAction(activeChar, false);
 					else
 						obj.onActionShift(activeChar);

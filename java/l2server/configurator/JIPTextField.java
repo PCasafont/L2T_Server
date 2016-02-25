@@ -131,7 +131,7 @@ public class JIPTextField extends JPanel implements FocusListener
 			_focusListeners = new LinkedList<FocusListener>();
 		}
 		
-		if ((fl != null) && !_focusListeners.contains(fl))
+		if (fl != null && !_focusListeners.contains(fl))
 		{
 			_focusListeners.add(fl);
 		}
@@ -290,7 +290,7 @@ public class JIPTextField extends JPanel implements FocusListener
 		@Override
 		public void insertString(int offset, String str, AttributeSet a) throws BadLocationException
 		{
-			if ((getLength() + str.length()) > _max)
+			if (getLength() + str.length() > _max)
 			{
 				if (getNext() != null)
 				{

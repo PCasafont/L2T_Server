@@ -110,7 +110,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		}
 		else if (command.startsWith("increase_clan_level"))
 		{
-			if ((player.getClan() == null) || !player.isClanLeader())
+			if (player.getClan() == null || !player.isClanLeader())
 			{
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				html.setFile(player.getHtmlPrefix(), "classmaster/noclanleader.htm");
@@ -151,14 +151,14 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 			else
 			{
 				final int minLevel = getMinLevel(currentClass.level());
-				if ((player.getLevel() >= minLevel) || Config.ALLOW_ENTIRE_TREE)
+				if (player.getLevel() >= minLevel || Config.ALLOW_ENTIRE_TREE)
 				{
 					final StringBuilder menu = new StringBuilder(100);
 					for (PlayerClass cl : PlayerClassTable.getInstance().getAllClasses())
 					{
-						if ((cl.getId() == 135 /*inspector*/) && (player.getTotalSubClasses() < 2))
+						if (cl.getId() == 135 && player.getTotalSubClasses() < 2)
 							continue;
-						if (validateClassId(currentClass, cl) && (cl.level() == level))
+						if (validateClassId(currentClass, cl) && cl.level() == level)
 						{
 							StringUtil.append(menu, "<a action=\"bypass -h npc_%objectId%_change_class ", String.valueOf(cl.getId()), "\">", PlayerClassTable.getInstance().getClassNameById(cl.getId()), "</a><br>");
 						}
@@ -197,7 +197,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 	private static final boolean checkAndChangeClass(L2PcInstance player, int val)
 	{
 		final PlayerClass currentClass = player.getCurrentClass();
-		if ((getMinLevel(currentClass.level()) > player.getLevel()) && !Config.ALLOW_ENTIRE_TREE)
+		if (getMinLevel(currentClass.level()) > player.getLevel() && !Config.ALLOW_ENTIRE_TREE)
 			return false;
 		
 		if (!validateClassId(currentClass, val))

@@ -22,7 +22,7 @@ public class Q255_Tutorial extends Quest
 		if (event.startsWith("UC")) // User Connected
 		{
 			int playerLevel = player.getLevel();
-			if ((playerLevel < 6) && (st.getInt("done") == 0))
+			if (playerLevel < 6 && st.getInt("done") == 0)
 			{
 				st.onTutorialClientEvent(0);
 				st.showQuestionMark(100);
@@ -115,7 +115,7 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 				case 30:
-					if ((playerLevel < 10) && (st.getInt("Die") == 0))
+					if (playerLevel < 10 && st.getInt("Die") == 0)
 					{
 						st.playTutorialVoice("tutorial_voice_016");
 						st.playSound("ItemSound.quest_tutorial");
@@ -125,7 +125,7 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 				case 800000:
-					if ((playerLevel < 6) && (st.getInt("sit") == 0))
+					if (playerLevel < 6 && st.getInt("sit") == 0)
 					{
 						st.playTutorialVoice("tutorial_voice_018");
 						st.playSound("ItemSound.quest_tutorial");

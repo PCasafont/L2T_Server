@@ -132,10 +132,10 @@ public class Freya extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof FreyaWorld))
+		if (wrld != null && wrld instanceof FreyaWorld)
 		{
 			FreyaWorld world = (FreyaWorld) wrld;
-			if ((npc.getNpcId() == world.FirstFreyaId) || (npc.getNpcId() == world.LastFreyaId))
+			if (npc.getNpcId() == world.FirstFreyaId || npc.getNpcId() == world.LastFreyaId)
 			{
 				switch (skill.getId())
 				{
@@ -192,7 +192,7 @@ public class Freya extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof FreyaWorld))
+		if (wrld != null && wrld instanceof FreyaWorld)
 		{
 			FreyaWorld world = (FreyaWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_opendoor"))
@@ -215,9 +215,9 @@ public class Freya extends L2AttackableAIScript
 				for (int objId : allowedPlayers)
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					if ((pl != null) && pl.isOnline() && (pl.getInstanceId() == world.instanceId))
+					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
 					{
-						if ((pl.getY() > -113290) && (pl.getZ() < -10990))
+						if (pl.getY() > -113290 && pl.getZ() < -10990)
 						{
 							world.allowed.remove((Integer) pl.getObjectId());
 							pl.logout(true);
@@ -379,15 +379,15 @@ public class Freya extends L2AttackableAIScript
 			{
 				if (!world.Monuments.isEmpty())
 				{
-					if ((world.status < 6) && world.Monuments.contains(npc))
+					if (world.status < 6 && world.Monuments.contains(npc))
 						return null;
 					
-					if ((world.status == 6) && world.Monuments.contains(npc))
+					if (world.status == 6 && world.Monuments.contains(npc))
 						npc.setDisplayEffect(2);
 					
 					int playerId = world.allowed.get(world.allowed.size() - 1);
 					L2PcInstance victim = L2World.getInstance().getPlayer(playerId);
-					if ((victim != null) && victim.isOnline() && (victim.getInstanceId() == world.instanceId) && !npc.isImmobilized())
+					if (victim != null && victim.isOnline() && victim.getInstanceId() == world.instanceId && !npc.isImmobilized())
 					{
 						((L2Attackable) npc).addDamageHate(victim, 0, 99999);
 						
@@ -400,7 +400,7 @@ public class Freya extends L2AttackableAIScript
 				}
 				else
 				{
-					if ((npc.getNpcId() == world.GlakiasId) || (npc.getNpcId() == world.ArchBreathId))
+					if (npc.getNpcId() == world.GlakiasId || npc.getNpcId() == world.ArchBreathId)
 						npc.deleteMe();
 				}
 			}
@@ -451,7 +451,7 @@ public class Freya extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc.getNpcId() == _jiniaId) && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
+		if (npc.getNpcId() == _jiniaId && Util.isDigit(event) && Util.contains(_templates, Integer.valueOf(event)))
 		{
 			try
 			{
@@ -478,18 +478,18 @@ public class Freya extends L2AttackableAIScript
 		{
 			final FreyaWorld world = (FreyaWorld) tmpWorld;
 			
-			if ((world.status == 2) && (npc.getNpcId() == world.FirstFreyaId))
+			if (world.status == 2 && npc.getNpcId() == world.FirstFreyaId)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.3)
 				{
 					world.status = 3;
 					
 					startQuestTimer("stage_1_finalmovie", 1000, npc, attacker);
 				}
 			}
-			else if ((world.status == 6) && (npc.getNpcId() == world.LastFreyaId))
+			else if (world.status == 6 && npc.getNpcId() == world.LastFreyaId)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.3)
 				{
 					world.status = 7;
 					
@@ -498,9 +498,9 @@ public class Freya extends L2AttackableAIScript
 					startQuestTimer("stage_4_spawns", ScenePlayerDataTable.getInstance().getVideoDuration(18), npc, null);
 				}
 			}
-			else if ((npc.getNpcId() == world.IceKnightId) && (npc.getDisplayEffect() == 1))
+			else if (npc.getNpcId() == world.IceKnightId && npc.getDisplayEffect() == 1)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.3))
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.3)
 					npc.setDisplayEffect(2);
 			}
 		}
@@ -547,7 +547,7 @@ public class Freya extends L2AttackableAIScript
 			Log.warning(getName() + ": onFirstTalk: " + player);
 		
 		int npcid = npc.getNpcId();
-		if ((npcid == _jiniaInnerId) || (npcid == _kegorInnerId))
+		if (npcid == _jiniaInnerId || npcid == _kegorInnerId)
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		else if (npcid == _sirraId)
 			return "Sirra.html";
@@ -601,7 +601,7 @@ public class Freya extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(114711, -113701, -11199, true);

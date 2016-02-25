@@ -70,7 +70,7 @@ public class MasterOfEnchanting extends Quest
 		htmltext = event;
 		if (event.equalsIgnoreCase("buy_staff"))
 		{
-			if ((st.getQuestItemsCount(_master_yogi_staff) == 0) && (st.getQuestItemsCount(_adena) > _staff_price))
+			if (st.getQuestItemsCount(_master_yogi_staff) == 0 && st.getQuestItemsCount(_adena) > _staff_price)
 			{
 				st.takeItems(_adena, _staff_price);
 				st.giveItems(_master_yogi_staff, 1);
@@ -94,7 +94,7 @@ public class MasterOfEnchanting extends Quest
 				{
 					st.takeItems(_adena, _scroll_24_price);
 					st.giveItems(_master_yogi_scroll, 24);
-					q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (_scroll_24_time * 3600000)));
+					q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
 					htmltext = "32599-scroll24.htm";
 				}
 				else
@@ -104,7 +104,7 @@ public class MasterOfEnchanting extends Quest
 			{
 				long _remaining_time = (_reuse_time - _curr_time) / 1000;
 				int hours = (int) _remaining_time / 3600;
-				int minutes = ((int) _remaining_time % 3600) / 60;
+				int minutes = (int) _remaining_time % 3600 / 60;
 				if (hours > 0)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
@@ -128,7 +128,7 @@ public class MasterOfEnchanting extends Quest
 					{
 						st.takeItems(_adena, _scroll_24_price);
 						st.giveItems(_master_yogi_scroll, 24);
-						q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (_scroll_24_time * 3600000)));
+						q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
 						htmltext = "32599-scroll24.htm";
 					}
 					else
@@ -160,7 +160,7 @@ public class MasterOfEnchanting extends Quest
 		}
 		else if (event.equalsIgnoreCase("receive_reward"))
 		{
-			if ((st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff) && (st.getEnchantLevel(_master_yogi_staff) > 3))
+			if (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff && st.getEnchantLevel(_master_yogi_staff) > 3)
 			{
 				switch (st.getEnchantLevel(_master_yogi_staff))
 				{

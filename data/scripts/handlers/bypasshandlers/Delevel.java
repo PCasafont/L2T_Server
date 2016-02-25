@@ -30,7 +30,7 @@ public class Delevel implements IBypassHandler
 	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
-		if ((target == null) || !Config.isServer(Config.TENKAI))
+		if (target == null || !Config.isServer(Config.TENKAI))
 			return false;
 		
 		if (command.equalsIgnoreCase("Delevel"))
@@ -48,7 +48,7 @@ public class Delevel implements IBypassHandler
 			for (int i = minLevel; i < activeChar.getLevel(); i += 10)
 			{
 				html += "<tr>";
-				for (int j = i; (j < (i + 10)) && (j < activeChar.getLevel()); j++)
+				for (int j = i; j < i + 10 && j < activeChar.getLevel(); j++)
 					html += "<td fixwidth=\"15\"><a action=\"bypass -h npc_%objectId%_Delevel " + j + "\">" + j + "</a></td>";
 				html += "</tr>";
 			}
@@ -70,7 +70,7 @@ public class Delevel implements IBypassHandler
 				e.printStackTrace();
 			}
 			byte lvl = (byte) val;
-			if ((lvl >= 1) && (lvl <= (Config.MAX_LEVEL + 1)))
+			if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1)
 			{
 				long pXp = activeChar.getExp();
 				long tXp = Experience.getAbsoluteExp(lvl);

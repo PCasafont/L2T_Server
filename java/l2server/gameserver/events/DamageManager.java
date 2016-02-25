@@ -199,7 +199,7 @@ public class DamageManager
 			
 			int charId = info.getPlayerId();
 			String playerName = CharNameTable.getInstance().getNameById(charId);
-			if ((playerName == null) || (info.getCurrentDamage() == 0))
+			if (playerName == null || info.getCurrentDamage() == 0)
 				continue;
 			
 			if (rewardedCharIds.contains(charId))

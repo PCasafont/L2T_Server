@@ -45,7 +45,7 @@ public class TrapTarget implements ISkillTargetTypeHandler
 		
 		for (L2Character o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
 		{
-			if ((o == aTrap.getOwner()) || o.isDead())
+			if (o == aTrap.getOwner() || o.isDead())
 				continue;
 			
 			if (!aTrap.getOwner().isAbleToCastOnTarget(o, skill, skill.isUseableWithoutTarget()))

@@ -186,7 +186,7 @@ public class CrestCache
 	
 	public float getMemoryUsage()
 	{
-		return ((float) _bytesBuffLen / 1048576);
+		return (float) _bytesBuffLen / 1048576;
 	}
 	
 	public int getLoadedFiles()
@@ -360,7 +360,7 @@ public class CrestCache
 		@Override
 		public boolean accept(File file)
 		{
-			return (file.getName().endsWith(".bmp"));
+			return file.getName().endsWith(".bmp");
 		}
 	}
 	
@@ -369,7 +369,7 @@ public class CrestCache
 		@Override
 		public boolean accept(File file)
 		{
-			return (file.getName().startsWith("Pledge_"));
+			return file.getName().startsWith("Pledge_");
 		}
 	}
 	

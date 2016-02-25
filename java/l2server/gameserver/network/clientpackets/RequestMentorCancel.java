@@ -78,7 +78,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 				
 				for (L2Abnormal e : activeChar.getAllEffects())
 				{
-					if ((e.getSkill().getId() >= 9227) && (e.getSkill().getId() <= 9233))
+					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
 						e.exit();
 				}
 				activeChar.removeSkill(9379);
@@ -122,7 +122,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 					player.sendPacket(sm);
 					for (L2Abnormal e : player.getAllEffects())
 					{
-						if ((e.getSkill().getId() >= 9227) && (e.getSkill().getId() <= 9233))
+						if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
 							e.exit();
 					}
 					player.removeSkill(9379);

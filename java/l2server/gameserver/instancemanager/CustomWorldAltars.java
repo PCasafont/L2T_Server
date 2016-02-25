@@ -162,12 +162,12 @@ public class CustomWorldAltars
 			if (_nextRespawn > System.currentTimeMillis())
 			{
 				Long remainingTime = (_nextRespawn - System.currentTimeMillis()) / 1000;
-				int minutes = (int) ((remainingTime % 3600) / 60);
+				int minutes = (int) (remainingTime % 3600 / 60);
 				if (minutes >= _baseRespawnMinutes)
 					return "It will take long to come!";
-				else if ((minutes < _baseRespawnMinutes) && (minutes >= (_baseRespawnMinutes / 2)))
+				else if (minutes < _baseRespawnMinutes && minutes >= _baseRespawnMinutes / 2)
 					return "It will appear in quite a few time!";
-				else if ((minutes > 1) && (minutes < (_baseRespawnMinutes / 2)))
+				else if (minutes > 1 && minutes < _baseRespawnMinutes / 2)
 					return "It will be there soon!";
 				else if (minutes < 1)
 					return "It's almost there!";
@@ -198,7 +198,7 @@ public class CustomWorldAltars
 			
 			int randomSpawnTime = Rnd.get(1, _randomRespawnMinutes);
 			_spawnTask = ThreadPoolManager.getInstance().scheduleGeneral(new AltarRespawn(), (_baseRespawnMinutes + randomSpawnTime) * 60000);
-			_nextRespawn = System.currentTimeMillis() + ((_baseRespawnMinutes + randomSpawnTime) * 60000);
+			_nextRespawn = System.currentTimeMillis() + (_baseRespawnMinutes + randomSpawnTime) * 60000;
 		}
 		
 		private void spawnBoss()
@@ -306,7 +306,7 @@ public class CustomWorldAltars
 				sb.append("<tr><td>Is Cursed:</td><td>" + (i.isCursed() ? "Yes" : "No") + "</td></tr>");
 			}
 			
-			if ((i.getBossNpc() != null) && !i.getBossNpc().isDead())
+			if (i.getBossNpc() != null && !i.getBossNpc().isDead())
 			{
 				sb.append("<tr><td>Spawned Boss:</td><td> " + i.getBossNpc().getTemplate().Name + "</td></tr>");
 				if (i.getIsBossUnderAttack())

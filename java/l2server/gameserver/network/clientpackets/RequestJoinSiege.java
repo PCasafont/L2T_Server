@@ -141,7 +141,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 				continue;
 			}
 			
-			if (((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L) > shouldBeCreatedDaysAgo)
+			if ((Calendar.getInstance().getTimeInMillis() - member.getCreateTime()) / 86400000L > shouldBeCreatedDaysAgo)
 				varBeCreatedDaysAgo++;
 			
 			if (member.getLevel() >= shouldHaveLevel)
@@ -153,7 +153,7 @@ public final class RequestJoinSiege extends L2GameClientPacket
 			ips.add(member.getExternalIP());
 		}
 		
-		if ((varHaveLevel < numberOfPlayersToBeChecked) || (varHavePvPs < numberOfPlayersToBeChecked) || (varBeCreatedDaysAgo < numberOfPlayersToBeChecked))
+		if (varHaveLevel < numberOfPlayersToBeChecked || varHavePvPs < numberOfPlayersToBeChecked || varBeCreatedDaysAgo < numberOfPlayersToBeChecked)
 		{
 			player.sendMessage("Your clan looks weak to have a castle, you should train more your clan and your clan members.");
 			player.sendMessage("Info: " + varHaveLevel + "/" + numberOfPlayersToBeChecked + ", " + varHavePvPs + "/" + numberOfPlayersToBeChecked + ", " + varBeCreatedDaysAgo + "/" + numberOfPlayersToBeChecked);

@@ -342,7 +342,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 			int row = e.getY() / _table.getRowHeight();
 			Object value;
 			
-			if ((row >= _table.getRowCount()) || (row < 0) || (column >= _table.getColumnCount()) || (column < 0))
+			if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
 			{
 				return;
 			}

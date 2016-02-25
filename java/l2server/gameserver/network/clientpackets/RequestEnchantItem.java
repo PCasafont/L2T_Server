@@ -60,7 +60,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 		
-		if ((activeChar == null) || (_objectId == 0))
+		if (activeChar == null || _objectId == 0)
 			return;
 		
 		if (!activeChar.isOnline() || getClient().isDetached())
@@ -80,7 +80,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
 		
-		if ((item == null) || (scroll == null))
+		if (item == null || scroll == null)
 		{
 			activeChar.setActiveEnchantItem(null);
 			return;
@@ -115,7 +115,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		}
 		
 		// fast auto-enchant cheat check
-		if ((activeChar.getActiveEnchantTimestamp() == 0) || ((System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp()) < 1000))
+		if (activeChar.getActiveEnchantTimestamp() == 0 || System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp() < 1000)
 		{
 			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
 			activeChar.setActiveEnchantItem(null);
@@ -155,7 +155,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			if (Config.isServer(Config.DREAMS))
 			{
 				int luckyStoneId = activeChar.getLuckyEnchantStoneId();
-				if ((luckyStoneId != 0) && (chance != 1000))
+				if (luckyStoneId != 0 && chance != 1000)
 				{
 					if (activeChar.getInventory().destroyItemByItemId("LuckyStone", luckyStoneId, 1, activeChar, activeChar) == null)
 						activeChar.setLuckyEnchantStoneId(0);
@@ -200,7 +200,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			
 			// last validation check
 			L2Item it = item.getItem();
-			if ((item.getOwnerId() != activeChar.getObjectId()) || !EnchantItemTable.isEnchantable(item) || (chance < 0))
+			if (item.getOwnerId() != activeChar.getObjectId() || !EnchantItemTable.isEnchantable(item) || chance < 0)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 				activeChar.setActiveEnchantItem(null);
@@ -212,7 +212,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			if (!Config.isServer(Config.DREAMS))
 			{
 				rnd = Rnd.get(10000);
-				if (!success && (((item.getEnchantLevel() < 10) && (rnd < activeChar.getLUC())) || ((item.getEnchantLevel() >= 10) && (rnd < (activeChar.getLUC() / 2)))))
+				if (!success && (item.getEnchantLevel() < 10 && rnd < activeChar.getLUC() || item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2))
 				{
 					//System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
 					success = true;
@@ -227,7 +227,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				}
 			}
 			
-			if (Config.isServer(Config.DREAMS) && (chance != 1000))
+			if (Config.isServer(Config.DREAMS) && chance != 1000)
 			{
 				activeChar.sendMessage("To succeed, you must roll between 0 to " + (int) (chance - 1) + ". Success rate: " + (int) chance + "%.");
 				
@@ -243,7 +243,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			{
 				// success
 				int newEnchantLevel = item.getEnchantLevel() + 1;
-				if (Config.isServer(Config.TENKAI_ESTHUS) && (newEnchantLevel < 16))
+				if (Config.isServer(Config.TENKAI_ESTHUS) && newEnchantLevel < 16)
 					newEnchantLevel = 16;
 				
 				item.setEnchantLevel(newEnchantLevel);
@@ -280,7 +280,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				// announce the success
 				int minEnchantAnnounce = item.isArmor() ? 6 : 7;
 				int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
-				if (!Config.isServer(Config.TENKAI_ESTHUS) && ((item.getEnchantLevel() == minEnchantAnnounce) || (item.getEnchantLevel() == maxEnchantAnnounce)))
+				if (!Config.isServer(Config.TENKAI_ESTHUS) && (item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce))
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);
 					sm.addCharName(activeChar);
@@ -293,12 +293,12 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevelHash(), skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
 				}
 				
-				if ((it instanceof L2Armor) && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
+				if (it instanceof L2Armor && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
 				{
 					for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++)
 					{
 						L2Skill enchantSkill = ((L2Armor) it).getEnchantSkill(enchant);
-						if ((enchantSkill != null) && (item.getEnchantLevel() == enchant))
+						if (enchantSkill != null && item.getEnchantLevel() == enchant)
 						{
 							// add skills bestowed from +X armor
 							activeChar.addSkill(enchantSkill, false);
@@ -410,7 +410,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					{
 						// enchant failed, destroy item
 						int crystalId = item.getItem().getCrystalItemId();
-						int count = item.getCrystalCount() - ((item.getItem().getCrystalCount() + 1) / 2);
+						int count = item.getCrystalCount() - (item.getItem().getCrystalCount() + 1) / 2;
 						if (count < 1)
 							count = 1;
 						

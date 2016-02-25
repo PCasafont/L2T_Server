@@ -183,7 +183,7 @@ public class L2Spawn
 			ThreadPoolManager.getInstance().scheduleGeneral(new SpawnTask(), respawnDelay);
 			_nextRespawn = System.currentTimeMillis() + respawnDelay;
 			
-			if ((_dbName != null) && !_dbName.isEmpty())
+			if (_dbName != null && !_dbName.isEmpty())
 				SpawnDataManager.getInstance().updateDbSpawnData(this);
 		}
 		else
@@ -238,7 +238,7 @@ public class L2Spawn
 		_npc.setShowSummonAnimation(isSummonSpawn);
 		
 		boolean handled = false;
-		if ((_dbName != null) && !_dbName.isEmpty())
+		if (_dbName != null && !_dbName.isEmpty())
 		{
 			DbSpawnData dbsd = SpawnDataManager.getInstance().popDbSpawnData(_dbName);
 			if (dbsd != null)
@@ -348,7 +348,7 @@ public class L2Spawn
 		if (Config.L2JMOD_CHAMPION_ENABLE)
 		{
 			// Set champion on next spawn
-			if ((_npc instanceof L2MonsterInstance) && !getTemplate().isQuestMonster && getTemplate().canBeChampion && !_npc.isRaid() && !((L2MonsterInstance) _npc).isRaidMinion() && !(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) && !(_npc instanceof L2EventGolemInstance) && (getNpcId() != 44000) && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (_npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (_npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
+			if (_npc instanceof L2MonsterInstance && !getTemplate().isQuestMonster && getTemplate().canBeChampion && !_npc.isRaid() && !((L2MonsterInstance) _npc).isRaidMinion() && !(_npc instanceof L2ArmyMonsterInstance) && !(_npc instanceof L2ChessPieceInstance) && !(_npc instanceof L2EventGolemInstance) && getNpcId() != 44000 && Config.L2JMOD_CHAMPION_FREQUENCY > 0 && _npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL && _npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || getInstanceId() == 0))
 			{
 				int random = Rnd.get(100);
 				

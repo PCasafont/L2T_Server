@@ -56,14 +56,14 @@ public class EffectKnockBack extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (((getEffected() instanceof L2Attackable) && ((L2Attackable) getEffected()).isImmobilized()) || getEffected().isRaid())
+		if (getEffected() instanceof L2Attackable && ((L2Attackable) getEffected()).isImmobilized() || getEffected().isRaid())
 			return false;
 		
 		//TW bug restrictions for avoid players with TW flags stuck his char into the walls, under live test
-		if ((getEffected() instanceof L2PcInstance) && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
 			return false;
 		
-		if ((getSkill().getId() == 30012) || (getSkill().getId() == 30506))
+		if (getSkill().getId() == 30012 || getSkill().getId() == 30506)
 		{
 			if (Rnd.get(100) > 70)
 			{
@@ -76,7 +76,7 @@ public class EffectKnockBack extends L2Effect
 				double dx = getEffector().getX() - curX;
 				double dy = getEffector().getY() - curY;
 				double dz = getEffector().getZ() - curZ;
-				double distance = Math.sqrt((dx * dx) + (dy * dy));
+				double distance = Math.sqrt(dx * dx + dy * dy);
 				if (distance > 2000)
 				{
 					Log.info("EffectKnockDown (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
@@ -133,7 +133,7 @@ public class EffectKnockBack extends L2Effect
 				double dx = getEffector().getX() - curX;
 				double dy = getEffector().getY() - curY;
 				double dz = getEffector().getZ() - curZ;
-				double distance = Math.sqrt((dx * dx) + (dy * dy));
+				double distance = Math.sqrt(dx * dx + dy * dy);
 				if (distance > 2000)
 				{
 					Log.info("EffectDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
@@ -203,7 +203,7 @@ public class EffectKnockBack extends L2Effect
 		double dx = getEffector().getX() - curX;
 		double dy = getEffector().getY() - curY;
 		double dz = getEffector().getZ() - curZ;
-		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000)
 		{
 			Log.info("EffectKnockBack (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
@@ -236,7 +236,7 @@ public class EffectKnockBack extends L2Effect
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z, getEffected().getInstanceId());
-			if ((destiny.getX() != _x) || (destiny.getY() != _y))
+			if (destiny.getX() != _x || destiny.getY() != _y)
 			{
 				_x = destiny.getX() + (int) (cos * 10);
 				_y = destiny.getY() + (int) (sin * 10);
@@ -246,7 +246,7 @@ public class EffectKnockBack extends L2Effect
 		getEffected().setIsParalyzed(true);
 		getEffected().startParalyze();
 		
-		boolean throwUp = (getSkill().getId() == 30012) || (getSkill().getId() == 30506);
+		boolean throwUp = getSkill().getId() == 30012 || getSkill().getId() == 30506;
 		getEffected().broadcastPacket(new FlyToLocation(getEffected(), _x, _y, _z, throwUp ? FlyType.THROW_UP : FlyType.KNOCK_BACK));
 		getEffected().setXYZ(_x, _y, _z);
 		return true;

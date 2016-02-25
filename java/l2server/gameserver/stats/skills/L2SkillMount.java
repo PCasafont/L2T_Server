@@ -43,7 +43,7 @@ public class L2SkillMount extends L2Skill
 		
 		L2PcInstance activePlayer = (L2PcInstance) caster;
 		
-		if ((activePlayer.getEvent() != null) && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
+		if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
 			return;
 		
 		if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount"))
@@ -71,7 +71,7 @@ public class L2SkillMount extends L2Skill
 			return;
 		}
 		
-		if ((activePlayer.getPet() != null) || activePlayer.isMounted())
+		if (activePlayer.getPet() != null || activePlayer.isMounted())
 		{
 			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 			return;

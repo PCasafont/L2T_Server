@@ -309,7 +309,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 	private void showShopList(L2PcInstance activeChar, int tradeListID, int page)
 	{
 		L2TradeList tradeList = TradeController.getInstance().getBuyList(tradeListID);
-		if ((page > ((tradeList.getItems().size() / PAGE_LIMIT) + 1)) || (page < 1))
+		if (page > tradeList.getItems().size() / PAGE_LIMIT + 1 || page < 1)
 			return;
 		
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -322,7 +322,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		final StringBuilder replyMSG = new StringBuilder();
 		
 		int max = tradeList.getItems().size() / PAGE_LIMIT;
-		if (tradeList.getItems().size() > (PAGE_LIMIT * max))
+		if (tradeList.getItems().size() > PAGE_LIMIT * max)
 			max++;
 		
 		StringUtil.append(replyMSG, "<html><title>Merchant Shop List Page: ", String.valueOf(page), " of ", Integer.toString(max), "</title><body><br><center><font color=\"LEVEL\">", NpcTable.getInstance().getTemplate(tradeList.getNpcId()).getName(), " (", String.valueOf(tradeList.getNpcId()), ") Shop ID: ", Integer.toString(tradeList.getListId()), "</font></center><table width=300 bgcolor=666666><tr>");
@@ -350,8 +350,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 		
 		replyMSG.append("</tr></table><table width=\"100%\"><tr><td width=150>Item</td><td width=60>Price</td><td width=40>Delete</td></tr>");
 		
-		int start = ((page - 1) * PAGE_LIMIT);
-		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, tradeList.getItems().size());
+		int start = (page - 1) * PAGE_LIMIT;
+		int end = Math.min((page - 1) * PAGE_LIMIT + PAGE_LIMIT, tradeList.getItems().size());
 		//Log.info("page: " + page + "; tradeList.getItems().size(): " + tradeList.getItems().size() + "; start: " + start + "; end: " + end + "; max: " + max);
 		for (L2TradeItem item : tradeList.getItems(start, end))
 		{
@@ -577,7 +577,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 			
 			if (commandSplit.length > 4)
 			{
-				for (int i = 0; i < (commandSplit.length - 3); i++)
+				for (int i = 0; i < commandSplit.length - 3; i++)
 					value += " " + commandSplit[i + 4];
 			}
 			
@@ -680,7 +680,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		
 		int MaxSkillsPerPage = PAGE_LIMIT;
 		int MaxPages = _skillsize / MaxSkillsPerPage;
-		if (_skillsize > (MaxSkillsPerPage * MaxPages))
+		if (_skillsize > MaxSkillsPerPage * MaxPages)
 			MaxPages++;
 		
 		if (page > MaxPages)
@@ -688,7 +688,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		
 		int SkillsStart = MaxSkillsPerPage * page;
 		int SkillsEnd = _skillsize;
-		if ((SkillsEnd - SkillsStart) > MaxSkillsPerPage)
+		if (SkillsEnd - SkillsStart > MaxSkillsPerPage)
 			SkillsEnd = SkillsStart + MaxSkillsPerPage;
 		
 		StringBuffer replyMSG = new StringBuffer("<html><title>Show NPC Skill List</title><body><center><font color=\"LEVEL\">");

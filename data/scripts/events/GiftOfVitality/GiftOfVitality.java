@@ -66,7 +66,7 @@ public class GiftOfVitality extends Quest
 			{
 				long remainingTime = (_reuse - System.currentTimeMillis()) / 1000;
 				int hours = (int) (remainingTime / 3600);
-				int minutes = (int) ((remainingTime % 3600) / 60);
+				int minutes = (int) (remainingTime % 3600 / 60);
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVAILABLE_AFTER_S1_S2_HOURS_S3_MINUTES);
 				sm.addSkillName(23179);
 				sm.addNumber(hours);
@@ -79,7 +79,7 @@ public class GiftOfVitality extends Quest
 				npc.setTarget(player);
 				npc.doCast(SkillTable.getInstance().getInfo(23179, 1)); // Gift of Vitality
 				st.setState(State.STARTED);
-				st.set("reuse", String.valueOf(System.currentTimeMillis() + (_hours * 60 * 60 * 1000)));
+				st.set("reuse", String.valueOf(System.currentTimeMillis() + _hours * 60 * 60 * 1000));
 				htmltext = "4306-okvitality.htm";
 			}
 		}

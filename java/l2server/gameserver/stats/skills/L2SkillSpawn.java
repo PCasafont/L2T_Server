@@ -78,7 +78,7 @@ public class L2SkillSpawn extends L2Skill
 			
 			boolean skillMastery = Formulas.calcSkillMastery(caster, this);
 			int first = 0;
-			if (skillMastery && (getId() == 10532))
+			if (skillMastery && getId() == 10532)
 				first = -_count;
 			
 			for (int i = first; i < _count; i++)
@@ -88,7 +88,7 @@ public class L2SkillSpawn extends L2Skill
 				spawn.setInstanceId(caster.getInstanceId());
 				spawn.setHeading(-1);
 				
-				if ((caster instanceof L2PcInstance) && (getTargetType() == L2SkillTargetType.TARGET_GROUND))
+				if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND)
 				{
 					Point3D wordPosition = ((L2PcInstance) caster).getSkillCastPosition();
 					
@@ -144,7 +144,7 @@ public class L2SkillSpawn extends L2Skill
 		if (hasSelfEffects())
 		{
 			final L2Abnormal effect = caster.getFirstEffect(getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

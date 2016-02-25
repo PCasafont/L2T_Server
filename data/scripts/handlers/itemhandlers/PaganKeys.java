@@ -52,7 +52,7 @@ public class PaganKeys implements IItemHandler
 		}
 		L2DoorInstance door = (L2DoorInstance) target;
 		
-		if (!(activeChar.isInsideRadius(door, INTERACTION_DISTANCE, false, false)))
+		if (!activeChar.isInsideRadius(door, INTERACTION_DISTANCE, false, false))
 		{
 			activeChar.sendMessage("Too far.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);

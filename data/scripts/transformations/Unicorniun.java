@@ -22,7 +22,7 @@ public class Unicorniun extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 220) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 220 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		if (getPlayer().getPet() != null)

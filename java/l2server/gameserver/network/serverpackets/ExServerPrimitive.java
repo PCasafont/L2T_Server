@@ -204,8 +204,8 @@ public class ExServerPrimitive extends L2GameServerPacket
 			writeC(1); // Its the type in this case Point
 			writeS(point.getName());
 			int color = point.getColor();
-			writeD((color >> 16) & 0xFF); // R
-			writeD((color >> 8) & 0xFF); // G
+			writeD(color >> 16 & 0xFF); // R
+			writeD(color >> 8 & 0xFF); // G
 			writeD(color & 0xFF); // B
 			writeD(point.isNameColored() ? 1 : 0);
 			writeD(point.getX());
@@ -218,8 +218,8 @@ public class ExServerPrimitive extends L2GameServerPacket
 			writeC(2); // Its the type in this case Line
 			writeS(line.getName());
 			int color = line.getColor();
-			writeD((color >> 16) & 0xFF); // R
-			writeD((color >> 8) & 0xFF); // G
+			writeD(color >> 16 & 0xFF); // R
+			writeD(color >> 8 & 0xFF); // G
 			writeD(color & 0xFF); // B
 			writeD(line.isNameColored() ? 1 : 0);
 			writeD(line.getX());

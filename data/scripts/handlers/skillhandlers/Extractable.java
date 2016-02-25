@@ -78,7 +78,7 @@ public class Extractable implements ISkillHandler
 		for (L2ExtractableProductItem expi : exItem.getProductItemsArray())
 		{
 			chance = expi.getChance();
-			if ((rndNum >= chanceFrom) && (rndNum <= (chance + chanceFrom)))
+			if (rndNum >= chanceFrom && rndNum <= chance + chanceFrom)
 			{
 				for (int i = 0; i < expi.getId().length; i++)
 				{

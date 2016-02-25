@@ -59,18 +59,18 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _celin) && event.equalsIgnoreCase("33451-03.htm"))
+		if (npc.getNpcId() == _celin && event.equalsIgnoreCase("33451-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		if ((npc.getNpcId() == _walter) && event.equalsIgnoreCase("33452-04.htm"))
+		if (npc.getNpcId() == _walter && event.equalsIgnoreCase("33452-04.htm"))
 		{
 			st.set("cond", "2");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if ((npc.getNpcId() == _dep) && event.equalsIgnoreCase("33453-03.htm") && (st.getInt("cond") == 3))
+		else if (npc.getNpcId() == _dep && event.equalsIgnoreCase("33453-03.htm") && st.getInt("cond") == 3)
 		{
 			st.unset("cond");
 			st.takeItems(_paper, -1);
@@ -113,9 +113,9 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _walter) && (st.getInt("cond") == 1))
+		else if (npc.getNpcId() == _walter && st.getInt("cond") == 1)
 			htmltext = "33452-01.htm";
-		else if ((npc.getNpcId() == _dep) && (st.getInt("cond") == 3))
+		else if (npc.getNpcId() == _dep && st.getInt("cond") == 3)
 			htmltext = "33453-01.htm";
 		return htmltext;
 	}
@@ -124,10 +124,10 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getInt("cond") != 2) || (Rnd.get(100) < 0)) //TODO chance?
+		if (st == null || st.getInt("cond") != 2 || Rnd.get(100) < 0) //TODO chance?
 			return null;
 		
-		if ((npc.getNpcId() == _mob) && (st.getQuestItemsCount(_paper) < 5))
+		if (npc.getNpcId() == _mob && st.getQuestItemsCount(_paper) < 5)
 		{
 			st.giveItems(_paper, 1);
 			st.playSound("ItemSound.quest_itemget");
@@ -145,7 +145,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return (player.getLevel() >= 14) && (player.getLevel() <= 25) && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
+		return player.getLevel() >= 14 && player.getLevel() <= 25 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
 	}
 	
 	public static void main(String[] args)

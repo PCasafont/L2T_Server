@@ -18,7 +18,7 @@ public class SnowKung extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 114) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 114 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

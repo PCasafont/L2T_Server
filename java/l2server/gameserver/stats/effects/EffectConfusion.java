@@ -95,7 +95,7 @@ public class EffectConfusion extends L2Effect
 		{
 			for (L2Object obj : objs)
 			{
-				if ((obj instanceof L2Character) && (obj != getEffected()))
+				if (obj instanceof L2Character && obj != getEffected())
 					targetList.add((L2Character) obj);
 			}
 		}

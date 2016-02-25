@@ -86,15 +86,15 @@ public class TargetClan implements ISkillTargetTypeHandler
 				{
 					L2PcInstance newTarget = member.getPlayerInstance();
 					
-					if ((newTarget == null) || (newTarget == player))
+					if (newTarget == null || newTarget == player)
 						continue;
 					
-					if (player.isInDuel() && ((player.getDuelId() != newTarget.getDuelId()) || ((player.getParty() != null) && !player.getParty().isInParty(newTarget))))
+					if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() || player.getParty() != null && !player.getParty().isInParty(newTarget)))
 						continue;
 					
 					if (newTarget.getPet() != null)
 						if (Util.checkIfInRange(radius, activeChar, newTarget.getPet(), true))
-							if (!(newTarget.getPet().isDead()) && player.checkPvpSkill(newTarget, skill) && !onlyFirst)
+							if (!newTarget.getPet().isDead() && player.checkPvpSkill(newTarget, skill) && !onlyFirst)
 								targetList.add(newTarget.getPet());
 					
 					if (!Util.checkIfInRange(radius, activeChar, newTarget, true))
@@ -120,7 +120,7 @@ public class TargetClan implements ISkillTargetTypeHandler
 			{
 				for (L2Object newTarget : objs)
 				{
-					if ((newTarget instanceof L2Npc) && (((L2Npc) newTarget).getFactionId() == npc.getFactionId()))
+					if (newTarget instanceof L2Npc && ((L2Npc) newTarget).getFactionId() == npc.getFactionId())
 					{
 						if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
 							continue;

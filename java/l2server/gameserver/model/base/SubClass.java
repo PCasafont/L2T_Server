@@ -126,8 +126,8 @@ public final class SubClass
 	
 	public void setExp(long expValue)
 	{
-		if (expValue > (Experience.getAbsoluteExp(getMaxLevel() + 1) - 1))
-			expValue = (Experience.getAbsoluteExp(getMaxLevel() + 1) - 1);
+		if (expValue > Experience.getAbsoluteExp(getMaxLevel() + 1) - 1)
+			expValue = Experience.getAbsoluteExp(getMaxLevel() + 1) - 1;
 		
 		_exp = expValue;
 	}

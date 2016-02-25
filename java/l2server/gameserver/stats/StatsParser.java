@@ -146,7 +146,7 @@ public abstract class StatsParser
 				else if (firstNode.hasAttribute("msgId"))
 				{
 					condition.setMessageId(Integer.decode(getValue(firstNode.getString("msgId"))));
-					if (firstNode.hasAttribute("addName") && (Integer.decode(getValue(firstNode.getString("msgId"))) > 0))
+					if (firstNode.hasAttribute("addName") && Integer.decode(getValue(firstNode.getString("msgId"))) > 0)
 						condition.addName();
 				}
 				
@@ -259,7 +259,7 @@ public abstract class StatsParser
 		for (XmlNode n : node.getChildren())
 			cond.add(parseCondition(n, template));
 		
-		if ((cond.conditions == null) || (cond.conditions.length == 0))
+		if (cond.conditions == null || cond.conditions.length == 0)
 			Log.severe("Empty <and> condition in " + _name);
 		return cond;
 	}
@@ -270,7 +270,7 @@ public abstract class StatsParser
 		for (XmlNode n : node.getChildren())
 			cond.add(parseCondition(n, template));
 		
-		if ((cond.conditions == null) || (cond.conditions.length == 0))
+		if (cond.conditions == null || cond.conditions.length == 0)
 			Log.severe("Empty <or> condition in " + _name);
 		return cond;
 	}
@@ -632,7 +632,7 @@ public abstract class StatsParser
 			}
 		}
 		
-		if ((forces[0] + forces[1]) > 0)
+		if (forces[0] + forces[1] > 0)
 			cond = joinAnd(cond, new ConditionForceBuff(forces));
 		
 		if (cond == null)
@@ -917,7 +917,7 @@ public abstract class StatsParser
 		}
 		LambdaCalc calc = new LambdaCalc();
 		node = node.getFirstChild();
-		if ((node == null) || !"val".equals(node.getName()))
+		if (node == null || !"val".equals(node.getName()))
 			throw new IllegalArgumentException("Value not specified");
 		
 		for (XmlNode n : node.getChildren())

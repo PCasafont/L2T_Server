@@ -72,7 +72,7 @@ public class ExtractableItems implements IItemHandler
 				int max = expi.getMax();
 				int createItemID = expi.getId();
 				
-				if (((itemID >= 6411) && (itemID <= 6518)) || ((itemID >= 7726) && (itemID <= 7860)) || ((itemID >= 8403) && (itemID <= 8483)))
+				if (itemID >= 6411 && itemID <= 6518 || itemID >= 7726 && itemID <= 7860 || itemID >= 8403 && itemID <= 8483)
 				{
 					min *= Config.RATE_EXTR_FISH;
 					max *= Config.RATE_EXTR_FISH;
@@ -82,7 +82,7 @@ public class ExtractableItems implements IItemHandler
 				if (max == min)
 					createitemAmount = min;
 				else
-					createitemAmount = Rnd.get((max - min) + 1) + min;
+					createitemAmount = Rnd.get(max - min + 1) + min;
 				activeChar.addItem("Extract", createItemID, createitemAmount, activeChar, true);
 				created = true;
 			}

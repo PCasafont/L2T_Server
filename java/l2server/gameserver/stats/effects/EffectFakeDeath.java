@@ -51,7 +51,7 @@ public class EffectFakeDeath extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if ((getEffected() instanceof L2PcInstance) && !((L2PcInstance) getEffected()).isCombatFlagEquipped())
+		if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped())
 		{
 			getEffected().startFakeDeath();
 		}

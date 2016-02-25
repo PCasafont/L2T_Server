@@ -56,7 +56,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			fort = FortManager.getInstance().getFortById(fortId);
 		}
 		// Get fort
-		if (((fort == null) || (fortId == 0)))
+		if (fort == null || fortId == 0)
 			// No fort specified
 			showFortSelectPage(activeChar);
 		else
@@ -90,7 +90,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_setfort"))
 			{
-				if ((player == null) || (player.getClan() == null))
+				if (player == null || player.getClan() == null)
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 				else
 					fort.setOwner(player.getClan(), false);

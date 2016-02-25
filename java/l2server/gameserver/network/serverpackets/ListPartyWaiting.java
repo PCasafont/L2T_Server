@@ -40,14 +40,14 @@ public class ListPartyWaiting extends L2GameServerPacket
 		_rooms = new ArrayList<PartyMatchRoom>();
 		for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms())
 		{
-			if ((room.getMembers() < 1) || (room.getOwner() == null) || !room.getOwner().isOnline() || (room.getOwner().getPartyRoom() != room.getId()))
+			if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() || room.getOwner().getPartyRoom() != room.getId())
 			{
 				PartyMatchRoomList.getInstance().deleteRoom(room.getId());
 				continue;
 			}
-			if ((_loc > 0) && (_loc != room.getLocation()))
+			if (_loc > 0 && _loc != room.getLocation())
 				continue;
-			if ((_lim == 0) && ((_cha.getLevel() < room.getMinLvl()) || (_cha.getLevel() > room.getMaxLvl())))
+			if (_lim == 0 && (_cha.getLevel() < room.getMinLvl() || _cha.getLevel() > room.getMaxLvl()))
 				continue;
 			_rooms.add(room);
 		}

@@ -49,13 +49,13 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		if ((attacker == null) || !(attacker instanceof L2PcInstance))
+		if (attacker == null || !(attacker instanceof L2PcInstance))
 			return false;
 		
-		boolean isFort = ((getFort() != null) && (getFort().getFortId() > 0) && getFort().getSiege().getIsInProgress() && !getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan()));
+		boolean isFort = getFort() != null && getFort().getFortId() > 0 && getFort().getSiege().getIsInProgress() && !getFort().getSiege().checkIsDefender(((L2PcInstance) attacker).getClan());
 		
 		// Attackable during siege by all except defenders
-		return (isFort);
+		return isFort;
 	}
 	
 	@Override
@@ -108,7 +108,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	public final void addDamage(L2Character attacker, int damage, L2Skill skill)
 	{
 		L2Spawn spawn = getSpawn();
-		if ((spawn != null) && canTalk())
+		if (spawn != null && canTalk())
 		{
 			List<L2Spawn> commanders = getFort().getCommanderSpawns();
 			for (L2Spawn spawn2 : commanders)

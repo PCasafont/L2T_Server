@@ -61,7 +61,7 @@ public class SummonItems implements IItemHandler
 		
 		final L2PcInstance activeChar = (L2PcInstance) playable;
 		
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
 			return;
 		
 		if (activeChar.getIsInsideGMEvent())
@@ -92,7 +92,7 @@ public class SummonItems implements IItemHandler
 		
 		final L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(item.getItemId());
 		
-		if (((activeChar.getPet() != null) || activeChar.isMounted()) && sitem.isPetSummon())
+		if ((activeChar.getPet() != null || activeChar.isMounted()) && sitem.isPetSummon())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 			return;
@@ -128,7 +128,7 @@ public class SummonItems implements IItemHandler
 					Collection<L2Character> characters = activeChar.getKnownList().getKnownCharactersInRadius(1200);
 					for (L2Character ch : characters)
 					{
-						if ((ch instanceof L2XmassTreeInstance) && npcTemplate.isSpecialTree())
+						if (ch instanceof L2XmassTreeInstance && npcTemplate.isSpecialTree())
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_SUMMON_S1_AGAIN);
 							sm.addCharName(ch);
@@ -229,7 +229,7 @@ public class SummonItems implements IItemHandler
 				_activeChar.setIsCastingNow(false);
 				
 				// check for summon item validity
-				if ((_item == null) || (_item.getOwnerId() != _activeChar.getObjectId()) || (_item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY))
+				if (_item == null || _item.getOwnerId() != _activeChar.getObjectId() || _item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
 					return;
 				
 				final L2PetInstance petSummon = L2PetInstance.spawnPet(_npcTemplate, _activeChar, _item);

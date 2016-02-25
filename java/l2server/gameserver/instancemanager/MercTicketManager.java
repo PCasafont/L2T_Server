@@ -126,9 +126,9 @@ public class MercTicketManager
 		{
 			for (int i2 = 0; i2 < 50; i2 += 10)
 				//Simplified if statement;
-				if (((itemId >= ITEM_IDS[i2 + (i * GUARDIAN_TYPES_COUNT)]) && (itemId <= ITEM_IDS[i2 + 9 + (i * GUARDIAN_TYPES_COUNT)])))
+				if (itemId >= ITEM_IDS[i2 + i * GUARDIAN_TYPES_COUNT] && itemId <= ITEM_IDS[i2 + 9 + i * GUARDIAN_TYPES_COUNT])
 					return i + 1;
-			if ((itemId >= ITEM_IDS[50]) && (itemId <= ITEM_IDS[51]))
+			if (itemId >= ITEM_IDS[50] && itemId <= ITEM_IDS[51])
 				return i + 1;
 		}
 		return -1;
@@ -179,11 +179,11 @@ public class MercTicketManager
 				}
 				
 				// find the FIRST ticket itemId with spawns the saved NPC in the saved location
-				for (int i = startindex; i < (startindex + GUARDIAN_TYPES_COUNT); i++)
+				for (int i = startindex; i < startindex + GUARDIAN_TYPES_COUNT; i++)
 					if (NPC_IDS[i] == npcId) // Find the index of the item used
 					{
 						// only handle tickets if a siege is not ongoing in this npc's castle
-						if ((castle != null) && !(castle.getSiege().getIsInProgress()))
+						if (castle != null && !castle.getSiege().getIsInProgress())
 						{
 							itemId = ITEM_IDS[i];
 							// create the ticket in the gameworld
@@ -232,7 +232,7 @@ public class MercTicketManager
 		int count = 0;
 		for (L2ItemInstance ticket : getDroppedTickets())
 		{
-			if ((ticket != null) && (ticket.getItemId() == itemId))
+			if (ticket != null && ticket.getItemId() == itemId)
 				count++;
 		}
 		if (count >= limit)
@@ -256,7 +256,7 @@ public class MercTicketManager
 		int count = 0;
 		for (L2ItemInstance ticket : getDroppedTickets())
 		{
-			if ((ticket != null) && (getTicketCastleId(ticket.getItemId()) == castleId))
+			if (ticket != null && getTicketCastleId(ticket.getItemId()) == castleId)
 				count++;
 		}
 		if (count >= limit)
@@ -277,7 +277,7 @@ public class MercTicketManager
 			double dy = y - item.getY();
 			double dz = z - item.getZ();
 			
-			if (((dx * dx) + (dy * dy) + (dz * dz)) < (25 * 25))
+			if (dx * dx + dy * dy + dz * dz < 25 * 25)
 				return true;
 		}
 		return false;
@@ -334,9 +334,9 @@ public class MercTicketManager
 			final L2DefenderInstance npc = new L2DefenderInstance(IdFactory.getInstance().getNextId(), template);
 			npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
 			npc.setDecayed(false);
-			npc.spawnMe(x, y, (z + 20));
+			npc.spawnMe(x, y, z + 20);
 			
-			if ((messages != null) && (messages.length > 0))
+			if (messages != null && messages.length > 0)
 				AutoChatHandler.getInstance().registerChat(npc, messages, chatDelay);
 			
 			if (despawnDelay > 0)
@@ -354,7 +354,7 @@ public class MercTicketManager
 		while (it.hasNext())
 		{
 			L2ItemInstance item = it.next();
-			if ((item != null) && (getTicketCastleId(item.getItemId()) == castleId))
+			if (item != null && getTicketCastleId(item.getItemId()) == castleId)
 			{
 				item.decayMe();
 				L2World.getInstance().removeObject(item);
@@ -382,9 +382,9 @@ public class MercTicketManager
 		// find the castle where this item is
 		Castle castle = CastleManager.getInstance().getCastleById(getTicketCastleId(itemId));
 		
-		if ((npcId > 0) && (castle != null))
+		if (npcId > 0 && castle != null)
 		{
-			(new SiegeGuardManager(castle)).removeMerc(npcId, item.getX(), item.getY(), item.getZ());
+			new SiegeGuardManager(castle).removeMerc(npcId, item.getX(), item.getY(), item.getZ());
 		}
 		
 		getDroppedTickets().remove(item);

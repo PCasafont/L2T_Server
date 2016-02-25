@@ -50,8 +50,8 @@ public class L2PeaceZone extends L2ZoneType
 		
 		character.setInsideZone(L2Character.ZONE_PEACE, true);
 		
-		if ((character instanceof L2PcInstance) && ((L2PcInstance) character).isCombatFlagEquipped() && TerritoryWarManager.getInstance().isTWInProgress())
-			TerritoryWarManager.getInstance().dropCombatFlag(((L2PcInstance) character), false, true);
+		if (character instanceof L2PcInstance && ((L2PcInstance) character).isCombatFlagEquipped() && TerritoryWarManager.getInstance().isTWInProgress())
+			TerritoryWarManager.getInstance().dropCombatFlag((L2PcInstance) character, false, true);
 		
 		character.setInsideZone(L2Character.ZONE_CROSS_SERVER, true);
 	}

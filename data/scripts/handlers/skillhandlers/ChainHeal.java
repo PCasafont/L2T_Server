@@ -74,13 +74,13 @@ public class ChainHeal implements ISkillHandler
 			power *= 2;
 		}
 		
-		if (Config.isServer(Config.TENKAI) && (activeChar instanceof L2PcInstance) && activeChar.isInParty())
+		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty())
 		{
 			int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 			int members = 0;
 			for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers())
 			{
-				if ((partyMember.getCurrentClass().getParent() != null) && (partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId))
+				if (partyMember.getCurrentClass().getParent() != null && partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId)
 					members++;
 			}
 			
@@ -95,13 +95,13 @@ public class ChainHeal implements ISkillHandler
 		for (L2Character character : characters)
 		{
 			//1505 - sublime self sacrifice
-			if (((character == null) || character.isDead() || character.isInvul(activeChar)) && (skill.getId() != 1505))
+			if ((character == null || character.isDead() || character.isInvul(activeChar)) && skill.getId() != 1505)
 				continue;
 			
-			if ((character != activeChar) && (character.getFaceoffTarget() != null) && (character.getFaceoffTarget() != activeChar))
+			if (character != activeChar && character.getFaceoffTarget() != null && character.getFaceoffTarget() != activeChar)
 				continue;
 			
-			amount = (character.getMaxHp() * power) / 100.0;
+			amount = character.getMaxHp() * power / 100.0;
 			
 			amount = Math.min(amount, character.getMaxHp() - character.getCurrentHp());
 			amount *= character.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) / 100;
@@ -125,9 +125,9 @@ public class ChainHeal implements ISkillHandler
 			
 			character.broadcastStatusUpdate();
 			
-			if ((activeChar instanceof L2PcInstance) && (character instanceof L2PcInstance))
+			if (activeChar instanceof L2PcInstance && character instanceof L2PcInstance)
 			{
-				if ((((L2PcInstance) activeChar).getPvpFlag() == 0) && (((L2PcInstance) character).getPvpFlag() > 0))
+				if (((L2PcInstance) activeChar).getPvpFlag() == 0 && ((L2PcInstance) character).getPvpFlag() > 0)
 					((L2PcInstance) activeChar).updatePvPStatus();
 				
 				PlayerAssistsManager.getInstance().updateHelpTimer((L2PcInstance) activeChar, (L2PcInstance) character);
@@ -190,7 +190,7 @@ public class ChainHeal implements ISkillHandler
 			{
 				if (!pTarget.isPlayingEvent())
 					return false;
-				else if ((activeChar.getTeamId() != 0) && (activeChar.getTeamId() != pTarget.getTeamId()))
+				else if (activeChar.getTeamId() != 0 && activeChar.getTeamId() != pTarget.getTeamId())
 					return false;
 				
 				return true;
@@ -214,7 +214,7 @@ public class ChainHeal implements ISkillHandler
 		}
 		else if (target instanceof L2NpcInstance)
 		{
-			final L2NpcInstance npc = ((L2NpcInstance) target);
+			final L2NpcInstance npc = (L2NpcInstance) target;
 			if (!npc.isInsideZone(L2Character.ZONE_TOWN))
 				return false;
 		}

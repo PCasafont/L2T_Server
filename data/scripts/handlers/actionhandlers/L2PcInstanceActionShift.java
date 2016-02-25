@@ -39,7 +39,7 @@ public class L2PcInstanceActionShift implements IActionHandler
 			
 			// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-			if ((target instanceof L2Character) && (target.getObjectId() != activeChar.getObjectId()))
+			if (target instanceof L2Character && target.getObjectId() != activeChar.getObjectId())
 				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 		}
 		

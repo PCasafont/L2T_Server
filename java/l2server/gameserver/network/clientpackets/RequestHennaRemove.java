@@ -55,9 +55,9 @@ public final class RequestHennaRemove extends L2GameClientPacket
 		for (int i = 1; i <= 4; i++)
 		{
 			L2Henna henna = activeChar.getHenna(i);
-			if ((henna != null) && (henna.getSymbolId() == _symbolId))
+			if (henna != null && henna.getSymbolId() == _symbolId)
 			{
-				if (activeChar.getAdena() >= (henna.getPrice() / 5))
+				if (activeChar.getAdena() >= henna.getPrice() / 5)
 				{
 					activeChar.removeHenna(i);
 					break;

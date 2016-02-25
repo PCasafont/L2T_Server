@@ -56,7 +56,7 @@ public class EffectManaHealPercent extends L2Effect
 		
 		double mp = getEffected().getCurrentMp();
 		double maxmp = getEffected().getMaxMp();
-		mp += (calc() * maxmp) / 100.0;
+		mp += calc() * maxmp / 100.0;
 		if (mp > maxmp)
 			mp = maxmp;
 		

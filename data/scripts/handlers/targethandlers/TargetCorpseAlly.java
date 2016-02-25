@@ -64,9 +64,9 @@ public class TargetCorpseAlly implements ISkillTargetTypeHandler
 					{
 						if (!(newTarget instanceof L2PcInstance))
 							continue;
-						if (((((L2PcInstance) newTarget).getAllyId() == 0) || (((L2PcInstance) newTarget).getAllyId() != player.getAllyId())) && ((((L2PcInstance) newTarget).getClan() == null) || (((L2PcInstance) newTarget).getClanId() != player.getClanId())))
+						if ((((L2PcInstance) newTarget).getAllyId() == 0 || ((L2PcInstance) newTarget).getAllyId() != player.getAllyId()) && (((L2PcInstance) newTarget).getClan() == null || ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
 							continue;
-						if (player.isInDuel() && ((player.getDuelId() != ((L2PcInstance) newTarget).getDuelId()) || ((player.getParty() != null) && !player.getParty().isInParty(newTarget))))
+						if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || player.getParty() != null && !player.getParty().isInParty(newTarget)))
 							continue;
 						
 						if (!((L2PcInstance) newTarget).isDead())
@@ -76,7 +76,7 @@ public class TargetCorpseAlly implements ISkillTargetTypeHandler
 						{
 							// check target is not in a active siege
 							// zone
-							if (((L2PcInstance) newTarget).isInsideZone(L2Character.ZONE_SIEGE) && (((L2PcInstance) newTarget).getSiegeState() == 0))
+							if (((L2PcInstance) newTarget).isInsideZone(L2Character.ZONE_SIEGE) && ((L2PcInstance) newTarget).getSiegeState() == 0)
 								continue;
 						}
 						

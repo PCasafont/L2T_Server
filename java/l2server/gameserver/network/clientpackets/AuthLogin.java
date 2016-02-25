@@ -60,7 +60,7 @@ public final class AuthLogin extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2GameClient client = getClient();
-		if ((_loginName.length() == 0) || !client.isProtocolOk())
+		if (_loginName.length() == 0 || !client.isProtocolOk())
 		{
 			client.close((L2GameServerPacket) null);
 			return;

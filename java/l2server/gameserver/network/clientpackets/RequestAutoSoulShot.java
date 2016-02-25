@@ -50,7 +50,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((activeChar.getPrivateStoreType() == 0) && (activeChar.getActiveRequester() == null) && !activeChar.isDead())
+		if (activeChar.getPrivateStoreType() == 0 && activeChar.getActiveRequester() == null && !activeChar.isDead())
 		{
 			if (Config.DEBUG)
 				Log.fine("AutoSoulShot:" + _itemId);
@@ -68,10 +68,10 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				}
 				
 				// Fishingshots are not automatic on retail
-				if ((_itemId < 6535) || (_itemId > 6540))
+				if (_itemId < 6535 || _itemId > 6540)
 				{
 					// Attempt to charge first shot on activation
-					if ((_itemId == 6645) || (_itemId == 6646) || (_itemId == 6647) || (_itemId == 20332) || (_itemId == 20333) || (_itemId == 20334))
+					if (_itemId == 6645 || _itemId == 6646 || _itemId == 6647 || _itemId == 20332 || _itemId == 20333 || _itemId == 20334)
 					{
 						boolean hasSummon = false;
 						if (activeChar.getPet() != null)
@@ -142,14 +142,14 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					}
 					else
 					{
-						if ((activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem()) && (item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain()))
+						if (activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem() && item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getItemGradePlain())
 						{
 							activeChar.addAutoSoulShot(item);
 							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _enabled, item.getItem().getShotTypeIndex()));
 						}
 						else
 						{
-							if (((_itemId >= 2509) && (_itemId <= 2514)) || ((_itemId >= 3947) && (_itemId <= 3952)) || (_itemId == 5790) || ((_itemId >= 22072) && (_itemId <= 22081)))
+							if (_itemId >= 2509 && _itemId <= 2514 || _itemId >= 3947 && _itemId <= 3952 || _itemId == 5790 || _itemId >= 22072 && _itemId <= 22081)
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
 							else
 								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));

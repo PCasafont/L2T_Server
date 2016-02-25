@@ -65,7 +65,7 @@ public final class MultiSellList extends L2GameServerPacket
 	{
 		writeD(_list.getListId()); // list id
 		writeC(0x00);
-		writeD(1 + (_index / MultiSell.PAGE_SIZE)); // page started from 1
+		writeD(1 + _index / MultiSell.PAGE_SIZE); // page started from 1
 		writeD(_finished ? 1 : 0); // finished
 		writeD(MultiSell.PAGE_SIZE); // size of pages
 		writeD(_size); //list length

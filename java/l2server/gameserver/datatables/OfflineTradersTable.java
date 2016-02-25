@@ -70,12 +70,12 @@ public class OfflineTradersTable
 			PreparedStatement stm_prices = con.prepareStatement(SAVE_PRICES);
 			
 			//StringBuilder items = StringBuilder.newInstance();
-			boolean checkInactiveStores = Config.isServer(Config.TENKAI) && ((System.currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis()) > 36000000);
+			boolean checkInactiveStores = Config.isServer(Config.TENKAI) && System.currentTimeMillis() - Server.dateTimeServerStarted.getTimeInMillis() > 36000000;
 			for (L2PcInstance pc : L2World.getInstance().getAllPlayers().values())
 			{
 				try
 				{
-					if ((pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE) && ((pc.getClient() == null) || pc.getClient().isDetached()) && (!checkInactiveStores || pc.hadStoreActivity()))
+					if (pc.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE && (pc.getClient() == null || pc.getClient().isDetached()) && (!checkInactiveStores || pc.hadStoreActivity()))
 					{
 						stm.setInt(1, pc.getObjectId()); //Char Id
 						stm.setLong(2, pc.getOfflineStartTime());
@@ -327,7 +327,7 @@ public class OfflineTradersTable
 				}
 				
 				finishTime = System.nanoTime();
-				Log.info("Asynch restoring of " + nTraders + " offline traders took " + ((finishTime - startTime) / 1000000) + " ms");
+				Log.info("Asynch restoring of " + nTraders + " offline traders took " + (finishTime - startTime) / 1000000 + " ms");
 			}
 		});
 		restoreThread.setPriority(Thread.MIN_PRIORITY);

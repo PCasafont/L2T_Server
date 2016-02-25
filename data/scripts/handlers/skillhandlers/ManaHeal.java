@@ -46,14 +46,14 @@ public class ManaHeal implements ISkillHandler
 	{
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if (target.isInvul(activeChar) || ((target != activeChar) && (target.getFaceoffTarget() != null) && (target.getFaceoffTarget() != activeChar)))
+			if (target.isInvul(activeChar) || target != activeChar && target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
 				continue;
 			
 			double mp = skill.getPower();
-			mp = (skill.getSkillType() == L2SkillType.MANARECHARGE) ? target.calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
+			mp = skill.getSkillType() == L2SkillType.MANARECHARGE ? target.calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
 			
 			//from CT2 u will receive exact MP, u can't go over it, if u have full MP and u get MP buff, u will receive 0MP restored message
-			if ((target.getCurrentMp() + mp) >= target.getMaxMp())
+			if (target.getCurrentMp() + mp >= target.getMaxMp())
 				mp = target.getMaxMp() - target.getCurrentMp();
 			
 			mp = Math.min(target.calcStat(Stats.GAIN_MP_LIMIT, target.getMaxMp(), null, null), target.getCurrentMp() + mp) - target.getCurrentMp();
@@ -64,7 +64,7 @@ public class ManaHeal implements ISkillHandler
 			target.sendPacket(sump);
 			
 			SystemMessage sm;
-			if ((activeChar instanceof L2PcInstance) && (activeChar != target))
+			if (activeChar instanceof L2PcInstance && activeChar != target)
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_RESTORED_BY_C1);
 				sm.addString(activeChar.getName());
@@ -91,7 +91,7 @@ public class ManaHeal implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

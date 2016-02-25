@@ -62,15 +62,15 @@ public class BalanceLife implements ISkillHandler
 		for (L2Character target : (L2Character[]) targets)
 		{
 			// We should not heal if char is dead/
-			if ((target == null) || target.isDead() || (target instanceof L2MobSummonInstance)) // Tenkai custom - don't consider coke mobs
+			if (target == null || target.isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
 				continue;
 			
 			// Player holding a cursed weapon can't be healed and can't heal
 			if (target != activeChar)
 			{
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isCursedWeaponEquipped())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped())
 					continue;
-				else if ((player != null) && player.isCursedWeaponEquipped())
+				else if (player != null && player.isCursedWeaponEquipped())
 					continue;
 			}
 			
@@ -82,15 +82,15 @@ public class BalanceLife implements ISkillHandler
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if ((target == null) || target.isDead() || (target instanceof L2MobSummonInstance)) // Tenkai custom - don't consider coke mobs
+			if (target == null || target.isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
 				continue;
 			
 			// Player holding a cursed weapon can't be healed and can't heal
 			if (target != activeChar)
 			{
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isCursedWeaponEquipped())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped())
 					continue;
-				else if ((player != null) && player.isCursedWeaponEquipped())
+				else if (player != null && player.isCursedWeaponEquipped())
 					continue;
 			}
 			

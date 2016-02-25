@@ -109,7 +109,7 @@ public class ItemsOnGroundManager
 			{
 				item = new L2ItemInstance(result.getInt(1), result.getInt(2));
 				L2World.getInstance().storeObject(item);
-				if (item.isStackable() && (result.getInt(3) > 1)) //this check and..
+				if (item.isStackable() && result.getInt(3) > 1) //this check and..
 					item.setCount(result.getInt(3));
 				if (result.getInt(4) > 0) // this, are really necessary?
 					item.setEnchantLevel(result.getInt(4));
@@ -127,7 +127,7 @@ public class ItemsOnGroundManager
 				{
 					if (result.getLong(8) > -1)
 					{
-						if ((((Config.AUTODESTROY_ITEM_AFTER * 1000) > 0) && (item.getItemType() != L2EtcItemType.HERB)) || (((Config.HERB_AUTO_DESTROY_TIME * 1000) > 0) && (item.getItemType() == L2EtcItemType.HERB)))
+						if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item.getItemType() != L2EtcItemType.HERB || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item.getItemType() == L2EtcItemType.HERB)
 							ItemsAutoDestroy.getInstance().addItem(item);
 					}
 				}
@@ -160,7 +160,7 @@ public class ItemsOnGroundManager
 	
 	public void removeObject(L2ItemInstance item)
 	{
-		if (Config.SAVE_DROPPED_ITEM && (_items != null))
+		if (Config.SAVE_DROPPED_ITEM && _items != null)
 		{
 			_items.remove(item);
 		}

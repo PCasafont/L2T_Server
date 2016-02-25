@@ -96,7 +96,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _yibein) && event.equalsIgnoreCase("33464-03.htm"))
+		if (npc.getNpcId() == _yibein && event.equalsIgnoreCase("33464-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -129,7 +129,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 			
 			st.giveItems(_key, 1);
 		}
-		else if ((npc.getNpcId() == _shannon) && event.equalsIgnoreCase("32974-02.htm") && (st.getInt("cond") == 8))
+		else if (npc.getNpcId() == _shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8)
 		{
 			st.unset("cond");
 			st.takeItems(_key, -1);
@@ -186,7 +186,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 					}
 				}, 5000);
 			}
-			else if ((st.getInt("cond") == 4) || (st.getInt("cond") == 5))
+			else if (st.getInt("cond") == 4 || st.getInt("cond") == 5)
 			{
 				st.set("cond", "7");
 				st.playSound("ItemSound.quest_middle");
@@ -232,7 +232,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _holden) && (st.getInt("cond") >= 1) && (st.getInt("cond") <= 7))
+		else if (npc.getNpcId() == _holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7)
 		{
 			if (st.getInt("cond") == 1)
 			{
@@ -256,14 +256,14 @@ public class Q10323_GoingIntoARealWar extends Quest
 			player.teleToLocation(-113814, 247731, -7872, false);
 			return null;
 		}
-		else if ((npc.getNpcId() == _teleporterGuard) && (st.getInt("cond") == 8))
+		else if (npc.getNpcId() == _teleporterGuard && st.getInt("cond") == 8)
 		{
 			player.teleToLocation(-110415, 252423, -1992, false);
 			player.setInstanceId(0);
 			InstanceManager.getInstance().destroyInstance(player.getObjectId());
 			return null;
 		}
-		else if ((npc.getNpcId() == _shannon) && (st.getInt("cond") == 8))
+		else if (npc.getNpcId() == _shannon && st.getInt("cond") == 8)
 			htmltext = "32974-01.htm";
 		return htmltext;
 	}
@@ -275,14 +275,14 @@ public class Q10323_GoingIntoARealWar extends Quest
 		if (st == null)
 			return null;
 		
-		if ((npc.getNpcId() == _monster1) || (npc.getNpcId() == _monster2))
+		if (npc.getNpcId() == _monster1 || npc.getNpcId() == _monster2)
 		{
 			if (st.getInt("cond") == 2)
 			{
 				boolean allDead = true;
 				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 				{
-					if ((iNpc instanceof L2MonsterInstance) && (iNpc.getObjectId() != npc.getObjectId()) && !iNpc.isDead())
+					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
 						allDead = false;
 				}
 				if (allDead)
@@ -296,7 +296,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 				boolean allDead = true;
 				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
 				{
-					if ((iNpc instanceof L2MonsterInstance) && (iNpc.getObjectId() != npc.getObjectId()) && !iNpc.isDead())
+					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
 						allDead = false;
 				}
 				if (allDead)
@@ -312,7 +312,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public String onArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || (guideAI.getCurrentPos() == (_guideRoute.size() - 1)))
+		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) || guideAI.getCurrentPos() == _guideRoute.size() - 1)
 		{
 			if (guideAI.getCurrentPos() == 1)
 			{
@@ -320,7 +320,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 				return null;
 			}
 			int chatId = _guideLastChatId;
-			if (guideAI.getCurrentPos() != (_guideRoute.size() - 1))
+			if (guideAI.getCurrentPos() != _guideRoute.size() - 1)
 			{
 				guideAI.walkToGuided(40);
 				chatId = _guideWaitChatId;
@@ -340,7 +340,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
 	{
-		if (guideAI.getCurrentPos() == (_guideRoute.size() - 1))
+		if (guideAI.getCurrentPos() == _guideRoute.size() - 1)
 		{
 			// Delete in 5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
@@ -362,7 +362,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public int getOnKillDelay(int npcId)
 	{
-		if ((npcId == _monster1) || (npcId == _monster2))
+		if (npcId == _monster1 || npcId == _monster2)
 			return 0;
 		return super.getOnKillDelay(npcId);
 	}
@@ -370,7 +370,7 @@ public class Q10323_GoingIntoARealWar extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 3) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 3) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

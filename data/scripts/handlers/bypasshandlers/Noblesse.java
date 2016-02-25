@@ -31,7 +31,7 @@ public class Noblesse implements IBypassHandler
 	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
-		if ((target == null) || !Config.isServer(Config.DREAMS))
+		if (target == null || !Config.isServer(Config.DREAMS))
 			return false;
 		
 		if (activeChar.isNoble())

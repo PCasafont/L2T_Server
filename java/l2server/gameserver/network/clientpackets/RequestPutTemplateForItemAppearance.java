@@ -72,7 +72,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 		if (template == null)
 			return;
 		
-		if (!template.getItem().canBeUsedAsApp() || (template.getTime() != -1))
+		if (!template.getItem().canBeUsedAsApp() || template.getTime() != -1)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
 			return;
@@ -147,21 +147,20 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 			itemTypeTemp = L2Item.TYPE2_SHIELD_ARMOR;
 		
 		boolean isCorrectType = type == -1 || itemType == itemTypeTemp;
-		boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain()
-				|| target.getItem().getBodyPart() == L2Item.SLOT_BACK;
+		boolean isCorrectGrade = target.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain() || target.getItem().getBodyPart() == L2Item.SLOT_BACK;
 		
 		boolean valid = true;
-		if (!isCorrectGrade || !isCorrectType || (target.getItem().getItemGrade() < template.getItem().getItemGrade()))
+		if (!isCorrectGrade || !isCorrectType || target.getItem().getItemGrade() < template.getItem().getItemGrade())
 			valid = false;
 		
 		L2ItemType templateType = template.getItem().getItemType();
 		L2ItemType targetType = target.getItem().getItemType();
 		int targetBodyPart = target.getItem().getBodyPart();
 		int templateBodyPart = template.getItem().getBodyPart();
-		if (valid && (targetType != templateType))
+		if (valid && targetType != templateType)
 		{
 			valid = false;
-			if ((templateType == L2ArmorType.NONE) && (templateBodyPart == L2Item.SLOT_ALLDRESS))
+			if (templateType == L2ArmorType.NONE && templateBodyPart == L2Item.SLOT_ALLDRESS)
 				valid = true;
 			
 			if (Config.isServer(Config.TENKAI))
@@ -174,7 +173,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 				typeGroups.put(L2WeaponType.ANCIENTSWORD, 2);
 				typeGroups.put(L2WeaponType.BIGBLUNT, 2);
 				typeGroups.put(L2WeaponType.BIGSWORD, 2);
-
+				
 				typeGroups.put(L2ArmorType.HEAVY, 3);
 				typeGroups.put(L2ArmorType.LIGHT, 3);
 				typeGroups.put(L2ArmorType.MAGIC, 3);
@@ -188,19 +187,15 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 				if (typeGroups.containsKey(targetType))
 					targetTypeGroup = typeGroups.get(targetType);
 				
-				if ((templateTypeGroup >= 0) && (templateTypeGroup == targetTypeGroup))
+				if (templateTypeGroup >= 0 && templateTypeGroup == targetTypeGroup)
 					valid = true;
 			}
 		}
 		
-		if (valid && (targetBodyPart != templateBodyPart))
+		if (valid && targetBodyPart != templateBodyPart)
 		{
 			valid = false;
-			if ((targetBodyPart == L2Item.SLOT_FULL_ARMOR
-					|| targetBodyPart == L2Item.SLOT_CHEST)
-					&& (templateBodyPart == L2Item.SLOT_ALLDRESS
-					|| templateBodyPart == L2Item.SLOT_FULL_ARMOR
-					|| templateBodyPart == L2Item.SLOT_CHEST))
+			if ((targetBodyPart == L2Item.SLOT_FULL_ARMOR || targetBodyPart == L2Item.SLOT_CHEST) && (templateBodyPart == L2Item.SLOT_ALLDRESS || templateBodyPart == L2Item.SLOT_FULL_ARMOR || templateBodyPart == L2Item.SLOT_CHEST))
 				valid = true;
 		}
 		

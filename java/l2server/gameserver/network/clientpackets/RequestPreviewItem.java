@@ -116,18 +116,17 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// If Alternate rule Karma punishment is set to true, forbid Wear to player with Karma
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (_activeChar.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && _activeChar.getReputation() < 0)
 			return;
 		
 		// Check current target of the player and the INTERACTION_DISTANCE
 		L2Object target = _activeChar.getTarget();
-		if (!_activeChar.isGM() && ((target == null // No target (ie GM Shop)
-				) || !((target instanceof L2MerchantInstance) || (target instanceof L2MercManagerInstance)) // Target not a merchant and not mercmanager
+		if (!_activeChar.isGM() && (target == null || !(target instanceof L2MerchantInstance || target instanceof L2MercManagerInstance) // Target not a merchant and not mercmanager
 		|| !_activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false) // Distance is too far
 		))
 			return;
 		
-		if ((_count < 1) || (_listId >= 4000000))
+		if (_count < 1 || _listId >= 4000000)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -136,7 +135,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		L2TradeList list = null;
 		
 		// Get the current merchant targeted by the player
-		L2MerchantInstance merchant = (target instanceof L2MerchantInstance) ? (L2MerchantInstance) target : null;
+		L2MerchantInstance merchant = target instanceof L2MerchantInstance ? (L2MerchantInstance) target : null;
 		
 		List<L2TradeList> lists = TradeController.getInstance().getBuyListByNpcId(merchant.getNpcId());
 		
@@ -187,13 +186,13 @@ public final class RequestPreviewItem extends L2GameClientPacket
 				if (_activeChar.getRace().ordinal() == 5)
 					if (template.getItemType() == L2WeaponType.NONE)
 						continue;
-					else if ((template.getItemType() == L2WeaponType.RAPIER) || (template.getItemType() == L2WeaponType.CROSSBOWK) || (template.getItemType() == L2WeaponType.ANCIENTSWORD))
+					else if (template.getItemType() == L2WeaponType.RAPIER || template.getItemType() == L2WeaponType.CROSSBOWK || template.getItemType() == L2WeaponType.ANCIENTSWORD)
 						continue;
 			}
 			else if (template instanceof L2Armor)
 			{
 				if (_activeChar.getRace().ordinal() == 5)
-					if ((template.getItemType() == L2ArmorType.HEAVY) || (template.getItemType() == L2ArmorType.MAGIC))
+					if (template.getItemType() == L2ArmorType.HEAVY || template.getItemType() == L2ArmorType.MAGIC)
 						continue;
 			}
 			
@@ -214,7 +213,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// Charge buyer and add tax to castle treasury if not owned by npc clan because a Try On is not Free
-		if ((totalPrice < 0) || !_activeChar.reduceAdena("Wear", totalPrice, _activeChar.getLastFolkNPC(), true))
+		if (totalPrice < 0 || !_activeChar.reduceAdena("Wear", totalPrice, _activeChar.getLastFolkNPC(), true))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;

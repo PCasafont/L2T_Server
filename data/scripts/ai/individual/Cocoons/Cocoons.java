@@ -67,7 +67,7 @@ public class Cocoons extends L2AttackableAIScript
 			if (spawn == null)
 				continue;
 			
-			if ((spawn.getNpcId() == _cocoon) || (spawn.getNpcId() == _largeCocoon))
+			if (spawn.getNpcId() == _cocoon || spawn.getNpcId() == _largeCocoon)
 				notifySpawn(spawn.getNpc());
 		}
 	}

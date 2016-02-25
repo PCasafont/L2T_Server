@@ -81,7 +81,7 @@ public class QuestLink implements IBypassHandler
 				QuestState qs = player.getQuestState(q.getScriptName());
 				if (qs != null)
 				{
-					if ((qs.getState() == State.STARTED) && (qs.getInt("cond") > 0))
+					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
 						sb.append(" (In Progress)");
 					else if (qs.getState() == State.COMPLETED)
 						sb.append(" (Done)");
@@ -94,19 +94,19 @@ public class QuestLink implements IBypassHandler
 				QuestState qs = player.getQuestState(q.getScriptName());
 				if (qs != null)
 				{
-					if ((qs.getState() == State.STARTED) && (qs.getInt("cond") > 0))
-						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "02</fstring>]</font>");
+					if (qs.getState() == State.STARTED && qs.getInt("cond") > 0)
+						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "02</fstring>]</font>");
 					else if (qs.getState() == State.COMPLETED)
-						sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "03</fstring>]</font>");
+						sb.append("<font color=\"787878\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "03</fstring>]</font>");
 					else if (q.canStart(player))
-						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "01</fstring>]</font>");
+						sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "01</fstring>]</font>");
 					else
-						sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "04</fstring>]</font>");
+						sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "04</fstring>]</font>");
 				}
 				else if (q.canStart(player))
-					sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "01</fstring>]</font>");
+					sb.append("<font color=\"6699ff\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "01</fstring>]</font>");
 				else
-					sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + (q.getQuestIntId() % 10000) + "04</fstring>]</font>");
+					sb.append("<font color=\"a62f31\">[<fstring p1=\"\" p2=\"\" p3=\"\" p4=\"\" p5=\"\">5" + q.getQuestIntId() % 10000 + "04</fstring>]</font>");
 			}
 			sb.append("</a><br>");
 		}
@@ -140,7 +140,7 @@ public class QuestLink implements IBypassHandler
 		
 		if (q != null)
 		{
-			if (((q.getQuestIntId() >= 1) && (q.getQuestIntId() < 20000)) && ((player.getWeightPenalty() >= 3) || !player.isInventoryUnder90(true)))
+			if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000 && (player.getWeightPenalty() >= 3 || !player.isInventoryUnder90(true)))
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT));
 				return;
@@ -148,7 +148,7 @@ public class QuestLink implements IBypassHandler
 			
 			if (qs == null)
 			{
-				if ((q.getQuestIntId() >= 1) && (q.getQuestIntId() < 20000))
+				if (q.getQuestIntId() >= 1 && q.getQuestIntId() < 20000)
 				{
 					if (player.getAllActiveQuests().length > 40) // if too many ongoing quests, don't show window and send message
 					{
@@ -159,7 +159,7 @@ public class QuestLink implements IBypassHandler
 				// check for start point
 				Quest[] qlst = npc.getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 				
-				if ((qlst != null) && (qlst.length > 0))
+				if (qlst != null && qlst.length > 0)
 				{
 					for (Quest temp : qlst)
 					{
@@ -227,7 +227,7 @@ public class QuestLink implements IBypassHandler
 		{
 			for (QuestState x : awaits)
 			{
-				if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest().getQuestIntId() < 20000) && (x.getState() != State.COMPLETED))
+				if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 && x.getQuest().getQuestIntId() < 20000 && x.getState() != State.COMPLETED)
 					options.add(x.getQuest());
 			}
 		}
@@ -236,17 +236,17 @@ public class QuestLink implements IBypassHandler
 		{
 			for (Quest x : starts)
 			{
-				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && ((player.getQuestState(x.getScriptName()) == null) || (player.getQuestState(x.getScriptName()).getState() != State.COMPLETED)) && x.canStart(player))
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 && (player.getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName()).getState() != State.COMPLETED) && x.canStart(player))
 					options.add(x);
 			}
 			for (Quest x : starts)
 			{
-				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000) && ((player.getQuestState(x.getScriptName()) == null) || (player.getQuestState(x.getScriptName()).getState() != State.COMPLETED)))
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000 && (player.getQuestState(x.getScriptName()) == null || player.getQuestState(x.getScriptName()).getState() != State.COMPLETED))
 					options.add(x);
 			}
 			for (Quest x : starts)
 			{
-				if (!options.contains(x) && (x.getQuestIntId() > 0) && (x.getQuestIntId() < 20000))
+				if (!options.contains(x) && x.getQuestIntId() > 0 && x.getQuestIntId() < 20000)
 					options.add(x);
 			}
 		}
@@ -254,7 +254,7 @@ public class QuestLink implements IBypassHandler
 		{
 			for (QuestState x : awaits)
 			{
-				if (!options.contains(x.getQuest()) && (x.getQuest().getQuestIntId() > 0) && (x.getQuest().getQuestIntId() < 20000))
+				if (!options.contains(x.getQuest()) && x.getQuest().getQuestIntId() > 0 && x.getQuest().getQuestIntId() < 20000)
 					options.add(x.getQuest());
 			}
 		}

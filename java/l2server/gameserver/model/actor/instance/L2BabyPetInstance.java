@@ -84,7 +84,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 			skill = SkillTable.getInstance().getInfo(id, lvl);
 			if (skill != null)
 			{
-				if ((skill.getId() == BUFF_CONTROL) || (skill.getId() == AWAKENING))
+				if (skill.getId() == BUFF_CONTROL || skill.getId() == AWAKENING)
 					continue;
 				
 				switch (skill.getSkillType())
@@ -158,7 +158,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 	
 	private final void startCastTask()
 	{
-		if (((_majorHeal != null) || (_buffs != null) || (_recharge != null)) && (_castTask == null) && !isDead()) // cast task is not yet started and not dead (will start on revive)
+		if ((_majorHeal != null || _buffs != null || _recharge != null) && _castTask == null && !isDead()) // cast task is not yet started and not dead (will start on revive)
 			_castTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new CastTask(this), 3000, 1000);
 	}
 	
@@ -222,7 +222,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 			
 			// if the owner is dead, merely wait for the owner to be resurrected
 			// if the pet is still casting from the previous iteration, allow the cast to complete...
-			if ((owner != null) && !owner.isDead() && !owner.isInvul() && !_baby.isCastingNow() && !_baby.isBetrayed() && !_baby.isMuted() && !_baby.isOutOfControl() && _bufferMode && (_baby.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST))
+			if (owner != null && !owner.isDead() && !owner.isInvul() && !_baby.isCastingNow() && !_baby.isBetrayed() && !_baby.isMuted() && !_baby.isOutOfControl() && _bufferMode && _baby.getAI().getIntention() != CtrlIntention.AI_INTENTION_CAST)
 			{
 				L2Skill skill = null;
 				
@@ -235,10 +235,10 @@ public final class L2BabyPetInstance extends L2PetInstance
 					 */
 					final double hpPercent = owner.getCurrentHp() / owner.getMaxHp();
 					final boolean isImprovedBaby = PetDataTable.isImprovedBaby(getNpcId());
-					if ((isImprovedBaby && (hpPercent < 0.3)) || (!isImprovedBaby && (hpPercent < 0.15)))
+					if (isImprovedBaby && hpPercent < 0.3 || !isImprovedBaby && hpPercent < 0.15)
 					{
 						skill = _majorHeal.getSkill();
-						if (!_baby.isSkillDisabled(skill) && (Rnd.get(100) <= 75))
+						if (!_baby.isSkillDisabled(skill) && Rnd.get(100) <= 75)
 						{
 							if (_baby.getCurrentMp() >= skill.getMpConsume())
 							{
@@ -247,11 +247,11 @@ public final class L2BabyPetInstance extends L2PetInstance
 							}
 						}
 					}
-					else if ((_majorHeal.getSkill() != _minorHeal.getSkill()) && ((isImprovedBaby && (hpPercent < 0.7)) || (!isImprovedBaby && (hpPercent < 0.8))))
+					else if (_majorHeal.getSkill() != _minorHeal.getSkill() && (isImprovedBaby && hpPercent < 0.7 || !isImprovedBaby && hpPercent < 0.8))
 					{
 						//Cast _minorHeal only if it's different than _majorHeal, then pet has two heals available.
 						skill = _minorHeal.getSkill();
-						if (!_baby.isSkillDisabled(skill) && (Rnd.get(100) <= 25))
+						if (!_baby.isSkillDisabled(skill) && Rnd.get(100) <= 25)
 						{
 							if (_baby.getCurrentMp() >= skill.getMpConsume())
 							{
@@ -265,13 +265,13 @@ public final class L2BabyPetInstance extends L2PetInstance
 				if (_baby.getFirstEffect(BUFF_CONTROL) == null) // Buff Control is not active
 				{
 					// searching for usable buffs
-					if ((_buffs != null) && !_buffs.isEmpty())
+					if (_buffs != null && !_buffs.isEmpty())
 					{
 						for (SkillHolder i : _buffs)
 						{
 							skill = i.getSkill();
 							
-							if ((skill.getTargetType() == L2SkillTargetType.TARGET_SELF) && (_baby.getFirstEffect(skill) != null))
+							if (skill.getTargetType() == L2SkillTargetType.TARGET_SELF && _baby.getFirstEffect(skill) != null)
 								continue;
 							
 							if (_baby.isSkillDisabled(skill))
@@ -302,14 +302,14 @@ public final class L2BabyPetInstance extends L2PetInstance
 							while (iter.hasNext())
 							{
 								skill = iter.next();
-								if ((currentSkill.getId() == skill.getId()) && (currentSkill.getLevel() >= skill.getLevel()))
+								if (currentSkill.getId() == skill.getId() && currentSkill.getLevel() >= skill.getLevel())
 								{
 									iter.remove();
 								}
 								else
 								{
 									// effect with same stacktype and greater or equal stackorder
-									if (skill.hasEffects() && (e.getStackLvl() >= skill.getEffectTemplates()[0].stackLvl))
+									if (skill.hasEffects() && e.getStackLvl() >= skill.getEffectTemplates()[0].stackLvl)
 									{
 										for (String stackType : skill.getEffectTemplates()[0].stackType)
 										{
@@ -348,11 +348,11 @@ public final class L2BabyPetInstance extends L2PetInstance
 				}
 				
 				// buffs/heal not casted, trying recharge, if exist
-				if ((_recharge != null) && owner.isInCombat() // recharge casted only if owner in combat stance
-						&& ((owner.getCurrentMp() / owner.getMaxMp()) < 0.6) && (Rnd.get(100) <= 60))
+				if (_recharge != null && owner.isInCombat() // recharge casted only if owner in combat stance
+						&& owner.getCurrentMp() / owner.getMaxMp() < 0.6 && Rnd.get(100) <= 60)
 				{
 					skill = _recharge.getSkill();
-					if (!_baby.isSkillDisabled(skill) && (_baby.getCurrentMp() >= skill.getMpConsume()))
+					if (!_baby.isSkillDisabled(skill) && _baby.getCurrentMp() >= skill.getMpConsume())
 					{
 						castSkill(skill);
 						return;

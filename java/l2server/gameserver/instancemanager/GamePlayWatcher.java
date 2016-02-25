@@ -75,7 +75,7 @@ public class GamePlayWatcher
 				return;
 			}
 			
-			if ((_checkForAnotherPivotTimer < System.currentTimeMillis()) || (_pivot == null) || !AttackStanceTaskManager.getInstance().getAttackStanceTask(_pivot) || _pivot.isInsidePeaceZone(_pivot) || _pivot.isDead())
+			if (_checkForAnotherPivotTimer < System.currentTimeMillis() || _pivot == null || !AttackStanceTaskManager.getInstance().getAttackStanceTask(_pivot) || _pivot.isInsidePeaceZone(_pivot) || _pivot.isDead())
 			{
 				_pivot = null;
 				_checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
@@ -87,7 +87,7 @@ public class GamePlayWatcher
 				int bestCombatPvECount = 0;
 				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 				{
-					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() || (player == _watcher))
+					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() || player == _watcher)
 						continue;
 					
 					int flaggedCount = 0;
@@ -113,7 +113,7 @@ public class GamePlayWatcher
 					}
 					
 					// FIXME: this ckeck is going to pick farm zones over PvP if lots of farmers get together
-					if ((flaggedCount > bestCombatPvPCount) || (combatPvPCount > bestCombatPvPCount) || ((bestCombatPvPCount < 2) && (combatPvECount > bestCombatPvECount)))
+					if (flaggedCount > bestCombatPvPCount || combatPvPCount > bestCombatPvPCount || bestCombatPvPCount < 2 && combatPvECount > bestCombatPvECount)
 					{
 						_pivot = player;
 						bestCombatPvPCount = Math.max(combatPvPCount, flaggedCount);
@@ -124,7 +124,7 @@ public class GamePlayWatcher
 			
 			//_pivot = L2World.getInstance().getPlayer("pere");
 			
-			if ((_pivot == null) || _watcher.isTeleporting())
+			if (_pivot == null || _watcher.isTeleporting())
 			{
 				// We stream Gludio when no mini game is going on.
 				//if (Config.isServer(Config.FUSION))
@@ -164,7 +164,7 @@ public class GamePlayWatcher
 				_watcher.broadcastUserInfo();
 			}
 			
-			if ((_pivot.getTarget() == null) || (_pivot.getTarget() == _pivot))
+			if (_pivot.getTarget() == null || _pivot.getTarget() == _pivot)
 			{
 				// 3rd person cam
 				_watcher.sendPacket(new SpecialCamera(_pivot.getObjectId(), Rnd.get(50, 150), // Distance
@@ -182,11 +182,11 @@ public class GamePlayWatcher
 			{
 				double yaw = Math.toDegrees(Math.atan2(_pivot.getX() - _pivot.getTarget().getX(), _pivot.getY() - _pivot.getTarget().getY())) + 90;
 				double angle = 180 - yaw;
-				double pitch = 15 + (0.02 * (1000 - Util.calculateDistance(_pivot, _pivot.getTarget(), false)));
+				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(_pivot, _pivot.getTarget(), false));
 				if (pitch < 15)
 					pitch = 15;
 				double distance = 250;
-				Point3D cameraPos = new Point3D((int) Math.round(_pivot.getX() + (distance * Math.cos((angle * Math.PI) / 180.0))), (int) Math.round(_pivot.getY() + (distance * Math.sin((angle * Math.PI) / 180.0) * Math.cos((pitch * Math.PI) / 180.0))), (int) Math.round(_pivot.getZ() + (distance * Math.sin((pitch * Math.PI) / 180.0))));
+				Point3D cameraPos = new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)), (int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math.cos(pitch * Math.PI / 180.0)), (int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
 				while (!GeoEngine.getInstance().canSeeTarget(_pivot, cameraPos))
 				{
 					distance -= 100;
@@ -197,7 +197,7 @@ public class GamePlayWatcher
 						return;
 					}
 					
-					cameraPos = new Point3D((int) Math.round(_pivot.getX() + (distance * Math.cos((angle * Math.PI) / 180.0))), (int) Math.round(_pivot.getY() + (distance * Math.sin((angle * Math.PI) / 180.0) * Math.cos((pitch * Math.PI) / 180.0))), (int) Math.round(_pivot.getZ() + (distance * Math.sin((pitch * Math.PI) / 180.0))));
+					cameraPos = new Point3D((int) Math.round(_pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)), (int) Math.round(_pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math.cos(pitch * Math.PI / 180.0)), (int) Math.round(_pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
 				}
 				
 				// 3rd person cam

@@ -295,12 +295,12 @@ public class ItemTable implements Reloadable
 		if (process.equalsIgnoreCase("loot"))
 		{
 			ScheduledFuture<?> itemLootShedule;
-			if ((reference instanceof L2Attackable) && ((L2Attackable) reference).isRaid()) // loot privilege for raids
+			if (reference instanceof L2Attackable && ((L2Attackable) reference).isRaid()) // loot privilege for raids
 			{
 				L2Attackable raid = (L2Attackable) reference;
 				boolean protectDrop = true;
 				if (Config.isServer(Config.TENKAI))
-					protectDrop = !(raid instanceof L2GrandBossInstance) || (raid.getInstanceId() != 0);
+					protectDrop = !(raid instanceof L2GrandBossInstance) || raid.getInstanceId() != 0;
 				
 				// if in CommandChannel and was killing a World/RaidBoss
 				if (!Config.AUTO_LOOT_RAIDS && protectDrop)
@@ -328,12 +328,12 @@ public class ItemTable implements Reloadable
 		L2World.getInstance().storeObject(item);
 		
 		// Set Item parameters
-		if (item.isStackable() && (count > 1))
+		if (item.isStackable() && count > 1)
 			item.setCount(count);
 		
 		if (Config.LOG_ITEMS && !process.equals("Reset") && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID) || (item.getItemId() == 4037) || (item.getItemId() == 4355) || (item.getItemId() == 4356))))
+			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 || item.getItemId() == 4355 || item.getItemId() == 4356))
 				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 		}
 		
@@ -344,11 +344,11 @@ public class ItemTable implements Reloadable
 				String referenceName = "no-reference";
 				if (reference instanceof L2Object)
 				{
-					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+					referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
 				}
 				else if (reference instanceof String)
 					referenceName = (String) reference;
-				String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+				String targetName = actor.getTarget() != null ? actor.getTarget().getName() : "no-target";
 				if (Config.GMAUDIT)
 					GMAudit.auditGMAction(actor.getName(), process + " (id: " + itemId + " count: " + count + " name: " + item.getItemName() + " objId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: " + referenceName);
 			}
@@ -395,7 +395,7 @@ public class ItemTable implements Reloadable
 	{
 		if (Config.LOG_ITEMS && !process.contains("Consume"))
 		{
-			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID) || (item.getItemId() == 4037) || (item.getItemId() == 4355) || (item.getItemId() == 4356))))
+			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 || item.getItemId() == 4355 || item.getItemId() == 4356))
 				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 		}
 		
@@ -411,7 +411,7 @@ public class ItemTable implements Reloadable
 			
 			if (Config.LOG_ITEMS && !process.contains("Consume"))
 			{
-				if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getItemId() == ADENA_ID))))
+				if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID))
 					L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 			}
 			
@@ -422,11 +422,11 @@ public class ItemTable implements Reloadable
 					String referenceName = "no-reference";
 					if (reference instanceof L2Object)
 					{
-						referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+						referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
 					}
 					else if (reference instanceof String)
 						referenceName = (String) reference;
-					String targetName = (actor.getTarget() != null ? actor.getTarget().getName() : "no-target");
+					String targetName = actor.getTarget() != null ? actor.getTarget().getName() : "no-target";
 					if (Config.GMAUDIT)
 						GMAudit.auditGMAction(actor.getName(), process + " (id: " + item.getItemId() + " count: " + item.getCount() + " itemObjId: " + item.getObjectId() + ")", targetName, "L2Object referencing this action is: " + referenceName);
 				}

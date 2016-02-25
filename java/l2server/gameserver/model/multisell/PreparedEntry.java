@@ -33,7 +33,7 @@ public class PreparedEntry extends MultiSellEntry
 	public PreparedEntry(MultiSellEntry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
 	{
 		_entryId = template.getEntryId() * 100000;
-		if (maintainEnchantment && (item != null))
+		if (maintainEnchantment && item != null)
 			_entryId += item.getEnchantLevel();
 		
 		ItemInfo info = null;
@@ -56,7 +56,7 @@ public class PreparedEntry extends MultiSellEntry
 				
 				continue; // do not yet add this adena amount to the list as non-taxIngredient adena might be entered later (order not guaranteed)
 			}
-			else if (maintainEnchantment && (item != null) && ing.isArmorOrWeapon())
+			else if (maintainEnchantment && item != null && ing.isArmorOrWeapon())
 			{
 				info = new ItemInfo(item);
 				final Ingredient newIngredient = ing.clone();

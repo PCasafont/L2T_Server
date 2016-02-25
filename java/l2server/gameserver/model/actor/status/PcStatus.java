@@ -85,7 +85,7 @@ public class PcStatus extends PlayableStatus
 				if (getActiveChar().isStunned())
 				{
 					int baseBreakChance = attacker.getLevel() > 85 ? 5 : 25; // TODO Recheck this
-					double breakChance = (baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar())));
+					double breakChance = baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar()));
 					
 					if (value > 2000)
 						breakChance *= 4;
@@ -94,7 +94,7 @@ public class PcStatus extends PlayableStatus
 					else if (value > 500)
 						breakChance *= 1.5;
 					
-					if ((value > 100) && (Rnd.get(100) < breakChance))
+					if (value > 100 && Rnd.get(100) < breakChance)
 						getActiveChar().stopStunning(true);
 				}
 			}
@@ -111,14 +111,14 @@ public class PcStatus extends PlayableStatus
 			//	return;
 		}
 		
-		if ((getActiveChar().getFaceoffTarget() != null) && (attacker != getActiveChar().getFaceoffTarget()) && (attacker != getActiveChar()))
+		if (getActiveChar().getFaceoffTarget() != null && attacker != getActiveChar().getFaceoffTarget() && attacker != getActiveChar())
 			return;
 		
 		int fullValue = (int) value;
 		int tDmg = 0;
 		int mpDam = 0;
 		
-		if ((attacker != null) && (attacker != getActiveChar()))
+		if (attacker != null && attacker != getActiveChar())
 		{
 			final L2PcInstance attackerPlayer = attacker.getActingPlayer();
 			
@@ -141,7 +141,7 @@ public class PcStatus extends PlayableStatus
 			}
 			
 			int dmgCap = (int) getActiveChar().getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
-			if ((dmgCap > 0) && (value > dmgCap))
+			if (dmgCap > 0 && value > dmgCap)
 			{
 				value = dmgCap;
 				fullValue = dmgCap;
@@ -149,9 +149,9 @@ public class PcStatus extends PlayableStatus
 			
 			// Check and calculate transfered damage
 			L2SummonInstance summon = getActiveChar().getSummon(0);
-			if ((summon != null) && !(summon instanceof L2MobSummonInstance) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
+			if (summon != null && !(summon instanceof L2MobSummonInstance) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
-				tDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null)) / 100;
+				tDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null) / 100;
 				
 				// Only transfer dmg up to current HP, it should not be killed
 				tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
@@ -170,7 +170,7 @@ public class PcStatus extends PlayableStatus
 				manaShield -= 100;
 				manaBlock = true;
 			}
-			mpDam = ((int) value * manaShield) / 100;
+			mpDam = (int) value * manaShield / 100;
 			
 			if (mpDam > 0)
 			{
@@ -202,15 +202,15 @@ public class PcStatus extends PlayableStatus
 			}
 			
 			final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
-			if ((caster != null) && (getActiveChar().getParty() != null) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && (getActiveChar() != caster) && getActiveChar().getParty().getPartyMembers().contains(caster))
+			if (caster != null && getActiveChar().getParty() != null && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && getActiveChar() != caster && getActiveChar().getParty().getPartyMembers().contains(caster))
 			{
 				int transferDmg = 0;
 				
-				transferDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null)) / 100;
+				transferDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
 				if (transferDmg > 0)
 				{
-					if ((attacker instanceof L2Playable) && (caster.getCurrentCp() > 0))
+					if (attacker instanceof L2Playable && caster.getCurrentCp() > 0)
 					{
 						if (caster.getCurrentCp() > transferDmg)
 							caster.getStatus().reduceCp(transferDmg);
@@ -228,7 +228,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			if (!ignoreCP && (attacker instanceof L2Playable))
+			if (!ignoreCP && attacker instanceof L2Playable)
 			{
 				if (getCurrentCp() >= value)
 				{
@@ -242,7 +242,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			if ((fullValue > 0) && !isDOT)
+			if (fullValue > 0 && !isDOT)
 			{
 				SystemMessage smsg;
 				// Send a System Message to the L2PcInstance
@@ -273,7 +273,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			if ((attackerPlayer != null) && getActiveChar().isInOlympiadMode())
+			if (attackerPlayer != null && getActiveChar().isInOlympiadMode())
 				attackerPlayer.setOlyGivenDmg(attackerPlayer.getOlyGivenDmg() + fullValue);
 		}
 		
@@ -338,10 +338,10 @@ public class PcStatus extends PlayableStatus
 	{
 		super.setCurrentHp(newHp, broadcastPacket);
 		
-		if (!Config.DISABLE_TUTORIAL && (getCurrentHp() <= (getActiveChar().getStat().getMaxHp() * .3)))
+		if (!Config.DISABLE_TUTORIAL && getCurrentHp() <= getActiveChar().getStat().getMaxHp() * .3)
 		{
 			QuestState qs = getActiveChar().getQuestState("Q255_Tutorial");
-			if ((qs != null) && (qs.getQuest() != null))
+			if (qs != null && qs.getQuest() != null)
 				qs.getQuest().notifyEvent("CE45", null, getActiveChar());
 		}
 	}

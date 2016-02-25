@@ -209,7 +209,7 @@ public class EventTeam
 		ArrayList<L2PcInstance> toIterate = new ArrayList<L2PcInstance>(_participatedPlayers.values());
 		for (L2PcInstance player : toIterate)
 		{
-			if (!player.isOnline() || (player.getClient() == null) || (player.getEvent() == null))
+			if (!player.isOnline() || player.getClient() == null || player.getEvent() == null)
 				_participatedPlayers.remove(player.getObjectId());
 			if (!player.isDead())
 				alivePlayerCount++;
@@ -259,7 +259,7 @@ public class EventTeam
 	
 	public void setFlagSpawn(L2Spawn spawn)
 	{
-		if ((_flagSpawn != null) && (_flagSpawn.getNpc() != null))
+		if (_flagSpawn != null && _flagSpawn.getNpc() != null)
 		{
 			((L2EventFlagInstance) _flagSpawn.getNpc()).shouldBeDeleted();
 			_flagSpawn.getNpc().deleteMe();
@@ -287,7 +287,7 @@ public class EventTeam
 	
 	public boolean isAlive()
 	{
-		return (getAlivePlayerCount() > 0);
+		return getAlivePlayerCount() > 0;
 	}
 	
 	public L2Spawn getGolemSpawn()
@@ -297,7 +297,7 @@ public class EventTeam
 	
 	public void setGolemSpawn(L2Spawn spawn)
 	{
-		if ((_golemSpawn != null) && (_golemSpawn.getNpc() != null))
+		if (_golemSpawn != null && _golemSpawn.getNpc() != null)
 			_golemSpawn.getNpc().deleteMe();
 		_golemSpawn = spawn;
 	}

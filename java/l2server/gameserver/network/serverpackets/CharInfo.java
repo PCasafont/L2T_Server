@@ -82,7 +82,7 @@ public class CharInfo extends L2GameServerPacket
 		_activeChar = cha;
 		_objId = cha.getObjectId();
 		_inv = cha.getInventory();
-		if ((_activeChar.getVehicle() != null) && (_activeChar.getInVehiclePosition() != null))
+		if (_activeChar.getVehicle() != null && _activeChar.getInVehiclePosition() != null)
 		{
 			_x = _activeChar.getInVehiclePosition().getX();
 			_y = _activeChar.getInVehiclePosition().getY();
@@ -132,7 +132,7 @@ public class CharInfo extends L2GameServerPacket
 		if (_invisibleCharacter != 0)
 		{
 			L2PcInstance tmp = getClient().getActiveChar();
-			if ((tmp != null) && (tmp.isGM() || tmp.isInSameParty(_activeChar)))
+			if (tmp != null && (tmp.isGM() || tmp.isInSameParty(_activeChar)))
 				gmSeeInvis = true;
 		}
 		
@@ -255,7 +255,7 @@ public class CharInfo extends L2GameServerPacket
 				case 34996: // Cloak of Radiant Light
 				case 34997: //Cloak of Cold Darkness
 				{
-					if (!_activeChar.isClanLeader() || (_activeChar.getClan().getLevel() < 11) || (_activeChar.getClan().getHasCastle() == 0))
+					if (!_activeChar.isClanLeader() || _activeChar.getClan().getLevel() < 11 || _activeChar.getClan().getHasCastle() == 0)
 						cloakId = _inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK);
 				}
 			}
@@ -294,8 +294,7 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0);
 				writeD(0);
 			}
-			if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500
-					&& _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
+			if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
 			{
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
@@ -360,7 +359,7 @@ public class CharInfo extends L2GameServerPacket
 			else
 				writeS(_activeChar.getAppearance().getVisibleTitle());
 			
-			if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() && ((_activeChar.getEvent().getType() == EventType.DeathMatch) || (_activeChar.getEvent().getType() == EventType.Survival) || (_activeChar.getEvent().getType() == EventType.KingOfTheHill))))
+			if (!_activeChar.isCursedWeaponEquipped() && !(_activeChar.isPlayingEvent() && (_activeChar.getEvent().getType() == EventType.DeathMatch || _activeChar.getEvent().getType() == EventType.Survival || _activeChar.getEvent().getType() == EventType.KingOfTheHill)))
 			{
 				writeD(_activeChar.getClanId());
 				writeD(_activeChar.getClanCrestId());
@@ -404,7 +403,7 @@ public class CharInfo extends L2GameServerPacket
 			writeD(_activeChar.getMountNpcId() + 1000000);
 			writeD(_activeChar.getCurrentClass().getId());
 			writeD(0x00); //?
-			writeC(_activeChar.isMounted() || (_airShipHelm != 0) ? 0 : _activeChar.getEnchantEffect());
+			writeC(_activeChar.isMounted() || _airShipHelm != 0 ? 0 : _activeChar.getEnchantEffect());
 			
 			writeC(_activeChar.getTeam());
 			
@@ -464,7 +463,7 @@ public class CharInfo extends L2GameServerPacket
 			writeC(_activeChar.hasCoCAura() ? 100 : 0x00);
 			writeC(_inv.getCloakStatus());
 			boolean showWings = true;
-			if ((getWriteClient() != null) && (getWriteClient().getActiveChar() != null))
+			if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
 			{
 				final L2PcInstance player = getWriteClient().getActiveChar();
 				showWings = !player.isNickNameWingsDisabled() && !player.isPlayingEvent();

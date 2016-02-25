@@ -64,7 +64,7 @@ public final class L2EnchantSkillLearn
 	
 	public boolean isMaxEnchant(int route, int level)
 	{
-		if ((route < 1) || !_enchantRoutes.contains(route))
+		if (route < 1 || !_enchantRoutes.contains(route))
 		{
 			return false;
 		}
@@ -77,7 +77,7 @@ public final class L2EnchantSkillLearn
 	
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
 	{
-		if ((route < 1) || !_enchantRoutes.contains(route))
+		if (route < 1 || !_enchantRoutes.contains(route))
 			return null;
 		
 		if (level < 1)

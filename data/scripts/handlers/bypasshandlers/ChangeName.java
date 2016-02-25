@@ -36,7 +36,7 @@ public class ChangeName implements IBypassHandler
 	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
-		if ((target == null) || !Config.isServer(Config.TENKAI))
+		if (target == null || !Config.isServer(Config.TENKAI))
 			return false;
 		
 		if (command.startsWith("ChangeCharName"))
@@ -54,7 +54,7 @@ public class ChangeName implements IBypassHandler
 				try
 				{
 					String newName = command.substring(15);
-					if (!Util.isAlphaNumeric(newName) || (newName.length() < 2))
+					if (!Util.isAlphaNumeric(newName) || newName.length() < 2)
 					{
 						activeChar.sendMessage("Incorrect name.");
 						return false;
@@ -121,7 +121,7 @@ public class ChangeName implements IBypassHandler
 						return false;
 					}
 					String newName = command.substring(15);
-					if (!Util.isAlphaNumeric(newName) || (newName.length() < 2))
+					if (!Util.isAlphaNumeric(newName) || newName.length() < 2)
 					{
 						activeChar.sendMessage("Incorrect name.");
 						return false;

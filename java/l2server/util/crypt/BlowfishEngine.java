@@ -93,11 +93,11 @@ public class BlowfishEngine
 		{
 			throw new IllegalStateException("Blowfish not initialised");
 		}
-		if ((inOff + BLOCK_SIZE) > in.length)
+		if (inOff + BLOCK_SIZE > in.length)
 		{
 			throw new IOException("input buffer too short");
 		}
-		if ((outOff + BLOCK_SIZE) > out.length)
+		if (outOff + BLOCK_SIZE > out.length)
 		{
 			throw new IOException("output buffer too short");
 		}
@@ -126,7 +126,7 @@ public class BlowfishEngine
 	//==================================
 	private int func(int x)
 	{
-		return (((S0[(x >>> 24)] + S1[(x >>> 16) & 0xff]) ^ S2[(x >>> 8) & 0xff]) + S3[x & 0xff]);
+		return (S0[x >>> 24] + S1[x >>> 16 & 0xff] ^ S2[x >>> 8 & 0xff]) + S3[x & 0xff];
 	}
 	
 	/**
@@ -181,7 +181,7 @@ public class BlowfishEngine
 			for (int j = 0; j < 4; j++)
 			{
 				// create a 32 bit block
-				data = (data << 8) | (key[keyIndex++] & 0xff);
+				data = data << 8 | key[keyIndex++] & 0xff;
 				// wrap when we get to the end of the key
 				if (keyIndex >= keyLength)
 				{
@@ -255,7 +255,7 @@ public class BlowfishEngine
 	
 	private int bytesTo32bits(byte[] b, int i)
 	{
-		return ((b[i + 3] & 0xff) << 24) | ((b[i + 2] & 0xff) << 16) | ((b[i + 1] & 0xff) << 8) | ((b[i] & 0xff));
+		return (b[i + 3] & 0xff) << 24 | (b[i + 2] & 0xff) << 16 | (b[i + 1] & 0xff) << 8 | b[i] & 0xff;
 	}
 	
 	private void bits32ToBytes(int in, byte[] b, int offset)

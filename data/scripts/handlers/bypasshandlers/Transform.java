@@ -82,7 +82,7 @@ public class Transform implements IBypassHandler
 	private static boolean canTransform(L2PcInstance player)
 	{
 		QuestState st = player.getQuestState("136_MoreThanMeetsTheEye");
-		if ((st != null) && (st.getState() == State.COMPLETED))
+		if (st != null && st.getState() == State.COMPLETED)
 			return true;
 		
 		return false;

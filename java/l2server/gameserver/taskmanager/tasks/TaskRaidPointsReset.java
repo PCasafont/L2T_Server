@@ -43,7 +43,7 @@ public class TaskRaidPointsReset extends Task
 	{
 		Calendar cal = Calendar.getInstance();
 		
-		if (!Config.isServer(Config.TENKAI_ESTHUS) && (cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY))
+		if (!Config.isServer(Config.TENKAI_ESTHUS) && cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY)
 		{
 			// reward clan reputation points
 			Map<Integer, Integer> rankList = RaidBossPointsManager.getInstance().getRankList();
@@ -51,7 +51,7 @@ public class TaskRaidPointsReset extends Task
 			{
 				for (Map.Entry<Integer, Integer> entry : rankList.entrySet())
 				{
-					if ((entry.getValue() <= 100) && c.isMember(entry.getKey()))
+					if (entry.getValue() <= 100 && c.isMember(entry.getKey()))
 					{
 						int reputation = 0;
 						switch (entry.getValue())

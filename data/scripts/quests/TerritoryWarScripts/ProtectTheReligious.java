@@ -37,6 +37,6 @@ public class ProtectTheReligious extends TerritoryWarSuperClass
 	@Override
 	public int getTerritoryIdForThisNPCId(int npcid)
 	{
-		return 81 + ((npcid - 36510) / 6);
+		return 81 + (npcid - 36510) / 6;
 	}
 }

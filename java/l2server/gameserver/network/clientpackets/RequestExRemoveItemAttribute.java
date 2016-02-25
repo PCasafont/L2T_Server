@@ -55,7 +55,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		if (targetItem == null)
 			return;
 		
-		if ((targetItem.getElementals() == null) || (targetItem.getElemental(_element) == null))
+		if (targetItem.getElementals() == null || targetItem.getElemental(_element) == null)
 			return;
 		
 		if (activeChar.reduceAdena("RemoveElement", getPrice(targetItem), activeChar, true))

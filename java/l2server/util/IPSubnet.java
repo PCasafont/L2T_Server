@@ -100,7 +100,7 @@ public class IPSubnet
 	{
 		int size = 0;
 		for (byte element : _mask)
-			size += Integer.bitCount((element & 0xFF));
+			size += Integer.bitCount(element & 0xFF);
 		
 		try
 		{
@@ -125,7 +125,7 @@ public class IPSubnet
 	
 	private static final byte[] getMask(int n, int maxLength) throws UnknownHostException
 	{
-		if ((n > (maxLength << 3)) || (n < 0))
+		if (n > maxLength << 3 || n < 0)
 			throw new UnknownHostException("Invalid netmask: " + n);
 		
 		final byte[] result = new byte[maxLength];

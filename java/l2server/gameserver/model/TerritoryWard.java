@@ -108,7 +108,7 @@ public class TerritoryWard
 	{
 		if (_player != null)
 			dropIt();
-		if ((_npc != null) && !_npc.isDecayed())
+		if (_npc != null && !_npc.isDecayed())
 			_npc.deleteMe();
 	}
 	

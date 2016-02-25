@@ -350,7 +350,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		// player might have and initialize the Tamed Beast.
 		if (Util.contains(TAMED_BEASTS, nextNpcId))
 		{
-			if ((player.getTrainedBeasts() != null) && !player.getTrainedBeasts().isEmpty())
+			if (player.getTrainedBeasts() != null && !player.getTrainedBeasts().isEmpty())
 				for (L2TamedBeastInstance oldTrained : player.getTrainedBeasts())
 					oldTrained.deleteMe();
 			
@@ -363,7 +363,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 			QuestState st = player.getQuestState("20_BringUpWithLove");
 			if (st != null)
 			{
-				if ((Rnd.get(100) <= 5) && (st.getQuestItemsCount(7185) == 0))
+				if (Rnd.get(100) <= 5 && st.getQuestItemsCount(7185) == 0)
 				{
 					//if player has quest 20 going, give quest item
 					//it's easier to hardcode it in here than to try and repeat this stuff in the quest
@@ -416,7 +416,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (event.equalsIgnoreCase("polymorph Mad Cow") && (npc != null) && (player != null))
+		if (event.equalsIgnoreCase("polymorph Mad Cow") && npc != null && player != null)
 		{
 			if (MAD_COW_POLYMORPH.containsKey(npc.getNpcId()))
 			{
@@ -453,7 +453,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		int npcId = npc.getNpcId();
 		int skillId = skill.getId();
 		// check if the npc and skills used are valid for this script.  Exit if invalid.
-		if (!Util.contains(FEEDABLE_BEASTS, npcId) || ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE)))
+		if (!Util.contains(FEEDABLE_BEASTS, npcId) || skillId != SKILL_GOLDEN_SPICE && skillId != SKILL_CRYSTAL_SPICE)
 		{
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		}
@@ -468,7 +468,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 		
 		// prevent exploit which allows 2 players to simultaneously raise the same 0-growth beast
 		// If the mob is at 0th level (when it still listens to all feeders) lock it to the first feeder!
-		if ((growthLevel == 0) && _FeedInfo.containsKey(objectId))
+		if (growthLevel == 0 && _FeedInfo.containsKey(objectId))
 		{
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		}
@@ -505,7 +505,7 @@ public class FeedableBeasts extends L2AttackableAIScript
 				npc.broadcastPacket(new NpcSay(objectId, 0, npc.getNpcId(), TEXT[growthLevel][Rnd.get(TEXT[growthLevel].length)]));
 			}
 			
-			if ((growthLevel > 0) && (_FeedInfo.get(objectId) != caster.getObjectId()))
+			if (growthLevel > 0 && _FeedInfo.get(objectId) != caster.getObjectId())
 			{
 				// check if this is the same player as the one who raised it from growth 0.
 				// if no, then do not allow a chance to raise the pet (food gets consumed but has no effect).
@@ -518,9 +518,9 @@ public class FeedableBeasts extends L2AttackableAIScript
 				spawnNext(npc, growthLevel, caster, food);
 			}
 		}
-		else if (Util.contains(TAMED_BEASTS, npcId) && (npc instanceof L2TamedBeastInstance))
+		else if (Util.contains(TAMED_BEASTS, npcId) && npc instanceof L2TamedBeastInstance)
 		{
-			L2TamedBeastInstance beast = ((L2TamedBeastInstance) npc);
+			L2TamedBeastInstance beast = (L2TamedBeastInstance) npc;
 			if (skillId == beast.getFoodType())
 			{
 				beast.onReceiveFood();

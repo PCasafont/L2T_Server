@@ -185,9 +185,9 @@ public class Lindvior extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if ((lindStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LINDVIOR_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					if (lindStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LINDVIOR_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
-					else if ((lindStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LINDVIOR_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
+					else if (lindStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LINDVIOR_MIN_PLAYERS, 200, 95, Config.MAX_LEVEL))
 						return null;
 					else if (lindStatus == GrandBossManager.getInstance().FIGHTING)
 						return null;
@@ -382,12 +382,12 @@ public class Lindvior extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("spawn_minion_task"))
 		{
-			if ((_lindviorBoss != null) && !_lindviorBoss.isDead())
+			if (_lindviorBoss != null && !_lindviorBoss.isDead())
 			{
 				if (Rnd.get(100) > 30)
 				{
 					if (_bossStage < 9) //Can spawn Lyns at all stages, less at the last one
-						spawnMinions(_lindviorBoss, (Rnd.get(100) > 50 ? _cycloneId : -1), 1000, 20);
+						spawnMinions(_lindviorBoss, Rnd.get(100) > 50 ? _cycloneId : -1, 1000, 20);
 					else
 						spawnMinions(_lindviorBoss, _cycloneId, 1000, 20); //Only Cyclones
 				}
@@ -559,7 +559,7 @@ public class Lindvior extends L2AttackableAIScript
 											//At this point all the start instance npcs are deleted
 											for (L2Character chara : _bossZone.getCharactersInside().values())
 											{
-												if ((chara == null) || !(chara instanceof L2Npc))
+												if (chara == null || !(chara instanceof L2Npc))
 													continue;
 												
 												if (((L2Npc) chara).getNpcId() != _firstFloorLindvior)
@@ -574,7 +574,7 @@ public class Lindvior extends L2AttackableAIScript
 									{
 										_manageGenerators.put(npc, calcDamage);
 										
-										double calc = (generatorDamage / maxGeneratorDamage) * 120;
+										double calc = generatorDamage / maxGeneratorDamage * 120;
 										
 										npc.broadcastPacket(new ExSendUIEvent(5, (int) calc, 120, 16211701), 1200);
 									}
@@ -589,7 +589,7 @@ public class Lindvior extends L2AttackableAIScript
 		{
 			if (_bossStage == 3)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.50)) //50%
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.50) //50%
 				{
 					_bossStage = 4;
 					
@@ -607,7 +607,7 @@ public class Lindvior extends L2AttackableAIScript
 		{
 			if (_bossStage == 7)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)) //20%
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.20) //20%
 				{
 					_bossStage = 8;
 					
@@ -621,7 +621,7 @@ public class Lindvior extends L2AttackableAIScript
 		{
 			if (_bossStage == 5)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.30)) //30%
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.30) //30%
 				{
 					_bossStage = 6;
 					
@@ -632,7 +632,7 @@ public class Lindvior extends L2AttackableAIScript
 			}
 			else if (_bossStage == 8)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)) //20%
+				if (npc.getCurrentHp() < npc.getMaxHp() * 0.20) //20%
 				{
 					_bossStage = 9;
 					

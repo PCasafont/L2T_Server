@@ -56,13 +56,13 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _chesha) && event.equalsIgnoreCase("33449-03.htm"))
+		if (npc.getNpcId() == _chesha && event.equalsIgnoreCase("33449-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if ((npc.getNpcId() == _nagel) && event.equalsIgnoreCase("33450-03.htm") && (st.getInt("cond") == 3))
+		else if (npc.getNpcId() == _nagel && event.equalsIgnoreCase("33450-03.htm") && st.getInt("cond") == 3)
 		{
 			st.unset("cond");
 			st.giveItems(1060, 50);
@@ -113,7 +113,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if ((npc.getNpcId() == _nagel) && (st.getInt("cond") == 3))
+		else if (npc.getNpcId() == _nagel && st.getInt("cond") == 3)
 			htmltext = "33450-01.htm";
 		return htmltext;
 	}
@@ -122,23 +122,23 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getInt("cond") != 1))
+		if (st == null || st.getInt("cond") != 1)
 			return null;
 		
-		if ((npc.getNpcId() == _mob1) && (st.getNpcLog(_mob1) < 10))
+		if (npc.getNpcId() == _mob1 && st.getNpcLog(_mob1) < 10)
 		{
 			st.increaseNpcLog(_mob1);
 			st.playSound("ItemSound.quest_itemget");
 			player.sendPacket(new ExQuestNpcLogList(st));
 		}
-		else if ((npc.getNpcId() == _mob2) && (st.getNpcLog(_mob2) < 5))
+		else if (npc.getNpcId() == _mob2 && st.getNpcLog(_mob2) < 5)
 		{
 			st.increaseNpcLog(_mob2);
 			st.playSound("ItemSound.quest_itemget");
 			player.sendPacket(new ExQuestNpcLogList(st));
 		}
 		
-		if ((st.getNpcLog(_mob1) == 10) && (st.getNpcLog(_mob2) == 5))
+		if (st.getNpcLog(_mob1) == 10 && st.getNpcLog(_mob2) == 5)
 		{
 			st.set("cond", "2");
 			st.playSound("ItemSound.quest_middle");
@@ -150,7 +150,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return (player.getLevel() >= 10) && (player.getLevel() <= 20) && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
+		return player.getLevel() >= 10 && player.getLevel() <= 20 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 10);
 	}
 	
 	public static void main(String[] args)

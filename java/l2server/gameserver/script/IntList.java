@@ -53,7 +53,7 @@ public class IntList
 	{
 		int min = getInt(numbers[0]);
 		int max = getInt(numbers[1]);
-		int[] list = new int[(max - min) + 1];
+		int[] list = new int[max - min + 1];
 		for (int i = 0; i < list.length; i++)
 			list[i] = min + i;
 		return list;

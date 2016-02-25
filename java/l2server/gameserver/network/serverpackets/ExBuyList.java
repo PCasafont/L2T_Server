@@ -81,7 +81,7 @@ public final class ExBuyList extends L2ItemListPacket
 		
 		for (L2TradeItem item : _list)
 		{
-			if ((item.getCurrentCount() > 0) || !item.hasLimitedStock())
+			if (item.getCurrentCount() > 0 || !item.hasLimitedStock())
 			{
 				writeC(0x00); // mask
 				
@@ -97,7 +97,7 @@ public final class ExBuyList extends L2ItemListPacket
 				writeD(-9999); // Time
 				writeC(0x01); // ???
 				
-				if ((item.getItemId() >= 3960) && (item.getItemId() <= 4026))// Config.RATE_SIEGE_GUARDS_PRICE-//'
+				if (item.getItemId() >= 3960 && item.getItemId() <= 4026)// Config.RATE_SIEGE_GUARDS_PRICE-//'
 					writeQ((long) (item.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
 				else
 					writeQ((long) (item.getPrice() * (1 + _taxRate)));

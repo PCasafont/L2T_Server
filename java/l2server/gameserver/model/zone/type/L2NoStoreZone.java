@@ -35,7 +35,7 @@ public class L2NoStoreZone extends L2ZoneType
 	@Override
 	protected void onEnter(final L2Character character)
 	{
-		if (!Config.isServer(Config.DREAMS) && (character instanceof L2PcInstance))
+		if (!Config.isServer(Config.DREAMS) && character instanceof L2PcInstance)
 		{
 			character.setInsideZone(L2Character.ZONE_NOSTORE, true);
 		}

@@ -57,7 +57,7 @@ public class EffectHealPercent extends L2Effect
 		double hp = getEffected().getCurrentHp();
 		double maxhp = getEffected().getMaxHp();
 		
-		double recoveredHp = (calc() * maxhp) / 100.0;
+		double recoveredHp = calc() * maxhp / 100.0;
 		hp += recoveredHp;
 		if (hp > maxhp)
 			hp = maxhp;

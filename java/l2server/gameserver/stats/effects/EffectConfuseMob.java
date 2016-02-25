@@ -96,7 +96,7 @@ public class EffectConfuseMob extends L2Effect
 		{
 			for (L2Object obj : objs)
 			{
-				if ((obj instanceof L2Attackable) && (obj != getEffected()))
+				if (obj instanceof L2Attackable && obj != getEffected())
 					targetList.add((L2Character) obj);
 			}
 		}

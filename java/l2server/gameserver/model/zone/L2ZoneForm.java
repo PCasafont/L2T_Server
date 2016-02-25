@@ -53,16 +53,16 @@ public abstract class L2ZoneForm
 		int ry = ay2 - ay1;
 		int sx = bx2 - bx1;
 		int sy = by2 - by1;
-		int rxs = (rx * sy) - (ry * sx);
+		int rxs = rx * sy - ry * sx;
 		if (rxs == 0)
 			return null;
 		
 		int abx = bx1 - ax1;
 		int aby = by1 - ay1;
-		float t = ((abx * sy) - (aby * sx)) / (float) rxs;
-		float u = ((abx * ry) - (aby * rx)) / (float) rxs;
+		float t = (abx * sy - aby * sx) / (float) rxs;
+		float u = (abx * ry - aby * rx) / (float) rxs;
 		
-		if ((t > 0.0f) && (t < 1.0f) && (u > 0.0f) && (u < 1.0f))
+		if (t > 0.0f && t < 1.0f && u > 0.0f && u < 1.0f)
 		{
 			int x = ax1 + (int) (rx * t);
 			int y = ay1 + (int) (ry * t);

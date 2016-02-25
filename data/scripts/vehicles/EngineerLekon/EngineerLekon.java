@@ -39,7 +39,7 @@ public class EngineerLekon extends Quest
 	{
 		if (event.equalsIgnoreCase("license"))
 		{
-			if ((player.getClan() == null) || (player.getClan().getLevel() < 5))
+			if (player.getClan() == null || player.getClan().getLevel() < 5)
 			{
 				player.sendPacket(SM_NEED_CLANLVL5);
 				return null;

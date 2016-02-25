@@ -46,9 +46,9 @@ public class hitConditionBonus
 	{
 		double mod = 100;
 		// Get high or low bonus
-		if ((attacker.getZ() - target.getZ()) > 50)
+		if (attacker.getZ() - target.getZ() > 50)
 			mod += hitConditionBonus.highBonus;
-		else if ((attacker.getZ() - target.getZ()) < -50)
+		else if (attacker.getZ() - target.getZ() < -50)
 			mod += hitConditionBonus.lowBonus;
 		
 		// Get weather bonus

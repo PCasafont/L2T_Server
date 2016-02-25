@@ -48,7 +48,7 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
 		final ArrayList<L2Character> result = new ArrayList<L2Character>();
 		
 		// Check for null target or any other invalid target
-		if ((target == null) || target.isDead())
+		if (target == null || target.isDead())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
@@ -101,7 +101,7 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
 			result.clear();
 			Iterator<Double> iterator = map.keySet().iterator();
 			int i = 0;
-			while (iterator.hasNext() && (i < 11))
+			while (iterator.hasNext() && i < 11)
 			{
 				Object key = iterator.next();
 				i++;
@@ -156,7 +156,7 @@ public class TargetChainHeal implements ISkillTargetTypeHandler
 		}
 		else if (target instanceof L2NpcInstance)
 		{
-			final L2NpcInstance npc = ((L2NpcInstance) target);
+			final L2NpcInstance npc = (L2NpcInstance) target;
 			if (!npc.isInsideZone(L2Character.ZONE_TOWN))
 				return false;
 		}

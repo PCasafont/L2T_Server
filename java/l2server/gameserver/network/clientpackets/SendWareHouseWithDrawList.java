@@ -49,7 +49,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -59,7 +59,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		{
 			int objId = readD();
 			long cnt = readQ();
-			if ((objId < 1) || (cnt < 0))
+			if (objId < 1 || cnt < 0)
 			{
 				_items = null;
 				return;
@@ -89,7 +89,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 			return;
 		
 		final L2Npc manager = player.getLastFolkNPC();
-		if (((manager == null) || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
+		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
 			return;
 		
 		if (player.getEvent() != null)
@@ -111,17 +111,17 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		}
 		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
 			return;
 		
 		if (Config.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH)
 		{
-			if ((warehouse instanceof ClanWarehouse) && ((player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE))
+			if (warehouse instanceof ClanWarehouse && (player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE)
 				return;
 		}
 		else
 		{
-			if ((warehouse instanceof ClanWarehouse) && !player.isClanLeader())
+			if (warehouse instanceof ClanWarehouse && !player.isClanLeader())
 			{
 				// this msg is for depositing but maybe good to send some msg?
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_CLAN_LEADER_CAN_RETRIEVE_ITEMS_FROM_CLAN_WAREHOUSE));
@@ -136,7 +136,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		{
 			// Calculate needed slots
 			L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
-			if ((item == null) || (item.getCount() < i.getCount()))
+			if (item == null || item.getCount() < i.getCount())
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to withdraw non-existent item from warehouse.", Config.DEFAULT_PUNISH);
 				return;
@@ -168,7 +168,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		for (WarehouseItem i : _items)
 		{
 			L2ItemInstance oldItem = warehouse.getItemByObjectId(i.getObjectId());
-			if ((oldItem == null) || (oldItem.getCount() < i.getCount()))
+			if (oldItem == null || oldItem.getCount() < i.getCount())
 			{
 				Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;

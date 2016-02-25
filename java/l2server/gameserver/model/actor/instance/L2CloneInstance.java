@@ -102,11 +102,11 @@ public class L2CloneInstance extends L2SummonInstance
 			
 			if (owner.isAttackingNow())
 			{
-				if ((owner.getTarget() != _clone.getTarget()) || (!_clone.isAttackingNow() && !_clone.isCastingNow()))
+				if (owner.getTarget() != _clone.getTarget() || !_clone.isAttackingNow() && !_clone.isCastingNow())
 				{
 					_clone.setTarget(owner.getTarget());
 					
-					if ((_clone.getTarget() != null) && _clone.getTarget().isAutoAttackable(owner))
+					if (_clone.getTarget() != null && _clone.getTarget().isAutoAttackable(owner))
 						_clone.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _clone.getTarget());
 				}
 			}

@@ -34,7 +34,7 @@ public class VoiceCommand implements IBypassHandler
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
 	{
 		// only voice commands allowed
-		if ((command.length() > 7) && (command.charAt(6) == '.'))
+		if (command.length() > 7 && command.charAt(6) == '.')
 		{
 			final String vc, vparams;
 			int endOfCommand = command.indexOf(" ", 7);

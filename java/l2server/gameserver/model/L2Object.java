@@ -117,7 +117,7 @@ public abstract class L2Object
 				_typeH = 1L << high;
 			}
 			
-			if ((_typeL < 0) || (_typeH < 0))
+			if (_typeL < 0 || _typeH < 0)
 				throw new Error("Too many instance types, failed to load " + name());
 			
 			if (parent != null)
@@ -139,7 +139,7 @@ public abstract class L2Object
 		
 		public final boolean isType(InstanceType it)
 		{
-			return ((_maskL & it._typeL) > 0) || ((_maskH & it._typeH) > 0);
+			return (_maskL & it._typeL) > 0 || (_maskH & it._typeH) > 0;
 		}
 		
 		public final boolean isTypes(InstanceType... it)
@@ -229,7 +229,7 @@ public abstract class L2Object
 	
 	public final int getX()
 	{
-		assert (getPosition().getWorldRegion() != null) || _isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getX();
 	}
 	
@@ -258,7 +258,7 @@ public abstract class L2Object
 		
 		if (this instanceof L2PcInstance)
 		{
-			if ((_instanceId > 0) && (oldI != null))
+			if (_instanceId > 0 && oldI != null)
 			{
 				oldI.removePlayer(getObjectId());
 				if (oldI.isShowTimer())
@@ -288,16 +288,16 @@ public abstract class L2Object
 		}
 		else if (this instanceof L2Npc)
 		{
-			if ((_instanceId > 0) && (oldI != null))
-				oldI.removeNpc(((L2Npc) this));
+			if (_instanceId > 0 && oldI != null)
+				oldI.removeNpc((L2Npc) this);
 			if (instanceId > 0)
-				newI.addNpc(((L2Npc) this));
+				newI.addNpc((L2Npc) this);
 		}
 		
 		_instanceId = instanceId;
 		
 		// If we change it for visible objects, me must clear & revalidate knownlists
-		if (_isVisible && (_knownList != null))
+		if (_isVisible && _knownList != null)
 		{
 			if (this instanceof L2PcInstance)
 			{
@@ -316,13 +316,13 @@ public abstract class L2Object
 	
 	public final int getY()
 	{
-		assert (getPosition().getWorldRegion() != null) || _isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getY();
 	}
 	
 	public final int getZ()
 	{
-		assert (getPosition().getWorldRegion() != null) || _isVisible;
+		assert getPosition().getWorldRegion() != null || _isVisible;
 		return getPosition().getZ();
 	}
 	
@@ -388,7 +388,7 @@ public abstract class L2Object
 	 */
 	public final void spawnMe()
 	{
-		assert (getPosition().getWorldRegion() == null) && (getPosition().getWorldPosition().getX() != 0) && (getPosition().getWorldPosition().getY() != 0) && (getPosition().getWorldPosition().getZ() != 0);
+		assert getPosition().getWorldRegion() == null && getPosition().getWorldPosition().getX() != 0 && getPosition().getWorldPosition().getY() != 0 && getPosition().getWorldPosition().getZ() != 0;
 		
 		synchronized (this)
 		{
@@ -592,7 +592,7 @@ public abstract class L2Object
 	@Override
 	public String toString()
 	{
-		return (getClass().getSimpleName() + ":" + getName() + "[" + getObjectId() + "]");
+		return getClass().getSimpleName() + ":" + getName() + "[" + getObjectId() + "]";
 	}
 	
 	/**

@@ -54,7 +54,7 @@ public class AdminInstance implements IAdminCommandHandler
 				try
 				{
 					int id = Integer.parseInt(parts[1]);
-					if (InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]) && (id < 300000))
+					if (InstanceManager.getInstance().createInstanceFromTemplate(id, parts[2]) && id < 300000)
 					{
 						activeChar.sendMessage("Instance created");
 						return true;
@@ -77,7 +77,7 @@ public class AdminInstance implements IAdminCommandHandler
 			String page = "<html><body><title>Instance Panel</title><table width=300>";
 			for (Instance temp : InstanceManager.getInstance().getInstances().values())
 			{
-				if ((temp.getName() != null) && (temp.getId() > 1))
+				if (temp.getName() != null && temp.getId() > 1)
 					page += "<tr><td><a action=\"bypass -h admin_move_to " + getStringCords(temp.getId()) + "\">Name: " + temp.getName() + " id: " + temp.getId() + "</a></td></tr>";
 				else
 					activeChar.sendMessage("Id: " + temp.getId() + " Name: " + temp.getName());
@@ -99,7 +99,7 @@ public class AdminInstance implements IAdminCommandHandler
 				else
 				{
 					L2Object target = activeChar.getTarget();
-					if ((target == null) || (target instanceof L2Summon)) // Don't separate summons from masters
+					if (target == null || target instanceof L2Summon) // Don't separate summons from masters
 					{
 						activeChar.sendMessage("Incorrect target.");
 						return false;

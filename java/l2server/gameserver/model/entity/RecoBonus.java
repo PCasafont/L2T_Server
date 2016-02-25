@@ -26,7 +26,7 @@ public final class RecoBonus
 	
 	public static int getRecoBonus(L2PcInstance activeChar)
 	{
-		if ((activeChar != null) && activeChar.isOnline())
+		if (activeChar != null && activeChar.isOnline())
 		{
 			if (activeChar.getRecomHave() == 0)
 				return 0;
@@ -45,7 +45,7 @@ public final class RecoBonus
 		
 		int bonus = getRecoBonus(activeChar);
 		if (bonus > 0)
-			_multiplier = (1 + (bonus / 100));
+			_multiplier = 1 + bonus / 100;
 		
 		if (_multiplier < 1)
 			_multiplier = 1;

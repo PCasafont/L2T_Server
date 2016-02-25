@@ -84,7 +84,7 @@ public class AdminLogin implements IAdminCommandHandler
 				st.nextToken();
 				String[] modes = new String[tokens - 1];
 				
-				for (int i = 0; i < (tokens - 1); i++)
+				for (int i = 0; i < tokens - 1; i++)
 				{
 					modes[i] = st.nextToken().trim();
 				}

@@ -58,7 +58,7 @@ public class NpcKnownList extends CharKnownList
 		if (!super.addKnownObject(object))
 			return false;
 		
-		if ((getActiveObject() instanceof L2NpcInstance) && (object instanceof L2PcInstance))
+		if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance)
 		{
 			final L2Npc npc = (L2Npc) getActiveObject();
 			
@@ -89,7 +89,7 @@ public class NpcKnownList extends CharKnownList
 	@Override
 	public int getDistanceToWatchObject(L2Object object)
 	{
-		if ((object instanceof L2NpcInstance) || !(object instanceof L2Character))
+		if (object instanceof L2NpcInstance || !(object instanceof L2Character))
 			return 0;
 		
 		if (object instanceof L2Playable)
@@ -101,7 +101,7 @@ public class NpcKnownList extends CharKnownList
 	//L2Master mod - support for Walking monsters aggro
 	public void startTrackingTask()
 	{
-		if ((_trackingTask == null) && (getActiveChar().getAggroRange() > 0))
+		if (_trackingTask == null && getActiveChar().getAggroRange() > 0)
 		{
 			_trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
 		}

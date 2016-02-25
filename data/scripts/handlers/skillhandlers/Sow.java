@@ -53,7 +53,7 @@ public class Sow implements ISkillHandler
 			return;
 		
 		final L2Object[] targetList = skill.getTargetList(activeChar);
-		if ((targetList == null) || (targetList.length == 0))
+		if (targetList == null || targetList.length == 0)
 			return;
 		
 		if (Config.DEBUG)
@@ -67,7 +67,7 @@ public class Sow implements ISkillHandler
 				continue;
 			
 			target = (L2MonsterInstance) tgt;
-			if (target.isDead() || target.isSeeded() || (target.getSeederId() != activeChar.getObjectId()))
+			if (target.isDead() || target.isSeeded() || target.getSeederId() != activeChar.getObjectId())
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				continue;
@@ -110,7 +110,7 @@ public class Sow implements ISkillHandler
 	private boolean calcSuccess(L2Character activeChar, L2Character target, int seedId)
 	{
 		// TODO: check all the chances
-		int basicSuccess = (L2Manor.getInstance().isAlternative(seedId) ? 20 : 90);
+		int basicSuccess = L2Manor.getInstance().isAlternative(seedId) ? 20 : 90;
 		final int minlevelSeed = L2Manor.getInstance().getSeedMinLevel(seedId);
 		final int maxlevelSeed = L2Manor.getInstance().getSeedMaxLevel(seedId);
 		final int levelPlayer = activeChar.getLevel(); // Attacker Level
@@ -124,7 +124,7 @@ public class Sow implements ISkillHandler
 		
 		// 5% decrease in chance if player level
 		// is more than +/- 5 levels to _target's_ level
-		int diff = (levelPlayer - levelTarget);
+		int diff = levelPlayer - levelTarget;
 		if (diff < 0)
 			diff = -diff;
 		if (diff > 5)

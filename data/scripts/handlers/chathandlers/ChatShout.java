@@ -77,7 +77,7 @@ public class ChatShout implements IChatHandler
 		
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		
-		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.isGM()))
+		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.isGM())
 		{
 			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
 			for (L2PcInstance player : pls)
@@ -89,7 +89,7 @@ public class ChatShout implements IChatHandler
 						continue;
 				}*/
 				
-				if (activeChar.isGM() || ((region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY())) && !BlockList.isBlocked(player, activeChar) && (activeChar.getEvent() == null) && (player.getInstanceId() == activeChar.getInstanceId())))
+				if (activeChar.isGM() || region == MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY()) && !BlockList.isBlocked(player, activeChar) && activeChar.getEvent() == null && player.getInstanceId() == activeChar.getInstanceId())
 					player.sendPacket(cs);
 				else if (player.isGM())
 					player.sendPacket(csReg);

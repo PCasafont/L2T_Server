@@ -365,7 +365,7 @@ public class HallOfSuffering extends Quest
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if ((skill.getSkillType() == L2SkillType.BALANCE_LIFE) || (skill.getSkillType() == L2SkillType.HEAL) || (skill.getSkillType() == L2SkillType.HEAL_PERCENT) || (skill.getSkillType() == L2SkillType.HEAL_STATIC))
+		if (skill.getSkillType() == L2SkillType.BALANCE_LIFE || skill.getSkillType() == L2SkillType.HEAL || skill.getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.HEAL_STATIC)
 		{
 			int hate = 2 * skill.getAggroPoints();
 			if (hate < 2)
@@ -415,7 +415,7 @@ public class HallOfSuffering extends Quest
 			else if (event.equalsIgnoreCase("ressurectTwin"))
 			{
 				L2Skill skill = SkillTable.getInstance().getInfo(5824, 1);
-				L2Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
+				L2Npc aliveTwin = world.klanikus == npc ? world.klodekus : world.klanikus;
 				npc.doRevive();
 				npc.doCast(skill);
 				npc.setCurrentHp(aliveTwin.getCurrentHp());
@@ -453,7 +453,7 @@ public class HallOfSuffering extends Quest
 				for (int objectId : tmpworld.allowed)
 				{
 					L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-					if ((player != null) && player.isOnline())
+					if (player != null && player.isOnline())
 					{
 						InstanceManager.getInstance().setInstanceTime(objectId, tmpworld.templateId, reenter.getTimeInMillis());
 						player.sendPacket(sm);
@@ -506,7 +506,7 @@ public class HallOfSuffering extends Quest
 				if (checkKillProgress(npc, world))
 					runTwins(world);
 			}
-			else if ((world.status == 6) && ((npc.getNpcId() == KLODEKUS) || (npc.getNpcId() == KLANIKUS)))
+			else if (world.status == 6 && (npc.getNpcId() == KLODEKUS || npc.getNpcId() == KLANIKUS))
 			{
 				if (world.klanikus.isDead() && world.klodekus.isDead())
 				{
@@ -538,7 +538,7 @@ public class HallOfSuffering extends Quest
 			}
 			else if (((HSWorld) world).isRewarded)
 				return "32530-11.htm";
-			else if ((player.getParty() != null) && (player.getParty().getPartyLeaderOID() == player.getObjectId()))
+			else if (player.getParty() != null && player.getParty().getPartyLeaderOID() == player.getObjectId())
 				return ((HSWorld) world).rewardHtm;
 			
 			return getPtLeaderText(player, (HSWorld) world);
@@ -568,7 +568,7 @@ public class HallOfSuffering extends Quest
 			}
 			else if (((HSWorld) world).isRewarded)
 				return "32530-11.htm";
-			else if ((player.getParty() != null) && (player.getParty().getPartyLeaderOID() == player.getObjectId()))
+			else if (player.getParty() != null && player.getParty().getPartyLeaderOID() == player.getObjectId())
 			{
 				((HSWorld) world).isRewarded = true;
 				for (L2PcInstance pl : player.getParty().getPartyMembers())

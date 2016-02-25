@@ -404,7 +404,7 @@ public class Server
 		if (Config.SAVE_DROPPED_ITEM)
 			ItemsOnGroundManager.getInstance();
 		
-		if (((Config.AUTODESTROY_ITEM_AFTER * 1000) > 0) || ((Config.HERB_AUTO_DESTROY_TIME * 1000) > 0))
+		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0)
 			ItemsAutoDestroy.getInstance();
 		
 		MonsterRace.getInstance();
@@ -510,7 +510,7 @@ public class Server
 		// maxMemory is the upper limit the jvm can use, totalMemory the size of
 		// the current allocation pool, freeMemory the unused memory in the
 		// allocation pool
-		long freeMem = ((Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory()) + Runtime.getRuntime().freeMemory()) / 1048576;
+		long freeMem = (Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / 1048576;
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
@@ -552,7 +552,7 @@ public class Server
 		_selectorThread.start();
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
-		Log.info("Server Loaded in " + ((serverLoadEnd - serverLoadStart) / 1000) + " seconds");
+		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
 		
 		AutoAnnounceTaskManager.getInstance();
 		//ArtificialPlayersManager.getInstance();

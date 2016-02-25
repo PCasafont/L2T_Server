@@ -252,7 +252,7 @@ public class ConsoleTab extends JPanel
 				pass = true;
 		}
 		
-		if (!pass && (emptySubFields < f.subFilters.length))
+		if (!pass && emptySubFields < f.subFilters.length)
 			return;
 		
 		msg += "\n";
@@ -260,7 +260,7 @@ public class ConsoleTab extends JPanel
 		AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 		
 		//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-		if ((f == ConsoleFilter.Console) || ((f.parent != null) && (f.parent == ConsoleFilter.Console)))
+		if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console)
 		{
 			aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 			aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);
@@ -299,7 +299,7 @@ public class ConsoleTab extends JPanel
 			public void run()
 			{
 				Rectangle visibleRect = _textPane.getVisibleRect();
-				if ((visibleRect.y + 100) > (_textPane.getHeight() - visibleRect.height))
+				if (visibleRect.y + 100 > _textPane.getHeight() - visibleRect.height)
 				{
 					visibleRect.y = _textPane.getHeight() - visibleRect.height;
 					_textPane.scrollRectToVisible(visibleRect);
@@ -334,7 +334,7 @@ public class ConsoleTab extends JPanel
 					pass = true;
 			}
 			
-			if (!pass && (emptySubFields < fi.textFields.length))
+			if (!pass && emptySubFields < fi.textFields.length)
 				continue;
 			
 			String msg = line.text + "\n";
@@ -342,7 +342,7 @@ public class ConsoleTab extends JPanel
 			AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 			
 			//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-			if ((f == ConsoleFilter.Console) || ((f.parent != null) && (f.parent == ConsoleFilter.Console)))
+			if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console)
 			{
 				aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 				aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);

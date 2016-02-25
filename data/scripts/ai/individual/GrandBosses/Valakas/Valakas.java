@@ -157,9 +157,9 @@ public class Valakas extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if ((vallyStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
+					if (vallyStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
 						return null;
-					else if ((vallyStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
+					else if (vallyStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.VALAKAS_MIN_PLAYERS, 200, Config.isServer(Config.DREAMS) ? 80 : 95, Config.MAX_LEVEL))
 						return null;
 					else if (vallyStatus == GrandBossManager.getInstance().FIGHTING)
 						return "31385-03.html";
@@ -299,7 +299,7 @@ public class Valakas extends L2AttackableAIScript
 			if (!_valakasBoss.isInvul() && !_valakasBoss.isCastingNow())
 			{
 				// Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
-				if ((_actualVictim == null) || _actualVictim.isDead() || !(_valakasBoss.getKnownList().knowsObject(_actualVictim)) || (Rnd.get(10) == 0))
+				if (_actualVictim == null || _actualVictim.isDead() || !_valakasBoss.getKnownList().knowsObject(_actualVictim) || Rnd.get(10) == 0)
 					_actualVictim = getRandomTarget();
 				
 				if (_debug)
@@ -326,7 +326,7 @@ public class Valakas extends L2AttackableAIScript
 					final L2Skill skill = getRandomSkill().getSkill();
 					
 					// Cast the skill or follow the target.
-					if (Util.checkIfInRange((skill.getCastRange() < 600) ? 600 : skill.getCastRange(), _valakasBoss, _actualVictim, true))
+					if (Util.checkIfInRange(skill.getCastRange() < 600 ? 600 : skill.getCastRange(), _valakasBoss, _actualVictim, true))
 					{
 						_valakasBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						_valakasBoss.setIsCastingNow(true);
@@ -348,20 +348,20 @@ public class Valakas extends L2AttackableAIScript
 		}
 		else if (event.equalsIgnoreCase("valakas_recovery_task"))
 		{
-			if ((_valakasBoss != null) && !_valakasBoss.isDead())
+			if (_valakasBoss != null && !_valakasBoss.isDead())
 			{
 				L2Abnormal valakasRecovery = _valakasBoss.getFirstEffect(_valakasRecoveryId);
 				if (valakasRecovery == null)
 				{
 					_valakasBoss.setTarget(_valakasBoss);
 					
-					if (_valakasBoss.getCurrentHp() < (_valakasBoss.getMaxHp() * 0.10))
+					if (_valakasBoss.getCurrentHp() < _valakasBoss.getMaxHp() * 0.10)
 						_valakasBoss.doCast(SkillTable.getInstance().getInfo(_valakasRecoveryId, 5));
-					else if (_valakasBoss.getCurrentHp() < (_valakasBoss.getMaxHp() * 0.25))
+					else if (_valakasBoss.getCurrentHp() < _valakasBoss.getMaxHp() * 0.25)
 						_valakasBoss.doCast(SkillTable.getInstance().getInfo(_valakasRecoveryId, 4));
-					else if (_valakasBoss.getCurrentHp() < (_valakasBoss.getMaxHp() * 0.50))
+					else if (_valakasBoss.getCurrentHp() < _valakasBoss.getMaxHp() * 0.50)
 						_valakasBoss.doCast(SkillTable.getInstance().getInfo(_valakasRecoveryId, 3));
-					else if (_valakasBoss.getCurrentHp() < (_valakasBoss.getMaxHp() * 0.75))
+					else if (_valakasBoss.getCurrentHp() < _valakasBoss.getMaxHp() * 0.75)
 						_valakasBoss.doCast(SkillTable.getInstance().getInfo(_valakasRecoveryId, 2));
 					else
 						_valakasBoss.doCast(SkillTable.getInstance().getInfo(_valakasRecoveryId, 1));
@@ -491,9 +491,9 @@ public class Valakas extends L2AttackableAIScript
 	
 	private SkillHolder getRandomSkill()
 	{
-		final int hpRatio = (int) ((_valakasBoss.getCurrentHp() / _valakasBoss.getMaxHp()) * 100);
+		final int hpRatio = (int) (_valakasBoss.getCurrentHp() / _valakasBoss.getMaxHp() * 100);
 		// Valakas Lava Skin has priority.
-		if ((hpRatio < 75) && (Rnd.get(150) == 0) && (_valakasBoss.getFirstEffect(VALAKAS_LAVA_SKIN.getSkillId()) == null))
+		if (hpRatio < 75 && Rnd.get(150) == 0 && _valakasBoss.getFirstEffect(VALAKAS_LAVA_SKIN.getSkillId()) == null)
 			return VALAKAS_LAVA_SKIN;
 		
 		// Valakas will use mass spells if he feels surrounded.
@@ -511,13 +511,13 @@ public class Valakas extends L2AttackableAIScript
 		List<L2Playable> result = new ArrayList<L2Playable>();
 		for (L2Character obj : _valakasBoss.getKnownList().getKnownCharacters())
 		{
-			if ((obj == null) || (obj instanceof L2PetInstance) || (obj instanceof L2SummonInstance) || (obj.getZ() > (_valakasBoss.getZ() + 200)))
+			if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance || obj.getZ() > _valakasBoss.getZ() + 200)
 				continue;
-			else if (!obj.isDead() && (obj instanceof L2Playable))
+			else if (!obj.isDead() && obj instanceof L2Playable)
 				result.add((L2Playable) obj);
 		}
 		
-		return (result.isEmpty()) ? null : result.get(Rnd.get(result.size()));
+		return result.isEmpty() ? null : result.get(Rnd.get(result.size()));
 	}
 	
 	@Override
@@ -526,7 +526,7 @@ public class Valakas extends L2AttackableAIScript
 		if (character instanceof L2PcInstance)
 		{
 			if (GrandBossManager.getInstance().getBossStatus(_valakasId) == GrandBossManager.getInstance().WAITING)
-				character.sendPacket(new ExSendUIEvent(0, 0, (int) (TimeUnit.MILLISECONDS.toSeconds((_LastAction + (Config.VALAKAS_WAIT_TIME * 60000)) - System.currentTimeMillis())), 0, "Valakas is coming..."));
+				character.sendPacket(new ExSendUIEvent(0, 0, (int) TimeUnit.MILLISECONDS.toSeconds(_LastAction + Config.VALAKAS_WAIT_TIME * 60000 - System.currentTimeMillis()), 0, "Valakas is coming..."));
 		}
 		return null;
 	}

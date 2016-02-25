@@ -51,7 +51,7 @@ public class ExManagePartyRoomMember extends L2GameServerPacket
 		writeD(TownManager.getClosestLocation(_activeChar));
 		if (_room.getOwner().equals(_activeChar))
 			writeD(1);
-		else if ((_room.getOwner().isInParty() && _activeChar.isInParty()) && (_room.getOwner().getParty().getPartyLeaderOID() == _activeChar.getParty().getPartyLeaderOID()))
+		else if (_room.getOwner().isInParty() && _activeChar.isInParty() && _room.getOwner().getParty().getPartyLeaderOID() == _activeChar.getParty().getPartyLeaderOID())
 			writeD(2);
 		else
 			writeD(0);

@@ -65,7 +65,7 @@ public class EffectTransformation extends L2Effect
 		if (trg.isAlikeDead() || trg.isCursedWeaponEquipped())
 			return false;
 		
-		if ((getEffector() == trg) && (trg.getTransformation() != null))
+		if (getEffector() == trg && trg.getTransformation() != null)
 		{
 			trg.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN));
 			return false;

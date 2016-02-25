@@ -190,13 +190,13 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket
 			int start = _html.indexOf("bypass -h", i);
 			int finish = _html.indexOf("\"", start);
 			
-			if ((start < 0) || (finish < 0))
+			if (start < 0 || finish < 0)
 				break;
 			
 			start += 10;
 			i = finish;
 			int finish2 = _html.indexOf("$", start);
-			if ((finish2 < finish) && (finish2 > 0))
+			if (finish2 < finish && finish2 > 0)
 				activeChar.addBypass2(_html.substring(start, finish2).trim());
 			else
 				activeChar.addBypass(_html.substring(start, finish).trim());

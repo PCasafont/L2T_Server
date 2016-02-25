@@ -69,11 +69,11 @@ public final class AttackRequest extends L2GameClientPacket
 		
 		// Players can't attack objects in the other instances
 		// except from multiverse
-		if ((target.getInstanceId() != activeChar.getInstanceId()) && (activeChar.getInstanceId() != -1))
+		if (target.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1)
 			return;
 		
 		// Only GMs can directly attack invisible characters
-		if ((target instanceof L2PcInstance) && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar.isGM())
+		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar.isGM())
 			return;
 		
 		if (activeChar.getTarget() != target)
@@ -82,7 +82,7 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		else
 		{
-			if ((target.getObjectId() != activeChar.getObjectId()) && (activeChar.getPrivateStoreType() == 0) && (activeChar.getActiveRequester() == null))
+			if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 && activeChar.getActiveRequester() == null)
 			{
 				//Logozo.debug("Starting ForcedAttack");
 				target.onForcedAttack(activeChar);

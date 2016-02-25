@@ -247,9 +247,9 @@ public abstract class L2Item
 				attach(cond);
 		}
 		
-		_common = ((_itemId >= 12006) && (_itemId <= 12361));
+		_common = _itemId >= 12006 && _itemId <= 12361;
 		_heroItem = set.getBool("isHeroItem", false);
-		_pvpItem = ((_itemId >= 10667) && (_itemId <= 10835)) || ((_itemId >= 12852) && (_itemId <= 12977)) || ((_itemId >= 14363) && (_itemId <= 14525)) || (_itemId == 14528) || (_itemId == 14529) || (_itemId == 14558) || ((_itemId >= 15913) && (_itemId <= 16024)) || ((_itemId >= 16134) && (_itemId <= 16147)) || (_itemId == 16149) || (_itemId == 16151) || (_itemId == 16153) || (_itemId == 16155) || (_itemId == 16157) || (_itemId == 16159) || ((_itemId >= 16168) && (_itemId <= 16176)) || ((_itemId >= 16179) && (_itemId <= 16220));
+		_pvpItem = _itemId >= 10667 && _itemId <= 10835 || _itemId >= 12852 && _itemId <= 12977 || _itemId >= 14363 && _itemId <= 14525 || _itemId == 14528 || _itemId == 14529 || _itemId == 14558 || _itemId >= 15913 && _itemId <= 16024 || _itemId >= 16134 && _itemId <= 16147 || _itemId == 16149 || _itemId == 16151 || _itemId == 16153 || _itemId == 16155 || _itemId == 16157 || _itemId == 16159 || _itemId >= 16168 && _itemId <= 16176 || _itemId >= 16179 && _itemId <= 16220;
 	}
 	
 	/**
@@ -319,7 +319,7 @@ public abstract class L2Item
 	 */
 	public final boolean isCrystallizable()
 	{
-		return (_crystalType != L2Item.CRYSTAL_NONE) && (_crystalCount > 0);
+		return _crystalType != L2Item.CRYSTAL_NONE && _crystalCount > 0;
 	}
 	
 	/**
@@ -521,7 +521,7 @@ public abstract class L2Item
 	
 	public boolean isEquipable()
 	{
-		return (getBodyPart() != 0) && !(getItemType() instanceof L2EtcItemType);
+		return getBodyPart() != 0 && !(getItemType() instanceof L2EtcItemType);
 	}
 	
 	/**
@@ -535,7 +535,7 @@ public abstract class L2Item
 		
 		if (Config.isServer(Config.TENKAI_ESTHUS))
 			return (int) Math.sqrt(_referencePrice);
-		return (isConsumable() ? (int) (_referencePrice * Config.RATE_CONSUMABLE_COST) : _referencePrice);
+		return isConsumable() ? (int) (_referencePrice * Config.RATE_CONSUMABLE_COST) : _referencePrice;
 	}
 	
 	private int _salePrice;
@@ -624,12 +624,12 @@ public abstract class L2Item
 	
 	public boolean isPotion()
 	{
-		return (getItemType() == L2EtcItemType.POTION);
+		return getItemType() == L2EtcItemType.POTION;
 	}
 	
 	public boolean isElixir()
 	{
-		return (getItemType() == L2EtcItemType.ELIXIR);
+		return getItemType() == L2EtcItemType.ELIXIR;
 	}
 	
 	/**
@@ -640,7 +640,7 @@ public abstract class L2Item
 	 */
 	public Func[] getStatFuncs(L2ItemInstance instance)
 	{
-		if ((_funcTemplates == null) || (_funcTemplates.length == 0))
+		if (_funcTemplates == null || _funcTemplates.length == 0)
 			return _emptyFunctionSet;
 		
 		ArrayList<Func> funcs = new ArrayList<Func>(_funcTemplates.length);
@@ -667,7 +667,7 @@ public abstract class L2Item
 	 */
 	public L2Abnormal[] getEffects(L2ItemInstance instance, L2Character player)
 	{
-		if ((_effectTemplates == null) || (_effectTemplates.length == 0))
+		if (_effectTemplates == null || _effectTemplates.length == 0)
 			return _emptyEffectSet;
 		
 		ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>();
@@ -893,7 +893,7 @@ public abstract class L2Item
 	
 	public boolean isConditionAttached()
 	{
-		return (_preConditions != null) && !_preConditions.isEmpty();
+		return _preConditions != null && !_preConditions.isEmpty();
 	}
 	
 	public void attach(L2CrystallizeReward reward)

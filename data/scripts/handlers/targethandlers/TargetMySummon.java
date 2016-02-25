@@ -33,9 +33,9 @@ public class TargetMySummon implements ISkillTargetTypeHandler
 	{
 		// FIXME target = activeChar.getPet();
 		
-		if ((target != null) && !target.isDead())
+		if (target != null && !target.isDead())
 		{
-			if ((skill.getCastRange() > 0) && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
+			if (skill.getCastRange() > 0 && !target.isInsideRadius(activeChar, skill.getCastRange(), false, false))
 				return null;
 			
 			return new L2Character[] { target };

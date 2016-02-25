@@ -83,7 +83,7 @@ public final class ItemAuction
 		
 		for (final ItemAuctionBid bid : _auctionBids)
 		{
-			if ((_highestBid == null) || (_highestBid.getLastBid() < bid.getLastBid()))
+			if (_highestBid == null || _highestBid.getLastBid() < bid.getLastBid())
 				_highestBid = bid;
 		}
 	}
@@ -277,7 +277,7 @@ public final class ItemAuction
 		
 		synchronized (_auctionBids)
 		{
-			if ((_highestBid != null) && (newBid < _highestBid.getLastBid()))
+			if (_highestBid != null && newBid < _highestBid.getLastBid())
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BID_MUST_BE_HIGHER_THAN_CURRENT_BID));
 				return;
@@ -343,7 +343,7 @@ public final class ItemAuction
 			_highestBid = bid;
 		}
 		
-		if ((getEndingTime() - System.currentTimeMillis()) <= (1000 * 60 * 10)) // 10 minutes
+		if (getEndingTime() - System.currentTimeMillis() <= 1000 * 60 * 10) // 10 minutes
 		{
 			switch (_auctionEndingExtendState)
 			{
@@ -438,7 +438,7 @@ public final class ItemAuction
 				return false;
 				
 			case FINISHED:
-				if (_startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS)))
+				if (_startingTime < System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
 					return false;
 				else
 					break;
@@ -489,7 +489,7 @@ public final class ItemAuction
 		{
 			for (ItemAuctionBid bid : _auctionBids)
 			{
-				if ((bid == null) || !bid.isCanceled())
+				if (bid == null || !bid.isCanceled())
 					continue;
 				updatePlayerBid(bid, true);
 			}
@@ -534,7 +534,7 @@ public final class ItemAuction
 		for (int i = _auctionBids.size(); i-- > 0;)
 		{
 			final ItemAuctionBid bid = _auctionBids.get(i);
-			if ((bid != null) && (bid.getPlayerObjId() == playerObjId))
+			if (bid != null && bid.getPlayerObjId() == playerObjId)
 				return i;
 		}
 		return -1;

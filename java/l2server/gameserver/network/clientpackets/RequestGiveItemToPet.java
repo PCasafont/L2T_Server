@@ -58,7 +58,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 		if (player.getActiveEnchantItem() != null)
 			return;
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && (player.getReputation() < 0))
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TRADE && player.getReputation() < 0)
 			return;
 		
 		if (player.getPrivateStoreType() != 0)

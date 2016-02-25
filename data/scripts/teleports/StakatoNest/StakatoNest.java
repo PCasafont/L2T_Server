@@ -70,7 +70,7 @@ public class StakatoNest extends Quest
 	{
 		String htmltext = "";
 		QuestState accessQuest = player.getQuestState("240_ImTheOnlyOneYouCanTrust");
-		if ((accessQuest != null) && (accessQuest.getState() == State.COMPLETED))
+		if (accessQuest != null && accessQuest.getState() == State.COMPLETED)
 			htmltext = "32640.htm";
 		else
 			htmltext = "32640-no.htm";

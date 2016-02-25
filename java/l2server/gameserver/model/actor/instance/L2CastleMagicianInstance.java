@@ -364,7 +364,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			
 			int tendency = getCastle().getTendency();
 			
-			if (!player.isClanLeader() && (tendency != 0))
+			if (!player.isClanLeader() && tendency != 0)
 			{
 				int cloakId = tendency == 1 ? 34925 : 34926;
 				
@@ -394,7 +394,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 	{
 		if (player.isGM())
 			return COND_OWNER;
-		if ((getCastle() != null) && (getCastle().getCastleId() > 0))
+		if (getCastle() != null && getCastle().getCastleId() > 0)
 		{
 			if (player.getClan() != null)
 			{
@@ -464,13 +464,13 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 		if (clanLeader.getIsInsideGMEvent() || player.getIsInsideGMEvent())
 			return false;
 		
-		if ((player.getEvent() != null) && !player.getEvent().onEscapeUse(player.getObjectId()))
+		if (player.getEvent() != null && !player.getEvent().onEscapeUse(player.getObjectId()))
 		{
 			player.sendMessage("You are on Tenkai Event, teleporting disabled.");
 			return false;
 		}
 		
-		if ((clanLeader.getEvent() != null) && !clanLeader.getEvent().onEscapeUse(clanLeader.getObjectId()))
+		if (clanLeader.getEvent() != null && !clanLeader.getEvent().onEscapeUse(clanLeader.getObjectId()))
 		{
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");

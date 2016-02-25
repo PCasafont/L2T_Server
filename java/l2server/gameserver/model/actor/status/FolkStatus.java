@@ -43,7 +43,7 @@ public class FolkStatus extends NpcStatus
 	public final void reduceMp(double value)
 	{
 		//If Clan Hall buff are free and it's a Clan Hall Manager MP won't get reduced.
-		if (Config.CH_BUFF_FREE && (getActiveChar() instanceof L2ClanHallManagerInstance))
+		if (Config.CH_BUFF_FREE && getActiveChar() instanceof L2ClanHallManagerInstance)
 		{
 			return;
 		}

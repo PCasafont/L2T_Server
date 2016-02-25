@@ -54,7 +54,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 	protected void readImpl()
 	{
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -66,7 +66,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			int itemId = readD();
 			int manorId = readD();
 			long cnt = readQ();
-			if ((objId < 1) || (itemId < 1) || (manorId < 0) || (cnt < 0))
+			if (objId < 1 || itemId < 1 || manorId < 0 || cnt < 0)
 			{
 				_items = null;
 				return;
@@ -163,14 +163,14 @@ public class RequestProcureCropList extends L2GameClientPacket
 			
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByObjectId(i.getObjectId());
-			if ((item == null) || (item.getCount() < i.getCount()))
+			if (item == null || item.getCount() < i.getCount())
 				continue;
 			
 			// try modify castle crop
 			if (!i.setCrop())
 				continue;
 			
-			if ((fee > 0) && !player.reduceAdena("Manor", fee, manager, true))
+			if (fee > 0 && !player.reduceAdena("Manor", fee, manager, true))
 				continue;
 			
 			if (!player.destroyItem("Manor", i.getObjectId(), i.getCount(), manager, true))
@@ -227,7 +227,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			if (_manorId == castleId)
 				return 0;
 			
-			return (getPrice() / 100) * 5; // 5% fee for selling to other manor
+			return getPrice() / 100 * 5; // 5% fee for selling to other manor
 		}
 		
 		public boolean getCrop()
@@ -240,13 +240,13 @@ public class RequestProcureCropList extends L2GameClientPacket
 			{
 				return false;
 			}
-			if ((_crop == null) || (_crop.getId() == 0) || (_crop.getPrice() == 0) || (_count == 0))
+			if (_crop == null || _crop.getId() == 0 || _crop.getPrice() == 0 || _count == 0)
 				return false;
 			
 			if (_count > _crop.getAmount())
 				return false;
 			
-			if ((MAX_ADENA / _count) < _crop.getPrice())
+			if (MAX_ADENA / _count < _crop.getPrice())
 				return false;
 			
 			_reward = L2Manor.getInstance().getRewardItem(_itemId, _crop.getReward());

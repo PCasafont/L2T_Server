@@ -16,7 +16,7 @@ public class InquisitorBishop extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 316) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 316 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

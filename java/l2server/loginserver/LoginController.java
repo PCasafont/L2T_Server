@@ -341,7 +341,7 @@ public class LoginController
 	public int getOnlinePlayerCount(int serverId)
 	{
 		GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(serverId);
-		if ((gsi != null) && gsi.isAuthed())
+		if (gsi != null && gsi.isAuthed())
 		{
 			return gsi.getCurrentPlayerCount();
 		}
@@ -354,7 +354,7 @@ public class LoginController
 		for (GameServerInfo gsi : serverList)
 		{
 			GameServerThread gst = gsi.getGameServerThread();
-			if ((gst != null) && gst.hasAccountOnGameServer(account))
+			if (gst != null && gst.hasAccountOnGameServer(account))
 			{
 				return true;
 			}
@@ -368,7 +368,7 @@ public class LoginController
 		for (GameServerInfo gsi : serverList)
 		{
 			GameServerThread gst = gsi.getGameServerThread();
-			if ((gst != null) && gst.hasAccountOnGameServer(account))
+			if (gst != null && gst.hasAccountOnGameServer(account))
 			{
 				return gsi;
 			}
@@ -418,11 +418,11 @@ public class LoginController
 	{
 		GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(serverId);
 		int access = client.getAccessLevel();
-		if ((gsi != null) && gsi.isAuthed())
+		if (gsi != null && gsi.isAuthed())
 		{
-			boolean loginOk = ((gsi.getCurrentPlayerCount() < gsi.getMaxPlayers()) && (gsi.getStatus() != ServerStatus.STATUS_GM_ONLY)) || (access >= 10);
+			boolean loginOk = gsi.getCurrentPlayerCount() < gsi.getMaxPlayers() && gsi.getStatus() != ServerStatus.STATUS_GM_ONLY || access >= 10;
 			
-			if (loginOk && (client.getLastServer() != serverId))
+			if (loginOk && client.getLastServer() != serverId)
 			{
 				Connection con = null;
 				PreparedStatement statement = null;
@@ -528,7 +528,7 @@ public class LoginController
 		if (charsNum > 0)
 			client.setCharsOnServ(serverId, charsNum);
 		
-		if ((timeToDel != null) && (timeToDel.length > 0))
+		if (timeToDel != null && timeToDel.length > 0)
 			client.serCharsWaitingDelOnServ(serverId, timeToDel);
 	}
 	
@@ -595,7 +595,7 @@ public class LoginController
 		InetAddress address = client.getConnection().getInetAddress();
 		
 		// player disconnected meanwhile
-		if ((address == null) || (user == null))
+		if (address == null || user == null)
 			return false;
 		
 		Connection con = null;
@@ -633,7 +633,7 @@ public class LoginController
 			{
 				if (Config.AUTO_CREATE_ACCOUNTS)
 				{
-					if ((user.length() >= 2) && (user.length() <= 14))
+					if (user.length() >= 2 && user.length() <= 14)
 					{
 						statement = con.prepareStatement("INSERT INTO accounts (login,password,lastactive,accessLevel,lastIP) values(?,?,?,?,?)");
 						statement.setString(1, user);
@@ -747,7 +747,7 @@ public class LoginController
 				}
 				rset.close();
 				statement2.close();
-				if ((lastIP == null) || !lastIP.equals(address.getHostAddress()))
+				if (lastIP == null || !lastIP.equals(address.getHostAddress()))
 				{
 					PreparedStatement statement3 = con.prepareStatement("UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
 					statement3.setLong(1, System.currentTimeMillis());
@@ -825,7 +825,7 @@ public class LoginController
 		InetAddress address = client.getConnection().getInetAddress();
 		
 		// player disconnected meanwhile
-		if ((address == null) || (sessionKey == null))
+		if (address == null || sessionKey == null)
 			return null;
 		
 		String login = null;
@@ -877,7 +877,7 @@ public class LoginController
 				}
 				rset.close();
 				statement2.close();
-				if ((lastIP == null) || !lastIP.equals(address.getHostAddress()))
+				if (lastIP == null || !lastIP.equals(address.getHostAddress()))
 				{
 					PreparedStatement statement3 = con.prepareStatement("UPDATE accounts SET lastactive=?, lastIP=?, lastIP2=?, lastIP3=? WHERE login=?");
 					statement3.setLong(1, System.currentTimeMillis());
@@ -994,7 +994,7 @@ public class LoginController
 		for (String s : parts)
 		{
 			int i = Integer.parseInt(s);
-			if ((i < 0) || (i > 255))
+			if (i < 0 || i > 255)
 				return false;
 		}
 		return true;
@@ -1020,7 +1020,7 @@ public class LoginController
 			if (!_lastPassword.equals(password))
 			{
 				// check if theres a long time since last wrong try
-				if ((System.currentTimeMillis() - _lastAttempTime) < (300 * 1000))
+				if (System.currentTimeMillis() - _lastAttempTime < 300 * 1000)
 				{
 					_count++;
 				}
@@ -1071,7 +1071,7 @@ public class LoginController
 		
 		public boolean hasExpired()
 		{
-			return (System.currentTimeMillis() > _expiration) && (_expiration > 0);
+			return System.currentTimeMillis() > _expiration && _expiration > 0;
 		}
 	}
 	
@@ -1091,7 +1091,7 @@ public class LoginController
 				{
 					if (client == null)
 						continue;
-					if ((client.getConnectionStartTime() + LOGIN_TIMEOUT) < System.currentTimeMillis())
+					if (client.getConnectionStartTime() + LOGIN_TIMEOUT < System.currentTimeMillis())
 					{
 						client.close(LoginFailReason.REASON_ACCESS_FAILED);
 					}

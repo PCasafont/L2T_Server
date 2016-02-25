@@ -60,7 +60,7 @@ public class EffectSignetNoise extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() == (getAbnormal().getTotalCount() - 1))
+		if (getAbnormal().getCount() == getAbnormal().getTotalCount() - 1)
 			return true; // do nothing first time
 			
 		if (!(getEffector() instanceof L2PcInstance))
@@ -70,13 +70,13 @@ public class EffectSignetNoise extends L2Effect
 		
 		for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
-			if ((target == null) || (target == caster))
+			if (target == null || target == caster)
 				continue;
 			
 			if (target instanceof L2PcInstance)
 			{
 				L2PcInstance player = (L2PcInstance) target;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
 					continue;
 			}
 			

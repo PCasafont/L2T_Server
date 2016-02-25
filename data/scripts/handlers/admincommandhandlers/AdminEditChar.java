@@ -129,7 +129,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		else if (command.startsWith("admin_character_info"))
 		{
 			String[] data = command.split(" ");
-			if ((data.length > 1))
+			if (data.length > 1)
 				showCharacterInfo(activeChar, L2World.getInstance().getPlayer(data[1]));
 			else if (activeChar.getTarget() instanceof L2PcInstance)
 				showCharacterInfo(activeChar, activeChar.getTarget().getActingPlayer());
@@ -139,7 +139,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		else if (command.startsWith("admin_lookup_hw"))
 		{
 			String[] data = command.split(" ");
-			if ((data.length > 1))
+			if (data.length > 1)
 				showHardwareInfo(activeChar, data[1]);
 			else
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
@@ -214,7 +214,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		else if (command.startsWith("admin_edit_character"))
 		{
 			String[] data = command.split(" ");
-			if ((data.length > 1))
+			if (data.length > 1)
 				editCharacter(activeChar, data[1]);
 			else if (activeChar.getTarget() instanceof L2PcInstance)
 				editCharacter(activeChar, null);
@@ -373,7 +373,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					if (classidval == classid.getId())
 						valid = true;
 				}
-				if (valid && (player.getCurrentClass().getId() != classidval))
+				if (valid && player.getCurrentClass().getId() != classidval)
 				{
 					player.setClassId(classidval);
 					if (!player.isSubClassActive())
@@ -623,7 +623,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		{
 			String[] data = command.split(" ");
 			L2PcInstance pl = null;
-			if ((data.length > 1))
+			if (data.length > 1)
 				pl = L2World.getInstance().getPlayer(data[1]);
 			else
 			{
@@ -661,7 +661,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				for (int o = 0; o < trace[0].length; o++)
 				{
 					ip = ip + trace[i][o];
-					if (o != (trace[0].length - 1))
+					if (o != trace[0].length - 1)
 						ip = ip + ".";
 				}
 				activeChar.sendMessage("Hop" + i + ": " + ip);
@@ -788,7 +788,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		int maxCharactersPerPage = 20;
 		int maxPages = players.length / maxCharactersPerPage;
 		
-		if (players.length > (maxCharactersPerPage * maxPages))
+		if (players.length > maxCharactersPerPage * maxPages)
 			maxPages++;
 		
 		//Check if number of users changed
@@ -797,7 +797,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		int charactersStart = maxCharactersPerPage * page;
 		int charactersEnd = players.length;
-		if ((charactersEnd - charactersStart) > maxCharactersPerPage)
+		if (charactersEnd - charactersStart > maxCharactersPerPage)
 			charactersEnd = charactersStart + maxCharactersPerPage;
 		
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
@@ -1022,7 +1022,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		adminReply.replace("%pkkills%", String.valueOf(player.getPkKills()));
 		adminReply.replace("%currentload%", String.valueOf(player.getCurrentLoad()));
 		adminReply.replace("%maxload%", String.valueOf(player.getMaxLoad()));
-		adminReply.replace("%percent%", String.valueOf(Util.roundTo(((float) player.getCurrentLoad() / (float) player.getMaxLoad()) * 100, 2)));
+		adminReply.replace("%percent%", String.valueOf(Util.roundTo((float) player.getCurrentLoad() / (float) player.getMaxLoad() * 100, 2)));
 		adminReply.replace("%patk%", String.valueOf(player.getPAtk(null)));
 		adminReply.replace("%matk%", String.valueOf(player.getMAtk(null, null)));
 		adminReply.replace("%pdef%", String.valueOf(player.getPDef(null)));
@@ -1370,7 +1370,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		for (L2PcInstance player : players)
 		{
 			client = player.getClient();
-			if ((client == null) || client.isDetached())
+			if (client == null || client.isDetached())
 				continue;
 			else
 			{
@@ -1429,7 +1429,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		for (L2PcInstance player : players)
 		{
 			client = player.getClient();
-			if ((client == null) || client.isDetached())
+			if (client == null || client.isDetached())
 				continue;
 			else
 			{
@@ -1490,9 +1490,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		{
 			final int prime = 31;
 			int result = 1;
-			result = (prime * result) + ((ip == null) ? 0 : ip.hashCode());
+			result = prime * result + (ip == null ? 0 : ip.hashCode());
 			for (int[] array : tracert)
-				result = (prime * result) + Arrays.hashCode(array);
+				result = prime * result + Arrays.hashCode(array);
 			return result;
 		}
 		

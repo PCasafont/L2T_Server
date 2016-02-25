@@ -95,13 +95,13 @@ public class BeastFarm extends L2AttackableAIScript
 		{
 			if (!_skillSuccessNpcIdList.containsKey(skillId))
 				return -1;
-			else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_CRYSTAL_SPICE))
+			else if (skillId == SKILL_BLESSED_GOLDEN_SPICE || skillId == SKILL_BLESSED_CRYSTAL_SPICE || skillId == SKILL_SGRADE_GOLDEN_SPICE || skillId == SKILL_SGRADE_CRYSTAL_SPICE)
 			{
 				if (Rnd.get(100) < SPECIAL_SPICE_CHANCES[0])
 				{
 					if (Rnd.get(100) < SPECIAL_SPICE_CHANCES[1])
 						return _skillSuccessNpcIdList.get(skillId);
-					else if ((skillId == SKILL_BLESSED_GOLDEN_SPICE) || (skillId == SKILL_SGRADE_GOLDEN_SPICE))
+					else if (skillId == SKILL_BLESSED_GOLDEN_SPICE || skillId == SKILL_SGRADE_GOLDEN_SPICE)
 						return _skillSuccessNpcIdList.get(SKILL_GOLDEN_SPICE);
 					else
 						return _skillSuccessNpcIdList.get(SKILL_CRYSTAL_SPICE);
@@ -109,7 +109,7 @@ public class BeastFarm extends L2AttackableAIScript
 				else
 					return -1;
 			}
-			else if ((_growthLevel == 2) && (Rnd.get(100) < TAME_CHANCE))
+			else if (_growthLevel == 2 && Rnd.get(100) < TAME_CHANCE)
 				return _tameNpcId;
 			else if (Rnd.get(100) < _chance)
 				return _skillSuccessNpcIdList.get(skillId);
@@ -310,7 +310,7 @@ public class BeastFarm extends L2AttackableAIScript
 			nextNpc.setRunning();
 			
 			QuestState st = player.getQuestState("20_BringUpWithLove");
-			if ((st != null) && (st.getInt("cond") == 1) && (st.getQuestItemsCount(7185) == 0) && (Rnd.get(10) == 1))
+			if (st != null && st.getInt("cond") == 1 && st.getQuestItemsCount(7185) == 0 && Rnd.get(10) == 1)
 			{
 				//if player has quest 20 going, give quest item
 				//it's easier to hardcode it in here than to try and repeat this stuff in the quest
@@ -352,7 +352,7 @@ public class BeastFarm extends L2AttackableAIScript
 		int npcId = npc.getNpcId();
 		int skillId = skill.getId();
 		// check if the npc and skills used are valid for this script.  Exit if invalid.
-		if (!Util.contains(FEEDABLE_BEASTS, npcId) || ((skillId != SKILL_GOLDEN_SPICE) && (skillId != SKILL_CRYSTAL_SPICE) && (skillId != SKILL_BLESSED_GOLDEN_SPICE) && (skillId != SKILL_BLESSED_CRYSTAL_SPICE) && (skillId != SKILL_SGRADE_GOLDEN_SPICE) && (skillId != SKILL_SGRADE_CRYSTAL_SPICE)))
+		if (!Util.contains(FEEDABLE_BEASTS, npcId) || skillId != SKILL_GOLDEN_SPICE && skillId != SKILL_CRYSTAL_SPICE && skillId != SKILL_BLESSED_GOLDEN_SPICE && skillId != SKILL_BLESSED_CRYSTAL_SPICE && skillId != SKILL_SGRADE_GOLDEN_SPICE && skillId != SKILL_SGRADE_CRYSTAL_SPICE)
 		{
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		}
@@ -367,7 +367,7 @@ public class BeastFarm extends L2AttackableAIScript
 		
 		// prevent exploit which allows 2 players to simultaneously raise the same 0-growth beast
 		// If the mob is at 0th level (when it still listens to all feeders) lock it to the first feeder!
-		if ((growthLevel == 0) && _FeedInfo.containsKey(objectId))
+		if (growthLevel == 0 && _FeedInfo.containsKey(objectId))
 		{
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		}
@@ -380,11 +380,11 @@ public class BeastFarm extends L2AttackableAIScript
 		npc.broadcastPacket(new SocialAction(npc.getObjectId(), 2));
 		
 		int food = 0;
-		if ((skillId == SKILL_GOLDEN_SPICE) || (skillId == SKILL_BLESSED_GOLDEN_SPICE))
+		if (skillId == SKILL_GOLDEN_SPICE || skillId == SKILL_BLESSED_GOLDEN_SPICE)
 		{
 			food = GOLDEN_SPICE;
 		}
-		else if ((skillId == SKILL_CRYSTAL_SPICE) || (skillId == SKILL_BLESSED_CRYSTAL_SPICE))
+		else if (skillId == SKILL_CRYSTAL_SPICE || skillId == SKILL_BLESSED_CRYSTAL_SPICE)
 		{
 			food = CRYSTAL_SPICE;
 		}
@@ -405,7 +405,7 @@ public class BeastFarm extends L2AttackableAIScript
 				}
 				return super.onSkillSee(npc, caster, skill, targets, isPet);
 			}
-			else if ((growthLevel > 0) && (_FeedInfo.get(objectId) != caster.getObjectId()))
+			else if (growthLevel > 0 && _FeedInfo.get(objectId) != caster.getObjectId())
 			{
 				// check if this is the same player as the one who raised it from growth 0.
 				// if no, then do not allow a chance to raise the pet (food gets consumed but has no effect).

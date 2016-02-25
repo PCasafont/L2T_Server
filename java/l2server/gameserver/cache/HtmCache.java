@@ -95,7 +95,7 @@ public class HtmCache implements Reloadable
 	
 	public double getMemoryUsage()
 	{
-		return ((float) _bytesBuffLen / 1048576);
+		return (float) _bytesBuffLen / 1048576;
 	}
 	
 	public int getLoadedFiles()
@@ -110,7 +110,7 @@ public class HtmCache implements Reloadable
 		{
 			if (!file.isDirectory())
 			{
-				return (file.getName().endsWith(".htm") || file.getName().endsWith(".html"));
+				return file.getName().endsWith(".htm") || file.getName().endsWith(".html");
 			}
 			return true;
 		}
@@ -162,7 +162,7 @@ public class HtmCache implements Reloadable
 				}
 				else
 				{
-					_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + bytes;
+					_bytesBuffLen = _bytesBuffLen - oldContent.length() + bytes;
 				}
 				
 				_cache.put(hashcode, content);
@@ -205,7 +205,7 @@ public class HtmCache implements Reloadable
 	{
 		String newPath = null;
 		String content;
-		if ((prefix != null) && !prefix.isEmpty())
+		if (prefix != null && !prefix.isEmpty())
 		{
 			newPath = prefix + path;
 			content = getHtm(newPath);
@@ -235,13 +235,13 @@ public class HtmCache implements Reloadable
 	
 	public String getHtm(String path)
 	{
-		if ((path == null) || path.isEmpty())
+		if (path == null || path.isEmpty())
 			return ""; // avoid possible NPE
 			
 		final int hashCode = path.hashCode();
 		String content = _cache.get(hashCode);
 		
-		if (Config.LAZY_CACHE && (content == null))
+		if (Config.LAZY_CACHE && content == null)
 			content = loadFile(new File(Config.DATAPACK_ROOT, path));
 		
 		return content;

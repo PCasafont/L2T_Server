@@ -157,7 +157,7 @@ public class ClanTable
 		Collections.sort(sortedClans, byMemberCount);
 		
 		List<L2Clan> temp = sortedClans.subList(0, Math.min(10, sortedClans.size()));
-		for (int i = 0; (i < _topClansByMemberCount.length) && (i < temp.size()); i++)
+		for (int i = 0; i < _topClansByMemberCount.length && i < temp.size(); i++)
 			_topClansByMemberCount[i] = temp.get(i);
 	}
 	
@@ -267,7 +267,7 @@ public class ClanTable
 		if (player == null)
 			return false;
 		
-		if (!Util.isAlphaNumeric(clanName) || (2 > clanName.length()))
+		if (!Util.isAlphaNumeric(clanName) || 2 > clanName.length())
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_NAME_INCORRECT));
 			return false;
@@ -414,7 +414,7 @@ public class ClanTable
 	{
 		for (L2Clan clan : getClans())
 		{
-			if ((clan.getAllyName() != null) && clan.getAllyName().equalsIgnoreCase(allyName))
+			if (clan.getAllyName() != null && clan.getAllyName().equalsIgnoreCase(allyName))
 			{
 				return true;
 			}
@@ -430,7 +430,7 @@ public class ClanTable
 		for (L2Clan clan : _clans.values())
 		{
 			int allyId = clan.getAllyId();
-			if ((allyId != 0) && (clan.getClanId() != allyId))
+			if (allyId != 0 && clan.getClanId() != allyId)
 			{
 				if (!_clans.containsKey(allyId))
 				{

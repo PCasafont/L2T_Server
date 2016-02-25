@@ -307,7 +307,7 @@ public class PailakaSongOfIceAndFire extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
+		if (st == null || st.getState() != State.STARTED)
 			return null;
 		
 		final int cond = st.getInt("cond");
@@ -381,10 +381,10 @@ public class PailakaSongOfIceAndFire extends Quest
 	@Override
 	public String onExitZone(L2Character character, L2ZoneType zone)
 	{
-		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{
 			InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
-			if ((world != null) && (world.templateId == INSTANCE_ID))
+			if (world != null && world.templateId == INSTANCE_ID)
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
 		}
 		return super.onExitZone(character, zone);

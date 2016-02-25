@@ -60,7 +60,7 @@ public class WarehouseCacheManager
 			long cTime = System.currentTimeMillis();
 			for (L2PcInstance pc : _cachedWh.keySet())
 			{
-				if ((cTime - _cachedWh.get(pc)) > _cacheTime)
+				if (cTime - _cachedWh.get(pc) > _cacheTime)
 				{
 					pc.clearWarehouse();
 					_cachedWh.remove(pc);

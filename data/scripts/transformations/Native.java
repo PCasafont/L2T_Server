@@ -18,7 +18,7 @@ public class Native extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 101) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 101 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

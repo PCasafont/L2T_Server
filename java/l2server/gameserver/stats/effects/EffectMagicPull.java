@@ -61,7 +61,7 @@ public class EffectMagicPull extends L2Effect
 		double dx = getEffector().getX() - curX;
 		double dy = getEffector().getY() - curY;
 		double dz = getEffector().getZ() - curZ;
-		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000)
 		{
 			Log.info("EffectMagicDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
@@ -95,7 +95,7 @@ public class EffectMagicPull extends L2Effect
 		if (Config.GEODATA > 0)
 		{
 			Location destiny = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), _x, _y, _z, getEffected().getInstanceId());
-			if ((destiny.getX() != _x) || (destiny.getY() != _y))
+			if (destiny.getX() != _x || destiny.getY() != _y)
 			{
 				_x = destiny.getX() - (int) (cos * 10);
 				_y = destiny.getY() - (int) (sin * 10);

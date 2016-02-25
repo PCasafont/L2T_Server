@@ -18,7 +18,7 @@ public class HealerHorse extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 136) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 136 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

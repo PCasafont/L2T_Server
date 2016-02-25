@@ -298,7 +298,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 				
 				if (line.indexOf('\\') >= 0)
 				{
-					while (((line = lnr.readLine()) != null) && (line.indexOf('\\') >= 0))
+					while ((line = lnr.readLine()) != null && line.indexOf('\\') >= 0)
 					{
 						value += "\r\n" + line;
 					}
@@ -345,12 +345,12 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		if (parts.length == 4)
 		{
 			boolean ok = true;
-			for (int i = 0; (i < 4) && ok; i++)
+			for (int i = 0; i < 4 && ok; i++)
 			{
 				try
 				{
 					int parseInt = Integer.parseInt(parts[i]);
-					if ((parseInt < 0) || (parseInt > 255))
+					if (parseInt < 0 || parseInt > 255)
 					{
 						ok = false;
 					}
@@ -746,7 +746,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		int last = 0;
 		while (m.find())
 		{
-			if (m.start() != (last + 1))
+			if (m.start() != last + 1)
 			{
 				m.appendReplacement(sb, " " + m.group());
 			}

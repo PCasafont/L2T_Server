@@ -81,7 +81,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_targetX == _originX) && (_targetY == _originY) && (_targetZ == _originZ))
+		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
 		{
 			activeChar.sendPacket(new StopMove(activeChar));
 			return;
@@ -118,7 +118,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 		
-		if ((_moveMovement == 0) && ((Config.GEODATA < 1) || activeChar.isPlayingEvent() || activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
+		if (_moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() || activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
@@ -127,7 +127,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			double dx = _targetX - _curX;
 			double dy = _targetY - _curY;
 			// Can't move if character is confused, or trying to move a huge distance
-			if (activeChar.isOutOfControl() || (((dx * dx) + (dy * dy)) > 98010000)) // 9900*9900
+			if (activeChar.isOutOfControl() || dx * dx + dy * dy > 98010000) // 9900*9900
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -143,7 +143,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			if (activeChar.getInstanceId() != activeChar.getObjectId())
 				InstanceManager.getInstance().destroyInstance(activeChar.getObjectId());
 			
-			if ((activeChar.getQueuedSkill() != null) && (activeChar.getQueuedSkill().getSkillId() == 30001))
+			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001)
 				activeChar.setQueuedSkill(null, false, false);
 		}
 		

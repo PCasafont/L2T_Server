@@ -67,7 +67,7 @@ public class PetInventory extends Inventory
 	{
 		int slots = 0;
 		
-		if (!(item.isStackable() && (getItemByItemId(item.getItemId()) != null)) && (item.getItemType() != L2EtcItemType.HERB))
+		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != L2EtcItemType.HERB)
 			slots++;
 		
 		return validateCapacity(slots);
@@ -76,7 +76,7 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateCapacity(long slots)
 	{
-		return ((_items.size() + slots) <= _owner.getInventoryLimit());
+		return _items.size() + slots <= _owner.getInventoryLimit();
 	}
 	
 	public boolean validateWeight(L2ItemInstance item, long count)
@@ -92,7 +92,7 @@ public class PetInventory extends Inventory
 	@Override
 	public boolean validateWeight(long weight)
 	{
-		return ((_totalWeight + weight) <= _owner.getMaxLoad());
+		return _totalWeight + weight <= _owner.getMaxLoad();
 	}
 	
 	@Override

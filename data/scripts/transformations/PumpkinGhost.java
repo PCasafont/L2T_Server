@@ -18,7 +18,7 @@ public class PumpkinGhost extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 108) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 108 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

@@ -46,7 +46,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 		final L2PcInstance aPlayer = activeChar.getActingPlayer();
 		
 		// Traps cant hit rabbits!
-		if ((activeChar instanceof L2TrapInstance) && (target instanceof L2MonsterInstance))
+		if (activeChar instanceof L2TrapInstance && target instanceof L2MonsterInstance)
 		{
 			final L2MonsterInstance monster = (L2MonsterInstance) target;
 			
@@ -54,19 +54,18 @@ public class TargetSingle implements ISkillTargetTypeHandler
 				return null;
 		}
 		
-		if (Config.isServer(Config.DREAMS) && (skill.getSkillType() == L2SkillType.BUFF) && !(target instanceof L2Playable))
+		if (Config.isServer(Config.DREAMS) && skill.getSkillType() == L2SkillType.BUFF && !(target instanceof L2Playable))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
 		}
 		
-		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS
-				&& aPlayer.getSummon(0) != null && !(target instanceof L2Summon))
+		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS && aPlayer.getSummon(0) != null && !(target instanceof L2Summon))
 		{
 			target = aPlayer.getSummon(0);
 		}
 		
-		if (((aPlayer != null) && (!isReachableTarget(aPlayer, target, skill.getTargetDirection()) || !aPlayer.isAbleToCastOnTarget(target, skill, false))) || ((activeChar == target) && !skill.isUseableOnSelf()))
+		if (aPlayer != null && (!isReachableTarget(aPlayer, target, skill.getTargetDirection()) || !aPlayer.isAbleToCastOnTarget(target, skill, false)) || activeChar == target && !skill.isUseableOnSelf())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
@@ -119,7 +118,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 			}
 			case DEAD_PLAYABLE:
 			{
-				if ((target instanceof L2PcInstance) || (target instanceof L2PetInstance))
+				if (target instanceof L2PcInstance || target instanceof L2PetInstance)
 				{
 					if (target.isDead())
 						return true;
@@ -162,7 +161,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 				{
 					final L2Summon sTarget = (L2Summon) target;
 					final L2PcInstance sOwner = sTarget.getOwner();
-					if (!sTarget.isDead() && (sOwner != null) && (activeChar != sOwner))
+					if (!sTarget.isDead() && sOwner != null && activeChar != sOwner)
 						return true;
 				}
 				break;
@@ -172,7 +171,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 				if (target instanceof L2Summon)
 				{
 					final L2Summon sTarget = (L2Summon) target;
-					if (!sTarget.isDead() && (sTarget.getOwner() == activeChar))
+					if (!sTarget.isDead() && sTarget.getOwner() == activeChar)
 						return true;
 				}
 				break;
@@ -188,7 +187,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 				if (target instanceof L2Playable)
 				{
 					final L2PcInstance tPlayer = target.getActingPlayer();
-					if ((activeChar == tPlayer) || activeChar.isInSameParty(tPlayer))
+					if (activeChar == tPlayer || activeChar.isInSameParty(tPlayer))
 						return true;
 				}
 				break;
@@ -198,7 +197,7 @@ public class TargetSingle implements ISkillTargetTypeHandler
 				if (target instanceof L2PcInstance)
 				{
 					final L2PcInstance tPlayer = (L2PcInstance) target;
-					if ((activeChar != tPlayer) && activeChar.isInSameParty(tPlayer))
+					if (activeChar != tPlayer && activeChar.isInSameParty(tPlayer))
 						return true;
 				}
 				break;

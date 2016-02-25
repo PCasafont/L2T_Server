@@ -76,7 +76,7 @@ public class Q147_PathtoBecominganEliteMercenary extends Quest
 			switch (st.getState())
 			{
 				case State.CREATED:
-					if ((player.getClan() != null) && (player.getClan().getHasCastle() > 0))
+					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
 						htmltext = "castle.htm";
 					else
 						htmltext = "elite-01.htm";

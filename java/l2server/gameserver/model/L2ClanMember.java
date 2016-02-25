@@ -99,7 +99,7 @@ public class L2ClanMember
 	
 	public void setPlayerInstance(L2PcInstance player)
 	{
-		if ((player == null) && (_player != null))
+		if (player == null && _player != null)
 		{
 			// this is here to keep the data when the player logs off
 			_name = _player.getName();
@@ -118,7 +118,7 @@ public class L2ClanMember
 		if (player != null)
 		{
 			_clan.addSkillEffects(player);
-			if ((_clan.getLevel() > 3) && player.isClanLeader())
+			if (_clan.getLevel() > 3 && player.isClanLeader())
 				SiegeManager.getInstance().addSiegeSkills(player);
 			if (player.isClanLeader())
 				_clan.setLeader(this);
@@ -134,7 +134,7 @@ public class L2ClanMember
 	
 	public boolean isOnline()
 	{
-		if ((_player == null) || !_player.isOnline())
+		if (_player == null || !_player.isOnline())
 			return false;
 		if (_player.getClient() == null)
 			return false;

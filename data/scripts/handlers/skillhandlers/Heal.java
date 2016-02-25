@@ -80,7 +80,7 @@ public class Heal implements ISkillHandler
 				{
 					if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
 					{
-						if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isMageClass())
+						if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isMageClass())
 						{
 							mAtkMul = weaponInst.getChargedSpiritShot();
 						}
@@ -108,7 +108,7 @@ public class Heal implements ISkillHandler
 					}
 				}
 				// If there is no weapon equipped, check for an active summon.
-				else if ((activeChar instanceof L2Summon) && (((L2Summon) activeChar).getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE))
+				else if (activeChar instanceof L2Summon && ((L2Summon) activeChar).getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
 				{
 					if (((L2Summon) activeChar).getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
 					{
@@ -119,7 +119,7 @@ public class Heal implements ISkillHandler
 					
 					((L2Summon) activeChar).setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 				}
-				else if ((activeChar instanceof L2Npc) && ((L2Npc) activeChar)._spiritshotcharged)
+				else if (activeChar instanceof L2Npc && ((L2Npc) activeChar)._spiritshotcharged)
 				{
 					mAtkMul = 4;
 					
@@ -136,7 +136,7 @@ public class Heal implements ISkillHandler
 					double weaponMAtk = 0.0;
 					for (Func func : weaponInst.getStatFuncs())
 					{
-						if ((func instanceof FuncSet) && (func.stat == Stats.MAGIC_ATTACK))
+						if (func instanceof FuncSet && func.stat == Stats.MAGIC_ATTACK)
 						{
 							Env env = new Env();
 							env.player = activeChar;
@@ -158,26 +158,26 @@ public class Heal implements ISkillHandler
 		for (L2Character target : (L2Character[]) targets)
 		{
 			// We should not heal if char is dead/invul
-			if ((target == null) || target.isDead() || target.isInvul(activeChar))
+			if (target == null || target.isDead() || target.isInvul(activeChar))
 				continue;
 			
 			// No healing from others for player in duels
-			if ((target instanceof L2PcInstance) && target.getActingPlayer().isInDuel() && (target.getObjectId() != activeChar.getObjectId()))
+			if (target instanceof L2PcInstance && target.getActingPlayer().isInDuel() && target.getObjectId() != activeChar.getObjectId())
 				continue;
 			
-			if ((target instanceof L2DoorInstance) || (target instanceof L2SiegeFlagInstance) || (target instanceof L2EventGolemInstance) || (target instanceof L2ArmyMonsterInstance))
+			if (target instanceof L2DoorInstance || target instanceof L2SiegeFlagInstance || target instanceof L2EventGolemInstance || target instanceof L2ArmyMonsterInstance)
 				continue;
 			
 			if (target != activeChar)
 			{
 				// Player holding a cursed weapon can't be healed and can't heal
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isCursedWeaponEquipped())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped())
 					continue;
-				else if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
+				else if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped())
 					continue;
 				
 				// Nor all vs all event player
-				if ((activeChar instanceof L2PcInstance) && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() && !((target instanceof L2Summon) && (((L2Summon) target).getOwner() == activeChar)))
+				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() && ((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() && !(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar))
 					continue;
 			}
 			
@@ -202,7 +202,7 @@ public class Heal implements ISkillHandler
 						hp += hp;
 					
 					// Healing critical, since CT2.3 Gracia Final
-					if ((skill.getCritChance() != -1) && (skill.getTargetType() != L2SkillTargetType.TARGET_SELF) && !skill.isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill)))
+					if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && !skill.isPotion() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill)))
 					{
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CRITICAL_HIT_MAGIC));
 						hp *= 2;
@@ -211,20 +211,20 @@ public class Heal implements ISkillHandler
 				
 				// from CT2 u will receive exact HP, u can't go over it, if u have full HP and u get HP buff, u will receive 0HP restored message
 				// Soul: but from GoD onwards that "overheal" factor is converted into CP by some Areoe Healer skills
-				if ((target.getCurrentHp() + hp) >= target.getMaxHp())
+				if (target.getCurrentHp() + hp >= target.getMaxHp())
 				{
-					if ((skill.getSkillType() == L2SkillType.OVERHEAL) || (skill.getSkillType() == L2SkillType.OVERHEAL_STATIC))
+					if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC)
 					{
 						// CP OVERHEAL needs to be calculated before recalculate HP heal
 						cp = hp - (target.getMaxHp() - target.getCurrentHp());
-						if ((target.getCurrentCp() + cp) >= target.getMaxCp())
+						if (target.getCurrentCp() + cp >= target.getMaxCp())
 							cp = target.getMaxCp() - target.getCurrentCp();
 					}
 					hp = target.getMaxHp() - target.getCurrentHp();
 				}
 			}
 			
-			if (Config.isServer(Config.TENKAI) && (activeChar instanceof L2PcInstance) && activeChar.isInParty() && ((skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS) || (skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME)))
+			if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() && (skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME))
 			{
 				int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 				int members = 0;
@@ -249,7 +249,7 @@ public class Heal implements ISkillHandler
 			
 			target.setCurrentHp(hp + target.getCurrentHp());
 			
-			if ((skill.getSkillType() == L2SkillType.OVERHEAL) || (skill.getSkillType() == L2SkillType.OVERHEAL_STATIC))
+			if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC)
 			{
 				if (cp < 0)
 					cp = 0;
@@ -269,7 +269,7 @@ public class Heal implements ISkillHandler
 				}
 				else
 				{
-					if ((activeChar instanceof L2PcInstance) && (activeChar != target))
+					if (activeChar instanceof L2PcInstance && activeChar != target)
 					{
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
 						sm.addString(activeChar.getName());
@@ -285,7 +285,7 @@ public class Heal implements ISkillHandler
 						target.sendPacket(sm);
 					}
 					
-					if ((skill.getSkillType() == L2SkillType.OVERHEAL) || (skill.getSkillType() == L2SkillType.OVERHEAL_STATIC))
+					if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC)
 					{
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
 						//sm.addString(activeChar.getName());
@@ -309,7 +309,7 @@ public class Heal implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

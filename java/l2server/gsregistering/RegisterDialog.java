@@ -106,7 +106,7 @@ public class RegisterDialog extends JDialog implements ActionListener
 		final double leftSize = Math.max(label.getPreferredSize().getWidth(), btnSave.getPreferredSize().getWidth());
 		final double rightSize = Math.max(_combo.getPreferredSize().getWidth(), btnCancel.getPreferredSize().getWidth());
 		
-		final double height = _combo.getPreferredSize().getHeight() + (4 * textPane.getPreferredSize().getHeight()) + btnSave.getPreferredSize().getHeight();
+		final double height = _combo.getPreferredSize().getHeight() + 4 * textPane.getPreferredSize().getHeight() + btnSave.getPreferredSize().getHeight();
 		this.setSize((int) (leftSize + rightSize + 30), (int) (height + 20));
 		
 		setLocationRelativeTo(owner.getFrame());

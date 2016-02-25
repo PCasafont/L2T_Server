@@ -104,7 +104,7 @@ public final class PetitionManager
 		{
 			setState(endState);
 			
-			if ((getResponder() != null) && getResponder().isOnline())
+			if (getResponder() != null && getResponder().isOnline())
 			{
 				if (endState == PetitionState.Responder_Reject)
 				{
@@ -128,11 +128,11 @@ public final class PetitionManager
 			}
 			
 			// End petition consultation and inform them, if they are still online.
-			if ((getPetitioner() != null) && getPetitioner().isOnline())
+			if (getPetitioner() != null && getPetitioner().isOnline())
 				getPetitioner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_END_THE_PETITION_PLEASE_PROVIDE_FEEDBACK));
 			
 			getCompletedPetitions().put(getId(), this);
-			return (getPendingPetitions().remove(getId()) != null);
+			return getPendingPetitions().remove(getId()) != null;
 		}
 		
 		public String getContent()
@@ -172,7 +172,7 @@ public final class PetitionManager
 		
 		public void sendPetitionerPacket(L2GameServerPacket responsePacket)
 		{
-			if ((getPetitioner() == null) || !getPetitioner().isOnline())
+			if (getPetitioner() == null || !getPetitioner().isOnline())
 			{
 				// Allows petitioners to see the results of their petition when
 				// they log back into the game.
@@ -186,7 +186,7 @@ public final class PetitionManager
 		
 		public void sendResponderPacket(L2GameServerPacket responsePacket)
 		{
-			if ((getResponder() == null) || !getResponder().isOnline())
+			if (getResponder() == null || !getResponder().isOnline())
 			{
 				endPetitionConsultation(PetitionState.Responder_Missing);
 				return;
@@ -264,11 +264,11 @@ public final class PetitionManager
 	{
 		for (Petition currPetition : getPendingPetitions().values())
 		{
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
-				return (currPetition.endPetitionConsultation(PetitionState.Petitioner_Cancel));
+			if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player.getObjectId())
+				return currPetition.endPetitionConsultation(PetitionState.Petitioner_Cancel);
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
-				return (currPetition.endPetitionConsultation(PetitionState.Responder_Cancel));
+			if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player.getObjectId())
+				return currPetition.endPetitionConsultation(PetitionState.Responder_Cancel);
 		}
 		
 		return false;
@@ -282,7 +282,7 @@ public final class PetitionManager
 				if (currPetition == null)
 					continue;
 				
-				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == petitioner.getObjectId()))
+				if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == petitioner.getObjectId())
 				{
 					for (CreatureSay logMessage : currPetition.getLogMessages())
 						petitioner.sendPacket(logMessage);
@@ -302,8 +302,8 @@ public final class PetitionManager
 			if (currPetition == null)
 				continue;
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
-				return (currPetition.endPetitionConsultation(PetitionState.Completed));
+			if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player.getObjectId())
+				return currPetition.endPetitionConsultation(PetitionState.Completed);
 		}
 		
 		return false;
@@ -336,7 +336,7 @@ public final class PetitionManager
 			if (currPetition == null)
 				continue;
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player.getObjectId())
 				petitionCount++;
 		}
 		
@@ -345,7 +345,7 @@ public final class PetitionManager
 			if (currPetition == null)
 				continue;
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player.getObjectId())
 				petitionCount++;
 		}
 		
@@ -372,7 +372,7 @@ public final class PetitionManager
 			return false;
 		
 		Petition currPetition = getPendingPetitions().get(petitionId);
-		return (currPetition.getState() == PetitionState.In_Process);
+		return currPetition.getState() == PetitionState.In_Process;
 	}
 	
 	public boolean isPlayerInConsultation(L2PcInstance player)
@@ -386,7 +386,7 @@ public final class PetitionManager
 				if (currPetition.getState() != PetitionState.In_Process)
 					continue;
 				
-				if (((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId())) || ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId())))
+				if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player.getObjectId() || currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player.getObjectId())
 					return true;
 			}
 		
@@ -406,7 +406,7 @@ public final class PetitionManager
 				if (currPetition == null)
 					continue;
 				
-				if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == petitioner.getObjectId()))
+				if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == petitioner.getObjectId())
 					return true;
 			}
 		
@@ -429,7 +429,7 @@ public final class PetitionManager
 			return false;
 		
 		currPetition.setResponder(respondingAdmin);
-		return (currPetition.endPetitionConsultation(PetitionState.Responder_Reject));
+		return currPetition.endPetitionConsultation(PetitionState.Responder_Reject);
 	}
 	
 	public boolean sendActivePetitionMessage(L2PcInstance player, String messageText)
@@ -444,7 +444,7 @@ public final class PetitionManager
 			if (currPetition == null)
 				continue;
 			
-			if ((currPetition.getPetitioner() != null) && (currPetition.getPetitioner().getObjectId() == player.getObjectId()))
+			if (currPetition.getPetitioner() != null && currPetition.getPetitioner().getObjectId() == player.getObjectId())
 			{
 				cs = new CreatureSay(player.getObjectId(), Say2.PETITION_PLAYER, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
@@ -454,7 +454,7 @@ public final class PetitionManager
 				return true;
 			}
 			
-			if ((currPetition.getResponder() != null) && (currPetition.getResponder().getObjectId() == player.getObjectId()))
+			if (currPetition.getResponder() != null && currPetition.getResponder().getObjectId() == player.getObjectId())
 			{
 				cs = new CreatureSay(player.getObjectId(), Say2.PETITION_GM, player.getName(), messageText);
 				currPetition.addLogMessage(cs);
@@ -470,7 +470,7 @@ public final class PetitionManager
 	
 	public void sendPendingPetitionList(L2PcInstance activeChar)
 	{
-		final StringBuilder htmlContent = StringUtil.startAppend(600 + (getPendingPetitionCount() * 300), "<html><body><center><table width=270><tr>" + "<td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Petition Menu</center></td>" + "<td width=45><button value=\"Back\" action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>" + "<table width=\"270\">" + "<tr><td><table width=\"270\"><tr><td><button value=\"Reset\" action=\"bypass -h admin_reset_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
+		final StringBuilder htmlContent = StringUtil.startAppend(600 + getPendingPetitionCount() * 300, "<html><body><center><table width=270><tr>" + "<td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Petition Menu</center></td>" + "<td width=45><button value=\"Back\" action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>" + "<table width=\"270\">" + "<tr><td><table width=\"270\"><tr><td><button value=\"Reset\" action=\"bypass -h admin_reset_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		
@@ -486,8 +486,8 @@ public final class PetitionManager
 			if (currPetition == null)
 				continue;
 			
-			StringUtil.append(htmlContent, "<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=", (color ? "131210" : "444444"), "><tr><td width=\"130\">", dateFormat.format(new Date(currPetition.getSubmitTime())));
-			StringUtil.append(htmlContent, "</td><td width=\"140\" align=right><font color=\"", (currPetition.getPetitioner().isOnline() ? "00FF00" : "999999"), "\">", currPetition.getPetitioner().getName(), "</font></td></tr>");
+			StringUtil.append(htmlContent, "<tr><td width=\"270\"><table width=\"270\" cellpadding=\"2\" bgcolor=", color ? "131210" : "444444", "><tr><td width=\"130\">", dateFormat.format(new Date(currPetition.getSubmitTime())));
+			StringUtil.append(htmlContent, "</td><td width=\"140\" align=right><font color=\"", currPetition.getPetitioner().isOnline() ? "00FF00" : "999999", "\">", currPetition.getPetitioner().getName(), "</font></td></tr>");
 			StringUtil.append(htmlContent, "<tr><td width=\"130\">");
 			if (currPetition.getState() != PetitionState.In_Process)
 			{
@@ -543,7 +543,7 @@ public final class PetitionManager
 		html.replace("%time%", dateFormat.format(new Date(currPetition.getSubmitTime())));
 		html.replace("%type%", currPetition.getTypeAsString());
 		html.replace("%petitioner%", currPetition.getPetitioner().getName());
-		html.replace("%online%", (currPetition.getPetitioner().isOnline() ? "00FF00" : "999999"));
+		html.replace("%online%", currPetition.getPetitioner().isOnline() ? "00FF00" : "999999");
 		html.replace("%text%", currPetition.getContent());
 		
 		activeChar.sendPacket(html);

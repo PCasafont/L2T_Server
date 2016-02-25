@@ -54,7 +54,7 @@ public class Monastery extends L2AttackableAIScript
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if (Util.contains(mobs1, npc.getNpcId()) && !npc.isInCombat() && (npc.getTarget() == null))
+		if (Util.contains(mobs1, npc.getNpcId()) && !npc.isInCombat() && npc.getTarget() == null)
 		{
 			if (player.getActiveWeaponInstance() != null)
 			{
@@ -89,7 +89,7 @@ public class Monastery extends L2AttackableAIScript
 	{
 		if (Util.contains(mobs2, npc.getNpcId()))
 		{
-			if ((skill.getSkillType() == L2SkillType.AGGDAMAGE) && (targets.length != 0))
+			if (skill.getSkillType() == L2SkillType.AGGDAMAGE && targets.length != 0)
 			{
 				for (L2Object obj : targets)
 				{
@@ -117,19 +117,19 @@ public class Monastery extends L2AttackableAIScript
 			Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
 			for (L2Object obj : objs)
 			{
-				if ((obj instanceof L2PcInstance) || (obj instanceof L2PetInstance))
+				if (obj instanceof L2PcInstance || obj instanceof L2PetInstance)
 				{
 					if (Util.checkIfInRange(npc.getAggroRange(), npc, obj, true) && !((L2Character) obj).isDead())
 						result.add((L2Playable) obj);
 				}
 			}
-			if (!result.isEmpty() && (result.size() != 0))
+			if (!result.isEmpty() && result.size() != 0)
 			{
 				Object[] characters = result.toArray();
 				for (Object obj : characters)
 				{
 					L2Playable target = (L2Playable) (obj instanceof L2PcInstance ? obj : ((L2Summon) obj).getOwner());
-					if ((target.getActiveWeaponInstance() != null) && !npc.isInCombat() && (npc.getTarget() == null))
+					if (target.getActiveWeaponInstance() != null && !npc.isInCombat() && npc.getTarget() == null)
 					{
 						npc.setTarget(target);
 						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), messages[0]));
@@ -161,7 +161,7 @@ public class Monastery extends L2AttackableAIScript
 	@Override
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
-		if (Util.contains(mobs1, npc.getNpcId()) && (skill.getId() == 4589))
+		if (Util.contains(mobs1, npc.getNpcId()) && skill.getId() == 4589)
 		{
 			npc.setIsRunning(true);
 			((L2Attackable) npc).addDamageHate(player, 0, 999);

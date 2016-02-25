@@ -112,11 +112,11 @@ public final class Broadcast
 				try
 				{
 					player.sendPacket(mov);
-					if ((mov instanceof CharInfo) && (character instanceof L2PcInstance))
+					if (mov instanceof CharInfo && character instanceof L2PcInstance)
 					{
 						int relation = ((L2PcInstance) character).getRelation(player);
 						Integer oldrelation = character.getKnownList().getKnownRelations().get(player.getObjectId());
-						if ((oldrelation != null) && (oldrelation != relation))
+						if (oldrelation != null && oldrelation != relation)
 						{
 							player.sendPacket(new RelationChanged((L2PcInstance) character, relation, character.isAutoAttackable(player)));
 							if (((L2PcInstance) character).getPet() != null)
@@ -201,7 +201,7 @@ public final class Broadcast
 		{
 			for (L2PcInstance player : plrs)
 			{
-				if ((player != null) && (character.getDistanceSq(player) <= radiusSq))
+				if (player != null && character.getDistanceSq(player) <= radiusSq)
 					player.sendPacket(mov);
 			}
 		}
@@ -255,7 +255,7 @@ public final class Broadcast
 		{
 			for (L2PcInstance onlinePlayer : pls)
 			{
-				if ((onlinePlayer != null) && onlinePlayer.isOnline() && (onlinePlayer.getInstanceId() == instanceId))
+				if (onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.getInstanceId() == instanceId)
 					onlinePlayer.sendPacket(mov);
 			}
 		}
@@ -268,7 +268,7 @@ public final class Broadcast
 		{
 			for (L2PcInstance onlinePlayer : pls)
 			{
-				if ((onlinePlayer != null) && onlinePlayer.isOnline() && onlinePlayer.isGM())
+				if (onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.isGM())
 					onlinePlayer.sendMessage(message);
 			}
 		}

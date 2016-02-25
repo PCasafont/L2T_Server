@@ -69,7 +69,7 @@ public class ExUISetting extends L2GameServerPacket
 			if (_uiSettings.getKeys().containsKey(i))
 			{
 				List<ActionKey> keyElList = _uiSettings.getKeys().get(i);
-				size = size + (keyElList.size() * 20);
+				size = size + keyElList.size() * 20;
 			}
 		}
 		buffsize = size;

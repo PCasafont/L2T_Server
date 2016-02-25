@@ -79,7 +79,7 @@ public final class ItemList extends L2ItemListPacket
 		_questItems = new ArrayList<L2ItemInstance>();
 		for (int i = 0; i < _items.length; i++)
 		{
-			if ((_items[i] != null) && _items[i].isQuestItem())
+			if (_items[i] != null && _items[i].isQuestItem())
 			{
 				_questItems.add(_items[i]); // add to questinv
 				_items[i] = null; // remove from list
@@ -126,7 +126,7 @@ public final class ItemList extends L2ItemListPacket
 		
 		for (L2ItemInstance item : _items)
 		{
-			if ((item == null) || (item.getItem() == null))
+			if (item == null || item.getItem() == null)
 				continue;
 			
 			writeItem(item);

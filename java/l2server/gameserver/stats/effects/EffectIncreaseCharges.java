@@ -57,7 +57,7 @@ public class EffectIncreaseCharges extends L2Effect
 		{
 			if (((L2PcInstance) getEffected()).getClassId() < 140)
 				count = 2;
-			else if ((((L2PcInstance) getEffected()).getClassId() != 152) && (((L2PcInstance) getEffected()).getClassId() != 155))
+			else if (((L2PcInstance) getEffected()).getClassId() != 152 && ((L2PcInstance) getEffected()).getClassId() != 155)
 				count = 10;
 		}
 		

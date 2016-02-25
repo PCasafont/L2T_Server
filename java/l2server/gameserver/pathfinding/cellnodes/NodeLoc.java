@@ -108,9 +108,9 @@ public class NodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = (prime * result) + _x;
-		result = (prime * result) + _y;
-		result = (prime * result) + _geoHeightAndNSWE;
+		result = prime * result + _x;
+		result = prime * result + _y;
+		result = prime * result + _geoHeightAndNSWE;
 		return result;
 	}
 	

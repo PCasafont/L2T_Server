@@ -101,7 +101,7 @@ public final class Q637_ThroughOnceMore extends Quest
 		}
 		else if (id == State.STARTED)
 		{
-			if ((Integer.parseInt(st.get("cond")) == 2) && (st.getQuestItemsCount(NECRO_HEART) == 10))
+			if (Integer.parseInt(st.get("cond")) == 2 && st.getQuestItemsCount(NECRO_HEART) == 10)
 			{
 				st.takeItems(NECRO_HEART, 10);
 				st.takeItems(FADED_MARK, 1);
@@ -122,7 +122,7 @@ public final class Q637_ThroughOnceMore extends Quest
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		final QuestState st = player.getQuestState(QN);
-		if ((st != null) && (st.getState() == State.STARTED))
+		if (st != null && st.getState() == State.STARTED)
 		{
 			final long count = st.getQuestItemsCount(NECRO_HEART);
 			if (count < 10)
@@ -134,7 +134,7 @@ public final class Q637_ThroughOnceMore extends Quest
 					numItems++;
 				if (numItems > 0)
 				{
-					if ((count + numItems) >= 10)
+					if (count + numItems >= 10)
 					{
 						numItems = 10 - (int) count;
 						st.playSound("ItemSound.quest_middle");

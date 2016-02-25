@@ -57,7 +57,7 @@ public class FortManager implements InstanceListManager
 				continue;
 			
 			int fortId = n.getInt("id");
-			if (Config.isServer(Config.TENKAI) && (fortId == 113))
+			if (Config.isServer(Config.TENKAI) && fortId == 113)
 				continue;
 			
 			String name = n.getString("name");
@@ -168,7 +168,7 @@ public class FortManager implements InstanceListManager
 		for (int i = 0; i < _forts.size(); i++)
 		{
 			fort = _forts.get(i);
-			if ((fort != null) && (fort.getFortId() == fortId))
+			if (fort != null && fort.getFortId() == fortId)
 				return i;
 		}
 		return -1;
@@ -185,7 +185,7 @@ public class FortManager implements InstanceListManager
 		for (int i = 0; i < _forts.size(); i++)
 		{
 			fort = _forts.get(i);
-			if ((fort != null) && fort.checkIfInZone(x, y, z))
+			if (fort != null && fort.checkIfInZone(x, y, z))
 				return i;
 		}
 		return -1;

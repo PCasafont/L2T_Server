@@ -95,7 +95,7 @@ public abstract class ItemContainer
 	{
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getItemId() == itemId))
+			if (item != null && item.getItemId() == itemId)
 				return item;
 		}
 		
@@ -113,7 +113,7 @@ public abstract class ItemContainer
 		List<L2ItemInstance> returnList = new ArrayList<L2ItemInstance>();
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getItemId() == itemId))
+			if (item != null && item.getItemId() == itemId)
 				returnList.add(item);
 		}
 		
@@ -131,7 +131,7 @@ public abstract class ItemContainer
 	{
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getItemId() == itemId) && !item.equals(itemToIgnore))
+			if (item != null && item.getItemId() == itemId && !item.equals(itemToIgnore))
 				return item;
 		}
 		
@@ -177,7 +177,7 @@ public abstract class ItemContainer
 		
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item.getItemId() == itemId) && ((item.getEnchantLevel() == enchantLevel) || (enchantLevel < 0)) && (includeEquipped || !item.isEquipped()))
+			if (item.getItemId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) && (includeEquipped || !item.isEquipped()))
 			{
 				//if (item.isAvailable((L2PcInstance)getOwner(), true) || item.getItem().getType2() == 3)//available or quest item
 				if (item.isStackable())
@@ -203,7 +203,7 @@ public abstract class ItemContainer
 		L2ItemInstance olditem = getItemByItemId(item.getItemId());
 		
 		// If stackable item is found in inventory just add to current quantity
-		if ((olditem != null) && olditem.isStackable())
+		if (olditem != null && olditem.isStackable())
 		{
 			long count = item.getCount();
 			olditem.changeCount(process, count, actor, reference);
@@ -215,10 +215,10 @@ public abstract class ItemContainer
 			item = olditem;
 			
 			// Updates database
-			if ((item.getItemId() == 57) && (count < (10000 * Config.RATE_DROP_ITEMS_ID.get(57))))
+			if (item.getItemId() == 57 && count < 10000 * Config.RATE_DROP_ITEMS_ID.get(57))
 			{
 				// Small adena changes won't be saved to database all the time
-				if ((TimeController.getGameTicks() % 5) == 0)
+				if (TimeController.getGameTicks() % 5 == 0)
 					item.updateDatabase();
 			}
 			else
@@ -229,7 +229,7 @@ public abstract class ItemContainer
 		{
 			item.setOwnerId(process, getOwnerId(), actor, reference);
 			item.setLocation(getBaseLocation());
-			item.setLastChange((L2ItemInstance.ADDED));
+			item.setLastChange(L2ItemInstance.ADDED);
 			
 			// Add item in inventory
 			addItem(item);
@@ -256,15 +256,15 @@ public abstract class ItemContainer
 		L2ItemInstance item = getItemByItemId(itemId);
 		
 		// If stackable item is found in inventory just add to current quantity
-		if ((item != null) && item.isStackable())
+		if (item != null && item.isStackable())
 		{
 			item.changeCount(process, count, actor, reference);
 			item.setLastChange(L2ItemInstance.MODIFIED);
 			// Updates database
-			if ((itemId == 57) && (count < (10000 * Config.RATE_DROP_ITEMS_ID.get(57))))
+			if (itemId == 57 && count < 10000 * Config.RATE_DROP_ITEMS_ID.get(57))
 			{
 				// Small adena changes won't be saved to database all the time
-				if ((TimeController.getGameTicks() % 5) == 0)
+				if (TimeController.getGameTicks() % 5 == 0)
 					item.updateDatabase();
 			}
 			else
@@ -323,7 +323,7 @@ public abstract class ItemContainer
 			return null;
 		
 		L2ItemInstance targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.getItemId()) : null;
-		if ((targetitem != null) && (sourceitem.getObjectId() == targetitem.getObjectId()))
+		if (targetitem != null && sourceitem.getObjectId() == targetitem.getObjectId())
 			return null;
 		
 		synchronized (sourceitem)
@@ -339,7 +339,7 @@ public abstract class ItemContainer
 				count = sourceitem.getCount();
 			
 			// If possible, move entire item object
-			if ((sourceitem.getCount() == count) && (targetitem == null))
+			if (sourceitem.getCount() == count && targetitem == null)
 			{
 				removeItem(sourceitem);
 				target.addItem(process, sourceitem, actor, reference);
@@ -371,7 +371,7 @@ public abstract class ItemContainer
 			
 			// Updates database
 			sourceitem.updateDatabase(true);
-			if ((targetitem != sourceitem) && (targetitem != null))
+			if (targetitem != sourceitem && targetitem != null)
 				targetitem.updateDatabase();
 			for (EnsoulEffect e : sourceitem.getEnsoulEffects())
 			{
@@ -418,7 +418,7 @@ public abstract class ItemContainer
 				item.setLastChange(L2ItemInstance.MODIFIED);
 				
 				// don't update often for untraced items
-				if ((process != null) || ((TimeController.getGameTicks() % 10) == 0))
+				if (process != null || TimeController.getGameTicks() % 10 == 0)
 				{
 					item.updateDatabase();
 				}
@@ -507,7 +507,7 @@ public abstract class ItemContainer
 		
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getItemId() == 57))
+			if (item != null && item.getItemId() == 57)
 			{
 				count = item.getCount();
 				return count;
@@ -578,7 +578,7 @@ public abstract class ItemContainer
 			{
 				if (item != null)
 				{
-					if (Config.isServer(Config.DREAMS) && (item.getOwnerId() != getOwner().getObjectId()))
+					if (Config.isServer(Config.DREAMS) && item.getOwnerId() != getOwner().getObjectId())
 					{
 						item.setOwnerId(getOwner().getObjectId());
 						Log.severe(item.getName() + " had incorrect ownerId, corrected. ( " + getOwner().getName());
@@ -616,7 +616,7 @@ public abstract class ItemContainer
 				L2PcInstance owner = getOwner() == null ? null : getOwner().getActingPlayer();
 				
 				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && (getItemByItemId(item.getItemId()) != null))
+				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
 					addItem("Restore", item, owner, null);
 				else
 					addItem(item);
@@ -655,7 +655,7 @@ public abstract class ItemContainer
 	public boolean validateCapacityByItemId(int itemId, long count)
 	{
 		final L2Item template = ItemTable.getInstance().getTemplate(itemId);
-		return (template == null) || (template.isStackable() ? validateCapacity(1) : validateCapacity(count));
+		return template == null || (template.isStackable() ? validateCapacity(1) : validateCapacity(count));
 	}
 	
 	/**
@@ -666,6 +666,6 @@ public abstract class ItemContainer
 	public boolean validateWeightByItemId(int itemId, long count)
 	{
 		final L2Item template = ItemTable.getInstance().getTemplate(itemId);
-		return (template == null) || validateWeight(template.getWeight() * count);
+		return template == null || validateWeight(template.getWeight() * count);
 	}
 }

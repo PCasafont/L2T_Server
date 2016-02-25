@@ -430,7 +430,7 @@ public class L2CubicInstance
 					}
 				}
 				// The cubic has already reached its limit and it will stay idle until its lifetime ends.
-				if ((_maxcount > -1) && (_currentcount >= _maxcount))
+				if (_maxcount > -1 && _currentcount >= _maxcount)
 				{
 					stopAction();
 					return;
@@ -446,7 +446,7 @@ public class L2CubicInstance
 						// friendly skill, so we look a target in owner's party
 						cubicTargetForHeal();
 					}
-					else if ((skill.getId() == 10056) || (skill.getId() == 11292) || (skill.getId() == 11807) || (skill.getId() == 10093))
+					else if (skill.getId() == 10056 || skill.getId() == 11292 || skill.getId() == 11807 || skill.getId() == 10093)
 					{
 						_target = _owner;
 					}
@@ -459,7 +459,7 @@ public class L2CubicInstance
 						if (!_owner.isAbleToCastOnTarget(_target, skill, false))
 							_target = null;
 						
-						if ((_target != null) && !Util.checkIfInRange(skill.getCastRange(), _owner, _target, false))
+						if (_target != null && !Util.checkIfInRange(skill.getCastRange(), _owner, _target, false))
 							_target = null;
 						
 						if (_target == null)
@@ -480,7 +480,7 @@ public class L2CubicInstance
 					
 					L2Character target = _target; // copy to avoid npe
 					
-					if ((target != null) && (!target.isDead()))
+					if (target != null && !target.isDead())
 					{
 						if (Config.DEBUG)
 						{
@@ -504,7 +504,7 @@ public class L2CubicInstance
 							
 							useCubicDisabler(type, L2CubicInstance.this, skill, targets);
 						}
-						else if ((type == L2SkillType.MDAM) || (type == L2SkillType.DRAIN))
+						else if (type == L2SkillType.MDAM || type == L2SkillType.DRAIN)
 						{
 							if (Config.DEBUG)
 								Log.info("L2CubicInstance: Action.run() handler " + type);
@@ -549,7 +549,7 @@ public class L2CubicInstance
 	{
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if ((target == null) || target.isDead())
+			if (target == null || target.isDead())
 			{
 				continue;
 			}
@@ -572,7 +572,7 @@ public class L2CubicInstance
 			// if this is a debuff let the duel manager know about it
 			// so the debuff can be removed after the duel
 			// (player & target must be in the same duel)
-			if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isInDuel() && (skill.getSkillType() == L2SkillType.DEBUFF) && (activeCubic.getOwner().getDuelId() == ((L2PcInstance) target).getDuelId()))
+			if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && skill.getSkillType() == L2SkillType.DEBUFF && activeCubic.getOwner().getDuelId() == ((L2PcInstance) target).getDuelId())
 			{
 				DuelManager dm = DuelManager.getInstance();
 				
@@ -580,7 +580,7 @@ public class L2CubicInstance
 				{
 					if (debuff != null)
 					{
-						dm.onBuff(((L2PcInstance) target), debuff);
+						dm.onBuff((L2PcInstance) target, debuff);
 					}
 				}
 			}
@@ -670,7 +670,7 @@ public class L2CubicInstance
 		
 		for (L2Character target : (L2Character[]) targets)
 		{
-			if ((target == null) || target.isDead()) // bypass if target is null or dead
+			if (target == null || target.isDead()) // bypass if target is null or dead
 			{
 				continue;
 			}
@@ -686,7 +686,7 @@ public class L2CubicInstance
 						// if this is a debuff let the duel manager know about it
 						// so the debuff can be removed after the duel
 						// (player & target must be in the same duel)
-						if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isInDuel() && (skill.getSkillType() == L2SkillType.DEBUFF) && (activeCubic.getOwner().getDuelId() == ((L2PcInstance) target).getDuelId()))
+						if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && skill.getSkillType() == L2SkillType.DEBUFF && activeCubic.getOwner().getDuelId() == ((L2PcInstance) target).getDuelId())
 						{
 							DuelManager dm = DuelManager.getInstance();
 							
@@ -694,7 +694,7 @@ public class L2CubicInstance
 							{
 								if (debuff != null)
 								{
-									dm.onBuff(((L2PcInstance) target), debuff);
+									dm.onBuff((L2PcInstance) target, debuff);
 								}
 							}
 						}
@@ -719,19 +719,19 @@ public class L2CubicInstance
 				{
 					L2Abnormal[] effects = target.getAllEffects();
 					
-					if ((effects == null) || (effects.length == 0))
+					if (effects == null || effects.length == 0)
 					{
 						break;
 					}
 					
-					int count = (skill.getMaxNegatedEffects() > 0) ? 0 : -2;
+					int count = skill.getMaxNegatedEffects() > 0 ? 0 : -2;
 					
 					for (L2Abnormal e : effects)
 					{
-						if (e.getSkill().isDebuff() && (count < skill.getMaxNegatedEffects()))
+						if (e.getSkill().isDebuff() && count < skill.getMaxNegatedEffects())
 						{
 							// Do not remove raid curse skills
-							if ((e.getSkill().getId() != 4215) && (e.getSkill().getId() != 4515) && (e.getSkill().getId() != 4082))
+							if (e.getSkill().getId() != 4215 && e.getSkill().getId() != 4515 && e.getSkill().getId() != 4082)
 							{
 								e.exit();
 								
@@ -752,7 +752,7 @@ public class L2CubicInstance
 					{
 						if (target instanceof L2Attackable)
 						{
-							target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeCubic.getOwner(), (int) ((150 * skill.getPower()) / (target.getLevel() + 7)));
+							target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeCubic.getOwner(), (int) (150 * skill.getPower() / (target.getLevel() + 7)));
 						}
 						
 						skill.getEffects(activeCubic, target, null);
@@ -775,7 +775,7 @@ public class L2CubicInstance
 	/** returns true if the target is inside of the owner's max Cubic range */
 	public boolean isInCubicRange(L2Character owner, L2Character target)
 	{
-		if ((owner == null) || (target == null))
+		if (owner == null || target == null)
 		{
 			return false;
 		}
@@ -785,13 +785,13 @@ public class L2CubicInstance
 		// temporary range check until real behavior of cubics is known/coded
 		int range = MAX_MAGIC_RANGE;
 		
-		x = (owner.getX() - target.getX());
+		x = owner.getX() - target.getX();
 		
-		y = (owner.getY() - target.getY());
+		y = owner.getY() - target.getY();
 		
-		z = (owner.getZ() - target.getZ());
+		z = owner.getZ() - target.getZ();
 		
-		return (((x * x) + (y * y) + (z * z)) <= (range * range));
+		return x * x + y * y + z * z <= range * range;
 	}
 	
 	/** this sets the friendly target for a cubic */
@@ -813,7 +813,7 @@ public class L2CubicInstance
 			}
 		}
 		
-		if ((party != null) && !_owner.isInOlympiadMode())
+		if (party != null && !_owner.isInOlympiadMode())
 		{
 			// Get all visible objects in a spheric area near the L2Character
 			// Get a list of Party Members
@@ -830,9 +830,9 @@ public class L2CubicInstance
 						// the lowest HP
 						if (partyMember.getCurrentHp() < partyMember.getMaxHp())
 						{
-							if (percentleft > (partyMember.getCurrentHp() / partyMember.getMaxHp()))
+							if (percentleft > partyMember.getCurrentHp() / partyMember.getMaxHp())
 							{
-								percentleft = (partyMember.getCurrentHp() / partyMember.getMaxHp());
+								percentleft = partyMember.getCurrentHp() / partyMember.getMaxHp();
 								
 								target = partyMember;
 							}
@@ -855,9 +855,9 @@ public class L2CubicInstance
 					
 					// member's pet is in cubic casting range, check if he need heal and if he have
 					// the lowest HP
-					if ((partyMember.getPet().getCurrentHp() < partyMember.getPet().getMaxHp()) && (percentleft > (partyMember.getPet().getCurrentHp() / partyMember.getPet().getMaxHp())))
+					if (partyMember.getPet().getCurrentHp() < partyMember.getPet().getMaxHp() && percentleft > partyMember.getPet().getCurrentHp() / partyMember.getPet().getMaxHp())
 					{
-						percentleft = (partyMember.getPet().getCurrentHp() / partyMember.getPet().getMaxHp());
+						percentleft = partyMember.getPet().getCurrentHp() / partyMember.getPet().getMaxHp();
 						
 						target = partyMember.getPet();
 					}
@@ -878,9 +878,9 @@ public class L2CubicInstance
 					
 					// member's pet is in cubic casting range, check if he need heal and if he have
 					// the lowest HP
-					if ((summon.getCurrentHp() < summon.getMaxHp()) && (percentleft > (summon.getCurrentHp() / summon.getMaxHp())))
+					if (summon.getCurrentHp() < summon.getMaxHp() && percentleft > summon.getCurrentHp() / summon.getMaxHp())
 					{
-						percentleft = (summon.getCurrentHp() / summon.getMaxHp());
+						percentleft = summon.getCurrentHp() / summon.getMaxHp();
 						
 						target = summon;
 					}
@@ -891,23 +891,23 @@ public class L2CubicInstance
 		{
 			if (_owner.getCurrentHp() < _owner.getMaxHp())
 			{
-				percentleft = (_owner.getCurrentHp() / _owner.getMaxHp());
+				percentleft = _owner.getCurrentHp() / _owner.getMaxHp();
 				
 				target = _owner;
 			}
 			
-			if ((_owner.getPet() != null) && !_owner.getPet().isDead() && (_owner.getPet().getCurrentHp() < _owner.getPet().getMaxHp()) && (percentleft > (_owner.getPet().getCurrentHp() / _owner.getPet().getMaxHp())) && isInCubicRange(_owner, _owner.getPet()))
+			if (_owner.getPet() != null && !_owner.getPet().isDead() && _owner.getPet().getCurrentHp() < _owner.getPet().getMaxHp() && percentleft > _owner.getPet().getCurrentHp() / _owner.getPet().getMaxHp() && isInCubicRange(_owner, _owner.getPet()))
 			{
-				percentleft = (_owner.getPet().getCurrentHp() / _owner.getPet().getMaxHp());
+				percentleft = _owner.getPet().getCurrentHp() / _owner.getPet().getMaxHp();
 				
 				target = _owner.getPet();
 			}
 			
 			for (L2SummonInstance summon : _owner.getSummons())
 			{
-				if (!summon.isDead() && (summon.getCurrentHp() < summon.getMaxHp()) && (percentleft > (summon.getCurrentHp() / summon.getMaxHp())) && isInCubicRange(_owner, summon))
+				if (!summon.isDead() && summon.getCurrentHp() < summon.getMaxHp() && percentleft > summon.getCurrentHp() / summon.getMaxHp() && isInCubicRange(_owner, summon))
 				{
-					percentleft = (summon.getCurrentHp() / summon.getMaxHp());
+					percentleft = summon.getCurrentHp() / summon.getMaxHp();
 					
 					target = summon;
 				}
@@ -957,7 +957,7 @@ public class L2CubicInstance
 				
 				for (L2Skill sk : _skills)
 				{
-					if ((sk != null) && ((sk.getId() == SKILL_CUBIC_HEAL) || (sk.getId() == SKILL_BUFF_CUBIC_HEAL) || (sk.getId() == SKILL_MIND_CUBIC_HEAL)))
+					if (sk != null && (sk.getId() == SKILL_CUBIC_HEAL || sk.getId() == SKILL_BUFF_CUBIC_HEAL || sk.getId() == SKILL_MIND_CUBIC_HEAL))
 					{
 						skill = sk;
 						
@@ -969,7 +969,7 @@ public class L2CubicInstance
 				{
 					L2Character target = _target;
 					
-					if ((_id != BUFF_CUBIC) && (_id != MIND_CUBIC))
+					if (_id != BUFF_CUBIC && _id != MIND_CUBIC)
 					{
 						cubicTargetForHeal();
 					}
@@ -978,11 +978,11 @@ public class L2CubicInstance
 						target = _owner;
 					}
 					
-					if ((target != null) && !target.isDead())
+					if (target != null && !target.isDead())
 					{
-						boolean cubicShouldStopIfNoAction = (_id == BUFF_CUBIC) || (_id == MIND_CUBIC) ? false : true;
+						boolean cubicShouldStopIfNoAction = _id == BUFF_CUBIC || _id == MIND_CUBIC ? false : true;
 						
-						if (((target.getMaxHp() - target.getCurrentHp()) > skill.getPower()) || !cubicShouldStopIfNoAction)
+						if (target.getMaxHp() - target.getCurrentHp() > skill.getPower() || !cubicShouldStopIfNoAction)
 						{
 							L2Character[] targets = { target };
 							

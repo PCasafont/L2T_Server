@@ -40,7 +40,7 @@ public final class OlympiadAnnouncer implements Runnable
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
-			if ((spawn != null) && (spawn.getNpcId() == OLY_MANAGER))
+			if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
 				_managers.add(spawn);
 		}
 	}
@@ -55,7 +55,7 @@ public final class OlympiadAnnouncer implements Runnable
 				_currentStadium = 0;
 			
 			task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
-			if ((task != null) && (task.getGame() != null) && task.needAnnounce())
+			if (task != null && task.getGame() != null && task.needAnnounce())
 			{
 				int msg;
 				final String arenaId = String.valueOf(task.getGame().getGameId() + 1);

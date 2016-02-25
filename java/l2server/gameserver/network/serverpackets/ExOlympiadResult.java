@@ -43,7 +43,7 @@ public class ExOlympiadResult extends L2GameServerPacket
 			writeD(participants);
 			for (int j = 0; j < participants; j++)
 			{
-				L2PcInstance player = (L2PcInstance) _info[(i * participants) + j + 4];
+				L2PcInstance player = (L2PcInstance) _info[i * participants + j + 4];
 				if (player == null)
 				{
 					writeS("");

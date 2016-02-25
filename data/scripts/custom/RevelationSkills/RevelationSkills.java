@@ -81,7 +81,7 @@ public class RevelationSkills extends Quest
 						continue;
 					
 					skillInfo = SkillTable.getInstance().getInfo(id, 1);
-					if ((skillInfo != null) && (skillInfo.getSkillType() != L2SkillType.NOTDONE))
+					if (skillInfo != null && skillInfo.getSkillType() != L2SkillType.NOTDONE)
 						skillList += "<tr><td><a action=\"bypass -h Quest RevelationSkills " + skillInfo.getId() + "\">" + skillInfo.getName() + "</a></td></tr>";
 				}
 				skillList += "</table>";
@@ -168,7 +168,7 @@ public class RevelationSkills extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if ((player.getCurrentClass().getLevel() < 85) && (player.getCurrentClass().getParent() == null))
+		if (player.getCurrentClass().getLevel() < 85 && player.getCurrentClass().getParent() == null)
 			return "no.html";
 		
 		return "main.html";

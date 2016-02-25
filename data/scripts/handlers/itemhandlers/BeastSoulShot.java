@@ -88,7 +88,7 @@ public class BeastSoulShot implements IItemHandler
 		
 		int rubyLvl = 0;
 		PcInventory playerInventory = summoner.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)

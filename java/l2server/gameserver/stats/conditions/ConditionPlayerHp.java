@@ -43,6 +43,6 @@ public class ConditionPlayerHp extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return ((((env.player.getCurrentHp() * 100) / env.player.getMaxVisibleHp()) <= _hp) && !((env.player instanceof L2PcInstance) && ((L2PcInstance) env.player).isInOlympiadMode() && !((L2PcInstance) env.player).isOlympiadStart()));
+		return env.player.getCurrentHp() * 100 / env.player.getMaxVisibleHp() <= _hp && !(env.player instanceof L2PcInstance && ((L2PcInstance) env.player).isInOlympiadMode() && !((L2PcInstance) env.player).isOlympiadStart());
 	}
 }

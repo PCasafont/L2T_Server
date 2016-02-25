@@ -129,10 +129,10 @@ public class L2TrapInstance extends L2Trap
 	@Override
 	public void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
-		if (miss || (_owner == null))
+		if (miss || _owner == null)
 			return;
 		
-		if (_owner.isInOlympiadMode() && (target instanceof L2PcInstance) && ((L2PcInstance) target).isInOlympiadMode() && (((L2PcInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId()))
+		if (_owner.isInOlympiadMode() && target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode() && ((L2PcInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId())
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 		}
@@ -155,10 +155,10 @@ public class L2TrapInstance extends L2Trap
 	@Override
 	public boolean canSee(L2Character cha)
 	{
-		if ((cha != null) && _playersWhoDetectedMe.contains(cha.getObjectId()))
+		if (cha != null && _playersWhoDetectedMe.contains(cha.getObjectId()))
 			return true;
 		
-		if ((_owner == null) || (cha == null))
+		if (_owner == null || cha == null)
 			return false;
 		if (cha == _owner)
 			return true;
@@ -170,14 +170,14 @@ public class L2TrapInstance extends L2Trap
 				return false;
 			
 			// olympiad competitors can't see trap
-			if (_owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() && (((L2PcInstance) cha).getOlympiadSide() != _owner.getOlympiadSide()))
+			if (_owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() && ((L2PcInstance) cha).getOlympiadSide() != _owner.getOlympiadSide())
 				return false;
 		}
 		
 		if (_isInArena)
 			return true;
 		
-		if (_owner.isInParty() && cha.isInParty() && (_owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID()))
+		if (_owner.isInParty() && cha.isInParty() && _owner.getParty().getPartyLeaderOID() == cha.getParty().getPartyLeaderOID())
 			return true;
 		
 		return false;
@@ -191,7 +191,7 @@ public class L2TrapInstance extends L2Trap
 			super.setDetected(detector);
 			return;
 		}
-		if ((_owner != null) && (_owner.getPvpFlag() == 0) && (_owner.getReputation() == 0))
+		if (_owner != null && _owner.getPvpFlag() == 0 && _owner.getReputation() == 0)
 			return;
 		
 		_playersWhoDetectedMe.add(detector.getObjectId());
@@ -208,14 +208,14 @@ public class L2TrapInstance extends L2Trap
 			return false;
 		
 		// observers
-		if ((target instanceof L2PcInstance) && ((L2PcInstance) target).inObserverMode())
+		if (target instanceof L2PcInstance && ((L2PcInstance) target).inObserverMode())
 			return false;
 		
 		// olympiad own team and their summons not attacked
-		if ((_owner != null) && _owner.isInOlympiadMode())
+		if (_owner != null && _owner.isInOlympiadMode())
 		{
 			final L2PcInstance player = target.getActingPlayer();
-			if ((player != null) && player.isInOlympiadMode() && (player.getOlympiadSide() == _owner.getOlympiadSide()))
+			if (player != null && player.isInOlympiadMode() && player.getOlympiadSide() == _owner.getOlympiadSide())
 				return false;
 		}
 		
@@ -228,7 +228,7 @@ public class L2TrapInstance extends L2Trap
 			final L2PcInstance player = target.getActingPlayer();
 			if (target instanceof L2Attackable)
 				return true;
-			if ((player == null) || ((player.getPvpFlag() == 0) && (player.getReputation() == 0)))
+			if (player == null || player.getPvpFlag() == 0 && player.getReputation() == 0)
 				return false;
 		}
 		

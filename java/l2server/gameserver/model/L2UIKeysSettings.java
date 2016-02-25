@@ -102,7 +102,7 @@ public class L2UIKeysSettings
 			int order = 0;
 			for (int key : _storedCategories.get(category))
 			{
-				query += "(" + playerId + ", " + category + ", " + (order++) + ", " + key + "),";
+				query += "(" + playerId + ", " + category + ", " + order++ + ", " + key + "),";
 			}
 		}
 		query = query.substring(0, query.length() - 1) + "; ";

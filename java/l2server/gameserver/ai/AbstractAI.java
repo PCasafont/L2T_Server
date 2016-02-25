@@ -301,7 +301,7 @@ abstract class AbstractAI implements Ctrl
 		 */
 		
 		// Stop the follow mode if necessary
-		if ((intention != AI_INTENTION_FOLLOW) && (intention != AI_INTENTION_ATTACK))
+		if (intention != AI_INTENTION_FOLLOW && intention != AI_INTENTION_ATTACK)
 			stopFollow();
 		
 		// Launch the onIntention method of the L2CharacterAI corresponding to the new Intention
@@ -412,7 +412,7 @@ abstract class AbstractAI implements Ctrl
 	@Override
 	public final void notifyEvent(CtrlEvent evt, Object arg0, Object arg1)
 	{
-		if ((!_actor.isVisible() && !_actor.isTeleporting()) || !_actor.hasAI())
+		if (!_actor.isVisible() && !_actor.isTeleporting() || !_actor.hasAI())
 		{
 			//return;
 		}
@@ -579,7 +579,7 @@ abstract class AbstractAI implements Ctrl
 			// prevent possible extra calls to this function (there is none?),
 			// also don't send movetopawn packets too often
 			boolean sendPacket = true;
-			if (_clientMoving && (_target == pawn))
+			if (_clientMoving && _target == pawn)
 			{
 				if (_clientMovingToPawnOffset == offset)
 				{
@@ -590,7 +590,7 @@ abstract class AbstractAI implements Ctrl
 				else if (_actor.isOnGeodataPath())
 				{
 					// minimum time to calculate new route is 2 seconds
-					if (TimeController.getGameTicks() < (_moveToPawnTimeout + 10))
+					if (TimeController.getGameTicks() < _moveToPawnTimeout + 10)
 						return;
 				}
 			}
@@ -602,11 +602,11 @@ abstract class AbstractAI implements Ctrl
 			_moveToPawnTimeout = TimeController.getGameTicks();
 			_moveToPawnTimeout += 1000 / TimeController.MILLIS_IN_TICK;
 			
-			if ((pawn == null) || (_accessor == null))
+			if (pawn == null || _accessor == null)
 				return;
 			
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
-			if ((pawn instanceof L2Character) && !(_actor instanceof L2PcInstance) && !(_actor instanceof L2GrandBossInstance) && !(_actor instanceof L2Npc))
+			if (pawn instanceof L2Character && !(_actor instanceof L2PcInstance) && !(_actor instanceof L2GrandBossInstance) && !(_actor instanceof L2Npc))
 			{
 				if (offset == 50)
 					offset = 30;
@@ -614,10 +614,10 @@ abstract class AbstractAI implements Ctrl
 					offset = 50;
 				// Make the NPCs move around their target, not silly-following
 				int tries = 10;
-				Point3D position = new Point3D((pawn.getX() + Rnd.get(offset * 2)) - offset, (pawn.getY() + Rnd.get(offset * 2)) - offset, pawn.getZ());
+				Point3D position = new Point3D(pawn.getX() + Rnd.get(offset * 2) - offset, pawn.getY() + Rnd.get(offset * 2) - offset, pawn.getZ());
 				
-				while (!GeoData.getInstance().canSeeTarget(_actor, position) && (tries-- > 0))
-					position.setXYZ((pawn.getX() + Rnd.get(offset * 2)) - offset, (pawn.getY() + Rnd.get(offset * 2)) - offset, pawn.getZ());
+				while (!GeoData.getInstance().canSeeTarget(_actor, position) && tries-- > 0)
+					position.setXYZ(pawn.getX() + Rnd.get(offset * 2) - offset, pawn.getY() + Rnd.get(offset * 2) - offset, pawn.getZ());
 				
 				if (tries > 0)
 					_accessor.moveTo(position.getX(), position.getY(), position.getZ(), 0);
@@ -700,7 +700,7 @@ abstract class AbstractAI implements Ctrl
 		
 		_clientMovingToPawnOffset = 0;
 		
-		if (_clientMoving || (pos != null))
+		if (_clientMoving || pos != null)
 		{
 			_clientMoving = false;
 			
@@ -841,7 +841,7 @@ abstract class AbstractAI implements Ctrl
 	{
 		if (_clientMoving)
 		{
-			if ((_clientMovingToPawnOffset != 0) && (_followTarget != null))
+			if (_clientMovingToPawnOffset != 0 && _followTarget != null)
 			{
 				// Send a Server->Client packet MoveToPawn to the actor and all L2PcInstance in its _knownPlayers
 				MoveToPawn msg = new MoveToPawn(_actor, _followTarget, _clientMovingToPawnOffset);

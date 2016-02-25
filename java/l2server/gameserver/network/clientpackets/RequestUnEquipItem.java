@@ -65,14 +65,14 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		// Prevent of unequiping a cursed weapon
-		if ((_slot == L2Item.SLOT_LR_HAND) && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
+		if (_slot == L2Item.SLOT_LR_HAND && (activeChar.isCursedWeaponEquipped() || activeChar.isCombatFlagEquipped()))
 		{
 			// Message ?
 			return;
 		}
 		
 		// arrows and bolts
-		if ((_slot == L2Item.SLOT_L_HAND) && (item.getItem() instanceof L2EtcItem))
+		if (_slot == L2Item.SLOT_L_HAND && item.getItem() instanceof L2EtcItem)
 		{
 			// Message ?
 			return;

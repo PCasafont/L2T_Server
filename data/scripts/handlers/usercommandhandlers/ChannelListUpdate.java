@@ -38,7 +38,7 @@ public class ChannelListUpdate implements IUserCommandHandler
 		if (id != COMMAND_IDS[0])
 			return false;
 		
-		if ((activeChar.getParty() == null) || (activeChar.getParty().getCommandChannel() == null))
+		if (activeChar.getParty() == null || activeChar.getParty().getCommandChannel() == null)
 			return false;
 		
 		L2CommandChannel channel = activeChar.getParty().getCommandChannel();

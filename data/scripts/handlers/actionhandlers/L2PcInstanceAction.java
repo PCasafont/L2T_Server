@@ -61,7 +61,7 @@ public class L2PcInstanceAction implements IActionHandler
 		activeChar.onActionRequest();
 		
 		// See description in Events.java
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onAction(activeChar, target.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onAction(activeChar, target.getObjectId()))
 		{
 			if (!activeChar.getEvent().isState(EventState.READY) && !activeChar.getEvent().isState(EventState.STARTED))
 				activeChar.setEvent(null);
@@ -70,7 +70,7 @@ public class L2PcInstanceAction implements IActionHandler
 			return false;
 		}
 		
-		if ((activeChar.getCaptcha() != null) && !activeChar.onActionCaptcha(false))
+		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -84,14 +84,14 @@ public class L2PcInstanceAction implements IActionHandler
 		}
 		
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		
-		if ((activeChar != target) && ((activeChar.getParty() == null) || (activeChar.getParty() != ((L2PcInstance) target).getParty())) && ((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
+		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target).getParty()) && ((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -130,7 +130,7 @@ public class L2PcInstanceAction implements IActionHandler
 				{
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder  can't attack activeChars with lvl < 21
-					if ((((L2PcInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((L2Character) target).getLevel() < 21)))
+					if (((L2PcInstance) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 || activeChar.isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21)
 					{
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					}
@@ -163,7 +163,7 @@ public class L2PcInstanceAction implements IActionHandler
 					else
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					
-					if (Config.OFFLINE_BUFFERS_ENABLE && (target instanceof L2PcInstance) && (((L2PcInstance) target).getClient() != null) && ((L2PcInstance) target).getClient().isDetached() && ((L2PcInstance) target).getIsOfflineBuffer())
+					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance && ((L2PcInstance) target).getClient() != null && ((L2PcInstance) target).getClient().isDetached() && ((L2PcInstance) target).getIsOfflineBuffer())
 						CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, target.getObjectId());
 				}
 			}

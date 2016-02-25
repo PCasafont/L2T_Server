@@ -54,13 +54,13 @@ public class Detection implements ISkillHandler
 		
 		for (L2PcInstance target : activeChar.getKnownList().getKnownPlayersInRadius(skill.getSkillRadius()))
 		{
-			if ((target != null) && target.getAppearance().getInvisible())
+			if (target != null && target.getAppearance().getInvisible())
 			{
-				if (hasParty && (target.getParty() != null) && (player.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID()))
+				if (hasParty && target.getParty() != null && player.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
 					continue;
-				if (hasClan && (player.getClanId() == target.getClanId()))
+				if (hasClan && player.getClanId() == target.getClanId())
 					continue;
-				if (hasAlly && (player.getAllyId() == target.getAllyId()))
+				if (hasAlly && player.getAllyId() == target.getAllyId())
 					continue;
 				
 				L2Abnormal eHide = target.getFirstEffect(L2AbnormalType.HIDE);

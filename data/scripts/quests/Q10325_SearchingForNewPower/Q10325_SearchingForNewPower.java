@@ -62,7 +62,7 @@ public class Q10325_SearchingForNewPower extends Quest
 		if (st == null)
 			return htmltext;
 		
-		if ((npc.getNpcId() == _gallint) && event.equalsIgnoreCase("32980-03.htm"))
+		if (npc.getNpcId() == _gallint && event.equalsIgnoreCase("32980-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -113,31 +113,31 @@ public class Q10325_SearchingForNewPower extends Quest
 				player.setGlobalQuestFlag(GlobalQuest.STARTING, 6);
 			}
 		}
-		else if ((npc.getNpcId() == _talbot) && (st.getInt("cond") == 2))
+		else if (npc.getNpcId() == _talbot && st.getInt("cond") == 2)
 		{
 			htmltext = "32156-01.htm";
 			st.set("cond", "8");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if ((npc.getNpcId() == _cindet) && (st.getInt("cond") == 3))
+		else if (npc.getNpcId() == _cindet && st.getInt("cond") == 3)
 		{
 			htmltext = "32148-01.htm";
 			st.set("cond", "9");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if ((npc.getNpcId() == _black) && (st.getInt("cond") == 4))
+		else if (npc.getNpcId() == _black && st.getInt("cond") == 4)
 		{
 			htmltext = "32161-01.htm";
 			st.set("cond", "10");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if ((npc.getNpcId() == _herz) && (st.getInt("cond") == 5))
+		else if (npc.getNpcId() == _herz && st.getInt("cond") == 5)
 		{
 			htmltext = "32151-01.htm";
 			st.set("cond", "11");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if ((npc.getNpcId() == _kincaid) && (st.getInt("cond") == 6))
+		else if (npc.getNpcId() == _kincaid && st.getInt("cond") == 6)
 		{
 			htmltext = "32159-01.htm";
 			st.set("cond", "12");
@@ -150,7 +150,7 @@ public class Q10325_SearchingForNewPower extends Quest
 	@Override
 	public boolean canStart(L2PcInstance player)
 	{
-		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 5) && (player.getLevel() <= 20);
+		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 5) && player.getLevel() <= 20;
 	}
 	
 	public static void main(String[] args)

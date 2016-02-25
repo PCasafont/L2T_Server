@@ -44,7 +44,7 @@ public final class L2TerritoryWardInstance extends L2Attackable
 	{
 		if (isInvul())
 			return false;
-		if ((getCastle() == null) || !getCastle().getZone().isActive())
+		if (getCastle() == null || !getCastle().getZone().isActive())
 			return false;
 		
 		final L2PcInstance actingPlayer = attacker.getActingPlayer();
@@ -79,7 +79,7 @@ public final class L2TerritoryWardInstance extends L2Attackable
 	@Override
 	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
 	{
-		if ((skill != null) || !TerritoryWarManager.getInstance().isTWInProgress()) //wards can't be damaged by skills
+		if (skill != null || !TerritoryWarManager.getInstance().isTWInProgress()) //wards can't be damaged by skills
 			return;
 		
 		final L2PcInstance actingPlayer = attacker.getActingPlayer();
@@ -107,12 +107,12 @@ public final class L2TerritoryWardInstance extends L2Attackable
 	public boolean doDie(L2Character killer)
 	{
 		// Kill the L2NpcInstance (the corpse disappeared after 7 seconds)
-		if (!super.doDie(killer) || (getCastle() == null) || !TerritoryWarManager.getInstance().isTWInProgress())
+		if (!super.doDie(killer) || getCastle() == null || !TerritoryWarManager.getInstance().isTWInProgress())
 			return false;
 		
 		if (killer instanceof L2PcInstance)
 		{
-			if ((((L2PcInstance) killer).getSiegeSide() > 0) && !((L2PcInstance) killer).isCombatFlagEquipped())
+			if (((L2PcInstance) killer).getSiegeSide() > 0 && !((L2PcInstance) killer).isCombatFlagEquipped())
 				((L2PcInstance) killer).addItem("Pickup", getNpcId() - 23012, 1, null, false);
 			else
 				TerritoryWarManager.getInstance().getTerritoryWard(getNpcId() - 36491).spawnMe();
@@ -136,7 +136,7 @@ public final class L2TerritoryWardInstance extends L2Attackable
 	@Override
 	public void onAction(L2PcInstance player, boolean interact)
 	{
-		if ((player == null) || !canTarget(player))
+		if (player == null || !canTarget(player))
 			return;
 		
 		// Check if the L2PcInstance already target the L2NpcInstance
@@ -160,10 +160,10 @@ public final class L2TerritoryWardInstance extends L2Attackable
 		}
 		else if (interact)
 		{
-			if (isAutoAttackable(player) && (Math.abs(player.getZ() - getZ()) < 100))
+			if (isAutoAttackable(player) && Math.abs(player.getZ() - getZ()) < 100)
 			{
 				// Tenkai custom - only castle owners who are not in same ally like ward owner can pick
-				if ((player.getClan() == null) || (player.getClan().getHasCastle() == 0) || ((player.getAllyId() != 0) && (player.getAllyId() == ClanTable.getInstance().getClan(this.getCastle().getOwnerId()).getAllyId())))
+				if (player.getClan() == null || player.getClan().getHasCastle() == 0 || player.getAllyId() != 0 && player.getAllyId() == ClanTable.getInstance().getClan(this.getCastle().getOwnerId()).getAllyId())
 				{
 					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;

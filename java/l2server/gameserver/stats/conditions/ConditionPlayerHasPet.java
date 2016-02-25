@@ -35,7 +35,7 @@ public class ConditionPlayerHasPet extends Condition
 	 */
 	public ConditionPlayerHasPet(ArrayList<Integer> itemIds)
 	{
-		if ((itemIds.size() == 1) && (itemIds.get(0) == 0))
+		if (itemIds.size() == 1 && itemIds.get(0) == 0)
 			_controlItemIds = null;
 		else
 			_controlItemIds = itemIds;

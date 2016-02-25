@@ -72,7 +72,7 @@ public class ItemHandler
 	 */
 	public IItemHandler getItemHandler(L2EtcItem item)
 	{
-		if ((item == null) || (item.getHandlerName() == null))
+		if (item == null || item.getHandlerName() == null)
 			return null;
 		return _datatable.get(item.getHandlerName().hashCode());
 	}

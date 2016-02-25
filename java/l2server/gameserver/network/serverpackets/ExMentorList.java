@@ -125,7 +125,7 @@ public class ExMentorList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_player.isMentor() ? 0x01 : (_player.isMentee() ? 0x02 : 0x00)); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+		writeD(_player.isMentor() ? 0x01 : _player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
 		writeD(0x00); // ???
 		writeD(_partners.size());
 		for (PartnerInfo menteeInfo : _partners)

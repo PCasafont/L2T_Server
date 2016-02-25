@@ -79,7 +79,7 @@ public class L2BlockInstance extends L2MonsterInstance
 		// 30% chance to drop the event items
 		int random = Rnd.get(100);
 		// Bond
-		if ((random > 69) && (random <= 84))
+		if (random > 69 && random <= 84)
 			dropItem(13787, event, attacker);
 		// Land Mine
 		else if (random > 84)
@@ -110,7 +110,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	public boolean isAutoAttackable(L2Character attacker)
 	{
 		if (attacker instanceof L2PcInstance)
-			return (attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getBlockCheckerArena() > -1);
+			return attacker.getActingPlayer() != null && attacker.getActingPlayer().getBlockCheckerArena() > -1;
 		return true;
 	}
 	

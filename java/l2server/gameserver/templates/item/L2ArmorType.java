@@ -37,7 +37,7 @@ public enum L2ArmorType implements L2ItemType
 	 */
 	L2ArmorType(String name)
 	{
-		_mask = 1 << (ordinal() + L2WeaponType.values().length);
+		_mask = 1 << ordinal() + L2WeaponType.values().length;
 		_name = name;
 	}
 	

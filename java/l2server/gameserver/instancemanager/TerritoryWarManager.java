@@ -137,7 +137,7 @@ public class TerritoryWarManager implements Siegable
 	// Method - Public
 	public int getRegisteredTerritoryId(L2PcInstance player)
 	{
-		if ((player == null) || !_isTWChannelOpen || (player.getLevel() < PLAYERMINLEVEL))
+		if (player == null || !_isTWChannelOpen || player.getLevel() < PLAYERMINLEVEL)
 			return 0;
 		if (player.getClan() != null)
 		{
@@ -155,11 +155,11 @@ public class TerritoryWarManager implements Siegable
 	
 	public boolean isAllyField(L2PcInstance player, int fieldId)
 	{
-		if ((player == null) || (player.getSiegeSide() == 0))
+		if (player == null || player.getSiegeSide() == 0)
 			return false;
-		else if ((player.getSiegeSide() - 80) == fieldId)
+		else if (player.getSiegeSide() - 80 == fieldId)
 			return true;
-		else if ((fieldId > 100) && _territoryList.containsKey((player.getSiegeSide() - 80)) && (_territoryList.get((player.getSiegeSide() - 80)).getFortId() == fieldId))
+		else if (fieldId > 100 && _territoryList.containsKey(player.getSiegeSide() - 80) && _territoryList.get(player.getSiegeSide() - 80).getFortId() == fieldId)
 			return true;
 		return false;
 		
@@ -174,7 +174,7 @@ public class TerritoryWarManager implements Siegable
 		if (clan == null)
 			return false;
 		else if (clan.getHasCastle() > 0)
-			return (castleId == -1 ? true : (clan.getHasCastle() == castleId));
+			return castleId == -1 ? true : clan.getHasCastle() == castleId;
 		if (castleId == -1)
 		{
 			for (int cId : _registeredClans.keySet())
@@ -271,7 +271,7 @@ public class TerritoryWarManager implements Siegable
 	
 	public void registerClan(int castleId, L2Clan clan)
 	{
-		if ((clan == null) || ((_registeredClans.get(castleId) != null) && _registeredClans.get(castleId).contains(clan)))
+		if (clan == null || _registeredClans.get(castleId) != null && _registeredClans.get(castleId).contains(clan))
 			return;
 		else if (_registeredClans.get(castleId) == null)
 			_registeredClans.put(castleId, new ArrayList<L2Clan>());
@@ -282,7 +282,7 @@ public class TerritoryWarManager implements Siegable
 	
 	public void registerMerc(int castleId, L2PcInstance player)
 	{
-		if ((player == null) || (player.getLevel() < PLAYERMINLEVEL) || ((_registeredMercenaries.get(castleId) != null) && _registeredMercenaries.get(castleId).contains(player.getObjectId())))
+		if (player == null || player.getLevel() < PLAYERMINLEVEL || _registeredMercenaries.get(castleId) != null && _registeredMercenaries.get(castleId).contains(player.getObjectId()))
 			return;
 		else if (_registeredMercenaries.get(castleId) == null)
 			_registeredMercenaries.put(castleId, new ArrayList<Integer>());
@@ -295,7 +295,7 @@ public class TerritoryWarManager implements Siegable
 	{
 		if (clan == null)
 			return;
-		else if ((_registeredClans.get(castleId) != null) && _registeredClans.get(castleId).contains(clan))
+		else if (_registeredClans.get(castleId) != null && _registeredClans.get(castleId).contains(clan))
 		{
 			_registeredClans.get(castleId).remove(clan);
 			changeRegistration(castleId, clan.getClanId(), true);
@@ -306,7 +306,7 @@ public class TerritoryWarManager implements Siegable
 	{
 		if (player == null)
 			return;
-		else if ((_registeredMercenaries.get(castleId) != null) && _registeredMercenaries.get(castleId).contains(player.getObjectId()))
+		else if (_registeredMercenaries.get(castleId) != null && _registeredMercenaries.get(castleId).contains(player.getObjectId()))
 		{
 			_registeredMercenaries.get(castleId).remove(_registeredMercenaries.get(castleId).indexOf(player.getObjectId()));
 			changeRegistration(castleId, player.getObjectId(), true);
@@ -345,7 +345,7 @@ public class TerritoryWarManager implements Siegable
 				ward.setNPC(ret);
 				if (!isTWInProgress() && !SPAWN_WARDS_WHEN_TW_IS_NOT_IN_PROGRESS)
 					ret.decayMe();
-				if ((terNew.getOwnerClan() != null) && terNew.getOwnedWardIds().contains(newOwnerId + 80))
+				if (terNew.getOwnerClan() != null && terNew.getOwnedWardIds().contains(newOwnerId + 80))
 				{
 					for (int wardId : terNew.getOwnedWardIds())
 					{
@@ -509,10 +509,10 @@ public class TerritoryWarManager implements Siegable
 	{
 		if (victimSide == 0)
 			return;
-		if ((killer.getParty() != null) && (type < 5))
+		if (killer.getParty() != null && type < 5)
 			for (L2PcInstance pl : killer.getParty().getPartyMembers())
 			{
-				if ((pl.getSiegeSide() == victimSide) || (pl.getSiegeSide() == 0) || !Util.checkIfInRange(2000, killer, pl, false))
+				if (pl.getSiegeSide() == victimSide || pl.getSiegeSide() == 0 || !Util.checkIfInRange(2000, killer, pl, false))
 					continue;
 				else if (!_participantPoints.containsKey(pl.getObjectId()))
 					_participantPoints.put(pl.getObjectId(), new Integer[] { pl.getSiegeSide(), 0, 0, 0, 0, 0, 0 });
@@ -520,7 +520,7 @@ public class TerritoryWarManager implements Siegable
 			}
 		else
 		{
-			if ((killer.getSiegeSide() == victimSide) || (killer.getSiegeSide() == 0))
+			if (killer.getSiegeSide() == victimSide || killer.getSiegeSide() == 0)
 				return;
 			else if (!_participantPoints.containsKey(killer.getObjectId()))
 				_participantPoints.put(killer.getObjectId(), new Integer[] { killer.getSiegeSide(), 0, 0, 0, 0, 0, 0 });
@@ -540,14 +540,14 @@ public class TerritoryWarManager implements Siegable
 			// than he cant get rewards(also this will handle that player already get his/her rewards)
 			if (temp[6] < 10)
 				return reward;
-			reward[1] += (temp[6] > 70 ? 7 : (int) (temp[6] * 0.1));
+			reward[1] += temp[6] > 70 ? 7 : (int) (temp[6] * 0.1);
 			// badges for player Quests
 			reward[1] += temp[2] * 7;
 			// badges for player Kills
 			if (temp[1] < 50)
 				reward[1] += temp[1] * 0.1;
 			else if (temp[1] < 120)
-				reward[1] += (5 + ((temp[1] - 50) / 14));
+				reward[1] += 5 + (temp[1] - 50) / 14;
 			else
 				reward[1] += 10;
 			// badges for territory npcs
@@ -555,7 +555,7 @@ public class TerritoryWarManager implements Siegable
 			// badges for territory catapults
 			reward[1] += temp[4] * 2;
 			// badges for territory Wards
-			reward[1] += (temp[5] > 0 ? 5 : 0);
+			reward[1] += temp[5] > 0 ? 5 : 0;
 			// badges for territory quest done
 			reward[1] += Math.min(_territoryList.get(temp[0] - 80).getQuestDone()[0], 10);
 			reward[1] += _territoryList.get(temp[0] - 80).getQuestDone()[1];
@@ -668,7 +668,7 @@ public class TerritoryWarManager implements Siegable
 			statement = con.prepareStatement("UPDATE territories SET ownedWardIds=? WHERE territoryId=?");
 			String wardList = "";
 			for (int i : ter.getOwnedWardIds())
-				wardList += (i + ";");
+				wardList += i + ";";
 			statement.setString(1, wardList);
 			statement.setInt(2, ter.getTerritoryId());
 			statement.execute();
@@ -898,7 +898,7 @@ public class TerritoryWarManager implements Siegable
 				Log.warning("TerritoryWarManager: Fort missing! FortId: " + t.getFortId());
 			for (TerritoryNPCSpawn ward : t.getOwnedWard())
 			{
-				if ((ward.getNpc() != null) && (t.getOwnerClan() != null))
+				if (ward.getNpc() != null && t.getOwnerClan() != null)
 				{
 					if (!ward.getNpc().isVisible())
 					{
@@ -1060,7 +1060,7 @@ public class TerritoryWarManager implements Siegable
 					}
 					else
 					{
-						if ((player.getLevel() < PLAYERMINLEVEL) || (player.getCurrentClass().level() < 2))
+						if (player.getLevel() < PLAYERMINLEVEL || player.getCurrentClass().level() < 2)
 							continue;
 						if (_isTWInProgress)
 						{
@@ -1106,7 +1106,7 @@ public class TerritoryWarManager implements Siegable
 					}
 					else
 					{
-						if ((player.getLevel() < PLAYERMINLEVEL) || (player.getCurrentClass().level() < 2))
+						if (player.getLevel() < PLAYERMINLEVEL || player.getCurrentClass().level() < 2)
 							continue;
 						if (_isTWInProgress)
 						{
@@ -1143,7 +1143,7 @@ public class TerritoryWarManager implements Siegable
 			if (isTWInProgress())
 			{
 				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-					if ((player != null) && (player.getSiegeSide() > 0))
+					if (player != null && player.getSiegeSide() > 0)
 						giveTWPoint(player, 1000, 6);
 			}
 			else
@@ -1169,14 +1169,14 @@ public class TerritoryWarManager implements Siegable
 					_isRegistrationOver = false;
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining - 7200000); // Prepare task for 2h before TW start to end registration
 				}
-				else if ((timeRemaining <= 7200000) && (timeRemaining > 1200000))
+				else if (timeRemaining <= 7200000 && timeRemaining > 1200000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_WAR_REGISTERING_PERIOD_ENDED);
 					Announcements.getInstance().announceToAll(sm);
 					_isRegistrationOver = true;
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining - 1200000); // Prepare task for 20 mins left before TW start.
 				}
-				else if ((timeRemaining <= 1200000) && (timeRemaining > 600000))
+				else if (timeRemaining <= 1200000 && timeRemaining > 600000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TERRITORY_WAR_BEGINS_IN_20_MINUTES);
 					Announcements.getInstance().announceToAll(sm);
@@ -1185,7 +1185,7 @@ public class TerritoryWarManager implements Siegable
 					updatePlayerTWStateFlags(false);
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining - 600000); // Prepare task for 10 mins left before TW start.
 				}
-				else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
+				else if (timeRemaining <= 600000 && timeRemaining > 300000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TERRITORY_WAR_BEGINS_IN_10_MINUTES);
 					Announcements.getInstance().announceToAll(sm);
@@ -1194,7 +1194,7 @@ public class TerritoryWarManager implements Siegable
 					updatePlayerTWStateFlags(false);
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining - 300000); // Prepare task for 5 mins left before TW start.
 				}
-				else if ((timeRemaining <= 300000) && (timeRemaining > 60000))
+				else if (timeRemaining <= 300000 && timeRemaining > 60000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TERRITORY_WAR_BEGINS_IN_5_MINUTES);
 					Announcements.getInstance().announceToAll(sm);
@@ -1203,7 +1203,7 @@ public class TerritoryWarManager implements Siegable
 					updatePlayerTWStateFlags(false);
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining - 60000); // Prepare task for 1 min left before TW start.
 				}
-				else if ((timeRemaining <= 60000) && (timeRemaining > 0))
+				else if (timeRemaining <= 60000 && timeRemaining > 0)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TERRITORY_WAR_BEGINS_IN_1_MINUTE);
 					Announcements.getInstance().announceToAll(sm);
@@ -1212,7 +1212,7 @@ public class TerritoryWarManager implements Siegable
 					updatePlayerTWStateFlags(false);
 					_scheduledStartTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartTWTask(), timeRemaining); // Prepare task for TW start.
 				}
-				else if ((timeRemaining + WARLENGTH) > 0)
+				else if (timeRemaining + WARLENGTH > 0)
 				{
 					_isTWChannelOpen = true;
 					_isRegistrationOver = true;
@@ -1241,7 +1241,7 @@ public class TerritoryWarManager implements Siegable
 			try
 			{
 				_scheduledEndTWTask.cancel(false);
-				long timeRemaining = (_startTWDate.getTimeInMillis() + WARLENGTH) - Calendar.getInstance().getTimeInMillis();
+				long timeRemaining = _startTWDate.getTimeInMillis() + WARLENGTH - Calendar.getInstance().getTimeInMillis();
 				if (timeRemaining > 3600000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_WAR_WILL_END_IN_S1_HOURS);
@@ -1249,28 +1249,28 @@ public class TerritoryWarManager implements Siegable
 					announceToParticipants(sm, 0, 0);
 					_scheduledEndTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndTWTask(), timeRemaining - 3600000); // Prepare task for 1 hr left.
 				}
-				else if ((timeRemaining <= 3600000) && (timeRemaining > 600000))
+				else if (timeRemaining <= 3600000 && timeRemaining > 600000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_WAR_WILL_END_IN_S1_MINUTES);
 					sm.addNumber(Math.round(timeRemaining / 60000));
 					announceToParticipants(sm, 0, 0);
 					_scheduledEndTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndTWTask(), timeRemaining - 600000); // Prepare task for 10 minute left.
 				}
-				else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
+				else if (timeRemaining <= 600000 && timeRemaining > 300000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_WAR_WILL_END_IN_S1_MINUTES);
 					sm.addNumber(Math.round(timeRemaining / 60000));
 					announceToParticipants(sm, 0, 0);
 					_scheduledEndTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndTWTask(), timeRemaining - 300000); // Prepare task for 5 minute left.
 				}
-				else if ((timeRemaining <= 300000) && (timeRemaining > 10000))
+				else if (timeRemaining <= 300000 && timeRemaining > 10000)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_WAR_WILL_END_IN_S1_MINUTES);
 					sm.addNumber(Math.round(timeRemaining / 60000));
 					announceToParticipants(sm, 0, 0);
 					_scheduledEndTWTask = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndTWTask(), timeRemaining - 10000); // Prepare task for 10 seconds count down
 				}
-				else if ((timeRemaining <= 10000) && (timeRemaining > 0))
+				else if (timeRemaining <= 10000 && timeRemaining > 0)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SECONDS_TO_THE_END_OF_TERRITORY_WAR);
 					sm.addNumber(Math.round(timeRemaining / 1000));
@@ -1314,7 +1314,7 @@ public class TerritoryWarManager implements Siegable
 				for (L2PcInstance member : ter.getOwnerClan().getOnlineMembers(0))
 				{
 					member.sendPacket(sm);
-					if ((exp > 0) || (sp > 0))
+					if (exp > 0 || sp > 0)
 						member.addExpAndSp(exp, sp);
 				}
 		for (List<L2Clan> list : _registeredClans.values())
@@ -1322,7 +1322,7 @@ public class TerritoryWarManager implements Siegable
 				for (L2PcInstance member : c.getOnlineMembers(0))
 				{
 					member.sendPacket(sm);
-					if ((exp > 0) || (sp > 0))
+					if (exp > 0 || sp > 0)
 						member.addExpAndSp(exp, sp);
 				}
 		// broadcast to mercenaries
@@ -1330,10 +1330,10 @@ public class TerritoryWarManager implements Siegable
 			for (int objId : list)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && ((player.getClan() == null) || !checkIsRegistered(-1, player.getClan())))
+				if (player != null && (player.getClan() == null || !checkIsRegistered(-1, player.getClan())))
 				{
 					player.sendPacket(sm);
-					if ((exp > 0) || (sp > 0))
+					if (exp > 0 || sp > 0)
 						player.addExpAndSp(exp, sp);
 				}
 			}
@@ -1455,7 +1455,7 @@ public class TerritoryWarManager implements Siegable
 		{
 			for (TerritoryNPCSpawn _territoryWardSpawnPlace : _territoryWardSpawnPlaces)
 			{
-				if ((_territoryWardSpawnPlace != null) && (_territoryWardSpawnPlace.getNpc() == null))
+				if (_territoryWardSpawnPlace != null && _territoryWardSpawnPlace.getNpc() == null)
 					return _territoryWardSpawnPlace;
 			}
 			Log.log(Level.WARNING, "TerritoryWarManager: no free Ward spawn found for territory: " + _territoryId);
@@ -1478,7 +1478,7 @@ public class TerritoryWarManager implements Siegable
 		
 		private void changeNPCsSpawn(int type, boolean isSpawn)
 		{
-			if ((type < 0) || (type > 3))
+			if (type < 0 || type > 3)
 			{
 				Log.log(Level.WARNING, "TerritoryWarManager: wrong type(" + type + ") for NPCs spawn change!");
 				return;
@@ -1492,7 +1492,7 @@ public class TerritoryWarManager implements Siegable
 				else
 				{
 					L2Npc npc = twSpawn.getNpc();
-					if ((npc != null) && !npc.isDead())
+					if (npc != null && !npc.isDead())
 						npc.deleteMe();
 					twSpawn.setNPC(null);
 				}

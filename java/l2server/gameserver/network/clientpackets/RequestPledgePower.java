@@ -50,7 +50,7 @@ public final class RequestPledgePower extends L2GameClientPacket
 		
 		if (_action == 2)
 		{
-			if ((player.getClan() != null) && player.isClanLeader())
+			if (player.getClan() != null && player.isClanLeader())
 			{
 				if (_rank == 9)
 				{

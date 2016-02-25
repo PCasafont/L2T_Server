@@ -43,7 +43,7 @@ public final class RequestPetGetItem extends L2GameClientPacket
 	{
 		L2World world = L2World.getInstance();
 		L2ItemInstance item = (L2ItemInstance) world.findObject(_objectId);
-		if ((item == null) || (getClient().getActiveChar() == null))
+		if (item == null || getClient().getActiveChar() == null)
 			return;
 		
 		int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getItemId());
@@ -54,7 +54,7 @@ public final class RequestPetGetItem extends L2GameClientPacket
 		}
 		
 		L2PetInstance pet = getClient().getActiveChar().getPet();
-		if ((pet == null) || pet.isDead() || pet.isOutOfControl())
+		if (pet == null || pet.isDead() || pet.isOutOfControl())
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;

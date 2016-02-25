@@ -54,7 +54,7 @@ public class L2SkillDecoy extends L2Skill
 		if (activeChar.inObserverMode())
 			return;
 		
-		if ((activeChar.getPet() != null) || activeChar.isMounted() || !activeChar.getSummons().isEmpty())
+		if (activeChar.getPet() != null || activeChar.isMounted() || !activeChar.getSummons().isEmpty())
 			return;
 		
 		L2NpcTemplate decoyTemplate = NpcTable.getInstance().getTemplate(_npcId);
@@ -71,8 +71,8 @@ public class L2SkillDecoy extends L2Skill
 				decoy.setHeading(activeChar.getHeading());
 				activeChar.setDecoy(decoy);
 				//L2World.getInstance().storeObject(Decoy);
-				int x = Math.round(targets[0].getX() + ((float) Math.cos((angle / 1000) * 2 * Math.PI) * 30));
-				int y = Math.round(targets[0].getY() + ((float) Math.sin((angle / 1000) * 2 * Math.PI) * 30));
+				int x = Math.round(targets[0].getX() + (float) Math.cos(angle / 1000 * 2 * Math.PI) * 30);
+				int y = Math.round(targets[0].getY() + (float) Math.sin(angle / 1000 * 2 * Math.PI) * 30);
 				int z = targets[0].getZ() + 50;
 				decoy.spawnMe(x, y, z);
 				
@@ -96,7 +96,7 @@ public class L2SkillDecoy extends L2Skill
 		if (hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

@@ -50,7 +50,7 @@ public class ScrollOfResurrection implements IItemHandler
 		
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		// Custom, in order to avoid blessed resurrection scroll usages
-		if (Config.isServer(Config.TENKAI) && (activeChar.getPvpFlag() > 0))
+		if (Config.isServer(Config.TENKAI) && activeChar.getPvpFlag() > 0)
 		{
 			switch (item.getItemId())
 			{
@@ -65,7 +65,7 @@ public class ScrollOfResurrection implements IItemHandler
 			}
 		}
 		
-		if ((activeChar.getEvent() != null) && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
 		{
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -81,12 +81,12 @@ public class ScrollOfResurrection implements IItemHandler
 		
 		int itemId = item.getItemId();
 		//boolean blessedScroll = (itemId != 737);
-		boolean petScroll = (itemId == 6387);
+		boolean petScroll = itemId == 6387;
 		
 		// SoR Animation section
 		L2Character target = (L2Character) activeChar.getTarget();
 		
-		if ((target != null) && target.isDead())
+		if (target != null && target.isDead())
 		{
 			L2PcInstance targetPlayer = null;
 			
@@ -98,7 +98,7 @@ public class ScrollOfResurrection implements IItemHandler
 			if (target instanceof L2PetInstance)
 				targetPet = (L2PetInstance) target;
 			
-			if ((targetPlayer != null) || (targetPet != null))
+			if (targetPlayer != null || targetPet != null)
 			{
 				boolean condGood = true;
 				
@@ -110,7 +110,7 @@ public class ScrollOfResurrection implements IItemHandler
 				else
 					castle = CastleManager.getInstance().getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(), targetPet.getOwner().getZ());
 				
-				if ((castle != null) && castle.getSiege().getIsInProgress())
+				if (castle != null && castle.getSiege().getIsInProgress())
 				{
 					condGood = false;
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_BE_RESURRECTED_DURING_SIEGE));

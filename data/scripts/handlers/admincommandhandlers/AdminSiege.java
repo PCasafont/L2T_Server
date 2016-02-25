@@ -68,7 +68,7 @@ public class AdminSiege implements IAdminCommandHandler
 			else
 				castle = CastleManager.getInstance().getCastle(st.nextToken());
 		}
-		if (((castle == null) || (castle.getCastleId() < 0)) && (clanhall == null))
+		if ((castle == null || castle.getCastleId() < 0) && clanhall == null)
 			// No castle specified
 			showCastleSelectPage(activeChar);
 		else
@@ -127,7 +127,7 @@ public class AdminSiege implements IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_setcastle"))
 			{
-				if ((player == null) || (player.getClan() == null))
+				if (player == null || player.getClan() == null)
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 				else
 					castle.setOwner(player.getClan());
@@ -167,7 +167,7 @@ public class AdminSiege implements IAdminCommandHandler
 			}
 			else if (command.equalsIgnoreCase("admin_clanhallset"))
 			{
-				if ((player == null) || (player.getClan() == null))
+				if (player == null || player.getClan() == null)
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 				else if (!ClanHallManager.getInstance().isFree(clanhall.getId()))
 					activeChar.sendMessage("This ClanHall isn't free!");

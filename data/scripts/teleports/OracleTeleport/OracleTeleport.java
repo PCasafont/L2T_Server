@@ -77,7 +77,7 @@ public class OracleTeleport extends Quest
 		int npcId = npc.getNpcId();
 		if (event.equalsIgnoreCase("Return"))
 		{
-			if (Util.contains(TEMPLE_PRIEST, npcId) && (st.getState() == State.STARTED))
+			if (Util.contains(TEMPLE_PRIEST, npcId) && st.getState() == State.STARTED)
 			{
 				int x = RETURN_LOCS[st.getInt("id")][0];
 				int y = RETURN_LOCS[st.getInt("id")][1];
@@ -85,7 +85,7 @@ public class OracleTeleport extends Quest
 				player.teleToLocation(x, y, z);
 				st.exitQuest(true);
 			}
-			else if (Util.contains(RIFT_POSTERS, npcId) && (st.getState() == State.STARTED))
+			else if (Util.contains(RIFT_POSTERS, npcId) && st.getState() == State.STARTED)
 			{
 				int x = RETURN_LOCS[st.getInt("id")][0];
 				int y = RETURN_LOCS[st.getInt("id")][1];
@@ -124,15 +124,15 @@ public class OracleTeleport extends Quest
 		else if (event.equalsIgnoreCase("zigurratDimensional"))
 		{
 			int playerLevel = player.getLevel();
-			if ((playerLevel >= 20) && (playerLevel < 30))
+			if (playerLevel >= 20 && playerLevel < 30)
 				st.takeItems(57, 2000);
-			else if ((playerLevel >= 30) && (playerLevel < 40))
+			else if (playerLevel >= 30 && playerLevel < 40)
 				st.takeItems(57, 4500);
-			else if ((playerLevel >= 40) && (playerLevel < 50))
+			else if (playerLevel >= 40 && playerLevel < 50)
 				st.takeItems(57, 8000);
-			else if ((playerLevel >= 50) && (playerLevel < 60))
+			else if (playerLevel >= 50 && playerLevel < 60)
 				st.takeItems(57, 12500);
-			else if ((playerLevel >= 60) && (playerLevel < 70))
+			else if (playerLevel >= 60 && playerLevel < 70)
 				st.takeItems(57, 18000);
 			else if (playerLevel >= 70)
 				st.takeItems(57, 24500);
@@ -160,7 +160,7 @@ public class OracleTeleport extends Quest
 		QuestState st = player.getQuestState(getName());
 		
 		int npcId = npc.getNpcId();
-		if ((npcId >= 31494) && (npcId <= 31507))
+		if (npcId >= 31494 && npcId <= 31507)
 		{
 			if (player.getLevel() < 20)
 			{
@@ -180,7 +180,7 @@ public class OracleTeleport extends Quest
 				htmltext = "4.htm";
 			}
 		}
-		else if (((npcId >= 31095) && (npcId <= 31111)) || ((npcId >= 31114) && (npcId <= 31126)))
+		else if (npcId >= 31095 && npcId <= 31111 || npcId >= 31114 && npcId <= 31126)
 		{
 			int playerLevel = player.getLevel();
 			if (playerLevel < 20)
@@ -198,32 +198,32 @@ public class OracleTeleport extends Quest
 				htmltext = "ziggurat_nofrag.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 20) && (playerLevel < 30) && (st.getQuestItemsCount(57) < 2000))
+			else if (playerLevel >= 20 && playerLevel < 30 && st.getQuestItemsCount(57) < 2000)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 30) && (playerLevel < 40) && (st.getQuestItemsCount(57) < 4500))
+			else if (playerLevel >= 30 && playerLevel < 40 && st.getQuestItemsCount(57) < 4500)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 40) && (playerLevel < 50) && (st.getQuestItemsCount(57) < 8000))
+			else if (playerLevel >= 40 && playerLevel < 50 && st.getQuestItemsCount(57) < 8000)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 50) && (playerLevel < 60) && (st.getQuestItemsCount(57) < 12500))
+			else if (playerLevel >= 50 && playerLevel < 60 && st.getQuestItemsCount(57) < 12500)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 60) && (playerLevel < 70) && (st.getQuestItemsCount(57) < 18000))
+			else if (playerLevel >= 60 && playerLevel < 70 && st.getQuestItemsCount(57) < 18000)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);
 			}
-			else if ((playerLevel >= 70) && (st.getQuestItemsCount(57) < 24500))
+			else if (playerLevel >= 70 && st.getQuestItemsCount(57) < 24500)
 			{
 				htmltext = "ziggurat_noadena.htm";
 				st.exitQuest(true);

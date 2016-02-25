@@ -61,7 +61,7 @@ public class Q250_WatchWhatYouEat extends Quest
 				st.playSound("ItemSound.quest_finish");
 				st.exitQuest(false);
 			}
-			else if (event.equalsIgnoreCase("32743-22.html") && (st.getState() == State.COMPLETED))
+			else if (event.equalsIgnoreCase("32743-22.html") && st.getState() == State.COMPLETED)
 			{
 				htmltext = "32743-23.html";
 			}
@@ -118,7 +118,7 @@ public class Q250_WatchWhatYouEat extends Quest
 		QuestState st = player.getQuestState(qn);
 		if (st == null)
 			return null;
-		if ((st.getState() == State.STARTED) && (st.getInt("cond") == 1))
+		if (st.getState() == State.STARTED && st.getInt("cond") == 1)
 		{
 			for (int mob[] : _mobs)
 			{

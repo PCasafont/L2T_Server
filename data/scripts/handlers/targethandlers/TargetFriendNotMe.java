@@ -78,15 +78,15 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler
 		
 		for (L2PcInstance tempChar : player.getKnownList().getKnownPlayersInRadius(radius))
 		{
-			if ((tempChar == player) || tempChar.isDead())
+			if (tempChar == player || tempChar.isDead())
 				continue;
 			
-			if (((tempChar.getClan() != null) && (player.getClan() != null) && (player.getClan() == tempChar.getClan())) || ((playerPt != null) && (playerPt.isInParty(tempChar) || ((cmdChannel != null) && (tempChar.getParty() != null) && cmdChannel.isInChannel(tempChar.getParty())))) || ((tempChar.getAllyId() != 0) && (tempChar.getAllyId() == player.getAllyId())))
+			if (tempChar.getClan() != null && player.getClan() != null && player.getClan() == tempChar.getClan() || playerPt != null && (playerPt.isInParty(tempChar) || cmdChannel != null && tempChar.getParty() != null && cmdChannel.isInChannel(tempChar.getParty())) || tempChar.getAllyId() != 0 && tempChar.getAllyId() == player.getAllyId())
 			{
 				
 				if (tempChar.getPet() != null)
 					if (Util.checkIfInRange(radius, activeChar, tempChar.getPet(), true))
-						if (!(tempChar.getPet().isDead()) && player.checkPvpSkill(tempChar, skill) && !onlyFirst)
+						if (!tempChar.getPet().isDead() && player.checkPvpSkill(tempChar, skill) && !onlyFirst)
 							targetList.add(tempChar.getPet());
 				
 				if (!player.checkPvpSkill(tempChar, skill))

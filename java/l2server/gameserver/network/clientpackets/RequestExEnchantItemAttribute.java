@@ -88,19 +88,19 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		
 		L2ItemInstance item = player.getInventory().getItemByObjectId(itemObjId);
 		L2ItemInstance stone = player.getActiveEnchantAttrItem();
-		if ((item == null) || (stone == null))
+		if (item == null || stone == null)
 		{
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
-		if ((item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) && (item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL))
+		if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL)
 		{
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
 		
 		//can't enchant rods, shadow items, adventurers', Common Items, PvP items, hero items, cloaks, bracelets, underwear (e.g. shirt), belt, necklace, earring, ring
-		if (!item.getItem().isAttributable() || (item.getItem().getItemType() == L2WeaponType.FISHINGROD) || item.isShadowItem() || item.isCommonItem() || item.isPvp() || (!item.getItem().isAttributable() && item.isHeroItem()) || item.isTimeLimitedItem() || (item.getItem().getItemType() == L2WeaponType.NONE) || ((item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S) && (item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R)) || (item.getItem().getBodyPart() == L2Item.SLOT_BACK) || (item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET) || (item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR) || (item.getItem().getBodyPart() == L2Item.SLOT_BELT) || (item.getItem().getBodyPart() == L2Item.SLOT_NECK) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0) || ((item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0) || (item.getItem().getElementals() != null) || (item.getItemType() == L2ArmorType.SHIELD) || (item.getItemType() == L2ArmorType.SIGIL) || (item.getItem().getBodyPart() == L2Item.SLOT_BROOCH))
+		if (!item.getItem().isAttributable() || item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() || item.isCommonItem() || item.isPvp() || !item.getItem().isAttributable() && item.isHeroItem() || item.isTimeLimitedItem() || item.getItem().getItemType() == L2WeaponType.NONE || item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S && item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R || item.getItem().getBodyPart() == L2Item.SLOT_BACK || item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET || item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR || item.getItem().getBodyPart() == L2Item.SLOT_BELT || item.getItem().getBodyPart() == L2Item.SLOT_NECK || (item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 || (item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null || item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL || item.getItem().getBodyPart() == L2Item.SLOT_BROOCH)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ELEMENTAL_ENHANCE_REQUIREMENT_NOT_SUFFICIENT));
 			player.setActiveEnchantAttrItem(null);
@@ -139,14 +139,14 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		int limit = getLimit(item, stoneId);
 		int powerToAdd = getPowerToAdd(stoneId, elementValue, item);
 		
-		if ((item.isWeapon() && (item.getAttackElementType() != elementToAdd) && (item.getAttackElementType() != -2)) || (item.isArmor() && (item.getElemental(elementToAdd) == null) && (item.getElementals() != null) && (item.getElementals().length >= 3)))
+		if (item.isWeapon() && item.getAttackElementType() != elementToAdd && item.getAttackElementType() != -2 || item.isArmor() && item.getElemental(elementToAdd) == null && item.getElementals() != null && item.getElementals().length >= 3)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_ELEMENTAL_POWER_ALREADY_ADDED));
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
 		
-		if (item.isArmor() && (item.getElementals() != null))
+		if (item.isArmor() && item.getElementals() != null)
 		{
 			//cant add opposite element
 			for (Elementals elm : item.getElementals())
@@ -168,12 +168,12 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		
 		int maxCount = (limit - elementValue) / powerToAdd;
-		if (((limit - elementValue) % powerToAdd) > 0)
+		if ((limit - elementValue) % powerToAdd > 0)
 			maxCount++;
 		
 		int succeeded = 0;
 		int failed = 0;
-		for (int i = 0; (i < count) && (succeeded < maxCount); i++)
+		for (int i = 0; i < count && succeeded < maxCount; i++)
 		{
 			boolean success = false;
 			switch (Elementals.getItemElemental(stoneId)._type)
@@ -199,7 +199,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 				failed++;
 		}
 		
-		int newPower = elementValue + (powerToAdd * succeeded);
+		int newPower = elementValue + powerToAdd * succeeded;
 		if (newPower > limit)
 		{
 			newPower = limit;

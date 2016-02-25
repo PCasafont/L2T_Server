@@ -64,7 +64,7 @@ public class Sell implements IVoicedCommandHandler
 				params = "";
 			
 			boolean isSelling = player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL;
-			if (!isSelling && (player.getPrivateStoreType() > 0))
+			if (!isSelling && player.getPrivateStoreType() > 0)
 				return false;
 			
 			TradeList list = player.getCustomSellList();
@@ -84,7 +84,7 @@ public class Sell implements IVoicedCommandHandler
 							
 							int itemObjdId = Integer.parseInt(values[1]);
 							L2ItemInstance targetItem = player.getInventory().getItemByObjectId(itemObjdId);
-							if ((targetItem != null) && (targetItem.getCount() >= 1))
+							if (targetItem != null && targetItem.getCount() >= 1)
 								list.addItem(itemObjdId, 1L);
 						}
 						else
@@ -116,7 +116,7 @@ public class Sell implements IVoicedCommandHandler
 								int itemId = Integer.parseInt(values[2]);
 								
 								L2Item toSell = ItemTable.getInstance().getTemplate(itemId);
-								if ((toSell != null) && toSell.isTradeable())
+								if (toSell != null && toSell.isTradeable())
 								{
 									for (TradeItem item : list.getItems())
 									{
@@ -261,7 +261,7 @@ public class Sell implements IVoicedCommandHandler
 						if (params.length() >= 11)
 						{
 							String title = params.substring(11);
-							if ((title != null) && (title.length() < 29))
+							if (title != null && title.length() < 29)
 								list.setTitle(title);
 						}
 						else
@@ -324,7 +324,7 @@ public class Sell implements IVoicedCommandHandler
 					
 					for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 					{
-						if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
+						if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
 						{
 							player.sendMessage("Sell: Try to put your store a little further from " + c.getName() + ", please.");
 							return false;
@@ -368,7 +368,7 @@ public class Sell implements IVoicedCommandHandler
 			
 			//Title Section
 			sb.append("<center><table width=300 bgcolor=666666><tr><td align=center>Shop Message:</td></tr");
-			if ((list != null) && (list.getTitle() == null))
+			if (list != null && list.getTitle() == null)
 			{
 				sb.append("<tr><td align=center><edit var=\"addMes\" width=150 type=char length=16></td></tr>");
 				sb.append("<tr><td align=center><button action=\"bypass -h voice .sell setMessage $addMes\" value=\"Add Message!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
@@ -459,7 +459,7 @@ public class Sell implements IVoicedCommandHandler
 			count += item.getPriceItems().size();
 		}
 		
-		if ((count + 1) >= 17)
+		if (count + 1 >= 17)
 		{
 			player.sendMessage("You can't add more items!");
 			return false;

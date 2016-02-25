@@ -116,7 +116,7 @@ public class Apherus extends L2AttackableAIScript
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (!_doorIsOpen && (BossManager.getInstance().getBoss(_apherus) != null))
+		if (!_doorIsOpen && BossManager.getInstance().getBoss(_apherus) != null)
 		{
 			if (!player.destroyItemByItemId(_qn, _apherusKey, 1, player, true))
 				return "apherusDoor-no.html";

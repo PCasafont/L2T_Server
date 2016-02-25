@@ -105,7 +105,7 @@ public final class Q511_AwlUnderFoot extends Quest
 		for (L2PcInstance partyMember : party.getPartyMembers())
 		{
 			QuestState st = partyMember.getQuestState(qn);
-			if ((st == null) || (st.getInt("cond") < 1))
+			if (st == null || st.getInt("cond") < 1)
 				return getHtm(player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
 			if (!Util.checkIfInRange(1000, player, partyMember, true))
 				return getHtm(player.getHtmlPrefix(), "FortressWarden-06.htm").replace("%player%", partyMember.getName());
@@ -211,15 +211,15 @@ public final class Q511_AwlUnderFoot extends Quest
 	{
 		Fort fortress = npc.getFort();
 		FortDungeon dungeon = _fortDungeons.get(npc.getNpcId());
-		if ((player == null) || (fortress == null) || (dungeon == null))
+		if (player == null || fortress == null || dungeon == null)
 			return "FortressWarden-01.htm";
-		if ((player.getClan() == null) || (player.getClan().getHasFort() != fortress.getFortId()))
+		if (player.getClan() == null || player.getClan().getHasFort() != fortress.getFortId())
 			return "FortressWarden-01.htm";
 		else if (fortress.getFortState() == 0)
 			return "FortressWarden-02a.htm";
 		else if (fortress.getFortState() == 2)
 			return "FortressWarden-02b.htm";
-		else if (isEnter && (dungeon.getReEnterTime() > System.currentTimeMillis()))
+		else if (isEnter && dungeon.getReEnterTime() > System.currentTimeMillis())
 			return "FortressWarden-07.htm";
 		
 		return null;
@@ -285,7 +285,7 @@ public final class Q511_AwlUnderFoot extends Quest
 				st.set("cond", "0");
 			else
 				cond = st.getInt("cond");
-			if (_fortDungeons.containsKey(npcId) && (cond == 0))
+			if (_fortDungeons.containsKey(npcId) && cond == 0)
 			{
 				if (player.getLevel() >= 60)
 					htmltext = "FortressWarden-09.htm";
@@ -295,16 +295,16 @@ public final class Q511_AwlUnderFoot extends Quest
 					st.exitQuest(true);
 				}
 			}
-			else if (_fortDungeons.containsKey(npcId) && (cond > 0) && (st.getState() == State.STARTED))
+			else if (_fortDungeons.containsKey(npcId) && cond > 0 && st.getState() == State.STARTED)
 			{
 				long count = st.getQuestItemsCount(DL_MARK);
-				if ((cond == 1) && (count > 0))
+				if (cond == 1 && count > 0)
 				{
 					htmltext = "FortressWarden-14.htm";
 					st.takeItems(DL_MARK, count);
 					st.rewardItems(KNIGHT_EPALUETTE, count);
 				}
-				else if ((cond == 1) && (count == 0))
+				else if (cond == 1 && count == 0)
 					htmltext = "FortressWarden-10.htm";
 			}
 		}
@@ -314,12 +314,12 @@ public final class Q511_AwlUnderFoot extends Quest
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet)
 	{
-		L2Playable attacker = (isPet ? player.getPet() : player);
+		L2Playable attacker = isPet ? player.getPet() : player;
 		if (attacker == null)
 			attacker = player.getSummon(0);
-		if ((attacker.getLevel() - npc.getLevel()) >= 9)
+		if (attacker.getLevel() - npc.getLevel() >= 9)
 		{
-			if ((attacker.getBuffCount() > 0) || (attacker.getDanceCount() > 0))
+			if (attacker.getBuffCount() > 0 || attacker.getDanceCount() > 0)
 			{
 				npc.setTarget(attacker);
 				npc.doSimultaneousCast(RAID_CURSE.getSkill());
@@ -327,7 +327,7 @@ public final class Q511_AwlUnderFoot extends Quest
 			else if (player.getParty() != null)
 				for (L2PcInstance pmember : player.getParty().getPartyMembers())
 				{
-					if ((pmember.getBuffCount() > 0) || (pmember.getDanceCount() > 0))
+					if (pmember.getBuffCount() > 0 || pmember.getDanceCount() > 0)
 					{
 						npc.setTarget(pmember);
 						npc.doSimultaneousCast(RAID_CURSE.getSkill());

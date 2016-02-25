@@ -155,11 +155,11 @@ public class L2BossZone extends L2ZoneType
 				return;
 			
 			//GM's and instance players are not checked
-			if (player.isGM() || (player.getInstanceId() != 0))
+			if (player.isGM() || player.getInstanceId() != 0)
 				return;
 			
 			PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
-			if ((playerEntry == null) || !playerEntry.isEntryAllowed()) //Illegal entry
+			if (playerEntry == null || !playerEntry.isEntryAllowed()) //Illegal entry
 			{
 				kickPlayerFromEpicZone(player);
 				return;
@@ -191,7 +191,7 @@ public class L2BossZone extends L2ZoneType
 			}
 		}
 		
-		if ((character instanceof L2Attackable) && character.isRaid() && !character.isDead())
+		if (character instanceof L2Attackable && character.isRaid() && !character.isDead())
 			((L2Attackable) character).returnHome();
 	}
 	
@@ -278,14 +278,14 @@ public class L2BossZone extends L2ZoneType
 	 */
 	public void allowPlayerEntry(L2PcInstance player, int durationInSec)
 	{
-		if ((player == null) || player.isGM())
+		if (player == null || player.isGM())
 			return;
 		
 		PlayerEntry playerEntry = _playerEntries.get(player.getObjectId());
 		if (playerEntry == null)
-			_playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + (durationInSec * 1000)));
+			_playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + durationInSec * 1000));
 		else
-			playerEntry.setAllowedEntryTime(System.currentTimeMillis() + (durationInSec * 1000));
+			playerEntry.setAllowedEntryTime(System.currentTimeMillis() + durationInSec * 1000);
 	}
 	
 	public void removePlayer(L2PcInstance player)
@@ -353,7 +353,7 @@ public class L2BossZone extends L2ZoneType
 		Map<String, String> allPlayerIps = new HashMap<String, String>();
 		for (L2PcInstance player : getPlayersInside())
 		{
-			if ((player == null) || !player.isOnline())
+			if (player == null || !player.isOnline())
 				continue;
 			if (allPlayerIps.containsKey(player.getExternalIP()))
 			{

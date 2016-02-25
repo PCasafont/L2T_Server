@@ -211,13 +211,13 @@ public class MC_Show extends Quest
 	private void scheduleTimer()
 	{
 		int gameTime = getGameTime();
-		int hours = (gameTime / 60) % 24;
+		int hours = gameTime / 60 % 24;
 		int minutes = gameTime % 60;
 		int hourDiff, minDiff;
-		hourDiff = (20 - hours);
+		hourDiff = 20 - hours;
 		if (hourDiff < 0)
 			hourDiff = 24 - (hourDiff *= -1);
-		minDiff = (30 - minutes);
+		minDiff = 30 - minutes;
 		if (minDiff < 0)
 			minDiff = 60 - (minDiff *= -1);
 		long diff;
@@ -287,7 +287,7 @@ public class MC_Show extends Quest
 			isStarted = true;
 			addSpawn(mc, -56698, -56430, -2008, 32768, false, 0);
 		}
-		else if ((npc != null) && isStarted)
+		else if (npc != null && isStarted)
 		{
 			if (event.equalsIgnoreCase("6"))
 			{

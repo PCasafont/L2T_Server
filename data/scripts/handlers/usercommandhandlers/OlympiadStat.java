@@ -41,7 +41,7 @@ public class OlympiadStat implements IUserCommandHandler
 			return false;
 		
 		L2PcInstance noble = activeChar;
-		if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
+		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
 			noble = activeChar.getTarget().getActingPlayer();
 		
 		OlympiadNobleInfo nobleInfo = Olympiad.getInstance().getNobleInfo(noble.getObjectId());

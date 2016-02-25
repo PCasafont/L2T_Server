@@ -18,7 +18,7 @@ public class GrizzlyBear extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 320) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 320 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

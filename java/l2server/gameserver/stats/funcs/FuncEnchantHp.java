@@ -40,7 +40,7 @@ public class FuncEnchantHp extends Func
 	@Override
 	public void calc(Env env)
 	{
-		if ((cond != null) && !cond.test(env))
+		if (cond != null && !cond.test(env))
 			return;
 		
 		final L2ItemInstance item = (L2ItemInstance) funcOwner;

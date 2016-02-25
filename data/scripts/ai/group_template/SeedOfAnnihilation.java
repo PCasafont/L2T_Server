@@ -84,7 +84,7 @@ public class SeedOfAnnihilation extends Quest
 		_regionsData[2] = new SeedRegion(new int[] { 22763, 22764, 22765 }, new int[][] { { 22760, 22760, 22761 }, { 22760, 22760, 22762 }, { 22761, 22761, 22760 }, { 22761, 22761, 22762 }, { 22762, 22762, 22760 }, { 22762, 22762, 22761 } }, 60008, new int[][] { { -180971, 186361, -10528, 11632 }, { -180758, 186739, -10528, 11632 } });
 		int buffsNow = 0;
 		String var = loadGlobalQuestVar("SeedNextStatusChange");
-		if (var.equalsIgnoreCase("") || (Long.parseLong(var) < System.currentTimeMillis()))
+		if (var.equalsIgnoreCase("") || Long.parseLong(var) < System.currentTimeMillis())
 		{
 			buffsNow = Rnd.get(ZONE_BUFFS_LIST.length);
 			saveGlobalQuestVar("SeedBuffsList", String.valueOf(buffsNow));

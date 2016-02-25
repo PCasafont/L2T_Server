@@ -80,7 +80,7 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 			case State.STARTED:
 			{
 				final long count = st.getQuestItemsCount(FreyaSoulFragment); // How many items player has
-				if ((st.getInt("cond") == 1) && (st.getQuestItemsCount(FreyaSoulFragment) < RequiredItems))
+				if (st.getInt("cond") == 1 && st.getQuestItemsCount(FreyaSoulFragment) < RequiredItems)
 					htmltext = "32612-Freya-03.htm"; // Still has not the required amount
 				else if (count >= RequiredItems)
 				{
@@ -122,7 +122,7 @@ public class Q10502_FreyaEmbroideredSoulCloak extends Quest
 	{
 		final QuestState st = player.getQuestState(qn);
 		
-		if ((st != null) && (st.getState() == State.STARTED))
+		if (st != null && st.getState() == State.STARTED)
 			st.giveItems(FreyaSoulFragment, Rnd.get(MinGiven, MaxGiven));
 	}
 	

@@ -53,7 +53,7 @@ public class RollingDice implements IItemHandler
 			return;
 		}
 		
-		if ((itemId == 4625) || (itemId == 4626) || (itemId == 4627) || (itemId == 4628))
+		if (itemId == 4625 || itemId == 4626 || itemId == 4627 || itemId == 4628)
 		{
 			int number = rollDice(activeChar);
 			if (number == 0)

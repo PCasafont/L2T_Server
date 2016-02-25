@@ -76,18 +76,18 @@ public class Pdam implements ISkillHandler
 		
 		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
 		double soul = L2ItemInstance.CHARGED_NONE;
-		if ((weapon != null) && (weapon.getItemType() != L2WeaponType.DAGGER))
+		if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER)
 			soul = weapon.getChargedSoulShot();
 		
 		// If there is no weapon equipped, check for an active summon.
-		if ((weapon == null) && (activeChar instanceof L2Summon))
+		if (weapon == null && activeChar instanceof L2Summon)
 		{
 			L2Summon activeSummon = (L2Summon) activeChar;
 			soul = activeSummon.getChargedSoulShot();
 		}
 		
 		boolean damagesMultipliesPerTarget = skill.getId() == 30518;
-		double damageMultiplier = 1.0 + (targets.length * 0.1);
+		double damageMultiplier = 1.0 + targets.length * 0.1;
 		if (damageMultiplier > 2)
 			damageMultiplier = 2;
 		
@@ -99,7 +99,7 @@ public class Pdam implements ISkillHandler
 			
 			L2Character target = (L2Character) obj;
 			
-			if ((activeChar instanceof L2PcInstance) && (target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 			}
@@ -133,12 +133,12 @@ public class Pdam implements ISkillHandler
 				
 				crit = Formulas.calcCrit(critRate, target);
 			}
-			if (!crit && ((skill.getCondition() & L2Skill.COND_CRIT) != 0))
+			if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
 				damage = 0;
 			else
 				damage = (int) Formulas.calcPhysSkillDam(activeChar, target, skill, shld, crit, dual, soul);
 			
-			if ((target instanceof L2MonsterInstance) && Config.isServer(Config.TENKAI))
+			if (target instanceof L2MonsterInstance && Config.isServer(Config.TENKAI))
 			{
 				damage *= pveAoeNerf;
 				pveAoeNerf *= 0.5;
@@ -155,7 +155,7 @@ public class Pdam implements ISkillHandler
 			
 			if (damage != 0)
 			{
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).getAppearance().getInvisible())
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible())
 				{
 					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
 					
@@ -164,7 +164,7 @@ public class Pdam implements ISkillHandler
 				}
 			}
 			
-			if ((skill.getMaxSoulConsumeCount() > 0) && (activeChar instanceof L2PcInstance))
+			if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof L2PcInstance)
 			{
 				switch (((L2PcInstance) activeChar).getSouls())
 				{
@@ -200,7 +200,7 @@ public class Pdam implements ISkillHandler
 					{
 						//activeChar.stopSkillEffects(skill.getId());
 						effects = skill.getEffects(target, activeChar);
-						if ((effects != null) && (effects.length > 0))
+						if (effects != null && effects.length > 0)
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(skill);
@@ -212,7 +212,7 @@ public class Pdam implements ISkillHandler
 						// activate attacked effects, if any
 						//target.stopSkillEffects(skill.getId());
 						effects = skill.getEffects(activeChar, target, new Env(shld, L2ItemInstance.CHARGED_NONE));
-						if ((effects != null) && (effects.length > 0))
+						if (effects != null && effects.length > 0)
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(skill);
@@ -222,7 +222,7 @@ public class Pdam implements ISkillHandler
 				}
 				
 				int dmgCap = (int) target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
-				if ((dmgCap > 0) && (damage > dmgCap))
+				if (dmgCap > 0 && damage > dmgCap)
 					damage = dmgCap;
 				
 				if (damage > 0)
@@ -232,7 +232,7 @@ public class Pdam implements ISkillHandler
 					if (!target.isInvul(activeChar)) // Do not reflect if weapon is of type bow or target is invulnerable
 					{
 						// quick fix for no drop from raid if boss attack high-level char with damage reflection
-						if (!target.isRaid() || (activeChar.getLevel() <= (target.getLevel() + 8)))
+						if (!target.isRaid() || activeChar.getLevel() <= target.getLevel() + 8)
 						{
 							// Reduce HP of the target and calculate reflection damage to reduce HP of attacker if necessary
 							double reflectPercent = target.getStat().calcStat(Stats.REFLECT_DAMAGE_PERCENT, 0, null, null);
@@ -240,7 +240,7 @@ public class Pdam implements ISkillHandler
 							
 							if (reflectPercent > 0)
 							{
-								reflectedDamage = (int) ((reflectPercent / 100.) * Math.min(target.getCurrentHp(), damage));
+								reflectedDamage = (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 								
 								// Half the reflected damage for bows
 								/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
@@ -253,15 +253,15 @@ public class Pdam implements ISkillHandler
 								
 								boolean defLimitReflects = true;
 								
-								if ((target.getFirstEffect(10021) != null) || (target.getFirstEffect(10017) != null) || (target.getSkillLevelHash(13524) != 0))
+								if (target.getFirstEffect(10021) != null || target.getFirstEffect(10017) != null || target.getSkillLevelHash(13524) != 0)
 									defLimitReflects = false;
 								
-								if (defLimitReflects && (reflectedDamage > target.getPDef(activeChar)))
+								if (defLimitReflects && reflectedDamage > target.getPDef(activeChar))
 									reflectedDamage = target.getPDef(activeChar);
 								
 								int totalHealth = (int) (target.getCurrentHp() + target.getCurrentCp());
 								
-								if ((totalHealth - damage) <= 0)
+								if (totalHealth - damage <= 0)
 									reflectedDamage = 0;
 								
 								//damage -= reflectedDamage;
@@ -269,7 +269,7 @@ public class Pdam implements ISkillHandler
 						}
 					}
 					
-					if ((target.getFirstEffect(L2AbnormalType.SPALLATION) != null) && !Util.checkIfInRange(130, activeChar, target, false))
+					if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util.checkIfInRange(130, activeChar, target, false))
 					{
 						activeChar.sendMessage("Your attack has been blocked.");
 						
@@ -279,7 +279,7 @@ public class Pdam implements ISkillHandler
 					
 					activeChar.sendDamageMessage(target, (int) damage, false, crit, false);
 					
-					if (Config.LOG_GAME_DAMAGE && (activeChar instanceof L2Playable) && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+					if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
 					{
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[] { activeChar, " did damage ", damage, skill, " to ", target });
@@ -313,10 +313,10 @@ public class Pdam implements ISkillHandler
 						// Absorb HP from the damage inflicted
 						double absorbPercent = activeChar.getStat().calcStat(Stats.ABSORB_DAMAGE_PERCENT, 0, null, null);
 						
-						if ((absorbPercent > 0) && !activeChar.isInvul(target))
+						if (absorbPercent > 0 && !activeChar.isInvul(target))
 						{
 							int maxCanAbsorb = (int) (activeChar.getMaxHp() - activeChar.getCurrentHp());
-							int absorbDamage = (int) ((absorbPercent / 100.) * damage);
+							int absorbDamage = (int) (absorbPercent / 100. * damage);
 							
 							if (absorbDamage > maxCanAbsorb)
 								absorbDamage = maxCanAbsorb; // Can't absorb more than max hp
@@ -347,7 +347,7 @@ public class Pdam implements ISkillHandler
 						if (!Config.isServer(Config.TENKAI))
 						{
 							// Formula from Diego post, 700 from rpg tests
-							double vegdamage = ((700 * target.getPAtk(activeChar)) / activeChar.getPDef(target));
+							double vegdamage = 700 * target.getPAtk(activeChar) / activeChar.getPDef(target);
 							
 							activeChar.reduceCurrentHp(vegdamage, target, skill);
 						}
@@ -390,7 +390,7 @@ public class Pdam implements ISkillHandler
 						{
 							int count = 0;
 							
-							if ((((L2PcInstance) activeChar).getSouls() + skill.getNumSouls()) <= soulmastery.getNumSouls())
+							if (((L2PcInstance) activeChar).getSouls() + skill.getNumSouls() <= soulmastery.getNumSouls())
 								count = skill.getNumSouls();
 							else
 								count = soulmastery.getNumSouls() - ((L2PcInstance) activeChar).getSouls();
@@ -410,7 +410,7 @@ public class Pdam implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

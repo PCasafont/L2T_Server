@@ -60,19 +60,10 @@ public class Olympiad
 	private static final String OLYMPIAD_SAVE_NOBLES = "INSERT INTO olympiad_nobles " + "(`charId`,`class_id`,`olympiad_points`,`competitions_done`,`competitions_won`,`competitions_lost`," + "`competitions_drawn`,`competitions_classed`,`competitions_nonclassed`,`settled`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 	private static final String OLYMPIAD_UPDATE_NOBLES = "UPDATE olympiad_nobles SET " + "olympiad_points = ?, competitions_done = ?, competitions_won = ?, competitions_lost = ?, competitions_drawn = ?, " + "competitions_classed = ?, competitions_nonclassed = ?, settled = ? WHERE charId = ?";
 	private static final String OLYMPIAD_DELETE_NOBLE = "DELETE FROM olympiad_nobles WHERE charId = ? LIMIT 1";
-	private static final String OLYMPIAD_GET_HEROES = "SELECT charId FROM olympiad_nobles "
-		+ "WHERE class_id = ? AND competitions_done >= " + (Config.isServer(Config.TENKAI_ESTHUS) ? 5 : 10) + " AND competitions_won > 0 "
-		+ "ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
-	private static final String GET_ALL_CLASSIFIED_NOBLES = "SELECT charId from olympiad_nobles_eom "
-		+ "WHERE competitions_done >= 10 AND competitions_won > 0 ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
-	private static final String GET_EACH_CLASS_LEADER = "SELECT characters.char_name from olympiad_nobles_eom, characters "
-		+ "WHERE characters.charId = olympiad_nobles_eom.charId AND olympiad_nobles_eom.class_id = ? "
-		+ "AND olympiad_nobles_eom.competitions_done >= 10 AND olympiad_nobles_eom.competitions_won > 0 "
-		+ "ORDER BY olympiad_nobles_eom.olympiad_points DESC, olympiad_nobles_eom.competitions_done DESC, olympiad_nobles_eom.competitions_won DESC LIMIT 10";
-	private static final String GET_EACH_CLASS_LEADER_CURRENT = "SELECT characters.char_name from olympiad_nobles, characters "
-		+ "WHERE characters.charId = olympiad_nobles.charId AND olympiad_nobles.class_id = ? "
-		+ "AND olympiad_nobles.competitions_done >= 10 AND olympiad_nobles.competitions_won > 0 "
-		+ "ORDER BY olympiad_nobles.olympiad_points DESC, olympiad_nobles.competitions_done DESC, olympiad_nobles.competitions_won DESC LIMIT 10";
+	private static final String OLYMPIAD_GET_HEROES = "SELECT charId FROM olympiad_nobles " + "WHERE class_id = ? AND competitions_done >= " + (Config.isServer(Config.TENKAI_ESTHUS) ? 5 : 10) + " AND competitions_won > 0 " + "ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
+	private static final String GET_ALL_CLASSIFIED_NOBLES = "SELECT charId from olympiad_nobles_eom " + "WHERE competitions_done >= 10 AND competitions_won > 0 ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
+	private static final String GET_EACH_CLASS_LEADER = "SELECT characters.char_name from olympiad_nobles_eom, characters " + "WHERE characters.charId = olympiad_nobles_eom.charId AND olympiad_nobles_eom.class_id = ? " + "AND olympiad_nobles_eom.competitions_done >= 10 AND olympiad_nobles_eom.competitions_won > 0 " + "ORDER BY olympiad_nobles_eom.olympiad_points DESC, olympiad_nobles_eom.competitions_done DESC, olympiad_nobles_eom.competitions_won DESC LIMIT 10";
+	private static final String GET_EACH_CLASS_LEADER_CURRENT = "SELECT characters.char_name from olympiad_nobles, characters " + "WHERE characters.charId = olympiad_nobles.charId AND olympiad_nobles.class_id = ? " + "AND olympiad_nobles.competitions_done >= 10 AND olympiad_nobles.competitions_won > 0 " + "ORDER BY olympiad_nobles.olympiad_points DESC, olympiad_nobles.competitions_done DESC, olympiad_nobles.competitions_won DESC LIMIT 10";
 	
 	private static final String OLYMPIAD_MONTH_CLEAR = "DELETE FROM olympiad_nobles_eom";
 	private static final String OLYMPIAD_MONTH_CREATE = "INSERT INTO olympiad_nobles_eom SELECT * FROM olympiad_nobles";
@@ -162,7 +153,7 @@ public class Olympiad
 			_nextWeeklyChange = 0;
 		}
 		
-		if ((_olympiadEnd == 0) || (_olympiadEnd < Calendar.getInstance().getTimeInMillis()))
+		if (_olympiadEnd == 0 || _olympiadEnd < Calendar.getInstance().getTimeInMillis())
 			setNewOlympiadEnd();
 		else
 			scheduleWeeklyChange();
@@ -267,7 +258,7 @@ public class Olympiad
 		_compStart = Calendar.getInstance();
 		// Make sure that it is on weekend
 		int day = _compStart.get(Calendar.DAY_OF_WEEK);
-		if ((day != Calendar.FRIDAY) && (day != Calendar.SATURDAY) && (day != Calendar.SUNDAY))
+		if (day != Calendar.FRIDAY && day != Calendar.SATURDAY && day != Calendar.SUNDAY)
 		{
 			while (_compStart.get(Calendar.DAY_OF_WEEK) != Calendar.FRIDAY)
 				_compStart.add(Calendar.DAY_OF_MONTH, 1);
@@ -419,8 +410,8 @@ public class Olympiad
 		
 		long milliToStart = getMillisToCompBegin();
 		
-		double numSecs = (milliToStart / 1000) % 60;
-		double countDown = ((milliToStart / 1000) - numSecs) / 60;
+		double numSecs = milliToStart / 1000 % 60;
+		double countDown = (milliToStart / 1000 - numSecs) / 60;
 		int numMins = (int) Math.floor(countDown % 60);
 		countDown = (countDown - numMins) / 60;
 		int numHours = (int) Math.floor(countDown % 24);
@@ -436,7 +427,7 @@ public class Olympiad
 	private long getMillisToOlympiadEnd()
 	{
 		// if (_olympiadEnd > Calendar.getInstance().getTimeInMillis())
-		return (_olympiadEnd - Calendar.getInstance().getTimeInMillis());
+		return _olympiadEnd - Calendar.getInstance().getTimeInMillis();
 		// return 10L;
 	}
 	
@@ -451,7 +442,7 @@ public class Olympiad
 	protected long getMillisToValidationEnd()
 	{
 		if (_validationEnd > Calendar.getInstance().getTimeInMillis())
-			return (_validationEnd - Calendar.getInstance().getTimeInMillis());
+			return _validationEnd - Calendar.getInstance().getTimeInMillis();
 		return 10L;
 	}
 	
@@ -491,11 +482,11 @@ public class Olympiad
 	
 	private long getMillisToCompBegin()
 	{
-		if ((_compStart.getTimeInMillis() < Calendar.getInstance().getTimeInMillis()) && (_compEnd > Calendar.getInstance().getTimeInMillis()))
+		if (_compStart.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() && _compEnd > Calendar.getInstance().getTimeInMillis())
 			return 10L;
 		
 		if (_compStart.getTimeInMillis() > Calendar.getInstance().getTimeInMillis())
-			return (_compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
+			return _compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 		
 		return setNewCompBegin();
 	}
@@ -505,7 +496,7 @@ public class Olympiad
 		_compStart = Calendar.getInstance();
 		// Make sure that it is on weekend
 		int day = _compStart.get(Calendar.DAY_OF_WEEK);
-		if ((day != Calendar.FRIDAY) && (day != Calendar.SATURDAY))
+		if (day != Calendar.FRIDAY && day != Calendar.SATURDAY)
 		{
 			while (_compStart.get(Calendar.DAY_OF_WEEK) != Calendar.FRIDAY)
 				_compStart.add(Calendar.DAY_OF_MONTH, 1);
@@ -533,20 +524,20 @@ public class Olympiad
 		
 		Log.info("Olympiad System: New Schedule @ " + _compStart.getTime());
 		
-		return (_compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
+		return _compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
 	
 	protected long getMillisToCompEnd()
 	{
 		// if (_compEnd > Calendar.getInstance().getTimeInMillis())
-		return (_compEnd - Calendar.getInstance().getTimeInMillis());
+		return _compEnd - Calendar.getInstance().getTimeInMillis();
 		// return 10L;
 	}
 	
 	private long getMillisToWeekChange()
 	{
 		if (_nextWeeklyChange > Calendar.getInstance().getTimeInMillis())
-			return (_nextWeeklyChange - Calendar.getInstance().getTimeInMillis());
+			return _nextWeeklyChange - Calendar.getInstance().getTimeInMillis();
 		return 10L;
 	}
 	
@@ -582,7 +573,7 @@ public class Olympiad
 	
 	public boolean playerInStadia(L2PcInstance player)
 	{
-		return (ZoneManager.getInstance().getOlympiadStadium(player) != null);
+		return ZoneManager.getInstance().getOlympiadStadium(player) != null;
 	}
 	
 	/**
@@ -590,7 +581,7 @@ public class Olympiad
 	 */
 	protected synchronized void saveNobleData()
 	{
-		if ((_nobles == null) || _nobles.isEmpty())
+		if (_nobles == null || _nobles.isEmpty())
 			return;
 		
 		Connection con = L2DatabaseFactory.getInstance().getConnection();

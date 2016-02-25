@@ -245,7 +245,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 		{
 			while ((sc = ssc.accept()) != null)
 			{
-				if ((_acceptFilter == null) || _acceptFilter.accept(sc))
+				if (_acceptFilter == null || _acceptFilter.accept(sc))
 				{
 					sc.configureBlocking(false);
 					SelectionKey clientKey = sc.register(_selector, SelectionKey.OP_READ);
@@ -532,7 +532,7 @@ public final class Core<T extends MMOClient<?>> extends Thread
 			hasPending = true;
 		}
 		
-		if ((DIRECT_WRITE_BUFFER.remaining() > 1) && !con.hasPendingWriteBuffer())
+		if (DIRECT_WRITE_BUFFER.remaining() > 1 && !con.hasPendingWriteBuffer())
 		{
 			final NioNetStackList<SendablePacket<T>> sendQueue = con.getSendQueue();
 			final T client = con.getClient();

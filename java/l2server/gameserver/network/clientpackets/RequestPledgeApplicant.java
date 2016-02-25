@@ -38,7 +38,7 @@ public final class RequestPledgeApplicant extends L2GameClientPacket
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if ((activeChar == null) || !activeChar.isClanLeader())
+		if (activeChar == null || !activeChar.isClanLeader())
 			return;
 		
 		ClanRecruitWaitingUser applicant = ClanRecruitManager.getInstance().getApplicant(_applicantId);

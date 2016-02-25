@@ -29,7 +29,7 @@ public class EventTeleporter implements Runnable
 		_coordinates = coordinates;
 		_restore = restore;
 		
-		long delay = (((playerInstance.getEvent() == null) || playerInstance.getEvent().isState(EventState.STARTED)) ? Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) * 1000;
+		long delay = (playerInstance.getEvent() == null || playerInstance.getEvent().isState(EventState.STARTED) ? Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) * 1000;
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(this, fastSchedule ? 0 : delay);
 	}
@@ -41,7 +41,7 @@ public class EventTeleporter implements Runnable
 		_restore = restore;
 		_heal = heal;
 		
-		long delay = (((playerInstance.getEvent() == null) || playerInstance.getEvent().isState(EventState.STARTED)) ? Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) * 1000;
+		long delay = (playerInstance.getEvent() == null || playerInstance.getEvent().isState(EventState.STARTED) ? Config.INSTANCED_EVENT_RESPAWN_TELEPORT_DELAY : Config.INSTANCED_EVENT_START_LEAVE_TELEPORT_DELAY) * 1000;
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(this, fastSchedule ? 0 : delay);
 	}
@@ -141,8 +141,8 @@ public class EventTeleporter implements Runnable
 				{
 					float r1 = Rnd.get(1000);
 					int r2 = Rnd.get(100);
-					x = Math.round(((float) Math.cos((r1 / 1000) * 2 * Math.PI) * r2) + _coordinates.getX());
-					y = Math.round(((float) Math.sin((r1 / 1000) * 2 * Math.PI) * r2) + _coordinates.getY());
+					x = Math.round((float) Math.cos(r1 / 1000 * 2 * Math.PI) * r2 + _coordinates.getX());
+					y = Math.round((float) Math.sin(r1 / 1000 * 2 * Math.PI) * r2 + _coordinates.getY());
 					z = GeoData.getInstance().getHeight(x, y, _coordinates.getZ());
 				}
 			}
@@ -151,7 +151,7 @@ public class EventTeleporter implements Runnable
 				_playerInstance.setInstanceId(0);
 				_playerInstance.setEvent(null);
 				_playerInstance.returnedFromEvent();
-				if ((_playerInstance.getEventSavedPosition().getX() == 0) && (_playerInstance.getEventSavedPosition().getY() == 0) && (_playerInstance.getEventSavedPosition().getZ() == 0))
+				if (_playerInstance.getEventSavedPosition().getX() == 0 && _playerInstance.getEventSavedPosition().getY() == 0 && _playerInstance.getEventSavedPosition().getZ() == 0)
 				{
 					x = _coordinates.getX();
 					y = _coordinates.getY();

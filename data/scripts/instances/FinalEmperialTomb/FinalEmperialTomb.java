@@ -200,7 +200,7 @@ public class FinalEmperialTomb extends Quest
 			
 			XmlDocument doc = new XmlDocument(file);
 			XmlNode first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getName()))
+			if (first != null && "list".equalsIgnoreCase(first.getName()))
 			{
 				for (XmlNode n : first.getChildren())
 				{
@@ -555,7 +555,7 @@ public class FinalEmperialTomb extends Quest
 		@Override
 		public void run()
 		{
-			if ((InstanceManager.getInstance().getWorld(_world.instanceId) != _world) || _world.portraits.isEmpty())
+			if (InstanceManager.getInstance().getWorld(_world.instanceId) != _world || _world.portraits.isEmpty())
 			{
 				if (debug)
 					Log.info("[Final Emperial Tomb] Instance is deleted or all Portraits is killed.");
@@ -594,7 +594,7 @@ public class FinalEmperialTomb extends Quest
 				case 0: // new song play
 					if (_world.isVideo)
 						_world.songTask = ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(_world, 0), 1000);
-					else if ((_world.frintezza != null) && !_world.frintezza.isDead())
+					else if (_world.frintezza != null && !_world.frintezza.isDead())
 					{
 						int rnd = Rnd.get(100);
 						for (FrintezzaSong element : FRINTEZZASONGLIST)
@@ -617,7 +617,7 @@ public class FinalEmperialTomb extends Quest
 					if (skill == null)
 						return;
 					
-					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
+					if (_world.frintezza != null && !_world.frintezza.isDead() && _world.activeScarlet != null && !_world.activeScarlet.isDead())
 					{
 						List<L2Character> targetList = new ArrayList<L2Character>();
 						if (skill.getSkillType() == L2SkillType.DEBUFF)
@@ -625,11 +625,11 @@ public class FinalEmperialTomb extends Quest
 							for (int objId : _world.allowed)
 							{
 								L2PcInstance player = L2World.getInstance().getPlayer(objId);
-								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.instanceId))
+								if (player != null && player.isOnline() && player.getInstanceId() == _world.instanceId)
 								{
 									if (!player.isDead())
 										targetList.add(player);
-									if ((player.getPet() != null) && !player.getPet().isDead())
+									if (player.getPet() != null && !player.getPet().isDead())
 										targetList.add(player.getPet());
 								}
 							}
@@ -952,7 +952,7 @@ public class FinalEmperialTomb extends Quest
 			for (int objId : _world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.instanceId))
+				if (player != null && player.isOnline() && player.getInstanceId() == _world.instanceId)
 				{
 					player.abortAttack();
 					player.abortCast();
@@ -970,7 +970,7 @@ public class FinalEmperialTomb extends Quest
 			for (int objId : _world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.instanceId))
+				if (player != null && player.isOnline() && player.getInstanceId() == _world.instanceId)
 				{
 					player.enableAllSkills();
 					player.setIsImmobilized(false);
@@ -983,7 +983,7 @@ public class FinalEmperialTomb extends Quest
 			for (int objId : _world.allowed)
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.instanceId))
+				if (player != null && player.isOnline() && player.getInstanceId() == _world.instanceId)
 				{
 					if (player.getX() < x)
 						player.sendPacket(packet1);
@@ -1037,11 +1037,11 @@ public class FinalEmperialTomb extends Quest
 		private void addAggroToMobs()
 		{
 			L2PcInstance target = L2World.getInstance().getPlayer(_world.allowed.get(Rnd.get(_world.allowed.size())));
-			if ((target == null) || (target.getInstanceId() != _world.instanceId) || target.isDead() || target.isFakeDeath())
+			if (target == null || target.getInstanceId() != _world.instanceId || target.isDead() || target.isFakeDeath())
 				for (int objId : _world.allowed)
 				{
 					target = L2World.getInstance().getPlayer(objId);
-					if ((target != null) && (target.getInstanceId() == _world.instanceId) && !target.isDead() && !target.isFakeDeath())
+					if (target != null && target.getInstanceId() == _world.instanceId && !target.isDead() && !target.isFakeDeath())
 						break;
 					target = null;
 				}
@@ -1082,7 +1082,7 @@ public class FinalEmperialTomb extends Quest
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
-			if ((player != null) && player.isOnline())
+			if (player != null && player.isOnline())
 				player.sendPacket(sm);
 		}
 	}
@@ -1092,7 +1092,7 @@ public class FinalEmperialTomb extends Quest
 		for (int objId : world.allowed)
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.instanceId))
+			if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 				player.sendPacket(packet);
 		}
 	}
@@ -1103,7 +1103,7 @@ public class FinalEmperialTomb extends Quest
 		for (int objId : world.allowed)
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.instanceId))
+			if (player != null && player.isOnline() && player.getInstanceId() == world.instanceId)
 				npcKnownPlayers.put(player.getObjectId(), player);
 		}
 	}
@@ -1115,11 +1115,11 @@ public class FinalEmperialTomb extends Quest
 		if (tmpworld instanceof FETWorld)
 		{
 			FETWorld world = (FETWorld) tmpworld;
-			if ((npc.getNpcId() == SCARLET1) && (world.status == 3) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.80)))
+			if (npc.getNpcId() == SCARLET1 && world.status == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.80)
 			{
 				controlStatus(world);
 			}
-			else if ((npc.getNpcId() == SCARLET1) && (world.status == 4) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.20)))
+			else if (npc.getNpcId() == SCARLET1 && world.status == 4 && npc.getCurrentHp() < npc.getMaxHp() * 0.20)
 			{
 				controlStatus(world);
 			}

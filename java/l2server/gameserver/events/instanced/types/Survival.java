@@ -89,7 +89,7 @@ public class Survival extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
 	{
-		if ((killedPlayerInstance == null) || !isState(EventState.STARTED))
+		if (killedPlayerInstance == null || !isState(EventState.STARTED))
 			return;
 		
 		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();

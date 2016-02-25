@@ -87,8 +87,8 @@ public final class RequestActionUse extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_actionId = readD();
-		_ctrlPressed = (readD() == 1);
-		_shiftPressed = (readC() == 1);
+		_ctrlPressed = readD() == 1;
+		_shiftPressed = readC() == 1;
 	}
 	
 	@Override
@@ -120,7 +120,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		if (activeChar.isTransformed())
 		{
 			// Allow naviarope to use summon actions
-			int[] allowedActions = activeChar.isTransformed() && (activeChar.getTransformationId() != 509) ? ExBasicActionList._actionsOnTransform : ExBasicActionList._defaultActionList;
+			int[] allowedActions = activeChar.isTransformed() && activeChar.getTransformationId() != 509 ? ExBasicActionList._actionsOnTransform : ExBasicActionList._defaultActionList;
 			if (!(Arrays.binarySearch(allowedActions, _actionId) >= 0))
 			{
 				getClient().sendPacket(ActionFailed.STATIC_PACKET);
@@ -143,7 +143,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				if (activeChar.getMountType() != 0)
 					break;
 				
-				if ((target != null) && !activeChar.isSitting() && (target instanceof L2StaticObjectInstance) && (((L2StaticObjectInstance) target).getType() == 1) && (CastleManager.getInstance().getCastle(target) != null) && activeChar.isInsideRadius(target, L2StaticObjectInstance.INTERACTION_DISTANCE, false, false))
+				if (target != null && !activeChar.isSitting() && target instanceof L2StaticObjectInstance && ((L2StaticObjectInstance) target).getType() == 1 && CastleManager.getInstance().getCastle(target) != null && activeChar.isInsideRadius(target, L2StaticObjectInstance.INTERACTION_DISTANCE, false, false))
 				{
 					ChairSit cs = new ChairSit(activeChar, ((L2StaticObjectInstance) target).getStaticObjectId());
 					activeChar.sendPacket(cs);
@@ -180,7 +180,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 21: // Change Movement Mode (pet follow/stop)
 				for (L2Summon summon : summons)
 				{
-					if ((summon != null) && !activeChar.isBetrayed())
+					if (summon != null && !activeChar.isBetrayed())
 					{
 						if (summon != summons.get(0))
 							((L2SummonAI) summon.getAI()).setStartFollowController(!((L2SummonAI) summons.get(0).getAI()).getStartFollowController());
@@ -198,7 +198,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				
 				List<AbstractNodeLoc> paths = PathFinding.getInstance().findPath(activeChar.getX(), activeChar.getY(), activeChar.getZ(), target.getX(), target.getY(), target.getZ(), activeChar.getInstanceId(), true);
-				if (((paths == null) || (paths.size() < 2)) && !GeoData.getInstance().canSeeTarget(activeChar, target))
+				if ((paths == null || paths.size() < 2) && !GeoData.getInstance().canSeeTarget(activeChar, target))
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_SEE_TARGET));
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -212,7 +212,7 @@ public final class RequestActionUse extends L2GameClientPacket
 					return;
 				}
 				
-				if ((target.getActingPlayer() != null) && (activeChar.getSiegeState() > 0) && activeChar.isInsideZone(L2Character.ZONE_SIEGE) && (target.getActingPlayer().getSiegeState() == activeChar.getSiegeState()) && (target.getActingPlayer() != activeChar) && (target.getActingPlayer().getSiegeSide() == activeChar.getSiegeSide()) && !Config.isServer(Config.TENKAI))
+				if (target.getActingPlayer() != null && activeChar.getSiegeState() > 0 && activeChar.isInsideZone(L2Character.ZONE_SIEGE) && target.getActingPlayer().getSiegeState() == activeChar.getSiegeState() && target.getActingPlayer() != activeChar && target.getActingPlayer().getSiegeSide() == activeChar.getSiegeSide() && !Config.isServer(Config.TENKAI))
 				{
 					if (TerritoryWarManager.getInstance().isTWInProgress())
 						sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_ATTACK_A_MEMBER_OF_THE_SAME_TERRITORY));
@@ -224,9 +224,9 @@ public final class RequestActionUse extends L2GameClientPacket
 				
 				for (L2Summon summon : summons)
 				{
-					if ((summon != null) && (summon != target) && (activeChar != target) && !summon.isBetrayed())
+					if (summon != null && summon != target && activeChar != target && !summon.isBetrayed())
 					{
-						if ((summon instanceof L2MobSummonInstance) && !(target instanceof L2MobSummonInstance))
+						if (summon instanceof L2MobSummonInstance && !(target instanceof L2MobSummonInstance))
 						{
 							activeChar.sendMessage("Your Coke Mob is only able to attack other trained monsters");
 							continue;
@@ -234,13 +234,13 @@ public final class RequestActionUse extends L2GameClientPacket
 						
 						if (summon.isAttackingDisabled())
 						{
-							if ((summon.getAttackEndTime() > TimeController.getGameTicks()) && (summon.getTarget() == target))
+							if (summon.getAttackEndTime() > TimeController.getGameTicks() && summon.getTarget() == target)
 								summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 							else
 								continue;
 						}
 						
-						if ((summon instanceof L2PetInstance) && ((summon.getLevel() - activeChar.getLevel()) > 20))
+						if (summon instanceof L2PetInstance && summon.getLevel() - activeChar.getLevel() > 20)
 						{
 							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_TOO_HIGH_TO_CONTROL));
 							continue;
@@ -252,7 +252,7 @@ public final class RequestActionUse extends L2GameClientPacket
 							continue;
 						}
 						
-						if ((summon.getNpcId() == 12564) || (summon.getNpcId() == 12621))
+						if (summon.getNpcId() == 12564 || summon.getNpcId() == 12621)
 						{
 							// sin eater and wyvern can't attack with attack button
 							activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -289,7 +289,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 1101:
 				for (L2Summon summon : summons)
 				{
-					if ((summon != null) && !summon.isMovementDisabled() && !summon.isBetrayed())
+					if (summon != null && !summon.isMovementDisabled() && !summon.isBetrayed())
 					{
 						summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 						if (_actionId == 1101)
@@ -357,7 +357,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				useSkill(4138);
 				break;
 			case 41: // Wild Hog Cannon - Attack
-				if ((target != null) && ((target instanceof L2DoorInstance) || (target instanceof L2SiegeFlagInstance)))
+				if (target != null && (target instanceof L2DoorInstance || target instanceof L2SiegeFlagInstance))
 					useSkill(4230);
 				else
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
@@ -424,7 +424,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 1100:
 				for (L2Summon summon : summons)
 				{
-					if ((target != null) && (summon != null) && (summon != target) && !summon.isMovementDisabled() && !summon.isBetrayed() && !(summon instanceof L2MobSummonInstance))
+					if (target != null && summon != null && summon != target && !summon.isMovementDisabled() && !summon.isBetrayed() && !(summon instanceof L2MobSummonInstance))
 					{
 						summon.setFollowStatus(false);
 						summon.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(target.getX(), target.getY(), target.getZ(), 0));
@@ -432,7 +432,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				break;
 			case 54: // Move to target hatch/strider
-				if ((target != null) && (pet != null) && (pet != target) && !pet.isMovementDisabled() && !pet.isBetrayed())
+				if (target != null && pet != null && pet != target && !pet.isMovementDisabled() && !pet.isBetrayed())
 				{
 					pet.setFollowStatus(false);
 					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(target.getX(), target.getY(), target.getZ(), 0));
@@ -442,7 +442,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				activeChar.tryOpenPrivateSellStore(true);
 				break;
 			case 65: // Bot Report
-				if ((target == null) || (target == activeChar) || !(target instanceof L2PcInstance) || (((L2PcInstance) target).getClient().getConnection() == null))
+				if (target == null || target == activeChar || !(target instanceof L2PcInstance) || ((L2PcInstance) target).getClient().getConnection() == null)
 					return;
 				
 				if (!activeChar.getFloodProtectors().getReportBot().tryPerformAction("ReportBot"))
@@ -742,7 +742,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				break;
 			case 1084: // Switch State
 				//useSkill(6054);
-				if ((pet != null) && (pet instanceof L2BabyPetInstance))
+				if (pet != null && pet instanceof L2BabyPetInstance)
 					((L2BabyPetInstance) pet).switchMode();
 				break;
 			case 1086: // Panther Cancel
@@ -1137,13 +1137,13 @@ public final class RequestActionUse extends L2GameClientPacket
 		summons.add(activeChar.getPet());
 		for (L2Summon summon : summons)
 		{
-			if ((summon == null) || summon.isBetrayed())
+			if (summon == null || summon.isBetrayed())
 				continue;
 			
 			int lvl;
 			if (summon instanceof L2PetInstance)
 			{
-				if ((summon.getLevel() - activeChar.getLevel()) > 20)
+				if (summon.getLevel() - activeChar.getLevel() > 20)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_TOO_HIGH_TO_CONTROL));
 					continue;
@@ -1157,7 +1157,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				continue;
 			
 			L2Skill skill = SkillTable.getInstance().getInfo(skillId, lvl);
-			if ((skill == null) || (skill.isOffensive() && (activeChar == target)))
+			if (skill == null || skill.isOffensive() && activeChar == target)
 				continue;
 			
 			summon.setTarget(target);
@@ -1201,9 +1201,9 @@ public final class RequestActionUse extends L2GameClientPacket
 		if (activeChar.canMakeSocialAction())
 		{
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), id));
-			if (activeChar.isPlayingEvent() && (activeChar.getEvent() instanceof SimonSays))
+			if (activeChar.isPlayingEvent() && activeChar.getEvent() instanceof SimonSays)
 				((SimonSays) activeChar.getEvent()).onSocialAction(activeChar, id);
-			if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2Npc) && (((L2Npc) activeChar.getTarget()).getTemplate().getEventQuests(QuestEventType.ON_SOCIAL_ACTION) != null))
+			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2Npc && ((L2Npc) activeChar.getTarget()).getTemplate().getEventQuests(QuestEventType.ON_SOCIAL_ACTION) != null)
 			{
 				for (Quest quest : ((L2Npc) activeChar.getTarget()).getTemplate().getEventQuests(QuestEventType.ON_SOCIAL_ACTION))
 					quest.notifySocialAction((L2Npc) activeChar.getTarget(), activeChar, id);
@@ -1230,7 +1230,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		}
 		
 		double distance = activeChar.getPlanDistanceSq(player);
-		if ((distance > 2000) || (distance < 70))
+		if (distance > 2000 || distance < 70)
 		{
 			activeChar.sendPacket(SystemMessageId.TARGET_DO_NOT_MEET_LOC_REQUIREMENTS);
 			return;
@@ -1305,6 +1305,6 @@ public final class RequestActionUse extends L2GameClientPacket
 	@Override
 	protected boolean triggersOnActionRequest()
 	{
-		return (_actionId != 10) && (_actionId != 28);
+		return _actionId != 10 && _actionId != 28;
 	}
 }

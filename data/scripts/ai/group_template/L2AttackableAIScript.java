@@ -117,21 +117,21 @@ public class L2AttackableAIScript extends QuestJython
 		
 		if (caster.getPet() != null)
 		{
-			if ((targets.length == 1) && Util.contains(targets, caster.getPet()))
+			if (targets.length == 1 && Util.contains(targets, caster.getPet()))
 				skillAggroPoints = 0;
 		}
 		
 		if (skillAggroPoints > 0)
 		{
-			if (attackable.hasAI() && (attackable.getAI().getIntention() == AI_INTENTION_ATTACK))
+			if (attackable.hasAI() && attackable.getAI().getIntention() == AI_INTENTION_ATTACK)
 			{
 				L2Object npcTarget = attackable.getTarget();
 				for (L2Object skillTarget : targets)
 				{
-					if ((npcTarget == skillTarget) || (npc == skillTarget))
+					if (npcTarget == skillTarget || npc == skillTarget)
 					{
 						L2Character originalCaster = isPet ? caster.getPet() : caster;
-						attackable.addDamageHate(originalCaster, 0, (skillAggroPoints * 150) / (attackable.getLevel() + 7));
+						attackable.addDamageHate(originalCaster, 0, skillAggroPoints * 150 / (attackable.getLevel() + 7));
 					}
 				}
 			}
@@ -146,7 +146,7 @@ public class L2AttackableAIScript extends QuestJython
 		if (attacker == null)
 			return null;
 		
-		L2Character originalAttackTarget = (isPet ? attacker.getPet() : attacker);
+		L2Character originalAttackTarget = isPet ? attacker.getPet() : attacker;
 		
 		// Preventing some strange behavior with CALLS (1 calls 2, 2 calls 1, 1 calls 2, etc)
 		if (npc.getAI().getAttackTarget() != null)
@@ -184,15 +184,15 @@ public class L2AttackableAIScript extends QuestJython
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if ((attacker != null) && (npc instanceof L2Attackable))
+		if (attacker != null && npc instanceof L2Attackable)
 		{
 			L2Attackable attackable = (L2Attackable) npc;
 			
 			L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
-			if (isPet && (originalAttacker == null) && (attacker.getSummons().size() > 0))
+			if (isPet && originalAttacker == null && attacker.getSummons().size() > 0)
 				originalAttacker = attacker.getSummon(Rnd.get(attacker.getSummons().size()));
 			attackable.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, originalAttacker);
-			attackable.addDamageHate(originalAttacker, damage, (damage * 100) / (attackable.getLevel() + 7));
+			attackable.addDamageHate(originalAttacker, damage, damage * 100 / (attackable.getLevel() + 7));
 			
 			//if (npc.isMinion() && ((L2MonsterInstance) npc).getLeader().isDead())
 			//	((L2MonsterInstance) npc).getLeader().getMinionList().deleteSpawnedMinions();
@@ -233,7 +233,7 @@ public class L2AttackableAIScript extends QuestJython
 		for (int level = 1; level < 120; level++)
 		{
 			L2NpcTemplate[] templates = NpcTable.getInstance().getAllOfLevel(level);
-			if ((templates != null) && (templates.length > 0))
+			if (templates != null && templates.length > 0)
 			{
 				for (L2NpcTemplate t : templates)
 				{

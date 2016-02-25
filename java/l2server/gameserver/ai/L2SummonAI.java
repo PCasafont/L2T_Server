@@ -165,7 +165,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onEvtFinishCasting()
 	{
-		boolean shouldFollow = (_attackTarget == null) || !_attackTarget.isAutoAttackable(((L2Summon) _actor).getOwner());
+		boolean shouldFollow = _attackTarget == null || !_attackTarget.isAutoAttackable(((L2Summon) _actor).getOwner());
 		
 		if (!_actor.isMoving() && !_actor.isAttackingNow())
 			shouldFollow = true;
@@ -195,7 +195,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	private void avoidAttack(L2Character attacker)
 	{
 		// trying to avoid if summon near owner
-		if ((((L2Summon) _actor).getOwner() != null) && (((L2Summon) _actor).getOwner() != attacker) && ((L2Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
+		if (((L2Summon) _actor).getOwner() != null && ((L2Summon) _actor).getOwner() != attacker && ((L2Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
 			_startAvoid = true;
 	}
 	
@@ -214,7 +214,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 				
 				final int targetX = ownerX + (int) (AVOID_RADIUS * Math.cos(angle));
 				final int targetY = ownerY + (int) (AVOID_RADIUS * Math.sin(angle));
-				if ((Config.GEODATA == 0) || GeoData.getInstance().canMoveFromToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY, _actor.getZ(), _actor.getInstanceId()))
+				if (Config.GEODATA == 0 || GeoData.getInstance().canMoveFromToTarget(_actor.getX(), _actor.getY(), _actor.getZ(), targetX, targetY, _actor.getZ(), _actor.getInstanceId()))
 					moveTo(targetX, targetY, _actor.getZ());
 			}
 		}
@@ -246,7 +246,7 @@ public class L2SummonAI extends L2PlayableAI implements Runnable
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if ((target instanceof L2Character) && ((L2Character) target).isAutoAttackable(((L2Summon) _actor).getOwner()))
+		if (target instanceof L2Character && ((L2Character) target).isAutoAttackable(((L2Summon) _actor).getOwner()))
 			_attackTarget = (L2Character) _actor.getTarget();
 		
 		super.onIntentionCast(skill, target);

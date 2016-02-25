@@ -192,9 +192,9 @@ public class CastleManorManager
 		boolean isApproved;
 		if (_periodApprove.getTimeInMillis() > _manorRefresh.getTimeInMillis())
 			// Next approve period already scheduled
-			isApproved = (_manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis());
+			isApproved = _manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
 		else
-			isApproved = ((_periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis()) && (_manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis()));
+			isApproved = _periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() && _manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
 		
 		for (Castle c : CastleManager.getInstance().getCastles())
 		{
@@ -353,12 +353,12 @@ public class CastleManorManager
 	public long getMillisToManorRefresh()
 	{
 		// use safe interval 120s to prevent double run
-		if ((_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) < 120000)
+		if (_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
 			setNewManorRefresh();
 		
 		Log.info("Manor System: New Schedule for manor refresh @ " + _manorRefresh.getTime());
 		
-		return (_manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
+		return _manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
 	
 	public void setNewManorRefresh()
@@ -373,12 +373,12 @@ public class CastleManorManager
 	public long getMillisToNextPeriodApprove()
 	{
 		// use safe interval 120s to prevent double run
-		if ((_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis()) < 120000)
+		if (_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis() < 120000)
 			setNewPeriodApprove();
 		
 		Log.info("Manor System: New Schedule for period approve @ " + _periodApprove.getTime());
 		
-		return (_periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis());
+		return _periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
 	
 	public void setNewPeriodApprove()
@@ -412,10 +412,10 @@ public class CastleManorManager
 				if (crop.getStartAmount() == 0)
 					continue;
 				// adding bought crops to clan warehouse
-				if ((crop.getStartAmount() - crop.getAmount()) > 0)
+				if (crop.getStartAmount() - crop.getAmount() > 0)
 				{
 					long count = crop.getStartAmount() - crop.getAmount();
-					count = (count * 90) / 100;
+					count = count * 90 / 100;
 					if (count < 1)
 					{
 						if (Rnd.nextInt(99) < 90)
@@ -519,7 +519,7 @@ public class CastleManorManager
 				}
 			}
 			c.setNextPeriodApproved(true);
-			c.addToTreasuryNoTax((-1) * c.getManorCost(PERIOD_NEXT));
+			c.addToTreasuryNoTax(-1 * c.getManorCost(PERIOD_NEXT));
 			
 			if (notFunc)
 			{

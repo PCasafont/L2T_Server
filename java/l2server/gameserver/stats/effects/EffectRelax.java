@@ -83,7 +83,7 @@ public class EffectRelax extends L2Effect
 				return false;
 		}
 		
-		if ((getEffected().getCurrentHp() + 1) > getEffected().getMaxHp())
+		if (getEffected().getCurrentHp() + 1 > getEffected().getMaxHp())
 		{
 			if (getSkill().isToggle())
 			{

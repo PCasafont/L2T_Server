@@ -45,7 +45,7 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
 		final ArrayList<L2Character> result = new ArrayList<L2Character>();
 		
 		L2Character actualCaster = activeChar;
-		if ((activeChar instanceof L2NpcInstance) && (((L2NpcInstance) activeChar).getOwner() != null))
+		if (activeChar instanceof L2NpcInstance && ((L2NpcInstance) activeChar).getOwner() != null)
 			actualCaster = ((L2NpcInstance) activeChar).getOwner();
 		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
 		{
@@ -65,10 +65,10 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
 			if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
 				continue;
 			
-			if ((actualCaster instanceof L2PcInstance) && !((L2PcInstance) actualCaster).checkPvpSkill(obj, skill))
+			if (actualCaster instanceof L2PcInstance && !((L2PcInstance) actualCaster).checkPvpSkill(obj, skill))
 				continue;
 			
-			if ((result.size() > 20) && (skill.getSkillType() != L2SkillType.AGGDAMAGE))
+			if (result.size() > 20 && skill.getSkillType() != L2SkillType.AGGDAMAGE)
 				break;
 			
 			result.add(obj);
@@ -109,7 +109,7 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
 				if (target.isBehind(activeChar))
 					return true;
 			}
-			else if ((td == L2SkillTargetDirection.DEFAULT) || (td == L2SkillTargetDirection.AROUND))
+			else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND)
 				return true;
 			else if (td == L2SkillTargetDirection.PLAYER)
 			{
@@ -121,7 +121,7 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler
 		{
 			if (td == L2SkillTargetDirection.DEAD_MONSTER)
 			{
-				if ((target instanceof L2MonsterInstance) && target.isDead())
+				if (target instanceof L2MonsterInstance && target.isDead())
 					return true;
 			}
 		}

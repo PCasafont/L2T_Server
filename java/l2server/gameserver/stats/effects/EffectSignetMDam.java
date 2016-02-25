@@ -81,7 +81,7 @@ public class EffectSignetMDam extends L2Effect
 		int y = getEffector().getY();
 		int z = getEffector().getZ();
 		
-		if ((getEffector() instanceof L2PcInstance) && (getSkill().getTargetType() == L2SkillTargetType.TARGET_GROUND))
+		if (getEffector() instanceof L2PcInstance && getSkill().getTargetType() == L2SkillTargetType.TARGET_GROUND)
 		{
 			Point3D wordPosition = getEffector().getSkillCastPosition();
 			
@@ -107,7 +107,7 @@ public class EffectSignetMDam extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getAbnormal().getCount() >= (getAbnormal().getTotalCount() - 2))
+		if (getAbnormal().getCount() >= getAbnormal().getTotalCount() - 2)
 			return true; // do nothing first 2 times
 		int mpConsume = getSkill().getMpConsume();
 		
@@ -126,17 +126,17 @@ public class EffectSignetMDam extends L2Effect
 		
 		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius()))
 		{
-			if ((cha == null) || (cha == caster))
+			if (cha == null || cha == caster)
 				continue;
 			
 			if (cha instanceof L2PcInstance)
 			{
 				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && (player.getPvpFlag() == 0))
+				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0)
 					continue;
 			}
 			
-			if ((cha instanceof L2Attackable) || (cha instanceof L2Playable))
+			if (cha instanceof L2Attackable || cha instanceof L2Playable)
 			{
 				if (cha.isAlikeDead())
 					continue;

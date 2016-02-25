@@ -69,7 +69,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance player = getClient().getActiveChar();
-		if ((player == null) || (player.getLevel() < 99))
+		if (player == null || player.getLevel() < 99)
 			return;
 		
 		if (_totalCount != _abilities.size())
@@ -91,7 +91,7 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket
 		{
 			int level = _abilities.get(skillId);
 			Ability ability = AbilityTable.getInstance().getAbility(skillId);
-			if ((level > ability.getMaxLevel()) || (level > remainingPoints) || (counts[ability.getType() - 1] < ability.getReqPoints()) || ((ability.getReqSkill() > 0) && (!_abilities.containsKey(ability.getReqSkill()) || (_abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))))
+			if (level > ability.getMaxLevel() || level > remainingPoints || counts[ability.getType() - 1] < ability.getReqPoints() || ability.getReqSkill() > 0 && (!_abilities.containsKey(ability.getReqSkill()) || _abilities.get(ability.getReqSkill()) < ability.getReqSkillLvl()))
 			{
 				sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 				return;

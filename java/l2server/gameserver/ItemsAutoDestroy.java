@@ -62,13 +62,13 @@ public class ItemsAutoDestroy
 		long curtime = System.currentTimeMillis();
 		for (L2ItemInstance item : _items)
 		{
-			if ((item == null) || (item.getDropTime() == 0) || (item.getLocation() != L2ItemInstance.ItemLocation.VOID))
+			if (item == null || item.getDropTime() == 0 || item.getLocation() != L2ItemInstance.ItemLocation.VOID)
 				_items.remove(item);
 			else
 			{
 				if (item.getItem().getAutoDestroyTime() > 0)
 				{
-					if ((curtime - item.getDropTime()) > item.getItem().getAutoDestroyTime())
+					if (curtime - item.getDropTime() > item.getItem().getAutoDestroyTime())
 					{
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 						L2World.getInstance().removeObject(item);
@@ -80,7 +80,7 @@ public class ItemsAutoDestroy
 				
 				if (item.getItemType() == L2EtcItemType.HERB)
 				{
-					if ((curtime - item.getDropTime()) > (Config.HERB_AUTO_DESTROY_TIME * 1000))
+					if (curtime - item.getDropTime() > Config.HERB_AUTO_DESTROY_TIME * 1000)
 					{
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 						L2World.getInstance().removeObject(item);
@@ -89,7 +89,7 @@ public class ItemsAutoDestroy
 							ItemsOnGroundManager.getInstance().removeObject(item);
 					}
 				}
-				else if ((curtime - item.getDropTime()) > _sleep)
+				else if (curtime - item.getDropTime() > _sleep)
 				{
 					L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 					L2World.getInstance().removeObject(item);

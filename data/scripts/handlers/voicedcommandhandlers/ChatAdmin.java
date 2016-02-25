@@ -68,7 +68,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 				if (objId > 0)
 				{
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
-					if ((player == null) || !player.isOnline())
+					if (player == null || !player.isOnline())
 					{
 						activeChar.sendMessage("Player not online !");
 						return false;
@@ -125,7 +125,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 				if (objId > 0)
 				{
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
-					if ((player == null) || !player.isOnline())
+					if (player == null || !player.isOnline())
 					{
 						activeChar.sendMessage("Player not online !");
 						return false;

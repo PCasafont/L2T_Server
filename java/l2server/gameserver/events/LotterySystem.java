@@ -78,7 +78,7 @@ public class LotterySystem
 			}
 		}
 		
-		if ((pl.getPrivateStoreType() != 0) || pl.isInCrystallize())
+		if (pl.getPrivateStoreType() != 0 || pl.isInCrystallize())
 		{
 			pl.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -96,7 +96,7 @@ public class LotterySystem
 		
 		//Manage few announcements
 		long totalReward = _collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
-		if ((totalReward % 100000000) == 0)
+		if (totalReward % 100000000 == 0)
 			Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " + NumberFormat.getNumberInstance(Locale.US).format(totalReward) + " Adena!");
 	}
 	
@@ -122,7 +122,7 @@ public class LotterySystem
 			Announcements.getInstance().announceToAll("Lottery System: The Lottery ends with: " + _allNumbers.size() + " participants! " + luckyNumber + " was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
 		else
 		{
-			long eachReward = (totalCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) / winnerNames.size();
+			long eachReward = totalCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER / winnerNames.size();
 			if (eachReward < 0) //Afaik shouldn't happens never
 			{
 				Log.info("LotterySystem: Smth has been fucked on the reward calculation: " + eachReward);
@@ -142,7 +142,7 @@ public class LotterySystem
 			}
 			
 			// Announce
-			Announcements.getInstance().announceToAll("Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants (" + (totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT) + " numbers bought)! " + luckyNumber + " is the winner number! " + winnerNames.size() + " winners has been rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
+			Announcements.getInstance().announceToAll("Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants (" + totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT + " numbers bought)! " + luckyNumber + " is the winner number! " + winnerNames.size() + " winners has been rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 			
 			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " + totalCoins + " and " + winnerNames.size() + " winners (" + _allNumbers.size() + " participants), with: " + eachReward + " coins for each player!");
 		}
@@ -289,12 +289,12 @@ public class LotterySystem
 			if (b == 1)
 				sb.append("<tr>");
 			
-			if ((playerNumbers != null) && playerNumbers.contains(i))
+			if (playerNumbers != null && playerNumbers.contains(i))
 				sb.append("<td><font color=LEVEL>" + i + "</font></td>");
 			else
 				sb.append("<td><a action=\"bypass _bbscustom;action;buyNumber;" + i + "\">" + i + "</a></td>");
 			
-			if ((b % 10) == 0)
+			if (b % 10 == 0)
 			{
 				sb.append("</tr>");
 				sb.append("<tr></tr><tr></tr>");

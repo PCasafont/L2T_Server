@@ -41,7 +41,7 @@ public class MagicVisor implements IItemHandler
 		L2PcInstance player = (L2PcInstance) playable;
 		L2Object target = player.getTarget();
 		
-		if ((target == null) || (!(target instanceof L2Npc)))
+		if (target == null || !(target instanceof L2Npc))
 		{
 			player.sendMessage("You should target a monster to see its drop list!");
 			return;

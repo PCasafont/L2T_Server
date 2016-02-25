@@ -73,7 +73,7 @@ public class L2SkillTrap extends L2SkillSummon
 		if (activeChar.isMounted())
 			return;
 		
-		if ((_triggerSkillId == 0) || (_triggerSkillLvl == 0))
+		if (_triggerSkillId == 0 || _triggerSkillLvl == 0)
 			return;
 		
 		L2Trap trap = activeChar.getTrap();

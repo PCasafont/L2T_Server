@@ -104,7 +104,7 @@ public class L2CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtAttacked(L2Character attacker)
 	{
-		if ((attacker instanceof L2Attackable) && !((L2Attackable) attacker).isCoreAIDisabled())
+		if (attacker instanceof L2Attackable && !((L2Attackable) attacker).isCoreAIDisabled())
 			clientStartAutoAttack();
 	}
 	
@@ -277,7 +277,7 @@ public class L2CharacterAI extends AbstractAI
 	@Override
 	protected void onIntentionCast(L2Skill skill, L2Object target)
 	{
-		if ((getIntention() == AI_INTENTION_REST) && skill.isMagic())
+		if (getIntention() == AI_INTENTION_REST && skill.isMagic())
 		{
 			clientActionFailed();
 			_actor.setIsCastingNow(false);
@@ -430,7 +430,7 @@ public class L2CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if ((_actor instanceof L2PcInstance) && !((L2PcInstance) _actor).getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
+		if (_actor instanceof L2PcInstance && !((L2PcInstance) _actor).getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
 		{
 			if (((L2PcInstance) _actor).getClient() != null)
 				clientActionFailed();
@@ -438,7 +438,7 @@ public class L2CharacterAI extends AbstractAI
 		}
 		
 		//All kind of summons, pets
-		if ((_actor instanceof L2Summon) && !((L2Summon) _actor).getOwner().getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
+		if (_actor instanceof L2Summon && !((L2Summon) _actor).getOwner().getFloodProtectors().getPickUpItem().tryPerformAction("PickUpItem"))
 			return;
 		
 		if (_actor.isImmobilized() || _actor.isAllSkillsDisabled())
@@ -456,7 +456,7 @@ public class L2CharacterAI extends AbstractAI
 		
 		// Set the AI pick up target
 		setTarget(object);
-		if ((object.getX() == 0) && (object.getY() == 0)) // TODO: Find the drop&spawn bug
+		if (object.getX() == 0 && object.getY() == 0) // TODO: Find the drop&spawn bug
 		{
 			Log.warning("Object in coords 0,0 - using a temporary fix");
 			object.setXYZ(getActor().getX(), getActor().getY(), getActor().getZ() + 5);
@@ -744,7 +744,7 @@ public class L2CharacterAI extends AbstractAI
 	protected void onEvtArrivedBlocked(L2CharPosition blocked_at_pos)
 	{
 		// If the Intention was AI_INTENTION_MOVE_TO, set the Intention to AI_INTENTION_ACTIVE
-		if ((getIntention() == AI_INTENTION_MOVE_TO) || (getIntention() == AI_INTENTION_CAST))
+		if (getIntention() == AI_INTENTION_MOVE_TO || getIntention() == AI_INTENTION_CAST)
 			setIntention(AI_INTENTION_ACTIVE);
 		
 		if (getIntention() == AI_INTENTION_ATTACK)
@@ -948,7 +948,7 @@ public class L2CharacterAI extends AbstractAI
 			double dx = worldPosition.getX() - x;
 			double dy = worldPosition.getY() - y;
 			
-			double dist = Math.sqrt((dx * dx) + (dy * dy));
+			double dist = Math.sqrt(dx * dx + dy * dy);
 			
 			double sin = dy / dist;
 			double cos = dx / dist;
@@ -1024,7 +1024,7 @@ public class L2CharacterAI extends AbstractAI
 			}
 			
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && (_actor instanceof L2PcInstance) && ((L2PcInstance) _actor).isTransformed())
+			if (_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST && _actor instanceof L2PcInstance && ((L2PcInstance) _actor).isTransformed())
 			{
 				if (!((L2PcInstance) _actor).getTransformation().canStartFollowToCast())
 				{
@@ -1040,7 +1040,7 @@ public class L2CharacterAI extends AbstractAI
 				_actor.setRunning();
 			
 			stopFollow();
-			if ((target instanceof L2Character) && !(target instanceof L2DoorInstance))
+			if (target instanceof L2Character && !(target instanceof L2DoorInstance))
 			{
 				if (((L2Character) target).isMoving())
 					offset -= 100;
@@ -1083,10 +1083,10 @@ public class L2CharacterAI extends AbstractAI
 	 */
 	protected boolean checkTargetLostOrDead(L2Character target)
 	{
-		if ((target == null) || target.isAlikeDead())
+		if (target == null || target.isAlikeDead())
 		{
 			//check if player is fakedeath
-			if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if (target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 				return false;
@@ -1134,7 +1134,7 @@ public class L2CharacterAI extends AbstractAI
 			setIntention(AI_INTENTION_ACTIVE);
 			return true;
 		}
-		if ((_actor != null) && (_skill != null) && _skill.isOffensive() && (_skill.getSkillRadius() > 0) && (Config.GEODATA > 0) && !GeoData.getInstance().canSeeTarget(_actor, target))
+		if (_actor != null && _skill != null && _skill.isOffensive() && _skill.getSkillRadius() > 0 && Config.GEODATA > 0 && !GeoData.getInstance().canSeeTarget(_actor, target))
 		{
 			setIntention(AI_INTENTION_ACTIVE);
 			return true;
@@ -1331,7 +1331,7 @@ public class L2CharacterAI extends AbstractAI
 		public void update(L2Character target)
 		{
 			// update status once in 4 seconds
-			if ((target == character) && (Rnd.nextInt(100) > 25))
+			if (target == character && Rnd.nextInt(100) > 25)
 				return;
 			character = target;
 			if (target == null)
@@ -1342,25 +1342,25 @@ public class L2CharacterAI extends AbstractAI
 			isFighter = false;
 			isCanceled = false;
 			
-			if (target.getMAtk(null, null) > (1.5 * target.getPAtk(null)))
+			if (target.getMAtk(null, null) > 1.5 * target.getPAtk(null))
 				isMage = true;
-			else if (((target.getPAtk(null) * 0.8) < target.getMAtk(null, null)) || ((target.getMAtk(null, null) * 0.8) > target.getPAtk(null)))
+			else if (target.getPAtk(null) * 0.8 < target.getMAtk(null, null) || target.getMAtk(null, null) * 0.8 > target.getPAtk(null))
 			{
 				isBalanced = true;
 			}
 			else
 			{
 				L2Weapon weapon = target.getActiveWeaponItem();
-				if ((weapon != null) && ((weapon.getItemType() == L2WeaponType.BOW) || (weapon.getItemType() == L2WeaponType.CROSSBOW) || (weapon.getItemType() == L2WeaponType.CROSSBOWK)))
+				if (weapon != null && (weapon.getItemType() == L2WeaponType.BOW || weapon.getItemType() == L2WeaponType.CROSSBOW || weapon.getItemType() == L2WeaponType.CROSSBOWK))
 					isArcher = true;
 				else
 					isFighter = true;
 			}
-			if (target.getRunSpeed() < (_actor.getRunSpeed() - 3))
+			if (target.getRunSpeed() < _actor.getRunSpeed() - 3)
 				isSlower = true;
 			else
 				isSlower = false;
-			if ((target.getMDef(null, null) * 1.2) > _actor.getMAtk(null, null))
+			if (target.getMDef(null, null) * 1.2 > _actor.getMAtk(null, null))
 				isMagicResistant = true;
 			else
 				isMagicResistant = false;
@@ -1371,7 +1371,7 @@ public class L2CharacterAI extends AbstractAI
 	
 	public boolean canAura(L2Skill sk)
 	{
-		if ((sk.getTargetType() == L2SkillTargetType.TARGET_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA))
+		if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
 		{
 			for (L2Object target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
 			{
@@ -1384,9 +1384,9 @@ public class L2CharacterAI extends AbstractAI
 	
 	public boolean canAOE(L2Skill sk)
 	{
-		if ((sk.getSkillType() != L2SkillType.NEGATE) || (sk.getSkillType() != L2SkillType.CANCEL))
+		if (sk.getSkillType() != L2SkillType.NEGATE || sk.getSkillType() != L2SkillType.CANCEL)
 		{
-			if ((sk.getTargetType() == L2SkillTargetType.TARGET_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA))
+			if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
 			{
 				boolean cancast = true;
 				for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
@@ -1395,14 +1395,14 @@ public class L2CharacterAI extends AbstractAI
 						continue;
 					if (target instanceof L2Attackable)
 					{
-						L2Npc targets = ((L2Npc) target);
-						L2Npc actors = ((L2Npc) _actor);
+						L2Npc targets = (L2Npc) target;
+						L2Npc actors = (L2Npc) _actor;
 						
-						if ((targets.getEnemyClan() == null) || (actors.getClan() == null) || !targets.getEnemyClan().equals(actors.getClan()) || ((actors.getClan() == null) && (actors.getIsChaos() == 0)))
+						if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan().equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
 							continue;
 					}
 					L2Abnormal[] effects = target.getAllEffects();
-					for (int i = 0; (effects != null) && (i < effects.length); i++)
+					for (int i = 0; effects != null && i < effects.length; i++)
 					{
 						L2Abnormal effect = effects[i];
 						if (effect.getSkill() == sk)
@@ -1415,18 +1415,18 @@ public class L2CharacterAI extends AbstractAI
 				if (cancast)
 					return true;
 			}
-			else if ((sk.getTargetType() == L2SkillTargetType.TARGET_AREA) || (sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA) || (sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA))
+			else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA || sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA || sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
 			{
 				boolean cancast = true;
 				for (L2Character target : getAttackTarget().getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
 				{
-					if (!GeoData.getInstance().canSeeTarget(_actor, target) || (target == null))
+					if (!GeoData.getInstance().canSeeTarget(_actor, target) || target == null)
 						continue;
 					if (target instanceof L2Attackable)
 					{
-						L2Npc targets = ((L2Npc) target);
-						L2Npc actors = ((L2Npc) _actor);
-						if ((targets.getEnemyClan() == null) || (actors.getClan() == null) || !targets.getEnemyClan().equals(actors.getClan()) || ((actors.getClan() == null) && (actors.getIsChaos() == 0)))
+						L2Npc targets = (L2Npc) target;
+						L2Npc actors = (L2Npc) _actor;
+						if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan().equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
 							continue;
 					}
 					L2Abnormal[] effects = target.getAllEffects();
@@ -1439,7 +1439,7 @@ public class L2CharacterAI extends AbstractAI
 		}
 		else
 		{
-			if ((sk.getTargetType() == L2SkillTargetType.TARGET_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA) || (sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA))
+			if (sk.getTargetType() == L2SkillTargetType.TARGET_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AURA || sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AURA)
 			{
 				boolean cancast = false;
 				for (L2Character target : _actor.getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
@@ -1448,9 +1448,9 @@ public class L2CharacterAI extends AbstractAI
 						continue;
 					if (target instanceof L2Attackable)
 					{
-						L2Npc targets = ((L2Npc) target);
-						L2Npc actors = ((L2Npc) _actor);
-						if ((targets.getEnemyClan() == null) || (actors.getClan() == null) || !targets.getEnemyClan().equals(actors.getClan()) || ((actors.getClan() == null) && (actors.getIsChaos() == 0)))
+						L2Npc targets = (L2Npc) target;
+						L2Npc actors = (L2Npc) _actor;
+						if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan().equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
 							continue;
 					}
 					L2Abnormal[] effects = target.getAllEffects();
@@ -1460,7 +1460,7 @@ public class L2CharacterAI extends AbstractAI
 				if (cancast)
 					return true;
 			}
-			else if ((sk.getTargetType() == L2SkillTargetType.TARGET_AREA) || (sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA) || (sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA))
+			else if (sk.getTargetType() == L2SkillTargetType.TARGET_AREA || sk.getTargetType() == L2SkillTargetType.TARGET_BEHIND_AREA || sk.getTargetType() == L2SkillTargetType.TARGET_FRONT_AREA)
 			{
 				boolean cancast = true;
 				for (L2Character target : getAttackTarget().getKnownList().getKnownCharactersInRadius(sk.getSkillRadius()))
@@ -1469,13 +1469,13 @@ public class L2CharacterAI extends AbstractAI
 						continue;
 					if (target instanceof L2Attackable)
 					{
-						L2Npc targets = ((L2Npc) target);
-						L2Npc actors = ((L2Npc) _actor);
-						if ((targets.getEnemyClan() == null) || (actors.getClan() == null) || !targets.getEnemyClan().equals(actors.getClan()) || ((actors.getClan() == null) && (actors.getIsChaos() == 0)))
+						L2Npc targets = (L2Npc) target;
+						L2Npc actors = (L2Npc) _actor;
+						if (targets.getEnemyClan() == null || actors.getClan() == null || !targets.getEnemyClan().equals(actors.getClan()) || actors.getClan() == null && actors.getIsChaos() == 0)
 							continue;
 					}
 					L2Abnormal[] effects = target.getAllEffects();
-					for (int i = 0; (effects != null) && (i < effects.length); i++)
+					for (int i = 0; effects != null && i < effects.length; i++)
 					{
 						L2Abnormal effect = effects[i];
 						if (effect.getSkill() == sk)
@@ -1504,13 +1504,13 @@ public class L2CharacterAI extends AbstractAI
 				{
 					continue;
 				}
-				L2Npc targets = ((L2Npc) target);
-				L2Npc actors = ((L2Npc) _actor);
-				if ((actors.getFactionId() != null) && targets.getFactionId().equals(actors.getFactionId()))
+				L2Npc targets = (L2Npc) target;
+				L2Npc actors = (L2Npc) _actor;
+				if (actors.getFactionId() != null && targets.getFactionId().equals(actors.getFactionId()))
 				{
 					count++;
 					L2Abnormal[] effects = target.getAllEffects();
-					for (int i = 0; (effects != null) && (i < effects.length); i++)
+					for (int i = 0; effects != null && i < effects.length; i++)
 					{
 						
 						L2Abnormal effect = effects[i];

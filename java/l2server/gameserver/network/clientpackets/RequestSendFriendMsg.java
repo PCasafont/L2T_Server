@@ -58,11 +58,11 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_message == null) || _message.isEmpty() || (_message.length() > 300))
+		if (_message == null || _message.isEmpty() || _message.length() > 300)
 			return;
 		
 		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
-		if ((targetPlayer == null) || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
+		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
 			return;

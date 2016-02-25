@@ -63,7 +63,7 @@ public class PcKnownList extends PlayableKnownList
 	@Override
 	public boolean addKnownObject(L2Object object)
 	{
-		if ((object instanceof L2GuardInstance) && ((L2GuardInstance) object).isDecayed())
+		if (object instanceof L2GuardInstance && ((L2GuardInstance) object).isDecayed())
 			return false;
 		
 		if (!super.addKnownObject(object))
@@ -106,7 +106,7 @@ public class PcKnownList extends PlayableKnownList
 		
 		if (object instanceof L2AirShipInstance)
 		{
-			if ((((L2AirShipInstance) object).getCaptainId() != 0) && (((L2AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId()))
+			if (((L2AirShipInstance) object).getCaptainId() != 0 && ((L2AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId())
 				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getCaptainId()));
 			if (((L2AirShipInstance) object).getHelmObjectId() != 0)
 				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getHelmObjectId()));
@@ -115,7 +115,7 @@ public class PcKnownList extends PlayableKnownList
 		// Send Server-Client Packet DeleteObject to the L2PcInstance
 		getActiveChar().sendPacket(new DeleteObject(object));
 		
-		if (Config.CHECK_KNOWN && (object instanceof L2Npc) && getActiveChar().isGM())
+		if (Config.CHECK_KNOWN && object instanceof L2Npc && getActiveChar().isGM())
 			getActiveChar().sendMessage("Removed NPC: " + ((L2Npc) object).getName());
 		
 		return true;
@@ -136,7 +136,7 @@ public class PcKnownList extends PlayableKnownList
 		if (getActiveChar().isPerformingFlyMove())
 			return 1500;
 		
-		if ((object instanceof L2Summon) && (((L2Summon) object).getOwner() == getActiveChar()))
+		if (object instanceof L2Summon && ((L2Summon) object).getOwner() == getActiveChar())
 			return 45000;
 		
 		// when knownlist grows, the distance to forget should be at least

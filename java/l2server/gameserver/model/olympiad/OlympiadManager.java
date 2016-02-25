@@ -66,7 +66,7 @@ public class OlympiadManager
 		List<List<Integer>> result = null;
 		for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
 		{
-			if ((classList.getValue() != null) && (classList.getValue().size() >= Config.ALT_OLY_CLASSED))
+			if (classList.getValue() != null && classList.getValue().size() >= Config.ALT_OLY_CLASSED)
 			{
 				if (result == null)
 					result = new ArrayList<List<Integer>>();
@@ -114,7 +114,7 @@ public class OlympiadManager
 			return false;
 		
 		final List<Integer> classed = _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
-		if ((classed != null) && classed.contains(objId))
+		if (classed != null && classed.contains(objId))
 		{
 			if (showMessage)
 			{
@@ -295,7 +295,7 @@ public class OlympiadManager
 		
 		int classId = player.getCurrentClass().getParent().getAwakeningClassId();
 		final List<Integer> classed = _classBasedRegisters.get(classId);
-		if ((classed != null) && classed.remove(objId))
+		if (classed != null && classed.remove(objId))
 		{
 			_classBasedRegisters.remove(classId);
 			_classBasedRegisters.put(classId, classed);
@@ -312,7 +312,7 @@ public class OlympiadManager
 	public final void removeDisconnectedCompetitor(L2PcInstance player)
 	{
 		final OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
-		if ((task != null) && task.isGameStarted())
+		if (task != null && task.isGameStarted())
 			task.getGame().handleDisconnect(player);
 		
 		final Integer objId = Integer.valueOf(player.getObjectId());
@@ -323,7 +323,7 @@ public class OlympiadManager
 			return;
 		
 		final List<Integer> classed = _classBasedRegisters.get(player.getCurrentClass().getParent().getAwakeningClassId());
-		if ((classed != null) && classed.remove(objId))
+		if (classed != null && classed.remove(objId))
 			return;
 	}
 	
@@ -344,7 +344,7 @@ public class OlympiadManager
 			return null;
 		}
 		
-		if (!Config.isServer(Config.DREAMS) && ((player.getCurrentClass().getLevel() < 85) || (player.getCurrentClass().getParent() == null)))
+		if (!Config.isServer(Config.DREAMS) && (player.getCurrentClass().getLevel() < 85 || player.getCurrentClass().getParent() == null))
 		{
 			//TODO correct system message
 			//sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANT_JOIN_THE_OLYMPIAD_WITH_A_SUB_CLASS_CHARACTER);
@@ -423,7 +423,7 @@ public class OlympiadManager
 			nobleInfo = new OlympiadNobleInfo(player.getObjectId(), player.getName(), player.getClassId());
 			Olympiad.getInstance().addNoble(player.getObjectId(), nobleInfo);
 		}
-		else if (Config.isServer(Config.DREAMS) && (nobleInfo.getClassId() != player.getClassId()))
+		else if (Config.isServer(Config.DREAMS) && nobleInfo.getClassId() != player.getClassId())
 		{
 			String oldClass = PlayerClassTable.getInstance().getClassNameById(nobleInfo.getClassId());
 			String newClass = PlayerClassTable.getInstance().getClassNameById(player.getClassId());
@@ -440,7 +440,7 @@ public class OlympiadManager
 			return null;
 		}
 		
-		if ((Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
+		if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0 && !AntiFeedManager.getInstance().tryAddPlayer(AntiFeedManager.OLYMPIAD_ID, player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP))
 		{
 			NpcHtmlMessage message = new NpcHtmlMessage(0);
 			message.setFile(player.getHtmlPrefix(), "mods/OlympiadIPRestriction.htm");

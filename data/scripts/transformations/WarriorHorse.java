@@ -18,7 +18,7 @@ public class WarriorHorse extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 130) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 130 || getPlayer().isCursedWeaponEquipped())
 			return;
 		transformedSkills();
 	}

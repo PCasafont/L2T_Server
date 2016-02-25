@@ -167,7 +167,7 @@ public class Stage1 extends Quest
 			
 			XmlDocument doc = new XmlDocument(file);
 			XmlNode first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getName()))
+			if (first != null && "list".equalsIgnoreCase(first.getName()))
 			{
 				for (XmlNode n : first.getChildren())
 				{
@@ -351,7 +351,7 @@ public class Stage1 extends Quest
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 			return false;
 		}
-		else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS))
+		else if (channel.getMemberCount() < MIN_PLAYERS || channel.getMemberCount() > MAX_PLAYERS)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER));
 			return false;
@@ -422,7 +422,7 @@ public class Stage1 extends Quest
 					door.setIsAttackableDoor(true);
 			Log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			// teleport players
-			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
+			if (player.getParty() == null || player.getParty().getCommandChannel() == null)
 			{
 				teleportPlayer(player, coords, instanceId);
 				world.allowed.add(player.getObjectId());
@@ -546,7 +546,7 @@ public class Stage1 extends Quest
 	protected void spawn(SOD1World world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
 	{
 		// traps
-		if ((npcId >= 18720) && (npcId <= 18774))
+		if (npcId >= 18720 && npcId <= 18774)
 		{
 			L2Skill skill = null;
 			if (npcId <= 18728)
@@ -604,7 +604,7 @@ public class Stage1 extends Quest
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
-			if ((player != null) && player.isOnline())
+			if (player != null && player.isOnline())
 				player.sendPacket(sm);
 		}
 	}
@@ -632,7 +632,7 @@ public class Stage1 extends Quest
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if ((isPet == false) && (player != null))
+		if (isPet == false && player != null)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
 			if (tmpworld instanceof SOD1World)
@@ -663,19 +663,19 @@ public class Stage1 extends Quest
 		if (tmpworld instanceof SOD1World)
 		{
 			SOD1World world = (SOD1World) tmpworld;
-			if ((world.status == 2) && (npc.getNpcId() == OBELISK))
+			if (world.status == 2 && npc.getNpcId() == OBELISK)
 			{
 				world.status = 4;
 				spawnFlaggedNPCs(world, 3);
 			}
-			else if ((world.status == 3) && (npc.getNpcId() == OBELISK))
+			else if (world.status == 3 && npc.getNpcId() == OBELISK)
 			{
 				world.status = 4;
 				spawnFlaggedNPCs(world, 2);
 			}
-			else if ((world.status <= 8) && (npc.getNpcId() == TIAT))
+			else if (world.status <= 8 && npc.getNpcId() == TIAT)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() / 2))
+				if (npc.getCurrentHp() < npc.getMaxHp() / 2)
 				{
 					if (spawnState(world))
 					{
@@ -698,7 +698,7 @@ public class Stage1 extends Quest
 			if (event.equalsIgnoreCase("Spawn"))
 			{
 				L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
-				if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
+				if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null && target.getInstanceId() == npc.getInstanceId() && !target.isDead())
 				{
 					L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false, 0, false, world.instanceId);
 					world.deviceSpawnedMobCount++;
@@ -737,7 +737,7 @@ public class Stage1 extends Quest
 					if (dist > 900)
 						((L2Attackable) npc).reduceHate(mostHate, ((L2Attackable) npc).getHating(mostHate));
 					mostHate = ((L2Attackable) npc).getMostHated();
-					if ((mostHate != null) || (((L2Attackable) npc).getHating(mostHate) < 5))
+					if (mostHate != null || ((L2Attackable) npc).getHating(mostHate) < 5)
 						((L2Attackable) npc).returnHome();
 				}
 			}
@@ -767,16 +767,16 @@ public class Stage1 extends Quest
 				if (checkKillProgress(npc, world))
 					world.status++;
 			}
-			else if ((world.status == 4) && (npc.getNpcId() == OBELISK))
+			else if (world.status == 4 && npc.getNpcId() == OBELISK)
 			{
 				spawnState(world);
 			}
-			else if ((world.status == 5) && (npc.getNpcId() == POWERFUL_DEVICE))
+			else if (world.status == 5 && npc.getNpcId() == POWERFUL_DEVICE)
 			{
 				if (checkKillProgress(npc, world))
 					spawnState(world);
 			}
-			else if ((world.status == 6) && (npc.getNpcId() == THRONE_POWERFUL_DEVICE))
+			else if (world.status == 6 && npc.getNpcId() == THRONE_POWERFUL_DEVICE)
 			{
 				if (checkKillProgress(npc, world))
 					spawnState(world);
@@ -816,7 +816,7 @@ public class Stage1 extends Quest
 		if (npcId == ALENOS)
 		{
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-			if ((GraciaSeedsManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
+			if (GraciaSeedsManager.getInstance().getSoDState() == 1 || world != null && world instanceof SOD1World)
 				enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
 			else if (GraciaSeedsManager.getInstance().getSoDState() == 2)
 				teleportPlayer(player, ENTER_TELEPORT_2, 0);

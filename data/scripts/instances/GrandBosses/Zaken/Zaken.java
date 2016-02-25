@@ -159,7 +159,7 @@ public class Zaken extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof ZakenWorld))
+		if (wrld != null && wrld instanceof ZakenWorld)
 		{
 			ZakenWorld world = (ZakenWorld) wrld;
 			if (event.equalsIgnoreCase("stage_0_start"))
@@ -252,7 +252,7 @@ public class Zaken extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc != null) && (npc.getNpcId() == _pathfinderId))
+		if (npc != null && npc.getNpcId() == _pathfinderId)
 		{
 			if (event.endsWith(".html"))
 				return event;
@@ -351,7 +351,7 @@ public class Zaken extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(_playerEnter, true);
@@ -367,7 +367,7 @@ public class Zaken extends L2AttackableAIScript
 			int minLevel = template_id == _dayTimeEasy ? 53 : template_id == _dayTimeHard ? 76 : 53;
 			int maxLevel = template_id == _dayTimeEasy ? 68 : template_id == _dayTimeHard ? 90 : 68;
 			
-			if (Config.isServer(Config.TENKAI_ESTHUS) && (template_id == _dayTimeHard))
+			if (Config.isServer(Config.TENKAI_ESTHUS) && template_id == _dayTimeHard)
 			{
 				minPlayers = 7;
 				maxLevel = Config.MAX_LEVEL;
@@ -378,7 +378,7 @@ public class Zaken extends L2AttackableAIScript
 				return;
 			}
 			
-			String template = (template_id == _dayTimeEasy ? "Zaken-daytime" : template_id == _dayTimeHard ? "Zaken-daytime83" : "Zaken-nighttime");
+			String template = template_id == _dayTimeEasy ? "Zaken-daytime" : template_id == _dayTimeHard ? "Zaken-daytime83" : "Zaken-nighttime";
 			final int instanceId = InstanceManager.getInstance().createDynamicInstance(template + ".xml");
 			world = new ZakenWorld();
 			world.instanceId = instanceId;

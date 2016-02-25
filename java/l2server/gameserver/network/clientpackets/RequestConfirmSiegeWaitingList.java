@@ -59,7 +59,7 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 			return;
 		
 		// Check if leader of the clan who owns the castle?
-		if ((castle.getOwnerId() != activeChar.getClanId()) || (!activeChar.isClanLeader()))
+		if (castle.getOwnerId() != activeChar.getClanId() || !activeChar.isClanLeader())
 			return;
 		
 		L2Clan clan = ClanTable.getInstance().getClan(_clanId);
@@ -77,7 +77,7 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 			}
 			else
 			{
-				if ((castle.getSiege().checkIsDefenderWaiting(clan)) || (castle.getSiege().checkIsDefender(clan)))
+				if (castle.getSiege().checkIsDefenderWaiting(clan) || castle.getSiege().checkIsDefender(clan))
 					castle.getSiege().removeSiegeClan(_clanId);
 			}
 		}

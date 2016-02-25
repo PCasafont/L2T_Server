@@ -118,7 +118,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		{
 			byte[] dump = new byte[size];
 			System.arraycopy(buf.array(), buf.position(), dump, 0, size);
-			if ((dump[0] != 2) || (dump[1] != 0))
+			if (dump[0] != 2 || dump[1] != 0)
 				Log.warning("Wrong checksum from client: " + toString());
 			//super.getConnection().close((SendablePacket<L2LoginClient>)null);
 		}

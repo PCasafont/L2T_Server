@@ -250,7 +250,7 @@ public class DMGManager
 		// Give Rewards (Memory)
 		for (Entry<Integer, dmginfo> info : dmgIinfo.entrySet())
 		{
-			if ((info.getValue().getNewName() != null) && !info.getValue().getNewName().equals(""))
+			if (info.getValue().getNewName() != null && !info.getValue().getNewName().equals(""))
 			{
 				int charid = CharNameTable.getInstance().getIdByName(info.getValue().getNewName());
 				

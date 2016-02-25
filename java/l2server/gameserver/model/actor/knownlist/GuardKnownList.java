@@ -51,7 +51,7 @@ public class GuardKnownList extends AttackableKnownList
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 			}
 		}
-		else if ((Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion()) && (object instanceof L2MonsterInstance))
+		else if (Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion() && object instanceof L2MonsterInstance)
 		{
 			// Check if the object added is an aggressive L2MonsterInstance
 			if (((L2MonsterInstance) object).isAggressive())
@@ -64,7 +64,7 @@ public class GuardKnownList extends AttackableKnownList
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 			}
 		}
-		else if ((object instanceof L2Npc) && (((L2Npc) object).getClan() != null) && ((L2Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))
+		else if (object instanceof L2Npc && ((L2Npc) object).getClan() != null && ((L2Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))
 		{
 			if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);

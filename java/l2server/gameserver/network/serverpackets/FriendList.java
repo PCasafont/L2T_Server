@@ -78,7 +78,7 @@ public class FriendList extends L2GameServerPacket
 			String name = CharNameTable.getInstance().getNameById(objId);
 			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
 			boolean online = false;
-			if ((player1 != null) && player1.isOnline())
+			if (player1 != null && player1.isOnline())
 				online = true;
 			if (online)
 			{
@@ -123,9 +123,9 @@ public class FriendList extends L2GameServerPacket
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
-				level = (rset.getByte("level"));
-				_classId = (rset.getInt("classid"));
-				bClassId = (rset.getInt("base_class"));
+				level = rset.getByte("level");
+				_classId = rset.getInt("classid");
+				bClassId = rset.getInt("base_class");
 			}
 			rset.close();
 			statement.close();
@@ -152,7 +152,7 @@ public class FriendList extends L2GameServerPacket
 				ResultSet rset = statement.executeQuery();
 				
 				while (rset.next())
-					_level = (rset.getByte("level"));
+					_level = rset.getByte("level");
 				
 				rset.close();
 				statement.close();

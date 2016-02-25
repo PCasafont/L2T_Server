@@ -93,7 +93,7 @@ public class Beleth extends L2AttackableAIScript
 		
 		for (int i = 0; i < 16; i++)
 		{
-			if ((i % 2) == 0)
+			if (i % 2 == 0)
 			{
 				innerRad = 650;
 				
@@ -114,7 +114,7 @@ public class Beleth extends L2AttackableAIScript
 			
 			_cloneY[i] += (int) (innerRad * Math.cos(i * Math.toRadians(angle)));
 			
-			_cloneH[i] = Util.convertDegreeToClientHeading(270 - (i * angle));
+			_cloneH[i] = Util.convertDegreeToClientHeading(270 - i * angle);
 			
 			_cloneX[i + 16] = 16327;
 			
@@ -124,7 +124,7 @@ public class Beleth extends L2AttackableAIScript
 			
 			_cloneY[i + 16] += (int) (outerRad * Math.cos(i * Math.toRadians(angle)));
 			
-			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - (i * angle));
+			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - i * angle);
 		}
 	}
 	
@@ -156,7 +156,7 @@ public class Beleth extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onAggroRangeEnter: " + player);
 		
-		if ((npc.getNpcId() == _realBelethId) || (npc.getNpcId() == _fakeBelethId))
+		if (npc.getNpcId() == _realBelethId || npc.getNpcId() == _fakeBelethId)
 		{
 			//Trick
 			if (isPet)
@@ -226,7 +226,7 @@ public class Beleth extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof belethWorld))
+		if (wrld != null && wrld instanceof belethWorld)
 		{
 			belethWorld world = (belethWorld) wrld;
 			
@@ -320,9 +320,9 @@ public class Beleth extends L2AttackableAIScript
 				
 				for (int i = 0; i < 6; i++)
 				{
-					int x = (int) ((150 * Math.cos(i * 1.046666667)) + 16323);
+					int x = (int) (150 * Math.cos(i * 1.046666667) + 16323);
 					
-					int y = (int) ((150 * Math.sin(i * 1.046666667)) + 213059);
+					int y = (int) (150 * Math.sin(i * 1.046666667) + 213059);
 					
 					L2Npc minion = addSpawn(_fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
 					
@@ -546,7 +546,7 @@ public class Beleth extends L2AttackableAIScript
 			}
 		}
 		
-		if ((npc != null) && (npc.getNpcId() == _npcEnter) && Util.isDigit(event) && (Integer.valueOf(event) == _instanceTemplateId))
+		if (npc != null && npc.getNpcId() == _npcEnter && Util.isDigit(event) && Integer.valueOf(event) == _instanceTemplateId)
 		{
 			try
 			{
@@ -571,7 +571,7 @@ public class Beleth extends L2AttackableAIScript
 		
 		InstanceWorld wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
-		if ((wrld != null) && (wrld instanceof belethWorld))
+		if (wrld != null && wrld instanceof belethWorld)
 		{
 			belethWorld world = (belethWorld) wrld;
 			
@@ -679,7 +679,7 @@ public class Beleth extends L2AttackableAIScript
 			if (inst != null)
 			{
 				Broadcast.toGameMasters(player.getName() + " trying to re enter beleth");
-				if (((System.currentTimeMillis() + 300000) > inst.getInstanceEndTime()) && world.allowed.contains(player.getObjectId()))
+				if (System.currentTimeMillis() + 300000 > inst.getInstanceEndTime() && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					

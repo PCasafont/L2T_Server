@@ -111,7 +111,7 @@ public class CustomAuctionManager
 				if (rs.next())
 				{
 					long lastAuctionCreation = rs.getLong("lastAuctionCreation");
-					nextAuction = (lastAuctionCreation + ((_initialDuration + _repeatTime) * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L)) - System.currentTimeMillis();
+					nextAuction = lastAuctionCreation + (_initialDuration + _repeatTime) * 1000L + Rnd.get(_randomRepeatTime) * 1000L - System.currentTimeMillis();
 					if (nextAuction < 0)
 						nextAuction = 0;
 				}
@@ -152,7 +152,7 @@ public class CustomAuctionManager
 						L2DatabaseFactory.close(con);
 					}
 					
-					ThreadPoolManager.getInstance().scheduleGeneral(this, (_repeatTime * 1000L) + (Rnd.get(_randomRepeatTime) * 1000L));
+					ThreadPoolManager.getInstance().scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
 				}
 			}, nextAuction);
 		}
@@ -286,10 +286,10 @@ public class CustomAuctionManager
 		
 		private String getRemainingTimeString()
 		{
-			Long remainingTime = (_endAuctionTask.getDelay(TimeUnit.MILLISECONDS)) / 1000;
+			Long remainingTime = _endAuctionTask.getDelay(TimeUnit.MILLISECONDS) / 1000;
 			
 			int hours = (int) (remainingTime / 3600);
-			int minutes = (int) ((remainingTime % 3600) / 60);
+			int minutes = (int) (remainingTime % 3600 / 60);
 			int seconds = (int) (remainingTime % 60);
 			
 			return hours + "h " + minutes + "m " + seconds + "s";
@@ -475,7 +475,7 @@ public class CustomAuctionManager
 				String currencyName = ItemTable.getInstance().getTemplate(currentAuctionInfo.getCurrentCurrency()).getName();
 				
 				long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
-				if ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice))
+				if (currentAuctionInfo.getCurrentCurrency() == 57 && currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)
 					currencyName = "Dreams Coin";
 				
 				sb.append("<tr><td>Currency:</td><td>" + currencyName + "</td></tr>");
@@ -494,7 +494,7 @@ public class CustomAuctionManager
 				for (int index = curId; index < Currency.values().length; index++)
 					options += Currency.values()[index] + ";";
 				
-				if (!options.isEmpty() && (curId < Currency.values().length))
+				if (!options.isEmpty() && curId < Currency.values().length)
 				{
 					options = options.substring(0, options.length() - 1);
 					sb.append("<tr><td>Select:</td><td><combobox width=100 height=17 var=\"plcoin" + currentAuction.getKey() + "\" list=" + options + "></td></tr>");
@@ -508,7 +508,7 @@ public class CustomAuctionManager
 				count++;
 				size--;
 				
-				if ((count == 2) || (size == 0))
+				if (count == 2 || size == 0)
 				{
 					sb.append("</td></tr>");
 					count = 0;
@@ -543,8 +543,8 @@ public class CustomAuctionManager
 				long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
 				System.out.println("Max Adena Price = " + maxAdenaPrice);
 				System.out.println("Current Auction Price = " + currentAuctionInfo.getCurrentPrice());
-				System.out.println("Lala: " + ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)));
-				if ((currentAuctionInfo.getCurrentCurrency() == 50002) || ((currentAuctionInfo.getCurrentCurrency() == 57) && (currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)))
+				System.out.println("Lala: " + (currentAuctionInfo.getCurrentCurrency() == 57 && currentAuctionInfo.getCurrentPrice() > maxAdenaPrice));
+				if (currentAuctionInfo.getCurrentCurrency() == 50002 || currentAuctionInfo.getCurrentCurrency() == 57 && currentAuctionInfo.getCurrentPrice() > maxAdenaPrice)
 				{
 					options = "Dreams Coin";
 					if (currentAuctionInfo.getTemplate().getHighestCurrencyId() == 0)
@@ -561,12 +561,12 @@ public class CustomAuctionManager
 					for (int index = curId; index < Currency.values().length; index++)
 					{
 						String currencyName = Currency.values()[index].toString();
-						if (currencyName.equals("GoldenApiga") && (currentAuctionInfo.getTemplate().getHighestCurrencyId() == 57))
+						if (currencyName.equals("GoldenApiga") && currentAuctionInfo.getTemplate().getHighestCurrencyId() == 57)
 							break;
 						options += currencyName + ";";
 					}
 					
-					if (!options.isEmpty() && (curId < Currency.values().length))
+					if (!options.isEmpty() && curId < Currency.values().length)
 					{
 						options = options.substring(0, options.length() - 1);
 						
@@ -588,15 +588,15 @@ public class CustomAuctionManager
 				long counter = 0;
 				while (price > 0)
 				{
-					priceString = (price % 10) + priceString;
+					priceString = price % 10 + priceString;
 					price /= 10;
 					counter++;
-					if ((counter % 3) == 0)
+					if (counter % 3 == 0)
 						priceString = "," + priceString;
 					
 				}
 				
-				if ((counter % 3) == 0)
+				if (counter % 3 == 0)
 					priceString = priceString.substring(1);
 				
 				content = content.replace("%highestBid%", priceString + "");
@@ -633,15 +633,15 @@ public class CustomAuctionManager
 					long counter = 0;
 					while (price > 0)
 					{
-						priceString = (price % 10) + priceString;
+						priceString = price % 10 + priceString;
 						price /= 10;
 						counter++;
-						if ((counter % 3) == 0)
+						if (counter % 3 == 0)
 							priceString = "," + priceString;
 						
 					}
 					
-					if ((counter % 3) == 0)
+					if (counter % 3 == 0)
 						priceString = priceString.substring(1);
 					
 					content = content.replace("%highestBid%", priceString + "");
@@ -754,7 +754,7 @@ public class CustomAuctionManager
 				while (rs.next())
 				{
 					int auctionId = rs.getInt("id");
-					long remainingTime = (rs.getLong("endTime") * 1000) - System.currentTimeMillis();
+					long remainingTime = rs.getLong("endTime") * 1000 - System.currentTimeMillis();
 					if (remainingTime < ADDED_DURATION)
 						remainingTime = ADDED_DURATION;
 					
@@ -806,12 +806,12 @@ public class CustomAuctionManager
 			return;
 		
 		//Don't allow overcome the bid if it's the same player TODO IMPORTANT DO NOT DELETE
-		if ((activeChar.getObjectId() == bid.getCurrentOwnerId()) && !activeChar.isGM())
+		if (activeChar.getObjectId() == bid.getCurrentOwnerId() && !activeChar.isGM())
 		{
 			activeChar.sendMessage("You can't overbid your own bid!");
 			return;
 		}
-		if ((activeChar.getPrivateStoreType() != 0) || activeChar.isInCrystallize())
+		if (activeChar.getPrivateStoreType() != 0 || activeChar.isInCrystallize())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -828,12 +828,12 @@ public class CustomAuctionManager
 		}
 		
 		int currentCurrencyId = bid.getCurrentCurrency();
-		long minBid = bid.getCurrentPrice() + ((bid.getCurrentPrice() * 10) / 100);
+		long minBid = bid.getCurrentPrice() + bid.getCurrentPrice() * 10 / 100;
 		if (minBid <= bid.getCurrentPrice())
 			minBid = bid.getCurrentPrice() + 1;
 		
 		long maxAdenaPrice = (long) 90 * 1000000000; // 99kkk
-		if ((bid.getCurrentCurrency() == 57) && (bid.getCurrentPrice() > maxAdenaPrice))
+		if (bid.getCurrentCurrency() == 57 && bid.getCurrentPrice() > maxAdenaPrice)
 		{
 			coin = "Dreams";
 		}
@@ -864,7 +864,7 @@ public class CustomAuctionManager
 				{
 					case 57:
 					{
-						if (((currencyId != 57) && (currencyId != 50002)) || ((currencyId == 50002) && (bid.getCurrentPrice() < maxAdenaPrice)))
+						if (currencyId != 57 && currencyId != 50002 || currencyId == 50002 && bid.getCurrentPrice() < maxAdenaPrice)
 						{
 							activeChar.sendMessage("You can only bid Adena for this auction.");
 							return;
@@ -890,7 +890,7 @@ public class CustomAuctionManager
 						index++;
 					}
 					
-					if ((playerCurrency.ordinal() < index) && !activeChar.isGM())
+					if (playerCurrency.ordinal() < index && !activeChar.isGM())
 					{
 						//activeChar.sendMessage("Ordinal " + playerCurrency.ordinal());
 						//activeChar.sendMessage("Index " + index);
@@ -903,7 +903,7 @@ public class CustomAuctionManager
 			}
 		}
 		
-		if ((playerBid < minBid) && !activeChar.isGM())
+		if (playerBid < minBid && !activeChar.isGM())
 		{
 			activeChar.sendMessage("Item Auction: The minimum bid for this item should be for: " + minBid + " " + ItemTable.getInstance().getTemplate(bid.getCurrentCurrency()).getName());
 			return;
@@ -931,15 +931,15 @@ public class CustomAuctionManager
 		long counter = 0;
 		while (price > 0)
 		{
-			priceString = (price % 10) + priceString;
+			priceString = price % 10 + priceString;
 			price /= 10;
 			counter++;
-			if ((counter % 3) == 0)
+			if (counter % 3 == 0)
 				priceString = "," + priceString;
 			
 		}
 		
-		if ((counter % 3) == 0)
+		if (counter % 3 == 0)
 			priceString = priceString.substring(1);
 		
 		if (!activeChar.isGM())

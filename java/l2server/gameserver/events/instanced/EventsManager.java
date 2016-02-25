@@ -167,7 +167,7 @@ public class EventsManager implements Reloadable
 				_currentConfig = new EventConfig();
 				_minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 			}
-			else if ((_minutesToStart == 10) || (_minutesToStart == 5) || (_minutesToStart == 2) || (_minutesToStart == 1))
+			else if (_minutesToStart == 10 || _minutesToStart == 5 || _minutesToStart == 2 || _minutesToStart == 1)
 			{
 				// Auto join!
 				/*if (_minutesToStart == 1)
@@ -219,14 +219,14 @@ public class EventsManager implements Reloadable
 		int i = 0;
 		for (L2PcInstance player : _registeredPlayers.values())
 		{
-			if ((player == null) || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode())
+			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode())
 				continue;
 			
 			int objId = player.getObjectId();
 			int strPoints = player.getStrenghtPoints(false);
 			// Find the index of where the current player should be put
 			int j = 0;
-			while ((j < i) && (strPoints < sorted[j][1]))
+			while (j < i && strPoints < sorted[j][1])
 				j++;
 			// Move the rest
 			for (int k = i; k > j; k--)
@@ -252,7 +252,7 @@ public class EventsManager implements Reloadable
 		{
 			List<Integer> group = new ArrayList<Integer>();
 			int j = 0;
-			while ((i + j) < sorted.length)
+			while (i + j < sorted.length)
 			{
 				group.add(sorted[i + j][0]);
 				
@@ -298,7 +298,7 @@ public class EventsManager implements Reloadable
 	
 	public void onLogin(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			removeParticipant(playerInstance.getObjectId());
 			if (playerInstance.getEvent() != null)
@@ -316,7 +316,7 @@ public class EventsManager implements Reloadable
 	
 	public void onLogout(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			if (playerInstance.getEvent() != null)
 			{
@@ -386,7 +386,7 @@ public class EventsManager implements Reloadable
 			return;
 		
 		// If the event is started the player shouldn't be allowed to leave
-		if ((playerInstance.getEvent() != null) && playerInstance.getEvent().isState(EventState.STARTED))
+		if (playerInstance.getEvent() != null && playerInstance.getEvent().isState(EventState.STARTED))
 			return;
 		
 		if (removeParticipant(playerInstance.getObjectId()))
@@ -414,7 +414,7 @@ public class EventsManager implements Reloadable
 			return "";
 		
 		String result = null;
-		if ((player.getEvent() != null) && player.getEvent().isState(EventState.STARTED))
+		if (player.getEvent() != null && player.getEvent().isState(EventState.STARTED))
 		{
 			result = HtmCache.getInstance().getHtm(null, "CommunityBoard/runningEvent.htm");
 			result = result.replace("%runningEventInfo%", player.getEvent().getInfo(player));
@@ -470,7 +470,7 @@ public class EventsManager implements Reloadable
 				if (!event.isState(EventState.STARTED))
 				{
 					remaining--;
-					if (!eventString.isEmpty() && ((pageCheck == 6) || (remaining == 0)))
+					if (!eventString.isEmpty() && (pageCheck == 6 || remaining == 0))
 					{
 						pageCheck = 1;
 						eventString += "</tr>";
@@ -491,7 +491,7 @@ public class EventsManager implements Reloadable
 				remaining--;
 				total++;
 				
-				if ((pageCheck == 6) || (remaining == 0))
+				if (pageCheck == 6 || remaining == 0)
 				{
 					pageCheck = 1;
 					eventString += "</tr>";
@@ -536,13 +536,13 @@ public class EventsManager implements Reloadable
 			color = "FFFF00";
 		else if (player.getFriendList().contains(reader.getObjectId()))
 			color = "00FFFF";
-		else if ((reader.getParty() != null) && (reader.getParty() == player.getParty()))
+		else if (reader.getParty() != null && reader.getParty() == player.getParty())
 			color = "00FF00";
 		else if (reader.getClan() != null)
 		{
-			if ((reader.getClanId() > 0) && (reader.getClanId() == player.getClanId()))
+			if (reader.getClanId() > 0 && reader.getClanId() == player.getClanId())
 				color = "8888FF";
-			else if ((reader.getAllyId() > 0) && (reader.getAllyId() == player.getAllyId()))
+			else if (reader.getAllyId() > 0 && reader.getAllyId() == player.getAllyId())
 				color = "88FF88";
 			else if (reader.getClan().isAtWarWith(player.getClanId()))
 				color = "CC0000";

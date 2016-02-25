@@ -98,10 +98,10 @@ public class Zaken extends L2AttackableAIScript
 					while (h >= hour)
 					{
 						//System.out.println("Zaken, H = " + h + ", M = " + m + ", Hours = " + hour);
-						if ((h == hour) && (m <= 60) && !DoorTable.getInstance().getDoor(21240006).getOpen())
+						if (h == hour && m <= 60 && !DoorTable.getInstance().getDoor(21240006).getOpen())
 							DoorTable.getInstance().getDoor(21240006).openMe();
 						
-						if ((h == (hour + 1)) && (m == 0))
+						if (h == hour + 1 && m == 0)
 							DoorTable.getInstance().getDoor(21240006).closeMe();
 						
 						hour += 24;
@@ -185,7 +185,7 @@ public class Zaken extends L2AttackableAIScript
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		int status = GrandBossManager.getInstance().getBossStatus(ZAKEN);
-		if ((status == DEAD) && !event.equalsIgnoreCase("zaken_unlock"))
+		if (status == DEAD && !event.equalsIgnoreCase("zaken_unlock"))
 			return super.onAdvEvent(event, npc, player);
 		
 		if (event.equalsIgnoreCase("1001"))
@@ -227,13 +227,13 @@ public class Zaken extends L2AttackableAIScript
 					npc.setTarget(npc);
 					npc.doCast(SkillTable.getInstance().getInfo(4227, 1));
 				}
-				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) && (_ai0 == 0))
+				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && _ai0 == 0)
 				{
 					int i0 = 0;
 					int i1 = 1;
 					if (((L2Attackable) npc).getMostHated() != null)
 					{
-						if ((((((L2Attackable) npc).getMostHated().getX() - _ai1) * (((L2Attackable) npc).getMostHated().getX() - _ai1)) + ((((L2Attackable) npc).getMostHated().getY() - _ai2) * (((L2Attackable) npc).getMostHated().getY() - _ai2))) > (1500 * 1500))
+						if ((((L2Attackable) npc).getMostHated().getX() - _ai1) * (((L2Attackable) npc).getMostHated().getX() - _ai1) + (((L2Attackable) npc).getMostHated().getY() - _ai2) * (((L2Attackable) npc).getMostHated().getY() - _ai2) > 1500 * 1500)
 							i0 = 1;
 						else
 							i0 = 0;
@@ -243,7 +243,7 @@ public class Zaken extends L2AttackableAIScript
 						{
 							if (c_quest0 == null)
 								i0 = 0;
-							else if ((((c_quest0.getX() - _ai1) * (c_quest0.getX() - _ai1)) + ((c_quest0.getY() - _ai2) * (c_quest0.getY() - _ai2))) > (1500 * 1500))
+							else if ((c_quest0.getX() - _ai1) * (c_quest0.getX() - _ai1) + (c_quest0.getY() - _ai2) * (c_quest0.getY() - _ai2) > 1500 * 1500)
 								i0 = 1;
 							else
 								i0 = 0;
@@ -254,7 +254,7 @@ public class Zaken extends L2AttackableAIScript
 						{
 							if (c_quest1 == null)
 								i0 = 0;
-							else if ((((c_quest1.getX() - _ai1) * (c_quest1.getX() - _ai1)) + ((c_quest1.getY() - _ai2) * (c_quest1.getY() - _ai2))) > (1500 * 1500))
+							else if ((c_quest1.getX() - _ai1) * (c_quest1.getX() - _ai1) + (c_quest1.getY() - _ai2) * (c_quest1.getY() - _ai2) > 1500 * 1500)
 								i0 = 1;
 							else
 								i0 = 0;
@@ -265,7 +265,7 @@ public class Zaken extends L2AttackableAIScript
 						{
 							if (c_quest2 == null)
 								i0 = 0;
-							else if ((((c_quest2.getX() - _ai1) * (c_quest2.getX() - _ai1)) + ((c_quest2.getY() - _ai2) * (c_quest2.getY() - _ai2))) > (1500 * 1500))
+							else if ((c_quest2.getX() - _ai1) * (c_quest2.getX() - _ai1) + (c_quest2.getY() - _ai2) * (c_quest2.getY() - _ai2) > 1500 * 1500)
 								i0 = 1;
 							else
 								i0 = 0;
@@ -276,7 +276,7 @@ public class Zaken extends L2AttackableAIScript
 						{
 							if (c_quest3 == null)
 								i0 = 0;
-							else if ((((c_quest3.getX() - _ai1) * (c_quest3.getX() - _ai1)) + ((c_quest3.getY() - _ai2) * (c_quest3.getY() - _ai2))) > (1500 * 1500))
+							else if ((c_quest3.getX() - _ai1) * (c_quest3.getX() - _ai1) + (c_quest3.getY() - _ai2) * (c_quest3.getY() - _ai2) > 1500 * 1500)
 								i0 = 1;
 							else
 								i0 = 0;
@@ -287,7 +287,7 @@ public class Zaken extends L2AttackableAIScript
 						{
 							if (c_quest4 == null)
 								i0 = 0;
-							else if ((((c_quest4.getX() - _ai1) * (c_quest4.getX() - _ai1)) + ((c_quest4.getY() - _ai2) * (c_quest4.getY() - _ai2))) > (1500 * 1500))
+							else if ((c_quest4.getX() - _ai1) * (c_quest4.getX() - _ai1) + (c_quest4.getY() - _ai2) * (c_quest4.getY() - _ai2) > 1500 * 1500)
 								i0 = 1;
 							else
 								i0 = 0;
@@ -307,14 +307,14 @@ public class Zaken extends L2AttackableAIScript
 						}
 					}
 				}
-				if ((Rnd.get(20) < 1) && (_ai0 == 0))
+				if (Rnd.get(20) < 1 && _ai0 == 0)
 				{
 					_ai1 = npc.getX();
 					_ai2 = npc.getY();
 					_ai3 = npc.getZ();
 				}
 				L2Character c_ai0 = null;
-				if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) && (_quest1 == 0))
+				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && _quest1 == 0)
 				{
 					if (((L2Attackable) npc).getMostHated() != null)
 					{
@@ -322,13 +322,13 @@ public class Zaken extends L2AttackableAIScript
 						_quest1 = 1;
 					}
 				}
-				else if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) && (_quest1 != 0))
+				else if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && _quest1 != 0)
 				{
 					if (((L2Attackable) npc).getMostHated() != null)
 					{
 						if (c_ai0 == ((L2Attackable) npc).getMostHated())
 						{
-							_quest1 = (_quest1 + 1);
+							_quest1 = _quest1 + 1;
 						}
 						else
 						{
@@ -527,15 +527,15 @@ public class Zaken extends L2AttackableAIScript
 	@Override
 	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isPet)
 	{
-		if ((caller == null) || (npc == null))
+		if (caller == null || npc == null)
 			return super.onFactionCall(npc, caller, attacker, isPet);
 		int npcId = npc.getNpcId();
 		int callerId = caller.getNpcId();
 		
-		if ((TimeController.getInstance().getGameTime() < 5) && (callerId != ZAKEN) && (npcId == ZAKEN))
+		if (TimeController.getInstance().getGameTime() < 5 && callerId != ZAKEN && npcId == ZAKEN)
 		{
 			int damage = 0; // well damage required :x
-			if ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) && (_ai0 == 0) && (damage < 10) && (Rnd.get((30 * 15)) < 1))//todo - damage missing
+			if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE && _ai0 == 0 && damage < 10 && Rnd.get(30 * 15) < 1)//todo - damage missing
 			{
 				_ai0 = 1;
 				_ai1 = caller.getX();
@@ -577,9 +577,9 @@ public class Zaken extends L2AttackableAIScript
 				player.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
 				((L2Attackable) npc).stopHating(player);
 				
-				if ((c_quest0 != null) && (_quest0 > 0) && (c_quest0 != player) && (c_quest0.getZ() > (player.getZ() - 100)) && (c_quest0.getZ() < (player.getZ() + 100)))
+				if (c_quest0 != null && _quest0 > 0 && c_quest0 != player && c_quest0.getZ() > player.getZ() - 100 && c_quest0.getZ() < player.getZ() + 100)
 				{
-					if ((((c_quest0.getX() - player.getX()) * (c_quest0.getX() - player.getX())) + ((c_quest0.getY() - player.getY()) * (c_quest0.getY() - player.getY()))) > (250 * 250))
+					if ((c_quest0.getX() - player.getX()) * (c_quest0.getX() - player.getX()) + (c_quest0.getY() - player.getY()) * (c_quest0.getY() - player.getY()) > 250 * 250)
 					{
 						i0 = 1;
 					}
@@ -595,9 +595,9 @@ public class Zaken extends L2AttackableAIScript
 						((L2Attackable) npc).stopHating(c_quest0);
 					}
 				}
-				if ((c_quest1 != null) && (_quest0 > 1) && (c_quest1 != player) && (c_quest1.getZ() > (player.getZ() - 100)) && (c_quest1.getZ() < (player.getZ() + 100)))
+				if (c_quest1 != null && _quest0 > 1 && c_quest1 != player && c_quest1.getZ() > player.getZ() - 100 && c_quest1.getZ() < player.getZ() + 100)
 				{
-					if ((((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX())) + ((c_quest1.getY() - player.getY()) * (c_quest1.getY() - player.getY()))) > (250 * 250))
+					if ((c_quest1.getX() - player.getX()) * (c_quest1.getX() - player.getX()) + (c_quest1.getY() - player.getY()) * (c_quest1.getY() - player.getY()) > 250 * 250)
 					{
 						i0 = 1;
 					}
@@ -613,9 +613,9 @@ public class Zaken extends L2AttackableAIScript
 						((L2Attackable) npc).stopHating(c_quest1);
 					}
 				}
-				if ((c_quest2 != null) && (_quest0 > 2) && (c_quest2 != player) && (c_quest2.getZ() > (player.getZ() - 100)) && (c_quest2.getZ() < (player.getZ() + 100)))
+				if (c_quest2 != null && _quest0 > 2 && c_quest2 != player && c_quest2.getZ() > player.getZ() - 100 && c_quest2.getZ() < player.getZ() + 100)
 				{
-					if ((((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX())) + ((c_quest2.getY() - player.getY()) * (c_quest2.getY() - player.getY()))) > (250 * 250))
+					if ((c_quest2.getX() - player.getX()) * (c_quest2.getX() - player.getX()) + (c_quest2.getY() - player.getY()) * (c_quest2.getY() - player.getY()) > 250 * 250)
 					{
 						i0 = 1;
 					}
@@ -631,9 +631,9 @@ public class Zaken extends L2AttackableAIScript
 						((L2Attackable) npc).stopHating(c_quest2);
 					}
 				}
-				if ((c_quest3 != null) && (_quest0 > 3) && (c_quest3 != player) && (c_quest3.getZ() > (player.getZ() - 100)) && (c_quest3.getZ() < (player.getZ() + 100)))
+				if (c_quest3 != null && _quest0 > 3 && c_quest3 != player && c_quest3.getZ() > player.getZ() - 100 && c_quest3.getZ() < player.getZ() + 100)
 				{
-					if ((((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX())) + ((c_quest3.getY() - player.getY()) * (c_quest3.getY() - player.getY()))) > (250 * 250))
+					if ((c_quest3.getX() - player.getX()) * (c_quest3.getX() - player.getX()) + (c_quest3.getY() - player.getY()) * (c_quest3.getY() - player.getY()) > 250 * 250)
 					{
 						i0 = 1;
 					}
@@ -649,9 +649,9 @@ public class Zaken extends L2AttackableAIScript
 						((L2Attackable) npc).stopHating(c_quest3);
 					}
 				}
-				if ((c_quest4 != null) && (_quest0 > 4) && (c_quest4 != player) && (c_quest4.getZ() > (player.getZ() - 100)) && (c_quest4.getZ() < (player.getZ() + 100)))
+				if (c_quest4 != null && _quest0 > 4 && c_quest4 != player && c_quest4.getZ() > player.getZ() - 100 && c_quest4.getZ() < player.getZ() + 100)
 				{
-					if ((((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX())) + ((c_quest4.getY() - player.getY()) * (c_quest4.getY() - player.getY()))) > (250 * 250))
+					if ((c_quest4.getX() - player.getX()) * (c_quest4.getX() - player.getX()) + (c_quest4.getY() - player.getY()) * (c_quest4.getY() - player.getY()) > 250 * 250)
 					{
 						i0 = 1;
 					}
@@ -702,11 +702,11 @@ public class Zaken extends L2AttackableAIScript
 				}
 			}
 			L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
-			int hate = (int) (((damage / npc.getMaxHp()) / 0.05) * 20000);
+			int hate = (int) (damage / npc.getMaxHp() / 0.05 * 20000);
 			((L2Attackable) npc).addDamageHate(originalAttacker, 0, hate);
 			if (Rnd.get(10) < 1)
 			{
-				int i0 = Rnd.get((15 * 15));
+				int i0 = Rnd.get(15 * 15);
 				if (i0 < 1)
 				{
 					npc.setTarget(attacker);
@@ -778,7 +778,7 @@ public class Zaken extends L2AttackableAIScript
 			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 			GrandBossManager.getInstance().setBossStatus(ZAKEN, DEAD);
 			//time is 40hour	+ 0-8 hour
-			long respawnTime = ((40 * 3600000) + (8 * Rnd.get(3600000)));
+			long respawnTime = 40 * 3600000 + 8 * Rnd.get(3600000);
 			startQuestTimer("zaken_unlock", respawnTime, null, null);
 			cancelQuestTimer("1001", npc, null);
 			cancelQuestTimer("1003", npc, null);
@@ -791,7 +791,7 @@ public class Zaken extends L2AttackableAIScript
 		{
 			if (npcId != ZAKEN)
 			{
-				startQuestTimer("CreateOnePrivateEx", ((30 + Rnd.get(60)) * 1000), npc, null);
+				startQuestTimer("CreateOnePrivateEx", (30 + Rnd.get(60)) * 1000, npc, null);
 			}
 		}
 		return super.onKill(npc, killer, isPet);
@@ -805,11 +805,11 @@ public class Zaken extends L2AttackableAIScript
 		{
 			if (skill.getAggroPoints() > 0)
 			{
-				((L2Attackable) npc).addDamageHate(caster, 0, (((skill.getAggroPoints() / npc.getMaxHp()) * 10) * 150));
+				((L2Attackable) npc).addDamageHate(caster, 0, skill.getAggroPoints() / npc.getMaxHp() * 10 * 150);
 			}
 			if (Rnd.get(12) < 1)
 			{
-				int i0 = Rnd.get((15 * 15));
+				int i0 = Rnd.get(15 * 15);
 				if (i0 < 1)
 				{
 					npc.setTarget(caster);
@@ -867,9 +867,9 @@ public class Zaken extends L2AttackableAIScript
 				L2Character target = isPet ? player.getPet() : player;
 				((L2Attackable) npc).addDamageHate(target, 1, 200);
 			}
-			if ((player.getZ() > (npc.getZ() - 100)) && (player.getZ() < (npc.getZ() + 100)))
+			if (player.getZ() > npc.getZ() - 100 && player.getZ() < npc.getZ() + 100)
 			{
-				if ((_quest0 < 5) && (Rnd.get(3) < 1))
+				if (_quest0 < 5 && Rnd.get(3) < 1)
 				{
 					if (_quest0 == 0)
 					{
@@ -895,7 +895,7 @@ public class Zaken extends L2AttackableAIScript
 				}
 				if (Rnd.get(15) < 1)
 				{
-					int i0 = Rnd.get((15 * 15));
+					int i0 = Rnd.get(15 * 15);
 					if (i0 < 1)
 					{
 						npc.setTarget(player);
@@ -950,7 +950,7 @@ public class Zaken extends L2AttackableAIScript
 		int trys = 20;
 		
 		// TODO was getSpawnHeight here...
-		while ((Math.abs(GeoEngine.getInstance().getHeight(rndX, rndY, z) - z) > 50) && (trys-- > 0))
+		while (Math.abs(GeoEngine.getInstance().getHeight(rndX, rndY, z) - z) > 50 && trys-- > 0)
 		{
 			rndX = x + Rnd.get(0, rnd);
 			rndY = y + Rnd.get(0, rnd);

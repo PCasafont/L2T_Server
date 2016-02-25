@@ -51,7 +51,7 @@ public class FairyTrees extends L2AttackableAIScript
 				if (Rnd.get(1, 2) == 1)
 				{
 					L2Skill skill = SkillTable.getInstance().getInfo(4243, 1);
-					if ((skill != null) && (originalKiller != null))
+					if (skill != null && originalKiller != null)
 						skill.getEffects(newNpc, originalKiller);
 				}
 			}

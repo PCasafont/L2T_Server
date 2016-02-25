@@ -56,7 +56,7 @@ public class ClanPenalty implements IUserCommandHandler
 			penalty = true;
 		}
 		
-		if ((activeChar.getClan() != null) && (activeChar.getClan().getCharPenaltyExpiryTime() > System.currentTimeMillis()))
+		if (activeChar.getClan() != null && activeChar.getClan().getCharPenaltyExpiryTime() > System.currentTimeMillis())
 		{
 			StringUtil.append(htmlContent, "<td width=170>Unable to invite a clan member.</td>" + "<td width=100 align=center>", format.format(activeChar.getClan().getCharPenaltyExpiryTime()), "</td>");
 			penalty = true;

@@ -155,7 +155,7 @@ public class FaeronSiege extends Quest
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof FearonSiegeWorld))
+		if (wrld != null && wrld instanceof FearonSiegeWorld)
 		{
 			final FearonSiegeWorld world = (FearonSiegeWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_start"))
@@ -226,7 +226,7 @@ public class FaeronSiege extends Quest
 				 * This NPC will cast non-stop one buff to all the players that are inside his activity radius.
 				 */
 				Collection<L2Character> chars = world._protectionStone.getKnownList().getKnownCharactersInRadius(_protectionSkill.getSkillRadius());
-				if ((chars != null) && !chars.isEmpty())
+				if (chars != null && !chars.isEmpty())
 				{
 					for (L2Character chara : chars)
 					{
@@ -253,14 +253,14 @@ public class FaeronSiege extends Quest
 				 * Gravity Core Shield Support AI
 				 * This NPC will cast non-stop a UD skill to all players inside
 				 */
-				if ((world._summonGravityCore != null) && !world._summonGravityCore.isDecayed())
+				if (world._summonGravityCore != null && !world._summonGravityCore.isDecayed())
 				{
 					Collection<L2Character> chars = world._summonGravityCore.getKnownList().getKnownCharactersInRadius(_ultimateDef.getSkillRadius());
-					if ((chars != null) && !chars.isEmpty())
+					if (chars != null && !chars.isEmpty())
 					{
 						for (L2Character chara : chars)
 						{
-							if ((chara == null) || !chara.isInsideRadius(world._summonGravityCore, _ultimateDef.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
+							if (chara == null || !chara.isInsideRadius(world._summonGravityCore, _ultimateDef.getSkillRadius(), false, false) || !(chara instanceof L2Playable))
 								continue;
 							
 							_ultimateDef.getEffects(world._summonGravityCore, chara);
@@ -305,7 +305,7 @@ public class FaeronSiege extends Quest
 				 * 		- Res dead players that are inside the resurrection cast skill range
 				 */
 				final Collection<L2PcInstance> chars = world._warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
-				if ((chars != null) && !chars.isEmpty())
+				if (chars != null && !chars.isEmpty())
 				{
 					if (world._warriorMageSup.getCurrentMp() < 800)
 						world._warriorMageSup.broadcastPacket(new CreatureSay(world._warriorMageSup.getObjectId(), 1, world._warriorMageSup.getName(), "My mana power are decreasing so fast...!"));
@@ -319,7 +319,7 @@ public class FaeronSiege extends Quest
 						
 						if (chara.isDead() && world._warriorMageSup.isInsideRadius(chara, _resSkill.getCastRange(), false, false))
 							deadPlayers.add(chara);
-						else if (chara.getCurrentHp() < (chara.getMaxHp() * 0.80))
+						else if (chara.getCurrentHp() < chara.getMaxHp() * 0.80)
 							fuckedPlayers.add(chara);
 					}
 					
@@ -328,7 +328,7 @@ public class FaeronSiege extends Quest
 					if (deadPlayers.size() > 0) //RES
 					{
 						final L2PcInstance target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
-						if ((target != null) && target.isDead() && world._warriorMageSup.isInsideRadius(target, _resSkill.getCastRange(), false, false) && !target.isReviveRequested())
+						if (target != null && target.isDead() && world._warriorMageSup.isInsideRadius(target, _resSkill.getCastRange(), false, false) && !target.isReviveRequested())
 						{
 							world._warriorMageSup.broadcastPacket(new CreatureSay(world._warriorMageSup.getObjectId(), 1, world._warriorMageSup.getName(), target.getName() + " I'll resurrect you!"));
 							
@@ -338,22 +338,22 @@ public class FaeronSiege extends Quest
 							nextActionTime += _resSkill.getHitTime() + 2000;
 						}
 					}
-					else if ((fuckedCount > 0) && (fuckedCount <= 3)) //HEAL
+					else if (fuckedCount > 0 && fuckedCount <= 3) //HEAL
 					{
 						L2PcInstance target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
-						if ((target != null) && (world._warriorMageSup.getCurrentMp() >= _healSkill.getMpConsume()))
+						if (target != null && world._warriorMageSup.getCurrentMp() >= _healSkill.getMpConsume())
 						{
 							world._warriorMageSup.broadcastPacket(new CreatureSay(world._warriorMageSup.getObjectId(), 1, world._warriorMageSup.getName(), target.getName() + " let me give you a hand!"));
 							
 							world._warriorMageSup.setTarget(target);
 							world._warriorMageSup.doCast(_healSkill);
 							
-							nextActionTime += (_healSkill.getHitTime() + 3000);
+							nextActionTime += _healSkill.getHitTime() + 3000;
 						}
 					}
 					else if (fuckedCount >= 4) //Protective Gravity Core
 					{
-						if ((world._summonGravityCore == null) || (world._summonGravityCore.isDecayed() && (world._warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()))) //Be sure we don't spawn more than one
+						if (world._summonGravityCore == null || world._summonGravityCore.isDecayed() && world._warriorMageSup.getCurrentMp() >= _summonTree.getMpConsume()) //Be sure we don't spawn more than one
 						{
 							world._warriorMageSup.broadcastPacket(new CreatureSay(world._warriorMageSup.getObjectId(), 1, world._warriorMageSup.getName(), "Desperate situations need desperate measures! Come all! Enter enter into that shield!"));
 							
@@ -374,22 +374,22 @@ public class FaeronSiege extends Quest
 								}
 							}, _summonCore.getHitTime() + 1000);
 							
-							nextActionTime += (_summonCore.getHitTime() + 5000);
+							nextActionTime += _summonCore.getHitTime() + 5000;
 						}
 					}
 					else
 					//Give Buffs
 					{
 						int buffLevel = 0;
-						if (world._bossMakkum.getCurrentHp() < (world._bossMakkum.getMaxHp() * 0.50))
+						if (world._bossMakkum.getCurrentHp() < world._bossMakkum.getMaxHp() * 0.50)
 							buffLevel = 1;
-						else if (world._bossMakkum.getCurrentHp() < (world._bossMakkum.getMaxHp() * 0.40))
+						else if (world._bossMakkum.getCurrentHp() < world._bossMakkum.getMaxHp() * 0.40)
 							buffLevel = 2;
-						else if (world._bossMakkum.getCurrentHp() < (world._bossMakkum.getMaxHp() * 0.20))
+						else if (world._bossMakkum.getCurrentHp() < world._bossMakkum.getMaxHp() * 0.20)
 							buffLevel = 3;
 						
 						final L2Skill buffSkill = SkillTable.getInstance().getInfo(_fullBuffsIds[Rnd.get(_fullBuffsIds.length)] + buffLevel, 1);
-						if ((buffSkill != null) && (world._warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume()))
+						if (buffSkill != null && world._warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume())
 						{
 							String skillType = buffSkill.getName().split(" ")[2];
 							
@@ -405,7 +405,7 @@ public class FaeronSiege extends Quest
 								{
 									for (L2PcInstance chara : chars)
 									{
-										if ((chara == null) || !chara.isInsideRadius(world._warriorMageSup, 150, false, false))
+										if (chara == null || !chara.isInsideRadius(world._warriorMageSup, 150, false, false))
 											continue;
 										
 										buffSkill.getEffects(world._warriorMageSup, chara);
@@ -413,7 +413,7 @@ public class FaeronSiege extends Quest
 								}
 							}, _buffPresentation.getHitTime() + 700);
 							
-							nextActionTime += (buffSkill.getHitTime() + 9000);
+							nextActionTime += buffSkill.getHitTime() + 9000;
 						}
 					}
 					startQuestTimer("ai_magic_sup", nextActionTime, world._protectionStone, null);
@@ -447,7 +447,7 @@ public class FaeronSiege extends Quest
 			final FearonSiegeWorld world = (FearonSiegeWorld) tmpWorld;
 			if (npc == world._bossMakkum)
 			{
-				if ((world.status == 0) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.90)))
+				if (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.90)
 				{
 					world.status = 1;
 					
@@ -491,7 +491,7 @@ public class FaeronSiege extends Quest
 						}
 					}, 12000);
 				}
-				else if ((world.status == 1) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.50)))
+				else if (world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
 				{
 					world.status = 2;
 					
@@ -546,7 +546,7 @@ public class FaeronSiege extends Quest
 						}
 					}, 12000);
 				}
-				else if ((world.status == 2) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.10)))
+				else if (world.status == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.10)
 				{
 					world.status = 3;
 					
@@ -590,7 +590,7 @@ public class FaeronSiege extends Quest
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
+						if (pMember == null || pMember.getInstanceId() != world.instanceId)
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
@@ -623,7 +623,7 @@ public class FaeronSiege extends Quest
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-78583, 248231, -3303, 56847, true);

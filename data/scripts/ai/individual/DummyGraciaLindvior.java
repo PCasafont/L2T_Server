@@ -47,7 +47,7 @@ public class DummyGraciaLindvior extends Quest
 			{
 				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values())
 				{
-					if ((pls != null) && (pls instanceof L2PcInstance))
+					if (pls != null && pls instanceof L2PcInstance)
 					{
 						((L2PcInstance) pls).showQuestMovie(1);
 					}

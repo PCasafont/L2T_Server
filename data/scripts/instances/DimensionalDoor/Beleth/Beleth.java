@@ -83,7 +83,7 @@ public class Beleth extends L2AttackableAIScript
 		int outerRad;
 		for (int i = 0; i < 16; i++)
 		{
-			if ((i % 2) == 0)
+			if (i % 2 == 0)
 			{
 				innerRad = 650;
 				outerRad = 1200;
@@ -98,12 +98,12 @@ public class Beleth extends L2AttackableAIScript
 			_cloneX[i] += (int) (innerRad * Math.sin(i * Math.toRadians(angle)));
 			_cloneY[i] = 213135;
 			_cloneY[i] += (int) (innerRad * Math.cos(i * Math.toRadians(angle)));
-			_cloneH[i] = Util.convertDegreeToClientHeading(270 - (i * angle));
+			_cloneH[i] = Util.convertDegreeToClientHeading(270 - i * angle);
 			_cloneX[i + 16] = 16327;
 			_cloneX[i + 16] += (int) (outerRad * Math.sin(i * Math.toRadians(angle)));
 			_cloneY[i + 16] = 213135;
 			_cloneY[i + 16] += (int) (outerRad * Math.cos(i * Math.toRadians(angle)));
-			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - (i * angle));
+			_cloneH[i + 16] = Util.convertDegreeToClientHeading(90 - i * angle);
 		}
 	}
 	
@@ -131,7 +131,7 @@ public class Beleth extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onAggroRangeEnter: " + player);
 		
-		if ((npc.getNpcId() == _realBelethId) || (npc.getNpcId() == _fakeBelethId))
+		if (npc.getNpcId() == _realBelethId || npc.getNpcId() == _fakeBelethId)
 		{
 			if (isPet)
 			{
@@ -173,7 +173,7 @@ public class Beleth extends L2AttackableAIScript
 			return null;
 		}
 		
-		if ((wrld != null) && (wrld instanceof belethWorld))
+		if (wrld != null && wrld instanceof belethWorld)
 		{
 			belethWorld world = (belethWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_door"))
@@ -258,8 +258,8 @@ public class Beleth extends L2AttackableAIScript
 				InstanceManager.getInstance().sendPacket(world.instanceId, new SocialAction(world._belethBoss.getObjectId(), 1));
 				for (int i = 0; i < 6; i++)
 				{
-					int x = (int) ((150 * Math.cos(i * 1.046666667)) + 16323);
-					int y = (int) ((150 * Math.sin(i * 1.046666667)) + 213059);
+					int x = (int) (150 * Math.cos(i * 1.046666667) + 16323);
+					int y = (int) (150 * Math.sin(i * 1.046666667) + 213059);
 					
 					L2Npc minion = addSpawn(_fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
 					minion.setShowSummonAnimation(true);
@@ -469,7 +469,7 @@ public class Beleth extends L2AttackableAIScript
 			Log.warning(getName() + ": onKill: " + npc.getName());
 		
 		InstanceWorld wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if ((wrld != null) && (wrld instanceof belethWorld))
+		if (wrld != null && wrld instanceof belethWorld)
 		{
 			belethWorld world = (belethWorld) wrld;
 			if (npc.getNpcId() == _realBelethId)
@@ -492,7 +492,7 @@ public class Beleth extends L2AttackableAIScript
 				{
 					for (L2PcInstance pMember : player.getParty().getPartyMembers())
 					{
-						if ((pMember == null) || (pMember.getInstanceId() != world.instanceId))
+						if (pMember == null || pMember.getInstanceId() != world.instanceId)
 							continue;
 						
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
@@ -571,7 +571,7 @@ public class Beleth extends L2AttackableAIScript
 			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 			if (inst != null)
 			{
-				if ((inst.getInstanceEndTime() > 300600) && world.allowed.contains(player.getObjectId()))
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
 				{
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(16323, 211588, -9359);

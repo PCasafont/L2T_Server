@@ -50,8 +50,8 @@ public class L2FortBallistaInstance extends L2Npc
 		{
 			if (killer instanceof L2PcInstance)
 			{
-				L2PcInstance player = ((L2PcInstance) killer);
-				if ((player.getClan() != null) && (player.getClan().getLevel() >= 5))
+				L2PcInstance player = (L2PcInstance) killer;
+				if (player.getClan() != null && player.getClan().getLevel() >= 5)
 				{
 					player.getClan().addReputationScore(Config.BALLISTA_POINTS, true);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BALLISTA_DESTROYED_CLAN_REPU_INCREASED));

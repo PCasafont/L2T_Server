@@ -52,7 +52,7 @@ public class SpiritShot implements IItemHandler
 		int itemId = item.getItemId();
 		
 		// Check if Spirit shot can be used
-		if ((weaponInst == null) || (weaponItem.getSpiritShotCount() == 0))
+		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
 		{
 			if (!activeChar.hasAutoSoulShot(item))
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SPIRITSHOTS));
@@ -69,29 +69,29 @@ public class SpiritShot implements IItemHandler
 		switch (weaponGrade)
 		{
 			case L2Item.CRYSTAL_NONE:
-				if ((itemId != 5790) && (itemId != 2509))
+				if (itemId != 5790 && itemId != 2509)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_D:
-				if ((itemId != 2510) && (itemId != 22077))
+				if (itemId != 2510 && itemId != 22077)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_C:
-				if ((itemId != 2511) && (itemId != 22078))
+				if (itemId != 2511 && itemId != 22078)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_B:
-				if ((itemId != 2512) && (itemId != 22079))
+				if (itemId != 2512 && itemId != 22079)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_A:
-				if ((itemId != 2513) && (itemId != 22080))
+				if (itemId != 2513 && itemId != 22080)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if ((itemId != 2514) && (itemId != 22081))
+				if (itemId != 2514 && itemId != 22081)
 					gradeCheck = false;
 				break;
 			case L2Item.CRYSTAL_R:
@@ -112,7 +112,7 @@ public class SpiritShot implements IItemHandler
 		
 		int sapphireLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < (Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount()); i++)
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++)
 		{
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null)

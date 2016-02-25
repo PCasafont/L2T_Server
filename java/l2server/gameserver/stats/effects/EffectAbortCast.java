@@ -36,13 +36,13 @@ public class EffectAbortCast extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if ((getEffected() == null) || (getEffected() == getEffector()))
+		if (getEffected() == null || getEffected() == getEffector())
 			return false;
 		
 		if (getEffected().isRaid())
 			return false;
 		
-		if (getEffected().isCastingNow() && getEffected().canAbortCast() && (getEffected().getLastSkillCast() != null) && getEffected().getLastSkillCast().isMagic())
+		if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected().getLastSkillCast() != null && getEffected().getLastSkillCast().isMagic())
 		{
 			getEffected().abortCast();
 			if (getEffected() instanceof L2PcInstance)

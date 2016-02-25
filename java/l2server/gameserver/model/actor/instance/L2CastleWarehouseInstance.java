@@ -75,7 +75,7 @@ public class L2CastleWarehouseInstance extends L2WarehouseInstance
 		if (player.isGM())
 			return COND_OWNER;
 		
-		if ((getCastle() != null) && (getCastle().getCastleId() > 0))
+		if (getCastle() != null && getCastle().getCastleId() > 0)
 		{
 			if (player.getClan() != null)
 			{

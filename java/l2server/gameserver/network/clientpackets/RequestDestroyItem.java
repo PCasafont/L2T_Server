@@ -81,7 +81,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		
 		long count = _count;
 		
-		if (activeChar.isProcessingTransaction() || (activeChar.getPrivateStoreType() != 0))
+		if (activeChar.isProcessingTransaction() || activeChar.getPrivateStoreType() != 0)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_TRADE_DISCARD_DROP_ITEM_WHILE_IN_SHOPMODE));
 			return;
@@ -89,7 +89,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		
 		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		// if we can't find the requested item, its actually a cheat
-		if ((itemToRemove == null) || itemToRemove.isTerritoryWard())
+		if (itemToRemove == null || itemToRemove.isTerritoryWard())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 			return;
@@ -98,7 +98,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		// Cannot discard item that the skill is consuming
 		if (activeChar.isCastingNow())
 		{
-			if ((activeChar.getCurrentSkill() != null) && (activeChar.getCurrentSkill().getSkill().getItemConsumeId() == itemToRemove.getItemId()))
+			if (activeChar.getCurrentSkill() != null && activeChar.getCurrentSkill().getSkill().getItemConsumeId() == itemToRemove.getItemId())
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 				return;
@@ -107,7 +107,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		// Cannot discard item that the skill is consuming
 		if (activeChar.isCastingSimultaneouslyNow())
 		{
-			if ((activeChar.getLastSimultaneousSkillCast() != null) && (activeChar.getLastSimultaneousSkillCast().getItemConsumeId() == itemToRemove.getItemId()))
+			if (activeChar.getLastSimultaneousSkillCast() != null && activeChar.getLastSimultaneousSkillCast().getItemConsumeId() == itemToRemove.getItemId())
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 				return;
@@ -116,7 +116,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		
 		int itemId = itemToRemove.getItemId();
 		
-		if ((!activeChar.isGM() && !itemToRemove.isDestroyable()) || CursedWeaponsManager.getInstance().isCursed(itemId))
+		if (!activeChar.isGM() && !itemToRemove.isDestroyable() || CursedWeaponsManager.getInstance().isCursed(itemId))
 		{
 			if (itemToRemove.isHeroItem())
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.HERO_WEAPONS_CANT_DESTROYED));
@@ -125,7 +125,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			return;
 		}
 		
-		if (!itemToRemove.isStackable() && (count > 1))
+		if (!itemToRemove.isStackable() && count > 1)
 		{
 			Util.handleIllegalPlayerAction(activeChar, "[RequestDestroyItem] Character " + activeChar.getName() + " of account " + activeChar.getAccountName() + " tried to destroy a non-stackable item with oid " + _objectId + " but has count > 1!", Config.DEFAULT_PUNISH);
 			return;
@@ -159,7 +159,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			Connection con = null;
 			try
 			{
-				if ((activeChar.getPet() != null) && (activeChar.getPet().getControlObjectId() == _objectId))
+				if (activeChar.getPet() != null && activeChar.getPet().getControlObjectId() == _objectId)
 					activeChar.getPet().unSummon(activeChar);
 				
 				// if it's a pet control item, delete the pet
@@ -184,7 +184,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		// Crystallize the item instead of destroying it, if possible
 		int skillLevel = activeChar.getSkillLevelHash(L2Skill.SKILL_CRYSTALLIZE);
 		boolean hasBeenCrystallized = false;
-		if ((skillLevel > 0) && itemToRemove.getItem().isCrystallizable() && (itemToRemove.getCrystalCount() > 0) && !(itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) && !itemToRemove.isEquipped())
+		if (skillLevel > 0 && itemToRemove.getItem().isCrystallizable() && itemToRemove.getCrystalCount() > 0 && !(itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) && !itemToRemove.isEquipped())
 		{
 			// Check if the char can crystallize items and return if false;
 			boolean canCrystallize = true;
@@ -249,7 +249,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 				{
 					for (L2CrystallizeReward reward : itemToRemove.getItem().getCrystallizeRewards())
 					{
-						if ((reward.getChance() * 1000) > Rnd.get(100000))
+						if (reward.getChance() * 1000 > Rnd.get(100000))
 							activeChar.addItem("Crystallize", reward.getItemId(), reward.getCount(), activeChar, true);
 					}
 				}

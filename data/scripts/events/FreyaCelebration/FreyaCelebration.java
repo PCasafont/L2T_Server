@@ -53,7 +53,7 @@ public class FreyaCelebration extends Quest
 	{
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
-		if ((st == null) || (q == null))
+		if (st == null || q == null)
 			return null;
 		
 		if (event.equalsIgnoreCase("give_potion"))
@@ -69,13 +69,13 @@ public class FreyaCelebration extends Quest
 					st.setState(State.STARTED);
 					st.takeItems(57, 1);
 					st.giveItems(_freya_potion, 1);
-					q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (_hours * 3600000)));
+					q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + _hours * 3600000));
 				}
 				else
 				{
 					long remainingTime = (_reuse_time - System.currentTimeMillis()) / 1000;
 					int hours = (int) (remainingTime / 3600);
-					int minutes = (int) ((remainingTime % 3600) / 60);
+					int minutes = (int) (remainingTime % 3600 / 60);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVAILABLE_AFTER_S1_S2_HOURS_S3_MINUTES);
 					sm.addItemName(_freya_potion);
 					sm.addNumber(hours);
@@ -97,10 +97,10 @@ public class FreyaCelebration extends Quest
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if ((caster == null) || (npc == null))
+		if (caster == null || npc == null)
 			return null;
 		
-		if ((npc.getNpcId() == _freya) && Util.contains(targets, npc) && Util.contains(_skills, skill.getId()))
+		if (npc.getNpcId() == _freya && Util.contains(targets, npc) && Util.contains(_skills, skill.getId()))
 		{
 			if (Rnd.get(100) < 5)
 			{

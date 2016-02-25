@@ -65,13 +65,13 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if ((_targetX == _originX) && (_targetY == _originY) && (_targetZ == _originZ))
+		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
 		{
 			activeChar.sendPacket(new StopMoveInVehicle(activeChar, _boatId));
 			return;
 		}
 		
-		if (activeChar.isAttackingNow() && (activeChar.getActiveWeaponItem() != null) && (activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW))
+		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -110,7 +110,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket
 		else
 		{
 			boat = BoatManager.getInstance().getBoat(_boatId);
-			if ((boat == null) || !boat.isInsideRadius(activeChar, 300, true, false))
+			if (boat == null || !boat.isInsideRadius(activeChar, 300, true, false))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;

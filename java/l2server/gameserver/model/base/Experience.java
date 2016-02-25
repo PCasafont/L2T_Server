@@ -57,7 +57,7 @@ public class Experience
 			String line = null;
 			while ((line = lnr.readLine()) != null)
 			{
-				if ((line.trim().length() == 0) || line.startsWith("#"))
+				if (line.trim().length() == 0 || line.startsWith("#"))
 					continue;
 				
 				if (line.indexOf("#") > 0)

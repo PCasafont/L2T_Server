@@ -38,7 +38,7 @@ public class TargetOwnerPet implements ISkillTargetTypeHandler
 		if (activeChar instanceof L2Summon)
 		{
 			target = ((L2Summon) activeChar).getOwner();
-			if ((target != null) && !target.isDead())
+			if (target != null && !target.isDead())
 				return new L2Character[] { target };
 		}
 		

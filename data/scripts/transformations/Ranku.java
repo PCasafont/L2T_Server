@@ -18,7 +18,7 @@ public class Ranku extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 309) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 309 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

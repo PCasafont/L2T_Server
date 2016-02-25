@@ -111,7 +111,7 @@ public class EnchantHPBonusData
 			for (Integer itemId : itemIds)
 			{
 				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if ((item != null) && (item.getCrystalType() != L2Item.CRYSTAL_NONE))
+				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE)
 				{
 					switch (item.getBodyPart())
 					{
@@ -137,7 +137,7 @@ public class EnchantHPBonusData
 			for (Integer itemId : itemIds)
 			{
 				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if ((item != null) && (item.getCrystalType() != L2Item.CRYSTAL_NONE))
+				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE)
 				{
 					switch (item.getBodyPart())
 					{
@@ -157,7 +157,7 @@ public class EnchantHPBonusData
 	{
 		final Integer[] values = _armorHPBonus.get(item.getItem().getItemGradePlain());
 		
-		if ((values == null) || (values.length == 0))
+		if (values == null || values.length == 0)
 			return 0;
 		
 		if (item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)

@@ -69,7 +69,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 			return;
 		}
 		
-		if (!msg.hasAttachments() || (msg.getSendBySystem() != 0))
+		if (!msg.hasAttachments() || msg.getSendBySystem() != 0)
 			return;
 		
 		MailManager.getInstance().sendMessage(new Message(msg));

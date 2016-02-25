@@ -160,7 +160,7 @@ public class SeedOfDestruction extends Quest
 			player.sendPacket(SystemMessage.getSystemMessage(2185));
 			return false;
 		}
-		else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS))
+		else if (channel.getMemberCount() < MIN_PLAYERS || channel.getMemberCount() > MAX_PLAYERS)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(2102));
 			return false;
@@ -235,7 +235,7 @@ public class SeedOfDestruction extends Quest
 			Log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			// teleport players
 			teleto.instanceId = instanceId;
-			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
+			if (player.getParty() == null || player.getParty().getCommandChannel() == null)
 			{
 				teleportplayer(player, teleto);
 				world.allowed.add(player.getObjectId());
@@ -374,7 +374,7 @@ public class SeedOfDestruction extends Quest
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
-			if ((player != null) && player.isOnline())
+			if (player != null && player.isOnline())
 				player.sendPacket(sm);
 		}
 	}
@@ -411,7 +411,7 @@ public class SeedOfDestruction extends Quest
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		if ((isPet == false) && (player != null))
+		if (isPet == false && player != null)
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
 			if (tmpworld instanceof SODWorld)
@@ -440,19 +440,19 @@ public class SeedOfDestruction extends Quest
 		if (tmpworld instanceof SODWorld)
 		{
 			SODWorld world = (SODWorld) tmpworld;
-			if ((world.status == 2) && (npc.getNpcId() == OBELISK))
+			if (world.status == 2 && npc.getNpcId() == OBELISK)
 			{
 				world.status = 4;
 				spawn(world, SQUARE_SPAWNS_MAIN, false, false);
 			}
-			else if ((world.status == 3) && (npc.getNpcId() == OBELISK))
+			else if (world.status == 3 && npc.getNpcId() == OBELISK)
 			{
 				world.status = 4;
 				spawn(world, SQUARE_SPAWNS_HALF, false, false);
 			}
-			else if ((world.status <= 8) && (npc.getNpcId() == TIAT))
+			else if (world.status <= 8 && npc.getNpcId() == TIAT)
 			{
-				if (npc.getCurrentHp() < (npc.getMaxHp() / 2))
+				if (npc.getCurrentHp() < npc.getMaxHp() / 2)
 				{
 					spawnState(world);
 					startQuestTimer("TiatFullHp", 3000, npc, null);
@@ -483,7 +483,7 @@ public class SeedOfDestruction extends Quest
 			else if (event.equalsIgnoreCase("Spawn"))
 			{
 				L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
-				if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
+				if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null && target.getInstanceId() == npc.getInstanceId() && !target.isDead())
 				{
 					L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)], npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ(), npc.getSpawn().getHeading(), false, 0, false, world.instanceId);
 					world.deviceSpawnedMobCount++;
@@ -537,17 +537,17 @@ public class SeedOfDestruction extends Quest
 				if (checkKillProgress(npc, world))
 					world.status++;
 			}
-			else if ((world.status == 4) && (npc.getNpcId() == OBELISK))
+			else if (world.status == 4 && npc.getNpcId() == OBELISK)
 			{
 				spawnState(world);
 			}
-			else if ((world.status == 5) && (npc.getNpcId() == POWERFUL_DEVICE))
+			else if (world.status == 5 && npc.getNpcId() == POWERFUL_DEVICE)
 			{
 				world.killedDevice++;
 				if (world.killedDevice >= 3)
 					spawnState(world);
 			}
-			else if ((world.status == 6) && (npc.getNpcId() == THRONE_POWERFUL_DEVICE))
+			else if (world.status == 6 && npc.getNpcId() == THRONE_POWERFUL_DEVICE)
 			{
 				world.killedDevice++;
 				if (world.killedDevice >= 2)

@@ -66,8 +66,8 @@ public class MonsterInvasion
 		Announcements.getInstance().announceToAll("No monster can survive! Charge!");
 		
 		int nMobs = L2World.getInstance().getAllPlayersCount() / 5;
-		int rows = (int) Math.round((Math.sqrt(nMobs) / 1.6));
-		int columns = (int) Math.round(((Math.sqrt(nMobs) / 1.6) * 2.5));
+		int rows = (int) Math.round(Math.sqrt(nMobs) / 1.6);
+		int columns = (int) Math.round(Math.sqrt(nMobs) / 1.6 * 2.5);
 		nMobs = rows * columns;
 		
 		int x;
@@ -169,11 +169,11 @@ public class MonsterInvasion
 					break;
 			}
 			for (int i = 0; i < types; i++)
-				tmpls[i] = NpcTable.getInstance().getTemplate(44000 + (10 * race) + i);
+				tmpls[i] = NpcTable.getInstance().getTemplate(44000 + 10 * race + i);
 			
 			_armyCommanderSpawn = new L2Spawn(tmpls[0]);
 			
-			if ((heading == 0) || (heading == 32768))
+			if (heading == 0 || heading == 32768)
 			{
 				_armyCommanderSpawn.setX(iniY);
 				_armyCommanderSpawn.setY(x);
@@ -192,27 +192,27 @@ public class MonsterInvasion
 			int pRow = 2;
 			for (int i = 0; i < nMobs; i++)
 			{
-				_armySpawns[i] = new L2Spawn(tmpls[(int) Math.floor((i * (types - 1)) / nMobs) + 1]);
+				_armySpawns[i] = new L2Spawn(tmpls[(int) Math.floor(i * (types - 1) / nMobs) + 1]);
 				
 				if (heading == 0)
 				{
-					_armySpawns[i].setX(iniY - (interY * pRow));
-					_armySpawns[i].setY((int) Math.round(x + (20 * ((i % 2) - 0.5))));
+					_armySpawns[i].setX(iniY - interY * pRow);
+					_armySpawns[i].setY((int) Math.round(x + 20 * (i % 2 - 0.5)));
 				}
 				else if (heading == 16384)
 				{
-					_armySpawns[i].setX((int) Math.round(x + (20 * ((i % 2) - 0.5))));
-					_armySpawns[i].setY(iniY - (interY * pRow));
+					_armySpawns[i].setX((int) Math.round(x + 20 * (i % 2 - 0.5)));
+					_armySpawns[i].setY(iniY - interY * pRow);
 				}
 				else if (heading == 32768)
 				{
-					_armySpawns[i].setX(iniY + (interY * pRow));
-					_armySpawns[i].setY((int) Math.round(x - (20 * ((i % 2) + 0.5))));
+					_armySpawns[i].setX(iniY + interY * pRow);
+					_armySpawns[i].setY((int) Math.round(x - 20 * (i % 2 + 0.5)));
 				}
 				else
 				{
-					_armySpawns[i].setX((int) Math.round(x - (20 * ((i % 2) + 0.5))));
-					_armySpawns[i].setY(iniY + (interY * pRow));
+					_armySpawns[i].setX((int) Math.round(x - 20 * (i % 2 + 0.5)));
+					_armySpawns[i].setY(iniY + interY * pRow);
 				}
 				_armySpawns[i].setZ(iniZ + 100);
 				_armySpawns[i].setHeading(heading);
@@ -220,7 +220,7 @@ public class MonsterInvasion
 				_armySpawns[i].stopRespawn();
 				_armySpawns[i].doSpawn();
 				
-				if ((i % 2) == 1)
+				if (i % 2 == 1)
 					pRow++;
 			}
 		}
@@ -235,7 +235,7 @@ public class MonsterInvasion
 			L2ArmyMonsterInstance mob;
 			
 			mob = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
-			if ((heading == 0) || (heading == 32768))
+			if (heading == 0 || heading == 32768)
 				mob.move(cDespY, x, cDespZ);
 			else
 				mob.move(x, cDespY, cDespZ);
@@ -243,17 +243,17 @@ public class MonsterInvasion
 			{
 				mob = (L2ArmyMonsterInstance) _armySpawns[i].getNpc();
 				if (heading == 0)
-					mob.move(cDespY, (int) Math.round(x + (20 * ((i % 2) - 0.5))), cDespZ);
+					mob.move(cDespY, (int) Math.round(x + 20 * (i % 2 - 0.5)), cDespZ);
 				else if (heading == 16384)
-					mob.move((int) Math.round(x + (20 * ((i % 2) - 0.5))), cDespY, cDespZ);
+					mob.move((int) Math.round(x + 20 * (i % 2 - 0.5)), cDespY, cDespZ);
 				else if (heading == 32768)
-					mob.move(cDespY, (int) Math.round(x - (20 * ((i % 2) + 0.5))), cDespZ);
+					mob.move(cDespY, (int) Math.round(x - 20 * (i % 2 + 0.5)), cDespZ);
 				else
-					mob.move((int) Math.round(x - (20 * ((i % 2) + 0.5))), cDespY, cDespZ);
+					mob.move((int) Math.round(x - 20 * (i % 2 + 0.5)), cDespY, cDespZ);
 			}
 			
 			mob = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
-			if ((heading == 0) || (heading == 32768))
+			if (heading == 0 || heading == 32768)
 				mob.move(fDespY + 100, x, fDespZ);
 			else if (heading == 16384)
 				mob.move(x, fDespY + 100, fDespZ);
@@ -265,13 +265,13 @@ public class MonsterInvasion
 			{
 				mob = (L2ArmyMonsterInstance) _armySpawns[i].getNpc();
 				if (heading == 0)
-					mob.move(fDespY - (((i - (i % columns)) / columns) * interY), (x - ((columns * interX) / 2)) + ((i % columns) * interX), fDespZ);
+					mob.move(fDespY - (i - i % columns) / columns * interY, x - columns * interX / 2 + i % columns * interX, fDespZ);
 				else if (heading == 16384)
-					mob.move((x - ((columns * interX) / 2)) + ((i % columns) * interX), fDespY - ((int) Math.floor(i / columns) * interY), fDespZ);
+					mob.move(x - columns * interX / 2 + i % columns * interX, fDespY - (int) Math.floor(i / columns) * interY, fDespZ);
 				else if (heading == 32768)
-					mob.move(fDespY + ((int) Math.floor(i / columns) * interY), (x + ((columns * interX) / 2)) - ((i % columns) * interX), fDespZ);
+					mob.move(fDespY + (int) Math.floor(i / columns) * interY, x + columns * interX / 2 - i % columns * interX, fDespZ);
 				else
-					mob.move((x + ((columns * interX) / 2)) - ((i % columns) * interX), fDespY + ((int) Math.floor(i / columns) * interY), fDespZ);
+					mob.move(x + columns * interX / 2 - i % columns * interX, fDespY + (int) Math.floor(i / columns) * interY, fDespZ);
 			}
 			mob.setIsTheLastMob(true);
 		}
@@ -279,10 +279,10 @@ public class MonsterInvasion
 		{
 			for (int i = 0; i < nMobs; i++)
 			{
-				if ((_armySpawns[i] != null) && (_armySpawns[i].getNpc() != null))
+				if (_armySpawns[i] != null && _armySpawns[i].getNpc() != null)
 					_armySpawns[i].getNpc().setIsInvul(false);
 			}
-			if ((_armyCommanderSpawn != null) && (_armyCommanderSpawn.getNpc() != null))
+			if (_armyCommanderSpawn != null && _armyCommanderSpawn.getNpc() != null)
 				_armyCommanderSpawn.getNpc().setIsInvul(false);
 			//Logozo.warning("Error moving ivasion army:");
 			e.printStackTrace();
@@ -307,10 +307,10 @@ public class MonsterInvasion
 		{
 			for (L2Spawn _armySpawn : _armySpawns)
 			{
-				if ((_armySpawn != null) && (_armySpawn.getNpc() != null))
+				if (_armySpawn != null && _armySpawn.getNpc() != null)
 					_armySpawn.getNpc().setIsInvul(false);
 			}
-			if ((_armyCommanderSpawn != null) && (_armyCommanderSpawn.getNpc() != null))
+			if (_armyCommanderSpawn != null && _armyCommanderSpawn.getNpc() != null)
 			{
 				L2ArmyMonsterInstance commander = (L2ArmyMonsterInstance) _armyCommanderSpawn.getNpc();
 				commander.setIsInvul(false);
@@ -324,7 +324,7 @@ public class MonsterInvasion
 	{
 		for (L2Spawn _armySpawn : _armySpawns)
 		{
-			if ((_armySpawn != null) && (_armySpawn.getNpc() != null))
+			if (_armySpawn != null && _armySpawn.getNpc() != null)
 				_armySpawn.getNpc().doDie(_armySpawn.getNpc());
 		}
 		
@@ -379,7 +379,7 @@ public class MonsterInvasion
 		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
-		if ((hours > 0) || (minutes > 0))
+		if (hours > 0 || minutes > 0)
 		{
 			time += ", in ";
 			if (hours > 0)

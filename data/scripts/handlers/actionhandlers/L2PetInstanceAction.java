@@ -37,7 +37,7 @@ public class L2PetInstanceAction implements IActionHandler
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
@@ -46,7 +46,7 @@ public class L2PetInstanceAction implements IActionHandler
 		boolean isOwner = activeChar.getObjectId() == ((L2PetInstance) target).getOwner().getObjectId();
 		
 		activeChar.sendPacket(new ValidateLocation((L2Character) target));
-		if (isOwner && (activeChar != ((L2PetInstance) target).getOwner()))
+		if (isOwner && activeChar != ((L2PetInstance) target).getOwner())
 			((L2PetInstance) target).updateRefOwner(activeChar);
 		
 		if (activeChar.getTarget() != target)

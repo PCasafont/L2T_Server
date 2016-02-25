@@ -176,12 +176,12 @@ public class TryOn implements IVoicedCommandHandler
 		}
 		
 		int pageLinks = 13;
-		int minPage = Math.max(1, Math.min(pageCount - (pageLinks - 1), page - ((pageLinks - 1) / 2)));
-		int maxPage = Math.min(pageCount, minPage + (pageLinks - 1));
+		int minPage = Math.max(1, Math.min(pageCount - (pageLinks - 1), page - (pageLinks - 1) / 2));
+		int maxPage = Math.min(pageCount, minPage + pageLinks - 1);
 		
 		bypass = "bypass -h voice .tryon search " + search;
 		
-		pageLinks = (maxPage - minPage) + 1;
+		pageLinks = maxPage - minPage + 1;
 		
 		if (!Config.isServer(Config.DREAMS))
 			sb.append("</table>");
@@ -190,12 +190,12 @@ public class TryOn implements IVoicedCommandHandler
 		
 		if (pageLinks > 1)
 		{
-			sb.append("<center><table width=" + (pageLinks * 20) + "><tr>");
+			sb.append("<center><table width=" + pageLinks * 20 + "><tr>");
 			for (int p = minPage; p <= maxPage; p++)
 			{
 				if (p == page)
 					sb.append("<td FIXWIDTH=20>" + p + "</td>");
-				else if (((p > 1) && (p == minPage)) || ((p < pageCount) && (p == maxPage)))
+				else if (p > 1 && p == minPage || p < pageCount && p == maxPage)
 					sb.append("<td FIXWIDTH=20><a action=\"" + bypass + " page=" + p + "\">...</a></td>");
 				else
 					sb.append("<td FIXWIDTH=20><a action=\"" + bypass + " page=" + p + "\">" + p + "</a></td>");
@@ -364,11 +364,11 @@ public class TryOn implements IVoicedCommandHandler
 					continue;
 				
 				L2EtcItem stone = (L2EtcItem) it;
-				if ((stone.getHandlerName() == null) || !stone.getHandlerName().equals("AppearanceStone") || (stone.getStandardItem() <= 0))
+				if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") || stone.getStandardItem() <= 0)
 					continue;
 				
 				item = ItemTable.getInstance().getTemplate(stone.getStandardItem());
-				if ((item == null) || items.contains(item))
+				if (item == null || items.contains(item))
 					continue;
 			}
 			
@@ -397,12 +397,12 @@ public class TryOn implements IVoicedCommandHandler
 		int index = 0;
 		for (L2Item item : allItems)
 		{
-			if (index >= ((page - 1) * ITEMS_PER_PAGE))
+			if (index >= (page - 1) * ITEMS_PER_PAGE)
 				items.add(item);
 			
 			index++;
 			
-			if (index >= (page * ITEMS_PER_PAGE))
+			if (index >= page * ITEMS_PER_PAGE)
 				break;
 		}
 		

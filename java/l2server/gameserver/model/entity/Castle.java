@@ -207,7 +207,7 @@ public class Castle
 				{
 					if (getOwnerId() <= 0)
 						return;
-					if ((ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee) || !_cwh)
+					if (ClanTable.getInstance().getClan(getOwnerId()).getWarehouse().getAdena() >= _fee || !_cwh)
 					{
 						int fee = _fee;
 						if (getEndTime() == -1)
@@ -356,7 +356,7 @@ public class Castle
 		}
 		else
 		{
-			if ((_treasury + amount) > PcInventory.MAX_ADENA)
+			if (_treasury + amount > PcInventory.MAX_ADENA)
 				_treasury = PcInventory.MAX_ADENA;
 			else
 				_treasury += amount;
@@ -500,7 +500,7 @@ public class Castle
 	public void setOwner(L2Clan clan)
 	{
 		// Remove old owner
-		if ((getOwnerId() > 0) && ((clan == null) || (clan.getClanId() != getOwnerId())))
+		if (getOwnerId() > 0 && (clan == null || clan.getClanId() != getOwnerId()))
 		{
 			L2Clan oldOwner = ClanTable.getInstance().getClan(getOwnerId()); // Try to find clan instance
 			if (oldOwner != null)
@@ -594,7 +594,7 @@ public class Castle
 	{
 		int maxTax = _tendency == 2 ? 30 : 0;
 		
-		if ((taxPercent < 0) || (taxPercent > maxTax))
+		if (taxPercent < 0 || taxPercent > maxTax)
 		{
 			activeChar.sendMessage("Tax value must be between 0 and " + maxTax + ".");
 			return;
@@ -804,7 +804,7 @@ public class Castle
 		}
 		else
 		{
-			if ((lvl == 0) && (lease == 0))
+			if (lvl == 0 && lease == 0)
 				removeFunction(type);
 			else
 			{
@@ -837,7 +837,7 @@ public class Castle
 	{
 		for (L2DoorInstance door : DoorTable.getInstance().getDoors())
 		{
-			if ((door.getCastle() != null) && (door.getCastle().getCastleId() == getCastleId()))
+			if (door.getCastle() != null && door.getCastle().getCastleId() == getCastleId())
 				_doors.add(door);
 		}
 		//Logozo.info("Castle "+this+" loaded "+_doors.size()+" doors.");
@@ -993,12 +993,12 @@ public class Castle
 	
 	public List<SeedProduction> getSeedProduction(int period)
 	{
-		return (period == CastleManorManager.PERIOD_CURRENT ? _production : _productionNext);
+		return period == CastleManorManager.PERIOD_CURRENT ? _production : _productionNext;
 	}
 	
 	public List<CropProcure> getCropProcure(int period)
 	{
-		return (period == CastleManorManager.PERIOD_CURRENT ? _procure : _procureNext);
+		return period == CastleManorManager.PERIOD_CURRENT ? _procure : _procureNext;
 	}
 	
 	public void setSeedProduction(List<SeedProduction> seed, int period)
@@ -1208,7 +1208,7 @@ public class Castle
 			statement.setInt(1, getCastleId());
 			statement.execute();
 			statement.close();
-			if ((_procure != null) && (_procure.size() > 0))
+			if (_procure != null && _procure.size() > 0)
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
@@ -1229,7 +1229,7 @@ public class Castle
 					statement.close();
 				}
 			}
-			if ((_procureNext != null) && (_procureNext.size() > 0))
+			if (_procureNext != null && _procureNext.size() > 0)
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
@@ -1279,7 +1279,7 @@ public class Castle
 			List<CropProcure> proc = null;
 			proc = getCropProcure(period);
 			
-			if ((proc != null) && (proc.size() > 0))
+			if (proc != null && proc.size() > 0)
 			{
 				int count = 0;
 				String query = "INSERT INTO castle_manor_procure VALUES ";
@@ -1430,14 +1430,14 @@ public class Castle
 	
 	public void giveResidentialSkills(L2PcInstance player)
 	{
-		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
+		if (_residentialSkills != null && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.addSkill(sk, false);
 		}
 		
 		Territory territory = TerritoryWarManager.getInstance().getTerritory(getCastleId());
-		if ((territory != null) && territory.getOwnedWardIds().contains(getCastleId() + 80))
+		if (territory != null && territory.getOwnedWardIds().contains(getCastleId() + 80))
 		{
 			for (int wardId : territory.getOwnedWardIds())
 			{
@@ -1452,7 +1452,7 @@ public class Castle
 	
 	public void removeResidentialSkills(L2PcInstance player)
 	{
-		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
+		if (_residentialSkills != null && !_residentialSkills.isEmpty())
 		{
 			for (L2Skill sk : _residentialSkills)
 				player.removeSkill(sk, false, true);

@@ -65,7 +65,7 @@ public class L2PetManagerInstance extends L2MerchantInstance
 		String filename = "petmanager/" + getNpcId() + ".htm";
 		
 		L2Summon summon = player.getPet();
-		if ((getNpcId() == 36478) && ((summon != null) || !player.getSummons().isEmpty()))
+		if (getNpcId() == 36478 && (summon != null || !player.getSummons().isEmpty()))
 			filename = "petmanager/restore-unsummonpet.htm";
 		
 		NpcHtmlMessage html = new NpcHtmlMessage(1);

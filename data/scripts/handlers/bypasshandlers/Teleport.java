@@ -144,7 +144,7 @@ public class Teleport implements IBypassHandler
 					}
 				}
 				
-				activeChar.teleToLocation((mostPvP.getX() + Rnd.get(300)) - 150, (mostPvP.getY() + Rnd.get(300)) - 150, mostPvP.getZ());
+				activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150, mostPvP.getZ());
 				activeChar.setInstanceId(0);
 				activeChar.setProtection(true);
 				if (!activeChar.isGM())

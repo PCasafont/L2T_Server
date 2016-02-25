@@ -91,7 +91,7 @@ public class DreamsSell implements IVoicedCommandHandler
 					
 					for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
 					{
-						if (!((c instanceof L2PcInstance) && (((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)))
+						if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
 						{
 							player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 							canStart = false;
@@ -222,7 +222,7 @@ public class DreamsSell implements IVoicedCommandHandler
 						{
 							int itemId = Integer.parseInt(st.nextToken());
 							L2Item toSell = ItemTable.getInstance().getTemplate(itemId);
-							if ((toSell != null) && toSell.isTradeable())
+							if (toSell != null && toSell.isTradeable())
 								item.getPriceItems().put(toSell, 1L);
 							else
 								player.sendMessage("You can't trade that item!");
@@ -276,7 +276,7 @@ public class DreamsSell implements IVoicedCommandHandler
 			
 			if (!isSelling)
 			{
-				if (params.startsWith("setMessage") && (params.length() > 11))
+				if (params.startsWith("setMessage") && params.length() > 11)
 				{
 					list.setTitle(params.substring(11));
 				}

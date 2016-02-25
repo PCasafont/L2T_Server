@@ -142,7 +142,7 @@ public class L2CommandChannel
 	 */
 	public void broadcastToChannelMembers(L2GameServerPacket gsp)
 	{
-		if ((_partys != null) && !_partys.isEmpty())
+		if (_partys != null && !_partys.isEmpty())
 		{
 			for (L2Party party : _partys)
 			{
@@ -154,7 +154,7 @@ public class L2CommandChannel
 	
 	public void broadcastCSToChannelMembers(CreatureSay gsp, L2PcInstance broadcaster)
 	{
-		if ((_partys != null) && !_partys.isEmpty())
+		if (_partys != null && !_partys.isEmpty())
 		{
 			for (L2Party party : _partys)
 			{
@@ -218,9 +218,9 @@ public class L2CommandChannel
 	 */
 	public boolean meetRaidWarCondition(L2Object obj)
 	{
-		if (!((obj instanceof L2Character) && ((L2Character) obj).isRaid()))
+		if (!(obj instanceof L2Character && ((L2Character) obj).isRaid()))
 			return false;
-		return (getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE);
+		return getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE;
 	}
 	
 	public final boolean isInChannel(final L2Party party)

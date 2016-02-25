@@ -124,10 +124,10 @@ public class FlyMoveTable implements Reloadable
 						{
 							for (y = 0; y < worldRegions[x].length; y++)
 							{
-								ax = (x - L2World.OFFSET_X) << L2World.SHIFT_BY;
-								bx = ((x + 1) - L2World.OFFSET_X) << L2World.SHIFT_BY;
-								ay = (y - L2World.OFFSET_Y) << L2World.SHIFT_BY;
-								by = ((y + 1) - L2World.OFFSET_Y) << L2World.SHIFT_BY;
+								ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
+								bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
+								ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
+								by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
 								
 								if (zone.getZone().intersectsRectangle(ax, bx, ay, by))
 								{

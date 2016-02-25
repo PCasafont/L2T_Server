@@ -190,7 +190,7 @@ public class AirShipManager
 	public boolean hasAirShip(int ownerId)
 	{
 		final L2AirShipInstance ship = _airShips.get(ownerId);
-		if ((ship == null) || !(ship.isVisible() || ship.isTeleporting()))
+		if (ship == null || !(ship.isVisible() || ship.isTeleporting()))
 			return false;
 		
 		return true;
@@ -206,7 +206,7 @@ public class AirShipManager
 	
 	public void sendAirShipTeleportList(L2PcInstance player)
 	{
-		if ((player == null) || !player.isInAirShip())
+		if (player == null || !player.isInAirShip())
 			return;
 		
 		final L2AirShipInstance ship = player.getAirShip();
@@ -227,7 +227,7 @@ public class AirShipManager
 		if (all == null)
 			return null;
 		
-		if ((index < -1) || (index >= all.routes.length))
+		if (index < -1 || index >= all.routes.length)
 			return null;
 		
 		return all.routes[index + 1];
@@ -239,7 +239,7 @@ public class AirShipManager
 		if (all == null)
 			return 0;
 		
-		if ((index < -1) || (index >= all.fuel.length))
+		if (index < -1 || index >= all.fuel.length)
 			return 0;
 		
 		return all.fuel[index + 1];

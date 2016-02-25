@@ -234,7 +234,7 @@ public class ZoneManager
 									}
 									
 									// does not try to load dynamic zoneId from sql
-									if ((rs.size() == 0) && (zoneId < 300000))
+									if (rs.size() == 0 && zoneId < 300000)
 									{
 										// loading from SQL
 										try
@@ -258,7 +258,7 @@ public class ZoneManager
 									
 									coords = rs.toArray(new int[rs.size()][]);
 									
-									if ((coords == null) || (coords.length == 0))
+									if (coords == null || coords.length == 0)
 									{
 										Log.warning("ZoneData: missing data for zone: " + zoneId + " in both XML and SQL, file: " + f.getName());
 										continue;
@@ -321,7 +321,7 @@ public class ZoneManager
 										// A Cylinder zone requires a center point
 										// at x,y and a radius
 										final int zoneRad = d.getInt("rad");
-										if ((coords.length == 1) && (zoneRad > 0))
+										if (coords.length == 1 && zoneRad > 0)
 											temp.setZone(new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad));
 										else
 										{
@@ -350,7 +350,7 @@ public class ZoneManager
 										
 										temp.setParameter(name, val);
 									}
-									else if (cd.getName().equalsIgnoreCase("spawn") && (temp instanceof L2SpawnZone))
+									else if (cd.getName().equalsIgnoreCase("spawn") && temp instanceof L2SpawnZone)
 									{
 										int spawnX = cd.getInt("X");
 										int spawnY = cd.getInt("Y");
@@ -365,7 +365,7 @@ public class ZoneManager
 								if (checkId(zoneId))
 									Log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previous definition.");
 								
-								if ((zoneName != null) && !zoneName.isEmpty())
+								if (zoneName != null && !zoneName.isEmpty())
 									temp.setName(zoneName);
 								
 								addZone(zoneId, temp);
@@ -378,10 +378,10 @@ public class ZoneManager
 								{
 									for (int y = 0; y < worldRegions[x].length; y++)
 									{
-										ax = (x - L2World.OFFSET_X) << L2World.SHIFT_BY;
-										bx = ((x + 1) - L2World.OFFSET_X) << L2World.SHIFT_BY;
-										ay = (y - L2World.OFFSET_Y) << L2World.SHIFT_BY;
-										by = ((y + 1) - L2World.OFFSET_Y) << L2World.SHIFT_BY;
+										ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
+										bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
+										ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
+										by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
 										
 										if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
 										{
@@ -612,8 +612,8 @@ public class ZoneManager
 		
 		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if ((temp instanceof L2ArenaZone) && temp.isCharacterInZone(character))
-				return ((L2ArenaZone) temp);
+			if (temp instanceof L2ArenaZone && temp.isCharacterInZone(character))
+				return (L2ArenaZone) temp;
 		}
 		
 		return null;
@@ -626,8 +626,8 @@ public class ZoneManager
 		
 		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if ((temp instanceof L2OlympiadStadiumZone) && temp.isCharacterInZone(character))
-				return ((L2OlympiadStadiumZone) temp);
+			if (temp instanceof L2OlympiadStadiumZone && temp.isCharacterInZone(character))
+				return (L2OlympiadStadiumZone) temp;
 		}
 		return null;
 	}

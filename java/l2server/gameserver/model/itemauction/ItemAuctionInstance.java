@@ -219,7 +219,7 @@ public final class ItemAuctionInstance
 				{
 					case CREATED:
 					{
-						if (auctions[0].getStartingTime() < (System.currentTimeMillis() + START_TIME_SPACE))
+						if (auctions[0].getStartingTime() < System.currentTimeMillis() + START_TIME_SPACE)
 						{
 							currentAuction = auctions[0];
 							nextAuction = createAuction(System.currentTimeMillis() + START_TIME_SPACE);
@@ -281,7 +281,7 @@ public final class ItemAuctionInstance
 				
 				for (final ItemAuction auction : auctions)
 				{
-					if ((auction.getStartingTime() > currentTime) && (currentAuction != auction))
+					if (auction.getStartingTime() > currentTime && currentAuction != auction)
 					{
 						nextAuction = auction;
 						break;
@@ -299,7 +299,7 @@ public final class ItemAuctionInstance
 		_currentAuction = currentAuction;
 		_nextAuction = nextAuction;
 		
-		if ((currentAuction != null) && (currentAuction.getAuctionState() != ItemAuctionState.FINISHED))
+		if (currentAuction != null && currentAuction.getAuctionState() != ItemAuctionState.FINISHED)
 		{
 			if (currentAuction.getAuctionState() == ItemAuctionState.STARTED)
 				setStateTask(ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleAuctionTask(currentAuction), Math.max(currentAuction.getEndingTime() - System.currentTimeMillis(), 0L)));
@@ -542,7 +542,7 @@ public final class ItemAuctionInstance
 				return null;
 			}
 			
-			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))))
+			if (auctionState == ItemAuctionState.FINISHED && startingTime < System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))
 			{
 				Log.info("ItemAuctionInstance: Clearing expired auction: " + auctionId);
 				statement = con.prepareStatement("DELETE FROM item_auction WHERE auctionId=?");

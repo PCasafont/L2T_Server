@@ -42,7 +42,7 @@ public class NornilsPower implements ISkillHandler
 		if (instanceId > 0)
 			world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) activeChar);
 		
-		if ((world != null) && (world.instanceId == instanceId) && (world.templateId == 11))
+		if (world != null && world.instanceId == instanceId && world.templateId == 11)
 		{
 			if (activeChar.isInsideRadius(-107393, 83677, 100, true))
 			{

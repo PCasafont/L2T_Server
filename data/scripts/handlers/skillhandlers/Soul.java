@@ -57,7 +57,7 @@ public class Soul implements ISkillHandler
 				{
 					int count = 0;
 					
-					if ((player.getSouls() + skill.getNumSouls()) <= soulmastery.getNumSouls())
+					if (player.getSouls() + skill.getNumSouls() <= soulmastery.getNumSouls())
 						count = skill.getNumSouls();
 					else
 						count = soulmastery.getNumSouls() - player.getSouls();

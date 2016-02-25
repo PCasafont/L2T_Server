@@ -54,7 +54,7 @@ public class Harvest implements ISkillHandler
 		
 		final L2Object[] targetList = skill.getTargetList(activeChar);
 		
-		if ((targetList == null) || (targetList.length == 0))
+		if (targetList == null || targetList.length == 0)
 			return;
 		
 		if (Config.DEBUG)
@@ -87,7 +87,7 @@ public class Harvest implements ISkillHandler
 				if (calcSuccess(activeChar, target))
 				{
 					L2Attackable.RewardItem[] items = target.takeHarvest();
-					if ((items != null) && (items.length > 0))
+					if (items != null && items.length > 0)
 					{
 						for (L2Attackable.RewardItem ritem : items)
 						{
@@ -144,7 +144,7 @@ public class Harvest implements ISkillHandler
 		final int levelPlayer = activeChar.getLevel();
 		final int levelTarget = target.getLevel();
 		
-		int diff = (levelPlayer - levelTarget);
+		int diff = levelPlayer - levelTarget;
 		if (diff < 0)
 			diff = -diff;
 		

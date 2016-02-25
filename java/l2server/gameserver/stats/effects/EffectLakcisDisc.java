@@ -57,7 +57,7 @@ public class EffectLakcisDisc extends L2Effect
 			else if (target.getActingPlayer() != null)
 			{
 				L2PcInstance targetPlayer = target.getActingPlayer();
-				if ((targetPlayer.isInParty() && (targetPlayer.getParty() == player.getParty())) || ((target.getActingPlayer().getClanId() != 0) && (target.getActingPlayer().getClanId() == player.getClanId())) || ((target.getActingPlayer().getAllyId() != 0) && (target.getActingPlayer().getAllyId() == player.getAllyId())))
+				if (targetPlayer.isInParty() && targetPlayer.getParty() == player.getParty() || target.getActingPlayer().getClanId() != 0 && target.getActingPlayer().getClanId() == player.getClanId() || target.getActingPlayer().getAllyId() != 0 && target.getActingPlayer().getAllyId() == player.getAllyId())
 				{
 					double hp = target.getCurrentHp();
 					double maxhp = target.getMaxHp();

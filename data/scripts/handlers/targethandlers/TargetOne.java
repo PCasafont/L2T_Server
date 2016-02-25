@@ -84,7 +84,7 @@ public class TargetOne implements ISkillTargetTypeHandler
 		}
 		
 		// Check for null target or any other invalid target
-		if ((target == null) || target.isDead() || ((target == activeChar) && !canTargetSelf))
+		if (target == null || target.isDead() || target == activeChar && !canTargetSelf)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;

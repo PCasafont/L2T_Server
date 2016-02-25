@@ -87,7 +87,7 @@ public abstract class EventInstance
 		{
 			for (L2PcInstance player : team.getParticipatedPlayers().values())
 			{
-				if ((player != null) && (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode()))
+				if (player != null && (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode()))
 					removeParticipant(player.getObjectId());
 			}
 		}
@@ -99,7 +99,7 @@ public abstract class EventInstance
 			{
 				if (_config.getLocation().getTeamCount() != 4)
 				{
-					if ((_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS))
+					if (_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
 					{
 						// Set state INACTIVE
 						setState(EventState.INACTIVE);
@@ -111,7 +111,7 @@ public abstract class EventInstance
 				}
 				else
 				{
-					if ((_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[2].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS) || (_teams[3].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS))
+					if (_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[2].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS || _teams[3].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
 					{
 						// Set state INACTIVE
 						setState(EventState.INACTIVE);
@@ -142,9 +142,7 @@ public abstract class EventInstance
 			int divider = 7;
 			if (team.getParticipatedPlayerCount() > 2)
 			{
-				while (team.getParticipatedPlayerCount() % divider > 0
-						&& team.getParticipatedPlayerCount() % divider <= 2
-						&& divider > 5)
+				while (team.getParticipatedPlayerCount() % divider > 0 && team.getParticipatedPlayerCount() % divider <= 2 && divider > 5)
 					divider--;
 			}
 			
@@ -301,7 +299,7 @@ public abstract class EventInstance
 	
 	protected void rewardPlayers(List<L2PcInstance> players)
 	{
-		if ((players == null) || players.isEmpty())
+		if (players == null || players.isEmpty())
 			return;
 		
 		int totalPoints = 0;
@@ -421,7 +419,7 @@ public abstract class EventInstance
 		{
 			// Check to which team the player should be added
 			if (_teams[0].getParticipatedPlayerCount() == _teams[1].getParticipatedPlayerCount())
-				teamId = (byte) (Rnd.get(2));
+				teamId = (byte) Rnd.get(2);
 			else
 				teamId = (byte) (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() ? 1 : 0);
 		}
@@ -429,48 +427,48 @@ public abstract class EventInstance
 		{
 			// Check to which team the player should be added
 			
-			if ((_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount()))
+			if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
 				teamId = (byte) 0;
-			else if ((_teams[1].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount()))
+			else if (_teams[1].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
 				teamId = (byte) 1;
-			else if ((_teams[2].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount()))
+			else if (_teams[2].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
 				teamId = (byte) 2;
-			else if ((_teams[3].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount()) && (_teams[3].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount()) && (_teams[3].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount()))
+			else if (_teams[3].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() && _teams[3].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() && _teams[3].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount())
 				teamId = (byte) 3;
 			
-			else if ((_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount()))
-				while ((teamId == 0) || (teamId == 2))
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount()))
-				while ((teamId == 0) || (teamId == 3))
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount()))
-				while ((teamId == 0) || (teamId == 1))
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount()))
-				while ((teamId == 1) || (teamId == 3))
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount()))
-				while ((teamId == 1) || (teamId == 2))
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() == _teams[1].getParticipatedPlayerCount()))
-				while ((teamId == 2) || (teamId == 3))
-					teamId = (byte) (Rnd.get(4));
+			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+				while (teamId == 0 || teamId == 2)
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount())
+				while (teamId == 0 || teamId == 3)
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+				while (teamId == 0 || teamId == 1)
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount())
+				while (teamId == 1 || teamId == 3)
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+				while (teamId == 1 || teamId == 2)
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() == _teams[1].getParticipatedPlayerCount())
+				while (teamId == 2 || teamId == 3)
+					teamId = (byte) Rnd.get(4);
 			
-			else if ((_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount()) && (_teams[0].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount()))
+			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() && _teams[0].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
 				while (teamId == 0)
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[1].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount()) && (_teams[1].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount()))
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[1].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() && _teams[1].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
 				while (teamId == 1)
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[2].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[2].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount()))
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[2].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[2].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
 				while (teamId == 2)
-					teamId = (byte) (Rnd.get(4));
-			else if ((_teams[3].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount()) && (_teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount()) && (_teams[3].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount()))
-				teamId = (byte) (Rnd.get(3));
+					teamId = (byte) Rnd.get(4);
+			else if (_teams[3].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() && _teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() && _teams[3].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount())
+				teamId = (byte) Rnd.get(3);
 			
 			else
-				teamId = (byte) (Rnd.get(4));
+				teamId = (byte) Rnd.get(4);
 		}
 		
 		return _teams[teamId].addPlayer(playerInstance);
@@ -528,7 +526,7 @@ public abstract class EventInstance
 	
 	public void onLogin(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			removeParticipant(playerInstance.getObjectId());
 			/*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
@@ -543,7 +541,7 @@ public abstract class EventInstance
 	
 	public void onLogout(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 			removeParticipant(playerInstance.getObjectId());
 	}
 	
@@ -643,10 +641,10 @@ public abstract class EventInstance
 		EventTeam playerTeam = getParticipantTeam(playerInstance.getObjectId());
 		EventTeam targetPlayerTeam = getParticipantTeam(targetPlayerObjectId);
 		
-		if ((playerTeam == null) || (targetPlayerTeam == null))
+		if (playerTeam == null || targetPlayerTeam == null)
 			return false;
 		
-		if ((playerTeam == targetPlayerTeam) && (playerInstance.getObjectId() != targetPlayerObjectId) && !Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED)
+		if (playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId && !Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED)
 			return false;
 		
 		return true;
@@ -657,10 +655,10 @@ public abstract class EventInstance
 		EventTeam playerTeam = getParticipantTeam(playerInstance.getObjectId());
 		EventTeam targetPlayerTeam = getParticipantTeam(targetPlayerObjectId);
 		
-		if ((playerTeam == null) || (targetPlayerTeam == null))
+		if (playerTeam == null || targetPlayerTeam == null)
 			return false;
 		
-		if ((playerTeam == targetPlayerTeam) && (playerInstance.getObjectId() != targetPlayerObjectId) && _config.isPvp())
+		if (playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId && _config.isPvp())
 			return false;
 		
 		return true;
@@ -714,7 +712,7 @@ public abstract class EventInstance
 	
 	public boolean isType(EventType type)
 	{
-		return (_config.getType() == type);
+		return _config.getType() == type;
 	}
 	
 	public EventType getType()
@@ -735,33 +733,33 @@ public abstract class EventInstance
 	public byte getParticipantTeamId(int playerObjectId)
 	{
 		if (_config.getLocation().getTeamCount() != 4)
-			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 : (_teams[1].containsPlayer(playerObjectId) ? 1 : -1));
+			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 : _teams[1].containsPlayer(playerObjectId) ? 1 : -1);
 		else
-			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 : (_teams[1].containsPlayer(playerObjectId) ? 1 : (_teams[2].containsPlayer(playerObjectId) ? 2 : (_teams[3].containsPlayer(playerObjectId) ? 3 : -1))));
+			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 : _teams[1].containsPlayer(playerObjectId) ? 1 : _teams[2].containsPlayer(playerObjectId) ? 2 : _teams[3].containsPlayer(playerObjectId) ? 3 : -1);
 	}
 	
 	public EventTeam getParticipantTeam(int playerObjectId)
 	{
 		if (_config.getLocation().getTeamCount() != 4)
-			return (_teams[0].containsPlayer(playerObjectId) ? _teams[0] : (_teams[1].containsPlayer(playerObjectId) ? _teams[1] : null));
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[0] : _teams[1].containsPlayer(playerObjectId) ? _teams[1] : null;
 		else
-			return (_teams[0].containsPlayer(playerObjectId) ? _teams[0] : (_teams[1].containsPlayer(playerObjectId) ? _teams[1] : (_teams[2].containsPlayer(playerObjectId) ? _teams[2] : (_teams[3].containsPlayer(playerObjectId) ? _teams[3] : null))));
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[0] : _teams[1].containsPlayer(playerObjectId) ? _teams[1] : _teams[2].containsPlayer(playerObjectId) ? _teams[2] : _teams[3].containsPlayer(playerObjectId) ? _teams[3] : null;
 	}
 	
 	public EventTeam getParticipantEnemyTeam(int playerObjectId)
 	{
 		if (_config.getLocation().getTeamCount() != 4)
-			return (_teams[0].containsPlayer(playerObjectId) ? _teams[1] : (_teams[1].containsPlayer(playerObjectId) ? _teams[0] : null));
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[1] : _teams[1].containsPlayer(playerObjectId) ? _teams[0] : null;
 		else
-			return (_teams[0].containsPlayer(playerObjectId) ? _teams[1] : (_teams[1].containsPlayer(playerObjectId) ? _teams[0] : (_teams[2].containsPlayer(playerObjectId) ? _teams[3] : (_teams[3].containsPlayer(playerObjectId) ? _teams[2] : null))));
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[1] : _teams[1].containsPlayer(playerObjectId) ? _teams[0] : _teams[2].containsPlayer(playerObjectId) ? _teams[3] : _teams[3].containsPlayer(playerObjectId) ? _teams[2] : null;
 	}
 	
 	public Point3D getParticipantTeamCoordinates(int playerObjectId)
 	{
 		if (_config.getLocation().getTeamCount() != 4)
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() : (_teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() : null);
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() : _teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() : null;
 		else
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() : (_teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() : (_teams[2].containsPlayer(playerObjectId) ? _teams[2].getCoords() : (_teams[3].containsPlayer(playerObjectId) ? _teams[3].getCoords() : null)));
+			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() : _teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() : _teams[2].containsPlayer(playerObjectId) ? _teams[2].getCoords() : _teams[3].containsPlayer(playerObjectId) ? _teams[3].getCoords() : null;
 	}
 	
 	public boolean isPlayerParticipant(int playerObjectId)
@@ -811,7 +809,7 @@ public abstract class EventInstance
 		if (player == null)
 			return;
 		
-		if ((_config.getLocation().getTeamCount() != 4) || _config.isAllVsAll())
+		if (_config.getLocation().getTeamCount() != 4 || _config.isAllVsAll())
 		{
 			player.setTeam(getParticipantTeamId(player.getObjectId()) + 1);
 			player.getAppearance().setNameColor(Integer.decode("0xFFFFFF"));

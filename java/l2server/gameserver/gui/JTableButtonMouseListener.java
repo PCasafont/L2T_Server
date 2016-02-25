@@ -28,7 +28,7 @@ public class JTableButtonMouseListener implements MouseListener
 		Object value;
 		JComponent c;
 		
-		if ((row >= _table.getRowCount()) || (row < 0) || (column >= _table.getColumnCount()) || (column < 0))
+		if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
 			return;
 		
 		value = _table.getValueAt(row, column);

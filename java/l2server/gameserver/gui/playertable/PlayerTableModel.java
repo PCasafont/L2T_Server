@@ -68,9 +68,9 @@ class PlayerTableModel extends AbstractTableModel
 		int shopCount = 0;
 		for (L2PcInstance player : players)
 		{
-			if ((player != null) && player.isOnline())
+			if (player != null && player.isOnline())
 			{
-				if ((player.getClient() == null) || player.getClient().isDetached())
+				if (player.getClient() == null || player.getClient().isDetached())
 					shopCount++;
 				else
 					playerCount++;
@@ -78,7 +78,7 @@ class PlayerTableModel extends AbstractTableModel
 		}
 		
 		ServerGui.Frame.setTitle("L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " + shopCount + " | Total: " + (playerCount + shopCount));
-		if ((players.length == _players.length) && !((players.length > 0) && (players[0] == _players[0])))
+		if (players.length == _players.length && !(players.length > 0 && players[0] == _players[0]))
 			return false;
 		
 		_players = players;

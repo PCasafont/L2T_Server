@@ -86,7 +86,7 @@ public class CharacterSelect extends L2GameClientPacket
 				// but if not then this is repeated packet and nothing should be done here
 				if (getClient().getActiveChar() == null)
 				{
-					if ((Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0) && !AntiFeedManager.getInstance().tryAddClient(AntiFeedManager.GAME_ID, getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
+					if (Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance().tryAddClient(AntiFeedManager.GAME_ID, getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
 					{
 						final CharSelectInfoPackage info = getClient().getCharSelection(_charSlot);
 						if (info == null)

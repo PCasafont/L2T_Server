@@ -63,7 +63,7 @@ public class PetStat extends SummonStat
 	@Override
 	public final boolean addLevel(byte value)
 	{
-		if ((getLevel() + value) > getMaxLevel())
+		if (getLevel() + value > getMaxLevel())
 			return false;
 		
 		boolean levelIncreased = super.addLevel(value);

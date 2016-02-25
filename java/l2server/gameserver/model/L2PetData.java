@@ -102,12 +102,12 @@ public class L2PetData
 			{
 				if (petLvl < 70)
 				{
-					lvl = (petLvl / 10);
+					lvl = petLvl / 10;
 					if (lvl <= 0)
 						lvl = 1;
 				}
 				else
-					lvl = (7 + ((petLvl - 70) / 5));
+					lvl = 7 + (petLvl - 70) / 5;
 				
 				// formula usable for skill that have 10 or more skill levels
 				int maxLvl = SkillTable.getInstance().getMaxLevel(temp.getId());

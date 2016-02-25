@@ -60,7 +60,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		_manorId = readD();
 		
 		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
 		{
 			return;
 		}
@@ -146,7 +146,7 @@ public class RequestBuySeed extends L2GameClientPacket
 		}
 		
 		// test adena
-		if ((totalPrice < 0) || (player.getAdena() < totalPrice))
+		if (totalPrice < 0 || player.getAdena() < totalPrice)
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 			return;
@@ -214,7 +214,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			if (_seed.getCanProduce() < _count)
 				return false;
 			// check for overflow
-			if ((MAX_ADENA / _count) < _seed.getPrice())
+			if (MAX_ADENA / _count < _seed.getPrice())
 				return false;
 			
 			return true;

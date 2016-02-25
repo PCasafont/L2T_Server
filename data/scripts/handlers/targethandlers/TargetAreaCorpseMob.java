@@ -48,7 +48,7 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 	{
 		List<L2Character> targetList = new ArrayList<L2Character>();
 		
-		if ((!(target instanceof L2Attackable)) || !target.isDead())
+		if (!(target instanceof L2Attackable) || !target.isDead())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
@@ -59,7 +59,7 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 		else
 			return new L2Character[] { target };
 		
-		boolean srcInArena = (activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE));
+		boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 		
 		L2PcInstance src = null;
 		if (activeChar instanceof L2PcInstance)
@@ -74,7 +74,7 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 		{
 			for (L2Object obj : objs)
 			{
-				if (!((obj instanceof L2Attackable) || (obj instanceof L2Playable)) || ((L2Character) obj).isDead() || (((L2Character) obj) == activeChar))
+				if (!(obj instanceof L2Attackable || obj instanceof L2Playable) || ((L2Character) obj).isDead() || (L2Character) obj == activeChar)
 					continue;
 				
 				if (!Util.checkIfInRange(radius, target, obj, true))
@@ -83,11 +83,11 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 				if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
 					continue;
 				
-				if ((obj instanceof L2PcInstance) && (src != null))
+				if (obj instanceof L2PcInstance && src != null)
 				{
 					trg = (L2PcInstance) obj;
 					
-					if (((src.getParty() != null) && (trg.getParty() != null)) && (src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()))
+					if (src.getParty() != null && trg.getParty() != null && src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
 						continue;
 					
 					if (trg.isInsideZone(L2Character.ZONE_PEACE))
@@ -95,10 +95,10 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 					
 					if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
 					{
-						if ((src.getAllyId() == trg.getAllyId()) && (src.getAllyId() != 0))
+						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
 							continue;
 						
-						if ((src.getClan() != null) && (trg.getClan() != null))
+						if (src.getClan() != null && trg.getClan() != null)
 						{
 							if (src.getClan().getClanId() == trg.getClan().getClanId())
 								continue;
@@ -108,19 +108,19 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 							continue;
 					}
 				}
-				if ((obj instanceof L2Summon) && (src != null))
+				if (obj instanceof L2Summon && src != null)
 				{
 					trg = ((L2Summon) obj).getOwner();
 					
-					if (((src.getParty() != null) && (trg.getParty() != null)) && (src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()))
+					if (src.getParty() != null && trg.getParty() != null && src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
 						continue;
 					
 					if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
 					{
-						if ((src.getAllyId() == trg.getAllyId()) && (src.getAllyId() != 0))
+						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
 							continue;
 						
-						if ((src.getClan() != null) && (trg.getClan() != null))
+						if (src.getClan() != null && trg.getClan() != null)
 						{
 							if (src.getClan().getClanId() == trg.getClan().getClanId())
 								continue;

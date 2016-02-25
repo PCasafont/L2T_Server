@@ -72,7 +72,7 @@ public class L2WeddingManagerInstance extends L2Npc
 			L2PcInstance ptarget = L2World.getInstance().getPlayer(player.getPartnerId());
 			
 			// Is partner online?
-			if ((ptarget == null) || !ptarget.isOnline())
+			if (ptarget == null || !ptarget.isOnline())
 			{
 				filename = "mods/Wedding_notfound.htm";
 				sendHtmlMessage(player, filename, replace);
@@ -105,7 +105,7 @@ public class L2WeddingManagerInstance extends L2Npc
 					}
 					
 					// Check and reduce wedding price
-					if ((player.getAdena() < Config.L2JMOD_WEDDING_PRICE) || (ptarget.getAdena() < Config.L2JMOD_WEDDING_PRICE))
+					if (player.getAdena() < Config.L2JMOD_WEDDING_PRICE || ptarget.getAdena() < Config.L2JMOD_WEDDING_PRICE)
 					{
 						filename = "mods/Wedding_adena.htm";
 						replace = String.valueOf(Config.L2JMOD_WEDDING_PRICE);
@@ -236,7 +236,7 @@ public class L2WeddingManagerInstance extends L2Npc
 			L2ItemInstance fw1 = p1.getChestArmorInstance();
 			L2ItemInstance fw2 = p2.getChestArmorInstance();
 			
-			if ((fw1 == null) || (fw2 == null) || (fw1.getItemId() != 6408) || (fw2.getItemId() != 6408))
+			if (fw1 == null || fw2 == null || fw1.getItemId() != 6408 || fw2.getItemId() != 6408)
 				return false;
 			else
 				return true;

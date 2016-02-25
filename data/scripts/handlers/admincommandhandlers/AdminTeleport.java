@@ -175,7 +175,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				{
 					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 					{
-						if ((pl != null) && pl.getName().equalsIgnoreCase(targetName))
+						if (pl != null && pl.getName().equalsIgnoreCase(targetName))
 						{
 							player = pl;
 							break;
@@ -198,7 +198,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			int targetObjId = 0;
 			for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 			{
-				if (spawn.getTemplate().getName().equalsIgnoreCase(targetName) && (spawn.getNpc() != null))
+				if (spawn.getTemplate().getName().equalsIgnoreCase(targetName) && spawn.getNpc() != null)
 				{
 					targetObjId = spawn.getNpc().getObjectId();
 					break;
@@ -236,7 +236,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				{
 					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 					{
-						if ((pl != null) && (pl.getEvent() == null) && pl.isInOlympiadMode() && (pl.getPrivateStoreType() == 0))
+						if (pl != null && pl.getEvent() == null && pl.isInOlympiadMode() && pl.getPrivateStoreType() == 0)
 						{
 							teleportCharacter(pl, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar);
 							break;
@@ -251,7 +251,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				{
 					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 					{
-						if ((pl != null) && pl.getName().equalsIgnoreCase(targetName))
+						if (pl != null && pl.getName().equalsIgnoreCase(targetName))
 						{
 							player = pl;
 							break;
@@ -278,7 +278,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			
 			if (command.length() > 14) // Parameter given
 				player = L2World.getInstance().getPlayer(command.substring(15));
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance)) // Take targeted player
+			else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance) // Take targeted player
 				player = (L2PcInstance) activeChar.getTarget();
 			
 			// GM has no one on target and didn't provide name as parameter
@@ -454,7 +454,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			else
 			{
 				// Set player to same instance as GM teleporting.
-				if ((activeChar != null) && (activeChar.getInstanceId() >= 0))
+				if (activeChar != null && activeChar.getInstanceId() >= 0)
 					player.setInstanceId(activeChar.getInstanceId());
 				else
 					player.setInstanceId(0);
@@ -543,7 +543,7 @@ public class AdminTeleport implements IAdminCommandHandler
 	private void recallNPC(L2PcInstance activeChar)
 	{
 		L2Object obj = activeChar.getTarget();
-		if ((obj instanceof L2Npc) && !((L2Npc) obj).isMinion() && !(obj instanceof L2RaidBossInstance) && !(obj instanceof L2GrandBossInstance))
+		if (obj instanceof L2Npc && !((L2Npc) obj).isMinion() && !(obj instanceof L2RaidBossInstance) && !(obj instanceof L2GrandBossInstance))
 		{
 			L2Npc target = (L2Npc) obj;
 			

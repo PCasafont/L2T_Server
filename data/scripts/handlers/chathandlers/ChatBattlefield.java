@@ -39,7 +39,7 @@ public class ChatBattlefield implements IChatHandler
 	@Override
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
-		if (TerritoryWarManager.getInstance().isTWChannelOpen() && (activeChar.getSiegeSide() > 0))
+		if (TerritoryWarManager.getInstance().isTWChannelOpen() && activeChar.getSiegeSide() > 0)
 		{
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();

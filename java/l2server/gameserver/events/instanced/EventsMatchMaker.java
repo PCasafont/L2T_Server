@@ -134,14 +134,14 @@ public class EventsMatchMaker
 			int i = 0;
 			for (L2PcInstance player : _registeredPlayers.values())
 			{
-				if ((player == null) || (OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode()))
+				if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode())
 					continue;
 				
 				int objId = player.getObjectId();
 				int strPoints = player.getStrenghtPoints(false);
 				// Find the index of where the current player should be put
 				int j = 0;
-				while ((j < i) && (strPoints < sorted[j][1]))
+				while (j < i && strPoints < sorted[j][1])
 					j++;
 				// Move the rest
 				for (int k = i; k > j; k--)
@@ -169,7 +169,7 @@ public class EventsMatchMaker
 				group = new int[_currentConfig.getLocation().getMaxPlayers()];
 				int points = sorted[i][1];
 				int j = 0;
-				while (((i + j) < sorted.length) && ((j < _currentConfig.getMinPlayers()) || ((j < _currentConfig.getLocation().getMaxPlayers()) && (((points - sorted[i + j][1]) < 15000) || _currentConfig.hasNoLevelLimits()))))
+				while (i + j < sorted.length && (j < _currentConfig.getMinPlayers() || j < _currentConfig.getLocation().getMaxPlayers() && (points - sorted[i + j][1] < 15000 || _currentConfig.hasNoLevelLimits())))
 				{
 					group[j] = sorted[i + j][0];
 					j++;
@@ -177,7 +177,7 @@ public class EventsMatchMaker
 				
 				int minPlayers = _currentConfig.getMinPlayers();
 				if (_prepareAttempts < 100)
-					minPlayers += ((_currentConfig.getLocation().getMaxPlayers() - _currentConfig.getMinPlayers()) * (100 - _prepareAttempts)) / 100;
+					minPlayers += (_currentConfig.getLocation().getMaxPlayers() - _currentConfig.getMinPlayers()) * (100 - _prepareAttempts) / 100;
 				
 				if (j >= minPlayers)
 				{
@@ -185,8 +185,8 @@ public class EventsMatchMaker
 					break;
 				}
 				
-				if (((100 * j) / minPlayers) > bestFillProgress)
-					bestFillProgress = (100 * j) / minPlayers;
+				if (100 * j / minPlayers > bestFillProgress)
+					bestFillProgress = 100 * j / minPlayers;
 				
 				group = null;
 				i += j;
@@ -235,7 +235,7 @@ public class EventsMatchMaker
 	
 	public void onLogin(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			removeParticipant(playerInstance.getObjectId());
 			if (playerInstance.getEvent() != null)
@@ -253,7 +253,7 @@ public class EventsMatchMaker
 	
 	public void onLogout(L2PcInstance playerInstance)
 	{
-		if ((playerInstance != null) && isPlayerParticipant(playerInstance.getObjectId()))
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
 		{
 			if (playerInstance.getEvent() != null)
 			{
@@ -326,7 +326,7 @@ public class EventsMatchMaker
 			return;
 		
 		//LasTravel: If the event is started the player shouldn't be allowed to leave
-		if ((playerInstance.getEvent() != null) && playerInstance.getEvent().isState(EventState.STARTED))
+		if (playerInstance.getEvent() != null && playerInstance.getEvent().isState(EventState.STARTED))
 			return;
 		
 		if (removeParticipant(playerInstance.getObjectId()))
@@ -335,7 +335,7 @@ public class EventsMatchMaker
 	
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if ((_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null) || (_specialTask.getRegisteredPlayers().remove(playerObjectId) != null))
+		if (_pvpTask.getRegisteredPlayers().remove(playerObjectId) != null || _specialTask.getRegisteredPlayers().remove(playerObjectId) != null)
 			return true;
 		
 		EventInstance event = getParticipantEvent(playerObjectId);
@@ -354,7 +354,7 @@ public class EventsMatchMaker
 		
 		String a = null;
 		
-		if ((player.getEvent() != null) && player.getEvent().isState(EventState.STARTED))
+		if (player.getEvent() != null && player.getEvent().isState(EventState.STARTED))
 		{
 			a = HtmCache.getInstance().getHtm(null, "CommunityBoard/runningEvent.htm");
 			
@@ -411,7 +411,7 @@ public class EventsMatchMaker
 		else
 		{
 			a = a.replace("%leaveButton%", "");
-			if ((player.getLevel() < 99) || (player.getOnlineTime() < (5 * 3600)))
+			if (player.getLevel() < 99 || player.getOnlineTime() < 5 * 3600)
 				a = a.replace("%pvpEventJoinButton%", "<font color=FF0000>You can't join a PvP event until you get stronger!</font>");
 			else
 				a = a.replace("%pvpEventJoinButton%", "<button value=\"Join Match making (PvP)\" action=\"bypass -h TenkaiEventJoin true\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
@@ -451,7 +451,7 @@ public class EventsMatchMaker
 					
 					e++;
 					
-					if ((d == 6) || (b == 0))
+					if (d == 6 || b == 0)
 					{
 						d = 1;
 						
@@ -526,13 +526,13 @@ public class EventsMatchMaker
 			color = "FFFF00";
 		else if (player.getFriendList().contains(reader.getObjectId()))
 			color = "00FFFF";
-		else if ((reader.getParty() != null) && (reader.getParty() == player.getParty()))
+		else if (reader.getParty() != null && reader.getParty() == player.getParty())
 			color = "00FF00";
 		else if (reader.getClan() != null)
 		{
-			if ((reader.getClanId() > 0) && (reader.getClanId() == player.getClanId()))
+			if (reader.getClanId() > 0 && reader.getClanId() == player.getClanId())
 				color = "8888FF";
-			else if ((reader.getAllyId() > 0) && (reader.getAllyId() == player.getAllyId()))
+			else if (reader.getAllyId() > 0 && reader.getAllyId() == player.getAllyId())
 				color = "88FF88";
 			else if (reader.getClan().isAtWarWith(player.getClanId()))
 				color = "CC0000";

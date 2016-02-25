@@ -184,7 +184,7 @@ public abstract class Inventory extends ItemContainer
 				if (arrow != null)
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, null);
 			}
-			else if ((item.getItemType() == L2WeaponType.CROSSBOW) || (item.getItemType() == L2WeaponType.CROSSBOWK))
+			else if (item.getItemType() == L2WeaponType.CROSSBOW || item.getItemType() == L2WeaponType.CROSSBOWK)
 			{
 				L2ItemInstance bolts = inventory.getPaperdollItem(PAPERDOLL_LHAND);
 				
@@ -220,7 +220,7 @@ public abstract class Inventory extends ItemContainer
 				if (arrow != null)
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, arrow);
 			}
-			else if ((item.getItemType() == L2WeaponType.CROSSBOW) || (item.getItemType() == L2WeaponType.CROSSBOWK))
+			else if (item.getItemType() == L2WeaponType.CROSSBOW || item.getItemType() == L2WeaponType.CROSSBOWK)
 			{
 				L2ItemInstance bolts = inventory.findBoltForCrossBow(item.getItem());
 				
@@ -483,7 +483,7 @@ public abstract class Inventory extends ItemContainer
 			
 			L2PcInstance player = (L2PcInstance) inventory.getOwner();
 			
-			if ((item == null) || (item.getArmorItem() == null) || (item.getArmorItem().getArmorSet() == null))
+			if (item == null || item.getArmorItem() == null || item.getArmorItem().getArmorSet() == null)
 				return;
 			
 			for (int setId : item.getArmorItem().getArmorSet())
@@ -502,7 +502,7 @@ public abstract class Inventory extends ItemContainer
 				{
 					L2Skill itemSkill;
 					int skillLvl = armorSet.getSkills().get(skillId) - missingParts;
-					if ((skillId > 0) && (skillLvl > 0))
+					if (skillId > 0 && skillLvl > 0)
 					{
 						itemSkill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 						if (itemSkill != null)
@@ -600,7 +600,7 @@ public abstract class Inventory extends ItemContainer
 			
 			L2PcInstance player = (L2PcInstance) inventory.getOwner();
 			
-			if ((item == null) || (item.getArmorItem() == null) || (item.getArmorItem().getArmorSet() == null))
+			if (item == null || item.getArmorItem() == null || item.getArmorItem().getArmorSet() == null)
 				return;
 			
 			for (int setId : item.getArmorItem().getArmorSet())
@@ -619,7 +619,7 @@ public abstract class Inventory extends ItemContainer
 				{
 					L2Skill itemSkill;
 					int skillLvl = armorSet.getSkills().get(skillId) - missingParts;
-					if ((skillId > 0) && (skillLvl > 0))
+					if (skillId > 0 && skillLvl > 0)
 					{
 						itemSkill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 						if (itemSkill != null)
@@ -655,14 +655,14 @@ public abstract class Inventory extends ItemContainer
 					}
 				}
 				
-				if ((item.getItemType() == L2ArmorType.SHIELD) || ((missingParts > 0) && (shieldSkill > 0)))
+				if (item.getItemType() == L2ArmorType.SHIELD || missingParts > 0 && shieldSkill > 0)
 				{
 					L2Skill skill = SkillTable.getInstance().getInfo(shieldSkill, 1);
 					if (skill != null)
 						player.removeSkill(skill, false, skill.isPassive());
 				}
 				
-				if ((missingParts > 0) && (skillId6 > 0))
+				if (missingParts > 0 && skillId6 > 0)
 				{
 					L2Skill skill = SkillTable.getInstance().getInfo(skillId6, 1);
 					if (skill != null)
@@ -1372,7 +1372,7 @@ public abstract class Inventory extends ItemContainer
 	 */
 	public void equipItem(L2ItemInstance item, boolean updateDb)
 	{
-		if ((getOwner() instanceof L2PcInstance) && (((L2PcInstance) getOwner()).getPrivateStoreType() != 0))
+		if (getOwner() instanceof L2PcInstance && ((L2PcInstance) getOwner()).getPrivateStoreType() != 0)
 			return;
 		
 		if (getOwner() instanceof L2PcInstance)
@@ -1386,7 +1386,7 @@ public abstract class Inventory extends ItemContainer
 		
 		//check if player wear formal
 		L2ItemInstance formal = getPaperdollItem(PAPERDOLL_CHEST);
-		if ((formal != null) && (formal.getItem().getBodyPart() == L2Item.SLOT_ALLDRESS))
+		if (formal != null && formal.getItem().getBodyPart() == L2Item.SLOT_ALLDRESS)
 		{
 			switch (targetSlot)
 			{
@@ -1413,7 +1413,7 @@ public abstract class Inventory extends ItemContainer
 			case L2Item.SLOT_L_HAND:
 			{
 				L2ItemInstance rh = getPaperdollItem(PAPERDOLL_RHAND);
-				if ((rh != null) && (rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND) && !(((rh.getItemType() == L2WeaponType.BOW) && (item.getItemType() == L2EtcItemType.ARROW)) || (((rh.getItemType() == L2WeaponType.CROSSBOW) || (rh.getItemType() == L2WeaponType.CROSSBOWK)) && (item.getItemType() == L2EtcItemType.BOLT)) || ((rh.getItemType() == L2WeaponType.FISHINGROD) && (item.getItemType() == L2EtcItemType.LURE))))
+				if (rh != null && rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND && !(rh.getItemType() == L2WeaponType.BOW && item.getItemType() == L2EtcItemType.ARROW || (rh.getItemType() == L2WeaponType.CROSSBOW || rh.getItemType() == L2WeaponType.CROSSBOWK) && item.getItemType() == L2EtcItemType.BOLT || rh.getItemType() == L2WeaponType.FISHINGROD && item.getItemType() == L2EtcItemType.LURE))
 					setPaperdollItem(PAPERDOLL_RHAND, null, updateDb);
 				
 				setPaperdollItem(PAPERDOLL_LHAND, item, updateDb);
@@ -1463,7 +1463,7 @@ public abstract class Inventory extends ItemContainer
 			{
 				// handle full armor
 				L2ItemInstance chest = getPaperdollItem(PAPERDOLL_CHEST);
-				if ((chest != null) && (chest.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR))
+				if (chest != null && chest.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR)
 					setPaperdollItem(PAPERDOLL_CHEST, null, updateDb);
 				
 				setPaperdollItem(PAPERDOLL_LEGS, item, updateDb);
@@ -1480,7 +1480,7 @@ public abstract class Inventory extends ItemContainer
 				break;
 			case L2Item.SLOT_HAIR:
 				L2ItemInstance hair = getPaperdollItem(PAPERDOLL_HAIR);
-				if ((hair != null) && (hair.getItem().getBodyPart() == L2Item.SLOT_HAIRALL))
+				if (hair != null && hair.getItem().getBodyPart() == L2Item.SLOT_HAIRALL)
 					setPaperdollItem(PAPERDOLL_HAIR2, null, updateDb);
 				else
 					setPaperdollItem(PAPERDOLL_HAIR, null, updateDb);
@@ -1489,7 +1489,7 @@ public abstract class Inventory extends ItemContainer
 				break;
 			case L2Item.SLOT_HAIR2:
 				L2ItemInstance hair2 = getPaperdollItem(PAPERDOLL_HAIR);
-				if ((hair2 != null) && (hair2.getItem().getBodyPart() == L2Item.SLOT_HAIRALL))
+				if (hair2 != null && hair2.getItem().getBodyPart() == L2Item.SLOT_HAIRALL)
 					setPaperdollItem(PAPERDOLL_HAIR, null, updateDb);
 				else
 					setPaperdollItem(PAPERDOLL_HAIR2, null, updateDb);
@@ -1551,7 +1551,7 @@ public abstract class Inventory extends ItemContainer
 		
 		for (L2ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getItem() != null))
+			if (item != null && item.getItem() != null)
 				weight += item.getItem().getWeight() * item.getCount();
 		}
 		_totalWeight = (int) Math.min(weight, Integer.MAX_VALUE);
@@ -1583,7 +1583,7 @@ public abstract class Inventory extends ItemContainer
 			if (item == null)
 				continue;
 			
-			if ((item.getItemType() == L2EtcItemType.ARROW) && (item.getItem().getItemGradePlain() == bow.getItemGradePlain()))
+			if (item.getItemType() == L2EtcItemType.ARROW && item.getItem().getItemGradePlain() == bow.getItemGradePlain())
 			{
 				arrow = item;
 				break;
@@ -1608,7 +1608,7 @@ public abstract class Inventory extends ItemContainer
 			if (item == null)
 				continue;
 			
-			if ((item.getItemType() == L2EtcItemType.BOLT) && (item.getItem().getItemGradePlain() == crossbow.getItemGradePlain()))
+			if (item.getItemType() == L2EtcItemType.BOLT && item.getItem().getItemGradePlain() == crossbow.getItemGradePlain())
 			{
 				bolt = item;
 				break;
@@ -1655,7 +1655,7 @@ public abstract class Inventory extends ItemContainer
 				L2World.getInstance().storeObject(item);
 				
 				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && (getItemByItemId(item.getItemId()) != null))
+				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
 					addItem("Restore", item, getOwner().getActingPlayer(), null);
 				else
 					addItem(item);
@@ -1685,7 +1685,7 @@ public abstract class Inventory extends ItemContainer
 			return;
 		
 		// find same (or incompatible) talisman type
-		for (int i = PAPERDOLL_DECO1; i < (PAPERDOLL_DECO1 + getMaxTalismanCount()); i++)
+		for (int i = PAPERDOLL_DECO1; i < PAPERDOLL_DECO1 + getMaxTalismanCount(); i++)
 		{
 			if (_paperdoll[i] != null)
 			{
@@ -1699,7 +1699,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		
 		// free slot found - put on first free
-		for (int i = PAPERDOLL_DECO1; i < (PAPERDOLL_DECO1 + getMaxTalismanCount()); i++)
+		for (int i = PAPERDOLL_DECO1; i < PAPERDOLL_DECO1 + getMaxTalismanCount(); i++)
 		{
 			if (_paperdoll[i] == null)
 			{
@@ -1723,11 +1723,11 @@ public abstract class Inventory extends ItemContainer
 			return;
 		
 		// find same (or incompatible) jewel type
-		for (int i = PAPERDOLL_JEWELRY1; i < (PAPERDOLL_JEWELRY1 + getMaxJewelryCount()); i++)
+		for (int i = PAPERDOLL_JEWELRY1; i < PAPERDOLL_JEWELRY1 + getMaxJewelryCount(); i++)
 		{
 			if (_paperdoll[i] != null)
 			{
-				if ((getPaperdollItemId(i) == item.getItemId()) || item.getName().startsWith(_paperdoll[i].getName().substring(0, 4)))
+				if (getPaperdollItemId(i) == item.getItemId() || item.getName().startsWith(_paperdoll[i].getName().substring(0, 4)))
 				{
 					// overwrite
 					setPaperdollItem(i, item, updateDb);
@@ -1737,7 +1737,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		
 		// free slot found - put on first free
-		for (int i = PAPERDOLL_JEWELRY1; i < (PAPERDOLL_JEWELRY1 + getMaxJewelryCount()); i++)
+		for (int i = PAPERDOLL_JEWELRY1; i < PAPERDOLL_JEWELRY1 + getMaxJewelryCount(); i++)
 		{
 			if (_paperdoll[i] == null)
 			{
@@ -1752,7 +1752,7 @@ public abstract class Inventory extends ItemContainer
 	
 	public int getCloakStatus()
 	{
-		if ((getOwner() instanceof L2PcInstance) && (((L2PcInstance) getOwner()).getCurrentClass() != null) && (((L2PcInstance) getOwner()).getCurrentClass().getLevel() == 85))
+		if (getOwner() instanceof L2PcInstance && ((L2PcInstance) getOwner()).getCurrentClass() != null && ((L2PcInstance) getOwner()).getCurrentClass().getLevel() == 85)
 			return 1;
 		
 		return (int) getOwner().getStat().calcStat(Stats.CLOAK_SLOT, 0, null, null);

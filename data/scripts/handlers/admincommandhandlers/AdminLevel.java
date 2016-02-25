@@ -81,7 +81,7 @@ public class AdminLevel implements IAdminCommandHandler
 				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
 				
 				byte lvl = Byte.parseByte(val);
-				if ((lvl >= 1) && (lvl <= (Config.MAX_LEVEL + 1)))
+				if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1)
 				{
 					long pXp = targetPlayer.getExp();
 					long tXp = Experience.getAbsoluteExp(lvl);

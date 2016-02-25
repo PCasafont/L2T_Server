@@ -75,7 +75,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		if (_ownerId == 0)
 			return false;
 		
-		return (player.getClanId() == _ownerId) || (player.getObjectId() == _ownerId);
+		return player.getClanId() == _ownerId || player.getObjectId() == _ownerId;
 	}
 	
 	@Override
@@ -87,7 +87,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	@Override
 	public boolean isCaptain(L2PcInstance player)
 	{
-		return (_captain != null) && (player == _captain);
+		return _captain != null && player == _captain;
 	}
 	
 	@Override
@@ -115,12 +115,12 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 			_captain = null;
 		else
 		{
-			if ((_captain == null) && (player.getAirShip() == this))
+			if (_captain == null && player.getAirShip() == this)
 			{
 				final int x = player.getInVehiclePosition().getX() - 0x16e;
 				final int y = player.getInVehiclePosition().getY();
 				final int z = player.getInVehiclePosition().getZ() - 0x6b;
-				if (((x * x) + (y * y) + (z * z)) > 2500)
+				if (x * x + y * y + z * z > 2500)
 				{
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CONTROL_TOO_FAR));
 					return false;
@@ -204,7 +204,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 		else
 			_fuel = f;
 		
-		if ((_fuel == 0) && (old > 0))
+		if (_fuel == 0 && old > 0)
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_RUN_OUT));
 		else if (_fuel < LOW_FUEL)
 			broadcastToPassengers(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_FUEL_SOON_RUN_OUT));

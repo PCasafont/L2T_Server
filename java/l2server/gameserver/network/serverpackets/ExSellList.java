@@ -41,7 +41,7 @@ public class ExSellList extends L2ItemListPacket
 	{
 		for (L2TradeItem item : list.getItems())
 		{
-			if (item.hasLimitedStock() && (item.getCurrentCount() <= 0))
+			if (item.hasLimitedStock() && item.getCurrentCount() <= 0)
 				continue;
 			_buyList.add(item);
 		}
@@ -56,7 +56,7 @@ public class ExSellList extends L2ItemListPacket
 	{
 		writeD(0x00); // GoD ???
 		
-		if ((_sellList != null) && (_sellList.length > 0))
+		if (_sellList != null && _sellList.length > 0)
 		{
 			writeH(_sellList.length);
 			for (L2ItemInstance item : _sellList)
@@ -69,7 +69,7 @@ public class ExSellList extends L2ItemListPacket
 		else
 			writeH(0x00);
 		
-		if ((_refundList != null) && (_refundList.length > 0))
+		if (_refundList != null && _refundList.length > 0)
 		{
 			writeH(_refundList.length);
 			int itemIndex = 0;

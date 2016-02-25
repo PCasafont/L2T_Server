@@ -49,7 +49,7 @@ public class Curfew
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if (!(player.isInsideZone(L2Character.ZONE_PEACE) && (TownManager.getClosestTown(player).getTownId() == _eventTown)))
+			if (!(player.isInsideZone(L2Character.ZONE_PEACE) && TownManager.getClosestTown(player).getTownId() == _eventTown))
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 		}
 		
@@ -61,7 +61,7 @@ public class Curfew
 		
 		int minutes = Rnd.get(30) + 30;
 		
-		curfewEnd = System.currentTimeMillis() + (60000L * minutes);
+		curfewEnd = System.currentTimeMillis() + 60000L * minutes;
 		scheduleCurfew();
 		
 		Announcements.getInstance().announceToAll("The entire world has become a hell during " + minutes + " minutes!");
@@ -73,7 +73,7 @@ public class Curfew
 		_eventTown = -1;
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((player != null) && !player.isInsideZone(L2Character.ZONE_PEACE) && !(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING)))
+			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) && !(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING)))
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 		}
 		
@@ -162,7 +162,7 @@ public class Curfew
 		long toStart = _task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
-		if ((hours > 0) || (minutes > 0))
+		if (hours > 0 || minutes > 0)
 		{
 			time += ", in ";
 			if (hours > 0)

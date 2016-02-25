@@ -43,7 +43,7 @@ public final class Evolve
 {
 	public static final boolean doEvolve(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
-		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
+		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
 			return false;
 		
 		L2PetInstance pet = player.getPet();
@@ -71,7 +71,7 @@ public final class Evolve
 		
 		int oldnpcID = olditem.getNpcId();
 		
-		if ((pet.getStat().getLevel() < petminlvl) || (pet.getNpcId() != oldnpcID))
+		if (pet.getStat().getLevel() < petminlvl || pet.getNpcId() != oldnpcID)
 			return false;
 		
 		L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(itemIdgive);
@@ -134,7 +134,7 @@ public final class Evolve
 	
 	public static final boolean doRestore(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
-		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
+		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
 			return false;
 		
 		L2ItemInstance item = player.getInventory().getItemByItemId(itemIdtake);

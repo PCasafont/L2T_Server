@@ -58,13 +58,13 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (Config.isServer(Config.DREAMS) && (_magicId == 17701))
+		if (Config.isServer(Config.DREAMS) && _magicId == 17701)
 		{
 			activeChar.sendMessage("This brooch jewel has been taken out of the game. Exchange it for another at Puss the Cat.");
 			return;
 		}
 		
-		if ((activeChar.getCaptcha() != null) && !activeChar.onActionCaptcha(true))
+		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(true))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -104,7 +104,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 					
 					for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet())
 					{
-						if ((comboSkill.getValue() == _magicId) && (activeChar.getSkillLevelHash(comboSkill.getKey()) > 0))
+						if (comboSkill.getValue() == _magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
 						{
 							level = 1;
 							break;
@@ -126,13 +126,13 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		// Check the validity of the skill
 		if (skill != null)
 		{
-			if ((skill.getSkillType() != L2SkillType.STRSIEGEASSAULT) && activeChar.isMounted())
+			if (skill.getSkillType() != L2SkillType.STRSIEGEASSAULT && activeChar.isMounted())
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
-			if ((skill.getSkillType() != L2SkillType.TRANSFORMDISPEL) && (activeChar.isTransformed() || activeChar.isInStance()) && (!activeChar.containsAllowedTransformSkill(skill.getId()) || ((activeChar.getLastSkillCast() != null) && (activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL))))
+			if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL && (activeChar.isTransformed() || activeChar.isInStance()) && (!activeChar.containsAllowedTransformSkill(skill.getId()) || activeChar.getLastSkillCast() != null && activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -143,7 +143,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 			// Log.fine("	currentState:"+activeChar.getCurrentState());	//for debug
 			
 			// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-			if ((skill.getSkillType() == L2SkillType.RECALL) && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && (activeChar.getReputation() < 0))
+			if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0)
 				return;
 			
 			// players mounted on pets cannot use any toggle skills
@@ -169,7 +169,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 				return;
 			}
 			
-			if ((activeChar.getQueuedSkill() != null) && (activeChar.getQueuedSkill().getSkillId() == 30001) && (skill.getId() != activeChar.getQueuedSkill().getSkillId()))
+			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001 && skill.getId() != activeChar.getQueuedSkill().getSkillId())
 				activeChar.setQueuedSkill(null, _ctrlPressed, _shiftPressed);
 			
 			// activeChar.stopMove();

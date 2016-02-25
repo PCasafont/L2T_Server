@@ -134,7 +134,7 @@ public abstract class L2Playable extends L2Character
 		}
 		else
 		{
-			boolean canStopEffects = !(this instanceof L2PcInstance) || ((this instanceof L2PcInstance));
+			boolean canStopEffects = !(this instanceof L2PcInstance) || this instanceof L2PcInstance;
 			
 			if (canStopEffects)
 				stopAllEffectsExceptThoseThatLastThroughDeath();
@@ -152,7 +152,7 @@ public abstract class L2Playable extends L2Character
 		{
 			for (QuestState qs : actingPlayer.getNotifyQuestOfDeath())
 			{
-				qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs);
+				qs.getQuest().notifyDeath(killer == null ? this : killer, this, qs);
 			}
 		}
 		
@@ -181,7 +181,7 @@ public abstract class L2Playable extends L2Character
 		L2PcInstance player = null;
 		if (this instanceof L2PcInstance)
 			player = (L2PcInstance) this;
-		else if ((this instanceof L2Summon) && !(this instanceof L2MobSummonInstance))
+		else if (this instanceof L2Summon && !(this instanceof L2MobSummonInstance))
 			player = ((L2Summon) this).getOwner();
 		
 		if (player == null)
@@ -204,7 +204,7 @@ public abstract class L2Playable extends L2Character
 		if (targetPlayer.getPvpFlag() == 0)
 			return false;
 		
-		if ((targetPlayer.getPvpFlag() == 0) && !player.isInSameClanWar(targetPlayer))
+		if (targetPlayer.getPvpFlag() == 0 && !player.isInSameClanWar(targetPlayer))
 			return false;
 		
 		return true;

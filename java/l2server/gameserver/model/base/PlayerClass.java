@@ -120,7 +120,7 @@ public class PlayerClass
 	
 	public final boolean isSummoner()
 	{
-		return (_id == 14) || (_id == 28) || (_id == 41) || (_id == 96) || (_id == 104) || (_id == 111) || (_id == 146) || (_id == 176) || (_id == 177) || (_id == 178);
+		return _id == 14 || _id == 28 || _id == 41 || _id == 96 || _id == 104 || _id == 111 || _id == 146 || _id == 176 || _id == 177 || _id == 178;
 	}
 	
 	public final boolean childOf(PlayerClass cl)
@@ -137,7 +137,7 @@ public class PlayerClass
 	
 	public final boolean equalsOrChildOf(PlayerClass cl)
 	{
-		return (this == cl) || childOf(cl);
+		return this == cl || childOf(cl);
 	}
 	
 	public final int level()
@@ -145,7 +145,7 @@ public class PlayerClass
 		if (_parent == null)
 			return 0;
 		
-		if ((_id == 184) || (_id == 185))
+		if (_id == 184 || _id == 185)
 			return 2;
 		
 		return 1 + _parent.level();

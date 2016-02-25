@@ -100,11 +100,11 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if ((_task == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
+		if (_task == null && (_damageHPPerSec != 0 || _damageMPPerSec != 0))
 		{
 			L2PcInstance player = character.getActingPlayer();
 			if (getCastle() != null) // Castle zone
-				if (!(getCastle().getSiege().getIsInProgress() && (player != null) && (player.getSiegeState() != 2))) // Siege and no defender
+				if (!(getCastle().getSiege().getIsInProgress() && player != null && player.getSiegeState() != 2)) // Siege and no defender
 					return;
 			synchronized (this)
 			{
@@ -117,7 +117,7 @@ public class L2DamageZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (_characterList.isEmpty() && (_task != null))
+		if (_characterList.isEmpty() && _task != null)
 		{
 			stopTask();
 		}
@@ -149,7 +149,7 @@ public class L2DamageZone extends L2ZoneType
 	
 	private Castle getCastle()
 	{
-		if ((_castleId > 0) && (_castle == null))
+		if (_castleId > 0 && _castle == null)
 			_castle = CastleManager.getInstance().getCastleById(_castleId);
 		
 		return _castle;
@@ -187,13 +187,13 @@ public class L2DamageZone extends L2ZoneType
 			
 			for (L2Character temp : _dmgZone.getCharacterList())
 			{
-				if ((temp != null) && !temp.isDead())
+				if (temp != null && !temp.isDead())
 				{
 					if (siege)
 					{
 						// during siege defenders not affected
 						final L2PcInstance player = temp.getActingPlayer();
-						if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
+						if (player != null && player.isInSiege() && player.getSiegeState() == 2)
 							continue;
 					}
 					

@@ -118,7 +118,7 @@ public class L2FortSupportCaptainInstance extends L2MerchantInstance implements 
 	@Override
 	public void showChatWindow(L2PcInstance player)
 	{
-		if ((player.getClan() == null) || (getFort().getOwnerClan() == null) || (player.getClan() != getFort().getOwnerClan()))
+		if (player.getClan() == null || getFort().getOwnerClan() == null || player.getClan() != getFort().getOwnerClan())
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 			html.setFile(player.getHtmlPrefix(), "fortress/supportunit-noclan.htm");

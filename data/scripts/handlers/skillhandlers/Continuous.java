@@ -90,7 +90,7 @@ public class Continuous implements ISkillHandler
 			}
 			
 			// Player holding a cursed weapon can't be buffed and can't buff
-			if ((skill.getSkillType() == L2SkillType.BUFF) && !(activeChar instanceof L2ClanHallManagerInstance))
+			if (skill.getSkillType() == L2SkillType.BUFF && !(activeChar instanceof L2ClanHallManagerInstance))
 			{
 				if (target != attacker)
 				{
@@ -103,7 +103,7 @@ public class Continuous implements ISkillHandler
 						else if (trg.getBlockCheckerArena() != -1)
 							continue;
 					}
-					else if ((player != null) && player.isCursedWeaponEquipped())
+					else if (player != null && player.isCursedWeaponEquipped())
 						continue;
 				}
 			}
@@ -184,24 +184,24 @@ public class Continuous implements ISkillHandler
 				// so the debuff can be removed after the duel
 				// (player & target must be in the same duel)
 				L2Abnormal[] effects = skill.getEffects(attacker, target, new Env(shld, ssMul));
-				if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || (skill.getSkillType() == L2SkillType.BUFF)) && (player != null) && (player.getDuelId() == ((L2PcInstance) target).getDuelId()))
+				if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill.getSkillType() == L2SkillType.BUFF) && player != null && player.getDuelId() == ((L2PcInstance) target).getDuelId())
 				{
 					DuelManager dm = DuelManager.getInstance();
 					for (L2Abnormal buff : effects)
 					{
 						if (buff != null)
-							dm.onBuff(((L2PcInstance) target), buff);
+							dm.onBuff((L2PcInstance) target, buff);
 					}
 				}
 				
 				// Give the buff to our pets if possible
-				if ((target instanceof L2PcInstance) && (effects.length > 0) && (effects[0].canBeShared() || (skill.getTargetType() == L2SkillTargetType.TARGET_SELF)) && !skill.isToggle() && skill.canBeSharedWithSummon())
+				if (target instanceof L2PcInstance && effects.length > 0 && (effects[0].canBeShared() || skill.getTargetType() == L2SkillTargetType.TARGET_SELF) && !skill.isToggle() && skill.canBeSharedWithSummon())
 				{
 					for (L2SummonInstance summon : ((L2PcInstance) target).getSummons())
 						skill.getEffects(attacker, summon, new Env(shld, ssMul));
 				}
 				
-				if ((skill.getSkillType() == L2SkillType.AGGDEBUFF) && (effects.length > 0))
+				if (skill.getSkillType() == L2SkillType.AGGDEBUFF && effects.length > 0)
 				{
 					if (target instanceof L2Attackable)
 						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, attacker, (int) skill.getPower());
@@ -214,7 +214,7 @@ public class Continuous implements ISkillHandler
 					}
 				}
 				
-				if ((effects.length == 0) && (skill.getSkillBehavior() != L2SkillBehaviorType.FRIENDLY))
+				if (effects.length == 0 && skill.getSkillBehavior() != L2SkillBehaviorType.FRIENDLY)
 					acted = false;
 			}
 			else
@@ -222,7 +222,7 @@ public class Continuous implements ISkillHandler
 				attacker.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
 			}
 			
-			if ((skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF) && !acted)
+			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF && !acted)
 				activeChar.abortCast();
 			
 			// Possibility of a lethal strike
@@ -233,7 +233,7 @@ public class Continuous implements ISkillHandler
 		if (skill.hasSelfEffects())
 		{
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if ((effect != null) && effect.isSelfEffect())
+			if (effect != null && effect.isSelfEffect())
 			{
 				//Replace old effect with new one.
 				effect.exit();

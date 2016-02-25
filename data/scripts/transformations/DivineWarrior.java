@@ -18,7 +18,7 @@ public class DivineWarrior extends L2Transformation
 	@Override
 	public void onTransform()
 	{
-		if ((getPlayer().getTransformationId() != 253) || getPlayer().isCursedWeaponEquipped())
+		if (getPlayer().getTransformationId() != 253 || getPlayer().isCursedWeaponEquipped())
 			return;
 		
 		transformedSkills();

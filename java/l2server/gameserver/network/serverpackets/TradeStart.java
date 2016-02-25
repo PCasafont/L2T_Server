@@ -32,13 +32,13 @@ public final class TradeStart extends L2ItemListPacket
 	public TradeStart(L2PcInstance player)
 	{
 		_activeChar = player;
-		_itemList = _activeChar.getInventory().getAvailableItems(true, (_activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS));
+		_itemList = _activeChar.getInventory().getAvailableItems(true, _activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		if ((_activeChar.getActiveTradeList() == null) || (_activeChar.getActiveTradeList().getPartner() == null))
+		if (_activeChar.getActiveTradeList() == null || _activeChar.getActiveTradeList().getPartner() == null)
 			return;
 		
 		writeD(_activeChar.getActiveTradeList().getPartner().getObjectId());

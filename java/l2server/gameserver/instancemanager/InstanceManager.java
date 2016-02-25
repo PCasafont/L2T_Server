@@ -178,7 +178,7 @@ public class InstanceManager
 	{
 		if (_instanceIdNames.containsKey(id))
 			return _instanceIdNames.get(id);
-		return ("UnknownInstance");
+		return "UnknownInstance";
 	}
 	
 	private void loadInstanceNames()
@@ -381,7 +381,7 @@ public class InstanceManager
 	{
 		for (L2Npc mobs : getInstance(instId).getNpcs())
 		{
-			if ((mobs == null) || !(mobs instanceof L2Attackable))
+			if (mobs == null || !(mobs instanceof L2Attackable))
 				continue;
 			
 			mobs.setTarget(null);
@@ -395,7 +395,7 @@ public class InstanceManager
 		
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((pl != null) && (pl.getInstanceId() == instId) && !pl.isGM())
+			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
 			{
 				pl.setIsImmobilized(true);
 				pl.setTarget(null);
@@ -414,7 +414,7 @@ public class InstanceManager
 	{
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((pl != null) && (pl.getInstanceId() == instId))
+			if (pl != null && pl.getInstanceId() == instId)
 			{
 				pl.setMovieId(vidId);
 				pl.sendPacket(new ExStartScenePlayer(vidId));
@@ -432,7 +432,7 @@ public class InstanceManager
 			return;
 		for (L2Npc mobs : inst.getNpcs())
 		{
-			if ((mobs == null) || !(mobs instanceof L2Attackable))
+			if (mobs == null || !(mobs instanceof L2Attackable))
 				continue;
 			
 			mobs.setIsInvul(false);
@@ -442,7 +442,7 @@ public class InstanceManager
 		
 		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
 		{
-			if ((pl != null) && (pl.getInstanceId() == instId) && !pl.isGM())
+			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
 			{
 				pl.enableAllSkills();
 				pl.setIsInvul(false);
@@ -459,7 +459,7 @@ public class InstanceManager
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == instanceId))
+			if (player != null && player.isOnline() && player.getInstanceId() == instanceId)
 				player.sendPacket(packet);
 		}
 	}
@@ -494,7 +494,7 @@ public class InstanceManager
 			@Override
 			public void run()
 			{
-				if ((player != null) && (player.getInstanceId() == instanceId))
+				if (player != null && player.getInstanceId() == instanceId)
 					player.sendPacket(packet);
 			}
 		}, delaySec * 1000);
@@ -509,7 +509,7 @@ public class InstanceManager
 		List<L2PcInstance> _instancePlayers = new ArrayList<L2PcInstance>();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
 		{
-			if ((player != null) && (player.getInstanceId() == instanceId))
+			if (player != null && player.getInstanceId() == instanceId)
 				_instancePlayers.add(player);
 		}
 		return _instancePlayers;
@@ -547,7 +547,7 @@ public class InstanceManager
 	 */
 	public void despawnAll(int instId)
 	{
-		if ((getInstance(instId) == null) || (getInstance(instId).getNpcs() == null))
+		if (getInstance(instId) == null || getInstance(instId).getNpcs() == null)
 			return;
 		
 		for (L2Npc npc : getInstance(instId).getNpcs())
@@ -556,7 +556,7 @@ public class InstanceManager
 				continue;
 			
 			L2Spawn spawn = npc.getSpawn();
-			if ((spawn != null) && (spawn.getNpc() != null))
+			if (spawn != null && spawn.getNpc() != null)
 				spawn.stopRespawn();
 			
 			npc.deleteMe();
@@ -606,7 +606,7 @@ public class InstanceManager
 		if (instance != null)
 		{
 			for (int playerId : instance.allowed)
-				setInstanceTime(playerId, templateId, System.currentTimeMillis() + (reuseTime * 60000));
+				setInstanceTime(playerId, templateId, System.currentTimeMillis() + reuseTime * 60000);
 		}
 	}
 	
@@ -678,7 +678,7 @@ public class InstanceManager
 		L2Party party = null;
 		L2CommandChannel cChannel = null;
 		
-		if ((minPlayers == 1) && (maxPlayers == 1))
+		if (minPlayers == 1 && maxPlayers == 1)
 			allPlayers.add(player);
 		else if (minPlayers > 1)
 		{
@@ -710,7 +710,7 @@ public class InstanceManager
 				}
 			}
 			
-			if ((minPlayers > Config.MAX_MEMBERS_IN_PARTY) || (cChannel != null))
+			if (minPlayers > Config.MAX_MEMBERS_IN_PARTY || cChannel != null)
 			{
 				if (minPlayers > Config.MAX_MEMBERS_IN_PARTY) //Need command channel yes or yes
 				{
@@ -751,7 +751,7 @@ public class InstanceManager
 			if (enterPlayer.isInDuel())
 				return false;
 			
-			if ((enterPlayer.getLevel() < minLevel) || (enterPlayer.getLevel() > maxLevel))
+			if (enterPlayer.getLevel() < minLevel || enterPlayer.getLevel() > maxLevel)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(enterPlayer);

@@ -221,7 +221,7 @@ public class L2LoginServer
 				{
 					line = line.trim();
 					// check if this line isnt a comment line
-					if ((line.length() > 0) && (line.charAt(0) != '#'))
+					if (line.length() > 0 && line.charAt(0) != '#')
 					{
 						// split comments if any
 						parts = line.split("#", 2);

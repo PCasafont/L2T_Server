@@ -110,9 +110,9 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		{
 			type += " " + Integer.toHexString(opcode[0] & 0xff);
 			if (opcode.length > 2)
-				type += ":" + Integer.toHexString((opcode[1] & 0xff) | ((opcode[2] & 0xff) << 8));
+				type += ":" + Integer.toHexString(opcode[1] & 0xff | (opcode[2] & 0xff) << 8);
 			if (opcode.length > 6)
-				type += ":" + Integer.toHexString(((opcode[3] & 0xff) | ((opcode[4] & 0xff) << 8) | ((opcode[5] & 0xff) << 16) | ((opcode[6] & 0xff) << 24)));
+				type += ":" + Integer.toHexString(opcode[3] & 0xff | (opcode[4] & 0xff) << 8 | (opcode[5] & 0xff) << 16 | (opcode[6] & 0xff) << 24);
 		}
 		
 		type += " " + getClass().getSimpleName();

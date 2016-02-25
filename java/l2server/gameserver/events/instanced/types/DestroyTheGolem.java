@@ -55,7 +55,7 @@ public class DestroyTheGolem extends EventInstance
 			if (_teams[0].getPoints() == _teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if ((_teams[0].getParticipatedPlayerCount() == 0) || (_teams[1].getParticipatedPlayerCount() == 0))
+				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -88,22 +88,22 @@ public class DestroyTheGolem extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if ((_teams[0].getPoints() > _teams[1].getPoints()) && (_teams[0].getPoints() > _teams[2].getPoints()) && (_teams[0].getPoints() > _teams[3].getPoints()))
+			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() && _teams[0].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(0);
 				team = _teams[0];
 			}
-			else if ((_teams[1].getPoints() > _teams[0].getPoints()) && (_teams[1].getPoints() > _teams[2].getPoints()) && (_teams[1].getPoints() > _teams[3].getPoints()))
+			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() && _teams[1].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(1);
 				team = _teams[1];
 			}
-			else if ((_teams[2].getPoints() > _teams[0].getPoints()) && (_teams[2].getPoints() > _teams[1].getPoints()) && (_teams[2].getPoints() > _teams[3].getPoints()))
+			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() && _teams[2].getPoints() > _teams[3].getPoints())
 			{
 				rewardTeams(2);
 				team = _teams[2];
 			}
-			else if ((_teams[3].getPoints() > _teams[0].getPoints()) && (_teams[3].getPoints() > _teams[1].getPoints()) && (_teams[3].getPoints() > _teams[2].getPoints()))
+			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() && _teams[3].getPoints() > _teams[2].getPoints())
 			{
 				rewardTeams(3);
 				team = _teams[3];
@@ -159,7 +159,7 @@ public class DestroyTheGolem extends EventInstance
 	@Override
 	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
 	{
-		if ((killedPlayer == null) || !isState(EventState.STARTED))
+		if (killedPlayer == null || !isState(EventState.STARTED))
 			return;
 		
 		byte killedTeamId = getParticipantTeamId(killedPlayer.getObjectId());
@@ -217,7 +217,7 @@ public class DestroyTheGolem extends EventInstance
 			x /= _config.getLocation().getTeamCount();
 			y /= _config.getLocation().getTeamCount();
 			
-			int heading = (int) Math.round((Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI) * 32768);
+			int heading = (int) Math.round(Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI * 32768);
 			if (heading < 0)
 				heading = 65535 + heading;
 			
@@ -233,7 +233,7 @@ public class DestroyTheGolem extends EventInstance
 			team.getGolemSpawn().startRespawn();
 			team.getGolemSpawn().doSpawn();
 			L2EventGolemInstance golem = (L2EventGolemInstance) team.getGolemSpawn().getNpc();
-			int maxHp = (25 * getParticipatedPlayersCount()) / _config.getLocation().getTeamCount();
+			int maxHp = 25 * getParticipatedPlayersCount() / _config.getLocation().getTeamCount();
 			golem.setMaxHp(maxHp);
 			golem.setCurrentHp(golem.getMaxHp());
 			golem.setTeam(team);

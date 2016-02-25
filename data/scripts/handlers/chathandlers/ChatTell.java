@@ -69,7 +69,7 @@ public class ChatTell implements IChatHandler
 			return;
 		}
 		
-		if ((!receiver.isSilenceMode() || activeChar.isGM()))
+		if (!receiver.isSilenceMode() || activeChar.isGM())
 		{
 			if (Config.JAIL_DISABLE_CHAT && receiver.isInJail() && !activeChar.isGM())
 			{

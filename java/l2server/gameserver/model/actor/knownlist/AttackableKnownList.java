@@ -45,7 +45,7 @@ public class AttackableKnownList extends NpcKnownList
 		final Collection<L2PcInstance> known = getKnownPlayers().values();
 		
 		//FIXME: This is a temporary solution && support for Walking Manager
-		if (getActiveChar().hasAI() && ((known == null) || known.isEmpty()))
+		if (getActiveChar().hasAI() && (known == null || known.isEmpty()))
 			getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 		
 		return true;
@@ -69,7 +69,7 @@ public class AttackableKnownList extends NpcKnownList
 	@Override
 	public int getDistanceToWatchObject(L2Object object)
 	{
-		if (((object instanceof L2NpcInstance) && ((((L2NpcInstance) object).getClan() == null) || !((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan()))) || !(object instanceof L2Character))
+		if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null || !((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) || !(object instanceof L2Character))
 			return 0;
 		
 		if (object instanceof L2Playable)

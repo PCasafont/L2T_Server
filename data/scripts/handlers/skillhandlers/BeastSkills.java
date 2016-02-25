@@ -56,7 +56,7 @@ public class BeastSkills implements ISkillHandler
 				// since the AI responce onSkillUse handles the rest.
 				break;
 			case BEAST_RELEASE:
-				if ((target != null) && (target instanceof L2TamedBeastInstance))
+				if (target != null && target instanceof L2TamedBeastInstance)
 					((L2TamedBeastInstance) target).deleteMe();
 				break;
 			case BEAST_RELEASE_ALL:
@@ -68,7 +68,7 @@ public class BeastSkills implements ISkillHandler
 				// Unknown effect now
 				break;
 			case BEAST_SKILL:
-				if ((target != null) && (target instanceof L2TamedBeastInstance))
+				if (target != null && target instanceof L2TamedBeastInstance)
 					((L2TamedBeastInstance) target).castBeastSkills();
 				break;
 		}

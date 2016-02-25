@@ -236,7 +236,7 @@ public class L2NpcActionShift implements IActionHandler
 					else
 						color = "0000ff";
 					
-					StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", (drop.isQuestDrop() ? "Quest" : "Drop"), "</td></tr>");
+					StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", drop.isQuestDrop() ? "Quest" : "Drop", "</td></tr>");
 				}
 				for (L2DropData drop : targetNpc.getTemplate().getDropData())
 				{
@@ -253,7 +253,7 @@ public class L2NpcActionShift implements IActionHandler
 					else
 						color = "0000ff";
 					
-					StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", (drop.isQuestDrop() ? "Quest" : "Drop"), "</td></tr>");
+					StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", drop.isQuestDrop() ? "Quest" : "Drop", "</td></tr>");
 				}
 				for (L2DropCategory cat : targetNpc.getTemplate().getMultiDropData())
 				{
@@ -272,7 +272,7 @@ public class L2NpcActionShift implements IActionHandler
 						else
 							color = "0000ff";
 						
-						StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", (drop.isQuestDrop() ? "Quest" : "Drop"), "</td></tr>");
+						StringUtil.append(html1, "<tr><td><font color=\"", color, "\">", item.getName(), "</font></td><td>", drop.isQuestDrop() ? "Quest" : "Drop", "</td></tr>");
 					}
 				}
 				html1.append("</table>");

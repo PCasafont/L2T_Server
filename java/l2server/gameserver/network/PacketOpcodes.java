@@ -47,7 +47,7 @@ public class PacketOpcodes
 			public void run()
 			{
 				File f = new File(Config.DATAPACK_ROOT, PROTOCOL_FILE);
-				if (!f.isDirectory() && (f.lastModified() > _lastModified))
+				if (!f.isDirectory() && f.lastModified() > _lastModified)
 				{
 					load();
 					//Log.info("Updated the protocols from the file " + f.getName());
@@ -178,7 +178,7 @@ public class PacketOpcodes
 			byte[] opcode = new byte[parentOpcode.length + length];
 			System.arraycopy(parentOpcode, 0, opcode, 0, parentOpcode.length);
 			for (int i = 0; i < length; i++)
-				opcode[parentOpcode.length + i] = (byte) ((subOpcode >> (i * 8)) & 0xff);
+				opcode[parentOpcode.length + i] = (byte) (subOpcode >> i * 8 & 0xff);
 			
 			if (y.getName().equals("packetfamilly"))
 			{

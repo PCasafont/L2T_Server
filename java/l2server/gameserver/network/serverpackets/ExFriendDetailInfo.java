@@ -55,7 +55,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		_player = activeChar;
 		_friendObjId = CharNameTable.getInstance().getIdByName(charName);
 		_name = charName;
-		_isOnline = (L2World.getInstance().getPlayer(_friendObjId) != null) && L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
+		_isOnline = L2World.getInstance().getPlayer(_friendObjId) != null && L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
 		_memo = activeChar.getFriendMemo(_friendObjId);
 		if (_isOnline == 1)
 		{
@@ -94,12 +94,12 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
 			{
-				level = (rset.getByte("level"));
-				_classId = (rset.getInt("classid"));
-				bClassId = (rset.getInt("base_class"));
-				_clanId = (rset.getInt("clanid"));
-				_lastLogin = (rset.getLong("lastAccess"));
-				createDate = (rset.getLong("createTime"));
+				level = rset.getByte("level");
+				_classId = rset.getInt("classid");
+				bClassId = rset.getInt("base_class");
+				_clanId = rset.getInt("clanid");
+				_lastLogin = rset.getLong("lastAccess");
+				createDate = rset.getLong("createTime");
 			}
 			statement.execute();
 			
@@ -128,7 +128,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				ResultSet rset = statement.executeQuery();
 				
 				while (rset.next())
-					_level = (rset.getByte("level"));
+					_level = rset.getByte("level");
 				
 				statement.execute();
 				rset.close();
@@ -158,11 +158,11 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				ResultSet rset = statement.executeQuery();
 				while (rset.next())
 				{
-					_clanName = (rset.getString("clan_name"));
-					_clanCrestId = (rset.getInt("crest_id"));
-					_allyId = (rset.getInt("ally_id"));
-					_allyName = (rset.getString("ally_name"));
-					_allyCrestId = (rset.getInt("ally_crest_id"));
+					_clanName = rset.getString("clan_name");
+					_clanCrestId = rset.getInt("crest_id");
+					_allyId = rset.getInt("ally_id");
+					_allyName = rset.getString("ally_name");
+					_allyCrestId = rset.getInt("ally_crest_id");
 				}
 				statement.execute();
 				rset.close();

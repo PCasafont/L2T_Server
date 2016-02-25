@@ -110,7 +110,7 @@ public class Lilith extends L2AttackableAIScript
 		
 		int npcId = npc.getNpcId();
 		
-		if ((npcId == _enterCubic) || (npcId == _lilithCubic))
+		if (npcId == _enterCubic || npcId == _lilithCubic)
 		{
 			int _lilithStatus = GrandBossManager.getInstance().getBossStatus(_lilithId);
 			
@@ -124,16 +124,16 @@ public class Lilith extends L2AttackableAIScript
 				{
 					if (!Config.isServer(Config.DREAMS))
 					{
-						if ((_lilithStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
+						if (_lilithStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
 							return null;
-						else if ((_lilithStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
+						else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, Config.MAX_LEVEL))
 							return null;
 					}
 					else
 					{
-						if ((_lilithStatus == GrandBossManager.getInstance().ALIVE) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 82, 94))
+						if (_lilithStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 82, 94))
 							return null;
-						else if ((_lilithStatus == GrandBossManager.getInstance().WAITING) && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 82, 94))
+						else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, 21, 100, 82, 94))
 							return null;
 					}
 					if (_lilithStatus == GrandBossManager.getInstance().FIGHTING)
@@ -141,7 +141,7 @@ public class Lilith extends L2AttackableAIScript
 				}
 			}
 			
-			if ((_lilithStatus == GrandBossManager.getInstance().ALIVE) && (npcId == _enterCubic))
+			if (_lilithStatus == GrandBossManager.getInstance().ALIVE && npcId == _enterCubic)
 			{
 				GrandBossManager.getInstance().setBossStatus(_lilithId, GrandBossManager.getInstance().WAITING);
 				
@@ -155,7 +155,7 @@ public class Lilith extends L2AttackableAIScript
 				
 				startQuestTimer("check_activity_task", 60000, null, null, true);
 			}
-			else if ((_lilithStatus == GrandBossManager.getInstance().WAITING) && (npcId == _lilithCubic))
+			else if (_lilithStatus == GrandBossManager.getInstance().WAITING && npcId == _lilithCubic)
 			{
 				if (!_remnants.isEmpty())
 					return "";
@@ -309,9 +309,9 @@ public class Lilith extends L2AttackableAIScript
 		
 		if (npc.getNpcId() == _remnant)
 		{
-			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.30))
+			if (npc.getCurrentHp() < npc.getMaxHp() * 0.30)
 			{
-				if (!npc.isCastingNow() && (Rnd.get(100) > 95))
+				if (!npc.isCastingNow() && Rnd.get(100) > 95)
 					npc.doCast(_remantTele);
 			}
 		}
@@ -354,7 +354,7 @@ public class Lilith extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onSpellFinished: " + npc.getName());
 		
-		if ((npc.getNpcId() == _remnant) && _preLilithZone.isInsideZone(npc))
+		if (npc.getNpcId() == _remnant && _preLilithZone.isInsideZone(npc))
 		{
 			if (skill == _remantTele)
 			{
@@ -370,11 +370,11 @@ public class Lilith extends L2AttackableAIScript
 		if (_debug)
 			Log.warning(getName() + ": onSkillSee: " + npc.getName());
 		
-		if (Util.contains(_lilithMinions, npc.getNpcId()) && (Rnd.get(2) == 1))
+		if (Util.contains(_lilithMinions, npc.getNpcId()) && Rnd.get(2) == 1)
 		{
 			if (skill.getSkillType().toString().contains("HEAL"))
 			{
-				if (!npc.isCastingNow() && (npc.getTarget() != npc) && (npc.getTarget() != caster) && (npc.getTarget() != _lilithBoss)) //Don't call minions if are healing Lilith
+				if (!npc.isCastingNow() && npc.getTarget() != npc && npc.getTarget() != caster && npc.getTarget() != _lilithBoss) //Don't call minions if are healing Lilith
 				{
 					((L2Attackable) npc).clearAggroList();
 					npc.setTarget(caster);

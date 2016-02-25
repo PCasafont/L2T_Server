@@ -116,7 +116,7 @@ public final class Q691_MatrasSuspiciousRequest extends Quest
 		}
 		else if (event.equalsIgnoreCase("32245-12.htm"))
 		{
-			st.giveItems(57, (st.getInt("submitted_gems") * 10000));
+			st.giveItems(57, st.getInt("submitted_gems") * 10000);
 			st.playSound("IItemSound.quest_finish");
 			st.exitQuest(true);
 		}
@@ -174,7 +174,7 @@ public final class Q691_MatrasSuspiciousRequest extends Quest
 		
 		final QuestState st = pl.getQuestState(qn);
 		int chance = (int) (Config.RATE_QUEST_DROP * REWARD_CHANCES.get(npc.getNpcId()));
-		int numItems = Math.max((chance / 1000), 1);
+		int numItems = Math.max(chance / 1000, 1);
 		chance = chance % 1000;
 		if (Rnd.get(1000) <= chance)
 		{
