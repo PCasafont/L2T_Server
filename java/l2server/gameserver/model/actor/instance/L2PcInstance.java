@@ -6647,7 +6647,7 @@ public class L2PcInstance extends L2Playable
 				// Clan stuff check
 				if (targetPlayer.getClan() != null)
 				{
-					boolean war = (getClan() != null) && getClan().isAtWarWith(targetPlayer.getClan()) && targetPlayer.getClan().isAtWarWith(getClan()) && (targetPlayer.getPledgeType() != L2Clan.SUBUNIT_ACADEMY) && (getPledgeType() != L2Clan.SUBUNIT_ACADEMY);
+					boolean atWar = (getClan() != null) && getClan().isAtWarWith(targetPlayer.getClan()) && targetPlayer.getClan().isAtWarWith(getClan()) && (targetPlayer.getPledgeType() != L2Clan.SUBUNIT_ACADEMY) && (getPledgeType() != L2Clan.SUBUNIT_ACADEMY);
 					
 					/*if (!war)
 					{
@@ -6656,7 +6656,7 @@ public class L2PcInstance extends L2Playable
 						war = castle != null && castle.getTendency() == Castle.TENDENCY_DARKNESS;
 					}*/
 					
-					if (war)
+					if (atWar)
 					{
 						// 'Both way war' -> 'PvP Kill'
 						//increasePvpKills(target);
@@ -6665,15 +6665,15 @@ public class L2PcInstance extends L2Playable
 					
 					if ((getClan() != null) && !getClan().isAtWarWith(targetPlayer.getClanId()) && !targetPlayer.getClan().isAtWarWith(getClanId()) && (targetPlayer.getPledgeType() != L2Clan.SUBUNIT_ACADEMY) && (getPledgeType() != L2Clan.SUBUNIT_ACADEMY))
 					{
-						for (ClanWar WAR : targetPlayer.getClan().getWars())
+						for (ClanWar war : targetPlayer.getClan().getWars())
 						{
-							if ((WAR.getClan1() == targetPlayer.getClan()) && (WAR.getClan2() == getClan()) && (WAR.getState() == WarState.DECLARED))
+							if ((war.getClan1() == targetPlayer.getClan()) && (war.getClan2() == getClan()) && (war.getState() == WarState.DECLARED))
 							{
-								WAR.increaseClan1DeathsForClanWar();
-								if (WAR.getClan1DeathsForClanWar() >= 5)
+								war.increaseClan1DeathsForClanWar();
+								if (war.getClan1DeathsForClanWar() >= 5)
 								{
-									WAR.setWarDeclarator(getObjectId());
-									WAR.start();
+									war.setWarDeclarator(getObjectId());
+									war.start();
 								}
 							}
 						}

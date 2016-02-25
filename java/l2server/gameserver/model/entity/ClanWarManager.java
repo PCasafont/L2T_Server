@@ -257,8 +257,8 @@ public class ClanWarManager
 			DOMINATING, SUPERIOR, EVENLYMATCHED, INFERIOR, OVERWHELMED
 		}
 		
-		private final L2Clan _clan1;
-		private final L2Clan _clan2;
+		private L2Clan _clan1;
+		private L2Clan _clan2;
 		private int _score1;
 		private int _score2;
 		private int _declarator1;
@@ -329,7 +329,7 @@ public class ClanWarManager
 					if (_warState == WarState.DECLARED)
 					{
 						delete();
-						_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has been stopped. Didn't accepted declaration!"); // TODO: System message.
+						_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has been stopped. Didn't accept declaration!"); // TODO: System message.
 					}
 				}
 			}, _startTime - System.currentTimeMillis());
@@ -364,6 +364,50 @@ public class ClanWarManager
 					
 				}
 			}, _deleteTime - System.currentTimeMillis());
+		}
+		
+		public void declare(L2Clan declarator)
+		{
+			Connection con = null;
+			try
+			{
+				if (declarator != _clan1)
+				{
+					_clan2 = _clan1;
+					_clan1 = declarator;
+				}
+				_startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
+				_endTime = 0;
+				_deleteTime = 0;
+				con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement statement;
+				statement = con.prepareStatement("UPDATE clan_wars SET start_time=? end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
+				statement.setLong(1, _startTime);
+				statement.setLong(2, _endTime);
+				statement.setLong(3, _deleteTime);
+				statement.setInt(4, _clan1.getClanId());
+				statement.setInt(5, _clan2.getClanId());
+				statement.execute();
+				statement.close();
+				
+				_warState = WarState.DECLARED;
+				
+				_clan1.broadcastClanStatus();
+				_clan2.broadcastClanStatus();
+				
+				scheduleStart();
+			}
+			catch (Exception e)
+			{
+				Log.log(Level.SEVERE, "Error updating clan war time.", e);
+			}
+			finally
+			{
+				L2DatabaseFactory.close(con);
+			}
+			
+			_clan1.broadcastMessageToOnlineMembers("Clan war against " + _clan2.getName() + " has been aborted.");
+			_clan2.broadcastMessageToOnlineMembers("Clan war against " + _clan1.getName() + " has been aborted.");
 		}
 		
 		public void start()

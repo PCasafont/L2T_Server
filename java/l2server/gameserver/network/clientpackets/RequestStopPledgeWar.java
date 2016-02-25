@@ -70,7 +70,19 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 			return;
 		}
 		
-		if (playerClan.getReputationScore() < Config.CANCEL_CLAN_WAR_REPUTATION_POINTS)
+		int repToTake = Config.CANCEL_CLAN_WAR_REPUTATION_POINTS;
+		if (Config.isServer(Config.TENKAI_ESTHUS))
+		{
+			if (playerClan.getReputationScore() < 500000)
+			{
+				player.sendMessage("Your clan needst to have at least 500000 Reputation Points to end this war.");
+				return;
+			}
+			
+			repToTake = playerClan.getReputationScore() / 3;
+		}
+		
+		if (playerClan.getReputationScore() < repToTake)
 		{
 			player.sendMessage("Your clan doesn't have " + Config.CANCEL_CLAN_WAR_REPUTATION_POINTS + " Reputation Points to end this war."); // TODO: System Message
 			return;
@@ -78,16 +90,16 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		
 		if (!playerClan.getEnemiesQueue().contains(clan) && !playerClan.isAtWarWith(clan.getClanId()))
 		{
-			player.sendMessage("The clan you've requested are not on the enemies queue. It might have been started or in repose or declarators are other clan.");
+			player.sendMessage("The clan you've requested is not on the enemies queue. It might have been started or in repose or declarators are other clan.");
 			return;
 		}
 		
 		ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
 		if (war != null)
-			war.stop();
+			war.declare(clan);
 		
-		playerClan.takeReputationScore(Config.CANCEL_CLAN_WAR_REPUTATION_POINTS, true);
-		clan.addReputationScore(Config.CANCEL_CLAN_WAR_REPUTATION_POINTS, true);
+		playerClan.takeReputationScore(repToTake, true);
+		clan.addReputationScore(repToTake, true);
 		
 		for (L2PcInstance cha : L2World.getInstance().getAllPlayersArray())
 		{
