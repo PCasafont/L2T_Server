@@ -14241,7 +14241,7 @@
 			mpReg="30.46" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="4000000" mAtk="1600000"
 			pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17421" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150" windRes="150"
-			earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-47810" y="57540" z="-3096" heading="44472" respawn="60" />
 		<spawn x="-48087" y="57634" z="-3088" heading="31361" respawn="60" />
 		<spawn x="-48089" y="58478" z="-3168" heading="30240" respawn="60" />
@@ -14391,7 +14391,7 @@
 			mpMax="45970" mpReg="43.28" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="345278176" sp="165732" pAtk="4000000"
 			mAtk="1600000" pDef="16000" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
 			aggressive="true" aggroRange="600" rHand="17417" lHand="17435" collisionRadius="10" collisionHeight="24" fireRes="150"
-			waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			waterRes="150" windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-43322" y="54826" z="-2808" heading="32127" respawn="60" />
 		<spawn x="-42830" y="57075" z="-2840" heading="8478" respawn="60" />
 		<spawn x="-42916" y="56174" z="-2848" heading="52149" respawn="60" />
@@ -14421,7 +14421,7 @@
 			mpMax="45970" mpReg="30.46" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="4000000"
 			mAtk="1600000" pDef="14800" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180"
 			aggressive="true" aggroRange="600" rHand="17329" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150"
-			windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-49228" y="50902" z="-2400" heading="27775" respawn="60" />
 		<spawn x="-49175" y="51154" z="-2400" heading="31895" respawn="60" />
 		<spawn x="-47623" y="57554" z="-3112" heading="21523" respawn="60" />
@@ -14637,7 +14637,7 @@
 			mpReg="43.28" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="345278176" sp="165732" pAtk="4000000" mAtk="1600000"
 			pDef="16000" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17325" lHand="17401" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150"
-			windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			windRes="150" earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-46725" y="41675" z="-1512" heading="64183" respawn="60" />
 		<spawn x="-47137" y="42935" z="-1568" heading="59344" respawn="60" />
 		<spawn x="-46457" y="50036" z="-2400" heading="48343" respawn="60" />
@@ -14678,7 +14678,7 @@
 			mpReg="32.56" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="179099696" sp="85966" pAtk="3552000" mAtk="800000"
 			pDef="14400" mDef="14240" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17391" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150" windRes="150"
-			earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-44262" y="45020" z="-1472" heading="60521" respawn="60" />
 		<spawn x="-48400" y="43665" z="-1544" heading="2058" respawn="60" />
 		<spawn x="-55228" y="50545" z="-2208" heading="42587" respawn="60" />
@@ -14727,7 +14727,7 @@
 			mpReg="32.56" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="179099696" sp="85966" pAtk="3552000" mAtk="800000"
 			pDef="14400" mDef="14240" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17425" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150" windRes="150"
-			earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-55841" y="46455" z="-1664" heading="61362" respawn="60" />
 		<spawn x="-57204" y="45762" z="-1664" heading="37761" respawn="60" />
 		<spawn x="-54624" y="47036" z="-1528" heading="60856" respawn="60" />
@@ -14783,7 +14783,7 @@
 			mpReg="37.55" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="199099536" sp="95566" pAtk="3680000" mAtk="1600000"
 			pDef="14560" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17392" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150" windRes="150"
-			earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-59130" y="44591" z="-1600" heading="44161" respawn="60" />
 		<spawn x="-56211" y="51224" z="-2208" heading="416" respawn="60" />
 		<spawn x="-56896" y="45957" z="-1632" heading="18882" respawn="60" />
@@ -14814,7 +14814,7 @@
 			mpReg="37.55" STR="88" CON="82" DEX="60" INT="79" WIT="40" MEN="78" exp="199099536" sp="95566" pAtk="3680000" mAtk="1600000"
 			pDef="14560" mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" aggressive="true"
 			aggroRange="600" rHand="17426" collisionRadius="10" collisionHeight="24" fireRes="150" waterRes="150" windRes="150"
-			earthRes="300" holyRes="150" darkRes="150" aiType="fighter">
+			earthRes="300" holyRes="150" darkRes="150" aiType="fighter" isLethalImmune="true">
 		<spawn x="-45364" y="44087" z="-1496" heading="15125" respawn="60" />
 		<spawn x="-48807" y="44027" z="-1544" heading="28877" respawn="60" />
 		<spawn x="-55058" y="50813" z="-2208" heading="33866" respawn="60" />
