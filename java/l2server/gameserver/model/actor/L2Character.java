@@ -268,10 +268,10 @@ public abstract class L2Character extends L2Object
 		if (_debugger != null)
 			_debugger.sendPacket(pkt);
 	}
-	
+
 	/**
 	 * Send debug text string
-	 * @param msg
+	 * @param msg The message to send
 	 */
 	public void sendDebugMessage(String msg)
 	{
@@ -2587,8 +2587,8 @@ public abstract class L2Character extends L2Object
 			}
 			else
 				_status.setCurrentHp(getMaxHp() * Config.RESPAWN_RESTORE_HP, true);
-			//_status.setCurrentCp(getMaxCp() * Config.RESPAWN_RESTORE_CP);
-			//_Status.setCurrentMp(getMaxMp() * Config.RESPAWN_RESTORE_MP);
+			_status.setCurrentCp(getMaxCp() * Config.RESPAWN_RESTORE_CP);
+			_status.setCurrentMp(getMaxMp() * Config.RESPAWN_RESTORE_MP);
 			
 			// Start broadcast status
 			broadcastPacket(new Revive(this));
@@ -5453,7 +5453,7 @@ public abstract class L2Character extends L2Object
 	 * @param strictCheck  true if (distance < radius), false if (distance <= radius)
 	 * @return true is the L2Character is inside the radius.
 	 *
-	 * @see l2server.gameserver.model.L2Character.isInsideRadius(int x, int y, int z, int radius, boolean checkZ, boolean strictCheck)
+	 * @see l2server.gameserver.model.actor.L2Character#isInsideRadius(int x, int y, int z, int radius, boolean checkZ, boolean strictCheck)
 	 */
 	public final boolean isInsideRadius(L2Object object, int radius, boolean checkZ, boolean strictCheck)
 	{
@@ -6627,7 +6627,7 @@ public abstract class L2Character extends L2Object
 	 *
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : A magic skill casting MUST BE in progress</B></FONT><BR><BR>
 	 *
-	 * @param skill The L2Skill to use
+	 * @param mut The L2Skill to use
 	 *
 	 */
 	public void onMagicLaunchedTimer(MagicUseTask mut)
@@ -7087,7 +7087,7 @@ public abstract class L2Character extends L2Object
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * All skills disabled are identified by their skillId in <B>_disabledSkills</B> of the L2Character <BR><BR>
 	 *
-	 * @param skillId The identifier of the L2Skill to enable
+	 * @param skill The L2Skill to enable
 	 *
 	 */
 	public void enableSkill(L2Skill skill)
@@ -8160,7 +8160,7 @@ public abstract class L2Character extends L2Object
 	
 	/**
 	 * Check if target is affected with special buff
-	 * @see CharEffectList#isAffected(int)
+	 * @see CharEffectList#isAffected(long)
 	 * @param flag long
 	 * @return boolean
 	 */
@@ -8301,7 +8301,7 @@ public abstract class L2Character extends L2Object
 	 * TODO: Suck my d0ng & L2SiegeGuardInstance Checks.
 	 * @param obj (The targeted object)
 	 * @param skill (The used skill)
-	 * @param isMassiveAttack (Define either this is supposed to be a massive or non massive attack)
+	 * @param isMassiveCheck (Define either this is supposed to be a massive or non massive attack)
 	 * @return
 	 */
 	public boolean isAbleToCastOnTarget(L2Object obj, L2Skill skill, final boolean isMassiveCheck)

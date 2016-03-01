@@ -137,7 +137,6 @@ public final class Config
 	public static double RESPAWN_RESTORE_HP;
 	public static double RESPAWN_RESTORE_MP;
 	public static boolean ALT_GAME_TIREDNESS;
-	public static boolean ENABLE_MODIFY_SKILL_DURATION;
 	public static TIntIntHashMap SKILL_DURATION_LIST;
 	public static boolean ENABLE_MODIFY_SKILL_REUSE;
 	public static TIntIntHashMap SKILL_REUSE_LIST;
@@ -572,13 +571,10 @@ public final class Config
 	public static long ALT_OLY_CPERIOD;
 	public static long ALT_OLY_BATTLE;
 	public static long ALT_OLY_WPERIOD;
-	public static long ALT_OLY_VPERIOD;
 	public static int ALT_OLY_CLASSED;
 	public static int ALT_OLY_NONCLASSED;
-	public static int ALT_OLY_TEAMS;
 	public static int[][] ALT_OLY_CLASSED_REWARD;
 	public static int[][] ALT_OLY_NONCLASSED_REWARD;
-	public static int[][] ALT_OLY_TEAM_REWARD;
 	public static int ALT_OLY_COMP_RITEM;
 	public static int ALT_OLY_TOKENS_PER_POINT;
 	public static int ALT_OLY_HERO_POINTS;
@@ -1022,7 +1018,6 @@ public final class Config
 	/**
 	 * This class initializes all global variables for configuration.<br>
 	 * If the key doesn't appear in properties file, a default value is set by this class.
-	 * @see CONFIGURATION_FILE (properties file) for configuring your server.
 	 */
 	public static void load()
 	{
@@ -1195,8 +1190,6 @@ public final class Config
 	/**
 	 * Save hexadecimal ID of the server in the L2Properties file.
 	 * @param string (String) : hexadecimal ID of the server to store
-	 * @see HEXID_FILE
-	 * @see saveHexid(String string, String fileName)
 	 * @link LoginServerThread
 	 */
 	public static void saveHexid(int serverId, String string)

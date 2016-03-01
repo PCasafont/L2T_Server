@@ -180,15 +180,18 @@ public abstract class EventInstance
 					{
 						// Add the player into the current party or create it if it still doesn't exist
 						if (parties[currentParty] == null)
+						{
 							parties[currentParty] = new L2Party(playerInstance, L2Party.ITEM_LOOTER);
+							playerInstance.setParty(parties[currentParty]);
+						}
 						else
 							playerInstance.joinParty(parties[currentParty]);
-					}
 					
-					// Rotate current party index
-					currentParty++;
-					if (currentParty >= partyCount)
-						currentParty = 0;
+						// Rotate current party index
+						currentParty++;
+						if (currentParty >= partyCount)
+							currentParty = 0;
+					}
 				}
 			}
 		}
