@@ -110,6 +110,12 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		_ncotp |= decrypted[0x7e] << 16;
 		_ncotp |= decrypted[0x7f] << 24;
 		
+		if (!_user.equals("pere")
+				&& !_user.equals("trolol")
+				&& !_user.equals("biksata21")
+				&& !_user.equals("biksata22"))
+			return;
+		
 		LoginController lc = LoginController.getInstance();
 		try
 		{

@@ -214,7 +214,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<for>
-			<abnormal duration="5" stackLvl="4" stackType="storm_sign_2" visualEffect="sauronRedEye">
+			<abnormal landRate="100" duration="5" stackLvl="4" stackType="storm_sign_2" visualEffect="sauronRedEye">
 				<subPercent stat="mDef" val="50" />
 				<sub stat="runSpd" val="100" />
 			</abnormal>

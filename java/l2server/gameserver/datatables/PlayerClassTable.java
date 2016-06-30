@@ -345,7 +345,7 @@ public class PlayerClassTable implements Reloadable
 			if (bannedSubs != null)
 				subclasses.removeAll(bannedSubs);
 			
-			switch (player.getRace())
+			/*switch (player.getRace())
 			{
 				case Elf:
 					subclasses.removeAll(getList(Race.DarkElf, 40));
@@ -353,7 +353,7 @@ public class PlayerClassTable implements Reloadable
 				case DarkElf:
 					subclasses.removeAll(getList(Race.Elf, 40));
 					break;
-			}
+			}*/
 			
 			if (player.getRace() != Race.Ertheia)
 				subclasses.removeAll(getList(Race.Kamael, 40));

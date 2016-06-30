@@ -173,8 +173,8 @@ public class CharStatus
 		if (getActiveChar().isInvul(attacker))
 		{
 			// other chars can't damage
-			if (attacker != getActiveChar())
-				return;
+			//if (attacker != getActiveChar())
+			//	return;
 			
 			// only DOT and HP consumption allowed for damage self
 			if (!isDOT && !isHPConsumption)

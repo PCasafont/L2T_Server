@@ -72,7 +72,7 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 		if (template == null)
 			return;
 		
-		if (!template.getItem().canBeUsedAsApp() || template.getTime() != -1)
+		if (!template.getItem().canBeUsedAsApp() || template.getTime() > 0)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
 			return;

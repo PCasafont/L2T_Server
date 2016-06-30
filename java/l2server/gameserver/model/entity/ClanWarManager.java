@@ -375,13 +375,29 @@ public class ClanWarManager
 				{
 					_clan2 = _clan1;
 					_clan1 = declarator;
+
+					int temp = _score1;
+					_score1 = _score2;
+					_score2 = temp;
+
+					temp = _declarator1;
+					_declarator1 = _declarator2;
+					_declarator2 = temp;
+
+					temp = _clan1Score;
+					_clan1Score = _clan2Score;
+					_clan2Score = temp;
+					
+					WarSituation tempSit = _situation1;
+					_situation1 = _situation2;
+					_situation2 = tempSit;
 				}
 				_startTime = System.currentTimeMillis() + Config.PREPARE_MUTUAL_WAR_PERIOD * 3600000L;
 				_endTime = 0;
 				_deleteTime = 0;
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
-				statement = con.prepareStatement("UPDATE clan_wars SET start_time=? end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
+				statement = con.prepareStatement("UPDATE clan_wars SET start_time=?, end_time=?, delete_time=? WHERE clan1=? AND clan2=?");
 				statement.setLong(1, _startTime);
 				statement.setLong(2, _endTime);
 				statement.setLong(3, _deleteTime);
@@ -391,6 +407,7 @@ public class ClanWarManager
 				statement.close();
 				
 				_warState = WarState.DECLARED;
+				_clan1DeathsForWar = 0;
 				
 				_clan1.broadcastClanStatus();
 				_clan2.broadcastClanStatus();

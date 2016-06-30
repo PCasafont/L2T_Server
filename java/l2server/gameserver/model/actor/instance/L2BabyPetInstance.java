@@ -269,6 +269,9 @@ public final class L2BabyPetInstance extends L2PetInstance
 					{
 						for (SkillHolder i : _buffs)
 						{
+							if (i == null)
+								continue;
+							
 							skill = i.getSkill();
 							
 							if (skill.getTargetType() == L2SkillTargetType.TARGET_SELF && _baby.getFirstEffect(skill) != null)

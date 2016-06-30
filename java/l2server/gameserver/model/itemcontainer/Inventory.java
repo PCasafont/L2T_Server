@@ -1413,7 +1413,15 @@ public abstract class Inventory extends ItemContainer
 			case L2Item.SLOT_L_HAND:
 			{
 				L2ItemInstance rh = getPaperdollItem(PAPERDOLL_RHAND);
-				if (rh != null && rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND && !(rh.getItemType() == L2WeaponType.BOW && item.getItemType() == L2EtcItemType.ARROW || (rh.getItemType() == L2WeaponType.CROSSBOW || rh.getItemType() == L2WeaponType.CROSSBOWK) && item.getItemType() == L2EtcItemType.BOLT || rh.getItemType() == L2WeaponType.FISHINGROD && item.getItemType() == L2EtcItemType.LURE))
+				if (rh != null && rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND
+						&& (!(rh.getItemType() == L2WeaponType.BOW
+						&& item.getItemType() == L2EtcItemType.ARROW
+						|| (rh.getItemType() == L2WeaponType.CROSSBOW
+						|| rh.getItemType() == L2WeaponType.CROSSBOWK)
+						&& item.getItemType() == L2EtcItemType.BOLT
+						|| rh.getItemType() == L2WeaponType.FISHINGROD
+						&& item.getItemType() == L2EtcItemType.LURE)
+						|| item.getItem().getItemGradePlain() != rh.getItem().getItemGradePlain()))
 					setPaperdollItem(PAPERDOLL_RHAND, null, updateDb);
 				
 				setPaperdollItem(PAPERDOLL_LHAND, item, updateDb);

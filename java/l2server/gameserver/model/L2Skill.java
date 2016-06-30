@@ -2055,7 +2055,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				{
 					L2PcInstance player = (L2PcInstance) activeChar;
 					
-					if (target != null && player.isMentor())
+					if (target instanceof L2PcInstance
+							&& ((L2PcInstance)target).getMentorId() == player.getObjectId())
 					{
 						if (!target.isDead())
 						{

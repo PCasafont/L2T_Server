@@ -230,7 +230,8 @@ public class Heal implements ISkillHandler
 				int members = 0;
 				for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers())
 				{
-					if (partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId)
+					if (partyMember.getCurrentClass().getParent() != null
+							&& partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId)
 						members++;
 				}
 				

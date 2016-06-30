@@ -294,7 +294,7 @@ public class CharInfo extends L2GameServerPacket
 				writeD(0);
 				writeD(0);
 			}
-			if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
+			/*if (_inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) > 46500 && _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CHEST) != 46601)
 			{
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
@@ -304,7 +304,7 @@ public class CharInfo extends L2GameServerPacket
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
 				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
 			}
-			else
+			else*/
 			{
 				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_HEAD));
 				writeD(_inv.getPaperdollAppearance(Inventory.PAPERDOLL_GLOVES));

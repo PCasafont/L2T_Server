@@ -608,16 +608,7 @@
 		Auto - True if geodata enabled and False if disabled.
 	-->
 	<config name="EnableFallingDamage" var="ENABLE_FALLING_DAMAGE" default="False" />
-	
-	<!--
-		-
-		Skills & Effects
-		-
-		When this is enabled it will read the "SkillDurationList" option.
-		This will basically overlook the "time = x" in the skill XMLs so that you do not need to modify the L2J Datapack XMLs to increase skill duration.
-	-->
-	<config name="EnableModifySkillDuration" var="ENABLE_MODIFY_SKILL_DURATION" default="False" />
-	
+		
 	<!--
 		Skill duration list
 		Format: skillid,newtime;skillid2,newtime2...
@@ -2845,9 +2836,6 @@
 	<!-- Required number of participants for the non-class based games -->
 	<config name="AltOlyNonClassedParticipants" var="ALT_OLY_NONCLASSED" default="11" />
 	
-	<!-- Required number of participants for the 3x3 teams games -->
-	<config name="AltOlyTeamsParticipants" var="ALT_OLY_TEAMS" default="6" />
-	
 	<!--
 		Reward for the class based games
 		Format: itemId1,itemNum1;itemId2,itemNum2...
@@ -2859,12 +2847,6 @@
 		Format: itemId1,itemNum1;itemId2,itemNum2...
 	-->
 	<config name="AltOlyNonClassedReward" var="ALT_OLY_NONCLASSED_REWARD" default="13722,100" />
-	
-	<!--
-		Reward for the 3x3 teams games
-		Format: itemId1,itemNum1;itemId2,itemNum2...
-	-->
-	<config name="AltOlyTeamReward" var="ALT_OLY_TEAM_REWARD" default="13722,85" />
 	
 	<!-- ItemId used for exchanging to the points. -->
 	<config name="AltOlyCompRewItem" var="ALT_OLY_COMP_RITEM" default="13722" />
@@ -3098,57 +3080,6 @@
 	<!-- Password Recovery Link -->
 	<config name="SecondAuthRecoveryLink" var="SECOND_AUTH_REC_LINK" default="http://www.example.com/l2j/charPassRec.php" />
 	
-	<!--
-		Mini Games
-		If true, the mini games will be enabled and useable.
-	-->
-	<config name="MiniGamesEnabled" var="MINI_GAMES_ENABLED" default="false" />
-	
-	<!-- If enabled, the mini games will start on their own. Otherwise, they have to be manually started. -->
-	<config name="MiniGamesEnableSchedules" var="MINI_GAMES_ENABLE_SCHEDULES" default="false" />
-	
-	<!-- If true, we display points in players title. Otherwise, "Unknown" is displayed. -->
-	<config name="MiniGamesShowTitles" var="MINI_GAMES_SHOW_TITLES" default="false" />
-	
-	<!-- If true, we'll be using Announcements chat channel to send mini games global announcements. Otherwise, SystemMessage. -->
-	<config name="MiniGamesUseAnnouncements" var="MINI_GAMES_USE_ANNOUNCEMENTS" default="true" />
-	
-	<!-- Should we enable bots? -->
-	<config name="MiniGamesEnableBots" var="MINI_GAMES_ENABLE_BOTS" default="false" />
-	
-	<!-- The ID of the NPC used as Mini Games Manager. -->
-	<config name="MiniGamesManagerId" var="MINI_GAMES_MANAGER_ID" default="0" />
-	
-	<!-- The time we wait prior opening the registrations for a new mini game after a mini game ended. In seconds. -->
-	<config name="MiniGamesInterval" var="MINI_GAMES_INTERVAL" default="300" />
-	
-	<!-- Squirrels Shield -->
-	<config name="EnableSquirrelsShield" var="SQUIRRELS_SHIELD_ENABLED" default="false" />
-	
-	<!-- If a player is not sending client data, he broke the shield (it was either killed or it's not functioning as expected) -->
-	<config name="SquirrelsShieldWarnGmsAboutBrokenShield" var="SQUIRRELS_SHIELD_WARN_GMS_ABOUT_BROKEN_SHIELD" default="true" />
-	
-	<!-- If the player did not send us any data at all, or, did not send any data for a while, should we let him know there was a connection problem? -->
-	<config name="SquirrelsShieldWarnPlayerAboutBrokenShield" var="SQUIRRELS_SHIELD_WARN_PLAYER_ABOUT_CONNECTIVITY_ISSUE" default="true" />
-	
-	<!-- Should we kick the player if the shield was broken? -->
-	<config name="SquirrelsShieldKickIfBrokenShield" var="SQUIRRELS_SHIELD_KICK_IF_NO_DATA_RECEIVED" default="true" />
-	
-	<!-- The message to send to the player, if enabled, when the shield was broken. -->
-	<config name="SquirrelsShieldBrokenShieldMessage" var="SQUIRRELS_SHIELD_CONNECTIVITY_ISSUE_MESSAGE" default="There is a connection problem between you and the server." />
-	
-	<!-- The message to send to the player when his access is revoked. -->
-	<config name="SquirrelsShieldAccessRevokedMessage" var="SQUIRRELS_SHIELD_ACCESS_REMOVAL_MESSAGE" default="Your access to the server was revoked." />
-	
-	<!-- Should we display notifications about players running an outdated client? -->
-	<config name="SquirrelsShieldWarnGmsAboutOutdatedClients" var="SQUIRRELS_SHIELD_WARN_GMS_ABOUT_OUTDATED_CLIENTS" default="true" />
-	
-	<!-- Should we apply sanction for illegal softwares found only if they are still running? -->
-	<config name="SquirrelsShieldSanctionOnlyIfToolStillRunning" var="SQUIRRELS_SHIELD_SANCTION_ONLY_IF_TOOL_STILL_RUNNING" default="false" />
-	
-	<!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
-	<config name="SquirrelsShieldBanOffendersReliedCharacters" var="SQUIRRELS_SHIELD_BAN_OFFENDERS_RELIED_CHARACTERS" default="true" />
-
 	<!-- Anti Bots -->
 	<config name="EnableAntiBots" var="ANTI_BOTS_ENABLED" default="false" />
 	
@@ -3160,9 +3091,6 @@
 	
 	<!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
 	<config name="AntiBotsBanOffendersReliedCharacters" var="ANTI_BOTS_BAN_OFFENDERS_RELIED_CHARACTERS" default="false" />
-
-	<!-- Goater's custom drop system -->
-	<config name="EnableCustomDropSystem" var="DROPSYSTEM_ENABLED" default="false" />
 
 	<!-- UNDERGROUNDER! -->
 	<config name="IsUnderground" var="IS_UNDERGROUND" default="false" />

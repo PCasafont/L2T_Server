@@ -198,6 +198,11 @@
 		<set name="isClanSkill" val="true" />
 		<set name="minPledgeClass" val="8" />
 		<set name="fameConsume" val="1500" />
+		<for>
+			<cond msgId="1509">
+				<player onEvent="false" />
+			</cond>
+		</for>
 	</skill>
 	<!-- Makes nearby clan members invincible. Consumes 30 Spirit Ore. Consumes 1000 Clan Reputation. Applies after the distinguished king stage. -->
 	<skill id="19014" levels="1" name="Clan Defense">
@@ -216,7 +221,10 @@
 		<set name="clanRepConsume" val="1000" />
 		<for>
 			<cond msgId="236">
-				<player pledgeClass="11" />
+				<and>
+					<player pledgeClass="11" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal duration="30" stackLvl="1" stackType="invincibility" visualEffect="invincible">
 				<effect type="Invincible" val="0" />
@@ -2259,7 +2267,7 @@
 		<for>
 			<abnormal duration="#duration" stackLvl="1" stackType="prophecy_of_might">
 				<effect type="Buff" val="0" />
-				<addPercent stat="pCritDmg" val="20" />
+				<addPercent stat="pCritDmg" val="25" />
 				<addPercentBase stat="rCrit" val="25" />
 				<addPercent stat="pSkillCritRate" val="25" />
 				<addPercentBase stat="mCritRate" val="25" />

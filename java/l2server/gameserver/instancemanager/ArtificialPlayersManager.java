@@ -227,7 +227,7 @@ public class ArtificialPlayersManager implements Reloadable
 		if (!name.contains("Sayha") && !name.contains("Evis"))
 			name = name.substring(name.indexOf(" ") + 1);
 		else
-			template = CharTemplateTable.getInstance().getTemplate(15);
+			template = CharTemplateTable.getInstance().getTemplate(13);
 		
 		if (template == null)
 			return null;
@@ -357,26 +357,26 @@ public class ArtificialPlayersManager implements Reloadable
 		//	classCombination.add(139 + Rnd.get(5));
 		
 		// ..or not
-		int rnd = Rnd.get(100);
-		if (rnd < 60)
+		//int rnd = Rnd.get(100);
+		//if (rnd < 60)
 		{
 			// Tank
 			classCombination.add(148 + Rnd.get(4));
 		}
-		else
+		//else
 		{
 			// Ertheia
-			classCombination.add(188 + Rnd.get(2));
+			//classCombination.add(188 + Rnd.get(2));
 		}
-		if (rnd > 30)
+		//if (rnd > 30)
 		{
 			// Warrior
 			classCombination.add(152 + Rnd.get(5));
 		}
-		else
+		//else
 		{
 			// Ertheia
-			classCombination.add(188 + Rnd.get(2));
+			//classCombination.add(188 + Rnd.get(2));
 		}
 		// Rogue
 		classCombination.add(158 + Rnd.get(4));

@@ -40,6 +40,7 @@ import java.util.logging.Level;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2Object;
@@ -583,6 +584,9 @@ public final class Util
 	
 	public static void logToFile(String string, String filename, String extension, boolean append, boolean date)
 	{
+		if (Config.isServer(Config.TENKAI))
+			return;
+		
 		try
 		{
 			FileWriter fstream = new FileWriter(filename + "." + extension, append);

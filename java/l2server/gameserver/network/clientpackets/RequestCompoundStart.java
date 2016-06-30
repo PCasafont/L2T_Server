@@ -18,9 +18,11 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.datatables.CompoundTable;
 import l2server.gameserver.datatables.CompoundTable.Combination;
 import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExCompoundFail;
 import l2server.gameserver.network.serverpackets.ExCompoundSuccess;
+import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
@@ -47,6 +49,13 @@ public final class RequestCompoundStart extends L2GameClientPacket
 		
 		if (compoundItem1 == null || compoundItem2 == null)
 			return;
+		
+		if (compoundItem1.getLocation() != ItemLocation.INVENTORY
+				|| compoundItem2.getLocation() != ItemLocation.INVENTORY)
+		{
+			Log.info(activeChar.getName() + " is trying to cheat with the compound system!");
+			return;
+		}
 		
 		Combination combination = CompoundTable.getInstance().getCombination(compoundItem1.getItemId(), compoundItem2.getItemId());
 		if (combination == null)

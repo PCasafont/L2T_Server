@@ -1743,7 +1743,7 @@
 		<set name="saveVs" val="MEN" />
 		<set name="absorbPart" val="0.25" />
 		<for>
-			<abnormal duration="10" landRate="#landRate" stackLvl="1" stackType="multi_debuff">
+			<abnormal duration="20" landRate="#landRate" stackLvl="1" stackType="multi_debuff">
 				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="8" />
 				<subPercent stat="mAtk" val="30" />
@@ -4937,8 +4937,8 @@
 				<effect type="MDamOverTime" val="#DOT" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
-				<effect type="Heal" val="1650" />
-				<effect type="ManaHeal" val="350" />
+				<effect type="HealPercent" val="3" />
+				<effect type="ManaHealPercent" val="3" />
 			</abnormal>
 		</for>
 	</skill>

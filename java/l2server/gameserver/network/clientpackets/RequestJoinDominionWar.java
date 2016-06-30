@@ -56,7 +56,8 @@ public final class RequestJoinDominionWar extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_TERRITORY_REGISTRATION_PERIOD));
 			return;
 		}
-		else if (clan != null && TerritoryWarManager.getInstance().getTerritory(castleId).getOwnerClan() == clan)
+		else if (clan != null && TerritoryWarManager.getInstance().getTerritory(castleId) != null
+				&& TerritoryWarManager.getInstance().getTerritory(castleId).getOwnerClan() == clan)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_TERRITORY_OWNER_CLAN_CANNOT_PARTICIPATE_AS_MERCENARIES));
 			return;

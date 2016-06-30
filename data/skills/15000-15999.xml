@@ -1031,10 +1031,10 @@
 		<set name="minPledgeClass" val="7" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
-			</cond>
-			<cond addName="1" msgId="113">
-				<player onEvent="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 		</for>
 	</skill>

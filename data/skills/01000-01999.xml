@@ -7250,7 +7250,10 @@
 		<set name="aggroPoints" val="676" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal duration="60" stackLvl="1" stackType="hero_buff">
 				<effect type="Buff" val="0" />
@@ -7282,7 +7285,10 @@
 		<set name="saveVs" val="MEN" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal duration="15" landRate="80" stackLvl="2" stackType="hero_debuff">
 				<effect type="Debuff" val="0" />
@@ -7315,7 +7321,10 @@
 		<set name="saveVs" val="MEN" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal count="4" duration="2" landRate="80" stackLvl="1" stackType="hero_debuff">
 				<effect type="Fear" val="0" />

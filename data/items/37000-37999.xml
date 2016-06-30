@@ -4112,14 +4112,14 @@
 	<!-- MP +59, Bleed Resistance 50% increase, Bleed Attack Rate 50% increase, Heal Amount increase, Vampiric Rage Effect, Stun/Mental resistance 40%, Stun/Mental attack rate 40% increase, physical/magic skill MP consumption decrease, earth resistance increase, Holy Resistance increase, CON +3, MEN +3. P. Def./M. Def. are increased. Can use the Stun canceling skill. Momentarily increases Stun resistance by 100%. Only one effect is applied even when the same two earrings are worn. Cannot be used in the Olympiad. -->
 	<item id="37732" type="Armor" name="Blessed Antharas' Earring - 7-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
-		<baseAdd stat="mDef" val="170" />
+		<baseAdd stat="mDef" val="170" time="10080" />
 		<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
 		<skill id="13314" level="1" /> <!-- Blessed Antharas' Earring -->
 	</item>
 	<!-- HP +625, MP +79, Sleep Resistance 50% increase, Sleep Attack Rate 50% increase, physical/magic skill cooldown decrease, Wild Magic Effect, damage shield effect, fire resistance 30 increase, Dark Resistance 20 increase, STR +3, INT +3. P. Skill Atk. 5% increase, P. Atk. 10% increase, M. Atk. 20% increase, hold resistance skill use. Hold resistance 100% increase momentarily. Cannot be used in the Olympiad. -->
 	<item id="37733" type="Armor" name="Blessed Valakas' Necklace - 7-day" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
-		<baseAdd stat="mDef" val="226" />
+		<baseAdd stat="mDef" val="226" time="10080" />
 		<skill id="13315" level="1" /> <!-- Blessed Valakas' Necklace -->
 		<skill id="13316" level="1" /> <!-- Blessed Valakas' Necklace -->
 	</item>

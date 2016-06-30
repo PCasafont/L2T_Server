@@ -9051,7 +9051,10 @@
 		<set name="aggroPoints" val="676" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal duration="60" stackLvl="3" stackType="hero_buff">
 				<effect type="Buff" val="0" />
@@ -9076,7 +9079,10 @@
 		<set name="aggroPoints" val="676" />
 		<for>
 			<cond msgId="1509">
-				<player olympiad="false" />
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+				</and>
 			</cond>
 			<abnormal duration="60" stackLvl="2" stackType="hero_buff">
 				<effect type="Buff" val="0" />

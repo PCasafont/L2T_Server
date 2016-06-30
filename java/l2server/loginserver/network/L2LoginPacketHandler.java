@@ -20,6 +20,7 @@ import java.nio.ByteBuffer;
 import l2server.log.Log;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.clientpackets.AuthGameGuard;
+import l2server.loginserver.network.clientpackets.RequestAuthLogin;
 import l2server.loginserver.network.clientpackets.RequestAuthLogin2;
 import l2server.loginserver.network.clientpackets.RequestServerList;
 import l2server.loginserver.network.clientpackets.RequestServerLogin;
@@ -62,9 +63,9 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 			case AUTHED_GG:
 				switch (opcode)
 				{
-				//case 0x00:
-				//	packet = new RequestAuthLogin();
-				//	break;
+					case 0x00:
+						packet = new RequestAuthLogin();
+						break;
 					case 0x12:
 						packet = new RequestAuthLogin2();
 						break;
