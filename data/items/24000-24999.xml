@@ -3,7 +3,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -21,7 +21,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -37,7 +37,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -55,7 +55,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -73,7 +73,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -91,7 +91,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -109,7 +109,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -127,7 +127,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -145,7 +145,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -163,7 +163,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -181,7 +181,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -199,7 +199,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -217,7 +217,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -235,7 +235,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -251,7 +251,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -269,7 +269,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -287,7 +287,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -305,7 +305,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -323,7 +323,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -341,7 +341,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -359,7 +359,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -377,7 +377,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -395,7 +395,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -413,7 +413,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -431,7 +431,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -449,7 +449,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 225 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -464,7 +464,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 210 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -481,7 +481,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 195 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -498,7 +498,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 180 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -515,7 +515,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 165 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -532,7 +532,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 150 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -549,7 +549,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 135 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -566,7 +566,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 120 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -583,7 +583,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 105 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -600,7 +600,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 90 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -617,7 +617,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 75 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -634,7 +634,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 60 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -651,7 +651,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -667,7 +667,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -685,7 +685,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -703,7 +703,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -721,7 +721,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -739,7 +739,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -757,7 +757,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -775,7 +775,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -793,7 +793,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -811,7 +811,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -829,7 +829,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -847,7 +847,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -865,7 +865,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -881,7 +881,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -899,7 +899,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -917,7 +917,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -935,7 +935,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -953,7 +953,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -971,7 +971,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -989,7 +989,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1007,7 +1007,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1025,7 +1025,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1043,7 +1043,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1061,7 +1061,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1079,7 +1079,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 13500 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -1095,7 +1095,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 12600 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -1113,7 +1113,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 11700 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1131,7 +1131,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 10800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1149,7 +1149,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 9900 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1167,7 +1167,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 9000 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1185,7 +1185,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 8100 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1203,7 +1203,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 7200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1221,7 +1221,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 6300 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1239,7 +1239,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 5400 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1257,7 +1257,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 4500 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1275,7 +1275,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 3600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1293,7 +1293,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -1309,7 +1309,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -1327,7 +1327,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 288 HP/second. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1345,7 +1345,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 288 HP/second. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1363,7 +1363,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 296 HP/second. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1381,7 +1381,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 296 HP/second. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1399,7 +1399,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 305 HP/second. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1417,7 +1417,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 305 HP/second. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1435,7 +1435,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 313 HP/second. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1453,7 +1453,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 313 HP/second. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1471,7 +1471,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 322 HP/second. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1489,7 +1489,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 322 HP/second. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1507,7 +1507,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -1523,7 +1523,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -1541,7 +1541,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1559,7 +1559,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1577,7 +1577,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1595,7 +1595,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1613,7 +1613,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1631,7 +1631,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1649,7 +1649,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1667,7 +1667,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1685,7 +1685,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1703,7 +1703,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1721,7 +1721,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -1737,7 +1737,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -1755,7 +1755,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1773,7 +1773,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1791,7 +1791,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1809,7 +1809,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -1827,7 +1827,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1845,7 +1845,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -1863,7 +1863,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1881,7 +1881,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -1899,7 +1899,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1917,7 +1917,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 30.
@@ -1935,7 +1935,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6750 sec.)
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
 	-->
@@ -1951,7 +1951,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6300 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 5.
@@ -1969,7 +1969,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 5850 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -1987,7 +1987,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 5400 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 10.
@@ -2005,7 +2005,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4950 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -2023,7 +2023,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 15.
@@ -2041,7 +2041,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4050 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -2059,7 +2059,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 3600 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 20.
@@ -2077,7 +2077,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 3150 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -2095,7 +2095,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 2700 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Atk./Resistance + 25.
@@ -2113,7 +2113,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 2250 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2131,7 +2131,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 1800 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2149,7 +2149,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4500 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -2165,7 +2165,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4200 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -2183,7 +2183,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3900 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2201,7 +2201,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3600 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2219,7 +2219,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3300 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2237,7 +2237,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3000 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2255,7 +2255,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2700 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2273,7 +2273,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2400 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2291,7 +2291,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2100 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2309,7 +2309,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1800 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2327,7 +2327,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1500 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2345,7 +2345,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1200 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2361,64 +2361,64 @@
 		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
-	<item id="24133" type="Armor" name="Dark Assassin Suit" icon="BranchIcon.Icon.dark_assassin" defaultAction="equip" bodypart="alldress"
-			immediateEffect="1" weight="0">
+	<item id="24133" type="Armor" name="Dark Assassin Suit - None" icon="BranchIcon.Icon.dark_assassin" defaultAction="equip"
+			bodypart="alldress" immediateEffect="1" weight="0">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
-	<item id="24134" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
+	<item id="24134" type="EtcItem" name="Appearance Stone: Dark Assassin Suit - None" icon="BranchSys3.icon1.g_scrl_change_chest"
 			immediateEffect="1" crystalType="c" weight="0" isStackable="true" handler="AppearanceStone" standardItem="24133">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24135" type="EtcItem" name="Dark Assassin Top" icon="BranchIcon.Icon.etc_dark_suit_upbody_i00" immediateEffect="1"
+	<item id="24135" type="EtcItem" name="Dark Assassin Top - None" icon="BranchIcon.Icon.etc_dark_suit_upbody_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24136" type="EtcItem" name="Dark Assassin Pants" icon="BranchIcon.Icon.etc_dark_suit_downbody_i00" immediateEffect="1"
+	<item id="24136" type="EtcItem" name="Dark Assassin Pants - None" icon="BranchIcon.Icon.etc_dark_suit_downbody_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24137" type="EtcItem" name="Dark Assassin Gloves" icon="BranchIcon.Icon.etc_dark_suit_gloves_i00" immediateEffect="1"
+	<item id="24137" type="EtcItem" name="Dark Assassin Gloves - None" icon="BranchIcon.Icon.etc_dark_suit_gloves_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
-	<item id="24138" type="EtcItem" name="Dark Assassin Boots" icon="BranchIcon.Icon.etc_dark_suit_shoes_i00" immediateEffect="1"
+	<item id="24138" type="EtcItem" name="Dark Assassin Boots - None" icon="BranchIcon.Icon.etc_dark_suit_shoes_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Stars twinkle inside a star-shaped jar. Ingredient to crafting a Zodiac Agathion bracelet with a 100% success rate. -->
-	<item id="24139" type="EtcItem" name="Starlight Jar" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1"
+	<item id="24139" type="EtcItem" name="Starlight Jar - None" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Summons a cute Three-headed Dragon. Cannot be exchanged, dropped, or sold. -->
-	<item id="24140" type="Armor" name="Agathion - Three-headed Dragon" icon="BranchSys2.icon.br_aga_threehead_i00" defaultAction="equip"
+	<item id="24140" type="Armor" name="Agathion - Three-headed Dragon - None" icon="BranchSys2.icon.br_aga_threehead_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- A daily gift from either Chaotic Chronicle, Chaotic Throne, or Goddess of Destruction NPC. You can receive an event item. -->
-	<item id="24141" type="EtcItem" name="Lucky Day Box" icon="icon.etc_box_of_adventure_1_i00" immediateEffect="1" crystalType="c"
+	<item id="24141" type="EtcItem" name="Lucky Day Box - None" icon="icon.etc_box_of_adventure_1_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Blessed Amaranthine weapon. -->
-	<item id="24142" type="EtcItem" name="Blessed Amaranthine Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="24142" type="EtcItem" name="Blessed Amaranthine Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Blessed Eternal Armor. -->
-	<item id="24143" type="EtcItem" name="Blessed Eternal Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="24143" type="EtcItem" name="Blessed Eternal Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing all Gemstones required for rare soul crystal enchantment of an Amaranthine weapon. -->
-	<item id="24144" type="EtcItem" name="Rare Soul Crystal Ingredient Pack (R99-grade)" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="24144" type="EtcItem" name="Rare Soul Crystal Ingredient Pack (R99-grade) - None" icon="icon.etc_pi_gift_box_i02"
+			immediateEffect="1" crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing all Gemstones required for rare soul crystal enchantment of a Specter weapon. -->
-	<item id="24145" type="EtcItem" name="Rare Soul Crystal Ingredient Pack (R95-grade)" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="24145" type="EtcItem" name="Rare Soul Crystal Ingredient Pack (R95-grade) - None" icon="icon.etc_pi_gift_box_i02"
+			immediateEffect="1" crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Top-grade Life Stone (R99-grade) and all fees required for augmentation and de-augmentation. -->
-	<item id="24146" type="EtcItem" name="Top-grade Augmentation Pack (R99-grade)" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
+	<item id="24146" type="EtcItem" name="Top-grade Augmentation Pack (R99-grade) - None" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Top-grade Life Stone (R95-grade) and all fees required for augmentation and de-augmentation. -->
-	<item id="24147" type="EtcItem" name="Top-grade Augmentation Pack (R95-grade)" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
+	<item id="24147" type="EtcItem" name="Top-grade Augmentation Pack (R95-grade) - None" icon="icon.etc_pi_gift_box_i02" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Taurus. -->
@@ -2426,156 +2426,156 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="24149" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="24149" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="24150" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="24150" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Virgo between Lv. 1 - 4. -->
-	<item id="24151" type="EtcItem" name="Agathion - Virgo Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24151" type="EtcItem" name="Agathion - Virgo Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Virgo between Lv. 5 - 6. -->
-	<item id="24152" type="EtcItem" name="Agathion - Virgo Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24152" type="EtcItem" name="Agathion - Virgo Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Virgo between Lv. 7 - 8. -->
-	<item id="24153" type="EtcItem" name="Agathion - Virgo Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24153" type="EtcItem" name="Agathion - Virgo Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Capricorn between Lv. 1 - 4. -->
-	<item id="24154" type="EtcItem" name="Agathion - Capricorn Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24154" type="EtcItem" name="Agathion - Capricorn Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Capricorn between Lv. 5 - 6. -->
-	<item id="24155" type="EtcItem" name="Agathion - Capricorn Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24155" type="EtcItem" name="Agathion - Capricorn Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Capricorn between Lv. 7 - 8. -->
-	<item id="24156" type="EtcItem" name="Agathion - Capricorn Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24156" type="EtcItem" name="Agathion - Capricorn Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Libra between Lv. 1 - 4. -->
-	<item id="24157" type="EtcItem" name="Agathion - Libra Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24157" type="EtcItem" name="Agathion - Libra Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Libra between Lv. 5 - 6. -->
-	<item id="24158" type="EtcItem" name="Agathion - Libra Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24158" type="EtcItem" name="Agathion - Libra Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Libra between Lv. 7 - 8. -->
-	<item id="24159" type="EtcItem" name="Agathion - Libra Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24159" type="EtcItem" name="Agathion - Libra Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aries between Lv. 1 - 4. -->
-	<item id="24160" type="EtcItem" name="Agathion - Aries Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24160" type="EtcItem" name="Agathion - Aries Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aries between Lv. 5 - 6. -->
-	<item id="24161" type="EtcItem" name="Agathion - Aries Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24161" type="EtcItem" name="Agathion - Aries Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aries between Lv. 7 - 8. -->
-	<item id="24162" type="EtcItem" name="Agathion - Aries Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24162" type="EtcItem" name="Agathion - Aries Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Taurus between Lv. 1 - 4. -->
-	<item id="24163" type="EtcItem" name="Agathion - Taurus Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24163" type="EtcItem" name="Agathion - Taurus Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Taurus between Lv. 5 - 6. -->
-	<item id="24164" type="EtcItem" name="Agathion - Taurus Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24164" type="EtcItem" name="Agathion - Taurus Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Taurus between Lv. 7 - 8. -->
-	<item id="24165" type="EtcItem" name="Agathion - Taurus Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24165" type="EtcItem" name="Agathion - Taurus Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Leo between Lv. 1 - 4. -->
-	<item id="24166" type="EtcItem" name="Agathion - Leo Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="24166" type="EtcItem" name="Agathion - Leo Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Leo between Lv. 5 - 6. -->
-	<item id="24167" type="EtcItem" name="Agathion - Leo Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="24167" type="EtcItem" name="Agathion - Leo Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Leo between Lv. 7 - 8. -->
-	<item id="24168" type="EtcItem" name="Agathion - Leo Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="24168" type="EtcItem" name="Agathion - Leo Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Gemini between Lv. 1 - 4. -->
-	<item id="24169" type="EtcItem" name="Agathion - Gemini Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24169" type="EtcItem" name="Agathion - Gemini Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Gemini between Lv. 5 - 6. -->
-	<item id="24170" type="EtcItem" name="Agathion - Gemini Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24170" type="EtcItem" name="Agathion - Gemini Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Gemini between Lv. 7 - 8. -->
-	<item id="24171" type="EtcItem" name="Agathion - Gemini Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24171" type="EtcItem" name="Agathion - Gemini Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Scorpio between Lv. 1 - 4. -->
-	<item id="24172" type="EtcItem" name="Agathion - Scorpio Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24172" type="EtcItem" name="Agathion - Scorpio Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Scorpio between Lv. 5 - 6. -->
-	<item id="24173" type="EtcItem" name="Agathion - Scorpio Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24173" type="EtcItem" name="Agathion - Scorpio Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Scorpio between Lv. 7 - 8. -->
-	<item id="24174" type="EtcItem" name="Agathion - Scorpio Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24174" type="EtcItem" name="Agathion - Scorpio Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aquarius between Lv. 1 - 4. -->
-	<item id="24175" type="EtcItem" name="Agathion - Aquarius Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24175" type="EtcItem" name="Agathion - Aquarius Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aquarius between Lv. 5 - 6. -->
-	<item id="24176" type="EtcItem" name="Agathion - Aquarius Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24176" type="EtcItem" name="Agathion - Aquarius Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Aquarius between Lv. 7 - 8. -->
-	<item id="24177" type="EtcItem" name="Agathion - Aquarius Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24177" type="EtcItem" name="Agathion - Aquarius Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Pisces between Lv. 1 - 4. -->
-	<item id="24178" type="EtcItem" name="Agathion - Pisces Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24178" type="EtcItem" name="Agathion - Pisces Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Pisces between Lv. 5 - 6. -->
-	<item id="24179" type="EtcItem" name="Agathion - Pisces Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24179" type="EtcItem" name="Agathion - Pisces Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Pisces between Lv. 7 - 8. -->
-	<item id="24180" type="EtcItem" name="Agathion - Pisces Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24180" type="EtcItem" name="Agathion - Pisces Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Sagittarius between Lv. 1 - 4. -->
-	<item id="24181" type="EtcItem" name="Agathion - Sagittarius Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24181" type="EtcItem" name="Agathion - Sagittarius Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Sagittarius between Lv. 5 - 6. -->
-	<item id="24182" type="EtcItem" name="Agathion - Sagittarius Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24182" type="EtcItem" name="Agathion - Sagittarius Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Sagittarius between Lv. 7 - 8. -->
-	<item id="24183" type="EtcItem" name="Agathion - Sagittarius Pack (High-grade)" icon="icon.event_hero_treasure_box_i00"
+	<item id="24183" type="EtcItem" name="Agathion - Sagittarius Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
 			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Cancer between Lv. 1 - 4. -->
-	<item id="24184" type="EtcItem" name="Agathion - Cancer Pack (Low-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24184" type="EtcItem" name="Agathion - Cancer Pack (Low-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Cancer between Lv. 5 - 6. -->
-	<item id="24185" type="EtcItem" name="Agathion - Cancer Pack (Mid-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24185" type="EtcItem" name="Agathion - Cancer Pack (Mid-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Cancer between Lv. 7 - 8. -->
-	<item id="24186" type="EtcItem" name="Agathion - Cancer Pack (High-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="24186" type="EtcItem" name="Agathion - Cancer Pack (High-grade) - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Gift for Easter. Double-click for a chance to obtain an event item. -->
 	<item id="24187" type="EtcItem" name="Easter Egg - Event" icon="BranchSys3.lcon.g_ev_easter_egg_ru" immediateEffect="1"
@@ -2584,7 +2584,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -2594,7 +2594,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -2605,7 +2605,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2616,7 +2616,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2627,7 +2627,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2638,7 +2638,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2649,7 +2649,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2660,7 +2660,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2671,7 +2671,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2682,7 +2682,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2693,7 +2693,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2704,7 +2704,7 @@
 	<!--
 		Can summon Virgo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Healing Light: Restores entire party's HP/MP/CP with a chance to cancel debuffs. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2715,7 +2715,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -2725,7 +2725,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -2736,7 +2736,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2747,7 +2747,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2758,7 +2758,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2769,7 +2769,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2780,7 +2780,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2791,7 +2791,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2802,7 +2802,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2813,7 +2813,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2824,7 +2824,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2835,7 +2835,7 @@
 	<!--
 		Can summon Capricorn when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Skipping Kid: Teleports 600 grids forward. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2846,7 +2846,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -2856,7 +2856,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -2867,7 +2867,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2878,7 +2878,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -2889,7 +2889,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2900,7 +2900,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -2911,7 +2911,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2922,7 +2922,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -2933,7 +2933,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2944,7 +2944,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -2955,7 +2955,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2966,7 +2966,7 @@
 	<!--
 		Can summon Libra when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scale of Life: Equalizes entire party's HP and restores 333 HP/second for 15 sec. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -2977,7 +2977,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 225 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -2987,7 +2987,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 210 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -2998,7 +2998,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 195 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3009,7 +3009,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 180 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3020,7 +3020,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 165 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3031,7 +3031,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 150 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3042,7 +3042,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 135 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3053,7 +3053,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 120 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3064,7 +3064,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 105 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3075,7 +3075,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 90 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3086,7 +3086,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 75 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3097,7 +3097,7 @@
 	<!--
 		Can summon Aries when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Rocky Camouflage: For 15 sec., transforms into a rock to eliminate enemy's enmity and avoid being targeted. (Cooldown is 60 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3108,7 +3108,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3118,7 +3118,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3129,7 +3129,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3140,7 +3140,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3151,7 +3151,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3162,7 +3162,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3173,7 +3173,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3184,7 +3184,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3195,7 +3195,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3206,7 +3206,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3217,7 +3217,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3228,7 +3228,7 @@
 	<!--
 		Can summon Taurus when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mad Cow: For 30 sec., P./M. Atk., and Atk./Casting Spd. x 2. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3239,7 +3239,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3249,7 +3249,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3260,7 +3260,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3271,7 +3271,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3282,7 +3282,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3293,7 +3293,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3304,7 +3304,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3315,7 +3315,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3326,7 +3326,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3337,7 +3337,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3348,7 +3348,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3359,7 +3359,7 @@
 	<!--
 		Can summon Leo when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Maiden's Prayer: Invincible for 10 sec. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3370,7 +3370,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 13500 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3380,7 +3380,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 12600 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3391,7 +3391,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 11700 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3402,7 +3402,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 10800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3413,7 +3413,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 9900 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3424,7 +3424,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 9000 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3435,7 +3435,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 8100 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3446,7 +3446,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 7200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3457,7 +3457,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 6300 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3468,7 +3468,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 5400 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3479,7 +3479,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 4500 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3490,7 +3490,7 @@
 	<!--
 		Can summon Gemini when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Bountiful Resurrection: Resurrect from death with full health restored. Buff/Debuffs remain after death. (Cooldown is 3600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3501,7 +3501,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3511,7 +3511,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 282 HP/second. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3522,7 +3522,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 288 HP/second. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3533,7 +3533,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 288 HP/second. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3544,7 +3544,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 296 HP/second. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3555,7 +3555,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 296 HP/second. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3566,7 +3566,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 305 HP/second. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3577,7 +3577,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 305 HP/second. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3588,7 +3588,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 313 HP/second. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3599,7 +3599,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 313 HP/second. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3610,7 +3610,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 322 HP/second. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3621,7 +3621,7 @@
 	<!--
 		Can summon Scorpio when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Scorpion's Mass Exile: Banishes enemies near target into another dimension. They become immobile and invincible against debuffs, skills, and normal attacks, and lose 322 HP/second. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3632,7 +3632,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 118 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3642,7 +3642,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 110 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3653,7 +3653,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 102 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3664,7 +3664,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 94 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3675,7 +3675,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 86 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3686,7 +3686,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 78 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3697,7 +3697,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 70 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3708,7 +3708,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 62 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3719,7 +3719,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 54 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3730,7 +3730,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 46 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3741,7 +3741,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 38 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3752,7 +3752,7 @@
 	<!--
 		Can summon Aquarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Mass Binding Flood: Thrusts target and nearby enemies into the air and immobilizes them for 10 sec., inflicting 100 damage/second. (Cooldown is 30 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3763,7 +3763,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2250 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3773,7 +3773,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 2100 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3784,7 +3784,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1950 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3795,7 +3795,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1800 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3806,7 +3806,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1650 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3817,7 +3817,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3828,7 +3828,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1350 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3839,7 +3839,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1200 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3850,7 +3850,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1050 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3861,7 +3861,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 900 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3872,7 +3872,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 750 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3883,7 +3883,7 @@
 	<!--
 		Can summon Pisces when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 600 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -3894,7 +3894,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6750 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -3904,7 +3904,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 6300 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -3915,7 +3915,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 5850 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3926,7 +3926,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 5400 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -3937,7 +3937,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4950 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3948,7 +3948,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4500 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -3959,7 +3959,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 4050 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3970,7 +3970,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 3600 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -3981,7 +3981,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 3150 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -3992,7 +3992,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 2700 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -4003,7 +4003,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 2250 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -4014,7 +4014,7 @@
 	<!--
 		Can summon Sagittarius when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Archer's Call: Summons all party members to you. (Cooldown is 1800 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -4025,7 +4025,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4500 sec.)
 		2. Attribute Enchant: Attribute Resistance + 5.
 	-->
@@ -4035,7 +4035,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4200 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 5.
@@ -4046,7 +4046,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3900 sec.)
 		2. Balanced Power: MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -4057,7 +4057,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3600 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 10.
@@ -4068,7 +4068,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3300 sec.)
 		2. Balanced Power: CON/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -4079,7 +4079,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3000 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 15.
@@ -4090,7 +4090,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2700 sec.)
 		2. Balanced Power: CON/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -4101,7 +4101,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2400 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 20.
@@ -4112,7 +4112,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2100 sec.)
 		2. Balanced Power: CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -4123,7 +4123,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1800 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 25.
@@ -4134,7 +4134,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1500 sec.)
 		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -4145,7 +4145,7 @@
 	<!--
 		Can summon Cancer when equipped.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1200 sec.)
 		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
 		2. Attribute Enchant: Attribute Resistance + 30.
@@ -4154,75 +4154,75 @@
 			defaultAction="equip" bodypart="shirt" immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
 	</item>
 	<!-- Stars twinkle inside a star-shaped jar. Ingredient to crafting a Zodiac Agathion bracelet. -->
-	<item id="24332" type="EtcItem" name="Starlight Jar" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1"
+	<item id="24332" type="EtcItem" name="Starlight Jar - None" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to acquire 1 of La Vie En Rose's jewels. Cannot be used in the auction house. -->
-	<item id="24333" type="EtcItem" name="La Vie En Rose's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24333" type="EtcItem" name="La Vie En Rose's Jewelry Box - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 10 La Vie En Rose's Jewelry Boxes. Cannot be used in the auction house. -->
-	<item id="24334" type="EtcItem" name="La Vie En Rose's Jewelry Pack" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24334" type="EtcItem" name="La Vie En Rose's Jewelry Pack - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 30 La Vie En Rose's Jewelry Boxes and 1 Noble Brooch Chest. Cannot be used in the auction house. -->
-	<item id="24335" type="EtcItem" name="La Vie En Rose's Noble Brooch" icon="icon.etc_pi_box_wish_pack" immediateEffect="1"
+	<item id="24335" type="EtcItem" name="La Vie En Rose's Noble Brooch - None" icon="icon.etc_pi_box_wish_pack" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 55 La Vie En Rose's Jewelry Boxes and 1 Noble Brooch Chest. Cannot be used in the auction house. -->
-	<item id="24336" type="EtcItem" name="La Vie En Rose's Brilliant Brooch" icon="icon.etc_pi_box_love_pack" immediateEffect="1"
+	<item id="24336" type="EtcItem" name="La Vie En Rose's Brilliant Brooch - None" icon="icon.etc_pi_box_love_pack" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire a Starlight Jar. Cannot be used in the auction house. -->
-	<item id="24337" type="EtcItem" name="Starlight Jar Pouch" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="24337" type="EtcItem" name="Starlight Jar Pouch - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 10 Starlight Jar Pouches. Cannot be used in the auction house. -->
-	<item id="24338" type="EtcItem" name="Starlight Jar Pack" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="24338" type="EtcItem" name="Starlight Jar Pack - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire a Starlight Jar. Cannot be used in the auction house. -->
-	<item id="24339" type="EtcItem" name="Starlight Jar Pouch" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="24339" type="EtcItem" name="Starlight Jar Pouch - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 10 Starlight Jar Pouches. Cannot be used in the auction house. -->
-	<item id="24340" type="EtcItem" name="Starlight Jar Pack" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="24340" type="EtcItem" name="Starlight Jar Pack - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Blessed Giant's Lucky Enchant Stone: Weapon (R-grade). -->
-	<item id="24341" type="EtcItem" name="Blessed Giant's Lucky Enchant Stone: Weapon Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24341" type="EtcItem" name="Blessed Giant's Lucky Enchant Stone: Weapon Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Blessed Giant's Lucky Enchant Stone: Armor (R-grade). -->
-	<item id="24342" type="EtcItem" name="Blessed Giant's Lucky Enchant Stone: Armor Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24342" type="EtcItem" name="Blessed Giant's Lucky Enchant Stone: Armor Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Blessed Lucky Enchant Stone: Weapon (R-grade). -->
-	<item id="24343" type="EtcItem" name="Blessed Lucky Enchant Stone: Weapon Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24343" type="EtcItem" name="Blessed Lucky Enchant Stone: Weapon Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Lesser Giant's Lucky Enchant Stone: Weapon (R-grade). -->
-	<item id="24344" type="EtcItem" name="Lesser Giant's Lucky Enchant Stone: Weapon Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24344" type="EtcItem" name="Lesser Giant's Lucky Enchant Stone: Weapon Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Blessed Lucky Enchant Stone: Armor (R-grade). -->
-	<item id="24345" type="EtcItem" name="Blessed Lucky Enchant Stone: Armor Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24345" type="EtcItem" name="Blessed Lucky Enchant Stone: Armor Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Lesser Giant's Lucky Enchant Stone: Armor (R-grade). -->
-	<item id="24346" type="EtcItem" name="Lesser Giant's Lucky Enchant Stone: Armor Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24346" type="EtcItem" name="Lesser Giant's Lucky Enchant Stone: Armor Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Scroll: Enchant Weapon (R-grade) with 10% increase in enchant success rate. -->
-	<item id="24347" type="EtcItem" name="Scroll: Enchant Weapon Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24347" type="EtcItem" name="Scroll: Enchant Weapon Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Scroll: Enchant Armor (R-grade) with 10% increase in enchant success rate. -->
-	<item id="24348" type="EtcItem" name="Scroll: Enchant Armor Pack (R-grade)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24348" type="EtcItem" name="Scroll: Enchant Armor Pack (R-grade) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing XP Rune III (Lv. 1-100+) 100% (30-day). -->
-	<item id="24349" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (30-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="24349" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (30-day) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing a Prestige Rune 100% (30-day). -->
@@ -4258,7 +4258,7 @@
 			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- For 30 min., Max HP/MP/CP + 30%, P./M. Def. + 30%, P./Atk. + 10%, M. Atk. + 20%. Effect disappears if active while receiving Art of Seduction. Cannot be exchanged, dropped, or used in the Olympiad. Can be used in the Ceremony of Chaos. Can be stored in the private warehouse. -->
-	<item id="24355" type="EtcItem" name="Premium Account: Art of Seduction" icon="BranchSys2.icon.br_rosalia_rose_blue_i00"
+	<item id="24355" type="EtcItem" name="Premium Account: Art of Seduction - None" icon="BranchSys2.icon.br_rosalia_rose_blue_i00"
 			immediateEffect="1" crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Cute Draco Hat. 7-day. STR/DEX/CON + 2. Can use Blessed Resurrection. Cooldown is 1 hr. Cannot be used in the Olympiad. Can be destroyed and sold in a private warehouse. -->
@@ -4270,7 +4270,7 @@
 			bodypart="hairall" immediateEffect="1" weight="10">
 	</item>
 	<!-- Rerstores 1250 HP, and remaining power restores CP. No duration. Cannot be exchanged, dropped, sold, used in the Olympiad, or used in the Ceremony of Chaos. Can be stored in the private warehouse. -->
-	<item id="24358" type="EtcItem" name="Premium Account: Quick Healing Potion" icon="icon.etc_potion_gold_i00" immediateEffect="1"
+	<item id="24358" type="EtcItem" name="Premium Account: Quick Healing Potion - None" icon="icon.etc_potion_gold_i00" immediateEffect="1"
 			crystalType="c" weight="20" isStackable="true">
 	</item>
 	<!-- MP + 37, Bleed Resistance + 40%, Bleed Attack Rate + 40%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Resistance + 30%, Stun/Mental Attack Rate + 30% , MP Consumption decrease, Earth Resistance increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
@@ -4299,12 +4299,12 @@
 		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
-	<item id="24364" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
+	<item id="24364" type="Armor" name="Dark Assassin Suit - None" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1">
 		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
-	<item id="24365" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
+	<item id="24365" type="EtcItem" name="Appearance Stone: Dark Assassin Suit - None" icon="BranchSys3.icon1.g_scrl_change_chest"
 			immediateEffect="1" crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="24364">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Gemini. -->
@@ -4404,67 +4404,67 @@
 		<skill id="26219" level="4" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Growth Stage 1. -->
-	<item id="24384" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 1" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24384" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 1 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Growth Stage 2. -->
-	<item id="24385" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 2" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24385" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 2 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Growth Stage 3. -->
-	<item id="24386" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 3" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24386" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 3 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Growth Stage 4. -->
-	<item id="24387" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 4" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24387" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 4 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Skill Stage 1. -->
-	<item id="24388" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 1" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24388" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 1 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Skill Stage 2. -->
-	<item id="24389" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 2" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24389" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 2 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Skill Stage 3. -->
-	<item id="24390" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 3" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24390" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 3 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Skill Stage 4. -->
-	<item id="24391" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 4" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24391" type="EtcItem" name="Sayha's Rune: Skill Pack Stage 4 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Luck Stage 1. -->
-	<item id="24392" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 1" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24392" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 1 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Luck Stage 2. -->
-	<item id="24393" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 2" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24393" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 2 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Luck Stage 3. -->
-	<item id="24394" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 3" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24394" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 3 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Luck Stage 4. -->
-	<item id="24395" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 4" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24395" type="EtcItem" name="Sayha's Rune: Luck Pack Stage 4 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Stage 1. -->
-	<item id="24396" type="EtcItem" name="Sayha's Rune Pack Stage 1" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24396" type="EtcItem" name="Sayha's Rune Pack Stage 1 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Stage 2. -->
-	<item id="24397" type="EtcItem" name="Sayha's Rune Pack Stage 2" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24397" type="EtcItem" name="Sayha's Rune Pack Stage 2 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Stage 3. -->
-	<item id="24398" type="EtcItem" name="Sayha's Rune Pack Stage 3" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24398" type="EtcItem" name="Sayha's Rune Pack Stage 3 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Stage 4. -->
-	<item id="24399" type="EtcItem" name="Sayha's Rune Pack Stage 4" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
+	<item id="24399" type="EtcItem" name="Sayha's Rune Pack Stage 4 - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Tuxedo for male characters, and a wedding dress for female characters. When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. When modified, Debuff Reflect + 3%. -->

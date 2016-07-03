@@ -111,77 +111,79 @@
 	<item id="50583" type="EtcItem" name="+25 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04" immediateEffect="1"
 			isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
 	</item>
-	
-	<item id="50600" type="EtcItem" name="Newbie Ticket - C-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50600" type="EtcItem" name="Newbie Ticket - C-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50601" type="EtcItem" name="Newbie Ticket - B-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50601" type="EtcItem" name="Newbie Ticket - B-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50602" type="EtcItem" name="Newbie Ticket - A-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50602" type="EtcItem" name="Newbie Ticket - A-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50603" type="EtcItem" name="Newbie Ticket - S-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50603" type="EtcItem" name="Newbie Ticket - S-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50604" type="EtcItem" name="Newbie Ticket - S80-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50604" type="EtcItem" name="Newbie Ticket - S80-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50605" type="EtcItem" name="Newbie Ticket - R-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50605" type="EtcItem" name="Newbie Ticket - R-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50606" type="EtcItem" name="Newbie Ticket - R95-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50606" type="EtcItem" name="Newbie Ticket - R95-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50607" type="EtcItem" name="Newbie Ticket - R99-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50607" type="EtcItem" name="Newbie Ticket - R99-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50608" type="EtcItem" name="Newbie Ticket - C-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50608" type="EtcItem" name="Newbie Ticket - C-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50609" type="EtcItem" name="Newbie Ticket - B-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50609" type="EtcItem" name="Newbie Ticket - B-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50610" type="EtcItem" name="Newbie Ticket - A-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50610" type="EtcItem" name="Newbie Ticket - A-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50611" type="EtcItem" name="Newbie Ticket - S-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50611" type="EtcItem" name="Newbie Ticket - S-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50612" type="EtcItem" name="Newbie Ticket - S80-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50612" type="EtcItem" name="Newbie Ticket - S80-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+			time="10080">
 	</item>
-	<item id="50613" type="EtcItem" name="Newbie Ticket - R-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50613" type="EtcItem" name="Newbie Ticket - R-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50614" type="EtcItem" name="Newbie Ticket - R95-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50614" type="EtcItem" name="Newbie Ticket - R95-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+			time="10080">
 	</item>
-	<item id="50615" type="EtcItem" name="Newbie Ticket - R99-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50615" type="EtcItem" name="Newbie Ticket - R99-Grade Armor Part" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+			time="10080">
 	</item>
-	<item id="50616" type="EtcItem" name="Newbie Ticket - C-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50616" type="EtcItem" name="Newbie Ticket - C-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50617" type="EtcItem" name="Newbie Ticket - B-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50617" type="EtcItem" name="Newbie Ticket - B-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50618" type="EtcItem" name="Newbie Ticket - A-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50618" type="EtcItem" name="Newbie Ticket - A-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50619" type="EtcItem" name="Newbie Ticket - S-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50619" type="EtcItem" name="Newbie Ticket - S-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50620" type="EtcItem" name="Newbie Ticket - S80-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50620" type="EtcItem" name="Newbie Ticket - S80-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50621" type="EtcItem" name="Newbie Ticket - R-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50621" type="EtcItem" name="Newbie Ticket - R-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50622" type="EtcItem" name="Newbie Ticket - R95-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50622" type="EtcItem" name="Newbie Ticket - R95-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
-	<item id="50623" type="EtcItem" name="Newbie Ticket - R99-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1" isTradable="false"
-			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
+	<item id="50623" type="EtcItem" name="Newbie Ticket - R99-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" time="10080">
 	</item>
 </list>

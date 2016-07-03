@@ -3,10 +3,10 @@
 	<!--
 		Summons Pisces.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Item Skill>
+		(Item Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
 	-->
@@ -14,7 +14,7 @@
 			crystalType="none" material="steel" weight="0">
 	</item>
 	<!-- Wrapped Pack containing an Agathion - Blessed Pisces (30-day). -->
-	<item id="45373" type="EtcItem" name="Agathion - Blessed Pisces Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="45373" type="EtcItem" name="Agathion - Blessed Pisces Pack - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- Use this and its active skill Pew Pew to defeat Alien Researchers! Deleted after event. -->
@@ -77,143 +77,143 @@
 	<item id="45385" type="Armor" name="Ruthless Tribe Mask - 15-day" icon="icon.crazy_driving_mask" defaultAction="equip" bodypart="none"
 			immediateEffect="1" weight="10">
 	</item>
-	<item id="45386" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45386" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45387" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45387" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45388" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45388" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45389" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45389" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45390" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45390" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45391" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45391" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45392" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45392" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45393" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45393" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45394" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45394" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45395" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45395" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45396" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45396" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45397" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45397" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45398" type="EtcItem" name="Drop Rate Setting Comparison Purpose - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
+	<item id="45398" type="EtcItem" name="Drop Rate Setting Comparison Purpose - test" icon="icon.etc_bead_gold_i00" immediateEffect="1"
 			crystalType="c" weight="0" price="300000">
 	</item>
-	<item id="45399" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45399" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45400" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45400" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45401" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45401" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45402" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45402" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45403" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45403" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45404" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45404" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45405" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45405" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45406" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45406" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45407" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45407" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45408" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45408" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45409" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45409" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45410" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45410" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45411" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45411" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45412" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45412" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45413" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45413" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
-	<item id="45414" type="EtcItem" name="Auto Tooltip Check - Test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+	<item id="45414" type="EtcItem" name="Auto Tooltip Check - test" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
 			weight="0" price="300000">
 	</item>
 	<!-- For 1 hr., XP/SP gain + 100%, and changes the appearance of your armor into that of a NC Dinos uniform. Cannot be stacked with the Fall of the Dragon or XP Buff 50%. -->
-	<item id="45415" type="EtcItem" name="Dandy's Home Run Ball" icon="icon.ev_dinos_baseball" immediateEffect="1" crystalType="c"
+	<item id="45415" type="EtcItem" name="Dandy's Home Run Ball - None" icon="icon.ev_dinos_baseball" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45416" type="EtcItem" name="Blue Save Card (R-grade)" icon="icon.blue_save_r" immediateEffect="1" crystalType="c"
+	<item id="45416" type="EtcItem" name="Blue Save Card (R-grade) - None" icon="icon.blue_save_r" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R95-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45417" type="EtcItem" name="Blue Save Card (R95-grade)" icon="icon.blue_save_r95" immediateEffect="1" crystalType="c"
+	<item id="45417" type="EtcItem" name="Blue Save Card (R95-grade) - None" icon="icon.blue_save_r95" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R99-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45418" type="EtcItem" name="Blue Save Card (R99-grade)" icon="icon.blue_save_r99" immediateEffect="1" crystalType="c"
+	<item id="45418" type="EtcItem" name="Blue Save Card (R99-grade) - None" icon="icon.blue_save_r99" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45419" type="EtcItem" name="Red Save Card (R-grade)" icon="icon.red_save_r" immediateEffect="1" crystalType="c"
+	<item id="45419" type="EtcItem" name="Red Save Card (R-grade) - None" icon="icon.red_save_r" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R95-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45420" type="EtcItem" name="Red Save Card (R95-grade)" icon="icon.red_save_r95" immediateEffect="1" crystalType="c"
+	<item id="45420" type="EtcItem" name="Red Save Card (R95-grade) - None" icon="icon.red_save_r95" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R99-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 3 instead of crystallizing. -->
-	<item id="45421" type="EtcItem" name="Red Save Card (R99-grade)" icon="icon.red_save_r99" immediateEffect="1" crystalType="c"
+	<item id="45421" type="EtcItem" name="Red Save Card (R99-grade) - None" icon="icon.red_save_r99" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45422" type="EtcItem" name="Royal Blue Save Card (R-grade)" icon="icon.royal_blue_save_r" immediateEffect="1"
+	<item id="45422" type="EtcItem" name="Royal Blue Save Card (R-grade) - None" icon="icon.royal_blue_save_r" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R95-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45423" type="EtcItem" name="Royal Blue Save Card (R95-grade)" icon="icon.royal_blue_save_r95" immediateEffect="1"
+	<item id="45423" type="EtcItem" name="Royal Blue Save Card (R95-grade) - None" icon="icon.royal_blue_save_r95" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R99-grade) with a normal enchant scroll. Only for items enchanted between + 3 and + 6. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45424" type="EtcItem" name="Royal Blue Save Card (R99-grade)" icon="icon.royal_blue_save_r99" immediateEffect="1"
+	<item id="45424" type="EtcItem" name="Royal Blue Save Card (R99-grade) - None" icon="icon.royal_blue_save_r99" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45425" type="EtcItem" name="Royal Red Save Card (R-grade)" icon="icon.royal_red_save_r" immediateEffect="1" crystalType="c"
-			weight="0">
+	<item id="45425" type="EtcItem" name="Royal Red Save Card (R-grade) - None" icon="icon.royal_red_save_r" immediateEffect="1"
+			crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R95-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45426" type="EtcItem" name="Royal Red Save Card (R95-grade)" icon="icon.royal_red_save_r95" immediateEffect="1"
+	<item id="45426" type="EtcItem" name="Royal Red Save Card (R95-grade) - None" icon="icon.royal_red_save_r95" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 10% for weapons (R99-grade) with a normal enchant scroll. Only for items enchanted between + 7 and + 11. A successful enchant raises the enchant level by 1-3. A failed enchant drops the enchant level by 1 instead of crystallizing. -->
-	<item id="45427" type="EtcItem" name="Royal Red Save Card (R99-grade)" icon="icon.royal_red_save_r99" immediateEffect="1"
+	<item id="45427" type="EtcItem" name="Royal Red Save Card (R99-grade) - None" icon="icon.royal_red_save_r99" immediateEffect="1"
 			crystalType="c" weight="0">
 	</item>
 	<!-- Used for R-grade bows. -->
@@ -225,16 +225,16 @@
 			weight="0" price="12">
 	</item>
 	<!-- Double-click to reset cooldown to Spezion's (Epic) dungeon. Can only be used once a day outside of the instance zone. -->
-	<item id="45430" type="EtcItem" name="Entrance Pass: Spezion (Epic)" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+	<item id="45430" type="EtcItem" name="Entrance Pass: Spezion (Epic) - None" icon="icon.etc_ticket_red_i00" immediateEffect="1"
 			crystalType="c" weight="5" price="12660421">
 	</item>
 	<!-- Double-click to reset cooldown to Baylor's dungeon. Can only be used once a day outside of the instance zone. -->
-	<item id="45431" type="EtcItem" name="Entrance Pass: Baylor" icon="icon.etc_ticket_red_i00" immediateEffect="1" crystalType="c"
+	<item id="45431" type="EtcItem" name="Entrance Pass: Baylor - None" icon="icon.etc_ticket_red_i00" immediateEffect="1" crystalType="c"
 			weight="5" price="13112579">
 	</item>
 	<!-- Double-click to reset cooldown to Kartia's Labyrinth. Can only be used once a day outside of the instance zone. -->
-	<item id="45432" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party" icon="icon.etc_ticket_red_i00" immediateEffect="1"
-			crystalType="c" weight="5" price="13112579">
+	<item id="45432" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party - None" icon="icon.etc_ticket_red_i00"
+			immediateEffect="1" crystalType="c" weight="5" price="13112579">
 	</item>
 	<!--
 		Changes the appearance of a hair accessory into that of an NC Dinos Hat (30-day). Works for item with the same number of slots. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use.
@@ -245,7 +245,7 @@
 			immediateEffect="1" weight="0">
 	</item>
 	<!-- Wrapped Pack containing an NC Dinos Hat Appearance Stone (30-day). -->
-	<item id="45434" type="EtcItem" name="NC Dinos Hat Appearance Stone Pack (30-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="45434" type="EtcItem" name="NC Dinos Hat Appearance Stone Pack (30-day) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- Changes the appearance of your armor into that of an NC Dinos Uniform. 30-day. Tops and one-pieces only. -->
@@ -253,7 +253,7 @@
 			immediateEffect="1" weight="0">
 	</item>
 	<!-- Wrapped Pack containing an NC Dinos Uniform Appearance Stone (30-day). -->
-	<item id="45436" type="EtcItem" name="NC Dinos Uniform Appearance Stone Pack (30-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="45436" type="EtcItem" name="NC Dinos Uniform Appearance Stone Pack (30-day) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- MP + 21, Poison Resistance + 40%, Poison Atk. Rate + 40%, Hold Resistance + 30%, Hold Atk. Rate + 30%, increases Accuracy, P. Critical Damage, Atk. Spd. and Casting Spd. Equipping two gives the effect of one. 30-day. -->
@@ -262,8 +262,8 @@
 		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- Wrapped Pack containing a Baium's Ring (30-day). -->
-	<item id="45438" type="EtcItem" name="Baium's Ring Pack (30-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
-			crystalType="c" weight="0">
+	<item id="45438" type="EtcItem" name="Baium's Ring Pack (30-day) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+			immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- Enchant success rate + 20% for weapons (R-grade). Only for items enchanted between + 3 and + 9. Not usable on items enchanted + 10 or above. -->
 	<item id="45439" type="EtcItem" name="High-grade Lucky Enchant Stone: Weapon (R-grade) - Event" icon="icon.ench_wp_potion_violet_i00"
@@ -286,7 +286,7 @@
 			crystalType="c" weight="5">
 	</item>
 	<!-- Teleports you to the Blazing Swamp. -->
-	<item id="45444" type="EtcItem" name="Scroll of Escape: Blazing Swamp" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
+	<item id="45444" type="EtcItem" name="Scroll of Escape: Blazing Swamp - None" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			crystalType="c" weight="30">
 	</item>
 	<!-- Thanks to the protection scroll made with the counterfeit Atelia, the time limit on Hellbound has disappeared. This Visitation Scroll is no longer needed. You might be able to sell it to a merchant. -->
@@ -306,7 +306,7 @@
 			weight="30">
 	</item>
 	<!-- A stone that was formed with hardened lava. It can be obtained by killing monsters in the Blazing Swamp. Take it to Harp Zu Hestui to get a reward. -->
-	<item id="45449" type="EtcItem" name="Magma Ore" icon="icon.high_energy_condense_i02" immediateEffect="1" crystalType="c"
+	<item id="45449" type="EtcItem" name="Magma Ore - None" icon="icon.high_energy_condense_i02" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>
 	<!-- Atk. Spd. Test. -->
@@ -314,8 +314,8 @@
 			weight="0" price="100">
 	</item>
 	<!-- Reward for killing monsters in the Blazing Swamp. Double-click to use. -->
-	<item id="45451" type="Weapon" name="Harp's Reward Box" icon="icon.etc_box_of_adventure_3_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45451" type="Weapon" name="Harp's Reward Box - None" icon="icon.etc_box_of_adventure_3_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- A flower petal that marks the beginning of spring. Collect a certain amount and exchange them for a reward by clicking on the Points button in the Player Commendation Points screen. -->
 	<item id="45452" type="Weapon" name="Flower Petal - Event" icon="icon.etc_flower_i00" defaultAction="equip" weaponType="sword"
@@ -362,119 +362,119 @@
 			defaultAction="equip" weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to reset cooldown to Nightmare Kamaloka. Can only be used once a day outside of the instance zone. -->
-	<item id="45463" type="Weapon" name="Entrance Pass: Nightmare Kamaloka" icon="icon.etc_ticket_red_i00" defaultAction="equip"
+	<item id="45463" type="Weapon" name="Entrance Pass: Nightmare Kamaloka - None" icon="icon.etc_ticket_red_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- A swashbuckler's hat. -->
-	<item id="45464" type="Weapon" name="Zorro Hat" icon="icon.zorocap" defaultAction="equip" weaponType="sword" bodypart="rhand"
+	<item id="45464" type="Weapon" name="Zorro Hat - None" icon="icon.zorocap" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Mask worn by a ruthless tribe. Uses 1 hair accessory slot. -->
-	<item id="45465" type="Weapon" name="Ruthless Tribe Mask" icon="icon.crazy_driving_mask" defaultAction="equip" weaponType="sword"
+	<item id="45465" type="Weapon" name="Ruthless Tribe Mask - None" icon="icon.crazy_driving_mask" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a very low chance of acquiring a Scroll: PK. -->
-	<item id="45466" type="Weapon" name="Damaged PK Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45466" type="Weapon" name="Damaged PK Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a chance of acquiring a Scroll: PK. -->
-	<item id="45467" type="Weapon" name="Intact PK Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45467" type="Weapon" name="Intact PK Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a very low chance of acquiring a Scroll: Reputation. -->
-	<item id="45468" type="Weapon" name="Damaged Reputation Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+	<item id="45468" type="Weapon" name="Damaged Reputation Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a chance of acquiring a Scroll: Reputation. -->
-	<item id="45469" type="Weapon" name="Intact Reputation Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+	<item id="45469" type="Weapon" name="Intact Reputation Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a very low chance of acquiring Elcyum Powder. -->
-	<item id="45470" type="Weapon" name="Damaged Elcyum Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45470" type="Weapon" name="Damaged Elcyum Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Obtained from Ancient Literature Caravaner Budenka for helping the Hellbound monsters that were brainwashed by Beleth. There is a chance of acquiring Elcyum Powder. -->
-	<item id="45471" type="Weapon" name="Intact Elcyum Pack" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45471" type="Weapon" name="Intact Elcyum Pack - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- A flash grenade that will let you identify hidden targets. -->
 	<item id="45472" type="Weapon" name="Flash Grenade - Event" icon="icon.etc_small_ultra_bomb_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45473" type="Weapon" name="Fresh Blue Mackerel" icon="icon.fish_normal_i04" defaultAction="equip" weaponType="sword"
+	<item id="45473" type="Weapon" name="Fresh Blue Mackerel - None" icon="icon.fish_normal_i04" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45474" type="Weapon" name="Fresh Minnow" icon="icon.fish_normal_i03" defaultAction="equip" weaponType="sword"
+	<item id="45474" type="Weapon" name="Fresh Minnow - None" icon="icon.fish_normal_i03" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45475" type="Weapon" name="Fresh Flatfish" icon="icon.fish_normal_i06" defaultAction="equip" weaponType="sword"
+	<item id="45475" type="Weapon" name="Fresh Flatfish - None" icon="icon.fish_normal_i06" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45476" type="Weapon" name="Fresh Mandarin Fish" icon="icon.fish_normal_i05" defaultAction="equip" weaponType="sword"
+	<item id="45476" type="Weapon" name="Fresh Mandarin Fish - None" icon="icon.fish_normal_i05" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45477" type="Weapon" name="Fresh Rockfish" icon="icon.fish_normal_i08" defaultAction="equip" weaponType="sword"
+	<item id="45477" type="Weapon" name="Fresh Rockfish - None" icon="icon.fish_normal_i08" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45478" type="Weapon" name="Fresh Goldfish" icon="icon.fish_normal_i07" defaultAction="equip" weaponType="sword"
+	<item id="45478" type="Weapon" name="Fresh Goldfish - None" icon="icon.fish_normal_i07" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45479" type="Weapon" name="Fresh Salmon" icon="icon.fish_normal_i10" defaultAction="equip" weaponType="sword"
+	<item id="45479" type="Weapon" name="Fresh Salmon - None" icon="icon.fish_normal_i10" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Crafted Fish. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45480" type="Weapon" name="Fresh Eel" icon="icon.fish_normal_i09" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
-	</item>
-	<!-- Double-click to get a Fish Pearl. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45481" type="Weapon" name="Fresh Marlin" icon="icon.fish_normal_i12" defaultAction="equip" weaponType="sword"
+	<item id="45480" type="Weapon" name="Fresh Eel - None" icon="icon.fish_normal_i09" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Fish Pearl. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45482" type="Weapon" name="Fresh Catfish" icon="icon.fish_small_i11" defaultAction="equip" weaponType="sword"
+	<item id="45481" type="Weapon" name="Fresh Marlin - None" icon="icon.fish_normal_i12" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Fish Pearl. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45483" type="Weapon" name="Fresh Tuna" icon="icon.fish_normal_i14" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45482" type="Weapon" name="Fresh Catfish - None" icon="icon.fish_small_i11" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Fish Pearl. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45484" type="Weapon" name="Fresh Carp" icon="icon.fish_normal_i13" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45483" type="Weapon" name="Fresh Tuna - None" icon="icon.fish_normal_i14" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	</item>
+	<!-- Double-click to get a Fish Pearl. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
+	<item id="45484" type="Weapon" name="Fresh Carp - None" icon="icon.fish_normal_i13" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get a Fish Pearl or Fresh Whale Blubber. You can use this as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45485" type="Weapon" name="Fresh Whale" icon="icon.fish_huge_i15" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
-	</item>
-	<!-- Double-click to get an item. -->
-	<item id="45486" type="Weapon" name="Wooden Treasure Chest" icon="icon.etc_treasure_box_i03" defaultAction="equip" weaponType="sword"
+	<item id="45485" type="Weapon" name="Fresh Whale - None" icon="icon.fish_huge_i15" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get an item. -->
-	<item id="45487" type="Weapon" name="Silver Treasure Chest" icon="icon.etc_treasure_box_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45486" type="Weapon" name="Wooden Treasure Chest - None" icon="icon.etc_treasure_box_i03" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Double-click to get an item. -->
-	<item id="45488" type="Weapon" name="Golden Treasure Chest" icon="icon.etc_treasure_box_i08" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45487" type="Weapon" name="Silver Treasure Chest - None" icon="icon.etc_treasure_box_i00" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	</item>
+	<!-- Double-click to get an item. -->
+	<item id="45488" type="Weapon" name="Golden Treasure Chest - None" icon="icon.etc_treasure_box_i08" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Can be used as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45489" type="Weapon" name="Crafted Fish" icon="icon.etc_fish_scale_i01" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45489" type="Weapon" name="Crafted Fish - None" icon="icon.etc_fish_scale_i01" defaultAction="equip" etcitemType="material"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0" isStackable="true">
 	</item>
 	<!-- Can be used as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45490" type="Weapon" name="Fish Pearl" icon="icon.etc_giran_fish_scale_i00" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<item id="45490" type="Weapon" name="Fish Pearl - None" icon="icon.etc_giran_fish_scale_i00" defaultAction="equip" etcitemType="material"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0" isStackable="true">
 	</item>
 	<!-- Can be used as a crafting ingredient or trade for an appearance modification item through a fishing guild member. -->
-	<item id="45491" type="Weapon" name="Fresh Whale Blubber" icon="icon.etc_fish_oil_i02" defaultAction="equip" weaponType="sword"
+	<item id="45491" type="Weapon" name="Fresh Whale Blubber - None" icon="icon.etc_fish_oil_i02" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- A 30-day fishing rod. Consumes 1 Fishing Shot. -->
@@ -486,27 +486,30 @@
 		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Open to get a 30-day fishing rod. -->
-	<item id="45493" type="Weapon" name="Fishing Rod Pack (30-day)" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
+	<item id="45493" type="Weapon" name="Fishing Rod Pack (30-day) - None" icon="icon.etc_box_of_adventure_1_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" price="5000000" soulshots="0" spiritshots="0">
 	</item>
-	<!-- A sturdy fishing rod. Consumes 1 Fishing Shot. -->
-	<item id="45494" type="Weapon" name="Sturdy Fishing Rod" icon="icon.weapon_fishing_rod_i04" defaultAction="equip" weaponType="sword"
-			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+	<!--
+		A stiff fishing rod. Used to make fishing rods for master fishermen. 
+		Fishing Shots consumed: 1
+	-->
+	<item id="45494" type="Weapon" name="Sturdy Fishing Rod - None" icon="icon.weapon_fishing_rod_i04" defaultAction="equip"
+			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="pAtkSpd" val="325" />
 		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Bait for fishing. Use to catch fresh fish. -->
-	<item id="45495" type="Weapon" name="Normal Bait" icon="icon.etc_huge_lure" defaultAction="equip" weaponType="sword" bodypart="rhand"
-			immediateEffect="1" weight="0" price="3000" soulshots="0" spiritshots="0">
+	<item id="45495" type="Weapon" name="Normal Bait - None" icon="icon.etc_huge_lure" defaultAction="equip" weaponType="sword"
+			bodypart="rhand" immediateEffect="1" weight="0" price="3000" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Special bait for fishing. Use to catch shiny fish. -->
-	<item id="45496" type="Weapon" name="Special Bait" icon="icon.etc_gludio_fish_lure_i00" defaultAction="equip" weaponType="sword"
+	<item id="45496" type="Weapon" name="Special Bait - None" icon="icon.etc_gludio_fish_lure_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Soulshot for fishing rods. Doubles the fishing success rate. -->
-	<item id="45497" type="Weapon" name="Fishing Shot (Not in Use)" icon="icon.etc_spirit_bullet_fish_i00" defaultAction="equip"
+	<item id="45497" type="Weapon" name="Fishing Shot (Not in Use) - None" icon="icon.etc_spirit_bullet_fish_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- A Fishing Pack prepared by Goldeen. Double-click to get Bait and Fishing Shots. -->
@@ -520,10 +523,10 @@
 	<!--
 		Summons Virgo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy Atk. each increase by 30.
 	-->
@@ -533,10 +536,10 @@
 	<!--
 		Summons Virgo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy Def. each increase by 30.
 	-->
@@ -546,10 +549,10 @@
 	<!--
 		Summons Virgo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45502" type="Weapon" name="Agathion - Virgo - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -558,10 +561,10 @@
 	<!--
 		Summons Capricorn Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -571,10 +574,10 @@
 	<!--
 		Summons Capricorn Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -584,10 +587,10 @@
 	<!--
 		Summons Capricorn Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45505" type="Weapon" name="Agathion - Capricorn - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -596,10 +599,10 @@
 	<!--
 		Summons Libra Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -609,10 +612,10 @@
 	<!--
 		Summons Libra Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -622,10 +625,10 @@
 	<!--
 		Summons Libra Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45508" type="Weapon" name="Agathion - Libra - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -634,10 +637,10 @@
 	<!--
 		Summons Aries Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -647,10 +650,10 @@
 	<!--
 		Summons Aries Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -660,10 +663,10 @@
 	<!--
 		Summons Aries Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45511" type="Weapon" name="Agathion - Aries - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -672,10 +675,10 @@
 	<!--
 		Summons Taurus Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -685,10 +688,10 @@
 	<!--
 		Summons Taurus Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -698,10 +701,10 @@
 	<!--
 		Summons Taurus Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45514" type="Weapon" name="Agathion - Taurus - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -710,10 +713,10 @@
 	<!--
 		Summons Leo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -723,10 +726,10 @@
 	<!--
 		Summons Leo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -736,10 +739,10 @@
 	<!--
 		Summons Leo Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45517" type="Weapon" name="Agathion - Leo - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -748,10 +751,10 @@
 	<!--
 		Summons Gemini Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -761,10 +764,10 @@
 	<!--
 		Summons Gemini Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -774,10 +777,10 @@
 	<!--
 		Summons Gemini Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45520" type="Weapon" name="Agathion - Gemini - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -786,10 +789,10 @@
 	<!--
 		Summons Scorpio Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -799,10 +802,10 @@
 	<!--
 		Summons Scorpio Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -812,10 +815,10 @@
 	<!--
 		Summons Scorpio Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45523" type="Weapon" name="Agathion - Scorpio - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -824,10 +827,10 @@
 	<!--
 		Summons Aquarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -837,10 +840,10 @@
 	<!--
 		Summons Aquarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -850,10 +853,10 @@
 	<!--
 		Summons Aquarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45526" type="Weapon" name="Agathion - Aquarius - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -862,10 +865,10 @@
 	<!--
 		Summons Pisces Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -875,10 +878,10 @@
 	<!--
 		Summons Pisces Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -888,10 +891,10 @@
 	<!--
 		Summons Pisces Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45529" type="Weapon" name="Agathion - Pisces - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -900,10 +903,10 @@
 	<!--
 		Summons Sagittarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -913,10 +916,10 @@
 	<!--
 		Summons Sagittarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -926,10 +929,10 @@
 	<!--
 		Summons Sagittarius Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45532" type="Weapon" name="Agathion - Sagittarius - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -938,10 +941,10 @@
 	<!--
 		Summons Cancer Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Atk.: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. each increases by 30.
 	-->
@@ -951,10 +954,10 @@
 	<!--
 		Summons Cancer Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 		2. Attribute Resistance: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Def. each increases by 30.
 	-->
@@ -964,10 +967,10 @@
 	<!--
 		Summons Cancer Agathion.
 		
-		<Active Skill>
+		(Active Skill)
 		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
 		
-		<Passive Skill>
+		(Passive Skill)
 		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
 	-->
 	<item id="45535" type="Weapon" name="Agathion - Cancer - 15-day" icon="icon.agathion_magmeld_teleport" defaultAction="equip"
@@ -1118,27 +1121,27 @@
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing a Zodiac Agathion (15-day). -->
-	<item id="45572" type="Weapon" name="Zodiac Agathion Pack (15-day)" icon="icon.etc_treasure_box_i05" defaultAction="equip"
+	<item id="45572" type="Weapon" name="Zodiac Agathion Pack (15-day) - None" icon="icon.etc_treasure_box_i05" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing a Radiant Zodiac Agathion (30-day). -->
-	<item id="45573" type="Weapon" name="Radiant Zodiac Agathion Pack (30-day)" icon="icon.etc_treasure_box_i05" defaultAction="equip"
+	<item id="45573" type="Weapon" name="Radiant Zodiac Agathion Pack (30-day) - None" icon="icon.etc_treasure_box_i05" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing a Twinkling Zodiac Agathion (30-day). -->
-	<item id="45574" type="Weapon" name="Twinkling Zodiac Agathion Pack (30-day)" icon="icon.etc_treasure_box_i05" defaultAction="equip"
+	<item id="45574" type="Weapon" name="Twinkling Zodiac Agathion Pack (30-day) - None" icon="icon.etc_treasure_box_i05" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing Special Bait. Use Special bait to catch shiny fish. -->
-	<item id="45575" type="Weapon" name="Special Bait Pack" icon="icon.etc_treasure_box_i05" defaultAction="equip" weaponType="sword"
+	<item id="45575" type="Weapon" name="Special Bait Pack - None" icon="icon.etc_treasure_box_i05" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing an SP Scroll. -->
-	<item id="45576" type="Weapon" name="SP Scroll Pack" icon="icon.etc_treasure_box_i05" defaultAction="equip" weaponType="sword"
+	<item id="45576" type="Weapon" name="SP Scroll Pack - None" icon="icon.etc_treasure_box_i05" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Wrapped Pack containing a Zodiac Agathion (15-day). -->
-	<item id="45577" type="Weapon" name="Zodiac Agathion Pack (15-day)" icon="icon.etc_treasure_box_i05" defaultAction="equip"
+	<item id="45577" type="Weapon" name="Zodiac Agathion Pack (15-day) - None" icon="icon.etc_treasure_box_i05" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
 	</item>
 	<!-- Enhanced Orichalcum arrow with + 5% Atk. Spd. Used as arrows for R-grade bows. -->
@@ -1172,110 +1175,111 @@
 		<skill id="13668" level="1" /> <!-- Orichalcum Bolt - Additional Hit -->
 	</item>
 	<!-- Proof received for performing well in the Olympiad and the Ceremony of Chaos. Can exchange for a special gift from the Olympiad Manager and the Mysterious Butler in each village. -->
-	<item id="45584" type="EtcItem" name="Mark of Battle" icon="icon.bel_mark_clear" immediateEffect="1" crystalType="c" isStackable="true">
+	<item id="45584" type="EtcItem" name="Mark of Battle - None" icon="icon.bel_mark_clear" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45585" type="Weapon" name="Special Water Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45585" type="Weapon" name="Special Water Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45586" type="Weapon" name="Special Fire Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45586" type="Weapon" name="Special Fire Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45587" type="Weapon" name="Special Holy Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45587" type="Weapon" name="Special Holy Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45588" type="Weapon" name="Special Dark Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45588" type="Weapon" name="Special Dark Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45589" type="Weapon" name="Special Wind Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45589" type="Weapon" name="Special Wind Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
-	<item id="45590" type="Weapon" name="Special Earth Resistance Necklace" icon="icon.accessary_inferno_necklace_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45590" type="Weapon" name="Special Earth Resistance Necklace - None" icon="icon.accessary_inferno_necklace_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="174" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45591" type="Weapon" name="Special Earth Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45591" type="Weapon" name="Special Earth Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45592" type="Weapon" name="Special Water Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45592" type="Weapon" name="Special Water Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45593" type="Weapon" name="Special Fire Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45593" type="Weapon" name="Special Fire Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45594" type="Weapon" name="Special Holy Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45594" type="Weapon" name="Special Holy Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45595" type="Weapon" name="Special Dark Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45595" type="Weapon" name="Special Dark Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
-	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
-	<item id="45596" type="Weapon" name="Special Wind Resistance Ring" icon="icon.accessary_inferno_ring_i00" bodypart="none"
+	<!-- A ring purchased with the Mark of Battle. MP +33, Max. CP +10%, P./M. Critical Damage +5%. Effect does not stack with identical ones. -->
+	<item id="45596" type="Weapon" name="Special Wind Resistance Ring - None" icon="icon.accessary_inferno_ring_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Stun Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45597" type="Weapon" name="Special Resistance Earring - Stun" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45597" type="Weapon" name="Special Resistance Earring - Stun - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Hold Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45598" type="Weapon" name="Special Resistance Earring - Hold" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45598" type="Weapon" name="Special Resistance Earring - Hold - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Bleed Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45599" type="Weapon" name="Special Resistance Earring - Bleed" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45599" type="Weapon" name="Special Resistance Earring - Bleed - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Paralysis Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45600" type="Weapon" name="Special Resistance Earring - Paralyze" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45600" type="Weapon" name="Special Resistance Earring - Paralyze - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Mental Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45601" type="Weapon" name="Special Resistance Earring - Mental Attack" icon="icon.accessary_inferno_earing_i00"
+	<item id="45601" type="Weapon" name="Special Resistance Earring - Mental Attack - None" icon="icon.accessary_inferno_earing_i00"
 			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Sleep Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45602" type="Weapon" name="Special Resistance Earring - Sleep" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45602" type="Weapon" name="Special Resistance Earring - Sleep - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Poison Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45603" type="Weapon" name="Special Resistance Earring - Poison" icon="icon.accessary_inferno_earing_i00" bodypart="none"
-			crystalType="none" material="steel" weight="0">
+	<item id="45603" type="Weapon" name="Special Resistance Earring - Poison - None" icon="icon.accessary_inferno_earing_i00"
+			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Knock Back/Knock Down Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45604" type="Weapon" name="Special Resistance Earring - Knock Back/Knock Down" icon="icon.accessary_inferno_earing_i00"
+	<item id="45604" type="Weapon" name="Special Resistance Earring - Knock Back/Knock Down - None" icon="icon.accessary_inferno_earing_i00"
 			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Aerial Yoke Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
-	<item id="45605" type="Weapon" name="Special Resistance Earring - Aerial Yoke" icon="icon.accessary_inferno_earing_i00"
+	<item id="45605" type="Weapon" name="Special Resistance Earring - Aerial Yoke - None" icon="icon.accessary_inferno_earing_i00"
 			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="mDef" val="130" />
 	</item>
@@ -1295,158 +1299,160 @@
 		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVP Damage - 7%. -->
-	<item id="45609" type="Weapon" name="Special Magic Ornament Eternal Belt - PVP Defense" icon="icon.r99_magic_pouch_belt_i00"
+	<item id="45609" type="Weapon" name="Special Magic Ornament Eternal Belt - PvP Defense" icon="icon.r99_magic_pouch_belt_i00"
 			bodypart="none" crystalType="none" material="steel" weight="0">
 		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Artificial crystal created with Atelia. Take it to Merlot to get a Dimensional Coin. -->
-	<item id="45610" type="EtcItem" name="Atelia Energy Crystal" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45610" type="EtcItem" name="Atelia Energy Crystal - None" icon="icon.etc_ertheia_astatine" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Artificial crystal created with Atelia. Take it to Merlot to get a Dimensional Coin. -->
-	<item id="45611" type="EtcItem" name="Atelia Energy Crystal" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45611" type="EtcItem" name="Atelia Energy Crystal - None" icon="icon.etc_ertheia_astatine" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Artificial crystal created with Atelia. Take it to Merlot to get a Dimensional Coin. -->
-	<item id="45612" type="EtcItem" name="Atelia Energy Crystal" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45612" type="EtcItem" name="Atelia Energy Crystal - None" icon="icon.etc_ertheia_astatine" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Artificial crystal created with Atelia. Take it to Merlot to get a Dimensional Coin. -->
-	<item id="45613" type="EtcItem" name="Atelia Energy Crystal" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45613" type="EtcItem" name="Atelia Energy Crystal - None" icon="icon.etc_ertheia_astatine" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Can use the Talisman - Battle: Attack skill when equipped. P. Atk./M. Atk./Skill Critical Rate/Skill Critical Damage + 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 1-day. -->
-	<item id="45614" type="Armor" name="Talisman - Battle: Attack (1-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45614" type="Armor" name="Talisman - Battle: Attack (1-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="1440">
 		<skill id="13691" level="1" /> <!-- Talisman - Battle: Attack -->
 	</item>
 	<!-- Can use the Talisman - Battle: Attack skill when equipped. P. Atk./M. Atk./Skill Critical Rate/Skill Critical Damage + 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 3-day. -->
-	<item id="45615" type="Armor" name="Talisman - Battle: Attack (3-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45615" type="Armor" name="Talisman - Battle: Attack (3-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="4320">
 		<skill id="13691" level="1" /> <!-- Talisman - Battle: Attack -->
 	</item>
 	<!-- Can use the Talisman - Battle: Attack skill when equipped. P. Atk./M. Atk./Skill Critical Rate/Skill Critical Damage + 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 30-day. -->
-	<item id="45616" type="Armor" name="Talisman - Battle: Attack (30-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45616" type="Armor" name="Talisman - Battle: Attack (30-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
 		<skill id="13691" level="1" /> <!-- Talisman - Battle: Attack -->
 	</item>
 	<!-- Can use the Talisman - Battle: Speed skill when equipped. Atk. Spd./Casting Spd. + 20%, Speed + 60, and Cooldown - 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 1-day. -->
-	<item id="45617" type="Armor" name="Talisman - Battle: Speed (1-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45617" type="Armor" name="Talisman - Battle: Speed (1-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="1440">
 		<skill id="13692" level="1" /> <!-- Talisman - Battle: Speed -->
 	</item>
 	<!-- Can use the Talisman - Battle: Speed skill when equipped. Atk. Spd./Casting Spd. + 20%, Speed + 60, and Cooldown - 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 3-day. -->
-	<item id="45618" type="Armor" name="Talisman - Battle: Speed (3-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45618" type="Armor" name="Talisman - Battle: Speed (3-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="4320">
 		<skill id="13692" level="1" /> <!-- Talisman - Battle: Speed -->
 	</item>
 	<!-- Can use the Talisman - Battle: Speed skill when equipped. Atk. Spd./Casting Spd. + 20%, Speed + 60, and Cooldown - 20% for 10 seconds. Can only be used in the Olympiad and Ceremony of Chaos. 30-day. -->
-	<item id="45619" type="Armor" name="Talisman - Battle: Speed (30-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45619" type="Armor" name="Talisman - Battle: Speed (30-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
 		<skill id="13692" level="1" /> <!-- Talisman - Battle: Speed -->
 	</item>
 	<!-- Can use the Talisman - Battle: Support skill when equipped. Cancels hiding, invincible, and talisman buffs of those within sight. Can only be used in the Olympiad and Ceremony of Chaos. 1-day. -->
-	<item id="45620" type="Armor" name="Talisman - Battle: Support (1-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45620" type="Armor" name="Talisman - Battle: Support (1-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="1440">
 		<skill id="13693" level="1" /> <!-- Talisman - Battle: Support -->
 	</item>
 	<!-- Can use the Talisman - Battle: Support skill when equipped. Cancels hiding, invincible, and talisman buffs of those within sight. Can only be used in the Olympiad and Ceremony of Chaos. 3-day. -->
-	<item id="45621" type="Armor" name="Talisman - Battle: Support (3-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45621" type="Armor" name="Talisman - Battle: Support (3-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="4320">
 		<skill id="13693" level="1" /> <!-- Talisman - Battle: Support -->
 	</item>
 	<!-- Can use the Talisman - Battle: Support skill when equipped. Cancels hiding, invincible, and talisman buffs of those within sight. Can only be used in the Olympiad and Ceremony of Chaos. 30-day. -->
-	<item id="45622" type="Armor" name="Talisman - Battle: Support (30-day)" icon="icon.etc_talisman_i07" defaultAction="equip"
+	<item id="45622" type="Armor" name="Talisman - Battle: Support (30-day) - None" icon="icon.etc_talisman_i07" defaultAction="equip"
 			bodypart="deco1" crystalType="none" material="steel" weight="0" time="43200">
 		<skill id="13693" level="1" /> <!-- Talisman - Battle: Support -->
 	</item>
 	<!-- Certificate received for finishing Elikia's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45623" type="EtcItem" name="Elikia's Certificate" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
+	<item id="45623" type="EtcItem" name="Elikia's Certificate - None" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing the Mysterious Butler's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45624" type="EtcItem" name="Mysterious Butler's Certificate" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+	<item id="45624" type="EtcItem" name="Mysterious Butler's Certificate - None" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Galladucci's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45625" type="EtcItem" name="Galladucci's Certificate" icon="icon.etc_roll_of_paper_blue_i00" immediateEffect="1"
+	<item id="45625" type="EtcItem" name="Galladucci's Certificate - None" icon="icon.etc_roll_of_paper_blue_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Sir Eric Rodemai's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45626" type="EtcItem" name="Sir Eric Rodemai's Certificate" icon="icon.etc_roll_of_paper_black_i00" immediateEffect="1"
+	<item id="45626" type="EtcItem" name="Sir Eric Rodemai's Certificate - None" icon="icon.etc_roll_of_paper_black_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- First list of missions from Lionel Hunter to achieve the Exalted status. "Finish the missions from these people and bring back a certificate - Verdure Elder Elikia from Heine, the Mysterious Butler, Weapon Merchant Galladucci from Giran, and Sir Eric Rodemai from Aden." -->
-	<item id="45627" type="EtcItem" name="Lionel Hunter's Mission List - Part 1" icon="icon.etc_piece_of_paper_gray_i00" immediateEffect="1"
-			isStackable="true">
+	<!-- First list of missions from Lionel Hunter to achieve the Exalted status. 'Finish the missions from these people and bring back a certificate - Verdure Elder Elikia from Heine, the Mysterious Butler, Weapon Merchant Galladucci from Giran, and Sir Eric Rodemai from Aden.' -->
+	<item id="45627" type="EtcItem" name="Lionel Hunter's Mission List - Part 1 - None" icon="icon.etc_piece_of_paper_gray_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Daichir's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45628" type="EtcItem" name="Daichir's Certificate" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
+	<item id="45628" type="EtcItem" name="Daichir's Certificate - None" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing the Olympiad Manager's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45629" type="EtcItem" name="Olympiad Manager's Certificate" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+	<item id="45629" type="EtcItem" name="Olympiad Manager's Certificate - None" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Ishuma's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45630" type="EtcItem" name="Ishuma's Certificate" icon="icon.etc_roll_of_paper_blue_i00" immediateEffect="1" isStackable="true">
+	<item id="45630" type="EtcItem" name="Ishuma's Certificate - None" icon="icon.etc_roll_of_paper_blue_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Sir Kristof Rodemai's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45631" type="EtcItem" name="Sir Kristof Rodemai's Certificate" icon="icon.etc_roll_of_paper_black_i00" immediateEffect="1"
-			isStackable="true">
+	<item id="45631" type="EtcItem" name="Sir Kristof Rodemai's Certificate - None" icon="icon.etc_roll_of_paper_black_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- First list of missions from Lionel Hunter to achieve the Exalted status.  "Finish the missions from these people and bring back a certificate - Head Priest of the Earth Daichir from Schuttgart, the Olympiad Manager, Maestro Ishuma from the Wharf of Gludio Airships, and Sir Kristof Rodemai from Giran." -->
-	<item id="45632" type="EtcItem" name="Lionel Hunter's Mission List - Part 2" icon="icon.etc_piece_of_paper_white_i00" immediateEffect="1"
-			isStackable="true">
+	<!-- First list of missions from Lionel Hunter to achieve the Exalted status.  'Finish the missions from these people and bring back a certificate - Head Priest of the Earth Daichir from Schuttgart, the Olympiad Manager, Maestro Ishuma from the Wharf of Gludio Airships, and Sir Kristof Rodemai from Giran.' -->
+	<item id="45632" type="EtcItem" name="Lionel Hunter's Mission List - Part 2 - None" icon="icon.etc_piece_of_paper_white_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Kaiena's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45633" type="EtcItem" name="Kaiena's Certificate" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
+	<item id="45633" type="EtcItem" name="Kaiena's Certificate - None" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Merlot's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45634" type="EtcItem" name="Merlot's Certificate" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1" isStackable="true">
+	<item id="45634" type="EtcItem" name="Merlot's Certificate - None" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Blacksmith of Mammon's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45635" type="EtcItem" name="Blacksmith of Mammon's Certificate" icon="icon.etc_roll_of_paper_blue_i00" immediateEffect="1"
-			isStackable="true">
+	<item id="45635" type="EtcItem" name="Blacksmith of Mammon's Certificate - None" icon="icon.etc_roll_of_paper_blue_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Certificate received for finishing Sir Gustav Athebaldt's mission. Take it to Lionel Hunter in Heine to meet the qualifications for Exalted. -->
-	<item id="45636" type="EtcItem" name="Sir Gustav Athebaldt's Certificate" icon="icon.etc_roll_of_paper_black_i00" immediateEffect="1"
-			isStackable="true">
+	<item id="45636" type="EtcItem" name="Sir Gustav Athebaldt's Certificate - None" icon="icon.etc_roll_of_paper_black_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- First list of missions from Lionel Hunter to achieve the Exalted status. "Finish the missions from these people and bring back a certificate - Captain Kurtiz from Aden, Merlot from Hunters' Village, Blacksmith of Mammon, and Sir Gustav Athebaldt from Oren." -->
-	<item id="45637" type="EtcItem" name="Lionel Hunter's Mission List - Part 3" icon="icon.etc_piece_of_paper_white_i00" immediateEffect="1"
-			isStackable="true">
+	<!-- First list of missions from Lionel Hunter to achieve the Exalted status. 'Finish the missions from these people and bring back a certificate - Captain Kurtiz from Aden, Merlot from Hunters' Village, Blacksmith of Mammon, and Sir Gustav Athebaldt from Oren.' -->
+	<item id="45637" type="EtcItem" name="Lionel Hunter's Mission List - Part 3 - None" icon="icon.etc_piece_of_paper_white_i00"
+			immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Get the Exalted status as reward. -->
-	<item id="45638" type="EtcItem" name="Obtain Exalted Status" icon="icon.etc_nobless_teleport_coupon_i00" immediateEffect="1"
+	<item id="45638" type="EtcItem" name="Obtain Exalted Status - None" icon="icon.etc_nobless_teleport_coupon_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Main ingredient to make a Citrine Pendant. -->
-	<item id="45639" type="EtcItem" name="Citrine Pendant Fragment" icon="icon.etc_gem_yellow_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45639" type="EtcItem" name="Citrine Pendant Fragment - None" icon="icon.etc_gem_yellow_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- A precious pendant made of a golden crystal. Maestro Ishuma has requested this item in order to test your qualifications for Exalted. -->
-	<item id="45640" type="EtcItem" name="Citrine Pendant" icon="icon.accessary_blessed_earing_i00" immediateEffect="1" weight="10"
-			isStackable="true">
+	<item id="45640" type="EtcItem" name="Citrine Pendant - None" icon="icon.accessary_blessed_earing_i00" immediateEffect="1"
+			weight="10" isStackable="true">
 	</item>
 	<!-- Keep this in your inventory to gain XP/SP + 7% when hunting. -->
 	<item id="45641" type="EtcItem" name="Rodemai's Rune - 15-day" icon="icon.skill19226" immediateEffect="1" weight="120" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing 1 Rodemai's Rune (15-day). -->
-	<item id="45642" type="EtcItem" name="Rodemai's Rune Pack (15-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+	<item id="45642" type="EtcItem" name="Rodemai's Rune Pack (15-day) - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
 			weight="100" isStackable="true">
 	</item>
 	<!-- For Dwarves only. Recipe for a Citrine Pendant. Requires Create Item - Skill Lv. 14. The success rate is 10%. -->
-	<item id="45643" type="EtcItem" name="Recipe: Citrine Pendant (10%)" icon="icon.etc_recipe_gold_i00" immediateEffect="1"
-			weight="30" isStackable="true" handler="Recipes" immediate_effect="1">
+	<item id="45643" type="EtcItem" name="Recipe: Citrine Pendant (10%) - None" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+			etcitemType="recipe" immediateEffect="1" weight="30" recipeId="4298" isStackable="true" handler="Recipes" immediate_effect="1">
 	</item>
 	<!-- Hair accessory exclusively used by those with the Exalted status. Increases Atk. Attribute Bonus by 50 when equipped. -->
-	<item id="45644" type="Weapon" name="Exalted Tiara" icon="icon.accessory_noblesse2_tiara_i00" bodypart="none" crystalType="none"
+	<item id="45644" type="Weapon" name="Exalted Tiara - None" icon="icon.accessory_noblesse2_tiara_i00" bodypart="none" crystalType="none"
 			material="steel" weight="0">
 	</item>
 	<!-- An ornamental silver knife received from the Blacksmith of Mammon in order to test your qualifications. Not valuable as a weapon. Enchant this and take it to the Blacksmith of Mammon to be recognized for your qualifications. -->
-	<item id="45645" type="Weapon" name="Lady's Ornamental Silver Knife" icon="icon.weapon_shining_knife_i00" bodypart="none"
+	<item id="45645" type="Weapon" name="Lady's Ornamental Silver Knife - None" icon="icon.weapon_shining_knife_i00" bodypart="none"
 			crystalType="none" material="steel" weight="0">
 		<set stat="mAtk" val="1" />
 		<set stat="pAtkSpd" val="379" />
@@ -2256,67 +2262,55 @@
 	<item id="45810" type="EtcItem" name="Returning Warrior's Blessed Spiritshot Pack - Event" icon="icon.etc_box_of_adventure_3_i00"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 16 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45811" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 16 Vitality Replenishing Star Candies. -->
+	<item id="45811" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 17 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45812" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 17 Vitality Replenishing Star Candies. -->
+	<item id="45812" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 18 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45813" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 18 Vitality Replenishing Star Candies. -->
+	<item id="45813" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 19 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45814" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 19 Vitality Replenishing Star Candies. -->
+	<item id="45814" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 20 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45815" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 20 Vitality Replenishing Star Candies. -->
+	<item id="45815" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<!--
-		Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 21 Vitality Replenishing Star Candies.\r\n
-	-->
-	<item id="45816" type="EtcItem" name="Clan Reward" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<!-- Alliance made with blood! Reward given to those who worked hard for the growth of their clans. Use it to receive 21 Vitality Replenishing Star Candies. -->
+	<item id="45816" type="EtcItem" name="Clan Reward - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Double-click to change the attribute of R, R95, and R99-grade weapons. It can be used when there is an R-grade weapon bestowed in the inventory. -->
-	<item id="45817" type="EtcItem" name="Weapon Attribute Change Crystal (R-grade)" icon="icon.change_elemental_crystal" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="45817" type="EtcItem" name="Weapon Attribute Change Crystal (R-grade) - None" icon="icon.change_elemental_crystal"
+			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- When double-clicked, 360 Player Commendation Points can be acquired. -->
-	<item id="45818" type="EtcItem" name="Player Commendation Points Coupon (360 Points)" icon="icon.etc_ticket_i00" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="45818" type="EtcItem" name="Player Commendation Points Coupon (360 Points) - None" icon="icon.etc_ticket_i00"
+			immediateEffect="1" crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- When double-clicked, 720 Player Commendation Points can be acquired. -->
-	<item id="45819" type="EtcItem" name="Player Commendation Points Coupon (720 Points)" icon="icon.etc_ticket_i00" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="45819" type="EtcItem" name="Player Commendation Points Coupon (720 Points) - None" icon="icon.etc_ticket_i00"
+			immediateEffect="1" crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Research results received from Cardinal Seresin at the Town of Oren. It talks about the anomaly in the Dark Elf region after the appearance of Shilen and the epidemic. Double-click to read the details. -->
-	<item id="45820" type="EtcItem" name="Observation Report" icon="icon.etc_scroll_gray_i00" immediateEffect="1" isStackable="true">
+	<item id="45820" type="EtcItem" name="Observation Report - None" icon="icon.etc_scroll_gray_i00" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Unstable energy obtained from defeating the mutated spirits in the Garden of Spirits. Take it to Master Cyphona. -->
-	<item id="45821" type="EtcItem" name="Unstable Spirit's Energy" icon="icon.etc_talisman_beads_i01" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45821" type="EtcItem" name="Unstable Spirit's Energy - None" icon="icon.etc_talisman_beads_i01" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Energy obtained from defeating El Floato in the Garden of Spirits. Take it to Magister Belas. -->
-	<item id="45822" type="EtcItem" name="Unbalanced Energy" icon="icon.etc_crystal_ball_gold_i00" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45822" type="EtcItem" name="Unbalanced Energy - None" icon="icon.etc_crystal_ball_gold_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2329,7 +2323,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2341,7 +2335,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases Atk. Power when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2353,7 +2347,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2366,7 +2360,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 76. Increases damage inflicted during PvP. Increases Atk. Spd. and Atk. Power when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2379,7 +2373,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 332. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2392,7 +2386,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases effect of P. Skills when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2405,7 +2399,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2418,7 +2412,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2430,7 +2424,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2443,7 +2437,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2457,7 +2451,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2469,7 +2463,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2482,7 +2476,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 332. Increases damage inflicted during PvP. Increases effect of P. Skills and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2495,53 +2489,63 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Item obtained from defeating Harpe in the Garden of Spirits. You can feel the spirit's sadness. Take it to Magister Belas. -->
-	<item id="45837" type="EtcItem" name="Sad Energy" icon="icon.etc_crystal_ball_blue_i00" immediateEffect="1" crystalType="c"
+	<item id="45837" type="EtcItem" name="Sad Energy - None" icon="icon.etc_crystal_ball_blue_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Item obtained from defeating Harpe in the Garden of Spirits. You can feel the spirit's anger. Take it to Magister Belas. -->
-	<item id="45838" type="EtcItem" name="Angry Energy" icon="icon.etc_crystal_ball_red_i00" immediateEffect="1" crystalType="c"
+	<item id="45838" type="EtcItem" name="Angry Energy - None" icon="icon.etc_crystal_ball_red_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Item obtained from defeating Isabella in the Garden of Spirits. Take it to Ferin. -->
-	<item id="45839" type="EtcItem" name="Isabella's Evil Thoughts" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
+	<item id="45839" type="EtcItem" name="Isabella's Evil Thoughts - None" icon="icon.etc_ertheia_astatine" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
+	<item id="45840" type="EtcItem" name="Mark of Trust (Low-grade) - None" icon="icon.etc_jewel_silver_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45840" type="EtcItem" name="Mark of Trust (Low-grade)" icon="icon.etc_jewel_silver_i00" immediateEffect="1" isStackable="true">
+	<item id="45841" type="EtcItem" name="Mark of Trust (Low-grade) - None" icon="icon.etc_jewel_silver_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45841" type="EtcItem" name="Mark of Trust (Low-grade)" icon="icon.etc_jewel_silver_i00" immediateEffect="1" isStackable="true">
+	<item id="45842" type="EtcItem" name="Mark of Trust (Low-grade) - None" icon="icon.etc_jewel_silver_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45842" type="EtcItem" name="Mark of Trust (Low-grade)" icon="icon.etc_jewel_silver_i00" immediateEffect="1" isStackable="true">
+	<item id="45843" type="EtcItem" name="Mark of Trust (Mid-grade) - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45843" type="EtcItem" name="Mark of Trust (Mid-grade)" icon="icon.etc_jewel_gold_i00" immediateEffect="1" isStackable="true">
+	<item id="45844" type="EtcItem" name="Mark of Trust (Mid-grade) - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45844" type="EtcItem" name="Mark of Trust (Mid-grade)" icon="icon.etc_jewel_gold_i00" immediateEffect="1" isStackable="true">
+	<item id="45845" type="EtcItem" name="Mark of Trust (Mid-grade) - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45845" type="EtcItem" name="Mark of Trust (Mid-grade)" icon="icon.etc_jewel_gold_i00" immediateEffect="1" isStackable="true">
+	<item id="45846" type="EtcItem" name="Mark of Trust (Mid-grade) - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45846" type="EtcItem" name="Mark of Trust (Mid-grade)" icon="icon.etc_jewel_gold_i00" immediateEffect="1" isStackable="true">
+	<item id="45847" type="EtcItem" name="Mark of Trust (Mid-grade) - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45847" type="EtcItem" name="Mark of Trust (Mid-grade)" icon="icon.etc_jewel_gold_i00" immediateEffect="1" isStackable="true">
-	</item>
-	<!-- Proof that you've obtained Ferin and her people's trust. The trust level is still low, but at least it's something. -->
-	<item id="45848" type="EtcItem" name="Mark of Trust (High-grade)" icon="icon.etc_jewel_red_i00" immediateEffect="1" isStackable="true">
+	<item id="45848" type="EtcItem" name="Mark of Trust (High-grade) - None" icon="icon.etc_jewel_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- A mutated spirit's soul obtained from defeating the mutated spirits in the Garden of Spirits. It's proof that you've put them to rest in peace. Take it to Master Cyphona. -->
-	<item id="45849" type="EtcItem" name="Mutated Spirit's Soul" icon="icon.change_elemental_crystal" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45849" type="EtcItem" name="Mutated Spirit's Soul - None" icon="icon.change_elemental_crystal" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Item obtained from defeating the Embryo in the Dimensional Raid. It's the item that Merlot requested. Take it to Merlot to receive the certificate for finishing the mission. -->
-	<item id="45850" type="EtcItem" name="Detector" icon="icon.etc_instrument_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	<item id="45850" type="EtcItem" name="Detector - None" icon="icon.etc_instrument_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 82.1. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2554,7 +2558,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2566,7 +2570,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2578,7 +2582,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2591,7 +2595,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 75.7. Increases damage inflicted during PvP. Increases Atk. Spd. and Atk. Power when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2604,7 +2608,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 377. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2617,7 +2621,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases effect of P. Skills when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2630,7 +2634,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2643,7 +2647,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2655,7 +2659,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2668,7 +2672,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2682,7 +2686,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 377. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2694,7 +2698,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.9. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2707,7 +2711,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 377. Increases damage inflicted during PvP. Increases effect of P. Skills and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2747,15 +2751,15 @@
 			weight="20" isStackable="true">
 	</item>
 	<!-- Item obtained from defeating the monsters that Elikia requested. Take it to Elikia in Heine. -->
-	<item id="45871" type="EtcItem" name="Proof of Disposal" icon="icon.etc_inf_ore_medium_i00" immediateEffect="1" crystalType="c"
+	<item id="45871" type="EtcItem" name="Proof of Disposal - None" icon="icon.etc_inf_ore_medium_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Item received as proof of having participated in the Olympiad or the Ceremony of Chaos. Take it to the Mysterious Butler to receive the certificate for finishing the mission. -->
-	<item id="45872" type="EtcItem" name="Proof of Battle" icon="icon.etc_charm_of_courage_i00" immediateEffect="1" crystalType="c"
+	<item id="45872" type="EtcItem" name="Proof of Battle - None" icon="icon.etc_charm_of_courage_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Item received as proof of having participated in the Olympiad or the Ceremony of Chaos. Take it to the Olympiad Manager to receive the certificate for finishing the mission. -->
-	<item id="45873" type="EtcItem" name="Proof of Battle" icon="icon.etc_charm_of_courage_i05" immediateEffect="1" crystalType="c"
+	<item id="45873" type="EtcItem" name="Proof of Battle - None" icon="icon.etc_charm_of_courage_i05" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Item containing the magic of Kokko. Can summon a friend once every 30 minutes. Target a party member an double-click to activate the skill. -->
@@ -2779,7 +2783,7 @@
 			isStackable="true">
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 81.9. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2792,7 +2796,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2804,7 +2808,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2816,7 +2820,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2829,7 +2833,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 75.5. Increases damage inflicted during PvP. Increases Atk. Spd. And P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2842,7 +2846,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 415. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2855,7 +2859,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases effect of P. Skills when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2868,7 +2872,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2881,7 +2885,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2893,7 +2897,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2906,7 +2910,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Casting Spd. + 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2920,7 +2924,7 @@
 		<set stat="rCrit" val="6" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2932,7 +2936,7 @@
 		<set stat="rCrit" val="8" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		Critical + 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2945,7 +2949,7 @@
 		<set stat="rCrit" val="12" />
 	</item>
 	<!--
-		<Special Option>
+		(Special Option)
 		P. Atk. + 415. Increases damage inflicted during PvP. Increases effect of P. Skills and P. Atk. when enchanted to + 4.
 		No Soul Crystal option.
 	-->
@@ -2992,83 +2996,86 @@
 		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- Kokko's egg. Double-click to find out what it is. Will be deleted once the event ends. -->
-	<item id="45900" type="EtcItem" name="Kokko's Egg" icon="icon.egg_white" immediateEffect="1" crystalType="c" weight="10"
+	<item id="45900" type="EtcItem" name="Kokko's Egg - None" icon="icon.egg_white" immediateEffect="1" crystalType="c" weight="10"
 			isStackable="true">
 	</item>
-	<!-- Kokko's shiny egg prepared by Maphr. Double-click to find out what it is. Will be deleted once the event ends. <Warning> The item you get after double-clicking cannot be shared between accounts. -->
-	<item id="45901" type="EtcItem" name="Kokko's Shiny Egg" icon="icon.egg_twinkle" immediateEffect="1" weight="10" isStackable="true">
+	<!-- Kokko's shiny egg prepared by Maphr. Double-click to find out what it is. Will be deleted once the event ends. (Warning) The item you get after double-clicking cannot be shared between accounts. -->
+	<item id="45901" type="EtcItem" name="Kokko's Shiny Egg - None" icon="icon.egg_twinkle" immediateEffect="1" weight="10"
+			isStackable="true">
 	</item>
-	<!-- Kokko's golden egg prepared by Maphr. Double-click to find out what it is. Will be deleted once the event ends. <Warning> The item you get after double-clicking cannot be shared between accounts. -->
-	<item id="45902" type="EtcItem" name="Kokko's Golden Egg" icon="icon.egg_gold" immediateEffect="1" weight="10" isStackable="true">
+	<!-- Kokko's golden egg prepared by Maphr. Double-click to find out what it is. Will be deleted once the event ends. (Warning) The item you get after double-clicking cannot be shared between accounts. -->
+	<item id="45902" type="EtcItem" name="Kokko's Golden Egg - None" icon="icon.egg_gold" immediateEffect="1" weight="10" isStackable="true">
 	</item>
 	<!-- Take it to Maphr's agent Yuna to get a box containing an Apocalypse weapon. Will be deleted once the event ends. -->
-	<item id="45903" type="EtcItem" name="Apocalypse Weapon Pack Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
+	<item id="45903" type="EtcItem" name="Apocalypse Weapon Pack Coupon - None" icon="icon.fairy_encounter_letter" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Speed + 7, STR + 1, INT +1 when equipped. -->
-	<item id="45904" type="Weapon" name="Pippi's Shirt" icon="icon.r1_shirt_i01" bodypart="none" crystalType="none" material="steel"
+	<item id="45904" type="Weapon" name="Pippi's Shirt - None" icon="icon.r1_shirt_i01" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="38" />
 	</item>
 	<!-- Speed + 7, STR/INT/CON/MEN + 1 when equipped. -->
-	<item id="45905" type="Weapon" name="Kokko's Shirt" icon="icon.r1_shirt_i01" bodypart="none" crystalType="none" material="steel"
+	<item id="45905" type="Weapon" name="Kokko's Shirt - None" icon="icon.r1_shirt_i01" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="38" />
 	</item>
 	<!-- Weight + 12800, Inventory Slots + 12. -->
-	<item id="45906" type="Weapon" name="Pippi's Belt" icon="icon.belt_i03" bodypart="none" crystalType="none" material="steel"
+	<item id="45906" type="Weapon" name="Pippi's Belt - None" icon="icon.belt_i03" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Weight + 12800, Inventory Slots + 18. -->
-	<item id="45907" type="Weapon" name="Kokko's Belt" icon="icon.belt_i03" bodypart="none" crystalType="none" material="steel"
+	<item id="45907" type="Weapon" name="Kokko's Belt - None" icon="icon.belt_i03" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Shaper Focus. -->
-	<item id="45908" type="EtcItem" name="Apocalypse Shaper Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45908" type="EtcItem" name="Apocalypse Shaper Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Cutter Focus. -->
-	<item id="45909" type="EtcItem" name="Apocalypse Cutter Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45909" type="EtcItem" name="Apocalypse Cutter Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Slasher Focus. -->
-	<item id="45910" type="EtcItem" name="Apocalypse Slasher Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45910" type="EtcItem" name="Apocalypse Slasher Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Avenger Focus. -->
-	<item id="45911" type="EtcItem" name="Apocalypse Avenger Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45911" type="EtcItem" name="Apocalypse Avenger Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Fighter Focus. -->
-	<item id="45912" type="EtcItem" name="Apocalypse Fighter Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45912" type="EtcItem" name="Apocalypse Fighter Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Stormer Damage Up. -->
-	<item id="45913" type="EtcItem" name="Apocalypse Stormer Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45913" type="EtcItem" name="Apocalypse Stormer Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Thrower Focus. -->
-	<item id="45914" type="EtcItem" name="Apocalypse Thrower Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45914" type="EtcItem" name="Apocalypse Thrower Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Shooter Focus. -->
-	<item id="45915" type="EtcItem" name="Apocalypse Shooter Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45915" type="EtcItem" name="Apocalypse Shooter Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Buster Acumen. -->
-	<item id="45916" type="EtcItem" name="Apocalypse Buster Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45916" type="EtcItem" name="Apocalypse Buster Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Caster Acumen. -->
-	<item id="45917" type="EtcItem" name="Apocalypse Caster Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45917" type="EtcItem" name="Apocalypse Caster Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Retributer Acumen. -->
-	<item id="45918" type="EtcItem" name="Apocalypse Retributer Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45918" type="EtcItem" name="Apocalypse Retributer Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Dualsword Damage Up. -->
-	<item id="45919" type="EtcItem" name="Apocalypse Dualsword Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45919" type="EtcItem" name="Apocalypse Dualsword Pack - None" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Dual Dagger Focus. -->
-	<item id="45920" type="EtcItem" name="Apocalypse Dual Dagger Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45920" type="EtcItem" name="Apocalypse Dual Dagger Pack - None" icon="icon.ev_charge_box" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Dual Blunt Weapon Damage Up. -->
-	<item id="45921" type="EtcItem" name="Apocalypse Dual Blunt Weapon Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">
+	<item id="45921" type="EtcItem" name="Apocalypse Dual Blunt Weapon Pack - None" icon="icon.ev_charge_box" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!--
-		Needed to learn passive skill, Dignity of the Exalted Lv. 1, with the effect of STR/DEX/CON/MEN/INT/WIT/CHA + 1 and increases daily world chat limit to 6 uses.
+		Needed to learn passive skill, Dignity of the Exalted Lv. 1, with the effect of STR/DEX/CON/MEN/INT/WIT/CHA + 1.
 		Can be obtained in the main class status.
 	-->
 	<item id="45922" type="EtcItem" name="Spellbook: Dignity of the Exalted - Lv. 1" icon="icon.giant_book_i02" immediateEffect="1"
@@ -3092,22 +3099,22 @@
 		Needed to learn active skill, Belief of the Exalted, used to teleport to a selected party member.
 		Can be obtained in the main class status.
 	-->
-	<item id="45925" type="EtcItem" name="Spellbook: Belief of the Exalted" icon="icon.giant_book_i00" immediateEffect="1" weight="20"
-			isStackable="true">
+	<item id="45925" type="EtcItem" name="Spellbook: Belief of the Exalted - None" icon="icon.giant_book_i00" immediateEffect="1"
+			weight="20" isStackable="true">
 	</item>
 	<!--
 		Needed to learn active skill, Blessing of the Exalted, used to buff every party member with buff/de-buff protection even after death.
 		Can be obtained in the main class status.
 	-->
-	<item id="45926" type="EtcItem" name="Spellbook: Blessing of the Exalted" icon="icon.giant_book_i00" immediateEffect="1"
+	<item id="45926" type="EtcItem" name="Spellbook: Blessing of the Exalted - None" icon="icon.giant_book_i00" immediateEffect="1"
 			weight="20" isStackable="true">
 	</item>
 	<!--
 		Needed to learn the Exalted skill Summon Battle Potion.
 		Can be obtained in the main class status.
 	-->
-	<item id="45927" type="EtcItem" name="Spellbook: Summon Battle Potion" icon="icon.giant_book_i01" immediateEffect="1" weight="20"
-			isStackable="true">
+	<item id="45927" type="EtcItem" name="Spellbook: Summon Battle Potion - None" icon="icon.giant_book_i01" immediateEffect="1"
+			weight="20" isStackable="true">
 	</item>
 	<!--
 		Needed to learn active skill, Favor of the Exalted Lv. 1, used to buff a target with 3% Bonus XP and SP.
@@ -3117,71 +3124,71 @@
 			weight="20" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 46 or above. -->
-	<item id="45929" type="EtcItem" name="Spirit Stone" icon="icon.renewal_mineral_46" immediateEffect="1" crystalType="c" weight="2"
-			isStackable="true">
+	<item id="45929" type="EtcItem" name="Spirit Stone - None" icon="icon.renewal_mineral_46" immediateEffect="1" crystalType="c"
+			weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 85 or above. -->
-	<item id="45930" type="EtcItem" name="Mid-grade Spirit Stone" icon="icon.renewal_mineral_r" immediateEffect="1" crystalType="c"
+	<item id="45930" type="EtcItem" name="Mid-grade Spirit Stone - None" icon="icon.renewal_mineral_r" immediateEffect="1" crystalType="c"
 			weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 95 or above. -->
-	<item id="45931" type="EtcItem" name="High-grade Spirit Stone" icon="icon.renewal_mineral_r95" immediateEffect="1" crystalType="c"
-			weight="2" isStackable="true">
+	<item id="45931" type="EtcItem" name="High-grade Spirit Stone - None" icon="icon.renewal_mineral_r95" immediateEffect="1"
+			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 99 or above. -->
-	<item id="45932" type="EtcItem" name="Top-grade Spirit Stone" icon="icon.renewal_mineral_r99" immediateEffect="1" crystalType="c"
-			weight="2" isStackable="true">
+	<item id="45932" type="EtcItem" name="Top-grade Spirit Stone - None" icon="icon.renewal_mineral_r99" immediateEffect="1"
+			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 46 or above. -->
-	<item id="45933" type="EtcItem" name="Spirit Stone: Accessory" icon="icon.renewal_mineral_46" immediateEffect="1" crystalType="c"
-			weight="2" isStackable="true">
+	<item id="45933" type="EtcItem" name="Spirit Stone: Accessory - None" icon="icon.renewal_mineral_46" immediateEffect="1"
+			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 85 or above. -->
-	<item id="45934" type="EtcItem" name="Mid-grade Spirit Stone: Accessory" icon="icon.renewal_mineral_r" immediateEffect="1"
+	<item id="45934" type="EtcItem" name="Mid-grade Spirit Stone: Accessory - None" icon="icon.renewal_mineral_r" immediateEffect="1"
 			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 95 or above. -->
-	<item id="45935" type="EtcItem" name="High-grade Spirit Stone: Accessory" icon="icon.renewal_mineral_r95" immediateEffect="1"
+	<item id="45935" type="EtcItem" name="High-grade Spirit Stone: Accessory - None" icon="icon.renewal_mineral_r95" immediateEffect="1"
 			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Ordinary mineral that has been petrified by a creature's physical or magical damage and dimensional anomalies. Key component used in weapon Augmentation by characters level 99 or above. -->
-	<item id="45936" type="EtcItem" name="Top-grade Spirit Stone: Accessory" icon="icon.renewal_mineral_r99" immediateEffect="1"
+	<item id="45936" type="EtcItem" name="Top-grade Spirit Stone: Accessory - None" icon="icon.renewal_mineral_r99" immediateEffect="1"
 			crystalType="c" weight="2" isStackable="true">
 	</item>
 	<!-- Spirit Stone for hair accessories. -->
-	<item id="45937" type="EtcItem" name="Spirit Stone: Hair Accessory" icon="icon.renewal_mineral_hairacc" immediateEffect="1"
+	<item id="45937" type="EtcItem" name="Spirit Stone: Hair Accessory - None" icon="icon.renewal_mineral_hairacc" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Receive various rewards through Merlot. -->
-	<item id="45938" type="EtcItem" name="Dimensional Coin" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
+	<item id="45938" type="EtcItem" name="Dimensional Coin - None" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Receive various rewards through Merlot. -->
-	<item id="45939" type="EtcItem" name="Dimensional Coin" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
+	<item id="45939" type="EtcItem" name="Dimensional Coin - None" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Receive various rewards through Merlot. -->
-	<item id="45940" type="EtcItem" name="Dimensional Coin" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
+	<item id="45940" type="EtcItem" name="Dimensional Coin - None" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Receive various rewards through Merlot. -->
-	<item id="45941" type="EtcItem" name="Dimensional Coin" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
+	<item id="45941" type="EtcItem" name="Dimensional Coin - None" icon="icon.etc_gold_knight_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- A mysterious box that combines Atelia Energy Crystals and creates 1~5 new Atelia Energy Crystals of Grade 2~4. If it fails, you might not get anything. -->
-	<item id="45942" type="EtcItem" name="Atelia Energy Combination Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="45942" type="EtcItem" name="Atelia Energy Combination Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- A mysterious box that combines Atelia Energy Crystals and creates 1~5 new Atelia Energy Crystals of Grade 1~2. If it fails, you might not get anything. -->
-	<item id="45943" type="EtcItem" name="Enhanced Atelia Energy Combination Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="45943" type="EtcItem" name="Enhanced Atelia Energy Combination Box - None" icon="icon.event_hero_treasure_box_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing gifts for Dimensional Raid heroes. Double-click to get 1 of the following: Top-grade Spirit Stone, Elcyum, Blessed Scroll: Enchant Weapon (R-grade), Blessed Scroll: Enchant Armor (R-grade), Bloody Amaranthine Enhancement Stone, or Bloody Eternal Enhancement Stone. -->
-	<item id="45944" type="EtcItem" name="Dimensional Hero's Supply Box" icon="icon.new_user_box" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="45944" type="EtcItem" name="Dimensional Hero's Supply Box - None" icon="icon.new_user_box" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!-- Restores 3000 HP, and the remaining power restores CP. Instant effect with no duration. -->
-	<item id="45945" type="EtcItem" name="Battle Quick Healing Potion" icon="icon.etc_potion_gold_i00" defaultAction="skill_reduce"
+	<item id="45945" type="EtcItem" name="Battle Quick Healing Potion - None" icon="icon.etc_potion_gold_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="10" price="10000" reuseDelay="500" isStackable="true" isOlyRestricted="true"
 			handler="ItemSkills" useCondition="{{uc_transmode_exclude;{tt_flying}}}">
 		<skill id="22212" level="1" /> <!-- Superior Quick Healing Potion -->
@@ -3345,7 +3352,7 @@
 	<item id="45985" type="EtcItem" name="Dynasty Ancient Sword of Fortune Capsule - Event" icon="icon.weapon_dynasty_ancient_sword_i01"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 4 enchanted Éclair Bijou of Fortune. -->
+	<!-- Double-click to get a + 4 enchanted ￉clair Bijou of Fortune. -->
 	<item id="45986" type="EtcItem" name="Éclair Bijou of Fortune Capsule - Event" icon="icon.weapon_greed_stinger_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
