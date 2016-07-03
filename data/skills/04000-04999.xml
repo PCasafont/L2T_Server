@@ -1696,6 +1696,7 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- Evasion is increased for a certain time. -->
 	<skill id="4103" levels="2" name="Ultimate Evasion">
 		<table name="#rEvas"> 20 25 </table>
 		<table name="#magicLvl"> 40 70 </table>
@@ -2568,7 +2569,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="4151" levels="12" name="Wind Strike">
+	<skill id="4151" levels="12" name="(Wind Strike)">
 		<table name="#power"> 18 26 38 52 68 85 102 110 116 122 126 129 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume"> 7 10 14 18 23 28 33 35 37 38 39 39 </table>
@@ -3363,7 +3364,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="4191" levels="12" name="Wind Strike">
+	<skill id="4191" levels="12" name="(Wind Strike)">
 		<table name="#power"> 21 31 43 58 75 92 108 115 121 125 129 132 </table>
 		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
 		<table name="#mpConsume"> 12 19 26 35 45 55 65 69 72 75 77 78 </table>
@@ -4323,7 +4324,7 @@
 			<addPercent stat="bleedRes" val="50" />
 		</for>
 	</skill>
-	<skill id="4247" levels="12" name="Wind Strike">
+	<skill id="4247" levels="12" name="(Wind Strike)">
 		<table name="#power"> 5 8 12 17 24 31 39 39 39 39 39 39 </table>
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 75 77 78 </table>
@@ -6984,8 +6985,9 @@
 		Level 24: An unknown life form that has never been discovered before.
 		Level 25: Battle race who have been sealed for a long time, and their origin is unknown. Their military-like classes and unique battle abilities cannot be copied by other races.
 		Level 26: Followers of Sayha, these children of the wind were thrust into the Material Realm from their own world. Naturally curious, they are talented mana users. They are composed of the Surr faction and the Nann faction.
+		Level 27: A secret organization with a grand conspiracy to control the power of Shilen to rule the world. The Embryo, whose power has long been growing in the dark shadow of history, begin their invasion of Aden after construction of Atelia Fortress.
 	-->
-	<skill id="4416" levels="26" name="Ertheia">
+	<skill id="4416" levels="27" name="Embryo">
 		<table name="#pDefMagicCreatures"> 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#pDefBeasts"> 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#pDefAnimals"> 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -8348,8 +8350,11 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="1" />
 	</skill>
-	<!-- The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
-	<skill id="4515" levels="1" name="Raid Curse">
+	<!-- 
+		Level 1: The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible.
+		Level 2: A curse from the Raid Guardian. The body turns stiff temporarily due to a Petrify spell. Players attempting to defeat Raid Monsters whose level is 5 or more less than themselves, or those who do not satisfy the necessary raid conditions are afflicted. This curse cannot be lifted.
+	-->
+	<skill id="4515" levels="2" name="Giants Raid Curse">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -10820,6 +10825,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: Casting Spd. +15%, M. Atk. +55%, M. Critical Rate +200%.
+		Level 2: Casting Spd. +23%, M. Atk. +65%, M. Critical Rate +300%.
+		Level 3: Casting Spd. +30%, M. Atk. +75%, M. Critical Rate +300%.
+	-->
 	<skill id="4632" levels="3" name="Acumen Empower Wild Magic">
 		<table name="#mAtkSpd"> 15 23 30 </table>
 		<table name="#mAtk"> 55 65 75 </table>
@@ -10845,6 +10855,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +71%, Casting Spd. +21%, Movement Speed +5, P. Def. -5%, M. Def. -10%, M. Evasion -2.
+		Level 2: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +82%, Casting Spd. +29%, Movement Speed +5, P. Def. -5%, M. Def. -10%, M. Evasion -2.
+		Level 3: P. Atk. +8%, Atk. Spd. +8%, M. Atk. +103%, Casting Spd. +40%, Movement Speed +8, P. Def. -8%, M. Def. -16%, M. Evasion -4.
+	-->
 	<skill id="4633" levels="3" name="Acumen Berserker Empower">
 		<table name="#pAtk"> 5 5 8 </table>
 		<table name="#mAtk"> 71 82 103 </table>
@@ -10875,6 +10890,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: Casting Spd. +15%, M. Atk. +55%; Some damage is reflected.
+		Level 2: Casting Spd. +23%, M. Atk. +65%; Some damage is reflected.
+		Level 3: Casting Spd. +30%, M. Atk. +75%; Some damage is reflected.
+	-->
 	<skill id="4634" levels="3" name="Acumen Empower Damage Shield">
 		<table name="#mAtk"> 55 65 75 </table>
 		<table name="#mAtkSpd"> 15 23 30 </table>
@@ -10900,6 +10920,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +10%, Casting Spd. +21%, Movement Speed +5, M. Critical Rate +200%, P. Def. -5%, M. Def. -10%, Evasion -2.
+		Level 2: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +10%, Casting Spd. +29%, Movement Speed +5, M. Critical Rate +300%, P. Def. -5%, M. Def. -10%, Evasion -2.
+		Level 3: P. Atk. +8%, Atk. Spd. +8%, M. Atk. +16%, Casting Spd. +40%, Movement Speed +8, M. Critical Rate +300%, P. Def. -8%, M. Def. -16%, Evasion -4.
+	-->
 	<skill id="4635" levels="3" name="Acumen Berserker Wild Magic">
 		<table name="#pAtk"> 5 5 8 </table>
 		<table name="#mAtk"> 10 10 16 </table>
@@ -10931,6 +10956,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +10%, Casting Spd. +21%, Movement Speed +5. Some damage is reflected. P. Def. -10%, M. Def. -2, Evasion -$s9 Down.
+		Level 2: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +10%, Casting Spd. +29%, Movement Speed +5. Some damage is reflected. P. Def. -10%, M. Def. -2, Evasion -$s9 Down.
+		Level 3: P. Atk. +8%, Atk. Spd. +8%, M. Atk. +16%, Casting Spd. +40%, Movement Speed +8. Some damage is reflected. P. Def. -16%, M. Def. -4, Evasion -$s9 Down.
+	-->
 	<skill id="4636" levels="3" name="Acumen Berserker Damage Shield">
 		<table name="#pAtk"> 5 5 8 </table>
 		<table name="#mAtk"> 10 10 16 </table>
@@ -10962,6 +10992,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: Casting Spd. +15%, M. Critical Rate +200%; Some damage is reflected.
+		Level 2: Casting Spd. +23%, M. Critical Rate +300%; Some damage is reflected.
+		Level 3: Casting Spd. +30%, M. Critical Rate +300%; Some damage is reflected.
+	-->
 	<skill id="4637" levels="3" name="Acumen Wild Magic Damage Shield">
 		<table name="#mAtkSpd"> 15 23 30 </table>
 		<table name="#mCritRate"> 30 40 40 </table>
@@ -10987,6 +11022,11 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: Casting Spd. +15%, M. Atk. +55%, M. Critical Rate +200%.
+		Level 2: Casting Spd. +23%, M. Atk. +65%, M. Critical Rate +300%.
+		Level 3: Casting Spd. +30%, M. Atk. +75%, M. Critical Rate +300%.
+	-->
 	<skill id="4638" levels="3" name="Acumen Empower Wild Magic">
 		<table name="#mAtk"> 55 65 75 </table>
 		<table name="#mAtkSpd"> 15 23 30 </table>
@@ -11014,12 +11054,17 @@
 			</abnormal>
 		</for>
 	</skill>
+	<!-- 
+		Level 1: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +71%, Casting Spd. +21%, Movement Speed +5; P. Def. -5%, M. Def. -10%.
+		Level 2: P. Atk. +5%, Atk. Spd. +5%, M. Atk. +82%, Casting Spd. +29%, Movement Speed +5; P. Def. -5%, M. Def. -10%.
+		Level 3: P. Atk. +8%, Atk. Spd. +8%, M. Atk. +103%, Casting Spd. +40%, Movement Speed +8; P. Def. -8%, M. Def. -16%.
+	-->
 	<skill id="4639" levels="3" name="Acumen Empower Berserker">
 		<table name="#pAtk"> 5 5 8 </table>
 		<table name="#mAtk"> 71 82 103 </table>
 		<table name="#mAtkSpd"> 21 29 40 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
-		<table name="#mDef"> 10 10 16 </table>
+		<table name="#mDef"> 5 5 8 </table>
 		<table name="#mpConsume"> 43 79 124 </table>
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<set name="target" val="TARGET_FRIENDS" />
@@ -13981,7 +14026,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="1" />
 	</skill>
-	<!-- An Orc Dark Mage with superior talent. He was once known as "the Hope of the Breka Orc tribe," but he was tricked into plotting against his leader, and exiled. Now, he dreams of the day he will take vengeance on those who betrayed and exiled him. He grows in power, and uses summoning magic learned from the Dark Elves to harness powerful servitors and minions. -->
+	<!-- An Orc Dark Mage with superior talent. He was once known as 'the Hope of the Breka Orc tribe,' but he was tricked into plotting against his leader, and exiled. Now, he dreams of the day he will take vengeance on those who betrayed and exiled him. He grows in power, and uses summoning magic learned from the Dark Elves to harness powerful servitors and minions. -->
 	<skill id="4797" levels="1" name="Raid Boss (Lv. 34)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="PASSIVE" />
@@ -14471,7 +14516,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="1" />
 	</skill>
-	<!-- She was a beautiful lady of a respectable family from her birth, but she angered Einhasad by her arrogance and was turned into a Medusa. She could not adjust to her new state and became a brutal monster that takes her anger out on people near her. She even turned her fiancé who remained true to her into stone, and then smashed him to pieces. -->
+	<!-- She was a beautiful lady of a respectable family from her birth, but she angered Einhasad by her arrogance and was turned into a Medusa. She could not adjust to her new state and became a brutal monster that takes her anger out on people near her. She even turned her fianc￩ who remained true to her into stone, and then smashed him to pieces. -->
 	<skill id="4867" levels="1" name="Raid Boss (Lv. 50)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="PASSIVE" />
@@ -14709,7 +14754,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="magicLvl" val="1" />
 	</skill>
-	<!-- This servant of the Fairy Queen was dispatched to protect the hot springs, a resort that Fairy Queen Timiniel loves. With power almost equal to the Queen's, he is a little disgruntled at what he feels is so menial an assignment. To pass the time and ease his boredom, he often "plays" with travelers passing by. Unfortunately for them, his hijinks are more than most humans can endure. -->
+	<!-- This servant of the Fairy Queen was dispatched to protect the hot springs, a resort that Fairy Queen Timiniel loves. With power almost equal to the Queen's, he is a little disgruntled at what he feels is so menial an assignment. To pass the time and ease his boredom, he often 'plays' with travelers passing by. Unfortunately for them, his hijinks are more than most humans can endure. -->
 	<skill id="4901" levels="1" name="Raid Boss (Lv. 78)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="PASSIVE" />

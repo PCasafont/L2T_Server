@@ -1292,7 +1292,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
-	<!-- For 10 minutes, weapon appearances change through the effect of the "Fake Tears" that were scattered by "Pierre Baguette." But, weapons don't change their abilities. -->
+	<!-- For 10 minutes, weapon appearances change through the effect of the 'Fake Tears' that were scattered by 'Pierre Baguette.' But, weapons don't change their abilities. -->
 	<skill id="6139" levels="1" name="Fake Tears">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2160,7 +2160,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="saveVs" val="MEN" />
 	</skill>
-	<skill id="6239" levels="1" name="Proof of Time and Space ">
+	<skill id="6239" levels="1" name="Proof of Time and Space">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9401,7 +9401,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- It was once the subordinate of the Dark Dragon Skelus. It was one of the nobility of Purgatory who resided deep inside. But it came above ground at Antharas' calling. It protects the Antharas' Nest, and it also informs Skelus about the area's developments. When it was in Purgatory, it was called "Hell's Corpse Detonator" because of its sinister pleasure in making its comrades explode. -->
+	<!-- It was once the subordinate of the Dark Dragon Skelus. It was one of the nobility of Purgatory who resided deep inside. But it came above ground at Antharas' calling. It protects the Antharas' Nest, and it also informs Skelus about the area's developments. When it was in Purgatory, it was called 'Hell's Corpse Detonator' because of its sinister pleasure in making its comrades explode. -->
 	<skill id="6902" levels="1" name="Raid Boss (Lv. 84)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />

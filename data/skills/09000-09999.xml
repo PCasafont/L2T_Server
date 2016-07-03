@@ -1477,7 +1477,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="staticReuse" val="true" />
 	</skill>
-	<!-- Bouquet of freesia flowers, which stand for "Innocence." -->
+	<!-- Bouquet of freesia flowers, which stand for 'Innocence.' -->
 	<skill id="9150" levels="1" name="Freesia Bouquet (Event)">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
@@ -1490,7 +1490,7 @@
 		<set name="effectRange" val="1000" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Bouquet of baby's breath flowers, which stand for "Sorrow." -->
+	<!-- Bouquet of baby's breath flowers, which stand for 'Sorrow.' -->
 	<skill id="9151" levels="1" name="Baby's Breath Bouquet (Event)">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
@@ -1503,7 +1503,7 @@
 		<set name="effectRange" val="1000" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- This cocktail drink was first made in London, England in 1912, as a tribute to the leading heroine in the play "Pink Lady," which was a great hit at the time. -->
+	<!-- This cocktail drink was first made in London, England in 1912, as a tribute to the leading heroine in the play 'Pink Lady,' which was a great hit at the time. -->
 	<skill id="9152" levels="1" name="Pink Lady (Event)">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DUMMY" />
@@ -1866,12 +1866,12 @@
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9194" levels="1" name="Spiritshot (R-grade) ">
+	<skill id="9194" levels="1" name="Spiritshot (R-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="9195" levels="1" name="Blessed Spiritshot (R-grade) ">
+	<skill id="9195" levels="1" name="Blessed Spiritshot (R-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2109,7 +2109,7 @@
 		<set name="castRange" val="200" />
 		<set name="effectRange" val="700" />
 	</skill>
-	<!-- Mentor's assistance. P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
+	<!-- With your Mentor's help, your P. Atk. +17%, P. Def. +15%, M. Atk. +79%, and M. Def. +30%. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9227" levels="1" name="Mentor's Horn Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2128,7 +2128,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon who receives more than a certain amount of damage. -->
+	<!-- With your Mentor's help, your Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +2, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, and Debuff Resistance +10%. Critical Damage Received -30%, and Movement Speed -15%. Additionally, for party members who have received more than a certain amount of damage and have melee weapons equipped, P. Critical Damage is increased. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9228" levels="1" name="Mentor's Drum Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2155,7 +2155,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage effect. -->
+	<!-- With your Mentor's help, your Atk. Spd. +34%, Casting Spd. +31%, and 9% Vampiric Rage effect with a certain rate. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9229" levels="1" name="Mentor's Lute Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2173,7 +2173,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
+	<!-- With your Mentor's help, your Max HP +37%, Max MP +37%, Max CP +37%, and HP Recovery Bonus +20%. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9230" levels="1" name="Mentor's Pipe Organ Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2192,7 +2192,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
+	<!-- With your Mentor's help, your P. Critical Rate +32%, P. Critical Damage +35%, and M. Critical Rate +20, P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, and Iss Enchanter Enchant Skill MP Consumption -20%. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9231" levels="1" name="Mentor's Guitar Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2213,7 +2213,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Mentor's assistance. P. Accuracy + 5, P. Evasion/M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
+	<!-- With your Mentor's help, your P. Accuracy +5, P./M. Evasion +5, Movement Speed +34, Critical Damage Received -30%. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="9232" levels="1" name="Mentor's Harp Melody">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3159,7 +3159,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- For 2 hr., selected mentee's P. Atk. + 12% P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
+	<!-- For 2 hours, the selected mentee's P. Atk. +12%, P. Critical Damage +35%, P. Critical Rate +100%, P. Def. +45%, Shield Def. Rate +30%, and Shield Def. +50% for 2 hours. Buff is maintained for 5 minutes when the Mentor goes offline. -->
 	<skill id="9376" levels="1" name="Mentor's Knight's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -3185,7 +3185,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 2 hr., selected mentee's M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Speed + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. M. Skill MP Consumption - 15%, P. Skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
+	<!-- For 2 hours, the selected mentee's M. Atk. +40%, M. Critical Rate +100%, Casting Spd. +8%, P. Atk. +8%, Atk. Spd. +8%, Movement Speed +8, M. Def. +14%, MP Recovery Bonus +20%, M. Skill MP Consumption -15%, P. Skill MP Consumption -5%, and Skill Cooldown -20% for 2 hours. Buff is maintained for 5 minutes when the Mentor goes offline. -->
 	<skill id="9377" levels="1" name="Mentor's Wizard's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -3219,7 +3219,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 2 hr., selected mentee's P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, and Speed + 8. -->
+	<!-- For 2 hours, the selected mentee's P. Atk. +35%, P. Critical Damage +35%, P. Critical Rate +100%, Atk. Spd. +8%, M. Atk. +16%, Casting Spd. +8%, and Movement Speed +8. Buff is maintained for 5 minutes when the Mentor goes offline. -->
 	<skill id="9378" levels="1" name="Mentor's Warrior's Harmony">
 		<set name="target" val="TARGET_MENTEE" />
 		<set name="skillType" val="BUFF" />
@@ -7340,19 +7340,19 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
-	<!-- Magic Pouch containing the letters TOGETHE. Double-click to obtain one of the letters. "R" can be obtained by chance from the RIIS Pouch. -->
+	<!-- Magic Pouch containing the letters TOGETHE. Double-click to obtain one of the letters. 'R' can be obtained by chance from the RIIS Pouch. -->
 	<skill id="9950" levels="1" name="Letter Collector's Pouch: TOGETHER">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Magic Pouch containing the letters LINEAGE. Double-click to obtain one of the letters. "II" can be obtained by chance from the RIIS Pouch. -->
+	<!-- Magic Pouch containing the letters LINEAGE. Double-click to obtain one of the letters. 'II' can be obtained by chance from the RIIS Pouch. -->
 	<skill id="9951" levels="1" name="Letter Collector's Pouch: LINEAGE II">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Magic Pouch containing the letters NCOFT. Double-click to obtain one of the letters. "S" can be obtained by chance from the RIIS Pouch. -->
+	<!-- Magic Pouch containing the letters NCOFT. Double-click to obtain one of the letters. 'S' can be obtained by chance from the RIIS Pouch. -->
 	<skill id="9952" levels="1" name="Letter Collector's Pouch: NCSOFT">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

@@ -9072,6 +9072,13 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
+	<!-- 
+		Level 1: Petrify Attack Resistance is rather strong.
+		Level 5: Petrify Attack Resistance is strong.
+		Level 9: Petrify Attack Resistance is very strong.
+		Level 11: Petrify Attack Resistance is superbly strong.
+		Level 12: Petrify Attack Resistance is incredibly strong.
+	-->
 	<skill id="5598" levels="12" name="Petrification Resistance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
