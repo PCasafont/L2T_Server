@@ -369,7 +369,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2039" levels="1" name="Soulshot (No-grade) ">
+	<skill id="2039" levels="1" name="Soulshot (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -448,7 +448,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<skill id="2047" levels="1" name="Spiritshot (No-grade) ">
+	<skill id="2047" levels="1" name="Spiritshot (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -660,7 +660,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2061" levels="1" name="Blessed Spiritshot (No-grade) ">
+	<skill id="2061" levels="1" name="Blessed Spiritshot (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -832,7 +832,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2078" levels="1" name="Soulshot Compressed Package (No-grade) ">
+	<skill id="2078" levels="1" name="Soulshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -848,7 +848,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2079" levels="1" name="Soulshot Compressed Package (D-grade) ">
+	<skill id="2079" levels="1" name="Soulshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -864,7 +864,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2080" levels="1" name="Soulshot Compressed Package (C-grade) ">
+	<skill id="2080" levels="1" name="Soulshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -880,7 +880,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2081" levels="1" name="Soulshot Compressed Package (B-grade) ">
+	<skill id="2081" levels="1" name="Soulshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -896,7 +896,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2082" levels="1" name="Soulshot Compressed Package (A-grade) ">
+	<skill id="2082" levels="1" name="Soulshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -912,7 +912,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2083" levels="1" name="Soulshot Compressed Package (S-grade) ">
+	<skill id="2083" levels="1" name="Soulshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -928,7 +928,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2084" levels="1" name="Spiritshot Compressed Package (No-grade) ">
+	<skill id="2084" levels="1" name="Spiritshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -944,7 +944,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2085" levels="1" name="Spiritshot Compressed Package (D-grade) ">
+	<skill id="2085" levels="1" name="Spiritshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -960,7 +960,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2086" levels="1" name="Spiritshot Compressed Package (C-grade) ">
+	<skill id="2086" levels="1" name="Spiritshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -976,7 +976,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2087" levels="1" name="Spiritshot Compressed Package (B-grade) ">
+	<skill id="2087" levels="1" name="Spiritshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -992,7 +992,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2088" levels="1" name="Spiritshot Compressed Package (A-grade) ">
+	<skill id="2088" levels="1" name="Spiritshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1008,7 +1008,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2089" levels="1" name="Spiritshot Compressed Package (S-grade) ">
+	<skill id="2089" levels="1" name="Spiritshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1024,7 +1024,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2090" levels="1" name="Blessed Spiritshot Compressed Package (No-grade) ">
+	<skill id="2090" levels="1" name="Blessed Spiritshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1040,7 +1040,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2091" levels="1" name="Blessed Spiritshot Compressed Package (D-grade) ">
+	<skill id="2091" levels="1" name="Blessed Spiritshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1056,7 +1056,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2092" levels="1" name="Blessed Spiritshot Compressed Package (C-grade) ">
+	<skill id="2092" levels="1" name="Blessed Spiritshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1072,7 +1072,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2093" levels="1" name="Blessed Spiritshot Compressed Package (B-grade) ">
+	<skill id="2093" levels="1" name="Blessed Spiritshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1088,7 +1088,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2094" levels="1" name="Blessed Spiritshot Compressed Package (A-grade) ">
+	<skill id="2094" levels="1" name="Blessed Spiritshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1104,7 +1104,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2095" levels="1" name="Blessed Spiritshot Compressed Package (S-grade) ">
+	<skill id="2095" levels="1" name="Blessed Spiritshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1201,7 +1201,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="2104" levels="1" name="Greater Soulshot Compressed Package (No-grade) ">
+	<skill id="2104" levels="1" name="Greater Soulshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1217,7 +1217,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2105" levels="1" name="Greater Soulshot Compressed Package (D-grade) ">
+	<skill id="2105" levels="1" name="Greater Soulshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1233,7 +1233,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2106" levels="1" name="Greater Soulshot Compressed Package (C-grade) ">
+	<skill id="2106" levels="1" name="Greater Soulshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1249,7 +1249,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2107" levels="1" name="Greater Soulshot Compressed Package (B-grade) ">
+	<skill id="2107" levels="1" name="Greater Soulshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1265,7 +1265,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2108" levels="1" name="Greater Soulshot Compressed Package (A-grade) ">
+	<skill id="2108" levels="1" name="Greater Soulshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1281,7 +1281,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2109" levels="1" name="Greater Soulshot Compressed Package (S-grade) ">
+	<skill id="2109" levels="1" name="Greater Soulshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1297,7 +1297,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2110" levels="1" name="Greater Spiritshot Compressed Package (No-grade) ">
+	<skill id="2110" levels="1" name="Greater Spiritshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1313,7 +1313,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2111" levels="1" name="Greater Spiritshot Compressed Package (D-grade) ">
+	<skill id="2111" levels="1" name="Greater Spiritshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1329,7 +1329,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2112" levels="1" name="Greater Spiritshot Compressed Package (C-grade) ">
+	<skill id="2112" levels="1" name="Greater Spiritshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1345,7 +1345,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2113" levels="1" name="Greater Spiritshot Compressed Package (B-grade) ">
+	<skill id="2113" levels="1" name="Greater Spiritshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1361,7 +1361,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2114" levels="1" name="Greater Spiritshot Compressed Package (A-grade) ">
+	<skill id="2114" levels="1" name="Greater Spiritshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1377,7 +1377,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2115" levels="1" name="Greater Spiritshot Compressed Package (S-grade) ">
+	<skill id="2115" levels="1" name="Greater Spiritshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1393,7 +1393,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2116" levels="1" name="Greater Blessed Spiritshot Compressed Package (No-grade) ">
+	<skill id="2116" levels="1" name="Greater Blessed Spiritshot Compressed Package (No-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1409,7 +1409,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2117" levels="1" name="Greater Blessed Spiritshot Compressed Package (D-grade) ">
+	<skill id="2117" levels="1" name="Greater Blessed Spiritshot Compressed Package (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1425,7 +1425,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2118" levels="1" name="Greater Blessed Spiritshot Compressed Package (C-grade) ">
+	<skill id="2118" levels="1" name="Greater Blessed Spiritshot Compressed Package (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1441,7 +1441,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2119" levels="1" name="Greater Blessed Spiritshot Compressed Package (B-grade) ">
+	<skill id="2119" levels="1" name="Greater Blessed Spiritshot Compressed Package (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1457,7 +1457,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2120" levels="1" name="Greater Blessed Spiritshot Compressed Package (A-grade) ">
+	<skill id="2120" levels="1" name="Greater Blessed Spiritshot Compressed Package (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1473,7 +1473,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2121" levels="1" name="Greater Blessed Spiritshot Compressed Package (S-grade) ">
+	<skill id="2121" levels="1" name="Greater Blessed Spiritshot Compressed Package (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CREATE_ITEM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1802,77 +1802,77 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="isPotion" val="true" />
 	</skill>
-	<skill id="2150" levels="1" name="Soulshot (D-grade) ">
+	<skill id="2150" levels="1" name="Soulshot (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2151" levels="1" name="Soulshot (C-grade) ">
+	<skill id="2151" levels="1" name="Soulshot (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2152" levels="1" name="Soulshot (B-grade) ">
+	<skill id="2152" levels="1" name="Soulshot (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2153" levels="1" name="Soulshot (A-grade) ">
+	<skill id="2153" levels="1" name="Soulshot (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2154" levels="1" name="Soulshot (S-grade) ">
+	<skill id="2154" levels="1" name="Soulshot (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2155" levels="1" name="Spiritshot (D-grade) ">
+	<skill id="2155" levels="1" name="Spiritshot (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2156" levels="1" name="Spiritshot (C-grade) ">
+	<skill id="2156" levels="1" name="Spiritshot (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2157" levels="1" name="Spiritshot (B-grade) ">
+	<skill id="2157" levels="1" name="Spiritshot (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2158" levels="1" name="Spiritshot (A-grade) ">
+	<skill id="2158" levels="1" name="Spiritshot (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2159" levels="1" name="Spiritshot (S-grade) ">
+	<skill id="2159" levels="1" name="Spiritshot (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2160" levels="1" name="Blessed Spiritshot (D-grade) ">
+	<skill id="2160" levels="1" name="Blessed Spiritshot (D-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2161" levels="1" name="Blessed Spiritshot (C-grade) ">
+	<skill id="2161" levels="1" name="Blessed Spiritshot (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2162" levels="1" name="Blessed Spiritshot (B-grade) ">
+	<skill id="2162" levels="1" name="Blessed Spiritshot (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2163" levels="1" name="Blessed Spiritshot (A-grade) ">
+	<skill id="2163" levels="1" name="Blessed Spiritshot (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="2164" levels="1" name="Blessed Spiritshot (S-grade) ">
+	<skill id="2164" levels="1" name="Blessed Spiritshot (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="SPIRITSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5701,7 +5701,7 @@
 		</for>
 	</skill>
 	<!-- Increases Speed. Effect 2. -->
-	<skill id="2379" levels="1" name="Wind Walk">
+	<skill id="2379" levels="1" name="Wind">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7506,7 +7506,7 @@
 			</cond>
 		</for>
 	</skill>
-	<skill id="2477" levels="1" name="Sublime Self-sacrifice">
+	<skill id="2477" levels="1" name="Sublime Self-Sacrifice">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="LEARN_SKILL" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -14483,7 +14483,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- For 10 minutes, increases Max HP/Max HP/Casting Spd./P. Def./M. Def. and Debuff Resistance by 10%. Increases Atk. Spd. by 15% and Moving Spd. by 10. Weapon and hair appearances change through the effect of the "Fake Tears" that were scattered by "Pierre Baguette." But, weapons don't change their abilities. -->
+	<!-- For 10 minutes, increases Max HP/Max HP/Casting Spd./P. Def./M. Def. and Debuff Resistance by 10%. Increases Atk. Spd. by 15% and Moving Spd. by 10. Weapon and hair appearances change through the effect of the 'Fake Tears' that were scattered by 'Pierre Baguette.' But, weapons don't change their abilities. -->
 	<skill id="2898" levels="1" name="Cream Puff Herb">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

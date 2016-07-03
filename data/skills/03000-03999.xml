@@ -88,7 +88,7 @@
 		Level 6: Increases Evasion by 2.28.
 		Level 7: Increases Evasion by 7.5.
 		Level 8: Increases Evasion by 5.31.
-		Level 9: Evasion + 5.31, PvP Damage + 5%
+		Level 9: Evasion +5.31, PvP Damage +5%
 	-->
 	<skill id="3009" levels="9" name="Special Ability: Evasion">
 		<table name="#rEvas"> 2.95 2.82 2.68 2.55 2.41 2.28 7.5 5.31 </table>
@@ -1034,7 +1034,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy by 3.95. Inflicts additional damage by 5% during PvP. -->
+	<!-- Accuracy +3.95. Damage dealt in PvP +5%. -->
 	<skill id="3064" levels="1" name="Special Ability: Guidance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -1047,7 +1047,7 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Increases Accuracy by 5.41. Inflicts additional damage by 5% during PvP. -->
+	<!-- Accuracy +5.41. Damage dealt in PvP +5%. -->
 	<skill id="3065" levels="1" name="Special Ability: Guidance">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -1110,9 +1110,9 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Evasion when in danger.
-		Level 2: Evasion + 6.8, PvP Damage + 5% when in danger.
+		Level 2: Evasion +6.8, PvP Damage +5% in urgent situations
 	-->
-	<skill id="3069" levels="2" name="Special Ability: Rsk.Evasion">
+	<skill id="3069" levels="2" name="Special Ability: Rsk. Evasion">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -7553,7 +7553,7 @@
 	</skill>
 	<!-- 
 		Level 1: Increases Weight Gauge by 20%.
-		Level 2: Weight Gauge + 20%, PvP Damage + 5%.
+		Level 2: Weight Gauge +20%, PvP Damage 5%
 	-->
 	<skill id="3498" levels="2" name="Special Ability: Light">
 		<set name="target" val="TARGET_SELF" />
@@ -8431,7 +8431,10 @@
 			<addPercent stat="pvpMagicalDmg" val="5" />
 		</for>
 	</skill>
-	<!-- Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Increases damage by 5% during PvP. -->
+	<!-- 
+		Level 1: Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Increases damage by 5% during PvP.
+		Level 2: Recover HP by a portion of damage dealt to the enemy, with a certain rate. Damage dealt in PvP is increased. PvP Damage +5%
+	-->
 	<skill id="3568" levels="2" name="Special Ability: HP Drain">
 		<table name="#absorbDam"> 3 4 </table>
 		<table name="#magicLvl"> 75 84 </table>
@@ -9400,7 +9403,7 @@
 		</for>
 	</skill>
 	<!-- Increases P. Def. and MP Recovery Bonus by enchanting set items. -->
-	<skill id="3623" levels="3" name="Enchant Heavy Armor (S-grade)">
+	<skill id="3623" levels="5" name="Enchant Heavy Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9420,7 +9423,7 @@
 		</for>
 	</skill>
 	<!-- Increases M. Def. and Evasion by enchanting set items. -->
-	<skill id="3624" levels="3" name="Enchant Light Armor (S-grade)">
+	<skill id="3624" levels="5" name="Enchant Light Armor (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9435,7 +9438,7 @@
 		</for>
 	</skill>
 	<!-- Increases P. Def. and weight capacity by enchanting set items. -->
-	<skill id="3625" levels="3" name="Enchant Robe (S-grade)">
+	<skill id="3625" levels="5" name="Enchant Robe (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -9639,7 +9642,7 @@
 			<add stat="reflectDebuffs" val="10" />
 		</for>
 	</skill>
-	<!-- Decreases the enemy's Speed during a critical attack. Increases Max MP, Max CP, and damage inflicted during PvP. The skill Cooldown is short. Has a chance to decrease MP Consumption. -->
+	<!-- Decreases the enemy's Speed during a critical attack. Increases Max MP, Max CP, and damage inflicted during PvP. The skill cooldown is short. Has a chance to decrease MP Consumption. -->
 	<skill id="3635" levels="1" name="Special Ability: Infinity Shooter">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -9878,7 +9881,7 @@
 			<baseAdd stat="cloak" val="1" />
 		</for>
 	</skill>
-	<!-- Increases Magic Resistance, Mental Attack Bonus, Mental Attack Resistance, Max MP, and Darkness. -->
+	<!-- M. Def. +12%, Max HP +105, Max MP +21, MP Recovery +0.23, Mental Attack +10, Mental Attack Resistance +10, Dark Attack Def. +30. -->
 	<skill id="3649" levels="1" name="Beleth' Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />

@@ -24,8 +24,8 @@
 		<table name="#mAtk"> 0 0 0 0 0 5 5 5 7 10 12 14 16 18 20 </table>
 		<table name="#mDef"> 0 0 0 0 0 0 5 5 7 10 12 14 16 18 20 </table>
 		<table name="#skillPower"> 0 0 0 0 0 0 0 5 5 5 5 5 5 5 5 </table>
-		<table name="#pAtkAdd"> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		<enchantRoute id="1" level="15" > 42.5 45.5 48.5 51.5 54.5 57.5 60.5 63.5 66.5 69.5 72.5 75.5 78.5 81.5 84.5 87.5 90.5 93.5 96.5 99.5 102.5 105.5 108.5 111.5 114.5 117.5 120.5 123.5 126.5 129.5 </enchantRoute>
+		<table name="#pAtkAdd"> 0 
+			<enchantRoute id="1" level="15"> 42.5 45.5 48.5 51.5 54.5 57.5 60.5 63.5 66.5 69.5 72.5 75.5 78.5 81.5 84.5 87.5 90.5 93.5 96.5 99.5 102.5 105.5 108.5 111.5 114.5 117.5 120.5 123.5 126.5 129.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="CONT" />
@@ -5957,25 +5957,25 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- C-grade Expertise skill for fishing. -->
-	<skill id="1316" levels="1" name="Fishing Expertise (C-grade) ">
+	<skill id="1316" levels="1" name="Fishing Expertise (C-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- B-grade Expertise skill for fishing. -->
-	<skill id="1317" levels="1" name="Fishing Expertise (B-grade) ">
+	<skill id="1317" levels="1" name="Fishing Expertise (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- A-grade Expertise skill for fishing. -->
-	<skill id="1318" levels="1" name="Fishing Expertise (A-grade) ">
+	<skill id="1318" levels="1" name="Fishing Expertise (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- S-grade Expertise skill for fishing. -->
-	<skill id="1319" levels="1" name="Fishing Expertise (S-grade) ">
+	<skill id="1319" levels="1" name="Fishing Expertise (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -12621,7 +12621,7 @@
 		<set name="hitTime" val="1000" />
 	</skill>
 	<!-- Petrify -->
-	<skill id="1636" levels="1" name="Petrify">
+	<skill id="1636" levels="1" name="(Petrify)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -13754,7 +13754,7 @@
 			</add>
 		</for>
 	</skill>
-	<!-- Increases Water resistance by 20. -->
+	<!-- Increases Water Resistance by 20. -->
 	<skill id="1906" levels="1" name="Blessing of Water">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -13821,7 +13821,7 @@
 			</baseAdd>
 		</for>
 	</skill>
-	<!-- Increases Wind resistance by 20. -->
+	<!-- Increases Wind Resistance by 20. -->
 	<skill id="1911" levels="1" name="Blessing of Wind">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -13883,7 +13883,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Fire resistance by 20. -->
+	<!-- Increases Fire Resistance by 20. -->
 	<skill id="1915" levels="1" name="Blessing of Fire">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -13965,7 +13965,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Earth resistance by 20. -->
+	<!-- Increases Earth Resistance by 20. -->
 	<skill id="1921" levels="1" name="Blessing of Earth">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />

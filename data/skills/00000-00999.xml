@@ -4323,14 +4323,14 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Increases HP Recovery Bonus by 1.1.
-		Level 2: Increases HP Recovery Bonus by 1.6.
-		Level 3: Increases HP Recovery Bonus by 1.7.
-		Level 4: Increases HP Recovery Bonus by 2.1.
-		Level 5: Increases HP Recovery Bonus by 2.6.
-		Level 6: Increases HP Recovery Bonus by 2.7.
-		Level 7: Increases HP Recovery Bonus by 3.4.
-		Level 8: Increases HP Recovery Bonus by 4.
+		Level 1: Increases HP Recovery bonus by 1.1.
+		Level 2: Increases HP Recovery bonus by 1.6.
+		Level 3: Increases HP Recovery bonus by 1.7.
+		Level 4: Increases HP Recovery bonus by 2.1.
+		Level 5: Increases HP Recovery bonus by 2.6.
+		Level 6: Increases HP Recovery bonus by 2.7.
+		Level 7: Increases HP Recovery bonus by 3.4.
+		Level 8: Increases HP Recovery bonus by 4.
 	-->
 	<skill id="212" levels="8" name="Fast HP Recovery">
 		<table name="#hp"> 1.1 1.6 1.7 2.1 2.6 2.7 3.4 4 </table>
@@ -7594,7 +7594,7 @@
 		</for>
 	</skill>
 	<!-- Summons between 700 and 2800 Mithril arrows. Consumes 1 A-grade Crystal. -->
-	<skill id="323" levels="1" name="Quiver of Arrow (A-grade) ">
+	<skill id="323" levels="1" name="Quiver of Arrow (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7616,7 +7616,7 @@
 		</for>
 	</skill>
 	<!-- Summons between 900 and 3600 arrows of light. Consumes 1 S-grade Crystal. -->
-	<skill id="324" levels="1" name="Quiver of Arrow (S-grade) ">
+	<skill id="324" levels="1" name="Quiver of Arrow (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9997,7 +9997,7 @@
 			<subPercent stat="DanceMpConsumeRate" val="10" />
 		</for>
 	</skill>
-	<!-- Increases P. Def. by 87.1 and Shield Defense by s2 when equipped with heavy armor. -->
+	<!-- Increases P. Def. by 87.1 and Shield Defense by 10% when equipped with heavy armor. -->
 	<skill id="429" levels="1" name="Knighthood">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -10011,16 +10011,19 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Max CP + 2% and Max HP + 1%.
-		Level 2: Max CP + 4% and Max HP + 2%. When equipped with heavy armor, received P./M. Critical Damage - 5%.
-		Level 3: Max CP + 6% and Max HP + 3%. When equipped with heavy armor, received P./M. Critical Damage - 10%.
-		Level 4: Max CP + 8% and Max HP + 4%. When equipped with heavy armor, received P./M. Critical Damage - 15%.
-		Level 5: Max CP + 10% and Max HP + 5%. When equipped with heavy armor, received P./M. Critical Damage - 20%.
-		Level 6: Max CP + 12% and Max HP + 6%. When equipped with heavy armor, received P./M. Critical Damage - 25%.
-		Level 7: Max CP + 14% and Max HP + 7%. When equipped with heavy armor, received P./M. Critical Damage - 30%.
-		Level 8: Max CP + 16% and Max HP + 8%. When equipped with heavy armor, received P./M. Critical Damage - 35%.
+		Level 1: Max HP +1%, Max CP +2%.
+		Level 2: Max HP +2%, Max CP +4%.
+		Level 3: Max HP +3%, Max CP +6%.
+		Level 4: Max HP +4%, Max CP +8%.
+		Level 5: Max HP +5%, Max CP +10%, P. Def. +5%, M. Def +5%.
+		Level 6: Max HP +6%, Max CP +12%, P. Def. +6%, M. Def +6%.
+		Level 7: Max HP +7%, Max CP +14%, P. Def. +7%, M. Def +7%.
+		Level 8: Max HP +8%, Max CP +16%, P. Def. +8%, M. Def +8%.
+		Level 9: Increases Max CP by 9%. When using a sword/blunt weapon/spear, increases P. Atk. by 18%. When using a dualsword/fist weapon, increases P. Atk. by 9%.
+		Level 10: Increases Max CP by 10%. When using a sword/blunt weapon/spear, increases P. Atk. by 20%. When using a dualsword/fist weapon, increases P. Atk. by 10%.
+		Level 11: Increases Max CP by 11%. When using a sword/blunt weapon/spear, increases P. Atk. by 22%. When using a dualsword/fist weapon, increases P. Atk. by 11%.
 	-->
-	<skill id="430" levels="8" name="Master of Combat">
+	<skill id="430" levels="11" name="Master of Combat">
 		<table name="#maxCp"> 2 4 6 8 10 12 14 16 </table>
 		<table name="#maxHp"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#critVuln"> 0 5 10 15 20 25 30 35 </table>
@@ -12503,7 +12506,7 @@
 		<set name="triggerSkillLvl" val="#triggerSkillLvl" />
 	</skill>
 	<!-- Summons between 700 and 2800 Mithril bolts. Consumes 1 A-grade Crystal. -->
-	<skill id="519" levels="1" name="Quiver of Bolts (A-grade) ">
+	<skill id="519" levels="1" name="Quiver of Bolts (A-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -12525,7 +12528,7 @@
 		</for>
 	</skill>
 	<!-- Summons between 900 and 3600 bolts of light. Consumes 1 S-grade Crystal. -->
-	<skill id="520" levels="1" name="Quiver of Bolts (S-grade) ">
+	<skill id="520" levels="1" name="Quiver of Bolts (S-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -14597,7 +14600,7 @@
 		<set name="skillActionId" val="10899" />
 	</skill>
 	<!-- Summons between 700 and 2800 silver bolts. Consumes 1 B-grade Crystal. -->
-	<skill id="620" levels="1" name="Quiver of Bolts (B-grade) ">
+	<skill id="620" levels="1" name="Quiver of Bolts (B-grade)">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -22101,7 +22104,7 @@
 		Level 6: Creates a powerful hurricane and inflicts Wind damage on the enemy with 121 Power added to M. Atk.
 		Level 7: Creates a powerful hurricane and inflicts Wind damage on the enemy with 122 Power added to M. Atk.
 	-->
-	<skill id="976" levels="7" name="Wind Strike">
+	<skill id="976" levels="7" name="(Wind Strike)">
 		<table name="#mpConsume"> 73 73 73 74 74 75 75 </table>
 		<table name="#magicLvl"> 70 80 81 82 83 84 85 </table>
 		<table name="#power"> 102 116 117 119 120 121 122 </table>
