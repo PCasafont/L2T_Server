@@ -204,13 +204,10 @@ public class EnterWorld extends L2GameClientPacket
 		for (Castle castle : CastleManager.getInstance().getCastles())
 			sendPacket(new ExCastleTendency(castle.getCastleId(), castle.getTendency()));
 		
-		if (Config.IS_UNDERGROUND)
-		{
-			for (int i = 0; i < 4; i++)
-				sendPacket(new ExAutoSoulShot(0, 1, i));
-			
-			activeChar.checkAutoShots();
-		}
+		for (int i = 0; i < 4; i++)
+			sendPacket(new ExAutoSoulShot(0, 1, i));
+
+		activeChar.checkAutoShots();
 		
 		// Apply special GM properties to the GM when entering
 		if (activeChar.isGM())
@@ -339,7 +336,7 @@ public class EnterWorld extends L2GameClientPacket
 		sendPacket(new ItemList(activeChar, false));
 		
 		// Send GG check
-		activeChar.queryGameGuard();
+		//activeChar.queryGameGuard();
 		
 		// Send Teleport Bookmark List
 		sendPacket(new ExGetBookMarkInfoPacket(activeChar));

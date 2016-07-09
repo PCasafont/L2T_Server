@@ -60,5 +60,6 @@ public final class KeyPacket extends L2GameServerPacket
 		writeC(0x01);
 		writeD(0x00); // obfuscation key
 		writeC(Config.IS_CLASSIC ? 0x01 : 0x00); // is classic
+		writeC(0x00); // ???
 	}
 }

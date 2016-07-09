@@ -11300,9 +11300,6 @@ public class L2PcInstance extends L2Playable
 	
 	public void checkAutoShots()
 	{
-		if (!Config.IS_UNDERGROUND)
-			return;
-		
 		if (_activeSoulShots[0] != null && (getActiveWeaponItem() == null || getActiveWeaponItem().getItemGradePlain() != _activeSoulShots[0].getItem().getItemGradePlain()))
 		{
 			sendPacket(new ExAutoSoulShot(_activeSoulShots[0].getItemId(), 0, 0));

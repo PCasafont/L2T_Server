@@ -106,11 +106,9 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(0x00); // T1
 				writeH(0x00); // T1
 				writeH(0x00); // T1
-				if (Config.IS_UNDERGROUND)
-				{
-					writeC(0x00);
-					writeC(0x00);
-				}
+
+				writeC(0x00);
+				writeC(0x00);
 				
 				writeH(entry.Products.size() + 1); // products list size
 				writeH(entry.Ingredients.size() + 1); // ingredients list size
@@ -130,17 +128,15 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(item.getAttackElementPower()); // T1 element power
 				for (byte j = 0; j < 6; j++)
 					writeH(item.getElementDefAttr(j));
-				if (Config.IS_UNDERGROUND)
-				{
-					int[] ensoulEffects = item.getEnsoulEffectIds();
-					int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
-					writeC(ensoulEffects.length);
-					for (int effect : ensoulEffects)
-						writeD(effect);
-					writeC(ensoulSpecialEffects.length);
-					for (int effect : ensoulSpecialEffects)
-						writeD(effect);
-				}
+
+				int[] ensoulEffects = item.getEnsoulEffectIds();
+				int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+				writeC(ensoulEffects.length);
+				for (int effect : ensoulEffects)
+					writeD(effect);
+				writeC(ensoulSpecialEffects.length);
+				for (int effect : ensoulSpecialEffects)
+					writeD(effect);
 				
 				for (Entry<Integer, Integer> possibleProduct : entry.Products.entrySet())
 				{
@@ -161,17 +157,15 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 					writeH(item.getAttackElementPower()); // T1 element power
 					for (byte j = 0; j < 6; j++)
 						writeH(item.getElementDefAttr(j));
-					if (Config.IS_UNDERGROUND)
-					{
-						int[] ensoulEffects = item.getEnsoulEffectIds();
-						int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
-						writeC(ensoulEffects.length);
-						for (int effect : ensoulEffects)
-							writeD(effect);
-						writeC(ensoulSpecialEffects.length);
-						for (int effect : ensoulSpecialEffects)
-							writeD(effect);
-					}
+
+					ensoulEffects = item.getEnsoulEffectIds();
+					ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+					writeC(ensoulEffects.length);
+					for (int effect : ensoulEffects)
+						writeD(effect);
+					writeC(ensoulSpecialEffects.length);
+					for (int effect : ensoulSpecialEffects)
+						writeD(effect);
 				}
 				
 				// Main Ingredient
@@ -190,17 +184,15 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 				writeH(item.getAttackElementPower()); // T1 element power
 				for (byte j = 0; j < 6; j++)
 					writeH(item.getElementDefAttr(j));
-				if (Config.IS_UNDERGROUND)
-				{
-					int[] ensoulEffects = item.getEnsoulEffectIds();
-					int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
-					writeC(ensoulEffects.length);
-					for (int effect : ensoulEffects)
-						writeD(effect);
-					writeC(ensoulSpecialEffects.length);
-					for (int effect : ensoulSpecialEffects)
-						writeD(effect);
-				}
+
+				ensoulEffects = item.getEnsoulEffectIds();
+				ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+				writeC(ensoulEffects.length);
+				for (int effect : ensoulEffects)
+					writeD(effect);
+				writeC(ensoulSpecialEffects.length);
+				for (int effect : ensoulSpecialEffects)
+					writeD(effect);
 				
 				for (Entry<Integer, Long> extraIngredient : entry.Ingredients.entrySet())
 				{
@@ -220,11 +212,9 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 					writeH(0x00); // T1 element power
 					for (byte j = 0; j < 6; j++)
 						writeH(0x00);
-					if (Config.IS_UNDERGROUND)
-					{
-						writeC(0x00);
-						writeC(0x00);
-					}
+
+					writeC(0x00);
+					writeC(0x00);
 				}
 			}
 		}

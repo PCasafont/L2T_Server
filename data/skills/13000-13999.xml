@@ -3510,16 +3510,18 @@
 			<addPercent stat="derangementRes" val="9" />
 		</for>
 	</skill>
-	<!-- Increases P. Def./M. Def. Increases Holy/Dark Resistance and bleed/stun/mental attacks, bleed/stun/mental attack bonus, and the effectiveness of HP recovery magic. Decreases MP Consumption and restores HP by using some of the damage inflicted upon the enemy with a certain probability. CON+ 3, MEN+ 3 -->
+	<!-- P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4% -->
 	<skill id="13313" levels="1" name="Blessed Antharas' Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
-			<addPercent stat="pDef" val="4" />
-			<addPercent stat="mDef" val="8" />
+			<addPercent stat="pDef" val="15" />
+			<addPercent stat="mDef" val="15" />
+			<baseAdd stat="CON" val="3" />
+			<baseAdd stat="MEN" val="3" />
 			<add stat="earthRes" val="30" />
-			<add stat="holyRes" val="20" />
+			<add stat="holyRes" val="30" />
 			<addPercent stat="bleedRes" val="50" />
 			<addPercent stat="bleedProf" val="50" />
 			<addPercent stat="stunRes" val="40" />
@@ -3530,11 +3532,9 @@
 			<subPercent stat="MagicalMpConsumeRate" val="5" />
 			<subPercent stat="PhysicalMpConsumeRate" val="5" />
 			<add stat="absorbDam" val="4" />
-			<baseAdd stat="CON" val="3" />
-			<baseAdd stat="MEN" val="3" />
 		</for>
 	</skill>
-	<!-- For 5 seconds, cancels stun and receives Stun Resistance. -->
+	<!-- Immediately cancels out Stun effect when used; gives 5-second Stun Resistance. -->
 	<skill id="13314" levels="1" name="Blessed Antharas' Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3553,29 +3553,29 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases Fire/Dark Resistance, Sleep Resistance, sleep attack bonus, Max HP/ P. Atk./ M. Atk. and magic damage Critical Rate. Decreases skill Cooldown. Redirects some of the physical damage received back upon the enemy. STR+ 3, INT+ 3 -->
+	<!-- Max HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT +3, Fire Attribute Def. +30, Dark Attribute Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5% -->
 	<skill id="13315" levels="1" name="Blessed Valakas' Necklace">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
-			<add stat="fireRes" val="30" />
-			<add stat="darkRes" val="20" />
-			<addPercent stat="sleepRes" val="30" />
-			<addPercent stat="sleepProf" val="30" />
 			<add stat="maxHp" val="625" />
 			<addPercent stat="pAtk" val="10" />
 			<addPercent stat="mAtk" val="20" />
 			<add stat="mCritRate" val="20" />
+			<baseAdd stat="STR" val="3" />
+			<baseAdd stat="INT" val="3" />
+			<add stat="fireRes" val="30" />
+			<add stat="darkRes" val="20" />
+			<addPercent stat="sleepRes" val="50" />
+			<addPercent stat="sleepProf" val="50" />
+			<addPercent stat="physicalSkillPower" val="5" />
 			<subPercent stat="pReuse" val="10" />
 			<subPercent stat="mReuse" val="10" />
 			<add stat="reflectDam" val="5" />
-			<baseAdd stat="STR" val="3" />
-			<baseAdd stat="INT" val="3" />
-			<addPercent stat="physicalSkillPower" val="5" />
 		</for>
 	</skill>
-	<!-- For 5 seconds, cancels hold and receives hold resistance. -->
+	<!-- Immediately cancels out Hold effect when used; gives 5-second Hold Resistance. -->
 	<skill id="13316" levels="1" name="Blessed Valakas' Necklace">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3821,11 +3821,15 @@
 		Level 1: Set item is enchanted. P. Def. + 93, and MP Recovery Bonus + 32 when standing/ sitting.
 		Level 2: Increase P. Def. + 93 and MP recovery bonus + 32 in sit/stand/run status, and decrease physical skill MP consumption - 7% by enchanting a set item.
 		Level 3: Increase P. Def. + 93 MP recovery bonus + 3322 in sit/stand/run status, additional P. Def. + 11%. P. Skill MP consumption - 7%, and chance of reflecting a debuff by enchanting a set item.
+		Level 4: Set item is enchanted; P. Def. +93, Sit/Stand/Run state MP Recovery Bonus +32, Additional P. Def. +11%; Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, P. Skill MP Consumption -7%. Reflects debuffs with a certain rate.
+		Level 5: Set item is enchanted; P. Def. +93, Sit/Stand/Run state MP Recovery Bonus +32, Additional P. Def. +21%; Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, P. Skill MP Consumption -7%. Reflects debuffs with a certain rate. LUC +1, CHA +1.
 	-->
-	<skill id="13339" levels="3" name="Enchant Heavy Armor Set + 8 (R-grade)">
-		<table name="#PhysicalMpConsumeRate"> 0 7 7 </table>
-		<table name="#pDef"> 0 0 11 </table>
-		<table name="#debuffReflect"> 0 0 5 </table>
+	<skill id="13339" levels="5" name="R-grade Heavy Armor Set 10 Enchant">
+		<table name="#PhysicalMpConsumeRate"> 0 7 7 7 7 </table>
+		<table name="#pDef"> 0 0 11 11 21 </table>
+		<table name="#dmgRes"> 0 0 0 10 10 </table>
+		<table name="#debuffReflect"> 0 0 5 6 7 </table>
+		<table name="#stats"> 0 0 0 0 1 </table>
 		<table name="#name">Enchant Heavy Armor Set + 6 (R-grade);Enchant Heavy Armor Set + 7 (R-grade);Enchant Heavy Armor Set + 8 (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
@@ -3836,19 +3840,28 @@
 			<add stat="regMp" val="32" />
 			<subPercent stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 			<addPercent stat="pDef" val="#pDef" />
+			<subPercent stat="fixedDmgVuln" val="#dmgRes" />
+			<subPercent stat="reflectVuln" val="#dmgRes" />
 			<add stat="reflectDebuffs" val="#debuffReflect" />
+			<baseAdd stat="LUC" val="#stats" />
+			<baseAdd stat="CHA" val="#stats" />
 		</for>
 	</skill>
 	<!-- 
 		Level 1: Set item is enchanted. M. Def. + 55, P. Evasion + 2, and Debuff Resistance + 8. MP Recovery Bonus + 10% when standing/ sitting.
 		Level 2: Increase M. Def. + 55, P. Evasion + 2, MP recovery bonus + 8 in sit/stand status, debuff resistance + 10%, skill mastery effect + 14%, and chance of restoring 4% of damage as HP by enchanting a set item.
 		Level 3: Increase M. Def. + 55, P. Evasion + 2, Speed + 7, MP recovery bonus + 8 in sit/stand status, debuff resistance + 10%, skill mastery effect + 14%, decrease skill Cooldown by 10%, and chance of restoring 4% of damage as HP by enchanting a set item.
+		Level 4: Set item is enchanted; M. Def. +55, P. Evasion +2, Movement Speed +7, Sit/Stand state MP Recovery Bonus +8, Debuff Resistance +10%, Skill Mastery Rate +14%, Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, Skill Cooldown -10%. 4% of damage is recovered as HP with a certain rate.
+		Level 5: Set item is enchanted; M. Def. +55, P. Evasion +2, Movement Speed +7, Sit/Stand state MP Recovery Bonus +8, Debuff Resistance +10%, Skill Mastery Rate +14%, Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, Skill Cooldown -10%. 4% of damage is recovered as HP with a certain rate. Additionally, P. Def. +10%, LUC +1, CHA +1.
 	-->
-	<skill id="13340" levels="3" name="Enchant Light Armor Set + 8 (R-grade)">
-		<table name="#skillMastery"> 0 14 14 </table>
-		<table name="#absorbDam"> 1 4 4 </table>
-		<table name="#runSpd"> 0 0 7 </table>
-		<table name="#reuse"> 0 0 10 </table>
+	<skill id="13340" levels="5" name="R-grade Light Armor Set 10 Enchant">
+		<table name="#skillMastery"> 0 14 14 14 14 </table>
+		<table name="#absorbDam"> 1 4 4 4 4 </table>
+		<table name="#runSpd"> 0 0 7 7 7 </table>
+		<table name="#reuse"> 0 0 10 10 10 </table>
+		<table name="#pDef"> 0 0 11 11 21 </table>
+		<table name="#dmgRes"> 0 0 0 10 10 </table>
+		<table name="#stats"> 0 0 0 0 1 </table>
 		<table name="#name">Enchant Light Armor Set + 6 (R-grade);Enchant Light Armor Set + 7 (R-grade);Enchant Light Armor Set + 8 (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
@@ -3864,19 +3877,27 @@
 			<addPercent stat="skillMastery" val="#skillMastery" />
 			<add stat="absorbDam" val="#absorbDam" />
 			<add stat="runSpd" val="#runSpd" />
+			<addPercent stat="pDef" val="#pDef" />
+			<subPercent stat="fixedDmgVuln" val="#dmgRes" />
+			<subPercent stat="reflectVuln" val="#dmgRes" />
 			<subPercent stat="pReuse" val="#reuse" />
 			<subPercent stat="mReuse" val="#reuse" />
+			<baseAdd stat="LUC" val="#stats" />
+			<baseAdd stat="CHA" val="#stats" />
 		</for>
 	</skill>
 	<!-- 
 		Level 1: Set item is enchanted. P. Def. + 60, Weight Limit + 8, and Skill Cooldown - 30%. MP Recovery Bonus + 3% when standing/ sitting.
 		Level 2: Set item is enchanted. Max HP + 4890, P. Def. + 60, MP Recovery Bonus + 8 when standing/sitting, Weight Limit + 30%, and Skill Cooldown - 3%.
-		Level 3: Set item is enchanted. Max HP + 4890, P. Def. + 60, MP Recovery Bonus + 8 when standing/sitting, Debuff Resistance + 11%, Weight Limit + 30%, Skill Cooldown - 3%, and Magic Cancel Rate - 53%.
+		Level 3: Set item is enchanted; Max HP +4890, P.Def. +60, Sit/Stand state MP Recovery Bonus +8, Debuff Resistance +11%, Weight Limit +30%, Dagger/Dual Dagger/Bow/Crossbow Resistance +10%, and Skill Cooldown -3%.
+		Level 4: Set item is enchanted; Max HP +4890, P.Def. +60, Sit/Stand state MP Recovery Bonus +8, Debuff Resistance +11%, Weight Limit +30%, Dagger/Dual Dagger/Bow/Crossbow Resistance +10%, Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, and Skill Cooldown -3%.
+		Level 5: Set item is enchanted; Max HP +4890, P.Def. +60, Sit/Stand state MP Recovery Bonus +8, Debuff Resistance +11%, Weight Limit +30%, Dagger/Dual Dagger/Bow/Crossbow Resistance +10%, Fixed Damage Resistance +10%, Reflected Damage Resistance +10%, and Skill Cooldown -3%. Additionally, P. Def. +10%, LUC +1, CHA +1.
 	-->
-	<skill id="13341" levels="3" name="Enchant Robe Set + 8 (R-grade)">
-		<table name="#maxHp"> 0 4890 4890 </table>
-		<table name="#debuffRes"> 0 0 11 </table>
-		<table name="#cancel"> 0 0 53.8 </table>
+	<skill id="13341" levels="5" name="R-grade Robe Set 10 Enchant">
+		<table name="#maxHp"> 0 4890 4890 4890 4890 </table>
+		<table name="#debuffRes"> 0 0 11 11 11 </table>
+		<table name="#wpnRes"> 0 0 10 10 10 </table>
+		<table name="#dmgRes"> 0 0 0 10 10 </table>
 		<table name="#name">Enchant Robe Set + 6 (R-grade);Enchant Robe Set + 7 (R-grade);Enchant Robe Set + 8 (R-grade)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
@@ -3890,9 +3911,15 @@
 			<add stat="regMp" val="8">
 				<player running="false" />
 			</add>
+			<subPercent stat="daggerWpnVuln" val="#wpnRes" />
+			<subPercent stat="dualDaggerWpnVuln" val="#wpnRes" />
+			<subPercent stat="bowWpnVuln" val="#wpnRes" />
+			<subPercent stat="crossbowWpnVuln" val="#wpnRes" />
+			<subPercent stat="fixedDmgVuln" val="#dmgRes" />
+			<subPercent stat="reflectVuln" val="#dmgRes" />
 			<add stat="maxHp" val="#maxHp" />
 			<addPercent stat="debuffRes" val="#debuffRes" />
-			<subPercent stat="cancel" val="#cancel" />
+			<addPercent stat="maxLoad" val="30" />
 		</for>
 	</skill>
 	<!-- STR + 1, INT + 1 -->
@@ -4711,27 +4738,27 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Stun/Poison/Bleed Resistance + 25%, Stun/Poison/Bleed Attack Rate + 25%, P./M. Critical Damage + 15%, P./M. Critical Rate + 20, and P./M. Accuracy + 4. Equipping two will only give the effect of one. -->
+	<!-- P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25% -->
 	<skill id="13441" levels="1" name="Queen Ant's Soul Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
+			<add stat="accCombat" val="4" />
+			<add stat="accMagic" val="4" />
+			<add stat="rCrit" val="20" />
+			<add stat="mCritRate" val="20" />
+			<addPercent stat="pCritDmg" val="15" />
+			<addPercent stat="mCritDmg" val="15" />
 			<addPercent stat="stunRes" val="25" />
 			<addPercent stat="poisonRes" val="25" />
 			<addPercent stat="bleedRes" val="25" />
-			<addPercent stat="pCritDmg" val="15" />
-			<addPercent stat="mCritDmg" val="15" />
-			<add stat="rCrit" val="20" />
-			<add stat="mCritRate" val="20" />
-			<add stat="accCombat" val="4" />
-			<add stat="accMagic" val="4" />
 			<addPercent stat="bleedProf" val="25" />
 			<addPercent stat="stunProf" val="25" />
 			<addPercent stat="poisonProf" val="25" />
 		</for>
 	</skill>
-	<!-- Sleep/Paralysis/Mental Attack Resistance + 25%, Sleep/Paralysis/Mental Attack Rate + 25%, Received Heal Amount + 10%, MP Consumption + 5%, and 4% Vampiric Rage effect. Equipping two will only give the effect of one. -->
+	<!-- Sleep/Paralysis/Mental Atk./Def. Success Rate +25%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4% -->
 	<skill id="13442" levels="1" name="Orfen's Soul Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5056,13 +5083,13 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Can equip 5 Talismans. CON + 1, MEN + 1. -->
+	<!-- Can equip 5 talismans. CON + 1, MEN + 1. -->
 	<skill id="13490" levels="1" name="Bracelet of Glory: Friendship">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Can equip 5 Talismans. DEX + 1, WIT + 1. -->
+	<!-- Can equip 5 talismans. DEX + 1, WIT + 1. -->
 	<skill id="13491" levels="1" name="Bracelet of Glory: Victory">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5361,35 +5388,37 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack success rate + 40%, Pull/Danger Zone Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
+	<!-- P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attribute Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10% -->
 	<skill id="13524" levels="1" name="Lindvior's Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
+			<addPercent stat="pCritDmg" val="10" />
+			<addPercent stat="mCritDmg" val="10" />
+			<add stat="runSpd" val="5" />
+			<baseAdd stat="DEX" val="3" />
+			<baseAdd stat="WIT" val="3" />
+			<add stat="windRes" val="30" />
+			<add stat="darkRes" val="30" />
+			<addPercent stat="petrifyRes" val="50" />
+			<addPercent stat="petrifyProf" val="50" />
 			<addPercent stat="knockDownRes" val="40" />
 			<addPercent stat="knockBackRes" val="40" />
 			<addPercent stat="knockDownProf" val="40" />
 			<addPercent stat="knockBackProf" val="40" />
 			<addPercent stat="pullRes" val="40" />
 			<addPercent stat="pullProf" val="40" />
-			<addPercent stat="pCritDmg" val="10" />
-			<addPercent stat="mCritDmg" val="10" />
-			<add stat="runSpd" val="5" />
-			<baseAdd stat="DEX" val="3" />
-			<baseAdd stat="WIT" val="3" />
-			<add stat="windRes" val="10" />
-			<add stat="darkRes" val="10" />
 			<add stat="reflectDebuffs" val="10" />
 		</for>
 	</skill>
-	<!-- Petrification Attack/Resistance + 50%, Knock Back/Knock Down Attack/Resistance + 40%, Pull Attack success rate + 40%, Pull/Danger Zone Resistance + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, and P./M. Abnormal State Reflect + 10%. Has a 10% chance of returning damage magic back to the attacking target. Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Equipping two will only give the effect of one. -->
+	<!-- P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attribute Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10% -->
 	<skill id="13525" levels="1" name="Blessed Lindvior's Earring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Removes Knock Back/ Knock Down effect. For 5 sec., has Knock Back/ Knock Down Resistance. -->
+	<!-- Immediately cancels out Knock Down/Knock Back effect when used; gives 5-second Knock Down/Knock Back Resistance. -->
 	<skill id="13526" levels="1" name="Blessed Lindvior's Earring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5526,7 +5555,7 @@
 			<add stat="reflectDam" val="5" />
 		</for>
 	</skill>
-	<!-- Stun/Hold/Mental Resistance + 25%, Stun/Hold/Mental Attack Rate + 25%, P./ M. Critical Damage + 15%, Atk./Casting Spd. + 5%, P. Accuracy/M. Accuracy + 4. Wearing two of the items will only give the effect of one. -->
+	<!-- P./M. Accuracy +4, P./M. Critical Damage +15%, Atk. Spd./Casting Spd. +5%, Stun/Hold/Mental Atk./Def. Success Rate +25% -->
 	<skill id="13539" levels="1" name="Baium's Soul Ring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5546,7 +5575,7 @@
 			<add stat="accMagic" val="4" />
 		</for>
 	</skill>
-	<!-- Poison/Bleed/Stun/Hold/Paralyze Resistance + 20%, Poison/Bleed/Stun/Hold/Paralyze Attack Rate + 20%, Damage Reflect + 5%, Speed + 5. Cooldown - 10%. -->
+	<!-- Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5% -->
 	<skill id="13540" levels="1" name="Frintezza's Soul Necklace">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5584,7 +5613,7 @@
 			<add stat="darkRes" val="30" />
 		</for>
 	</skill>
-	<!-- Removes Knock Back/ Knock Down effect. For 5 sec., has Knock Back/ Knock Down Resistance. -->
+	<!-- Immediately cancels out Knock Down/Knock Back effect when used; gives 5-second Knock Down/Knock Back Resistance. -->
 	<skill id="13542" levels="1" name="Lindvior's Earring">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5624,49 +5653,49 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 440, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 440, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13547" levels="1" name="Mysterious Shaper">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13548" levels="1" name="Mysterious Cutter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13549" levels="1" name="Mysterious Slasher">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13550" levels="1" name="Mysterious Avenger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13551" levels="1" name="Mysterious Fighter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. Can attack multiple enemies. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. Can attack multiple enemies. -->
 	<skill id="13552" levels="1" name="Mysterious Stormer">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 991, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 991, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13553" levels="1" name="Mysterious Thrower">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 893, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 893, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13554" levels="1" name="Mysterious Shooter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5690,19 +5719,19 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13558" levels="1" name="Mysterious Dualsword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13559" levels="1" name="Mysterious Dual Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13560" levels="1" name="Mysterious Dual Blunt">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5950,49 +5979,49 @@
 			<subPercent stat="reflectVuln" val="#reflectRes" />
 		</for>
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 440, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 440, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13570" levels="1" name="Hero's Weapon: Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13571" levels="1" name="Hero's Weapon: One-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13572" levels="1" name="Hero's Weapon: Two-handed Sword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13573" levels="1" name="Hero's Weapon: One-handed Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13574" levels="1" name="Hero's Weapon: Fist Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. Can attack multiple enemies. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. Can attack multiple enemies. -->
 	<skill id="13575" levels="1" name="Hero's Weapon: Spear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 991, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 991, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13576" levels="1" name="Hero's Weapon: Bow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 893, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 893, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13577" levels="1" name="Hero's Weapon: Crossbow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6016,19 +6045,19 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13581" levels="1" name="Hero's Weapon: Dualsword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 503, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13582" levels="1" name="Hero's Weapon: Dual Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PVP Damage + 15%. -->
+	<!-- Max HP + 25%, Max MP + 30%, Max CP + 50%, P. Atk. + 612, Atk. Spd. + 15%, and PvP Damage + 15%. -->
 	<skill id="13583" levels="1" name="Hero's Weapon: Dual Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6695,37 +6724,37 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13676" levels="1" name="Special Earth Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13677" levels="1" name="Special Water Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13678" levels="1" name="Special Fire Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13679" levels="1" name="Special Holy Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13680" levels="1" name="Special Dark Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max CP + 10%, nad P./M. Critical Damage + 5%. -->
+	<!-- Max CP +10%, P./M. Critical Damage +5%. -->
 	<skill id="13681" levels="1" name="Special Wind Resistance Ring">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6899,18 +6928,18 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<!-- 
-		Level 1: For 30 minutes, Damage Reflect Resistance + 3%.
-		Level 2: For 30 minutes, Damage Reflect Resistance + 4%.
-		Level 3: For 30 minutes, Damage Reflect Resistance + 5%.
-		Level 4: For 30 minutes, Damage Reflect Resistance + 8%.
-		Level 5: For 30 minutes, Damage Reflect Resistance + 9%.
-		Level 6: For 30 minutes, Damage Reflect Resistance + 10%.
-		Level 8: For 30 minutes, Damage Reflect Resistance + 13%.
-		Level 9: For 30 minutes, Damage Reflect Resistance + 15%.
-		Level 11: For 30 minutes, Damage Reflect Resistance + 17%.
-		Level 12: For 30 minutes, Damage Reflect Resistance + 20%.
+		Level 1: For 30 minutes, Damage Reflect + 3%.
+		Level 2: For 30 minutes, Damage Reflect + 4%.
+		Level 3: For 30 minutes, Damage Reflect + 5%.
+		Level 4: For 30 minutes, Damage Reflect + 8%.
+		Level 5: For 30 minutes, Damage Reflect + 9%.
+		Level 6: For 30 minutes, Damage Reflect + 10%.
+		Level 8: For 30 minutes, Damage Reflect + 13%.
+		Level 9: For 30 minutes, Damage Reflect + 15%.
+		Level 11: For 30 minutes, Damage Reflect + 17%.
+		Level 12: For 30 minutes, Damage Reflect + 20%.
 	-->
-	<skill id="13700" levels="12" name="Item Skill: Damage Reflect Resistance">
+	<skill id="13700" levels="12" name="Item Skill: Damage Reflect">
 		<table name="#mpConsume"> 50 50 50 60 60 60 60 60 60 60 60 60 </table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -9176,33 +9205,36 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 5%.
-		Level 2: Casting Spd. + 7%.
-		Level 3: Casting Spd. + 10%.
-		Level 4: Casting Spd. + 12%.
-		Level 5: Casting Spd. + 15%.
-		Level 6: Casting Spd. + 15%, M. Critical Damage + 3%.
-		Level 7: Casting Spd. + 15%, M. Critical Damage + 6%.
-		Level 8: Casting Spd. + 15%, M. Critical Damage + 10%.
-		Level 9: Casting Spd. + 15%, M. Critical Damage + 10%, Max HP/MP + 5%.
-		Level 10: Casting Spd. + 15%, M. Critical Damage + 10%, Max HP/MP + 10%.
-		Level 11: Casting Spd. + 15%, M. Critical Damage + 10%, Max HP/MP + 15%.
-		Level 12: Casting Spd. + 15%, M. Critical Damage + 10%, Max HP/MP + 15%, M. Atk. + 7%.
+		Level 1: Atk. Spd. + 5%, Casting Spd. + 5%.
+		Level 2: Atk. Spd. + 7%, Casting Spd. + 7%.
+		Level 3: Atk. Spd. + 10%, Casting Spd. + 10%.
+		Level 4: Atk. Spd. + 12%, Casting Spd. + 12%.
+		Level 5: Atk. Spd. + 15%, Casting Spd. + 15%.
+		Level 6: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 3%, M. Critical Damage + 3%.
+		Level 7: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 6%, M. Critical Damage + 6%.
+		Level 8: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%.
+		Level 9: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 5%.
+		Level 10: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 10%.
+		Level 11: Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 15%.
+		Level 12: P. Atk. + 7%, M. Atk. + 7%, Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Damage + 10%, M. Critical Damage + 10%, Max HP/MP + 15%.
 	-->
 	<skill id="13846" levels="12" name="Shadow Retributer">
 		<table name="#atkSpd"> 5 7 10 12 15 15 15 15 15 15 15 15 </table>
-		<table name="#mCritRate"> 0 0 0 0 0 3 6 10 10 10 10 10 </table>
+		<table name="#critDmg"> 0 0 0 0 0 3 6 10 10 10 10 10 </table>
 		<table name="#maxHpMp"> 0 0 0 0 0 0 0 0 5 10 15 15 </table>
-		<table name="#mAtk"> 0 0 0 0 0 0 0 0 0 0 0 7 </table>
+		<table name="#atk"> 0 0 0 0 0 0 0 0 0 0 0 7 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
+			<addPercent stat="pAtkSpd" val="#atkSpd" />
 			<addPercent stat="mAtkSpd" val="#atkSpd" />
-			<addPercent stat="mCritRate" val="#mCritRate" />
+			<addPercent stat="pCritDmg" val="#critDmg" />
+			<addPercent stat="mCritDmg" val="#critDmg" />
 			<addPercent stat="maxHp" val="#maxHpMp" />
 			<addPercent stat="maxMp" val="#maxHpMp" />
-			<addPercent stat="mAtk" val="#mAtk" />
+			<addPercent stat="pAtk" val="#atk" />
+			<addPercent stat="mAtk" val="#atk" />
 		</for>
 	</skill>
 	<!-- NPC Damage + 10%. -->
@@ -9252,7 +9284,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Teleport to the Talking Island Village. -->
+	<!-- Teleports to the Talking Island Village. -->
 	<skill id="13853" levels="1" name="Agathion Teleport: Talking Island Village">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -9260,7 +9292,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
-	<!-- Teleport to the Town of Goddard. -->
+	<!-- Teleports to the Town of Goddard. -->
 	<skill id="13854" levels="1" name="Agathion Teleport: Town of Goddard">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -9268,7 +9300,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
-	<!-- Teleport to the Town of Schuttgart. -->
+	<!-- Teleports to the Town of Schuttgart. -->
 	<skill id="13855" levels="1" name="Agathion Teleport: Town of Schuttgart">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -9277,21 +9309,21 @@
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<!-- 
-		Level 1: P. Atk. + 2%
-		Level 2: P. Atk. + 3%
-		Level 3: P. Atk. + 4%, PvP Damage + 5%
-		Level 4: P. Atk. + 5%, PvP Damage + 5%
-		Level 5: P. Atk. + 6%, PvP Damage + 5%
-		Level 6: P. Atk. + 7%, PvP Damage + 5%
-		Level 7: P. Atk. + 8%, PvP Damage + 5%
-		Level 8: P. Atk. + 9%, PvP Damage + 5%
-		Level 9: P. Atk. + 10%, PvP Damage + 5%
-		Level 10: P. Atk. + 11%, PvP Damage + 5%
-		Level 11: P. Atk. + 12%, PvP Damage + 5%
-		Level 12: P. Atk. + 13%, PvP Damage + 5%
-		Level 13: P. Atk. + 14%, PvP Damage + 5%
-		Level 14: P. Atk. + 15%, PvP Damage + 5%
-		Level 15: P. Atk. + 16%, PvP Damage + 5%
+		Level 1: P. Atk +2%
+		Level 2: P. Atk +3%
+		Level 3: P. Atk. +4%, PvP Damage +5%
+		Level 4: P. Atk. +5%, PvP Damage +5%
+		Level 5: P. Atk. +6%, PvP Damage +5%
+		Level 6: P. Atk. +7%, PvP Damage +5%
+		Level 7: P. Atk. +8%, PvP Damage +5%
+		Level 8: P. Atk. +9%, PvP Damage +5%
+		Level 9: P. Atk. +10%, PvP Damage +5%
+		Level 10: P. Atk. +11%, PvP Damage +5%
+		Level 11: P. Atk. +12%, PvP Damage +5%
+		Level 12: P. Atk. +13%, PvP Damage +5%
+		Level 13: P. Atk. +14%, PvP Damage +5%
+		Level 14: P. Atk. +15%, PvP Damage +5%
+		Level 15: P. Atk. +16%, PvP Damage +5%
 	-->
 	<skill id="13856" levels="15" name="Might">
 		<set name="target" val="TARGET_NONE" />
@@ -9299,21 +9331,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 11%
-		Level 2: Atk. Spd. + 12%
-		Level 3: Atk. Spd. + 13%, PvP Damage + 5%
-		Level 4: Atk. Spd. + 14%, PvP Damage + 5%
-		Level 5: Atk. Spd. + 15%, PvP Damage + 5%
-		Level 6: Atk. Spd. + 16%, PvP Damage + 5%
-		Level 7: Atk. Spd. + 17%, PvP Damage + 5%
-		Level 8: Atk. Spd. + 18%, PvP Damage + 5%
-		Level 9: Atk. Spd. + 19%, PvP Damage + 5%
-		Level 10: Atk. Spd. + 20%, PvP Damage + 5%
-		Level 11: Atk. Spd. + 21%, PvP Damage + 5%
-		Level 12: Atk. Spd. + 22%, PvP Damage + 5%
-		Level 13: Atk. Spd. + 23%, PvP Damage + 5%
-		Level 14: Atk. Spd. + 24%, PvP Damage + 5%
-		Level 15: Atk. Spd. + 25%, PvP Damage + 5%
+		Level 1: Atk. Spd. +11%
+		Level 2: Atk. Spd. +12%
+		Level 3: Atk. Spd. +13%, PvP Damage +5%
+		Level 4: Atk. Spd. +14%, PvP Damage +5%
+		Level 5: Atk. Spd. +15%, PvP Damage +5%
+		Level 6: Atk. Spd. +16%, PvP Damage +5%
+		Level 7: Atk. Spd. +17%, PvP Damage +5%
+		Level 8: Atk. Spd. +18%, PvP Damage +5%
+		Level 9: Atk. Spd. +19%, PvP Damage +5%
+		Level 10: Atk. Spd. +20%, PvP Damage +5%
+		Level 11: Atk. Spd. +21%, PvP Damage +5%
+		Level 12: Atk. Spd. +22%, PvP Damage +5%
+		Level 13: Atk. Spd. +23%, PvP Damage +5%
+		Level 14: Atk. Spd. +24%, PvP Damage +5%
+		Level 15: Atk. Spd. +25%, PvP Damage +5%
 	-->
 	<skill id="13857" levels="15" name="Fury">
 		<set name="target" val="TARGET_NONE" />
@@ -9321,21 +9353,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 58
-		Level 2: P. Critical Rate + 64
-		Level 3: P. Critical Rate + 70, PvP Damage + 5%
-		Level 4: P. Critical Rate + 76, PvP Damage + 5%
-		Level 5: P. Critical Rate + 82, PvP Damage + 5%
-		Level 6: P. Critical Rate + 88, PvP Damage + 5%
-		Level 7: P. Critical Rate + 94, PvP Damage + 5%
-		Level 8: P. Critical Rate + 100, PvP Damage + 5%
-		Level 9: P. Critical Rate + 106, PvP Damage + 5%
-		Level 10: P. Critical Rate + 112, PvP Damage + 5%
-		Level 11: P. Critical Rate + 118, PvP Damage + 5%
-		Level 12: P. Critical Rate + 124, PvP Damage + 5%
-		Level 13: P. Critical Rate + 130, PvP Damage + 5%
-		Level 14: P. Critical Rate + 136, PvP Damage + 5%
-		Level 15: P. Critical Rate + 142, PvP Damage + 5%
+		Level 1: P. Critical Rate +58
+		Level 2: P. Critical Rate +64
+		Level 3: P. Critical Rate +70, PvP Damage +5%
+		Level 4: P. Critical Rate +76, PvP Damage +5%
+		Level 5: P. Critical Rate +82, PvP Damage +5%
+		Level 6: P. Critical Rate +88, PvP Damage +5%
+		Level 7: P. Critical Rate +94, PvP Damage +5%
+		Level 8: P. Critical Rate +100, PvP Damage +5%
+		Level 9: P. Critical Rate +106, PvP Damage +5%
+		Level 10: P. Critical Rate +112, PvP Damage +5%
+		Level 11: P. Critical Rate +118, PvP Damage +5%
+		Level 12: P. Critical Rate +124, PvP Damage +5%
+		Level 13: P. Critical Rate +130, PvP Damage +5%
+		Level 14: P. Critical Rate +136, PvP Damage +5%
+		Level 15: P. Critical Rate +142, PvP Damage +5%
 	-->
 	<skill id="13858" levels="15" name="Focus">
 		<set name="target" val="TARGET_NONE" />
@@ -9343,21 +9375,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Damage + 3%
-		Level 2: P. Critical Damage + 4%
-		Level 3: P. Critical Damage + 5%, PvP Damage + 5%
-		Level 4: P. Critical Damage + 6%, PvP Damage + 5%
-		Level 5: P. Critical Damage + 7%, PvP Damage + 5%
-		Level 6: P. Critical Damage + 8%, PvP Damage + 5%
-		Level 7: P. Critical Damage + 9%, PvP Damage + 5%
-		Level 8: P. Critical Damage + 10%, PvP Damage + 5%
-		Level 9: P. Critical Damage + 11%, PvP Damage + 5%
-		Level 10: P. Critical Damage + 12%, PvP Damage + 5%
-		Level 11: P. Critical Damage + 13%, PvP Damage + 5%
-		Level 12: P. Critical Damage + 14%, PvP Damage + 5%
-		Level 13: P. Critical Damage + 15%, PvP Damage + 5%
-		Level 14: P. Critical Damage + 16%, PvP Damage + 5%
-		Level 15: P. Critical Damage + 17%, PvP Damage + 5%
+		Level 1: P. Critical Damage +3%
+		Level 2: P. Critical Damage +4%
+		Level 3: P. Critical Damage +5%, PvP Damage +5%
+		Level 4: P. Critical Damage +6%, PvP Damage +5%
+		Level 5: P. Critical Damage +7%, PvP Damage +5%
+		Level 6: P. Critical Damage +8%, PvP Damage +5%
+		Level 7: P. Critical Damage +9%, PvP Damage +5%
+		Level 8: P. Critical Damage +10%, PvP Damage +5%
+		Level 9: P. Critical Damage +11%, PvP Damage +5%
+		Level 10: P. Critical Damage +12%, PvP Damage +5%
+		Level 11: P. Critical Damage +13%, PvP Damage +5%
+		Level 12: P. Critical Damage +14%, PvP Damage +5%
+		Level 13: P. Critical Damage +15%, PvP Damage +5%
+		Level 14: P. Critical Damage +16%, PvP Damage +5%
+		Level 15: P. Critical Damage +17%, PvP Damage +5%
 	-->
 	<skill id="13859" levels="15" name="Death">
 		<set name="target" val="TARGET_NONE" />
@@ -9367,19 +9399,19 @@
 	<!-- 
 		Level 1: P. Skill Critical Rate + 6%
 		Level 2: P. Skill Critical Rate + 7%
-		Level 3: P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 4: P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 5: P. Skill Critical Rate + 10%, PvP Damage + 5%
-		Level 6: P. Skill Critical Rate + 11%, PvP Damage + 5%
-		Level 7: P. Skill Critical Rate + 12%, PvP Damage + 5%
-		Level 8: P. Skill Critical Rate + 13%, PvP Damage + 5%
-		Level 9: P. Skill Critical Rate + 14%, PvP Damage + 5%
-		Level 10: P. Skill Critical Rate + 15%, PvP Damage + 5%
-		Level 11: P. Skill Critical Rate + 16%, PvP Damage + 5%
-		Level 12: P. Skill Critical Rate + 17%, PvP Damage + 5%
-		Level 13: P. Skill Critical Rate + 18%, PvP Damage + 5%
-		Level 14: P. Skill Critical Rate + 19%, PvP Damage + 5%
-		Level 15: P. Skill Critical Rate + 20%, PvP Damage + 5%
+		Level 3: P. Skill Critical Rate + 8%, PvP Damage +5%
+		Level 4: P. Skill Critical Rate + 9%, PvP Damage +5%
+		Level 5: P. Skill Critical Rate + 10%, PvP Damage +5%
+		Level 6: P. Skill Critical Rate + 11%, PvP Damage +5%
+		Level 7: P. Skill Critical Rate + 12%, PvP Damage +5%
+		Level 8: P. Skill Critical Rate + 13%, PvP Damage +5%
+		Level 9: P. Skill Critical Rate + 14%, PvP Damage +5%
+		Level 10: P. Skill Critical Rate + 15%, PvP Damage +5%
+		Level 11: P. Skill Critical Rate + 16%, PvP Damage +5%
+		Level 12: P. Skill Critical Rate + 17%, PvP Damage +5%
+		Level 13: P. Skill Critical Rate + 18%, PvP Damage +5%
+		Level 14: P. Skill Critical Rate + 19%, PvP Damage +5%
+		Level 15: P. Skill Critical Rate + 20%, PvP Damage +5%
 	-->
 	<skill id="13860" levels="15" name="Hunter">
 		<set name="target" val="TARGET_NONE" />
@@ -9387,21 +9419,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Skill Critical Damage + 6%
-		Level 2: P. Skill Critical Damage + 7%
-		Level 3: P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 4: P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 5: P. Skill Critical Damage + 10%, PvP Damage + 5%
-		Level 6: P. Skill Critical Damage + 11%, PvP Damage + 5%
-		Level 7: P. Skill Critical Damage + 12%, PvP Damage + 5%
-		Level 8: P. Skill Critical Damage + 13%, PvP Damage + 5%
-		Level 9: P. Skill Critical Damage + 14%, PvP Damage + 5%
-		Level 10: P. Skill Critical Damage + 15%, PvP Damage + 5%
-		Level 11: P. Skill Critical Damage + 16%, PvP Damage + 5%
-		Level 12: P. Skill Critical Damage + 17%, PvP Damage + 5%
-		Level 13: P. Skill Critical Damage + 18%, PvP Damage + 5%
-		Level 14: P. Skill Critical Damage + 19%, PvP Damage + 5%
-		Level 15: P. Skill Critical Damage + 20%, PvP Damage + 5%
+		Level 1: P. Skill Critical Damage +6%
+		Level 2: P. Skill Critical Damage +7%
+		Level 3: P. Skill Critical Damage +8%, PvP Damage +5%
+		Level 4: P. Skill Critical Damage +9%, PvP Damage +5%
+		Level 5: P. Skill Critical Damage +10%, PvP Damage +5%
+		Level 6: P. Skill Critical Damage +11%, PvP Damage +5%
+		Level 7: P. Skill Critical Damage +12%, PvP Damage +5%
+		Level 8: P. Skill Critical Damage +13%, PvP Damage +5%
+		Level 9: P. Skill Critical Damage +14%, PvP Damage +5%
+		Level 10: P. Skill Critical Damage +15%, PvP Damage +5%
+		Level 11: P. Skill Critical Damage +16%, PvP Damage +5%
+		Level 12: P. Skill Critical Damage +17%, PvP Damage +5%
+		Level 13: P. Skill Critical Damage +18%, PvP Damage +5%
+		Level 14: P. Skill Critical Damage +19%, PvP Damage +5%
+		Level 15: P. Skill Critical Damage +20%, PvP Damage +5%
 	-->
 	<skill id="13861" levels="15" name="Fire">
 		<set name="target" val="TARGET_NONE" />
@@ -9409,21 +9441,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 21%
-		Level 2: Max HP + 22%
-		Level 3: Max HP + 23%, PvP Damage + 5%
-		Level 4: Max HP + 24%, PvP Damage + 5%
-		Level 5: Max HP + 25%, PvP Damage + 5%
-		Level 6: Max HP + 26%, PvP Damage + 5%
-		Level 7: Max HP + 27%, PvP Damage + 5%
-		Level 8: Max HP + 28%, PvP Damage + 5%
-		Level 9: Max HP + 29%, PvP Damage + 5%
-		Level 10: Max HP + 30%, PvP Damage + 5%
-		Level 11: Max HP + 31%, PvP Damage + 5%
-		Level 12: Max HP + 32%, PvP Damage + 5%
-		Level 13: Max HP + 33%, PvP Damage + 5%
-		Level 14: Max HP + 34%, PvP Damage + 5%
-		Level 15: Max HP + 35%, PvP Damage + 5%
+		Level 1: Max HP +21%
+		Level 2: Max HP +22%
+		Level 3: Max HP +23%, PvP Damage +5%
+		Level 4: Max HP +24%, PvP Damage +5%
+		Level 5: Max HP +25%, PvP Damage +5%
+		Level 6: Max HP +26%, PvP Damage +5%
+		Level 7: Max HP +27%, PvP Damage +5%
+		Level 8: Max HP +28%, PvP Damage +5%
+		Level 9: Max HP +29%, PvP Damage +5%
+		Level 10: Max HP +30%, PvP Damage +5%
+		Level 11: Max HP +31%, PvP Damage +5%
+		Level 12: Max HP +32%, PvP Damage +5%
+		Level 13: Max HP +33%, PvP Damage +5%
+		Level 14: Max HP +34%, PvP Damage +5%
+		Level 15: Max HP +35%, PvP Damage +5%
 	-->
 	<skill id="13862" levels="15" name="Body">
 		<set name="target" val="TARGET_NONE" />
@@ -9431,21 +9463,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Atk. + 2%
-		Level 2: M. Atk. + 3%
-		Level 3: M. Atk. + 4%, PvP Damage + 5%
-		Level 4: M. Atk. + 5%, PvP Damage + 5%
-		Level 5: M. Atk. + 6%, PvP Damage + 5%
-		Level 6: M. Atk. + 7%, PvP Damage + 5%
-		Level 7: M. Atk. + 8%, PvP Damage + 5%
-		Level 8: M. Atk. + 9%, PvP Damage + 5%
-		Level 9: M. Atk. + 10%, PvP Damage + 5%
-		Level 10: M. Atk. + 11%, PvP Damage + 5%
-		Level 11: M. Atk. + 12%, PvP Damage + 5%
-		Level 12: M. Atk. + 13%, PvP Damage + 5%
-		Level 13: M. Atk. + 14%, PvP Damage + 5%
-		Level 14: M. Atk. + 15%, PvP Damage + 5%
-		Level 15: M. Atk. + 16%, PvP Damage + 5%
+		Level 1: Magic Damage +2%
+		Level 2: Magic Damage +3%
+		Level 3: Magic Damage +4%, PvP Damage +5%
+		Level 4: Magic Damage +5%, PvP Damage +5%
+		Level 5: Magic Damage +6%, PvP Damage +5%
+		Level 6: Magic Damage +7%, PvP Damage +5%
+		Level 7: Magic Damage +8%, PvP Damage +5%
+		Level 8: Magic Damage +9%, PvP Damage +5%
+		Level 9: Magic Damage +10%, PvP Damage +5%
+		Level 10: Magic Damage +11%, PvP Damage +5%
+		Level 11: Magic Damage +12%, PvP Damage +5%
+		Level 12: Magic Damage +13%, PvP Damage +5%
+		Level 13: Magic Damage +14%, PvP Damage +5%
+		Level 14: Magic Damage +15%, PvP Damage +5%
+		Level 15: Magic Damage +16%, PvP Damage +5%
 	-->
 	<skill id="13863" levels="15" name="Empower">
 		<set name="target" val="TARGET_NONE" />
@@ -9453,21 +9485,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 11%
-		Level 2: Casting Spd. + 12%
-		Level 3: Casting Spd. + 13%, PvP Damage + 5%
-		Level 4: Casting Spd. + 14%, PvP Damage + 5%
-		Level 5: Casting Spd. + 15%, PvP Damage + 5%
-		Level 6: Casting Spd. + 16%, PvP Damage + 5%
-		Level 7: Casting Spd. + 17%, PvP Damage + 5%
-		Level 8: Casting Spd. + 18%, PvP Damage + 5%
-		Level 9: Casting Spd. + 19%, PvP Damage + 5%
-		Level 10: Casting Spd. + 20%, PvP Damage + 5%
-		Level 11: Casting Spd. + 21%, PvP Damage + 5%
-		Level 12: Casting Spd. + 22%, PvP Damage + 5%
-		Level 13: Casting Spd. + 23%, PvP Damage + 5%
-		Level 14: Casting Spd. + 24%, PvP Damage + 5%
-		Level 15: Casting Spd. + 25%, PvP Damage + 5%
+		Level 1: Casting Spd. +11%
+		Level 2: Casting Spd. +12%
+		Level 3: Casting Spd. +13%, PvP Damage +5%
+		Level 4: Casting Spd. +14%, PvP Damage +5%
+		Level 5: Casting Spd. +15%, PvP Damage +5%
+		Level 6: Casting Spd. +16%, PvP Damage +5%
+		Level 7: Casting Spd. +17%, PvP Damage +5%
+		Level 8: Casting Spd. +18%, PvP Damage +5%
+		Level 9: Casting Spd. +19%, PvP Damage +5%
+		Level 10: Casting Spd. +20%, PvP Damage +5%
+		Level 11: Casting Spd. +21%, PvP Damage +5%
+		Level 12: Casting Spd. +22%, PvP Damage +5%
+		Level 13: Casting Spd. +23%, PvP Damage +5%
+		Level 14: Casting Spd. +24%, PvP Damage +5%
+		Level 15: Casting Spd. +25%, PvP Damage +5%
 	-->
 	<skill id="13864" levels="15" name="Acumen">
 		<set name="target" val="TARGET_NONE" />
@@ -9475,21 +9507,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Critical Rate + 21%
-		Level 2: M. Critical Rate + 22%
-		Level 3: M. Critical Rate + 23%, PvP Damage + 5%
-		Level 4: M. Critical Rate + 24%, PvP Damage + 5%
-		Level 5: M. Critical Rate + 25%, PvP Damage + 5%
-		Level 6: M. Critical Rate + 26%, PvP Damage + 5%
-		Level 7: M. Critical Rate + 27%, PvP Damage + 5%
-		Level 8: M. Critical Rate + 28%, PvP Damage + 5%
-		Level 9: M. Critical Rate + 29%, PvP Damage + 5%
-		Level 10: M. Critical Rate + 30%, PvP Damage + 5%
-		Level 11: M. Critical Rate + 31%, PvP Damage + 5%
-		Level 12: M. Critical Rate + 32%, PvP Damage + 5%
-		Level 13: M. Critical Rate + 33%, PvP Damage + 5%
-		Level 14: M. Critical Rate + 34%, PvP Damage + 5%
-		Level 15: M. Critical Rate + 35%, PvP Damage + 5%
+		Level 1: M. Critical Rate +21%
+		Level 2: M. Critical Rate +22%
+		Level 3: M. Critical Rate +23%, PvP Damage +5%
+		Level 4: M. Critical Rate +24%, PvP Damage +5%
+		Level 5: M. Critical Rate +25%, PvP Damage +5%
+		Level 6: M. Critical Rate +26%, PvP Damage +5%
+		Level 7: M. Critical Rate +27%, PvP Damage +5%
+		Level 8: M. Critical Rate +28%, PvP Damage +5%
+		Level 9: M. Critical Rate +29%, PvP Damage +5%
+		Level 10: M. Critical Rate +30%, PvP Damage +5%
+		Level 11: M. Critical Rate +31%, PvP Damage +5%
+		Level 12: M. Critical Rate +32%, PvP Damage +5%
+		Level 13: M. Critical Rate +33%, PvP Damage +5%
+		Level 14: M. Critical Rate +34%, PvP Damage +5%
+		Level 15: M. Critical Rate +35%, PvP Damage +5%
 	-->
 	<skill id="13865" levels="15" name="Wild">
 		<set name="target" val="TARGET_NONE" />
@@ -9497,21 +9529,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Critical Damage + 3%
-		Level 2: M. Critical Damage + 4%
-		Level 3: M. Critical Damage + 5%, PvP Damage + 5%
-		Level 4: M. Critical Damage + 6%, PvP Damage + 5%
-		Level 5: M. Critical Damage + 7%, PvP Damage + 5%
-		Level 6: M. Critical Damage + 8%, PvP Damage + 5%
-		Level 7: M. Critical Damage + 9%, PvP Damage + 5%
-		Level 8: M. Critical Damage + 10%, PvP Damage + 5%
-		Level 9: M. Critical Damage + 11%, PvP Damage + 5%
-		Level 10: M. Critical Damage + 12%, PvP Damage + 5%
-		Level 11: M. Critical Damage + 13%, PvP Damage + 5%
-		Level 12: M. Critical Damage + 14%, PvP Damage + 5%
-		Level 13: M. Critical Damage + 15%, PvP Damage + 5%
-		Level 14: M. Critical Damage + 16%, PvP Damage + 5%
-		Level 15: M. Critical Damage + 17%, PvP Damage + 5%
+		Level 1: M. Critical Damage +3%
+		Level 2: M. Critical Damage +4%
+		Level 3: M. Critical Damage +5%, PvP Damage +5%
+		Level 4: M. Critical Damage +6%, PvP Damage +5%
+		Level 5: M. Critical Damage +7%, PvP Damage +5%
+		Level 6: M. Critical Damage +8%, PvP Damage +5%
+		Level 7: M. Critical Damage +9%, PvP Damage +5%
+		Level 8: M. Critical Damage +10%, PvP Damage +5%
+		Level 9: M. Critical Damage +11%, PvP Damage +5%
+		Level 10: M. Critical Damage +12%, PvP Damage +5%
+		Level 11: M. Critical Damage +13%, PvP Damage +5%
+		Level 12: M. Critical Damage +14%, PvP Damage +5%
+		Level 13: M. Critical Damage +15%, PvP Damage +5%
+		Level 14: M. Critical Damage +16%, PvP Damage +5%
+		Level 15: M. Critical Damage +17%, PvP Damage +5%
 	-->
 	<skill id="13866" levels="15" name="Mystic">
 		<set name="target" val="TARGET_NONE" />
@@ -9519,21 +9551,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 26%
-		Level 2: Max MP + 27%
-		Level 3: Max MP + 28%, PvP Damage + 5%
-		Level 4: Max MP + 29%, PvP Damage + 5%
-		Level 5: Max MP + 30%, PvP Damage + 5%
-		Level 6: Max MP + 31%, PvP Damage + 5%
-		Level 7: Max MP + 32%, PvP Damage + 5%
-		Level 8: Max MP + 33%, PvP Damage + 5%
-		Level 9: Max MP + 34%, PvP Damage + 5%
-		Level 10: Max MP + 35%, PvP Damage + 5%
-		Level 11: Max MP + 36%, PvP Damage + 5%
-		Level 12: Max MP + 37%, PvP Damage + 5%
-		Level 13: Max MP + 38%, PvP Damage + 5%
-		Level 14: Max MP + 39%, PvP Damage + 5%
-		Level 15: Max MP + 40%, PvP Damage + 5%
+		Level 1: Max MP +26%
+		Level 2: Max MP +27%
+		Level 3: Max MP +28%, PvP Damage +5%
+		Level 4: Max MP +29%, PvP Damage +5%
+		Level 5: Max MP +30%, PvP Damage +5%
+		Level 6: Max MP +31%, PvP Damage +5%
+		Level 7: Max MP +32%, PvP Damage +5%
+		Level 8: Max MP +33%, PvP Damage +5%
+		Level 9: Max MP +34%, PvP Damage +5%
+		Level 10: Max MP +35%, PvP Damage +5%
+		Level 11: Max MP +36%, PvP Damage +5%
+		Level 12: Max MP +37%, PvP Damage +5%
+		Level 13: Max MP +38%, PvP Damage +5%
+		Level 14: Max MP +39%, PvP Damage +5%
+		Level 15: Max MP +40%, PvP Damage +5%
 	-->
 	<skill id="13867" levels="15" name="Soul">
 		<set name="target" val="TARGET_NONE" />
@@ -9541,21 +9573,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 5%, P. Critical Rate + 26
-		Level 2: Atk. Spd. + 5%, P. Critical Rate + 29
-		Level 3: Atk. Spd. + 6%, P. Critical Rate + 32, PvP Damage + 5%
-		Level 4: Atk. Spd. + 6%, P. Critical Rate + 34, PvP Damage + 5%
-		Level 5: Atk. Spd. + 7%, P. Critical Rate + 37, PvP Damage + 5%
-		Level 6: Atk. Spd. + 7%, P. Critical Rate + 40, PvP Damage + 5%
-		Level 7: Atk. Spd. + 8%, P. Critical Rate + 42, PvP Damage + 5%
-		Level 8: Atk. Spd. + 8%, P. Critical Rate + 45, PvP Damage + 5%
-		Level 9: Atk. Spd. + 9%, P. Critical Rate + 48, PvP Damage + 5%
-		Level 10: Atk. Spd. + 9%, P. Critical Rate + 50, PvP Damage + 5%
-		Level 11: Atk. Spd. + 10%, P. Critical Rate + 53, PvP Damage + 5%
-		Level 12: Atk. Spd. + 10%, P. Critical Rate + 56, PvP Damage + 5%
-		Level 13: Atk. Spd. + 11%, P. Critical Rate + 59, PvP Damage + 5%
-		Level 14: Atk. Spd. + 11%, P. Critical Rate + 61, PvP Damage + 5%
-		Level 15: Atk. Spd. + 12%, P. Critical Rate + 64, PvP Damage + 5%
+		Level 1: Atk. Spd. +5%, P. Critical Rate +26
+		Level 2: Atk. Spd. +5%, P. Critical Rate +29
+		Level 3: Atk. Spd. +6%, P. Critical Rate +32, PvP Damage +5%
+		Level 4: Atk. Spd. +6%, P. Critical Rate +34, PvP Damage +5%
+		Level 5: Atk. Spd. +7%, P. Critical Rate +37, PvP Damage +5%
+		Level 6: Atk. Spd. +7%, P. Critical Rate +40, PvP Damage +5%
+		Level 7: Atk. Spd. +8%, P. Critical Rate +42, PvP Damage +5%
+		Level 8: Atk. Spd. +8%, P. Critical Rate +45, PvP Damage +5%
+		Level 9: Atk. Spd. +9%, P. Critical Rate +48, PvP Damage +5%
+		Level 10: Atk. Spd. +9%, P. Critical Rate +50, PvP Damage +5%
+		Level 11: Atk. Spd. +10%, P. Critical Rate +53, PvP Damage +5%
+		Level 12: Atk. Spd. +10%, P. Critical Rate +56, PvP Damage +5%
+		Level 13: Atk. Spd. +11%, P. Critical Rate +59, PvP Damage +5%
+		Level 14: Atk. Spd. +11%, P. Critical Rate +61, PvP Damage +5%
+		Level 15: Atk. Spd. +12%, P. Critical Rate +64, PvP Damage +5%
 	-->
 	<skill id="13868" levels="15" name="Speed Focus">
 		<set name="target" val="TARGET_NONE" />
@@ -9563,21 +9595,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 5%, P. Critical Damage + 1%
-		Level 2: Atk. Spd. + 5%, P. Critical Damage + 2%
-		Level 3: Atk. Spd. + 6%, P. Critical Damage + 2%, PvP Damage + 5%
-		Level 4: Atk. Spd. + 6%, P. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: Atk. Spd. + 7%, P. Critical Damage + 3%, PvP Damage + 5%
-		Level 6: Atk. Spd. + 7%, P. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: Atk. Spd. + 8%, P. Critical Damage + 4%, PvP Damage + 5%
-		Level 8: Atk. Spd. + 8%, P. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: Atk. Spd. + 9%, P. Critical Damage + 5%, PvP Damage + 5%
-		Level 10: Atk. Spd. + 9%, P. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: Atk. Spd. + 10%, P. Critical Damage + 6%, PvP Damage + 5%
-		Level 12: Atk. Spd. + 10%, P. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: Atk. Spd. + 11%, P. Critical Damage + 7%, PvP Damage + 5%
-		Level 14: Atk. Spd. + 11%, P. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: Atk. Spd. + 12%, P. Critical Damage + 8%, PvP Damage + 5%
+		Level 1: Atk. Spd. +5%, P. Critical Damage +1%
+		Level 2: Atk. Spd. +5%, P. Critical Damage +2%
+		Level 3: Atk. Spd. +6%, P. Critical Damage +2%, PvP Damage +5%
+		Level 4: Atk. Spd. +6%, P. Critical Damage +3%, PvP Damage +5%
+		Level 5: Atk. Spd. +7%, P. Critical Damage +3%, PvP Damage +5%
+		Level 6: Atk. Spd. +7%, P. Critical Damage +4%, PvP Damage +5%
+		Level 7: Atk. Spd. +8%, P. Critical Damage +4%, PvP Damage +5%
+		Level 8: Atk. Spd. +8%, P. Critical Damage +5%, PvP Damage +5%
+		Level 9: Atk. Spd. +9%, P. Critical Damage +5%, PvP Damage +5%
+		Level 10: Atk. Spd. +9%, P. Critical Damage +6%, PvP Damage +5%
+		Level 11: Atk. Spd. +10%, P. Critical Damage +6%, PvP Damage +5%
+		Level 12: Atk. Spd. +10%, P. Critical Damage +7%, PvP Damage +5%
+		Level 13: Atk. Spd. +11%, P. Critical Damage +7%, PvP Damage +5%
+		Level 14: Atk. Spd. +11%, P. Critical Damage +8%, PvP Damage +5%
+		Level 15: Atk. Spd. +12%, P. Critical Damage +8%, PvP Damage +5%
 	-->
 	<skill id="13869" levels="15" name="Speed Death">
 		<set name="target" val="TARGET_NONE" />
@@ -9585,21 +9617,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 5%, P. Skill Critical Rate + 3%
-		Level 2: Atk. Spd. + 5%, P. Skill Critical Rate + 4%
-		Level 3: Atk. Spd. + 6%, P. Skill Critical Rate + 4%, PvP Damage + 5%
-		Level 4: Atk. Spd. + 6%, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 5: Atk. Spd. + 7%, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 6: Atk. Spd. + 7%, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 7: Atk. Spd. + 8%, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 8: Atk. Spd. + 8%, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 9: Atk. Spd. + 9%, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 10: Atk. Spd. + 9%, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 11: Atk. Spd. + 10%, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 12: Atk. Spd. + 10%, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 13: Atk. Spd. + 11%, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 14: Atk. Spd. + 11%, P. Skill Critical Rate + 10%, PvP Damage + 5%
-		Level 15: Atk. Spd. + 12%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 1: Atk. Spd. +5%, P. Skill Critical Rate +3%
+		Level 2: Atk. Spd. +5%, P. Skill Critical Rate +4%
+		Level 3: Atk. Spd. +6%, P. Skill Critical Rate +4%, PvP Damage +5%
+		Level 4: Atk. Spd. +6%, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 5: Atk. Spd. +7%, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 6: Atk. Spd. +7%, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 7: Atk. Spd. +8%, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 8: Atk. Spd. +8%, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 9: Atk. Spd. +9%, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 10: Atk. Spd. +9%, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 11: Atk. Spd. +10%, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 12: Atk. Spd. +10%, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 13: Atk. Spd. +11%, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 14: Atk. Spd. +11%, P. Skill Critical Rate +10%, PvP Damage +5%
+		Level 15: Atk. Spd. +12%, P. Skill Critical Rate +10%, PvP Damage +5%
 	-->
 	<skill id="13870" levels="15" name="Speed Hunter">
 		<set name="target" val="TARGET_NONE" />
@@ -9607,21 +9639,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 5%, P. Skill Critical Damage + 3%
-		Level 2: Atk. Spd. + 5%, P. Skill Critical Damage + 4%
-		Level 3: Atk. Spd. + 6%, P. Skill Critical Damage + 4%, PvP Damage + 5%
-		Level 4: Atk. Spd. + 6%, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 5: Atk. Spd. + 7%, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 6: Atk. Spd. + 7%, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 7: Atk. Spd. + 8%, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 8: Atk. Spd. + 8%, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 9: Atk. Spd. + 9%, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 10: Atk. Spd. + 9%, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 11: Atk. Spd. + 10%, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 12: Atk. Spd. + 10%, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 13: Atk. Spd. + 11%, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 14: Atk. Spd. + 11%, P. Skill Critical Damage + 10%, PvP Damage + 5%
-		Level 15: Atk. Spd. + 12%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 1: Atk. Spd. +5%, P. Skill Critical Damage +3%
+		Level 2: Atk. Spd. +5%, P. Skill Critical Damage +4%
+		Level 3: Atk. Spd. +6%, P. Skill Critical Damage +4%, PvP Damage +5%
+		Level 4: Atk. Spd. +6%, P. Skill Critical Damage +5%, PvP Damage +5%
+		Level 5: Atk. Spd. +7%, P. Skill Critical Damage +5%, PvP Damage +5%
+		Level 6: Atk. Spd. +7%, P. Skill Critical Damage +6%, PvP Damage +5%
+		Level 7: Atk. Spd. +8%, P. Skill Critical Damage +6%, PvP Damage +5%
+		Level 8: Atk. Spd. +8%, P. Skill Critical Damage +7%, PvP Damage +5%
+		Level 9: Atk. Spd. +9%, P. Skill Critical Damage +7%, PvP Damage +5%
+		Level 10: Atk. Spd. +9%, P. Skill Critical Damage +8%, PvP Damage +5%
+		Level 11: Atk. Spd. +10%, P. Skill Critical Damage +8%, PvP Damage +5%
+		Level 12: Atk. Spd. +10%, P. Skill Critical Damage +9%, PvP Damage +5%
+		Level 13: Atk. Spd. +11%, P. Skill Critical Damage +9%, PvP Damage +5%
+		Level 14: Atk. Spd. +11%, P. Skill Critical Damage +10%, PvP Damage +5%
+		Level 15: Atk. Spd. +12%, P. Skill Critical Damage +10%, PvP Damage +5%
 	-->
 	<skill id="13871" levels="15" name="Speed Fire">
 		<set name="target" val="TARGET_NONE" />
@@ -9629,21 +9661,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Atk. Spd. + 5%, Max HP + 10%
-		Level 2: Atk. Spd. + 5%, Max HP + 11%
-		Level 3: Atk. Spd. + 6%, Max HP + 11%, PvP Damage + 5%
-		Level 4: Atk. Spd. + 6%, Max HP + 12%, PvP Damage + 5%
-		Level 5: Atk. Spd. + 7%, Max HP + 12%, PvP Damage + 5%
-		Level 6: Atk. Spd. + 7%, Max HP + 13%, PvP Damage + 5%
-		Level 7: Atk. Spd. + 8%, Max HP + 13%, PvP Damage + 5%
-		Level 8: Atk. Spd. + 8%, Max HP + 14%, PvP Damage + 5%
-		Level 9: Atk. Spd. + 9%, Max HP + 14%, PvP Damage + 5%
-		Level 10: Atk. Spd. + 9%, Max HP + 15%, PvP Damage + 5%
-		Level 11: Atk. Spd. + 10%, Max HP + 15%, PvP Damage + 5%
-		Level 12: Atk. Spd. + 10%, Max HP + 16%, PvP Damage + 5%
-		Level 13: Atk. Spd. + 11%, Max HP + 16%, PvP Damage + 5%
-		Level 14: Atk. Spd. + 11%, Max HP + 17%, PvP Damage + 5%
-		Level 15: Atk. Spd. + 12%, Max HP + 17%, PvP Damage + 5%
+		Level 1: Atk. Spd. +5%, Max HP +10%
+		Level 2: Atk. Spd. +5%, Max HP +11%
+		Level 3: Atk. Spd. +6%, Max HP +11%, PvP Damage +5%
+		Level 4: Atk. Spd. +6%, Max HP +12%, PvP Damage +5%
+		Level 5: Atk. Spd. +7%, Max HP +12%, PvP Damage +5%
+		Level 6: Atk. Spd. +7%, Max HP +13%, PvP Damage +5%
+		Level 7: Atk. Spd. +8%, Max HP +13%, PvP Damage +5%
+		Level 8: Atk. Spd. +8%, Max HP +14%, PvP Damage +5%
+		Level 9: Atk. Spd. +9%, Max HP +14%, PvP Damage +5%
+		Level 10: Atk. Spd. +9%, Max HP +15%, PvP Damage +5%
+		Level 11: Atk. Spd. +10%, Max HP +15%, PvP Damage +5%
+		Level 12: Atk. Spd. +10%, Max HP +16%, PvP Damage +5%
+		Level 13: Atk. Spd. +11%, Max HP +16%, PvP Damage +5%
+		Level 14: Atk. Spd. +11%, Max HP +17%, PvP Damage +5%
+		Level 15: Atk. Spd. +12%, Max HP +17%, PvP Damage +5%
 	-->
 	<skill id="13872" levels="15" name="Speed Body">
 		<set name="target" val="TARGET_NONE" />
@@ -9651,21 +9683,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 26 , P. Critical Damage + 1%
-		Level 2: P. Critical Rate + 29 , P. Critical Damage + 2%
-		Level 3: P. Critical Rate + 32 , P. Critical Damage + 2%, PvP Damage + 5%
-		Level 4: P. Critical Rate + 34 , P. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: P. Critical Rate + 37 , P. Critical Damage + 3%, PvP Damage + 5%
-		Level 6: P. Critical Rate + 40 , P. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: P. Critical Rate + 42 , P. Critical Damage + 4%, PvP Damage + 5%
-		Level 8: P. Critical Rate + 45 , P. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: P. Critical Rate + 48 , P. Critical Damage + 5%, PvP Damage + 5%
-		Level 10: P. Critical Rate + 50 , P. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: P. Critical Rate + 53 , P. Critical Damage + 6%, PvP Damage + 5%
-		Level 12: P. Critical Rate + 56 , P. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: P. Critical Rate + 59 , P. Critical Damage + 7%, PvP Damage + 5%
-		Level 14: P. Critical Rate + 61 , P. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: P. Critical Rate + 64 , P. Critical Damage + 8%, PvP Damage + 5%
+		Level 1: P. Critical Rate +26 , P. Critical Damage +1%
+		Level 2: P. Critical Rate +29 , P. Critical Damage +2%
+		Level 3: P. Critical Rate +32 , P. Critical Damage +2%, PvP Damage +5%
+		Level 4: P. Critical Rate +34 , P. Critical Damage +3%, PvP Damage +5%
+		Level 5: P. Critical Rate +37 , P. Critical Damage +3%, PvP Damage +5%
+		Level 6: P. Critical Rate +40 , P. Critical Damage +4%, PvP Damage +5%
+		Level 7: P. Critical Rate +42 , P. Critical Damage +4%, PvP Damage +5%
+		Level 8: P. Critical Rate +45 , P. Critical Damage +5%, PvP Damage +5%
+		Level 9: P. Critical Rate +48 , P. Critical Damage +5%, PvP Damage +5%
+		Level 10: P. Critical Rate +50 , P. Critical Damage +6%, PvP Damage +5%
+		Level 11: P. Critical Rate +53 , P. Critical Damage +6%, PvP Damage +5%
+		Level 12: P. Critical Rate +56 , P. Critical Damage +7%, PvP Damage +5%
+		Level 13: P. Critical Rate +59 , P. Critical Damage +7%, PvP Damage +5%
+		Level 14: P. Critical Rate +61 , P. Critical Damage +8%, PvP Damage +5%
+		Level 15: P. Critical Rate +64 , P. Critical Damage +8%, PvP Damage +5%
 	-->
 	<skill id="13873" levels="15" name="Critical Death">
 		<set name="target" val="TARGET_NONE" />
@@ -9673,21 +9705,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 26, P. Skill Critical Rate + 3%
-		Level 2: P. Critical Rate + 29, P. Skill Critical Rate + 4%
-		Level 3: P. Critical Rate + 32, P. Skill Critical Rate + 4%, PvP Damage + 5%
-		Level 4: P. Critical Rate + 34, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 5: P. Critical Rate + 37, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 6: P. Critical Rate + 40, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 7: P. Critical Rate + 42, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 8: P. Critical Rate + 45, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 9: P. Critical Rate + 48, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 10: P. Critical Rate + 50, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 11: P. Critical Rate + 53, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 12: P. Critical Rate + 56, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 13: P. Critical Rate + 59, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 14: P. Critical Rate + 61, P. Skill Critical Rate + 10%, PvP Damage + 5%
-		Level 15: P. Critical Rate + 64, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 1: P. Critical Rate +26, P. Skill Critical Rate +3%
+		Level 2: P. Critical Rate +29, P. Skill Critical Rate +4%
+		Level 3: P. Critical Rate +32, P. Skill Critical Rate +4%, PvP Damage +5%
+		Level 4: P. Critical Rate +34, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 5: P. Critical Rate +37, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 6: P. Critical Rate +40, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 7: P. Critical Rate +42, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 8: P. Critical Rate +45, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 9: P. Critical Rate +48, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 10: P. Critical Rate +50, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 11: P. Critical Rate +53, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 12: P. Critical Rate +56, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 13: P. Critical Rate +59, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 14: P. Critical Rate +61, P. Skill Critical Rate +10%, PvP Damage +5%
+		Level 15: P. Critical Rate +64, P. Skill Critical Rate +10%, PvP Damage +5%
 	-->
 	<skill id="13874" levels="15" name="Critical Hunter">
 		<set name="target" val="TARGET_NONE" />
@@ -9695,21 +9727,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 26, P. Skill Critical Damage + 3%
-		Level 2: P. Critical Rate + 29, P. Skill Critical Damage + 4%
-		Level 3: P. Critical Rate + 32, P. Skill Critical Damage + 4%, PvP Damage + 5%
-		Level 4: P. Critical Rate + 34, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 5: P. Critical Rate + 37, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 6: P. Critical Rate + 40, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 7: P. Critical Rate + 42, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 8: P. Critical Rate + 45, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 9: P. Critical Rate + 48, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 10: P. Critical Rate + 50, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 11: P. Critical Rate + 53, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 12: P. Critical Rate + 56, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 13: P. Critical Rate + 59, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 14: P. Critical Rate + 61, P. Skill Critical Damage + 10%, PvP Damage + 5%
-		Level 15: P. Critical Rate + 64, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 1: P. Critical Rate +26, P. Skill Critical Damage +3%
+		Level 2: P. Critical Rate +29, P. Skill Critical Damage +4%
+		Level 3: P. Critical Rate +32, P. Skill Critical Damage +4%, PvP Damage +5%
+		Level 4: P. Critical Rate +34, P. Skill Critical Damage +5%, PvP Damage +5%
+		Level 5: P. Critical Rate +37, P. Skill Critical Damage +5%, PvP Damage +5%
+		Level 6: P. Critical Rate +40, P. Skill Critical Damage +6%, PvP Damage +5%
+		Level 7: P. Critical Rate +42, P. Skill Critical Damage +6%, PvP Damage +5%
+		Level 8: P. Critical Rate +45, P. Skill Critical Damage +7%, PvP Damage +5%
+		Level 9: P. Critical Rate +48, P. Skill Critical Damage +7%, PvP Damage +5%
+		Level 10: P. Critical Rate +50, P. Skill Critical Damage +8%, PvP Damage +5%
+		Level 11: P. Critical Rate +53, P. Skill Critical Damage +8%, PvP Damage +5%
+		Level 12: P. Critical Rate +56, P. Skill Critical Damage +9%, PvP Damage +5%
+		Level 13: P. Critical Rate +59, P. Skill Critical Damage +9%, PvP Damage +5%
+		Level 14: P. Critical Rate +61, P. Skill Critical Damage +10%, PvP Damage +5%
+		Level 15: P. Critical Rate +64, P. Skill Critical Damage +10%, PvP Damage +5%
 	-->
 	<skill id="13875" levels="15" name="Critical Fire">
 		<set name="target" val="TARGET_NONE" />
@@ -9717,21 +9749,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: P. Critical Rate + 26, Max HP + 10%
-		Level 2: P. Critical Rate + 29, Max HP + 11%
-		Level 3: P. Critical Rate + 32, Max HP + 11%, PvP Damage + 5%
-		Level 4: P. Critical Rate + 34, Max HP + 12%, PvP Damage + 5%
-		Level 5: P. Critical Rate + 37, Max HP + 12%, PvP Damage + 5%
-		Level 6: P. Critical Rate + 40, Max HP + 13%, PvP Damage + 5%
-		Level 7: P. Critical Rate + 42, Max HP + 13%, PvP Damage + 5%
-		Level 8: P. Critical Rate + 45, Max HP + 14%, PvP Damage + 5%
-		Level 9: P. Critical Rate + 48, Max HP + 14%, PvP Damage + 5%
-		Level 10: P. Critical Rate + 50, Max HP + 15%, PvP Damage + 5%
-		Level 11: P. Critical Rate + 53, Max HP + 15%, PvP Damage + 5%
-		Level 12: P. Critical Rate + 56, Max HP + 16%, PvP Damage + 5%
-		Level 13: P. Critical Rate + 59, Max HP + 16%, PvP Damage + 5%
-		Level 14: P. Critical Rate + 61, Max HP + 17%, PvP Damage + 5%
-		Level 15: P. Critical Rate + 64, Max HP + 17%, PvP Damage + 5%
+		Level 1: P. Critical Rate +26, Max HP +10%
+		Level 2: P. Critical Rate +29, Max HP +11%
+		Level 3: P. Critical Rate +32, Max HP +11%, PvP Damage +5%
+		Level 4: P. Critical Rate +34, Max HP +12%, PvP Damage +5%
+		Level 5: P. Critical Rate +37, Max HP +12%, PvP Damage +5%
+		Level 6: P. Critical Rate +40, Max HP +13%, PvP Damage +5%
+		Level 7: P. Critical Rate +42, Max HP +13%, PvP Damage +5%
+		Level 8: P. Critical Rate +45, Max HP +14%, PvP Damage +5%
+		Level 9: P. Critical Rate +48, Max HP +14%, PvP Damage +5%
+		Level 10: P. Critical Rate +50, Max HP +15%, PvP Damage +5%
+		Level 11: P. Critical Rate +53, Max HP +15%, PvP Damage +5%
+		Level 12: P. Critical Rate +56, Max HP +16%, PvP Damage +5%
+		Level 13: P. Critical Rate +59, Max HP +16%, PvP Damage +5%
+		Level 14: P. Critical Rate +61, Max HP +17%, PvP Damage +5%
+		Level 15: P. Critical Rate +64, Max HP +17%, PvP Damage +5%
 	-->
 	<skill id="13876" levels="15" name="Critical Body">
 		<set name="target" val="TARGET_NONE" />
@@ -9739,21 +9771,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 5%, M. Critical Rate + 10%
-		Level 2: Casting Spd. + 5%, M. Critical Rate + 11%
-		Level 3: Casting Spd. + 6%, M. Critical Rate + 11%, PvP Damage + 5%
-		Level 4: Casting Spd. + 6%, M. Critical Rate + 12%, PvP Damage + 5%
-		Level 5: Casting Spd. + 7%, M. Critical Rate + 12%, PvP Damage + 5%
-		Level 6: Casting Spd. + 7%, M. Critical Rate + 13%, PvP Damage + 5%
-		Level 7: Casting Spd. + 8%, M. Critical Rate + 13%, PvP Damage + 5%
-		Level 8: Casting Spd. + 8%, M. Critical Rate + 14%, PvP Damage + 5%
-		Level 9: Casting Spd. + 9%, M. Critical Rate + 14%, PvP Damage + 5%
-		Level 10: Casting Spd. + 9%, M. Critical Rate + 15%, PvP Damage + 5%
-		Level 11: Casting Spd. + 10%, M. Critical Rate + 15%, PvP Damage + 5%
-		Level 12: Casting Spd. + 10%, M. Critical Rate + 16%, PvP Damage + 5%
-		Level 13: Casting Spd. + 11%, M. Critical Rate + 16%, PvP Damage + 5%
-		Level 14: Casting Spd. + 11%, M. Critical Rate + 17%, PvP Damage + 5%
-		Level 15: Casting Spd. + 12%, M. Critical Rate + 17%, PvP Damage + 5%
+		Level 1: Casting Spd. +5%, M. Critical Rate +10%
+		Level 2: Casting Spd. +5%, M. Critical Rate +11%
+		Level 3: Casting Spd. +6%, M. Critical Rate +11%, PvP Damage +5%
+		Level 4: Casting Spd. +6%, M. Critical Rate +12%, PvP Damage +5%
+		Level 5: Casting Spd. +7%, M. Critical Rate +12%, PvP Damage +5%
+		Level 6: Casting Spd. +7%, M. Critical Rate +13%, PvP Damage +5%
+		Level 7: Casting Spd. +8%, M. Critical Rate +13%, PvP Damage +5%
+		Level 8: Casting Spd. +8%, M. Critical Rate +14%, PvP Damage +5%
+		Level 9: Casting Spd. +9%, M. Critical Rate +14%, PvP Damage +5%
+		Level 10: Casting Spd. +9%, M. Critical Rate +15%, PvP Damage +5%
+		Level 11: Casting Spd. +10%, M. Critical Rate +15%, PvP Damage +5%
+		Level 12: Casting Spd. +10%, M. Critical Rate +16%, PvP Damage +5%
+		Level 13: Casting Spd. +11%, M. Critical Rate +16%, PvP Damage +5%
+		Level 14: Casting Spd. +11%, M. Critical Rate +17%, PvP Damage +5%
+		Level 15: Casting Spd. +12%, M. Critical Rate +17%, PvP Damage +5%
 	-->
 	<skill id="13877" levels="15" name="Acumen Wild">
 		<set name="target" val="TARGET_NONE" />
@@ -9761,21 +9793,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 5%, M. Critical Damage + 1%
-		Level 2: Casting Spd. + 5%, M. Critical Damage + 2%
-		Level 3: Casting Spd. + 6%, M. Critical Damage + 2%, PvP Damage + 5%
-		Level 4: Casting Spd. + 6%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: Casting Spd. + 7%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 6: Casting Spd. + 7%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: Casting Spd. + 8%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 8: Casting Spd. + 8%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: Casting Spd. + 9%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 10: Casting Spd. + 9%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: Casting Spd. + 10%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 12: Casting Spd. + 10%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: Casting Spd. + 11%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 14: Casting Spd. + 11%, M. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: Casting Spd. + 12%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 1: Casting Spd. +5%, M. Critical Damage +1%
+		Level 2: Casting Spd. +5%, M. Critical Damage +2%
+		Level 3: Casting Spd. +6%, M. Critical Damage +2%, PvP Damage +5%
+		Level 4: Casting Spd. +6%, M. Critical Damage +3%, PvP Damage +5%
+		Level 5: Casting Spd. +7%, M. Critical Damage +3%, PvP Damage +5%
+		Level 6: Casting Spd. +7%, M. Critical Damage +4%, PvP Damage +5%
+		Level 7: Casting Spd. +8%, M. Critical Damage +4%, PvP Damage +5%
+		Level 8: Casting Spd. +8%, M. Critical Damage +5%, PvP Damage +5%
+		Level 9: Casting Spd. +9%, M. Critical Damage +5%, PvP Damage +5%
+		Level 10: Casting Spd. +9%, M. Critical Damage +6%, PvP Damage +5%
+		Level 11: Casting Spd. +10%, M. Critical Damage +6%, PvP Damage +5%
+		Level 12: Casting Spd. +10%, M. Critical Damage +7%, PvP Damage +5%
+		Level 13: Casting Spd. +11%, M. Critical Damage +7%, PvP Damage +5%
+		Level 14: Casting Spd. +11%, M. Critical Damage +8%, PvP Damage +5%
+		Level 15: Casting Spd. +12%, M. Critical Damage +8%, PvP Damage +5%
 	-->
 	<skill id="13878" levels="15" name="Acumen Mystic">
 		<set name="target" val="TARGET_NONE" />
@@ -9783,21 +9815,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Casting Spd. + 5%, Max MP + 13%
-		Level 2: Casting Spd. + 5%, Max MP + 14%
-		Level 3: Casting Spd. + 6%, Max MP + 14%, PvP Damage + 5%
-		Level 4: Casting Spd. + 6%, Max MP + 15%, PvP Damage + 5%
-		Level 5: Casting Spd. + 7%, Max MP + 15%, PvP Damage + 5%
-		Level 6: Casting Spd. + 7%, Max MP + 16%, PvP Damage + 5%
-		Level 7: Casting Spd. + 8%, Max MP + 16%, PvP Damage + 5%
-		Level 8: Casting Spd. + 8%, Max MP + 17%, PvP Damage + 5%
-		Level 9: Casting Spd. + 9%, Max MP + 17%, PvP Damage + 5%
-		Level 10: Casting Spd. + 9%, Max MP + 18%, PvP Damage + 5%
-		Level 11: Casting Spd. + 10%, Max MP + 18%, PvP Damage + 5%
-		Level 12: Casting Spd. + 10%, Max MP + 19%, PvP Damage + 5%
-		Level 13: Casting Spd. + 11%, Max MP + 19%, PvP Damage + 5%
-		Level 14: Casting Spd. + 11%, Max MP + 20%, PvP Damage + 5%
-		Level 15: Casting Spd. + 12%, Max MP + 20%, PvP Damage + 5%
+		Level 1: Casting Spd. +5%, Max MP +13%
+		Level 2: Casting Spd. +5%, Max MP +14%
+		Level 3: Casting Spd. +6%, Max MP +14%, PvP Damage +5%
+		Level 4: Casting Spd. +6%, Max MP +15%, PvP Damage +5%
+		Level 5: Casting Spd. +7%, Max MP +15%, PvP Damage +5%
+		Level 6: Casting Spd. +7%, Max MP +16%, PvP Damage +5%
+		Level 7: Casting Spd. +8%, Max MP +16%, PvP Damage +5%
+		Level 8: Casting Spd. +8%, Max MP +17%, PvP Damage +5%
+		Level 9: Casting Spd. +9%, Max MP +17%, PvP Damage +5%
+		Level 10: Casting Spd. +9%, Max MP +18%, PvP Damage +5%
+		Level 11: Casting Spd. +10%, Max MP +18%, PvP Damage +5%
+		Level 12: Casting Spd. +10%, Max MP +19%, PvP Damage +5%
+		Level 13: Casting Spd. +11%, Max MP +19%, PvP Damage +5%
+		Level 14: Casting Spd. +11%, Max MP +20%, PvP Damage +5%
+		Level 15: Casting Spd. +12%, Max MP +20%, PvP Damage +5%
 	-->
 	<skill id="13879" levels="15" name="Acumen Soul">
 		<set name="target" val="TARGET_NONE" />
@@ -9805,21 +9837,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Critical Rate + 10%, M. Critical Damage + 1%
-		Level 2: M. Critical Rate + 10%, M. Critical Damage + 2%
-		Level 3: M. Critical Rate + 11%, M. Critical Damage + 2%, PvP Damage + 5%
-		Level 4: M. Critical Rate + 11%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: M. Critical Rate + 12%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 6: M. Critical Rate + 12%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: M. Critical Rate + 13%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 8: M. Critical Rate + 13%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: M. Critical Rate + 14%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 10: M. Critical Rate + 14%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: M. Critical Rate + 15%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 12: M. Critical Rate + 15%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: M. Critical Rate + 16%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 14: M. Critical Rate + 16%, M. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: M. Critical Rate + 17%, M. Critical Damage + 8%, PvP Damage + 5%
+		Level 1: M. Critical Rate +10%, M. Critical Damage +1%
+		Level 2: M. Critical Rate +10%, M. Critical Damage +2%
+		Level 3: M. Critical Rate +11%, M. Critical Damage +2%, PvP Damage +5%
+		Level 4: M. Critical Rate +11%, M. Critical Damage +3%, PvP Damage +5%
+		Level 5: M. Critical Rate +12%, M. Critical Damage +3%, PvP Damage +5%
+		Level 6: M. Critical Rate +12%, M. Critical Damage +4%, PvP Damage +5%
+		Level 7: M. Critical Rate +13%, M. Critical Damage +4%, PvP Damage +5%
+		Level 8: M. Critical Rate +13%, M. Critical Damage +5%, PvP Damage +5%
+		Level 9: M. Critical Rate +14%, M. Critical Damage +5%, PvP Damage +5%
+		Level 10: M. Critical Rate +14%, M. Critical Damage +6%, PvP Damage +5%
+		Level 11: M. Critical Rate +15%, M. Critical Damage +6%, PvP Damage +5%
+		Level 12: M. Critical Rate +15%, M. Critical Damage +7%, PvP Damage +5%
+		Level 13: M. Critical Rate +16%, M. Critical Damage +7%, PvP Damage +5%
+		Level 14: M. Critical Rate +16%, M. Critical Damage +8%, PvP Damage +5%
+		Level 15: M. Critical Rate +17%, M. Critical Damage +8%, PvP Damage +5%
 	-->
 	<skill id="13880" levels="15" name="Wid. Mystic">
 		<set name="target" val="TARGET_NONE" />
@@ -9827,21 +9859,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: M. Critical Rate + 10%, Max MP + 13%
-		Level 2: M. Critical Rate + 10%, Max MP + 14%
-		Level 3: M. Critical Rate + 11%, Max MP + 14%, PvP Damage + 5%
-		Level 4: M. Critical Rate + 11%, Max MP + 15%, PvP Damage + 5%
-		Level 5: M. Critical Rate + 12%, Max MP + 15%, PvP Damage + 5%
-		Level 6: M. Critical Rate + 12%, Max MP + 16%, PvP Damage + 5%
-		Level 7: M. Critical Rate + 13%, Max MP + 16%, PvP Damage + 5%
-		Level 8: M. Critical Rate + 13%, Max MP + 17%, PvP Damage + 5%
-		Level 9: M. Critical Rate + 14%, Max MP + 17%, PvP Damage + 5%
-		Level 10: M. Critical Rate + 14%, Max MP + 18%, PvP Damage + 5%
-		Level 11: M. Critical Rate + 15%, Max MP + 18%, PvP Damage + 5%
-		Level 12: M. Critical Rate + 15%, Max MP + 19%, PvP Damage + 5%
-		Level 13: M. Critical Rate + 16%, Max MP + 19%, PvP Damage + 5%
-		Level 14: M. Critical Rate + 16%, Max MP + 20%, PvP Damage + 5%
-		Level 15: M. Critical Rate + 17%, Max MP + 20%, PvP Damage + 5%
+		Level 1: M. Critical Rate +10%, Max MP +13%
+		Level 2: M. Critical Rate +10%, Max MP +14%
+		Level 3: M. Critical Rate +11%, Max MP +14%, PvP Damage +5%
+		Level 4: M. Critical Rate +11%, Max MP +15%, PvP Damage +5%
+		Level 5: M. Critical Rate +12%, Max MP +15%, PvP Damage +5%
+		Level 6: M. Critical Rate +12%, Max MP +16%, PvP Damage +5%
+		Level 7: M. Critical Rate +13%, Max MP +16%, PvP Damage +5%
+		Level 8: M. Critical Rate +13%, Max MP +17%, PvP Damage +5%
+		Level 9: M. Critical Rate +14%, Max MP +17%, PvP Damage +5%
+		Level 10: M. Critical Rate +14%, Max MP +18%, PvP Damage +5%
+		Level 11: M. Critical Rate +15%, Max MP +18%, PvP Damage +5%
+		Level 12: M. Critical Rate +15%, Max MP +19%, PvP Damage +5%
+		Level 13: M. Critical Rate +16%, Max MP +19%, PvP Damage +5%
+		Level 14: M. Critical Rate +16%, Max MP +20%, PvP Damage +5%
+		Level 15: M. Critical Rate +17%, Max MP +20%, PvP Damage +5%
 	-->
 	<skill id="13881" levels="15" name="Wid. Soul">
 		<set name="target" val="TARGET_NONE" />
@@ -9849,21 +9881,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 10%, Casting Spd. + 5%
-		Level 2: Max HP + 11%, Casting Spd. + 5%
-		Level 3: Max HP + 11%, Casting Spd. + 6%, PvP Damage + 5%
-		Level 4: Max HP + 12%, Casting Spd. + 6%, PvP Damage + 5%
-		Level 5: Max HP + 12%, Casting Spd. + 7%, PvP Damage + 5%
-		Level 6: Max HP + 13%, Casting Spd. + 7%, PvP Damage + 5%
-		Level 7: Max HP + 13%, Casting Spd. + 8%, PvP Damage + 5%
-		Level 8: Max HP + 14%, Casting Spd. + 8%, PvP Damage + 5%
-		Level 9: Max HP + 14%, Casting Spd. + 9%, PvP Damage + 5%
-		Level 10: Max HP + 15%, Casting Spd. + 9%, PvP Damage + 5%
-		Level 11: Max HP + 15%, Casting Spd. + 10%, PvP Damage + 5%
-		Level 12: Max HP + 16%, Casting Spd. + 10%, PvP Damage + 5%
-		Level 13: Max HP + 16%, Casting Spd. + 11%, PvP Damage + 5%
-		Level 14: Max HP + 17%, Casting Spd. + 11%, PvP Damage + 5%
-		Level 15: Max HP + 17%, Casting Spd. + 12%, PvP Damage + 5%
+		Level 1: Max HP +10%, Casting Spd. +5%
+		Level 2: Max HP +11%, Casting Spd. +5%
+		Level 3: Max HP +11%, Casting Spd. +6%, PvP Damage +5%
+		Level 4: Max HP +12%, Casting Spd. +6%, PvP Damage +5%
+		Level 5: Max HP +12%, Casting Spd. +7%, PvP Damage +5%
+		Level 6: Max HP +13%, Casting Spd. +7%, PvP Damage +5%
+		Level 7: Max HP +13%, Casting Spd. +8%, PvP Damage +5%
+		Level 8: Max HP +14%, Casting Spd. +8%, PvP Damage +5%
+		Level 9: Max HP +14%, Casting Spd. +9%, PvP Damage +5%
+		Level 10: Max HP +15%, Casting Spd. +9%, PvP Damage +5%
+		Level 11: Max HP +15%, Casting Spd. +10%, PvP Damage +5%
+		Level 12: Max HP +16%, Casting Spd. +10%, PvP Damage +5%
+		Level 13: Max HP +16%, Casting Spd. +11%, PvP Damage +5%
+		Level 14: Max HP +17%, Casting Spd. +11%, PvP Damage +5%
+		Level 15: Max HP +17%, Casting Spd. +12%, PvP Damage +5%
 	-->
 	<skill id="13882" levels="15" name="HP Acumen">
 		<set name="target" val="TARGET_NONE" />
@@ -9871,21 +9903,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 10%, M. Critical Rate + 10%
-		Level 2: Max HP + 11%, M. Critical Rate + 10%
-		Level 3: Max HP + 11%, M. Critical Rate + 11%, PvP Damage + 5%
-		Level 4: Max HP + 12%, M. Critical Rate + 11%, PvP Damage + 5%
-		Level 5: Max HP + 12%, M. Critical Rate + 12%, PvP Damage + 5%
-		Level 6: Max HP + 13%, M. Critical Rate + 12%, PvP Damage + 5%
-		Level 7: Max HP + 13%, M. Critical Rate + 13%, PvP Damage + 5%
-		Level 8: Max HP + 14%, M. Critical Rate + 13%, PvP Damage + 5%
-		Level 9: Max HP + 14%, M. Critical Rate + 14%, PvP Damage + 5%
-		Level 10: Max HP + 15%, M. Critical Rate + 14%, PvP Damage + 5%
-		Level 11: Max HP + 15%, M. Critical Rate + 15%, PvP Damage + 5%
-		Level 12: Max HP + 16%, M. Critical Rate + 15%, PvP Damage + 5%
-		Level 13: Max HP + 16%, M. Critical Rate + 16%, PvP Damage + 5%
-		Level 14: Max HP + 17%, M. Critical Rate + 16%, PvP Damage + 5%
-		Level 15: Max HP + 17%, M. Critical Rate + 17%, PvP Damage + 5%
+		Level 1: Max HP +10%, M. Critical Rate +10%
+		Level 2: Max HP +11%, M. Critical Rate +10%
+		Level 3: Max HP +11%, M. Critical Rate +11%, PvP Damage +5%
+		Level 4: Max HP +12%, M. Critical Rate +11%, PvP Damage +5%
+		Level 5: Max HP +12%, M. Critical Rate +12%, PvP Damage +5%
+		Level 6: Max HP +13%, M. Critical Rate +12%, PvP Damage +5%
+		Level 7: Max HP +13%, M. Critical Rate +13%, PvP Damage +5%
+		Level 8: Max HP +14%, M. Critical Rate +13%, PvP Damage +5%
+		Level 9: Max HP +14%, M. Critical Rate +14%, PvP Damage +5%
+		Level 10: Max HP +15%, M. Critical Rate +14%, PvP Damage +5%
+		Level 11: Max HP +15%, M. Critical Rate +15%, PvP Damage +5%
+		Level 12: Max HP +16%, M. Critical Rate +15%, PvP Damage +5%
+		Level 13: Max HP +16%, M. Critical Rate +16%, PvP Damage +5%
+		Level 14: Max HP +17%, M. Critical Rate +16%, PvP Damage +5%
+		Level 15: Max HP +17%, M. Critical Rate +17%, PvP Damage +5%
 	-->
 	<skill id="13883" levels="15" name="HP Wild">
 		<set name="target" val="TARGET_NONE" />
@@ -9893,21 +9925,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 10%, M. Critical Damage + 1%
-		Level 2: Max HP + 11%, M. Critical Damage + 2%
-		Level 3: Max HP + 11%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 4: Max HP + 12%, M. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: Max HP + 12%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 6: Max HP + 13%, M. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: Max HP + 13%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 8: Max HP + 14%, M. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: Max HP + 14%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 10: Max HP + 15%, M. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: Max HP + 15%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 12: Max HP + 16%, M. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: Max HP + 16%, M. Critical Damage + 8%, PvP Damage + 5%
-		Level 14: Max HP + 17%, M. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: Max HP + 17%, M. Critical Damage + 9%, PvP Damage + 5%
+		Level 1: Max HP +10%, M. Critical Damage +1%
+		Level 2: Max HP +11%, M. Critical Damage +2%
+		Level 3: Max HP +11%, M. Critical Damage +3%, PvP Damage +5%
+		Level 4: Max HP +12%, M. Critical Damage +3%, PvP Damage +5%
+		Level 5: Max HP +12%, M. Critical Damage +4%, PvP Damage +5%
+		Level 6: Max HP +13%, M. Critical Damage +4%, PvP Damage +5%
+		Level 7: Max HP +13%, M. Critical Damage +5%, PvP Damage +5%
+		Level 8: Max HP +14%, M. Critical Damage +5%, PvP Damage +5%
+		Level 9: Max HP +14%, M. Critical Damage +6%, PvP Damage +5%
+		Level 10: Max HP +15%, M. Critical Damage +6%, PvP Damage +5%
+		Level 11: Max HP +15%, M. Critical Damage +7%, PvP Damage +5%
+		Level 12: Max HP +16%, M. Critical Damage +7%, PvP Damage +5%
+		Level 13: Max HP +16%, M. Critical Damage +8%, PvP Damage +5%
+		Level 14: Max HP +17%, M. Critical Damage +8%, PvP Damage +5%
+		Level 15: Max HP +17%, M. Critical Damage +9%, PvP Damage +5%
 	-->
 	<skill id="13884" levels="15" name="HP Mystic">
 		<set name="target" val="TARGET_NONE" />
@@ -9915,21 +9947,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max HP + 10%, Max MP + 13%
-		Level 2: Max HP + 11%, Max MP + 13%
-		Level 3: Max HP + 11%, Max MP + 14%, PvP Damage + 5%
-		Level 4: Max HP + 12%, Max MP + 14%, PvP Damage + 5%
-		Level 5: Max HP + 12%, Max MP + 15%, PvP Damage + 5%
-		Level 6: Max HP + 13%, Max MP + 15%, PvP Damage + 5%
-		Level 7: Max HP + 13%, Max MP + 16%, PvP Damage + 5%
-		Level 8: Max HP + 14%, Max MP + 16%, PvP Damage + 5%
-		Level 9: Max HP + 14%, Max MP + 17%, PvP Damage + 5%
-		Level 10: Max HP + 15%, Max MP + 17%, PvP Damage + 5%
-		Level 11: Max HP + 15%, Max MP + 18%, PvP Damage + 5%
-		Level 12: Max HP + 16%, Max MP + 18%, PvP Damage + 5%
-		Level 13: Max HP + 16%, Max MP + 19%, PvP Damage + 5%
-		Level 14: Max HP + 17%, Max MP + 19%, PvP Damage + 5%
-		Level 15: Max HP + 17%, Max MP + 20%, PvP Damage + 5%
+		Level 1: Max HP +10%, Max MP +13%
+		Level 2: Max HP +11%, Max MP +13%
+		Level 3: Max HP +11%, Max MP +14%, PvP Damage +5%
+		Level 4: Max HP +12%, Max MP +14%, PvP Damage +5%
+		Level 5: Max HP +12%, Max MP +15%, PvP Damage +5%
+		Level 6: Max HP +13%, Max MP +15%, PvP Damage +5%
+		Level 7: Max HP +13%, Max MP +16%, PvP Damage +5%
+		Level 8: Max HP +14%, Max MP +16%, PvP Damage +5%
+		Level 9: Max HP +14%, Max MP +17%, PvP Damage +5%
+		Level 10: Max HP +15%, Max MP +17%, PvP Damage +5%
+		Level 11: Max HP +15%, Max MP +18%, PvP Damage +5%
+		Level 12: Max HP +16%, Max MP +18%, PvP Damage +5%
+		Level 13: Max HP +16%, Max MP +19%, PvP Damage +5%
+		Level 14: Max HP +17%, Max MP +19%, PvP Damage +5%
+		Level 15: Max HP +17%, Max MP +20%, PvP Damage +5%
 	-->
 	<skill id="13885" levels="15" name="HP Soul">
 		<set name="target" val="TARGET_NONE" />
@@ -9937,21 +9969,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 13%, Atk. Spd. + 5%
-		Level 2: Max MP + 13%, Atk. Spd. + 6%
-		Level 3: Max MP + 14%, Atk. Spd. + 6%, PvP Damage + 5%
-		Level 4: Max MP + 14%, Atk. Spd. + 7%, PvP Damage + 5%
-		Level 5: Max MP + 15%, Atk. Spd. + 7%, PvP Damage + 5%
-		Level 6: Max MP + 15%, Atk. Spd. + 8%, PvP Damage + 5%
-		Level 7: Max MP + 16%, Atk. Spd. + 8%, PvP Damage + 5%
-		Level 8: Max MP + 16%, Atk. Spd. + 9%, PvP Damage + 5%
-		Level 9: Max MP + 17%, Atk. Spd. + 9%, PvP Damage + 5%
-		Level 10: Max MP + 17%, Atk. Spd. + 10%, PvP Damage + 5%
-		Level 11: Max MP + 18%, Atk. Spd. + 10%, PvP Damage + 5%
-		Level 12: Max MP + 18%, Atk. Spd. + 11%, PvP Damage + 5%
-		Level 13: Max MP + 19%, Atk. Spd. + 11%, PvP Damage + 5%
-		Level 14: Max MP + 19%, Atk. Spd. + 12%, PvP Damage + 5%
-		Level 15: Max MP + 20%, Atk. Spd. + 12%, PvP Damage + 5%
+		Level 1: Max MP +13%, Atk. Spd. +5%
+		Level 2: Max MP +13%, Atk. Spd. +6%
+		Level 3: Max MP +14%, Atk. Spd. +6%, PvP Damage +5%
+		Level 4: Max MP +14%, Atk. Spd. +7%, PvP Damage +5%
+		Level 5: Max MP +15%, Atk. Spd. +7%, PvP Damage +5%
+		Level 6: Max MP +15%, Atk. Spd. +8%, PvP Damage +5%
+		Level 7: Max MP +16%, Atk. Spd. +8%, PvP Damage +5%
+		Level 8: Max MP +16%, Atk. Spd. +9%, PvP Damage +5%
+		Level 9: Max MP +17%, Atk. Spd. +9%, PvP Damage +5%
+		Level 10: Max MP +17%, Atk. Spd. +10%, PvP Damage +5%
+		Level 11: Max MP +18%, Atk. Spd. +10%, PvP Damage +5%
+		Level 12: Max MP +18%, Atk. Spd. +11%, PvP Damage +5%
+		Level 13: Max MP +19%, Atk. Spd. +11%, PvP Damage +5%
+		Level 14: Max MP +19%, Atk. Spd. +12%, PvP Damage +5%
+		Level 15: Max MP +20%, Atk. Spd. +12%, PvP Damage +5%
 	-->
 	<skill id="13886" levels="15" name="MP Fury">
 		<set name="target" val="TARGET_NONE" />
@@ -9959,21 +9991,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 13%, P. Critical Rate + 26
-		Level 2: Max MP + 13%, P. Critical Rate + 29
-		Level 3: Max MP + 14%, P. Critical Rate + 32, PvP Damage + 5%
-		Level 4: Max MP + 14%, P. Critical Rate + 34, PvP Damage + 5%
-		Level 5: Max MP + 15%, P. Critical Rate + 37, PvP Damage + 5%
-		Level 6: Max MP + 15%, P. Critical Rate + 40, PvP Damage + 5%
-		Level 7: Max MP + 16%, P. Critical Rate + 42, PvP Damage + 5%
-		Level 8: Max MP + 16%, P. Critical Rate + 45, PvP Damage + 5%
-		Level 9: Max MP + 17%, P. Critical Rate + 48, PvP Damage + 5%
-		Level 10: Max MP + 17%, P. Critical Rate + 50, PvP Damage + 5%
-		Level 11: Max MP + 18%, P. Critical Rate + 53, PvP Damage + 5%
-		Level 12: Max MP + 18%, P. Critical Rate + 56, PvP Damage + 5%
-		Level 13: Max MP + 19%, P. Critical Rate + 59, PvP Damage + 5%
-		Level 14: Max MP + 19%, P. Critical Rate + 61, PvP Damage + 5%
-		Level 15: Max MP + 20%, P. Critical Rate + 64, PvP Damage + 5%
+		Level 1: Max MP +13%, P. Critical Rate +26
+		Level 2: Max MP +13%, P. Critical Rate +29
+		Level 3: Max MP +14%, P. Critical Rate +32, PvP Damage +5%
+		Level 4: Max MP +14%, P. Critical Rate +34, PvP Damage +5%
+		Level 5: Max MP +15%, P. Critical Rate +37, PvP Damage +5%
+		Level 6: Max MP +15%, P. Critical Rate +40, PvP Damage +5%
+		Level 7: Max MP +16%, P. Critical Rate +42, PvP Damage +5%
+		Level 8: Max MP +16%, P. Critical Rate +45, PvP Damage +5%
+		Level 9: Max MP +17%, P. Critical Rate +48, PvP Damage +5%
+		Level 10: Max MP +17%, P. Critical Rate +50, PvP Damage +5%
+		Level 11: Max MP +18%, P. Critical Rate +53, PvP Damage +5%
+		Level 12: Max MP +18%, P. Critical Rate +56, PvP Damage +5%
+		Level 13: Max MP +19%, P. Critical Rate +59, PvP Damage +5%
+		Level 14: Max MP +19%, P. Critical Rate +61, PvP Damage +5%
+		Level 15: Max MP +20%, P. Critical Rate +64, PvP Damage +5%
 	-->
 	<skill id="13887" levels="15" name="MP Focus">
 		<set name="target" val="TARGET_NONE" />
@@ -9981,21 +10013,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 13%, P. Critical Damage + 1%
-		Level 2: Max MP + 13%, P. Critical Damage + 2%
-		Level 3: Max MP + 14%, P. Critical Damage + 2%, PvP Damage + 5%
-		Level 4: Max MP + 14%, P. Critical Damage + 3%, PvP Damage + 5%
-		Level 5: Max MP + 15%, P. Critical Damage + 3%, PvP Damage + 5%
-		Level 6: Max MP + 15%, P. Critical Damage + 4%, PvP Damage + 5%
-		Level 7: Max MP + 16%, P. Critical Damage + 4%, PvP Damage + 5%
-		Level 8: Max MP + 16%, P. Critical Damage + 5%, PvP Damage + 5%
-		Level 9: Max MP + 17%, P. Critical Damage + 5%, PvP Damage + 5%
-		Level 10: Max MP + 17%, P. Critical Damage + 6%, PvP Damage + 5%
-		Level 11: Max MP + 18%, P. Critical Damage + 6%, PvP Damage + 5%
-		Level 12: Max MP + 18%, P. Critical Damage + 7%, PvP Damage + 5%
-		Level 13: Max MP + 19%, P. Critical Damage + 7%, PvP Damage + 5%
-		Level 14: Max MP + 19%, P. Critical Damage + 8%, PvP Damage + 5%
-		Level 15: Max MP + 20%, P. Critical Damage + 8%, PvP Damage + 5%
+		Level 1: Max MP +13%, P. Critical Damage +1%
+		Level 2: Max MP +13%, P. Critical Damage +2%
+		Level 3: Max MP +14%, P. Critical Damage +2%, PvP Damage +5%
+		Level 4: Max MP +14%, P. Critical Damage +3%, PvP Damage +5%
+		Level 5: Max MP +15%, P. Critical Damage +3%, PvP Damage +5%
+		Level 6: Max MP +15%, P. Critical Damage +4%, PvP Damage +5%
+		Level 7: Max MP +16%, P. Critical Damage +4%, PvP Damage +5%
+		Level 8: Max MP +16%, P. Critical Damage +5%, PvP Damage +5%
+		Level 9: Max MP +17%, P. Critical Damage +5%, PvP Damage +5%
+		Level 10: Max MP +17%, P. Critical Damage +6%, PvP Damage +5%
+		Level 11: Max MP +18%, P. Critical Damage +6%, PvP Damage +5%
+		Level 12: Max MP +18%, P. Critical Damage +7%, PvP Damage +5%
+		Level 13: Max MP +19%, P. Critical Damage +7%, PvP Damage +5%
+		Level 14: Max MP +19%, P. Critical Damage +8%, PvP Damage +5%
+		Level 15: Max MP +20%, P. Critical Damage +8%, PvP Damage +5%
 	-->
 	<skill id="13888" levels="15" name="MP Death">
 		<set name="target" val="TARGET_NONE" />
@@ -10003,21 +10035,21 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 13%, P. Skill Critical Rate + 3%
-		Level 2: Max MP + 13%, P. Skill Critical Rate + 4%
-		Level 3: Max MP + 14%, P. Skill Critical Rate + 4%, PvP Damage + 5%
-		Level 4: Max MP + 14%, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 5: Max MP + 15%, P. Skill Critical Rate + 5%, PvP Damage + 5%
-		Level 6: Max MP + 15%, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 7: Max MP + 16%, P. Skill Critical Rate + 6%, PvP Damage + 5%
-		Level 8: Max MP + 16%, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 9: Max MP + 17%, P. Skill Critical Rate + 7%, PvP Damage + 5%
-		Level 10: Max MP + 17%, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 11: Max MP + 18%, P. Skill Critical Rate + 8%, PvP Damage + 5%
-		Level 12: Max MP + 18%, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 13: Max MP + 19%, P. Skill Critical Rate + 9%, PvP Damage + 5%
-		Level 14: Max MP + 19%, P. Skill Critical Rate + 10%, PvP Damage + 5%
-		Level 15: Max MP + 20%, P. Skill Critical Rate + 10%, PvP Damage + 5%
+		Level 1: Max MP +13%, P. Skill Critical Rate +3%
+		Level 2: Max MP +13%, P. Skill Critical Rate +4%
+		Level 3: Max MP +14%, P. Skill Critical Rate +4%, PvP Damage +5%
+		Level 4: Max MP +14%, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 5: Max MP +15%, P. Skill Critical Rate +5%, PvP Damage +5%
+		Level 6: Max MP +15%, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 7: Max MP +16%, P. Skill Critical Rate +6%, PvP Damage +5%
+		Level 8: Max MP +16%, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 9: Max MP +17%, P. Skill Critical Rate +7%, PvP Damage +5%
+		Level 10: Max MP +17%, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 11: Max MP +18%, P. Skill Critical Rate +8%, PvP Damage +5%
+		Level 12: Max MP +18%, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 13: Max MP +19%, P. Skill Critical Rate +9%, PvP Damage +5%
+		Level 14: Max MP +19%, P. Skill Critical Rate +10%, PvP Damage +5%
+		Level 15: Max MP +20%, P. Skill Critical Rate +10%, PvP Damage +5%
 	-->
 	<skill id="13889" levels="15" name="MP Hunter">
 		<set name="target" val="TARGET_NONE" />
@@ -10025,94 +10057,94 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Max MP + 13%, P. Skill Critical Damage + 3%
-		Level 2: Max MP + 13%, P. Skill Critical Damage + 4%
-		Level 3: Max MP + 14%, P. Skill Critical Damage + 4%, PvP Damage + 5%
-		Level 4: Max MP + 14%, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 5: Max MP + 15%, P. Skill Critical Damage + 5%, PvP Damage + 5%
-		Level 6: Max MP + 15%, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 7: Max MP + 16%, P. Skill Critical Damage + 6%, PvP Damage + 5%
-		Level 8: Max MP + 16%, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 9: Max MP + 17%, P. Skill Critical Damage + 7%, PvP Damage + 5%
-		Level 10: Max MP + 17%, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 11: Max MP + 18%, P. Skill Critical Damage + 8%, PvP Damage + 5%
-		Level 12: Max MP + 18%, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 13: Max MP + 19%, P. Skill Critical Damage + 9%, PvP Damage + 5%
-		Level 14: Max MP + 19%, P. Skill Critical Damage + 10%, PvP Damage + 5%
-		Level 15: Max MP + 20%, P. Skill Critical Damage + 10%, PvP Damage + 5%
+		Level 1: Max MP +13%, P. Skill Critical Damage +3%
+		Level 2: Max MP +13%, P. Skill Critical Damage +4%
+		Level 3: Max MP +14%, P. Skill Critical Damage +4%
+		Level 4: Max MP +14%, P. Skill Critical Damage +5%
+		Level 5: Max MP +15%, P. Skill Critical Damage +5%
+		Level 6: Max MP +15%, P. Skill Critical Damage +6%
+		Level 7: Max MP +16%, P. Skill Critical Damage +6%
+		Level 8: Max MP +16%, P. Skill Critical Damage +7%
+		Level 9: Max MP +17%, P. Skill Critical Damage +7%
+		Level 10: Max MP +17%, P. Skill Critical Damage +8%
+		Level 11: Max MP +18%, P. Skill Critical Damage +8%
+		Level 12: Max MP +18%, P. Skill Critical Damage +9%
+		Level 13: Max MP +19%, P. Skill Critical Damage +9%
+		Level 14: Max MP +19%, P. Skill Critical Damage +10%
+		Level 15: Max MP +20%, P. Skill Critical Damage +10%
 	-->
 	<skill id="13890" levels="15" name="MP Fire">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Chance to decrease Speed and increase PvP Damage during a critical attack. -->
+	<!-- Speed down with a certain rate and PvP damage up with a certain rate during Critical -->
 	<skill id="13891" levels="1" name="Critical Slow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Chance to stun and increase PvP Damage during a critical attack. -->
+	<!-- Stun with a certain rate and increased PvP damage during Critical -->
 	<skill id="13892" levels="1" name="Critical Stun">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Chance to activate a Dryad Root and increase PvP Damage when using a magic skill. -->
+	<!-- Dryad Root with a certain rate and increased PvP damage during Critical -->
 	<skill id="13893" levels="1" name="Magic Hold">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Chance to activate Focus when using a magic skill.
-		Level 2: Chance to activate Focus and increase PvP Damage when using a magic skill.
+		Level 1: Focus with a certain rate when magic skill is used
+		Level 2: Focus with a certain rate and increased PvP damage when magic skill is used
 	-->
 	<skill id="13894" levels="2" name="Magic Focus">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Chance to activate Blessed Body when using a magic skill. -->
+	<!-- Blessed Body with a certain rate when magic skill is used -->
 	<skill id="13895" levels="1" name="Magic Blessed Body">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Chance to activate Regeneration when using a magic skill. -->
+	<!-- Regeneration with a certain rate when magic skill is used -->
 	<skill id="13896" levels="1" name="Magic Regeneration">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Chance to activate Mental Shield when using a magic skill.
-		Level 2: Chance to activate Mental Shield and increase PvP Damage when using a magic skill.
+		Level 1: Mental Shield with a certain rate when magic skill is used
+		Level 2: Mental Shield with a certain rate and increased PvP damage when magic skill is used
 	-->
-	<skill id="13897" levels="2" name="Magic Mental Shield">
+	<skill id="13897" levels="2" name="Mental Shield">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 5% -->
+	<!-- P. Atk. +5%, PvP/PvE damage +2% -->
 	<skill id="13898" levels="2" name="Tyrr">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- M. Atk. + 5% -->
+	<!-- M. Atk. +5%, PvP/PvE damage +2% -->
 	<skill id="13899" levels="2" name="Feoh">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Max HP + 15% -->
+	<!-- Max HP +15%, PvP/PvE Damage Received -5% -->
 	<skill id="13900" levels="2" name="Sigel">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Mounts the Shadow Blue. -->
+	<!-- Mount the Shadow Blue. -->
 	<skill id="13901" levels="1" name="Shadow Blue">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10131,7 +10163,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Special buff prepared by Roa. Go find Roa during special events. For 1 hour, XP/SP + 10%. -->
+	<!-- A special buff prepared by Roa for the returning war veterans. Find Roa during a guerilla event to obtain. 1 hours: XP/SP acquisition +10%. -->
 	<skill id="13904" levels="1" name="Roa's Assistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10142,7 +10174,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- Resurrects all dead party members and restores 100% of the XP lost. -->
+	<!-- Resurrects all dead party members. Additionally restores around 100% XP. -->
 	<skill id="13905" levels="1" name="Red Libra Talisman - Resurrection">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10151,8 +10183,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
-	<skill id="13906" levels="1" name="Red Libra Talisman - Restoration">
+	<!-- Recovers the HP/MP/CP of all party members, with a chance of cancelling out party debuffs. -->
+	<skill id="13906" levels="1" name="Red Libra Talisman - Recovery">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -10160,7 +10192,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- Cancels all party members' debuffs and makes them immune to debuffs for 7 seconds. -->
+	<!-- Cancels debuffs of all party members, and grants 7-second debuff immunity. -->
 	<skill id="13907" levels="1" name="Red Libra Talisman - Cancel">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10169,8 +10201,8 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="100000" />
 	</skill>
-	<!-- Party's Speed + 70 for 10 seconds. -->
-	<skill id="13908" levels="1" name="Red Libra Talisman - Speed">
+	<!-- Increases the speed of all party members by 70 for 10 seconds. -->
+	<skill id="13908" levels="1" name="Red Libra Talisman - Teleport">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -10178,91 +10210,91 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="100000" />
 	</skill>
-	<!-- Received Damage - 10%. -->
+	<!-- Damage Received -10%. -->
 	<skill id="13909" levels="1" name="Red Libra Talisman - Resistance">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13910" levels="1" name="Elysium Shaper">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13911" levels="1" name="Elysium Cutter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13912" levels="1" name="Elysium Slasher">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13913" levels="1" name="Elysium Avenger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13914" levels="1" name="Elysium Fighter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13915" levels="1" name="Elysium Stormer">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13916" levels="1" name="Elysium Thrower">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13917" levels="1" name="Elysium Shooter">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- M. Atk. + 6%, Casting Spd. + 15%, M. Critical Rate + 25%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- M. Atk. +6%, Casting Spd. +15%, M. Critical Rate +25%, M. Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13918" levels="1" name="Elysium Buster">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- M. Atk. + 6%, Casting Spd. + 15%, M. Critical Rate + 25%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- M. Atk. +6%, Casting Spd. +15%, M. Critical Rate +25%, M. Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13919" levels="1" name="Elysium Caster">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, M. Atk. + 6%, Atk. Spd. + 15%, Casting Spd. + 15%, P. Critical Rate + 82, M. Critical Rate + 25%, P. Critical Damage + 7%, M. Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, M. Atk. +6%, Atk. Spd. +15%, Casting Spd. +15%, P. Critical Rate +82, M. Critical Rate +25%, P. Critical Damage +7%, M. Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13920" levels="1" name="Elysium Retributer">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13921" levels="1" name="Elysium Dualsword">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13922" levels="1" name="Elysium Dual Dagger">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- P. Atk. + 6%, Atk. Spd. + 15%, P. Critical Rate + 82, P. Critical Damage + 7%, P. Skill Critical Damage + 10%, Max HP/MP/CP + 15%. -->
+	<!-- P. Atk. +6%, Atk. Spd. +15%, P. Critical Rate +82, P. Critical Damage +7%, P. Skill Critical Damage +10%, Max HP/MP/CP +15%. -->
 	<skill id="13923" levels="1" name="Elysium Dual Blunt Weapon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

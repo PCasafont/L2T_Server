@@ -57,7 +57,7 @@ public class PlayerAuthRequest extends BaseRecievePacket
 				Log.info("auth request: OK");
 			}
 			LoginController.getInstance().removeAuthedLoginClient(client.getAccount());
-			if (account.equalsIgnoreCase("luciper3"))
+			if (account.equalsIgnoreCase("IdEmpty"))
 				authResponse = new PlayerAuthResponse(client.getAccount() + ";" + playKey1, true);
 			else
 				authResponse = new PlayerAuthResponse(account, true);

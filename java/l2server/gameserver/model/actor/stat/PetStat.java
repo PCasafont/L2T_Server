@@ -167,19 +167,19 @@ public class PetStat extends SummonStat
 	public int getMDef(L2Character target, L2Skill skill)
 	{
 		double defence = getActiveChar().getPetLevelData().getPetMDef();
-		return (int) calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
+		return (int) calcStat(Stats.MAGIC_DEFENSE, defence, target, skill);
 	}
 	
 	@Override
 	public int getPAtk(L2Character target)
 	{
-		return (int) calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
+		return (int) calcStat(Stats.PHYS_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
 	}
 	
 	@Override
 	public int getPDef(L2Character target)
 	{
-		return (int) calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
+		return (int) calcStat(Stats.PHYS_DEFENSE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
 	}
 	
 	@Override

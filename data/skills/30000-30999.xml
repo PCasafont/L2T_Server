@@ -8,7 +8,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: Attacks target with 6Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon.
+		Level 1: Attacks target with 6 Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon.
 		Level 2: Attacks target with 14Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon.
 		Level 3: Attacks target with 19Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon.
 		Level 4: Attacks target with 25Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon.
@@ -214,7 +214,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<for>
-			<abnormal landRate="100" duration="5" stackLvl="4" stackType="storm_sign_2" visualEffect="sauronRedEye">
+			<abnormal duration="5" landRate="100" stackLvl="4" stackType="storm_sign_2" visualEffect="sauronRedEye">
 				<subPercent stat="mDef" val="50" />
 				<sub stat="runSpd" val="100" />
 			</abnormal>
@@ -323,11 +323,11 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: For 3 seconds, blends into the wind. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
-		Level 2: For 3 seconds, blends into the wind and Received Damage - 20%. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
-		Level 3: For 3 seconds, blends into the wind and Received Damage - 30%. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
-		Level 4: For 3 seconds, blends into the wind and Received Damage - 40%. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
-		Level 5: For 3 seconds, blends into the wind and Received Damage - 50%. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
+		Level 1: For 5 seconds, blends into the wind. Becomes one with the wind and disappears later on. Requires a sword or blunt weapon.
+		Level 2: Slowly assimilated into the wind for 5 seconds, increasing P./M. Def. by 20%. The caster is then completely assimilated into the wind, and disappears. Can be used when Sword/Blunt Weapons are equipped.
+		Level 3: Slowly assimilated into the wind for 5 seconds, increasing P./M. Def. by 30%. The caster is then completely assimilated into the wind, and disappears. Can be used when Sword/Blunt Weapons are equipped.
+		Level 4: Slowly assimilated into the wind for 5 seconds, increasing P./M. Def. by 40%. The caster is then completely assimilated into the wind, and disappears. Can be used when Sword/Blunt Weapons are equipped.
+		Level 5: Slowly assimilated into the wind for 5 seconds, increasing P./M. Def. by 50%. The caster is then completely assimilated into the wind, and disappears. Can be used when Sword/Blunt Weapons are equipped.
 	-->
 	<skill id="30008" levels="5" name="Wind Blend">
 		<table name="#mpConsume"> 16 67 68 69 70 </table>
@@ -342,7 +342,7 @@
 		<set name="reuseDelay" val="#reuseDelay" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<for>
-			<abnormal duration="3" stackLvl="1" stackType="wind_blend" visualEffect="ertheiaGreenRunPower">
+			<abnormal duration="5" stackLvl="1" stackType="wind_blend" visualEffect="ertheiaGreenRunPower">
 				<effect chanceType="ON_EXIT" triggeredId="19227" triggeredLevel="#trigLvl" type="ChanceSkillTrigger" val="0" />
 				<addPercent stat="pvpPhysDef" val="#dmgRed" />
 				<addPercent stat="pvpMagicalDef" val="#dmgRed" />
@@ -353,7 +353,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 5 seconds, blends into the wind and teleports backward, and Speed + 100. Requires a sword or blunt weapon. -->
+	<!-- The caster is assimilated into the wind, and teleports to the rear. Assimiliation lasts for 5 seconds, and speed increases by 50 while assimilated. Can be used when Sword/Blunt Weapons are equipped. -->
 	<skill id="30009" levels="10" name="Deceptive Blink">
 		<enchantRoute id="1" level="9,10" /> <!-- Shield -->
 		<enchantRoute id="2" level="9,10" /> <!-- Magic Shield -->
@@ -381,7 +381,7 @@
 		<for>
 			<abnormal duration="5" stackLvl="1" stackType="deceptive_blink" visualEffect="ertheiaRedRunPower">
 				<effect type="Hide" val="0" />
-				<add stat="runSpd" val="100" />
+				<add stat="runSpd" val="50" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
 			</abnormal>
@@ -1063,17 +1063,17 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Attack Attribute Bonus + 10, Attribute Resistance + 10.
-		Level 2: Attack Attribute Bonus + 20, Attribute Resistance + 20.
-		Level 3: Attack Attribute Bonus + 22, Attribute Resistance + 22.
-		Level 4: Attack Attribute Bonus + 24, Attribute Resistance + 24.
-		Level 5: Attack Attribute Bonus + 26, Attribute Resistance + 26.
-		Level 6: Attack Attribute Bonus + 30, Attribute Resistance + 30.
-		Level 7: Attack Attribute Bonus + 32, Attribute Resistance + 32.
-		Level 8: Attack Attribute Bonus + 34, Attribute Resistance + 34.
-		Level 9: Attack Attribute Bonus + 36, Attribute Resistance + 36.
-		Level 10: Attack Attribute Bonus + 38, Attribute Resistance + 38.
-		Level 11: Attack Attribute Bonus + 40, Attribute Resistance + 40.
+		Level 1: Attack Attribute Bonus + 10, Fire/Water/Wind/Earth/Holy Resistance + 10.
+		Level 2: Attack Attribute Bonus + 20, Fire/Water/Wind/Earth/Holy Resistance + 20.
+		Level 3: Attack Attribute Bonus + 22, Fire/Water/Wind/Earth/Holy Resistance + 22.
+		Level 4: Attack Attribute Bonus + 24, Fire/Water/Wind/Earth/Holy Resistance + 24.
+		Level 5: Attack Attribute Bonus + 26, Fire/Water/Wind/Earth/Holy Resistance + 26.
+		Level 6: Attack Attribute Bonus + 30, Fire/Water/Wind/Earth/Holy Resistance + 30.
+		Level 7: Attack Attribute Bonus + 32, Fire/Water/Wind/Earth/Holy Resistance + 32.
+		Level 8: Attack Attribute Bonus + 34, Fire/Water/Wind/Earth/Holy Resistance + 34.
+		Level 9: Attack Attribute Bonus + 36, Fire/Water/Wind/Earth/Holy Resistance + 36.
+		Level 10: Attack Attribute Bonus + 38, Fire/Water/Wind/Earth/Holy Resistance + 38.
+		Level 11: Attack Attribute Bonus + 40, Fire/Water/Wind/Earth/Holy Resistance + 40.
 	-->
 	<skill id="30043" levels="11" name="Eminent Attribute Resistance">
 		<table name="#element"> 10 20 22 24 26 30 32 34 36 38 40 </table>
@@ -1627,23 +1627,25 @@
 		Level 2: For 30 minutes, you're less bound by gravity and P. Atk. + 15%, Knock Back / Knock Down / Pull / Danger Zone / Aerial Yoke Resistance + 15.
 		Level 3: For 30 minutes, you're less bound by gravity and P. Atk. + 20%, Knock Back / Knock Down / Pull / Danger Zone / Aerial Yoke Resistance + 20.
 		Level 4: For 30 minutes, you're less bound by gravity and P. Atk. + 25%, Knock Back / Knock Down / Pull / Danger Zone / Aerial Yoke Resistance + 25.
-		Level 5: For 30 minutes, you're less bound by gravity and P. Atk. + 25%, Knock Back / Knock Down / Pull / Danger Zone / Aerial Yoke / Stun Resistance + 30.
+		Level 5: For 30 minutes, you're less bound by gravity and P. Atk. + 30%, Knock Back / Knock Down / Pull / Danger Zone / Aerial Yoke / Stun Resistance + 30.
+		Level 6: For 30 minutes, become less affected by gravity; P. Atk. +35%, Knock Back/Knock Down/Pull/Danger Zone/Aerial Yoke/Stun Resistance +30.
+		Level 7: For 30 minutes, become less affected by gravity; P. Atk. +40%, Knock Back/Knock Down/Pull/Danger Zone/Aerial Yoke/Stun Resistance +30.
 	-->
-	<skill id="30511" levels="5" name="Air Light">
-		<enchantRoute id="1" level="3,4,5" /> <!-- Haste -->
-		<enchantRoute id="2" level="3,4,5" /> <!-- Shield -->
-		<enchantRoute id="3" level="3,4,5" /> <!-- Magic Shield -->
-		<table name="#mpConsume"> 20 44 45 45 45 </table>
-		<table name="#pAtk"> 10 15 20 25 25 </table>
-		<table name="#resist"> 0 15 20 25 30 </table>
+	<skill id="30511" levels="7" name="Gravity Tower">
+		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Haste -->
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Shield -->
+		<enchantRoute id="3" level="3,4,5,6,7" /> <!-- Magic Shield -->
+		<table name="#mpConsume"> 20 44 45 45 45 45 45 </table>
+		<table name="#pAtk"> 10 15 20 25 30 35 40 </table>
+		<table name="#resist"> 0 15 20 25 30 30 30 </table>
 		<table name="#addPercentPAtkSpd"> 0 
-			<enchantRoute id="1" level="3,4,5"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+			<enchantRoute id="1" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<table name="#addPercentPDef"> 0 
-			<enchantRoute id="2" level="3,4,5"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<table name="#addPercentMDef"> 0 
-			<enchantRoute id="3" level="3,4,5"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 5 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+			<enchantRoute id="3" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 5 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -1850,7 +1852,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Creates a warped space where the enemy is trapped and their abilities are decreased. Requires a fist weapon. -->
+	<!-- The energy of the earth is used to Hold enemies in range. Can be used when Fist Weapons are equipped. -->
 	<skill id="30519" levels="1" name="Warped Space">
 		<set name="target" val="TARGET_SELF" />
 		<set name="behaviorType" val="UNFRIENDLY" />
@@ -1892,6 +1894,8 @@
 		<for>
 			<abnormal duration="#duration" stackLvl="2" stackType="steel_mind" visualEffect="ertheiaRunPower">
 				<effect type="Immortal" val="0" />
+				<effect chanceType="ON_EXIT" triggeredId="23607" triggeredLevel="#trigLevel" type="ChanceSkillTrigger" val="0" />
+				<effect activationChance="100" activationMinDamage="300" chanceType="ON_HIT" triggeredId="30521" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 				<add stat="runSpd" val="#runSpd" />
 				<addPercent stat="pAtk" val="#pAtk" />
 				<addPercent stat="knockDownRes" val="90" />
@@ -1900,8 +1904,6 @@
 				<addPercent stat="aerialYokeRes" val="90" />
 				<addPercent stat="pCritDmg" val="#pAtkPSCritDam" />
 				<addPercent stat="pSkillCritDmg" val="#pAtkPSCritDam" />
-				<effect chanceType="ON_EXIT" triggeredId="23607" triggeredLevel="#trigLevel" type="ChanceSkillTrigger" val="0" />
-				<effect activationChance="100" activationMinDamage="300" chanceType="ON_HIT" triggeredId="30521" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
@@ -2194,17 +2196,17 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Attack Attribute Bonus + 10, Attribute Resistance + 10.
-		Level 2: Attack Attribute Bonus + 20, Attribute Resistance + 20.
-		Level 3: Attack Attribute Bonus + 22, Attribute Resistance + 22.
-		Level 4: Attack Attribute Bonus + 24, Attribute Resistance + 24.
-		Level 5: Attack Attribute Bonus + 26, Attribute Resistance + 26.
-		Level 6: Attack Attribute Bonus + 30, Attribute Resistance + 30.
-		Level 7: Attack Attribute Bonus + 32, Attribute Resistance + 32.
-		Level 8: Attack Attribute Bonus + 34, Attribute Resistance + 34.
-		Level 9: Attack Attribute Bonus + 36, Attribute Resistance + 36.
-		Level 10: Attack Attribute Bonus + 38, Attribute Resistance + 38.
-		Level 11: Attack Attribute Bonus + 40, Attribute Resistance + 40.
+		Level 1: Attack Attribute Bonus + 10, Fire/Water/Wind/Earth/Holy Resistance + 10.
+		Level 2: Attack Attribute Bonus + 20, Fire/Water/Wind/Earth/Holy Resistance + 20.
+		Level 3: Attack Attribute Bonus + 22, Fire/Water/Wind/Earth/Holy Resistance + 22.
+		Level 4: Attack Attribute Bonus + 24, Fire/Water/Wind/Earth/Holy Resistance + 24.
+		Level 5: Attack Attribute Bonus + 26, Fire/Water/Wind/Earth/Holy Resistance + 26.
+		Level 6: Attack Attribute Bonus + 30, Fire/Water/Wind/Earth/Holy Resistance + 30.
+		Level 7: Attack Attribute Bonus + 32, Fire/Water/Wind/Earth/Holy Resistance + 32.
+		Level 8: Attack Attribute Bonus + 34, Fire/Water/Wind/Earth/Holy Resistance + 34.
+		Level 9: Attack Attribute Bonus + 36, Fire/Water/Wind/Earth/Holy Resistance + 36.
+		Level 10: Attack Attribute Bonus + 38, Fire/Water/Wind/Earth/Holy Resistance + 38.
+		Level 11: Attack Attribute Bonus + 40, Fire/Water/Wind/Earth/Holy Resistance + 40.
 	-->
 	<skill id="30543" levels="11" name="Eminent Attribute Resistance">
 		<table name="#element"> 10 20 22 24 26 30 32 34 36 38 40 </table>

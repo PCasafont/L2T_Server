@@ -1612,16 +1612,17 @@
 		<set name="isElemental" val="true" />
 	</skill>
 	<!-- 
-		Level 1: For 30 seconds, M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target.
-		Level 2: For 30 seconds, M. Atk. + 30%, M. Critical Rate + 60%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 60%. When attacked, has a chance of inflicting magic damage on the attacking target.
+		Level 1: For 30 seconds, M. Atk. +30%, M. Critical Rate + 50%, P./M. Def. +20%, and M. Skill MP Consumption -50%.
+		Level 2: For 30 seconds, M. Atk. +40%, M. Critical Rate + 50%, P./M. Def. +30%, and M. Skill MP Consumption -50%.
+		Level 3: For 30 seconds, M. Atk. +50%, M. Critical Rate + 50%, P./M. Def. +40%, and M. Skill MP Consumption -50%.
 	-->
-	<skill id="11046" levels="2" name="Wizard Spirit">
-		<enchantRoute id="1" level="1,2" /> <!-- Time -->
-		<enchantRoute id="2" level="1,2" /> <!-- Counter -->
-		<enchantRoute id="4" level="1,2" /> <!-- Chance -->
+	<skill id="11046" levels="3" name="Wizard Spirit">
+		<enchantRoute id="1" level="1,2,3" /> <!-- Time -->
+		<enchantRoute id="2" level="1,2,3" /> <!-- Counter -->
+		<enchantRoute id="4" level="1,2,3" /> <!-- Chance -->
 		<table name="#mpConsume"> 70 85 </table>
-		<table name="#mAtk"> 20 30 </table>
-		<table name="#mCrit"> 50 60 </table>
+        <table name="#mAtk"> 30 40 50 </table>
+        <table name="#def"> 20 30 40 </table>
 		<table name="#duration"> 30 
 			<enchantRoute id="1" level="1,2"> 31 32 33 34 35 36 37 38 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 </enchantRoute>
 		</table>
@@ -1642,12 +1643,10 @@
 			<abnormal duration="#duration" stackLvl="1" stackType="wizard_spirit">
 				<effect activationChance="#activationChance" chanceType="ON_ATTACKED" triggeredId="11247" type="ChanceSkillTrigger" val="0" />
 				<addPercent stat="mAtk" val="#mAtk" />
-				<addPercentBase stat="mCritRate" val="#mCrit" />
-				<addPercent stat="pDef" val="20" />
-				<addPercent stat="mDef" val="20" />
-				<add stat="rEvas" val="2" />
-				<add stat="mEvasRate" val="2" />
-				<subPercent stat="MagicalMpConsumeRate" val="#mCrit" />
+				<addPercentBase stat="mCritRate" val="50" />
+				<addPercent stat="pDef" val="#def" />
+				<addPercent stat="mDef" val="#def" />
+				<subPercent stat="MagicalMpConsumeRate" val="50" />
 				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
@@ -1861,13 +1860,13 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
+	<!-- Thrusts target and nearby enemies into the air and immobilizes them for 5 seconds. -->
 	<skill id="11052" levels="7" name="Mass Hell Binding">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Chance -->
 		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Hex -->
 		<enchantRoute id="3" level="3,4,5,6,7" /> <!-- Mind -->
 		<table name="#mpConsume"> 228 243 257 273 289 305 321 </table>
-		<table name="#landRate"> 80 
+		<table name="#landRate"> 90
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
@@ -1892,15 +1891,14 @@
 		<set name="saveVs" val="MEN" />
 		<set name="staticHitTime" val="true" />
 		<for>
-			<abnormal comboId="365" count="9" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
+			<abnormal comboId="365" count="5" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
 				<effect type="LiftHold" val="0" />
-				<effect type="DamOverTime" val="100" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
 				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
+	<!-- Thrusts target and nearby enemies into the air and immobilizes them for 5 seconds. -->
 	<skill id="11053" levels="7" name="Mass Hell Binding">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Chance -->
 		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Hex -->
@@ -1910,7 +1908,7 @@
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
-		<table name="#landRate"> 80 
+		<table name="#landRate"> 90
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -1933,7 +1931,7 @@
 		<set name="staticHitTime" val="true" />
 		<set name="saveVs" val="MEN" />
 		<for>
-			<abnormal comboId="365" count="9" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
+			<abnormal comboId="365" count="5" duration="1" landRate="#landRate" stackLvl="1" stackType="lift_hold">
 				<effect type="LiftHold" val="0" />
 				<effect type="DamOverTime" val="100" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
@@ -2252,10 +2250,10 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit.
-		Level 2: Inflicts magical damage on target with 677 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit.
-		Level 3: Inflicts magical damage on target with 693 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit.
-		Level 4: Inflicts magical damage on target with 709 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit.
+		Level 1: Deals 620 magic damage and burns the target while reducing speed by 80. Over-hit.
+		Level 2: Deals 677 magic damage and burns the target while reducing speed by 80. Over-hit.
+		Level 3: Deals 693 magic damage and burns the target while reducing speed by 80. Over-hit.
+		Level 4: Deals 709 magic damage and burns the target while reducing speed by 80. Over-hit.
 	-->
 	<skill id="11066" levels="4" name="Unleash Hell">
 		<enchantRoute id="1" level="1,2,3,4" /> <!-- Power -->
@@ -2265,7 +2263,7 @@
 		<table name="#power"> 620 677 693 709 
 			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#landRate"> 75 
+		<table name="#landRate"> 90
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -2286,18 +2284,17 @@
 		<set name="saveVs" val="MEN" />
 		<for>
 			<abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" visualEffect="skull_fear, flame">
-				<effect type="Fear" val="0" />
 				<effect type="DamOverTime" val="300" />
-				<subPercent stat="runSpd" val="40" />
+				<sub stat="runSpd" val="80" />
 				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit.
-		Level 2: Inflicts magical damage on target and nearby enemies with 641 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit.
-		Level 3: Inflicts magical damage on target and nearby enemies with 655 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit.
-		Level 4: Inflicts magical damage on target and nearby enemies with 669 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit.
+		Level 1: Deals 620 magic damage and burns the target and enemies near the target while reducing speed by60. Over-hit.
+		Level 2: Deals 641 magic damage and burns the target and enemies near the target while reducing speed by60. Over-hit.
+		Level 3: Deals 655 magic damage and burns the target and enemies near the target while reducing speed by60. Over-hit.
+		Level 4: Deals 669 magic damage and burns the target and enemies near the target while reducing speed by60. Over-hit.
 	-->
 	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
 		<enchantRoute id="1" level="1,2,3,4" /> <!-- Power -->
@@ -2307,7 +2304,7 @@
 		<table name="#power"> 620 641 655 669 
 			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#landRate"> 50 
+		<table name="#landRate"> 80
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -2330,18 +2327,17 @@
 		<set name="saveVs" val="MEN" />
 		<for>
 			<abnormal count="5" duration="2" landRate="#landRate" stackLvl="1" visualEffect="skull_fear, flame">
-				<effect type="Fear" val="0" />
 				<effect type="DamOverTime" val="200" />
-				<subPercent stat="runSpd" val="20" />
+				<sub stat="runSpd" val="60" />
 				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
 	<!-- 
-		Level 1: For 30 seconds, you can cast elemental spells with both hands. Decreases MP Consumption by 50% and magic skill Cooldown by 5%. Eliminates magic cancel during magic use.
-		Level 2: For 30 seconds, you can cast elemental spells with both hands. Decreases MP Consumption by 60% and magic skill Cooldown by 10%. Eliminates magic cancel during magic use.
-		Level 3: For 30 seconds, you can cast elemental spells with both hands. Decreases MP Consumption by 70% and magic skill Cooldown by 15%. Eliminates magic cancel during magic use.
-		Level 4: For 30 seconds, you can cast elemental spells with both hands. Decreases MP Consumption by 80% and magic skill Cooldown by 20%. Eliminates magic cancel during magic use.
+		Level 1: For 30 seconds, you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 50% and magic skill Cooldown by 5%.ﾠEliminates magic cancel during magic use.
+		Level 2: For 30 seconds, you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 60% and magic skill Cooldown by 10%.ﾠEliminates magic cancel during magic use.
+		Level 3: For 30 seconds, you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 70% and magic skill Cooldown by 15%.ﾠEliminates magic cancel during magic use.
+		Level 4: For 30 seconds, you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 80% and magic skill Cooldown by 20%.ﾠEliminates magic cancel during magic use.
 	-->
 	<skill id="11068" levels="4" name="Double Casting">
 		<enchantRoute id="1" level="3,4" /> <!-- Time -->
@@ -2408,14 +2404,14 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- 
-		Level 1: Decreases Fire resistance by 20 for 3 seconds.
-		Level 2: Decreases Fire resistance by 50 for 3 seconds.
-		Level 3: Decreases Fire resistance by 100 for 10 seconds.
+		Level 1: Decreases Fire resistance by 20 for 7 seconds.
+		Level 2: Decreases Fire resistance by 50 for 7 seconds.
+		Level 3: Decreases Fire resistance by 100 for 15 seconds.
 	-->
 	<skill id="11077" levels="3" name="Decrease Fire Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#fireRes"> 20 50 100 </table>
-		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2431,14 +2427,14 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases Water resistance by 20 for 3 seconds.
-		Level 2: Decreases Water resistance by 50 for 3 seconds.
-		Level 3: Decreases Water resistance by 100 for 10 seconds.
+		Level 1: Decreases Water resistance by 20 for 7 seconds.
+		Level 2: Decreases Water resistance by 50 for 7 seconds.
+		Level 3: Decreases Water resistance by 100 for 15 seconds.
 	-->
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#waterRes"> 20 50 100 </table>
-		<table name="#abnormalTime"> 3 3 10 </table>
+        <table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2454,14 +2450,14 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases Wind resistance by 20 for 3 seconds.
-		Level 2: Decreases Wind resistance by 50 for 3 seconds.
-		Level 3: Decreases Wind resistance by 100 for 10 seconds.
+		Level 1: Decreases Wind resistance by 20 for 7 seconds.
+		Level 2: Decreases Wind resistance by 50 for 7 seconds.
+		Level 3: Decreases Wind resistance by 100 for 15 seconds.
 	-->
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#windRes"> 20 50 100 </table>
-		<table name="#abnormalTime"> 3 3 10 </table>
+        <table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2477,14 +2473,14 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases Earth resistance by 20 for 3 seconds.
-		Level 2: Decreases Earth resistance by 50 for 3 seconds.
-		Level 3: Decreases Earth resistance by 100 for 10 seconds.
+		Level 1: Decreases Earth resistance by 20 for 7 seconds.
+		Level 2: Decreases Earth resistance by 50 for 7 seconds.
+		Level 3: Decreases Earth resistance by 100 for 15 seconds.
 	-->
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#earthRes"> 20 50 100 </table>
-		<table name="#abnormalTime"> 3 3 10 </table>
+        <table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2500,14 +2496,14 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds.
-		Level 2: Decreases Fire/Water/Wind/Earth resistances by 50 for 3 seconds.
-		Level 3: Decreases Fire/Water/Wind/Earth resistances by 100 for 10 seconds.
+		Level 1: Decreases Fire/Water/Wind/Earth resistances by 20 for 7 seconds.
+		Level 2: Decreases Fire/Water/Wind/Earth resistances by 50 for 7 seconds.
+		Level 3: Decreases Fire/Water/Wind/Earth resistances by 100 for 15 seconds.
 	-->
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#elemRes"> 20 50 100 </table>
-		<table name="#abnormalTime"> 3 3 10 </table>
+        <table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3655,10 +3651,16 @@
 		Level 2: M. Atk. + 6%, Max MP, MP Recovery + 7%, and debuff resistance + 10%.
 		Level 3: M. Atk. + 7%, Max MP, MP Recovery + 10%, and debuff resistance + 10%.
 		Level 4: M. Atk. + 10%, Max MP, MP Recovery + 15%, and debuff resistance + 10%.
+		Level 5: M. Atk. + 12%, Max MP, MP Recovery + 17%, and debuff resistance + 10%.
+		Level 6: M. Atk. + 15%, Max MP, MP Recovery + 20%, and debuff resistance + 10%.
+		Level 7: M. Atk. + 17%, Max MP, MP Recovery + 22%, and debuff resistance + 10%.
+		Level 8: M. Atk. + 20%, Max MP, MP Recovery + 25%, and debuff resistance + 10%.
+		Level 9: M. Atk. + 22%, Max MP, MP Recovery + 27%, and debuff resistance + 10%.
+		Level 10: M. Atk. + 25%, Max MP, MP Recovery + 30%, and debuff resistance + 10%.
 	-->
-	<skill id="11124" levels="4" name="Superior Wizardry">
-		<table name="#mAtk"> 5 6 7 10 </table>
-		<table name="#maxMPAndReco"> 5 7 10 15 </table>
+	<skill id="11124" levels="10" name="Superior Wizardry">
+		<table name="#mAtk"> 5 6 7 10 12 15 17 20 22 25 </table>
+		<table name="#maxMPAndReco"> 5 7 10 15 17 20 22 25 27 30 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3670,13 +3672,19 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: M. Atk. + 10%.
-		Level 2: M. Atk. + 12%.
-		Level 3: M. Atk. + 15%.
-		Level 4: M. Atk. + 20%.
+		Level 1: M. Atk. increases by 10%.
+		Level 2: M. Atk. increases by 12%.
+		Level 3: M. Atk. increases by 15%.
+		Level 4: M. Atk. increases by 20%.
+		Level 5: M. Atk. increases by 23%.
+		Level 6: M. Atk. increases by 26%.
+		Level 7: M. Atk. increases by 30%.
+		Level 8: M. Atk. increases by 33%.
+		Level 9: M. Atk. increases by 36%.
+		Level 10: M. Atk. increases by 40%.
 	-->
-	<skill id="11125" levels="4" name="Superior Wizardry">
-		<table name="#bonus"> 10 12 15 20 </table>
+	<skill id="11125" levels="10" name="Superior Wizardry">
+		<table name="#bonus"> 10 12 15 20 23 26 30 33 36 40 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4115,9 +4123,15 @@
 		Level 2: M. Atk. + 6%, Max MP, and MP Recovery Rate + 6%.
 		Level 3: M. Atk. + 7%, Max MP, and MP Recovery Rate + 7%.
 		Level 4: M. Atk. + 10%, Max MP, and MP Recovery Rate + 10%.
+		Level 5: M. Atk. + 12%, Max MP, and MP Recovery Rate + 12%.
+		Level 6: M. Atk. + 15%, Max MP, and MP Recovery Rate + 15%.
+		Level 7: M. Atk. + 17%, Max MP, and MP Recovery Rate + 17%.
+		Level 8: M. Atk. + 20%, Max MP, and MP Recovery Rate + 20%.
+		Level 9: M. Atk. + 22%, Max MP, and MP Recovery Rate + 22%.
+		Level 10: M. Atk. + 25%, Max MP, and MP Recovery Rate + 25%.
 	-->
-	<skill id="11151" levels="4" name="Superior Wizardry">
-		<table name="#bonus"> 5 6 7 10 </table>
+	<skill id="11151" levels="10" name="Superior Wizardry">
+		<table name="#bonus"> 5 6 7 10 12 15 17 20 22 25 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4194,19 +4208,28 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: M. Skill cooldown - 5%.
-		Level 2: M. Skill cooldown - 6%.
-		Level 3: M. Skill cooldown - 7%.
-		Level 4: M. Skill cooldown - 10%.
+		Level 1: M. Atk. +5%; Max MP, MP Recovery Speed +5% Up; M. Skill Cooldown -10%.
+		Level 2: M. Atk. +6%; Max MP, MP Recovery Speed +6% Up; M. Skill Cooldown -10%.
+		Level 3: M. Atk. +7%; Max MP, MP Recovery Speed +7% Up; M. Skill Cooldown -10%.
+		Level 4: M. Atk. +10%; Max MP, MP Recovery Speed +10% Up; M. Skill Cooldown -10%.
+		Level 5: M. Atk. +12%; Max MP, MP Recovery Speed +12% Up; M. Skill Cooldown -10%.
+		Level 6: M. Atk. +15%; Max MP, MP Recovery Speed +15% Up; M. Skill Cooldown -10%.
+		Level 7: M. Atk. +17%; Max MP, MP Recovery Speed +17% Up; M. Skill Cooldown -10%.
+		Level 8: M. Atk. +20%; Max MP, MP Recovery Speed +20% Up; M. Skill Cooldown -10%.
+		Level 9: M. Atk. +22%; Max MP, MP Recovery Speed +22% Up; M. Skill Cooldown -10%.
+		Level 10: M. Atk. +25%; Max MP, MP Recovery Speed +25% Up; M. Skill Cooldown -10%.
 	-->
-	<skill id="11176" levels="4" name="Superior Wizardry">
-		<table name="#bonus"> 5 6 7 10 </table>
+	<skill id="11176" levels="10" name="Superior Wizardry">
+		<table name="#bonus"> 5 6 7 10 12 15 17 20 22 25 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
-			<subPercent stat="mReuse" val="#bonus" />
-			<subPercent stat="pReuse" val="#bonus" />
+            <addPercent stat="mAtk" val="#bonus" />
+            <addPercent stat="maxMp" val="#bonus" />
+            <addPercent stat="regMp" val="#bonus" />
+            <subPercent stat="mReuse" val="10" />
+            <subPercent stat="pReuse" val="10" />
 		</for>
 	</skill>
 	<!-- 
@@ -4557,18 +4580,18 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: For 20 seconds, P. Def. + 5000.
-		Level 2: For 20 seconds, P. Def. + 5300.
-		Level 3: For 20 seconds, P. Def. + 5600.
-		Level 4: For 20 seconds, P. Def. + 6000.
-		Level 5: For 20 seconds, P. Def. + 6400.
-		Level 6: For 20 seconds, P. Def. + 6800.
-		Level 7: For 20 seconds, P. Def. + 7300.
+		Level 1: For 20 seconds, own P. Def. +100%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 2: For 20 seconds, own P. Def. +105%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 3: For 20 seconds, own P. Def. +110%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 4: For 20 seconds, own P. Def. +120%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 5: For 20 seconds, own P. Def. +130%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 6: For 20 seconds, own P. Def. +140%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
+		Level 7: For 20 seconds, own P. Def. +150%, Bow/Crossbow Resistance +25%, and Critical Damage Received -25%.
 	-->
 	<skill id="11225" levels="7" name="Physical Soul Barrier">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Time -->
 		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wind -->
-		<table name="#pDef"> 5000 5300 5600 6000 6400 6800 7300 </table>
+		<table name="#pDef"> 100 105 110 120 130 140 150 </table>
 		<table name="#duration"> 20 
 			<enchantRoute id="1" level="3,4,5,6,7"> 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 </enchantRoute>
 		</table>
@@ -4585,27 +4608,36 @@
 		<for>
 			<abnormal duration="#duration" stackLvl="1" stackType="ultimate_pd_up">
 				<effect type="Buff" val="0" />
-				<add stat="pDef" val="#pDef" />
+                <addPercent stat="pDef" val="#pDef" />
+                <subPercent stat="bowWpnVuln" val="25" />
+                <subPercent stat="crossbowWpnVuln" val="25" />
+                <subPercent stat="critVuln" val="25" />
 				<add stat="runSpd" val="#addRunSpd" />
 			</abnormal>
 		</for>
 	</skill>
 	<!-- 
-		Level 1: M. Critical Rate + 5% and PvP damage + 5%.
-		Level 2: M. Critical Rate + 6% and PvP damage + 6%.
-		Level 3: M. Critical Rate + 7% and PvP damage + 7%.
-		Level 4: M. Critical Rate + 10% and PvP damage + 10%.
+		Level 1: M. Atk. +5%, M. Critical Rate +5%, and PvP Damage +10%.
+		Level 2: M. Atk. +6%, M. Critical Rate +6%, and PvP Damage +10%.
+		Level 3: M. Atk. +7%, M. Critical Rate +7%, and PvP Damage +10%.
+		Level 4: M. Atk. +10%, M. Critical Rate +10%, and PvP Damage +10%.
+		Level 5: M. Atk. +12%, M. Critical Rate +12%, and PvP Damage +10%.
+		Level 6: M. Atk. +15%, M. Critical Rate +15%, and PvP Damage +10%.
+		Level 7: M. Atk. +17%, M. Critical Rate +17%, and PvP Damage +10%.
+		Level 8: M. Atk. +20%, M. Critical Rate +20%, and PvP Damage +10%.
+		Level 9: M. Atk. +22%, M. Critical Rate +22%, and PvP Damage +10%.
+		Level 10: M. Atk. +25%, M. Critical Rate +25%, and PvP Damage +10%.
 	-->
-	<skill id="11226" levels="4" name="Superior Wizardry">
-		<table name="#bonus"> 5 6 7 10 </table>
+	<skill id="11226" levels="10" name="Superior Wizardry">
+		<table name="#bonus"> 5 6 7 10 12 15 17 20 22 25 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
 			<addPercentBase stat="mCritRate" val="#bonus" />
-			<addPercent stat="pvpPhysDmg" val="#bonus" />
-			<addPercent stat="pvpMagicalDmg" val="#bonus" />
-			<addPercent stat="pvpPhysSkillsDmg" val="#bonus" />
+			<addPercent stat="pvpPhysDmg" val="10" />
+			<addPercent stat="pvpMagicalDmg" val="10" />
+			<addPercent stat="pvpPhysSkillsDmg" val="10" />
 		</for>
 	</skill>
 	<!-- Pulls enemies in a selected area to the center. -->
@@ -4777,7 +4809,7 @@
 			<subPercent stat="DanceMpConsumeRate" val="10" />
 		</for>
 	</skill>
-	<!-- Can summon a servitor within 4 summon points. INT + 2. Use Rage to transfer the effects onto your servitor. -->
+	<!-- A Servitor can be summoned when summon points are 4 or lower. INT +2; When the 4 Mark Skills are used, the Servitor is linked with the ability of wrath. -->
 	<skill id="11254" levels="4" name="Superior Summon Mastery">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -6168,7 +6200,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Dispels debuffs on all servitors and makes them immune to debuffs for 3 seconds. -->
+	<!-- Dispels debuffs on all servitors and makes them immune to debuffs for 5 seconds. -->
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
 		<enchantRoute id="1" level="1" /> <!-- Major -->
 		<enchantRoute id="2" level="1" /> <!-- Recharge -->
@@ -6195,13 +6227,16 @@
 				<effect type="ManaHeal" val="#enchManaHeal" />
 				<effect type="Heal" val="#enchHeal" />
 			</abnormal>
+            <abnormal duration="5" stackLvl="3" stackType="abnormal_immunity">
+                <set stat="debuffImmunity" val="1" />
+            </abnormal>
 		</for>
 	</skill>
 	<!-- 
 		Level 1: Increases all servitor's P. Def. by 4680 and M. Def. by 4212 for 60 seconds.
 		Level 2: Increases all servitor's P. Def. by 9360 and M. Def. by 8424 for 60 seconds.
 	-->
-	<skill id="11310" levels="2" name="Mass Servitor Blessing">
+	<skill id="11310" levels="2" name="Mass Servitor Ultimate Defense">
 		<enchantRoute id="1" level="1,2" /> <!-- Time -->
 		<enchantRoute id="2" level="1,2" /> <!-- Might -->
 		<table name="#duration"> 60 
@@ -7007,13 +7042,19 @@
 		Level 2: For 30 minutes, all servitors' Atk. Spd. + 12%.
 		Level 3: For 30 minutes, all servitors' Atk. Spd. + 15%.
 		Level 4: For 30 minutes, all servitors' Atk. Spd. + 20%.
+		Level 5: For 30 minutes, all servitors' P. Atk. +5%, Atk. Spd. +20%, P. Accuracy +2, Max HP +5%.
+		Level 6: For 30 minutes, all servitors' P. Atk. + 7%, Atk. Spd. + 20%, P. Accuracy + 4, and Max HP + 10%.
+		Level 7: For 30 minutes, all servitors' P. Atk. + 10%, Atk. Spd. + 20%, P. Accuracy + 6, and Max HP + 15%.
 	-->
-	<skill id="11347" levels="4" name="Greater Servitor Haste">
+	<skill id="11347" levels="7" name="Greater Servitor Haste">
 		<enchantRoute id="1" level="3,4" /> <!-- Shield -->
 		<enchantRoute id="2" level="3,4" /> <!-- Magic Shield -->
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
-		<table name="#atkSpd"> 10 12 15 20 </table>
+        <table name="#atkSpd"> 10 12 15 20 20 20 20 </table>
+        <table name="#atk"> 0 0 0 5 7 10 </table>
+        <table name="#acc"> 0 0 0 2 4 6 </table>
+        <table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7037,7 +7078,10 @@
 		<for>
 			<abnormal duration="1800" stackLvl="3" stackType="greater_servitor_haste">
 				<effect type="Buff" val="0" />
-				<addPercent stat="pAtkSpd" val="#atkSpd" />
+                <addPercent stat="pAtkSpd" val="#atkSpd" />
+                <addPercent stat="pAtk" val="#atk" />
+                <addPercent stat="accCombat" val="#acc" />
+                <addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -7049,13 +7093,19 @@
 		Level 2: For 30 minutes, all servitors' Critical Damage + 12%.
 		Level 3: For 30 minutes, all servitors' Critical Damage + 15%.
 		Level 4: For 30 minutes, all servitors' Critical Damage + 20%.
+		Level 5: For 30 minutes, all servitors' P. Atk. +5%, P. Critical Damage +20%, P. Accuracy +2, Max HP +5%.
+		Level 6: For 30 minutes, all servitors' P. Atk. +7%, P. Critical Damage +20%, P. Accuracy +4, Max HP +10%.
+		Level 7: For 30 minutes, all servitors' P. Atk. +10%, P. Critical Damage +20%, P. Accuracy +6, Max HP +15%.
 	-->
-	<skill id="11348" levels="4" name="Servitor Death Whisper">
+	<skill id="11348" levels="7" name="Greater Servitor Death Whisper">
 		<enchantRoute id="1" level="3,4" /> <!-- Shield -->
 		<enchantRoute id="2" level="3,4" /> <!-- Magic Shield -->
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
-		<table name="#critDmg"> 10 12 15 20 </table>
+		<table name="#critDmg"> 10 12 15 20 20 20 20 </table>
+        <table name="#atk"> 0 0 0 5 7 10 </table>
+        <table name="#acc"> 0 0 0 2 4 6 </table>
+        <table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7080,6 +7130,9 @@
 			<abnormal duration="1800" stackLvl="10" stackType="servitor_death_whisper">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pCritDmg" val="#critDmg" />
+                <addPercent stat="pAtk" val="#atk" />
+                <addPercent stat="accCombat" val="#acc" />
+                <addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -7091,13 +7144,18 @@
 		Level 2: For 30 minutes, all servitors' P. Atk. + 12%.
 		Level 3: For 30 minutes, all servitors' P. Atk. + 15%.
 		Level 4: For 30 minutes, all servitors' P. Atk. + 20%.
+		Level 5: For 30 minutes, all servitors' P. Atk. +25%, P. Accuracy +2, Max HP +5%.
+		Level 6: For 30 minutes, all servitors' P. Atk. +27%, P. Accuracy +4, Max HP +10%.
+		Level 7: For 30 minutes, all servitors' P. Atk. +30%, P. Accuracy +6, Max HP +15%.
 	-->
-	<skill id="11349" levels="4" name="Greater Servitor Might">
+	<skill id="11349" levels="7" name="Greater Servitor Might">
 		<enchantRoute id="1" level="3,4" /> <!-- Shield -->
 		<enchantRoute id="2" level="3,4" /> <!-- Magic Shield -->
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
-		<table name="#pAtk"> 10 12 15 20 </table>
+		<table name="#pAtk"> 10 12 15 20 25 27 30 </table>
+        <table name="#acc"> 0 0 0 2 4 6 </table>
+        <table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7122,6 +7180,8 @@
 			<abnormal duration="1800" stackLvl="3" stackType="greater_servitor_might">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="#pAtk" />
+                <addPercent stat="accCombat" val="#acc" />
+                <addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -7172,7 +7232,7 @@
 		Level 4: Servitor's wrath. P. Atk. + 10%, Critical Rate + 25%, and Critical Damage + 10%.
 		Level 5: Servitor's wrath. P. Atk. + 15%, Critical Rate + 30%, and Critical Damage + 15%.
 	-->
-	<skill id="11351" levels="5" name="Arcane Link">
+	<skill id="11351" levels="5" name="Link of Loyalty">
 		<table name="#pAtk"> 1 3 5 10 15 </table>
 		<table name="#rCrit"> 10 15 20 25 30 </table>
 		<set name="target" val="TARGET_SUMMON" />
@@ -7990,7 +8050,7 @@
 		<set name="effectRange" val="1600" />
 		<set name="skillActionId" val="1155" />
 	</skill>
-	<!-- Uses the power of nature to increase M. Atk. and M. Critical Rate for 30 seconds. Additionally increases your servitor's P. Atk. And success rate of Knock Back / Knock Down. Consumes 10 Spirit Ores. -->
+	<!-- The power of nature is used to increase P. Atk./P. Def./M. Atk./M. Def. by 20% for 30 seconds. Additionally, P. Atk. +20%, P. Accuracy +23, Knock Back/Knock Down Success Rate +60% for servitors. The Servitor also becomes immune to debuffs. 10 Spirit Ores consumed. -->
 	<skill id="11387" levels="1" name="Arcana's Call">
 		<set name="target" val="TARGET_SUMMON" />
 		<set name="targetDirection" val="ALL_SUMMONS" />
@@ -8006,17 +8066,18 @@
 		<set name="effectRange" val="1400" />
 		<for>
 			<abnormal duration="30">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pAtk" val="35" />
-				<addPercent stat="knockDownProf" val="10" />
-				<addPercent stat="knockBackProf" val="10" />
+                <addPercent stat="pAtk" val="20" />
+                <addPercent stat="accCombat" val="23" />
+				<addPercent stat="knockDownProf" val="60" />
+				<addPercent stat="knockBackProf" val="60" />
+                <set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11388" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- M. Atk. + 30%, M. Critical Rate + 30% for 30 seconds. -->
+	<!-- For 30 seconds, P. Atk./P. Def./M. Atk./M. Def. +20%. -->
 	<skill id="11388" levels="1" name="Lord of Arcana">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8030,13 +8091,14 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-				<effect type="Buff" val="0" />
-				<addPercent stat="mAtk" val="30" />
-				<addPercentBase stat="mCritRate" val="30" />
+                <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Uses the power of spirits to increase M. Atk. And Casting Spd. for 30 seconds. Additionally increases your servitor's P. Atk. and Atk. Spd, and decreases cooldown. Consumes 10 Spirit Ores. -->
+	<!-- The power of nature is used to increase P. Atk./P. Def./M. Atk./M. Def. by 20% for 30 seconds. Additionally, P. Atk. +20%, Atk. Spd. +10%, and Skill Cooldown -60% for servitors. The Servitor also becomes immune to debuffs. 10 Spirit Ores consumed. -->
 	<skill id="11389" levels="1" name="Elemental's Call">
 		<set name="target" val="TARGET_SUMMON" />
 		<set name="targetDirection" val="ALL_SUMMONS" />
@@ -8052,18 +8114,18 @@
 		<set name="effectRange" val="1400" />
 		<for>
 			<abnormal duration="30">
-				<effect type="Buff" val="0" />
-				<addPercent stat="pAtk" val="10" />
+				<addPercent stat="pAtk" val="20" />
 				<addPercent stat="pAtkSpd" val="10" />
-				<subPercent stat="mReuse" val="10" />
-				<subPercent stat="pReuse" val="10" />
+				<subPercent stat="mReuse" val="60" />
+				<subPercent stat="pReuse" val="60" />
+                <set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11390" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- M. Atk. + 30%, Casting Spd. + 30% for 30 seconds. -->
+	<!-- For 30 seconds, P. Atk./P. Def./M. Atk./M. Def. +20%. -->
 	<skill id="11390" levels="1" name="Lord of Elemental">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8077,13 +8139,14 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-				<effect type="Buff" val="0" />
-				<addPercent stat="mAtk" val="30" />
-				<addPercent stat="mAtkSpd" val="30" />
+                <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Use the power of ghosts to increase M. Atk. And M. Critical Damage for 30 seconds. Additionally increases your servitor's P. Critical Damage and vital point attack rate. Consumes 10 Spirit Ores. -->
+	<!-- The power of demons is used to increase P. Atk./P. Def./M. Atk./M. Def. by 20% for 30 seconds. Additionally, P. Atk. +20% and P. Critical Damage +20% for servitors. The Servitor also becomes immune to debuffs. 10 Spirit Ores consumed. -->
 	<skill id="11391" levels="1" name="Spectral's Call">
 		<set name="target" val="TARGET_SUMMON" />
 		<set name="targetDirection" val="ALL_SUMMONS" />
@@ -8099,15 +8162,16 @@
 		<set name="effectRange" val="1400" />
 		<for>
 			<abnormal duration="30">
+				<addPercent stat="pAtk" val="20" />
 				<addPercent stat="pCritDmg" val="10" />
-				<addPercent stat="blowRate" val="10" />
+                <set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11392" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- M. Atk. + 30%, M. Critical Damage + 30% for 30 seconds. -->
+	<!-- For 30 seconds, P. Atk./P. Def./M. Atk./M. Def. +20%. -->
 	<skill id="11392" levels="1" name="Lord of Spectral">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8121,8 +8185,10 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-				<addPercent stat="mAtk" val="30" />
-				<addPercent stat="mCritDmg" val="30" />
+                <addPercent stat="pAtk" val="20" />
+                <addPercent stat="mAtk" val="20" />
+                <addPercent stat="pDef" val="20" />
+                <addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
@@ -8249,7 +8315,7 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Max HP + 4636, P. Def. + 1506, Atk. Spd. + 10%, Speed + 10 when equipped with Light Armor.
+		Level 1: Max HP + 4636, P. Def. + 1506, Atk. Spd. + 10%, Speed + 10% when equipped with Light Armor.
 		Level 2: Max HP + 4636, P. Def. + 1654 and MP Recovery Bonus + 10% when equipped with Light Armor.
 		Level 3: Max HP + 4636, P. Def. + 1817 and MP Recovery Bonus + 10% when equipped with Light Armor.
 		Level 4: Max HP + 4636, P. Def. + 1959 and MP Recovery Bonus + 10% when equipped with Light Armor.
@@ -8281,7 +8347,7 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Max HP + 4636, P. Def. + 1731,  received Critical Damage - 35% when equipped with Heavy Armor.
+		Level 1: When heavy armor is equipped, Max HP +4636, P. Def. +1731; P. Critical Damage Received -35%.
 		Level 2: Max HP + 4636 and P. Def. + 1901 when equipped with Heavy Armor.
 		Level 3: Max HP + 4636 and P. Def. + 2088 when equipped with Heavy Armor.
 		Level 4: Max HP + 4636 and P. Def. + 2252 when equipped with Heavy Armor.
@@ -8380,7 +8446,7 @@
 			<add stat="maxMp" val="#maxMp" />
 		</for>
 	</skill>
-	<!-- Rushes the enemy to inflict Stun for 1 seconds. Requires a sword, dualsword or dual blunt to be equipped. -->
+	<!-- Rushes the enemy to inflict Stun for 3 seconds. Requires a sword, dualsword or dual blunt to be equipped. -->
 	<skill id="11508" levels="9" name="Assault Rush">
 		<enchantRoute id="1" level="5,6,7,8,9" /> <!-- Chance -->
 		<enchantRoute id="2" level="5,6,7,8,9" /> <!-- Distance -->
@@ -8424,7 +8490,7 @@
 					<player active_effect_id="30517" />
 				</not>
 			</cond>
-			<abnormal duration="1" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun" visualEffect="stun">
+			<abnormal duration="3" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
 			</abnormal>
 		</for>
@@ -8580,17 +8646,17 @@
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 	</skill>
 	<!-- 
-		Level 1: Attacks target and nearby enemies with 10263 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 2: Attacks target and nearby enemies with 10616 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 3: Attacks target and nearby enemies with 11322 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 4: Attacks target and nearby enemies with 12027 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 5: Attacks target and nearby enemies with 12733 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 6: Attacks target and nearby enemies with 13438 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 7: Attacks target and nearby enemies with 14144 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 8: Attacks target and nearby enemies with 14849 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 9: Attacks target and nearby enemies with 19113 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 10: Attacks target and nearby enemies with 20045 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
-		Level 11: Attacks target and nearby enemies with 20977 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by s3 and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 1: Attacks target and nearby enemies with 10263 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 2: Attacks target and nearby enemies with 10616 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 3: Attacks target and nearby enemies with 11322 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 4: Attacks target and nearby enemies with 12027 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 5: Attacks target and nearby enemies with 12733 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 6: Attacks target and nearby enemies with 13438 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 7: Attacks target and nearby enemies with 14144 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 8: Attacks target and nearby enemies with 14849 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 9: Attacks target and nearby enemies with 19113 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 10: Attacks target and nearby enemies with 20045 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
+		Level 11: Attacks target and nearby enemies with 20977 Power added to P. Atk. for 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical.
 	-->
 	<skill id="11513" levels="11" name="Mass Crippling Attack">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
@@ -8603,7 +8669,7 @@
 		<table name="#ignoredDefPercent"> 0.0 
 			<enchantRoute id="3" level="7,8,9,10,11"> 1.0 1.6 2.2 2.8 3.4 4.0 4.6 5.2 5.8 6.4 7.0 7.6 8.2 8.8 9.4 10.0 10.6 11.2 11.8 12.4 13.0 13.6 14.2 14.8 15.4 16.0 16.6 17.2 17.8 18.4 </enchantRoute>
 		</table>
-		<table name="#landRate"> 60 
+		<table name="#landRate"> 70
 			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AROUND_TARGET" />
@@ -9138,7 +9204,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases party members' HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
+	<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 	<skill id="11532" levels="1" name="Refreshing Sonata">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
 		<table name="#duration"> 300 
@@ -9836,7 +9902,7 @@
 	</skill>
 	<!-- 
 		Level 1: Makes all party members invincible for 30 seconds.
-		Level 2: Makes all nearby party members and clan members invincible for 30 seconds.
+		Level 2: All party and clan members made invincible for 30 seconds.
 	-->
 	<skill id="11560" levels="2" name="Celestial Aegis">
 		<enchantRoute id="1" level="1,2" /> <!-- Major -->
@@ -10756,7 +10822,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 5 minutes, increases clan members' HP Recovery Bonus + 20%, P. Accuracy + 4, P. Evasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
+	<!-- For 5 minutes, increases clan members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
 	<skill id="11602" levels="1" name="Frenzied Refreshing Sonata">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
 		<table name="#duration"> 300 
@@ -10967,7 +11033,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases party members' HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
+	<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 	<skill id="11609" levels="1" name="Refreshing Song">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
 		<table name="#duration"> 300 
@@ -11059,7 +11125,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Increases party members' HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
+	<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 	<skill id="11612" levels="1" name="Refreshing Dance">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
 		<table name="#duration"> 300 
@@ -11292,16 +11358,16 @@
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<!-- 
-		Level 1: Shield Defense Success Rate + 50%, Shield Defense + 40%.
-		Level 2: Shield Defense Success Rate + 50%, Shield Defense + 45%.
-		Level 3: Shield Defense Success Rate + 50%, Shield Defense + 50%.
-		Level 4: Shield Defense Success Rate + 50%, Shield Defense + 55%.
-		Level 5: Shield Defense Success Rate + 50%, Shield Defense + 60%.
-		Level 6: Shield Defense Success Rate + 50%, Shield Defense + 65%.
-		Level 7: Shield Defense Success Rate + 50%, Shield Defense + 70%.
-		Level 8: Shield Defense Success Rate + 50%, Shield Defense + 75%.
-		Level 9: Shield Defense Success Rate + 50%, Shield Defense + 80%.
-		Level 10: Shield Defense Success Rate + 50%, Shield Defense + 85%.
+		Level 1: Shield Def. Success Rate +50%, Shield Def. +40%.
+		Level 2: Shield Def. Success Rate +50%, Shield Def. +45%.
+		Level 3: Shield Def. Success Rate +50%, Shield Def. +50%.
+		Level 4: Shield Def. Success Rate +50%, Shield Def. +55%.
+		Level 5: Shield Def. Success Rate +50%, Shield Def. +60%.
+		Level 6: Shield Def. Success Rate +50%, Shield Def. +65%.
+		Level 7: Shield Def. Success Rate +50%, Shield Def. +70%.
+		Level 8: Shield Def. Success Rate +50%, Shield Def. +75%.
+		Level 9: Shield Def. Success Rate +50%, Shield Def. +80%.
+		Level 10: Shield Def. Success Rate +50%, Shield Def. +85%.
 	-->
 	<skill id="11620" levels="10" name="Superior Shield Mastery">
 		<table name="#sDef"> 40 45 50 55 60 65 70 75 80 85 </table>
@@ -11313,7 +11379,7 @@
 			<addPercent stat="sDef" val="#sDef" />
 		</for>
 	</skill>
-	<!-- Has a chance to create a barrier that absorbs damage. -->
+	<!-- A chance of a damage-absorbing barrier being generated when damage is received. -->
 	<skill id="11621" levels="1" name="Blessing Barrier">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -11323,7 +11389,7 @@
 		<set name="activationChance" val="3" />
 		<set name="chanceType" val="ON_ATTACKED" />
 	</skill>
-	<!-- Protected by a barrier. It absorbs 20000 damage for 10 seconds. -->
+	<!-- Protected by a divine barrier. The barrier absorbs 20000 damage for 10 seconds. -->
 	<skill id="11622" levels="1" name="Blessing Barrier">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -11368,7 +11434,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Atk. Spd. + 5 seconds;30%. -->
+	<!-- Atk. Spd. + 30% for 5 seconds. -->
 	<skill id="11748" levels="1" name="Enchanter - Individual">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -11776,7 +11842,7 @@
 		Level 2: Instantly recovers party members' MP with a maximum of 715 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second.
 		Level 3: Instantly recovers party members' MP with a maximum of 725 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second.
 		Level 4: Instantly recovers party members' MP with a maximum of 740 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second.
-		Level 5: Instantly recovers party members' MP with a maximum of 750 Power depending on their level. Also, for 10 seconds, recovers 55 MP per second.
+		Level 5: Instantly recovers party members' MP with a maximum of 755 Power depending on their level. Also, for 10 seconds, recovers 55 MP per second.
 		Level 6: Instantly recovers party members' MP with a maximum of 768 Power depending on their level. Also, for 10 seconds, recovers 55 MP per second.
 		Level 7: Instantly recovers party members' MP with a maximum of 786 Power depending on their level. Also, for 10 seconds, recovers 55 MP per second.
 		Level 8: Instantly recovers party members' MP with a maximum of 804 Power depending on their level. Also, for 10 seconds, recovers 55 MP per second.
@@ -11785,7 +11851,7 @@
 		<enchantRoute id="1" level="4,5,6,7,8" /> <!-- Power -->
 		<enchantRoute id="2" level="4,5,6,7,8" /> <!-- Major -->
 		<table name="#mpConsume"> 3900 3970 4030 4110 4180 4248 4318 4388 </table>
-		<table name="#power"> 700 715 725 740 750 768 786 804 
+		<table name="#power"> 700 715 725 740 755 768 786 804
 			<enchantRoute id="1" level="4,5,6,7,8" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#enchHeal"> 0 
@@ -11899,8 +11965,8 @@
 		<for>
 			<abnormal duration="7" stackLvl="4" stackType="abnormal_invincibility">
 				<effect type="CancelDebuff" val="0" />
-				<set stat="debuffImmunity" val="1" />
 				<effect type="Heal" val="#enchHeal" />
+				<set stat="debuffImmunity" val="1" />
 			</abnormal>
 		</for>
 	</skill>
@@ -13020,7 +13086,7 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="skillRadius" val="1000" />
 	</skill>
-	<!-- For 30 minutes, target's P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, M. Def. + 30%.  -->
+	<!-- For 30 minutes, target's P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, M. Def. + 30%. -->
 	<skill id="11820" levels="1" name="Power of Saha">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
@@ -13328,9 +13394,6 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="11836" levels="1" name="Summon Lumi Power Passive">
-		<!-- TODO: none: none
-		-->
-		<enchantRoute id="1" level="1" enabled="false" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -13344,8 +13407,8 @@
 	<skill id="11850" levels="4" name="Miraculous Benediction">
 		<enchantRoute id="1" level="3,4" /> <!-- Recharge -->
 		<table name="#mpConsume"> 185 205 225 243 </table>
-		<table name="#mpMin"> 50 60 70 100 </table>		
-		<table name="#enchManaHeal"> 0
+		<table name="#mpMin"> 50 60 70 100 </table>
+		<table name="#enchManaHeal"> 0 
 			<enchantRoute id="1" level="3,4"> 532 570 607 644 681 718 756 793 830 867 904 942 979 1016 1053 1090 1128 1165 1202 1240 1264 1289 1314 1339 1363 1389 1413 1438 1463 1488 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_FRIENDS" />
@@ -13737,7 +13800,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Atk. Spd. + 5 seconds;30%. -->
+	<!-- Atk. Spd. + 30% for 5 seconds. -->
 	<skill id="11998" levels="1" name="Healer - Individual">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

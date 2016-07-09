@@ -502,21 +502,21 @@
 		<set name="learnSkillId" val="19116" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Mentor's assistance. Atk. Spd. + 10%, Casting Spd. + 20%, Max HP + 20%, and MP Recovery Bonus + 10%. M. Skill MP Consumption - 5%, and decreases chance of cancellation while casting. -->
+	<!-- With your Mentor's help, your Atk. Spd. +10%, Casting Spd. +20%, Max HP +20%, MP Recovery Bonus +10%, M. Skill MP Consumption -5%. As well as the rate of magic castings being canceled during use decreased. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="17082" levels="1" name="Mentor's Prevailing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Mentor's assistance. P. Atk. + 5%, M. Atk. + 10%, and Atk./Casting Spd. + 5%. P. Def./M. Def. - 4%, and P. Evasion - 4. Has a chance of 5% Vampiric Rage effect, and reflects 10% of received damage back to enemy. -->
+	<!-- With your Mentor's help, your P. Atk. +5%, M. Atk. +10%, Atk. Spd./Casting Spd. +5%, P. Def. -4%, M. Def. -4%, and P. Evasion -4. Additionally, a 5% Vampiric Rage effect is vested with a certain rate, and 10% of damage received is reflected to the opponent. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when you Mentor goes offline. -->
 	<skill id="17083" levels="1" name="Mentor's Daring Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Mentor's assistance. HP Recovery Bonus + 10%, P. Accuracy + 2, P. Evasion + 2, and Speed + 10. Skill MP Consumption - 10%, and Skill Cooldown - 5%. -->
+	<!-- With your Mentor's help, your HP Recovery Bonus +10%, P. Accuracy +2, P. Evasion +2, Movement Speed +10, Skill MP Consumption -10%, and Skill Cooldown -5%. Buff is triggered only when your Mentor is active. Buff is maintained for 5 minutes when your Mentor goes offline. -->
 	<skill id="17084" levels="1" name="Mentor's Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -531,7 +531,7 @@
 		<set name="isMagic" val="true" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="17086" levels="1" name="Release Agathion's Seal - Bae Kisung">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -717,7 +717,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="17113" levels="1" name="Winter Holiday Gift">
+	<skill id="17113" levels="1" name="2012 Christmas Gift">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -789,8 +789,8 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
-		Level 24: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
+		Level 1: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. (Note:) If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
+		Level 24: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. (Note:) If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
 	-->
 	<skill id="17124" levels="24" name="Snake's Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -804,16 +804,13 @@
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
 	</skill>
-	<skill id="17125" levels="1" name="Snake's Blessing Effect (Free)">
+	<skill id="17125" levels="1" name="Lucky Box 1">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- 
-		Level 1: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. Return to Snake for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
-		Level 24: Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. <Note:> If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full.
-	-->
+	<!-- Happy 2013! You can obtain a card in 1 hr. There are 23 stages, so you can acquire up to 23 cards. (Note:) If you are dead while the item is given, you cannot acquire the Snake's Blessing buff or the cards. You also cannot acquire the cards if your inventory is full. -->
 	<skill id="17126" levels="24" name="Snake's Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -975,7 +972,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- A strange sensation fogs your brain. Your heart is racing. Your weapon seems to be changing shape. Is that a lady orc? Her muscles are mesmerizing...\\nFor 2 minutes, P. Atk. / M. Atk. / Atk. Spd. / Casting Spd. x 2. Effect disappears upon logout. -->
+	<!-- A strange sensation fogs your brain. Your heart is racing. Your weapon seems to be changing shape. Is that a lady orc? Her muscles are mesmerizing...\nFor 2 minutes, P. Atk. / M. Atk. / Atk. Spd. / Casting Spd. x 2. Effect disappears upon logout. -->
 	<skill id="17154" levels="1" name="Love Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -991,7 +988,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- A deliciously dark flavor surrounds you.\\nFor 2 hours, STR + 2, INT +2, and Attribute Resistance + 20. -->
+	<!-- A deliciously dark flavor surrounds you.\nFor 2 hours, STR + 2, INT +2, and Attribute Resistance + 20. -->
 	<skill id="17156" levels="1" name="Decadence">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1000,7 +997,7 @@
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- An exhilarating thrill of sweet energy.\\nFor 2 hours, STR + 2, INT + 2, DEX + 2, and WIT + 2. -->
+	<!-- An exhilarating thrill of sweet energy.\nFor 2 hours, STR + 2, INT + 2, DEX + 2, and WIT + 2. -->
 	<skill id="17157" levels="1" name="Sugar Rush">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1009,7 +1006,7 @@
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Activating shield of self-built perfection.\\nFor 2 hours, STR + 2, INT + 2, CON + 2, and MEN + 2. -->
+	<!-- Activating shield of self-built perfection.\nFor 2 hours, STR + 2, INT + 2, CON + 2, and MEN + 2. -->
 	<skill id="17158" levels="1" name="Forever Alone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1152,7 +1149,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="17177" levels="1" name="GM's Blessing - Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1500,7 +1497,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
+	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. (Note:) If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
 	<skill id="17215" levels="11" name="Master Yogi's Force">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 </table>
@@ -1519,7 +1516,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. <Note:> If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
+	<!-- You can obtain an item in 1 hr. There are 10 stages, so you can acquire up to 10 items. Return to Master Yogi for another buff when the buff wears out. (Note:) If you are dead while the item is given, you cannot acquire the Master Yogi's Force buff or the items. You also cannot acquire the items if your inventory is full. -->
 	<skill id="17217" levels="11" name="Master Yogi's Force">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 </table>
@@ -2046,7 +2043,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- For 60 min., HP Recovery Bonus + 10%, P. Accuracy + 2, P. Evasion + 2, Speed + 10. Skill MP Consumption - 10%, skill cooldown - 5%. -->
+	<!-- For 60 min., HP Recovery Bonus + 10%, P. Accuracy + 2, P. Evasion + 2, Speed + 10. Skill MP Consumption - 10%, Skill Cooldown - 5%. -->
 	<skill id="17305" levels="1" name="Refreshing Sonata - Enhanced Cocktail">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2058,7 +2055,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. <Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
+	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. (Note) Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
 	<skill id="17307" levels="24" name="Real Tor's Blessing Stage 24 (Normal)">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -2109,7 +2106,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. Has a chance of acquiring a different gift.<Note> Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
+	<!-- Can acquire a Territory Card in 1 hr. Can acquire up to 23 cards (23 stages total). Return to the Real Tor for a new buff when it disappears. Has a chance of acquiring a different gift.(Note) Cannot acquire buff or card if you are dead at the time of distribution, or if your inventory is full. -->
 	<skill id="17313" levels="24" name="Real Tor's Blessing Stage 24 (Premium)">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -3831,8 +3828,8 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17610" levels="1" name="Release Agathion's Seal - Virgo">
+	<!-- The Agathion - Virgo seal is released. -->
+	<skill id="17610" levels="3" name="Release Agathion's Seal - Virgo">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3840,8 +3837,8 @@
 		<set name="npcId" val="8582" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17611" levels="1" name="Release Agathion's Seal - Capricorn">
+	<!-- The Agathion - Capricorn Seal is released. -->
+	<skill id="17611" levels="3" name="Release Agathion's Seal - Capricorn">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3849,8 +3846,8 @@
 		<set name="npcId" val="8596" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17612" levels="1" name="Release Agathion's Seal - Libra">
+	<!-- The Agathion - Libra seal is released. -->
+	<skill id="17612" levels="3" name="Release Agathion's Seal - Libra">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3858,8 +3855,8 @@
 		<set name="npcId" val="8599" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17613" levels="1" name="Release Agathion's Seal - Aries">
+	<!-- The Agathion - Aries seal is released. -->
+	<skill id="17613" levels="3" name="Release Agathion's Seal - Aries">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3867,8 +3864,8 @@
 		<set name="npcId" val="8595" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17614" levels="1" name="Release Agathion's Seal - Taurus">
+	<!-- The Agathion - Taurus seal is released. -->
+	<skill id="17614" levels="3" name="Release Agathion's Seal - Taurus">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3876,8 +3873,8 @@
 		<set name="npcId" val="8590" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17615" levels="1" name="Release Agathion's Seal - Leo">
+	<!-- The Agathion - Leo seal is released. -->
+	<skill id="17615" levels="3" name="Release Agathion's Seal - Leo">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3885,8 +3882,8 @@
 		<set name="npcId" val="8598" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17616" levels="1" name="Release Agathion's Seal - Gemini">
+	<!-- The Agathion - Gemini seal is released. -->
+	<skill id="17616" levels="3" name="Release Agathion's Seal - Gemini">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3894,8 +3891,8 @@
 		<set name="npcId" val="8597" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17617" levels="1" name="Release Agathion's Seal - Scorpio">
+	<!-- The Agathion - Scorpio seal is released. -->
+	<skill id="17617" levels="3" name="Release Agathion's Seal - Scorpio">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3903,8 +3900,8 @@
 		<set name="npcId" val="8589" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17618" levels="1" name="Release Agathion's Seal - Aquarius">
+	<!-- The Agathion - Aquarius seal is released. -->
+	<skill id="17618" levels="3" name="Release Agathion's Seal - Aquarius">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3912,8 +3909,8 @@
 		<set name="npcId" val="8592" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17619" levels="1" name="Release Agathion's Seal - Pisces">
+	<!-- The Agathion - Pisces seal is released. -->
+	<skill id="17619" levels="3" name="Release Agathion's Seal - Pisces">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3921,8 +3918,8 @@
 		<set name="npcId" val="8591" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17620" levels="1" name="Release Agathion's Seal - Sagittarius">
+	<!-- The Agathion - Sagittarius seal is released. -->
+	<skill id="17620" levels="3" name="Release Agathion's Seal - Saggitarius">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3930,8 +3927,8 @@
 		<set name="npcId" val="8588" />
 		<set name="staticHitTime" val="true" />
 	</skill>
-	<!-- Release Agathion's Seal. -->
-	<skill id="17621" levels="1" name="Release Agathion's Seal - Cancer">
+	<!-- The Agathion - Cancer seal is released. -->
+	<skill id="17621" levels="3" name="Release Agathion's Seal - Cancer">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="AGATHION" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4582,8 +4579,9 @@
 		Level 3: Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 6903.
 		Level 4: Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 10089.
 		Level 5: Interrupts target's skill casting. In PvP, ignores CP and inflicts a fixed damage of 13275.
+		Level 6: Disrupts the target's skill casting. When used on a PC, inflicts damage with 13275 Power and ignores CP. Low chance of killing the enemy instantly.
 	-->
-	<skill id="17701" levels="5" name="Topaz: Spiritshot">
+	<skill id="17701" levels="6" name="Greater Topaz - Spiritshot">
 		<table name="#power"> 1062 3717 6903 10089 13275 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
@@ -4640,8 +4638,9 @@
 		Level 3: Received Damage in PvP - 7%.
 		Level 4: Received Damage in PvP - 11%.
 		Level 5: Received Damage in PvP - 15%.
+		Level 6: Received Damage during PvP - 15%, and when attacked the enemy's targeting on you is canceled. Activation wait time is 15 seconds.
 	-->
-	<skill id="17704" levels="5" name="Obsidian">
+	<skill id="17704" levels="6" name="Greater Obsidian">
 		<table name="#pvpDef"> 1 3 7 11 15 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -4658,8 +4657,9 @@
 		Level 3: Attack Attribute + 40.
 		Level 4: Attack Attribute + 70.
 		Level 5: Attack Attribute + 120.
+		Level 6: Attack Attribute + 120, all Defense Attributes + 70.
 	-->
-	<skill id="17705" levels="5" name="Opal">
+	<skill id="17705" levels="6" name="Greater Opal">
 		<table name="#power"> 10 20 40 70 120 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -4703,8 +4703,9 @@
 		Level 3: P. Def. + 945, and Received P. Critical Damage - 3%.
 		Level 4: P. Def. + 1418, and Received P. Critical Damage - 4%.
 		Level 5: P. Def. + 1986, and Received P. Critical Damage - 5%.
+		Level 6: P. Def. + 1986, P. Critical Damage - 5%. Additional P. Def. + 10%.
 	-->
-	<skill id="17708" levels="5" name="Diamond">
+	<skill id="17708" levels="6" name="Greater Diamond">
 		<table name="#def"> 283 567 945 1418 1986 </table>
 		<table name="#critVuln"> 1 2 3 4 5 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -4721,8 +4722,9 @@
 		Level 3: M. Def. + 548, and Received M. Critical Damage - 3%.
 		Level 4: M. Def. + 821, and Received M. Critical Damage - 4%.
 		Level 5: M. Def. + 1150, and Received M. Critical Damage - 5%.
+		Level 6: M. Def. + 1150, M. Critical Damage - 5%. Additional M. Def. + 10%.
 	-->
-	<skill id="17709" levels="5" name="Pearl">
+	<skill id="17709" levels="6" name="Greater Pearl">
 		<table name="#def"> 163 328 548 821 1150 </table>
 		<table name="#critVuln"> 1 2 3 4 5 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -4739,7 +4741,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- You can obtain an item in 1 hr. 23 stages total. <Note:> If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
+	<!-- You can obtain an item in 1 hr. 23 stages total. (Note:) If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
 	<skill id="17711" levels="24" name="10th Anniversary Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -4758,7 +4760,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 	</skill>
-	<!-- You can obtain an item in 1 hr. 23 stages total. <Note:> If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
+	<!-- You can obtain an item in 1 hr. 23 stages total. (Note:) If you are dead while the item is given, you cannot acquire the 10th Anniversary Blessing buff or items. You also cannot acquire the cards if your inventory is full. -->
 	<skill id="17713" levels="24" name="10th Anniversary Special Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
@@ -5477,8 +5479,9 @@
 		Level 3: 4% chance of recovering 136 MP.
 		Level 4: 9% chance of recovering 136 MP.
 		Level 5: 15% chance of recovering 136 MP.
+		Level 6: When using a skill, there is a 15% chance of recovering 136 MP. Skill Cooldown - 5%.
 	-->
-	<skill id="17823" levels="5" name="Aquamarine">
+	<skill id="17823" levels="6" name="Greater Aquamarine">
 		<table name="#chance"> 1 2 4 9 15 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -5502,8 +5505,9 @@
 		Level 3: STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1
 		Level 4: STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2
 		Level 5: STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3
+		Level 6: All basic stats + 3, Skill Prominence + 30%.
 	-->
-	<skill id="17825" levels="5" name="Emerald">
+	<skill id="17825" levels="6" name="Greater Emerald">
 		<table name="#conmen"> 1 1 1 2 3 </table>
 		<table name="#strint"> 0 1 1 2 3 </table>
 		<table name="#dexwit"> 0 0 1 2 3 </table>
@@ -6071,7 +6075,7 @@
 		Level 2: Converts Love Potion. Intermediate Alchemy.
 		Level 3: Converts Mid-grade Love Potion. Intermediate Alchemy.
 		Level 4: Converts High-grade Love Potion. Advanced Alchemy.
-		Level 5: Converts Top-grade Love Potion (Party). Advanced Alchemy.
+		Level 5: Top-grade Love Potion - High-grade alchemy that makes party transmutation possible.
 	-->
 	<skill id="17922" levels="5" name="Top-grade Love Potion - Party">
 		<table name="#name">Low-grade Love Potion;Love Potion;Mid-grade Love Potion;High-grade Love Potion;Top-grade Love Potion - Party</table>
@@ -6362,15 +6366,21 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1500" />
 	</skill>
-	<!-- Teleports you to Magmeld. -->
-	<skill id="17945" levels="1" name="Scroll of Escape: Magmeld">
+	<!-- 
+		Level 1: Teleports to the Hunter's Village.
+		Level 2: Teleports to the Fairy Citizen in the Arms of Timiniel.
+	-->
+	<skill id="17945" levels="2" name="Scroll of Escape: Arms of Timiniel">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1500" />
 	</skill>
-	<!-- Teleports you to Magmeld. -->
-	<skill id="17946" levels="1" name="Scroll of Escape: Magmeld">
+	<!-- 
+		Level 1: Teleports you to Magmeld.
+		Level 2: Teleports to Nerupa in the Arms of Timiniel.
+	-->
+	<skill id="17946" levels="2" name="Scroll of Escape: Arms of Timiniel">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6668,7 +6678,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 	</skill>
-	<skill id="17989" levels="1" name="Scroll of Escape: Swamp of Screams">
+	<skill id="17989" levels="1" name="Scroll of Escape: Bloody Swampland">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6680,7 +6690,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 	</skill>
-	<skill id="17991" levels="1" name="Scroll of Escape: Harnak's Underground Ruins">
+	<skill id="17991" levels="1" name="Scroll of Escape: Harnak Underground Ruins">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

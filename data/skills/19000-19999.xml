@@ -1409,9 +1409,9 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Received heal amount + 3%.
-		Level 2: Received heal amount + 6%.
-		Level 3: Received heal amount + 9%.
+		Level 1: Received Heal Amount + 3%.
+		Level 2: Received Heal Amount + 6%.
+		Level 3: Received Heal Amount + 9%.
 	-->
 	<skill id="19136" levels="3" name="Noble Prayer">
 		<table name="#gainHp"> 3 6 9 </table>
@@ -2166,7 +2166,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<skill id="19198" levels="1" name="Cancel Target">
+	<skill id="19198" levels="1" name="Cancel target">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2352,7 +2352,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Casts a curse that prevents the target and nearby enemies from receiving Invincibility for 30 seconds during PvP. Consumes 5 Spirit Ores. -->
+	<!-- In PvP, blocks use of physical/magic skills by the target and nearby enemies for 30 seconds, and casts a curse that prevents invincibility. Consumes 5 Spirit Ores. -->
 	<skill id="19208" levels="1" name="Seal of Restriction">
 		<enchantRoute id="1" level="1" /> <!-- Hex -->
 		<enchantRoute id="2" level="1" /> <!-- Mind -->
@@ -2706,18 +2706,18 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Blends into the wind for 7 seconds. Increases Speed by 70. Canceled when using normal attacks or attack skills.
-		Level 2: Blends into the wind for 7 seconds. Increases Speed by 100. Canceled when using normal attacks or attack skills.
+		Level 1: Blends into the wind for 5 seconds. Increases Speed by 7. Canceled when using normal attacks or attack skills.
+		Level 2: Blends into the wind for 5 seconds. Increases Speed by 14. Canceled when using normal attacks or attack skills.
 	-->
 	<skill id="19227" levels="2" name="Wind Hiding">
-		<table name="#runSpd"> 70 100 </table>
+		<table name="#runSpd"> 7 14 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="removedOnDamage" val="true" />
 		<set name="removedOnAction" val="true" />
 		<for>
-			<abnormal duration="7" stackLvl="1" stackType="wind_blend" visualEffect="ertheiaGreenRunPower">
+			<abnormal duration="5" stackLvl="1" stackType="wind_blend" visualEffect="ertheiaGreenRunPower">
 				<effect type="Hide" val="0" />
 				<add stat="runSpd" val="#runSpd" />
 			</abnormal>
@@ -2795,7 +2795,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_TOGGLE" />
 	</skill>
-	<!-- Party's M. Atk. + 30% for 30 seconds. Consumes 5 Spirit Ores. -->
+	<!-- For 30 seconds, all party members' M. Atk. +15%, M. Skill Power +15%. Consumes 5 Spirit Ores. -->
 	<skill id="19231" levels="1" name="Song of Wisdom">
 		<set name="target" val="TARGET_FRIENDS" />
 		<set name="targetDirection" val="PARTY_ALL" />
@@ -2813,11 +2813,11 @@
 		<for>
 			<abnormal duration="30" stackLvl="1" stackType="song_of_wisdom">
 				<effect type="Buff" val="0" />
-				<addPercent stat="mAtk" val="30" />
+				<addPercent stat="mAtk" val="15" />
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Party's P. Skill Power + 30% for 30 seconds. Consumes 5 Spirit Ores. -->
+	<!-- For 30 seconds, all party members' P. Atk. +15%, P. Skill Power +15%. Consumes 5 Spirit Ores. -->
 	<skill id="19232" levels="1" name="Crippling Dance">
 		<set name="target" val="TARGET_FRIENDS" />
 		<set name="targetDirection" val="PARTY_ALL" />
@@ -2835,7 +2835,8 @@
 		<for>
 			<abnormal duration="30" stackLvl="1" stackType="crippling_dance">
 				<effect type="Buff" val="0" />
-				<addPercent stat="physicalSkillPower" val="30" />
+				<addPercent stat="pAtk" val="15" />
+				<addPercent stat="physicalSkillPower" val="15" />
 			</abnormal>
 		</for>
 	</skill>

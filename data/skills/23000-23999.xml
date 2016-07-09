@@ -294,9 +294,9 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Challenging with "scissors." Cannot move.
-		Level 2: Challenging with "rock." Cannot move.
-		Level 3: Challenging with "paper." Cannot move.
+		Level 1: Challenging with 'scissors.' Cannot move.
+		Level 2: Challenging with 'rock.' Cannot move.
+		Level 3: Challenging with 'paper.' Cannot move.
 	-->
 	<skill id="23019" levels="3" name="Paper">
 		<table name="#magicLvl"> 1 2 3 </table>
@@ -2241,7 +2241,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Hides for 5 seconds, then for 2 minutes, bestows the ability not to receive preemptive attacks from monsters. Decreases Speed by 50% while the skill is in effect. Soul Stealth can only be used when selecting then "Zombie Agathion Resurrection" while dead. Cooldown is 12 hour(s). -->
+	<!-- Hides for 5 seconds, then for 2 minutes, bestows the ability not to receive preemptive attacks from monsters. Decreases Speed by 50% while the skill is in effect. Soul Stealth can only be used when selecting then 'Zombie Agathion Resurrection' while dead. Cooldown is 12 hour(s). -->
 	<skill id="23175" levels="1" name="Soul Stealth">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3190,14 +3190,14 @@
 		<set name="reuseDelay" val="7200000" />
 	</skill>
 	<!-- See the summoned spirit perform cute tricks. -->
-	<skill id="23234" levels="1" name="Singer &amp; Dancer Agathion Cute Trick">
+	<skill id="23234" levels="1" name="Singer and Dancer Agathion Cute Trick">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<!-- Increases critical attack rate by 100% for 2 minutes. Cooldown 20 minutes. -->
-	<skill id="23235" levels="1" name="Singer &amp; Dancer Agathion Special Skill: Hunter's Song">
+	<skill id="23235" levels="1" name="Singer and Dancer Agathion Special Skill: Hunter's Song">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5921,7 +5921,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Increases party members' HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
+	<!-- Increases party members' HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10% for 5 minutes. -->
 	<skill id="23509" levels="1" name="(Refreshing Sonata)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6414,7 +6414,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- See Agathion's cute trick. -->
-	<skill id="23564" levels="1" name="Agathion Cute Trick - Griffin ">
+	<skill id="23564" levels="1" name="Agathion Cute Trick - Griffin">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6436,7 +6436,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
-	<!-- Cancels Transformation. -->
+	<!-- Cancels transformation. -->
 	<skill id="23567" levels="1" name="Cancel Transformation">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6683,7 +6683,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1500" />
 	</skill>
-	<!-- Cancels Hide. -->
+	<!-- Cancels hide. -->
 	<skill id="23597" levels="1" name="Unhide">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

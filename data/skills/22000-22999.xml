@@ -2821,7 +2821,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="1000" />
 	</skill>
-	<!-- Sends mutated animals a powerful heart filled with love. -->
+	<!-- Sends mutated animals a powerful Heart filled with love. -->
 	<skill id="22311" levels="1" name="Cupid's Enhanced Cure">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2867,7 +2867,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22318" levels="5" name="5th Place Treasure Sack">
+	<skill id="22318" levels="5" name="5th Place Treasure sack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3311,22 +3311,22 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22392" levels="1" name="Cake of Happiness (Low-grade) ">
+	<skill id="22392" levels="1" name="Cake of Happiness (Low-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22393" levels="1" name="Cake of Happiness (Mid-grade) ">
+	<skill id="22393" levels="1" name="Cake of Happiness (Mid-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22394" levels="1" name="Cake of Happiness (High-grade) ">
+	<skill id="22394" levels="1" name="Cake of Happiness (High-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="22395" levels="1" name="Cake of Happiness (Top-grade) ">
+	<skill id="22395" levels="1" name="Cake of Happiness (Top-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

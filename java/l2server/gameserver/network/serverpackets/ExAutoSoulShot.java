@@ -30,7 +30,6 @@ public class ExAutoSoulShot extends L2GameServerPacket
 	
 	/**
 	 * 0xfe:0x12 ExAutoSoulShot		 (ch)dd
-	 * @param _characters
 	 */
 	public ExAutoSoulShot(int itemId, int enable, int type)
 	{
@@ -44,7 +43,6 @@ public class ExAutoSoulShot extends L2GameServerPacket
 	{ // sub id
 		writeD(_itemId);
 		writeD(_enable);
-		if (Config.IS_UNDERGROUND)
-			writeD(_type);
+		writeD(_type);
 	}
 }

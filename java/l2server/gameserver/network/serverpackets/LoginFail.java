@@ -22,6 +22,7 @@ package l2server.gameserver.network.serverpackets;
  */
 public class LoginFail extends L2GameServerPacket
 {
+	public static final int SUCCESS = -1;
 	public static final int NO_TEXT = 0;
 	public static final int SYSTEM_ERROR_LOGIN_LATER = 1;
 	public static final int PASSWORD_DOES_NOT_MATCH_THIS_ACCOUNT = 2;
@@ -37,7 +38,7 @@ public class LoginFail extends L2GameServerPacket
 	private int _reason;
 	
 	/**
-	 * @param _characters
+	 * @param reason
 	 */
 	public LoginFail(int reason)
 	{
@@ -48,5 +49,6 @@ public class LoginFail extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(_reason);
+		writeD(0x00);
 	}
 }

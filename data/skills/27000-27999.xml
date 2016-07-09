@@ -1942,7 +1942,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="86400000" />
 	</skill>
-	<!-- For 60 minutes, you can transform into one of the following: Snow Man, Scarecrow Jack, Tin Golem, Makeshift Bat, Lady Tow, Angry Tow, and Sleepy Tow. -->
+	<!-- For 60 minutes, you can transform into one of the following: Snow Man, Scarecrow Jack, Tin Golem, Makeshift Bat, Lady Tow, Angry tow, and Sleepy Tow. -->
 	<skill id="27371" levels="1" name="Transformation Skill">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1967,7 +1967,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="86400000" />
 	</skill>
-	<!-- For 60 minutes, you can transform into one of the following: Snow Man, Scarecrow Jack, Tin Golem, Makeshift Bat, Lady Tow, Angry Tow, and Sleepy Tow. -->
+	<!-- For 60 minutes, you can transform into one of the following: Snow Man, Scarecrow Jack, Tin Golem, Makeshift Bat, Lady Tow, Angry tow, and Sleepy Tow. -->
 	<skill id="27374" levels="1" name="Transformation Skill">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2324,13 +2324,14 @@
 		<set name="staticReuse" val="true" />
 	</skill>
 	<!-- 
-		Level 1: Resistance to Damage Shield + 10.
-		Level 2: Resistance to Damage Shield + 20.
-		Level 3: Resistance to Damage Shield + 30.
-		Level 4: Resistance to Damage Shield + 40.
-		Level 5: Resistance to Damage Shield + 50.
+		Level 1: Decreases damage received from Reflect Damage by 10%.
+		Level 2: Decreases damage received from Reflect Damage by 20%.
+		Level 3: Decreases damage received from Reflect Damage by 30%.
+		Level 4: Decreases damage received from Reflect Damage by 40%.
+		Level 5: Decreases damage received from Reflect Damage by 50%.
+		Level 6: Decreases damage received from Reflect Damage by 50 and there's a chance of reflecting debuffs to the enemy
 	-->
-	<skill id="27440" levels="5" name="Cat's Eye">
+	<skill id="27440" levels="6" name="Greater Cat's Eye">
 		<table name="#reflectRes"> 10 20 30 40 50 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2363,8 +2364,9 @@
 		Level 3: Increases Damage in PvP by 7%.
 		Level 4: Increases Damage in PvP by 10%.
 		Level 5: Increases Damage in PvP by 15%.
+		Level 6: Increases Damage in PvP by 15%, and decreases the chance of receiving a critical attack by 25%.
 	-->
-	<skill id="27442" levels="5" name="Amethyst">
+	<skill id="27442" levels="6" name="Greater Amethyst">
 		<table name="#pvpDam"> 3 5 7 10 15 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2948,8 +2950,11 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<!-- Cancels your debuffs. -->
-	<skill id="27548" levels="1" name="Garnet - Purge">
+	<!-- 
+		Level 1: Cancels your debuffs.
+		Level 2: Cancels all debuffs and becomes immune to debuffs for 7 seconds.
+	-->
+	<skill id="27548" levels="2" name="Greater Garnet - Cancel Debuffs">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2963,8 +2968,9 @@
 		Level 3: Creates a protection shield that absorbs 15,000 damage for 10 seconds.
 		Level 4: Creates a protection shield that absorbs 30,000 damage for 10 seconds.
 		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
+		Level 6: For 15 sec, create a barrier that absorbs 50000 damage and recover 15% of Max HP instantly.
 	-->
-	<skill id="27549" levels="5" name="Tanzanite - Barrier">
+	<skill id="27549" levels="6" name="Greater Tanzanite - Barrier">
 		<table name="#duration"> 5 5 10 10 15 </table>
 		<table name="#damage"> 5000 10000 15000 30000 50000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -2987,8 +2993,9 @@
 		Level 3: Increases Vitality Status Bonus EXP by 12%.
 		Level 4: Increases Vitality Status Bonus EXP by 25% and decreases Vitality Point Consumption Speed by 7%.
 		Level 5: Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%.
+		Level 6: Increases Vitality Status Bonus EXP by 50% and Vitality Consumption Speed decreases by 15%. XP Gain increases by 10%.
 	-->
-	<skill id="27550" levels="5" name="Vital Stone">
+	<skill id="27550" levels="6" name="Greater Vital Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -3157,19 +3164,19 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Critical Rate + 10 -->
-	<skill id="27586" levels="1" name="Novice Adventurer's Circlet - Critical Rate">
+	<skill id="27586" levels="1" name="Novice Adventurer's Circlet – Critical Rate">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- Critical Rate + 20 -->
-	<skill id="27587" levels="1" name="Experienced Adventurer's Circlet - Critical Rate">
+	<skill id="27587" levels="1" name="Experienced Adventurer's Circlet – Critical Rate">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<!-- P. Atk. + 3%, M. Atk. + 6% -->
-	<skill id="27588" levels="1" name="Adventurer's Circlet - Critical Rate">
+	<skill id="27588" levels="1" name="Adventurer's Circlet – Critical Rate">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />

@@ -2472,7 +2472,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- Removes the Agathion's seal. -->
-	<skill id="21233" levels="1" name="Release Agathion's Seal - Singer &amp; Dancer">
+	<skill id="21233" levels="1" name="Release Agathion's Seal - Singer and Dancer">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2595,8 +2595,11 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Can acquire additional 10% XP. The death XP penalty decreases by 50%. Can only be used by characters at Lv.s 1~84. -->
-	<skill id="21250" levels="1" name="Academy Benefaction">
+	<!-- 
+		Level 1: Can acquire additional 10% XP. The death XP penalty decreases by 50%. Can only be used by characters at Lv.s 1~84.
+		Level 2: XP gained through hunting +10%, STR, DEX, CON, INT, WIT, MEN, LUC, CHA +1 each.
+	-->
+	<skill id="21250" levels="2" name="Academy Growth">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3020,84 +3023,84 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21298" levels="1" name="Release Agathion's Seal - Lancet">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21299" levels="1" name="Release Agathion's Seal - Liposa">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21300" levels="1" name="Release Agathion's Seal - Velarin">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21301" levels="1" name="Release Agathion's Seal - Dulcinel">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21302" levels="1" name="Release Agathion's Seal - Chimeros">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21303" levels="1" name="Release Agathion's Seal - Niveri">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21304" levels="1" name="Release Agathion's Seal - Hamell">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21305" levels="1" name="Release Agathion's Seal - Joriya">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21306" levels="1" name="Release Agathion's Seal - Ralmak">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21307" levels="1" name="Release Agathion's Seal - Goras">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21308" levels="1" name="Release Agathion's Seal - Vensar">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21309" levels="1" name="Release Agathion's Seal - Kiela">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3199,7 +3202,7 @@
 		<set name="coolTime" val="720" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21325" levels="1" name="Release Agathion's Seal - Uthanka">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3407,7 +3410,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21347" levels="1" name="Release Agathion's Seal - Griffin">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3451,7 +3454,7 @@
 		<set name="hitTime" val="20000" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21352" levels="1" name="Release Agathion's Seal - Hussar">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3823,7 +3826,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Cancels Transformation. -->
+	<!-- Cancels transformation. -->
 	<skill id="21384" levels="1" name="Cancel Transformation">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3845,7 +3848,7 @@
 		<set name="castRange" val="75" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="21387" levels="1" name="Release Agathion's Seal - Van Halter's Memory">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4540,7 +4543,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- STR/DEX/CON/INT/WIT/MEN + 2. Received damage during PvP - 5%. -->
+	<!-- STR/DEX/CON/INT/WIT/MEN + 3. Received damage during PvP - 15%, Weight Limit + 25600, Inventory Slots + 36. -->
 	<skill id="21476" levels="1" name="Cloak of the Chosen">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4583,7 +4586,7 @@
 		<set name="hitTime" val="3000" />
 	</skill>
 	<!-- Teleport to the Town of Aden. Usable only when Agathion's Seal is released. -->
-	<skill id="21479" levels="1" name="Griffin Teleport - Town of Aden">
+	<skill id="21479" levels="1" name="Three-headed Dragon Teleport - Town of Aden">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4591,7 +4594,7 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<!-- Teleport to the Town of Rune. Usable only when Agathion's Seal is released. -->
-	<skill id="21480" levels="1" name="Griffin Teleport - Town of Rune">
+	<skill id="21480" levels="1" name="Three-headed Dragon Teleport - Town of Rune">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4599,7 +4602,7 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<!-- Teleport to the Town of Giran. Usable only when Agathion's Seal is released. -->
-	<skill id="21481" levels="1" name="Griffin Teleport - Town of Giran">
+	<skill id="21481" levels="1" name="Three-headed Dragon Teleport - Town of Giran">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

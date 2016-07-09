@@ -116,9 +116,9 @@ public class CharStat
 				case MAX_HP:
 				case MAX_MP:
 				case MAX_CP:
-				case MAGIC_DEFENCE:
-				case POWER_DEFENCE:
-				case POWER_ATTACK:
+				case MAGIC_DEFENSE:
+				case PHYS_DEFENSE:
+				case PHYS_ATTACK:
 				case MAGIC_ATTACK:
 				case POWER_ATTACK_SPEED:
 				case MAGIC_ATTACK_SPEED:
@@ -247,7 +247,7 @@ public class CharStat
 		if (_activeChar == null)
 			return 1;
 		
-		int val = (int) Math.round(calcStat(Stats.EVASION_RATE, 0, target, null));
+		int val = (int) Math.round(calcStat(Stats.P_EVASION_RATE, 0, target, null));
 		
 		if (_activeChar instanceof L2MonsterInstance)
 		{
@@ -267,7 +267,7 @@ public class CharStat
 		if (_activeChar == null)
 			return 1;
 		
-		int val = (int) Math.round(calcStat(Stats.MEVASION_RATE, 0, target, null));
+		int val = (int) Math.round(calcStat(Stats.M_EVASION_RATE, 0, target, null));
 		
 		if (_activeChar instanceof L2MonsterInstance)
 		{
@@ -477,7 +477,7 @@ public class CharStat
 		if (_activeChar.isRaid())
 			defense *= Config.RAID_MDEFENCE_MULTIPLIER;
 		
-		double finalDef = calcStat(Stats.MAGIC_DEFENCE, defense, target, skill);
+		double finalDef = calcStat(Stats.MAGIC_DEFENSE, defense, target, skill);
 		if (finalDef < defense * 0.5)
 			finalDef = defense * 0.5;
 		
@@ -559,7 +559,7 @@ public class CharStat
 			bonusAtk = Config.L2JMOD_CHAMPION_ATK;
 		if (_activeChar.isRaid())
 			bonusAtk *= Config.RAID_PATTACK_MULTIPLIER;
-		return (int) calcStat(Stats.POWER_ATTACK, _activeChar.getTemplate().basePAtk * bonusAtk, target, null);
+		return (int) calcStat(Stats.PHYS_ATTACK, _activeChar.getTemplate().basePAtk * bonusAtk, target, null);
 	}
 	
 	public double getSkillMastery()
@@ -700,7 +700,7 @@ public class CharStat
 		if (_activeChar.isRaid())
 			defense *= Config.RAID_PDEFENCE_MULTIPLIER;
 		
-		double finalDef = calcStat(Stats.POWER_DEFENCE, defense, target, null);
+		double finalDef = calcStat(Stats.PHYS_DEFENSE, defense, target, null);
 		if (finalDef < defense * 0.5)
 			finalDef = defense * 0.5;
 		

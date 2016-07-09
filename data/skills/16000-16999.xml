@@ -3051,7 +3051,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Presentation skill -->
+	<!-- Presentation Skill -->
 	<skill id="16319" levels="1" name="Dance Time">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4165,7 +4165,7 @@
 		<set name="castRange" val="1200" />
 		<set name="effectRange" val="1700" />
 	</skill>
-	<!-- For 60 min., party members get P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, M. Def. + 30%. -->
+	<!-- For 60 minutes, party members' P. Atk. +19%, P. Def. +15%, M. Atk. +83%, M. Def. +30%. -->
 	<skill id="16438" levels="1" name="Horn Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4173,7 +4173,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., party members get Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk./Def. + 20%, Casting Spd. +60, anad Debuff Resistance + 10%, Received Critical Damage - 30%, and Speed - 10%. Party members equipped with melee/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
+	<!-- For 60 minutes, party members' Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +20, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, Debuff Resistance +10%, Critical Damage Received -30%, Movement Speed -10%; Additionally, for party members equipped with melee weapons, bows, or crossbows who have received attacks and suffered more than a certain amount of damage, Critical Damage is increased during physical attack. -->
 	<skill id="16439" levels="1" name="Drum Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4181,7 +4181,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., party members get Max HP/MP/CP + 39%, and HP Recovery Bonus + 20%. -->
+	<!-- For 60 minutes, party members' Max HP +39%, Max MP +39%, Max CP +39%, HP Recovery Bonus +20% up. -->
 	<skill id="16440" levels="1" name="Pipe Organ Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4189,7 +4189,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., party members get P. Critical Rate + 34%, P. Critical Damage + 35%, M. Critical Rate + 20. M. Skill Consumption - 10%, and Iss enchanter's Enchant Skill MP Consumption - 20%. -->
+	<!-- For 60 minutes, party members' P. Critical Rate +34%, P. Critical Damage +35%, M. Critical Rate +20, and P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Iss Enchanter Enhance Skill MP Consumption -20%. -->
 	<skill id="16441" levels="1" name="Guitar Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4197,7 +4197,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., party members get P. Accuracy + 6, P./M. Evasion + 6, Speed + 35. Received Critical Damage - 30%. -->
+	<!-- For 60 minutes, party members' P. Accuracy +6, P./M. Evasion +6, Movement Speed +35, and Critical Damage Received -30%. -->
 	<skill id="16442" levels="1" name="Harp Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4205,7 +4205,7 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- For 60 min., party members get Atk. Spd. + 35%, Casting Spd. + 32%, and have a chance of applying 9% Vampiric Rage. -->
+	<!-- For 60 minutes, party members' Atk Spd. +35%, Casting Spd. +32%, with a chance of 9% Vampiric Rage. -->
 	<skill id="16443" levels="1" name="Lute Melody Lv. 2 (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4653,7 +4653,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- The Guillotine was once an executioner. After drinking the blood of Shilen that permeated the Execution Grounds, it became the "Guillotine of Death" that kills to bring about the resurrection of Shilen, and is aiming for the Giran from another dimension. -->
+	<!-- The Guillotine was once an executioner. After drinking the blood of Shilen that permeated the Execution Grounds, it became the 'Guillotine of Death' that kills to bring about the resurrection of Shilen, and is aiming for the Giran from another dimension. -->
 	<skill id="16492" levels="1" name="99Lv. Raid Boss">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5124,13 +5124,13 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Frozen solid and unable to move. -->
+	<!-- Frozen and unable to move. -->
 	<skill id="16549" levels="1" name="Freeze - Eternal Ice">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Inflicts ranged physical damage and knocks them back for 2 seconds. -->
+	<!-- 2-second Knock Back effect and broad physical damage to surroundings. -->
 	<skill id="16550" levels="1" name="Zellaka's Quake">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5150,7 +5150,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Freeze the opponent along with the damage from your first. -->
+	<!-- Deals damage and freezes the opponent. -->
 	<skill id="16552" levels="1" name="Ice Fist">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5162,7 +5162,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Freeze enemies in front of you with your breath. -->
+	<!-- Icy breath freezes opponents ahead of you. -->
 	<skill id="16553" levels="1" name="Ice Breath">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5174,7 +5174,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Inflicts damage and stuns enemies around. -->
+	<!-- Deals damage and simultaneously stuns enemies around you. -->
 	<skill id="16554" levels="1" name="Spinning Slash">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5184,7 +5184,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
-	<!-- Tries to inflict a powerful vital spot attack. -->
+	<!-- A powerful vital point attack is attempted. -->
 	<skill id="16555" levels="1" name="Kelbim Deadly Blow">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5196,7 +5196,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Makes the target show their back and inflicts damage. -->
+	<!-- Causes the opponent to show their back, and deals damage. -->
 	<skill id="16556" levels="1" name="Kelbim Bluff">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5207,7 +5207,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Inflicts great damage to enemies within range and makes them bleed. -->
+	<!-- Deals powerful damage to opponents in range, and changes status to Bleed. -->
 	<skill id="16557" levels="1" name="Dancing Blade">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5216,7 +5216,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
-	<!-- Increases success rate of vital spot attacks. -->
+	<!-- Increases your deadly attack rate. -->
 	<skill id="16558" levels="1" name="Kelbim Mortality">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5225,7 +5225,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="150000" />
 	</skill>
-	<!-- Make an attack with a shield, stunning the target. -->
+	<!-- Smacks the opponent using your shield, changing status to Stun. -->
 	<skill id="16559" levels="1" name="Dragonclaw Shield Stun">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5237,7 +5237,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Increases P. Def. -->
+	<!-- Increases your P. Def. -->
 	<skill id="16560" levels="1" name="Dragonclaw Ultimate Defense">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5246,7 +5246,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
-	<!-- Creates a whirlwind, inflicting wind damage on the enemy. -->
+	<!-- A cyclone is created to deal Wind Attribute damage to the opponent. -->
 	<skill id="16561" levels="1" name="Dragonclaw Hurricane">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5256,7 +5256,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Frightens the enemy and causes him to flee. -->
+	<!-- Instills fear in the opponent(s), causing them to flee. -->
 	<skill id="16562" levels="1" name="Dragonclaw Curse Fear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5266,7 +5266,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Attacks the enemy with great power. -->
+	<!-- The opponent is attacked with formidable might. -->
 	<skill id="16563" levels="1" name="Dragonclaw Iron Punch">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5278,7 +5278,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Hurls an iron-fist, stunning the enemy. -->
+	<!-- An iron fist is flung to attack the opponent and place in Stun state. -->
 	<skill id="16564" levels="1" name="Dragonclaw Soul Breaker">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5290,7 +5290,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Detonate holy energy to inflict damage on nearby enemies. -->
+	<!-- A divine energy is exploded to deal damage to opponents in range. -->
 	<skill id="16565" levels="1" name="Dragonclaw Divine Flash">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5300,7 +5300,7 @@
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="1000" />
 	</skill>
-	<!-- Restores the target's HP very fast. -->
+	<!-- The target's HP is recovered at a fast rate. -->
 	<skill id="16566" levels="1" name="Dragonclaw Battle Heal">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5311,7 +5311,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Ignites nearby enemies. -->
+	<!-- Sets opponents in range ablaze. -->
 	<skill id="16567" levels="1" name="Dragonclaw Blaze Quake">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5319,7 +5319,7 @@
 		<set name="mpConsume" val="50" />
 		<set name="hitTime" val="4000" />
 	</skill>
-	<!-- Attacks the enemy with great power. -->
+	<!-- Energy is gathered to deal a mighty blow. -->
 	<skill id="16568" levels="1" name="Dragonclaw Power Smash">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5331,7 +5331,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Attacks long-range enemies. -->
+	<!-- Attacks a remote opponent. -->
 	<skill id="16569" levels="1" name="Dragonclaw Power Shot">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5343,7 +5343,7 @@
 		<set name="castRange" val="700" />
 		<set name="effectRange" val="1200" />
 	</skill>
-	<!-- Ignites flames on your body, inflicting fire damage on the enemy. -->
+	<!-- A flame is set on the opponent's body, dealing fire attribute damage. -->
 	<skill id="16570" levels="1" name="Dragonclaw Blaze">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5353,8 +5353,8 @@
 		<set name="castRange" val="750" />
 		<set name="effectRange" val="1250" />
 	</skill>
-	<!-- P. Def. is decreased. -->
-	<skill id="16571" levels="1" name="Decrease P. Def.">
+	<!-- P. Def. is decreased -->
+	<skill id="16571" levels="1" name="Weakened Defense">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5363,7 +5363,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Unable to move due to Seal Archangel's wrath. -->
+	<!-- Seal Archangel's Wrath causes Action Prohibit state -->
 	<skill id="16572" levels="1" name="Seal Archangel's Wrath">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5371,17 +5371,17 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 	</skill>
-	<!-- Petrified and unable to move temporarily. -->
+	<!-- A Petrify spell causes the body to temporarily turn to rock. -->
 	<skill id="16573" levels="1" name="Kelbim Petrify">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: P./M. Def. + 15%.
-		Level 2: P./M. Def. + 30%.
-		Level 3: P./M. Def. + 50%.
-		Level 4: P./M. Def. + 70%.
+		Level 1: P. Def. and M. Def. are increased by 15%.
+		Level 2: P. Def. and M. Def. are increased by 30%.
+		Level 3: P. Def. and M. Def. are increased by 50%.
+		Level 4: P. Def. and M. Def. are increased by 70%.
 	-->
 	<skill id="16574" levels="4" name="Shield of Infinity">
 		<set name="target" val="TARGET_NONE" />
@@ -5399,13 +5399,13 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Frozen solid and unable to move. -->
+	<!-- Frozen and unable to move. -->
 	<skill id="16576" levels="1" name="Freeze - Eternal Ice">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Tricks the enemy. Make the enemy show their back and stun them for 9 seconds. -->
+	<!-- The enemy is tricked to create an advantageous opportunity. Causes the enemy to turn their backs, and causes Stun for 9 seconds. -->
 	<skill id="16577" levels="1" name="Dragonclaw Bluff">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5415,7 +5415,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Inflicts damage to enemies around and stuns them. -->
+	<!-- Deals damage and simultaneously stuns enemies around you. -->
 	<skill id="16578" levels="1" name="Dragonclaw Crush">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5424,7 +5424,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- Stirs up a vortex connecting to the dimension of Fire and inflicts Fire damage on the enemy for 30 seconds. Decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. -->
+	<!-- A cyclone leading to the Fire Dimension is caused, dealing fire attribute damage to the enemy. For 30 seconds, Movement Speed 10%, Atk. Spd. 10%, Magic Speed 10%, and Fire Attribute resistance 20 down. -->
 	<skill id="16579" levels="1" name="Dragonclaw Vortex">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5433,7 +5433,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Provokes nearby enemies to attack. -->
+	<!-- The will of enemies in range to attack is stimulated. -->
 	<skill id="16580" levels="1" name="Dragonclaw Aggression Aura">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5443,9 +5443,9 @@
 		<set name="reuseDelay" val="40000" />
 	</skill>
 	<!-- 
-		Level 1: Turns aggressive due to hunger.
-		Level 2: Increases the size of your body and increases P. Atk.
-		Level 3: Increases the size of your body and increases P. Atk. and Atk. Spd.
+		Level 1: Hunger stirs up fury.
+		Level 2: The effect of the Growth Accelerator causes the body to grow and raises P. Atk.
+		Level 3: The effect of the Growth Accelerator causes the body to grow and raises P. Atk. and Atk. Spd.
 	-->
 	<skill id="16581" levels="3" name="Growth Accelerator">
 		<set name="target" val="TARGET_NONE" />
@@ -5456,7 +5456,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Typhoon summons his guardians. -->
+	<!-- Typhoon summons his Guardian Deities. -->
 	<skill id="16582" levels="1" name="Let the Dogs Out!">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5465,7 +5465,7 @@
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 	</skill>
-	<!-- Pounces on the enemy and knocks them out. -->
+	<!-- Pounce to Knock Down the target and opponents around the target. -->
 	<skill id="16583" levels="1" name="Pounce">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5476,7 +5476,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Inflicted with Fear and moving against own will momentarily. -->
+	<!-- Captured by fear, one momentarily loses control over one's movements. -->
 	<skill id="16584" levels="1" name="Mass Fear">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5488,7 +5488,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 	</skill>
-	<!-- Bombards enemies around the target. -->
+	<!-- A powerful barrage of cannon fire is launched around the target. -->
 	<skill id="16585" levels="1" name="Dragonclaw Cannon">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5498,7 +5498,7 @@
 		<set name="castRange" val="2500" />
 		<set name="effectRange" val="3000" />
 	</skill>
-	<!-- Deal a powerful attack on the enemy. -->
+	<!-- A powerful attack is dealt to the target. -->
 	<skill id="16586" levels="1" name="Dragonclaw Siege Attack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5510,7 +5510,7 @@
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- Attacks the target with great power, knocking them back. -->
+	<!-- Opponents in range are attacked and knocked back. -->
 	<skill id="16587" levels="1" name="Dragonclaw Siege Punch">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -5520,7 +5520,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<!-- On fire due to the explosion. Received Damage + 50%. -->
+	<!-- Is burning due to an explosion. Damage received is increased by 50%. -->
 	<skill id="16588" levels="1" name="Time Bomb Explosion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

@@ -80,11 +80,8 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeH(0x00); // T1
 			writeH(0x00); // T1
-			if (Config.IS_UNDERGROUND)
-			{
-				writeC(0x00);
-				writeC(0x00);
-			}
+			writeC(0x00);
+			writeC(0x00);
 			
 			writeH(1);
 			writeH(item.getPriceItems().size());
@@ -105,17 +102,15 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeH(item.getElementDefAttr((byte) 3)); // earth
 			writeH(item.getElementDefAttr((byte) 4)); // holy
 			writeH(item.getElementDefAttr((byte) 5)); // dark
-			if (Config.IS_UNDERGROUND)
-			{
-				int[] ensoulEffects = item.getEnsoulEffectIds();
-				int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
-				writeC(ensoulEffects.length);
-				for (int effect : ensoulEffects)
-					writeD(effect);
-				writeC(ensoulSpecialEffects.length);
-				for (int effect : ensoulSpecialEffects)
-					writeD(effect);
-			}
+
+			int[] ensoulEffects = item.getEnsoulEffectIds();
+			int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
+			writeC(ensoulEffects.length);
+			for (int effect : ensoulEffects)
+				writeD(effect);
+			writeC(ensoulSpecialEffects.length);
+			for (int effect : ensoulSpecialEffects)
+				writeD(effect);
 			
 			for (L2Item priceItem : item.getPriceItems().keySet())
 			{
@@ -132,11 +127,9 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 				writeH(0x00); // earth
 				writeH(0x00); // holy
 				writeH(0x00); // dark
-				if (Config.IS_UNDERGROUND)
-				{
-					writeC(0x00);
-					writeC(0x00);
-				}
+
+				writeC(0x00);
+				writeC(0x00);
 			}
 			
 			i++;

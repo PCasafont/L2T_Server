@@ -41,7 +41,6 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 		writeD(_effectId);
 		writeH(0);
 		writeH(999);
-		if (Config.IS_UNDERGROUND)
-			writeH(999);
+		writeH(999);
 	}
 }

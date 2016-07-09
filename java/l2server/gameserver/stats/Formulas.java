@@ -219,7 +219,7 @@ public final class Formulas
 		
 		private FuncPAtkMod()
 		{
-			super(Stats.POWER_ATTACK, null);
+			super(Stats.PHYS_ATTACK, null);
 		}
 		
 		@Override
@@ -307,7 +307,7 @@ public final class Formulas
 		
 		private FuncMDefMod()
 		{
-			super(Stats.MAGIC_DEFENCE, null);
+			super(Stats.MAGIC_DEFENSE, null);
 		}
 		
 		@Override
@@ -367,7 +367,7 @@ public final class Formulas
 		
 		private FuncPDefMod()
 		{
-			super(Stats.POWER_DEFENCE, null);
+			super(Stats.PHYS_DEFENSE, null);
 		}
 		
 		@Override
@@ -568,7 +568,7 @@ public final class Formulas
 		
 		private FuncAtkEvasion()
 		{
-			super(Stats.EVASION_RATE, null);
+			super(Stats.P_EVASION_RATE, null);
 		}
 		
 		@Override
@@ -611,7 +611,7 @@ public final class Formulas
 		
 		private FuncMAtkEvasion()
 		{
-			super(Stats.MEVASION_RATE, null);
+			super(Stats.M_EVASION_RATE, null);
 		}
 		
 		@Override
@@ -1125,7 +1125,7 @@ public final class Formulas
 	}
 	
 	/**
-	 * Return the standard NPC Calculator set containing ACCURACY_COMBAT and EVASION_RATE.<BR><BR>
+	 * Return the standard NPC Calculator set containing ACCURACY_COMBAT and P_EVASION_RATE.<BR><BR>
 	 *
 	 * <B><U> Concept</U> :</B><BR><BR>
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
@@ -1146,17 +1146,17 @@ public final class Formulas
 		std[Stats.MAX_MP.ordinal()] = new Calculator();
 		std[Stats.MAX_MP.ordinal()].addFunc(FuncMaxMpMul.getInstance());
 		
-		std[Stats.POWER_ATTACK.ordinal()] = new Calculator();
-		std[Stats.POWER_ATTACK.ordinal()].addFunc(FuncPAtkMod.getInstance());
+		std[Stats.PHYS_ATTACK.ordinal()] = new Calculator();
+		std[Stats.PHYS_ATTACK.ordinal()].addFunc(FuncPAtkMod.getInstance());
 		
 		std[Stats.MAGIC_ATTACK.ordinal()] = new Calculator();
 		std[Stats.MAGIC_ATTACK.ordinal()].addFunc(FuncMAtkMod.getInstance());
 		
-		std[Stats.POWER_DEFENCE.ordinal()] = new Calculator();
-		std[Stats.POWER_DEFENCE.ordinal()].addFunc(FuncPDefMod.getInstance());
+		std[Stats.PHYS_DEFENSE.ordinal()] = new Calculator();
+		std[Stats.PHYS_DEFENSE.ordinal()].addFunc(FuncPDefMod.getInstance());
 		
-		std[Stats.MAGIC_DEFENCE.ordinal()] = new Calculator();
-		std[Stats.MAGIC_DEFENCE.ordinal()].addFunc(FuncMDefMod.getInstance());
+		std[Stats.MAGIC_DEFENSE.ordinal()] = new Calculator();
+		std[Stats.MAGIC_DEFENSE.ordinal()].addFunc(FuncMDefMod.getInstance());
 		
 		std[Stats.CRITICAL_RATE.ordinal()] = new Calculator();
 		std[Stats.CRITICAL_RATE.ordinal()].addFunc(FuncAtkCritical.getInstance());
@@ -1170,11 +1170,11 @@ public final class Formulas
 		std[Stats.ACCURACY_MAGIC.ordinal()] = new Calculator();
 		std[Stats.ACCURACY_MAGIC.ordinal()].addFunc(FuncMAtkAccuracy.getInstance());
 		
-		std[Stats.EVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.EVASION_RATE.ordinal()].addFunc(FuncAtkEvasion.getInstance());
+		std[Stats.P_EVASION_RATE.ordinal()] = new Calculator();
+		std[Stats.P_EVASION_RATE.ordinal()].addFunc(FuncAtkEvasion.getInstance());
 		
-		std[Stats.MEVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.MEVASION_RATE.ordinal()].addFunc(FuncMAtkEvasion.getInstance());
+		std[Stats.M_EVASION_RATE.ordinal()] = new Calculator();
+		std[Stats.M_EVASION_RATE.ordinal()].addFunc(FuncMAtkEvasion.getInstance());
 		
 		std[Stats.POWER_ATTACK_SPEED.ordinal()] = new Calculator();
 		std[Stats.POWER_ATTACK_SPEED.ordinal()].addFunc(FuncPAtkSpeed.getInstance());
@@ -1182,11 +1182,11 @@ public final class Formulas
 		std[Stats.MAGIC_ATTACK_SPEED.ordinal()] = new Calculator();
 		std[Stats.MAGIC_ATTACK_SPEED.ordinal()].addFunc(FuncMAtkSpeed.getInstance());
 		
-		std[Stats.EVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.EVASION_RATE.ordinal()].addFunc(FuncAtkEvasion.getInstance());
+		std[Stats.P_EVASION_RATE.ordinal()] = new Calculator();
+		std[Stats.P_EVASION_RATE.ordinal()].addFunc(FuncAtkEvasion.getInstance());
 		
-		std[Stats.MEVASION_RATE.ordinal()] = new Calculator();
-		std[Stats.MEVASION_RATE.ordinal()].addFunc(FuncMAtkEvasion.getInstance());
+		std[Stats.M_EVASION_RATE.ordinal()] = new Calculator();
+		std[Stats.M_EVASION_RATE.ordinal()].addFunc(FuncMAtkEvasion.getInstance());
 		
 		return std;
 	}
@@ -1214,9 +1214,9 @@ public final class Formulas
 			//cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_MP_RATE));
 			cha.addStatFunc(FuncBowAtkRange.getInstance());
 			cha.addStatFunc(FuncCrossBowAtkRange.getInstance());
-			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.POWER_ATTACK));
-			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.POWER_DEFENCE));
-			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.MAGIC_DEFENCE));
+			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.PHYS_ATTACK));
+			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.PHYS_DEFENSE));
+			//cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.MAGIC_DEFENSE));
 			cha.addStatFunc(FuncPAtkMod.getInstance());
 			cha.addStatFunc(FuncMAtkMod.getInstance());
 			cha.addStatFunc(FuncPDefMod.getInstance());

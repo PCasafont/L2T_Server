@@ -89,7 +89,7 @@ public class FuncEnchant extends Func
 			return;
 		}
 		
-		if (stat == Stats.MAGIC_DEFENCE || stat == Stats.POWER_DEFENCE)
+		if (stat == Stats.MAGIC_DEFENSE || stat == Stats.PHYS_DEFENSE)
 		{
 			if (item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R || (item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
 			{

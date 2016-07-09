@@ -59,8 +59,6 @@ public final class Config
 	public static final int DREAMS = 0x08;
 	public static final int TENKAI_ESTHUS = 0x20;
 	
-	public static boolean IS_UNDERGROUND = false;
-	
 	//--------------------------------------------------
 	// Temporary Config File
 	//--------------------------------------------------

@@ -75,7 +75,7 @@ public final class AuthLogin extends L2GameClientPacket
 		// avoid potential exploits
 		if (client.getAccountName() == null)
 		{
-			if (!_loginName.equals("luciper3"))
+			if (!_loginName.equalsIgnoreCase("IdEmpty"))
 			{
 				client.setAccountName(_loginName);
 				LoginServerThread.getInstance().addGameServerLogin(_loginName, client);

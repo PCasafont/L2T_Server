@@ -42,6 +42,9 @@ import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.ItemParser;
+import l2server.gameserver.stats.Stats;
+import l2server.gameserver.stats.funcs.FuncTemplate;
+import l2server.gameserver.stats.funcs.LambdaConst;
 import l2server.gameserver.templates.item.L2Armor;
 import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2EtcItem;
@@ -204,6 +207,14 @@ public class ItemTable implements Reloadable
 									item.parse(original);
 								else
 									item.parse();
+
+								if (Config.isServer(Config.TENKAI) && item.getItem() instanceof L2Weapon
+										&& (item.getName().contains("Antharas") || item.getName().contains("Valakas")
+										|| item.getName().contains("Lindvior")))
+								{
+									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
+									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
+								}
 								
 								items.put(item.getId(), item);
 							}
@@ -387,7 +398,7 @@ public class ItemTable implements Reloadable
 	 * <li>Logs Item delettion according to log settings</li><BR><BR>
 	 *
 	 * @param process : String Identifier of process triggering this action
-	 * @param itemId : int Item Identifier of the item to be created
+	 * @param item : int Item Identifier of the item to be created
 	 * @param actor : L2PcInstance Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */

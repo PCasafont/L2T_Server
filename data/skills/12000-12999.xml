@@ -9167,7 +9167,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Critical rate + 50. -->
+	<!-- Critical Rate + 50. -->
 	<skill id="12889" levels="1" name="Romantic Chapeau - Critical Rate">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

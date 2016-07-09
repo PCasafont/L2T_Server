@@ -123,11 +123,9 @@ public final class MultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeH(0x00); // T1
 			writeH(0x00); // T1
-			if (Config.IS_UNDERGROUND)
-			{
-				writeC(0x00);
-				writeC(0x00);
-			}
+
+			writeC(0x00);
+			writeC(0x00);
 			
 			writeH(ent.getProducts().size());
 			writeH(ent.getIngredients().size());
@@ -156,17 +154,15 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(ing.getItemInfo().getElementPower()); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(ing.getItemInfo().getElementals()[j]);
-					if (Config.IS_UNDERGROUND)
-					{
-						int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
-						int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
-						writeC(ensoulEffects.length);
-						for (int effect : ensoulEffects)
-							writeD(effect);
-						writeC(ensoulSpecialEffects.length);
-						for (int effect : ensoulSpecialEffects)
-							writeD(effect);
-					}
+
+					int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
+					int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
+					writeC(ensoulEffects.length);
+					for (int effect : ensoulEffects)
+						writeD(effect);
+					writeC(ensoulSpecialEffects.length);
+					for (int effect : ensoulSpecialEffects)
+						writeD(effect);
 				}
 				else
 				{
@@ -177,11 +173,9 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(0x00); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(0x00);
-					if (Config.IS_UNDERGROUND)
-					{
-						writeC(0x00);
-						writeC(0x00);
-					}
+
+					writeC(0x00);
+					writeC(0x00);
 				}
 			}
 			
@@ -206,17 +200,15 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(ing.getItemInfo().getElementPower()); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(ing.getItemInfo().getElementals()[j]);
-					if (Config.IS_UNDERGROUND)
-					{
-						int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
-						int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
-						writeC(ensoulEffects.length);
-						for (int effect : ensoulEffects)
-							writeD(effect);
-						writeC(ensoulSpecialEffects.length);
-						for (int effect : ensoulSpecialEffects)
-							writeD(effect);
-					}
+
+					int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
+					int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
+					writeC(ensoulEffects.length);
+					for (int effect : ensoulEffects)
+						writeD(effect);
+					writeC(ensoulSpecialEffects.length);
+					for (int effect : ensoulSpecialEffects)
+						writeD(effect);
 				}
 				else
 				{
@@ -226,11 +218,9 @@ public final class MultiSellList extends L2GameServerPacket
 					writeH(0x00); //element power
 					for (byte j = 0; j < 6; j++)
 						writeH(0x00);
-					if (Config.IS_UNDERGROUND)
-					{
-						writeC(0x00);
-						writeC(0x00);
-					}
+
+					writeC(0x00);
+					writeC(0x00);
 				}
 			}
 		}

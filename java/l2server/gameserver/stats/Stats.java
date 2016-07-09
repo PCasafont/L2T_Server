@@ -30,7 +30,7 @@ public enum Stats
 	MAX_HP("maxHp"), MAX_MP("maxMp"), MAX_CP("maxCp"), REGENERATE_HP_RATE("regHp"), REGENERATE_CP_RATE("regCp"), REGENERATE_MP_RATE("regMp"), RECHARGE_MP_RATE("gainMp"), HEAL_EFFECTIVNESS("gainHp"), HEAL_PROFICIENCY("giveHp"), HEAL_STATIC_BONUS("bonusHp"), GAIN_HP_LIMIT("gainHpLimit"), GAIN_CP_LIMIT("gainCpLimit"), GAIN_MP_LIMIT("gainMpLimit"), LIMIT_HP("limitHp"), // non-displayed hp limit
 	
 	// ATTACK & DEFENCE
-	POWER_DEFENCE("pDef"), MAGIC_DEFENCE("mDef"), POWER_ATTACK("pAtk"), MAGIC_ATTACK("mAtk"), PHYSICAL_SKILL_POWER("physicalSkillPower"), MAGIC_SKILL_POWER("mSkillPower"), POWER_ATTACK_SPEED("pAtkSpd"), MAGIC_ATTACK_SPEED("mAtkSpd"), // how fast a magic spell is casted (including animation)
+	PHYS_DEFENSE("pDef"), MAGIC_DEFENSE("mDef"), PHYS_ATTACK("pAtk"), MAGIC_ATTACK("mAtk"), PHYSICAL_SKILL_POWER("physicalSkillPower"), MAGIC_SKILL_POWER("mSkillPower"), POWER_ATTACK_SPEED("pAtkSpd"), MAGIC_ATTACK_SPEED("mAtkSpd"), // how fast a magic spell is casted (including animation)
 	ATK_REUSE("atkReuse"), // make bows hit simple hits way slower and will not affect skills
 	P_REUSE("pReuse"), MAGIC_REUSE_RATE("mReuse"), // how fast spells becomes ready to reuse
 	SHIELD_DEFENCE("sDef"), CRITICAL_DAMAGE("pCritDmg"), CRITICAL_DAMAGE_ADD("pCritDmgAdd"), CRITICAL_ATTACK("pCritAtk"), // this is another type for special critical damage mods - crit damage SA
@@ -43,7 +43,7 @@ public enum Stats
 	PVE_PHYSICAL_DMG("pvePhysDmg"), PVE_PHYS_SKILL_DMG("pvePhysSkillsDmg"), PVE_BOW_DMG("pveBowDmg"), PVE_BOW_SKILL_DMG("pveBowSkillsDmg"), PVE_MAGICAL_DMG("pveMagicalDmg"), PVE_PHYSICAL_DEF("pvePhysDef"), PVE_MAGICAL_DEF("pveMagicalDef"), PVE_PHYS_SKILL_DEF("pvePhysSkillsDef"),
 	
 	// Atk & Def rates
-	EVASION_RATE("rEvas"), MEVASION_RATE("mEvasRate"), P_SKILL_EVASION("pSkillEvas"), M_SKILL_EVASION("mSkillEvas"), SHIELD_RATE("rShld"), CRITICAL_RATE("rCrit"), CRIT_DAMAGE_EVASION("critDamEvas"), MAX_CRITICAL_RATE("maxCrit"), MAX_MAGIC_CRITICAL_RATE("maxMCrit"), BLOW_RATE("blowRate"), LETHAL_RATE("lethalRate"), PCRITICAL_RATE("pSkillCritRate"), MCRITICAL_RATE("mCritRate"), MCRITICAL_RECV_RATE("mCritRecvRate"), HEAL_CRIT_RATE("healCritRate"),
+	P_EVASION_RATE("rEvas"), M_EVASION_RATE("mEvasRate"), P_SKILL_EVASION("pSkillEvas"), M_SKILL_EVASION("mSkillEvas"), SHIELD_RATE("rShld"), CRITICAL_RATE("rCrit"), CRIT_DAMAGE_EVASION("critDamEvas"), MAX_CRITICAL_RATE("maxCrit"), MAX_MAGIC_CRITICAL_RATE("maxMCrit"), BLOW_RATE("blowRate"), LETHAL_RATE("lethalRate"), PCRITICAL_RATE("pSkillCritRate"), MCRITICAL_RATE("mCritRate"), MCRITICAL_RECV_RATE("mCritRecvRate"), HEAL_CRIT_RATE("healCritRate"),
 	
 	EXP_RATE("rExp"), SP_RATE("rSp"), DROP_RATE("rDrop"),
 	
@@ -82,7 +82,7 @@ public enum Stats
 	BLEED_RES("bleedRes"), POISON_RES("poisonRes"), STUN_RES("stunRes"), PARALYSIS_RES("paralysisRes"), PETRIFY_RES("petrifyRes"), HOLD_RES("holdRes"), SLEEP_RES("sleepRes"), KNOCK_DOWN_RES("knockDownRes"), KNOCK_BACK_RES("knockBackRes"), PULL_RES("pullRes"), AERIAL_YOKE_RES("aerialYokeRes"), CANCEL_RES("cancelRes"), // Resistance for cancel type skills
 	DERANGEMENT_RES("derangementRes"), PHYS_DEBUFF_RES("physDebuffRes"), MENTAL_DEBUFF_RES("mentalDebuffRes"), DEBUFF_RES("debuffRes"), LETHAL_RES("lethalRes"),
 	
-	BLEED_PROF("bleedProf"), POISON_PROF("poisonProf"), STUN_PROF("stunProf"), PARALYSIS_PROF("paralysisProf"), PETRIFY_PROF("paralysisProf"), HOLD_PROF("holdProf"), SLEEP_PROF("sleepProf"), KNOCK_DOWN_PROF("knockDownProf"), KNOCK_BACK_PROF("knockBackProf"), PULL_PROF("pullProf"), AERIAL_YOKE_PROF("aerialYokeProf"), CANCEL_PROF("cancelProf"), DERANGEMENT_PROF("derangementProf"), PHYS_DEBUFF_PROF("physDebuffProf"), MENTAL_DEBUFF_PROF("mentalDebuffProf"), DEBUFF_PROF("debuffProf"),
+	BLEED_PROF("bleedProf"), POISON_PROF("poisonProf"), STUN_PROF("stunProf"), PARALYSIS_PROF("paralysisProf"), PETRIFY_PROF("petrifyProf"), HOLD_PROF("holdProf"), SLEEP_PROF("sleepProf"), KNOCK_DOWN_PROF("knockDownProf"), KNOCK_BACK_PROF("knockBackProf"), PULL_PROF("pullProf"), AERIAL_YOKE_PROF("aerialYokeProf"), CANCEL_PROF("cancelProf"), DERANGEMENT_PROF("derangementProf"), PHYS_DEBUFF_PROF("physDebuffProf"), MENTAL_DEBUFF_PROF("mentalDebuffProf"), DEBUFF_PROF("debuffProf"),
 	
 	// ELEMENTS
 	FIRE_RES("fireRes"), WATER_RES("waterRes"), WIND_RES("windRes"), EARTH_RES("earthRes"), HOLY_RES("holyRes"), DARK_RES("darkRes"), VALAKAS_RES("valakasRes"),

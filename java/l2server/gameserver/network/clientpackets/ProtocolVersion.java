@@ -1,7 +1,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.Config;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.KeyPacket;
 
@@ -45,7 +44,7 @@ public class ProtocolVersion extends L2GameClientPacket
 			client.closeNow();
 			return;
 		}
-		else if (!Config.IS_UNDERGROUND && _version == 24 || Config.IS_UNDERGROUND && _version == 28)
+		else if (_version == 64)
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);

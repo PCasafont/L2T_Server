@@ -235,7 +235,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<!-- Uses your HP to restore the target's HP by 50%> But decreases HP by 40%. -->
+	<!-- Uses your HP to restore the target's HP by 50%) But decreases HP by 40%. -->
 	<skill id="15026" levels="1" name="Use Petra">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2459,7 +2459,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- The Guillotine was once an executioner. After drinking the blood of Shilen that permeated the Execution Grounds, it became the "Guillotine of Death" that kills to bring about the resurrection of Shilen. It is trapped in the illusion of the blood. It manages the criminals near the guillotine and it sends the blood that they have gathered to the spirit world of darkness. -->
+	<!-- The Guillotine was once an executioner. After drinking the blood of Shilen that permeated the Execution Grounds, it became the 'Guillotine of Death' that kills to bring about the resurrection of Shilen. It is trapped in the illusion of the blood. It manages the criminals near the guillotine and it sends the blood that they have gathered to the spirit world of darkness. -->
 	<skill id="15215" levels="1" name="Raid Boss (Lv. 97)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3102,7 +3102,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Knock back -->
+	<!-- Knock Back -->
 	<skill id="15277" levels="1" name="Knock Back">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4737,7 +4737,7 @@
 		<set name="castRange" val="150" />
 		<set name="effectRange" val="650" />
 	</skill>
-	<skill id="15449" levels="1" name="Wind Strike">
+	<skill id="15449" levels="1" name="(Wind Strike)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6885,10 +6885,10 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%.
-		Level 2: For 60 minutes, P. Atk. + 19%, P. Def. + 15%, M. Atk. + 83%, and M. Def. + 30%.
-		Level 3: For 60 minutes, P. Atk. + 21%, P. Def. + 15%, M. Atk. + 87%, and M. Def. + 30%.
-		Level 4: For 60 minutes, P. Atk. + 23%, P. Def. + 15%, M. Atk. + 91%, and M. Def. + 30%.
+		Level 1: Party members' P. Atk. +17%, P. Def. +15%, M. Atk. +79%, and M. Def. +30% up for 60 minutes.
+		Level 2: Party members' P. Atk. +19%, P. Def. +15%, M. Atk. +83%, and M. Def. +30% up for 60 minutes.
+		Level 3: Party members' P. Atk. +21%, P. Def. +15%, M. Atk. +87%, and M. Def. +30% up for 60 minutes.
+		Level 4: Party members' P. Atk. +23%, P. Def. +15%, M. Atk. +91%, and M. Def. +30% up for 60 minutes.
 	-->
 	<skill id="15642" levels="4" name="Horn Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
@@ -6899,10 +6899,10 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
-		Level 2: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 10%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
-		Level 3: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 5%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
-		Level 4: For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage in standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, and Debuff Resistance + 10%. Received Critical Damage - 30%, and Speed - 60 minutes4. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage.
+		Level 1: For 60 minutes, Party Members' Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +20, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, Debuff Resistance +10%, Critical Damage Received -30%; Movement Speed -15% down. Additionally, for party members equipped with melee weapons, bows, or crossbows who have received attacks and suffered more than a certain amount of damage, Critical Damage is increased during normal attack.
+		Level 2: For 60 minutes, Party Members' Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +20, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, Debuff Resistance +10%, Critical Damage Received -30%; Movement Speed -10% down. Additionally, for party members equipped with melee weapons, bows, or crossbows who have received attacks and suffered more than a certain amount of damage, Critical Damage is increased during normal attack.
+		Level 3: For 60 minutes, Party Members' Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +20, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, Debuff Resistance +10%, Critical Damage Received -30%; Movement Speed -5% down. Additionally, for party members equipped with melee weapons, bows, or crossbows who have received attacks and suffered more than a certain amount of damage, Critical Damage is increased during normal attack.
+		Level 4: For 60 minutes, Party Members' Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +20, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def. +20%, Casting Spd. +20%, Debuff Resistance +10%, Critical Damage Received -30%; Movement Speed -60 minutes4 down. Additionally, for party members equipped with melee weapons, bows, or crossbows who have received attacks and suffered more than a certain amount of damage, Critical Damage is increased during normal attack.
 	-->
 	<skill id="15643" levels="4" name="Drum Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
@@ -6913,10 +6913,10 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, Max HP + 37%, Max MP + $x3, Max CP + 37%, and HP Recovery Bonus + 20%.
-		Level 2: For 60 minutes, Max HP + 39%, Max MP + $x3, Max CP + 39%, and HP Recovery Bonus + 20%.
-		Level 3: For 60 minutes, Max HP + 41%, Max MP + $x3, Max CP + 41%, and HP Recovery Bonus + 20%.
-		Level 4: For 60 minutes, Max HP + 43%, Max MP + $x3, Max CP + 43%, and HP Recovery Bonus + 20%.
+		Level 1: For 60 minutes, party members' Max HP +37%, Max MP +37%, Max CP +37%, HP Recovery Bonus +20%.
+		Level 2: For 60 minutes, party members' Max HP +39%, Max MP +39%, Max CP +39%, HP Recovery Bonus +20%.
+		Level 3: For 60 minutes, party members' Max HP +41%, Max MP +41%, Max CP +41%, HP Recovery Bonus +20%.
+		Level 4: For 60 minutes, party members' Max HP +43%, Max MP +43%, Max CP +43%, HP Recovery Bonus +20%.
 	-->
 	<skill id="15644" levels="4" name="Pipe Organ Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
@@ -6927,10 +6927,10 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
-		Level 2: For 60 minutes, P. Critical Rate + 34%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
-		Level 3: For 60 minutes, P. Critical Rate + 36%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
-		Level 4: For 60 minutes, P. Critical Rate + 38%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%.
+		Level 1: Party members' P. Critical Rate +32%, P. Critical Damage +35%, M. Critical Rate +20; P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Iss Enchanter Enhance Skill MP Consumption -20% for 60 minutes.
+		Level 2: Party members' P. Critical Rate +34%, P. Critical Damage +35%, M. Critical Rate +20; P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Iss Enchanter Enhance Skill MP Consumption -20% for 60 minutes.
+		Level 3: Party members' P. Critical Rate +36%, P. Critical Damage +35%, M. Critical Rate +20; P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Iss Enchanter Enhance Skill MP Consumption -20% for 60 minutes.
+		Level 4: Party members' P. Critical Rate +38%, P. Critical Damage +35%, M. Critical Rate +20; P. Skill MP Consumption -20%, M. Skill MP Consumption -10%, Iss Enchanter Enhance Skill MP Consumption -20% for 60 minutes.
 	-->
 	<skill id="15645" levels="4" name="Guitar Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
@@ -6941,10 +6941,10 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, P. Accuracy + 5, P./M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%.
-		Level 2: For 60 minutes, P. Accuracy + 6, P./M. Evasion + 6, and Speed + 35. Received Critical Damage - 30%.
-		Level 3: For 60 minutes, P. Accuracy + 7, P./M. Evasion + 7, and Speed + 36. Received Critical Damage - 30%.
-		Level 4: For 60 minutes, P. Accuracy + 8, P./M. Evasion + 8, and Speed + 37. Received Critical Damage - 30%.
+		Level 1: For 60 minutes, party members' P. Accuracy +5, P./M. Evasion +5, Movement Speed +34, and Critical Damage Received -30%.
+		Level 2: For 60 minutes, party members' P. Accuracy +6, P./M. Evasion +6, Movement Speed +35, and Critical Damage Received -30%.
+		Level 3: For 60 minutes, party members' P. Accuracy +7, P./M. Evasion +7, Movement Speed +36, and Critical Damage Received -30%.
+		Level 4: For 60 minutes, party members' P. Accuracy +8, P./M. Evasion +8, Movement Speed +37, and Critical Damage Received -30%.
 	-->
 	<skill id="15646" levels="4" name="Harp Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />
@@ -6955,10 +6955,10 @@
 		<set name="effectRange" val="900" />
 	</skill>
 	<!-- 
-		Level 1: For 60 minutes, Atk. Spd. + 34%, Casting Spd. + 31%, and has a chance of applying 9% Vampiric Rage.
-		Level 2: For 60 minutes, Atk. Spd. + 35%, Casting Spd. + 32%, and has a chance of applying 9% Vampiric Rage.
-		Level 3: For 60 minutes, Atk. Spd. + 36%, Casting Spd. + 33%, and has a chance of applying 9% Vampiric Rage.
-		Level 4: For 60 minutes, Atk. Spd. + 37%, Casting Spd. + 34%, and has a chance of applying 9% Vampiric Rage.
+		Level 1: For 60 minutes, party members' Atk. Spd. +34%, Casting Spd. +31%, with a chance of 9% Vampiric Rage.
+		Level 2: For 60 minutes, party members' Atk. Spd. +35%, Casting Spd. +32%, with a chance of 9% Vampiric Rage.
+		Level 3: For 60 minutes, party members' Atk. Spd. +36%, Casting Spd. +33%, with a chance of 9% Vampiric Rage.
+		Level 4: For 60 minutes, party members' Atk. Spd. +37%, Casting Spd. +34%, with a chance of 9% Vampiric Rage.
 	-->
 	<skill id="15647" levels="4" name="Lute Melody (Adventurer)">
 		<set name="target" val="TARGET_NONE" />

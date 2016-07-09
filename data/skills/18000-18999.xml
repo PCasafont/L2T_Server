@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-	<skill id="18000" levels="1" name="Scroll of Escape: The Cemetary">
+	<skill id="18000" levels="1" name="Scroll of Escape: Cemetery">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -110,14 +110,14 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<!-- Use to obtain 400,000 XP. Can combine 2 Lv. 1 pouches. Below Lv. 85 only. -->
-	<skill id="18017" levels="1" name="Maphr's Pouch">
+	<skill id="18017" levels="1" name="Fortune Pocket - Stage 1">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<!-- Use to obtain 1,600,000 XP. Can combine 2 Lv. 2 pouches. Below Lv. 85 only. -->
-	<skill id="18018" levels="1" name="Maphr's Pouch">
+	<skill id="18018" levels="1" name="Fortune Pocket - Stage 2">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -131,14 +131,14 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<!-- Random Prize. -->
-	<skill id="18020" levels="2" name="Maphr's Pouch">
+	<skill id="18020" levels="2" name="Fortune Pocket - Stage 3">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="-1000" />
 	</skill>
 	<!-- Use to obtain 80,000 XP. Can combine 2 Lv. 4 pouches. -->
-	<skill id="18021" levels="1" name="Maphr's Pouch">
+	<skill id="18021" levels="1" name="Fortune Pocket - Stage 4">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -154,7 +154,7 @@
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<!-- Random Prize. -->
-	<skill id="18023" levels="2" name="Maphr's Pouch">
+	<skill id="18023" levels="2" name="Fortune Pocket - Stage 5">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -826,8 +826,11 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- When hunting monsters, Vitality consumption x 2, and XP/SP gain + 100%. Remains after death. Lasts 10 min. Cooldown is 10 min. -->
-	<skill id="18126" levels="1" name="Freya's Frozen Scroll">
+	<!-- 
+		Level 1: Vitality +100%, and XP/SP acquisition +100% while hunting monsters. Remains after death. Duration is 10 min. Cooldown is 10 min. Cannot be used together with “Freya's Scroll of Storm”.
+		Level 2: Vitality +100%, and XP/SP acquisition +130% while hunting monsters. Remains after death. Duration is 10 min. Cooldown is 10 min. Cannot be used together with “Freya's Scroll of Storm”.
+	-->
+	<skill id="18126" levels="2" name="Freya's Gust Scroll">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -851,14 +854,14 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- When hunting monsters, Vitality consumption x 2, and XP/SP gain + 100%. Remains after death. Lasts 10 min. Cooldown is 10 min. -->
+	<!-- Vitality +100%, and XP/SP acquisition +100% while hunting monsters. Remains after death. Duration is 10 min. Cooldown is 10 min. Cannot be used together with “Freya's Scroll of Storm”. -->
 	<skill id="18130" levels="1" name="Freya's Frozen Scroll">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- When enchanting a weapon (R-grade) with a blessed enchant scroll, success rate + 20%. Only for items enchanted between + 3 and + 15. Failure drops the enchant level by 1. -->
+	<!-- When using the Blessed Scroll: Enchant Armor to enchant R-grade weapons, the success rate is increased by 20%. Can be used only on 3-15 enchanted items. When enchantment fails, the enchant level is decreased by 1. -->
 	<skill id="18131" levels="1" name="Freya's Lucky Enchant Stone: Weapon (R-grade)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -1556,7 +1559,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
-	<skill id="18220" levels="1" name="Blazing Swamp Teleport">
+	<skill id="18220" levels="1" name="Scroll of Escape: Blazing Swamp">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1574,7 +1577,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<!-- For 30 min., Attack Attribute +100, P. Atk. +20%, M. Atk. +30%, Atk./Casting Spd. +10%, P./M. Accuracy +4, Speed +10, Max HP/MP/CP +10%, P./M. Def. +10%, and Skill MP Consumption -10%. Cannot be stacked with Art of Seduction. Buff remains after death. -->
-	<skill id="18223" levels="1" name="Power Scroll">
+	<skill id="18223" levels="1" name="Kokko's Love">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1795,11 +1798,11 @@
 		<set name="effectRange" val="1700" />
 	</skill>
 	<!-- 
-		Level 1: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 5% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 1. <Note:> Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
-		Level 2: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 10% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 1. <Note:> Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
-		Level 3: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 30% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 2. <Note:> Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
-		Level 4: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 50% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 2. <Note:> Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
-		Level 5: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 100% for 1 hour. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 3. <Note:> Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
+		Level 1: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 5% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 1. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
+		Level 2: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 10% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 1. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
+		Level 3: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 30% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 2. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
+		Level 4: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 50% for 30 minutes. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 2. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
+		Level 5: Buff filled with Pippi's love. Acquired XP/SP through hunting increases by 100% for 1 hour. Once the effect wears off, receive Pippi's Fortune Pocket - Stage 3. (Note:) Cannot receive item if you are dead or don't have space in your inventory. Deleted when changing main/dual/sub classes.
 	-->
 	<skill id="18265" levels="5" name="Pippi's Love">
 		<set name="target" val="TARGET_NONE" />
@@ -2055,19 +2058,19 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- The festival is not over yet. Obtain 300 Festival Coins after 6 hours. Receive the buff once a day. It resets at 6:30 AM every day.<Note:> Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
+	<!-- The festival is not over yet. Obtain 300 Festival Coins after 6 hours. Receive the buff once a day. It resets at 6:30 AM every day.(Note:) Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
 	<skill id="18364" levels="1" name="Festival's Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- The festival is not over yet. Obtain 300 Festival Coins after 10 minutes. Receive the buff once a day. It resets at 6:30 AM every day.<Note:> Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
+	<!-- The festival is not over yet. Obtain 300 Festival Coins after 10 minutes. Receive the buff once a day. It resets at 6:30 AM every day.(Note:) Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
 	<skill id="18365" levels="1" name="Festival's Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- The festival is not over yet. Obtain 600 Festival Coins after 6 hours. Receive the buff once a day. It resets at 6:30 AM every day.<Note:> Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
+	<!-- The festival is not over yet. Obtain 600 Festival Coins after 6 hours. Receive the buff once a day. It resets at 6:30 AM every day.(Note:) Cannot receive Festival Coins if you are dead or don't have space in your inventory. -->
 	<skill id="18366" levels="1" name="Festival's Effect">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2150,44 +2153,65 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- STR + 5 when equipped. -->
-	<skill id="18380" levels="1" name="Player Commendation - Talisman - STR">
+	<!-- 
+		Level 1: STR + 5 when equipped.
+		Level 2: When equipped, STR +5.
+	-->
+	<skill id="18380" levels="2" name="Mysterious Talisman - STR">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- INT + 5 when equipped. -->
-	<skill id="18381" levels="1" name="Player Commendation - Talisman - INT">
+	<!-- 
+		Level 1: INT + 5 when equipped.
+		Level 2: When equipped, INT +5.
+	-->
+	<skill id="18381" levels="2" name="Mysterious Talisman - INT">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- DEX + 5 when equipped. -->
-	<skill id="18382" levels="1" name="Player Commendation - Talisman - DEX">
+	<!-- 
+		Level 1: DEX + 5 when equipped.
+		Level 2: When equipped, DEX +5.
+	-->
+	<skill id="18382" levels="2" name="Mysterious Talisman - DEX">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- WIT + 5 when equipped. -->
-	<skill id="18383" levels="1" name="Player Commendation - Talisman - WIT">
+	<!-- 
+		Level 1: WIT + 5 when equipped.
+		Level 2: When equipped, WIT +5.
+	-->
+	<skill id="18383" levels="2" name="Mysterious Talisman - WIT">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- CON + 5 when equipped. -->
-	<skill id="18384" levels="1" name="Player Commendation - Talisman - CON">
+	<!-- 
+		Level 1: CON + 5 when equipped.
+		Level 2: When equipped, CON +5.
+	-->
+	<skill id="18384" levels="2" name="Mysterious Talisman - CON">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- MEN + 5 when equipped. -->
-	<skill id="18385" levels="1" name="Player Commendation - Talisman - MEN">
+	<!-- 
+		Level 1: MEN + 5 when equipped.
+		Level 2: When equipped, MEN +5.
+	-->
+	<skill id="18385" levels="2" name="Mysterious Talisman - MEN">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Attack Attribute + 50 when equipped. -->
-	<skill id="18386" levels="1" name="Player Commendation - Talisman - Attack Attribute">
+	<!-- 
+		Level 1: Attack Attribute + 50 when equipped.
+		Level 2: Attack Attributes are boosted by 50 when the Talisman is worn.
+	-->
+	<skill id="18386" levels="2" name="Mysterious Talisman - Attack Attribute">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2424,7 +2448,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18431" levels="1" name="Drew Protection Box">
+	<skill id="18431" levels="1" name="Nuke Pocket">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2486,7 +2510,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Releases Agathion's Seal. -->
+	<!-- Releases Agathion's seal. -->
 	<skill id="18443" levels="1" name="Release Agathion's Seal - Anakaim Holy Barrier">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2578,7 +2602,7 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
-		Level 1: Receive an additional 11% XP/SP when hunting. Receive an 11th Anniversary Coin once the buff ends. <Note:> Cannot receive item if you are dead or don't have space in your inventory.
+		Level 1: Receive an additional 11% XP/SP when hunting. Receive an 11th Anniversary Coin once the buff ends. (Note:) Cannot receive item if you are dead or don't have space in your inventory.
 		Level 2: Receive an additional 30% XP/SP when hunting.
 	-->
 	<skill id="18451" levels="2" name="11th Anniversary Buff">
@@ -2770,8 +2794,14 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<!-- Double-click to get one of the following: Wind Vitality Tonic, or items that will help with enchanting skills. -->
-	<skill id="18481" levels="1" name="Snowman's Wish-filled Gift">
+	<!-- 
+		Level 1: Double-click to get one of the following: Wind Vitality Tonic, or items that will help with enchanting skills.
+		Level 2: Double click the chest to receive 1 random rare item, such as a rare accessory.
+		Level 3: Double click the chest to receive 1 random item relating to enchantment of items.
+		Level 4: Double click the chest to receive 1 random item relating to the growth and enchantment of your character.
+		Level 5: Double click to obtain one of the following rare items: Freya's Scroll of Storm, Freya's Bloody Rune (2 hr).
+	-->
+	<skill id="18481" levels="5" name="Freya's Fated Support Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2885,7 +2915,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Random prize. -->
+	<!-- Random Prize. -->
 	<skill id="18497" levels="1" name="Fish Gift Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2908,7 +2938,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Random prize. -->
+	<!-- Random Prize. -->
 	<skill id="18500" levels="1" name="Aden Vanguard Supply Box">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -2992,7 +3022,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
-	<!-- Engraves the Seal of Ruler on the holy artifact which guards the castle. -->
+	<!-- The seal of the ruler is engraved on the ancient relic protecting the fort. -->
 	<skill id="18514" levels="1" name="Seal Altar of Earth">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3004,18 +3034,18 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<!-- 
-		Level 1: P./M. Def. is decreased by 10%.
-		Level 2: P./M. Def. is decreased by 30%.
-		Level 3: P./M. Def. is decreased by 50%.
+		Level 1: P./M. Def. -10%
+		Level 2: P./M. Def. -30%
+		Level 3: P./M. Def. -50%
 	-->
-	<skill id="18515" levels="3" name="Decrease P. Def.">
+	<skill id="18515" levels="3" name="Weakened Defense">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="1000" />
 	</skill>
-	<!-- Engraves the Seal of Ruler on the holy artifact which guards the castle. -->
+	<!-- The seal of the ruler is engraved on the ancient relic protecting the fort. -->
 	<skill id="18516" levels="1" name="Seal Altar of Wind">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3026,7 +3056,7 @@
 		<set name="castRange" val="100" />
 		<set name="effectRange" val="400" />
 	</skill>
-	<!-- A strange sensation envelopes you. For 15 seconds, P./M. Atk. And Atk./Casting Spd. increase. A strange power transforms your weapon. Cannot be stacked with Battle Rhapsody Dance.. -->
+	<!-- An Unknown Power hangs over your body. P. Atk./M. Atk./Atk. Spd./Casting Spd. are increased instantaneously for 15 seconds. An Unknown Power changes the appearance of your weapon. Cannot be used together with the Battle Rhapsody Dance buff. -->
 	<skill id="18517" levels="1" name="Top-grade Love Potion - Party">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3034,7 +3064,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
-	<!-- Throws a flare that will identify traps and targets who are hiding. -->
+	<!-- Fires a flash grenade that illuminates hidden opponents or traps around you. -->
 	<skill id="18518" levels="1" name="Flash Grenade">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3043,13 +3073,13 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<!-- Converts Flash Grenade. Elementary Alchemy. -->
+	<!-- Elementary Alchemy used for Flash Grenade transmutation. -->
 	<skill id="18522" levels="1" name="Flash Grenade">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Changes the appearance of a weapon to that of White Day for 1 hour. -->
+	<!-- Use to change the appearance of your weapon into that of a White Day weapon for 1 hour. -->
 	<skill id="18523" levels="1" name="Hansel's Weapon Crafting Potion">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3057,7 +3087,7 @@
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
-	<!-- Can summon a friend -->
+	<!-- Use to summon a friend. -->
 	<skill id="18524" levels="1" name="Gretel's Friend Summon Candy">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3065,15 +3095,15 @@
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
-	<!-- Double-click to get one of the following: Blessed Antharas' Earring, Blessed Valakas' Necklace, Tauti's Ring, Earth Wyrm Heart Ring, or Blessed Zaken's Earring (7-day). Cannot be used in the Olympiad. Deleted after event. -->
-	<skill id="18531" levels="1" name="Rare Accessory Box">
+	<!-- Double click to receive one of the following 7-day accessory chests: Blessed Antharas Earring/Blessed Valakas Necklace/Tauti's Ring/Earth Wyrm Heart Ring/Blessed Zaken's Earring. Cannot use in Olympiad. Will be deleted at the time of the scheduled server check on June 3, 2015. -->
+	<skill id="18531" levels="1" name="Rare Accessory Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 	</skill>
-	<!-- Double-click to get one of the following: Expertise Rune Pack R, R95, or R99. Deleted after event. -->
+	<!-- Double click to receive one of the following: Expertise Rune Pack R, R95, or R99. Will be deleted at the time of the scheduled server check on June 3, 2015. -->
 	<skill id="18532" levels="1" name="Expertise Rune Pack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3192,19 +3222,19 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Changes the appearance of your entire armor into that of Blue Dynasty. Tops and one-pieces only. -->
+	<!-- An appearance stone that changes appearance to that of Blue Dynasty Armor. Can be used on upper and full-body costumes. -->
 	<skill id="18556" levels="1" name="Blue Dynasty Armor Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Changes the appearance of your entire armor into that of Red Zubei. Tops and one-pieces only. -->
-	<skill id="18557" levels="1" name="Zubei Armor Appearance Stone">
+	<!-- An appearance stone that changes appearance to that of Red Zubei Armor. Can be used on upper and full-body costumes. -->
+	<skill id="18557" levels="1" name="Red Zubei Armor Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<!-- Changes the appearance of your entire armor into that of the White Assassin Suit. Tops and one-pieces only. -->
+	<!-- An appearance stone that changes appearance to that of a White Assassin Suit. Can be used on upper and full-body costumes. -->
 	<skill id="18558" levels="1" name="White Assassin Suit Appearance Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -3232,7 +3262,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
-	<skill id="18563" levels="4" name="Red Libra Supplies Lv. 4">
+	<skill id="18563" levels="5" name="Red Libra Supply Items Lv5">
 		<table name="#name">Red Libra Supplies Lv. 1;Red Libra Supplies Lv. 2;Red Libra Supplies Lv. 3;Red Libra Supplies Lv. 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -3254,8 +3284,9 @@
 		Level 3: Creates a protection shield that absorbs 15,000 damage for 10 seconds.
 		Level 4: Creates a protection shield that absorbs 30,000 damage for 10 seconds.
 		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
+		Level 6: For 15 sec, create a protection shield that absorbs 50000 damage and recovers 15% of Max HP instantly.
 	-->
-	<skill id="18565" levels="5" name="Tanzanite - Barrier">
+	<skill id="18565" levels="6" name="Greater Tanzanite - Barrier">
 		<table name="#duration"> 5 5 10 10 15 </table>
 		<table name="#damage"> 5000 10000 15000 30000 50000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -3279,8 +3310,9 @@
 		Level 3: Resistance to Debuffs + 12%.
 		Level 4: Resistance to Debuffs + 20%.
 		Level 5: Resistance to Debuffs + 30%.
+		Level 6: Increases success rate of Resistance to Debuffs by 30%, and when receiving damage in PvP, Stun/Silence are canceled. Activation wait time 15 seconds.
 	-->
-	<skill id="18566" levels="5" name="Garnet">
+	<skill id="18566" levels="6" name="Greater Garnet">
 		<table name="#debuffRes"> 3 6 12 20 30 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3289,8 +3321,11 @@
 			<addPercent stat="debuffRes" val="#debuffRes" />
 		</for>
 	</skill>
-	<!-- Cancels your debuffs. -->
-	<skill id="18567" levels="1" name="Garnet - Purge">
+	<!-- 
+		Level 1: Cancels your debuffs.
+		Level 2: Cancel all debuffs and become immune to debuffs for 7 seconds.
+	-->
+	<skill id="18567" levels="2" name="Greater Garnet - Cancel Debuffs">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3312,8 +3347,9 @@
 		Level 3: Increases Vitality Status Bonus EXP by 12%.
 		Level 4: Increases Vitality Status Bonus EXP by 20% and decreases Vitality Point Consumption Speed by 7%.
 		Level 5: Increases Vitality Status Bonus EXP by 30% and decreases Vitality Point Consumption Speed by 15%.
+		Level 6: Increases Vitality Status Bonus XP by 30% and the Vitality Point Consumption Speed decreases by 15%. XP Gain increases by 10% as well.
 	-->
-	<skill id="18568" levels="5" name="Vital Stone">
+	<skill id="18568" levels="6" name="Greater Vital Stone">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />

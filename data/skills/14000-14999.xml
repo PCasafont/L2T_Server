@@ -6239,7 +6239,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 	</skill>
-	<!-- Attacks with 7980 power added to P. Atk. Decreases Speed by 10%> Can be used while dagger/blunt equipment is equipped. Over-hit. -->
+	<!-- Attacks with 7980 power added to P. Atk. Decreases Speed by 10%) Can be used while dagger/blunt equipment is equipped. Over-hit. -->
 	<skill id="14583" levels="1" name="Cry of Destiny - Last Judgment">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6576,7 +6576,13 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<skill id="14620" levels="4" name="Aerial Yoke Resistance 1">
+	<!-- 
+		Level 1: Aerial Yoke Attack Resistance is strong.
+		Level 2: Aerial Yoke Resistance is very strong.
+		Level 3: Aerial Yoke Resistance is superbly strong.
+		Level 4: Aerial Yoke Resistance is incredibly strong.
+	-->
+	<skill id="14620" levels="4" name="Aerial Yoke Resistance">
 		<table name="#name">Aerial Yoke Resistance 1;Aerial Yoke Resistance 2;Aerial Yoke Resistance 3;Aerial Yoke Resistance 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
@@ -7524,13 +7530,13 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Shilen's tenth lord. It is the leaders of the fairies that have fallen by the influence of the "Decaying Darkness." It has 80% of its sense of self, and it comes back to its senses now and again. The Fairy Settlement is filled with evil energy through its influence. -->
+	<!-- Shilen's tenth lord. It is the leaders of the fairies that have fallen by the influence of the 'Decaying Darkness.' It has 80% of its sense of self, and it comes back to its senses now and again. The Fairy Settlement is filled with evil energy through its influence. -->
 	<skill id="14718" levels="1" name="Raid Boss (Lv. 92)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Shilen's tenth lord. It is the leaders of the fairies that have fallen by the influence of the "Decaying Darkness." It has 80% of its sense of self, and it comes back to its senses now and again. The Fairy Settlement is filled with evil energy through its influence. -->
+	<!-- Shilen's tenth lord. It is the leaders of the fairies that have fallen by the influence of the 'Decaying Darkness.' It has 80% of its sense of self, and it comes back to its senses now and again. The Fairy Settlement is filled with evil energy through its influence. -->
 	<skill id="14719" levels="1" name="Raid Boss (Lv. 95)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -8007,49 +8013,49 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14771" levels="1" name="Raid Boss (Lv. 29)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14772" levels="1" name="Raid Boss (Lv. 39)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14773" levels="1" name="Raid Boss (Lv. 49)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14774" levels="1" name="Raid Boss (Lv. 59)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14775" levels="1" name="Raid Boss (Lv. 69)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14776" levels="1" name="Raid Boss (Lv. 78)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14777" levels="1" name="Raid Boss (Lv. 81)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Demon in Shilen's dimension that floats around in "Kamaloka," the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
+	<!-- Demon in Shilen's dimension that floats around in 'Kamaloka,' the dimensional bubble that exists between the material world and the realm of darkness. When Shilen resurrects, it plans to conquer the material world and eventually cause destruction of the world. -->
 	<skill id="14778" levels="1" name="Raid Boss (Lv. 83)">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -10207,7 +10213,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- For 5 minutes, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- For 5 minutes, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14977" levels="1" name="Mysterious Focus Buff">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
@@ -10416,7 +10422,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14995" levels="1" name="Master's Blessing - Refreshing Sonata">
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
@@ -10455,7 +10461,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 	</skill>
-	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P. Accuracy by 4, P. Evasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
+	<!-- The GM is always with you. For 1 hour, increases HP Recovery Bonus by 20%, P.ﾠAccuracy by 4, P.ﾠEvasion by 3, Speed by 20, and decreases MP Consumption for skills by 20% and skill Cooldown by 10%. -->
 	<skill id="14998" levels="1" name="Master's Blessing - Refreshing Sonata">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

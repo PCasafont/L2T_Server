@@ -3091,7 +3091,4 @@
 	
 	<!-- Should we ban any other character logged in from the same PC when we ban a character for being flagged as abuser? -->
 	<config name="AntiBotsBanOffendersReliedCharacters" var="ANTI_BOTS_BAN_OFFENDERS_RELIED_CHARACTERS" default="false" />
-
-	<!-- UNDERGROUNDER! -->
-	<config name="IsUnderground" var="IS_UNDERGROUND" default="false" />
 </list>
