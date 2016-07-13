@@ -50,6 +50,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
+		writeC(0x00);
 		writeD(_player.getObjectId()); // list id
 		writeC(0x00);
 		writeD(1); // page started from 1
@@ -57,6 +58,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 		writeD(PAGE_SIZE); // size of pages
 		writeD(_player.getCustomSellList().getItemCount()); //list length
 		writeC(0x00); // Old or modern format
+		writeD(0x00);
 		
 		int i = 1;
 		for (TradeItem item : _player.getCustomSellList().getItems())
@@ -92,7 +94,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			
 			writeQ(1); // Count
 			writeH(item.getEnchantLevel()); // enchant level
-			writeD(0x00); // Chance
+			writeD(100); // Chance
 			writeQ(0x00); // augment id
 			writeH(item.getAttackElementType()); // attack element
 			writeH(item.getAttackElementPower()); //element power

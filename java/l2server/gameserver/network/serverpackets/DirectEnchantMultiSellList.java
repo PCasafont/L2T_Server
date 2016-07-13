@@ -97,6 +97,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
+		writeC(0x00);
 		writeD(_config.shopId); // list id
 		writeC(0x00);
 		writeD(0x01); // page
@@ -104,6 +105,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 		writeD(MultiSell.PAGE_SIZE); // size of pages
 		writeD(_mainIngredients.size()); //list length
 		writeC(0x00); // Old or modern format
+		writeD(0x00);
 		
 		if (!_mainIngredients.isEmpty())
 		{

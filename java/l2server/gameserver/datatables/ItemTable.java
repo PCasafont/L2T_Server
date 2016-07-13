@@ -213,7 +213,7 @@ public class ItemTable implements Reloadable
 										|| item.getName().contains("Lindvior")))
 								{
 									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
-									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
+									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK, new LambdaConst(30.0)));
 								}
 								
 								items.put(item.getId(), item);

@@ -78,7 +78,8 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 		int ingredientsSize = 0;
 		for (List<L2ItemInstance> items : _mainIngredients.values())
 			ingredientsSize += items.size();
-		
+
+		writeC(0x00);
 		writeD(ShopId); // list id
 		writeC(0x00);
 		writeD(0x01); // page
@@ -86,6 +87,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket
 		writeD(MultiSell.PAGE_SIZE); // size of pages
 		writeD(ingredientsSize); //list length
 		writeC(0x01); // Old or modern format
+		writeD(0x00);
 		
 		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories())
 		{

@@ -61,7 +61,8 @@ public class SendMacroList extends L2GameServerPacket
 			writeS(_macro.name); // Macro Name
 			writeS(_macro.descr); // Desc
 			writeS(_macro.acronym); // acronym
-			writeC(_macro.icon); // icon
+			writeH(104); // ???
+			writeH(_macro.icon); // icon
 			
 			writeC(_macro.commands.length); // count
 			

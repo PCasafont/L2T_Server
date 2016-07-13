@@ -127,6 +127,15 @@
 		<set name="isClanSkill" val="true" />
 		<set name="minPledgeClass" val="11" />
 		<set name="clanRepConsume" val="1000" />
+		<for>
+			<cond msgId="1509">
+				<and>
+					<player olympiad="false" />
+					<player onEvent="false" />
+					<player clanLeaderOn="true" />
+				</and>
+			</cond>
+		</for>
 	</skill>
 	<!-- When the clan leader logs in, clan members' P. Atk., P. Def., and M. Def. + 5%, M. Atk. + 6%, and HP/MP recovery bonus + 5. -->
 	<skill id="19009" levels="1" name="Clan Advent">

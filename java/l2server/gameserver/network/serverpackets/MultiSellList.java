@@ -63,6 +63,7 @@ public final class MultiSellList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
+		writeC(0x00);
 		writeD(_list.getListId()); // list id
 		writeC(0x00);
 		writeD(1 + _index / MultiSell.PAGE_SIZE); // page started from 1
@@ -70,6 +71,7 @@ public final class MultiSellList extends L2GameServerPacket
 		writeD(MultiSell.PAGE_SIZE); // size of pages
 		writeD(_size); //list length
 		writeC(_list.isChance() ? 0x01 : 0x00); // Old or modern format
+		writeD(0);
 		
 		//String toLog = "";
 		MultiSellEntry ent;

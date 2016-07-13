@@ -58,7 +58,8 @@ public final class RequestMakeMacro extends L2GameClientPacket
 		String _name = readS();
 		String _desc = readS();
 		String _acronym = readS();
-		int _icon = readC();
+		readH(); // ???
+		int _icon = readH();
 		int _count = readC();
 		if (_count > MAX_MACRO_LENGTH)
 			_count = MAX_MACRO_LENGTH;

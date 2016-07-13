@@ -7825,6 +7825,11 @@
 			<packet id="0x113" name="RequestPledgeBonusRewardList" />
 			<packet id="0x114" name="RequestPledgeBonusReward" />
 			<packet id="0x115" name="RequestSSOAuthnToken" />
+			<packet id="0x118" name="Unk118" />
+			<packet id="0x11c" name="Unk11c" />
+			<packet id="0x11e" name="Unk11e" />
+			<packet id="0x120" name="Unk120" />
+			<packet id="0x121" name="Unk121" />
 		</packetfamilly>
 	</packetfamilly>
 </protocol>

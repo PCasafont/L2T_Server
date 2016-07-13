@@ -54,14 +54,14 @@ public class L2SkillAppearance extends L2Skill
 				int hairStyleId = _hairStyleId;
 				int hairColorId = _hairColorId;
 				
-				if (hairStyleId < 0 || hairStyleId > maxHairStyle)
-					hairStyleId = 0;
+				if (hairStyleId > maxHairStyle)
+					hairStyleId = -1;
 				
-				if (hairColorId < 0 || hairColorId > maxHairColor)
-					hairColorId = 0;
+				if (hairColorId > maxHairColor)
+					hairColorId = -1;
 				
-				if (faceId < 0 || faceId > maxFace)
-					faceId = 0;
+				if (faceId > maxFace)
+					faceId = -1;
 				
 				if (faceId >= 0)
 					targetPlayer.getAppearance().setFace(faceId);

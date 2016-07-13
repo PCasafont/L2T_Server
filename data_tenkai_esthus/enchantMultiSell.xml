@@ -87,84 +87,84 @@
 	</category>
 	<category>
 		<enchant level="17">
-			<ingredient id="4356" count="86" />
+			<ingredient id="4356" count="43" />
 			<production enchantLevel="17" chance="40" />
 			<production enchantLevel="16" chance="60" />
 		</enchant>
 		<enchant level="18">
-			<ingredient id="4356" count="258" />
+			<ingredient id="4356" count="129" />
 			<production enchantLevel="18" chance="40" />
 			<production enchantLevel="17" chance="40" />
 			<production enchantLevel="16" chance="20" />
 		</enchant>
 		<enchant level="19">
-			<ingredient id="4356" count="774" />
+			<ingredient id="4356" count="387" />
 			<production enchantLevel="19" chance="40" />
 			<production enchantLevel="18" chance="40" />
 			<production enchantLevel="17" chance="20" />
 		</enchant>
 		<enchant level="20">
-			<ingredient id="4037" count="23" />
+			<ingredient id="4356" count="1161" />
 			<production enchantLevel="20" chance="40" />
 			<production enchantLevel="19" chance="40" />
 			<production enchantLevel="18" chance="20" />
 		</enchant>
 		<enchant level="21">
-			<ingredient id="4037" count="41" />
+			<ingredient id="4037" count="20" />
 			<production enchantLevel="21" chance="40" />
 			<production enchantLevel="20" chance="40" />
 			<production enchantLevel="19" chance="20" />
 		</enchant>
 		<enchant level="22">
-			<ingredient id="4037" count="66" />
+			<ingredient id="4037" count="32" />
 			<production enchantLevel="22" chance="40" />
 			<production enchantLevel="21" chance="40" />
 			<production enchantLevel="20" chance="20" />
 		</enchant>
 		<enchant level="23">
-			<ingredient id="4037" count="93" />
+			<ingredient id="4037" count="40" />
 			<production enchantLevel="23" chance="40" />
 			<production enchantLevel="22" chance="40" />
 			<production enchantLevel="21" chance="20" />
 		</enchant>
 		<enchant level="24">
-			<ingredient id="4037" count="111" />
+			<ingredient id="4037" count="45" />
 			<production enchantLevel="24" chance="40" />
 			<production enchantLevel="23" chance="40" />
 			<production enchantLevel="22" chance="20" />
 		</enchant>
 		<enchant level="25">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="25" chance="40" />
 			<production enchantLevel="24" chance="40" />
 			<production enchantLevel="23" chance="20" />
 		</enchant>
 		<enchant level="26">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="26" chance="40" />
 			<production enchantLevel="25" chance="40" />
 			<production enchantLevel="24" chance="20" />
 		</enchant>
 		<enchant level="27">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="27" chance="40" />
 			<production enchantLevel="26" chance="40" />
 			<production enchantLevel="25" chance="20" />
 		</enchant>
 		<enchant level="28">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="28" chance="40" />
 			<production enchantLevel="27" chance="40" />
 			<production enchantLevel="26" chance="20" />
 		</enchant>
 		<enchant level="29">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="29" chance="40" />
 			<production enchantLevel="28" chance="40" />
 			<production enchantLevel="27" chance="20" />
 		</enchant>
 		<enchant level="30">
-			<ingredient id="4037" count="120" />
+			<ingredient id="4037" count="50" />
 			<production enchantLevel="30" chance="40" />
 			<production enchantLevel="29" chance="40" />
 			<production enchantLevel="28" chance="20" />
