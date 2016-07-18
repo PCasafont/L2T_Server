@@ -1914,6 +1914,9 @@
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="1000" />
 		<for>
 			<abnormal count="1" duration="1">
 				<effect type="HeavyPunch" val="0" />

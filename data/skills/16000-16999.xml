@@ -305,8 +305,8 @@
 		<set name="power" val="100" />
 		<set name="hitTime" val="6000" />
 		<set name="coolTime" val="500" />
-		<set name="castRange" val="1000" />
-		<set name="effectRange" val="1100" />
+		<set name="castRange" val="2000" />
+		<set name="effectRange" val="2500" />
 		<set name="skillRadius" val="500" />
 		<set name="staticHitTime" val="true" />
 		<set name="canBeReflected" val="false" />

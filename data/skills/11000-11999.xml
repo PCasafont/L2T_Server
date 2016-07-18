@@ -5734,7 +5734,7 @@
 		<set name="power" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="4000" />
+		<set name="reuseDelay" val="1000" />
 		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="300" />
 		<set name="staticHitTime" val="true" />
@@ -8471,7 +8471,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
-		<set name="reuseDelay" val="10000" />
+		<set name="reuseDelay" val="7000" />
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="nextActionAttack" val="true" />
