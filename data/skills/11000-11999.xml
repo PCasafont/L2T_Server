@@ -3960,7 +3960,7 @@
 	</skill>
 	<!-- Engulfed in flames. -->
 	<skill id="11139" levels="3" name="Ignite">
-		<enchantRoute id="1" level="1,2,3" /> <!-- Power -->
+		<enchantRoute id="1" level="1,2,3" /> <!-- Trigger -->
 		<table name="#stackLevel"> 11 12 13 </table>
 		<table name="#power"> 400 
 			<enchantRoute id="1" level="1,2,3" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
@@ -3981,7 +3981,7 @@
 		Level 5: Bound to dark power and unable to move.
 	-->
 	<skill id="11140" levels="5" name="Black Shackle">
-		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Power -->
+		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Trigger -->
 		<table name="#stackLevel1"> 11 12 13 14 10 </table>
 		<table name="#stackLevel2"> 10 10 10 10 15 </table>
 		<table name="#runSpd"> 10 20 30 40 0 </table>
@@ -4009,7 +4009,7 @@
 		Level 5: Legs are frozen. Unable to move.
 	-->
 	<skill id="11141" levels="5" name="Freezing Slow">
-		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Power -->
+		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Trigger -->
 		<table name="#stackLevel1"> 11 12 13 14 10 </table>
 		<table name="#stackLevel2"> 10 10 10 10 15 </table>
 		<table name="#runSpd"> 10 20 30 40 0 </table>
@@ -4050,7 +4050,7 @@
 		Level 5: Completely engulfed by the gust.
 	-->
 	<skill id="11144" levels="5" name="Wind Binding">
-		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Power -->
+		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Trigger -->
 		<table name="#stackLevel1"> 11 12 13 14 10 </table>
 		<table name="#stackLevel2"> 10 10 10 10 15 </table>
 		<table name="#runSpd"> 10 20 30 40 0 </table>
@@ -4074,7 +4074,7 @@
 	</skill>
 	<!-- Cursed by a soul. -->
 	<skill id="11145" levels="5" name="Soul Weakness">
-		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Power -->
+		<enchantRoute id="1" level="1,2,3,4,5" /> <!-- Trigger -->
 		<table name="#stackLevel"> 11 12 13 14 15 </table>
 		<table name="#power"> 300 
 			<enchantRoute id="1" level="1,2,3,4,5" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
@@ -8315,7 +8315,7 @@
 		</for>
 	</skill>
 	<!-- 
-		Level 1: Max HP + 4636, P. Def. + 1506, Atk. Spd. + 10%, Speed + 10% when equipped with Light Armor.
+		Level 1: Max HP + 4636, P. Def. + 1506, Atk. Spd. + 10%, Speed + 10 when equipped with Light Armor.
 		Level 2: Max HP + 4636, P. Def. + 1654 and MP Recovery Bonus + 10% when equipped with Light Armor.
 		Level 3: Max HP + 4636, P. Def. + 1817 and MP Recovery Bonus + 10% when equipped with Light Armor.
 		Level 4: Max HP + 4636, P. Def. + 1959 and MP Recovery Bonus + 10% when equipped with Light Armor.
