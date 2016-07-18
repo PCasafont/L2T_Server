@@ -1621,8 +1621,8 @@
 		<enchantRoute id="2" level="1,2,3" /> <!-- Counter -->
 		<enchantRoute id="4" level="1,2,3" /> <!-- Chance -->
 		<table name="#mpConsume"> 70 85 </table>
-        <table name="#mAtk"> 30 40 50 </table>
-        <table name="#def"> 20 30 40 </table>
+		<table name="#mAtk"> 30 40 50 </table>
+		<table name="#def"> 20 30 40 </table>
 		<table name="#duration"> 30 
 			<enchantRoute id="1" level="1,2"> 31 32 33 34 35 36 37 38 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 </enchantRoute>
 		</table>
@@ -2434,7 +2434,7 @@
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#waterRes"> 20 50 100 </table>
-        <table name="#abnormalTime"> 7 7 15 </table>
+		<table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2457,7 +2457,7 @@
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#windRes"> 20 50 100 </table>
-        <table name="#abnormalTime"> 7 7 15 </table>
+		<table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2480,7 +2480,7 @@
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#earthRes"> 20 50 100 </table>
-        <table name="#abnormalTime"> 7 7 15 </table>
+		<table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2503,7 +2503,7 @@
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
 		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#elemRes"> 20 50 100 </table>
-        <table name="#abnormalTime"> 7 7 15 </table>
+		<table name="#abnormalTime"> 7 7 15 </table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4225,11 +4225,11 @@
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
-            <addPercent stat="mAtk" val="#bonus" />
-            <addPercent stat="maxMp" val="#bonus" />
-            <addPercent stat="regMp" val="#bonus" />
-            <subPercent stat="mReuse" val="10" />
-            <subPercent stat="pReuse" val="10" />
+			<addPercent stat="mAtk" val="#bonus" />
+			<addPercent stat="maxMp" val="#bonus" />
+			<addPercent stat="regMp" val="#bonus" />
+			<subPercent stat="mReuse" val="10" />
+			<subPercent stat="pReuse" val="10" />
 		</for>
 	</skill>
 	<!-- 
@@ -4608,10 +4608,10 @@
 		<for>
 			<abnormal duration="#duration" stackLvl="1" stackType="ultimate_pd_up">
 				<effect type="Buff" val="0" />
-                <addPercent stat="pDef" val="#pDef" />
-                <subPercent stat="bowWpnVuln" val="25" />
-                <subPercent stat="crossbowWpnVuln" val="25" />
-                <subPercent stat="critVuln" val="25" />
+				<addPercent stat="pDef" val="#pDef" />
+				<subPercent stat="bowWpnVuln" val="25" />
+				<subPercent stat="crossbowWpnVuln" val="25" />
+				<subPercent stat="critVuln" val="25" />
 				<add stat="runSpd" val="#addRunSpd" />
 			</abnormal>
 		</for>
@@ -6227,9 +6227,9 @@
 				<effect type="ManaHeal" val="#enchManaHeal" />
 				<effect type="Heal" val="#enchHeal" />
 			</abnormal>
-            <abnormal duration="5" stackLvl="3" stackType="abnormal_immunity">
-                <set stat="debuffImmunity" val="1" />
-            </abnormal>
+			<abnormal duration="5" stackLvl="3" stackType="abnormal_immunity">
+				<set stat="debuffImmunity" val="1" />
+			</abnormal>
 		</for>
 	</skill>
 	<!-- 
@@ -7051,10 +7051,10 @@
 		<enchantRoute id="2" level="3,4" /> <!-- Magic Shield -->
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
-        <table name="#atkSpd"> 10 12 15 20 20 20 20 </table>
-        <table name="#atk"> 0 0 0 5 7 10 </table>
-        <table name="#acc"> 0 0 0 2 4 6 </table>
-        <table name="#maxHp"> 0 0 0 5 10 15 </table>
+		<table name="#atkSpd"> 10 12 15 20 20 20 20 </table>
+		<table name="#atk"> 0 0 0 5 7 10 </table>
+		<table name="#acc"> 0 0 0 2 4 6 </table>
+		<table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7078,10 +7078,10 @@
 		<for>
 			<abnormal duration="1800" stackLvl="3" stackType="greater_servitor_haste">
 				<effect type="Buff" val="0" />
-                <addPercent stat="pAtkSpd" val="#atkSpd" />
-                <addPercent stat="pAtk" val="#atk" />
-                <addPercent stat="accCombat" val="#acc" />
-                <addPercent stat="maxHp" val="#maxHp" />
+				<addPercent stat="pAtkSpd" val="#atkSpd" />
+				<addPercent stat="pAtk" val="#atk" />
+				<addPercent stat="accCombat" val="#acc" />
+				<addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -7103,9 +7103,9 @@
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
 		<table name="#critDmg"> 10 12 15 20 20 20 20 </table>
-        <table name="#atk"> 0 0 0 5 7 10 </table>
-        <table name="#acc"> 0 0 0 2 4 6 </table>
-        <table name="#maxHp"> 0 0 0 5 10 15 </table>
+		<table name="#atk"> 0 0 0 5 7 10 </table>
+		<table name="#acc"> 0 0 0 2 4 6 </table>
+		<table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7130,9 +7130,9 @@
 			<abnormal duration="1800" stackLvl="10" stackType="servitor_death_whisper">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pCritDmg" val="#critDmg" />
-                <addPercent stat="pAtk" val="#atk" />
-                <addPercent stat="accCombat" val="#acc" />
-                <addPercent stat="maxHp" val="#maxHp" />
+				<addPercent stat="pAtk" val="#atk" />
+				<addPercent stat="accCombat" val="#acc" />
+				<addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -7154,8 +7154,8 @@
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
 		<table name="#mpConsume"> 61 67 73 79 </table>
 		<table name="#pAtk"> 10 12 15 20 25 27 30 </table>
-        <table name="#acc"> 0 0 0 2 4 6 </table>
-        <table name="#maxHp"> 0 0 0 5 10 15 </table>
+		<table name="#acc"> 0 0 0 2 4 6 </table>
+		<table name="#maxHp"> 0 0 0 5 10 15 </table>
 		<table name="#addPercentPDef"> 0 
 			<enchantRoute id="1" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
@@ -7180,8 +7180,8 @@
 			<abnormal duration="1800" stackLvl="3" stackType="greater_servitor_might">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="#pAtk" />
-                <addPercent stat="accCombat" val="#acc" />
-                <addPercent stat="maxHp" val="#maxHp" />
+				<addPercent stat="accCombat" val="#acc" />
+				<addPercent stat="maxHp" val="#maxHp" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<add stat="runSpd" val="#addRunSpd" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
@@ -8066,11 +8066,11 @@
 		<set name="effectRange" val="1400" />
 		<for>
 			<abnormal duration="30">
-                <addPercent stat="pAtk" val="20" />
-                <addPercent stat="accCombat" val="23" />
+				<addPercent stat="pAtk" val="20" />
+				<addPercent stat="accCombat" val="23" />
 				<addPercent stat="knockDownProf" val="60" />
 				<addPercent stat="knockBackProf" val="60" />
-                <set stat="debuffImmunity" val="1" />
+				<set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11388" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -8091,10 +8091,10 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-                <addPercent stat="pAtk" val="20" />
-                <addPercent stat="mAtk" val="20" />
-                <addPercent stat="pDef" val="20" />
-                <addPercent stat="mDef" val="20" />
+				<addPercent stat="pAtk" val="20" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="pDef" val="20" />
+				<addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
@@ -8118,7 +8118,7 @@
 				<addPercent stat="pAtkSpd" val="10" />
 				<subPercent stat="mReuse" val="60" />
 				<subPercent stat="pReuse" val="60" />
-                <set stat="debuffImmunity" val="1" />
+				<set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11390" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -8139,10 +8139,10 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-                <addPercent stat="pAtk" val="20" />
-                <addPercent stat="mAtk" val="20" />
-                <addPercent stat="pDef" val="20" />
-                <addPercent stat="mDef" val="20" />
+				<addPercent stat="pAtk" val="20" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="pDef" val="20" />
+				<addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
@@ -8164,7 +8164,7 @@
 			<abnormal duration="30">
 				<addPercent stat="pAtk" val="20" />
 				<addPercent stat="pCritDmg" val="10" />
-                <set stat="debuffImmunity" val="1" />
+				<set stat="debuffImmunity" val="1" />
 			</abnormal>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11392" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
@@ -8185,10 +8185,10 @@
 		<set name="canBeSharedWithSummon" val="false" />
 		<for>
 			<abnormal duration="30">
-                <addPercent stat="pAtk" val="20" />
-                <addPercent stat="mAtk" val="20" />
-                <addPercent stat="pDef" val="20" />
-                <addPercent stat="mDef" val="20" />
+				<addPercent stat="pAtk" val="20" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="pDef" val="20" />
+				<addPercent stat="mDef" val="20" />
 			</abnormal>
 		</for>
 	</skill>
