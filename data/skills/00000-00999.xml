@@ -6421,10 +6421,10 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="baseCritRate" val="15" />
 		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="saveVs" val="CON" />
-		<set name="baseCritRate" val="15" />
 		<for>
 			<abnormal duration="5" landRate="#landRate" stackLvl="1" stackType="paralyze">
 				<effect type="Paralyze" val="0" />
@@ -10499,9 +10499,9 @@
 	<!-- Creates a seal that cancels the song or dance of nearby enemies. The seal's effect disappears upon leaving the area. Consumes 1 Battle Symbol. -->
 	<skill id="455" levels="1" name="Symbol of Noise">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8875" />
 		<set name="itemConsumeCount" val="1" />
@@ -18212,12 +18212,12 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="600" />
+		<set name="baseCritRate" val="20" />
 		<set name="isDebuff" val="true" />
 		<set name="weaponsAllowed" val="Ancient,Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="flyType" val="CHARGE" />
 		<set name="saveVs" val="CON" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="baseCritRate" val="20" />
 		<for>
 			<cond addName="1" msgId="113">
 				<target mindistance="200" />

@@ -2105,9 +2105,9 @@
 		<table name="#mpConsume"> 238 252 267 281 295 310 </table>
 		<table name="#npcId"> 13323 13324 13325 13325 13325 13325 </table>
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SPAWN" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="hitTime" val="1000" />
@@ -2658,8 +2658,8 @@
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="#skillType" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="#enchHeal" />
 		<set name="mpConsume" val="73" />
+		<set name="power" val="#enchHeal" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
@@ -3823,9 +3823,9 @@
 			<enchantRoute id="1" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="CONTINUOUS_CASTS" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="mpConsume" val="52" />
@@ -3852,9 +3852,9 @@
 			<enchantRoute id="1" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="CONTINUOUS_CASTS" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="mpConsume" val="52" />
@@ -3881,9 +3881,9 @@
 			<enchantRoute id="1" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="CONTINUOUS_CASTS" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="mpConsume" val="52" />
@@ -3910,9 +3910,9 @@
 			<enchantRoute id="1" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="CONTINUOUS_CASTS" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="mpConsume" val="52" />
@@ -3939,9 +3939,9 @@
 			<enchantRoute id="1" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="CONTINUOUS_CASTS" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="itemConsumeId" val="3031" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="mpConsume" val="52" />
@@ -5156,9 +5156,9 @@
 		<table name="#npcId"> 14927 15200 15201 15202 </table>
 		<table name="#mpConsume"> 94 97 100 103 </table>
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SPAWN" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -5574,8 +5574,8 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="flyType" val="CHARGE" />
 		<set name="nextActionAttack" val="true" />
+		<set name="flyType" val="CHARGE" />
 		<set name="skillActionId" val="1109" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="100" stackLvl="1" stackType="summon_pounce">
@@ -5600,9 +5600,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="nextActionAttack" val="true" />
 		<set name="absorbPart" val="0.2" />
 		<set name="skillActionId" val="1110" />
-		<set name="nextActionAttack" val="true" />
 	</skill>
 	<!-- Creates a death space near the enemy to inflict damage. -->
 	<skill id="11283" levels="9" name="Reaper Power">
@@ -5780,9 +5780,9 @@
 		<set name="skillType" val="CANCEL_DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- Cancels the enemy's buff. -->
 	<skill id="11293" levels="8" name="Cubic Cancellation">
@@ -5792,9 +5792,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="reuseDelay" val="10000" />
 		<set name="minNegated" val="1" />
 		<set name="maxNegated" val="1" />
 		<for>
@@ -5811,9 +5811,9 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="reuseDelay" val="5000" />
 		<for>
 			<abnormal duration="3" landRate="100" stackLvl="1" stackType="root_magically" visualEffect="root">
 				<effect type="Root" val="0" />
@@ -6457,9 +6457,9 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="staticReuse" val="true" />
 		<set name="skillRadius" val="200" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="skillActionId" val="1124" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="70" stackLvl="1" stackType="target_lock">
 				<effect type="TargetMe" val="0" />
@@ -6480,9 +6480,9 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="skillActionId" val="1125" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="100" stackLvl="2" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
@@ -6512,8 +6512,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="skillActionId" val="1126" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1126" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100.
@@ -6540,8 +6540,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
-		<set name="skillActionId" val="1127" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1127" />
 		<set name="flyType" val="CHARGE" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="100" stackLvl="1" stackType="summon_pounce">
@@ -6572,8 +6572,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
-		<set name="skillActionId" val="1128" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1128" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on nearby enemies with 11558 Power added to P. Atk.
@@ -6599,8 +6599,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
-		<set name="skillActionId" val="1129" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1129" />
 	</skill>
 	<!-- Summons Wynn Merrow. Consumes 2 summon points. -->
 	<skill id="11329" levels="8" name="Summon Wynn Merrow">
@@ -6673,9 +6673,9 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="staticReuse" val="true" />
 		<set name="skillRadius" val="200" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="skillActionId" val="1130" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="70" stackLvl="1" stackType="target_lock">
 				<effect type="TargetMe" val="0" />
@@ -6696,10 +6696,10 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="saveVs" val="CON" />
 		<set name="skillActionId" val="1131" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="100" stackLvl="2" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
@@ -6729,8 +6729,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="skillActionId" val="1132" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1132" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100.
@@ -6757,9 +6757,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="nextActionAttack" val="true" />
 		<set name="skillActionId" val="1133" />
 		<set name="flyType" val="CHARGE" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="100" stackLvl="1" stackType="summon_pounce">
 				<sub stat="runSpd" val="100" />
@@ -6789,8 +6789,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
-		<set name="skillActionId" val="1134" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1134" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on nearby enemies with 11558 Power added to P. Atk.
@@ -6816,8 +6816,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
-		<set name="skillActionId" val="1135" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1135" />
 	</skill>
 	<!-- Summons Wynn Nightshade. Consumes 2 summon points. -->
 	<skill id="11338" levels="8" name="Summon Wynn Nightshade">
@@ -6890,9 +6890,9 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="staticReuse" val="true" />
 		<set name="skillRadius" val="200" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="skillActionId" val="1136" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="70" stackLvl="1" stackType="target_lock">
 				<effect type="TargetMe" val="0" />
@@ -6913,10 +6913,10 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="saveVs" val="CON" />
 		<set name="skillActionId" val="1137" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" landRate="100" stackLvl="2" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
@@ -6946,8 +6946,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="skillActionId" val="1138" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1138" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100.
@@ -6974,9 +6974,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="nextActionAttack" val="true" />
 		<set name="skillActionId" val="1139" />
 		<set name="flyType" val="CHARGE" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="100" stackLvl="1" stackType="summon_pounce">
 				<sub stat="runSpd" val="100" />
@@ -7006,8 +7006,8 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
-		<set name="skillActionId" val="1140" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1140" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts damage on nearby enemies with 11558 Power added to P. Atk.
@@ -7034,8 +7034,8 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="200" />
-		<set name="skillActionId" val="1141" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1141" />
 	</skill>
 	<!-- 
 		Level 1: For 30 minutes, all servitors' Atk. Spd. + 10%.
@@ -7774,8 +7774,8 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="150" />
-		<set name="skillActionId" val="1144" />
 		<set name="nextActionAttack" val="true" />
+		<set name="skillActionId" val="1144" />
 		<set name="flyType" val="CHARGE" />
 		<for>
 			<abnormal duration="5" landRate="80">
@@ -10151,13 +10151,13 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<set name="mpConsume" val="582" />
-		<set name="critChance" val="-1" />
 		<set name="power" val="35" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="1100" />
+		<set name="critChance" val="-1" />
 	</skill>
 	<!-- Restores target's CP by 1000. -->
 	<skill id="11571" levels="1" name="Recovery Melody">
@@ -13273,12 +13273,12 @@
 		<set name="isMagic" val="true" />
 		<set name="mpConsume" val="573" />
 		<set name="power" val="40" />
-		<set name="critChance" val="-1" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1100" />
 		<set name="skillRadius" val="1100" />
+		<set name="critChance" val="-1" />
 	</skill>
 	<!-- For 30 minutes, target's Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from a critical attack + 30% and Speed - 15%. -->
 	<skill id="11830" levels="1" name="Blessing of Saha">

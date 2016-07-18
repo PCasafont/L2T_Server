@@ -8373,9 +8373,9 @@
 	<!-- Continuously inflicts powerful Fire damage. User cannot move while casting, and there is additional MP Consumption each time the effect occurs. Consumes 1 Magic Symbol. -->
 	<skill id="1419" levels="1" name="Volcano">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />
@@ -8405,9 +8405,9 @@
 	<!-- Continuously inflicts powerful Wind damage. User cannot move while casting, and there is additional MP Consumption each time the effect occurs. Consumes 1 Magic Symbol. -->
 	<skill id="1420" levels="1" name="Cyclone">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />
@@ -8437,9 +8437,9 @@
 	<!-- Continuously inflicts powerful Water damage. User cannot move while casting, and there is additional MP Consumption each time the effect occurs. Consumes 1 Magic Symbol. -->
 	<skill id="1421" levels="1" name="Raging Waves">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />
@@ -8469,9 +8469,9 @@
 	<!-- Creates a seal that casts a powerful curse that decreases all the abilities of nearby enemies. The seal's effect disappears upon leaving the area. Consumes 1 Magic Symbol. -->
 	<skill id="1422" levels="1" name="Day of Doom">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />
@@ -8498,9 +8498,9 @@
 	<!-- Continuously inflicts powerful dark damage. User cannot move while casting, and there is additional MP Consumption each time the effect occurs. Consumes 1 Magic Symbol. -->
 	<skill id="1423" levels="1" name="Gehenna">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />
@@ -8530,9 +8530,9 @@
 	<!-- Decreases all speeds of nearby enemies, gives speed-increasing buffs, and creates a seal that periodically banishes a servitor to another dimension. All characters and servitors in the area are affected. Consumes 1 Magic Symbol. -->
 	<skill id="1424" levels="1" name="Anti-summoning Field">
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="isMagic" val="true" />
 		<set name="magicLvl" val="80" />
 		<set name="itemConsumeId" val="8876" />

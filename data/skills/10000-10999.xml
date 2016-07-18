@@ -209,10 +209,10 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="15" />
 		<set name="nextActionAttack" val="true" />
 		<set name="ignoreResists" val="true" />
 		<set name="weaponsAllowed" val="Shield" />
-		<set name="baseCritRate" val="15" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shield_charge">
 				<subPercent stat="pDef" val="10" />
@@ -360,8 +360,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="skillScope" val="fan;80;150" />
-		<set name="weaponsAllowed" val="Shield" />
 		<set name="baseCritRate" val="15" />
+		<set name="weaponsAllowed" val="Shield" />
 		<for>
 			<abnormal duration="5" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
@@ -407,8 +407,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="skillScope" val="fan;80;150" />
-		<set name="weaponsAllowed" val="Shield" />
 		<set name="baseCritRate" val="15" />
+		<set name="weaponsAllowed" val="Shield" />
 		<for>
 			<abnormal duration="9" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
@@ -497,8 +497,8 @@
 		<set name="coolTime" val="370" />
 		<set name="reuseDelay" val="10000" />
 		<set name="skillRadius" val="150" />
-		<set name="ignoreResists" val="true" />
 		<set name="baseCritRate" val="15" />
+		<set name="ignoreResists" val="true" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="chain_galaxy">
 				<subPercent stat="gainHp" val="90" />
@@ -2306,8 +2306,8 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="skillRadius" val="150" />
-		<set name="isDebuff" val="true" />
 		<set name="baseCritRate" val="15" />
+		<set name="isDebuff" val="true" />
 		<for>
 			<abnormal duration="5" effectType="PARALYZE" landRate="#landRate" stackLvl="1" stackType="paralyze">
 				<effect type="Paralyze" val="0" />
@@ -2636,9 +2636,9 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="skillRadius" val="200" />
+		<set name="baseCritRate" val="15" />
 		<set name="isDebuff" val="true" />
 		<set name="weaponsAllowed" val="Shield" />
-		<set name="baseCritRate" val="15" />
 		<for>
 			<abnormal comboId="367" duration="3" landRate="#landRate" stackLvl="1" stackType="knock_down">
 				<effect type="KnockDown" val="0" />
@@ -2678,8 +2678,8 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="skillRadius" val="200" />
-		<set name="isDebuff" val="true" />
 		<set name="baseCritRate" val="15" />
+		<set name="isDebuff" val="true" />
 		<for>
 			<abnormal duration="10" landRate="#landRate">
 				<effect type="Debuff" val="0" />
@@ -3256,10 +3256,10 @@
 		<set name="effectRange" val="400" />
 		<set name="baseCritRate" val="20" />
 		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="maxCharges" val="15" />
 		<set name="numCharges" val="1" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="3" stackType="pd_down">
 				<subPercent stat="pDef" val="30" />
@@ -3307,11 +3307,11 @@
 		<set name="effectRange" val="400" />
 		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
 		<set name="ignoreShld" val="true" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="maxChargeConsume" val="3" />
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
-		<set name="nextActionAttack" val="true" />
 	</skill>
 	<!-- 
 		Level 1: Inflicts a powerful strike on target with 20483 Power added to P. Atk., knocking them down for 3 seconds, and increases damage as Momentum increases. Increases damage by 30% when Momentum is used up to 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. Critical. Ignores Shield Defense.
@@ -3350,10 +3350,10 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="baseCritRate" val="20.0" />
+		<set name="nextActionAttack" val="true" />
 		<set name="ignoreShld" val="true" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="maxChargeConsume" val="3" />
-		<set name="nextActionAttack" val="true" />
 		<for>
 			<abnormal comboId="367" duration="3" landRate="#landRate" stackLvl="1" stackType="knock_down">
 				<effect type="KnockDown" val="0" />
@@ -3398,10 +3398,10 @@
 		<set name="coolTime" val="300" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="baseCritRate" val="20.0" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="maxCharges" val="15" />
 		<set name="numCharges" val="1" />
-		<set name="baseCritRate" val="20.0" />
 		<for>
 			<abnormal duration="20" landRate="#landRate" stackLvl="3" stackType="pd_down">
 				<effect type="Debuff" val="0" />
@@ -3598,9 +3598,9 @@
 		<set name="skillRadius" val="150" />
 		<set name="baseCritRate" val="20.0" />
 		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
-		<set name="nextActionAttack" val="true" />
 		<set name="flyType" val="CHARGE" />
 		<set name="maxChargeConsume" val="3" />
 		<for>
@@ -4441,9 +4441,9 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="20" />
 		<set name="overHit" val="true" />
 		<set name="weaponsAllowed" val="Sword, Blunt, Big Blunt, Big Sword, Pole, Dual Fist, Dual Sword, Dual Blunt" />
-		<set name="baseCritRate" val="20" />
 		<for>
 			<cond addName="1" msgId="113">
 				<target hp="#condhp" />
@@ -4482,8 +4482,8 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="baseCritRate" val="15" />
-		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
 		<set name="maxChargeConsume" val="3" />
 	</skill>
 	<!-- 
@@ -4828,8 +4828,8 @@
 			<enchantRoute id="2" level="3,4,5,6,7" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SINGLE" />
-		<set name="skillType" val="PDAM" />
 		<set name="behaviorType" val="ATTACK" />
+		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="power" val="#power" />
@@ -5385,9 +5385,9 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="skillRadius" val="200" />
+		<set name="baseCritRate" val="20.0" />
 		<set name="weaponsAllowed" val="Big Sword,Sword,Blunt,Big Blunt" />
 		<set name="stunPower" val="#stunPower" />
-		<set name="baseCritRate" val="20.0" />
 	</skill>
 	<skill id="10497" levels="1" name="Warrior - Individual Passive">
 		<set name="target" val="TARGET_NONE" />
@@ -5648,7 +5648,6 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="700" />
 		<set name="reuseDelay" val="5000" />
@@ -5660,6 +5659,7 @@
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<set name="pvpPower" val="#pvpPower" />
 		<set name="dmgDirectlyToHp" val="true" />
 		<for>
 			<abnormal count="7" duration="3" landRate="60" stackLvl="10" stackType="bleeding" visualEffect="bleed">
@@ -5695,7 +5695,6 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="700" />
 		<set name="reuseDelay" val="5000" />
@@ -5707,6 +5706,7 @@
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<set name="pvpPower" val="#pvpPower" />
 		<for>
 			<abnormal duration="15" self="1" stackLvl="1" stackType="speed_up_special">
 				<effect type="Buff" val="0" />
@@ -5745,7 +5745,6 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="hitTime" val="1130" />
 		<set name="coolTime" val="700" />
 		<set name="reuseDelay" val="5000" />
@@ -5757,6 +5756,7 @@
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<set name="pvpPower" val="#pvpPower" />
 		<set name="bleedPower" val="#bleedPower" />
 	</skill>
 	<!-- 
@@ -5783,7 +5783,6 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="power" val="#power" />
-		<set name="pvpPower" val="#pvpPower" />
 		<set name="hitTime" val="2030" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
@@ -5795,6 +5794,7 @@
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<set name="pvpPower" val="#pvpPower" />
 	</skill>
 	<!-- 
 		Level 1: Detonates a blade to attack nearby enemies with 11903 Power added to P. Atk. Requires a dagger/dual dagger. Over-hit. Critical.
@@ -6062,9 +6062,9 @@
 		<table name="#mpConsume"> 76 79 83 87 91 95 99 103 107 </table>
 		<table name="#effLevel"> 1 2 3 4 5 6 7 8 9 </table>
 		<set name="target" val="TARGET_GROUND" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="SIGNET" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="hitTime" val="800" />
 		<set name="reuseDelay" val="15000" />
@@ -6383,14 +6383,14 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="npcId" val="#npcId" />
+		<set name="summonTotalLifeTime" val="30000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
 		<set name="weaponsAllowed" val="Dagger,Dual Dagger" />
 		<set name="offensive" val="true" />
 		<set name="despawnDelay" val="30000" />
 		<set name="randomOffset" val="true" />
 		<set name="isSummonSpawn" val="true" />
-		<set name="summonTotalLifeTime" val="30000" />
-		<set name="summonTimeLostIdle" val="500" />
-		<set name="summonTimeLostActive" val="1000" />
 		<set name="summonAmount" val="3" />
 		<for>
 			<abnormal noicon="1" self="1">
@@ -7227,9 +7227,9 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="15" />
 		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
-		<set name="baseCritRate" val="15" />
 		<for>
 			<abnormal noicon="1">
 				<effect type="Mug" val="0" />
@@ -7285,8 +7285,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<set name="baseCritRate" val="15" />
+		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<for>
 			<abnormal noicon="1">
 				<effect type="Mug" val="0" />
@@ -8367,9 +8367,9 @@
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_GROUND_AREA" />
+		<set name="behaviorType" val="ATTACK" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="behaviorType" val="ATTACK" />
 		<set name="mpConsume" val="1067" />
 		<set name="power" val="#power" />
 		<set name="hitTime" val="7500" />
