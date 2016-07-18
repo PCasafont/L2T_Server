@@ -241,7 +241,7 @@
 	<!-- Weapon containing the light of Spirits; instantly inflicts a powerful attack on the enemy. Can only be used on the Sword of Water and Fire. -->
 	<item id="13037" type="EtcItem" name="Pailaka Soulshot (D-grade) - None" icon="icon.etc_spirit_bullet_blue_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="d" weight="2" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
-		<skill id="2150" level="1" /> <!-- Soulshot (D-grade)  -->
+		<skill id="2150" level="1" /> <!-- Soulshot (D-grade) -->
 	</item>
 	<!-- If you bring it along with a Spirit's Sword to the Temple Inspector, you can exchange them for an Reinforced Spirit's Sword. -->
 	<item id="13038" type="EtcItem" name="Essence of Water - None" icon="icon.etc_scroll_of_enchant_weapon_i04" immediateEffect="1"
@@ -333,7 +333,7 @@
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
-		<skill id="2151" level="1" /> <!-- Soulshot (C-grade)  -->
+		<skill id="2151" level="1" /> <!-- Soulshot (C-grade) -->
 	</item>
 	<!-- If you bring it along with an Ancient Legacy Sword to the Dwarf Adventurer, you can exchange them for an Ancient Legacy Sword Stage 2. -->
 	<item id="13046" type="EtcItem" name="Pailaka Weapon Upgrade Stage 1 - None" icon="icon.etc_scroll_of_enchant_weapon_i04"
@@ -445,7 +445,7 @@
 		<cond addName="1" msgId="113">
 			<player instanceId="43,44,45" />
 		</cond>
-		<skill id="2153" level="1" /> <!-- Soulshot (A-grade)  -->
+		<skill id="2153" level="1" /> <!-- Soulshot (A-grade) -->
 	</item>
 	<!-- If you bring it along with a Spear of Silenos to the Ketra Orc Intelligence Officer, you can exchange them for Spear of Silenos Stage 2. -->
 	<item id="13056" type="EtcItem" name="Weapon Upgrade Stage 1 - None" icon="icon.etc_scroll_of_enchant_weapon_i04" immediateEffect="1"

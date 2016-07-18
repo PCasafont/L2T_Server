@@ -2222,27 +2222,27 @@
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a D-grade weapon. -->
 	<item id="1463" type="EtcItem" name="Soulshot (D-grade) - None" icon="icon.etc_spirit_bullet_blue_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="d" weight="2" price="14" enchantEnabled="1" isStackable="true" handler="SoulShots">
-		<skill id="2150" level="1" /> <!-- Soulshot (D-grade)  -->
+		<skill id="2150" level="1" /> <!-- Soulshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a C-grade weapon. -->
 	<item id="1464" type="EtcItem" name="Soulshot (C-grade) - None" icon="icon.etc_spirit_bullet_green_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="c" weight="2" price="22" enchantEnabled="1" isStackable="true" handler="SoulShots">
-		<skill id="2151" level="1" /> <!-- Soulshot (C-grade)  -->
+		<skill id="2151" level="1" /> <!-- Soulshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a B-grade weapon. -->
 	<item id="1465" type="EtcItem" name="Soulshot (B-grade) - None" icon="icon.etc_spirit_bullet_red_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="b" weight="1" price="50" enchantEnabled="1" isStackable="true" handler="SoulShots">
-		<skill id="2152" level="1" /> <!-- Soulshot (B-grade)  -->
+		<skill id="2152" level="1" /> <!-- Soulshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an A-grade weapon. -->
 	<item id="1466" type="EtcItem" name="Soulshot (A-grade) - None" icon="icon.etc_spirit_bullet_silver_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="a" weight="1" price="80" enchantEnabled="1" isStackable="true" handler="SoulShots">
-		<skill id="2153" level="1" /> <!-- Soulshot (A-grade)  -->
+		<skill id="2153" level="1" /> <!-- Soulshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an S-grade weapon. -->
 	<item id="1467" type="EtcItem" name="Soulshot (S-grade) - None" icon="icon.etc_spirit_bullet_gold_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="s" weight="1" price="100" enchantEnabled="1" isStackable="true" handler="SoulShots">
-		<skill id="2154" level="1" /> <!-- Soulshot (S-grade)  -->
+		<skill id="2154" level="1" /> <!-- Soulshot (S-grade) -->
 	</item>
 	<!-- Medicated herb from Gludio. Purchase at the Castle Gludio. -->
 	<item id="1468" type="EtcItem" name="Gludin Panacen - None" icon="icon.etc_reagent_gold_i00" immediateEffect="1" crystalType="s"
@@ -3858,7 +3858,7 @@
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a No-grade weapon. -->
 	<item id="1835" type="EtcItem" name="Soulshot (No-grade) - None" icon="icon.etc_spirit_bullet_white_i00" defaultAction="soulshot"
 			immediateEffect="1" weight="3" price="7" isStackable="true" handler="SoulShots">
-		<skill id="2039" level="1" /> <!-- Soulshot (No-grade)  -->
+		<skill id="2039" level="1" /> <!-- Soulshot (No-grade) -->
 	</item>
 	<!-- Punish Kaboo Chief Uoph. He should be somewhere around the ruins over the hill, west of the Elven Village. -->
 	<item id="1836" type="EtcItem" name="Kendell's 1st Order - None" icon="icon.etc_recipe_blue_i00" immediateEffect="1" isTradable="false"

@@ -5,5 +5,9 @@
 	</item>
 	<!-- A cheering tool issued to commemorate the 12th anniversary of Lineage II. Hold on to your dreams, as the day will come when they are realized. Equip to enable the Firecracker skill. -->
 	<item id="49798" type="Weapon" name="Cheer Stamen - Event" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="12" />
+		<set stat="mAtk" val="12" />
+		<set stat="pAtkSpd" val="200" />
+		<set stat="rCrit" val="8" />
 	</item>
 </list>

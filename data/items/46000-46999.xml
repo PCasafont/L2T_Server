@@ -250,8 +250,8 @@
 	<item id="46060" type="Weapon" name="Kelbim Dagger - None" icon="icon.weapon_kelbim_cutter_i01" weaponType="dagger" bodypart="rhand"
 			crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
 			isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="647" />
-		<set stat="mAtk" val="322" />
+		<set stat="pAtk" val="707" />
+		<set stat="mAtk" val="352" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="433" />
@@ -265,8 +265,8 @@
 	<item id="46061" type="Weapon" name="Kelbim Dual Dagger - None" icon="icon.weapon_kelbim_dual_dagger_i01" weaponType="dualdagger"
 			bodypart="lrhand" crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
 			isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="740" />
-		<set stat="mAtk" val="322" />
+		<set stat="pAtk" val="809" />
+		<set stat="mAtk" val="352" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="433" />
@@ -280,8 +280,8 @@
 	<item id="46062" type="Weapon" name="Kelbim Bow - None" icon="icon.weapon_kelbim_bow_i01" weaponType="bow" bodypart="lrhand"
 			crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false" isAttributable="false"
 			isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1457" />
-		<set stat="mAtk" val="322" />
+		<set stat="pAtk" val="1592" />
+		<set stat="mAtk" val="352" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="293" />
@@ -295,8 +295,8 @@
 	<item id="46063" type="Weapon" name="Kelbim Crossbow - None" icon="icon.weapon_kelbim_crossbow_i01" weaponType="crossbow"
 			bodypart="lrhand" crystalType="r" material="steel" weight="0" soulshots="1" spiritshots="1" reuseDelay="400" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1312" />
-		<set stat="mAtk" val="322" />
+		<set stat="pAtk" val="1434" />
+		<set stat="mAtk" val="352" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="325" />
@@ -1529,8 +1529,8 @@
 	<item id="46327" type="Weapon" name="Shadow Shaper - None" icon="icon.weapon_shadow_dagger" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
 			isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="575" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="629" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="433" />
@@ -1545,8 +1545,8 @@
 	<item id="46328" type="Weapon" name="Shadow Cutter - None" icon="icon.weapon_shadow_onehand_sword" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="658" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="719" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 		<skill id="13837" level="12" /> <!-- Shadow Cutter -->
@@ -1560,8 +1560,8 @@
 	<item id="46329" type="Weapon" name="Shadow Slasher - None" icon="icon.weapon_shadow_twohand_sword" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="800" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="875" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<skill id="13838" level="12" /> <!-- Shadow Slasher -->
@@ -1575,8 +1575,8 @@
 	<item id="46330" type="Weapon" name="Shadow Fighter - None" icon="icon.weapon_shadow_fist" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="800" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="875" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
@@ -1591,8 +1591,8 @@
 	<item id="46331" type="Weapon" name="Shadow Stormer - None" icon="icon.weapon_shadow_spear" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="658" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="719" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="8" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="325" />
@@ -1607,8 +1607,8 @@
 	<item id="46332" type="Weapon" name="Shadow Thrower - None" icon="icon.weapon_shadow_bow" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1295" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="1415" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="293" />
@@ -1623,8 +1623,8 @@
 	<item id="46333" type="Weapon" name="Shadow Shooter - None" icon="icon.weapon_shadow_crossbow" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1166" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="1274" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
 		<set stat="pAtkSpd" val="325" />
@@ -1639,8 +1639,8 @@
 	<item id="46334" type="Weapon" name="Shadow Buster - None" icon="icon.weapon_shadow_magic_sword" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
 			isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="526" />
-		<set stat="mAtk" val="382" />
+		<set stat="pAtk" val="575" />
+		<set stat="mAtk" val="417" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 		<skill id="13845" level="12" /> <!-- Shadow Buster -->
@@ -1654,8 +1654,8 @@
 	<item id="46335" type="Weapon" name="Shadow Retributer - None" icon="icon.weapon_shadow_magic_blunt" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="640" />
-		<set stat="mAtk" val="420" />
+		<set stat="pAtk" val="700" />
+		<set stat="mAtk" val="458" />
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
@@ -1671,8 +1671,8 @@
 	<item id="46336" type="Weapon" name="Shadow Dualsword - None" icon="icon.weapon_shadow_dual_sword" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false"
 			isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="800" />
-		<set stat="mAtk" val="286" />
+		<set stat="pAtk" val="875" />
+		<set stat="mAtk" val="312" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<skill id="13841" level="12" /> <!-- Shadow Dualsword -->
@@ -2198,22 +2198,47 @@
 	<!-- For NPC. -->
 	<item id="46426" type="Weapon" name="For NPC_Right Hand Glass - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- For NPC. -->
 	<item id="46427" type="Weapon" name="For NPC_Right Hand Cup - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- For NPC. -->
 	<item id="46428" type="Weapon" name="For NPC_Right Hand Meat - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- For NPC. -->
 	<item id="46429" type="Armor" name="For NPC_Left Hand Glass - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="shield" bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- For NPC. -->
 	<item id="46430" type="Armor" name="For NPC_Left Hand Meat - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="shield" bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Reward for killing monsters in the Blazing Swamp. Double-click to use. -->
 	<item id="46431" type="EtcItem" name="Harp's Reward Box - None" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
@@ -2616,6 +2641,10 @@
 	<!-- Magic pencil with a sharp tip. Provided to and only used by Server Keepers. -->
 	<item id="46528" type="Weapon" name="Server Keeper's Magic Pencil - None" icon="BranchSys2.icon.g_pencil_of_servermaster"
 			defaultAction="equip" weaponType="pole" bodypart="lrhand" randomDamage="1" immediateEffect="1" weight="100" mpConsume="4">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Scholar's hat showing knowledge. Gold tassel is attached. -->
 	<item id="46529" type="Armor" name="Manor Scholar's Hat - None" icon="BranchSys2.icon.g_graduation_cap_gold" defaultAction="equip"
@@ -2632,6 +2661,11 @@
 	<!-- For NPC. -->
 	<item id="46532" type="Weapon" name="For NPC_Right Hand Ladle - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="1850" mpConsume="2">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Changes the appearance of a weapon to that of White Day for 1 hour. Deleted after event. -->
 	<item id="46533" type="EtcItem" name="Hansel's Weapon Crafting Potion - Event" icon="icon.etc_whiteday_herb" immediateEffect="1"
@@ -2655,45 +2689,65 @@
 	</item>
 	<item id="46538" type="Armor" name="Tauti Breastplate - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_upbody" defaultAction="equip"
 			bodypart="chest" immediateEffect="1" crystalCount="1" crystalType="none" weight="7520">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46539" type="Armor" name="Tauti Gaiters - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_downbody" defaultAction="equip"
 			bodypart="legs" immediateEffect="1" crystalCount="1" crystalType="none" weight="3170">
+		<baseAdd stat="pDef" val="250" />
 	</item>
 	<item id="46540" type="Armor" name="Tauti Gauntlets - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_gloves" defaultAction="equip"
 			bodypart="gloves" immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="46541" type="Armor" name="Tauti Boots - No Ertheia - Heavy Armor" icon="icon.tauti_heavy_shoes" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="46542" type="Armor" name="Kelbim Leather Helmet - Not in Use" icon="icon.armor_leather_helmet_i00" defaultAction="equip"
 			bodypart="head" immediateEffect="1" crystalCount="1" crystalType="none" weight="530">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<item id="46543" type="Armor" name="Kelbim Leather Armor - Light Armor" icon="icon.kelbim_light_upbody" defaultAction="equip"
 			bodypart="chest" immediateEffect="1" crystalCount="1" crystalType="none" weight="4140">
+		<baseAdd stat="pDef" val="320" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="46544" type="Armor" name="Kelbim Leather Leggings - Light Armor" icon="icon.kelbim_light_downbody" defaultAction="equip"
 			bodypart="legs" immediateEffect="1" crystalCount="1" crystalType="none" weight="1320">
+		<baseAdd stat="pDef" val="200" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="46545" type="Armor" name="Kelbim Leather Gloves - Light Armor" icon="icon.kelbim_light_gloves" defaultAction="equip"
 			bodypart="gloves" immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="46546" type="Armor" name="Kelbim Leather Boots - Light Armor" icon="icon.kelbim_light_shoes" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="46547" type="Armor" name="Freya Circlet - Not in Use" icon="icon.armor_circlet_i00" defaultAction="equip" bodypart="head"
 			immediateEffect="1" crystalCount="1" crystalType="none" weight="530">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<item id="46548" type="Armor" name="Freya Tunic - Robe" icon="icon.freya_robe_upbody" defaultAction="equip" bodypart="chest"
 			immediateEffect="1" crystalCount="1" crystalType="none" weight="1750">
+		<baseAdd stat="pDef" val="220" />
+		<baseAdd stat="mDef" val="49" />
 	</item>
 	<item id="46549" type="Armor" name="Freya Stockings - Robe" icon="icon.freya_robe_downbody" defaultAction="equip" bodypart="legs"
 			immediateEffect="1" crystalCount="1" crystalType="none" weight="850">
+		<baseAdd stat="pDef" val="137" />
+		<baseAdd stat="mDef" val="33" />
 	</item>
 	<item id="46550" type="Armor" name="Freya Gloves - Robe" icon="icon.freya_robe_gloves" defaultAction="equip" bodypart="gloves"
 			immediateEffect="1" crystalCount="1" crystalType="none" weight="510">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="46551" type="Armor" name="Freya Shoes - Robe" icon="icon.freya_robe_shoes" defaultAction="equip" bodypart="feet"
 			immediateEffect="1" crystalCount="1" crystalType="none" weight="1070">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<!-- Item obtained from succeeding at the Soul Crystal practice. -->
 	<item id="46552" type="EtcItem" name="Practice Soul Crystal - Stage 2" icon="icon.etc_soul_stone_i00" immediateEffect="1"
@@ -2773,6 +2827,11 @@
 	<!-- For NPC. -->
 	<item id="46571" type="Armor" name="For NPC_Left Hand Meat Plate - None" icon="icon.weapon_iron_hammer_i00" defaultAction="equip"
 			weaponType="shield" bodypart="lhand" randomDamage="20" immediateEffect="1" weight="1850">
+		<set stat="pAtk" val="31" />
+		<set stat="mAtk" val="21" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Can change the appearance of helmets into Tauti's Helmet. -->
 	<item id="46572" type="EtcItem" name="Tauti's Helmet Appearance Stone - Not in Use" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -2868,28 +2927,37 @@
 	</item>
 	<item id="46595" type="Armor" name="Blue Dynasty - None" icon="icon.armor_t91_u_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46596" type="Armor" name="Blue Dynasty - None" icon="icon.armor_t92_ub_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46597" type="Armor" name="Blue Dynasty - None" icon="icon.armor_t93_uw_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46598" type="Armor" name="Red Zubei - None" icon="icon.armor_t64_u_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46599" type="Armor" name="Red Zubei - None" icon="icon.armor_t65_u_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46600" type="Armor" name="Red Zubei - None" icon="icon.armor_t56_u_i00" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="46601" type="Armor" name="White Assassin Suit - None" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" crystalCount="1" crystalType="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Blue Dynasty Cloak. -->
 	<item id="46602" type="Armor" name="Blue Dynasty Cloak - None" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="220">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- Changes the appearance of your entire armor into that of Blue Dynasty. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="46603" type="EtcItem" name="Blue Dynasty Armor Appearance Stone - None" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -2998,42 +3066,55 @@
 	<!-- Temporary practice weapon for learning about the Soul Crystal system. Very inefficient as a weapon. -->
 	<item id="46629" type="Weapon" name="Practice StormBringer - None" icon="icon.weapon_stormbringer_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="1420" soulshots="2" mpConsume="1">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="68" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Twilight Necklace. MP + 58. -->
 	<item id="46630" type="Armor" name="Twilight Necklace - 30-day" icon="icon.r2_necklace_i00" defaultAction="equip" bodypart="neck"
 			immediateEffect="1" crystalCount="1" crystalType="r" weight="150">
+		<baseAdd stat="mDef" val="142" />
 	</item>
 	<!-- Twilight Earring. MP + 43. -->
 	<item id="46631" type="Armor" name="Twilight Earring - 30-day" icon="icon.r2_earring_i00" defaultAction="equip" bodypart="rear;lear"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="107" />
 	</item>
 	<!-- Twilight Ring. MP + 29. -->
 	<item id="46632" type="Armor" name="Twilight Ring - 30-day" icon="icon.r2_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="71" />
 	</item>
 	<!-- Seraph Necklace. MP + 62. -->
 	<item id="46633" type="Armor" name="Seraph Necklace - 30-day" icon="icon.r95_necklace_i00" defaultAction="equip" bodypart="neck"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="161" />
 	</item>
 	<!-- Seraph Necklace. MP + 46. -->
 	<item id="46634" type="Armor" name="Seraph Earring - 30-day" icon="icon.r95_earring_i00" defaultAction="equip" bodypart="rear;lear"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="121" />
 	</item>
 	<!-- Seraph Ring. MP + 31. -->
 	<item id="46635" type="Armor" name="Seraph Ring - 30-day" icon="icon.r95_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="80" />
 	</item>
 	<!-- Eternal Necklace. MP + 65. -->
 	<item id="46636" type="Armor" name="Eternal Necklace - 30-day" icon="icon.r991_necklace_i00" defaultAction="equip" bodypart="neck"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Eternal Earring. MP + 49. -->
 	<item id="46637" type="Armor" name="Eternal Earring - 30-day" icon="icon.r991_earring_i00" defaultAction="equip" bodypart="rear;lear"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Eternal Ring. MP + 33. -->
 	<item id="46638" type="Armor" name="Eternal Ring - 30-day" icon="icon.r991_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Roa's lost item. Exchange it for Assistant Roa's Gift when you are lucky enough to run into NPC Roa. Can only exchange 1 item per day. Deleted after event. -->
 	<item id="46639" type="EtcItem" name="Roa's Lost Item - Event" icon="icon.event_july_seven_park_i00" immediateEffect="1"
@@ -3129,6 +3210,11 @@
 	-->
 	<item id="46653" type="Weapon" name="Elysium Shaper - Event" icon="icon.weapon_the_dagger_of_hero_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="3">
+		<set stat="pAtk" val="690" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Red Libra item
@@ -3136,6 +3222,10 @@
 	-->
 	<item id="46654" type="Weapon" name="Elysium Cutter - Event" icon="icon.weapon_the_sword_of_hero_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+		<set stat="pAtk" val="770" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Red Libra item
@@ -3143,6 +3233,10 @@
 	-->
 	<item id="46655" type="Weapon" name="Elysium Slasher - Event" icon="icon.weapon_the_two_handed_sword_of_hero_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+		<set stat="pAtk" val="931" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Red Libra item
@@ -3150,6 +3244,11 @@
 	-->
 	<item id="46656" type="Weapon" name="Elysium Avenger - Event" icon="icon.weapon_the_axe_of_hero_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+		<set stat="pAtk" val="770" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Red Libra item
@@ -3157,6 +3256,11 @@
 	-->
 	<item id="46657" type="Weapon" name="Elysium Fighter - Event" icon="icon.weapon_the_fist_of_hero_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="5">
+		<set stat="pAtk" val="931" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Red Libra item
@@ -3164,6 +3268,11 @@
 	-->
 	<item id="46658" type="Weapon" name="Elysium Stormer - Event" icon="icon.weapon_the_pole_of_hero_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="4">
+		<set stat="pAtk" val="770" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Red Libra item
@@ -3171,6 +3280,11 @@
 	-->
 	<item id="46659" type="Weapon" name="Elysium Thrower - Event" icon="icon.weapon_the_bow_of_hero_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="6">
+		<set stat="pAtk" val="1521" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Red Libra item
@@ -3178,6 +3292,11 @@
 	-->
 	<item id="46660" type="Weapon" name="Elysium Shooter - Event" icon="icon.weapon_infinity_shooter_i01" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="500" soulshots="8" mpConsume="17">
+		<set stat="pAtk" val="1286" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Red Libra item
@@ -3185,6 +3304,10 @@
 	-->
 	<item id="46661" type="Weapon" name="Elysium Buster - Event" icon="icon.weapon_infinity_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="1">
+		<set stat="pAtk" val="643" />
+		<set stat="mAtk" val="481" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Red Libra item
@@ -3192,6 +3315,11 @@
 	-->
 	<item id="46662" type="Weapon" name="Elysium Caster - Event" icon="icon.weapon_the_mace_of_hero_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+		<set stat="pAtk" val="643" />
+		<set stat="mAtk" val="481" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Red Libra item
@@ -3199,6 +3327,12 @@
 	-->
 	<item id="46663" type="Weapon" name="Elysium Retributer - Event" icon="icon.weapon_the_staff_of_hero_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="2">
+		<set stat="pAtk" val="776" />
+		<set stat="mAtk" val="518" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Red Libra item
@@ -3206,6 +3340,10 @@
 	-->
 	<item id="46664" type="Weapon" name="Elysium Dualsword - Event" icon="icon.weapon_r_dualsword_i01" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="8">
+		<set stat="pAtk" val="931" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Red Libra item
@@ -3213,6 +3351,11 @@
 	-->
 	<item id="46665" type="Weapon" name="Elysium Dual Dagger - Event" icon="icon.weapon_r_dualdagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="500" soulshots="8" mpConsume="15">
+		<set stat="pAtk" val="792" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Red Libra item
@@ -3220,12 +3363,18 @@
 	-->
 	<item id="46666" type="Weapon" name="Elysium Dual Blunt Weapon - Event" icon="icon.weapon_r_dualblunt_i01" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="500" soulshots="8" mpConsume="18">
+		<set stat="pAtk" val="931" />
+		<set stat="mAtk" val="388" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46667" type="EtcItem" name="Lv.5 Giant Dye Pack - None" icon="icon.five_vairy_potion" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Activates 5 jewel slots when equipped. Inventory Slot + 12. -->
 	<item id="46668" type="Armor" name="La Vie En Rose's Radiant Brooch - None" icon="icon.etc_bm_brooch_lavianrose_i03" defaultAction="equip"
 			bodypart="gloves" immediateEffect="1" weight="10">
+		<baseAdd stat="mDef" val="101" />
 	</item>
 	<!-- Main ingredient for making a La Vie En Rose's Radiant Brooch. -->
 	<item id="46669" type="EtcItem" name="Radiant Brooch Fragment - None" icon="icon.etc_bm_brooch_lavianrose_piece" immediateEffect="1"
@@ -3329,6 +3478,11 @@
 	-->
 	<item id="46693" type="Weapon" name="Emperor Shunaiman's Shaper - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="737" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3336,6 +3490,10 @@
 	-->
 	<item id="46694" type="Weapon" name="Emperor Shunaiman's Dicing Death - 30-day" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="827" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3343,6 +3501,10 @@
 	-->
 	<item id="46695" type="Weapon" name="Emperor Shunaiman's Slasher - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1007" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3350,6 +3512,11 @@
 	-->
 	<item id="46696" type="Weapon" name="Emperor Shunaiman's Avenger - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="827" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3357,6 +3524,11 @@
 	-->
 	<item id="46697" type="Weapon" name="Emperor Shunaiman's Fighter - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1007" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3364,6 +3536,11 @@
 	-->
 	<item id="46698" type="Weapon" name="Emperor Shunaiman's Stormer - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="827" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3371,6 +3548,11 @@
 	-->
 	<item id="46699" type="Weapon" name="Emperor Shunaiman's Thrower - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1631" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3378,6 +3560,11 @@
 	-->
 	<item id="46700" type="Weapon" name="Emperor Shunaiman's Shooter - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1406" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3385,6 +3572,10 @@
 	-->
 	<item id="46701" type="Weapon" name="Emperor Shunaiman's Buster - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="683" />
+		<set stat="mAtk" val="513" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3392,6 +3583,11 @@
 	-->
 	<item id="46702" type="Weapon" name="Emperor Shunaiman's Caster - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="683" />
+		<set stat="mAtk" val="513" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3399,6 +3595,12 @@
 	-->
 	<item id="46703" type="Weapon" name="Emperor Shunaiman's Retributer - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="832" />
+		<set stat="mAtk" val="555" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3406,6 +3608,10 @@
 	-->
 	<item id="46704" type="Weapon" name="Emperor Shunaiman's Dualsword - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1007" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3413,6 +3619,11 @@
 	-->
 	<item id="46705" type="Weapon" name="Emperor Shunaiman's Dual Dagger - 30-day" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="851" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3420,6 +3631,11 @@
 	-->
 	<item id="46706" type="Weapon" name="Emperor Shunaiman's Dual Blunt - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1007" />
+		<set stat="mAtk" val="409" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3445,6 +3661,7 @@
 		MP +59, Petrification Atk./Resistance +50%, Knock Back/Knock Down Atk./Resistance +40%, Pulling Success Rate +40%, Pulling/Danger Zone Resistance +40%, P. Critical Damage +10%, M. Critical Damage +10%, P./M. Abnormal Status Reflection +10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed +5, DEX +3, and WIT +3. Wind/Dark Attack Def. decreased. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. Effect does not stack with identical ones.
 	-->
 	<item id="46710" type="Weapon" name="Lindvior's Earring - 30-day" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		Dimensional Item
@@ -3607,6 +3824,10 @@
 	</item>
 	<!-- A shoddy fishing rod that has been given to you for practice. It's fine for practice, though. -->
 	<item id="46738" type="Weapon" name="Practice Fishing Rod - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- A Reward Box obtained by training in fishing. Double click to obtain the item. -->
 	<item id="46739" type="Weapon" name="Reward Fishing Rod Pack - None" icon="" bodypart="none" material="steel" weight="0"
@@ -3614,12 +3835,26 @@
 	</item>
 	<!-- A fishing rod obtained by training in fishing. -->
 	<item id="46740" type="Weapon" name="Reward Fishing Rod - 7-day" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<item id="46741" type="Weapon" name="Monster Only (Lesser Giant A) - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="50" />
+		<set stat="mAtk" val="26" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46742" type="Weapon" name="Monster Only (Lesser Giant Wizard's Weapon A) - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="50" />
+		<set stat="mAtk" val="26" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Badge of Silenos Soldiers at Varka Silenos Barracks. Take it to Giant's Minion Hansen at Varka Silenos Barracks to receive a reward. -->
 	<item id="46743" type="Weapon" name="Varka's Badge: Soldier - None" icon="" bodypart="none" material="steel" weight="0"
@@ -3807,6 +4042,10 @@
 	-->
 	<item id="46791" type="Weapon" name="Paulina's Sword of Revolution - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="100" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Claymore imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3814,6 +4053,10 @@
 		Atk. Spd. +5%, P. Critical Rate +30.
 	-->
 	<item id="46792" type="Weapon" name="Paulina's Claymore - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="121" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Tarbar imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3821,6 +4064,11 @@
 		Atk. Spd. +5%, P. Critical Rate +30.
 	-->
 	<item id="46793" type="Weapon" name="Paulina's Tarbar - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="100" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Scallop Jamadhr imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3829,6 +4077,11 @@
 	-->
 	<item id="46794" type="Weapon" name="Paulina's Scallop Jamadhr - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="121" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Light Crossbow imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3837,6 +4090,11 @@
 	-->
 	<item id="46795" type="Weapon" name="Paulina's Light Crossbow - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="196" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Mithril Dagger imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3845,12 +4103,22 @@
 	-->
 	<item id="46796" type="Weapon" name="Paulina's Mithril Dagger - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="87" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Ghost Staff imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
 		(Special Option)Atk. Spd. +5%, M. Critical Rate +30.
 	-->
 	<item id="46797" type="Weapon" name="Paulina's Ghost Staff - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="97" />
+		<set stat="mAtk" val="88" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A General's Katzbalger imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3859,6 +4127,11 @@
 	-->
 	<item id="46798" type="Weapon" name="Paulina's General's Katzbalger - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="108" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="350" />
+		<baseAdd stat="accCombat" val="2" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Grand ￉p￩e imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3866,6 +4139,11 @@
 		Atk. Spd. +5%, P. Critical Rate +30.
 	-->
 	<item id="46799" type="Weapon" name="Paulina's Grand Épée - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="406" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Cranequin imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3873,6 +4151,11 @@
 		Atk. Spd. +5%, P. Critical Rate +30.
 	-->
 	<item id="46800" type="Weapon" name="Paulina's Cranequin - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="177" />
+		<set stat="mAtk" val="60" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Samurai Long Sword imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3881,6 +4164,10 @@
 	-->
 	<item id="46801" type="Weapon" name="Paulina's Samurai Long Sword - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="184" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Berserker Blade imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3889,6 +4176,10 @@
 	-->
 	<item id="46802" type="Weapon" name="Paulina's Berserker Blade - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="223" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Yaksa Mace imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3896,6 +4187,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46803" type="Weapon" name="Paulina's Yaksa Mace - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="184" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Great Pata imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3903,6 +4199,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46804" type="Weapon" name="Paulina's Great Pata - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="223" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		An Orcish Poleaxe imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3911,6 +4212,11 @@
 	-->
 	<item id="46805" type="Weapon" name="Paulina's Orcish Poleaxe - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="184" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Eminence Bow imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3919,6 +4225,11 @@
 	-->
 	<item id="46806" type="Weapon" name="Paulina's Eminence Bow - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="362" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Crystal Dagger imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3927,6 +4238,11 @@
 	-->
 	<item id="46807" type="Weapon" name="Paulina's Crystal Dagger - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="161" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Deadman's Staff imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3935,6 +4251,11 @@
 	-->
 	<item id="46808" type="Weapon" name="Paulina's Deadman's Staff - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="179" />
+		<set stat="mAtk" val="148" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Katana*Katana imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3943,6 +4264,10 @@
 	-->
 	<item id="46809" type="Weapon" name="Paulina's Katana*Katana - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="223" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Saber Tooth imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3950,6 +4275,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46810" type="Weapon" name="Paulina's Saber Tooth - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="199" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="350" />
+		<baseAdd stat="accCombat" val="2" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Admiral's Estoc imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3958,6 +4288,11 @@
 	-->
 	<item id="46811" type="Weapon" name="Paulina's Admiral's Estoc - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="166" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="406" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Sharpshooter imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3966,6 +4301,11 @@
 	-->
 	<item id="46812" type="Weapon" name="Paulina's Sharpshooter - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="326" />
+		<set stat="mAtk" val="101" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Dark Legion's Edge imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3974,6 +4314,10 @@
 	-->
 	<item id="46813" type="Weapon" name="Paulina's Dark Legion's Edge - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="271" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dragon Slayer imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3982,6 +4326,10 @@
 	-->
 	<item id="46814" type="Weapon" name="Paulina's Dragon Slayer - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="329" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Elysian imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3989,6 +4337,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46815" type="Weapon" name="Paulina's Elysian - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="271" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Dragon Grinder imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -3997,6 +4350,11 @@
 	-->
 	<item id="46816" type="Weapon" name="Paulina's Dragon Grinder - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="329" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Halberd imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4004,6 +4362,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46817" type="Weapon" name="Paulina's Halberd - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="271" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Soul Bow imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4011,6 +4374,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46818" type="Weapon" name="Paulina's Soul Bow - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="533" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="227" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Bloody Orchid imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4019,6 +4387,11 @@
 	-->
 	<item id="46819" type="Weapon" name="Paulina's Bloody Orchid - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="237" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Branch of the Mother Tree imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4027,6 +4400,11 @@
 	-->
 	<item id="46820" type="Weapon" name="Paulina's Branch of the Mother Tree - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="263" />
+		<set stat="mAtk" val="198" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Damascus*Damascus imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4035,6 +4413,10 @@
 	-->
 	<item id="46821" type="Weapon" name="Paulina's Damascus*Damascus - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="329" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Undertaker imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4042,6 +4424,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46822" type="Weapon" name="Paulina's Undertaker - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="293" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="350" />
+		<baseAdd stat="accCombat" val="2" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Lacerator imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4049,6 +4436,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46823" type="Weapon" name="Paulina's Lacerator - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="245" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="406" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Reaper imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4056,6 +4448,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46824" type="Weapon" name="Paulina's Reaper - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="480" />
+		<set stat="mAtk" val="135" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Dynasty Sword imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4064,6 +4461,10 @@
 	-->
 	<item id="46825" type="Weapon" name="Paulina's Dynasty Sword - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="364" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dynasty Blade imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4072,6 +4473,10 @@
 	-->
 	<item id="46826" type="Weapon" name="Paulina's Dynasty Blade - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="442" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dynasty Cudgel imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4080,6 +4485,11 @@
 	-->
 	<item id="46827" type="Weapon" name="Paulina's Dynasty Cudgel - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="364" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Dynasty Bagh-Nakh imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4088,6 +4498,11 @@
 	-->
 	<item id="46828" type="Weapon" name="Paulina's Dynasty Bagh-Nakh - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="442" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Dynasty Halberd imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4096,6 +4511,11 @@
 	-->
 	<item id="46829" type="Weapon" name="Paulina's Dynasty Halberd - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="364" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dynasty Bow imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4103,6 +4523,11 @@
 		Atk. Spd. +15%, P. Critical Rate +60.
 	-->
 	<item id="46830" type="Weapon" name="Paulina's Dynasty Bow - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="716" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Dynasty Knife imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4111,6 +4536,11 @@
 	-->
 	<item id="46831" type="Weapon" name="Paulina's Dynasty Knife - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="318" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Dynasty Staff imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4119,6 +4549,11 @@
 	-->
 	<item id="46832" type="Weapon" name="Paulina's Dynasty Staff - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="354" />
+		<set stat="mAtk" val="242" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Dynasty Dualsword imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4127,6 +4562,10 @@
 	-->
 	<item id="46833" type="Weapon" name="Paulina's Dynasty Dualsword - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="442" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dynasty Ancient Sword imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4135,6 +4574,11 @@
 	-->
 	<item id="46834" type="Weapon" name="Paulina's Dynasty Ancient Sword - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="394" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="350" />
+		<baseAdd stat="accCombat" val="2" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Dynasty Rapier imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4143,6 +4587,11 @@
 	-->
 	<item id="46835" type="Weapon" name="Paulina's Dynasty Rapier - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="329" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="406" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		A Dynasty Crossbow imbued with the energy of Paulina. Enchantment, Soul Crystal, Augment, and Attribute Assignment not possible.
@@ -4151,6 +4600,11 @@
 	-->
 	<item id="46836" type="Weapon" name="Paulina's Dynasty Crossbow - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="645" />
+		<set stat="mAtk" val="165" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Double click to obtain a D-grade heavy armor set, earrings, necklace, and ring. -->
 	<item id="46837" type="Weapon" name="Paulina's Heavy Armor Box (D-grade) - None" icon="" bodypart="none" material="steel"
@@ -4237,6 +4691,10 @@
 	-->
 	<item id="46853" type="Weapon" name="Blessed Paulina's Specter Dualsword - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4247,6 +4705,10 @@
 	-->
 	<item id="46854" type="Weapon" name="Blessed Paulina's Specter Cutter - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4257,6 +4719,10 @@
 	-->
 	<item id="46855" type="Weapon" name="Blessed Paulina's Specter Slasher - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4267,6 +4733,11 @@
 	-->
 	<item id="46856" type="Weapon" name="Blessed Paulina's Specter Avenger - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4277,6 +4748,11 @@
 	-->
 	<item id="46857" type="Weapon" name="Blessed Paulina's Specter Fighter - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4287,6 +4763,11 @@
 	-->
 	<item id="46858" type="Weapon" name="Blessed Paulina's Specter Stormer - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4297,6 +4778,11 @@
 	-->
 	<item id="46859" type="Weapon" name="Blessed Paulina's Specter Thrower - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="1185" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4307,6 +4793,11 @@
 	-->
 	<item id="46860" type="Weapon" name="Blessed Paulina's Specter Shooter - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="1067" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4317,6 +4808,11 @@
 	-->
 	<item id="46861" type="Weapon" name="Blessed Paulina's Specter Dual Dagger - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4327,6 +4823,11 @@
 	-->
 	<item id="46862" type="Weapon" name="Blessed Paulina's Specter Caster - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="481" />
+		<set stat="mAtk" val="350" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4337,6 +4838,12 @@
 	-->
 	<item id="46863" type="Weapon" name="Blessed Paulina's Specter Retributer - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="586" />
+		<set stat="mAtk" val="385" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4345,6 +4852,7 @@
 	-->
 	<item id="46864" type="Weapon" name="Blessed Paulina's Seraph Helmet - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4353,6 +4861,7 @@
 	-->
 	<item id="46865" type="Weapon" name="Blessed Paulina's Seraph Breastplate - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="384" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4361,6 +4870,7 @@
 	-->
 	<item id="46866" type="Weapon" name="Blessed Paulina's Seraph Gaiters - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="240" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4369,6 +4879,7 @@
 	-->
 	<item id="46867" type="Weapon" name="Blessed Paulina's Seraph Gauntlets - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4377,6 +4888,7 @@
 	-->
 	<item id="46868" type="Weapon" name="Blessed Paulina's Seraph Boots - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4384,6 +4896,9 @@
 	-->
 	<item id="46869" type="Weapon" name="Blessed Paulina's Seraph Shield - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="sDef" val="525" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4392,6 +4907,7 @@
 	-->
 	<item id="46870" type="Weapon" name="Blessed Paulina's Seraph Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4400,6 +4916,9 @@
 	-->
 	<item id="46871" type="Weapon" name="Blessed Paulina's Seraph Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="307" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4408,6 +4927,9 @@
 	-->
 	<item id="46872" type="Weapon" name="Blessed Paulina's Seraph Leather Leggings - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="192" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4416,6 +4938,7 @@
 	-->
 	<item id="46873" type="Weapon" name="Blessed Paulina's Seraph Leather Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4424,6 +4947,7 @@
 	-->
 	<item id="46874" type="Weapon" name="Blessed Paulina's Seraph Leather Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4432,6 +4956,7 @@
 	-->
 	<item id="46875" type="Weapon" name="Blessed Paulina's Seraph Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4440,6 +4965,8 @@
 	-->
 	<item id="46876" type="Weapon" name="Blessed Paulina's Seraph Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="211" />
+		<baseAdd stat="mDef" val="47" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4448,6 +4975,8 @@
 	-->
 	<item id="46877" type="Weapon" name="Blessed Paulina's Seraph Stockings - Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="132" />
+		<baseAdd stat="mDef" val="31" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4456,6 +4985,7 @@
 	-->
 	<item id="46878" type="Weapon" name="Blessed Paulina's Seraph Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4464,6 +4994,7 @@
 	-->
 	<item id="46879" type="Weapon" name="Blessed Paulina's Seraph Shoes - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4471,6 +5002,8 @@
 	-->
 	<item id="46880" type="Weapon" name="Blessed Paulina's Seraph Sigil - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="48" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4478,6 +5011,7 @@
 	-->
 	<item id="46881" type="Weapon" name="Blessed Paulina's Seraph Necklace - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="165" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4485,6 +5019,7 @@
 	-->
 	<item id="46882" type="Weapon" name="Blessed Paulina's Seraph Earring - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="124" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4492,6 +5027,7 @@
 	-->
 	<item id="46883" type="Weapon" name="Blessed Paulina's Seraph Earring - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="124" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4499,6 +5035,7 @@
 	-->
 	<item id="46884" type="Weapon" name="Blessed Paulina's Seraph Ring - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="82" />
 	</item>
 	<!--
 		Dimensional Item
@@ -4506,6 +5043,7 @@
 	-->
 	<item id="46885" type="Weapon" name="Blessed Paulina's Seraph Ring - Critical Rate" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="82" />
 	</item>
 	<!--
 		A Specter Dualsword that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4515,6 +5053,10 @@
 	-->
 	<item id="46886" type="Weapon" name="PC Cafe - Paulina's Specter Dualsword - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Specter Cutter that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4524,6 +5066,10 @@
 	-->
 	<item id="46887" type="Weapon" name="PC Cafe - Paulina's Specter Cutter - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Specter Slasher that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4533,6 +5079,10 @@
 	-->
 	<item id="46888" type="Weapon" name="PC Cafe - Paulina's Specter Slasher - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Specter Avenger that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4542,6 +5092,11 @@
 	-->
 	<item id="46889" type="Weapon" name="PC Cafe - Paulina's Specter Avenger - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Specter Fighter that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4551,6 +5106,11 @@
 	-->
 	<item id="46890" type="Weapon" name="PC Cafe - Paulina's Specter Fighter - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="732" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Specter Stormer that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4560,6 +5120,11 @@
 	-->
 	<item id="46891" type="Weapon" name="PC Cafe - Paulina's Specter Stormer - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		A Specter Thrower that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4569,6 +5134,11 @@
 	-->
 	<item id="46892" type="Weapon" name="PC Cafe - Paulina's Specter Thrower - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="1185" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Specter Shooter that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4578,6 +5148,11 @@
 	-->
 	<item id="46893" type="Weapon" name="PC Cafe - Paulina's Specter Shooter - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="1067" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Specter Dual Dagger that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4587,6 +5162,11 @@
 	-->
 	<item id="46894" type="Weapon" name="PC Cafe - Paulina's Specter Dual Dagger - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="262" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		A Specter Caster that can be equipped from Level 85 onwards, thanks to Paulina's blessing.
@@ -4596,6 +5176,11 @@
 	-->
 	<item id="46895" type="Weapon" name="PC Cafe - Paulina Specter Caster - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="481" />
+		<set stat="mAtk" val="350" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Specter Retributer that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4605,6 +5190,12 @@
 	-->
 	<item id="46896" type="Weapon" name="PC Cafe - Paulina's Specter Retributer - 4-hour" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="586" />
+		<set stat="mAtk" val="385" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		A Seraph Helmet that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4612,6 +5203,7 @@
 	-->
 	<item id="46897" type="Weapon" name="PC Cafe - Paulina's Seraph Helmet - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		A Seraph Breastplate that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4619,6 +5211,7 @@
 	-->
 	<item id="46898" type="Weapon" name="PC Cafe - Paulina's Seraph Breastplate - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="384" />
 	</item>
 	<!--
 		Seraph Gaiters that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4626,6 +5219,7 @@
 	-->
 	<item id="46899" type="Weapon" name="PC Cafe - Paulina's Seraph Gaiters - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="240" />
 	</item>
 	<!--
 		Seraph Gauntlets that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4633,6 +5227,7 @@
 	-->
 	<item id="46900" type="Weapon" name="PC Cafe - Paulina's Seraph Gauntlets - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Seraph Boots that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4640,10 +5235,14 @@
 	-->
 	<item id="46901" type="Weapon" name="PC Cafe - Paulina's Seraph Boots - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!-- A Seraph Shield that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. -->
 	<item id="46902" type="Weapon" name="PC Cafe - Paulina's Seraph Shield - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="sDef" val="525" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!--
 		A Seraph Leather Helmet that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4651,6 +5250,7 @@
 	-->
 	<item id="46903" type="Weapon" name="PC Cafe - Paulina's Seraph Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		A Seraph Leather Armor that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4658,6 +5258,9 @@
 	-->
 	<item id="46904" type="Weapon" name="PC Cafe - Paulina's Seraph Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="307" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<!--
 		Seraph Leather Leggings that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4665,6 +5268,9 @@
 	-->
 	<item id="46905" type="Weapon" name="PC Cafe - Paulina's Seraph Leather Leggings - Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="192" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<!--
 		Seraph Leather Gloves that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4672,6 +5278,7 @@
 	-->
 	<item id="46906" type="Weapon" name="PC Cafe - Paulina's Seraph Leather Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Seraph Leather Boots that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4679,6 +5286,7 @@
 	-->
 	<item id="46907" type="Weapon" name="PC Cafe - Paulina's Seraph Leather Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		A Seraph Circlet that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4686,6 +5294,7 @@
 	-->
 	<item id="46908" type="Weapon" name="PC Cafe - Paulina's Seraph Circlet - Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="144" />
 	</item>
 	<!--
 		Seraph Tunic that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4693,6 +5302,8 @@
 	-->
 	<item id="46909" type="Weapon" name="PC Cafe - Paulina's Seraph Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="211" />
+		<baseAdd stat="mDef" val="47" />
 	</item>
 	<!--
 		Seraph Stockings that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4700,6 +5311,8 @@
 	-->
 	<item id="46910" type="Weapon" name="PC Cafe - Paulina's Seraph Stockings - Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="132" />
+		<baseAdd stat="mDef" val="31" />
 	</item>
 	<!--
 		Seraph Gloves that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4707,6 +5320,7 @@
 	-->
 	<item id="46911" type="Weapon" name="PC Cafe - Paulina's Seraph Gloves - Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!--
 		Seraph Shoes that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing.
@@ -4714,30 +5328,38 @@
 	-->
 	<item id="46912" type="Weapon" name="PC Cafe - Paulina's Seraph Shoes - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!-- A Seraph Sigil that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. -->
 	<item id="46913" type="Weapon" name="PC Cafe - Paulina's Seraph Sigil - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="48" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- A Seraph Necklace that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. MP +62, Skill Cooldown -10%. -->
 	<item id="46914" type="Weapon" name="PC Cafe - Paulina's Seraph Necklace - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="165" />
 	</item>
 	<!-- Seraph Earrings that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. MP +46, Vampiric Rage. -->
 	<item id="46915" type="Weapon" name="PC Cafe - Paulina's Seraph Earring - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="124" />
 	</item>
 	<!-- Seraph Earrings that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. MP +46, MP Consumption -5%. -->
 	<item id="46916" type="Weapon" name="PC Cafe - Paulina's Seraph Earring - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="124" />
 	</item>
 	<!-- A Seraph Ring that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. MP +31, P./M. Critical Damage +15%. -->
 	<item id="46917" type="Weapon" name="PC Cafe - Paulina's Seraph Ring - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="82" />
 	</item>
 	<!-- A Seraph Ring that can be equipped from Lv. 85 onwards, thanks to Paulina's blessing. MP +31, P./M. Critical Rate +40. -->
 	<item id="46918" type="Weapon" name="PC Cafe - Paulina's Seraph Ring - Critical Rate" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="82" />
 	</item>
 	<!--
 		Use to obtain a 30-day equipment set appropriate to your class.
@@ -4749,18 +5371,30 @@
 	<!-- Brigandine Shield imbued with the energy of Paulina. -->
 	<item id="46920" type="Weapon" name="Paulina's Brigandine Shield - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="sDef" val="142" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Chain Shield imbued with the energy of Paulina. -->
 	<item id="46921" type="Weapon" name="Paulina's Chain Shield - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="sDef" val="166" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Dark Crystal Shield imbued with the energy of Paulina. -->
 	<item id="46922" type="Weapon" name="Paulina's Dark Crystal Shield - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="sDef" val="243" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Dynasty Shield imbued with the energy of Paulina. -->
 	<item id="46923" type="Weapon" name="Paulina's Dynasty Shield - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="sDef" val="321" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Double click to obtain an R-grade heavy armor set, earrings, necklace, and ring. -->
 	<item id="46924" type="Weapon" name="Paulina's Heavy Armor Box (R-grade) - None" icon="" bodypart="none" material="steel"
@@ -4777,290 +5411,363 @@
 	<!-- Brigandine Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46927" type="Weapon" name="Paulina's Brigandine Helmet - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="47" />
 	</item>
 	<!-- Brigandine imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46928" type="Weapon" name="Paulina's Brigandine - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="125" />
 	</item>
 	<!-- Brigandine Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46929" type="Weapon" name="Paulina's Brigandine Gaiters - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="78" />
 	</item>
 	<!-- Brigandine Gauntlets imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46930" type="Weapon" name="Paulina's Brigandine Gauntlets - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- Brigandine Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46931" type="Weapon" name="Paulina's Brigandine Boots - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- A Manticore Skin Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46932" type="Weapon" name="Paulina's Manticore Skin Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="47" />
 	</item>
 	<!-- A Manticore Skin Shirt imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46933" type="Weapon" name="Paulina's Manticore Skin Shirt - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<!-- Manticore Skin Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46934" type="Weapon" name="Paulina's Manticore Skin Gaiters - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="62" />
 	</item>
 	<!-- Manticore Skin Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46935" type="Weapon" name="Paulina's Manticore Skin Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- Manticore Skin Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46936" type="Weapon" name="Paulina's Manticore Skin Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- A Mithril Circlet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46937" type="Weapon" name="Paulina's Mithril Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="47" />
 	</item>
 	<!-- A Mithril Tunic imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46938" type="Weapon" name="Paulina's Mithril Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- Mithril Stockings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46939" type="Weapon" name="Paulina's Mithril Stockings - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="42" />
 	</item>
 	<!-- Elven Mithril Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46940" type="Weapon" name="Paulina's Elven Mithril Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- Elven Mithril Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46941" type="Weapon" name="Paulina's Elven Mithril Boots - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="31" />
 	</item>
 	<!-- An Elven Necklace imbued with the energy of Paulina. -->
 	<item id="46942" type="Weapon" name="Paulina's Elven Necklace - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="47" />
 	</item>
 	<!-- Elven Earrings imbued with the energy of Paulina. -->
 	<item id="46943" type="Weapon" name="Paulina's Elven Earrings - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="35" />
 	</item>
 	<!-- An Elven Ring imbued with the energy of Paulina. -->
 	<item id="46944" type="Weapon" name="Paulina's Elven Ring - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="23" />
 	</item>
 	<!-- A Chain Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46945" type="Weapon" name="Paulina's Chain Helmet - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="65" />
 	</item>
 	<!-- A Chain Mail Shirt imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46946" type="Weapon" name="Paulina's Chain Mail Shirt - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="175" />
 	</item>
 	<!-- Chain Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46947" type="Weapon" name="Paulina's Chain Gaiters - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="109" />
 	</item>
 	<!-- Chain Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46948" type="Weapon" name="Paulina's Chain Gloves - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- A Chain Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46949" type="Weapon" name="Paulina's Chain Boots - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- A Theca Leather Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46950" type="Weapon" name="Paulina's Theca Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="65" />
 	</item>
 	<!-- A Theca Leather Armor imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46951" type="Weapon" name="Paulina's Theca Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="140" />
 	</item>
 	<!-- Theca Leather Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46952" type="Weapon" name="Paulina's Theca Leather Gaiters - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- Theca Leather Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46953" type="Weapon" name="Paulina's Theca Leather Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- Theca Leather Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46954" type="Weapon" name="Paulina's Theca Leather Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- A Demon Circlet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46955" type="Weapon" name="Paulina's Demon Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="65" />
 	</item>
 	<!-- A Demon Tunic imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46956" type="Weapon" name="Paulina's Demon Tunic - Robe" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="96" />
 	</item>
 	<!-- Demon Stockings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46957" type="Weapon" name="Paulina's Demon Stockings - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="59" />
 	</item>
 	<!-- Demon Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46958" type="Weapon" name="Paulina's Demon Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- Demon Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46959" type="Weapon" name="Paulina's Demon Boots - Robe" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="43" />
 	</item>
 	<!-- A Necklace of Protection imbued with the energy of Paulina. Skill Cooldown -3%. -->
 	<item id="46960" type="Weapon" name="Paulina's Necklace of Protection - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="66" />
 	</item>
 	<!-- Earrings of Protection imbued with the energy of Paulina. Vampiric Rage effect. -->
 	<item id="46961" type="Weapon" name="Paulina's Earring of Protection - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="49" />
 	</item>
 	<!-- Earrings of Protection imbued with the energy of Paulina. MP Consumption -2%. -->
 	<item id="46962" type="Weapon" name="Paulina's Earring of Protection - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="49" />
 	</item>
 	<!-- A Ring of Protection imbued with the energy of Paulina. P./M. Critical Damage +5%. -->
 	<item id="46963" type="Weapon" name="Paulina's Ring of Protection - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="33" />
 	</item>
 	<!-- A Ring of Protection imbued with the energy of Paulina. P./M. Critical Rate +10. -->
 	<item id="46964" type="Weapon" name="Paulina's Ring of Protection - Critical Rate" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="33" />
 	</item>
 	<!-- A Dynasty Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46965" type="Weapon" name="Paulina's Dark Crystal Helmet - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="84" />
 	</item>
 	<!-- A Dark Crystal Breastplate imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46966" type="Weapon" name="Paulina's Dark Crystal Breastplate - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="225" />
 	</item>
 	<!-- Dark Crystal Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46967" type="Weapon" name="Paulina's Dark Crystal Gaiters - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="140" />
 	</item>
 	<!-- Dark Crystal Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46968" type="Weapon" name="Paulina's Dark Crystal Gloves - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- Dark Crystal Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46969" type="Weapon" name="Paulina's Dark Crystal Boots - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- A Dark Crystal Leather Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46970" type="Weapon" name="Paulina's Dark Crystal Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="84" />
 	</item>
 	<!-- A Dark Crystal Leather Armor imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46971" type="Weapon" name="Paulina's Dark Crystal Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="180" />
 	</item>
 	<!-- Dark Crystal Leggings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46972" type="Weapon" name="Paulina's Dark Crystal Leggings - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="112" />
 	</item>
 	<!-- Dark Crystal Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46973" type="Weapon" name="Paulina's Dark Crystal Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- Dark Crystal Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46974" type="Weapon" name="Paulina's Dark Crystal Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- A Tallum Circlet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46975" type="Weapon" name="Paulina's Tallum Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="84" />
 	</item>
 	<!-- A Tallum Tunic imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46976" type="Weapon" name="Paulina's Tallum Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="123" />
 	</item>
 	<!-- Tallum Stockings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46977" type="Weapon" name="Paulina's Tallum Stockings - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="77" />
 	</item>
 	<!-- Tallum Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46978" type="Weapon" name="Paulina's Tallum Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- Tallum Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46979" type="Weapon" name="Paulina's Tallum Boots - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="56" />
 	</item>
 	<!-- A Majestic Necklace imbued with the energy of Paulina. Skill Cooldown -3%. -->
 	<item id="46980" type="Weapon" name="Paulina's Majestic Necklace - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="85" />
 	</item>
 	<!-- Majestic Earrings imbued with the energy of Paulina. Vampiric Rage effect. -->
 	<item id="46981" type="Weapon" name="Paulina's Majestic Earrings - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="63" />
 	</item>
 	<!-- Majestic Earrings imbued with the energy of Paulina. MP Consumption -2%. -->
 	<item id="46982" type="Weapon" name="Paulina's Majestic Earrings - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="63" />
 	</item>
 	<!-- A Majestic Ring imbued with the energy of Paulina. P./M. Critical Damage +5%. -->
 	<item id="46983" type="Weapon" name="Paulina's Majestic Ring - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="42" />
 	</item>
 	<!-- A Majestic Ring imbued with the energy of Paulina. P./M. Critical Rate +10. -->
 	<item id="46984" type="Weapon" name="Paulina's Majestic Ring - Critical Rate" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="42" />
 	</item>
 	<!-- A Dynasty Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46985" type="Weapon" name="Paulina's Dynasty Helmet - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="103" />
 	</item>
 	<!-- A Dynasty Breastplate imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46986" type="Weapon" name="Paulina's Dynasty Breastplate - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="274" />
 	</item>
 	<!-- Dynasty Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46987" type="Weapon" name="Paulina's Dynasty Gaiters - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="171" />
 	</item>
 	<!-- Dynasty Gauntlets imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46988" type="Weapon" name="Paulina's Dynasty Gauntlets - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- Dynasty Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46989" type="Weapon" name="Paulina's Dynasty Boots - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- A Dynasty Leather Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46990" type="Weapon" name="Paulina's Dynasty Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="103" />
 	</item>
 	<!-- A Dynasty Leather Armor imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46991" type="Weapon" name="Paulina's Dynasty Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="219" />
 	</item>
 	<!-- Dynasty Leather Leggings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46992" type="Weapon" name="Paulina's Dynasty Leather Leggints - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="136" />
 	</item>
 	<!-- Dynasty Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46993" type="Weapon" name="Paulina's Dynasty Gloves - Light Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- Dynasty Leather Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46994" type="Weapon" name="Paulina's Dynasty Leather Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- A Dynasty Circlet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46995" type="Weapon" name="Paulina's Dynasty Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="103" />
 	</item>
 	<!-- A Dynasty Tunic imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46996" type="Weapon" name="Paulina's Dynasty Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Dynasty Stockings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46997" type="Weapon" name="Paulina's Dynasty Stockings - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<!-- Dynasty Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46998" type="Weapon" name="Paulina's Dynasty Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 	<!-- Dynasty Shoes imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="46999" type="Weapon" name="Paulina's Dynasty Shoes - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="68" />
 	</item>
 </list>

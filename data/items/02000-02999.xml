@@ -2499,32 +2499,32 @@
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with a No-grade weapon. -->
 	<item id="2509" type="EtcItem" name="Spiritshot (No-grade) - None" icon="icon.etc_spell_shot_white_i00" defaultAction="spiritshot"
 			immediateEffect="1" weight="4" price="15" isStackable="true" handler="SpiritShot">
-		<skill id="2047" level="1" /> <!-- Spiritshot (No-grade)  -->
+		<skill id="2047" level="1" /> <!-- Spiritshot (No-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with a D-grade weapon. -->
 	<item id="2510" type="EtcItem" name="Spiritshot (D-grade) - None" icon="icon.etc_spell_shot_blue_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="d" weight="4" price="18" enchantEnabled="1" isStackable="true" handler="SpiritShot">
-		<skill id="2155" level="1" /> <!-- Spiritshot (D-grade)  -->
+		<skill id="2155" level="1" /> <!-- Spiritshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with a C-grade weapon. -->
 	<item id="2511" type="EtcItem" name="Spiritshot (C-grade) - None" icon="icon.etc_spell_shot_green_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="c" weight="2" price="35" enchantEnabled="1" isStackable="true" handler="SpiritShot">
-		<skill id="2156" level="1" /> <!-- Spiritshot (C-grade)  -->
+		<skill id="2156" level="1" /> <!-- Spiritshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with a B-grade weapon. -->
 	<item id="2512" type="EtcItem" name="Spiritshot (B-grade) - None" icon="icon.etc_spell_shot_red_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="b" weight="2" price="100" enchantEnabled="1" isStackable="true" handler="SpiritShot">
-		<skill id="2157" level="1" /> <!-- Spiritshot (B-grade)  -->
+		<skill id="2157" level="1" /> <!-- Spiritshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with an A-grade weapon. -->
 	<item id="2513" type="EtcItem" name="Spiritshot (A-grade) - None" icon="icon.etc_spell_shot_silver_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="a" weight="1" price="120" enchantEnabled="1" isStackable="true" handler="SpiritShot">
-		<skill id="2158" level="1" /> <!-- Spiritshot (A-grade)  -->
+		<skill id="2158" level="1" /> <!-- Spiritshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon causing its M. Atk. to momentarily increase. Used with an S-grade weapon. -->
 	<item id="2514" type="EtcItem" name="Spiritshot (S-grade) - None" icon="icon.etc_spell_shot_gold_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="s" weight="1" price="150" enchantEnabled="1" isStackable="true" handler="SpiritShot">
-		<skill id="2159" level="1" /> <!-- Spiritshot (S-grade)  -->
+		<skill id="2159" level="1" /> <!-- Spiritshot (S-grade) -->
 	</item>
 	<!-- When the hunger gauge of a wolf reaches 55% or below, its food will be consumed automatically. -->
 	<item id="2515" type="EtcItem" name="Wolf Food - None" icon="icon.etc_pouch_yellow_i00" defaultAction="skill_reduce" immediateEffect="1"

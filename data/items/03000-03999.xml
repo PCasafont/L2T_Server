@@ -4245,32 +4245,32 @@
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with No-grade weapons. -->
 	<item id="3947" type="EtcItem" name="Blessed Spiritshot (No-grade) - None" icon="icon.etc_spell_shot_white_i01" defaultAction="spiritshot"
 			immediateEffect="1" weight="4" price="35" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2061" level="1" /> <!-- Blessed Spiritshot (No-grade)  -->
+		<skill id="2061" level="1" /> <!-- Blessed Spiritshot (No-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with D-grade weapons. -->
 	<item id="3948" type="EtcItem" name="Blessed Spiritshot (D-grade) - None" icon="icon.etc_spell_shot_blue_i01" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="d" weight="4" price="28" enchantEnabled="1" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2160" level="1" /> <!-- Blessed Spiritshot (D-grade)  -->
+		<skill id="2160" level="1" /> <!-- Blessed Spiritshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with C-grade weapons. -->
 	<item id="3949" type="EtcItem" name="Blessed Spiritshot (C-grade) - None" icon="icon.etc_spell_shot_green_i01" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="c" weight="2" price="42" enchantEnabled="1" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2161" level="1" /> <!-- Blessed Spiritshot (C-grade)  -->
+		<skill id="2161" level="1" /> <!-- Blessed Spiritshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with B-grade weapons. -->
 	<item id="3950" type="EtcItem" name="Blessed Spiritshot (B-grade) - None" icon="icon.etc_spell_shot_red_i01" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="b" weight="2" price="245" enchantEnabled="1" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2162" level="1" /> <!-- Blessed Spiritshot (B-grade)  -->
+		<skill id="2162" level="1" /> <!-- Blessed Spiritshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with a-grade weapons. -->
 	<item id="3951" type="EtcItem" name="Blessed Spiritshot (A-grade) - None" icon="icon.etc_spell_shot_silver_i01" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="a" weight="1" price="290" enchantEnabled="1" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2163" level="1" /> <!-- Blessed Spiritshot (A-grade)  -->
+		<skill id="2163" level="1" /> <!-- Blessed Spiritshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with S-grade weapons. -->
 	<item id="3952" type="EtcItem" name="Blessed Spiritshot (S-grade) - None" icon="icon.etc_spell_shot_gold_i01" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="s" weight="1" price="350" enchantEnabled="1" isStackable="true" handler="BlessedSpiritShot">
-		<skill id="2164" level="1" /> <!-- Blessed Spiritshot (S-grade)  -->
+		<skill id="2164" level="1" /> <!-- Blessed Spiritshot (S-grade) -->
 	</item>
 	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (D-grade) . Requires Create Item - Skill Lv. 2. The success rate is 100%. -->
 	<item id="3953" type="EtcItem" name="Recipe: Blessed Spiritshot (D-grade) - None" icon="icon.etc_recipe_blue_i00" defaultAction="recipe"

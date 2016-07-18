@@ -1943,7 +1943,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="1" /> <!-- Archer's Call -->
 		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
@@ -1960,7 +1960,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="2" /> <!-- Archer's Call -->
 		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
@@ -1978,7 +1978,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="3" /> <!-- Archer's Call -->
 		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
@@ -1996,7 +1996,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="4" /> <!-- Archer's Call -->
 		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2014,7 +2014,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="5" /> <!-- Archer's Call -->
 		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2032,7 +2032,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="6" /> <!-- Archer's Call -->
 		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2050,7 +2050,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="7" /> <!-- Archer's Call -->
 		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2068,7 +2068,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="8" /> <!-- Archer's Call -->
 		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2086,7 +2086,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="9" /> <!-- Archer's Call -->
 		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2104,7 +2104,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="10" /> <!-- Archer's Call -->
 		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2122,7 +2122,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="11" /> <!-- Archer's Call -->
 		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
@@ -2140,7 +2140,7 @@
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isOlyRestricted="true"
 			unequipSkill="3267-1">
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
-		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
+		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Saggitarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="26128" level="12" /> <!-- Archer's Call -->
 		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->

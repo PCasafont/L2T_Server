@@ -1001,7 +1001,7 @@
 	<item id="10143" type="EtcItem" name="Battleground Scroll: Shield Master - None" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind Walk -->
+		<skill id="2379" level="1" /> <!-- Wind -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2382" level="1" /> <!-- Blessed Shield -->
@@ -1011,7 +1011,7 @@
 	<item id="10144" type="EtcItem" name="Battleground Scroll: Wizard - None" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind Walk -->
+		<skill id="2379" level="1" /> <!-- Wind -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2384" level="1" /> <!-- Acumen -->
@@ -1021,7 +1021,7 @@
 	<item id="10145" type="EtcItem" name="Battleground Scroll: Healer - None" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind Walk -->
+		<skill id="2379" level="1" /> <!-- Wind -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2384" level="1" /> <!-- Acumen -->
@@ -1031,7 +1031,7 @@
 	<item id="10146" type="EtcItem" name="Battleground Scroll: Dagger Master - None" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind Walk -->
+		<skill id="2379" level="1" /> <!-- Wind -->
 		<skill id="2387" level="1" /> <!-- Might -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2388" level="1" /> <!-- Focus -->
@@ -1041,7 +1041,7 @@
 	<item id="10147" type="EtcItem" name="Battleground Scroll: Bow Master - None" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind Walk -->
+		<skill id="2379" level="1" /> <!-- Wind -->
 		<skill id="2387" level="1" /> <!-- Might -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2389" level="1" /> <!-- Guidance -->
@@ -4416,7 +4416,7 @@
 	<!-- Forgotten Scroll to learn Sublime Self-sacrifice. Cardinal uses it. Can be acquired by level 83. -->
 	<item id="10585" type="EtcItem" name="Forgotten Scroll: Sublime Self-sacrifice - None" icon="BranchSys2.Icon.br_spell_books_magic_i01"
 			defaultAction="skill_reduce" weight="120" price="120000" isStackable="true" handler="ItemSkills">
-		<skill id="2477" level="1" /> <!-- Sublime Self-sacrifice -->
+		<skill id="2477" level="1" /> <!-- Sublime Self-Sacrifice -->
 	</item>
 	<!-- Forgotten Scroll to learn Blessing of Eva. Eva's Saint uses it. Can be acquired by level 83. -->
 	<item id="10586" type="EtcItem" name="Forgotten Scroll: Blessing of Eva - None" icon="BranchSys2.Icon.br_spell_books_magic_i01"

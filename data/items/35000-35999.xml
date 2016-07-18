@@ -21,8 +21,8 @@
 	<item id="35001" type="Weapon" name="Tauti's Dual Axe - None" icon="icon.weapon_tauti_dual_axe_i01" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r"
 			weight="1700" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
-		<set stat="pAtk" val="776" />
-		<set stat="mAtk" val="278" />
+		<set stat="pAtk" val="849" />
+		<set stat="mAtk" val="303" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<add stat="darkPower" val="450" />

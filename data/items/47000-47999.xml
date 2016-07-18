@@ -3,22 +3,27 @@
 	<!-- A Dynasty Necklace imbued with the energy of Paulina. Skill Cooldown -5%. -->
 	<item id="47000" type="Weapon" name="Paulina's Dynasty Necklace - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="108" />
 	</item>
 	<!-- Dynasty Earrings imbued with the energy of Paulina. Vampiric Rage effect. -->
 	<item id="47001" type="Weapon" name="Paulina's Dynasty Earring - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="81" />
 	</item>
 	<!-- Dynasty Earrings imbued with the energy of Paulina. MP Consumption -3%. -->
 	<item id="47002" type="Weapon" name="Paulina's Dynasty Earring - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="81" />
 	</item>
 	<!-- A Dynasty Ring imbued with the energy of Paulina. P./M. Critical Damage +7%. -->
 	<item id="47003" type="Weapon" name="Paulina's Dynasty Ring - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="54" />
 	</item>
 	<!-- A Dynasty Ring imbued with the energy of Paulina. P./M. Critical Rate +20. -->
 	<item id="47004" type="Weapon" name="Paulina's Dynasty Ring - Critical Rate" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="54" />
 	</item>
 	<!--
 		A gift from Tulesir the Minstrel to heroes of the future having safely completed 10 days of adventure. Though old, its performance is on par with a new one.
@@ -26,6 +31,7 @@
 		When equipped, STR +1 , DEX +1, CON +1, INT +1, WIT +1, MEN +1, Max HP/MP +510, Movement Speed +7, 6 Defensive Attributes +6.
 	-->
 	<item id="47005" type="Weapon" name="Old Elemental Shirt - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- A gift from Tulesir the Minstrel to heroes of the future having safely completed 10 days of adventure. Contains supplies necessary for adventure. -->
 	<item id="47006" type="Weapon" name="Supply Items for Adventurer - None" icon="" bodypart="none" material="steel" weight="0"
@@ -34,6 +40,11 @@
 	<!-- Apocalypse Shaper imbued with the energy of Paulina. -->
 	<item id="47007" type="Weapon" name="Paulina's Apocalypse Shaper - Not used" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="441" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		An Apocalypse Cutter imbued with the energy of Paulina.
@@ -43,6 +54,10 @@
 	-->
 	<item id="47008" type="Weapon" name="Paulina's Apocalypse Cutter - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="519" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		An Apocalypse Slasher imbued with the energy of Paulina.
@@ -52,6 +67,10 @@
 	-->
 	<item id="47009" type="Weapon" name="Paulina's Apocalypse Slasher - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="632" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		An Apocalypse Avenger imbued with the energy of Paulina.
@@ -61,6 +80,11 @@
 	-->
 	<item id="47010" type="Weapon" name="Paulina's Apocalypse Avenger - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="519" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		An Apocalypse Fighter imbued with the energy of Paulina.
@@ -70,6 +94,11 @@
 	-->
 	<item id="47011" type="Weapon" name="Paulina's Apocalypse Fighter - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="632" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		An Apocalypse Stormer imbued with the energy of Paulina.
@@ -79,6 +108,11 @@
 	-->
 	<item id="47012" type="Weapon" name="Paulina's Apocalypse Stormer - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="519" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		An Apocalypse Thrower imbued with the energy of Paulina.
@@ -88,6 +122,11 @@
 	-->
 	<item id="47013" type="Weapon" name="Paulina's Apocalypse Thrower - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1022" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		An Apocalypse Shooter imbued with the energy of Paulina.
@@ -97,10 +136,19 @@
 	-->
 	<item id="47014" type="Weapon" name="Paulina's Apocalypse Shooter - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="920" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Apocalypse Buster imbued with the energy of Paulina. -->
 	<item id="47015" type="Weapon" name="Paulina's Apocalypse Buster - Not used" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="403" />
+		<set stat="mAtk" val="293" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		An Apocalypse Caster imbued with the energy of Paulina.
@@ -110,6 +158,11 @@
 	-->
 	<item id="47016" type="Weapon" name="Paulina's Apocalypse Caster - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="415" />
+		<set stat="mAtk" val="293" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		An Apocalypse Retributer imbued with the energy of Paulina.
@@ -119,6 +172,12 @@
 	-->
 	<item id="47017" type="Weapon" name="Paulina's Apocalypse Retributer - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="505" />
+		<set stat="mAtk" val="322" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		An Apocalypse Dualsword imbued with the energy of Paulina.
@@ -128,6 +187,10 @@
 	-->
 	<item id="47018" type="Weapon" name="Paulina's Apocalypse Dualsword - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="632" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		An Apocalypse Dual Dagger imbued with the energy of Paulina.
@@ -137,98 +200,139 @@
 	-->
 	<item id="47019" type="Weapon" name="Paulina's Apocalypse Dual Dagger - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="519" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- An Apocalypse Dual Blunt imbued with the energy of Paulina. -->
 	<item id="47020" type="Weapon" name="Paulina's Apocalypse Dual Blunt - Not used" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="613" />
+		<set stat="mAtk" val="232" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A Twilight Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47021" type="Weapon" name="Paulina's Twilight Helmet - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="130" />
 	</item>
 	<!-- A Twilight Breastplate imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47022" type="Weapon" name="Paulina's Twilight Breastplate - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="191" />
 	</item>
 	<!-- Twilight Gaiters imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47023" type="Weapon" name="Paulina's Twilight Gaiters - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="119" />
 	</item>
 	<!-- Twilight Gauntlets imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47024" type="Weapon" name="Paulina's Twilight Gauntlets - Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- Twilight Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47025" type="Weapon" name="Paulina's Twilight Boots - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- A Twilight Shield imbued with the energy of Paulina. -->
 	<item id="47026" type="Weapon" name="Paulina's Twilight Shield - Heavy Armor" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="sDef" val="466" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- A Twilight Leather Helmet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47027" type="Weapon" name="Paulina's Twilight Leather Helmet - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="130" />
 	</item>
 	<!-- A Twilight Leather Armor imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47028" type="Weapon" name="Paulina's Twilight Leather Armor - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="152" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<!-- Twilight Leather Leggings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47029" type="Weapon" name="Paulina's Twilight Leather Leggings - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="95" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<!-- Twilight Leather Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47030" type="Weapon" name="Paulina's Twilight Leather Gloves - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- Twilight Leather Boots imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47031" type="Weapon" name="Paulina's Twilight Leather Boots - Light Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- A Twilight Circlet imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47032" type="Weapon" name="Paulina's Twilight Circlet - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="130" />
 	</item>
 	<!-- A Twilight Tunic imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47033" type="Weapon" name="Paulina's Twilight Tunic - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="105" />
+		<baseAdd stat="mDef" val="41" />
 	</item>
 	<!-- Twilight Stockings imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47034" type="Weapon" name="Paulina's Twilight Stockings - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="65" />
+		<baseAdd stat="mDef" val="27" />
 	</item>
 	<!-- Twilight Gloves imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47035" type="Weapon" name="Paulina's Twilight Gloves - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- Twilight Shoes imbued with the energy of Paulina. Enchantment and Attribute Assignment not possible. -->
 	<item id="47036" type="Weapon" name="Paulina's Twilight Shoes - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="87" />
 	</item>
 	<!-- A Twilight Sigel imbued with the energy of Paulina. -->
 	<item id="47037" type="Weapon" name="Paulina's Twilight Sigil - Robe" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="42" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- A Twilight Necklace imbued with the energy of Paulina. MP +58, Skill Cooldown -10%. -->
 	<item id="47038" type="Weapon" name="Paulina's Twilight Necklace - Skill Cooldown" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="146" />
 	</item>
 	<!-- Twilight Earrings imbued with the energy of Paulina. MP +43, Vampiric Rage effect. -->
 	<item id="47039" type="Weapon" name="Paulina's Twilight Earring - Vampiric Rage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="109" />
 	</item>
 	<!-- Twilight Earrings imbued with the energy of Paulina. MP +43, MP Consumption -5%. -->
 	<item id="47040" type="Weapon" name="Paulina's Twilight Earring - MP Consumption" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="109" />
 	</item>
 	<!-- A Twilight Ring imbued with the energy of Paulina. MP +29, P./M. Critical Damage +15%. -->
 	<item id="47041" type="Weapon" name="Paulina's Twilight Ring - Critical Damage" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="73" />
 	</item>
 	<!-- A Twilight Ring imbued with the energy of Paulina. MP +29, P./M. Critical Rate +40. -->
 	<item id="47042" type="Weapon" name="Paulina's Twilight Ring - Critical Rate" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="73" />
 	</item>
 	<!-- Supply Items given by the Dimensional Tracker Beloa to agents who have completed 'Exploring the Dimension - 30-day Search Operation'. -->
 	<item id="47043" type="Weapon" name="Beloa's Supply Items - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
@@ -238,6 +342,7 @@
 		Damage +2%, Damage Received -2%, Weight +12800, Inventory Slots +18.
 	-->
 	<item id="47044" type="Weapon" name="Commando Belt - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- A device that sustains the ever-changing dimensional force of the Dimensional Crack. While this device is operational, search operations can be continued in the Dimensional Crack. -->
 	<item id="47045" type="Weapon" name="Dimensional Force Sustaining Device - None" icon="" bodypart="none" material="steel"
@@ -711,18 +816,23 @@
 	</item>
 	<item id="47153" type="Weapon" name="NPC-only Blackbird Cloak - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="47154" type="Weapon" name="NPC-only Royal Guard Cloak - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="47155" type="Weapon" name="NPC-only Guardian Cloak - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="47156" type="Weapon" name="NPC-only Trackers Cloak - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="47157" type="Weapon" name="NPC-only Visitors Cloak - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="47158" type="Weapon" name="Commando Talisman - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
@@ -737,18 +847,28 @@
 	<!-- Monster weapon. Bow type. -->
 	<item id="47163" type="Weapon" name="Monsters only_Giant's Fortress Bow - None" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="47164" type="Weapon" name="NPC-only_Faction_Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<item id="47165" type="Weapon" name="Blackbird Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<item id="47166" type="Weapon" name="Royal Guard Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<item id="47167" type="Weapon" name="Guardian Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<item id="47168" type="Weapon" name="Trackers Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<item id="47169" type="Weapon" name="Visitors Flag - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!-- Can be used on Flower Buds to purge contamination. -->
 	<item id="47170" type="Weapon" name="Purified Water - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
@@ -919,9 +1039,11 @@
 	</item>
 	<!-- MP +42, Stun/Paralysis/Knock Back Atk. Rate +15%, Stun/Paralysis/Knock Back Resistance +15%, Additional Damage to the Giants +5%, P./M. Critical Damage +15%, P./M. Atk. +3%. Effect does not stack with identical ones. -->
 	<item id="47214" type="Weapon" name="Ring of Creation - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="98" />
 	</item>
 	<!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, P. Critical Damage +15%, P. Atk. +4%. Effect does not stack with identical ones. -->
 	<item id="47215" type="Weapon" name="Ring of Authority - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="101" />
 	</item>
 	<!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -930,9 +1052,11 @@
 	-->
 	<item id="47216" type="Weapon" name="Ruler's Ring of Authority - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!-- MP +43, Stun/Paralysis/Knock Back Atk. Rate +25%, Stun/Paralysis/Knock Back Resistance +25%, Additional Damage to the Giants +5%, M. Critical Damage +15%, M. Atk. +4%. Effect does not stack with identical ones. -->
 	<item id="47217" type="Weapon" name="Ring of the Truth - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="101" />
 	</item>
 	<!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Knock Down when single M. Atk. skill is used.
@@ -941,40 +1065,55 @@
 	-->
 	<item id="47218" type="Weapon" name="Ring of the Truth-Seeker - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!-- Take this to Rafforty to enhance the Ring of the Beginning. -->
 	<item id="47219" type="Weapon" name="Source of the Emperor - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<item id="47220" type="Weapon" name="Red Pirate Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47221" type="Weapon" name="Blue Pirate Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47222" type="Weapon" name="Pirate Shipmate Garment - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47223" type="Weapon" name="Archer-Green Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47224" type="Weapon" name="Archer-Red Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47225" type="Weapon" name="Wizard Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47226" type="Weapon" name="Red Noblesse Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47227" type="Weapon" name="White Noblesse Garment - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47228" type="Weapon" name="Wizard-Wine Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47229" type="Weapon" name="Wizard-Red Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47230" type="Weapon" name="Blue Musketeer Garment - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47231" type="Weapon" name="Red Musketeer Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47232" type="Weapon" name="Cowboy-Purple Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="47233" type="Weapon" name="Cowboy-Red Garment - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Teleports to the Blackbird Campsite. -->
 	<item id="47234" type="Weapon" name="Scroll of Escape: Blackbird Campsite - None" icon="" bodypart="none" material="steel"
@@ -1022,6 +1161,7 @@
 	-->
 	<item id="47244" type="Weapon" name="Ramona's Fancy Earrings - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="147" />
 	</item>
 	<!--
 		Take it to Rafforty to exchange for the Source of the Emperor. MP +64, Additional Damage to the Giants +5%, Vampiric Rage +5%. Effect does not stack with identical ones.
@@ -1029,6 +1169,7 @@
 	-->
 	<item id="47245" type="Weapon" name="Helios' Majestic Earrings - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="147" />
 	</item>
 	<!--
 		Take it to Rafforty to exchange for the Source of the Emperor Exchange. MP +79, Additional Damage to the Giants +5%, Skill Cooldown -10%.
@@ -1036,12 +1177,14 @@
 	-->
 	<item id="47246" type="Weapon" name="Harnak's Deformed Necklace - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!--
 		Take it to Rafforty to exchange for the Source of the Emperor. MP +42, Additional Damage to the Giants +5%, P. Critical Damage +15%. Effect does not stack with identical ones.
 		Enchantment, Augment, Crystallization not possible
 	-->
 	<item id="47247" type="Weapon" name="Mimir's Worn Ring - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="96" />
 	</item>
 	<!--
 		Take it to Rafforty to exchange for the Source of the Emperor. MP +39, Additional Damage to the Giants +5%, M. Critical Damage +15%. Effect does not stack with identical ones.
@@ -1049,6 +1192,7 @@
 	-->
 	<item id="47248" type="Weapon" name="Forgotten Ring of the Core - None" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- A stone with the power of the Giants. Use to neutralize the effects of the Superion Barrier. -->
 	<item id="47249" type="Weapon" name="Giant Stone - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
@@ -1300,132 +1444,182 @@
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Tyrr, Sigel and Iss classes only. -->
 	<item id="47313" type="Weapon" name="Bloody Eternal Helmet - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, P. Critical Damage decreased and P. Def increased additionally. Tyrr, Sigel and Iss classes only. -->
 	<item id="47314" type="Weapon" name="Bloody Eternal Breastplate - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="433" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Tyrr, Sigel and Iss classes only. -->
 	<item id="47315" type="Weapon" name="Bloody Eternal Gaiters - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="270" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Tyrr, Sigel and Iss classes only. -->
 	<item id="47316" type="Weapon" name="Bloody Eternal Gauntlets - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Tyrr, Sigel and Iss classes only. -->
 	<item id="47317" type="Weapon" name="Bloody Eternal Boots - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="47318" type="Weapon" name="Blessed Eternal Shield - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="sDef" val="557" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Othell and Yul classes only. -->
 	<item id="47319" type="Weapon" name="Bloody Eternal Leather Helmet - Assassin Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, Evasion and Movement Speed increased, P. Critical Rate Received decreased, and Physical Attack Resistance increased. Othell and Yul classes only. -->
 	<item id="47320" type="Weapon" name="Bloody Eternal Leather Armor - Assassin Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="346" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Othell and Yul classes only. -->
 	<item id="47321" type="Weapon" name="Bloody Eternal Leather Leggings - Assassin Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="216" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Othell and Yul classes only. -->
 	<item id="47322" type="Weapon" name="Bloody Eternal Leather Gloves - Assassin Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Othell and Yul classes only. -->
 	<item id="47323" type="Weapon" name="Bloody Eternal Leather Boots - Assassin Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Aeore, Feoh, Wynn, Iss classes and Sayha's Seer only. -->
 	<item id="47324" type="Weapon" name="Bloody Eternal Circlet - Magic Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, M. Evasion and Mental Attack Resistance increased, P. Critical Rate/Damage Received decreased. Aeore, Feoh, Wynn, Iss classes and Sayha's Seer only. -->
 	<item id="47325" type="Weapon" name="Bloody Eternal Tunic - Magic Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="238" />
+		<baseAdd stat="mDef" val="56" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Aeore, Feoh, Wynn, Iss classes and Sayha's Seer only. -->
 	<item id="47326" type="Weapon" name="Bloody Eternal Stockings - Magic Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="148" />
+		<baseAdd stat="mDef" val="37" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Aeore, Feoh, Wynn, Iss classes and Sayha's Seer only. -->
 	<item id="47327" type="Weapon" name="Bloody Eternal Gloves - Magic Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Aeore, Feoh, Wynn, Iss classes and Sayha's Seer only. -->
 	<item id="47328" type="Weapon" name="Bloody Eternal Shoes - Magic Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Sigel classes only. -->
 	<item id="47329" type="Weapon" name="Bloody Eternal Helmet - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, P. Critical Damage decreased and P. Def increased additionally. Sigel classes only. -->
 	<item id="47330" type="Weapon" name="Bloody Eternal Breastplate - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="433" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Sigel classes only. -->
 	<item id="47331" type="Weapon" name="Bloody Eternal Gaiters - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="270" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Sigel classes only. -->
 	<item id="47332" type="Weapon" name="Bloody Eternal Gauntlets - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Sigel classes only. -->
 	<item id="47333" type="Weapon" name="Bloody Eternal Boots - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="47334" type="Weapon" name="Blessed Eternal Shield - Defense Type / Heavy Armor" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<set stat="sDef" val="557" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Othell, Yul, Iss, Aeore, Wynn, Tyrr classes and Eviscerator only. -->
 	<item id="47335" type="Weapon" name="Bloody Eternal Leather Helmet - Enchant Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, Evasion and Movement Speed increased, P. Critical Rate Received decreased, and Physical Attack Resistance increased. Othell, Yul, Iss, Aeore, Wynn, Tyrr classes and Eviscerator only. -->
 	<item id="47336" type="Weapon" name="Bloody Eternal Leather Armor - Enchant Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="346" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Othell, Yul, Iss, Aeore, Wynn, Tyrr classes and Eviscerator only. -->
 	<item id="47337" type="Weapon" name="Bloody Eternal Leather Leggings - Enchant Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="216" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Othell, Yul, Iss, Aeore, Wynn, Tyrr classes and Eviscerator only. -->
 	<item id="47338" type="Weapon" name="Bloody Eternal Leather Gloves - Enchant Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Othell, Yul, Iss, Aeore, Wynn, Tyrr classes and Eviscerator only. -->
 	<item id="47339" type="Weapon" name="Bloody Eternal Leather Boots - Enchant Type / Light Armor" icon="" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -3%, P. Atk. +1%, M. Atk. +2%. Aeore classes only. -->
 	<item id="47340" type="Weapon" name="Bloody Eternal Circlet - Recovery Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="162" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -8%, P. Atk. +1%, M. Atk. +2%. When enchanted to +4, M. Evasion and Mental Attack Resistance increased, P. Critical Rate/Damage Received decreased. Aeore classes only. -->
 	<item id="47341" type="Weapon" name="Bloody Eternal Tunic - Recovery Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="238" />
+		<baseAdd stat="mDef" val="56" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -5%, P. Atk. +1%, M. Atk. +2%. Aeore classes only. -->
 	<item id="47342" type="Weapon" name="Bloody Eternal Stockings - Recovery Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="148" />
+		<baseAdd stat="mDef" val="37" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Aeore classes only. -->
 	<item id="47343" type="Weapon" name="Bloody Eternal Gloves - Recovery Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<!-- PvE enchant type item. Damage received from an NPC -2%, P. Atk. +1%, M. Atk. +2%. Aeore classes only. -->
 	<item id="47344" type="Weapon" name="Bloody Eternal Shoes - Recovery Type / Robe" icon="" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="108" />
 	</item>
 	<item id="47345" type="Weapon" name="Blessed Eternal Sigil - Robe" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="pDef" val="51" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Double click to obtain a +8 enchanted Bloody Eternal Attack Type Heavy Armor Set. -->
 	<item id="47346" type="Weapon" name="+8 Bloody Eternal Set Pack - Attack Type / Heavy Armor" icon="" bodypart="none" material="steel"
@@ -1766,6 +1960,7 @@
 	-->
 	<item id="47417" type="Weapon" name="Dandy's Elemental Shirt - 2-hour" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="49" />
 	</item>
 	<!--
 		A shiny magic shirt laden with Einhasad's Energy.
@@ -1783,6 +1978,7 @@
 	-->
 	<item id="47418" type="Weapon" name="Dandy's Shiny Elemental Shirt - 2-hour" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="pDef" val="52" />
 	</item>
 	<!-- Armor that takes on the appearance of the NC Dinos Uniform. Enables the skills Perfect Pitch and Perfect Swing. When equipped, armor is disabled and cannot be used. However, hair accessories, weapons, and magic armor is not disabled. -->
 	<item id="47419" type="Weapon" name="Dandy's Uniform - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
@@ -1968,6 +2164,7 @@
 		STR +2
 	-->
 	<item id="47466" type="Weapon" name="Baium's Soul Ring - Str" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Damage +15%, Atk. Spd./Casting Spd. +5%, Stun/Hold/Mental Atk./Def. Success Rate +25%
@@ -1976,6 +2173,7 @@
 		INT +2
 	-->
 	<item id="47467" type="Weapon" name="Baium's Soul Ring - Int" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Damage +15%, Atk. Spd./Casting Spd. +5%, Stun/Hold/Mental Atk./Def. Success Rate +25%
@@ -1984,6 +2182,7 @@
 		CON +2
 	-->
 	<item id="47468" type="Weapon" name="Baium's Soul Ring - CON" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -1993,6 +2192,7 @@
 	-->
 	<item id="47469" type="Weapon" name="Frintezza's Soul Necklace - Body" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="158" />
 	</item>
 	<!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -2002,6 +2202,7 @@
 	-->
 	<item id="47470" type="Weapon" name="Frintezza's Soul Necklace - Mind" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="158" />
 	</item>
 	<!--
 		MP +62, Movement Speed +5, Poison/Bleed/Stun/Hold/Paralysis Atk./Def. Success Rate +20%, Skill Cooldown -10%, Damage Reflection +5%
@@ -2011,6 +2212,7 @@
 	-->
 	<item id="47471" type="Weapon" name="Frintezza's Soul Necklace - Barrier" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="158" />
 	</item>
 	<!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2020,6 +2222,7 @@
 		STR +2
 	-->
 	<item id="47472" type="Weapon" name="Queen Ant's Soul Ring - Str" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2029,6 +2232,7 @@
 		INT +2
 	-->
 	<item id="47473" type="Weapon" name="Queen Ant's Soul Ring - Int" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +31, P./M. Accuracy +4, P./M. Critical Rate +20, P./M. Critical Damage +15%, Stun/Poison/Bleed Atk./Def. Success Rate +25%
@@ -2038,6 +2242,7 @@
 		CON +2
 	-->
 	<item id="47474" type="Weapon" name="Queen Ant's Soul Ring - CON" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<!--
 		MP +46, Sleep/Paralysis/Mental Atk./Def. Success Rate +25%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2048,6 +2253,7 @@
 	-->
 	<item id="47475" type="Weapon" name="Orfen's Soul Earring - Shield" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="118" />
 	</item>
 	<!--
 		MP +46, Sleep/Paralysis/Mental Atk./Def. Success Rate +25%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2057,6 +2263,7 @@
 		M. Def. +4%
 	-->
 	<item id="47476" type="Weapon" name="Orfen's Soul Earring - Earth" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="118" />
 	</item>
 	<!--
 		MP +46, Sleep/Paralysis/Mental Atk./Def. Success Rate +25%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2066,6 +2273,7 @@
 		6 Major Attributes Def. +25
 	-->
 	<item id="47477" type="Weapon" name="Orfen's Soul Earring - Pure" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="118" />
 	</item>
 	<!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2076,6 +2284,7 @@
 	-->
 	<item id="47478" type="Weapon" name="Ruler's Ring of Authority - Str" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2086,6 +2295,7 @@
 	-->
 	<item id="47479" type="Weapon" name="Ruler's Ring of Authority - Int" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +46, P. Atk. +5%, P. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2096,6 +2306,7 @@
 	-->
 	<item id="47480" type="Weapon" name="Ruler's Ring of Authority - CON" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2106,6 +2317,7 @@
 	-->
 	<item id="47481" type="Weapon" name="Ring of the Truth-Seeker - Str" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2116,6 +2328,7 @@
 	-->
 	<item id="47482" type="Weapon" name="Ring of the Truth-Seeker - Int" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +46, M. Atk. +5%, M. Critical Damage +20%, LUC/CHA +2, Stun/Paralysis/Knock Back Atk./Def. Success Rate +30%, Additional Damage to the Giants +5%, 3-second Paralysis when single P. Atk. skill is used
@@ -2126,6 +2339,7 @@
 	-->
 	<item id="47483" type="Weapon" name="Ring of the Truth-Seeker - CON" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="114" />
 	</item>
 	<!--
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2136,6 +2350,7 @@
 	-->
 	<item id="47484" type="Weapon" name="Blessed Antharas' Earring - Shield" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2146,6 +2361,7 @@
 	-->
 	<item id="47485" type="Weapon" name="Blessed Antharas' Earring - Earth" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		MP +59, P./M. Def. +15%, CON/MEN +3, Earth/Holy Attribute Def. +30, Bleed Atk./Def. Success Rate +50%, Stun/Mental Atk./Def. Success Rate +40%, Heal Received +10%, Skill MP Consumption -5%, Vampiric Rage +4%
@@ -2156,6 +2372,7 @@
 	-->
 	<item id="47486" type="Weapon" name="Blessed Antharas' Earring - Pure" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -2166,6 +2383,7 @@
 	-->
 	<item id="47487" type="Weapon" name="Blessed Valakas' Necklace - Body" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="226" />
 	</item>
 	<!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -2176,6 +2394,7 @@
 	-->
 	<item id="47488" type="Weapon" name="Blessed Valakas' Necklace - Mind" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="226" />
 	</item>
 	<!--
 		MP +79, HP +625, P. Atk. +10%, M. Atk. +20%, M. Critical Rate +20, STR/INT+3, Fire Attack Def. +30, Dark Attack Def. +20, Sleep Atk./Def. Success Rate +50%, P. Skill Power +5%, Skill Cooldown -10%, Damage Reflection 5%
@@ -2186,6 +2405,7 @@
 	-->
 	<item id="47489" type="Weapon" name="Blessed Valakas' Necklace - Barrier" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<baseAdd stat="mDef" val="226" />
 	</item>
 	<!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -2196,6 +2416,7 @@
 		P. Def. +4%
 	-->
 	<item id="47490" type="Weapon" name="Lindvior's Earring - Shield" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -2206,6 +2427,7 @@
 		M. Def. +4%
 	-->
 	<item id="47491" type="Weapon" name="Lindvior's Earring - Earth" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!--
 		MP +59, P./M. Critical Damage +10%, Movement Speed +5, DEX/WIT +3, Wind/Dark Attack Def. +30, Petrify Atk./Def. Success Rate +50%, Knock Back/Knock Down/Pull Atk./Def. Success Rate +40%, Danger Zone Def. Success Rate +40%, Abnormal Status Reflection +10%, Reflect Damage Magic +10%
@@ -2216,6 +2438,7 @@
 		6 Major Attributes Def. +25
 	-->
 	<item id="47492" type="Weapon" name="Lindvior's Earring - Pure" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!-- Used as an ingredient when dissolving rare accessories through Rafforty. -->
 	<item id="47493" type="Weapon" name="Accessory Solvent - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
@@ -2450,6 +2673,10 @@
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
 	<item id="47557" type="Weapon" name="Master Fishing Rod - Stage 1" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!--
 		Fishing time reduced by: 15 seconds
@@ -2457,6 +2684,10 @@
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
 	<item id="47558" type="Weapon" name="Master Fishing Rod - Stage 2" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!--
 		Fishing time reduced by: 20 seconds
@@ -2464,6 +2695,10 @@
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
 	<item id="47559" type="Weapon" name="Master Fishing Rod - Stage 3" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!--
 		Fishing time reduced by: 25 seconds
@@ -2471,6 +2706,10 @@
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
 	<item id="47560" type="Weapon" name="Master Fishing Rod - Stage 4" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!--
 		Fishing time reduced by: 30 seconds
@@ -2478,6 +2717,10 @@
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
 	<item id="47561" type="Weapon" name="Master Fishing Rod - Stage 5" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Ingredient necessary for production of the Master Fishing Rod. Also needed when leveling up the Master Fishing Rod. -->
 	<item id="47562" type="Weapon" name="Santiago's Reel Fragment - None" icon="" bodypart="none" material="steel" weight="0"
@@ -2556,6 +2799,10 @@
 	<!-- A shoddy fishing rod that has been given to you for practice. It's fine for practice, though. -->
 	<item id="47580" type="Weapon" name="Practice Fishing Rod - 1-hour" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- No special abilities, but allows you to transform into Tow for 10 minutes. Cannot be used in the Olympiad. -->
 	<item id="47581" type="Weapon" name="Transformation Scroll: Tow - None" icon="" bodypart="none" material="steel" weight="0"
@@ -2630,12 +2877,30 @@
 			crystal_type="none">
 	</item>
 	<item id="47597" type="Weapon" name="Wedding Bouquet - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="1" />
 	</item>
 	<item id="47598" type="Weapon" name="Cupid's Bow - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="47599" type="Weapon" name="Pig Lollipop - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="47600" type="Weapon" name="Warm Bear Paws - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="5" />
+		<set stat="mAtk" val="5" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A log recorded by Shannon while training the new Commando recruits. You must take this to the Warehouse Keeper Wilford. -->
 	<item id="47601" type="Weapon" name="Novice Training Log - None" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">

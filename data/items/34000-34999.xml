@@ -9486,8 +9486,8 @@
 	<item id="34998" type="Weapon" name="Tauti's One-handed Axe - None" icon="icon.weapon_tauti_one_hand_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
 			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
-		<set stat="pAtk" val="638" />
-		<set stat="mAtk" val="278" />
+		<set stat="pAtk" val="698" />
+		<set stat="mAtk" val="303" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 		<add stat="darkPower" val="450" />
@@ -9503,8 +9503,8 @@
 	<item id="34999" type="Weapon" name="Tauti's Axe - None" icon="icon.weapon_tauti_one_hand_magic_axe_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
 			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
-		<set stat="pAtk" val="776" />
-		<set stat="mAtk" val="278" />
+		<set stat="pAtk" val="849" />
+		<set stat="mAtk" val="303" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<add stat="darkPower" val="450" />
