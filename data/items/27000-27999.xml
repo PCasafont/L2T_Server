@@ -1833,56 +1833,56 @@
 			immediateEffect="1" crystalType="c" weight="1000" isStackable="true">
 	</item>
 	<!-- Double-click to get one Rabbit Ears with 2 types of effects. -->
-	<item id="27458" type="EtcItem" name="Rabbit Ears Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27458" type="EtcItem" name="Rabbit Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get one Raccoon Ears with 2 types of effects. -->
-	<item id="27459" type="EtcItem" name="Raccoon Ears Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27459" type="EtcItem" name="Raccoon Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get one Cat Ears with 2 types of effects. -->
-	<item id="27460" type="EtcItem" name="Cat Ears Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+	<item id="27460" type="EtcItem" name="Cat Ears Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Double-click to get one Romantic Chapeau with 2 types of effects. -->
-	<item id="27461" type="EtcItem" name="Romantic Chapeau Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27461" type="EtcItem" name="Romantic Chapeau Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get one Angel Circlet with 2 types of effects. -->
-	<item id="27462" type="EtcItem" name="Angel Circlet Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27462" type="EtcItem" name="Angel Circlet Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get one Demon Circlet with 2 types of effects. -->
-	<item id="27463" type="EtcItem" name="Demon Circlet Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27463" type="EtcItem" name="Demon Circlet Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get one Pirate's Eyepatch with 2 types of effects. -->
-	<item id="27464" type="EtcItem" name="Pirate's Eyepatch Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27464" type="EtcItem" name="Pirate's Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get one Outlaw's Eyepatch with 2 types of effects. -->
-	<item id="27465" type="EtcItem" name="Outlaw's Eyepatch Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27465" type="EtcItem" name="Outlaw's Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get one Eyepatch with 2 types of effects. -->
-	<item id="27466" type="EtcItem" name="Eyepatch Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+	<item id="27466" type="EtcItem" name="Eyepatch Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Double-click to get one Party Hat with 2 types of effects. -->
-	<item id="27467" type="EtcItem" name="Party Hat Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27467" type="EtcItem" name="Party Hat Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to get one Refined Angel Ring with 2 types of effects. -->
-	<item id="27468" type="EtcItem" name="Refined Angel Ring Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27468" type="EtcItem" name="Refined Angel Ring Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get one Refined Devil Horn with 2 types of effects. -->
-	<item id="27469" type="EtcItem" name="Refined Devil Horn Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27469" type="EtcItem" name="Refined Devil Horn Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. Has a very low chance of obtaining a Radiant Gemstone Fragment or a La Vie En Rose's Radiant Brooch. -->
-	<item id="27470" type="EtcItem" name="Shadai's Jewelry Box - None" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27470" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Increases Vitality Status Bonus EXP by 25% and decreases Vitality Point Consumption Speed by 7%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
 	<item id="27471" type="Armor" name="Vital Stone - Lv. 4" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="chest"
@@ -1917,7 +1917,7 @@
 			immediateEffect="1" weight="5">
 	</item>
 	<!-- Double-click to acquire a Lv. 1 Tanzanite. -->
-	<item id="27479" type="EtcItem" name="La Vie En Rose's Tanzanite Chest - None" icon="icon.etc_bm_jewelbox_tanzanite" immediateEffect="1"
+	<item id="27479" type="EtcItem" name="La Vie En Rose's Tanzanite Chest" icon="icon.etc_bm_jewelbox_tanzanite" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Increases Vitality Status Bonus EXP by 3%. Effect does not stack with additional jewels of the same type. -->
@@ -1933,7 +1933,7 @@
 			immediateEffect="1" weight="5">
 	</item>
 	<!-- Double-click to acquire a Lv. 1 Vital Stone. -->
-	<item id="27483" type="EtcItem" name="La Vie En Rose's Vital Stone Chest - None" icon="icon.etc_bm_jewelbox_vital" immediateEffect="1"
+	<item id="27483" type="EtcItem" name="La Vie En Rose's Vital Stone Chest" icon="icon.etc_bm_jewelbox_vital" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. Only usable when 1 or more Vitality slot is full. Cannot be used in the Olympiad. Deleted after event. -->
@@ -2045,89 +2045,89 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Novice Adventurer's shirt. M. Def. + 11 when equipped. -->
-	<item id="27511" type="Armor" name="Novice Adventurer's Shirt - None" icon="icon.etc_shirts_none_i00" defaultAction="equip"
-			bodypart="none" immediateEffect="1" weight="130">
+	<item id="27511" type="Armor" name="Novice Adventurer's Shirt" icon="icon.etc_shirts_none_i00" defaultAction="equip" bodypart="none"
+			immediateEffect="1" weight="130">
 		<baseAdd stat="pDef" val="28" />
 		<baseAdd stat="mDef" val="11" />
 	</item>
 	<!-- Novice Adventurer's brass-hued hair accessory. Requires 2 hair accessory slots. Critical Rate + 10 when equipped. -->
-	<item id="27512" type="Armor" name="Novice Adventurer's Circlet - None" icon="icon.accessory_au_karm_i00" defaultAction="equip"
+	<item id="27512" type="Armor" name="Novice Adventurer's Circlet" icon="icon.accessory_au_karm_i00" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10">
 	</item>
 	<!-- Novice Adventurer's bracelet. MP + 60 and uses 3 talisman slots when equipped. -->
-	<item id="27513" type="Armor" name="Novice Adventurer's Bracelet - None" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
+	<item id="27513" type="Armor" name="Novice Adventurer's Bracelet" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1">
 	</item>
 	<!-- Support box containing a Novice Adventurer's Shirt, Circlet, and Bracelet. -->
-	<item id="27514" type="EtcItem" name="Novice Adventurer's Support Box - None" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+	<item id="27514" type="EtcItem" name="Novice Adventurer's Support Box" icon="icon.etc_jewel_box_i00" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Experienced Adventurer's shirt. M. Def. + 12 and CON + 2 when equipped. -->
-	<item id="27515" type="Armor" name="Experienced Adventurer's Shirt - None" icon="icon.etc_shirts_c_i02" defaultAction="equip"
-			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="none" weight="130">
+	<item id="27515" type="Armor" name="Experienced Adventurer's Shirt" icon="icon.etc_shirts_c_i02" defaultAction="equip" bodypart="none"
+			immediateEffect="1" crystalCount="1" crystalType="none" weight="130">
 		<baseAdd stat="pDef" val="28" />
 		<baseAdd stat="mDef" val="12" />
 	</item>
 	<!-- Experienced Adventurer's silver-hued hair accessory. Requires 2 hair accessory slots. Critical Rate + 20 when equipped. -->
-	<item id="27516" type="Armor" name="Experienced Adventurer's Circlet - None" icon="icon.accessory_ar_karm_i00" defaultAction="equip"
+	<item id="27516" type="Armor" name="Experienced Adventurer's Circlet" icon="icon.accessory_ar_karm_i00" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10">
 	</item>
 	<!-- Experienced Adventurer's bracelet. MP + 90 and uses 3 talisman slots when equipped. -->
-	<item id="27517" type="Armor" name="Experienced Adventurer's Bracelet - None" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
+	<item id="27517" type="Armor" name="Experienced Adventurer's Bracelet" icon="icon.accessory_shiny_bracelet" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1">
 	</item>
 	<!-- Support box containing an Experienced Adventurer's Shirt, Circlet, and Bracelet. -->
-	<item id="27518" type="EtcItem" name="Experienced Adventurer's Support Box - None" icon="icon.etc_treasure_box_i00" immediateEffect="1"
+	<item id="27518" type="EtcItem" name="Experienced Adventurer's Support Box" icon="icon.etc_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Adventurer's shirt. INT + 2, STR + 2, Speed + 7 when equipped. -->
-	<item id="27519" type="Armor" name="Adventurer's Shirt - None" icon="BranchIcon.icon.shirt_of_explorer_i00" defaultAction="equip"
+	<item id="27519" type="Armor" name="Adventurer's Shirt" icon="BranchIcon.icon.shirt_of_explorer_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="none" weight="130">
 		<baseAdd stat="pDef" val="28" />
 		<baseAdd stat="mDef" val="13" />
 	</item>
 	<!-- Adventurer's circlet. Requires 2 hair accessory slots. P. Atk. + 3%, M. Atk. + 5% when equipped. -->
-	<item id="27520" type="Armor" name="Adventurer's Circlet - None" icon="BranchSys.icon.br_valkyrie_cap_i00" defaultAction="equip"
+	<item id="27520" type="Armor" name="Adventurer's Circlet" icon="BranchSys.icon.br_valkyrie_cap_i00" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10">
 	</item>
 	<!-- Adventurer's Bracelet. STR/DEX/CON/INT/WIT/MEN + 1 and uses 3 talisman slots when equipped. -->
-	<item id="27521" type="Armor" name="Adventurer's Bracelet - None" icon="BranchIcon.icon.bracelet_of_explorer_i00" defaultAction="equip"
+	<item id="27521" type="Armor" name="Adventurer's Bracelet" icon="BranchIcon.icon.bracelet_of_explorer_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1">
 	</item>
 	<!-- Cube that can be used for 30 days. Double-click to get one of the following: Specter weapon / Seraph armor / (Blessed) Scroll: Enchant Weapon (R-grade) / (Blessed) Scroll: Enchant Armor (R-grade) / Spirit Stone / Attribute Crystal. (Can only be used once a-day) -->
 	<item id="27522" type="EtcItem" name="Support Cube - 30-day" icon="Branchsys2.icon.cube_event_i02" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Support box containing a Adventurer's Shirt, Circlet, and Bracelet. -->
-	<item id="27523" type="EtcItem" name="Adventurer's Support Box - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="27523" type="EtcItem" name="Adventurer's Support Box" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
 	</item>
 	<!-- Double-click to get a Talisman - Abundance (War, Tactics, Morale, or Physique.) -->
-	<item id="27524" type="EtcItem" name="Talisman - Abundance Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27524" type="EtcItem" name="Talisman - Abundance Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Take it to the Dimensional Merchant to exchange for a Requiem weapon. -->
-	<item id="27525" type="EtcItem" name="Requiem Weapon Coupon - None" icon="icon.fairy_encounter_letter" immediateEffect="1"
-			crystalType="c" weight="1" isStackable="true">
+	<item id="27525" type="EtcItem" name="Requiem Weapon Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
 	</item>
 	<!-- Take it to the Dimensional Merchant to exchange for an Immortal armor set box. -->
-	<item id="27526" type="EtcItem" name="Immortal Armor Set Coupon - None" icon="icon.fairy_encounter_letter" immediateEffect="1"
+	<item id="27526" type="EtcItem" name="Immortal Armor Set Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Can acquire immortal heavy armor. -->
-	<item id="27527" type="EtcItem" name="Immortal Heavy Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27527" type="EtcItem" name="Immortal Heavy Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Can acquire immortal light armor. -->
-	<item id="27528" type="EtcItem" name="Immortal Light Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27528" type="EtcItem" name="Immortal Light Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Can acquire Immortal Robe Armor. -->
-	<item id="27529" type="EtcItem" name="Immortal Robe Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27529" type="EtcItem" name="Immortal Robe Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Pack containing Scrolls of Escape for Alligator Island/Outlaw Forest/Sea of Spores/Forsaken Plains/Fields of Massacre/Swamp of Screams/Forest of the Dead/Wall of Argos/Varka Silenos Barracks/Ketra Orc Outpost/Den of Evil/Sel Mahum Training Grounds/Plains of the Lizardmen/Field of Silence/ Field of Whispers. -->
-	<item id="27530" type="EtcItem" name="Scroll of Escape Pack - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="27530" type="EtcItem" name="Scroll of Escape Pack" icon="icon.etc_pi_gift_box_i00" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
 	</item>
 	<!-- Diana's onyx earring. Take it to Diana in the Talking Island Village. -->
 	<item id="27531" type="EtcItem" name="Diana's Earring - Quest" icon="icon.accessary_mage_earing_i00" immediateEffect="1"
@@ -2145,28 +2145,28 @@
 			isStackable="true">
 	</item>
 	<!-- Double-click to get a + 8 enchanted Shiny Elemental Shirt. -->
-	<item id="27535" type="EtcItem" name="+ 8 Shiny Elemental Shirt Pack - None" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+	<item id="27535" type="EtcItem" name="+ 8 Shiny Elemental Shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 8 enchanted Reflect Attack T-shirt. -->
-	<item id="27536" type="EtcItem" name="+ 8 Reflect Attack T-shirt Pack - None" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+	<item id="27536" type="EtcItem" name="+ 8 Reflect Attack T-shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 8 enchanted Reflect Magic T-shirt. -->
-	<item id="27537" type="EtcItem" name="+ 8 Reflect Magic T-shirt Pack - None" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+	<item id="27537" type="EtcItem" name="+ 8 Reflect Magic T-shirt Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get a + 7 enchanted Bloody Amaranthine weapon. -->
-	<item id="27538" type="EtcItem" name="+ 7 Bloody Amaranthine Pack - None" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
+	<item id="27538" type="EtcItem" name="+ 7 Bloody Amaranthine Pack" icon="icon.etc_ev_kalie_treasure_box" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get 2 Lv. 4 Obsidian, Opal, Emerald, or Diamond jewels. -->
-	<item id="27539" type="EtcItem" name="Lv. 4 Jewel Bundle - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="27539" type="EtcItem" name="Lv. 4 Jewel Bundle" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
 	</item>
 	<!-- Put this item on the character that will receive the service, and send a support ticket on support.lineage2.com. Clan leaders only! -->
-	<item id="27540" type="EtcItem" name="Clan Name Change Ticket - None" icon="icon.etc_exchange_ticket_i02" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
+	<item id="27540" type="EtcItem" name="Clan Name Change Ticket" icon="icon.etc_exchange_ticket_i02" immediateEffect="1" crystalType="c"
+			weight="100" isStackable="true">
 	</item>
 	<!-- Bring this to the village symbol maker to imprint a 30-day magic symbol that boosts stats (Hold, Sleep, Paralysis, Mental Attack, Poison, Bleed, Stun Resistance + 20 / Buff-canceling Attack Resistance + 20 / 5% chance of reflecting physical and magical abnormal status). All classes. -->
 	<item id="27541" type="EtcItem" name="Mysterious Abnormal State Resistance Dye - Abnormal State/ Buff Cancellation Resistance,
@@ -2174,44 +2174,43 @@
 			isStackable="true">
 	</item>
 	<!-- Double-click to learn how to ride a Wolf. -->
-	<item id="27542" type="EtcItem" name="Riding Manual: Wolf - None" icon="icon.etc_kamael_skill_book_i01" immediateEffect="1"
+	<item id="27542" type="EtcItem" name="Riding Manual: Wolf" icon="icon.etc_kamael_skill_book_i01" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to receive a variety of items. -->
+	<item id="27543" type="EtcItem" name="Lv. 41 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27543" type="EtcItem" name="Lv. 41 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27544" type="EtcItem" name="Lv. 53 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27544" type="EtcItem" name="Lv. 53 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27545" type="EtcItem" name="Lv. 63 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27545" type="EtcItem" name="Lv. 63 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27546" type="EtcItem" name="Lv. 77 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27546" type="EtcItem" name="Lv. 77 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27547" type="EtcItem" name="Lv. 79 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27547" type="EtcItem" name="Lv. 79 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27548" type="EtcItem" name="Lv. 80 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27548" type="EtcItem" name="Lv. 80 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27549" type="EtcItem" name="Lv. 81 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to receive a variety of items. -->
-	<item id="27549" type="EtcItem" name="Lv. 81 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			isStackable="true">
-	</item>
-	<!-- Double-click to receive a variety of items. -->
-	<item id="27550" type="EtcItem" name="Lv. 83 Equipment Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27550" type="EtcItem" name="Lv. 83 Equipment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to get Blessed Antharas' Earring, Blessed Valakas' Necklace, Tauti's Ring, Earth Wyrm Heart Ring, Ruler's Authority, and Lindvior's Earring for 30 days. -->
-	<item id="27551" type="EtcItem" name="Rare Accessory Pack - None" icon="icon.etc_pi_box_belief_pack" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="27551" type="EtcItem" name="Rare Accessory Pack" icon="icon.etc_pi_box_belief_pack" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Item given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36, and Attribute Resistance by 15. Cannot be used in the Olympiad. -->
 	<item id="27552" type="Armor" name="Ruler's Authority - 30-day" icon="icon.belt_rulers_authority" defaultAction="equip"
@@ -2227,117 +2226,116 @@
 			isStackable="true">
 	</item>
 	<!-- Take it to the Dimensional Merchant to exchange for one of the Lv. 3 Giant Dyes: STR, DEX, CON, INT, WIT, or MEN. -->
-	<item id="27555" type="EtcItem" name="Lv. 3 Giant Dye Exchange Coupon - None" icon="icon.fairy_encounter_letter" immediateEffect="1"
+	<item id="27555" type="EtcItem" name="Lv. 3 Giant Dye Exchange Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Take it to the Dimensional Merchant to exchange for one of the Lv. 4 Legendary Dyes: STR, DEX, CON, INT, WIT, or MEN. -->
-	<item id="27556" type="EtcItem" name="Lv. 4 Legendary Dye Exchange Coupon - None" icon="icon.fairy_encounter_letter" immediateEffect="1"
+	<item id="27556" type="EtcItem" name="Lv. 4 Legendary Dye Exchange Coupon" icon="icon.fairy_encounter_letter" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
 	<!-- Lineage II baseball uniform. -->
-	<item id="27557" type="Armor" name="Lineage II Baseball Uniform - None" icon="icon.london_olympic_bikini" defaultAction="equip"
+	<item id="27557" type="Armor" name="Lineage II Baseball Uniform" icon="icon.london_olympic_bikini" defaultAction="equip"
 			bodypart="none" immediateEffect="1" weight="1000">
 	</item>
 	<!-- Lineage II baseball cap. -->
-	<item id="27558" type="Armor" name="Lineage II Baseball Cap - None" icon="icon.accessory_mining_cap_i00" defaultAction="equip"
+	<item id="27558" type="Armor" name="Lineage II Baseball Cap" icon="icon.accessory_mining_cap_i00" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10">
 	</item>
 	<!-- Changes the appearance of the entire armor into that of the Lineage II Baseball Uniform. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of the Lineage II Baseball Uniform. Appearance is restored through the use of a Restoration Stone. -->
-	<item id="27559" type="EtcItem" name="Lineage II Baseball Uniform Appearance Stone - None" icon="BranchSys3.icon1.g_scrl_change_chest"
+	<item id="27559" type="EtcItem" name="Lineage II Baseball Uniform Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Changes the appearance of a hair accessory to that of the Lineage II Baseball Cap. Can only be used on hair accessories that use 2 slots. -->
-	<item id="27560" type="EtcItem" name="Lineage II Baseball Cap Appearance Stone - None" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+	<item id="27560" type="EtcItem" name="Lineage II Baseball Cap Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Obtain an Ultimate Support Cube (30-day). Cubes cannot be dropped or exchanged. -->
-	<item id="27561" type="EtcItem" name="Ultimate Support Cube Box - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" weight="100" isStackable="true">
-	</item>
-	<!-- Double-click to get the following: XP Rune IV (Lv. 1-99) 100% (7-day) x1, Venir's Talisman Stage 4 x1, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Radiant Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x5, Leona's Scroll: Buffs x10, Dandy's Scroll: Passion x10. -->
-	<item id="27562" type="EtcItem" name="Noble Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<item id="27561" type="EtcItem" name="Ultimate Support Cube Box" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			weight="100" isStackable="true">
 	</item>
+	<!-- Double-click to get the following: XP Rune IV (Lv. 1-99) 100% (7-day) x1, Venir's Talisman Stage 4 x1, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Radiant Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x5, Leona's Scroll: Buffs x10, Dandy's Scroll: Passion x10. -->
+	<item id="27562" type="EtcItem" name="Noble Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c" weight="100"
+			isStackable="true">
+	</item>
 	<!-- Double-click to get the following: XP Rune IV (Lv. 1-99) 100% (7-day) x2, Requiem Weapon Coupon x1, Immortal Armor Set Coupon x1, Lv. 3 Giant Dye Exchange Coupon x10, Venir's Talisman Stage 6 x1, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Twinkling Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x10, Leona's Scroll: Buffs x20, Dandy's Scroll: Passion x20, Mysterious Abnormal State Resistance Dye (30-day) x1, Rare Accessory Pack (30-day) x1. -->
-	<item id="27563" type="EtcItem" name="Divine Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<item id="27563" type="EtcItem" name="Divine Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			weight="100" isStackable="true">
 	</item>
 	<!-- Double-click to get the following: Ultimate Support Cube x1, Requiem Weapon Coupon x1, Immortal Armor Set Coupon x1, Lv. 4 Legendary Dye Exchange Coupon x10, Venir's Talisman Stage 8 x1, XP Rune IV (Lv. 1-99) 100% (7-day) x4, Adventurer's Support Box x1, Talisman - Abundance Pack x1, Giant's Energy 100-unit Pack x1, Energy of Destruction 100-unit Pack x1, Blessed Zodiac Agathion Pack (30-day) x1, Beauty Shop Ticket x20, Leona's Scroll: Buffs x40, Dandy's Scroll: Passion x40, Mysterious Abnormal State Resistance Dye x1, Rare Accessory Pack x1, Riding Manual: Riding Wolf x1. -->
-	<item id="27564" type="EtcItem" name="Ultimate Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+	<item id="27564" type="EtcItem" name="Ultimate Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
 			weight="100" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a C-grade Steel weapon. -->
-	<item id="27565" type="EtcItem" name="Weapon Pack (C-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27565" type="EtcItem" name="Weapon Pack (C-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to obtain a B-grade Steel weapon. -->
-	<item id="27566" type="EtcItem" name="Weapon Pack (B-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27566" type="EtcItem" name="Weapon Pack (B-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to obtain a A-grade Steel weapon. -->
-	<item id="27567" type="EtcItem" name="Weapon Pack (A-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27567" type="EtcItem" name="Weapon Pack (A-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to obtain a S-grade Steel weapon. -->
-	<item id="27568" type="EtcItem" name="Weapon Pack (S-grade) - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27568" type="EtcItem" name="Weapon Pack (S-grade)" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to obtain a Steel Dynasty weapon. -->
-	<item id="27569" type="EtcItem" name="Dynasty Weapon Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			isStackable="true">
+	<item id="27569" type="EtcItem" name="Dynasty Weapon Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27570" type="EtcItem" name="Weekend Login Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27570" type="EtcItem" name="Weekend Login Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27571" type="EtcItem" name="Monthly Login Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27571" type="EtcItem" name="Monthly Login Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27572" type="EtcItem" name="Daily Quest Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27572" type="EtcItem" name="Daily Quest Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27573" type="EtcItem" name="Daily Instance Instance Zone Reward Pack - None" icon="icon.event_hero_treasure_box_i00"
+	<item id="27573" type="EtcItem" name="Daily Instance Instance Zone Reward Pack" icon="icon.event_hero_treasure_box_i00"
 			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27574" type="EtcItem" name="Daily Fishing Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27574" type="EtcItem" name="Daily Fishing Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27575" type="EtcItem" name="Olympiad Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27575" type="EtcItem" name="Olympiad Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27576" type="EtcItem" name="Ceremony of Chaos Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27576" type="EtcItem" name="Ceremony of Chaos Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain a crafting ingredient. -->
-	<item id="27577" type="EtcItem" name="Castle Siege Reward Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="27577" type="EtcItem" name="Castle Siege Reward Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!--
 		Premium User Only
 		Wrapped Pack containing XP Rune III (Lv. 1-100+) 100% (1-hour).
 	-->
-	<item id="27578" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (1-hour) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="27578" type="EtcItem" name="XP Rune III (Lv. 1-100+) 100% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!--
 		Premium User Only
 		Wrapped Pack containing SP Rune 100% (1-hour).
 	-->
-	<item id="27579" type="EtcItem" name="SP Rune 100% Pack (1-hour) - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
-			immediateEffect="1" crystalType="c" isStackable="true">
+	<item id="27579" type="EtcItem" name="SP Rune 100% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!--
 		Premium User Only
 		Wrapped Pack containing Prestige Rune 100% (1-hour).
 	-->
-	<item id="27580" type="EtcItem" name="Prestige Rune 100% Pack - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
-			immediateEffect="1" crystalType="c" isStackable="true">
+	<item id="27580" type="EtcItem" name="Prestige Rune 100% Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
 	</item>
 	<!--
 		Premium User Only
@@ -2361,8 +2359,8 @@
 			isStackable="true">
 	</item>
 	<!-- Top-grade Spirt Stone. It's an ingredient to augment weapons, and can be used by characters Lv. 99 and above. -->
-	<item id="27584" type="EtcItem" name="Top-grade Spirt Stone - None" icon="icon.renewal_mineral_r99" immediateEffect="1"
-			crystalType="c" weight="2" isStackable="true">
+	<item id="27584" type="EtcItem" name="Top-grade Spirt Stone" icon="icon.renewal_mineral_r99" immediateEffect="1" crystalType="c"
+			weight="2" isStackable="true">
 	</item>
 	<!-- Reward box containing various rewards. -->
 	<item id="27585" type="EtcItem" name="Special Supply Box - Standard" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
@@ -2397,63 +2395,62 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Take it to High Priest Franco in Talking Island to exchange for various consumable items. -->
-	<item id="27593" type="EtcItem" name="Daily Coin - None" icon="icon.ev_festival_goldcoin" immediateEffect="1" crystalType="c"
-			isStackable="true">
+	<item id="27593" type="EtcItem" name="Daily Coin" icon="icon.ev_festival_goldcoin" immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Vitality consumption + 200% and XP/SP acquisition + 200% while hunting. Remains after death. Duration is 30 sec. Cooldown is 1 min. Only usable when 1 or more Vitality slot is full. Cannot be used in the Olympiad. -->
-	<item id="27594" type="EtcItem" name="Maphr's Wind Scroll - None" icon="icon.freya_scroll" immediateEffect="1" crystalType="c"
+	<item id="27594" type="EtcItem" name="Maphr's Wind Scroll" icon="icon.freya_scroll" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Retains Vitality for 10 min. Cooldown is 30min. Vitality item with limited usage. -->
-	<item id="27595" type="EtcItem" name="Vitality Maintaining Potion - None" icon="BranchSys.icon.br_vitality_potion_i00" immediateEffect="1"
+	<item id="27595" type="EtcItem" name="Vitality Maintaining Potion" icon="BranchSys.icon.br_vitality_potion_i00" immediateEffect="1"
 			crystalType="c" weight="36" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Requiem or Apocalypse equipment for Blessed equipment. -->
-	<item id="27596" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade) - None" icon="icon.bless_scroll_r2" immediateEffect="1"
+	<item id="27596" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade)" icon="icon.bless_scroll_r2" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Specter equipment for Blessed equipment. -->
-	<item id="27597" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade) - None" icon="icon.bless_scroll_r95" immediateEffect="1"
+	<item id="27597" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Amaranthine equipment for Blessed equipment. -->
-	<item id="27598" type="EtcItem" name="Scroll of Blessing: Weapon (R99-grade) - None" icon="icon.bless_scroll_r99" immediateEffect="1"
+	<item id="27598" type="EtcItem" name="Scroll of Blessing: Weapon (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Immortal or Hell equipment for Blessed equipment. -->
-	<item id="27599" type="EtcItem" name="Scroll of Blessing: Armor (R-grade) - None" icon="icon.bless_scroll_r2" immediateEffect="1"
+	<item id="27599" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Seraph equipment for Blessed equipment. -->
-	<item id="27600" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade) - None" icon="icon.bless_scroll_r95" immediateEffect="1"
+	<item id="27600" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- There is a big chance that the Blacksmith of Mammon will exchange for you standard Eternal equipment for Blessed equipment. -->
-	<item id="27601" type="EtcItem" name="Scroll of Blessing: Armor (R99-grade) - None" icon="icon.bless_scroll_r99" immediateEffect="1"
+	<item id="27601" type="EtcItem" name="Scroll of Blessing: Armor (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1"
 			crystalType="c" weight="100" isStackable="true">
 	</item>
 	<!-- Get 1 of the following:  1 type of Talisman - Abundance, Seven Signs' Energy, Antharas' Earring, Talisman - Lilith, Talisman - Anakim, Baium's Soul Ring, Valakas' Necklace, Bottle of Antharas' Soul, Bottle of Valakas' Soul, Baium's Ring, Octavis' Ring, Bottle of Queen Ant's Soul, Istina's Earring, Queen Ant's Ring, Istina's Necklace, Bottle of Orfen's Soul, Octavis' Earring, Istina's Earring, Octavis' Necklace, Immortal Scroll Chapter 1, Superior Giant's Codex - Mastery Chapter 1, Superior Giant's Codex Chapter 1, Lv. 5 Legendary Dye Pack, Elcyum x2, Superior Giant's Codex - Discipline Chapter 1, Giant's Energy x10, Orfen's Earring, Elcyum Crystal x8, Tempest Stone, Gemstone (R-grade) x40, 1 of 5 Fortune Pocket - Stage 5. -->
-	<item id="27602" type="EtcItem" name="Abundance Box - None" icon="icon.etc_pi_gift_box_i03" immediateEffect="1" crystalType="c"
+	<item id="27602" type="EtcItem" name="Abundance Box" icon="icon.etc_pi_gift_box_i03" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
 	<!-- Reward chest for completing daily missions. You can obtain one of various rewards. -->
-	<item id="27603" type="EtcItem" name="Daily Mission Reward Chest - None" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
+	<item id="27603" type="EtcItem" name="Daily Mission Reward Chest" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain ingredients needed for Double Crystal Enhancement of R99 weapons. -->
-	<item id="27604" type="EtcItem" name="Amaranthine Double Crystal Enhancement Box - None" icon="icon.etc_box_of_adventure_2_i00"
+	<item id="27604" type="EtcItem" name="Amaranthine Double Crystal Enhancement Box" icon="icon.etc_box_of_adventure_2_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to receive one of the following: Blessed Amaranthine Shaper, Cutter, Slasher, Avenger, Fighter, Stormer, Thrower, Shooter. -->
-	<item id="27605" type="EtcItem" name="Blessed Amaranthine Pack (Physical) - None" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+	<item id="27605" type="EtcItem" name="Blessed Amaranthine Pack (Physical)" icon="icon.etc_jewel_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to receive one of the following: Blessed Amaranthine Buster, Caster, Retributer. -->
-	<item id="27606" type="EtcItem" name="Blessed Amaranthine Pack (Magical) - None" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+	<item id="27606" type="EtcItem" name="Blessed Amaranthine Pack (Magical)" icon="icon.etc_jewel_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to receive one of the following: Blessed Amaranthine Dualsword, Dual Dagger, Dual Blunt. -->
-	<item id="27607" type="EtcItem" name="Blessed Amaranthine Pack (Dual Weapons) - None" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+	<item id="27607" type="EtcItem" name="Blessed Amaranthine Pack (Dual Weapons)" icon="icon.etc_jewel_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- A card pouch with great magic power. Double-click to receive one of the event cards. -->
@@ -2515,28 +2512,28 @@
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Can summon Agathion - Matryoshka (7-day). -->
-	<item id="27627" type="Weapon" name="Agathion - Matryoshka (7-day) - None" icon="icon.etc_pi_box_joy_pack" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27627" type="Weapon" name="Agathion - Matryoshka (7-day)" icon="icon.etc_pi_box_joy_pack" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Can summon Agathion - Matryoshka (30-day). -->
-	<item id="27628" type="Weapon" name="Agathion - Matryoshka (30-day) - None" icon="icon.etc_pi_box_joy_pack" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27628" type="Weapon" name="Agathion - Matryoshka (30-day)" icon="icon.etc_pi_box_joy_pack" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Can summon Agathion - Minion Eye (7-day). -->
-	<item id="27629" type="Weapon" name="Agathion - Minion Eye (7-day) - None" icon="icon.etc_pi_box_joy_pack" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27629" type="Weapon" name="Agathion - Minion Eye (7-day)" icon="icon.etc_pi_box_joy_pack" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Can summon Agathion - Minion Eye (30-day). -->
-	<item id="27630" type="Weapon" name="Agathion - Minion Eye (30-day) - None" icon="icon.etc_pi_box_joy_pack" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27630" type="Weapon" name="Agathion - Minion Eye (30-day)" icon="icon.etc_pi_box_joy_pack" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped pack containing Prestige Rune 100% (1-hour). -->
 	<item id="27631" type="Weapon" name="Prestige Rune 100% Pack - 1-hour" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- A fancy fishing rod. Receive 50% extra XP/SP when fishing. Reduces fishing time. Consumes 1 Fishing Shot. -->
-	<item id="27632" type="Weapon" name="Fancy Fishing Rod - None" icon="BranchIcon.icon.weapon_g_fishing_rod" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27632" type="Weapon" name="Fancy Fishing Rod" icon="BranchIcon.icon.weapon_g_fishing_rod" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="pAtkSpd" val="325" />
@@ -2551,7 +2548,7 @@
 		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Wrapped pack containing a Fancy Fishing Rod (1-day). -->
-	<item id="27634" type="Weapon" name="Fancy Fishing Rod Pack (1-day) - None" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
+	<item id="27634" type="Weapon" name="Fancy Fishing Rod Pack (1-day)" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- A 7-day fancy fishing rod. Receive 50% extra XP/SP when fishing. Reduces fishing time. Consumes 1 Fishing Shot. -->
@@ -2563,7 +2560,7 @@
 		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Wrapped pack containing a Fancy Fishing Rod (7-day). -->
-	<item id="27636" type="Weapon" name="Fancy Fishing Rod Pack (7-day) - None" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
+	<item id="27636" type="Weapon" name="Fancy Fishing Rod Pack (7-day)" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- A 30-day fancy fishing rod. Receive 50% extra XP/SP when fishing. Reduces fishing time. Consumes 1 Fishing Shot. -->
@@ -2575,103 +2572,103 @@
 		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Wrapped pack containing a Fancy Fishing Rod (30-day). -->
-	<item id="27638" type="Weapon" name="Fancy Fishing Rod Pack (30-day) - None" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
+	<item id="27638" type="Weapon" name="Fancy Fishing Rod Pack (30-day)" icon="icon.etc_box_of_adventure_1_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- A hidden treasure chest. Double-click to get a random item. -->
-	<item id="27639" type="Weapon" name="Hidden Treasure Chest - None" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
+	<item id="27639" type="Weapon" name="Hidden Treasure Chest" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Coin obtained from fishing with Heine Special Bait. Take it to Peeves to exchange for a Fancy Fishing Rod. -->
-	<item id="27640" type="Weapon" name="Heine Fishing Coin - None" icon="icon.etc_coins_blue_i00" bodypart="none" material="steel"
+	<item id="27640" type="Weapon" name="Heine Fishing Coin" icon="icon.etc_coins_blue_i00" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 85 - 89. -->
-	<item id="27641" type="Weapon" name="Heine Exclusive Bait (85-89) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27641" type="Weapon" name="Heine Exclusive Bait (85-89)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 90 - 94. -->
-	<item id="27642" type="Weapon" name="Heine Exclusive Bait (90-94) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27642" type="Weapon" name="Heine Exclusive Bait (90-94)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 95 - 98. -->
-	<item id="27643" type="Weapon" name="Heine Exclusive Bait (95-98) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27643" type="Weapon" name="Heine Exclusive Bait (95-98)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Lv. 99 or above. -->
-	<item id="27644" type="Weapon" name="Heine Exclusive Bait (99-) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27644" type="Weapon" name="Heine Exclusive Bait (99-)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Exchange for 1 Heine Exclusive Bait of your choice through a fishing guild member. -->
-	<item id="27645" type="Weapon" name="Heine Exclusive Bait Coupon - None" icon="icon.etc_bm_lure_ticket" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27645" type="Weapon" name="Heine Exclusive Bait Coupon" icon="icon.etc_bm_lure_ticket" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Exclusive Reward Chest. Double-click to get a random item. -->
-	<item id="27646" type="Weapon" name="Exclusive Reward Chest - None" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
+	<item id="27646" type="Weapon" name="Exclusive Reward Chest" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get Heine Fishing Coins. Has a chance of obtaining an Exclusive Treasure Chest. -->
-	<item id="27647" type="Weapon" name="Heine Exclusive Reward Chest - None" icon="icon.etc_treasure_box_i08" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27647" type="Weapon" name="Heine Exclusive Reward Chest" icon="icon.etc_treasure_box_i08" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get 300 Heine Exclusive Bait Coupons and 300 Fishing Shots. -->
-	<item id="27648" type="Weapon" name="Heine Exclusive Fishing Tools - 300 Pack - None" icon="icon.etc_bm_lure_box_i00" bodypart="none"
+	<item id="27648" type="Weapon" name="Heine Exclusive Fishing Tools - 300 Pack" icon="icon.etc_bm_lure_box_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get 3,000 Heine Exclusive Bait Coupons, 3,000 Fishing Shots, and 1 Fishing Rod Pack (30-day). -->
-	<item id="27649" type="Weapon" name="Heine Exclusive Fishing Tools - 3,000 Pack - None" icon="icon.etc_bm_lure_box_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27649" type="Weapon" name="Heine Exclusive Fishing Tools - 3,000 Pack" icon="icon.etc_bm_lure_box_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 85 - 89. -->
-	<item id="27650" type="Weapon" name="Heine Exclusive Bait (85-89) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27650" type="Weapon" name="Heine Exclusive Bait (85-89)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 90 - 94. -->
-	<item id="27651" type="Weapon" name="Heine Exclusive Bait (90-94) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27651" type="Weapon" name="Heine Exclusive Bait (90-94)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Can be used by characters Lv. 95 - 98. -->
-	<item id="27652" type="Weapon" name="Heine Exclusive Bait (95-98) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27652" type="Weapon" name="Heine Exclusive Bait (95-98)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Bait for fishing. Double-click to get a Heine Exclusive Reward Chest. Lv. 99 or above. -->
-	<item id="27653" type="Weapon" name="Heine Exclusive Bait (99-) - None" icon="icon.etc_bait_i01" bodypart="none" material="steel"
+	<item id="27653" type="Weapon" name="Heine Exclusive Bait (99-)" icon="icon.etc_bait_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Exchange for 1 Heine Exclusive Bait of your choice through a fishing guild member. -->
-	<item id="27654" type="Weapon" name="Heine Exclusive Bait Coupon - None" icon="icon.etc_bm_lure_ticket" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27654" type="Weapon" name="Heine Exclusive Bait Coupon" icon="icon.etc_bm_lure_ticket" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Exclusive Reward Chest. Double-click to get a random item. -->
-	<item id="27655" type="Weapon" name="Exclusive Reward Chest - None" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
+	<item id="27655" type="Weapon" name="Exclusive Reward Chest" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get Heine Fishing Coins. Has a chance of obtaining an Exclusive Treasure Chest. -->
-	<item id="27656" type="Weapon" name="Heine Exclusive Reward Chest - None" icon="icon.etc_treasure_box_i08" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27656" type="Weapon" name="Heine Exclusive Reward Chest" icon="icon.etc_treasure_box_i08" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get 300 Heine Exclusive Bait Coupons and 300 Fishing Shots. -->
-	<item id="27657" type="Weapon" name="Heine Exclusive Fishing Tools - 300 Pack - None" icon="icon.etc_bm_lure_box_i00" bodypart="none"
+	<item id="27657" type="Weapon" name="Heine Exclusive Fishing Tools - 300 Pack" icon="icon.etc_bm_lure_box_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get 3,000 Heine Exclusive Bait Coupons, 3,000 Fishing Shots, and 1 Fishing Rod Pack (30-day). -->
-	<item id="27658" type="Weapon" name="Heine Exclusive Fishing Tools - 3,000 Pack - None" icon="icon.etc_bm_lure_box_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27658" type="Weapon" name="Heine Exclusive Fishing Tools - 3,000 Pack" icon="icon.etc_bm_lure_box_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- An anniversary coin. It might be a good idea to collect these for later… -->
 	<item id="27659" type="Weapon" name="Anniversary Coin - Event" icon="icon.etc_11th_token" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. Has a very low chance of obtaining a Radiant Gemstone Fragment or a La Vie En Rose's Radiant Brooch. -->
-	<item id="27660" type="Weapon" name="Shadai's Jewelry Box - None" icon="icon.etc_bm_jewelbox_main_i00" bodypart="none" material="steel"
+	<item id="27660" type="Weapon" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get one of the following: La Vie En Rose's Vital Stone Chest, Garnet Chest, Tanzanite Chest, Cat's Eye Chest. -->
-	<item id="27661" type="Weapon" name="Shadai's Shiny Jewelry Box - None" icon="icon.etc_bm_jewelbox_shhadai" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27661" type="Weapon" name="Shadai's Shiny Jewelry Box" icon="icon.etc_bm_jewelbox_shhadai" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to acquire 55 La Vie En Rose's Jewelry Boxes and 1 Noble Brooch Chest. Cannot be used in the auction house. -->
-	<item id="27662" type="Weapon" name="La Vie En Rose's Brilliant Brooch Pack - None" icon="icon.etc_pi_box_love_pack" bodypart="none"
+	<item id="27662" type="Weapon" name="La Vie En Rose's Brilliant Brooch Pack" icon="icon.etc_pi_box_love_pack" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- You can obtain a Daily Coin. If you are lucky, you may obtain a Special Supply Box or a timed rare accesory. -->
@@ -2689,51 +2686,51 @@
 		<baseAdd stat="mDef" val="108" />
 	</item>
 	<!-- Take it to Freya in Schuttgart along with Freya's Frozen Scroll to exchange for Freya's Fated Support Box./nWill be deleted after event. -->
-	<item id="27666" type="Weapon" name="Freya's Ice Crystal - None" icon="icon.bm_freya_crystal" bodypart="none" material="steel"
+	<item id="27666" type="Weapon" name="Freya's Ice Crystal" icon="icon.bm_freya_crystal" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped pack containing Freya's Frozen Scroll, Freya's Art of Seduction, and Freya's Gift Box. -->
-	<item id="27667" type="Weapon" name="Freya's Luxury Shopping Bag - None" icon="icon.bm_freya_bag" bodypart="none" material="steel"
+	<item id="27667" type="Weapon" name="Freya's Luxury Shopping Bag" icon="icon.bm_freya_bag" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped pack containing one of the various rewards prepared by Freya. -->
-	<item id="27668" type="Weapon" name="Freya's Gift Box - None" icon="icon.bm_freya_gift_box" bodypart="none" material="steel"
-			weight="0" crystal_type="none">
+	<item id="27668" type="Weapon" name="Freya's Gift Box" icon="icon.bm_freya_gift_box" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random item for enchantment. -->
-	<item id="27669" type="Weapon" name="Sirra's Gift Box - None" icon="icon.bm_freya_sirr_box" bodypart="none" material="steel"
-			weight="0" crystal_type="none">
+	<item id="27669" type="Weapon" name="Sirra's Gift Box" icon="icon.bm_freya_sirr_box" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- Wrapped pack containing an item for character growth and strengthening. -->
-	<item id="27670" type="Weapon" name="Snow Man's Gift Box - None" icon="icon.bm_freya_snowman_box" bodypart="none" material="steel"
+	<item id="27670" type="Weapon" name="Snow Man's Gift Box" icon="icon.bm_freya_snowman_box" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random item out of the following: Freya's Scroll of Storm, Freya's Bloody Rune (2 hr). -->
-	<item id="27671" type="Weapon" name="Freya's Fated Support Box - None" icon="icon.sa_cube" bodypart="none" material="steel"
-			weight="0" crystal_type="none">
+	<item id="27671" type="Weapon" name="Freya's Fated Support Box" icon="icon.sa_cube" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random item out of the following: Dark/White Assassin Suit, Red/White Noblesse Outfit, Pirate Red/Crew Outfit, Cowboy Purple Outfit Appearance Stone. -->
-	<item id="27672" type="Weapon" name="Black Freya's Kindness - None" icon="icon.bm_pirate_battle_box" bodypart="none" material="steel"
+	<item id="27672" type="Weapon" name="Black Freya's Kindness" icon="icon.bm_pirate_battle_box" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Vitality consumption + 150% and XP/SP + 150% when hunting. Does not disappear upon death. Duration 10 min. Cooldown 10 min. Only usable when 1 or more Vitality slot is full. -->
-	<item id="27673" type="Weapon" name="Freya's Scroll of Storm - None" icon="icon.bm_freya_storm_scroll" bodypart="none" material="steel"
+	<item id="27673" type="Weapon" name="Freya's Scroll of Storm" icon="icon.bm_freya_storm_scroll" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get 1 Freya's Frozen Scroll and 1 Freya's Art of Seduction. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
-	<item id="27674" type="Weapon" name="Freya's Wish Stick - None" icon="icon.bm_freya_wand" bodypart="none" material="steel"
-			weight="0" crystal_type="none">
+	<item id="27674" type="Weapon" name="Freya's Wish Stick" icon="icon.bm_freya_wand" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random rare item. -->
-	<item id="27675" type="Weapon" name="Freya's Wish-filled Gift - None" icon="icon.freya_box_i01" bodypart="none" material="steel"
+	<item id="27675" type="Weapon" name="Freya's Wish-filled Gift" icon="icon.freya_box_i01" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random item for enchantment. -->
-	<item id="27676" type="Weapon" name="Sirra's Wish-filled Gift - None" icon="icon.freya_box_i02" bodypart="none" material="steel"
+	<item id="27676" type="Weapon" name="Sirra's Wish-filled Gift" icon="icon.freya_box_i02" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing 1 random item for skill enchantment. -->
-	<item id="27677" type="Weapon" name="Snowman's Wish-filled Gift - None" icon="icon.freya_box_i03" bodypart="none" material="steel"
+	<item id="27677" type="Weapon" name="Snowman's Wish-filled Gift" icon="icon.freya_box_i03" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- MP + 107, Dark Resistance + 50, STR + 3, INT + 3, CON + 3, Skill Cooldown - 10%, Damage Reflect + 5%, P. Atk. + 15%, M. Atk. + 10%, Max HP + 3%, Max MP + 5%. Resistance to the following abnormal conditions: Shock + 25%, Hate + 25%, Windstorm + 25%, Exile + 25%, Disarmament + 15%, Slip + 15%. -->
@@ -2917,160 +2914,160 @@
 		<baseAdd stat="mDef" val="239" />
 	</item>
 	<!-- Luminous bottle containing the soul of a god. Can be used to craft Grankain's Necklace or Einhasad's Necklace. -->
-	<item id="27714" type="Weapon" name="Bottle of Luminous God's Soul - None" icon="icon.etc_fruit_juice_glass_bottle_i09"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27714" type="Weapon" name="Bottle of Luminous God's Soul" icon="icon.etc_fruit_juice_glass_bottle_i09" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Fancy bottle containing the soul of a god. Can be used to craft Pa'agrio's Earring or Eva's Earring. -->
-	<item id="27715" type="Weapon" name="Bottle of Splendid God's Soul - None" icon="icon.etc_fruit_juice_glass_bottle_i09"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27715" type="Weapon" name="Bottle of Splendid God's Soul" icon="icon.etc_fruit_juice_glass_bottle_i09" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Honorable bottle containing the soul of a god. Can be used to craft Sayha's Ring or Maphr's Ring. -->
-	<item id="27716" type="Weapon" name="Bottle of Honorable God's Soul - None" icon="icon.etc_fruit_juice_glass_bottle_i09"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27716" type="Weapon" name="Bottle of Honorable God's Soul" icon="icon.etc_fruit_juice_glass_bottle_i09" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27717" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27717" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27718" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
+	<item id="27718" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27719" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
+	<item id="27719" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27720" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
+	<item id="27720" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27721" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
+	<item id="27721" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 5 (50%)" icon="icon.etc_recipe_red_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Gran Kain's Sealed Necklace Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27722" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
+	<item id="27722" type="Weapon" name="Recipe: Gran Kain's Sealed Necklace - Stage 6 (50%)" icon="icon.etc_recipe_red_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27723" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27723" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27724" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
+	<item id="27724" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27725" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
+	<item id="27725" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27726" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
+	<item id="27726" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27727" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
+	<item id="27727" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 5 (50%)" icon="icon.etc_recipe_red_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Einhasad's Sealed Necklace Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27728" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
+	<item id="27728" type="Weapon" name="Recipe: Einhasad's Sealed Necklace - Stage 6 (50%)" icon="icon.etc_recipe_red_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27729" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27729" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27730" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
+	<item id="27730" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27731" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
+	<item id="27731" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27732" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
+	<item id="27732" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27733" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27733" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 5 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Pa'agrio's Sealed Earring Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27734" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27734" type="Weapon" name="Recipe: Pa'agrio's Sealed Earring - Stage 6 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27735" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27735" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27736" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27736" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27737" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27737" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27738" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27738" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27739" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27739" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 5 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Eva's Sealed Earring Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27740" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27740" type="Weapon" name="Recipe: Eva's Sealed Earring - Stage 6 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27741" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27741" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27742" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27742" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27743" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27743" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27744" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27744" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27745" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27745" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 5 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Sayha's Sealed Ring Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27746" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27746" type="Weapon" name="Recipe: Sayha's Sealed Ring - Stage 6 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 1. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27747" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 1 (50%) - None" icon="BranchIcon.Icon.etc_recipe_black_i00"
+	<item id="27747" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 1 (50%)" icon="BranchIcon.Icon.etc_recipe_black_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 2. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27748" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 2 (50%) - None" icon="icon.etc_recipe_yellow_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27748" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 2 (50%)" icon="icon.etc_recipe_yellow_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 3. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27749" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 3 (50%) - None" icon="icon.etc_recipe_blue_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27749" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 3 (50%)" icon="icon.etc_recipe_blue_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 4. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27750" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 4 (50%) - None" icon="icon.etc_recipe_violet_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27750" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 4 (50%)" icon="icon.etc_recipe_violet_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 5. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27751" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 5 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27751" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 5 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Recipe for making Maphr's Sealed Ring Stage 6. For 4th class only. Requires Create Common Item - Skill Lv. 10. The success rate is 50%. Use offerings to increase the success rate to 100%. -->
-	<item id="27752" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 6 (50%) - None" icon="icon.etc_recipe_red_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="27752" type="Weapon" name="Recipe: Maphr's Sealed Ring - Stage 6 (50%)" icon="icon.etc_recipe_red_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Get 1 of the following: Anakim Talisman, Talisman - Lilith, Antharas' Earring, Valakas' Necklace, +7 Shiny Elemental Shirt Pack, Physical Reflect Shirt Pack/Magical Reflect Shirt Pack, Baium's Ring, Talisman - Abundance (High-grade), Queen Ant's Ring, Superior Giant's Codex - Mastery Chapter 1, Soul Crystal Stage 4/5, Hunter/Slaughterer/Conquerer/Outlaw Talisman, Superior Giant's Codex Chapter 1, Elcyum, Lv. 5 Dye Pack, Elcyum Crystal, Giant's Energy, Fortune Pocket - Stage 5, Gemstone (R-grade), Apocalypse/Specter/Amaranthine Weapon Packs. -->
 	<item id="27753" type="Weapon" name="Luck Box 1 - Underground" icon="icon.event_big_july_seven_park_i00" bodypart="none"
@@ -3085,36 +3082,36 @@
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Shiny Elemental Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27756" type="Weapon" name="+7 Shiny Elemental Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
+	<item id="27756" type="Weapon" name="+7 Shiny Elemental Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Physical Reflect Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27757" type="Weapon" name="+7 Physical Reflect Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
+	<item id="27757" type="Weapon" name="+7 Physical Reflect Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Magical Reflect Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27758" type="Weapon" name="+7 Magical Reflect Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
+	<item id="27758" type="Weapon" name="+7 Magical Reflect Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Pa'agrio's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27759" type="Weapon" name="+7 Pa'agrio's Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
+	<item id="27759" type="Weapon" name="+7 Pa'agrio's Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Sayha's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27760" type="Weapon" name="+7 Sayha's Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27760" type="Weapon" name="+7 Sayha's Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Eva's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27761" type="Weapon" name="+7 Eva's Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27761" type="Weapon" name="+7 Eva's Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get a +7 enchanted Maphr's Shirt. The shirt acquired after opening the box cannot be dropped or exchanged. -->
-	<item id="27762" type="Weapon" name="+7 Maphr's Shirt Pack - None" icon="icon.event_big_july_seven_park_i00" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27762" type="Weapon" name="+7 Maphr's Shirt Pack" icon="icon.event_big_july_seven_park_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to get one of the following: La Vie En Rose's Vital Stone Chest, Garnet Chest, Tanzanite Chest, Cat's Eye Chest. -->
-	<item id="27763" type="Weapon" name="Shadai's Shiny Jewelry Box - None" icon="icon.etc_bm_jewelbox_shhadai" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="27763" type="Weapon" name="Shadai's Shiny Jewelry Box" icon="icon.etc_bm_jewelbox_shhadai" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Ultimate enchant item. Decreases Damage Received by 3%. Bestows an attack or defense type set option. Tyrr Warriors, Sigel Knights and Iss Enchanters only. -->
 	<item id="27764" type="Weapon" name="Ultimate Eternal Helmet - Heavy Armor / Lv1" icon="BranchIcon.icon.armor_helmet_i01"

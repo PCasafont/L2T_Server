@@ -1643,8 +1643,8 @@
 		<baseAdd stat="pDef" val="125" />
 	</item>
 	<!-- M. Def. + 30%, Dark Resistance + 100, SRT/INT + 5, Critical Damage + 18%. Effect does not stack with additional rings. -->
-	<item id="28304" type="Weapon" name="Shilen's Ring - None" icon="icon.ring_earthworm_heart" bodypart="none" material="steel"
-			weight="0" crystal_type="none">
+	<item id="28304" type="Weapon" name="Shilen's Ring" icon="icon.ring_earthworm_heart" bodypart="none" material="steel" weight="0"
+			crystal_type="none">
 		<baseAdd stat="mDef" val="146" />
 	</item>
 	<item id="28305" type="Weapon" name="Shilen's Ring - Not Used - Stage 2" icon="icon.ring_earthworm_heart" bodypart="none"
@@ -1656,12 +1656,12 @@
 		<baseAdd stat="mDef" val="187" />
 	</item>
 	<!-- Main ingredient for making Shilen's Ring. -->
-	<item id="28307" type="Weapon" name="Shilen's Ring Fragment - None" icon="icon.etc_r991_ring_piece" bodypart="none" material="steel"
+	<item id="28307" type="Weapon" name="Shilen's Ring Fragment" icon="icon.etc_r991_ring_piece" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- M. Def. + 60%, Dark Resistance + 120, SRT/INT + 7, Physical/Mind attack success rate + 25. Effect does not stack with additional rings. -->
-	<item id="28308" type="Weapon" name="Shilen's Necklace - Not Used - None" icon="icon.accessory_necklace_of_valakas_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
+	<item id="28308" type="Weapon" name="Shilen's Necklace - Not Used" icon="icon.accessory_necklace_of_valakas_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
 		<baseAdd stat="mDef" val="292" />
 	</item>
 	<item id="28309" type="Weapon" name="Shilen's Necklace - Not Used - Stage 2" icon="icon.accessory_necklace_of_valakas_i00"
@@ -1673,12 +1673,12 @@
 		<baseAdd stat="mDef" val="374" />
 	</item>
 	<!-- Main ingredient for making Shilen's Necklace. -->
-	<item id="28311" type="Weapon" name="Shilen's Necklace Fragment - None" icon="icon.etc_r991_necklace_piece" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28311" type="Weapon" name="Shilen's Necklace Fragment" icon="icon.etc_r991_necklace_piece" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- M. Def. + 50%, Dark Resistance + 110, SRT/INT + 6, Physical/Mind Resistance + 30, Speed + 10. Effect does not stack with additional rings. -->
-	<item id="28312" type="Weapon" name="Shilen's Earring - None" icon="icon.accessory_earring_of_lind_i00" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28312" type="Weapon" name="Shilen's Earring" icon="icon.accessory_earring_of_lind_i00" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 		<baseAdd stat="mDef" val="219" />
 	</item>
 	<item id="28313" type="Weapon" name="Shilen's Earring - Not Used - Stage 2" icon="icon.accessory_earring_of_lind_i00" bodypart="none"
@@ -1690,20 +1690,20 @@
 		<baseAdd stat="mDef" val="280" />
 	</item>
 	<!-- Main ingredient for making Shilen's Earring. -->
-	<item id="28315" type="Weapon" name="Shilen's Earring Fragment - None" icon="icon.etc_r991_earring_piece" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28315" type="Weapon" name="Shilen's Earring Fragment" icon="icon.etc_r991_earring_piece" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Enchant scroll exclusive to Shilen's Ring. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
-	<item id="28316" type="Weapon" name="Scroll: Shilen's Ring - None" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28316" type="Weapon" name="Scroll: Shilen's Ring" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Enchant scroll exclusive to Shilen's Necklace. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
-	<item id="28317" type="Weapon" name="Scroll: Shilen's Necklace - None" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28317" type="Weapon" name="Scroll: Shilen's Necklace" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Enchant scroll exclusive to Shilen's Earring. Unlike regular items, there's a chance of failing from + 1 enchant level, and it can be enchanted up to + 5. If it succeeds, M. Def., Dark Resistance, STR/INT and other various stats will increase gradually. Staring from + 3, there's a special effect, and from + 4, you can obtain a special skill for each accessory. If it fails, the item will disappear. -->
-	<item id="28318" type="Weapon" name="Scroll: Shilen's Earring - None" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28318" type="Weapon" name="Scroll: Shilen's Earring" icon="icon.g_scrl_of_ench_wolf_shirt" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain Grankain's Necklace Stage 1. -->
 	<item id="28319" type="Weapon" name="Gran Kain's Necklace - Stage 1" icon="icon.accessory_necklace_of_valakas_i00" bodypart="none"
@@ -1858,100 +1858,100 @@
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Special treasure chest. Double-click to receive a random item. -->
-	<item id="28357" type="Weapon" name="Special Treasure Chest - None" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
+	<item id="28357" type="Weapon" name="Special Treasure Chest" icon="icon.etc_treasure_box_i02" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Activates 6 jewel slots when equipped. Inventory Slot + 12. -->
-	<item id="28358" type="Weapon" name="La Vie En Rose's Elegant Brooch - None" icon="BranchIcon.icon.etc_g_bm_brooch_lavianrose"
+	<item id="28358" type="Weapon" name="La Vie En Rose's Elegant Brooch" icon="BranchIcon.icon.etc_g_bm_brooch_lavianrose"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 		<baseAdd stat="mDef" val="101" />
 	</item>
 	<!-- La Vie En Rose's refined gemstone powder. Go find Shadai to use it when exchanging for gemstones. -->
-	<item id="28359" type="Weapon" name="La Vie En Rose's Gemstone Powder - None" icon="BranchIcon.icon.etc_g_bm_powder_jewel"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
-	</item>
-	<!-- Double-click to obtain a Cat's Eye Lv. 3. -->
-	<item id="28360" type="Weapon" name="Cat's Eye Lv. 3 Jewelry Box - None" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
-	</item>
-	<!-- Double-click to obtain a Cat's Eye Lv. 4. -->
-	<item id="28361" type="Weapon" name="Cat's Eye Lv. 4 Jewelry Box - None" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
-	</item>
-	<!-- Double-click to obtain a Amethyst Lv. 3. -->
-	<item id="28362" type="Weapon" name="Amethyst Lv. 3 Jewelry Box - None" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
-	</item>
-	<!-- Double-click to obtain a Amethyst Lv. 4. -->
-	<item id="28363" type="Weapon" name="Amethyst Lv. 4 Jewelry Box - None" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00"
-			bodypart="none" material="steel" weight="0" crystal_type="none">
-	</item>
-	<!-- A grinder used for refining La Vie En Rose's jewels. Ask Shadai to grind gemstones. -->
-	<item id="28364" type="Weapon" name="Jewel Grinder - None" icon="BranchIcon.icon.etc_g_bm_jewel_grinder" bodypart="none"
+	<item id="28359" type="Weapon" name="La Vie En Rose's Gemstone Powder" icon="BranchIcon.icon.etc_g_bm_powder_jewel" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
+	<!-- Double-click to obtain a Cat's Eye Lv. 3. -->
+	<item id="28360" type="Weapon" name="Cat's Eye Lv. 3 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
+	</item>
+	<!-- Double-click to obtain a Cat's Eye Lv. 4. -->
+	<item id="28361" type="Weapon" name="Cat's Eye Lv. 4 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
+	</item>
+	<!-- Double-click to obtain a Amethyst Lv. 3. -->
+	<item id="28362" type="Weapon" name="Amethyst Lv. 3 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
+	</item>
+	<!-- Double-click to obtain a Amethyst Lv. 4. -->
+	<item id="28363" type="Weapon" name="Amethyst Lv. 4 Jewelry Box" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00" bodypart="none"
+			material="steel" weight="0" crystal_type="none">
+	</item>
+	<!-- A grinder used for refining La Vie En Rose's jewels. Ask Shadai to grind gemstones. -->
+	<item id="28364" type="Weapon" name="Jewel Grinder" icon="BranchIcon.icon.etc_g_bm_jewel_grinder" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
+	</item>
 	<!-- Double-click to obtain a La Vie En Rose's Jewelry Box. -->
-	<item id="28365" type="Weapon" name="Ultimate Jewelry Box - None" icon="icon.bm_sayha_blessed_box" bodypart="none" material="steel"
+	<item id="28365" type="Weapon" name="Ultimate Jewelry Box" icon="icon.bm_sayha_blessed_box" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Vital Stone Lv. 3. -->
-	<item id="28366" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box - None" icon="icon.etc_bm_jewelbox_vital" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28366" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_vital" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Tanzanite Lv. 3. -->
-	<item id="28367" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box - None" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
+	<item id="28367" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Vital Stone Lv. 4. -->
-	<item id="28368" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box - None" icon="icon.etc_bm_jewelbox_vital" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28368" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_vital" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Tanzanite Lv. 4. -->
-	<item id="28369" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box - None" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
+	<item id="28369" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Tanzanite Lv. 3. -->
-	<item id="28370" type="Weapon" name="Garnet Lv. 3 Jewelry Box - None" icon="icon.etc_bm_jewelbox_garnet" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28370" type="Weapon" name="Garnet Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_garnet" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Vital Stone Lv. 4. -->
-	<item id="28371" type="Weapon" name="Garnet Lv. 4 Jewelry Box - None" icon="icon.etc_bm_jewelbox_garnet" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28371" type="Weapon" name="Garnet Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_garnet" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Vital Stone Lv. 3. -->
-	<item id="28372" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box - None" icon="icon.etc_bm_jewelbox_vital" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28372" type="Weapon" name="Vital Stone Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_vital" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Tanzanite Lv. 3. -->
-	<item id="28373" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box - None" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
+	<item id="28373" type="Weapon" name="Tanzanite Lv. 3 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Vital Stone Lv. 4. -->
-	<item id="28374" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box - None" icon="icon.etc_bm_jewelbox_vital" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28374" type="Weapon" name="Vital Stone Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_vital" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a Tanzanite Lv. 4. -->
-	<item id="28375" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box - None" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
+	<item id="28375" type="Weapon" name="Tanzanite Lv. 4 Jewelry Box" icon="icon.etc_bm_jewelbox_tanzanite" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Decreases damage received from Reflect Damage by 50 and there's a chance of reflecting debuffs to the enemy. Can use the invincibility skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28376" type="Weapon" name="Greater Cat's Eye - None" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" bodypart="none"
+	<item id="28376" type="Weapon" name="Greater Cat's Eye" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- PvP Damage + 15%, chance of receiving a critical attack - 25%. Can remove invincibility. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28377" type="Weapon" name="Greater Amethyst - None" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" bodypart="none"
+	<item id="28377" type="Weapon" name="Greater Amethyst" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Increases Vitality Status Bonus EXP by 50% and decreases Vitality Point Consumption Speed by 15%. XP Gain increases by 10%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28378" type="Weapon" name="Greater Vital Stone - None" icon="icon.bm_jewel_vital_high_lv1_lavianrose" bodypart="none"
+	<item id="28378" type="Weapon" name="Greater Vital Stone" icon="icon.bm_jewel_vital_high_lv1_lavianrose" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Resistance to Debuffs + 30%, and when receiving damage to a PC, Stun/Silence are canceled. Cancels debuff and you become immune to debuffs for 7 seconds. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28379" type="Weapon" name="Greater Garnet - None" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28379" type="Weapon" name="Greater Garnet" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Recover 15% of Max HP instantly. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28380" type="Weapon" name="Greater Tanzanite - None" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose" bodypart="none"
+	<item id="28380" type="Weapon" name="Greater Tanzanite" icon="icon.bm_jewel_tanzanite_high_lv1_lavianrose" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Get 1 of the following: 1 type of Talisman - Abundance, Lindvior's Earring, Earth Wyrm Heart Ring, Seven Signs' Energy, Talisman - Lilith, Talisman - Anakim, Talisman - Insanity, Talisman - Longing, Antharas' Earring, Bottle of Antharas' Soul, Valakas' Necklace, Bottle of Valakas' Soul, Baium's Ring, Baium's Soul Ring, Octavis' Ring, Octavis' Earring, Octavis' Necklace, Istina's Necklace, Istina's Ring, Queen Ant's Ring, Superior Giant's Codex Chapter 1, Superior Giant's Codex - Mastery Chapter 1, Superior Giant's Codex - Discipline Chapter 1, Lv. 5 Legendary Dye Pack, Elcyum Regular/Crystal, Giant's Energy, Orfen's Earring, Tempest Stone, Gemstone, Fortune Pocket - Stage 5, Blessed Zaken, Venir's Talisman Stage 8/10/14. -->
@@ -1959,20 +1959,20 @@
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Double-click to obtain a La Vie En Rose's Jewelry Box. -->
-	<item id="28382" type="Weapon" name="Ultimate Jewelry Box - None" icon="icon.bm_sayha_blessed_box" bodypart="none" material="steel"
+	<item id="28382" type="Weapon" name="Ultimate Jewelry Box" icon="icon.bm_sayha_blessed_box" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Increases Resistance to all Debuffs by 30%, and when receiving damage to a PC, Stun/Silence are canceled. When used, all debuffs are canceled and you become immune to debuffs for 7 seconds. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
-	<item id="28383" type="Weapon" name="Greater Garnet - None" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none"
-			material="steel" weight="0" crystal_type="none">
+	<item id="28383" type="Weapon" name="Greater Garnet" icon="icon.bm_jewel_garnet_high_lv1_lavianrose" bodypart="none" material="steel"
+			weight="0" crystal_type="none">
 	</item>
 	<!-- A belt from Chef Monkey. When equipped, Max HP/MP/CP + 300, Weight + 12800, Damage + 7%, Received Damage - 5%, Inventory Slots + 18, Attribute Resistance + 5. -->
-	<item id="28384" type="Weapon" name="Chef Monkey's Belt - None" icon="BranchIcon.icon.g_monkey_belt" bodypart="none" material="steel"
+	<item id="28384" type="Weapon" name="Chef Monkey's Belt" icon="BranchIcon.icon.g_monkey_belt" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 		<baseAdd stat="pDef" val="50" />
 	</item>
 	<!-- Double-click to obtain a Race Change Ticket. -->
-	<item id="28385" type="Weapon" name="Race Change Ticket Pack - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00" bodypart="none"
+	<item id="28385" type="Weapon" name="Race Change Ticket Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 	<!--
@@ -1981,15 +1981,15 @@
 		2.Submit a ticket at support.lineage2.com with the title 'Character Race Change'.
 		(Note)Erteia, Kamael, Tirr Maestro, Iss Dominator characters cannot use this item.
 	-->
-	<item id="28386" type="Weapon" name="Race Change Ticket - None" icon="icon.etc_exchange_ticket_i00" bodypart="none" material="steel"
+	<item id="28386" type="Weapon" name="Race Change Ticket" icon="icon.etc_exchange_ticket_i00" bodypart="none" material="steel"
 			weight="0" crystal_type="none">
 	</item>
 	<!-- Wrapped pack containing Agathion - Unlimited Vitality. -->
-	<item id="28387" type="Weapon" name="Agathion - Unlimited Vitality Pack - None" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
+	<item id="28387" type="Weapon" name="Agathion - Unlimited Vitality Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
 			bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Summons Unlimited Vitality Agathion. -->
-	<item id="28388" type="Weapon" name="Agathion - Unlimited Vitality - None" icon="BranchSys.icon.br_aga_bonus_i00" bodypart="none"
+	<item id="28388" type="Weapon" name="Agathion - Unlimited Vitality" icon="BranchSys.icon.br_aga_bonus_i00" bodypart="none"
 			material="steel" weight="0" crystal_type="none">
 	</item>
 </list>

@@ -3145,71 +3145,71 @@
 			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25786" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25786" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25787" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25787" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25788" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25788" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25789" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25789" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Wrapped Pack containing 14 Ancient Hero weapons (15-day). -->
-	<item id="25790" type="EtcItem" name="Ancient Hero's Weapon Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="25790" type="EtcItem" name="Ancient Hero's Weapon Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining a Mysterious Soulshot, Mysterious Blessed Spiritshot, Gemstone (R-grade), Crystal (R-grade), Large Firecracker, Attribute Crystal, Attribute Stone, Scroll: PK, Blessed Scroll of Resurrection, Superior Giant's Codex, croll: Enchant Armor (R-grade), Riding Manual: Lyn Draco, Rare Soul Crystal Pack (R-grade), Kaliel's Energy Box, Dark/Blood Amaranthine Enhancement Stone, Elcyum, Elcyum Powder/Crystal, Life Stone Instilled with Giants' Power, Giant's Energy, or 1 of the 3 Energy of Destruction boxes. -->
-	<item id="25791" type="EtcItem" name="Exotic Chest - None" icon="icon.present_of_destination_event" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="25791" type="EtcItem" name="Exotic Chest" icon="icon.present_of_destination_event" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
 	</item>
 	<!-- Enchant scroll that is exclusive to Pa'agrio's Shirt, Sayha's Shirt, Eva's Shirt, Maphr's Shirt, and the Shiny Elemental Shirt. When enchanted, increases P. Def. and M. Def. by 1. P. Def. + 3 starting from +4. Can be safely enchanted to +3 and up to a maximum of +10. From +4, basic stats (CON, MEN, STR, INT, DEX, WT) are raised in stages. Depending on the shirt type, various additional options can be applied from +4 to +10. -->
-	<item id="25792" type="EtcItem" name="Scroll: Enchant Elemental Shirt - None" icon="icon.g_scrl_of_ench_wolf_shirt" immediateEffect="1"
+	<item id="25792" type="EtcItem" name="Scroll: Enchant Elemental Shirt" icon="icon.g_scrl_of_ench_wolf_shirt" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Enchant Scroll exclusive to Pa'agrio, Sayha, Maphr and Eva Shirts. When enchanted, increases P. Def. and M. Def. by 1. From +3, Elemental defense increases by 3, and from +4, P. Def. Increases by 3. Can be safely enchanted up to +3 and can be enchanted up to a max of +10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from +4. At +5, +6, +7, +8, +9, and +10, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->
-	<item id="25793" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt - None" icon="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00"
+	<item id="25793" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt" icon="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
 	<!-- For 30 min., Priestess Tsubaki's spirit stays with you, increasing your Speed. Cannot be exchanged, dropped, or sold. Can be stored in the private warehouse. -->
-	<item id="25794" type="EtcItem" name="Transformation Scroll: Priestess Tsubaki - None" icon="icon.etc_scroll_white_i00"
-			immediateEffect="1" crystalType="c" weight="120" isStackable="true">
+	<item id="25794" type="EtcItem" name="Transformation Scroll: Priestess Tsubaki" icon="icon.etc_scroll_white_i00" immediateEffect="1"
+			crystalType="c" weight="120" isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 solo dungeon. -->
-	<item id="25795" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25795" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 solo dungeon. -->
-	<item id="25796" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25796" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 solo dungeon. -->
-	<item id="25797" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25797" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 party dungeon. -->
-	<item id="25798" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25798" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 party dungeon. -->
-	<item id="25799" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25799" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 party dungeon. -->
-	<item id="25800" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party - None" icon="icon.etc_ticket_red_i00"
-			immediateEffect="1" isStackable="true">
+	<item id="25800" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party" icon="icon.etc_ticket_red_i00" immediateEffect="1"
+			isStackable="true">
 	</item>
 	<!-- Can summon Agathion - Minion Eye. -->
-	<item id="25801" type="Armor" name="Agathion - Minion Eye - None" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+	<item id="25801" type="Armor" name="Agathion - Minion Eye" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- Can summon Agathion - Matryoshka. -->
-	<item id="25802" type="Armor" name="Agathion - Matryoshka - None" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+	<item id="25802" type="Armor" name="Agathion - Matryoshka" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Leo. -->
@@ -3217,11 +3217,11 @@
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25804" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25804" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25805" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25805" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Virgo. -->
@@ -3229,11 +3229,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25807" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25807" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25808" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25808" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Libra. -->
@@ -3241,11 +3241,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25810" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25810" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25811" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25811" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Scorpio. -->
@@ -3253,11 +3253,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25813" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25813" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25814" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25814" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Sagittarius. -->
@@ -3265,11 +3265,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25816" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25816" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25817" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25817" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Capricorn. -->
@@ -3277,11 +3277,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25819" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25819" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25820" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25820" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Aquarius. -->
@@ -3289,11 +3289,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25822" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25822" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25823" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25823" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Pisces. -->
@@ -3301,11 +3301,11 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25825" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25825" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25826" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25826" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either a Sealed Talisman - Longing, Immortal Scroll, Talisman - Abundance, Elycum, Energy of Destruction 20-unit Pack, Giant's Energy, Top-grade Augmentation Pack (R95-grade), Top-grade Augmentation Pack (R99-grade), or Agathion - Aries. -->
@@ -3313,691 +3313,691 @@
 			crystalType="c" weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an Ancient Scroll: Enchant Weapon/Armor (R-grade), Blessed Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), Giant's Scroll: Enchant Weapon/Armor (R-grade), Blessed Scroll: Enchant Weapo/Armor (R-grade), Blessed Lucky Enchant Stone: Weapon/Armor (R-grade), Blessed High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), Lesser Giant's Lucky Enchant Stone: Weapon/Armor (R-grade), High-grade Lucky Enchant Stone: Weapon/Armor (R-grade), or Scroll: Enchant Weapon/Armor (R-grade). -->
-	<item id="25828" type="EtcItem" name="Luck Box 2 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25828" type="EtcItem" name="Luck Box 2" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Has a chance of obtaining either an XP Rune III (Lv. 1-100+) 100% Pack (30-day), Prestige Rune 100% Pack, Kat the Cat's Box of Roses, Pa'agrio's Warm Breeze, Ghost Potion, Emperor's Growth Scroll, Feather of Blessing Pack, Letter Collector's Gift, Mysterious Healthy Juice (HP/CP), Gemstone (R-grade), or Heavenly Recovery Potion. -->
-	<item id="25829" type="EtcItem" name="Luck Box 3 - None" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
+	<item id="25829" type="EtcItem" name="Luck Box 3" icon="icon.event_big_july_seven_park_i00" immediateEffect="1" crystalType="c"
 			weight="10" isStackable="true">
 	</item>
 	<!-- Through the Dimensional Merchant, you can take a + 3 Requiem/Apocalypse weapon and enchant it to + 10. You need scrolls and ingredients to make this work, but will never fail to enchant. -->
-	<item id="25830" type="EtcItem" name="Einhasad's Enhancement Stone - None" icon="icon.etc_bead_gold_i00" immediateEffect="1"
-			crystalType="c" weight="10" isStackable="true">
+	<item id="25830" type="EtcItem" name="Einhasad's Enhancement Stone" icon="icon.etc_bead_gold_i00" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25831" type="EtcItem" name="+ 4 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25831" type="EtcItem" name="+ 4 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25832" type="EtcItem" name="+ 5 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25832" type="EtcItem" name="+ 5 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25833" type="EtcItem" name="+ 6 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25833" type="EtcItem" name="+ 6 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25834" type="EtcItem" name="+ 7 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25834" type="EtcItem" name="+ 7 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25835" type="EtcItem" name="+ 8 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25835" type="EtcItem" name="+ 8 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25836" type="EtcItem" name="+ 9 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25836" type="EtcItem" name="+ 9 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25837" type="EtcItem" name="+ 10 Requiem Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25837" type="EtcItem" name="+ 10 Requiem Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25838" type="EtcItem" name="+ 4 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25838" type="EtcItem" name="+ 4 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25839" type="EtcItem" name="+ 5 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25839" type="EtcItem" name="+ 5 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25840" type="EtcItem" name="+ 6 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25840" type="EtcItem" name="+ 6 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25841" type="EtcItem" name="+ 7 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25841" type="EtcItem" name="+ 7 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25842" type="EtcItem" name="+ 8 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25842" type="EtcItem" name="+ 8 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25843" type="EtcItem" name="+ 9 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25843" type="EtcItem" name="+ 9 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25844" type="EtcItem" name="+ 10 Requiem Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25844" type="EtcItem" name="+ 10 Requiem Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25845" type="EtcItem" name="+ 4 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25845" type="EtcItem" name="+ 4 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25846" type="EtcItem" name="+ 5 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25846" type="EtcItem" name="+ 5 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25847" type="EtcItem" name="+ 6 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25847" type="EtcItem" name="+ 6 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25848" type="EtcItem" name="+ 7 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25848" type="EtcItem" name="+ 7 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25849" type="EtcItem" name="+ 8 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25849" type="EtcItem" name="+ 8 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25850" type="EtcItem" name="+ 9 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25850" type="EtcItem" name="+ 9 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25851" type="EtcItem" name="+ 10 Requiem Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25851" type="EtcItem" name="+ 10 Requiem Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25852" type="EtcItem" name="+ 4 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25852" type="EtcItem" name="+ 4 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25853" type="EtcItem" name="+ 5 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25853" type="EtcItem" name="+ 5 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25854" type="EtcItem" name="+ 6 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25854" type="EtcItem" name="+ 6 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25855" type="EtcItem" name="+ 7 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25855" type="EtcItem" name="+ 7 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25856" type="EtcItem" name="+ 8 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25856" type="EtcItem" name="+ 8 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25857" type="EtcItem" name="+ 9 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25857" type="EtcItem" name="+ 9 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25858" type="EtcItem" name="+ 10 Requiem Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25858" type="EtcItem" name="+ 10 Requiem Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25859" type="EtcItem" name="+ 4 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25859" type="EtcItem" name="+ 4 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25860" type="EtcItem" name="+ 5 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25860" type="EtcItem" name="+ 5 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25861" type="EtcItem" name="+ 6 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25861" type="EtcItem" name="+ 6 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25862" type="EtcItem" name="+ 7 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25862" type="EtcItem" name="+ 7 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25863" type="EtcItem" name="+ 8 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25863" type="EtcItem" name="+ 8 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25864" type="EtcItem" name="+ 9 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25864" type="EtcItem" name="+ 9 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25865" type="EtcItem" name="+ 10 Requiem Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25865" type="EtcItem" name="+ 10 Requiem Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25866" type="EtcItem" name="+ 4 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25866" type="EtcItem" name="+ 4 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25867" type="EtcItem" name="+ 5 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25867" type="EtcItem" name="+ 5 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25868" type="EtcItem" name="+ 6 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25868" type="EtcItem" name="+ 6 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25869" type="EtcItem" name="+ 7 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25869" type="EtcItem" name="+ 7 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25870" type="EtcItem" name="+ 8 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25870" type="EtcItem" name="+ 8 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25871" type="EtcItem" name="+ 9 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25871" type="EtcItem" name="+ 9 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25872" type="EtcItem" name="+ 10 Requiem Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25872" type="EtcItem" name="+ 10 Requiem Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25873" type="EtcItem" name="+ 4 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25873" type="EtcItem" name="+ 4 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25874" type="EtcItem" name="+ 5 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25874" type="EtcItem" name="+ 5 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25875" type="EtcItem" name="+ 6 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25875" type="EtcItem" name="+ 6 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25876" type="EtcItem" name="+ 7 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25876" type="EtcItem" name="+ 7 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25877" type="EtcItem" name="+ 8 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25877" type="EtcItem" name="+ 8 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25878" type="EtcItem" name="+ 9 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25878" type="EtcItem" name="+ 9 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25879" type="EtcItem" name="+ 10 Requiem Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25879" type="EtcItem" name="+ 10 Requiem Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25880" type="EtcItem" name="+ 4 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25880" type="EtcItem" name="+ 4 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25881" type="EtcItem" name="+ 5 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25881" type="EtcItem" name="+ 5 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25882" type="EtcItem" name="+ 6 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25882" type="EtcItem" name="+ 6 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25883" type="EtcItem" name="+ 7 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25883" type="EtcItem" name="+ 7 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25884" type="EtcItem" name="+ 8 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25884" type="EtcItem" name="+ 8 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25885" type="EtcItem" name="+ 9 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25885" type="EtcItem" name="+ 9 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25886" type="EtcItem" name="+ 10 Requiem Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25886" type="EtcItem" name="+ 10 Requiem Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25887" type="EtcItem" name="+ 4 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25887" type="EtcItem" name="+ 4 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25888" type="EtcItem" name="+ 5 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25888" type="EtcItem" name="+ 5 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25889" type="EtcItem" name="+ 6 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25889" type="EtcItem" name="+ 6 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25890" type="EtcItem" name="+ 7 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25890" type="EtcItem" name="+ 7 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25891" type="EtcItem" name="+ 8 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25891" type="EtcItem" name="+ 8 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25892" type="EtcItem" name="+ 9 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25892" type="EtcItem" name="+ 9 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25893" type="EtcItem" name="+ 10 Requiem Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25893" type="EtcItem" name="+ 10 Requiem Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25894" type="EtcItem" name="+ 4 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25894" type="EtcItem" name="+ 4 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25895" type="EtcItem" name="+ 5 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25895" type="EtcItem" name="+ 5 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25896" type="EtcItem" name="+ 6 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25896" type="EtcItem" name="+ 6 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25897" type="EtcItem" name="+ 7 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25897" type="EtcItem" name="+ 7 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25898" type="EtcItem" name="+ 8 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25898" type="EtcItem" name="+ 8 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25899" type="EtcItem" name="+ 9 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25899" type="EtcItem" name="+ 9 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25900" type="EtcItem" name="+ 10 Requiem Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25900" type="EtcItem" name="+ 10 Requiem Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25901" type="EtcItem" name="+ 4 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25901" type="EtcItem" name="+ 4 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25902" type="EtcItem" name="+ 5 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25902" type="EtcItem" name="+ 5 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25903" type="EtcItem" name="+ 6 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25903" type="EtcItem" name="+ 6 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25904" type="EtcItem" name="+ 7 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25904" type="EtcItem" name="+ 7 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25905" type="EtcItem" name="+ 8 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25905" type="EtcItem" name="+ 8 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25906" type="EtcItem" name="+ 9 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25906" type="EtcItem" name="+ 9 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25907" type="EtcItem" name="+ 10 Requiem Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25907" type="EtcItem" name="+ 10 Requiem Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25908" type="EtcItem" name="+ 4 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25908" type="EtcItem" name="+ 4 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25909" type="EtcItem" name="+ 5 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25909" type="EtcItem" name="+ 5 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25910" type="EtcItem" name="+ 6 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25910" type="EtcItem" name="+ 6 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25911" type="EtcItem" name="+ 7 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25911" type="EtcItem" name="+ 7 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25912" type="EtcItem" name="+ 8 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25912" type="EtcItem" name="+ 8 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25913" type="EtcItem" name="+ 9 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25913" type="EtcItem" name="+ 9 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25914" type="EtcItem" name="+ 10 Requiem Dualsword Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25914" type="EtcItem" name="+ 10 Requiem Dualsword Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25915" type="EtcItem" name="+ 4 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25915" type="EtcItem" name="+ 4 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25916" type="EtcItem" name="+ 5 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25916" type="EtcItem" name="+ 5 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25917" type="EtcItem" name="+ 6 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25917" type="EtcItem" name="+ 6 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25918" type="EtcItem" name="+ 7 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25918" type="EtcItem" name="+ 7 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25919" type="EtcItem" name="+ 8 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25919" type="EtcItem" name="+ 8 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25920" type="EtcItem" name="+ 9 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25920" type="EtcItem" name="+ 9 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25921" type="EtcItem" name="+ 10 Requiem Dual Dagger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25921" type="EtcItem" name="+ 10 Requiem Dual Dagger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25922" type="EtcItem" name="+ 4 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25922" type="EtcItem" name="+ 4 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25923" type="EtcItem" name="+ 5 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25923" type="EtcItem" name="+ 5 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25924" type="EtcItem" name="+ 6 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25924" type="EtcItem" name="+ 6 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25925" type="EtcItem" name="+ 7 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25925" type="EtcItem" name="+ 7 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25926" type="EtcItem" name="+ 8 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25926" type="EtcItem" name="+ 8 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25927" type="EtcItem" name="+ 9 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25927" type="EtcItem" name="+ 9 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25928" type="EtcItem" name="+ 10 Requiem Dual Blunt Weapon Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25928" type="EtcItem" name="+ 10 Requiem Dual Blunt Weapon Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25929" type="EtcItem" name="+ 4 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25929" type="EtcItem" name="+ 4 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25930" type="EtcItem" name="+ 5 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25930" type="EtcItem" name="+ 5 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25931" type="EtcItem" name="+ 6 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25931" type="EtcItem" name="+ 6 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25932" type="EtcItem" name="+ 7 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25932" type="EtcItem" name="+ 7 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25933" type="EtcItem" name="+ 8 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25933" type="EtcItem" name="+ 8 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25934" type="EtcItem" name="+ 9 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25934" type="EtcItem" name="+ 9 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25935" type="EtcItem" name="+ 10 Apocalypse Shaper Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25935" type="EtcItem" name="+ 10 Apocalypse Shaper Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25936" type="EtcItem" name="+ 4 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25936" type="EtcItem" name="+ 4 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25937" type="EtcItem" name="+ 5 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25937" type="EtcItem" name="+ 5 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25938" type="EtcItem" name="+ 6 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25938" type="EtcItem" name="+ 6 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25939" type="EtcItem" name="+ 7 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25939" type="EtcItem" name="+ 7 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25940" type="EtcItem" name="+ 8 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25940" type="EtcItem" name="+ 8 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25941" type="EtcItem" name="+ 9 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25941" type="EtcItem" name="+ 9 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25942" type="EtcItem" name="+ 10 Apocalypse Cutter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25942" type="EtcItem" name="+ 10 Apocalypse Cutter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25943" type="EtcItem" name="+ 4 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25943" type="EtcItem" name="+ 4 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25944" type="EtcItem" name="+ 5 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25944" type="EtcItem" name="+ 5 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25945" type="EtcItem" name="+ 6 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25945" type="EtcItem" name="+ 6 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25946" type="EtcItem" name="+ 7 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25946" type="EtcItem" name="+ 7 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25947" type="EtcItem" name="+ 8 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25947" type="EtcItem" name="+ 8 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25948" type="EtcItem" name="+ 9 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25948" type="EtcItem" name="+ 9 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25949" type="EtcItem" name="+ 10 Apocalypse Slasher Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25949" type="EtcItem" name="+ 10 Apocalypse Slasher Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25950" type="EtcItem" name="+ 4 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25950" type="EtcItem" name="+ 4 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25951" type="EtcItem" name="+ 5 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25951" type="EtcItem" name="+ 5 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25952" type="EtcItem" name="+ 6 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25952" type="EtcItem" name="+ 6 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25953" type="EtcItem" name="+ 7 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25953" type="EtcItem" name="+ 7 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25954" type="EtcItem" name="+ 8 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25954" type="EtcItem" name="+ 8 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25955" type="EtcItem" name="+ 9 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25955" type="EtcItem" name="+ 9 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25956" type="EtcItem" name="+ 10 Apocalypse Avenger Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25956" type="EtcItem" name="+ 10 Apocalypse Avenger Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25957" type="EtcItem" name="+ 4 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25957" type="EtcItem" name="+ 4 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25958" type="EtcItem" name="+ 5 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25958" type="EtcItem" name="+ 5 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25959" type="EtcItem" name="+ 6 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25959" type="EtcItem" name="+ 6 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25960" type="EtcItem" name="+ 7 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25960" type="EtcItem" name="+ 7 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25961" type="EtcItem" name="+ 8 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25961" type="EtcItem" name="+ 8 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25962" type="EtcItem" name="+ 9 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25962" type="EtcItem" name="+ 9 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25963" type="EtcItem" name="+ 10 Apocalypse Fighter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25963" type="EtcItem" name="+ 10 Apocalypse Fighter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25964" type="EtcItem" name="+ 4 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25964" type="EtcItem" name="+ 4 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25965" type="EtcItem" name="+ 5 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25965" type="EtcItem" name="+ 5 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25966" type="EtcItem" name="+ 6 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25966" type="EtcItem" name="+ 6 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25967" type="EtcItem" name="+ 7 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25967" type="EtcItem" name="+ 7 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25968" type="EtcItem" name="+ 8 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25968" type="EtcItem" name="+ 8 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25969" type="EtcItem" name="+ 9 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25969" type="EtcItem" name="+ 9 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25970" type="EtcItem" name="+ 10 Apocalypse Stormer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25970" type="EtcItem" name="+ 10 Apocalypse Stormer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25971" type="EtcItem" name="+ 4 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25971" type="EtcItem" name="+ 4 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25972" type="EtcItem" name="+ 5 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25972" type="EtcItem" name="+ 5 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25973" type="EtcItem" name="+ 6 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25973" type="EtcItem" name="+ 6 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25974" type="EtcItem" name="+ 7 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25974" type="EtcItem" name="+ 7 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25975" type="EtcItem" name="+ 8 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25975" type="EtcItem" name="+ 8 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25976" type="EtcItem" name="+ 9 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25976" type="EtcItem" name="+ 9 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25977" type="EtcItem" name="+ 10 Apocalypse Thrower Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25977" type="EtcItem" name="+ 10 Apocalypse Thrower Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25978" type="EtcItem" name="+ 4 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25978" type="EtcItem" name="+ 4 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25979" type="EtcItem" name="+ 5 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25979" type="EtcItem" name="+ 5 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25980" type="EtcItem" name="+ 6 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25980" type="EtcItem" name="+ 6 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25981" type="EtcItem" name="+ 7 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25981" type="EtcItem" name="+ 7 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25982" type="EtcItem" name="+ 8 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25982" type="EtcItem" name="+ 8 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25983" type="EtcItem" name="+ 9 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25983" type="EtcItem" name="+ 9 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25984" type="EtcItem" name="+ 10 Apocalypse Shooter Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25984" type="EtcItem" name="+ 10 Apocalypse Shooter Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25985" type="EtcItem" name="+ 4 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25985" type="EtcItem" name="+ 4 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25986" type="EtcItem" name="+ 5 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25986" type="EtcItem" name="+ 5 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25987" type="EtcItem" name="+ 6 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25987" type="EtcItem" name="+ 6 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25988" type="EtcItem" name="+ 7 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25988" type="EtcItem" name="+ 7 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25989" type="EtcItem" name="+ 8 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25989" type="EtcItem" name="+ 8 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25990" type="EtcItem" name="+ 9 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25990" type="EtcItem" name="+ 9 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25991" type="EtcItem" name="+ 10 Apocalypse Buster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25991" type="EtcItem" name="+ 10 Apocalypse Buster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25992" type="EtcItem" name="+ 4 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25992" type="EtcItem" name="+ 4 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25993" type="EtcItem" name="+ 5 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25993" type="EtcItem" name="+ 5 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25994" type="EtcItem" name="+ 6 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25994" type="EtcItem" name="+ 6 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25995" type="EtcItem" name="+ 7 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25995" type="EtcItem" name="+ 7 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25996" type="EtcItem" name="+ 8 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25996" type="EtcItem" name="+ 8 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25997" type="EtcItem" name="+ 9 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
-			crystalType="c" isStackable="true">
+	<item id="25997" type="EtcItem" name="+ 9 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1" crystalType="c"
+			isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25998" type="EtcItem" name="+ 10 Apocalypse Caster Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25998" type="EtcItem" name="+ 10 Apocalypse Caster Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to obtain the item as described in the pack name. -->
-	<item id="25999" type="EtcItem" name="+ 4 Apocalypse Retributer Pack - None" icon="icon.etc_treasure_box_i08" immediateEffect="1"
+	<item id="25999" type="EtcItem" name="+ 4 Apocalypse Retributer Pack" icon="icon.etc_treasure_box_i08" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 </list>

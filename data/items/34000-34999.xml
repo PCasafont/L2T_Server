@@ -128,57 +128,57 @@
 			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Old-looking roll of paper. Try Double-clicking. -->
-	<item id="34033" type="EtcItem" name="Old Roll of Paper - None" icon="icon.etc_scroll_gray_i00" immediateEffect="1" weight="0">
+	<item id="34033" type="EtcItem" name="Old Roll of Paper" icon="icon.etc_scroll_gray_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Map that reveals the resting place of the heroes who rebelled against the gods. Go and seek out Josephina's Companion Izael in the Ancient City Arcan. -->
-	<item id="34034" type="EtcItem" name="Fortuna Map - None" icon="icon.fortuna_enter" immediateEffect="1" weight="0">
+	<item id="34034" type="EtcItem" name="Fortuna Map" icon="icon.fortuna_enter" immediateEffect="1" weight="0">
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 100%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34035" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (3-hour) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
-			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
-	</item>
-	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 100%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34036" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (5-hour) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+	<item id="34035" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (3-hour)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 100%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34037" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (7-day) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+	<item id="34036" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (5-hour)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
+	</item>
+	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 100%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
+	<item id="34037" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (7-day)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 200%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34038" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (3-hour) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+	<item id="34038" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (3-hour)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 200%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34039" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (5-hour) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+	<item id="34039" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (5-hour)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases acquired XP and SP by 200%. The effect only applies to characters below level 86. The remaining time decreases even when not playing. -->
-	<item id="34040" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (7-day) - None" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+	<item id="34040" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (7-day)" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 100% (3-hour). -->
-	<item id="34041" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (3-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34041" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (3-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 100% (5-hour). -->
-	<item id="34042" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (5-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34042" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (5-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 100% (7-day). -->
-	<item id="34043" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (7-day) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34043" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (7-day)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 200% (3-hour). -->
-	<item id="34044" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (3-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34044" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (3-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 200% (5-hour). -->
-	<item id="34045" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (5-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34045" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (5-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 200% (7-day). -->
-	<item id="34046" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (7-day) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34046" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (7-day)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing XP Rune I (Lv. 1-85) 100% (3-hour). -->
@@ -205,35 +205,33 @@
 	<item id="34052" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (7-day) - Event" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<item id="34053" type="EtcItem" name="Blessed Specter Weapon Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34053" type="EtcItem" name="Blessed Specter Weapon Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0" isBlessed="true">
 	</item>
-	<item id="34054" type="EtcItem" name="Blessed Seraph Heavy Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34054" type="EtcItem" name="Blessed Seraph Heavy Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0" isBlessed="true">
 	</item>
-	<item id="34055" type="EtcItem" name="Blessed Seraph Light Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34055" type="EtcItem" name="Blessed Seraph Light Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0" isBlessed="true">
 	</item>
-	<item id="34056" type="EtcItem" name="Blessed Seraph Robe Armor Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34056" type="EtcItem" name="Blessed Seraph Robe Armor Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0" isBlessed="true">
 	</item>
-	<item id="34057" type="EtcItem" name="Blessed Seraph Accessory Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34057" type="EtcItem" name="Blessed Seraph Accessory Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="0" isBlessed="true">
 	</item>
-	<item id="34058" type="EtcItem" name="Rare Accessory Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			weight="0">
+	<item id="34058" type="EtcItem" name="Rare Accessory Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Putrefied Extract that Trade Vollodos in the Bloody Swampland asks you to collect. -->
-	<item id="34059" type="EtcItem" name="Putrefied Extract - None" icon="icon.etc_fruit_juice_glass_bottle_i02" immediateEffect="1"
+	<item id="34059" type="EtcItem" name="Putrefied Extract" icon="icon.etc_fruit_juice_glass_bottle_i02" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Rotten Blood that Trade Vollodos in the Bloody Swampland asks you to collect. -->
-	<item id="34060" type="EtcItem" name="Rotten Blood - None" icon="icon.etc_fruit_juice_glass_bottle_i10" immediateEffect="1"
-			weight="0">
+	<item id="34060" type="EtcItem" name="Rotten Blood" icon="icon.etc_fruit_juice_glass_bottle_i10" immediateEffect="1" weight="0">
 	</item>
 	<!-- Certificate that prove mentorship. -->
-	<item id="34061" type="EtcItem" name="Mentor's Qualification - None" icon="icon.etc_badge_gold_i00" immediateEffect="1"
-			weight="0" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34061" type="EtcItem" name="Mentor's Qualification" icon="icon.etc_badge_gold_i00" immediateEffect="1" weight="0"
+			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Double-click for a chance to acquire a Giant's Enchant Scroll, Scroll: Enchant Hair Accessory, and Spirit Stone - Hair Accessory. -->
 	<item id="34062" type="EtcItem" name="Giant's Box - Event" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="0"
@@ -248,7 +246,7 @@
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Echo Crystal that plays Gi-sung Bae's 'To the Brilliant You.' Disappears after 1 use. -->
-	<item id="34065" type="EtcItem" name="Echo Crystal - To the Brilliant You - None" icon="icon.etc_echo_crystal_i00" immediateEffect="1"
+	<item id="34065" type="EtcItem" name="Echo Crystal - To the Brilliant You" icon="icon.etc_echo_crystal_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- When enchanted, P. Atk. + 4 for one-handed swords/ blunts, daggers, spears, etc. (A-grade). P. Atk. + 5 for two-handed swords/ blunts, dualswords, and two-handed fist weapons. P. Atk. + 8 for bows. M. Atk. + 3 for all weapons. P. Atk./M. Atk. Increase doubles starting at + 4. -->
@@ -316,7 +314,7 @@
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- For 60 minutes, receives the following Lv. 2 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
-	<item id="34082" type="EtcItem" name="Heavenly Cocktail - None" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" weight="0">
+	<item id="34082" type="EtcItem" name="Heavenly Cocktail" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" weight="0">
 	</item>
 	<!-- Grand ￉p￩e (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
 	<item id="34083" type="Weapon" name="Player Commendation - Grand Épée (Earth) - PC-exclusive" icon="icon.weapon_rapier_i00"
@@ -7685,17 +7683,17 @@
 			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- For 60 minutes, it receives the following level 1 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
-	<item id="34620" type="EtcItem" name="Heavenly Cocktail - None" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" weight="0"
+	<item id="34620" type="EtcItem" name="Heavenly Cocktail" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" weight="0"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Increases resistance to half-kill and lethal strike when equipped. Shadow weapon. -->
-	<item id="34621" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive) - None" icon="icon.r85_talisman_md_up_passive"
+	<item id="34621" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive)" icon="icon.r85_talisman_md_up_passive"
 			defaultAction="equip" bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			duration="60">
 		<skill id="13368" level="1" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance -->
 	</item>
 	<!-- Increases resistance to half-kill and lethal strike when used. Shadow weapon. -->
-	<item id="34622" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) - None" icon="icon.r85_talisman_md_up_passive"
+	<item id="34622" type="Armor" name="Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active)" icon="icon.r85_talisman_md_up_passive"
 			defaultAction="equip" bodypart="deco1" immediateEffect="1" weight="150" equipReuseDelay="30" isTradable="false" isDropable="false"
 			isSellable="false" duration="60">
 		<skill id="13367" level="1" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) -->
@@ -7704,15 +7702,15 @@
 		Magic shirt filled with the power of Pa'agrio, the god of fire.
 		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can remove abnormal conditions and use the ultimate invincibility skill for a certain amount of time.
 	-->
-	<item id="34623" type="Armor" name="Pa'agrio's Shirt - None" icon="icon.pi_shirt_of_wolf_2nd_fire" defaultAction="equip"
-			bodypart="chest" immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34623" type="Armor" name="Pa'agrio's Shirt" icon="icon.pi_shirt_of_wolf_2nd_fire" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!--
 		Magic shirt filled with the power of Sayha, the god of wind.
 		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use a portal teleport skill that allows you to create a portal at a selected location and teleport to that portal. No effect in the Olympiad.
 	-->
-	<item id="34624" type="Armor" name="Sayha's Shirt - None" icon="icon.pi_shirt_of_wolf_2nd_wind" defaultAction="equip" bodypart="chest"
+	<item id="34624" type="Armor" name="Sayha's Shirt" icon="icon.pi_shirt_of_wolf_2nd_wind" defaultAction="equip" bodypart="chest"
 			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="28" />
 	</item>
@@ -7720,7 +7718,7 @@
 		Magic shirt filled with the power of Eva, the goddess of water.
 		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can use HP/MP/CP recovering skills.
 	-->
-	<item id="34625" type="Armor" name="Eva's Shirt - None" icon="icon.pi_shirt_of_wolf_2nd_water" defaultAction="equip" bodypart="chest"
+	<item id="34625" type="Armor" name="Eva's Shirt" icon="icon.pi_shirt_of_wolf_2nd_water" defaultAction="equip" bodypart="chest"
 			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="28" />
 	</item>
@@ -7728,311 +7726,306 @@
 		Magic shirt filled with the power of Maphr, the goddess of earth.
 		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, the enchant success rate is increased. No effect in the Olympiad.
 	-->
-	<item id="34626" type="Armor" name="Maphr's Shirt - None" icon="icon.pi_shirt_of_wolf_2nd_earth" defaultAction="equip" bodypart="chest"
+	<item id="34626" type="Armor" name="Maphr's Shirt" icon="icon.pi_shirt_of_wolf_2nd_earth" defaultAction="equip" bodypart="chest"
 			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Enchant scroll for t-shirts. When enchanted, increases P. Def. and M. Def. by 1. P. Def. + 3 starting from + 4. Can be safely enchanted to + 3 and up to a maximum of + 10. From + 4, basic abilities (CON, MEN, STR, INT, DEX, WT) are raised in stages. Depending on the shirt type, various additional options can be applied from + 4 to + 10. -->
-	<item id="34627" type="EtcItem" name="Scroll: Enchant Elemental Shirt - None" icon="icon.g_scrl_of_ench_wolf_shirt" immediateEffect="1"
+	<item id="34627" type="EtcItem" name="Scroll: Enchant Elemental Shirt" icon="icon.g_scrl_of_ench_wolf_shirt" immediateEffect="1"
 			weight="10" isStackable="true" handler="EnchantScrolls">
 	</item>
 	<!-- Vitality is replenished for 1 hr. -->
-	<item id="34628" type="EtcItem" name="Einhasad's Energy - None" icon="icon.etc_fruit_juice_glass_bottle_i05" immediateEffect="1"
+	<item id="34628" type="EtcItem" name="Einhasad's Energy" icon="icon.etc_fruit_juice_glass_bottle_i05" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Pirate's Eyepatch -->
-	<item id="34629" type="Armor" name="Pirate's Eyepatch - None" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
-			bodypart="hair" immediateEffect="1" weight="10" price="500000">
-		<enchant stat="mDef" val="0" />
-	</item>
-	<!-- Outlaw's Eyepatch -->
-	<item id="34630" type="Armor" name="Outlaw's Eyepatch - None" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip"
-			bodypart="hair" immediateEffect="1" weight="10" price="500000">
-		<enchant stat="mDef" val="0" />
-	</item>
-	<!-- Eyepatch -->
-	<item id="34631" type="Armor" name="Eyepatch - None" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="hair"
+	<item id="34629" type="Armor" name="Pirate's Eyepatch" icon="icon.accessory_eye_bandage_i00" defaultAction="equip" bodypart="hair"
 			immediateEffect="1" weight="10" price="500000">
 		<enchant stat="mDef" val="0" />
 	</item>
+	<!-- Outlaw's Eyepatch -->
+	<item id="34630" type="Armor" name="Outlaw's Eyepatch" icon="icon.accessory_outlaw_eyepatch_i00" defaultAction="equip" bodypart="hair"
+			immediateEffect="1" weight="10" price="500000">
+		<enchant stat="mDef" val="0" />
+	</item>
+	<!-- Eyepatch -->
+	<item id="34631" type="Armor" name="Eyepatch" icon="icon.Accessary_one_eye_i00" defaultAction="equip" bodypart="hair" immediateEffect="1"
+			weight="10" price="500000">
+		<enchant stat="mDef" val="0" />
+	</item>
 	<!-- Party Hat -->
-	<item id="34632" type="Armor" name="Party Hat - None" icon="icon.accessory_party_hat_i00" defaultAction="equip" bodypart="hairall"
+	<item id="34632" type="Armor" name="Party Hat" icon="icon.accessory_party_hat_i00" defaultAction="equip" bodypart="hairall"
 			immediateEffect="1" weight="10" price="500000">
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Refined Angel Ring -->
-	<item id="34633" type="Armor" name="Refined Angel Ring - None" icon="icon.accessory_angel_ring_i00" defaultAction="equip"
-			bodypart="hairall" immediateEffect="1" weight="10" price="500000">
+	<item id="34633" type="Armor" name="Refined Angel Ring" icon="icon.accessory_angel_ring_i00" defaultAction="equip" bodypart="hairall"
+			immediateEffect="1" weight="10" price="500000">
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Refined Devil Horn -->
-	<item id="34634" type="Armor" name="Refined Devil Horn - None" icon="icon.accessory_devil_horn_i00" defaultAction="equip"
-			bodypart="hairall" immediateEffect="1" weight="10" price="500000">
+	<item id="34634" type="Armor" name="Refined Devil Horn" icon="icon.accessory_devil_horn_i00" defaultAction="equip" bodypart="hairall"
+			immediateEffect="1" weight="10" price="500000">
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Can increases STR by equipping the Pirate's Eyepatch. -->
-	<item id="34635" type="EtcItem" name="Pirate's Eyepatch - STR Pendant - None" icon="icon.accessory_eye_bandage_i00" immediateEffect="1"
+	<item id="34635" type="EtcItem" name="Pirate's Eyepatch - STR Pendant" icon="icon.accessory_eye_bandage_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Can increases DEX by equipping the Pirate's Eyepatch. -->
-	<item id="34636" type="EtcItem" name="Pirate's Eyepatch - DEX Pendant - None" icon="icon.accessory_eye_bandage_i00" immediateEffect="1"
+	<item id="34636" type="EtcItem" name="Pirate's Eyepatch - DEX Pendant" icon="icon.accessory_eye_bandage_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Can increases CON by equipping the Outlaw's Eyepatch. -->
-	<item id="34637" type="EtcItem" name="Outlaw's Eyepatch - CON Pendant - None" icon="icon.accessory_outlaw_eyepatch_i00"
-			immediateEffect="1" weight="10">
+	<item id="34637" type="EtcItem" name="Outlaw's Eyepatch - CON Pendant" icon="icon.accessory_outlaw_eyepatch_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can increases MEN by equipping the Outlaw's Eyepatch. -->
-	<item id="34638" type="EtcItem" name="Outlaw's Eyepatch - MEN Pendant - None" icon="icon.accessory_outlaw_eyepatch_i00"
-			immediateEffect="1" weight="10">
+	<item id="34638" type="EtcItem" name="Outlaw's Eyepatch - MEN Pendant" icon="icon.accessory_outlaw_eyepatch_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can increases INT by equipping the Eyepatch. -->
-	<item id="34639" type="EtcItem" name="Eyepatch - INT Pendant - None" icon="icon.Accessary_one_eye_i00" immediateEffect="1"
-			weight="10">
+	<item id="34639" type="EtcItem" name="Eyepatch - INT Pendant" icon="icon.Accessary_one_eye_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Can increases WIT by equipping the Eyepatch. -->
-	<item id="34640" type="EtcItem" name="Eyepatch - WIT Pendant - None" icon="icon.Accessary_one_eye_i00" immediateEffect="1"
-			weight="10">
+	<item id="34640" type="EtcItem" name="Eyepatch - WIT Pendant" icon="icon.Accessary_one_eye_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Can increases P. Critical Rate by equipping a Party Hat. -->
-	<item id="34641" type="EtcItem" name="Party Hat - Critical Rate Pendant - None" icon="icon.accessory_party_hat_i00" immediateEffect="1"
+	<item id="34641" type="EtcItem" name="Party Hat - Critical Rate Pendant" icon="icon.accessory_party_hat_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Can increases P. Critical Damage by equipping a Party Hat. -->
-	<item id="34642" type="EtcItem" name="Party Hat - Critical Damage Pendant - None" icon="icon.accessory_party_hat_i00" immediateEffect="1"
+	<item id="34642" type="EtcItem" name="Party Hat - Critical Damage Pendant" icon="icon.accessory_party_hat_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Can P. Def. + equipping a Refined Angel Ring. -->
-	<item id="34643" type="EtcItem" name="Refined Angel Ring - P. Def. Pendant - None" icon="icon.accessory_angel_ring_i00"
-			immediateEffect="1" weight="10">
+	<item id="34643" type="EtcItem" name="Refined Angel Ring - P. Def. Pendant" icon="icon.accessory_angel_ring_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can M. Def. + equipping a Refined Angel Ring. -->
-	<item id="34644" type="EtcItem" name="Refined Angel Ring - M. Def. Pendant - None" icon="icon.accessory_angel_ring_i00"
-			immediateEffect="1" weight="10">
+	<item id="34644" type="EtcItem" name="Refined Angel Ring - M. Def. Pendant" icon="icon.accessory_angel_ring_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can increases Evasion by equipping a Refined Angel Ring. -->
-	<item id="34645" type="EtcItem" name="Refined Angel Ring - Evasion Pendant - None" icon="icon.accessory_angel_ring_i00"
-			immediateEffect="1" weight="10">
+	<item id="34645" type="EtcItem" name="Refined Angel Ring - Evasion Pendant" icon="icon.accessory_angel_ring_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can P. Atk. + equipping a Refined Devil Horn. -->
-	<item id="34646" type="EtcItem" name="Refined Devil Horn - P. Atk. Pendant - None" icon="icon.accessory_devil_horn_i00"
-			immediateEffect="1" weight="10">
+	<item id="34646" type="EtcItem" name="Refined Devil Horn - P. Atk. Pendant" icon="icon.accessory_devil_horn_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can M. Atk. + equipping a Refined Devil Horn. -->
-	<item id="34647" type="EtcItem" name="Refined Devil Horn - M. Atk. Pendant - None" icon="icon.accessory_devil_horn_i00"
-			immediateEffect="1" weight="10">
+	<item id="34647" type="EtcItem" name="Refined Devil Horn - M. Atk. Pendant" icon="icon.accessory_devil_horn_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can increases Accuracy by equipping a Refined Devil Horn. -->
-	<item id="34648" type="EtcItem" name="Refined Devil Horn - Accuracy Pendant - None" icon="icon.accessory_devil_horn_i00"
-			immediateEffect="1" weight="10">
+	<item id="34648" type="EtcItem" name="Refined Devil Horn - Accuracy Pendant" icon="icon.accessory_devil_horn_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
-	<item id="34649" type="EtcItem" name="Fire Stone Fragment - None" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="1"
+	<item id="34649" type="EtcItem" name="Fire Stone Fragment" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
-	<item id="34650" type="EtcItem" name="Water Stone Fragment - None" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="1"
+	<item id="34650" type="EtcItem" name="Water Stone Fragment" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
-	<item id="34651" type="EtcItem" name="Wind Stone Fragment - None" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="1"
+	<item id="34651" type="EtcItem" name="Wind Stone Fragment" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
-	<item id="34652" type="EtcItem" name="Earth Stone Fragment - None" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="1"
+	<item id="34652" type="EtcItem" name="Earth Stone Fragment" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
-	<item id="34653" type="EtcItem" name="Holy Stone Fragment - None" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="1"
+	<item id="34653" type="EtcItem" name="Holy Stone Fragment" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
-	<item id="34654" type="EtcItem" name="Dark Stone Fragment - None" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="1"
+	<item id="34654" type="EtcItem" name="Dark Stone Fragment" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="1"
 			price="1000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the fire attribute. -->
-	<item id="34655" type="EtcItem" name="Fire Crystal Fragment - None" icon="icon.etc_fire_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34655" type="EtcItem" name="Fire Crystal Fragment" icon="icon.etc_fire_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the water attribute. -->
-	<item id="34656" type="EtcItem" name="Water Crystal Fragment - None" icon="icon.etc_water_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34656" type="EtcItem" name="Water Crystal Fragment" icon="icon.etc_water_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the wind attribute. -->
-	<item id="34657" type="EtcItem" name="Wind Crystal Fragment - None" icon="icon.etc_wind_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34657" type="EtcItem" name="Wind Crystal Fragment" icon="icon.etc_wind_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the earth attribute. -->
-	<item id="34658" type="EtcItem" name="Earth Crystal Fragment - None" icon="icon.etc_earth_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34658" type="EtcItem" name="Earth Crystal Fragment" icon="icon.etc_earth_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the holy attribute. -->
-	<item id="34659" type="EtcItem" name="Holy Crystal Fragment - None" icon="icon.etc_holy_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34659" type="EtcItem" name="Holy Crystal Fragment" icon="icon.etc_holy_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can infuse a bound item or item acquired through mentor/mentee with the dark attribute. -->
-	<item id="34660" type="EtcItem" name="Dark Crystal Fragment - None" icon="icon.etc_unholy_crystal_i00" immediateEffect="1"
-			weight="1" price="4000">
+	<item id="34660" type="EtcItem" name="Dark Crystal Fragment" icon="icon.etc_unholy_crystal_i00" immediateEffect="1" weight="1"
+			price="4000">
 	</item>
 	<!-- Can bestow fire attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34661" type="EtcItem" name="Fire Stone (+ 60) - None" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="100">
+	<item id="34661" type="EtcItem" name="Fire Stone (+ 60)" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow water attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34662" type="EtcItem" name="Water Stone (+ 60) - None" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="100">
+	<item id="34662" type="EtcItem" name="Water Stone (+ 60)" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow earth attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34663" type="EtcItem" name="Earth Stone (+ 60) - None" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="100">
+	<item id="34663" type="EtcItem" name="Earth Stone (+ 60)" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow wind attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34664" type="EtcItem" name="Wind Stone (+ 60) - None" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="100">
+	<item id="34664" type="EtcItem" name="Wind Stone (+ 60)" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow dark attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34665" type="EtcItem" name="Dark Stone (+ 60) - None" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="100">
+	<item id="34665" type="EtcItem" name="Dark Stone (+ 60)" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow holy attribute up to 60 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34666" type="EtcItem" name="Holy Stone (+ 60) - None" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="100">
+	<item id="34666" type="EtcItem" name="Holy Stone (+ 60)" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="100">
 	</item>
 	<!-- Can bestow fire attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34667" type="EtcItem" name="Fire Stone (+ 150) - None" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="1">
+	<item id="34667" type="EtcItem" name="Fire Stone (+ 150)" icon="icon.etc_fire_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Can bestow water attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34668" type="EtcItem" name="Water Stone (+ 150) - None" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="1">
+	<item id="34668" type="EtcItem" name="Water Stone (+ 150)" icon="icon.etc_water_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Can bestow earth attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34669" type="EtcItem" name="Earth Stone (+ 150) - None" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="1">
+	<item id="34669" type="EtcItem" name="Earth Stone (+ 150)" icon="icon.etc_earth_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Can bestow wind attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34670" type="EtcItem" name="Wind Stone (+ 150) - None" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="1">
+	<item id="34670" type="EtcItem" name="Wind Stone (+ 150)" icon="icon.etc_wind_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Can bestow dark attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34671" type="EtcItem" name="Dark Stone (+ 150) - None" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="1">
+	<item id="34671" type="EtcItem" name="Dark Stone (+ 150)" icon="icon.etc_unholy_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Can bestow holy attribute up to level 3 at one time. Additional Elemental attributes cannot be bestowed. Up to 3 types of attributes can be enchanted for armor. Opposite attributes cannot be bestowed at the same time. -->
-	<item id="34672" type="EtcItem" name="Holy Stone (+ 150) - None" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="1">
+	<item id="34672" type="EtcItem" name="Holy Stone (+ 150)" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="1">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34673" type="EtcItem" name="Scroll: Seal Weapon (D-grade) - None" icon="icon.scroll_of_unidentify_wp_d" immediateEffect="1"
+	<item id="34673" type="EtcItem" name="Scroll: Seal Weapon (D-grade)" icon="icon.scroll_of_unidentify_wp_d" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34674" type="EtcItem" name="Scroll: Seal Weapon (C-grade) - None" icon="icon.scroll_of_unidentify_wp_c" immediateEffect="1"
+	<item id="34674" type="EtcItem" name="Scroll: Seal Weapon (C-grade)" icon="icon.scroll_of_unidentify_wp_c" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34675" type="EtcItem" name="Scroll: Seal Weapon (B-grade) - None" icon="icon.scroll_of_unidentify_wp_b" immediateEffect="1"
+	<item id="34675" type="EtcItem" name="Scroll: Seal Weapon (B-grade)" icon="icon.scroll_of_unidentify_wp_b" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34676" type="EtcItem" name="Scroll: Seal Weapon (A-grade) - None" icon="icon.scroll_of_unidentify_wp_a" immediateEffect="1"
+	<item id="34676" type="EtcItem" name="Scroll: Seal Weapon (A-grade)" icon="icon.scroll_of_unidentify_wp_a" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34677" type="EtcItem" name="Scroll: Seal Weapon (S-grade) - None" icon="icon.scroll_of_unidentify_wp_s" immediateEffect="1"
+	<item id="34677" type="EtcItem" name="Scroll: Seal Weapon (S-grade)" icon="icon.scroll_of_unidentify_wp_s" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34678" type="EtcItem" name="Scroll: Seal Weapon (S80-grade) - None" icon="icon.scroll_of_unidentify_wp_s" immediateEffect="1"
+	<item id="34678" type="EtcItem" name="Scroll: Seal Weapon (S80-grade)" icon="icon.scroll_of_unidentify_wp_s" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34679" type="EtcItem" name="Scroll: Seal Weapon (R-grade) - None" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
+	<item id="34679" type="EtcItem" name="Scroll: Seal Weapon (R-grade)" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34680" type="EtcItem" name="Scroll: Seal Weapon (R95-grade) - None" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
+	<item id="34680" type="EtcItem" name="Scroll: Seal Weapon (R95-grade)" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34681" type="EtcItem" name="Scroll: Seal Weapon (R99-grade) - None" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
+	<item id="34681" type="EtcItem" name="Scroll: Seal Weapon (R99-grade)" icon="icon.scroll_of_unidentify_wp_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34682" type="EtcItem" name="Scroll: Seal Armor (D-grade) - None" icon="icon.scroll_of_unidentify_am_d" immediateEffect="1"
+	<item id="34682" type="EtcItem" name="Scroll: Seal Armor (D-grade)" icon="icon.scroll_of_unidentify_am_d" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34683" type="EtcItem" name="Scroll: Seal Armor (C-grade) - None" icon="icon.scroll_of_unidentify_am_c" immediateEffect="1"
+	<item id="34683" type="EtcItem" name="Scroll: Seal Armor (C-grade)" icon="icon.scroll_of_unidentify_am_c" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34684" type="EtcItem" name="Scroll: Seal Armor (B-grade) - None" icon="icon.scroll_of_unidentify_am_b" immediateEffect="1"
+	<item id="34684" type="EtcItem" name="Scroll: Seal Armor (B-grade)" icon="icon.scroll_of_unidentify_am_b" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34685" type="EtcItem" name="Scroll: Seal Armor (A-grade) - None" icon="icon.scroll_of_unidentify_am_a" immediateEffect="1"
+	<item id="34685" type="EtcItem" name="Scroll: Seal Armor (A-grade)" icon="icon.scroll_of_unidentify_am_a" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34686" type="EtcItem" name="Scroll: Seal Armor (S-grade) - None" icon="icon.scroll_of_unidentify_am_s" immediateEffect="1"
+	<item id="34686" type="EtcItem" name="Scroll: Seal Armor (S-grade)" icon="icon.scroll_of_unidentify_am_s" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34687" type="EtcItem" name="Scroll: Seal Armor (S80-grade) - None" icon="icon.scroll_of_unidentify_am_s" immediateEffect="1"
+	<item id="34687" type="EtcItem" name="Scroll: Seal Armor (S80-grade)" icon="icon.scroll_of_unidentify_am_s" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34688" type="EtcItem" name="Scroll: Seal Armor (R-grade) - None" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
+	<item id="34688" type="EtcItem" name="Scroll: Seal Armor (R-grade)" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34689" type="EtcItem" name="Scroll: Seal Armor (R95-grade) - None" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
+	<item id="34689" type="EtcItem" name="Scroll: Seal Armor (R95-grade)" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Scroll that returns an item from bound to unidentified status. All enchant values are reset. -->
-	<item id="34690" type="EtcItem" name="Scroll: Seal Armor (R99-grade) - None" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
+	<item id="34690" type="EtcItem" name="Scroll: Seal Armor (R99-grade)" icon="icon.scroll_of_unidentify_am_r" immediateEffect="1"
 			weight="120">
 	</item>
 	<!-- Chest containing Hair Accessory. -->
-	<item id="34691" type="EtcItem" name="Hair Accessory Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			weight="10">
+	<item id="34691" type="EtcItem" name="Hair Accessory Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Chest containing Hair Accessory Pendant. -->
-	<item id="34692" type="EtcItem" name="Pendant Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="10">
+	<item id="34692" type="EtcItem" name="Pendant Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Box containing attribute stone. -->
-	<item id="34693" type="EtcItem" name="Attribute Stone Fragment Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34693" type="EtcItem" name="Attribute Stone Fragment Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Box containing Lucky Enchant Stone. -->
-	<item id="34694" type="EtcItem" name="Hero's Lucky Enchant Stone Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34694" type="EtcItem" name="Hero's Lucky Enchant Stone Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Box containing Enchant Scroll of Destruction. -->
-	<item id="34695" type="EtcItem" name="Hero's Destruction Enchant Scroll Pack - None" icon="icon.event_hero_treasure_box_i00"
-			immediateEffect="1" weight="10">
+	<item id="34695" type="EtcItem" name="Hero's Destruction Enchant Scroll Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Box containing Blessed Enchant Scroll. -->
-	<item id="34696" type="EtcItem" name="Hero's Blessed Enchant Scroll Pack - None" icon="icon.event_hero_treasure_box_i00"
-			immediateEffect="1" weight="10">
+	<item id="34696" type="EtcItem" name="Hero's Blessed Enchant Scroll Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			weight="10">
 	</item>
 	<!-- Box containing Bind Removing Scroll. -->
-	<item id="34697" type="EtcItem" name="Hero's Unbind Scroll Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34697" type="EtcItem" name="Hero's Unbind Scroll Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Box containing attribute crystal or stone (Super - 60/150). -->
-	<item id="34698" type="EtcItem" name="Hero's Attribute Crystal Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34698" type="EtcItem" name="Hero's Attribute Crystal Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Item that is added to the Aden reconstruction renewal. It's functions have not materialized yet. -->
-	<item id="34699" type="EtcItem" name="Giant's Attribute Crystal Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34699" type="EtcItem" name="Giant's Attribute Crystal Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Item that is added to the Aden reconstruction renewal. It's functions have not materialized yet. -->
-	<item id="34700" type="EtcItem" name="Giant's Enchant Scroll Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34700" type="EtcItem" name="Giant's Enchant Scroll Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Item that is added to the Aden reconstruction renewal. It's functions have not materialized yet. -->
-	<item id="34701" type="EtcItem" name="Giant's Unbind Scroll Pack - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34701" type="EtcItem" name="Giant's Unbind Scroll Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
-	<item id="34702" type="EtcItem" name="Treasure Chest - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34702" type="EtcItem" name="Treasure Chest" icon="icon.event_hero_treasure_box_i00" immediateEffect="1" weight="10">
+	</item>
+	<item id="34703" type="EtcItem" name="Hero's Treasure Chest" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
-	<item id="34703" type="EtcItem" name="Hero's Treasure Chest - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
-			weight="10">
-	</item>
-	<item id="34704" type="EtcItem" name="Giant's Treasure Chest - None" icon="icon.etc_pouch_gold_i00" immediateEffect="1"
-			weight="10">
+	<item id="34704" type="EtcItem" name="Giant's Treasure Chest" icon="icon.etc_pouch_gold_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- STR + 3 when equipped. -->
 	<item id="34705" type="Armor" name="Pirate's Eyepatch - Str" icon="icon.accessory_eye_bandage_i00" defaultAction="equip"
@@ -8293,132 +8286,132 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Sealed Power Shirt. Please note that after the transfer, if the seal on Power Shirt is removed, you can no longer use seal/unseal. -->
-	<item id="34731" type="Armor" name="Sealed Power Shirt - None" icon="BranchSys2.icon.7anni_shirt_i00" defaultAction="equip"
-			bodypart="chest" immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34731" type="Armor" name="Sealed Power Shirt" icon="BranchSys2.icon.7anni_shirt_i00" defaultAction="equip" bodypart="chest"
+			immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!--
 		Power Shirt that has already been exchanged. Dimensional item.
 		Can be enchanted to a max + 10 with Scroll: Enchant Power Shirts and Blessed Scroll: Enchant Power Shirts.
 	-->
-	<item id="34732" type="Armor" name="Exchanged Power Shirt - None" icon="BranchSys2.icon.7anni_shirt_i00" defaultAction="equip"
+	<item id="34732" type="Armor" name="Exchanged Power Shirt" icon="BranchSys2.icon.7anni_shirt_i00" defaultAction="equip"
 			bodypart="chest" immediateEffect="1" weight="130" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Box containing Pa'agrio's Shirt. -->
-	<item id="34733" type="EtcItem" name="Pa'agrio's Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34733" type="EtcItem" name="Pa'agrio's Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing Maphr's Shirt. -->
-	<item id="34734" type="EtcItem" name="Maphr's Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34734" type="EtcItem" name="Maphr's Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing Sayha's Shirt. -->
-	<item id="34735" type="EtcItem" name="Sayha's Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34735" type="EtcItem" name="Sayha's Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing Eva's Shirt. -->
-	<item id="34736" type="EtcItem" name="Eva's Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34736" type="EtcItem" name="Eva's Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing 4 Pa'agrio's Boxes and 1 Einhasad's Energy. -->
-	<item id="34737" type="EtcItem" name="Pa'agrio's XL Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
+	<item id="34737" type="EtcItem" name="Pa'agrio's XL Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing 4 Maphr's Boxes and 1 Einhasad's Energy. -->
-	<item id="34738" type="EtcItem" name="Maphr's XL Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34738" type="EtcItem" name="Maphr's XL Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing 4 Sayha's Boxes and 1 Einhasad's Energy. -->
-	<item id="34739" type="EtcItem" name="Sayha's XL Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34739" type="EtcItem" name="Sayha's XL Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Box containing 4 Eva's Boxes and 1 Einhasad's Energy. -->
-	<item id="34740" type="EtcItem" name="Eva's XL Box - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100"
-			isTradable="false" isDropable="false" isSellable="false">
+	<item id="34740" type="EtcItem" name="Eva's XL Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" weight="100" isTradable="false"
+			isDropable="false" isSellable="false">
 	</item>
 	<!-- Agathion - XP Bottle's gift. Can exchange for an Scroll: XP through the Subclass Master Raina. -->
-	<item id="34741" type="EtcItem" name="XP Bottle - None" icon="icon.exp_bottle" immediateEffect="1" weight="5" isTradable="false"
+	<item id="34741" type="EtcItem" name="XP Bottle" icon="icon.exp_bottle" immediateEffect="1" weight="5" isTradable="false"
 			isDropable="false" isSellable="false">
 	</item>
 	<!-- Scroll that replenishes 500,000,000 XP. When used by characters below level 85, only 20% of the XP is replenished. Can be used by sub (dual) classes level 76 or above. -->
-	<item id="34742" type="EtcItem" name="Scroll: 500,000,000 XP - None" icon="icon.exp_bottle_scroll" immediateEffect="1" weight="120"
+	<item id="34742" type="EtcItem" name="Scroll: 500,000,000 XP" icon="icon.exp_bottle_scroll" immediateEffect="1" weight="120"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34743" type="Armor" name="Agathion - XP Bottle (10-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34743" type="Armor" name="Agathion - XP Bottle (10-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34744" type="Armor" name="Agathion - XP Bottle (20-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34744" type="Armor" name="Agathion - XP Bottle (20-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34745" type="Armor" name="Agathion - XP Bottle (30-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34745" type="Armor" name="Agathion - XP Bottle (30-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34746" type="Armor" name="Agathion - XP Bottle (40-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34746" type="Armor" name="Agathion - XP Bottle (40-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34747" type="Armor" name="Agathion - XP Bottle (50-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34747" type="Armor" name="Agathion - XP Bottle (50-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34748" type="Armor" name="Agathion - XP Bottle (60-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34748" type="Armor" name="Agathion - XP Bottle (60-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34749" type="Armor" name="Agathion - XP Bottle (70-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34749" type="Armor" name="Agathion - XP Bottle (70-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Bracelet that summons an Agathion - XP Bottle. The bracelet must be removed in order to seal an Agathion. After unequipping the bracelet, the XP bottle's divine power will not be felt for 10 seconds. -->
-	<item id="34750" type="Armor" name="Agathion - XP Bottle (80-hour) - None" icon="icon.exp_bottle_agathion" defaultAction="equip"
+	<item id="34750" type="Armor" name="Agathion - XP Bottle (80-hour)" icon="icon.exp_bottle_agathion" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (10-hour). -->
-	<item id="34751" type="EtcItem" name="Agathion - XP Bottle Pack (10-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34751" type="EtcItem" name="Agathion - XP Bottle Pack (10-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (20-hour). -->
-	<item id="34752" type="EtcItem" name="Agathion - XP Bottle Pack (20-hour) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34752" type="EtcItem" name="Agathion - XP Bottle Pack (20-hour)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (30-hour). -->
-	<item id="34753" type="EtcItem" name="Agathion - XP Bottle Pack (30-hour) - None" icon="icon.etc_pi_gift_box_i01" immediateEffect="1"
+	<item id="34753" type="EtcItem" name="Agathion - XP Bottle Pack (30-hour)" icon="icon.etc_pi_gift_box_i01" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (40-hour). -->
-	<item id="34754" type="EtcItem" name="Agathion - XP Bottle Pack (40-hour) - None" icon="icon.etc_pi_gift_box_i01" immediateEffect="1"
+	<item id="34754" type="EtcItem" name="Agathion - XP Bottle Pack (40-hour)" icon="icon.etc_pi_gift_box_i01" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (50-hour). -->
-	<item id="34755" type="EtcItem" name="Agathion - XP Bottle Pack (50-hour) - None" icon="icon.etc_pi_gift_box_i03" immediateEffect="1"
+	<item id="34755" type="EtcItem" name="Agathion - XP Bottle Pack (50-hour)" icon="icon.etc_pi_gift_box_i03" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (60-hour). -->
-	<item id="34756" type="EtcItem" name="Agathion - XP Bottle Pack (60-hour) - None" icon="icon.etc_pi_gift_box_i03" immediateEffect="1"
+	<item id="34756" type="EtcItem" name="Agathion - XP Bottle Pack (60-hour)" icon="icon.etc_pi_gift_box_i03" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (70-hour). -->
-	<item id="34757" type="EtcItem" name="Agathion - XP Bottle Pack (70-hour) - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+	<item id="34757" type="EtcItem" name="Agathion - XP Bottle Pack (70-hour)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Wrapped Pack containing Agathion - XP Bottle (80-hour). -->
-	<item id="34758" type="EtcItem" name="Agathion - XP Bottle Pack (80-hour) - None" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+	<item id="34758" type="EtcItem" name="Agathion - XP Bottle Pack (80-hour)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Hair accessory acquired by mentees. When equipped, there is a great effect that show that you are a mentee. -->
-	<item id="34759" type="Armor" name="Mentee Headphone - None" icon="BranchSys.icon.br_headphone_i00" defaultAction="equip"
-			bodypart="hair" immediateEffect="1" weight="10">
+	<item id="34759" type="Armor" name="Mentee Headphone" icon="BranchSys.icon.br_headphone_i00" defaultAction="equip" bodypart="hair"
+			immediateEffect="1" weight="10">
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!--
 		Dimensional Item Pack
 		Contains a Mentee Certificate, a Mentoring Guidebook, and a Mentee Headphone. Only 1 per account. Cannot be shared once opened.
 	-->
-	<item id="34760" type="EtcItem" name="Mentee Certificate Pack - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
-			weight="100" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34760" type="EtcItem" name="Mentee Certificate Pack" icon="icon.etc_pi_gift_box_i00" immediateEffect="1" weight="100"
+			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Firecracker that make a great bang. When used on the colony of bats on Fantasy Isle it will frighten them. WARNING: Excessive use may result in temporary hallucinogenic effects. -->
 	<item id="34761" type="EtcItem" name="Fearsome Firecracker - Campaign" icon="icon.etc_small_ultra_bomb_i00" immediateEffect="1"
@@ -8432,26 +8425,23 @@
 	<item id="34763" type="EtcItem" name="Tama Herb - Campaign" icon="icon.tama_poisonous_plant" immediateEffect="1" weight="0">
 	</item>
 	<!-- Purified Dwarf's Soul -->
-	<item id="34764" type="EtcItem" name="Purified Soul - None" icon="icon.etc_jewel_gold_i00" immediateEffect="1" weight="0">
+	<item id="34764" type="EtcItem" name="Purified Soul" icon="icon.etc_jewel_gold_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Item obtained after defeating all the monsters in the Shrine of Loyalty. Collect an adequate amount and bring them to the Elmorean scholar Gerkenshtein in the Shrine of Loyalty. -->
-	<item id="34765" type="EtcItem" name="Remnant Ashes - None" icon="icon.etc_pouch_brown_i00" immediateEffect="1" weight="0">
+	<item id="34765" type="EtcItem" name="Remnant Ashes" icon="icon.etc_pouch_brown_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Essence obtained after eliminating a Bloody Succubus from the Shrine of Loyalty. Bring it to the Elmorean scholar Gerkenshtein in the Shrine of Loyalty. -->
-	<item id="34766" type="EtcItem" name="Succubus Essence - None" icon="icon.etc_crystal_ball_red_i00" immediateEffect="1"
-			weight="0">
+	<item id="34766" type="EtcItem" name="Succubus Essence" icon="icon.etc_crystal_ball_red_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Investigation report from the Elmorean scholar Gerkenshtein to Captain Andrei in the Town of Goddard. Double-click on it for more information. -->
-	<item id="34767" type="EtcItem" name="Gerkenshtein's Report - None" icon="icon.etc_spell_books_red_i00" immediateEffect="1"
-			weight="0">
+	<item id="34767" type="EtcItem" name="Gerkenshtein's Report" icon="icon.etc_spell_books_red_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Fragment piece obtained after eliminating the evil creatures that suddenly appeared in the Shrine of Loyalty. Bring it to Goddard Vanguard Sirik in the Shrine of Loyalty. -->
-	<item id="34768" type="EtcItem" name="Dimensional Fragment - None" icon="icon.etc_broken_crystal_blue_i00" immediateEffect="1"
+	<item id="34768" type="EtcItem" name="Dimensional Fragment" icon="icon.etc_broken_crystal_blue_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Ancient relics that are being collected by the monsters that have appeared in the Imperial Tomb. Bring them to Vice Hierarch Zenya in the Imperial Tomb. -->
-	<item id="34769" type="EtcItem" name="Relics of the Empire - None" icon="icon.etc_piece_holy_light" immediateEffect="1"
-			weight="0">
+	<item id="34769" type="EtcItem" name="Relics of the Empire" icon="icon.etc_piece_holy_light" immediateEffect="1" weight="0">
 	</item>
 	<!-- Magic shirt filled with the power of Pa'agrio, the god of fire. Can be enchanted to + 10 using Scroll: Enchant Elemental Shirt. When enchanted above + 7, can remove abnormal conditions and use the ultimate invincibility skill for a certain amount of time. -->
 	<item id="34770" type="Armor" name="Pa'agrio's Shirt - Event" icon="icon.pi_shirt_of_wolf_2nd_fire" defaultAction="equip"
@@ -8658,7 +8648,7 @@
 			immediateEffect="1" weight="10">
 	</item>
 	<!-- Pack containing 3 Scroll: Enchant Weapon (R-grade), 2 Blessed Scroll: Enchant Weapon, 15 Scroll: Enchant Armor, 5 Blessed Scroll: Enchant Armor, Super Attribute Stone, and 4 Spirit Stones. -->
-	<item id="34830" type="EtcItem" name="Enchant Set Pack (R-grade) - None" icon="icon.present_of_destination_event" immediateEffect="1"
+	<item id="34830" type="EtcItem" name="Enchant Set Pack (R-grade)" icon="icon.present_of_destination_event" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Squash ring for wizards. Increases M. Critical Rate by 2% and M. Accuracy by 2. 15-day. Wearing 2 of these rings will give the effect of 1. -->
@@ -8676,7 +8666,7 @@
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Hair accessory that looks like Afro hair. -->
-	<item id="34833" type="Armor" name="Afro Hair - None" icon="BranchSys.icon.br_Afro_hair_i00" defaultAction="equip" bodypart="hairall"
+	<item id="34833" type="Armor" name="Afro Hair" icon="BranchSys.icon.br_Afro_hair_i00" defaultAction="equip" bodypart="hairall"
 			immediateEffect="1" weight="10">
 		<enchant stat="mDef" val="0" />
 	</item>
@@ -8686,84 +8676,79 @@
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- When opened, can acquire 1 Afro Hair Accessory. -->
-	<item id="34835" type="EtcItem" name="Afro Hair Pack - None" icon="icon.present_of_destination_event" immediateEffect="1"
-			weight="100">
+	<item id="34835" type="EtcItem" name="Afro Hair Pack" icon="icon.present_of_destination_event" immediateEffect="1" weight="100">
 	</item>
 	<!-- Open to acquire 1 Afro Hair Accessory (7-day). -->
-	<item id="34836" type="EtcItem" name="Afro Hair Pack (7-day) - None" icon="icon.present_of_destination_event" immediateEffect="1"
+	<item id="34836" type="EtcItem" name="Afro Hair Pack (7-day)" icon="icon.present_of_destination_event" immediateEffect="1"
 			weight="100">
 	</item>
 	<!-- Rope that has magical power. It is made by weaving strips of lizard leather together. Using this rope to tie an item will reduce its weight so that it will be easier to carry. -->
-	<item id="34837" type="EtcItem" name="Magic Rope (R-grade) - None" icon="icon.etc_braided_hemp_i00" etcitemType="material"
-			immediateEffect="1" weight="2" price="6000" isStackable="true">
+	<item id="34837" type="EtcItem" name="Magic Rope (R-grade)" icon="icon.etc_braided_hemp_i00" etcitemType="material" immediateEffect="1"
+			weight="2" price="6000" isStackable="true">
 	</item>
 	<!-- Small pack containing compressed Soulshots (R-grade). When used, it will change to 300 Soulshots (R-grade). -->
-	<item id="34838" type="EtcItem" name="Soulshot Compressed Package (R-grade) - None" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
+	<item id="34838" type="EtcItem" name="Soulshot Compressed Package (R-grade)" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
 			weight="200" price="60000">
 	</item>
 	<!-- Small pack containing compressed Spiritshots (R-grade). When used, it will change to 300 Spiritshots (R-grade). -->
-	<item id="34839" type="EtcItem" name="Spiritshot Compressed Package (R-grade) - None" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
+	<item id="34839" type="EtcItem" name="Spiritshot Compressed Package (R-grade)" icon="icon.etc_pouch_yellow_i00" immediateEffect="1"
 			weight="200" price="90000">
 	</item>
 	<!-- Small pack containing compressed Blessed Spiritshots (R-grade). When used, it will change to 300 Blessed Spiritshots (R-grade). -->
-	<item id="34840" type="EtcItem" name="Blessed Spiritshot Compressed Package (R-grade) - None" icon="icon.etc_pouch_yellow_i00"
+	<item id="34840" type="EtcItem" name="Blessed Spiritshot Compressed Package (R-grade)" icon="icon.etc_pouch_yellow_i00"
 			immediateEffect="1" weight="200" price="225000">
 	</item>
 	<!-- For dwarves only. The recipe for Soulshot Compressed Package (R-grade) . Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
-	<item id="34841" type="EtcItem" name="Recipe: Soulshot (R-grade) Compressed Package - None" icon="icon.etc_recipe_gold_i00"
-			defaultAction="recipe" etcitemType="recipe" immediateEffect="1" weight="30" price="1350000" recipeId="1163" isStackable="true"
-			handler="Recipes">
+	<item id="34841" type="EtcItem" name="Recipe: Soulshot (R-grade) Compressed Package" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+			etcitemType="recipe" immediateEffect="1" weight="30" price="1350000" recipeId="1163" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For dwarves only. The recipe for Spiritshot Compressed Package (R-grade). Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
-	<item id="34842" type="EtcItem" name="Recipe: Spiritshot (R-grade) Compressed Package - None" icon="icon.etc_recipe_gold_i00"
-			defaultAction="recipe" etcitemType="recipe" immediateEffect="1" weight="30" price="1350000" recipeId="1164" isStackable="true"
-			handler="Recipes">
+	<item id="34842" type="EtcItem" name="Recipe: Spiritshot (R-grade) Compressed Package" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+			etcitemType="recipe" immediateEffect="1" weight="30" price="1350000" recipeId="1164" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For dwarves only. The recipe for Blessed Spiritshot Compressed Package (R-grade) . Requires Create Item - Skill Lv. 11. Success rate is 100%. -->
-	<item id="34843" type="EtcItem" name="Recipe: Blessed Spiritshot (R-grade) Compressed Package - None" icon="icon.etc_recipe_gold_i00"
+	<item id="34843" type="EtcItem" name="Recipe: Blessed Spiritshot (R-grade) Compressed Package" icon="icon.etc_recipe_gold_i00"
 			defaultAction="recipe" etcitemType="recipe" immediateEffect="1" weight="30" price="1350000" recipeId="1165" isStackable="true"
 			handler="Recipes">
 	</item>
-	<item id="34844" type="EtcItem" name="Mysterious Herb - None" immediateEffect="1" weight="0">
+	<item id="34844" type="EtcItem" name="Mysterious Herb" immediateEffect="1" weight="0">
 	</item>
-	<item id="34845" type="EtcItem" name="Mysterious Herb - None" immediateEffect="1" weight="0">
+	<item id="34845" type="EtcItem" name="Mysterious Herb" immediateEffect="1" weight="0">
 	</item>
 	<!-- Wrapped Pack containing Bard's heart. -->
-	<item id="34846" type="EtcItem" name="Bard's Gift - None" icon="icon.present_of_destination_event" immediateEffect="1" weight="10">
+	<item id="34846" type="EtcItem" name="Bard's Gift" icon="icon.present_of_destination_event" immediateEffect="1" weight="10">
 	</item>
 	<!-- When used, you can temporarily feel the Vitality recovery herb's effect for 2 hours. No effect applies when used while the 'Birthday Vitality' buff is in effect. Cooldown is 60 min. Vitality item with limited usage. Will not be deleted upon death. -->
-	<item id="34847" type="EtcItem" name="Pirate Elixir (2-hour) - None" icon="icon.etc_hot_spring_nectar_i00" immediateEffect="1"
+	<item id="34847" type="EtcItem" name="Pirate Elixir (2-hour)" icon="icon.etc_hot_spring_nectar_i00" immediateEffect="1"
 			weight="1" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Circlet that has the power of Severe Earthquake. Increases earth defense by 60. Uses 2 hair accessory slots. -->
-	<item id="34848" type="Armor" name="Circlet of Earthquake (60-day) - None" icon="icon.accessory_earthquake_circlet_i00"
-			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34848" type="Armor" name="Circlet of Earthquake (60-day)" icon="icon.accessory_earthquake_circlet_i00" defaultAction="equip"
+			bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
-	<item id="34849" type="EtcItem" name="Mysterious Herb of Power - None" icon="icon.etc_warrior_set_i00" immediateEffect="1"
-			weight="0">
+	<item id="34849" type="EtcItem" name="Mysterious Herb of Power" icon="icon.etc_warrior_set_i00" immediateEffect="1" weight="0">
 	</item>
-	<item id="34850" type="EtcItem" name="Mysterious Herb of Magic - None" icon="icon.etc_magic_set_i00" immediateEffect="1"
-			weight="0">
+	<item id="34850" type="EtcItem" name="Mysterious Herb of Magic" icon="icon.etc_magic_set_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Speak with a warehouse keeper to exchange this for a Scroll: Armor Enchant (R-grade). -->
-	<item id="34851" type="EtcItem" name="Cube Fragment Armor - R - None" icon="Branchsys2.icon.event_cubic_a_piece_i01" immediateEffect="1"
+	<item id="34851" type="EtcItem" name="Cube Fragment Armor - R" icon="Branchsys2.icon.event_cubic_a_piece_i01" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Speak with a warehouse keeper to exchange this for a Scroll: Weapon Enchant (R-grade). -->
-	<item id="34852" type="EtcItem" name="Cube Fragment Weapon - R - None" icon="Branchsys2.icon.event_cubic_w_piece_i01" immediateEffect="1"
+	<item id="34852" type="EtcItem" name="Cube Fragment Weapon - R" icon="Branchsys2.icon.event_cubic_w_piece_i01" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Speak with a warehouse keeper to exchange this for a Blessed Scroll: Armor Enchant (R-grade). -->
-	<item id="34853" type="EtcItem" name="Shiny Cube Fragment Armor - R - None" icon="Branchsys2.icon.shine_cubic_a_piece_i01"
-			immediateEffect="1" weight="0">
+	<item id="34853" type="EtcItem" name="Shiny Cube Fragment Armor - R" icon="Branchsys2.icon.shine_cubic_a_piece_i01" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Speak with a warehouse keeper to exchange this for a Blessed Scroll: Weapon Enchant (R-grade). -->
-	<item id="34854" type="EtcItem" name="Shiny Cube Fragment Weapon - R - None" icon="Branchsys2.icon.shine_cubic_w_piece_i01"
-			immediateEffect="1" weight="0">
+	<item id="34854" type="EtcItem" name="Shiny Cube Fragment Weapon - R" icon="Branchsys2.icon.shine_cubic_w_piece_i01" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Raina's Box exchanged for the XP Bottle. Small chance of acquiring an Scroll: XP. -->
-	<item id="34855" type="EtcItem" name="Raina's Box - None" icon="icon.present_of_destination_event" immediateEffect="1" weight="10"
+	<item id="34855" type="EtcItem" name="Raina's Box" icon="icon.present_of_destination_event" immediateEffect="1" weight="10"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Echo crystal that plays the theme music of love. May only be used once. -->
@@ -8779,52 +8764,52 @@
 			weight="10">
 	</item>
 	<!-- Istina's Bracelet with refined abilities. Activates 5 talisman slots when equipped. MP + 216, Con + 1, and Men + 1. -->
-	<item id="34859" type="Armor" name="Enhanced Istina's Bracelet - None" icon="icon.istina_bangel" defaultAction="equip" bodypart="rbracelet"
+	<item id="34859" type="Armor" name="Enhanced Istina's Bracelet" icon="icon.istina_bangel" defaultAction="equip" bodypart="rbracelet"
 			immediateEffect="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<add stat="maxMp" val="216" />
 		<skill id="13378" level="1" /> <!-- Enhanced Istina's Bracelet -->
 	</item>
 	<!-- Octavis' Bracelet with refined abilities. Activates 5 talisman slots when equipped. MP + 216, Dex + 1, and Wit + 1. -->
-	<item id="34860" type="Armor" name="Enhanced Octavis' Bracelet - None" icon="icon.octavis_bangel" defaultAction="equip"
-			bodypart="rbracelet" immediateEffect="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34860" type="Armor" name="Enhanced Octavis' Bracelet" icon="icon.octavis_bangel" defaultAction="equip" bodypart="rbracelet"
+			immediateEffect="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false">
 		<add stat="maxMp" val="216" />
 		<skill id="13379" level="1" /> <!-- Enhanced Octavis' Bracelet -->
 	</item>
 	<!-- Pouch containing R-grade rafting ingredients and hardener -->
-	<item id="34861" type="EtcItem" name="Ingredient and Hardener Pouch (R-grade) - None" icon="icon.etc_pouch_gold_i00" immediateEffect="1"
+	<item id="34861" type="EtcItem" name="Ingredient and Hardener Pouch (R-grade)" icon="icon.etc_pouch_gold_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- It says 'You only get one lift' in angma language. -->
-	<item id="34862" type="EtcItem" name="Lavish Decoration Paper - None" icon="icon.etc_plan_i00" immediateEffect="1" weight="10">
+	<item id="34862" type="EtcItem" name="Lavish Decoration Paper" icon="icon.etc_plan_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Contaminated Draco Egg that the demon Triol created to plant Shilen's monsters. Double-click on it to purify the evil energy. -->
-	<item id="34863" type="EtcItem" name="Contaminated Draco Egg - None" icon="icon.etc_ev_triol_egg" immediateEffect="1" weight="0">
+	<item id="34863" type="EtcItem" name="Contaminated Draco Egg" icon="icon.etc_ev_triol_egg" immediateEffect="1" weight="0">
 	</item>
 	<!-- Draco Egg that has been purified of evil energy. Double-click on it to summon a Small Draco Egg. When the egg's temperature rises, it can be hatched. -->
-	<item id="34864" type="EtcItem" name="Small Draco Egg - None" icon="icon.etc_ev_small_egg" immediateEffect="1" weight="0">
+	<item id="34864" type="EtcItem" name="Small Draco Egg" icon="icon.etc_ev_small_egg" immediateEffect="1" weight="0">
 	</item>
 	<!-- Draco Egg that has been purified of evil energy. Double-click on it to summon a Large Draco Egg. When the egg's temperature rises, it can be hatched. Multiple players are required to hatch the egg. -->
-	<item id="34865" type="EtcItem" name="Large Draco Egg - None" icon="icon.etc_ev_big_egg" immediateEffect="1" weight="0">
+	<item id="34865" type="EtcItem" name="Large Draco Egg" icon="icon.etc_ev_big_egg" immediateEffect="1" weight="0">
 	</item>
 	<!-- You can receive a reward if you bring it to the Flame Servant Aslan. -->
-	<item id="34866" type="EtcItem" name="Shattered Egg Shell - None" icon="icon.etc_ev_broken_egg" immediateEffect="1" weight="0">
+	<item id="34866" type="EtcItem" name="Shattered Egg Shell" icon="icon.etc_ev_broken_egg" immediateEffect="1" weight="0">
 	</item>
 	<!-- Gift from the Draco that was resurrected from a purified Draco Egg. -->
-	<item id="34867" type="EtcItem" name="Draco's Gift - None" icon="icon.etc_treasure_box_i03" immediateEffect="1" weight="0">
+	<item id="34867" type="EtcItem" name="Draco's Gift" icon="icon.etc_treasure_box_i03" immediateEffect="1" weight="0">
 	</item>
 	<!-- Gift from the Draco that was resurrected from a purified Draco Egg. It shines for some unknown reason. -->
-	<item id="34868" type="EtcItem" name="Draco's Shiny Gift - None" icon="icon.etc_treasure_box_i08" immediateEffect="1" weight="0">
+	<item id="34868" type="EtcItem" name="Draco's Shiny Gift" icon="icon.etc_treasure_box_i08" immediateEffect="1" weight="0">
 	</item>
 	<!-- Bracelet distributed by Pa'agrio's servant Aslan in order to resurrect the purified Draco Eggs. When equipped, you can summon a Flame Spirit. -->
-	<item id="34869" type="Armor" name="Agathion - Flame Spirit - None" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
+	<item id="34869" type="Armor" name="Agathion - Flame Spirit" icon="icon.etc_rbracelet_aga_agit_i00" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!--
 		Dimensional Item Pack
 		Contains a Mentee Certificate, a Mentoring Guidebook, and a Mentee Headphone. Only 1 per account. Cannot be shared once opened.
 	-->
-	<item id="34870" type="EtcItem" name="Mentee Certificate Pack - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
-			weight="100" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34870" type="EtcItem" name="Mentee Certificate Pack" icon="icon.etc_pi_gift_box_i00" immediateEffect="1" weight="100"
+			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Increases HP Recovery Rate. -->
 	<item id="34871" type="Armor" name="Low-grade Magic Rune Clip Immortal Belt - HP Recovery" icon="icon.r1_belt_i00" defaultAction="equip"
@@ -8875,65 +8860,65 @@
 		<enchant stat="pDef" val="0" />
 	</item>
 	<!-- Low-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
-	<item id="34879" type="EtcItem" name="Low-grade Magic Rune Clip (R-grade) - None" icon="icon.etc_rune_clip_i00" immediateEffect="1"
+	<item id="34879" type="EtcItem" name="Low-grade Magic Rune Clip (R-grade)" icon="icon.etc_rune_clip_i00" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- Magic Rune Clip that can improve the function of R-grade Belt. -->
-	<item id="34880" type="EtcItem" name="Mid-grade Magic Rune Clip (R-grade) - None" icon="icon.etc_rune_clip_i00" immediateEffect="1"
+	<item id="34880" type="EtcItem" name="Mid-grade Magic Rune Clip (R-grade)" icon="icon.etc_rune_clip_i00" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- High-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
-	<item id="34881" type="EtcItem" name="High-grade Magic Rune Clip (R-grade) - None" icon="icon.etc_rune_clip_i01" immediateEffect="1"
+	<item id="34881" type="EtcItem" name="High-grade Magic Rune Clip (R-grade)" icon="icon.etc_rune_clip_i01" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- Top-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
-	<item id="34882" type="EtcItem" name="Top-grade Magic Rune Clip (R-grade) - None" icon="icon.etc_rune_clip_i02" immediateEffect="1"
+	<item id="34882" type="EtcItem" name="Top-grade Magic Rune Clip (R-grade)" icon="icon.etc_rune_clip_i02" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- Bottle containing Istina's Soul. Bring it to Rumiese to bestow Istina's Soul on Istina's Bracelet. -->
-	<item id="34883" type="EtcItem" name="Bottle of Istina's Soul - None" icon="icon.etc_fruit_juice_glass_bottle_i00" immediateEffect="1"
+	<item id="34883" type="EtcItem" name="Bottle of Istina's Soul" icon="icon.etc_fruit_juice_glass_bottle_i00" immediateEffect="1"
 			weight="60" isTradable="true" isDropable="true" isSellable="true" isStackable="true">
 	</item>
 	<!-- Bottle containing Octavis' Soul. Can bestow Octavis' Soul on Octavis' Bracelet. -->
-	<item id="34884" type="EtcItem" name="Bottle of Octavis' Soul - None" icon="icon.etc_fruit_juice_glass_bottle_i06" immediateEffect="1"
+	<item id="34884" type="EtcItem" name="Bottle of Octavis' Soul" icon="icon.etc_fruit_juice_glass_bottle_i06" immediateEffect="1"
 			weight="60" isTradable="true" isDropable="true" isSellable="true" isStackable="true">
 	</item>
 	<!-- Double-click on it to acquire the Circlet of Earthquake (60-day). -->
-	<item id="34885" type="EtcItem" name="Circlet of Earthquake Pack (60-day) - None" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
+	<item id="34885" type="EtcItem" name="Circlet of Earthquake Pack (60-day)" icon="icon.etc_pi_gift_box_i00" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Novella Prophecy. It contains a portion of the prophecy that was swallowed by the One Who Eats Prophecies. -->
-	<item id="34886" type="EtcItem" name="Novella Prophecy - None" icon="icon.etc_jewel_red_i00" immediateEffect="1" weight="20">
+	<item id="34886" type="EtcItem" name="Novella Prophecy" icon="icon.etc_jewel_red_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- Empty bottle for holding hot spring water. Double-click on it while in the hot springs to fill it with hot spring water. -->
-	<item id="34887" type="EtcItem" name="Empty Hot Spring Water Bottle - None" icon="icon.etc_hot_spring_glass_bottle_i00"
-			immediateEffect="1" weight="20">
+	<item id="34887" type="EtcItem" name="Empty Hot Spring Water Bottle" icon="icon.etc_hot_spring_glass_bottle_i00" immediateEffect="1"
+			weight="20">
 	</item>
 	<!-- Bottle for holding hot spring water. It contains hot spring water. -->
-	<item id="34888" type="EtcItem" name="Hot Springs Water Bottle - None" icon="icon.etc_fruit_juice_glass_bottle_i05" immediateEffect="1"
+	<item id="34888" type="EtcItem" name="Hot Springs Water Bottle" icon="icon.etc_fruit_juice_glass_bottle_i05" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- Durable Leather. Ingredient for making a weapon that purifies water. -->
-	<item id="34889" type="EtcItem" name="Durable Leather - None" icon="icon.etc_leather_brown_i00" immediateEffect="1" weight="20">
+	<item id="34889" type="EtcItem" name="Durable Leather" icon="icon.etc_leather_brown_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- Trowel. Double-click on it to collect flame flowers from the Forge of the Gods. -->
-	<item id="34890" type="EtcItem" name="Trowel - None" icon="icon.etc_trowel_i00" immediateEffect="1" weight="20">
+	<item id="34890" type="EtcItem" name="Trowel" icon="icon.etc_trowel_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- energy of fire. Ingredient for making a weapon that purifies water. -->
-	<item id="34891" type="EtcItem" name="Energy of Fire - None" icon="icon.etc_bead_red_i00" immediateEffect="1" weight="20">
+	<item id="34891" type="EtcItem" name="Energy of Fire" icon="icon.etc_bead_red_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- Hard fossil containing Energy of Water. Ingredient for making a weapon that purifies water. -->
-	<item id="34892" type="EtcItem" name="Hard Fossil Containing Energy of Water - None" icon="icon.etc_hard_fossil_i00" immediateEffect="1"
+	<item id="34892" type="EtcItem" name="Hard Fossil Containing Energy of Water" icon="icon.etc_hard_fossil_i00" immediateEffect="1"
 			weight="20">
 	</item>
 	<!-- Seed of Helping Herb. Double-click on it in a siege battle area to plant a Helping Herb. -->
-	<item id="34893" type="EtcItem" name="Seed of Helping Herb - None" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="20">
+	<item id="34893" type="EtcItem" name="Seed of Helping Herb" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- Herb Remnants. If you plant a Helping Herb in a siege battle area, you can obtain Herb Remnants. -->
-	<item id="34894" type="EtcItem" name="Herb Remnants - None" icon="icon.etc_powder_orange_i00" immediateEffect="1" weight="20">
+	<item id="34894" type="EtcItem" name="Herb Remnants" icon="icon.etc_powder_orange_i00" immediateEffect="1" weight="20">
 	</item>
 	<!-- Item needed to learn the Clan Flag Skill. When you use the Clan Flag Skill, 100 Clan Reputation are consumed. Can be used by Count or higher. -->
-	<item id="34895" type="EtcItem" name="Spellbook: Clan Flag - None" icon="icon.etc_spell_books_assistance_i00" defaultAction="skill_reduce"
+	<item id="34895" type="EtcItem" name="Spellbook: Clan Flag" icon="icon.etc_spell_books_assistance_i00" defaultAction="skill_reduce"
 			immediateEffect="1" weight="20" isTradable="false" isDropable="false" isSellable="false" handler="ItemSkills">
 		<cond msgId="1518">
 			<and>
@@ -8953,101 +8938,99 @@
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- Someone who possesses the Proof of Survival can be suddenly challenged by the rare monster 'Scaldisect of Hellfire.' Always be prepared for the attack. -->
-	<item id="34898" type="EtcItem" name="Proof of Survival - None" icon="icon.etc_fire_rune_i00" immediateEffect="1" weight="0">
+	<item id="34898" type="EtcItem" name="Proof of Survival" icon="icon.etc_fire_rune_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Key that activates a device that allows you to go and meet Tauti through the temple. Must be used by a group leader in order to activate the device. -->
-	<item id="34899" type="EtcItem" name="Key of Darkness - None" icon="icon.etc_dark_key_i00" immediateEffect="1" weight="0">
+	<item id="34899" type="EtcItem" name="Key of Darkness" icon="icon.etc_dark_key_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- The power of darkness can be faintly felt. Bring it to the Mysterious Butler in each town. -->
-	<item id="34900" type="EtcItem" name="Mysterious Mark - None" icon="icon.etc_coins_black_i00" immediateEffect="1" weight="0"
-			isTradable="false" isDropable="false" isSellable="false" isStackable="true">
+	<item id="34900" type="EtcItem" name="Mysterious Mark" icon="icon.etc_coins_black_i00" immediateEffect="1" weight="0" isTradable="false"
+			isDropable="false" isSellable="false" isStackable="true">
 	</item>
 	<!-- Item needed for a clan leader to raise his/her clan level to 4. Can only be used by the clan leader. -->
-	<item id="34901" type="EtcItem" name="Proof of Alliance - None" icon="icon.etc_paper_white_i00" immediateEffect="1" weight="0"
+	<item id="34901" type="EtcItem" name="Proof of Alliance" icon="icon.etc_paper_white_i00" immediateEffect="1" weight="0"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Item needed for a clan leader to raise his/her clan level to 5. Can only be used by the clan leader. -->
-	<item id="34902" type="EtcItem" name="Proof of Aspiration - None" icon="icon.etc_paper_blue_i00" immediateEffect="1" weight="0"
+	<item id="34902" type="EtcItem" name="Proof of Aspiration" icon="icon.etc_paper_blue_i00" immediateEffect="1" weight="0"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Item that can only be used in the Ceremony of Chaos Arena. Upon use, becomes hidden and decreases Speed by 30%. -->
-	<item id="34903" type="EtcItem" name="Mysterious Shadow - None" icon="icon.weapon_apprentices_spellbook_i00" immediateEffect="1"
+	<item id="34903" type="EtcItem" name="Mysterious Shadow" icon="icon.weapon_apprentices_spellbook_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Item that can only be used in the Ceremony of Chaos Arena. Your MP and CP are all reduced to 1 but 1/3 of your HP is maintained. Has a 50% chance of inflicting a lethal strike on the target. -->
-	<item id="34904" type="EtcItem" name="Mysterious Power - None" icon="icon.weapon_apprentices_spellbook_i00" immediateEffect="1"
+	<item id="34904" type="EtcItem" name="Mysterious Power" icon="icon.weapon_apprentices_spellbook_i00" immediateEffect="1"
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Item that summons a nurture-type clan pet (Raccoon). For 72 hours, you acquire 500 Clan Reputation each time it is summoned, and you have a chance of obtaining an additional item. Only PC's who belong to a clan that is above level 5 can summon it. -->
-	<item id="34905" type="EtcItem" name="Clan-exclusive Pet (Raccoon) - None" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
+	<item id="34905" type="EtcItem" name="Clan-exclusive Pet (Raccoon)" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true"
 			handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
 		<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 	</item>
 	<!-- Item that summons a nurture-type clan pet (White Cat). For 72 hours, you acquire 500 Clan Reputation each time it is summoned, and you have a chance of obtaining an additional item. Only PC's who belong to a clan that is above level 5 can summon it. -->
-	<item id="34906" type="EtcItem" name="Clan-exclusive Pet (White Cat) - None" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
+	<item id="34906" type="EtcItem" name="Clan-exclusive Pet (White Cat)" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true"
 			handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
 		<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 	</item>
 	<!-- Item that summons a nurture-type clan pet (Desert Fox). For 72 hours, you acquire 500 Clan Reputation each time it is summoned, and you have a chance of obtaining an additional item. Only PC's who belong to a clan that is above level 5 can summon it. -->
-	<item id="34907" type="EtcItem" name="Clan-exclusive Pet (Desert Fox) - None" icon="icon.accessory_necklace_of_pet_i00"
-			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
-			isOlyRestricted="true" handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
+	<item id="34907" type="EtcItem" name="Clan-exclusive Pet (Desert Fox)" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
+			weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true"
+			handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
 		<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 	</item>
 	<!-- Item that summons a Clan-exclusive Pet for Training. If the pet's HP becomes 0 within 30 seconds, you gain 50 Clan Reputation and 10 Individual Fame. -->
-	<item id="34908" type="EtcItem" name="Clan-exclusive Pet for Training - None" icon="icon.accessory_necklace_of_pet_i00"
-			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
-			isOlyRestricted="true" handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
+	<item id="34908" type="EtcItem" name="Clan-exclusive Pet for Training" icon="icon.accessory_necklace_of_pet_i00" immediateEffect="1"
+			weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true"
+			handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
 		<skill id="7102" level="1" /> <!-- Summon Clan Pet -->
 	</item>
 	<!-- Mark received for helping the Zofan Resistance. It is need to enter the Tauti battle. -->
-	<item id="34909" type="EtcItem" name="Mark of the Resistance - None" icon="icon.scroll_of_verification_i00" immediateEffect="1"
+	<item id="34909" type="EtcItem" name="Mark of the Resistance" icon="icon.scroll_of_verification_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Mark received for helping Aku. It is need to enter the Tauti battle (limited). -->
-	<item id="34910" type="EtcItem" name="Aku's Mark - None" icon="icon.scroll_of_verification_i01" immediateEffect="1" weight="0">
+	<item id="34910" type="EtcItem" name="Aku's Mark" icon="icon.scroll_of_verification_i01" immediateEffect="1" weight="0">
 	</item>
 	<!-- Item given to the winner of the tournament held in the Mysterious Mansion. Increases Max HP/MP/CP by 500, Weight Gauge by 12000, damage inflicted during PvP by 5%, Damage Reflect Resistance by 5, and Attribute Resistance by 10. Also increases HP/MP Recovery Rate and Inventory Slot numbers. Decreases damage received during PvP by 6%. You can use these item skills only during the week of victory. -->
 	<item id="34911" type="EtcItem" name="Ruler's Authority - Not in Use" icon="icon.etc_spell_books_red_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Summoning Stone that can be used during the Noblesse quest. Double-click on it to summon the Water Spirit Lanya. -->
-	<item id="34912" type="EtcItem" name="Summoning Stone - None" icon="icon.etc_crystal_ball_white_i00" immediateEffect="1"
-			weight="0">
+	<item id="34912" type="EtcItem" name="Summoning Stone" icon="icon.etc_crystal_ball_white_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Sack containing ingredients. it contains 4 types of ingredients needed to make a weapon that purifies the water of Eva, the goddess of water. -->
-	<item id="34913" type="EtcItem" name="Sack Containing Ingredients - None" icon="BranchSys2.icon.etc_ancient_treasure_sack_i00"
+	<item id="34913" type="EtcItem" name="Sack Containing Ingredients" icon="BranchSys2.icon.etc_ancient_treasure_sack_i00"
 			immediateEffect="1" weight="10">
 	</item>
 	<!-- Box stolen from the transportation unit . Give it to the revolutionaries to receive a campaign reward. -->
-	<item id="34914" type="EtcItem" name="Transport Goods - Aden - None" icon="icon.etc_jewel_box_i00" immediateEffect="1" weight="10">
+	<item id="34914" type="EtcItem" name="Transport Goods - Aden" icon="icon.etc_jewel_box_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Box stolen from the transportation cart. Give it to the revolutionaries to receive a campaign reward. -->
 	<item id="34915" type="EtcItem" name="Hard Transport Goods - Aden - Not in Use" icon="icon.etc_treasure_box_i02" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Box stolen from the transportation unit . Give it to the revolutionaries to receive a campaign reward. -->
-	<item id="34916" type="EtcItem" name="Transport Box - None" icon="icon.etc_jewel_box_i00" immediateEffect="1" weight="10">
+	<item id="34916" type="EtcItem" name="Transport Box" icon="icon.etc_jewel_box_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Box stolen from the transportation cart. Give it to the revolutionaries to receive a campaign reward. -->
-	<item id="34917" type="EtcItem" name="Greater Transport Box - None" icon="icon.etc_treasure_box_i02" immediateEffect="1"
-			weight="10">
+	<item id="34917" type="EtcItem" name="Greater Transport Box" icon="icon.etc_treasure_box_i02" immediateEffect="1" weight="10">
 	</item>
 	<!-- Precious treasure chest being delivered to the King of Aden. Double-click on it to obtain a reward. -->
-	<item id="34918" type="EtcItem" name="Treasure Chest of the King of Aden - None" icon="icon.etc_treasure_box_i00" immediateEffect="1"
+	<item id="34918" type="EtcItem" name="Treasure Chest of the King of Aden" icon="icon.etc_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Deliver to the Revolutionaries to receive a Campaign Reward. -->
-	<item id="34919" type="EtcItem" name="Tax Bundle - None" icon="icon.etc_pouch_brown_i00" immediateEffect="1" weight="10">
+	<item id="34919" type="EtcItem" name="Tax Bundle" icon="icon.etc_pouch_brown_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Precious treasure chest being delivered to the King of Rune. Double-click on it to obtain a reward. -->
-	<item id="34920" type="EtcItem" name="Treasure Chest of the King of Rune - None" icon="icon.etc_treasure_box_i01" immediateEffect="1"
+	<item id="34920" type="EtcItem" name="Treasure Chest of the King of Rune" icon="icon.etc_treasure_box_i01" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
-	<item id="34921" type="Weapon" name="Revolutionary's Sword - None" icon="icon.weapon_sword_of_revolution_i00" defaultAction="equip"
+	<item id="34921" type="Weapon" name="Revolutionary's Sword" icon="icon.weapon_sword_of_revolution_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="d" weight="1520" soulshots="1"
 			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
 		<set stat="pAtk" val="1" />
@@ -9056,9 +9039,9 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
-	<item id="34922" type="Weapon" name="Revolutionary's Bow - None" icon="icon.weapon_gastraphetes_i00" defaultAction="equip"
-			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="d" weight="1520" soulshots="1"
-			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34922" type="Weapon" name="Revolutionary's Bow" icon="icon.weapon_gastraphetes_i00" defaultAction="equip" weaponType="bow"
+			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="d" weight="1520" soulshots="1" spiritshots="1" enchantEnabled="1"
+			isTradable="false" isDropable="false" isSellable="false">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="rCrit" val="12" />
@@ -9066,7 +9049,7 @@
 		<set stat="pAtkSpd" val="293" />
 	</item>
 	<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
-	<item id="34923" type="Weapon" name="Revolutionary's Staff - None" icon="icon.weapon_goathead_staff_i00" defaultAction="equip"
+	<item id="34923" type="Weapon" name="Revolutionary's Staff" icon="icon.weapon_goathead_staff_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="d" weight="1080" soulshots="1"
 			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
 		<set stat="pAtk" val="1" />
@@ -9076,9 +9059,9 @@
 		<set stat="pAtkSpd" val="325" />
 	</item>
 	<!-- Item used by the revolutionaries during an attack on the transportation unit . It can use powerful skills. Can only be used on the siege battlefield. Can only be used by characters who are above level 40. -->
-	<item id="34924" type="Weapon" name="Revolutionary's Wand - None" icon="icon.weapon_life_stick_i00" defaultAction="equip"
-			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="d" weight="1080" soulshots="1"
-			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34924" type="Weapon" name="Revolutionary's Wand" icon="icon.weapon_life_stick_i00" defaultAction="equip" weaponType="blunt"
+			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="d" weight="1080" soulshots="1" spiritshots="1" enchantEnabled="1"
+			isTradable="false" isDropable="false" isSellable="false">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="rCrit" val="6" />
@@ -9086,7 +9069,7 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape:ﾠCastle skill. Cannot be used while in a chaotic state. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
-	<item id="34925" type="Armor" name="Cloak of Light - None" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
+	<item id="34925" type="Armor" name="Cloak of Light" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
 		<cond msgId="1518">
 			<and>
@@ -9119,7 +9102,7 @@
 		<skill id="19041" level="1" /> <!-- King's Call -->
 	</item>
 	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape:ﾠCastle skill. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
-	<item id="34926" type="Armor" name="Cloak of Darkness - None" icon="icon.amor_evilness_cloak" defaultAction="equip" bodypart="back"
+	<item id="34926" type="Armor" name="Cloak of Darkness" icon="icon.amor_evilness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
 		<cond msgId="1518">
 			<and>
@@ -9139,34 +9122,34 @@
 		<skill id="19041" level="1" /> <!-- King's Call -->
 	</item>
 	<!-- Blue-colored box bestowed by the kingdom of Aden as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34927" type="EtcItem" name="Dimension Keeper's Blue Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34927" type="EtcItem" name="Dimension Keeper's Blue Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Red-colored box bestowed by the kingdom of Aden as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34928" type="EtcItem" name="Dimension Keeper's Red Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34928" type="EtcItem" name="Dimension Keeper's Red Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Gold-colored box bestowed by the kingdom of Aden as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34929" type="EtcItem" name="Dimension Keeper's Golden Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34929" type="EtcItem" name="Dimension Keeper's Golden Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Blue-colored box given by the Kartia Researcher as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34930" type="EtcItem" name="Dimension Traveler's Blue Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34930" type="EtcItem" name="Dimension Traveler's Blue Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Red-colored box given by the Kartia Researcher as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34931" type="EtcItem" name="Dimension Traveler's Red Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34931" type="EtcItem" name="Dimension Traveler's Red Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Gold-colored box given by the Kartia Researcher as a reward for defeating the dimension demons in Kartia's Labyrinth. Double-click on it to see its contents. -->
-	<item id="34932" type="EtcItem" name="Dimension Traveler's Golden Box - None" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+	<item id="34932" type="EtcItem" name="Dimension Traveler's Golden Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10">
 	</item>
 	<!-- Gift containing Kranken's heart. Open to acquire a Scroll: Enchant Weapon (R-grade) or Scroll: Enchant Armor (R-grade). -->
-	<item id="34933" type="EtcItem" name="Kranken's Gift - None" icon="icon.etc_pouch_gold_i00" immediateEffect="1" weight="10">
+	<item id="34933" type="EtcItem" name="Kranken's Gift" icon="icon.etc_pouch_gold_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- Gift containing Pobre's heart. Open to acquire a Scroll: Enchant Weapon (R-grade) or Scroll: Enchant Armor (R-grade). -->
-	<item id="34934" type="EtcItem" name="Pobre's Gift - None" icon="icon.etc_pouch_gold_i00" immediateEffect="1" weight="10">
+	<item id="34934" type="EtcItem" name="Pobre's Gift" icon="icon.etc_pouch_gold_i00" immediateEffect="1" weight="10">
 	</item>
 	<!--
 		7-day
@@ -9273,165 +9256,162 @@
 			weight="10">
 	</item>
 	<!-- Item for the Lineage II 8th Anniversary event. Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
-	<item id="34956" type="EtcItem" name="Letter - M - None" icon="icon.etc_alphabet_m_i00" immediateEffect="1" weight="0">
+	<item id="34956" type="EtcItem" name="Letter - M" icon="icon.etc_alphabet_m_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Letter sent by Kbaldir at the Keucereus Alliance Base to the Seed of Hellfire. Bring it to Sizrak in the Seed of Hellfire. -->
-	<item id="34957" type="EtcItem" name="Kbaldir's Letter - None" icon="icon.etc_letter_white_i00" immediateEffect="1" weight="0">
+	<item id="34957" type="EtcItem" name="Kbaldir's Letter" icon="icon.etc_letter_white_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Life energy of the Zofans that contain energy of fire. But it is unstable. Bring it to Aku. -->
-	<item id="34958" type="EtcItem" name="Unstable Petra - None" icon="icon.etc_torch_on_i09" immediateEffect="1" weight="0">
+	<item id="34958" type="EtcItem" name="Unstable Petra" icon="icon.etc_torch_on_i09" immediateEffect="1" weight="0">
 	</item>
 	<!-- Life energy of the Zofans that contain energy of fire. Bring it to Aku. -->
-	<item id="34959" type="EtcItem" name="Petra - None" icon="icon.etc_torch_on_i00" immediateEffect="1" weight="0">
+	<item id="34959" type="EtcItem" name="Petra" icon="icon.etc_torch_on_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Tauti's small shard. Bring it to Fergason. -->
-	<item id="34960" type="EtcItem" name="Tauti's Shard - None" icon="icon.piece_of_emery_i00" immediateEffect="1" weight="0">
+	<item id="34960" type="EtcItem" name="Tauti's Shard" icon="icon.piece_of_emery_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Helping Herb. Double-click on it in a siege area to plant a Tree of Helping. -->
-	<item id="34961" type="EtcItem" name="Helping Seed - None" icon="icon.etc_help_seed_i00" immediateEffect="1" weight="0">
+	<item id="34961" type="EtcItem" name="Helping Seed" icon="icon.etc_help_seed_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Ashes of Remnants. If you plant a Tree of Helping in a siege battle area, you can obtain Ashes of Remnants. -->
-	<item id="34962" type="EtcItem" name="Ashes of Remnants - None" icon="icon.etc_powder_orange_i00" immediateEffect="1" weight="0">
+	<item id="34962" type="EtcItem" name="Ashes of Remnants" icon="icon.etc_powder_orange_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Mysterious plant seed that is need to make the flower bloom. -->
-	<item id="34963" type="EtcItem" name="Mysterious Seed - None" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="0">
+	<item id="34963" type="EtcItem" name="Mysterious Seed" icon="icon.etc_coda_seed_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- White chrysanthemum. Legend says that this flower blooms like a field of white snow when a pure soul receives salvation from the gods. -->
-	<item id="34964" type="EtcItem" name="White Chrysanthemum - None" icon="icon.etc_flower_i00" immediateEffect="1" weight="0">
+	<item id="34964" type="EtcItem" name="White Chrysanthemum" icon="icon.etc_flower_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Yellow flower called a 'Daylily.' It symbolizes the alleviation of sorrow and grief. -->
-	<item id="34965" type="EtcItem" name="Daylily - None" icon="icon.etc_flower_i02" immediateEffect="1" weight="0">
+	<item id="34965" type="EtcItem" name="Daylily" icon="icon.etc_flower_i02" immediateEffect="1" weight="0">
 	</item>
 	<!-- Red flower called a 'Peony.' It once represented wealth and honor. -->
-	<item id="34966" type="EtcItem" name="Peony - None" icon="icon.etc_flower_i01" immediateEffect="1" weight="0">
+	<item id="34966" type="EtcItem" name="Peony" icon="icon.etc_flower_i01" immediateEffect="1" weight="0">
 	</item>
 	<!-- Pink flower called a 'Petunia.' It symbolizes a calm heart. -->
-	<item id="34967" type="EtcItem" name="Petunia - None" icon="icon.etc_flower_i03" immediateEffect="1" weight="0">
+	<item id="34967" type="EtcItem" name="Petunia" icon="icon.etc_flower_i03" immediateEffect="1" weight="0">
 	</item>
 	<!-- Purple flower called a 'Pansy.' It means, 'Think of me.' -->
-	<item id="34968" type="EtcItem" name="Pansy - None" icon="icon.etc_flower_i04" immediateEffect="1" weight="0">
+	<item id="34968" type="EtcItem" name="Pansy" icon="icon.etc_flower_i04" immediateEffect="1" weight="0">
 	</item>
 	<!-- Blue flower called an 'Iris'. It symbolizes the bringing of good news. -->
-	<item id="34969" type="EtcItem" name="Iris - None" icon="icon.etc_flower_i05" immediateEffect="1" weight="0">
+	<item id="34969" type="EtcItem" name="Iris" icon="icon.etc_flower_i05" immediateEffect="1" weight="0">
 	</item>
 	<!-- Black flower called a 'Kuon.' It is sometimes misunderstood as the flower of death because of its color. It actually symbolizes paying tribute to the dead. -->
-	<item id="34970" type="EtcItem" name="Kuon - None" icon="icon.etc_flower_i06" immediateEffect="1" weight="0">
+	<item id="34970" type="EtcItem" name="Kuon" icon="icon.etc_flower_i06" immediateEffect="1" weight="0">
 	</item>
 	<!-- Chunk of dead flesh obtained after defeating the undead monsters in the Guillotine Fortress. Collect them and bring them to Warden Roderik of the Guillotine Fortress. -->
-	<item id="34971" type="EtcItem" name="Deadman's Flesh - None" icon="icon.etc_bodypart_liver_i00" immediateEffect="1" weight="0"
+	<item id="34971" type="EtcItem" name="Deadman's Flesh" icon="icon.etc_bodypart_liver_i00" immediateEffect="1" weight="0"
 			isStackable="true">
 	</item>
 	<!-- Orders sent from Guard Harlan in the Town of Dion to Watchman Endrigo of the Guillotine Fortress. Double-click on it for more information. -->
-	<item id="34972" type="EtcItem" name="Harlan's Orders - None" icon="icon.etc_spell_books_assistance_i00" immediateEffect="1"
-			weight="0">
+	<item id="34972" type="EtcItem" name="Harlan's Orders" icon="icon.etc_spell_books_assistance_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Investigative document that Watchman Endrigo of the Guillotine Fortress asks to be delivered to his comrade Warden Roderik. Double-click on it for more information. -->
-	<item id="34973" type="EtcItem" name="Endrigo's Report - None" icon="icon.mercenary_certification_i00" immediateEffect="1"
-			weight="0">
+	<item id="34973" type="EtcItem" name="Endrigo's Report" icon="icon.mercenary_certification_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Mandragora Stem obtained after defeating the Mandragora of Joy and Sorrow in the Guillotine Fortress. Bring to the Dark Elf Dadphyna in the Guillotine Fortress. -->
-	<item id="34974" type="EtcItem" name="Mandragora Stem - None" icon="icon.etc_branch_gold_i00" immediateEffect="1" weight="0">
+	<item id="34974" type="EtcItem" name="Mandragora Stem" icon="icon.etc_branch_gold_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Mandragora Root obtained after defeating the Mandragora of Prayer in the Guillotine Fortress. Bring to the Dark Elf Dadphyna in the Guillotine Fortress. -->
-	<item id="34975" type="EtcItem" name="Mandragora Root - None" icon="icon.etc_ginseng_gray_i00" immediateEffect="1" weight="0">
+	<item id="34975" type="EtcItem" name="Mandragora Root" icon="icon.etc_ginseng_gray_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Disabled Petra obtained through hunting in the Seed of Hellfire. Take it to Sizrak in the area. -->
-	<item id="34976" type="EtcItem" name="Disabled Petra - None" icon="icon.etc_torch_off_i00" immediateEffect="1" weight="0">
+	<item id="34976" type="EtcItem" name="Disabled Petra" icon="icon.etc_torch_off_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Item collected in the Seed of Hellfire. Contains energy of the Seed of Hellfire. If you take them to Special Product Broker Kirklan at the Kucereus clan outpost, you can exchange them for useful items. -->
-	<item id="34977" type="EtcItem" name="Saw-toothed Wheel of Hellfire - None" icon="icon.etc_leash_i00" immediateEffect="1"
-			weight="0">
+	<item id="34977" type="EtcItem" name="Saw-toothed Wheel of Hellfire" icon="icon.etc_leash_i00" immediateEffect="1" weight="0">
 	</item>
 	<!-- Scroll of Escape to the Hot Springs area. Can only be used in the Soul Testing quest. Can move to the special hot springs area for the quest mission. Cannot be received again. -->
-	<item id="34978" type="EtcItem" name="Scroll of Escape: Hot Springs - None" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
+	<item id="34978" type="EtcItem" name="Scroll of Escape: Hot Springs" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Scroll of Escape to the Forge of the Gods. Can only be used in the Soul Testing quest. Can move to the special Forge of the Gods area for the quest mission. Cannot be received again. -->
-	<item id="34979" type="EtcItem" name="Scroll of Escape: Forge of the Gods - None" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
+	<item id="34979" type="EtcItem" name="Scroll of Escape: Forge of the Gods" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Scroll of Escape to the Isle of Prayer. Can only be used in the Soul Testing quest. Can move to the special Isle of Prayer area for the quest mission. Cannot be received again. -->
-	<item id="34980" type="EtcItem" name="Scroll of Escape: Isle of Prayer - None" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
+	<item id="34980" type="EtcItem" name="Scroll of Escape: Isle of Prayer" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Scroll of Escape to the Aden Castle siege area. Can only be used in the Soul Testing quest. Can move to the special Aden Castle siege area for the quest mission. Cannot be received again. -->
-	<item id="34981" type="EtcItem" name="Scroll of Escape: Aden Castle (Siege) - None" icon="icon.etc_scroll_of_return_i04"
-			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34981" type="EtcItem" name="Scroll of Escape: Aden Castle (Siege)" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
+			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Scroll of Escape to the Rune Castle siege area. Can only be used in the Soul Testing quest. Can move to the special Rune Castle siege area for the quest mission. Cannot be received again. -->
-	<item id="34982" type="EtcItem" name="Scroll of Escape: Rune Castle (Siege) - None" icon="icon.etc_scroll_of_return_i04"
-			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false">
+	<item id="34982" type="EtcItem" name="Scroll of Escape: Rune Castle (Siege)" icon="icon.etc_scroll_of_return_i04" immediateEffect="1"
+			weight="120" isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<item id="34983" type="EtcItem" name="Acquire Noblesse Privileges - None" icon="icon.etc_nobless_teleport_coupon_i00" immediateEffect="1"
+	<item id="34983" type="EtcItem" name="Acquire Noblesse Privileges" icon="icon.etc_nobless_teleport_coupon_i00" immediateEffect="1"
 			weight="0">
 	</item>
 	<!-- Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 1, P. Evasion and M. Evasion by 1 Vampiric Rage Effect by 2%, and Atk. Spd. and Casting Spd. by 10. -->
-	<item id="34984" type="Armor" name="Talisman - Infinity - None" icon="icon.accessory_immortal_talisman_i01" defaultAction="equip"
+	<item id="34984" type="Armor" name="Talisman - Infinity" icon="icon.accessory_immortal_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="1" /> <!-- Talisman - Infinity -->
 	</item>
 	<!-- Increases Max HP/MP/CP by 100, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage Effect by 2%, Atk. Spd. and Casting Spd. by 10, P. Critical Rate by 30, and M. Critical Rate by 10. -->
-	<item id="34985" type="Armor" name="Talisman - Destruction - None" icon="icon.accessory_destruction_talisman_i01" defaultAction="equip"
+	<item id="34985" type="Armor" name="Talisman - Destruction" icon="icon.accessory_destruction_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="2" /> <!-- Talisman - Destruction -->
 		<skill id="13385" level="1" /> <!-- Equip Talisman - Destruction -->
 	</item>
 	<!-- Increases Max HP/MP/CP by 300, P. Accuracy and M. Accuracy by 2, P. Evasion and M. Evasion by 2, Vampiric Rage Effect by 3%, Atk. Spd. and Casting Spd. by 20, P. Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, and M. Atk. by 156. -->
-	<item id="34986" type="Armor" name="Talisman - Annihilation - None" icon="icon.accessory_extermination_talisman_i01" defaultAction="equip"
+	<item id="34986" type="Armor" name="Talisman - Annihilation" icon="icon.accessory_extermination_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="3" /> <!-- Talisman - Annihilation -->
 		<skill id="13386" level="1" /> <!-- Equip Talisman - Annihilation -->
 	</item>
 	<!-- When equipped, increases Max HP, MP, and CP by 400, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 30, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, M. Atk. by 156, Skill Power by 1%, Damage Reflect Resistance by 10, and P. and M. Def. by 20. -->
-	<item id="34987" type="Armor" name="Talisman - Hellfire - None" icon="icon.accessory_hellfire_talisman_i01" defaultAction="equip"
+	<item id="34987" type="Armor" name="Talisman - Hellfire" icon="icon.accessory_hellfire_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="4" /> <!-- Talisman - Hellfire -->
 		<skill id="13387" level="1" /> <!-- Equip Talisman - Hellfire -->
 	</item>
 	<!-- When equipped, increases Max HP, MP, and CP by 500, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 40, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 203, M. Atk. by 256, Skill Power by 2%, Damage Reflect Resistance by 20, and P. and M. Def. by 40. MP consumption decreases by 1%. -->
-	<item id="34988" type="Armor" name="Talisman - Desire - None" icon="icon.accessory_ocean_talisman_i01" defaultAction="equip"
-			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
-			isPremium="true" isOlyRestricted="false">
+	<item id="34988" type="Armor" name="Talisman - Desire" icon="icon.accessory_ocean_talisman_i01" defaultAction="equip" bodypart="deco1"
+			immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true" isPremium="true"
+			isOlyRestricted="false">
 		<skill id="8864" level="5" /> <!-- Talisman - Desire -->
 		<skill id="13388" level="1" /> <!-- Equip Talisman - Desire -->
 	</item>
 	<!-- When equipped, increases Max HP, MP, and CP by 600, P. and M. Accuracy by 2, P. and M. Evasion by 2, Vampiric Rage 3% effect, Atk. Spd. and Casting Spd. by 50, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 303, M. Atk. by 356, Skill Power by 4%, Damage Reflect Resistance by 30, and P. M. Def. by 60, and STR/INT/CON/MEN/DEX/WIT by 2. MP consumption decreases by 3%. -->
-	<item id="34989" type="Armor" name="Talisman - Longing - None" icon="icon.accessory_longing_talisman_i01" defaultAction="equip"
+	<item id="34989" type="Armor" name="Talisman - Longing" icon="icon.accessory_longing_talisman_i01" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="true"
 			isPremium="true" isOlyRestricted="false">
 		<skill id="8864" level="6" /> <!-- Talisman - Longing -->
 		<skill id="13389" level="1" /> <!-- Equip Talisman - Longing -->
 	</item>
 	<!-- Corroded ingredient. Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
-	<item id="34990" type="EtcItem" name="Corroded Weapon Fragment - None" icon="icon.etc_r_weapon_piece_i01" etcitemType="material"
+	<item id="34990" type="EtcItem" name="Corroded Weapon Fragment" icon="icon.etc_r_weapon_piece_i01" etcitemType="material"
 			immediateEffect="1" weight="0" price="2500" isStackable="true">
 	</item>
 	<!-- Corroded ingredient. Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
-	<item id="34991" type="EtcItem" name="Corroded Armor Fragment - None" icon="icon.etc_r_armor_piece_i01" etcitemType="material"
+	<item id="34991" type="EtcItem" name="Corroded Armor Fragment" icon="icon.etc_r_armor_piece_i01" etcitemType="material"
 			immediateEffect="1" weight="0" price="1000" isStackable="true">
 	</item>
 	<!-- Corroded ingredient. Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
-	<item id="34992" type="EtcItem" name="Corroded Accessory Gem - None" icon="icon.etc_r_acc_piece_i01" etcitemType="material"
-			immediateEffect="1" weight="0" price="1000" isStackable="true">
+	<item id="34992" type="EtcItem" name="Corroded Accessory Gem" icon="icon.etc_r_acc_piece_i01" etcitemType="material" immediateEffect="1"
+			weight="0" price="1000" isStackable="true">
 	</item>
 	<!-- Used as an ingredient to make A-grade or S-grade items. -->
-	<item id="34993" type="EtcItem" name="Greater Cokes - None" icon="icon.etc_synthetic_cokes_i00" immediateEffect="1" weight="0"
+	<item id="34993" type="EtcItem" name="Greater Cokes" icon="icon.etc_synthetic_cokes_i00" immediateEffect="1" weight="0"
 			price="22500">
 	</item>
-	<item id="34994" type="EtcItem" name="Gemstone - None" icon="icon.etc_crystal_ball_silver_i00" etcitemType="material" immediateEffect="1"
+	<item id="34994" type="EtcItem" name="Gemstone" icon="icon.etc_crystal_ball_silver_i00" etcitemType="material" immediateEffect="1"
 			weight="0" price="100" isStackable="true">
 	</item>
 	<!-- Certificate that can be exchanged with the Aden Reconstruction Society Member or Leader for Rabbit Ears, Raccoon Ears, Cat Ears, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, or Refined Devil Horns. -->
-	<item id="34995" type="EtcItem" name="Hair Accessory Exchange Certificate - None" icon="icon.etc_piece_of_paper_white_i00"
-			immediateEffect="1" weight="0">
+	<item id="34995" type="EtcItem" name="Hair Accessory Exchange Certificate" icon="icon.etc_piece_of_paper_white_i00" immediateEffect="1"
+			weight="0">
 	</item>
 	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape:ﾠCastle skill. Cannot be used while in a chaotic state. Can only be equipped by a lord. Cannot be transferred between servers. -->
-	<item id="34996" type="Armor" name="Cloak of Radiant Light - None" icon="icon.amor_goodness_cloak" defaultAction="equip"
-			bodypart="back" immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
+	<item id="34996" type="Armor" name="Cloak of Radiant Light" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
+			immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
 		<cond msgId="1518">
 			<and>
 				<player castle="11" />
@@ -9463,8 +9443,8 @@
 		<skill id="19042" level="1" /> <!-- King's Summon -->
 	</item>
 	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape:ﾠCastle skill. Can only be equipped by a lord. Cannot be transferred between servers. -->
-	<item id="34997" type="Armor" name="Cloak of Cold Darkness - None" icon="icon.amor_evilness_cloak" defaultAction="equip"
-			bodypart="back" immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
+	<item id="34997" type="Armor" name="Cloak of Cold Darkness" icon="icon.amor_evilness_cloak" defaultAction="equip" bodypart="back"
+			immediateEffect="1" weight="0" isTradable="false" isDroppable="false">
 		<cond msgId="1518">
 			<and>
 				<player castle="12" />
@@ -9483,7 +9463,7 @@
 		<skill id="19042" level="1" /> <!-- King's Summon -->
 	</item>
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. Can bestow 1 Special Soul Crystal. -->
-	<item id="34998" type="Weapon" name="Tauti's One-handed Axe - None" icon="icon.weapon_tauti_one_hand_axe_i01" defaultAction="equip"
+	<item id="34998" type="Weapon" name="Tauti's One-handed Axe" icon="icon.weapon_tauti_one_hand_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
 			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
 		<set stat="pAtk" val="698" />
@@ -9500,7 +9480,7 @@
 		<crystallizeReward id="17526" count="7" chance="93.919" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. Can bestow 1 Special Soul Crystal. -->
-	<item id="34999" type="Weapon" name="Tauti's Axe - None" icon="icon.weapon_tauti_one_hand_magic_axe_i01" defaultAction="equip"
+	<item id="34999" type="Weapon" name="Tauti's Axe" icon="icon.weapon_tauti_one_hand_magic_axe_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
 			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" canBeUsedAsApp="false" isEpic="true">
 		<set stat="pAtk" val="849" />
