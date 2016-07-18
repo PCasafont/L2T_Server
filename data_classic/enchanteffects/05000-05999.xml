@@ -1,0 +1,4860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- CP Recovery + 0.19. / Evasion + 0.96. -->
+	<effect id="5000" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.19. / Accuracy + 0.96. -->
+	<effect id="5001" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.19. / Critical + 10.38. -->
+	<effect id="5002" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Evasion + 1.06. / Accuracy + 0.96. -->
+	<effect id="5003" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Evasion + 1.06. / Critical + 10.38. -->
+	<effect id="5004" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Accuracy + 1.06. / Critical + 10.38. -->
+	<effect id="5005" rarity="2" slot="1">
+		<add stat="accCombat" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- P. Def. + 24.49. -->
+	<effect id="5006" rarity="2" slot="1">
+		<add stat="pDef" val="24.49" />
+	</effect>
+	<!-- M. Def. + 19.72. -->
+	<effect id="5007" rarity="2" slot="1">
+		<add stat="mDef" val="19.72" />
+	</effect>
+	<!-- Max HP + 62.37 -->
+	<effect id="5008" rarity="2" slot="1">
+		<add stat="maxHp" val="62.37" />
+	</effect>
+	<!-- Max MP + 72.48. -->
+	<effect id="5009" rarity="2" slot="1">
+		<add stat="maxMp" val="72.48" />
+	</effect>
+	<!-- Max CP + 94.15. -->
+	<effect id="5010" rarity="2" slot="1">
+		<add stat="maxCp" val="94.15" />
+	</effect>
+	<!-- P. Atk. + 13.64. -->
+	<effect id="5011" rarity="2" slot="1">
+		<add stat="pAtk" val="13.64" />
+	</effect>
+	<!-- M. Atk. + 15.78. -->
+	<effect id="5012" rarity="2" slot="1">
+		<add stat="mAtk" val="15.78" />
+	</effect>
+	<!-- HP Recovery + 0.41. -->
+	<effect id="5013" rarity="2" slot="1">
+		<add stat="regHp" val="0.41" />
+	</effect>
+	<!-- MP Recovery + 0.27. -->
+	<effect id="5014" rarity="2" slot="1">
+		<add stat="regMp" val="0.27" />
+	</effect>
+	<!-- CP Recovery + 0.41. -->
+	<effect id="5015" rarity="2" slot="1">
+		<add stat="regCp" val="0.41" />
+	</effect>
+	<!-- Evasion + 2.02. -->
+	<effect id="5016" rarity="2" slot="1">
+		<add stat="rEvas" val="2.02" />
+	</effect>
+	<!-- Accuracy + 2.02. -->
+	<effect id="5017" rarity="2" slot="1">
+		<add stat="accCombat" val="2.02" />
+	</effect>
+	<!-- Critical + 21.85. -->
+	<effect id="5018" rarity="2" slot="1">
+		<add stat="rCrit" val="21.85" />
+	</effect>
+	<!-- P. Def. + 12.64. / M. Def. + 9.54. -->
+	<effect id="5019" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="mDef" val="9.54" />
+	</effect>
+	<!-- P. Def. + 12.64. / Max HP + 30.18 -->
+	<effect id="5020" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="maxHp" val="30.18" />
+	</effect>
+	<!-- P. Def. + 12.64. / Max MP + 35.07. -->
+	<effect id="5021" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="maxMp" val="35.07" />
+	</effect>
+	<!-- P. Def. + 12.64. / Max CP + 45.56. -->
+	<effect id="5022" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="maxCp" val="45.56" />
+	</effect>
+	<!-- P. Def. + 12.64. / P. Atk. + 6.6. -->
+	<effect id="5023" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="pAtk" val="6.6" />
+	</effect>
+	<!-- P. Def. + 12.64. / M. Atk. + 7.64. -->
+	<effect id="5024" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- P. Def. + 12.64. / HP Recovery + 0.2. -->
+	<effect id="5025" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- P. Def. + 12.64. / MP Recovery + 0.13. -->
+	<effect id="5026" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- P. Def. + 12.64. / CP Recovery + 0.2. -->
+	<effect id="5027" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- P. Def. + 12.64. / Evasion + 0.96. -->
+	<effect id="5028" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- P. Def. + 12.64. / Accuracy + 0.96. -->
+	<effect id="5029" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- P. Def. + 12.64. / Critical + 10.38. -->
+	<effect id="5030" rarity="2" slot="1">
+		<add stat="pDef" val="12.64" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- M. Def. + 10.18. / Max HP + 30.18 -->
+	<effect id="5031" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="maxHp" val="30.18" />
+	</effect>
+	<!-- M. Def. + 10.18. / Max MP + 35.07. -->
+	<effect id="5032" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="maxMp" val="35.07" />
+	</effect>
+	<!-- M. Def. + 10.18. / Max CP + 45.56. -->
+	<effect id="5033" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="maxCp" val="45.56" />
+	</effect>
+	<!-- M. Def. + 10.18. / P. Atk. + 6.6. -->
+	<effect id="5034" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="pAtk" val="6.6" />
+	</effect>
+	<!-- M. Def. + 10.18. / M. Atk. + 7.64. -->
+	<effect id="5035" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- M. Def. + 10.18. / HP Recovery + 0.2. -->
+	<effect id="5036" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- M. Def. + 10.18. / MP Recovery + 0.13. -->
+	<effect id="5037" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- M. Def. + 10.18. / CP Recovery + 0.2. -->
+	<effect id="5038" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- M. Def. + 10.18. / Evasion + 0.96. -->
+	<effect id="5039" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- M. Def. + 10.18. / Accuracy + 0.96. -->
+	<effect id="5040" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- M. Def. + 10.18. / Critical + 10.38. -->
+	<effect id="5041" rarity="2" slot="1">
+		<add stat="mDef" val="10.18" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max HP + 32.19 / Max MP + 35.07. -->
+	<effect id="5042" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="maxMp" val="35.07" />
+	</effect>
+	<!-- Max HP + 32.19 / Max CP + 45.56. -->
+	<effect id="5043" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="maxCp" val="45.56" />
+	</effect>
+	<!-- Max HP + 32.19 / P. Atk. + 6.6. -->
+	<effect id="5044" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="pAtk" val="6.6" />
+	</effect>
+	<!-- Max HP + 32.19 / M. Atk. + 7.64. -->
+	<effect id="5045" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- Max HP + 32.19 / HP Recovery + 0.2. -->
+	<effect id="5046" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max HP + 32.19 / MP Recovery + 0.13. -->
+	<effect id="5047" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max HP + 32.19 / CP Recovery + 0.2. -->
+	<effect id="5048" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max HP + 32.19 / Evasion + 0.96. -->
+	<effect id="5049" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max HP + 32.19 / Accuracy + 0.96. -->
+	<effect id="5050" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max HP + 32.19 / Critical + 10.38. -->
+	<effect id="5051" rarity="2" slot="1">
+		<add stat="maxHp" val="32.19" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max MP + 37.41. / Max CP + 45.56. -->
+	<effect id="5052" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="maxCp" val="45.56" />
+	</effect>
+	<!-- Max MP + 37.41. / P. Atk. + 6.6. -->
+	<effect id="5053" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="pAtk" val="6.6" />
+	</effect>
+	<!-- Max MP + 37.41. / M. Atk. + 7.64. -->
+	<effect id="5054" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- Max MP + 37.41. / HP Recovery + 0.2. -->
+	<effect id="5055" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max MP + 37.41. / MP Recovery + 0.13. -->
+	<effect id="5056" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max MP + 37.41. / CP Recovery + 0.2. -->
+	<effect id="5057" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max MP + 37.41. / Evasion + 0.96. -->
+	<effect id="5058" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max MP + 37.41. / Accuracy + 0.96. -->
+	<effect id="5059" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max MP + 37.41. / Critical + 10.38. -->
+	<effect id="5060" rarity="2" slot="1">
+		<add stat="maxMp" val="37.41" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max CP + 48.6. / P. Atk. + 6.6. -->
+	<effect id="5061" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="pAtk" val="6.6" />
+	</effect>
+	<!-- Max CP + 48.6. / M. Atk. + 7.64. -->
+	<effect id="5062" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- Max CP + 48.6. / HP Recovery + 0.2. -->
+	<effect id="5063" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max CP + 48.6. / MP Recovery + 0.13. -->
+	<effect id="5064" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max CP + 48.6. / CP Recovery + 0.2. -->
+	<effect id="5065" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max CP + 48.6. / Evasion + 0.96. -->
+	<effect id="5066" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max CP + 48.6. / Accuracy + 0.96. -->
+	<effect id="5067" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max CP + 48.6. / Critical + 10.38. -->
+	<effect id="5068" rarity="2" slot="1">
+		<add stat="maxCp" val="48.6" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- P. Atk. + 7.04. / M. Atk. + 7.64. -->
+	<effect id="5069" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="mAtk" val="7.64" />
+	</effect>
+	<!-- P. Atk. + 7.04. / HP Recovery + 0.2. -->
+	<effect id="5070" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- P. Atk. + 7.04. / MP Recovery + 0.13. -->
+	<effect id="5071" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- P. Atk. + 7.04. / CP Recovery + 0.2. -->
+	<effect id="5072" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- P. Atk. + 7.04. / Evasion + 0.96. -->
+	<effect id="5073" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- P. Atk. + 7.04. / Accuracy + 0.96. -->
+	<effect id="5074" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- P. Atk. + 7.04. / Critical + 10.38. -->
+	<effect id="5075" rarity="2" slot="1">
+		<add stat="pAtk" val="7.04" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- M. Atk. + 8.14. / HP Recovery + 0.2. -->
+	<effect id="5076" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- M. Atk. + 8.14. / MP Recovery + 0.13. -->
+	<effect id="5077" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- M. Atk. + 8.14. / CP Recovery + 0.2. -->
+	<effect id="5078" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- M. Atk. + 8.14. / Evasion + 0.96. -->
+	<effect id="5079" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- M. Atk. + 8.14. / Accuracy + 0.96. -->
+	<effect id="5080" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- M. Atk. + 8.14. / Critical + 10.38. -->
+	<effect id="5081" rarity="2" slot="1">
+		<add stat="mAtk" val="8.14" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- HP Recovery + 0.21. / MP Recovery + 0.13. -->
+	<effect id="5082" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- HP Recovery + 0.21. / CP Recovery + 0.2. -->
+	<effect id="5083" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Evasion + 0.96. -->
+	<effect id="5084" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Accuracy + 0.96. -->
+	<effect id="5085" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Critical + 10.38. -->
+	<effect id="5086" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- MP Recovery + 0.14. / CP Recovery + 0.2. -->
+	<effect id="5087" rarity="2" slot="1">
+		<add stat="regMp" val="0.14" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- MP Recovery + 0.14. / Evasion + 0.96. -->
+	<effect id="5088" rarity="2" slot="1">
+		<add stat="regMp" val="0.14" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- MP Recovery + 0.14. / Accuracy + 0.96. -->
+	<effect id="5089" rarity="2" slot="1">
+		<add stat="regMp" val="0.14" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- MP Recovery + 0.14. / Critical + 10.38. -->
+	<effect id="5090" rarity="2" slot="1">
+		<add stat="regMp" val="0.14" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Evasion + 0.96. -->
+	<effect id="5091" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Accuracy + 0.96. -->
+	<effect id="5092" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Critical + 10.38. -->
+	<effect id="5093" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Evasion + 1.06. / Accuracy + 0.96. -->
+	<effect id="5094" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Evasion + 1.06. / Critical + 10.38. -->
+	<effect id="5095" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Accuracy + 1.06. / Critical + 10.38. -->
+	<effect id="5096" rarity="2" slot="1">
+		<add stat="accCombat" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- P. Def. + 24.82. -->
+	<effect id="5097" rarity="2" slot="1">
+		<add stat="pDef" val="24.82" />
+	</effect>
+	<!-- M. Def. + 19.95. -->
+	<effect id="5098" rarity="2" slot="1">
+		<add stat="mDef" val="19.95" />
+	</effect>
+	<!-- Max HP + 62.9 -->
+	<effect id="5099" rarity="2" slot="1">
+		<add stat="maxHp" val="62.9" />
+	</effect>
+	<!-- Max MP + 73.23. -->
+	<effect id="5100" rarity="2" slot="1">
+		<add stat="maxMp" val="73.23" />
+	</effect>
+	<!-- Max CP + 94.95. -->
+	<effect id="5101" rarity="2" slot="1">
+		<add stat="maxCp" val="94.95" />
+	</effect>
+	<!-- P. Atk. + 14.33. -->
+	<effect id="5102" rarity="2" slot="1">
+		<add stat="pAtk" val="14.33" />
+	</effect>
+	<!-- M. Atk. + 16.56. -->
+	<effect id="5103" rarity="2" slot="1">
+		<add stat="mAtk" val="16.56" />
+	</effect>
+	<!-- HP Recovery + 0.4. -->
+	<effect id="5104" rarity="2" slot="1">
+		<add stat="regHp" val="0.4" />
+	</effect>
+	<!-- MP Recovery + 0.25. -->
+	<effect id="5105" rarity="2" slot="1">
+		<add stat="regMp" val="0.25" />
+	</effect>
+	<!-- CP Recovery + 0.4. -->
+	<effect id="5106" rarity="2" slot="1">
+		<add stat="regCp" val="0.4" />
+	</effect>
+	<!-- Evasion + 2.02. -->
+	<effect id="5107" rarity="2" slot="1">
+		<add stat="rEvas" val="2.02" />
+	</effect>
+	<!-- Accuracy + 2.02. -->
+	<effect id="5108" rarity="2" slot="1">
+		<add stat="accCombat" val="2.02" />
+	</effect>
+	<!-- Critical + 21.85. -->
+	<effect id="5109" rarity="2" slot="1">
+		<add stat="rCrit" val="21.85" />
+	</effect>
+	<!-- P. Def. + 12.84. / M. Def. + 9.63. -->
+	<effect id="5110" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="mDef" val="9.63" />
+	</effect>
+	<!-- P. Def. + 12.84. / Max HP + 30.37 -->
+	<effect id="5111" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="maxHp" val="30.37" />
+	</effect>
+	<!-- P. Def. + 12.84. / Max MP + 35.35. -->
+	<effect id="5112" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="maxMp" val="35.35" />
+	</effect>
+	<!-- P. Def. + 12.84. / Max CP + 45.84. -->
+	<effect id="5113" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="maxCp" val="45.84" />
+	</effect>
+	<!-- P. Def. + 12.84. / P. Atk. + 6.92. -->
+	<effect id="5114" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="pAtk" val="6.92" />
+	</effect>
+	<!-- P. Def. + 12.84. / M. Atk. + 7.99. -->
+	<effect id="5115" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- P. Def. + 12.84. / HP Recovery + 0.19. -->
+	<effect id="5116" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- P. Def. + 12.84. / MP Recovery + 0.12. -->
+	<effect id="5117" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- P. Def. + 12.84. / CP Recovery + 0.19. -->
+	<effect id="5118" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- P. Def. + 12.84. / Evasion + 0.96. -->
+	<effect id="5119" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- P. Def. + 12.84. / Accuracy + 0.96. -->
+	<effect id="5120" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- P. Def. + 12.84. / Critical + 10.38. -->
+	<effect id="5121" rarity="2" slot="1">
+		<add stat="pDef" val="12.84" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- M. Def. + 10.32. / Max HP + 30.37 -->
+	<effect id="5122" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="maxHp" val="30.37" />
+	</effect>
+	<!-- M. Def. + 10.32. / Max MP + 35.35. -->
+	<effect id="5123" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="maxMp" val="35.35" />
+	</effect>
+	<!-- M. Def. + 10.32. / Max CP + 45.84. -->
+	<effect id="5124" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="maxCp" val="45.84" />
+	</effect>
+	<!-- M. Def. + 10.32. / P. Atk. + 6.92. -->
+	<effect id="5125" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="pAtk" val="6.92" />
+	</effect>
+	<!-- M. Def. + 10.32. / M. Atk. + 7.99. -->
+	<effect id="5126" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- M. Def. + 10.32. / HP Recovery + 0.19. -->
+	<effect id="5127" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- M. Def. + 10.32. / MP Recovery + 0.12. -->
+	<effect id="5128" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- M. Def. + 10.32. / CP Recovery + 0.19. -->
+	<effect id="5129" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- M. Def. + 10.32. / Evasion + 0.96. -->
+	<effect id="5130" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- M. Def. + 10.32. / Accuracy + 0.96. -->
+	<effect id="5131" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- M. Def. + 10.32. / Critical + 10.38. -->
+	<effect id="5132" rarity="2" slot="1">
+		<add stat="mDef" val="10.32" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max HP + 32.54 / Max MP + 35.35. -->
+	<effect id="5133" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="maxMp" val="35.35" />
+	</effect>
+	<!-- Max HP + 32.54 / Max CP + 45.84. -->
+	<effect id="5134" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="maxCp" val="45.84" />
+	</effect>
+	<!-- Max HP + 32.54 / P. Atk. + 6.92. -->
+	<effect id="5135" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="pAtk" val="6.92" />
+	</effect>
+	<!-- Max HP + 32.54 / M. Atk. + 7.99. -->
+	<effect id="5136" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- Max HP + 32.54 / HP Recovery + 0.19. -->
+	<effect id="5137" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- Max HP + 32.54 / MP Recovery + 0.12. -->
+	<effect id="5138" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max HP + 32.54 / CP Recovery + 0.19. -->
+	<effect id="5139" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- Max HP + 32.54 / Evasion + 0.96. -->
+	<effect id="5140" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max HP + 32.54 / Accuracy + 0.96. -->
+	<effect id="5141" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max HP + 32.54 / Critical + 10.38. -->
+	<effect id="5142" rarity="2" slot="1">
+		<add stat="maxHp" val="32.54" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max MP + 37.88. / Max CP + 45.84. -->
+	<effect id="5143" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="maxCp" val="45.84" />
+	</effect>
+	<!-- Max MP + 37.88. / P. Atk. + 6.92. -->
+	<effect id="5144" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="pAtk" val="6.92" />
+	</effect>
+	<!-- Max MP + 37.88. / M. Atk. + 7.99. -->
+	<effect id="5145" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- Max MP + 37.88. / HP Recovery + 0.19. -->
+	<effect id="5146" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- Max MP + 37.88. / MP Recovery + 0.12. -->
+	<effect id="5147" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max MP + 37.88. / CP Recovery + 0.19. -->
+	<effect id="5148" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- Max MP + 37.88. / Evasion + 0.96. -->
+	<effect id="5149" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max MP + 37.88. / Accuracy + 0.96. -->
+	<effect id="5150" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max MP + 37.88. / Critical + 10.38. -->
+	<effect id="5151" rarity="2" slot="1">
+		<add stat="maxMp" val="37.88" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Max CP + 49.11. / P. Atk. + 6.92. -->
+	<effect id="5152" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="pAtk" val="6.92" />
+	</effect>
+	<!-- Max CP + 49.11. / M. Atk. + 7.99. -->
+	<effect id="5153" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- Max CP + 49.11. / HP Recovery + 0.19. -->
+	<effect id="5154" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- Max CP + 49.11. / MP Recovery + 0.12. -->
+	<effect id="5155" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max CP + 49.11. / CP Recovery + 0.19. -->
+	<effect id="5156" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- Max CP + 49.11. / Evasion + 0.96. -->
+	<effect id="5157" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- Max CP + 49.11. / Accuracy + 0.96. -->
+	<effect id="5158" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Max CP + 49.11. / Critical + 10.38. -->
+	<effect id="5159" rarity="2" slot="1">
+		<add stat="maxCp" val="49.11" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- P. Atk. + 7.41. / M. Atk. + 7.99. -->
+	<effect id="5160" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="mAtk" val="7.99" />
+	</effect>
+	<!-- P. Atk. + 7.41. / HP Recovery + 0.19. -->
+	<effect id="5161" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- P. Atk. + 7.41. / MP Recovery + 0.12. -->
+	<effect id="5162" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- P. Atk. + 7.41. / CP Recovery + 0.19. -->
+	<effect id="5163" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- P. Atk. + 7.41. / Evasion + 0.96. -->
+	<effect id="5164" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- P. Atk. + 7.41. / Accuracy + 0.96. -->
+	<effect id="5165" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- P. Atk. + 7.41. / Critical + 10.38. -->
+	<effect id="5166" rarity="2" slot="1">
+		<add stat="pAtk" val="7.41" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- M. Atk. + 8.57. / HP Recovery + 0.19. -->
+	<effect id="5167" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="regHp" val="0.19" />
+	</effect>
+	<!-- M. Atk. + 8.57. / MP Recovery + 0.12. -->
+	<effect id="5168" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- M. Atk. + 8.57. / CP Recovery + 0.19. -->
+	<effect id="5169" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- M. Atk. + 8.57. / Evasion + 0.96. -->
+	<effect id="5170" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- M. Atk. + 8.57. / Accuracy + 0.96. -->
+	<effect id="5171" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- M. Atk. + 8.57. / Critical + 10.38. -->
+	<effect id="5172" rarity="2" slot="1">
+		<add stat="mAtk" val="8.57" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- HP Recovery + 0.21. / MP Recovery + 0.12. -->
+	<effect id="5173" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- HP Recovery + 0.21. / CP Recovery + 0.19. -->
+	<effect id="5174" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Evasion + 0.96. -->
+	<effect id="5175" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Accuracy + 0.96. -->
+	<effect id="5176" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- HP Recovery + 0.21. / Critical + 10.38. -->
+	<effect id="5177" rarity="2" slot="1">
+		<add stat="regHp" val="0.21" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- MP Recovery + 0.13. / CP Recovery + 0.19. -->
+	<effect id="5178" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="regCp" val="0.19" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Evasion + 0.96. -->
+	<effect id="5179" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Accuracy + 0.96. -->
+	<effect id="5180" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Critical + 10.38. -->
+	<effect id="5181" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Evasion + 0.96. -->
+	<effect id="5182" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="rEvas" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Accuracy + 0.96. -->
+	<effect id="5183" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- CP Recovery + 0.21. / Critical + 10.38. -->
+	<effect id="5184" rarity="2" slot="1">
+		<add stat="regCp" val="0.21" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Evasion + 1.06. / Accuracy + 0.96. -->
+	<effect id="5185" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="accCombat" val="0.96" />
+	</effect>
+	<!-- Evasion + 1.06. / Critical + 10.38. -->
+	<effect id="5186" rarity="2" slot="1">
+		<add stat="rEvas" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- Accuracy + 1.06. / Critical + 10.38. -->
+	<effect id="5187" rarity="2" slot="1">
+		<add stat="accCombat" val="1.06" />
+		<add stat="rCrit" val="10.38" />
+	</effect>
+	<!-- P. Def. + 24.54. -->
+	<effect id="5188" rarity="2" slot="1">
+		<add stat="pDef" val="24.54" />
+	</effect>
+	<!-- M. Def. + 19.79. -->
+	<effect id="5189" rarity="2" slot="1">
+		<add stat="mDef" val="19.79" />
+	</effect>
+	<!-- Max HP + 62.86 -->
+	<effect id="5190" rarity="2" slot="1">
+		<add stat="maxHp" val="62.86" />
+	</effect>
+	<!-- Max MP + 73.31. -->
+	<effect id="5191" rarity="2" slot="1">
+		<add stat="maxMp" val="73.31" />
+	</effect>
+	<!-- Max CP + 94.89. -->
+	<effect id="5192" rarity="2" slot="1">
+		<add stat="maxCp" val="94.89" />
+	</effect>
+	<!-- P. Atk. + 14.63. -->
+	<effect id="5193" rarity="2" slot="1">
+		<add stat="pAtk" val="14.63" />
+	</effect>
+	<!-- M. Atk. + 17.15. -->
+	<effect id="5194" rarity="2" slot="1">
+		<add stat="mAtk" val="17.15" />
+	</effect>
+	<!-- HP Recovery + 0.38. -->
+	<effect id="5195" rarity="2" slot="1">
+		<add stat="regHp" val="0.38" />
+	</effect>
+	<!-- MP Recovery + 0.24. -->
+	<effect id="5196" rarity="2" slot="1">
+		<add stat="regMp" val="0.24" />
+	</effect>
+	<!-- CP Recovery + 0.38. -->
+	<effect id="5197" rarity="2" slot="1">
+		<add stat="regCp" val="0.38" />
+	</effect>
+	<!-- Evasion + 2.23. -->
+	<effect id="5198" rarity="2" slot="1">
+		<add stat="rEvas" val="2.23" />
+	</effect>
+	<!-- Accuracy + 2.23. -->
+	<effect id="5199" rarity="2" slot="1">
+		<add stat="accCombat" val="2.23" />
+	</effect>
+	<!-- Critical + 24.13. -->
+	<effect id="5200" rarity="2" slot="1">
+		<add stat="rCrit" val="24.13" />
+	</effect>
+	<!-- P. Def. + 12.73. / M. Def. + 9.53. -->
+	<effect id="5201" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="mDef" val="9.53" />
+	</effect>
+	<!-- P. Def. + 12.73. / Max HP + 30.26 -->
+	<effect id="5202" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="maxHp" val="30.26" />
+	</effect>
+	<!-- P. Def. + 12.73. / Max MP + 35.3. -->
+	<effect id="5203" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="maxMp" val="35.3" />
+	</effect>
+	<!-- P. Def. + 12.73. / Max CP + 45.69. -->
+	<effect id="5204" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="maxCp" val="45.69" />
+	</effect>
+	<!-- P. Def. + 12.73. / P. Atk. + 7.05. -->
+	<effect id="5205" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="pAtk" val="7.05" />
+	</effect>
+	<!-- P. Def. + 12.73. / M. Atk. + 8.26. -->
+	<effect id="5206" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- P. Def. + 12.73. / HP Recovery + 0.18. -->
+	<effect id="5207" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- P. Def. + 12.73. / MP Recovery + 0.12. -->
+	<effect id="5208" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- P. Def. + 12.73. / CP Recovery + 0.18. -->
+	<effect id="5209" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- P. Def. + 12.73. / Evasion + 1.06. -->
+	<effect id="5210" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- P. Def. + 12.73. / Accuracy + 1.06. -->
+	<effect id="5211" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- P. Def. + 12.73. / Critical + 11.46. -->
+	<effect id="5212" rarity="2" slot="1">
+		<add stat="pDef" val="12.73" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- M. Def. + 10.26. / Max HP + 30.26 -->
+	<effect id="5213" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="maxHp" val="30.26" />
+	</effect>
+	<!-- M. Def. + 10.26. / Max MP + 35.3. -->
+	<effect id="5214" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="maxMp" val="35.3" />
+	</effect>
+	<!-- M. Def. + 10.26. / Max CP + 45.69. -->
+	<effect id="5215" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="maxCp" val="45.69" />
+	</effect>
+	<!-- M. Def. + 10.26. / P. Atk. + 7.05. -->
+	<effect id="5216" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="pAtk" val="7.05" />
+	</effect>
+	<!-- M. Def. + 10.26. / M. Atk. + 8.26. -->
+	<effect id="5217" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- M. Def. + 10.26. / HP Recovery + 0.18. -->
+	<effect id="5218" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- M. Def. + 10.26. / MP Recovery + 0.12. -->
+	<effect id="5219" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- M. Def. + 10.26. / CP Recovery + 0.18. -->
+	<effect id="5220" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- M. Def. + 10.26. / Evasion + 1.06. -->
+	<effect id="5221" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- M. Def. + 10.26. / Accuracy + 1.06. -->
+	<effect id="5222" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- M. Def. + 10.26. / Critical + 11.46. -->
+	<effect id="5223" rarity="2" slot="1">
+		<add stat="mDef" val="10.26" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max HP + 32.59 / Max MP + 35.3. -->
+	<effect id="5224" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="maxMp" val="35.3" />
+	</effect>
+	<!-- Max HP + 32.59 / Max CP + 45.69. -->
+	<effect id="5225" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="maxCp" val="45.69" />
+	</effect>
+	<!-- Max HP + 32.59 / P. Atk. + 7.05. -->
+	<effect id="5226" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="pAtk" val="7.05" />
+	</effect>
+	<!-- Max HP + 32.59 / M. Atk. + 8.26. -->
+	<effect id="5227" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- Max HP + 32.59 / HP Recovery + 0.18. -->
+	<effect id="5228" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- Max HP + 32.59 / MP Recovery + 0.12. -->
+	<effect id="5229" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max HP + 32.59 / CP Recovery + 0.18. -->
+	<effect id="5230" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- Max HP + 32.59 / Evasion + 1.06. -->
+	<effect id="5231" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max HP + 32.59 / Accuracy + 1.06. -->
+	<effect id="5232" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max HP + 32.59 / Critical + 11.46. -->
+	<effect id="5233" rarity="2" slot="1">
+		<add stat="maxHp" val="32.59" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max MP + 38.01. / Max CP + 45.69. -->
+	<effect id="5234" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="maxCp" val="45.69" />
+	</effect>
+	<!-- Max MP + 38.01. / P. Atk. + 7.05. -->
+	<effect id="5235" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="pAtk" val="7.05" />
+	</effect>
+	<!-- Max MP + 38.01. / M. Atk. + 8.26. -->
+	<effect id="5236" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- Max MP + 38.01. / HP Recovery + 0.18. -->
+	<effect id="5237" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- Max MP + 38.01. / MP Recovery + 0.12. -->
+	<effect id="5238" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max MP + 38.01. / CP Recovery + 0.18. -->
+	<effect id="5239" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- Max MP + 38.01. / Evasion + 1.06. -->
+	<effect id="5240" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max MP + 38.01. / Accuracy + 1.06. -->
+	<effect id="5241" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max MP + 38.01. / Critical + 11.46. -->
+	<effect id="5242" rarity="2" slot="1">
+		<add stat="maxMp" val="38.01" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max CP + 49.2. / P. Atk. + 7.05. -->
+	<effect id="5243" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="pAtk" val="7.05" />
+	</effect>
+	<!-- Max CP + 49.2. / M. Atk. + 8.26. -->
+	<effect id="5244" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- Max CP + 49.2. / HP Recovery + 0.18. -->
+	<effect id="5245" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- Max CP + 49.2. / MP Recovery + 0.12. -->
+	<effect id="5246" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- Max CP + 49.2. / CP Recovery + 0.18. -->
+	<effect id="5247" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- Max CP + 49.2. / Evasion + 1.06. -->
+	<effect id="5248" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max CP + 49.2. / Accuracy + 1.06. -->
+	<effect id="5249" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max CP + 49.2. / Critical + 11.46. -->
+	<effect id="5250" rarity="2" slot="1">
+		<add stat="maxCp" val="49.2" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- P. Atk. + 7.59. / M. Atk. + 8.26. -->
+	<effect id="5251" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="mAtk" val="8.26" />
+	</effect>
+	<!-- P. Atk. + 7.59. / HP Recovery + 0.18. -->
+	<effect id="5252" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- P. Atk. + 7.59. / MP Recovery + 0.12. -->
+	<effect id="5253" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- P. Atk. + 7.59. / CP Recovery + 0.18. -->
+	<effect id="5254" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- P. Atk. + 7.59. / Evasion + 1.06. -->
+	<effect id="5255" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- P. Atk. + 7.59. / Accuracy + 1.06. -->
+	<effect id="5256" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- P. Atk. + 7.59. / Critical + 11.46. -->
+	<effect id="5257" rarity="2" slot="1">
+		<add stat="pAtk" val="7.59" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- M. Atk. + 8.89. / HP Recovery + 0.18. -->
+	<effect id="5258" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="regHp" val="0.18" />
+	</effect>
+	<!-- M. Atk. + 8.89. / MP Recovery + 0.12. -->
+	<effect id="5259" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- M. Atk. + 8.89. / CP Recovery + 0.18. -->
+	<effect id="5260" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- M. Atk. + 8.89. / Evasion + 1.06. -->
+	<effect id="5261" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- M. Atk. + 8.89. / Accuracy + 1.06. -->
+	<effect id="5262" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- M. Atk. + 8.89. / Critical + 11.46. -->
+	<effect id="5263" rarity="2" slot="1">
+		<add stat="mAtk" val="8.89" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- HP Recovery + 0.2. / MP Recovery + 0.12. -->
+	<effect id="5264" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="regMp" val="0.12" />
+	</effect>
+	<!-- HP Recovery + 0.2. / CP Recovery + 0.18. -->
+	<effect id="5265" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Evasion + 1.06. -->
+	<effect id="5266" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Accuracy + 1.06. -->
+	<effect id="5267" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Critical + 11.46. -->
+	<effect id="5268" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- MP Recovery + 0.12. / CP Recovery + 0.18. -->
+	<effect id="5269" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="regCp" val="0.18" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Evasion + 1.06. -->
+	<effect id="5270" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Accuracy + 1.06. -->
+	<effect id="5271" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Critical + 11.46. -->
+	<effect id="5272" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Evasion + 1.06. -->
+	<effect id="5273" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Accuracy + 1.06. -->
+	<effect id="5274" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Critical + 11.46. -->
+	<effect id="5275" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Evasion + 1.17. / Accuracy + 1.06. -->
+	<effect id="5276" rarity="2" slot="1">
+		<add stat="rEvas" val="1.17" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Evasion + 1.17. / Critical + 11.46. -->
+	<effect id="5277" rarity="2" slot="1">
+		<add stat="rEvas" val="1.17" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Accuracy + 1.17. / Critical + 11.46. -->
+	<effect id="5278" rarity="2" slot="1">
+		<add stat="accCombat" val="1.17" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- P. Def. + 24.63. -->
+	<effect id="5279" rarity="2" slot="1">
+		<add stat="pDef" val="24.63" />
+	</effect>
+	<!-- M. Def. + 19.8. -->
+	<effect id="5280" rarity="2" slot="1">
+		<add stat="mDef" val="19.8" />
+	</effect>
+	<!-- Max HP + 62.28 -->
+	<effect id="5281" rarity="2" slot="1">
+		<add stat="maxHp" val="62.28" />
+	</effect>
+	<!-- Max MP + 72.75. -->
+	<effect id="5282" rarity="2" slot="1">
+		<add stat="maxMp" val="72.75" />
+	</effect>
+	<!-- Max CP + 94.01. -->
+	<effect id="5283" rarity="2" slot="1">
+		<add stat="maxCp" val="94.01" />
+	</effect>
+	<!-- P. Atk. + 15.1. -->
+	<effect id="5284" rarity="2" slot="1">
+		<add stat="pAtk" val="15.1" />
+	</effect>
+	<!-- M. Atk. + 17.5. -->
+	<effect id="5285" rarity="2" slot="1">
+		<add stat="mAtk" val="17.5" />
+	</effect>
+	<!-- HP Recovery + 0.36. -->
+	<effect id="5286" rarity="2" slot="1">
+		<add stat="regHp" val="0.36" />
+	</effect>
+	<!-- MP Recovery + 0.24. -->
+	<effect id="5287" rarity="2" slot="1">
+		<add stat="regMp" val="0.24" />
+	</effect>
+	<!-- CP Recovery + 0.36. -->
+	<effect id="5288" rarity="2" slot="1">
+		<add stat="regCp" val="0.36" />
+	</effect>
+	<!-- Evasion + 2.23. -->
+	<effect id="5289" rarity="2" slot="1">
+		<add stat="rEvas" val="2.23" />
+	</effect>
+	<!-- Accuracy + 2.23. -->
+	<effect id="5290" rarity="2" slot="1">
+		<add stat="accCombat" val="2.23" />
+	</effect>
+	<!-- Critical + 24.13. -->
+	<effect id="5291" rarity="2" slot="1">
+		<add stat="rCrit" val="24.13" />
+	</effect>
+	<!-- P. Def. + 12.81. / M. Def. + 9.5. -->
+	<effect id="5292" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="mDef" val="9.5" />
+	</effect>
+	<!-- P. Def. + 12.81. / Max HP + 29.89 -->
+	<effect id="5293" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="maxHp" val="29.89" />
+	</effect>
+	<!-- P. Def. + 12.81. / Max MP + 34.92. -->
+	<effect id="5294" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="maxMp" val="34.92" />
+	</effect>
+	<!-- P. Def. + 12.81. / Max CP + 45.12. -->
+	<effect id="5295" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="maxCp" val="45.12" />
+	</effect>
+	<!-- P. Def. + 12.81. / P. Atk. + 7.25. -->
+	<effect id="5296" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="pAtk" val="7.25" />
+	</effect>
+	<!-- P. Def. + 12.81. / M. Atk. + 8.4. -->
+	<effect id="5297" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- P. Def. + 12.81. / HP Recovery + 0.17. -->
+	<effect id="5298" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- P. Def. + 12.81. / MP Recovery + 0.11. -->
+	<effect id="5299" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- P. Def. + 12.81. / CP Recovery + 0.17. -->
+	<effect id="5300" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- P. Def. + 12.81. / Evasion + 1.06. -->
+	<effect id="5301" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- P. Def. + 12.81. / Accuracy + 1.06. -->
+	<effect id="5302" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- P. Def. + 12.81. / Critical + 11.46. -->
+	<effect id="5303" rarity="2" slot="1">
+		<add stat="pDef" val="12.81" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- M. Def. + 10.3. / Max HP + 29.89 -->
+	<effect id="5304" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="maxHp" val="29.89" />
+	</effect>
+	<!-- M. Def. + 10.3. / Max MP + 34.92. -->
+	<effect id="5305" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="maxMp" val="34.92" />
+	</effect>
+	<!-- M. Def. + 10.3. / Max CP + 45.12. -->
+	<effect id="5306" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="maxCp" val="45.12" />
+	</effect>
+	<!-- M. Def. + 10.3. / P. Atk. + 7.25. -->
+	<effect id="5307" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="pAtk" val="7.25" />
+	</effect>
+	<!-- M. Def. + 10.3. / M. Atk. + 8.4. -->
+	<effect id="5308" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- M. Def. + 10.3. / HP Recovery + 0.17. -->
+	<effect id="5309" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- M. Def. + 10.3. / MP Recovery + 0.11. -->
+	<effect id="5310" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- M. Def. + 10.3. / CP Recovery + 0.17. -->
+	<effect id="5311" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- M. Def. + 10.3. / Evasion + 1.06. -->
+	<effect id="5312" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- M. Def. + 10.3. / Accuracy + 1.06. -->
+	<effect id="5313" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- M. Def. + 10.3. / Critical + 11.46. -->
+	<effect id="5314" rarity="2" slot="1">
+		<add stat="mDef" val="10.3" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max HP + 32.38 / Max MP + 34.92. -->
+	<effect id="5315" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="maxMp" val="34.92" />
+	</effect>
+	<!-- Max HP + 32.38 / Max CP + 45.12. -->
+	<effect id="5316" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="maxCp" val="45.12" />
+	</effect>
+	<!-- Max HP + 32.38 / P. Atk. + 7.25. -->
+	<effect id="5317" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="pAtk" val="7.25" />
+	</effect>
+	<!-- Max HP + 32.38 / M. Atk. + 8.4. -->
+	<effect id="5318" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- Max HP + 32.38 / HP Recovery + 0.17. -->
+	<effect id="5319" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- Max HP + 32.38 / MP Recovery + 0.11. -->
+	<effect id="5320" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- Max HP + 32.38 / CP Recovery + 0.17. -->
+	<effect id="5321" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- Max HP + 32.38 / Evasion + 1.06. -->
+	<effect id="5322" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max HP + 32.38 / Accuracy + 1.06. -->
+	<effect id="5323" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max HP + 32.38 / Critical + 11.46. -->
+	<effect id="5324" rarity="2" slot="1">
+		<add stat="maxHp" val="32.38" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max MP + 37.83. / Max CP + 45.12. -->
+	<effect id="5325" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="maxCp" val="45.12" />
+	</effect>
+	<!-- Max MP + 37.83. / P. Atk. + 7.25. -->
+	<effect id="5326" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="pAtk" val="7.25" />
+	</effect>
+	<!-- Max MP + 37.83. / M. Atk. + 8.4. -->
+	<effect id="5327" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- Max MP + 37.83. / HP Recovery + 0.17. -->
+	<effect id="5328" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- Max MP + 37.83. / MP Recovery + 0.11. -->
+	<effect id="5329" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- Max MP + 37.83. / CP Recovery + 0.17. -->
+	<effect id="5330" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- Max MP + 37.83. / Evasion + 1.06. -->
+	<effect id="5331" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max MP + 37.83. / Accuracy + 1.06. -->
+	<effect id="5332" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max MP + 37.83. / Critical + 11.46. -->
+	<effect id="5333" rarity="2" slot="1">
+		<add stat="maxMp" val="37.83" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Max CP + 48.88. / P. Atk. + 7.25. -->
+	<effect id="5334" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="pAtk" val="7.25" />
+	</effect>
+	<!-- Max CP + 48.88. / M. Atk. + 8.4. -->
+	<effect id="5335" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- Max CP + 48.88. / HP Recovery + 0.17. -->
+	<effect id="5336" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- Max CP + 48.88. / MP Recovery + 0.11. -->
+	<effect id="5337" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- Max CP + 48.88. / CP Recovery + 0.17. -->
+	<effect id="5338" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- Max CP + 48.88. / Evasion + 1.06. -->
+	<effect id="5339" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- Max CP + 48.88. / Accuracy + 1.06. -->
+	<effect id="5340" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Max CP + 48.88. / Critical + 11.46. -->
+	<effect id="5341" rarity="2" slot="1">
+		<add stat="maxCp" val="48.88" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- P. Atk. + 7.85. / M. Atk. + 8.4. -->
+	<effect id="5342" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="mAtk" val="8.4" />
+	</effect>
+	<!-- P. Atk. + 7.85. / HP Recovery + 0.17. -->
+	<effect id="5343" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- P. Atk. + 7.85. / MP Recovery + 0.11. -->
+	<effect id="5344" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- P. Atk. + 7.85. / CP Recovery + 0.17. -->
+	<effect id="5345" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- P. Atk. + 7.85. / Evasion + 1.06. -->
+	<effect id="5346" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- P. Atk. + 7.85. / Accuracy + 1.06. -->
+	<effect id="5347" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- P. Atk. + 7.85. / Critical + 11.46. -->
+	<effect id="5348" rarity="2" slot="1">
+		<add stat="pAtk" val="7.85" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- M. Atk. + 9.1. / HP Recovery + 0.17. -->
+	<effect id="5349" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="regHp" val="0.17" />
+	</effect>
+	<!-- M. Atk. + 9.1. / MP Recovery + 0.11. -->
+	<effect id="5350" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- M. Atk. + 9.1. / CP Recovery + 0.17. -->
+	<effect id="5351" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- M. Atk. + 9.1. / Evasion + 1.06. -->
+	<effect id="5352" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- M. Atk. + 9.1. / Accuracy + 1.06. -->
+	<effect id="5353" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- M. Atk. + 9.1. / Critical + 11.46. -->
+	<effect id="5354" rarity="2" slot="1">
+		<add stat="mAtk" val="9.1" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- HP Recovery + 0.19. / MP Recovery + 0.11. -->
+	<effect id="5355" rarity="2" slot="1">
+		<add stat="regHp" val="0.19" />
+		<add stat="regMp" val="0.11" />
+	</effect>
+	<!-- HP Recovery + 0.19. / CP Recovery + 0.17. -->
+	<effect id="5356" rarity="2" slot="1">
+		<add stat="regHp" val="0.19" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- HP Recovery + 0.19. / Evasion + 1.06. -->
+	<effect id="5357" rarity="2" slot="1">
+		<add stat="regHp" val="0.19" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- HP Recovery + 0.19. / Accuracy + 1.06. -->
+	<effect id="5358" rarity="2" slot="1">
+		<add stat="regHp" val="0.19" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- HP Recovery + 0.19. / Critical + 11.46. -->
+	<effect id="5359" rarity="2" slot="1">
+		<add stat="regHp" val="0.19" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- MP Recovery + 0.12. / CP Recovery + 0.17. -->
+	<effect id="5360" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="regCp" val="0.17" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Evasion + 1.06. -->
+	<effect id="5361" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Accuracy + 1.06. -->
+	<effect id="5362" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- MP Recovery + 0.12. / Critical + 11.46. -->
+	<effect id="5363" rarity="2" slot="1">
+		<add stat="regMp" val="0.12" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- CP Recovery + 0.19. / Evasion + 1.06. -->
+	<effect id="5364" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="rEvas" val="1.06" />
+	</effect>
+	<!-- CP Recovery + 0.19. / Accuracy + 1.06. -->
+	<effect id="5365" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- CP Recovery + 0.19. / Critical + 11.46. -->
+	<effect id="5366" rarity="2" slot="1">
+		<add stat="regCp" val="0.19" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Evasion + 1.17. / Accuracy + 1.06. -->
+	<effect id="5367" rarity="2" slot="1">
+		<add stat="rEvas" val="1.17" />
+		<add stat="accCombat" val="1.06" />
+	</effect>
+	<!-- Evasion + 1.17. / Critical + 11.46. -->
+	<effect id="5368" rarity="2" slot="1">
+		<add stat="rEvas" val="1.17" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- Accuracy + 1.17. / Critical + 11.46. -->
+	<effect id="5369" rarity="2" slot="1">
+		<add stat="accCombat" val="1.17" />
+		<add stat="rCrit" val="11.46" />
+	</effect>
+	<!-- P. Def. + 26.23. -->
+	<effect id="5370" rarity="2" slot="1">
+		<add stat="pDef" val="26.23" />
+	</effect>
+	<!-- M. Def. + 21.12. -->
+	<effect id="5371" rarity="2" slot="1">
+		<add stat="mDef" val="21.12" />
+	</effect>
+	<!-- Max HP + 66.48 -->
+	<effect id="5372" rarity="2" slot="1">
+		<add stat="maxHp" val="66.48" />
+	</effect>
+	<!-- Max MP + 78.96. -->
+	<effect id="5373" rarity="2" slot="1">
+		<add stat="maxMp" val="78.96" />
+	</effect>
+	<!-- Max CP + 100.35. -->
+	<effect id="5374" rarity="2" slot="1">
+		<add stat="maxCp" val="100.35" />
+	</effect>
+	<!-- P. Atk. + 16.61. -->
+	<effect id="5375" rarity="2" slot="1">
+		<add stat="pAtk" val="16.61" />
+	</effect>
+	<!-- M. Atk. + 19.39. -->
+	<effect id="5376" rarity="2" slot="1">
+		<add stat="mAtk" val="19.39" />
+	</effect>
+	<!-- HP Recovery + 0.39. -->
+	<effect id="5377" rarity="2" slot="1">
+		<add stat="regHp" val="0.39" />
+	</effect>
+	<!-- MP Recovery + 0.26. -->
+	<effect id="5378" rarity="2" slot="1">
+		<add stat="regMp" val="0.26" />
+	</effect>
+	<!-- CP Recovery + 0.39. -->
+	<effect id="5379" rarity="2" slot="1">
+		<add stat="regCp" val="0.39" />
+	</effect>
+	<!-- Evasion + 2.44. -->
+	<effect id="5380" rarity="2" slot="1">
+		<add stat="rEvas" val="2.44" />
+	</effect>
+	<!-- Accuracy + 2.44. -->
+	<effect id="5381" rarity="2" slot="1">
+		<add stat="accCombat" val="2.44" />
+	</effect>
+	<!-- Critical + 26.4. -->
+	<effect id="5382" rarity="2" slot="1">
+		<add stat="rCrit" val="26.4" />
+	</effect>
+	<!-- P. Def. + 12.02. / M. Def. + 10.56. -->
+	<effect id="5383" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="mDef" val="10.56" />
+	</effect>
+	<!-- P. Def. + 12.02. / Max HP + 33.24 -->
+	<effect id="5384" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="maxHp" val="33.24" />
+	</effect>
+	<!-- P. Def. + 12.02. / Max MP + 39.48. -->
+	<effect id="5385" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="maxMp" val="39.48" />
+	</effect>
+	<!-- P. Def. + 12.02. / Max CP + 50.17. -->
+	<effect id="5386" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="maxCp" val="50.17" />
+	</effect>
+	<!-- P. Def. + 12.02. / P. Atk. + 8.3. -->
+	<effect id="5387" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="pAtk" val="8.3" />
+	</effect>
+	<!-- P. Def. + 12.02. / M. Atk. + 9.7. -->
+	<effect id="5388" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- P. Def. + 12.02. / HP Recovery + 0.2. -->
+	<effect id="5389" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- P. Def. + 12.02. / MP Recovery + 0.13. -->
+	<effect id="5390" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- P. Def. + 12.02. / CP Recovery + 0.2. -->
+	<effect id="5391" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- P. Def. + 12.02. / Evasion + 1.22. -->
+	<effect id="5392" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- P. Def. + 12.02. / Accuracy + 1.22. -->
+	<effect id="5393" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- P. Def. + 12.02. / Critical + 13.2. -->
+	<effect id="5394" rarity="2" slot="1">
+		<add stat="pDef" val="12.02" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- M. Def. + 10.56. / Max HP + 33.24 -->
+	<effect id="5395" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="maxHp" val="33.24" />
+	</effect>
+	<!-- M. Def. + 10.56. / Max MP + 39.48. -->
+	<effect id="5396" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="maxMp" val="39.48" />
+	</effect>
+	<!-- M. Def. + 10.56. / Max CP + 50.17. -->
+	<effect id="5397" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="maxCp" val="50.17" />
+	</effect>
+	<!-- M. Def. + 10.56. / P. Atk. + 8.3. -->
+	<effect id="5398" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="pAtk" val="8.3" />
+	</effect>
+	<!-- M. Def. + 10.56. / M. Atk. + 9.7. -->
+	<effect id="5399" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- M. Def. + 10.56. / HP Recovery + 0.2. -->
+	<effect id="5400" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- M. Def. + 10.56. / MP Recovery + 0.13. -->
+	<effect id="5401" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- M. Def. + 10.56. / CP Recovery + 0.2. -->
+	<effect id="5402" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- M. Def. + 10.56. / Evasion + 1.22. -->
+	<effect id="5403" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- M. Def. + 10.56. / Accuracy + 1.22. -->
+	<effect id="5404" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- M. Def. + 10.56. / Critical + 13.2. -->
+	<effect id="5405" rarity="2" slot="1">
+		<add stat="mDef" val="10.56" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- Max HP + 33.24 / Max MP + 39.48. -->
+	<effect id="5406" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="maxMp" val="39.48" />
+	</effect>
+	<!-- Max HP + 33.24 / Max CP + 50.17. -->
+	<effect id="5407" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="maxCp" val="50.17" />
+	</effect>
+	<!-- Max HP + 33.24 / P. Atk. + 8.3. -->
+	<effect id="5408" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="pAtk" val="8.3" />
+	</effect>
+	<!-- Max HP + 33.24 / M. Atk. + 9.7. -->
+	<effect id="5409" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- Max HP + 33.24 / HP Recovery + 0.2. -->
+	<effect id="5410" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max HP + 33.24 / MP Recovery + 0.13. -->
+	<effect id="5411" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max HP + 33.24 / CP Recovery + 0.2. -->
+	<effect id="5412" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max HP + 33.24 / Evasion + 1.22. -->
+	<effect id="5413" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- Max HP + 33.24 / Accuracy + 1.22. -->
+	<effect id="5414" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- Max HP + 33.24 / Critical + 13.2. -->
+	<effect id="5415" rarity="2" slot="1">
+		<add stat="maxHp" val="33.24" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- Max MP + 39.48. / Max CP + 50.17. -->
+	<effect id="5416" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="maxCp" val="50.17" />
+	</effect>
+	<!-- Max MP + 39.48. / P. Atk. + 8.3. -->
+	<effect id="5417" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="pAtk" val="8.3" />
+	</effect>
+	<!-- Max MP + 39.48. / M. Atk. + 9.7. -->
+	<effect id="5418" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- Max MP + 39.48. / HP Recovery + 0.2. -->
+	<effect id="5419" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max MP + 39.48. / MP Recovery + 0.13. -->
+	<effect id="5420" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max MP + 39.48. / CP Recovery + 0.2. -->
+	<effect id="5421" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max MP + 39.48. / Evasion + 1.22. -->
+	<effect id="5422" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- Max MP + 39.48. / Accuracy + 1.22. -->
+	<effect id="5423" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- Max MP + 39.48. / Critical + 13.2. -->
+	<effect id="5424" rarity="2" slot="1">
+		<add stat="maxMp" val="39.48" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- Max CP + 50.17. / P. Atk. + 8.3. -->
+	<effect id="5425" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="pAtk" val="8.3" />
+	</effect>
+	<!-- Max CP + 50.17. / M. Atk. + 9.7. -->
+	<effect id="5426" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- Max CP + 50.17. / HP Recovery + 0.2. -->
+	<effect id="5427" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- Max CP + 50.17. / MP Recovery + 0.13. -->
+	<effect id="5428" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- Max CP + 50.17. / CP Recovery + 0.2. -->
+	<effect id="5429" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- Max CP + 50.17. / Evasion + 1.22. -->
+	<effect id="5430" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- Max CP + 50.17. / Accuracy + 1.22. -->
+	<effect id="5431" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- Max CP + 50.17. / Critical + 13.2. -->
+	<effect id="5432" rarity="2" slot="1">
+		<add stat="maxCp" val="50.17" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- P. Atk. + 8.3. / M. Atk. + 9.7. -->
+	<effect id="5433" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="mAtk" val="9.7" />
+	</effect>
+	<!-- P. Atk. + 8.3. / HP Recovery + 0.2. -->
+	<effect id="5434" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- P. Atk. + 8.3. / MP Recovery + 0.13. -->
+	<effect id="5435" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- P. Atk. + 8.3. / CP Recovery + 0.2. -->
+	<effect id="5436" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- P. Atk. + 8.3. / Evasion + 1.22. -->
+	<effect id="5437" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- P. Atk. + 8.3. / Accuracy + 1.22. -->
+	<effect id="5438" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- P. Atk. + 8.3. / Critical + 13.2. -->
+	<effect id="5439" rarity="2" slot="1">
+		<add stat="pAtk" val="8.3" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- M. Atk. + 9.7. / HP Recovery + 0.2. -->
+	<effect id="5440" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="regHp" val="0.2" />
+	</effect>
+	<!-- M. Atk. + 9.7. / MP Recovery + 0.13. -->
+	<effect id="5441" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- M. Atk. + 9.7. / CP Recovery + 0.2. -->
+	<effect id="5442" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- M. Atk. + 9.7. / Evasion + 1.22. -->
+	<effect id="5443" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- M. Atk. + 9.7. / Accuracy + 1.22. -->
+	<effect id="5444" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- M. Atk. + 9.7. / Critical + 13.2. -->
+	<effect id="5445" rarity="2" slot="1">
+		<add stat="mAtk" val="9.7" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- HP Recovery + 0.2. / MP Recovery + 0.13. -->
+	<effect id="5446" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="regMp" val="0.13" />
+	</effect>
+	<!-- HP Recovery + 0.2. / CP Recovery + 0.2. -->
+	<effect id="5447" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Evasion + 1.22. -->
+	<effect id="5448" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Accuracy + 1.22. -->
+	<effect id="5449" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- HP Recovery + 0.2. / Critical + 13.2. -->
+	<effect id="5450" rarity="2" slot="1">
+		<add stat="regHp" val="0.2" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- MP Recovery + 0.13. / CP Recovery + 0.2. -->
+	<effect id="5451" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="regCp" val="0.2" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Evasion + 1.22. -->
+	<effect id="5452" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Accuracy + 1.22. -->
+	<effect id="5453" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- MP Recovery + 0.13. / Critical + 13.2. -->
+	<effect id="5454" rarity="2" slot="1">
+		<add stat="regMp" val="0.13" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Evasion + 1.22. -->
+	<effect id="5455" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="rEvas" val="1.22" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Accuracy + 1.22. -->
+	<effect id="5456" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- CP Recovery + 0.2. / Critical + 13.2. -->
+	<effect id="5457" rarity="2" slot="1">
+		<add stat="regCp" val="0.2" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- Evasion + 1.22. / Accuracy + 1.22. -->
+	<effect id="5458" rarity="2" slot="1">
+		<add stat="rEvas" val="1.22" />
+		<add stat="accCombat" val="1.22" />
+	</effect>
+	<!-- Evasion + 1.22. / Critical + 13.2. -->
+	<effect id="5459" rarity="2" slot="1">
+		<add stat="rEvas" val="1.22" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- Accuracy + 1.22. / Critical + 13.2. -->
+	<effect id="5460" rarity="2" slot="1">
+		<add stat="accCombat" val="1.22" />
+		<add stat="rCrit" val="13.2" />
+	</effect>
+	<!-- P. Def. + 25.75. -->
+	<effect id="5461" rarity="3" slot="1">
+		<add stat="pDef" val="25.75" />
+	</effect>
+	<!-- M. Def. + 20.55. -->
+	<effect id="5462" rarity="3" slot="1">
+		<add stat="mDef" val="20.55" />
+	</effect>
+	<!-- Max HP + 63.75 -->
+	<effect id="5463" rarity="3" slot="1">
+		<add stat="maxHp" val="63.75" />
+	</effect>
+	<!-- Max MP + 68.8. -->
+	<effect id="5464" rarity="3" slot="1">
+		<add stat="maxMp" val="68.8" />
+	</effect>
+	<!-- Max CP + 96.24. -->
+	<effect id="5465" rarity="3" slot="1">
+		<add stat="maxCp" val="96.24" />
+	</effect>
+	<!-- P. Atk. + 11. -->
+	<effect id="5466" rarity="3" slot="1">
+		<add stat="pAtk" val="11" />
+	</effect>
+	<!-- M. Atk. + 12.6. -->
+	<effect id="5467" rarity="3" slot="1">
+		<add stat="mAtk" val="12.6" />
+	</effect>
+	<!-- HP Recovery + 0.44. -->
+	<effect id="5468" rarity="3" slot="1">
+		<add stat="regHp" val="0.44" />
+	</effect>
+	<!-- MP Recovery + 0.3. -->
+	<effect id="5469" rarity="3" slot="1">
+		<add stat="regMp" val="0.3" />
+	</effect>
+	<!-- CP Recovery + 0.44. -->
+	<effect id="5470" rarity="3" slot="1">
+		<add stat="regCp" val="0.44" />
+	</effect>
+	<!-- Evasion + 2.06. -->
+	<effect id="5471" rarity="3" slot="1">
+		<add stat="rEvas" val="2.06" />
+	</effect>
+	<!-- Accuracy + 2.06. -->
+	<effect id="5472" rarity="3" slot="1">
+		<add stat="accCombat" val="2.06" />
+	</effect>
+	<!-- Critical + 22.32. -->
+	<effect id="5473" rarity="3" slot="1">
+		<add stat="rCrit" val="22.32" />
+	</effect>
+	<!-- P. Def. + 12.88. / M. Def. + 10.28. -->
+	<effect id="5474" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="mDef" val="10.28" />
+	</effect>
+	<!-- P. Def. + 12.88. / Max HP + 31.88 -->
+	<effect id="5475" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="maxHp" val="31.88" />
+	</effect>
+	<!-- P. Def. + 12.88. / Max MP + 34.4. -->
+	<effect id="5476" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="maxMp" val="34.4" />
+	</effect>
+	<!-- P. Def. + 12.88. / Max CP + 48.12. -->
+	<effect id="5477" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="maxCp" val="48.12" />
+	</effect>
+	<!-- P. Def. + 12.88. / P. Atk. + 5.5. -->
+	<effect id="5478" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="pAtk" val="5.5" />
+	</effect>
+	<!-- P. Def. + 12.88. / M. Atk. + 6.3. -->
+	<effect id="5479" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- P. Def. + 12.88. / HP Recovery + 0.22. -->
+	<effect id="5480" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- P. Def. + 12.88. / MP Recovery + 0.15. -->
+	<effect id="5481" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Def. + 12.88. / CP Recovery + 0.22. -->
+	<effect id="5482" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- P. Def. + 12.88. / Evasion + 1.03. -->
+	<effect id="5483" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Def. + 12.88. / Accuracy + 1.03. -->
+	<effect id="5484" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Def. + 12.88. / Critical + 11.16. -->
+	<effect id="5485" rarity="3" slot="1">
+		<add stat="pDef" val="12.88" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Def. + 10.28. / Max HP + 31.88 -->
+	<effect id="5486" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="maxHp" val="31.88" />
+	</effect>
+	<!-- M. Def. + 10.28. / Max MP + 34.4. -->
+	<effect id="5487" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="maxMp" val="34.4" />
+	</effect>
+	<!-- M. Def. + 10.28. / Max CP + 48.12. -->
+	<effect id="5488" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="maxCp" val="48.12" />
+	</effect>
+	<!-- M. Def. + 10.28. / P. Atk. + 5.5. -->
+	<effect id="5489" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="pAtk" val="5.5" />
+	</effect>
+	<!-- M. Def. + 10.28. / M. Atk. + 6.3. -->
+	<effect id="5490" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- M. Def. + 10.28. / HP Recovery + 0.22. -->
+	<effect id="5491" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- M. Def. + 10.28. / MP Recovery + 0.15. -->
+	<effect id="5492" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Def. + 10.28. / CP Recovery + 0.22. -->
+	<effect id="5493" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- M. Def. + 10.28. / Evasion + 1.03. -->
+	<effect id="5494" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Def. + 10.28. / Accuracy + 1.03. -->
+	<effect id="5495" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Def. + 10.28. / Critical + 11.16. -->
+	<effect id="5496" rarity="3" slot="1">
+		<add stat="mDef" val="10.28" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max HP + 31.88 / Max MP + 34.4. -->
+	<effect id="5497" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="maxMp" val="34.4" />
+	</effect>
+	<!-- Max HP + 31.88 / Max CP + 48.12. -->
+	<effect id="5498" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="maxCp" val="48.12" />
+	</effect>
+	<!-- Max HP + 31.88 / P. Atk. + 5.5. -->
+	<effect id="5499" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="pAtk" val="5.5" />
+	</effect>
+	<!-- Max HP + 31.88 / M. Atk. + 6.3. -->
+	<effect id="5500" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- Max HP + 31.88 / HP Recovery + 0.22. -->
+	<effect id="5501" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max HP + 31.88 / MP Recovery + 0.15. -->
+	<effect id="5502" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max HP + 31.88 / CP Recovery + 0.22. -->
+	<effect id="5503" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max HP + 31.88 / Evasion + 1.03. -->
+	<effect id="5504" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max HP + 31.88 / Accuracy + 1.03. -->
+	<effect id="5505" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max HP + 31.88 / Critical + 11.16. -->
+	<effect id="5506" rarity="3" slot="1">
+		<add stat="maxHp" val="31.88" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max MP + 34.4. / Max CP + 48.12. -->
+	<effect id="5507" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="maxCp" val="48.12" />
+	</effect>
+	<!-- Max MP + 34.4. / P. Atk. + 5.5. -->
+	<effect id="5508" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="pAtk" val="5.5" />
+	</effect>
+	<!-- Max MP + 34.4. / M. Atk. + 6.3. -->
+	<effect id="5509" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- Max MP + 34.4. / HP Recovery + 0.22. -->
+	<effect id="5510" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max MP + 34.4. / MP Recovery + 0.15. -->
+	<effect id="5511" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max MP + 34.4. / CP Recovery + 0.22. -->
+	<effect id="5512" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max MP + 34.4. / Evasion + 1.03. -->
+	<effect id="5513" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max MP + 34.4. / Accuracy + 1.03. -->
+	<effect id="5514" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max MP + 34.4. / Critical + 11.16. -->
+	<effect id="5515" rarity="3" slot="1">
+		<add stat="maxMp" val="34.4" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max CP + 48.12. / P. Atk. + 5.5. -->
+	<effect id="5516" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="pAtk" val="5.5" />
+	</effect>
+	<!-- Max CP + 48.12. / M. Atk. + 6.3. -->
+	<effect id="5517" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- Max CP + 48.12. / HP Recovery + 0.22. -->
+	<effect id="5518" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max CP + 48.12. / MP Recovery + 0.15. -->
+	<effect id="5519" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max CP + 48.12. / CP Recovery + 0.22. -->
+	<effect id="5520" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max CP + 48.12. / Evasion + 1.03. -->
+	<effect id="5521" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max CP + 48.12. / Accuracy + 1.03. -->
+	<effect id="5522" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max CP + 48.12. / Critical + 11.16. -->
+	<effect id="5523" rarity="3" slot="1">
+		<add stat="maxCp" val="48.12" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Atk. + 5.5. / M. Atk. + 6.3. -->
+	<effect id="5524" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="mAtk" val="6.3" />
+	</effect>
+	<!-- P. Atk. + 5.5. / HP Recovery + 0.22. -->
+	<effect id="5525" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- P. Atk. + 5.5. / MP Recovery + 0.15. -->
+	<effect id="5526" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Atk. + 5.5. / CP Recovery + 0.22. -->
+	<effect id="5527" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- P. Atk. + 5.5. / Evasion + 1.03. -->
+	<effect id="5528" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 5.5. / Accuracy + 1.03. -->
+	<effect id="5529" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 5.5. / Critical + 11.16. -->
+	<effect id="5530" rarity="3" slot="1">
+		<add stat="pAtk" val="5.5" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Atk. + 6.3. / HP Recovery + 0.22. -->
+	<effect id="5531" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- M. Atk. + 6.3. / MP Recovery + 0.15. -->
+	<effect id="5532" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Atk. + 6.3. / CP Recovery + 0.22. -->
+	<effect id="5533" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- M. Atk. + 6.3. / Evasion + 1.03. -->
+	<effect id="5534" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 6.3. / Accuracy + 1.03. -->
+	<effect id="5535" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 6.3. / Critical + 11.16. -->
+	<effect id="5536" rarity="3" slot="1">
+		<add stat="mAtk" val="6.3" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- HP Recovery + 0.22. / MP Recovery + 0.15. -->
+	<effect id="5537" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- HP Recovery + 0.22. / CP Recovery + 0.22. -->
+	<effect id="5538" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Evasion + 1.03. -->
+	<effect id="5539" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Accuracy + 1.03. -->
+	<effect id="5540" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Critical + 11.16. -->
+	<effect id="5541" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- MP Recovery + 0.15. / CP Recovery + 0.22. -->
+	<effect id="5542" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Evasion + 1.03. -->
+	<effect id="5543" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Accuracy + 1.03. -->
+	<effect id="5544" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Critical + 11.2. -->
+	<effect id="5545" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="rCrit" val="11.2" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Evasion + 1.03. -->
+	<effect id="5546" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Accuracy + 1.03. -->
+	<effect id="5547" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Critical + 11.16. -->
+	<effect id="5548" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Evasion + 1.03. / Accuracy + 1.03. -->
+	<effect id="5549" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Evasion + 1.03. / Critical + 11.16. -->
+	<effect id="5550" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Accuracy + 1.03. / Critical + 11.16. -->
+	<effect id="5551" rarity="3" slot="1">
+		<add stat="accCombat" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Def. + 27.12. -->
+	<effect id="5552" rarity="3" slot="1">
+		<add stat="pDef" val="27.12" />
+	</effect>
+	<!-- M. Def. + 21.79. -->
+	<effect id="5553" rarity="3" slot="1">
+		<add stat="mDef" val="21.79" />
+	</effect>
+	<!-- Max HP + 67.97 -->
+	<effect id="5554" rarity="3" slot="1">
+		<add stat="maxHp" val="67.97" />
+	</effect>
+	<!-- Max MP + 75.6. -->
+	<effect id="5555" rarity="3" slot="1">
+		<add stat="maxMp" val="75.6" />
+	</effect>
+	<!-- Max CP + 102.61. -->
+	<effect id="5556" rarity="3" slot="1">
+		<add stat="maxCp" val="102.61" />
+	</effect>
+	<!-- P. Atk. + 12.34. -->
+	<effect id="5557" rarity="3" slot="1">
+		<add stat="pAtk" val="12.34" />
+	</effect>
+	<!-- M. Atk. + 14.16. -->
+	<effect id="5558" rarity="3" slot="1">
+		<add stat="mAtk" val="14.16" />
+	</effect>
+	<!-- HP Recovery + 0.43. -->
+	<effect id="5559" rarity="3" slot="1">
+		<add stat="regHp" val="0.43" />
+	</effect>
+	<!-- MP Recovery + 0.3. -->
+	<effect id="5560" rarity="3" slot="1">
+		<add stat="regMp" val="0.3" />
+	</effect>
+	<!-- CP Recovery + 0.43. -->
+	<effect id="5561" rarity="3" slot="1">
+		<add stat="regCp" val="0.43" />
+	</effect>
+	<!-- Evasion + 2.06. -->
+	<effect id="5562" rarity="3" slot="1">
+		<add stat="rEvas" val="2.06" />
+	</effect>
+	<!-- Accuracy + 2.06. -->
+	<effect id="5563" rarity="3" slot="1">
+		<add stat="accCombat" val="2.06" />
+	</effect>
+	<!-- Critical + 22.32. -->
+	<effect id="5564" rarity="3" slot="1">
+		<add stat="rCrit" val="22.32" />
+	</effect>
+	<!-- P. Def. + 13.56. / M. Def. + 10.9. -->
+	<effect id="5565" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="mDef" val="10.9" />
+	</effect>
+	<!-- P. Def. + 13.56. / Max HP + 33.98 -->
+	<effect id="5566" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="maxHp" val="33.98" />
+	</effect>
+	<!-- P. Def. + 13.56. / Max MP + 37.8. -->
+	<effect id="5567" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="maxMp" val="37.8" />
+	</effect>
+	<!-- P. Def. + 13.56. / Max CP + 51.31. -->
+	<effect id="5568" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="maxCp" val="51.31" />
+	</effect>
+	<!-- P. Def. + 13.56. / P. Atk. + 6.17. -->
+	<effect id="5569" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="pAtk" val="6.17" />
+	</effect>
+	<!-- P. Def. + 13.56. / M. Atk. + 7.08. -->
+	<effect id="5570" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- P. Def. + 13.56. / HP Recovery + 0.22. -->
+	<effect id="5571" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- P. Def. + 13.56. / MP Recovery + 0.15. -->
+	<effect id="5572" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Def. + 13.56. / CP Recovery + 0.22. -->
+	<effect id="5573" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- P. Def. + 13.56. / Evasion + 1.03. -->
+	<effect id="5574" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Def. + 13.56. / Accuracy + 1.03. -->
+	<effect id="5575" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Def. + 13.56. / Critical + 11.16. -->
+	<effect id="5576" rarity="3" slot="1">
+		<add stat="pDef" val="13.56" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Def. + 10.9. / Max HP + 33.98 -->
+	<effect id="5577" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="maxHp" val="33.98" />
+	</effect>
+	<!-- M. Def. + 10.9. / Max MP + 37.8. -->
+	<effect id="5578" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="maxMp" val="37.8" />
+	</effect>
+	<!-- M. Def. + 10.9. / Max CP + 51.31. -->
+	<effect id="5579" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="maxCp" val="51.31" />
+	</effect>
+	<!-- M. Def. + 10.9. / P. Atk. + 6.17. -->
+	<effect id="5580" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="pAtk" val="6.17" />
+	</effect>
+	<!-- M. Def. + 10.9. / M. Atk. + 7.08. -->
+	<effect id="5581" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- M. Def. + 10.9. / HP Recovery + 0.22. -->
+	<effect id="5582" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- M. Def. + 10.9. / MP Recovery + 0.15. -->
+	<effect id="5583" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Def. + 10.9. / CP Recovery + 0.22. -->
+	<effect id="5584" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- M. Def. + 10.9. / Evasion + 1.03. -->
+	<effect id="5585" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Def. + 10.9. / Accuracy + 1.03. -->
+	<effect id="5586" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Def. + 10.9. / Critical + 11.16. -->
+	<effect id="5587" rarity="3" slot="1">
+		<add stat="mDef" val="10.9" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max HP + 33.98 / Max MP + 37.8. -->
+	<effect id="5588" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="maxMp" val="37.8" />
+	</effect>
+	<!-- Max HP + 33.98 / Max CP + 51.31. -->
+	<effect id="5589" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="maxCp" val="51.31" />
+	</effect>
+	<!-- Max HP + 33.98 / P. Atk. + 6.17. -->
+	<effect id="5590" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="pAtk" val="6.17" />
+	</effect>
+	<!-- Max HP + 33.98 / M. Atk. + 7.08. -->
+	<effect id="5591" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- Max HP + 33.98 / HP Recovery + 0.22. -->
+	<effect id="5592" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max HP + 33.98 / MP Recovery + 0.15. -->
+	<effect id="5593" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max HP + 33.98 / CP Recovery + 0.22. -->
+	<effect id="5594" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max HP + 33.98 / Evasion + 1.03. -->
+	<effect id="5595" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max HP + 33.98 / Accuracy + 1.03. -->
+	<effect id="5596" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max HP + 33.98 / Critical + 11.16. -->
+	<effect id="5597" rarity="3" slot="1">
+		<add stat="maxHp" val="33.98" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max MP + 37.8. / Max CP + 51.31. -->
+	<effect id="5598" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="maxCp" val="51.31" />
+	</effect>
+	<!-- Max MP + 37.8. / P. Atk. + 6.17. -->
+	<effect id="5599" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="pAtk" val="6.17" />
+	</effect>
+	<!-- Max MP + 37.8. / M. Atk. + 7.08. -->
+	<effect id="5600" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- Max MP + 37.8. / HP Recovery + 0.22. -->
+	<effect id="5601" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max MP + 37.8. / MP Recovery + 0.15. -->
+	<effect id="5602" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max MP + 37.8. / CP Recovery + 0.22. -->
+	<effect id="5603" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max MP + 37.8. / Evasion + 1.03. -->
+	<effect id="5604" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max MP + 37.8. / Accuracy + 1.03. -->
+	<effect id="5605" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max MP + 37.8. / Critical + 11.16. -->
+	<effect id="5606" rarity="3" slot="1">
+		<add stat="maxMp" val="37.8" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max CP + 51.31. / P. Atk. + 6.17. -->
+	<effect id="5607" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="pAtk" val="6.17" />
+	</effect>
+	<!-- Max CP + 51.31. / M. Atk. + 7.08. -->
+	<effect id="5608" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- Max CP + 51.31. / HP Recovery + 0.22. -->
+	<effect id="5609" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- Max CP + 51.31. / MP Recovery + 0.15. -->
+	<effect id="5610" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max CP + 51.31. / CP Recovery + 0.22. -->
+	<effect id="5611" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- Max CP + 51.31. / Evasion + 1.03. -->
+	<effect id="5612" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max CP + 51.31. / Accuracy + 1.03. -->
+	<effect id="5613" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max CP + 51.31. / Critical + 11.16. -->
+	<effect id="5614" rarity="3" slot="1">
+		<add stat="maxCp" val="51.31" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Atk. + 6.17. / M. Atk. + 7.08. -->
+	<effect id="5615" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="mAtk" val="7.08" />
+	</effect>
+	<!-- P. Atk. + 6.17. / HP Recovery + 0.22. -->
+	<effect id="5616" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- P. Atk. + 6.17. / MP Recovery + 0.15. -->
+	<effect id="5617" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Atk. + 6.17. / CP Recovery + 0.22. -->
+	<effect id="5618" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- P. Atk. + 6.17. / Evasion + 1.03. -->
+	<effect id="5619" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 6.17. / Accuracy + 1.03. -->
+	<effect id="5620" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 6.17. / Critical + 11.16. -->
+	<effect id="5621" rarity="3" slot="1">
+		<add stat="pAtk" val="6.17" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Atk. + 7.08. / HP Recovery + 0.22. -->
+	<effect id="5622" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="regHp" val="0.22" />
+	</effect>
+	<!-- M. Atk. + 7.08. / MP Recovery + 0.15. -->
+	<effect id="5623" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Atk. + 7.08. / CP Recovery + 0.22. -->
+	<effect id="5624" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- M. Atk. + 7.08. / Evasion + 1.03. -->
+	<effect id="5625" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 7.08. / Accuracy + 1.03. -->
+	<effect id="5626" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 7.08. / Critical + 11.16. -->
+	<effect id="5627" rarity="3" slot="1">
+		<add stat="mAtk" val="7.08" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- HP Recovery + 0.22. / MP Recovery + 0.15. -->
+	<effect id="5628" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- HP Recovery + 0.22. / CP Recovery + 0.22. -->
+	<effect id="5629" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Evasion + 1.03. -->
+	<effect id="5630" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Accuracy + 1.03. -->
+	<effect id="5631" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.22. / Critical + 11.16. -->
+	<effect id="5632" rarity="3" slot="1">
+		<add stat="regHp" val="0.22" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- MP Recovery + 0.15. / CP Recovery + 0.22. -->
+	<effect id="5633" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="regCp" val="0.22" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Evasion + 1.03. -->
+	<effect id="5634" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Accuracy + 1.03. -->
+	<effect id="5635" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.15. / Critical + 11.2. -->
+	<effect id="5636" rarity="3" slot="1">
+		<add stat="regMp" val="0.15" />
+		<add stat="rCrit" val="11.2" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Evasion + 1.03. -->
+	<effect id="5637" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Accuracy + 1.03. -->
+	<effect id="5638" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.22. / Critical + 11.16. -->
+	<effect id="5639" rarity="3" slot="1">
+		<add stat="regCp" val="0.22" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Evasion + 1.03. / Accuracy + 1.03. -->
+	<effect id="5640" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Evasion + 1.03. / Critical + 11.16. -->
+	<effect id="5641" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Accuracy + 1.03. / Critical + 11.16. -->
+	<effect id="5642" rarity="3" slot="1">
+		<add stat="accCombat" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Def. + 28.47. -->
+	<effect id="5643" rarity="3" slot="1">
+		<add stat="pDef" val="28.47" />
+	</effect>
+	<!-- M. Def. + 22.91. -->
+	<effect id="5644" rarity="3" slot="1">
+		<add stat="mDef" val="22.91" />
+	</effect>
+	<!-- Max HP + 71.81 -->
+	<effect id="5645" rarity="3" slot="1">
+		<add stat="maxHp" val="71.81" />
+	</effect>
+	<!-- Max MP + 80.32. -->
+	<effect id="5646" rarity="3" slot="1">
+		<add stat="maxMp" val="80.32" />
+	</effect>
+	<!-- Max CP + 108.39. -->
+	<effect id="5647" rarity="3" slot="1">
+		<add stat="maxCp" val="108.39" />
+	</effect>
+	<!-- P. Atk. + 13.71. -->
+	<effect id="5648" rarity="3" slot="1">
+		<add stat="pAtk" val="13.71" />
+	</effect>
+	<!-- M. Atk. + 15.73. -->
+	<effect id="5649" rarity="3" slot="1">
+		<add stat="mAtk" val="15.73" />
+	</effect>
+	<!-- HP Recovery + 0.49. -->
+	<effect id="5650" rarity="3" slot="1">
+		<add stat="regHp" val="0.49" />
+	</effect>
+	<!-- MP Recovery + 0.34. -->
+	<effect id="5651" rarity="3" slot="1">
+		<add stat="regMp" val="0.34" />
+	</effect>
+	<!-- CP Recovery + 0.49. -->
+	<effect id="5652" rarity="3" slot="1">
+		<add stat="regCp" val="0.49" />
+	</effect>
+	<!-- Evasion + 2.06. -->
+	<effect id="5653" rarity="3" slot="1">
+		<add stat="rEvas" val="2.06" />
+	</effect>
+	<!-- Accuracy + 2.06. -->
+	<effect id="5654" rarity="3" slot="1">
+		<add stat="accCombat" val="2.06" />
+	</effect>
+	<!-- Critical + 22.32. -->
+	<effect id="5655" rarity="3" slot="1">
+		<add stat="rCrit" val="22.32" />
+	</effect>
+	<!-- P. Def. + 14.24. / M. Def. + 11.45. -->
+	<effect id="5656" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="mDef" val="11.45" />
+	</effect>
+	<!-- P. Def. + 14.24. / Max HP + 35.9 -->
+	<effect id="5657" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="maxHp" val="35.9" />
+	</effect>
+	<!-- P. Def. + 14.24. / Max MP + 40.16. -->
+	<effect id="5658" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="maxMp" val="40.16" />
+	</effect>
+	<!-- P. Def. + 14.24. / Max CP + 54.19. -->
+	<effect id="5659" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="maxCp" val="54.19" />
+	</effect>
+	<!-- P. Def. + 14.24. / P. Atk. + 6.85. -->
+	<effect id="5660" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="pAtk" val="6.85" />
+	</effect>
+	<!-- P. Def. + 14.24. / M. Atk. + 7.87. -->
+	<effect id="5661" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- P. Def. + 14.24. / HP Recovery + 0.25. -->
+	<effect id="5662" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- P. Def. + 14.24. / MP Recovery + 0.17. -->
+	<effect id="5663" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- P. Def. + 14.24. / CP Recovery + 0.25. -->
+	<effect id="5664" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- P. Def. + 14.24. / Evasion + 1.03. -->
+	<effect id="5665" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Def. + 14.24. / Accuracy + 1.03. -->
+	<effect id="5666" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Def. + 14.24. / Critical + 11.16. -->
+	<effect id="5667" rarity="3" slot="1">
+		<add stat="pDef" val="14.24" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Def. + 11.45. / Max HP + 35.9 -->
+	<effect id="5668" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="maxHp" val="35.9" />
+	</effect>
+	<!-- M. Def. + 11.45. / Max MP + 40.16. -->
+	<effect id="5669" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="maxMp" val="40.16" />
+	</effect>
+	<!-- M. Def. + 11.45. / Max CP + 54.19. -->
+	<effect id="5670" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="maxCp" val="54.19" />
+	</effect>
+	<!-- M. Def. + 11.45. / P. Atk. + 6.85. -->
+	<effect id="5671" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="pAtk" val="6.85" />
+	</effect>
+	<!-- M. Def. + 11.45. / M. Atk. + 7.87. -->
+	<effect id="5672" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- M. Def. + 11.45. / HP Recovery + 0.25. -->
+	<effect id="5673" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- M. Def. + 11.45. / MP Recovery + 0.17. -->
+	<effect id="5674" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- M. Def. + 11.45. / CP Recovery + 0.25. -->
+	<effect id="5675" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- M. Def. + 11.45. / Evasion + 1.03. -->
+	<effect id="5676" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Def. + 11.45. / Accuracy + 1.03. -->
+	<effect id="5677" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Def. + 11.45. / Critical + 11.16. -->
+	<effect id="5678" rarity="3" slot="1">
+		<add stat="mDef" val="11.45" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max HP + 35.9 / Max MP + 40.16. -->
+	<effect id="5679" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="maxMp" val="40.16" />
+	</effect>
+	<!-- Max HP + 35.9 / Max CP + 54.19. -->
+	<effect id="5680" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="maxCp" val="54.19" />
+	</effect>
+	<!-- Max HP + 35.9 / P. Atk. + 6.85. -->
+	<effect id="5681" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="pAtk" val="6.85" />
+	</effect>
+	<!-- Max HP + 35.9 / M. Atk. + 7.87. -->
+	<effect id="5682" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- Max HP + 35.9 / HP Recovery + 0.25. -->
+	<effect id="5683" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max HP + 35.9 / MP Recovery + 0.17. -->
+	<effect id="5684" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- Max HP + 35.9 / CP Recovery + 0.25. -->
+	<effect id="5685" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max HP + 35.9 / Evasion + 1.03. -->
+	<effect id="5686" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max HP + 35.9 / Accuracy + 1.03. -->
+	<effect id="5687" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max HP + 35.9 / Critical + 11.16. -->
+	<effect id="5688" rarity="3" slot="1">
+		<add stat="maxHp" val="35.9" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max MP + 40.16. / Max CP + 54.19. -->
+	<effect id="5689" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="maxCp" val="54.19" />
+	</effect>
+	<!-- Max MP + 40.16. / P. Atk. + 6.85. -->
+	<effect id="5690" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="pAtk" val="6.85" />
+	</effect>
+	<!-- Max MP + 40.16. / M. Atk. + 7.87. -->
+	<effect id="5691" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- Max MP + 40.16. / HP Recovery + 0.25. -->
+	<effect id="5692" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max MP + 40.16. / MP Recovery + 0.17. -->
+	<effect id="5693" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- Max MP + 40.16. / CP Recovery + 0.25. -->
+	<effect id="5694" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max MP + 40.16. / Evasion + 1.03. -->
+	<effect id="5695" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max MP + 40.16. / Accuracy + 1.03. -->
+	<effect id="5696" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max MP + 40.16. / Critical + 11.16. -->
+	<effect id="5697" rarity="3" slot="1">
+		<add stat="maxMp" val="40.16" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Max CP + 54.19. / P. Atk. + 6.85. -->
+	<effect id="5698" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="pAtk" val="6.85" />
+	</effect>
+	<!-- Max CP + 54.19. / M. Atk. + 7.87. -->
+	<effect id="5699" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- Max CP + 54.19. / HP Recovery + 0.25. -->
+	<effect id="5700" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max CP + 54.19. / MP Recovery + 0.17. -->
+	<effect id="5701" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- Max CP + 54.19. / CP Recovery + 0.25. -->
+	<effect id="5702" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max CP + 54.19. / Evasion + 1.03. -->
+	<effect id="5703" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- Max CP + 54.19. / Accuracy + 1.03. -->
+	<effect id="5704" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Max CP + 54.19. / Critical + 11.16. -->
+	<effect id="5705" rarity="3" slot="1">
+		<add stat="maxCp" val="54.19" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Atk. + 6.85. / M. Atk. + 7.87. -->
+	<effect id="5706" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="mAtk" val="7.87" />
+	</effect>
+	<!-- P. Atk. + 6.85. / HP Recovery + 0.25. -->
+	<effect id="5707" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- P. Atk. + 6.85. / MP Recovery + 0.17. -->
+	<effect id="5708" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- P. Atk. + 6.85. / CP Recovery + 0.25. -->
+	<effect id="5709" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- P. Atk. + 6.85. / Evasion + 1.03. -->
+	<effect id="5710" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 6.85. / Accuracy + 1.03. -->
+	<effect id="5711" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- P. Atk. + 6.85. / Critical + 11.16. -->
+	<effect id="5712" rarity="3" slot="1">
+		<add stat="pAtk" val="6.85" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- M. Atk. + 7.87. / HP Recovery + 0.25. -->
+	<effect id="5713" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- M. Atk. + 7.87. / MP Recovery + 0.17. -->
+	<effect id="5714" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- M. Atk. + 7.87. / CP Recovery + 0.25. -->
+	<effect id="5715" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- M. Atk. + 7.87. / Evasion + 1.03. -->
+	<effect id="5716" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 7.87. / Accuracy + 1.03. -->
+	<effect id="5717" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- M. Atk. + 7.87. / Critical + 11.16. -->
+	<effect id="5718" rarity="3" slot="1">
+		<add stat="mAtk" val="7.87" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- HP Recovery + 0.25. / MP Recovery + 0.17. -->
+	<effect id="5719" rarity="3" slot="1">
+		<add stat="regHp" val="0.25" />
+		<add stat="regMp" val="0.17" />
+	</effect>
+	<!-- HP Recovery + 0.25. / CP Recovery + 0.25. -->
+	<effect id="5720" rarity="3" slot="1">
+		<add stat="regHp" val="0.25" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- HP Recovery + 0.25. / Evasion + 1.03. -->
+	<effect id="5721" rarity="3" slot="1">
+		<add stat="regHp" val="0.25" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.25. / Accuracy + 1.03. -->
+	<effect id="5722" rarity="3" slot="1">
+		<add stat="regHp" val="0.25" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- HP Recovery + 0.25. / Critical + 11.16. -->
+	<effect id="5723" rarity="3" slot="1">
+		<add stat="regHp" val="0.25" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- MP Recovery + 0.17. / CP Recovery + 0.25. -->
+	<effect id="5724" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- MP Recovery + 0.17. / Evasion + 1.03. -->
+	<effect id="5725" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.17. / Accuracy + 1.03. -->
+	<effect id="5726" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- MP Recovery + 0.17. / Critical + 11.2. -->
+	<effect id="5727" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="rCrit" val="11.2" />
+	</effect>
+	<!-- CP Recovery + 0.25. / Evasion + 1.03. -->
+	<effect id="5728" rarity="3" slot="1">
+		<add stat="regCp" val="0.25" />
+		<add stat="rEvas" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.25. / Accuracy + 1.03. -->
+	<effect id="5729" rarity="3" slot="1">
+		<add stat="regCp" val="0.25" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- CP Recovery + 0.25. / Critical + 11.16. -->
+	<effect id="5730" rarity="3" slot="1">
+		<add stat="regCp" val="0.25" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Evasion + 1.03. / Accuracy + 1.03. -->
+	<effect id="5731" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="accCombat" val="1.03" />
+	</effect>
+	<!-- Evasion + 1.03. / Critical + 11.16. -->
+	<effect id="5732" rarity="3" slot="1">
+		<add stat="rEvas" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- Accuracy + 1.03. / Critical + 11.16. -->
+	<effect id="5733" rarity="3" slot="1">
+		<add stat="accCombat" val="1.03" />
+		<add stat="rCrit" val="11.16" />
+	</effect>
+	<!-- P. Def. + 28.98. -->
+	<effect id="5734" rarity="3" slot="1">
+		<add stat="pDef" val="28.98" />
+	</effect>
+	<!-- M. Def. + 23.09. -->
+	<effect id="5735" rarity="3" slot="1">
+		<add stat="mDef" val="23.09" />
+	</effect>
+	<!-- Max HP + 73.44 -->
+	<effect id="5736" rarity="3" slot="1">
+		<add stat="maxHp" val="73.44" />
+	</effect>
+	<!-- Max MP + 82.65. -->
+	<effect id="5737" rarity="3" slot="1">
+		<add stat="maxMp" val="82.65" />
+	</effect>
+	<!-- Max CP + 110.87. -->
+	<effect id="5738" rarity="3" slot="1">
+		<add stat="maxCp" val="110.87" />
+	</effect>
+	<!-- P. Atk. + 14.75. -->
+	<effect id="5739" rarity="3" slot="1">
+		<add stat="pAtk" val="14.75" />
+	</effect>
+	<!-- M. Atk. + 16.94. -->
+	<effect id="5740" rarity="3" slot="1">
+		<add stat="mAtk" val="16.94" />
+	</effect>
+	<!-- HP Recovery + 0.47. -->
+	<effect id="5741" rarity="3" slot="1">
+		<add stat="regHp" val="0.47" />
+	</effect>
+	<!-- MP Recovery + 0.32. -->
+	<effect id="5742" rarity="3" slot="1">
+		<add stat="regMp" val="0.32" />
+	</effect>
+	<!-- CP Recovery + 0.47. -->
+	<effect id="5743" rarity="3" slot="1">
+		<add stat="regCp" val="0.47" />
+	</effect>
+	<!-- Evasion + 2.06. -->
+	<effect id="5744" rarity="3" slot="1">
+		<add stat="rEvas" val="2.06" />
+	</effect>
+	<!-- Accuracy + 2.06. -->
+	<effect id="5745" rarity="3" slot="1">
+		<add stat="accCombat" val="2.06" />
+	</effect>
+	<!-- Critical + 22.32. -->
+	<effect id="5746" rarity="3" slot="1">
+		<add stat="rCrit" val="22.32" />
+	</effect>
+	<!-- P. Def. + 14.83. / M. Def. + 11.28. -->
+	<effect id="5747" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="mDef" val="11.28" />
+	</effect>
+	<!-- P. Def. + 14.83. / Max HP + 35.87 -->
+	<effect id="5748" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="maxHp" val="35.87" />
+	</effect>
+	<!-- P. Def. + 14.83. / Max MP + 40.36. -->
+	<effect id="5749" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="maxMp" val="40.36" />
+	</effect>
+	<!-- P. Def. + 14.83. / Max CP + 54.14. -->
+	<effect id="5750" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="maxCp" val="54.14" />
+	</effect>
+	<!-- P. Def. + 14.83. / P. Atk. + 7.2. -->
+	<effect id="5751" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="pAtk" val="7.2" />
+	</effect>
+	<!-- P. Def. + 14.83. / M. Atk. + 8.27. -->
+	<effect id="5752" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- P. Def. + 14.83. / HP Recovery + 0.23. -->
+	<effect id="5753" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- P. Def. + 14.83. / MP Recovery + 0.16. -->
+	<effect id="5754" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- P. Def. + 14.83. / CP Recovery + 0.23. -->
+	<effect id="5755" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- P. Def. + 14.83. / Evasion + 0.98. -->
+	<effect id="5756" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- P. Def. + 14.83. / Accuracy + 0.98. -->
+	<effect id="5757" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- P. Def. + 14.83. / Critical + 10.6. -->
+	<effect id="5758" rarity="3" slot="1">
+		<add stat="pDef" val="14.83" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- M. Def. + 11.81. / Max HP + 35.87 -->
+	<effect id="5759" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="maxHp" val="35.87" />
+	</effect>
+	<!-- M. Def. + 11.81. / Max MP + 40.36. -->
+	<effect id="5760" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="maxMp" val="40.36" />
+	</effect>
+	<!-- M. Def. + 11.81. / Max CP + 54.14. -->
+	<effect id="5761" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="maxCp" val="54.14" />
+	</effect>
+	<!-- M. Def. + 11.81. / P. Atk. + 7.2. -->
+	<effect id="5762" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="pAtk" val="7.2" />
+	</effect>
+	<!-- M. Def. + 11.81. / M. Atk. + 8.27. -->
+	<effect id="5763" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- M. Def. + 11.81. / HP Recovery + 0.23. -->
+	<effect id="5764" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- M. Def. + 11.81. / MP Recovery + 0.16. -->
+	<effect id="5765" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- M. Def. + 11.81. / CP Recovery + 0.23. -->
+	<effect id="5766" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- M. Def. + 11.81. / Evasion + 0.98. -->
+	<effect id="5767" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- M. Def. + 11.81. / Accuracy + 0.98. -->
+	<effect id="5768" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- M. Def. + 11.81. / Critical + 10.6. -->
+	<effect id="5769" rarity="3" slot="1">
+		<add stat="mDef" val="11.81" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- Max HP + 37.58 / Max MP + 40.36. -->
+	<effect id="5770" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="maxMp" val="40.36" />
+	</effect>
+	<!-- Max HP + 37.58 / Max CP + 54.14. -->
+	<effect id="5771" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="maxCp" val="54.14" />
+	</effect>
+	<!-- Max HP + 37.58 / P. Atk. + 7.2. -->
+	<effect id="5772" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="pAtk" val="7.2" />
+	</effect>
+	<!-- Max HP + 37.58 / M. Atk. + 8.27. -->
+	<effect id="5773" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- Max HP + 37.58 / HP Recovery + 0.23. -->
+	<effect id="5774" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max HP + 37.58 / MP Recovery + 0.16. -->
+	<effect id="5775" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max HP + 37.58 / CP Recovery + 0.23. -->
+	<effect id="5776" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max HP + 37.58 / Evasion + 0.98. -->
+	<effect id="5777" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- Max HP + 37.58 / Accuracy + 0.98. -->
+	<effect id="5778" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- Max HP + 37.58 / Critical + 10.6. -->
+	<effect id="5779" rarity="3" slot="1">
+		<add stat="maxHp" val="37.58" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- Max MP + 42.28. / Max CP + 54.14. -->
+	<effect id="5780" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="maxCp" val="54.14" />
+	</effect>
+	<!-- Max MP + 42.28. / P. Atk. + 7.2. -->
+	<effect id="5781" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="pAtk" val="7.2" />
+	</effect>
+	<!-- Max MP + 42.28. / M. Atk. + 8.27. -->
+	<effect id="5782" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- Max MP + 42.28. / HP Recovery + 0.23. -->
+	<effect id="5783" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max MP + 42.28. / MP Recovery + 0.16. -->
+	<effect id="5784" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max MP + 42.28. / CP Recovery + 0.23. -->
+	<effect id="5785" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max MP + 42.28. / Evasion + 0.98. -->
+	<effect id="5786" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- Max MP + 42.28. / Accuracy + 0.98. -->
+	<effect id="5787" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- Max MP + 42.28. / Critical + 10.6. -->
+	<effect id="5788" rarity="3" slot="1">
+		<add stat="maxMp" val="42.28" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- Max CP + 56.72. / P. Atk. + 7.2. -->
+	<effect id="5789" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="pAtk" val="7.2" />
+	</effect>
+	<!-- Max CP + 56.72. / M. Atk. + 8.27. -->
+	<effect id="5790" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- Max CP + 56.72. / HP Recovery + 0.23. -->
+	<effect id="5791" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max CP + 56.72. / MP Recovery + 0.16. -->
+	<effect id="5792" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max CP + 56.72. / CP Recovery + 0.23. -->
+	<effect id="5793" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max CP + 56.72. / Evasion + 0.98. -->
+	<effect id="5794" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- Max CP + 56.72. / Accuracy + 0.98. -->
+	<effect id="5795" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- Max CP + 56.72. / Critical + 10.6. -->
+	<effect id="5796" rarity="3" slot="1">
+		<add stat="maxCp" val="56.72" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- P. Atk. + 7.55. / M. Atk. + 8.27. -->
+	<effect id="5797" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="mAtk" val="8.27" />
+	</effect>
+	<!-- P. Atk. + 7.55. / HP Recovery + 0.23. -->
+	<effect id="5798" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- P. Atk. + 7.55. / MP Recovery + 0.16. -->
+	<effect id="5799" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- P. Atk. + 7.55. / CP Recovery + 0.23. -->
+	<effect id="5800" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- P. Atk. + 7.55. / Evasion + 0.98. -->
+	<effect id="5801" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- P. Atk. + 7.55. / Accuracy + 0.98. -->
+	<effect id="5802" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- P. Atk. + 7.55. / Critical + 10.6. -->
+	<effect id="5803" rarity="3" slot="1">
+		<add stat="pAtk" val="7.55" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- M. Atk. + 8.67. / HP Recovery + 0.23. -->
+	<effect id="5804" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- M. Atk. + 8.67. / MP Recovery + 0.16. -->
+	<effect id="5805" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- M. Atk. + 8.67. / CP Recovery + 0.23. -->
+	<effect id="5806" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- M. Atk. + 8.67. / Evasion + 0.98. -->
+	<effect id="5807" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- M. Atk. + 8.67. / Accuracy + 0.98. -->
+	<effect id="5808" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- M. Atk. + 8.67. / Critical + 10.6. -->
+	<effect id="5809" rarity="3" slot="1">
+		<add stat="mAtk" val="8.67" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- HP Recovery + 0.24. / MP Recovery + 0.16. -->
+	<effect id="5810" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- HP Recovery + 0.24. / CP Recovery + 0.23. -->
+	<effect id="5811" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Evasion + 0.98. -->
+	<effect id="5812" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Accuracy + 0.98. -->
+	<effect id="5813" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Critical + 10.6. -->
+	<effect id="5814" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- MP Recovery + 0.16. / CP Recovery + 0.23. -->
+	<effect id="5815" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Evasion + 0.98. -->
+	<effect id="5816" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Accuracy + 0.98. -->
+	<effect id="5817" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Critical + 10.6. -->
+	<effect id="5818" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Evasion + 0.98. -->
+	<effect id="5819" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="rEvas" val="0.98" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Accuracy + 0.98. -->
+	<effect id="5820" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Critical + 10.6. -->
+	<effect id="5821" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- Evasion + 1.08. / Accuracy + 0.98. -->
+	<effect id="5822" rarity="3" slot="1">
+		<add stat="rEvas" val="1.08" />
+		<add stat="accCombat" val="0.98" />
+	</effect>
+	<!-- Evasion + 1.08. / Critical + 10.6. -->
+	<effect id="5823" rarity="3" slot="1">
+		<add stat="rEvas" val="1.08" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- Accuracy + 1.08. / Critical + 10.6. -->
+	<effect id="5824" rarity="3" slot="1">
+		<add stat="accCombat" val="1.08" />
+		<add stat="rCrit" val="10.6" />
+	</effect>
+	<!-- P. Def. + 30.05. -->
+	<effect id="5825" rarity="3" slot="1">
+		<add stat="pDef" val="30.05" />
+	</effect>
+	<!-- M. Def. + 24.15. -->
+	<effect id="5826" rarity="3" slot="1">
+		<add stat="mDef" val="24.15" />
+	</effect>
+	<!-- Max HP + 76.18 -->
+	<effect id="5827" rarity="3" slot="1">
+		<add stat="maxHp" val="76.18" />
+	</effect>
+	<!-- Max MP + 87.82. -->
+	<effect id="5828" rarity="3" slot="1">
+		<add stat="maxMp" val="87.82" />
+	</effect>
+	<!-- Max CP + 115.01. -->
+	<effect id="5829" rarity="3" slot="1">
+		<add stat="maxCp" val="115.01" />
+	</effect>
+	<!-- P. Atk. + 16.03. -->
+	<effect id="5830" rarity="3" slot="1">
+		<add stat="pAtk" val="16.03" />
+	</effect>
+	<!-- M. Atk. + 18.45. -->
+	<effect id="5831" rarity="3" slot="1">
+		<add stat="mAtk" val="18.45" />
+	</effect>
+	<!-- HP Recovery + 0.47. -->
+	<effect id="5832" rarity="3" slot="1">
+		<add stat="regHp" val="0.47" />
+	</effect>
+	<!-- MP Recovery + 0.31. -->
+	<effect id="5833" rarity="3" slot="1">
+		<add stat="regMp" val="0.31" />
+	</effect>
+	<!-- CP Recovery + 0.47. -->
+	<effect id="5834" rarity="3" slot="1">
+		<add stat="regCp" val="0.47" />
+	</effect>
+	<!-- Evasion + 2.3. -->
+	<effect id="5835" rarity="3" slot="1">
+		<add stat="rEvas" val="2.3" />
+	</effect>
+	<!-- Accuracy + 2.3. -->
+	<effect id="5836" rarity="3" slot="1">
+		<add stat="accCombat" val="2.3" />
+	</effect>
+	<!-- Critical + 24.91. -->
+	<effect id="5837" rarity="3" slot="1">
+		<add stat="rCrit" val="24.91" />
+	</effect>
+	<!-- P. Def. + 15.39. / M. Def. + 11.78. -->
+	<effect id="5838" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="mDef" val="11.78" />
+	</effect>
+	<!-- P. Def. + 15.39. / Max HP + 37.16 -->
+	<effect id="5839" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="maxHp" val="37.16" />
+	</effect>
+	<!-- P. Def. + 15.39. / Max MP + 42.84. -->
+	<effect id="5840" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="maxMp" val="42.84" />
+	</effect>
+	<!-- P. Def. + 15.39. / Max CP + 56.1. -->
+	<effect id="5841" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="maxCp" val="56.1" />
+	</effect>
+	<!-- P. Def. + 15.39. / P. Atk. + 7.82. -->
+	<effect id="5842" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="pAtk" val="7.82" />
+	</effect>
+	<!-- P. Def. + 15.39. / M. Atk. + 9. -->
+	<effect id="5843" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- P. Def. + 15.39. / HP Recovery + 0.23. -->
+	<effect id="5844" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- P. Def. + 15.39. / MP Recovery + 0.15. -->
+	<effect id="5845" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Def. + 15.39. / CP Recovery + 0.23. -->
+	<effect id="5846" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- P. Def. + 15.39. / Evasion + 1.09. -->
+	<effect id="5847" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- P. Def. + 15.39. / Accuracy + 1.09. -->
+	<effect id="5848" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- P. Def. + 15.39. / Critical + 11.83. -->
+	<effect id="5849" rarity="3" slot="1">
+		<add stat="pDef" val="15.39" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- M. Def. + 12.37. / Max HP + 37.16 -->
+	<effect id="5850" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="maxHp" val="37.16" />
+	</effect>
+	<!-- M. Def. + 12.37. / Max MP + 42.84. -->
+	<effect id="5851" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="maxMp" val="42.84" />
+	</effect>
+	<!-- M. Def. + 12.37. / Max CP + 56.1. -->
+	<effect id="5852" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="maxCp" val="56.1" />
+	</effect>
+	<!-- M. Def. + 12.37. / P. Atk. + 7.82. -->
+	<effect id="5853" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="pAtk" val="7.82" />
+	</effect>
+	<!-- M. Def. + 12.37. / M. Atk. + 9. -->
+	<effect id="5854" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- M. Def. + 12.37. / HP Recovery + 0.23. -->
+	<effect id="5855" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- M. Def. + 12.37. / MP Recovery + 0.15. -->
+	<effect id="5856" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Def. + 12.37. / CP Recovery + 0.23. -->
+	<effect id="5857" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- M. Def. + 12.37. / Evasion + 1.09. -->
+	<effect id="5858" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- M. Def. + 12.37. / Accuracy + 1.09. -->
+	<effect id="5859" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- M. Def. + 12.37. / Critical + 11.83. -->
+	<effect id="5860" rarity="3" slot="1">
+		<add stat="mDef" val="12.37" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max HP + 39.02 / Max MP + 42.84. -->
+	<effect id="5861" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="maxMp" val="42.84" />
+	</effect>
+	<!-- Max HP + 39.02 / Max CP + 56.1. -->
+	<effect id="5862" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="maxCp" val="56.1" />
+	</effect>
+	<!-- Max HP + 39.02 / P. Atk. + 7.82. -->
+	<effect id="5863" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="pAtk" val="7.82" />
+	</effect>
+	<!-- Max HP + 39.02 / M. Atk. + 9. -->
+	<effect id="5864" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- Max HP + 39.02 / HP Recovery + 0.23. -->
+	<effect id="5865" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max HP + 39.02 / MP Recovery + 0.15. -->
+	<effect id="5866" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max HP + 39.02 / CP Recovery + 0.23. -->
+	<effect id="5867" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max HP + 39.02 / Evasion + 1.09. -->
+	<effect id="5868" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max HP + 39.02 / Accuracy + 1.09. -->
+	<effect id="5869" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max HP + 39.02 / Critical + 11.83. -->
+	<effect id="5870" rarity="3" slot="1">
+		<add stat="maxHp" val="39.02" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max MP + 44.98. / Max CP + 56.1. -->
+	<effect id="5871" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="maxCp" val="56.1" />
+	</effect>
+	<!-- Max MP + 44.98. / P. Atk. + 7.82. -->
+	<effect id="5872" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="pAtk" val="7.82" />
+	</effect>
+	<!-- Max MP + 44.98. / M. Atk. + 9. -->
+	<effect id="5873" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- Max MP + 44.98. / HP Recovery + 0.23. -->
+	<effect id="5874" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max MP + 44.98. / MP Recovery + 0.15. -->
+	<effect id="5875" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max MP + 44.98. / CP Recovery + 0.23. -->
+	<effect id="5876" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max MP + 44.98. / Evasion + 1.09. -->
+	<effect id="5877" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max MP + 44.98. / Accuracy + 1.09. -->
+	<effect id="5878" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max MP + 44.98. / Critical + 11.83. -->
+	<effect id="5879" rarity="3" slot="1">
+		<add stat="maxMp" val="44.98" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max CP + 58.91. / P. Atk. + 7.82. -->
+	<effect id="5880" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="pAtk" val="7.82" />
+	</effect>
+	<!-- Max CP + 58.91. / M. Atk. + 9. -->
+	<effect id="5881" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- Max CP + 58.91. / HP Recovery + 0.23. -->
+	<effect id="5882" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- Max CP + 58.91. / MP Recovery + 0.15. -->
+	<effect id="5883" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- Max CP + 58.91. / CP Recovery + 0.23. -->
+	<effect id="5884" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- Max CP + 58.91. / Evasion + 1.09. -->
+	<effect id="5885" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max CP + 58.91. / Accuracy + 1.09. -->
+	<effect id="5886" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max CP + 58.91. / Critical + 11.83. -->
+	<effect id="5887" rarity="3" slot="1">
+		<add stat="maxCp" val="58.91" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- P. Atk. + 8.21. / M. Atk. + 9. -->
+	<effect id="5888" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="mAtk" val="9" />
+	</effect>
+	<!-- P. Atk. + 8.21. / HP Recovery + 0.23. -->
+	<effect id="5889" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- P. Atk. + 8.21. / MP Recovery + 0.15. -->
+	<effect id="5890" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- P. Atk. + 8.21. / CP Recovery + 0.23. -->
+	<effect id="5891" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- P. Atk. + 8.21. / Evasion + 1.09. -->
+	<effect id="5892" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- P. Atk. + 8.21. / Accuracy + 1.09. -->
+	<effect id="5893" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- P. Atk. + 8.21. / Critical + 11.83. -->
+	<effect id="5894" rarity="3" slot="1">
+		<add stat="pAtk" val="8.21" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- M. Atk. + 9.45. / HP Recovery + 0.23. -->
+	<effect id="5895" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="regHp" val="0.23" />
+	</effect>
+	<!-- M. Atk. + 9.45. / MP Recovery + 0.15. -->
+	<effect id="5896" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- M. Atk. + 9.45. / CP Recovery + 0.23. -->
+	<effect id="5897" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- M. Atk. + 9.45. / Evasion + 1.09. -->
+	<effect id="5898" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- M. Atk. + 9.45. / Accuracy + 1.09. -->
+	<effect id="5899" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- M. Atk. + 9.45. / Critical + 11.83. -->
+	<effect id="5900" rarity="3" slot="1">
+		<add stat="mAtk" val="9.45" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- HP Recovery + 0.24. / MP Recovery + 0.15. -->
+	<effect id="5901" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="regMp" val="0.15" />
+	</effect>
+	<!-- HP Recovery + 0.24. / CP Recovery + 0.23. -->
+	<effect id="5902" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Evasion + 1.09. -->
+	<effect id="5903" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Accuracy + 1.09. -->
+	<effect id="5904" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- HP Recovery + 0.24. / Critical + 11.83. -->
+	<effect id="5905" rarity="3" slot="1">
+		<add stat="regHp" val="0.24" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- MP Recovery + 0.16. / CP Recovery + 0.23. -->
+	<effect id="5906" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="regCp" val="0.23" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Evasion + 1.09. -->
+	<effect id="5907" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Accuracy + 1.09. -->
+	<effect id="5908" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- MP Recovery + 0.16. / Critical + 11.83. -->
+	<effect id="5909" rarity="3" slot="1">
+		<add stat="regMp" val="0.16" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Evasion + 1.09. -->
+	<effect id="5910" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Accuracy + 1.09. -->
+	<effect id="5911" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- CP Recovery + 0.24. / Critical + 11.83. -->
+	<effect id="5912" rarity="3" slot="1">
+		<add stat="regCp" val="0.24" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Evasion + 1.21. / Accuracy + 1.09. -->
+	<effect id="5913" rarity="3" slot="1">
+		<add stat="rEvas" val="1.21" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Evasion + 1.21. / Critical + 11.83. -->
+	<effect id="5914" rarity="3" slot="1">
+		<add stat="rEvas" val="1.21" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Accuracy + 1.21. / Critical + 11.83. -->
+	<effect id="5915" rarity="3" slot="1">
+		<add stat="accCombat" val="1.21" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- P. Def. + 30.81. -->
+	<effect id="5916" rarity="3" slot="1">
+		<add stat="pDef" val="30.81" />
+	</effect>
+	<!-- M. Def. + 24.8. -->
+	<effect id="5917" rarity="3" slot="1">
+		<add stat="mDef" val="24.8" />
+	</effect>
+	<!-- Max HP + 78.47 -->
+	<effect id="5918" rarity="3" slot="1">
+		<add stat="maxHp" val="78.47" />
+	</effect>
+	<!-- Max MP + 91.18. -->
+	<effect id="5919" rarity="3" slot="1">
+		<add stat="maxMp" val="91.18" />
+	</effect>
+	<!-- Max CP + 118.45. -->
+	<effect id="5920" rarity="3" slot="1">
+		<add stat="maxCp" val="118.45" />
+	</effect>
+	<!-- P. Atk. + 17.16. -->
+	<effect id="5921" rarity="3" slot="1">
+		<add stat="pAtk" val="17.16" />
+	</effect>
+	<!-- M. Atk. + 19.85. -->
+	<effect id="5922" rarity="3" slot="1">
+		<add stat="mAtk" val="19.85" />
+	</effect>
+	<!-- HP Recovery + 0.51. -->
+	<effect id="5923" rarity="3" slot="1">
+		<add stat="regHp" val="0.51" />
+	</effect>
+	<!-- MP Recovery + 0.34. -->
+	<effect id="5924" rarity="3" slot="1">
+		<add stat="regMp" val="0.34" />
+	</effect>
+	<!-- CP Recovery + 0.51. -->
+	<effect id="5925" rarity="3" slot="1">
+		<add stat="regCp" val="0.51" />
+	</effect>
+	<!-- Evasion + 2.3. -->
+	<effect id="5926" rarity="3" slot="1">
+		<add stat="rEvas" val="2.3" />
+	</effect>
+	<!-- Accuracy + 2.3. -->
+	<effect id="5927" rarity="3" slot="1">
+		<add stat="accCombat" val="2.3" />
+	</effect>
+	<!-- Critical + 24.91. -->
+	<effect id="5928" rarity="3" slot="1">
+		<add stat="rCrit" val="24.91" />
+	</effect>
+	<!-- P. Def. + 15.8. / M. Def. + 12.08. -->
+	<effect id="5929" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="mDef" val="12.08" />
+	</effect>
+	<!-- P. Def. + 15.8. / Max HP + 38.23 -->
+	<effect id="5930" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="maxHp" val="38.23" />
+	</effect>
+	<!-- P. Def. + 15.8. / Max MP + 44.42. -->
+	<effect id="5931" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="maxMp" val="44.42" />
+	</effect>
+	<!-- P. Def. + 15.8. / Max CP + 57.71. -->
+	<effect id="5932" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="maxCp" val="57.71" />
+	</effect>
+	<!-- P. Def. + 15.8. / P. Atk. + 8.36. -->
+	<effect id="5933" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="pAtk" val="8.36" />
+	</effect>
+	<!-- P. Def. + 15.8. / M. Atk. + 9.67. -->
+	<effect id="5934" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- P. Def. + 15.8. / HP Recovery + 0.25. -->
+	<effect id="5935" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- P. Def. + 15.8. / MP Recovery + 0.16. -->
+	<effect id="5936" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- P. Def. + 15.8. / CP Recovery + 0.25. -->
+	<effect id="5937" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- P. Def. + 15.8. / Evasion + 1.09. -->
+	<effect id="5938" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- P. Def. + 15.8. / Accuracy + 1.09. -->
+	<effect id="5939" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- P. Def. + 15.8. / Critical + 11.83. -->
+	<effect id="5940" rarity="3" slot="1">
+		<add stat="pDef" val="15.8" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- M. Def. + 12.72. / Max HP + 38.23 -->
+	<effect id="5941" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="maxHp" val="38.23" />
+	</effect>
+	<!-- M. Def. + 12.72. / Max MP + 44.42. -->
+	<effect id="5942" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="maxMp" val="44.42" />
+	</effect>
+	<!-- M. Def. + 12.72. / Max CP + 57.71. -->
+	<effect id="5943" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="maxCp" val="57.71" />
+	</effect>
+	<!-- M. Def. + 12.72. / P. Atk. + 8.36. -->
+	<effect id="5944" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="pAtk" val="8.36" />
+	</effect>
+	<!-- M. Def. + 12.72. / M. Atk. + 9.67. -->
+	<effect id="5945" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- M. Def. + 12.72. / HP Recovery + 0.25. -->
+	<effect id="5946" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- M. Def. + 12.72. / MP Recovery + 0.16. -->
+	<effect id="5947" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- M. Def. + 12.72. / CP Recovery + 0.25. -->
+	<effect id="5948" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- M. Def. + 12.72. / Evasion + 1.09. -->
+	<effect id="5949" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- M. Def. + 12.72. / Accuracy + 1.09. -->
+	<effect id="5950" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- M. Def. + 12.72. / Critical + 11.83. -->
+	<effect id="5951" rarity="3" slot="1">
+		<add stat="mDef" val="12.72" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max HP + 40.24 / Max MP + 44.42. -->
+	<effect id="5952" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="maxMp" val="44.42" />
+	</effect>
+	<!-- Max HP + 40.24 / Max CP + 57.71. -->
+	<effect id="5953" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="maxCp" val="57.71" />
+	</effect>
+	<!-- Max HP + 40.24 / P. Atk. + 8.36. -->
+	<effect id="5954" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="pAtk" val="8.36" />
+	</effect>
+	<!-- Max HP + 40.24 / M. Atk. + 9.67. -->
+	<effect id="5955" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- Max HP + 40.24 / HP Recovery + 0.25. -->
+	<effect id="5956" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max HP + 40.24 / MP Recovery + 0.16. -->
+	<effect id="5957" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max HP + 40.24 / CP Recovery + 0.25. -->
+	<effect id="5958" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max HP + 40.24 / Evasion + 1.09. -->
+	<effect id="5959" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max HP + 40.24 / Accuracy + 1.09. -->
+	<effect id="5960" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max HP + 40.24 / Critical + 11.83. -->
+	<effect id="5961" rarity="3" slot="1">
+		<add stat="maxHp" val="40.24" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max MP + 46.76. / Max CP + 57.71. -->
+	<effect id="5962" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="maxCp" val="57.71" />
+	</effect>
+	<!-- Max MP + 46.76. / P. Atk. + 8.36. -->
+	<effect id="5963" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="pAtk" val="8.36" />
+	</effect>
+	<!-- Max MP + 46.76. / M. Atk. + 9.67. -->
+	<effect id="5964" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- Max MP + 46.76. / HP Recovery + 0.25. -->
+	<effect id="5965" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max MP + 46.76. / MP Recovery + 0.16. -->
+	<effect id="5966" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max MP + 46.76. / CP Recovery + 0.25. -->
+	<effect id="5967" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max MP + 46.76. / Evasion + 1.09. -->
+	<effect id="5968" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max MP + 46.76. / Accuracy + 1.09. -->
+	<effect id="5969" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max MP + 46.76. / Critical + 11.83. -->
+	<effect id="5970" rarity="3" slot="1">
+		<add stat="maxMp" val="46.76" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- Max CP + 60.74. / P. Atk. + 8.36. -->
+	<effect id="5971" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="pAtk" val="8.36" />
+	</effect>
+	<!-- Max CP + 60.74. / M. Atk. + 9.67. -->
+	<effect id="5972" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- Max CP + 60.74. / HP Recovery + 0.25. -->
+	<effect id="5973" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- Max CP + 60.74. / MP Recovery + 0.16. -->
+	<effect id="5974" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- Max CP + 60.74. / CP Recovery + 0.25. -->
+	<effect id="5975" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- Max CP + 60.74. / Evasion + 1.09. -->
+	<effect id="5976" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- Max CP + 60.74. / Accuracy + 1.09. -->
+	<effect id="5977" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- Max CP + 60.74. / Critical + 11.83. -->
+	<effect id="5978" rarity="3" slot="1">
+		<add stat="maxCp" val="60.74" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- P. Atk. + 8.8. / M. Atk. + 9.67. -->
+	<effect id="5979" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="mAtk" val="9.67" />
+	</effect>
+	<!-- P. Atk. + 8.8. / HP Recovery + 0.25. -->
+	<effect id="5980" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- P. Atk. + 8.8. / MP Recovery + 0.16. -->
+	<effect id="5981" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- P. Atk. + 8.8. / CP Recovery + 0.25. -->
+	<effect id="5982" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- P. Atk. + 8.8. / Evasion + 1.09. -->
+	<effect id="5983" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- P. Atk. + 8.8. / Accuracy + 1.09. -->
+	<effect id="5984" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- P. Atk. + 8.8. / Critical + 11.83. -->
+	<effect id="5985" rarity="3" slot="1">
+		<add stat="pAtk" val="8.8" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- M. Atk. + 10.18. / HP Recovery + 0.25. -->
+	<effect id="5986" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="regHp" val="0.25" />
+	</effect>
+	<!-- M. Atk. + 10.18. / MP Recovery + 0.16. -->
+	<effect id="5987" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- M. Atk. + 10.18. / CP Recovery + 0.25. -->
+	<effect id="5988" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- M. Atk. + 10.18. / Evasion + 1.09. -->
+	<effect id="5989" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- M. Atk. + 10.18. / Accuracy + 1.09. -->
+	<effect id="5990" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- M. Atk. + 10.18. / Critical + 11.83. -->
+	<effect id="5991" rarity="3" slot="1">
+		<add stat="mAtk" val="10.18" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- HP Recovery + 0.26. / MP Recovery + 0.16. -->
+	<effect id="5992" rarity="3" slot="1">
+		<add stat="regHp" val="0.26" />
+		<add stat="regMp" val="0.16" />
+	</effect>
+	<!-- HP Recovery + 0.26. / CP Recovery + 0.25. -->
+	<effect id="5993" rarity="3" slot="1">
+		<add stat="regHp" val="0.26" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- HP Recovery + 0.26. / Evasion + 1.09. -->
+	<effect id="5994" rarity="3" slot="1">
+		<add stat="regHp" val="0.26" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- HP Recovery + 0.26. / Accuracy + 1.09. -->
+	<effect id="5995" rarity="3" slot="1">
+		<add stat="regHp" val="0.26" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+	<!-- HP Recovery + 0.26. / Critical + 11.83. -->
+	<effect id="5996" rarity="3" slot="1">
+		<add stat="regHp" val="0.26" />
+		<add stat="rCrit" val="11.83" />
+	</effect>
+	<!-- MP Recovery + 0.17. / CP Recovery + 0.25. -->
+	<effect id="5997" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="regCp" val="0.25" />
+	</effect>
+	<!-- MP Recovery + 0.17. / Evasion + 1.09. -->
+	<effect id="5998" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="rEvas" val="1.09" />
+	</effect>
+	<!-- MP Recovery + 0.17. / Accuracy + 1.09. -->
+	<effect id="5999" rarity="3" slot="1">
+		<add stat="regMp" val="0.17" />
+		<add stat="accCombat" val="1.09" />
+	</effect>
+</list>

@@ -79,6 +79,9 @@ public class TradeController implements Reloadable
 	public boolean load(String path)
 	{
 		File dir = new File(path);
+		if (!dir.exists())
+			return false;
+
 		for (File file : dir.listFiles())
 		{
 			if (!file.getName().endsWith(".xml"))

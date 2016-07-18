@@ -44,7 +44,7 @@
 	<effect id="23010" rarity="4" slot="2">
 		<skill id="3204" level="3" />
 	</effect>
-	<!-- Active: Momentarily blocks the target's physical/magic skills.  -->
+	<!-- Active: Momentarily blocks the target's physical/magic skills. -->
 	<effect id="23011" rarity="4" slot="2">
 		<skill id="3198" level="10" />
 	</effect>

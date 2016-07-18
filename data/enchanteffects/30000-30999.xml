@@ -1116,7 +1116,7 @@
 		<baseAdd stat="INT" val="1" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 14.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumption - 3% / Resistance to Water/Fire/Wind/Earth + 20. STR +2, DEX +1, CON +2, INT +2, WIT +1, MEN +2 -->
+	<!-- M. Def. + 14.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 20. STR +2, \nDEX +1, CON +2, INT +2, WIT +1, MEN +2 -->
 	<effect id="30233" rarity="4" slot="4">
 		<add stat="mDef" val="14.0" />
 		<add stat="runSpd" val="7" />
@@ -1133,7 +1133,7 @@
 		<baseAdd stat="WIT" val="1" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 15.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumption - 3% / Resistance to Water/Fire/Wind/Earth + 25. Increases Damage Reflect Resistance. STR +2, DEX +1, CON +2, INT +2, WIT +1, MEN +2 -->
+	<!-- M. Def. + 15.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 25. Increase\ns Damage Reflect Resistance. STR +2, DEX +1, CON +\n2, INT +2, WIT +1, MEN +2 -->
 	<effect id="30234" rarity="4" slot="4">
 		<add stat="mDef" val="15.0" />
 		<add stat="runSpd" val="7" />
@@ -1150,7 +1150,7 @@
 		<baseAdd stat="WIT" val="1" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 16.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumption - 3% / Resistance to Water/Fire/Wind/Earth + 30. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical/magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN + 2 -->
+	<!-- M. Def. + 16.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 30. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 2 -->
 	<effect id="30235" rarity="4" slot="4">
 		<add stat="mDef" val="16.0" />
 		<add stat="runSpd" val="7" />
@@ -1168,7 +1168,7 @@
 		<baseAdd stat="WIT" val="2" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 17.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumption - 3% / Resistance to Water/Fire/Wind/Earth + 35. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical/magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN + 3 -->
+	<!-- M. Def. + 17.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 35. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 2, DEX + 2, CON + 3, INT + 2, WIT + 2, MEN +\n 3 -->
 	<effect id="30236" rarity="4" slot="4">
 		<add stat="mDef" val="17.0" />
 		<add stat="runSpd" val="7" />
@@ -1186,7 +1186,7 @@
 		<baseAdd stat="WIT" val="2" />
 		<baseAdd stat="MEN" val="3" />
 	</effect>
-	<!-- M. Def. + 18.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumption - 3% / Resistance to Water/Fire/Wind/Earth + 40. Increases Damage Reflect Resistance. Vampiric Rage Effect. Decreases cooldown for physical/magic skills. Increases Resistance to Lethal Strike and Half-Kill. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3 -->
+	<!-- M. Def. + 18.0 / Speed + 7, Max HP + 200, Max MP + 200, MP Consumpt\nion - 3% / Resistance to Water/Fire/Wind/Earth + 40. Increase\ns Damage Reflect Resistance. Vampiric Rage Effect.\n Decreases cooldown for physical/magic skills. Inc\nreases Resistance to Lethal Strike and Half-Kill. \nSTR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN +\n 3 -->
 	<effect id="30237" rarity="4" slot="4">
 		<add stat="mDef" val="18.0" />
 		<add stat="runSpd" val="7" />
@@ -1460,12 +1460,12 @@
 	<effect id="30301" rarity="2" slot="2">
 		<add stat="mDef" val="10" />
 	</effect>
-	<!-- M. Def. + 11 / Speed + 7 -->
+	<!-- M. Def. + 11 -->
 	<effect id="30302" rarity="2" slot="2">
 		<add stat="mDef" val="11" />
 		<add stat="runSpd" val="7" />
 	</effect>
-	<!-- M. Def. + 12 / Speed + 7 / Max HP + 510Max MP + 510Attribute Resistance + 6STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1 -->
+	<!-- M. Def. + 12 / Speed + 7 / Max HP + 510\nMax MP + 510\nAttribute Resistance +\n 6\nSTR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, M\nEN + 1 -->
 	<effect id="30303" rarity="2" slot="2">
 		<add stat="mDef" val="12" />
 		<add stat="runSpd" val="7" />
@@ -1476,7 +1476,7 @@
 		<baseAdd stat="WIT" val="1" />
 		<baseAdd stat="MEN" val="1" />
 	</effect>
-	<!-- M. Def. + 13 / Speed + 7 / Max HP + 520Max MP + 520Skill MP Consumption - 3%Attribute Resistance + 12STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2 -->
+	<!-- M. Def. + 13 / Speed + 7 / Max HP + 520\nMax MP + 520\nSkill MP Consumption -\n 3%\nAttribute Resistance + 12\nSTR + 2, DEX + 2, \nCON + 2, INT + 2, WIT + 2, MEN + 2 -->
 	<effect id="30304" rarity="2" slot="2">
 		<add stat="mDef" val="13" />
 		<add stat="runSpd" val="7" />
@@ -1487,7 +1487,7 @@
 		<baseAdd stat="WIT" val="2" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 14 / Speed + 7 / Max HP + 531Max MP + 531Skill MP Consumption - 3%Damage Reflect Resistance + 5Attribute Resistance + 18STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2 -->
+	<!-- M. Def. + 14 / Speed + 7 / Max HP + 531\nMax MP + 531\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nAttribute Resi\nstance + 18\nSTR + 3, DEX + 3, CON + 2, INT + 3, W\nIT + 3, MEN + 2 -->
 	<effect id="30305" rarity="2" slot="2">
 		<add stat="mDef" val="14" />
 		<add stat="runSpd" val="7" />
@@ -1498,7 +1498,7 @@
 		<baseAdd stat="WIT" val="3" />
 		<baseAdd stat="MEN" val="2" />
 	</effect>
-	<!-- M. Def. + 15 / Speed + 7 / Max HP + 536Max MP + 536Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Attribute Resistance + 24STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3 -->
+	<!-- M. Def. + 15 / Speed + 7 / Max HP + 536\nMax MP + 536\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nAttribute Resistance + 24\nSTR + 3, DEX + 3,\n CON + 3, INT + 3, WIT + 3, MEN + 3 -->
 	<effect id="30306" rarity="2" slot="2">
 		<add stat="mDef" val="15" />
 		<add stat="runSpd" val="7" />
@@ -1509,7 +1509,7 @@
 		<baseAdd stat="WIT" val="3" />
 		<baseAdd stat="MEN" val="3" />
 	</effect>
-	<!-- M. Def. + 16 / Speed + 7 / Max HP + 541Max MP + 541Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Attribute Resistance + 30STR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, MEN + 3 -->
+	<!-- M. Def. + 16 / Speed + 7 / Max HP + 541\nMax MP + 541\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nAttribute Resistance + \n30\nSTR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, M\nEN + 3 -->
 	<effect id="30307" rarity="2" slot="2">
 		<add stat="mDef" val="16" />
 		<add stat="runSpd" val="7" />
@@ -1520,7 +1520,7 @@
 		<baseAdd stat="WIT" val="4" />
 		<baseAdd stat="MEN" val="3" />
 	</effect>
-	<!-- M. Def. + 17 / Speed + 7 / Max HP + 547Max MP + 547Skill MP Consumption - 3%Damage Reflect Resistance + 5 Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%;Attribute Resistance + 36STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4 -->
+	<!-- M. Def. + 17 / Speed + 7 / Max HP + 547\nMax MP + 547\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5 Vampiric Rage +\n 5%\nSkill Cooldown - 3%\nReceived Damage - 3%;Att\nribute Resistance + 36\nSTR + 4, DEX + 4, CON + 4,\n INT + 4, WIT + 4, MEN + 4 -->
 	<effect id="30308" rarity="2" slot="2">
 		<add stat="mDef" val="17" />
 		<add stat="runSpd" val="7" />
@@ -1531,7 +1531,7 @@
 		<baseAdd stat="WIT" val="4" />
 		<baseAdd stat="MEN" val="4" />
 	</effect>
-	<!-- M. Def. + 18 / Speed + 7 / Max HP + 552Max MP + 552Skill MP Consumption - 3%Damage Reflect Resistance + 5Vampiric Rage + 5%Skill Cooldown - 3%Received Damage - 3%Attribute Resistance + 36STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4 -->
+	<!-- M. Def. + 18 / Speed + 7 / Max HP + 552\nMax MP + 552\nSkill MP Consumption -\n 3%\nDamage Reflect Resistance + 5\nVampiric Rage \n+ 5%\nSkill Cooldown - 3%\nReceived Damage - 3%\nA\nttribute Resistance + 36\nSTR + 4, DEX + 4, CON + \n4, INT + 4, WIT + 4, MEN + 4 -->
 	<effect id="30309" rarity="2" slot="2">
 		<add stat="mDef" val="18" />
 		<add stat="runSpd" val="7" />

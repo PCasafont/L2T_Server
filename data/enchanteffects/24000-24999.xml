@@ -3052,7 +3052,7 @@
 	<effect id="24648" rarity="4" slot="2">
 		<skill id="3204" level="3" />
 	</effect>
-	<!-- Active: Momentarily blocks the target's physical/magic skills.  -->
+	<!-- Active: Momentarily blocks the target's physical/magic skills. -->
 	<effect id="24649" rarity="4" slot="2">
 		<skill id="3198" level="10" />
 	</effect>
@@ -4922,18 +4922,18 @@
 		<add stat="mDef" val="14.0" />
 		<add stat="runSpd" val="7" />
 	</effect>
-	<!-- M. Def. + 15.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - 3%. -->
+	<!-- M. Def. + 15.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%. -->
 	<effect id="24972" rarity="1" slot="1">
 		<add stat="mDef" val="15.0" />
 		<effect desc="Speed + 7. P. Skill Damage + 93. MP Consumption - 3%" />
 	</effect>
-	<!-- M. Def. + 16.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - 3%. / P. Critical Damage + 41.3. M. Critical Rate + 20. -->
+	<!-- M. Def. + 16.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%. / P. Critical Damage + 41.3. M. Critical Rate + 20. -->
 	<effect id="24973" rarity="1" slot="1">
 		<add stat="mDef" val="16.0" />
 		<effect desc="Speed + 7. P. Skill Damage + 93. MP Consumption - 3%" />
 		<effect desc="P. Critical Damage + 41.3. M. Critical Rate + 20." />
 	</effect>
-	<!-- M. Def. + 17.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - 3%. / P. Critical Damage + 41.3. M. Critical Rate + 20. -->
+	<!-- M. Def. + 17.0 / Speed + 7. P. Skill Damage + 93. MP Consumption - \n3%. / P. Critical Damage + 41.3. M. Critical Rate + 20. -->
 	<effect id="24974" rarity="1" slot="1">
 		<add stat="mDef" val="17.0" />
 		<effect desc="Speed + 7. P. Skill Damage + 93. MP Consumption - 3%" />

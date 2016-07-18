@@ -17,11 +17,11 @@
 		<spawn x="14155" y="213145" z="-9357" />
 		<spawn x="18459" y="213145" z="-9357" />
 	</location>
-	<location id="4" name="Cruma Tower" globalZ="-11800" maxTeamPlayers="20" hill="false">
+	<!--<location id="4" name="Cruma Tower" globalZ="-11800" maxTeamPlayers="20" hill="false">
 		<spawn x="16097" y="115172" z="-11983" />
 		<spawn x="16097" y="113126" z="-11983" />
 	</location>
-	<!--<location id="5" name="Necropolis of sacrifice" globalZ="-5000" maxTeamPlayers="20" hill="false">
+	<location id="5" name="Necropolis of sacrifice" globalZ="-5000" maxTeamPlayers="20" hill="false">
 		<spawn x="-49915" y="217276" z="-5087" />
 		<spawn x="-47048" y="217276" z="-5087" />
 	</location>-->
@@ -73,17 +73,9 @@
 		<spawn x="147460" y="10550" z="-695" />
 		<spawn x="147460" y="13621" z="-1134" />
 	</location>
-	<location id="16" name="Anghel Waterfall" globalZ="-1900" maxTeamPlayers="15" hill="false">
-		<spawn x="169858" y="85194" z="-1990" />
-		<spawn x="167955" y="85385" z="-1992" />
-	</location>
 	<location id="17" name="Tower of Insolence" globalZ="10126" maxTeamPlayers="30" hill="false">
 		<spawn x="114045" y="15475" z="9563" />
 		<spawn x="112801" y="14177" z="10064" />
-	</location>
-	<location id="18" name="School of Dark Arts" globalZ="-5300" maxTeamPlayers="20" hill="true">
-		<spawn x="-44320" y="50162" z="-5404" />
-		<spawn x="-44320" y="48108" z="-5404" />
 	</location>
 	<location id="19" name="Aden Territory Mountain" globalZ="3662" maxTeamPlayers="20" hill="false">
 		<spawn x="131154" y="59976" z="3560" />
@@ -193,10 +185,10 @@
 		<spawn x="175343" y="54535" z="-3471" />
 		<spawn x="173164" y="54929" z="-3471" />
 	</location>
-	<location id="55" name="Cruma Tower Roof" globalZ="4054" maxTeamPlayers="20" hill="false">
+	<!-- <location id="55" name="Cruma Tower Roof" globalZ="4054" maxTeamPlayers="20" hill="false">
 		<spawn x="17066" y="114174" z="4004" />
 		<spawn x="18335" y="114164" z="4004" />
-	</location>
+	</location> -->
 	<location id="56" name="Mining Zone Bridge" globalZ="2559" maxTeamPlayers="20" hill="false">
 		<spawn x="118523" y="-168613" z="2509" />
 		<spawn x="121418" y="-168395" z="2509" />

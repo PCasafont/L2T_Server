@@ -98,6 +98,9 @@ public class HeroesManager
 	
 	private void init()
 	{
+		if (Config.IS_CLASSIC)
+			return;
+
 		Connection con = null;
 		
 		PreparedStatement statement;
