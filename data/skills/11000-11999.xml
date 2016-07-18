@@ -1866,7 +1866,7 @@
 		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Hex -->
 		<enchantRoute id="3" level="3,4,5,6,7" /> <!-- Mind -->
 		<table name="#mpConsume"> 228 243 257 273 289 305 321 </table>
-		<table name="#landRate"> 90
+		<table name="#landRate"> 90 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
@@ -1908,7 +1908,7 @@
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
-		<table name="#landRate"> 90
+		<table name="#landRate"> 90 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -2263,7 +2263,7 @@
 		<table name="#power"> 620 677 693 709 
 			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#landRate"> 90
+		<table name="#landRate"> 90 
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -2304,7 +2304,7 @@
 		<table name="#power"> 620 641 655 669 
 			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#landRate"> 80
+		<table name="#landRate"> 80 
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentMDef"> 0 
@@ -8669,7 +8669,7 @@
 		<table name="#ignoredDefPercent"> 0.0 
 			<enchantRoute id="3" level="7,8,9,10,11"> 1.0 1.6 2.2 2.8 3.4 4.0 4.6 5.2 5.8 6.4 7.0 7.6 8.2 8.8 9.4 10.0 10.6 11.2 11.8 12.4 13.0 13.6 14.2 14.8 15.4 16.0 16.6 17.2 17.8 18.4 </enchantRoute>
 		</table>
-		<table name="#landRate"> 70
+		<table name="#landRate"> 70 
 			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AROUND_TARGET" />
@@ -11851,7 +11851,7 @@
 		<enchantRoute id="1" level="4,5,6,7,8" /> <!-- Power -->
 		<enchantRoute id="2" level="4,5,6,7,8" /> <!-- Major -->
 		<table name="#mpConsume"> 3900 3970 4030 4110 4180 4248 4318 4388 </table>
-		<table name="#power"> 700 715 725 740 755 768 786 804
+		<table name="#power"> 700 715 725 740 755 768 786 804 
 			<enchantRoute id="1" level="4,5,6,7,8" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#enchHeal"> 0 
