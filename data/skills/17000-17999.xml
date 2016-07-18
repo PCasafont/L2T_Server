@@ -814,7 +814,7 @@
 	<skill id="17126" levels="24" name="Snake's Blessing - Stage 24">
 		<table name="#castRange"> 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
-		<table name="#name">Snake's Blessing - Stage 1;Snake's Blessing - Stage 2;Snake's Blessing - Stage 3;Snake's Blessing - Stage 4;Snake's Blessing - Stage 5;Snake's Blessing - Stage 6;Snake's Blessing - Stage 7;Snake's Blessing - Stage 8;Snake's Blessing - Stage 9;Snake's Blessing - Stage 10;Snake's Blessing - Stage 11;Snake's Blessing - Stage 12;Snake's Blessing - Stage 13;Snake's Blessing - Stage 14;Snake's Blessing - Stage 15;Snake's Blessing - Stage 16;Snake's Blessing - Stage 17;Snake's Blessing - Stage 18;Snake's Blessing - Stage 19;Snake's Blessing - Stage 20;Snake's Blessing - Stage 21;Snake's Blessing - Stage 22;Snake's Blessing - Stage 23;Snake's Blessing - Stage 24</table>
+		<table name="#name">Lucky Box 2;Lucky Box 3;+7 Shiny Elemental Shirt Pack;+7 Physical Reflect Shirt Pack;+7 Magical Reflect Shirt Pack;+7 Pa'agrio's Shirt Pack;+7 Sayha's Shirt Pack;+7 Eva's Shirt Pack;+7 Maphr's Shirt Pack;Snake's Blessing - Stage 10;Snake's Blessing - Stage 11;Snake's Blessing - Stage 12;Snake's Blessing - Stage 13;Snake's Blessing - Stage 14;Snake's Blessing - Stage 15;Snake's Blessing - Stage 16;Snake's Blessing - Stage 17;Snake's Blessing - Stage 18;Snake's Blessing - Stage 19;Snake's Blessing - Stage 20;Snake's Blessing - Stage 21;Snake's Blessing - Stage 22;Snake's Blessing - Stage 23;Snake's Blessing - Stage 24</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4493,7 +4493,7 @@
 	<skill id="17686" levels="4" name="Lara's Buff">
 		<table name="#castRange"> 900 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 </table>
-		<table name="#name">Random Buff;Whimsical Buff;Buff of Delight;Lara the Cat's Buff</table>
+		<table name="#name">Lara's Random Buff;Lara's Whimsical Buff;Lara's Delightful Buff;Lara's Buff</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4516,7 +4516,7 @@
 	<skill id="17688" levels="4" name="Lara's Buff">
 		<table name="#castRange"> 900 0 0 0 </table>
 		<table name="#effectRange"> 1400 0 0 0 </table>
-		<table name="#name">Lara the Cat's Buff;Whimsical Buff;Buff of Delight;Lara the Cat's Buff</table>
+		<table name="#name">Lara's Buff;Lara's Whimsical Buff;Lara's Delightful Buff;Lara's Buff</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4583,6 +4583,8 @@
 	-->
 	<skill id="17701" levels="6" name="Greater Topaz - Spiritshot">
 		<table name="#power"> 1062 3717 6903 10089 13275 </table>
+		<table name="#name">Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Topaz: Spiritshot;Greater Topaz - Spiritshot</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4642,6 +4644,8 @@
 	-->
 	<skill id="17704" levels="6" name="Greater Obsidian">
 		<table name="#pvpDef"> 1 3 7 11 15 </table>
+		<table name="#name">Obsidian;Obsidian;Obsidian;Obsidian;Obsidian;Greater Obsidian</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4661,6 +4665,8 @@
 	-->
 	<skill id="17705" levels="6" name="Greater Opal">
 		<table name="#power"> 10 20 40 70 120 </table>
+		<table name="#name">Opal;Opal;Opal;Opal;Opal;Greater Opal</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4708,6 +4714,8 @@
 	<skill id="17708" levels="6" name="Greater Diamond">
 		<table name="#def"> 283 567 945 1418 1986 </table>
 		<table name="#critVuln"> 1 2 3 4 5 </table>
+		<table name="#name">Diamond;Diamond;Diamond;Diamond;Diamond;Greater Diamond</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4727,6 +4735,8 @@
 	<skill id="17709" levels="6" name="Greater Pearl">
 		<table name="#def"> 163 328 548 821 1150 </table>
 		<table name="#critVuln"> 1 2 3 4 5 </table>
+		<table name="#name">Pearl;Pearl;Pearl;Pearl;Pearl;Greater Pearl</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -5483,6 +5493,8 @@
 	-->
 	<skill id="17823" levels="6" name="Greater Aquamarine">
 		<table name="#chance"> 1 2 4 9 15 </table>
+		<table name="#name">Aquamarine;Aquamarine;Aquamarine;Aquamarine;Aquamarine;Greater Aquamarine</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -5511,6 +5523,8 @@
 		<table name="#conmen"> 1 1 1 2 3 </table>
 		<table name="#strint"> 0 1 1 2 3 </table>
 		<table name="#dexwit"> 0 0 1 2 3 </table>
+		<table name="#name">Emerald;Emerald;Emerald;Emerald;Emerald;Greater Emerald</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -6371,6 +6385,8 @@
 		Level 2: Teleports to the Fairy Citizen in the Arms of Timiniel.
 	-->
 	<skill id="17945" levels="2" name="Scroll of Escape: Arms of Timiniel">
+		<table name="#name">Escape - Hunter's Village Teleport;Scroll of Escape: Arms of Timiniel</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6381,6 +6397,8 @@
 		Level 2: Teleports to Nerupa in the Arms of Timiniel.
 	-->
 	<skill id="17946" levels="2" name="Scroll of Escape: Arms of Timiniel">
+		<table name="#name">Scroll of Escape: Magmeld;Scroll of Escape: Arms of Timiniel</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

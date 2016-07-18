@@ -6996,7 +6996,7 @@
 		<table name="#pDefGiants"> 0 0 0 0 0 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#pDefBugs"> 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#pDefBlunts"> 0 0 0 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </table>
-		<table name="#name">Undead;Magic Creatures;Beast;Animals;Plants;Humanoids;Spirits;Angels;Demons;Dragons;Giants;Bugs;Fairies;Humans;Elves;Dark Elves;Orcs;Dwarves;Misc.;Non-living Beings;Siege Weapons;Defending Army;Mercenaries;Unknown Creature;Kamael;Ertheia</table>
+		<table name="#name">Undead;Magic Creatures;Beast;Animals;Plants;Humanoids;Spirits;Angels;Demons;Dragons;Giants;Bugs;Fairies;Humans;Elves;Dark Elves;Orcs;Dwarves;Misc.;Non-living Beings;Siege Weapons;Defending Army;Mercenaries;Unknown Creature;Kamael;Ertheia;Embryo</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8355,6 +8355,8 @@
 		Level 2: A curse from the Raid Guardian. The body turns stiff temporarily due to a Petrify spell. Players attempting to defeat Raid Monsters whose level is 5 or more less than themselves, or those who do not satisfy the necessary raid conditions are afflicted. This curse cannot be lifted.
 	-->
 	<skill id="4515" levels="2" name="Giants Raid Curse">
+		<table name="#name">Raid Curse;Giants Raid Curse</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />

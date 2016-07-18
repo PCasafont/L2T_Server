@@ -6330,8 +6330,6 @@
 		<enchantRoute id="5" level="1,2" /> <!-- Chance Paralysis -->
 		<table name="#mpConsume"> 45 47 </table>
 		<table name="#pSkillPow"> 10 15 </table>
-		<table name="#pEvas"> 40 80 </table>
-		<table name="#pAcc"> 8 16 </table>
 		<table name="#debRemove"> 5 7 </table>
 		<table name="#blowRate"> 40 45 </table>
 		<table name="#duration"> 30 
@@ -8924,7 +8922,7 @@
 		</for>
 	</skill>
 	<!-- Inflicted with Hold and unable to move. -->
-	<skill id="10807" levels="4" name="Frost Trap">
+	<skill id="10807" levels="4" name="Gravity Trap">
 		<set name="target" val="TARGET_AROUND_CASTER" />
 		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="DEBUFF" />

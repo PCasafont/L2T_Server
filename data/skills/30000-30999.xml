@@ -1647,6 +1647,8 @@
 		<table name="#addPercentMDef"> 0 
 			<enchantRoute id="3" level="3,4,5,6,7"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 5 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
+		<table name="#name">Air Light;Air Light;Air Light;Air Light;Air Light;Gravity Tower;Gravity Tower</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />

@@ -3830,7 +3830,7 @@
 		<table name="#dmgRes"> 0 0 0 10 10 </table>
 		<table name="#debuffReflect"> 0 0 5 6 7 </table>
 		<table name="#stats"> 0 0 0 0 1 </table>
-		<table name="#name">Enchant Heavy Armor Set + 6 (R-grade);Enchant Heavy Armor Set + 7 (R-grade);Enchant Heavy Armor Set + 8 (R-grade)</table>
+		<table name="#name">Enchant Heavy Armor Set + 6 (R-grade);Enchant Heavy Armor Set + 7 (R-grade);Enchant Heavy Armor Set + 8 (R-grade);R-grade Heavy Armor Set 9 Enchant;R-grade Heavy Armor Set 10 Enchant</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3862,7 +3862,7 @@
 		<table name="#pDef"> 0 0 11 11 21 </table>
 		<table name="#dmgRes"> 0 0 0 10 10 </table>
 		<table name="#stats"> 0 0 0 0 1 </table>
-		<table name="#name">Enchant Light Armor Set + 6 (R-grade);Enchant Light Armor Set + 7 (R-grade);Enchant Light Armor Set + 8 (R-grade)</table>
+		<table name="#name">Enchant Light Armor Set + 6 (R-grade);Enchant Light Armor Set + 7 (R-grade);Enchant Light Armor Set + 8 (R-grade);R-grade Light Armor Set 9 Enchant;R-grade Light Armor Set 10 Enchant</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3898,7 +3898,7 @@
 		<table name="#debuffRes"> 0 0 11 11 11 </table>
 		<table name="#wpnRes"> 0 0 10 10 10 </table>
 		<table name="#dmgRes"> 0 0 0 10 10 </table>
-		<table name="#name">Enchant Robe Set + 6 (R-grade);Enchant Robe Set + 7 (R-grade);Enchant Robe Set + 8 (R-grade)</table>
+		<table name="#name">Enchant Robe Set + 6 (R-grade);Enchant Robe Set + 7 (R-grade);Enchant Robe Set + 8 (R-grade);R-grade Robe Set 9 Enchant;R-grade Robe Set 10 Enchant</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8868,7 +8868,7 @@
 		Level 2: All Stats + 2 with the power of Talisman.
 	-->
 	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
-		<table name="#name">Christmas Talisman - ALL STAT (Low);Christmas Talisman - ALL STAT (High)</table>
+		<table name="#name">Christmas Talisman - ALL STAT (High);Christmas Talisman - ALL STAT (Low)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

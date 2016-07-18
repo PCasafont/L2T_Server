@@ -3448,6 +3448,8 @@
 		<set name="effectRange" val="1400" />
 	</skill>
 	<skill id="14300" levels="4" name="Divinity Burn">
+		<table name="#name">Darkness Burn;Divinity Burn;Divinity Burn;Divinity Burn</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3464,6 +3466,8 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="14302" levels="4" name="Divinity Burn">
+		<table name="#name">Darkness Burn;Divinity Burn;Divinity Burn;Divinity Burn</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

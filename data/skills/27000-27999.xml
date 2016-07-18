@@ -2333,6 +2333,8 @@
 	-->
 	<skill id="27440" levels="6" name="Greater Cat's Eye">
 		<table name="#reflectRes"> 10 20 30 40 50 </table>
+		<table name="#name">Cat's Eye;Cat's Eye;Cat's Eye;Cat's Eye;Cat's Eye;Greater Cat's Eye</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2368,6 +2370,8 @@
 	-->
 	<skill id="27442" levels="6" name="Greater Amethyst">
 		<table name="#pvpDam"> 3 5 7 10 15 </table>
+		<table name="#name">Amethyst;Amethyst;Amethyst;Amethyst;Amethyst;Greater Amethyst</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -2955,6 +2959,8 @@
 		Level 2: Cancels all debuffs and becomes immune to debuffs for 7 seconds.
 	-->
 	<skill id="27548" levels="2" name="Greater Garnet - Cancel Debuffs">
+		<table name="#name">Garnet - Purge;Greater Garnet - Cancel Debuffs</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2973,6 +2979,8 @@
 	<skill id="27549" levels="6" name="Greater Tanzanite - Barrier">
 		<table name="#duration"> 5 5 10 10 15 </table>
 		<table name="#damage"> 5000 10000 15000 30000 50000 </table>
+		<table name="#name">Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite - Barrier;Tanzanite - Barrier;Greater Tanzanite - Barrier</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2996,6 +3004,8 @@
 		Level 6: Increases Vitality Status Bonus EXP by 50% and Vitality Consumption Speed decreases by 15%. XP Gain increases by 10%.
 	-->
 	<skill id="27550" levels="6" name="Greater Vital Stone">
+		<table name="#name">Vital Stone;Vital Stone;Vital Stone;Vital Stone;Vital Stone;Greater Vital Stone</table>
+		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
