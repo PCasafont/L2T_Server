@@ -370,7 +370,7 @@
 			isStackable="true">
 	</item>
 	<!-- Cannot be transferred between servers. -->
-	<item id="5080" type="EtcItem" name="Desert Cobol - None" icon="icon.etc_exchange_ticket_i04" immediateEffect="1" isTradable="true"
+	<item id="5080" type="EtcItem" name="Desert Cobol - None" icon="icon.etc_cobol_i05" immediateEffect="1" isTradable="true"
 			isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
 	</item>
 	<!-- Cannot be transferred between servers. -->

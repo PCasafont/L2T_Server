@@ -1055,7 +1055,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Wrapped Pack containing Agathion - Angry Devil (30-day). -->
-	<item id="136" type="EtcItem" name="Zodiac Agathion Pack - None" icon="icon.etc_pi_gift_box_i00" defaultAction="peel" immediateEffect="1"
+	<item id="136" type="EtcItem" name="Zodiac Agathion Pack - None" icon="icon.etc_treasure_box_i02" defaultAction="peel" immediateEffect="1"
 			weight="100" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
 		<capsuledItem id="14075" min="1" max="1" chance="100.0" /> <!-- Agathion - Angry Devil (Event) -->
 	</item>
