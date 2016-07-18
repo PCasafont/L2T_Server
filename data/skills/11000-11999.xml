@@ -6011,13 +6011,11 @@
 		Level 4: Momentarily immobilized midair. P./M. Def. - 30%.
 	-->
 	<skill id="11300" levels="6" name="Yoke Status">
-		<table name="#castRange"> 500 0 0 500 500 500 </table>
-		<table name="#effectRange"> 1000 0 0 1000 1000 1000 </table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="castRange" val="#castRange" />
-		<set name="effectRange" val="#effectRange" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
 	</skill>
 	<!-- 
 		Level 1: Attack nearby enemies with 152 Power added to M. Atk.

@@ -7802,9 +7802,9 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2500" />
-		<set name="castRange" val="450" />
-		<set name="effectRange" val="950" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
 		Level 1: Deals great magic damage to a single target and decreases P./M. Def. by 30% for 20 seconds.
@@ -7817,9 +7817,9 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2500" />
-		<set name="castRange" val="450" />
-		<set name="effectRange" val="950" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
 	</skill>
 	<!-- 
 		Level 1: Deals great damage to a single target and decreases P./M. Atk. by 25% for 20 seconds.

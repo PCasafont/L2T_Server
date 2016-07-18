@@ -4826,8 +4826,8 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="15000" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="30000" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="1000" />
 	</skill>
@@ -4844,7 +4844,7 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="180000" />
+		<set name="reuseDelay" val="10000" />
 	</skill>
 	<!-- Temporarily increases P. Atk. And Atk. Spd. by 50%. -->
 	<skill id="16521" levels="1" name="Embryo's Call">
@@ -4854,7 +4854,7 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="60000" />
+		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="350" />
 		<set name="effectRange" val="850" />
 	</skill>
@@ -4875,7 +4875,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="10" />
-		<set name="hitTime" val="2500" />
+		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="15000" />
 		<set name="castRange" val="350" />
@@ -5079,7 +5079,7 @@
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="hitTime" val="15000" />
+		<set name="hitTime" val="10000" />
 	</skill>
 	<!-- Event presentation skill. -->
 	<skill id="16544" levels="1" name="Rescue Captive">

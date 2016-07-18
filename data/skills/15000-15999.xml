@@ -4498,8 +4498,8 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
-		<set name="castRange" val="145000" />
-		<set name="effectRange" val="145500" />
+		<set name="castRange" val="13928" />
+		<set name="effectRange" val="14428" />
 	</skill>
 	<!-- AoE Bleeding. -->
 	<skill id="15427" levels="1" name="Bleed">
