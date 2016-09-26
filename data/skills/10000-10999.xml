@@ -6045,8 +6045,8 @@
 				<effect type="Buff" val="0" />
 				<effect activationChance="40" chanceType="ON_ATTACKED" triggeredId="10544" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 				<addPercent stat="mDef" val="#mDef" />
-				<addPercent stat="rEvas" val="#rEvas" />
-				<addPercent stat="pSkillEvas" val="#res" />
+				<add stat="rEvas" val="#rEvas" />
+				<add stat="pSkillEvas" val="#res" />
 				<addPercent stat="debuffRes" val="#res" />
 				<addPercent stat="pAtk" val="#addPercentPAtk" />
 				<addPercent stat="bleedProf" val="#addPercentBleedProf" />
